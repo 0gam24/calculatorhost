@@ -111,19 +111,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-      </head>
-      <body>
-        {children}
-
-        {/* Google AdSense — lazyOnload로 LCP 보호 (ADR-004 참조) */}
+        {/* Google AdSense — head 직접 삽입 (AdSense 가이드 준수, 광고 송출 속도 우선) */}
         {adsenseClient ? (
-          <Script
+          <script
             async
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
             crossOrigin="anonymous"
-            strategy="lazyOnload"
           />
         ) : null}
+      </head>
+      <body>
+        {children}
 
         {/* Google Analytics 4 */}
         {gaId ? (
