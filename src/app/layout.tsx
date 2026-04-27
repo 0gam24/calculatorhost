@@ -69,15 +69,15 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-/* FOUC 방지용 테마 선주입 스크립트 */
+/* FOUC 방지용 테마 선주입 스크립트 — 디폴트 라이트 모드.
+   사용자 명시 선택(localStorage)만 우선, 시스템 설정은 무시(라이트 고정 시작). */
 const themeInit = `
 (function() {
   try {
     var stored = localStorage.getItem('theme');
-    var prefers = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
-    document.documentElement.setAttribute('data-theme', stored || prefers);
+    document.documentElement.setAttribute('data-theme', stored || 'light');
   } catch (e) {
-    document.documentElement.setAttribute('data-theme', 'dark');
+    document.documentElement.setAttribute('data-theme', 'light');
   }
 })();
 `.trim();
