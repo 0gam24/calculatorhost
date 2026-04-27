@@ -129,10 +129,16 @@
     @apply transition-all duration-200 hover:shadow-card-hover;
   }
 
-  /* Hero 수치 스타일 (반응형 40-56px bold, tabular-nums) */
+  /* Hero 수치 스타일 (반응형, tabular-nums, 한 줄 강제)
+     - 좁은 카드(모바일)에서 8~9자리 숫자 줄바꿈 방지
+     - white-space: nowrap + 자릿수 많을 때 자동 축소 */
   .hero-number {
     @apply tabular-nums text-text-primary font-bold;
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(1.625rem, 7vw, 3.25rem);
+    white-space: nowrap;
+    letter-spacing: -0.02em;
+    overflow-wrap: normal;
+    word-break: keep-all;
   }
 
   /* Hero 그라데이션 텍스트 */

@@ -26,25 +26,6 @@ function HamburgerIcon() {
   );
 }
 
-function BellIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9" />
-      <path d="M13.73 21a2 2 0 0 1-3.46 0" />
-    </svg>
-  );
-}
-
 function CalculatorLogoIcon() {
   return (
     <svg
@@ -101,7 +82,7 @@ export function Header() {
             </span>
             <span className="hidden sm:flex flex-col leading-tight">
               <span className="font-bold text-base text-text-primary">calculatorhost</span>
-              <span className="text-caption text-text-tertiary">2026 한국 세율 반영</span>
+              <span className="text-caption text-text-tertiary">계산기 · 2026년 한국 세율 반영</span>
             </span>
           </Link>
         </div>
@@ -113,16 +94,8 @@ export function Header() {
           </div>
         </div>
 
-        {/* 우측: 아이콘 & 테마 토글 */}
+        {/* 우측: 테마 토글 */}
         <div className="flex items-center gap-2 shrink-0">
-          <button
-            className="relative inline-flex items-center justify-center h-10 w-10 rounded-lg text-text-secondary hover:bg-bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
-            aria-label="알림"
-            title="알림 (데코레이션)"
-          >
-            <BellIcon />
-            <span className="absolute top-2 right-2 h-2 w-2 bg-danger-500 rounded-full" />
-          </button>
           <ThemeToggle />
         </div>
       </div>

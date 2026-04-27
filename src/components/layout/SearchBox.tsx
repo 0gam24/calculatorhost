@@ -173,8 +173,10 @@ export function SearchBox() {
         type="search"
         value={query}
         onChange={(e) => {
+          // controlled input — value 는 항상 갱신해야 한글 IME 글자가 화면에 표시됨.
+          // composition 중이라도 사용자가 보는 텍스트는 같이 갱신.
+          setQuery(e.target.value);
           if (!isComposing) {
-            setQuery(e.target.value);
             setIsOpen(true);
           }
         }}
