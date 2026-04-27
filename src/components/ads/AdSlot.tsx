@@ -34,6 +34,15 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
   const isDev = process.env.NODE_ENV !== 'production';
 
+  // slot prop 이 numeric (실제 AdSense 광고 단위 ID) 이면 그대로 사용
+  // 그 외엔 환경변수 NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT 로 fallback
+  const isNumericSlot = /^\d+$/.test(slot);
+  const adSlotId = isNumericSlot
+    ? slot
+    : process.env.NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT;
+
+  const canRenderAd = !isDev && client && adSlotId;
+
   return (
     <aside
       aria-label="광고"
@@ -42,7 +51,7 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
     >
       <span className="ad-slot-label">광고</span>
 
-      {isDev || !client ? (
+      {!canRenderAd ? (
         <div className="flex h-full min-h-[220px] items-center justify-center text-caption text-gray-400">
           [AdSense placeholder — slot: {slot}]
         </div>
@@ -51,7 +60,7 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
           className="adsbygoogle block"
           style={{ display: 'block' }}
           data-ad-client={client}
-          data-ad-slot={slot}
+          data-ad-slot={adSlotId}
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
