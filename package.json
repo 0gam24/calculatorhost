@@ -51,5 +51,22 @@
   },
   "engines": {
     "node": ">=20.0.0"
+  },
+  "browserslist": {
+    "production": [
+      "Chrome >= 100",
+      "Firefox >= 100",
+      "Safari >= 15.4",
+      "Edge >= 100",
+      "Samsung >= 19",
+      "not dead",
+      "not ie 11",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
