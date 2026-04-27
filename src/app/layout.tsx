@@ -111,19 +111,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
-        {/* Google AdSense — head 직접 삽입 (AdSense 가이드 준수, 광고 송출 속도 우선) */}
-        {adsenseClient ? (
-          <script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
-            crossOrigin="anonymous"
-          />
-        ) : null}
       </head>
       <body>
         {children}
 
-        {/* Google Analytics 4 */}
+        {/* Google AdSense — afterInteractive 전략 (FCP/LCP 와 경쟁 X)
+            슬롯별 push 는 AdSlot 컴포넌트가 IntersectionObserver 로 viewport 진입 시점에 호출. */}
+        {adsenseClient ? (
+          <Script
+            id="adsbygoogle-init"
+            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
+            strategy="afterInteractive"
+            crossOrigin="anonymous"
+          />
+        ) : null}
+
+        {/* Google Analytics 4 — lazyOnload + requestIdleCallback */}
         {gaId ? (
           <>
             <Script
@@ -133,8 +136,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Script id="ga-init" strategy="lazyOnload">
               {`window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}', { anonymize_ip: true });`}
+                var initGa = function() {
+                  gtag('js', new Date());
+                  gtag('config', '${gaId}', { anonymize_ip: true });
+                };
+                if ('requestIdleCallback' in window) {
+                  requestIdleCallback(initGa, { timeout: 2000 });
+                } else {
+                  setTimeout(initGa, 1);
+                }`}
             </Script>
           </>
         ) : null}

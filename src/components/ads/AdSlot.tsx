@@ -16,7 +16,7 @@
 
 'use client';
 
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 declare global {
@@ -57,6 +57,8 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
   const isDev = process.env.NODE_ENV !== 'production';
   const pushedRef = useRef(false);
+  const containerRef = useRef<HTMLElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   // 1순위: slot prop 이 numeric (실제 광고 단위 ID) → 그대로 사용
   // 2순위: 포맷별 환경변수 (NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD 등)
@@ -68,20 +70,48 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
 
   const canRenderAd = !isDev && client && adSlotId;
 
-  // AdSense 슬롯 등록 — mount 시 한 번만 push.
-  // React StrictMode 의 double effect 대비해 ref 가드.
+  // ────── IntersectionObserver lazy load ──────
+  // 광고 슬롯이 viewport 진입 200px 전에 미리 활성화.
+  // 첫 화면 밖 광고는 스크롤 후에만 로드 → LCP/INP 영향 최소화.
+  // IntersectionObserver 미지원 환경(레거시 브라우저)에선 즉시 활성화 fallback.
   useEffect(() => {
-    if (!canRenderAd || pushedRef.current) return;
+    if (!canRenderAd) return;
+    const target = containerRef.current;
+    if (!target) return;
+
+    if (typeof IntersectionObserver === 'undefined') {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' },
+    );
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [canRenderAd]);
+
+  // ────── AdSense push ──────
+  // viewport 진입 후에만 push 호출. StrictMode double-effect 대비 ref 가드.
+  useEffect(() => {
+    if (!canRenderAd || !isVisible || pushedRef.current) return;
     try {
       (window.adsbygoogle = window.adsbygoogle || []).push({});
       pushedRef.current = true;
     } catch {
       // adsbygoogle.js 미로드 또는 광고 차단 확장 — 조용히 무시
     }
-  }, [canRenderAd]);
+  }, [canRenderAd, isVisible]);
 
   return (
     <aside
+      ref={containerRef}
       aria-label="광고"
       className={cn('ad-slot', FORMAT_CLASSES[format], className)}
       data-slot={slot}
@@ -92,7 +122,7 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
         <div className="flex h-full min-h-[220px] items-center justify-center text-caption text-gray-400">
           [AdSense placeholder — slot: {slot}]
         </div>
-      ) : (
+      ) : isVisible ? (
         <ins
           className="adsbygoogle block"
           style={{ display: 'block' }}
@@ -101,6 +131,9 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
           data-ad-format="auto"
           data-full-width-responsive="true"
         />
+      ) : (
+        // 진입 전: min-height 만 차지하는 placeholder (CLS 방지)
+        <div className="flex h-full min-h-[220px]" aria-hidden="true" />
       )}
     </aside>
   );
