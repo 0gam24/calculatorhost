@@ -20,9 +20,9 @@ import { TransferTaxCalculator } from './TransferTaxCalculator';
 const URL = 'https://calculatorhost.com/calculator/capital-gains-tax';
 
 export const metadata: Metadata = {
-  title: '양도소득세 계산기 2026 | calculatorhost',
+  title: '양도소득세 계산기 2026 | 1세대1주택·일시적2주택 | calculatorhost',
   description:
-    '2026 최신 소득세율로 양도소득세 즉시 계산. 1세대1주택 비과세, 일시적 2주택 특례, 장기보유공제까지 반영한 정확한 납부액 확인.',
+    '2026년 최신 소득세율 반영 양도소득세 계산기. 1세대1주택 비과세, 일시적 2주택 특례, 장기보유특별공제, 조정지역 중과세까지 정확히 계산. 부동산 거래 전 납부액 확인. 회원가입 불필요, 완전 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '양도소득세 계산기 2026 — 1세대1주택 · 일시적2주택',

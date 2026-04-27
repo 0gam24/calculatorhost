@@ -14,9 +14,9 @@ import {
 const URL = 'https://calculatorhost.com/category/finance';
 
 export const metadata: Metadata = {
-  title: '금융 계산기 모음 2026 | 대출·예금·적금',
+  title: '금융 계산기 모음 2026 | 대출·예금·적금·환율 | calculatorhost',
   description:
-    '2026년 최신 금리 반영 대출이자, 대출한도(DSR), 예금 이자, 적금 이자 계산기. 주담대·전세대출·신용대출 월 상환액과 예상 이자를 정확하게 계산하세요.',
+    '2026년 최신 금리 반영 금융 계산기 모음. 대출이자, DSR 대출한도, 정기예금, 적금, 환율 환전, 인플레이션 등 주담대·전세대출·신용대출 월 상환액과 예상 이자를 정확하게 계산하세요. 회원가입 불필요, 완전 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '금융 계산기 모음 2026',

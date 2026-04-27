@@ -22,9 +22,9 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 const URL = 'https://calculatorhost.com/calculator/loan-limit';
 
 export const metadata: Metadata = {
-  title: 'DSR 계산기 · 대출한도 2026 | 스트레스 DSR 반영 | calculatorhost',
+  title: '대출한도 DSR 계산기 2026 | 스트레스 DSR·LTV | calculatorhost',
   description:
-    '2026년 최신 DSR·LTV·DTI 규제와 스트레스 DSR을 반영한 주택담보대출 한도 계산기. 연소득·기존 대출·담보가치로 실행 가능한 최대 한도를 즉시 확인, 상환방식별 비교까지.',
+    '2026년 DSR·LTV·DTI 최신 규제와 스트레스 DSR을 반영한 주택담보대출 한도 계산기. 연소득·기존 대출·담보가치로 실행 가능한 최대 한도를 즉시 확인. 회원가입 불필요, 완전 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'DSR 계산기 · 대출한도 2026 — 최대 대출액 확인',

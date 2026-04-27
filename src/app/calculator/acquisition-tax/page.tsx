@@ -20,12 +20,12 @@ import { AcquisitionCalculator } from './AcquisitionCalculator';
 const URL = 'https://calculatorhost.com/calculator/acquisition-tax';
 
 export const metadata: Metadata = {
-  title: '취득세 계산기 2026 — 1주택·조정지역·생애최초감면·농특세 포함 | calculatorhost',
+  title: '취득세 계산기 2026 | 1주택·조정지역·생애최초 | calculatorhost',
   description:
-    '2026년 최신 지방세율 반영 무료 취득세 계산기. 주택 매매·증여·상속 시 주택수·조정지역·면적·생애최초 감면까지 모두 반영해 농어촌특별세와 지방교육세를 포함한 총 납부액을 거래 직전 정확히 확인할 수 있습니다. 회원가입 불필요, 모바일 최적화.',
+    '2026년 최신 지방세율 반영 취득세 계산기. 매매·증여·상속 및 1주택·조정지역·생애최초 감면까지 모두 반영하여 농특세, 지방교육세 포함 총 납부액을 정확히 계산. 거래 직전 확인하세요. 회원가입 불필요.',
   alternates: { canonical: URL },
   openGraph: {
-    title: '취득세 계산기 2026 — 1주택·조정지역·생애최초감면·농특세 포함',
+    title: '취득세 계산기 2026 | 1주택·조정지역·생애최초',
     description: '2026년 최신 지방세율 반영. 주택 매매·증여·상속 시 총 납부액을 거래 직전 확인.',
     url: URL,
     type: 'website',

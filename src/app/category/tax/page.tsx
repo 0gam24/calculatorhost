@@ -14,9 +14,9 @@ import {
 const URL = 'https://calculatorhost.com/category/tax';
 
 export const metadata: Metadata = {
-  title: '세금 계산기 모음 2026 | 양도세·취득세·재산세',
+  title: '세금 계산기 모음 2026 | 양도·취득·재산·증여·상속 | calculatorhost',
   description:
-    '2026년 최신 세율 반영 양도소득세, 취득세, 재산세, 퇴직금, 프리랜서 종합소득세 계산기. 부동산 거래·부동산 보유 관련 세금을 정확히 계산하세요.',
+    '2026년 최신 세율 반영 세금 계산기 모음. 양도소득세, 취득세, 재산세, 퇴직금, 프리랜서 종합소득세 등 부동산 거래·보유·근로 소득 관련 세금을 정확하게 계산하세요. 회원가입 불필요, 모바일 최적, 완전 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '세금 계산기 모음 2026',

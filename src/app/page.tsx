@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -8,6 +9,13 @@ import {
   buildWebSiteJsonLd,
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
+
+export const metadata: Metadata = {
+  title: '한국 금융·세금·부동산 계산기 27개 | calculatorhost',
+  description:
+    '2026년 최신 세율·금리 반영 한국 계산기 27개 모음. 연봉 실수령액·양도소득세·대출이자·취득세·DSR 한도 등 모든 계산기 무료. 회원가입 불필요, 모바일 최적.',
+  alternates: { canonical: 'https://calculatorhost.com/' },
+};
 
 const CATEGORIES = [
   { slug: 'work', title: '근로', icon: '💼', desc: '연봉·퇴직금·실수령액' },

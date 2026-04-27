@@ -20,9 +20,9 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 const URL = 'https://calculatorhost.com/calculator/severance';
 
 export const metadata: Metadata = {
-  title: '퇴직금 계산기 2026 | 평균임금·퇴직소득세 자동 | calculatorhost',
+  title: '퇴직금 계산기 2026 | 평균임금·퇴직소득세·세후 | calculatorhost',
   description:
-    '2026년 최신 세율 반영 퇴직금 계산기. 입사·퇴사 날짜와 월 임금으로 법정 퇴직금, 근속연수공제, 환산급여공제, 퇴직소득세를 한 번에 계산. DB·DC형 선택 가능.',
+    '2026년 최신 퇴직소득세 반영 퇴직금 계산기. 입사·퇴사 날짜와 월 임금으로 법정 퇴직금, 근속연수공제, 환산급여공제, 퇴직소득세, 세후 실수령액 자동 계산. DB·DC형 비교. 회원가입 불필요, 완전 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '퇴직금 계산기 2026',
