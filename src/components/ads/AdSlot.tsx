@@ -42,17 +42,29 @@ const FORMAT_CLASSES: Record<AdFormat, string> = {
   anchor: 'min-h-[50px] md:min-h-[90px]',
 };
 
+// 포맷별 AdSense 광고 단위 ID — Cloudflare Pages 환경변수에서 주입.
+// 미설정 시 NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT 로 fallback (기존 동작 유지).
+// AdSense 인벤토리 매칭 최적화 — 포맷별 단위로 분리해야 정상 송출됨.
+const FORMAT_SLOT_ENV: Record<AdFormat, string | undefined> = {
+  horizontal: process.env.NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD,
+  rectangle: process.env.NEXT_PUBLIC_ADSENSE_SLOT_RECTANGLE,
+  vertical: process.env.NEXT_PUBLIC_ADSENSE_SLOT_SKYSCRAPER,
+  fluid: process.env.NEXT_PUBLIC_ADSENSE_SLOT_INFEED,
+  anchor: process.env.NEXT_PUBLIC_ADSENSE_SLOT_ANCHOR,
+};
+
 export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
   const client = process.env.NEXT_PUBLIC_ADSENSE_CLIENT;
   const isDev = process.env.NODE_ENV !== 'production';
   const pushedRef = useRef(false);
 
-  // slot prop 이 numeric (실제 AdSense 광고 단위 ID) 이면 그대로 사용
-  // 그 외엔 환경변수 NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT 로 fallback
+  // 1순위: slot prop 이 numeric (실제 광고 단위 ID) → 그대로 사용
+  // 2순위: 포맷별 환경변수 (NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD 등)
+  // 3순위: NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT 단일 fallback
   const isNumericSlot = /^\d+$/.test(slot);
   const adSlotId = isNumericSlot
     ? slot
-    : process.env.NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT;
+    : FORMAT_SLOT_ENV[format] ?? process.env.NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT;
 
   const canRenderAd = !isDev && client && adSlotId;
 
