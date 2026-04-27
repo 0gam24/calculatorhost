@@ -5,12 +5,15 @@ name = "calculatorhost"
 compatibility_date = "2025-01-01"
 pages_build_output_dir = "out"
 
-# KV Namespace binding (rate limiting)
-# Phase 2 구현 후 Cloudflare 대시보드에서 KV 네임스페이스 생성 후 ID 입력
-[[kv_namespaces]]
-binding = "RATE_LIMIT_KV"
-id = "YOUR_KV_NAMESPACE_ID"
-preview_id = "YOUR_KV_NAMESPACE_PREVIEW_ID"
+# KV Namespace binding (rate limiting) — Phase 2 활성화 시 주석 해제
+# 활성화 절차:
+#  1. Cloudflare 대시보드 → Workers & Pages → KV → Create namespace ("calculatorhost-rate-limit")
+#  2. 발급된 ID 와 preview ID 를 아래에 입력
+#  3. 주석 해제 후 commit + push → 자동 재배포
+# [[kv_namespaces]]
+# binding = "RATE_LIMIT_KV"
+# id = "YOUR_KV_NAMESPACE_ID"
+# preview_id = "YOUR_KV_NAMESPACE_PREVIEW_ID"
 
 # 환경변수는 Cloudflare Pages 프로젝트 설정에서 직접 입력
 # - MOLIT_REALTOR_API_KEY: 국토부 실거래가 API 인증키
