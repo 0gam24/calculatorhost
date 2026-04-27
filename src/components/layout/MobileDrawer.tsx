@@ -14,10 +14,16 @@ interface MobileDrawerProps {
 export function MobileDrawer({ isOpen, onClose }: MobileDrawerProps) {
   const pathname = usePathname();
   const drawerRef = useRef<HTMLElement>(null);
+  const prevPathnameRef = useRef(pathname);
 
-  /* ────── 라우트 변경 시 자동 닫기 ────── */
+  /* ────── 라우트 변경 시 자동 닫기
+     마운트 시점이나 onClose 함수 재생성 시점에는 실행되지 않도록
+     이전 pathname 과 비교하여 실제 라우트 변경 시에만 닫음. */
   useEffect(() => {
-    onClose();
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      onClose();
+    }
   }, [pathname, onClose]);
 
   /* ────── ESC 키로 닫기 ────── */
