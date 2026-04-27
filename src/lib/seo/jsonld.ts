@@ -165,3 +165,26 @@ export function buildSpeakableJsonLd(cssSelectors: string[]): JsonLd {
     },
   };
 }
+
+/**
+ * ItemList: 카테고리 허브 페이지에서 계산기 모음을 명시 (리치 결과 후보)
+ * https://schema.org/ItemList
+ */
+export interface ItemListEntry {
+  name: string;
+  url: string;
+}
+
+export function buildItemListJsonLd(items: ItemListEntry[], listName?: string): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    ...(listName ? { name: listName } : {}),
+    itemListElement: items.map((item, idx) => ({
+      '@type': 'ListItem',
+      position: idx + 1,
+      name: item.name,
+      url: item.url,
+    })),
+  };
+}

@@ -134,6 +134,50 @@ export default function AboutPage() {
                 ))}
               </ul>
 
+              <h2 className="text-2xl font-semibold text-text-primary">콘텐츠 제작 방식 (AI 활용 공개)</h2>
+              <p>
+                Google 의{' '}
+                <a
+                  href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-500"
+                >
+                  AI 생성 콘텐츠 가이드
+                </a>
+                에 따라 본 사이트의 콘텐츠 제작 프로세스를 투명하게 공개합니다.
+              </p>
+              <ul className="list-disc space-y-2 pl-5">
+                <li>
+                  <strong>계산 공식·세율 상수</strong>: 운영자가 소득세법·지방세법·국세청 공식 문서를
+                  직접 확인하여 코드(<code className="text-caption">src/lib/constants/</code>)에 반영합니다.
+                  AI 가 자동 생성한 세율은 <strong>없습니다</strong>.
+                </li>
+                <li>
+                  <strong>설명·FAQ 본문</strong>: 운영자가 작성한 초안에 대해 AI 도구(Claude)를 사용하여
+                  표현 다듬기·구조화·검수를 보조합니다. 모든 결과물은 운영자가 최종 검토합니다.
+                </li>
+                <li>
+                  <strong>코드 구현</strong>: AI 코딩 도구를 활용하나, 계산 로직은 단위 테스트와
+                  국세청 간이계산기 결과 대조로 검증합니다.
+                </li>
+                <li>
+                  <strong>AI 미사용 영역</strong>: 세율 수치, 법조항 인용, 면책 문구는 AI 자동 생성을
+                  사용하지 않으며 운영자가 1차 출처를 직접 확인합니다.
+                </li>
+              </ul>
+
+              <h2 className="text-2xl font-semibold text-text-primary">검증 절차</h2>
+              <p>
+                각 계산기 출시 전 다음 절차를 거칩니다.
+              </p>
+              <ol className="list-decimal space-y-2 pl-5">
+                <li>법조항 원문 또는 국세청·금감원 공식 문서로 세율·공제 1차 검증</li>
+                <li>국세청 홈택스 간이계산기·은행 공식 계산기로 결과 대조 (대표 케이스 3개 이상)</li>
+                <li>단위 테스트(<code className="text-caption">Vitest</code>) 작성 — 경계값·예외 처리 검증</li>
+                <li>세법 개정 시 즉시 재검증 후 반영 (연 1회 이상 정기 점검)</li>
+              </ol>
+
               <h2 className="text-2xl font-semibold text-text-primary">면책</h2>
               <p>
                 본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다. 실제 세무·금융 처리는

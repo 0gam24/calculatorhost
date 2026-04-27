@@ -7,6 +7,8 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
 import {
   buildBreadcrumbJsonLd,
+  buildItemListJsonLd,
+  buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/category/real-estate';
@@ -96,12 +98,29 @@ export default function RealEstateCategoryPage() {
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '부동산' },
   ]);
+  const itemListLd = buildItemListJsonLd(
+    CALCULATORS.map((c) => ({
+      name: c.title,
+      url: `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`,
+    })),
+  );
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <div className="flex min-h-screen flex-col">
         <Header />

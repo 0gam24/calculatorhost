@@ -51,6 +51,12 @@ export function Footer() {
             본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다. 실제 금융·세무 처리는
             전문가의 안내를 받으시기 바랍니다.
           </p>
+          <p className="mt-2">
+            세율·공제·법조항은 운영자가 국세청·기재부·한국은행 등 1차 출처를 직접 확인하여
+            반영합니다. 콘텐츠 작성에 AI 도구를 보조적으로 활용하며 모든 결과물은 운영자가
+            최종 검토합니다.{' '}
+            <Link href="/about" className="underline">자세히</Link>
+          </p>
           <p className="mt-2">© {new Date().getFullYear()} calculatorhost. All rights reserved.</p>
         </div>
       </div>
