@@ -1,0 +1,18 @@
+# Cloudflare Pages Functions configuration
+# Phase 2: Real-time API proxy for calculatorhost
+
+name = "calculatorhost"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "out"
+
+# KV Namespace binding (rate limiting)
+# Phase 2 구현 후 Cloudflare 대시보드에서 KV 네임스페이스 생성 후 ID 입력
+[[kv_namespaces]]
+binding = "RATE_LIMIT_KV"
+id = "YOUR_KV_NAMESPACE_ID"
+preview_id = "YOUR_KV_NAMESPACE_PREVIEW_ID"
+
+# 환경변수는 Cloudflare Pages 프로젝트 설정에서 직접 입력
+# - MOLIT_REALTOR_API_KEY: 국토부 실거래가 API 인증키
+# - JUSO_API_KEY: 행안부 도로명주소 API 인증키
+# (코드에서는 context.env.X 로 접근, 실제 값은 서버에만 저장)

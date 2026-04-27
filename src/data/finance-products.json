@@ -1,0 +1,15 @@
+{
+  "deposit": {
+    "maturity12m": 3.25,
+    "maturity24m": 3.3,
+    "note": "금융감독원 금융상품통합비교공시 평균 정기예금 금리"
+  },
+  "savings": {
+    "maturity12m": 2.85,
+    "maturity24m": 2.95,
+    "note": "금융감독원 금융상품통합비교공시 평균 적금 금리"
+  },
+  "source": "live",
+  "note": "금융감독원 finlife 실시간 동기화",
+  "fetchedAt": "2026-04-27T04:45:03.868Z"
+}

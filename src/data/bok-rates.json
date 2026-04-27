@@ -1,0 +1,9 @@
+{
+  "baseRate": 0.03,
+  "baseRateDate": "202501",
+  "cpi": 115.71,
+  "cpiDate": "202501",
+  "source": "live",
+  "note": "한국은행 ECOS API에서 실시간 동기화",
+  "fetchedAt": "2026-04-27T04:45:03.060Z"
+}

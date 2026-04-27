@@ -1,0 +1,7 @@
+# robots.txt 는 src/app/robots.ts 로 자동 생성됨
+# 이 파일은 정적 배포 대비용 백업
+User-agent: *
+Allow: /
+Disallow: /api/
+
+Sitemap: https://calculatorhost.com/sitemap.xml

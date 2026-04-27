@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   모바일 드로어 애니메이션
+   ============================================ */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fade-in 200ms ease-out;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 280ms cubic-bezier(0.32, 0.72, 0, 1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .animate-fade-in,
+    .animate-slide-in {
+      animation-duration: 0.01ms;
+      animation-iteration-count: 1;
+    }
+  }
+}
+
+/* ============================================
+   다크 Fintech 테마 토큰 (ADR-004 참조)
+   ============================================ */
+@layer base {
+  :root[data-theme='dark'] {
+    --bg-base: #272a2f;
+    --bg-card: #2f3238;
+    --bg-raised: #383c44;
+    --bg-sidebar: #1c1f24;
+    --text-primary: #f5f6f8;
+    --text-secondary: #a8adb5;
+    --text-tertiary: #6b7280;
+    --border-base: #3a3e45;
+    --border-subtle: #2f3238;
+    color-scheme: dark;
+  }
+
+  :root[data-theme='light'] {
+    --bg-base: #f7f8fa;
+    --bg-card: #ffffff;
+    --bg-raised: #f0f2f5;
+    --bg-sidebar: #f0f2f5;
+    --text-primary: #1a1d21;
+    --text-secondary: #4a5568;
+    --text-tertiary: #6b7280;
+    --border-base: #e5e7eb;
+    --border-subtle: #f0f2f5;
+    color-scheme: light;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-bg-base text-text-primary;
+    font-family: 'Pretendard', 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'ss01', 'tnum';
+  }
+
+  /* Pretendard 폰트 self-host (public/fonts/) — LCP 50~100ms 개선, 외부 CDN 의존 제거 */
+  @font-face {
+    font-family: 'Pretendard';
+    font-weight: 45 920;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/PretendardVariable.woff2') format('woff2-variations');
+  }
+
+  /* Inter Variable self-host — 결과 카드의 큰 숫자(tabular-nums) 폭 안정화로 CLS 제거 */
+  @font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+    src: url('/fonts/InterVariable.woff2') format('woff2-variations');
+  }
+
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-bg-base;
+  }
+
+  /* 접근성: reduced-motion 존중 */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* 공통 카드 - 향상된 버전 */
+  .card {
+    @apply rounded-3xl bg-bg-card p-6 shadow-card dark:shadow-card-dark lg:p-8;
+    border: none;
+  }
+
+
+  /* 카드 호버 효과 */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-card-hover;
+  }
+
+  /* Hero 수치 스타일 (반응형 40-56px bold, tabular-nums) */
+  .hero-number {
+    @apply tabular-nums text-text-primary font-bold;
+    font-size: clamp(2.5rem, 5vw, 3.5rem);
+  }
+
+  /* Hero 그라데이션 텍스트 */
+  .hero-gradient {
+    background: linear-gradient(135deg, #595FF7 0%, #8EC9DC 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* 리스트 행 스타일 - 향상됨 */
+  .list-row {
+    @apply flex items-center gap-4 rounded-2xl px-4 py-3 transition-all hover:bg-bg-raised/70;
+  }
+
+  .list-row-icon {
+    @apply flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-bg-raised text-text-secondary;
+  }
+
+  /* Pill 검색 입력 - 향상됨 */
+  .pill-input {
+    @apply rounded-full border border-border-base bg-bg-raised px-11 py-2.5 text-sm placeholder-text-tertiary transition-all focus:border-primary-500 focus:bg-bg-card;
+  }
+
+  /* 증감 표시 (+ 녹색, − 빨강) */
+  .value-positive {
+    @apply text-success-500;
+  }
+  .value-negative {
+    @apply text-danger-500;
+  }
+
+  /* 트렌드 뱃지 */
+  .trend-badge {
+    @apply inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-xs font-semibold;
+  }
+  .trend-badge-positive {
+    @apply bg-success-500/15 text-success-500;
+  }
+  .trend-badge-negative {
+    @apply bg-danger-500/15 text-danger-500;
+  }
+  .trend-badge-neutral {
+    @apply bg-bg-raised text-text-secondary;
+  }
+
+  /* AdSense 슬롯 컨테이너 (다크 테마에서도 라이트 강제) */
+  .ad-slot {
+    @apply rounded-card bg-white p-3;
+    min-height: 250px;
+  }
+  .ad-slot-label {
+    @apply text-caption text-gray-400 mb-1;
+  }
+}
+
+/* ─── 페이지 상단 H1+리드 영역 자동 카드화 ───
+   <main> 내부의 <header>(H1·breadcrumb·리드 문단 포함)를 글래스카드로 감싼다.
+   전역 사이트 헤더(Header 컴포넌트)는 <main> 바깥이라 영향 없음.
+   27개 계산기 + 5개 카테고리 + 정책 페이지 전체에 자동 적용. */
+main header {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-base);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+main header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+}
+@media (min-width: 1024px) {
+  main header {
+    padding: 2rem;
+  }
+}
+main header h1 {
+  letter-spacing: -0.02em;
+}

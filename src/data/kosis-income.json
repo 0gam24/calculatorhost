@@ -1,0 +1,9 @@
+{
+  "householdMonthlyIncome": 4850000,
+  "householdMonthlyIncomeDate": "2025-12-01",
+  "perCapitaMonthlyIncome": 1850000,
+  "perCapitaMonthlyIncomeDate": "2025-12-01",
+  "source": "fallback",
+  "note": "KOSIS_API_KEY 미설정 — 정적 기본값. 실시간 통계청 데이터를 위해 GitHub Secrets에 KOSIS_API_KEY를 등록하세요.",
+  "fetchedAt": "2026-04-24T00:00:00Z"
+}

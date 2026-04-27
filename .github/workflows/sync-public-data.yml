@@ -1,0 +1,70 @@
+name: Sync Public Data
+
+on:
+  schedule:
+    # 매일 03:00 KST = 18:00 UTC
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Cache dependencies
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-npm-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-npm-
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync public data
+        run: npm run sync-data
+        env:
+          ECOS_API_KEY: ${{ secrets.ECOS_API_KEY }}
+          EXIM_FX_API_KEY: ${{ secrets.EXIM_FX_API_KEY }}
+          FSS_FINLIFE_API_KEY: ${{ secrets.FSS_FINLIFE_API_KEY }}
+          KOSIS_API_KEY: ${{ secrets.KOSIS_API_KEY }}
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet src/data/; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'chore: 공공데이터 일일 동기화'
+          branch: chore/sync-public-data
+          delete-branch: true
+          title: 'chore: 공공데이터 일일 동기화'
+          body: |
+            GitHub Actions 자동 동기화 PR입니다.
+
+            **변경 사항**:
+            - `src/data/bok-rates.json` — 한국은행 기준금리·CPI
+            - `src/data/exchange-rates.json` — 한국수출입은행 환율
+            - `src/data/finance-products.json` — 금융감독원 금융상품
+            - `src/data/kosis-income.json` — 통계청 가구 소득
+
+            머지하면 Cloudflare Pages에서 자동 재배포됩니다.
+          labels: 'chore,automation'

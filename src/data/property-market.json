@@ -1,0 +1,22 @@
+{
+  "regionMarketData": {
+    "서울": {
+      "avgPrice": 850000000,
+      "avgPricePerPyeong": 70000000,
+      "lastUpdated": "2026-04-20"
+    },
+    "경기": {
+      "avgPrice": 650000000,
+      "avgPricePerPyeong": 50000000,
+      "lastUpdated": "2026-04-20"
+    },
+    "인천": {
+      "avgPrice": 550000000,
+      "avgPricePerPyeong": 42000000,
+      "lastUpdated": "2026-04-20"
+    }
+  },
+  "source": "fallback",
+  "note": "공공데이터포털 국토교통부 실거래가 미설정 — 정적 기본값. 실시간 시세를 위해 GitHub Secrets에 관련 API 키를 등록하세요.",
+  "fetchedAt": "2026-04-24T00:00:00Z"
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- 배경: 다크 + radial gradient -->
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="#9D4EFF" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#0A0E1A" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0A0E1A"/>
+    </radialGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00FF88"/>
+      <stop offset="100%" stop-color="#00D4FF"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(20,25,40,0.85)"/>
+      <stop offset="100%" stop-color="rgba(20,25,40,0.6)"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#0A0E1A"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- 좌측 글로우 원 -->
+  <circle cx="180" cy="540" r="220" fill="#9D4EFF" opacity="0.2"/>
+  <!-- 우측 글로우 원 -->
+  <circle cx="1050" cy="100" r="180" fill="#00FF88" opacity="0.2"/>
+
+  <!-- 카드 -->
+  <rect x="80" y="80" width="1040" height="470" rx="32" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- 로고 아이콘 (계산기 그리드) -->
+  <g transform="translate(120, 120)" stroke="url(#brand)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="0" y="0" width="80" height="100" rx="10"/>
+    <line x1="20" y1="22" x2="60" y2="22"/>
+    <circle cx="20" cy="48" r="2.5" fill="url(#brand)"/>
+    <circle cx="40" cy="48" r="2.5" fill="url(#brand)"/>
+    <circle cx="60" cy="48" r="2.5" fill="url(#brand)"/>
+    <circle cx="20" cy="68" r="2.5" fill="url(#brand)"/>
+    <circle cx="40" cy="68" r="2.5" fill="url(#brand)"/>
+    <circle cx="60" cy="68" r="2.5" fill="url(#brand)"/>
+    <circle cx="20" cy="88" r="2.5" fill="url(#brand)"/>
+    <circle cx="40" cy="88" r="2.5" fill="url(#brand)"/>
+    <circle cx="60" cy="88" r="2.5" fill="url(#brand)"/>
+  </g>
+
+  <!-- 브랜드명 -->
+  <text x="220" y="170" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="42" font-weight="700" fill="#FFFFFF" letter-spacing="-1">calculatorhost</text>
+  <text x="220" y="205" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="20" font-weight="500" fill="rgba(255,255,255,0.55)">2026 한국 세율 · 금리 반영</text>
+
+  <!-- 메인 카피 -->
+  <text x="120" y="320" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="#FFFFFF">
+    <tspan fill="url(#brand)">27 개</tspan> 한국 생활 계산기,
+  </text>
+  <text x="120" y="395" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="#FFFFFF">한 곳에서 정확하게</text>
+
+  <!-- 서브 텍스트 -->
+  <text x="120" y="455" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="22" font-weight="400" fill="rgba(255,255,255,0.65)">세금 · 금융 · 부동산 · 근로소득 · 생활</text>
+
+  <!-- 하단 태그 칩 -->
+  <g transform="translate(120, 490)">
+    <rect x="0" y="0" width="98" height="34" rx="17" fill="rgba(0,255,136,0.12)" stroke="rgba(0,255,136,0.4)" stroke-width="1"/>
+    <text x="49" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#00FF88">무료</text>
+
+    <rect x="110" y="0" width="160" height="34" rx="17" fill="rgba(157,78,255,0.12)" stroke="rgba(157,78,255,0.4)" stroke-width="1"/>
+    <text x="190" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#9D4EFF">회원가입 불필요</text>
+
+    <rect x="280" y="0" width="148" height="34" rx="17" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
+    <text x="354" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#00D4FF">모바일 최적화</text>
+  </g>
+
+  <!-- 우측 하단 도메인 -->
+  <text x="1080" y="510" text-anchor="end" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="18" font-weight="500" fill="rgba(255,255,255,0.45)">calculatorhost.com</text>
+</svg>

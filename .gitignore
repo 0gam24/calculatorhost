@@ -1,0 +1,77 @@
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+
+# testing
+/coverage
+/test-results
+/playwright-report
+/playwright/.cache
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+/dist
+
+# misc
+.DS_Store
+*.pem
+Thumbs.db
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# local env files
+.env
+.env*.local
+.env.local
+.env.production
+
+# ⚠️ 비공개 API 키 보관소 (.my)
+# - 사용자 본인 PC 에만 보관, GitHub 절대 업로드 금지
+# - Claude Code 도 settings.json deny + hooks 로 읽기/쓰기 차단
+.my
+.my.*
+*.my
+secrets/
+**/credentials.json
+**/secrets.json
+**/*.key
+**/*service-account*.json
+
+# vercel
+.vercel
+
+# cloudflare
+.wrangler/
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# ide
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.example.json
+.idea/
+
+# Claude Code local
+.claude/settings.local.json
+.claude/current_tasks/
+.claude/checkpoints/
+.claude/progress.md
+CLAUDE.local.md
+
+# 운영 데이터
+/data/cache/
+
+# 폰트 서브셋팅 백업 (롤백용 로컬 보관 — repo 비대화 방지)
+public/fonts/*.original.woff2

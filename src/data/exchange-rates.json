@@ -1,0 +1,13 @@
+{
+  "rates": {
+    "USD": 1200.0,
+    "JPY": 8.5,
+    "EUR": 1300.0,
+    "CNY": 165.0,
+    "GBP": 1520.0
+  },
+  "baseDate": "2026-04-24",
+  "source": "fallback",
+  "note": "EXIM_FX_API_KEY 미설정 — 정적 기본값. 실시간 환율을 위해 GitHub Secrets에 EXIM_FX_API_KEY를 등록하세요.",
+  "fetchedAt": "2026-04-24T00:00:00Z"
+}
