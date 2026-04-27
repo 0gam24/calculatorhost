@@ -22,9 +22,52 @@ if [[ -z "$command" ]]; then
   exit 0
 fi
 
+# ── git push 컨텍스트 검증 ──
+# 사용자가 직전 메시지에 "푸쉬"/"push"/"푸시" 키워드를 명시했을 때만 통과.
+# 그 외엔 차단 — Claude 가 자율적으로 push 하는 것 방지.
+# (force push 변형은 settings.json deny 로 별도 차단)
+if echo "$command" | grep -qE '^[[:space:]]*git[[:space:]]+push'; then
+  PROJECT_SLUG="c--Users-Necon-Downloads-Bibe-Code-5----"
+  TRANSCRIPT_DIR="$HOME/.claude/projects/$PROJECT_SLUG"
+
+  if [[ -d "$TRANSCRIPT_DIR" ]] && command -v node >/dev/null 2>&1; then
+    LATEST_JSONL=$(ls -t "$TRANSCRIPT_DIR"/*.jsonl 2>/dev/null | head -1)
+    if [[ -n "$LATEST_JSONL" ]]; then
+      # 마지막 텍스트형 user 메시지 (tool_result 제외) 추출
+      last_msg=$(node -e "
+        const fs=require('fs');
+        const lines=fs.readFileSync('$LATEST_JSONL','utf8').trim().split('\n');
+        for (let i=lines.length-1; i>=0; i--) {
+          try {
+            const o=JSON.parse(lines[i]);
+            if (o.type!=='user' || !o.message || o.message.role!=='user') continue;
+            const c=o.message.content;
+            if (typeof c==='string') { process.stdout.write(c); return; }
+            if (Array.isArray(c)) {
+              const t=c.find(x=>x.type==='text');
+              if (t) { process.stdout.write(t.text||''); return; }
+            }
+          } catch(e){}
+        }
+      " 2>/dev/null)
+
+      if echo "$last_msg" | grep -qiE '푸쉬|push|푸시'; then
+        # 사용자 명시 동의 — 통과
+        exit 0
+      else
+        echo "BLOCKED: git push 는 사용자가 '푸쉬'/'push'/'푸시' 키워드로 명시 동의한 직후만 허용." >&2
+        echo "사용자 직전 메시지에서 키워드 미발견. 사용자에게 'PowerShell 에서 git push 직접 실행' 안내 권장." >&2
+        exit 2
+      fi
+    fi
+  fi
+  # transcript 못 찾으면 안전 차단
+  echo "BLOCKED: git push — transcript 검증 불가. 사용자 직접 실행 권장." >&2
+  exit 2
+fi
+
 # 금지 패턴 — 영구 비타협 규칙
-# 1) git push 전면 차단: 사용자가 명시적으로 "푸쉬" 요청한 직후에만 settings.json deny 임시 해제 후 사용
-# 2) 시크릿 노출 차단: env, printenv, .env 출력 등
+# 시크릿 노출 차단: env, printenv, .env 출력 등
 block_patterns=(
   "rm -rf /"
   "rm -rf ~"
@@ -33,9 +76,6 @@ block_patterns=(
   "mkfs"
   "> /dev/sd"
   ":(){ :|:& };:"
-
-  # ── git push 전면 차단 ──
-  "git push"
 
   # ── 그 외 파괴적 git ──
   "git reset --hard origin/(main|master)"
