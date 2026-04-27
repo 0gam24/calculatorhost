@@ -185,8 +185,6 @@ export default function PropertyTaxPage() {
               {/* 계산기 */}
               <PropertyTaxCalculator />
 
-              <AdSlot slot="property-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -500,7 +498,6 @@ export default function PropertyTaxPage() {
                 </p>
               </section>
 
-              <AdSlot slot="property-tax-bottom" format="horizontal" />
             </div>
           </main>
         </div>

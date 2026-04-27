@@ -180,8 +180,6 @@ export default function DdayPage() {
               {/* 계산기 */}
               <DdayCalculator />
 
-              <AdSlot slot="d-day-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -378,7 +376,6 @@ export default function DdayPage() {
                 </p>
               </section>
 
-              <AdSlot slot="d-day-bottom" format="horizontal" />
             </div>
           </main>
         </div>

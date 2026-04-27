@@ -183,8 +183,6 @@ export default function AreaConversionPage() {
               {/* 계산기 */}
               <AreaConverter />
 
-              <AdSlot slot="area-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -485,7 +483,6 @@ export default function AreaConversionPage() {
                 </p>
               </section>
 
-              <AdSlot slot="area-bottom" format="horizontal" />
             </div>
           </main>
         </div>

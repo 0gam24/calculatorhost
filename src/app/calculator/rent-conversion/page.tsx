@@ -188,8 +188,6 @@ export default function RentConversionPage() {
               {/* 계산기 */}
               <RentConversionCalculator />
 
-              <AdSlot slot="rent-conversion-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -423,7 +421,6 @@ export default function RentConversionPage() {
                 </p>
               </section>
 
-              <AdSlot slot="rent-conversion-bottom" format="horizontal" />
             </div>
           </main>
         </div>

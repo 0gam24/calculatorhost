@@ -208,13 +208,6 @@ export default function TaxCategoryPage() {
                 </div>
               </section>
 
-              {/* AD-2 Medium Rectangle */}
-              <AdSlot
-                slot="category-tax-mid"
-                format="rectangle"
-                className="my-6 flex justify-center rounded-lg border border-border-base"
-              />
-
               {/* 사용 시점 가이드 */}
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <h2 className="text-2xl font-bold text-text-primary">
@@ -406,13 +399,6 @@ export default function TaxCategoryPage() {
                   ))}
                 </div>
               </section>
-
-              {/* AD-4 인피드 */}
-              <AdSlot
-                slot="category-tax-feed"
-                format="fluid"
-                className="my-6 flex justify-center rounded-lg border border-border-base"
-              />
 
               {/* 다른 카테고리 */}
               <section className="space-y-4">

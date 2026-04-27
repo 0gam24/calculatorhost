@@ -178,8 +178,6 @@ export default function DepositPage() {
               {/* 계산기 */}
               <DepositCalculator />
 
-              <AdSlot slot="deposit-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -538,7 +536,6 @@ export default function DepositPage() {
                 </p>
               </section>
 
-              <AdSlot slot="deposit-bottom" format="horizontal" />
             </div>
           </main>
         </div>

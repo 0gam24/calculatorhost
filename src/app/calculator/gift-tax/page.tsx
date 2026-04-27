@@ -178,8 +178,6 @@ export default function GiftTaxPage() {
               {/* 계산기 */}
               <GiftTaxCalculator />
 
-              <AdSlot slot="gift-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 

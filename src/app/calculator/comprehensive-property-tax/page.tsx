@@ -191,8 +191,6 @@ export default function ComprehensivePropertyTaxPage() {
               {/* 계산기 */}
               <ComprehensivePropertyTaxCalculator />
 
-              <AdSlot slot="comprehensive-property-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -577,7 +575,6 @@ export default function ComprehensivePropertyTaxPage() {
                 </p>
               </section>
 
-              <AdSlot slot="comprehensive-property-tax-bottom" format="horizontal" />
             </div>
           </main>
         </div>

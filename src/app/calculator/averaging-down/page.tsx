@@ -202,8 +202,6 @@ export default function AveragingDownPage() {
               {/* 계산기 */}
               <AveragingDownCalculator />
 
-              <AdSlot slot="averaging-down-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -486,7 +484,6 @@ export default function AveragingDownPage() {
                 </p>
               </section>
 
-              <AdSlot slot="averaging-down-bottom" format="horizontal" />
             </div>
           </main>
         </div>

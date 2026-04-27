@@ -186,8 +186,6 @@ export default function TransferTaxPage() {
               {/* 계산기 */}
               <TransferTaxCalculator />
 
-              <AdSlot slot="capital-gains-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -548,7 +546,6 @@ export default function TransferTaxPage() {
                 </p>
               </section>
 
-              <AdSlot slot="capital-gains-tax-bottom" format="horizontal" />
             </div>
           </main>
         </div>

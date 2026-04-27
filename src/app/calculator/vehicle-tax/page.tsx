@@ -186,8 +186,6 @@ export default function VehicleTaxPage() {
               {/* 계산기 */}
               <VehicleTaxCalculator />
 
-              <AdSlot slot="vehicle-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치) */}
               <FaqSection items={FAQ_ITEMS} />
 
@@ -320,8 +318,6 @@ export default function VehicleTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              <AdSlot slot="vehicle-tax-feed" format="fluid" />
 
               {/* 절세 팁 */}
               <section className="space-y-4 bg-primary-500/5 border border-primary-500/30 rounded-lg p-6" aria-label="자동차세 절세 팁">

@@ -174,8 +174,6 @@ export default function SavingsPage() {
               {/* 계산기 */}
               <SavingsCalculator />
 
-              <AdSlot slot="savings-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -418,7 +416,6 @@ export default function SavingsPage() {
                 </p>
               </section>
 
-              <AdSlot slot="savings-bottom" format="horizontal" />
             </div>
           </main>
         </div>

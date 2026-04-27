@@ -4,7 +4,6 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
-import { MobileAnchorAd } from '@/components/ads/MobileAnchorAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -213,7 +212,6 @@ export default function HousingSubscriptionPage() {
 
             {/* AD-2 중간 광고 */}
             <div className="my-8">
-              <AdSlot slot="housing-subscription-mid" format="rectangle" />
             </div>
 
             {/* FAQ */}
@@ -342,7 +340,6 @@ export default function HousingSubscriptionPage() {
 
             {/* AD-4 인피드 광고 */}
             <div className="my-8">
-              <AdSlot slot="housing-subscription-feed" format="fluid" />
             </div>
 
             {/* 청약 정보 자료 */}
@@ -418,14 +415,9 @@ export default function HousingSubscriptionPage() {
         {/* AD-3 우측 스티키 광고 (lg+ 이상) */}
         <aside className="hidden w-80 bg-bg-base p-4 lg:block">
           <div className="sticky top-[5rem]">
-            <AdSlot slot="housing-subscription-side" format="vertical" />
           </div>
         </aside>
       </div>
-
-      {/* AD-5 모바일 앵커 광고 */}
-      <MobileAnchorAd slot="housing-subscription-anchor" />
-
       <Footer />
 
       {/* JSON-LD 스크립트 */}

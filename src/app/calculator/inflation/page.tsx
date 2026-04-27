@@ -222,8 +222,6 @@ export default function InflationPage() {
               {/* 계산기 */}
               <InflationCalculator />
 
-              <AdSlot slot="inflation-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -460,7 +458,6 @@ export default function InflationPage() {
                 </p>
               </section>
 
-              <AdSlot slot="inflation-bottom" format="horizontal" />
             </div>
           </main>
         </div>

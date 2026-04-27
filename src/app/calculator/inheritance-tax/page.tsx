@@ -191,8 +191,6 @@ export default function InheritanceTaxPage() {
               {/* 계산기 */}
               <InheritanceTaxCalculator />
 
-              <AdSlot slot="inheritance-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 

@@ -178,8 +178,6 @@ export default function AcquisitionTaxPage() {
               {/* 계산기 */}
               <AcquisitionCalculator />
 
-              <AdSlot slot="acquisition-tax-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -337,7 +335,6 @@ export default function AcquisitionTaxPage() {
                 </p>
               </section>
 
-              <AdSlot slot="acquisition-tax-bottom" format="horizontal" />
             </div>
           </main>
         </div>

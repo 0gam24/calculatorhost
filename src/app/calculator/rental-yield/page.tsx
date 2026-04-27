@@ -216,8 +216,6 @@ export default function RentalYieldPage() {
               {/* 계산기 */}
               <RentalYieldCalculator />
 
-              <AdSlot slot="rental-yield-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -435,7 +433,6 @@ export default function RentalYieldPage() {
                 </p>
               </section>
 
-              <AdSlot slot="rental-yield-bottom" format="horizontal" />
             </div>
           </main>
         </div>

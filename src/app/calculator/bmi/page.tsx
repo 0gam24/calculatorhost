@@ -184,8 +184,6 @@ export default function BmiPage() {
               {/* 계산기 */}
               <BmiCalculator />
 
-              <AdSlot slot="bmi-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -420,7 +418,6 @@ export default function BmiPage() {
                 </p>
               </section>
 
-              <AdSlot slot="bmi-bottom" format="horizontal" />
             </div>
           </main>
         </div>

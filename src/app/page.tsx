@@ -315,13 +315,6 @@ export default function HomePage() {
                 </div>
               </section>
 
-              {/* AD-2 Medium Rectangle */}
-              <AdSlot
-                slot="home-mid"
-                format="rectangle"
-                className="flex justify-center rounded-lg border border-border-base"
-              />
-
               {/* 2026 주요 업데이트 */}
               <section className="card card-hover space-y-6">
                 <div>
@@ -422,13 +415,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </section>
-
-              {/* AD-4 인피드 */}
-              <AdSlot
-                slot="home-feed"
-                format="fluid"
-                className="flex justify-center rounded-lg border border-border-base"
-              />
 
               {/* 면책조항 */}
               <section className="card space-y-3 border-l-4 border-l-danger-500 bg-danger-500/5">

@@ -186,8 +186,6 @@ export default function LoanInterestPage() {
               {/* 계산기 */}
               <LoanCalculator />
 
-              <AdSlot slot="loan-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -405,7 +403,6 @@ export default function LoanInterestPage() {
                 </p>
               </section>
 
-              <AdSlot slot="loan-bottom" format="horizontal" />
             </div>
           </main>
         </div>

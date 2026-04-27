@@ -190,9 +190,6 @@ export default function LoanLimitPage() {
               {/* 계산기 폼 */}
               <LoanLimitCalculator />
 
-              {/* AD-2 Medium Rectangle (계산기-본문 사이) */}
-              <AdSlot slot="loan-limit-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
@@ -389,9 +386,6 @@ export default function LoanLimitPage() {
                 </ul>
               </section>
 
-              {/* AD-4 인피드 */}
-              <AdSlot slot="loan-limit-feed" format="fluid" />
-
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />
 
@@ -435,7 +429,6 @@ export default function LoanLimitPage() {
           {/* 우측 AdSense 사이드바 (lg+) */}
           <aside className="hidden lg:block w-[300px] fixed right-0 top-0 h-screen overflow-y-auto bg-bg-base border-l border-border-base pt-8">
             <div className="px-4 space-y-4">
-              <AdSlot slot="loan-limit-side" format="vertical" />
             </div>
           </aside>
         </div>

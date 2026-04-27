@@ -205,8 +205,6 @@ export default function RetirementPage() {
               {/* 계산기 */}
               <RetirementCalculator />
 
-              <AdSlot slot="retirement-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -456,7 +454,6 @@ export default function RetirementPage() {
                 </p>
               </section>
 
-              <AdSlot slot="retirement-bottom" format="horizontal" />
             </div>
           </main>
         </div>

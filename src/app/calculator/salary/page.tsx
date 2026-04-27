@@ -189,8 +189,6 @@ export default function SalaryPage() {
               {/* 계산기 */}
               <SalaryCalculator />
 
-              <AdSlot slot="salary-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -381,7 +379,6 @@ export default function SalaryPage() {
                 </p>
               </section>
 
-              <AdSlot slot="salary-bottom" format="horizontal" />
             </div>
           </main>
         </div>

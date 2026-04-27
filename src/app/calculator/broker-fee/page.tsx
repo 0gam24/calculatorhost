@@ -190,8 +190,6 @@ export default function CommissionPage() {
               {/* 계산기 */}
               <CommissionCalculator />
 
-              <AdSlot slot="broker-fee-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
@@ -489,7 +487,6 @@ export default function CommissionPage() {
                 </p>
               </section>
 
-              <AdSlot slot="broker-fee-bottom" format="horizontal" />
             </div>
           </main>
         </div>

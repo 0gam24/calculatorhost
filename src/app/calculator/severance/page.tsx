@@ -188,9 +188,6 @@ export default function SeverancePage() {
               {/* 계산기 폼 */}
               <SeveranceCalculator />
 
-              {/* AD-2 Medium Rectangle (계산기-본문 사이) */}
-              <AdSlot slot="severance-mid" format="rectangle" />
-
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
@@ -426,9 +423,6 @@ export default function SeverancePage() {
                   </div>
                 </div>
               </section>
-
-              {/* AD-4 인피드 */}
-              <AdSlot slot="severance-feed" format="fluid" />
 
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />
