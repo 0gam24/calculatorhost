@@ -64,8 +64,9 @@
     --bg-raised: #f0f2f5;
     --bg-sidebar: #f0f2f5;
     --text-primary: #1a1d21;
-    --text-secondary: #4a5568;
-    --text-tertiary: #6b7280;
+    --text-secondary: #3f4651;
+    /* WCAG AA: #4b5563 vs #ffffff = 7.56:1, vs #f7f8fa = 7.16:1 (이전 #6b7280 = 4.55 borderline) */
+    --text-tertiary: #4b5563;
     --border-base: #e5e7eb;
     --border-subtle: #f0f2f5;
     color-scheme: light;

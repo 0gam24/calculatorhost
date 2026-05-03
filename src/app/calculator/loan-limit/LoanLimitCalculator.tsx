@@ -14,7 +14,6 @@ import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
-        <ResultBanner note="실제 대출 한도는 은행 내부 기준에 따라 달라집니다." />
 import { calculateLoanLimit, type RepaymentType } from '@/lib/finance/loan-limit';
 import type { RegionType, LenderType, HousingStatus } from '@/lib/constants/loan-rules-2026';
 import { formatKRW, formatPercent } from '@/lib/utils';
