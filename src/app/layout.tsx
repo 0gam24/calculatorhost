@@ -125,6 +125,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="/fonts/InterVariable.woff2"
           crossOrigin="anonymous"
         />
+        {/* AdSense 도메인 사전 연결 — DNS/TLS 핸드셰이크를 미리 해두고 JS 자체는 lazyOnload.
+            preconnect 만으로는 다운로드 X (실제 fetch는 lazyOnload 시점에). TBT 영향 X. */}
+        {adsenseClient ? (
+          <>
+            <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
+            <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
+            <link rel="dns-prefetch" href="https://adservice.google.com" />
+          </>
+        ) : null}
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script dangerouslySetInnerHTML={{ __html: swInit }} />
       </head>
@@ -139,13 +148,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         {children}
 
-        {/* Google AdSense — afterInteractive 전략 (FCP/LCP 와 경쟁 X)
+        {/* Google AdSense — lazyOnload 전략 (TBT 최소화).
+            window.load + idle callback 후 다운로드 → 메인 스레드 블록 X.
+            adsbygoogle.push() 큐는 스크립트 로드 전에도 안전하게 누적되므로 RPM 영향 미미.
+            preconnect 로 DNS/TLS 사전 완료 → lazyOnload 시점 fetch 빠름.
             슬롯별 push 는 AdSlot 컴포넌트가 IntersectionObserver 로 viewport 진입 시점에 호출. */}
         {adsenseClient ? (
           <Script
             id="adsbygoogle-init"
             src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
-            strategy="afterInteractive"
+            strategy="lazyOnload"
             crossOrigin="anonymous"
           />
         ) : null}
