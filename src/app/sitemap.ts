@@ -61,6 +61,9 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 const GUIDE_SLUGS = [
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
+  'capital-gains-tax-tips',
+  'dsr-regulation-zones',
+  'freelancer-salary-comparison',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -57,6 +57,33 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 8,
   },
+  {
+    slug: 'capital-gains-tax-tips',
+    title: '양도소득세 절세 7가지 방법 (2026)',
+    description:
+      '1세대1주택 비과세, 장기보유공제 80%, 일시적 2주택 3년 특례, 자경 농지 100% 감면 등 양도세 절세 핵심 7가지를 시뮬레이션과 함께 정리.',
+    category: '세금',
+    publishedAt: '2026-05-03',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'dsr-regulation-zones',
+    title: '비규제·조정·투기과열 DSR·LTV 규제 완전 정리 (2026)',
+    description:
+      '같은 주택이라도 위치(비규제·조정·투기과열)에 따라 대출 한도가 1억 원 이상 차이. 스트레스 DSR + 생애최초 우대 + 다주택 중과까지 종합 비교.',
+    category: '금융',
+    publishedAt: '2026-05-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'freelancer-salary-comparison',
+    title: '프리랜서 vs 일반직 실수령액 비교 — 4대보험·세금 차이',
+    description:
+      '같은 연 5천만 원이라도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액 차이. 4대보험 부담·종합소득세·경비 인정 시뮬레이션.',
+    category: '근로',
+    publishedAt: '2026-05-03',
+    readingMinutes: 7,
+  },
 ];
 
 export default function GuideIndexPage() {

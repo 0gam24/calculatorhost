@@ -191,6 +191,108 @@ export default function RentConversionPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
+              {/* 보증금·월세 빠른 환산표 — 검색 의도 매칭 */}
+              <section aria-label="보증금 월세 환산 빠른 조회" className="card">
+                <h2 className="mb-3 text-2xl font-semibold">보증금 ↔ 월세 환산 빠른 조회 (전환율 5.5% 기준)</h2>
+                <p className="mb-4 text-sm text-text-secondary">
+                  2026년 기준금리 3.5% + 2%p = 법정 상한 5.5% 적용 시 흔한 보증금·월세 환산표.
+                  실제 협상 시 정확한 계산은 위 계산기 사용.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th className="px-3 py-2 text-right">전세보증금</th>
+                        <th className="px-3 py-2 text-right">월세 환산 (5.5%)</th>
+                        <th className="px-3 py-2 text-right">반전세 (보증금 50%)</th>
+                        <th className="px-3 py-2 text-right">→ 잔여 월세</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 text-right tabular-nums">1억</td>
+                        <td className="px-3 py-2 text-right tabular-nums">약 458,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">5,000만</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold text-primary-700 dark:text-primary-300">약 229,000원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 text-right tabular-nums">2억</td>
+                        <td className="px-3 py-2 text-right tabular-nums">약 917,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">1억</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold text-primary-700 dark:text-primary-300">약 458,000원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 text-right tabular-nums">3억</td>
+                        <td className="px-3 py-2 text-right tabular-nums">약 1,375,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">1.5억</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold text-primary-700 dark:text-primary-300">약 688,000원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 text-right tabular-nums">5억</td>
+                        <td className="px-3 py-2 text-right tabular-nums">약 2,292,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">2.5억</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold text-primary-700 dark:text-primary-300">약 1,146,000원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 text-right tabular-nums">7억</td>
+                        <td className="px-3 py-2 text-right tabular-nums">약 3,208,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">3.5억</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold text-primary-700 dark:text-primary-300">약 1,604,000원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  공식: 월세 = 보증금 × 전환율 ÷ 12. 예: 1억 × 5.5% ÷ 12 = 458,333원/월.
+                </p>
+              </section>
+
+              {/* 기준금리 변동 시나리오 */}
+              <section aria-label="기준금리 변동 시나리오" className="card">
+                <h2 className="mb-3 text-2xl font-semibold">기준금리 변동에 따른 전환율·월세 영향</h2>
+                <p className="mb-4 text-sm text-text-secondary">
+                  한국은행 기준금리 변동 시 법정 상한 전환율도 함께 변합니다 (기준금리 + 2%p).
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th className="px-3 py-2 text-left">시기·기준금리</th>
+                        <th className="px-3 py-2 text-right">법정 상한 전환율</th>
+                        <th className="px-3 py-2 text-right">1억 → 월세</th>
+                        <th className="px-3 py-2 text-right">3억 → 월세</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2">2020년 (0.5%)</td>
+                        <td className="px-3 py-2 text-right">2.5%</td>
+                        <td className="px-3 py-2 text-right tabular-nums">208,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">625,000원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2">2022년 (3.0%)</td>
+                        <td className="px-3 py-2 text-right">5.0%</td>
+                        <td className="px-3 py-2 text-right tabular-nums">417,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">1,250,000원</td>
+                      </tr>
+                      <tr className="border border-border-base bg-primary-500/5">
+                        <td className="px-3 py-2 font-semibold">2026년 (3.5%) ← 현재</td>
+                        <td className="px-3 py-2 text-right font-semibold">5.5%</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold">458,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums font-semibold">1,375,000원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2">금리 인하 시 (2.5% 가정)</td>
+                        <td className="px-3 py-2 text-right">4.5%</td>
+                        <td className="px-3 py-2 text-right tabular-nums">375,000원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">1,125,000원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
               {/* 전월세 전환율이란 */}
               <section aria-label="전월세 전환율 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">전월세 전환율이란?</h2>
