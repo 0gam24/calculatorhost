@@ -69,6 +69,16 @@ const FAQ_ITEMS = [
     answer:
       '양도세는 양도한 달의 말일부터 2개월 이내에 신고·납부해야 합니다(소득세법 §118, 소득세 시행령 §247). 기한을 초과하면 가산세와 이자가 부과되므로 거래 후 즉시 신고하는 것이 중요합니다.',
   },
+  {
+    question: '토지 양도세는 주택 양도세와 어떻게 다른가요?',
+    answer:
+      '토지(나대지·농지·임야 등)는 1세대1주택 비과세 대상이 아니며, 거주 요건이 없습니다. 일반 누진세율(6~45%) + 장기보유특별공제(연 2%, 최대 30%)가 적용됩니다. 단, 비사업용 토지는 추가 10%p 가산되어 최고 55%까지 부과될 수 있습니다(소득세법 §104의3). 농지·임야는 자경 8년 이상이면 양도세 100% 감면 특례가 있습니다(조세특례제한법 §69).',
+  },
+  {
+    question: '토지 양도세 계산 사례는?',
+    answer:
+      '예시 1 — 5년 보유 나대지 (취득 1억, 양도 3억): 양도차익 2억 − 장기보유공제 10%(연 2% × 5년) = 과세표준 1.8억 → 누진세율 38% − 누진공제 1,994만 = 약 4,847만 원 + 지방소득세 10% = 약 5,332만 원. 예시 2 — 10년 보유 농지 자경(취득 5천, 양도 2억): 자경 8년 미만이면 일반 과세, 8년 이상이면 100% 감면 (조특법 §69, 한도 1억).',
+  },
 ] as const;
 
 const RELATED = [
@@ -392,6 +402,66 @@ export default function TransferTaxPage() {
                     • 합계 최대 80% (예: 보유 10년 + 거주 10년 = 80%)
                   </li>
                 </ul>
+              </section>
+
+              {/* 토지 양도세 (별도 — 주택과 다른 규정) */}
+              <section aria-label="토지 양도세" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">토지 양도세 — 주택과 다른 규정</h2>
+                <p className="mb-4 text-sm text-text-secondary">
+                  토지(나대지·농지·임야·잡종지 등)는 주택과 달리 <strong>1세대1주택 비과세 대상이 아닙니다.</strong>
+                  거주 요건도 적용되지 않으며, 일반 누진세율 + 장기보유공제만 적용됩니다.
+                </p>
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-card p-4 space-y-3">
+                  <h3 className="font-semibold text-text-primary">토지 양도세 핵심 규정</h3>
+                  <ul className="text-sm text-text-secondary space-y-2">
+                    <li>• <strong>일반 누진세율</strong>: 6%~45% (8단계, 주택과 동일)</li>
+                    <li>• <strong>장기보유공제</strong>: 연 2%, 3년 이상 보유부터, <strong>최대 30%</strong> (주택 1세대1주택 80%와 큰 차이)</li>
+                    <li>• <strong>비사업용 토지 가산</strong>: <strong>+10%p</strong> 추가 (소득세법 §104의3) → 최고 55%까지</li>
+                    <li>• <strong>비과세·감면 특례</strong>: 8년 이상 자경 농지 100% 감면 (조특법 §69, 한도 연 1억·5년 합 2억)</li>
+                  </ul>
+                </div>
+
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
+                  <h3 className="mb-2 font-semibold text-text-primary">📌 사례 1. 5년 보유 나대지 양도</h3>
+                  <ul className="text-sm text-text-secondary space-y-1">
+                    <li>취득가: 1억 원 (2021년)</li>
+                    <li>양도가: 3억 원 (2026년)</li>
+                    <li>양도차익: 2억 원</li>
+                    <li>장기보유공제: 2억 × 10% (5년 × 2%) = 2,000만 원</li>
+                    <li>과세표준: 1.8억 원</li>
+                  </ul>
+                  <div className="mt-3 pt-3 border-t border-border-base text-sm">
+                    <p className="text-text-secondary">
+                      <strong>세액 계산:</strong> 1.8억 × 38% − 누진공제 1,994만 = <strong>4,846만 원</strong> (양도세)<br />
+                      <strong>지방소득세:</strong> 4,846만 × 10% = 484만 원<br />
+                      <strong>총 부담:</strong> 약 <strong className="text-primary-700 dark:text-primary-300">5,330만 원</strong> (양도차익의 약 26.7%)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
+                  <h3 className="mb-2 font-semibold text-text-primary">📌 사례 2. 8년 자경 농지 양도 (감면 적용)</h3>
+                  <ul className="text-sm text-text-secondary space-y-1">
+                    <li>취득가: 5,000만 원 (2017년)</li>
+                    <li>양도가: 2억 원 (2026년, 9년 보유)</li>
+                    <li>자경 기간: 8년 이상 ✓ (실제 농업 종사 증빙 필수)</li>
+                  </ul>
+                  <div className="mt-3 pt-3 border-t border-border-base text-sm">
+                    <p className="text-text-secondary">
+                      <strong>감면 적용:</strong> 양도세 100% 감면 (조특법 §69, 연 1억·5년 합 2억 한도 내)<br />
+                      <strong>최종 부담:</strong> <strong className="text-primary-700 dark:text-primary-300">0원</strong> (단, 농지원부 등 자경 증빙 필요)<br />
+                      <strong>주의:</strong> 자경 기준 — 직접 농업 종사 + 거주 요건 (8년 + 농지 소재지 거주)
+                    </p>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <p className="text-sm text-danger-700 dark:text-danger-300">
+                    <strong>⚠️ 비사업용 토지 주의</strong>: 도시 외곽 나대지·임야 등이 비사업용으로 분류되면
+                    누진세율에 +10%p 가산됩니다. 사업 사용 입증(임대·경작·자영업 등)으로 사업용 인정받아야
+                    가산세 회피 가능. 정확한 분류는 국세청 양도소득세 전문가 상담 권장.
+                  </p>
+                </div>
               </section>
 
               {/* 1세대1주택 비과세 */}

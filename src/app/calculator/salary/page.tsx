@@ -192,6 +192,91 @@ export default function SalaryPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
+              {/* 월급별 실수령액 빠른 조회표 — 검색 의도 직접 매칭 */}
+              <section aria-label="월급별 실수령액 빠른 조회" className="card">
+                <h2 className="mb-3 text-2xl font-semibold">월급별 실수령액 빠른 조회 (2026)</h2>
+                <p className="mb-4 text-sm text-text-secondary">
+                  자주 검색되는 세전 월급액의 실수령액 (부양가족 1인, 비과세 식대 미적용 기준).
+                  자녀 공제·식대 비과세 적용 시 약 5~15만 원 더 늘어납니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">세전 월급</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">연봉 환산</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">4대보험</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">소득세+지방세</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">월 실수령</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">2,000,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">2,400만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−180,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−10,500</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 1,810,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">2,500,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,000만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−225,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−48,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2,270,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">3,000,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,600만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−270,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−85,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2,690,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">3,300,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,960만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−297,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−110,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2,930,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">3,500,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">4,200만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−315,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−135,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3,090,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">4,000,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">4,800만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−360,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−210,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3,470,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">4,500,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">5,400만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−405,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−290,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3,860,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">5,000,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">6,000만</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−450,000</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−385,000</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 4,200,000원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  * 위 표는 부양가족 1인·비과세 항목 미적용·근로소득공제 표준 적용 추정치입니다.
+                  실제 본인 조건(부양가족, 자녀, 비과세 식대, 퇴직금 포함 여부)으로 정확한 실수령액을
+                  확인하려면 위 계산기를 사용하세요.
+                </p>
+              </section>
+
               {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>

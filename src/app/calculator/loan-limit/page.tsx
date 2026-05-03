@@ -375,19 +375,32 @@ export default function LoanLimitPage() {
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-highlight-500 mb-3">
-                      사례 3. 생애최초 구매자, LTV 우대 혜택
+                      사례 3. 생애최초 구매자 + 스트레스 DSR 풀 적용 (2026)
                     </h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>연소득: 6,000만 원 (무주택 + 생애최초 자격)</li>
                       <li>구매 주택: 6억 원 (비규제 지역)</li>
                       <li>자기자금: 1.5억 원</li>
-                      <li>신규 대출 목표: 4.5억 원</li>
+                      <li>신규 대출 목표: 4.5억 원, 변동금리 4.0% (스트레스 1.5%p 가산 → 5.5% DSR 산정)</li>
                     </ul>
-                    <div className="mt-3 pt-3 border-t border-border-base text-sm">
+                    <div className="mt-3 pt-3 border-t border-border-base text-sm space-y-2">
                       <p className="text-text-secondary">
-                        <strong>LTV 계산:</strong> 4.5억 / 6억 = 75% (생애최초 80% 우대 적용 가능) ✓<br/>
-                        <strong>DSR 계산:</strong> 신규 월원리금 약 214만 / 500만 = 42.8% ✗ (40% 초과)<br/>
-                        <strong>결론:</strong> LTV는 통과하지만 DSR로 제약. 자기자금 추가 또는 금리 인상 대비 필요. 실제로는 3.8억 원 정도가 현실적.
+                        <strong>LTV 계산:</strong> 4.5억 ÷ 6억 = 75% (생애최초 80% 우대 적용 가능) ✓
+                      </p>
+                      <p className="text-text-secondary">
+                        <strong>스트레스 DSR 미적용 (고정금리 4.0%):</strong> 월원리금 약 214만 ÷ 500만 = 42.8% ✗ (40% 초과)
+                      </p>
+                      <p className="text-text-secondary">
+                        <strong>스트레스 DSR 적용 (변동금리 4.0% + 1.5%p):</strong> 월원리금 약 256만 ÷ 500만 = 51.2% ✗ (40% 큰 폭 초과)
+                      </p>
+                      <p className="text-text-secondary">
+                        <strong>결론:</strong> 생애최초 LTV 우대(80%)에도 불구하고 DSR로 제약.
+                        <strong> 변동금리 선택 시 한도 약 3.3억(스트레스 5.5% 기준) vs 고정금리 약 3.8억(4.0% 기준)</strong>으로
+                        고정금리가 한도 1.5천만 원 더 유리. 또는 자기자금을 2억 원으로 늘려 대출액 4억 원으로 줄이면 DSR 통과 가능.
+                      </p>
+                      <p className="text-text-tertiary text-xs">
+                        ※ 생애최초는 LTV 우대만 적용되며, DSR 우대는 없음 (2026년 기준).
+                        스트레스 DSR 면제 대상은 정책서민금융상품 일부에 한정.
                       </p>
                     </div>
                   </div>

@@ -242,6 +242,80 @@ export default function VehicleTaxPage() {
                 </div>
               </section>
 
+              {/* cc별 빠른 조회표 — 검색 의도 직접 매칭 */}
+              <section className="space-y-4" aria-label="배기량별 자동차세 빠른 조회">
+                <h2 className="text-2xl font-bold text-text-primary">cc별 자동차세 빠른 조회 (신차 기준)</h2>
+                <p className="text-text-secondary text-sm">
+                  자주 검색되는 배기량의 연간 자동차세 (본세 + 지방교육세 30%, 차령 1년 차 기준).
+                  실제 세액은 차령경감·연납 할인에 따라 달라집니다 — 정확한 계산은 위 계산기 사용.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th className="px-4 py-3 text-left font-bold text-text-primary">대표 차종</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">배기량</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">본세 (cc×세율)</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">+ 교육세 30%</th>
+                        <th className="px-4 py-3 text-right font-bold text-text-primary">연 합계</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-text-secondary">경차 (모닝·스파크)</td>
+                        <td className="px-4 py-2 text-right tabular-nums">1000cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">80,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+24,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">104,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-text-secondary">아반떼·니로</td>
+                        <td className="px-4 py-2 text-right tabular-nums">1600cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">224,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+67,200원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">291,200원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-text-secondary">쏘나타·K5</td>
+                        <td className="px-4 py-2 text-right tabular-nums">2000cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">400,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+120,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">520,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-text-secondary">그랜저·K8</td>
+                        <td className="px-4 py-2 text-right tabular-nums">2500cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">500,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+150,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">650,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-text-secondary">제네시스 G80·카니발</td>
+                        <td className="px-4 py-2 text-right tabular-nums">3000cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">600,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+180,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">780,000원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-text-secondary">제네시스 GV80·G90</td>
+                        <td className="px-4 py-2 text-right tabular-nums">3500cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">700,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+210,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">910,000원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="rounded-lg bg-bg-raised p-4 text-sm">
+                  <p className="text-text-primary font-semibold mb-2">⚠️ 경계값 주의</p>
+                  <ul className="space-y-1 text-text-secondary">
+                    <li>• <strong>1000cc 정확</strong>: 80원/cc 적용 (1001cc부터 140원/cc)</li>
+                    <li>• <strong>1600cc 정확</strong>: 140원/cc 적용 (1601cc부터 200원/cc) — 1cc 차이로 약 9만 원 차이</li>
+                    <li>• 연납 신청(1월) 시 약 6.4% 할인 (예: 1600cc 291,200원 → 약 272,500원)</li>
+                  </ul>
+                </div>
+              </section>
+
               {/* 차령경감표 */}
               <section className="space-y-4" aria-label="차령 경감률">
                 <h2 className="text-2xl font-bold text-text-primary">차령경감률 (노후차 할인)</h2>
