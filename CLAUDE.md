@@ -21,13 +21,20 @@
 #### 2) API 키·시크릿 노출 금지
 - **API 키·토큰·비밀번호·인증서를 코드·문서·로그·커밋 메시지에 절대 적지 않음.**
 - 노출 가능 파일은 정해진 곳만:
-  - 실제 값: `.env.local` (gitignore + Read/Write/Edit 차단)
+  - 실제 값(로컬 dev): `.env.local` 또는 `.my` (gitignore 처리됨, **읽기 영구 차단** + 쓰기·편집은 운영자 명시 승인 시에만)
+  - 실제 값(프로덕션): Cloudflare Pages 환경변수 (`.env.production*` 은 영구 차단)
   - 예시·placeholder: `.env.example` (실제 값 X, `YOUR_API_KEY_HERE` 형식만)
   - 공개 ID(AdSense `ca-pub-*`, GA `G-*`): `ads.txt`, `.env.example` 외 위치 금지
-- 차단 대상 파일·명령:
-  - 읽기/쓰기 차단: `.env`, `.env.local`, `.env.production`, `**/secrets.json`, `**/credentials.json`, `**/*.pem`, `**/*.key`, `**/.npmrc`, `**/.netrc`, `~/.aws/`, `~/.ssh/`
-  - 출력 명령 차단: `cat .env*`, `env`, `printenv`, `echo $*KEY/SECRET/TOKEN/PASSWORD`
-- 시크릿 패턴 자동 검출: `.claude/hooks/check-secrets.sh` 가 Edit/Write 시 OpenAI(sk-) / Anthropic(sk-ant-) / GitHub(ghp_ / github_pat_) / Google(AIza) / AWS(AKIA) / Slack(xoxb-) / Bearer 토큰 / Basic Auth / private key 헤더 등을 차단.
+- **권한 정책 (2026-05-03 운영자 명시 승인으로 갱신)**:
+  | 파일 | Read | Write/Edit |
+  |---|---|---|
+  | `.env.local`, `.env`, `.env.development.local`, `.my`, `*.my`, `.my.*` | **영구 차단 (deny)** | **ask** (매번 운영자 승인) |
+  | `.env.production`, `.env.production.local` | **영구 차단** | **영구 차단** (Cloudflare 대시보드에서만) |
+  | `**/secrets.json`, `**/credentials.json`, `**/*.pem`, `**/*.key`, `**/*service-account*.json`, `secrets/**` | **영구 차단** | **영구 차단** |
+  | `~/.aws/`, `~/.ssh/`, `**/.npmrc`, `**/.netrc` | **영구 차단** | (해당 없음) |
+- 출력 명령 영구 차단: `cat .env*`, `cat .my*`, `cat *.my`, `env`, `printenv`, `echo $*KEY/SECRET/TOKEN/PASSWORD`
+  - 이유: Read 가 ask 로 풀려도 Bash 출력으로 키 값이 응답에 들어가는 사고 방지
+- 시크릿 패턴 자동 검출 (이중 안전망): `.claude/hooks/check-secrets.sh` 가 Write/Edit ask 승인 후에도 OpenAI(sk-) / Anthropic(sk-ant-) / GitHub(ghp_ / github_pat_) / Google(AIza) / AWS(AKIA) / Slack(xoxb-) / Bearer 토큰 / Basic Auth / private key 헤더 등 검출 시 **자동 차단**.
 - 새 외부 API 통합 시:
   1. 키는 Cloudflare Pages 환경변수 또는 Workers Secret 으로 이전.
   2. 코드에선 `process.env.NAME` 으로만 참조.
