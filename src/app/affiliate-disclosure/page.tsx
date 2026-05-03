@@ -131,6 +131,7 @@ export default function AffiliateDisclosurePage() {
                         <tr className="border-b-2 border-border-base bg-primary-500/5">
                           <th scope="col" className="px-3 py-2 text-left font-semibold">파트너</th>
                           <th scope="col" className="px-3 py-2 text-left font-semibold">카테고리</th>
+                          <th scope="col" className="px-3 py-2 text-left font-semibold">가입 형태</th>
                           <th scope="col" className="px-3 py-2 text-left font-semibold">설명</th>
                         </tr>
                       </thead>
@@ -142,6 +143,9 @@ export default function AffiliateDisclosurePage() {
                               <span className="rounded-full bg-primary-500/10 px-2 py-0.5 text-xs text-primary-700 dark:text-primary-300">
                                 {p.category}
                               </span>
+                            </td>
+                            <td className="px-3 py-2 text-text-tertiary whitespace-nowrap text-xs">
+                              {p.type}
                             </td>
                             <td className="px-3 py-2 text-text-secondary">{p.description}</td>
                           </tr>
