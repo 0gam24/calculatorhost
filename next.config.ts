@@ -51,11 +51,11 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: false,
   },
   // 빌드 산출물 최적화 (PageSpeed 점수 영향)
+  // ⚠ optimizeCss(critters)는 output: 'export' 환경에서 회귀 발생(Style & Layout +526ms,
+  //   TBT +270ms 측정됨, 2026-05-03). CSS 인라이닝이 일어나지 않는 채 critters 후처리만
+  //   추가되어 부작용 → 비활성화. 추후 next-on-pages 어댑터 도입 시 재검토.
   experimental: {
-    // Critical CSS 자동 인라이닝 — render-blocking CSS 9.6KB / 150ms 절감 목표.
-    // 빌드 타임에 above-the-fold CSS 만 추출해 <head> 인라인. 나머지는 lazy load.
-    optimizeCss: true,
-    // 트리쉐이킹 강화 — recharts·next/link 등 거대 패키지에서 사용 외 코드 제거.
+    // 트리쉐이킹 강화 — recharts 등 거대 패키지에서 사용 외 코드 제거.
     optimizePackageImports: ['recharts'],
   },
 };
