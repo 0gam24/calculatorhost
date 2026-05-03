@@ -489,7 +489,7 @@ export default function PropertyTaxPage() {
               >
                 <p className="mb-2">
                   <strong>출처</strong>: 지방세법 §110(과세표준), §111(일반 세율), §111의2(1세대1주택
-                  특례), §112(도시지역분), §150(지방교육세) · 공정시장가액비율 고시. 참고: <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">위택스</a>, <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국부동산원</a>.
+                  특례), §112(도시지역분), §150(지방교육세) · 공정시장가액비율 고시. 참고: <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a>, <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원</a>.
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 세부담 상한, 지역자원시설세

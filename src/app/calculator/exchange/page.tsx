@@ -455,7 +455,7 @@ export default function ExchangePage() {
             {/* 출처·면책 */}
             <section className="mt-6 border-t border-border-base pt-6 mb-6">
               <p className="text-xs text-text-secondary mb-2">
-                <strong>공식 출처</strong>: 한국은행 <a href="https://ecos.bok.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">ECOS(경제통계시스템)</a> 기준환율 데이터, <a href="https://www.koreaexim.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국수출입은행</a> 환율 정보.
+                <strong>공식 출처</strong>: 한국은행 <a href="https://ecos.bok.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">ECOS(경제통계시스템)</a> 기준환율 데이터, <a href="https://www.koreaexim.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국수출입은행</a> 환율 정보.
               </p>
             </section>
 

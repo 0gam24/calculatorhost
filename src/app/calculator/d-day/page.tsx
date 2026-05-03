@@ -369,7 +369,7 @@ export default function DdayPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>계산 기준</strong>: UTC(협정세계시) 자정 기준 일수 계산, 윤년 완벽 처리. 참고: <a href="https://www.kasi.re.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국천문연구원</a> 표준시, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국가법령정보센터</a>
+                  <strong>계산 기준</strong>: UTC(협정세계시) 자정 기준 일수 계산, 윤년 완벽 처리. 참고: <a href="https://www.kasi.re.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국천문연구원</a> 표준시, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국가법령정보센터</a>
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 법적 기한(계약, 신고, 소송 등)과 관련된 날짜 계산에는 반드시 공식 기관(법원, 국세청, 행정기관)의 안내를 확인하시기 바랍니다.

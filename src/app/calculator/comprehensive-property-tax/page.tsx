@@ -566,7 +566,7 @@ export default function ComprehensivePropertyTaxPage() {
               >
                 <p className="mb-2">
                   <strong>출처</strong>: 종합부동산세법 §7(과세표준), §8(세율), §9(1세대1주택
-                  세액공제) · 농어촌특별세법 §5(농특세) · 공정시장가액비율 고시 · <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국세청 홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국세청</a>.
+                  세액공제) · 농어촌특별세법 §5(농특세) · 공정시장가액비율 고시 · <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>.
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 세대 판정, 조정지역 중과 폐지,

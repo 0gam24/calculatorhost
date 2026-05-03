@@ -274,10 +274,12 @@ export default function LoanLimitPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">주의사항</h2>
                 <div className="bg-danger-500/5 border border-danger-500/20 rounded-lg p-4 space-y-2">
-                  <p className="text-sm text-danger-500 font-medium">
+                  {/* WCAG AA: bg-danger-500/5 위에 text-danger-500(#fc354d) = 3.2:1 (fail).
+                      text-danger-700 (#b91c1c) ≈ 6.5:1 (pass) */}
+                  <p className="text-sm text-danger-700 dark:text-danger-300 font-medium">
                     이 계산기는 일반적인 규제 기준을 따른 참고용이며, 실제 대출 한도는 다음 요인에 따라 달라질 수 있습니다:
                   </p>
-                  <ul className="text-sm text-danger-500/90 space-y-1">
+                  <ul className="text-sm text-danger-700 dark:text-danger-300 space-y-1">
                     <li>• 금융기관의 자체 심사 기준 및 우대 정책</li>
                     <li>• 소득 증빙 방식 및 인정도 (급여·사업·임차료·연금 등)</li>
                     <li>• 신용등급, 신용거래 이력</li>
@@ -285,7 +287,7 @@ export default function LoanLimitPage() {
                     <li>• 상품별 세부 규정 (예: DSR 산정에 부분 제외 대상)</li>
                     <li>• 금융기관 유동성 및 여신 한도</li>
                   </ul>
-                  <p className="text-sm text-danger-500 font-medium mt-2">
+                  <p className="text-sm text-danger-700 dark:text-danger-300 font-medium mt-2">
                     실제 대출 실행은 반드시 금융기관의 여신심사 결과를 따릅니다.
                   </p>
                 </div>
@@ -400,8 +402,8 @@ export default function LoanLimitPage() {
                   </p>
                   <ul className="space-y-1 mt-1">
                     <li>• 은행법 시행령 §24의4 (DSR 기준)</li>
-                    <li>• <a href="https://www.fsc.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">금융위원회</a> 여신심사 선진화 가이드라인</li>
-                    <li>• <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">금융감독원</a> 주택담보대출 규제 고시</li>
+                    <li>• <a href="https://www.fsc.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융위원회</a> 여신심사 선진화 가이드라인</li>
+                    <li>• <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원</a> 주택담보대출 규제 고시</li>
                     <li>• 은행업감독업무 시행세칙 (LTV·DTI 규제)</li>
                     <li>• 스트레스 DSR 도입 (2024년 2월 ~ 2026년 전면)</li>
                   </ul>

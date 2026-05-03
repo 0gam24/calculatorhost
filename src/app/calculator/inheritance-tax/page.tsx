@@ -536,7 +536,7 @@ export default function InheritanceTaxPage() {
                   <strong>법적 근거</strong>: 상속세 및 증여세법 §21(공제), §26(세율), §68(신고세액공제)
                 </p>
                 <p className="mb-2">
-                  <strong>공식 출처</strong>: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국세청 홈택스</a> 상속세 안내, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국세청</a> 세법, <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">기획재정부</a> 세제 정보.
+                  <strong>공식 출처</strong>: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a> 상속세 안내, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 세법, <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">기획재정부</a> 세제 정보.
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 상속세는 재산 평가, 공제 항목, 상속인 구성 등 복잡한 요소를 포함합니다. 정확한 계산과 신고는 반드시 세무사·변호사 상담을 받으시기 바랍니다.

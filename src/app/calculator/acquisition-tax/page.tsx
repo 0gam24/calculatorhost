@@ -292,7 +292,7 @@ export default function AcquisitionTaxPage() {
                       href="https://www.hometax.go.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       국세청 홈택스 — 취득세 신고·납부 안내
                     </a>
@@ -302,7 +302,7 @@ export default function AcquisitionTaxPage() {
                       href="https://www.moef.go.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       기획재정부 — 부동산 세법 개정안 공시
                     </a>
@@ -312,7 +312,7 @@ export default function AcquisitionTaxPage() {
                       href="https://www.reb.or.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       한국부동산원 — 부동산 시가표준액 및 공시가격 조회
                     </a>

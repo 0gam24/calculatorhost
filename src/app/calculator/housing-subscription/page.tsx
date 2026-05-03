@@ -349,7 +349,7 @@ export default function HousingSubscriptionPage() {
                 <li>
                   <a
                     href="https://www.applyhome.co.kr"
-                    className="text-primary-600 hover:underline dark:text-primary-500"
+                    className="text-primary-600 underline dark:text-primary-500"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -360,7 +360,7 @@ export default function HousingSubscriptionPage() {
                 <li>
                   <a
                     href="https://www.moi.go.kr"
-                    className="text-primary-600 hover:underline dark:text-primary-500"
+                    className="text-primary-600 underline dark:text-primary-500"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -371,7 +371,7 @@ export default function HousingSubscriptionPage() {
                 <li>
                   <a
                     href="https://www.hnews.co.kr"
-                    className="text-primary-600 hover:underline dark:text-primary-500"
+                    className="text-primary-600 underline dark:text-primary-500"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >
@@ -396,7 +396,7 @@ export default function HousingSubscriptionPage() {
             {/* 출처·면책 */}
             <section className="mt-6 border-t border-border-base pt-6 mb-6">
               <p className="text-xs text-text-secondary mb-2">
-                <strong>공식 출처</strong>: <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">청약홈(applyhome.co.kr)</a> 공식 청약 플랫폼, <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">LH(한국토지주택공사)</a> 공공분양 정보.
+                <strong>공식 출처</strong>: <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">청약홈(applyhome.co.kr)</a> 공식 청약 플랫폼, <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">LH(한국토지주택공사)</a> 공공분양 정보.
               </p>
             </section>
 

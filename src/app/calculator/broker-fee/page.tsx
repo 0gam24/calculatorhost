@@ -478,7 +478,7 @@ export default function CommissionPage() {
               >
                 <p className="mb-2">
                   <strong>출처</strong>: 공인중개사법 §32, 공인중개사법 시행규칙 §20, 국토교통부
-                  고시 「부동산 중개보수 요율」(2023.10.19 개정), <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국토교통부</a>, <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">위택스</a> 공식 자료.
+                  고시 「부동산 중개보수 요율」(2023.10.19 개정), <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a>, <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a> 공식 자료.
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 법정 상한·한도액은 참고용이고,

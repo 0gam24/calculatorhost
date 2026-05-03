@@ -423,7 +423,7 @@ export default function RentalYieldPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://rt.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국토교통부 실거래가</a> 시세 정보, <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국부동산원</a> 부동산 통계, 국세청 종합소득세 안내.
+                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://rt.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 실거래가</a> 시세 정보, <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원</a> 부동산 통계, 국세청 종합소득세 안내.
                 </p>
                 <p>
                   본 계산기의 결과는 교육·참고용이며 법적 효력이 없습니다. 실제 임대차 투자는

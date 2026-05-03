@@ -28,6 +28,7 @@ export function DataFreshness({ source, fetchedAt, isLive }: DataFreshnessProps)
   return (
     <div className="mt-4 flex items-center gap-2 rounded-lg bg-neutral-100 px-3 py-2 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
       <span
+        role="img"
         className={`inline-block h-2 w-2 rounded-full ${
           isLive ? 'bg-green-500' : 'bg-neutral-400'
         }`}

@@ -476,7 +476,7 @@ export default function AreaConversionPage() {
                   <strong>법적 근거</strong>: 계량법 §1 · 계량법 시행령 §9 · 건축법 시행령 §2 (바닥면적)
                 </p>
                 <p className="mb-2">
-                  <strong>공식 출처</strong>: <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국가법령정보센터</a> 법령 검색, <a href="https://kostat.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">통계청</a> 표준 단위 정보.
+                  <strong>공식 출처</strong>: <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국가법령정보센터</a> 법령 검색, <a href="https://kostat.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">통계청</a> 표준 단위 정보.
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 부동산 거래, 세금 계산, 등기 시에는 정부 공식 문서(계약서, 등기부등본, 공시가격)를 반드시 확인하시기 바랍니다.

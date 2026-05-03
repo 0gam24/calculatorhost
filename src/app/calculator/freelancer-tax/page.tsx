@@ -651,7 +651,7 @@ export default function FreelancerTaxPage() {
               >
                 <p className="mb-2">
                   <strong>공식 근거</strong>: 소득세법 §55(종합소득세율) · §80(과세표준) ·
-                  §127·§129(원천징수) · 시행령 §143(단순경비율). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국세청 홈택스</a>, <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">기획재정부</a>.
+                  §127·§129(원천징수) · 시행령 §143(단순경비율). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>, <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">기획재정부</a>.
                 </p>
                 <p className="mb-2">
                   <strong>계산 기준</strong>: 2026년 세율 기준, 누진 8단계 적용, 지방소득세

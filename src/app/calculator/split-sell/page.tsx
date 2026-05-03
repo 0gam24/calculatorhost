@@ -406,9 +406,9 @@ export default function SplitSellPage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거 및 참고 자료</strong>:
-                  {' '}<a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국거래소(KRX)</a> 거래 정보,
-                  {' '}<a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국세청</a> 증권거래세 안내,
-                  {' '}<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">금융감독원</a> 투자자 보호.
+                  {' '}<a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국거래소(KRX)</a> 거래 정보,
+                  {' '}<a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 증권거래세 안내,
+                  {' '}<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원</a> 투자자 보호.
                 </p>
                 <p>
                   <strong>면책 조항</strong>: 본 계산기는 교육·참고 목적이며 투자 권유가

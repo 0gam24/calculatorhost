@@ -437,8 +437,8 @@ export default function SeverancePage() {
                 </p>
                 <div className="text-sm text-text-tertiary space-y-1">
                   <p>• 법적 근거: 근로기준법 §2, 근로자퇴직급여 보장법 §8, 소득세법 §55·§148의4</p>
-                  <p>• 참고: <a href="https://www.hometax.go.kr" className="text-primary-600 hover:underline dark:text-primary-500" target="_blank" rel="noopener noreferrer">국세청 홈택스</a> 퇴직소득 간이계산기</p>
-                  <p>• 공식 안내: <a href="https://www.moel.go.kr" className="text-primary-600 hover:underline dark:text-primary-500" target="_blank" rel="noopener noreferrer">고용노동부</a> 퇴직금 정보</p>
+                  <p>• 참고: <a href="https://www.hometax.go.kr" className="text-primary-600 underline dark:text-primary-500" target="_blank" rel="noopener noreferrer">국세청 홈택스</a> 퇴직소득 간이계산기</p>
+                  <p>• 공식 안내: <a href="https://www.moel.go.kr" className="text-primary-600 underline dark:text-primary-500" target="_blank" rel="noopener noreferrer">고용노동부</a> 퇴직금 정보</p>
                 </div>
               </section>
 

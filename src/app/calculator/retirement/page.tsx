@@ -445,7 +445,7 @@ export default function RetirementPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">국민연금공단</a> 연금 정보, <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">고용노동부</a> 퇴직연금 가이드, Trinity Study (1998).
+                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민연금공단</a> 연금 정보, <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">고용노동부</a> 퇴직연금 가이드, Trinity Study (1998).
                 </p>
                 <p>
                   본 계산기의 결과는 교육·참고용이며 법적 효력이 없습니다. 실제 은퇴 계획은 개인의 소득·자산·지출·세금·의료비

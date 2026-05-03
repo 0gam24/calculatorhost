@@ -336,7 +336,7 @@ export default function SalaryPage() {
                       href="https://www.hometax.go.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       국세청 홈택스 — 근로소득 세액계산 및 간이세액표 조회
                     </a>
@@ -346,7 +346,7 @@ export default function SalaryPage() {
                       href="https://www.moef.go.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       기획재정부 — 소득세법 개정사항 공시
                     </a>
@@ -356,7 +356,7 @@ export default function SalaryPage() {
                       href="https://www.bok.or.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       한국은행 — 금리 정보 및 경제 지표
                     </a>

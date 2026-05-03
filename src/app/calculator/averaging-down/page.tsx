@@ -575,7 +575,7 @@ export default function AveragingDownPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국거래소</a> 주식 정보, <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">금감원</a> 투자자 보호 정보.
+                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국거래소</a> 주식 정보, <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금감원</a> 투자자 보호 정보.
                 </p>
                 <p>
                   <strong>면책 조항</strong>: 본 계산기는 교육·참고 목적이며 투자 권유가 아닙니다.

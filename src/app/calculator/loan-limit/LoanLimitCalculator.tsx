@@ -174,10 +174,10 @@ export function LoanLimitCalculator() {
 
     return (
       <div className="rounded-lg bg-danger-500/5 border border-danger-500/20 p-4">
-        <p className="text-sm font-medium text-danger-500 mb-2">주의</p>
+        <p className="text-sm font-medium text-danger-700 dark:text-danger-300 mb-2">주의</p>
         <ul className="space-y-1">
           {result.warnings.map((warning, idx) => (
-            <li key={idx} className="text-sm text-danger-500/90">
+            <li key={idx} className="text-sm text-danger-700 dark:text-danger-300">
               • {warning}
             </li>
           ))}

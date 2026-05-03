@@ -408,7 +408,7 @@ export default function BmiPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>공식 근거</strong>: <a href="https://www.kosso.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">대한비만학회</a> 「비만 진료지침」 2022 개정판, <a href="https://www.mohw.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">보건복지부</a> 국민건강정보.
+                  <strong>공식 근거</strong>: <a href="https://www.kosso.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">대한비만학회</a> 「비만 진료지침」 2022 개정판, <a href="https://www.mohw.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">보건복지부</a> 국민건강정보.
                 </p>
                 <p className="mb-2">
                   <strong>계산 기준</strong>: BMI = 몸무게(kg) ÷ 키(m)², 소수점 둘째 자리까지 표시

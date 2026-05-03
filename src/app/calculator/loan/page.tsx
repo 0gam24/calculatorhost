@@ -361,7 +361,7 @@ export default function LoanInterestPage() {
                       href="https://www.fss.or.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       금융감독원 — 대출 상품 비교 및 금리 정보
                     </a>
@@ -371,7 +371,7 @@ export default function LoanInterestPage() {
                       href="https://www.bok.or.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       한국은행 — 기준금리 및 금리 인상·인하 정보
                     </a>
@@ -381,7 +381,7 @@ export default function LoanInterestPage() {
                       href="https://www.kftc.or.kr"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-primary-600 hover:underline dark:text-primary-500"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
                       금융결제원 — 금융 표준 및 정보
                     </a>

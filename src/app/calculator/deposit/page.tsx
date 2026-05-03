@@ -527,7 +527,7 @@ export default function DepositPage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §14(이자소득), §129(이자소득세), 조세특례제한법
-                  §89의2(세금우대종합저축), §91(비과세 저축성 보험료·ISA 등), <a href="https://www.bok.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">한국은행</a>, <a href="https://finlife.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 hover:underline dark:text-primary-500">금감원 금융상품 한눈에</a>.
+                  §89의2(세금우대종합저축), §91(비과세 저축성 보험료·ISA 등), <a href="https://www.bok.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국은행</a>, <a href="https://finlife.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금감원 금융상품 한눈에</a>.
                 </p>
                 <p>
                   본 계산기의 결과는 교육·참고용이며 법적 효력이 없습니다. 실제 정기예금은 은행별로
