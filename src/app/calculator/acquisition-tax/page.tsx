@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AcquisitionCalculator } from './AcquisitionCalculator';
 
@@ -123,6 +124,42 @@ export default function AcquisitionTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildDefinedTermSetJsonLd({
+              name: '취득세 핵심 용어',
+              description: '주택·부동산 취득 시 적용되는 취득세 산정 용어집',
+              url: `${URL}#glossary`,
+              terms: [
+                {
+                  name: '취득세',
+                  description: '부동산·자동차·선박·항공기 등 자산 취득 시 부과되는 지방세. 주택은 거래가 기준 1~12% (조정지역·다주택 가산). 근거: 지방세법 §10 이하.',
+                  url: 'https://www.wetax.go.kr',
+                },
+                {
+                  name: '농어촌특별세',
+                  alternateName: '농특세',
+                  description: '취득세에 부가되는 국세. 표준세율 0.2% (감면 대상은 다른 비율). 근거: 농어촌특별세법.',
+                },
+                {
+                  name: '지방교육세',
+                  description: '취득세에 부가되는 지방세. 표준 0.4% (취득세율의 일정 비율). 근거: 지방세법 §150.',
+                },
+                {
+                  name: '생애최초 주택구입 감면',
+                  description: '생애최초 주택 취득 시 취득세 감면 (요건: 무주택 세대주, 취득가 12억 이하 등). 산정 후 200만 원 한도 감면. 근거: 지방세특례제한법 §36의2.',
+                },
+                {
+                  name: '조정대상지역 다주택 중과',
+                  description: '조정대상지역 내 2주택 이상 보유자가 신규 주택 취득 시 취득세 8~12% 중과. 1주택 일반 1~3% 대비 큰 부담. 근거: 지방세법 §13의2.',
+                },
+              ],
+            })
+          ),
+        }}
       />
 
       <div className="min-h-screen bg-bg-base">

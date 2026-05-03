@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AveragingDownCalculator } from './AveragingDownCalculator';
 
@@ -183,6 +184,39 @@ export default function AveragingDownPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildDefinedTermSetJsonLd({
+              name: '물타기·평단 핵심 용어',
+              description: '주식·코인 물타기와 평균단가 산정 관련 용어집',
+              url: `${URL}#glossary`,
+              terms: [
+                {
+                  name: '물타기 (Averaging Down)',
+                  alternateName: '평단 낮추기',
+                  description: '보유 종목 가격이 하락했을 때 추가 매수해 평균단가를 낮추는 전략. 손익분기점이 낮아져 회복에 필요한 상승률이 감소하지만, 추가 하락 시 손실이 가중됨.',
+                },
+                {
+                  name: '평균단가 (가중평균)',
+                  alternateName: '평단',
+                  description: '보유 종목의 매입 단가를 가중평균한 값. 산식: Σ(매입가 × 매입수량) ÷ 총 보유수량. 분할매도는 평단을 변경하지 않음.',
+                },
+                {
+                  name: '추매 (추가 매수)',
+                  description: '이미 보유 중인 종목을 더 사는 모든 거래의 총칭. 하락 시 추매는 물타기, 상승 시 추매는 불타기(피라미딩)로 구분.',
+                },
+                {
+                  name: '손익분기점 (BEP)',
+                  alternateName: 'BEP',
+                  description: 'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.18% 추가 부담.',
+                },
+              ],
+            })
+          ),
+        }}
       />
 
       <div className="min-h-screen bg-bg-base">

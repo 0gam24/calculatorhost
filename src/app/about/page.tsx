@@ -94,7 +94,7 @@ export default function AboutPage() {
 
               <h2 className="text-2xl font-semibold text-text-primary">제공 카테고리</h2>
               <p>
-                현재 30개의 무료 계산기를 5개 카테고리로 운영하고 있으며, 각 카테고리에서 용도에 맞는
+                현재 31개의 무료 계산기를 5개 카테고리로 운영하고 있으며, 각 카테고리에서 용도에 맞는
                 계산기를 선택할 수 있습니다.
               </p>
               <ul className="mt-4 grid gap-3 not-prose">

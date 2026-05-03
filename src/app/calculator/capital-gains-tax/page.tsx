@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { TransferTaxCalculator } from './TransferTaxCalculator';
 
@@ -107,12 +108,45 @@ export default function TransferTaxPage() {
     { name: '양도소득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '양도소득세 핵심 용어',
+    description: '주택·부동산·주식 양도 시 적용되는 양도소득세 산정 용어집',
+    url: 'https://calculatorhost.com/calculator/capital-gains-tax/#glossary',
+    terms: [
+      {
+        name: '양도차익',
+        description: '양도가액에서 취득가액·필요경비(중개수수료, 세금 등)를 뺀 금액. 양도소득세 과세 표준의 출발점. 산식: 양도가액 − 취득가액 − 필요경비 − 장기보유특별공제.',
+      },
+      {
+        name: '장기보유특별공제',
+        alternateName: '장특공제',
+        description: '부동산을 일정 기간 이상 보유한 경우 양도차익에서 공제하는 제도. 일반 부동산 3년 이상 6~30%, 1세대1주택 8~80%(최대 80%). 근거: 소득세법 §95.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '1세대1주택 비과세',
+        description: '1세대가 1주택만 보유하고 2년 이상 보유(조정대상지역 거주 2년 이상)한 후 양도 시 양도차익 비과세. 단, 양도가액 12억 원 초과분은 과세. 근거: 소득세법 §89.',
+      },
+      {
+        name: '일시적 2주택 특례',
+        description: '기존 주택 보유 중 신규 주택 취득 시 일정 기간(원칙 3년, 조정지역 2년) 내 기존 주택 양도하면 1세대1주택 비과세 적용. 근거: 소득세법 시행령 §155.',
+      },
+      {
+        name: '중과세율',
+        description: '조정대상지역 다주택자 양도 시 기본세율에 가산하는 세율. 2주택자 +20%p, 3주택 이상 +30%p (한시적 유예 적용 시 제외). 근거: 소득세법 §104의7.',
+      },
+    ],
+  });
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
       <script
         type="application/ld+json"

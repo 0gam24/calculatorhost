@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { SplitBuyCalculator } from './SplitBuyCalculator';
 
@@ -188,6 +189,37 @@ export default function SplitBuyPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildDefinedTermSetJsonLd({
+              name: '분할매수·DCA 핵심 용어',
+              description: '주식·코인 분할매수 전략과 비용 계산 용어집',
+              url: `${URL}#glossary`,
+              terms: [
+                {
+                  name: '분할매수 (DCA)',
+                  alternateName: 'Dollar Cost Averaging',
+                  description: '한 종목을 한 번에 매수하지 않고 여러 차수에 나눠 매수하는 전략. 시점 분산으로 평균단가 안정화, 단기 변동성 부담 완화.',
+                },
+                {
+                  name: '균등분할',
+                  description: '매 차수 동일 금액(또는 수량)을 매수하는 가장 단순한 분할매수 방식. 정기 자동 매수에 적합.',
+                },
+                {
+                  name: '실효 평단가',
+                  description: '매수 수수료를 포함한 실제 매입 평균단가. 산식: (총 매수금액 + 총 매수수수료) ÷ 총 수량. 손익 판단의 실질 기준.',
+                },
+                {
+                  name: '무한매수법',
+                  description: '라오어가 제안한 분할매수 전략. 시드를 N등분(예: 40)해 매 회차 정액 매수, 평단 LOC 분할 매도 결합. 본 계산기는 정액 분할로 시뮬레이션 가능.',
+                },
+              ],
+            })
+          ),
+        }}
       />
 
       <div className="min-h-screen bg-bg-base">

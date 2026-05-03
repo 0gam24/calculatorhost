@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 /* ─── 검색 대상 데이터 (정적) ───
- * 계산기 30개 + 카테고리 5개 + 홈.
+ * 계산기 31개 + 카테고리 5개 + 홈 + 용어사전 + 가이드.
  * keywords 에 페르소나·줄임말 등을 넣어 검색 히트율 향상.
  */
 
@@ -47,6 +47,7 @@ const SEARCH_DATA: SearchEntry[] = [
   { label: '물타기 계산기 (주식·코인)', href: '/calculator/averaging-down/', kind: 'calculator', keywords: ['물타기', '주식 물타기', '코인 물타기', '평균단가', '추매', '추매계산기', '추가매수', '물타기계산기', '물 타기 계산기', '주식물타기', '코인 물타기 계산'] },
   { label: '분할매수 계산기 (주식·코인)', href: '/calculator/split-buy/', kind: 'calculator', keywords: ['분할매수', '분할매수 계산기', '코인 분할매수', '주식 분할매수', 'DCA', '평균단가 계산기', '무한매수법', '균등분할', '추매계산기'] },
   { label: '분할매도 계산기 (주식·코인)', href: '/calculator/split-sell/', kind: 'calculator', keywords: ['분할매도', '분할매도 계산기', '코인 분할매도', '주식 분할매도', '익절 계산기', '분할매도 손익', '실현손익 계산기', '증권거래세 계산기', '수익률 계산기'] },
+  { label: '부가가치세(VAT) 계산기', href: '/calculator/vat/', kind: 'calculator', keywords: ['부가세', 'VAT', '부가가치세', '일반과세', '간이과세', '매출세액', '매입세액공제', '공급가액 환산', 'VAT 분리'] },
 
   { label: '근로 계산기', href: '/category/work/', kind: 'category' },
   { label: '세금 계산기', href: '/category/tax/', kind: 'category' },
@@ -55,6 +56,8 @@ const SEARCH_DATA: SearchEntry[] = [
   { label: '생활 계산기', href: '/category/lifestyle/', kind: 'category' },
 
   { label: '홈', href: '/', kind: 'page' },
+  { label: '용어사전 (DSR·LTV·평단·BEP·양도차익 등)', href: '/glossary/', kind: 'page', keywords: ['용어', '사전', 'glossary', '정의', '뜻', 'DSR이란', 'LTV란', '평단이란'] },
+  { label: '가이드 (DSR 한도·물타기 전략 등)', href: '/guide/', kind: 'page', keywords: ['가이드', '팁', 'guide', '실전', '전략', '방법'] },
 ];
 
 /* ─── SVG 아이콘 ─── */

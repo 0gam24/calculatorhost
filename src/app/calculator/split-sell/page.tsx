@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { SplitSellCalculator } from './SplitSellCalculator';
 
@@ -183,6 +184,37 @@ export default function SplitSellPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildDefinedTermSetJsonLd({
+              name: '분할매도·실현손익 핵심 용어',
+              description: '주식·코인 분할매도와 실현손익·세후 수령액 용어집',
+              url: `${URL}#glossary`,
+              terms: [
+                {
+                  name: '분할매도 (Profit Taking)',
+                  description: '보유 종목을 한 번에 전량 매도하지 않고 여러 차수로 나눠 매도하는 전략. 일부 익절·일부 보유로 위험·심리 분산.',
+                },
+                {
+                  name: '실현손익',
+                  description: '매도 체결로 확정된 손익. 산식: (매도가 − 평단) × 수량 − 매도수수료 − 거래세. 평가손익(미실현)과 구분.',
+                },
+                {
+                  name: '증권거래세',
+                  description: '한국 주식 매도 시 부과되는 세금. 2026년 코스피·코스닥 모두 0.18% (농어촌특별세 0.15% + 거래세 0.03%). 코인은 거래세 없음.',
+                  url: 'https://www.nts.go.kr',
+                },
+                {
+                  name: '잔여 평단 불변 원칙',
+                  description: '분할매도 후 잔여 보유 수량의 평균단가는 변하지 않음. 평단은 매수 이력으로만 결정되며 매도는 영향 X. 일부 증권사 화면 표기는 다를 수 있음.',
+                },
+              ],
+            })
+          ),
+        }}
       />
 
       <div className="min-h-screen bg-bg-base">

@@ -52,9 +52,16 @@ const CALCULATOR_SLUGS = [
   'averaging-down',
   'split-buy',
   'split-sell',
+  'vat',
 ];
 
 const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
+
+// 가이드 콘텐츠 (Article schema)
+const GUIDE_SLUGS = [
+  'dsr-loan-limit-tips',
+  'averaging-down-vs-loss-cut',
+];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // next.config.ts 의 trailingSlash: true 와 일관성을 위해 모든 URL 끝에 / 추가.
@@ -77,6 +84,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: pageLastModified(`src/app/calculator/${slug}/page.tsx`),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
+    })),
+    // 용어사전 (단일 페이지, 18개 용어)
+    {
+      url: `${BASE}/glossary/`,
+      lastModified: pageLastModified('src/app/glossary/page.tsx'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    // 가이드 인덱스
+    {
+      url: `${BASE}/guide/`,
+      lastModified: pageLastModified('src/app/guide/page.tsx'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    },
+    // 가이드 개별 게시물
+    ...GUIDE_SLUGS.map((slug) => ({
+      url: `${BASE}/guide/${slug}/`,
+      lastModified: pageLastModified(`src/app/guide/${slug}/page.tsx`),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     })),
     ...['about', 'privacy', 'terms', 'contact'].map((slug) => ({
       url: `${BASE}/${slug}/`,

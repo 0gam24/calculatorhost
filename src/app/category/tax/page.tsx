@@ -63,6 +63,12 @@ const CALCULATORS = [
     href: '/calculator/salary',
     tags: ['근로소득', '세금'],
   },
+  {
+    title: '부가가치세(VAT) 계산기',
+    description: '한국 부가세 10% 일반과세·간이과세 산출 + VAT 포함↔공급가액 환산. 사업자·프리랜서 필수.',
+    href: '/calculator/vat',
+    tags: ['VAT', '부가세', '사업자'],
+  },
 ];
 
 const FAQ_ITEMS = [

@@ -11,9 +11,9 @@ import {
 } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-  title: '한국 금융·세금·부동산 계산기 30개 | calculatorhost',
+  title: '한국 금융·세금·부동산 계산기 31개 | calculatorhost',
   description:
-    '2026년 최신 세율·금리 반영 한국 계산기 30개 모음. 연봉 실수령액·양도소득세·대출이자·취득세·DSR 한도 등 모든 계산기 무료. 회원가입 불필요, 모바일 최적.',
+    '2026년 최신 세율·금리 반영 한국 계산기 31개 모음. 연봉 실수령액·양도소득세·대출이자·취득세·DSR 한도 등 모든 계산기 무료. 회원가입 불필요, 모바일 최적.',
   alternates: { canonical: 'https://calculatorhost.com/' },
 };
 
@@ -102,6 +102,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
       { href: '/calculator/child-tax-credit', title: '자녀장려금' },
       { href: '/calculator/freelancer-tax', title: '프리랜서 종합소득세' },
       { href: '/calculator/n-jobber-insurance', title: 'N잡러 건강보험' },
+      { href: '/calculator/vat', title: '부가가치세(VAT)' },
     ],
   },
   // 금융
@@ -236,7 +237,7 @@ export default function HomePage() {
               {/* H1 + 리드 */}
               <header>
                 <h1 className="mb-4 text-4xl font-bold tracking-tight lg:text-5xl" style={{ letterSpacing: '-0.02em' }}>
-                  <span className="text-primary-500">30개</span> 한국 생활 계산기,{' '}
+                  <span className="text-primary-500">31개</span> 한국 생활 계산기,{' '}
                   <br className="hidden sm:inline" />
                   한 곳에서 정확하게
                 </h1>
@@ -351,7 +352,7 @@ export default function HomePage() {
 
               {/* 전체 계산기 목록 */}
               <section className="space-y-6">
-                <h2 className="text-2xl font-bold text-text-primary">전체 계산기 (30개)</h2>
+                <h2 className="text-2xl font-bold text-text-primary">전체 계산기 (31개)</h2>
                 <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                   {ALL_CALCULATORS.map((cat) => (
                     <div key={cat.category} className="card card-hover space-y-4">

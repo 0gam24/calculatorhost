@@ -265,6 +265,57 @@ export interface DefinedTermSetOptions {
   terms: DefinedTermEntry[];
 }
 
+/**
+ * Article — 가이드·블로그·뉴스 콘텐츠용 (E-E-A-T + Rich Result)
+ * 계산기 페이지(SoftwareApplication)와 별개 콘텐츠용.
+ */
+export interface ArticleOptions {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified: string;
+  /** 저자 이름 (예: "calculatorhost 편집팀" 또는 실명) */
+  authorName: string;
+  /** 저자 URL (선택, 예: /about) */
+  authorUrl?: string;
+  /** 대표 이미지 URL (1200x630 권장) */
+  image?: string | string[];
+  /** Article 종류 (기본: Article, 대안: NewsArticle, BlogPosting) */
+  type?: 'Article' | 'NewsArticle' | 'BlogPosting';
+  /** 키워드 (선택, 콤마 구분 또는 배열) */
+  keywords?: string[];
+}
+
+export function buildArticleJsonLd(opts: ArticleOptions): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': opts.type ?? 'Article',
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    inLanguage: 'ko-KR',
+    datePublished: opts.datePublished,
+    dateModified: opts.dateModified,
+    ...(opts.image ? { image: opts.image } : {}),
+    ...(opts.keywords ? { keywords: opts.keywords.join(', ') } : {}),
+    author: {
+      '@type': 'Organization',
+      name: opts.authorName,
+      ...(opts.authorUrl ? { url: opts.authorUrl } : {}),
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': opts.url,
+    },
+  };
+}
+
 export function buildDefinedTermSetJsonLd(opts: DefinedTermSetOptions): JsonLd {
   return {
     '@context': 'https://schema.org',
