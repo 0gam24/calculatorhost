@@ -9,6 +9,7 @@ import {
   buildWebSiteJsonLd,
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
+import { getRecentUpdates } from '@/lib/constants/updates-log';
 
 export const metadata: Metadata = {
   title: '한국 금융·세금·부동산 계산기 31개 | calculatorhost',
@@ -150,62 +151,8 @@ const ALL_CALCULATORS: CalcCategory[] = [
   },
 ];
 
-interface Update2026 {
-  /** 반영 계산기 (한글명 + slug, 미연결 시 null) */
-  calculator: { title: string; slug: string } | null;
-  /** 반영 항목 (예: 소득세율, DSR 규제) */
-  item: string;
-  /** 변경 내용 / 비고 */
-  detail: string;
-  /** 반영일자 (YYYY-MM-DD) */
-  date: string;
-}
-
-// 시계열 내림차순 (최신이 위) — Changelog 형태로 freshness 신호
-const UPDATES_2026: Update2026[] = [
-  {
-    calculator: { title: '부가가치세(VAT)', slug: 'vat' },
-    item: '신규 추가',
-    detail: '일반·간이·환산 3 모드 부가세 계산기 신규 공개',
-    date: '2026-05-03',
-  },
-  {
-    calculator: { title: '분할매수·분할매도', slug: 'split-buy' },
-    item: '신규 추가',
-    detail: '주식·코인 가중평균·BEP·실현손익 계산기 2종 공개',
-    date: '2026-05-03',
-  },
-  {
-    calculator: { title: '대출한도(DSR)', slug: 'loan-limit' },
-    item: '스트레스 DSR',
-    detail: '변동·혼합형·주기형 1.5%p 풀 적용 반영',
-    date: '2026-04-27',
-  },
-  {
-    calculator: { title: '연봉 실수령액', slug: 'salary' },
-    item: '소득세율 구간',
-    detail: '8단계 누진세율(6~45%) 유지 확정 + 간이세액표 반영',
-    date: '2026-04-27',
-  },
-  {
-    calculator: { title: '연봉·프리랜서·N잡', slug: 'salary' },
-    item: '국민연금 보험료',
-    detail: '근로자 부담 4.5% 유지, 기준소득월액 상한 637만 원',
-    date: '2026-04-24',
-  },
-  {
-    calculator: { title: '재산세', slug: 'property-tax' },
-    item: '공정시장가액비율',
-    detail: '주택 60% 유지, 1세대1주택 특례 별도 적용',
-    date: '2026-04-24',
-  },
-  {
-    calculator: { title: '양도소득세', slug: 'capital-gains-tax' },
-    item: '1세대1주택 특례',
-    detail: '비과세 요건(2년 보유·12억 이하) 유지',
-    date: '2026-04-24',
-  },
-];
+// 홈페이지 노출용 — 최근 7건만 (전체 이력은 /updates 페이지에서)
+const UPDATES_2026 = getRecentUpdates(7);
 
 const HOME_FAQ = [
   {
@@ -420,7 +367,9 @@ export default function HomePage() {
                 </div>
                 <p className="text-xs text-text-tertiary border-t border-border-subtle pt-4">
                   최종 갱신: <time dateTime="2026-05-03">2026-05-03</time>. 변경사항 발생 시 즉시 업데이트됩니다.
-                  과거 이력 및 가이드 변경 사항은{' '}
+                  전체 변경 이력은{' '}
+                  <Link href="/updates/" className="underline hover:text-primary-500 font-medium">/updates 변경 이력 페이지</Link>에서,
+                  실시간 알림은{' '}
                   <Link href="/feed.xml" className="underline hover:text-primary-500">RSS 피드</Link>로 구독할 수 있습니다.
                 </p>
               </section>

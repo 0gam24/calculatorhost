@@ -617,36 +617,46 @@ export default function TransferTaxPage() {
 
               {/* 참고 자료 */}
               <section aria-label="참고 자료" className="card">
-                <h2 className="mb-3 text-lg font-semibold">참고 자료 및 출처</h2>
+                <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/소득세법/제94조"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 소득세법 §94 (양도소득의 범위)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/소득세법/제104조"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 소득세법 §104 (양도소득세율)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/소득세법/제89조"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 소득세법 §89 (1세대1주택 비과세)
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://www.hometax.go.kr"
                       target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 dark:text-primary-500 hover:underline"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 양도소득세 간이계산기 및 신고 안내
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.moef.go.kr"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 dark:text-primary-500 hover:underline"
-                    >
-                      기획재정부 — 부동산 세법 개정 공시
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.reb.or.kr"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 dark:text-primary-500 hover:underline"
-                    >
-                      한국부동산원 — 부동산 시가표준액 및 통계
+                      국세청 홈택스 — 양도소득세 신고
                     </a>
                   </li>
                 </ul>

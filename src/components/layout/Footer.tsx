@@ -46,6 +46,7 @@ export function Footer() {
             <h3 className="mb-2 font-semibold">정보</h3>
             <ul className="space-y-1 text-sm text-text-secondary">
               <li><Link href="/about" className="hover:text-primary-500">소개</Link></li>
+              <li><Link href="/updates/" className="hover:text-primary-500">📝 변경 이력 (Changelog)</Link></li>
               <li><Link href="/privacy" className="hover:text-primary-500">개인정보처리방침</Link></li>
               <li><Link href="/terms" className="hover:text-primary-500">이용약관</Link></li>
               <li><Link href="/contact" className="hover:text-primary-500">문의</Link></li>

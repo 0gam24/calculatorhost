@@ -113,6 +113,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
+    // 변경 이력 (Changelog) — Freshness 신호용 hub
+    {
+      url: `${BASE}/updates/`,
+      lastModified: pageLastModified('src/lib/constants/updates-log.ts'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.6,
+    },
     // 가이드 개별 게시물
     ...GUIDE_SLUGS.map((slug) => ({
       url: `${BASE}/guide/${slug}/`,

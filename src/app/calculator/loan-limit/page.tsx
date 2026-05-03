@@ -512,14 +512,49 @@ export default function LoanLimitPage() {
                     <span className="font-semibold text-text-secondary">마지막 업데이트:</span> 2026-04-24
                   </p>
                   <p className="mt-2">
-                    <span className="font-semibold text-text-secondary">법적 근거:</span>
+                    <span className="font-semibold text-text-secondary">법적 근거 및 공식 출처:</span>
                   </p>
                   <ul className="space-y-1 mt-1">
-                    <li>• 은행법 시행령 §24의4 (DSR 기준)</li>
-                    <li>• <a href="https://www.fsc.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융위원회</a> 여신심사 선진화 가이드라인</li>
-                    <li>• <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원</a> 주택담보대출 규제 고시</li>
-                    <li>• 은행업감독업무 시행세칙 (LTV·DTI 규제)</li>
-                    <li>• 스트레스 DSR 도입 (2024년 2월 ~ 2026년 전면)</li>
+                    <li>
+                      <a
+                        href="https://www.law.go.kr/법령/은행법시행령/제24조의4"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        국가법령정보센터 — 은행법 시행령 §24의4 (가계대출 관리)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.bok.or.kr"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        한국은행 — 기준금리 결정사항
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.fss.or.kr"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        금융감독원 — 가계대출 규제·동향
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://finlife.fss.or.kr"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        금감원 금융상품통합비교공시 (finlife)
+                      </a>
+                    </li>
                   </ul>
                 </div>
 

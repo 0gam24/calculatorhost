@@ -237,7 +237,7 @@ export default function AcquisitionTaxPage() {
 
               {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
+                <h2 className="mb-4 text-2xl font-semibold">2026년 취득세는 어떻게 계산하나요?</h2>
                 <ol className="space-y-3 text-sm leading-relaxed">
                   <li>
                     <strong>1. 과세표준 결정</strong>: 매매는 실거래가, 증여·상속은 시가표준액 기준.
@@ -324,36 +324,36 @@ export default function AcquisitionTaxPage() {
 
               {/* 참고 자료 */}
               <section aria-label="참고 자료" className="card">
-                <h2 className="mb-3 text-lg font-semibold">참고 자료 및 출처</h2>
+                <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
                     <a
-                      href="https://www.hometax.go.kr"
+                      href="https://www.law.go.kr/법령/지방세법/제11조"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 취득세 신고·납부 안내
+                      국가법령정보센터 — 지방세법 §11 (취득세 세율)
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.moef.go.kr"
+                      href="https://www.law.go.kr/법령/지방세법"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      기획재정부 — 부동산 세법 개정안 공시
+                      국가법령정보센터 — 지방세법 (전체)
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.reb.or.kr"
+                      href="https://www.wetax.go.kr"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      한국부동산원 — 부동산 시가표준액 및 공시가격 조회
+                      위택스 — 지방세 신고
                     </a>
                   </li>
                 </ul>

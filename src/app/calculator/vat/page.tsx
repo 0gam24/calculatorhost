@@ -295,7 +295,7 @@ export default function VatPage() {
               </section>
 
               <section aria-label="계산 공식" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
+                <h2 className="mb-4 text-2xl font-semibold">2026년 부가가치세(VAT)는 어떻게 계산하나요?</h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>일반과세자 납부세액</strong>
@@ -355,15 +355,48 @@ export default function VatPage() {
                 </ul>
               </section>
 
+              <section aria-label="법적 근거" className="card">
+                <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
+                <ul className="space-y-2 text-sm text-text-secondary mb-4">
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/부가가치세법"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 부가가치세법
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.hometax.go.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국세청 홈택스 — 부가세 전자신고
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.nts.go.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국세청 — 부가가치세 안내
+                    </a>
+                  </li>
+                </ul>
+              </section>
+
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 부가가치세법 §3·§13·§14·§38·§61·§63 ·
-                  부가가치세법 시행령 §111. 참고:
-                  {' '}<a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>,
-                  {' '}<a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>.
+                  <strong>법적 근거</strong>: 부가가치세법 §3·§13·§14·§38·§61·§63, 부가가치세법 시행령 §111.
                 </p>
                 <p>
                   <strong>면책</strong>: 본 계산기는 일반적 산식 기반의 추정치이며,

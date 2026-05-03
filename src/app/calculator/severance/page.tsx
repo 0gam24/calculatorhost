@@ -195,7 +195,7 @@ export default function SeverancePage() {
 
               {/* 퇴직금이란? */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">퇴직금이란?</h2>
+                <h2 className="text-2xl font-bold">퇴직금이란 무엇이고 언제 받을 수 있나요?</h2>
                 <p className="text-text-secondary">
                   퇴직금은 근로자가 회사를 떠날 때 사업주가 지급하는 금액입니다. 근로기준법과 근로자퇴직급여 보장법에 따라 규정되며, 1년 이상 근무한 근로자에게 지급 의무가 있습니다.
                 </p>
@@ -429,19 +429,61 @@ export default function SeverancePage() {
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />
 
+              {/* 법적 근거 및 공식 출처 */}
+              <section aria-label="참고 자료" className="card">
+                <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
+                <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/근로기준법/제34조"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 근로기준법 §34 (퇴직급여)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/근로자퇴직급여보장법"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 근로자퇴직급여 보장법
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.moel.go.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      고용노동부 — 퇴직금·퇴직연금 제도 안내
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.comwel.or.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      근로복지공단 — 퇴직연금 가입정보 조회
+                    </a>
+                  </li>
+                </ul>
+              </section>
+
               {/* 업데이트 및 출처 */}
               <section className="space-y-4 border-t border-border-base pt-6">
-                <h2 className="text-lg font-semibold">업데이트 및 출처</h2>
+                <h2 className="text-lg font-semibold">업데이트</h2>
                 <p className="text-sm text-text-secondary">
                   본 계산기는 2026년 세율과 퇴직금 제도를 기준으로 작성되었습니다.
                   <br />
                   최종 업데이트: 2026-04-24
                 </p>
-                <div className="text-sm text-text-tertiary space-y-1">
-                  <p>• 법적 근거: 근로기준법 §2, 근로자퇴직급여 보장법 §8, 소득세법 §55·§148의4</p>
-                  <p>• 참고: <a href="https://www.hometax.go.kr" className="text-primary-600 underline dark:text-primary-500" target="_blank" rel="noopener noreferrer">국세청 홈택스</a> 퇴직소득 간이계산기</p>
-                  <p>• 공식 안내: <a href="https://www.moel.go.kr" className="text-primary-600 underline dark:text-primary-500" target="_blank" rel="noopener noreferrer">고용노동부</a> 퇴직금 정보</p>
-                </div>
               </section>
 
               {/* 면책조항 */}

@@ -452,38 +452,68 @@ export default function SalaryPage() {
                 </ul>
               </section>
 
-              {/* 참고 자료 */}
+              {/* 참고 자료 — 법령·고시 deep-link */}
               <section aria-label="참고 자료" className="card">
-                <h2 className="mb-3 text-lg font-semibold">참고 자료 및 출처</h2>
+                <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/소득세법/제55조"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 소득세법 §55 (종합소득세 누진세율 8단계)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/소득세법/제12조"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 소득세법 §12 (비과세 근로소득 — 식대 월 20만 원)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/소득세법/제59조의2"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 소득세법 §59의2 (자녀세액공제)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/국민연금법"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 국민연금법 (보험료율 4.5% 근로자 부담)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.law.go.kr/법령/국민건강보험법"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국가법령정보센터 — 국민건강보험법 (보험료율 7.09% / 근로자 3.545%)
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://www.hometax.go.kr"
                       target="_blank"
-                      rel="noopener noreferrer"
+                      rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 근로소득 세액계산 및 간이세액표 조회
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.moef.go.kr"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 underline dark:text-primary-500"
-                    >
-                      기획재정부 — 소득세법 개정사항 공시
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.bok.or.kr"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-primary-600 underline dark:text-primary-500"
-                    >
-                      한국은행 — 금리 정보 및 경제 지표
+                      국세청 홈택스 — 근로소득 간이세액표 조회 (월 원천징수 기준)
                     </a>
                   </li>
                 </ul>
