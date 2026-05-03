@@ -27,6 +27,29 @@ Disallow: /api/
 Disallow: /_next/
 Disallow: /*.json$
 
+# 이전 WordPress 잔재 — 봇 자동 스캔·색인 차단 (Search Console 404·NOINDEX 정리)
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-login.php
+Disallow: /xmlrpc.php
+Disallow: /wp-config.php
+Disallow: /wp-cron.php
+Disallow: /wp-sitemap.xml
+Disallow: /*.php$
+Disallow: /search/
+Disallow: /*?s=
+Disallow: /*?p=
+Disallow: /tag/
+Disallow: /feed/
+Disallow: /*/feed/
+Disallow: /*?feed=
+Disallow: /comments/
+Disallow: /wp-json/
+Disallow: /author/
+Disallow: /category/*/feed/
+Disallow: /*/trackback/
+
 User-Agent: AdsBot-Google
 Allow: /
 Disallow: /api/

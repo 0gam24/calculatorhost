@@ -17,12 +17,13 @@ export interface JsonLd {
 }
 
 export function buildOrganizationJsonLd(): JsonLd {
+  // logo 는 실제 파일 존재 시에만 추가 — placeholder URL 은 soft 404 유발.
+  // 향후 public/logo.png (square, 112x112+) 추가 시 logo 필드 복구.
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
   };
 }
 
