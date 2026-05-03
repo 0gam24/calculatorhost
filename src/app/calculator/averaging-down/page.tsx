@@ -7,6 +7,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -592,6 +593,8 @@ export default function AveragingDownPage() {
               </section>
 
               {/* 관련 계산기 */}
+              <ShareButtons title="물타기 계산기 (주식·코인) 2026" url="https://calculatorhost.com/calculator/averaging-down/" />
+
               <RelatedCalculators items={RELATED} />
 
               {/* 업데이트 로그 */}

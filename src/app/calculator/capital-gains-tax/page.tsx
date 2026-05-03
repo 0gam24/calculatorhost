@@ -7,6 +7,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -586,6 +587,22 @@ export default function TransferTaxPage() {
               </section>
 
               {/* 관련 계산기 */}
+              {/* 관련 가이드 CTA */}
+              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <a href="/guide/capital-gains-tax-tips/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      양도소득세 절세 7가지 방법 (2026)
+                    </a>{' '}
+                    — 1세대1주택 비과세, 장기보유공제 80%, 자경 농지 100% 감면 등
+                  </li>
+                </ul>
+              </section>
+
+              <ShareButtons title="양도소득세 계산기 (2026)" url="https://calculatorhost.com/calculator/capital-gains-tax/" />
+
               <RelatedCalculators items={RELATED} />
 
               {/* 업데이트 로그 */}

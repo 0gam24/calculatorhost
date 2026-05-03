@@ -6,6 +6,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { DataFreshness } from '@/components/ui/DataFreshness';
 import {
   buildSoftwareApplicationJsonLd,
@@ -440,6 +441,29 @@ export default function LoanLimitPage() {
               </section>
 
               {/* 관련 계산기 */}
+              {/* 관련 가이드 CTA — 계산기 → 학습 콘텐츠 유입 */}
+              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <a href="/guide/dsr-loan-limit-tips/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      DSR 대출한도를 늘리는 5가지 실전 방법
+                    </a>{' '}
+                    — 신용대출 상환·맞벌이 합산·고정금리 활용 등 실전 팁
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/dsr-regulation-zones/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      비규제·조정·투기과열 DSR·LTV 규제 완전 정리
+                    </a>{' '}
+                    — 지역별 한도 차이 시뮬레이션
+                  </li>
+                </ul>
+              </section>
+
+              <ShareButtons title="DSR 대출한도 계산기 (2026)" url="https://calculatorhost.com/calculator/loan-limit/" />
+
               <RelatedCalculators items={RELATED} />
 
               {/* 업데이트 및 출처 */}

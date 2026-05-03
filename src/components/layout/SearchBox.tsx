@@ -56,8 +56,15 @@ const SEARCH_DATA: SearchEntry[] = [
   { label: '생활 계산기', href: '/category/lifestyle/', kind: 'category' },
 
   { label: '홈', href: '/', kind: 'page' },
-  { label: '용어사전 (DSR·LTV·평단·BEP·양도차익 등)', href: '/glossary/', kind: 'page', keywords: ['용어', '사전', 'glossary', '정의', '뜻', 'DSR이란', 'LTV란', '평단이란'] },
-  { label: '가이드 (DSR 한도·물타기 전략 등)', href: '/guide/', kind: 'page', keywords: ['가이드', '팁', 'guide', '실전', '전략', '방법'] },
+  { label: '용어사전 (DSR·LTV·평단·BEP·양도차익 등)', href: '/glossary/', kind: 'page', keywords: ['용어', '사전', 'glossary', '정의', '뜻', 'DSR이란', 'LTV란', '평단이란', '양도차익이란'] },
+  { label: '가이드 — 전체 목록', href: '/guide/', kind: 'page', keywords: ['가이드', '팁', 'guide', '실전', '전략', '방법'] },
+
+  // 가이드 개별 게시물 — 검색으로 발견 가능하도록
+  { label: '가이드: DSR 대출한도 늘리는 5가지 방법', href: '/guide/dsr-loan-limit-tips/', kind: 'page', keywords: ['DSR 한도', '대출한도 늘리기', '신용대출 상환', '맞벌이 합산', '고정금리'] },
+  { label: '가이드: 물타기 vs 손절 vs 비중조절', href: '/guide/averaging-down-vs-loss-cut/', kind: 'page', keywords: ['물타기', '손절', '비중조절', '평단 낮추기', '주식 전략'] },
+  { label: '가이드: 양도세 절세 7가지 방법', href: '/guide/capital-gains-tax-tips/', kind: 'page', keywords: ['양도세 절세', '1세대1주택', '장기보유공제', '일시적 2주택', '자경 농지'] },
+  { label: '가이드: DSR·LTV 규제지역 완전 정리', href: '/guide/dsr-regulation-zones/', kind: 'page', keywords: ['조정대상지역', '투기과열지구', '비규제지역', 'LTV 규제', '생애최초 LTV'] },
+  { label: '가이드: 프리랜서 vs 일반직 실수령액 비교', href: '/guide/freelancer-salary-comparison/', kind: 'page', keywords: ['프리랜서 실수령', '직장인 실수령', '4대보험 비교', '사업소득 vs 근로소득'] },
 ];
 
 /* ─── SVG 아이콘 ─── */
