@@ -37,7 +37,10 @@ export function StructuredSummary({
         <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
           정의
         </h2>
-        <p className="text-base leading-relaxed">{definition}</p>
+        {/* GEO/AEO: 정의 블록도 음성·AI 인용 대상 (Speakable 셀렉터 매칭) */}
+        <p className="text-base leading-relaxed" data-speakable>
+          {definition}
+        </p>
       </div>
 
       <div>

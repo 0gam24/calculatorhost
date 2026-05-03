@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import bokRates from '@/data/bok-rates.json';
 import { LoanLimitCalculator } from './LoanLimitCalculator';
@@ -111,6 +112,39 @@ export default function LoanLimitPage() {
     { name: '대출한도' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  // GEO/AEO: 본문 핵심 용어를 LLM이 정확히 인용하도록 DefinedTermSet 마크업
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '대출한도 계산 핵심 용어',
+    description: '주택담보대출 한도를 결정하는 3대 규제(DSR·LTV·DTI)와 스트레스 DSR 정의',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: 'DSR (부채원리금상환비율)',
+        alternateName: 'DSR',
+        description:
+          'Debt Service Ratio. 모든 금융권 대출의 연간 원리금 상환액을 연소득으로 나눈 비율. 은행 40%, 2금융권 50% 이하로 규제. 산식: (신규+기존 모든 대출 연원리금) ÷ 연소득 × 100. 근거: 은행법 시행령 §24의4.',
+        url: 'https://www.fss.or.kr',
+      },
+      {
+        name: 'LTV (담보인정비율)',
+        alternateName: 'LTV',
+        description:
+          'Loan To Value. 대출액을 담보가치로 나눈 비율. 비규제지역 70%, 조정·투기과열 50%, 생애최초·서민실수요 80%. 산식: 신규 대출액 ÷ 담보가치(주택가격) × 100. 근거: 금융감독원 주택담보대출 규제 고시.',
+        url: 'https://www.fss.or.kr',
+      },
+      {
+        name: 'DTI (부채상환비율)',
+        alternateName: 'DTI',
+        description:
+          'Debt To Income ratio. 신규 대출 원리금과 기존 대출 이자를 합산해 연소득으로 나눈 비율. 규제지역 40%, 비규제지역 50%. DSR과 달리 기존 대출은 이자만 포함. DSR 전면 시행으로 보조 규제 성격.',
+      },
+      {
+        name: '스트레스 DSR',
+        description:
+          '변동금리·혼합형·주기형 대출의 DSR 산정 시 현재 금리에 1.5%p(2026년 풀 적용)를 가산해 부담 능력을 보수적으로 평가하는 제도. 금리 상승 리스크를 사전에 반영해 가계부채 관리 강화. 시행: 2024년 2월 도입 → 2026년 전면 적용.',
+      },
+    ],
+  });
 
   return (
     <>
@@ -137,6 +171,10 @@ export default function LoanLimitPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">

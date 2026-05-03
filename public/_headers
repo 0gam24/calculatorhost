@@ -33,7 +33,22 @@
 /ads.txt
   Cache-Control: public, max-age=86400
 
-# HTML 페이지 — 짧은 TTL + revalidate
+# llms.txt — 4시간 (LLM 디스커버리 정책 빠른 반영)
+/llms.txt
+  Cache-Control: public, max-age=14400, must-revalidate
+  Content-Type: text/plain; charset=utf-8
+
+# site.webmanifest — 1주일 (PWA 메타 변경 빈도 낮음)
+/site.webmanifest
+  Cache-Control: public, max-age=604800
+  Content-Type: application/manifest+json; charset=utf-8
+
+# HTML 페이지 — 짧은 TTL + revalidate + 보안/프라이버시 헤더
 # 정적 export 라 콘텐츠 자체는 자주 변경 X, 그래도 새 배포 빠른 반영 위해 1시간
 /*
   Cache-Control: public, max-age=3600, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()
+  Cross-Origin-Opener-Policy: same-origin-allow-popups

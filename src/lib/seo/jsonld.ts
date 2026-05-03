@@ -219,3 +219,67 @@ export function buildItemListJsonLd(items: ItemListEntry[], listName?: string): 
     })),
   };
 }
+
+/**
+ * DefinedTerm / DefinedTermSet — 용어사전·전문용어 정의 (GEO/AEO 강화)
+ * LLM(ChatGPT/Claude/Perplexity)이 본문 용어를 정확히 추출·인용하도록 명시.
+ * 계산기 본문에 반복 등장하는 핵심 용어(DSR, LTV, 평단, 양도세 등) 마크업.
+ *
+ * https://schema.org/DefinedTerm
+ * https://schema.org/DefinedTermSet
+ */
+export interface DefinedTermEntry {
+  /** 용어 한글명 (예: "DSR(부채원리금상환비율)") */
+  name: string;
+  /** 용어 정의 (1-3문장, 100-300자 권장) */
+  description: string;
+  /** 용어 약어 (선택, 예: "DSR") */
+  alternateName?: string;
+  /** 외부 권위 출처 URL (선택, 예: 국세청 법조항) */
+  url?: string;
+  /** 분야 (선택, 예: "금융", "세금") */
+  inDefinedTermSet?: string;
+}
+
+export function buildDefinedTermJsonLd(entry: DefinedTermEntry): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTerm',
+    name: entry.name,
+    description: entry.description,
+    inLanguage: 'ko-KR',
+    ...(entry.alternateName ? { alternateName: entry.alternateName } : {}),
+    ...(entry.url ? { url: entry.url } : {}),
+    ...(entry.inDefinedTermSet ? { inDefinedTermSet: entry.inDefinedTermSet } : {}),
+  };
+}
+
+export interface DefinedTermSetOptions {
+  /** 용어집 이름 (예: "금융 계산기 핵심 용어") */
+  name: string;
+  /** 용어집 설명 */
+  description: string;
+  /** 용어집 URL (페이지 URL 또는 anchor) */
+  url: string;
+  /** 포함 용어 배열 */
+  terms: DefinedTermEntry[];
+}
+
+export function buildDefinedTermSetJsonLd(opts: DefinedTermSetOptions): JsonLd {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'DefinedTermSet',
+    name: opts.name,
+    description: opts.description,
+    url: opts.url,
+    inLanguage: 'ko-KR',
+    hasDefinedTerm: opts.terms.map((t) => ({
+      '@type': 'DefinedTerm',
+      name: t.name,
+      description: t.description,
+      inLanguage: 'ko-KR',
+      ...(t.alternateName ? { alternateName: t.alternateName } : {}),
+      ...(t.url ? { url: t.url } : {}),
+    })),
+  };
+}
