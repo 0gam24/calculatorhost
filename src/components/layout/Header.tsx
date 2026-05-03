@@ -75,7 +75,6 @@ export function Header() {
           <Link
             href="/"
             className="flex items-center gap-2.5 shrink-0"
-            aria-label="calculatorhost 홈"
           >
             <span className="inline-flex h-10 w-10 rounded-xl bg-primary-500/15 text-primary-500 items-center justify-center shrink-0">
               <CalculatorLogoIcon />

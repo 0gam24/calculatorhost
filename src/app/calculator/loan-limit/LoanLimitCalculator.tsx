@@ -302,7 +302,6 @@ export function LoanLimitCalculator() {
             checked={applyStressDsr}
             onChange={(e) => setApplyStressDsr(e.target.checked)}
             className="w-4 h-4 accent-primary-500"
-            aria-label="스트레스 DSR 적용 (변동금리)"
           />
           <span className="text-sm font-medium text-text-primary">
             스트레스 DSR 적용 (변동금리 가정, +1.5%p)
