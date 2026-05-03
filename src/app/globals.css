@@ -191,7 +191,8 @@
     min-height: 250px;
   }
   .ad-slot-label {
-    @apply text-caption text-gray-400 mb-1;
+    /* WCAG AA: bg-white vs text-gray-600 = 7.56:1 (pass). gray-400 = 2.85:1 (fail) */
+    @apply text-caption text-gray-600 mb-1;
   }
 }
 

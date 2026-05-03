@@ -400,7 +400,7 @@ export default function HomePage() {
                 <h2 className="text-xl font-bold text-text-primary">신뢰할 수 있는 계산기</h2>
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-3">
-                    <h3 className="font-semibold text-primary-500 flex items-center gap-2">
+                    <h3 className="font-semibold text-primary-700 dark:text-primary-300 flex items-center gap-2">
                       <span>✓</span> 공식 데이터 기반
                     </h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
@@ -412,7 +412,7 @@ export default function HomePage() {
                     </ul>
                   </div>
                   <div className="space-y-3">
-                    <h3 className="font-semibold text-primary-500 flex items-center gap-2">
+                    <h3 className="font-semibold text-primary-700 dark:text-primary-300 flex items-center gap-2">
                       <span>✓</span> 품질 관리
                     </h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
@@ -434,8 +434,8 @@ export default function HomePage() {
                 <p className="text-sm text-text-secondary">
                   본 사이트는 정보 제공만을 목적으로 하며, 투자·금융상품 권유, 수익 보장, 절세 확정을 하지 않습니다.
                 </p>
-                <p className="text-xs text-text-tertiary border-t border-border-subtle pt-3">
-                  최종 업데이트: 2026년 4월
+                <p className="text-xs text-text-secondary border-t border-border-subtle pt-3">
+                  최종 업데이트: 2026년 5월
                 </p>
               </section>
             </article>

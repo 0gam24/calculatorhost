@@ -119,7 +119,7 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
       <span className="ad-slot-label">광고</span>
 
       {!canRenderAd ? (
-        <div className="flex h-full min-h-[220px] items-center justify-center text-caption text-gray-400">
+        <div className="flex h-full min-h-[220px] items-center justify-center text-caption text-gray-600">
           [AdSense placeholder — slot: {slot}]
         </div>
       ) : isVisible ? (

@@ -55,7 +55,7 @@ export function Footer() {
             세율·공제·법조항은 운영자가 국세청·기재부·한국은행 등 1차 출처를 직접 확인하여
             반영합니다. 콘텐츠 작성에 AI 도구를 보조적으로 활용하며 모든 결과물은 운영자가
             최종 검토합니다.{' '}
-            <Link href="/about" className="underline">자세히</Link>
+            <Link href="/about" className="underline">콘텐츠 정책 및 운영 원칙 자세히 보기</Link>
           </p>
           <p className="mt-2">© {new Date().getFullYear()} calculatorhost. All rights reserved.</p>
         </div>
