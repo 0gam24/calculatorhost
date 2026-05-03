@@ -61,6 +61,7 @@ const SEARCH_DATA: SearchEntry[] = [
 
   // 가이드 개별 게시물 — 검색으로 발견 가능하도록
   { label: '가이드: 5월 종합소득세 신고 완벽 가이드 (2026)', href: '/guide/may-comprehensive-income-tax/', kind: 'page', keywords: ['종합소득세', '5월 종소세', '종소세 신고', '프리랜서 종소세', '단순경비율', '홈택스 신고', 'N잡러', '환급'] },
+  { label: '가이드: 재산세 완벽 가이드 (6월 부과·7월 납부)', href: '/guide/june-property-tax/', kind: 'page', keywords: ['재산세', '재산세 납부', '재산세 7월', '공정시장가액비율', '1세대1주택 특례', '세부담상한', '위택스 재산세', '6월 1일'] },
   { label: '가이드: DSR 대출한도 늘리는 5가지 방법', href: '/guide/dsr-loan-limit-tips/', kind: 'page', keywords: ['DSR 한도', '대출한도 늘리기', '신용대출 상환', '맞벌이 합산', '고정금리'] },
   { label: '가이드: 물타기 vs 손절 vs 비중조절', href: '/guide/averaging-down-vs-loss-cut/', kind: 'page', keywords: ['물타기', '손절', '비중조절', '평단 낮추기', '주식 전략'] },
   { label: '가이드: 양도세 절세 7가지 방법', href: '/guide/capital-gains-tax-tips/', kind: 'page', keywords: ['양도세 절세', '1세대1주택', '장기보유공제', '일시적 2주택', '자경 농지'] },

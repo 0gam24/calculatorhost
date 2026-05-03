@@ -15,13 +15,13 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '가이드 — 금융·세금·투자 실전 팁 2026 | calculatorhost',
+  title: '가이드 — 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
   description:
-    '계산기만으로는 부족한 실전 의사결정 가이드. DSR 대출한도 늘리는 법, 물타기 전략 선택 기준, 양도세 절세 팁까지 한국 거주자 맞춤 콘텐츠.',
+    '한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정을 위한 실전 가이드 모음. 시기성 콘텐츠(5월 종소세, 7월 재산세) + 분야별 절세·전략 가이드.',
   alternates: { canonical: URL },
   openGraph: {
-    title: 'calculatorhost 가이드 — 금융·세금·투자 실전 팁',
-    description: '계산기 + 실전 의사결정 가이드.',
+    title: 'calculatorhost 가이드 — 카테고리별 모음',
+    description: '시기성 + 분야별 실전 의사결정 가이드.',
     url: URL,
     type: 'website',
     images: ['/og-default.png'],
@@ -33,10 +33,28 @@ interface GuideEntry {
   slug: string;
   title: string;
   description: string;
-  category: string;
+  category: GuideCategory;
   publishedAt: string;
   readingMinutes: number;
+  /** 시즌 강조 표기 (예: '5월 신고 시즌', '7월 납부 직전') */
+  seasonal?: string;
 }
+
+type GuideCategory = '세금' | '세금·부동산' | '금융' | '투자' | '근로';
+
+interface CategoryMeta {
+  id: GuideCategory;
+  emoji: string;
+  description: string;
+}
+
+const CATEGORIES: CategoryMeta[] = [
+  { id: '세금', emoji: '🧾', description: '종합소득세·양도세·취득세·VAT 신고와 절세' },
+  { id: '세금·부동산', emoji: '🏠', description: '재산세·종합부동산세·임대차 세제' },
+  { id: '금융', emoji: '💰', description: 'DSR·LTV·대출한도·예적금·환율' },
+  { id: '투자', emoji: '📈', description: '주식·코인 평단·분할매수·분할매도' },
+  { id: '근로', emoji: '💼', description: '연봉·실수령·프리랜서·N잡러' },
+];
 
 export const GUIDES: GuideEntry[] = [
   {
@@ -47,24 +65,17 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-03',
     readingMinutes: 12,
+    seasonal: '5월 신고 시즌',
   },
   {
-    slug: 'dsr-loan-limit-tips',
-    title: 'DSR 대출한도를 늘리는 5가지 실전 방법 (2026)',
+    slug: 'june-property-tax',
+    title: '재산세 완벽 가이드 (2026) — 6월 부과·7월 납부·공정시장가액 60%',
     description:
-      '스트레스 DSR 1.5%p 풀 적용된 2026년, 같은 소득으로 대출한도를 더 받는 5가지 방법을 시뮬레이션과 함께 정리.',
-    category: '금융',
+      '재산세 과세 기준일·납부 기한·계산식·1세대1주택 특례·세부담 상한·분할 납부까지 한 페이지. 7월 납부 시즌 직전 필독.',
+    category: '세금·부동산',
     publishedAt: '2026-05-03',
-    readingMinutes: 7,
-  },
-  {
-    slug: 'averaging-down-vs-loss-cut',
-    title: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택해야 하나',
-    description:
-      '하락 종목을 만났을 때 평단을 낮추는 물타기, 즉시 매도하는 손절, 단계적 매도하는 비중조절 — 3가지 전략의 의사결정 기준.',
-    category: '투자',
-    publishedAt: '2026-05-03',
-    readingMinutes: 8,
+    readingMinutes: 10,
+    seasonal: '7월 납부 직전',
   },
   {
     slug: 'capital-gains-tax-tips',
@@ -76,11 +87,29 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 9,
   },
   {
+    slug: 'dsr-loan-limit-tips',
+    title: 'DSR 대출한도를 늘리는 5가지 실전 방법 (2026)',
+    description:
+      '스트레스 DSR 1.5%p 풀 적용된 2026년, 같은 소득으로 대출한도를 더 받는 5가지 방법을 시뮬레이션과 함께 정리.',
+    category: '금융',
+    publishedAt: '2026-05-03',
+    readingMinutes: 7,
+  },
+  {
     slug: 'dsr-regulation-zones',
     title: '비규제·조정·투기과열 DSR·LTV 규제 완전 정리 (2026)',
     description:
       '같은 주택이라도 위치(비규제·조정·투기과열)에 따라 대출 한도가 1억 원 이상 차이. 스트레스 DSR + 생애최초 우대 + 다주택 중과까지 종합 비교.',
     category: '금융',
+    publishedAt: '2026-05-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'averaging-down-vs-loss-cut',
+    title: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택해야 하나',
+    description:
+      '하락 종목을 만났을 때 평단을 낮추는 물타기, 즉시 매도하는 손절, 단계적 매도하는 비중조절 — 3가지 전략의 의사결정 기준.',
+    category: '투자',
     publishedAt: '2026-05-03',
     readingMinutes: 8,
   },
@@ -95,14 +124,27 @@ export const GUIDES: GuideEntry[] = [
   },
 ];
 
+// 시기성 가이드만 추출 (상단 배너용)
+const SEASONAL_GUIDES = GUIDES.filter((g) => g.seasonal);
+
+// 카테고리별 그룹화
+const GUIDES_BY_CATEGORY: Record<GuideCategory, GuideEntry[]> = {
+  '세금': [],
+  '세금·부동산': [],
+  '금융': [],
+  '투자': [],
+  '근로': [],
+};
+GUIDES.forEach((g) => GUIDES_BY_CATEGORY[g.category].push(g));
+
 export default function GuideIndexPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드' },
   ]);
   const webpageLd = buildWebPageJsonLd({
-    name: 'calculatorhost 가이드',
-    description: '한국 거주자 대상 금융·세금·투자 실전 의사결정 가이드 모음',
+    name: 'calculatorhost 가이드 — 카테고리별 모음',
+    description: '한국 거주자 대상 금융·세금·부동산·투자·근로 실전 가이드 모음 (카테고리별 분류).',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -117,58 +159,166 @@ export default function GuideIndexPage() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
           <Sidebar />
           <main className="flex-1 px-4 py-8 md:px-8">
-            <article className="mx-auto max-w-4xl space-y-8">
+            <article className="mx-auto max-w-5xl space-y-10">
               <header>
                 <Breadcrumb items={[{ name: '홈', href: '/' }, { name: '가이드' }]} />
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  가이드 — 실전 의사결정 콘텐츠
+                  가이드 — 카테고리별 모음
                 </h1>
                 <p className="text-lg text-text-secondary">
-                  계산기 결과만으로는 부족한 부분 — "그래서 무엇을 선택해야 하는가"에
-                  답하는 실전 가이드. 각 글에서 관련 계산기로 즉시 시뮬레이션할 수 있습니다.
+                  한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정 가이드.
+                  현재 <strong>{GUIDES.length}개</strong> 발행 · 5개 카테고리 · 매월 추가됨.
                 </p>
               </header>
 
-              <section className="grid gap-4 md:grid-cols-2">
-                {GUIDES.map((g) => (
-                  <Link
-                    key={g.slug}
-                    href={`/guide/${g.slug}/`}
-                    className="card card-hover flex flex-col gap-3"
-                  >
-                    <div className="flex items-center justify-between text-caption text-text-tertiary">
-                      <span className="rounded-chip bg-primary-500/10 px-2 py-0.5 text-primary-700 dark:text-primary-300 font-medium">
-                        {g.category}
-                      </span>
-                      <span>{g.readingMinutes}분 읽기</span>
+              {/* 카테고리 빠른 이동 칩 */}
+              <nav aria-label="카테고리 빠른 이동" className="card flex flex-wrap gap-2">
+                <a
+                  href="#seasonal"
+                  className="rounded-chip border border-danger-500 bg-danger-500/10 px-3 py-1.5 text-sm font-semibold text-danger-700 dark:text-danger-300 hover:bg-danger-500/20"
+                >
+                  🔥 시즌 가이드 ({SEASONAL_GUIDES.length})
+                </a>
+                {CATEGORIES.map((cat) => {
+                  const count = GUIDES_BY_CATEGORY[cat.id].length;
+                  if (count === 0) return null;
+                  return (
+                    <a
+                      key={cat.id}
+                      href={`#${encodeURIComponent(cat.id)}`}
+                      className="rounded-chip border border-border-base bg-bg-card px-3 py-1.5 text-sm font-medium hover:border-primary-500 hover:text-primary-500"
+                    >
+                      {cat.emoji} {cat.id} ({count})
+                    </a>
+                  );
+                })}
+              </nav>
+
+              {/* 시즌 가이드 — 강조 배너 */}
+              {SEASONAL_GUIDES.length > 0 && (
+                <section
+                  id="seasonal"
+                  aria-label="시즌 가이드"
+                  className="card border-l-4 border-l-danger-500 bg-danger-500/5 space-y-4"
+                >
+                  <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
+                    🔥 시즌 가이드 — 지금 가장 검색 많은 주제
+                  </h2>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {SEASONAL_GUIDES.map((g) => (
+                      <Link
+                        key={g.slug}
+                        href={`/guide/${g.slug}/`}
+                        className="card card-hover flex flex-col gap-2 bg-bg-card border-2 border-danger-500/30"
+                      >
+                        <div className="flex items-center justify-between text-caption">
+                          <span className="rounded-chip bg-danger-500/20 px-2 py-0.5 text-danger-700 dark:text-danger-300 font-semibold">
+                            {g.seasonal}
+                          </span>
+                          <span className="text-text-tertiary">{g.readingMinutes}분 읽기</span>
+                        </div>
+                        <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
+                        <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
+                          {g.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* 카테고리별 그룹화 */}
+              {CATEGORIES.map((cat) => {
+                const guides = GUIDES_BY_CATEGORY[cat.id];
+                if (guides.length === 0) return null;
+                return (
+                  <section key={cat.id} id={cat.id} aria-label={`${cat.id} 가이드`} className="space-y-4">
+                    <header className="flex items-baseline justify-between border-b border-border-base pb-2">
+                      <h2 className="text-2xl font-bold">
+                        <span aria-hidden>{cat.emoji}</span> {cat.id}{' '}
+                        <span className="text-base text-text-tertiary font-normal">
+                          ({guides.length})
+                        </span>
+                      </h2>
+                      <a
+                        href="#"
+                        className="text-caption text-text-tertiary hover:text-primary-500"
+                      >
+                        ↑ 맨 위로
+                      </a>
+                    </header>
+                    <p className="text-text-secondary text-sm">{cat.description}</p>
+                    <div className="grid gap-4 md:grid-cols-2">
+                      {guides.map((g) => (
+                        <Link
+                          key={g.slug}
+                          href={`/guide/${g.slug}/`}
+                          className="card card-hover flex flex-col gap-3"
+                        >
+                          <div className="flex items-center justify-between text-caption text-text-tertiary">
+                            <span className="rounded-chip bg-primary-500/10 px-2 py-0.5 text-primary-700 dark:text-primary-300 font-medium">
+                              {g.category}
+                            </span>
+                            <span>{g.readingMinutes}분 읽기</span>
+                          </div>
+                          <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
+                          <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
+                            {g.description}
+                          </p>
+                          <p className="text-caption text-text-tertiary mt-auto">
+                            {g.publishedAt}
+                          </p>
+                        </Link>
+                      ))}
                     </div>
-                    <h2 className="text-lg font-semibold text-text-primary">{g.title}</h2>
-                    <p className="text-sm text-text-secondary leading-relaxed">
-                      {g.description}
-                    </p>
-                    <p className="text-caption text-text-tertiary mt-auto">
-                      {g.publishedAt}
-                    </p>
-                  </Link>
-                ))}
+                  </section>
+                );
+              })}
+
+              {/* 관련 자원 */}
+              <section className="card space-y-3">
+                <h2 className="text-xl font-semibold">📚 관련 자원</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
+                      용어사전 (28개)
+                    </Link>{' '}
+                    — DSR·LTV·평단·BEP·양도차익 등 핵심 용어 정의
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/" className="text-primary-600 underline dark:text-primary-500">
+                      홈 — 31개 계산기 모음
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/feed.xml" className="text-primary-600 underline dark:text-primary-500">
+                      📡 RSS 피드 구독
+                    </Link>{' '}
+                    — 새 가이드 알림
+                  </li>
+                </ul>
+              </section>
+
+              <section
+                aria-label="안내"
+                className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
+              >
+                <p>
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
+                  새 가이드는 매월 1~2개 추가됩니다. 알림은 위 RSS 또는 카카오톡 채널 (출시 예정).
+                </p>
               </section>
             </article>
           </main>

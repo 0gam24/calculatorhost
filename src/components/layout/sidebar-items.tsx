@@ -80,6 +80,23 @@ export function CalendarIcon(p: IconProps) {
   );
 }
 
+export function BookIcon(p: IconProps) {
+  return (
+    <svg {...iconBase} {...p} aria-hidden>
+      <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+    </svg>
+  );
+}
+
+export function GlossaryIcon(p: IconProps) {
+  return (
+    <svg {...iconBase} {...p} aria-hidden>
+      <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+      <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+    </svg>
+  );
+}
+
 export function CloseIcon(p: IconProps) {
   return (
     <svg {...iconBase} {...p} aria-hidden>
@@ -102,4 +119,6 @@ export const SIDEBAR_ITEMS: SidebarItem[] = [
   { href: '/category/finance', label: '금융 계산기', Icon: WalletIcon },
   { href: '/category/real-estate', label: '부동산 계산기', Icon: BuildingIcon },
   { href: '/category/lifestyle', label: '생활 계산기', Icon: CalendarIcon },
+  { href: '/guide', label: '가이드', Icon: BookIcon },
+  { href: '/glossary', label: '용어사전', Icon: GlossaryIcon },
 ];
