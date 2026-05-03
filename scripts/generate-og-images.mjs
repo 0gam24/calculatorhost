@@ -70,6 +70,32 @@ const CATEGORIES = [
   { slug: 'lifestyle', title: '생활 계산기', category: '생활' },
 ];
 
+// 가이드 14개 메타 — sitemap GUIDE_SLUGS 와 일치
+const GUIDES = [
+  { slug: 'tax-calendar-2026', title: '2026 세금 캘린더', category: '세금' },
+  { slug: 'year-end-tax-settlement', title: '연말정산 완벽 가이드', category: '세금' },
+  { slug: 'january-vehicle-tax-prepayment', title: '자동차세 연납 6.4% 할인', category: '세금' },
+  { slug: 'february-tax-refund-tracking', title: '2월 환급 추적 + 5월 종소세 준비', category: '세금' },
+  { slug: 'march-corporate-tax', title: '3월 법인세 신고 가이드', category: '세금' },
+  { slug: 'april-vat-preliminary-q1', title: '4월 부가세 1기 예정신고', category: '세금' },
+  { slug: 'april-comprehensive-property-tax-exclusion', title: '4월 종부세 합산배제 신청', category: '세금' },
+  { slug: 'may-comprehensive-income-tax', title: '5월 종합소득세 신고 가이드', category: '세금' },
+  { slug: 'june-property-tax', title: '재산세 완벽 가이드', category: '세금' },
+  { slug: 'dsr-loan-limit-tips', title: 'DSR 한도 늘리는 5가지', category: '금융' },
+  { slug: 'averaging-down-vs-loss-cut', title: '물타기 vs 손절', category: '금융' },
+  { slug: 'capital-gains-tax-tips', title: '양도세 절세 7가지', category: '세금' },
+  { slug: 'dsr-regulation-zones', title: 'DSR·LTV 규제지역 정리', category: '금융' },
+  { slug: 'freelancer-salary-comparison', title: '프리랜서 vs 일반직 실수령액', category: '근로' },
+];
+
+// 주요 단일 페이지 메타 — 글로벌 OG 분리 (브런치·카톡 공유 이미지 차별화)
+const SINGLES = [
+  { slug: 'updates', title: '변경 이력 (Changelog) 2026', category: '세금' },
+  { slug: 'guide', title: '가이드 — 세금·금융·부동산', category: '세금' },
+  { slug: 'glossary', title: '용어사전 28개 — DSR·LTV·양도세', category: '금융' },
+  { slug: 'about', title: '운영자 정보 — 김준혁·스마트데이터샵', category: '생활' },
+];
+
 /**
  * 페이지별 OG SVG 템플릿
  * 1200x630, 다크 그라데이션, 카테고리별 액센트 색상
@@ -228,10 +254,62 @@ async function generateCategories() {
   console.log(`[og] category OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
 }
 
+async function generateGuides() {
+  let created = 0;
+  let skipped = 0;
+  for (const g of GUIDES) {
+    const dir = resolve(ROOT, `src/app/guide/${g.slug}`);
+    if (!existsSync(dir)) {
+      console.warn(`[og] guide/${g.slug} 디렉터리 없음 — 스킵`);
+      continue;
+    }
+    const outPath = resolve(dir, 'opengraph-image.png');
+    const svg = buildSvg({ title: g.title, category: g.category });
+    if (existsSync(outPath) && !process.env.OG_FORCE) {
+      skipped++;
+      continue;
+    }
+    try {
+      await svgToPng(svg, outPath);
+      created++;
+    } catch (e) {
+      console.warn(`[og] guide/${g.slug} 변환 실패: ${e.message}`);
+    }
+  }
+  console.log(`[og] guide OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
+}
+
+async function generateSingles() {
+  let created = 0;
+  let skipped = 0;
+  for (const s of SINGLES) {
+    const dir = resolve(ROOT, `src/app/${s.slug}`);
+    if (!existsSync(dir)) {
+      console.warn(`[og] ${s.slug} 디렉터리 없음 — 스킵`);
+      continue;
+    }
+    const outPath = resolve(dir, 'opengraph-image.png');
+    const svg = buildSvg({ title: s.title, category: s.category });
+    if (existsSync(outPath) && !process.env.OG_FORCE) {
+      skipped++;
+      continue;
+    }
+    try {
+      await svgToPng(svg, outPath);
+      created++;
+    } catch (e) {
+      console.warn(`[og] ${s.slug} 변환 실패: ${e.message}`);
+    }
+  }
+  console.log(`[og] singles OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
+}
+
 async function main() {
   await generateDefault();
   await generateCalculators();
   await generateCategories();
+  await generateGuides();
+  await generateSingles();
 }
 
 main().catch((e) => {

@@ -56,6 +56,15 @@ export const metadata: Metadata = {
       (process.env.NEXT_PUBLIC_SEARCH_CONSOLE_VERIFICATION ?? '').trim().length > 10
         ? process.env.NEXT_PUBLIC_SEARCH_CONSOLE_VERIFICATION
         : undefined,
+    // Naver Search Advisor 인증 — 한국 검색 점유율 25% 진입.
+    // 등록: https://searchadvisor.naver.com → 사이트 추가 → HTML 태그 인증 →
+    //   meta content 값(예: 1234abcd567...) 을 Cloudflare Pages 환경변수
+    //   NEXT_PUBLIC_NAVER_SITE_VERIFICATION 에 입력.
+    other: {
+      ...((process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION ?? '').trim().length > 10
+        ? { 'naver-site-verification': process.env.NEXT_PUBLIC_NAVER_SITE_VERIFICATION! }
+        : {}),
+    },
   },
   icons: { icon: '/favicon.ico' },
   manifest: '/site.webmanifest',
@@ -134,6 +143,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <link rel="dns-prefetch" href="https://adservice.google.com" />
           </>
         ) : null}
+        {/* RSS 자동 발견 (Feedly·Inoreader·NetNewsWire 등 RSS 리더가 <head> 에서 탐지) */}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="calculatorhost — 한국 금융·세금 계산기 업데이트"
+          href="/feed.xml"
+        />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script dangerouslySetInnerHTML={{ __html: swInit }} />
       </head>

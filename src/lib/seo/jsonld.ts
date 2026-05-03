@@ -23,8 +23,23 @@ export interface JsonLd {
 /**
  * Organization (전역 단일) — Knowledge Graph·Rich Result 후보.
  * logo/sameAs/contactPoint 는 실제 자산이 갖춰질 때만 추가 (soft 404 방지).
+ *
+ * sameAs: 운영자/사이트 공식 SNS·외부 프로필 URL 자동 수집.
+ *   환경변수 NEXT_PUBLIC_SAMEAS_URLS 에 콤마로 구분해 등록 (Knowledge Graph 신뢰도 ↑).
+ *   예: "https://blog.naver.com/smartdatashop,https://brunch.co.kr/@smartdatashop"
+ *   비어 있으면 sameAs 필드 생성 안 함 (soft 404 회피).
  */
+function parseSameAsUrls(): string[] {
+  const raw = (process.env.NEXT_PUBLIC_SAMEAS_URLS ?? '').trim();
+  if (!raw) return [];
+  return raw
+    .split(',')
+    .map((s) => s.trim())
+    .filter((s) => /^https?:\/\//.test(s) && s.length > 10);
+}
+
 export function buildOrganizationJsonLd(): JsonLd {
+  const sameAs = parseSameAsUrls();
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -48,6 +63,7 @@ export function buildOrganizationJsonLd(): JsonLd {
     },
     areaServed: { '@type': 'Country', name: 'South Korea' },
     knowsLanguage: ['ko-KR'],
+    ...(sameAs.length > 0 ? { sameAs } : {}),
   };
 }
 
