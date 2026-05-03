@@ -42,10 +42,10 @@ export default function ContactPage() {
                 계산 오류 제보, 새 계산기 제안, 광고/제휴 문의는 아래 이메일로 보내주세요.
               </p>
               <a
-                href="mailto:contact@calculatorhost.com"
+                href="mailto:smartdatashop@gmail.com"
                 className="inline-block rounded-lg bg-primary-500 px-5 py-3 font-medium text-white hover:bg-primary-600"
               >
-                contact@calculatorhost.com
+                smartdatashop@gmail.com
               </a>
               <p className="text-caption text-text-tertiary">평일 2~3일 내 답변드립니다.</p>
             </div>

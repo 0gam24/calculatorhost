@@ -38,6 +38,14 @@ export function buildOrganizationJsonLd(): JsonLd {
       name: SITE_FOUNDER,
     },
     taxID: '406-06-34485',
+    email: 'smartdatashop@gmail.com',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'customer support',
+      email: 'smartdatashop@gmail.com',
+      availableLanguage: ['Korean'],
+      url: `${SITE_URL}/contact/`,
+    },
     areaServed: { '@type': 'Country', name: 'South Korea' },
     knowsLanguage: ['ko-KR'],
   };

@@ -73,8 +73,12 @@ export default function AboutPage() {
                   <dd className="text-text-secondary tabular-nums">406-06-34485</dd>
                   <dt className="font-semibold text-text-primary">개업일</dt>
                   <dd className="text-text-secondary">2020년 5월</dd>
-                  <dt className="font-semibold text-text-primary">업태</dt>
-                  <dd className="text-text-secondary">소매업, 도매 및 소매업 (전자상거래)</dd>
+                  <dt className="font-semibold text-text-primary">이메일</dt>
+                  <dd className="text-text-secondary">
+                    <a href="mailto:smartdatashop@gmail.com" className="text-primary-600 underline dark:text-primary-500">
+                      smartdatashop@gmail.com
+                    </a>
+                  </dd>
                   <dt className="font-semibold text-text-primary">문의</dt>
                   <dd className="text-text-secondary">
                     <Link href="/contact" className="text-primary-600 underline dark:text-primary-500">
