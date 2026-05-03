@@ -94,7 +94,7 @@ export default function NotFound() {
                 <Link href="/" className="text-primary-500 underline-offset-4 hover:underline">
                   홈
                 </Link>
-                으로 돌아가 전체 27개 계산기 목록을 확인하세요.
+                으로 돌아가 전체 30개 계산기 목록을 확인하세요.
               </p>
             </section>
           </article>

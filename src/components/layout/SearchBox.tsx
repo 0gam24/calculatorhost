@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 /* ─── 검색 대상 데이터 (정적) ───
- * 계산기 27개 + 카테고리 5개 + 홈.
+ * 계산기 30개 + 카테고리 5개 + 홈.
  * keywords 에 페르소나·줄임말 등을 넣어 검색 히트율 향상.
  */
 
@@ -44,7 +44,9 @@ const SEARCH_DATA: SearchEntry[] = [
   { label: 'N잡러 건강보험 계산기', href: '/calculator/n-jobber-insurance/', kind: 'calculator', keywords: ['피부양자', '부업', '부가소득'] },
   { label: '임대수익률 계산기', href: '/calculator/rental-yield/', kind: 'calculator', keywords: ['Cap Rate', '임대', '월세 수익률'] },
   { label: '화폐가치 계산기 (인플레이션)', href: '/calculator/inflation/', kind: 'calculator', keywords: ['인플레이션', 'CPI', '실질 구매력'] },
-  { label: '주식 물타기 계산기', href: '/calculator/averaging-down/', kind: 'calculator', keywords: ['평균단가', '추가매수'] },
+  { label: '물타기 계산기 (주식·코인)', href: '/calculator/averaging-down/', kind: 'calculator', keywords: ['물타기', '주식 물타기', '코인 물타기', '평균단가', '추매', '추매계산기', '추가매수', '물타기계산기', '물 타기 계산기', '주식물타기', '코인 물타기 계산'] },
+  { label: '분할매수 계산기 (주식·코인)', href: '/calculator/split-buy/', kind: 'calculator', keywords: ['분할매수', '분할매수 계산기', '코인 분할매수', '주식 분할매수', 'DCA', '평균단가 계산기', '무한매수법', '균등분할', '추매계산기'] },
+  { label: '분할매도 계산기 (주식·코인)', href: '/calculator/split-sell/', kind: 'calculator', keywords: ['분할매도', '분할매도 계산기', '코인 분할매도', '주식 분할매도', '익절 계산기', '분할매도 손익', '실현손익 계산기', '증권거래세 계산기', '수익률 계산기'] },
 
   { label: '근로 계산기', href: '/category/work/', kind: 'category' },
   { label: '세금 계산기', href: '/category/tax/', kind: 'category' },

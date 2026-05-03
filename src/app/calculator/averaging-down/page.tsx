@@ -13,26 +13,44 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
 } from '@/lib/seo/jsonld';
 import { AveragingDownCalculator } from './AveragingDownCalculator';
 
-const URL = 'https://calculatorhost.com/calculator/averaging-down';
+const URL = 'https://calculatorhost.com/calculator/averaging-down/';
+const DATE_PUBLISHED = '2026-04-24';
+const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '주식 물타기 계산기 2026 | 평균단가·목표단가 | calculatorhost',
+  title: '물타기 계산기 2026 (주식·코인 추매) | 평균단가·목표단가 | calculatorhost',
   description:
-    '2026년 주식 물타기 계산기. 보유 주식·추가 매수로 평균단가 계산, 목표 단가 역산으로 필요 수량 계산. 손절 회복 전략 분석 필수.',
+    '주식·코인 물타기 계산기 2026. 보유분과 추가 매수(추매)로 새 평균단가를 즉시 계산하고, 목표 평균단가 달성에 필요한 분할매수 수량을 역산. 손실 회복 상승률·손익분기점까지 한 번에 분석. 회원가입 불필요, 무료.',
+  keywords: [
+    '물타기 계산기',
+    '주식 물타기 계산기',
+    '코인 물타기 계산기',
+    '추매계산기',
+    '평균단가 계산기',
+    '분할매수 계산기',
+    '물타기',
+    '주식 물타기',
+    '코인 물타기',
+  ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '주식 물타기 계산기 2026 — 평균단가·목표단가',
-    description: '보유 주식·추가 매수로 평균단가를 계산하고, 목표 단가 달성에 필요한 수량을 역산.',
+    title: '물타기 계산기 2026 — 주식·코인 평균단가·추매',
+    description:
+      '보유분 + 추가 매수(추매)로 새 평균단가 계산, 목표 단가 역산으로 필요 분할매수 수량까지 즉시 분석.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
+    locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주식 물타기 계산기 2026',
-    description: '평균단가·목표단가·필요 수량: 주식 물타기 전략 즉시 분석.',
+    title: '물타기 계산기 2026 (주식·코인)',
+    description: '평균단가·추매·목표단가 즉시 계산. 손익분기 회복 상승률까지.',
+    images: ['/og-default.png'],
   },
 };
 
@@ -71,6 +89,11 @@ const FAQ_ITEMS = [
 
 const RELATED = [
   {
+    href: '/calculator/split-buy',
+    title: '분할매수 계산기',
+    description: '차수별 평단·실효평단·BEP',
+  },
+  {
     href: '/calculator/savings',
     title: '적금 이자',
     description: '월복리·세후 수령액',
@@ -89,40 +112,48 @@ const RELATED = [
 
 export default function AveragingDownPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
-    name: '주식 물타기 계산기',
+    name: '물타기 계산기 (주식·코인)',
     description:
-      '보유 주식과 추가 매수 정보를 입력해 새 평균단가를 계산하거나, 목표 평균단가를 달성하기 위해 필요한 추가 수량을 역산합니다.',
+      '주식·코인 보유분과 추가 매수(추매) 정보로 새 평균단가를 계산하거나, 목표 평균단가 달성에 필요한 분할매수 수량을 역산합니다.',
     url: URL,
+  });
+  const webpageLd = buildWebPageJsonLd({
+    name: '물타기 계산기 2026 (주식·코인 추매)',
+    description:
+      '보유 + 추가 매수로 새 평균단가 계산, 목표 단가 역산으로 필요 수량 산출. 손실 회복 상승률·손익분기점 분석.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
   });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
-    { name: '물타기' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
+    { name: '물타기 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   const howtoLd = buildHowToJsonLd({
-    name: '주식 물타기 계산하기',
+    name: '물타기 계산하기 (주식·코인)',
     description:
-      '보유 주식 정보와 추가 매수 정보를 입력해 평균단가를 계산하거나, 목표 단가 달성을 위한 필요 수량을 역산하는 방법',
+      '주식·코인 보유 정보와 추가 매수(추매) 정보를 입력해 평균단가를 계산하거나, 목표 단가 달성에 필요한 분할매수 수량을 역산하는 방법',
     steps: [
       {
         name: '계산 모드 선택',
-        text: '"평균단가 계산" 또는 "필요 수량 계산" 중 선택합니다.',
+        text: '"평균단가 계산" 또는 "필요 수량 계산" 중 선택합니다. 주식·코인·해외주식 모두 동일한 가중평균 공식이 적용됩니다.',
       },
       {
         name: '현재 보유 정보 입력',
-        text: '현재 보유한 주식의 단가(원)와 수량(주)을 입력합니다.',
+        text: '현재 보유한 종목의 매입 단가(원/달러/USDT)와 수량(주·코인 수량)을 입력합니다. 코인은 소수점 입력이 가능합니다.',
       },
       {
-        name: '추가 매수 정보 입력',
-        text: '(평균단가 모드) 새로 매수할 주식의 단가와 수량을 입력합니다. (필요수량 모드) 새로 매수할 단가와 목표 평균단가를 입력합니다.',
+        name: '추가 매수(추매) 정보 입력',
+        text: '(평균단가 모드) 추매 단가와 추매 수량을 입력합니다. (필요수량 모드) 추매 단가와 목표 평균단가를 입력해 필요한 추매 수량을 역산합니다.',
       },
       {
         name: '결과 확인',
-        text: '새 평균단가, 총 투자금, 손실률, 필요 상승률 등이 즉시 계산됩니다.',
+        text: '새 평균단가, 총 투자금, 평균단가 하락률, 손실 회복 필요 상승률이 즉시 계산됩니다.',
       },
     ],
   });
@@ -132,6 +163,10 @@ export default function AveragingDownPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }}
       />
       <script
         type="application/ld+json"
@@ -162,16 +197,17 @@ export default function AveragingDownPage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '금융', href: '/category/finance/' },
-                    { name: '주식 물타기' },
+                    { name: '물타기 계산기' },
                   ]}
                 />
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  주식 물타기 계산기 2026
+                  물타기 계산기 2026 <span className="text-text-tertiary text-2xl font-semibold">(주식·코인 추매)</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  주식 가격이 하락했을 때 추가 매수로 평균단가를 낮추는 물타기 전략을
-                  분석합니다. 현재 보유 주식과 추가 매수 정보로 새 평균단가를 계산하거나,
-                  목표 단가 달성에 필요한 추가 수량을 즉시 계산할 수 있습니다.
+                  주식·코인 가격이 하락했을 때 추가 매수(추매)로 평균단가를 낮추는
+                  물타기 전략을 분석합니다. 보유분과 추매 정보로 새 평균단가를 즉시
+                  계산하거나, 목표 평균단가 달성에 필요한 분할매수 수량을 역산합니다.
+                  손실 회복 필요 상승률·손익분기점까지 한 번에 확인하세요.
                 </p>
               </header>
 
@@ -430,6 +466,70 @@ export default function AveragingDownPage() {
                 </ul>
               </section>
 
+              {/* 코인 물타기 vs 주식 물타기 */}
+              <section aria-label="코인 물타기와 주식 물타기" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">코인 물타기와 주식 물타기, 무엇이 다른가요?</h2>
+                <p className="mb-4 text-text-secondary">
+                  본 계산기는 주식·코인 모두에서 동일한 가중평균 공식
+                  <code className="mx-1 rounded bg-bg-raised px-1.5 py-0.5 text-xs">평균단가 = Σ(단가 × 수량) ÷ Σ수량</code>
+                  으로 평균단가를 계산합니다. 다만 두 자산은 시장 구조와 거래 조건이
+                  다르므로 입력·해석 시 다음 차이를 알아두면 도움이 됩니다.
+                </p>
+                <div className="mb-4 grid gap-4 md:grid-cols-2">
+                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                    <h3 className="mb-3 font-semibold text-text-primary">📈 주식 물타기</h3>
+                    <ul className="space-y-2 text-sm text-text-secondary">
+                      <li><strong>수량 단위</strong>: 정수(주). 소수점 매수 불가(일부 미국주식 소수점 거래 예외)</li>
+                      <li><strong>거래 시간</strong>: 정규장(09:00–15:30). 시간외 단일가 보조</li>
+                      <li><strong>거래 비용</strong>: 매수 수수료 0.015%대 + <strong>매도 시 증권거래세 0.18%</strong></li>
+                      <li><strong>일일 변동폭</strong>: 상·하한 ±30% 제한</li>
+                      <li><strong>회복 주기</strong>: 비교적 길고 펀더멘털 재평가까지 시간 필요</li>
+                    </ul>
+                  </div>
+                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                    <h3 className="mb-3 font-semibold text-text-primary">🪙 코인 물타기</h3>
+                    <ul className="space-y-2 text-sm text-text-secondary">
+                      <li><strong>수량 단위</strong>: 소수점(BTC 8자리, 알트 4~8자리). 본 계산기는 소수점 입력 지원</li>
+                      <li><strong>거래 시간</strong>: 24시간 365일</li>
+                      <li><strong>거래 비용</strong>: 거래소별 매수·매도 수수료 0.04~0.25%, 거래세 없음</li>
+                      <li><strong>일일 변동폭</strong>: 제한 없음(±30% 이상 흔함)</li>
+                      <li><strong>회복 주기</strong>: 변동성이 커서 단기 반등·급락 모두 빈번</li>
+                    </ul>
+                  </div>
+                </div>
+                <p className="text-text-secondary">
+                  <strong>실무 팁</strong>: 코인 물타기는 변동성이 커 한 번에 추매하기보다
+                  <strong>분할매수(단계적 추매)</strong> 가 권장됩니다. 본 계산기의
+                  "필요 수량 계산" 모드를 활용하면 목표 평균단가에서 역산해 적정 추매 수량을
+                  단계별로 산정할 수 있습니다.
+                </p>
+              </section>
+
+              {/* 추매(추가 매수) 용어 정리 */}
+              <section aria-label="추매란" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">추매(추가 매수) 계산기 — 용어 정리</h2>
+                <p className="mb-4 text-text-secondary">
+                  <strong>추매</strong>는 "추가 매수"의 줄임말로, 보유 중인 종목을 더 사는
+                  모든 거래를 통칭합니다. 검색에서 "추매계산기"는 일반적으로 다음 두 가지
+                  의도를 포함합니다.
+                </p>
+                <ol className="mb-4 list-decimal space-y-3 pl-5 text-sm text-text-secondary">
+                  <li>
+                    <strong>평균단가 추매</strong>: 추매 단가·수량을 입력해 새 평균단가를 확인
+                    → 본 계산기의 <strong>"평균단가 계산" 모드</strong> 사용
+                  </li>
+                  <li>
+                    <strong>목표 평단 역산 추매</strong>: 목표 평균단가에서 역산해 필요한 추매
+                    수량 계산 → 본 계산기의 <strong>"필요 수량 계산" 모드</strong> 사용
+                  </li>
+                </ol>
+                <p className="text-text-secondary">
+                  추매가 곧 물타기는 아닙니다. 상승 중 추매(피라미딩, 불타기)는 평균단가가
+                  올라가지만, 하락 중 추매(물타기)는 평균단가가 내려갑니다. 본 계산기는 두
+                  방향 모두 동일한 가중평균으로 정확하게 계산합니다.
+                </p>
+              </section>
+
               {/* 활용 팁 */}
               <section aria-label="활용 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">활용 팁</h2>
@@ -463,7 +563,8 @@ export default function AveragingDownPage() {
               {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
-                <ul className="text-sm text-text-secondary">
+                <ul className="text-sm text-text-secondary space-y-1">
+                  <li>2026-05-03: 코인 물타기 가이드 추가, 추매·분할매수 키워드 보강, WebPage 구조화 데이터 추가</li>
                   <li>2026-04-24: 초판 공개 (평균단가·목표단가 계산)</li>
                 </ul>
               </section>

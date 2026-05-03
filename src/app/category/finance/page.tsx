@@ -51,6 +51,42 @@ const CALCULATORS = [
     href: '/calculator/savings',
     tags: ['적금', '이자'],
   },
+  {
+    title: '물타기 계산기 (주식·코인)',
+    description: '주식·코인 보유분과 추가 매수(추매)로 새 평균단가를 계산하고, 목표 평균단가 달성에 필요한 분할매수 수량을 역산합니다.',
+    href: '/calculator/averaging-down',
+    tags: ['주식', '코인', '추매'],
+  },
+  {
+    title: '분할매수 계산기 (주식·코인)',
+    description: '차수별 단가·수량으로 가중평균 평단가, 수수료 포함 실효 평단가, 손익분기점(BEP)을 계산. 균등분할 자동채움 지원.',
+    href: '/calculator/split-buy',
+    tags: ['DCA', '평단', 'BEP'],
+  },
+  {
+    title: '분할매도 계산기 (주식·코인)',
+    description: '평단·보유 수량과 차수별 매도가·수량으로 차수별 실현손익(수수료·거래세 차감)과 누적 손익을 계산.',
+    href: '/calculator/split-sell',
+    tags: ['익절', '실현손익', '거래세'],
+  },
+  {
+    title: '환율·환전 계산기',
+    description: '실시간 환율 기준 환전 금액과 수수료를 계산합니다. 달러·유로·엔화 등 주요 통화 지원.',
+    href: '/calculator/exchange',
+    tags: ['환율', '환전'],
+  },
+  {
+    title: '화폐가치 계산기',
+    description: '인플레이션을 반영해 과거·미래 화폐의 실질 구매력을 계산합니다.',
+    href: '/calculator/inflation',
+    tags: ['인플레이션', 'CPI'],
+  },
+  {
+    title: '은퇴자금 계산기 (FIRE)',
+    description: '4% 룰과 목표 은퇴 연령으로 필요한 은퇴자금과 매월 저축액을 계산합니다.',
+    href: '/calculator/retirement',
+    tags: ['FIRE', '은퇴'],
+  },
 ];
 
 const FAQ_ITEMS = [

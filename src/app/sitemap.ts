@@ -50,6 +50,8 @@ const CALCULATOR_SLUGS = [
   'rental-yield',
   'inflation',
   'averaging-down',
+  'split-buy',
+  'split-sell',
 ];
 
 const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];

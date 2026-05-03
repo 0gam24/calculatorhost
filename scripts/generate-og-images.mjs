@@ -27,7 +27,7 @@ const CATEGORY_ACCENT = {
   생활: { from: '#8EC9DC', to: '#00FF88', label: '생활·기타' },
 };
 
-// 27개 calculator 메타 — sitemap CALCULATOR_SLUGS 와 일치
+// 30개 calculator 메타 — sitemap CALCULATOR_SLUGS 와 일치
 const CALCULATORS = [
   { slug: 'salary', title: '연봉 실수령액', category: '근로' },
   { slug: 'severance', title: '퇴직금', category: '근로' },
@@ -48,7 +48,9 @@ const CALCULATORS = [
   { slug: 'deposit', title: '정기예금 이자', category: '금융' },
   { slug: 'exchange', title: '환율·환전', category: '금융' },
   { slug: 'inflation', title: '인플레이션', category: '금융' },
-  { slug: 'averaging-down', title: '주식 물타기', category: '금융' },
+  { slug: 'averaging-down', title: '물타기 (주식·코인)', category: '금융' },
+  { slug: 'split-buy', title: '분할매수 (주식·코인)', category: '금융' },
+  { slug: 'split-sell', title: '분할매도 (주식·코인)', category: '금융' },
   { slug: 'broker-fee', title: '중개수수료', category: '부동산' },
   { slug: 'rent-conversion', title: '전월세 전환', category: '부동산' },
   { slug: 'rental-yield', title: '임대수익률', category: '부동산' },
