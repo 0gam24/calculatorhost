@@ -9,6 +9,8 @@
 
 const SITE_URL = 'https://calculatorhost.com';
 const SITE_NAME = 'calculatorhost';
+const SITE_DESCRIPTION =
+  '2026년 최신 세율·금리를 반영한 한국 생활 금융·세금·부동산·근로 계산기 30종을 무료로 제공하는 사이트.';
 
 export interface JsonLd {
   '@context': 'https://schema.org';
@@ -16,17 +18,29 @@ export interface JsonLd {
   [key: string]: unknown;
 }
 
+/**
+ * Organization (전역 단일) — Knowledge Graph·Rich Result 후보.
+ * logo/sameAs/contactPoint 는 실제 자산이 갖춰질 때만 추가 (soft 404 방지).
+ */
 export function buildOrganizationJsonLd(): JsonLd {
-  // logo 는 실제 파일 존재 시에만 추가 — placeholder URL 은 soft 404 유발.
-  // 향후 public/logo.png (square, 112x112+) 추가 시 logo 필드 복구.
   return {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
+    legalName: SITE_NAME,
     url: SITE_URL,
+    description: SITE_DESCRIPTION,
+    foundingDate: '2026',
+    areaServed: { '@type': 'Country', name: 'South Korea' },
+    knowsLanguage: ['ko-KR'],
   };
 }
 
+/**
+ * WebSite — 사이트 전역 메타.
+ * 사이트 내 검색 페이지가 없으므로 SearchAction 미선언 (없는 URL 선언 시 soft 404).
+ * 향후 /search 라우트 신설 시 potentialAction 복구.
+ */
 export function buildWebSiteJsonLd(): JsonLd {
   return {
     '@context': 'https://schema.org',
@@ -34,11 +48,7 @@ export function buildWebSiteJsonLd(): JsonLd {
     name: SITE_NAME,
     url: SITE_URL,
     inLanguage: 'ko-KR',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: `${SITE_URL}/검색?q={search_term_string}`,
-      'query-input': 'required name=search_term_string',
-    },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
   };
 }
 
@@ -46,6 +56,10 @@ export interface SoftwareApplicationOptions {
   name: string;
   description: string;
   url: string;
+  /** OG 이미지 절대 URL (선택). Rich Result 적격성 ↑ */
+  image?: string | string[];
+  /** applicationCategory 오버라이드 (기본 FinanceApplication) */
+  applicationCategory?: string;
 }
 
 export function buildSoftwareApplicationJsonLd(opts: SoftwareApplicationOptions): JsonLd {
@@ -55,8 +69,12 @@ export function buildSoftwareApplicationJsonLd(opts: SoftwareApplicationOptions)
     name: opts.name,
     description: opts.description,
     url: opts.url,
-    applicationCategory: 'FinanceApplication',
+    ...(opts.image ? { image: opts.image } : {}),
+    applicationCategory: opts.applicationCategory ?? 'FinanceApplication',
     operatingSystem: 'Web',
+    inLanguage: 'ko-KR',
+    isAccessibleForFree: true,
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
     offers: {
       '@type': 'Offer',
       price: 0,
@@ -130,7 +148,8 @@ export function buildHowToJsonLd(opts: {
 
 /**
  * WebPage: 페이지 메타데이터 (모든 계산기 페이지 필수)
- * 검색 엔진이 페이지의 발행/수정 일자, 설명을 인식하도록 명시
+ * 검색 엔진이 페이지의 발행/수정 일자, 설명을 인식하도록 명시.
+ * E-E-A-T 강화: 기본 author·publisher 자동 부여 (Organization).
  */
 export interface WebPageOptions {
   name: string;
@@ -138,6 +157,10 @@ export interface WebPageOptions {
   url: string;
   datePublished: string;
   dateModified: string;
+  /** OG 이미지 절대 URL (선택). 검색 결과 thumbnail·SNS 미리보기 */
+  image?: string | string[];
+  /** isPartOf — 카테고리 페이지 URL (선택, 사이트 계층 구조 신호) */
+  isPartOf?: string;
 }
 
 export function buildWebPageJsonLd(opts: WebPageOptions): JsonLd {
@@ -147,8 +170,15 @@ export function buildWebPageJsonLd(opts: WebPageOptions): JsonLd {
     name: opts.name,
     description: opts.description,
     url: opts.url,
+    inLanguage: 'ko-KR',
     datePublished: opts.datePublished,
     dateModified: opts.dateModified,
+    ...(opts.image ? { image: opts.image } : {}),
+    ...(opts.isPartOf
+      ? { isPartOf: { '@type': 'WebSite', '@id': opts.isPartOf } }
+      : {}),
+    author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
   };
 }
 

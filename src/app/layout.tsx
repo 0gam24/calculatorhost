@@ -58,6 +58,9 @@ export const metadata: Metadata = {
         : undefined,
   },
   icons: { icon: '/favicon.ico' },
+  manifest: '/site.webmanifest',
+  category: 'finance',
+  formatDetection: { telephone: false, email: false, address: false },
 };
 
 export const viewport: Viewport = {
