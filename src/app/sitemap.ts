@@ -127,7 +127,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
-    ...['about', 'privacy', 'terms', 'contact'].map((slug) => ({
+    ...['about', 'privacy', 'terms', 'contact', 'affiliate-disclosure'].map((slug) => ({
       url: `${BASE}/${slug}/`,
       lastModified: pageLastModified(`src/app/${slug}/page.tsx`),
       changeFrequency: 'monthly' as const,

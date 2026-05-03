@@ -16,6 +16,8 @@ import {
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { AffiliateRecommendation } from '@/components/affiliate/AffiliateRecommendation';
+import { get3O3Url } from '@/lib/constants/affiliate-partners';
 import { FreelancerCalculator } from './FreelancerCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -635,6 +637,21 @@ export default function FreelancerTaxPage() {
                   소득)를 고려하므로 더 복잡합니다.
                 </p>
               </section>
+
+              {/* 어필리에이트 추천 — 환급 대행 서비스 (env var 미설정 시 자동 비표시) */}
+              <AffiliateRecommendation
+                icon="💼"
+                title="복잡한 종합소득세 신고가 부담스러우신가요?"
+                description="삼쩜삼은 토스 자회사로, 5분 진단 후 종합소득세 환급 가능 금액을 알려주는 서비스입니다. 평균 환급액은 약 17만 원이며, 환급금이 발생한 경우만 수수료가 차감됩니다."
+                ctaText="삼쩜삼에서 환급금 진단"
+                ctaHref={get3O3Url()}
+                partner="삼쩜삼"
+                benefits={[
+                  '5분 진단 — 카카오/네이버 간편 로그인',
+                  '환급 발생 시에만 수수료 (성공 보수형)',
+                  '프리랜서·N잡러·아르바이트·강사 모두 대상',
+                ]}
+              />
 
               {/* 관련 계산기 */}
               {/* 관련 가이드 CTA — 시기성 콘텐츠 노출 */}

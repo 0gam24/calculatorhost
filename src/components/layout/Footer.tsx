@@ -49,6 +49,7 @@ export function Footer() {
               <li><Link href="/updates/" className="hover:text-primary-500">📝 변경 이력 (Changelog)</Link></li>
               <li><Link href="/privacy" className="hover:text-primary-500">개인정보처리방침</Link></li>
               <li><Link href="/terms" className="hover:text-primary-500">이용약관</Link></li>
+              <li><Link href="/affiliate-disclosure/" className="hover:text-primary-500">어필리에이트 공시</Link></li>
               <li><Link href="/contact" className="hover:text-primary-500">문의</Link></li>
               <li>
                 <a href="mailto:smartdatashop@gmail.com" className="hover:text-primary-500">
