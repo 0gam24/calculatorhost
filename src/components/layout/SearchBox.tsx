@@ -60,6 +60,13 @@ const SEARCH_DATA: SearchEntry[] = [
   { label: '가이드 — 전체 목록', href: '/guide/', kind: 'page', keywords: ['가이드', '팁', 'guide', '실전', '전략', '방법'] },
 
   // 가이드 개별 게시물 — 검색으로 발견 가능하도록
+  { label: '가이드: 2026 세금 캘린더 (1~12월 한눈에)', href: '/guide/tax-calendar-2026/', kind: 'page', keywords: ['세금 캘린더', '세금 일정', '2026 세금', '월별 세금'] },
+  { label: '가이드: 연말정산 완벽 가이드 (13월의 월급)', href: '/guide/year-end-tax-settlement/', kind: 'page', keywords: ['연말정산', '13월의 월급', '신용카드 공제', '의료비 공제', '연금저축', '월세 세액공제'] },
+  { label: '가이드: 자동차세 연납 6.4% 할인 (1월)', href: '/guide/january-vehicle-tax-prepayment/', kind: 'page', keywords: ['자동차세 연납', '자동차세 1월', '자동차세 할인', '6.4% 할인', '위택스 자동차세'] },
+  { label: '가이드: 2월 환급 추적 + 5월 종소세 준비', href: '/guide/february-tax-refund-tracking/', kind: 'page', keywords: ['연말정산 환급', '환급 안들어옴', '경정청구', '추가 납부', '종소세 준비'] },
+  { label: '가이드: 법인세 신고 가이드 (3월 31일 마감)', href: '/guide/march-corporate-tax/', kind: 'page', keywords: ['법인세', '법인세 신고', '12월 결산 법인', '법인세 세율', '3월 31일'] },
+  { label: '가이드: 4월 부가세 1기 예정신고', href: '/guide/april-vat-preliminary-q1/', kind: 'page', keywords: ['부가세 1기', '부가세 4월', '예정신고', '일반과세자 부가세', '매입세액공제'] },
+  { label: '가이드: 4월 종부세 합산배제·과세특례 신청', href: '/guide/april-comprehensive-property-tax-exclusion/', kind: 'page', keywords: ['종부세 합산배제', '종부세 과세특례', '임대주택 종부세', '일시적 2주택', '고령자 종부세'] },
   { label: '가이드: 5월 종합소득세 신고 완벽 가이드 (2026)', href: '/guide/may-comprehensive-income-tax/', kind: 'page', keywords: ['종합소득세', '5월 종소세', '종소세 신고', '프리랜서 종소세', '단순경비율', '홈택스 신고', 'N잡러', '환급'] },
   { label: '가이드: 재산세 완벽 가이드 (6월 부과·7월 납부)', href: '/guide/june-property-tax/', kind: 'page', keywords: ['재산세', '재산세 납부', '재산세 7월', '공정시장가액비율', '1세대1주택 특례', '세부담상한', '위택스 재산세', '6월 1일'] },
   { label: '가이드: DSR 대출한도 늘리는 5가지 방법', href: '/guide/dsr-loan-limit-tips/', kind: 'page', keywords: ['DSR 한도', '대출한도 늘리기', '신용대출 상환', '맞벌이 합산', '고정금리'] },

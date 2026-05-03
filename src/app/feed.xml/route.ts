@@ -23,6 +23,56 @@ interface FeedItem {
 
 // 최신 발행순 (위가 가장 신상)
 const ITEMS: FeedItem[] = [
+  // ─── 1~4월 시기성 가이드 (월별 캘린더 시리즈) ───
+  {
+    title: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
+    description: '2026년 모든 세금·신고 일정 월별 정리 + 페르소나별(직장인·사업자·다주택자) 핵심 일정.',
+    url: `${SITE_URL}/guide/tax-calendar-2026/`,
+    pubDate: '2026-05-03',
+    category: '세금',
+  },
+  {
+    title: '연말정산 완벽 가이드 (2026) — "13월의 월급" 받는 법',
+    description: '신용카드·의료비·교육비·기부금·연금저축 공제 + 환급 추적 + 추가 납부 회피.',
+    url: `${SITE_URL}/guide/year-end-tax-settlement/`,
+    pubDate: '2026-05-03',
+    category: '세금',
+  },
+  {
+    title: '자동차세 연납 6.4% 할인 가이드 (2026) — 1월 16~31일 신청',
+    description: '1월 신청 시 약 6.4% 할인. cc별 절감액 + 위택스 신청법.',
+    url: `${SITE_URL}/guide/january-vehicle-tax-prepayment/`,
+    pubDate: '2026-05-03',
+    category: '세금·자동차',
+  },
+  {
+    title: '2월 연말정산 환급 추적 + 5월 종합소득세 사전 준비',
+    description: '환급 결과 확인 + 누락 공제 정정 + 경정청구 + 5월 종소세 준비 체크리스트.',
+    url: `${SITE_URL}/guide/february-tax-refund-tracking/`,
+    pubDate: '2026-05-03',
+    category: '세금·근로',
+  },
+  {
+    title: '법인세 신고 가이드 (2026) — 3월 31일 마감',
+    description: '12월 결산 법인 법인세 세율 + R&D·고용증대 세액공제 + 분납 + 홈택스 전자신고.',
+    url: `${SITE_URL}/guide/march-corporate-tax/`,
+    pubDate: '2026-05-03',
+    category: '세금·법인',
+  },
+  {
+    title: '4월 부가세 1기 예정신고 가이드 (2026) — 4월 1~25일',
+    description: '일반과세자 부가세 신고. 매출세액·매입세액공제·홈택스 단계별 신고법.',
+    url: `${SITE_URL}/guide/april-vat-preliminary-q1/`,
+    pubDate: '2026-05-03',
+    category: '세금·사업자',
+  },
+  {
+    title: '4월 종합부동산세 합산배제·과세특례 신청 (2026)',
+    description: '임대주택·일시적 2주택·고령자·장기보유 등 우대 신청. 4월 1~30일 마감.',
+    url: `${SITE_URL}/guide/april-comprehensive-property-tax-exclusion/`,
+    pubDate: '2026-05-03',
+    category: '세금·부동산',
+  },
   // 시기성 가이드 — 6월 재산세 시즌 (가장 신상)
   {
     title: '재산세 완벽 가이드 (2026) — 6월 부과·7월 납부·공정시장가액 60%',

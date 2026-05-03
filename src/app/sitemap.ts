@@ -59,8 +59,17 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 시기성 (월별)
+  'tax-calendar-2026',
+  'year-end-tax-settlement',
+  'january-vehicle-tax-prepayment',
+  'february-tax-refund-tracking',
+  'march-corporate-tax',
+  'april-vat-preliminary-q1',
+  'april-comprehensive-property-tax-exclusion',
   'may-comprehensive-income-tax',
   'june-property-tax',
+  // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
   'capital-gains-tax-tips',

@@ -29,9 +29,12 @@ export function Footer() {
           <div>
             <h3 className="mb-2 font-semibold">가이드 & 사전</h3>
             <ul className="space-y-1 text-sm text-text-secondary">
-              <li><Link href="/guide/" className="hover:text-primary-500">전체 가이드</Link></li>
-              <li><Link href="/guide/may-comprehensive-income-tax/" className="hover:text-primary-500 font-semibold text-primary-700 dark:text-primary-300">🔥 5월 종합소득세 신고 가이드</Link></li>
-              <li><Link href="/guide/june-property-tax/" className="hover:text-primary-500 font-semibold text-primary-700 dark:text-primary-300">🏠 재산세 (7월 납부) 가이드</Link></li>
+              <li><Link href="/guide/" className="hover:text-primary-500 font-semibold">📖 전체 가이드</Link></li>
+              <li><Link href="/guide/tax-calendar-2026/" className="hover:text-primary-500 font-semibold text-primary-700 dark:text-primary-300">📅 2026 세금 캘린더</Link></li>
+              <li><Link href="/guide/year-end-tax-settlement/" className="hover:text-primary-500">연말정산 (1~2월)</Link></li>
+              <li><Link href="/guide/january-vehicle-tax-prepayment/" className="hover:text-primary-500">자동차세 연납 6.4%</Link></li>
+              <li><Link href="/guide/may-comprehensive-income-tax/" className="hover:text-primary-500">🔥 5월 종합소득세 신고</Link></li>
+              <li><Link href="/guide/june-property-tax/" className="hover:text-primary-500">🏠 재산세 (7월 납부)</Link></li>
               <li><Link href="/guide/dsr-loan-limit-tips/" className="hover:text-primary-500">DSR 한도 늘리는 5가지</Link></li>
               <li><Link href="/guide/capital-gains-tax-tips/" className="hover:text-primary-500">양도세 절세 7가지</Link></li>
               <li><Link href="/guide/dsr-regulation-zones/" className="hover:text-primary-500">DSR·LTV 규제지역 정리</Link></li>

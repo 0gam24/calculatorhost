@@ -57,6 +57,81 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 허브 ───
+  {
+    slug: 'tax-calendar-2026',
+    title: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
+    description:
+      '2026년 한 해 동안 내야 할 모든 세금·신고 일정을 월별로 정리. 각 일정에서 관련 가이드와 계산기로 1-click 이동. 직장인·사업자·자동차주·다주택자 페르소나별 핵심 일정.',
+    category: '세금',
+    publishedAt: '2026-05-03',
+    readingMinutes: 6,
+  },
+  // ─── 1월 ───
+  {
+    slug: 'year-end-tax-settlement',
+    title: '연말정산 완벽 가이드 (2026) — "13월의 월급" 받는 법',
+    description:
+      '신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략. 1월~2월 시즌 필독.',
+    category: '세금',
+    publishedAt: '2026-05-03',
+    readingMinutes: 12,
+    seasonal: '1~2월 정산 시즌',
+  },
+  {
+    slug: 'january-vehicle-tax-prepayment',
+    title: '자동차세 연납 6.4% 할인 가이드 (2026) — 1월 16~31일 신청',
+    description:
+      '1월 신청 시 약 6.4% 할인 (최대 9%). 위택스 신청법 + cc별 절감액 (1600cc 약 18,600원, 2000cc 약 33,300원).',
+    category: '세금·부동산',
+    publishedAt: '2026-05-03',
+    readingMinutes: 6,
+    seasonal: '1월 16~31일',
+  },
+  // ─── 2월 ───
+  {
+    slug: 'february-tax-refund-tracking',
+    title: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비',
+    description:
+      '환급 결과 확인 + 누락 공제 정정 + 경정청구 + 5월 종소세 신고 준비 체크리스트.',
+    category: '근로',
+    publishedAt: '2026-05-03',
+    readingMinutes: 7,
+    seasonal: '2~4월 환급/준비',
+  },
+  // ─── 3월 ───
+  {
+    slug: 'march-corporate-tax',
+    title: '법인세 신고 가이드 (2026) — 3월 31일 마감',
+    description:
+      '12월 결산 법인 법인세 세율 (9·19·21·24%) + R&D·고용증대 등 세액공제 + 분납 + 홈택스 전자신고.',
+    category: '세금',
+    publishedAt: '2026-05-03',
+    readingMinutes: 8,
+    seasonal: '3월 31일 마감',
+  },
+  // ─── 4월 ───
+  {
+    slug: 'april-vat-preliminary-q1',
+    title: '4월 부가세 1기 예정신고 가이드 (2026) — 1~3월 매출·매입',
+    description:
+      '4월 1~25일 일반과세자 부가세 신고. 매출세액·매입세액공제·홈택스 단계별 신고법 + 환급 받는 케이스.',
+    category: '세금',
+    publishedAt: '2026-05-03',
+    readingMinutes: 8,
+    seasonal: '4월 1~25일',
+  },
+  {
+    slug: 'april-comprehensive-property-tax-exclusion',
+    title: '4월 종부세 합산배제·과세특례 신청 가이드 (2026)',
+    description:
+      '임대주택·일시적 2주택·고령자·장기보유 등 우대 신청. 4월 1~30일 마감 → 12월 종부세 절세 핵심.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-03',
+    readingMinutes: 9,
+    seasonal: '4월 1~30일',
+  },
+  // ─── 5월 (기존) ───
   {
     slug: 'may-comprehensive-income-tax',
     title: '5월 종합소득세 신고 완벽 가이드 (2026) — 프리랜서·사업자·N잡러 필독',
