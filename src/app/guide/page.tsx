@@ -40,6 +40,15 @@ interface GuideEntry {
 
 export const GUIDES: GuideEntry[] = [
   {
+    slug: 'may-comprehensive-income-tax',
+    title: '5월 종합소득세 신고 완벽 가이드 (2026) — 프리랜서·사업자·N잡러 필독',
+    description:
+      '신고 대상·기한·홈택스 단계별 신고법·단순경비율 vs 기준경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리. 5월 신고 시즌 직전 필독.',
+    category: '세금',
+    publishedAt: '2026-05-03',
+    readingMinutes: 12,
+  },
+  {
     slug: 'dsr-loan-limit-tips',
     title: 'DSR 대출한도를 늘리는 5가지 실전 방법 (2026)',
     description:

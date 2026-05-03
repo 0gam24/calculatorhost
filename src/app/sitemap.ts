@@ -59,6 +59,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'may-comprehensive-income-tax',
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
   'capital-gains-tax-tips',

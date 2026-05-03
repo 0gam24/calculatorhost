@@ -6,6 +6,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -634,6 +635,28 @@ export default function FreelancerTaxPage() {
               </section>
 
               {/* 관련 계산기 */}
+              {/* 관련 가이드 CTA — 시기성 콘텐츠 노출 */}
+              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <a href="/guide/may-comprehensive-income-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      🔥 5월 종합소득세 신고 완벽 가이드 (2026)
+                    </a>{' '}
+                    — 신고 대상·홈택스 단계별 신고법·절세 5가지 (시즌 직전 필독)
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/freelancer-salary-comparison/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      프리랜서 vs 일반직 실수령액 비교
+                    </a>
+                  </li>
+                </ul>
+              </section>
+
+              <ShareButtons title="프리랜서 종합소득세 계산기 (2026)" url="https://calculatorhost.com/calculator/freelancer-tax/" />
+
               <RelatedCalculators items={[...RELATED]} />
 
               {/* 업데이트 로그 */}

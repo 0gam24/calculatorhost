@@ -23,6 +23,15 @@ interface FeedItem {
 
 // 최신 발행순 (위가 가장 신상)
 const ITEMS: FeedItem[] = [
+  // 시기성 가이드 — 5월 종소세 시즌
+  {
+    title: '5월 종합소득세 신고 완벽 가이드 (2026) — 프리랜서·사업자·N잡러 필독',
+    description:
+      '2026년 5월 1~31일 종합소득세 신고 시즌 가이드. 신고 대상·기한·홈택스 단계별 신고법·단순경비율 vs 기준경비율·절세 5가지·환급 받는 법.',
+    url: `${SITE_URL}/guide/may-comprehensive-income-tax/`,
+    pubDate: '2026-05-03',
+    category: '세금',
+  },
   // 가이드 5개 (최신 콘텐츠)
   {
     title: '프리랜서 vs 일반직 실수령액 비교 — 4대보험·세금 차이',
