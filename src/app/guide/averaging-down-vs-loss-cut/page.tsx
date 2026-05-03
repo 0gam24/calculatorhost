@@ -86,7 +86,7 @@ export default function AveragingDownVsLossCutPage() {
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
-    authorName: 'calculatorhost 편집팀',
+    authorName: '김준혁',
     authorUrl: 'https://calculatorhost.com/about/',
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['물타기', '손절', '비중조절', '주식 전략', '코인 전략'],

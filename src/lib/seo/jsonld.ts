@@ -9,8 +9,10 @@
 
 const SITE_URL = 'https://calculatorhost.com';
 const SITE_NAME = 'calculatorhost';
+const SITE_LEGAL_NAME = '스마트데이터샵';
+const SITE_FOUNDER = '김준혁';
 const SITE_DESCRIPTION =
-  '2026년 최신 세율·금리를 반영한 한국 생활 금융·세금·부동산·근로 계산기 30종을 무료로 제공하는 사이트.';
+  '2026년 최신 세율·금리를 반영한 한국 생활 금융·세금·부동산·근로 계산기 31종을 무료로 제공하는 사이트.';
 
 export interface JsonLd {
   '@context': 'https://schema.org';
@@ -27,10 +29,15 @@ export function buildOrganizationJsonLd(): JsonLd {
     '@context': 'https://schema.org',
     '@type': 'Organization',
     name: SITE_NAME,
-    legalName: SITE_NAME,
+    legalName: SITE_LEGAL_NAME,
     url: SITE_URL,
     description: SITE_DESCRIPTION,
-    foundingDate: '2026',
+    foundingDate: '2020-05-21',
+    founder: {
+      '@type': 'Person',
+      name: SITE_FOUNDER,
+    },
+    taxID: '406-06-34485',
     areaServed: { '@type': 'Country', name: 'South Korea' },
     knowsLanguage: ['ko-KR'],
   };
@@ -177,8 +184,22 @@ export function buildWebPageJsonLd(opts: WebPageOptions): JsonLd {
     ...(opts.isPartOf
       ? { isPartOf: { '@type': 'WebSite', '@id': opts.isPartOf } }
       : {}),
-    author: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
-    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    author: {
+      '@type': 'Person',
+      name: SITE_FOUNDER,
+      url: `${SITE_URL}/about/`,
+      affiliation: {
+        '@type': 'Organization',
+        name: SITE_LEGAL_NAME,
+        url: SITE_URL,
+      },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_LEGAL_NAME,
+      legalName: SITE_LEGAL_NAME,
+      url: SITE_URL,
+    },
   };
 }
 
@@ -300,13 +321,19 @@ export function buildArticleJsonLd(opts: ArticleOptions): JsonLd {
     ...(opts.image ? { image: opts.image } : {}),
     ...(opts.keywords ? { keywords: opts.keywords.join(', ') } : {}),
     author: {
-      '@type': 'Organization',
+      '@type': 'Person',
       name: opts.authorName,
       ...(opts.authorUrl ? { url: opts.authorUrl } : {}),
+      affiliation: {
+        '@type': 'Organization',
+        name: SITE_LEGAL_NAME,
+        url: SITE_URL,
+      },
     },
     publisher: {
       '@type': 'Organization',
-      name: SITE_NAME,
+      name: SITE_LEGAL_NAME,
+      legalName: SITE_LEGAL_NAME,
       url: SITE_URL,
     },
     mainEntityOfPage: {

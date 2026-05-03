@@ -25,9 +25,10 @@ const EXTERNAL_SOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: 'calculatorhost 소개 | 정확한 금융·세금·부동산 계산기',
-  description: '2026년 최신 세율을 반영한 정확한 금융·세금·부동산 계산기 플랫폼. 한국 성인 대상 YMYL 서비스로 신뢰성과 정확성을 최우선으로 운영 중입니다.',
-  alternates: { canonical: 'https://calculatorhost.com/about' },
+  title: '소개 | calculatorhost — 운영자 김준혁 / 스마트데이터샵',
+  description:
+    '2026년 최신 세율을 반영한 한국 금융·세금·부동산 계산기 31종 운영. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 모든 계산 공식·세율·법조항은 1차 출처 직접 확인 후 반영.',
+  alternates: { canonical: 'https://calculatorhost.com/about/' },
 };
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
@@ -60,6 +61,33 @@ export default function AboutPage() {
                 calculatorhost 는 대한민국 성인의 생활 금융·세금·부동산 의사결정을 돕는
                 무료 계산기 모음 사이트입니다.
               </p>
+
+              <h2 className="text-2xl font-semibold text-text-primary">운영자</h2>
+              <div className="not-prose rounded-lg border border-border-base bg-bg-card p-5 text-sm">
+                <dl className="grid gap-y-2 sm:grid-cols-[120px_1fr]">
+                  <dt className="font-semibold text-text-primary">상호</dt>
+                  <dd className="text-text-secondary">스마트데이터샵 (Smart Data Shop)</dd>
+                  <dt className="font-semibold text-text-primary">대표</dt>
+                  <dd className="text-text-secondary">김준혁</dd>
+                  <dt className="font-semibold text-text-primary">사업자등록번호</dt>
+                  <dd className="text-text-secondary tabular-nums">406-06-34485</dd>
+                  <dt className="font-semibold text-text-primary">개업일</dt>
+                  <dd className="text-text-secondary">2020년 5월</dd>
+                  <dt className="font-semibold text-text-primary">업태</dt>
+                  <dd className="text-text-secondary">소매업, 도매 및 소매업 (전자상거래)</dd>
+                  <dt className="font-semibold text-text-primary">문의</dt>
+                  <dd className="text-text-secondary">
+                    <Link href="/contact" className="text-primary-600 underline dark:text-primary-500">
+                      문의 페이지
+                    </Link>
+                  </dd>
+                </dl>
+                <p className="mt-4 text-caption text-text-tertiary">
+                  본 사이트의 모든 계산 공식·세율·법조항 인용은 운영자 김준혁이 국세청·기획재정부·
+                  한국은행·금융감독원 등 1차 출처를 직접 확인해 작성·검수합니다. 콘텐츠 작성에
+                  AI 도구를 보조적으로 활용하지만, 모든 결과물은 운영자가 최종 검토합니다.
+                </p>
+              </div>
 
               <h2 className="text-2xl font-semibold text-text-primary">미션</h2>
               <p>

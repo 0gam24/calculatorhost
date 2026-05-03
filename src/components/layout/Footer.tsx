@@ -57,7 +57,11 @@ export function Footer() {
             최종 검토합니다.{' '}
             <Link href="/about" className="underline">콘텐츠 정책 및 운영 원칙 자세히 보기</Link>
           </p>
-          <p className="mt-2">© {new Date().getFullYear()} calculatorhost. All rights reserved.</p>
+          <p className="mt-3 text-text-secondary">
+            <strong>운영</strong>: 스마트데이터샵 (대표 김준혁) ·{' '}
+            <span className="text-text-tertiary">사업자등록번호 406-06-34485</span>
+          </p>
+          <p className="mt-2">© {new Date().getFullYear()} calculatorhost · 스마트데이터샵. All rights reserved.</p>
         </div>
       </div>
     </footer>

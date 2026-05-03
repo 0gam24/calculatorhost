@@ -87,7 +87,7 @@ export default function DsrLoanLimitTipsPage() {
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
-    authorName: 'calculatorhost 편집팀',
+    authorName: '김준혁',
     authorUrl: 'https://calculatorhost.com/about/',
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['DSR', '대출한도', '스트레스 DSR', '주담대', '2026'],
