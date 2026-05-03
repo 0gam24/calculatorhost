@@ -20,6 +20,7 @@ import {
 import bokRates from '@/data/bok-rates.json';
 import { LoanLimitCalculator } from './LoanLimitCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/loan-limit';
 
@@ -201,6 +202,7 @@ export default function LoanLimitPage() {
                   3대 규제(DSR·LTV·DTI)를 모두 적용한 실행 가능한 최대 대출액을 즉시 확인하세요.
                   2026년 스트레스 DSR(1.5%p) 풀 적용 기준을 반영합니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -307,6 +309,43 @@ export default function LoanLimitPage() {
                     DSR은 모든 대출의 원리금을, DTI는 신규는 원리금, 기존은 이자만 포함합니다.
                   </p>
                 </div>
+              </section>
+
+              {/* 산출 공식 및 예시 (자연어 prose — LLM 인용 친화) */}
+              <section className="card space-y-3">
+                <h2 className="text-2xl font-bold">2026년 스트레스 DSR이 적용된 주담대 한도는 어떻게 계산하나요?</h2>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  2026년부터는 변동금리·혼합형·주기형 주택담보대출에 <strong>스트레스 DSR 1.5%p가
+                  전면 적용</strong>됩니다. 이때 대출 한도는 다음 공식으로 산출합니다.
+                </p>
+                <div className="rounded-lg border border-border-base bg-bg-card p-4 font-mono text-sm">
+                  DSR = (신규 월 원리금 × 12 + 기존 모든 대출 연 원리금) ÷ 연소득 × 100 ≤ 40%
+                </div>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  여기서 <strong>스트레스 DSR을 적용</strong>하면 신규 월 원리금을 계산할 때 실제 약정금리가 아닌
+                  <strong> "약정금리 + 1.5%p"</strong>를 가상으로 적용해 한도를 산출합니다. 즉 약정금리 3.5%로
+                  실행되더라도 한도 산정 시점에는 5.0% 기준으로 원리금을 계산하므로 같은 연소득에서
+                  대출 한도가 약 12~18% 줄어듭니다.
+                </p>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  <strong>실제 예시 (연소득 1억, 신규 주담대 30년 원리금균등, 기존 대출 0)</strong>: 약정금리
+                  3.5% 기준 월 원리금은 약 224만 원이며 연 환산 약 2,690만 원으로 DSR ≈ 26.9%이지만,
+                  스트레스 1.5%p를 적용해 5.0%로 계산하면 월 원리금이 약 268만 원, 연 환산 약 3,220만
+                  원으로 DSR ≈ 32.2%로 상승합니다. 40% 한도 내에 머무르려면 신규 대출 가능액이
+                  <strong> 약 5.0억 원에서 약 4.4억 원으로 감소</strong>합니다.
+                </p>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  <strong>LTV 동시 적용</strong>: DSR이 통과하더라도 LTV(담보인정비율)가 더 낮은 한도를
+                  결정할 수 있습니다. 예: 담보가치 8억 원, 조정대상지역(50%) → LTV 한도 4억 원.
+                  이 경우 DSR 4.4억 원과 LTV 4억 원 중 <strong>낮은 4억 원이 최종 실행 한도</strong>가 됩니다.
+                  생애최초 실수요자(LTV 80%)나 비규제지역(LTV 70%)이면 LTV 제약이 완화됩니다.
+                </p>
+                <p className="text-sm leading-relaxed text-text-secondary">
+                  <strong>기존 대출이 있을 때</strong>: 신용대출 1,000만 원이 있으면 연 이자 약 35~50만 원
+                  (금리 3.5~5%)이 DSR 분자에 추가되어 한도가 추가로 1,000~2,000만 원 가량 더 줄어듭니다.
+                  마이너스 통장(미사용분)은 일부 은행에서 한도의 일정 비율만 DSR 산입하므로 사전 확인이
+                  필요합니다.
+                </p>
               </section>
 
               {/* 주의사항 */}

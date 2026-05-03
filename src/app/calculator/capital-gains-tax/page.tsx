@@ -17,6 +17,7 @@ import {
   buildHowToJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { TransferTaxCalculator } from './TransferTaxCalculator';
 
 const URL = 'https://calculatorhost.com/calculator/capital-gains-tax';
@@ -203,6 +204,7 @@ export default function TransferTaxPage() {
                   비과세, 일시적 2주택 특례, 장기보유특별공제까지 모두 반영하여 최종 납부액을 거래 전에
                   정확히 확인할 수 있습니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

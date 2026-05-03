@@ -51,6 +51,8 @@ paths:
 모든 계산기 페이지 본문에 **공식 기관 출처 2~3개** 필수.
 링크 속성: `target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline"`
 
+> **`nofollow` 유지 결정 (2026-05-03)**: 외부 SEO 컨설턴트는 정부·법령 인용 링크를 `dofollow`로 전환할 것을 권고했으나, 본 사이트는 (1) YMYL(Your Money Your Life) 금융·세무 카테고리이며 (2) 인용은 권위 검증 목적이지 추천이 아니므로 `nofollow`를 유지한다. E-E-A-T는 본문 콘텐츠 품질·산출 공식 정확성·deep-link 구체성으로 신호하며, 링크 주스 전달은 부차적 신호에 해당. 단, **deep-link 정밀도는 최대로**(homepage URL이 아닌 법령·고시·세액표 직링크 사용).
+
 카테고리별 권장 출처 (확장 가능):
 - 국세 → 홈택스(hometax.go.kr), 국세청(nts.go.kr), 기획재정부(moef.go.kr)
 - 지방세 → 위택스(wetax.go.kr)

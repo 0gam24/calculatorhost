@@ -15,6 +15,7 @@ import {
   buildWebPageJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { FreelancerCalculator } from './FreelancerCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -188,6 +189,7 @@ export default function FreelancerTaxPage() {
                   회원가입 없이 무료로 이용할 수 있으며, 5월 종합소득세 신고 전 납부액과 환급액을
                   미리 확인하세요.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

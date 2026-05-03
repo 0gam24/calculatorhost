@@ -15,6 +15,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { InheritanceTaxCalculator } from './InheritanceTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/inheritance-tax';
 
@@ -161,6 +162,7 @@ export default function InheritanceTaxPage() {
                   신고세액공제 3%까지 모두 반영해 상속 시 최종 납부 세액을 거래 전에 정확히 확인할 수
                   있습니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

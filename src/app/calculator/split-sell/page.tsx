@@ -17,6 +17,7 @@ import {
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { SplitSellCalculator } from './SplitSellCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/split-sell/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -239,6 +240,7 @@ export default function SplitSellPage() {
                   차감)과 누적 손익, 세후 수령액을 즉시 계산합니다. 평단 대비 +5%·+10%·+20%
                   버튼으로 목표 수익률에서 매도가를 자동 환산할 수 있습니다.
                 </p>
+                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
               </header>
 
               <StructuredSummary

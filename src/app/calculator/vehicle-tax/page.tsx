@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { VehicleTaxCalculator } from './VehicleTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/vehicle-tax';
 
@@ -155,6 +156,7 @@ export default function VehicleTaxPage() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   배기량과 차령으로 자동차세·지방교육세·연납 할인을 정확히 계산하세요.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

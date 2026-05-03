@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { RentConversionCalculator } from './RentConversionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/rent-conversion';
 
@@ -160,6 +161,7 @@ export default function RentConversionPage() {
                   전환하거나, 월세를 전세로 환산할 때 법정 상한(기준금리 + 2%p 또는 10% 중 낮은
                   값)을 자동으로 적용합니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

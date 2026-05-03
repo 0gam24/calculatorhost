@@ -16,6 +16,7 @@ import {
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 import { HousingSubscriptionCalculator } from './HousingSubscriptionCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/housing-subscription';
 
@@ -182,6 +183,7 @@ export default function HousingSubscriptionPage() {
               즉시 계산하세요. 총 84점 만점 기준으로 당신의 청약 가능성을
               판단할 수 있습니다.
             </p>
+            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
 
             {/* Structured Summary */}
             <StructuredSummary

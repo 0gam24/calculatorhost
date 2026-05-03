@@ -17,6 +17,7 @@ import {
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { SplitBuyCalculator } from './SplitBuyCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/split-buy/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -245,6 +246,7 @@ export default function SplitBuyPage() {
                   차수별 단가·수량을 자유롭게 입력하거나, 총 투자금에서 균등분할로
                   자동 채울 수 있습니다.
                 </p>
+                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
               </header>
 
               <StructuredSummary

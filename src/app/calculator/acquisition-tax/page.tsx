@@ -17,6 +17,7 @@ import {
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AcquisitionCalculator } from './AcquisitionCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/acquisition-tax';
 
@@ -185,6 +186,7 @@ export default function AcquisitionTaxPage() {
                   주택 수·조정지역 여부·면적·생애최초 감면까지 모두 반영하여 농어촌특별세와
                   지방교육세를 포함한 총 납부액을 즉시 확인할 수 있습니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

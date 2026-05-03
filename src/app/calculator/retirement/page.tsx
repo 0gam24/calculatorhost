@@ -15,6 +15,7 @@ import {
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { RetirementCalculator } from './RetirementCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/retirement';
 
@@ -175,6 +176,7 @@ export default function RetirementPage() {
                   은퇴 시점 예상자산, 필요자금, 4% 룰 기반 안전 인출액을 즉시 계산합니다.
                   FIRE(조기은퇴) 계획 및 경제적 자유 목표 달성을 위한 필수 도구입니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

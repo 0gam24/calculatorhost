@@ -16,6 +16,7 @@ import {
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 import { ChildTaxCreditCalculator } from './ChildTaxCreditCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/child-tax-credit';
 
@@ -179,6 +180,7 @@ export default function ChildTaxCreditPage() {
               가구 유형, 연 총소득, 18세 미만 자녀 수로 자녀장려금을 즉시 계산하세요.
               저소득 가구의 자녀 양육을 지원하는 국가 지원금을 확인할 수 있습니다.
             </p>
+            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
 
             {/* Structured Summary */}
             <StructuredSummary

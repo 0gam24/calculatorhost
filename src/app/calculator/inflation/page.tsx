@@ -15,6 +15,7 @@ import {
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { InflationCalculator } from './InflationCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/inflation';
 
@@ -178,6 +179,7 @@ export default function InflationPage() {
                   실질 구매력을 즉시 계산합니다. 인플레이션이 돈의 가치에 미치는 영향을
                   정확히 파악하기 위한 필수 도구입니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

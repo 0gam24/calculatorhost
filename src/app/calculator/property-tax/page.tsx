@@ -15,6 +15,7 @@ import {
   buildWebPageJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PropertyTaxCalculator } from './PropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -157,6 +158,7 @@ export default function PropertyTaxPage() {
                   1세대1주택 특례 여부, 도시지역 여부를 입력하면 재산세 본세, 지방교육세,
                   도시지역분을 포함한 연간 총 납부액과 7·9월 분납액을 즉시 확인할 수 있습니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { LoanCalculator } from './LoanCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/loan';
 
@@ -158,6 +159,7 @@ export default function LoanInterestPage() {
                   대출 실행 전 상환방식별 월 부담액·총 이자·원리금 내역을 비교하여 상환 계획을 세우세요.
                   원리금균등·원금균등·만기일시 세 가지 상환 방식과 거치 기간을 반영하여 정확한 스케줄을 즉시 계산합니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

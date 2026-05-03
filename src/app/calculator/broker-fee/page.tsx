@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { CommissionCalculator } from './CommissionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/broker-fee';
 
@@ -160,6 +161,7 @@ export default function CommissionPage() {
                   매매·교환·전세·월세 거래 시 법정 상한요율과 한도액을 즉시 확인하고, 협의
                   요율과 부가세를 포함한 총 지급액을 거래 직전 정확하게 계산할 수 있습니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

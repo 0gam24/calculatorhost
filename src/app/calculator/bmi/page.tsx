@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { BmiCalculator } from './BmiCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/bmi';
 
@@ -153,6 +154,7 @@ export default function BmiPage() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   키와 몸무게로 체질량지수(BMI)를 즉시 계산할 수 있는 무료 도구입니다. 대한비만학회 2022 기준에 따라 저체중, 정상, 과체중, 비만 단계를 분류하고 개인별 정상 체중 범위를 제시합니다. 간단한 입력으로 현재의 건강한 체중 상태를 파악하세요.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

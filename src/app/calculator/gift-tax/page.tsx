@@ -15,6 +15,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { GiftTaxCalculator } from './GiftTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/gift-tax';
 
@@ -148,6 +149,7 @@ export default function GiftTaxPage() {
                   10년 합산 공제, 5단계 누진 세율, 신고세액공제까지 모두 반영하여 재산 증여 시 최종
                   납부 세액을 거래 전에 정확히 확인할 수 있습니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

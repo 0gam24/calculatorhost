@@ -18,6 +18,7 @@ import {
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AveragingDownCalculator } from './AveragingDownCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/averaging-down/';
 const DATE_PUBLISHED = '2026-04-24';
@@ -244,6 +245,7 @@ export default function AveragingDownPage() {
                   계산하거나, 목표 평균단가 달성에 필요한 분할매수 수량을 역산합니다.
                   손실 회복 필요 상승률·손익분기점까지 한 번에 확인하세요.
                 </p>
+                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
               </header>
 
               {/* GEO/AEO Structured Summary */}

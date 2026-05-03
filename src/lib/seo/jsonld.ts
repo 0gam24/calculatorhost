@@ -89,7 +89,22 @@ export function buildSoftwareApplicationJsonLd(opts: SoftwareApplicationOptions)
     operatingSystem: 'Web',
     inLanguage: 'ko-KR',
     isAccessibleForFree: true,
-    publisher: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+    creator: {
+      '@type': 'Person',
+      name: SITE_FOUNDER,
+      url: `${SITE_URL}/about/`,
+      affiliation: {
+        '@type': 'Organization',
+        name: SITE_LEGAL_NAME,
+        url: SITE_URL,
+      },
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_LEGAL_NAME,
+      legalName: SITE_LEGAL_NAME,
+      url: SITE_URL,
+    },
     offers: {
       '@type': 'Offer',
       price: 0,

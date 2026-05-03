@@ -151,16 +151,60 @@ const ALL_CALCULATORS: CalcCategory[] = [
 ];
 
 interface Update2026 {
+  /** 반영 계산기 (한글명 + slug, 미연결 시 null) */
+  calculator: { title: string; slug: string } | null;
+  /** 반영 항목 (예: 소득세율, DSR 규제) */
   item: string;
+  /** 변경 내용 / 비고 */
   detail: string;
+  /** 반영일자 (YYYY-MM-DD) */
+  date: string;
 }
 
+// 시계열 내림차순 (최신이 위) — Changelog 형태로 freshness 신호
 const UPDATES_2026: Update2026[] = [
-  { item: '소득세율 구간', detail: '8단계 유지 (변동 없음)' },
-  { item: '국민연금 보험료', detail: '4.5% 유지 (근로자 부담)' },
-  { item: 'DSR 규제', detail: '40% 적용 (스트레스 테스트 병행)' },
-  { item: '공정시장가액비율', detail: '60% 유지 (주택·부동산)' },
-  { item: '1세대1주택 특례', detail: '양도세 비과세 요건 동일 (2년 보유·9억 이하)' },
+  {
+    calculator: { title: '부가가치세(VAT)', slug: 'vat' },
+    item: '신규 추가',
+    detail: '일반·간이·환산 3 모드 부가세 계산기 신규 공개',
+    date: '2026-05-03',
+  },
+  {
+    calculator: { title: '분할매수·분할매도', slug: 'split-buy' },
+    item: '신규 추가',
+    detail: '주식·코인 가중평균·BEP·실현손익 계산기 2종 공개',
+    date: '2026-05-03',
+  },
+  {
+    calculator: { title: '대출한도(DSR)', slug: 'loan-limit' },
+    item: '스트레스 DSR',
+    detail: '변동·혼합형·주기형 1.5%p 풀 적용 반영',
+    date: '2026-04-27',
+  },
+  {
+    calculator: { title: '연봉 실수령액', slug: 'salary' },
+    item: '소득세율 구간',
+    detail: '8단계 누진세율(6~45%) 유지 확정 + 간이세액표 반영',
+    date: '2026-04-27',
+  },
+  {
+    calculator: { title: '연봉·프리랜서·N잡', slug: 'salary' },
+    item: '국민연금 보험료',
+    detail: '근로자 부담 4.5% 유지, 기준소득월액 상한 637만 원',
+    date: '2026-04-24',
+  },
+  {
+    calculator: { title: '재산세', slug: 'property-tax' },
+    item: '공정시장가액비율',
+    detail: '주택 60% 유지, 1세대1주택 특례 별도 적용',
+    date: '2026-04-24',
+  },
+  {
+    calculator: { title: '양도소득세', slug: 'capital-gains-tax' },
+    item: '1세대1주택 특례',
+    detail: '비과세 요건(2년 보유·12억 이하) 유지',
+    date: '2026-04-24',
+  },
 ];
 
 const HOME_FAQ = [
@@ -326,27 +370,58 @@ export default function HomePage() {
                 </div>
               </section>
 
-              {/* 2026 주요 업데이트 */}
+              {/* 2026 주요 업데이트 — 시계열 Changelog 테이블 (GEO/AEO Freshness 신호) */}
               <section className="card card-hover space-y-6">
                 <div>
-                  <h2 className="text-2xl font-bold text-text-primary">2026년 세율·금리 업데이트</h2>
+                  <h2 className="text-2xl font-bold text-text-primary">2026년 세율·금리 변경사항 (Changelog)</h2>
                   <p className="mt-2 text-text-secondary">
-                    기획재정부·국세청·금융감독원의 공식 개정안을 즉시 반영합니다.
+                    기획재정부·국세청·금융감독원의 공식 개정안을 시계열로 정리합니다. 각 항목은 해당 계산기에 즉시 반영되었으며, 상세 산식·예시는 개별 페이지에서 확인하세요.
                   </p>
                 </div>
-                <div className="grid gap-4 sm:grid-cols-2">
-                  {UPDATES_2026.map((upd, idx) => (
-                    <div
-                      key={idx}
-                      className="rounded-2xl border border-border-subtle bg-bg-raised/70 p-4 transition-all hover:border-border-base"
-                    >
-                      <div className="font-semibold text-primary-500 text-sm">{upd.item}</div>
-                      <div className="mt-2 text-sm text-text-secondary">{upd.detail}</div>
-                    </div>
-                  ))}
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="sr-only">
+                      2026년 calculatorhost 계산기 세율·금리 변경 이력 (반영일자 내림차순)
+                    </caption>
+                    <thead>
+                      <tr className="border-b-2 border-border-base bg-primary-500/5">
+                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-primary">반영일자</th>
+                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-primary">계산기</th>
+                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-primary">반영 항목</th>
+                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-primary">변경 내용</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {UPDATES_2026.map((upd, idx) => (
+                        <tr key={idx} className="border-b border-border-subtle hover:bg-bg-raised/50">
+                          <td className="px-3 py-2 align-top tabular-nums text-text-secondary whitespace-nowrap">
+                            <time dateTime={upd.date}>{upd.date}</time>
+                          </td>
+                          <td className="px-3 py-2 align-top">
+                            {upd.calculator ? (
+                              <Link
+                                href={`/calculator/${upd.calculator.slug}/`}
+                                className="font-medium text-primary-700 underline hover:text-primary-500 dark:text-primary-300"
+                              >
+                                {upd.calculator.title}
+                              </Link>
+                            ) : (
+                              <span className="text-text-tertiary">전체</span>
+                            )}
+                          </td>
+                          <td className="px-3 py-2 align-top font-medium text-text-primary whitespace-nowrap">
+                            {upd.item}
+                          </td>
+                          <td className="px-3 py-2 align-top text-text-secondary">{upd.detail}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
                 <p className="text-xs text-text-tertiary border-t border-border-subtle pt-4">
-                  최종 갱신: 2026년 4월. 변경사항 발생 시 즉시 업데이트됩니다.
+                  최종 갱신: <time dateTime="2026-05-03">2026-05-03</time>. 변경사항 발생 시 즉시 업데이트됩니다.
+                  과거 이력 및 가이드 변경 사항은{' '}
+                  <Link href="/feed.xml" className="underline hover:text-primary-500">RSS 피드</Link>로 구독할 수 있습니다.
                 </p>
               </section>
 

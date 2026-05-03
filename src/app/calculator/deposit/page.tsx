@@ -15,6 +15,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { DepositCalculator } from './DepositCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/deposit';
 
@@ -149,6 +150,7 @@ export default function DepositPage() {
                   이자와 만기 수령액을 즉시 계산합니다. 이자소득세(일반과세 15.4%·세금우대
                   9.5%·비과세)를 실시간으로 반영합니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

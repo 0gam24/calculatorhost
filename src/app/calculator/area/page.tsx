@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { AreaConverter } from './AreaConverter';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/area';
 
@@ -154,6 +155,7 @@ export default function AreaConversionPage() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   한국의 부동산 표기에서 자주 쓰이는 "평"과 국제표준 "제곱미터(㎡)"를 양방향으로 자유롭게 변환할 수 있는 무료 계산기입니다. 전용면적, 공급면적, 대지면적을 구분하여 입력할 수 있으며, 자주 쓰는 평수(24평, 32평, 34평 등)의 변환표도 함께 제공합니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

@@ -15,6 +15,7 @@ import {
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { RentalYieldCalculator } from './RentalYieldCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/rental-yield';
 
@@ -185,6 +186,7 @@ export default function RentalYieldPage() {
                   연 수익률(ROI)과 Cap Rate, 월 순수입을 즉시 계산합니다. 임대차 투자의
                   수익성을 정확히 판단하기 위한 필수 분석 도구입니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

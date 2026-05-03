@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { SeveranceCalculator } from './SeveranceCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/severance';
 
@@ -158,6 +159,7 @@ export default function SeverancePage() {
                   근속연수공제, 환산급여공제, 지방소득세까지 포함되며, 세후 실수령액을 즉시 확인할 수 있습니다.
                   DB형·DC형 선택 가능.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

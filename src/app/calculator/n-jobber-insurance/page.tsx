@@ -16,6 +16,7 @@ import {
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 import { NJobberInsuranceCalculator } from './NJobberInsuranceCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/n-jobber-insurance';
 
@@ -181,6 +182,7 @@ export default function NJobberInsurancePage() {
               주 근로소득과 부업, 기타소득을 입력해 월 건강보험료를 즉시 계산하세요.
               피부양자 자격 상실 여부도 미리 확인할 수 있습니다.
             </p>
+            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
 
             {/* Structured Summary */}
             <StructuredSummary

@@ -16,6 +16,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { DdayCalculator } from './DdayCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/d-day';
 
@@ -152,6 +153,7 @@ export default function DdayPage() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   특정일까지 며칠 남았는지, 두 날짜 사이의 차이가 얼마나 되는지, 기준일에서 특정 일수 후의 날짜가 언제인지를 즉시 계산할 수 있는 무료 도구입니다. 기념일 카운팅, 시험 준비, 출산 예정일, 휴가 계획 등 일상의 모든 날짜 계산에 활용하세요.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

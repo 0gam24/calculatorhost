@@ -16,6 +16,7 @@ import {
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 import { ExchangeCalculator } from './ExchangeCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/exchange';
 
@@ -181,6 +182,7 @@ export default function ExchangePage() {
               환율을 즉시 계산하세요. 원화에서 외화로, 외화에서 원화로 양방향
               지원합니다.
             </p>
+            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
 
             {/* Structured Summary */}
             <StructuredSummary

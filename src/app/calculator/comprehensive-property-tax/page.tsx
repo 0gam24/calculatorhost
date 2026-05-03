@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { ComprehensivePropertyTaxCalculator } from './ComprehensivePropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
@@ -163,6 +164,7 @@ export default function ComprehensivePropertyTaxPage() {
                   합계, 1세대1주택 특례 여부, 고령자·장기보유 정보를 입력하면 공정시장가액비율 60%
                   적용으로 과세표준과 세액공제를 반영한 최종 납부세액을 즉시 확인할 수 있습니다.
                 </p>
+                <AuthorByline dateModified="2026-04-24" />
               </header>
 
               {/* GEO/AEO Structured Summary */}

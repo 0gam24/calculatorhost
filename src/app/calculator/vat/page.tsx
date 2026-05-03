@@ -17,6 +17,7 @@ import {
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { VatCalculator } from './VatCalculator';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/vat/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -216,6 +217,7 @@ export default function VatPage() {
                   간이과세자(업종별 부가가치율) / VAT 포함↔공급가액 환산 모두 지원합니다.
                   사업자·프리랜서·소상공인의 분기·반기 신고 시뮬레이션에 사용하세요.
                 </p>
+                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
               </header>
 
               <StructuredSummary

@@ -17,6 +17,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { SalaryCalculator } from './SalaryCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/salary';
 
@@ -160,6 +161,7 @@ export default function SalaryPage() {
                   연봉·월급 입력 만으로 월 실수령액과 시급을 즉시 확인할 수 있으며, 부양가족·자녀·비과세까지
                   반영됩니다.
                 </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -280,30 +282,51 @@ export default function SalaryPage() {
 
               {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
+                <h2 className="mb-4 text-2xl font-semibold">2026년 연봉 실수령액 산출 공식 및 예시</h2>
+                <p className="mb-4 text-sm leading-relaxed text-text-secondary">
+                  2026년 연봉 실수령액은 <strong>세전 월급에서 4대보험(국민연금·건강보험·장기요양·고용보험)과
+                  근로소득세·지방소득세를 차례대로 공제</strong>하여 산출합니다. 공식은 다음과 같습니다.
+                </p>
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-card p-4 font-mono text-sm">
+                  실수령액 = (연봉 ÷ 12) − 4대보험 합계 − (근로소득세 + 지방소득세)
+                </div>
                 <ol className="space-y-3 text-sm leading-relaxed">
                   <li>
-                    <strong>1. 월 소득(세전) 산출</strong>: 연봉 ÷ 12 (퇴직금 포함 시 ÷ 13).
+                    <strong>1. 월 소득(세전) 산출</strong>: 연봉을 12로 나눕니다. 근로계약서에
+                    "퇴직금 포함 연봉"으로 표기되어 있으면 13으로 나누는 것이 관행이며, 이 경우 동일 연봉
+                    대비 월 소득이 약 7.7% 낮아집니다. 예: 세전 연봉 5,000만 원 → 월 소득 약 416.7만 원.
                   </li>
                   <li>
-                    <strong>2. 과세 대상 소득</strong>: 월 소득 − 비과세 항목(식대 등).
+                    <strong>2. 과세 대상 소득</strong>: 월 소득에서 비과세 항목(식대 월 20만 원 이하,
+                    숙직비, 자가운전보조금 월 20만 원 등)을 차감합니다. 비과세 항목은 4대보험과 소득세 모두의
+                    과세표준에서 제외되므로 같은 연봉이라도 비과세 식대를 받으면 실수령액이 늘어납니다.
                   </li>
                   <li>
-                    <strong>3. 4대보험 공제</strong>: 과세 대상 소득 × 각 요율. 국민연금은
-                    기준소득월액 하한 40만 원, 상한 637만 원 적용.
+                    <strong>3. 4대보험 공제</strong>: 과세 대상 소득에 각 요율을 곱해 산출합니다.
+                    2026년 기준 근로자 부담분은 국민연금 4.5%, 건강보험 3.545%, 장기요양 0.4593%
+                    (건보료의 12.95%), 고용보험 0.9%로 총 약 9% 수준입니다. 국민연금은 기준소득월액
+                    하한 40만 원, 상한 637만 원이 적용되어 연봉 1억 원 초과부터는 정액으로 부과됩니다.
                   </li>
                   <li>
-                    <strong>4. 소득세</strong>: 연 과세표준에 8단계 누진세율(§소득세법 55조) 적용,
-                    자녀세액공제 차감 후 월 환산.
+                    <strong>4. 근로소득세</strong>: 연 과세표준에 소득세법 §55의 8단계 누진세율(6%~45%)을
+                    적용한 뒤 자녀세액공제(1인 15만/2인 20만/3인째부터 각 40만 원)를 차감하고 12로 나눠
+                    월 소득세를 구합니다. 국세청 근로소득 간이세액표가 매월 원천징수 기준입니다.
                   </li>
                   <li>
-                    <strong>5. 지방소득세</strong>: 소득세 × 10%.
+                    <strong>5. 지방소득세</strong>: 소득세 × 10%를 별도로 부과합니다(지방세법 §92).
                   </li>
                   <li>
-                    <strong>6. 실수령액</strong>: 월 소득(세전) − 4대보험 − 근로소득세 −
-                    지방소득세.
+                    <strong>6. 실수령액</strong>: 월 소득(세전)에서 4대보험과 소득세·지방소득세를 모두
+                    차감한 금액이 매월 통장에 입금됩니다.
                   </li>
                 </ol>
+                <p className="mt-4 text-sm leading-relaxed text-text-secondary">
+                  <strong>실제 예시 (연봉 5,000만 원, 부양 1인, 비과세 없음)</strong>: 월 세전 약 416.7만 원에서
+                  국민연금 18.7만 원, 건강보험 14.8만 원, 장기요양 1.9만 원, 고용보험 3.7만 원(4대보험 합계
+                  약 39.1만 원)과 근로소득세 약 21.5만 원, 지방소득세 약 2.2만 원이 공제되어 <strong>실수령액은
+                  약 350만 원</strong>이 됩니다. 자녀 2인 공제와 비과세 식대 20만 원을 적용하면 같은 연봉에서도
+                  약 360만 원대까지 늘어납니다.
+                </p>
               </section>
 
               {/* 4대보험 상세 설명 */}
