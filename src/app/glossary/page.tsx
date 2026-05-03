@@ -274,7 +274,7 @@ export default function GlossaryPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-4xl space-y-10">
               <header>
                 <Breadcrumb

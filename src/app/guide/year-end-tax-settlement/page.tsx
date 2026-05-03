@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -115,6 +116,13 @@ export default function YearEndTaxSettlementPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['연말정산', '13월의 월급', '신용카드 공제', '의료비 공제', '연금저축'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '연말정산 완벽 가이드 2026',
+    description: '2026년 1월 연말정산 시즌 완벽 가이드. 신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략까지 한 페이지.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -122,6 +130,7 @@ export default function YearEndTaxSettlementPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -129,7 +138,7 @@ export default function YearEndTaxSettlementPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

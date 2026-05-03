@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
@@ -116,6 +117,13 @@ export default function MayComprehensiveIncomeTaxPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['종합소득세 신고', '5월 종소세', '프리랜서 종소세', '단순경비율', '환급'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '5월 종합소득세 신고 완벽 가이드 2026',
+    description: '2026년 5월 종합소득세 신고 시즌 완벽 가이드. 신고 대상·기한·홈택스 단계별 신고법·단순경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리. 프리랜서·1인사업자·N잡러 필독.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   const howtoLd = buildHowToJsonLd({
@@ -153,6 +161,7 @@ export default function MayComprehensiveIncomeTaxPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }} />
@@ -161,7 +170,7 @@ export default function MayComprehensiveIncomeTaxPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

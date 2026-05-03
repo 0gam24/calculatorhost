@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -85,6 +86,13 @@ export default function FreelancerSalaryComparisonPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['프리랜서', '실수령액', '4대보험', '종합소득세', '사업소득'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '프리랜서 vs 일반직 실수령액 비교 2026',
+    description: '같은 연봉 5천만 원이라도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액은 큰 차이. 4대보험 부담·종합소득세·경비 인정 차이를 시뮬레이션과 함께 비교.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -92,6 +100,7 @@ export default function FreelancerSalaryComparisonPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -99,7 +108,7 @@ export default function FreelancerSalaryComparisonPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

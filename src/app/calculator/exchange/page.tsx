@@ -164,7 +164,7 @@ export default function ExchangePage() {
       <Header />
       <div className="flex flex-1 flex-col lg:flex-row">
         <Sidebar />
-        <main className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
+        <main id="main-content" className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
           <article className="mx-auto max-w-4xl">
             {/* 헤더 */}
             <Breadcrumb

@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -111,6 +112,13 @@ export default function JanuaryVehicleTaxPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['자동차세 연납', '6.4% 할인', '위택스', '무이자 할부'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '자동차세 연납 6.4% 할인 가이드 2026',
+    description: '2026년 1월 16~31일 자동차세 연납 신청·납부 가이드. 약 6.4% 할인 (최대 약 9.15%까지) + 신용카드 무이자 할부 + 위택스/모바일 신청법 + cc별 할인액 시뮬레이션.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -118,6 +126,7 @@ export default function JanuaryVehicleTaxPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -125,7 +134,7 @@ export default function JanuaryVehicleTaxPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -99,6 +100,13 @@ export default function FebruaryRefundTrackingPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['연말정산 환급', '경정청구', '5월 종소세 준비'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비 가이드 2026',
+    description: '2월 연말정산 환급/추가 납부 결과 확인·이의제기·5월 종합소득세 누락 공제 정정·사전 준비 완벽 가이드. 환급 안 들어왔을 때, 추가 납부 결과 받았을 때 대응법.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -106,6 +114,7 @@ export default function FebruaryRefundTrackingPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -113,7 +122,7 @@ export default function FebruaryRefundTrackingPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

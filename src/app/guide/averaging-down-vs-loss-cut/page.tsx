@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -91,6 +92,13 @@ export default function AveragingDownVsLossCutPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['물타기', '손절', '비중조절', '주식 전략', '코인 전략'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나 (2026)',
+    description: '하락 종목을 만났을 때 평단을 낮추는 물타기, 즉시 매도하는 손절, 단계적 매도하는 비중조절. 3가지 전략의 의사결정 기준과 시뮬레이션을 정리합니다.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -106,6 +114,10 @@ export default function AveragingDownVsLossCutPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <script
@@ -117,7 +129,7 @@ export default function AveragingDownVsLossCutPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

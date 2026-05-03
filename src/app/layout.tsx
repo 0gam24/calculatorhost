@@ -85,6 +85,18 @@ const themeInit = `
 })();
 `.trim();
 
+/* PWA Service Worker 등록 — 오프라인 fallback + 정적 자원 캐시.
+   load 이벤트 후 비동기 등록(메인 스레드 블록 X). 등록 실패는 silent. */
+const swInit = `
+(function() {
+  if (!('serviceWorker' in navigator)) return;
+  if (location.hostname === 'localhost' && location.port) return;
+  window.addEventListener('load', function() {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function() {});
+  });
+})();
+`.trim();
+
 // 환경변수 유효성 검증 — placeholder("ca-pub-", "G-")만 있고 값 비어있는 경우 차단.
 // 깨진 스크립트 URL 이 빌드 산출물에 박히는 것을 방지.
 const rawAdsense = process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim();
@@ -114,8 +126,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           crossOrigin="anonymous"
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
+        <script dangerouslySetInnerHTML={{ __html: swInit }} />
       </head>
       <body>
+        {/* WCAG 2.4.1 — 키보드 사용자 본문 점프 (헤더·사이드바 우회).
+            기본 sr-only, 포커스 시 가시화. 'main-content' id 는 각 페이지의 <main> 에 위치. */}
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-primary-600 focus:px-4 focus:py-2 focus:text-white focus:shadow-lg"
+        >
+          본문으로 건너뛰기
+        </a>
         {children}
 
         {/* Google AdSense — afterInteractive 전략 (FCP/LCP 와 경쟁 X)

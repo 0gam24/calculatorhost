@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -105,6 +106,13 @@ export default function AprilVatPreliminaryQ1Page() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['부가세 1기 예정신고', '부가가치세 신고', '4월 부가세'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '4월 부가세 1기 예정신고 가이드 2026',
+    description: '2026년 4월 1~25일 부가가치세 1기 예정신고·납부 완벽 가이드. 일반과세자 의무·간이과세자 면제·신고 대상·매출세액 vs 매입세액공제·홈택스 단계별 신고법.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -112,6 +120,7 @@ export default function AprilVatPreliminaryQ1Page() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -119,7 +128,7 @@ export default function AprilVatPreliminaryQ1Page() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

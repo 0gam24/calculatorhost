@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -114,6 +115,13 @@ export default function JunePropertyTaxPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['재산세', '7월 납부', '공정시장가액비율', '1세대1주택 특례', '세부담상한'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '재산세 완벽 가이드 2026',
+    description: '2026년 재산세 부과·납부 완벽 가이드. 6월 1일 과세 기준일·7월 16~31일 1차 납부·공시가격·공정시장가액비율 60%·1세대1주택 특례·세부담 상한·연납 할인까지 한 페이지.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -121,6 +129,7 @@ export default function JunePropertyTaxPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -128,7 +137,7 @@ export default function JunePropertyTaxPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

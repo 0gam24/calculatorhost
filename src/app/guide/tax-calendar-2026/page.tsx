@@ -9,6 +9,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 
@@ -306,19 +307,28 @@ export default function TaxCalendar2026Page() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['2026 세금', '세금 일정', '세금 캘린더', '납부 일정'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
+    description:
+      '2026년 1월~12월 세금·납부 일정 한눈에. 연말정산·종소세·재산세·종부세·자동차세·부가세·법인세까지 월별 D-day와 관련 가이드 링크 모음.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-4xl space-y-8">
               <header>
                 <Breadcrumb

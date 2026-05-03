@@ -93,7 +93,9 @@ export function Sidebar() {
           <div className="mt-auto border-t border-border-subtle px-3 py-4">
             <button
               type="button"
-              className="flex items-center gap-3 rounded-lg px-3 py-3 w-full text-text-secondary hover:text-text-primary hover:bg-bg-raised/50 transition-all text-sm font-medium"
+              aria-label="설정 (준비 중)"
+              disabled
+              className="flex items-center gap-3 rounded-lg px-3 py-3 w-full text-text-secondary hover:text-text-primary hover:bg-bg-raised/50 transition-all text-sm font-medium disabled:cursor-not-allowed disabled:opacity-60"
             >
               <SettingsIcon />
               <span>설정</span>

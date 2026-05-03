@@ -10,6 +10,7 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -100,6 +101,13 @@ export default function AprilCptExclusionPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['종부세 합산배제', '종부세 과세특례', '4월 신청', '임대주택 종부세'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '4월 종합부동산세 합산배제·과세특례 신청 가이드 2026',
+    description: '2026년 4월 1~30일 종부세 합산배제·과세특례 신청 가이드. 임대주택·미분양·사원용·기숙사·문화재 등 합산배제 + 일시적 2주택·고령자 등 과세특례 + 12월 종부세 절세 핵심.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -107,6 +115,7 @@ export default function AprilCptExclusionPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -114,7 +123,7 @@ export default function AprilCptExclusionPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

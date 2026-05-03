@@ -45,6 +45,11 @@
 
 # HTML 페이지 — 짧은 TTL + revalidate + 보안/프라이버시 헤더
 # 정적 export 라 콘텐츠 자체는 자주 변경 X, 그래도 새 배포 빠른 반영 위해 1시간
+#
+# 보안 헤더 (외부 평가 기준 — securityheaders.com / Mozilla Observatory):
+# - HSTS: 1년 + subdomain 포함 + preload (브라우저가 HTTPS 강제)
+# - CSP: report-only 모드로 시작 (1주일 위반 모니터링 후 enforce 전환 예정)
+#   허용 origin: 'self' + Google AdSense + GA4 + Google Fonts + 정적 이미지
 /*
   Cache-Control: public, max-age=3600, must-revalidate
   X-Content-Type-Options: nosniff
@@ -52,3 +57,5 @@
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=(), accelerometer=(), gyroscope=(), magnetometer=()
   Cross-Origin-Opener-Policy: same-origin-allow-popups
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://adservice.google.com https://*.googlesyndication.com https://*.adtrafficquality.google; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://*.googlesyndication.com https://pagead2.googlesyndication.com https://*.adtrafficquality.google; frame-src https://googleads.g.doubleclick.net https://*.googlesyndication.com https://*.adtrafficquality.google; object-src 'none'; base-uri 'self'; form-action 'self'

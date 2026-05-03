@@ -34,7 +34,7 @@ export default function NotFound() {
       <Header />
       <div className="flex">
         <Sidebar />
-        <main className="flex-1 px-4 py-12 md:px-8">
+        <main id="main-content" className="flex-1 px-4 py-12 md:px-8">
           <article className="mx-auto max-w-4xl space-y-10">
             <header>
               <p className="mb-2 text-caption uppercase tracking-wide text-text-tertiary">

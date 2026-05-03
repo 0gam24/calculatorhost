@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -85,6 +86,13 @@ export default function CapitalGainsTaxTipsPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['양도세 절세', '1세대1주택', '장기보유공제', '일시적 2주택', '자경 농지'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '양도소득세 절세 7가지 방법 2026',
+    description: '주택·토지 양도 전 알아야 할 절세 핵심 7가지: 1세대1주택 비과세 조건, 장기보유특별공제 최대 80% 활용, 일시적 2주택 3년 특례, 자경 농지 100% 감면 등. 시뮬레이션과 함께 정리.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -92,6 +100,7 @@ export default function CapitalGainsTaxTipsPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -99,7 +108,7 @@ export default function CapitalGainsTaxTipsPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

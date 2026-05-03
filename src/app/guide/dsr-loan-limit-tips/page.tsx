@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -92,6 +93,13 @@ export default function DsrLoanLimitTipsPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['DSR', '대출한도', '스트레스 DSR', '주담대', '2026'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: 'DSR 대출한도를 늘리는 5가지 방법 2026',
+    description: '2026년 스트레스 DSR 1.5%p 풀 적용으로 같은 소득의 대출한도가 줄었습니다. 신용대출 상환·소득 합산·고정금리 활용·대환·금융기관 변경 등 5가지 실전 방법을 시뮬레이션과 함께 정리.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -107,6 +115,10 @@ export default function DsrLoanLimitTipsPage() {
       />
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
       />
       <script
@@ -118,7 +130,7 @@ export default function DsrLoanLimitTipsPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

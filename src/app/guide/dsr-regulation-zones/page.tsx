@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -85,6 +86,13 @@ export default function DsrRegulationZonesPage() {
     image: 'https://calculatorhost.com/og-default.png',
     keywords: ['DSR', 'LTV', '조정대상지역', '투기과열지구', '스트레스 DSR'],
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '비규제·조정·투기과열지역 DSR·LTV 규제 완전 정리 2026',
+    description: '2026년 비규제지역, 조정대상지역, 투기과열지구별 DSR·LTV·DTI 규제 차이를 한눈에. 스트레스 DSR 1.5%p 풀 적용 + 생애최초 우대 + 다주택 중과까지 모든 규제 비교표.',
+    url: URL,
+    datePublished: DATE_PUBLISHED,
+    dateModified: DATE_MODIFIED,
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -92,6 +100,7 @@ export default function DsrRegulationZonesPage() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
@@ -99,7 +108,7 @@ export default function DsrRegulationZonesPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb

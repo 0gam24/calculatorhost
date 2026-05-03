@@ -145,7 +145,7 @@ export default function FinanceCategoryPage() {
         <Header />
         <div className="flex flex-1">
           <Sidebar />
-          <main className="w-full flex-1 px-4 py-8 md:px-6 lg:px-8">
+          <main id="main-content" className="w-full flex-1 px-4 py-8 md:px-6 lg:px-8">
             <article className="mx-auto max-w-4xl space-y-8">
               {/* H1 */}
               <div>
