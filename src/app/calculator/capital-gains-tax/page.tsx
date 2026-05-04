@@ -28,7 +28,7 @@ const URL = 'https://calculatorhost.com/calculator/capital-gains-tax/';
 export const metadata: Metadata = {
   title: '양도소득세 계산기 2026 | 1세대1주택·일시적2주택 | calculatorhost',
   description:
-    '2026년 최신 소득세율 반영 양도소득세 계산기. 1세대1주택 비과세, 일시적 2주택 특례, 장기보유특별공제, 조정지역 중과세까지 정확히 계산. 부동산 거래 전 납부액 확인. 회원가입 불필요, 완전 무료.',
+    '2026년 양도소득세 계산기. 주택·토지 양도 시 세금을 계산하고, 1세대1주택 비과세·장기보유공제·일시적 2주택 특례 등 절세 혜택을 자동 적용. 거래 전 확인하세요. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '양도소득세 계산기 2026 — 1세대1주택 · 일시적2주택',

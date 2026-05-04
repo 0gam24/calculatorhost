@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/calculator/property-tax/';
 export const metadata: Metadata = {
   title: '재산세 계산기 2026 | 공시가·특례·도시지역 | calculatorhost',
   description:
-    '2026년 지방세법 기준 재산세 계산기. 공시가격과 1세대1주택 특례, 도시지역분, 지방교육세까지 모두 반영해 연간 총 납부액과 7·9월 분납액을 즉시 확인.',
+    '2026년 재산세 계산기. 공시가격·공정시장가액비율을 입력해 재산세를 계산. 1세대1주택 특례·연납 할인·도시지역세 등 반영. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '재산세 계산기 2026 | 공시가·특례·도시지역분',

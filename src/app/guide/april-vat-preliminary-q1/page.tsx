@@ -13,6 +13,7 @@ import {
   buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/guide/april-vat-preliminary-q1/';
@@ -115,6 +116,33 @@ export default function AprilVatPreliminaryQ1Page() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermsLd = buildDefinedTermSetJsonLd({
+    name: '부가가치세 1기 신고 핵심 용어',
+    description: '부가세, 예정신고, 확정신고, 매입세액공제 등 부가가치세 신고 필수 용어 정의.',
+    url: URL,
+    terms: [
+      {
+        name: '부가가치세 (VAT)',
+        description: '상품·용역 공급 시 발생하는 부가가치에 부과하는 간접세. 일반과세자는 6개월에 2회 신고(예정+확정). 부가가치세법 §3·§13 근거.',
+        alternateName: 'VAT, 부가세',
+      },
+      {
+        name: '예정신고',
+        description: '3개월 단위 부가세 신고. 1기(1~3월)는 4월 1~25일, 2기(7~9월)는 10월 1~25일 신고. 일반과세자 의무.',
+        alternateName: '부가세 예정신고',
+      },
+      {
+        name: '확정신고',
+        description: '6개월 단위 실제 납부세액 확정. 1기 확정(1~6월)은 7월 1~25일, 2기 확정(7~12월)은 1월 1~25일. 예정신고 납부액을 차감 후 추가/환급 처리.',
+        alternateName: '부가세 확정신고',
+      },
+      {
+        name: '매입세액공제',
+        description: '사업 관련 매입에 포함된 부가세를 납부세액에서 차감. 세금계산서·신용카드·현금영수증 발급분만 가능. 면세 매입·개인사용·한도 초과 부분은 불가.',
+        alternateName: '매입세액공제',
+      },
+    ],
+  });
 
   return (
     <>
@@ -123,6 +151,7 @@ export default function AprilVatPreliminaryQ1Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermsLd) }} />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
@@ -290,6 +319,20 @@ export default function AprilVatPreliminaryQ1Page() {
                 </ol>
               </section>
 
+              <section className="space-y-4">
+                <h2 className="text-2xl font-bold">5. 부가세 절세 체크리스트</h2>
+                <p className="text-text-secondary leading-relaxed">
+                  신고 마감 전 다음을 확인해 부가세를 최소화하세요. 매입세액공제는 일 1~2회 판매 사업의 경우 큰 절세 효과가 있으니 반드시 챙기세요.
+                </p>
+                <ul className="space-y-2 text-sm text-text-secondary">
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>세금계산서 재확인</strong> — 매입 시 세금계산서 발급받았는지, 발급처가 유효한 사업자인지 점검</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>신용카드 영수증</strong> — 기업신용카드 사용분은 자료가 자동 제출되니 누락 확인</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>환급 대상 확인</strong> — 매입 {'>'}매출 시 환급 발생. 환급액이 큰 경우 추가 서류 요청 가능성 대비</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>면세 매입 구분</strong> — 의료·교육·생활용품 구입분은 부가세 대상 아님. 분류 오류 시 가산세</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>접대비 한도</strong> — 접대비 공제는 직전년도 매출액의 일정 비율 한도 초과 부분 불가. 회계사와 사전 확인</span></li>
+                </ul>
+              </section>
+
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
@@ -317,7 +360,9 @@ export default function AprilVatPreliminaryQ1Page() {
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 부가가치세법 §3·§13·§14·§38·§48 (예정신고). 참고:{' '}
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>.
+                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>
+                  ,{' '}
+                  <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 공식 사이트</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>

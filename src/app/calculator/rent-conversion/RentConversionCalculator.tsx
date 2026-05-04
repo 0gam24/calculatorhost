@@ -328,10 +328,10 @@ export function RentConversionCalculator() {
       {/* 결과 카드 */}
       <div className="flex flex-col gap-6">
         <div className="card flex flex-col gap-6">
-          <header>
+          <header className="hero-number-container">
             <h2 className="text-lg font-semibold text-text-secondary">결과</h2>
             <p className="mt-2 text-caption text-text-tertiary">{heroLabel}</p>
-            <p className="mt-3 text-5xl font-bold tabular-nums text-primary-500">{heroValue}</p>
+            <p className="mt-4 hero-number" aria-label={`${heroLabel}: ${heroValue}`}>{heroValue}</p>
           </header>
 
           {/* 경고 박스 */}

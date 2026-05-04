@@ -201,9 +201,13 @@ export function ExchangeCalculator() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {/* 최종 수령액 (히어로) */}
-            <div className="md:col-span-2 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 p-6 text-white">
+            <div className="hero-number-container md:col-span-2 rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 p-6 text-white">
               <p className="text-sm font-medium opacity-90">최종 수령액</p>
-              <p className="mt-2 text-4xl font-bold">
+              <p className="mt-4 hero-number" aria-label={`최종 수령액: ${direction === 'krwToForeign'
+                  ? `$${result.netAmount.toLocaleString('en-US', {
+                      maximumFractionDigits: 2,
+                    })}`
+                  : `₩${Math.round(result.netAmount).toLocaleString('ko-KR')}`}`}>
                 {direction === 'krwToForeign'
                   ? `$${result.netAmount.toLocaleString('en-US', {
                       maximumFractionDigits: 2,

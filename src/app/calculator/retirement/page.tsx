@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/retirement/';
 export const metadata: Metadata = {
   title: '은퇴자금 계산기 2026 | FIRE·4% 룰 | calculatorhost',
   description:
-    '2026년 은퇴자금 계산기. 현재 나이·자산·월 저축액·기대수익률을 입력해 은퇴 시점 예상자산, 필요자금, 4% 룰 기반 안전 인출액을 즉시 계산. FIRE·조기은퇴 계획 필수.',
+    '2026년 은퇴자금 계산기. 목표 자산·월 저축액·기대 수익률 입력으로 은퇴 가능 시기를 계산. FIRE·4% 규칙 적용 가능. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '은퇴자금 계산기 2026 — FIRE·4% 룰',

@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/d-day/';
 export const metadata: Metadata = {
   title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일 | calculatorhost',
   description:
-    '특정일까지 D-day, 두 날짜 사이 일수, N일 후 도달 날짜까지 한 번에 계산. 윤년·요일 자동 처리. 기념일·시험·출산 예정일 카운팅에 최적.',
+    'D-day 계산기 2026. 두 날짜 사이의 일수·주수·개월 수·년 수를 계산. 100일·1000일 같은 특정 기념일 계산도 가능. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일',

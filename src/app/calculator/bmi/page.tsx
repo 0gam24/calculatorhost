@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/bmi/';
 export const metadata: Metadata = {
   title: 'BMI 계산기 2026 | 대한비만학회 기준 | calculatorhost',
   description:
-    '키와 몸무게로 BMI 즉시 계산. 대한비만학회 2022 기준 저체중·정상·과체중·비만 단계별 분류와 표준체중 권장 범위까지 한눈에 확인.',
+    'BMI 계산기 2026. 신장·체중으로 BMI·표준체중·비만도를 대한비만학회 기준으로 계산. 건강 관리 목표 제시. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'BMI 계산기 2026 | 대한비만학회 기준',

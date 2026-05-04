@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 export const metadata: Metadata = {
   title: '프리랜서 종합소득세 계산기 2026 | 3.3% 원천징수 | calculatorhost',
   description:
-    '프리랜서·개인사업자 종합소득세를 2026년 최신 세율로 계산. 3.3% 원천징수, 단순경비율, 자녀세액공제, 최종 납부액·환급액을 한눈에 확인하는 무료 도구.',
+    '2026년 프리랜서 종합소득세 계산기. 수입액과 경비율(기준율 또는 실제)을 입력해 과세표준·세액·3.3% 원천징수를 계산. 절세 팁 제시. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '프리랜서 종합소득세 계산기 2026',

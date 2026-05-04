@@ -9,12 +9,9 @@ test.describe('청약가점 골든패스', () => {
     await page.goto('/calculator/housing-subscription/', { waitUntil: 'domcontentloaded' });
     await page.waitForTimeout(1000);
 
-    // 결과 카드 (자동 계산)
-    const result = page.locator('div:has(> p.text-6xl.font-bold)');
-    await expect(result).toBeVisible({ timeout: 10000 });
-
-    // 점수 확인
-    const score = result.locator('p.text-6xl.font-bold');
+    // hero-number 적용 후 (Phase J frontend-builder)
+    const score = page.locator('.hero-number').first();
+    await expect(score).toBeVisible({ timeout: 10000 });
     const text = (await score.textContent())?.trim() ?? '';
     expect(parseInt(text, 10)).toBeGreaterThan(0);
   });

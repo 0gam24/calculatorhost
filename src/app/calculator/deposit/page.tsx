@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/deposit/';
 export const metadata: Metadata = {
   title: '정기예금 이자 계산기 2026 | 단리·복리·세후 | calculatorhost',
   description:
-    '2026년 이자소득세 15.4% 반영 정기예금 계산기. 단리·월복리·일복리 방식별 세전·세후 이자와 만기 수령액을 즉시 비교. 비과세·세금우대 상품까지 반영.',
+    '2026년 정기예금 이자 계산기. 원금·이율·기간으로 세후 수령액을 계산. 단리·복리·월이자 받기 등 상품 유형별 비교. 이자소득세 15.4% 적용. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '정기예금 이자 계산기 2026 — 단리·복리·세후 비교',

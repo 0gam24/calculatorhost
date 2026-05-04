@@ -138,9 +138,9 @@ export function HousingSubscriptionCalculator() {
           <h2 className="text-xl font-semibold">계산 결과</h2>
 
           {/* 합계 점수 (히어로) */}
-          <div className="rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 p-8 text-white text-center">
+          <div className="hero-number-container rounded-lg bg-gradient-to-br from-primary-500 to-primary-600 p-8 text-white text-center">
             <p className="text-sm font-medium opacity-90">청약가점</p>
-            <p className="mt-2 text-6xl font-bold">{result.totalScore}</p>
+            <p className="mt-4 hero-number" aria-label={`청약가점: ${result.totalScore}`}>{result.totalScore}</p>
             <p className="mt-2 text-sm opacity-75">/ 84점</p>
           </div>
 

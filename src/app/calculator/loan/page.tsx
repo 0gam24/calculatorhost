@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/calculator/loan/';
 export const metadata: Metadata = {
   title: '대출이자 계산기 2026 | 상환방식별 월상환액 비교 | calculatorhost',
   description:
-    '2026년 무료 대출이자 계산기. 원리금균등·원금균등·만기일시 상환방식별 월 납입액과 총이자를 즉시 비교. 거치기간·주담대 반영. 회원가입 불필요.',
+    '2026년 대출이자 계산기. 대출액·금리·기간으로 월상환액·총이자·상환 스케줄을 계산. 원리금균등·만기일시·선택형 비교 가능. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '대출이자 계산기 2026 — 상환방식별 월 납입액 비교',

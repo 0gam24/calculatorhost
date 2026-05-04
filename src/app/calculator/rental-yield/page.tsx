@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/rental-yield/';
 export const metadata: Metadata = {
   title: '임대수익률 계산기 2026 | 공실률·Cap Rate | calculatorhost',
   description:
-    '2026년 임대수익률 계산기. 구매가·받은 보증금·월세·월 관리비·공실률을 입력하면 연 수익률, Cap Rate, 실투자금을 즉시 계산. 임대차 투자 수익성 분석 필수.',
+    '2026년 임대수익률 계산기. 구매가·보증금·월세로 순임대수익률·Cap Rate를 계산. 공실률·제경비 반영 가능. 투자 판단 기준 제시. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '임대수익률 계산기 2026 — 공실률·Cap Rate',

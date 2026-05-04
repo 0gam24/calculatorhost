@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/area/';
 export const metadata: Metadata = {
   title: '평수 계산기 2026 | 평↔제곱미터 변환 | calculatorhost',
   description:
-    '1평 = 약 3.3058㎡ 공식 기반 양방향 변환 계산기. 전용·공급·대지면적 구분, 주요 평수(24·32·34평 등) 변환표까지 한눈에. 계량법 표준 반영.',
+    '평수 계산기 2026. 제곱미터·평·아르 간 상호 변환. 평수·제곱미터·면적 계산 및 비교. 부동산·건설 용도별 단위 통일. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '평수 계산기 2026 | 평↔제곱미터 변환',

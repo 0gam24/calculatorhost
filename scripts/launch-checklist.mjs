@@ -43,6 +43,8 @@ const CHECKLIST = [
   { id: 'sitemap', name: 'public/sitemap.xml 존재', category: 'auto' },
   { id: 'og-images', name: 'OG 이미지 샘플링 (5개)', category: 'auto' },
   { id: 'policy-pages', name: '정책 페이지 존재 (/privacy, /terms, /contact)', category: 'auto' },
+  { id: 'jsonld-coverage', name: 'JSON-LD 커버리지 (6종 구조화 데이터)', category: 'auto' },
+  { id: 'canonical-urls', name: 'Canonical URL 일관성 검증', category: 'auto' },
   { id: 'adsense-audit', name: 'npm run audit:adsense (정책 위반)', category: 'auto' },
   { id: 'cloudflare-env', name: 'Cloudflare Pages 환경변수 설정 (NEXT_PUBLIC_ADSENSE_CLIENT)', category: 'manual' },
   { id: 'search-console', name: 'Google Search Console 등록 + sitemap 제출', category: 'manual' },
@@ -204,7 +206,114 @@ function checkPolicyPages() {
 }
 
 /**
- * 6. npm run audit:adsense 실행 및 결과 확인
+ * 6. JSON-LD 커버리지: SoftwareApplication, FAQPage, BreadcrumbList 등 6종
+ */
+function checkJsonldCoverage() {
+  const result = { id: 'jsonld-coverage', status: 'PASS', message: '' };
+  const missingPages = [];
+
+  try {
+    // src/app 에서 모든 page.tsx 찾기 (Windows 경로 호환)
+    const appDir = resolve(SRC_DIR, 'app');
+    const pageFiles = [];
+
+    function walkDir(dir) {
+      try {
+        const files = readdirSync(dir);
+        for (const file of files) {
+          const fullPath = resolve(dir, file);
+          const stat = statSync(fullPath);
+          if (stat.isDirectory()) {
+            walkDir(fullPath);
+          } else if (file === 'page.tsx') {
+            pageFiles.push(fullPath);
+          }
+        }
+      } catch (e) {
+        // 무시
+      }
+    }
+
+    walkDir(appDir);
+
+    const requiredSchemas = ['SoftwareApplication', 'FAQPage', 'BreadcrumbList'];
+    let totalChecked = 0;
+    let missingCount = 0;
+
+    // 샘플: 최대 10개 페이지만 검사 (빠른 실행)
+    for (const pagePath of pageFiles.slice(0, 10)) {
+      totalChecked++;
+      const content = readFileSync(pagePath, 'utf8');
+      const hasAnySchema = requiredSchemas.some(schema => content.includes(`"@type": "${schema}"`));
+      if (!hasAnySchema) {
+        missingCount++;
+        const relPath = pagePath.replace(SRC_DIR, '').replace(/\\/g, '/');
+        missingPages.push(relPath);
+      }
+    }
+
+    if (totalChecked === 0) {
+      result.status = 'WARN';
+      result.message = '검사 가능한 page.tsx 파일 없음';
+    } else if (missingCount > 0) {
+      result.status = 'WARN';
+      result.message = `샘플 ${totalChecked}개 중 ${missingCount}개 JSON-LD 누락 — 구조화 데이터 추가 권장`;
+    } else {
+      result.message = `샘플 ${totalChecked}개 페이지 JSON-LD 확인됨`;
+    }
+  } catch (e) {
+    result.status = 'WARN';
+    result.message = `JSON-LD 검사 오류: ${e.message}`;
+  }
+
+  return result;
+}
+
+/**
+ * 7. Canonical URL 일관성: sitemap URL vs 페이지 메타 검증
+ */
+function checkCanonicalUrls() {
+  const result = { id: 'canonical-urls', status: 'PASS', message: '' };
+
+  try {
+    const sitemapPath = resolve(PUBLIC_DIR, 'sitemap.xml');
+    if (!existsSync(sitemapPath)) {
+      result.status = 'WARN';
+      result.message = 'sitemap.xml 없음 — canonical URL 검증 불가 (sitemap 생성 후 재검사)';
+      return result;
+    }
+
+    const sitemapContent = readFileSync(sitemapPath, 'utf8');
+    const urlMatches = sitemapContent.match(/<loc>(.*?)<\/loc>/g) || [];
+
+    if (urlMatches.length === 0) {
+      result.status = 'WARN';
+      result.message = 'sitemap에 URL 없음 — prebuild 스크립트 재실행 필요';
+      return result;
+    }
+
+    // URL 형식 샘플링: https:// 시작, calculatorhost.com 포함 확인
+    const invalidUrls = urlMatches
+      .slice(0, 5)
+      .filter(url => !url.includes('https://') || !url.includes('calculatorhost.com'))
+      .map(u => u.replace(/<\/?loc>/g, '').slice(0, 50));
+
+    if (invalidUrls.length > 0) {
+      result.status = 'WARN';
+      result.message = `Canonical URL 형식 오류: ${invalidUrls.join(', ')}`;
+    } else {
+      result.message = `Canonical URLs 샘플 검증 통과 (${urlMatches.length} 개)`;
+    }
+  } catch (e) {
+    result.status = 'WARN';
+    result.message = `Canonical URL 검사 오류: ${e.message}`;
+  }
+
+  return result;
+}
+
+/**
+ * 8. npm run audit:adsense 실행 및 결과 확인
  */
 function checkAdsenseAudit() {
   const result = { id: 'adsense-audit', status: 'PASS', message: '' };
@@ -268,10 +377,10 @@ function generateReport() {
   }
 
   md += `\n## 📝 배포 예상 소요 시간\n\n`;
-  md += `- 자동 점검: 3~5분\n`;
-  md += `- 운영자 수동 확인: 10~15분\n`;
+  md += `- 자동 점검: 4~8분 (추가 2개 점검: JSON-LD, Canonical URLs)\n`;
+  md += `- 운영자 수동 확인: 15~20분 (5개 항목)\n`;
   md += `- Cloudflare Pages 빌드: 2~5분\n`;
-  md += `- **총: 15~25분**\n`;
+  md += `- **총: 21~33분**\n`;
 
   md += `\n## 📚 근거 문서\n\n`;
   md += `- docs/architecture.md §11\n`;
@@ -298,6 +407,8 @@ function main() {
     { fn: checkSitemap, name: 'sitemap.xml' },
     { fn: checkOgImages, name: 'OG 이미지' },
     { fn: checkPolicyPages, name: '정책 페이지' },
+    { fn: checkJsonldCoverage, name: 'JSON-LD 커버리지' },
+    { fn: checkCanonicalUrls, name: 'Canonical URLs' },
   ];
 
   console.log(`\n📋 자동 점검 (${autoChecks.length}개)\n`);

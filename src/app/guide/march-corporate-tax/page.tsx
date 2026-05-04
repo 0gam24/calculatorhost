@@ -13,6 +13,7 @@ import {
   buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/guide/march-corporate-tax/';
@@ -106,6 +107,33 @@ export default function MarchCorporateTaxPage() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermsLd = buildDefinedTermSetJsonLd({
+    name: '법인세 신고 핵심 용어',
+    description: '법인세, 과세기간, 세무조정, 이월결손금 등 법인세 신고 필수 용어 정의.',
+    url: URL,
+    terms: [
+      {
+        name: '법인세',
+        description: '영리법인의 과세소득에 대해 부과하는 국세. 법인세법 §3·§55 근거. 12월 결산 법인은 3월 31일까지 신고·납부. 세율은 과세표준에 따라 9%~24% 누진.',
+        alternateName: '법인세',
+      },
+      {
+        name: '과세기간',
+        description: '법인의 사업 결과를 계산하는 기간. 대부분 1월 1일~12월 31일(12월 결산). 신고 마감은 과세기간 종료 후 3개월 이내.',
+        alternateName: '과세기간, 사업연도',
+      },
+      {
+        name: '세무조정',
+        description: '회계상 이익을 세법상 소득으로 변환하는 절차. 외부조정 의무 법인은 세무사·회계사 검토 필수. 조정 항목: 접대비 한도, 기부금, 감가상각 차이 등.',
+        alternateName: '세무조정, 조정계산',
+      },
+      {
+        name: '이월결손금',
+        description: '전년도 손실을 올해 소득에서 공제하는 제도. 신고 필수. 10년 한도로 이월 가능. 미신고 시 이월 불가. 중소기업은 무제한 이월 가능.',
+        alternateName: '이월결손금, 결손금이월',
+      },
+    ],
+  });
 
   return (
     <>
@@ -114,6 +142,7 @@ export default function MarchCorporateTaxPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermsLd) }} />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
@@ -261,6 +290,20 @@ export default function MarchCorporateTaxPage() {
                 </ol>
               </section>
 
+              <section className="space-y-4">
+                <h2 className="text-2xl font-bold">5. 세무조정 시 자주 누락하는 절세 항목</h2>
+                <p className="text-text-secondary leading-relaxed">
+                  결산서를 작성한 후 세무조정 단계에서 정합성을 맞춰야 합니다. 아래 항목들을 놓치면 불필요한 세금을 많이 낼 수 있으니 주의하세요. 특히 중소기업은 R&D 세액공제, 고용증대 공제, 노란우산공제 등을 빠뜨리는 경우가 많습니다.
+                </p>
+                <ul className="space-y-2 text-sm text-text-secondary">
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>접대비 한도</strong> — 직전년도 매출액의 0.1% (최저 200만) 또는 1000만 중 작은 금액. 초과분은 비용 불인정.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>R&D 세액공제</strong> — 연구개발비 영수증·자료 갖춰야 공제 가능. 25%~30% 공제율이므로 빠뜨리면 큰 손실.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>고용증대 세액공제</strong> — 정규직 신규 고용 시 1인당 최대 1,200만원. 고용보험·사회보험료 기록 필수.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>감가상각</strong> — 고정자산 취득 후 잘못된 내용연수 적용 시 세무 조정. 국세청 기준 확인.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>기부금 한도</strong> — 지정기부금은 전액 공제지만, 일반기부금은 기업 소득 5% 한도. 초과분은 비용 불인정.</span></li>
+                </ul>
+              </section>
+
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
@@ -288,7 +331,9 @@ export default function MarchCorporateTaxPage() {
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 법인세법 §3·§55·§60·§64·§76 · 조세특례제한법 (R&D·고용증대 등). 참고:{' '}
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>.
+                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>
+                  ,{' '}
+                  <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 공식 사이트</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>

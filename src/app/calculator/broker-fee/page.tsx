@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/calculator/broker-fee/';
 export const metadata: Metadata = {
   title: '중개수수료 계산기 2026 | 법정 상한요율·한도액 | calculatorhost',
   description:
-    '2026년 공인중개사법 시행규칙 기준 중개수수료 무료 계산기. 매매·전세·월세·오피스텔 법정 상한요율·한도액·부가세를 즉시 계산. 회원가입 불필요, 모바일 최적화.',
+    '2026년 중개수수료 계산기. 공인중개사법 기준으로 부동산 거래액별 법정 상한요율과 최대 한도액을 계산. 거래 전 협상 기준 설정. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '중개수수료 계산기 2026 | 법정 상한요율 및 한도액',

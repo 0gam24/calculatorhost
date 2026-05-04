@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/rent-conversion/';
 export const metadata: Metadata = {
   title: '전월세 전환율 계산기 2026 | 법정 상한 | calculatorhost',
   description:
-    '2026년 법정 상한 기준 전월세 전환율 계산기. 전세·월세·반전세 무료 변환 계산. 한국은행 기준금리 반영, 법정 상한 자동 계산. 회원가입 불필요.',
+    '전월세전환율 계산기 2026. 보증금과 월세로 법정 상한 범위 내 전환율을 계산. 임대인·임차인 협상 기준 제시. 최신 지역별 요율 반영. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '전월세 전환율 계산기 2026',

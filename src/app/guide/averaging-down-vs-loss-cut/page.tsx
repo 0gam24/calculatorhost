@@ -12,6 +12,7 @@ import {
   buildWebPageJsonLd,
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/guide/averaging-down-vs-loss-cut/';
@@ -101,6 +102,33 @@ export default function AveragingDownVsLossCutPage() {
   });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermsLd = buildDefinedTermSetJsonLd({
+    name: '물타기·손절 투자 용어집',
+    description: '물타기, 손절, DCA, 비중조절 등 하락장 대응 투자 전략 핵심 용어 정의.',
+    url: URL,
+    terms: [
+      {
+        name: '물타기 (Averaging Down)',
+        description: '하락한 종목에 추가로 매수해 평단을 낮추는 전략. 가중평균으로 계산되며 회복 시 필요한 상승률을 줄이는 효과가 있음. 반등 불확실성이 크면 손실만 증폭되는 위험.',
+        alternateName: 'Averaging Down',
+      },
+      {
+        name: '손절 (Stop-Loss)',
+        description: '손실을 인정하고 매도하는 전략. 미리 정한 손실률(-7%, -10% 등) 또는 기술적 신호에 도달하면 즉시 실행. 감정적 판단을 배제하는 핵심 규칙.',
+        alternateName: 'Stop-Loss, 손절매',
+      },
+      {
+        name: 'DCA (분할 매수)',
+        description: '일정 자금을 여러 차례에 나누어 매수하는 방식. 평단을 부드럽게 낮추며 한 번에 매수했을 때의 타이밍 리스크를 분산.',
+        alternateName: 'Dollar Cost Averaging',
+      },
+      {
+        name: '비중조절 (Position Sizing)',
+        description: '보유 종목의 일부를 매도하여 전체 포트폴리오에서의 비중을 줄이는 전략. 종목 신뢰는 유지하면서 심리적 부담과 리스크를 동시에 완화.',
+        alternateName: 'Position Sizing, 부분 매도',
+      },
+    ],
+  });
 
   return (
     <>
@@ -123,6 +151,10 @@ export default function AveragingDownVsLossCutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermsLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">
@@ -264,6 +296,36 @@ export default function AveragingDownVsLossCutPage() {
               </section>
 
               <section className="space-y-4">
+                <h2 className="text-2xl font-bold">4. 코인 vs 주식 — 물타기 전략의 차이</h2>
+                <p className="text-text-secondary leading-relaxed">
+                  물타기의 계산 공식은 동일하지만, 시장 특성이 매우 다르므로 실행 전략을 달리해야 합니다. 주식은 기업 실적, 산업 전망 등 펀더멘털 분석이 비교적 용이하지만 코인은 달라집니다. 코인 프로젝트의 기술 평가는 일반 투자자에겐 어렵고, 거래소 리스크(해킹, 갑작스런 서비스 중단) 추가 변수도 존재합니다.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  따라서 코인 물타기는 더 보수적이어야 합니다. ① 추가 매수 차수는 3~4회로 제한 ② 각 차수 비중은 2~3%씩 소량 분산 ③ "팀 신뢰도", "홀딩 커뮤니티 규모", "유동성" 등 정성적 판단에 더 의존 ④ 손절 기준을 더 낮춤 (5% 손절도 고려). 24시간 ±50% 변동성이 흔한 시장에서는 물타기 자체를 신중하게 검토해야 합니다.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-bold">5. 실제 사례로 보는 의사결정</h2>
+                <div className="space-y-3">
+                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">시나리오 A: 삼성전자 하락 (2024년 실제 사례 모티프)</h3>
+                    <p className="text-sm text-text-secondary">
+                      80,000원에 매수 후 3개월간 60,000원으로 25% 하락. 실적은 개선 중이나 금리 인상 우려로 일시 주춤. 펀더멘털은 변하지 않았으므로 60,000원에서 50% 물타기 (40주 추가).
+                      결과: 평단 70,000원. 2개월 후 75,000원 회복 → +7.1% 수익 실현. 물타기가 성공.
+                    </p>
+                  </div>
+                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">시나리오 B: 코인 물타기 실패 (가상 사례)</h3>
+                    <p className="text-sm text-text-secondary">
+                      어떤 알트코인 2,000원에 100만 원 매수 후 1,500원으로 25% 하락. "아직 신규이고 좋은 프로젝트"라고 판단해 1,500원에 또 100만 원 투입. 평단 1,750원.
+                      그 후 프로젝트 개발진 이탈 뉴스 → 1개월 내 500원 붕괴. 결과: -70% 손실 (200만 중 60만만 남음). 손절하지 않으면 더 악화.
+                    </p>
+                  </div>
+                </div>
+              </section>
+
+              <section className="space-y-4">
                 <h2 className="text-2xl font-bold">의사결정 플로우차트</h2>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm text-text-secondary leading-loose">
                   <p>
@@ -344,14 +406,17 @@ export default function AveragingDownVsLossCutPage() {
               >
                 <p className="mb-2">
                   <strong>참고 자료</strong>:{' '}
-                  <a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
-                    한국거래소
-                  </a>{' '}
-                  투자자 교육,{' '}
-                  <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
-                    금융감독원
-                  </a>{' '}
-                  투자자 보호.
+                  <a href="https://www.fss.or.kr/fss/ko/edu/pds/educationMaterialList.do" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                    금융감독원 투자자 교육
+                  </a>
+                  ,{' '}
+                  <a href="https://www.krx.co.kr/investor/investguide/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                    한국거래소 투자정보
+                  </a>
+                  ,{' '}
+                  <a href="https://www.kisline.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                    한국신용평가 시장분석
+                  </a>.
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED}

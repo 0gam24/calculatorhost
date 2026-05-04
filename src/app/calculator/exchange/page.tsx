@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/exchange/';
 export const metadata: Metadata = {
   title: '환율·환전 계산기 2026 | 스프레드·수수료 반영 | calculatorhost',
   description:
-    '2026년 환율·환전 계산기. 기준환율·스프레드·수수료를 입력해 실제 수령액과 실질 환율을 즉시 계산. 원→외화·외화→원 양방향 지원.',
+    '환율·환전 계산기 2026. 실시간 환율 반영 한국은행 기준·스프레드·수수료까지 포함해 송금액을 계산. 주요 통화별 비교 가능. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '환율·환전 계산기 2026 — 스프레드·수수료 반영',

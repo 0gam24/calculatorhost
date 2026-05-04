@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/vehicle-tax/';
 export const metadata: Metadata = {
   title: '자동차세 계산기 2026 | 배기량별 세율·연납 할인 | calculatorhost',
   description:
-    '2026년 지방세법 기준 자동차세 계산기. 배기량·경과연수·지방교육세·연납 6.4% 할인까지 반영해 연간 납부액과 반기별 납부액을 즉시 확인.',
+    '2026년 자동차세 계산기. 배기량별 세율을 적용해 연간 자동차세를 계산. 1월 연납 6.4% 할인·신용카드 무이자 할부 안내. 무료.',
   alternates: { canonical: URL },
   openGraph: {
     title: '자동차세 계산기 2026 | 배기량별 세율·연납 할인',

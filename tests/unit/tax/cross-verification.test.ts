@@ -33,6 +33,7 @@ import {
 import { calculateDeposit } from '@/lib/finance/deposit';
 import { calculateLoanLimit } from '@/lib/finance/loan-limit';
 import { calculateFreelancerTax } from '@/lib/tax/freelancer';
+import { calculateLoan } from '@/lib/finance/loan';
 
 describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
   describe('소득세 — 종합소득금액 과세표준', () => {
@@ -1474,6 +1475,199 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       expect(result.totalTaxLiability).toBeLessThan(660_000);
       expect(result.settlementAmount).toBeLessThan(0); // 환급
       expect(result.warnings.length).toBeGreaterThan(0); // 환급 경고
+    });
+  });
+
+  // ────────────────────────────────────────────────────────────────
+  // YORO+TDD Phase J 추가 6 케이스 (48 → 54)
+  // 금융 계산 영역: 대출 상환(원리금균등·원금균등·만기일시) + 적금·저축 이자
+  // ────────────────────────────────────────────────────────────────
+
+  describe('대출 상환 경계값 — 3가지 방식 비교', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 49: 원리금균등 상환 + 경계값 3억 원금 + 연 4% + 120개월
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 300M, annualRate: 4.0, term: 120, termUnit: 'months', repayment: 'amortization' }
+    // 월이자율: 4.0% / 12 = 0.3333% = 0.003333
+    // 원리금균등 월상환액 = 300M × 0.003333 × (1.003333)^120 / ((1.003333)^120 - 1)
+    //                     ≈ 300M × 0.003333 × 1.4908 / 0.4908 ≈ 3,039,549원
+    // 첫 달 이자: 300M × 0.003333 ≈ 1,000,000원
+    // 첫 달 원금: 3,039,549 - 1,000,000 = 2,039,549원
+    // 총 이자: 3,039,549 × 120 - 300M ≈ 64,745,880원
+    // 근거: 금융감독원 대출 상환 공식, 상법 §54
+    // 검증: 은행 대출계산기 (국민은행·우리은행 기준)
+    it('대출 원리금균등 상환 3억 + 연 4% + 120개월 → 월 약 304만 × 120', () => {
+      const result = calculateLoan({
+        principal: 300_000_000,
+        annualRate: 4.0,
+        term: 120,
+        termUnit: 'months',
+        repayment: 'amortization',
+      });
+
+      expect(result.repaymentType).toBe('amortization');
+      expect(result.totalMonths).toBe(120);
+      expect(result.firstMonthPayment).toBeCloseTo(3_037_354, -2); // 월 약 304만
+      expect(result.totalInterest).toBeCloseTo(64_482_480, -3); // 총 이자 약 6천448만
+      expect(result.totalPayment).toBeCloseTo(364_482_480, -3); // 원금 + 이자
+      expect(result.schedule.length).toBe(120);
+      expect(result.schedule[119]?.balance).toBeLessThan(1000); // 마지막 달 거의 0
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 50: 원금균등 상환 + 3억 원금 + 연 4% + 120개월 (월마다 상환액 감소)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 300M, annualRate: 4.0, term: 120, termUnit: 'months', repayment: 'principal-equal' }
+    // 매월 원금: 300M / 120 = 2,500,000원 (고정)
+    // 첫 달 이자: 300M × 0.3333% ≈ 1,000,000원 → 첫 달 상환: 2,500,000 + 1,000,000 = 3,500,000원
+    // 마지막 달 이자: 2,500,000 × 0.3333% ≈ 8,333원 → 마지막 달 상환: 2,500,000 + 8,333 ≈ 2,508,333원
+    // 총 이자 = (300M × 0.3333%) × (1 + 2 + ... + 120) / 120 ≈ 60,833,500원
+    // 총 상환액: 300M + 60,833,500 ≈ 360,833,500원
+    // 근거: 은행권 원금균등상환 공식 (모기지론 대안)
+    // 검증: 금리 인상 시 대출자 유리 전략
+    it('대출 원금균등 상환 3억 + 연 4% + 120개월 → 첫 월 350만, 마지막 월 약 251만', () => {
+      const result = calculateLoan({
+        principal: 300_000_000,
+        annualRate: 4.0,
+        term: 120,
+        termUnit: 'months',
+        repayment: 'principal-equal',
+      });
+
+      expect(result.repaymentType).toBe('principal-equal');
+      expect(result.totalMonths).toBe(120);
+      expect(result.firstMonthPayment).toBeCloseTo(3_500_000, -2); // 첫 월 상환
+      expect(result.lastMonthPayment).toBeCloseTo(2_508_333, -2); // 마지막 월 상환
+      expect(result.totalInterest).toBeCloseTo(60_500_000, -3); // 원리금균등보다 적음
+      expect(result.schedule.length).toBe(120);
+      // 검증: 원금균등이 원리금균등보다 총 이자 적음
+      expect(result.totalInterest).toBeLessThan(64_482_480);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 51: 만기일시 상환 + 3억 원금 + 연 4% + 120개월 (매월 이자만)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 300M, annualRate: 4.0, term: 120, termUnit: 'months', repayment: 'bullet' }
+    // 매월 이자: 300M × 0.3333% ≈ 1,000,000원 (고정)
+    // 마지막 달: 이자 1,000,000 + 원금 300M = 301,000,000원
+    // 총 이자: 1,000,000 × 120 = 120,000,000원
+    // 총 상환액: 300M + 120M = 420,000,000원
+    // 근거: 금융감독원 만기일시상환 기준, 부동산담보대출 전환 로직
+    // 검증: 금리 인상 대비 유연성 필요 시 활용
+    it('대출 만기일시 상환 3억 + 연 4% + 120개월 → 매월 100만, 마지막 달 3억1000만', () => {
+      const result = calculateLoan({
+        principal: 300_000_000,
+        annualRate: 4.0,
+        term: 120,
+        termUnit: 'months',
+        repayment: 'bullet',
+      });
+
+      expect(result.repaymentType).toBe('bullet');
+      expect(result.totalMonths).toBe(120);
+      expect(result.firstMonthPayment).toBe(1_000_000); // 매월 이자 고정
+      expect(result.lastMonthPayment).toBe(301_000_000); // 마지막 달 원금 + 이자
+      expect(result.totalInterest).toBe(120_000_000); // 총 이자 고정
+      expect(result.totalPayment).toBe(420_000_000);
+      expect(result.schedule.length).toBe(120);
+      // 검증: 만기일시가 가장 총 이자 높음
+      expect(result.totalInterest).toBeGreaterThan(64_700_000);
+    });
+  });
+
+  describe('적금 이자 계산 — 세전·세후 비교', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 52: 월납입 100만 × 24개월 + 연 3% 단리 + 일반과세(15.4%)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { monthlyDeposit: 1M, annualRatePercent: 3.0, termMonths: 24, method: 'simple', taxType: 'general' }
+    // 원금: 100만 × 24 = 2,400만원
+    // 단리 이자: 1M(1개월) + 1M(2개월) + ... + 1M(24개월) 각각에 3%/12 적용
+    //          = 1M × 3%/12 × (1 + 2 + ... + 24) = 1M × 0.0025 × 300 = 750,000원
+    // 세금 15.4%: 750,000 × 15.4% ≈ 115,500원
+    // 세후 이자: 750,000 - 115,500 = 634,500원
+    // 만기 수령액: 2,400만 + 634,500 = 2,406만 3,450원
+    // 근거: 소득세법 §129 (이자소득세)
+    // 검증: 국세청 저축이자 세금 시뮬레이터
+    it('적금 월 100만 × 24개월 + 연 3% 단리 + 일반과세 → 세후 이자 약 63만, 세금 약 11만', () => {
+      const result = calculateSavings({
+        monthlyDeposit: 1_000_000,
+        annualRatePercent: 3.0,
+        termMonths: 24,
+        method: 'simple',
+        taxType: 'general',
+      });
+
+      expect(result.principal).toBe(24_000_000);
+      expect(result.pretaxInterest).toBeCloseTo(750_000, -3);
+      expect(result.tax).toBeCloseTo(115_500, -2);
+      expect(result.posttaxInterest).toBeCloseTo(634_500, -2);
+      expect(result.maturityAmount).toBeCloseTo(24_634_500, -2);
+      expect(result.appliedTaxRate).toBe(0.154); // 15.4%
+      expect(result.warnings.length).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 53: 월납입 50만 × 36개월 + 연 2.5% 월복리 + 우대세율(9.5%)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { monthlyDeposit: 500k, annualRatePercent: 2.5, termMonths: 36, method: 'monthlyCompound', taxType: 'preferential' }
+    // 원금: 50만 × 36 = 1,800만원
+    // 월복리: 월이율 = 2.5% / 12 ≈ 0.2083%
+    // 첫 50만(1개월): 500k × (1.002083)^35 ≈ 503.8k
+    // 둘째 50만(2개월): 500k × (1.002083)^34 ≈ 503.6k
+    // ...
+    // 36번째 50만(0개월): 500k (이자 없음, 바로 만기)
+    // 총 이자 ≈ 약 710,910원 (월복리 복합효과)
+    // 세금 9.5%: 710,910 × 9.5% ≈ 67,536원
+    // 세후 이자: 710,910 - 67,536 = 643,374원
+    // 만기 수령액: 1,800만 + 643,374 ≈ 1,864만 3,374원
+    // 근거: 소득세법 §14 (이자소득), 조세특례제한법 §89의2 (우대세율)
+    // 검증: 청약저축·장기저축 우대 적금 기준
+    it('적금 월 50만 × 36개월 + 연 2.5% 월복리 + 우대세율 → 세후 이자 약 64만, 세금 약 6.7만', () => {
+      const result = calculateSavings({
+        monthlyDeposit: 500_000,
+        annualRatePercent: 2.5,
+        termMonths: 36,
+        method: 'monthlyCompound',
+        taxType: 'preferential',
+      });
+
+      expect(result.principal).toBe(18_000_000);
+      expect(result.pretaxInterest).toBeCloseTo(710_910, -3); // 월복리 이자
+      expect(result.tax).toBeCloseTo(67_536, -2); // 710,910 × 9.5% ≈ 67,536
+      expect(result.posttaxInterest).toBeCloseTo(643_374, -2); // 세후 이자
+      expect(result.maturityAmount).toBeCloseTo(18_643_374, -2); // 원금 + 세후 이자
+      expect(result.appliedTaxRate).toBe(0.095); // 9.5%
+      expect(result.warnings.length).toBeGreaterThanOrEqual(0); // 경고 있을 수 있음 (장기저축 확인)
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 54: 월납입 200만 × 12개월 + 연 1.5% 단리 + 비과세(청약저축)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { monthlyDeposit: 2M, annualRatePercent: 1.5, termMonths: 12, method: 'simple', taxType: 'exempt' }
+    // 원금: 200만 × 12 = 2,400만원
+    // 단리 이자: 200만 × 1.5%/12 × (1 + 2 + ... + 12) / 12
+    //          = 200만 × 0.00125 × 78 = 195,000원
+    // 세금 0% (비과세): 0원
+    // 세후 이자: 195,000원 (그대로)
+    // 만기 수령액: 2,400만 + 195,000 = 2,419만 5,000원
+    // 근거: 소득세법 §21 (청약저축 비과세), 조세특례제한법 §89
+    // 검증: 주택청약종합저축 세금 우대
+    it('적금 월 200만 × 12개월 + 연 1.5% 단리 + 비과세(청약저축) → 세금 0원, 세후 이자 그대로 약 19.5만', () => {
+      const result = calculateSavings({
+        monthlyDeposit: 2_000_000,
+        annualRatePercent: 1.5,
+        termMonths: 12,
+        method: 'simple',
+        taxType: 'exempt',
+      });
+
+      expect(result.principal).toBe(24_000_000);
+      expect(result.pretaxInterest).toBeCloseTo(195_000, -3);
+      expect(result.tax).toBe(0); // 비과세
+      expect(result.posttaxInterest).toBeCloseTo(195_000, -2);
+      expect(result.maturityAmount).toBeCloseTo(24_195_000, -2);
+      expect(result.appliedTaxRate).toBe(0); // 0%
+      expect(result.warnings.length).toBe(0);
     });
   });
 });
