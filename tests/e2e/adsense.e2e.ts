@@ -20,12 +20,16 @@ test.describe('AdSense 슬롯 정책', () => {
   test(
     '데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화)',
     async ({ page }) => {
-      // Phase E: loan-limit 페이지에 AD-3 SkyscraperAd 통합 (aside 구조 보유).
-      // salary/capital-gains-tax 는 aside 미보유 → InfeedAd 만, 별도 PR 에서 layout 도입.
+      // Phase F: salary, capital-gains-tax, loan-limit 모두 AD-3 SkyscraperAd 통합
       await page.setViewportSize({ width: 1200, height: 800 });
-      await page.goto('/calculator/loan-limit/');
-      const ads = page.getByRole('complementary', { name: '광고' });
-      expect(await ads.count()).toBeGreaterThanOrEqual(3);
+
+      const testPages = ['/calculator/loan-limit/', '/calculator/salary/', '/calculator/capital-gains-tax/'];
+
+      for (const path of testPages) {
+        await page.goto(path);
+        const ads = page.getByRole('complementary', { name: '광고' });
+        expect(await ads.count(), `${path} should have ≥3 ad slots`).toBeGreaterThanOrEqual(3);
+      }
     },
   );
 
@@ -95,34 +99,44 @@ test.describe('AdSense 슬롯 정책', () => {
   });
 
   test('lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시', async ({ page }) => {
-    // Phase E: loan-limit 페이지에 SkyscraperAd 통합. 다른 페이지는 후속 PR.
+    // Phase F: salary, capital-gains-tax, loan-limit 모두 lg+ sticky Skyscraper 보유
     await page.setViewportSize({ width: 1200, height: 800 });
-    await page.goto('/calculator/loan-limit/');
 
-    // 우측 스티키 광고 선택 (aria-label="우측 광고 영역")
-    const skyscraper = page.locator('[aria-label="우측 광고 영역"]');
-    await expect(skyscraper).toBeVisible();
+    const testPages = ['/calculator/loan-limit/', '/calculator/salary/', '/calculator/capital-gains-tax/'];
 
-    // sticky position 확인
-    const isSticky = await skyscraper.evaluate((el) => {
-      const style = getComputedStyle(el);
-      return style.position === 'sticky';
-    });
-    expect(isSticky).toBe(true);
+    for (const path of testPages) {
+      await page.goto(path);
 
-    // 세로 스크롤 후에도 sticky 유지 확인
-    await page.evaluate(() => window.scrollBy(0, 500));
-    await expect(skyscraper).toBeVisible();
+      // 우측 스티키 광고 선택 (aria-label="우측 광고 영역")
+      const skyscraper = page.locator('[aria-label="우측 광고 영역"]');
+      await expect(skyscraper, `${path} should have visible skyscraper`).toBeVisible();
+
+      // sticky position 확인
+      const isSticky = await skyscraper.evaluate((el) => {
+        const style = getComputedStyle(el);
+        return style.position === 'sticky';
+      });
+      expect(isSticky, `${path} skyscraper should be sticky`).toBe(true);
+
+      // 세로 스크롤 후에도 sticky 유지 확인
+      await page.evaluate(() => window.scrollBy(0, 500));
+      await expect(skyscraper, `${path} skyscraper should stay visible after scroll`).toBeVisible();
+    }
   });
 
   test('모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden)', async ({ page }) => {
     // sm(375px) 모바일 뷰포트
     await page.setViewportSize({ width: 375, height: 667 });
-    await page.goto('/calculator/loan-limit/');
 
-    // 우측 스티키 광고 숨김 확인
-    const skyscraper = page.locator('[aria-label="우측 광고 영역"]');
-    await expect(skyscraper).not.toBeVisible();
+    const testPages = ['/calculator/loan-limit/', '/calculator/salary/', '/calculator/capital-gains-tax/'];
+
+    for (const path of testPages) {
+      await page.goto(path);
+
+      // 우측 스티키 광고 숨김 확인
+      const skyscraper = page.locator('[aria-label="우측 광고 영역"]');
+      await expect(skyscraper, `${path} skyscraper should be hidden on mobile`).not.toBeVisible();
+    }
   });
 
   test('Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨', async ({ page }) => {

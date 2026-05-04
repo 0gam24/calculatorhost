@@ -274,7 +274,7 @@ async function syncFinanceProducts() {
   }
 }
 
-// API 4: KOSIS — 가구 소득
+// API 4: KOSIS — 가구 소득 (2026-05 엔드포인트 업데이트)
 async function syncKosisIncome() {
   const filename = 'kosis-income.json';
   if (!API_KEYS.kosis) {
@@ -284,7 +284,9 @@ async function syncKosisIncome() {
 
   try {
     console.log('Fetching KOSIS 가구 소득 통계...');
-    const url = `https://kosis.kr/openapi/Param/statisticsParameterData.do?method=getList&apiKey=${API_KEYS.kosis}&itmId=13001&objL1=&objL2=&objL3=&objL4=&objL5=&objL6=&objL7=&objL8=&format=json`;
+    // 업데이트된 KOSIS 엔드포인트 (2026-05 기준)
+    // 구 엔드포인트: /openapi/Param/statisticsParameterData.do → 새 표준: /openapi/statData.json
+    const url = `https://kosis.or.kr/openapi/statData.json?apiKey=${API_KEYS.kosis}&orgId=101&tblId=DT_1L9U041&startPrdDe=202501&endPrdDe=202604`;
     const resp = await fetchWithTimeout(url);
 
     if (!resp.ok) {
@@ -292,7 +294,8 @@ async function syncKosisIncome() {
     }
 
     const data = await resp.json();
-    const records = data.result?.ResultData || [];
+    // 새 응답 구조: data.StatisticSearch?.row 또는 data.data[]
+    const records = data.StatisticSearch?.row || data.data || [];
 
     let householdIncome = 4850000;
     let perCapitaIncome = 1850000;
@@ -300,8 +303,11 @@ async function syncKosisIncome() {
 
     if (records.length > 0) {
       const latestRecord = records[0];
-      householdIncome = parseFloat(latestRecord.DATA_VALUE) * 10000 || householdIncome;
-      dateStr = latestRecord.PERIOD || dateStr;
+      // 필드명 변경 가능성 대비: DATA_VALUE → DATA_VALUE 또는 DT
+      const value = latestRecord.DATA_VALUE || latestRecord.DT;
+      householdIncome = parseFloat(value) * 10000 || householdIncome;
+      // 기간 필드: PERIOD → PRD_DE
+      dateStr = latestRecord.PERIOD || latestRecord.PRD_DE || dateStr;
     }
 
     // Assume per-capita is roughly 40% of household
@@ -313,7 +319,7 @@ async function syncKosisIncome() {
       perCapitaMonthlyIncome: perCapitaIncome,
       perCapitaMonthlyIncomeDate: dateStr,
       source: 'live',
-      note: '통계청 KOSIS 실시간 동기화',
+      note: '통계청 KOSIS 실시간 동기화 (2026-05 엔드포인트)',
       fetchedAt: new Date().toISOString(),
     };
 

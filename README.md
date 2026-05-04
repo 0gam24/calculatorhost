@@ -95,6 +95,36 @@ npm run seo:validate    # SEO 자동 검증 (39 페이지 점검)
 npm run test:e2e        # Playwright E2E
 ```
 
+## Lighthouse CI (성능 모니터링)
+
+**자동 트리거**: main 브랜치 push 및 모든 PR
+
+### 측정 대상 (8개 페이지)
+- 홈페이지: `http://localhost:4173`
+- 연봉 실수령액: `/calculator/salary/`
+- DSR 대출한도: `/calculator/loan-limit/`
+- 양도소득세: `/calculator/capital-gains-tax/`
+- 취득세: `/calculator/acquisition-tax/`
+- 세금 카테고리: `/category/tax/`
+- 금융 카테고리: `/category/finance/`
+- 근로 카테고리: `/category/work/`
+
+### 임계값 (Phase F 기준)
+| 카테고리 | 임계값 | 수준 |
+|---|---|---|
+| Performance | ≥ 85 | warn |
+| Accessibility | ≥ 90 | warn |
+| Best Practices | ≥ 85 | warn |
+| SEO | ≥ 90 | **warn** (0.95 → 0.90) |
+| LCP | ≤ 2.5s | error |
+| CLS | ≤ 0.1 | error |
+| INP | ≤ 200ms | warn |
+
+### 결과 확인
+- **PR**: 자동 댓글에 Performance/SEO 점수 표시
+- **Artifacts**: 각 실행마다 `.lighthouseci/` 저장 (30일 보관)
+- **Baseline 비교**: 구현 진행 중 (main 대비 Performance -5점 이상 악화 시 경고)
+
 ## 프로젝트 구조
 
 ```

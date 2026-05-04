@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  buildDefinedTermSetJsonLd,
   getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
@@ -127,6 +128,37 @@ export default function ComprehensivePropertyTaxPage() {
       },
     ],
   });
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '종합부동산세 계산기 핵심 용어',
+    description: '종합부동산세 계산 및 신고에 필요한 주요 용어 정의',
+    url: URL,
+    terms: [
+      {
+        name: '공제금액',
+        description: '종부세 과세표준 산정 시 공시가 합계에서 차감하는 금액. 1세대1주택자는 12억 원, 다주택자는 9억 원의 공제를 받음. 공제를 초과하는 부분만 과세 대상이 됨(종부세법 §7)',
+        alternateName: '기본공제',
+        url: 'https://law.go.kr',
+      },
+      {
+        name: '공정시장가액비율',
+        description: '실제 매매가와 공시가의 차이를 반영하기 위해 공시가에 곱하는 비율로, 일반적으로 60%가 적용됨. 과세표준 = (공시가 합계 - 공제) × 공정시장가액비율(종부세법 시행령)',
+        alternateName: '비율 적용',
+        url: 'https://www.hometax.go.kr',
+      },
+      {
+        name: '과세표준',
+        description: '세율을 적용하여 세액을 계산하기 위한 기준이 되는 가액. 종부세는 (보유 주택 공시가 합계 - 공제금액) × 공정시장가액비율 60%로 산정됨. 음수면 0원으로 계산(종부세법 §8)',
+        alternateName: '과세 기준액',
+        url: 'https://law.go.kr',
+      },
+      {
+        name: '농어촌특별세',
+        description: '종합부동산세 순세액의 20%로 계산되어 종부세와 함께 부과되는 세금. 예: 종부세 500만 원이면 농특세 100만 원, 총 600만 원 납부(농어촌특별세법 §5)',
+        alternateName: '농특세',
+        url: 'https://www.realtyprice.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -153,6 +185,10 @@ export default function ComprehensivePropertyTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">

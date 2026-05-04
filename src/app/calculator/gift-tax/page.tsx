@@ -13,6 +13,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  buildDefinedTermSetJsonLd,
   getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { GiftTaxCalculator } from './GiftTaxCalculator';
@@ -115,6 +116,37 @@ export default function GiftTaxPage() {
       { name: '신고 기한 확인 및 결과 조회', text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. "신고 기한 내 자진신고" 체크박스를 확인하고 최종 납부액을 조회합니다. 신고 기한은 증여일이 속하는 달 말일부터 3개월입니다(상증세법 §48).' },
     ],
   });
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '증여세 계산기 핵심 용어',
+    description: '증여세 계산 및 신고에 필요한 주요 용어 정의',
+    url: URL,
+    terms: [
+      {
+        name: '증여재산공제',
+        description: '증여자와의 관계에 따라 일정 금액을 증여재산 가액에서 차감하는 제도. 배우자는 6억, 성년 자녀는 5천만 원, 미성년 자녀는 2천만 원, 직계존속과 기타 친족은 각각 5천만 원과 1천만 원(상증세법 §53)',
+        alternateName: '공제',
+        url: 'https://www.nts.go.kr/support/tax01.asp',
+      },
+      {
+        name: '증여재산가산',
+        description: '같은 증여자로부터 10년 이내에 받은 모든 증여를 합산하여 적용하는 원칙. 분할 증여로 세금을 분산할 수 있으나 10년 합산 규칙에 따라 공제를 합산 적용함(상증세법 §53)',
+        alternateName: '10년 합산',
+        url: 'https://www.hometax.go.kr',
+      },
+      {
+        name: '누진공제',
+        description: '세액 계산의 편의를 위해 도입된 제도로, 5단계 누진세율 구간에 따라 일정 금액을 차감하는 것. 예: 과세표준 3억 원이면 (3억 × 20%) - 1,000만 원 = 5,000만 원(상증세법 §26)',
+        alternateName: '세액공제',
+        url: 'https://law.go.kr',
+      },
+      {
+        name: '신고세액공제',
+        description: '증여세를 기한 내 자진신고하는 경우 산출세액의 3%를 공제해주는 제도. 신고 기한은 증여일이 속하는 달 말일부터 3개월(상증세법 §68)',
+        alternateName: '신고공제',
+        url: 'https://www.hometax.go.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -141,6 +173,10 @@ export default function GiftTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">

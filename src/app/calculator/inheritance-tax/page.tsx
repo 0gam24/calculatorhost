@@ -13,6 +13,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  buildDefinedTermSetJsonLd,
   getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { InheritanceTaxCalculator } from './InheritanceTaxCalculator';
@@ -127,6 +128,37 @@ export default function InheritanceTaxPage() {
       },
     ],
   });
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '상속세 계산기 핵심 용어',
+    description: '상속세 계산 및 신고에 필요한 주요 용어 정의',
+    url: URL,
+    terms: [
+      {
+        name: '일괄공제 vs 개인공제',
+        description: '상속세는 기초공제 2억 + 자녀공제 + 미성년자공제를 합산한 금액과 일괄공제 5억 중 큰 금액이 자동으로 적용되는 방식. 자녀가 많거나 미성년자가 있으면 개인공제 합이 유리, 소수 상속인이면 일괄공제 5억이 유리함(상증세법 §21)',
+        alternateName: '공제 자동선택',
+        url: 'https://www.hometax.go.kr',
+      },
+      {
+        name: '배우자공제',
+        description: '배우자가 받는 상속재산에 대해 적용되는 공제로, 최소 5억 원부터 최대 30억 원까지 법정상속분(1/2) 내에서 결정됨. 배우자 상속액이 크면 공제도 커져 배우자 재산 이전이 상속세 관점에서 유리함(상증세법 §19)',
+        alternateName: '배우자 특례',
+        url: 'https://law.go.kr',
+      },
+      {
+        name: '상속재산가액',
+        description: '피상속인이 사망한 당시의 모든 재산 가액(부동산, 예금, 주식 등)에서 장례비, 피상속인 채무, 세금·공과금을 차감한 금액. 공정시장가액으로 평가됨(상증세법 §14)',
+        alternateName: '재산평가',
+        url: 'https://www.hometax.go.kr',
+      },
+      {
+        name: '누진공제',
+        description: '5단계 누진세율에 따라 세액 계산의 편의를 위해 도입된 제도로, 과세표준에 세율을 곱한 후 누진공제를 차감함. 예: 과세표준 3억 원이면 (3억 × 20%) - 1,000만 원 = 5,000만 원(상증세법 §26)',
+        alternateName: '세액공제',
+        url: 'https://law.go.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -153,6 +185,10 @@ export default function InheritanceTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">

@@ -53,3 +53,60 @@ jobs:
           name: lighthouse-results-${{ github.run_number }}
           path: .lighthouseci/
           retention-days: 30
+
+      - name: Post Lighthouse results to PR
+        if: github.event_name == 'pull_request' && always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const path = require('path');
+            const resultsDir = '.lighthouseci';
+            const files = fs.readdirSync(resultsDir).filter(f => f.endsWith('.json'));
+
+            if (files.length === 0) {
+              console.log('No Lighthouse JSON results found');
+              return;
+            }
+
+            const results = JSON.parse(fs.readFileSync(path.join(resultsDir, files[0]), 'utf8'));
+            const scores = {};
+
+            results.forEach((result, idx) => {
+              const urlKey = (result.url || `URL ${idx + 1}`).replace('http://localhost:4173', '');
+              scores[urlKey] = {
+                perf: Math.round(result.categories.performance.score * 100),
+                a11y: Math.round(result.categories.accessibility.score * 100),
+                bp: Math.round(result.categories['best-practices'].score * 100),
+                seo: Math.round(result.categories.seo.score * 100)
+              };
+            });
+
+            let rows = Object.entries(scores).map(([url, s]) =>
+              '| ' + url + ' | ' + s.perf + ' | ' + s.a11y + ' | ' + s.bp + ' | ' + s.seo + ' |'
+            ).join('\n');
+
+            const comment = '## Lighthouse CI Results\n' +
+              '| URL | Performance | Accessibility | Best Practices | SEO |\n' +
+              '|---|---|---|---|---|\n' +
+              rows + '\n\n' +
+              '**Note**: SEO 임계값: 0.95 → 0.90 (warn, Phase F)';
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+
+      - name: Compare with baseline (temporary)
+        if: always()
+        run: |
+          echo "=== Lighthouse Baseline Strategy ==="
+          echo "현재 전략: main 브랜치 push 시 결과 artifact 저장"
+          echo "PR 시: 이전 baseline과 비교 (구현 진행 중)"
+          echo ""
+          echo "달성 목표:"
+          echo "- main push 시 .lighthouseci/*.json을 baseline으로 저장"
+          echo "- PR 측정값에서 Performance -5점 이상 악화 시 경고"
+          echo "- GitHub Actions artifacts 또는 cache 활용"

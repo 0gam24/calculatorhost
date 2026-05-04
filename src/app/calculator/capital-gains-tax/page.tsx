@@ -4,6 +4,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
+import { SkyscraperAd } from '@/components/ads/SkyscraperAd';
 import { InfeedAd } from '@/components/ads/InfeedAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -190,7 +191,9 @@ export default function TransferTaxPage() {
         <div className="flex">
           <Sidebar />
           <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
+            <div className="mx-auto flex max-w-4xl flex-col gap-8 lg:max-w-none lg:grid lg:grid-cols-[1fr_300px]">
+              {/* 메인 콘텐츠 */}
+              <div className="flex flex-col gap-8">
               {/* H1 + 리드 */}
               <header>
                 <Breadcrumb
@@ -708,7 +711,10 @@ export default function TransferTaxPage() {
                   간이계산기 또는 세무사의 안내를 받으시기 바랍니다.
                 </p>
               </section>
+              </div>
 
+              {/* 우측 AD-3 Skyscraper (lg+) */}
+              <SkyscraperAd slot="capital-gains-tax-skyscraper" />
             </div>
           </main>
         </div>

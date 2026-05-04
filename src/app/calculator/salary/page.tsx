@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
+import { SkyscraperAd } from '@/components/ads/SkyscraperAd';
 import { InfeedAd } from '@/components/ads/InfeedAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -151,7 +152,9 @@ export default function SalaryPage() {
         <div className="flex">
           <Sidebar />
           <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
+            <div className="mx-auto flex max-w-4xl flex-col gap-8 lg:max-w-none lg:grid lg:grid-cols-[1fr_300px]">
+              {/* 메인 콘텐츠 */}
+              <div className="flex flex-col gap-8">
               {/* H1 + 리드 */}
               <header>
                 <Breadcrumb
@@ -544,7 +547,10 @@ export default function SalaryPage() {
                   받으시기 바랍니다.
                 </p>
               </section>
+              </div>
 
+              {/* 우측 AD-3 Skyscraper (lg+) */}
+              <SkyscraperAd slot="salary-skyscraper" />
             </div>
           </main>
         </div>
