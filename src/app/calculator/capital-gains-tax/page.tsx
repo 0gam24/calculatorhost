@@ -228,6 +228,16 @@ export default function TransferTaxPage() {
                 ]}
               />
 
+              {/* 2026년 세율 기준 및 개정 안내 */}
+              <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
+                <p className="text-sm text-text-secondary">
+                  <strong className="text-highlight-700 dark:text-highlight-300">⚠️ 2026년 세율 기준:</strong> 본 계산은 2026년 현행 소득세법(누진 6~45%, 장기보유공제, 1세대1주택 비과세 12억)에 따른 계산입니다.
+                  정부의 부동산·세제 개혁 계획 예고에 따라 세율·공제·비과세 요건이 변경될 수 있으니,
+                  <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">국세청</a>과
+                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">홈택스</a>에서 최신 공지를 확인하세요.
+                </p>
+              </div>
+
               <AdSlot slot="capital-gains-tax-top" format="horizontal" />
 
               {/* 계산기 */}
@@ -239,7 +249,7 @@ export default function TransferTaxPage() {
               {/* 양도소득세란 무엇인가 */}
               <section aria-label="양도소득세 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">양도소득세란 무엇인가요?</h2>
-                <p className="mb-4 text-text-secondary">
+                <p className="mb-4 text-text-secondary" data-speakable>
                   양도소득세는 부동산(주택, 토지, 건물)을 양도(판매)할 때 발생한 소득에 부과되는
                   국세입니다(소득세법 §92-§118). 양도 시 취득가보다 높은 가격으로 판매하면 그 차익이
                   양도소득이 되고, 여기에 누진 세율이 적용됩니다. 지방소득세(10%)와 함께 부과됩니다.
@@ -656,7 +666,17 @@ export default function TransferTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 양도소득세 신고
+                      국세청 홈택스 — 양도소득세 신고 및 간이계산기
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.nts.go.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국세청 (nts.go.kr) — 최신 양도세 정책·공지·질의응답
                     </a>
                   </li>
                 </ul>

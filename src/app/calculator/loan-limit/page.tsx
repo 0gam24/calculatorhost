@@ -225,6 +225,15 @@ export default function LoanLimitPage() {
                 ]}
               />
 
+              {/* 규제 기준 실시간 데이터 공지 */}
+              <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                <p className="text-sm text-text-secondary">
+                  <strong className="text-primary-700 dark:text-primary-300">ℹ️ 2026년 기준 최신 규제:</strong> 본 계산기는 2026년 DSR·스트레스 DSR 전면 시행, LTV/DTI 지역별·기관별 차등 규제를 반영합니다.
+                  금융기관·부동산 거래 시장의 변화로 정책이 변경될 수 있으니,
+                  <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">금감원</a>에서 최신 공지를 확인하세요.
+                </p>
+              </div>
+
               {/* AD-1 리더보드 (상단) */}
               <AdSlot slot="loan-limit-top" format="horizontal" />
 
@@ -314,7 +323,7 @@ export default function LoanLimitPage() {
               {/* 산출 공식 및 예시 (자연어 prose — LLM 인용 친화) */}
               <section className="card space-y-3">
                 <h2 className="text-2xl font-bold">2026년 스트레스 DSR이 적용된 주담대 한도는 어떻게 계산하나요?</h2>
-                <p className="text-sm leading-relaxed text-text-secondary">
+                <p className="text-sm leading-relaxed text-text-secondary" data-speakable>
                   2026년부터는 변동금리·혼합형·주기형 주택담보대출에 <strong>스트레스 DSR 1.5%p가
                   전면 적용</strong>됩니다. 이때 대출 한도는 다음 공식으로 산출합니다.
                 </p>
@@ -497,6 +506,13 @@ export default function LoanLimitPage() {
                       비규제·조정·투기과열 DSR·LTV 규제 완전 정리
                     </a>{' '}
                     — 지역별 한도 차이 시뮬레이션
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      금융감독원 금융상품통합비교공시 (finlife)
+                    </a>{' '}
+                    — 실제 은행별·상품별 DSR 적용 기준 및 우대 정책 확인
                   </li>
                 </ul>
               </section>

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
+import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -163,6 +164,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           본문으로 건너뛰기
         </a>
         {children}
+
+        {/* Web Vitals → GA4 송신 (필드 데이터 수집) */}
+        <WebVitalsReporter />
 
         {/* Google AdSense — lazyOnload 전략 (TBT 최소화).
             window.load + idle callback 후 다운로드 → 메인 스레드 블록 X.

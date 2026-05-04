@@ -34,11 +34,19 @@
         "http://localhost/guide/may-comprehensive-income-tax/index.html",
         "http://localhost/guide/june-property-tax/index.html"
       ],
-      "numberOfRuns": 1,
-      "settings": {
-        "preset": "desktop",
-        "skipAudits": ["uses-http2", "redirects-http", "is-on-https"]
-      }
+      "numberOfRuns": 3,
+      "settings": [
+        {
+          "configPath": null,
+          "preset": "mobile",
+          "skipAudits": ["uses-http2", "redirects-http", "is-on-https"]
+        },
+        {
+          "configPath": null,
+          "preset": "desktop",
+          "skipAudits": ["uses-http2", "redirects-http", "is-on-https"]
+        }
+      ]
     },
     "assert": {
       "assertions": {
