@@ -12,6 +12,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { AreaConverter } from './AreaConverter';
@@ -90,6 +91,7 @@ export default function AreaConversionPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('area'),
   });
   const howToLd = buildHowToJsonLd({
     name: '평수 계산기 사용 방법',

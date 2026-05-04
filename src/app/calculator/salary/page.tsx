@@ -3,6 +3,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
+import { InfeedAd } from '@/components/ads/InfeedAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -14,6 +15,7 @@ import {
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
   buildHowToJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { SalaryCalculator } from './SalaryCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -96,6 +98,7 @@ export default function SalaryPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('salary'),
   });
   const howToLd = buildHowToJsonLd({
     name: '연봉 실수령액 계산기 사용 방법',
@@ -199,6 +202,9 @@ export default function SalaryPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              {/* AD-4 Infeed (본문 중간) */}
+              <InfeedAd slot="salary-infeed" />
 
               {/* 월급별 실수령액 빠른 조회표 — 검색 의도 직접 매칭 */}
               <section aria-label="월급별 실수령액 빠른 조회" className="card">

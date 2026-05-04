@@ -4,6 +4,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
+import { InfeedAd } from '@/components/ads/InfeedAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -16,6 +17,7 @@ import {
   buildWebPageJsonLd,
   buildHowToJsonLd,
   buildDefinedTermSetJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { TransferTaxCalculator } from './TransferTaxCalculator';
@@ -102,6 +104,7 @@ export default function TransferTaxPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('capital-gains-tax'),
   });
   const howToLd = buildHowToJsonLd({
     name: '양도소득세 계산기 사용 방법',
@@ -249,6 +252,9 @@ export default function TransferTaxPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              {/* AD-4 Infeed (본문 중간) */}
+              <InfeedAd slot="capital-gains-tax-infeed" />
 
               {/* 양도소득세란 무엇인가 */}
               <section aria-label="양도소득세 개념" className="card">

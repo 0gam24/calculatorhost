@@ -13,6 +13,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
@@ -85,6 +86,7 @@ export default function AcquisitionTaxPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('acquisition-tax'),
   });
   const howToLd = buildHowToJsonLd({
     name: '취득세 계산기 사용 방법',
@@ -331,6 +333,16 @@ export default function AcquisitionTaxPage() {
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>
+                    <a
+                      href="https://rt.molit.go.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-500 hover:underline"
+                    >
+                      국토교통부 실거래가 — 거래가액 확인
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://www.law.go.kr/법령/지방세법/제11조"

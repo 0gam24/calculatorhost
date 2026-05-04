@@ -12,6 +12,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { DdayCalculator } from './DdayCalculator';
@@ -89,6 +90,7 @@ export default function DdayPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('d-day'),
   });
   const howToLd = buildHowToJsonLd({
     name: 'D-day 계산기 사용 방법',

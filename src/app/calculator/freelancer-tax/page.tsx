@@ -13,6 +13,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
@@ -116,6 +117,7 @@ export default function FreelancerTaxPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('freelancer-tax'),
   });
   const howToLd = buildHowToJsonLd({
     name: '프리랜서 종합소득세 계산기 사용 방법',

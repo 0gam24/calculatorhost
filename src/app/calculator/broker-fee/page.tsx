@@ -12,7 +12,9 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { CommissionCalculator } from './CommissionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -92,6 +94,7 @@ export default function CommissionPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('broker-fee'),
   });
   const howToLd = buildHowToJsonLd({
     name: '중개수수료 계산기 사용 방법',
@@ -137,6 +140,37 @@ export default function CommissionPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildDefinedTermSetJsonLd({
+              name: '중개수수료 핵심 용어',
+              description: '부동산 거래 시 적용되는 중개수수료 산정 용어집',
+              url: `${URL}#glossary`,
+              terms: [
+                {
+                  name: '중개수수료',
+                  alternateName: '중개보수·복비',
+                  description: '부동산 거래 시 공인중개사에게 지급하는 수수료. 거래 금액과 물건 종류에 따라 법정 상한요율이 정해짐 (공인중개사법 §32).',
+                },
+                {
+                  name: '상한요율',
+                  description: '공인중개사법에서 정한 중개수수료의 최대 비율. 거래금액별 구간에 따라 0.3%~0.9%로 다름 (시행규칙 §20).',
+                },
+                {
+                  name: '한도액',
+                  description: '소액 거래 시 적용되는 중개수수료의 최대 금액. 상한요율로 계산한 금액이 한도액을 초과할 때 한도액이 상한으로 작용 (예: 소액 주택매매 25만원).',
+                },
+                {
+                  name: '월세 거래금액',
+                  description: '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + (월세×100) 또는 (월세×70) 중 더 큰 값 (공인중개사법 시행규칙 §20 ③).',
+                },
+              ],
+            })
+          ),
+        }}
       />
 
       <div className="min-h-screen bg-bg-base">
@@ -481,7 +515,7 @@ export default function CommissionPage() {
               >
                 <p className="mb-2">
                   <strong>출처</strong>: 공인중개사법 §32, 공인중개사법 시행규칙 §20, 국토교통부
-                  고시 「부동산 중개보수 요율」(2023.10.19 개정), <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a>, <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a> 공식 자료.
+                  고시 「부동산 중개보수 요율」(2023.10.19 개정), <a href="https://www.kar.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">한국공인중개사협회</a> (법정 상한요율), <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a>, <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a> 공식 자료.
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 법정 상한·한도액은 참고용이고,

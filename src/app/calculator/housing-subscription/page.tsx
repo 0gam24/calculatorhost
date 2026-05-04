@@ -12,6 +12,7 @@ import {
   buildFaqPageJsonLd,
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -115,6 +116,7 @@ export default function HousingSubscriptionPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('housing-subscription'),
   });
   const howToLd = buildHowToJsonLd({
     name: '청약가점 계산기 사용 방법',

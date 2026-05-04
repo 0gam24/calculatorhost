@@ -3,6 +3,8 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
+import { SkyscraperAd } from '@/components/ads/SkyscraperAd';
+import { InfeedAd } from '@/components/ads/InfeedAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -16,6 +18,7 @@ import {
   buildWebPageJsonLd,
   buildHowToJsonLd,
   buildDefinedTermSetJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import bokRates from '@/data/bok-rates.json';
 import { LoanLimitCalculator } from './LoanLimitCalculator';
@@ -96,6 +99,7 @@ export default function LoanLimitPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('loan-limit'),
   });
   const howToLd = buildHowToJsonLd({
     name: 'DSR 계산기 사용 방법',
@@ -246,6 +250,9 @@ export default function LoanLimitPage() {
 
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
+
+              {/* AD-4 Infeed (본문 중간) */}
+              <InfeedAd slot="loan-limit-infeed" />
 
               {/* DSR이란? */}
               <section className="space-y-4">
@@ -598,10 +605,8 @@ export default function LoanLimitPage() {
           </main>
 
           {/* 우측 AdSense 사이드바 (lg+) */}
-          <aside className="hidden lg:block w-[300px] fixed right-0 top-0 h-screen overflow-y-auto bg-bg-base border-l border-border-base pt-8">
-            <div className="px-4 space-y-4">
-            </div>
-          </aside>
+          {/* AD-3 우측 Skyscraper (lg+) */}
+          <SkyscraperAd slot="loan-limit-skyscraper" />
         </div>
         <Footer />
       </div>

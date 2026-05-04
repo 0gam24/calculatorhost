@@ -13,6 +13,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { InflationCalculator } from './InflationCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
@@ -97,6 +99,14 @@ export default function InflationPage() {
       '금액과 기간, 연간 인플레이션률을 입력해 미래 화폐가치, 현재가치, 실질 구매력을 즉시 계산합니다.',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '화폐가치 계산기 2026',
+    description: '금액, 기간, 인플레이션을 입력해 미래 화폐가치, 현재가치, 실질 구매력을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('inflation'),
+  });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
   );
@@ -139,6 +149,10 @@ export default function InflationPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

@@ -12,6 +12,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { GiftTaxCalculator } from './GiftTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -87,6 +89,14 @@ export default function GiftTaxPage() {
     description: '2026년 상증세법 기준, 배우자·자녀·친족별 10년 합산 공제 포함',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '증여세 계산기 2026',
+    description: '증여재산 가액과 관계, 10년 공제를 입력해 증여세 납부액을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('gift-tax'),
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -111,6 +121,10 @@ export default function GiftTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

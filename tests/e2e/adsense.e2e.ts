@@ -17,12 +17,11 @@ test.describe('AdSense 슬롯 정책', () => {
     expect(count).toBeLessThanOrEqual(5); // AD-1..AD-5 까지 (모바일 앵커 포함)
   });
 
-  test.fixme(
+  test(
     '데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화)',
     async ({ page }) => {
-      // FIXME: SkyscraperAd 컴포넌트는 구현됨(src/components/ads/SkyscraperAd.tsx).
-      // 페이지별 통합(레이아웃 grid 분할)이 별도 PR 로 진행 예정 → 통합 후 fixme 해제.
-      // 추적: docs/design-system.md §9 + .claude/checkpoints/2026-05-04-yoro-phase-d.md
+      // Phase E: loan-limit 페이지에 AD-3 SkyscraperAd 통합 (aside 구조 보유).
+      // salary/capital-gains-tax 는 aside 미보유 → InfeedAd 만, 별도 PR 에서 layout 도입.
       await page.setViewportSize({ width: 1200, height: 800 });
       await page.goto('/calculator/loan-limit/');
       const ads = page.getByRole('complementary', { name: '광고' });
@@ -35,7 +34,7 @@ test.describe('AdSense 슬롯 정책', () => {
   }) => {
     // 현재 노출 기준선. AD-3 추가 시 위 fixme 와 함께 ≥3 으로 상향.
     await page.setViewportSize({ width: 1200, height: 800 });
-    await page.goto('/calculator/loan-limit/');
+    await page.goto('/calculator/salary/');
     const ads = page.getByRole('complementary', { name: '광고' });
     expect(await ads.count()).toBeGreaterThanOrEqual(2);
   });
@@ -80,7 +79,7 @@ test.describe('AdSense 슬롯 정책', () => {
   test('각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지', async ({
     page,
   }) => {
-    await page.goto('/calculator/loan-limit/');
+    await page.goto('/calculator/salary/');
 
     const ads = page.getByRole('complementary', { name: '광고' });
     const firstAd = ads.first();
@@ -95,9 +94,8 @@ test.describe('AdSense 슬롯 정책', () => {
     expect(hasMinHeight).toBe(true);
   });
 
-  test.fixme('lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시', async ({ page }) => {
-    // FIXME: SkyscraperAd 컴포넌트 통합 PR 후 활성화. 현재는 컴포넌트 단독 존재.
-    // lg(1024px) 이상 뷰포트
+  test('lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시', async ({ page }) => {
+    // Phase E: loan-limit 페이지에 SkyscraperAd 통합. 다른 페이지는 후속 PR.
     await page.setViewportSize({ width: 1200, height: 800 });
     await page.goto('/calculator/loan-limit/');
 

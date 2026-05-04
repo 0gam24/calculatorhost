@@ -12,6 +12,7 @@ import {
   buildFaqPageJsonLd,
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -114,6 +115,7 @@ export default function ExchangePage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('exchange'),
   });
   const howToLd = buildHowToJsonLd({
     name: '환율·환전 계산기 사용 방법',

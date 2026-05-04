@@ -12,6 +12,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { SavingsCalculator } from './SavingsCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -83,6 +85,14 @@ export default function SavingsPage() {
     description: '2026년 이자소득세 15.4% 반영 적금 계산기. 월 납입금과 기간, 이자 방식을 입력해 단리·복리별 세후 이자와 만기 수령액을 즉시 확인.',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '적금 이자 계산기 2026',
+    description: '월 납입금, 연 이자율, 기간을 입력해 단리·월복리별 세후 이자와 만기 수령액을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('savings'),
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -107,6 +117,10 @@ export default function SavingsPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

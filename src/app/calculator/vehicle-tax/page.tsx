@@ -12,6 +12,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { VehicleTaxCalculator } from './VehicleTaxCalculator';
@@ -91,6 +92,7 @@ export default function VehicleTaxPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('vehicle-tax'),
   });
   const howToLd = buildHowToJsonLd({
     name: '자동차세 계산기 사용 방법',

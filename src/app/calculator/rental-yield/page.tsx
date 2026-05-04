@@ -13,6 +13,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { RentalYieldCalculator } from './RentalYieldCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
@@ -96,6 +98,14 @@ export default function RentalYieldPage() {
       '구매가, 받은 보증금, 취득부대비, 월세, 월 관리비, 공실률을 입력해 연 수익률, Cap Rate, 실투자금을 즉시 계산합니다.',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '임대수익률 계산기 2026',
+    description: '구매가, 보증금, 월세, 관리비, 공실률을 입력해 연 수익률과 Cap Rate를 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('rental-yield'),
+  });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
   );
@@ -146,6 +156,10 @@ export default function RentalYieldPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

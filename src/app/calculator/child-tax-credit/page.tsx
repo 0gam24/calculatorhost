@@ -12,6 +12,7 @@ import {
   buildFaqPageJsonLd,
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -115,6 +116,7 @@ export default function ChildTaxCreditPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('child-tax-credit'),
   });
   const howToLd = buildHowToJsonLd({
     name: '자녀장려금 계산기 사용 방법',

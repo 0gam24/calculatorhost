@@ -13,6 +13,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
@@ -91,6 +92,7 @@ export default function PropertyTaxPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('property-tax'),
   });
   const howToLd = buildHowToJsonLd({
     name: '재산세 계산기 사용 방법',

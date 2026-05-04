@@ -12,6 +12,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { BmiCalculator } from './BmiCalculator';
@@ -89,6 +90,7 @@ export default function BmiPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('bmi'),
   });
   const howToLd = buildHowToJsonLd({
     name: 'BMI 계산기 사용 방법',

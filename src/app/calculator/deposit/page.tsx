@@ -12,6 +12,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { DepositCalculator } from './DepositCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -84,6 +86,14 @@ export default function DepositPage() {
       '2026년 이자소득세 15.4% 반영 정기예금 계산기. 단리·월복리·일복리 방식별 세전·세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '정기예금 이자 계산기 2026',
+    description: '예치 원금, 연 이자율, 기간을 입력해 단리·복리별 세후 수령액을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('deposit'),
+  });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
   );
@@ -110,6 +120,10 @@ export default function DepositPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

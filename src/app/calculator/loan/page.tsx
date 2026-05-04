@@ -12,7 +12,9 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { LoanCalculator } from './LoanCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -91,6 +93,7 @@ export default function LoanInterestPage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('loan'),
   });
   const howToLd = buildHowToJsonLd({
     name: '대출이자 계산기 사용 방법',
@@ -136,6 +139,40 @@ export default function LoanInterestPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            buildDefinedTermSetJsonLd({
+              name: '대출이자 핵심 용어',
+              description: '대출 상환 시 필요한 금융 용어집',
+              url: `${URL}#glossary`,
+              terms: [
+                {
+                  name: '원리금균등상환',
+                  alternateName: 'Equal Amortization',
+                  description: '매월 동일한 금액을 상환하는 방식. 초기에는 이자 비중이 높고 점점 원금 비중이 높아짐. 예산 계획이 수월한 장점.',
+                },
+                {
+                  name: '거치기간',
+                  alternateName: 'Grace Period',
+                  description: '대출 실행 후 원금 상환 없이 이자만 납부하는 초기 기간. 거치 후 본격적인 원금 상환 시작. 거치 기간이 길수록 총 이자 증가.',
+                },
+                {
+                  name: 'DSR',
+                  alternateName: '부채원리금상환비율',
+                  description: '연간 모든 대출의 원리금 상환액을 연소득으로 나눈 비율. 금감원이 정한 한도(보통 40%)로 대출 가능 여부 결정.',
+                },
+                {
+                  name: 'LTV',
+                  alternateName: '담보인정비율',
+                  description: '대출액을 담보 가치(주택가격)로 나눈 비율. 금감원이 정한 한도(보통 70-80%)로 최대 대출 금액 결정.',
+                },
+              ],
+            })
+          ),
+        }}
       />
 
       <div className="min-h-screen bg-bg-base">
@@ -359,6 +396,16 @@ export default function LoanInterestPage() {
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">참고 자료 및 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
+                  <li>
+                    <a
+                      href="https://finlife.fss.or.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-500 hover:underline"
+                    >
+                      금융감독원 finlife — 상환방식 선택 및 대출 정보
+                    </a>
+                  </li>
                   <li>
                     <a
                       href="https://www.fss.or.kr"

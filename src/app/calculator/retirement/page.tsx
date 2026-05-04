@@ -13,6 +13,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { RetirementCalculator } from './RetirementCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
@@ -86,6 +88,14 @@ export default function RetirementPage() {
       '현재 나이·자산·월 저축액·기대 수익률을 입력해 은퇴 시점 예상자산, 필요자금, 4% 룰 기반 안전 인출액을 즉시 계산합니다.',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '은퇴자금 계산기 2026',
+    description: '현재 나이, 자산, 월 저축액, 수익률을 입력해 은퇴 시점 예상자산과 필요자금을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('retirement'),
+  });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
   );
@@ -136,6 +146,10 @@ export default function RetirementPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

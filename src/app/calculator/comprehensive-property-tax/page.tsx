@@ -13,6 +13,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { ComprehensivePropertyTaxCalculator } from './ComprehensivePropertyTaxCalculator';
@@ -36,9 +38,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율',
     description: '주택 공시가 합산으로 종부세 과세 여부와 예상 납부액을 즉시 확인하세요.',
-  },
-  other: {
-    dateModified: '2026-04-24',
   },
 };
 
@@ -87,6 +86,14 @@ export default function ComprehensivePropertyTaxPage() {
     description: '2026년 종부세법 기준 종합부동산세 계산기',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '종합부동산세 계산기 2026',
+    description: '주택 공시가 합계, 주택 수, 공제 조건을 입력해 과세표준과 종부세 납부액을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('comprehensive-property-tax'),
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -126,6 +133,10 @@ export default function ComprehensivePropertyTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

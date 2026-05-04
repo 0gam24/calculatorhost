@@ -12,6 +12,8 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildHowToJsonLd,
+  buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { InheritanceTaxCalculator } from './InheritanceTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -87,6 +89,14 @@ export default function InheritanceTaxPage() {
       '2026년 상증세법 기준, 기초·자녀·배우자·일괄 공제 자동 비교, 5단계 누진 세율 포함',
     url: URL,
   });
+  const webPageLd = buildWebPageJsonLd({
+    name: '상속세 계산기 2026',
+    description: '상속재산, 상속인 구성, 공제 방식을 입력해 상속세 납부액을 즉시 계산',
+    url: URL,
+    datePublished: '2026-04-24',
+    dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('inheritance-tax'),
+  });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -123,6 +133,10 @@ export default function InheritanceTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

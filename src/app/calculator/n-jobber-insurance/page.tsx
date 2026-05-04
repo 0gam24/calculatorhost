@@ -12,6 +12,7 @@ import {
   buildFaqPageJsonLd,
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
@@ -115,6 +116,7 @@ export default function NJobberInsurancePage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('n-jobber-insurance'),
   });
   const howToLd = buildHowToJsonLd({
     name: 'N잡러 건강보험 계산기 사용 방법',

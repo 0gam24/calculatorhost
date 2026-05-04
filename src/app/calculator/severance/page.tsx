@@ -12,6 +12,7 @@ import {
   buildBreadcrumbJsonLd,
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
 import { SeveranceCalculator } from './SeveranceCalculator';
@@ -90,6 +91,7 @@ export default function SeverancePage() {
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
+    isPartOf: getCategoryUrlForCalculator('severance'),
   });
   const howToLd = buildHowToJsonLd({
     name: '퇴직금 계산기 사용 방법',
