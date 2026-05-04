@@ -10,9 +10,10 @@ test.describe('Visual Regression: Capital Gains Tax Calculator', () => {
     // Find first number input (구매가)
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('500000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -30,9 +31,10 @@ test.describe('Visual Regression: Capital Gains Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('500000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -52,9 +54,10 @@ test.describe('Visual Regression: Capital Gains Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('500000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -74,9 +77,10 @@ test.describe('Visual Regression: Capital Gains Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('500000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'light');

@@ -16,6 +16,7 @@ import {
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
   getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { SalaryCalculator } from './SalaryCalculator';
@@ -34,11 +35,9 @@ export const metadata: Metadata = {
     description: '2026년 최신 세율로 연봉 실수령액 즉시 계산',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-default.png'],
   },
 };
 
@@ -119,6 +118,31 @@ export default function SalaryPage() {
     { name: '연봉 실수령액' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '연봉 실수령액 핵심 용어',
+    description: '직장인의 급여·세금·보험료 계산에 필요한 용어 정의',
+    url: 'https://calculatorhost.com/calculator/salary/#glossary',
+    terms: [
+      {
+        name: '4대보험',
+        description: '직장인이 고용주와 함께 부담하는 4가지 사회보험. 국민연금(근로자 4.5%), 건강보험(3.545%), 장기요양보험(건보료의 12.95%), 고용보험(0.9%). 실수령액에서 직접 공제됨. 근거: 국민연금법·국민건강보험법·고용보험법.',
+        url: 'https://www.4insure.or.kr',
+      },
+      {
+        name: '비과세 근로소득',
+        alternateName: '비과세',
+        description: '소득세 과세 대상에서 제외되는 근로소득. 월 식대 20만 원 이하, 자가운전보조금 월 20만 원, 숙직비, 시간외근무수당 중 일부가 해당(소득세법 §12). 4대보험 기준 소득에서도 제외되어 실수령액 증가.',
+      },
+      {
+        name: '근로소득세',
+        description: '직장인 연봉에 부과되는 국세. 2026년 소득세법 §55 누진세율(6%~45%) 적용 후 자녀세액공제를 차감하고 12로 나눠 월 원천징수(간이세액표 기준). 지방소득세 10%가 별도 부과.',
+      },
+      {
+        name: '자녀세액공제',
+        description: '20세 이하 자녀 1인당 연 15만 원, 2인 20만 원, 3인째 이상 각 40만 원을 근로소득세에서 직접 차감. 연말정산 시 정산. 근거: 소득세법 §59의2.',
+      },
+    ],
+  });
 
   return (
     <>
@@ -145,6 +169,10 @@ export default function SalaryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">
@@ -528,6 +556,16 @@ export default function SalaryPage() {
                       className="text-primary-600 underline dark:text-primary-500"
                     >
                       국세청 홈택스 — 근로소득 간이세액표 조회 (월 원천징수 기준)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.4insure.or.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      4대사회보험정보연계센터 — 4대보험 요율·납부액 조회
                     </a>
                   </li>
                 </ul>

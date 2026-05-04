@@ -33,7 +33,6 @@ export const metadata: Metadata = {
       '2026년 공인중개사법 기준. 매매·전세·월세·오피스텔 중개수수료를 거래 직전 정확히 계산.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',

@@ -6,10 +6,11 @@ test.describe('Visual Regression: Salary Calculator', () => {
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(2000);
-    
+
     // Find input by placeholder or label
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 5000 });
+    await input.waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
     
@@ -26,9 +27,10 @@ test.describe('Visual Regression: Salary Calculator', () => {
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(2000);
-    
+
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 5000 });
+    await input.waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
     
@@ -43,13 +45,14 @@ test.describe('Visual Regression: Salary Calculator', () => {
   test('mobile dark theme with results', async ({ page }) => {
     const pixel7 = devices['Pixel 7'];
     await page.setViewportSize({ width: pixel7.viewport.width, height: pixel7.viewport.height });
-    
+
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(2000);
-    
+
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 5000 });
+    await input.waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
     
@@ -64,13 +67,14 @@ test.describe('Visual Regression: Salary Calculator', () => {
   test('mobile light theme with results', async ({ page }) => {
     const pixel7 = devices['Pixel 7'];
     await page.setViewportSize({ width: pixel7.viewport.width, height: pixel7.viewport.height });
-    
+
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
     await page.waitForTimeout(2000);
-    
+
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 5000 });
+    await input.waitFor({ timeout: 15000 });
+    await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
     

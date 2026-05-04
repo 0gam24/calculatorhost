@@ -29,14 +29,12 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-default.png'],
   },
   openGraph: {
     title: '취득세 계산기 2026 | 1주택·조정지역·생애최초',
     description: '2026년 최신 지방세율 반영. 주택 매매·증여·상속 시 총 납부액을 거래 직전 확인.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
 };
 

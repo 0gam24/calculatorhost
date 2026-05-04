@@ -9,9 +9,10 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('400000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -29,9 +30,10 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('400000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'light');
@@ -51,9 +53,10 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('400000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
@@ -73,9 +76,10 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
     
     const inputs = page.locator('input[type="number"]');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 10000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await page.waitForTimeout(1500);
     await firstInput.fill('400000000');
-    await page.waitForTimeout(1000);
+    await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'light');

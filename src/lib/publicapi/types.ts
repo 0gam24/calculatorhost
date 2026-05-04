@@ -71,3 +71,55 @@ export const RtmsApiResponseSchema = z.object({
 });
 
 export type RtmsApiResponse = z.infer<typeof RtmsApiResponseSchema>;
+
+/**
+ * ===== JUSO API (행정안전부 도로명주소) =====
+ *
+ * 출처: business.juso.go.kr (행정안전부 주소기반산업지원서비스)
+ * 신청: https://business.juso.go.kr → 회원가입 → 오픈API → 도로명주소 검색 → 서비스 신청
+ *
+ * 응답 필드 (공식 문서 기준):
+ * - roadAddr: 도로명주소 전체
+ * - roadAddrPart1: 도로명주소 (참고항목 제외)
+ * - roadAddrPart2: 도로명주소 참고항목
+ * - jibunAddr: 지번주소
+ * - zipNo: 우편번호 (5자리)
+ * - admCd: 행정동코드
+ * - rnMgtSn: 도로명코드 (road name management serial number)
+ * - bdMgtSn: 건물관리번호
+ */
+export const JusoAddressSchema = z.object({
+  roadAddr: z.string().describe('도로명주소 전체'),
+  roadAddrPart1: z.string().describe('도로명주소(참고항목 제외)'),
+  roadAddrPart2: z.string().optional().describe('도로명주소 참고항목'),
+  jibunAddr: z.string().optional().describe('지번주소'),
+  zipNo: z.string().regex(/^\d{5}$/, '우편번호는 5자리').describe('우편번호'),
+  admCd: z.string().describe('행정동코드'),
+  rnMgtSn: z.string().describe('도로명코드'),
+  bdMgtSn: z.string().optional().describe('건물관리번호'),
+  engAddr: z.string().optional().describe('영문주소'),
+  bdNm: z.string().optional().describe('건물명'),
+});
+
+export type JusoAddress = z.infer<typeof JusoAddressSchema>;
+
+/**
+ * JUSO API 응답 (배열)
+ *
+ * JUSO API는 `results.juso[]` 배열로 최대 10개 결과 반환
+ */
+export const JusoApiResponseSchema = z.object({
+  results: z.object({
+    juso: z.array(JusoAddressSchema).describe('주소 검색 결과 배열'),
+    common: z.object({
+      errorMessage: z.string().optional().describe('에러 메시지'),
+      errorCode: z.string().optional().describe('에러 코드'),
+      countPerPage: z.number().optional().describe('페이지당 건수'),
+      totalCount: z.number().optional().describe('총 검색 결과 건수'),
+      currentPage: z.number().optional().describe('현재 페이지'),
+      countRecords: z.number().optional().describe('현재 페이지 결과 건수'),
+    }).optional().describe('공통 메타정보'),
+  }),
+});
+
+export type JusoApiResponse = z.infer<typeof JusoApiResponseSchema>;

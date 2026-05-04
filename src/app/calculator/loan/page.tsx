@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     description: '원리금균등·원금균등·만기일시 상환방식별 월 상환액 및 총이자를 즉시 비교.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',

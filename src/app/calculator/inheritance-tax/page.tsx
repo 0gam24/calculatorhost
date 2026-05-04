@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     description: '상속 시 세금을 미리 계산하고 공제 방식을 비교·선택하세요.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',

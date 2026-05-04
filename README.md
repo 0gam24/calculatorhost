@@ -146,6 +146,108 @@ calculatorhost/
 └── scripts/              # 세율 동기화, OG 생성, SEO 검증
 ```
 
+## 성능 모니터링 (Lighthouse CI Baseline)
+
+### 목표
+- **Core Web Vitals**: 모든 페이지 "Good" 유지
+- **Performance 점수**: 모바일 기준 ≥90
+- **회귀 감지**: PR 대비 -5점 이상 악화 시 자동 경고
+
+### 워크플로우 동작
+
+#### 1. main 브랜치 push
+- Lighthouse 측정 후 결과를 artifact `lighthouse-baseline` 으로 저장 (30일 유지)
+
+#### 2. PR 생성 시
+1. PR 대상 코드를 빌드 → Lighthouse 측정
+2. 최신 `lighthouse-baseline` 아티팩트 다운로드 (main 브랜치)
+3. `scripts/compare-lighthouse.mjs` 로 점수 비교:
+   - 현재 Performance 점수 vs baseline 비교
+   - **차이 ≥-5점**: ⚠️ 경고 (PR 댓글 첨부, 배포 차단 X)
+   - **차이 > -5점**: ✅ baseline 유지/개선
+4. PR 댓글에 비교 결과 마크다운 테이블 게시
+
+#### 3. 실패 시 대응
+```bash
+# 로컬에서 테스트
+npm run build
+npx lighthouse http://localhost:4173/index.html --preset=mobile --output=json
+
+# 성능 저하 요인 분석
+# → lighthouse-profiler 에이전트 호출
+```
+
+### 스크립트 사용법
+
+```bash
+# 두 Lighthouse JSON 결과 비교
+node scripts/compare-lighthouse.mjs baseline-results/lh-results.json current-results/lh-results.json
+
+# 출력: 마크다운 테이블 + 점수 차이 요약
+# exit code 1 (차이 ≥-5점) / 0 (유지/개선)
+```
+
+### 아티팩트 관리
+- GitHub Actions artifacts: 30일 보관
+- 초기 상태: baseline artifact 없음 → PR 비교 스킵 (첫 main push 후 활성화)
+- 수동 reset: `lighthouse-baseline` 아티팩트 삭제 후 main 재push
+
+### 참고
+- AdSense 광고 ON 상태에서 측정 (광고 OFF 점수는 참고용)
+- 마지막 기준선: `.github/workflows/lighthouse.yml` 실행 로그 참조
+
+
+## 성능 모니터링 (Lighthouse CI Baseline)
+
+### 목표
+- **Core Web Vitals**: 모든 페이지 "Good" 유지
+- **Performance 점수**: 모바일 기준 ≥90
+- **회귀 감지**: PR 대비 -5점 이상 악화 시 자동 경고
+
+### 워크플로우 동작
+
+#### 1. main 브랜치 push
+- Lighthouse 측정 후 결과를 artifact `lighthouse-baseline` 으로 저장 (30일 유지)
+
+#### 2. PR 생성 시
+1. PR 대상 코드를 빌드 → Lighthouse 측정
+2. 최신 `lighthouse-baseline` 아티팩트 다운로드 (main 브랜치)
+3. `scripts/compare-lighthouse.mjs` 로 점수 비교:
+   - 현재 Performance 점수 vs baseline 비교
+   - **차이 ≥-5점**: ⚠️ 경고 (PR 댓글 첨부, 배포 차단 X)
+   - **차이 > -5점**: ✅ baseline 유지/개선
+4. PR 댓글에 비교 결과 마크다운 테이블 게시
+
+#### 3. 실패 시 대응
+```bash
+# 로컬에서 테스트
+npm run build
+npx lighthouse http://localhost:4173/index.html --preset=mobile --output=json
+
+# 성능 저하 요인 분석
+# → lighthouse-profiler 에이전트 호출
+```
+
+### 스크립트 사용법
+
+```bash
+# 두 Lighthouse JSON 결과 비교
+node scripts/compare-lighthouse.mjs baseline-results/lh-results.json current-results/lh-results.json
+
+# 출력: 마크다운 테이블 + 점수 차이 요약
+# exit code 1 (차이 >= -5점) / 0 (유지/개선)
+```
+
+### 아티팩트 관리
+- GitHub Actions artifacts: 30일 보관
+- 초기 상태: baseline artifact 없음 → PR 비교 스킵 (첫 main push 후 활성화)
+- 수동 reset: `lighthouse-baseline` 아티팩트 삭제 후 main 재push
+
+### 참고
+- AdSense 광고 ON 상태에서 측정 (광고 OFF 점수는 참고용)
+- 마지막 기준선: `.github/workflows/lighthouse.yml` 실행 로그 참조
+
+
 ## 아키텍처 원칙
 
 - **계산 공식**은 `src/lib/tax/` · `src/lib/finance/` 의 **순수 함수**로만 작성

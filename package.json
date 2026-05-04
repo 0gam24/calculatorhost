@@ -9,6 +9,7 @@
     "sync-data": "node scripts/sync-public-data.mjs",
     "gen-og": "node scripts/generate-og-images.mjs",
     "seo:validate": "node scripts/validate-seo.mjs",
+    "audit:adsense": "node scripts/audit-adsense.mjs",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/sync-public-data.mjs",
     "build": "next build",
     "start": "next start",

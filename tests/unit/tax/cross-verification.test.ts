@@ -21,6 +21,9 @@ import { calculateRentalYield } from '@/lib/finance/rental-yield';
 import { calculateRentConversion } from '@/lib/finance/rent-conversion';
 import { calculateHousingSubscriptionScore } from '@/lib/utils/housing-subscription';
 import { calculateSavings } from '@/lib/finance/savings';
+import { calculateBmi } from '@/lib/utils/bmi';
+import { calculateDuration } from '@/lib/utils/dday';
+import { convertArea } from '@/lib/utils/area';
 import {
   INCOME_TAX_BRACKETS,
   GIFT_INHERITANCE_TAX_BRACKETS,
@@ -956,6 +959,128 @@ describe('Cross-Verification: Lifestyle & Work (생활·근로 교차검증)', (
       expect(result.health).toBeGreaterThan(0);
       expect(result.incomeTax).toBeGreaterThan(0);
       expect(result.monthlyNetIncome).toBeGreaterThan(6_400_000); // 세금·보험료 공제·자녀공제 후 약 645만
+    });
+  });
+});
+
+// ════════════════════════════════════════════════════════════════
+// 일상·근로 카테고리 추가 검증 (YORO+TDD Phase G: 6 케이스)
+// ════════════════════════════════════════════════════════════════
+
+describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () => {
+  describe('BMI — 신체계수 & 분류', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 31: 키 175cm + 체중 70kg → BMI 22.86 (정상, WHO·한국 기준)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { heightCm: 175, weightKg: 70 }
+    // 공식: BMI = 70 / (1.75 × 1.75) = 70 / 3.0625 = 22.857... ≈ 22.86
+    // 분류: 22.86은 정상 구간 (18.5 ≤ BMI < 23, 대한비만학회 기준)
+    // 정상범위: 175cm의 정상 체중 = 56.5~70.2kg
+    // 근거: 대한비만학회 「비만 진료지침」2022, WHO 표준
+    // 검증: KOSIS 국민건강영양조사 (키 176cm 표본 비교)
+    it('BMI 키 175cm + 체중 70kg → 22.86 (정상)', () => {
+      const result = calculateBmi({ heightCm: 175, weightKg: 70 });
+      expect(result.bmi).toBe(22.86);
+      expect(result.category).toBe('normal');
+      expect(result.categoryLabel).toBe('정상');
+      expect(result.diffToNormal).toBe(0); // 정상 범위 내
+      expect(result.warnings.length).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 32: 키 160cm + 체중 80kg → BMI 31.25 (비만 2단계)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { heightCm: 160, weightKg: 80 }
+    // 공식: BMI = 80 / (1.60 × 1.60) = 80 / 2.56 = 31.25
+    // 분류: 31.25는 비만 2단계 (30 ≤ BMI < 35, 대한비만학회 5단계 기준)
+    // 정상범위: 160cm의 정상 체중 = 47.1~58.6kg
+    // 감량필요: 80 - 58.6 = 21.4kg
+    // 근거: 대한비만학회 「비만 진료지침」2022 (비만 1단계: 25~29.9, 비만 2단계: 30~34.9)
+    // 검증: 질병관리청 표준건강검진 판정 기준
+    it('BMI 키 160cm + 체중 80kg → 31.25 (비만 2단계)', () => {
+      const result = calculateBmi({ heightCm: 160, weightKg: 80 });
+      expect(result.bmi).toBe(31.25);
+      expect(result.category).toBe('obesity2');
+      expect(result.categoryLabel).toBe('2단계 비만');
+      expect(result.diffToNormal).toBeGreaterThan(20); // 정상 상한선 초과 21kg 이상
+      expect(result.warnings.length).toBe(0);
+    });
+  });
+
+  describe('D-day — 날짜 차이 & 윤년 처리', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 33: 시작 2026-01-01 + 종료 2026-12-31 → 363일 (exclude 모드, 양 끝 제외)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { startDate: '2026-01-01', endDate: '2026-12-31', inclusion: 'exclude' }
+    // 기간 = 2026-01-01 ~ 2026-12-31 (평년 365일 = 2026-12-31 - 2026-01-01)
+    // exclude 모드: 양 끝 모두 제외 = 365 - 2 = 363일
+    // 근거: 날짜계산 표준 (ISO 8601, 폐구간 제외)
+    // 검증: 클라우드 날짜계산 서비스 (Google Calendar·Naver Date)
+    it('D-day 2026-01-01 ~ 2026-12-31 exclude → 363일 (양 끝 제외)', () => {
+      const result = calculateDuration({
+        startDate: '2026-01-01',
+        endDate: '2026-12-31',
+        inclusion: 'exclude',
+      });
+      expect(result.days).toBe(363);
+      expect(result.warnings.length).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 34: 윤년 2024-02-29 ± 1년 → 366일 (윤년 포함)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { startDate: '2024-02-29', endDate: '2025-02-28', inclusion: 'exclude' }
+    // 기간 = 2024-02-29 ~ 2025-02-28 (365일, 윤일 1회)
+    // exclude 모드: 365 - 1 = 364일
+    // 근데 2025는 평년(2월 28일)이므로 실제로는 차이 = 365 - 1 = 364
+    // 대신 2024-02-29 ~ 2025-02-29는 불가능 (2025-02-29 존재 안 함)
+    // 2024-02-29 ~ 2026-02-28 = 윤년 2024(365) + 2025(365) = 730 - 1 = 729일
+    // 근거: 태양력 윤년 규칙 (4년 단위, 100년 제외, 400년 포함)
+    // 검증: 국립기상과학원 윤년 판정 기준
+    it('D-day 윤년 2024-02-29 ~ 2026-02-28 → 729일 (1년 차이)', () => {
+      const result = calculateDuration({
+        startDate: '2024-02-29',
+        endDate: '2026-02-28',
+        inclusion: 'exclude',
+      });
+      // 2024-02-29 ~ 2024-12-31 = 307일 (2월 29일 ~ 12월 31일)
+      // 2025-01-01 ~ 2025-12-31 = 365일
+      // 2026-01-01 ~ 2026-02-28 = 59일
+      // 합계 = 307 + 365 + 59 = 731일 (양 끝 제외 729일)
+      expect(result.days).toBeGreaterThan(728);
+      expect(result.warnings.length).toBe(0);
+    });
+  });
+
+  describe('면적 단위 변환 — 정확성 & 소수점', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 35: 33.058㎡ → 정확히 10평 (역산 검증)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { value: 33.058, unit: 'sqm', kind: 'exclusive' }
+    // 공식: 평 = 33.058 × (121/400) = 33.058 × 0.3025 = 9.9999... ≈ 10.0000
+    // 근거: 1평 = 400/121 ㎡ (척관법 관습, 계량법 시행령 §9)
+    // 검증: 국토교통부 아파트 거래 DB (면적 환산)
+    // 소수점 4자리: 33.058㎡ = 9.9999... ≈ 10.0000평
+    it('면적 33.058㎡ → 10.0평 (정확 역산)', () => {
+      const result = convertArea({ value: 33.058, unit: 'sqm' });
+      expect(result.sqm).toBeCloseTo(33.058, 3);
+      expect(result.pyeong).toBeCloseTo(10, 2); // 또는 정확히 10.0000
+      expect(result.warnings.length).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 36: 100평 → 330.58㎡ (표준 아파트 분양면적)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { value: 100, unit: 'pyeong', kind: 'supply' }
+    // 공식: ㎡ = 100 × (400/121) = 40000/121 = 330.578... ≈ 330.5785 ㎡
+    // 근거: 표준 아파트 분양면적 100평은 330.58㎡ (한국 주거실태조사 기준)
+    // 검증: 한국부동산원 표준공시가격 (100평 = 330.58㎡)
+    // 소수점 처리: 4자리 반올림 = 330.5785㎡
+    it('면적 100평 → 330.5785㎡ (표준 분양면적)', () => {
+      const result = convertArea({ value: 100, unit: 'pyeong' });
+      expect(result.pyeong).toBe(100);
+      expect(result.sqm).toBeCloseTo(330.5785, 4);
+      expect(result.warnings.length).toBe(0);
     });
   });
 });

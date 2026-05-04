@@ -38,7 +38,6 @@ export const metadata: Metadata = {
       '연소득·기존 대출·담보가치로 DSR·LTV·DTI 기준 최대 대출액을 즉시 계산',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',

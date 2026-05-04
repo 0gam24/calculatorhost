@@ -14,6 +14,7 @@ import {
   buildWebPageJsonLd,
   getCategoryUrlForCalculator,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { SeveranceCalculator } from './SeveranceCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
@@ -31,7 +32,6 @@ export const metadata: Metadata = {
     description: '퇴직 전 세후 실수령액을 정확히 계산',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -111,6 +111,29 @@ export default function SeverancePage() {
     { name: '퇴직금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '퇴직금 핵심 용어',
+    description: '퇴직금 계산 및 퇴직소득세 이해에 필요한 용어 정의',
+    url: 'https://calculatorhost.com/calculator/severance/#glossary',
+    terms: [
+      {
+        name: '평균임금',
+        description: '퇴직금 계산 기준이 되는 1일 임금. 퇴직 이전 3개월 임금총액(기본급 + 상여금월할 + 연차수당월할 등)을 일수(91~92일)로 나눔. 근거: 근로기준법 §2.',
+      },
+      {
+        name: '통상임금',
+        description: '소정근로시간에 대해 정기적·일률적으로 지급하는 기본급·직책급·고정수당. 퇴직금 계산과 달리 초과근무수당·4대보험 기준으로 쓰임. 상여금·연차는 제외.',
+      },
+      {
+        name: '근속연수공제',
+        description: '퇴직소득세 계산 시 근속연수에 따라 공제하는 금액. 5년이하 100만/년, 5~10년 500만+200만/년, 10~20년 1,500만+250만/년, 20년초과 4,000만+300만/년. 근거: 소득세법 §99.',
+      },
+      {
+        name: 'DC형/DB형',
+        description: '퇴직연금 제도. DB형(확정급여)은 사업주가 법정 수준 보장, DC형(확정기여)은 사업주가 월 급여 8.3% 이상만 적립해 운용수익에 따라 변동. 근거: 근로자퇴직급여 보장법 §4.',
+      },
+    ],
+  });
 
   return (
     <>
@@ -137,6 +160,10 @@ export default function SeverancePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">
@@ -474,6 +501,16 @@ export default function SeverancePage() {
                       className="text-primary-600 underline dark:text-primary-500"
                     >
                       근로복지공단 — 퇴직연금 가입정보 조회
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.hometax.go.kr"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국세청 홈택스 — 퇴직소득세 계산·신고
                     </a>
                   </li>
                 </ul>

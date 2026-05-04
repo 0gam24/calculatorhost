@@ -35,7 +35,6 @@ export const metadata: Metadata = {
     description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인하세요.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',

@@ -32,7 +32,6 @@ export const metadata: Metadata = {
     description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
