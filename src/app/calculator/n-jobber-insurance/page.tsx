@@ -18,7 +18,7 @@ import {
 import { NJobberInsuranceCalculator } from './NJobberInsuranceCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/n-jobber-insurance';
+const URL = 'https://calculatorhost.com/calculator/n-jobber-insurance/';
 
 export const metadata: Metadata = {
   title: 'N잡러 건강보험 계산기 2026 | 추가 보험료·피부양자 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       '주근로·부업·기타소득으로 월 건강보험료 및 피부양자 위험을 계산합니다.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -131,7 +132,7 @@ export default function NJobberInsurancePage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '근로', url: 'https://calculatorhost.com/category/work' },
+    { name: '근로', url: 'https://calculatorhost.com/category/work/' },
     { name: 'N잡러건강보험' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

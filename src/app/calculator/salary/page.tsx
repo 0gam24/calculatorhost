@@ -19,7 +19,7 @@ import { SalaryCalculator } from './SalaryCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/salary';
+const URL = 'https://calculatorhost.com/calculator/salary/';
 
 export const metadata: Metadata = {
   title: '연봉 실수령액 계산기 2026 — 4대보험·소득세 자동',
@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     description: '2026년 최신 세율로 연봉 실수령액 즉시 계산',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-default.png'],
   },
 };
 
@@ -106,7 +111,7 @@ export default function SalaryPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '근로', url: 'https://calculatorhost.com/category/work' },
+    { name: '근로', url: 'https://calculatorhost.com/category/work/' },
     { name: '연봉 실수령액' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

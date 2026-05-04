@@ -11,7 +11,7 @@ import {
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
-const URL = 'https://calculatorhost.com/category/lifestyle';
+const URL = 'https://calculatorhost.com/category/lifestyle/';
 
 export const metadata: Metadata = {
   title: '생활 계산기 모음 2026 | BMI·D-day·평수',
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: 'BMI·D-day 생활 계산기 모음',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
 };
 

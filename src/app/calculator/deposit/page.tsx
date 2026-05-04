@@ -17,7 +17,7 @@ import { DepositCalculator } from './DepositCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/deposit';
+const URL = 'https://calculatorhost.com/calculator/deposit/';
 
 export const metadata: Metadata = {
   title: '정기예금 이자 계산기 2026 | 단리·복리·세후 | calculatorhost',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: '단리·월복리·일복리 방식별 세전·세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -88,7 +89,7 @@ export default function DepositPage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '예금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

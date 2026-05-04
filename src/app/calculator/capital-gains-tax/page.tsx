@@ -20,7 +20,7 @@ import {
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { TransferTaxCalculator } from './TransferTaxCalculator';
 
-const URL = 'https://calculatorhost.com/calculator/capital-gains-tax';
+const URL = 'https://calculatorhost.com/calculator/capital-gains-tax/';
 
 export const metadata: Metadata = {
   title: '양도소득세 계산기 2026 | 1세대1주택·일시적2주택 | calculatorhost',
@@ -32,6 +32,7 @@ export const metadata: Metadata = {
     description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -116,7 +117,7 @@ export default function TransferTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '양도소득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
@@ -242,6 +243,9 @@ export default function TransferTaxPage() {
 
               {/* 계산기 */}
               <TransferTaxCalculator />
+
+              {/* AD-2 Medium Rectangle (계산기-본문 사이, 300x250) */}
+              <AdSlot slot="capital-gains-tax-middle" format="rectangle" />
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />

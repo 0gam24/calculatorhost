@@ -17,7 +17,7 @@ import { InheritanceTaxCalculator } from './InheritanceTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/inheritance-tax';
+const URL = 'https://calculatorhost.com/calculator/inheritance-tax/';
 
 export const metadata: Metadata = {
   title: '상속세 계산기 2026 | 기초공제·배우자·자녀 | calculatorhost',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: '상속 시 세금을 미리 계산하고 공제 방식을 비교·선택하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -89,7 +90,7 @@ export default function InheritanceTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '상속세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

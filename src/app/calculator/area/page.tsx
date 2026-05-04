@@ -18,7 +18,7 @@ import { AreaConverter } from './AreaConverter';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/area';
+const URL = 'https://calculatorhost.com/calculator/area/';
 
 export const metadata: Metadata = {
   title: '평수 계산기 2026 | 평↔제곱미터 변환 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '1평 = 약 3.3058㎡ 공식 기반 양방향 변환 계산기.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -104,7 +105,7 @@ export default function AreaConversionPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate' },
+    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate/' },
     { name: '평수 환산' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

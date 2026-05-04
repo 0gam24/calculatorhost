@@ -18,7 +18,7 @@ import { LoanCalculator } from './LoanCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/loan';
+const URL = 'https://calculatorhost.com/calculator/loan/';
 
 export const metadata: Metadata = {
   title: '대출이자 계산기 2026 | 상환방식별 월상환액 비교 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '원리금균등·원금균등·만기일시 상환방식별 월 상환액 및 총이자를 즉시 비교.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -105,7 +106,7 @@ export default function LoanInterestPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '대출이자' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

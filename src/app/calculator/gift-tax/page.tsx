@@ -17,7 +17,7 @@ import { GiftTaxCalculator } from './GiftTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/gift-tax';
+const URL = 'https://calculatorhost.com/calculator/gift-tax/';
 
 export const metadata: Metadata = {
   title: '증여세 계산기 2026 | 10년 공제·배우자·자녀 | calculatorhost',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -89,7 +90,7 @@ export default function GiftTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '증여세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

@@ -11,7 +11,7 @@ import {
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
-const URL = 'https://calculatorhost.com/category/work';
+const URL = 'https://calculatorhost.com/category/work/';
 
 export const metadata: Metadata = {
   title: '근로 계산기 모음 2026 | 연봉·퇴직금',
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: '연봉·퇴직금 계산기 모음',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
 };
 

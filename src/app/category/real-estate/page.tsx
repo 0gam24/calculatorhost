@@ -11,7 +11,7 @@ import {
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
-const URL = 'https://calculatorhost.com/category/real-estate';
+const URL = 'https://calculatorhost.com/category/real-estate/';
 
 export const metadata: Metadata = {
   title: '부동산 계산기 모음 2026 | 양도세·중개수수료·평수',
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: '양도세·취득세·중개수수료 계산기 모음',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
 };
 

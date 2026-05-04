@@ -28,12 +28,23 @@ jobs:
       - name: Build (static export)
         run: npm run build
 
+      - name: Start static server
+        run: |
+          npx http-server out -p 4173 --gzip -c-1 &
+          SERVER_PID=$!
+          echo "SERVER_PID=$SERVER_PID" >> $GITHUB_ENV
+          # 서버 준비 대기
+          sleep 3
+          curl -f http://localhost:4173/index.html > /dev/null || exit 1
+
       - name: Run Lighthouse CI
         uses: treosh/lighthouse-ci-action@v12
         with:
           configPath: ./.lighthouserc.json
           uploadArtifacts: true
           temporaryPublicStorage: true
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ github.token }}
 
       - name: Upload Lighthouse results
         if: always()

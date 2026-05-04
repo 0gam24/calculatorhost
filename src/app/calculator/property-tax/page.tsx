@@ -19,7 +19,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PropertyTaxCalculator } from './PropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
-const URL = 'https://calculatorhost.com/calculator/property-tax';
+const URL = 'https://calculatorhost.com/calculator/property-tax/';
 
 export const metadata: Metadata = {
   title: '재산세 계산기 2026 | 공시가·특례·도시지역 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
     description: '2026년 지방세법 기준 재산세 계산기. 공시가격 입력으로 연간 총 납부액 확인.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -105,7 +106,7 @@ export default function PropertyTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '재산세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

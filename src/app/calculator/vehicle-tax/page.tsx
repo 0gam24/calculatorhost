@@ -18,7 +18,7 @@ import { VehicleTaxCalculator } from './VehicleTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/vehicle-tax';
+const URL = 'https://calculatorhost.com/calculator/vehicle-tax/';
 
 export const metadata: Metadata = {
   title: '자동차세 계산기 2026 | 배기량별 세율·연납 할인 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '배기량과 차령으로 자동차세를 정확히 계산하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -105,7 +106,7 @@ export default function VehicleTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle' },
+    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
     { name: '자동차세 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

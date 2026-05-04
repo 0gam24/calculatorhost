@@ -22,7 +22,7 @@ import { LoanLimitCalculator } from './LoanLimitCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/loan-limit';
+const URL = 'https://calculatorhost.com/calculator/loan-limit/';
 
 export const metadata: Metadata = {
   title: '대출한도 DSR 계산기 2026 | 스트레스 DSR·LTV | calculatorhost',
@@ -35,6 +35,7 @@ export const metadata: Metadata = {
       '연소득·기존 대출·담보가치로 DSR·LTV·DTI 기준 최대 대출액을 즉시 계산',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -110,7 +111,7 @@ export default function LoanLimitPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '대출한도' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
@@ -239,6 +240,9 @@ export default function LoanLimitPage() {
 
               {/* 계산기 폼 */}
               <LoanLimitCalculator />
+
+              {/* AD-2 Medium Rectangle (계산기-본문 사이, 300x250) */}
+              <AdSlot slot="loan-limit-middle" format="rectangle" />
 
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />

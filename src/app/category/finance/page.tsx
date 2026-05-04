@@ -11,7 +11,7 @@ import {
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
-const URL = 'https://calculatorhost.com/category/finance';
+const URL = 'https://calculatorhost.com/category/finance/';
 
 export const metadata: Metadata = {
   title: '금융 계산기 모음 2026 | 대출·예금·적금·환율 | calculatorhost',
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: '대출·예금·적금 계산기 모음',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
 };
 

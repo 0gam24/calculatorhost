@@ -19,7 +19,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { FreelancerCalculator } from './FreelancerCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
-const URL = 'https://calculatorhost.com/calculator/freelancer-tax';
+const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 
 export const metadata: Metadata = {
   title: '프리랜서 종합소득세 계산기 2026 | 3.3% 원천징수 | calculatorhost',
@@ -133,7 +133,7 @@ export default function FreelancerTaxPage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '프리랜서 종합소득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

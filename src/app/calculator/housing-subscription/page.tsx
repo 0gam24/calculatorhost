@@ -18,7 +18,7 @@ import {
 import { HousingSubscriptionCalculator } from './HousingSubscriptionCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/housing-subscription';
+const URL = 'https://calculatorhost.com/calculator/housing-subscription/';
 
 export const metadata: Metadata = {
   title: '청약가점 계산기 2026 | 84점 만점·가점 항목 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       '무주택 기간·부양가족·청약통장으로 청약가점과 당첨 확률을 계산합니다.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -131,7 +132,7 @@ export default function HousingSubscriptionPage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate' },
+    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate/' },
     { name: '청약가점' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

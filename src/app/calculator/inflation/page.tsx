@@ -17,7 +17,7 @@ import {
 import { InflationCalculator } from './InflationCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/inflation';
+const URL = 'https://calculatorhost.com/calculator/inflation/';
 
 export const metadata: Metadata = {
   title: '화폐가치 계산기 2026 | 인플레이션·실질 구매력 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
       '금액의 미래 화폐가치, 현재가치, 실질 구매력을 계산하세요. CPI 기반 인플레이션 반영.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -101,7 +102,7 @@ export default function InflationPage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '화폐가치' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

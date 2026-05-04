@@ -18,7 +18,7 @@ import { SeveranceCalculator } from './SeveranceCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/severance';
+const URL = 'https://calculatorhost.com/calculator/severance/';
 
 export const metadata: Metadata = {
   title: '퇴직금 계산기 2026 | 평균임금·퇴직소득세·세후 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '퇴직 전 세후 실수령액을 정확히 계산',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -104,7 +105,7 @@ export default function SeverancePage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '근로', url: 'https://calculatorhost.com/category/work' },
+    { name: '근로', url: 'https://calculatorhost.com/category/work/' },
     { name: '퇴직금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

@@ -18,7 +18,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { ComprehensivePropertyTaxCalculator } from './ComprehensivePropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
-const URL = 'https://calculatorhost.com/calculator/comprehensive-property-tax';
+const URL = 'https://calculatorhost.com/calculator/comprehensive-property-tax/';
 
 export const metadata: Metadata = {
   title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '주택 공시가 합산으로 종부세 과세 여부와 예상 납부액을 즉시 확인하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -89,7 +90,7 @@ export default function ComprehensivePropertyTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '종합부동산세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

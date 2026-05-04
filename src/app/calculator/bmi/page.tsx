@@ -18,7 +18,7 @@ import { BmiCalculator } from './BmiCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/bmi';
+const URL = 'https://calculatorhost.com/calculator/bmi/';
 
 export const metadata: Metadata = {
   title: 'BMI 계산기 2026 | 대한비만학회 기준 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '키와 몸무게로 BMI를 계산하고 건강한 체중 범위를 확인하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -103,7 +104,7 @@ export default function BmiPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle' },
+    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
     { name: 'BMI 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

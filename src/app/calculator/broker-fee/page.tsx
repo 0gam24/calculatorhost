@@ -18,7 +18,7 @@ import { CommissionCalculator } from './CommissionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/broker-fee';
+const URL = 'https://calculatorhost.com/calculator/broker-fee/';
 
 export const metadata: Metadata = {
   title: '중개수수료 계산기 2026 | 법정 상한요율·한도액 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       '2026년 공인중개사법 기준. 매매·전세·월세·오피스텔 중개수수료를 거래 직전 정확히 계산.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -106,7 +107,7 @@ export default function CommissionPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate' },
+    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate/' },
     { name: '중개수수료' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

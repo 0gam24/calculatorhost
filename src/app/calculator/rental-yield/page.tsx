@@ -17,7 +17,7 @@ import {
 import { RentalYieldCalculator } from './RentalYieldCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/rental-yield';
+const URL = 'https://calculatorhost.com/calculator/rental-yield/';
 
 export const metadata: Metadata = {
   title: '임대수익률 계산기 2026 | 공실률·Cap Rate | calculatorhost',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: '구매가·보증금·월세·관리비로 연 수익률과 Cap Rate를 계산.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -100,7 +101,7 @@ export default function RentalYieldPage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate' },
+    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate/' },
     { name: '임대수익률' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

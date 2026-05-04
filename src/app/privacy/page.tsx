@@ -8,7 +8,7 @@ import { buildBreadcrumbJsonLd } from '@/lib/seo/jsonld';
 export const metadata: Metadata = {
   title: 'calculatorhost 개인정보처리방침 | 정책 및 쿠키 안내',
   description: 'calculatorhost의 개인정보 수집·이용·보관·제3자 제공(Google AdSense, Analytics) 사항을 투명하게 공개합니다. GDPR 준수.',
-  alternates: { canonical: 'https://calculatorhost.com/privacy' },
+  alternates: { canonical: 'https://calculatorhost.com/privacy/' },
   robots: { index: true, follow: true },
 };
 

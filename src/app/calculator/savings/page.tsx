@@ -17,7 +17,7 @@ import { SavingsCalculator } from './SavingsCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/savings';
+const URL = 'https://calculatorhost.com/calculator/savings/';
 
 export const metadata: Metadata = {
   title: '적금 이자 계산기 2026 | 세후 수령액 비교 | calculatorhost',
@@ -29,6 +29,7 @@ export const metadata: Metadata = {
     description: '월 납입금과 기간, 이자 방식을 입력해 단리·복리별 세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -85,7 +86,7 @@ export default function SavingsPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '적금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

@@ -18,7 +18,7 @@ import {
 import { ExchangeCalculator } from './ExchangeCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/exchange';
+const URL = 'https://calculatorhost.com/calculator/exchange/';
 
 export const metadata: Metadata = {
   title: '환율·환전 계산기 2026 | 스프레드·수수료 반영 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       '기준환율·스프레드·수수료로 실제 환전액과 실질 환율을 계산합니다.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -130,7 +131,7 @@ export default function ExchangePage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '환율' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

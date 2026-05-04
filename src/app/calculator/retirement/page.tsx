@@ -17,7 +17,7 @@ import {
 import { RetirementCalculator } from './RetirementCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/retirement';
+const URL = 'https://calculatorhost.com/calculator/retirement/';
 
 export const metadata: Metadata = {
   title: '은퇴자금 계산기 2026 | FIRE·4% 룰 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
       '현재 자산·월 저축액·기대수익률로 은퇴 예상자산 및 필요자금을 계산.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -90,7 +91,7 @@ export default function RetirementPage() {
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융', url: 'https://calculatorhost.com/category/finance' },
+    { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: '은퇴자금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

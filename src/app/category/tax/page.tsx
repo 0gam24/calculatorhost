@@ -11,7 +11,7 @@ import {
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
-const URL = 'https://calculatorhost.com/category/tax';
+const URL = 'https://calculatorhost.com/category/tax/';
 
 export const metadata: Metadata = {
   title: '세금 계산기 모음 2026 | 양도·취득·재산·증여·상속 | calculatorhost',
@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description: '양도세·취득세·재산세·종부세 계산기 모음',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
 };
 

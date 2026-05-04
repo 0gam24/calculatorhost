@@ -18,7 +18,7 @@ import { RentConversionCalculator } from './RentConversionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/rent-conversion';
+const URL = 'https://calculatorhost.com/calculator/rent-conversion/';
 
 export const metadata: Metadata = {
   title: '전월세 전환율 계산기 2026 | 법정 상한 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       '2026년 법정 상한 기준 전월세 전환율 계산기. 전세·월세·반전세 무료 변환 계산. 한국은행 기준금리 반영, 법정 상한 자동 계산. 회원가입 불필요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -106,7 +107,7 @@ export default function RentConversionPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate' },
+    { name: '부동산', url: 'https://calculatorhost.com/category/real-estate/' },
     { name: '전월세전환' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

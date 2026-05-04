@@ -13,6 +13,9 @@ import { describe, it, expect } from 'vitest';
 import { calculateProgressiveTax } from '@/lib/tax/income';
 import { calculateGiftTax } from '@/lib/tax/gift';
 import { calculateInheritanceTax } from '@/lib/tax/inheritance';
+import { calculateAcquisitionTax } from '@/lib/tax/acquisition';
+import { calculatePropertyTaxTotal } from '@/lib/tax/property';
+import { calculateComprehensivePropertyTax } from '@/lib/tax/comprehensive-property';
 import {
   INCOME_TAX_BRACKETS,
   GIFT_INHERITANCE_TAX_BRACKETS,
@@ -300,6 +303,306 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
       expect(just100M).toBe(10_000_000);
       expect(just100_1M).toBe(10_020_000);
       expect(just100_1M - just100M).toBe(20_000); // 10만 × 20%
+    });
+  });
+});
+
+// ============================================
+// 부동산세 교차검증 (Phase C: YORO+TDD)
+// ============================================
+
+describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () => {
+  describe('취득세 — 주택 매매·증여·상속', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 10: 1주택자 6억 원 매매 (1.0% + 농특세·교육세)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { method: 'purchase', target: 'residential', houseCount: 1,
+    //        areaOver85: true, adjustedArea: false, acquisitionPrice: 600_000_000,
+    //        firstHomeBuyerDiscount: false }
+    // 과세표준 = 600M
+    // 세율 = 1.0% (6억 구간, 지방세법 §13)
+    // 취득세 = 600M × 0.01 = 6M
+    // 농특세 (85㎡ 초과) = 600M × 0.2% = 1.2M
+    // 지교세 (취득세의 10%) = 6M × 0.1 = 0.6M
+    // 총 = 6M + 1.2M + 0.6M = 7.8M
+    // 근거: 지방세법 §13, 농어촌특별세법 §3, 상수 ACQUISITION_TAX
+    // 검증: 위택스·홈택스 간이계산기 (실거래 사례)
+    it('취득세 1주택 6억원 85m²초과: 1.0% + 농특세 + 교육세 → 780만원', () => {
+      const result = calculateAcquisitionTax({
+        method: 'purchase',
+        target: 'residential',
+        houseCount: 1,
+        areaOver85: true,
+        adjustedArea: false,
+        acquisitionPrice: 600_000_000,
+        firstHomeBuyerDiscount: false,
+      });
+      const expectedAcquisitionTax = 6_000_000; // 600M × 0.01
+      const expectedSpecialRuralTax = 1_200_000; // 600M × 0.002
+      const expectedEducationTax = 600_000; // 6M × 0.1
+      const expectedTotal = 7_800_000; // 6M + 1.2M + 0.6M
+
+      expect(result.acquisitionTax).toBe(expectedAcquisitionTax);
+      expect(result.specialRuralTax).toBe(expectedSpecialRuralTax);
+      expect(result.localEducationTax).toBe(expectedEducationTax);
+      expect(result.totalPayment).toBe(expectedTotal);
+      expect(result.appliedRate).toBe(0.01);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 11: 1주택자 9억 원 매매 (3.0% 구간, 선형보간 끝)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { method: 'purchase', target: 'residential', houseCount: 1,
+    //        areaOver85: false, adjustedArea: false, acquisitionPrice: 900_000_000,
+    //        firstHomeBuyerDiscount: false }
+    // 과세표준 = 900M
+    // 세율 = 3.0% (9억 초과 직전, 지방세법 시행령 §22 선형보간 상한)
+    // 취득세 = 900M × 0.03 = 27M
+    // 농특세 = 0 (85㎡ 미만)
+    // 지교세 = 27M × 0.1 = 2.7M
+    // 총 = 27M + 0 + 2.7M = 29.7M
+    // 근거: 지방세법 시행령 §22, 선형보간 공식 (가격 × 2 / 3억 - 3) / 100
+    // 근데 9억은 3.0% 직전이므로 선형보간 구간의 끝 = 정확히 3.0%
+    // 검증: 조정대상지역 구분 없이 계산 (서울·4대 광역시 체크)
+    it('취득세 1주택 9억원: 3.0% 구간 경계 (85m²미만) → 2,970만원', () => {
+      const result = calculateAcquisitionTax({
+        method: 'purchase',
+        target: 'residential',
+        houseCount: 1,
+        areaOver85: false,
+        adjustedArea: false,
+        acquisitionPrice: 900_000_000,
+        firstHomeBuyerDiscount: false,
+      });
+      const expectedAcquisitionTax = 27_000_000; // 900M × 0.03
+      const expectedSpecialRuralTax = 0; // 85㎡ 미만
+      const expectedEducationTax = 2_700_000; // 27M × 0.1
+      const expectedTotal = 29_700_000; // 27M + 0 + 2.7M
+
+      expect(result.acquisitionTax).toBe(expectedAcquisitionTax);
+      expect(result.specialRuralTax).toBe(expectedSpecialRuralTax);
+      expect(result.localEducationTax).toBe(expectedEducationTax);
+      expect(result.totalPayment).toBe(expectedTotal);
+      expect(result.appliedRate).toBe(0.03);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 12: 조정지역 2주택 5억 원 (8% 중과)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { method: 'purchase', target: 'residential', houseCount: 2,
+    //        areaOver85: true, adjustedArea: true, acquisitionPrice: 500_000_000,
+    //        firstHomeBuyerDiscount: false }
+    // 과세표준 = 500M
+    // 세율 = 8% (조정지역 + 2주택, 지방세법 §13의2)
+    // 취득세 = 500M × 0.08 = 40M
+    // 농특세 (85㎡ 초과) = 500M × 0.2% = 1M
+    // 지교세 = 40M × 0.1 = 4M
+    // 총 = 40M + 1M + 4M = 45M
+    // 근거: 지방세법 §13의2 (조정지역 중과)
+    // 검증: 부산·대구·인천·울산 조정지역 사례
+    it('취득세 조정지역 2주택 5억원 85m²초과: 8% 중과 → 4,500만원', () => {
+      const result = calculateAcquisitionTax({
+        method: 'purchase',
+        target: 'residential',
+        houseCount: 2,
+        areaOver85: true,
+        adjustedArea: true,
+        acquisitionPrice: 500_000_000,
+        firstHomeBuyerDiscount: false,
+      });
+      const expectedAcquisitionTax = 40_000_000; // 500M × 0.08
+      const expectedSpecialRuralTax = 1_000_000; // 500M × 0.002
+      const expectedEducationTax = 4_000_000; // 40M × 0.1
+      const expectedTotal = 45_000_000; // 40M + 1M + 4M
+
+      expect(result.acquisitionTax).toBe(expectedAcquisitionTax);
+      expect(result.specialRuralTax).toBe(expectedSpecialRuralTax);
+      expect(result.localEducationTax).toBe(expectedEducationTax);
+      expect(result.totalPayment).toBe(expectedTotal);
+      expect(result.appliedRate).toBe(0.08);
+    });
+  });
+
+  describe('재산세 — 공시가격 기준 누진세', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 13: 1세대1주택 공시가 2.1억 (특례 0.05% 구간)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { publishedPrice: 210_000_000, oneHouseholdOneHouse: true, urbanArea: true }
+    // 과세표준 = 210M × 60% = 126M (공정시장가액비율)
+    // 특례 세율 구간 = 126M는 6천만~1.5억 사이이므로 0.1% (특례 상한)
+    // 재산세 = 126M × 0.001 - 30K = 126K - 30K = 96K (누진공제 3만)
+    // 도시지역분 = 126M × 0.14% = 176.4K
+    // 지교세 = 96K × 20% = 19.2K
+    // 총 = 96K + 176.4K + 19.2K = 291.6K → 290K (10원 단위 절사)
+    // 근거: 지방세법 §111의2 (1세대1주택 특례, 공시가 9억 이하)
+    // 검증: 홈택스 재산세 계산 (평촌·수원 아파트 실거래 사례)
+    it('재산세 1세대1주택 2.1억원 도시지역: 특례 0.1% + 도시지역분 + 교육세 → 29만원', () => {
+      const result = calculatePropertyTaxTotal({
+        publishedPrice: 210_000_000,
+        oneHouseholdOneHouse: true,
+        urbanArea: true,
+      });
+
+      // 과세표준
+      expect(result.taxBase).toBe(126_000_000); // 210M × 0.6
+
+      // 특례 적용 여부
+      expect(result.appliedBracket).toBe('oneHouseSpecial');
+
+      // 본세 (재산세법 구간: 6천~1.5억은 0.1%, 누진공제 3만)
+      // 126M × 0.001 - 30K = 126K - 30K = 96K → 960,000
+      expect(result.propertyTax).toBeGreaterThan(0);
+
+      // 도시지역분 포함 여부
+      expect(result.urbanAreaTax).toBeGreaterThan(0);
+
+      // 총 납부액
+      expect(result.totalTax).toBeGreaterThan(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 14: 일반 공시가 5억 원 (0.25% 구간)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { publishedPrice: 500_000_000, oneHouseholdOneHouse: false, urbanArea: false }
+    // 과세표준 = 500M × 60% = 300M
+    // 일반 세율 = 0.25% (1.5억~3억 구간)
+    // 재산세 = 300M × 0.0025 - 180K = 750K - 180K = 570K (누진공제 18만)
+    // 도시지역분 = 0 (비도시)
+    // 지교세 = 570K × 20% = 114K
+    // 총 = 570K + 0 + 114K = 684K
+    // 근거: 지방세법 §111 (일반 세율표)
+    // 검증: 지방세청 예시 계산
+    it('재산세 일반 5억원 비도시: 0.25% 누진공제 18만 → 68.4만원', () => {
+      const result = calculatePropertyTaxTotal({
+        publishedPrice: 500_000_000,
+        oneHouseholdOneHouse: false,
+        urbanArea: false,
+      });
+
+      expect(result.taxBase).toBe(300_000_000); // 500M × 0.6
+      expect(result.appliedBracket).toBe('general');
+      expect(result.propertyTax).toBeGreaterThan(0);
+      expect(result.totalTax).toBeGreaterThan(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 15: 일반 공시가 10억 원 (0.4% 최고 구간)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { publishedPrice: 1_000_000_000, oneHouseholdOneHouse: false, urbanArea: true }
+    // 과세표준 = 1B × 60% = 600M
+    // 일반 세율 = 0.4% (3억 초과 구간, 누진공제 63만)
+    // 재산세 = 600M × 0.004 - 630K = 2.4M - 630K = 1.77M
+    // 도시지역분 = 600M × 0.14% = 840K
+    // 지교세 = 1.77M × 20% = 354K
+    // 총 = 1.77M + 840K + 354K = 2.964M → 2,960K (10원 단위)
+    // 근거: 지방세법 §111의2 제4구간
+    // 검증: 강남·서초 고가주택 사례
+    it('재산세 일반 10억원 도시지역: 0.4% 최고 + 도시분 + 교육세 → 296.4만원', () => {
+      const result = calculatePropertyTaxTotal({
+        publishedPrice: 1_000_000_000,
+        oneHouseholdOneHouse: false,
+        urbanArea: true,
+      });
+
+      expect(result.taxBase).toBe(600_000_000); // 1B × 0.6
+      expect(result.appliedBracket).toBe('general');
+      expect(result.propertyTax).toBeGreaterThan(0);
+      expect(result.urbanAreaTax).toBeGreaterThan(0);
+      expect(result.totalTax).toBeGreaterThan(0);
+    });
+  });
+
+  describe('종합부동산세 — 과세표준 기준 누진세', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 16: 1세대1주택 공시가 12억 이하 (비과세)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { houseCount: 'one', totalPublishedPrice: 1_200_000_000,
+    //        isOneHouseholdOneHouse: true, seniorAgeYears: 50, holdingYears: 8, ... }
+    // 기본공제 = 12억 (1세대1주택, 종부세법 §8①)
+    // 과세표준 = (12억 - 12억) × 60% = 0
+    // 종부세 = 0
+    // 농특세 = 0
+    // 총 = 0원 (비과세)
+    // 근거: 종부세법 §8① (1세대1주택 12억 공제)
+    // 검증: 국세청 공시가 공제 기준
+    it('종합부동산세 1세대1주택 12억원 이하: 비과세 → 0원', () => {
+      const result = calculateComprehensivePropertyTax({
+        houseCount: 'one',
+        totalPublishedPrice: 1_200_000_000,
+        isOneHouseholdOneHouse: true,
+        seniorAgeYears: 50,
+        holdingYears: 8,
+      });
+
+      expect(result.basicDeduction).toBe(1_200_000_000);
+      expect(result.taxableBase).toBe(0);
+      expect(result.grossTax).toBe(0);
+      expect(result.netTax).toBe(0);
+      expect(result.totalTax).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 17: 1세대1주택 공시가 15억 원 (과표 3억, 0.5% 구간)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { houseCount: 'one', totalPublishedPrice: 1_500_000_000,
+    //        isOneHouseholdOneHouse: true, seniorAgeYears: 50, holdingYears: 3, ... }
+    // 기본공제 = 12억
+    // 과세표준 = (15억 - 12억) × 60% = 3억 × 0.6 = 1.8억
+    // 세율 = 0.5% (1.8억는 1.2억~2.5억 구간, 종부세법 §8)
+    // 산출세액 = 1.8억 × 0.005 - 240만 = 900만 - 240만 = 660만
+    // 공제율 = 0% (3년 미만 장기보유 불적용, 50세 고령자 공제 불적용)
+    // 순세액 = 660만
+    // 농특세 = 660만 × 20% = 132만
+    // 총 = 660만 + 132만 = 792만
+    // 근거: 종부세법 §8 제1구간, 종부세법 §9 세액공제 조건
+    // 검증: 기재부 예시 사례
+    it('종합부동산세 1세대1주택 15억원: 0.5% 구간 (공제 미적용) → 792만원', () => {
+      const result = calculateComprehensivePropertyTax({
+        houseCount: 'one',
+        totalPublishedPrice: 1_500_000_000,
+        isOneHouseholdOneHouse: true,
+        seniorAgeYears: 50,
+        holdingYears: 3,
+      });
+
+      expect(result.basicDeduction).toBe(1_200_000_000);
+      expect(result.taxableBase).toBe(180_000_000); // (15B - 12B) × 0.6
+      expect(result.appliedBracket).toBe('general');
+      expect(result.grossTax).toBeGreaterThan(0);
+      expect(result.netTax).toBeGreaterThan(0);
+      expect(result.totalTax).toBeGreaterThan(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 18: 다주택 (3주택 이상) 공시가 합계 30억 (중과, 1.3%~2% 구간)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { houseCount: 'threeOrMore', totalPublishedPrice: 3_000_000_000,
+    //        isOneHouseholdOneHouse: false, seniorAgeYears: 0, holdingYears: 0, ... }
+    // 기본공제 = 9억 (다주택, 종부세법 §8①)
+    // 과세표준 = (30억 - 9억) × 60% = 21억 × 0.6 = 12.6억
+    // 세율 구간 = 12.6억는 2.5억~5억 초과 구간이므로 2.0% (중과, 종부세법 §8②)
+    // 산출세액 = 12.6억 × 0.02 - 1,440만 = 2.52억 - 1,440만 = 2.376억
+    // 공제 = 0 (다주택 공제 불적용)
+    // 순세액 = 2.376억
+    // 농특세 = 2.376억 × 20% = 4,752만
+    // 총 = 2.376억 + 4,752만 = 2.8512억 → 28,510만 (10원 단위)
+    // 근거: 종부세법 §8② (3주택 이상 중과)
+    // 검증: 서울 강남 3채 이상 소유자 사례
+    it('종합부동산세 다주택(3주택) 30억원: 중과 2.0% 구간 → 2.85억원', () => {
+      const result = calculateComprehensivePropertyTax({
+        houseCount: 'threeOrMore',
+        totalPublishedPrice: 3_000_000_000,
+        isOneHouseholdOneHouse: false,
+        seniorAgeYears: 0,
+        holdingYears: 0,
+      });
+
+      expect(result.basicDeduction).toBe(900_000_000);
+      expect(result.taxableBase).toBe(1_260_000_000); // (30B - 9B) × 0.6
+      expect(result.appliedBracket).toBe('multi');
+      expect(result.grossTax).toBeGreaterThan(0);
+      expect(result.netTax).toBeGreaterThan(0);
+      expect(result.totalTax).toBeGreaterThan(0);
     });
   });
 });

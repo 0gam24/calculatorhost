@@ -18,7 +18,7 @@ import {
 import { ChildTaxCreditCalculator } from './ChildTaxCreditCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/child-tax-credit';
+const URL = 'https://calculatorhost.com/calculator/child-tax-credit/';
 
 export const metadata: Metadata = {
   title: '자녀장려금 계산기 2026 | 자녀 1인당 100만 | calculatorhost',
@@ -31,6 +31,7 @@ export const metadata: Metadata = {
       '가구 유형, 연소득, 자녀 수로 자녀장려금(CTC)을 즉시 계산합니다.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -129,7 +130,7 @@ export default function ChildTaxCreditPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '근로', url: 'https://calculatorhost.com/category/work' },
+    { name: '근로', url: 'https://calculatorhost.com/category/work/' },
     { name: '자녀장려금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

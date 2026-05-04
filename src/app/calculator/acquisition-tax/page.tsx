@@ -19,18 +19,23 @@ import {
 import { AcquisitionCalculator } from './AcquisitionCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/acquisition-tax';
+const URL = 'https://calculatorhost.com/calculator/acquisition-tax/';
 
 export const metadata: Metadata = {
   title: '취득세 계산기 2026 | 1주택·조정지역·생애최초 | calculatorhost',
   description:
     '2026년 최신 지방세율 반영 취득세 계산기. 매매·증여·상속 및 1주택·조정지역·생애최초 감면까지 모두 반영하여 농특세, 지방교육세 포함 총 납부액을 정확히 계산. 거래 직전 확인하세요. 회원가입 불필요.',
   alternates: { canonical: URL },
+  twitter: {
+    card: 'summary_large_image',
+    images: ['/og-default.png'],
+  },
   openGraph: {
     title: '취득세 계산기 2026 | 1주택·조정지역·생애최초',
     description: '2026년 최신 지방세율 반영. 주택 매매·증여·상속 시 총 납부액을 거래 직전 확인.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
 };
 
@@ -95,7 +100,7 @@ export default function AcquisitionTaxPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금', url: 'https://calculatorhost.com/category/tax' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
     { name: '취득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);

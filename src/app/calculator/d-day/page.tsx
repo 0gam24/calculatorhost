@@ -18,7 +18,7 @@ import { DdayCalculator } from './DdayCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
-const URL = 'https://calculatorhost.com/calculator/d-day';
+const URL = 'https://calculatorhost.com/calculator/d-day/';
 
 export const metadata: Metadata = {
   title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일 | calculatorhost',
@@ -30,6 +30,7 @@ export const metadata: Metadata = {
     description: '특정일까지 D-day, 두 날짜 사이 일수, N일 후 날짜를 즉시 계산하세요.',
     url: URL,
     type: 'website',
+    images: ['/og-default.png'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -102,7 +103,7 @@ export default function DdayPage() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle' },
+    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
     { name: 'D-day 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
