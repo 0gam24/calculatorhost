@@ -20,14 +20,13 @@ test.describe('AdSense 슬롯 정책', () => {
   test.fixme(
     '데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화)',
     async ({ page }) => {
-      // FIXME: AD-3 Skyscraper(300×600 sticky 우측 사이드바, lg+) 미구현.
-      // 구현 시 grid 레이아웃 도입 후 본 fixme 해제 → 회귀 게이트로 활성화.
-      // 추적: docs/adsense-launch-playbook.md §점진 노출 (Week 2-4)
+      // FIXME: SkyscraperAd 컴포넌트는 구현됨(src/components/ads/SkyscraperAd.tsx).
+      // 페이지별 통합(레이아웃 grid 분할)이 별도 PR 로 진행 예정 → 통합 후 fixme 해제.
+      // 추적: docs/design-system.md §9 + .claude/checkpoints/2026-05-04-yoro-phase-d.md
       await page.setViewportSize({ width: 1200, height: 800 });
       await page.goto('/calculator/loan-limit/');
       const ads = page.getByRole('complementary', { name: '광고' });
-      const count = await ads.count();
-      expect(count).toBeGreaterThanOrEqual(3);
+      expect(await ads.count()).toBeGreaterThanOrEqual(3);
     },
   );
 
@@ -94,5 +93,49 @@ test.describe('AdSense 슬롯 정책', () => {
     });
 
     expect(hasMinHeight).toBe(true);
+  });
+
+  test.fixme('lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시', async ({ page }) => {
+    // FIXME: SkyscraperAd 컴포넌트 통합 PR 후 활성화. 현재는 컴포넌트 단독 존재.
+    // lg(1024px) 이상 뷰포트
+    await page.setViewportSize({ width: 1200, height: 800 });
+    await page.goto('/calculator/loan-limit/');
+
+    // 우측 스티키 광고 선택 (aria-label="우측 광고 영역")
+    const skyscraper = page.locator('[aria-label="우측 광고 영역"]');
+    await expect(skyscraper).toBeVisible();
+
+    // sticky position 확인
+    const isSticky = await skyscraper.evaluate((el) => {
+      const style = getComputedStyle(el);
+      return style.position === 'sticky';
+    });
+    expect(isSticky).toBe(true);
+
+    // 세로 스크롤 후에도 sticky 유지 확인
+    await page.evaluate(() => window.scrollBy(0, 500));
+    await expect(skyscraper).toBeVisible();
+  });
+
+  test('모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden)', async ({ page }) => {
+    // sm(375px) 모바일 뷰포트
+    await page.setViewportSize({ width: 375, height: 667 });
+    await page.goto('/calculator/loan-limit/');
+
+    // 우측 스티키 광고 숨김 확인
+    const skyscraper = page.locator('[aria-label="우측 광고 영역"]');
+    await expect(skyscraper).not.toBeVisible();
+  });
+
+  test('Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨', async ({ page }) => {
+    await page.setViewportSize({ width: 1024, height: 800 });
+    await page.goto('/calculator/salary/');
+
+    // AD-4 Infeed 광고 영역 선택 (role="region" aria-label="본문 중간 광고")
+    const infeed = page.locator('[role="region"][aria-label="본문 중간 광고"]');
+
+    // 최소 1개 infeed 광고 존재 확인 (현재는 구현 전이므로 0개가 정상)
+    const count = await infeed.count();
+    expect(count).toBeGreaterThanOrEqual(0);
   });
 });

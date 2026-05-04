@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { VatCalculator } from './VatCalculator';
@@ -123,6 +124,7 @@ export default function VatPage() {
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
+    isPartOf: getCategoryUrlForCalculator('vat'),
   });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))

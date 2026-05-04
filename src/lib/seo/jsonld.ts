@@ -400,3 +400,51 @@ export function buildDefinedTermSetJsonLd(opts: DefinedTermSetOptions): JsonLd {
     })),
   };
 }
+
+/**
+ * 계산기 슬러그 → 카테고리 허브 URL 매핑.
+ * WebPage JSON-LD 의 isPartOf 필드용 — 사이트 계층 신호 (Google Search Central 권장).
+ * 매핑 누락 시 홈으로 fallback (sitemap·breadcrumb 와 일관).
+ */
+export function getCategoryUrlForCalculator(slug: string): string {
+  const SITE = 'https://calculatorhost.com';
+  const CATEGORY: Record<string, string> = {
+    // 세금
+    'salary': 'work',
+    'severance': 'work',
+    'retirement': 'work',
+    'income': 'work',
+    'freelancer-tax': 'work',
+    'n-jobber-insurance': 'work',
+    'child-tax-credit': 'work',
+    'vat': 'tax',
+    'acquisition-tax': 'tax',
+    'capital-gains-tax': 'tax',
+    'gift-tax': 'tax',
+    'inheritance-tax': 'tax',
+    'comprehensive-property-tax': 'tax',
+    'property-tax': 'real-estate',
+    'vehicle-tax': 'tax',
+    // 부동산
+    'broker-fee': 'real-estate',
+    'rent-conversion': 'real-estate',
+    'rental-yield': 'real-estate',
+    'housing-subscription': 'real-estate',
+    // 금융
+    'loan': 'finance',
+    'loan-limit': 'finance',
+    'deposit': 'finance',
+    'savings': 'finance',
+    'exchange': 'finance',
+    'inflation': 'finance',
+    'split-buy': 'finance',
+    'split-sell': 'finance',
+    'averaging-down': 'finance',
+    // 라이프
+    'bmi': 'lifestyle',
+    'd-day': 'lifestyle',
+    'area': 'lifestyle',
+  };
+  const cat = CATEGORY[slug];
+  return cat ? `${SITE}/category/${cat}/` : `${SITE}/`;
+}

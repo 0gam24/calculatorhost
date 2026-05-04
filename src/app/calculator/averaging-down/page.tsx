@@ -15,6 +15,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AveragingDownCalculator } from './AveragingDownCalculator';
@@ -127,6 +128,7 @@ export default function AveragingDownPage() {
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
+    isPartOf: getCategoryUrlForCalculator('averaging-down'),
   });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))

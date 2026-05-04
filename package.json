@@ -26,9 +26,11 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "recharts": "^2.13.3",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.4",
+    "zod": "^4.4.2"
   },
   "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260503.1",
     "@next/bundle-analyzer": "^16.2.4",
     "@playwright/test": "^1.48.2",
     "@testing-library/jest-dom": "^6.6.3",

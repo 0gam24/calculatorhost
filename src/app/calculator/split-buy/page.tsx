@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
   buildWebPageJsonLd,
+  getCategoryUrlForCalculator,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { SplitBuyCalculator } from './SplitBuyCalculator';
@@ -131,6 +132,7 @@ export default function SplitBuyPage() {
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
+    isPartOf: getCategoryUrlForCalculator('split-buy'),
   });
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))

@@ -73,5 +73,8 @@ CLAUDE.local.md
 # 운영 데이터
 /data/cache/
 
+# Lighthouse baseline 측정 (로컬 개발용)
+.lighthouse/
+
 # 폰트 서브셋팅 백업 (롤백용 로컬 보관 — repo 비대화 방지)
 public/fonts/*.original.woff2
