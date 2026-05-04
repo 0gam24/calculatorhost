@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '단리·월복리·일복리 방식별 세전·세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '특정일까지 D-day, 두 날짜 사이 일수, N일 후 날짜를 즉시 계산하세요.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

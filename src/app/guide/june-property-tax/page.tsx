@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     description: '공시가격 × 공정시장가액 60% 산정 + 1세대1주택 특례 + 분할 납부.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '재산세 완벽 가이드 2026 — 7월 납부 시즌',
     description: '공시가격·공정시장가액·1세대1주택 특례·분할 납부 정리.',
-    images: ['/og-default.png'],
+
   },
 };
 

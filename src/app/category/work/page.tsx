@@ -9,6 +9,7 @@ import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/category/work/';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: '연봉·퇴직금 계산기 모음',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
 };
 
@@ -90,6 +91,43 @@ export default function WorkCategoryPage() {
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '근로 계산기 핵심 용어',
+    description: '근로소득, 퇴직금, 사업소득 계산 시 자주 나오는 근로·세금 용어 정의',
+    url: `${URL}#근로-핵심-용어`,
+    terms: [
+      {
+        name: '통상임금',
+        description:
+          '근로기준법 §2에 따라 근로자가 통상적으로 정기적으로 받는 급여. 기본급, 고정 수당, 고정 상여금 등이 포함되며, 연봉 계산과 퇴직금 산정의 기초가 됩니다. 초과근무비, 보너스 등 비정기적 수당은 제외됩니다.',
+        url: 'https://www.moel.go.kr',
+      },
+      {
+        name: '평균임금',
+        description:
+          '3개월 동안 받은 급여를 90일로 나눈 금액(근로기준법 §2). 퇴직금 계산, 휴직 급여, 산재보험 보상금 산정의 기준이 됩니다. 통상임금보다 넓은 범위로, 상여금 일부도 포함될 수 있습니다.',
+        url: 'https://www.comwel.or.kr',
+      },
+      {
+        name: '누진공제',
+        description:
+          '누진세 구간에서 낮은 세율 구간에 대한 세금을 기계적으로 공제하는 방식(소득세법 §57). 예를 들어 5,000만 원 소득 시 1,400만 원까지는 6% 적용 후, 3,600만 원 부분에 대해 별도 세율을 적용합니다. 높은 소득일수록 실제 세율을 낮춥니다.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '4대보험 요율',
+        description:
+          '국민연금(4.5%), 건강보험(3.545%), 장기요양(건보 12.95%), 고용보험(0.9%)의 근로자 부담분. 이들은 소득세 과세 기준에서 공제되지만, 일부 상한선(국민연금 기준소득월액 637만 원)이 있어 고소득자도 동일 금액 이상은 공제되지 않습니다.',
+        url: 'https://www.nps.or.kr',
+      },
+      {
+        name: '퇴직소득공제',
+        description:
+          '퇴직금의 40%를 공제 후 나머지에 세율을 적용하는 제도(소득세법 §84). 퇴직금은 근로자의 생애 한 번의 큰 수입이므로 세금 부담을 경감하기 위해 40% 공제를 인정합니다. 근속 연수와 평균임금에 따라 퇴직금 자체가 결정됩니다.',
+        url: 'https://www.comwel.or.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -104,6 +142,10 @@ export default function WorkCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
       <div className="flex min-h-screen flex-col">
         <Header />

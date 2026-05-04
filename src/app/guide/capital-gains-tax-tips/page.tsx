@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: '1세대1주택 비과세·장기보유공제·일시적 2주택·자경 감면 활용법.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

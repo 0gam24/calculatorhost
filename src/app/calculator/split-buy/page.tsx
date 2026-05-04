@@ -46,14 +46,14 @@ export const metadata: Metadata = {
       '차수별 매수로 가중평균 평단가·실효 평단가·손익분기점을 즉시 계산. 균등분할 자동채움 지원.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
     title: '분할매수 계산기 2026 (주식·코인)',
     description: '차수별 평단·실효 평단·BEP까지 한 번에. 균등분할 자동채움 지원.',
-    images: ['/og-default.png'],
+
   },
 };
 

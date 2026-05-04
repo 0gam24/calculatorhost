@@ -57,6 +57,34 @@ function getMockData(): RtmsApartmentTrade[] {
 }
 
 /**
+ * API 응답 배열을 zod로 파싱 및 필터링
+ *
+ * @param data API 응답의 items 배열
+ * @param lawdCd 필터링할 법정동코드
+ * @returns 검증된 거래 목록
+ */
+function parseAndFilter(
+  data: unknown,
+  lawdCd: string,
+): RtmsApartmentTrade[] {
+  try {
+    // 배열이 아니면 빈 배열 반환
+    if (!Array.isArray(data)) {
+      return [];
+    }
+
+    const validated = z.array(RtmsApartmentTradeSchema).parse(data);
+    // 혹시 다른 법정동코드가 섞여있을 수 있으니 필터링
+    return validated.filter((t) => t.lawdCd === lawdCd);
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      console.error('[publicapi/realestate] 응답 스키마 검증 실패:', error);
+    }
+    return [];
+  }
+}
+
+/**
  * 아파트 매매 거래 조회
  *
  * @param options.lawdCd 법정동코드 (예: "11110" = 종로구)
@@ -112,9 +140,13 @@ export async function getRtmsApartmentTrade(
 
     const data = await response.json();
 
-    // zod 검증
-    const validated = z.array(RtmsApartmentTradeSchema).parse(data);
-    return validated;
+    // API 응답 형식: { items: [...], pageNo, totalCount, pageSize }
+    if (data && typeof data === 'object' && 'items' in data) {
+      return parseAndFilter(data.items, lawdCd);
+    }
+
+    // 폴백: 배열 직접 전달
+    return parseAndFilter(data, lawdCd);
   } catch (error) {
     if (error instanceof z.ZodError) {
       console.error('[publicapi/realestate] 응답 스키마 검증 실패:', error);

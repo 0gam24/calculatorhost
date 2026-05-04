@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '키와 몸무게로 BMI를 계산하고 건강한 체중 범위를 확인하세요.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

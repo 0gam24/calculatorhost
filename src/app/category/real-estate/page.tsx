@@ -9,6 +9,7 @@ import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/category/real-estate/';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: '양도세·취득세·중개수수료 계산기 모음',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
 };
 
@@ -108,6 +109,43 @@ export default function RealEstateCategoryPage() {
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '부동산 계산기 핵심 용어',
+    description: '부동산 거래, 보유, 임대차 계산 시 자주 나오는 부동산 용어 정의',
+    url: `${URL}#부동산-핵심-용어`,
+    terms: [
+      {
+        name: '공시가격',
+        description:
+          '정부가 부동산의 공정한 시장가격을 추정해 공시하는 가격. 재산세, 취득세, 종합부동산세의 기준이 되며, 매년 1월 공시됩니다. 실제 거래가와 다를 수 있지만, 세금 계산의 법정 기준이므로 공시가격에 따라 세금이 크게 달라집니다.',
+        url: 'https://www.reb.or.kr',
+      },
+      {
+        name: '공정시장가액비율',
+        description:
+          '실제 거래가격을 공시가격으로 나눈 비율로, 시장 수급을 반영합니다. 이 비율이 높으면 공시가격이 낮다는 뜻이고, 낮으면 공시가격이 높다는 뜻입니다. 2026년 기준 60% 정도이며, 종합부동산세 과세표준 산정 시 사용됩니다.',
+        url: 'https://www.reb.or.kr',
+      },
+      {
+        name: '조정대상지역',
+        description:
+          '정부가 가격 상승이 심한 지역으로 지정해 부동산 거래를 규제하는 지역. 취득세와 양도세 세율이 일반지역보다 높으며, 대출 규제(LTV·DSR 강화)도 더 엄격합니다. 조정지역 부동산은 거래 시 세금 부담이 크므로 사전에 정확히 계산해야 합니다.',
+        url: 'https://rt.molit.go.kr',
+      },
+      {
+        name: '전월세 전환율',
+        description:
+          '보증금을 월세로, 또는 월세를 보증금으로 환산할 때의 비율. 금리 상황에 따라 변동되며, 저금리 시기에는 보증금 대비 월세가 낮고, 고금리 시기에는 높습니다. 공정한 거래를 위해 시세 기준 전환율을 확인하는 것이 중요합니다.',
+        url: 'https://rt.molit.go.kr',
+      },
+      {
+        name: '환산보증금',
+        description:
+          '월세를 기준으로 계산한 보증금 상당액. 월세 거주 중 전월세 전환을 고려할 때나, 전세 계약으로 전환할 때 사용됩니다. 현재 금리 수준에서 월세 수익이 보증금 형태로는 얼마나 되는지를 나타내므로 전환의 공정성을 판단하는 기준이 됩니다.',
+        url: 'https://rt.molit.go.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -122,6 +160,10 @@ export default function RealEstateCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
       <div className="flex min-h-screen flex-col">
         <Header />

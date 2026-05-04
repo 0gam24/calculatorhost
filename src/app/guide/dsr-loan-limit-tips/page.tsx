@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: '스트레스 DSR 1.5%p 풀 적용 환경에서 대출한도 확보 실전 가이드.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'DSR 대출한도 늘리는 5가지 방법',
     description: '스트레스 DSR 풀 적용 환경에서 한도 확보 실전 가이드.',
-    images: ['/og-default.png'],
+
   },
 };
 

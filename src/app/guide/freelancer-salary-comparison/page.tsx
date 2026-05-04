@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: '같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이 시뮬레이션.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

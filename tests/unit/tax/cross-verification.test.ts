@@ -16,9 +16,11 @@ import { calculateInheritanceTax } from '@/lib/tax/inheritance';
 import { calculateAcquisitionTax } from '@/lib/tax/acquisition';
 import { calculatePropertyTaxTotal } from '@/lib/tax/property';
 import { calculateComprehensivePropertyTax } from '@/lib/tax/comprehensive-property';
+import { calculateChildTaxCredit } from '@/lib/tax/child-tax-credit';
 import { calculateExchange } from '@/lib/finance/exchange';
 import { calculateRentalYield } from '@/lib/finance/rental-yield';
 import { calculateRentConversion } from '@/lib/finance/rent-conversion';
+import { calculateRetirement } from '@/lib/finance/retirement';
 import { calculateHousingSubscriptionScore } from '@/lib/utils/housing-subscription';
 import { calculateSavings } from '@/lib/finance/savings';
 import { calculateBmi } from '@/lib/utils/bmi';
@@ -1081,6 +1083,181 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       expect(result.pyeong).toBe(100);
       expect(result.sqm).toBeCloseTo(330.5785, 4);
       expect(result.warnings.length).toBe(0);
+    });
+  });
+
+  // ────────────────────────────────────────────────────────────────
+  // YORO+TDD Phase H 추가 6 케이스 (38 → 44)
+  // ────────────────────────────────────────────────────────────────
+
+  describe('자녀장려금 — 소득 감액 및 자녀 다수 가산', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 37: 자녀 1명 + 가구 합산소득 2,000만 (조세특례제한법 §100의2)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { householdType: 'singleEarner', totalAnnualIncome: 20M, childCount: 1,
+    //        passesAssetTest: true }
+    // 감액 전 = 1 × 100만 = 100만
+    // 소득 범위: 2,000만 <= 3,600만 → 100% 지급
+    // 최종 지급액 = 100만원
+    // 근거: 조세특례제한법 §100의2, 2026 세율 기준
+    // 검증: 국세청 자녀장려금 계산 가이드
+    it('자녀장려금 자녀 1명 + 소득 2,000만: 100% 지급 → 100만원', () => {
+      const result = calculateChildTaxCredit({
+        householdType: 'singleEarner',
+        totalAnnualIncome: 20_000_000,
+        childCount: 1,
+        passesAssetTest: true,
+      });
+      expect(result.eligibleChildCount).toBe(1);
+      expect(result.grossPayment).toBe(1_000_000);
+      expect(result.reductionRate).toBe(0);
+      expect(result.finalPayment).toBe(1_000_000);
+      expect(result.warnings.length).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 38: 자녀 3명 + 가구 합산소득 4,000만 (소득 상한 근처 감액)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { householdType: 'dualEarner', totalAnnualIncome: 40M, childCount: 3,
+    //        passesAssetTest: true }
+    // 감액 전 = 3 × 100만 = 300만
+    // 소득 범위: 3,600만 < 4,000만 < 4,300만 → 선형 감액
+    // 감액률 = (4,000만 - 3,600만) / (4,300만 - 3,600만) = 400만 / 700만 = 0.5714
+    // 최종 = 300만 × (1 - 0.5714) = 300만 × 0.4286 ≈ 128.58만원 → 128만원 (10원 단위)
+    // 근거: 조세특례제한법 §100의2, 소득 구간별 감액 기준
+    // 검증: 국세청 예시 계산
+    it('자녀장려금 자녀 3명 + 소득 4,000만: 선형 감액 → 약 128만원', () => {
+      const result = calculateChildTaxCredit({
+        householdType: 'dualEarner',
+        totalAnnualIncome: 40_000_000,
+        childCount: 3,
+        passesAssetTest: true,
+      });
+      expect(result.eligibleChildCount).toBe(3);
+      expect(result.grossPayment).toBe(3_000_000);
+      expect(result.reductionRate).toBeGreaterThan(0.5);
+      expect(result.reductionRate).toBeLessThan(0.6);
+      expect(result.finalPayment).toBeGreaterThan(1_280_000);
+      expect(result.finalPayment).toBeLessThan(1_300_000);
+    });
+  });
+
+  describe('은퇴자금(FIRE) — 자산 축적 및 안전 인출', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 39: 현재 자산 5억 + 매년 추가 2,000만 + 7년 → 4% 수익률
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { currentAge: 40, retirementAge: 47, expectedLifespanAge: 90,
+    //        currentSavings: 500M, monthlyContribution: 1.666M(연 2,000만),
+    //        expectedAnnualReturnPercent: 4, expectedInflationPercent: 2,
+    //        annualSpendingAtRetirement: 0 }
+    // 7년 복리: 500M × (1.04)^7 ≈ 657.97M
+    // 월 저축의 연금 미래가: PMT = 1.666M/월, r = 4% 연, n = 84개월
+    //   FV ≈ 158.7M (연금 공식)
+    // 은퇴 자산 ≈ 657.97M + 158.7M ≈ 816.67M
+    // 근거: Trinity Study (4% 룰), 금융감독원 은퇴자금 가이드
+    // 검증: Vanguard FIRE 계산기
+    it('은퇴자금 5억 현재 + 월 166만 + 7년 4% 수익 → 약 8.1억원 축적', () => {
+      const result = calculateRetirement({
+        currentAge: 40,
+        retirementAge: 47,
+        expectedLifespanAge: 90,
+        currentSavings: 500_000_000,
+        monthlyContribution: 1_666_667,
+        expectedAnnualReturnPercent: 4.0,
+        expectedInflationPercent: 2.0,
+        annualSpendingAtRetirement: 0,
+      });
+      expect(result.yearsToRetirement).toBe(7);
+      expect(result.yearsInRetirement).toBe(43);
+      expect(result.projectedSavingsAtRetirement).toBeGreaterThan(800_000_000);
+      expect(result.projectedSavingsAtRetirement).toBeLessThan(850_000_000);
+      expect(result.warnings.length).toBeGreaterThanOrEqual(1);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 40: 은퇴 후 월 300만원 인출 + 25년 필요 자산 역산
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { currentAge: 55, retirementAge: 55, expectedLifespanAge: 80,
+    //        currentSavings: 0, monthlyContribution: 0,
+    //        expectedAnnualReturnPercent: 3, expectedInflationPercent: 2,
+    //        annualSpendingAtRetirement: 36M(300만/월 × 12) }
+    // 은퇴 기간 = 80 - 55 = 25년
+    // 명목 연 지출 = 36M × (1.02)^0 = 36M (현재가 기준)
+    // 필요 자산 (근사) = 36M × 25 × 0.85 ≈ 765M
+    // 4% 룰 안전 인출 = 0 × 0.04 = 0 (현재 자산이 0이므로)
+    // 부족액 = 765M (전부 부족)
+    // 근거: 4% 룰, FV-PV 원칙
+    // 검증: Firecalc.com
+    it('은퇴자금 현재 0 + 월 300만 지출 25년 → 필요액 약 765만 역산', () => {
+      const result = calculateRetirement({
+        currentAge: 55,
+        retirementAge: 55,
+        expectedLifespanAge: 80,
+        currentSavings: 0,
+        monthlyContribution: 0,
+        expectedAnnualReturnPercent: 3.0,
+        expectedInflationPercent: 2.0,
+        annualSpendingAtRetirement: 36_000_000,
+      });
+      expect(result.yearsToRetirement).toBe(0);
+      expect(result.yearsInRetirement).toBe(25);
+      expect(result.requiredSavingsAtRetirement).toBeGreaterThan(700_000_000);
+      expect(result.requiredSavingsAtRetirement).toBeLessThan(800_000_000);
+      expect(result.shortfall).toBe(result.requiredSavingsAtRetirement);
+    });
+  });
+
+  describe('환율·환전 추가 — JPY·EUR 송금 및 수수료', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 41: KRW 100만원 → JPY 매도 (기준 10원/JPY, 스프레드 2%)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { direction: 'krwToForeign', amount: 1M, baseRate: 10,
+    //        spreadPercent: 2.0, feePercent: 0, feeFlat: 0 }
+    // 적용환율 = 10 × (1 + 2%) = 10.2 원/JPY
+    // 환전액 = 1,000,000 / 10.2 ≈ 98,039.22 JPY
+    // 수수료 = 0
+    // 실질환율 = 1,000,000 / 98,039.22 ≈ 10.2 원/JPY
+    // 근거: 한국은행 환전 기준, 엔화 2% 스프레드 (일반적)
+    // 검증: 국민은행 해외송금 환율 확인
+    it('환율 KRW 100만원 → JPY 매도: 스프레드 2% → 약 98,039 JPY', () => {
+      const result = calculateExchange({
+        direction: 'krwToForeign',
+        amount: 1_000_000,
+        baseRate: 10,
+        spreadPercent: 2.0,
+        feePercent: 0,
+        feeFlat: 0,
+      });
+      expect(result.appliedRate).toBeCloseTo(10.2, 1);
+      expect(result.netAmount).toBeCloseTo(98_039.22, 1);
+      expect(result.warnings.length).toBe(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 42: EUR 100 매입 + 스프레드 1.5% + 수수료 2% + 고정 3,000원
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { direction: 'foreignToKrw', amount: 100, baseRate: 1500,
+    //        spreadPercent: 1.5, feePercent: 2.0, feeFlat: 3000 }
+    // 적용환율 = 1500 × (1 - 1.5%) = 1500 × 0.985 = 1477.5 원/EUR
+    // 환전액 = 100 × 1477.5 = 147,750 원
+    // 수수료 = (147,750 × 2%) + 3,000 = 2,955 + 3,000 = 5,955원 → 5,950원 (10원 단위)
+    // 순액 = 147,750 - 5,950 = 141,800 원
+    // 실질환율 = 141,800 / 100 = 1418 원/EUR
+    // 근거: 유로 환전 실제 수수료 구조
+    // 검증: 외환은행/우리은행 유로 환전 현황
+    it('환율 EUR 100 매입: 스프레드 1.5% + 수수료 2% + 고정 3,000원 → 약 141,800원', () => {
+      const result = calculateExchange({
+        direction: 'foreignToKrw',
+        amount: 100,
+        baseRate: 1500,
+        spreadPercent: 1.5,
+        feePercent: 2.0,
+        feeFlat: 3000,
+      });
+      expect(result.appliedRate).toBeCloseTo(1477.5, 1);
+      expect(result.grossAmount).toBeCloseTo(147_750, -1); // 내림 또는 반올림
+      expect(result.netAmount).toBeGreaterThan(140_000);
+      expect(result.netAmount).toBeLessThan(143_000);
     });
   });
 });

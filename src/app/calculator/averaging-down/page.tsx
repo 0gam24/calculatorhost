@@ -47,14 +47,14 @@ export const metadata: Metadata = {
       '보유분 + 추가 매수(추매)로 새 평균단가 계산, 목표 단가 역산으로 필요 분할매수 수량까지 즉시 분석.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
     title: '물타기 계산기 2026 (주식·코인)',
     description: '평균단가·추매·목표단가 즉시 계산. 손익분기 회복 상승률까지.',
-    images: ['/og-default.png'],
+
   },
 };
 

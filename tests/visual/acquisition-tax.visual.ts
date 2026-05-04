@@ -3,15 +3,14 @@ import { test, expect, devices } from '@playwright/test';
 test.describe('Visual Regression: Acquisition Tax Calculator', () => {
   test('desktop dark theme with results', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto('/calculator/acquisition-tax/');
+    await page.goto('/calculator/acquisition-tax/', { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
-    
-    const inputs = page.locator('input[type="number"]');
+
+    const inputs = page.locator('input#acquisition-price');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 5000 });
     await page.waitForTimeout(1500);
-    await firstInput.fill('400000000');
+    await firstInput.fill('600000000');
     await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
@@ -24,15 +23,14 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
 
   test('desktop light theme with results', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto('/calculator/acquisition-tax/');
+    await page.goto('/calculator/acquisition-tax/', { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
-    
-    const inputs = page.locator('input[type="number"]');
+
+    const inputs = page.locator('input#acquisition-price');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 5000 });
     await page.waitForTimeout(1500);
-    await firstInput.fill('400000000');
+    await firstInput.fill('600000000');
     await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
@@ -46,16 +44,15 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
   test('mobile dark theme with results', async ({ page }) => {
     const pixel7 = devices['Pixel 7'];
     await page.setViewportSize({ width: pixel7.viewport.width, height: pixel7.viewport.height });
-    
-    await page.goto('/calculator/acquisition-tax/');
+
+    await page.goto('/calculator/acquisition-tax/', { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
-    
-    const inputs = page.locator('input[type="number"]');
+
+    const inputs = page.locator('input#acquisition-price');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 5000 });
     await page.waitForTimeout(1500);
-    await firstInput.fill('400000000');
+    await firstInput.fill('600000000');
     await page.waitForTimeout(1500);
     
     await page.evaluate(() => {
@@ -69,16 +66,15 @@ test.describe('Visual Regression: Acquisition Tax Calculator', () => {
   test('mobile light theme with results', async ({ page }) => {
     const pixel7 = devices['Pixel 7'];
     await page.setViewportSize({ width: pixel7.viewport.width, height: pixel7.viewport.height });
-    
-    await page.goto('/calculator/acquisition-tax/');
+
+    await page.goto('/calculator/acquisition-tax/', { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
-    
-    const inputs = page.locator('input[type="number"]');
+
+    const inputs = page.locator('input#acquisition-price');
     const firstInput = inputs.first();
-    await firstInput.waitFor({ state: 'visible', timeout: 15000 });
+    await firstInput.waitFor({ state: 'visible', timeout: 5000 });
     await page.waitForTimeout(1500);
-    await firstInput.fill('400000000');
+    await firstInput.fill('600000000');
     await page.waitForTimeout(1500);
     
     await page.evaluate(() => {

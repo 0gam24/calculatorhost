@@ -5,7 +5,15 @@ test.describe('Visual Regression: Home Page', () => {
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
     });
@@ -30,7 +38,15 @@ test.describe('Visual Regression: Home Page', () => {
     await page.setViewportSize({ width: pixel7.viewport.width, height: pixel7.viewport.height });
     await page.goto('/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(1000);
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
     });

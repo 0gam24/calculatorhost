@@ -9,6 +9,7 @@ import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/category/lifestyle/';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: 'BMI·D-day 생활 계산기 모음',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
 };
 
@@ -90,6 +91,43 @@ export default function LifestyleCategoryPage() {
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '생활 계산기 핵심 용어',
+    description: '건강, 시간, 면적 관리에서 자주 나오는 생활 용어 정의',
+    url: `${URL}#생활-핵심-용어`,
+    terms: [
+      {
+        name: 'BMI (Body Mass Index)',
+        description:
+          '체중(kg) ÷ 키(m)²로 계산하는 비만도 지표. 국제 기준상 18.5 미만은 저체중, 18.5~24.9는 정상, 25~29.9는 과체중, 30 이상은 비만입니다. 다만 근육량과 골밀도를 반영하지 않으므로 참고용이며, 건강한 체중 관리를 위해서는 의료 전문가와 상담이 필요합니다.',
+        url: 'https://www.kosso.or.kr',
+      },
+      {
+        name: '표준체중',
+        description:
+          '키(m) × 키(m) × 22로 계산하는 이상적인 체중. 이상적인 BMI를 22로 설정해 도출된 값으로, 세계보건기구(WHO) 권고 기준입니다. 개인의 체질, 근력, 생활 패턴이 다르므로 표준체중을 절대적 목표로 삼기보다는 참고 기준으로 활용하는 것이 좋습니다.',
+        url: 'https://www.mohw.go.kr',
+      },
+      {
+        name: '비만도',
+        description:
+          '(현재체중 - 표준체중) ÷ 표준체중 × 100(%)로 표현하는 비만의 정도. 표준체중 대비 현재 체중이 얼마나 초과하는지를 백분율로 나타냅니다. 예를 들어 비만도 20%이면 표준체중보다 20% 더 많이 나간다는 뜻입니다.',
+        url: 'https://www.kosso.or.kr',
+      },
+      {
+        name: 'D-day',
+        description:
+          '특정 날짜까지 남은 일수 또는 경과 일수를 계산하는 용어. 생일, 기념일, 프로젝트 마감, 결혼식 등 특별한 날을 기준으로 오늘 날짜를 포함해 몇 일이 남았는지를 계산합니다. 시간 계획과 감정 준비에 도움이 됩니다.',
+        url: 'https://www.law.go.kr',
+      },
+      {
+        name: '평(坪) 와 제곱미터(㎡)',
+        description:
+          '부동산 거래에서 사용하는 면적 단위. 1평 = 3.3058㎡ (정확한 환산값)로, 한국에서는 전통적으로 평을 사용했지만 국제 기준 제곱미터도 함께 표기됩니다. 부동산 광고에서 평과 제곱미터가 혼용되므로, 정확한 비교를 위해서는 통일된 단위로 환산이 필수입니다.',
+        url: 'https://www.law.go.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -104,6 +142,10 @@ export default function LifestyleCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
       <div className="flex min-h-screen flex-col">
         <Header />

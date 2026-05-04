@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       '주근로·부업·기타소득으로 월 건강보험료 및 피부양자 위험을 계산합니다.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

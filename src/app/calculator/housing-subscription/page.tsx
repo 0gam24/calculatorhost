@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       '무주택 기간·부양가족·청약통장으로 청약가점과 당첨 확률을 계산합니다.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

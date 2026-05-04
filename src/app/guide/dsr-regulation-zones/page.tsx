@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: '비규제·조정·투기과열지역 DSR·LTV 차이 + 스트레스 DSR 적용.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

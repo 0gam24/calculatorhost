@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     description: '시기성 + 분야별 실전 의사결정 가이드.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
   },
 };

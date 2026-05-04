@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '배기량과 차령으로 자동차세를 정확히 계산하세요.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

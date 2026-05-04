@@ -9,6 +9,7 @@ import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/category/tax/';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: '양도세·취득세·재산세·종부세 계산기 모음',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
 };
 
@@ -114,6 +115,43 @@ export default function TaxCategoryPage() {
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '세금 계산기 핵심 용어',
+    description: '부동산 거래, 부동산 보유, 근로소득 관련 세금 계산에서 자주 나오는 용어 정의',
+    url: `${URL}#세금-핵심-용어`,
+    terms: [
+      {
+        name: '과세표준',
+        description:
+          '세율을 적용하는 대상이 되는 소득금액. 소득세법 §47에 따라 총소득에서 특정 공제를 뺀 금액입니다. 예를 들어 양도소득세는 양도가액에서 취득가와 비용을 뺀 양도소득이 과세표준이 되며, 여기에 세율을 곱해 세액을 계산합니다.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '누진공제',
+        description:
+          '누진세에서 낮은 구간 세금을 자동으로 공제하는 금액(소득세법 §55). 누진세율 테이블에 직접 명시되어 있으며, 과세표준이 높아질수록 실제 세율을 조정하는 역할을 합니다. 이를 통해 세율 구간 경계에서 급격한 세금 증가를 완화합니다.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '양도소득금액',
+        description:
+          '부동산 판매 시 실제 이득 = (양도가액 - 취득가 - 필요경비). 소득세법 §93에 따라 계산되며, 이것이 과세표준이 됩니다. 양도가액이 높아도 취득가가 높으면 소득은 작아집니다. 장기보유(2년 이상)하면 양도소득 공제(보유 기간별)가 적용되어 과세표준을 낮춥니다.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '1세대 1주택 비과세',
+        description:
+          '소득세법 §94에 따른 세제 혜택으로, 1세대가 1주택만 소유하고 2년 이상 보유·거주 후 공시가격 9억 원 이하로 양도할 때 양도소득세를 내지 않습니다. 가장 강력한 세제 혜택이나 조건이 엄격하며, 다주택 전환 시 비과세 지위가 상실됩니다.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '경비율',
+        description:
+          '사업소득에서 필요경비를 계산할 때 국세청이 정한 비율(소득세법 §25). 프리랜서와 1인사업자는 실제 경비를 입증할 수 없을 때 기본경비율을 적용할 수 있습니다. 업종별로 30~80% 범위이며, 경비율 선택이 종합소득세 크기에 큰 영향을 미칩니다.',
+        url: 'https://www.nts.go.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -128,6 +166,10 @@ export default function TaxCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
       <div className="flex min-h-screen flex-col">
         <Header />

@@ -9,6 +9,7 @@ import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/category/finance/';
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     description: '대출·예금·적금 계산기 모음',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
 };
 
@@ -127,6 +128,44 @@ export default function FinanceCategoryPage() {
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '금융 계산기 핵심 용어',
+    description: '대출, 예금, 적금, 금리, 투자 계산 시 자주 나오는 금융 용어 정의',
+    url: `${URL}#금융-핵심-용어`,
+    terms: [
+      {
+        name: 'DSR (Debt Service Ratio)',
+        description:
+          '연간 모든 대출 상환액을 연 소득으로 나눈 비율(%). 금융감독원이 권고하는 한도는 40% 수준이며, 이를 초과하면 신규 대출을 받기 어렵습니다. 주담대 실행 전에 현재 소득과 기존 대출로부터 추가 대출 가능액을 판단하는 핵심 지표입니다.',
+        alternateName: '부채원리금상환비율',
+        url: 'https://www.fss.or.kr',
+      },
+      {
+        name: 'LTV (Loan to Value)',
+        description:
+          '대출액을 담보 부동산 시가로 나눈 비율(%). 은행의 담보 인정 범위를 결정하며, 조정지역과 다주택 보유 여부에 따라 규제됩니다. 일반적으로 70~80% 이내에서만 대출이 가능하며, 높은 LTV는 금리 인상 또는 대출 불승인의 요인이 됩니다.',
+        url: 'https://www.fss.or.kr',
+      },
+      {
+        name: '원리금균등상환',
+        description:
+          '매월 동일한 금액의 원금 + 이자를 갚는 방식. 초반에는 이자 비중이 높고 후반으로 갈수록 원금 비중이 높아집니다. 계획적인 상환이 가능하고 총 이자액도 방식 중 가장 적어 일반적으로 선호됩니다.',
+        url: 'https://www.bok.or.kr',
+      },
+      {
+        name: '만기일시상환',
+        description:
+          '만기까지 매월 이자만 내다가 만기에 원금을 일시에 상환하는 방식. 초반 월 부담은 적지만, 만기에 큰 자금(원금 전액)이 필요합니다. 부동산 담보대출이나 사업자금에 주로 사용되며, 금리 인상 시 월 이자 부담도 함께 늘어납니다.',
+        url: 'https://www.bok.or.kr',
+      },
+      {
+        name: '이자소득세',
+        description:
+          '정기예금·적금의 이자 수익에 부과되는 세금. 2026년 기준 14% 이자소득세 + 1.4% 지방소득세 = 15.4%가 자동 공제됩니다. 고금리 상품도 이 세율은 동일하므로, 세후 이자를 기준으로 상품을 비교해야 실제 수익을 정확하게 판단할 수 있습니다.',
+        url: 'https://www.nts.go.kr',
+      },
+    ],
+  });
 
   return (
     <>
@@ -141,6 +180,10 @@ export default function FinanceCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
       <div className="flex min-h-screen flex-col">
         <Header />

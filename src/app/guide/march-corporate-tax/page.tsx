@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description: '법인세 세율·공제·분납·전자신고 종합.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

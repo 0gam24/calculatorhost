@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       '기준환율·스프레드·수수료로 실제 환전액과 실질 환율을 계산합니다.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     description: '2026년 지방세법 기준 재산세 계산기. 공시가격 입력으로 연간 총 납부액 확인.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

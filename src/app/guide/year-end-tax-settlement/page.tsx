@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     description: '신용카드·의료비·교육비·연금저축 공제 + 환급 추적 전략.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '연말정산 완벽 가이드 2026',
     description: '13월의 월급 받는 법 + 추가 납부 회피 전략.',
-    images: ['/og-default.png'],
+
   },
 };
 

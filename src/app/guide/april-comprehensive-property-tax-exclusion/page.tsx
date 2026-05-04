@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: '4월 1~30일 마감. 임대주택·일시적 2주택·고령자 등 절세 핵심.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

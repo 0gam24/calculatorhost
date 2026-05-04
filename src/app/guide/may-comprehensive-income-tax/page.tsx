@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description: '신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
@@ -52,7 +52,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '5월 종합소득세 신고 완벽 가이드 2026',
     description: '프리랜서·사업자·N잡러 필독. 절세 5가지 + 환급 받는 법.',
-    images: ['/og-default.png'],
+
   },
 };
 

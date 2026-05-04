@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     description: '하락장에서의 3가지 전략 의사결정 기준.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '물타기 vs 손절 vs 비중조절',
     description: '하락 종목 대응 3가지 전략의 의사결정 기준.',
-    images: ['/og-default.png'],
+
   },
 };
 

@@ -44,14 +44,14 @@ export const metadata: Metadata = {
     description: '매출세액 − 매입세액 / 간이과세 부가가치율 / VAT 포함↔공급가액 환산.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
     title: '부가세 계산기 (VAT) 2026',
     description: '일반·간이과세 + VAT 환산. 사업자·프리랜서 필수.',
-    images: ['/og-default.png'],
+
   },
 };
 

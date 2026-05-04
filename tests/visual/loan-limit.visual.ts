@@ -5,8 +5,16 @@ test.describe('Visual Regression: Loan Limit Calculator (DSR)', () => {
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.goto('/calculator/loan-limit/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
-    
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
+
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
     });
@@ -35,8 +43,16 @@ test.describe('Visual Regression: Loan Limit Calculator (DSR)', () => {
     
     await page.goto('/calculator/loan-limit/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
-    
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
+
     await page.evaluate(() => {
       document.documentElement.setAttribute('data-theme', 'dark');
     });

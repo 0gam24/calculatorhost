@@ -3,13 +3,12 @@ import { test, expect, devices } from '@playwright/test';
 test.describe('Visual Regression: Salary Calculator', () => {
   test('desktop dark theme with results', async ({ page }) => {
     await page.setViewportSize({ width: 1280, height: 720 });
-    await page.goto('/calculator/salary/');
+    await page.goto('/calculator/salary/', { waitUntil: 'domcontentloaded' });
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
 
-    // Find input by placeholder or label
-    const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 15000 });
+    // Find input by id (yearly-amount)
+    const input = page.locator('input#yearly-amount');
+    await input.waitFor({ timeout: 5000 });
     await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
@@ -26,10 +25,18 @@ test.describe('Visual Regression: Salary Calculator', () => {
     await page.setViewportSize({ width: 1280, height: 720 });
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
 
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 15000 });
+    await input.waitFor({ timeout: 20000 });
     await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
@@ -48,10 +55,18 @@ test.describe('Visual Regression: Salary Calculator', () => {
 
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
 
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 15000 });
+    await input.waitFor({ timeout: 20000 });
     await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);
@@ -70,10 +85,18 @@ test.describe('Visual Regression: Salary Calculator', () => {
 
     await page.goto('/calculator/salary/');
     await page.waitForLoadState('networkidle');
-    await page.waitForTimeout(2000);
+    await page.evaluate(() => {
+      return new Promise(resolve => {
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(() => setTimeout(resolve, 500));
+        } else {
+          setTimeout(resolve, 1000);
+        }
+      });
+    });
 
     const input = page.locator('input[type="number"]').first();
-    await input.waitFor({ timeout: 15000 });
+    await input.waitFor({ timeout: 20000 });
     await page.waitForTimeout(1500);
     await input.fill('50000000');
     await page.waitForTimeout(2000);

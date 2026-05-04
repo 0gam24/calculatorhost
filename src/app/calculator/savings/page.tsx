@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '월 납입금과 기간, 이자 방식을 입력해 단리·복리별 세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

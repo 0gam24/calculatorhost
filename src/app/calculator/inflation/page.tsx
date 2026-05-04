@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       '금액의 미래 화폐가치, 현재가치, 실질 구매력을 계산하세요. CPI 기반 인플레이션 반영.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

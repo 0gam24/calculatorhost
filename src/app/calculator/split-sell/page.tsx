@@ -46,14 +46,14 @@ export const metadata: Metadata = {
       '평단·보유 + 차수별 매도가/수량으로 차수별 실현손익(세후)과 누적 손익까지 즉시 계산.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
     title: '분할매도 계산기 2026 (주식·코인)',
     description: '차수별 실현손익·세후 수령액·누적 수익률을 즉시 계산.',
-    images: ['/og-default.png'],
+
   },
 };
 

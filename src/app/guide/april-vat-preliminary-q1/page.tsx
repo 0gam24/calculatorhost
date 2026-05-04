@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: '4월 1~25일 신고 마감. 매출세액·매입세액공제 정리.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

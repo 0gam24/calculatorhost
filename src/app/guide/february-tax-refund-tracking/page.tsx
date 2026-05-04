@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: '환급 결과 확인 + 추가 납부 대응 + 5월 정정 신고 준비.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

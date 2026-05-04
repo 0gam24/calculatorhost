@@ -32,7 +32,7 @@ export const metadata: Metadata = {
       '가구 유형, 연소득, 자녀 수로 자녀장려금(CTC)을 즉시 계산합니다.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

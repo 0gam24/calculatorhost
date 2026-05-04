@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '1평 = 약 3.3058㎡ 공식 기반 양방향 변환 계산기.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

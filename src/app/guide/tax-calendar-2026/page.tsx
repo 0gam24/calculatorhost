@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     description: '월별 D-day + 관련 가이드 링크 모음.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,

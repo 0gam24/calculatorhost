@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: '구매가·보증금·월세·관리비로 연 수익률과 Cap Rate를 계산.',
     url: URL,
     type: 'website',
-    images: ['/og-default.png'],
+
   },
   twitter: {
     card: 'summary_large_image',

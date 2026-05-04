@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     description: '1월 16~31일 신청 시 최대 9.15% 할인.',
     url: URL,
     type: 'article',
-    images: ['/og-default.png'],
+
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '자동차세 연납 6.4% 할인 가이드 2026',
     description: '1월 신청 = 최대 9% 할인.',
-    images: ['/og-default.png'],
+
   },
 };
 
