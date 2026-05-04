@@ -91,14 +91,24 @@ calculatorhost/
 - `/update-tax-rates` — 세율 갱신
 - `/deploy` — 배포 체크리스트
 
-## BMAD 착수 순서 (Step 5 진입 전)
-1. ✅ Analyst → 페르소나·키워드 (메모리 완료)
-2. ⏳ PM → `docs/calculator-spec/*.md` 작성
-3. ⏳ Architect → `docs/architecture.md` + `docs/adr/`
-4. ⏳ UX → `docs/design-system.md` (토큰 이미 정의됨)
-5. **Step 5 현재**: 하네스 세팅 진행 중 (이 파일 포함)
-6. Dev → src/ 생성 (아직 금지)
-7. QA → 테스트 게이트
+## YORO + TDD 운영 모드 (영구 적용, 2026-05-04~)
+**룰 본문**: `.claude/rules/yoro-tdd.md` (자동 로드)
+
+핵심:
+- **YORO** — Phase A→F 로드맵을 자율 실행. 결과 단위로만 보고. 의사결정 분기·원격 자원 변경·외부 신청은 사용자 승인.
+- **TDD** — RED → GREEN → REFACTOR 비타협. src/ 변경 전 tests/ 먼저.
+- **커버리지 게이트** — tax 90% / finance 92% / utils 80% (vitest.config.ts 강제, 위반 PR 차단).
+- **E2E 골든패스 5종** — salary, loan-limit, theme, routing, adsense. 배포 전 모두 PASS.
+- **체크포인트** — Phase 완료마다 `.claude/checkpoints/YYYY-MM-DD-yoro-<phase>.md` + `.claude/progress.md` 한 줄 누적.
+
+## BMAD 진행 상태 (2026-05-04 갱신)
+1. ✅ Analyst → 페르소나·키워드
+2. ✅ PM → `docs/calculator-spec/*.md`
+3. ✅ Architect → `docs/architecture.md`
+4. ✅ UX → `docs/design-system.md` (Figma 다크 Fintech)
+5. ✅ 하네스 세팅 (rules·agents·skills·commands)
+6. ✅ Dev → MVP 26개 계산기 + 30 테스트 파일·683 케이스 PASS
+7. **현재**: QA 게이트 강화 + 발사 준비 (YORO Phase A~F)
 
 ## 금기사항 (전역)
 - ❌ 계산 공식 컴포넌트에 작성
@@ -110,7 +120,8 @@ calculatorhost/
 - ❌ AI 생성 콘텐츠 미공개
 - ❌ 공식 출처 없는 세율 값
 - ❌ 서브에이전트 거치지 않고 메인에서 대량 웹 페치
-- ❌ `src/`에 직접 코드 작성 (Step 5 완료 전)
+- ❌ tests/ 없이 src/ 변경 (TDD 룰 위반)
+- ❌ 커버리지 임계 미달 PR 머지
 
 ## 배포 체크리스트 (Cloudflare Pages)
 1. `npm run build` 통과
