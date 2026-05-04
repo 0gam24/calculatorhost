@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '자동차세 연납 6.4% 할인 가이드 2026 | 1월 신청·납부 | calculatorhost',
+  title: '자동차세 연납 6.4% 할인 가이드 2026 | calculatorhost',
   description:
-    '2026년 1월 16~31일 자동차세 연납 신청·납부 가이드. 약 6.4% 할인 (최대 약 9.15%까지) + 신용카드 무이자 할부 + 위택스/모바일 신청법 + cc별 할인액 시뮬레이션.',
+    '2026년 1월 16~31일 자동차세 연납 신청·납부 가이드. 약 6.4% 할인 + 신용카드 무이자 할부.',
   keywords: [
     '자동차세 연납',
     '자동차세 1월',

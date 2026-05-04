@@ -132,14 +132,31 @@
 
   /* Hero 수치 스타일 (반응형, tabular-nums, 한 줄 강제)
      - 좁은 카드(모바일)에서 8~9자리 숫자 줄바꿈 방지
-     - white-space: nowrap + 자릿수 많을 때 자동 축소 */
+     - 컨테이너 쿼리 기반 자동 축소 (큰 값 350,000,000원 같은 경우 카드 폭 초과 방지)
+     - white-space: nowrap + display:block + max-width:100% 로 짤림 방지 */
   .hero-number {
     @apply tabular-nums text-text-primary font-bold;
-    font-size: clamp(1.625rem, 7vw, 3.25rem);
+    display: block;
+    max-width: 100%;
+    /* 컨테이너 인라인 너비 8% 기반 (12자리 숫자도 안전), viewport fallback */
+    font-size: clamp(1.25rem, 8cqi, 3.25rem);
     white-space: nowrap;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.025em;
     overflow-wrap: normal;
     word-break: keep-all;
+    overflow: hidden;
+    text-overflow: clip;
+  }
+  /* container-query 미지원 환경 fallback */
+  @supports not (font-size: 1cqi) {
+    .hero-number {
+      font-size: clamp(1.25rem, 5vw, 3rem);
+    }
+  }
+  /* ResultCard header 가 컨테이너로 동작 — 자식 hero-number 가 폭 기반 축소 */
+  .hero-number-container {
+    container-type: inline-size;
+    container-name: hero;
   }
 
   /* Hero 그라데이션 텍스트 */

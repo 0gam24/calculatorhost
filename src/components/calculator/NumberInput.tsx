@@ -137,7 +137,7 @@ export function NumberInput({
           onCompositionEnd={handleCompositionEnd}
           onBlur={handleBlur}
           placeholder={placeholder}
-          className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-right text-lg font-semibold tabular-nums text-text-primary placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+          className="w-full rounded-lg border border-border-base bg-bg-card pl-4 pr-12 py-3 text-right text-lg font-semibold tabular-nums text-text-primary placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
           aria-describedby={helpText ? `${id}-help` : undefined}
         />
         <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-sm text-text-secondary">

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '재산세 완벽 가이드 2026 | 6월 부과·7월 납부·공정시장가액비율 | calculatorhost',
+  title: '재산세 완벽 가이드 2026 | calculatorhost',
   description:
-    '2026년 재산세 부과·납부 완벽 가이드. 6월 1일 과세 기준일·7월 16~31일 1차 납부·공시가격·공정시장가액비율 60%·1세대1주택 특례·세부담 상한·연납 할인까지 한 페이지.',
+    '2026년 재산세 부과·납부·공시가격·공정시장가액비율·1세대1주택 특례·연납 할인 완벽 가이드.',
   keywords: [
     '재산세',
     '재산세 계산',

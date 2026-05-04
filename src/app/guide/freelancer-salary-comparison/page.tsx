@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '프리랜서 vs 일반직 실수령액 비교 2026 — 4대보험·세금 차이 | calculatorhost',
+  title: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
   description:
-    '같은 연봉 5천만 원이라도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액은 큰 차이. 4대보험 부담·종합소득세·경비 인정 차이를 시뮬레이션과 함께 비교.',
+    '같은 연봉 5천만 원 기준 프리랜서와 일반직의 실수령액 차이. 4대보험·세금·경비 비교.',
   keywords: ['프리랜서 실수령액', '프리랜서 vs 직장인', '프리랜서 4대보험', '프리랜서 종합소득세', '사업소득 vs 근로소득', '3.3% 원천징수'],
   alternates: { canonical: URL },
   openGraph: {

@@ -18,9 +18,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '2026 세금 캘린더 — 1월부터 12월까지 한눈에 | calculatorhost',
+  title: '2026 세금 캘린더 1월~12월 | calculatorhost',
   description:
-    '2026년 1월~12월 세금·납부 일정 한눈에. 연말정산·종소세·재산세·종부세·자동차세·부가세·법인세까지 월별 D-day와 관련 가이드 링크 모음.',
+    '2026년 월별 세금 납부 일정. 연말정산·종소세·재산세·종부세·자동차세 D-day 한눈에.',
   keywords: [
     '세금 캘린더',
     '2026 세금 일정',

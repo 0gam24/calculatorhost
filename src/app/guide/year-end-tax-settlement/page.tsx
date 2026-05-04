@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '연말정산 완벽 가이드 2026 | 환급 받는 법·13월의 월급 | calculatorhost',
+  title: '연말정산 완벽 가이드 2026 | calculatorhost',
   description:
-    '2026년 1월 연말정산 시즌 완벽 가이드. 신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략까지 한 페이지.',
+    '2026년 연말정산 공제·환급·신고 완벽 가이드. 신용카드·의료비·교육비 공제부터 환급 추적까지.',
   keywords: [
     '연말정산',
     '연말정산 환급',

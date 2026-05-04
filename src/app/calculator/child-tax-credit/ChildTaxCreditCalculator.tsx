@@ -152,7 +152,7 @@ export function ChildTaxCreditCalculator() {
 
       {/* 결과 카드 */}
       {result && (
-        <div className="rounded-lg border border-border-base bg-bg-card p-6">
+        <div className="rounded-lg border border-border-base bg-bg-card p-6" role="region" aria-label="계산 결과">
           <h2 className="text-xl font-semibold mb-6">자녀장려금 계산 결과</h2>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-6 mb-6">

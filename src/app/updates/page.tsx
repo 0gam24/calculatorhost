@@ -40,7 +40,6 @@ const CATEGORY_STYLES: Record<UpdateCategory, string> = {
   '금리': 'bg-highlight-500/10 text-highlight-500 border-highlight-500/30',
   '제도': 'bg-secondary-500/10 text-secondary-600 border-secondary-500/30',
   '버그수정': 'bg-bg-card text-text-secondary border-border-base',
-  '문서': 'bg-bg-card text-text-secondary border-border-base',
 };
 
 // 월별 그룹화 (시계열 내림차순)

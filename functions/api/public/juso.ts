@@ -9,10 +9,12 @@
  * 1. 클라이언트: /api/public/juso?keyword=종로&currentPage=1 호출
  * 2. Functions: JUSO_API_KEY 환경변수에서 키 읽기
  * 3. 키 미설정 → 503 "API key not configured"
- * 4. 키 있음 → JUSO API 호출 (구현 예정)
- * 5. 응답: JSON 배열로 변환 후 반환
+ * 4. 키 있음 → JUSO API 호출 (JSON 응답 바로 반환)
+ * 5. 응답: JSON 배열로 검증 후 반환
  *
  * TypeScript strict 호환 필수.
+ *
+ * 참고: RTMS와 달리 JUSO는 JSON 응답이므로 XML 변환 불필요.
  */
 
 // Cloudflare Pages Function 형 — workers-types 의 Response 와 lib.dom Response 가
@@ -56,32 +58,128 @@ function validateRequest(url: URL): JusoApiRequest | null {
 }
 
 /**
- * JUSO API 호출 (API 호출 로직)
+ * JUSO API 호출
  *
- * TODO: JUSO_API_KEY 발급 후 구현
- * - business.juso.go.kr 도로명주소 API 호출
- * - JSON 응답 배열로 변환
- * - 에러 처리
+ * 엔드포인트: https://business.juso.go.kr/addrlink/addrLinkApi.do
+ * 파라미터:
+ *   - confmKey: API 인증키 (필수)
+ *   - keyword: 검색어 (필수)
+ *   - currentPage: 페이지번호 (기본값: 1)
+ *   - countPerPage: 페이지당 건수 (기본값: 10)
+ *   - resultType: 응답 형식 (기본값: json)
+ *
+ * 응답 형식:
+ * {
+ *   "results": {
+ *     "juso": [
+ *       { "roadAddr": "...", "zipNo": "...", ... },
+ *       ...
+ *     ],
+ *     "common": {
+ *       "totalCount": 1234,
+ *       "currentPage": 1,
+ *       "countPerPage": 10,
+ *       "countRecords": 10,
+ *       "errorCode": "0",
+ *       "errorMessage": "정상"
+ *     }
+ *   }
+ * }
  */
 async function callJusoApi(
   apiKey: string,
   req: JusoApiRequest,
 ): Promise<Response> {
-  const apiUrl = new URL('http://api.example.com/v1/juso');
-  apiUrl.searchParams.set('apiKey', apiKey);
+  const apiUrl = new URL('https://business.juso.go.kr/addrlink/addrLinkApi.do');
+
+  // 파라미터 설정
+  apiUrl.searchParams.set('confmKey', apiKey);
   apiUrl.searchParams.set('keyword', req.keyword);
   apiUrl.searchParams.set('currentPage', String(req.currentPage));
   apiUrl.searchParams.set('countPerPage', '10');
+  apiUrl.searchParams.set('resultType', 'json');
 
-  // TODO: 실제 호출 구현
-  // const response = await fetch(apiUrl.toString());
-  // const json = await response.json();
+  try {
+    const response = await fetch(apiUrl.toString(), {
+      method: 'GET',
+      signal: AbortSignal.timeout(10000), // 10초 타임아웃
+    });
 
-  console.log(`[juso Function] 준비 중: ${apiUrl.toString()}`);
-  return new Response(JSON.stringify({ error: 'Not yet implemented' }), {
-    status: 501,
-    headers: { 'content-type': 'application/json' },
-  });
+    // 인증키 오류
+    if (response.status === 401) {
+      return new Response(
+        JSON.stringify({
+          error: 'Unauthorized',
+          message: 'JUSO API 인증키가 유효하지 않습니다.',
+        }),
+        {
+          status: 401,
+          headers: { 'content-type': 'application/json' },
+        },
+      );
+    }
+
+    // 레이트 리밋
+    if (response.status === 429) {
+      return new Response(
+        JSON.stringify({
+          error: 'Rate limit exceeded',
+          message: '호출 횟수 제한을 초과했습니다. 나중에 다시 시도하세요.',
+        }),
+        {
+          status: 429,
+          headers: {
+            'content-type': 'application/json',
+            'retry-after': '3600',
+          },
+        },
+      );
+    }
+
+    // 서버 오류
+    if (!response.ok) {
+      console.error(
+        `[juso Function] API 오류 (${response.status}): ${response.statusText}`,
+      );
+      return new Response(
+        JSON.stringify({
+          error: 'API error',
+          message: 'JUSO API 호출 중 오류가 발생했습니다.',
+        }),
+        {
+          status: response.status,
+          headers: { 'content-type': 'application/json' },
+        },
+      );
+    }
+
+    // JSON 응답 수신
+    const json = await response.json();
+
+    // 응답 반환 (1시간 캐시)
+    return new Response(JSON.stringify(json), {
+      status: 200,
+      headers: {
+        'content-type': 'application/json',
+        'cache-control': 'public, max-age=3600', // 1시간 (키워드 검색은 자주 변경)
+      },
+    });
+  } catch (error) {
+    const message =
+      error instanceof Error ? error.message : 'Unknown error occurred';
+    console.error(`[juso Function] 호출 실패: ${message}`);
+
+    return new Response(
+      JSON.stringify({
+        error: 'Network error',
+        message: '네트워크 오류가 발생했습니다. 나중에 다시 시도하세요.',
+      }),
+      {
+        status: 500,
+        headers: { 'content-type': 'application/json' },
+      },
+    );
+  }
 }
 
 /**

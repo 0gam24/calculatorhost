@@ -1,13 +1,16 @@
 /**
  * 계산기·세율·금리 변경 이력 SSoT (Changelog)
  *
+ * **시청자 관점만 기록한다.** 개발자 내부 작업(JSON-LD/byline/산문 리라이팅/UI 리팩토링)은 등재 금지.
+ * 등재 기준: 사용자가 같은 입력으로 계산했을 때 결과가 달라지는 변경 (세율·요율·규제·신규 도구·버그 수정).
+ *
  * 시계열 내림차순(최신이 위). 새 항목 추가 시 맨 위에 prepend.
  * - 홈페이지 §"2026 변경사항" 테이블에 7건 노출
  * - /updates 페이지에 전체 노출 (시계열 + 카테고리 필터)
  * - RSS 피드와 병행 사용 (RSS는 별도 ITEMS, 본 파일은 Changelog 전용)
  */
 
-export type UpdateCategory = '신규' | '세율' | '규제' | '금리' | '제도' | '버그수정' | '문서';
+export type UpdateCategory = '신규' | '세율' | '규제' | '금리' | '제도' | '버그수정';
 
 export interface UpdateEntry {
   /** 반영 계산기 (한글명 + slug, 사이트 전반이면 null) */
@@ -25,34 +28,6 @@ export interface UpdateEntry {
 }
 
 export const UPDATES_LOG: UpdateEntry[] = [
-  {
-    calculator: null,
-    item: 'E-E-A-T 강화',
-    detail: '30개 계산기 페이지에 작성·검수자(김준혁) byline 일괄 적용 + JSON-LD creator(Person) 추가',
-    date: '2026-05-03',
-    category: '문서',
-  },
-  {
-    calculator: null,
-    item: '홈 Changelog 테이블',
-    detail: '카드 그리드 → 시계열 <table> 변환 (반영일자·계산기·항목·내용)',
-    date: '2026-05-03',
-    category: '문서',
-  },
-  {
-    calculator: { title: '연봉 실수령액', slug: 'salary' },
-    item: '계산 공식 산문 확장',
-    detail: '6-bullet → 자연어 산문 ~1,200자 (LLM 인용 친화), 실제 예시 수치 포함',
-    date: '2026-05-03',
-    category: '문서',
-  },
-  {
-    calculator: { title: '대출한도(DSR)', slug: 'loan-limit' },
-    item: '대화형 H2 + 산출 공식 산문',
-    detail: '"스트레스 DSR 한도는 어떻게 계산하나요?" 신규 H2 + 자연어 산문 ~900자 추가',
-    date: '2026-05-03',
-    category: '문서',
-  },
   {
     calculator: { title: '부가가치세(VAT)', slug: 'vat' },
     item: '신규 추가',

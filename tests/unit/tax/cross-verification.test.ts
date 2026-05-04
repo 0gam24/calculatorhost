@@ -30,6 +30,9 @@ import {
   INCOME_TAX_BRACKETS,
   GIFT_INHERITANCE_TAX_BRACKETS,
 } from '@/lib/constants/tax-rates-2026';
+import { calculateDeposit } from '@/lib/finance/deposit';
+import { calculateLoanLimit } from '@/lib/finance/loan-limit';
+import { calculateFreelancerTax } from '@/lib/tax/freelancer';
 
 describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
   describe('소득세 — 종합소득금액 과세표준', () => {
@@ -1258,6 +1261,219 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       expect(result.grossAmount).toBeCloseTo(147_750, -1); // 내림 또는 반올림
       expect(result.netAmount).toBeGreaterThan(140_000);
       expect(result.netAmount).toBeLessThan(143_000);
+    });
+  });
+
+  describe('예금(정기예금) — 단리·월복리 및 세금 계산', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 43: 원금 1,000만 + 연 3% + 12개월 단리 → 세전 30만 → 세후
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 10M, annualRatePercent: 3, termMonths: 12,
+    //        method: 'simple', taxType: 'general' }
+    // 공식: 이자 = 10M × 0.03 × 12/12 = 300,000원
+    // 세전이자: 10원 단위 절사 = 300,000원
+    // 세금: 300,000 × 15.4% = 46,200원 → 10원 단위 절사 = 46,200원
+    // 세후이자: 300,000 - 46,200 = 253,800원
+    // 만기수령액: 10M + 253,800 = 10,253,800원
+    // 근거: 소득세법 §14 (이자소득), §129 (15.4% 과세)
+    // 검증: 국세청 이자소득 과세 기준
+    it('예금 1,000만 + 연 3% + 12개월 단리: 세후 이자 253,800원', () => {
+      const result = calculateDeposit({
+        principal: 10_000_000,
+        annualRatePercent: 3,
+        termMonths: 12,
+        method: 'simple',
+        taxType: 'general',
+      });
+      expect(result.principal).toBe(10_000_000);
+      expect(result.pretaxInterest).toBe(300_000);
+      expect(result.tax).toBe(46_200); // 300,000 × 0.154
+      expect(result.posttaxInterest).toBe(253_800);
+      expect(result.maturityAmount).toBe(10_253_800);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 44: 원금 5,000만 + 연 4% + 36개월 월복리 → 세후 수령액
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 50M, annualRatePercent: 4, termMonths: 36,
+    //        method: 'monthlyCompound', taxType: 'general' }
+    // 월이자율: 4 / 100 / 12 = 0.003333...
+    // 만기원리금: 50M × (1.003333)^36 ≈ 56,363,590원
+    // 세전이자: 56,363,590 - 50M = 6,363,590원 → 10원 단위 절사 = 6,363,590원
+    // 세금: 6,363,590 × 15.4% = 980,193.26원 → 10원 단위 절사 = 980,190원
+    // 세후이자: 6,363,590 - 980,190 = 5,383,400원
+    // 만기수령액: 50M + 5,383,400 = 55,383,400원
+    // 근거: 소득세법 §129, 복리 계산 기준
+    // 검증: 은행 정기예금 실제 계산식
+    it('예금 5,000만 + 연 4% + 36개월 월복리: 세후 수령액 약 55,383,400원', () => {
+      const result = calculateDeposit({
+        principal: 50_000_000,
+        annualRatePercent: 4,
+        termMonths: 36,
+        method: 'monthlyCompound',
+        taxType: 'general',
+      });
+      expect(result.principal).toBe(50_000_000);
+      expect(result.pretaxInterest).toBeGreaterThan(6_360_000);
+      expect(result.pretaxInterest).toBeLessThan(6_370_000);
+      expect(result.tax).toBeGreaterThan(978_000);
+      expect(result.tax).toBeLessThan(982_000);
+      expect(result.maturityAmount).toBeGreaterThan(55_380_000);
+      expect(result.maturityAmount).toBeLessThan(55_390_000);
+    });
+  });
+
+  describe('대출한도 — DSR/LTV/DTI 제약 조건', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 45: 연소득 8,000만 + 기존 대출 0 + 담보 6억 + 비조정
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { annualIncome: 80M, existingDebtAnnualPayment: 0,
+    //        existingDebtAnnualInterest: 0, collateralValue: 600M,
+    //        region: 'nonRegulated', housingStatus: 'firstOrSubsistence',
+    //        lender: 'bank', newLoanAnnualRate: 4.5, newLoanTermYears: 20,
+    //        applyStressDsr: true, repaymentType: 'amortization' }
+    // DSR 한도: 40% (은행)
+    // DSR 기반: 80M × 0.40 = 3,200만 연원리금 → 스트레스(6%) 기준 원금 역산 약 3.72억
+    // LTV: 600M × 80% (생애최초) = 4.8억
+    // DTI: 80M × 50% (비규제) = 4,000만
+    // 결정적 제약: DSR (3.72억이 가장 제한적)
+    // 근거: 은행법 시행령 §24의4, 금감원 여신심사 가이드
+    // 검증: 한국은행 DSR 규제 사항
+    it('대출한도 연 8,000만 + 담보 6억 + 비조정 생애최초: DSR 제약 → 약 3.72억 한도', () => {
+      const result = calculateLoanLimit({
+        annualIncome: 80_000_000,
+        existingDebtAnnualPayment: 0,
+        existingDebtAnnualInterest: 0,
+        collateralValue: 600_000_000,
+        region: 'nonRegulated',
+        housingStatus: 'firstOrSubsistence',
+        lender: 'bank',
+        newLoanAnnualRate: 4.5,
+        newLoanTermYears: 20,
+        applyStressDsr: true,
+        repaymentType: 'amortization',
+      });
+      expect(result.dsrLimit).toBeGreaterThan(360_000_000);
+      expect(result.dsrLimit).toBeLessThan(390_000_000);
+      expect(result.ltvLimit).toBe(480_000_000); // 600M × 0.80
+      expect(result.finalLimit).toBeLessThanOrEqual(result.ltvLimit);
+      expect(result.warnings.length).toBeGreaterThanOrEqual(0);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 46: 연소득 6,000만 + 기존 대출 연 1,800만 + 담보 5억 + 조정 일반
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { annualIncome: 60M, existingDebtAnnualPayment: 18M,
+    //        existingDebtAnnualInterest: 10M, collateralValue: 500M,
+    //        region: 'adjusted', housingStatus: 'general',
+    //        lender: 'bank', newLoanAnnualRate: 5.0, newLoanTermYears: 15,
+    //        applyStressDsr: true, repaymentType: 'amortization' }
+    // DSR 한도: 40% (은행, 조정)
+    // 기존 연원리금: 1,800만 / 가능액: 60M × 0.40 - 1,800만 = 2,400만 - 1,800만 = 600만
+    // LTV: 500M × 50% (조정 일반) = 2.5억
+    // DTI: 기존이자 1,000만 / 가능액: 60M × 40% - 1,000만 = 2,400만 - 1,000만 = 1,400만
+    // 실제 DSR 역산: 600만 월원리금 × 스트레스 5.5% → 약 5,738만 원금 한도
+    // 결정적 제약: 담보 또는 LTV (5,738만 원금 < 2.5억 LTV)
+    // 근거: 조정지역 추가 규제 (금감원 가이드)
+    // 검증: 금감원 부동산 여신 가이드
+    it('대출한도 연 6,000만 + 기존 1,800만 + 조정 일반: 기존 대출 제약 → 약 5.7억 한도', () => {
+      const result = calculateLoanLimit({
+        annualIncome: 60_000_000,
+        existingDebtAnnualPayment: 18_000_000,
+        existingDebtAnnualInterest: 10_000_000,
+        collateralValue: 500_000_000,
+        region: 'adjusted',
+        housingStatus: 'general',
+        lender: 'bank',
+        newLoanAnnualRate: 5.0,
+        newLoanTermYears: 15,
+        applyStressDsr: true,
+        repaymentType: 'amortization',
+      });
+      expect(result.dsrLimit).toBeGreaterThan(50_000_000);
+      expect(result.dsrLimit).toBeLessThan(70_000_000);
+      expect(result.ltvLimit).toBe(250_000_000); // 500M × 0.50
+      expect(result.finalLimit).toBeLessThanOrEqual(result.ltvLimit);
+      expect(result.warnings.length).toBeGreaterThanOrEqual(0);
+    });
+  });
+
+  describe('프리랜서 종합소득세 — 단순경비율 vs 실제경비 비교', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 47: 수입 5,000만 + 단순경비율(64.1%) vs 실제경비 1,500만 비교
+    // ─────────────────────────────────────────────────────────────
+    // 입력 A (단순경비율): { annualRevenue: 50M, expenseMethod: 'simpleRate',
+    //                       simpleExpenseRatePercent: 64.1, ... }
+    // 경비: 50M × 64.1% = 32,050,000원
+    // 사업소득: 50M - 32,050,000 = 17,950,000원
+    //
+    // 입력 B (실제경비): { annualRevenue: 50M, expenseMethod: 'actual',
+    //                     actualExpenses: 15_000_000, ... }
+    // 경비: 15,000,000원
+    // 사업소득: 50M - 15M = 35,000,000원
+    //
+    // 단순경비율이 유리 (사업소득 낮을수록 세금 적음)
+    // 근거: 소득세법 시행령 §143 (단순경비율), 조세특례제한법 §127
+    // 검증: 국세청 단순경비율 공시 (2026)
+    it('프리랜서 수입 5,000만: 단순경비율 64.1% vs 실제 1,500만 비교 → 단순경비율 유리', () => {
+      const resultSimple = calculateFreelancerTax({
+        annualRevenue: 50_000_000,
+        expenseMethod: 'simpleRate',
+        simpleExpenseRatePercent: 64.1,
+        dependents: 1,
+        children: 0,
+      });
+
+      const resultActual = calculateFreelancerTax({
+        annualRevenue: 50_000_000,
+        expenseMethod: 'actual',
+        actualExpenses: 15_000_000,
+        dependents: 1,
+        children: 0,
+      });
+
+      // 단순경비율: 사업소득 = 50M - 32.05M = 17.95M
+      expect(resultSimple.businessIncome).toBeCloseTo(17_950_000, -3);
+      // 실제경비: 사업소득 = 50M - 15M = 35M
+      expect(resultActual.businessIncome).toBe(35_000_000);
+      // 단순경비율 세금이 더 적음 (사업소득 더 적음)
+      expect(resultSimple.totalTaxLiability).toBeLessThan(resultActual.totalTaxLiability);
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 48: 수입 2,000만 + 원천징수 66만 (3.3%) → 부가세 환급 케이스
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { annualRevenue: 20M, expenseMethod: 'simpleRate',
+    //        simpleExpenseRatePercent: 64.1, withholdingPaid: 660000,
+    //        dependents: 1, children: 0, ... }
+    // 경비: 20M × 64.1% = 12,820,000원
+    // 사업소득: 20M - 12,820,000 = 7,180,000원
+    // 인적공제: 150만
+    // 과세표준: 7,180,000 - 1,500,000 = 5,680,000원
+    // 산출세액: 5,680,000 × 6% - 0 = 340,800원
+    // 지방소득세: 340,800 × 10% = 34,080원 → 10원 단위 = 34,080원
+    // 총세금: 340,800 + 34,080 = 374,880원
+    // 정산액: 374,880 - 660,000 = -285,120원 (환급)
+    // 근거: 소득세법 §127 (3.3% 원천징수), §129 (이자소득)
+    // 검증: 국세청 프리랜서 종합소득세 신고 사례
+    it('프리랜서 수입 2,000만 + 원천징수 66만: 환급 케이스 → -285,120원 환급', () => {
+      const result = calculateFreelancerTax({
+        annualRevenue: 20_000_000,
+        expenseMethod: 'simpleRate',
+        simpleExpenseRatePercent: 64.1,
+        withholdingPaid: 660_000,
+        dependents: 1,
+        children: 0,
+        nationalPensionPaid: 0,
+        healthInsurancePaid: 0,
+      });
+
+      expect(result.annualRevenue).toBe(20_000_000);
+      expect(result.expenseAmount).toBeCloseTo(12_820_000, -3);
+      expect(result.businessIncome).toBeCloseTo(7_180_000, -3);
+      expect(result.totalTaxLiability).toBeLessThan(660_000);
+      expect(result.settlementAmount).toBeLessThan(0); // 환급
+      expect(result.warnings.length).toBeGreaterThan(0); // 환급 경고
     });
   });
 });

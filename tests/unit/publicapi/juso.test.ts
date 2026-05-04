@@ -3,6 +3,10 @@
  *
  * 테스트 범위: zod parse만 (네트워크 호출 X)
  * 케이스: 유효값 5개 + 무효값 3개
+ *
+ * 검증 범위:
+ * - JusoAddressSchema: 개별 주소 객체
+ * - JusoApiResponseSchema: API 응답 래퍼 (results.juso[])
  */
 
 import { describe, it, expect } from 'vitest';
@@ -10,7 +14,7 @@ import { JusoAddressSchema, JusoApiResponseSchema } from '../../../src/lib/publi
 import { z } from 'zod';
 
 describe('JusoAddressSchema', () => {
-  it('유효한 주소 정보 파싱 성공', () => {
+  it('유효한 주소 정보 파싱 성공 — 서울 종로구', () => {
     const input = {
       roadAddr: '서울시 종로구 종로 1',
       roadAddrPart1: '서울시 종로구 종로 1',
@@ -69,9 +73,10 @@ describe('JusoAddressSchema', () => {
     expect(() => JusoAddressSchema.parse(invalidInput)).toThrow(z.ZodError);
   });
 
-  it('다양한 주소 형식 파싱', () => {
+  it('다양한 주소 형식 파싱 (5개 지역)', () => {
     const inputs = [
       {
+        // 경기도 수원
         roadAddr: '경기도 수원시 장안구 팔달로 123',
         roadAddrPart1: '경기도 수원시 장안구 팔달로 123',
         zipNo: '16234',
@@ -79,6 +84,7 @@ describe('JusoAddressSchema', () => {
         rnMgtSn: '4111310100000123',
       },
       {
+        // 인천시 남구
         roadAddr: '인천시 남구 송도대로 456',
         roadAddrPart1: '인천시 남구 송도대로 456',
         roadAddrPart2: '(센트럴파크)',
@@ -88,6 +94,7 @@ describe('JusoAddressSchema', () => {
         bdNm: '센트럴파크',
       },
       {
+        // 부산시 해운대
         roadAddr: '부산시 해운대구 센텀남로 789',
         roadAddrPart1: '부산시 해운대구 센텀남로 789',
         zipNo: '48058',
@@ -95,12 +102,34 @@ describe('JusoAddressSchema', () => {
         rnMgtSn: '2611010100000789',
         engAddr: 'Centum South-ro 789, Haeundae-gu, Busan',
       },
+      {
+        // 대구시 중구
+        roadAddr: '대구시 중구 동성로 100',
+        roadAddrPart1: '대구시 중구 동성로 100',
+        roadAddrPart2: '',
+        jibunAddr: '대구시 중구 동내동 100',
+        zipNo: '41916',
+        admCd: '27110',
+        rnMgtSn: '2711010100000100',
+        bdNm: '대구백화점',
+      },
+      {
+        // 제주시
+        roadAddr: '제주특별자치도 제주시 연동 신산로 200',
+        roadAddrPart1: '제주특별자치도 제주시 연동 신산로 200',
+        jibunAddr: '제주도 제주시 연동 200',
+        zipNo: '63111',
+        admCd: '50110',
+        rnMgtSn: '5011010100000200',
+        bdNm: '제주터미널',
+      },
     ];
 
     inputs.forEach((input) => {
       const result = JusoAddressSchema.parse(input);
       expect(result.roadAddr).toBe(input.roadAddr);
       expect(result.zipNo).toBe(input.zipNo);
+      expect(result.admCd).toBe(input.admCd);
     });
   });
 
@@ -185,5 +214,52 @@ describe('JusoApiResponseSchema', () => {
     const result = JusoApiResponseSchema.parse(input);
     expect(result.results.juso).toHaveLength(1);
     expect(result.results.common).toBeUndefined();
+  });
+
+  it('JUSO API 에러 응답 처리', () => {
+    const input = {
+      results: {
+        juso: [],
+        common: {
+          totalCount: 0,
+          currentPage: 1,
+          countPerPage: 10,
+          countRecords: 0,
+          errorCode: '13',
+          errorMessage: 'Unauthorized',
+        },
+      },
+    };
+
+    const result = JusoApiResponseSchema.parse(input);
+    expect(result.results.juso).toHaveLength(0);
+    expect(result.results.common?.errorCode).toBe('13');
+    expect(result.results.common?.errorMessage).toBe('Unauthorized');
+  });
+
+  it('대량 결과 페이징 응답', () => {
+    const validInput = {
+      results: {
+        juso: Array.from({ length: 10 }, (_, i) => ({
+          roadAddr: `서울시 종로구 종로 ${i + 1}`,
+          roadAddrPart1: `서울시 종로구 종로 ${i + 1}`,
+          // zipNo 정확히 5자리 (regex /^\d{5}$/)
+          zipNo: `030${String(i + 1).padStart(2, '0')}`,
+          admCd: '11110',
+          rnMgtSn: `111101010000000${i + 1}`,
+        })),
+        common: {
+          totalCount: 500,
+          currentPage: 1,
+          countPerPage: 10,
+          countRecords: 10,
+        },
+      },
+    };
+
+    const result = JusoApiResponseSchema.parse(validInput);
+    expect(result.results.juso).toHaveLength(10);
+    expect(result.results.common?.totalCount).toBe(500);
+    expect(result.results.common?.currentPage).toBe(1);
   });
 });

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비 가이드 2026 | calculatorhost',
+  title: '2월 연말정산 환급 추적 + 5월 준비 가이드 2026 | calculatorhost',
   description:
-    '2월 연말정산 환급/추가 납부 결과 확인·이의제기·5월 종합소득세 누락 공제 정정·사전 준비 완벽 가이드. 환급 안 들어왔을 때, 추가 납부 결과 받았을 때 대응법.',
+    '2월 연말정산 환급·추가납부 확인·이의제기. 5월 종합소득세 사전 준비 완벽 가이드.',
   keywords: [
     '연말정산 환급',
     '환급 안들어옴',

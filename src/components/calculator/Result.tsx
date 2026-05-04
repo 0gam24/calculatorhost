@@ -58,7 +58,7 @@ export function ResultCard({ title, heroLabel, heroValue, heroNote, rows, childr
       aria-atomic="true"
       className="card flex flex-col gap-6"
     >
-      <header>
+      <header className="hero-number-container">
         <h2 className="text-lg font-semibold text-text-secondary">{title}</h2>
         <p className="mt-1 text-sm text-text-tertiary">{heroLabel}</p>
         <p className="mt-4 hero-number" aria-label={`${heroLabel}: ${heroValue}`}>{heroValue}</p>

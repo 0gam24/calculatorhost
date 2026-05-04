@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '법인세 신고 가이드 2026 (3월 31일 마감) — 12월 결산법인 필독 | calculatorhost',
+  title: '법인세 신고 가이드 2026 (3월 31일 마감) | calculatorhost',
   description:
-    '12월 결산 법인의 법인세 신고·납부 마감 3월 31일. 법인세 세율 (9%·19%·21%·24%) + 주요 공제·세액공제 + 분납·전자신고 + 미신고 가산세까지 한 페이지.',
+    '12월 결산 법인의 법인세 신고·납부 완벽 가이드. 세율·공제·분납·전자신고·가산세까지.',
   keywords: [
     '법인세 신고',
     '법인세',

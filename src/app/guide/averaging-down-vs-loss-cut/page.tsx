@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나 (2026) | calculatorhost',
+  title: '물타기 vs 손절 vs 비중조절 비교 2026 | calculatorhost',
   description:
-    '하락 종목을 만났을 때 평단을 낮추는 물타기, 즉시 매도하는 손절, 단계적 매도하는 비중조절. 3가지 전략의 의사결정 기준과 시뮬레이션을 정리합니다.',
+    '하락장에서 물타기·손절·비중조절 3가지 전략의 의사결정 기준과 시뮬레이션.',
   keywords: ['물타기', '손절', '비중조절', '평단', '주식 전략', '코인 전략', '추매'],
   alternates: { canonical: URL },
   openGraph: {

@@ -134,7 +134,7 @@ export function HousingSubscriptionCalculator() {
 
       {/* 결과 카드 */}
       {result && (
-        <div className="rounded-lg border border-border-base bg-bg-card p-6 space-y-6">
+        <div className="rounded-lg border border-border-base bg-bg-card p-6 space-y-6" role="region" aria-label="계산 결과">
           <h2 className="text-xl font-semibold">계산 결과</h2>
 
           {/* 합계 점수 (히어로) */}

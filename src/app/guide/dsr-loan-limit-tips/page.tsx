@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: 'DSR 대출한도를 늘리는 5가지 방법 2026 (스트레스 DSR 풀 적용) | calculatorhost',
+  title: 'DSR 대출한도 늘리는 5가지 방법 2026 | calculatorhost',
   description:
-    '2026년 스트레스 DSR 1.5%p 풀 적용으로 같은 소득의 대출한도가 줄었습니다. 신용대출 상환·소득 합산·고정금리 활용·대환·금융기관 변경 등 5가지 실전 방법을 시뮬레이션과 함께 정리.',
+    '2026년 스트레스 DSR 풀 적용 환경에서 대출한도를 확보하는 신용대출 상환·소득 합산 등 5가지 방법.',
   keywords: ['DSR', '대출한도', '주담대', '스트레스 DSR', '대출 늘리는 법', '2026 DSR'],
   alternates: { canonical: URL },
   openGraph: {

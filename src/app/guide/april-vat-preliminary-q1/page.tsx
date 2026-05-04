@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '4월 부가세 1기 예정신고 가이드 2026 | 1~3월 매출·매입 신고 | calculatorhost',
+  title: '4월 부가세 1기 예정신고 가이드 2026 | calculatorhost',
   description:
-    '2026년 4월 1~25일 부가가치세 1기 예정신고·납부 완벽 가이드. 일반과세자 의무·간이과세자 면제·신고 대상·매출세액 vs 매입세액공제·홈택스 단계별 신고법.',
+    '2026년 4월 1~25일 부가가치세 1기 예정신고·납부 가이드. 일반과세·간이과세 차이부터 홈택스 신고까지.',
   keywords: [
     '부가세 1기 예정신고',
     '부가세 4월 신고',

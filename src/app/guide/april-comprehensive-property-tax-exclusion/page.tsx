@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '4월 종합부동산세 합산배제·과세특례 신청 가이드 2026 | calculatorhost',
+  title: '4월 종부세 합산배제·과세특례 신청 | calculatorhost',
   description:
-    '2026년 4월 1~30일 종부세 합산배제·과세특례 신청 가이드. 임대주택·미분양·사원용·기숙사·문화재 등 합산배제 + 일시적 2주택·고령자 등 과세특례 + 12월 종부세 절세 핵심.',
+    '2026년 4월 1~30일 종합부동산세 합산배제·과세특례 신청 가이드. 임대주택·미분양·일시적 2주택.',
   keywords: [
     '종부세 합산배제',
     '종합부동산세 합산배제',

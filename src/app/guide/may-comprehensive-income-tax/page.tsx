@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '5월 종합소득세 신고 완벽 가이드 2026 | 프리랜서·사업자·N잡러 필독 | calculatorhost',
+  title: '5월 종합소득세 신고 가이드 2026 | calculatorhost',
   description:
-    '2026년 5월 종합소득세 신고 시즌 완벽 가이드. 신고 대상·기한·홈택스 단계별 신고법·단순경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리. 프리랜서·1인사업자·N잡러 필독.',
+    '2026년 5월 종합소득세 신고 완벽 가이드. 신고 대상·기한·홈택스 단계별 신고·절세 방법·환급까지 정리.',
   keywords: [
     '종합소득세 신고',
     '종합소득세',
