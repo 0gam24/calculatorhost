@@ -201,7 +201,7 @@ export default function DsrRegulationZonesPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">시나리오별 대출 한도 비교</h2>
+                <h2 className="text-2xl font-bold">시나리오별 대출 한도 비교 (2026 실전 사례)</h2>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-5">
                   <h3 className="mb-2 font-semibold text-text-primary">📌 시나리오 1. 6억 주택 매매 (생애최초·연소득 6,000만)</h3>
@@ -211,7 +211,10 @@ export default function DsrRegulationZonesPage() {
                     <li>• <strong>투기과열지구</strong>: LTV 60% × 6억 = 3.6억</li>
                   </ul>
                   <p className="mt-3 text-sm text-text-secondary">
-                    DSR 적용 시: 변동금리 4% + 1.5%p 스트레스 = 5.5% 산정 → 한도 약 3.3~3.5억 수준 (DSR 결정적)
+                    <strong>스트레스 DSR 적용</strong>: 변동금리 4% + 1.5%p 스트레스 = 5.5% 산정.
+                    연소득 6,000만 × 40% ÷ 5.5% ÷ 12 = 월 상환 약 181만 원 한도.
+                    30년 5.5% 원리금균등으로 역산하면 한도 약 <strong>3.3~3.5억 수준</strong> (DSR 결정적 제약).
+                    고정금리는 4.0%로 산정하므로 약 3.9억까지 가능 (같은 LTV 4.8억 내에서).
                   </p>
                 </div>
 
@@ -295,8 +298,9 @@ export default function DsrRegulationZonesPage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 은행법 시행령 §24의4 ·{' '}
-                  <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원</a> 주택담보대출 규제 고시 ·{' '}
-                  <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a> 조정대상지역 지정 고시.
+                  <a href="https://www.fss.or.kr/fss/pr/selectPressReleaseView.do?bbsid=99" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원 주택담보대출 규제 고시</a> ·{' '}
+                  <a href="https://www.molit.go.kr/CMS/Board/InformationNoticeList.do?category=Land" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 조정대상지역 지정 공시</a> ·{' '}
+                  <a href="https://finlife.fss.or.kr/mypl/en/contents/cts/cts0102000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원 핀라이프 DSR 계산기</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED}</p>
               </section>

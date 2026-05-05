@@ -355,6 +355,15 @@ export default function MayComprehensiveIncomeTaxPage() {
                     </tbody>
                   </table>
                 </div>
+                <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
+                  <strong className="text-text-primary">실제 선택 시뮬레이션</strong>
+                  <p className="mt-2 text-text-secondary">예: IT 프리랜서 연 매출 6,000만</p>
+                  <ul className="mt-2 space-y-1 text-text-secondary">
+                    <li>• 단순경비율 선택: 소득금액 = 6,000만 × (100% - 64.1%) = 2,154만 → 종소세 약 100만</li>
+                    <li>• 기준경비율 선택(영수증 3,500만): 소득금액 = 6,000만 - 3,500만 = 2,500만 → 종소세 약 120만</li>
+                    <li>• 결론: 실제 경비 3,500만이 단순경비율(3,846만)보다 작으면 단순 유리 (약 20만 절세)</li>
+                  </ul>
+                </div>
                 <p className="text-text-secondary leading-relaxed">
                   <strong>의사결정</strong>: IT·디자인·작가처럼 단순경비율이 60% 이상인 업종은 영수증 관리
                   부담 없이 단순경비율이 거의 항상 유리. 실제 경비(임대료·재료비·외주 등)가 매출의 80% 이상이면
@@ -561,9 +570,9 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §70 (종합소득세 신고) · §73 (납부) · §76 (가산세) ·
                   국세기본법 §47의2 (가산세) · 시행령 §143 (단순경비율). 참고:{' '}
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>,{' '}
-                  <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>,{' '}
-                  <a href="https://www.kbiz.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">중소기업중앙회 노란우산공제</a>.
+                  <a href="https://www.hometax.go.kr/guide/0206000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종소세 신고 가이드</a>,{' '}
+                  <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?rbsSn=1447" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 단순경비율 공지</a>,{' '}
+                  <a href="https://www.kbiz.or.kr/site/nts/ex/bbs/Search.do?cbIdx=32&bcIdx=3&keyword=%EB%85%B8%EB%9E%80%EC%9A%B0%EC%82%B0%EA%B3%B5%EC%A0%9C" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">중소기업중앙회 노란우산공제</a>.
                 </p>
                 <p className="mb-2">
                   <strong>면책 조항</strong>: 본 가이드는 정보 제공 목적이며 세무·법적 조언이 아닙니다.

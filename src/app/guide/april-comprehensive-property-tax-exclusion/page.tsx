@@ -203,6 +203,14 @@ export default function AprilCptExclusionPage() {
                       <li>• 임대료 인상률 연 5% 이내</li>
                       <li>• 임대사업자 등록 (지자체 + 세무서)</li>
                     </ul>
+                    <div className="mt-3 pt-3 border-t border-border-base">
+                      <strong className="text-xs text-text-primary">임대주택 절세 수치 예시</strong>
+                      <p className="mt-1 text-xs text-text-secondary">
+                        공시 5억 임대주택 미신청: 다주택자 중과 세율(최고 6%) 적용 → 연 3,000만 원 종부세.
+                        합산배제 신청 시: 종부세 부과 0원 → 연 3,000만 원 절세.
+                        5년 보유 기준 약 1.5억 원 절감 효과.
+                      </p>
+                    </div>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">② 미분양 주택 (사업자 보유)</h3>
@@ -323,7 +331,8 @@ export default function AprilCptExclusionPage() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 종합부동산세법 §8 (합산배제) · §9 (과세특례) · §15·§16 ·
                   민간임대주택법. 참고:{' '}
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>.
+                  <a href="https://www.hometax.go.kr/ncs/notice/bbsView.do?bbsId=36&nttId=2949" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종부세 합산배제 신청</a>,{' '}
+                  <a href="https://www.molit.go.kr/USR/PRESSROOM/m_71/dtl.jsp?lcmspage=1&id=95003333" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 민간임대주택 정책 안내</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>

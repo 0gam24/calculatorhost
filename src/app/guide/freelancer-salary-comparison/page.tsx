@@ -185,7 +185,7 @@ export default function FreelancerSalaryComparisonPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">시나리오 1. 연 3,000만 원 (월 250만)</h2>
+                <h2 className="text-2xl font-bold">시나리오 1. 연 3,000만 원 (월 250만) — 저소득 구간</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                     <h3 className="mb-2 font-semibold text-text-primary">📌 프리랜서 (IT 단순경비율 64.1%)</h3>
@@ -193,12 +193,13 @@ export default function FreelancerSalaryComparisonPage() {
                       <li>총 매출: 3,000만</li>
                       <li>경비 인정: 1,923만 (64.1%)</li>
                       <li>소득금액: 1,077만</li>
+                      <li>3.3% 원천징수: 약 99만</li>
                       <li>종합소득세: 약 70만 (6%)</li>
-                      <li>건강보험: 약 200만 (지역)</li>
-                      <li>국민연금: 약 270만 (9%)</li>
+                      <li>건강보험: 약 200만 (지역·재산 점수)</li>
+                      <li>국민연금: 약 270만 (9% 전액 자부담)</li>
                     </ul>
                     <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 2,460만</strong>
+                      <strong>실수령: 약 2,358만</strong> (환급 후 최종)
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
@@ -208,15 +209,16 @@ export default function FreelancerSalaryComparisonPage() {
                       <li>4대보험(본인): 약 270만</li>
                       <li>소득세+지방세: 약 60만</li>
                       <li>(회사 4대보험 부담 270만 별도)</li>
+                      <li>실제 비용: 330만 (회사 부담)</li>
                     </ul>
                     <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 2,670만</strong>
+                      <strong>실수령: 약 2,670만</strong> (회사 비용 제외)
                     </p>
                   </div>
                 </div>
                 <p className="text-sm text-text-secondary">
-                  <strong>차이</strong>: 일반직 약 +210만 (회사 4대보험 50% 부담 효과). 프리랜서는 경비
-                  인정으로 세금은 적지만 4대보험 본인 100% 부담이 결정적.
+                  <strong>차이</strong>: 일반직 약 +312만 (월 26만). 저소득 구간에서는 회사 4대보험 50% 부담 효과가 압도적이어서
+                  프리랜서가 세금 우대를 받아도 실수령액에선 불리합니다. 다만 프리랜서는 경비 추가 인정 시뮬도 검토 필요.
                 </p>
               </section>
 
@@ -335,8 +337,9 @@ export default function FreelancerSalaryComparisonPage() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §19·§20 · 국민건강보험법 §69 · 국민연금법 §88 ·
                   부가가치세법 시행령 §111. 참고:{' '}
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>,{' '}
-                  <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단</a>.
+                  <a href="https://www.hometax.go.kr/guide/0206000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종합소득세 신고</a>,{' '}
+                  <a href="https://www.nhis.or.kr/nhis/together/wbhkup02400m01.do" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단 지역가입자 보험료 계산</a>,{' '}
+                  <a href="https://www.nps.or.kr/jsppage/support/insure_01_01.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민연금공단 지역가입자 정보</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED}</p>
               </section>

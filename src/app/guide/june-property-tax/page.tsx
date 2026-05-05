@@ -230,6 +230,14 @@ export default function JunePropertyTaxPage() {
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">2. 재산세 계산식 — 단계별 정리</h2>
+                <div className="rounded-lg border border-primary-500/20 bg-primary-500/5 p-4 mb-4 text-sm">
+                  <strong className="text-text-primary">공정시장가액비율 60%란?</strong>
+                  <p className="mt-1 text-text-secondary">
+                    재산세 과세표준을 산정할 때 공시가격의 60%만 반영하는 정책 완화 조치입니다.
+                    이는 과거 2023년 45% 한시 인하, 2024년 60% 복귀 등 정부 정책에 따라 변동 가능합니다.
+                    2026년 60% 유지로 재산세 부담이 예년 대비 경감 상태입니다 (지방세법 시행령 §109).
+                  </p>
+                </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <ol className="space-y-3 text-sm">
                     <li>
@@ -424,7 +432,8 @@ export default function JunePropertyTaxPage() {
                   <strong>법적 근거</strong>: 지방세법 §107·§110·§114·§122·§150 · 시행령 §109. 참고:{' '}
                   <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a>,{' '}
                   <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a> 공시가격,{' '}
-                  <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원</a>.
+                  <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원 공시가격 알리미</a>,{' '}
+                  <a href="https://realtyprice.kr/main.php" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">부동산공시가격알리미</a>.
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)

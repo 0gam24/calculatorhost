@@ -180,6 +180,12 @@ export default function DsrLoanLimitTipsPage() {
                   <strong>실행 우선순위</strong>: ① 카드론·현금서비스(고금리·짧은 만기) →
                   ② 마이너스 통장 → ③ 신용대출 → ④ 자동차 할부 → ⑤ 학자금 (저금리·긴 만기는 후순위).
                 </p>
+                <p className="text-text-secondary leading-relaxed">
+                  <strong>3단계 상환 시뮬</strong>: 신용대출 1,500만 원(5년 4.5% 월 28만)을 보유한 경우,
+                  이를 완전 상환하면 월 28만 원 = 연 336만 원이 DSR에서 빠집니다. 연소득 1.2억 기준 DSR 40% 은행이면
+                  신규 주담대 한도가 약 8,400만 원 증가합니다 (30년 4% 가정). 우선 카드론부터 한두 달 집중해 정리하고
+                  신용대출로 넘어가는 방식이 가장 효율적입니다.
+                </p>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
                   <strong className="text-text-primary">시뮬레이션</strong>
                   <p className="mt-2 text-text-secondary">
@@ -199,9 +205,14 @@ export default function DsrLoanLimitTipsPage() {
                   사람 소득을 합산합니다. 단독 명의면 본인 소득만 인정.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
+                  <strong>소득 합산 시뮬</strong>: 배우자 소득 5,000만 원 추가 시, 기존 1억 대비 총 1.5억 원 기준으로
+                  DSR을 재산정합니다. 같은 6억 주택 매매 시 단독 소득 1억(한도 약 3.3억) vs 부부 소득 1.5억(한도 약 5억)으로
+                  약 1.7억 원 한도 증가. 대출금리 4% 기준 월 상환액 추가 부담 약 70만 원 수준.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
                   <strong>주의</strong>: 공동 차주는 한 명의 신용 문제가 다른 한 명에게도
-                  영향(연체, 신용도 하락). 또한 이혼·사별 시 채무 분할 협의 필요. 단, 한도
-                  확보 효과는 강력 — 부부 합산 1.5억 원이면 단독 1억 대비 한도 50~80% 증가.
+                  영향(연체, 신용도 하락). 또한 이혼·사별 시 채무 분할 협의 필요. 하지만 한도
+                  확보 효과는 강력 — 부부 합산이면 단독 대비 한도 50~80% 증가로 소위 '조정지역 우회' 효과도 있습니다.
                 </p>
               </section>
 
@@ -295,14 +306,16 @@ export default function DsrLoanLimitTipsPage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>:{' '}
-                  <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
-                    금융감독원
-                  </a>{' '}
-                  주택담보대출 규제 고시,{' '}
-                  <a href="https://www.fsc.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
-                    금융위원회
-                  </a>{' '}
-                  여신심사 가이드라인, 은행법 시행령 §24의4.
+                  <a href="https://www.fss.or.kr/fss/pr/selectPressReleaseView.do?bbsid=99&nttid=150944" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                    금융감독원 스트레스 DSR 고시
+                  </a>,{' '}
+                  <a href="https://www.fsc.go.kr/po/po1/a104/searchAnnouncement.action" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                    금융위원회 여신심사 가이드라인
+                  </a>,
+                  은행법 시행령 §24의4,{' '}
+                  <a href="https://finlife.fss.or.kr/mypl/en/contents/cts/cts0102000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                    금융감독원 핀라이프 DSR 계산기
+                  </a>.
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED}. 정책·금리 변경 시 즉시 반영합니다.

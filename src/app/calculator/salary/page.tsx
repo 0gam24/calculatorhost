@@ -1,14 +1,22 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
-import { SkyscraperAd } from '@/components/ads/SkyscraperAd';
-import { InfeedAd } from '@/components/ads/InfeedAd';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+
+// Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
+const SkyscraperAd = dynamic(() => import('@/components/ads/SkyscraperAd').then(mod => ({ default: mod.SkyscraperAd })), {
+  loading: () => <div className="hidden lg:block w-[300px] min-h-[620px] sticky top-20 z-30" aria-hidden="true" />,
+});
+
+const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
+  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
+});
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,

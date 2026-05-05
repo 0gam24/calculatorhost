@@ -295,6 +295,15 @@ export default function JanuaryVehicleTaxPage() {
                     </p>
                   </li>
                 </ol>
+                <div className="rounded-lg border border-border-base bg-bg-raised p-4 text-sm">
+                  <strong className="text-text-primary">신용카드 무이자 할부 활용 팁</strong>
+                  <ul className="mt-2 space-y-1 text-text-secondary">
+                    <li>• <strong>카드사별 무이자 기간</strong>: 하나·신한·KB·삼성 등 주요 카드 모두 2~6개월 무이자 지원</li>
+                    <li>• <strong>수수료</strong>: 0.8% 본인 부담 (6억 기준 약 48,000원)</li>
+                    <li>• <strong>이벤트 결합</strong>: 일부 카드사는 캐시백 또는 마일리지 추가 (신한카드 1% 등록금전 등)</li>
+                    <li>• <strong>월 예산 분산</strong>: 월 정기 납부 기한(6월·12월) 대비 1월 무이자 할부면 현금흐름 유리</li>
+                  </ul>
+                </div>
               </section>
 
               <FaqSection items={[...FAQ_ITEMS]} />
@@ -322,7 +331,8 @@ export default function JanuaryVehicleTaxPage() {
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 지방세법 §128 (자동차세 연납 공제) · 시행령 §125. 참고:{' '}
-                  <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a>.
+                  <a href="https://www.wetax.go.kr/guide/guide0401000001.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스 자동차세 미리납부 안내</a>,{' '}
+                  <a href="https://www.nongshim.com/kcard/pro/card_benefit.do" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">신용카드 무이자 할부 카드사 정보</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>
