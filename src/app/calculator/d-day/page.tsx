@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
+const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
+  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
+});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -24,7 +28,7 @@ const URL = 'https://calculatorhost.com/calculator/d-day/';
 export const metadata: Metadata = {
   title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일 | calculatorhost',
   description:
-    'D-day 계산기 2026. 두 날짜 사이의 일수·주수·개월 수·년 수를 계산. 100일·1000일 같은 특정 기념일 계산도 가능. 무료.',
+    'D-day 계산기 2026. 두 날짜 사이의 일수·주수·개월 수·년 수를 계산. 100일·1000일 같은 특정 기념일 계산도 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   alternates: { canonical: URL },
   openGraph: {
     title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일',
@@ -187,6 +191,9 @@ export default function DdayPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              {/* AD-4 Infeed */}
+              <InfeedAd slot="d-day-infeed" />
 
               {/* D-day란? */}
               <section aria-label="D-day 개념" className="card">

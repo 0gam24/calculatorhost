@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '지역별 DSR·LTV 규제 완전 정리 2026 | calculatorhost',
   description:
-    '비규제·조정·투기과열지역별 DSR·LTV 차이. 스트레스 DSR·생애최초 우대·다주택 중과 모두 정리.',
+    '비규제·조정·투기과열지역별 DSR·LTV 차이. 스트레스 DSR·생애최초 우대·다주택 중과 모두 정리. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
   keywords: ['DSR 규제지역', '조정대상지역 DSR', '투기과열지구 LTV', '비규제지역 DSR', '스트레스 DSR', '생애최초 LTV', '다주택자 LTV'],
   alternates: { canonical: URL },
   openGraph: {

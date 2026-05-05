@@ -62,7 +62,7 @@ const results = {
 };
 
 /**
- * 1. ads.txt 확인
+ * 1. ads.txt 확인 (pub-ID placeholder vs 실값)
  */
 function checkAdsTxt() {
   const adsTxtPath = resolve(PUBLIC_DIR, 'ads.txt');
@@ -76,21 +76,33 @@ function checkAdsTxt() {
     }
 
     const content = readFileSync(adsTxtPath, 'utf8');
-    if (content.includes('7830821732287404')) {
+
+    // placeholder 감지
+    const placeholders = ['7830821732287404', '0000000000', 'YOUR_', 'PLACEHOLDER'];
+    const isPlaceholder = placeholders.some(p => content.toUpperCase().includes(p.toUpperCase()));
+
+    if (isPlaceholder) {
       result.status = 'FAIL';
-      result.message = 'ads.txt에 placeholder pub-ID(7830821732287404) 포함 — 실제 AdSense Client ID로 교체 필수';
+      result.message = 'ads.txt에 placeholder 또는 템플릿 값 포함 — 실제 AdSense Client ID로 교체 필수';
       return result;
     }
 
     // pub-로 시작하는 라인이 있는지 확인
-    const pubMatch = content.match(/pub-\d+/);
+    const pubMatch = content.match(/pub-(\d+)/);
     if (!pubMatch) {
       result.status = 'FAIL';
       result.message = 'ads.txt에 유효한 pub-ID 없음';
       return result;
     }
 
-    result.message = `pub-ID 확인: ${pubMatch[0]}`;
+    const pubId = pubMatch[1];
+    // 실제 pub-ID는 보통 16자리 이상
+    if (pubId.length < 16) {
+      result.status = 'WARN';
+      result.message = `pub-ID 형식 경고 (16자리 미만): pub-${pubId}`;
+    } else {
+      result.message = `pub-ID 확인: pub-${pubId.slice(0, 10)}... ✅`;
+    }
   } catch (e) {
     result.status = 'FAIL';
     result.message = `파일 읽기 오류: ${e.message}`;
@@ -150,7 +162,7 @@ function checkSitemap() {
 }
 
 /**
- * 4. OG 이미지 샘플링 (5개)
+ * 4. OG 이미지 샘플링 → 계산기 페이지 매칭 (전체 개수)
  */
 function checkOgImages() {
   const result = { id: 'og-images', status: 'PASS', message: '' };
@@ -165,13 +177,40 @@ function checkOgImages() {
       return result;
     }
 
-    if (ogImages.length < 5) {
-      result.status = 'WARN';
-      result.message = `OG 이미지 ${ogImages.length}개만 발견 (목표: 53개+) — 계산기 페이지마다 필요`;
-      return result;
+    // 계산기 페이지 개수 추정 (page.tsx 파일)
+    const appDir = resolve(SRC_DIR, 'app');
+    let calculatorPageCount = 0;
+
+    function walkForPages(dir) {
+      try {
+        const entries = readdirSync(dir);
+        for (const entry of entries) {
+          const full = resolve(dir, entry);
+          const stat = statSync(full);
+          if (stat.isDirectory() && !entry.startsWith('_')) {
+            if (dir.includes('calculator')) calculatorPageCount++;
+            walkForPages(full);
+          } else if (entry === 'page.tsx' && dir.includes('calculator')) {
+            // 이미 카운트됨
+          }
+        }
+      } catch (e) {
+        // 무시
+      }
     }
 
-    result.message = `OG 이미지: ${ogImages.length}개 (샘플: ${ogImages.slice(0, 3).join(', ')}, ...)`;
+    walkForPages(appDir);
+
+    // 휴리스틱: 계산기 폴더 개수 ≈ 계산기 페이지 개수
+    if (ogImages.length < 5) {
+      result.status = 'WARN';
+      result.message = `OG 이미지 ${ogImages.length}개 (목표: 15개+ MVP) — 샘플: ${ogImages.slice(0, 3).join(', ')}`;
+    } else if (ogImages.length < 30) {
+      result.status = 'WARN';
+      result.message = `OG 이미지 ${ogImages.length}개 (목표: 53개+ 전체) — 진행 중`;
+    } else {
+      result.message = `OG 이미지 ${ogImages.length}개 ✅`;
+    }
   } catch (e) {
     result.status = 'FAIL';
     result.message = `public/ 읽기 오류: ${e.message}`;

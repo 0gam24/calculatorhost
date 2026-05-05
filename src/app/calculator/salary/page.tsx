@@ -36,7 +36,7 @@ const URL = 'https://calculatorhost.com/calculator/salary/';
 export const metadata: Metadata = {
   title: '연봉 실수령액 계산기 2026 — 4대보험·소득세 자동',
   description:
-    '2026년 연봉 실수령액 계산기. 세전 연봉을 입력하면 소득세·4대보험·특별소득공제 등을 자동 계산해 월 실수령액·연간 세후액을 확인. 무료.',
+    '2026년 연봉 실수령액 계산기. 세전 연봉을 입력하면 소득세·4대보험·특별소득공제 등을 자동 계산해 월 실수령액·연간 세후액을 확인. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   alternates: { canonical: URL },
   openGraph: {
     title: '연봉 실수령액 계산기 2026',

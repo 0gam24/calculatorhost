@@ -1,8 +1,12 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
+const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
+  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
+});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -24,7 +28,7 @@ const URL = 'https://calculatorhost.com/calculator/area/';
 export const metadata: Metadata = {
   title: '평수 계산기 2026 | 평↔제곱미터 변환 | calculatorhost',
   description:
-    '평수 계산기 2026. 제곱미터·평·아르 간 상호 변환. 평수·제곱미터·면적 계산 및 비교. 부동산·건설 용도별 단위 통일. 무료.',
+    '평수 계산기 2026. 제곱미터·평·아르 간 상호 변환. 평수·제곱미터·면적 계산 및 비교. 부동산·건설 용도별 단위 통일. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   alternates: { canonical: URL },
   openGraph: {
     title: '평수 계산기 2026 | 평↔제곱미터 변환',
@@ -190,6 +194,9 @@ export default function AreaConversionPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              {/* AD-4 Infeed */}
+              <InfeedAd slot="area-infeed" />
 
               {/* 평과 제곱미터의 관계 */}
               <section aria-label="평과 제곱미터의 관계" className="card">

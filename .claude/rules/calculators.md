@@ -42,7 +42,7 @@ paths:
 
 ## 메타데이터 표준
 - `title`: "{계산기명} {연도} | {핵심 키워드} | calculatorhost" — 60자 이내
-- `description`: 100~155자, 첫 문장에 결론, 면책 한 줄 포함
+- `description`: 80~155자, 첫 문장에 결론, 면책 한 줄 포함 (한글 80자 ≈ Google SERP 영문 160자 한계)
 - `alternates.canonical`: `https://calculatorhost.com/calculator/{slug}/` (trailing slash 필수, sitemap과 일관)
 - `openGraph.images`: 최소 `/og-default.png` (전용 이미지 있으면 1200×630 PNG 사용)
 - `twitter.card`: 'summary_large_image'

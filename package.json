@@ -7,6 +7,7 @@
     "dev": "next dev",
     "dev:functions": "wrangler pages dev out --local --port 3000",
     "sync-data": "node scripts/sync-public-data.mjs",
+    "sync:health": "node scripts/check-sync-health.mjs",
     "gen-og": "node scripts/generate-og-images.mjs",
     "seo:validate": "node scripts/validate-seo.mjs",
     "audit:adsense": "node scripts/audit-adsense.mjs",

@@ -26,7 +26,7 @@ const URL = 'https://calculatorhost.com/calculator/comprehensive-property-tax/';
 export const metadata: Metadata = {
   title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율 | calculatorhost',
   description:
-    '2026년 종합부동산세 계산기. 주택수·공정시장가액을 입력해 종부세를 계산하고, 1세대1주택·공정비율·세율 등 할인을 자동 적용. 무료.',
+    '2026년 종합부동산세 계산기. 주택수·공정시장가액을 입력해 종부세를 계산하고, 1세대1주택·공정비율·세율 등 할인을 자동 적용. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   alternates: { canonical: URL },
   openGraph: {
     title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율',

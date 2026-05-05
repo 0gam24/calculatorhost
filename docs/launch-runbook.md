@@ -1,82 +1,299 @@
 # Day 0 배포 런북 (launch-runbook)
 
-> **Status**: 활성 문서
-> **Last updated**: 2026-05-04
-> **관계 문서**: CLAUDE.md "배포 체크리스트", .claude/reports/launch-checklist-YYYY-MM-DD.md
+> **Status**: 활성 문서  
+> **Last updated**: 2026-05-04  
+> **Phase**: YORO+TDD Phase L (자동화 강화)  
+> **관계 문서**: CLAUDE.md "배포 체크리스트", scripts/audit-adsense.mjs, scripts/launch-checklist.mjs
 
 ## 개요
 
-calculatorhost.com Day 0 배포를 위한 단계별 실행 가이드. `npm run launch:checklist` 로 자동화된 8개 항목과 운영자 5개 수동 항목을 순차 진행.
+calculatorhost.com 정식 발사(Day 0) 운영 절차서. 3단계 자동화:
+
+1. **`npm run audit:adsense`** — AdSense 정책 100% 검증 (계정 정지 위험 사전 차단)
+2. **`npm run launch:checklist`** — 8개 자동 점검 (배포 기술 기반 확보)
+3. **수동 5개 확인** — 클라우드·검색엔진·도메인 설정 (운영자 15분)
 
 ---
 
-## Phase 1: 자동 점검 (npm run launch:checklist)
+## Day -1: 최종 빌드 (배포 2-3시간 전)
+
+### Step 1: 로컬 빌드
+```bash
+npm run build
+npm run typecheck
+npm run lint
+```
+예상: ✅ 모두 통과
+
+---
+
+## Day 0: 배포 당일
+
+### Step 2: AdSense 정책 감사 (필수)
+```bash
+npm run audit:adsense
+```
+
+**출력**: `.claude/reports/adsense-audit-YYYY-MM-DD.md`
+
+**판정 기준**:
+- 🚨 계정 정지 리스크 **0건** (필수) → 즉시 수정
+- ❌ 정책 위반 **0건** (필수) → 면책조항 추가 또는 표현 순화
+- ⚠️ 경고 (무관) → 모니터링만
+
+**실패 원인별 조치**:
+| 증상 | 원인 | 해결 |
+|---|---|---|
+| 페이지당 5개+ 광고 | MAX_ADS_PER_PAGE=4 초과 | 슬롯 1개 제거 (우선순위: INFEED/ANCHOR) |
+| 정책 페이지에 광고 | /privacy 등에 AdSlot 배치 | 해당 페이지에서 광고 컴포넌트 제거 |
+| "투자 권유" 금칙어 | 면책조항 없음 | "본 계산기는 일반 정보용이며..." 추가 |
+| 슬롯 중복 사용 | slot="ad-1" 다중 페이지 | 각 슬롯 이름 고유화 (slot="ad-{pageId}-1") |
+
+**재확인 루프**:
+```bash
+# 수정 후
+npm run audit:adsense  # 통과까지 반복
+```
+
+---
+
+### Step 3: 배포 점검 목록 (npm run launch:checklist)
 
 **실행**: 로컬 개발 환경
 **소요 시간**: 4~8분
 
 ```bash
-cd calculatorhost_repo
 npm run launch:checklist
 ```
 
+**출력**: 콘솔 + `.claude/reports/launch-checklist-YYYY-MM-DD.md`
+
 ### 자동 점검 8개 항목
 
-| # | 항목 | 실패 시 조치 | 예상 소요 |
+| # | 항목 | 결과 | 실패 시 조치 |
 |---|---|---|---|
-| 1 | **ads.txt 확인** | public/ads.txt에 실제 pub-ID 입력 (placeholder 제거) | 1분 |
-| 2 | **.env.production** | Cloudflare Pages 대시보드에서 생성 (로컬 push 금지) | 0.5분 |
-| 3 | **sitemap.xml** | `npm run prebuild` 실행 → public/sitemap.xml 생성 | 2분 |
-| 4 | **OG 이미지 (5개+)** | `npm run gen-og` 실행 → 모든 계산기 페이지 OG 이미지 생성 | 3분 |
-| 5 | **정책 페이지** | src/app/{privacy,terms,contact}/page.tsx 존재 확인 | 0 (이미 PASS) |
-| 6 | **JSON-LD 커버리지** | 계산기 페이지 헤더에 구조화 데이터 추가 | Phase 2 |
-| 7 | **Canonical URLs** | sitemap 생성 후 자동 검증 | 자동 |
-| 8 | **npm run audit:adsense** | AdSense 정책 위반 항목 수정 | 1~5분 |
+| 1 | **ads.txt (pub-ID 실값)** | ✅/❌ | public/ads.txt: placeholder (7830821732287404) 제거 → ca-pub-{16자리} 입력 |
+| 2 | **.env.production 존재** | ✅/⚠️ | Cloudflare Pages 환경변수 설정 (로컬 파일 커밋 금지) |
+| 3 | **sitemap.xml 존재** | ✅/❌ | npm run build 재실행 (public/sitemap.xml 자동 생성) |
+| 4 | **OG 이미지 (5개+)** | ✅/⚠️ | 초기 5개 이상 검출 (전체 53개는 단계적 생성 가능) |
+| 5 | **정책 페이지** | ✅/❌ | src/app/{privacy,terms,contact}/page.tsx 존재 확인 |
+| 6 | **JSON-LD 샘플 커버리지** | ✅/⚠️ | SoftwareApplication, FAQPage, BreadcrumbList 샘플 10개 검사 |
+| 7 | **Canonical URLs** | ✅/⚠️ | sitemap 형식 검증 (https:// + calculatorhost.com) |
+| 8 | **AdSense 정책 감사** | ✅/❌ | Step 2 (npm run audit:adsense) 재실행 |
 
-### 체크리스트 FAIL 발생 시
+### 자동 점검 통과 기준
 
-1. `.claude/reports/launch-checklist-YYYY-MM-DD.md` 열기
-2. 실패 항목 확인 및 조치
-3. `npm run launch:checklist` 재실행
+```
+✅ GO: 모든 항목 PASS (또는 WARN만 가능)
+❌ NO-GO: ❌ 실패 항목 존재 → 위 조치 후 재실행
+```
 
----
-
-## Phase 2: 운영자 수동 확인 (15~20분)
-
-자동 점검 통과 후 진행. 5개 항목:
-
-1. **Cloudflare Pages 환경변수**: NEXT_PUBLIC_ADSENSE_CLIENT (3분)
-2. **Google Search Console**: sitemap.xml 제출 (5분)
-3. **Google Analytics 4**: Web Vitals 연결 (5분)
-4. **DNS 스위치**: calculatorhost.com → Cloudflare Pages (5분)
-5. **기존 사이트 삭제**: Trend Money Lab 호스팅 정리 (2분)
+**재확인**:
+```bash
+npm run launch:checklist  # 모두 PASS/WARN까지 반복
+```
 
 ---
 
-## Phase 3: 최종 검증 (3~5분)
+### Step 4: 운영자 수동 확인 (15~20분)
 
-- 신규 calculatorhost.com 페이지 로드 확인
-- 광고 슬롯 표시 확인
-- Google Analytics 트래픽 표시
-- Search Console 사이트맵 수집 상태
-- 계산기 정상 작동
-- Lighthouse 90+
+자동 점검 통과 후 실행. 리포트의 "## 👤 운영자 확인 사항" 섹션을 따라 진행:
+
+#### 1. Cloudflare Pages 환경변수 설정 (3분)
+```
+경로: Cloudflare Dashboard → calculatorhost 프로젝트 → Settings → Environment variables
+확인 항목:
+  ☐ NEXT_PUBLIC_ADSENSE_CLIENT=ca-pub-{16자리} (실제 ID)
+  ☐ NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD={10자리}
+  ☐ NEXT_PUBLIC_ADSENSE_SLOT_RECTANGLE={10자리}
+  ☐ NEXT_PUBLIC_ADSENSE_SLOT_SKYSCRAPER={10자리}
+  ☐ NEXT_PUBLIC_ADSENSE_SLOT_INFEED={10자리}
+  ☐ NEXT_PUBLIC_ADSENSE_SLOT_ANCHOR={10자리}
+```
+
+#### 2. Google Search Console 등록 (5분)
+```
+경로: search.google.com → 검색결과 → 속성 추가
+확인 항목:
+  ☐ 도메인 "calculatorhost.com" 속성 등록
+  ☐ DNS/HTML 태그 인증 완료
+  ☐ sitemap.xml 제출 (Sitemaps 섹션)
+  ☐ robots.txt 제출 (robots.txt 테스터)
+```
+
+#### 3. Google Analytics 4 (5분)
+```
+경로: analytics.google.com → calculatorhost 계정
+확인 항목:
+  ☐ GA ID (G-XXXXXXXXXX) 존재 및 활성화
+  ☐ Web Vitals 커스텀 이벤트 활성화
+  ☐ 실시간 사용자 추적 작동 여부 (페이지 방문 시 확인)
+```
+
+#### 4. DNS 스위치 (5분)
+```
+경로: Cloudflare Dashboard → DNS Records
+확인 항목:
+  ☐ CNAME 레코드 추가: calculatorhost.com → {project-name}.pages.dev
+  ☐ 기존 A/AAAA 레코드 제거 (WordPress 등)
+  ☐ TTL 60초 (빠른 전환)
+  ☐ 2-10분 후 dig calculatorhost.com 로 CNAME 확인
+```
+
+#### 5. 기존 사이트 정리 (2분)
+```
+확인 항목:
+  ☐ WordPress/Trend Money Lab 백업 완료
+  ☐ 기존 호스팅 안전 보관 또는 삭제
+```
 
 ---
 
-## 배포 예상 소요 시간
+### Step 5: 최종 배포 판정 + 푸시
 
-| 항목 | 소요 |
-|---|---|
-| 자동 점검 | 4~8분 |
-| 운영자 수동 | 15~20분 |
-| 최종 검증 | 3~5분 |
-| **합계** | **22~33분** |
+**체크리스트**:
+```
+✅ Step 2 (audit:adsense): PASS (계정 정지 리스크 0건, 정책 위반 0건)
+✅ Step 3 (launch:checklist): PASS (8개 항목 모두 PASS/WARN)
+✅ Step 4 (운영자 수동): 5개 항목 모두 체크됨
+  =
+🚀 GO: 배포 진행
+```
+
+**배포 명령**:
+```bash
+git push origin main
+# → GitHub Actions 자동 트리거
+# → Cloudflare Pages 빌드 (2-5분)
+# → https://calculatorhost.com 라이브
+```
+
+**배포 후 최종 검증 (3~5분)**:
+- ☐ calculatorhost.com 페이지 로딩 (모바일/데스크톱)
+- ☐ 광고 슬롯 표시 (최소 2개 슬롯)
+- ☐ Google Analytics 실시간 사용자 추적
+- ☐ Search Console 색인 상태 (Index Coverage)
+- ☐ 계산기 기본 기능 작동 (연봉/대출/양도소득세 등)
+- ☐ Lighthouse 성능 >85 (초기값)
+
+---
+
+## 소요 시간 예측
+
+| 단계 | 항목 | 소요 |
+|---|---|---|
+| Day -1 | 로컬 빌드 | 2~3분 |
+| Day 0 | **Step 2**: npm run audit:adsense | 1~5분 (or 재수정) |
+| | **Step 3**: npm run launch:checklist | 4~8분 |
+| | **Step 4**: 운영자 수동 확인 | 15~20분 |
+| | **Step 5**: 최종 검증 | 3~5분 |
+| | **배포 (push)** | 2~5분 (Cloudflare Pages 자동) |
+| | **배포 후 검증** | 3~5분 |
+| **합계** | | **30~51분** |
+
+**TIP**: 미리 Cloudflare/Google 계정에 로그인하고 탭을 열어두면 Step 4 시간 단축 가능 (15→10분)
+
+---
+
+## 배포 후: 첫 주 모니터링 (Day 1-7)
+
+### Day 1: 라이브 상태 확인
+```bash
+# 콘솔에서 AdSense 에러 확인
+calculatorhost.com 방문 (모바일/PC)
+→ Console (F12) : "Uncaught" 에러 없음
+→ 광고 슬롯 최소 1개 표시
+→ 계산기 입력 → 결과 즉시 반영
+```
+
+### Day 2-3: 기초 메트릭 수집
+| 지표 | 측정처 | 기대값 | 판정 |
+|---|---|---|---|
+| 페이지뷰(PV) | GA4 | >10 | 초기 낮음 (크롤링중) |
+| Lighthouse | PageSpeed | ≥85 | 초기값 |
+| 광고 Impressions | AdSense | >5 | 학습중 |
+| Cloudflare 요청 | Analytics | >100 | 정상 |
+
+### Day 5-7: 조정 필요 여부 판단
+- **CLS > 0.1**: 광고 min-height 재점검 (design-system.md §6)
+- **LCP > 2.5s**: Cloudflare Cache Rules 검토 또는 이미지 최적화
+- **광고 미표시**: AdSense 대시보드 → "게시자" → "사이트" 활성화 여부 재확인
+- **eCPM < $0.50**: 초기 학습 단계 (1-2주 후 정상화)
+
+---
+
+## 비상 절차: AdSense 정책 경고 수신 시
+
+### 즉시 (1시간 이내)
+1. AdSense 이메일 읽기 → 위반 사항 파악
+2. `npm run audit:adsense` 실행 → 자동 감지 여부 확인
+3. 위반 내용이 audit 리포트에 없으면 → **AdSense 대시보드 직접 확인** (정책 변경 가능)
+4. 광고 임시 비활성화:
+   ```
+   Cloudflare Pages → Environment variables
+   NEXT_PUBLIC_ADSENSE_DISABLED=true
+   → 배포 (2-5분 소요)
+   ```
+
+### 근본 원인 파악 (1-2시간)
+- 최근 콘텐츠 추가 후 위반? → `npm run audit:adsense` 재확인
+- 광고 단위 설정 오류? → AdSense 대시보드 광고 단위 확인
+- 정책 업데이트? → support.google.com/adsense 공식 문서 확인
+
+### 수정 + 재배포 (2-4시간)
+```bash
+# 1. 원인 제거 (콘텐츠/광고/설정)
+# 2. npm run audit:adsense 통과 확인
+git add .
+git commit -m "fix(adsense): {위반 내용} 수정"
+git push origin main
+# 3. AdSense 대시보드 → "재검수 신청" (있으면)
+```
+
+---
+
+## Phase 4: Lighthouse CI 성능 기준선 수립 (선택)
+
+초기 배포 후, 운영자는 첫 번째 **성공한 main 푸시** 측정값을 기준선으로 등록할 수 있습니다.
+
+### 절차
+1. 로컬 또는 GitHub Actions에서 모든 자동 점검 통과 후 main에 병합
+2. `.github/workflows/lighthouse.yml` 자동 실행 (Ubuntu 환경)
+3. Actions 탭 → "Lighthouse CI" 실행 로그 확인
+4. Artifact: `lighthouse-baseline` 다운로드 (자동 저장됨)
+5. 이후 PR은 이 baseline과 자동 비교
+
+### 워크플로우 트리거 옵션
+
+| 트리거 | 자동 실행 | baseline 저장 |
+|---|---|---|
+| PR 생성 (← main으로) | ✅ | ❌ (baseline과 비교만) |
+| main에 머지 완료 | ✅ | ✅ (새 baseline 저장) |
+| 수동 dispatch | ✅ (GitHub UI) | ❌ |
+
+**참고**: Windows EPERM 한계로 로컬 Lighthouse는 WSL/Docker 권장. GitHub Actions는 Ubuntu 자동 사용.
+
+### 성능 판정 기준 (.lighthouserc.json)
+
+| 지표 | 최소값 | 기준 |
+|---|---|---|
+| Performance | 85 | warn (배포 차단 X) |
+| Accessibility | 90 | warn |
+| Best Practices | 85 | warn |
+| SEO | 90 | warn |
+| **LCP (Core Web Vitals)** | ≤ 2.5s | **error** (차단) |
+| **CLS** | ≤ 0.1 | **error** (차단) |
+| **INP** | ≤ 200ms | warn |
+
+**CWV 심각 악화** (LCP +500ms, CLS +0.05 등) 시:
+→ `lighthouse-profiler` 에이전트 호출: `문제 페이지를 profiler가 분석해서 원인과 해결책 제시`
 
 ---
 
 ## 참고 문서
 
-- docs/architecture.md §11
+- docs/architecture.md §11 배포 환경
 - CLAUDE.md "배포 체크리스트"
 - .claude/reports/launch-checklist-YYYY-MM-DD.md
+- .github/workflows/lighthouse.yml (트리거 정의)
+- .lighthouserc.json (성능 기준)

@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '양도소득세 절세 7가지 방법 2026 | calculatorhost',
   description:
-    '주택·토지 양도 전 1세대1주택 비과세·장기보유공제·일시적 2주택 특례 등 절세 7가지 방법 정리.',
+    '주택·토지 양도 전 1세대1주택 비과세·장기보유공제·일시적 2주택 특례 등 절세 7가지 방법 정리. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
   keywords: ['양도세 절세', '양도소득세 절세', '1세대1주택 비과세', '장기보유특별공제', '일시적 2주택', '토지 양도세', '농지 자경 감면'],
   alternates: { canonical: URL },
   openGraph: {
@@ -212,6 +212,15 @@ export default function CapitalGainsTaxTipsPage() {
                   유예</strong>되는 시기가 있습니다. 2024년 5월~ 한시 유예 기간 동안 매도하면 일반세율
                   적용 가능. 정책 변경 시기 모니터링 필수.
                 </p>
+                <div className="rounded-lg bg-bg-raised p-4 text-sm">
+                  <strong className="text-text-primary block mb-2">📅 다주택 중과 유예 타임라인</strong>
+                  <ul className="text-text-secondary space-y-1">
+                    <li>• 2018~2021: 조정대상지역 2주택 이상 중과 (기본세율 +20/30%)</li>
+                    <li>• 2022: 부분 완화 (신규 취득분만 중과 유예)</li>
+                    <li>• 2024.5~: 보유 다주택 중과 한시 유예 개시 (추가 정책 발표 주시)</li>
+                    <li>• 유예 만료 예정: 기재부 공지 기준 별도 확인 필수</li>
+                  </ul>
+                </div>
               </section>
 
               <section className="space-y-4">

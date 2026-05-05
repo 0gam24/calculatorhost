@@ -14,7 +14,7 @@ paths:
 ```ts
 export const metadata = {
   title: "...",        // 60자 이내 (template으로 suffix 자동 추가 금지 — 페이지마다 직접 작성)
-  description: "...",  // 100~155자 (단문 금지, 첫 문장에 결론)
+  description: "...",  // 80~155자 (단문 금지, 첫 문장에 결론). 한글 80자 ≈ Google SERP 영문 160자 잘림 한계.
   alternates: { canonical: "https://calculatorhost.com/<path>/" }, // trailing slash 필수
   openGraph: { images: ['/og-default.png'], ... },                  // images 필수
   twitter: { card: 'summary_large_image', images: ['/og-default.png'] },

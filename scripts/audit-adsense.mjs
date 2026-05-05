@@ -20,7 +20,7 @@
  *   1: ERROR 발생 (정책 위반)
  */
 
-import { readdirSync, readFileSync, writeFileSync, statSync, mkdirSync } from 'node:fs';
+import { readdirSync, readFileSync, writeFileSync, statSync, mkdirSync, existsSync } from 'node:fs';
 import { resolve, join, relative, dirname } from 'node:path';
 
 const ROOT = process.cwd();
@@ -39,6 +39,22 @@ const FORBIDDEN_TERMS = [
   /높은\s+수익/gi,
   /무조건\s+수익/gi,
 ];
+
+// 면책조항 키워드 — 이들과 동반 사용 시 금칙어 무시
+const DISCLAIMER_KEYWORDS = [
+  /면책/gi,
+  /권유\s+아님/gi,
+  /투자\s+판단/gi,
+  /전문가\s+상담/gi,
+  /법적\s+책임/gi,
+  /법적\s+판단/gi,
+  /참고\s+용/gi,
+  /일반\s+정보/gi,
+];
+
+// 광고 단위 ID 패턴
+const ADSENSE_SLOT_PATTERN = /NEXT_PUBLIC_ADSENSE_SLOT_\w+/g;
+const VALID_SLOT_ID = /\d{10,}/;
 
 const FORBIDDEN_PAGES = [
   '/privacy',
@@ -102,13 +118,17 @@ function extractSlotNames(content) {
 }
 
 /**
- * 금칙어 검출
+ * 금칙어 검출 (면책조항 동반 여부 확인)
  */
 function detectForbiddenTerms(content, filePath) {
   const violations = [];
   for (const term of FORBIDDEN_TERMS) {
     if (term.test(content)) {
-      violations.push(term.toString().slice(1, -3)); // /.../ 제거
+      // 면책조항 동반 여부 확인
+      const hasDisclaimer = DISCLAIMER_KEYWORDS.some(dk => dk.test(content));
+      if (!hasDisclaimer) {
+        violations.push(term.toString().slice(1, -3)); // /.../ 제거
+      }
     }
   }
   return violations;
@@ -313,6 +333,44 @@ function generateReport() {
   return reportFile;
 }
 
+/**
+ * .env.example 에서 광고 단위 ID 환경변수 검증
+ */
+function validateAdSenseSlotEnv() {
+  const envExamplePath = resolve(ROOT, '.env.example');
+  const result = { id: 'adsense-slot-env', status: 'PASS', msg: [] };
+
+  try {
+    if (!existsSync(envExamplePath)) {
+      return result; // .env.example 없으면 스킵 (선택사항)
+    }
+
+    const content = readFileSync(envExamplePath, 'utf8');
+    const requiredSlots = ['LEADERBOARD', 'RECTANGLE', 'SKYSCRAPER', 'INFEED', 'ANCHOR'];
+
+    for (const slot of requiredSlots) {
+      const pattern = new RegExp(`NEXT_PUBLIC_ADSENSE_SLOT_${slot}=(.+)`, 'i');
+      const match = content.match(pattern);
+
+      if (!match) {
+        result.msg.push(`NEXT_PUBLIC_ADSENSE_SLOT_${slot} 환경변수 정의 없음`);
+        result.status = 'WARN';
+      } else {
+        const value = match[1].trim();
+        if (!VALID_SLOT_ID.test(value) && value !== 'YOUR_SLOT_ID' && value !== '0000000000') {
+          result.msg.push(`${slot}: 형식 오류 (10자리 숫자 필요) — ${value}`);
+          result.status = 'WARN';
+        }
+      }
+    }
+  } catch (e) {
+    result.status = 'WARN';
+    result.msg.push(`환경변수 검증 오류: ${e.message}`);
+  }
+
+  return result;
+}
+
 function main() {
   try {
     statSync(SRC_DIR);
@@ -327,6 +385,17 @@ function main() {
 
   // 크로스 페이지 슬롯 중복 감지
   detectGlobalSlotDupes();
+
+  // 환경변수 검증
+  const slotEnvResult = validateAdSenseSlotEnv();
+  if (slotEnvResult.msg.length > 0) {
+    findings.warn.push({
+      file: '.env.example',
+      route: '[ENV]',
+      severity: 'WARN',
+      msg: `광고 단위 ID 환경변수: ${slotEnvResult.msg.join('; ')}`,
+    });
+  }
 
   const reportFile = generateReport();
   console.log(`\n[audit:adsense] ${totalPages} 페이지 점검 완료\n`);

@@ -20,7 +20,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '2026 세금 캘린더 1월~12월 | calculatorhost',
   description:
-    '2026년 월별 세금 납부 일정. 연말정산·종소세·재산세·종부세·자동차세 D-day 한눈에.',
+    '2026년 월별 세금 납부 일정. 연말정산·종소세·재산세·종부세·자동차세 D-day 한눈에. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
   keywords: [
     '세금 캘린더',
     '2026 세금 일정',
@@ -479,12 +479,14 @@ export default function TaxCalendar2026Page() {
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
-                  <strong>참고</strong>:{' '}
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>{' '}
+                  <strong>공식 출처</strong>:{' '}
+                  <a href="https://www.hometax.go.kr/websquare/web/personalTaxInfoUL.do#MENUID_1000000001" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스 연말정산 간소화 서비스</a>{' '}
                   ·{' '}
-                  <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a>{' '}
+                  <a href="https://www.wetax.go.kr/contents/index.html" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스 납부안내</a>{' '}
                   ·{' '}
-                  <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>
+                  <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cbIdx=1000&pageNum=1&searchCondition=on&searchKeyword=%EC%84%B8%EA%B8%88%20%EC%9D%BC%EC%A0%95&mi=10806&searchkey=&infoCd=&infoCd2=" target="_blank" rel="noopener noreferrier nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 세금신고일정</a>{' '}
+                  ·{' '}
+                  <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>

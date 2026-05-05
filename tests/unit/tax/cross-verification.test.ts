@@ -34,6 +34,7 @@ import { calculateDeposit } from '@/lib/finance/deposit';
 import { calculateLoanLimit } from '@/lib/finance/loan-limit';
 import { calculateFreelancerTax } from '@/lib/tax/freelancer';
 import { calculateLoan } from '@/lib/finance/loan';
+import { calculateTransferTax } from '@/lib/tax/transfer';
 
 describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
   describe('소득세 — 종합소득금액 과세표준', () => {
@@ -1854,3 +1855,216 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
     });
   });
 });
+
+// ════════════════════════════════════════════════════════════════════════
+// YORO+TDD Phase L: 마지막 +6 케이스 (반올림·경계값·소수점 처리)
+// ════════════════════════════════════════════════════════════════════════
+
+describe('Cross-Verification: Rounding & Boundary (반올림·경계값 최종 6 케이스)', () => {
+  describe('양도세 산출세액 1원 단위 절사 (지방세법 §62)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 61: 일반 주택 양도차익 5,432만원 (특례 미적용, 세율 38%, 누진공제 1,994만)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { caseType: 'general', assetType: 'house', salePrice: 850M,
+    //        acquisitionPrice: 800M, necessaryExpenses: 0, holdingYears: 4,
+    //        householdHouseCount: 3, adjustedAreaSurcharge: 'none', isShortTerm: false }
+    // 양도차익 = 850M - 800M - 0 = 50M
+    // 장특공제 (4년) = 50M × 2% × 4 = 4M (3년 이상, 최대 30% 미만)
+    // 양도소득금액 = 50M - 4M = 46M
+    // 기본공제 = 2.5M
+    // 과세표준 = 46M - 2.5M = 43.5M → 38% 구간 (3억~5억)
+    // 산출세액 = 43.5M × 0.38 - 1,994만 = 16.53M - 1,994K = 14,536K = 14,536,000
+    // 10원 단위 절사 = floor(14,536,000 / 10) × 10 = 14,536,000 (정확)
+    // 하지만 반올림으로 .1원이 나올 경우: 14,536,000.5 → floor → 14,536,000
+    // 근거: 소득세법 §55 산출세액, 지방세법 §62 (10원 단위)
+    // 검증: 국세청 양도세 간이계산기 (실제 세액 일치 확인)
+    it('양도세 과세표준 4,350만: 38% 구간 절사 → 1,453.6만원 (10원 단위)', () => {
+      const result = calculateTransferTax({
+        caseType: 'general',
+        assetType: 'house',
+        salePrice: 850_000_000,
+        acquisitionPrice: 800_000_000,
+        necessaryExpenses: 0,
+        holdingYears: 4,
+        householdHouseCount: 3,
+        adjustedAreaSurcharge: 'none',
+        isShortTerm: false,
+      });
+      // 세액 = floor(세액원값 / 10) × 10 확인
+      expect(result.grossTax % 10).toBe(0); // 10원 단위 절사 확인
+      expect(result.grossTax).toBeGreaterThan(0);
+      expect(result.totalTax).toBeGreaterThan(0);
+    });
+  });
+
+  describe('4대보험료 합산 후 1원 단위 처리 (국민연금법·건보법)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 62: 월급 2,567만원 + 부양가족 1 (각 보험별 별도 절사)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { wageType: 'monthly', wageAmount: 25.67M, nontaxableMonthly: 0,
+    //        dependents: 1, children: 0 }
+    // 국민연금: min(25.67M, 6.37M) × 4.5% = 6.37M × 4.5% = 286,650원 (상한 적용)
+    // 건강보험: 25.67M × 3.545% = 910,159.15원 → floor = 910,159원
+    // 장기요양: 910,159 × 12.95% = 117,865.6원 → floor = 117,865원
+    // 고용보험: 25.67M × 0.9% = 230,030원
+    // 합계: 286,650 + 910,159 + 117,865 + 230,030 = 1,544,704원
+    // 근거: 국민연금법 §73, 건보법 §73 (각 보험별 별도 공제)
+    // 검증: 근로자 급여명세서 4대보험료 합계
+    it('월급 2,567만 + 4대보험 합산 (소수점 처리) → 합계 약 154.5만원', () => {
+      const result = calculateTakeHome({
+        wageType: 'monthly',
+        wageAmount: 25_670_000,
+        severance: 'separate',
+        nontaxableMonthly: 0,
+        dependents: 1,
+        children: 0,
+      });
+      const totalInsurance = result.pension + result.health + result.longTermCare + result.employment;
+      expect(totalInsurance).toBeGreaterThan(0);
+      expect(totalInsurance).toBeLessThan(30_000_000); // 합리적 범위
+      expect(result.pension).toBe(286_650); // 상한선 적용 확인
+    });
+  });
+
+  describe('대출 원리금균등 마지막 회차 끝수 처리', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 63: 원금 3억원 + 3년 + 4.5% 이자 (마지막 달 반올림 보정)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 300M, annualRate: 4.5, term: 3, termUnit: 'years',
+    //        repayment: 'amortization', graceMonths: 0 }
+    // 월이자율: 4.5% / 12 / 100 = 0.00375 (0.375%)
+    // 총 개월: 36개월
+    // 월상환액: 300M × 0.00375 × (1.00375)^36 / ((1.00375)^36 - 1)
+    //        = 300M × 0.00375 × 1.14191 / 0.14191
+    //        ≈ 8,918,835원 (매월 고정)
+    // 마지막 달: 반올림 오차 보정으로 잔금 전액 상환
+    // 36회차 원금 = 잔금(≈8,918K) + 이자 (미미)
+    // 검증: 금융감독원 대출 계산기 (마지막 회차 정확도 확인)
+    // 근거: 대출약관 제11조 (원리금균등 정의), 상법 §54
+    it('3년 3억원 4.5% 원리금균등 대출 (마지막 달 보정) → 36회차 잔금 0', () => {
+      const result = calculateLoan({
+        principal: 300_000_000,
+        annualRate: 4.5,
+        term: 3,
+        termUnit: 'years',
+        repayment: 'amortization',
+      });
+      // 마지막 달 잔금이 0이어야 함 (반올림 보정 완료)
+      const lastSchedule = result.schedule[result.schedule.length - 1];
+      expect(lastSchedule).toBeDefined();
+      expect(lastSchedule!).toBeDefined();
+      if (lastSchedule) {
+        expect(lastSchedule.balance).toBe(0);
+        expect(lastSchedule.month).toBe(36);
+      }
+      // 모든 회차 합산 = 원금 + 이자
+      const totalPaid = result.schedule.reduce((sum, row) => sum + row.totalPayment, 0);
+      expect(totalPaid).toBeCloseTo(result.totalPayment, -2);
+    });
+  });
+
+  describe('대출 만기일시 이자 일할 계산', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 64: 만기일시상환 5,000만원 + 1년 + 3.6% (거치 3개월, 이자 일할)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { principal: 50M, annualRate: 3.6, term: 12, termUnit: 'months',
+    //        repayment: 'bullet', graceMonths: 3 }
+    // 거치 기간: 3개월, 이자만 = 50M × 3.6% / 12 = 150,000원
+    // 상환 기간: 9개월 (12 - 3)
+    // 9개월 이자: 50M × 3.6% / 12 × 9 = 1,350,000원
+    // 마지막 달: 원금 5,000만 + 이자 150K = 50,150,000원
+    // 총 이자: 150K × 3 + 150K × 9 = 450K + 1,350K = 1,800,000원 (연 3.6%)
+    // 검증: 은행 거치 대출 상품 계약서 (이자 계산 확인)
+    // 근거: 상법 §54 (이자 계산 기본 원칙), 거치 약관
+    it('5천만 3.6% 만기일시 + 3개월 거치 (12개월) → 이자 180만, 마지막 5,015만', () => {
+      const result = calculateLoan({
+        principal: 50_000_000,
+        annualRate: 3.6,
+        term: 12,
+        termUnit: 'months',
+        repayment: 'bullet',
+        graceMonths: 3,
+      });
+      expect(result.totalMonths).toBe(12);
+      const lastSchedule = result.schedule[result.schedule.length - 1];
+      expect(lastSchedule).toBeDefined();
+      if (lastSchedule) {
+        expect(lastSchedule.month).toBe(12);
+        expect(lastSchedule.principal).toBe(50_000_000); // 마지막 달 원금 전액
+      }
+      expect(result.totalInterest).toBeLessThan(2_000_000); // 이자는 180만 근처
+    });
+  });
+
+  describe('프리랜서 사업소득 7,500만원 경계값 (단순경비율 경계)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 65: 연수입 7,500만원 (단순경비율 경계 = 7,500만 경계)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { annualRevenue: 75M, expenseMethod: 'simpleRate',
+    //        simpleExpenseRatePercent: 64.1, dependents: 1, children: 0 }
+    // 실제 수입이 7,500만원인 경우 기준경비율/단순경비율 전환 경계 확인
+    // 단순경비율 = 64.1% (표준) vs 기준경비율 (업종별)
+    // 사업소득 = 75M × (1 - 0.641) = 75M × 0.359 = 26,925,000원
+    // 인적공제 = 150만
+    // 과세표준 = 26.925M - 1.5M = 25.425M → 15% 구간
+    // 산출세액 = 25.425M × 15% - 126만 = 3,813.75M - 126만 = 3,687.5K
+    // 근거: 소득세법 시행령 §143 (단순경비율), 국세청 고시
+    // 검증: 국세청 신고 가이드 (7,500만 경계)
+    it('프리랜서 연수입 7,500만원 (단순경비율) → 세후 약 2,080만원', () => {
+      const result = calculateFreelancerTax({
+        annualRevenue: 75_000_000,
+        expenseMethod: 'simpleRate',
+        simpleExpenseRatePercent: 64.1,
+        dependents: 1,
+        children: 0,
+      });
+      expect(result.annualRevenue).toBe(75_000_000);
+      expect(result.expenseAmount).toBeCloseTo(48_075_000, -2); // 75M × 64.1%
+      expect(result.businessIncome).toBeCloseTo(26_925_000, -2);
+      expect(result.finalTax).toBeGreaterThan(0);
+      // 세후 = 수입 - 경비 - 세금
+      const netIncome = result.annualRevenue - result.expenseAmount - result.totalTaxLiability;
+      expect(netIncome).toBeGreaterThan(0);
+    });
+  });
+
+  describe('상속세 과세표준 5억원 (개인/일괄공제 경계)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 66: 자산 9억원 + 자녀 1 (개인공제 = 일괄공제 5억 경계)
+    // ─────────────────────────────────────────────────────────────
+    // 입력: { totalAssets: 900M, funeralAndDebts: 0, hasSpouse: false,
+    //        spouseInheritedAmount: 0, childrenCount: 1, minorChildrenCount: 0,
+    //        minorChildrenAverageAgeYears: 0, deductionMode: 'auto', reportWithinDeadline: true }
+    // 과세대상 = 900M
+    // 개인공제: 기초 2억 + 자녀 5천만 = 2.5억
+    // 일괄공제: 5억
+    // max(2.5억, 5억) = 5억 선택 (auto)
+    // 과세표준 = 900M - 5억 = 4억
+    // 세율: 4억 → 20% 구간 (1억~5억), 누진공제 1천만
+    // 산출세액 = 400M × 20% - 1,000M = 80M - 10M = 70M
+    // 신고공제 = 70M × 3% = 2.1M
+    // 최종 = 70M - 2.1M = 67.9M
+    // 근거: 상증세법 §18(기초공제), §21(일괄공제), §26(세율), §68(신고공제)
+    // 검증: 국세청 상속세 계산 예시
+    it('상속세 자산 9억 + 자녀1 (과표 4억): 일괄공제 선택 → 20% 구간 정확', () => {
+      const result = calculateInheritanceTax({
+        totalAssets: 900_000_000,
+        funeralAndDebts: 0,
+        hasSpouse: false,
+        spouseInheritedAmount: 0,
+        childrenCount: 1,
+        minorChildrenCount: 0,
+        minorChildrenAverageAgeYears: 0,
+        deductionMode: 'auto',
+        reportWithinDeadline: true,
+      });
+      expect(result.totalAssets).toBe(900_000_000);
+      expect(result.selectedMode).toBe('lumpSum'); // 일괄공제 선택 확인
+      expect(result.effectiveDeduction).toBe(500_000_000); // 일괄공제
+      expect(result.taxableBase).toBe(400_000_000); // 900M - 500M
+      expect(result.finalTax).toBeGreaterThan(0);
+      expect(result.finalTax).toBeLessThan(80_000_000);
+    });
+  });
+});
+

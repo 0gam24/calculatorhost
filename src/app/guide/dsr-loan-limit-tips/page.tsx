@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: 'DSR 대출한도 늘리는 5가지 방법 2026 | calculatorhost',
   description:
-    '2026년 스트레스 DSR 풀 적용 환경에서 대출한도를 확보하는 신용대출 상환·소득 합산 등 5가지 방법.',
+    '2026년 스트레스 DSR 풀 적용 환경에서 대출한도를 확보하는 신용대출 상환·소득 합산 등 5가지 방법. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
   keywords: ['DSR', '대출한도', '주담대', '스트레스 DSR', '대출 늘리는 법', '2026 DSR'],
   alternates: { canonical: URL },
   openGraph: {

@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
   description:
-    '같은 연봉 5천만 원 기준 프리랜서와 일반직의 실수령액 차이. 4대보험·세금·경비 비교.',
+    '같은 연봉 5천만 원 기준 프리랜서와 일반직의 실수령액 차이. 4대보험·세금·경비 비교. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
   keywords: ['프리랜서 실수령액', '프리랜서 vs 직장인', '프리랜서 4대보험', '프리랜서 종합소득세', '사업소득 vs 근로소득', '3.3% 원천징수'],
   alternates: { canonical: URL },
   openGraph: {

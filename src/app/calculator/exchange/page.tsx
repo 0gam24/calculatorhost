@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
+const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
+  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
+});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -24,7 +28,7 @@ const URL = 'https://calculatorhost.com/calculator/exchange/';
 export const metadata: Metadata = {
   title: '환율·환전 계산기 2026 | 스프레드·수수료 반영 | calculatorhost',
   description:
-    '환율·환전 계산기 2026. 실시간 환율 반영 한국은행 기준·스프레드·수수료까지 포함해 송금액을 계산. 주요 통화별 비교 가능. 무료.',
+    '환율·환전 계산기 2026. 실시간 환율 반영 한국은행 기준·스프레드·수수료까지 포함해 송금액을 계산. 주요 통화별 비교 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   alternates: { canonical: URL },
   openGraph: {
     title: '환율·환전 계산기 2026 — 스프레드·수수료 반영',
@@ -220,6 +224,9 @@ export default function ExchangePage() {
 
             {/* FAQ */}
             <FaqSection items={FAQ_ITEMS} />
+
+              {/* AD-4 Infeed */}
+              <InfeedAd slot="exchange-infeed" />
 
             {/* 환율 설명 */}
             <section className="mt-12 space-y-6">

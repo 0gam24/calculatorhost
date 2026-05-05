@@ -7,7 +7,7 @@ import { buildBreadcrumbJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
   title: 'calculatorhost 문의 | 오류 제보 · 기능 제안 · 광고 문의',
-  description: 'calculatorhost 계산 오류 제보, 계산기 기능 제안, 광고·파트너십 문의 등을 접수하는 공식 채널입니다. 빠른 응답을 보장합니다.',
+  description: 'calculatorhost 계산 오류 제보, 계산기 기능 제안, 광고·파트너십 문의 등을 접수하는 공식 채널입니다. 빠른 응답을 보장합니다. calculatorhost는 정확한 정보 제공을 우선합니다.',
   alternates: { canonical: 'https://calculatorhost.com/contact/' },
 };
 

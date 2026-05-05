@@ -24,7 +24,7 @@ const URL = 'https://calculatorhost.com/calculator/inflation/';
 export const metadata: Metadata = {
   title: '화폐가치 계산기 2026 | 인플레이션·실질 구매력 | calculatorhost',
   description:
-    '화폐가치 계산기 2026. 과거 금액의 현재 가치 또는 현재 금액의 미래 가치를 인플레이션 반영해 계산. 구매력 비교 분석. 무료.',
+    '화폐가치 계산기 2026. 과거 금액의 현재 가치 또는 현재 금액의 미래 가치를 인플레이션 반영해 계산. 구매력 비교 분석. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   alternates: { canonical: URL },
   openGraph: {
     title: '화폐가치 계산기 2026 — 인플레이션·실질 구매력',

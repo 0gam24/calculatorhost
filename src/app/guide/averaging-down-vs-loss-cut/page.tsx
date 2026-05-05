@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '물타기 vs 손절 vs 비중조절 비교 2026 | calculatorhost',
   description:
-    '하락장에서 물타기·손절·비중조절 3가지 전략의 의사결정 기준과 시뮬레이션.',
+    '하락장에서 물타기·손절·비중조절 3가지 전략의 의사결정 기준과 시뮬레이션. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함. 2026 업데이트.',
   keywords: ['물타기', '손절', '비중조절', '평단', '주식 전략', '코인 전략', '추매'],
   alternates: { canonical: URL },
   openGraph: {

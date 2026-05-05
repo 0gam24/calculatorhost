@@ -7,6 +7,7 @@ import { loadMyEnv } from './load-my-env.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '../src/data');
+const METADATA_FILE = path.join(DATA_DIR, 'sync-metadata.json');
 
 // .my 파일에서 키 자동 로드 (없으면 시스템 환경변수만 사용)
 loadMyEnv();
@@ -83,6 +84,41 @@ function writeDataFile(filename, data) {
   console.log(`✓ Updated ${filename}`);
 }
 
+// Helper: Update sync metadata
+function updateSyncMetadata(apiKey, status, error = null) {
+  try {
+    let metadata = {};
+    if (fs.existsSync(METADATA_FILE)) {
+      metadata = JSON.parse(fs.readFileSync(METADATA_FILE, 'utf8'));
+    }
+
+    if (!metadata.apis) {
+      metadata.apis = {};
+    }
+
+    const now = new Date().toISOString();
+    if (!metadata.apis[apiKey]) {
+      metadata.apis[apiKey] = { name: apiKey, lastSync: now, status };
+    } else {
+      metadata.apis[apiKey].lastSync = now;
+      metadata.apis[apiKey].status = status;
+    }
+
+    if (error) {
+      metadata.apis[apiKey].lastError = error;
+      metadata.apis[apiKey].lastErrorAt = now;
+    } else {
+      delete metadata.apis[apiKey].lastError;
+      delete metadata.apis[apiKey].lastErrorAt;
+    }
+
+    metadata.lastUpdate = now;
+    fs.writeFileSync(METADATA_FILE, JSON.stringify(metadata, null, 2));
+  } catch (e) {
+    console.warn(`Warning: Could not update sync metadata:`, e.message);
+  }
+}
+
 // Helper: Fetch with timeout
 async function fetchWithTimeout(url, options = {}, timeoutMs = 10000) {
   const controller = new AbortController();
@@ -151,8 +187,10 @@ async function syncBokRates() {
     };
 
     writeDataFile(filename, result);
+    updateSyncMetadata('ecos', 'success');
   } catch (error) {
     console.error(`✗ Failed to fetch BOK rates:`, error.message);
+    updateSyncMetadata('ecos', 'failed', error.message);
     console.log(`→ Keeping existing ${filename} intact`);
   }
 }
@@ -204,8 +242,10 @@ async function syncExchangeRates() {
     };
 
     writeDataFile(filename, result);
+    updateSyncMetadata('exim', 'success');
   } catch (error) {
     console.error(`✗ Failed to fetch exchange rates:`, error.message);
+    updateSyncMetadata('exim', 'failed', error.message);
     console.log(`→ Keeping existing ${filename} intact`);
   }
 }
@@ -268,8 +308,10 @@ async function syncFinanceProducts() {
     };
 
     writeDataFile(filename, result);
+    updateSyncMetadata('fss', 'success');
   } catch (error) {
     console.error(`✗ Failed to fetch finance products:`, error.message);
+    updateSyncMetadata('fss', 'failed', error.message);
     console.log(`→ Keeping existing ${filename} intact`);
   }
 }
@@ -324,8 +366,10 @@ async function syncKosisIncome() {
     };
 
     writeDataFile(filename, result);
+    updateSyncMetadata('kosis', 'success');
   } catch (error) {
     console.error(`✗ Failed to fetch KOSIS income:`, error.message);
+    updateSyncMetadata('kosis', 'failed', error.message);
     console.log(`→ Keeping existing ${filename} intact`);
   }
 }
