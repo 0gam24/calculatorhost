@@ -23,6 +23,7 @@ import { calculateRentConversion } from '@/lib/finance/rent-conversion';
 import { calculateRetirement } from '@/lib/finance/retirement';
 import { calculateHousingSubscriptionScore } from '@/lib/utils/housing-subscription';
 import { calculateSavings } from '@/lib/finance/savings';
+import { calculateRealtyCommission } from '@/lib/finance/realty-commission';
 import { calculateBmi } from '@/lib/utils/bmi';
 import { calculateDuration } from '@/lib/utils/dday';
 import { convertArea } from '@/lib/utils/area';
@@ -2287,6 +2288,176 @@ describe('Cross-Verification: Rounding & Boundary (반올림·경계값 최종 6
       expect(result.incomeTax).toBeLessThan(1_600_000);
       expect(result.monthlyNetIncome).toBeGreaterThan(7_500_000); // 750만 이상
       expect(result.monthlyNetIncome).toBeLessThan(7_800_000); // 780만 이하
+    });
+  });
+});
+
+// ─────────────────────────────────────────────────────────────────────
+// Phase N: +6 케이스 최종 라운드 (Cross-Verification: Rounding-Advanced)
+// ─────────────────────────────────────────────────────────────────────
+// 목표: 중개수수료·전월세·적금 실무 경계 케이스 3개 카테고리 × 2 케이스
+// 근거: 공인중개사법 시행규칙 §20 / 주임법 시행령 §9 / 조세특례제한법 §87의2
+// ─────────────────────────────────────────────────────────────────────
+
+describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금)', () => {
+  describe('중개수수료 — 매매 5억원 한도액 + 부가세 (공인중개사법 시행규칙 §20)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 75: 주택 매매 500M 구간 경계 (2억~9억 구간, 한도 없음)
+    // 공식: 500M ≥ 200M & ≤ 900M 이므로 구간 3 적용 (0.4% + 한도 없음)
+    // 계산: 500M × 0.4% = 200만
+    // 부가세: 200만 × 10% = 20만 (10원 단위 절사)
+    // 양측 합계: (200만 + 20만) × 2 = 440만
+    // 근거: 공인중개사법 시행규칙 §20 (국토교통부 고시 2026)
+    // ─────────────────────────────────────────────────────────────
+    it('매매 5억원 주택: 0.4% 한도 없음 → 200만 + 부가세 20만 = 총 220만 (양측 440만)', () => {
+      const result = calculateRealtyCommission({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 500_000_000,
+        includeVat: true,
+      });
+      expect(result.transactionAmount).toBe(500_000_000);
+      expect(result.appliedRate).toBe(0.004); // 0.4%
+      expect(result.limit).toBeNull(); // 한도 없음 (2억~9억 구간)
+      expect(result.maxCommission).toBe(2_000_000); // 500M × 0.4% = 200만
+      expect(result.vat).toBe(200_000); // 200만 × 10% = 20만
+      expect(result.total).toBe(2_200_000); // 200만 + 20만
+      expect(result.bothSideTotal).toBe(4_400_000); // 양측 합계
+      expect(result.warnings).toEqual([]); // 경고 없음
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 76: 월세 보증금 5000만 + 월세 50만 (환산보증금 계산)
+    // 월세 거래금액: 5000만 + (50만 × 100) = 1억 (threshold 5000만 이상 시 100 적용)
+    // 구간: 1억 초과~6억 이하 → 0.3% + 한도 없음
+    // 계산: 1억 × 0.3% = 30만
+    // 부가세: 30만 × 10% = 3만 (10원 단위 절사)
+    // 환산보증금: 5000만 + (50만 × 100) = 1억
+    // 근거: 공인중개사법 시행규칙 §20, 월세 거래금액 산식 (threshold 5000만)
+    // ─────────────────────────────────────────────────────────────
+    it('월세 보증금 5000만 + 월세 50만: 환산 1억 기준 0.3% → 30만 + 부가세 3만 = 총 33만', () => {
+      const result = calculateRealtyCommission({
+        transactionType: 'monthly',
+        propertyKind: 'house',
+        deposit: 50_000_000,
+        monthlyRent: 500_000,
+        includeVat: true,
+      });
+      expect(result.transactionAmount).toBe(100_000_000); // 5000만 + (50만 × 100), high base ≥ threshold
+      expect(result.appliedRate).toBe(0.004); // 0.4% (5천만 초과~1억 구간)
+      expect(result.limit).toBe(300_000); // 한도 30만
+      expect(result.maxCommission).toBe(300_000); // 1억 × 0.4% = 40만 > 한도 30만 → 30만 적용
+      expect(result.vat).toBe(30_000); // 30만 × 10% = 3만
+      expect(result.total).toBe(330_000); // 30만 + 3만
+      expect(result.warnings).toEqual([]); // 경고 없음
+    });
+  });
+
+  describe('전월세 전환 — 보증금 3억원 → 월세 & 역산 (주임법 시행령 §9)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 77: 전세 3억 → 월세 전환 (새 보증금 2.5억)
+    // 차액: 3억 - 2.5억 = 5000만
+    // 전환율: 기준금리(3.5%) + 가산비율(2.0%p) = 5.5% 상한 vs 연 10% 상한 → min = 5.5%
+    // 월세: (5000만 × 5.5%) / 12 = 2,750만 / 12 ≈ 229,166.67 → 10원 단위 절사 = 229,160원
+    // 환산보증금: 2.5억 + (229,160 × 100) = 2.5억 + 22,916,000 = 272,916,000원
+    // 근거: 주택임대차보호법 시행령 §9, 월세 환산 공식 (보증금 + 월세×100)
+    // ─────────────────────────────────────────────────────────────
+    it('전세 3억 → 월세 (새보증금 2.5억): 차액 5000만 × 5.5% ÷ 12 = 월세 약 229천 → 환산보증금 약 2.73억', () => {
+      const result = calculateRentConversion({
+        mode: 'jeonseToMonthly',
+        jeonseDeposit: 300_000_000,
+        newDeposit: 250_000_000,
+        baseRatePercent: 3.5,
+        additionalRatePercent: 2.0,
+        annualCapPercent: 10.0,
+      });
+      expect(result.appliedConversionRatePercent).toBe(5.5); // min(3.5 + 2.0, 10) = 5.5%
+      // 월세 = (50M × 0.055) / 12 ≈ 229160원
+      expect(result.resultMonthlyRent).toBe(229_160); // 정확 값
+      // 환산보증금 = 2.5억 + 229160 × 100 = 272,916,000
+      expect(result.convertedDeposit).toBe(272_916_000); // 정확 값
+      expect(result.warnings).toEqual([]); // 경고 없음
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 78: 월세 역산 — 전세 3억, 새보증금 2.5억, 월세 20만
+    // 실제 전환율 = (월세 × 12) / (전세 - 새보증금) × 100
+    //             = (20만 × 12) / 50M × 100 = 240만 / 50M × 100 = 4.8%
+    // 법정 상한: 5.5% vs 실제 4.8% → 합법 (경고 없음)
+    // 근거: 주임법 시행령 §9, 과다 전환율 감시
+    // ─────────────────────────────────────────────────────────────
+    it('월세 역산: 전세 3억, 새보증금 2.5억, 월세 20만 → 실제 전환율 4.8% (상한 5.5% 이하)', () => {
+      const result = calculateRentConversion({
+        mode: 'rateReverse',
+        jeonseDeposit: 300_000_000,
+        newDeposit: 250_000_000,
+        monthlyRent: 200_000,
+        baseRatePercent: 3.5,
+        additionalRatePercent: 2.0,
+        annualCapPercent: 10.0,
+      });
+      expect(result.appliedConversionRatePercent).toBe(5.5); // 법정 상한
+      expect(result.resultActualRate).toBeCloseTo(4.8, 0.1); // (20k × 12) / 50M × 100 = 4.8%
+      expect(result.warnings).toEqual([]); // 초과하지 않으므로 경고 없음
+    });
+  });
+
+  describe('적금 이자 — 세금 특례 & 자녀공제 통합 (조세특례제한법 §87의2)', () => {
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 79: 청년우대 청약저축 월 50만 × 24개월, 이자비과세
+    // 원금: 50만 × 24 = 1200만
+    // 이자: 단리 공식 = 50만 × 3.5% × (24×25/2) / 12 = 50만 × 0.035 × 300 / 12 = 437,500원
+    // 세금: 비과세 0
+    // 세후 이자: 437,500원
+    // 만기 수령: 1200만 + 437,500 = 12,437,500원
+    // 근거: 조세특례제한법 §87의2 (청년 조건부 비과세), 납입 상한 월 50만
+    // ─────────────────────────────────────────────────────────────
+    it('청년우대 청약저축 월 50만 × 24개월, 3.5% 단리 비과세: 이자 약 43.75만 → 총 1243.75만', () => {
+      const result = calculateSavings({
+        monthlyDeposit: 500_000,
+        annualRatePercent: 3.5,
+        termMonths: 24,
+        method: 'simple',
+        taxType: 'exempt', // 비과세
+      });
+      expect(result.principal).toBe(12_000_000); // 50만 × 24
+      expect(result.pretaxInterest).toBe(437_500); // 단리: 50k × 0.035 × 300 / 12
+      expect(result.tax).toBe(0); // 비과세
+      expect(result.posttaxInterest).toBe(437_500);
+      expect(result.maturityAmount).toBe(12_437_500); // 1200만 + 437.5k
+      expect(result.appliedTaxRate).toBe(0);
+      expect(result.warnings).toEqual([]); // 비과세 경우 경고 없음
+    });
+
+    // ─────────────────────────────────────────────────────────────
+    // 케이스 80: 일반 정기적금 월 100만 × 36개월, 9.5% 우대 월복리
+    // 원금: 100만 × 36 = 3600만
+    // 월이자율: 9.5% / 12 ≈ 0.791667%
+    // 만기원리금 = 100만 × ((1+r)^36 - 1) / r × (1+r)
+    //   r ≈ 0.00791667
+    //   (1.00791667)^36 ≈ 1.3283
+    //   = 100만 × (0.3283 / 0.00791667) × 1.00791667 ≈ 4,179.4만
+    // 세전 이자: 4179.4만 - 3600만 = 579.4만
+    // 세금(우대 9.5%): 579.4만 × 9.5% ≈ 55.0만 → 절사 55만
+    // 세후 이자: 579.4만 - 55만 = 524.4만
+    // 만기 수령: 3600만 + 524.4만 = 4124.4만
+    // 근거: 은행 정기적금 실제 상품, 월복리 계산식 (단리와 달리 이자가 더 높음)
+    // ─────────────────────────────────────────────────────────────
+    it('정기적금 월 100만 × 36개월, 9.5% 월복리 우대세율: 이자 약 579만 → 세금 55만 → 세후 524만 → 총 4124만', () => {
+      const result = calculateSavings({
+        monthlyDeposit: 1_000_000,
+        annualRatePercent: 9.5,
+        termMonths: 36,
+        method: 'monthlyCompound',
+        taxType: 'preferential', // 우대 세율 9.5%
+      });
+      expect(result.principal).toBe(36_000_000); // 100만 × 36
+      expect(result.pretaxInterest).toBeCloseTo(5_794_030, 0); // 월복리 계산
+      expect(result.tax).toBe(550_430); // 5794030 × 9.5% = 550,433 → 절사 550,430
+      expect(result.posttaxInterest).toBeCloseTo(5_243_600, 0); // 5794030 - 550430
+      expect(result.maturityAmount).toBeCloseTo(41_243_600, 0); // 3600k + 5243.6k
+      expect(result.appliedTaxRate).toBe(0.095); // 9.5%
+      expect(result.warnings.length).toBe(1); // 우대종합저축 조건 경고
     });
   });
 });
