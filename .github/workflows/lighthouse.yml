@@ -6,6 +6,20 @@ on:
   pull_request:
     branches: [main]
   workflow_dispatch:
+    inputs:
+      test_urls:
+        description: 'Test URLs (comma-separated, or leave empty for defaults)'
+        required: false
+        default: ''
+      preset:
+        description: 'Device preset (mobile or desktop)'
+        required: false
+        default: 'mobile'
+        type: choice
+        options:
+          - mobile
+          - desktop
+          - both
 
 permissions:
   contents: read
@@ -112,26 +126,44 @@ jobs:
                 perf: Math.round(result.categories.performance.score * 100),
                 a11y: Math.round(result.categories.accessibility.score * 100),
                 bp: Math.round(result.categories['best-practices'].score * 100),
-                seo: Math.round(result.categories.seo.score * 100)
+                seo: Math.round(result.categories.seo.score * 100),
+                // Core Web Vitals
+                lcp: result.audits['largest-contentful-paint']?.numericValue || null,
+                inp: result.audits['interaction-to-next-paint']?.numericValue || null,
+                cls: result.audits['cumulative-layout-shift']?.numericValue || null
               };
             });
 
-            let rows = Object.entries(scores).map(([url, s]) =>
-              '| ' + url + ' | ' + s.perf + ' | ' + s.a11y + ' | ' + s.bp + ' | ' + s.seo + ' |'
-            ).join('\n');
+            let rows = Object.entries(scores).map(([url, s]) => {
+              const lcpMs = s.lcp ? (s.lcp / 1000).toFixed(2) + 's' : '—';
+              const inpMs = s.inp ? (s.inp / 1000).toFixed(2) + 's' : '—';
+              const clsVal = s.cls ? s.cls.toFixed(3) : '—';
+              return '| ' + url + ' | ' + s.perf + ' | ' + lcpMs + ' | ' + inpMs + ' | ' + clsVal + ' |';
+            }).join('\n');
 
-            let comment = '## Lighthouse CI Results\n' +
-              '| URL | Performance | Accessibility | Best Practices | SEO |\n' +
+            let comment = '## Lighthouse CI 결과\n\n' +
+              '### 점수\n' +
+              '| URL | Performance | LCP | INP | CLS |\n' +
               '|---|---|---|---|---|\n' +
               rows;
+
+            // CWV 판정
+            comment += '\n\n### Core Web Vitals 판정\n';
+            comment += '| 지표 | Good | 기준 |\n';
+            comment += '|---|---|---|\n';
+            comment += '| LCP | ≤ 2.5s | 2.5-4.0s |\n';
+            comment += '| INP | ≤ 200ms | 200-500ms |\n';
+            comment += '| CLS | ≤ 0.1 | 0.1-0.25 |\n';
 
             // baseline 비교 결과 첨부
             if (fs.existsSync('comparison-output.md')) {
               const comparison = fs.readFileSync('comparison-output.md', 'utf8');
-              comment += '\n\n' + comparison;
+              comment += '\n\n## Baseline 비교\n' + comparison;
+            } else {
+              comment += '\n\n📌 Baseline 없음 (최초 측정). 이후 PR부터 비교 시작됨.';
             }
 
-            comment += '\n\n**Note**: Performance -5점 이상 악화는 ⚠️ 경고 (배포 차단 X)';
+            comment += '\n\n---\n**판정**: Performance -5점 이상 악화 = ⚠️ 경고 | 배포는 차단하지 않으나 개선 권장';
 
             github.rest.issues.createComment({
               issue_number: context.issue.number,

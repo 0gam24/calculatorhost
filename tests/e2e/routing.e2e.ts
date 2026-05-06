@@ -30,4 +30,19 @@ test.describe('라우팅 골든패스', () => {
       await expect(page.locator('h1').first()).toBeVisible();
     }
   });
+
+  test('신규 가이드 2개 라우팅 확인', async ({ page }) => {
+    // Phase M: 전세 보증금 안전 가이드
+    let res = await page.goto('/guide/jeonse-deposit-safety/');
+    expect(res?.status(), 'guide/jeonse-deposit-safety').toBeLessThan(400);
+    await expect(page.locator('h1').first()).toBeVisible();
+    // breadcrumb + h1 모두 매치 → first() 로 strict mode 해소
+    await expect(page.getByText(/전세 보증금/).first()).toBeVisible();
+
+    // Phase M: 양도소득세 계산 5단계 가이드
+    res = await page.goto('/guide/capital-gains-tax-5-steps/');
+    expect(res?.status(), 'guide/capital-gains-tax-5-steps').toBeLessThan(400);
+    await expect(page.locator('h1').first()).toBeVisible();
+    await expect(page.getByText(/양도소득세/).first()).toBeVisible();
+  });
 });

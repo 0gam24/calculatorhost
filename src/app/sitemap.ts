@@ -75,6 +75,9 @@ const GUIDE_SLUGS = [
   'capital-gains-tax-tips',
   'dsr-regulation-zones',
   'freelancer-salary-comparison',
+  // Phase M: 신규 가이드 2개 (트래픽 가치 높은 니치)
+  'jeonse-deposit-safety',
+  'capital-gains-tax-5-steps',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
