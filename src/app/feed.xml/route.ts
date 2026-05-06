@@ -23,6 +23,31 @@ interface FeedItem {
 
 // 최신 발행순 (위가 가장 신상)
 const ITEMS: FeedItem[] = [
+  // Phase M: 신규 가이드 2개 (트래픽 가치 높은 니치) + Phase N: 1개
+  {
+    title: '전세금 안전 가이드 (2026) — 전세사기 피하는 체크리스트',
+    description:
+      '전세금 반환 보증보험·소액보증보험·확정일자 필수 항목 + 임차인 권리 10가지 + 계약 전 확인사항.',
+    url: `${SITE_URL}/guide/jeonse-deposit-safety/`,
+    pubDate: '2026-05-06',
+    category: '부동산',
+  },
+  {
+    title: '양도소득세 5단계 완벽 계산 (2026) — 공식 순서대로 진행',
+    description:
+      '양도차익 → 세율 구간 → 장기보유공제 → 조정대상지역 중과 → 최종 납부액. 단계별 시뮬레이션.',
+    url: `${SITE_URL}/guide/capital-gains-tax-5-steps/`,
+    pubDate: '2026-05-06',
+    category: '세금',
+  },
+  {
+    title: '연봉협상 전 꼭 확인하세요 | 실수령액 정확 시뮬레이션',
+    description: '협상 제안 받았을 때 연봉 수치의 함정 찾아내고 정확한 월 실수령액 계산하는 법.',
+    url: `${SITE_URL}/guide/salary-negotiation-take-home/`,
+    pubDate: '2026-05-06',
+    category: '근로',
+  },
+
   // ─── 1~4월 시기성 가이드 (월별 캘린더 시리즈) ───
   {
     title: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',

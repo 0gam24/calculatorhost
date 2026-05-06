@@ -78,6 +78,8 @@ const GUIDE_SLUGS = [
   // Phase M: 신규 가이드 2개 (트래픽 가치 높은 니치)
   'jeonse-deposit-safety',
   'capital-gains-tax-5-steps',
+  // Phase N: 신규 가이드 1개 (블루오션 C 페르소나)
+  'salary-negotiation-take-home',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
