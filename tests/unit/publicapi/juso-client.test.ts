@@ -7,6 +7,7 @@
  * 3. 200 정상 응답 → zod parse + results.juso 추출
  * 4. 네트워크 에러/타임아웃 → 빈 배열
  * 5. 스키마 검증 실패 → 빈 배열
+ * 6. 에러 응답 (결과.common.errorCode) → 빈 배열
  */
 
 import { describe, it, expect, beforeEach, vi } from 'vitest';
@@ -320,17 +321,17 @@ describe('searchAddress 클라이언트', () => {
       expect(result).toEqual([]);
     });
 
-    it('API 에러 응답 (errorCode 포함) → juso 추출', async () => {
+    it('401 인증 실패 (errorCode="01") → 빈 배열 반환', async () => {
       const mockResponse = {
         results: {
           juso: [],
           common: {
+            errorCode: '01',
+            errorMessage: 'Unauthorized',
             totalCount: 0,
             currentPage: 1,
             countPerPage: 10,
             countRecords: 0,
-            errorCode: '13',
-            errorMessage: 'Unauthorized',
           },
         },
       };
@@ -342,7 +343,56 @@ describe('searchAddress 클라이언트', () => {
       });
 
       const result = await searchAddress({ keyword: '종로' });
-      // API 에러여도 juso 배열은 추출 (빈 배열)
+      expect(result).toEqual([]);
+    });
+
+    it('429 호출 한도 초과 (errorCode="13") → 빈 배열 반환', async () => {
+      const mockResponse = {
+        results: {
+          juso: [],
+          common: {
+            errorCode: '13',
+            errorMessage: 'Over API daily limit',
+            totalCount: 0,
+            currentPage: 1,
+            countPerPage: 10,
+            countRecords: 0,
+          },
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => mockResponse,
+      });
+
+      const result = await searchAddress({ keyword: '강남' });
+      expect(result).toEqual([]);
+    });
+
+    it('500 서버 오류 (errorCode="99") → 빈 배열 반환', async () => {
+      const mockResponse = {
+        results: {
+          juso: [],
+          common: {
+            errorCode: '99',
+            errorMessage: 'System error',
+            totalCount: 0,
+            currentPage: 1,
+            countPerPage: 10,
+            countRecords: 0,
+          },
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => mockResponse,
+      });
+
+      const result = await searchAddress({ keyword: '서울' });
       expect(result).toEqual([]);
     });
   });
@@ -461,6 +511,61 @@ describe('searchAddress 클라이언트', () => {
 
       // 클라이언트 코드는 개발/프로덕션 동작 차이 감지 불가
       // → 완전한 호환성
+    });
+
+    it('API 에러 응답 (401) vs 정상 응답: 클라이언트 견고성', async () => {
+      // 첫 번째: 에러 응답 (인증 실패)
+      const errorResponse = {
+        results: {
+          juso: [],
+          common: {
+            errorCode: '01',
+            errorMessage: 'Unauthorized',
+            totalCount: 0,
+          },
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => errorResponse,
+      });
+
+      const errorResult = await searchAddress({ keyword: '종로' });
+      expect(errorResult).toEqual([]);
+
+      // 두 번째: 재시도 성공
+      const successResponse = {
+        results: {
+          juso: [
+            {
+              roadAddr: '서울시 종로구 율곡로 100',
+              roadAddrPart1: '서울시 종로구 율곡로 100',
+              zipNo: '03165',
+              admCd: '11110',
+              rnMgtSn: '1111010100000100',
+              bdNm: '종로빌딩',
+            },
+          ],
+          common: {
+            totalCount: 1,
+            currentPage: 1,
+            countPerPage: 10,
+            countRecords: 1,
+          },
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => successResponse,
+      });
+
+      const retryResult = await searchAddress({ keyword: '종로' });
+      expect(retryResult).toHaveLength(1);
+      expect(retryResult[0]?.admCd).toBe('11110');
     });
   });
 });

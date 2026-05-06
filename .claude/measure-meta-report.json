@@ -1,0 +1,16 @@
+{
+  "timestamp": "2026-05-05T02:09:46.671Z",
+  "summary": {
+    "total": 0,
+    "violations": 0,
+    "byCategory": {
+      "calculator": 0,
+      "calculatorViolations": 0,
+      "guide": 0,
+      "guideViolations": 0,
+      "other": 0,
+      "otherViolations": 0
+    }
+  },
+  "violations": []
+}

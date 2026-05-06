@@ -73,6 +73,31 @@ export const RtmsApiResponseSchema = z.object({
 export type RtmsApiResponse = z.infer<typeof RtmsApiResponseSchema>;
 
 /**
+ * RTMS API 에러 응답
+ *
+ * 정부 표준 API 에러 형식:
+ * - cmmMsgHeader: { successYN: 'N', errMsg, returnAuthMsg }
+ *
+ * 예시:
+ * {
+ *   "cmmMsgHeader": {
+ *     "successYN": "N",
+ *     "errMsg": "Invalid authentication key",
+ *     "returnAuthMsg": "API 키가 유효하지 않습니다"
+ *   }
+ * }
+ */
+export const RtmsErrorResponseSchema = z.object({
+  cmmMsgHeader: z.object({
+    successYN: z.literal('N').describe('실패 여부'),
+    errMsg: z.string().describe('영문 에러 메시지'),
+    returnAuthMsg: z.string().optional().describe('한글 에러 메시지'),
+  }).describe('공통 메시지 헤더'),
+});
+
+export type RtmsErrorResponse = z.infer<typeof RtmsErrorResponseSchema>;
+
+/**
  * ===== JUSO API (행정안전부 도로명주소) =====
  *
  * 출처: business.juso.go.kr (행정안전부 주소기반산업지원서비스)
@@ -104,7 +129,7 @@ export const JusoAddressSchema = z.object({
 export type JusoAddress = z.infer<typeof JusoAddressSchema>;
 
 /**
- * JUSO API 응답 (배열)
+ * JUSO API 정상 응답 (배열)
  *
  * JUSO API는 `results.juso[]` 배열로 최대 10개 결과 반환
  */
@@ -123,3 +148,36 @@ export const JusoApiResponseSchema = z.object({
 });
 
 export type JusoApiResponse = z.infer<typeof JusoApiResponseSchema>;
+
+/**
+ * JUSO API 에러 응답
+ *
+ * 결과 시 공통 블록에 에러 코드/메시지 포함:
+ * - results.common.errorCode: 에러 코드 (예: "13")
+ * - results.common.errorMessage: 에러 메시지 (예: "Unauthorized")
+ * - results.juso: 빈 배열
+ *
+ * 예시:
+ * {
+ *   "results": {
+ *     "juso": [],
+ *     "common": {
+ *       "errorCode": "13",
+ *       "errorMessage": "Unauthorized",
+ *       "totalCount": 0
+ *     }
+ *   }
+ * }
+ */
+export const JusoErrorResponseSchema = z.object({
+  results: z.object({
+    juso: z.array(JusoAddressSchema).describe('주소 검색 결과 배열 (에러 시 빈 배열)'),
+    common: z.object({
+      errorCode: z.string().describe('에러 코드'),
+      errorMessage: z.string().describe('에러 메시지'),
+      totalCount: z.number().optional().describe('검색 결과 건수 (0)'),
+    }).describe('공통 메타정보 (에러 포함)'),
+  }),
+});
+
+export type JusoErrorResponse = z.infer<typeof JusoErrorResponseSchema>;

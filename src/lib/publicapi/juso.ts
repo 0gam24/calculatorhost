@@ -6,7 +6,7 @@
  * - 개발: 키 미설정 시 모의 데이터 반환 (무한 로드 방지)
  *
  * 특징:
- * - zod 스키마로 응답 검증
+ * - zod 스키마로 응답 검증 (정상 + 에러 응답 모두)
  * - 네트워크 에러 시 빈 배열 반환 (UX 우선)
  * - 타임아웃: 5초
  * - 검색어 최소 2자 검증
@@ -14,7 +14,7 @@
  */
 
 import { z } from 'zod';
-import { JusoAddress, JusoApiResponseSchema } from './types';
+import { JusoAddress, JusoApiResponseSchema, JusoErrorResponseSchema } from './types';
 
 interface JusoClientOptions {
   keyword: string; // 검색어 (주소 또는 도로명)
@@ -62,6 +62,38 @@ function getMockData(): JusoAddress[] {
       bdNm: '테헤란빌딩',
     },
   ];
+}
+
+/**
+ * 에러 응답 형식인지 검사
+ *
+ * JUSO API의 에러는 HTTP 200 OK + JSON 내부 errorCode 형태
+ * results.common.errorCode 존재 여부로 판단
+ *
+ * @param data 응답 객체
+ * @returns 에러 응답 여부
+ */
+function isErrorResponse(data: unknown): boolean {
+  if (!data || typeof data !== 'object') {
+    return false;
+  }
+
+  const obj = data as Record<string, unknown>;
+  const results = obj.results;
+
+  if (!results || typeof results !== 'object') {
+    return false;
+  }
+
+  const resultsObj = results as Record<string, unknown>;
+  const common = resultsObj.common;
+
+  if (!common || typeof common !== 'object') {
+    return false;
+  }
+
+  const commonObj = common as Record<string, unknown>;
+  return 'errorCode' in commonObj && commonObj.errorCode !== null;
 }
 
 /**
@@ -126,7 +158,21 @@ export async function searchAddress(
 
     const data = await response.json();
 
-    // zod 검증: JUSO API 응답 래퍼
+    // 에러 응답 형식 검사
+    if (isErrorResponse(data)) {
+      try {
+        JusoErrorResponseSchema.parse(data);
+        const results = (data as Record<string, unknown>)?.results;
+        const commonObj = results && typeof results === 'object' ? (results as Record<string, unknown>)?.common : undefined;
+        const errorMsg = (commonObj as Record<string, unknown>)?.['errorMessage'];
+        console.warn(`[publicapi/juso] API 에러 응답: ${errorMsg ?? 'Unknown error'}`);
+      } catch (error) {
+        console.error('[publicapi/juso] 에러 응답 스키마 검증 실패:', error);
+      }
+      return [];
+    }
+
+    // zod 검증: JUSO API 응답 래퍼 (정상 응답)
     const validated = JusoApiResponseSchema.parse(data);
 
     // results.juso 배열 추출

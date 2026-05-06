@@ -7,6 +7,7 @@
  * 3. 200 정상 응답 → zod parse + filter
  * 4. 네트워크 에러/타임아웃 → 빈 배열
  * 5. 스키마 검증 실패 → 빈 배열
+ * 6. 에러 응답 (401, 429, 500) → 빈 배열
  */
 
 import { describe, it, expect, beforeEach, vi } from 'vitest';
@@ -234,6 +235,63 @@ describe('getRtmsApartmentTrade 클라이언트', () => {
       const result = await getRtmsApartmentTrade({ lawdCd: '11110' });
       expect(result).toEqual([]);
     });
+
+    it('401 인증 실패 응답 (에러 응답 형식) → 빈 배열', async () => {
+      const errorResponse = {
+        cmmMsgHeader: {
+          successYN: 'N',
+          errMsg: 'Invalid authentication key',
+          returnAuthMsg: 'API 인증키가 유효하지 않습니다',
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => errorResponse,
+      });
+
+      const result = await getRtmsApartmentTrade({ lawdCd: '11110' });
+      expect(result).toEqual([]);
+    });
+
+    it('429 호출 한도 초과 (에러 응답 형식) → 빈 배열', async () => {
+      const errorResponse = {
+        cmmMsgHeader: {
+          successYN: 'N',
+          errMsg: 'Rate limit exceeded',
+          returnAuthMsg: '일일 호출 한도를 초과했습니다',
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => errorResponse,
+      });
+
+      const result = await getRtmsApartmentTrade({ lawdCd: '11110' });
+      expect(result).toEqual([]);
+    });
+
+    it('500 서버 오류 (에러 응답 형식) → 빈 배열', async () => {
+      const errorResponse = {
+        cmmMsgHeader: {
+          successYN: 'N',
+          errMsg: 'Internal server error',
+          returnAuthMsg: '서버 내부 오류가 발생했습니다',
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => errorResponse,
+      });
+
+      const result = await getRtmsApartmentTrade({ lawdCd: '11110' });
+      expect(result).toEqual([]);
+    });
   });
 
   describe('통합 시나리오', () => {
@@ -305,6 +363,50 @@ describe('getRtmsApartmentTrade 클라이언트', () => {
       expect(trades.length).toBe(2);
       expect(trades[0]?.dealAmount).toBe('780000');
       expect(trades[1]?.buildingName).toBe('논현아파트');
+    });
+
+    it('API 에러 응답 (401) vs 정상 응답: 클라이언트 견고성', async () => {
+      // 첫 번째: 에러 응답
+      const errorResponse = {
+        cmmMsgHeader: {
+          successYN: 'N',
+          errMsg: 'Invalid key',
+        },
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => errorResponse,
+      });
+
+      const errorResult = await getRtmsApartmentTrade({ lawdCd: '11110' });
+      expect(errorResult).toEqual([]);
+
+      // 두 번째: 재시도 성공
+      const successResponse = {
+        items: [
+          {
+            dealAmount: '400000',
+            dealYmd: '20260425',
+            lawdCd: '11110',
+            floor: 7,
+            areaExclusive: '75.50',
+            buildingName: '테스트아파트',
+            dealType: '매매',
+          },
+        ],
+      };
+
+      (global.fetch as any).mockResolvedValueOnce({
+        status: 200,
+        ok: true,
+        json: async () => successResponse,
+      });
+
+      const retryResult = await getRtmsApartmentTrade({ lawdCd: '11110' });
+      expect(retryResult).toHaveLength(1);
+      expect(retryResult[0]?.buildingName).toBe('테스트아파트');
     });
   });
 });

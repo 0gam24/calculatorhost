@@ -80,6 +80,8 @@ const GUIDE_SLUGS = [
   'capital-gains-tax-5-steps',
   // Phase N: 신규 가이드 1개 (블루오션 C 페르소나)
   'salary-negotiation-take-home',
+  // Phase O: 신규 가이드 (5월 신고 시즈널 — 근로·자녀장려금 헷갈림)
+  'earned-income-tax-credit-vs-child',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

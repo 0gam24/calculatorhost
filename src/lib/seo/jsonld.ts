@@ -264,6 +264,7 @@ export function buildSpeakableJsonLd(cssSelectors: string[]): JsonLd {
 export interface ItemListEntry {
   name: string;
   url: string;
+  description?: string;
 }
 
 export function buildItemListJsonLd(items: ItemListEntry[], listName?: string): JsonLd {
@@ -275,6 +276,7 @@ export function buildItemListJsonLd(items: ItemListEntry[], listName?: string): 
       '@type': 'ListItem',
       position: idx + 1,
       name: item.name,
+      ...(item.description ? { description: item.description } : {}),
       url: item.url,
     })),
   };

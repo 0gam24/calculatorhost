@@ -16,6 +16,8 @@ calculatorhost.com 정식 발사(Day 0) 운영 절차서. 3단계 자동화:
 2. **`npm run launch:checklist`** — 8개 자동 점검 (배포 기술 기반 확보)
 3. **`npm run monitor:week1`** — Day 1-7 일일 점검 (정책 위반 사전 감지)
 
+**발사 후 운영자용**: `docs/launch-monitoring-channels.md` 에서 **5개 알림 채널 설정 + 일일 절차 (5분/일)** 확인
+
 ---
 
 ## Day -1: 최종 빌드 (배포 2-3시간 전)
@@ -200,6 +202,8 @@ git push origin main
 
 ## 배포 후: 첫 주 모니터링 (Day 1-7)
 
+**운영자 기본 참고**: `docs/launch-monitoring-channels.md` 에서 알림 채널 5종 설정 + 일일 절차(5분/일) 확인
+
 ### 자동 모니터링 (매일 5분)
 ```bash
 npm run monitor:week1
@@ -212,10 +216,11 @@ npm run monitor:week1
 
 **출력**: `.claude/reports/monitor-{YYYY-MM-DD}.md`
 
-**Cron 추천** (GitHub Actions):
+**Cron 자동화** (GitHub Actions 또는 로컬):
 ```
 0 9 * * * npm run monitor:week1  (매일 KST 9시)
 ```
+(상세한 Cron 설정: docs/launch-monitoring-channels.md §6)
 
 ### Day 1: 라이브 상태 확인 (오전)
 

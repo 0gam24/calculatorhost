@@ -6,13 +6,17 @@
  * - 개발: 키 미설정 시 모의 데이터 반환 (무한 로드 방지)
  *
  * 특징:
- * - zod 스키마로 응답 검증
+ * - zod 스키마로 응답 검증 (정상 + 에러 응답 모두)
  * - 네트워크 에러 시 빈 배열 반환 (UX 우선)
  * - 타임아웃: 5초
  */
 
 import { z } from 'zod';
-import { RtmsApartmentTrade, RtmsApartmentTradeSchema } from './types';
+import {
+  RtmsApartmentTrade,
+  RtmsApartmentTradeSchema,
+  RtmsErrorResponseSchema,
+} from './types';
 
 interface RealestateClientOptions {
   lawdCd: string; // 법정동코드 (5자리)
@@ -85,6 +89,43 @@ function parseAndFilter(
 }
 
 /**
+ * 에러 응답 형식인지 검사
+ *
+ * @param data 응답 객체
+ * @returns 에러 응답 여부
+ */
+function isErrorResponse(data: unknown): boolean {
+  if (!data || typeof data !== 'object') {
+    return false;
+  }
+
+  const obj = data as Record<string, unknown>;
+  return 'cmmMsgHeader' in obj && obj.cmmMsgHeader !== null;
+}
+
+/**
+ * 에러 메시지 추출
+ *
+ * @param data 응답 객체
+ * @returns 에러 메시지
+ */
+function extractErrorMsg(data: unknown): string {
+  if (!data || typeof data !== 'object') {
+    return 'Unknown error';
+  }
+
+  const obj = data as Record<string, unknown>;
+  const header = obj.cmmMsgHeader;
+
+  if (!header || typeof header !== 'object') {
+    return 'Unknown error';
+  }
+
+  const headerObj = header as Record<string, unknown>;
+  return (headerObj.errMsg as string) ?? 'Unknown error';
+}
+
+/**
  * 아파트 매매 거래 조회
  *
  * @param options.lawdCd 법정동코드 (예: "11110" = 종로구)
@@ -139,6 +180,21 @@ export async function getRtmsApartmentTrade(
     }
 
     const data = await response.json();
+
+    // 에러 응답 형식 검사
+    if (isErrorResponse(data)) {
+      try {
+        RtmsErrorResponseSchema.parse(data);
+        const errMsg = extractErrorMsg(data);
+        console.warn(`[publicapi/realestate] API 에러 응답: ${errMsg}`);
+      } catch (error) {
+        console.error(
+          '[publicapi/realestate] 에러 응답 스키마 검증 실패:',
+          error,
+        );
+      }
+      return [];
+    }
 
     // API 응답 형식: { items: [...], pageNo, totalCount, pageSize }
     if (data && typeof data === 'object' && 'items' in data) {
