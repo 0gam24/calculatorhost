@@ -3,7 +3,10 @@
 > **Status**: 활성 문서  
 > **Last updated**: 2026-05-06  
 > **Phase**: YORO+TDD Phase M (발사 후 모니터링 자동화)  
-> **관계 문서**: CLAUDE.md "배포 체크리스트", scripts/audit-adsense.mjs, scripts/launch-checklist.mjs, scripts/monitor-week1.mjs
+> **관계 문서**: 
+> - `docs/adsense-application-guide.md` — AdSense 신청 절차 (신청 전 필수)
+> - CLAUDE.md "배포 체크리스트"
+> - scripts/audit-adsense.mjs, scripts/launch-checklist.mjs, scripts/monitor-week1.mjs
 
 ## 개요
 

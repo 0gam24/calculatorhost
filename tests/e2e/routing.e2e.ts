@@ -31,7 +31,7 @@ test.describe('라우팅 골든패스', () => {
     }
   });
 
-  test('신규 가이드 2개 라우팅 확인', async ({ page }) => {
+  test('신규 가이드 3개 라우팅 확인', async ({ page }) => {
     // Phase M: 전세 보증금 안전 가이드
     let res = await page.goto('/guide/jeonse-deposit-safety/');
     expect(res?.status(), 'guide/jeonse-deposit-safety').toBeLessThan(400);
@@ -44,5 +44,11 @@ test.describe('라우팅 골든패스', () => {
     expect(res?.status(), 'guide/capital-gains-tax-5-steps').toBeLessThan(400);
     await expect(page.locator('h1').first()).toBeVisible();
     await expect(page.getByText(/양도소득세/).first()).toBeVisible();
+
+    // Phase N: 직장인 연봉협상 실수령액 시뮬레이션 가이드
+    res = await page.goto('/guide/salary-negotiation-take-home/');
+    expect(res?.status(), 'guide/salary-negotiation-take-home').toBeLessThan(400);
+    await expect(page.locator('h1').first()).toBeVisible();
+    await expect(page.getByText(/연봉협상|실수령액/).first()).toBeVisible();
   });
 });
