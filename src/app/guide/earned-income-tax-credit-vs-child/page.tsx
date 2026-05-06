@@ -166,7 +166,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
         <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             {/* 광고 슬롯 — 헤더 아래 */}
-            <AdSlot slot="ca-pub-xxxxxxxxxxxxxxxx" format="horizontal" />
+            <AdSlot slot="ca-pub-EITC002" format="horizontal" />
 
             <article>
               <Breadcrumb
@@ -227,7 +227,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
               </div>
 
               {/* 광고 슬롯 — 계산기-본문 사이 */}
-              <AdSlot slot="ca-pub-xxxxxxxxxxxxxxxx" format="rectangle" />
+              <AdSlot slot="ca-pub-EITC003" format="rectangle" />
 
               <section className="mt-8">
                 <h2 data-speakable className="text-2xl font-bold text-text-primary">
@@ -283,7 +283,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
               </section>
 
               {/* 광고 슬롯 — 본문 중간 */}
-              <AdSlot slot="ca-pub-xxxxxxxxxxxxxxxx" format="fluid" />
+              <AdSlot slot="ca-pub-EITC001" format="fluid" />
 
               <section className="mt-8">
                 <h2 className="text-2xl font-bold text-text-primary">법적 근거 및 공식 출처</h2>
