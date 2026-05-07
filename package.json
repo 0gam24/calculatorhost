@@ -11,6 +11,13 @@
     "gen-og": "node scripts/generate-og-images.mjs",
     "seo:validate": "node scripts/validate-seo.mjs",
     "audit:adsense": "node scripts/audit-adsense.mjs",
+    "ralph:meta": "node scripts/ralph-meta-audit.mjs",
+    "ralph:meta:fix": "node scripts/ralph-meta-audit.mjs --auto-fix",
+    "ralph:link-health": "node scripts/ralph-link-health.mjs",
+    "ralph:seasonal": "node scripts/ralph-seasonal-guide.mjs",
+    "ralph:tax-check": "node scripts/ralph-tax-cross-check.mjs",
+    "ralph:visual": "node scripts/ralph-visual-diff.mjs",
+    "ralph:bundle": "node scripts/ralph-bundle-size.mjs",
     "launch:checklist": "node scripts/launch-checklist.mjs",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/sync-public-data.mjs",
     "build": "next build",
@@ -21,7 +28,8 @@
     "test:watch": "vitest",
     "test:e2e": "playwright test",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
-    "prepare": "husky || true"
+    "prepare": "husky || true",
+    "ralph:faq": "node scripts/ralph-faq-suggest.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",
