@@ -29,7 +29,8 @@
     "test:e2e": "playwright test",
     "format": "prettier --write \"**/*.{ts,tsx,md,json}\"",
     "prepare": "husky || true",
-    "ralph:faq": "node scripts/ralph-faq-suggest.mjs"
+    "ralph:faq": "node scripts/ralph-faq-suggest.mjs",
+    "ralph:lh": "node scripts/ralph-lh-regression.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

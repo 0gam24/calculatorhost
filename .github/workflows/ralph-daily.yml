@@ -1,0 +1,118 @@
+name: Ralph — Daily Monitoring (YORO Phase P)
+
+on:
+  schedule:
+    # 매일 03:00 KST = 18:00 UTC (전일)
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+  pull-requests: write
+
+jobs:
+  ralph-daily:
+    name: Ralph Daily Audit
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Ralph Step 1: Meta Audit
+        id: meta
+        run: npm run ralph:meta
+        continue-on-error: true
+
+      - name: Ralph Step 2: Link Health
+        id: links
+        run: npm run ralph:link-health
+        continue-on-error: true
+
+      - name: Ralph Step 3: Sync Health
+        id: sync
+        run: npm run sync:health
+        continue-on-error: true
+
+      - name: Ralph Step 4: Launch Checklist
+        id: checklist
+        run: npm run launch:checklist
+        continue-on-error: true
+
+      - name: Ralph Step 5: Type Check
+        id: types
+        run: npm run typecheck
+        continue-on-error: true
+
+      - name: Ralph Step 6: Unit Tests
+        id: tests
+        run: npm test -- --run
+        continue-on-error: true
+
+      - name: Ralph Step 7: AdSense Audit
+        id: adsense
+        run: npm run audit:adsense
+        continue-on-error: true
+
+      - name: Generate Report
+        if: always()
+        run: node scripts/ralph-orchestrator.mjs
+        env:
+          GITHUB_RUN_ID: ${{ github.run_id }}
+
+      - name: Create Issue (if failures detected)
+        if: |
+          failure() && (
+            steps.meta.outcome == 'failure' ||
+            steps.links.outcome == 'failure' ||
+            steps.sync.outcome == 'failure' ||
+            steps.checklist.outcome == 'failure' ||
+            steps.types.outcome == 'failure' ||
+            steps.tests.outcome == 'failure' ||
+            steps.adsense.outcome == 'failure'
+          )
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const reportPath = './.claude/reports/ralph-daily-' + new Date().toISOString().split('T')[0] + '.md';
+
+            let body = '🚨 Ralph Daily Audit Detected Issues\n\n';
+
+            if (fs.existsSync(reportPath)) {
+              body += fs.readFileSync(reportPath, 'utf8');
+            } else {
+              body += '❌ Meta Audit\n';
+              if (context.payload.pull_request) {
+                body += '❌ Link Health\n';
+              }
+              body += '❌ Tests Failed\n\n';
+              body += '[View full logs](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})';
+            }
+
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '[Ralph] Daily Audit Alert — ' + new Date().toLocaleDateString('ko-KR'),
+              body: body,
+              labels: ['ralph', 'automated']
+            });
+
+      - name: Upload Report Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: ralph-daily-reports
+          path: ./.claude/reports/ralph-daily-*.md
+          retention-days: 30

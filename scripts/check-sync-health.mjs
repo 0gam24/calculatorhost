@@ -6,6 +6,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const METADATA_FILE = path.join(__dirname, '../src/data/sync-metadata.json');
+const STUCK_FILE = path.join(__dirname, '../.claude/stuck.md');
 
 const THRESHOLDS = {
   warn: 7 * 24 * 60 * 60 * 1000, // 7일
@@ -43,6 +44,41 @@ function getStatusBadge(status, elapsedMs) {
   return '✅ 정상';
 }
 
+/**
+ * 30일 이상 미동기 API를 stuck.md에 기록
+ */
+function updateStuckFile(errorApis) {
+  let content = '';
+
+  if (fs.existsSync(STUCK_FILE)) {
+    content = fs.readFileSync(STUCK_FILE, 'utf8');
+  } else {
+    content = '# stuck.md — YORO 헬스 체크 이슈\n\n';
+  }
+
+  // "## Sync Health" 섹션 생성
+  let syncHealthSection = `## Sync Health (${formatDate(new Date())})\n\n`;
+
+  if (errorApis.length > 0) {
+    syncHealthSection += `30일 이상 미동기 API:\n\n`;
+    for (const api of errorApis) {
+      syncHealthSection += `- **${api.name}** (${api.elapsed}일): \`npm run sync-data\` 실행 필요\n`;
+    }
+  }
+  syncHealthSection += '\n';
+
+  // 기존 Sync Health 섹션 제거 후 새로 추가
+  const syncHealthRegex = /## Sync Health \([^)]+\)\n\n[\s\S]*?(?=\n## |\n$)/;
+  if (syncHealthRegex.test(content)) {
+    content = content.replace(syncHealthRegex, syncHealthSection);
+  } else {
+    // 파일 시작에 추가
+    content = syncHealthSection + content;
+  }
+
+  fs.writeFileSync(STUCK_FILE, content, 'utf8');
+}
+
 function main() {
   console.log('\n📊 API 동기화 헬스 체크\n');
   console.log('2026-05-04 기준\n');
@@ -64,6 +100,7 @@ function main() {
   const now = Date.now();
   let hasError = false;
   let hasWarning = false;
+  const errorApis = [];
 
   // 테이블 헤더
   console.log('┌─────────────────────┬──────────────────────────┬──────────┬─────────────────┐');
@@ -87,6 +124,7 @@ function main() {
 
     if (elapsedMs >= THRESHOLDS.error) {
       hasError = true;
+      errorApis.push({ name: info.name || key, elapsed: elapsedDays });
     } else if (elapsedMs >= THRESHOLDS.warn) {
       hasWarning = true;
     }
@@ -104,6 +142,10 @@ function main() {
   if (hasError) {
     console.log('🚨 액션 필요: 30일 이상 미동기화된 API가 있습니다.');
     console.log('   실행: npm run sync-data\n');
+
+    // stuck.md 갱신
+    updateStuckFile(errorApis);
+    console.log('⚠️  미동기 API를 stuck.md 에 기록했습니다.\n');
   } else if (hasWarning) {
     console.log('⚠️  주의: 7일 이상 미동기화된 API가 있습니다.');
     console.log('   곧 npm run sync-data 실행을 권장합니다.\n');

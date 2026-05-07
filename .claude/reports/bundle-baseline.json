@@ -1,0 +1,74 @@
+{
+  "timestamp": "2026-05-07T00:52:08.633Z",
+  "totalSizeBytes": 1252219,
+  "chunks": {
+    "1255-7af2368fb2545735.js": {
+      "sizeBytes": 173298,
+      "sizeKb": 169.24
+    },
+    "1572-190c653bfea30f02.js": {
+      "sizeBytes": 24073,
+      "sizeKb": 23.51
+    },
+    "1646.a93085a0445ba909.js": {
+      "sizeBytes": 5466,
+      "sizeKb": 5.34
+    },
+    "2300.955f25edf8f0eeca.js": {
+      "sizeBytes": 1129,
+      "sizeKb": 1.1
+    },
+    "2619-04bc32f026a0d946.js": {
+      "sizeBytes": 8564,
+      "sizeKb": 8.36
+    },
+    "3171-d18891e9b3089d9f.js": {
+      "sizeBytes": 11112,
+      "sizeKb": 10.85
+    },
+    "3243-530126d25a874442.js": {
+      "sizeBytes": 12023,
+      "sizeKb": 11.74
+    },
+    "4398.4d702a663c880e52.js": {
+      "sizeBytes": 1442,
+      "sizeKb": 1.41
+    },
+    "4bd1b696-100b9d70ed4e49c1.js": {
+      "sizeBytes": 173025,
+      "sizeKb": 168.97
+    },
+    "5139.e4ff9cc3669129ed.js": {
+      "sizeBytes": 745,
+      "sizeKb": 0.73
+    },
+    "5471.10f4bf09932b87da.js": {
+      "sizeBytes": 384271,
+      "sizeKb": 375.26
+    },
+    "760-8e9e598e535ca58b.js": {
+      "sizeBytes": 20341,
+      "sizeKb": 19.86
+    },
+    "8038.8eb1b884e2731341.js": {
+      "sizeBytes": 1442,
+      "sizeKb": 1.41
+    },
+    "8548-7f2101aa60bf0398.js": {
+      "sizeBytes": 6842,
+      "sizeKb": 6.68
+    },
+    "framework-fc89765f6eabdf02.js": {
+      "sizeBytes": 189787,
+      "sizeKb": 185.34
+    },
+    "polyfills-42372ed130431b0a.js": {
+      "sizeBytes": 112594,
+      "sizeKb": 109.96
+    },
+    "webpack-bc3d7215138cc31e.js": {
+      "sizeBytes": 3680,
+      "sizeKb": 3.59
+    }
+  }
+}

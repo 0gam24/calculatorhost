@@ -1,0 +1,75 @@
+# YORO Phase P — Ralph 일일 권고 워크플로우
+#
+# 구현 전 참고용 YAML. 사용자 승인 후 실제 배포 시 다음을 고려:
+# - 한국 시간대 (KST) cron 설정
+# - 실패 시 자동 issue 생성 (선택)
+# - 의존성 0 유지 (fetch 기반)
+
+name: ralph-daily
+
+on:
+  schedule:
+    # 매일 03:00 KST (UTC+9 = 18:00 UTC 전날)
+    - cron: '0 18 * * *'
+  workflow_dispatch:
+
+jobs:
+  ralph-suite:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      issues: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 1. 메타 감시
+      - name: ralph:meta — 메타 길이 점검
+        run: npm run ralph:meta
+        continue-on-error: true
+
+      # 2. 외부 링크 헬스 (신규)
+      - name: ralph:link-health — 외부 링크 상태
+        run: npm run ralph:link-health
+        continue-on-error: true
+
+      # 3. API 동기화 헬스
+      - name: sync:health — API 동기화 상태
+        run: npm run sync:health
+        continue-on-error: true
+
+      # 4. stuck.md 변경 감지 (선택)
+      - name: Check for stuck issues
+        id: check-stuck
+        run: |
+          if [ -f .claude/stuck.md ]; then
+            if git diff --quiet .claude/stuck.md; then
+              echo "has-issues=false" >> $GITHUB_OUTPUT
+            else
+              echo "has-issues=true" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "has-issues=false" >> $GITHUB_OUTPUT
+          fi
+        continue-on-error: true
+
+      # 5. 자동 issue 생성 (선택)
+      - name: Create issue if problems found
+        if: steps.check-stuck.outputs.has-issues == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+            const stuckContent = fs.readFileSync('.claude/stuck.md', 'utf8');
+
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `🚨 YORO Ralph — ${new Date().toISOString().split('T')[0]} 헬스 체크 알림`,
+              body: `자동 생성된 헬스 체크 보고서입니다.\n\n${stuckContent.substring(0, 1000)}...`,
+              labels: ['yoro', 'ralph', 'health-check']
+            });
