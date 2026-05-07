@@ -276,6 +276,41 @@ describe('DefinedTermSet JSON-LD', () => {
   });
 });
 
+describe('smartdatashop network 부착 (parentOrganization / isBasedOn)', () => {
+  it('Organization 에 parentOrganization 이 부착된다', () => {
+    const ld = buildOrganizationJsonLd();
+    const parent = ld.parentOrganization as { '@type': string; name: string; url: string };
+    expect(parent['@type']).toBe('Organization');
+    expect(parent.name).toBe('스마트데이터샵');
+    expect(parent.url).toBe('https://smartdatashop.kr');
+  });
+
+  it('SoftwareApplication 에 isBasedOn 메인 사이트 + publisher.parentOrganization 부착', () => {
+    const ld = buildSoftwareApplicationJsonLd({
+      name: '연봉 실수령액 계산기',
+      description: '2026',
+      url: 'https://calculatorhost.com/calculator/salary/',
+    });
+    expect(ld.isBasedOn).toBe('https://smartdatashop.kr/');
+    const publisher = ld.publisher as { parentOrganization: { url: string } };
+    expect(publisher.parentOrganization.url).toBe('https://smartdatashop.kr');
+  });
+
+  it('Article 에 isBasedOn + publisher.parentOrganization 부착', () => {
+    const ld = buildArticleJsonLd({
+      headline: 'X',
+      description: 'X',
+      url: 'https://calculatorhost.com/guide/x/',
+      datePublished: '2026-01-01',
+      dateModified: '2026-01-01',
+      authorName: '김준혁',
+    });
+    expect(ld.isBasedOn).toBe('https://smartdatashop.kr/');
+    const publisher = ld.publisher as { parentOrganization: { name: string } };
+    expect(publisher.parentOrganization.name).toBe('스마트데이터샵');
+  });
+});
+
 describe('Article JSON-LD', () => {
   const baseOpts = {
     headline: '일시적 2주택 양도세 비과세 가이드',
