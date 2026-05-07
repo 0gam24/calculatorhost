@@ -14,6 +14,10 @@
 /.next/
 /out/
 
+# build-generated network mirror (prebuild: scripts/generate-network-mirror.mjs)
+# 본 사이트의 페이지 list 를 메인(smartdatashop.kr) sync 용으로 노출. 빌드마다 재생성.
+/public/network-mirror.json
+
 # production
 /build
 /dist
