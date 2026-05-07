@@ -3,8 +3,8 @@
 > smartdata HQ 가 본 사이트를 관리하기 위한 구조 문서.
 > 본 문서는 본 repo 분석 결과 자동 생성.
 >
-> 마지막 갱신: 2026-05-07 (backref 반영)
-> 분석 기준 commit: `663f1d3` (Merge PR #1 — feat(network): smartdatashop 메인 backref 컴포넌트 + JSON-LD 부착)
+> 마지막 갱신: 2026-05-08 (network-mirror 반영)
+> 분석 기준 commit: `663f1d3` main + `7180aa5` (feat/network-mirror-build) — feat(network): public/network-mirror.json 빌드 시 자동 생성
 
 ## 1. 정체성
 - 도메인: calculatorhost.com
@@ -54,8 +54,9 @@
 정적 사이트이므로 서버 API 엔드포인트는 없고, **빌드 타임 정적 생성 route handler** 만 존재.
 
 - `/sitemap.xml` — `src/app/sitemap.ts` (`MetadataRoute.Sitemap`, 페이지별 `mtime` 기반 lastModified)
-- `/robots.txt` — `src/app/robots.txt/route.ts` (`force-static`)
+- `/robots.txt` — `src/app/robots.txt/route.ts` (`force-static`). `User-Agent: *` 그룹에 `Allow: /network-mirror.json` 명시 (메인 sync 정적 파일).
 - `/feed.xml` — `src/app/feed.xml/route.ts` (RSS, `<head>` 자동 발견)
+- `/network-mirror.json` — **(2026-05-08 신설)** `scripts/generate-network-mirror.mjs` 가 prebuild 시 `public/network-mirror.json` 생성. smartdata network HQ(메인 smartdatashop.kr)가 일일 cron 으로 fetch → `sister-mirrors/calculatorhost/posts.json` 으로 sync. 양식: `{ site, siteName, domain, lastUpdated, totalPosts, categories, personas, posts[] }`. 본 manifest 는 정적 JSON이며 `/public` 에서 자동 서빙 (`/out/network-mirror.json` 으로 빌드 결과 포함).
 
 ## 6. 레이아웃
 - **Next.js Root Layout** — `src/app/layout.tsx`
@@ -245,12 +246,13 @@
   - `ralph-daily.yml`과 `name:` 충돌 가능성 — 별건 정리 대상
 
 ## 12. scripts
-`scripts/` — 총 22개 (.mjs/.js, Phase P Ralph 도구 7개 추가됨).
+`scripts/` — 총 23개 (.mjs/.js, Phase P Ralph 도구 9개 + smartdata network mirror 1개 추가됨).
 
 ### 운영·동기화·감사
 - `sync-public-data.mjs` — 공공데이터 일일 동기화 (4개 API)
 - `check-sync-health.mjs` — 동기화 헬스 체크
 - `generate-og-images.mjs` — OG 이미지 자동 생성 (`prebuild` 단계)
+- **`generate-network-mirror.mjs` — (2026-05-08 신설)** smartdata network HQ sync 용 manifest 생성. `prebuild` 단계에서 자동 실행. SSoT: `src/app/sitemap.ts` 슬러그 + 각 `page.tsx` 의 `metadata` + `DATE_PUBLISHED`/`DATE_MODIFIED` 정규식 추출 + `src/app/glossary/page.tsx` 의 `GLOSSARY` 배열에서 용어 27개 추출. 출력: `public/network-mirror.json` (gitignored, 빌드마다 재생성). 75편(계산기 30 + 가이드 18 + 용어 27), 21ms.
 - `validate-seo.mjs` — SEO 검증 (메타·canonical·구조화 데이터)
 - `audit-adsense.mjs` — AdSense 정책·배치 감사
 - `launch-checklist.mjs` — 출시 체크리스트
@@ -288,6 +290,7 @@
 - `npm run test:e2e` — Playwright
 - `npm run format` — Prettier
 - `npm run sync-data` / `sync:health` / `gen-og` / `seo:validate` / `audit:adsense` / `launch:checklist` — 운영 도구
+- `npm run generate:mirror` — **(2026-05-08 신설)** smartdata network HQ sync manifest 생성 (단독 실행). `prebuild` 단계에서도 자동 실행
 - `npm run ralph:meta` / `ralph:meta:fix` / `ralph:link-health` / `ralph:seasonal` / `ralph:tax-check` / `ralph:visual` / `ralph:bundle` / `ralph:faq` / `ralph:lh` — Ralph YORO Phase P 일일 감사 도구
 
 ## 14. 환경변수 의존
@@ -419,6 +422,14 @@
 → **종합 (2026-05-07)**: 4 절대 규칙·안전 게이트·메인 backref 모두 충족. NETWORK.md v0.6 dual-brand 정합. 잔여: 자매 페이지 전체로의 backref 확산(현재 시범 2 페이지 + 사이트 전역 Footer / 30 계산기·18 가이드 개별 적용은 후속 phase 대상).
 
 ## 22. 변경 이력
+- 2026-05-08 — **feat(network): public/network-mirror.json 빌드 시 자동 생성** (PR `feat/network-mirror-build`, commit `7180aa5`)
+  - `scripts/generate-network-mirror.mjs` 신설 — calculatorhost 페이지 list manifest 출력 (75편: 계산기 30 + 가이드 18 + 용어 27)
+  - `package.json` `prebuild` 에 자동 실행 연결 + `npm run generate:mirror` 단독 실행 지원
+  - `robots.txt` 에 `Allow: /network-mirror.json` 명시 (기존 `Disallow: /*.json$` 보다 우선 적용)
+  - `.gitignore` 에 `/public/network-mirror.json` 추가 (빌드마다 재생성, 커밋 노이즈 방지). Cloudflare Pages 빌드 시 자동 포함
+  - 양식: spec 1:1 (`site` / `siteName` / `domain` / `lastUpdated` / `totalPosts` / `categories` / `personas` / `posts[]`)
+  - 빌드 시간 영향: ~21ms 추가 (Negligible)
+  - 메인(smartdatashop.kr) 일일 cron 으로 fetch → `sister-mirrors/calculatorhost/posts.json` sync 의 SSoT
 - 2026-05-07 — 초기 자동 생성 (commit `16064a0` 기준 분석)
 - 2026-05-07 — **feat(network): smartdatashop 메인 backref 컴포넌트 + JSON-LD 부착** (commit `663f1d3`, PR #1 머지)
   - `MainBackrefBox.tsx` 신설 (variant inline/sidebar/footer, 메인 토큰 #8b1538 + #faf7f0)
