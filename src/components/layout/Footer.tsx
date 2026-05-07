@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 
 export function Footer() {
   return (
@@ -59,6 +60,12 @@ export function Footer() {
             </ul>
           </div>
         </div>
+        {/* smartdatashop network — 메인 사이트 backref (NETWORK.md v0.6 dual-brand) */}
+        <section aria-label="네트워크" className="mt-8">
+          <h3 className="mb-2 text-sm font-semibold text-text-secondary">네트워크</h3>
+          <MainBackrefBox variant="footer" />
+        </section>
+
         <div className="mt-8 border-t border-border-subtle pt-6 text-caption text-text-tertiary">
           <p>
             본 사이트의 계산 결과는 참고용이며 법적 효력이 없습니다. 실제 금융·세무 처리는

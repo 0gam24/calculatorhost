@@ -6,6 +6,8 @@ import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { MainBackrefBox } from '@/components/network/MainBackrefBox';
+import { getMainCategoryUrl } from '@/lib/network/main-backref';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
@@ -476,6 +478,9 @@ export default function TaxCalendar2026Page() {
               </section>
 
               <ShareButtons title="2026 세금 캘린더 — 1월부터 12월까지 한눈에" url={URL} description="월별 세금 일정 + 가이드/계산기 1-click 이동." />
+
+              {/* smartdatashop network 메인 사이트 backref */}
+              <MainBackrefBox mainCategoryUrl={getMainCategoryUrl('tax')} />
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">

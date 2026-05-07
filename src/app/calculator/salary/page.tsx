@@ -30,6 +30,8 @@ import {
 import { SalaryCalculator } from './SalaryCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { MainBackrefBox } from '@/components/network/MainBackrefBox';
+import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref';
 
 const URL = 'https://calculatorhost.com/calculator/salary/';
 
@@ -578,6 +580,11 @@ export default function SalaryPage() {
                   </li>
                 </ul>
               </section>
+
+              {/* smartdatashop network 메인 사이트 backref (1차 출처 데이터 저널) */}
+              <MainBackrefBox
+                mainCategoryUrl={getMainCategoryUrlForCalculatorSlug('salary')}
+              />
 
               {/* 출처·면책 */}
               <section

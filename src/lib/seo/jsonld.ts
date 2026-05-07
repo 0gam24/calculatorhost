@@ -14,6 +14,18 @@ const SITE_FOUNDER = '김준혁';
 const SITE_DESCRIPTION =
   '2026년 최신 세율·금리를 반영한 한국 생활 금융·세금·부동산·근로 계산기 31종을 무료로 제공하는 사이트.';
 
+// smartdatashop network 메인 사이트(1차 출처 데이터 저널) — 자매 페이지의
+// publisher.parentOrganization 및 isBasedOn 속성으로 부착되어 네트워크 신호화.
+const NETWORK_MAIN_URL = 'https://smartdatashop.kr';
+const NETWORK_MAIN_NAME = '스마트데이터샵';
+const NETWORK_MAIN_HOME = `${NETWORK_MAIN_URL}/`;
+
+const NETWORK_PARENT_ORG = {
+  '@type': 'Organization',
+  name: NETWORK_MAIN_NAME,
+  url: NETWORK_MAIN_URL,
+} as const;
+
 export interface JsonLd {
   '@context': 'https://schema.org';
   '@type': string;
@@ -63,6 +75,7 @@ export function buildOrganizationJsonLd(): JsonLd {
     },
     areaServed: { '@type': 'Country', name: 'South Korea' },
     knowsLanguage: ['ko-KR'],
+    parentOrganization: NETWORK_PARENT_ORG,
     ...(sameAs.length > 0 ? { sameAs } : {}),
   };
 }
@@ -120,7 +133,9 @@ export function buildSoftwareApplicationJsonLd(opts: SoftwareApplicationOptions)
       name: SITE_LEGAL_NAME,
       legalName: SITE_LEGAL_NAME,
       url: SITE_URL,
+      parentOrganization: NETWORK_PARENT_ORG,
     },
+    isBasedOn: NETWORK_MAIN_HOME,
     offers: {
       '@type': 'Offer',
       price: 0,
@@ -376,7 +391,9 @@ export function buildArticleJsonLd(opts: ArticleOptions): JsonLd {
       name: SITE_LEGAL_NAME,
       legalName: SITE_LEGAL_NAME,
       url: SITE_URL,
+      parentOrganization: NETWORK_PARENT_ORG,
     },
+    isBasedOn: NETWORK_MAIN_HOME,
     mainEntityOfPage: {
       '@type': 'WebPage',
       '@id': opts.url,
