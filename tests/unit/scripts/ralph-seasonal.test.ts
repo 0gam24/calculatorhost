@@ -35,10 +35,10 @@ describe('ralph-seasonal-guide.mjs 유효성', () => {
   });
 
   it('각 월별 데이터가 필수 필드(slug, title, published)를 가져야 함', () => {
-    for (const month of Object.keys(SEASONAL_GUIDES_SPEC)) {
-      const guides = Array.isArray(SEASONAL_GUIDES_SPEC[month])
-        ? SEASONAL_GUIDES_SPEC[month]
-        : [SEASONAL_GUIDES_SPEC[month]];
+    for (const monthKey of Object.keys(SEASONAL_GUIDES_SPEC)) {
+      const month = Number(monthKey) as keyof typeof SEASONAL_GUIDES_SPEC;
+      const entry = SEASONAL_GUIDES_SPEC[month];
+      const guides = Array.isArray(entry) ? entry : [entry];
 
       for (const guide of guides) {
         expect(guide).toHaveProperty('slug');
@@ -54,11 +54,11 @@ describe('ralph-seasonal-guide.mjs 유효성', () => {
   });
 
   it('슬러그는 모두 고유해야 함 (중복 없음)', () => {
-    const slugs = [];
-    for (const month of Object.keys(SEASONAL_GUIDES_SPEC)) {
-      const guides = Array.isArray(SEASONAL_GUIDES_SPEC[month])
-        ? SEASONAL_GUIDES_SPEC[month]
-        : [SEASONAL_GUIDES_SPEC[month]];
+    const slugs: string[] = [];
+    for (const monthKey of Object.keys(SEASONAL_GUIDES_SPEC)) {
+      const month = Number(monthKey) as keyof typeof SEASONAL_GUIDES_SPEC;
+      const entry = SEASONAL_GUIDES_SPEC[month];
+      const guides = Array.isArray(entry) ? entry : [entry];
 
       for (const guide of guides) {
         slugs.push(guide.slug);
@@ -70,10 +70,10 @@ describe('ralph-seasonal-guide.mjs 유효성', () => {
   });
 
   it('슬러그는 영문 케밥케이스여야 함', () => {
-    for (const month of Object.keys(SEASONAL_GUIDES_SPEC)) {
-      const guides = Array.isArray(SEASONAL_GUIDES_SPEC[month])
-        ? SEASONAL_GUIDES_SPEC[month]
-        : [SEASONAL_GUIDES_SPEC[month]];
+    for (const monthKey of Object.keys(SEASONAL_GUIDES_SPEC)) {
+      const month = Number(monthKey) as keyof typeof SEASONAL_GUIDES_SPEC;
+      const entry = SEASONAL_GUIDES_SPEC[month];
+      const guides = Array.isArray(entry) ? entry : [entry];
 
       for (const guide of guides) {
         // 영문 소문자·숫자·하이픈만 허용
@@ -86,10 +86,10 @@ describe('ralph-seasonal-guide.mjs 유효성', () => {
 
   it('발행 완료 가이드는 1~6월, 미발행은 7~12월이어야 함', () => {
     // 1~6월 모두 published: true
-    for (let month = 1; month <= 6; month++) {
-      const guides = Array.isArray(SEASONAL_GUIDES_SPEC[month])
-        ? SEASONAL_GUIDES_SPEC[month]
-        : [SEASONAL_GUIDES_SPEC[month]];
+    for (let m = 1; m <= 6; m++) {
+      const month = m as keyof typeof SEASONAL_GUIDES_SPEC;
+      const entry = SEASONAL_GUIDES_SPEC[month];
+      const guides = Array.isArray(entry) ? entry : [entry];
 
       for (const guide of guides) {
         expect(guide.published).toBe(true);
@@ -97,10 +97,10 @@ describe('ralph-seasonal-guide.mjs 유효성', () => {
     }
 
     // 7~12월 모두 published: false
-    for (let month = 7; month <= 12; month++) {
-      const guides = Array.isArray(SEASONAL_GUIDES_SPEC[month])
-        ? SEASONAL_GUIDES_SPEC[month]
-        : [SEASONAL_GUIDES_SPEC[month]];
+    for (let m = 7; m <= 12; m++) {
+      const month = m as keyof typeof SEASONAL_GUIDES_SPEC;
+      const entry = SEASONAL_GUIDES_SPEC[month];
+      const guides = Array.isArray(entry) ? entry : [entry];
 
       for (const guide of guides) {
         expect(guide.published).toBe(false);
@@ -109,10 +109,10 @@ describe('ralph-seasonal-guide.mjs 유효성', () => {
   });
 
   it('타이틀은 한글이고 적절한 길이여야 함', () => {
-    for (const month of Object.keys(SEASONAL_GUIDES_SPEC)) {
-      const guides = Array.isArray(SEASONAL_GUIDES_SPEC[month])
-        ? SEASONAL_GUIDES_SPEC[month]
-        : [SEASONAL_GUIDES_SPEC[month]];
+    for (const monthKey of Object.keys(SEASONAL_GUIDES_SPEC)) {
+      const month = Number(monthKey) as keyof typeof SEASONAL_GUIDES_SPEC;
+      const entry = SEASONAL_GUIDES_SPEC[month];
+      const guides = Array.isArray(entry) ? entry : [entry];
 
       for (const guide of guides) {
         // 한글 포함 여부 (간단한 검증)
