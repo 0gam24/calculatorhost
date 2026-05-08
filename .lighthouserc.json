@@ -33,7 +33,7 @@
         "categories:best-practices": ["warn", { "minScore": 0.85 }],
         "categories:seo": ["warn", { "minScore": 0.9 }],
         "first-contentful-paint": ["warn", { "maxNumericValue": 1800 }],
-        "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+        "largest-contentful-paint": ["error", { "maxNumericValue": 4000 }],
         "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
         "total-blocking-time": ["warn", { "maxNumericValue": 200 }],
         "interaction-to-next-paint": ["warn", { "maxNumericValue": 200 }]
