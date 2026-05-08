@@ -11,12 +11,24 @@
 
 ### 🚫 영구 운영 규칙 (사용자 명시 영구 적용)
 
-#### 1) git push 금지
-- **`git push` 는 절대 자동 실행 금지.**
-- **사용자가 명시적으로 "푸쉬" / "push" / "푸시" / "푸시해" 같은 키워드로 직접 요청한 직후의 단일 작업에서만 실행.**
-- 그 외 모든 상황(빌드 완료·테스트 통과·기능 완료 등)에서 push를 자율 실행하면 안 됨.
-- `.claude/settings.json` 의 `deny` 에 `Bash(git push:*)` 등재됨 + `.claude/hooks/check-destructive.sh` 에서 차단.
-- 원격 자원 변경 명령(`gh pr create/merge/close`, `gh repo create/delete` 등)도 동일 원칙.
+#### 1) 원격 자원 변경 — 운영자 단독 운영 모드 (2026-05-08 갱신)
+
+**컨텍스트**: 본 repo의 운영자(0gam24)는 단독 운영자(=커미터=리뷰어=배포자). 다중 협업자 보호 / PR 리뷰 우회 우려가 적용되지 않음. 자기 결정·자기 책임 원칙.
+
+**룰**:
+- **운영자가 명시적으로 "푸쉬" / "push" / "푸시" / "푸시해" 키워드로 요청한 직후에만 자율 실행.**
+- 단일 키워드로 일괄 트리거 가능 (`git push` + `gh pr create` + `gh pr merge` + `gh pr close` + `gh pr comment`).
+- 그 외 상황(빌드 완료·테스트 통과·기능 완료 등)에서 자율 실행 금지 — 로컬 작업은 자율, 원격 반영은 운영자 승인.
+- `.claude/settings.json` `permissions.allow` 에 `Bash(git push:*)` / `Bash(gh pr create:*)` / `Bash(gh pr merge:*)` / `Bash(gh pr close:*)` / `Bash(gh pr comment:*)` 등재 (2026-05-08 운영자 명시 승인).
+
+**파괴적 명령 — 영구 차단 유지** (`.claude/settings.json` `deny`):
+- `git push --force` / `git push -f` / `git push --force-with-lease` (force push 일체)
+- `git reset --hard origin/main` (작업 손실 위험)
+- `git clean -fdx`, `git branch -D main/master`
+- `gh repo create` / `gh repo delete` (repo 자체 변경)
+- `chmod 777`, `sudo:*`, `rm -rf /` 류 시스템 위험 명령
+
+**근거**: 원격 작업의 정상 흐름(push/PR/merge)은 운영자 단독이므로 마찰 제거. 비정상·복구 불가 명령(force push, repo 삭제 등)은 단독 운영자라도 보호망 유지.
 
 #### 2) API 키·시크릿 노출 금지
 - **API 키·토큰·비밀번호·인증서를 코드·문서·로그·커밋 메시지에 절대 적지 않음.**

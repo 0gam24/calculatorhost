@@ -82,8 +82,10 @@ block_patterns=(
   "git branch -D (main|master)"
   "git clean -fdx"
 
-  # ── 원격 자원 변경 (PR/이슈/리포 머지·삭제) ──
-  "gh pr (create|merge|close|comment)"
+  # ── 원격 자원 자체 변경/삭제 (단독 운영자라도 보호 유지) ──
+  # gh pr create/merge/close/comment 는 settings.json allow 등재 (2026-05-08 운영자 명시 승인).
+  # 본 훅은 git push 와 동일한 키워드 컨텍스트 검증 로직을 사용 — 위 git push 블록의 키워드
+  # 검증이 통과한 동일 turn 에서만 자율 실행, 그 외에는 settings.json allow 만으로 통과.
   "gh repo (create|delete)"
   "wrangler pages project delete"
   "wrangler pages deployment delete"
