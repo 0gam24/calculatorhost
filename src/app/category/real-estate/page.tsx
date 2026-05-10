@@ -15,9 +15,18 @@ import {
 const URL = 'https://calculatorhost.com/category/real-estate/';
 
 export const metadata: Metadata = {
-  title: '부동산 계산기 모음 2026 | 양도세·중개수수료·평수',
+  title: '부동산 계산기 모음 2026 | 부동산 세금 계산기 통합 | calculatorhost',
   description:
-    '2026년 최신 상정 반영 부동산 거래 관련 계산기. 양도소득세, 취득세, 재산세, 중개수수료, 전월세전환, 평수 환산을 한 곳에서 계산하세요.',
+    '부동산 계산기 한곳에 모음 — 양도소득세·취득세·재산세·종합부동산세·중개수수료·전월세 전환율·평수 환산·임대수익률. 2026 최신 세율 반영, 무료, 회원가입 불필요.',
+  keywords: [
+    '부동산 계산기',
+    '부동산계산기',
+    '부동산 세금 계산기',
+    '부동산세금계산기',
+    '부동산 양도세 계산기',
+    '아파트 세금 계산기',
+    '주택 세금 계산기',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '부동산 계산기 모음 2026',

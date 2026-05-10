@@ -53,6 +53,7 @@ const CALCULATOR_SLUGS = [
   'split-buy',
   'split-sell',
   'vat',
+  'dti',
 ];
 
 const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
@@ -82,6 +83,8 @@ const GUIDE_SLUGS = [
   'salary-negotiation-take-home',
   // Phase O: 신규 가이드 (5월 신고 시즈널 — 근로·자녀장려금 헷갈림)
   'earned-income-tax-credit-vs-child',
+  // GSC 노출 42회 단일 토픽 (페이지 부재 → 즉시 캡처)
+  'rent-conversion-rate-2026-housing-lease-act',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
