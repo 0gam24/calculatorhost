@@ -26,9 +26,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/deposit/';
 
 export const metadata: Metadata = {
-  title: '정기예금 이자 계산기 2026 | 단리·복리·세후 | calculatorhost',
+  title: '정기예금 이자 계산기 2026 | 1억 1년 4% 세후 얼마·26년도 예금이자',
   description:
-    '2026년 정기예금 이자 계산기. 원금·이율·기간으로 세후 수령액을 계산. 단리·복리·월이자 받기 등 상품 유형별 비교. 이자소득세 15.4% 적용. 무료.',
+    '1억 1년 4% 정기예금 세후 얼마? 단리·복리·월이자 수령 유형 동시 비교 + 이자소득세 15.4% 자동 + 비과세종합저축·ISA 한도. 2026년 최신 평균 금리.',
+  keywords: [
+    '정기예금 이자 계산기',
+    '예금 이자 계산기',
+    '26년도 예금이자',
+    '예금 단리 복리',
+    '예금 세후',
+    '월이자 받기',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '정기예금 이자 계산기 2026 — 단리·복리·세후 비교',

@@ -23,9 +23,18 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 
 export const metadata: Metadata = {
-  title: '프리랜서 종합소득세 계산기 2026 | 3.3% 원천징수 | calculatorhost',
+  title: '프리랜서 세후 계산기 2026 | 종소세 5월 신고·3.3% 원천징수',
   description:
-    '2026년 프리랜서 종합소득세 계산기. 수입액과 경비율(기준율 또는 실제)을 입력해 과세표준·세액·3.3% 원천징수를 계산. 절세 팁 제시. 무료.',
+    '연 3,000만 프리랜서 세후 얼마? 단순경비율·기준경비율 자동 분기 + 종합소득세 누진(6~45%)·3.3% 원천 환급. 5월 신고 준비. 2026 최신.',
+  keywords: [
+    '프리랜서 세후계산기',
+    '프리랜서 계산기',
+    '프리랜서 종합소득세',
+    '프리랜서 3.3% 원천징수',
+    '단순경비율',
+    '기준경비율',
+    '종소세 신고',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '프리랜서 종합소득세 계산기 2026',

@@ -22,9 +22,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/rental-yield/';
 
 export const metadata: Metadata = {
-  title: '임대수익률 계산기 2026 | 공실률·Cap Rate | calculatorhost',
+  title: '임대수익률 계산기 2026 | 부동산 수익률·Cap Rate·공실률 반영',
   description:
-    '2026년 임대수익률 계산기. 구매가·보증금·월세로 순임대수익률·Cap Rate를 계산. 공실률·제경비 반영 가능. 투자 판단 기준 제시. 무료.',
+    '5억 매수 월세 200만 임대수익률 얼마? 순수익률(NOI)·Cap Rate·공실률 5%·제경비 12% 자동 + 전세 vs 월세 비교. 부동산 투자 판단. 2026 최신.',
+  keywords: [
+    '임대수익률 계산기',
+    '부동산 수익률 계산기',
+    'Cap Rate',
+    '순수익률 NOI',
+    '월세 수익률',
+    '전세 vs 월세',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '임대수익률 계산기 2026 — 공실률·Cap Rate',

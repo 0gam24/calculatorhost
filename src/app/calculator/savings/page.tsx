@@ -22,9 +22,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/savings/';
 
 export const metadata: Metadata = {
-  title: '적금 이자 계산기 2026 | 세후 수령액 비교 | calculatorhost',
+  title: '적금 이자 계산기 2026 | 월 30만×3년 세후 얼마·단리/복리 비교',
   description:
-    '2026년 적금 이자 계산기. 월 납입액·기간·이율을 입력해 세후 수령액을 계산. 단리·복리 비교 가능. 이자소득세 15.4% 자동 적용. 무료.',
+    '월 30만 36개월 4% 적금 만기 얼마? 단리·복리 동시 계산 + 이자소득세 15.4% 세후 자동 + 비과세종합저축 한도 안내. 정기적금·자유적금 비교.',
+  keywords: [
+    '적금 이자 계산기',
+    '적금 만기 계산',
+    '적금 단리 복리',
+    '적금 세후',
+    '비과세 적금',
+    '자유적금',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '적금 이자 계산기 2026 — 세후 수령액 비교',
