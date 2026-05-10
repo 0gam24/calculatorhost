@@ -100,10 +100,15 @@ jobs:
           git add "src/app/guide/${SLUG}/page.tsx" src/app/sitemap.ts
           git commit -m "feat(guide): ${SLUG} auto draft (${DATE})"
           git push origin "$BRANCH"
-          gh pr create --base main --head "$BRANCH" \
-            --title "feat(guide): ${SLUG} auto draft - operator review" \
-            --body "Auto-generated draft. Operator review SLA: 30 minutes. Topic: ${TITLE}" \
-            --label "ralph,automation,auto-guide"
+          # 라벨은 repo 에 없을 수 있어 별도 단계로 처리 (PR 생성 자체 실패 방지)
+          PR_URL=$(gh pr create --base main --head "$BRANCH" \
+            --title "feat(guide): ${SLUG} 자동 초안 (운영자 검수 대기)" \
+            --body "Auto-generated draft. Operator review SLA: 30 minutes. Topic: ${TITLE}")
+          echo "PR created: $PR_URL"
+          # 라벨 적용은 best-effort (실패 무시)
+          gh pr edit "$PR_URL" --add-label "ralph" 2>/dev/null || true
+          gh pr edit "$PR_URL" --add-label "auto-guide" 2>/dev/null || true
+          gh pr edit "$PR_URL" --add-label "automation" 2>/dev/null || true
 
       - name: Summary
         if: always()
