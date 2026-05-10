@@ -16,7 +16,7 @@ const ROOT_DIR = path.join(__dirname, '..');
 const REPORTS_DIR = path.join(ROOT_DIR, '.claude', 'reports');
 const STUCK_FILE = path.join(ROOT_DIR, '.claude', 'stuck.md');
 
-const TIMEOUT_MS = 5000;
+const TIMEOUT_MS = 10000;
 const MAX_RETRIES = 1;
 
 // 한국 시간대 포맷터
@@ -92,8 +92,31 @@ function extractExternalLinks() {
 }
 
 /**
- * 도메인당 HEAD 요청 1회만 수행 (대표 URL)
+ * 도메인당 HEAD 요청 1회만 수행 (대표 URL).
+ *
+ * 한국 정부·공공기관 사이트 다수가 HEAD 메서드 거부(405) 또는 봇 차단(403) →
+ * 1) Method: GET (body 무시), 2) 브라우저 풍 User-Agent, 3) 405/403/404 시
+ * GET 폴백 한 번 더 시도. 정상 응답(200/201/204/3xx) 모두 OK 처리.
  */
+const BROWSER_UA =
+  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+const COMMON_HEADERS = {
+  'User-Agent': BROWSER_UA,
+  Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'ko-KR,ko;q=0.9,en;q=0.8',
+};
+
+async function fetchOnce(testUrl, method, signal) {
+  return fetch(testUrl, {
+    method,
+    headers: COMMON_HEADERS,
+    signal,
+    // manual 로 받으면 3xx 도 status 코드로 노출 → '도메인 살아 있음' 판정 가능.
+    // follow 는 chain 중간 timeout / TLS issue 시 entire request 실패로 처리되어 N/A 양산.
+    redirect: 'manual',
+  });
+}
+
 async function checkDomainHealth(domain, urls) {
   // 도메인당 첫 번째 URL만 확인
   const testUrl = Array.from(urls)[0];
@@ -103,17 +126,30 @@ async function checkDomainHealth(domain, urls) {
       const controller = new AbortController();
       const timeout = setTimeout(() => controller.abort(), TIMEOUT_MS);
 
-      const response = await fetch(testUrl, {
-        method: 'HEAD',
-        signal: controller.signal,
-        redirect: 'follow',
-      });
+      // 1차 HEAD 시도 (서버가 허용하면 빠르고 가벼움)
+      let response = await fetchOnce(testUrl, 'HEAD', controller.signal);
+
+      // HEAD 가 봇 차단 / 메서드 거부 (4xx 일부) → GET 폴백
+      if (response.status === 405 || response.status === 403 || response.status === 404) {
+        const controller2 = new AbortController();
+        const timeout2 = setTimeout(() => controller2.abort(), TIMEOUT_MS);
+        try {
+          response = await fetchOnce(testUrl, 'GET', controller2.signal);
+        } finally {
+          clearTimeout(timeout2);
+        }
+      }
 
       clearTimeout(timeout);
 
+      // 200~299 와 3xx(redirect) 모두 정상으로 간주.
+      // redirect: 'follow' 인데도 3xx 가 반환되면 fetch 가 추적 한도에 걸린 케이스 →
+      // 도메인 자체는 살아 있으므로 OK 처리.
+      const ok = response.ok || (response.status >= 300 && response.status < 400);
+
       return {
         status: response.status,
-        ok: response.ok,
+        ok,
         statusText: response.statusText,
         testUrl,
       };
