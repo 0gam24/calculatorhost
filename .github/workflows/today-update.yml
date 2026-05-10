@@ -1,0 +1,56 @@
+name: today-update
+
+# 매일 03:30 KST today.md 자동 갱신.
+# 전 24시간 내 main 에 추가된 가이드·계산기 page.tsx 를 git log 로 추출 후
+# today.md 의 오늘 날짜 섹션에 머지·prepend.
+
+on:
+  schedule:
+    # 매일 03:30 KST (UTC+9 = 18:30 UTC 전날)
+    - cron: '30 18 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-today:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate today.md
+        run: node scripts/generate-today.mjs
+
+      - name: Detect changes
+        id: changes
+        run: |
+          if git diff --quiet today.md; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push
+        if: steps.changes.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add today.md
+          DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          git commit -m "chore(today): ${DATE} 신규 콘텐츠 자동 로그"
+          git push origin main
+
+      - name: Summary
+        run: |
+          echo "## today-update result" >> $GITHUB_STEP_SUMMARY
+          echo "- changed: ${{ steps.changes.outputs.changed }}" >> $GITHUB_STEP_SUMMARY

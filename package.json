@@ -12,6 +12,8 @@
     "seo:validate": "node scripts/validate-seo.mjs",
     "audit:adsense": "node scripts/audit-adsense.mjs",
     "generate:mirror": "node scripts/generate-network-mirror.mjs",
+    "generate:today": "node scripts/generate-today.mjs",
+    "generate:today:dry": "node scripts/generate-today.mjs --dry-run",
     "ralph:auto-guide": "node scripts/ralph-auto-guide.mjs",
     "ralph:auto-guide:dry": "node scripts/ralph-auto-guide.mjs --dry-run",
     "ralph:check-guide": "node scripts/check-guide-quality.mjs",
