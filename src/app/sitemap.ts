@@ -85,6 +85,7 @@ const GUIDE_SLUGS = [
   'earned-income-tax-credit-vs-child',
   // GSC 노출 42회 단일 토픽 (페이지 부재 → 즉시 캡처)
   'rent-conversion-rate-2026-housing-lease-act',
+  'october-vat-q3-preliminary',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
