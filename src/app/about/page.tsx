@@ -199,6 +199,41 @@ export default function AboutPage() {
                 </li>
               </ul>
 
+              <h2 className="text-2xl font-semibold text-text-primary">자동 가이드 발행 프로세스 (2026-05~ 도입)</h2>
+              <p>
+                일부 시즌별 가이드(연말정산·종소세 신고 등 시기성 콘텐츠)는 Anthropic Claude API 를
+                활용해 자동으로 초안을 생성합니다. 모든 자동 생성 콘텐츠는 다음 검증 절차를 거친 후에만
+                발행됩니다.
+              </p>
+              <ul className="list-disc space-y-2 pl-5">
+                <li>
+                  <strong>자동 생성 범위</strong>: 가이드 본문(정의·방법론·시장 트렌드·FAQ)에 한정.{' '}
+                  <strong>세율표·공제 금액·법조항 §번호 인용은 자동 발행 대상이 아닙니다</strong>{' '}
+                  (운영자가 SSoT 상수<code className="text-caption">src/lib/constants/</code>에서 직접 인용).
+                </li>
+                <li>
+                  <strong>CI 자동 검증 게이트</strong>: 본문 2,000자 하한, 외부 권위 링크 2개 이상,
+                  금지 표현(투자 권유·수익 보장·확정 절세 등) 자동 검출, 세율 % / 법조항 §번호 정규식
+                  추출 후 SSoT 상수와 자동 대조, AI 생성 표기 의무 — 위반 시 PR 차단.
+                </li>
+                <li>
+                  <strong>운영자 검수 SLA</strong>: 발행 전 최소 30분 실질 검토(법조항 정확성·세율값
+                  대조·중복 콘텐츠 검사). RED 항목 1개라도 발견 시 즉시 폐기 또는 재작성합니다.
+                </li>
+                <li>
+                  <strong>가이드 하단 표기 의무</strong>: 자동 초안으로 작성된 가이드는 본문 하단에
+                  "AI 보조 작성·운영자 최종 검증 (YYYY-MM-DD)" 표기를 포함합니다.
+                </li>
+                <li>
+                  <strong>점진 도입</strong>: 6개월 파일럿(월 5–10편 → 20편 → 30편). Search Console
+                  순위 -10% 하락 또는 Google Manual Action 알림 시 즉시 중단·전수 재검수.
+                </li>
+                <li>
+                  <strong>월 1회 정기 감사</strong>: 자동 발행분 무작위 표본 + 핵심 시즌 토픽(5월 종소세
+                  등)을 운영자 또는 외부 세무 전문가가 재검증합니다.
+                </li>
+              </ul>
+
               <h2 className="text-2xl font-semibold text-text-primary">검증 절차</h2>
               <p>
                 각 계산기 출시 전 다음 절차를 거칩니다.
