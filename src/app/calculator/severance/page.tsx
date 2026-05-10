@@ -23,9 +23,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/severance/';
 
 export const metadata: Metadata = {
-  title: '퇴직금 계산기 2026 | 평균임금·퇴직소득세·세후 | calculatorhost',
+  title: '퇴직금 + 퇴직소득세 계산기 2026 | 근속연수공제·세후 | calculatorhost',
   description:
-    '2026년 퇴직소득세 반영 퇴직금 계산기. 입사·퇴직 날짜로 평균임금과 퇴직금을 계산하고, 세율(5~42%)을 적용해 세후 수령액을 산출. DC·DB·연금 유형별 계산 가능. 무료.',
+    '2026년 퇴직금·퇴직소득세 계산기. 입사·퇴직 날짜로 평균임금·법정 퇴직금 + 근속연수 공제 적용 퇴직소득세(5~42%) 세후 수령액 즉시 산출. DC·DB 유형별 비교. 무료.',
+  keywords: [
+    '퇴직금 계산기',
+    '퇴직소득세 계산기',
+    '퇴직금 소득세 계산기',
+    '근속연수 공제',
+    'DC DB 퇴직금',
+    '2026 퇴직금',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '퇴직금 계산기 2026',
