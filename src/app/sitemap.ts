@@ -82,6 +82,7 @@ const GUIDE_SLUGS = [
   'salary-negotiation-take-home',
   // Phase O: 신규 가이드 (5월 신고 시즈널 — 근로·자녀장려금 헷갈림)
   'earned-income-tax-credit-vs-child',
+  'july-vat-and-tax-withholding',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
