@@ -1,34 +1,12 @@
 name: auto-guide-cron
 
-# 자동 가이드 발행 — 시즌별 토픽 1편 자동 초안 → PR 생성.
-# 운영자가 30분 검수 후 머지. CLAUDE.md "자동 가이드 발행 정책" 준수.
-#
-# Phase 2 파일럿:
-#   - 트리거: 매주 월요일 03:00 KST + workflow_dispatch
-#   - 시즌 캘린더(SEASONAL_GUIDES)에서 다음 미발행 토픽 자동 선정
-#   - Anthropic Claude API 호출 → JSON 응답 → TSX 조립
-#   - check-guide-quality.mjs 사전 게이트 (RED 시 중단)
-#   - 브랜치 `ralph/auto-guide-{slug}` 생성 + PR 발행
-#   - 운영자 머지 시 auto-guide-quality.yml 게이트 자동 실행
-#
-# 중단 조건:
-#   - ANTHROPIC_API_KEY 시크릿 미설정 → workflow 스킵
-#   - 사전 게이트 RED → PR 생성 안 함 (slack/issue 알림은 Phase 3)
-#
-# 점진 도입:
-#   - 1-2개월: 주 1회 (현재)
-#   - 3-4개월: 주 2회
-#   - 5-6개월: 주 3-4회
-#   - 안정 후: 매일
-
 on:
   schedule:
-    # 매주 월요일 03:00 KST (UTC+9 = 일요일 18:00 UTC)
     - cron: '0 18 * * 0'
   workflow_dispatch:
     inputs:
       topic:
-        description: '특정 토픽 슬러그 (비워두면 캘린더 자동 선정)'
+        description: 'topic slug (empty = auto select)'
         required: false
         default: ''
 
@@ -39,7 +17,6 @@ permissions:
 jobs:
   auto-guide:
     runs-on: ubuntu-latest
-    # 시크릿 미설정 시 스킵 (보호장치)
     if: ${{ vars.AUTO_GUIDE_ENABLED == 'true' || github.event_name == 'workflow_dispatch' }}
     steps:
       - name: Checkout
@@ -57,17 +34,16 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: 시크릿 확인
-        run: |
-          if [ -z "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
-            echo "::error::ANTHROPIC_API_KEY secret 미설정 — Settings > Secrets 에서 추가 필요"
-            exit 1
-          fi
-          echo "ANTHROPIC_API_KEY 길이: ${#ANTHROPIC_API_KEY}"
+      - name: Check secret
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::ANTHROPIC_API_KEY missing"
+            exit 1
+          fi
 
-      - name: 자동 가이드 초안 생성
+      - name: Generate draft
         id: generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -77,49 +53,38 @@ jobs:
           if [ -n "${{ github.event.inputs.topic }}" ]; then
             TOPIC_ARG="--topic ${{ github.event.inputs.topic }}"
           fi
-
           OUTPUT=$(node scripts/ralph-auto-guide.mjs $TOPIC_ARG)
           echo "$OUTPUT"
-
           STATUS=$(echo "$OUTPUT" | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{try{console.log(JSON.parse(s).status||'unknown')}catch(e){console.log('parse-error')}})")
           SLUG=$(echo "$OUTPUT" | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{try{console.log(JSON.parse(s).slug||'')}catch(e){console.log('')}})")
           TITLE=$(echo "$OUTPUT" | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{try{console.log(JSON.parse(s).title||'')}catch(e){console.log('')}})")
           FILE=$(echo "$OUTPUT" | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{try{console.log(JSON.parse(s).filePath||'')}catch(e){console.log('')}})")
-
           echo "status=$STATUS" >> $GITHUB_OUTPUT
           echo "slug=$SLUG" >> $GITHUB_OUTPUT
           echo "title=$TITLE" >> $GITHUB_OUTPUT
           echo "file=$FILE" >> $GITHUB_OUTPUT
 
-      - name: 사전 품질 게이트 재확인
+      - name: Quality gate
         if: steps.generate.outputs.status == 'generated'
         run: |
           node scripts/check-guide-quality.mjs "${{ steps.generate.outputs.file }}"
 
-      - name: sitemap.ts GUIDE_SLUGS 자동 추가
+      - name: Add slug to sitemap
         if: steps.generate.outputs.status == 'generated'
         run: |
           SLUG="${{ steps.generate.outputs.slug }}"
-          # GUIDE_SLUGS 배열에 토픽이 없으면 추가
           node -e "
             const fs = require('fs');
             const path = 'src/app/sitemap.ts';
             let src = fs.readFileSync(path, 'utf8');
             const slug = process.argv[1];
-            if (src.includes(\`'\${slug}'\`)) {
-              console.log('이미 sitemap 에 등재됨:', slug);
-              process.exit(0);
-            }
-            // GUIDE_SLUGS 배열의 마지막 ']' 직전에 추가
-            src = src.replace(
-              /(const GUIDE_SLUGS = \[[\s\S]*?)(\n\];)/,
-              \`\$1\n  '\${slug}',\$2\`
-            );
+            if (src.includes(\`'\${slug}'\`)) { console.log('already in sitemap'); process.exit(0); }
+            src = src.replace(/(const GUIDE_SLUGS = \[[\s\S]*?)(\n\];)/, \`\$1\n  '\${slug}',\$2\`);
             fs.writeFileSync(path, src, 'utf8');
-            console.log('sitemap GUIDE_SLUGS 에 추가:', slug);
+            console.log('sitemap updated');
           " "$SLUG"
 
-      - name: PR 생성
+      - name: Create PR
         if: steps.generate.outputs.status == 'generated'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -129,65 +94,21 @@ jobs:
           TITLE="${{ steps.generate.outputs.title }}"
           BRANCH="ralph/auto-guide-${SLUG}"
           DATE=$(date -u +%Y-%m-%d)
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -b "$BRANCH"
           git add "src/app/guide/${SLUG}/page.tsx" src/app/sitemap.ts
-          git commit -m "feat(guide): ${SLUG} 자동 초안 (${DATE})
-
-자동 발행 가이드 — Anthropic Claude AI 보조 작성, 운영자 검수 대기.
-
-- 토픽: ${TITLE}
-- 슬러그: /guide/${SLUG}/
-- 사전 품질 게이트: PASS (본문 길이 / 권위 링크 / 금지 표현 / AI 보조 표기)
-- 운영자 작업: 30분 검수 (법조항 정확성·세율값 SSoT 대조·중복 콘텐츠 검사) 후 머지
-
-정책: src/app/about/page.tsx §자동 가이드 발행 프로세스, CLAUDE.md §자동 가이드 발행 정책.
-
-🤖 Auto-generated by ralph-auto-guide.mjs"
-
+          git commit -m "feat(guide): ${SLUG} auto draft (${DATE})"
           git push origin "$BRANCH"
-
-          gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "feat(guide): ${SLUG} 자동 초안 — 운영자 검수 대기" \
-            --body "## 자동 발행 가이드 초안
-
-**Anthropic Claude AI 보조 작성, 운영자 검수 대기 중.**
-
-- 토픽: ${TITLE}
-- 슬러그: \`/guide/${SLUG}/\`
-- 생성 일자: ${DATE}
-- 모델: claude-sonnet-4-6
-
-### 운영자 검수 체크리스트 (30분 SLA)
-
-- [ ] 법조항 정확성 확인 (소득세법·지방세법·관련 시행령)
-- [ ] 세율·공제 금액 SSoT(\`src/lib/constants/tax-rates-2026.ts\`) 대조
-- [ ] 중복 콘텐츠 검사 (기존 가이드 18편)
-- [ ] 외부 권위 링크 deep-link 정확도 확인
-- [ ] 금지 표현 부재 재확인 (auto-guide-quality.yml 게이트도 자동 검증)
-- [ ] 톤·일관성 (운영자 18편 톤과 비교)
-
-### CI 게이트
-
-\`auto-guide-quality.yml\` 워크플로가 본 PR 의 가이드 파일을 자동 검증합니다.
-RED 발견 시 머지 차단.
-
-### 검수 결과 RED 시
-
-본 PR 을 close 하고 운영자가 수동 작성 또는 재트리거 — workflow_dispatch 로
-\`--topic ${SLUG}\` 재실행.
-
-🤖 Generated by [.github/workflows/auto-guide-cron.yml](https://github.com/${{ github.repository }}/blob/main/.github/workflows/auto-guide-cron.yml)" \
+          gh pr create --base main --head "$BRANCH" \
+            --title "feat(guide): ${SLUG} auto draft - operator review" \
+            --body "Auto-generated draft. Operator review SLA: 30 minutes. Topic: ${TITLE}" \
             --label "ralph,automation,auto-guide"
 
-      - name: 결과 보고
+      - name: Summary
         if: always()
         run: |
-          echo "## Auto Guide Cron 결과" >> $GITHUB_STEP_SUMMARY
-          echo "- 상태: ${{ steps.generate.outputs.status }}" >> $GITHUB_STEP_SUMMARY
-          echo "- 슬러그: ${{ steps.generate.outputs.slug }}" >> $GITHUB_STEP_SUMMARY
-          echo "- 제목: ${{ steps.generate.outputs.title }}" >> $GITHUB_STEP_SUMMARY
+          echo "## auto-guide-cron result" >> $GITHUB_STEP_SUMMARY
+          echo "- status: ${{ steps.generate.outputs.status }}" >> $GITHUB_STEP_SUMMARY
+          echo "- slug: ${{ steps.generate.outputs.slug }}" >> $GITHUB_STEP_SUMMARY
+          echo "- title: ${{ steps.generate.outputs.title }}" >> $GITHUB_STEP_SUMMARY
