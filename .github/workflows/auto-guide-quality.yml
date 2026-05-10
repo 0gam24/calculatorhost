@@ -1,0 +1,92 @@
+name: Auto Guide Quality Gate
+
+# 자동 발행 가이드 PR 의 품질 검증 게이트.
+# - 트리거: PR 의 head 브랜치명이 `ralph/auto-guide-*` 또는 `ralph/guide-*` 로 시작
+# - 검사: scripts/check-guide-quality.mjs (본문 길이·권위 링크·금지 표현·AI disclosure)
+# - 실패 시: PR 머지 차단 (required check)
+# - 정책 근거: src/app/about/page.tsx §"자동 가이드 발행 프로세스"
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/app/guide/**/page.tsx'
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  quality-gate:
+    runs-on: ubuntu-latest
+    # 자동 생성 PR 만 트리거. 운영자 수동 PR 은 게이트 적용 X (AI disclosure 의무 없음).
+    if: |
+      startsWith(github.head_ref, 'ralph/auto-guide-') ||
+      startsWith(github.head_ref, 'ralph/guide-')
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: 변경된 가이드 파일 식별
+        id: changed
+        run: |
+          changed=$(git diff --name-only origin/main...HEAD -- 'src/app/guide/**/page.tsx' | tr '\n' ' ')
+          echo "files=${changed}" >> $GITHUB_OUTPUT
+          echo "변경된 가이드: ${changed}"
+
+      - name: 가이드 품질 게이트 실행
+        id: gate
+        run: |
+          set +e
+          overall_fail=0
+          report=""
+          for file in ${{ steps.changed.outputs.files }}; do
+            if [ -z "$file" ]; then continue; fi
+            echo "::group::검증: $file"
+            output=$(node scripts/check-guide-quality.mjs "$file" 2>&1)
+            exit_code=$?
+            echo "$output"
+            echo "::endgroup::"
+
+            report="${report}\n### \`$file\`\n\`\`\`\n${output}\n\`\`\`"
+            if [ $exit_code -eq 2 ]; then
+              overall_fail=1
+            fi
+          done
+          {
+            echo "report<<EOF_REPORT"
+            echo -e "$report"
+            echo "EOF_REPORT"
+          } >> $GITHUB_OUTPUT
+          exit $overall_fail
+
+      - name: PR 코멘트 게시
+        if: always()
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const report = `${{ steps.gate.outputs.report }}`;
+            const status = '${{ steps.gate.outcome }}';
+            const head = '## 🔍 Auto Guide Quality Gate';
+            const verdict = status === 'success'
+              ? '✅ 모든 자동 발행 가이드 검증 통과'
+              : '❌ RED 항목 발견 — 머지 차단. 운영자 수정 후 재검증 필요.';
+            const body = `${head}\n\n**판정**: ${verdict}\n\n${report}\n\n---\n\n검증 항목: 본문 ≥ 2,000자 / 외부 권위 링크 ≥ 2 / 금지 표현 0 / AI 보조 작성 표기 / 세율·법조항 추출. 정책: \`src/app/about/page.tsx\` §"자동 가이드 발행 프로세스".`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body,
+            });
