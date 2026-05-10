@@ -59,16 +59,17 @@ jobs:
             echo "$output"
             echo "::endgroup::"
 
-            report="${report}\n### \`$file\`\n\`\`\`\n${output}\n\`\`\`"
+            {
+              printf '### %s\n' "$file"
+              printf '```\n'
+              printf '%s\n' "$output"
+              printf '```\n\n'
+            } >> gate-report.md
             if [ $exit_code -eq 2 ]; then
               overall_fail=1
             fi
           done
-          {
-            echo "report<<EOF_REPORT"
-            echo -e "$report"
-            echo "EOF_REPORT"
-          } >> $GITHUB_OUTPUT
+          echo "fail=$overall_fail" >> $GITHUB_OUTPUT
           exit $overall_fail
 
       - name: PR 코멘트 게시
@@ -76,14 +77,16 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const report = `${{ steps.gate.outputs.report }}`;
+            const fs = require('fs');
+            const report = fs.existsSync('gate-report.md')
+              ? fs.readFileSync('gate-report.md', 'utf8')
+              : '_(no report)_';
             const status = '${{ steps.gate.outcome }}';
-            const head = '## 🔍 Auto Guide Quality Gate';
+            const head = '## Auto Guide Quality Gate';
             const verdict = status === 'success'
-              ? '✅ 모든 자동 발행 가이드 검증 통과'
-              : '❌ RED 항목 발견 — 머지 차단. 운영자 수정 후 재검증 필요.';
-            const body = `${head}\n\n**판정**: ${verdict}\n\n${report}\n\n---\n\n검증 항목: 본문 ≥ 2,000자 / 외부 권위 링크 ≥ 2 / 금지 표현 0 / AI 보조 작성 표기 / 세율·법조항 추출. 정책: \`src/app/about/page.tsx\` §"자동 가이드 발행 프로세스".`;
-
+              ? 'PASS: 모든 자동 발행 가이드 검증 통과'
+              : 'FAIL: RED 항목 발견. 머지 차단.';
+            const body = head + '\n\n' + verdict + '\n\n' + report;
             github.rest.issues.createComment({
               issue_number: context.issue.number,
               owner: context.repo.owner,
