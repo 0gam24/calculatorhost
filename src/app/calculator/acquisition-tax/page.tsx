@@ -23,9 +23,18 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/acquisition-tax/';
 
 export const metadata: Metadata = {
-  title: '취득세 계산기 2026 | 1주택·조정지역·생애최초 | calculatorhost',
+  title: '취득세 계산기 2026 | 10억 1주택 얼마·생애최초 감면 자동',
   description:
-    '2026년 지방세율 반영 취득세 계산기. 부동산 취득 시 납부할 취득세를 계산하고, 1주택 감면·조정지역 중과세·생애최초 우대 등 할인을 자동 적용. 지방교육세까지 포함. 무료.',
+    '10억 아파트 1주택 취득세 얼마? 1주택 1~3%·조정지역 2주택 8%·3주택 12% 자동 분기 + 생애최초 감면·농특세·지방교육세 일괄 계산. 거래 전 30초 확인.',
+  keywords: [
+    '취득세 계산기',
+    '아파트 취득세',
+    '주택 취득세 세율',
+    '1주택 10억 취득세',
+    '생애최초 감면',
+    '조정지역 취득세',
+    '2026 취득세',
+  ],
   alternates: { canonical: URL },
   twitter: {
     card: 'summary_large_image',

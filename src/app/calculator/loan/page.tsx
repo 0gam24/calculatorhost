@@ -23,9 +23,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/loan/';
 
 export const metadata: Metadata = {
-  title: '대출이자 계산기 2026 | 상환방식별 월상환액 비교 | calculatorhost',
+  title: '대출이자 계산기 2026 | 원리금균등·만기일시 월상환액 비교',
   description:
-    '2026년 대출이자 계산기. 대출액·금리·기간으로 월상환액·총이자·상환 스케줄을 계산. 원리금균등·만기일시·선택형 비교 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '3억 30년 4.5% 월상환 얼마? 원리금균등·만기일시·체증·체감 4가지 상환방식 월상환액·총이자 즉시 비교 + 월별 상환 스케줄 표. 2026 최신 금리 반영.',
+  keywords: [
+    '대출이자 계산기',
+    '대출 이자 계산',
+    '주담대 월상환액',
+    '원리금균등 계산',
+    '만기일시 상환',
+    '월 상환액 계산',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '대출이자 계산기 2026 — 상환방식별 월 납입액 비교',

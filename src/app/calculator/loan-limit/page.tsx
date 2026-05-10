@@ -36,9 +36,19 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/loan-limit/';
 
 export const metadata: Metadata = {
-  title: '대출한도 DSR 계산기 2026 | 스트레스 DSR·LTV | calculatorhost',
+  title: '대출한도 계산기 2026 | DSR·LTV·DTI 통합 스트레스 1.5%p',
   description:
-    '2026년 DSR·LTV 계산기. 스트레스 DSR 규정·조정지역·생애최초 우대 등을 반영해 실제 대출한도를 계산. 주담대·전세자금·신용대출 각각 계산 가능. 무료.',
+    '연소득 6,000만 시 주담대 최대 얼마? DSR 40%·LTV·DTI 3개 규제 통합 + 스트레스 DSR 1.5%p·조정지역·생애최초 우대 자동. 결정 제약 즉시 표시. 2026 최신.',
+  keywords: [
+    '대출 한도 계산기',
+    'DSR 계산기',
+    'DSR계산기',
+    '스트레스 DSR 계산기',
+    'DSR 대출한도 계산',
+    'LTV DTI DSR 계산',
+    '주택담보대출 DSR 계산기',
+    '2026 DSR',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: 'DSR 계산기 · 대출한도 2026 — 최대 대출액 확인',
