@@ -165,6 +165,49 @@ export function estimateMonthlyIncomeTax(
 }
 
 /**
+ * 역산: 월 실수령액 → 세전 연봉 추정.
+ *
+ * 이분 탐색으로 목표 실수령액을 산출하는 세전 연봉을 찾는다.
+ * Naver 검색 "실수령 227만원" 류 키워드 대응. ±오차 1,000원 이내 수렴.
+ *
+ * 60회 루프 / 0 ~ 1,000,000,000 (10억) 범위 / 클라이언트 실행 < 1ms.
+ *
+ * @param targetMonthlyNet 목표 월 실수령액 (원)
+ * @param options 비과세 / 부양가족 / 자녀 등 (wageType·wageAmount·severance 무시)
+ * @returns 세전 연봉 추정치 (원)
+ */
+export function inferGrossFromNet(
+  targetMonthlyNet: number,
+  options: Omit<IncomeCalculationInput, 'wageType' | 'wageAmount' | 'severance'>,
+): number {
+  if (!Number.isFinite(targetMonthlyNet) || targetMonthlyNet <= 0) return 0;
+
+  let lo = 0;
+  let hi = 1_000_000_000; // 10억
+  let bestGuess = 0;
+
+  for (let i = 0; i < 60; i++) {
+    const mid = Math.floor((lo + hi) / 2);
+    const result = calculateTakeHome({
+      wageType: 'yearly',
+      wageAmount: mid,
+      severance: 'separate',
+      nontaxableMonthly: options.nontaxableMonthly,
+      dependents: options.dependents,
+      children: options.children,
+    });
+    if (result.monthlyNetIncome < targetMonthlyNet) {
+      lo = mid + 1;
+    } else {
+      hi = mid;
+      bestGuess = mid;
+    }
+    if (hi - lo <= 1) break;
+  }
+  return bestGuess || lo;
+}
+
+/**
  * 종합 실수령액 계산 (메인 엔트리)
  */
 export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculationResult {
