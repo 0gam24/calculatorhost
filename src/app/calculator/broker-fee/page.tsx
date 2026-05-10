@@ -23,9 +23,18 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/broker-fee/';
 
 export const metadata: Metadata = {
-  title: '중개수수료 계산기 2026 | 법정 상한요율·한도액 | calculatorhost',
+  title: '중개수수료 계산기 2026 | 5억 매매 720만 한도·부가세 포함',
   description:
-    '2026년 중개수수료 계산기. 공인중개사법 기준으로 부동산 거래액별 법정 상한요율과 최대 한도액을 계산. 거래 전 협상 기준 설정. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '5억 매매 중개료 최대 720만원? 법정 상한요율(0.4~0.7%) + 부가세 10%·9억/15억 구간 자동 적용. 34평·매매·전세·월세별 한도. 협상 기준 즉시 확인.',
+  keywords: [
+    '중개수수료 계산기',
+    '부동산 중개수수료',
+    '공인중개사 수수료',
+    '34평 중개수수료',
+    '5억 중개수수료',
+    '중개수수료 법정 한도',
+    '중개수수료 부가세',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '중개수수료 계산기 2026 | 법정 상한요율 및 한도액',
