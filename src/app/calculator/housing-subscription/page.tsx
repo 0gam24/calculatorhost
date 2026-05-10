@@ -22,9 +22,18 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/housing-subscription/';
 
 export const metadata: Metadata = {
-  title: '청약가점 계산기 2026 | 84점 만점·가점 항목 | calculatorhost',
+  title: '청약가점 계산기 2026 | 청약 점수 84점 만점·당첨선 추정',
   description:
-    '2026년 청약가점 계산기. 청약 항목별(무주택 기간·주택 소유·미성년 자녀·혼인 여부) 가점을 계산해 총 84점 만점 기준 순위 제시. 무료.',
+    '내 청약가점 70점이면 당첨될까? 무주택 기간(32)·부양가족(35)·청약통장(17) 항목 자동 계산 + 최근 단지 당첨 커트라인 비교. 무료, 회원가입 X.',
+  keywords: [
+    '청약가점 계산기',
+    '청약 점수 계산기',
+    '청약점수 계산',
+    '청약 84점 만점',
+    '무주택 기간',
+    '청약통장 가점',
+    '당첨 커트라인',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '청약가점 계산기 2026 — 84점 만점',

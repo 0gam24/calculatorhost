@@ -23,9 +23,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/gift-tax/';
 
 export const metadata: Metadata = {
-  title: '증여세 계산기 2026 | 10년 공제·배우자·자녀 | calculatorhost',
+  title: '증여세 계산기 2026 | 자녀 5천만·배우자 6억 10년 공제 자동',
   description:
-    '2026년 증여세 계산기. 증여 재산액과 수증자(배우자·자녀)별로 공제·세율을 적용해 세액을 계산. 10년 공제·절세 방안 제시. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '1억 자녀 증여세 얼마? 자녀 공제 5천만·배우자 6억·손자녀 1천만 10년 단위 합산 자동 + 누진세율 10~50%. 절세 분할 시나리오 비교. 2026 최신.',
+  keywords: [
+    '증여세 계산기',
+    '자녀 증여세',
+    '배우자 증여공제',
+    '증여세 10년 공제',
+    '증여세 세율',
+    '손자녀 증여',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '증여세 계산기 2026 — 배우자 6억·자녀 5천만',

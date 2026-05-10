@@ -23,9 +23,17 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 const URL = 'https://calculatorhost.com/calculator/property-tax/';
 
 export const metadata: Metadata = {
-  title: '재산세 계산기 2026 | 공시가·특례·도시지역 | calculatorhost',
+  title: '재산세 계산기 2026 | 공시가 5억 1주택 얼마·7월 납부',
   description:
-    '2026년 재산세 계산기. 공시가격·공정시장가액비율을 입력해 재산세를 계산. 1세대1주택 특례·연납 할인·도시지역세 등 반영. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '공시가 5억 1주택 재산세 얼마? 1세대1주택 특례 0.05~0.4% 자동 + 도시지역세·지방교육세·연납 6.4% 할인. 7월·9월 납부 분할 시뮬. 2026 최신.',
+  keywords: [
+    '재산세 계산기',
+    '아파트 재산세',
+    '주택 재산세',
+    '공시가격 재산세',
+    '1세대1주택 재산세',
+    '재산세 7월 납부',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '재산세 계산기 2026 | 공시가·특례·도시지역분',

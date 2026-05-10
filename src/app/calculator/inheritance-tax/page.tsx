@@ -23,9 +23,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/inheritance-tax/';
 
 export const metadata: Metadata = {
-  title: '상속세 계산기 2026 | 기초공제·배우자·자녀 | calculatorhost',
+  title: '상속세 계산기 2026 | 10억 상속 배우자공제·일괄공제 5억',
   description:
-    '2026년 상속세 계산기. 상속 재산액·상속인 구성으로 기초공제·배우자공제·자녀장려금 등을 적용해 세액을 계산. 분할·생전증여 절세 비교 가능. 무료.',
+    '10억 상속세 얼마? 일괄공제 5억·배우자공제 30억·자녀공제 자동 + 누진세율 10~50%·신고 6개월. 생전증여 vs 상속 절세 비교. 2026 최신.',
+  keywords: [
+    '상속세 계산기',
+    '상속세 일괄공제',
+    '배우자 상속공제',
+    '상속세 세율',
+    '상속세 신고',
+    '생전증여 vs 상속',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '상속세 계산기 2026 — 기초공제 2억·일괄공제 5억',

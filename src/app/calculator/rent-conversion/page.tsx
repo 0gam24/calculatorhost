@@ -22,9 +22,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/rent-conversion/';
 
 export const metadata: Metadata = {
-  title: '전월세 전환율 계산기 2026 | 법정 상한 | calculatorhost',
+  title: '전월세 전환율 계산기 2026 | 기준금리+2% 법정 상한·보증금 월세',
   description:
-    '전월세전환율 계산기 2026. 보증금과 월세로 법정 상한 범위 내 전환율을 계산. 임대인·임차인 협상 기준 제시. 최신 지역별 요율 반영. 무료.',
+    '전세 3억→보증금 1억+월세 얼마? 주택임대차보호법 §7의2 기준금리+2% 법정 상한 자동 + 보증금·월세 양방향 환산. 임대차 분쟁 예방. 2026 최신.',
+  keywords: [
+    '전월세 전환율 계산기',
+    '전월세 전환율',
+    '보증금 월세 계산기',
+    '월차임 전환율',
+    '주택임대차보호법',
+    '환산보증금',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '전월세 전환율 계산기 2026',

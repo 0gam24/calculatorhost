@@ -22,9 +22,17 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/retirement/';
 
 export const metadata: Metadata = {
-  title: '은퇴자금 계산기 2026 | FIRE·4% 룰 | calculatorhost',
+  title: '은퇴자금 계산기 2026 | FIRE 4% 룰·필요 자산 자동 계산',
   description:
-    '2026년 은퇴자금 계산기. 목표 자산·월 저축액·기대 수익률 입력으로 은퇴 가능 시기를 계산. FIRE·4% 규칙 적용 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '월 200만 생활비면 은퇴 자산 얼마? FIRE 4% 룰 자동 + 월 저축 시뮬·인플레 반영 복리 계산. 조기 은퇴 가능 시점·국민연금 보강 시나리오. 2026 최신.',
+  keywords: [
+    '은퇴자금 계산기',
+    'FIRE 계산기',
+    '4% 룰',
+    '조기 은퇴 자금',
+    '노후자금',
+    '국민연금 보강',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '은퇴자금 계산기 2026 — FIRE·4% 룰',
