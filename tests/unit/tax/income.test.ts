@@ -14,6 +14,7 @@ import {
   calculateLongTermCare,
   calculateEmployment,
   calculateTakeHome,
+  inferGrossFromNet,
 } from '@/lib/tax/income';
 import { INCOME_TAX_BRACKETS } from '@/lib/constants/tax-rates-2026';
 
@@ -211,5 +212,51 @@ describe('calculateTakeHome — 통합 시나리오', () => {
     });
     // 월급 약 833만, 상한 637만 적용 → 연금은 637만 × 4.5%
     expect(result.pension).toBe(Math.floor(6_370_000 * 0.045));
+  });
+});
+
+describe('inferGrossFromNet (역산)', () => {
+  const baseOptions = {
+    nontaxableMonthly: 0,
+    dependents: 1,
+    children: 0,
+  };
+
+  it('월 실수령 227만 → 세전 연봉 추정 후 정방향 재계산 일관성', () => {
+    const annualGross = inferGrossFromNet(2_270_000, baseOptions);
+    expect(annualGross).toBeGreaterThan(0);
+
+    // 역산 결과를 다시 정방향 계산 → 목표 ± 5,000원 이내
+    const back = calculateTakeHome({
+      wageType: 'yearly',
+      wageAmount: annualGross,
+      severance: 'separate',
+      ...baseOptions,
+    });
+    expect(Math.abs(back.monthlyNetIncome - 2_270_000)).toBeLessThan(5_000);
+  });
+
+  it('월 실수령 350만 → 세전 약 4,000만대 (sanity)', () => {
+    const annualGross = inferGrossFromNet(3_500_000, baseOptions);
+    expect(annualGross).toBeGreaterThan(40_000_000);
+    expect(annualGross).toBeLessThan(60_000_000);
+  });
+
+  it('월 실수령 500만 → 세전 약 7,000만대', () => {
+    const annualGross = inferGrossFromNet(5_000_000, baseOptions);
+    expect(annualGross).toBeGreaterThan(65_000_000);
+    expect(annualGross).toBeLessThan(90_000_000);
+  });
+
+  it('0원 / 음수 / NaN → 0', () => {
+    expect(inferGrossFromNet(0, baseOptions)).toBe(0);
+    expect(inferGrossFromNet(-100, baseOptions)).toBe(0);
+    expect(inferGrossFromNet(NaN, baseOptions)).toBe(0);
+  });
+
+  it('자녀 2명 시 동일 목표 실수령액에 필요한 세전이 더 낮다 (자녀세액공제 효과)', () => {
+    const noChildren = inferGrossFromNet(3_000_000, { ...baseOptions, children: 0 });
+    const withChildren = inferGrossFromNet(3_000_000, { ...baseOptions, children: 2 });
+    expect(withChildren).toBeLessThanOrEqual(noChildren);
   });
 });
