@@ -331,8 +331,7 @@ export default function JanuaryVehicleTaxPage() {
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 지방세법 §128 (자동차세 연납 공제) · 시행령 §125. 참고:{' '}
-                  <a href="https://www.wetax.go.kr/guide/guide0401000001.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스 자동차세 미리납부 안내</a>,{' '}
-                  <a href="https://www.nongshim.com/kcard/pro/card_benefit.do" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">신용카드 무이자 할부 카드사 정보</a>.
+                  <a href="https://www.wetax.go.kr/guide/guide0401000001.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스 자동차세 미리납부 안내</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>

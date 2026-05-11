@@ -1,7 +1,7 @@
-# Stuck Items & Ralph Signals
+## Link Health (2026. 05. 11. 10:13)
 
-> **Purpose**: YORO 작업 중 차단된 항목(stuck) 및 Ralph 자동화 신호 등재
-> **Last updated**: 2026-05-06
+모든 외부 링크 정상.
+
 
 ## Link Health (2026년 05월 06일 14:32)
 
