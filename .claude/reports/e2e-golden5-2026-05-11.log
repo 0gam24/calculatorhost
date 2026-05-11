@@ -1,0 +1,22 @@
+
+Running 18 tests using 6 workers
+
+[1A[2K[1/18] [chromium] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2)
+[1A[2K[2/18] [chromium] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯
+[1A[2K[3/18] [chromium] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다
+[1A[2K[4/18] [chromium] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화)
+[1A[2K[5/18] [chromium] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지
+[1A[2K[6/18] [chromium] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지
+[1A[2K[7/18] [chromium] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시
+[1A[2K[8/18] [chromium] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden)
+[1A[2K[9/18] [chromium] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨
+[1A[2K[10/18] [chromium] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding)
+[1A[2K[11/18] [chromium] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL)
+[1A[2K[12/18] [chromium] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답
+[1A[2K[13/18] [chromium] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인
+[1A[2K[14/18] [chromium] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시
+[1A[2K[15/18] [chromium] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출
+[1A[2K[16/18] [chromium] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가)
+[1A[2K[17/18] [chromium] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신
+[1A[2K[18/18] [chromium] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다
+[1A[2K  18 passed (35.1s)

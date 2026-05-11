@@ -107,6 +107,11 @@
 - 성능 측정 → `lighthouse-profiler`
 - 테스트 실행 → `test-runner`
 
+## 운영 상태 (모든 세션·에이전트 작업 시작 전 필수 확인)
+- @.claude/STATE.md  ← **현재 운영 모드·인프라·환경변수·캠페인 SSoT**
+
+> **에이전트 호출 룰**: 도메인 에이전트(adsense-guardian / api-researcher / calc-logic-verifier / content-writer / frontend-builder / lighthouse-profiler / seo-auditor / test-runner)에게 검토 의뢰할 때 STATE.md 의 "현재 모드" 섹션을 프롬프트에 포함하여 outdated 가정(미발사 / 미신청 / 미설정) 제거.
+
 ## 임포트 (필요 시점에만 읽음)
 - @docs/architecture.md
 - @docs/data-model.md

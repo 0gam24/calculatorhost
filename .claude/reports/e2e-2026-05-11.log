@@ -1,0 +1,2490 @@
+
+> calculatorhost@0.1.0 test:e2e
+> playwright test
+
+
+Running 146 tests using 6 workers
+
+[1A[2K[1/146] [chromium] › tests\e2e\acquisition-tax.e2e.ts:8:7 › 취득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 취득세 표시
+[1A[2K[2/146] [chromium] › tests\e2e\acquisition-tax.e2e.ts:35:7 › 취득세 골든패스 › 부가세 항목이 결과에 노출
+[1A[2K[3/146] [chromium] › tests\e2e\acquisition-tax.e2e.ts:21:7 › 취득세 골든패스 › 취득가액 변경 시 취득세 값이 변동
+[1A[2K  1) [chromium] › tests\e2e\acquisition-tax.e2e.ts:8:7 › 취득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 취득세 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-acquisition-tax.e2e.ts-1e6eb-이지-진입-시-결과-hero에-비-0-취득세-표시-chromium\error-context.md
+
+
+[1A[2K  2) [chromium] › tests\e2e\acquisition-tax.e2e.ts:35:7 › 취득세 골든패스 › 부가세 항목이 결과에 노출 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-acquisition-tax.e2e.ts-취득세-골든패스-부가세-항목이-결과에-노출-chromium\error-context.md
+
+
+[1A[2K[4/146] [chromium] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다
+[1A[2K  3) [chromium] › tests\e2e\acquisition-tax.e2e.ts:21:7 › 취득세 골든패스 › 취득가액 변경 시 취득세 값이 변동 ───────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-acquisition-tax.e2e.ts-취득세-골든패스-취득가액-변경-시-취득세-값이-변동-chromium\error-context.md
+
+
+[1A[2K[5/146] [chromium] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화)
+[1A[2K  4) [chromium] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-1bfb5-ia-label-광고-라벨이-모든-슬롯에-부여된다-chromium\error-context.md
+
+
+[1A[2K[6/146] [chromium] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2)
+[1A[2K  5) [chromium] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-ce26e-2-3-이상-배치-GEO-AEO-eCPM-최적화--chromium\error-context.md
+
+
+[1A[2K  6) [chromium] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-df9c1-현-기준-최소-2개-광고-슬롯-AD-1-AD-2--chromium\error-context.md
+
+
+[1A[2K[7/146] [chromium] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지
+[1A[2K[8/146] [chromium] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯
+[1A[2K[9/146] [chromium] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지
+[1A[2K  7) [chromium] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지 ──
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-3d0ba-마에서-광고-슬롯-배경은-라이트-밝은-색-로-유지-chromium\error-context.md
+
+
+[1A[2K  8) [chromium] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-87065--모바일-앵커-AD-5-포함-최소-1개-광고-슬롯-chromium\error-context.md
+
+
+[1A[2K[10/146] [chromium] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시
+[1A[2K  9) [chromium] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-a3928-ght-지정으로-CLS-누적-레이아웃-시프트-방지-chromium\error-context.md
+
+
+[1A[2K[11/146] [chromium] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden)
+[1A[2K  10) [chromium] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-3f072-per-광고-AD-3-가-sticky로-고정-표시-chromium\error-context.md
+
+
+[1A[2K[12/146] [chromium] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨
+[1A[2K  11) [chromium] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-185c6-er-광고-AD-3-가-숨겨짐-lg-hidden--chromium\error-context.md
+
+
+[1A[2K  12) [chromium] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-7d563-d-광고-AD-4-가-본문-중간에-배치되어-로드됨-chromium\error-context.md
+
+
+[1A[2K[13/146] [chromium] › tests\e2e\broker-fee.e2e.ts:8:7 › 중개수수료 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수수료 표시
+[1A[2K  13) [chromium] › tests\e2e\broker-fee.e2e.ts:8:7 › 중개수수료 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수수료 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-broker-fee.e2e.ts-중개수수-16c79-이지-진입-시-결과-hero에-비-0-수수료-표시-chromium\error-context.md
+
+
+[1A[2K[14/146] [chromium] › tests\e2e\broker-fee.e2e.ts:21:7 › 중개수수료 골든패스 › 매매가 입력 시 중개수수료 값이 변동
+[1A[2K[15/146] [chromium] › tests\e2e\broker-fee.e2e.ts:35:7 › 중개수수료 골든패스 › 물건 종류 변경(RadioGroup button) 시 수수료 계산 정상 동작
+[1A[2K[16/146] [chromium] › tests\e2e\capital-gains-tax.e2e.ts:8:7 › 양도소득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 양도소득세 표시
+[1A[2K  14) [chromium] › tests\e2e\broker-fee.e2e.ts:21:7 › 중개수수료 골든패스 › 매매가 입력 시 중개수수료 값이 변동 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-broker-fee.e2e.ts-중개수수료-골든패스-매매가-입력-시-중개수수료-값이-변동-chromium\error-context.md
+
+
+[1A[2K  15) [chromium] › tests\e2e\broker-fee.e2e.ts:35:7 › 중개수수료 골든패스 › 물건 종류 변경(RadioGroup button) 시 수수료 계산 정상 동작 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-broker-fee.e2e.ts-중개수수-5f767-Group-button-시-수수료-계산-정상-동작-chromium\error-context.md
+
+
+[1A[2K[17/146] [chromium] › tests\e2e\capital-gains-tax.e2e.ts:21:7 › 양도소득세 골든패스 › 양수가를 큰 폭으로 변경 시 양도소득세 값이 변동
+[1A[2K  16) [chromium] › tests\e2e\capital-gains-tax.e2e.ts:8:7 › 양도소득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 양도소득세 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-capital-gains-tax.e2e.-0fac4--진입-시-결과-hero에-비-0-양도소득세-표시-chromium\error-context.md
+
+
+[1A[2K[18/146] [chromium] › tests\e2e\capital-gains-tax.e2e.ts:35:7 › 양도소득세 골든패스 › 과세표준 항목이 결과에 노출
+[1A[2K  17) [chromium] › tests\e2e\capital-gains-tax.e2e.ts:21:7 › 양도소득세 골든패스 › 양수가를 큰 폭으로 변경 시 양도소득세 값이 변동 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-capital-gains-tax.e2e.-8ab18-양수가를-큰-폭으로-변경-시-양도소득세-값이-변동-chromium\error-context.md
+
+
+[1A[2K  18) [chromium] › tests\e2e\capital-gains-tax.e2e.ts:35:7 › 양도소득세 골든패스 › 과세표준 항목이 결과에 노출 ──────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-capital-gains-tax.e2e.ts-양도소득세-골든패스-과세표준-항목이-결과에-노출-chromium\error-context.md
+
+
+[1A[2K[19/146] [chromium] › tests\e2e\child-tax-credit.e2e.ts:7:7 › 자녀장려금 골든패스 › 기본값으로 결과 표시
+[1A[2K  19) [chromium] › tests\e2e\child-tax-credit.e2e.ts:7:7 › 자녀장려금 골든패스 › 기본값으로 결과 표시 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-child-tax-credit.e2e.ts-자녀장려금-골든패스-기본값으로-결과-표시-chromium\error-context.md
+
+
+[1A[2K[20/146] [chromium] › tests\e2e\deposit.e2e.ts:21:7 › 정기예금 이자 골든패스 › 금리 변경 시 수령액이 변동
+[1A[2K[21/146] [chromium] › tests\e2e\deposit.e2e.ts:8:7 › 정기예금 이자 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수령액 표시
+[1A[2K[22/146] [chromium] › tests\e2e\exchange.e2e.ts:9:7 › 환전 계산 골든패스 › 기본값으로 페이지 진입 시 환전 계산기 로드됨
+[1A[2K  20) [chromium] › tests\e2e\deposit.e2e.ts:21:7 › 정기예금 이자 골든패스 › 금리 변경 시 수령액이 변동 ──────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-deposit.e2e.ts-정기예금-이자-골든패스-금리-변경-시-수령액이-변동-chromium\error-context.md
+
+
+[1A[2K  21) [chromium] › tests\e2e\deposit.e2e.ts:8:7 › 정기예금 이자 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수령액 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-deposit.e2e.ts-정기예금-이자-a3817-이지-진입-시-결과-hero에-비-0-수령액-표시-chromium\error-context.md
+
+
+[1A[2K[23/146] [chromium] › tests\e2e\deposit.e2e.ts:39:7 › 정기예금 이자 골든패스 › 기간 변경 시 세후 수령액이 계산됨
+[1A[2K  22) [chromium] › tests\e2e\exchange.e2e.ts:9:7 › 환전 계산 골든패스 › 기본값으로 페이지 진입 시 환전 계산기 로드됨 ──────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-exchange.e2e.ts-환전-계산-골든패스-기본값으로-페이지-진입-시-환전-계산기-로드됨-chromium\error-context.md
+
+
+[1A[2K[24/146] [chromium] › tests\e2e\exchange.e2e.ts:18:7 › 환전 계산 골든패스 › 환전 금액, 기준환율 입력 필드 노출
+[1A[2K  23) [chromium] › tests\e2e\deposit.e2e.ts:39:7 › 정기예금 이자 골든패스 › 기간 변경 시 세후 수령액이 계산됨 ──────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-deposit.e2e.ts-정기예금-이자-골든패스-기간-변경-시-세후-수령액이-계산됨-chromium\error-context.md
+
+
+[1A[2K  24) [chromium] › tests\e2e\exchange.e2e.ts:18:7 › 환전 계산 골든패스 › 환전 금액, 기준환율 입력 필드 노출 ──────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-exchange.e2e.ts-환전-계산-골든패스-환전-금액-기준환율-입력-필드-노출-chromium\error-context.md
+
+
+[1A[2K[25/146] [chromium] › tests\e2e\exchange.e2e.ts:27:7 › 환전 계산 골든패스 › 환전 방향 라디오 버튼 선택 옵션 노출
+[1A[2K[26/146] [chromium] › tests\e2e\freelancer-tax.e2e.ts:7:7 › 프리랜서 종합소득세 골든패스 › 기본값으로 결과 표시
+[1A[2K[27/146] [chromium] › tests\e2e\gift-tax.e2e.ts:9:7 › 증여세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  25) [chromium] › tests\e2e\exchange.e2e.ts:27:7 › 환전 계산 골든패스 › 환전 방향 라디오 버튼 선택 옵션 노출 ─────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-exchange.e2e.ts-환전-계산-골든패스-환전-방향-라디오-버튼-선택-옵션-노출-chromium\error-context.md
+
+
+[1A[2K  26) [chromium] › tests\e2e\freelancer-tax.e2e.ts:7:7 › 프리랜서 종합소득세 골든패스 › 기본값으로 결과 표시 ─────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-freelancer-tax.e2e.ts-프리랜서-종합소득세-골든패스-기본값으로-결과-표시-chromium\error-context.md
+
+
+[1A[2K  27) [chromium] › tests\e2e\gift-tax.e2e.ts:9:7 › 증여세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-gift-tax.e2e.ts-증여세-골든패스-기본값으로-페이지-진입-시-hero-값-표시됨-chromium\error-context.md
+
+
+[1A[2K[28/146] [chromium] › tests\e2e\gift-tax.e2e.ts:19:7 › 증여세 골든패스 › 증여재산 가액 필드 노출
+[1A[2K[29/146] [chromium] › tests\e2e\gift-tax.e2e.ts:26:7 › 증여세 골든패스 › 관계 선택 라디오 버튼 노출
+[1A[2K  28) [chromium] › tests\e2e\gift-tax.e2e.ts:19:7 › 증여세 골든패스 › 증여재산 가액 필드 노출 ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-gift-tax.e2e.ts-증여세-골든패스-증여재산-가액-필드-노출-chromium\error-context.md
+
+
+[1A[2K  29) [chromium] › tests\e2e\gift-tax.e2e.ts:26:7 › 증여세 골든패스 › 관계 선택 라디오 버튼 노출 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-gift-tax.e2e.ts-증여세-골든패스-관계-선택-라디오-버튼-노출-chromium\error-context.md
+
+
+[1A[2K[30/146] [chromium] › tests\e2e\housing-subscription.e2e.ts:8:7 › 청약가점 골든패스 › 계산하기 클릭 후 결과 표시
+[1A[2K  30) [chromium] › tests\e2e\housing-subscription.e2e.ts:8:7 › 청약가점 골든패스 › 계산하기 클릭 후 결과 표시 ─────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-housing-subscription.e2e.ts-청약가점-골든패스-계산하기-클릭-후-결과-표시-chromium\error-context.md
+
+
+[1A[2K[31/146] [chromium] › tests\e2e\inheritance-tax.e2e.ts:9:7 › 상속세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K[32/146] [chromium] › tests\e2e\inheritance-tax.e2e.ts:19:7 › 상속세 골든패스 › 상속재산 총액 필드 노출
+[1A[2K[33/146] [chromium] › tests\e2e\inheritance-tax.e2e.ts:26:7 › 상속세 골든패스 › 배우자 상속 체크박스 노출
+[1A[2K  31) [chromium] › tests\e2e\inheritance-tax.e2e.ts:9:7 › 상속세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ─────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-inheritance-tax.e2e.ts-029c5-스-기본값으로-페이지-진입-시-hero-값-표시됨-chromium\error-context.md
+
+
+[1A[2K  32) [chromium] › tests\e2e\inheritance-tax.e2e.ts:19:7 › 상속세 골든패스 › 상속재산 총액 필드 노출 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-inheritance-tax.e2e.ts-상속세-골든패스-상속재산-총액-필드-노출-chromium\error-context.md
+
+
+[1A[2K  33) [chromium] › tests\e2e\inheritance-tax.e2e.ts:26:7 › 상속세 골든패스 › 배우자 상속 체크박스 노출 ───────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-inheritance-tax.e2e.ts-상속세-골든패스-배우자-상속-체크박스-노출-chromium\error-context.md
+
+
+[1A[2K[34/146] [chromium] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding)
+[1A[2K  34) [chromium] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-loan-limit.e2e.ts-대출한도-f8bf2-클릭-시-최종-한도가-증가-LTV-binding--chromium\error-context.md
+
+
+[1A[2K[35/146] [chromium] › tests\e2e\n-jobber-insurance.e2e.ts:7:7 › N잡러 건강보험 골든패스 › 기본값으로 결과 표시
+[1A[2K[36/146] [chromium] › tests\e2e\rental-yield.e2e.ts:9:7 › 임대수익률 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  35) [chromium] › tests\e2e\n-jobber-insurance.e2e.ts:7:7 › N잡러 건강보험 골든패스 › 기본값으로 결과 표시 ───────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-n-jobber-insurance.e2e.ts-N잡러-건강보험-골든패스-기본값으로-결과-표시-chromium\error-context.md
+
+
+[1A[2K  36) [chromium] › tests\e2e\rental-yield.e2e.ts:9:7 › 임대수익률 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ──────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-rental-yield.e2e.ts-임대수익률-골든패스-기본값으로-페이지-진입-시-hero-값-표시됨-chromium\error-context.md
+
+
+[1A[2K[37/146] [chromium] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL)
+[1A[2K[38/146] [chromium] › tests\e2e\rental-yield.e2e.ts:19:7 › 임대수익률 골든패스 › 매매가 필드 노출
+[1A[2K  37) [chromium] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL) ───────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-routing.e2e.ts-라우팅-골든패스-홈에서-양도소득세-계산기까지-이동-직접-URL--chromium\error-context.md
+
+
+[1A[2K  38) [chromium] › tests\e2e\rental-yield.e2e.ts:19:7 › 임대수익률 골든패스 › 매매가 필드 노출 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-rental-yield.e2e.ts-임대수익률-골든패스-매매가-필드-노출-chromium\error-context.md
+
+
+[1A[2K[39/146] [chromium] › tests\e2e\rental-yield.e2e.ts:26:7 › 임대수익률 골든패스 › 월 임차료 필드 노출
+[1A[2K[40/146] [chromium] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답
+[1A[2K  39) [chromium] › tests\e2e\rental-yield.e2e.ts:26:7 › 임대수익률 골든패스 › 월 임차료 필드 노출 ───────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-rental-yield.e2e.ts-임대수익률-골든패스-월-임차료-필드-노출-chromium\error-context.md
+
+
+[1A[2K  40) [chromium] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-routing.e2e.ts-라우팅-골든패스-카테고리-허브-5개-모두-200-응답-chromium\error-context.md
+
+
+[1A[2K[41/146] [chromium] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인
+[1A[2K[42/146] [chromium] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시
+[1A[2K  41) [chromium] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-routing.e2e.ts-라우팅-골든패스-신규-가이드-4개-라우팅-확인-chromium\error-context.md
+
+
+[1A[2K  42) [chromium] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시 ──
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-salary.e2e.ts-연봉실수령액-골-d0060-페이지-진입-시-결과-hero에-비-0-금액-표시-chromium\error-context.md
+
+
+[1A[2K[43/146] [chromium] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출
+[1A[2K[44/146] [chromium] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가)
+[1A[2K  43) [chromium] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-salary.e2e.ts-연봉실수령액-골든패스-월-실수령액-행과-4대보험-행이-모두-노출-chromium\error-context.md
+
+
+[1A[2K[45/146] [chromium] › tests\e2e\savings.e2e.ts:9:7 › 적금 이자 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  44) [chromium] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가) ───
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-salary.e2e.ts-연봉실수령액-골-d0514-10만-단위-버튼-클릭-시-실수령액이-변동-증가--chromium\error-context.md
+
+
+[1A[2K  45) [chromium] › tests\e2e\savings.e2e.ts:9:7 › 적금 이자 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ───────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-savings.e2e.ts-적금-이자-골든패스-기본값으로-페이지-진입-시-hero-값-표시됨-chromium\error-context.md
+
+
+[1A[2K[46/146] [chromium] › tests\e2e\savings.e2e.ts:20:7 › 적금 이자 골든패스 › 월 납입액 필드 노출
+[1A[2K  46) [chromium] › tests\e2e\savings.e2e.ts:20:7 › 적금 이자 골든패스 › 월 납입액 필드 노출 ────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-savings.e2e.ts-적금-이자-골든패스-월-납입액-필드-노출-chromium\error-context.md
+
+
+[1A[2K[47/146] [chromium] › tests\e2e\savings.e2e.ts:27:7 › 적금 이자 골든패스 › 연 금리 필드 노출
+[1A[2K[48/146] [chromium] › tests\e2e\severance.e2e.ts:8:7 › 퇴직금 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 퇴직금 표시
+[1A[2K  47) [chromium] › tests\e2e\savings.e2e.ts:27:7 › 적금 이자 골든패스 › 연 금리 필드 노출 ─────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-savings.e2e.ts-적금-이자-골든패스-연-금리-필드-노출-chromium\error-context.md
+
+
+[1A[2K  48) [chromium] › tests\e2e\severance.e2e.ts:8:7 › 퇴직금 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 퇴직금 표시 ──
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-severance.e2e.ts-퇴직금-골-53dc9-이지-진입-시-결과-hero에-비-0-퇴직금-표시-chromium\error-context.md
+
+
+[1A[2K[49/146] [chromium] › tests\e2e\severance.e2e.ts:21:7 › 퇴직금 골든패스 › 평균임금 변경 시 퇴직금 값이 변동
+[1A[2K[50/146] [chromium] › tests\e2e\severance.e2e.ts:35:7 › 퇴직금 골든패스 › 근속일수 관련 정보가 결과에 노출
+[1A[2K  49) [chromium] › tests\e2e\severance.e2e.ts:21:7 › 퇴직금 골든패스 › 평균임금 변경 시 퇴직금 값이 변동 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-severance.e2e.ts-퇴직금-골든패스-평균임금-변경-시-퇴직금-값이-변동-chromium\error-context.md
+
+
+[1A[2K[51/146] [chromium] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신
+[1A[2K  50) [chromium] › tests\e2e\severance.e2e.ts:35:7 › 퇴직금 골든패스 › 근속일수 관련 정보가 결과에 노출 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-severance.e2e.ts-퇴직금-골든패스-근속일수-관련-정보가-결과에-노출-chromium\error-context.md
+
+
+[1A[2K[52/146] [chromium] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다
+[1A[2K  51) [chromium] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-theme.e2e.ts-테마-토글-토글--832f4-heme-속성과-localStorage-모두-갱신-chromium\error-context.md
+
+
+[1A[2K  52) [chromium] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-theme.e2e.ts-테마-토글-새로고침-후에도-토글한-테마가-유지된다-chromium\error-context.md
+
+
+[1A[2K[53/146] [chromium] › tests\e2e\updates-seo.e2e.ts:10:7 › /updates SEO 강화 › ItemList JSON-LD 존재 (최신 5건)
+[1A[2K  53) [chromium] › tests\e2e\updates-seo.e2e.ts:10:7 › /updates SEO 강화 › ItemList JSON-LD 존재 (최신 5건) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-843d2--ItemList-JSON-LD-존재-최신-5건--chromium\error-context.md
+
+
+[1A[2K[54/146] [chromium] › tests\e2e\updates-seo.e2e.ts:47:7 › /updates SEO 강화 › description에 freshness 신호 포함
+[1A[2K  54) [chromium] › tests\e2e\updates-seo.e2e.ts:47:7 › /updates SEO 강화 › description에 freshness 신호 포함 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-a8088-escription에-freshness-신호-포함-chromium\error-context.md
+
+
+[1A[2K[55/146] [chromium] › tests\e2e\updates-seo.e2e.ts:60:7 › /updates SEO 강화 › dateModified가 UPDATES_LOG 최신 항목 기준으로 설정
+[1A[2K[56/146] [chromium] › tests\e2e\updates-seo.e2e.ts:82:7 › /updates SEO 강화 › og:description에도 freshness 신호 포함
+[1A[2K  55) [chromium] › tests\e2e\updates-seo.e2e.ts:60:7 › /updates SEO 강화 › dateModified가 UPDATES_LOG 최신 항목 기준으로 설정 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-35889-가-UPDATES-LOG-최신-항목-기준으로-설정-chromium\error-context.md
+
+
+[1A[2K[57/146] [chromium] › tests\e2e\vehicle-tax.e2e.ts:7:7 › 자동차세 골든패스 › 기본값으로 결과 표시
+[1A[2K  56) [chromium] › tests\e2e\updates-seo.e2e.ts:82:7 › /updates SEO 강화 › og:description에도 freshness 신호 포함 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-8b43b-scription에도-freshness-신호-포함-chromium\error-context.md
+
+
+[1A[2K  57) [chromium] › tests\e2e\vehicle-tax.e2e.ts:7:7 › 자동차세 골든패스 › 기본값으로 결과 표시 ──────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-vehicle-tax.e2e.ts-자동차세-골든패스-기본값으로-결과-표시-chromium\error-context.md
+
+
+[1A[2K[58/146] [mobile] › tests\e2e\acquisition-tax.e2e.ts:8:7 › 취득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 취득세 표시
+[1A[2K  58) [mobile] › tests\e2e\acquisition-tax.e2e.ts:8:7 › 취득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 취득세 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-acquisition-tax.e2e.ts-1e6eb-이지-진입-시-결과-hero에-비-0-취득세-표시-mobile\error-context.md
+
+
+[1A[2K[59/146] [mobile] › tests\e2e\acquisition-tax.e2e.ts:21:7 › 취득세 골든패스 › 취득가액 변경 시 취득세 값이 변동
+[1A[2K  59) [mobile] › tests\e2e\acquisition-tax.e2e.ts:21:7 › 취득세 골든패스 › 취득가액 변경 시 취득세 값이 변동 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-acquisition-tax.e2e.ts-취득세-골든패스-취득가액-변경-시-취득세-값이-변동-mobile\error-context.md
+
+
+[1A[2K[60/146] [mobile] › tests\e2e\acquisition-tax.e2e.ts:35:7 › 취득세 골든패스 › 부가세 항목이 결과에 노출
+[1A[2K  60) [mobile] › tests\e2e\acquisition-tax.e2e.ts:35:7 › 취득세 골든패스 › 부가세 항목이 결과에 노출 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-acquisition-tax.e2e.ts-취득세-골든패스-부가세-항목이-결과에-노출-mobile\error-context.md
+
+
+[1A[2K[61/146] [mobile] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다
+[1A[2K[62/146] [mobile] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화)
+[1A[2K  61) [mobile] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-1bfb5-ia-label-광고-라벨이-모든-슬롯에-부여된다-mobile\error-context.md
+
+
+[1A[2K[63/146] [mobile] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2)
+[1A[2K  62) [mobile] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-ce26e-2-3-이상-배치-GEO-AEO-eCPM-최적화--mobile\error-context.md
+
+
+[1A[2K[64/146] [mobile] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯
+[1A[2K  63) [mobile] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-df9c1-현-기준-최소-2개-광고-슬롯-AD-1-AD-2--mobile\error-context.md
+
+
+[1A[2K  64) [mobile] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-87065--모바일-앵커-AD-5-포함-최소-1개-광고-슬롯-mobile\error-context.md
+
+
+[1A[2K[65/146] [mobile] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지
+[1A[2K  65) [mobile] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지 ───
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-3d0ba-마에서-광고-슬롯-배경은-라이트-밝은-색-로-유지-mobile\error-context.md
+
+
+[1A[2K[66/146] [mobile] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지
+[1A[2K  66) [mobile] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-a3928-ght-지정으로-CLS-누적-레이아웃-시프트-방지-mobile\error-context.md
+
+
+[1A[2K[67/146] [mobile] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시
+[1A[2K  67) [mobile] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-3f072-per-광고-AD-3-가-sticky로-고정-표시-mobile\error-context.md
+
+
+[1A[2K[68/146] [mobile] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden)
+[1A[2K[69/146] [mobile] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨
+[1A[2K  68) [mobile] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-185c6-er-광고-AD-3-가-숨겨짐-lg-hidden--mobile\error-context.md
+
+
+[1A[2K[70/146] [mobile] › tests\e2e\broker-fee.e2e.ts:8:7 › 중개수수료 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수수료 표시
+[1A[2K  69) [mobile] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-adsense.e2e.ts-AdSense-7d563-d-광고-AD-4-가-본문-중간에-배치되어-로드됨-mobile\error-context.md
+
+
+[1A[2K  70) [mobile] › tests\e2e\broker-fee.e2e.ts:8:7 › 중개수수료 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수수료 표시 ─
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-broker-fee.e2e.ts-중개수수-16c79-이지-진입-시-결과-hero에-비-0-수수료-표시-mobile\error-context.md
+
+
+[1A[2K[71/146] [mobile] › tests\e2e\broker-fee.e2e.ts:21:7 › 중개수수료 골든패스 › 매매가 입력 시 중개수수료 값이 변동
+[1A[2K  71) [mobile] › tests\e2e\broker-fee.e2e.ts:21:7 › 중개수수료 골든패스 › 매매가 입력 시 중개수수료 값이 변동 ──────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-broker-fee.e2e.ts-중개수수료-골든패스-매매가-입력-시-중개수수료-값이-변동-mobile\error-context.md
+
+
+[1A[2K[72/146] [mobile] › tests\e2e\broker-fee.e2e.ts:35:7 › 중개수수료 골든패스 › 물건 종류 변경(RadioGroup button) 시 수수료 계산 정상 동작
+[1A[2K  72) [mobile] › tests\e2e\broker-fee.e2e.ts:35:7 › 중개수수료 골든패스 › 물건 종류 변경(RadioGroup button) 시 수수료 계산 정상 동작 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-broker-fee.e2e.ts-중개수수-5f767-Group-button-시-수수료-계산-정상-동작-mobile\error-context.md
+
+
+[1A[2K[73/146] [mobile] › tests\e2e\capital-gains-tax.e2e.ts:8:7 › 양도소득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 양도소득세 표시
+[1A[2K  73) [mobile] › tests\e2e\capital-gains-tax.e2e.ts:8:7 › 양도소득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 양도소득세 표시 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-capital-gains-tax.e2e.-0fac4--진입-시-결과-hero에-비-0-양도소득세-표시-mobile\error-context.md
+
+
+[1A[2K[74/146] [mobile] › tests\e2e\capital-gains-tax.e2e.ts:21:7 › 양도소득세 골든패스 › 양수가를 큰 폭으로 변경 시 양도소득세 값이 변동
+[1A[2K[75/146] [mobile] › tests\e2e\capital-gains-tax.e2e.ts:35:7 › 양도소득세 골든패스 › 과세표준 항목이 결과에 노출
+[1A[2K  74) [mobile] › tests\e2e\capital-gains-tax.e2e.ts:21:7 › 양도소득세 골든패스 › 양수가를 큰 폭으로 변경 시 양도소득세 값이 변동 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-capital-gains-tax.e2e.-8ab18-양수가를-큰-폭으로-변경-시-양도소득세-값이-변동-mobile\error-context.md
+
+
+[1A[2K[76/146] [mobile] › tests\e2e\child-tax-credit.e2e.ts:7:7 › 자녀장려금 골든패스 › 기본값으로 결과 표시
+[1A[2K  75) [mobile] › tests\e2e\capital-gains-tax.e2e.ts:35:7 › 양도소득세 골든패스 › 과세표준 항목이 결과에 노출 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-capital-gains-tax.e2e.ts-양도소득세-골든패스-과세표준-항목이-결과에-노출-mobile\error-context.md
+
+
+[1A[2K  76) [mobile] › tests\e2e\child-tax-credit.e2e.ts:7:7 › 자녀장려금 골든패스 › 기본값으로 결과 표시 ──────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-child-tax-credit.e2e.ts-자녀장려금-골든패스-기본값으로-결과-표시-mobile\error-context.md
+
+
+[1A[2K[77/146] [mobile] › tests\e2e\deposit.e2e.ts:8:7 › 정기예금 이자 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수령액 표시
+[1A[2K[78/146] [mobile] › tests\e2e\deposit.e2e.ts:21:7 › 정기예금 이자 골든패스 › 금리 변경 시 수령액이 변동
+[1A[2K  77) [mobile] › tests\e2e\deposit.e2e.ts:8:7 › 정기예금 이자 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수령액 표시 ──
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-deposit.e2e.ts-정기예금-이자-a3817-이지-진입-시-결과-hero에-비-0-수령액-표시-mobile\error-context.md
+
+
+[1A[2K  78) [mobile] › tests\e2e\deposit.e2e.ts:21:7 › 정기예금 이자 골든패스 › 금리 변경 시 수령액이 변동 ────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-deposit.e2e.ts-정기예금-이자-골든패스-금리-변경-시-수령액이-변동-mobile\error-context.md
+
+
+[1A[2K[79/146] [mobile] › tests\e2e\deposit.e2e.ts:39:7 › 정기예금 이자 골든패스 › 기간 변경 시 세후 수령액이 계산됨
+[1A[2K[80/146] [mobile] › tests\e2e\exchange.e2e.ts:9:7 › 환전 계산 골든패스 › 기본값으로 페이지 진입 시 환전 계산기 로드됨
+[1A[2K[81/146] [mobile] › tests\e2e\exchange.e2e.ts:18:7 › 환전 계산 골든패스 › 환전 금액, 기준환율 입력 필드 노출
+[1A[2K  79) [mobile] › tests\e2e\deposit.e2e.ts:39:7 › 정기예금 이자 골든패스 › 기간 변경 시 세후 수령액이 계산됨 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-deposit.e2e.ts-정기예금-이자-골든패스-기간-변경-시-세후-수령액이-계산됨-mobile\error-context.md
+
+
+[1A[2K  80) [mobile] › tests\e2e\exchange.e2e.ts:9:7 › 환전 계산 골든패스 › 기본값으로 페이지 진입 시 환전 계산기 로드됨 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-exchange.e2e.ts-환전-계산-골든패스-기본값으로-페이지-진입-시-환전-계산기-로드됨-mobile\error-context.md
+
+
+[1A[2K  81) [mobile] › tests\e2e\exchange.e2e.ts:18:7 › 환전 계산 골든패스 › 환전 금액, 기준환율 입력 필드 노출 ────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-exchange.e2e.ts-환전-계산-골든패스-환전-금액-기준환율-입력-필드-노출-mobile\error-context.md
+
+
+[1A[2K[82/146] [mobile] › tests\e2e\exchange.e2e.ts:27:7 › 환전 계산 골든패스 › 환전 방향 라디오 버튼 선택 옵션 노출
+[1A[2K  82) [mobile] › tests\e2e\exchange.e2e.ts:27:7 › 환전 계산 골든패스 › 환전 방향 라디오 버튼 선택 옵션 노출 ───────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-exchange.e2e.ts-환전-계산-골든패스-환전-방향-라디오-버튼-선택-옵션-노출-mobile\error-context.md
+
+
+[1A[2K[83/146] [mobile] › tests\e2e\freelancer-tax.e2e.ts:7:7 › 프리랜서 종합소득세 골든패스 › 기본값으로 결과 표시
+[1A[2K[84/146] [mobile] › tests\e2e\gift-tax.e2e.ts:9:7 › 증여세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  83) [mobile] › tests\e2e\freelancer-tax.e2e.ts:7:7 › 프리랜서 종합소득세 골든패스 › 기본값으로 결과 표시 ───────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-freelancer-tax.e2e.ts-프리랜서-종합소득세-골든패스-기본값으로-결과-표시-mobile\error-context.md
+
+
+[1A[2K  84) [mobile] › tests\e2e\gift-tax.e2e.ts:9:7 › 증여세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ──────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-gift-tax.e2e.ts-증여세-골든패스-기본값으로-페이지-진입-시-hero-값-표시됨-mobile\error-context.md
+
+
+[1A[2K[85/146] [mobile] › tests\e2e\gift-tax.e2e.ts:19:7 › 증여세 골든패스 › 증여재산 가액 필드 노출
+[1A[2K[86/146] [mobile] › tests\e2e\gift-tax.e2e.ts:26:7 › 증여세 골든패스 › 관계 선택 라디오 버튼 노출
+[1A[2K  85) [mobile] › tests\e2e\gift-tax.e2e.ts:19:7 › 증여세 골든패스 › 증여재산 가액 필드 노출 ─────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-gift-tax.e2e.ts-증여세-골든패스-증여재산-가액-필드-노출-mobile\error-context.md
+
+
+[1A[2K[87/146] [mobile] › tests\e2e\housing-subscription.e2e.ts:8:7 › 청약가점 골든패스 › 계산하기 클릭 후 결과 표시
+[1A[2K  86) [mobile] › tests\e2e\gift-tax.e2e.ts:26:7 › 증여세 골든패스 › 관계 선택 라디오 버튼 노출 ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-gift-tax.e2e.ts-증여세-골든패스-관계-선택-라디오-버튼-노출-mobile\error-context.md
+
+
+[1A[2K  87) [mobile] › tests\e2e\housing-subscription.e2e.ts:8:7 › 청약가점 골든패스 › 계산하기 클릭 후 결과 표시 ───────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-housing-subscription.e2e.ts-청약가점-골든패스-계산하기-클릭-후-결과-표시-mobile\error-context.md
+
+
+[1A[2K[88/146] [mobile] › tests\e2e\inheritance-tax.e2e.ts:9:7 › 상속세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  88) [mobile] › tests\e2e\inheritance-tax.e2e.ts:9:7 › 상속세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ───────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-inheritance-tax.e2e.ts-029c5-스-기본값으로-페이지-진입-시-hero-값-표시됨-mobile\error-context.md
+
+
+[1A[2K[89/146] [mobile] › tests\e2e\inheritance-tax.e2e.ts:19:7 › 상속세 골든패스 › 상속재산 총액 필드 노출
+[1A[2K  89) [mobile] › tests\e2e\inheritance-tax.e2e.ts:19:7 › 상속세 골든패스 › 상속재산 총액 필드 노출 ──────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-inheritance-tax.e2e.ts-상속세-골든패스-상속재산-총액-필드-노출-mobile\error-context.md
+
+
+[1A[2K[90/146] [mobile] › tests\e2e\inheritance-tax.e2e.ts:26:7 › 상속세 골든패스 › 배우자 상속 체크박스 노출
+[1A[2K  90) [mobile] › tests\e2e\inheritance-tax.e2e.ts:26:7 › 상속세 골든패스 › 배우자 상속 체크박스 노출 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-inheritance-tax.e2e.ts-상속세-골든패스-배우자-상속-체크박스-노출-mobile\error-context.md
+
+
+[1A[2K[91/146] [mobile] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding)
+[1A[2K[92/146] [mobile] › tests\e2e\n-jobber-insurance.e2e.ts:7:7 › N잡러 건강보험 골든패스 › 기본값으로 결과 표시
+[1A[2K[93/146] [mobile] › tests\e2e\rental-yield.e2e.ts:9:7 › 임대수익률 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  91) [mobile] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-loan-limit.e2e.ts-대출한도-f8bf2-클릭-시-최종-한도가-증가-LTV-binding--mobile\error-context.md
+
+
+[1A[2K  92) [mobile] › tests\e2e\n-jobber-insurance.e2e.ts:7:7 › N잡러 건강보험 골든패스 › 기본값으로 결과 표시 ─────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-n-jobber-insurance.e2e.ts-N잡러-건강보험-골든패스-기본값으로-결과-표시-mobile\error-context.md
+
+
+[1A[2K  93) [mobile] › tests\e2e\rental-yield.e2e.ts:9:7 › 임대수익률 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-rental-yield.e2e.ts-임대수익률-골든패스-기본값으로-페이지-진입-시-hero-값-표시됨-mobile\error-context.md
+
+
+[1A[2K[94/146] [mobile] › tests\e2e\rental-yield.e2e.ts:19:7 › 임대수익률 골든패스 › 매매가 필드 노출
+[1A[2K  94) [mobile] › tests\e2e\rental-yield.e2e.ts:19:7 › 임대수익률 골든패스 › 매매가 필드 노출 ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-rental-yield.e2e.ts-임대수익률-골든패스-매매가-필드-노출-mobile\error-context.md
+
+
+[1A[2K[95/146] [mobile] › tests\e2e\rental-yield.e2e.ts:26:7 › 임대수익률 골든패스 › 월 임차료 필드 노출
+[1A[2K  95) [mobile] › tests\e2e\rental-yield.e2e.ts:26:7 › 임대수익률 골든패스 › 월 임차료 필드 노출 ─────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-rental-yield.e2e.ts-임대수익률-골든패스-월-임차료-필드-노출-mobile\error-context.md
+
+
+[1A[2K[96/146] [mobile] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL)
+[1A[2K  96) [mobile] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL) ─────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-routing.e2e.ts-라우팅-골든패스-홈에서-양도소득세-계산기까지-이동-직접-URL--mobile\error-context.md
+
+
+[1A[2K[97/146] [mobile] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답
+[1A[2K  97) [mobile] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답 ───────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-routing.e2e.ts-라우팅-골든패스-카테고리-허브-5개-모두-200-응답-mobile\error-context.md
+
+
+[1A[2K[98/146] [mobile] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인
+[1A[2K[99/146] [mobile] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시
+[1A[2K  98) [mobile] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인 ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-routing.e2e.ts-라우팅-골든패스-신규-가이드-4개-라우팅-확인-mobile\error-context.md
+
+
+[1A[2K[100/146] [mobile] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출
+[1A[2K  99) [mobile] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시 ────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-salary.e2e.ts-연봉실수령액-골-d0060-페이지-진입-시-결과-hero에-비-0-금액-표시-mobile\error-context.md
+
+
+[1A[2K[101/146] [mobile] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가)
+[1A[2K  100) [mobile] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출 ─────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-salary.e2e.ts-연봉실수령액-골든패스-월-실수령액-행과-4대보험-행이-모두-노출-mobile\error-context.md
+
+
+[1A[2K  101) [mobile] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가) ────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-salary.e2e.ts-연봉실수령액-골-d0514-10만-단위-버튼-클릭-시-실수령액이-변동-증가--mobile\error-context.md
+
+
+[1A[2K[102/146] [mobile] › tests\e2e\savings.e2e.ts:9:7 › 적금 이자 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨
+[1A[2K  102) [mobile] › tests\e2e\savings.e2e.ts:9:7 › 적금 이자 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-savings.e2e.ts-적금-이자-골든패스-기본값으로-페이지-진입-시-hero-값-표시됨-mobile\error-context.md
+
+
+[1A[2K[103/146] [mobile] › tests\e2e\savings.e2e.ts:20:7 › 적금 이자 골든패스 › 월 납입액 필드 노출
+[1A[2K[104/146] [mobile] › tests\e2e\savings.e2e.ts:27:7 › 적금 이자 골든패스 › 연 금리 필드 노출
+[1A[2K  103) [mobile] › tests\e2e\savings.e2e.ts:20:7 › 적금 이자 골든패스 › 월 납입액 필드 노출 ─────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-savings.e2e.ts-적금-이자-골든패스-월-납입액-필드-노출-mobile\error-context.md
+
+
+[1A[2K  104) [mobile] › tests\e2e\savings.e2e.ts:27:7 › 적금 이자 골든패스 › 연 금리 필드 노출 ──────────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-savings.e2e.ts-적금-이자-골든패스-연-금리-필드-노출-mobile\error-context.md
+
+
+[1A[2K[105/146] [mobile] › tests\e2e\severance.e2e.ts:8:7 › 퇴직금 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 퇴직금 표시
+[1A[2K  105) [mobile] › tests\e2e\severance.e2e.ts:8:7 › 퇴직금 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 퇴직금 표시 ───
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-severance.e2e.ts-퇴직금-골-53dc9-이지-진입-시-결과-hero에-비-0-퇴직금-표시-mobile\error-context.md
+
+
+[1A[2K[106/146] [mobile] › tests\e2e\severance.e2e.ts:21:7 › 퇴직금 골든패스 › 평균임금 변경 시 퇴직금 값이 변동
+[1A[2K[107/146] [mobile] › tests\e2e\severance.e2e.ts:35:7 › 퇴직금 골든패스 › 근속일수 관련 정보가 결과에 노출
+[1A[2K  106) [mobile] › tests\e2e\severance.e2e.ts:21:7 › 퇴직금 골든패스 › 평균임금 변경 시 퇴직금 값이 변동 ─────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-severance.e2e.ts-퇴직금-골든패스-평균임금-변경-시-퇴직금-값이-변동-mobile\error-context.md
+
+
+[1A[2K  107) [mobile] › tests\e2e\severance.e2e.ts:35:7 › 퇴직금 골든패스 › 근속일수 관련 정보가 결과에 노출 ──────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-severance.e2e.ts-퇴직금-골든패스-근속일수-관련-정보가-결과에-노출-mobile\error-context.md
+
+
+[1A[2K[108/146] [mobile] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신
+[1A[2K  108) [mobile] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신 ──
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-theme.e2e.ts-테마-토글-토글--832f4-heme-속성과-localStorage-모두-갱신-mobile\error-context.md
+
+
+[1A[2K[109/146] [mobile] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다
+[1A[2K[110/146] [mobile] › tests\e2e\updates-seo.e2e.ts:10:7 › /updates SEO 강화 › ItemList JSON-LD 존재 (최신 5건)
+[1A[2K  109) [mobile] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다 ──────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-theme.e2e.ts-테마-토글-새로고침-후에도-토글한-테마가-유지된다-mobile\error-context.md
+
+
+[1A[2K  110) [mobile] › tests\e2e\updates-seo.e2e.ts:10:7 › /updates SEO 강화 › ItemList JSON-LD 존재 (최신 5건) 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-843d2--ItemList-JSON-LD-존재-최신-5건--mobile\error-context.md
+
+
+[1A[2K[111/146] [mobile] › tests\e2e\updates-seo.e2e.ts:47:7 › /updates SEO 강화 › description에 freshness 신호 포함
+[1A[2K  111) [mobile] › tests\e2e\updates-seo.e2e.ts:47:7 › /updates SEO 강화 › description에 freshness 신호 포함 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-a8088-escription에-freshness-신호-포함-mobile\error-context.md
+
+
+[1A[2K[112/146] [mobile] › tests\e2e\updates-seo.e2e.ts:60:7 › /updates SEO 강화 › dateModified가 UPDATES_LOG 최신 항목 기준으로 설정
+[1A[2K[113/146] [mobile] › tests\e2e\updates-seo.e2e.ts:82:7 › /updates SEO 강화 › og:description에도 freshness 신호 포함
+[1A[2K[114/146] [mobile] › tests\e2e\vehicle-tax.e2e.ts:7:7 › 자동차세 골든패스 › 기본값으로 결과 표시
+[1A[2K  112) [mobile] › tests\e2e\updates-seo.e2e.ts:60:7 › /updates SEO 강화 › dateModified가 UPDATES_LOG 최신 항목 기준으로 설정 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-35889-가-UPDATES-LOG-최신-항목-기준으로-설정-mobile\error-context.md
+
+
+[1A[2K  113) [mobile] › tests\e2e\updates-seo.e2e.ts:82:7 › /updates SEO 강화 › og:description에도 freshness 신호 포함 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-updates-seo.e2e.ts--up-8b43b-scription에도-freshness-신호-포함-mobile\error-context.md
+
+
+[1A[2K  114) [mobile] › tests\e2e\vehicle-tax.e2e.ts:7:7 › 자동차세 골든패스 › 기본값으로 결과 표시 ───────────────────────
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\e2e-vehicle-tax.e2e.ts-자동차세-골든패스-기본값으로-결과-표시-mobile\error-context.md
+
+
+[1A[2K[115/146] [visual] › tests\visual\acquisition-tax.visual.ts:24:7 › Visual Regression: Acquisition Tax Calculator › desktop light theme with results
+[1A[2K[116/146] [visual] › tests\visual\acquisition-tax.visual.ts:4:7 › Visual Regression: Acquisition Tax Calculator › desktop dark theme with results
+[1A[2K  115) [visual] › tests\visual\acquisition-tax.visual.ts:24:7 › Visual Regression: Acquisition Tax Calculator › desktop light theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-acquisition-tax.vis-e7b7c-op-light-theme-with-results-visual\error-context.md
+
+
+[1A[2K[117/146] [visual] › tests\visual\acquisition-tax.visual.ts:44:7 › Visual Regression: Acquisition Tax Calculator › mobile dark theme with results
+[1A[2K  116) [visual] › tests\visual\acquisition-tax.visual.ts:4:7 › Visual Regression: Acquisition Tax Calculator › desktop dark theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-acquisition-tax.vis-c0a90-top-dark-theme-with-results-visual\error-context.md
+
+
+[1A[2K  117) [visual] › tests\visual\acquisition-tax.visual.ts:44:7 › Visual Regression: Acquisition Tax Calculator › mobile dark theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-acquisition-tax.vis-713d0-ile-dark-theme-with-results-visual\error-context.md
+
+
+[1A[2K[118/146] [visual] › tests\visual\acquisition-tax.visual.ts:66:7 › Visual Regression: Acquisition Tax Calculator › mobile light theme with results
+[1A[2K[119/146] [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:4:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › desktop dark theme
+[1A[2K[120/146] [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:26:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › desktop light theme
+[1A[2K  118) [visual] › tests\visual\acquisition-tax.visual.ts:66:7 › Visual Regression: Acquisition Tax Calculator › mobile light theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-acquisition-tax.vis-73ffb-le-light-theme-with-results-visual\error-context.md
+
+
+[1A[2K  119) [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:4:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › desktop dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax-5-e3d37--단계별-계산법-desktop-dark-theme-visual\error-context.md
+
+
+[1A[2K  120) [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:26:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › desktop light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax-5-a00f2-단계별-계산법-desktop-light-theme-visual\error-context.md
+
+
+[1A[2K[121/146] [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:40:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › mobile dark theme
+[1A[2K[122/146] [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:63:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › mobile light theme
+[1A[2K[123/146] [visual] › tests\visual\capital-gains-tax.visual.ts:4:7 › Visual Regression: Capital Gains Tax Calculator › desktop dark theme with results
+[1A[2K  121) [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:63:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › mobile light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax-5-d12b9--단계별-계산법-mobile-light-theme-visual\error-context.md
+
+
+[1A[2K  122) [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:40:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › mobile dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax-5-ae1d8-세-단계별-계산법-mobile-dark-theme-visual\error-context.md
+
+
+[1A[2K  123) [visual] › tests\visual\capital-gains-tax.visual.ts:4:7 › Visual Regression: Capital Gains Tax Calculator › desktop dark theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax.v-acd77-top-dark-theme-with-results-visual\error-context.md
+
+
+[1A[2K[124/146] [visual] › tests\visual\capital-gains-tax.visual.ts:45:7 › Visual Regression: Capital Gains Tax Calculator › mobile dark theme with results
+[1A[2K[125/146] [visual] › tests\visual\capital-gains-tax.visual.ts:25:7 › Visual Regression: Capital Gains Tax Calculator › desktop light theme with results
+[1A[2K[126/146] [visual] › tests\visual\capital-gains-tax.visual.ts:67:7 › Visual Regression: Capital Gains Tax Calculator › mobile light theme with results
+[1A[2K  124) [visual] › tests\visual\capital-gains-tax.visual.ts:45:7 › Visual Regression: Capital Gains Tax Calculator › mobile dark theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax.v-211b1-ile-dark-theme-with-results-visual\error-context.md
+
+
+[1A[2K  125) [visual] › tests\visual\capital-gains-tax.visual.ts:25:7 › Visual Regression: Capital Gains Tax Calculator › desktop light theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax.v-a3122-op-light-theme-with-results-visual\error-context.md
+
+
+[1A[2K  126) [visual] › tests\visual\capital-gains-tax.visual.ts:67:7 › Visual Regression: Capital Gains Tax Calculator › mobile light theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-capital-gains-tax.v-411a9-le-light-theme-with-results-visual\error-context.md
+
+
+[1A[2K[127/146] [visual] › tests\visual\home.visual.ts:4:7 › Visual Regression: Home Page › desktop dark theme
+[1A[2K[128/146] [visual] › tests\visual\home.visual.ts:24:7 › Visual Regression: Home Page › desktop light theme
+[1A[2K[129/146] [visual] › tests\visual\home.visual.ts:36:7 › Visual Regression: Home Page › mobile dark theme
+[1A[2K  127) [visual] › tests\visual\home.visual.ts:4:7 › Visual Regression: Home Page › desktop dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-home.visual.ts-Visu-94377-ome-Page-desktop-dark-theme-visual\error-context.md
+
+
+[1A[2K  128) [visual] › tests\visual\home.visual.ts:24:7 › Visual Regression: Home Page › desktop light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-home.visual.ts-Visu-a0eef-me-Page-desktop-light-theme-visual\error-context.md
+
+
+[1A[2K  129) [visual] › tests\visual\home.visual.ts:36:7 › Visual Regression: Home Page › mobile dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-home.visual.ts-Visu-39147-Home-Page-mobile-dark-theme-visual\error-context.md
+
+
+[1A[2K[130/146] [visual] › tests\visual\jeonse-deposit-safety.visual.ts:4:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › desktop dark theme
+[1A[2K[131/146] [visual] › tests\visual\home.visual.ts:57:7 › Visual Regression: Home Page › mobile light theme
+[1A[2K  130) [visual] › tests\visual\jeonse-deposit-safety.visual.ts:4:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › desktop dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-jeonse-deposit-safe-0d6c6-금-안전-가이드-desktop-dark-theme-visual\error-context.md
+
+
+[1A[2K  131) [visual] › tests\visual\home.visual.ts:57:7 › Visual Regression: Home Page › mobile light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-home.visual.ts-Visu-85575-ome-Page-mobile-light-theme-visual\error-context.md
+
+
+[1A[2K[132/146] [visual] › tests\visual\jeonse-deposit-safety.visual.ts:26:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › desktop light theme
+[1A[2K  132) [visual] › tests\visual\jeonse-deposit-safety.visual.ts:26:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › desktop light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-jeonse-deposit-safe-7d396--안전-가이드-desktop-light-theme-visual\error-context.md
+
+
+[1A[2K[133/146] [visual] › tests\visual\jeonse-deposit-safety.visual.ts:40:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › mobile dark theme
+[1A[2K[134/146] [visual] › tests\visual\jeonse-deposit-safety.visual.ts:63:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › mobile light theme
+[1A[2K[135/146] [visual] › tests\visual\loan-limit.visual.ts:4:7 › Visual Regression: Loan Limit Calculator (DSR) › desktop dark theme
+[1A[2K  133) [visual] › tests\visual\jeonse-deposit-safety.visual.ts:63:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › mobile light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-jeonse-deposit-safe-66a5a-금-안전-가이드-mobile-light-theme-visual\error-context.md
+
+
+[1A[2K  134) [visual] › tests\visual\jeonse-deposit-safety.visual.ts:40:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › mobile dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-jeonse-deposit-safe-b215d-증금-안전-가이드-mobile-dark-theme-visual\error-context.md
+
+
+[1A[2K  135) [visual] › tests\visual\loan-limit.visual.ts:4:7 › Visual Regression: Loan Limit Calculator (DSR) › desktop dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-loan-limit.visual.t-02a08-ator-DSR-desktop-dark-theme-visual\error-context.md
+
+
+[1A[2K[136/146] [visual] › tests\visual\loan-limit.visual.ts:40:7 › Visual Regression: Loan Limit Calculator (DSR) › mobile dark theme
+[1A[2K[137/146] [visual] › tests\visual\loan-limit.visual.ts:26:7 › Visual Regression: Loan Limit Calculator (DSR) › desktop light theme
+[1A[2K[138/146] [visual] › tests\visual\loan-limit.visual.ts:64:7 › Visual Regression: Loan Limit Calculator (DSR) › mobile light theme
+[1A[2K  136) [visual] › tests\visual\loan-limit.visual.ts:40:7 › Visual Regression: Loan Limit Calculator (DSR) › mobile dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-loan-limit.visual.t-9a7d7-lator-DSR-mobile-dark-theme-visual\error-context.md
+
+
+[1A[2K  137) [visual] › tests\visual\loan-limit.visual.ts:26:7 › Visual Regression: Loan Limit Calculator (DSR) › desktop light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-loan-limit.visual.t-1dd34-tor-DSR-desktop-light-theme-visual\error-context.md
+
+
+[1A[2K  138) [visual] › tests\visual\loan-limit.visual.ts:64:7 › Visual Regression: Loan Limit Calculator (DSR) › mobile light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-loan-limit.visual.t-4b6b1-ator-DSR-mobile-light-theme-visual\error-context.md
+
+
+[1A[2K[139/146] [visual] › tests\visual\salary.visual.ts:24:7 › Visual Regression: Salary Calculator › desktop light theme with results
+[1A[2K[140/146] [visual] › tests\visual\salary.visual.ts:4:7 › Visual Regression: Salary Calculator › desktop dark theme with results
+[1A[2K[141/146] [visual] › tests\visual\salary.visual.ts:52:7 › Visual Regression: Salary Calculator › mobile dark theme with results
+[1A[2K  139) [visual] › tests\visual\salary.visual.ts:4:7 › Visual Regression: Salary Calculator › desktop dark theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-salary.visual.ts-Vi-93d38-top-dark-theme-with-results-visual\error-context.md
+
+
+[1A[2K  140) [visual] › tests\visual\salary.visual.ts:24:7 › Visual Regression: Salary Calculator › desktop light theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-salary.visual.ts-Vi-9a8a4-op-light-theme-with-results-visual\error-context.md
+
+
+[1A[2K  141) [visual] › tests\visual\salary.visual.ts:52:7 › Visual Regression: Salary Calculator › mobile dark theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-salary.visual.ts-Vi-a962a-ile-dark-theme-with-results-visual\error-context.md
+
+
+[1A[2K[142/146] [visual] › tests\visual\salary.visual.ts:82:7 › Visual Regression: Salary Calculator › mobile light theme with results
+[1A[2K[143/146] [visual] › tests\visual\updates.visual.ts:4:7 › Visual Regression: Updates Page › desktop dark theme
+[1A[2K[144/146] [visual] › tests\visual\updates.visual.ts:24:7 › Visual Regression: Updates Page › desktop light theme
+[1A[2K  142) [visual] › tests\visual\salary.visual.ts:82:7 › Visual Regression: Salary Calculator › mobile light theme with results 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-salary.visual.ts-Vi-19689-le-light-theme-with-results-visual\error-context.md
+
+
+[1A[2K  143) [visual] › tests\visual\updates.visual.ts:4:7 › Visual Regression: Updates Page › desktop dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-updates.visual.ts-V-fa0d3-tes-Page-desktop-dark-theme-visual\error-context.md
+
+
+[1A[2K  144) [visual] › tests\visual\updates.visual.ts:24:7 › Visual Regression: Updates Page › desktop light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-updates.visual.ts-V-94034-es-Page-desktop-light-theme-visual\error-context.md
+
+
+[1A[2K[145/146] [visual] › tests\visual\updates.visual.ts:36:7 › Visual Regression: Updates Page › mobile dark theme
+[1A[2K  145) [visual] › tests\visual\updates.visual.ts:36:7 › Visual Regression: Updates Page › mobile dark theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-updates.visual.ts-V-935bd-ates-Page-mobile-dark-theme-visual\error-context.md
+
+
+[1A[2K[146/146] [visual] › tests\visual\updates.visual.ts:57:7 › Visual Regression: Updates Page › mobile light theme
+[1A[2K  146) [visual] › tests\visual\updates.visual.ts:57:7 › Visual Regression: Updates Page › mobile light theme 
+
+    Error: browserType.launch: Executable doesn't exist at C:\Users\Necon\AppData\Local\ms-playwright\chromium_headless_shell-1217\chrome-headless-shell-win64\chrome-headless-shell.exe
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: test-results\visual-updates.visual.ts-V-81b04-tes-Page-mobile-light-theme-visual\error-context.md
+
+
+[1A[2K  146 failed
+    [chromium] › tests\e2e\acquisition-tax.e2e.ts:8:7 › 취득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 취득세 표시 
+    [chromium] › tests\e2e\acquisition-tax.e2e.ts:21:7 › 취득세 골든패스 › 취득가액 변경 시 취득세 값이 변동 ────────────
+    [chromium] › tests\e2e\acquisition-tax.e2e.ts:35:7 › 취득세 골든패스 › 부가세 항목이 결과에 노출 ─────────────────
+    [chromium] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다 
+    [chromium] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화) 
+    [chromium] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2) 
+    [chromium] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯 
+    [chromium] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지 ───
+    [chromium] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지 
+    [chromium] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시 
+    [chromium] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden) 
+    [chromium] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨 ─
+    [chromium] › tests\e2e\broker-fee.e2e.ts:8:7 › 중개수수료 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수수료 표시 ─
+    [chromium] › tests\e2e\broker-fee.e2e.ts:21:7 › 중개수수료 골든패스 › 매매가 입력 시 중개수수료 값이 변동 ──────────────
+    [chromium] › tests\e2e\broker-fee.e2e.ts:35:7 › 중개수수료 골든패스 › 물건 종류 변경(RadioGroup button) 시 수수료 계산 정상 동작 
+    [chromium] › tests\e2e\capital-gains-tax.e2e.ts:8:7 › 양도소득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 양도소득세 표시 
+    [chromium] › tests\e2e\capital-gains-tax.e2e.ts:21:7 › 양도소득세 골든패스 › 양수가를 큰 폭으로 변경 시 양도소득세 값이 변동 
+    [chromium] › tests\e2e\capital-gains-tax.e2e.ts:35:7 › 양도소득세 골든패스 › 과세표준 항목이 결과에 노출 ────────────
+    [chromium] › tests\e2e\child-tax-credit.e2e.ts:7:7 › 자녀장려금 골든패스 › 기본값으로 결과 표시 ──────────────────
+    [chromium] › tests\e2e\deposit.e2e.ts:8:7 › 정기예금 이자 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수령액 표시 ──
+    [chromium] › tests\e2e\deposit.e2e.ts:21:7 › 정기예금 이자 골든패스 › 금리 변경 시 수령액이 변동 ────────────────────
+    [chromium] › tests\e2e\deposit.e2e.ts:39:7 › 정기예금 이자 골든패스 › 기간 변경 시 세후 수령액이 계산됨 ────────────────
+    [chromium] › tests\e2e\exchange.e2e.ts:9:7 › 환전 계산 골든패스 › 기본값으로 페이지 진입 시 환전 계산기 로드됨 ────────────
+    [chromium] › tests\e2e\exchange.e2e.ts:18:7 › 환전 계산 골든패스 › 환전 금액, 기준환율 입력 필드 노출 ────────────────
+    [chromium] › tests\e2e\exchange.e2e.ts:27:7 › 환전 계산 골든패스 › 환전 방향 라디오 버튼 선택 옵션 노출 ───────────────
+    [chromium] › tests\e2e\freelancer-tax.e2e.ts:7:7 › 프리랜서 종합소득세 골든패스 › 기본값으로 결과 표시 ───────────────
+    [chromium] › tests\e2e\gift-tax.e2e.ts:9:7 › 증여세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ──────────────
+    [chromium] › tests\e2e\gift-tax.e2e.ts:19:7 › 증여세 골든패스 › 증여재산 가액 필드 노출 ─────────────────────────
+    [chromium] › tests\e2e\gift-tax.e2e.ts:26:7 › 증여세 골든패스 › 관계 선택 라디오 버튼 노출 ───────────────────────
+    [chromium] › tests\e2e\housing-subscription.e2e.ts:8:7 › 청약가점 골든패스 › 계산하기 클릭 후 결과 표시 ───────────
+    [chromium] › tests\e2e\inheritance-tax.e2e.ts:9:7 › 상속세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ───────
+    [chromium] › tests\e2e\inheritance-tax.e2e.ts:19:7 › 상속세 골든패스 › 상속재산 총액 필드 노출 ──────────────────
+    [chromium] › tests\e2e\inheritance-tax.e2e.ts:26:7 › 상속세 골든패스 › 배우자 상속 체크박스 노출 ─────────────────
+    [chromium] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding) 
+    [chromium] › tests\e2e\n-jobber-insurance.e2e.ts:7:7 › N잡러 건강보험 골든패스 › 기본값으로 결과 표시 ─────────────
+    [chromium] › tests\e2e\rental-yield.e2e.ts:9:7 › 임대수익률 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ────────
+    [chromium] › tests\e2e\rental-yield.e2e.ts:19:7 › 임대수익률 골든패스 › 매매가 필드 노출 ───────────────────────
+    [chromium] › tests\e2e\rental-yield.e2e.ts:26:7 › 임대수익률 골든패스 › 월 임차료 필드 노출 ─────────────────────
+    [chromium] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL) ─────────────
+    [chromium] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답 ───────────────────
+    [chromium] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인 ───────────────────────
+    [chromium] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시 ────
+    [chromium] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출 ──────────────
+    [chromium] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가) ─────
+    [chromium] › tests\e2e\savings.e2e.ts:9:7 › 적금 이자 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ─────────────
+    [chromium] › tests\e2e\savings.e2e.ts:20:7 › 적금 이자 골든패스 › 월 납입액 필드 노출 ──────────────────────────
+    [chromium] › tests\e2e\savings.e2e.ts:27:7 › 적금 이자 골든패스 › 연 금리 필드 노출 ───────────────────────────
+    [chromium] › tests\e2e\severance.e2e.ts:8:7 › 퇴직금 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 퇴직금 표시 ────
+    [chromium] › tests\e2e\severance.e2e.ts:21:7 › 퇴직금 골든패스 › 평균임금 변경 시 퇴직금 값이 변동 ──────────────────
+    [chromium] › tests\e2e\severance.e2e.ts:35:7 › 퇴직금 골든패스 › 근속일수 관련 정보가 결과에 노출 ───────────────────
+    [chromium] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신 ───
+    [chromium] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다 ───────────────────────
+    [chromium] › tests\e2e\updates-seo.e2e.ts:10:7 › /updates SEO 강화 › ItemList JSON-LD 존재 (최신 5건) ─
+    [chromium] › tests\e2e\updates-seo.e2e.ts:47:7 › /updates SEO 강화 › description에 freshness 신호 포함 
+    [chromium] › tests\e2e\updates-seo.e2e.ts:60:7 › /updates SEO 강화 › dateModified가 UPDATES_LOG 최신 항목 기준으로 설정 
+    [chromium] › tests\e2e\updates-seo.e2e.ts:82:7 › /updates SEO 강화 › og:description에도 freshness 신호 포함 
+    [chromium] › tests\e2e\vehicle-tax.e2e.ts:7:7 › 자동차세 골든패스 › 기본값으로 결과 표시 ────────────────────────
+    [mobile] › tests\e2e\acquisition-tax.e2e.ts:8:7 › 취득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 취득세 표시 
+    [mobile] › tests\e2e\acquisition-tax.e2e.ts:21:7 › 취득세 골든패스 › 취득가액 변경 시 취득세 값이 변동 ──────────────
+    [mobile] › tests\e2e\acquisition-tax.e2e.ts:35:7 › 취득세 골든패스 › 부가세 항목이 결과에 노출 ───────────────────
+    [mobile] › tests\e2e\adsense.e2e.ts:10:7 › AdSense 슬롯 정책 › 계산기 페이지: aria-label="광고" 라벨이 모든 슬롯에 부여된다 
+    [mobile] › tests\e2e\adsense.e2e.ts:20:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 계산기 페이지에 최소 3개 광고 슬롯(AD-1,2,3) 이상 배치 (GEO/AEO eCPM 최적화) 
+    [mobile] › tests\e2e\adsense.e2e.ts:36:7 › AdSense 슬롯 정책 › 데스크톱 뷰: 현재 구현 기준 최소 2개 광고 슬롯 (AD-1, AD-2) 
+    [mobile] › tests\e2e\adsense.e2e.ts:46:7 › AdSense 슬롯 정책 › 모바일 뷰: 계산기 페이지에 모바일 앵커(AD-5) 포함 최소 1개 광고 슬롯 
+    [mobile] › tests\e2e\adsense.e2e.ts:62:7 › AdSense 슬롯 정책 › 다크 테마에서 광고 슬롯 배경은 라이트(밝은 색)로 유지 ─────
+    [mobile] › tests\e2e\adsense.e2e.ts:83:7 › AdSense 슬롯 정책 › 각 광고 슬롯은 min-height 지정으로 CLS(누적 레이아웃 시프트) 방지 
+    [mobile] › tests\e2e\adsense.e2e.ts:101:7 › AdSense 슬롯 정책 › lg+ 데스크톱: 우측 Skyscraper 광고(AD-3)가 sticky로 고정 표시 
+    [mobile] › tests\e2e\adsense.e2e.ts:127:7 › AdSense 슬롯 정책 › 모바일 뷰: 우측 Skyscraper 광고(AD-3)가 숨겨짐 (lg:hidden) 
+    [mobile] › tests\e2e\adsense.e2e.ts:142:7 › AdSense 슬롯 정책 › Infeed 광고(AD-4)가 본문 중간에 배치되어 로드됨 ───
+    [mobile] › tests\e2e\broker-fee.e2e.ts:8:7 › 중개수수료 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수수료 표시 ───
+    [mobile] › tests\e2e\broker-fee.e2e.ts:21:7 › 중개수수료 골든패스 › 매매가 입력 시 중개수수료 값이 변동 ────────────────
+    [mobile] › tests\e2e\broker-fee.e2e.ts:35:7 › 중개수수료 골든패스 › 물건 종류 변경(RadioGroup button) 시 수수료 계산 정상 동작 
+    [mobile] › tests\e2e\capital-gains-tax.e2e.ts:8:7 › 양도소득세 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 양도소득세 표시 
+    [mobile] › tests\e2e\capital-gains-tax.e2e.ts:21:7 › 양도소득세 골든패스 › 양수가를 큰 폭으로 변경 시 양도소득세 값이 변동 ──
+    [mobile] › tests\e2e\capital-gains-tax.e2e.ts:35:7 › 양도소득세 골든패스 › 과세표준 항목이 결과에 노출 ──────────────
+    [mobile] › tests\e2e\child-tax-credit.e2e.ts:7:7 › 자녀장려금 골든패스 › 기본값으로 결과 표시 ────────────────────
+    [mobile] › tests\e2e\deposit.e2e.ts:8:7 › 정기예금 이자 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 수령액 표시 ────
+    [mobile] › tests\e2e\deposit.e2e.ts:21:7 › 정기예금 이자 골든패스 › 금리 변경 시 수령액이 변동 ──────────────────────
+    [mobile] › tests\e2e\deposit.e2e.ts:39:7 › 정기예금 이자 골든패스 › 기간 변경 시 세후 수령액이 계산됨 ──────────────────
+    [mobile] › tests\e2e\exchange.e2e.ts:9:7 › 환전 계산 골든패스 › 기본값으로 페이지 진입 시 환전 계산기 로드됨 ──────────────
+    [mobile] › tests\e2e\exchange.e2e.ts:18:7 › 환전 계산 골든패스 › 환전 금액, 기준환율 입력 필드 노출 ──────────────────
+    [mobile] › tests\e2e\exchange.e2e.ts:27:7 › 환전 계산 골든패스 › 환전 방향 라디오 버튼 선택 옵션 노출 ─────────────────
+    [mobile] › tests\e2e\freelancer-tax.e2e.ts:7:7 › 프리랜서 종합소득세 골든패스 › 기본값으로 결과 표시 ─────────────────
+    [mobile] › tests\e2e\gift-tax.e2e.ts:9:7 › 증여세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ────────────────
+    [mobile] › tests\e2e\gift-tax.e2e.ts:19:7 › 증여세 골든패스 › 증여재산 가액 필드 노출 ───────────────────────────
+    [mobile] › tests\e2e\gift-tax.e2e.ts:26:7 › 증여세 골든패스 › 관계 선택 라디오 버튼 노출 ─────────────────────────
+    [mobile] › tests\e2e\housing-subscription.e2e.ts:8:7 › 청약가점 골든패스 › 계산하기 클릭 후 결과 표시 ─────────────
+    [mobile] › tests\e2e\inheritance-tax.e2e.ts:9:7 › 상속세 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ─────────
+    [mobile] › tests\e2e\inheritance-tax.e2e.ts:19:7 › 상속세 골든패스 › 상속재산 총액 필드 노출 ────────────────────
+    [mobile] › tests\e2e\inheritance-tax.e2e.ts:26:7 › 상속세 골든패스 › 배우자 상속 체크박스 노출 ───────────────────
+    [mobile] › tests\e2e\loan-limit.e2e.ts:8:7 › 대출한도 골든패스 › 담보가치 +1억 클릭 시 최종 한도가 증가 (LTV binding) ─
+    [mobile] › tests\e2e\n-jobber-insurance.e2e.ts:7:7 › N잡러 건강보험 골든패스 › 기본값으로 결과 표시 ───────────────
+    [mobile] › tests\e2e\rental-yield.e2e.ts:9:7 › 임대수익률 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ──────────
+    [mobile] › tests\e2e\rental-yield.e2e.ts:19:7 › 임대수익률 골든패스 › 매매가 필드 노출 ─────────────────────────
+    [mobile] › tests\e2e\rental-yield.e2e.ts:26:7 › 임대수익률 골든패스 › 월 임차료 필드 노출 ───────────────────────
+    [mobile] › tests\e2e\routing.e2e.ts:8:7 › 라우팅 골든패스 › 홈에서 양도소득세 계산기까지 이동 (직접 URL) ───────────────
+    [mobile] › tests\e2e\routing.e2e.ts:25:7 › 라우팅 골든패스 › 카테고리 허브 5개 모두 200 응답 ─────────────────────
+    [mobile] › tests\e2e\routing.e2e.ts:34:7 › 라우팅 골든패스 › 신규 가이드 4개 라우팅 확인 ─────────────────────────
+    [mobile] › tests\e2e\salary.e2e.ts:10:7 › 연봉실수령액 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시 ──────
+    [mobile] › tests\e2e\salary.e2e.ts:24:7 › 연봉실수령액 골든패스 › 월 실수령액 행과 4대보험 행이 모두 노출 ────────────────
+    [mobile] › tests\e2e\salary.e2e.ts:35:7 › 연봉실수령액 골든패스 › 비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가) ───────
+    [mobile] › tests\e2e\savings.e2e.ts:9:7 › 적금 이자 골든패스 › 기본값으로 페이지 진입 시 hero 값 표시됨 ───────────────
+    [mobile] › tests\e2e\savings.e2e.ts:20:7 › 적금 이자 골든패스 › 월 납입액 필드 노출 ────────────────────────────
+    [mobile] › tests\e2e\savings.e2e.ts:27:7 › 적금 이자 골든패스 › 연 금리 필드 노출 ─────────────────────────────
+    [mobile] › tests\e2e\severance.e2e.ts:8:7 › 퇴직금 골든패스 › 기본값으로 페이지 진입 시 결과 hero에 비-0 퇴직금 표시 ──────
+    [mobile] › tests\e2e\severance.e2e.ts:21:7 › 퇴직금 골든패스 › 평균임금 변경 시 퇴직금 값이 변동 ────────────────────
+    [mobile] › tests\e2e\severance.e2e.ts:35:7 › 퇴직금 골든패스 › 근속일수 관련 정보가 결과에 노출 ─────────────────────
+    [mobile] › tests\e2e\theme.e2e.ts:22:7 › 테마 토글 › 토글 클릭 시 data-theme 속성과 localStorage 모두 갱신 ─────
+    [mobile] › tests\e2e\theme.e2e.ts:41:7 › 테마 토글 › 새로고침 후에도 토글한 테마가 유지된다 ─────────────────────────
+    [mobile] › tests\e2e\updates-seo.e2e.ts:10:7 › /updates SEO 강화 › ItemList JSON-LD 존재 (최신 5건) ───
+    [mobile] › tests\e2e\updates-seo.e2e.ts:47:7 › /updates SEO 강화 › description에 freshness 신호 포함 ──
+    [mobile] › tests\e2e\updates-seo.e2e.ts:60:7 › /updates SEO 강화 › dateModified가 UPDATES_LOG 최신 항목 기준으로 설정 
+    [mobile] › tests\e2e\updates-seo.e2e.ts:82:7 › /updates SEO 강화 › og:description에도 freshness 신호 포함 
+    [mobile] › tests\e2e\vehicle-tax.e2e.ts:7:7 › 자동차세 골든패스 › 기본값으로 결과 표시 ──────────────────────────
+    [visual] › tests\visual\acquisition-tax.visual.ts:4:7 › Visual Regression: Acquisition Tax Calculator › desktop dark theme with results 
+    [visual] › tests\visual\acquisition-tax.visual.ts:24:7 › Visual Regression: Acquisition Tax Calculator › desktop light theme with results 
+    [visual] › tests\visual\acquisition-tax.visual.ts:44:7 › Visual Regression: Acquisition Tax Calculator › mobile dark theme with results 
+    [visual] › tests\visual\acquisition-tax.visual.ts:66:7 › Visual Regression: Acquisition Tax Calculator › mobile light theme with results 
+    [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:4:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › desktop dark theme 
+    [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:26:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › desktop light theme 
+    [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:40:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › mobile dark theme 
+    [visual] › tests\visual\capital-gains-tax-5steps.visual.ts:63:7 › Visual Regression: Guide — 양도소득세 단계별 계산법 › mobile light theme 
+    [visual] › tests\visual\capital-gains-tax.visual.ts:4:7 › Visual Regression: Capital Gains Tax Calculator › desktop dark theme with results 
+    [visual] › tests\visual\capital-gains-tax.visual.ts:25:7 › Visual Regression: Capital Gains Tax Calculator › desktop light theme with results 
+    [visual] › tests\visual\capital-gains-tax.visual.ts:45:7 › Visual Regression: Capital Gains Tax Calculator › mobile dark theme with results 
+    [visual] › tests\visual\capital-gains-tax.visual.ts:67:7 › Visual Regression: Capital Gains Tax Calculator › mobile light theme with results 
+    [visual] › tests\visual\home.visual.ts:4:7 › Visual Regression: Home Page › desktop dark theme ─
+    [visual] › tests\visual\home.visual.ts:24:7 › Visual Regression: Home Page › desktop light theme 
+    [visual] › tests\visual\home.visual.ts:36:7 › Visual Regression: Home Page › mobile dark theme ─
+    [visual] › tests\visual\home.visual.ts:57:7 › Visual Regression: Home Page › mobile light theme 
+    [visual] › tests\visual\jeonse-deposit-safety.visual.ts:4:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › desktop dark theme 
+    [visual] › tests\visual\jeonse-deposit-safety.visual.ts:26:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › desktop light theme 
+    [visual] › tests\visual\jeonse-deposit-safety.visual.ts:40:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › mobile dark theme 
+    [visual] › tests\visual\jeonse-deposit-safety.visual.ts:63:7 › Visual Regression: Guide — 전세보증금 안전 가이드 › mobile light theme 
+    [visual] › tests\visual\loan-limit.visual.ts:4:7 › Visual Regression: Loan Limit Calculator (DSR) › desktop dark theme 
+    [visual] › tests\visual\loan-limit.visual.ts:26:7 › Visual Regression: Loan Limit Calculator (DSR) › desktop light theme 
+    [visual] › tests\visual\loan-limit.visual.ts:40:7 › Visual Regression: Loan Limit Calculator (DSR) › mobile dark theme 
+    [visual] › tests\visual\loan-limit.visual.ts:64:7 › Visual Regression: Loan Limit Calculator (DSR) › mobile light theme 
+    [visual] › tests\visual\salary.visual.ts:4:7 › Visual Regression: Salary Calculator › desktop dark theme with results 
+    [visual] › tests\visual\salary.visual.ts:24:7 › Visual Regression: Salary Calculator › desktop light theme with results 
+    [visual] › tests\visual\salary.visual.ts:52:7 › Visual Regression: Salary Calculator › mobile dark theme with results 
+    [visual] › tests\visual\salary.visual.ts:82:7 › Visual Regression: Salary Calculator › mobile light theme with results 
+    [visual] › tests\visual\updates.visual.ts:4:7 › Visual Regression: Updates Page › desktop dark theme 
+    [visual] › tests\visual\updates.visual.ts:24:7 › Visual Regression: Updates Page › desktop light theme 
+    [visual] › tests\visual\updates.visual.ts:36:7 › Visual Regression: Updates Page › mobile dark theme 
+    [visual] › tests\visual\updates.visual.ts:57:7 › Visual Regression: Updates Page › mobile light theme 

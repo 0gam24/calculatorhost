@@ -101,14 +101,17 @@ calculatorhost/
 - **E2E 골든패스 5종** — salary, loan-limit, theme, routing, adsense. 배포 전 모두 PASS.
 - **체크포인트** — Phase 완료마다 `.claude/checkpoints/YYYY-MM-DD-yoro-<phase>.md` + `.claude/progress.md` 한 줄 누적.
 
-## BMAD 진행 상태 (2026-05-04 갱신)
+## BMAD 진행 상태 (2026-05-11 갱신)
 1. ✅ Analyst → 페르소나·키워드
 2. ✅ PM → `docs/calculator-spec/*.md`
 3. ✅ Architect → `docs/architecture.md`
 4. ✅ UX → `docs/design-system.md` (Figma 다크 Fintech)
 5. ✅ 하네스 세팅 (rules·agents·skills·commands)
-6. ✅ Dev → MVP 26개 계산기 + 30 테스트 파일·683 케이스 PASS
-7. **현재**: QA 게이트 강화 + 발사 준비 (YORO Phase A~F)
+6. ✅ Dev → MVP 26개 계산기 + 911 단위 + E2E 골든패스 18 PASS
+7. ✅ 발사 (calculatorhost.com 라이브, AdSense pub-7830821732287404 운영, Cloudflare Pages 배포, DNS 스위치 완료)
+8. **현재 (2026-05~)**: 운영 중 (live ops). 신규 기능·콘텐츠·SEO·수익 모니터링·회귀 방지.
+
+> ⚠️ **에이전트 호출 시 outdated "발사 전 / 미신청" 가정 금지**. 현재 상세는 `.claude/STATE.md` 참조.
 
 ## 금기사항 (전역)
 - ❌ 계산 공식 컴포넌트에 작성
