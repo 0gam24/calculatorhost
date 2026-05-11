@@ -55,9 +55,9 @@ export function MobileAnchorAd({ slot }: MobileAnchorAdProps) {
       return;
     }
 
-    // 광고 컨테이너 높이 측정 (체계: mobile 50px, md 이상 90px)
-    // 가장 보수적으로 모바일 기준 50px + 약간의 여유
-    const anchorHeight = 50;
+    // AD-5 형식은 320×50 또는 320×100. 둘 중 큰 쪽(100px)으로 통일하여
+    // 광고가 50px 로 로드되든 100px 로 로드되든 CLS 0 보장.
+    const anchorHeight = 100;
     document.body.style.paddingBottom = `${anchorHeight}px`;
 
     return () => {
@@ -92,7 +92,7 @@ export function MobileAnchorAd({ slot }: MobileAnchorAdProps) {
         'transition-all duration-300',
         'prefers-reduced-motion:transition-none'
       )}
-      style={{ minHeight: '50px' }} // mobile 320×50 기준
+      style={{ minHeight: '100px' }} // AD-5 최대 형식(320×100) 기준 — CLS 0 보장
       aria-label="모바일 하단 광고"
     >
       <div className="relative h-full flex items-center">
