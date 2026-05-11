@@ -90,8 +90,8 @@
 
 - ✅ Google AdSense (pub-7830821732287404)
 - ✅ Google Analytics 4 (env에 `NEXT_PUBLIC_GA_ID` 등록됨)
-- ❓ Google Search Console (운영자 확인)
-- ❓ Naver Search Advisor (운영자 확인)
+- ✅ Google Search Console (운영자 확인)
+- ✅ Naver Search Advisor (운영자 확인)
 - ✅ Kakao Developers (env에 JS 키 등록)
 - ❓ data.go.kr 활용신청 (RTMS, JUSO 등 — 운영자 확인)
 - ❓ Anthropic Console (Auto Guide Phase 2)

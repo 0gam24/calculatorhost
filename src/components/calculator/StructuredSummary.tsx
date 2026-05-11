@@ -48,7 +48,7 @@ export function StructuredSummary({
           핵심 수치
         </h2>
         <div className="overflow-x-auto">
-          <table className="w-full text-sm">
+          <table className="w-full text-sm" data-speakable>
             <caption className="sr-only">{table.caption}</caption>
             <thead>
               <tr className="border-b border-border-base text-left">

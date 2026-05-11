@@ -32,7 +32,10 @@ export function FaqSection({ items, className }: FaqSectionProps) {
                 ▾
               </span>
             </summary>
-            <div className="mt-3 text-sm leading-relaxed text-text-secondary whitespace-pre-line">
+            <div
+              className="mt-3 text-sm leading-relaxed text-text-secondary whitespace-pre-line"
+              data-speakable
+            >
               {item.answer}
             </div>
           </details>
