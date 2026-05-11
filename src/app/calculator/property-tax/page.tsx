@@ -312,6 +312,26 @@ export default function PropertyTaxPage() {
                 </p>
               </section>
 
+              {/* 왜 4구간 누진세인가 (GEO 해설) */}
+              <section
+                aria-label="재산세 구간별 해설"
+                className="card border-l-4 border-l-primary-500"
+              >
+                <h2 className="mb-3 text-xl font-semibold">왜 4구간 누진세인가?</h2>
+                <p className="mb-3 text-text-secondary" data-speakable>
+                  재산세가 4구간 누진세인 이유는 지방세법 §111①의 누진세 원칙 때문입니다. 과세표준이
+                  높을수록 더 높은 비율로 부담하되, 누진공제로 구간 경계의 급격한 변동을 완화합니다.
+                  과세표준 6,000만 원이면 0.1% = 6만 원이지만, 1.5억 원이면 0.15% − 3만 공제 =
+                  19.5만 원으로 약 3배 이상 늘어납니다.
+                </p>
+                <p className="text-text-secondary" data-speakable>
+                  1세대1주택 특례(공시 9억 이하, 지방세법 §111의2)는 세율을 약 절반으로 낮춰 줍니다.
+                  같은 공시가격 5억 원이라도 일반은 약 60만 원, 특례 적용 시 약 30만 원으로 부담이
+                  절반 가량 줄어듭니다. 또한 도시지역분(0.14%, 지방세법 §112)과 지방교육세(20%,
+                  지방세법 §150)가 모든 구간에 추가되므로 실제 부담은 표시 세율보다 약 35% 더 큽니다.
+                </p>
+              </section>
+
               {/* 공시가격과 과세표준 */}
               <section aria-label="공시가격과 과세표준" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">공시가격과 과세표준</h2>

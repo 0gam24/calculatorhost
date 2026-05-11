@@ -231,6 +231,27 @@ export default function SeverancePage() {
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
+              {/* 왜 근속연수공제가 있는가 (GEO 해설) */}
+              <section
+                aria-label="근속연수공제 해설"
+                className="card border-l-4 border-l-primary-500"
+              >
+                <h2 className="mb-3 text-xl font-semibold">왜 근속연수공제가 큰 혜택인가?</h2>
+                <p className="mb-3 text-text-secondary" data-speakable>
+                  퇴직소득세에서 가장 큰 혜택은 근속연수공제(소득세법 §148의4)입니다. 공제액은
+                  근속연수별로 5년 이하 연 100만 원, 5~10년은 기본 500만 원 + 초과분당 200만 원,
+                  10~20년은 기본 1,500만 원 + 초과분당 250만 원, 20년 초과는 기본 4,000만 원 +
+                  초과분당 300만 원이 누적됩니다. 예를 들어 근속 7년이면 500만 + 200만 × 2 =
+                  900만 원이 공제됩니다.
+                </p>
+                <p className="text-text-secondary" data-speakable>
+                  여기에 환산급여공제(소득세법 §148의4)까지 적용되면, 명목상 최고 45% 누진세율이
+                  실제 실효세율 10~20% 수준으로 내려갑니다. 이는 일시소득의 불평탄성을 완화하고
+                  장기근속자의 노후 자산 형성을 지원하기 위한 정책 설계입니다. 같은 퇴직금 1억
+                  원이라도 근속 5년과 25년의 실제 세 부담은 4~5배 차이가 발생할 수 있습니다.
+                </p>
+              </section>
+
               {/* 퇴직금이란? */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">퇴직금이란 무엇이고 언제 받을 수 있나요?</h2>
