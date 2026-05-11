@@ -10,6 +10,8 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { resolve } from 'path';
+import { isIgnored } from './link-health-config.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT_DIR = path.join(__dirname, '..');
@@ -169,7 +171,8 @@ async function checkDomainHealth(domain, urls) {
 }
 
 /**
- * stuck.md 갱신 (30일 이상 미동기 API 기록)
+ * stuck.md 의 "Link Health" 섹션을 항상 최신화.
+ * 실패가 0이면 정상 메시지로 교체 (이전 stale 신호가 영원히 남는 문제 방지).
  */
 function updateStuckFile(failedDomains) {
   let content = '';
@@ -180,13 +183,16 @@ function updateStuckFile(failedDomains) {
     content = '# stuck.md — YORO 헬스 체크 이슈\n\n';
   }
 
-  // "## Link Health" 섹션 업데이트 또는 추가
   let linkHealthSection = `## Link Health (${formatDateKST()})\n\n`;
 
-  for (const domain of failedDomains) {
-    linkHealthSection += `- **${domain}**: 4xx/5xx 응답 감지 (ralph-link-health 실행 권장)\n`;
+  if (failedDomains.length === 0) {
+    linkHealthSection += `모든 외부 링크 정상.\n\n`;
+  } else {
+    for (const domain of failedDomains) {
+      linkHealthSection += `- **${domain}**: 4xx/5xx 응답 감지 (ralph-link-health 실행 권장)\n`;
+    }
+    linkHealthSection += '\n';
   }
-  linkHealthSection += '\n';
 
   // 기존 Link Health 섹션 제거 후 새로 추가
   const linkHealthRegex = /## Link Health \([^)]+\)\n\n[\s\S]*?(?=\n## |\n$)/;
@@ -237,7 +243,7 @@ async function main() {
       `│ ${domain.padEnd(23)} │ ${statusBadge} ${String(statusCode).padEnd(4)} │ ${displayUrl.padEnd(28)} │`
     );
 
-    if (!result.ok && result.status >= 400) {
+    if (!result.ok && result.status >= 400 && !isIgnored(domain)) {
       failedDomains.push(domain);
     }
   }
@@ -281,17 +287,25 @@ async function main() {
 
   console.log(`📄 보고서: ${path.relative(ROOT_DIR, reportPath)}\n`);
 
-  // stuck.md 갱신
+  // stuck.md 갱신 (실패 0이어도 stale 신호 제거를 위해 항상 갱신)
+  updateStuckFile(failedDomains);
   if (failedDomains.length > 0) {
-    updateStuckFile(failedDomains);
     console.log(`⚠️  실패 도메인을 stuck.md 에 기록했습니다.\n`);
+  } else {
+    console.log(`✅ stuck.md Link Health 섹션을 정상으로 갱신했습니다.\n`);
   }
 
   // exit 0 (실패해도 차단 안 함)
   process.exit(0);
 }
 
-main().catch(err => {
-  console.error('❌ 에러:', err.message);
-  process.exit(0);
-});
+// CLI 가드: 직접 실행 시에만 main() 호출 (단위 테스트 import 시 부수효과 차단)
+const isCliInvocation = process.argv[1]
+  ? fileURLToPath(import.meta.url) === resolve(process.argv[1])
+  : false;
+if (isCliInvocation) {
+  main().catch(err => {
+    console.error('❌ 에러:', err.message);
+    process.exit(0);
+  });
+}

@@ -432,8 +432,7 @@ export default function JunePropertyTaxPage() {
                   <strong>법적 근거</strong>: 지방세법 §107·§110·§114·§122·§150 · 시행령 §109. 참고:{' '}
                   <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스</a>,{' '}
                   <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a> 공시가격,{' '}
-                  <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원 공시가격 알리미</a>,{' '}
-                  <a href="https://realtyprice.kr/main.php" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">부동산공시가격알리미</a>.
+                  <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원 공시가격 알리미</a>.
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)
