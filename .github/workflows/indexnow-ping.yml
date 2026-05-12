@@ -1,0 +1,47 @@
+name: IndexNow + Sitemap Ping
+
+# 색인 가속 자동화. 배포 직후 실행하여 신규 페이지 색인 1~2주 → 24h 단축 목표.
+# - Google: sitemap ping 엔드포인트 (deprecated 됐지만 일부 보조 채널은 여전히 동작)
+# - Bing/Yandex/Naver: IndexNow API 표준
+#
+# 운영자 액션 필요:
+#  1. https://www.bing.com/indexnow 에서 키 발급 (32자리 hex)
+#  2. {key}.txt 파일 (key 만 한 줄) 을 public/ 에 배치
+#  3. GitHub Secrets에 INDEXNOW_KEY 등록
+#  4. 워크플로 활성화
+
+on:
+  workflow_run:
+    workflows: ['Cloudflare Pages']  # Cloudflare 배포 완료 후 트리거
+    types: [completed]
+  workflow_dispatch:  # 수동 실행도 허용
+
+jobs:
+  ping:
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Google sitemap ping (legacy 보조 채널)
+        run: |
+          # 2023년 deprecated 됐지만 일부 사이트는 여전히 효과 보고됨. 무해.
+          curl -fsS "https://www.google.com/ping?sitemap=https://calculatorhost.com/sitemap.xml" || echo "Google ping skipped"
+
+      - name: Bing/Yandex IndexNow
+        if: ${{ secrets.INDEXNOW_KEY != '' }}
+        env:
+          KEY: ${{ secrets.INDEXNOW_KEY }}
+        run: |
+          # 전체 사이트 알림 (sitemap.xml 변경 통보)
+          curl -fsS -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json" \
+            -d "{
+              \"host\": \"calculatorhost.com\",
+              \"key\": \"$KEY\",
+              \"keyLocation\": \"https://calculatorhost.com/$KEY.txt\",
+              \"urlList\": [\"https://calculatorhost.com/sitemap.xml\"]
+            }" || echo "IndexNow ping skipped"
+
+      - name: Naver Search Advisor (수동 한정)
+        run: |
+          echo "Naver Search Advisor 는 사이트맵 자동 핑 미지원."
+          echo "운영자가 https://searchadvisor.naver.com 에서 정기적으로 색인 요청 (월 1회)."

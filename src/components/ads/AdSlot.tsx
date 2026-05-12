@@ -67,6 +67,14 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
   const pushedRef = useRef(false);
   const containerRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [isPreviewHost, setIsPreviewHost] = useState(false);
+
+  // *.pages.dev 미리보기 환경에서 광고 렌더 차단 (자기 클릭·정책 위반 방지).
+  // production 도메인(calculatorhost.com)에서만 광고 송출.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    setIsPreviewHost(window.location.hostname.endsWith('.pages.dev'));
+  }, []);
 
   // 1순위: slot prop 이 numeric (실제 광고 단위 ID) → 그대로 사용
   // 2순위: 포맷별 환경변수 (NEXT_PUBLIC_ADSENSE_SLOT_LEADERBOARD 등)
@@ -76,7 +84,7 @@ export function AdSlot({ slot, format = 'rectangle', className }: AdSlotProps) {
     ? slot
     : FORMAT_SLOT_ENV[format] ?? process.env.NEXT_PUBLIC_ADSENSE_SLOT_DEFAULT;
 
-  const canRenderAd = !isDev && client && adSlotId;
+  const canRenderAd = !isDev && !isPreviewHost && client && adSlotId;
 
   // ────── IntersectionObserver lazy load ──────
   // 광고 슬롯이 viewport 진입 100px 전에 미리 활성화 (TBT 최소화 위해 200px → 100px 축소).
