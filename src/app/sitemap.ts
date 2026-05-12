@@ -95,6 +95,8 @@ const GUIDE_SLUGS = [
   'september-property-tax-second',
   // 시즈널 10월 부가세 2기 예정신고
   'october-vat-q2-preliminary',
+  // 시즈널 11월 연말정산 준비
+  'november-year-end-tax-prep',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
