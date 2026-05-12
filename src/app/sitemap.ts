@@ -87,6 +87,8 @@ const GUIDE_SLUGS = [
   'rent-conversion-rate-2026-housing-lease-act',
   // 퇴직금 vs 연금 DC/DB 비교 가이드 (sitemap 누락 보강)
   'severance-vs-pension-dc-db',
+  // 시즈널 7월 부가세 1기 확정신고 (Phase 3 시즈널 6편 첫 발행)
+  'july-vat-final-1st-half',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
