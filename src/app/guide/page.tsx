@@ -390,6 +390,9 @@ export default function GuideIndexPage() {
                 aria-label="안내"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
+                <p className="mb-2">
+                  <strong>법적 근거</strong>: 본 가이드 카테고리에 포함된 콘텐츠는 다음 법령을 근거로 작성됩니다 — 소득세법 §55·§70·§94·§103·§148의4 (소득세·양도세·퇴직소득세) · 지방세법 §11·§13의2·§111·§128·§150 (취득세·재산세·자동차세·지방교육세) · 주택임대차보호법 §3·§3의2·§8 (임대차) · 은행법 §38·시행령 §24의4 (DSR·대출 규제) · 부가가치세법 §49 (예정 신고).
+                </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                   새 가이드는 매월 1~2개 추가됩니다. 알림은 위 RSS 또는 카카오톡 채널 (출시 예정).
