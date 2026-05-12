@@ -429,6 +429,15 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 13,
   },
+  {
+    slug: 'child-house-gift-vs-sale-comparison',
+    title: '자녀 주택 증여 vs 매매 비교 — 저가양수도 30%·3억 룰',
+    description:
+      '시가 10억 주택 자녀 이전 4가지 시나리오 비교. 상증법 §35 ① 저가양수도 30%·3억 룰, 자금출처 조사, 양도세 시가 기준(§101), 증여취득세, 신고 함정.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 12,
+  },
 ];
 
 // 시기성 가이드만 추출 (상단 배너용)

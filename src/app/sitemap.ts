@@ -123,6 +123,8 @@ const GUIDE_SLUGS = [
   'financial-income-comprehensive-vs-separate-taxation',
   // 이월과세 5년→10년 확대 가이드 (4티어 핫 키워드 — 소득세법 §97의2 / 2025-01-01 시행)
   'carry-over-basis-spouse-gift-5-10-year',
+  // 자녀 주택 증여 vs 매매 비교 가이드 (4티어 핫 키워드 — 상증법 §35 ① / 시행령 §26)
+  'child-house-gift-vs-sale-comparison',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
