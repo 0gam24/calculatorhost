@@ -305,14 +305,13 @@ export default function DsrLoanLimitTipsPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>:{' '}
+                  <strong>법적 근거</strong>: 은행법 §38 (대출 약관) · 은행법 시행령 §24의4 (DSR 기준) · 신용정보의 이용 및 보호에 관한 법률 §2 (신용정보 정의) ·{' '}
                   <a href="https://www.fss.or.kr/fss/pr/selectPressReleaseView.do?bbsid=99&nttid=150944" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
                     금융감독원 스트레스 DSR 고시
                   </a>,{' '}
                   <a href="https://www.fsc.go.kr/po/po1/a104/searchAnnouncement.action" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
                     금융위원회 여신심사 가이드라인
-                  </a>,
-                  은행법 시행령 §24의4,{' '}
+                  </a>,{' '}
                   <a href="https://finlife.fss.or.kr/mypl/en/contents/cts/cts0102000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
                     금융감독원 핀라이프 DSR 계산기
                   </a>.

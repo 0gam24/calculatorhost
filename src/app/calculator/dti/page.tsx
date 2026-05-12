@@ -232,7 +232,10 @@ DTI 한도 (2026):
               </section>
 
               <section aria-label="공식 출처" className="card">
-                <h2 className="mb-3 text-lg font-semibold">공식 출처</h2>
+                <h2 className="mb-3 text-lg font-semibold">공식 출처 · 법적 근거</h2>
+                <p className="mb-3 text-sm text-text-secondary">
+                  은행법 §38 (대출 약관) · 은행법 시행령 §24의4 (DSR 기준) · 신용정보의 이용 및 보호에 관한 법률 §2 (신용정보 정의) · 금융감독원 「주택담보대출 가계부채 종합관리방안」 (스트레스 DSR 1.5%p 가산).
+                </p>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <a

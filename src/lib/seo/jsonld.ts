@@ -7,6 +7,8 @@
  * - docs/adr/006-geo-aeo-first.md
  */
 
+import { getDateModifiedFromManifest } from './date-modified-helper';
+
 const SITE_URL = 'https://calculatorhost.com';
 const SITE_NAME = 'calculatorhost';
 const SITE_LEGAL_NAME = '스마트데이터샵';
@@ -217,7 +219,12 @@ export interface WebPageOptions {
   description: string;
   url: string;
   datePublished: string;
-  dateModified: string;
+  /**
+   * 페이지 마지막 수정일. 미제공 시 git 기반 manifest
+   * (`src/data/date-modified-manifest.json`) 에서 url pathname 으로 자동 조회.
+   * 운영자가 수동 명시하면 항상 그 값 우선.
+   */
+  dateModified?: string;
   /** OG 이미지 절대 URL (선택). 검색 결과 thumbnail·SNS 미리보기 */
   image?: string | string[];
   /** isPartOf — 카테고리 페이지 URL (선택, 사이트 계층 구조 신호) */
@@ -225,6 +232,12 @@ export interface WebPageOptions {
 }
 
 export function buildWebPageJsonLd(opts: WebPageOptions): JsonLd {
+  // 명시 dateModified 우선 → 없으면 manifest 조회 → 없으면 datePublished 폴백
+  const resolvedDateModified =
+    opts.dateModified ??
+    getDateModifiedFromManifest(opts.url) ??
+    opts.datePublished;
+
   return {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
@@ -233,7 +246,7 @@ export function buildWebPageJsonLd(opts: WebPageOptions): JsonLd {
     url: opts.url,
     inLanguage: 'ko-KR',
     datePublished: opts.datePublished,
-    dateModified: opts.dateModified,
+    dateModified: resolvedDateModified,
     ...(opts.image ? { image: opts.image } : {}),
     ...(opts.isPartOf
       ? { isPartOf: { '@type': 'WebSite', '@id': opts.isPartOf } }
@@ -351,7 +364,8 @@ export interface ArticleOptions {
   description: string;
   url: string;
   datePublished: string;
-  dateModified: string;
+  /** 미제공 시 manifest 자동 조회 → datePublished 폴백 */
+  dateModified?: string;
   /** 저자 이름 (예: "calculatorhost 편집팀" 또는 실명) */
   authorName: string;
   /** 저자 URL (선택, 예: /about) */
@@ -365,6 +379,10 @@ export interface ArticleOptions {
 }
 
 export function buildArticleJsonLd(opts: ArticleOptions): JsonLd {
+  const resolvedDateModified =
+    opts.dateModified ??
+    getDateModifiedFromManifest(opts.url) ??
+    opts.datePublished;
   return {
     '@context': 'https://schema.org',
     '@type': opts.type ?? 'Article',
@@ -373,7 +391,7 @@ export function buildArticleJsonLd(opts: ArticleOptions): JsonLd {
     url: opts.url,
     inLanguage: 'ko-KR',
     datePublished: opts.datePublished,
-    dateModified: opts.dateModified,
+    dateModified: resolvedDateModified,
     ...(opts.image ? { image: opts.image } : {}),
     ...(opts.keywords ? { keywords: opts.keywords.join(', ') } : {}),
     author: {

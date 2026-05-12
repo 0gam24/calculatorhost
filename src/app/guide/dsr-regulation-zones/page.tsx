@@ -297,7 +297,7 @@ export default function DsrRegulationZonesPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 은행법 시행령 §24의4 ·{' '}
+                  <strong>법적 근거</strong>: 은행법 §38 · 은행법 시행령 §24의4 (DSR 기준) · 부동산 거래신고 등에 관한 법률 §2의2 (조정대상지역 지정 기준) · 주택법 §63 (투기과열지구) ·{' '}
                   <a href="https://www.fss.or.kr/fss/pr/selectPressReleaseView.do?bbsid=99" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원 주택담보대출 규제 고시</a> ·{' '}
                   <a href="https://www.molit.go.kr/CMS/Board/InformationNoticeList.do?category=Land" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 조정대상지역 지정 공시</a> ·{' '}
                   <a href="https://finlife.fss.or.kr/mypl/en/contents/cts/cts0102000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원 핀라이프 DSR 계산기</a>.

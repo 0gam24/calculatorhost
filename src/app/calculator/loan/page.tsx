@@ -460,7 +460,7 @@ export default function LoanInterestPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 금융감독원 대출상환 표준공식, 상법 §54.
+                  <strong>법적 근거</strong>: 금융감독원 대출상환 표준공식 · 상법 §54 · 은행법 §38 (대출 약관) · 이자제한법 §2 (최고이자율 연 20%) · 은행법 시행령 §24의4 (DSR 기준).
                 </p>
                 <p>
                   본 계산기의 결과는 교육·참고용이며 법적 효력이 없습니다. 실제 대출 상품은 금융기관별로 우대금리·수수료·약정료
