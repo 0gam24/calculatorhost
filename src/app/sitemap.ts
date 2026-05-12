@@ -89,6 +89,8 @@ const GUIDE_SLUGS = [
   'severance-vs-pension-dc-db',
   // 시즈널 7월 부가세 1기 확정신고 (Phase 3 시즈널 6편 첫 발행)
   'july-vat-final-1st-half',
+  // 시즈널 8월 양도세 절세 검토
+  'august-capital-gains-tax-review',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
