@@ -19,6 +19,11 @@ import {
 import { LoanCalculator } from './LoanCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
+import bokRates from '@/data/bok-rates.json';
+
+const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 const URL = 'https://calculatorhost.com/calculator/loan/';
 
@@ -242,6 +247,9 @@ export default function LoanInterestPage() {
                 <p className="mb-4 text-text-secondary">
                   대출이자는 금융기관에서 돈을 빌렸을 때 발생하는 비용입니다. 연 이자율(%)을 기준으로 하며,
                   대출원금·대출기간·상환 방식에 따라 월 상환액과 총이자가 달라집니다(금융감독원 대출상환 공식).
+                  현재 한국은행 기준금리는{' '}
+                  <PublicDataCitation citation={ECOS_BASE_RATE} />이며, 시중은행 주담대 금리는
+                  통상 기준금리에 가산금리(1.5~3.0%p)를 더한 수준입니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
                   상환 방식은 세 가지로 나뉩니다. 원리금균등은 매월 일정 금액을 상환하는 방식으로 예산 계획이 쉽습니다.
