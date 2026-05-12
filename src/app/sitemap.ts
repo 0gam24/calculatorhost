@@ -91,6 +91,8 @@ const GUIDE_SLUGS = [
   'july-vat-final-1st-half',
   // 시즈널 8월 양도세 절세 검토
   'august-capital-gains-tax-review',
+  // 시즈널 9월 재산세 2차 납부
+  'september-property-tax-second',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
