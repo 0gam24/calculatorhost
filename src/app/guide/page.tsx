@@ -263,6 +263,163 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 7,
   },
+  // ─── 4티어 핫 키워드 가이드 (영구 발행) ───
+  {
+    slug: 'severance-vs-pension-dc-db',
+    title: '퇴직금 vs 퇴직연금 DC/DB 차이 완전 정리 (2026)',
+    description:
+      'DC형(확정기여)·DB형(확정급여)·일시금 수령·연금 수령의 세제·운용·실수령 차이. IRP 이전·중도 해지 패널티 정리.',
+    category: '근로',
+    publishedAt: '2026-05-04',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'jeonse-deposit-safety',
+    title: '전세보증금 안전 가이드 — 보증보험·확정일자·우선변제',
+    description:
+      '전세사기 예방 5단계: 등기부 확인·시세 90% 이하·보증보험 가입·전입신고·확정일자. HUG/SGI 보증료 자동 계산.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-04',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'capital-gains-tax-5-steps',
+    title: '양도소득세 5단계 시뮬 — 1세대1주택·다주택·일시적2주택',
+    description:
+      '양도가 산정→취득가·경비 차감→장기보유공제→과세표준→세율 적용까지 5단계로 실전 양도세 계산. 다주택 중과·12억 한도 비례 과세 포함.',
+    category: '세금',
+    publishedAt: '2026-05-05',
+    readingMinutes: 10,
+  },
+  {
+    slug: 'salary-negotiation-take-home',
+    title: '연봉 협상 시 실수령 기준 제안 — 세전·세후 차이 정리',
+    description:
+      '연봉 인상 5% 제안 시 세후 실수령 변화 시뮬. 4대보험·소득세 누진 효과·식대·자녀세액공제 종합.',
+    category: '근로',
+    publishedAt: '2026-05-05',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'earned-income-tax-credit-vs-child',
+    title: '근로장려금 vs 자녀장려금 차이 (5월 신청)',
+    description:
+      '근로장려금(가구 소득 4,400만원 미만)과 자녀장려금(7,000만원 미만)의 자격·금액·중복 가능 여부 정리. 5월 31일 신청 마감.',
+    category: '세금',
+    publishedAt: '2026-05-05',
+    readingMinutes: 6,
+    seasonal: '5월 31일 마감',
+  },
+  {
+    slug: 'rent-conversion-rate-2026-housing-lease-act',
+    title: '2026 전월세 전환율 — 주택임대차보호법 한도',
+    description:
+      '한국은행 기준금리 + 2%p (2026년 약 5.5%) 한도. 임대인 일방 인상 거부권·갱신청구권·5% 인상 한도와 함께 정리.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-06',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'presale-right-capital-gains-tax',
+    title: '분양권 양도소득세 완전 정리 — 60%/70% 단일 세율',
+    description:
+      '분양권은 보유 기간 무관 60%(1년 이상)·70%(1년 미만) 단일 세율. 1세대1주택 비과세 X, 장기보유공제 X.',
+    category: '세금',
+    publishedAt: '2026-05-08',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'one-household-12-billion-exemption',
+    title: '1세대1주택 12억 비과세 한도 완전 정리',
+    description:
+      '1세대1주택 양도 시 12억까지 비과세. 12억 초과분 비례 과세 공식·장기보유공제 80% 결합·거주 요건 종합.',
+    category: '세금',
+    publishedAt: '2026-05-08',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'n-jobber-insurance-dependent-disqualification',
+    title: 'N잡러 건강보험 피부양자 탈락 — 소득 3,400만 기준',
+    description:
+      '연 소득(근로+사업+이자배당) 합계 3,400만 초과 시 피부양자 자격 상실. 가족 명의 분산·DC형 IRP 활용 회피 전략.',
+    category: '근로',
+    publishedAt: '2026-05-09',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-rental-income-separate-taxation',
+    title: '주택임대소득 분리과세 2,000만 기준',
+    description:
+      '주택임대소득 2,000만 이하 분리과세 14% 선택 가능. 등록임대 vs 미등록임대 세제·필요경비 인정 비율 정리.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-09',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'child-earned-income-tax-credit-application-2026',
+    title: '자녀·근로장려금 신청 가이드 (2026 5월 31일 마감)',
+    description:
+      '자녀장려금 1인 50~80만, 근로장려금 최대 330만. 가구 유형별 자격·신청 절차·환급 일정 종합.',
+    category: '세금',
+    publishedAt: '2026-05-10',
+    readingMinutes: 7,
+    seasonal: '5월 31일 마감',
+  },
+  {
+    slug: 'joint-ownership-couple-capital-gains-tax-savings',
+    title: '부부 공동명의 양도세 절세 — 50:50 분산 효과',
+    description:
+      '부부 공동명의 시 양도소득세 누진세 분산·기본공제 250만 × 2 적용·세대 1주택 판정 동일. 취득세 6% 부담 비교까지.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-11',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'inheritance-tax-10-year-prior-gift-aggregation',
+    title: '상속세 사전 증여 합산 10년/5년 완벽 정리',
+    description:
+      '상증법 §13 — 사전 증여 10년(상속인)·5년(상속인 외) 합산. 30억 자산 사례로 일괄 상속 vs 단계 증여 약 2.6억 절세 시뮬.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 11,
+  },
+  {
+    slug: 'temporary-two-houses-capital-gains-exemption',
+    title: '일시적 2주택 양도세 비과세 3년',
+    description:
+      '신규 1년 후 취득 + 종전 3년 내 양도 + 보유 2년 = 비과세. 2023-01-12 시행령 개정으로 모든 지역 3년 통일. 12억 비례 과세.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 10,
+  },
+  {
+    slug: 'long-term-holding-special-deduction-80-percent',
+    title: '장기보유특별공제 80% 완전 정리 (1세대1주택)',
+    description:
+      '시행령 §159의3 표2 — 보유 4% × 10년(40%) + 거주 4% × 10년(40%) = 최대 80%. 다주택 중과 시 배제·분양권 미적용.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 10,
+  },
+  {
+    slug: 'burden-gift-debt-assumption-tax',
+    title: '부담부증여 양도+증여세 — 전세보증금·은행대출',
+    description:
+      '상증법 §47 ② — 채무인수액은 양도, 무상분은 증여 분리 과세. 자산 10억 + 채무 4억 사례로 일반 증여 대비 약 1.19억 절세 시뮬.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 10,
+  },
+  {
+    slug: 'financial-income-comprehensive-vs-separate-taxation',
+    title: '금융소득 종합과세 vs 분리과세 — 2,000만 기준',
+    description:
+      '소득세법 §14 ⑦·§62 비교과세. 분리(15.4% 자동) vs 종합(누진세+배당세액공제 §56). 5월 31일 신고 시즌 필독.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 9,
+    seasonal: '5월 31일 마감',
+  },
 ];
 
 // 시기성 가이드만 추출 (상단 배너용)
