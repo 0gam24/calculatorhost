@@ -438,6 +438,15 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 12,
   },
+  {
+    slug: 'self-farming-land-100-percent-exemption',
+    title: '자경농지 8년 100% 감면 완벽 정리 2026',
+    description:
+      '자경농지 8년 양도세 100% 감면 조건·자경 요건(50% 노동력)·거주 요건(30km)·한도(연 1억/5년 2억)·시뮬 사례 3개·함정 5가지·신청 절차.',
+    category: '세금',
+    publishedAt: '2026-05-13',
+    readingMinutes: 14,
+  },
 ];
 
 // 시기성 가이드만 추출 (상단 배너용)

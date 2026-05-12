@@ -125,6 +125,8 @@ const GUIDE_SLUGS = [
   'carry-over-basis-spouse-gift-5-10-year',
   // 자녀 주택 증여 vs 매매 비교 가이드 (4티어 핫 키워드 — 상증법 §35 ① / 시행령 §26)
   'child-house-gift-vs-sale-comparison',
+  // 자경농지 8년 100% 감면 가이드 (4티어 핫 키워드 — 조특법 §69 / §133)
+  'self-farming-land-100-percent-exemption',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
