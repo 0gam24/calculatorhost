@@ -117,6 +117,8 @@ const GUIDE_SLUGS = [
   'temporary-two-houses-capital-gains-exemption',
   // 장기보유특별공제 80% 가이드 (4티어 핫 키워드 — 1세대1주택 §95 ② / 시행령 §159의3)
   'long-term-holding-special-deduction-80-percent',
+  // 부담부증여 양도+증여세 가이드 (4티어 핫 키워드 — 상증법 §47 ②)
+  'burden-gift-debt-assumption-tax',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
