@@ -115,6 +115,8 @@ const GUIDE_SLUGS = [
   'inheritance-tax-10-year-prior-gift-aggregation',
   // 일시적 2주택 양도세 비과세 3년 가이드 (4티어 핫 키워드 — 시행령 §155)
   'temporary-two-houses-capital-gains-exemption',
+  // 장기보유특별공제 80% 가이드 (4티어 핫 키워드 — 1세대1주택 §95 ② / 시행령 §159의3)
+  'long-term-holding-special-deduction-80-percent',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
