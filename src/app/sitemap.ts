@@ -111,6 +111,8 @@ const GUIDE_SLUGS = [
   'child-earned-income-tax-credit-application-2026',
   // 부부 공동명의 양도세 절세 가이드 (4티어 핫 키워드)
   'joint-ownership-couple-capital-gains-tax-savings',
+  // 상속세 사전 증여 합산 10년/5년 가이드 (4티어 핫 키워드 — 상증법 §13)
+  'inheritance-tax-10-year-prior-gift-aggregation',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
