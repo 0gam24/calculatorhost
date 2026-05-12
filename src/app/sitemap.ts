@@ -97,6 +97,8 @@ const GUIDE_SLUGS = [
   'october-vat-q2-preliminary',
   // 시즈널 11월 연말정산 준비
   'november-year-end-tax-prep',
+  // 시즈널 12월 양도세 마감 결정 (마지막 시즈널)
+  'december-capital-gains-tax-deadline',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
