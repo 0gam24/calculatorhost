@@ -105,6 +105,8 @@ const GUIDE_SLUGS = [
   'one-household-12-billion-exemption',
   // N잡 건강보험 피부양자 탈락 가이드 (4티어 핫 키워드)
   'n-jobber-insurance-dependent-disqualification',
+  // 주택임대소득 분리과세 2,000만 원 가이드 (4티어 핫 키워드)
+  'housing-rental-income-separate-taxation',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
