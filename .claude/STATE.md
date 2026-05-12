@@ -134,7 +134,16 @@
 **🟡 minimal (4)** — 보강 권장:
 - `calculator/dti`, `calculator/loan`, `guide/dsr-loan-limit-tips`, `guide/dsr-regulation-zones`
 
-**다음 액션**: calc-logic-verifier 위임 → 페이지별 정확한 §N 권고 → 본문 적용
+**calc-logic-verifier 권고 (2026-05-12, 운영자 검수 후 적용)**:
+- ⚠️ 일부 권고 정확성 의심 (`보증금보호법` 미존재, `주택도시기금법` vs `주택공급에 관한 규칙` 혼동) — 운영자 또는 추가 검증 필요
+- 안전한 권고: n-jobber-insurance (국민건강보험법 §72·§72의2 + 국민연금법 §3), rental-yield (소득세법 §20·§25), retirement (국민연금법 §61·§62 + 소득세법 §94)
+- 비-YMYL 7개는 면책 강화로 대체 권고 (BMI·D-day·inflation·exchange·averaging-down·split-buy·split-sell)
+
+### FAQ 중복 차별화 권고 (2026-05-12, content-writer 위임 결과)
+**대상**: salary (7개), capital-gains-tax (8개), acquisition-tax (7개)
+- 차별화 원칙: salary=직장인/월급/4대보험, CGT=양도/12억/일시적2주택/분양권, acquisition=구매/9억경계/85㎡/생애최초
+- 모든 답변 첫 문장 결론형 + 정확한 법조항 (소득세법 §59의2·§94·§104의3·§118·시행령 §154·§159의3, 지방세법 §10·§11·§13의2)
+- **상태**: 운영자 검수 후 페이지별 적용 (다음 회차)
 
 ---
 
