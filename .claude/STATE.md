@@ -19,7 +19,7 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 05. 12. 14:42 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 05. 12. 16:10 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
 - 사이트 라이브: ✅ HTTP 200
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 05. 12. 14:42 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 05. 12. 16:10 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -70,7 +70,7 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> 마지막 자동 점검: 2026. 05. 12. 14:42 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 05. 12. 16:10 (Asia/Seoul)
 
 - ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
 - ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
@@ -104,21 +104,25 @@
 > 운영자가 매주·격주로 갱신. 에이전트 호출 시 이 섹션을 읽어 우선순위 판단.
 
 ### 진행 중 (2026-05-12 ~ 06-09, 4주 GSC 효과 모니터링)
-- **오늘 11 PR 누적 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
-  · IndexNow workflow + sitemap 검증 + indexing-guard E2E + §N 12페이지 보강
-  · 공공 데이터 인용 5페이지 + AVIF 4종 + dateModified manifest + jsonld helper
+- **오늘 19 PR 누적 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
+  · 색인 인프라: IndexNow workflow + sitemap 검증 + indexing-guard E2E
+  · §N 보강: 12페이지 (strong 33→51, missing 15→7)
+  · 공공 데이터 인용: 5페이지 (loan/savings/deposit/salary/freelancer)
+  · 시즈널 가이드 6편 신규 발행 (7~12월 — 1~12월 12편 완성)
+  · 인프라: dateModified manifest + jsonld helper + AVIF 4종 + AvifImage 컴포넌트
+  · ECOS Edge Function 프록시 + STATE.md SSoT
 - **운영자 수동 액션 (병행)**:
   · GSC URL Inspection → Request Indexing 미색인 상위 10개 (월 200건 한도)
   · Bing IndexNow 키 발급 → GitHub Secrets `INDEXNOW_KEY` → workflow 활성화
   · GSC Page Index 9가지 미색인 이유 캡처 → seo-auditor 정확 진단
 
 ### 다음 후보 (4주 효과 측정 후 우선순위 재결정)
-- 시즈널 가이드 7~12월 6편 발행 (content-writer 위임, 신규 색인 +6)
-- AvifImage 페이지별 적용 (히어로 이미지 사용처 검토)
+- AvifImage 페이지별 적용 (히어로 이미지 사용처 신규 추가 시)
 - Programmatic SEO 시범 5개 발행 (ADR-010, 운영자 승인 후)
 - INP Field GA4 → Looker Studio (운영자 외부 도구)
 - LinkedIn + Wikidata entity (Knowledge Graph)
 - 백링크 Outreach (정부·언론·블로그)
+- Phase 2 신규 계산기 13종 (자동차세·N잡 건보·청약가점 추가 등)
 
 ### 보류 / 차단
 - pre-existing tests/unit/scripts/ 3건 vitest transform fail (Windows + .mjs import) — CI 무영향
@@ -133,14 +137,15 @@
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
 
 ### §N 법조항 인용 audit 추이 (2026-05-12 최종, `npm run citations:audit`)
-**52개 페이지 中**: ✅ strong(3+) 45 / 🟡 minimal(1~2) 0 / 🔴 missing(0) 7
+**58개 페이지 中**: ✅ strong(3+) 51 / 🟡 minimal(1~2) 0 / 🔴 missing(0) 7
 
-**오늘 11 PR 누적 추이**:
-- 초기:    strong 33 / minimal 4 / missing 15
+**오늘 19 PR 누적 추이**:
+- 초기:    strong 33 / minimal 4 / missing 15 (52 페이지)
 - Phase 1: strong 37 / minimal 4 / missing 11 (4페이지 보강)
 - Phase 2: strong 41 / minimal 0 / missing 11 (minimal → strong)
 - Phase 3: strong 44 / minimal 0 / missing  8 (가이드 3 추가)
-- 최종:    strong 45 / minimal 0 / missing  7 (/guide/ 인덱스 추가)
+- /guide/ index: strong 45 / missing 7
+- 시즈널 6편: strong 51 (58 페이지, +6 신규 가이드 모두 strong)
 
 **남은 missing 7 (모두 비-YMYL — 면책으로 충분)**:
 - `/calculator/{averaging-down,bmi,d-day,exchange,inflation,split-buy,split-sell}/`
@@ -164,6 +169,11 @@
 - ✅ AVIF 이미지 변환 4종 (-56~-89%)
 - ✅ PWA manifest AVIF 6 entries
 - ✅ Programmatic SEO 설계 ADR-010 (운영자 승인 대기)
+
+### 시즈널 가이드 12편 완성 (2026-05-12, 1~12월)
+- ✅ 1~6월 (기존 발행): january-vehicle-tax-prepayment / february-tax-refund-tracking / march-corporate-tax / april-vat-preliminary-q1 / april-comprehensive-property-tax-exclusion / may-comprehensive-income-tax / june-property-tax
+- ✅ 7~12월 (오늘 발행): july-vat-final-1st-half / august-capital-gains-tax-review / september-property-tax-second / october-vat-q2-preliminary / november-year-end-tax-prep / december-capital-gains-tax-deadline
+- ✅ /guide/ 인덱스 페이지에 7~12월 6편 등재 완료 (내부 링크·내비게이션)
 
 ---
 

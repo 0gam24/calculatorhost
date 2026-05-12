@@ -152,6 +152,72 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 10,
     seasonal: '7월 납부 직전',
   },
+  // ─── 7월 ───
+  {
+    slug: 'july-vat-final-1st-half',
+    title: '7월 부가세 1기 확정신고 가이드 (2026) — 일반·간이과세 완전정리',
+    description:
+      '7월 1~25일 부가가치세 1기 확정신고. 일반과세 vs 간이과세 차이·세액계산·홈택스 6단계·환급·절세 5가지.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 11,
+    seasonal: '7월 1~25일',
+  },
+  // ─── 8월 ───
+  {
+    slug: 'august-capital-gains-tax-review',
+    title: '8월 양도소득세 절세 검토 가이드 (2026) — 일시적2주택·장기보유 80%',
+    description:
+      '8월 부동산 양도 검토. 일시적2주택 3년 만료·장기보유공제 80%·단기 1년/2년 경계·양도 시점 vs 귀속연도·절세 5가지.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-12',
+    readingMinutes: 12,
+    seasonal: '8월 양도 직전',
+  },
+  // ─── 9월 ───
+  {
+    slug: 'september-property-tax-second',
+    title: '9월 재산세 2차 납부 가이드 (2026) — 위택스·신용카드 할부·가산세',
+    description:
+      '9월 16~30일 재산세 2차 납부. 주택 분할 vs 토지 일괄·위택스 5가지 방법·신용카드 무이자 할부·미납 가산세·과오납 환급.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-12',
+    readingMinutes: 9,
+    seasonal: '9월 16~30일',
+  },
+  // ─── 10월 ───
+  {
+    slug: 'october-vat-q2-preliminary',
+    title: '10월 부가세 2기 예정신고 가이드 (2026) — 환급·예정고지·연말 절세',
+    description:
+      '10월 1~25일 부가세 2기 예정신고. 예정신고 vs 예정고지 차이·환급 가능성·연말 절세 4가지·4분기 매입 계획.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 10,
+    seasonal: '10월 1~25일',
+  },
+  // ─── 11월 ───
+  {
+    slug: 'november-year-end-tax-prep',
+    title: '11월 연말정산 준비 가이드 (2026) — 12월 31일 마감 전 절세 8가지',
+    description:
+      '12월 31일 마감 전 마지막 절세 기회. 연금저축·IRP 900만 한도·신용카드·의료비·기부금·청약통장·월세 공제까지 단계별.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 13,
+    seasonal: '11~12월 골든타임',
+  },
+  // ─── 12월 ───
+  {
+    slug: 'december-capital-gains-tax-deadline',
+    title: '12월 양도세 vs 1월 양도세 가이드 (2026) — 연말 매도 결정 프레임',
+    description:
+      '12월 잔금 vs 1월 잔금. 귀속연도·신고 일정·2027 세법 개정 영향·양도손실 통산 4단계 의사결정.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-12',
+    readingMinutes: 11,
+    seasonal: '12월 양도 직전',
+  },
   {
     slug: 'capital-gains-tax-tips',
     title: '양도소득세 절세 7가지 방법 (2026)',
