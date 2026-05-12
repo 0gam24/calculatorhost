@@ -101,6 +101,8 @@ const GUIDE_SLUGS = [
   'december-capital-gains-tax-deadline',
   // 분양권 양도세 완전 정리 (4티어 핫 키워드)
   'presale-right-capital-gains-tax',
+  // 1세대1주택 12억 한도 완전 정리 (4티어 핫 키워드)
+  'one-household-12-billion-exemption',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
