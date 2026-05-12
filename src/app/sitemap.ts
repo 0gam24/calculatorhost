@@ -121,6 +121,8 @@ const GUIDE_SLUGS = [
   'burden-gift-debt-assumption-tax',
   // 금융소득 종합과세 vs 분리과세 가이드 (4티어 핫 키워드 + 5월 신고 시즈널 — 소득세법 §14 ⑦ / §62)
   'financial-income-comprehensive-vs-separate-taxation',
+  // 이월과세 5년→10년 확대 가이드 (4티어 핫 키워드 — 소득세법 §97의2 / 2025-01-01 시행)
+  'carry-over-basis-spouse-gift-5-10-year',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

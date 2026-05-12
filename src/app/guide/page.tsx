@@ -420,6 +420,15 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 9,
     seasonal: '5월 31일 마감',
   },
+  {
+    slug: 'carry-over-basis-spouse-gift-5-10-year',
+    title: '이월과세 5년→10년 확대 완벽 정리 2026 | 배우자·직계 증여 양도세',
+    description:
+      '이월과세 정의·소득세법 §97의2·2025년 5년에서 10년 확대·증여자 취득가 적용·면제 사유 5가지·시뮬 사례 2개·함정 5가지·절세 전략·신고 방법.',
+    category: '세금',
+    publishedAt: '2026-05-12',
+    readingMinutes: 13,
+  },
 ];
 
 // 시기성 가이드만 추출 (상단 배너용)
