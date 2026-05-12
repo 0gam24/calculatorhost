@@ -119,6 +119,8 @@ const GUIDE_SLUGS = [
   'long-term-holding-special-deduction-80-percent',
   // 부담부증여 양도+증여세 가이드 (4티어 핫 키워드 — 상증법 §47 ②)
   'burden-gift-debt-assumption-tax',
+  // 금융소득 종합과세 vs 분리과세 가이드 (4티어 핫 키워드 + 5월 신고 시즈널 — 소득세법 §14 ⑦ / §62)
+  'financial-income-comprehensive-vs-separate-taxation',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
