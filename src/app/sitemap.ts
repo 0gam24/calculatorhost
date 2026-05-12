@@ -107,6 +107,8 @@ const GUIDE_SLUGS = [
   'n-jobber-insurance-dependent-disqualification',
   // 주택임대소득 분리과세 2,000만 원 가이드 (4티어 핫 키워드)
   'housing-rental-income-separate-taxation',
+  // 자녀·근로장려금 신청 가이드 (5월 31일 마감 시즈널 + 4티어)
+  'child-earned-income-tax-credit-application-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
