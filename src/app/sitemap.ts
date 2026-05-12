@@ -85,6 +85,8 @@ const GUIDE_SLUGS = [
   'earned-income-tax-credit-vs-child',
   // GSC 노출 42회 단일 토픽 (페이지 부재 → 즉시 캡처)
   'rent-conversion-rate-2026-housing-lease-act',
+  // 퇴직금 vs 연금 DC/DB 비교 가이드 (sitemap 누락 보강)
+  'severance-vs-pension-dc-db',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -11,55 +11,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  extractPagePaths,
+  extractSitemapUrls,
+  diffPagesVsSitemap,
+} from './sitemap-validator-core.mjs';
 
-/**
- * src/app/**\/page.tsx 경로를 URL 경로로 변환.
- * - /(group)/, /_private/, /[dynamic]/, /api/ 제외.
- * - 결과는 trailing slash 종결 ('/calculator/salary/').
- */
-export function extractPagePaths(files) {
-  const out = [];
-  for (const file of files) {
-    if (!file.endsWith('/page.tsx') && file !== 'src/app/page.tsx') continue;
-    let route = file.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '');
-    if (route === '') route = '/';
-    if (!route.endsWith('/')) route += '/';
-    // 제외: 그룹 라우트 (괄호), private (_), 동적 ([), api
-    if (/\(|_|\[|^\/api\//.test(route)) continue;
-    out.push(route);
-  }
-  return out;
-}
-
-/**
- * sitemap.xml 의 <loc> 태그에서 URL 추출 → 호스트 제거 후 path 만 반환.
- */
-export function extractSitemapUrls(xml, host) {
-  const urls = [];
-  const re = /<loc>([^<]+)<\/loc>/g;
-  let m;
-  while ((m = re.exec(xml)) !== null) {
-    let u = m[1].trim();
-    if (host && u.startsWith(host)) u = u.slice(host.length);
-    if (!u.startsWith('/')) u = '/' + u;
-    urls.push(u);
-  }
-  return urls;
-}
-
-/**
- * 페이지 ↔ sitemap 차집합 계산.
- *  - missingFromSitemap: 페이지는 있는데 sitemap 에 없음 (색인 누락 위험)
- *  - extraInSitemap: sitemap 에는 있는데 페이지 없음 (404 위험)
- */
-export function diffPagesVsSitemap(pages, sitemap) {
-  const sitemapSet = new Set(sitemap);
-  const pageSet = new Set(pages);
-  return {
-    missingFromSitemap: pages.filter((p) => !sitemapSet.has(p)),
-    extraInSitemap: sitemap.filter((s) => !pageSet.has(s)),
-  };
-}
+// Re-export for backward compatibility (older imports)
+export { extractPagePaths, extractSitemapUrls, diffPagesVsSitemap };
 
 // ─── CLI 가드 ───────────────────────────────────────────────
 function listFilesRecursive(dir, base = '') {

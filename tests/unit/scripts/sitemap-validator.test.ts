@@ -1,11 +1,11 @@
-// sitemap completeness validator unit tests.
-// Verifies count parity between src/app/**/page.tsx and out/sitemap.xml.
+// Sitemap completeness validator unit tests (renamed file to bypass vite cache).
+// Verifies count parity between src/app pages and out/sitemap.xml.
 import { describe, expect, it } from 'vitest';
 import {
   extractPagePaths,
   extractSitemapUrls,
   diffPagesVsSitemap,
-} from '../../../scripts/sitemap-completeness.mjs';
+} from '../../../scripts/sitemap-validator-core.mjs';
 
 describe('extractPagePaths()', () => {
   it('converts src/app paths to URL paths with trailing slash', () => {
@@ -17,7 +17,7 @@ describe('extractPagePaths()', () => {
     expect(paths).toEqual(['/', '/calculator/salary/', '/category/tax/']);
   });
 
-  it('skips dynamic routes ([...slug] etc) and api/group/private folders', () => {
+  it('skips dynamic routes and api/group/private folders', () => {
     const paths = extractPagePaths([
       'src/app/page.tsx',
       'src/app/api/route.ts',
@@ -30,7 +30,7 @@ describe('extractPagePaths()', () => {
 });
 
 describe('extractSitemapUrls()', () => {
-  it('parses <loc> entries from sitemap.xml content', () => {
+  it('parses loc entries from sitemap.xml content', () => {
     const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset>
   <url><loc>https://calculatorhost.com/</loc></url>

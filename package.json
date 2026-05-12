@@ -26,6 +26,7 @@
     "ralph:bundle": "node scripts/ralph-bundle-size.mjs",
     "state": "node scripts/check-state.mjs",
     "sitemap:check": "node scripts/sitemap-completeness.mjs",
+    "citations:audit": "node scripts/section-citation-audit.mjs",
     "launch:checklist": "node scripts/launch-checklist.mjs",
     "prebuild": "node scripts/generate-og-images.mjs && node scripts/sync-public-data.mjs && node scripts/generate-network-mirror.mjs && node scripts/check-state.mjs",
     "build": "next build",

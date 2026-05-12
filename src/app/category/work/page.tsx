@@ -233,7 +233,7 @@ export default function WorkCategoryPage() {
                         href={calc.href}
                         className="inline-block w-fit rounded-lg bg-highlight-500 px-4 py-2 font-semibold text-gray-900 transition-colors hover:bg-opacity-90"
                       >
-                        계산기 열기 →
+                        {calc.title} 계산하기 →
                       </Link>
                     </div>
                   ))}

@@ -123,6 +123,19 @@
 - stuck.md 두 번째 stale 섹션 (2026-05-06 `developers.google.com`) — `replaceAll` 강화 검토
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
 
+### §N 법조항 인용 audit (2026-05-12, `npm run citations:audit`)
+**52개 페이지 中**: ✅ strong(3+) 33 / 🟡 minimal(1~2) 4 / 🔴 missing(0) 15
+
+**🔴 missing (15)** — 보강 필요 페이지:
+- 비-YMYL (§N 적용 어려움): `bmi`, `d-day`, `inflation`, `exchange`, `averaging-down`, `split-buy`, `split-sell` — 면책으로 충분
+- YMYL (§N 추가 권장): `n-jobber-insurance` (국민건강보험법·국민연금법), `rental-yield` (소득세법 §16), `retirement` (소득세법·국민연금법), `housing-subscription` (주택공급에 관한 규칙)
+- 가이드: `guide/jeonse-deposit-safety` (주택임대차보호법), `guide/tax-calendar-2026` (각 세법), `guide/averaging-down-vs-loss-cut` (자본시장법, 면책 검토), `/guide/` 인덱스
+
+**🟡 minimal (4)** — 보강 권장:
+- `calculator/dti`, `calculator/loan`, `guide/dsr-loan-limit-tips`, `guide/dsr-regulation-zones`
+
+**다음 액션**: calc-logic-verifier 위임 → 페이지별 정확한 §N 권고 → 본문 적용
+
 ---
 
 ## 9. 갱신 정책

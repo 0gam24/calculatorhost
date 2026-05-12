@@ -272,7 +272,7 @@ export default function RealEstateCategoryPage() {
                         href={calc.href}
                         className="inline-block w-fit rounded-lg bg-danger-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-danger-600"
                       >
-                        계산기 열기 →
+                        {calc.title} 계산하기 →
                       </Link>
                     </div>
                   ))}
