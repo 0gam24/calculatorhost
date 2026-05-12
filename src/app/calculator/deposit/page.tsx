@@ -22,6 +22,14 @@ import {
 import { DepositCalculator } from './DepositCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getFssDepositRateCitation } from '@/lib/publicapi/public-citations';
+import financeProducts from '@/data/finance-products.json';
+
+const FSS_DEPOSIT_CITATION = getFssDepositRateCitation(
+  financeProducts,
+  '2026-04-27',
+);
 
 const URL = 'https://calculatorhost.com/calculator/deposit/';
 
@@ -213,6 +221,13 @@ export default function DepositPage() {
                   이자를 받는 금융상품입니다. 예금자보호법에 따라 1인당 5천만원까지 보호되므로, 안전한
                   자산 운용 방법입니다. 예치 기간 중에는 이자율이 고정되어 있어 예측 가능한 수익을
                   얻을 수 있습니다(금융감독원 금융상식 기준).
+                  {FSS_DEPOSIT_CITATION && (
+                    <>
+                      {' '}현재{' '}
+                      <PublicDataCitation citation={FSS_DEPOSIT_CITATION} />
+                      {' '}수준이 시중은행 평균입니다.
+                    </>
+                  )}
                 </p>
                 <p className="mb-4 text-text-secondary">
                   정기예금은 적금과 다릅니다. 적금은 정해진 금액을 매달 저축하다가 만기에 받는 상품인

@@ -32,6 +32,11 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getKosisHouseholdIncomeCitation } from '@/lib/publicapi/public-citations';
+import kosisIncome from '@/data/kosis-income.json';
+
+const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
 
 const URL = 'https://calculatorhost.com/calculator/salary/';
 
@@ -253,6 +258,8 @@ export default function SalaryPage() {
                 <p className="mb-4 text-sm text-text-secondary">
                   자주 검색되는 세전 월급액의 실수령액 (부양가족 1인, 비과세 식대 미적용 기준).
                   자녀 공제·식대 비과세 적용 시 약 5~15만 원 더 늘어납니다.
+                  참고: 통계청 KOSIS 기준 한국 가구 월평균 소득은{' '}
+                  <PublicDataCitation citation={KOSIS_INCOME_CITATION} />입니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">

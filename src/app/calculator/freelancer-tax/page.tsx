@@ -19,6 +19,11 @@ import {
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { FreelancerCalculator } from './FreelancerCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getKosisHouseholdIncomeCitation } from '@/lib/publicapi/public-citations';
+import kosisIncome from '@/data/kosis-income.json';
+
+const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
 
 const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 
@@ -242,7 +247,10 @@ export default function FreelancerTaxPage() {
                 <p className="text-text-secondary">
                   특히 단순경비율 적용 조건, 수입 규모, 업종코드, 기록 방식(간편장부·복식부기) 등에
                   따라 세금이 크게 달라질 수 있으므로, 본 계산기로 대략의 규모를 파악한 후 세무사나
-                  국세청 홈택스 상담을 통해 정확한 신고를 권장합니다.
+                  국세청 홈택스 상담을 통해 정확한 신고를 권장합니다. 참고로 통계청 KOSIS 기준 한국
+                  가구 월평균 소득은{' '}
+                  <PublicDataCitation citation={KOSIS_INCOME_CITATION} />로, 프리랜서 연 소득과
+                  생활비 균형 판단에 참고할 수 있습니다.
                 </p>
               </section>
 

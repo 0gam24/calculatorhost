@@ -18,6 +18,14 @@ import {
 import { SavingsCalculator } from './SavingsCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getFssSavingsRateCitation } from '@/lib/publicapi/public-citations';
+import financeProducts from '@/data/finance-products.json';
+
+const FSS_SAVINGS_CITATION = getFssSavingsRateCitation(
+  financeProducts,
+  '2026-04-27',
+);
 
 const URL = 'https://calculatorhost.com/calculator/savings/';
 
@@ -201,6 +209,13 @@ export default function SavingsPage() {
                   적금은 일정 기간 동안 정해진 금액을 매달 저축하고, 만기일에 원금과 이자를 받는
                   금융상품입니다. 은행이나 저축은행에서 제공하며, 안정적인 수익과 규칙적인 저축
                   습관을 동시에 얻을 수 있습니다(금융감독원 금융상식 기준).
+                  {FSS_SAVINGS_CITATION && (
+                    <>
+                      {' '}현재{' '}
+                      <PublicDataCitation citation={FSS_SAVINGS_CITATION} />
+                      {' '}수준이 시중은행 평균입니다.
+                    </>
+                  )}
                 </p>
                 <p className="mb-4 text-text-secondary">
                   적금의 이자는 두 가지 방식으로 계산됩니다. 첫째, 단리는 원금에만 이자를 계산하는
