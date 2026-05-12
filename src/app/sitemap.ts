@@ -113,6 +113,8 @@ const GUIDE_SLUGS = [
   'joint-ownership-couple-capital-gains-tax-savings',
   // 상속세 사전 증여 합산 10년/5년 가이드 (4티어 핫 키워드 — 상증법 §13)
   'inheritance-tax-10-year-prior-gift-aggregation',
+  // 일시적 2주택 양도세 비과세 3년 가이드 (4티어 핫 키워드 — 시행령 §155)
+  'temporary-two-houses-capital-gains-exemption',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
