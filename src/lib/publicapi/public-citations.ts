@@ -134,3 +134,21 @@ export function getFssSavingsRateCitation(
     url: 'https://finlife.fss.or.kr',
   };
 }
+
+export interface ExchangeRatesData {
+  rates: Record<string, number>;
+  baseDate: string;
+}
+
+export function getEximUsdRateCitation(data: ExchangeRatesData): PublicCitation | null {
+  const usd = data.rates?.['USD'];
+  if (usd == null) return null;
+  return {
+    source: '한국수출입은행',
+    label: '원/달러 매매기준율',
+    value: usd.toLocaleString('ko-KR'),
+    unit: '원',
+    date: data.baseDate,
+    url: 'https://www.koreaexim.go.kr',
+  };
+}

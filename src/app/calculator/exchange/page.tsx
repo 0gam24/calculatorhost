@@ -22,6 +22,11 @@ import {
 } from '@/lib/seo/jsonld';
 import { ExchangeCalculator } from './ExchangeCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getEximUsdRateCitation } from '@/lib/publicapi/public-citations';
+import exchangeRates from '@/data/exchange-rates.json';
+
+const EXIM_USD_CITATION = getEximUsdRateCitation(exchangeRates);
 
 const URL = 'https://calculatorhost.com/calculator/exchange/';
 
@@ -188,6 +193,13 @@ export default function ExchangePage() {
               기준환율과 은행 스프레드, 수수료를 반영한 실제 환전액과 실질
               환율을 즉시 계산하세요. 원화에서 외화로, 외화에서 원화로 양방향
               지원합니다.
+              {EXIM_USD_CITATION && (
+                <>
+                  {' '}참고: 현재{' '}
+                  <PublicDataCitation citation={EXIM_USD_CITATION} />가
+                  한국수출입은행 매매기준율 기준입니다.
+                </>
+              )}
             </p>
             <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
 

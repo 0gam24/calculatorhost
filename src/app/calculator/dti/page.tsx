@@ -8,6 +8,11 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrl } from '@/lib/network/main-backref';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
+import bokRates from '@/data/bok-rates.json';
+
+const ECOS_BASE_RATE_DTI = getEcosBaseRateCitation(bokRates);
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -158,7 +163,9 @@ export default function DtiPage() {
                 <h2 className="mb-2 text-xl font-semibold">🔗 DTI·DSR·LTV 통합 계산</h2>
                 <p className="mb-3 text-sm text-text-secondary">
                   DTI 만 단독으로 보면 실 대출한도를 정확히 알기 어렵습니다. 3개 규제 모두
-                  통과해야 하므로 통합 계산기에서 결정적 제약 요인까지 확인하세요.
+                  통과해야 하므로 통합 계산기에서 결정적 제약 요인까지 확인하세요. 참고로 현재 한국은행 기준금리는{' '}
+                  <PublicDataCitation citation={ECOS_BASE_RATE_DTI} />이며, 시중은행 주담대 약정금리는
+                  통상 기준금리에 가산금리(1.5~3.0%p)가 더해진 수준입니다.
                 </p>
                 <Link
                   href="/calculator/loan-limit/"

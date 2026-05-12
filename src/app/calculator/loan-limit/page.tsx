@@ -32,6 +32,10 @@ import bokRates from '@/data/bok-rates.json';
 import { LoanLimitCalculator } from './LoanLimitCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
+
+const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 const URL = 'https://calculatorhost.com/calculator/loan-limit/';
 
@@ -372,7 +376,9 @@ export default function LoanLimitPage() {
                   여기서 <strong>스트레스 DSR을 적용</strong>하면 신규 월 원리금을 계산할 때 실제 약정금리가 아닌
                   <strong> "약정금리 + 1.5%p"</strong>를 가상으로 적용해 한도를 산출합니다. 즉 약정금리 3.5%로
                   실행되더라도 한도 산정 시점에는 5.0% 기준으로 원리금을 계산하므로 같은 연소득에서
-                  대출 한도가 약 12~18% 줄어듭니다.
+                  대출 한도가 약 12~18% 줄어듭니다. 참고로 현재 한국은행 기준금리는{' '}
+                  <PublicDataCitation citation={ECOS_BASE_RATE} />이며, 시중은행 주담대 약정금리는
+                  통상 기준금리에 가산금리(1.5~3.0%p)가 더해진 수준입니다.
                 </p>
                 <p className="text-sm leading-relaxed text-text-secondary">
                   <strong>실제 예시 (연소득 1억, 신규 주담대 30년 원리금균등, 기존 대출 0)</strong>: 약정금리
