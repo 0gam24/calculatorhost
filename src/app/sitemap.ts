@@ -109,6 +109,8 @@ const GUIDE_SLUGS = [
   'housing-rental-income-separate-taxation',
   // 자녀·근로장려금 신청 가이드 (5월 31일 마감 시즈널 + 4티어)
   'child-earned-income-tax-credit-application-2026',
+  // 부부 공동명의 양도세 절세 가이드 (4티어 핫 키워드)
+  'joint-ownership-couple-capital-gains-tax-savings',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
