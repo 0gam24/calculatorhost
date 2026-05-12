@@ -401,7 +401,7 @@ export default function HousingSubscriptionPage() {
             {/* 출처·면책 */}
             <section className="mt-6 border-t border-border-base pt-6 mb-6">
               <p className="text-xs text-text-secondary mb-2">
-                <strong>공식 출처</strong>: <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">청약홈(applyhome.co.kr)</a> 공식 청약 플랫폼, <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">LH(한국토지주택공사)</a> 공공분양 정보.
+                <strong>법적 근거</strong>: 주택공급에 관한 규칙 §27(가점제 항목·배점), §28(무주택 기간 산정), §29(부양가족 인정 범위). 공식 출처: <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">청약홈(applyhome.co.kr)</a>, <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">LH(한국토지주택공사)</a>, <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a> 주택공급규칙.
               </p>
             </section>
 

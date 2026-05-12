@@ -389,7 +389,7 @@ export default function NJobberInsurancePage() {
             {/* 출처·면책 */}
             <section className="mt-6 border-t border-border-base pt-6 mb-6">
               <p className="text-xs text-text-secondary mb-2">
-                <strong>공식 출처</strong>: <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단</a> 건강보험료 산정 기준, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 소득 신고 기준.
+                <strong>법적 근거</strong>: 국민건강보험법 §72(보험료 산정), §72의2(피부양자 자격) · 국민연금법 §3(가입자 정의), §10(임의가입). 공식 출처: <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단</a> 건강보험료 산정 기준, <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민연금공단</a> 가입자 안내, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 소득 신고 기준.
               </p>
             </section>
 
