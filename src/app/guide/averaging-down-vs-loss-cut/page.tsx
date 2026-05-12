@@ -405,6 +405,9 @@ export default function AveragingDownVsLossCutPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
+                  <strong>법적 근거</strong>: 자본시장과 금융투자업에 관한 법률 §4 (금융투자상품 정의) · §249의2 (투자자 보호의무) · 소득세법 §94 (양도소득 — 주식 양도세) · 금융투자업규정 §4-3 (적합성 원칙).
+                </p>
+                <p className="mb-2">
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.fss.or.kr/fss/ko/edu/pds/educationMaterialList.do" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
                     금융감독원 투자자 교육

@@ -264,6 +264,9 @@ export default function JeonseDepositSafetyPage() {
               </section>
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
+                <p className="mb-2 text-sm text-text-tertiary">
+                  <strong>법적 근거:</strong> 주택임대차보호법 §3 (대항력) · §3의2 (우선변제권) · §3의3 (임차권등기명령) · §8 (소액보증금 최우선변제) · 주택임대차보호법 시행령 §10 · 민법 §621 (임대차 등기).
+                </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 법적 조언이 아닙니다. 전세 계약 관련 법적 문제는 법무사 또는
                   변호사와 상담하세요. 본 콘텐츠는 {DATE_MODIFIED}을 기준으로 작성되었으며, 법규 변경 시 즉시 업데이트됩니다.

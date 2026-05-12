@@ -484,6 +484,9 @@ export default function TaxCalendar2026Page() {
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
+                  <strong>법적 근거</strong>: 소득세법 §70 (종합소득세 신고) · §128 (원천징수세 납부) · 지방세법 §128 (자동차세 연납) · 지방세법 §150 (지방교육세) · 부가가치세법 §49 (예정 신고) · 국세기본법 §47의2 (가산세).
+                </p>
+                <p className="mb-2">
                   <strong>공식 출처</strong>:{' '}
                   <a href="https://www.hometax.go.kr/websquare/web/personalTaxInfoUL.do#MENUID_1000000001" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스 연말정산 간소화 서비스</a>{' '}
                   ·{' '}
