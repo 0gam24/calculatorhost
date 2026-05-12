@@ -103,6 +103,8 @@ const GUIDE_SLUGS = [
   'presale-right-capital-gains-tax',
   // 1세대1주택 12억 한도 완전 정리 (4티어 핫 키워드)
   'one-household-12-billion-exemption',
+  // N잡 건강보험 피부양자 탈락 가이드 (4티어 핫 키워드)
+  'n-jobber-insurance-dependent-disqualification',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
