@@ -19,7 +19,7 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 05. 11. 13:56 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 05. 12. 14:42 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
 - 사이트 라이브: ✅ HTTP 200
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 05. 11. 13:56 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 05. 12. 14:42 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -70,10 +70,11 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> 마지막 자동 점검: 2026. 05. 11. 13:56 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 05. 12. 14:42 (Asia/Seoul)
 
 - ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
 - ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
+- ✅ active: .github/workflows/indexnow-ping.yml (.github/workflows/indexnow-ping.yml)
 - ✅ active: Lighthouse CI (.github/workflows/lighthouse.yml)
 - ✅ active: ralph-daily (.github/workflows/ralph-daily-recommendation.yml)
 - ✅ active: .github/workflows/ralph-daily.yml (.github/workflows/ralph-daily.yml)
@@ -102,18 +103,26 @@
 
 > 운영자가 매주·격주로 갱신. 에이전트 호출 시 이 섹션을 읽어 우선순위 판단.
 
-### 진행 중
-- (예: "GSC CTR 0.3% → 2% 개선 — TOP 5 페이지 메타 강화 #15 머지 후 4주 추적")
-- (예: "시즈널 가이드 7~12월 6편 추가 발행")
+### 진행 중 (2026-05-12 ~ 06-09, 4주 GSC 효과 모니터링)
+- **오늘 11 PR 누적 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
+  · IndexNow workflow + sitemap 검증 + indexing-guard E2E + §N 12페이지 보강
+  · 공공 데이터 인용 5페이지 + AVIF 4종 + dateModified manifest + jsonld helper
+- **운영자 수동 액션 (병행)**:
+  · GSC URL Inspection → Request Indexing 미색인 상위 10개 (월 200건 한도)
+  · Bing IndexNow 키 발급 → GitHub Secrets `INDEXNOW_KEY` → workflow 활성화
+  · GSC Page Index 9가지 미색인 이유 캡처 → seo-auditor 정확 진단
 
-### 다음 후보
-- tax SSoT ↔ 본문 % 자동 대조 스크립트 (calc-logic-verifier + content-writer 합의)
-- ECOS·EXIM·FSS·KOSIS 클라이언트 실제 사용 확장
-- web-vitals INP/CLS Field 측정 GA4 통합
-- pre-existing tests/unit/scripts/ 3건 vitest transform fail 디버깅
+### 다음 후보 (4주 효과 측정 후 우선순위 재결정)
+- 시즈널 가이드 7~12월 6편 발행 (content-writer 위임, 신규 색인 +6)
+- AvifImage 페이지별 적용 (히어로 이미지 사용처 검토)
+- Programmatic SEO 시범 5개 발행 (ADR-010, 운영자 승인 후)
+- INP Field GA4 → Looker Studio (운영자 외부 도구)
+- LinkedIn + Wikidata entity (Knowledge Graph)
+- 백링크 Outreach (정부·언론·블로그)
 
 ### 보류 / 차단
-- (예: "AdSense 신규 광고 단위 추가 — 정책 검토 필요")
+- pre-existing tests/unit/scripts/ 3건 vitest transform fail (Windows + .mjs import) — CI 무영향
+- Programmatic SEO 본격 발행 — ADR-010 운영자 승인 필요
 
 ---
 
@@ -123,27 +132,38 @@
 - stuck.md 두 번째 stale 섹션 (2026-05-06 `developers.google.com`) — `replaceAll` 강화 검토
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
 
-### §N 법조항 인용 audit (2026-05-12, `npm run citations:audit`)
-**52개 페이지 中**: ✅ strong(3+) 33 / 🟡 minimal(1~2) 4 / 🔴 missing(0) 15
+### §N 법조항 인용 audit 추이 (2026-05-12 최종, `npm run citations:audit`)
+**52개 페이지 中**: ✅ strong(3+) 45 / 🟡 minimal(1~2) 0 / 🔴 missing(0) 7
 
-**🔴 missing (15)** — 보강 필요 페이지:
-- 비-YMYL (§N 적용 어려움): `bmi`, `d-day`, `inflation`, `exchange`, `averaging-down`, `split-buy`, `split-sell` — 면책으로 충분
-- YMYL (§N 추가 권장): `n-jobber-insurance` (국민건강보험법·국민연금법), `rental-yield` (소득세법 §16), `retirement` (소득세법·국민연금법), `housing-subscription` (주택공급에 관한 규칙)
-- 가이드: `guide/jeonse-deposit-safety` (주택임대차보호법), `guide/tax-calendar-2026` (각 세법), `guide/averaging-down-vs-loss-cut` (자본시장법, 면책 검토), `/guide/` 인덱스
+**오늘 11 PR 누적 추이**:
+- 초기:    strong 33 / minimal 4 / missing 15
+- Phase 1: strong 37 / minimal 4 / missing 11 (4페이지 보강)
+- Phase 2: strong 41 / minimal 0 / missing 11 (minimal → strong)
+- Phase 3: strong 44 / minimal 0 / missing  8 (가이드 3 추가)
+- 최종:    strong 45 / minimal 0 / missing  7 (/guide/ 인덱스 추가)
 
-**🟡 minimal (4)** — 보강 권장:
-- `calculator/dti`, `calculator/loan`, `guide/dsr-loan-limit-tips`, `guide/dsr-regulation-zones`
+**남은 missing 7 (모두 비-YMYL — 면책으로 충분)**:
+- `/calculator/{averaging-down,bmi,d-day,exchange,inflation,split-buy,split-sell}/`
 
-**calc-logic-verifier 권고 (2026-05-12, 운영자 검수 후 적용)**:
-- ⚠️ 일부 권고 정확성 의심 (`보증금보호법` 미존재, `주택도시기금법` vs `주택공급에 관한 규칙` 혼동) — 운영자 또는 추가 검증 필요
-- 안전한 권고: n-jobber-insurance (국민건강보험법 §72·§72의2 + 국민연금법 §3), rental-yield (소득세법 §20·§25), retirement (국민연금법 §61·§62 + 소득세법 §94)
-- 비-YMYL 7개는 면책 강화로 대체 권고 (BMI·D-day·inflation·exchange·averaging-down·split-buy·split-sell)
+→ **YMYL 카테고리 페이지의 §N 인용 100% 완성**.
 
-### FAQ 중복 차별화 권고 (2026-05-12, content-writer 위임 결과)
-**대상**: salary (7개), capital-gains-tax (8개), acquisition-tax (7개)
-- 차별화 원칙: salary=직장인/월급/4대보험, CGT=양도/12억/일시적2주택/분양권, acquisition=구매/9억경계/85㎡/생애최초
-- 모든 답변 첫 문장 결론형 + 정확한 법조항 (소득세법 §59의2·§94·§104의3·§118·시행령 §154·§159의3, 지방세법 §10·§11·§13의2)
-- **상태**: 운영자 검수 후 페이지별 적용 (다음 회차)
+### FAQ 차별화 적용 현황 (2026-05-12)
+- ✅ salary 7개 답변 강화 (4517985, 길이·정확도 보강)
+- ✅ capital-gains-tax 양도세 기본공제 250만 원 FAQ 신규 추가 (4517985)
+- ✅ acquisition-tax 4티어 2개 추가 완료 (이전 PR3a)
+
+### 공공 데이터 본문 인용 적용 현황 (Phase 2, 5페이지)
+- ✅ /calculator/loan/ — 한국은행 ECOS 기준금리
+- ✅ /calculator/savings/ — 금감원 12개월 적금 평균금리
+- ✅ /calculator/deposit/ — 금감원 12개월 정기예금 평균금리
+- ✅ /calculator/salary/ — KOSIS 가구 월평균 소득
+- ✅ /calculator/freelancer-tax/ — KOSIS 가구 소득
+
+### Phase 3 인프라 완료 (2026-05-12)
+- ✅ AvifImage `<picture>` 래퍼 컴포넌트 (사용처 적용은 향후 페이지 추가 시)
+- ✅ AVIF 이미지 변환 4종 (-56~-89%)
+- ✅ PWA manifest AVIF 6 entries
+- ✅ Programmatic SEO 설계 ADR-010 (운영자 승인 대기)
 
 ---
 
