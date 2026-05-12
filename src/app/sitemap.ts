@@ -93,6 +93,8 @@ const GUIDE_SLUGS = [
   'august-capital-gains-tax-review',
   // 시즈널 9월 재산세 2차 납부
   'september-property-tax-second',
+  // 시즈널 10월 부가세 2기 예정신고
+  'october-vat-q2-preliminary',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
