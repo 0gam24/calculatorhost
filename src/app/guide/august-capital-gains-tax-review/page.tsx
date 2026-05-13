@@ -306,10 +306,11 @@ export default function AugustCgtGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 본 가이드 시나리오 즉시 시뮬</li>
-                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 팁 가이드</Link> — 추가 절세 전략</li>
-                  <li>→ <Link href="/guide/capital-gains-tax-5-steps/" className="text-primary-600 underline dark:text-primary-500">양도세 5단계 계산법</Link> — 계산 공식 단계별</li>
-                  <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link> — 매수 측 비용 검토</li>
-                  <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link> — 보유세 영향</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link> — 신규 1년 후·종전 3년 내</li>
+                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link> — 1세대1주택 보유 4% × 거주 4%</li>
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세 한도</Link> — 비례 과세 공식</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 누진세 분산</li>
+                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지 팁</Link> — 종합 절세 전략 hub</li>
                 </ul>
               </section>
 

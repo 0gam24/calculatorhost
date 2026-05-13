@@ -324,9 +324,11 @@ export default function DecemberCgtDeadlineGuide() {
                 <ul className="space-y-2 text-text-secondary">
                   <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 잔금일 시나리오별 시뮬</li>
                   <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link> — 보유 기간·일시적2주택 D-day</li>
-                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 팁</Link></li>
-                  <li>→ <Link href="/guide/capital-gains-tax-5-steps/" className="text-primary-600 underline dark:text-primary-500">양도세 5단계 계산법</Link></li>
-                  <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link> — 매수 측 비용</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link> — 신규 1년 후·종전 3년 내 양도</li>
+                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link> — 보유 4% × 거주 4% 누적</li>
+                  <li>→ <Link href="/guide/carry-over-basis-spouse-gift-5-10-year/" className="text-primary-600 underline dark:text-primary-500">이월과세 5년→10년 확대</Link> — 배우자·직계 증여 후 양도 (12월 결정 영향)</li>
+                  <li>→ <Link href="/guide/self-farming-land-100-percent-exemption/" className="text-primary-600 underline dark:text-primary-500">자경농지 8년 100% 감면</Link> — 농지 매도 검토</li>
+                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지 팁</Link></li>
                 </ul>
               </section>
 

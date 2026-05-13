@@ -259,7 +259,22 @@ export default function CapitalGainsTaxTipsPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">관련 도구</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 가이드 (양도세 4티어 핫 키워드)</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세 한도</Link> — 비례 과세 공식·거주 요건</li>
+                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link> — 보유 4% × 10년 + 거주 4% × 10년</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link> — 신규 1년 후·종전 3년 내</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 50:50 분산 효과</li>
+                  <li>→ <Link href="/guide/presale-right-capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">분양권 양도세 60/70%</Link> — 단일 세율, 장특공제 X</li>
+                  <li>→ <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세</Link> — 채무인수 분리 과세</li>
+                  <li>→ <Link href="/guide/carry-over-basis-spouse-gift-5-10-year/" className="text-primary-600 underline dark:text-primary-500">이월과세 5년→10년 확대</Link> — 배우자·직계 증여 후 양도</li>
+                  <li>→ <Link href="/guide/child-house-gift-vs-sale-comparison/" className="text-primary-600 underline dark:text-primary-500">자녀 주택 증여 vs 매매</Link> — 저가양수도 30%·3억 룰</li>
+                  <li>→ <Link href="/guide/self-farming-land-100-percent-exemption/" className="text-primary-600 underline dark:text-primary-500">자경농지 8년 100% 감면</Link> — 조특법 §69, 1억 한도</li>
+                </ul>
+              </section>
+
+              <section className="card">
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 위 7가지 시나리오 직접 시뮬레이션</li>
                   <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link></li>

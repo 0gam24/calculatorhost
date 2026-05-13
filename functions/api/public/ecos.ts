@@ -87,8 +87,10 @@ async function callEcosApi(apiKey: string, req: EcosRequest): Promise<Response> 
       status: 200,
       headers: {
         'content-type': 'application/json',
-        // ECOS 통계는 일/월 단위라 6시간 캐시
-        'cache-control': 'public, max-age=21600',
+        // ECOS 통계는 영업일 기준 월 1~2회 갱신(기준금리·환율 외)이라 24h 캐시 + 7일 stale-while-revalidate.
+        // 6시간 → 24시간 변경으로 호출량 4배 감소, edge 캐시 hit ratio 상승.
+        // s-maxage 로 Cloudflare CDN에서도 동일하게 캐시.
+        'cache-control': 'public, max-age=86400, s-maxage=86400, stale-while-revalidate=604800',
       },
     });
   } catch (error) {
