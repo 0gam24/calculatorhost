@@ -10,7 +10,11 @@
         "http://localhost:4173/calculator/acquisition-tax/",
         "http://localhost:4173/category/tax/",
         "http://localhost:4173/category/finance/",
-        "http://localhost:4173/category/work/"
+        "http://localhost:4173/category/work/",
+        "http://localhost:4173/guide/",
+        "http://localhost:4173/guide/long-term-holding-special-deduction-80-percent/",
+        "http://localhost:4173/guide/burden-gift-debt-assumption-tax/",
+        "http://localhost:4173/guide/child-house-gift-vs-sale-comparison/"
       ],
       "numberOfRuns": 3,
       "settings": [
