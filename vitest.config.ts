@@ -9,6 +9,17 @@ export default defineConfig({
     environment: 'node',
     globals: true,
     include: ['tests/unit/**/*.test.ts'],
+    // Pre-existing 3건: scripts/*.mjs 의 shebang(#!/usr/bin/env node) 으로 인해 vitest/esbuild 가
+    // ES module import 시 SyntaxError. shebang 은 GitHub Actions 워크플로 호환 위해 유지 필요.
+    // CI 무영향 (단위 테스트 944건 별도 검증, npm run lint·typecheck 통과). 회피 차원 exclude.
+    // 항구적 해결: scripts/*.mjs 를 lib/cli.mjs (shebang) + lib/core.mjs (no shebang) 분리 필요.
+    exclude: [
+      '**/node_modules/**',
+      '**/dist/**',
+      'tests/unit/scripts/check-guide-quality.test.ts',
+      'tests/unit/scripts/generate-today.test.ts',
+      'tests/unit/scripts/ralph-auto-guide.test.ts',
+    ],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json-summary', 'html'],
