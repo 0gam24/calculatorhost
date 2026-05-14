@@ -12,7 +12,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-03';
+const DATE_MODIFIED = '2026-05-13';
 
 export const metadata: Metadata = {
   title: '가이드 — 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
@@ -79,6 +79,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 12,
     seasonal: '1~2월 정산 시즌',
+    tags: ['시즈널'],
   },
   {
     slug: 'january-vehicle-tax-prepayment',
@@ -89,6 +90,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 6,
     seasonal: '1월 16~31일',
+    tags: ['시즈널'],
   },
   // ─── 2월 ───
   {
@@ -100,6 +102,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 7,
     seasonal: '2~4월 환급/준비',
+    tags: ['시즈널'],
   },
   // ─── 3월 ───
   {
@@ -111,6 +114,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 8,
     seasonal: '3월 31일 마감',
+    tags: ['시즈널'],
   },
   // ─── 4월 ───
   {
@@ -122,6 +126,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 8,
     seasonal: '4월 1~25일',
+    tags: ['시즈널'],
   },
   {
     slug: 'april-comprehensive-property-tax-exclusion',
@@ -132,6 +137,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 9,
     seasonal: '4월 1~30일',
+    tags: ['시즈널'],
   },
   // ─── 5월 (기존) ───
   {
@@ -143,6 +149,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 12,
     seasonal: '5월 신고 시즌',
+    tags: ['시즈널'],
   },
   {
     slug: 'june-property-tax',
@@ -153,6 +160,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-03',
     readingMinutes: 10,
     seasonal: '7월 납부 직전',
+    tags: ['시즈널'],
   },
   // ─── 7월 ───
   {
@@ -164,6 +172,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 11,
     seasonal: '7월 1~25일',
+    tags: ['시즈널'],
   },
   // ─── 8월 ───
   {
@@ -175,6 +184,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 12,
     seasonal: '8월 양도 직전',
+    tags: ['시즈널'],
   },
   // ─── 9월 ───
   {
@@ -186,6 +196,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 9,
     seasonal: '9월 16~30일',
+    tags: ['시즈널'],
   },
   // ─── 10월 ───
   {
@@ -197,6 +208,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 10,
     seasonal: '10월 1~25일',
+    tags: ['시즈널'],
   },
   // ─── 11월 ───
   {
@@ -208,6 +220,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 13,
     seasonal: '11~12월 골든타임',
+    tags: ['시즈널'],
   },
   // ─── 12월 ───
   {
@@ -219,6 +232,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 11,
     seasonal: '12월 양도 직전',
+    tags: ['시즈널'],
   },
   {
     slug: 'capital-gains-tax-tips',
@@ -315,7 +329,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-05',
     readingMinutes: 6,
     seasonal: '5월 31일 마감',
-    tags: ['4티어'],
+    tags: ['4티어', '시즈널'],
   },
   {
     slug: 'rent-conversion-rate-2026-housing-lease-act',
@@ -376,7 +390,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-10',
     readingMinutes: 7,
     seasonal: '5월 31일 마감',
-    tags: ['4티어'],
+    tags: ['4티어', '시즈널'],
   },
   {
     slug: 'joint-ownership-couple-capital-gains-tax-savings',
@@ -437,7 +451,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 9,
     seasonal: '5월 31일 마감',
-    tags: ['4티어'],
+    tags: ['4티어', '시즈널'],
   },
   {
     slug: 'carry-over-basis-spouse-gift-5-10-year',
@@ -612,9 +626,23 @@ export default function GuideIndexPage() {
                           className="card card-hover flex flex-col gap-3"
                         >
                           <div className="flex items-center justify-between text-caption text-text-tertiary">
-                            <span className="rounded-chip bg-primary-500/10 px-2 py-0.5 text-primary-700 dark:text-primary-300 font-medium">
-                              {g.category}
-                            </span>
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <span className="rounded-chip bg-primary-500/10 px-2 py-0.5 text-primary-700 dark:text-primary-300 font-medium">
+                                {g.category}
+                              </span>
+                              {g.tags?.map((tag) => {
+                                // 4티어 = 핫키워드 (highlight 노란), 시즈널 = 시기성 (danger 빨간)
+                                const isSeasonal = tag === '시즈널';
+                                const cls = isSeasonal
+                                  ? 'rounded-chip bg-danger-500/15 px-2 py-0.5 text-danger-700 dark:text-danger-300 font-semibold'
+                                  : 'rounded-chip bg-highlight-500/15 px-2 py-0.5 text-highlight-700 dark:text-highlight-300 font-semibold';
+                                return (
+                                  <span key={tag} className={cls}>
+                                    {isSeasonal ? '⏰' : '🔥'} {tag}
+                                  </span>
+                                );
+                              })}
+                            </div>
                             <span>{g.readingMinutes}분 읽기</span>
                           </div>
                           <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
