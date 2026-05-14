@@ -55,6 +55,77 @@ describe('calculateProgressiveTax', () => {
   });
 });
 
+// 누진세 경계값 백스톱 테스트 — content-writer 시뮬 오차 (50x off) 방지용.
+// 각 구간 전환점 ±1원에서 누진공제가 정확히 적용되는지 검증.
+// 참고: docs/data-model.md §2-1 누진세율 표 / .claude/VERIFICATION_CHECKLIST.md
+describe('calculateProgressiveTax — 경계값 ±1원 누진공제 검증', () => {
+  // 1,400만 ↔ 5,000만 (6% → 15%, 누진공제 126만)
+  it('1,400만 + 1원 (15% 구간 진입, 누진공제 126만 즉시 적용)', () => {
+    const v = calculateProgressiveTax(14_000_001, INCOME_TAX_BRACKETS);
+    // 14,000,001 × 0.15 - 1,260,000 = 2,100,000.15 - 1,260,000 = 840,000.15
+    // 정수 반올림 또는 소수 허용에 따라 ±1원 오차 가능
+    expect(Math.round(v)).toBeGreaterThanOrEqual(840_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(840_001);
+  });
+
+  it('5,000만 + 1원 (24% 구간 진입, 누진공제 576만)', () => {
+    const v = calculateProgressiveTax(50_000_001, INCOME_TAX_BRACKETS);
+    // 50,000,001 × 0.24 - 5,760,000 ≈ 6,240,000.24
+    expect(Math.round(v)).toBeGreaterThanOrEqual(6_240_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(6_240_001);
+  });
+
+  it('8,800만 + 1원 (35% 구간 진입, 누진공제 1,544만)', () => {
+    const v = calculateProgressiveTax(88_000_001, INCOME_TAX_BRACKETS);
+    // 88,000,001 × 0.35 - 15,440,000 ≈ 15,360,000.35
+    expect(Math.round(v)).toBeGreaterThanOrEqual(15_360_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(15_360_001);
+  });
+
+  it('1.5억 + 1원 (38% 구간 진입, 누진공제 1,994만)', () => {
+    const v = calculateProgressiveTax(150_000_001, INCOME_TAX_BRACKETS);
+    // 150,000,001 × 0.38 - 19,940,000 ≈ 37,060,000.38
+    expect(Math.round(v)).toBeGreaterThanOrEqual(37_060_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(37_060_001);
+  });
+
+  it('1.975억 (양도세 사례 — 38% 구간, 양도차익 2억 - 기본공제 250만)', () => {
+    // 자녀 주택 증여 가이드의 부모 양도세 시나리오 검증.
+    // 1억 9,750만 × 38% - 1,994만 = 7,505만 - 1,994만 = 5,511만
+    const v = calculateProgressiveTax(197_500_000, INCOME_TAX_BRACKETS);
+    expect(Math.round(v)).toBe(55_110_000);
+  });
+
+  it('3억 + 1원 (40% 구간 진입, 누진공제 2,594만)', () => {
+    const v = calculateProgressiveTax(300_000_001, INCOME_TAX_BRACKETS);
+    // 300,000,001 × 0.40 - 25,940,000 ≈ 94,060,000.40
+    expect(Math.round(v)).toBeGreaterThanOrEqual(94_060_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(94_060_001);
+  });
+
+  it('5억 + 1원 (42% 구간 진입, 누진공제 3,594만)', () => {
+    const v = calculateProgressiveTax(500_000_001, INCOME_TAX_BRACKETS);
+    // 500,000,001 × 0.42 - 35,940,000 ≈ 174,060,000.42
+    expect(Math.round(v)).toBeGreaterThanOrEqual(174_060_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(174_060_001);
+  });
+
+  it('10억 + 1원 (45% 구간 진입, 누진공제 6,594만)', () => {
+    const v = calculateProgressiveTax(1_000_000_001, INCOME_TAX_BRACKETS);
+    // 1,000,000,001 × 0.45 - 65,940,000 ≈ 384,060,000.45
+    expect(Math.round(v)).toBeGreaterThanOrEqual(384_060_000);
+    expect(Math.round(v)).toBeLessThanOrEqual(384_060_001);
+  });
+
+  it('누진공제 누락 회귀 테스트: 4.775억 × 38% - 1,994만 ≈ 1.61억 (이월과세 가이드 사례)', () => {
+    // 이월과세 5년→10년 가이드의 양도세 시뮬 (양도차익 4.8억 - 기본공제 250만 = 4.775억).
+    // 1.5~3억 구간이 아니라 3~5억 구간이라 40%, 누진공제 2,594만.
+    // 4.775억 × 40% - 2,594만 = 19,100만 - 2,594만 = 16,506만 = 약 1.65억
+    const v = calculateProgressiveTax(477_500_000, INCOME_TAX_BRACKETS);
+    expect(Math.round(v)).toBe(165_060_000);
+  });
+});
+
 describe('calculateEarnedIncomeDeduction', () => {
   it('500만 이하 70% 공제', () => {
     expect(calculateEarnedIncomeDeduction(5_000_000)).toBe(3_500_000);

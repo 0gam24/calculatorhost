@@ -6,6 +6,9 @@ import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
+import bokRates from '@/data/bok-rates.json';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
@@ -16,7 +19,9 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/dsr-regulation-zones/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-03';
+const DATE_MODIFIED = '2026-05-13';
+
+const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 export const metadata: Metadata = {
   title: '지역별 DSR·LTV 규제 완전 정리 2026 | calculatorhost',
@@ -125,6 +130,8 @@ export default function DsrRegulationZonesPage() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   같은 주택이라도 위치(비규제·조정·투기과열)에 따라 대출 한도가 1억 원 이상 차이 납니다.
                   2026년 스트레스 DSR 풀 적용 + 생애최초 우대 + 다주택 중과까지 모든 규제를 한 페이지에 정리합니다.
+                  대출 금리는 한국은행 기준금리(<PublicDataCitation citation={ECOS_BASE_RATE} />)에
+                  은행별 가산금리를 더해 결정됩니다.
                 </p>
               </header>
 

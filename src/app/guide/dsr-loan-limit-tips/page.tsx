@@ -6,6 +6,9 @@ import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
+import bokRates from '@/data/bok-rates.json';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
@@ -16,7 +19,9 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/dsr-loan-limit-tips/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-03';
+const DATE_MODIFIED = '2026-05-13';
+
+const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 export const metadata: Metadata = {
   title: 'DSR 대출한도 늘리는 5가지 방법 2026 | calculatorhost',
@@ -148,7 +153,9 @@ export default function DsrLoanLimitTipsPage() {
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 스트레스 DSR이 변동·혼합·주기형 대출에 1.5%p 풀 적용되면서,
-                  같은 소득의 대출한도가 평균 15~25% 줄었습니다. 같은 조건에서 한도를
+                  같은 소득의 대출한도가 평균 15~25% 줄었습니다. 한국은행 기준금리는 현재{' '}
+                  <PublicDataCitation citation={ECOS_BASE_RATE} />이며, 시중은행 주담대 금리는
+                  여기에 가산금리(1.5~3.0%p)를 더한 수준입니다. 같은 조건에서 한도를
                   최대화하는 5가지 실전 방법을 시뮬레이션과 함께 정리합니다.
                 </p>
               </header>
