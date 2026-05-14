@@ -42,6 +42,19 @@ calculatorhost/
 **규칙**: 문서와 코드 모순 → 문서가 진실. 코드 수정.
 **낡은 문서**: `docs/STALE/`로 이동 (참조 금지).
 
+## 신규 포스트 SEO+GEO 하네스 (2026-05-13~)
+**마스터 룰**: `.claude/rules/new-post-seo-geo-harness.md` (자동 로드)
+- 8 에이전트 합의 통합 체크리스트 (§1 핵심 원칙 ~ §11 워크플로우)
+- 신규 가이드 작성 1회 사이클 ~3시간 표준
+- content-writer 프롬프트 템플릿 + PR 직전 검수 명령
+
+**참조 (필요 시 cat)**:
+- `.claude/VERIFICATION_CHECKLIST.md` — 세목별 계산 검증 (calc-logic-verifier 전용)
+- `.claude/checklists/` — UI 체크리스트·pitfalls·코드 템플릿
+- `.claude/skills/public-data-catalog/INGEST-CHECKLIST.md` — 공공 데이터 인용 매핑
+
+**핵심 원칙**: AI Overview 인용 유도 / §N 정확화 / 누진공제 정확화 / AI 보조 표기 / CLS 0
+
 ## WISC 컨텍스트 관리
 ### Write (장기 기억)
 - 세션 체크포인트: `.claude/checkpoints/YYYY-MM-DD-topic.md`

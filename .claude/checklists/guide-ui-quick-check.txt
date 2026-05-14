@@ -1,0 +1,62 @@
+# 가이드 포스트 UI/UX 빠른 검수 (1분 내)
+
+## 구조 (REQUIRED)
+[ ] mx-auto max-w-3xl space-y-8 래퍼
+[ ] <section aria-label="..."> 각 섹션 명시
+[ ] Breadcrumb 컴포넌트 import + 사용
+[ ] H1 + 리드 문단 (data-speakable)
+
+## 광고 (REQUIRED)
+[ ] <AdSlot slot="guide-{name}-top" format="horizontal" /> — 헤더 아래
+[ ] <AdSlot slot="guide-{name}-mid" format="rectangle" /> — 본문 중간
+[ ] props 정확: slot + format (slotId/billboard 금지)
+[ ] ≤ 4개 슬롯 페이지당
+
+## 본문 (REQUIRED)
+[ ] <h2 className="mb-4 text-2xl font-semibold"> 일관 사용
+[ ] <p className="...text-text-secondary" data-speakable> 핵심 문단
+[ ] <div className="rounded-lg bg-bg-card p-4">...</div> 강조 박스
+[ ] <table> 사용 (이미지/스크린샷 X)
+
+## FAQ (REQUIRED)
+[ ] <FaqSection items={[...FAQ_ITEMS]} /> 컴포넌트
+[ ] 위치: 본문 절반 (하단 X)
+[ ] 5-8개 항목, 첫 문장 결론
+
+## 메타 & SEO (REQUIRED)
+[ ] metadata: title(60자) / description(80-155자) / canonical (trailing slash)
+[ ] 4종 JSON-LD: Breadcrumb + Article + WebPage + FAQ
+[ ] 외부 권위 링크 2~3개 (rel=nofollow, deep-link)
+
+## 반응형 (REQUIRED)
+[ ] 다크 테마: bg-bg-card(#2F3238) 위에서 가독성 ✓
+[ ] 라이트 테마: bg-bg-card(#FFFFFF) 위에서 가독성 ✓
+[ ] 모바일: px-4 / md: px-8 / lg: 우측 사이드바
+[ ] 테이블: <div className="overflow-x-auto">
+
+## 접근성 (REQUIRED)
+[ ] Heading: H1 → H2 계층 순차 (건너뛰기 X)
+[ ] aria-label: 섹션, 테이블, 이미지
+[ ] 색 대비: 4.5:1 이상 (text-text-primary on bg-base)
+[ ] focus: focus-visible:ring-2 ring-primary
+
+## 성능 (REQUIRED)
+[ ] next/image 사용 (img X)
+[ ] 이미지 width/height 명시 (CLS 0)
+[ ] 폰트: Pretendard/Inter (layout.tsx 기본)
+[ ] min-height: AdSlot 컴포넌트에서 자동
+
+## 코드 (REQUIRED)
+[ ] TypeScript strict (any X)
+[ ] npm run lint 통과
+[ ] 날짜 ISO 8601: YYYY-MM-DD
+[ ] npm run test:e2e 관련 테스트 통과
+
+## 최종 (PRE-PUBLISH)
+[ ] 스크린샷: 데스크톱 + 모바일
+[ ] 다크/라이트 토글 (양쪽 정상)
+[ ] Lighthouse: Performance ≥90, Accessibility ≥95
+[ ] 외부 링크 3개: HTTP 200 확인
+
+---
+PASS 후 git commit + PR 생성

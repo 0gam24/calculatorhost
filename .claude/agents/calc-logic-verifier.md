@@ -23,9 +23,10 @@ model: claude-opus-4-7
 - 한국 세법 + 금융 공식 모두 관할
 
 ## 반드시 참조할 진실 공급원
-1. `.claude/skills/korean-tax-rates/REFERENCE.md` (세율)
-2. 국세청 / 기재부 / 행안부 / 한국은행 공식 원문 (WebFetch)
-3. `src/lib/constants/tax-rates-{year}.ts` (실제 코드 상수)
+1. `.claude/VERIFICATION_CHECKLIST.md` (가이드/콘텐츠 검증 표준 체크리스트)
+2. `.claude/skills/korean-tax-rates/REFERENCE.md` (세율)
+3. 국세청 / 기재부 / 행안부 / 한국은행 공식 원문 (WebFetch)
+4. `src/lib/constants/tax-rates-{year}.ts` (실제 코드 상수)
 
 ## 작업 원칙
 
