@@ -413,8 +413,12 @@ export default function JunePropertyTaxPage() {
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link> — 본인 공시가격으로 즉시 시뮬레이션</li>
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link></li>
+                  <li>→ <Link href="/guide/september-property-tax-second/" className="text-primary-600 underline dark:text-primary-500">9월 재산세 2차 납부 가이드</Link> — 후속 납부 일정</li>
+                  <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link> — 12월 종부세 사전 절세</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 명의 분산 시 보유세 영향</li>
+                  <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link> — 임대주택 보유세 함께 검토</li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">가이드: 양도세 절세 7가지</Link></li>
-                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전 — 공정시장가액비율·1세대1주택 등</Link></li>
+                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전 — 공정시장가액비율·1세대1주택·이월과세 등</Link></li>
                 </ul>
               </section>
 

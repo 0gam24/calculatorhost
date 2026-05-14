@@ -320,6 +320,10 @@ export default function AprilCptExclusionPage() {
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link></li>
                   <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 완벽 가이드</Link></li>
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세</Link> — 합산배제와 별개의 양도 시 비과세</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세</Link> — 합산배제 대상 사유</li>
+                  <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link> — 임대주택 합산배제와 연결</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 명의 분산 시 종부세 영향</li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link></li>
                   <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더</Link></li>
                 </ul>

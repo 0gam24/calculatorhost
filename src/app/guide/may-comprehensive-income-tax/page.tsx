@@ -550,8 +550,34 @@ export default function MayComprehensiveIncomeTaxPage() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/financial-income-comprehensive-vs-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 금융소득 종합과세 vs 분리과세 (2,000만 기준)
+                    </Link>
+                    {' '}— 5월 신고 시즈널 4티어
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/n-jobber-insurance-dependent-disqualification/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: N잡러 건강보험 피부양자 탈락
+                    </Link>
+                    {' '}— 종소세 신고로 추적되는 합산소득 영향
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/child-earned-income-tax-credit-application-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 자녀·근로장려금 신청 (5월 31일 마감)
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/earned-income-tax-credit-vs-child/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 근로장려금 vs 자녀장려금 차이
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
-                      용어사전 — 단순경비율·기준경비율·퇴직소득세 등
+                      용어사전 — 단순경비율·기준경비율·퇴직소득세·이월과세 등
                     </Link>
                   </li>
                 </ul>
