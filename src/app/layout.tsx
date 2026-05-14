@@ -113,8 +113,11 @@ const swInit = `
 const rawAdsense = process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim();
 const adsenseClient = rawAdsense && /^ca-pub-\d{8,}$/.test(rawAdsense) ? rawAdsense : undefined;
 
+// GA4 Measurement ID — 공개 식별자(HTML 응답에 노출)이므로 fallback 하드코딩 안전.
+// env 우선, 미설정 시 운영자가 제공한 calculatorhost.com 측정 ID 사용.
+const GA_ID_DEFAULT = 'G-JTG3NSZY8T';
 const rawGaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
-const gaId = rawGaId && /^G-[A-Z0-9]{6,}$/.test(rawGaId) ? rawGaId : undefined;
+const gaId = rawGaId && /^G-[A-Z0-9]{6,}$/.test(rawGaId) ? rawGaId : GA_ID_DEFAULT;
 
 // Naver 웹로그분석(Naver Analytics) — 발급 ID 형식: a + 10자리 이상 숫자.
 // 한국 검색 25% 점유 (Naver) → Naver Analytics 별도 추적이 필수.
