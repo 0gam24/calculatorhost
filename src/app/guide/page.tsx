@@ -12,7 +12,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-13';
+const DATE_MODIFIED = '2026-05-14';
 
 export const metadata: Metadata = {
   title: '가이드 — 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
@@ -481,6 +481,16 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-13',
     readingMinutes: 14,
+    tags: ['4티어'],
+  },
+  {
+    slug: 'family-loan-agreement-gift-tax-avoidance',
+    title: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
+    description:
+      '상증법 §41의4·시행령 §31의5 적정이자율 4.6%·연 차액 1,000만 면제·차용증 필수 요소·실질과세 입증 자료·함정 5가지·신고 절차 정리.',
+    category: '세금',
+    publishedAt: '2026-05-14',
+    readingMinutes: 15,
     tags: ['4티어'],
   },
 ];
