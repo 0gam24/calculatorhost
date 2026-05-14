@@ -38,6 +38,8 @@ interface GuideEntry {
   readingMinutes: number;
   /** 시즌 강조 표기 (예: '5월 신고 시즌', '7월 납부 직전') */
   seasonal?: string;
+  /** 다중 태그 — category 단일 분류로 표현 안 되는 교차 토픽 (예: '4티어', '핫키워드', 'YMYL', '시즈널'). */
+  tags?: string[];
 }
 
 type GuideCategory = '세금' | '세금·부동산' | '금융' | '투자' | '근로';
@@ -272,6 +274,7 @@ export const GUIDES: GuideEntry[] = [
     category: '근로',
     publishedAt: '2026-05-04',
     readingMinutes: 9,
+    tags: ['4티어'],
   },
   {
     slug: 'jeonse-deposit-safety',
@@ -281,6 +284,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금·부동산',
     publishedAt: '2026-05-04',
     readingMinutes: 8,
+    tags: ['4티어'],
   },
   {
     slug: 'capital-gains-tax-5-steps',
@@ -290,6 +294,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-05',
     readingMinutes: 10,
+    tags: ['4티어'],
   },
   {
     slug: 'salary-negotiation-take-home',
@@ -299,6 +304,7 @@ export const GUIDES: GuideEntry[] = [
     category: '근로',
     publishedAt: '2026-05-05',
     readingMinutes: 7,
+    tags: ['4티어'],
   },
   {
     slug: 'earned-income-tax-credit-vs-child',
@@ -309,6 +315,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-05',
     readingMinutes: 6,
     seasonal: '5월 31일 마감',
+    tags: ['4티어'],
   },
   {
     slug: 'rent-conversion-rate-2026-housing-lease-act',
@@ -318,6 +325,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금·부동산',
     publishedAt: '2026-05-06',
     readingMinutes: 7,
+    tags: ['4티어'],
   },
   {
     slug: 'presale-right-capital-gains-tax',
@@ -327,6 +335,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-08',
     readingMinutes: 8,
+    tags: ['4티어'],
   },
   {
     slug: 'one-household-12-billion-exemption',
@@ -336,6 +345,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-08',
     readingMinutes: 9,
+    tags: ['4티어'],
   },
   {
     slug: 'n-jobber-insurance-dependent-disqualification',
@@ -345,6 +355,7 @@ export const GUIDES: GuideEntry[] = [
     category: '근로',
     publishedAt: '2026-05-09',
     readingMinutes: 8,
+    tags: ['4티어'],
   },
   {
     slug: 'housing-rental-income-separate-taxation',
@@ -354,6 +365,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금·부동산',
     publishedAt: '2026-05-09',
     readingMinutes: 8,
+    tags: ['4티어'],
   },
   {
     slug: 'child-earned-income-tax-credit-application-2026',
@@ -364,6 +376,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-10',
     readingMinutes: 7,
     seasonal: '5월 31일 마감',
+    tags: ['4티어'],
   },
   {
     slug: 'joint-ownership-couple-capital-gains-tax-savings',
@@ -373,6 +386,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금·부동산',
     publishedAt: '2026-05-11',
     readingMinutes: 9,
+    tags: ['4티어'],
   },
   {
     slug: 'inheritance-tax-10-year-prior-gift-aggregation',
@@ -382,6 +396,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 11,
+    tags: ['4티어'],
   },
   {
     slug: 'temporary-two-houses-capital-gains-exemption',
@@ -391,6 +406,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 10,
+    tags: ['4티어'],
   },
   {
     slug: 'long-term-holding-special-deduction-80-percent',
@@ -400,6 +416,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 10,
+    tags: ['4티어'],
   },
   {
     slug: 'burden-gift-debt-assumption-tax',
@@ -409,6 +426,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 10,
+    tags: ['4티어'],
   },
   {
     slug: 'financial-income-comprehensive-vs-separate-taxation',
@@ -419,6 +437,7 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-12',
     readingMinutes: 9,
     seasonal: '5월 31일 마감',
+    tags: ['4티어'],
   },
   {
     slug: 'carry-over-basis-spouse-gift-5-10-year',
@@ -428,6 +447,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 13,
+    tags: ['4티어'],
   },
   {
     slug: 'child-house-gift-vs-sale-comparison',
@@ -437,6 +457,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 12,
+    tags: ['4티어'],
   },
   {
     slug: 'self-farming-land-100-percent-exemption',
@@ -446,6 +467,7 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-13',
     readingMinutes: 14,
+    tags: ['4티어'],
   },
 ];
 

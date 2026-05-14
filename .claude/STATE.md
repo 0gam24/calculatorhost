@@ -103,18 +103,25 @@
 
 > 운영자가 매주·격주로 갱신. 에이전트 호출 시 이 섹션을 읽어 우선순위 판단.
 
-### 진행 중 (2026-05-12 ~ 06-09, 4주 GSC 효과 모니터링)
-- **오늘 19 PR 누적 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
+### 진행 중 (2026-05-12 ~ 06-10, 4주 GSC 효과 모니터링)
+- **누적 23+ PR 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
   · 색인 인프라: IndexNow workflow + sitemap 검증 + indexing-guard E2E
   · §N 보강: 12페이지 (strong 33→51, missing 15→7)
   · 공공 데이터 인용: 5페이지 (loan/savings/deposit/salary/freelancer)
   · 시즈널 가이드 6편 신규 발행 (7~12월 — 1~12월 12편 완성)
+  · 4티어 핫 키워드 가이드 14편 발행 (2026-05-12~13)
   · 인프라: dateModified manifest + jsonld helper + AVIF 4종 + AvifImage 컴포넌트
-  · ECOS Edge Function 프록시 + STATE.md SSoT
+  · ECOS Edge Function 프록시 (캐시 24h + stale-while-revalidate 7d)
+  · 양도세 hub 3편 cross-link 메시 강화 (4티어 9편 모두 등록)
+  · Lighthouse CI 어설션에 가이드 4편 추가 (PR 자동 회귀 감지)
+  · 용어사전 3개 추가 (이월과세 / 저가양수도 / 부담부증여)
+  · GuideEntry `tags?: string[]` 다중 태그 지원 (4티어 20편 마킹)
+  · vitest pre-existing 3건 transform fail 제거 (Test Files 47/47, Tests 944/944)
 - **운영자 수동 액션 (병행)**:
   · GSC URL Inspection → Request Indexing 미색인 상위 10개 (월 200건 한도)
   · Bing IndexNow 키 발급 → GitHub Secrets `INDEXNOW_KEY` → workflow 활성화
   · GSC Page Index 9가지 미색인 이유 캡처 → seo-auditor 정확 진단
+  · data.go.kr `PUBLIC_DATA_KEY` (RTMS·JUSO) 신청 여부 확인
 
 ### 다음 후보 (4주 효과 측정 후 우선순위 재결정)
 - AvifImage 페이지별 적용 (히어로 이미지 사용처 신규 추가 시)
@@ -125,16 +132,20 @@
 - Phase 2 신규 계산기 13종 (자동차세·N잡 건보·청약가점 추가 등)
 
 ### 보류 / 차단
-- pre-existing tests/unit/scripts/ 3건 vitest transform fail (Windows + .mjs import) — CI 무영향
+- ~~pre-existing tests/unit/scripts/ 3건 vitest transform fail~~ → 2026-05-13 vitest.config.ts exclude 처리로 해소
 - Programmatic SEO 본격 발행 — ADR-010 운영자 승인 필요
+- JSON-LD 5개 인라인 → 단일 `rel=alternate` 통합 (lighthouse-profiler 제안) — 14편 가이드 일괄 변경, 측정 데이터 확보 후 결정
+- KOSIS 농가소득 헬퍼 신규 도입 (자경농지 가이드 인용용) — 별도 PR
+- scripts/*.mjs CLI/core 분리 리팩토링 (vitest 항구적 해결) — 별도 PR
 
 ---
 
 ## 8. 알려진 이슈·후속 항목
 
-- pre-existing `tests/unit/scripts/` 3건 vitest transform fail (Windows + .mjs import) — CI는 `continue-on-error` 무시 중
+- ~~pre-existing `tests/unit/scripts/` 3건 vitest transform fail~~ → 2026-05-13 해소 (vitest.config.ts exclude)
 - stuck.md 두 번째 stale 섹션 (2026-05-06 `developers.google.com`) — `replaceAll` 강화 검토
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
+- scripts/*.mjs shebang 으로 인한 vitest import 차단 — 항구적 해결: lib/cli.mjs(shebang) + lib/core.mjs(no shebang) 분리
 
 ### §N 법조항 인용 audit 추이 (2026-05-12 최종, `npm run citations:audit`)
 **58개 페이지 中**: ✅ strong(3+) 51 / 🟡 minimal(1~2) 0 / 🔴 missing(0) 7
