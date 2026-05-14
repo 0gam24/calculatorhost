@@ -116,6 +116,11 @@ const adsenseClient = rawAdsense && /^ca-pub-\d{8,}$/.test(rawAdsense) ? rawAdse
 const rawGaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
 const gaId = rawGaId && /^G-[A-Z0-9]{6,}$/.test(rawGaId) ? rawGaId : undefined;
 
+// Naver 웹로그분석(Naver Analytics) — 발급 ID 형식: a + 10자리 이상 숫자.
+// 한국 검색 25% 점유 (Naver) → Naver Analytics 별도 추적이 필수.
+const rawNaverId = process.env.NEXT_PUBLIC_NAVER_ANALYTICS_ID?.trim();
+const naverAnalyticsId = rawNaverId && /^a\d{10,}$/.test(rawNaverId) ? rawNaverId : undefined;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko-KR">
@@ -205,6 +210,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   requestIdleCallback(initGa, { timeout: 2000 });
                 } else {
                   setTimeout(initGa, 1);
+                }`}
+            </Script>
+          </>
+        ) : null}
+
+        {/* Naver 웹로그분석 — lazyOnload + requestIdleCallback (TBT 보호).
+            한국 검색 25% 점유율(Naver)은 GA4 외 별도 추적 필수.
+            wcslog.js 는 // (프로토콜 상대) 로 제공되나 next/script 는 https 강제.
+            wcs_do() 호출 시 페이지뷰 카운트 — SPA 라우팅 시 추가 호출은 향후 분리.
+            관련: https://wa.naver.com */}
+        {naverAnalyticsId ? (
+          <>
+            <Script
+              src="https://wcs.naver.net/wcslog.js"
+              strategy="lazyOnload"
+            />
+            <Script id="naver-analytics-init" strategy="lazyOnload">
+              {`var initNaver = function() {
+                  if (!window.wcs_add) window.wcs_add = {};
+                  window.wcs_add.wa = '${naverAnalyticsId}';
+                  if (window.wcs && typeof window.wcs_do === 'function') {
+                    window.wcs_do();
+                  }
+                };
+                if ('requestIdleCallback' in window) {
+                  requestIdleCallback(initNaver, { timeout: 2000 });
+                } else {
+                  setTimeout(initNaver, 1);
                 }`}
             </Script>
           </>

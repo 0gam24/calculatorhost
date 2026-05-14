@@ -59,6 +59,7 @@
 - ✅ `NEXT_PUBLIC_ADSENSE_CLIENT`
 - ✅ `NEXT_PUBLIC_ADSENSE_SLOT_*` (Cloudflare 대시보드 확인)
 - ✅ `NEXT_PUBLIC_GA_ID`
+- ❓ `NEXT_PUBLIC_NAVER_ANALYTICS_ID` (2026-05-13 코드 추가 — 운영자 Cloudflare 등록 필요, 발급 ID 형식 `a` + 10자리↑ 숫자)
 - ✅ `NEXT_PUBLIC_KAKAO_JS_KEY`
 - ✅ `SITE_URL`
 - ❓ `PUBLIC_DATA_KEY` (RTMS·JUSO — 등록 여부 운영자 확인)
