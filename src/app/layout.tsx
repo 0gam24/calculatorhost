@@ -113,11 +113,11 @@ const swInit = `
 const rawAdsense = process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim();
 const adsenseClient = rawAdsense && /^ca-pub-\d{8,}$/.test(rawAdsense) ? rawAdsense : undefined;
 
-// GA4 Measurement ID — 공개 식별자(HTML 응답에 노출)이므로 fallback 하드코딩 안전.
-// env 우선, 미설정 시 운영자가 제공한 calculatorhost.com 측정 ID 사용.
-const GA_ID_DEFAULT = 'G-JTG3NSZY8T';
-const rawGaId = process.env.NEXT_PUBLIC_GA_ID?.trim();
-const gaId = rawGaId && /^G-[A-Z0-9]{6,}$/.test(rawGaId) ? rawGaId : GA_ID_DEFAULT;
+// GA4 Measurement ID — 공개 식별자 (HTML 응답에 노출).
+// calculatorhost.com 의 정식 측정 ID 를 코드에 고정 — Cloudflare env 의 placeholder/오타가
+// 이 값을 override 하지 못하도록 보호. (Google Tag Manager 자동 감지 호환성)
+// 다른 GA 속성으로 전환할 때만 이 상수를 변경.
+const gaId = 'G-JTG3NSZY8T';
 
 // Naver 웹로그분석(Naver Analytics) — 발급 ID 형식: a + 10자리 이상 숫자.
 // 한국 검색 25% 점유 (Naver) → Naver Analytics 별도 추적이 필수.
@@ -195,25 +195,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         ) : null}
 
-        {/* Google Analytics 4 — lazyOnload + requestIdleCallback */}
+        {/* Google Analytics 4 — afterInteractive 전략.
+            lazyOnload 는 window.load + idle 후 → Google Tag Assistant·자동 감지 봇이 못 잡음.
+            afterInteractive 는 hydration 직후 → LCP 영향 없으면서 detection 호환.
+            init 은 즉시 호출 (requestIdleCallback 래핑 제거 — 봇이 dataLayer 즉시 확인 필요). */}
         {gaId ? (
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="lazyOnload"
+              strategy="afterInteractive"
             />
-            <Script id="ga-init" strategy="lazyOnload">
+            <Script id="ga-init" strategy="afterInteractive">
               {`window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
-                var initGa = function() {
-                  gtag('js', new Date());
-                  gtag('config', '${gaId}', { anonymize_ip: true });
-                };
-                if ('requestIdleCallback' in window) {
-                  requestIdleCallback(initGa, { timeout: 2000 });
-                } else {
-                  setTimeout(initGa, 1);
-                }`}
+                gtag('js', new Date());
+                gtag('config', '${gaId}', { anonymize_ip: true });`}
             </Script>
           </>
         ) : null}
