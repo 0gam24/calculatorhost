@@ -61,33 +61,40 @@
 - 영문 슬러그 URL (`/calculator/salary`, `/category/tax`)  ※ 초기엔 한글 슬러그였으나 영문 전환 완료
 - 광고 슬롯은 라이트 배경 카드 + `min-height` 고정 + `strategy="lazyOnload"`
 
-### 📝 자동 가이드 발행 정책 (Phase 1 인프라 완료, 2026-05-10)
+### 📝 자동 가이드 발행 정책 (Phase 2 완료, 2026-05-15 auto-merge 활성)
 
-**목적**: 시즌별 가이드 본문 일부를 Anthropic Claude API 로 자동 초안 생성·자동 PR·운영자 검토 후 발행. NETWORK 7 에이전트 합의 기반.
+**목적**: 시즌별 가이드 본문 일부를 Anthropic Claude API 로 자동 초안 생성 → 자동 PR → 전 CI 게이트 통과 시 자동 squash 머지·브랜치 삭제. 운영자 사후 점검(선택).
 
 **자동 가능 / 자동 금지 범위**:
 - ✅ 자동 가능: 가이드 본문 (정의·방법론·시장 트렌드·FAQ 확충)
 - ❌ 자동 금지: 세율표 / 공제 금액 / 법조항 §번호 인용 / 양도세·취득세 등 직접 계산 사례 — 운영자 수동 또는 SSoT 상수(`src/lib/constants/tax-rates-{year}.ts`) 직접 import 만 가능
 
-**필수 사전 조건 (5/5 충족 시만 자동 발행 활성화)**:
-1. ✅ About 페이지 disclosure 강화 (`src/app/about/page.tsx` §"자동 가이드 발행 프로세스")
-2. ✅ CI 자동 검증 게이트 (`scripts/check-guide-quality.mjs` + `.github/workflows/auto-guide-quality.yml`) — 본문 2,000자 하한·외부 권위 링크 ≥ 2·금지 표현 0·AI 보조 표기 의무
+**완료된 인프라 (5/5)**:
+1. ✅ About 페이지 disclosure 강화
+2. ✅ CI 자동 검증 게이트 (`scripts/check-guide-quality.mjs` + `.github/workflows/auto-guide-quality.yml`)
 3. ✅ 시각 회귀 가이드 미적용 (`playwright.config.ts` visual matcher 8 페이지 한정)
-4. ⏳ Phase 2: Anthropic API 호출 인프라 (`scripts/ralph-auto-guide.mjs` 미구현)
-5. ⏳ Phase 2: 점진 도입 6개월 파일럿 (월 5–10편 → 30편)
+4. ✅ Phase 2 Anthropic API 호출 (`scripts/ralph-auto-guide.mjs`) — 2026-05-15
+5. ✅ auto-merge 활성화 (`gh pr merge --auto --squash --delete-branch`) — 2026-05-15
 
-**검수 SLA (운영자 책임)**:
-- 자동 PR 머지 전 최소 30분 실질 검토 — 법조항 정확성·세율값 SSoT 대조·중복 콘텐츠 검사
-- RED 항목 1개라도 발견 시 즉시 폐기 또는 재작성
-- 1-2분 머지 검토 금지 — YMYL 카테고리 신뢰성 보호
+**자동 머지 게이트 (전부 PASS 필수, 1개라도 fail 시 PR open 유지)**:
+- `Auto Guide Quality Gate` — 본문 2,000자 / §N 인용 / 금지표현 0 / AI 표기 의무
+- Vitest 단위 953+ PASS 유지
+- TypeScript strict + ESLint 0
+- Lighthouse CI 어설션 (LCP/INP/CLS)
+- Cloudflare Pages preview build 성공
+- E2E 골든패스 5 + indexing-guard 10 + SEO regression 15
 
-**자동 PR 머지 게이트 (CI 필수 PASS)**:
-- `Auto Guide Quality Gate` (이 워크플로) — RED 시 PR 차단
-- Vitest 단위 900+ PASS 유지
-- `audit:adsense` 통과
-- Lighthouse CI 어설션 PASS (가이드 PR 시 skip 검토)
+**탈출구 (운영자 차단)**:
+- PR 페이지에서 "Disable auto-merge" 클릭
+- 또는 PR close
+- 또는 main 브랜치 protection rule 일시 해제
 
-**중단 조건 (즉시 시스템 OFF)**:
+**사후 점검 (운영자 책임 — 머지 후라도)**:
+- 머지된 가이드의 §N 법조항·세율값 사실 정확성
+- 중복 콘텐츠 검사
+- RED 발견 시 즉시 후속 PR 로 수정 또는 페이지 unpublish
+
+**중단 조건 (즉시 시스템 OFF — `AUTO_GUIDE_ENABLED=false` 변수 토글)**:
 - Search Console 순위 -10% 이상 하락
 - Google Manual Action 알림
 - AdSense 정책 위반 알림
@@ -95,6 +102,11 @@
 
 **금지 표현 자동 검출** (`scripts/check-guide-quality.mjs` `FORBIDDEN_PATTERNS`):
 - 투자 권유 / 수익 보장 / 원금 보장 / 확정 절세 / 100% 절세 / 국내 1위 / 국내 유일 / 최고의 절세 / 절대 안전
+
+**잔존 리스크 (운영자 인지)**:
+- AI 가이드가 운영자 검수 없이 main 머지 가능
+- 자동 게이트가 못 잡는 사실 정확성(§N 가짜번호·세율 hallucination)은 사후 점검에 의존
+- 운영자 결정으로 검수 SLA 30분 해제 (2026-05-15) — 게이트 강화로 대체
 
 ## 에이전트 우선 호출
 작업 유형별 자동 위임 — 메인 스레드에서 직접 처리 지양:
