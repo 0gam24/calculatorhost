@@ -42,15 +42,25 @@ jobs:
             echo "INDEXNOW_KEY 미설정 — Bing/Yandex 핑 skip (Google/Naver step 은 그대로 진행)"
             exit 0
           fi
-          # 전체 사이트 알림 (sitemap.xml 변경 통보)
-          curl -fsS -X POST "https://api.indexnow.org/indexnow" \
+          # 전체 사이트 알림 (sitemap.xml 변경 통보).
+          # -w "%{http_code}" 로 응답 코드를 stdout 에 명시 → 200/202 정상 / 4xx 실패 가시화.
+          # IndexNow 정상: 200 (수락) / 202 (수락 + 비동기 처리). 422 (잘못된 키), 403 (키 검증 실패) 등.
+          # -fsS 유지로 5xx 만 curl exit code 1, 4xx 는 본문 + http_code 로 가시화.
+          # || echo 는 네트워크 단절 등 curl 자체 실패 시의 fallback (continue-on-error 추가 X).
+          HTTP_CODE=$(curl -sS -o /tmp/indexnow.body -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json" \
             -d "{
               \"host\": \"calculatorhost.com\",
               \"key\": \"$KEY\",
               \"keyLocation\": \"https://calculatorhost.com/$KEY.txt\",
               \"urlList\": [\"https://calculatorhost.com/sitemap.xml\"]
-            }" || echo "IndexNow ping skipped"
+            }")
+          echo "IndexNow HTTP $HTTP_CODE"
+          echo "IndexNow body: $(cat /tmp/indexnow.body 2>/dev/null || echo '<empty>')"
+          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "202" ]; then
+            echo "::error::IndexNow ping failed with HTTP $HTTP_CODE"
+            exit 1
+          fi
 
       - name: Naver Search Advisor (수동 한정)
         run: |
