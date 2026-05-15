@@ -18,26 +18,45 @@ import {
 import { RentConversionCalculator } from './RentConversionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import {
+  RENT_CONVERSION_ADDITIONAL_RATE,
+  RENT_CONVERSION_ANNUAL_CAP,
+} from '@/lib/constants/rent-rules-2026';
+import bokRates from '@/data/bok-rates.json';
 
 const URL = 'https://calculatorhost.com/calculator/rent-conversion/';
 
+// 현행 기준금리 + 가산비율로 산출하는 법정 상한 (SSoT 상수에서 import — 하드코딩 X).
+// 한국은행 기준금리 갱신 시 sync-public-data cron 이 bok-rates.json 자동 갱신,
+// 가산비율(2%p) / 연 상한(10%) 변경 시 rent-rules-2026.ts 수정만으로 본 페이지 자동 반영.
+const CURRENT_BASE_RATE_PCT = (bokRates.baseRate * 100).toFixed(2);
+const CURRENT_BASE_RATE_DATE = bokRates.baseRateDate; // YYYYMM
+const ADDITIONAL_RATE_PCT = (RENT_CONVERSION_ADDITIONAL_RATE * 100).toFixed(1);
+const ANNUAL_CAP_PCT = (RENT_CONVERSION_ANNUAL_CAP * 100).toFixed(0);
+// 산식: min(기준금리 + 2%p, 10%) — 둘 중 낮은 값.
+const CURRENT_LEGAL_CAP_PCT = Math.min(
+  bokRates.baseRate + RENT_CONVERSION_ADDITIONAL_RATE,
+  RENT_CONVERSION_ANNUAL_CAP,
+);
+const CURRENT_LEGAL_CAP_DISPLAY = (CURRENT_LEGAL_CAP_PCT * 100).toFixed(2);
+
 export const metadata: Metadata = {
-  title: '전월세 전환율 계산기 2026 | 법정 상한 | calculatorhost',
-  description:
-    '전월세전환율 계산기 2026. 보증금과 월세로 법정 상한 범위 내 전환율을 계산. 임대인·임차인 협상 기준 제시. 최신 지역별 요율 반영. 무료.',
+  // 검색 의도 흡수: "주택임대차보호법 전월세전환율 기준금리 2% 2026" (GSC 1순위)
+  // 즉답형 후크 + 법조항 + 현행 상한 수치 일부 노출 (구체성)
+  title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 §7의2 + 계산기`,
+  description: `2026년 현행 전월세 전환 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (한국은행 기준금리 ${CURRENT_BASE_RATE_PCT}% + ${ADDITIONAL_RATE_PCT}%p, 연 ${ANNUAL_CAP_PCT}% 상한 중 낮은 값). 주택임대차보호법 §7의2 + 시행령 §9 근거. 전세↔월세 즉시 환산 계산기 무료.`,
   alternates: { canonical: URL },
   openGraph: {
-    title: '전월세 전환율 계산기 2026',
-    description:
-      '2026년 법정 상한 기준 전월세 전환율 계산기. 전세·월세·반전세 무료 변환 계산. 한국은행 기준금리 반영, 법정 상한 자동 계산. 회원가입 불필요.',
+    title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 기준`,
+    description: `현행 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + 2%p). 전세↔월세 즉시 환산 계산기.`,
     url: URL,
     type: 'website',
 
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전월세 전환율 계산기 2026',
-    description: '2026년 법정 상한 기준 전월세 전환율 계산기. 전세·월세·반전세 무료 변환 계산. 한국은행 기준금리 반영, 법정 상한 자동 계산. 회원가입 불필요.',
+    title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026`,
+    description: `현행 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + 2%p). 전세↔월세 환산 계산기.`,
   },
 };
 
@@ -157,15 +176,58 @@ export default function RentConversionPage() {
                   ]}
                 />
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  전월세 전환율 계산기 2026
+                  전월세 전환율 2026 — 주택임대차보호법 §7의2 기준 + 계산기
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  주택임대차보호법을 반영한 무료 전월세 전환율 계산기입니다. 전세를 월세로
-                  전환하거나, 월세를 전세로 환산할 때 법정 상한(기준금리 + 2%p 또는 10% 중 낮은
-                  값)을 자동으로 적용합니다.
+                  주택임대차보호법 §7의2(차임 등의 증감청구권) + 시행령 §9가 정한 법정 상한 안에서
+                  전세↔월세를 환산하는 계산기입니다. 임대인은 이 상한을 초과한 차임 인상을 일방적으로
+                  강요할 수 없습니다.
                 </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-05-15" />
               </header>
+
+              {/* 법조문 즉답 블록 — GSC 검색 의도 "주택임대차보호법 월차임 전환율 기준금리 2% 2026"
+                  사용자가 계산기보다 먼저 원하는 답: '현행 법정 상한이 정확히 얼마인가'.
+                  수치는 SSoT 상수에서 import (sync-public-data cron 갱신 시 자동 반영). */}
+              <section
+                aria-label="현행 법정 전월세 전환 상한"
+                className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4"
+                data-speakable
+              >
+                <h2 className="mb-2 text-lg font-semibold">
+                  현행 법정 상한: <span className="text-primary-600">{CURRENT_LEGAL_CAP_DISPLAY}%</span>
+                </h2>
+                <p className="mb-3 text-sm text-text-secondary">
+                  산식: <strong>min(한국은행 기준금리 + {ADDITIONAL_RATE_PCT}%p, 연 {ANNUAL_CAP_PCT}%)</strong> 중 낮은 값.
+                  현재 기준금리 <strong>{CURRENT_BASE_RATE_PCT}%</strong> ({CURRENT_BASE_RATE_DATE.slice(0, 4)}-{CURRENT_BASE_RATE_DATE.slice(4, 6)}) +
+                  대통령령 가산비율 <strong>{ADDITIONAL_RATE_PCT}%p</strong> = <strong>{CURRENT_LEGAL_CAP_DISPLAY}%</strong>.
+                </p>
+                <ul className="mb-3 list-inside list-disc space-y-1 text-sm text-text-secondary">
+                  <li>법적 근거: 주택임대차보호법 §7의2 (차임 등의 증감청구권) + 시행령 §9 (가산비율·상한)</li>
+                  <li>임대인 일방 인상 거부권 — 상한 초과 요구는 임차인이 거절 가능, 분쟁 시 임대차분쟁조정위원회</li>
+                  <li>본 값은 <strong>법정 상한</strong>이며 실제 계약 환산율은 임대인·임차인 합의에 따라 정해짐</li>
+                </ul>
+                <p className="text-caption text-text-tertiary">
+                  출처:{' '}
+                  <a
+                    href="https://www.law.go.kr/lsInfoP.do?lsiSeq=235492#0000"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 hover:underline"
+                  >
+                    국가법령정보센터 — 주택임대차보호법 §7의2
+                  </a>
+                  {' · '}
+                  <a
+                    href="https://www.bok.or.kr/portal/main/contents.do?menuNo=200643"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 hover:underline"
+                  >
+                    한국은행 기준금리
+                  </a>
+                </p>
+              </section>
 
               {/* GEO/AEO Structured Summary */}
               <StructuredSummary
