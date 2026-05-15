@@ -107,9 +107,14 @@ jobs:
           git push origin "$BRANCH"
           # 라벨은 repo 에 없을 수 있어 별도 단계로 처리 (PR 생성 자체 실패 방지)
           PR_URL=$(gh pr create --base main --head "$BRANCH" \
-            --title "feat(guide): ${SLUG} 자동 초안 (운영자 검수 대기)" \
-            --body "Auto-generated draft. Operator review SLA: 30 minutes. Topic: ${TITLE}")
+            --title "feat(guide): ${SLUG} 자동 초안 (auto-merge 활성)" \
+            --body "Auto-generated draft. **Auto-merge enabled** — 모든 CI 게이트(quality-gate / lighthouse / E2E / SEO regression / Cloudflare Pages) 통과 시 자동 squash 머지 + 브랜치 삭제.\n\n**탈출구**: 머지 차단 원하면 PR 페이지에서 **Disable auto-merge** 클릭 또는 PR을 close. 검수 SLA 보호 차원에서 한 번 검토 후 결정.\n\nTopic: ${TITLE}")
           echo "PR created: $PR_URL"
+          # 자동 머지 활성화 — 모든 필수 status check 통과 시 자동 squash 머지 + 브랜치 삭제.
+          # 게이트 fail 시 PR 은 open 상태로 남음 (안전장치). hold 원하면 운영자가 수동으로
+          # "Disable auto-merge" 클릭하거나 PR close. continue-on-error 미사용 — 활성화 실패 시 fail.
+          gh pr merge "$PR_URL" --auto --squash --delete-branch
+          echo "Auto-merge enabled. CI 게이트 전부 green 시 자동 머지·브랜치 삭제. 차단 원하면 PR 에서 'Disable auto-merge' 클릭."
           # 라벨 적용은 best-effort (실패 무시)
           gh pr edit "$PR_URL" --add-label "ralph" 2>/dev/null || true
           gh pr edit "$PR_URL" --add-label "auto-guide" 2>/dev/null || true
