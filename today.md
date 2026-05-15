@@ -7,6 +7,10 @@
 
 
 
+
+## 2026-05-16
+
+- [가이드] [7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost](https://calculatorhost.com/guide/july-vat-and-tax-withholding/) — 7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 동시에 필요한 시기입니다. 신고 기한·공제 항목·준비 서류를 미리 파악해 놓치는 항목 없이 관리하세요.
 ## 2026-05-15
 
 - [가이드] [가족 간 차용증·금전대여 증여세 정확 정리 2026](https://calculatorhost.com/guide/family-loan-agreement-gift-tax-avoidance/) — 가족 간 금전대여 무이자·저리 대출로 적정이자율 차액 정리·적정이자율 4.6% 차액·1,000만원 면제 한도·차용증 작성·실질과세 입증·함정 5가지·신고 완벽 정리.
