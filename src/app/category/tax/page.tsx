@@ -11,6 +11,13 @@ import {
   buildFaqPageJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { GUIDES } from '@/app/guide/page';
+import {
+  CATEGORY_CALCULATORS,
+  GUIDE_CATEGORY_LABEL,
+  CROSS_GUIDES,
+  CATEGORY_GLOSSARY,
+} from '@/lib/data/category-mapping';
 
 const URL = 'https://calculatorhost.com/category/tax/';
 
@@ -274,7 +281,93 @@ export default function TaxCategoryPage() {
                     </div>
                   ))}
                 </div>
+
+                {/* SSoT 카테고리 매핑 (CATEGORY_CALCULATORS.tax) 中 위 카드에 없는 추가 계산기.
+                    누락 보강 — 종부세·증여세·상속세·자동차세·자녀세액공제 등 24편 묻힘 해소. */}
+                {(() => {
+                  const cardSlugs = new Set(CALCULATORS.map((c) => c.href.replace('/calculator/', '')));
+                  const additional = CATEGORY_CALCULATORS.tax.filter((s) => !cardSlugs.has(s));
+                  if (additional.length === 0) return null;
+                  return (
+                    <div className="mt-6 rounded-lg border border-border-base bg-bg-card p-5">
+                      <h3 className="mb-3 text-lg font-semibold text-text-primary">
+                        추가 세금 계산기 ({additional.length}개)
+                      </h3>
+                      <ul className="grid gap-2 sm:grid-cols-2">
+                        {additional.map((slug) => (
+                          <li key={slug}>
+                            <Link
+                              href={`/calculator/${slug}/`}
+                              className="text-primary-600 hover:underline dark:text-primary-500"
+                            >
+                              → /calculator/{slug}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  );
+                })()}
               </section>
+
+              {/* 관련 가이드 — GUIDES 카테고리별 자동 필터 + CROSS_GUIDES 추가 매핑. SSoT 단일 source. */}
+              {(() => {
+                const labels = GUIDE_CATEGORY_LABEL.tax;
+                const cross = new Set(CROSS_GUIDES.tax);
+                const related = GUIDES.filter((g) => labels.includes(g.category) || cross.has(g.slug));
+                if (related.length === 0) return null;
+                return (
+                  <section aria-label="관련 가이드" className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
+                    <h2 className="text-2xl font-bold text-text-primary">
+                      관련 가이드 ({related.length}편)
+                    </h2>
+                    <p className="text-sm text-text-secondary">
+                      세금 절세·신고 전략을 정리한 실전 가이드. AI Overview 인용 가능한 §N 법조항 기반 정확 답변.
+                    </p>
+                    <ul className="grid gap-2 sm:grid-cols-2">
+                      {related.map((g) => (
+                        <li key={g.slug}>
+                          <Link
+                            href={`/guide/${g.slug}/`}
+                            className="text-primary-600 hover:underline dark:text-primary-500"
+                          >
+                            → {g.title}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </section>
+                );
+              })()}
+
+              {/* 관련 용어 — /glossary/ deep-link (sectionAnchor + 핵심 용어 명시). */}
+              {(() => {
+                const ref = CATEGORY_GLOSSARY.tax;
+                if (!ref) return null;
+                return (
+                  <section aria-label="관련 용어" className="space-y-3 rounded-lg border border-border-base bg-bg-card p-6">
+                    <h2 className="text-2xl font-bold text-text-primary">관련 용어</h2>
+                    <ul className="flex flex-wrap gap-2">
+                      {ref.highlightTerms.map((term) => (
+                        <li key={term}>
+                          <Link
+                            href={`/glossary/#term-${encodeURIComponent(term)}`}
+                            className="rounded-chip border border-border-base bg-bg-base px-3 py-1.5 text-sm text-text-primary hover:border-primary-500 hover:text-primary-500"
+                          >
+                            {term}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                    <Link
+                      href={`/glossary/#${encodeURIComponent(ref.sectionAnchor)}`}
+                      className="text-sm text-primary-600 hover:underline dark:text-primary-500"
+                    >
+                      → 용어사전 전체 보기 ({ref.sectionAnchor})
+                    </Link>
+                  </section>
+                );
+              })()}
 
               {/* 사용 시점 가이드 */}
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
