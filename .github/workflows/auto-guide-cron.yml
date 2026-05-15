@@ -23,7 +23,9 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # PAT 사용 — 브랜치 push 와 PR 생성을 동일 자격으로 수행 (권한 일관성).
+          # GITHUB_TOKEN 으로는 createPullRequest GraphQL 거부되어 PAT 필요.
+          token: ${{ secrets.GH_PAT }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -87,7 +89,10 @@ jobs:
       - name: Create PR
         if: steps.generate.outputs.status == 'generated'
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # PAT 사용 — GITHUB_TOKEN 은 GraphQL createPullRequest 거부 (Settings > Actions
+          # > "Allow GitHub Actions to create and approve pull requests" off 시).
+          # PAT(repo scope) 로 봇 외 자격으로 PR 생성 → 권한 게이트 우회.
+          GH_TOKEN: ${{ secrets.GH_PAT }}
         run: |
           set -e
           SLUG="${{ steps.generate.outputs.slug }}"
