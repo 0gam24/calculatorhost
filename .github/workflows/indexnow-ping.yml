@@ -33,10 +33,15 @@ jobs:
           curl -fsS "https://www.google.com/ping?sitemap=https://calculatorhost.com/sitemap.xml" || echo "Google ping skipped"
 
       - name: Bing/Yandex IndexNow
-        if: ${{ secrets.INDEXNOW_KEY != '' }}
         env:
           KEY: ${{ secrets.INDEXNOW_KEY }}
         run: |
+          # secret 가드 — auto-guide-cron 의 "Check secret" 패턴 재사용 (step if 에 secrets
+          # 컨텍스트는 GitHub Actions 가 거부하므로 env 경유 + bash 가드).
+          if [ -z "$KEY" ]; then
+            echo "INDEXNOW_KEY 미설정 — Bing/Yandex 핑 skip (Google/Naver step 은 그대로 진행)"
+            exit 0
+          fi
           # 전체 사이트 알림 (sitemap.xml 변경 통보)
           curl -fsS -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json" \
