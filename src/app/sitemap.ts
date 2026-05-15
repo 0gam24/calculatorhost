@@ -129,6 +129,7 @@ const GUIDE_SLUGS = [
   'self-farming-land-100-percent-exemption',
   // 가족 간 차용증·금전대여 증여세 가이드 (4티어 핫 키워드 — 상증법 §41의4 / 시행령 §31의5 적정이자율 4.6%)
   'family-loan-agreement-gift-tax-avoidance',
+  'july-vat-and-tax-withholding',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
