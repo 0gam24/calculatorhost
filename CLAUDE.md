@@ -2,6 +2,72 @@
 
 **한국 성인 대상 금융/세금/생활 계산기 사이트. YMYL 카테고리. AdSense 수익화.**
 
+## 💰 북극성 — 모든 작업은 AdSense 수익 함수로 환산되어야 한다
+
+> **영구 우선순위 (운영자 명시, 2026-05-15)**
+
+### (a) 수익 함수 — 모든 결정의 평가 기준
+
+```
+수익 ≈ 색인 페이지 수  ×  페이지당 트래픽  ×  페이지 RPM
+        (indexing)        (traffic)            (rpm)
+```
+
+모든 코드 변경·콘텐츠 발행·자동화 결정은 위 함수의 어느 항을 어떻게 움직이는지 명시해야 한다.
+어느 항에도 기여하지 않거나, 한 항을 떨어뜨리는 변경은 **거부 또는 보류**.
+
+### (b) PR/커밋 메시지 컨벤션 — `[revenue-lever:]` 태그 1개 의무
+
+모든 PR 본문 또는 커밋 메시지 첫 줄에 다음 5개 中 정확히 1개 태그:
+
+| 태그 | 의미 | 예시 작업 |
+|---|---|---|
+| `indexing` | 색인 페이지 수 ↑ | sitemap·내부링크·robots·404 수정·canonical |
+| `traffic` | 페이지당 트래픽 ↑ | SEO 메타·콘텐츠·키워드·§N·구조화 데이터·답 블록 |
+| `rpm` | 페이지 RPM ↑ | 광고 배치·CTR 후크·체류·페이지뷰 mesh |
+| `cwv` | Core Web Vitals 개선 | LCP·INP·CLS (간접 RPM·순위 영향) |
+| `guard` | 정책·보안·회귀 방지 | YMYL·AdSense 정책·typecheck·테스트. **사용 시 어떤 수익 표면을 보호하는지 명시 필수** |
+
+예: `feat(content): 양도세 가이드 [revenue-lever: indexing+traffic]`
+
+### (c) PR 본문에 "수익화 영향 평가" 3줄 의무
+
+```
+- 영향 페이지: <URL>
+- 수익 항: indexing/traffic/rpm 中 어느 항을 어떻게 움직이는가
+- 부작용: 다른 수익 항을 떨어뜨릴 위험 (CLS·정책·회귀)
+```
+
+### (d) 자동 발행(auto-guide) quality-gate 강화
+
+`scripts/check-guide-quality.mjs` 가 다음을 추가 검증:
+- 생성 가이드 `frontmatter` 또는 메타에 `[revenue-lever:]` 태그 있는지 (없으면 fail)
+- 토픽 클러스터 연결 명시 (관련 계산기·기존 가이드와의 cross-link 1개 이상)
+- 단순 워드카운트만 통과한 고립 페이지(내부링크 0)는 fail
+
+### 가드레일 위계 (수익 < 가드레일)
+
+| 우선순위 | 항목 |
+|---|---|
+| 1 (절대) | YMYL 정확성·AdSense 정책·법적 의무 |
+| 2 (절대) | 회귀 차단 — Vitest 953 PASS·typecheck·lint·Lighthouse CI |
+| 3 (북극성) | AdSense 수익 함수 (indexing × traffic × rpm) |
+| 4 | 운영자 의사결정 보조 |
+
+가드레일은 **수익 추구의 제약**이지 우선순위 위가 아니나, 수익 위해 가드레일 위반 X.
+
+### 금지 — 북극성 무관 자율 작업
+
+- 추상화·리팩토링 자체가 목적인 코드 정리 (수익 인과 사슬 부재)
+- "더 깔끔한 구조" 미학적 변경 (사용자 미인지)
+- 운영자 명시 외 자율 미션 확장 (auto-merge 머지 PR 외 추가 작업 X)
+
+### 예외 — 북극성 무관해도 OK
+
+- 회귀 차단 (테스트·린트·typecheck) → `[revenue-lever: guard]`
+- 정책 준수 (AdSense·개인정보·법적 의무) → `[revenue-lever: guard]`
+- 운영자 명시 비-수익 작업 (도큐먼트·인프라·정리) → `[revenue-lever: guard]`
+
 ## 스택
 - Next.js 15 App Router (`output: 'export'`), TypeScript, Tailwind
 - 배포: GitHub → Cloudflare Pages

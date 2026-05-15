@@ -272,7 +272,9 @@ ${s.paragraphs.map((p) => `                <p className="leading-relaxed text-te
     )
     .join('\n');
 
-  return `import type { Metadata } from 'next';
+  return `// [revenue-lever: traffic+indexing] — 자동 발행 가이드는 트래픽·색인 표면 동시 증가 (북극성 룰).
+import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
@@ -388,6 +390,16 @@ ${authorityJsx}
               </section>
 
               <ShareButtons title={${jsString(json.title)}} url={URL} />
+
+              {/* 관련 자원 — 내부 링크 mesh (북극성 룰: 고립 페이지 차단, 토픽 클러스터 형성) */}
+              <section aria-label="관련 자원" className="card space-y-2">
+                <h2 className="text-lg font-semibold">관련 자원</h2>
+                <ul className="space-y-1 text-sm">
+                  <li>→ <Link href="/guide/" className="text-primary-600 hover:underline dark:text-primary-500">가이드 모음 (전체)</Link></li>
+                  <li>→ <Link href="/glossary/" className="text-primary-600 hover:underline dark:text-primary-500">용어사전 (28개 용어)</Link></li>
+                  <li>→ <Link href="/" className="text-primary-600 hover:underline dark:text-primary-500">홈 — 31개 계산기</Link></li>
+                </ul>
+              </section>
 
               <MainBackrefBox mainCategoryUrl={getMainCategoryUrl('tax')} />
 

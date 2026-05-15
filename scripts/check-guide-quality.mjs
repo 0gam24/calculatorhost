@@ -205,6 +205,42 @@ export function extractStatuteSections(src) {
 }
 
 // ─────────────────────────────────────────────────────────────
+// 7. 북극성 — revenue-lever 태그 (CLAUDE.md "💰 북극성" 영구 룰)
+// ─────────────────────────────────────────────────────────────
+// 자동 발행 가이드는 metadata 또는 frontmatter 에 [revenue-lever:] 태그 1개 의무.
+// 태그 누락 = 수익 인과 사슬 미정의 = 고립 페이지 위험 → fail.
+// 5개 허용 태그: indexing | traffic | rpm | cwv | guard
+// 복수 태그 OK ([revenue-lever: indexing+traffic]).
+const REVENUE_LEVER_PATTERN = /\[revenue-lever:\s*(indexing|traffic|rpm|cwv|guard)(?:[+\s,|]+(?:indexing|traffic|rpm|cwv|guard))*\s*\]/i;
+export function checkRevenueLever(src) {
+  const found = REVENUE_LEVER_PATTERN.test(src);
+  return {
+    pass: found,
+    severity: found ? 'green' : 'red',
+    label: 'revenue-lever 태그 (북극성 룰)',
+    hint: found ? null : '메타 또는 본문 주석에 [revenue-lever: indexing|traffic|rpm|cwv|guard] 1개 추가 필수',
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
+// 8. 토픽 클러스터 — 내부 링크 1개 이상 (고립 페이지 차단)
+// ─────────────────────────────────────────────────────────────
+// 단순 워드카운트만 통과한 고립 페이지(내부링크 0)는 색인 표면 보강 효과 없음 → fail.
+// /calculator/ 또는 /guide/ 또는 /glossary/ 또는 /category/ 내부 링크 최소 1개.
+const INTERNAL_LINK_PATTERN = /href=["'`](\/(calculator|guide|glossary|category)\/[^"'`]+)["'`]/g;
+export function checkInternalLinks(src, threshold = 1) {
+  const matches = Array.from(src.matchAll(INTERNAL_LINK_PATTERN));
+  const count = matches.length;
+  return {
+    pass: count >= threshold,
+    severity: count >= threshold ? 'green' : 'red',
+    label: `내부 링크 ${threshold}+ (토픽 클러스터)`,
+    found: count,
+    hint: count === 0 ? '관련 계산기·가이드·용어 cross-link 최소 1개 필수 (고립 페이지 차단)' : null,
+  };
+}
+
+// ─────────────────────────────────────────────────────────────
 // 통합 검증 (게이트 의사결정)
 // ─────────────────────────────────────────────────────────────
 export function validateGuideContent(src) {
@@ -213,6 +249,8 @@ export function validateGuideContent(src) {
     checkAuthorityLinks(src),
     checkForbiddenPatterns(src),
     checkAiDisclosure(src),
+    checkRevenueLever(src),
+    checkInternalLinks(src),
   ];
 
   const failures = checks.filter((c) => !c.pass);

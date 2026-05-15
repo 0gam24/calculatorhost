@@ -23,4 +23,19 @@ argument-hint: <페이지경로 또는 all> 예) /audit-adsense all
 
 산출물: `🚨 계정 정지 리스크 / 🔴 정책 위반 / 🟡 CWV 영향 / 🟢 권장` 분류 리포트.
 
-근거: `.claude/skills/adsense-policy-reference/REFERENCE.md`
+## 💰 수익화 영향 평가 (북극성 룰 — 출력 마지막 섹션 의무)
+
+리포트 末尾에 다음 평가 자동 출력:
+
+```
+### 수익화 영향 평가
+- 영향 페이지: <대상 URL 또는 all>
+- 수익 항: rpm (광고 슬롯 = RPM 직격)
+- 부작용:
+    · CLS 회귀 위험: <있음/없음>
+    · 광고 밀도 ≤ 4 위반: <있음/없음>
+    · 정책 위반 시 계정 정지 → 모든 수익 표면 0% (최악 시나리오)
+- revenue-lever 권장 태그: rpm (개선) 또는 guard (정책 보호)
+```
+
+근거: `.claude/skills/adsense-policy-reference/REFERENCE.md` + 루트 `CLAUDE.md` "💰 북극성"
