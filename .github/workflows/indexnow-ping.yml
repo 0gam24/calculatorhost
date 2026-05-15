@@ -11,14 +11,20 @@ name: IndexNow + Sitemap Ping
 #  4. 워크플로 활성화
 
 on:
-  workflow_run:
-    workflows: ['Cloudflare Pages']  # Cloudflare 배포 완료 후 트리거
-    types: [completed]
+  # main push 트리거 — 새 가이드/계산기 추가 또는 sitemap 변경 시 즉시 핑.
+  # 'Cloudflare Pages' workflow_run 트리거는 외부 통합이라 GitHub workflow 가 아님 → 절대 작동 안 함.
+  # main push 면 Cloudflare Pages 가 별도로 빌드·배포하고, 이 워크플로는 동시에 핑 발사 (병렬 안전).
+  # 빌드·배포 완료 전이라도 IndexNow 는 sitemap URL 만 받으므로 무해 (Bing 이 자체 fetch).
+  push:
+    branches: [main]
+    paths:
+      - 'src/app/**/page.tsx'
+      - 'src/app/sitemap.ts'
+      - 'public/sitemap.xml'
   workflow_dispatch:  # 수동 실행도 허용
 
 jobs:
   ping:
-    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     steps:
       - name: Google sitemap ping (legacy 보조 채널)
