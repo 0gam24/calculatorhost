@@ -110,6 +110,15 @@ jobs:
             --title "feat(guide): ${SLUG} 자동 초안 (auto-merge 활성)" \
             --body "Auto-generated draft. **Auto-merge enabled** — 모든 CI 게이트(quality-gate / lighthouse / E2E / SEO regression / Cloudflare Pages) 통과 시 자동 squash 머지 + 브랜치 삭제.\n\n**탈출구**: 머지 차단 원하면 PR 페이지에서 **Disable auto-merge** 클릭 또는 PR을 close. 검수 SLA 보호 차원에서 한 번 검토 후 결정.\n\nTopic: ${TITLE}")
           echo "PR created: $PR_URL"
+          # PR 이 unstable 상태를 벗어날 때까지 최대 ~90초 대기 (status checks 등록 시간 확보).
+          # gh pr create 직후 GitHub 이 status checks 를 등록하기 전이면 PR 은 UNSTABLE 상태이고
+          # enablePullRequestAutoMerge GraphQL 이 거부됨. polling 으로 stable 진입 후 활성화.
+          for i in $(seq 1 18); do
+            STATE=$(gh pr view "$PR_URL" --json mergeStateStatus --jq '.mergeStateStatus')
+            echo "merge state: $STATE (try $i)"
+            if [ "$STATE" != "UNSTABLE" ] && [ "$STATE" != "UNKNOWN" ]; then break; fi
+            sleep 5
+          done
           # 자동 머지 활성화 — 모든 필수 status check 통과 시 자동 squash 머지 + 브랜치 삭제.
           # 게이트 fail 시 PR 은 open 상태로 남음 (안전장치). hold 원하면 운영자가 수동으로
           # "Disable auto-merge" 클릭하거나 PR close. continue-on-error 미사용 — 활성화 실패 시 fail.
