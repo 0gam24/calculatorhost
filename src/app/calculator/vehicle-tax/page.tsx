@@ -22,11 +22,15 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/vehicle-tax/';
 
 export const metadata: Metadata = {
-  title: '자동차세 계산기 2026 | 1600cc·2000cc·3000cc 배기량별 | calculatorhost',
+  // 검색 의도 "자동차세 얼마" 직접 흡수 + 즉답 후크 + 연납 6.4% 구체 숫자.
+  // 한글 33자 — Google SERP 모바일 안전 폭. "calculatorhost" 브랜드는 SERP 도메인으로 노출됨.
+  title: '자동차세 얼마? 배기량별 즉시 계산 2026 — 연납 6.4% 할인',
+  // 의도 키워드("얼마") + 페르소나("내 차") + 구체 cc + 페이지 실제 산출 항목 + 신뢰 신호("무료/로그인 없음").
   description:
-    '1600cc·2000cc·2400cc·3000cc 등 배기량별 자동차세 정확한 금액 즉시 계산. 2026년 연납 6.4% 할인·노후차 경감 자동 반영. 자동차세금 계산기 무료, 회원가입 불필요.',
+    '내 차 배기량(1600cc·2000cc·3000cc 등)만 입력하면 자동차세 + 지방교육세 즉시 산출. 2026년 연납 6.4% 할인·노후차 경감 자동 반영. 회원가입·로그인 없이 무료.',
   keywords: [
     '자동차세 계산기',
+    '자동차세 얼마',
     '자동차세 금액',
     '자동차세금계산기',
     '1600cc 자동차세',
@@ -37,16 +41,16 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '자동차세 계산기 2026 | 배기량별 세율·연납 할인',
-    description: '배기량과 차령으로 자동차세를 정확히 계산하세요.',
+    title: '자동차세 얼마? 배기량별 즉시 계산 2026',
+    description: '내 차 배기량만 입력 → 자동차세 + 지방교육세 즉시 산출. 연납 6.4% 할인·노후차 경감 자동.',
     url: URL,
     type: 'website',
 
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 계산기 2026',
-    description: '자동차세 · 지방교육세 · 연납 할인 계산',
+    title: '자동차세 얼마? 배기량별 즉시 계산 2026',
+    description: '배기량 입력 → 자동차세·지방교육세 즉시 산출. 연납 6.4% 할인 자동 반영.',
   },
 };
 
@@ -190,7 +194,7 @@ export default function VehicleTaxPage() {
                     { name: '자동차세' },
                   ]}
                 />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">자동차세 계산기 2026</h1>
+                <h1 className="mb-3 text-4xl font-bold tracking-tight">자동차세 얼마? 배기량별 즉시 계산 2026</h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   배기량과 차령으로 자동차세·지방교육세·연납 할인을 정확히 계산하세요.
                 </p>
