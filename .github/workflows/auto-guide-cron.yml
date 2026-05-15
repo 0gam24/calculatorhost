@@ -97,7 +97,7 @@ jobs:
           set -e
           SLUG="${{ steps.generate.outputs.slug }}"
           TITLE="${{ steps.generate.outputs.title }}"
-          BRANCH="ralph/auto-guide-${SLUG}"
+          BRANCH="ralph/auto-guide-${SLUG}-$(date +%Y%m%d-%H%M%S)"
           DATE=$(date -u +%Y-%m-%d)
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
