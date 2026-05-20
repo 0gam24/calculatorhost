@@ -152,6 +152,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['시즈널'],
   },
   {
+    slug: 'income-tax-late-filing-penalty-2026',
+    title: '종합소득세 무신고·지연 가산세 2026 정확 계산',
+    description:
+      '5월 31일 마감 임박! 무신고가산세 20% + 납부지연가산세 일 0.022% 정확 계산 + 자진신고 감면 50~10% 타이밍 + 환급 상실 위험까지 완벽 정리.',
+    category: '세금',
+    publishedAt: '2026-05-20',
+    readingMinutes: 9,
+    seasonal: '5월 마감 직전 최후의 선택',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
     slug: 'june-property-tax',
     title: '재산세 완벽 가이드 (2026) — 6월 부과·7월 납부·공정시장가액 60%',
     description:

@@ -130,6 +130,8 @@ const GUIDE_SLUGS = [
   // 가족 간 차용증·금전대여 증여세 가이드 (4티어 핫 키워드 — 상증법 §41의4 / 시행령 §31의5 적정이자율 4.6%)
   'family-loan-agreement-gift-tax-avoidance',
   'july-vat-and-tax-withholding',
+  // 종합소득세 무신고·지연 가산세 (4티어 핫 키워드 — 국세기본법 §47의2 / §47의4 / §48 / 5월 31일 마감 시즈널)
+  'income-tax-late-filing-penalty-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
