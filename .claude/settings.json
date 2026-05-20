@@ -2,6 +2,9 @@
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "permissions": {
     "allow": [
+      "Bash(git pull --rebase:*)",
+      "Bash(git push origin main)",
+      "Bash(git push origin main:*)",
       "Bash(npm:*)",
       "Bash(npx:*)",
       "Bash(node:*)",
@@ -160,9 +163,6 @@
     "ask": [
       "Bash(rm:*)",
       "Bash(git reset:*)",
-      "Bash(git pull --rebase:*)",
-      "Bash(git push origin main)",
-      "Bash(git push origin main:*)",
       "Bash(npm publish:*)",
       "Bash(wrangler deploy:*)",
       "Bash(vercel deploy:*)",
