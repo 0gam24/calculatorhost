@@ -132,6 +132,8 @@ const GUIDE_SLUGS = [
   'july-vat-and-tax-withholding',
   // 종합소득세 무신고·지연 가산세 (4티어 핫 키워드 — 국세기본법 §47의2 / §47의4 / §48 / 5월 31일 마감 시즈널)
   'income-tax-late-filing-penalty-2026',
+  // 프리랜서 단순경비율 vs 기준경비율 (4티어 핫 키워드 — 소득세법 §80 / 시행령 §143·§145 / 5월 31일 마감 시즈널)
+  'freelancer-simplified-vs-standard-expense-rate-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

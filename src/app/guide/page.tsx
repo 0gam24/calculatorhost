@@ -163,6 +163,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드'],
   },
   {
+    slug: 'freelancer-simplified-vs-standard-expense-rate-2026',
+    title: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준',
+    description:
+      '5월 31일까지 10일! 프리랜서·1인사업자 경비율 선택으로 50만~200만 원 차이. 단순(6~80%) vs 기준경비율 비교·업종별 매출 기준·실경비 시뮬 3가지·함정 5가지·신고 체크리스트.',
+    category: '세금',
+    publishedAt: '2026-05-21',
+    readingMinutes: 11,
+    seasonal: '5월 31일까지 경비율 선택',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
     slug: 'june-property-tax',
     title: '재산세 완벽 가이드 (2026) — 6월 부과·7월 납부·공정시장가액 60%',
     description:
