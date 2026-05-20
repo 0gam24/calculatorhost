@@ -96,21 +96,16 @@
       "Bash(curl * | sh)",
       "Bash(curl * | bash)",
       "Bash(wget * | sh)",
-
       "Bash(git push --force:*)",
       "Bash(git push -f:*)",
       "Bash(git push --force-with-lease:*)",
-
       "Bash(git reset --hard origin/main)",
       "Bash(git clean -fdx)",
       "Bash(git branch -D main)",
       "Bash(git branch -D master)",
       "Bash(chmod 777:*)",
-
-      
       "Bash(gh repo create:*)",
       "Bash(gh repo delete:*)",
-
       "Write(.env.production)",
       "Write(.env.production.local)",
       "Write(**/secrets.json)",
@@ -144,7 +139,6 @@
       "Read(**/.netrc)",
       "Read(~/.aws/**)",
       "Read(~/.ssh/**)",
-
       "Bash(cat .env*)",
       "Bash(cat .my*)",
       "Bash(cat *.my)",
@@ -166,11 +160,12 @@
     "ask": [
       "Bash(rm:*)",
       "Bash(git reset:*)",
-      "Bash(git rebase:*)",
+      "Bash(git pull --rebase:*)",
+      "Bash(git push origin main)",
+      "Bash(git push origin main:*)",
       "Bash(npm publish:*)",
       "Bash(wrangler deploy:*)",
       "Bash(vercel deploy:*)",
-
       "Write(.env)",
       "Write(.env.local)",
       "Write(.env.development.local)",
