@@ -13,6 +13,10 @@
 
 
 
+
+## 2026-05-22
+
+- [가이드] [프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준](https://calculatorhost.com/guide/freelancer-simplified-vs-standard-expense-rate-2026/) — 5월 31일까지 10일! 프리랜서·1인사업자 경비율 선택 기준. 단순(6~80%) vs 기준경비율 비교·업종별 매출 기준·실경비가 크면 기준이 유리·추계신고 vs 장부신고 의무·매출 경계값별 시뮬.
 ## 2026-05-21
 
 - [가이드] [종합소득세 가산세 2026 무신고·지연 계산 | calculatorhost](https://calculatorhost.com/guide/income-tax-late-filing-penalty-2026/) — 5월 31일 마감 11일 전! 종합소득세 무신고가산세 20% + 납부지연가산세 일 0.022% 계산 방법·자진신고 감면 50~10% 타이밍·부정행위 40% 중과·공식 계산기 제공.
