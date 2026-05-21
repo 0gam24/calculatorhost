@@ -163,6 +163,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드'],
   },
   {
+    slug: 'n-jobber-comprehensive-income-tax-2026',
+    title: 'N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일 선택 기준',
+    description:
+      '연봉 5천만+부업 2천만, 누진세율 24% 상향? 근로소득 연말정산 후 5월 종소세 신고는 왜 필수? 소득 종류별 합산·분리 기준·기타소득 300만 분리과세·금융소득 2천만 합산 기준·누진세율 효과·세액 시뮬 3가지.',
+    category: '근로',
+    publishedAt: '2026-05-21',
+    readingMinutes: 11,
+    seasonal: '5월 31일까지 합산 신고',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
     slug: 'freelancer-simplified-vs-standard-expense-rate-2026',
     title: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준',
     description:

@@ -134,6 +134,8 @@ const GUIDE_SLUGS = [
   'income-tax-late-filing-penalty-2026',
   // 프리랜서 단순경비율 vs 기준경비율 (4티어 핫 키워드 — 소득세법 §80 / 시행령 §143·§145 / 5월 31일 마감 시즈널)
   'freelancer-simplified-vs-standard-expense-rate-2026',
+  // N잡러 종합소득세 합산 신고 (4티어 핫 키워드 — 소득세법 §14 / §55 / §70 / 5월 31일 마감 시즈널)
+  'n-jobber-comprehensive-income-tax-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
