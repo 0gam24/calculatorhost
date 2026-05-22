@@ -17,7 +17,8 @@ export const metadata: Metadata = {
   applicationName: 'calculatorhost',
   authors: [{ name: 'calculatorhost' }],
   generator: 'Next.js',
-  keywords: ['계산기', '세금 계산기', '연봉 계산기', '대출 계산기', '양도소득세', '취득세'],
+  // 글로벌 keywords 제거 (2026-05-21): 페이지별 메타 keywords 가 진짜 토픽을 반영하도록 상속 차단.
+  // Google 은 메타 keywords 무시하나, AI Overview/LLM 인용 신호용으로 페이지마다 명시.
   referrer: 'origin-when-cross-origin',
   robots: {
     index: true,

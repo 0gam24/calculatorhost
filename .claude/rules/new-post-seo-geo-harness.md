@@ -129,6 +129,10 @@
 - [ ] **JSON-LD 5종 유효성**: schema.org validator (FAQPage 필수, Speakable 음성 태그, ISO 8601 날짜)
 - [ ] **법조항 §N ≥ 3개**: `npm run citations:audit` strong 티어
 - [ ] **canonical trailing slash**: `/guide/{slug}/` 형식 통일
+- [ ] **`metadata.keywords` 5~10개 필수** (2026-05-21 추가, 글로벌 layout keywords 상속 차단됨):
+  - 토픽 핵심 키워드 + §N 법조항 번호 1개 + 페르소나·시즌 키워드 포함
+  - 예: `['N잡러 종합소득세', '부업 종합소득세', '직장인 부수입 신고', '5월 종소세 신고', '소득세법 14조']`
+  - articleLd.keywords와 동일 또는 더 풍부하게. Google은 무시하나 LLM 인용 신호용.
 
 ### 4-2. 수동 검토 (메인 스레드 게이트)
 - [ ] **AI Overview 답변 확인**: 우리가 미커버 엣지 케이스 식별 후 본문 추가
