@@ -136,6 +136,12 @@ const GUIDE_SLUGS = [
   'freelancer-simplified-vs-standard-expense-rate-2026',
   // N잡러 종합소득세 합산 신고 (4티어 핫 키워드 — 소득세법 §14 / §55 / §70 / 5월 31일 마감 시즈널)
   'n-jobber-comprehensive-income-tax-2026',
+  // 소득공제 vs 세액공제 (4티어 — 소득세법 §50~§59의5 / 5월 31일 마감 시즈널)
+  'income-deduction-vs-tax-credit-2026',
+  // 사적연금 1,500만 원 분리과세 (4티어 — 소득세법 §14 ③ 9호 / §129 ⑤ / 5월 마감 시즈널 + 은퇴자 페르소나)
+  'private-pension-1500-million-separate-taxation-2026',
+  // 월세 세액공제 (4티어 — 조세특례제한법 §95의2 / 5월 추가 신고 시즌 + 무주택 직장인 페르소나)
+  'monthly-rent-tax-credit-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

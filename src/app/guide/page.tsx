@@ -185,6 +185,39 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
   {
+    slug: 'income-deduction-vs-tax-credit-2026',
+    title: '소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이·계산',
+    description:
+      '5월 31일 종소세 신고! 소득공제(과세표준 먼저 차감) vs 세액공제(세액에서 차감) 어느 쪽이 유리한가? 누진세율 적용 순서·기본공제 250만·표준세액공제 13만 선택권·중복 불가 항목·4티어 절세 가이드.',
+    category: '세금',
+    publishedAt: '2026-05-23',
+    readingMinutes: 10,
+    seasonal: '5월 31일까지 신고 준비',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'private-pension-1500-million-separate-taxation-2026',
+    title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | 연령별 세율·신고·절세',
+    description:
+      '연금저축·IRP 1,500만 원 이하 분리과세(3.3~5.5% 저세율) vs 초과분 종합과세. 2024년 상향(1,200만→1,500만) 완벽 이해·연령별 세율·신고 방법·절세 전략·5/31 마감 필수.',
+    category: '세금',
+    publishedAt: '2026-05-23',
+    readingMinutes: 13,
+    seasonal: '5월 31일까지 신고 준비',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'monthly-rent-tax-credit-2026',
+    title: '월세 세액공제 2026 무주택 직장인 환급 계산 | 17% + 750만 한도',
+    description:
+      '무주택 직장인·프리랜서 월세 세액공제 완벽 가이드. 17%/15% 공제율 구분·750만 한도·연말정산 누락 시 5월 추가 신고·신용카드 소득공제와 택일·주의사항 5가지·실전 사례 3개.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-23',
+    readingMinutes: 8,
+    seasonal: '5월 31일까지 신고 준비',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
     slug: 'june-property-tax',
     title: '재산세 완벽 가이드 (2026) — 6월 부과·7월 납부·공정시장가액 60%',
     description:
