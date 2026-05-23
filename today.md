@@ -15,6 +15,12 @@
 
 
 
+
+## 2026-05-24
+
+- [가이드] [소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이·계산](https://calculatorhost.com/guide/income-deduction-vs-tax-credit-2026/) — 5월 31일 종소세 신고! 소득공제(매출 먼저 차감)와 세액공제(세액에서 차감) 어느 쪽이 유리한가? 누진세율 적용 순서·기본공제 250만·표준세액공제 13만 선택권·중복 불가 항목·4티어 절세 가이드.
+- [가이드] [월세 세액공제 2026 무주택 직장인 환급 계산 | calculatorhost](https://calculatorhost.com/guide/monthly-rent-tax-credit-2026/) — 2026년 월세 세액공제 완벽 가이드. 17% vs 15% 공제율, 750만 원 한도, 자격 조건(무주택·7000만 원 이하), 신청 방법, 5월 추가 신고로 환급 받는 법까지 한눈에 정리.
+- [가이드] [사적연금 1,500만 원 분리과세 vs 종합과세 2026 | calculatorhost](https://calculatorhost.com/guide/private-pension-1500-million-separate-taxation-2026/) — 2026년 사적연금 1,500만 원 이하 분리과세(3.3~5.5% 저세율) vs 초과분 종합과세 완벽 가이드. 연령별 세율·신고 방법·절세 전략·5/31 마감 필수 신고.
 ## 2026-05-23
 
 - [가이드] [N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일 선택 기준](https://calculatorhost.com/guide/n-jobber-comprehensive-income-tax-2026/) — 직장 연봉 + 부업 소득 합산 의무? 근로소득 연말정산 완료해도 5월 종소세 신고? 소득 종류별 합산·분리 기준·누진세율 상향 효과·기타소득 300만 분리과세·금융소득 2천만 기준 완벽 정리.
