@@ -142,6 +142,12 @@ const GUIDE_SLUGS = [
   'private-pension-1500-million-separate-taxation-2026',
   // 월세 세액공제 (4티어 — 조세특례제한법 §95의2 / 5월 추가 신고 시즌 + 무주택 직장인 페르소나)
   'monthly-rent-tax-credit-2026',
+  // 종합소득세 환급금 입금 시기 (4티어 — 국세기본법 §51~§52 / 5월 마감 7일 전 시즌 후행 직격)
+  'comprehensive-income-tax-refund-timing-2026',
+  // 종소세 경정청구 5년 (4티어 — 국세기본법 §45의2 / 장기 트래픽 + 시즌 보강)
+  'income-tax-correction-claim-5-year-2026',
+  // 상속주택 양도세 1세대1주택 합가 5년 (4티어 — 소득세법 §89 / 시행령 §155 ② / 양도세 hub 강화)
+  'inherited-house-capital-gains-exemption-5-year-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

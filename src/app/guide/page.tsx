@@ -196,6 +196,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
   {
+    slug: 'comprehensive-income-tax-refund-timing-2026',
+    title: '종합소득세 환급금 입금 시기 2026 | 신고 후 언제 받을까?',
+    description:
+      '5월 신고 후 환급금은 언제 입금될까? 신고 시점별 환급 일정(6월 중순~7월 말) · 계좌 미등록 시 우편 통지 지연 · 가산세 발생 시 자동 차감 · 홈택스 추적 방법 · 환급 우선순위 · 국세기본법 §51-§52 완벽 정리.',
+    category: '세금',
+    publishedAt: '2026-05-24',
+    readingMinutes: 7,
+    seasonal: '5월 신고 후 환급 추적',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
     slug: 'private-pension-1500-million-separate-taxation-2026',
     title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | 연령별 세율·신고·절세',
     description:
@@ -216,6 +227,17 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 8,
     seasonal: '5월 31일까지 신고 준비',
     tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
+    slug: 'income-tax-correction-claim-5-year-2026',
+    title: '경정청구로 5년 내 환급받기 2026 | 누락 공제·세액공제 회수 완벽 가이드',
+    description:
+      '5월 31일까지! 지난 5년 신고 시 누락한 공제(의료비·교육비·월세·기부금·자녀세액공제)로 환급받는 경정청구 완벽 가이드. 5년 기한 정확 계산·자주 누락 항목 8가지·신청 방법 4단계·환급 추적·무신고도 가능.',
+    category: '세금',
+    publishedAt: '2026-05-24',
+    readingMinutes: 9,
+    seasonal: '5월 31일까지 경정청구 신청',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
   {
     slug: 'june-property-tax',
@@ -486,6 +508,16 @@ export const GUIDES: GuideEntry[] = [
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 10,
+    tags: ['4티어'],
+  },
+  {
+    slug: 'inherited-house-capital-gains-exemption-5-year-2026',
+    title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026',
+    description:
+      '상속 후 기존주택 5년 내 양도 시 1세대1주택 비과세(소득세법 §89·시행령 §155②). 양도 순서 핵심·5년은 사망일 기준·상속주택 비과세 제외·공동상속 처리·12억 한도 비례 과세·세금 사례 3개.',
+    category: '세금',
+    publishedAt: '2026-05-24',
+    readingMinutes: 12,
     tags: ['4티어'],
   },
   {
