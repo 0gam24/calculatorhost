@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-24';
 const DATE_MODIFIED = '2026-05-24';
 
 export const metadata: Metadata = {
-  title: '종소세 경정청구 5년 환급 2026 | 누락 공제·세액공제 회수 방법',
+  title: '🔄 종소세 경정청구 5년 환급 2026 | 누락 공제·세액공제 회수',
   description:
     '5월 31일 종소세 마감! 지난 5년 내 잘못 내거나 누락한 공제로 환급받는 경정청구 완벽 가이드. 의료비·교육비·월세·기부금·자녀세액공제 등 자주 누락되는 항목 체크리스트 + 신청 방법 + 환급 일정.',
   keywords: [

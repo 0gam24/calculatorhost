@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-23';
 const DATE_MODIFIED = '2026-05-23';
 
 export const metadata: Metadata = {
-  title: '소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이·계산',
+  title: '🧾 소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이',
   description:
     '5월 31일 종소세 신고! 소득공제(매출 먼저 차감)와 세액공제(세액에서 차감) 어느 쪽이 유리한가? 누진세율 적용 순서·기본공제 250만·표준세액공제 13만 선택권·중복 불가 항목·4티어 절세 가이드.',
   keywords: [

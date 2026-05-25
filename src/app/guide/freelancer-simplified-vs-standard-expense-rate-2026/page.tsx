@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-21';
 const DATE_MODIFIED = '2026-05-21';
 
 export const metadata: Metadata = {
-  title: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준',
+  title: '📊 프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 선택',
   description:
     '5월 31일까지 10일! 프리랜서·1인사업자 경비율 선택 기준. 단순(6~80%) vs 기준경비율 비교·업종별 매출 기준·실경비가 크면 기준이 유리·추계신고 vs 장부신고 의무·매출 경계값별 시뮬.',
   keywords: [

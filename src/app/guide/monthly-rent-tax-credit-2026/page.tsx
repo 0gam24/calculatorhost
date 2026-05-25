@@ -21,7 +21,7 @@ const DATE_PUBLISHED = '2026-05-23';
 const DATE_MODIFIED = '2026-05-23';
 
 export const metadata: Metadata = {
-  title: '월세 세액공제 2026 무주택 직장인 환급 계산 | calculatorhost',
+  title: '🔑 월세 세액공제 2026 무주택 직장인 환급 계산 | calculatorhost',
   description:
     '2026년 월세 세액공제 완벽 가이드. 17% vs 15% 공제율, 750만 원 한도, 자격 조건(무주택·7000만 원 이하), 신청 방법, 5월 추가 신고로 환급 받는 법까지 한눈에 정리.',
   keywords: [
