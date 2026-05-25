@@ -148,6 +148,12 @@ const GUIDE_SLUGS = [
   'income-tax-correction-claim-5-year-2026',
   // 상속주택 양도세 1세대1주택 합가 5년 (4티어 — 소득세법 §89 / 시행령 §155 ② / 양도세 hub 강화)
   'inherited-house-capital-gains-exemption-5-year-2026',
+  // 종합소득세 분납 신청 1천만 초과 2개월 분할 (4티어 — 소득세법 §77 / 5월 마감 5일 전 시즌 직격)
+  'income-tax-installment-payment-2026',
+  // 의료비 세액공제 3% 초과 15% 700만 한도 (4티어 — 조세특례제한법 §53 / 누락 회복형)
+  'medical-expense-tax-credit-3-percent-2026',
+  // 인적공제 부양가족 150만 (4티어 — 소득세법 §50 §51 / 직계존비속·형제자매 요건)
+  'personal-deduction-dependent-150-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

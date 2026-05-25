@@ -12,7 +12,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-14';
+const DATE_MODIFIED = '2026-05-26';
 
 export const metadata: Metadata = {
   title: '가이드 — 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
@@ -207,6 +207,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드'],
   },
   {
+    slug: 'income-tax-installment-payment-2026',
+    title: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부',
+    description:
+      '5월 31일 마감 5일 전! 종합소득세 분납(분할 납부) 신청 완벽 가이드. 분납 가능 조건(1,000만 초과) · 분납 비율(1~2천만 vs 2천만↑ 다름) · 신청 방법 · 분납 기한(2개월) · 이자·가산세 0원 · 분납 vs 지연 납부 차이 · 사례별 시뮬레이션.',
+    category: '세금',
+    publishedAt: '2026-05-26',
+    readingMinutes: 8,
+    seasonal: '5월 31일까지 5일, 분납 신청',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
     slug: 'private-pension-1500-million-separate-taxation-2026',
     title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | 연령별 세율·신고·절세',
     description:
@@ -237,6 +248,28 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-24',
     readingMinutes: 9,
     seasonal: '5월 31일까지 경정청구 신청',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'medical-expense-tax-credit-3-percent-2026',
+    title: '의료비 세액공제 2026 3% 초과분 15% 공제 | 700만 한도·난임 30%',
+    description:
+      '5월 종소세 신고! 의료비 세액공제 완벽 정리. 총급여 3% 초과분만 세액공제 대상, 공제율 15% (난임 시술 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비 10가지·보험금 차감·한도 구분·시뮬 3가지·신청 방법 4단계.',
+    category: '세금',
+    publishedAt: '2026-05-26',
+    readingMinutes: 8,
+    seasonal: '5월 31일까지 신고 마감',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'personal-deduction-dependent-150-2026',
+    title: '종소세 인적공제 부양가족 150만원 2026 | 직계존비속 형제자매 요건',
+    description:
+      '5월 31일 종합소득세 신고! 인적공제 기본공제 1인당 150만원 이해하기. 배우자·부모·자녀·형제자매·위탁아동 공제 요건·경로우대 100만·장애인 200만 추가공제·연소득 100만원 기준·중복 등록 위험·가산세까지 완벽 정리.',
+    category: '세금',
+    publishedAt: '2026-05-26',
+    readingMinutes: 12,
+    seasonal: '5월 31일까지 신고 마감',
     tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
   {
