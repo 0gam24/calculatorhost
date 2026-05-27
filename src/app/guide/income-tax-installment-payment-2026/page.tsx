@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-26';
 const DATE_MODIFIED = '2026-05-26';
 
 export const metadata: Metadata = {
-  title: '⏰ 종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부',
+  title: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부',
   description:
     '5월 31일 종소세 마감 5일 전! 종합소득세 분납 신청 완벽 가이드. 분납 가능 조건(1,000만 초과) · 분납 비율(1~2천만 vs 2천만↑ 다름) · 신청 방법 · 분납 기한(2개월) · 이자·가산세 0원 · 분납 vs 지연 납부 차이.',
   keywords: [

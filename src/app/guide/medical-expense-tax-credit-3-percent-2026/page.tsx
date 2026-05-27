@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-05-26';
 const DATE_MODIFIED = '2026-05-26';
 
 export const metadata: Metadata = {
-  title: '🏥 의료비 세액공제 2026 3% 초과 15% 공제 700만 한도 | calculatorhost',
+  title: '의료비 세액공제 2026 3% 초과분 15% 공제 700만 한도 | calculatorhost',
   description:
     '5월 종소세 신고! 의료비 세액공제 완벽 정리. 총급여 3% 초과분만 세액공제 대상, 공제율 15% (난임 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비·보험금 차감 의무·한도 구분 + 시뮬 3가지',
   keywords: [

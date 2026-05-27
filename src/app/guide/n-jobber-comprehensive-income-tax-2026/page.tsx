@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-21';
 const DATE_MODIFIED = '2026-05-21';
 
 export const metadata: Metadata = {
-  title: '💼 N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일',
+  title: 'N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일 선택 기준',
   description:
     '직장 연봉 + 부업 소득 합산 의무? 근로소득 연말정산 완료해도 5월 종소세 신고? 소득 종류별 합산·분리 기준·누진세율 상향 효과·기타소득 300만 분리과세·금융소득 2천만 기준 완벽 정리.',
   keywords: [

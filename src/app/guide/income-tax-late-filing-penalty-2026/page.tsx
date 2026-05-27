@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-20';
 const DATE_MODIFIED = '2026-05-20';
 
 export const metadata: Metadata = {
-  title: '⚠️ 종합소득세 가산세 2026 무신고·지연 계산 | calculatorhost',
+  title: '종합소득세 가산세 2026 무신고·지연 계산 | calculatorhost',
   description:
     '5월 31일 마감 11일 전! 종합소득세 무신고가산세 20% + 납부지연가산세 일 0.022% 계산 방법·자진신고 감면 50~10% 타이밍·부정행위 40% 중과·공식 계산기 제공.',
   keywords: [

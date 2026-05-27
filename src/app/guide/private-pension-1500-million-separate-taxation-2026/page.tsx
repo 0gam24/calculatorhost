@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-05-23';
 const DATE_MODIFIED = '2026-05-23';
 
 export const metadata: Metadata = {
-  title: '🏦 사적연금 1,500만 원 분리과세 vs 종합과세 2026 | calculatorhost',
+  title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | calculatorhost',
   description:
     '2026년 사적연금 1,500만 원 이하 분리과세(3.3~5.5% 저세율) vs 초과분 종합과세 완벽 가이드. 연령별 세율·신고 방법·절세 전략·5/31 마감 필수 신고.',
   keywords: [
