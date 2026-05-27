@@ -154,6 +154,12 @@ const GUIDE_SLUGS = [
   'medical-expense-tax-credit-3-percent-2026',
   // 인적공제 부양가족 150만 (4티어 — 소득세법 §50 §51 / 직계존비속·형제자매 요건)
   'personal-deduction-dependent-150-2026',
+  // 사업소득 vs 기타소득 분류 (4티어 — 소득세법 §19 / §21 / §37 / 시행령 §87)
+  'business-income-vs-other-income-classification-2026',
+  // 외국납부세액공제 해외주식·배당 (4티어 블루오션 — 소득세법 §57)
+  'foreign-tax-credit-overseas-stock-2026',
+  // 사망자 종합소득세 상속인 신고 (4티어 블루오션 — 소득세법 §74 / 6개월 기한)
+  'deceased-comprehensive-income-tax-heir-filing-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

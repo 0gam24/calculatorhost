@@ -174,6 +174,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
   {
+    slug: 'business-income-vs-other-income-classification-2026',
+    title: '사업소득 vs 기타소득 분류 기준 2026 | 강사·프리랜서 5월 신고 필독',
+    description:
+      '강사료·원고료가 사업소득일까 기타소득일까? 정기성·반복성 판정 기준·필요경비율 60% vs 80% 세금 2배 차이·누진세 vs 분리과세 22%·4대보험 의무·잘못 분류 시 40% 가산세 위험·300만 분리과세 선택권·법조항 정확화.',
+    category: '세금',
+    publishedAt: '2026-05-28',
+    readingMinutes: 13,
+    seasonal: '5월 31일 신고 직전',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
     slug: 'freelancer-simplified-vs-standard-expense-rate-2026',
     title: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준',
     description:
@@ -623,6 +634,28 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-05-14',
     readingMinutes: 15,
     tags: ['4티어'],
+  },
+  {
+    slug: 'foreign-tax-credit-overseas-stock-2026',
+    title: '외국납부세액공제 2026 해외주식·배당 환급 신청 | 5월 31일',
+    description:
+      '해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 외국납부세액공제. 한도 계산·신청 절차·10년 이월·증빙 서류(1099-DIV)·해외근로소득·양도소득 제외 완벽 정리.',
+    category: '세금',
+    publishedAt: '2026-05-28',
+    readingMinutes: 13,
+    seasonal: '5월 31일까지 신고 마감',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'deceased-comprehensive-income-tax-heir-filing-2026',
+    title: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한·소득세법 §74',
+    description:
+      '사망한 부모·배우자 소득, 상속인이 신고해야 할까? 사망자 종합소득세 신고 의무·기한(사망일+6개월)·신고 대상 소득·상속인 신고 규칙·세액 계산·5월 31일 마감 연장·신고 안 하면 가산세 20% 완벽 정리.',
+    category: '세금',
+    publishedAt: '2026-05-28',
+    readingMinutes: 8,
+    seasonal: '5월 31일까지 신고 마감',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
 ];
 
