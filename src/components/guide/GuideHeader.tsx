@@ -69,7 +69,7 @@ export function GuideHeader({
   className,
 }: GuideHeaderProps) {
   return (
-    <header className={className}>
+    <header className={`card ${className ?? ''}`}>
       {/* Breadcrumb */}
       <Breadcrumb items={breadcrumbItems} />
 
