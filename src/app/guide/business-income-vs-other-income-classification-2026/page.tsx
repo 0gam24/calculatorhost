@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { GuideHeader } from '@/components/guide/GuideHeader';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
@@ -136,29 +136,28 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
           <Sidebar />
           <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '가이드', href: '/guide/' },
-                    { name: '사업소득 vs 기타소득 분류' },
-                  ]}
-                />
-                <p className="mb-2 text-caption text-text-tertiary">세금 · 13분 읽기 · 2026-05-28</p>
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  사업소득 vs 기타소득 분류 기준 2026
-                  <br />
-                  <span className="text-2xl text-text-secondary">— 강사·프리랜서 5월 신고 필독</span>
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  프리랜서·강사·작가라면 주의하세요.
-                  <strong> 받는 돈이 "사업소득"인지 "기타소득"인지에 따라 세금이 2배 달라질 수 있습니다.</strong>
-                  같은 200만 원을 받아도 분류에 따라 필요경비율이 60% 또는 80%로 달라지고, 누진세가 적용될지
-                  분리과세(22%)로 끝날지 결정됩니다. 더 위험한 것은 <strong>잘못 분류할 경우 부정행위로 40% 가산세</strong>
-                  가 부과될 수 있다는 점입니다. 이 가이드에서는 법조항(소득세법 §19·§21·§14)을 기준으로 정확한 분류 방법을
-                  단계별로 설명합니다.
-                </p>
-              </header>
+              <GuideHeader
+                breadcrumbItems={[
+                  { name: '홈', href: '/' },
+                  { name: '가이드', href: '/guide/' },
+                  { name: '사업소득 vs 기타소득 분류' },
+                ]}
+                category="세금"
+                readingMinutes={13}
+                publishedDate="2026-05-28"
+                title="사업소득 vs 기타소득 분류 기준 2026"
+                subtitle="— 강사·프리랜서 5월 신고 필독"
+                lead={
+                  <p data-speakable>
+                    프리랜서·강사·작가라면 주의하세요.
+                    <strong> 받는 돈이 "사업소득"인지 "기타소득"인지에 따라 세금이 2배 달라질 수 있습니다.</strong>
+                    같은 200만 원을 받아도 분류에 따라 필요경비율이 60% 또는 80%로 달라지고, 누진세가 적용될지
+                    분리과세(22%)로 끝날지 결정됩니다. 더 위험한 것은 <strong>잘못 분류할 경우 부정행위로 40% 가산세</strong>
+                    가 부과될 수 있다는 점입니다. 이 가이드에서는 법조항(소득세법 §19·§21·§14)을 기준으로 정확한 분류 방법을
+                    단계별로 설명합니다.
+                  </p>
+                }
+              />
 
               <AdSlot slot="guide-business-vs-other-income-top" format="horizontal" />
 

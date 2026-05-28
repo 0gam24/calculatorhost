@@ -215,14 +215,25 @@
 ### 7-1. 레이아웃 일관성
 - [ ] `mx-auto max-w-3xl space-y-8` 일관 사용 (가이드 페이지)
 - [ ] `data-speakable` 속성을 핵심 답변 문단·테이블에 부여
-- [ ] Header / Sidebar / Footer / Breadcrumb 공통 컴포넌트만 사용
+- [ ] Header / Sidebar / Footer 공통 컴포넌트만 사용
 
-### 7-2. 공통 컴포넌트 props
+### 7-2. GuideHeader 컴포넌트 (신규 가이드 필수)
+**신규 가이드는 반드시 `<GuideHeader>` 사용** (src/components/guide/GuideHeader.tsx)
+- [ ] `breadcrumbItems`: 경로 배열
+- [ ] `category`: "세금" / "금융" / "부동산" 등 (단일 문자열)
+- [ ] `readingMinutes`: 읽기 소요 시간 (숫자)
+- [ ] `publishedDate`: YYYY-MM-DD 형식
+- [ ] `title`: H1 제목
+- [ ] `subtitle`: 부제목 (선택, "— " 포함 호출자 책임)
+- [ ] `lead`: 리드 문단 (`<p data-speakable>` 포함해서 전달)
+
+**목적**: 시각 위계 강화 (breadcrumb 작음 → meta xs → title 4xl → subtitle xl → lead 보더)
+
+### 7-3. 공통 컴포넌트 props
 - [ ] `<FaqSection items={FAQ_ITEMS} />` (직접 list rendering 금지)
 - [ ] `<ShareButtons title=... url=... description=... />`
-- [ ] `<Breadcrumb items={[{name, href}, ...]} />`
 
-### 7-3. JSON-LD helper props
+### 7-4. JSON-LD helper props
 - [ ] `buildWebPageJsonLd({ name: ..., ... })` (NOT `title:`)
 - [ ] `buildArticleJsonLd({ headline: ..., authorName: ..., authorUrl: ... })`
 - [ ] `buildBreadcrumbJsonLd([{ name, url }, ...])` (마지막 항목 url 생략)

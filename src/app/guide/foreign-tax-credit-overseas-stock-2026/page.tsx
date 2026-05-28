@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { GuideHeader } from '@/components/guide/GuideHeader';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
@@ -149,23 +149,24 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
           <Sidebar />
           <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
-              {/* 헤더 */}
-              <header className="space-y-4">
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '가이드', href: '/guide/' },
-                    { name: '외국납부세액공제' },
-                  ]}
-                />
-                <h1 className="text-4xl font-bold tracking-tight" data-speakable>
-                  외국납부세액공제 2026 해외주식·배당 환급 신청
-                </h1>
-                <p className="text-lg text-text-secondary leading-relaxed">
-                  해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 "외국납부세액공제"
-                  완벽 가이드. 한도 계산·신청 절차·10년 이월·증빙 서류까지 5월 31일 신고 직전 필독.
-                </p>
-              </header>
+              <GuideHeader
+                breadcrumbItems={[
+                  { name: '홈', href: '/' },
+                  { name: '가이드', href: '/guide/' },
+                  { name: '외국납부세액공제' },
+                ]}
+                category="세금"
+                readingMinutes={11}
+                publishedDate="2026-05-28"
+                title="외국납부세액공제 2026 해외주식·배당 환급 신청"
+                subtitle="— 미국 15% 원천징수 한도·계산·증빙"
+                lead={
+                  <p data-speakable>
+                    해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 "외국납부세액공제"
+                    완벽 가이드. 한도 계산·신청 절차·10년 이월·증빙 서류까지 5월 31일 신고 직전 필독.
+                  </p>
+                }
+              />
 
               {/* Structured Summary */}
               <section className="card space-y-4 bg-bg-card border border-border-base p-6" data-speakable>

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { GuideHeader } from '@/components/guide/GuideHeader';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
@@ -141,26 +141,25 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
           <Sidebar />
           <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '가이드', href: '/guide/' },
-                    { name: '사망자 종합소득세 상속인 신고' },
-                  ]}
-                />
-                <p className="mb-2 text-caption text-text-tertiary">세금 · 8분 읽기 · 2026-05-28</p>
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  사망자 종합소득세 상속인 신고 2026
-                  <br />
-                  <span className="text-2xl text-text-secondary">— 6개월 기한·신고 의무·상속세와의 차이</span>
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  부모님이나 배우자가 작년(또는 올해 사망)에 소득이 있었다면 세금 신고가 필요합니다.
-                  <strong> 사망하는 순간 소득 신고 의무가 끝나지 않습니다</strong>. 사망 연도의 소득은
-                  <strong> 상속인 전원이 6개월 이내에 종합소득세 신고</strong>해야 합니다. 이 가이드에서는 사망자 소득 신고의 필수 요소를 정리합니다.
-                </p>
-              </header>
+              <GuideHeader
+                breadcrumbItems={[
+                  { name: '홈', href: '/' },
+                  { name: '가이드', href: '/guide/' },
+                  { name: '사망자 종합소득세 상속인 신고' },
+                ]}
+                category="세금"
+                readingMinutes={8}
+                publishedDate="2026-05-28"
+                title="사망자 종합소득세 상속인 신고 2026"
+                subtitle="— 6개월 기한·신고 의무·상속세와의 차이"
+                lead={
+                  <p data-speakable>
+                    부모님이나 배우자가 작년(또는 올해 사망)에 소득이 있었다면 세금 신고가 필요합니다.
+                    <strong> 사망하는 순간 소득 신고 의무가 끝나지 않습니다</strong>. 사망 연도의 소득은
+                    <strong> 상속인 전원이 6개월 이내에 종합소득세 신고</strong>해야 합니다. 이 가이드에서는 사망자 소득 신고의 필수 요소를 정리합니다.
+                  </p>
+                }
+              />
 
               <AdSlot slot="guide-deceased-income-tax-top" format="horizontal" />
 
