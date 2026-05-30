@@ -160,6 +160,12 @@ const GUIDE_SLUGS = [
   'foreign-tax-credit-overseas-stock-2026',
   // 사망자 종합소득세 상속인 신고 (4티어 블루오션 — 소득세법 §74 / 6개월 기한)
   'deceased-comprehensive-income-tax-heir-filing-2026',
+  // 5월 31일 마감 당일 신고 가이드 (시즌 직격 — 소득세법 §70 / 자정 24:00 마감)
+  'may-31-deadline-day-income-tax-filing-2026',
+  // 자진신고 6월 30일 50% 감면 (시즌 후행 — 국세기본법 §48 / 마감 후 첫 30일)
+  'voluntary-filing-june-50-percent-reduction-2026',
+  // 분리과세 vs 종합과세 마스터 (4티어 정리형 — 소득세법 §14 / 사적연금·금융·기타소득)
+  'separate-vs-comprehensive-taxation-master-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

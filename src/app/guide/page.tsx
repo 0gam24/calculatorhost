@@ -229,6 +229,39 @@ export const GUIDES: GuideEntry[] = [
     tags: ['4티어', '시즈널', '핫키워드'],
   },
   {
+    slug: 'may-31-deadline-day-income-tax-filing-2026',
+    title: '5월 31일 마감 당일 종합소득세 신고 2026 | 24시간 라이브 가이드',
+    description:
+      '마감 당일! 지금부터 20분 안에 신고 완료하는 5단계 · 자정 정확히 1분 전까지 정상 신고 · 자정 후 무신고가산세 20% · 홈택스 폭주 회피법(오후 1~6시 권장) · 당일 분납 신청 · 자진신고 감면 50%(6월 신고 시) · 일요일 마감 월요일 연장.',
+    category: '세금',
+    publishedAt: '2026-05-31',
+    readingMinutes: 9,
+    seasonal: '5월 31일 당일 긴급 신고',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
+    slug: 'separate-vs-comprehensive-taxation-master-2026',
+    title: '분리과세 vs 종합과세 2026 마스터 가이드 — 금융소득·사적연금·기타소득 선택 기준',
+    description:
+      '5월 31일 마감 당일! 금융소득(이자배당) 2,000만·사적연금 1,500만·기타소득 300만 한도 내 분리과세 vs 누진세 종합과세 선택 기준. 실제 시뮬 3개로 최대 절세액 계산. 소득세법 §14.',
+    category: '세금',
+    publishedAt: '2026-05-31',
+    readingMinutes: 15,
+    seasonal: '5월 31일 마감 당일 최종 결정',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'voluntary-filing-june-50-percent-reduction-2026',
+    title: '자진신고 6월 50% 감면 가이드 2026 | 종소세 마감 후 가산세 절반',
+    description:
+      '5월 31일 마감 지난 종합소득세, 6월 1일~30일 자진신고로 가산세 50% 감면(1개월 내). 산출세액 500만→가산세 50만(정상 100만). 무신고가산세 20% vs 자진신고 감면. 국세기본법 §48. 6월 신고 완벽 가이드.',
+    category: '세금',
+    publishedAt: '2026-05-31',
+    readingMinutes: 10,
+    seasonal: '6월 1~30일 자진신고 50% 감면',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
     slug: 'private-pension-1500-million-separate-taxation-2026',
     title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | 연령별 세율·신고·절세',
     description:
