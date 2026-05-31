@@ -72,6 +72,21 @@ const FAQ_ITEMS = [
     answer:
       '재산세는 「지방세법」에서 정한 세부담 상한 제도가 있습니다. 전년도 세액의 일정 비율 이상 인상될 수 없도록 제한됩니다. 본 계산기는 이 상한을 고려하지 않으므로 실제 고지액과 다를 수 있습니다.',
   },
+  {
+    question: '6월 1일에 집을 사면 재산세는 누가 내나요?',
+    answer:
+      '6월 1일 현재 소유자가 그 해 재산세 전액을 부담합니다(지방세법 §114). 거래 일자가 아닌 "소유 현황 기준일(6/1)"을 기준으로 판정하므로, 5월 31일 이전에 등기가 완료되어야 새 소유자가 절세할 수 있습니다. 자세한 내용은 <a href="/guide/property-tax-base-date-june-1-2026/" className="text-primary-600 dark:text-primary-400 underline">6월 1일 기준 재산세 소유자 판정 가이드</a>를 참조하세요.',
+  },
+  {
+    question: '재산세를 신용카드로 납부하거나 분할 납부할 수 있나요?',
+    answer:
+      '재산세는 위택스(wetax.go.kr)에서 신용카드, 직계좌이체 등으로 납부 가능합니다. 세액 250만 원 초과 시 지방세징수법에 따라 분할납부 신청이 가능하므로, 납부 기한 전에 관할 지자체 세무과에 문의하시기 바랍니다.',
+  },
+  {
+    question: '재산세 납부 기한을 놓치면 어떻게 되나요?',
+    answer:
+      '납부 기한(7월 16~31일, 9월 16~30일)을 초과하면 지방세징수법에 따라 납부지연가산세가 부과됩니다. 가산세는 미납액의 일정 비율이므로, 지연 기간이 길어질수록 납부액이 증가합니다. 가능한 빨리 납부하시길 권장합니다.',
+  },
 ] as const;
 
 const RELATED = [
@@ -91,7 +106,7 @@ export default function PropertyTaxPage() {
     description: '공시가격 입력으로 연간 납부액, 7·9월 분납액 즉시 확인',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-05-31',
     isPartOf: getCategoryUrlForCalculator('property-tax'),
   });
   const howToLd = buildHowToJsonLd({
@@ -161,7 +176,7 @@ export default function PropertyTaxPage() {
                   1세대1주택 특례 여부, 도시지역 여부를 입력하면 재산세 본세, 지방교육세,
                   도시지역분을 포함한 연간 총 납부액과 7·9월 분납액을 즉시 확인할 수 있습니다.
                 </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-05-31" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -518,6 +533,7 @@ export default function PropertyTaxPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
+                  <li>2026-05-31: FAQ 3개 추가 (6월 소유자 판정, 카드 납부·분할 납부, 납부 지연 가산세)</li>
                   <li>2026-04-24: 2026년 지방세법 기준 초판 공개</li>
                 </ul>
               </section>

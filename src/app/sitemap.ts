@@ -70,6 +70,7 @@ const GUIDE_SLUGS = [
   'april-comprehensive-property-tax-exclusion',
   'may-comprehensive-income-tax',
   'june-property-tax',
+  'property-tax-base-date-june-1-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',

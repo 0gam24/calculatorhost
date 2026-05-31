@@ -327,6 +327,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '7월 납부 직전',
     tags: ['시즈널'],
   },
+  {
+    slug: 'property-tax-base-date-june-1-2026',
+    title: '재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정',
+    description:
+      '재산세는 6월 1일 현재 소유자에게 1년치 전액 부과됩니다(지방세법 §114). 잔금일이 5월 31일이냐 6월 2일이냐로 매도자·매수자 부담이 갈립니다. 거래 직전 필독.',
+    category: '세금·부동산',
+    publishedAt: '2026-05-31',
+    readingMinutes: 7,
+    seasonal: '6월 1일 과세기준일',
+    tags: ['시즈널', '거래직전'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
