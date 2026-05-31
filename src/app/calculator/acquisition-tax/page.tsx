@@ -83,6 +83,21 @@ const FAQ_ITEMS = [
     answer:
       '9억 원 이하는 6~9억 구간 선형보간(약 2.0~3.0%)이 적용되고, 9억 원을 초과하면 3.0% 고정 세율이 적용됩니다. 10억 원 매매가 기준 본세는 3,000만 원이며 9억 원 본세 약 2,700만 원과 약 300만 원 차이입니다. 9억 원 초과부터는 1세대1주택 재산세 특례(공시 9억 이하)도 사라지므로 보유세까지 함께 검토해야 합니다.',
   },
+  {
+    question: '전용면적 85㎡를 초과하면 취득세가 얼마나 늘어나나요?',
+    answer:
+      '85㎡ 초과 시 농어촌특별세(농특세법 §5)가 추가 부과됩니다. 일반 중과 미적용 시 0.2%p, 조정지역 중과 적용 시 1.0%p가 추가됩니다. 취득세 자체는 면적과 무관하며 가격 구간으로만 결정되므로, 85㎡ 이하와의 차이는 순전히 농특세 추가 부담입니다(지방세법 §11-§13 과세표준 기준).',
+  },
+  {
+    question: '취득세는 언제까지 신고·납부해야 하나요?',
+    answer:
+      '주택 매매 취득세는 취득일(잔금일과 등기일 중 빠른 날)로부터 60일 이내에 신고·납부해야 합니다(지방세법 §20). 기한을 넘기면 무신고가산세(20%)와 납부지연가산세가 부과됩니다. 상속은 상속개시일이 속한 달의 말일부터 6개월, 증여는 3개월로 기한이 다르므로 취득 원인별로 확인이 필요합니다. 거래 직전이라면 재산세 과세기준일(6월 1일)도 함께 점검하세요. 관련 가이드는 아래 "관련 계산기·가이드"에서 확인할 수 있습니다.',
+  },
+  {
+    question: '취득세 외에 추가로 내는 세금은 무엇인가요?',
+    answer:
+      '취득세 외에 지방교육세와 농어촌특별세 두 가지가 추가됩니다. 지방교육세(지방세법 §150)는 취득세의 10%이며, 농어촌특별세(농특세법 §5)는 85㎡를 초과하는 주택에만 부과됩니다(0.2~1.0%). 총 납부액 = 취득세 + 지방교육세 + 농특세이므로 계산기에서 확인한 결과가 실제 부담액입니다.',
+  },
 ] as const;
 
 const RELATED = [
@@ -102,7 +117,7 @@ export default function AcquisitionTaxPage() {
     description: '2026년 최신 지방세율 반영. 주택 매매·증여·상속 시 총 납부액을 거래 직전 확인',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-06-01',
     isPartOf: getCategoryUrlForCalculator('acquisition-tax'),
   });
   const howToLd = buildHowToJsonLd({
@@ -210,7 +225,7 @@ export default function AcquisitionTaxPage() {
                   주택 수·조정지역 여부·면적·생애최초 감면까지 모두 반영하여 농어촌특별세와
                   지방교육세를 포함한 총 납부액을 즉시 확인할 수 있습니다.
                 </p>
-                <AuthorByline dateModified="2026-04-24" />
+                <AuthorByline dateModified="2026-06-01" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -356,6 +371,25 @@ export default function AcquisitionTaxPage() {
                 </ul>
               </section>
 
+              {/* 관련 가이드 */}
+              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <a href="/guide/property-tax-base-date-june-1-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      📅 재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정
+                    </a>
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/june-property-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      🏠 재산세 완벽 가이드 (6월 부과·7월 납부)
+                    </a>
+                  </li>
+                </ul>
+              </section>
+
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />
 
@@ -363,6 +397,7 @@ export default function AcquisitionTaxPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
+                  <li>2026-06-01: FAQ 3개 추가 (85㎡ 초과 구간·생애최초 감면·추가 세금 구조)</li>
                   <li>2026-04-24: 2026년 지방세율 반영 초판 공개</li>
                 </ul>
               </section>

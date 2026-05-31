@@ -75,7 +75,7 @@ const FAQ_ITEMS = [
   {
     question: '6월 1일에 집을 사면 재산세는 누가 내나요?',
     answer:
-      '6월 1일 현재 소유자가 그 해 재산세 전액을 부담합니다(지방세법 §114). 거래 일자가 아닌 "소유 현황 기준일(6/1)"을 기준으로 판정하므로, 5월 31일 이전에 등기가 완료되어야 새 소유자가 절세할 수 있습니다. 자세한 내용은 <a href="/guide/property-tax-base-date-june-1-2026/" className="text-primary-600 dark:text-primary-400 underline">6월 1일 기준 재산세 소유자 판정 가이드</a>를 참조하세요.',
+      '6월 1일 현재 소유자가 그 해 재산세 전액을 부담합니다(지방세법 §114). 거래 일자가 아닌 "소유 현황 기준일(6/1)"을 기준으로 판정하므로, 5월 31일 이전에 등기가 완료되어야 새 소유자가 절세할 수 있습니다. 잔금일·등기일에 따른 부담자 판정 상세는 아래 "관련 계산기·가이드"의 6월 1일 기준 재산세 소유자 판정 가이드를 참조하세요.',
   },
   {
     question: '재산세를 신용카드로 납부하거나 분할 납부할 수 있나요?',
@@ -520,6 +520,12 @@ export default function PropertyTaxPage() {
                     →{' '}
                     <a href="/guide/june-property-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       🏠 재산세 완벽 가이드 (6월 부과·7월 납부) — 7월 시즌 직전 필독
+                    </a>
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/property-tax-base-date-june-1-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      📅 재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정
                     </a>
                   </li>
                 </ul>
