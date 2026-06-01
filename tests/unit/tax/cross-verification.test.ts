@@ -2344,9 +2344,9 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
         includeVat: true,
       });
       expect(result.transactionAmount).toBe(100_000_000); // 5000만 + (50만 × 100), high base ≥ threshold
-      expect(result.appliedRate).toBe(0.004); // 0.4% (5천만 초과~1억 구간)
-      expect(result.limit).toBe(300_000); // 한도 30만
-      expect(result.maxCommission).toBe(300_000); // 1억 × 0.4% = 40만 > 한도 30만 → 30만 적용
+      expect(result.appliedRate).toBe(0.003); // 0.3% (1억 이상~6억 구간, 경계값 1억은 이 구간)
+      expect(result.limit).toBeNull(); // 1억 이상 구간에는 한도 없음
+      expect(result.maxCommission).toBe(300_000); // 1억 × 0.3% = 30만
       expect(result.vat).toBe(30_000); // 30만 × 10% = 3만
       expect(result.total).toBe(330_000); // 30만 + 3만
       expect(result.warnings).toEqual([]); // 경고 없음

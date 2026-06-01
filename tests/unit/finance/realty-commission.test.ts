@@ -29,6 +29,96 @@ function createInput(overrides: Partial<CommissionInput>): CommissionInput {
 // 테스트 1-5: 주택 매매 기본 케이스 + 경계값
 // ============================================
 
+describe('calculateRealtyCommission — 주택 매매 경계값 (올바른 귀속)', () => {
+  /**
+   * 공인중개사법 시행규칙 §20 [별표] — 경계값 해석
+   * 공식 기준:
+   * - "~5000만원 0.6%" → 경계값 5천만 "포함" (0 ≤ amount ≤ 50M)
+   * - "5000만 초과~2억 0.5%" → 경계값은 제외 (50M < amount < 200M)
+   * - "9억 이상~12억 0.6%" → 경계값 9억 "포함" (amount ≥ 900M)
+   *
+   * 즉, "~N" 형태는 N을 **포함** (≤ 연산),
+   *    "N 초과~M" 또는 "N 이상~M" 형태는 경계값 기준으로
+   *    첫 경계는 이전 구간 포함, 상한은 다음 구간 포함.
+   *
+   * 단순화:
+   * - 첫 경계값(5천만)은 그 구간에 포함
+   * - 나머지 경계값(2억, 9억, 12억, 15억)은 다음 구간에 포함
+   */
+
+  it('RED: 매매 정확히 5천만 → 0.6% (첫 경계, 구간 포함) = 30만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 50_000_000,
+      })
+    );
+
+    expect(result.transactionAmount).toBe(50_000_000);
+    expect(result.appliedRate).toBe(0.006); // ~5천만: 0.6% (경계값 5천만 포함)
+    expect(result.limit).toBe(250_000);
+    expect(result.maxCommission).toBe(250_000); // 5천만 × 0.6% = 30만, 한도 25만 적용 → 25만
+  });
+
+  it('RED: 매매 정확히 2억 → 0.5% (경계값, 이전 구간 포함) 한도 80만 적용', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 200_000_000,
+      })
+    );
+
+    expect(result.transactionAmount).toBe(200_000_000);
+    expect(result.appliedRate).toBe(0.005); // 5천만 초과 2억 미만 구간, 경계값 2억은 이 구간에 포함 (2억 초과 아님)
+    expect(result.limit).toBe(800_000);
+    expect(result.maxCommission).toBe(800_000); // 2억 × 0.5% = 1000만, 한도 80만 적용 → 80만
+  });
+
+  it('RED: 매매 정확히 9억 → 0.5% (경계값, 이전 구간 포함) = 450만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 900_000_000,
+      })
+    );
+
+    expect(result.transactionAmount).toBe(900_000_000);
+    expect(result.appliedRate).toBe(0.005); // 2억 초과 9억 미만 구간, 경계값 9억은 이 구간에 포함 (9억 초과 아님)
+    expect(result.maxCommission).toBe(4_500_000); // 9억 × 0.5% (이전: 3600만)
+  });
+
+  it('RED: 매매 정확히 12억 → 0.6% (경계값, 이전 구간 포함) = 720만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 1_200_000_000,
+      })
+    );
+
+    expect(result.transactionAmount).toBe(1_200_000_000);
+    expect(result.appliedRate).toBe(0.006); // 9억 이상 12억 미만, 경계값 12억은 이 구간에 포함 (12억 초과 아님)
+    expect(result.maxCommission).toBe(7_200_000); // 12억 × 0.6% (이전: 600만)
+  });
+
+  it('RED: 매매 정확히 15억 → 0.7% (경계값, 이전 구간 포함) = 1,050만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 1_500_000_000,
+      })
+    );
+
+    expect(result.transactionAmount).toBe(1_500_000_000);
+    expect(result.appliedRate).toBe(0.007); // 12억 이상 15억 미만, 경계값 15억은 이 구간에 포함 (15억 초과 아님)
+    expect(result.maxCommission).toBe(10_500_000); // 15억 × 0.7% (이전: 900만)
+  });
+});
+
 describe('calculateRealtyCommission — 주택 매매', () => {
   it('매매 5억 주택 → 0.4% = 200만', () => {
     const result = calculateRealtyCommission(
@@ -50,59 +140,80 @@ describe('calculateRealtyCommission — 주택 매매', () => {
     expect(result.warnings).toHaveLength(0);
   });
 
-  it('매매 9억 경계 (정확히 9억) → 0.4% 구간 (경계값 이하)', () => {
+  it('매매 8.99억 → 0.4% (2억 초과 9억 미만)', () => {
     const result = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
         propertyKind: 'house',
-        salePrice: 900_000_000,
+        salePrice: 899_000_000,
       })
     );
 
-    expect(result.transactionAmount).toBe(900_000_000);
-    expect(result.appliedRate).toBe(0.004); // 2억~9억: 0.4%
-    expect(result.maxCommission).toBe(3_600_000); // 9억 × 0.4%
+    expect(result.transactionAmount).toBe(899_000_000);
+    expect(result.appliedRate).toBe(0.004); // 2억 초과 9억 미만: 0.4%
+    expect(result.maxCommission).toBe(3_596_000); // 8.99억 × 0.4%
   });
 
-  it('매매 9억 초과 (9억 1만) → 0.5% 구간으로 전환', () => {
+  it('매매 9.01억 → 0.5% (9억 이상 12억 미만)', () => {
     const result = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
         propertyKind: 'house',
-        salePrice: 900_100_000,
+        salePrice: 901_000_000,
       })
     );
 
-    expect(result.appliedRate).toBe(0.005); // 9억~12억: 0.5%
-    expect(result.maxCommission).toBe(4_500_500); // 9억 1만 × 0.5%
+    expect(result.appliedRate).toBe(0.005); // 9억 이상 12억 미만: 0.5%
+    expect(result.maxCommission).toBe(4_505_000); // 9.01억 × 0.5%
   });
 
-  it('매매 15억 1원 주택 → 0.7% = 1,050만 (15억 초과 구간)', () => {
+  it('매매 11.99억 → 0.5% (9억 이상 12억 미만)', () => {
     const result = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
         propertyKind: 'house',
-        salePrice: 1_500_000_001,
+        salePrice: 1_199_000_000,
       })
     );
 
-    expect(result.appliedRate).toBe(0.007); // 15억 초과: 0.7%
-    expect(result.maxCommission).toBe(10_500_000); // 1500000001 × 0.7% = 10500000.007 → 10500000
+    expect(result.appliedRate).toBe(0.005); // 9억 이상 12억 미만: 0.5%
   });
 
-  it('매매 5천만 경계 한도액 25만 적용', () => {
+  it('매매 12.01억 → 0.6% (12억 이상 15억 미만)', () => {
     const result = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
         propertyKind: 'house',
-        salePrice: 50_000_000,
+        salePrice: 1_201_000_000,
       })
     );
 
-    expect(result.appliedRate).toBe(0.006); // ~5천만: 0.6%
-    expect(result.limit).toBe(250_000);
-    const gross = 50_000_000 * 0.006; // 30만
-    expect(result.maxCommission).toBe(Math.min(gross, 250_000)); // 30만
+    expect(result.appliedRate).toBe(0.006); // 12억 이상 15억 미만: 0.6%
+  });
+
+  it('매매 14.99억 → 0.6% (12억 이상 15억 미만)', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 1_499_000_000,
+      })
+    );
+
+    expect(result.appliedRate).toBe(0.006); // 12억 이상 15억 미만: 0.6%
+  });
+
+  it('매매 15.01억 → 0.7% (15억 이상)', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 1_501_000_000,
+      })
+    );
+
+    expect(result.appliedRate).toBe(0.007); // 15억 이상: 0.7%
+    expect(result.maxCommission).toBe(10_507_000); // 15.01억 × 0.7%
   });
 
   it('매매 4천만 소액 → 0.6% 한도 25만 적용 확인', () => {
@@ -133,24 +244,61 @@ describe('calculateRealtyCommission — 주택 매매', () => {
     expect(result.limit).toBe(800_000);
     expect(result.maxCommission).toBe(750_000); // 1.5억 × 0.5%
   });
-
-  it('매매 2억 경계 (정확히 2억) → 0.5% 구간 유지', () => {
-    const result = calculateRealtyCommission(
-      createInput({
-        transactionType: 'sale',
-        propertyKind: 'house',
-        salePrice: 200_000_000,
-      })
-    );
-
-    expect(result.appliedRate).toBe(0.005); // 경계값 ≤ 인 경우 해당 구간
-    expect(result.limit).toBe(800_000);
-  });
 });
 
 // ============================================
 // 테스트 6-8: 주택 전세 및 월세
 // ============================================
+
+describe('calculateRealtyCommission — 주택 임대차 경계값 (올바른 귀속)', () => {
+  /**
+   * 공인중개사법 시행규칙 §20 [별표] — 임대차 경계값
+   * "1억 이상 6억 미만 0.3%" → 1억은 0.4% 구간 (1억 미만~1억 사이 경계)
+   * "6억 이상 12억 미만 0.4%" → 6억은 0.4% 구간 (6억은 "이상")
+   * "12억 이상 15억 미만 0.5%" → 12억은 0.5% 구간
+   * "15억 이상 0.6%" → 15억은 0.6% 구간
+   */
+
+  it('RED: 전세 정확히 6억 → 0.4% (6억 이상 구간) = 240만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'jeonse',
+        propertyKind: 'house',
+        salePrice: 600_000_000,
+      })
+    );
+
+    expect(result.transactionAmount).toBe(600_000_000);
+    expect(result.appliedRate).toBe(0.004); // 6억 이상 12억 미만: 0.4% (경계값 6억은 다음 구간)
+    expect(result.maxCommission).toBe(2_400_000); // 6억 × 0.4%
+  });
+
+  it('RED: 전세 정확히 12억 → 0.5% (12억 이상 구간) = 600만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'jeonse',
+        propertyKind: 'house',
+        salePrice: 1_200_000_000,
+      })
+    );
+
+    expect(result.appliedRate).toBe(0.005); // 12억 이상 15억 미만: 0.5% (경계값 12억은 다음 구간)
+    expect(result.maxCommission).toBe(6_000_000); // 12억 × 0.5%
+  });
+
+  it('RED: 전세 정확히 15억 → 0.6% (15억 이상 구간) = 900만', () => {
+    const result = calculateRealtyCommission(
+      createInput({
+        transactionType: 'jeonse',
+        propertyKind: 'house',
+        salePrice: 1_500_000_000,
+      })
+    );
+
+    expect(result.appliedRate).toBe(0.006); // 15억 이상: 0.6% (경계값 15억은 다음 구간)
+    expect(result.maxCommission).toBe(9_000_000); // 15억 × 0.6%
+  });
+});
 
 describe('calculateRealtyCommission — 주택 임대차', () => {
   it('전세 3억 → 0.3% = 90만', () => {
@@ -163,22 +311,9 @@ describe('calculateRealtyCommission — 주택 임대차', () => {
     );
 
     expect(result.transactionAmount).toBe(300_000_000);
-    expect(result.appliedRate).toBe(0.003); // 1억~6억: 0.3%
+    expect(result.appliedRate).toBe(0.003); // 1억 이상 6억 미만: 0.3%
     expect(result.limit).toBeNull();
     expect(result.maxCommission).toBe(900_000);
-  });
-
-  it('전세 12억 → 0.4% = 480만', () => {
-    const result = calculateRealtyCommission(
-      createInput({
-        transactionType: 'jeonse',
-        propertyKind: 'house',
-        salePrice: 1_200_000_000,
-      })
-    );
-
-    expect(result.appliedRate).toBe(0.004); // 6억~12억: 0.4%
-    expect(result.maxCommission).toBe(4_800_000);
   });
 
   it('월세 보증금 1000만 월세 50만 → 거래금액 6000만 (5천만 이상 100배 적용)', () => {
@@ -474,42 +609,66 @@ describe('calculateRealtyCommission — 입력 검증', () => {
 // 테스트 19-21: 경계값 정밀성
 // ============================================
 
-describe('calculateRealtyCommission — 구간 경계값 정밀성', () => {
-  it('주택 매매 2억~9억 경계 정확히 2억: 0.5%에서 0.4%로 변경', () => {
+describe('calculateRealtyCommission — 구간 경계값 정밀성 (< 연산자 기반)', () => {
+  it('주택 매매 2억 경계: 2억 미만 0.5%, 2억 이상 0.4%', () => {
+    const below = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 199_999_999,
+      })
+    );
+    expect(below.appliedRate).toBe(0.005); // 5천만 초과 2억 미만: 0.5%
+
     const atBoundary = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 200_000_000,
+      })
+    );
+    expect(atBoundary.appliedRate).toBe(0.005); // 5천만 초과 2억 미만: 0.5% (경계값 2억은 포함)
+
+    const above = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
         propertyKind: 'house',
         salePrice: 200_000_001,
       })
     );
-
-    expect(atBoundary.appliedRate).toBe(0.004); // 2억 초과는 0.4% 구간
+    expect(above.appliedRate).toBe(0.004); // 2억 초과 9억 미만: 0.4%
   });
 
-  it('주택 전세 1억 경계값 정확성: 0.4%→0.3%', () => {
+  it('주택 매매 9억 경계: 9억 미만 0.4%, 9억 이상 0.5%', () => {
+    const below = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 899_999_999,
+      })
+    );
+    expect(below.appliedRate).toBe(0.004); // 2억 초과 9억 미만: 0.4%
+
     const atBoundary = calculateRealtyCommission(
       createInput({
-        transactionType: 'jeonse',
+        transactionType: 'sale',
         propertyKind: 'house',
-        salePrice: 100_000_000,
+        salePrice: 900_000_000,
       })
     );
-
-    expect(atBoundary.appliedRate).toBe(0.004); // 5천만~1억: 0.4%
-
-    const above = calculateRealtyCommission(
-      createInput({
-        transactionType: 'jeonse',
-        propertyKind: 'house',
-        salePrice: 100_000_001,
-      })
-    );
-
-    expect(above.appliedRate).toBe(0.003); // 1억 초과: 0.3%
+    expect(atBoundary.appliedRate).toBe(0.005); // 9억 이상 12억 미만: 0.5% (경계값 9억은 다음 구간)
   });
 
-  it('12억~15억 경계값: 0.5%→0.6%', () => {
+  it('주택 매매 12억 경계: 12억 미만 0.5%, 12억 이상 0.6%', () => {
+    const below = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 1_199_999_999,
+      })
+    );
+    expect(below.appliedRate).toBe(0.005); // 9억 이상 12억 미만: 0.5%
+
     const atBoundary = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
@@ -517,17 +676,46 @@ describe('calculateRealtyCommission — 구간 경계값 정밀성', () => {
         salePrice: 1_200_000_000,
       })
     );
+    expect(atBoundary.appliedRate).toBe(0.006); // 12억 이상 15억 미만: 0.6% (경계값 12억은 다음 구간)
+  });
 
-    expect(atBoundary.appliedRate).toBe(0.005); // 9억~12억: 0.5%
-
-    const above = calculateRealtyCommission(
+  it('주택 매매 15억 경계: 15억 미만 0.6%, 15억 이상 0.7%', () => {
+    const below = calculateRealtyCommission(
       createInput({
         transactionType: 'sale',
         propertyKind: 'house',
-        salePrice: 1_200_000_001,
+        salePrice: 1_499_999_999,
       })
     );
+    expect(below.appliedRate).toBe(0.006); // 12억 이상 15억 미만: 0.6%
 
-    expect(above.appliedRate).toBe(0.006); // 12억~15억: 0.6%
+    const atBoundary = calculateRealtyCommission(
+      createInput({
+        transactionType: 'sale',
+        propertyKind: 'house',
+        salePrice: 1_500_000_000,
+      })
+    );
+    expect(atBoundary.appliedRate).toBe(0.007); // 15억 이상: 0.7% (경계값 15억은 다음 구간)
+  });
+
+  it('주택 전세 1억 경계: 1억 미만 0.4%, 1억 이상 0.3%', () => {
+    const below = calculateRealtyCommission(
+      createInput({
+        transactionType: 'jeonse',
+        propertyKind: 'house',
+        salePrice: 99_999_999,
+      })
+    );
+    expect(below.appliedRate).toBe(0.004); // 5천만 초과 1억 미만: 0.4%
+
+    const atBoundary = calculateRealtyCommission(
+      createInput({
+        transactionType: 'jeonse',
+        propertyKind: 'house',
+        salePrice: 100_000_000,
+      })
+    );
+    expect(atBoundary.appliedRate).toBe(0.003); // 1억 이상 6억 미만: 0.3% (경계값 1억은 다음 구간)
   });
 });

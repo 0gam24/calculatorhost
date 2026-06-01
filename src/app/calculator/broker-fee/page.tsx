@@ -57,6 +57,11 @@ const FAQ_ITEMS = [
       '9억 원의 주택 매매는 상한요율 0.5% 구간에 해당합니다(공인중개사법 시행규칙 §20). 따라서 중개수수료는 9억 × 0.5% = 450만 원입니다. 부가세(10%)를 포함하면 495만 원입니다.',
   },
   {
+    question: '12억 매매 중개수수료 상한은 얼마인가요?',
+    answer:
+      '12억 원 정확히일 때는 "12억 이상 15억 미만" 구간으로 상한요율 0.6%가 적용됩니다(공인중개사법 시행규칙 별표). 12억 × 0.6% = 720만 원이 상한 중개보수이며 부가세는 별도입니다. 12억 원 미만이면 "9억 이상 12억 미만" 구간의 0.5%가 적용되고, 15억을 초과하면 0.7%로 올라갑니다. 요율은 구간별 "상한"이므로 그 범위 안에서 중개인과 협의할 수 있습니다.',
+  },
+  {
     question: '전세 중개수수료는 협의 가능한가요?',
     answer:
       '네, 가능합니다. 중개수수료는 법정 상한요율 이내에서 중개인과 의뢰인이 자유롭게 협의할 수 있습니다. 단, 상한요율을 초과할 수는 없으므로 협상 범위는 제한됩니다. 계산기에 협의 요율을 입력하면 실제 지급액을 확인할 수 있습니다.',
@@ -65,6 +70,11 @@ const FAQ_ITEMS = [
     question: '부가세 10%는 중개수수료에 별도로 붙나요?',
     answer:
       '네, 부가세는 별도입니다(부가가치세법). 예를 들어 상한 중개수수료가 450만 원이면 부가세는 45만 원으로 총 495만 원을 지급합니다. 중개인이 세금계산서를 발급하면 부가세가 부과됩니다.',
+  },
+  {
+    question: '중개수수료를 협상으로 깎을 수 있나요?',
+    answer:
+      '네, 깎을 수 있습니다(공인중개사법 §32). 중개수수료는 법정 상한요율이 "상한"일 뿐 최소 금액은 정해지지 않습니다. 중개인과 협의하여 상한 범위 내 낮은 요율을 적용받을 수 있습니다. 특히 겸업(양방) 중개인 경우 협상 여지가 큽니다.',
   },
   {
     question: '월세 중개수수료 계산 시 거래금액은 어떻게 되나요?',
@@ -101,7 +111,7 @@ export default function CommissionPage() {
     description: '2026년 법정 상한요율·한도액 기준 중개수수료 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-06-01',
     isPartOf: getCategoryUrlForCalculator('broker-fee'),
   });
   const howToLd = buildHowToJsonLd({
@@ -204,7 +214,7 @@ export default function CommissionPage() {
                   매매·교환·전세·월세 거래 시 법정 상한요율과 한도액을 즉시 확인하고, 협의
                   요율과 부가세를 포함한 총 지급액을 거래 직전 정확하게 계산할 수 있습니다.
                 </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-06-01" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -512,6 +522,7 @@ export default function CommissionPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
+                  <li>2026-06-01: FAQ 3개 추가 — "12억 구간 경계값", "협상으로 깎기 가능" 등 롱테일 키워드 확충</li>
                   <li>2026-04-24: 2026년 공인중개사법 기준 초판 공개</li>
                 </ul>
               </section>

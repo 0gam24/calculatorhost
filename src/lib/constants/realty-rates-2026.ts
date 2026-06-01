@@ -18,7 +18,11 @@ export const YEAR = 2026;
 // ============================================
 
 export interface CommissionBracket {
-  /** 거래금액 상한 (원). null 이면 초과 구간 */
+  /**
+   * 거래금액 상한 (원, exclusive). null 이면 최상위 구간(상한 없음)
+   * 예: upperBound=900_000_000 이면 transactionAmount < 900_000_000 일 때 이 구간
+   * → transactionAmount >= 900_000_000 은 다음 구간으로 넘어감
+   */
   upperBound: number | null;
   /** 상한 요율 (0.006 = 0.6%) */
   rate: number;
@@ -27,29 +31,55 @@ export interface CommissionBracket {
 }
 
 // ============================================
-// 주택 매매·교환 — 공인중개사법 시행규칙 §20 ②
-// 구간 해석: ~N = N 이하, N~M = N 초과 ~ M 이하
+// 주택 매매·교환 — 공인중개사법 시행규칙 §20 ② [별표]
+//
+// 공식 요율표 (2026):
+// - ~5,000만원 0.6% (한도 25만)
+// - 5,000만 초과~2억 0.5% (한도 80만)        [= 50M < amount ≤ 200M]
+// - 2억 초과~9억 0.4%                       [= 200M < amount ≤ 900M]
+// - 9억 이상~12억 0.5%                      [= 900M ≤ amount ≤ 1200M]
+// - 12억 이상~15억 0.6%                     [= 1200M ≤ amount ≤ 1500M]
+// - 15억 이상 0.7%                          [= 1500M ≤ amount]
+//
+// upperBound 해석: "구간의 상한(포함)"
+// - amount <= upperBound 일 때 이 구간
+// - 단, 배열 순서로 탐색하므로 첫 매칭이 정답
+// - 경계값들:
+//   * 50M: 첫 구간에 포함 (50M 초과 vs 아래는 명확)
+//   * 200M: 두 번째 구간에 포함 (200M 초과는 아님)
+//   * 900M: 세 번째 구간에 포함 (900M 초과는 아님)
+//   * 1200M: 네 번째 구간에 포함 (1200M 초과는 아님)
+//   * 1500M: 다섯 번째 구간에 포함 (1500M 초과는 아님)
 // ============================================
 export const REALTY_COMMISSION_HOUSE_SALE_2026: CommissionBracket[] = [
-  { upperBound: 50_000_000, rate: 0.006, limit: 250_000 }, // ~5천만: 0.6%, 한도 25만
-  { upperBound: 200_000_000, rate: 0.005, limit: 800_000 }, // 5천만 초과~2억: 0.5%, 한도 80만
-  { upperBound: 900_000_000, rate: 0.004, limit: null }, // 2억 초과~9억: 0.4%, 한도 없음
-  { upperBound: 1_200_000_000, rate: 0.005, limit: null }, // 9억 초과~12억: 0.5%, 한도 없음
-  { upperBound: 1_500_000_000, rate: 0.006, limit: null }, // 12억 초과~15억: 0.6%, 한도 없음
-  { upperBound: null, rate: 0.007, limit: null }, // 15억 초과: 0.7%, 한도 없음
+  { upperBound: 50_000_000, rate: 0.006, limit: 250_000 }, // amount ≤ 5천만: 0.6%, 한도 25만
+  { upperBound: 200_000_000, rate: 0.005, limit: 800_000 }, // 5천만 < amount ≤ 2억: 0.5%, 한도 80만
+  { upperBound: 899_999_999, rate: 0.004, limit: null }, // 2억 < amount < 9억: 0.4%, 한도 없음
+  { upperBound: 1_199_999_999, rate: 0.005, limit: null }, // 9억 ≤ amount < 12억: 0.5%, 한도 없음
+  { upperBound: 1_499_999_999, rate: 0.006, limit: null }, // 12억 ≤ amount < 15억: 0.6%, 한도 없음
+  { upperBound: null, rate: 0.007, limit: null }, // 15억 ≤ amount: 0.7%, 한도 없음
 ];
 
 // ============================================
-// 주택 임대차(전세·월세) — 공인중개사법 시행규칙 §20 ③
-// 구간 해석: ~N = N 이하, N~M = N 초과 ~ M 이하
+// 주택 임대차(전세·월세) — 공인중개사법 시행규칙 §20 ③ [별표]
+//
+// 공식 요율표 (2026):
+// - ~5,000만원 0.5% (한도 20만)
+// - 5,000만 초과~1억 0.4% (한도 30만)        [= 50M < amount ≤ 100M]
+// - 1억 이상~6억 0.3%                       [= 100M ≤ amount ≤ 600M]
+// - 6억 이상~12억 0.4%                      [= 600M ≤ amount ≤ 1200M]
+// - 12억 이상~15억 0.5%                     [= 1200M ≤ amount ≤ 1500M]
+// - 15억 이상 0.6%                          [= 1500M ≤ amount]
+//
+// upperBound 해석: "구간의 상한(inclusive)"
 // ============================================
 export const REALTY_COMMISSION_HOUSE_LEASE_2026: CommissionBracket[] = [
-  { upperBound: 50_000_000, rate: 0.005, limit: 200_000 }, // ~5천만: 0.5%, 한도 20만
-  { upperBound: 100_000_000, rate: 0.004, limit: 300_000 }, // 5천만 초과~1억: 0.4%, 한도 30만
-  { upperBound: 600_000_000, rate: 0.003, limit: null }, // 1억 초과~6억: 0.3%, 한도 없음
-  { upperBound: 1_200_000_000, rate: 0.004, limit: null }, // 6억 초과~12억: 0.4%, 한도 없음
-  { upperBound: 1_500_000_000, rate: 0.005, limit: null }, // 12억 초과~15억: 0.5%, 한도 없음
-  { upperBound: null, rate: 0.006, limit: null }, // 15억 초과: 0.6%, 한도 없음
+  { upperBound: 50_000_000, rate: 0.005, limit: 200_000 }, // amount ≤ 5천만: 0.5%, 한도 20만
+  { upperBound: 99_999_999, rate: 0.004, limit: 300_000 }, // 5천만 < amount < 1억: 0.4%, 한도 30만
+  { upperBound: 599_999_999, rate: 0.003, limit: null }, // 1억 ≤ amount < 6억: 0.3%, 한도 없음
+  { upperBound: 1_199_999_999, rate: 0.004, limit: null }, // 6억 ≤ amount < 12억: 0.4%, 한도 없음
+  { upperBound: 1_499_999_999, rate: 0.005, limit: null }, // 12억 ≤ amount < 15억: 0.5%, 한도 없음
+  { upperBound: null, rate: 0.006, limit: null }, // 15억 ≤ amount: 0.6%, 한도 없음
 ];
 
 // ============================================
