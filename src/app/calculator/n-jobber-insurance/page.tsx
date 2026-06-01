@@ -83,6 +83,11 @@ const FAQ_ITEMS = [
     answer:
       '부업소득의 경우, 필요경비를 적절히 공제하여 순소득을 낮출 수 있습니다. 프리랜서라면 업무 관련 사무실 임차료·통신비·교육비 등을 경비로 처리하세요. 또한 사업소득과 기타소득을 구분하여 신고하면, 세금과 보험료 부담을 줄일 수 있습니다. 하지만 과도한 경비 공제는 세무 조사 대상이 될 수 있으므로, 세무사와 상담하여 합법적인 범위 내에서 절세하세요.',
   },
+  {
+    question: '프리랜서·N잡러는 지역가입자인가요 직장가입자인가요?',
+    answer:
+      '근로소득(직장)이 있는지 여부로 결정됩니다(국민건강보험법 §6). 직장에 다니면서 프리랜서 부업을 병행하면 직장가입자 자격을 유지하고, 부업만 하고 근로소득이 없으면 지역가입자로 분류됩니다. 다만 부업 전이라도 피부양자였다면, 연 소득 2,000만원 미만 등 요건을 충족하는 동안에는 피부양자 지위를 유지할 수 있습니다. 본인의 근로소득 유무를 먼저 확인한 뒤 가입 유형을 판정하세요. 보수외소득 추가 부과 등 보험료 계산은 위 "N잡러가 낼 건강보험료" 항목을 참고하세요.',
+  },
 ];
 
 const RELATED = [
@@ -115,7 +120,7 @@ export default function NJobberInsurancePage() {
     description: 'N잡 건강보험료 즉시 계산: 주근로, 부업, 기타소득으로 월보 확인',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-06-01',
     isPartOf: getCategoryUrlForCalculator('n-jobber-insurance'),
   });
   const howToLd = buildHowToJsonLd({
@@ -185,7 +190,7 @@ export default function NJobberInsurancePage() {
               주 근로소득과 부업, 기타소득을 입력해 월 건강보험료를 즉시 계산하세요.
               피부양자 자격 상실 여부도 미리 확인할 수 있습니다.
             </p>
-            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+            <AuthorByline datePublished="2026-04-24" dateModified="2026-06-01" />
 
             {/* Structured Summary */}
             <StructuredSummary
