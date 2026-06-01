@@ -71,6 +71,7 @@ const GUIDE_SLUGS = [
   'may-comprehensive-income-tax',
   'june-property-tax',
   'property-tax-base-date-june-1-2026',
+  'vehicle-individual-consumption-tax-deadline-2026-june',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',

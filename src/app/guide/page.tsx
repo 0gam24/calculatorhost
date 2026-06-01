@@ -338,6 +338,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '6월 1일 과세기준일',
     tags: ['시즈널', '거래직전'],
   },
+  {
+    slug: 'vehicle-individual-consumption-tax-deadline-2026-june',
+    title: '자동차 개별소비세 6월 30일 마감 — 출고 기준·최대 143만원 절감',
+    description:
+      '자동차 개별소비세 인하(5%→3.5%)가 2026년 6월 30일 종료됩니다(개별소비세법 §1의2). 기준은 계약일이 아닌 출고일. 6월 안에 출고해야 최대 143만원을 아낍니다.',
+    category: '세금',
+    publishedAt: '2026-06-01',
+    readingMinutes: 8,
+    seasonal: '6월 30일 출고 마감',
+    tags: ['시즈널', '블루오션'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
