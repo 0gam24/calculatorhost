@@ -349,6 +349,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '6월 30일 출고 마감',
     tags: ['시즈널', '블루오션'],
   },
+  {
+    slug: 'vehicle-tax-june-payment-annual-discount-2026',
+    title: '자동차세 제1기 6월 납부 가이드 — cc당 세액·차령경감·연납 2026',
+    description:
+      '자동차세 제1기 정기분 납부는 6/16~30입니다(지방세법 §128). cc당 세액(80·140·200원), 3년차부터 차령경감 최대 50%, 전기차 정액 13만원, 1월 연납 공제까지 한 페이지.',
+    category: '세금',
+    publishedAt: '2026-06-02',
+    readingMinutes: 8,
+    seasonal: '6월 정기분 납부',
+    tags: ['시즈널'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
