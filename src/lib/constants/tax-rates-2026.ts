@@ -198,11 +198,9 @@ export const ACQUISITION_TAX = {
   localEducationTaxOfAcquisition: 0.1,
 
   // ─── 생애최초 주택 감면 ───
-  /** 생애최초 주택 감면 한도 (원) — 지특법 §36의2 */
+  /** 생애최초 주택 감면 한도 (원) — 지특법 §36의3 */
   firstHomeBuyerMaxDiscount: 2_000_000,
-  /** 생애최초 감면 소득제한 (부부합산) — 지특법 §36의2 */
-  firstHomeBuyerMaxIncome: 70_000_000,
-  /** 생애최초 감면 주택가액 제한 — 지특법 §36의2 */
+  /** 생애최초 감면 주택가액 제한 — 지특법 §36의3 (소득요건은 2022.6.21자로 폐지됨, 무주택 세대만 필요) */
   firstHomeBuyerMaxPrice: 1_200_000_000,
 } as const;
 
