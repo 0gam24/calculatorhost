@@ -393,6 +393,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '6/15 신청 시작',
     tags: ['시즈널', '블루오션'],
   },
+  {
+    slug: 'interest-rate-hike-dsr-loan-limit-july-2026',
+    title: '기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026',
+    description:
+      '2026년 6월 현재 기준금리 2.50%(8연속 동결). 금리가 오르면 DSR·스트레스금리로 주담대·전세대출 한도가 어떻게 변하는지 구조와 가정 사례로 설명. 7월 16일 금통위 앞 점검.',
+    category: '금융',
+    publishedAt: '2026-06-02',
+    readingMinutes: 9,
+    seasonal: '7/16 금통위',
+    tags: ['금융', '대출'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',

@@ -76,6 +76,7 @@ const GUIDE_SLUGS = [
   'comprehensive-real-estate-tax-who-pays-2026',
   'earned-income-tax-credit-late-application-2026',
   'energy-voucher-2026-summer-cooling-subsidy',
+  'interest-rate-hike-dsr-loan-limit-july-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
