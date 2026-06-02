@@ -382,6 +382,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '기한 후 신청 6~11월',
     tags: ['시즈널', '블루오션'],
   },
+  {
+    slug: 'energy-voucher-2026-summer-cooling-subsidy',
+    title: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 6월 15일 신청',
+    description:
+      '생계·의료·주거·교육급여 수급 + 취약계층 세대는 에너지바우처로 여름 냉방비를 지원받습니다. 신청 6/15~12/31, 가구별 29~70만원, 2026년 계절 사용제한 폐지.',
+    category: '세금',
+    publishedAt: '2026-06-02',
+    readingMinutes: 7,
+    seasonal: '6/15 신청 시작',
+    tags: ['시즈널', '블루오션'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',

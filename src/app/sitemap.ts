@@ -75,6 +75,7 @@ const GUIDE_SLUGS = [
   'vehicle-tax-june-payment-annual-discount-2026',
   'comprehensive-real-estate-tax-who-pays-2026',
   'earned-income-tax-credit-late-application-2026',
+  'energy-voucher-2026-summer-cooling-subsidy',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
