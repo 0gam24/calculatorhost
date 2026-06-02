@@ -25,6 +25,7 @@
     "ralph:visual": "node scripts/ralph-visual-diff.mjs",
     "ralph:bundle": "node scripts/ralph-bundle-size.mjs",
     "state": "node scripts/check-state.mjs",
+    "favicon:gen": "node scripts/gen-favicon.mjs",
     "sitemap:check": "node scripts/sitemap-completeness.mjs",
     "citations:audit": "node scripts/section-citation-audit.mjs",
     "validate:statute": "node scripts/validate-statute-references.mjs",
