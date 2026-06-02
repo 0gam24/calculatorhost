@@ -371,6 +371,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '6월 1일 과세기준일',
     tags: ['시즈널'],
   },
+  {
+    slug: 'earned-income-tax-credit-late-application-2026',
+    title: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급',
+    description:
+      '정기신청(~5/31)을 놓쳤어도 6월 1일~11월 30일 기한 후 신청하면 산정액의 95%를 받습니다. 가구별 최대 165~330만원, 소득·재산 요건, 지급일까지 한 페이지.',
+    category: '세금',
+    publishedAt: '2026-06-02',
+    readingMinutes: 8,
+    seasonal: '기한 후 신청 6~11월',
+    tags: ['시즈널', '블루오션'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',

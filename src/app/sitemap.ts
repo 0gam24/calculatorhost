@@ -74,6 +74,7 @@ const GUIDE_SLUGS = [
   'vehicle-individual-consumption-tax-deadline-2026-june',
   'vehicle-tax-june-payment-annual-discount-2026',
   'comprehensive-real-estate-tax-who-pays-2026',
+  'earned-income-tax-credit-late-application-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
