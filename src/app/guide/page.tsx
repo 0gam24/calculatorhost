@@ -360,6 +360,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '6월 정기분 납부',
     tags: ['시즈널'],
   },
+  {
+    slug: 'comprehensive-real-estate-tax-who-pays-2026',
+    title: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일',
+    description:
+      '종부세는 6월 1일 현재 소유자에게 부과됩니다(종합부동산세법 §7). 1주택 12억·다주택 9억 공제, 공정시장가액비율 60%, 세율 0.5~5%, 12월 납부까지 한 페이지.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-02',
+    readingMinutes: 9,
+    seasonal: '6월 1일 과세기준일',
+    tags: ['시즈널'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
