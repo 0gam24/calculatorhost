@@ -75,8 +75,8 @@ const CALENDAR: MonthEntry[] = [
       },
       {
         date: '1월 16~31일',
-        title: '자동차세 연납 (6.4% 할인)',
-        description: '1월 일괄 납부 시 약 6.4% 할인. 위택스 또는 자동차세 앱.',
+        title: '자동차세 연납 (5% 할인)',
+        description: '1월 일괄 납부 시 5% 한도 내 공제. 위택스 또는 자동차세 앱.',
         target: '자동차 보유자',
         guideHref: '/guide/january-vehicle-tax-prepayment/',
         calculatorHref: '/calculator/vehicle-tax/',
@@ -404,7 +404,7 @@ export default function TaxCalendar2026Page() {
                   <div className="rounded-lg bg-bg-raised p-3">
                     <strong className="text-text-primary block mb-1">🚗 자동차 보유자</strong>
                     <ul className="text-text-secondary space-y-0.5">
-                      <li>• 1월 16~31일: 연납 (6.4% 할인)</li>
+                      <li>• 1월 16~31일: 연납 (5% 할인)</li>
                       <li>• 6월·12월: 정기분 (연납 X 시)</li>
                     </ul>
                   </div>

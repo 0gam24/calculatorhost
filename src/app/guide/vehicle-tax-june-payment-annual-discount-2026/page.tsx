@@ -59,7 +59,7 @@ const FAQ_ITEMS = [
   {
     question: '자동차세 연납(1월 일시납)은 어떻게 신청하나요?',
     answer:
-      '연납은 매년 1월 중(일반적으로 1월 1일~31일)에 관할 지자체 세무서 또는 위택스(wetax.go.kr)에서 신청합니다. 1월에 연간 자동차세를 미리 일괄 납부하면 공제(할인)를 받을 수 있습니다. 구체적 공제율은 매년 국고예규로 정해지므로, 신청 전 위택스에서 현재 공제율을 확인하세요. 1월을 놓친 경우 6월이나 12월 정기 납부 시에는 연납 공제가 적용되지 않습니다.',
+      '연납은 매년 1월 중(1월 1일~31일)에 관할 지자체 세무서 또는 위택스(wetax.go.kr)에서 신청합니다. 2026년 공제율은 5%(지방세법 시행령 §125)이며, 기간 비례식으로 계산됩니다. 1월 신청 시 실효율 약 4.81%, 3월 약 3.74%, 6월 약 2.93%, 9월 약 1.67%입니다. 1월을 놓친 경우 6월·12월 정기 납부 시에는 연납 공제가 적용되지 않습니다.',
   },
   {
     question: '1600cc 세단 기준 연간 자동차세는 얼마나 되나요?',
@@ -335,29 +335,71 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">4. 연납할인 — 1월에 미리 내면 절감</h2>
-                <p className="text-text-secondary leading-relaxed">
+                <p className="text-text-secondary leading-relaxed" data-speakable>
                   자동차세를 6월·12월 두 번에 나눠 내는 대신 1월에 연간 세액을 미리 내면 공제(할인)를 받을 수 있습니다.
-                  구체적 공제율은 매년 국고예규에 따라 결정되며, 신청 시 위택스에서 현재 공제율을 반드시 확인해야 합니다.
+                  2026년 현행 공제율은 <strong>5%(지방세법 시행령 §125)</strong>이며,
+                  기간 비례식으로 계산됩니다(선납일수/365 × 5%). 신청 시기에 따라 실효율이 달라집니다.
                 </p>
+                <div className="overflow-x-auto mb-4">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-3 font-semibold text-text-primary">2026년 연납 신청 시기별 실효 공제율</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-3 py-2 text-left">신청월</th>
+                        <th scope="col" className="px-3 py-2 text-left">선납일수</th>
+                        <th scope="col" className="px-3 py-2 text-left">공제 계산식</th>
+                        <th scope="col" className="px-3 py-2 text-left">실효율</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-text-secondary">
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 font-semibold">1월</td>
+                        <td className="px-3 py-2">351일</td>
+                        <td className="px-3 py-2">(351/365) × 5%</td>
+                        <td className="px-3 py-2 font-bold">약 4.81%</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 font-semibold">3월</td>
+                        <td className="px-3 py-2">273일</td>
+                        <td className="px-3 py-2">(273/365) × 5%</td>
+                        <td className="px-3 py-2">약 3.74%</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2 font-semibold">6월</td>
+                        <td className="px-3 py-2">214일</td>
+                        <td className="px-3 py-2">(214/365) × 5%</td>
+                        <td className="px-3 py-2">약 2.93%</td>
+                      </tr>
+                      <tr className="border border-border-base bg-primary-500/5">
+                        <td className="px-3 py-2 font-semibold">9월</td>
+                        <td className="px-3 py-2">122일</td>
+                        <td className="px-3 py-2">(122/365) × 5%</td>
+                        <td className="px-3 py-2">약 1.67%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">연납할인 신청 방법</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
-                      <li><strong>① 신청 기간:</strong> 매년 1월 1일 ~ 31일 (1월 말까지만 신청 가능)</li>
+                      <li><strong>① 신청 기간:</strong> 매년 1월 1일 ~ 31일 (1월 말까지만 신청 가능 — 6월·12월 정기 납부 시는 연납할인 미적용)</li>
                       <li><strong>② 신청처:</strong> 관할 지자체 세무서 또는 위택스(wetax.go.kr) 온라인 신청</li>
                       <li><strong>③ 납부:</strong> 신청 후 지정된 기한 내(보통 1월 말) 연간 세액을 일괄 입금</li>
-                      <li><strong>④ 공제액:</strong> 연간 세액 × 공제율 (구체적 공제율은 위택스에서 확인 필수)</li>
+                      <li><strong>④ 공제 공식:</strong> 할인액 = 연간 세액 × (선납일수/365) × 5% (지방세법 시행령 §125)</li>
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base bg-primary-500/5 p-4">
                     <h3 className="font-semibold text-primary-700 dark:text-primary-400 mb-3">연납할인 계산 사례</h3>
                     <div className="space-y-2 text-sm text-text-secondary font-mono bg-bg-base p-3 rounded">
-                      <p>1600cc 세단 (차령 5년차 기준)</p>
+                      <p>1600cc 세단 (차령 5년차, 1월 신청 기준)</p>
                       <p className="mt-2">기본 자동차세: 224,000원</p>
                       <p>- 차령경감 15%: 224,000 × 85% = 190,400원</p>
                       <p>+ 지방교육세 30%: 190,400 × 30% = 57,120원</p>
                       <p className="border-t border-border-base pt-2"><strong>연간 납부액: 247,520원</strong></p>
-                      <p className="mt-2 text-primary-700 dark:text-primary-400"><strong>1월 연납</strong>: 위택스에서 현재 공제율을 확인 후 신청하면 추가 절감</p>
+                      <p className="mt-2 text-primary-700 dark:text-primary-400"><strong>1월 연납할인:</strong></p>
+                      <p className="text-primary-700 dark:text-primary-400">247,520 × (351/365) × 5% ≈ 18,870원</p>
+                      <p className="text-primary-700 dark:text-primary-400 border-t border-primary-500 pt-2"><strong>최종 납부액: 247,520 - 18,870 = 약 228,650원</strong></p>
                     </div>
                   </div>
                 </div>

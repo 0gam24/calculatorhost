@@ -83,9 +83,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'january-vehicle-tax-prepayment',
-    title: '자동차세 연납 6.4% 할인 가이드 (2026) — 1월 16~31일 신청',
+    title: '자동차세 연납 5% 할인 가이드 (2026) — 1월 16~31일 신청',
     description:
-      '1월 신청 시 약 6.4% 할인 (최대 9%). 위택스 신청법 + cc별 절감액 (1600cc 약 18,600원, 2000cc 약 33,300원).',
+      '1월 신청 시 5% 한도 내 공제. 선납 일수에 비례. 위택스 신청법 + 계산기로 정확한 공제액 확인.',
     category: '세금·부동산',
     publishedAt: '2026-05-03',
     readingMinutes: 6,

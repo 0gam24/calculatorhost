@@ -84,7 +84,7 @@ export function VehicleTaxCalculator() {
         rows.push({
           label: '연납 할인 (1월 납부)',
           value: `-${result.annualPaymentDiscount.toLocaleString()}원`,
-          note: `6.4% 할인`,
+          note: `5% 할인`,
         });
 
         rows.push({
@@ -127,7 +127,7 @@ export function VehicleTaxCalculator() {
         <div className="rounded-lg border border-border-base bg-bg-card p-4">
           <p className="text-sm font-medium text-text-primary mb-2">납부 일정</p>
           <p className="text-sm text-text-secondary">
-            일반: 6월(상반기), 12월(하반기) 분할 납부. 연납(1월): 6.4% 할인 가능.
+            일반: 6월(상반기), 12월(하반기) 분할 납부. 연납(1월): 5% 할인 가능.
           </p>
         </div>
       );
@@ -202,7 +202,7 @@ export function VehicleTaxCalculator() {
                 연납 할인 적용 (1월 일괄 납부)
               </span>
             </label>
-            <span className="text-xs text-text-secondary">약 6.4% 할인</span>
+            <span className="text-xs text-text-secondary">약 5% 할인</span>
           </div>
         </div>
       </FormCard>

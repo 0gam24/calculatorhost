@@ -64,8 +64,8 @@ const ITEMS: FeedItem[] = [
     category: '세금',
   },
   {
-    title: '자동차세 연납 6.4% 할인 가이드 (2026) — 1월 16~31일 신청',
-    description: '1월 신청 시 약 6.4% 할인. cc별 절감액 + 위택스 신청법.',
+    title: '자동차세 연납 5% 할인 가이드 (2026) — 1월 16~31일 신청',
+    description: '1월 신청 시 약 5% 할인. cc별 절감액 + 위택스 신청법.',
     url: `${SITE_URL}/guide/january-vehicle-tax-prepayment/`,
     pubDate: '2026-05-03',
     category: '세금·자동차',

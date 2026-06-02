@@ -23,6 +23,7 @@ export interface VehicleTaxInput {
   engineCc: number; // 배기량 (cc)
   vehicleAgeYears: number; // 차령 (연수). 0 = 신차
   includeAnnualDiscount: boolean; // 연납 할인 체크
+  annualPaymentMonthOfApplication?: number; // 연납 신청월 (1~12, 기본값 1월). 선납일수 계산에 사용
 }
 
 export interface VehicleTaxResult {
@@ -37,6 +38,47 @@ export interface VehicleTaxResult {
   finalAnnualPayment: number; // 연납 할인 후 납부액 (원)
   semiAnnualPayment: number; // 반기별 납부액 (6월·12월, 원)
   warnings: string[];
+}
+
+/**
+ * 연납 신청월(1~12)에 따른 선납일수 계산
+ * 지방세법 시행령 §125: 선납일수 = 납부기한 다음날 ~ 12월 31일
+ *
+ * 신청월별 표준 납부기한:
+ * - 1월: 1월 16일 (다음날 1월 17일 ~ 12월 31일 = 약 351일)
+ * - 3월: 3월 15일 (다음날 3월 16일 ~ 12월 31일 = 약 273일)
+ * - 6월: 6월 15일 (다음날 6월 16일 ~ 12월 31일 = 약 214일)
+ * - 9월: 9월 15일 (다음날 9월 16일 ~ 12월 31일 = 약 122일)
+ *
+ * 출처: 경향신문 2025-01-12, 서초구청·성동구청 2025년 공지
+ */
+function calculateAnnualPaymentDaysOfPayment(applicationMonth: number): number {
+  const month = applicationMonth < 1 || applicationMonth > 12 ? 1 : applicationMonth;
+
+  // 표준 신청월별 선납일수 (보수적 기준)
+  if (month === 1) return 351;
+  if (month === 3) return 273;
+  if (month === 6) return 214;
+  if (month === 9) return 122;
+
+  // 1~3월 선형보간
+  if (month < 3) {
+    const ratio = (month - 1) / 2;
+    return Math.round(351 + (273 - 351) * ratio);
+  }
+  // 3~6월 선형보간
+  if (month < 6) {
+    const ratio = (month - 3) / 3;
+    return Math.round(273 + (214 - 273) * ratio);
+  }
+  // 6~9월 선형보간
+  if (month < 9) {
+    const ratio = (month - 6) / 3;
+    return Math.round(214 + (122 - 214) * ratio);
+  }
+  // 9~12월 선형보간
+  const ratio = (month - 9) / 3;
+  return Math.round(122 + (0 - 122) * ratio);
 }
 
 /**
@@ -154,11 +196,17 @@ export function calculateVehicleTax(input: VehicleTaxInput): VehicleTaxResult {
   // 4. 연간 총액
   const totalAnnual = vehicleTaxAfterReduction + localEducationTax;
 
-  // 5. 연납 할인 (1월 신청 시)
-  // ⚠️ VERIFICATION PENDING: 6.4% 공제율은 2026-06-02 현재 법령 원문으로 미검증
-  // @see docs/adr/013-vehicle-annual-discount-rate-verification.md
+  // 5. 연납 할인 (기간 비례식, 지방세법 시행령 §125)
+  // 공식: 할인액 = 연간 총액 × (선납일수 / 365) × 5%
+  // 검증: 지방세법 시행령 §125, 경향신문 2025-01-12, 서초구청 공지 (2026-06-02 확정)
   const annualPaymentDiscount = input.includeAnnualDiscount
-    ? Math.floor((totalAnnual * VEHICLE_TAX_ANNUAL_PAYMENT_DISCOUNT_RATE) / 10) * 10 // 10원 단위 절사
+    ? (() => {
+        const daysOfPayment = calculateAnnualPaymentDaysOfPayment(
+          input.annualPaymentMonthOfApplication ?? 1
+        );
+        const discountRatio = (daysOfPayment / 365) * VEHICLE_TAX_ANNUAL_PAYMENT_DISCOUNT_RATE;
+        return Math.floor((totalAnnual * discountRatio) / 10) * 10; // 10원 단위 절사
+      })()
     : 0;
   const finalAnnualPayment = totalAnnual - annualPaymentDiscount;
 

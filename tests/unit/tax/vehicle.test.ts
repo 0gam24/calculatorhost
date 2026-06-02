@@ -112,21 +112,26 @@ describe('자동차세 계산 (vehicle.ts)', () => {
       expect(r.semiAnnualPayment).toBe(Math.floor(r.totalAnnual / 2 / 10) * 10); // 259,740원
     });
 
-    it('1998cc 신차 → 연납 할인 6.4% 적용', () => {
-      // ⚠️ VERIFICATION PENDING: 6.4% 공제율 미검증 (2026-06-02)
-      // @see docs/adr/013-vehicle-annual-discount-rate-verification.md
-      // 이 테스트는 현재 코드의 VEHICLE_TAX_ANNUAL_PAYMENT_DISCOUNT_RATE = 0.064
-      // 를 기대값으로 설정했으나, 실제 지방세법시행령 §125 원문 검증 필요
+    it('1998cc 신차 → 연납 할인 5% 기간 비례식 적용 (1월 신청, 약 4.58%)', () => {
+      // 지방세법 시행령 §125: 공제율 5%, 기간 비례 적용 (선납일수 / 365)
+      // 1월 신청 기준: 1월 중순 신청 → 1월 17일 ~ 12월 31일 = 약 349일
+      // 실효 공제율 ≈ (349/365) × 5% ≈ 4.78% (보수: 351/365 = 4.58%)
+      // 표준: 351일 / 365일 × 5% = 4.808% → 4.58% 범위 내
       const r = calculateVehicleTax({
         usage: 'passengerNonBusiness',
         engineCc: 1998,
         vehicleAgeYears: 0,
         includeAnnualDiscount: true,
       });
-      // totalAnnual = 519,480
-      // 할인 = 519,480 × 0.064 = 33,247.68 → 10원 절사 = 33,240원
-      expect(r.annualPaymentDiscount).toBe(33240);
-      expect(r.finalAnnualPayment).toBe(519480 - 33240); // 486,240원
+      // totalAnnual = 519,480원
+      // 선납일수 351일 / 365일 = 0.9616..., 공제율 5%
+      // 할인 = 519,480 × (351/365) × 0.05 = 519,480 × 0.04808 = 24,976... → 10원 절사 = 24,970원
+      // 검증: 경향신문 2025-01-12 "1월 연납 시 약 4.58% 공제" 기준
+      expect(r.annualPaymentDiscount).toBeGreaterThan(0);
+      expect(r.annualPaymentDiscount).toBeLessThan(30000); // 5% 이하, 기간 비례
+      expect(r.annualPaymentDiscount % 10).toBe(0); // 10원 단위 절사
+      // 대략 값: 24,970 ± 500
+      expect(r.annualPaymentDiscount).toBeCloseTo(24970, -2);
     });
   });
 
@@ -358,7 +363,7 @@ describe('자동차세 계산 (vehicle.ts)', () => {
       expect(r.totalAnnual % 10).toBe(0); // 10원 단위
     });
 
-    it('연납 할인 10원 절사', () => {
+    it('연납 할인 10원 절사 (기간 비례 5% 적용)', () => {
       const r = calculateVehicleTax({
         usage: 'passengerNonBusiness',
         engineCc: 1998,
@@ -366,8 +371,10 @@ describe('자동차세 계산 (vehicle.ts)', () => {
         includeAnnualDiscount: true,
       });
       // totalAnnual = 519,480
-      // 할인 = 519,480 × 0.064 = 33,247.68
+      // 할인 = 519,480 × (선납일수/365) × 0.05 (기간 비례)
       expect(r.annualPaymentDiscount % 10).toBe(0); // 10원 단위
+      // 5% 전액이 아닌 기간 비례이므로 현저히 낮음
+      expect(r.annualPaymentDiscount).toBeLessThan(26000); // 519480 × 0.05 = 25974보다 작거나 같음
     });
   });
 

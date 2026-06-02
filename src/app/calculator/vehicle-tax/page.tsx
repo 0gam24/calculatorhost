@@ -22,12 +22,12 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/vehicle-tax/';
 
 export const metadata: Metadata = {
-  // 검색 의도 "자동차세 얼마" 직접 흡수 + 즉답 후크 + 연납 6.4% 구체 숫자.
+  // 검색 의도 "자동차세 얼마" 직접 흡수 + 즉답 후크 + 연납 5% 구체 숫자.
   // 한글 33자 — Google SERP 모바일 안전 폭. "calculatorhost" 브랜드는 SERP 도메인으로 노출됨.
-  title: '자동차세 얼마? 배기량별 즉시 계산 2026 — 연납 6.4% 할인',
+  title: '자동차세 얼마? 배기량별 즉시 계산 2026 — 연납 5% 할인',
   // 의도 키워드("얼마") + 페르소나("내 차") + 구체 cc + 페이지 실제 산출 항목 + 신뢰 신호("무료/로그인 없음").
   description:
-    '내 차 배기량(1600cc·2000cc·3000cc 등)만 입력하면 자동차세 + 지방교육세 즉시 산출. 2026년 연납 6.4% 할인·노후차 경감 자동 반영. 회원가입·로그인 없이 무료.',
+    '내 차 배기량(1600cc·2000cc·3000cc 등)만 입력하면 자동차세 + 지방교육세 즉시 산출. 2026년 연납 5% 할인·노후차 경감 자동 반영. 회원가입·로그인 없이 무료.',
   keywords: [
     '자동차세 계산기',
     '자동차세 얼마',
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: '자동차세 얼마? 배기량별 즉시 계산 2026',
-    description: '내 차 배기량만 입력 → 자동차세 + 지방교육세 즉시 산출. 연납 6.4% 할인·노후차 경감 자동.',
+    description: '내 차 배기량만 입력 → 자동차세 + 지방교육세 즉시 산출. 연납 5% 할인·노후차 경감 자동.',
     url: URL,
     type: 'website',
 
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '자동차세 얼마? 배기량별 즉시 계산 2026',
-    description: '배기량 입력 → 자동차세·지방교육세 즉시 산출. 연납 6.4% 할인 자동 반영.',
+    description: '배기량 입력 → 자동차세·지방교육세 즉시 산출. 연납 5% 할인 자동 반영.',
   },
 };
 
@@ -58,12 +58,12 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '자동차세는 언제 납부하나요?',
     answer:
-      '자동차세는 통상 6월(상반기)과 12월(하반기) 두 번에 나누어 납부합니다. 단, 1월에 일괄 납부하면 약 6.4% 연납 할인을 받을 수 있습니다.',
+      '자동차세는 통상 6월(상반기)과 12월(하반기) 두 번에 나누어 납부합니다. 단, 1월에 일괄 납부하면 약 5% 연납 할인을 받을 수 있습니다.',
   },
   {
     question: '연납 할인율은 얼마인가요?',
     answer:
-      '2026년 기준 자동차세 연납(1월 일괄 납부) 할인율은 약 6.4%입니다. 연간 520,000원이면 연납 시 약 487,000원을 납부합니다.',
+      '2026년 기준 자동차세 연납(1월 일괄 납부) 할인율은 약 5%입니다 (지방세법 시행령 §125). 정확한 할인액은 선납 일수에 따라 비례합니다. 본 계산기에서 연납 할인 옵션을 체크하면 실시간 확인 가능합니다.',
   },
   {
     question: '노후차·경차는 감면되나요?',
@@ -93,7 +93,7 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '2000cc 자동차세는 얼마인가요?',
     answer:
-      '비영업용 승용차 2000cc 의 2026년 연간 자동차세는 본세 약 400,000원 (200원/cc × 2,000cc) 입니다. 지방교육세 30%(120,000원) 가산하여 총 약 520,000원입니다. 1월 연납 시 6.4% 할인이 적용되어 약 487,000원이 됩니다.',
+      '비영업용 승용차 2000cc 의 2026년 연간 자동차세는 본세 약 400,000원 (200원/cc × 2,000cc) 입니다. 지방교육세 30%(120,000원) 가산하여 총 약 520,000원입니다. 1월 연납 시 5% 한도 내 할인이 적용됩니다 (정확한 할인액은 선납 일수에 비례).',
   },
   {
     question: '2400cc 자동차세는 얼마인가요?',
@@ -213,7 +213,7 @@ export default function VehicleTaxPage() {
                     ['1600cc 초과', '200원/cc'],
                     ['차령경감', '3년 차부터 연 5% (최대 50%)'],
                     ['지방교육세', '자동차세의 30%'],
-                    ['연납할인', '1월 납부 시 6.4%'],
+                    ['연납할인', '1월 납부 시 5%'],
                   ],
                 }}
                 tldr={[
@@ -355,7 +355,7 @@ export default function VehicleTaxPage() {
                   <ul className="space-y-1 text-text-secondary">
                     <li>• <strong>1000cc 정확</strong>: 80원/cc 적용 (1001cc부터 140원/cc)</li>
                     <li>• <strong>1600cc 정확</strong>: 140원/cc 적용 (1601cc부터 200원/cc) — 1cc 차이로 약 9만 원 차이</li>
-                    <li>• 연납 신청(1월) 시 약 6.4% 할인 (예: 1600cc 291,200원 → 약 272,500원)</li>
+                    <li>• 연납 신청(1월) 시 약 5% 할인 (지방세법 시행령 §125). 정확한 할인액은 선납 일수에 비례합니다.</li>
                   </ul>
                 </div>
               </section>
@@ -409,8 +409,7 @@ export default function VehicleTaxPage() {
                 <h2 className="text-2xl font-bold text-text-primary">연납 할인 (1월 일괄 납부)</h2>
                 <p className="text-text-secondary leading-relaxed">
                   자동차세는 6월과 12월 두 차례로 납부하는 것이 기본이지만, 1월에 연간 전액을 일괄 납부하면
-                  약 6.4% 할인을 받을 수 있습니다 (2026년 국고예규 기준). 예를 들어 연간 520,000원을 납부할 경우, 연납 시 약
-                  487,000원만 내면 됩니다.
+                  약 5% 할인을 받을 수 있습니다 (지방세법 시행령 §125). 정확한 공제액은 선납 일수에 따라 비례합니다. 본 계산기에서 연납 할인 옵션을 체크하면 실시간 확인 가능합니다.
                 </p>
               </section>
 
@@ -442,7 +441,7 @@ export default function VehicleTaxPage() {
                 <h2 className="text-2xl font-bold text-text-primary">자동차세 절세 팁</h2>
                 <ul className="space-y-3 text-text-secondary">
                   <li>
-                    <strong>1. 연납 활용</strong>: 1월 일괄 납부로 6.4% 절감. 연간 520,000원 → 487,000원
+                    <strong>1. 연납 활용</strong>: 1월 일괄 납부로 5% 한도 내 공제. 정확한 할인액은 선납 일수에 비례합니다.
                   </li>
                   <li>
                     <strong>2. 차령경감 확인</strong>: 3년 차 이상 자동으로 경감되지만, 정기적으로 세액 확인

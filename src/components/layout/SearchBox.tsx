@@ -62,7 +62,7 @@ const SEARCH_DATA: SearchEntry[] = [
   // 가이드 개별 게시물 — 검색으로 발견 가능하도록
   { label: '가이드: 2026 세금 캘린더 (1~12월 한눈에)', href: '/guide/tax-calendar-2026/', kind: 'page', keywords: ['세금 캘린더', '세금 일정', '2026 세금', '월별 세금'] },
   { label: '가이드: 연말정산 완벽 가이드 (13월의 월급)', href: '/guide/year-end-tax-settlement/', kind: 'page', keywords: ['연말정산', '13월의 월급', '신용카드 공제', '의료비 공제', '연금저축', '월세 세액공제'] },
-  { label: '가이드: 자동차세 연납 6.4% 할인 (1월)', href: '/guide/january-vehicle-tax-prepayment/', kind: 'page', keywords: ['자동차세 연납', '자동차세 1월', '자동차세 할인', '6.4% 할인', '위택스 자동차세'] },
+  { label: '가이드: 자동차세 연납 5% 할인 (1월)', href: '/guide/january-vehicle-tax-prepayment/', kind: 'page', keywords: ['자동차세 연납', '자동차세 1월', '자동차세 할인', '5% 할인', '위택스 자동차세'] },
   { label: '가이드: 2월 환급 추적 + 5월 종소세 준비', href: '/guide/february-tax-refund-tracking/', kind: 'page', keywords: ['연말정산 환급', '환급 안들어옴', '경정청구', '추가 납부', '종소세 준비'] },
   { label: '가이드: 법인세 신고 가이드 (3월 31일 마감)', href: '/guide/march-corporate-tax/', kind: 'page', keywords: ['법인세', '법인세 신고', '12월 결산 법인', '법인세 세율', '3월 31일'] },
   { label: '가이드: 4월 부가세 1기 예정신고', href: '/guide/april-vat-preliminary-q1/', kind: 'page', keywords: ['부가세 1기', '부가세 4월', '예정신고', '일반과세자 부가세', '매입세액공제'] },
