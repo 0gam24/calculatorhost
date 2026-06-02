@@ -418,7 +418,23 @@ export const VEHICLE_TAX_REDUCTION_PER_YEAR = 0.05;
 export const VEHICLE_TAX_REDUCTION_MAX = 0.5;
 /** 지방교육세 비율 — 자동차세의 30% (지방세법 §151) */
 export const VEHICLE_LOCAL_EDUCATION_TAX_RATE = 0.3;
-/** 연납(1월 일괄) 할인율 — 2026 국고예규 기준 */
+/**
+ * 연납(1월 일괄) 할인율 — 지방세법 시행령 §125, 국고예규
+ *
+ * ⚠️ VERIFICATION REQUIRED:
+ * - 현재값: 0.064 (6.4%)
+ * - 법적근거: 지방세법 시행령 제125조 (자동차세 연세액 일시납부 및 세액공제)
+ * - 적용방식: 연간 총액(자동차세 + 지방교육세) × 6.4%
+ * - 1월 신청 기간: 매년 1월 중 신청 필수 (위택스/지자체 세무서)
+ *
+ * 불확실성:
+ * 1. 원문 직접 확인 필수: law.go.kr 지방세법시행령 제125조
+ * 2. 비표준 비율(6.4%)의 출처 특정 필요
+ * 3. 추이: 2024~2025 연 할인율이 5% → 3%로 인하되는 추세와 맞지 않을 가능성
+ * 4. 기간분 비례 공제 vs 전액 기준 공제 구분 필요
+ *
+ * @see ADR-007-vehicle-annual-discount-verification
+ */
 export const VEHICLE_TAX_ANNUAL_PAYMENT_DISCOUNT_RATE = 0.064;
 
 // ============================================

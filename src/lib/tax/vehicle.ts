@@ -154,7 +154,9 @@ export function calculateVehicleTax(input: VehicleTaxInput): VehicleTaxResult {
   // 4. 연간 총액
   const totalAnnual = vehicleTaxAfterReduction + localEducationTax;
 
-  // 5. 연납 할인
+  // 5. 연납 할인 (1월 신청 시)
+  // ⚠️ VERIFICATION PENDING: 6.4% 공제율은 2026-06-02 현재 법령 원문으로 미검증
+  // @see docs/adr/013-vehicle-annual-discount-rate-verification.md
   const annualPaymentDiscount = input.includeAnnualDiscount
     ? Math.floor((totalAnnual * VEHICLE_TAX_ANNUAL_PAYMENT_DISCOUNT_RATE) / 10) * 10 // 10원 단위 절사
     : 0;

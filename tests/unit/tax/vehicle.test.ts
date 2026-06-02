@@ -113,6 +113,10 @@ describe('자동차세 계산 (vehicle.ts)', () => {
     });
 
     it('1998cc 신차 → 연납 할인 6.4% 적용', () => {
+      // ⚠️ VERIFICATION PENDING: 6.4% 공제율 미검증 (2026-06-02)
+      // @see docs/adr/013-vehicle-annual-discount-rate-verification.md
+      // 이 테스트는 현재 코드의 VEHICLE_TAX_ANNUAL_PAYMENT_DISCOUNT_RATE = 0.064
+      // 를 기대값으로 설정했으나, 실제 지방세법시행령 §125 원문 검증 필요
       const r = calculateVehicleTax({
         usage: 'passengerNonBusiness',
         engineCc: 1998,
