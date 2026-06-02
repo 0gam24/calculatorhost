@@ -25,6 +25,15 @@
 
 
 
+
+## 2026-06-03
+
+- [가이드] [기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026](https://calculatorhost.com/guide/interest-rate-hike-dsr-loan-limit-july-2026/) — 2026년 6월 현재 기준금리는 2.50%(8연속 동결)입니다. 만약 금리가 오르면 DSR·스트레스금리를 통해 주담대·전세대출 한도가 어떻게 변하는지 구조와 가정 사례로 설명합니다. 7월 16일 금통위 앞 점검.
+- [가이드] [2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 6월 15일 신청](https://calculatorhost.com/guide/energy-voucher-2026-summer-cooling-subsidy/) — 2026 에너지바우처는 저소득층·취약계층의 냉방비를 최대 70만원까지 지원합니다. 신청 기간(6/15~12/31), 대상, 지원금액(세대원 수별), 신청 방법·필요 서류, 사용 방법을 완벽 정리했습니다.
+- [가이드] [근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급 (6월~11월)](https://calculatorhost.com/guide/earned-income-tax-credit-late-application-2026/) — 5월 정기신청을 놓쳤어도 11월 30일까지 기한 후 신청하면 95%를 받을 수 있습니다. 2026 근로장려금·자녀장려금 신청 기한, 지급액, 신청 방법, 소득·재산 요건을 완벽 정리했습니다.
+- [가이드] [종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일](https://calculatorhost.com/guide/comprehensive-real-estate-tax-who-pays-2026/) — 2026년 종합부동산세 완벽 해설. 1주택 12억/다주택 9억 공제, 6월 1일 과세기준일 기준 소유자. 공시가 산정, 세율 0.5~5%, 12월 납부. 계산 사례 및 절세·공제 전략.
+- [가이드] [자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026](https://calculatorhost.com/guide/vehicle-tax-june-payment-annual-discount-2026/) — 2026년 자동차세 제1기(6/16~30) 납부 시즌 가이드. 연납(1월 일괄 선납) 할인, 3년차부터 차령경감 연 5% 최대 50%. 세액 계산 사례 및 납부 방법 전체 해설.
+- [가이드] [자동차 개별소비세 인하 6월 30일 마감 — 출고 기준 143만원 절감 가이드 | calculatorhost](https://calculatorhost.com/guide/vehicle-individual-consumption-tax-deadline-2026-june/) — 자동차 개별소비세 인하(5% → 3.5%)는 2026년 6월 30일 종료. 최대 143만원 절감하려면 6월 30일 이전 출고 필수. 계약일이 아닌 출고일이 기준. 마감 1개월 남은 지금 꼭 확인해야 할 사항.
 ## 2026-06-02
 
 - [가이드] [재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정 | calculatorhost](https://calculatorhost.com/guide/property-tax-base-date-june-1-2026/) — 재산세는 매년 6월 1일 기준 소유자에게 부과됩니다. 잔금일이 5월 31일 vs 6월 2일이면 누가 재산세를 내는가? 지방세법 §114에 따른 과세기준일 판정법과 거래 전 필수 협상 가이드.
