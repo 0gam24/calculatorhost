@@ -404,6 +404,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '7/16 금통위',
     tags: ['금융', '대출'],
   },
+  {
+    slug: 'high-oil-price-relief-fund-2026-application',
+    title: '고유가 피해지원금 2026 — 대상·금액·신청 (소득 하위 70%, 7/3 마감)',
+    description:
+      '소득 하위 70%면 1인당 10~25만원(지역 차등). 2차 신청 5/18~7/3, 카드·지역사랑상품권으로 8/31까지 사용. 건강보험료 기준·신청 방법·사용처 총정리.',
+    category: '세금',
+    publishedAt: '2026-06-03',
+    readingMinutes: 7,
+    seasonal: '7/3 신청 마감',
+    tags: ['시즈널', '블루오션'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
