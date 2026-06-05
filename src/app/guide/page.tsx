@@ -415,6 +415,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '7/3 신청 마감',
     tags: ['시즈널', '블루오션'],
   },
+  {
+    slug: 'youth-future-savings-account-2026',
+    title: '청년미래적금 2026 — 19~34세, 월 50만원·5% + 정부기여금 6~12%',
+    description:
+      '만 19~34세·소득요건 충족 시 월 최대 50만원, 기본금리 연 5% + 정부기여금 6~12% + 비과세. 3년 만기 약 2,200만원. 6월 22일 출시, 청년도약계좌와 중복 불가.',
+    category: '금융',
+    publishedAt: '2026-06-04',
+    readingMinutes: 8,
+    seasonal: '6/22 출시',
+    tags: ['금융'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',

@@ -78,6 +78,7 @@ const GUIDE_SLUGS = [
   'energy-voucher-2026-summer-cooling-subsidy',
   'interest-rate-hike-dsr-loan-limit-july-2026',
   'high-oil-price-relief-fund-2026-application',
+  'youth-future-savings-account-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
