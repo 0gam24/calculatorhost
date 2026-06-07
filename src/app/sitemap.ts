@@ -79,6 +79,7 @@ const GUIDE_SLUGS = [
   'interest-rate-hike-dsr-loan-limit-july-2026',
   'high-oil-price-relief-fund-2026-application',
   'youth-future-savings-account-2026',
+  'unemployment-benefit-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',

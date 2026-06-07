@@ -426,6 +426,16 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '6/22 출시',
     tags: ['금융'],
   },
+  {
+    slug: 'unemployment-benefit-2026',
+    title: '실업급여 2026 — 상한 68,100원·하한 66,048원, 조건·금액·신청',
+    description:
+      '2026년 실업급여 1일 상한 68,100원·하한 66,048원으로 인상. 수급조건(피보험단위기간 180일·비자발적 이직), 소정급여일수 120~270일, 지급액 계산(평균임금 60%), 신청 방법까지 정리.',
+    category: '근로',
+    publishedAt: '2026-06-07',
+    readingMinutes: 9,
+    tags: ['근로'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
