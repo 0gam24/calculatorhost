@@ -436,6 +436,16 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 9,
     tags: ['근로'],
   },
+  {
+    slug: 'national-pension-2026',
+    title: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁',
+    description:
+      '2026년 국민연금 개혁으로 보험료율 9%→9.5%, 소득대체율 41.5%→43% 인상. 출생연도별 수령나이(61~65세), 예상수령액 확인법, 조기수령(최대 30%↓)·연기연금(최대 36%↑) 손익 정리.',
+    category: '근로',
+    publishedAt: '2026-06-08',
+    readingMinutes: 10,
+    tags: ['근로'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',

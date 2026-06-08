@@ -80,6 +80,7 @@ const GUIDE_SLUGS = [
   'high-oil-price-relief-fund-2026-application',
   'youth-future-savings-account-2026',
   'unemployment-benefit-2026',
+  'national-pension-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
