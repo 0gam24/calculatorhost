@@ -446,6 +446,16 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 10,
     tags: ['근로'],
   },
+  {
+    slug: 'basic-pension-2026',
+    title: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계',
+    description:
+      '2026년 기초연금 월 최대 349,700원(부부 559,520원). 선정기준액 단독 247만원·부부 395.2만원, 65세 소득하위 70% 대상. 국민연금 연계감액(최소 50% 보장)·부부감액·신청 방법 정리.',
+    category: '근로',
+    publishedAt: '2026-06-09',
+    readingMinutes: 9,
+    tags: ['근로'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
