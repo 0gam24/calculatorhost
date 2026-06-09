@@ -263,6 +263,32 @@ export default function RentConversionRateGuidePage() {
                 </ul>
               </section>
 
+              <section className="card">
+                <h2 className="mb-2 text-xl font-semibold">📖 관련 가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/guide/housing-rental-income-separate-taxation/"
+                      className="font-medium text-primary-600 underline dark:text-primary-500"
+                    >
+                      주택임대소득 분리과세 2,000만 원
+                    </Link>{' '}
+                    — 월세 전환 후 임대소득 과세·간주임대료
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/guide/jeonse-deposit-safety/"
+                      className="font-medium text-primary-600 underline dark:text-primary-500"
+                    >
+                      전세보증금 안전 점검
+                    </Link>{' '}
+                    — 반전세 환산 전 깡통전세 예방
+                  </li>
+                </ul>
+              </section>
+
               <ShareButtons
                 title="주택임대차보호법 전월세전환율 2026 | 기준금리+2% 완벽 가이드"
                 url={URL}

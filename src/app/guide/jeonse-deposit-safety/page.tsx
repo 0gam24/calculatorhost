@@ -260,6 +260,13 @@ export default function JeonseDepositSafetyPage() {
                     <div className="font-semibold text-primary-500">전세대출 이자 계산기</div>
                     <p className="mt-1 text-sm text-text-secondary">부족한 보증금을 대출로 채울 시 이자를 계산하세요.</p>
                   </Link>
+                  <Link
+                    href="/guide/rent-conversion-rate-2026-housing-lease-act/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
+                  >
+                    <div className="font-semibold text-primary-500">전월세전환율 법정 상한 가이드</div>
+                    <p className="mt-1 text-sm text-text-secondary">주택임대차보호법 §7의2 기준금리+2% 한도와 반전세 환산 공식.</p>
+                  </Link>
                 </div>
               </section>
 

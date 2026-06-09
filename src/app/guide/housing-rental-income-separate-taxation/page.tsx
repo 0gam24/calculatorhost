@@ -281,6 +281,7 @@ export default function HousingRentalIncomeGuide() {
                 <ul className="space-y-2 text-text-secondary">
                   <li>→ <Link href="/calculator/rental-yield/" className="text-primary-600 underline dark:text-primary-500">임대수익률 계산기</Link> — 월세·보증금 실제 수익률</li>
                   <li>→ <Link href="/calculator/rent-conversion/" className="text-primary-600 underline dark:text-primary-500">전월세 전환율 계산기</Link></li>
+                  <li>→ <Link href="/guide/rent-conversion-rate-2026-housing-lease-act/" className="text-primary-600 underline dark:text-primary-500">전월세전환율 2026 기준금리 한도</Link> — 월차임 전환율 법정 상한</li>
                   <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 임대 소득 합산 시</li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link></li>
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link> — 다주택 보유세</li>

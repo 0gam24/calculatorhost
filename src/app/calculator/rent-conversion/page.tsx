@@ -94,6 +94,11 @@ const FAQ_ITEMS = [
 ] as const;
 
 const RELATED = [
+  {
+    href: '/guide/rent-conversion-rate-2026-housing-lease-act/',
+    title: '전월세전환율 가이드',
+    description: '주택임대차보호법 §7의2 법정 상한·계산 사례',
+  },
   { href: '/calculator/broker-fee', title: '중개수수료', description: '부동산 거래 비용' },
   { href: '/calculator/property-tax', title: '재산세', description: '연간 부과세' },
   { href: '/calculator/loan', title: '대출이자', description: '주담대·전세자금' },
