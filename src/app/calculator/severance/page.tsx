@@ -190,7 +190,7 @@ export default function SeverancePage() {
                   ]}
                 />
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  퇴직금 계산기 2026
+                  퇴직금·퇴직소득세 계산기 2026
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   입사일, 퇴사일, 월 통상임금으로 법정 퇴직금과 퇴직소득세를 자동 계산합니다.

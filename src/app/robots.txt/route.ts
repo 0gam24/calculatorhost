@@ -37,6 +37,9 @@ Disallow: /xmlrpc.php
 Disallow: /wp-config.php
 Disallow: /wp-cron.php
 Disallow: /wp-sitemap.xml
+Disallow: /sitemap_index.xml
+Disallow: /post-sitemap.xml
+Disallow: /post_tag-sitemap.xml
 Disallow: /*.php$
 Disallow: /search/
 Disallow: /*?s=
