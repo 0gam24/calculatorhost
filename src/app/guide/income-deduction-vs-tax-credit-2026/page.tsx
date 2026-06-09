@@ -645,6 +645,13 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/medical-expense-tax-credit-3-percent-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      의료비 세액공제 2026
+                    </Link>
+                    {' '}— 대표적 세액공제, 총급여 3% 초과분 15% 공제
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>

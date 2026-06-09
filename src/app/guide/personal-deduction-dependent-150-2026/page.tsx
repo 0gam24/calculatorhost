@@ -631,6 +631,15 @@ export default function PersonalDeductionDependent2026Page() {
                       </p>
                     </Link>
                     <Link
+                      href="/guide/medical-expense-tax-credit-3-percent-2026/"
+                      className="rounded-lg border border-border-base p-4 hover:bg-bg-card"
+                    >
+                      <div className="font-semibold">의료비 세액공제 가이드</div>
+                      <p className="text-sm text-text-secondary">
+                        부양가족 의료비 포함, 총급여 3% 초과분 15% 공제·700만 한도
+                      </p>
+                    </Link>
+                    <Link
                       href="/calculator/child-tax-credit"
                       className="rounded-lg border border-border-base p-4 hover:bg-bg-card"
                     >
