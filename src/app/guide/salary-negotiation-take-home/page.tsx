@@ -48,7 +48,7 @@ const FAQ_ITEMS = [
   {
     question: '연봉 5,000만 원 제안받았는데 실제 월급은 얼마인가요?',
     answer:
-      '부양가족 1명, 비과세 없음 기준으로 월 약 292만 원입니다. 세전 월급 약 417만 원에서 4대보험(약 37만 원)과 소득세·지방소득세(약 29만 원)가 공제됩니다. 자녀 수·건강보험 피부양자 여부에 따라 10~20만 원 차이가 생기므로, 본인 상황을 [연봉실수령액 계산기](/calculator/salary/)에 입력해 정확히 확인하세요.',
+      '부양가족 1명, 비과세 없음 기준으로 월 약 292만 원입니다. 세전 월급 약 417만 원에서 4대보험(약 37만 원)과 소득세·지방소득세(약 29만 원)가 공제됩니다. 자녀 수·건강보험 피부양자 여부에 따라 10~20만 원 차이가 생기므로, 본인 상황을 연봉 실수령액 계산기에 입력해 정확히 확인하세요.',
   },
   {
     question: '상여금 500만 원은 월급에 얼마나 영향을 미칠까요?',
@@ -249,7 +249,7 @@ export default function SalaryNegotiationTakeHomePage() {
                 <h2 className="text-2xl font-bold">협상 카드 만드는 법 — 실수령액 정확 계산</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   이제 여러분의 상황에 맞게 정확한 월 실수령액을 계산해 봅시다.
-                  [연봉실수령액 계산기](/calculator/salary/)를 열어서 다음 정보를 입력하면,
+                  <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>를 열어서 다음 정보를 입력하면,
                   자동으로 월 실수령액·연봉세·4대보험료가 계산됩니다.
                 </p>
                 <ol className="space-y-3 text-sm">

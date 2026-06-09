@@ -68,7 +68,7 @@ const FAQ_ITEMS = [
   {
     question: 'DTI 계산기는 어디서 사용하나요?',
     answer:
-      '본 사이트의 [대출한도(DSR/LTV/DTI) 계산기](/calculator/loan-limit/)에서 연소득·기존 대출·신규 대출 조건을 입력하면 DTI·DSR·LTV 3개 규제와 결정적 제약 요인을 한 번에 확인할 수 있습니다.',
+      '본 사이트의 대출한도(DSR/LTV/DTI) 계산기에서 연소득·기존 대출·신규 대출 조건을 입력하면 DTI·DSR·LTV 3개 규제와 결정적 제약 요인을 한 번에 확인할 수 있습니다.',
   },
   {
     question: 'LTV·DTI·DSR 동시 계산 의미는?',
