@@ -626,6 +626,14 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
               <section aria-label="관련 가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 가이드</h2>
                 <div className="grid gap-3 md:grid-cols-2">
+                  <Link href="/calculator/gift-tax/">
+                    <div className="rounded-lg border border-border-base bg-bg-card p-4 hover:bg-primary-500/10">
+                      <h3 className="font-semibold text-text-primary">증여세 계산기</h3>
+                      <p className="mt-1 text-sm text-text-secondary">
+                        증여재산공제·누진세율을 적용해 증여세를 자동 산정
+                      </p>
+                    </div>
+                  </Link>
                   <Link href="/guide/burden-gift-debt-assumption-tax/">
                     <div className="rounded-lg border border-border-base bg-bg-card p-4 hover:bg-primary-500/10">
                       <h3 className="font-semibold text-text-primary">부담부증여 양도+증여세</h3>

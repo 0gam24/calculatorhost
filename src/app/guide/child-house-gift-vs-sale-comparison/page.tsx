@@ -704,6 +704,11 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                   </Link>
                 </li>
                 <li>
+                  <Link href="/calculator/gift-tax/" className="text-primary hover:underline">
+                    증여세 계산기 — 자녀 증여 시 증여세 미리 계산
+                  </Link>
+                </li>
+                <li>
                   <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary hover:underline">
                     일시적 2주택 양도세 비과세 가이드 — 양도 시점 차이와 보유 기간
                   </Link>

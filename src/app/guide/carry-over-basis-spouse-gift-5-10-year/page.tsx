@@ -640,6 +640,9 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 1세대1주택·다주택·일시적2주택 시뮬
                   </li>
                   <li>
+                    → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">배우자 증여세 계산기</Link> — 증여재산공제·누진세율 자동 적용
+                  </li>
+                  <li>
                     → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link> — 비과세 조건·비례 과세
                   </li>
                   <li>
