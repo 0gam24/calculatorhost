@@ -120,10 +120,22 @@
   · GuideEntry `tags?: string[]` 다중 태그 지원 (4티어 20편 마킹)
   · vitest pre-existing 3건 transform fail 제거 (Test Files 47/47, Tests 944/944)
 - **운영자 수동 액션 (병행)**:
-  · GSC URL Inspection → Request Indexing 미색인 상위 10개 (월 200건 한도)
+  · GSC URL Inspection → Request Indexing 미색인 상위 10개 — **일 ~10-12건/속성 한도** (2026-06-10 deep-research 교정: 기존 "월 200건"은 별개인 Indexing API 쿼터 혼동. 매일 10건씩 분산 신청이 정답, 동일 URL 반복 클릭 무효)
   · Bing IndexNow 키 발급 → GitHub Secrets `INDEXNOW_KEY` → workflow 활성화
   · GSC Page Index 9가지 미색인 이유 캡처 → seo-auditor 정확 진단
   · data.go.kr `PUBLIC_DATA_KEY` (RTMS·JUSO) 신청 여부 확인
+
+### 검증된 전략 전제 (2026-06-10 deep-research, 25개 주장 적대검증 → 21 확정 / 4 기각)
+> 출처: Ahrefs 2025 longitudinal·Pew·Semrush·Google 공식문서·네이버 공식 발표. 상세는 `.claude/reports/deep-research-2026-06-10-traffic-adsense.md`
+
+- **구글 단기 순위는 통계적으로 희박** — 신규 페이지의 1.74%만 1년 내 top10 (콘텐츠 페이지 기준 ~6%). #1 페이지 평균 연령 5년. → 저검색량·저경쟁 롱테일(4티어)이 단기 전장 (기존 전략 검증됨)
+- **IndexNow는 구글에 무효** — 참여사는 Bing·Yandex·Naver·Seznam뿐. 우리 workflow는 Bing/네이버용으로 유지 가치 있음. 구글 레버는 sitemap + 내부링크 + Request Indexing(일 10-12건)뿐
+- **네이버가 한국 유입의 62.9%** (InternetTrend 2025, 국내 사이트 유입 기준) vs 구글 29.6% — 네이버 표면이 단기 최대 기회
+- **네이버 AI 브리핑 = 전체 질의 20%+ (2026말 40% 목표)** — 단 보상루프(네이버 메이트)는 네이버 UGC 전용 → **병행 네이버 블로그 채널 → 계산기 유입 퍼널**이 구조적 정답. 인용 기준은 공식 "콘텐츠 셀프체크 5축" (독자·목적 / 절차 / 대안·비교 / 사례·수치 / 멀티미디어). ⚠️ "FAQ 구조가 AI 브리핑 인용에 유리"는 검증 기각(0-3) — 5축이 기준, FAQ 형식 아님
+- **AI Overview 출현 시 #1 CTR -58%** (Ahrefs 30만 키워드), AIO 내 인용 클릭률 ~1% — 방어선은 **인터랙티브 계산기(AI가 대체 못 함) + AIO 출현율 낮은 롱테일**. AIO 커버리지는 변동성 큼 (6.5%→24.6%→15.7%, 2025)
+- **FAQPage 스키마의 구글 SERP 리치결과 효과는 미해결** — LLM/AEO 추출 구조로서의 가치만 유지. 기대치 조정
+- **기각된 통념**: "색인 1~2일·브랜드 1주·롱테일 1달"(0-3), "Request Indexing 평균 3~5일"(0-3) — 시간 약속은 Mueller "수 시간~수 주 (신규 사이트 통상 2~4주)"만 신뢰
+- **미해결 (자체 데이터 필요)**: 한국 금융 니치 RPM 벤치마크·Auto ads vs 수동 A/B (1차 데이터는 우리 AdSense 계정뿐), 6~9월 시즌 키워드 검색량 (Ahrefs 플랜 제한)
 
 ### 다음 후보 (4주 효과 측정 후 우선순위 재결정)
 - AvifImage 페이지별 적용 (히어로 이미지 사용처 신규 추가 시)
