@@ -339,6 +339,7 @@ export default function SeveranceVsPensionDcDbPage() {
                   <li>→ <Link href="/calculator/severance/" className="text-primary-600 underline dark:text-primary-500">퇴직금 계산기</Link> — DC/DB 시나리오 비교</li>
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link> — 임금피크 후 세후 월급 확인</li>
                   <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link> — 퇴직 전 세액공제 극대화</li>
+                  <li>→ <Link href="/guide/unemployment-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">실업급여 2026</Link> — 퇴직금과 함께 챙길 고용보험 구직급여 조건·금액</li>
                 </ul>
               </section>
 

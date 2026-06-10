@@ -84,6 +84,7 @@ export const CROSS_GUIDES: Record<CategoryId, string[]> = {
     'child-earned-income-tax-credit-application-2026',
     'may-comprehensive-income-tax',
     'february-tax-refund-tracking',
+    'november-year-end-tax-prep',
   ],
   tax: [
     // 세금·부동산 가이드 중 양도세 hub 다수도 cross-link
@@ -100,15 +101,22 @@ export const CROSS_GUIDES: Record<CategoryId, string[]> = {
     'self-farming-land-100-percent-exemption',
     'family-loan-agreement-gift-tax-avoidance',
     'financial-income-comprehensive-vs-separate-taxation',
+    'comprehensive-real-estate-tax-who-pays-2026',
   ],
-  finance: [],
+  finance: ['foreign-tax-credit-overseas-stock-2026'],
   'real-estate': [
     'jeonse-deposit-safety',
     'rent-conversion-rate-2026-housing-lease-act',
     'housing-rental-income-separate-taxation',
     'april-comprehensive-property-tax-exclusion',
+    'temporary-two-houses-capital-gains-exemption',
   ],
-  lifestyle: [],
+  lifestyle: [
+    'vehicle-tax-june-payment-annual-discount-2026',
+    'january-vehicle-tax-prepayment',
+    'energy-voucher-2026-summer-cooling-subsidy',
+    'high-oil-price-relief-fund-2026-application',
+  ],
 };
 
 // ─────────────────────────────────────────────────────────────

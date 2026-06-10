@@ -351,6 +351,9 @@ export default function AprilVatPreliminaryQ1Page() {
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link></li>
                   <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link></li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고</Link></li>
+                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 부가세 1기 확정신고</Link> — 4월 예정신고 다음 단계, 상반기 전체 정산</li>
+                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크</Link> — 사업자 7월 세무 일정 한눈에</li>
+                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고</Link> — 하반기 예정신고·예정고지 대비</li>
                   <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더</Link></li>
                 </ul>
               </section>

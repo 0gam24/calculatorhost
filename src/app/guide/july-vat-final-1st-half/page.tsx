@@ -329,6 +329,9 @@ export default function JulyVatGuide() {
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link> — 본 가이드 시나리오 실시간 시뮬레이션</li>
                   <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 사업소득세와 부가세 동시 계산</li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link> — 부가세 신고 직전 단계</li>
+                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고</Link> — 확정신고 전 단계, 예정고지·예정신고 차이</li>
+                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크</Link> — 7월에 겹치는 원천세 납부까지 한 번에</li>
+                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고</Link> — 확정신고 다음 분기 일정 미리 대비</li>
                   <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 가이드</Link> — 부가세 신고 후 다음 단계</li>
                 </ul>
               </section>

@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   title: '금융·세금·투자 용어사전 2026 | calculatorhost',
   description:
     '한국 거주자가 일상에서 자주 마주치는 금융·세금·부동산·투자 핵심 용어 정의 모음. DSR·LTV·양도차익·장기보유공제·평균단가·BEP 등을 법조항·공식 출처와 함께 정리.',
+  keywords: [
+    '금융 용어사전',
+    '세금 용어 정리',
+    'DSR 뜻',
+    'LTV 뜻',
+    '양도차익 뜻',
+    '장기보유특별공제',
+    '부동산 용어사전 2026',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '금융·세금·투자 용어사전 — calculatorhost',

@@ -321,6 +321,8 @@ export default function JanuaryVehicleTaxPage() {
                 <h2 className="mb-3 text-lg font-semibold">📊 관련 도구</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">자동차세 계산기 — 본인 차종 정확한 세액·연납 절감액</Link></li>
+                  <li>→ <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">자동차세 제1기 6월 납부 가이드 — 연납 놓쳤을 때의 정기분 납부·차령경감</Link></li>
+                  <li>→ <Link href="/guide/vehicle-individual-consumption-tax-deadline-2026-june/" className="text-primary-600 underline dark:text-primary-500">자동차 개별소비세 6월 30일 마감 가이드 — 신차 구매 시 개소세 인하 혜택</Link></li>
                   <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더 — 모든 세금 일정</Link></li>
                 </ul>
               </section>

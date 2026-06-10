@@ -594,6 +594,9 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                   <li>
                     → <Link href="/guide/february-tax-refund-tracking/" className="text-primary-600 underline dark:text-primary-500">2월 환급금 조회 방법</Link> — 신고 후 환급 받기
                   </li>
+                  <li>
+                    → <Link href="/guide/foreign-tax-credit-overseas-stock-2026/" className="text-primary-600 underline dark:text-primary-500">해외주식 외국납부세액공제 2026</Link> — 해외 배당·이자도 금융소득 2,000만 원 판정에 포함
+                  </li>
                 </ul>
               </section>
 

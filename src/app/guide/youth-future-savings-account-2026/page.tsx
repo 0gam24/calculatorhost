@@ -450,6 +450,12 @@ export default function YouthFutureSavingsAccount2026() {
                     {' — 이자 과세와 비과세 차이'}
                   </li>
                   <li>
+                    → <Link href="/guide/unemployment-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      실업급여 2026 — 조건·금액·신청방법
+                    </Link>
+                    {' — 퇴사·이직 공백기에 청년이 함께 챙길 고용보험 급여'}
+                  </li>
+                  <li>
                     → <Link href="/category/finance/" className="text-primary-600 underline dark:text-primary-500">
                       금융 계산기
                     </Link>

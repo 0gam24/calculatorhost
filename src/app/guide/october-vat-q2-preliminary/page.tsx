@@ -323,6 +323,7 @@ export default function OctoberVatGuide() {
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link> — 매출/매입 입력 즉시 시뮬</li>
                   <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 1기 예정신고 가이드</Link> — 1기 기본 설명</li>
                   <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 1기 확정신고 가이드</Link> — 확정신고 완벽</li>
+                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크 가이드</Link> — 사업자 7월 세무 일정 한눈에</li>
                   <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 부가세 + 종소세 동시</li>
                 </ul>
               </section>

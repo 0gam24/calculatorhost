@@ -564,15 +564,31 @@ export default function MayComprehensiveIncomeTaxPage() {
                   </li>
                   <li>
                     →{' '}
-                    <Link href="/guide/child-earned-income-tax-credit-application-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      가이드: 자녀·근로장려금 신청 (5월 31일 마감)
+                    <Link href="/guide/may-31-deadline-day-income-tax-filing-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 5월 31일 마감일 당일 종소세 신고
                     </Link>
+                    {' '}— 마감 직전 최단 경로 신고 체크리스트
                   </li>
                   <li>
                     →{' '}
-                    <Link href="/guide/earned-income-tax-credit-vs-child/" className="text-primary-600 underline dark:text-primary-500">
-                      가이드: 근로장려금 vs 자녀장려금 차이
+                    <Link href="/guide/separate-vs-comprehensive-taxation-master-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 분리과세 vs 종합과세 마스터
                     </Link>
+                    {' '}— 어느 쪽이 유리한지 소득 유형별 판단 기준
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/voluntary-filing-june-50-percent-reduction-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 6월 기한후신고 가산세 50% 감면
+                    </Link>
+                    {' '}— 5월 신고를 놓쳤을 때의 차선책
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/personal-deduction-dependent-150-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      가이드: 인적공제 부양가족 1인당 150만 원
+                    </Link>
+                    {' '}— 종소세 신고 시 가장 기본이 되는 공제
                   </li>
                   <li>
                     →{' '}

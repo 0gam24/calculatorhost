@@ -327,6 +327,7 @@ export default function FreelancerSalaryComparisonPage() {
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기 (직장인)</Link></li>
                   <li>→ <Link href="/calculator/n-jobber-insurance/" className="text-primary-600 underline dark:text-primary-500">N잡러 건강보험 계산기</Link></li>
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기 (프리랜서 사업자)</Link></li>
+                  <li>→ <Link href="/guide/salary-negotiation-take-home/" className="text-primary-600 underline dark:text-primary-500">연봉 협상 실수령액 가이드</Link> — 세전 인상액이 세후로 얼마나 남는지 협상 전 확인</li>
                 </ul>
               </section>
 

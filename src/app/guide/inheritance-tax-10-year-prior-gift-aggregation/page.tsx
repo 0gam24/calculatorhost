@@ -301,6 +301,7 @@ export default function InheritanceTax10YearGuide() {
                   <li>→ <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link> — 증여 단계별 부담</li>
                   <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 사전 증여 후 매도 이월 과세</li>
                   <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도</Link></li>
+                  <li>→ <Link href="/guide/deceased-comprehensive-income-tax-heir-filing-2026/" className="text-primary-600 underline dark:text-primary-500">고인 종합소득세 상속인 신고</Link> — 상속 개시 후 6개월 내 챙겨야 할 또 하나의 신고</li>
                 </ul>
               </section>
 

@@ -5,6 +5,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
+import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrl } from '@/lib/network/main-backref';
@@ -12,6 +13,7 @@ import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
   buildWebPageJsonLd,
+  buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 
@@ -292,6 +294,39 @@ const CALENDAR: MonthEntry[] = [
   },
 ];
 
+const FAQ_ITEMS = [
+  {
+    question: '2026년 종합소득세 신고 기간은 언제인가요?',
+    answer:
+      '2026년 5월 1일부터 5월 31일까지입니다. 프리랜서·1인사업자·N잡러·임대인 등 근로소득 외 소득이 있는 사람이 신고 대상이며, 무신고 시 가산세 20% 이상이 부과됩니다(소득세법 §70). 성실신고확인대상자는 6월 30일까지 신고할 수 있습니다.',
+  },
+  {
+    question: '자동차세 연납 할인은 언제 신청하나요?',
+    answer:
+      '매년 1월에만 신청할 수 있습니다(위택스 신청·납부는 통상 1월 16일~31일). 1월에 1년치 자동차세를 일괄 납부하면 5% 한도 내에서 공제받을 수 있으며, 연납을 마치면 6월·12월 정기분 납부는 면제됩니다(지방세법 §128).',
+  },
+  {
+    question: '재산세는 언제 납부하나요?',
+    answer:
+      '7월과 9월 두 차례에 나누어 납부합니다. 주택분은 7월 16~31일에 절반, 9월 16~30일에 나머지 절반을 내고, 토지분은 9월에 일괄 납부합니다. 과세 기준일은 6월 1일로, 이날 0시 기준 소유자에게 1년치가 부과되므로 거래 시 잔금 일정에 주의해야 합니다.',
+  },
+  {
+    question: '종합부동산세는 누가 언제 내나요?',
+    answer:
+      '12월 1일부터 15일까지 신고·납부합니다. 1세대 합산 공시가격 9억 원 초과(1세대 1주택은 12억 원) 보유자가 대상입니다. 재산세와 같은 6월 1일 기준 소유자에게 부과되며, 임대주택 등은 4월의 합산배제 신청으로 미리 부담을 줄일 수 있습니다.',
+  },
+  {
+    question: '개인사업자 부가세 신고는 1년에 몇 번인가요?',
+    answer:
+      '확정신고 기준 연 2회, 7월과 1월입니다. 개인 일반과세자는 4월·10월에 직접 예정신고하는 대신 세무서가 보내는 예정고지서로 납부하는 것이 원칙이며, 휴업·실적 부진 시에만 예정신고를 선택할 수 있습니다. 간이과세자는 다음 해 1월에 연 1회 신고합니다.',
+  },
+  {
+    question: '연말정산은 언제 하나요?',
+    answer:
+      '1월에 정산해 2월 급여에 반영됩니다. 홈택스 연말정산 간소화 서비스는 1월 15일에 열리며, 의료비·교육비·기부금 자료를 내려받아 회사에 제출하면 환급 또는 추가 납부액이 2월 급여에 반영됩니다. 누락한 공제는 5월 종합소득세 신고로 정정할 수 있습니다.',
+  },
+] as const;
+
 export default function TaxCalendar2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -317,6 +352,7 @@ export default function TaxCalendar2026Page() {
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
   });
+  const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
   return (
@@ -324,6 +360,7 @@ export default function TaxCalendar2026Page() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
       <div className="min-h-screen bg-bg-base">
@@ -467,6 +504,8 @@ export default function TaxCalendar2026Page() {
                   </div>
                 </section>
               ))}
+
+              <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>

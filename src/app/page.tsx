@@ -112,6 +112,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
     items: [
       { href: '/calculator/loan', title: '대출이자' },
       { href: '/calculator/loan-limit', title: '대출한도(DSR/LTV)' },
+      { href: '/calculator/dti', title: 'DTI (총부채상환비율)' },
       { href: '/calculator/savings', title: '적금 이자' },
       { href: '/calculator/deposit', title: '정기예금 이자' },
       { href: '/calculator/exchange', title: '환율·환전' },
@@ -153,6 +154,58 @@ const ALL_CALCULATORS: CalcCategory[] = [
 
 // 홈페이지 노출용 — 최근 7건만 (전체 이력은 /updates 페이지에서)
 const UPDATES_2026 = getRecentUpdates(7);
+
+// 6~7월 시즌 일정 — 가이드 5편 + 계산기 3개 (trailing slash 필수)
+const SEASONAL_JUNE_JULY = [
+  {
+    href: '/guide/june-property-tax/',
+    title: '6월 재산세 기준일·납부',
+    desc: '6월 1일 보유자 기준으로 올해 재산세가 확정 — 과세 기준일과 납부 일정 정리',
+    tag: '가이드',
+  },
+  {
+    href: '/guide/vehicle-tax-june-payment-annual-discount-2026/',
+    title: '자동차세 6월 연납',
+    desc: '6월 연납 신청 시 잔여 기간분 할인 — 대상·신청 방법·할인액 확인',
+    tag: '가이드',
+  },
+  {
+    href: '/guide/voluntary-filing-june-50-percent-reduction-2026/',
+    title: '종소세 기한후신고 6월 감면',
+    desc: '5월 종합소득세 신고를 놓쳤다면 6월 자진 기한후신고로 가산세 감면',
+    tag: '가이드',
+  },
+  {
+    href: '/guide/july-vat-final-1st-half/',
+    title: '7월 부가세 확정신고',
+    desc: '상반기(1~6월) 부가가치세 확정신고는 7월 25일까지 — 일정·절차 가이드',
+    tag: '가이드',
+  },
+  {
+    href: '/guide/july-vat-and-tax-withholding/',
+    title: '7월 원천세·부가세 체크',
+    desc: '사업자의 7월 원천세 납부와 부가세 확정신고 일정을 한눈에',
+    tag: '가이드',
+  },
+  {
+    href: '/calculator/property-tax/',
+    title: '재산세 계산기',
+    desc: '공시가격 기준 올해 재산세 예상액을 즉시 계산',
+    tag: '계산기',
+  },
+  {
+    href: '/calculator/vehicle-tax/',
+    title: '자동차세 계산기',
+    desc: '배기량·차령 반영 자동차세와 연납 할인액 계산',
+    tag: '계산기',
+  },
+  {
+    href: '/calculator/vat/',
+    title: '부가가치세(VAT) 계산기',
+    desc: '일반·간이과세 부가세 납부액과 공급가액 환산 계산',
+    tag: '계산기',
+  },
+] as const;
 
 const HOME_FAQ = [
   {
@@ -278,6 +331,34 @@ export default function HomePage() {
                       <span className="rounded-lg bg-primary-500/10 px-3 py-2 text-sm font-semibold text-primary-500">
                         →
                       </span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
+              {/* 6~7월 시즌 일정 — 재산세·자동차세 연납·부가세 확정신고 */}
+              <section className="space-y-6">
+                <div>
+                  <h2 className="mb-2 text-2xl font-bold text-text-primary">6~7월 세금·금융 일정</h2>
+                  <p className="text-text-secondary">
+                    6월 재산세 기준일·자동차세 연납부터 7월 부가세 확정신고까지, 지금 확인해야 할
+                    일정별 가이드와 계산기입니다.
+                  </p>
+                </div>
+                <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+                  {SEASONAL_JUNE_JULY.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="card card-hover flex flex-col gap-2"
+                    >
+                      <div className="flex items-center justify-between gap-2">
+                        <span className="font-semibold text-text-primary">{item.title}</span>
+                        <span className="shrink-0 rounded-full bg-primary-500/10 px-3 py-1 text-xs font-semibold text-primary-500">
+                          {item.tag}
+                        </span>
+                      </div>
+                      <span className="text-sm text-text-tertiary">{item.desc}</span>
                     </Link>
                   ))}
                 </div>

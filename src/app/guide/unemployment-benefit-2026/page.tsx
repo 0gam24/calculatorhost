@@ -469,6 +469,13 @@ export default function UnemploymentBenefit2026() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/youth-future-savings-account-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      청년미래적금 2026
+                    </Link>
+                    {' — 재취업 후 목돈 마련, 정부기여금 6~12% 청년 적금'}
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/category/work/" className="text-primary-600 underline dark:text-primary-500">
                       근로 계산기·가이드
                     </Link>

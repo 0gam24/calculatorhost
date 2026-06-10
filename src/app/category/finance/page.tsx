@@ -25,6 +25,15 @@ export const metadata: Metadata = {
   title: '금융 계산기 모음 2026 | 대출·예금·적금·환율 | calculatorhost',
   description:
     '2026년 최신 금리 반영 금융 계산기 모음. 대출이자, DSR 대출한도, 정기예금, 적금, 환율 환전, 인플레이션 등 주담대·전세대출·신용대출 월 상환액과 예상 이자를 정확하게 계산하세요. 회원가입 불필요, 완전 무료.',
+  keywords: [
+    '금융 계산기',
+    '대출이자 계산기',
+    'DSR 계산기',
+    'DTI 계산기',
+    '적금 이자 계산기',
+    '정기예금 이자 계산기',
+    '환율 계산기 2026',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '금융 계산기 모음 2026',
@@ -47,6 +56,12 @@ const CALCULATORS = [
     description: '소득, 기존 대출 현황을 기반으로 추가 대출 가능 한도를 DSR 기준으로 계산합니다. 주담대 가능액을 파악하세요.',
     href: '/calculator/loan-limit',
     tags: ['주담대', '한도'],
+  },
+  {
+    title: 'DTI (총부채상환비율) 계산기',
+    description: '연소득 대비 주담대 원리금과 기타 대출 이자 비율(DTI)을 계산합니다. DSR과 함께 대출 한도 규제를 확인하세요.',
+    href: '/calculator/dti',
+    tags: ['DTI', '한도'],
   },
   {
     title: '정기예금 이자 계산기',
@@ -225,7 +240,7 @@ export default function FinanceCategoryPage() {
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <h2 className="text-xl font-semibold text-text-primary">금융 계산기 라인업</h2>
                 <p className="text-text-secondary">
-                  아래 4가지 계산기는 대출자, 예금자, 적금자의 금융 의사결정을 돕습니다.
+                  아래 계산기는 대출자, 예금자, 적금자의 금융 의사결정을 돕습니다.
                 </p>
                 <table className="w-full border-collapse">
                   <thead>

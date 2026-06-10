@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
@@ -169,6 +170,16 @@ export default function GuidePage() {
               <section className="space-y-2">
                 <h2 className="text-2xl font-semibold text-text-primary">마무리</h2>
                 <p className="leading-relaxed text-text-secondary">7월은 부가가치세 확정신고와 원천징수 납부, 그리고 하반기 연말정산 사전점검이 겹치는 세무 집중 시즌입니다. 각 기한을 달력에 미리 표시하고, 필요한 서류를 사전에 준비해 두면 가산세나 누락 없이 신고를 마칠 수 있습니다. calculatorhost 의 관련 계산기를 활용하여 예상 납부세액이나 공제 현황을 미리 시뮬레이션해 보시고, 구체적인 세무 판단이 필요한 경우에는 세무사 등 전문가와 반드시 상담하시기 바랍니다.</p>
+              </section>
+
+              <section aria-label="관련 계산기·가이드" className="card">
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link> — 매출·매입 입력으로 납부세액 즉시 시뮬레이션</li>
+                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 부가세 1기 확정신고 가이드</Link> — 확정신고 대상·기한·홈택스 단계 상세</li>
+                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고 가이드</Link> — 예정신고·예정고지 차이부터 확인</li>
+                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고 가이드</Link> — 다음 분기 부가세 일정 미리 대비</li>
+                </ul>
               </section>
 
               <section aria-label="공식 출처" className="card">

@@ -354,6 +354,13 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
                     <div className="text-sm text-text-secondary">사업소득 신고 시 세금 계산</div>
                   </Link>
                   <Link
+                    href="/guide/earned-income-tax-credit-late-application-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 text-primary-500 hover:bg-bg-base"
+                  >
+                    <div className="font-semibold">근로장려금 기한 후 신청 가이드</div>
+                    <div className="text-sm text-text-secondary">정기 신청 놓쳤을 때 6개월 내 신청법 (감액 지급)</div>
+                  </Link>
+                  <Link
                     href="/category/work/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 text-primary-500 hover:bg-bg-base"
                   >

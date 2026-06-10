@@ -295,6 +295,7 @@ export default function DsrRegulationZonesPage() {
                   <li>→ <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">대출한도 계산기 (DSR/LTV/DTI)</Link></li>
                   <li>→ <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">대출이자 계산기</Link></li>
                   <li>→ <Link href="/guide/dsr-loan-limit-tips/" className="text-primary-600 underline dark:text-primary-500">DSR 한도 늘리는 5가지 방법</Link></li>
+                  <li>→ <Link href="/guide/interest-rate-hike-dsr-loan-limit-july-2026/" className="text-primary-600 underline dark:text-primary-500">7월 금리 인상과 DSR 대출한도 2026</Link> — 금리 인상 시 지역별 한도 변화 시뮬레이션</li>
                   <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전 — DSR·LTV·DTI·스트레스 DSR</Link></li>
                 </ul>
               </section>

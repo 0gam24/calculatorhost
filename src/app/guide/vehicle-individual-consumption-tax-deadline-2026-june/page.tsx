@@ -361,6 +361,20 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      자동차세 제1기 6월 납부 가이드
+                    </Link>
+                    {' — 차량 보유 시 매년 6월 내는 자동차세·차령경감 총정리'}
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
+                      1월 자동차세 연납 신청 가이드
+                    </Link>
+                    {' — 연납 신청으로 자동차세 약 5% 아끼는 법'}
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       부동산 과세기준일 6월 1일 가이드
                     </Link>

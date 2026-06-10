@@ -535,6 +535,13 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
+                    <Link href="/guide/high-oil-price-relief-fund-2026-application/" className="text-primary-600 underline dark:text-primary-500">
+                      2026 고유가 민생지원금 신청 가이드
+                    </Link>
+                    {' — 에너지바우처와 함께 챙길 유가 부담 완화 지원금'}
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금·복지 달력
                     </Link>

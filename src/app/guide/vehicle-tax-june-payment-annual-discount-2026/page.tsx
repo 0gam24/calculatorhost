@@ -542,6 +542,13 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
+                      1월 자동차세 연납 신청 가이드
+                    </Link>
+                    {' — 내년 1월 연납 신청으로 약 5% 할인 받는 법'}
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>

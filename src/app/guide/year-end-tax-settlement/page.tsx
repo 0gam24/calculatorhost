@@ -363,6 +363,7 @@ export default function YearEndTaxSettlementPage() {
                   <li>→ <Link href="/guide/medical-expense-tax-credit-3-percent-2026/" className="text-primary-600 underline dark:text-primary-500">의료비 세액공제 3% 초과분 15%</Link> — 총급여 3% 넘는 의료비 공제·700만 한도</li>
                   <li>→ <Link href="/calculator/child-tax-credit/" className="text-primary-600 underline dark:text-primary-500">자녀장려금 계산기</Link></li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 (누락 공제 정정)</Link></li>
+                  <li>→ <Link href="/guide/november-year-end-tax-prep/" className="text-primary-600 underline dark:text-primary-500">11월 연말정산 사전 준비</Link> — 연말 전 미리 채우면 환급이 커지는 공제 항목</li>
                   <li>→ <Link href="/guide/freelancer-salary-comparison/" className="text-primary-600 underline dark:text-primary-500">프리랜서 vs 일반직 비교</Link></li>
                 </ul>
               </section>

@@ -444,6 +444,13 @@ export default function NationalPension2026() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/basic-pension-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      기초연금 2026 — 월 최대 34만 9,700원
+                    </Link>
+                    {' — 국민연금 수령액에 따라 달라지는 기초연금 연계감액'}
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/guide/income-deduction-vs-tax-credit-2026/" className="text-primary-600 underline dark:text-primary-500">
                       소득공제 vs 세액공제 2026
                     </Link>

@@ -564,6 +564,9 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                     → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link> — 1년 경과·3년 기한
                   </li>
                   <li>
+                    → <Link href="/guide/family-loan-agreement-gift-tax-avoidance/" className="text-primary-600 underline dark:text-primary-500">가족 간 차용증 작성과 증여세</Link> — 채무인수 대신 빌려주는 방식의 요건·함정
+                  </li>
+                  <li>
                     → <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">대출이자 계산기</Link> — 원리금균등·만기일시 상환
                   </li>
                 </ul>

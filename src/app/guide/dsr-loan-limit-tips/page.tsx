@@ -299,6 +299,13 @@ export default function DsrLoanLimitTipsPage() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/interest-rate-hike-dsr-loan-limit-july-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      7월 금리 인상과 DSR 대출한도 2026
+                    </Link>{' '}
+                    — 금리가 오르면 한도가 얼마나 줄어드는지 시나리오 분석
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
                       금융 용어사전
                     </Link>{' '}

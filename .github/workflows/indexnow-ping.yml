@@ -27,6 +27,37 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout (직전 커밋 diff 용 — fetch-depth 2)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Collect changed page URLs (직전 커밋의 src/app/**/page.tsx → 실제 URL)
+        id: changed
+        run: |
+          # sitemap.xml 은 항상 포함 (URL 0개여도 sitemap 단독 전송).
+          URLS='"https://calculatorhost.com/sitemap.xml"'
+          COUNT=0
+          # HEAD^ 가 없으면(최초 커밋·shallow 실패) diff 생략 → sitemap 만 전송.
+          if git rev-parse --verify -q HEAD^ >/dev/null; then
+            # 삭제된 페이지는 핑 제외 (--diff-filter=ACMR), 동적 세그먼트([...]) 제외.
+            CHANGED=$(git diff --name-only --diff-filter=ACMR HEAD^ HEAD -- 'src/app' \
+              | grep -E '^src/app/.*page\.tsx$' || true)
+            while IFS= read -r f; do
+              [ -z "$f" ] && continue
+              case "$f" in *\[*) continue ;; esac
+              path="${f#src/app}"      # 'src/app/guide/x/page.tsx' → '/guide/x/page.tsx'
+              path="${path%page.tsx}"  # → '/guide/x/' (홈은 '/' — trailing slash 유지)
+              URLS="$URLS, \"https://calculatorhost.com${path}\""
+              COUNT=$((COUNT+1))
+            done <<< "$CHANGED"
+          else
+            echo "HEAD^ 없음 — sitemap.xml 단독 전송"
+          fi
+          echo "count=$COUNT" >> "$GITHUB_OUTPUT"
+          echo "url_list=[$URLS]" >> "$GITHUB_OUTPUT"
+          echo "변경 페이지 $COUNT 개 + sitemap.xml: [$URLS]"
+
       - name: Google sitemap ping (legacy 보조 채널)
         run: |
           # 2023년 deprecated 됐지만 일부 사이트는 여전히 효과 보고됨. 무해.
@@ -35,6 +66,7 @@ jobs:
       - name: Bing/Yandex IndexNow
         env:
           KEY: ${{ secrets.INDEXNOW_KEY }}
+          URL_LIST: ${{ steps.changed.outputs.url_list }}
         run: |
           # secret 가드 — auto-guide-cron 의 "Check secret" 패턴 재사용 (step if 에 secrets
           # 컨텍스트는 GitHub Actions 가 거부하므로 env 경유 + bash 가드).
@@ -42,18 +74,23 @@ jobs:
             echo "INDEXNOW_KEY 미설정 — Bing/Yandex 핑 skip (Google/Naver step 은 그대로 진행)"
             exit 0
           fi
-          # 전체 사이트 알림 (sitemap.xml 변경 통보).
+          # workflow_dispatch 등으로 changed step 출력이 비면 sitemap 단독 fallback.
+          if [ -z "$URL_LIST" ]; then
+            URL_LIST='["https://calculatorhost.com/sitemap.xml"]'
+          fi
+          # 직전 커밋에서 변경된 페이지 URL 명시 전송 + sitemap.xml 항상 포함.
           # -w "%{http_code}" 로 응답 코드를 stdout 에 명시 → 200/202 정상 / 4xx 실패 가시화.
           # IndexNow 정상: 200 (수락) / 202 (수락 + 비동기 처리). 422 (잘못된 키), 403 (키 검증 실패) 등.
           # -fsS 유지로 5xx 만 curl exit code 1, 4xx 는 본문 + http_code 로 가시화.
           # || echo 는 네트워크 단절 등 curl 자체 실패 시의 fallback (continue-on-error 추가 X).
+          echo "IndexNow urlList: $URL_LIST"
           HTTP_CODE=$(curl -sS -o /tmp/indexnow.body -w "%{http_code}" -X POST "https://api.indexnow.org/indexnow" \
             -H "Content-Type: application/json" \
             -d "{
               \"host\": \"calculatorhost.com\",
               \"key\": \"$KEY\",
               \"keyLocation\": \"https://calculatorhost.com/$KEY.txt\",
-              \"urlList\": [\"https://calculatorhost.com/sitemap.xml\"]
+              \"urlList\": $URL_LIST
             }")
           echo "IndexNow HTTP $HTTP_CODE"
           echo "IndexNow body: $(cat /tmp/indexnow.body 2>/dev/null || echo '<empty>')"
