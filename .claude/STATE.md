@@ -19,7 +19,7 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 05. 28. 09:06 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 06. 10. 09:23 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
 - 사이트 라이브: ✅ HTTP 200
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 05. 28. 09:06 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 06. 10. 09:23 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -71,7 +71,7 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> 마지막 자동 점검: 2026. 05. 28. 09:06 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 06. 10. 09:23 (Asia/Seoul)
 
 - ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
 - ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
@@ -148,6 +148,8 @@
 - stuck.md 두 번째 stale 섹션 (2026-05-06 `developers.google.com`) — `replaceAll` 강화 검토
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
 - scripts/*.mjs shebang 으로 인한 vitest import 차단 — 항구적 해결: lib/cli.mjs(shebang) + lib/core.mjs(no shebang) 분리
+- **(2026-06-10) 신규 가이드 §N 인용 0건 5편** — `earned-income-tax-credit-late-application-2026` / `energy-voucher-2026-summer-cooling-subsidy` / `high-oil-price-relief-fund-2026-application` / `july-vat-and-tax-withholding` / `youth-future-savings-account-2026`. 가짜 §N 리스크로 즉흥 보강 보류 — content-writer + 1차출처 검증으로 별도 PR (minimal 2편: `interest-rate-hike-dsr-loan-limit-july-2026`, `vehicle-individual-consumption-tax-deadline-2026-june` 포함)
+- **(2026-06-10) 내부링크 현황** — 고아(인바운드 0) 19→0 달성. 인바운드 1개 21편 잔존 (`node scripts/_orphan-check.mjs` 재측정 가능, 단 category-mapping CROSS_GUIDES 링크는 미집계). 1슬롯 계산기 13종 잔여 AD-2 보강 후보 (고CPC 9종은 2026-06-10 완료)
 
 ### §N 법조항 인용 audit 추이 (2026-05-12 최종, `npm run citations:audit`)
 **58개 페이지 中**: ✅ strong(3+) 51 / 🟡 minimal(1~2) 0 / 🔴 missing(0) 7
