@@ -177,9 +177,11 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">1. 개별소비세 인하 정책이란?</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  정부는 자동차 내수 부양을 위해 2025년부터 승용차 개별소비세율을 기존 5%에서 3.5%로 인하한 특별 정책을 시행 중입니다.
-                  이 정책은 원래 2025년 6월 30일 종료 예정이었으나, 경제 상황을 고려해 6개월 연장되어 <strong>2026년 6월 30일까지</strong> 유지됩니다.
-                  그 이후는 정상세율 5%로 복귀할 예정입니다.
+                  승용자동차에는 개별소비세법 §1 제2항 제3호에 따라 물품가격의 5%가 기본세율로 적용됩니다.
+                  다만 같은 법 §1 제7항(탄력세율)에 따라 정부는 경기 조절·가격 안정 등이 필요한 경우 기본세율의 ±30% 범위에서 세율을 조정할 수 있고,
+                  이 권한에 따라 개별소비세법 시행령 §2의2가 자동차 개별소비세율을 5%에서 <strong>3.5%로 한시 인하</strong>해 두고 있습니다.
+                  이 한시 인하 정책은 원래 2025년 6월 30일 종료 예정이었으나, 경제 상황을 고려해 연장되어 <strong>2026년 6월 30일까지</strong> 유지됩니다.
+                  그 이후는 §1 본칙의 정상세율 5%로 복귀할 예정입니다.
                 </p>
                 <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">
@@ -196,7 +198,9 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 <h2 className="text-2xl font-bold">2. 143만원 절감액은 어떻게 나오나?</h2>
                 <p className="text-text-secondary leading-relaxed">
                   개별소비세 인하의 전체 절감 효과를 이해하려면 세금 구조를 알아야 합니다.
-                  개별소비세뿐만 아니라 그에 연동되는 교육세와 부가가치세까지 함께 절감되기 때문입니다.
+                  개별소비세뿐만 아니라 그에 연동되는 교육세(교육세법 §5에 따라 개별소비세액의 30%)와
+                  부가가치세까지 함께 줄어드는 구조이기 때문입니다.
+                  즉 개별소비세 본세가 1.5%포인트 인하되면 §5 교육세 과세표준도 같은 비율로 줄고, 그에 따라 부가가치세도 연쇄적으로 감소합니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -401,7 +405,10 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 개별소비세법 §1의2(탄력세율 — 정부가 기본세율의 ±30% 범위에서 조정) ·{' '}
+                  <strong>법적 근거</strong>: 개별소비세법 §1(승용자동차 기본세율 5%, 제2항 제3호) ·
+                  개별소비세법 §1 제7항(탄력세율 — 정부가 기본세율의 ±30% 범위에서 조정) ·
+                  개별소비세법 시행령 §2의2(자동차 개별소비세 한시 인하 3.5%) ·
+                  교육세법 §5(개별소비세액의 30%) ·{' '}
                   <a
                     href="https://www.law.go.kr/법령/개별소비세법"
                     target="_blank"

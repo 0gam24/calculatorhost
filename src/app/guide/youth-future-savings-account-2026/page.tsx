@@ -228,7 +228,8 @@ export default function YouthFutureSavingsAccount2026() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">2. 가입 대상 — 만 19~34세 + 소득요건</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  청년미래적금의 가입 대상은 <strong>청년기본법상 청년(만 19~34세)</strong>입니다.
+                  청년미래적금의 가입 대상은 <strong>청년기본법 §3에 따른 청년(만 19~34세)</strong>입니다.
+                  청년기본법 제3조는 청년을 "19세 이상 34세 이하인 사람"으로 정의하며, 다른 법령·조례에서 달리 정한 경우 그에 따를 수 있도록 하고 있습니다.
                   나이 조건 외에 <strong>소득요건</strong>이 있으며, 일반형과 우대형으로 나뉩니다.
                 </p>
                 <div className="overflow-x-auto">
@@ -321,13 +322,13 @@ export default function YouthFutureSavingsAccount2026() {
                   <h3 className="font-semibold text-primary-700 dark:text-primary-400 mb-3">비과세 이자의 장점</h3>
                   <div className="space-y-2 text-sm text-text-secondary">
                     <p>
-                      <strong>일반 적금:</strong> 이자의 15.4% 세금 부담 → 실질 이자율 약 4.2%
+                      <strong>일반 적금:</strong> 소득세법 §129에 따른 이자소득 원천징수 14% + 지방소득세 1.4% = 합산 15.4% 부담 → 실질 이자율 약 4.2%
                     </p>
                     <p>
                       <strong>청년미래적금:</strong> 세금 0% → 받은 이자를 100% 가져감
                     </p>
                     <p className="mt-3 text-primary-600 dark:text-primary-400">
-                      → 3년 만기 시 비과세 덕분에 적금 수익률이 크게 향상됩니다.
+                      → 3년 만기 시 소득세법 §129 원천징수가 면제되어 적금 수익률이 크게 향상됩니다.
                     </p>
                   </div>
                 </div>
@@ -339,6 +340,8 @@ export default function YouthFutureSavingsAccount2026() {
                 <h2 className="text-2xl font-bold">5. 청년도약계좌와의 비교 — 중복불가, 갈아타기 허용</h2>
                 <p className="text-text-secondary leading-relaxed">
                   청년미래적금과 청년도약계좌는 모두 청년을 위한 정부 지원 상품이지만, 중복 가입할 수 없습니다.
+                  참고로 청년도약계좌의 이자·배당소득 비과세 근거는 <strong>조세특례제한법 §91의22</strong>(청년도약계좌에 대한 비과세)이며,
+                  청년미래적금 역시 같은 조세특례제한법 체계 안에서 비과세 특례가 적용되는 정책 연장선상에 있습니다.
                   두 상품의 주요 차이점을 비교하면 다음과 같습니다.
                 </p>
                 <div className="overflow-x-auto">
@@ -481,7 +484,7 @@ export default function YouthFutureSavingsAccount2026() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 금융감독원 청년미래적금 정책 공지 ·{' '}
+                  <strong>법적 근거</strong>: 청년기본법 §3(청년 정의, 만 19~34세) · 조세특례제한법 §91의22(청년도약계좌에 대한 비과세, 청년미래적금 비과세 특례의 정책 연장선) · 소득세법 §129(이자소득 원천징수세율 14%, 일반 적금 과세 대비) · 금융감독원 청년미래적금 정책 공지 ·{' '}
                   <a
                     href="https://www.fsc.go.kr"
                     target="_blank"

@@ -210,6 +210,7 @@ export default function HighOilPriceReliefFund2026Application() {
                 <h2 className="text-2xl font-bold">1. 고유가 피해지원금이란? — 누가 얼마를 받나</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   고유가 피해지원금은 행정안전부가 운영하는 정부 지원 사업입니다.
+                  「보조금 관리에 관한 법률」 §2에서 정의하는 보조금(국가가 재정상의 원조를 위해 지급하는 금원)의 성격을 가지며,
                   에너지(전기, 가스, 휘발유)·식료품 가격 상승으로 인한 가계 부담을 덜어주기 위해 소득 하위 70%의 성인에게 현금 대신 신용카드·체크카드·상품권 형태로 지급합니다.
                   2차 지원은 <strong>1인당 10만~25만원</strong>을 거주지에 따라 차등 지급합니다.
                 </p>
@@ -260,7 +261,8 @@ export default function HighOilPriceReliefFund2026Application() {
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   고유가 피해지원금의 신청 대상은 <strong>소득 하위 70%</strong>입니다.
                   약 3,256만 명이 해당하며, 정확한 판정은 <strong>2026년 3월 30일 기준 건강보험료 납부액</strong>으로 결정됩니다.
-                  즉, 건강보험료를 기준으로 "당신이 상위 30%에 드는가"를 판정하는 것입니다.
+                  즉, 「국민건강보험법」 §69에 따라 산정·고지된 보험료(직장가입자는 보수월액 기준, 지역가입자는 소득·재산 합산 점수 기준)를
+                  소득 대용 지표로 사용해 "당신이 상위 30%에 드는가"를 판정하는 방식입니다.
                 </p>
                 <div className="space-y-4">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -420,6 +422,7 @@ export default function HighOilPriceReliefFund2026Application() {
                 <h2 className="text-2xl font-bold">6. 어디서 사용할 수 있나 — 매출액 30억원 이하 소상공인</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   고유가 피해지원금은 매출액 30억원 이하인 소상공인 매장에서만 사용 가능합니다.
+                  지역사랑상품권으로 받은 경우에는 「지역사랑상품권 이용 활성화에 관한 법률」 §2에서 정의한 가맹점(상품권 결제로 물품을 판매하거나 용역을 제공하기 위해 지자체에 등록한 사업자)에서만 사용할 수 있습니다.
                   대형마트, 백화점, 프랜차이즈, 편의점, 음식점, 카페, 병원, 약국, 학원 등 대부분의 일반 매장에서 사용할 수 있습니다.
                   단, 유흥업(주점, 노래방 등), 사행산업(파칭코, 도박장 등), 무기·화약 판매점, 위험 업종은 제외됩니다.
                 </p>
@@ -491,7 +494,7 @@ export default function HighOilPriceReliefFund2026Application() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 행정안전부 고유가 피해지원금 사업 지침 ·{' '}
+                  <strong>법적 근거</strong>: 보조금 관리에 관한 법률 §2(보조금·보조사업 정의) · 국민건강보험법 §69(보험료 산정 — 대상자 선정 기준) · 지역사랑상품권 이용 활성화에 관한 법률 §2(가맹점 정의 — 사용처) · 행정안전부 고유가 피해지원금 사업 지침 ·{' '}
                   <a
                     href="https://www.mois.go.kr"
                     target="_blank"

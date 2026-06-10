@@ -152,7 +152,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   근로장려금과 자녀장려금의 정기신청 기한은 5월 1일부터 5월 31일까지입니다.
-                  혹시 이 기간을 놓쳤다면 **6월 1일부터 11월 30일까지 기한 후 신청**이 가능합니다.
+                  혹시 이 기간을 놓쳤다면 <strong>6월 1일부터 11월 30일까지 기한 후 신청</strong>이 가능합니다.
                   기한 후 신청하면 산정액의 95%를 받을 수 있으므로, 신청하지 않는 것보다는 훨씬 낫습니다.
                   신청 방법, 지급액, 소득·재산 요건을 정리했습니다.
                 </p>
@@ -208,10 +208,10 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">1. 기한 후 신청이란? 정기신청과의 차이</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  근로장려금과 자녀장려금은 조세특례제한법에 따라 매년 신청할 수 있는 복지 제도입니다.
-                  정기신청은 5월 1일부터 5월 31일까지이며, 이 기간 내에 신청하면 산정액 100%를 받습니다.
-                  기한 후 신청은 6월 1일부터 11월 30일까지 신청하는 방식이며, 산정액의 95%만 지급됩니다.
-                  5%는 기한을 놓친 것에 대한 페널티이지만, 아예 신청하지 않는 것(0%)보다는 훨씬 낫습니다.
+                  근로장려금과 자녀장려금은 조세특례제한법 §100의2(근로장려세제)에 근거한 저소득 가구 지원 제도로,
+                  매년 종합소득과세표준 확정신고 기간(5월 1일~5월 31일)에 정기신청을 받습니다.
+                  이 기간 내에 신청하면 산정액의 100%를 받지만, 같은 법 §100의6에 따른 기한 후 신청을 6월 1일부터 11월 30일 사이에 하면
+                  산정액의 95%만 지급됩니다. 5%는 기한을 놓친 것에 대한 페널티이지만, 아예 신청하지 않는 것(0%)보다는 훨씬 낫습니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -289,9 +289,9 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. 근로장려금 — 소득요건·지급액·가구 분류</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  근로장려금은 저소득 근로자를 지원하는 제도입니다(조세특례제한법).
-                  소득이 일정 수준 이하인 직장인, 자영업자, 프리랜서가 신청할 수 있으며,
-                  가구 구성에 따라 단독·홑벌이·맞벌이로 분류되어 최대 지급액이 다릅니다.
+                  근로장려금은 저소득 근로자를 지원하는 제도로, 조세특례제한법 §100의3에 신청자격이 규정되어 있습니다.
+                  과세기간 중 사업소득·근로소득·종교인소득이 있는 거주자 중 같은 법 시행령이 정한 요건을 갖춘 사람이 신청할 수 있으며,
+                  직장인뿐 아니라 자영업자·프리랜서도 대상이 됩니다. 가구 구성에 따라 단독·홑벌이·맞벌이로 분류되어 최대 지급액이 다릅니다.
                 </p>
                 <div className="overflow-x-auto mb-4">
                   <table className="w-full text-sm border-collapse">
@@ -385,9 +385,9 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">5. 자녀장려금 — 18세 미만 부양자녀가 있을 때</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  근로장려금 외에, 18세 미만 부양자녀가 있으면 추가로 자녀장려금을 받을 수 있습니다(조세특례제한법).
-                  부부합산 총소득이 7,000만원 미만이어야 하며, 자녀가 여러 명이면 그에 따라 지급액이 커집니다.
-                  자녀장려금은 근로장려금과 함께 신청하면 두 장려금을 모두 받을 수 있습니다.
+                  근로장려금 외에, 18세 미만 부양자녀가 있으면 추가로 자녀장려금을 받을 수 있습니다.
+                  조세특례제한법 §100의28(자녀장려금의 신청자격)에 따라 거주자(배우자 포함)의 연간 총소득 합계가 7,000만원 미만이어야 하며,
+                  자녀가 여러 명이면 그에 따라 지급액이 커집니다. 자녀장려금은 근로장려금과 함께 신청하면 두 장려금을 모두 받을 수 있습니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="font-semibold text-text-primary mb-3">자녀장려금 요건</h3>
@@ -591,7 +591,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 조세특례제한법 (근로장려금 관련 규정) · {' '}
+                  <strong>법적 근거</strong>: 조세특례제한법 §100의2(근로장려세제) · §100의3(근로장려금 신청자격) · §100의6(근로장려금의 신청 및 기한 후 신청) · §100의28(자녀장려금의 신청자격) · {' '}
                   <a
                     href="https://www.law.go.kr"
                     target="_blank"

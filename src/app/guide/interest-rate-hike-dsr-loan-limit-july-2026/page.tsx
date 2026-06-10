@@ -202,7 +202,8 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">1. 기준금리란 무엇인가? — 금통위가 결정하는 기초 금리</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  기준금리는 한국은행 금융통화위원회(금통위)가 정하는 <strong>정책금리</strong>입니다.
+                  기준금리는 한국은행 금융통화위원회(금통위)가 <strong>한국은행법 §28</strong>에 따라 의결하는 <strong>정책금리</strong>입니다.
+                  같은 조는 통화신용정책에 관한 사항을 금통위 의결사항으로 명시하고 있으며, 기준금리 결정·변경이 여기에 포함됩니다.
                   이 금리를 기준으로 은행들이 고객 대출의 가산금리를 책정합니다.
                   2026년 6월 현재 기준금리는 <strong>2.50%</strong>이며, 8연속 동결 상태입니다.
                   다음 금융통화위원회 정기회의는 <strong>7월 16일(목요일)</strong>에 개최될 예정입니다.
@@ -289,6 +290,8 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   DSR(Debt Service Ratio)은 <strong>연 소득 대비 연 원리금 상환액의 비율</strong>입니다.
                   은행권에서는 DSR 40% 한도를 적용합니다(특정 대출은 50%).
+                  법적 근거 측면에서 DSR은 단일 법률 조항이 아니라 <strong>은행법 §34</strong>(건전경영의 지도)를 모법으로
+                  하여 금융위원회가 정하는 「은행업감독규정」 및 행정지도로 운용되는 건전성 규제입니다.
                   즉, 월 소득 500만원인 사람의 연 소득은 6,000만원이고, 모든 대출의 연 상환액이 2,400만원(연 소득의 40%)을 초과하면 신규 대출을 못 받습니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -486,7 +489,8 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   <strong>네, 변동금리면 올라갑니다.</strong> 기준금리가 오르고 은행이 가산금리를 조정하면, 다음 달 이자부터 새로운 금리가 적용됩니다.
                   다만 <strong>고정금리로 계약했다면</strong> 계약 기간 중 금리 변화의 영향을 받지 않습니다.
-                  계약서에 &lsquo;변동금리&rsquo; 또는 &lsquo;고정금리&rsquo;가 명시돼 있으니 확인하세요.
+                  「금융소비자 보호에 관한 법률」 <strong>§19</strong>(설명의무)에 따라 은행은 대출 계약 시 금리·변동 여부·상환방법·중도상환수수료 등 중요한 사항을 설명하도록 의무화돼 있으므로,
+                  계약서에 명시된 &lsquo;변동금리&rsquo; 또는 &lsquo;고정금리&rsquo; 표기와 금리 변동 조건을 반드시 확인하세요.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="font-semibold text-text-primary mb-3">변동금리 vs 고정금리</h3>
@@ -603,7 +607,9 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 은행법 §43, 금융감독규정 · {' '}
+                  <strong>법적 근거</strong>: 한국은행법 §28(금융통화위원회 의결사항 — 기준금리 결정),
+                  은행법 §34(건전경영의 지도 — DSR 등 은행업감독규정의 모법),
+                  금융소비자 보호에 관한 법률 §19(설명의무 — 대출 금리·변동 여부·상환방법 설명) · {' '}
                   <a
                     href="https://www.bok.or.kr"
                     target="_blank"

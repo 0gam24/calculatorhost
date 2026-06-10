@@ -131,14 +131,14 @@ export default function GuidePage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">7월 부가가치세 확정신고란 무엇인가</h2>
-                <p className="leading-relaxed text-text-secondary">부가가치세는 사업자가 재화나 용역을 공급할 때 소비자로부터 징수하여 국가에 납부하는 세금입니다. 과세기간은 상반기(1월~6월)와 하반기(7월~12월)로 나뉘며, 상반기 과세기간에 대한 확정신고는 원칙적으로 7월 25일까지 완료해야 합니다.</p>
-                <p className="leading-relaxed text-text-secondary">일반과세자는 6개월 단위로 신고·납부 의무가 있으며, 예정신고(또는 예정고지)를 통해 이미 납부한 세액이 있다면 확정신고 시 이를 차감하여 최종 납부세액을 산출합니다. 간이과세자는 신고 주기와 납부 방식이 달라지므로, 본인의 과세 유형을 먼저 확인하는 것이 중요합니다.</p>
+                <p className="leading-relaxed text-text-secondary">부가가치세는 사업자가 재화나 용역을 공급할 때 소비자로부터 징수하여 국가에 납부하는 세금입니다. 부가가치세법 §5에 따라 일반과세자의 과세기간은 제1기(1월 1일~6월 30일)와 제2기(7월 1일~12월 31일)로 구분되며, 상반기 과세기간에 대한 확정신고는 부가가치세법 §49에 따라 과세기간 종료 후 25일 이내, 즉 7월 25일까지 완료해야 합니다.</p>
+                <p className="leading-relaxed text-text-secondary">일반과세자는 6개월 단위로 신고·납부 의무가 있으며, 부가가치세법 §48에 근거한 예정신고 또는 예정고지를 통해 이미 납부한 세액이 있다면 확정신고 시 이를 차감하여 최종 납부세액을 산출합니다. 간이과세자는 신고 주기와 납부 방식이 달라지므로, 본인의 과세 유형을 먼저 확인하는 것이 중요합니다.</p>
               </section>
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">7월 신고 핵심 일정 및 기한 정리</h2>
                 <p className="leading-relaxed text-text-secondary">상반기 부가가치세 확정신고는 통상 7월 25일이 마감 기한입니다. 다만 해당 일이 공휴일이나 토·일요일에 해당하면 다음 첫 번째 평일로 연장됩니다. 정확한 기한은 국세청 홈택스(www.hometax.go.kr) 공지 사항에서 확인하시기 바랍니다.</p>
-                <p className="leading-relaxed text-text-secondary">7월에는 원천징수세액 납부 기한도 존재합니다. 6월에 지급한 급여·사업소득·기타소득 등에 대한 원천징수세액은 7월 10일까지 납부해야 하며, 반기납부 특례를 적용받는 소규모 사업장은 기한이 다르게 적용됩니다. 반기납부 적용 여부는 세무서 승인 여부로 결정되므로 사전에 확인이 필요합니다.</p>
+                <p className="leading-relaxed text-text-secondary">7월에는 원천징수세액 납부 기한도 존재합니다. 소득세법 §128에 따라 6월에 지급한 급여·사업소득·기타소득 등에 대한 원천징수세액은 징수일이 속하는 달의 다음 달 10일, 즉 7월 10일까지 납부해야 합니다. 반기납부 특례를 적용받는 소규모 사업장은 같은 조에서 정한 반기의 마지막 달의 다음 달 10일을 기한으로 적용하므로, 세무서 승인 여부를 사전에 확인해야 합니다.</p>
               </section>
 
               <section className="space-y-3">
@@ -155,7 +155,7 @@ export default function GuidePage() {
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">원천징수 이행상황신고서 작성 및 제출 주의사항</h2>
-                <p className="leading-relaxed text-text-secondary">사업장에서 근로자에게 급여를 지급하는 경우, 매월 원천징수세액을 신고·납부해야 합니다. 원천징수 이행상황신고서는 홈택스 또는 위택스(wetax.go.kr)를 통해 전자 제출이 가능하며, 종이 제출은 관할 세무서 방문이 필요합니다.</p>
+                <p className="leading-relaxed text-text-secondary">소득세법 §127에 따라 거주자에게 이자·배당·사업·근로·연금·기타소득 등을 지급하는 자는 원천징수의무자가 됩니다. 사업장에서 근로자에게 급여를 지급하는 경우, 매월 원천징수세액을 신고·납부해야 하며, 원천징수 이행상황신고서는 홈택스 또는 위택스(wetax.go.kr)를 통해 전자 제출이 가능합니다. 종이 제출은 관할 세무서 방문이 필요합니다.</p>
                 <p className="leading-relaxed text-text-secondary">소득 유형별로 원천징수 방식이 다르기 때문에 근로소득·사업소득·기타소득·퇴직소득·이자·배당소득 등을 항목별로 정확히 구분하여 신고해야 합니다. 오류 신고 시 수정 신고를 통해 정정할 수 있지만, 기한 내 정정하지 않으면 가산세가 발생합니다.</p>
               </section>
 
@@ -231,10 +231,15 @@ export default function GuidePage() {
                   운영자(김준혁, 스마트데이터샵)가 발행 전 법조항·세율·중복 콘텐츠를 검수하여 발행했습니다.
                   최종 검증일: 2026-05-15.
                 </p>
-                <p>
+                <p className="mb-2">
                   본 가이드는 참고용이며 법적 효력이 없습니다. 실제 세무·금융 처리는 세무사·국세청 등
                   공식 채널 안내를 받으시기 바랍니다. 세율·법조항 정확값은 calculatorhost 의 계산기 페이지
                   또는 국세청 공식 자료에서 최신값을 확인하세요.
+                </p>
+                <p>
+                  <strong>인용 법조항</strong>: 부가가치세법 §5(과세기간) · 부가가치세법 §48(예정신고와 납부) ·
+                  부가가치세법 §49(확정신고와 납부) · 소득세법 §127(원천징수의무) · 소득세법 §128(원천징수세액의 납부).
+                  원문은 국가법령정보센터(law.go.kr)에서 확인할 수 있습니다.
                 </p>
               </section>
             </article>
