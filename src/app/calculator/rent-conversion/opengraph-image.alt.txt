@@ -1,0 +1,1 @@
+전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 §7의2 + 계산기
