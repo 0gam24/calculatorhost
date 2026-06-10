@@ -46,14 +46,6 @@ export const metadata: Metadata = {
     description: '프리랜서 소득에 따른 정확한 세금 계산. 5월 신고 전 확인하세요.',
     url: URL,
     type: 'website',
-    images: [
-      {
-        url: 'https://calculatorhost.com/og-freelancer-tax.png',
-        width: 1200,
-        height: 630,
-        alt: '프리랜서 종합소득세 계산기 - 환급액과 납부액 즉시 계산',
-      },
-    ],
   },
   twitter: {
     card: 'summary_large_image',
