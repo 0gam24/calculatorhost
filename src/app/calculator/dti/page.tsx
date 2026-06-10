@@ -1,10 +1,17 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
+
+// Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
+const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
+  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
+});
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrl } from '@/lib/network/main-backref';
@@ -159,6 +166,9 @@ export default function DtiPage() {
                 </p>
               </header>
 
+              {/* AD-1 리더보드 (리드 직후) */}
+              <AdSlot slot="dti-top" format="horizontal" />
+
               <section className="card border-l-4 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">🔗 DTI·DSR·LTV 통합 계산</h2>
                 <p className="mb-3 text-sm text-text-secondary">
@@ -196,6 +206,9 @@ DTI 한도 (2026):
                   을 확인하는 것이 안전합니다.
                 </p>
               </section>
+
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="dti-mid" format="rectangle" />
 
               <section className="card space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">DTI vs DSR 비교</h2>
@@ -237,6 +250,9 @@ DTI 한도 (2026):
                   실 한도입니다. DTI 는 2018년 이후 DSR 도입과 함께 보조 지표가 되었습니다.
                 </p>
               </section>
+
+              {/* AD-4 인피드 (본문 하단) */}
+              <InfeedAd slot="dti-infeed" />
 
               <section aria-label="공식 출처" className="card">
                 <h2 className="mb-3 text-lg font-semibold">공식 출처 · 법적 근거</h2>

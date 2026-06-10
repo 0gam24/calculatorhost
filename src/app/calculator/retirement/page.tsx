@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   title: '은퇴자금 계산기 2026 | FIRE·4% 룰 | calculatorhost',
   description:
     '2026년 은퇴자금 계산기. 목표 자산·월 저축액·기대 수익률 입력으로 은퇴 가능 시기를 계산. FIRE·4% 규칙 적용 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+  keywords: [
+    '은퇴자금 계산기',
+    '노후자금 계산기',
+    'FIRE 계산기',
+    '4% 룰 계산',
+    '조기은퇴 자금 계산',
+    '은퇴 필요자금 2026',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '은퇴자금 계산기 2026 — FIRE·4% 룰',
@@ -441,6 +449,27 @@ export default function RetirementPage() {
                   <li>
                     <strong>다중 소득원 고려</strong>: 은퇴 후 연금(국민연금·퇴직연금), 임대료, 배당금 등 정기 수입을
                     따로 계획하면 인출액을 낮출 수 있습니다.
+                  </li>
+                </ul>
+              </section>
+
+              {/* 관련 가이드 CTA */}
+              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <ul className="space-y-2 text-sm">
+                  <li>
+                    →{' '}
+                    <a href="/guide/national-pension-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      국민연금 2026 총정리
+                    </a>{' '}
+                    — 보험료율·수령 나이·예상 수령액 등 은퇴 소득의 기둥 확인
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/basic-pension-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      기초연금 2026 가이드
+                    </a>{' '}
+                    — 선정기준액·국민연금 연계감액 등 65세 이후 수령 가능액 점검
                   </li>
                 </ul>
               </section>

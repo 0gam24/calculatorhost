@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   title: '자녀장려금 계산기 2026 | 자녀 1인당 100만 | calculatorhost',
   description:
     '2026년 자녀장려금 계산기. 가구 유형(홑벌이·맞벌이·한부모·다자녀)별 자녀 1인당 최대 100만 원 지급액을 계산. 소득 기준 자동 확인. 무료.',
+  keywords: [
+    '자녀장려금 계산기',
+    '자녀장려금 계산',
+    '자녀장려금 지급액',
+    '자녀장려금 소득 기준',
+    '근로장려금 자녀장려금',
+    '2026 자녀장려금',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '자녀장려금 계산기 2026 — 자녀 1인당 100만원',

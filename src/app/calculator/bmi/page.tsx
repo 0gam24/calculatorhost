@@ -29,6 +29,14 @@ export const metadata: Metadata = {
   title: 'BMI 계산기 2026 | 대한비만학회 기준 | calculatorhost',
   description:
     'BMI 계산기 2026. 신장·체중으로 BMI·표준체중·비만도를 대한비만학회 기준으로 계산. 건강 관리 목표 제시. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+  keywords: [
+    'BMI 계산기',
+    '비만도 계산기',
+    '표준체중 계산',
+    '체질량지수 계산',
+    'BMI 정상 범위',
+    '2026 BMI 기준',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: 'BMI 계산기 2026 | 대한비만학회 기준',

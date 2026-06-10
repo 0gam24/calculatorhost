@@ -26,6 +26,15 @@ export const metadata: Metadata = {
   title: '증여세 계산기 2026 | 10년 공제·배우자·자녀 | calculatorhost',
   description:
     '2026년 증여세 계산기. 증여 재산액과 수증자(배우자·자녀)별로 공제·세율을 적용해 세액을 계산. 10년 공제·절세 방안 제시. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+  keywords: [
+    '증여세 계산기',
+    '증여세 면제 한도',
+    '자녀 증여세 계산',
+    '배우자 증여 6억',
+    '증여세 10년 공제',
+    '부담부증여 세금',
+    '2026 증여세',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '증여세 계산기 2026 — 배우자 6억·자녀 5천만',
@@ -253,6 +262,9 @@ export default function GiftTaxPage() {
                   상담을 권장합니다.
                 </p>
               </section>
+
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="gift-tax-mid" format="rectangle" />
 
               {/* 증여재산공제 및 10년 합산 */}
               <section aria-label="증여재산공제" className="card">

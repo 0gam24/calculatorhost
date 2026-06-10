@@ -248,6 +248,9 @@ export default function VehicleTaxPage() {
                 </p>
               </section>
 
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="vehicle-tax-mid" format="rectangle" />
+
               {/* 세율표 */}
               <section className="space-y-4" aria-label="자동차세 세율표">
                 <h2 className="text-2xl font-bold text-text-primary">자동차세 세율표 (2026)</h2>

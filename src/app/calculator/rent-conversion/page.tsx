@@ -45,6 +45,14 @@ export const metadata: Metadata = {
   // 즉답형 후크 + 법조항 + 현행 상한 수치 일부 노출 (구체성)
   title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 §7의2 + 계산기`,
   description: `2026년 전월세 전환 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + ${ADDITIONAL_RATE_PCT}%p, 연 ${ANNUAL_CAP_PCT}% 중 낮은 값). 주택임대차보호법 §7의2 근거 전세↔월세 즉시 환산 무료.`,
+  keywords: [
+    '전월세 전환율 계산기',
+    '전월세 전환율 2026',
+    '전세 월세 전환 계산',
+    '월세 보증금 전환',
+    '주택임대차보호법 전환율',
+    '법정 전환율 상한',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 기준`,

@@ -295,6 +295,9 @@ export default function AcquisitionTaxPage() {
                 </p>
               </section>
 
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="acquisition-tax-mid" format="rectangle" />
+
               {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">2026년 취득세는 어떻게 계산하나요?</h2>

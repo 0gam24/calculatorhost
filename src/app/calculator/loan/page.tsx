@@ -262,6 +262,9 @@ export default function LoanInterestPage() {
                 </p>
               </section>
 
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="loan-mid" format="rectangle" />
+
               {/* 상환 방식 비교 */}
               <section aria-label="상환 방식 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">상환 방식 비교</h2>

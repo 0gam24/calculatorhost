@@ -26,6 +26,14 @@ export const metadata: Metadata = {
   title: '상속세 계산기 2026 | 기초공제·배우자·자녀 | calculatorhost',
   description:
     '2026년 상속세 계산기. 상속 재산액·상속인 구성으로 기초공제·배우자공제·자녀장려금 등을 적용해 세액을 계산. 분할·생전증여 절세 비교 가능. 무료.',
+  keywords: [
+    '상속세 계산기',
+    '상속세 면제 한도',
+    '배우자 상속공제',
+    '상속세 일괄공제 5억',
+    '상속세 세율 2026',
+    '상속세 신고 기한',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '상속세 계산기 2026 — 기초공제 2억·일괄공제 5억',
@@ -268,6 +276,9 @@ export default function InheritanceTaxPage() {
                   세무사 상담을 권장합니다.
                 </p>
               </section>
+
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="inheritance-tax-mid" format="rectangle" />
 
               {/* 상속공제 체계 */}
               <section aria-label="상속공제" className="card">

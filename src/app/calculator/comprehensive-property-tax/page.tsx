@@ -27,6 +27,14 @@ export const metadata: Metadata = {
   title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율 | calculatorhost',
   description:
     '2026년 종합부동산세 계산기. 주택수·공정시장가액을 입력해 종부세를 계산하고, 1세대1주택·공정비율·세율 등 할인을 자동 적용. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+  keywords: [
+    '종합부동산세 계산기',
+    '종부세 계산기',
+    '1세대1주택 종부세',
+    '종부세 공제 12억',
+    '다주택자 종부세',
+    '종부세 세율 2026',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율',
@@ -259,6 +267,9 @@ export default function ComprehensivePropertyTaxPage() {
                   종부세의 20%가 농특세로 추가 부과됩니다.
                 </p>
               </section>
+
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="comprehensive-property-tax-mid" format="rectangle" />
 
               {/* 세율표: 일반 vs 3주택 이상 중과 */}
               <section aria-label="종합부동산세 세율" className="card">

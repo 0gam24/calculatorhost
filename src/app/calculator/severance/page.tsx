@@ -274,6 +274,9 @@ export default function SeverancePage() {
                 </div>
               </section>
 
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="severance-mid" format="rectangle" />
+
               {/* 평균임금 vs 통상임금 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">평균임금 vs 통상임금</h2>

@@ -25,6 +25,14 @@ export const metadata: Metadata = {
   title: '임대수익률 계산기 2026 | 공실률·Cap Rate | calculatorhost',
   description:
     '2026년 임대수익률 계산기. 구매가·보증금·월세로 순임대수익률·Cap Rate를 계산. 공실률·제경비 반영 가능. 투자 판단 기준 제시. 무료.',
+  keywords: [
+    '임대수익률 계산기',
+    '월세 수익률 계산',
+    '오피스텔 임대수익률',
+    'Cap Rate 계산',
+    '부동산 임대수익률',
+    '2026 임대수익률',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '임대수익률 계산기 2026 — 공실률·Cap Rate',
@@ -258,6 +266,9 @@ export default function RentalYieldPage() {
                   훨씬 높으면 숨은 위험이 있을 가능성이 높으므로 주의해야 합니다.
                 </p>
               </section>
+
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="rental-yield-mid" format="rectangle" />
 
               {/* Cap Rate와 ROI */}
               <section aria-label="Cap Rate" className="card">

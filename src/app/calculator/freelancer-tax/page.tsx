@@ -31,6 +31,15 @@ export const metadata: Metadata = {
   title: '프리랜서 종합소득세 계산기 2026 | 3.3% 원천징수 | calculatorhost',
   description:
     '2026년 프리랜서 종합소득세 계산기. 수입액과 경비율(기준율 또는 실제)을 입력해 과세표준·세액·3.3% 원천징수를 계산. 절세 팁 제시. 무료.',
+  keywords: [
+    '프리랜서 종합소득세',
+    '프리랜서 세금 계산기',
+    '3.3% 원천징수 계산',
+    '단순경비율 계산',
+    '프리랜서 환급',
+    '5월 종합소득세 신고',
+    '2026 종합소득세',
+  ],
   alternates: { canonical: URL },
   openGraph: {
     title: '프리랜서 종합소득세 계산기 2026',
@@ -253,6 +262,9 @@ export default function FreelancerTaxPage() {
                   생활비 균형 판단에 참고할 수 있습니다.
                 </p>
               </section>
+
+              {/* AD-2 Medium Rectangle (본문 중간) */}
+              <AdSlot slot="freelancer-tax-mid" format="rectangle" />
 
               {/* 3.3% 원천징수 메커니즘 */}
               <section aria-label="3.3% 원천징수" className="card">
