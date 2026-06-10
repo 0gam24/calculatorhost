@@ -148,7 +148,7 @@
 - stuck.md 두 번째 stale 섹션 (2026-05-06 `developers.google.com`) — `replaceAll` 강화 검토
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
 - scripts/*.mjs shebang 으로 인한 vitest import 차단 — 항구적 해결: lib/cli.mjs(shebang) + lib/core.mjs(no shebang) 분리
-- **(2026-06-10) 신규 가이드 §N 인용 0건 5편** — `earned-income-tax-credit-late-application-2026` / `energy-voucher-2026-summer-cooling-subsidy` / `high-oil-price-relief-fund-2026-application` / `july-vat-and-tax-withholding` / `youth-future-savings-account-2026`. 가짜 §N 리스크로 즉흥 보강 보류 — content-writer + 1차출처 검증으로 별도 PR (minimal 2편: `interest-rate-hike-dsr-loan-limit-july-2026`, `vehicle-individual-consumption-tax-deadline-2026-june` 포함)
+- ~~(2026-06-10) 신규 가이드 §N 인용 0건 5편 + minimal 2편~~ → 2026-06-10 해소 (commit 13d46cc): content-writer 7병렬 + 1차출처(law.go.kr·국세청·소관부처) 교차검증으로 7편 모두 strong 전환. audit strong 90→97 / minimal 0 / missing 7(비-YMYL 계산기만). 부수 교정: 에이전트 오인용 2건(개소세법 §1의2 잠정세율→§1 제7항 탄력세율, 에너지법 §16의2↔§16의3 역할), 기존 오인용 1건(DSR 가이드 은행법 §43→§34 외 교체), JSX literal `**` 마크다운 9건
 - **(2026-06-10) 내부링크 현황** — 고아(인바운드 0) 19→0 달성. 인바운드 1개 21편 잔존 (`node scripts/_orphan-check.mjs` 재측정 가능, 단 category-mapping CROSS_GUIDES 링크는 미집계). 1슬롯 계산기 13종 잔여 AD-2 보강 후보 (고CPC 9종은 2026-06-10 완료)
 
 ### §N 법조항 인용 audit 추이 (2026-05-12 최종, `npm run citations:audit`)
