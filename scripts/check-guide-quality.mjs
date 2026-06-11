@@ -240,6 +240,41 @@ export function checkInternalLinks(src, threshold = 1) {
   };
 }
 
+// FaqSection·본문은 {answer}/JSX 텍스트를 plain text(whitespace-pre-line)로 렌더 →
+// 마크다운 링크 [텍스트](/url) 가 글자로 깨져 노출됨 (2026-06-09 rent-conversion 등 5건 발견).
+// 본문 내부링크는 반드시 <Link href> 로. → red.
+const MARKDOWN_LINK_PATTERN = /\]\(\/(calculator|guide|glossary|category|about)\b/;
+export function checkFaqLinks(src) {
+  const bad = MARKDOWN_LINK_PATTERN.test(src);
+  return {
+    pass: !bad,
+    severity: 'red',
+    label: 'FAQ/본문 마크다운 링크 금지',
+    hint: bad
+      ? 'plain text 렌더 — [텍스트](/url) 마크다운 링크가 글자로 깨짐. <Link href="/...">텍스트</Link> 로 전환'
+      : null,
+  };
+}
+
+// og:image:alt 누락 → 네이버 "Alt 속성 누락" SEO 경고. openGraph.images에 alt 명시 권장. → yellow.
+export function checkOgImageAlt(src) {
+  const ogIdx = src.indexOf('openGraph: {');
+  if (ogIdx === -1) {
+    // openGraph 미설정 → 루트 layout 기본 og(alt 포함) 상속 → 통과
+    return { pass: true, severity: 'yellow', label: 'og:image alt (네이버 Alt 속성)', hint: null };
+  }
+  const block = src.slice(ogIdx, ogIdx + 900);
+  const hasImagesWithAlt = /images:\s*\[\s*\{[\s\S]*?alt:\s*['"`]/.test(block);
+  return {
+    pass: hasImagesWithAlt,
+    severity: 'yellow',
+    label: 'og:image alt (네이버 Alt 속성)',
+    hint: hasImagesWithAlt
+      ? null
+      : 'openGraph.images에 alt 누락 — images: [{ url, width, height, alt }] 형식으로 명시',
+  };
+}
+
 // ─────────────────────────────────────────────────────────────
 // 통합 검증 (게이트 의사결정)
 // ─────────────────────────────────────────────────────────────
@@ -251,6 +286,8 @@ export function validateGuideContent(src) {
     checkAiDisclosure(src),
     checkRevenueLever(src),
     checkInternalLinks(src),
+    checkFaqLinks(src),
+    checkOgImageAlt(src),
   ];
 
   const failures = checks.filter((c) => !c.pass);
