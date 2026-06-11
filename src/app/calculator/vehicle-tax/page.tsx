@@ -6,6 +6,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -232,6 +233,18 @@ export default function VehicleTaxPage() {
 
               {/* FAQ (중간 배치) */}
               <FaqSection items={FAQ_ITEMS} />
+
+              <RateBarChart
+                title="자동차세 배기량별 cc당 세율 — 비영업용 승용차 (지방세법 §127)"
+                caption="비영업용 승용차 자동차세는 배기량 구간별로 cc당 세율이 정해집니다. 1,000cc 이하 경차는 80원/cc, 1,600cc 이하 140원/cc, 1,600cc 초과는 200원/cc입니다. 여기에 지방교육세 30%가 더해지고, 차령 3년차부터 매년 5%씩(최대 50%) 경감됩니다."
+                unit="원/cc"
+                max={220}
+                bars={[
+                  { label: '1,000cc 이하', value: 80, display: '80원/cc' },
+                  { label: '1,001~1,600cc', value: 140, display: '140원/cc' },
+                  { label: '1,601cc 이상', value: 200, display: '200원/cc', highlight: true },
+                ]}
+              />
 
               {/* 자동차세란? */}
               <section className="space-y-4" aria-label="자동차세 개념">

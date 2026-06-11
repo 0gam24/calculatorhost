@@ -6,6 +6,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -247,6 +248,21 @@ export default function CommissionPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              <RateBarChart
+                title="주택 매매 중개수수료 상한요율 — 거래금액 구간별 (공인중개사법 시행규칙 §20)"
+                caption="주택 매매 중개수수료는 거래금액 구간별 법정 상한요율로 정해집니다. 2억~9억 구간이 0.4%로 가장 낮고, 9억을 넘으면 0.5%, 12억 이상 0.6%, 15억 이상 0.7%로 올라갑니다. 상한 이내에서 중개인과 협의할 수 있으며 부가세 10%는 별도입니다."
+                unit="%"
+                max={0.8}
+                bars={[
+                  { label: '~5천만', value: 0.6, display: '0.6%' },
+                  { label: '5천만~2억', value: 0.5, display: '0.5%' },
+                  { label: '2억~9억', value: 0.4, display: '0.4%' },
+                  { label: '9억~12억', value: 0.5, display: '0.5%' },
+                  { label: '12억~15억', value: 0.6, display: '0.6%' },
+                  { label: '15억~', value: 0.7, display: '0.7%', highlight: true },
+                ]}
+              />
 
               {/* 중개수수료란 무엇인가 */}
               <section aria-label="중개수수료 개념" className="card">
