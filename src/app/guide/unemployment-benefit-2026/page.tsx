@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: ['/og-default.png'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '실업급여 2026 — 상한 68,100원·하한 66,048원, 조건·금액·신청' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '실업급여 2026 — 상한 68,100원·하한 66,048원',
     description: '수급조건·소정급여일수·지급액 계산·신청 방법 완정리.',
-    images: ['/og-default.png'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '실업급여 2026 — 상한 68,100원·하한 66,048원, 조건·금액·신청' }],
   },
 };
 

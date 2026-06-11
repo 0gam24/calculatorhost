@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: ['/og-default.png'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '기초연금 2026 — 월 최대 34만 9,700원',
     description: '선정기준액·국민연금 연계감액·부부감액·신청 방법 완정리.',
-    images: ['/og-default.png'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
   },
 };
 

@@ -45,13 +45,13 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: ['/og-default.png'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: '국민연금 2026 — 보험료율 9.5%·수령나이·개혁',
     description: '보험료율·소득대체율 인상, 수령나이, 조기·연기연금 손익 완정리.',
-    images: ['/og-default.png'],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁' }],
   },
 };
 
