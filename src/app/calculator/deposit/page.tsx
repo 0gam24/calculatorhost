@@ -96,6 +96,7 @@ const FAQ_ITEMS = [
 const RELATED = [
   { href: '/calculator/savings', title: '적금 이자', description: '월 납입금별 세후 수령액' },
   { href: '/calculator/loan', title: '대출이자', description: '상환방식별 월상환액' },
+  { href: '/calculator/inflation', title: '화폐가치(물가상승)', description: '인플레이션 반영 실질가치' },
   { href: '/calculator/salary', title: '연봉 실수령액', description: '세후 월급' },
 ];
 

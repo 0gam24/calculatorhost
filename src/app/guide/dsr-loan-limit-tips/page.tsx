@@ -293,6 +293,13 @@ export default function DsrLoanLimitTipsPage() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/dsr-regulation-zones/" className="text-primary-600 underline dark:text-primary-500">
+                      DSR·LTV 규제지역 가이드
+                    </Link>{' '}
+                    — 조정대상지역·투기과열지구별 한도 차이
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">
                       대출이자 계산기
                     </Link>{' '}
