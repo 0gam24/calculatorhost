@@ -74,6 +74,7 @@ next-env.d.ts
 .claude/progress.md
 .claude/reports/gsc-latest.json
 .claude/reports/gsc-opportunities.md
+.claude/reports/naver-trends.md
 gsc-sa-key.json
 *.gsc-key.json
 gsc-oauth-token.json
