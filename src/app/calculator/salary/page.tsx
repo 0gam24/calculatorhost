@@ -8,6 +8,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
 const SkyscraperAd = dynamic(() => import('@/components/ads/SkyscraperAd').then(mod => ({ default: mod.SkyscraperAd })), {
@@ -446,6 +447,17 @@ export default function SalaryPage() {
                     </tbody>
                   </table>
                 </div>
+                <RateBarChart
+                  title="연봉에서 빠지는 4대보험 근로자 부담률 (2026)"
+                  caption="월급에서 국민연금 4.5%, 건강보험 3.545%, 장기요양보험(건강보험료의 12.95% ≈ 보수의 0.46%), 고용보험 0.9%가 먼저 공제되고, 이후 소득세·지방소득세가 추가로 빠집니다. 합계 약 9% 수준이며, 비과세 식대 등은 보험료 산정에서 제외됩니다."
+                  max={5}
+                  bars={[
+                    { label: '국민연금', value: 4.5, highlight: true },
+                    { label: '건강보험', value: 3.545, display: '3.545%' },
+                    { label: '장기요양', value: 0.46, display: '≈0.46%' },
+                    { label: '고용보험', value: 0.9 },
+                  ]}
+                />
                 <p className="text-text-secondary text-sm">
                   <strong>예시:</strong> 월 소득 350만 원일 때, 4대보험 합계 공제액은 약 31.5만 원(9%)입니다.
                   연봉이 높아질수록 국민연금 상한으로 인해 전체 공제율이 하락합니다.

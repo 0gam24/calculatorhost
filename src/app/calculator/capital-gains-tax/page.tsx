@@ -9,6 +9,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
 const SkyscraperAd = dynamic(() => import('@/components/ads/SkyscraperAd').then(mod => ({ default: mod.SkyscraperAd })), {
@@ -407,6 +408,21 @@ export default function TransferTaxPage() {
                     </tbody>
                   </table>
                 </div>
+
+                <RateBarChart
+                  title="양도소득세 기본세율 — 과세표준 구간별 (소득세법 §55)"
+                  caption="양도소득세 기본세율은 과세표준이 커질수록 6%에서 45%까지 8단계로 누진 적용됩니다. 1세대1주택 비과세와 장기보유특별공제를 적용한 뒤의 과세표준 기준이며, 2년 미만 단기 보유 주택은 별도 단일세율(40~70%)이 우선합니다."
+                  bars={[
+                    { label: '1,400만 이하', value: 6 },
+                    { label: '5,000만 이하', value: 15 },
+                    { label: '8,800만 이하', value: 24 },
+                    { label: '1.5억 이하', value: 35 },
+                    { label: '3억 이하', value: 38 },
+                    { label: '5억 이하', value: 40 },
+                    { label: '10억 이하', value: 42 },
+                    { label: '10억 초과', value: 45, highlight: true },
+                  ]}
+                />
 
                 <h3 className="mb-2 text-lg font-semibold text-text-primary">
                   단기 보유 세율 (주택 1년 미만, 소득세법 §100)

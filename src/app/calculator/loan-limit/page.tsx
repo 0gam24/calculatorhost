@@ -8,6 +8,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 import { DataFreshness } from '@/components/ui/DataFreshness';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
@@ -361,6 +362,18 @@ export default function LoanLimitPage() {
                   </p>
                 </div>
               </section>
+
+              <RateBarChart
+                title="대출한도를 정하는 DSR·DTI 규제 비율 (2026)"
+                caption="연소득 대비 연간 원리금 비율(DSR)은 은행 40%, 제2금융권 50% 이하로 제한됩니다. DTI는 규제지역 40%, 비규제지역 50%가 한도입니다. 여기에 담보 대비 대출 비율(LTV)과 2026년 변동금리 스트레스 가산금리 1.5%p가 함께 적용되어 실제 대출한도가 결정됩니다."
+                max={60}
+                bars={[
+                  { label: 'DSR (은행)', value: 40 },
+                  { label: 'DSR (2금융권)', value: 50 },
+                  { label: 'DTI (규제지역)', value: 40 },
+                  { label: 'DTI (비규제)', value: 50, highlight: true },
+                ]}
+              />
 
               {/* 산출 공식 및 예시 (자연어 prose — LLM 인용 친화) */}
               <section className="card space-y-3">
