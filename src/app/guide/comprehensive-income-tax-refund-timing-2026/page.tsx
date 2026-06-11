@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 환급금 입금 시기 2026 | 신고 후 언제 받을까?' }],
     title: '종합소득세 환급금 입금 시기 2026 — 신고 후 언제 받을까?',
     description: '5월 신고 후 약 30~45일, 6월 중순~7월 말 환급금 입금 예상. 신고 시점·계좌 등록 여부·가산세 발생 시 차감.',
     url: URL,

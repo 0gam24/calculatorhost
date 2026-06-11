@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속주택 양도세 1세대1주택 합가 5년 특례 2026 | 소득세법 §89·§155' }],
     title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026',
     description: '5년 기한·양도 순서·12억 한도·공동상속 처리·실제 사례.',
     url: URL,

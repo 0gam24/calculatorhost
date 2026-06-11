@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | calculatorhost' }],
     title: '사적연금 1,500만 원 분리과세 vs 종합과세 완벽 가이드 (2026)',
     description: '연금저축·IRP 수령액 1,500만 원 기준 분리과세 저세율 활용법. 연령별 세율·신고·절세 전략.',
     url: URL,

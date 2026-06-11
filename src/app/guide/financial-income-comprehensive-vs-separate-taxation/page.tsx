@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '금융소득 종합과세 vs 분리과세 2026 | 2000만원 기준 5월 신고' }],
     title: '금융소득 종합과세 vs 분리과세 2026 | 2000만원 기준',
     description: '금융소득 2000만원 기준·종합 vs 분리 비교 과세·세금 계산·배당세액공제·함정 5가지.',
     url: URL,

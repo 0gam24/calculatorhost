@@ -39,6 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가족 간 차용증·금전대여 증여세 정확 정리 2026' }],
     title: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
     description: '무이자 대출 적정이자율 4.6% 차액·1,000만원 면제·차용증 필수 요소·실질과세 입증·함정 5가지.',
     url: URL,

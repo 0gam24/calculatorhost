@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종소세 인적공제 부양가족 150만원 2026 | 직계존비속 형제자매 요건' }],
     title: '종소세 인적공제 부양가족 150만원 2026 완벽 가이드',
     description: '본인·배우자·직계존비속·형제자매 공제 요건·추가공제·5월 신고 신청 방법.',
     url: URL,

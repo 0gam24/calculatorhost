@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급 (6월~11월)' }],
     title: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급',
     description: '정기신청(5월 1~31일) 놓쳤어도 6월~11월 기한 후 신청으로 95% 수령. 신청 방법·지급일·소득 요건 가이드.',
     url: URL,

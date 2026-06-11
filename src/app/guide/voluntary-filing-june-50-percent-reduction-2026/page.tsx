@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자진신고 6월 50% 감면 가이드 2026 | 종소세 마감 후 가산세 절반' }],
     title: '자진신고 6월 50% 감면 | 종소세 마감 후 가산세 절반 | calculatorhost',
     description:
       '5월 31일을 지났다면 6월이 기회. 자진신고로 가산세 50% 감면받기. 산출세액 500만→가산세 50만. 국세기본법 §48.',

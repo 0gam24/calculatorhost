@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자녀 주택 증여 vs 매매 비교 2026 | 저가양수도 30% 룰 + 세금 시뮬' }],
     title: '자녀 주택 증여 vs 매매 비교 2026',
     description: '저가양수도 30%·3억 룰, 자금출처 조사, 양도세 시가 기준 계산, 4가지 시나리오 세금 비교.',
     url: URL,

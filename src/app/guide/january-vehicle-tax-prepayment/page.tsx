@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 연납 5% 할인 가이드 2026 | calculatorhost' }],
     title: '자동차세 연납 5% 할인 가이드 2026',
     description: '1월 16~31일 신청 시 최대 9.15% 할인.',
     url: URL,

@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택임대차보호법 전월세전환율 2026 | 기준금리+2% 완벽 가이드' }],
     title: '주택임대차보호법 전월세전환율 2026 | 기준금리+2%',
     description: '월차임 전환율 법정 한도 + 보증금·월세 환산 공식.',
     url: URL,

@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일' }],
     title: '종합부동산세 2026 — 누가 내나, 과세기준일, 12억 공제',
     description: '1주택 12억, 다주택 9억 공제. 공정시장가액비율 60%, 세율 0.5~5%. 2026년 완전 해설.',
     url: URL,

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부담부증여 양도+증여세 완벽 정리 2026 | 채무인수 가족 간 부동산' }],
     title: '부담부증여 양도+증여세 완벽 정리 2026',
     description: '부담부증여 분리 계산식·채무인수 양도세·무상분 증여세·절세 시뮬·함정 5가지.',
     url: URL,

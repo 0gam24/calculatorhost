@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도소득세 계산 5단계 가이드 2026 | 1세대1주택 vs 일시적2주택 | calculatorhost' }],
     title: '양도소득세 계산 5단계 가이드 2026',
     description: '1세대1주택부터 일시적2주택 중과세까지. 정확한 계산 5단계 및 절세 팁.',
     url: URL,

@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준' }],
     title: '프리랜서 단순경비율 vs 기준경비율 2026 선택 기준',
     description: '강사 3,000만 → 단순경비율? 기준경비율? 세율표 + 실거래 사례 3개 + 함정 정리.',
     url: URL,

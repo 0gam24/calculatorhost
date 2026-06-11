@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '월세 세액공제 2026 무주택 직장인 환급 계산 | calculatorhost' }],
     title: '월세 세액공제 2026 무주택 직장인 환급 계산',
     description: '17% vs 15% 공제율 + 750만 한도 + 자격 조건 + 신청 방법 + 실전 사례',
     url: URL,

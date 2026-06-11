@@ -39,6 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '11월 연말정산 준비 가이드 2026 | 12월 31일 마감 전 절세 8가지' }],
     title: '11월 연말정산 준비 가이드 2026',
     description: '연금저축·IRP·신용카드·의료비·기부금·청약통장·월세 8가지 절세 항목.',
     url: URL,

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택임대소득 분리과세 2,000만 원 완전 정리 2026 | 종합과세 비교' }],
     title: '주택임대소득 분리과세 2,000만 원 완전 정리 2026',
     description: '14% 분리과세 vs 종합과세·1/2/3주택 차이·간주임대료·등록임대 혜택.',
     url: URL,

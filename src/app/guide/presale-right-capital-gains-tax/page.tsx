@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분양권 양도세 완전 정리 2026 | 70% / 60% 고정세율 + 입주권 차이' }],
     title: '분양권 양도세 완전 정리 2026',
     description: '70%/60% 고정세율·입주권 차이·보유기간 기산점·신고 기한.',
     url: URL,

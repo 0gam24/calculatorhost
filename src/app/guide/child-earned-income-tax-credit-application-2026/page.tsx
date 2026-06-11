@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 자녀·근로장려금 신청 가이드 | 5월 31일 마감 + 환급 시점' }],
     title: '2026 자녀·근로장려금 신청 가이드',
     description: '5월 31일 마감·자격 기준·금액·홈택스 신청 5단계·환급 시점.',
     url: URL,

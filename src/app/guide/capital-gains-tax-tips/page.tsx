@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   keywords: ['양도세 절세', '양도소득세 절세', '1세대1주택 비과세', '장기보유특별공제', '일시적 2주택', '토지 양도세', '농지 자경 감면'],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도소득세 절세 7가지 방법 2026 | calculatorhost' }],
     title: '양도소득세 절세 7가지 방법 2026',
     description: '1세대1주택 비과세·장기보유공제·일시적 2주택·자경 감면 활용법.',
     url: URL,

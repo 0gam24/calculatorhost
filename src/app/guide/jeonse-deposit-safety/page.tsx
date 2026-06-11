@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세 보증금 안전 가이드 2026 | 사기 방지 체크리스트 | calculatorhost' }],
     title: '전세 보증금 안전 가이드 2026',
     description: '보증금 보호 8가지 필수 체크리스트. 깡통전세 예방부터 HUG보증 신청까지.',
     url: URL,

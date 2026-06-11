@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026 | 신규 구매 후 매도' }],
     title: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026',
     description: '신규 구매 후 종전 주택 3년 내 매도 시 비과세 조건·12억 한도·함정 5가지.',
     url: URL,

@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '10월 부가세 2기 예정신고 가이드 2026 | 환급·예정고지·연말 절세' }],
     title: '10월 부가세 2기 예정신고 가이드 2026',
     description: '예정신고 vs 예정고지·환급 가능성·연말 절세 4가지·4분기 매입 계획.',
     url: URL,

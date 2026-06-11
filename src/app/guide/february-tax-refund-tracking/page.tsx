@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2월 연말정산 환급 추적 + 5월 준비 가이드 2026 | calculatorhost' }],
     title: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비',
     description: '환급 결과 확인 + 추가 납부 대응 + 5월 정정 신고 준비.',
     url: URL,

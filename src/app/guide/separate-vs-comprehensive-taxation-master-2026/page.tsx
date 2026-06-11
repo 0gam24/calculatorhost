@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분리과세 vs 종합과세 2026 마스터 가이드 — 금융소득·사적연금·기타소득' }],
     title: '분리과세 vs 종합과세 선택 마스터 2026 | 최대 절세 전략',
     description: '금융소득·사적연금·기타소득 분리과세 한도 완벽 정리. 언제 분리? 언제 합산? 시뮬 3개로 당신의 최적 선택 계산.',
     url: URL,

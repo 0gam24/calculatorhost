@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 완벽 가이드 2026 | calculatorhost' }],
     title: '재산세 완벽 가이드 2026 — 7월 납부 시즌 직전 필독',
     description: '공시가격 × 공정시장가액 60% 산정 + 1세대1주택 특례 + 분할 납부.',
     url: URL,

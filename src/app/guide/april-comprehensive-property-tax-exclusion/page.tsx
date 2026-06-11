@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '4월 종부세 합산배제·과세특례 신청 | calculatorhost' }],
     title: '4월 종부세 합산배제·과세특례 신청 가이드 2026',
     description: '4월 1~30일 마감. 임대주택·일시적 2주택·고령자 등 절세 핵심.',
     url: URL,

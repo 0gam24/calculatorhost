@@ -39,6 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '5월 종합소득세 신고 가이드 2026 | calculatorhost' }],
     title: '5월 종합소득세 신고 완벽 가이드 2026',
     description: '신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법.',
     url: URL,

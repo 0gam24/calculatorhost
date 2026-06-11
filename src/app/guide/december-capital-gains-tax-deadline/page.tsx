@@ -39,6 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '12월 양도세 vs 1월 양도세 가이드 2026 | 연말 매도 결정 프레임' }],
     title: '12월 양도세 vs 1월 양도세 가이드 2026',
     description: '귀속연도·신고 일정·세법 개정·양도손실 통산 의사결정 프레임.',
     url: URL,

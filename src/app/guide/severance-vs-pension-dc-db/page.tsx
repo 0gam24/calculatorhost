@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직금 vs DC/DB 퇴직연금 선택 가이드 2026 | calculatorhost' }],
     title: '퇴직금 vs DC/DB 퇴직연금 선택 가이드 2026',
     description: '3가지 제도 특징·세금·수익성 비교, 최적 선택 기준.',
     url: URL,

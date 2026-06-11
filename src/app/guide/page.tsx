@@ -20,6 +20,7 @@ export const metadata: Metadata = {
     '한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정을 위한 실전 가이드 모음. 시기성 콘텐츠(5월 종소세, 7월 재산세) + 분야별 절세·전략 가이드.',
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가이드 — 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost' }],
     title: 'calculatorhost 가이드 — 카테고리별 모음',
     description: '시기성 + 분야별 실전 의사결정 가이드.',
     url: URL,

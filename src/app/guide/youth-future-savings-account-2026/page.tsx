@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청년미래적금 2026 — 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%' }],
     title: '청년미래적금 2026 — 월 50만원·5% + 정부 6~12% 기여, 6월 22일 출시',
     description: '만 19~34세 소득요건 대상. 월 최대 50만원, 기본 5% + 정부기여금 6~12%. 3년 만기 약 2,200만원. 6월 22일 출시, 청년도약계좌와 중복불가.',
     url: URL,

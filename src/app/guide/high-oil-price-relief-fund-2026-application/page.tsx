@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '고유가 피해지원금 2026 — 소득 하위 70% 1인 10~25만원, 7월 3일 마감' }],
     title: '고유가 피해지원금 2026 — 1인 10~25만원, 신청 마감 7월 3일',
     description: '소득 하위 70% 대상. 거주지 따라 10~25만원. 신용카드·체크카드·상품권으로 사용. 신청 5월 18일~7월 3일.',
     url: URL,

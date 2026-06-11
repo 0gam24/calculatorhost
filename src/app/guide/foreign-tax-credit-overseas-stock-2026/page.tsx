@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '외국납부세액공제 2026 해외주식·배당 환급 신청 | 5월 31일' }],
     title: '외국납부세액공제 2026 해외주식·배당 환급',
     description:
       '미국 주식 배당 1,000만 원 × 15% 원천징수 = 150만 환급? 한도·계산·신청 완벽 정리.',

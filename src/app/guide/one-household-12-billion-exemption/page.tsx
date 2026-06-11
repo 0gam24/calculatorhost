@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '1세대1주택 양도세 12억 한도 완전 정리 2026 | 비례 과세 공식' }],
     title: '1세대1주택 양도세 12억 한도 완전 정리 2026',
     description: '비례 과세 공식·거주 요건·장기보유공제 80%·실제 사례 3개.',
     url: URL,

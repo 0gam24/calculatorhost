@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '이월과세 5년→10년 확대 완벽 정리 2026 | 배우자·직계 증여 양도세' }],
     title: '이월과세 5년→10년 확대 완벽 정리 2026',
     description: '이월과세 정의·소득세법 §97의2·배우자·직계 증여 후 양도·5년→10년 확대·시뮬·면제.',
     url: URL,

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정 | calculatorhost' }],
     title: '재산세 과세기준일 6월 1일 — 잔금 타이밍과 부담자',
     description: '지방세법 §114: 6월 1일 현재 소유자가 그 해 재산세 전액 부담. 5월 31일 잔금 vs 6월 2일 잔금 시 부담자 변경.',
     url: URL,

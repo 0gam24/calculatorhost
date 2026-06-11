@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 6월 15일 신청' }],
     title: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 신청 안내',
     description: '저소득층·노인·영유아·장애인 등 취약계층 최대 70만원 냉방비 지원. 신청 기한 6월 15일~12월 31일.',
     url: URL,

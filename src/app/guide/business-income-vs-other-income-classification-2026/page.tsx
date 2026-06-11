@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 5월 신고 가이드' }],
     title: '사업소득 vs 기타소득 완벽 분류 기준 2026 | 강사·프리랜서 필독',
     description: '5월 31일 신고 전 필독. 강사료 사업소득 vs 기타소득, 필요경비 차이, 누진세율 영향, 가산세 회피.',
     url: URL,

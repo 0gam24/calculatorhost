@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연봉협상 전 꼭 확인하세요 | 실수령액 정확 시뮬레이션 2026 | calculatorhost' }],
     title: '연봉협상 전 꼭 확인하세요 | 실수령액 시뮬레이션',
     description: '이직·협상 제안 받았을 때, 연봉 수치의 함정 찾아내고 정확한 월 실수령액 계산하는 법.',
     url: URL,

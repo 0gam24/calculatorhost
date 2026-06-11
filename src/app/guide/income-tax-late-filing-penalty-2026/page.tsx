@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 가산세 2026 무신고·지연 계산 | calculatorhost' }],
     title: '종합소득세 가산세 2026 무신고·지연 정확 계산',
     description: '산출세액 500만 → 무신고가산세 100만? 마감 후 환급도 못 받는다! 자진신고 감면 기한 정리.',
     url: URL,

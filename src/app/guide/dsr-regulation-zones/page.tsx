@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   keywords: ['DSR 규제지역', '조정대상지역 DSR', '투기과열지구 LTV', '비규제지역 DSR', '스트레스 DSR', '생애최초 LTV', '다주택자 LTV'],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '지역별 DSR·LTV 규제 완전 정리 2026 | calculatorhost' }],
     title: 'DSR·LTV 규제지역별 완전 정리 (2026)',
     description: '비규제·조정·투기과열지역 DSR·LTV 차이 + 스트레스 DSR 적용.',
     url: URL,

@@ -27,6 +27,7 @@ export const metadata: Metadata = {
   keywords: ["7월 부가세 신고","부가가치세 확정신고","연말정산 사전점검","원천징수","세금 신고 일정","홈택스 신고"],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost' }],
     title: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost",
     description: "7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 동시에 필요한 시기입니다. 신고 기한·공제 항목·준비 서류를 미리 파악해 놓치는 항목 없이 관리하세요.",
     url: URL,

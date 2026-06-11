@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부부 공동명의 양도세 절세 완전 정리 2026 | 누진세 분산 효과' }],
     title: '부부 공동명의 양도세 절세 완전 정리 2026',
     description: '명의자별 누진세 분산·기본공제 2배·장기보유공제 분배·증여 후 매도.',
     url: URL,

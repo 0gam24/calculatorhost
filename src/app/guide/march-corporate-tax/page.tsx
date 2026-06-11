@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '법인세 신고 가이드 2026 (3월 31일 마감) | calculatorhost' }],
     title: '법인세 신고 가이드 2026 — 3월 31일 마감',
     description: '법인세 세율·공제·분납·전자신고 종합.',
     url: URL,

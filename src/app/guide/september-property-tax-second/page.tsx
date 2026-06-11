@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '9월 재산세 2차 납부 가이드 2026 | 위택스·신용카드 할부·가산세' }],
     title: '9월 재산세 2차 납부 가이드 2026',
     description: '주택 분할 vs 토지 일괄·위택스 5가지 방법·할부·가산세·환급.',
     url: URL,

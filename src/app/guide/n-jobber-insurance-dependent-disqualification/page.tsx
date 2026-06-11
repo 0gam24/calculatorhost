@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026 | 재취득 절차' }],
     title: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026',
     description: '소득·재산·관계 3대 기준 + 사업자등록 자동 탈락 + 재취득 절차.',
     url: URL,

@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '의료비 세액공제 2026 3% 초과분 15% 공제 700만 한도 | calculatorhost' }],
     title: '의료비 세액공제 2026 — 3% 초과분 15% 공제, 700만 한도',
     description: '의료비 세액공제 정확한 계산법. 3% 초과분만 과세대상, 15% 공제율, 700만 한도 (단 본인·고령·6세 이하·장애인 무한도)',
     url: URL,

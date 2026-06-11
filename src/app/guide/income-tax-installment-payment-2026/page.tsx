@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부' }],
     title: '종합소득세 분납 신청 2026 — 1천만 초과 2개월 분할',
     description: '분납 가능한가? 분납 비율은? 2차 납부일은? 사례 3개 시뮬 + 가산세 0원 확인.',
     url: URL,

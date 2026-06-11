@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '5월 31일 마감 당일 종합소득세 신고 2026 | 24시간 가이드·홈택스 폭주 회피' }],
     title: '5월 31일 마감 당일 종합소득세 신고 완벽 2026 | 24시간 라이브 가이드',
     description: '당일 신고 당황스럽다면? 빠른 신고 5단계·홈택스 폭주 회피·자정 제출 시 무신고가산세 0원 안내.',
     url: URL,

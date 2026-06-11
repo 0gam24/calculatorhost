@@ -47,6 +47,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'DTI 계산기 2026 — LTV·DSR 통합 대출한도 계산' }],
     title: 'DTI 계산기 2026 | LTV·DSR 함께 계산',
     description: 'DTI 공식 + 한도 자동 계산.',
     url: URL,

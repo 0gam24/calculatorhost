@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이·계산' }],
     title: '소득공제 vs 세액공제 2026 차이와 선택 기준',
     description: '소득공제는 과세표준 감소, 세액공제는 세금에서 차감. 누진세가 높을수록 소득공제 유리? 5월 신고 필독.',
     url: URL,

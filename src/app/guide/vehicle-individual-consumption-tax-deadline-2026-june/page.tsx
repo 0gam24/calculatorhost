@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차 개별소비세 인하 6월 30일 마감 — 출고 기준 143만원 절감 가이드 | calculatorhost' }],
     title: '자동차 개별소비세 인하 6월 30일 마감 — 143만원 절감하는 방법',
     description: '개별소비세 5% → 3.5% 인하, 최대 143만원 절감. 기준은 계약일 아닌 출고일. 마감 D-30 필수 가이드.',
     url: URL,

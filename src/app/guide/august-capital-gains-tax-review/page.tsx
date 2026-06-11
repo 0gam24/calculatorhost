@@ -39,6 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '8월 양도소득세 절세 검토 가이드 2026 | 일시적2주택·장기보유 80%' }],
     title: '8월 양도소득세 절세 검토 가이드 2026',
     description: '일시적2주택 3년 만료·장기보유공제 80%·단기 1년/2년 경계·절세 5가지.',
     url: URL,

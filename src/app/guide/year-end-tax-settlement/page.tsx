@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연말정산 완벽 가이드 2026 | calculatorhost' }],
     title: '연말정산 완벽 가이드 2026 — 13월의 월급 받는 법',
     description: '신용카드·의료비·교육비·연금저축 공제 + 환급 추적 전략.',
     url: URL,

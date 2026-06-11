@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일 선택 기준' }],
     title: 'N잡러 종합소득세 합산 신고 2026 | 직장+부업 세액 계산',
     description: '연봉 5천만+부업 2천만 → 합산하면 누진세율 24% 상향? 분리과세 선택권? 5월 31일 선택 기준.',
     url: URL,

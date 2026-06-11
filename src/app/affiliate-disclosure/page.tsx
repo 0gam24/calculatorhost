@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     'calculatorhost는 일부 페이지에서 어필리에이트 파트너 링크를 사용합니다. 표시광고법·공정거래위원회 가이드라인에 따라 광고 여부와 수익 구조를 투명하게 공시합니다.',
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '어필리에이트 공시 — calculatorhost' }],
     title: '어필리에이트 공시 — calculatorhost',
     description: '광고 여부와 수익 구조 투명 공시. 표시광고법·공정위 가이드라인 준수.',
     url: URL,

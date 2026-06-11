@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026' }],
     title: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감',
     description: '3년차부터 차령경감 5%/년, 연납 할인. 1600cc 이하 예상 세액부터 납부 방법까지.',
     url: URL,

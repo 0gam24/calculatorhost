@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '장기보유특별공제 80% 완전 정리 2026 | 1세대1주택 10년 보유·거주' }],
     title: '장기보유특별공제 80% 완전 정리 2026',
     description: '1세대1주택 80% 공제 조건·보유 4%/거주 4% 연 계산·다주택 배제·분양권 배제.',
     url: URL,

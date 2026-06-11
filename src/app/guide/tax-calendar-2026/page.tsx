@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 세금 캘린더 1월~12월 | calculatorhost' }],
     title: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
     description: '월별 D-day + 관련 가이드 링크 모음.',
     url: URL,

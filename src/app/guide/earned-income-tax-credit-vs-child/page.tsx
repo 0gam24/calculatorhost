@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로장려금 vs 자녀장려금 차이 | 5월 신고 전 반드시 확인 | calculatorhost' }],
     title: '근로장려금 vs 자녀장려금 | 5월 신고 전 필독',
     description: '저소득 가구를 위한 두 제도의 명확한 차이, 자격 기준, 신청 방법을 정리했습니다.',
     url: URL,

@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '7월 부가세 확정신고 가이드 2026 | 일반·간이과세 완전정리' }],
     title: '7월 부가세 확정신고 가이드 2026',
     description: '신고 대상·기한·홈택스 5단계·일반/간이과세 차이·환급·절세 5가지.',
     url: URL,

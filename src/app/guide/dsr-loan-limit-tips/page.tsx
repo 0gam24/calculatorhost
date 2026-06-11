@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   keywords: ['DSR', '대출한도', '주담대', '스트레스 DSR', '대출 늘리는 법', '2026 DSR'],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'DSR 대출한도 늘리는 5가지 방법 2026 | calculatorhost' }],
     title: 'DSR 대출한도를 늘리는 5가지 방법 2026',
     description: '스트레스 DSR 1.5%p 풀 적용 환경에서 대출한도 확보 실전 가이드.',
     url: URL,

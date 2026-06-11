@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026 | 절세 시뮬' }],
     title: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026',
     description: '10년/5년 합산 차이·증여 당시 평가액·이중과세 공제·10년 초과 증여 절세.',
     url: URL,

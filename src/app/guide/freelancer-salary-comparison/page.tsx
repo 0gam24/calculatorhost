@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   keywords: ['프리랜서 실수령액', '프리랜서 vs 직장인', '프리랜서 4대보험', '프리랜서 종합소득세', '사업소득 vs 근로소득', '3.3% 원천징수'],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost' }],
     title: '프리랜서 vs 일반직 실수령액 비교 2026',
     description: '같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이 시뮬레이션.',
     url: URL,

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자경농지 8년 100% 감면 완벽 정리 2026 | 조특법 §69 1억 한도' }],
     title: '자경농지 8년 100% 감면 완벽 정리 2026',
     description: '자경농지 8년 = 양도세 100% 감면. 자경(50% 이상 자기 노동) + 거주(30km) + 한도 1억.',
     url: URL,

@@ -36,6 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '4월 부가세 1기 예정신고 가이드 2026 | calculatorhost' }],
     title: '4월 부가세 1기 예정신고 가이드 2026',
     description: '4월 1~25일 신고 마감. 매출세액·매입세액공제 정리.',
     url: URL,

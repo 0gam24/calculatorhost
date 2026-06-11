@@ -35,6 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한·소득세법 §74' }],
     title: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한',
     description: '사망자 소득은 상속인 전원이 신고 의무. 기한은 사망일+6개월. 상속세와 다른 종합소득세 신고 정리.',
     url: URL,

@@ -26,6 +26,7 @@ export const metadata: Metadata = {
   keywords: ['물타기', '손절', '비중조절', '평단', '주식 전략', '코인 전략', '추매'],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '물타기 vs 손절 vs 비중조절 비교 2026 | calculatorhost' }],
     title: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나',
     description: '하락장에서의 3가지 전략 의사결정 기준.',
     url: URL,

@@ -37,6 +37,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종소세 경정청구 5년 환급 2026 | 누락 공제·세액공제 회수 방법' }],
     title: '종소세 경정청구 5년 환급 2026 — 누락 공제 찾아 환급받기',
     description: '지난 5년 신고 시 누락한 공제로 환급받는 경정청구. 의료비·월세·기부금 등 자주 놓친 항목 점검.',
     url: URL,
