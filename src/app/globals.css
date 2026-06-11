@@ -81,6 +81,11 @@
     @apply bg-bg-base text-text-primary;
     font-family: 'Pretendard', 'Inter', system-ui, -apple-system, sans-serif;
     font-feature-settings: 'ss01', 'tnum';
+    /* 한국어 가독성: 단어 중간 줄바꿈 방지 + 넉넉한 행간 + 미세 자간 */
+    line-height: 1.72;
+    letter-spacing: -0.01em;
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 
   /* Pretendard 폰트 self-host (public/fonts/) — LCP 50~100ms 개선, 외부 CDN 의존 제거 */
@@ -246,4 +251,20 @@ main header::before {
 }
 main header h1 {
   letter-spacing: -0.02em;
+}
+
+/* 본문 가독성 고급화 — 한국어 제목·문단의 자연스러운 줄바꿈 (심플하지만 깔끔)
+   word-break: keep-all → 단어 중간 끊김 방지 / text-wrap → 줄 끝 들쭉날쭉·외톨이 단어 완화.
+   미지원 브라우저는 무시(graceful degradation). */
+main h1,
+main h2,
+main h3,
+main h4 {
+  word-break: keep-all;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+main p,
+main li {
+  text-wrap: pretty;
 }
