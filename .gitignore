@@ -72,6 +72,8 @@ next-env.d.ts
 .claude/current_tasks/
 .claude/checkpoints/
 .claude/progress.md
+.claude/reports/gsc-latest.json
+.claude/reports/gsc-opportunities.md
 CLAUDE.local.md
 
 # 운영 데이터
