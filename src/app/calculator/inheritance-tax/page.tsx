@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import {
   buildSoftwareApplicationJsonLd,
@@ -253,6 +254,20 @@ export default function InheritanceTaxPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              <RateBarChart
+                title="상속세 누진세율 — 과세표준 구간별 (상증세법 §26)"
+                caption="상속세는 과세표준 구간별로 10%에서 50%까지 5단계 누진 적용됩니다(증여세와 동일 세율). 일괄공제 5억(또는 기초공제 2억+인적공제)과 배우자공제(5억~30억)를 차감한 과세표준 기준입니다."
+                unit="%"
+                max={55}
+                bars={[
+                  { label: '1억 이하', value: 10, display: '10%' },
+                  { label: '1억~5억', value: 20, display: '20%' },
+                  { label: '5억~10억', value: 30, display: '30%' },
+                  { label: '10억~30억', value: 40, display: '40%' },
+                  { label: '30억 초과', value: 50, display: '50%', highlight: true },
+                ]}
+              />
 
               {/* 상속세란 무엇인가 */}
               <section aria-label="상속세 개념" className="card">
