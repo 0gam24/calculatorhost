@@ -404,7 +404,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     </div>
                   </div>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4 mt-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 중요:</strong> 1월을 놓친 경우 6월·12월 정기 납부 시에는 할인이 적용되지 않습니다.
                     다만 위택스나 각 지자체 자동차세 관련 페이지에서 6월·12월 납부 시에도 소정의 기간 할인이 있을 수 있으니 확인하세요.
@@ -512,7 +512,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     </tbody>
                   </table>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4 mt-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">행정 제제</h3>
                   <ul className="space-y-1.5 text-sm text-danger-700 dark:text-danger-300">
                     <li>📛 <strong>신규 등록·이전 등록 불가:</strong> 납기일로부터 60일 경과 후</li>

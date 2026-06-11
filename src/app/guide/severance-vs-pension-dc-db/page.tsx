@@ -204,7 +204,7 @@ export default function SeveranceVsPensionDcDbPage() {
                   회사가 퇴직 시점의 <strong>3개월 평균임금 × 근속연수 ÷ 12 × 30일</strong>로 계산.
                   별도 적립 의무 없고, 퇴직 시점에 지급.
                 </p>
-                <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <strong className="text-text-primary block mb-2">장점</strong>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• 최종 금액 확정 (회사 파산 제외)</li>
@@ -212,7 +212,7 @@ export default function SeveranceVsPensionDcDbPage() {
                     <li>• 운용 책임 없음 (노후 안정성)</li>
                   </ul>
                 </div>
-                <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <strong className="text-text-primary block mb-2">단점</strong>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• 임금피크제 도입 시 급격히 감소</li>
@@ -228,7 +228,7 @@ export default function SeveranceVsPensionDcDbPage() {
                   퇴직금을 연금화한 제도. 회사가 운용 책임. 퇴직 시점의 임금·근속연수 기반으로
                   금액 미리 약속 (연금보험사 또는 기금). 퇴직금처럼 예측 가능.
                 </p>
-                <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <strong className="text-text-primary block mb-2">장점</strong>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• 예측 가능한 퇴직금 (약정)</li>
@@ -236,7 +236,7 @@ export default function SeveranceVsPensionDcDbPage() {
                     <li>• 장기 금리 변동 (금리 인하) 영향 적음</li>
                   </ul>
                 </div>
-                <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <strong className="text-text-primary block mb-2">단점</strong>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• 주식 상승 시 수익 미반영</li>
@@ -252,7 +252,7 @@ export default function SeveranceVsPensionDcDbPage() {
                   회사가 월급의 일정 비율(최소 임금의 8.33%)을 개인 계좌에 적립.
                   근로자가 주식·채권·펀드를 직접 선택해 운용. 최종 금액은 수익률에 따라 결정.
                 </p>
-                <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <strong className="text-text-primary block mb-2">장점</strong>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• 주식·부동산 상승 시 수익 모두 내 것</li>
@@ -261,7 +261,7 @@ export default function SeveranceVsPensionDcDbPage() {
                     <li>• 이직 시 계좌 이전 용이</li>
                   </ul>
                 </div>
-                <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <strong className="text-text-primary block mb-2">단점</strong>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• 운용 손실 개인 책임 (주가 하락 시)</li>
@@ -324,7 +324,7 @@ export default function SeveranceVsPensionDcDbPage() {
 
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 제도 선택은 회사 정책에 따라 결정 — 개인 선택 불가능한 경우 다수</li>

@@ -220,7 +220,7 @@ export default function JunePropertyTaxPage() {
                   지방세입니다. 시·군·구청에서 부과·징수하며, 6월 1일 기준 소유자에게 부과합니다
                   (지방세법 §107, §114).
                 </p>
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 6월 1일 거래 주의</strong>: 5월 31일까지 잔금 → 매도자가 1년치 재산세 부담.
                     6월 1일 이후 잔금 → 매수자가 부담. 한 끗 차이로 수십~수백만 원 부담 변동.
@@ -398,7 +398,7 @@ export default function JunePropertyTaxPage() {
 
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 개별 사정(상속·증여 직후, 1세대 판정 모호)은 시·군청 상담 권장.</li>

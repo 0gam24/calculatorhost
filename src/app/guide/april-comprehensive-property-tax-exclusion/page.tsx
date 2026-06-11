@@ -255,7 +255,7 @@ export default function AprilCptExclusionPage() {
                       </tbody>
                     </table>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <p className="text-sm text-text-secondary">
                       <strong className="text-text-primary">합산 한도 80%</strong>:
                       만 70세 + 15년 보유 = 40% + 50% = 90% → 한도 80% 적용. 1세대1주택자만.
@@ -305,7 +305,7 @@ export default function AprilCptExclusionPage() {
 
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 임대 의무기간 중 자가 거주·매도 시 합산배제 박탈 + 과거 분 추징.</li>

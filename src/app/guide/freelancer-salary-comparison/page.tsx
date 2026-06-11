@@ -312,7 +312,7 @@ export default function FreelancerSalaryComparisonPage() {
 
               <FaqSection items={FAQ_ITEMS} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 시뮬레이션은 일반론(경비율 IT 기준, 부양 1인) — 실제는 업종·부양가족·세액공제에 따라 달라집니다.</li>

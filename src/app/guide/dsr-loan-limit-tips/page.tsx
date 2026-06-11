@@ -267,7 +267,7 @@ export default function DsrLoanLimitTipsPage() {
 
               <FaqSection items={FAQ_ITEMS} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
                   ⚠️ 주의사항
                 </h2>

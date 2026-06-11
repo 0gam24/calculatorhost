@@ -302,7 +302,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                       <li>• 부업 사업소득이 적자(손실)인 경우 → 손실분으로 근로소득세 환급</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <p className="text-sm text-danger-700 dark:text-danger-300">
                       <strong>⚠️ 흔한 오해</strong>: "부업으로 100만 원밖에 안 벌었어요" → <strong>1원이라도 사업소득
                       발생 시 신고 의무</strong>. 무신고 시 가산세 부과. 사업자등록 안 했어도 마찬가지.
@@ -476,7 +476,7 @@ export default function MayComprehensiveIncomeTaxPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">6. 환급 받는 경우 vs 추가 납부 사례</h2>
                 <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💰 환급 받는 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 프리랜서 — 3.3% 원천징수액 &gt; 실제 세액 (단순경비율 적용 시 흔함)</li>
@@ -486,7 +486,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                       <li>• 노란우산·연금저축 추가 가입</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">💸 추가 납부 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• N잡러 — 직장 + 부업 합산 시 누진세율 상위 적용</li>
@@ -502,7 +502,7 @@ export default function MayComprehensiveIncomeTaxPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 개별 사정(다양한 소득·복잡한 공제)은 세무사 상담 권장.</li>

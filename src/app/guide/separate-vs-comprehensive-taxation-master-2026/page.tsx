@@ -309,7 +309,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: 2,000만 1원이라도 경계 초과</p>
                   <p className="mt-2">
                     금융소득이 정확히 2,000만 원이면 분리과세 가능하지만, 2,000만 원 1원이 되는 순간 전액 종합과세 의무입니다(소득세법 §14 ⑥). 국세청 홈택스는 센트 단위까지 계산하므로, 금융소득 신고 전에 정확한 합계를 확인하세요.
@@ -386,7 +386,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">💡 팁: 수령 시기 전략</p>
                   <p className="mt-2">
                     사적연금이 1,500만을 초과하면 다음 연도로 수령을 미루는 것도 전략입니다. 예: 2026년에 1,800만을 받을 예정이면, 1,500만은 2026년에, 300만은 2027년에 수령하면 각각 분리과세(3.3~5.5%)로 처리 가능합니다. 다만 연금 계약 조건을 먼저 확인하세요.
@@ -636,7 +636,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 최종 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 5월 31일 신고 전 필독 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

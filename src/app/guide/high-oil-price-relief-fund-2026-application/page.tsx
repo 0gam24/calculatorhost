@@ -290,7 +290,7 @@ export default function HighOilPriceReliefFund2026Application() {
                     </div>
                   </div>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4 mt-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 주의:</strong> 위 수치는 2026년 3월 30일 기준입니다.
                     가구원 수별로 기준이 다르고, 직장가입자와 지역가입자의 기준도 상이합니다.

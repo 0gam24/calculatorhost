@@ -310,7 +310,7 @@ export default function MonthlyRentTaxCreditPage() {
                       </li>
                     </ol>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <p className="text-sm text-danger-700 dark:text-danger-300">
                       <strong>⚠️ 흔한 오류</strong>: 배우자가 주택 소유하면 본인도 "무주택"이라도 불가능합니다.
                       "무주택 세대주"는 본인+배우자 공동 조건입니다.
@@ -443,7 +443,7 @@ export default function MonthlyRentTaxCreditPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">5. 실전 3가지 사례 — 환급액 시뮬레이션</h2>
                 <div className="space-y-3">
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">사례 A: 월세 50만, 연봉 4,500만 원</h3>
                     <div className="space-y-1.5 text-sm text-text-secondary">
                       <p>
@@ -463,7 +463,7 @@ export default function MonthlyRentTaxCreditPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">사례 B: 월세 70만, 연봉 6,500만 원</h3>
                     <div className="space-y-1.5 text-sm text-text-secondary">
                       <p>
@@ -483,7 +483,7 @@ export default function MonthlyRentTaxCreditPage() {
                       </p>
                     </div>
                   </div>
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">사례 C: 월세 35만, 연봉 5,000만 원 (5월 추가 신고)</h3>
                     <div className="space-y-1.5 text-sm text-text-secondary">
                       <p>
@@ -604,7 +604,7 @@ export default function MonthlyRentTaxCreditPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">8. 주의사항 — 함정과 해결책</h2>
                 <div className="space-y-3">
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">함정 1: 배우자가 주택 소유 시</h3>
                     <p className="text-sm text-text-secondary mb-2">
                       "나는 집이 없는데?" 하지만 <strong>배우자가 집을 소유하면 본인도 "무주택"이 아닙니다</strong>.
@@ -615,7 +615,7 @@ export default function MonthlyRentTaxCreditPage() {
                       → 혼자 사는 경우만 가능.
                     </p>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">함정 2: 계약서상 주소 ≠ 주민등록상 주소</h3>
                     <p className="text-sm text-text-secondary mb-2">
                       임대차계약서에 기재된 주소가 현재 주민등록상 주소와 다르면 공제 불가.
@@ -626,7 +626,7 @@ export default function MonthlyRentTaxCreditPage() {
                       → 이사했으면 새로운 임차계약서로 갱신.
                     </p>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">함정 3: 현금 지급 증명 불가</h3>
                     <p className="text-sm text-text-secondary mb-2">
                       월세를 현금으로 지급했다면, 송금 영수증이 없어 공제 받기 어렵습니다.
@@ -637,7 +637,7 @@ export default function MonthlyRentTaxCreditPage() {
                       → 앞으로 계좌이체로 송금. 기존 현금은 복구 불가.
                     </p>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">함정 4: 허위 임대차계약</h3>
                     <p className="text-sm text-text-secondary mb-2">
                       실제 월세는 30만 원인데 계약서에 50만 원으로 기재한 후 공제를 받으면,
@@ -648,7 +648,7 @@ export default function MonthlyRentTaxCreditPage() {
                       → 거짓 공제는 큰 손해. 정직하게 신고.
                     </p>
                   </div>
-                  <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">함정 5: 한도 초과분 이월 불가</h3>
                     <p className="text-sm text-text-secondary mb-2">
                       월세 750만 원 한도를 초과한 부분은 "<strong>이월</strong>" 또는 "<strong>이월공제</strong>" 받을 수 없습니다.

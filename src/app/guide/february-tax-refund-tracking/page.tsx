@@ -260,7 +260,7 @@ export default function FebruaryRefundTrackingPage() {
 
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 경정청구는 5년 이내 가능 — 너무 오래된 누락은 못 받음.</li>

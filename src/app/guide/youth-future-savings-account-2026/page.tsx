@@ -303,7 +303,7 @@ export default function YouthFutureSavingsAccount2026() {
                     </div>
                   </div>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4 mt-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 주의:</strong> 위 금액은 월 50만원을 3년 동안 균등하게 입금한다는 가정 하에 계산한 예상액입니다.
                     실제 이자액과 정부기여금은 실제 입금 시점, 입금 금액, 은행의 정확한 이자 계산 방식에 따라 달라질 수 있습니다.

@@ -382,7 +382,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="font-semibold text-danger-700 dark:text-danger-300 mb-2">⚠️ 미등록 시 절차</p>
                   <ol className="text-sm text-danger-600 dark:text-danger-400 list-inside list-decimal space-y-1">
                     <li>
@@ -463,7 +463,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의</p>
                   <p>
                     국세기본법 §51의2(국세환급금 충당)에 따르면, 환급금 결정 시점에 발견된 가산세·미납세금은 환급액에서
@@ -550,7 +550,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   계좌 오류, (2) 추가 검사, (3) 미등록 상태에서 우편 통지 미수령, (4) 체납 세금 우선 충당입니다.
                 </p>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">⚠️ 환급 지연 원인 5가지</p>
                   <ul className="text-sm text-danger-600 dark:text-danger-400 list-inside list-disc space-y-1">
                     <li>
@@ -630,7 +630,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 최종 요약 */}
-              <section className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+              <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-primary-700 dark:text-primary-300">📋 최종 체크리스트</h2>
                 <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-300">
                   <li>☐ 5월 31일 이전 신고 완료 (자진신고 시 가산세 50% 차감)</li>

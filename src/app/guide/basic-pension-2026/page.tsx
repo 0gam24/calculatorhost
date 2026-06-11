@@ -239,7 +239,7 @@ export default function BasicPension2026() {
                     </tbody>
                   </table>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 다만,</strong> 공무원연금·사학연금·군인연금 등 직역연금을 받는 분과 그 배우자는 원칙적으로 기초연금 대상에서 제외됩니다.
                     또 선정기준액은 &ldquo;소득&rdquo;이 아니라 재산까지 환산해 합친 &ldquo;소득인정액&rdquo; 기준이라는 점에 유의하세요.
@@ -304,7 +304,7 @@ export default function BasicPension2026() {
                     &ldquo;국민연금 성실히 냈더니 기초연금 한 푼도 못 받는다&rdquo;는 말은 사실과 다릅니다.
                   </p>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 다만,</strong> 연계감액은 단순히 국민연금 액수만이 아니라 소득재분배급여(A급여) 부분을 함께 따져 계산합니다.
                     본인의 정확한 감액 여부는 국민연금공단(1355)에서 A급여액을 조회해 확인하는 것이 정확합니다.
@@ -366,7 +366,7 @@ export default function BasicPension2026() {
                     </li>
                   </ol>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 주의:</strong> 신청이 늦으면 늦은 만큼 받지 못합니다(소급 지급 안 됨).
                     65세 생일 한 달 전부터 신청 가능하므로 미리 챙기세요. 거동이 불편하면 찾아뵙는 서비스(방문 신청)도 신청할 수 있습니다.

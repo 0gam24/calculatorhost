@@ -184,7 +184,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   이 한시 인하 정책은 원래 2025년 6월 30일 종료 예정이었으나, 경제 상황을 고려해 연장되어 <strong>2026년 6월 30일까지</strong> 유지됩니다.
                   그 이후는 §1 본칙의 정상세율 5%로 복귀할 예정입니다.
                 </p>
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">
                     📌 정책 마감: 2026년 6월 30일 23:59:59
                   </p>

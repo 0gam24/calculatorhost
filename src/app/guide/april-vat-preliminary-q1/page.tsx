@@ -266,7 +266,7 @@ export default function AprilVatPreliminaryQ1Page() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. 매입세액공제 받을 수 있는 비용</h2>
                 <div className="grid gap-3 md:grid-cols-2">
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">✅ 공제 가능</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 임대료 (사업장)</li>
@@ -279,7 +279,7 @@ export default function AprilVatPreliminaryQ1Page() {
                       <li>• 사무용 가구·기기</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">❌ 공제 불가</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 사업과 무관 매입 (사적 사용)</li>
@@ -336,7 +336,7 @@ export default function AprilVatPreliminaryQ1Page() {
 
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론 — 복잡한 케이스(다업종·해외 거래·면세 사업)는 세무사 상담 권장.</li>

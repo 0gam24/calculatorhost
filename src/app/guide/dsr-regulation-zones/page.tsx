@@ -235,7 +235,7 @@ export default function DsrRegulationZonesPage() {
                   </ul>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 다주택자 주의</strong>: 조정대상지역·투기과열지구 다주택자는 LTV 0% — 신규 주택담보대출 불가.
                     유일한 대안은 신용대출(별도 DSR 영향) 또는 해당 지역 외 매수.
@@ -281,7 +281,7 @@ export default function DsrRegulationZonesPage() {
 
               <FaqSection items={FAQ_ITEMS} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 표는 2026년 5월 기준 — 조정대상지역·투기과열지구 지정·해제 잦으니 거래 직전 확인 필수.</li>

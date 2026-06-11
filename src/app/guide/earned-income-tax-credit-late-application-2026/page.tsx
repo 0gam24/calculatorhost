@@ -374,7 +374,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                     </tbody>
                   </table>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4 mt-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 중요:</strong> 가구 재산은 부동산(공시가 평가액), 금융자산(예금·주식·펀드·채권), 자동차(시가 평가액) 등을 합산합니다.
                     부채는 차감하지 않으므로, 전세금이나 대출금이 많아도 차감되지 않습니다.

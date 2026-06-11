@@ -271,7 +271,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">중요: "산출세액"이란?</p>
                   <p className="mt-2">
                     과세표준에 세율을 곱한 후 누진공제를 뺀 금액입니다. 예: 과세표준 5,000만 × 15% − 126만 = 624만.
@@ -330,7 +330,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   <strong> 40%</strong>가 붙으며, 범죄로도 처벌받을 수 있습니다(조세범처벌법 §73 징역 3년 이하).
                 </p>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">국세청이 "부정행위"로 보는 경우 (국세기본법 §47의2)</p>
                   <ul className="text-sm text-danger-600 dark:text-danger-400 list-inside list-disc space-y-1">
                     <li>계약서 위조 또는 영수증 조작</li>
@@ -487,7 +487,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">결론: 환급이든 추가 납부든 반드시 신고하세요</p>
                   <p className="mt-2">
                     환급 대상이면 신고로 200~300만 원을 건질 수 있습니다. 추가 납부 대상이어도 자진신고 감면으로 가산세를
@@ -562,7 +562,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

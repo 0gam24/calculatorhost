@@ -172,7 +172,7 @@ export default function PropertyTaxBaseDatePage() {
                   재산세는 지방세법 §114에 따라 매년 6월 1일 자정(0시) 기준으로 부동산을 소유한 사람(사실상 소유자)에게
                   그 해 1월 1일부터 12월 31일까지 12개월분 전체 재산세를 부과합니다.
                 </p>
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">
                     📌 핵심: "사실상 소유자" 기준
                   </p>

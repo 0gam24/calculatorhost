@@ -272,7 +272,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 가산세 위험</p>
                   <p className="mt-2">
                     국세청과 세무조사에서는 "실질과세 원칙"(국세기본법 §14)을 적용합니다. 공식상 사업소득인데 기타소득으로 신고하면
@@ -447,7 +447,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">💡 결론</p>
                   <p className="mt-2">
                     정기성은 명확한 법칙이 없으므로, <strong>보수적으로는 매월 고정 강사는 사업소득, 연 1~3회는 세무사 상담을 권장</strong>
@@ -611,7 +611,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">💡 주의: "분리과세 포기 선택"은 홈택스에서</p>
                   <p className="mt-2">
                     기타소득 300만 이하 분리과세는 기본 선택입니다. 만약 합산하려면 5월 31일까지 홈택스 "종합소득세 신고" 페이지에서
@@ -663,7 +663,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 세무조사 신호</p>
                   <p className="mt-2">
                     국세청은 사업소득 신고자인데 4대보험 미가입이면 의심합니다. 특히 정기적 강사인데 국민연금·건강보험이 없으면 기타소득으로
@@ -732,7 +732,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 최종 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

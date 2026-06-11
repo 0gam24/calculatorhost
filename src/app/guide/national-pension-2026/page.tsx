@@ -219,7 +219,7 @@ export default function NationalPension2026() {
                   보험료는 기준소득월액에 보험료율을 곱해 정해집니다.
                   직장가입자는 회사와 본인이 절반씩 부담하고, 지역가입자(자영업자·프리랜서)는 본인이 전액 부담합니다.
                 </p>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 다만,</strong> 가입기간이 10년에 못 미치면 노령연금을 받지 못하고 그동안 낸 보험료에 이자를 더한 반환일시금만 받습니다.
                     가입기간이 부족하면 임의계속가입이나 추후납부(추납)로 10년을 채우는 방법을 검토하세요.
@@ -344,7 +344,7 @@ export default function NationalPension2026() {
                     국민연금공단 누리집(nps.or.kr) 또는 앱 &ldquo;내 곁에 국민연금&rdquo;의 &ldquo;내 연금 알아보기&rdquo;에서 로그인하면, 지금까지 낸 보험료를 기준으로 한 예상연금액을 바로 확인할 수 있습니다.
                   </p>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 주의:</strong> 블로그 등에서 보이는 &ldquo;평균 수령액 ○○만원&rdquo;은 본인 상황과 다를 수 있습니다.
                     가입기간·소득 이력이 사람마다 달라, 반드시 본인 인증 후 조회한 금액을 기준으로 노후를 설계하세요.

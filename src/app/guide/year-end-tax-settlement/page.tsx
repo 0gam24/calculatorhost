@@ -226,7 +226,7 @@ export default function YearEndTaxSettlementPage() {
                   연말정산입니다 (소득세법 §134, §137).
                 </p>
                 <div className="grid gap-3 md:grid-cols-2">
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💰 환급 받는 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 부양가족·자녀 수 많음</li>
@@ -237,7 +237,7 @@ export default function YearEndTaxSettlementPage() {
                       <li>• 인센티브 적은 해</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">💸 추가 납부 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 인센티브·상여 큰 폭 증가</li>
@@ -331,7 +331,7 @@ export default function YearEndTaxSettlementPage() {
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. 추가 납부 회피 — 12월 전 마지막 액션</h2>
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm text-text-secondary">
                     12월 31일 전 추가 납부 예상 시 다음 액션으로 환급으로 전환 가능:
                   </p>
@@ -347,7 +347,7 @@ export default function YearEndTaxSettlementPage() {
 
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 부양가족 중복 신청 금지 — 형제·자매 중 1명만 1명의 부양가족 받음</li>

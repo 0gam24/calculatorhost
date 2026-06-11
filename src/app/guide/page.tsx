@@ -917,7 +917,7 @@ export default function GuideIndexPage() {
                 <section
                   id="seasonal"
                   aria-label="시즌 가이드"
-                  className="card border-l-4 border-l-danger-500 bg-danger-500/5 space-y-4"
+                  className="card border-l-2 border-l-danger-500 bg-danger-500/5 space-y-4"
                 >
                   <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
                     🔥 시즌 가이드 — 지금 가장 검색 많은 주제

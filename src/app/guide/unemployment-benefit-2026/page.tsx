@@ -232,7 +232,7 @@ export default function UnemploymentBenefit2026() {
                     이직 전 18개월(초단시간 근로자는 24개월) 안의 기간만 인정됩니다.
                   </p>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 다만</strong>, 65세 이후에 새로 고용된 사람과 주 15시간(월 60시간) 미만 초단시간 근로자(3개월 이상 계속 근로 시 제외)는 구직급여 적용에서 빠질 수 있습니다.
                     본인이 고용보험 피보험자인지 먼저 확인하세요.
@@ -331,7 +331,7 @@ export default function UnemploymentBenefit2026() {
                     </tbody>
                   </table>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 주의:</strong> 소정급여일수가 남아 있어도 수급기간(이직일 다음 날부터 12개월)이 지나면 잔여 급여는 모두 소멸됩니다(고용보험법 §48).
                     퇴직 후 신청을 미루면 받을 수 있는 일수가 줄어들 수 있으니 곧바로 신청하세요.
@@ -404,7 +404,7 @@ export default function UnemploymentBenefit2026() {
                     </li>
                   </ol>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 다만,</strong> 수급기간이 이직일 다음 날부터 12개월이므로 퇴직 직후 곧바로 신청해야 합니다.
                     또 첫 실업인정 전 7일은 대기기간으로 구직급여가 지급되지 않습니다.
@@ -426,7 +426,7 @@ export default function UnemploymentBenefit2026() {
                     자세한 적용 여부와 감액률은 관할 고용센터에서 본인의 수급 이력을 기준으로 확인하세요.
                   </p>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 부정수급은 금물:</strong> 취업·근로 사실을 숨기고 받으면 부정수급으로 분류되어 지급액 반환, 추가징수(최대 5배), 형사처벌 대상이 됩니다.
                     아르바이트·단기근로를 했다면 실업인정일에 반드시 신고하세요.

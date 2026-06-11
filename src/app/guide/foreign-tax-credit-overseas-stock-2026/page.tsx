@@ -590,7 +590,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                 </h2>
 
                 <div className="space-y-3">
-                  <div className="card border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="card border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">
                       함정 1: 양도소득도 공제된다고 생각
                     </h3>
@@ -600,7 +600,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     </p>
                   </div>
 
-                  <div className="card border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="card border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">
                       함정 2: 외국 세금 전액이 공제된다고 생각
                     </h3>
@@ -610,7 +610,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     </p>
                   </div>
 
-                  <div className="card border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="card border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">
                       함정 3: 증빙 서류 없이 신고 후 나중에 제출
                     </h3>
@@ -620,7 +620,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     </p>
                   </div>
 
-                  <div className="card border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="card border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">
                       함정 4: 이월액을 다음 연도 신고에서 자동 적용 (X)
                     </h3>
@@ -630,7 +630,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     </p>
                   </div>
 
-                  <div className="card border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="card border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">
                       함정 5: 환율 변동으로 인한 손익을 세액에 포함 (조심)
                     </h3>

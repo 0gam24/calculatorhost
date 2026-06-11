@@ -333,7 +333,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: 중복 신고 시 국세청 조정</p>
                   <p className="mt-2">
                     같은 소득을 여러 상속인이 각각 신고하면 국세청이 조정하여 1건만 인정합니다. 다만 세액 중복 납부 사태를 피하려면
@@ -546,7 +546,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   </p>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: 세금 이중 부담 가능</p>
                   <p className="mt-2">
                     높은 소득이 있으면 종합소득세를 먼저 내고, 남은 재산에 대해 상속세를 다시 냅니다. 따라서 신고 전 세무사와 상의하여
@@ -652,7 +652,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
               </section>
 
               {/* 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

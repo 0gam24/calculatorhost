@@ -439,21 +439,21 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">7. 흔한 실수 & 절세 팁</h2>
                 <div className="space-y-3">
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">⚠️ 실수 1: 여러 계좌를 각각 분리과세로 신고</h3>
                     <p className="text-sm text-danger-700 dark:text-danger-300">
                       연금저축 A은행 500만 + B증권 600만 을 각각 분리과세 신고 시
                       "각 1,500만 이하"로 착각하는 경우. 정답: 1,100만 원으로 합산 신고.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">⚠️ 실수 2: 공적연금도 1,500만 원에 포함시키기</h3>
                     <p className="text-sm text-danger-700 dark:text-danger-300">
                       국민연금 월 150만 + 연금저축 1,400만 = 2,150만 으로 계산.
                       정답: 국민연금은 별도(공적연금소득), 연금저축만 1,400만 으로 분리과세.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💡 절세 팁 1: 다른 소득 합산 효과 확인</h3>
                     <p className="text-sm text-primary-700 dark:text-primary-300">
                       프리랜서(사업소득 3,000만 + 연금 1,800만)인 경우,
@@ -461,7 +461,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                       이 경우 초과분만 따로 6% 분리과세 선택이 유리.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💡 절세 팁 2: 수령 연도 조정 검토</h3>
                     <p className="text-sm text-primary-700 dark:text-primary-300">
                       연금저축이 충분히 준비되었다면, 본인이 고령(80세↑)이 될 때까지
@@ -469,7 +469,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                       다만 수령 제한(60세 이상 등)을 확인해야 합니다.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💡 절세 팁 3: 배우자 공제 활용</h3>
                     <p className="text-sm text-primary-700 dark:text-primary-300">
                       배우자가 없거나 소득이 없으면 본인이 단독 신고.
@@ -482,7 +482,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 중요 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 정보 제공 목적이며 개별 세무 조언이 아닙니다. 복잡한 다중 소득, 특수 공제는 세무사 상담 필수.</li>

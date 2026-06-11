@@ -251,7 +251,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">💡 핵심 차이</p>
                   <p className="mt-2">
                     단순은 "매출의 고정%만 경비"이고, 기준은 "입증된 주요경비 + 추가경비"입니다. 따라서 실제 경비가 단순경비율보다
@@ -443,7 +443,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   단순경비율을 선택했어도, 세무조사 시 "실제 경비"를 묻습니다. 경비 입증이 안 되면 가산세 20~40%가 붙습니다.
                 </p>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">세무조사 함정 5가지</p>
                   <ul className="text-sm text-danger-600 dark:text-danger-400 list-inside list-disc space-y-1">
                     <li>경비 입증 자료 (영수증·통장 기록) 없음 → 경비 인정 안 됨 → 추정소득 재계산</li>
@@ -524,7 +524,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

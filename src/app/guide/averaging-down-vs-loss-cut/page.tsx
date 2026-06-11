@@ -309,14 +309,14 @@ export default function AveragingDownVsLossCutPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">5. 실제 사례로 보는 의사결정</h2>
                 <div className="space-y-3">
-                  <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">시나리오 A: 삼성전자 하락 (2024년 실제 사례 모티프)</h3>
                     <p className="text-sm text-text-secondary">
                       80,000원에 매수 후 3개월간 60,000원으로 25% 하락. 실적은 개선 중이나 금리 인상 우려로 일시 주춤. 펀더멘털은 변하지 않았으므로 60,000원에서 50% 물타기 (40주 추가).
                       결과: 평단 70,000원. 2개월 후 75,000원 회복 → +7.1% 수익 실현. 물타기가 성공.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
+                  <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">시나리오 B: 코인 물타기 실패 (가상 사례)</h3>
                     <p className="text-sm text-text-secondary">
                       어떤 알트코인 2,000원에 100만 원 매수 후 1,500원으로 25% 하락. "아직 신규이고 좋은 프로젝트"라고 판단해 1,500원에 또 100만 원 투입. 평단 1,750원.
@@ -354,7 +354,7 @@ export default function AveragingDownVsLossCutPage() {
 
               <FaqSection items={FAQ_ITEMS} />
 
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
                   ⚠️ 주의사항
                 </h2>

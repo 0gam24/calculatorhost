@@ -421,7 +421,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                     <p className="border-t border-border-base pt-2 font-bold text-text-primary">= 252만 − 60만 = 192만 원</p>
                   </div>
                 </div>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4 mt-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
                     <strong>⚠️ 중요:</strong> 과세표준 3.6억까지는 2주택·3주택 세율이 0.7%로 같지만,
                     과세표준 12억을 초과하면 3주택 이상 중과세율(2.0%~)이 일반세율(1.3%~)보다 훨씬 높아져 세액 격차가 크게 벌어집니다.
@@ -583,7 +583,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                 <p className="text-text-secondary leading-relaxed">
                   종합부동산세를 기한 내에 납부하지 않으면 가산세와 함께 행정 제제를 받을 수 있습니다.
                 </p>
-                <div className="rounded-lg border border-danger-500 border-l-4 bg-danger-500/5 p-4">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">미납 시 불이익</h3>
                   <ul className="space-y-1.5 text-sm text-danger-700 dark:text-danger-300">
                     <li>💰 <strong>가산세:</strong> 3개월 이내 20%, 3~6개월 50%, 6개월 초과 80% 이상 가산</li>

@@ -253,7 +253,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 신고 안 하면 가산세</p>
                   <p className="mt-2">
                     종합소득세 신고 대상인데 신고하지 않으면 무신고가산세 20% 부과(국세기본법 §47의2). 부정행위(영수증 조작 등) 적발
@@ -482,7 +482,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">선택 기준</p>
                   <p className="mt-2">
                     <strong>기타소득 100만 이하:</strong> 누진세율이 충분히 낮으면 합산이 유리. 분리과세(22%) vs 합산(6~15%)을 계산 비교.
@@ -614,7 +614,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 주의사항 */}
-              <section className="card border-l-4 border-l-danger-500 bg-danger-500/5">
+              <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

@@ -278,7 +278,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 실수로 가산세 부과받는 사례</p>
                   <p className="mt-2">
                     많은 사람이 "6월 1일까지 신고 가능하다"는 것을 착각해 6월 1일 오후나 6월 2일에 신고합니다. 하지만 5월 31일(일요일)이 마감이므로,
@@ -416,7 +416,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/10 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 추적 적발 시 가산세 50~100%</p>
                   <p className="mt-2">
                     자진신고 감면은 <strong>"스스로 신고할 때만"</strong> 적용됩니다. 만약 국세청이 세무조사로 적발하면 가산세가 50~100% 상향될 수 있습니다. 특히
@@ -549,7 +549,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   </div>
                 </div>
 
-                <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
+                <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">💡 분납 후 일찍 납부하면?</p>
                   <p className="mt-2">
                     분납 신청했더라도 6월에 전액 납부 가능합니다. 일찍 납부하면 납부지연가산세 절감 효과가 있으므로, 여유가 되면 1차 기한(6월 말) 전에 1차분을
