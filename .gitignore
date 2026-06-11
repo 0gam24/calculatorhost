@@ -74,6 +74,10 @@ next-env.d.ts
 .claude/progress.md
 .claude/reports/gsc-latest.json
 .claude/reports/gsc-opportunities.md
+gsc-sa-key.json
+*.gsc-key.json
+gsc-oauth-token.json
+gsc-oauth-client.json
 CLAUDE.local.md
 
 # 운영 데이터

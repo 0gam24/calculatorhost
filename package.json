@@ -28,6 +28,7 @@
     "favicon:gen": "node scripts/gen-favicon.mjs",
     "sitemap:check": "node scripts/sitemap-completeness.mjs",
     "citations:audit": "node scripts/section-citation-audit.mjs",
+    "gsc:auth": "node scripts/gsc-auth.mjs",
     "gsc:pull": "node scripts/gsc-pull.mjs",
     "gsc:report": "node scripts/gsc-report.mjs",
     "gsc": "node scripts/gsc-pull.mjs && node scripts/gsc-report.mjs",

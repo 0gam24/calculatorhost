@@ -18,8 +18,26 @@
  * 산출: .claude/reports/gsc-latest.json  { fetchedAt, range, byQuery[], byPage[] }
  */
 import crypto from 'node:crypto';
-import { writeFileSync, mkdirSync } from 'node:fs';
+import { writeFileSync, mkdirSync, readFileSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+
+/** .env.local 을 process.env 로 로드 (없으면 무시). 값은 절대 출력하지 않음. */
+function loadEnvLocal() {
+  const p = resolve(process.cwd(), '.env.local');
+  if (!existsSync(p)) return;
+  for (const raw of readFileSync(p, 'utf8').split('\n')) {
+    const line = raw.trim();
+    if (!line || line.startsWith('#')) continue;
+    const eq = line.indexOf('=');
+    if (eq === -1) continue;
+    const key = line.slice(0, eq).trim();
+    let val = line.slice(eq + 1).trim();
+    if ((val.startsWith('"') && val.endsWith('"')) || (val.startsWith("'") && val.endsWith("'"))) {
+      val = val.slice(1, -1);
+    }
+    if (key && !(key in process.env)) process.env[key] = val;
+  }
+}
 
 const OUT_PATH = resolve(process.cwd(), '.claude/reports/gsc-latest.json');
 const SCOPE = 'https://www.googleapis.com/auth/webmasters.readonly';
@@ -65,6 +83,26 @@ async function getAccessToken(sa) {
   });
   if (!res.ok) {
     throw new Error(`토큰 교환 실패 ${res.status}: ${(await res.text()).slice(0, 200)}`);
+  }
+  return (await res.json()).access_token;
+}
+
+/** OAuth refresh token → 액세스 토큰 (본인 계정 방식) */
+async function getAccessTokenOAuth(t) {
+  const res = await fetch('https://oauth2.googleapis.com/token', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      client_id: t.client_id,
+      client_secret: t.client_secret,
+      refresh_token: t.refresh_token,
+      grant_type: 'refresh_token',
+    }),
+  });
+  if (!res.ok) {
+    throw new Error(
+      `OAuth 토큰 갱신 실패 ${res.status}: ${(await res.text()).slice(0, 160)} — 'npm run gsc:auth' 재실행 필요할 수 있음`,
+    );
   }
   return (await res.json()).access_token;
 }
@@ -116,6 +154,7 @@ function mockData() {
 }
 
 async function main() {
+  loadEnvLocal();
   mkdirSync(resolve(process.cwd(), '.claude/reports'), { recursive: true });
 
   let out;
@@ -123,22 +162,43 @@ async function main() {
     out = mockData();
     console.log('[gsc-pull] --mock: 샘플 데이터 사용 (자격증명 불필요)');
   } else {
-    const rawKey = process.env.GSC_SA_KEY;
     const site = process.env.GSC_SITE;
-    if (!rawKey || !site) {
-      console.error('[gsc-pull] 환경변수 GSC_SA_KEY / GSC_SITE 가 없습니다.');
-      console.error('  → .claude/reports/GSC-SETUP.md 의 셋업 가이드를 따라 등록 후 재실행.');
-      console.error('  → 자격증명 없이 분석 로직만 확인하려면: node scripts/gsc-pull.mjs --mock');
+    if (!site) {
+      console.error('[gsc-pull] GSC_SITE 가 없습니다 (.env.local). 예: sc-domain:calculatorhost.com');
+      console.error('  → 셋업: .claude/reports/GSC-SETUP.md · 로직만 확인: node scripts/gsc-pull.mjs --mock');
       process.exit(2);
     }
-    let sa;
-    try {
-      sa = JSON.parse(rawKey);
-    } catch {
-      console.error('[gsc-pull] GSC_SA_KEY 가 유효한 JSON 이 아닙니다.');
-      process.exit(2);
+    // 인증: ① OAuth(본인 계정, gsc-oauth-token.json) 우선 ② 서비스 계정(GSC_SA_KEY_FILE/GSC_SA_KEY)
+    let token;
+    const oauthPath = resolve(process.cwd(), 'gsc-oauth-token.json');
+    if (existsSync(oauthPath)) {
+      token = await getAccessTokenOAuth(JSON.parse(readFileSync(oauthPath, 'utf8')));
+    } else {
+      let rawKey = process.env.GSC_SA_KEY;
+      const keyFile = process.env.GSC_SA_KEY_FILE;
+      if (keyFile) {
+        const kp = resolve(process.cwd(), keyFile);
+        if (existsSync(kp)) rawKey = readFileSync(kp, 'utf8');
+        else {
+          console.error(`[gsc-pull] GSC_SA_KEY_FILE 경로에 파일 없음: ${keyFile}`);
+          process.exit(2);
+        }
+      }
+      if (!rawKey) {
+        console.error('[gsc-pull] 인증 정보 없음.');
+        console.error('  → OAuth(권장): npm run gsc:auth 로 gsc-oauth-token.json 생성');
+        console.error('  → 또는 서비스 계정: GSC_SA_KEY_FILE 지정. 셋업: .claude/reports/GSC-SETUP.md');
+        process.exit(2);
+      }
+      let sa;
+      try {
+        sa = JSON.parse(rawKey);
+      } catch {
+        console.error('[gsc-pull] 서비스 계정 JSON 파싱 실패 — 파일 경로(GSC_SA_KEY_FILE) 사용 권장.');
+        process.exit(2);
+      }
+      token = await getAccessToken(sa);
     }
-    const token = await getAccessToken(sa);
     const startDate = isoDaysAgo(DAYS + 2); // GSC 데이터는 ~2일 지연
     const endDate = isoDaysAgo(2);
     const [byQuery, byPage] = await Promise.all([
