@@ -457,6 +457,17 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 9,
     tags: ['근로'],
   },
+  {
+    slug: 'health-insurance-premium-2026',
+    title: '건강보험료 2026 — 요율 7.19%·피부양자 자격·지역가입자',
+    description:
+      '2026년 건강보험료율 7.09%→7.19%, 장기요양 12.95%→13.14% 인상. 직장가입자 보험료(근로자 3.595%), 피부양자 자격(소득 2,000만·재산 과표 9억), 지역가입자 산정 정리.',
+    category: '근로',
+    publishedAt: '2026-06-11',
+    readingMinutes: 10,
+    seasonal: '네이버 트렌드 +49%',
+    tags: ['근로', '블루오션'],
+  },
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',

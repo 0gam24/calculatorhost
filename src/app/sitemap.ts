@@ -82,6 +82,7 @@ const GUIDE_SLUGS = [
   'unemployment-benefit-2026',
   'national-pension-2026',
   'basic-pension-2026',
+  'health-insurance-premium-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
