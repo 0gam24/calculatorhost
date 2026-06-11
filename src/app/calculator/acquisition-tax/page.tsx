@@ -6,6 +6,7 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import {
   buildSoftwareApplicationJsonLd,
@@ -258,6 +259,20 @@ export default function AcquisitionTaxPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              <RateBarChart
+                title="취득세율 — 주택 수·가격별 (지방세법 §11)"
+                caption="취득세는 주택 수와 가격에 따라 세율이 크게 달라집니다. 1주택은 6억 이하 1.0%, 6~9억 1~3%, 9억 초과 3.0%이지만, 조정대상지역 2주택은 8%, 3주택 이상은 12%로 중과됩니다. 85㎡ 초과는 농특세, 지방교육세도 별도 가산됩니다."
+                unit="%"
+                max={13}
+                bars={[
+                  { label: '1주택 6억↓', value: 1, display: '1.0%' },
+                  { label: '1주택 6~9억', value: 2, display: '1~3%' },
+                  { label: '1주택 9억↑', value: 3, display: '3.0%' },
+                  { label: '조정 2주택', value: 8, display: '8%' },
+                  { label: '조정 3주택↑', value: 12, display: '12%', highlight: true },
+                ]}
+              />
 
               {/* 왜 1.0~3.0% 사이를 오가는가 (GEO 해설) */}
               <section

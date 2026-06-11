@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer';
 import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { RateBarChart } from '@/components/charts/RateBarChart';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -216,6 +217,19 @@ export default function PropertyTaxPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              <RateBarChart
+                title="재산세 일반 세율 — 과세표준 구간별 (지방세법 §111)"
+                caption="주택 재산세 일반세율은 과세표준(공시가격×60%) 구간별로 0.1%에서 0.4%까지 누진 적용됩니다. 1세대1주택(공시 9억 이하)은 특례로 약 절반 세율이 적용되고, 지방교육세 20%가 별도 가산됩니다."
+                unit="%"
+                max={0.45}
+                bars={[
+                  { label: '6천만 이하', value: 0.1, display: '0.1%' },
+                  { label: '6천만~1.5억', value: 0.15, display: '0.15%' },
+                  { label: '1.5억~3억', value: 0.25, display: '0.25%' },
+                  { label: '3억 초과', value: 0.4, display: '0.4%', highlight: true },
+                ]}
+              />
 
               {/* 재산세란 무엇인가 */}
               <section aria-label="재산세 개념" className="card">
