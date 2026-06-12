@@ -448,6 +448,16 @@ export const GUIDES: GuideEntry[] = [
     tags: ['근로'],
   },
   {
+    slug: 'national-pension-premium-2026',
+    title: '국민연금 보험료 2026 완전 정리 — 계산법·상한액·직장/지역 차이',
+    description:
+      '2026년 국민연금 보험료율 9%→9.5%, 기준소득월액 상한 2026년 7월부터 637만→659만원 조정. 직장가입자 근로자 부담 4.75%, 지역가입자 전액 납부. 상한액 초과 시 납부액 고정·소득공제 혜택 정리.',
+    category: '근로',
+    publishedAt: '2026-06-13',
+    readingMinutes: 8,
+    tags: ['시즈널'],
+  },
+  {
     slug: 'basic-pension-2026',
     title: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계',
     description:

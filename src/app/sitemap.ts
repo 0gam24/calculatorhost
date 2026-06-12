@@ -81,6 +81,7 @@ const GUIDE_SLUGS = [
   'youth-future-savings-account-2026',
   'unemployment-benefit-2026',
   'national-pension-2026',
+  'national-pension-premium-2026',
   'basic-pension-2026',
   'health-insurance-premium-2026',
   // 분야별

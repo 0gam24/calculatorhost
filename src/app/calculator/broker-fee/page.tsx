@@ -211,9 +211,7 @@ export default function CommissionPage() {
                   중개수수료 계산기 2026
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 공인중개사법 시행규칙을 반영한 무료 중개수수료(복비) 계산기입니다.
-                  매매·교환·전세·월세 거래 시 법정 상한요율과 한도액을 즉시 확인하고, 협의
-                  요율과 부가세를 포함한 총 지급액을 거래 직전 정확하게 계산할 수 있습니다.
+                  중개수수료는 부동산 매매·전세·월세 거래 시 공인중개사에게 지급하는 수수료로, 거래금액과 물건 종류에 따라 법정 상한요율(0.3~0.9%)이 정해집니다. 본 계산기는 2026년 공인중개사법 시행규칙을 반영한 무료 도구로, 매매·교환·전세·월세 거래 시 법정 상한요율과 한도액을 즉시 확인하고, 협의 요율과 부가세를 포함한 총 지급액을 거래 직전 정확하게 계산할 수 있습니다.
                 </p>
                 <AuthorByline datePublished="2026-04-24" dateModified="2026-06-01" />
               </header>
@@ -267,10 +265,10 @@ export default function CommissionPage() {
               {/* 중개수수료란 무엇인가 */}
               <section aria-label="중개수수료 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">중개수수료란 무엇인가요?</h2>
-                <p className="mb-4 text-text-secondary">
+                <p className="mb-4 text-text-secondary" data-speakable>
                   중개수수료(또는 중개보수·복비)는 부동산 거래 시 공인중개사에게 지급하는
-                  수수료입니다(공인중개사법 §32). 매매·교환·전세·월세 등 모든 형태의 임대차·양도
-                  거래에 적용됩니다. 중개수수료는 거래 당사자(매도자·매수자, 전세금 제공자·차용자)가
+                  수수료로, 공인중개사법 §32에 따라 거래금액과 물건 종류에 따라 법정 상한요율이 정해집니다. 매매·교환·전세·월세 등 모든 형태의 임대차·양도
+                  거래에 적용되며, 중개수수료는 거래 당사자(매도자·매수자, 전세금 제공자·차용자)가
                   각각 부담하는 것이 원칙입니다.
                 </p>
                 <p className="text-text-secondary">
@@ -533,6 +531,37 @@ export default function CommissionPage() {
 
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />
+
+              {/* 관련 가이드 */}
+              <section aria-label="관련 가이드" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">관련 가이드 & 심화 학습</h2>
+                <div className="grid gap-3 text-sm">
+                  <div className="rounded-lg border border-border-subtle bg-bg-raised p-3 hover:border-primary-500 transition-colors">
+                    <a href="/guide/one-household-12-billion-exemption/" className="font-medium text-primary-500 hover:underline">
+                      1세대1주택 12억 비과세 한도 구체 가이드
+                    </a>
+                    <p className="text-text-secondary text-xs mt-1">양도가 15억 이상일 때 12억까지만 비과세, 초과분 세금 계산</p>
+                  </div>
+                  <div className="rounded-lg border border-border-subtle bg-bg-raised p-3 hover:border-primary-500 transition-colors">
+                    <a href="/guide/jeonse-deposit-safety/" className="font-medium text-primary-500 hover:underline">
+                      전세금 안전 — 보증금 보호와 중개료
+                    </a>
+                    <p className="text-text-secondary text-xs mt-1">전세 중개수수료 협상 팁과 보증금 반환 위험 회피</p>
+                  </div>
+                  <div className="rounded-lg border border-border-subtle bg-bg-raised p-3 hover:border-primary-500 transition-colors">
+                    <a href="/guide/temporary-two-houses-capital-gains-exemption/" className="font-medium text-primary-500 hover:underline">
+                      일시적 2주택 양도세 비과세 3년 기한
+                    </a>
+                    <p className="text-text-secondary text-xs mt-1">신규 주택 구입 후 구주택 판매 시 세금 대비 전략</p>
+                  </div>
+                  <div className="rounded-lg border border-border-subtle bg-bg-raised p-3 hover:border-primary-500 transition-colors">
+                    <a href="/guide/rent-conversion-rate-2026-housing-lease-act/" className="font-medium text-primary-500 hover:underline">
+                      전월세전환율 2026 — 보증금을 월세로
+                    </a>
+                    <p className="text-text-secondary text-xs mt-1">전전환 기준율 및 중개료와의 연계 이해</p>
+                  </div>
+                </div>
+              </section>
 
               {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">

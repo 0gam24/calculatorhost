@@ -6,7 +6,7 @@ export interface FaqItem {
 }
 
 export interface FaqSectionProps {
-  items: FaqItem[];
+  items: readonly FaqItem[];
   className?: string;
 }
 

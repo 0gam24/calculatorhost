@@ -9,6 +9,8 @@ export interface RateBar {
   display?: string;
   /** 강조 막대 (진한 색) */
   highlight?: boolean;
+  /** 막대 색상 (hex 코드, 선택사항) */
+  color?: string;
 }
 
 export interface RateBarChartProps {
@@ -88,7 +90,8 @@ export function RateBarChart({
                 width={barW}
                 height="16"
                 rx="3"
-                className={b.highlight ? 'fill-primary-600' : 'fill-primary-500'}
+                fill={b.color}
+                className={b.color ? undefined : b.highlight ? 'fill-primary-600' : 'fill-primary-500'}
               />
               <text
                 x={barX + barW + 5}

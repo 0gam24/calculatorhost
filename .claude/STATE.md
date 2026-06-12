@@ -19,7 +19,7 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 06. 10. 09:23 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 06. 13. 08:39 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
 - 사이트 라이브: ✅ HTTP 200
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 06. 10. 09:23 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 06. 13. 08:39 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -71,7 +71,7 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> 마지막 자동 점검: 2026. 06. 10. 09:23 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 06. 13. 08:39 (Asia/Seoul)
 
 - ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
 - ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
