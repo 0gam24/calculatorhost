@@ -351,6 +351,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['시즈널', '블루오션'],
   },
   {
+    slug: 'vehicle-tax-2026',
+    title: '자동차세 완전 정리 (2026) — 배기량별 세율·연납 할인·차령경감',
+    description:
+      '비영업용 승용차 배기량 cc당 세율(1,000cc 이하 80원·1,001~1,600cc 140원·1,601cc 이상 200원)에 지방교육세 30%를 더한 자동차세 계산. 3년차부터 차령경감(연 5%, 최대 50%), 1월 연납 할인(5% 공제율) 완전 가이드. (지방세법 §127, §137②, §151)',
+    category: '세금',
+    publishedAt: '2026-06-14',
+    readingMinutes: 8,
+    seasonal: '6월 정기분 시즌 (급상승 키워드)',
+    tags: ['시즈널', '핫키워드'],
+  },
+  {
     slug: 'vehicle-tax-june-payment-annual-discount-2026',
     title: '자동차세 제1기 6월 납부 가이드 — cc당 세액·차령경감·연납 2026',
     description:

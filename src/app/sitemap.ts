@@ -84,6 +84,8 @@ const GUIDE_SLUGS = [
   'national-pension-premium-2026',
   'basic-pension-2026',
   'health-insurance-premium-2026',
+  // 자동차세 종합 허브 (Naver +56% 급상승 + 6월 1기분 시즌, GSC vehicle-tax 노출 456)
+  'vehicle-tax-2026',
   // 분야별
   'dsr-loan-limit-tips',
   'averaging-down-vs-loss-cut',
