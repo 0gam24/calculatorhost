@@ -373,6 +373,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['시즈널'],
   },
   {
+    slug: 'electric-vehicle-tax-2026',
+    title: '전기차 자동차세 2026 | 정액 세율·하이브리드 차이',
+    description:
+      '전기차·수소차는 배기량이 없어 정액 자동차세(연 10만원 + 지교세 30%)가 부과되고, 하이브리드는 배기량 기준 일반세율이 적용됩니다. 지방세법 §127 기준 전기차 vs 내연기관·하이브리드 세액 비교, 지방교육세·연납 할인 정보.',
+    category: '세금',
+    publishedAt: '2026-06-15',
+    readingMinutes: 6,
+    seasonal: '6월 자동차세 시즌 (롱테일)',
+    tags: ['시즈널', '4티어', '핫키워드'],
+  },
+  {
     slug: 'comprehensive-real-estate-tax-who-pays-2026',
     title: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일',
     description:
@@ -469,6 +480,17 @@ export const GUIDES: GuideEntry[] = [
     tags: ['시즈널'],
   },
   {
+    slug: 'national-pension-expected-benefit-2026',
+    title: '국민연금 예상 수령액 2026 — 조회·계산법·조기/연기 손익',
+    description:
+      '국민연금 예상 수령액은 가입기간과 평균소득으로 결정됩니다. 공단 예상연금액 조회 방법, 조기노령연금 감액(연 6%, 최대 30%), 연기연금 증액(연 7.2%, 최대 36%), 최소 가입기간 10년까지 국민연금공단 기준으로 정리.',
+    category: '근로',
+    publishedAt: '2026-06-15',
+    readingMinutes: 8,
+    seasonal: '네이버 급상승 국민연금 +69%',
+    tags: ['4티어', '시즈널', '핫키워드'],
+  },
+  {
     slug: 'basic-pension-2026',
     title: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계',
     description:
@@ -488,6 +510,28 @@ export const GUIDES: GuideEntry[] = [
     readingMinutes: 10,
     seasonal: '네이버 트렌드 +49%',
     tags: ['근로', '블루오션'],
+  },
+  {
+    slug: 'health-insurance-dependent-qualification-2026',
+    title: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리',
+    description:
+      '2026년 건강보험 피부양자 자격은 소득요건과 재산요건을 모두 충족해야 인정됩니다. 합산소득 2,000만원 기준, 재산세 과세표준 5억 4천만원 한도, 형제자매 범위, 탈락 시 지역가입자 전환까지 국민건강보험공단 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-06-15',
+    readingMinutes: 7,
+    seasonal: '네이버 급상승 건강보험료 +48%',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
+  },
+  {
+    slug: 'health-insurance-regional-subscriber-2026',
+    title: '지역가입자 건강보험료 2026 — 소득·재산 점수 계산법',
+    description:
+      '지역가입자 건강보험료는 소득점수와 재산점수를 합산해 부과점수당 금액을 곱해 산정합니다. 직장가입자와의 차이, 임의계속가입, 소득정산까지 국민건강보험공단 기준으로 정리.',
+    category: '근로',
+    publishedAt: '2026-06-15',
+    readingMinutes: 8,
+    seasonal: '네이버 급상승 건강보험료 +48%',
+    tags: ['4티어', '시즈널', '핫키워드', '블루오션'],
   },
   // ─── 7월 ───
   {
@@ -615,6 +659,16 @@ export const GUIDES: GuideEntry[] = [
     category: '근로',
     publishedAt: '2026-05-04',
     readingMinutes: 9,
+    tags: ['4티어'],
+  },
+  {
+    slug: 'retirement-income-tax-2026',
+    title: '2026 퇴직소득세 계산법 — 연분연승법·근속연수공제',
+    description:
+      '퇴직소득세는 근속연수가 길수록 세 부담이 줄어드는 연분연승법으로 계산. 근속연수공제·환산급여공제·기본세율 적용 단계별 해석과 실전 시뮬레이션.',
+    category: '근로',
+    publishedAt: '2026-06-15',
+    readingMinutes: 8,
     tags: ['4티어'],
   },
   {
@@ -1060,7 +1114,7 @@ export default function GuideIndexPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 본 가이드 카테고리에 포함된 콘텐츠는 다음 법령을 근거로 작성됩니다 — 소득세법 §55·§70·§94·§103·§148의4 (소득세·양도세·퇴직소득세) · 지방세법 §11·§13의2·§111·§128·§150 (취득세·재산세·자동차세·지방교육세) · 주택임대차보호법 §3·§3의2·§8 (임대차) · 은행법 §38·시행령 §24의4 (DSR·대출 규제) · 부가가치세법 §49 (예정 신고).
+                  <strong>법적 근거</strong>: 본 가이드 카테고리에 포함된 콘텐츠는 다음 법령을 근거로 작성됩니다 — 소득세법 §48·§55·§70·§94·§103 (소득세·양도세·퇴직소득세) · 지방세법 §11·§13의2·§111·§128·§150 (취득세·재산세·자동차세·지방교육세) · 주택임대차보호법 §3·§3의2·§8 (임대차) · 은행법 §38·시행령 §24의4 (DSR·대출 규제) · 부가가치세법 §49 (예정 신고).
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).

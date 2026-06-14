@@ -4,7 +4,7 @@
  * 법적 근거:
  * - 근로기준법 §2 (평균임금)
  * - 근로자퇴직급여 보장법 §8 (법정 퇴직금)
- * - 소득세법 §55, §148의4 (퇴직소득세, 근속연수공제, 환산급여공제)
+ * - 소득세법 §48 (퇴직소득공제: 근속연수공제·환산급여공제), §55② (연분연승 산출세액)
  *
  * 상수: src/lib/constants/tax-rates-2026.ts
  * 명세: docs/calculator-spec/퇴직금.md
@@ -132,7 +132,7 @@ function computeStatutorySeverance(avgDailyWage: number, serviceDays: number): n
 }
 
 /**
- * 근속연수공제 계산 (소득세법 §148의4)
+ * 근속연수공제 계산 (소득세법 §48)
  * yearsRounded 에 따라 구간 결정
  * 예: 7년 → 5년 초과 구간 (5~10) → baseDeduction(5M) + (7-5) × 2M = 9M
  */
@@ -162,7 +162,7 @@ function computeServiceYearsDeduction(yearsRounded: number): number {
 }
 
 /**
- * 환산급여 계산 (소득세법 §148의4)
+ * 환산급여 계산 (소득세법 §48)
  * 공식: (퇴직소득금액 − 근속연수공제) × 12 ÷ 근속연수
  * 주의: 근속연수가 0이면 무한대 → 에러 처리 필요
  */
@@ -177,7 +177,7 @@ function computeConvertedSalary(
 }
 
 /**
- * 환산급여공제 계산 (소득세법 §148의4)
+ * 환산급여공제 계산 (소득세법 §48)
  * converted 금액에 따라 구간별로 계산
  * 예: 1억 원 → 7000만~1억 구간 → base(45.2M) + (1억-7000만) × 55% = 61.7M
  */
@@ -207,7 +207,7 @@ function computeConvertedSalaryDeduction(converted: number): number {
 }
 
 /**
- * 퇴직소득세 계산 (소득세법 §148의4)
+ * 퇴직소득세 계산 (소득세법 §55②)
  * 공식: (과세표준 × 기본세율) ÷ 12 × 근속연수
  */
 function computeRetirementIncomeTax(

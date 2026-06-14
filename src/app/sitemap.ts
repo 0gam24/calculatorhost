@@ -182,6 +182,17 @@ const GUIDE_SLUGS = [
   'voluntary-filing-june-50-percent-reduction-2026',
   // 분리과세 vs 종합과세 마스터 (4티어 정리형 — 소득세법 §14 / 사적연금·금융·기타소득)
   'separate-vs-comprehensive-taxation-master-2026',
+  // 2026-06-15 데이터 기반 5편 (Naver 급상승 클러스터 롱테일 + GSC 수요 갭)
+  // 건강보험 피부양자 자격조건 (건강보험료 +48% — 전업주부·은퇴자 페르소나)
+  'health-insurance-dependent-qualification-2026',
+  // 국민연금 예상 수령액 (국민연금 +69% — "얼마 받나" 후속 질문)
+  'national-pension-expected-benefit-2026',
+  // 전기차·하이브리드 자동차세 (자동차세 +67% — EV 정액세율 §127)
+  'electric-vehicle-tax-2026',
+  // 건강보험 지역가입자 보험료 (건강보험료 +48% — 자영업자·프리랜서)
+  'health-insurance-regional-subscriber-2026',
+  // 퇴직소득세 계산 (GSC "퇴직금 세금 계산기" 수요 — 소득세법 §48·§55②)
+  'retirement-income-tax-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

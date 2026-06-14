@@ -230,7 +230,7 @@ export const PROPERTY_URBAN_AREA_TAX_RATE = 0.0014; // 0.14%
 export const PROPERTY_ONE_HOUSE_SPECIAL_CAP = 900_000_000; // 9억
 
 // ============================================
-// 퇴직소득세 — 소득세법 §148의4 (2023 개정, 2026 유지)
+// 퇴직소득세 — 소득세법 §48(퇴직소득공제)·§55②(연분연승 산출세액) (2023 개정, 2026 유지)
 // ============================================
 
 export interface ServiceYearsDeductionBracket {
@@ -243,7 +243,7 @@ export interface ServiceYearsDeductionBracket {
 }
 
 /**
- * 근속연수공제 구간 — 소득세법 §148의4
+ * 근속연수공제 구간 — 소득세법 §48
  * 예: 근속 7년 → baseDeduction(5년 초과) + (7-5) × 2,000,000 = 5,000,000 + 4,000,000 = 9,000,000
  */
 export const SERVICE_YEARS_DEDUCTION_BRACKETS: ServiceYearsDeductionBracket[] = [
@@ -263,7 +263,7 @@ export interface ConvertedSalaryDeductionBracket {
 }
 
 /**
- * 환산급여공제 구간 — 소득세법 §148의4
+ * 환산급여공제 구간 — 소득세법 §48
  * 예: 환산급여 1억 원
  *   → 100M ≤ 300M이므로 base(6,170만) + (100M - 70M) × 45% = 61,700,000 + 13,500,000 = 75,200,000
  */
