@@ -193,6 +193,13 @@ const GUIDE_SLUGS = [
   'health-insurance-regional-subscriber-2026',
   // 퇴직소득세 계산 (GSC "퇴직금 세금 계산기" 수요 — 소득세법 §48·§55②)
   'retirement-income-tax-2026',
+  // 2026-06-16 데이터 기반 3편 (GSC page2 직전 + 수요 쿼리 캡처)
+  // 주택 중개수수료 요율표 (GSC broker-fee 10.6위/380노출 — 공인중개사법 §32/시행규칙 §20)
+  'real-estate-broker-fee-rate-2026',
+  // 예금·적금 이자소득세 15.4% (GSC "예금 이자소득세 15.4% 2026" 8.7위 — 소득세법 §129/§14③)
+  'interest-income-tax-15-4-percent-2026',
+  // 화폐가치·인플레이션 계산 (GSC inflation 8.9위/162노출 — 비-YMYL 물가 복리 공식)
+  'inflation-money-value-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
