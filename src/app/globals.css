@@ -268,3 +268,51 @@ main p,
 main li {
   text-wrap: pretty;
 }
+
+/* ============================================
+   가이드 아티클 본문 고급화 (gardenbom 레퍼런스)
+   스코프: .guide-scope 내부만 (계산기/카테고리 페이지 제외)
+   Tailwind @layer utilities 우선순위 제어
+   ============================================ */
+
+@layer utilities {
+  /* H2 섹션 구분선 - 기능적 디바이더 */
+  .guide-scope main article h2 {
+    @apply border-b border-border-base pb-2 mt-2;
+  }
+
+  /* 표 - 세로 그리드 제거 후 가로형 디자인 */
+  .guide-scope main article table {
+    @apply w-full;
+    border-collapse: collapse;
+    border: none;
+  }
+
+  /* 셀: 모든 변 0폭 → 아래변만 1px solid (style 명시 — border-b 유틸은 width만 설정하므로
+     style:none 으로 사라지는 버그 방지). 세로 그리드 제거, 가로 디바이더만 남김. */
+  .guide-scope main article th,
+  .guide-scope main article td {
+    border-width: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    @apply px-3 py-2.5 text-left align-top;
+  }
+
+  .guide-scope main article thead th {
+    border-bottom-color: var(--border-base);
+    @apply bg-bg-raised font-semibold text-text-primary;
+  }
+
+  .guide-scope main article tbody tr:nth-child(even) {
+    @apply bg-bg-card;
+  }
+
+  .guide-scope main article tbody tr:last-child th,
+  .guide-scope main article tbody tr:last-child td {
+    border-bottom-width: 0;
+  }
+
+  /* 본문 문단 행간 개선 */
+  .guide-scope main article p {
+    line-height: 1.8;
+  }
+}

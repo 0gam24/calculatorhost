@@ -121,6 +121,39 @@ xl: 1280px ← 본문 max-width
 - 광고 AD-2, AD-4는 **콘텐츠 중간** → 본문 체류 시간 확보
 - 우측 AD-3 스티키 = knowingasset.com 실제 배치 방식
 
-## 10. 업데이트 로그
+## 10. 가이드 아티클 본문 타이포그래피 (2026-06-16)
+
+**스코프**: `/guide/*` 라우트 (블로그 포스팅 페이지)
+
+### 10-1. H2 섹션 구분선
+- 하단 1px 보더 (`var(--border-base)`)
+- 패딩 하단 0.5rem (섹션 간격 space-y-8과 조화)
+- margin-top 0.5rem (상단 여백 절제, space-y-8이 이미 32px 담당)
+- 기능: 색 노이즈 없는 순수 구분, gardenbom 블로그 스타일
+
+### 10-2. 표 스타일 (세로 그리드 → 가로형 디자인)
+- **테이블 전체**: border-collapse, 외곽 border 제거
+- **셀**: 좌우 패딩 0.75rem, 상하 0.625rem, border-bottom만 (var(--border-subtle), 가로줄)
+- **헤더 (thead th)**: 배경 var(--bg-raised), 하단 보더 var(--border-base), font-weight 600
+- **지브라 줄무늬**: tbody tr:nth-child(even) → var(--bg-card) (미묘한 행 구분, 가독성 향상)
+- **마지막 행**: border-bottom 제거 (불필요한 하단선 제거)
+- **기술**: @layer utilities 사용으로 Tailwind 유틸리티 클래스 안전하게 오버라이드
+- **대비**: 다크 모드에서도 테이블 가독성 100% 유지 (토큰 기반)
+
+### 10-3. 본문 문단 행간
+- line-height: 1.8 (기본 1.72 → 개선, 가독성 강화)
+
+### 10-4. 기술 구현 (src/app/guide/layout.tsx + src/app/globals.css)
+- **레이아웃 래퍼**: .guide-scope 클래스 (라우트 스코프 격리, 계산기 페이지 완전 제외)
+- **CSS 계층화**: @layer utilities로 선언하여 Tailwind 유틸리티와 우선순위 충돌 없음
+- **토큰 사용**: 신규 색상 추가 없음, 기존 CSS 변수만 활용
+
+### 10-5. 비영향 범위
+- 계산기 페이지 (`/calculator/*`): 완전 독립 (다른 레이아웃 wrapper 없음)
+- 카테고리 인덱스 (`/category/*`): 독립
+- 정책 페이지 (`/privacy`, `/terms`): 독립
+
+## 11. 업데이트 로그
 - 2026-04-24: 초판 확정 (Figma 레퍼런스 반영)
 - 2026-04-24: §9 광고 배치 5슬롯 아키텍처 추가 (2026 AdSense 수익 전략 보고서 반영)
+- 2026-06-16: §10 가이드 아티클 본문 타이포그래피 추가 (H2 구분선 + 가로형 표 + 토큰 기반 스타일)
