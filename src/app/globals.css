@@ -276,9 +276,13 @@ main li {
    ============================================ */
 
 @layer utilities {
-  /* H2 섹션 구분선 - 기능적 디바이더 */
+  /* H2 섹션 헤더 - 좌측 브랜드 액센트 바 + 얇은 하단 구분선
+     좌측 바: border-l-[3px] + border-primary-500 (브랜드 토큰)
+     하단 구분선: 명시 shorthand 로 분리 — @apply border-primary-500 이 4변 색을
+     덮어쓰므로, 하단만 var(--border-base) 로 재지정(뒤 선언이 이김). top/right 는 width 0. */
   .guide-scope main article h2 {
-    @apply border-b border-border-base pb-2 mt-2;
+    @apply border-l-[3px] border-primary-500 pl-3 pb-2 mt-2;
+    border-bottom: 1px solid var(--border-base);
   }
 
   /* 표 - 세로 그리드 제거 후 가로형 디자인 */
