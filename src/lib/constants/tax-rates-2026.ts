@@ -399,7 +399,7 @@ export const CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START = 36_000_000;
 export const CHILD_TAX_BENEFIT_ASSET_CAP = 240_000_000;
 
 // ============================================
-// 자동차세 — 지방세법 §127·§137·§151 (2026)
+// 자동차세 — 지방세법 §127(세율·차령경감)·§128(납기)·§151(지방교육세) (2026)
 // ============================================
 export const VEHICLE_TAX_RATES_PASSENGER_NON_BUSINESS = {
   /** 1000cc 이하 비영업용 승용 — cc당 세율 (원) */
@@ -410,7 +410,7 @@ export const VEHICLE_TAX_RATES_PASSENGER_NON_BUSINESS = {
   over1600cc: 200,
 } as const;
 
-/** 차령경감 시작 연수 — 지방세법 §127② (3년 초과부터 시작) */
+/** 차령경감 시작 연수 — 지방세법 §127①제2호 (배기량 과세차만, 3년차부터 시작) */
 export const VEHICLE_TAX_REDUCTION_START_YEAR = 3;
 /** 차령 당 경감률 — 연 5% 경감 */
 export const VEHICLE_TAX_REDUCTION_PER_YEAR = 0.05;

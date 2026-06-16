@@ -380,7 +380,7 @@ export default function VehicleTaxPage() {
               <section className="space-y-4" aria-label="차령 경감률">
                 <h2 className="text-2xl font-bold text-text-primary">차령경감률 (노후차 할인)</h2>
                 <p className="text-text-secondary text-sm">
-                  3년 차부터 연 5%씩 경감, 최대 50% (지방세법 §137)
+                  3년 차부터 연 5%씩 경감, 최대 50% (지방세법 §127①제2호)
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -476,7 +476,7 @@ export default function VehicleTaxPage() {
 
               {/* 업데이트 로그 */}
               <section className="text-xs text-text-secondary border-t border-border-base pt-6">
-                <p>업데이트: 2026-04-24 (지방세법 §127·§137·§151 기준)</p>
+                <p>업데이트: 2026-06-17 (지방세법 §127·§128·§151 기준)</p>
               </section>
 
               {/* 면책조항 */}

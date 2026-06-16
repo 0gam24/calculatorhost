@@ -70,7 +70,7 @@ const FAQ_ITEMS = [
   {
     question: '오래된 차는 자동차세가 싼가요?',
     answer:
-      '네, 차령경감이 있습니다(지방세법 §137②). 3년차부터 시작되며, 매년 5%씩 감소합니다(최대 50%). 공식: (차령 - 2) × 5% (단, ≤ 50%). 예: 5년차는 15%, 12년차 이상은 50% 경감됩니다.',
+      '네, 차령경감이 있습니다(지방세법 §127①제2호). 3년차부터 시작되며, 매년 5%씩 감소합니다(최대 50%). 공식: (차령 - 2) × 5% (단, ≤ 50%). 예: 5년차는 15%, 12년차 이상은 50% 경감됩니다. 단, 차령경감은 배기량 과세차에만 적용되며 전기차·수소차 정액세에는 적용되지 않습니다.',
   },
   {
     question: '지방교육세는 뭔가요?',
@@ -163,7 +163,7 @@ export default function VehicleTax2026Page() {
                 <ul className="space-y-1.5 text-sm" data-speakable>
                   <li>💰 <strong>배기량 cc당 세율</strong>: 1,000cc 이하 80원 / 1,001~1,600cc 140원 / 1,601cc 이상 200원</li>
                   <li>📊 <strong>지방교육세</strong>: 자동차세의 30% 추가 납부 (지방세법 §151)</li>
-                  <li>🚗 <strong>차령경감</strong>: 3년차부터 연 5% (최대 50%, 12년차 이상 고정) (지방세법 §137②)</li>
+                  <li>🚗 <strong>차령경감</strong>: 3년차부터 연 5% (최대 50%, 12년차 이상 고정) (지방세법 §127①제2호, 배기량 과세차만)</li>
                   <li>📅 <strong>납부 시기</strong>: 제1기 6월 16~30일 / 제2기 12월 16~31일 (또는 1월 연납)</li>
                   <li>💳 <strong>연납 할인</strong>: 1월 신청 시 5% 공제율, 신청월별로 실효율 변동 (지방세법 시행령 §125)</li>
                   <li>⚠️ <strong>주의</strong>: 미납 시 1.2배 이상 가산세 + 행정 제제</li>
@@ -262,7 +262,7 @@ export default function VehicleTax2026Page() {
 
               <section className="card">
                 <h2 className="mb-4 text-2xl font-bold">⏱️ 차령경감 — 나이 많은 차일수록 세금 감소</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 §137② — 3년차부터 시작, 매년 5%씩 경감 (최대 50%)</p>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 §127①제2호 — 3년차부터 시작, 매년 5%씩 경감 (최대 50%). 배기량 과세차만 적용(전기차 정액 제외).</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">차령경감 공식</p>
                   <p className="text-text-secondary font-mono bg-bg-base p-2 rounded mb-2">(차령 - 2) × 5% = 경감률 (단, ≤ 50%)</p>
@@ -270,7 +270,7 @@ export default function VehicleTax2026Page() {
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="caption-top mb-2 text-text-secondary">차령별 경감률 (지방세법 §137②)</caption>
+                    <caption className="caption-top mb-2 text-text-secondary">차령별 경감률 (지방세법 §127①제2호)</caption>
                     <thead>
                       <tr className="bg-primary-500/10 border border-border-base">
                         <th className="px-3 py-2 text-left">차령</th>
@@ -439,6 +439,13 @@ export default function VehicleTax2026Page() {
                     <p className="text-sm text-text-secondary mt-1">제1기 6월 납부·차령경감·연납 할인 해설.</p>
                   </Link>
                   <Link
+                    href="/guide/electric-vehicle-tax-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
+                  >
+                    <h3 className="font-bold text-text-primary">🔋 전기차 자동차세 (정액 13만원)</h3>
+                    <p className="text-sm text-text-secondary mt-1">배기량 없는 전기차·수소차는 차령경감 없이 매년 정액. 하이브리드와의 차이.</p>
+                  </Link>
+                  <Link
                     href="/calculator/acquisition-tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
@@ -450,7 +457,7 @@ export default function VehicleTax2026Page() {
 
               <section className="rounded-lg border border-border-base bg-bg-raised p-6 text-sm">
                 <p className="text-text-secondary mb-3">
-                  <strong>면책조항</strong>: 본 페이지의 자동차세 계산 및 정보는 2026년 현행 지방세법(§127, §137②, §151, 시행령 §125) 기준으로 작성되었습니다. 실제 납부액은 지역할증세, 차량 등록 지역, 개별 상황에 따라 달라질 수 있으므로, 최종 확인은 관할 시·군청 세무서 또는 위택스(wetax.go.kr)에서 하시기 바랍니다. 법조항 인용: 지방세법 §127(자동차세 세율), §137②(차령경감), §151(지방교육세) / 지방세법 시행령 §125(연납 할인).
+                  <strong>면책조항</strong>: 본 페이지의 자동차세 계산 및 정보는 2026년 현행 지방세법(§127, §128, §151, 시행령 §125) 기준으로 작성되었습니다. 실제 납부액은 지역할증세, 차량 등록 지역, 개별 상황에 따라 달라질 수 있으므로, 최종 확인은 관할 시·군청 세무서 또는 위택스(wetax.go.kr)에서 하시기 바랍니다. 법조항 인용: 지방세법 §127(자동차세 세율·차령경감 §127①제2호), §128(납기), §151(지방교육세) / 지방세법 시행령 §125(연납 할인).
                 </p>
                 <p className="text-text-tertiary text-xs">
                   업데이트: 2026-06-14 · AI 보조 작성 후 검수 · 출처: 지방세법·법제처·국세청 공식 문서

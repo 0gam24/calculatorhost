@@ -263,7 +263,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. 차령경감 — 3년차부터 최대 50%까지</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  지방세법 §137에 따라 차량 나이(차령)가 증가하면서 자동차세가 경감됩니다.
+                  지방세법 §127①제2호에 따라 차량 나이(차령)가 증가하면서 자동차세가 경감됩니다.
                   3년 이상 차량부터 매년 5%씩 경감되며, 12년차 이상일 때는 최대 50%까지 경감됩니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -550,6 +550,13 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                   </li>
                   <li>
                     →{' '}
+                    <Link href="/guide/electric-vehicle-tax-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      전기차 자동차세 2026 가이드
+                    </Link>
+                    {' — 전기차·수소차는 배기량 없이 정액 13만원, 차령경감 미적용'}
+                  </li>
+                  <li>
+                    →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>
@@ -576,7 +583,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 지방세법 §127(세율)·§128(납기)·§137(차령경감)·§151(지방교육세) ·{' '}
+                  <strong>법적 근거</strong>: 지방세법 §127(세율·차령경감 §127①제2호)·§128(납기)·§151(지방교육세) ·{' '}
                   <a
                     href="https://www.law.go.kr/법령/지방세법"
                     target="_blank"
