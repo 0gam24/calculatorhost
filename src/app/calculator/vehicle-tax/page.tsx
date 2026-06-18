@@ -82,9 +82,9 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
       '자동차세는 매년 납부하는 세금이고, 취득세는 구매 시 한 번만 납부합니다. 3,000만 원 차량 구매 시 취득세 약 300~900만 원, 이후 매년 배기량에 따라 자동차세를 냅니다.',
   },
   {
-    question: '전기차·하이브리드는 특별 감면이 있나요?',
+    question: '전기차·하이브리드 자동차세는 얼마인가요?',
     answer:
-      '친환경 차량(전기차·수소차·하이브리드)에는 별도의 감면 제도가 있습니다. 정확한 감면율은 국세청 공식 고시나 지자체 공지를 확인하세요.',
+      '전기차·수소차는 배기량이 없어 "그 밖의 승용자동차"로 분류되어 비영업용 기준 연 13만 원(자동차세 10만 원 + 지방교육세 3만 원) 정액입니다(지방세법 §127①제3호). 정액 과세이므로 차령경감(노후차 할인)은 적용되지 않아 차령과 무관하게 매년 동일합니다. 반면 하이브리드(HEV·PHEV)는 내연기관 배기량이 있어 일반 승용차처럼 cc당 세율(§127①제1호)로 과세되고 차령경감도 적용됩니다.',
   },
   {
     question: '1600cc 자동차세는 얼마인가요?',
@@ -114,9 +114,11 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
 ];
 
 const RELATED: Array<{ href: string; title: string; description: string }> = [
+  { href: '/guide/electric-vehicle-tax-2026/', title: '전기차 자동차세 가이드', description: '정액 13만 원·§127①제3호' },
+  { href: '/guide/vehicle-tax-2026/', title: '자동차세 2026 종합 가이드', description: '세율·차령경감·연납 총정리' },
+  { href: '/guide/vehicle-tax-june-payment-annual-discount-2026/', title: '6월 자동차세·연납 할인', description: '납부 시기·연납 5% 절세' },
   { href: '/calculator/acquisition-tax', title: '취득세 계산', description: '자동차 구매 시' },
   { href: '/calculator/property-tax', title: '재산세 계산', description: '부동산·자동차' },
-  { href: '/calculator/salary', title: '연봉 실수령액', description: '월급 계산' },
 ];
 
 export default function VehicleTaxPage() {
@@ -131,7 +133,7 @@ export default function VehicleTaxPage() {
     description: '배기량과 차령으로 자동차세를 정확히 계산하세요',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-06-18',
     isPartOf: getCategoryUrlForCalculator('vehicle-tax'),
   });
   const howToLd = buildHowToJsonLd({
@@ -199,7 +201,7 @@ export default function VehicleTaxPage() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   배기량과 차령으로 자동차세·지방교육세·연납 할인을 정확히 계산하세요.
                 </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-06-18" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -476,7 +478,7 @@ export default function VehicleTaxPage() {
 
               {/* 업데이트 로그 */}
               <section className="text-xs text-text-secondary border-t border-border-base pt-6">
-                <p>업데이트: 2026-06-17 (지방세법 §127·§128·§151 기준)</p>
+                <p>업데이트: 2026-06-18 — 전기차·수소차 정액 자동차세(연 13만 원, §127①제3호) FAQ 보강, 법적 근거 §137→§127①제2호 정정 (지방세법 §127·§128·§151·시행령 §125 기준)</p>
               </section>
 
               {/* 면책조항 */}
@@ -488,8 +490,8 @@ export default function VehicleTaxPage() {
                   납부액이 상이할 수 있습니다.
                 </p>
                 <p className="text-xs text-text-secondary mt-2">
-                  <strong>법적 근거</strong>: 지방세법 제127조(자동차세의 세율), 제137조(자동차세의 경감),
-                  제151조(지방교육세)
+                  <strong>법적 근거</strong>: 지방세법 제127조(세율·차령경감 제127조제1항제2호), 제128조(납기·징수),
+                  제151조(지방교육세), 시행령 제125조(연납)
                 </p>
               </section>
             </div>
