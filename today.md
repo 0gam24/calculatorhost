@@ -42,6 +42,14 @@
 
 
 
+
+## 2026-06-20
+
+- [가이드] [연차수당 계산법 2026 | 미사용 연차 1일 통상임금 계산 | calculatorhost](https://calculatorhost.com/guide/annual-leave-allowance-2026/) — 연차수당 정확히 계산하는 법. 1일 통상임금 = 월 통상임금 ÷ 209 × 8. 퇴사 시 미사용 연차 수당 청구 방법, 법적 한도 25일, 근로기준법 §60 완벽 해설.
+- [가이드] [4대보험 요율 2026 — 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost](https://calculatorhost.com/guide/four-major-insurance-rates-2026/) — 2026년 4대보험(국민연금·건강보험·고용보험·산재보험) 요율 및 근로자 부담금 완벽 정리. 7월 국민연금 인상, 기준소득월액 상한, 장기요양보험료 계산법까지.
+- [가이드] [주택연금(역모기지) 2026 완벽 가이드 | 가입조건·공시가격·월지급금 결정요인 | calculatorhost](https://calculatorhost.com/guide/housing-pension-reverse-mortgage-2026/) — 주택연금은 집을 담보로 평생 월금을 받는 국가보증 역모기지입니다. 만 55세 이상 가입조건, 공시가격 12억 한도, 배우자 승계, 우대지급방식, 월지급금 결정요인을 정리합니다.
+- [가이드] [퇴직소득세 이연 2026 | IRP 이체로 30% 감면받는 법 | calculatorhost](https://calculatorhost.com/guide/retirement-income-tax-deferral-irp-2026/) — 퇴직금을 IRP·연금저축에 이체해 세금을 미루고, 연금 수령 시 30~40% 감면받는 법. 과세이연 조건, 제한 시간, 실제 절감액 시뮬레이션.
+- [가이드] [주휴수당 계산법 2026 — 주 15시간·개근 조건과 시급 환산 | calculatorhost](https://calculatorhost.com/guide/weekly-holiday-allowance-2026/) — 주휴수당이란? 근로기준법에서 정한 1주 평균 15시간 이상·개근 조건. 월급제와 시급·일급제별 계산 방법, 결근 시 미발생 규칙, 단시간 근로자 적용 기준을 정리합니다.
 ## 2026-06-19
 
 - (신규 발행분 없음)
