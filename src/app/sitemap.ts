@@ -200,6 +200,17 @@ const GUIDE_SLUGS = [
   'interest-income-tax-15-4-percent-2026',
   // 화폐가치·인플레이션 계산 (GSC inflation 8.9위/162노출 — 비-YMYL 물가 복리 공식)
   'inflation-money-value-2026',
+  // 2026-06-19 데이터 기반 5편 (포화 클러스터 회피 → 미커버 인접 토픽, 색인 표면 확장)
+  // 연차수당 계산법 (근로 페르소나 — 근로기준법 §60·§61 / salary 계산기 cross-link)
+  'annual-leave-allowance-2026',
+  // 주휴수당 계산법 (근로 페르소나 — 근로기준법 §55·시행령 §30·§18③ 초단시간)
+  'weekly-holiday-allowance-2026',
+  // 4대보험 요율 종합 (근로 페르소나 — 국민연금법 §88 7월 인상 / salary·severance cross-link)
+  'four-major-insurance-rates-2026',
+  // 주택연금 역모기지 (은퇴자 페르소나 — 주택금융공사법 / retirement 계산기 cross-link)
+  'housing-pension-reverse-mortgage-2026',
+  // 퇴직소득세 이연 IRP (퇴직·세금 — 소득세법 §146의2·§129①5의2호 30~40% 감면)
+  'retirement-income-tax-deferral-irp-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

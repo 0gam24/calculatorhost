@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-19 신규 5편 (근로·은퇴·퇴직 인접 토픽, 색인 표면 확장) ───
+  {
+    slug: 'annual-leave-allowance-2026',
+    title: '연차수당 계산법 (2026) — 미사용 연차 얼마 받나',
+    description:
+      '연차유급휴가 일수 산정(근로기준법 §60)부터 미사용 연차수당 = 1일 통상임금 × 미사용일수 공식까지. 입사 1년 미만·1년 이상·회계연도 기준 차이 + 통상임금 계산 예시.',
+    category: '근로',
+    publishedAt: '2026-06-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'weekly-holiday-allowance-2026',
+    title: '주휴수당 계산법 (2026) — 주 15시간 알바도 받나',
+    description:
+      '주휴수당 = (주 소정근로시간 ÷ 40) × 8 × 시급 공식과 주 15시간 미만 초단시간 제외 기준(근로기준법 §18③). 주 20·30·40시간 알바·단시간 근로자 실수령 예시.',
+    category: '근로',
+    publishedAt: '2026-06-19',
+    readingMinutes: 6,
+  },
+  {
+    slug: 'four-major-insurance-rates-2026',
+    title: '4대보험 요율 총정리 (2026) — 7월 국민연금 인상 반영',
+    description:
+      '국민연금 7월 9.5% 인상(근로자 4.75%)·건강보험 7.09%·장기요양 12.95%·고용보험 등 2026년 4대보험 요율과 근로자 부담분 계산. 월급 300만 원 공제액 시뮬레이션.',
+    category: '근로',
+    publishedAt: '2026-06-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-pension-reverse-mortgage-2026',
+    title: '주택연금(역모기지) 완벽 가이드 (2026) — 가입 조건·월 수령액',
+    description:
+      '만 55세 이상·공시가격 12억 이하 주택연금 가입 조건, 종신·확정기간·대출상환·우대 4가지 지급방식, 신탁 vs 저당권 차이, 재산세 25% 감면·소득세 비과세 혜택까지.',
+    category: '금융',
+    publishedAt: '2026-06-19',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'retirement-income-tax-deferral-irp-2026',
+    title: '퇴직소득세 이연·IRP 절세 가이드 (2026) — 30~40% 감면',
+    description:
+      'IRP 이전 시 퇴직소득세 과세이연(소득세법 §146의2)과 연금 수령 시 10년 이하 30%·초과 40% 감면(§129①5의2호). 세액공제 연 900만 원 한도 절세 시뮬레이션 포함.',
+    category: '세금',
+    publishedAt: '2026-06-19',
+    readingMinutes: 9,
+  },
   // ─── 허브 ───
   {
     slug: 'tax-calendar-2026',
