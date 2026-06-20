@@ -262,6 +262,13 @@ export default function JeonseDepositSafetyPage() {
                     <p className="mt-1 text-sm text-text-secondary">부족한 보증금을 대출로 채울 시 이자를 계산하세요.</p>
                   </Link>
                   <Link
+                    href="/calculator/broker-fee/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
+                  >
+                    <div className="font-semibold text-primary-500">중개수수료 계산기</div>
+                    <p className="mt-1 text-sm text-text-secondary">매매·전세 거래 시 중개보수 상한을 확인하세요.</p>
+                  </Link>
+                  <Link
                     href="/guide/rent-conversion-rate-2026-housing-lease-act/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >

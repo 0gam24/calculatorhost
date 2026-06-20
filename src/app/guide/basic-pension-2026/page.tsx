@@ -381,10 +381,10 @@ export default function BasicPension2026() {
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
-                    <Link href="/guide/national-pension-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      국민연금 2026 — 보험료율·수령나이·개혁
+                    <Link href="/guide/national-pension-expected-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      국민연금 예상 수령액 2026
                     </Link>
-                    {' — 기초연금 연계감액의 기준이 되는 국민연금 수령액'}
+                    {' — 기초연금 연계감액의 기준이 되는 국민연금 월액 확인'}
                   </li>
                   <li>
                     →{' '}
@@ -392,6 +392,13 @@ export default function BasicPension2026() {
                       퇴직금 DC·DB 비교
                     </Link>
                     {' — 국민연금·기초연금과 함께 짜는 노후 3층 연금'}
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/calculator/inflation/" className="text-primary-600 underline dark:text-primary-500">
+                      화폐가치 계산기
+                    </Link>
+                    {' — 30년 뒤 기초연금의 실질 구매력 확인'}
                   </li>
                   <li>
                     →{' '}

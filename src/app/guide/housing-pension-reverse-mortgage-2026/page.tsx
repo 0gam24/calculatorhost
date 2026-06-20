@@ -485,6 +485,18 @@ export default function HousingPensionReverseMortgage2026() {
                     {' — 필요한 총 은퇴자금 산출'}
                   </li>
                   <li>
+                    ➜ <Link href="/calculator/broker-fee/" className="font-semibold text-primary-500 hover:underline">
+                      중개수수료 계산기
+                    </Link>
+                    {' — 주택 매매 시 중개보수 상한 확인'}
+                  </li>
+                  <li>
+                    ➜ <Link href="/calculator/inflation/" className="font-semibold text-primary-500 hover:underline">
+                      화폐가치 계산기
+                    </Link>
+                    {' — 30년 뒤 월지급금의 실질 구매력 확인'}
+                  </li>
+                  <li>
                     ➜ <Link href="/guide/national-pension-expected-benefit-2026/" className="font-semibold text-primary-500 hover:underline">
                       국민연금 예상수령액 2026
                     </Link>

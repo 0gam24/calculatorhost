@@ -372,6 +372,9 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                     → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 일시적 2주택·12억 한도 시뮬
                   </li>
                   <li>
+                    → <Link href="/calculator/broker-fee/" className="text-primary-600 underline dark:text-primary-500">중개수수료 계산기</Link> — 매매·전세 거래 시 중개보수 상한
+                  </li>
+                  <li>
                     → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link> — 비례 과세·거주 요건·장기보유공제 80%
                   </li>
                   <li>

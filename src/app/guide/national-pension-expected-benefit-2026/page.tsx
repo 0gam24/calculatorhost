@@ -530,6 +530,16 @@ export default function NationalPensionExpectedBenefitPage() {
                   </Link>
 
                   <Link
+                    href="/calculator/inflation/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
+                  >
+                    <h4 className="font-semibold text-primary-500">화폐가치 계산기</h4>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      연금의 미래 실질 구매력 계산, 인플레이션 반영
+                    </p>
+                  </Link>
+
+                  <Link
                     href="/calculator/salary/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
