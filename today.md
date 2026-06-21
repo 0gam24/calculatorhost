@@ -44,6 +44,14 @@
 
 
 
+
+## 2026-06-22
+
+- [가이드] [취득세 계산법 2026 | 주택 구입 세율·중과·농특세 완벽 정리 | calculatorhost](https://calculatorhost.com/guide/acquisition-tax-calculation-2026/) — 주택 구입 시 내야 할 취득세를 정확히 계산하는 방법. 구입가별 세율(1.0~3.0%), 2주택·3주택 중과세(8~12%), 85㎡ 초과 농특세, 지방교육세 완벽 가이드. 지방세법 §13·§13의2.
+- [가이드] [종합소득세율 2026 누진세 8단계 완벽 가이드 | 과세표준·산출세액 계산 | calculatorhost](https://calculatorhost.com/guide/comprehensive-income-tax-rate-brackets-2026/) — 2026년 종합소득세 8단계 누진세율표와 정확한 계산법. 1,400만원부터 10억 초과까지 세율·누진공제·지방소득세. 직장인·프리랜서 필수 가이드. 소득세법 §55 기준.
+- [가이드] [상속세 계산법 2026 | 과세표준·공제·납부세액 완벽 가이드 | calculatorhost](https://calculatorhost.com/guide/inheritance-tax-calculation-2026/) — 상속세를 정확히 계산하는 방법. 5단계 누진세율·일괄공제 5억·배우자공제·신고세액공제까지 완벽 정리. 상증세법 §26 기준.
+- [가이드] [재산세 계산법 2026 | 주택 재산세율·과세표준 가이드 | calculatorhost](https://calculatorhost.com/guide/property-tax-calculation-2026/) — 2026년 주택 재산세 정확한 계산법. 과세표준·세율 4구간·누진공제·1세대1주택 특례까지 완전 정리. 지방세법 §111 기준 필수 정보.
+- [가이드] [중도상환수수료 계산·면제 조건 2026 | 대출 빠른 상환 가이드](https://calculatorhost.com/guide/prepayment-penalty-fee-2026/) — 중도상환수수료란 대출을 약정 만기보다 일찍 갚을 때 은행이 부과하는 수수료입니다. 표준 계산 공식, 예시 시뮬레이션, 면제·감면 조건, 갈아타기 시 절감액 비교를 정리합니다. 2026년 기준.
 ## 2026-06-21
 
 - (신규 발행분 없음)
