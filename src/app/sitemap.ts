@@ -213,6 +213,15 @@ const GUIDE_SLUGS = [
   'retirement-income-tax-deferral-irp-2026',
   // 중도상환수수료 면제·계산 (금융 — 금융소비자보호법 / loan·loan-limit 계산기 cross-link)
   'prepayment-penalty-fee-2026',
+  // 2026-06-21 데이터 기반 5편 (세법 SSoT §N 검증 가능 핵심 토픽 — 색인 표면 +5, 고CPC)
+  // 종합소득세율 8구간 (소득세법 §55 — 5월 신고 후행 + 직장인·프리랜서 페르소나)
+  'comprehensive-income-tax-rate-brackets-2026',
+  // 취득세 계산법 (지방세법 §10~§17 — 부동산 거래 직전자 페르소나, 고CPC)
+  'acquisition-tax-calculation-2026',
+  // 재산세 계산법 (지방세법 §111·§111의2·§112 — 6월 1일 과세기준일 시즌 + Naver +15%)
+  'property-tax-calculation-2026',
+  // 상속세 계산법 (상증법 §26·§18~§21·§68 — 은퇴·자산가 페르소나, 고CPC)
+  'inheritance-tax-calculation-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

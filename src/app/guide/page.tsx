@@ -60,6 +60,43 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-21 신규 5편 (세법 SSoT §N 검증 핵심 토픽 — 색인 +5, 고CPC) ───
+  {
+    slug: 'comprehensive-income-tax-rate-brackets-2026',
+    title: '종합소득세율 2026 — 누진세 8단계·과세표준·산출세액 계산',
+    description:
+      '2026년 종합소득세 8단계 누진세율표와 정확한 계산법. 1,400만원부터 10억 초과까지 세율·누진공제·지방소득세. 직장인·프리랜서 필수. 소득세법 §55 기준.',
+    category: '세금',
+    publishedAt: '2026-06-21',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'acquisition-tax-calculation-2026',
+    title: '취득세 계산법 2026 — 주택 구입 세율·중과·농특세',
+    description:
+      '주택 구입 시 취득세를 정확히 계산하는 법. 구입가별 세율(1.0~3.0%), 2·3주택 중과세(8~12%), 85㎡ 초과 농특세, 지방교육세까지. 지방세법 §13·§13의2 기준.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-21',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'property-tax-calculation-2026',
+    title: '재산세 계산법 2026 — 주택 재산세율·과세표준·1세대1주택 특례',
+    description:
+      '2026년 주택 재산세 계산법. 과세표준·세율 4구간·누진공제·1세대1주택 특례·지방교육세까지 완전 정리. 6월 1일 과세기준일 기준. 지방세법 §111.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-21',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inheritance-tax-calculation-2026',
+    title: '상속세 계산법 2026 — 5단계 누진세율·일괄공제·배우자공제',
+    description:
+      '상속세를 정확히 계산하는 법. 5단계 누진세율·일괄공제 5억·배우자공제·신고세액공제까지 완벽 정리. 은퇴·자산가 필수. 상증세법 §26 기준.',
+    category: '세금',
+    publishedAt: '2026-06-21',
+    readingMinutes: 8,
+  },
   // ─── 2026-06-21 신규 1편 (금융 — 대출 빠른 상환 고CPC, loan 클러스터 확장) ───
   {
     slug: 'prepayment-penalty-fee-2026',
