@@ -211,6 +211,8 @@ const GUIDE_SLUGS = [
   'housing-pension-reverse-mortgage-2026',
   // 퇴직소득세 이연 IRP (퇴직·세금 — 소득세법 §146의2·§129①5의2호 30~40% 감면)
   'retirement-income-tax-deferral-irp-2026',
+  // 중도상환수수료 면제·계산 (금융 — 금융소비자보호법 / loan·loan-limit 계산기 cross-link)
+  'prepayment-penalty-fee-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

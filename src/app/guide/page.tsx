@@ -60,6 +60,16 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-21 신규 1편 (금융 — 대출 빠른 상환 고CPC, loan 클러스터 확장) ───
+  {
+    slug: 'prepayment-penalty-fee-2026',
+    title: '중도상환수수료 계산·면제 조건 (2026) — 대출 빨리 갚을 때',
+    description:
+      '중도상환수수료 = 중도상환원금 × 수수료율 × (잔존기간 ÷ 면제기간) 공식과 3년 경과 면제·부분상환·대환 시 차이. 1억·5천만·2억 대출 상환 시 수수료 시뮬레이션과 절약 전략.',
+    category: '금융',
+    publishedAt: '2026-06-21',
+    readingMinutes: 8,
+  },
   // ─── 2026-06-19 신규 5편 (근로·은퇴·퇴직 인접 토픽, 색인 표면 확장) ───
   {
     slug: 'annual-leave-allowance-2026',
