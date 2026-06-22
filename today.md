@@ -45,6 +45,14 @@
 
 
 
+
+## 2026-06-23
+
+- [가이드] [종합부동산세 계산법 2026 | 과세표준·세율·공제 완벽 정리 | calculatorhost](https://calculatorhost.com/guide/comprehensive-real-estate-tax-calculation-2026/) — 2026년 종합부동산세 정확한 계산법. 공시가격에서 공제·과세표준·세율·누진공제까지 단계별 가이드. 종부세법 §7-§9 기준 완전 정리.
+- [가이드] [원리금균등 vs 원금균등 2026 | 대출 상환방식 비교 가이드](https://calculatorhost.com/guide/equal-payment-vs-equal-principal-2026/) — 원리금균등과 원금균등 상환 방식의 차이를 정리합니다. 월 상환액, 총이자, 초기 부담 비교, 선택 기준을 공식·계산 사례로 설명합니다. 2026년 기준.
+- [가이드] [증여세 계산법 2026 | 과세표준·공제·납부세액 완벽 가이드 | calculatorhost](https://calculatorhost.com/guide/gift-tax-calculation-2026/) — 증여세를 정확히 계산하는 방법. 5단계 누진세율·증여재산공제(배우자 6억·자녀 5천만)·신고세액공제까지 완벽 정리. 상증세법 §26 기준.
+- [가이드] [상속세 vs 증여세 2026 | 어느 쪽이 유리한가? 비교 완벽 가이드 | calculatorhost](https://calculatorhost.com/guide/inheritance-vs-gift-tax-comparison-2026/) — 상속세와 증여세 어느 것이 절세에 유리할까? 공제 차이·세율·시점·사전증여 합산까지 명확하게 비교. 재산 상황별 의사결정 가이드.
+- [가이드] [자동차세 계산법 2026 | 배기량·차령경감·지방교육세 완벽 가이드 | calculatorhost](https://calculatorhost.com/guide/vehicle-tax-calculation-2026/) — 2026년 자동차세 정확한 계산법. 배기량별 세율, 차령경감(3년차부터), 전기차 정액세, 지방교육세, 연납할인까지. 지방세법 §127·§151 기준 필수 정보.
 ## 2026-06-22
 
 - [가이드] [취득세 계산법 2026 | 주택 구입 세율·중과·농특세 완벽 정리 | calculatorhost](https://calculatorhost.com/guide/acquisition-tax-calculation-2026/) — 주택 구입 시 내야 할 취득세를 정확히 계산하는 방법. 구입가별 세율(1.0~3.0%), 2주택·3주택 중과세(8~12%), 85㎡ 초과 농특세, 지방교육세 완벽 가이드. 지방세법 §13·§13의2.
