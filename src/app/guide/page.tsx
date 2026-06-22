@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-22 신규 5편 (세법 계산 허브 4 + 대출 상환방식 1 — 색인 +5, 고CPC) ───
+  {
+    slug: 'vehicle-tax-calculation-2026',
+    title: '자동차세 계산법 2026 — 배기량·차령경감·전기차 정액·지방교육세',
+    description:
+      '2026년 자동차세 정확한 계산법. 배기량별 세율(80·140·200원/cc)·차령경감(3년차부터 5%)·전기차 정액 13만원·지방교육세 30%·연납 5% 할인까지. 지방세법 §127·§128·§151 기준.',
+    category: '세금',
+    publishedAt: '2026-06-22',
+    readingMinutes: 11,
+  },
+  {
+    slug: 'comprehensive-real-estate-tax-calculation-2026',
+    title: '종합부동산세 계산법 2026 — 공시가격·공제·세율·세액공제',
+    description:
+      '2026년 종부세 정확한 계산법. 공제금액(1주택 12억·다주택 9억)·공정시장가액비율 60%·세율 구간·누진공제·고령자 장기보유 세액공제 80%·농특세 20%까지. 종부세법 §8·§9 기준.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-22',
+    readingMinutes: 11,
+  },
+  {
+    slug: 'gift-tax-calculation-2026',
+    title: '증여세 계산법 2026 — 5단계 세율·증여재산공제·신고세액공제',
+    description:
+      '증여세를 정확히 계산하는 법. 5단계 누진세율·배우자 6억·성년 자녀 5천만 공제·10년 합산·신고세액공제 3%까지 완벽 정리. 상증세법 §26·§68 기준.',
+    category: '세금',
+    publishedAt: '2026-06-22',
+    readingMinutes: 11,
+  },
+  {
+    slug: 'inheritance-vs-gift-tax-comparison-2026',
+    title: '상속세 vs 증여세 2026 — 어느 쪽이 유리한가? 비교 가이드',
+    description:
+      '상속세와 증여세 중 무엇이 유리한지 자산 규모·가족 구성별로 비교. 일괄공제 5억·배우자공제·증여재산공제·10년 합산까지 사례로 정리. 상증세법 §18~§26·§68 기준.',
+    category: '세금',
+    publishedAt: '2026-06-22',
+    readingMinutes: 13,
+  },
+  {
+    slug: 'equal-payment-vs-equal-principal-2026',
+    title: '원리금균등 vs 원금균등 2026 — 대출 상환방식 비교',
+    description:
+      '원리금균등과 원금균등 상환방식의 차이를 1억·5%·30년 사례로 비교. 월 상환액·총이자·초기 부담까지 시뮬레이션. 어느 방식이 유리한지 상황별 선택 가이드.',
+    category: '금융',
+    publishedAt: '2026-06-22',
+    readingMinutes: 7,
+  },
   // ─── 2026-06-21 신규 5편 (세법 SSoT §N 검증 핵심 토픽 — 색인 +5, 고CPC) ───
   {
     slug: 'comprehensive-income-tax-rate-brackets-2026',

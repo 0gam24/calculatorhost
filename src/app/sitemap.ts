@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-06-22 신규 5편 (세법 계산 허브 + 대출 상환방식 — 고CPC·색인 +5)
+  'vehicle-tax-calculation-2026',
+  'comprehensive-real-estate-tax-calculation-2026',
+  'gift-tax-calculation-2026',
+  'inheritance-vs-gift-tax-comparison-2026',
+  'equal-payment-vs-equal-principal-2026',
   // 시기성 (월별)
   'tax-calendar-2026',
   'year-end-tax-settlement',
