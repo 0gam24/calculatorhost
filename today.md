@@ -46,6 +46,10 @@
 
 
 
+
+## 2026-06-24
+
+- (신규 발행분 없음)
 ## 2026-06-23
 
 - [가이드] [종합부동산세 계산법 2026 | 과세표준·세율·공제 완벽 정리 | calculatorhost](https://calculatorhost.com/guide/comprehensive-real-estate-tax-calculation-2026/) — 2026년 종합부동산세 정확한 계산법. 공시가격에서 공제·과세표준·세율·누진공제까지 단계별 가이드. 종부세법 §7-§9 기준 완전 정리.
