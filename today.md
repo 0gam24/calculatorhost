@@ -47,6 +47,14 @@
 
 
 
+
+## 2026-06-25
+
+- [가이드] [복리 계산법과 72의 법칙 2026 | 원금 2배 기간·단리 vs 복리](https://calculatorhost.com/guide/compound-interest-72-rule-2026/) — 복리의 마법을 이해하는 복리 계산 공식과 72의 법칙을 정리합니다. 단리와의 차이, 월복리 vs 연복리, 원금 2배 달성 기간 추정, 실제 금융상품 적용 방법을 명확히 설명합니다. 2026년 기준.
+- [가이드] [LTV 계산법 2026 | 담보인정비율·대출가능액·DSR/DTI 차이](https://calculatorhost.com/guide/ltv-calculation-2026/) — LTV(담보인정비율) 계산법을 쉽게 정리합니다. 대출가능액 역산, 담보가치 기준, DSR/DTI/LTV 규제 차이, 실제 대출한도 결정 요소를 명확히 설명합니다. 2026년 기준.
+- [가이드] [재산세 7월 납부 일정·분납 2026 | 주택 건축물 토지 납기 | calculatorhost](https://calculatorhost.com/guide/property-tax-july-payment-schedule-2026/) — 2026년 재산세 7월·9월 납부 일정 완벽 정리. 주택 1기분·건축물·토지 납기 차이, 250만원 초과 분할납부 방법, 가산세 피하기까지. 지방세법 §115·§118 기준.
+- [가이드] [임대수익률 계산 2026 | 월세 수익률·표면수익률·갭투자 실투자금](https://calculatorhost.com/guide/rental-yield-calculation-2026/) — 부동산 임대수익률 계산법을 쉽게 정리합니다. 순수익률 vs 표면수익률 차이, 갭투자 실투자금 계산, 월세 수익성 판단 기준을 명확히 설명합니다. 2026년 기준.
+- [가이드] [자동차세 연납 환급 2026 | 중고차 매각·폐차 시 일할 환급 방법 | calculatorhost](https://calculatorhost.com/guide/vehicle-tax-prepayment-refund-2026/) — 1월 연납했는데 연중에 중고차를 팔거나 폐차했다면 일할계산 환급 대상. 자동차세 연납 환급의 절차, 계산, 대상 조건을 지방세법 §128에 기반해 설명합니다.
 ## 2026-06-24
 
 - (신규 발행분 없음)
