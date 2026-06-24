@@ -60,6 +60,53 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-24 신규 5편 (Naver 자동차세 +251%·재산세 +13% 급상승 + 순수 금융공식 갭) ───
+  {
+    slug: 'property-tax-july-payment-schedule-2026',
+    title: '재산세 7월 납부 일정·분납 2026 — 주택 7월·토지 9월·250만원 분할납부',
+    description:
+      '2026년 재산세 납부 일정 총정리. 과세기준일 6월 1일, 주택 1기분 7월 16~31일·2기분 9월, 토지 9월 납기, 250만원 초과 분할납부까지. 지방세법 §114·§115·§118 기준.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-24',
+    readingMinutes: 7,
+    seasonal: '7월 납부 직전',
+  },
+  {
+    slug: 'ltv-calculation-2026',
+    title: 'LTV 계산법 2026 — 담보인정비율·대출가능액·DSR/DTI 차이',
+    description:
+      'LTV(담보인정비율) 계산법을 쉽게 정리합니다. 대출가능액 = 담보가치 × LTV 공식, 규제지역별 한도, DSR·DTI와의 차이, 주담대 한도 실전 계산까지. 2026년 기준.',
+    category: '금융',
+    publishedAt: '2026-06-24',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'vehicle-tax-prepayment-refund-2026',
+    title: '자동차세 연납 환급 2026 — 연중 매각·폐차 시 일할 환급받기',
+    description:
+      '1월에 연납한 자동차세, 연중 매각·폐차·이전 시 소유하지 않은 기간만큼 일할계산으로 환급받는 방법. 환급액 공식과 신청 절차, 자동차등록원부 확인까지. 지방세법 §127·§128 기준.',
+    category: '세금',
+    publishedAt: '2026-06-24',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'rental-yield-calculation-2026',
+    title: '임대수익률 계산 2026 — 표면수익률·순수익률·갭투자 실투자금',
+    description:
+      '부동산 임대수익률 계산법을 정리합니다. 표면수익률 vs 순수익률 차이, 제경비 포함 계산, 갭투자 실투자금 산정, 실제 투자 시나리오별 수익률 비교까지. 2026년 기준.',
+    category: '투자',
+    publishedAt: '2026-06-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'compound-interest-72-rule-2026',
+    title: '복리 계산법과 72의 법칙 2026 — 단리 vs 복리·원금 2배 기간',
+    description:
+      '복리의 원리와 72의 법칙을 쉽게 정리합니다. 단리 vs 복리 차이, 복리 빈도(연·분기·월)별 차이, 72÷수익률로 원금 2배 기간 계산, 세후 이자(15.4%)까지. 2026년 기준.',
+    category: '금융',
+    publishedAt: '2026-06-24',
+    readingMinutes: 8,
+  },
   // ─── 2026-06-22 신규 5편 (세법 계산 허브 4 + 대출 상환방식 1 — 색인 +5, 고CPC) ───
   {
     slug: 'vehicle-tax-calculation-2026',

@@ -228,6 +228,17 @@ const GUIDE_SLUGS = [
   'property-tax-calculation-2026',
   // 상속세 계산법 (상증법 §26·§18~§21·§68 — 은퇴·자산가 페르소나, 고CPC)
   'inheritance-tax-calculation-2026',
+  // 2026-06-24 데이터 기반 5편 (Naver 자동차세 +251%·재산세 +13% 급상승 + 순수 금융공식 갭)
+  // 재산세 7월 납부 일정·분납 (지방세법 §114·§115·§118 — 6월 1일 과세 후행 + 7월 납기 시즌)
+  'property-tax-july-payment-schedule-2026',
+  // LTV 계산법 (금융 — 담보인정비율·대출가능액·DSR/DTI 차이, 부동산 거래 직전자 페르소나)
+  'ltv-calculation-2026',
+  // 자동차세 연납 환급 (지방세법 §127·§128·시행령 §125 — Naver 자동차세 +251% 급상승)
+  'vehicle-tax-prepayment-refund-2026',
+  // 임대수익률 계산 (표면 vs 순수익률·갭투자 실투자금 — 생활 투자자 페르소나)
+  'rental-yield-calculation-2026',
+  // 복리·72의 법칙 (순수 금융공식 — 단리 vs 복리·원금 2배 기간, 비-YMYL 트래픽 미끼)
+  'compound-interest-72-rule-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
