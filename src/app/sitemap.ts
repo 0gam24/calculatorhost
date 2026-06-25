@@ -239,6 +239,17 @@ const GUIDE_SLUGS = [
   'rental-yield-calculation-2026',
   // 복리·72의 법칙 (순수 금융공식 — 단리 vs 복리·원금 2배 기간, 비-YMYL 트래픽 미끼)
   'compound-interest-72-rule-2026',
+  // 2026-06-25 데이터 기반 5편 (Naver 자동차세 +296%·재산세 +30% 급상승 + 대출/환전 순수공식 갭)
+  // 하이브리드 자동차세 (지방세법 §127①1·2·3호 — Naver 자동차세 +296% 급상승, EV 정액과 비교)
+  'hybrid-vehicle-tax-2026',
+  // 자동차 취득세 (지방세법 §12① — 승용 7%·경차 4%, 자동차 구매자 페르소나 고CPC)
+  'vehicle-acquisition-tax-2026',
+  // 재산세 도시지역분·지역자원시설세 (지방세법 §112·§146 — 6월 1일 과세 후행 + Naver 재산세 +30%)
+  'property-tax-urban-area-regional-resource-tax-2026',
+  // DSR·DTI·LTV 차이 (금융 — 대출 3대 지표 정리, LTV 가이드 cross-link 메시)
+  'dsr-dti-ltv-difference-2026',
+  // 환전 수수료·우대율 (순수 금융공식 — 매매기준율·스프레드, 해외송금·여행 페르소나)
+  'currency-exchange-fee-preferential-rate-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

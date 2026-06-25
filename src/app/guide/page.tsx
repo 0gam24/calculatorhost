@@ -60,6 +60,54 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-25 신규 5편 (Naver 자동차세 +296%·재산세 +30% 급상승 + 대출/환전 순수공식 갭) ───
+  {
+    slug: 'hybrid-vehicle-tax-2026',
+    title: '하이브리드 자동차세 2026 — 배기량 cc 과세·차령경감·전기차 정액 비교',
+    description:
+      '하이브리드 자동차세는 전기차처럼 정액 과세가 아니라 내연기관 배기량 기준 cc 과세입니다. 2026년 배기량별 세율, 차령경감, 전기차와의 차이를 명확히 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-06-25',
+    readingMinutes: 8,
+    seasonal: '6월 1기분 시즌',
+  },
+  {
+    slug: 'vehicle-acquisition-tax-2026',
+    title: '자동차 취득세 계산 2026 — 승용 7%·경차 4%·과세표준 완전정리',
+    description:
+      '자동차를 구매할 때 내는 취득세를 정확히 계산하는 방법을 설명합니다. 비영업용 승용차 7%, 경차 4%, 신차·중고차 과세표준 차이, 친환경차 감면 요건까지 2026년 기준으로 완벽 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-06-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'property-tax-urban-area-regional-resource-tax-2026',
+    title: '재산세 도시지역분·지역자원시설세 2026 — 고지서 항목 완전 정리',
+    description:
+      '7월 재산세 고지서를 받으면 본세 외에 도시지역분·지역자원시설세·지방교육세가 함께 붙어옵니다. 각 항목이 무엇이고 어떻게 계산되는지, 고지서를 읽는 방법을 명확히 정리합니다. 2026년 기준.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-25',
+    readingMinutes: 8,
+    seasonal: '7월 고지서 직전',
+  },
+  {
+    slug: 'dsr-dti-ltv-difference-2026',
+    title: 'DSR·DTI·LTV 차이와 계산법 2026 — 헷갈리는 대출 3대 지표 정리',
+    description:
+      'DSR·DTI·LTV 세 대출 규제 지표의 정의와 차이를 명확히 정리합니다. 각 지표 계산 공식, 한도 기준, 실제 대출한도 결정 방식을 사례로 설명. 2026년 기준 최신 정보.',
+    category: '금융',
+    publishedAt: '2026-06-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'currency-exchange-fee-preferential-rate-2026',
+    title: '환전 수수료·환율 우대율 계산 2026 — 매매기준율·스프레드 완전정리',
+    description:
+      '환전할 때 "우대 90%"가 실제로 얼마를 절약하는지, 매매기준율·현찰 스프레드·우대율의 의미와 계산법을 공식으로 설명합니다. 해외 송금과 현찰의 차이도 정리.',
+    category: '금융',
+    publishedAt: '2026-06-25',
+    readingMinutes: 8,
+  },
   // ─── 2026-06-24 신규 5편 (Naver 자동차세 +251%·재산세 +13% 급상승 + 순수 금융공식 갭) ───
   {
     slug: 'property-tax-july-payment-schedule-2026',
