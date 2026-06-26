@@ -250,6 +250,17 @@ const GUIDE_SLUGS = [
   'dsr-dti-ltv-difference-2026',
   // 환전 수수료·우대율 (순수 금융공식 — 매매기준율·스프레드, 해외송금·여행 페르소나)
   'currency-exchange-fee-preferential-rate-2026',
+  // 2026-06-26 데이터 기반 5편 (Naver 자동차세 +296%·재산세 +30% 인접 + 순수 금융/근로 갭, 저환각 토픽)
+  // 연장·야간·휴일근로 가산수당 (근로기준법 §50·§56·§57 — 근로 페르소나, salary cross-link)
+  'overtime-night-holiday-allowance-2026',
+  // 전세 vs 월세 비교 (주택임대차보호법 §7의2 전환율 상한 — 임대차 페르소나, rent-conversion cross-link)
+  'jeonse-vs-monthly-rent-comparison-2026',
+  // 재산세 vs 종부세 비교 (지방세법 §111·§111의2 / 종부법 §9 — 6월 1일 과세 시즌 + Naver 재산세 +30%)
+  'property-tax-vs-comprehensive-real-estate-tax-2026',
+  // 자동차 할부 vs 리스 vs 렌트 (순수 금융공식 — 자동차 구매자 페르소나, Naver 자동차세 +296% 인접)
+  'car-installment-vs-lease-vs-rent-2026',
+  // 대환대출 갈아타기 절약 (순수 금융공식 — 중도상환수수료·인지세 비용, 대출 실행자 페르소나)
+  'mortgage-refinance-savings-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

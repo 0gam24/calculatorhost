@@ -60,6 +60,53 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-26 신규 5편 (Naver 자동차세 +296%·재산세 +30% 인접 + 순수 금융/근로 갭, 저환각 토픽) ───
+  {
+    slug: 'overtime-night-holiday-allowance-2026',
+    title: '연장·야간·휴일근로수당 계산 2026 — 1.5배·2배 가산 완전정리',
+    description:
+      '연장·야간·휴일근로 가산수당을 통상시급 기준으로 정확히 계산하는 법. 1.5배·2배·중복 가산, 근로기준법 §56·§57 보상휴가제까지 사례로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-06-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'jeonse-vs-monthly-rent-comparison-2026',
+    title: '전세 vs 월세 유불리 계산 2026 — 전월세 전환율로 손익 따지기',
+    description:
+      '보증금 기회비용과 전월세 전환율(주택임대차보호법 §7의2)로 전세·월세 선택지를 비교하는 법. 실제 손익 계산 예시로 더 유리한 쪽을 따집니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'property-tax-vs-comprehensive-real-estate-tax-2026',
+    title: '재산세 vs 종부세 차이 2026 — 둘 다 내나? 과세기준·세율 비교',
+    description:
+      '지방세 재산세와 국세 종합부동산세의 차이점. 과세기준일·세율·부과기관·납부시기와 이중과세 조정(종부법 §9)까지 명확히 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-26',
+    readingMinutes: 8,
+    seasonal: '6월 1일 과세 시즌',
+  },
+  {
+    slug: 'car-installment-vs-lease-vs-rent-2026',
+    title: '자동차 할부 vs 리스 vs 장기렌트 2026 — 어떤 게 유리할까',
+    description:
+      '할부·리스·장기렌트 세 방식을 소유권·총비용·세금·경비처리 기준으로 비교분석. 할부 월 납입액 계산 예시와 선택 기준을 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'mortgage-refinance-savings-2026',
+    title: '대출 갈아타기 손익 계산 2026 — 중도상환수수료를 빼고도 이득일까',
+    description:
+      '대환대출이 이득인지 계산하려면 금리 인하분에서 중도상환수수료·부대비용을 빼야 합니다. 손익분기 회수기간 공식과 DSR·LTV 재심사 주의점을 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-26',
+    readingMinutes: 8,
+  },
   // ─── 2026-06-25 신규 5편 (Naver 자동차세 +296%·재산세 +30% 급상승 + 대출/환전 순수공식 갭) ───
   {
     slug: 'hybrid-vehicle-tax-2026',
