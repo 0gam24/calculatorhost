@@ -261,6 +261,17 @@ const GUIDE_SLUGS = [
   'car-installment-vs-lease-vs-rent-2026',
   // 대환대출 갈아타기 절약 (순수 금융공식 — 중도상환수수료·인지세 비용, 대출 실행자 페르소나)
   'mortgage-refinance-savings-2026',
+  // 2026-06-27 데이터 기반 5편 (Naver 자동차세 +320%·재산세 +38% 인접 + 순수 금융 갭, 저환각 토픽)
+  // 중고차 자동차세 일할계산 (지방세법 §128 — Naver 자동차세 +320% 인접, vehicle-tax 계산기 cross-link)
+  'used-car-vehicle-tax-daily-proration-2026',
+  // 고정금리 vs 변동금리 (순수 금융 비교 — 대출 실행자 페르소나, loan 계산기 cross-link)
+  'mortgage-fixed-vs-variable-rate-2026',
+  // 신용점수와 대출금리 (순수 금융 — 신용점수 구간별 금리, loan-limit 계산기 cross-link)
+  'credit-score-loan-interest-rate-2026',
+  // 정기예금 vs 적금 vs 파킹통장 (순수 금융 비교 — 이자소득세 §129, deposit·savings 계산기 cross-link)
+  'deposit-vs-savings-vs-parking-account-2026',
+  // 청약가점 84점 만점 계산법 (주택공급규칙 별표1 — 청약 대기자 페르소나, housing-subscription 계산기 cross-link)
+  'housing-subscription-score-84-points-2026',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

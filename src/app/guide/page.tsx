@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-27 신규 5편 (Naver 자동차세 +320%·재산세 +38% 인접 + 순수 금융 갭, 저환각 토픽) ───
+  {
+    slug: 'used-car-vehicle-tax-daily-proration-2026',
+    title: '중고차 자동차세 일할계산 2026 — 매매 시 누가 얼마 내나',
+    description:
+      '중고차 거래 시 자동차세는 소유 일수만큼 일할계산해 매도인·매수인이 나눠 냅니다. 지방세법 §128 기준 일할 계산법과 사례를 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-06-27',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'mortgage-fixed-vs-variable-rate-2026',
+    title: '고정금리 vs 변동금리 2026 — 주택담보대출 어떤 게 유리할까',
+    description:
+      '주담대 고정금리와 변동금리(혼합형 포함)의 구조·장단점을 금리 환경별로 비교. 손익 시나리오와 선택 기준을 사례로 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-27',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'credit-score-loan-interest-rate-2026',
+    title: '신용점수와 대출금리 2026 — 점수 구간별 금리·한도 차이',
+    description:
+      'NICE·KCB 신용점수 구간이 대출 승인·금리·한도에 미치는 영향. 점수를 올리는 실전 방법과 금융권별 적용 기준을 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-27',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'deposit-vs-savings-vs-parking-account-2026',
+    title: '정기예금 vs 적금 vs 파킹통장 2026 — 목돈·여윳돈 어디에',
+    description:
+      '정기예금·정기적금·파킹통장의 이자 계산 방식과 실수령액을 비교. 이자소득세 15.4%(소득세법 §129)까지 반영한 선택 기준을 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-27',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'housing-subscription-score-84-points-2026',
+    title: '청약가점 84점 만점 계산법 2026 — 무주택·부양가족·통장 점수표',
+    description:
+      '청약가점 84점은 무주택기간 32점·부양가족수 35점·청약통장 17점의 합입니다. 주택공급규칙 별표1 점수표와 사례별 계산을 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-27',
+    readingMinutes: 9,
+  },
   // ─── 2026-06-26 신규 5편 (Naver 자동차세 +296%·재산세 +30% 인접 + 순수 금융/근로 갭, 저환각 토픽) ───
   {
     slug: 'overtime-night-holiday-allowance-2026',
