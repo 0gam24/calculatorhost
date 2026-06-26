@@ -49,6 +49,14 @@
 
 
 
+
+## 2026-06-27
+
+- [가이드] [자동차 할부 vs 리스 vs 장기렌트 2026 — 어떤 게 유리할까](https://calculatorhost.com/guide/car-installment-vs-lease-vs-rent-2026/) — 자동차를 살 때 할부·리스·장기렌트 중 무엇이 유리한지 소유권·월 납입·세금·보험 부담 주체·중도해지·사업자 경비처리 기준으로 비교하고, 할부 월 납입액 계산 공식과 예시를 정리합니다.
+- [가이드] [전세 vs 월세 유불리 계산 2026 — 전월세 전환율로 손익 따지기](https://calculatorhost.com/guide/jeonse-vs-monthly-rent-comparison-2026/) — 전세와 월세 중 무엇이 유리한지 보증금의 기회비용과 전월세 전환율로 비교하는 법을 설명합니다. 전세대출 이자·예금이자와 월세를 등가로 환산해 판단하는 공식과 예시를 정리.
+- [가이드] [대출 갈아타기 손익 계산 2026 — 중도상환수수료를 빼고도 이득일까](https://calculatorhost.com/guide/mortgage-refinance-savings-2026/) — 대출 갈아타기(대환)가 이득인지 계산하려면 금리 인하분에서 중도상환수수료와 부대비용을 차감해야 합니다. 손익분기 회수기간 공식, 실제 계산 예시, DSR·LTV 재심사 주의점을 정리합니다.
+- [가이드] [연장·야간·휴일근로수당 2026 | 1.5배·2배 가산 계산 | calculatorhost](https://calculatorhost.com/guide/overtime-night-holiday-allowance-2026/) — 연장근로는 1.5배, 야간근로는 0.5배 추가, 휴일근로는 1.5배(8시간 이내)·2배(초과). 근로기준법 §56 가산율·통상시급 환산·중복 계산 완벽 정리.
+- [가이드] [재산세 vs 종부세 차이 2026 — 둘 다 내나? 과세기준·세율 비교 | calculatorhost](https://calculatorhost.com/guide/property-tax-vs-comprehensive-real-estate-tax-2026/) — 재산세는 모든 주택 보유자에게 부과되는 지방세, 종합부동산세는 공시가격 합계가 기준을 넘는 보유자에게 부과되는 국세입니다. 과세기준일·부과기관·과세대상·세율·납부시기의 차이와 이중과세 조정을 정리합니다.
 ## 2026-06-26
 
 - [가이드] [환전 수수료·환율 우대율 계산 2026 — 매매기준율·스프레드 완전정리](https://calculatorhost.com/guide/currency-exchange-fee-preferential-rate-2026/) — 매매기준율, 스프레드, 우대율이 실제 환전 비용에 미치는 영향을 계산해봅시다.
