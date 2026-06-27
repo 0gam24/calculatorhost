@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-06-28 데이터 기반 5편 (Naver 자동차세 급상승 인접 + 임대차·중개·순수 금융/투자 갭, 저환각 토픽)
+  'rent-increase-5-percent-cap-2026',
+  'broker-fee-negotiation-savings-2026',
+  'vehicle-tax-card-payment-2026',
+  'real-interest-rate-inflation-2026',
+  'split-sell-profit-taking-strategy-2026',
   // 2026-06-22 신규 5편 (세법 계산 허브 + 대출 상환방식 — 고CPC·색인 +5)
   'vehicle-tax-calculation-2026',
   'comprehensive-real-estate-tax-calculation-2026',

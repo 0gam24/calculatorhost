@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-28 신규 5편 (Naver 자동차세 급상승 인접 + 임대차·중개·순수 금융/투자 갭, 저환각 토픽) ───
+  {
+    slug: 'rent-increase-5-percent-cap-2026',
+    title: '전월세 인상 5% 상한 2026 — 계약갱신청구권 한도 완전정리',
+    description:
+      '주택임대차보호법 §7 차임증감청구권은 갱신 시 5% 이내로 인상을 제한합니다. 계약갱신요구권(§6의3)과 5% 상한 적용 조건·계산 사례를 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-28',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'broker-fee-negotiation-savings-2026',
+    title: '중개수수료 협의로 아끼는 법 2026 — 상한요율 절약 완전정리',
+    description:
+      '중개수수료 상한요율(공인중개사법 §32)은 법적 한도일 뿐 협의로 깎을 수 있습니다. 거래금액별 요율과 부가세 확인, 계약 전 확정 협상 팁을 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-28',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'vehicle-tax-card-payment-2026',
+    title: '자동차세 카드납부·연납 할인 2026 — 수수료 0원 절약법',
+    description:
+      '자동차세는 지방세라 신용카드 납부 수수료가 무료이고, 1월 연납 시 추가 공제(시행령 §125)까지 받습니다. 카드납부·연납 할인 활용법을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-06-28',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'real-interest-rate-inflation-2026',
+    title: '실질금리 계산 2026 — 물가 반영한 진짜 예금 수익률',
+    description:
+      '명목금리에서 물가상승률을 빼면 실질금리입니다. 피셔방정식과 이자소득세 15.4%(소득세법 §129)를 함께 반영해 예금의 진짜 수익률을 계산하는 법을 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-28',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'split-sell-profit-taking-strategy-2026',
+    title: '분할매도 익절 전략 2026 — 평균 매도단가로 수익 지키기',
+    description:
+      '한 번에 팔지 않고 나눠 파는 분할매도는 고점 욕심과 급락 공포를 동시에 줄입니다. 평균 매도단가 계산과 목표가 분할 전략을 사례로 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-06-28',
+    readingMinutes: 7,
+  },
   // ─── 2026-06-27 신규 5편 (Naver 자동차세 +320%·재산세 +38% 인접 + 순수 금융 갭, 저환각 토픽) ───
   {
     slug: 'used-car-vehicle-tax-daily-proration-2026',
