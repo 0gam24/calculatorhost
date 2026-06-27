@@ -50,6 +50,14 @@
 
 
 
+
+## 2026-06-28
+
+- [가이드] [신용점수와 대출금리 2026 — 점수 올리는 법·금리 영향 총정리](https://calculatorhost.com/guide/credit-score-loan-interest-rate-2026/) — 신용점수(NICE·KCB)가 대출 승인과 금리에 미치는 영향을 정리합니다. 점수를 올리는 구체적 방법, 무료 조회 방법, 점수 회복 기간을 상세 설명합니다.
+- [가이드] [정기예금 vs 정기적금 vs 파킹통장 2026 — 이자·유동성·세금 완전비교](https://calculatorhost.com/guide/deposit-vs-savings-vs-parking-account-2026/) — 정기예금, 정기적금, 파킹통장의 차이를 이자 계산방식, 유동성, 세금, 적합한 상황별로 명확히 정리합니다. 예금자보호, 이자소득세 15.4%, 실제 선택 기준까지 2026년 기준 최신 정보.
+- [가이드] [청약가점 84점 만점 계산법 2026 | 무주택·부양가족·통장 점수표](https://calculatorhost.com/guide/housing-subscription-score-84-points-2026/) — 청약가점 3요소(무주택기간 32점·부양가족수 35점·청약통장 17점) 배분 방식. 각 항목 점수 계산 표·경계값 사례·유의사항. 민영주택·국민주택 가점제·순위제 구분. 한국주택공급규칙(별표1) 기준.
+- [가이드] [주담대 고정 vs 변동금리 2026 | 뭐가 유리할까 가이드](https://calculatorhost.com/guide/mortgage-fixed-vs-variable-rate-2026/) — 주택담보대출 고정금리, 변동금리, 혼합형의 특징을 비교합니다. 금리 결정 방식, 월부담, 이자 비용, 위험 요소, 상황별 선택 기준을 정리합니다.
+- [가이드] [중고차 자동차세 일할계산 2026 — 매도·매수 정산 누가 얼마](https://calculatorhost.com/guide/used-car-vehicle-tax-daily-proration-2026/) — 소유권 이전일 기준 매도인·매수인이 일수만큼 부담. 정산 공식 + 3가지 실제 계산 사례.
 ## 2026-06-27
 
 - [가이드] [자동차 할부 vs 리스 vs 장기렌트 2026 — 어떤 게 유리할까](https://calculatorhost.com/guide/car-installment-vs-lease-vs-rent-2026/) — 자동차를 살 때 할부·리스·장기렌트 중 무엇이 유리한지 소유권·월 납입·세금·보험 부담 주체·중도해지·사업자 경비처리 기준으로 비교하고, 할부 월 납입액 계산 공식과 예시를 정리합니다.
