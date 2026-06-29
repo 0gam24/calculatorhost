@@ -60,6 +60,53 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-29 신규 5편 (GSC 전월세전환·DTI 수요 + 7/1 국민연금 인상 + Naver 재산세·전세대출, 저환각 토픽) ───
+  {
+    slug: 'rent-conversion-calculation-2026',
+    title: '전월세 전환율 계산법 2026 — 보증금↔월세 환산 공식',
+    description:
+      '전세 보증금을 월세로(또는 반대로) 바꾸는 전환율 계산법을 정리합니다. 법정 한도(기준금리+2%, 주택임대차보호법 §7의2)와 실제 환산 사례를 단계별로 설명합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'dti-calculation-2026',
+    title: 'DTI 계산법 2026 — 총부채상환비율·연소득 기준 한도',
+    description:
+      'DTI(총부채상환비율) 계산 공식과 연소득 산정, 기타 대출 이자 반영, DSR·LTV와의 차이를 사례로 정리합니다. 주택담보대출 한도가 어떻게 결정되는지 설명합니다.',
+    category: '금융',
+    publishedAt: '2026-06-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'salary-take-home-2026-july-insurance-increase',
+    title: '2026년 7월 국민연금 인상 후 월급 실수령액 변화',
+    description:
+      '7월 1일 국민연금 요율 9.0→9.5% 인상(국민연금법 §88)으로 월급 실수령액이 얼마나 줄어드는지 계산합니다. 기준소득월액 상한(637만→659만) 인상까지 반영한 시뮬레이션.',
+    category: '근로',
+    publishedAt: '2026-06-29',
+    readingMinutes: 8,
+    seasonal: '7월 국민연금 인상 시행',
+  },
+  {
+    slug: 'jeonse-loan-limit-interest-2026',
+    title: '전세자금대출 한도·금리 구조 2026 — 보증기관별 비교',
+    description:
+      '전세자금대출 한도가 보증비율·보증한도·DSR로 어떻게 결정되는지, 3대 보증기관(HF·HUG·SGI)과 버팀목 정책상품·시중상품의 차이를 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-06-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'comprehensive-real-estate-tax-joint-ownership-2026',
+    title: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026',
+    description:
+      '부부 공동명의 종합부동산세는 각자 9억(합 18억) 공제, 단독명의는 12억 공제입니다. 종부세법 §10의2 특례(12억+세액공제) 신청 유불리와 9월 신청 기한을 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-29',
+    readingMinutes: 9,
+  },
   // ─── 2026-06-28 신규 5편 (Naver 자동차세 급상승 인접 + 임대차·중개·순수 금융/투자 갭, 저환각 토픽) ───
   {
     slug: 'rent-increase-5-percent-cap-2026',

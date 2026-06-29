@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-06-29 데이터 기반 5편 (GSC 전월세전환·DTI 수요 + 7/1 국민연금 인상 + Naver 재산세·전세대출, 저환각 토픽)
+  'rent-conversion-calculation-2026',
+  'dti-calculation-2026',
+  'salary-take-home-2026-july-insurance-increase',
+  'jeonse-loan-limit-interest-2026',
+  'comprehensive-real-estate-tax-joint-ownership-2026',
   // 2026-06-28 데이터 기반 5편 (Naver 자동차세 급상승 인접 + 임대차·중개·순수 금융/투자 갭, 저환각 토픽)
   'rent-increase-5-percent-cap-2026',
   'broker-fee-negotiation-savings-2026',
