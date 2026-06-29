@@ -12,7 +12,7 @@ export function Footer() {
               한국 생활 금융·세금 계산기 31종을 2026년 최신 기준으로 제공하는 무료 서비스.
             </p>
             <p className="mt-3 text-caption text-text-tertiary">
-              <Link href="/feed.xml" className="hover:text-primary-500">📡 RSS 피드 구독</Link>
+              <Link href="/feeds/" className="hover:text-primary-500">📡 피드 구독 (RSS·Atom·JSON)</Link>
             </p>
           </div>
           <div>
