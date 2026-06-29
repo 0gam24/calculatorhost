@@ -329,6 +329,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     },
+    // 피드 구독 허브 (RSS·Atom·JSON·llms.txt 발견)
+    {
+      url: `${BASE}/feeds/`,
+      lastModified: pageLastModified('src/app/feeds/page.tsx'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.4,
+    },
     // 가이드 개별 게시물
     ...GUIDE_SLUGS.map((slug) => ({
       url: `${BASE}/guide/${slug}/`,

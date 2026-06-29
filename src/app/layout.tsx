@@ -160,12 +160,24 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <link rel="dns-prefetch" href="https://adservice.google.com" />
           </>
         ) : null}
-        {/* RSS 자동 발견 (Feedly·Inoreader·NetNewsWire 등 RSS 리더가 <head> 에서 탐지) */}
+        {/* 피드 자동 발견 (Feedly·Inoreader·NetNewsWire 등 RSS 리더가 <head> 에서 탐지) — /feeds 허브 참고 */}
         <link
           rel="alternate"
           type="application/rss+xml"
           title="calculatorhost — 한국 금융·세금 계산기 업데이트"
           href="/feed.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/atom+xml"
+          title="calculatorhost — Atom"
+          href="/atom.xml"
+        />
+        <link
+          rel="alternate"
+          type="application/feed+json"
+          title="calculatorhost — JSON Feed"
+          href="/feed.json"
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script dangerouslySetInnerHTML={{ __html: swInit }} />

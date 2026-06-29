@@ -24,6 +24,7 @@ const ROBOTS_TXT = `#DaumWebMasterTool:d65a9e7443b7bdfbbe7ab7116b497016204b0b38a
 User-Agent: *
 Allow: /
 Allow: /network-mirror.json
+Allow: /feed.json
 Disallow: /api/
 Disallow: /_next/
 Disallow: /*.json$
