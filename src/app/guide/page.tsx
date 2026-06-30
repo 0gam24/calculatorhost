@@ -60,6 +60,54 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-07-01 신규 5편 (7월 재산세 1기·부가세 1기 신고 시즌 + 종부세·연금·양도세 절차 수요) ───
+  {
+    slug: 'property-tax-installment-payment-2026',
+    title: '재산세 분납(분할납부) 2026 — 250만원 초과 신청·기한·한도',
+    description:
+      '재산세 본세가 250만원을 초과하면 분할납부할 수 있습니다(지방세법 §118). 분납 한도(최대 50%), 위택스·세무서 신청 방법, 납부기한 지난 날부터 2개월 기한을 사례로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-01',
+    readingMinutes: 8,
+    seasonal: '7월 재산세 1기 납부',
+  },
+  {
+    slug: 'comprehensive-real-estate-tax-single-house-credit-2026',
+    title: '종부세 1세대1주택 세액공제 2026 — 고령자·장기보유 최대 80%',
+    description:
+      '1세대1주택자는 종합부동산세에서 고령자 공제(20~40%)와 장기보유 공제(20~50%)를 중복 적용받아 최대 80%까지 감면됩니다(종부세법 §9). 공제율 적용 순서와 부부공동명의 특례를 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-01',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'pension-savings-irp-tax-credit-2026',
+    title: '연금저축·IRP 세액공제 2026 — 900만원 한도·최대 148만원 환급',
+    description:
+      '연금저축과 퇴직연금(IRP)을 합산 900만원까지 세액공제받습니다(소득세법 §59의3). 소득별 공제율(15%·12%)과 최대 환급액 148.5만원, 연금외수령 시 추징까지 사례로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-01',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'capital-gains-tax-preliminary-return-2026',
+    title: '양도소득세 예정신고 2026 — 2개월 기한·무신고 가산세',
+    description:
+      '부동산을 양도하면 양도일이 속하는 달의 말일부터 2개월 이내에 예정신고·납부해야 합니다(소득세법 §105). 무신고 가산세 20%, 연 2회 양도 시 5월 확정신고 합산을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-01',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'vat-early-refund-2026',
+    title: '부가가치세 조기환급 2026 — 수출·시설투자 15일 내 환급',
+    description:
+      '영세율 수출·사업설비 투자·재무구조개선 시 일반환급(30일)보다 빠른 15일 내 부가세를 돌려받습니다(부가세법 §59, 시행령 §107). 조기환급 대상·신고 단위·주의점을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-01',
+    readingMinutes: 7,
+    seasonal: '7월 부가세 1기 확정신고',
+  },
   // ─── 2026-06-30 신규 5편 (세금 면제·공제 한도 검색수요 + 7월 재산세 시즌 재산세 특례·세부담상한) ───
   {
     slug: 'freelancer-take-home-3-3-percent-2026',

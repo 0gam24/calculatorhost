@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-01 신규 5편 (7월 재산세 1기·부가세 1기 신고 시즌 + 종부세·연금·양도세 절차 수요)
+  'property-tax-installment-payment-2026',
+  'comprehensive-real-estate-tax-single-house-credit-2026',
+  'pension-savings-irp-tax-credit-2026',
+  'capital-gains-tax-preliminary-return-2026',
+  'vat-early-refund-2026',
   // 2026-06-30 신규 5편 (세금 면제·공제 한도 검색수요 + 7월 재산세 시즌 재산세 특례·세부담상한)
   'freelancer-take-home-3-3-percent-2026',
   'gift-tax-exemption-limit-2026',
