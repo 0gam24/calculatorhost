@@ -60,6 +60,54 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-06-30 신규 5편 (세금 면제·공제 한도 검색수요 + 7월 재산세 시즌 재산세 특례·세부담상한) ───
+  {
+    slug: 'freelancer-take-home-3-3-percent-2026',
+    title: '프리랜서 3.3% 원천징수와 실수령액 2026 — 5월 정산·환급',
+    description:
+      '프리랜서 3.3% 원천징수(소득세 3% + 지방세 0.3%, 소득세법 §127)의 정체와 실수령액 계산법을 정리합니다. 다음해 5월 종합소득세 신고로 환급 또는 추가납부가 결정되는 구조를 사례로 설명합니다.',
+    category: '근로',
+    publishedAt: '2026-06-30',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'gift-tax-exemption-limit-2026',
+    title: '증여세 면제한도 2026 — 증여재산공제·10년 합산·혼인공제',
+    description:
+      '증여세 면제한도(증여재산공제, 상증세법 §53)를 정리합니다. 배우자 6억·성년 자녀 5천만·혼인공제 1억까지 10년 합산 기준으로 얼마까지 증여세 없이 가능한지 사례로 설명합니다.',
+    category: '세금',
+    publishedAt: '2026-06-30',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inheritance-tax-deduction-limit-2026',
+    title: '상속세 공제 한도 2026 — 일괄공제·배우자공제 얼마까지 면제?',
+    description:
+      '상속세를 안 내는 한도를 정리합니다. 일괄공제 5억(상증세법 §21)·배우자공제 최소 5억(§19)·자녀공제를 종합하면 배우자가 있을 때 통상 10억까지 면제 가능한 구조를 설명합니다.',
+    category: '세금',
+    publishedAt: '2026-06-30',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'property-tax-burden-cap-2026',
+    title: '재산세 세부담상한제 2026 — 공시가 폭등 시 인상폭 제한',
+    description:
+      '공시가격 급등 시 재산세 인상폭을 제한하는 세부담상한제(지방세법 §122)를 정리합니다. 주택별 상한율(105~130%)과 전년 대비 실제 부과액 계산법을 사례로 설명합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-30',
+    readingMinutes: 7,
+    seasonal: '7월 재산세 1기 납부',
+  },
+  {
+    slug: 'property-tax-single-house-special-rate-2026',
+    title: '1세대1주택 재산세 특례세율 2026 — 0.05%p 인하 구조',
+    description:
+      '공시가격 9억 이하 1세대1주택 재산세 특례세율(지방세법 §111의2)을 정리합니다. 일반세율 대비 0.05%p 인하와 누진공제 구조, 세액 절감 사례를 단계별로 설명합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-06-30',
+    readingMinutes: 7,
+    seasonal: '7월 재산세 1기 납부',
+  },
   // ─── 2026-06-29 신규 5편 (GSC 전월세전환·DTI 수요 + 7/1 국민연금 인상 + Naver 재산세·전세대출, 저환각 토픽) ───
   {
     slug: 'rent-conversion-calculation-2026',

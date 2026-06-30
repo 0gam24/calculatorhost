@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-06-30 신규 5편 (세금 면제·공제 한도 검색수요 + 7월 재산세 시즌 재산세 특례·세부담상한)
+  'freelancer-take-home-3-3-percent-2026',
+  'gift-tax-exemption-limit-2026',
+  'inheritance-tax-deduction-limit-2026',
+  'property-tax-burden-cap-2026',
+  'property-tax-single-house-special-rate-2026',
   // 2026-06-29 데이터 기반 5편 (GSC 전월세전환·DTI 수요 + 7/1 국민연금 인상 + Naver 재산세·전세대출, 저환각 토픽)
   'rent-conversion-calculation-2026',
   'dti-calculation-2026',
