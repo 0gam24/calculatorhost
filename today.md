@@ -53,6 +53,14 @@
 
 
 
+
+## 2026-07-01
+
+- [가이드] [프리랜서 3.3% 원천징수와 실수령액 2026 | 5월 정산·환급·추가납부](https://calculatorhost.com/guide/freelancer-take-home-3-3-percent-2026/) — 프리랜서가 받는 3.3% 원천징수(소득세 3% + 지방세 0.3%)의 정체와 실수령액 계산. 월 용역료 300만원 = 실수령 290만원. 다음해 5월 종합소득세 신고로 환급 또는 추가납부. 계산 공식·예시·함정 정…
+- [가이드] [증여세 면제한도 2026 | 공제액 한계·10년 합산·혼인공제 완벽 정리 | calculatorhost](https://calculatorhost.com/guide/gift-tax-exemption-limit-2026/) — 증여세 면제한도(증여재산공제)를 정확히 이해하세요. 배우자 6억·자녀 5천만·혼인공제 1억까지 10년 합산. 얼마까지 증여세 없이 가능한지 정리.
+- [가이드] [상속세 공제 한도 2026 | 얼마까지 면제되나? 배우자·자녀공제 완벽 정리 | calculatorhost](https://calculatorhost.com/guide/inheritance-tax-deduction-limit-2026/) — 상속세를 안 내는 한도는? 일괄공제 5억·배우자공제 최소 5억·자녀공제 종합 정리. 배우자 있으면 10억까지 면제 가능. 상증세법 §18~§21.
+- [가이드] [재산세 세부담상한제 2026 | 공시가 폭등 시 인상폭 제한](https://calculatorhost.com/guide/property-tax-burden-cap-2026/) — 공시가격 급등 시 재산세 인상폭을 제한하는 세부담상한제. 주택별 상한율(105~130%) 및 전년 대비 실제 부과액 계산법. 지방세법 §122 기준.
+- [가이드] [1세대1주택 재산세 특례세율 2026 — 0.05%p 인하 구조 정리](https://calculatorhost.com/guide/property-tax-single-house-special-rate-2026/) — 1세대1주택 공시가격 9억 이하 재산세 특례세율 완벽 설명. 일반세율 대비 0.05%p 인하, 누진공제 구조, 세액 절감 사례. 지방세법 §111의2 기준.
 ## 2026-06-30
 
 - [가이드] [부부 공동명의 종부세 특례 vs 단독명의 유불리 2026](https://calculatorhost.com/guide/comprehensive-real-estate-tax-joint-ownership-2026/) — 부부 공동명의 종합부동산세(종부세) 계산법 완벽 정리. 공동명의 vs 단독명의 공제 차이(18억 vs 12억), 종부세법 §10의2 특례 신청(9월), 고령자·장기보유 세액공제 분배. 유불리 판단·사례 시뮬.
