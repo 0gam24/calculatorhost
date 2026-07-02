@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-07-03 신규 5편 (고CPC 미커버 갭 + 연말정산 공제 클러스터 — 취득세감면·신용카드·자녀·기부금·청약저축) ───
+  {
+    slug: 'first-home-acquisition-tax-reduction-2026',
+    title: '생애최초 취득세 감면 2026 — 200만원 한도·요건·신청',
+    description:
+      '생애최초로 주택을 사면 취득세를 최대 200만원까지 감면받습니다(지방세특례제한법 §36의3). 취득가액 12억 이하·소득요건 폐지·거주요건과 2026년 일몰 기한을 사례로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'credit-card-income-deduction-2026',
+    title: '신용카드 소득공제 2026 — 총급여 25% 초과·공제율·한도',
+    description:
+      '신용카드 등 사용액이 총급여의 25%를 넘으면 소득공제됩니다(조특법 §126의2). 카드 15%·체크/현금영수증 30%·전통시장/대중교통 40% 공제율과 300만/250만원 한도를 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'child-tax-credit-2026',
+    title: '자녀세액공제 2026 — 8세 이상 1명 25만·다자녀·출산공제',
+    description:
+      '8세 이상 자녀·손자녀는 자녀세액공제 대상입니다(소득세법 §59의2). 1명 25만·2명 55만·3명 95만원과 출산·입양 공제(첫째 30만~셋째 70만)를 2024 개정 현행값으로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'donation-tax-credit-2026',
+    title: '기부금 세액공제 2026 — 15%·30% 공제율·고향사랑기부금',
+    description:
+      '기부금은 1천만원 이하 15%, 초과분 30%를 세액공제합니다(소득세법 §59의4). 정치자금·고향사랑 기부금 특례와 소득금액별 공제한도, 개인사업자 필요경비 방식을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-subscription-savings-deduction-2026',
+    title: '주택청약저축 소득공제 2026 — 무주택 연 300만 40% 공제',
+    description:
+      '무주택 세대주(총급여 7천만 이하)는 주택청약종합저축 납입액을 연 300만원 한도 40% 소득공제받습니다(조특법 §87). 최대 120만원 소득공제·거주요건·2028년 일몰을 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-03',
+    readingMinutes: 7,
+  },
   // ─── 2026-07-01 신규 5편 (7월 재산세 1기·부가세 1기 신고 시즌 + 종부세·연금·양도세 절차 수요) ───
   {
     slug: 'property-tax-installment-payment-2026',

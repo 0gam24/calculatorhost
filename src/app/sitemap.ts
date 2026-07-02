@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-03 신규 5편 (고CPC 미커버 갭 + 연말정산 공제 클러스터 — 취득세감면·신용카드·자녀·기부금·청약저축)
+  'first-home-acquisition-tax-reduction-2026',
+  'credit-card-income-deduction-2026',
+  'child-tax-credit-2026',
+  'donation-tax-credit-2026',
+  'housing-subscription-savings-deduction-2026',
   // 2026-07-01 신규 5편 (7월 재산세 1기·부가세 1기 신고 시즌 + 종부세·연금·양도세 절차 수요)
   'property-tax-installment-payment-2026',
   'comprehensive-real-estate-tax-single-house-credit-2026',
