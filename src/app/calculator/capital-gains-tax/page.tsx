@@ -681,6 +681,41 @@ export default function TransferTaxPage() {
                     </a>{' '}
                     — 1세대1주택 비과세, 장기보유공제 80%, 자경 농지 100% 감면 등
                   </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/one-household-12-billion-exemption/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      1세대1주택 12억 비과세 한도 완전 정리
+                    </a>{' '}
+                    — 12억 초과분 비례 과세 공식과 장기보유공제 80% 결합 계산
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      일시적 2주택 양도세 비과세 3년
+                    </a>{' '}
+                    — 신규 취득 후 3년 내 종전 주택 양도 요건과 지역별 기한
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      장기보유특별공제 80% 완전 정리
+                    </a>{' '}
+                    — 보유 4%×10년 + 거주 4%×10년 = 최대 80% 공제율 표
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/presale-right-capital-gains-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      분양권 양도소득세 완전 정리
+                    </a>{' '}
+                    — 보유 기간 무관 60%/70% 단일 세율, 비과세·장특공제 미적용
+                  </li>
+                  <li>
+                    →{' '}
+                    <a href="/guide/capital-gains-tax-5-steps/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                      양도소득세 5단계 시뮬
+                    </a>{' '}
+                    — 양도가 산정부터 세율 적용까지 실전 계산 흐름 단계별 해설
+                  </li>
                 </ul>
               </section>
 
