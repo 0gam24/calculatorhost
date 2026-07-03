@@ -35,9 +35,9 @@ import { TransferTaxCalculator } from './TransferTaxCalculator';
 const URL = 'https://calculatorhost.com/calculator/capital-gains-tax/';
 
 export const metadata: Metadata = {
-  title: '양도세 계산기 2026 | 1세대1주택 비과세·장기보유공제 자동',
+  title: '양도소득세 계산기 2026 | 1세대1주택 비과세·장기보유공제 자동',
   description:
-    '5억 매도 시 양도세 얼마? 1세대1주택 비과세·12억 한도·일시적2주택 특례·장기보유 30% 공제 자동 적용. 거래 전 최종 납부액 30초 확인. 2026 최신 세율.',
+    '양도소득세 계산기 2026 — 5억 매도 시 양도세 얼마? 1세대1주택 비과세·12억 한도·일시적2주택 특례·장기보유 30% 공제 자동 적용. 거래 전 최종 납부액 30초 확인.',
   keywords: [
     '양도세 계산기',
     '양도소득세 계산기',
@@ -88,6 +88,11 @@ const FAQ_ITEMS = [
       '분양권은 특별히 높은 세율이 적용됩니다. 1년 미만 보유 시 70%, 1년 이상 보유 시 60%의 고정 세율입니다(소득세법 §100). 기본 누진세율 대신 이 고정 세율을 적용하므로 차익이 작으면 더 높은 세금이 나올 수 있습니다.',
   },
   {
+    question: '양도소득세 세율표는 어떻게 되나요?',
+    answer:
+      '기본세율은 과세표준 구간에 따라 6~45%의 8단계 누진세율입니다(소득세법 §55·§104). 1,400만 이하 6%, 5,000만 이하 15%(누진공제 126만), 8,800만 이하 24%(576만), 1.5억 이하 35%(1,544만), 3억 이하 38%(1,994만), 5억 이하 40%(2,594만), 10억 이하 42%(3,594만), 10억 초과 45%(6,594만)입니다. 단, 주택 1년 미만 보유(40%)와 분양권(60~70%)은 누진세율 대신 단일세율이 우선 적용됩니다.',
+  },
+  {
     question: '양도소득세 신고 기한은?',
     answer:
       '양도세는 양도한 달의 말일부터 2개월 이내에 신고·납부해야 합니다(소득세법 §118, 소득세 시행령 §247). 기한을 초과하면 가산세와 이자가 부과되므로 거래 후 즉시 신고하는 것이 중요합니다.',
@@ -100,7 +105,7 @@ const FAQ_ITEMS = [
   {
     question: '토지 양도세 계산 사례는?',
     answer:
-      '예시 1 — 5년 보유 나대지 (취득 1억, 양도 3억): 양도차익 2억 − 장기보유공제 10%(연 2% × 5년) = 과세표준 1.8억 → 누진세율 38% − 누진공제 1,994만 = 약 4,847만 원 + 지방소득세 10% = 약 5,332만 원. 예시 2 — 10년 보유 농지 자경(취득 5천, 양도 2억): 자경 8년 미만이면 일반 과세, 8년 이상이면 100% 감면 (조특법 §69, 한도 1억).',
+      '예시 1 — 5년 보유 나대지 (취득 1억, 양도 3억): 양도차익 2억 − 장기보유공제 10%(연 2% × 5년) − 기본공제 250만 = 과세표준 1억 7,750만 → 누진세율 38% − 누진공제 1,994만 = 약 4,751만 원 + 지방소득세 10% = 약 5,226만 원. 예시 2 — 10년 보유 농지 자경(취득 5천, 양도 2억): 자경 8년 미만이면 일반 과세, 8년 이상이면 100% 감면 (조특법 §69, 한도 1억).',
   },
   {
     question: '양도차익이 250만 원 이하면 비과세인가요?',
@@ -141,7 +146,7 @@ export default function TransferTaxPage() {
     description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-07-03',
     isPartOf: getCategoryUrlForCalculator('capital-gains-tax'),
   });
   const howToLd = buildHowToJsonLd({
@@ -248,7 +253,7 @@ export default function TransferTaxPage() {
                   비과세, 일시적 2주택 특례, 장기보유특별공제까지 모두 반영하여 최종 납부액을 거래 전에
                   정확히 확인할 수 있습니다.
                 </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-07-03" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -506,13 +511,14 @@ export default function TransferTaxPage() {
                     <li>양도가: 3억 원 (2026년)</li>
                     <li>양도차익: 2억 원</li>
                     <li>장기보유공제: 2억 × 10% (5년 × 2%) = 2,000만 원</li>
-                    <li>과세표준: 1.8억 원</li>
+                    <li>기본공제: 250만 원 (소득세법 §103)</li>
+                    <li>과세표준: 1억 7,750만 원</li>
                   </ul>
                   <div className="mt-3 pt-3 border-t border-border-base text-sm">
                     <p className="text-text-secondary">
-                      <strong>세액 계산:</strong> 1.8억 × 38% − 누진공제 1,994만 = <strong>4,846만 원</strong> (양도세)<br />
-                      <strong>지방소득세:</strong> 4,846만 × 10% = 484만 원<br />
-                      <strong>총 부담:</strong> 약 <strong className="text-primary-700 dark:text-primary-300">5,330만 원</strong> (양도차익의 약 26.7%)
+                      <strong>세액 계산:</strong> 1억 7,750만 × 38% − 누진공제 1,994만 = <strong>4,751만 원</strong> (양도세)<br />
+                      <strong>지방소득세:</strong> 4,751만 × 10% = 475만 원<br />
+                      <strong>총 부담:</strong> 약 <strong className="text-primary-700 dark:text-primary-300">5,226만 원</strong> (양도차익의 약 26.1%)
                     </p>
                   </div>
                 </div>
@@ -686,6 +692,7 @@ export default function TransferTaxPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
+                  <li>2026-07-03: 세율표 FAQ 추가, 토지 사례 기본공제 250만 원 반영 교정, 메타 표현 정비</li>
                   <li>2026-04-24: 2026년 세율 반영 초판 공개 (일반·1세대1주택·일시적2주택)</li>
                 </ul>
               </section>
