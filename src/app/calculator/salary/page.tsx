@@ -8,6 +8,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
@@ -531,6 +532,12 @@ export default function SalaryPage() {
               </section>
 
               <ShareButtons title="연봉 실수령액 계산기 (2026)" url="https://calculatorhost.com/calculator/salary/" />
+
+              <EmbedCodeBox
+                embedPath="/embed/salary/"
+                canonicalPath="/calculator/salary/"
+                title="연봉 실수령액 계산기"
+              />
 
               <RelatedCalculators items={RELATED} />
 

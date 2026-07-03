@@ -8,6 +8,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -554,6 +555,12 @@ export default function PropertyTaxPage() {
               </section>
 
               <ShareButtons title="재산세 계산기 (2026)" url="https://calculatorhost.com/calculator/property-tax/" />
+
+              <EmbedCodeBox
+                embedPath="/embed/property-tax/"
+                canonicalPath="/calculator/property-tax/"
+                title="재산세 계산기"
+              />
 
               <RelatedCalculators items={RELATED} />
 

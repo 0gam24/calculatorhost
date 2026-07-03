@@ -8,6 +8,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -407,6 +408,12 @@ export default function AcquisitionTaxPage() {
                   </li>
                 </ul>
               </section>
+
+              <EmbedCodeBox
+                embedPath="/embed/acquisition-tax/"
+                canonicalPath="/calculator/acquisition-tax/"
+                title="취득세 계산기"
+              />
 
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />

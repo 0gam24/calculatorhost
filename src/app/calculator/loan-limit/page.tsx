@@ -8,6 +8,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 import { DataFreshness } from '@/components/ui/DataFreshness';
 
@@ -575,6 +576,12 @@ export default function LoanLimitPage() {
               </section>
 
               <ShareButtons title="DSR 대출한도 계산기 (2026)" url="https://calculatorhost.com/calculator/loan-limit/" />
+
+              <EmbedCodeBox
+                embedPath="/embed/loan-limit/"
+                canonicalPath="/calculator/loan-limit/"
+                title="DSR 대출한도 계산기"
+              />
 
               <RelatedCalculators items={RELATED} />
 

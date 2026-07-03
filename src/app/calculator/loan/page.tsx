@@ -6,6 +6,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
+import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -398,6 +399,12 @@ export default function LoanInterestPage() {
                   </li>
                 </ul>
               </section>
+
+              <EmbedCodeBox
+                embedPath="/embed/loan/"
+                canonicalPath="/calculator/loan/"
+                title="대출이자 계산기"
+              />
 
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />
