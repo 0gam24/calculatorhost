@@ -21,8 +21,12 @@ export function MobileAnchorAdGuard() {
   // 정책 페이지인지 확인 (정확한 매칭만, 서브 경로 무관)
   const isLegalPage = LEGAL_PAGES.some((page) => pathname === page || pathname === `${page}/`);
 
-  // 정책 페이지면 광고 렌더 안 함
-  if (isLegalPage) {
+  // 임베드 위젯(/embed/*)은 외부 사이트 iframe 내부로 배포되므로 광고 금지.
+  // AdSense 정책: 게시자 소유가 아닌 도메인의 iframe 안에서 광고 노출 = 무효 트래픽·정책 위반 위험.
+  const isEmbed = pathname?.startsWith('/embed/') ?? false;
+
+  // 정책 페이지·임베드 위젯이면 광고 렌더 안 함
+  if (isLegalPage || isEmbed) {
     return null;
   }
 

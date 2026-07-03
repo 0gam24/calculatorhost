@@ -59,3 +59,15 @@
   Cross-Origin-Opener-Policy: same-origin-allow-popups
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'unsafe-inline' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://www.google-analytics.com https://adservice.google.com https://*.googlesyndication.com https://*.adtrafficquality.google https://static.cloudflareinsights.com https://t1.kakaocdn.net https://developers.kakao.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' data: https://fonts.gstatic.com; img-src 'self' data: https: blob:; connect-src 'self' https://www.google-analytics.com https://*.googlesyndication.com https://pagead2.googlesyndication.com https://*.adtrafficquality.google https://cloudflareinsights.com https://*.kakao.com https://kapi.kakao.com; frame-src https://googleads.g.doubleclick.net https://*.googlesyndication.com https://*.adtrafficquality.google https://www.google.com https://sharer.kakao.com; object-src 'none'; base-uri 'self'; form-action 'self'
+
+# 임베드 위젯 (/embed/*) — 외부 사이트 iframe 삽입 허용 (백링크 위젯).
+# 더 구체적인 경로라 위 /* 규칙의 X-Frame-Options: SAMEORIGIN 을 override 한다.
+# - X-Frame-Options: ALLOWALL 은 표준 토큰이 아니므로 브라우저가 무시 → 프레이밍 제한 해제
+# - CSP frame-ancestors * 가 현대 표준 (스펙상 X-Frame-Options 보다 우선) → 모든 부모 도메인 삽입 허용
+# 나머지 보안 헤더(nosniff·HSTS)는 유지. 임베드 페이지는 noindex + AdSense 미노출.
+/embed/*
+  X-Frame-Options: ALLOWALL
+  Content-Security-Policy: frame-ancestors *
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Cache-Control: public, max-age=3600, must-revalidate

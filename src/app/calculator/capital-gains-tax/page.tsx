@@ -9,6 +9,7 @@ import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
+import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
@@ -720,6 +721,12 @@ export default function TransferTaxPage() {
               </section>
 
               <ShareButtons title="양도소득세 계산기 (2026)" url="https://calculatorhost.com/calculator/capital-gains-tax/" />
+
+              <EmbedCodeBox
+                embedPath="/embed/capital-gains-tax/"
+                canonicalPath="/calculator/capital-gains-tax/"
+                title="양도소득세 계산기"
+              />
 
               <RelatedCalculators items={RELATED} />
 
