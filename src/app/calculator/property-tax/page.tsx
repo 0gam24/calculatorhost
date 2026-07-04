@@ -17,6 +17,7 @@ import {
   buildWebPageJsonLd,
   getCategoryUrlForCalculator,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PropertyTaxCalculator } from './PropertyTaxCalculator';
@@ -137,6 +138,41 @@ export default function PropertyTaxPage() {
     { name: '재산세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  // DefinedTermSet — §N 은 본 페이지 본문이 이미 검증·인용 중인 조항만 재사용(§110·§111의2·§112·§114).
+  // 불확실한 §109(공정시장가액비율)·§122(세부담상한)는 배제하여 YMYL 정확성 유지.
+  const definedTermSetLd = buildDefinedTermSetJsonLd({
+    name: '재산세 핵심 용어',
+    description: '주택 재산세 산정에 필요한 과세표준·공정시장가액비율·1세대1주택 특례·도시지역분·과세기준일 정의',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '과세표준',
+        description:
+          '재산세 세율을 곱하기 전 기준 금액. 산식: 시가표준액(공시가격) × 공정시장가액비율. 근거: 지방세법 §110.',
+      },
+      {
+        name: '공정시장가액비율',
+        description:
+          '과세표준 산정 시 시가표준액에 곱하는 비율. 주택 60%, 토지·건축물 70%. 지방세법 §110 과세표준 산정 기준에 따름.',
+      },
+      {
+        name: '1세대1주택 특례세율',
+        description:
+          '공시가격 9억 원 이하 1세대1주택에 적용되는 재산세 우대 세율(일반 세율의 약 절반 수준). 근거: 지방세법 §111의2.',
+        url: 'https://www.wetax.go.kr',
+      },
+      {
+        name: '도시지역분',
+        description:
+          '도시계획구역 내 부동산에 재산세와 함께 부과되는 과세. 과세표준 × 0.14%. 근거: 지방세법 §112.',
+      },
+      {
+        name: '과세기준일',
+        description:
+          '재산세 납세의무자를 판정하는 기준일(매년 6월 1일). 이 날의 소유자가 그 해 재산세 전액을 부담. 근거: 지방세법 §114.',
+      },
+    ],
+  });
 
   return (
     <>
@@ -163,6 +199,10 @@ export default function PropertyTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">

@@ -354,6 +354,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.4,
     },
+    // 계산기 위젯 임베드 허브 (백링크 유도 + "계산기 위젯" 키워드 유입)
+    {
+      url: `${BASE}/embed-widgets/`,
+      lastModified: pageLastModified('src/app/embed-widgets/page.tsx'),
+      changeFrequency: 'monthly' as const,
+      priority: 0.5,
+    },
     // 가이드 개별 게시물
     ...GUIDE_SLUGS.map((slug) => ({
       url: `${BASE}/guide/${slug}/`,
