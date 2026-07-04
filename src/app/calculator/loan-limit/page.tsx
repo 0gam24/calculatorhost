@@ -284,6 +284,50 @@ export default function LoanLimitPage() {
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
+              {/* 답변형 H2 — 연소득별 최대 대출한도 대안·비교 (검증값: src/lib/finance/loan-limit.ts) */}
+              <section aria-label="연소득별 최대 대출한도" className="card">
+                <h2 className="text-2xl font-bold">연소득별 최대 대출한도는 얼마인가요?</h2>
+                <p className="mt-3 text-text-secondary" data-speakable>
+                  연소득 5,000만 원이면 스트레스 DSR 40% 기준 최대 약 2.78억 원을 빌릴 수 있습니다(30년 원리금균등·스트레스 금리 6%·기존 대출 0 기준). 한도는 연소득에 거의 비례해 늘어납니다.
+                </p>
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 연소득별 최대 대출한도 (스트레스 DSR 40%·30년 원리금균등·스트레스 금리 6%·기존 대출 0)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">연소득</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">최대 대출한도</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">3,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 1.67억 원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">5,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2.78억 원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">7,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3.89억 원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">1억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 5.56억 원</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">1.5억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 8.34억 원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  * 실제 한도는 LTV(담보인정비율)·방공제·기존 대출·개별 심사에 따라 더 낮아질 수 있습니다. 본인 조건의 정확한 한도는 위 계산기로 확인하세요.
+                </p>
+              </section>
+
               {/* AD-4 Infeed (본문 중간) */}
               <InfeedAd slot="loan-limit-infeed" />
 

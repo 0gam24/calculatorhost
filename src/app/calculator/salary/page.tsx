@@ -270,6 +270,58 @@ export default function SalaryPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
+              {/* 답변형 H2 — 연봉별 월 실수령 대안·비교 (검증값: src/lib/tax/income.ts) */}
+              <section aria-label="연봉별 월 실수령액" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">연봉별 월 실수령액은 얼마인가요?</h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  연봉 5,000만 원이면 월 실수령액은 약 344만 원입니다(부양가족 1인·식대 비과세 월 20만 원·자녀 0 기준). 연봉이 오를수록 4대보험과 소득세 누진으로 실수령 증가폭은 완만해집니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 연봉별 월 실수령액 (부양 1인·식대 비과세 월 20만·자녀 0, 2026 기준)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">연봉</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">월 실수령액</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">3,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 217만 원 (2,174,407원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">4,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 281만 원 (2,812,495원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">5,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 344만 원 (3,443,710원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">6,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 407만 원 (4,068,055원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">7,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 467만 원 (4,668,873원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">8,000만 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 522만 원 (5,219,188원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">1억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 639만 원 (6,386,120원)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  * 이 표는 식대 비과세(월 20만 원)를 반영한 값으로, 위의 &lsquo;세전 월급별&rsquo; 표(비과세 미적용)와 가정 기준이 다릅니다. 본인 조건의 정확한 실수령액은 위 계산기로 확인하세요.
+                </p>
+              </section>
+
               {/* AD-4 Infeed (본문 중간) */}
               <InfeedAd slot="salary-infeed" />
 

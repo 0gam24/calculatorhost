@@ -299,6 +299,51 @@ export default function TransferTaxPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
+              {/* 답변형 H2 — 12억 초과 비례과세 대안·비교 (검증값: src/lib/tax/transfer.ts) */}
+              <section aria-label="12억 초과 양도세" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">1세대1주택인데 양도가액이 12억을 넘으면 세금이 얼마인가요?</h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  1세대1주택은 양도가액 12억 원까지 비과세이고 12억을 초과하는 부분에만 과세되므로, 실제 세액은 생각보다 작습니다. 예를 들어 15억 원에 팔아도(취득 10억·10년 보유·거주) 양도세는 약 150만 원 수준입니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 1세대1주택 12억 초과 양도가액별 세액 (취득가 10억, 10년 보유·거주로 장기보유특별공제 80%·기본공제 250만 적용)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">양도가액</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">과세표준</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">양도세+지방세 총액</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">13억 원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">2,115,385원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 14만 원 (139,610원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">15억 원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">17,500,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 150만 원 (1,501,500원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">20억 원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">77,500,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 1,412만 원 (14,124,000원)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">30억 원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">237,500,000원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 7,734만 원 (77,341,000원)</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  * 취득가액과 보유·거주 기간(장기보유특별공제율), 기본공제에 따라 세액이 달라집니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
+                </p>
+              </section>
+
               {/* AD-4 Infeed (본문 중간) */}
               <InfeedAd slot="capital-gains-tax-infeed" />
 

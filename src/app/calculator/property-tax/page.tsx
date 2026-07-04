@@ -259,6 +259,56 @@ export default function PropertyTaxPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
+              {/* 답변형 H2 — 공시가별 연 재산세 대안·비교 (검증값: src/lib/tax/property.ts) */}
+              <section aria-label="공시가격별 연 재산세" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">공시가격별 재산세는 1년에 얼마인가요?</h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  공시가격 6억 원(1세대1주택 특례 적용)이면 연 재산세는 약 126만 원입니다. 공시가격이 9억 원을 넘으면 1세대1주택 특례가 적용되지 않아 세액이 더 커집니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 공시가격별 연 재산세 총납부액 (1세대1주택 특례·도시지역·공정시장가액비율 60%)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">공시가격</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">연 총납부액</th>
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">비고</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">3억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 47만 원 (468,000원)</td>
+                        <td className="px-4 py-2">특례 적용</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">6억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 126만 원</td>
+                        <td className="px-4 py-2">특례 적용</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">9억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 227만 원</td>
+                        <td className="px-4 py-2">특례 마지막 구간</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">12억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 371만 원 (3,708,000원)</td>
+                        <td className="px-4 py-2">특례 미적용(상한 9억 초과)</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2 text-right tabular-nums">15억 원</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 482만 원 (4,824,000원)</td>
+                        <td className="px-4 py-2">특례 미적용</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  * 재산세 본세에 도시지역분과 지방교육세(본세의 20%)를 포함한 연 총납부액이며, 세부담상한이 별도로 적용될 수 있습니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
+                </p>
+              </section>
+
               <RateBarChart
                 title="재산세 일반 세율 — 과세표준 구간별 (지방세법 §111)"
                 caption="주택 재산세 일반세율은 과세표준(공시가격×60%) 구간별로 0.1%에서 0.4%까지 누진 적용됩니다. 1세대1주택(공시 9억 이하)은 특례로 약 절반 세율이 적용되고, 지방교육세 20%가 별도 가산됩니다."

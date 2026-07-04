@@ -261,6 +261,50 @@ export default function AcquisitionTaxPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
+              {/* 답변형 H2 — 취득 원인별(매매·증여·상속) 대안·비교 (검증값: src/lib/tax/acquisition.ts) */}
+              <section aria-label="취득 원인별 취득세 비교" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">같은 집이라도 매매·증여·상속에 따라 취득세가 다른가요?</h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  네, 취득 원인에 따라 크게 다릅니다. 5억 원 주택(85㎡ 이하·비조정·1주택)의 취득세는 매매 550만 원, 상속 1,540만 원, 증여 1,925만 원으로, 세율이 각각 1.0%·2.8%·3.5%이기 때문입니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 취득 원인별 취득세 비교 (주택 5억 원·85㎡ 이하·비조정대상지역·1주택)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">취득 원인</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">세율</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">취득세+지방교육세</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">신고·납부 기한</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2">매매</td>
+                        <td className="px-4 py-2 text-right tabular-nums">1.0%</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">550만 원 (본세 500 + 지방교육세 50)</td>
+                        <td className="px-4 py-2 text-right">취득일부터 60일</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2">상속</td>
+                        <td className="px-4 py-2 text-right tabular-nums">2.8%</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">1,540만 원 (본세 1,400 + 지방교육세 140)</td>
+                        <td className="px-4 py-2 text-right">상속개시월 말일부터 6개월</td>
+                      </tr>
+                      <tr className="border border-border-base hover:bg-bg-card/50">
+                        <td className="px-4 py-2">증여</td>
+                        <td className="px-4 py-2 text-right tabular-nums">3.5%</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">1,925만 원 (본세 1,750 + 지방교육세 175)</td>
+                        <td className="px-4 py-2 text-right">취득일이 속한 달 말일부터 3개월</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-xs text-text-tertiary">
+                  * 85㎡ 초과 시 농어촌특별세(0.2%)가 별도 가산되며, 다주택·조정대상지역은 중과세율(8~12%)이 적용됩니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
+                </p>
+              </section>
+
               <RateBarChart
                 title="취득세율 — 주택 수·가격별 (지방세법 §11)"
                 caption="취득세는 주택 수와 가격에 따라 세율이 크게 달라집니다. 1주택은 6억 이하 1.0%, 6~9억 1~3%, 9억 초과 3.0%이지만, 조정대상지역 2주택은 8%, 3주택 이상은 12%로 중과됩니다. 85㎡ 초과는 농특세, 지방교육세도 별도 가산됩니다."
