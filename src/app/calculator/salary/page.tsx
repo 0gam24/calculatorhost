@@ -349,58 +349,58 @@ export default function SalaryPage() {
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">2,000,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">2,400만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−180,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−10,500</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 1,810,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−188,081</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−75,070</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">1,736,849원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">2,500,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,000만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−225,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−48,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2,270,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−235,101</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−142,300</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,122,599원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">3,000,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,600만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−270,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−85,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2,690,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−282,121</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−212,430</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,505,449원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">3,300,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,960만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−297,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−110,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 2,930,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−310,333</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−254,500</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,735,167원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">3,500,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">4,200만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−315,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−135,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3,090,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−329,141</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−282,550</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,888,309원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">4,000,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">4,800만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−360,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−210,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3,470,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−376,163</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−356,800</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">3,267,037원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">4,500,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">5,400만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−405,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−290,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 3,860,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−423,183</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−435,180</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">3,641,637원</td>
                       </tr>
                       <tr className="border border-border-base hover:bg-bg-card/50">
                         <td className="px-4 py-2 text-right tabular-nums">5,000,000원</td>
                         <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">6,000만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−450,000</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−385,000</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 4,200,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−470,203</td>
+                        <td className="px-4 py-2 text-right tabular-nums">−513,550</td>
+                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">4,016,247원</td>
                       </tr>
                     </tbody>
                   </table>
