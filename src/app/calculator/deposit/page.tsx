@@ -9,6 +9,7 @@ const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => (
 });
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { MathFormula } from '@/components/seo/MathFormula';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import {
   buildSoftwareApplicationJsonLd,
@@ -474,6 +475,11 @@ export default function DepositPage() {
                   </li>
                   <li>
                     <strong>월복리 정기예금</strong>
+                    <MathFormula
+                      display
+                      className="my-2 rounded bg-bg-raised p-3 text-base"
+                      latex={String.raw`A = P(1+r)^{n}`}
+                    />
                     <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
                       월이자율 r = 연이자율 ÷ 100 ÷ 12<br />
                       만기원리금 = 원금 × (1+r)^n<br />

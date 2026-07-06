@@ -16,6 +16,7 @@ import {
   getCategoryUrlForCalculator,
 } from '@/lib/seo/jsonld';
 import { SavingsCalculator } from './SavingsCalculator';
+import { MathFormula } from '@/components/seo/MathFormula';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
@@ -362,6 +363,11 @@ export default function SavingsPage() {
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>단리 정기적금</strong>
+                    <MathFormula
+                      display
+                      className="my-2 rounded bg-bg-raised p-3 text-base"
+                      latex={String.raw`I = M \times \frac{r}{100} \times \dfrac{n(n+1)}{2} \times \dfrac{1}{12}`}
+                    />
                     <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
                       세전 이자 = 월납입금 × (연이자율 ÷ 100) × n × (n+1) ÷ 2 ÷ 12<br />
                       n = 가입 개월수
@@ -374,6 +380,11 @@ export default function SavingsPage() {
                   </li>
                   <li>
                     <strong>월복리 정기적금</strong>
+                    <MathFormula
+                      display
+                      className="my-2 rounded bg-bg-raised p-3 text-base"
+                      latex={String.raw`A = M \times \dfrac{(1+r)^{n}-1}{r} \times (1+r)`}
+                    />
                     <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
                       월이자율 r = 연이자율 ÷ 12 ÷ 100<br />
                       만기 원리금 = 월납입금 × ((1+r)^n - 1) ÷ r × (1+r)<br />

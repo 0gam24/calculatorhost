@@ -16,6 +16,8 @@ import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrl } from '@/lib/network/main-backref';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
+import { MathFormula } from '@/components/seo/MathFormula';
+import { TermTooltip } from '@/components/ui/TermTooltip';
 import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
 import bokRates from '@/data/bok-rates.json';
 
@@ -215,6 +217,11 @@ export default function DtiPage() {
 
               <section className="card space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">DTI 공식</h2>
+                <MathFormula
+                  display
+                  className="rounded-md bg-bg-card p-4 text-base"
+                  latex={String.raw`DTI(\%) = \dfrac{\text{신규 대출 연 원리금} + \text{기존 대출 연 이자}}{\text{연소득}} \times 100`}
+                />
                 <pre className="overflow-x-auto rounded-md bg-bg-card p-4 text-sm">
                   <code>{`DTI(%) = (신규 대출 연 원리금 + 기존 대출 연 이자) ÷ 연소득 × 100
 
@@ -227,9 +234,20 @@ DTI 한도 (2026):
   - 조정·투기과열지역:    40%`}</code>
                 </pre>
                 <p className="text-sm text-text-secondary">
-                  계산 결과가 한도 안쪽이어도, 같은 차주의 DSR·LTV 가 더 빠듯하면 실 한도는
-                  DSR·LTV 기준으로 결정됩니다. 통합 계산기를 통해 결정적 제약(bindingConstraint)
-                  을 확인하는 것이 안전합니다.
+                  계산 결과가 한도 안쪽이어도, 같은 차주의{' '}
+                  <TermTooltip
+                    term="DSR"
+                    definition="총부채원리금상환비율 — 연소득 대비 '모든 대출'의 연간 원리금 상환액 비율. 은행 40%, 제2금융권 50% 한도."
+                    href="/glossary/#dsr"
+                  />
+                  ·
+                  <TermTooltip
+                    term="LTV"
+                    definition="담보인정비율 — 담보(주택) 가치 대비 대출금 비율. 지역·실수요 여부에 따라 50~80% 한도."
+                    href="/glossary/#ltv"
+                  />{' '}
+                  가 더 빠듯하면 실 한도는 DSR·LTV 기준으로 결정됩니다. 통합 계산기를 통해 결정적
+                  제약(bindingConstraint)을 확인하는 것이 안전합니다.
                 </p>
               </section>
 

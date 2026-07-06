@@ -18,6 +18,7 @@ import {
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { LoanCalculator } from './LoanCalculator';
+import { MathFormula } from '@/components/seo/MathFormula';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
@@ -105,7 +106,7 @@ export default function LoanInterestPage() {
     description: '상환방식별 월상환액과 총이자를 즉시 비교 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-07-06',
     isPartOf: getCategoryUrlForCalculator('loan'),
   });
   const howToLd = buildHowToJsonLd({
@@ -210,7 +211,7 @@ export default function LoanInterestPage() {
                   대출 실행 전 상환방식별 월 부담액·총 이자·원리금 내역을 비교하여 상환 계획을 세우세요.
                   원리금균등·원금균등·만기일시 세 가지 상환 방식과 거치 기간을 반영하여 정확한 스케줄을 즉시 계산합니다.
                 </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-07-06" />
               </header>
 
               {/* GEO/AEO Structured Summary */}
@@ -241,6 +242,46 @@ export default function LoanInterestPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              {/* 금리에 따른 월 상환액 비교 — 답변형 H2 */}
+              <section aria-label="금리별 상환액 비교" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">금리에 따라 월 상환액이 얼마나 달라지나요?</h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  3억 원을 30년 원리금균등으로 빌릴 때 금리가 3.5%에서 5.0%로 오르면 월 상환액은 약 135만 원에서 약 161만 원으로, 총이자는 약 9,480만 원 늘어납니다.
+                </p>
+                <div className="mb-4 overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <caption className="mb-2 text-sm font-semibold text-text-primary">3억 원 · 30년 · 원리금균등 · 거치 0개월 기준</caption>
+                    <thead>
+                      <tr className="border-b border-border-base">
+                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">금리</th>
+                        <th scope="col" className="px-4 py-3 text-right font-semibold text-text-secondary">월 상환액</th>
+                        <th scope="col" className="px-4 py-3 text-right font-semibold text-text-secondary">총 이자</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border-subtle">
+                        <td className="px-4 py-3 font-medium">3.5%</td>
+                        <td className="px-4 py-3 text-right font-mono tabular-nums text-text-primary">1,347,134원</td>
+                        <td className="px-4 py-3 text-right font-mono tabular-nums text-text-secondary">약 1.85억 원</td>
+                      </tr>
+                      <tr className="border-b border-border-subtle">
+                        <td className="px-4 py-3 font-medium">4.5%</td>
+                        <td className="px-4 py-3 text-right font-mono tabular-nums text-text-primary">1,520,056원</td>
+                        <td className="px-4 py-3 text-right font-mono tabular-nums text-text-secondary">약 2.47억 원</td>
+                      </tr>
+                      <tr className="border-b border-border-subtle">
+                        <td className="px-4 py-3 font-medium">5.0%</td>
+                        <td className="px-4 py-3 text-right font-mono tabular-nums text-text-primary">1,610,465원</td>
+                        <td className="px-4 py-3 text-right font-mono tabular-nums text-text-secondary">약 2.80억 원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-sm text-text-secondary">
+                  예: 5억 원을 20년 3.5% 원리금균등으로 빌릴 경우 월 상환액은 약 290만 원(2,899,799원)입니다. 본인 조건의 정확한 계산은 위 계산기를 사용해 주세요.
+                </p>
+              </section>
 
               {/* 대출이란 무엇인가 */}
               <section aria-label="대출 개념" className="card">
@@ -310,6 +351,11 @@ export default function LoanInterestPage() {
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>원리금균등상환</strong>
+                    <MathFormula
+                      display
+                      className="my-2 rounded bg-bg-raised p-3 text-base"
+                      latex={String.raw`M = P \times \dfrac{r(1+r)^{n}}{(1+r)^{n}-1}`}
+                    />
                     <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
                       월상환액 = P × r × (1+r)^n / ((1+r)^n - 1)<br />
                       P = 대출원금, r = 월이자율(연이자율÷12÷100), n = 총개월수
@@ -405,6 +451,54 @@ export default function LoanInterestPage() {
                 canonicalPath="/calculator/loan/"
                 title="대출이자 계산기"
               />
+
+              {/* 📚 함께 보면 좋은 가이드 */}
+              <section
+                aria-label="관련 가이드"
+                className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-6 space-y-4"
+              >
+                <h2 className="text-xl font-semibold flex items-center gap-2">
+                  <span>📚</span> 함께 보면 좋은 가이드
+                </h2>
+                <ul className="space-y-3 text-sm">
+                  <li>
+                    <a href="/guide/equal-payment-vs-equal-principal-2026/" className="text-primary-500 hover:underline font-semibold">
+                      원리금균등 vs 원금균등 — 어느 쪽이 유리한가?
+                    </a>
+                    <p className="mt-1 text-text-secondary">초기 부담과 총 이자를 비교하여 최적의 상환방식을 선택하는 방법</p>
+                  </li>
+                  <li>
+                    <a href="/guide/mortgage-fixed-vs-variable-rate-2026/" className="text-primary-500 hover:underline font-semibold">
+                      고정금리 vs 변동금리 선택 기준
+                    </a>
+                    <p className="mt-1 text-text-secondary">금리 인상기 vs 인하기에 맞춘 금리 선택 전략</p>
+                  </li>
+                  <li>
+                    <a href="/guide/mortgage-refinance-savings-2026/" className="text-primary-500 hover:underline font-semibold">
+                      대환대출로 이자 절약하기
+                    </a>
+                    <p className="mt-1 text-text-secondary">중도상환수수료를 고려한 대환 시점 판단</p>
+                  </li>
+                  <li>
+                    <a href="/guide/credit-score-loan-interest-rate-2026/" className="text-primary-500 hover:underline font-semibold">
+                      신용점수와 대출금리의 관계
+                    </a>
+                    <p className="mt-1 text-text-secondary">신용등급에 따른 금리 차이 및 신용관리 방법</p>
+                  </li>
+                  <li>
+                    <a href="/guide/prepayment-penalty-fee-2026/" className="text-primary-500 hover:underline font-semibold">
+                      중도상환수수료 계산 및 피하는 법
+                    </a>
+                    <p className="mt-1 text-text-secondary">상품별 수수료 체계와 유리한 상환 시점</p>
+                  </li>
+                  <li>
+                    <a href="/guide/dsr-dti-ltv-difference-2026/" className="text-primary-500 hover:underline font-semibold">
+                      DSR·DTI·LTV의 차이와 대출한도
+                    </a>
+                    <p className="mt-1 text-text-secondary">월 상환액이 아니라 최대 얼마까지 빌릴 수 있는지 확인하려면 <a href="/calculator/loan-limit/" className="underline">DSR 계산기</a>를 이용하세요</p>
+                  </li>
+                </ul>
+              </section>
 
               {/* 관련 계산기 */}
               <RelatedCalculators items={RELATED} />

@@ -10,6 +10,7 @@ import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import { RateBarChart } from '@/components/charts/RateBarChart';
+import { MathFormula } from '@/components/seo/MathFormula';
 import { DataFreshness } from '@/components/ui/DataFreshness';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
@@ -427,6 +428,11 @@ export default function LoanLimitPage() {
                   2026년부터는 변동금리·혼합형·주기형 주택담보대출에 <strong>스트레스 DSR 1.5%p가
                   전면 적용</strong>됩니다. 이때 대출 한도는 다음 공식으로 산출합니다.
                 </p>
+                <MathFormula
+                  display
+                  className="rounded-lg border border-border-base bg-bg-card p-4 text-base"
+                  latex={String.raw`DSR(\%) = \dfrac{\text{신규 월 원리금} \times 12 + \text{기존 모든 대출 연 원리금}}{\text{연소득}} \times 100 \le 40`}
+                />
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 font-mono text-sm">
                   DSR = (신규 월 원리금 × 12 + 기존 모든 대출 연 원리금) ÷ 연소득 × 100 ≤ 40%
                 </div>
