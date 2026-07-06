@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 interface GlossarySection {
   category: string;
   description: string;
-  terms: Array<DefinedTermEntry & { relatedCalculator?: { href: string; label: string } }>;
+  terms: Array<DefinedTermEntry & { relatedCalculator?: { href: string; label: string }; anchorId?: string }>;
 }
 
 const GLOSSARY: GlossarySection[] = [
@@ -64,6 +64,7 @@ const GLOSSARY: GlossarySection[] = [
           'Debt Service Ratio. 모든 금융권 대출의 연간 원리금 상환액을 연소득으로 나눈 비율. 은행 40%, 2금융권 50% 이하로 규제. 산식: (신규+기존 모든 대출 연원리금) ÷ 연소득 × 100. 근거: 은행법 시행령 §24의4.',
         url: 'https://www.fss.or.kr',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
+        anchorId: 'dsr',
       },
       {
         name: 'LTV (담보인정비율)',
@@ -72,6 +73,7 @@ const GLOSSARY: GlossarySection[] = [
           'Loan To Value. 대출액을 담보가치로 나눈 비율. 비규제 70%, 조정·투기과열 50%, 생애최초·서민실수요 80%. 산식: 신규 대출액 ÷ 담보가치(주택가격) × 100.',
         url: 'https://www.fss.or.kr',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
+        anchorId: 'ltv',
       },
       {
         name: 'DTI (부채상환비율)',
@@ -79,24 +81,28 @@ const GLOSSARY: GlossarySection[] = [
         description:
           'Debt To Income ratio. 신규 대출 원리금과 기존 대출 이자를 합산해 연소득으로 나눈 비율. 규제지역 40%, 비규제지역 50%. DSR과 달리 기존 대출은 이자만 포함.',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
+        anchorId: 'dti',
       },
       {
         name: '스트레스 DSR',
         description:
           '변동금리·혼합형·주기형 대출의 DSR 산정 시 현재 금리에 1.5%p(2026년 풀 적용)를 가산해 부담 능력을 보수적으로 평가하는 제도. 시행: 2024년 2월 도입 → 2026년 전면 적용.',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
+        anchorId: 'stress-dsr',
       },
       {
         name: '원리금균등상환',
         description:
           '대출 원금과 이자를 합한 월 상환액이 매월 동일한 방식. 초기엔 이자 비중이 높고 후기엔 원금 비중이 높아짐. 가장 흔한 주담대 상환 방식.',
         relatedCalculator: { href: '/calculator/loan/', label: '대출이자 계산기' },
+        anchorId: 'equal-principal-interest',
       },
       {
         name: '이자소득세',
         description:
           '예금·적금·채권 등 이자 수익에 부과되는 세금. 14% (이자소득세) + 1.4% (지방소득세) = 15.4% 원천징수.',
         relatedCalculator: { href: '/calculator/savings/', label: '적금 이자 계산기' },
+        anchorId: 'interest-income-tax',
       },
     ],
   },
@@ -109,6 +115,7 @@ const GLOSSARY: GlossarySection[] = [
         description:
           '양도가액에서 취득가액·필요경비(중개수수료, 세금 등)를 뺀 금액. 양도소득세 과세 표준의 출발점. 산식: 양도가액 − 취득가액 − 필요경비 − 장기보유특별공제.',
         relatedCalculator: { href: '/calculator/capital-gains-tax/', label: '양도소득세 계산기' },
+        anchorId: 'capital-gain',
       },
       {
         name: '장기보유특별공제',
@@ -117,12 +124,14 @@ const GLOSSARY: GlossarySection[] = [
           '부동산을 일정 기간 이상 보유한 경우 양도차익에서 공제하는 제도. 일반 부동산 3년 이상 6~30%, 1세대1주택 8~80%(최대 80%). 근거: 소득세법 §95.',
         url: 'https://www.nts.go.kr',
         relatedCalculator: { href: '/calculator/capital-gains-tax/', label: '양도소득세 계산기' },
+        anchorId: 'long-term-ownership-deduction',
       },
       {
         name: '1세대1주택 비과세',
         description:
           '1세대가 1주택만 보유하고 2년 이상 보유(조정대상지역 거주 2년 이상) 후 양도 시 양도차익 비과세. 양도가액 12억 원 초과분은 과세. 근거: 소득세법 §89.',
         relatedCalculator: { href: '/calculator/capital-gains-tax/', label: '양도소득세 계산기' },
+        anchorId: 'one-home-exemption',
       },
       {
         name: '농어촌특별세',
@@ -130,39 +139,46 @@ const GLOSSARY: GlossarySection[] = [
         description:
           '취득세·증여세 등에 부가되는 국세. 표준세율 0.2% (감면 대상은 다른 비율). 근거: 농어촌특별세법.',
         relatedCalculator: { href: '/calculator/acquisition-tax/', label: '취득세 계산기' },
+        anchorId: 'rural-special-tax',
       },
       {
         name: '공정시장가액비율',
         description:
           '재산세·종합부동산세 과세표준 산정 시 공시가격에 곱하는 비율. 2026년 주택 60% 유지. 산식: 공시가격 × 공정시장가액비율 = 과세표준.',
         relatedCalculator: { href: '/calculator/property-tax/', label: '재산세 계산기' },
+        anchorId: 'fair-market-value-ratio',
       },
       {
         name: '조정대상지역',
         description:
           '주택 가격·청약경쟁률·매매거래 등이 과열된 지역. 양도세 중과·취득세 중과·LTV 50% 등 강화된 규제 적용. 국토교통부 지정·해제. 2026년 5월 기준 서울 강남·서초·송파·용산구 일부.',
         url: 'https://www.molit.go.kr',
+        anchorId: 'regulation-zone',
       },
       {
         name: '투기과열지구',
         description:
           '조정대상지역의 상위 개념. 가격 급등·투기 우려 지역. LTV 40% (생애최초 60%), 9억 초과 주택 추가 제한, DSR 가장 엄격. 근거: 주택법 §63.',
+        anchorId: 'speculation-zone',
       },
       {
         name: '비사업용 토지',
         description:
           '사업에 사용되지 않는 나대지·임야 등. 양도세 누진세율에 +10%p 가산 (소득세법 §104의3). 사업용으로 인정받으려면 임대·경작·자영 등 실제 사용 입증 필요.',
+        anchorId: 'non-business-land',
       },
       {
         name: '자경 농지 감면',
         description:
           '8년 이상 직접 경작 + 농지 소재지 거주 시 양도세 100% 감면 (조세특례제한법 §69). 한도: 연 1억, 5년 합 2억. 농지원부·자경증명서로 입증.',
+        anchorId: 'self-farming-reduction',
       },
       {
         name: '환산보증금',
         description:
           '주택임대차보호법상 임대차계약의 모든 보증금을 합산한 금액. 산식: 보증금 + (월세 × 100). 환산보증금이 일정 금액 초과 시 일부 보호 규정 적용 안 됨 (서울 6.5억, 광역 5억 등). 근거: 주택임대차보호법 §8.',
         relatedCalculator: { href: '/calculator/rent-conversion/', label: '전월세 전환 계산기' },
+        anchorId: 'converted-deposit',
       },
       {
         name: '이월과세',
@@ -171,6 +187,7 @@ const GLOSSARY: GlossarySection[] = [
           '배우자·직계존비속에게 증여받은 자산을 일정 기간 내 제3자에게 양도할 때, 양도자(수증자)가 증여 시점 시가가 아닌 증여자 원래 취득가액으로 양도가를 계산하는 제도. 2024년까지 5년, 2025-01-01 이후 증여분부터 10년 적용. 1세대1주택 비과세·5년/10년 경과·수증자 사망 후 상속 양도·수용은 면제. 근거: 소득세법 §97의2.',
         url: 'https://www.law.go.kr',
         relatedCalculator: { href: '/calculator/capital-gains-tax/', label: '양도소득세 계산기' },
+        anchorId: 'carry-forward-taxation',
       },
       {
         name: '저가양수도',
@@ -179,6 +196,7 @@ const GLOSSARY: GlossarySection[] = [
           '특수관계인(부모-자녀 등) 간 거래에서 시가와 거래가의 차액이 시가의 30% 이상 AND 3억 원 이상이면 저가양수도로 판정되어 차액에서 min(시가 30%, 3억)을 차감한 가액이 증여세 과세 대상. 또한 양도자에게는 소득세법 §101 부당행위계산 부인 규정에 따라 시가 기준 양도세가 부과됨. 근거: 상증법 §35 ① + 시행령 §26.',
         url: 'https://www.law.go.kr',
         relatedCalculator: { href: '/calculator/gift-tax/', label: '증여세 계산기' },
+        anchorId: 'undervalued-transfer',
       },
       {
         name: '부담부증여',
@@ -187,6 +205,7 @@ const GLOSSARY: GlossarySection[] = [
           '채무(전세보증금·은행 대출 등)와 함께 자산을 무상 이전하는 거래. 채무인수액은 양도소득세, 무상분(자산가액 − 채무인수액)은 증여세로 분리 과세되어 단순 증여보다 절세 효과. 단 가족 간 거래는 자녀의 채무 변제 자금 출처를 입증해야 하며, 임차인 동의·은행 명의 변경 등 채권자 동의 절차 필수. 근거: 상증법 §47 ②, 민법 §453·§454.',
         url: 'https://www.law.go.kr',
         relatedCalculator: { href: '/calculator/gift-tax/', label: '증여세 계산기' },
+        anchorId: 'debt-bearing-gift',
       },
     ],
   },
@@ -200,6 +219,7 @@ const GLOSSARY: GlossarySection[] = [
         description:
           '보유 종목의 매입 단가를 가중평균한 값. 산식: Σ(매입가 × 매입수량) ÷ 총 보유수량. 분할매도 후에도 잔여분 평단은 변하지 않음.',
         relatedCalculator: { href: '/calculator/averaging-down/', label: '물타기 계산기' },
+        anchorId: 'average-unit-price',
       },
       {
         name: '물타기 (Averaging Down)',
@@ -207,6 +227,7 @@ const GLOSSARY: GlossarySection[] = [
         description:
           '보유 종목 가격이 하락했을 때 추가 매수해 평균단가를 낮추는 전략. 손익분기점이 낮아져 회복에 필요한 상승률 감소. 추가 하락 시 손실 가중 위험.',
         relatedCalculator: { href: '/calculator/averaging-down/', label: '물타기 계산기' },
+        anchorId: 'averaging-down',
       },
       {
         name: '분할매수 (DCA)',
@@ -214,6 +235,7 @@ const GLOSSARY: GlossarySection[] = [
         description:
           '한 종목을 한 번에 매수하지 않고 여러 차수에 나눠 매수하는 전략. 시점 분산으로 평균단가 안정화, 단기 변동성 부담 완화.',
         relatedCalculator: { href: '/calculator/split-buy/', label: '분할매수 계산기' },
+        anchorId: 'dollar-cost-averaging',
       },
       {
         name: '손익분기점 (BEP)',
@@ -221,6 +243,7 @@ const GLOSSARY: GlossarySection[] = [
         description:
           'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식 매도 시 거래세 0.18% 추가 부담.',
         relatedCalculator: { href: '/calculator/split-buy/', label: '분할매수 계산기' },
+        anchorId: 'break-even-point',
       },
       {
         name: '증권거래세',
@@ -228,6 +251,7 @@ const GLOSSARY: GlossarySection[] = [
           '한국 주식 매도 시 부과되는 세금. 2026년 코스피·코스닥 모두 0.18% (농어촌특별세 0.15% + 거래세 0.03%). 코인은 거래세 없음.',
         url: 'https://www.nts.go.kr',
         relatedCalculator: { href: '/calculator/split-sell/', label: '분할매도 계산기' },
+        anchorId: 'securities-transaction-tax',
       },
     ],
   },
@@ -240,23 +264,27 @@ const GLOSSARY: GlossarySection[] = [
         description:
           '근로자·사업자가 의무 가입하는 사회보험 4종: 국민연금(9%), 건강보험(7.09%), 장기요양보험(0.9182% × 건강보험), 고용보험(0.9% 근로자), 산재보험(전액 사업주). 일반직은 회사 50% 부담, 프리랜서는 본인 100% 지역가입자.',
         relatedCalculator: { href: '/calculator/salary/', label: '연봉 실수령액 계산기' },
+        anchorId: 'four-major-insurance',
       },
       {
         name: '단순경비율',
         description:
           '프리랜서·사업자의 종합소득세 산정 시 영수증 없이 업종별 일정 비율을 경비로 인정. 예: IT업 64.1%, 컨설팅 70.1%, 디자인 70%대. 매출 7,500만 미만 자동 적용. 근거: 소득세법 시행령 §143.',
         relatedCalculator: { href: '/calculator/freelancer-tax/', label: '프리랜서 종합소득세 계산기' },
+        anchorId: 'simple-expense-ratio',
       },
       {
         name: '기준경비율',
         description:
           '실제 영수증으로 입증한 경비를 인정. 일반적으로 단순경비율보다 큰 경비 인정 가능. 매출 3억 초과 시 의무 적용. 영수증·세금계산서 보관 필수.',
+        anchorId: 'standard-expense-ratio',
       },
       {
         name: '퇴직소득세',
         description:
           '퇴직금에 부과되는 분리과세 소득세. 근속연수공제 + 환산급여공제로 일반 소득세보다 낮은 세율 적용. 퇴직금이 클수록 세부담 증가. 근거: 소득세법 §22.',
         relatedCalculator: { href: '/calculator/severance/', label: '퇴직금 계산기' },
+        anchorId: 'severance-tax',
       },
     ],
   },
@@ -358,7 +386,7 @@ export default function GlossaryPage() {
                       <div
                         key={term.name}
                         className="card border-l-4 border-l-primary-500"
-                        id={`term-${encodeURIComponent(term.name)}`}
+                        id={term.anchorId || `term-${encodeURIComponent(term.name)}`}
                       >
                         <dt className="mb-2 flex flex-wrap items-baseline gap-2">
                           <h3 className="text-lg font-bold text-text-primary">
