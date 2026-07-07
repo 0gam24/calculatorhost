@@ -133,7 +133,9 @@ const naverAnalyticsId = rawNaverId && /^a\d{10,}$/.test(rawNaverId) ? rawNaverI
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ko-KR">
+    // suppressHydrationWarning: FOUC 방지 인라인 스크립트가 하이드레이션 전 <html data-theme>
+    // 를 설정 → 서버/클라 속성 불일치는 의도된 것이므로 React 경고만 억제(동작 정상)
+    <html lang="ko-KR" suppressHydrationWarning>
       <head>
         {/* Pretendard self-host preload — FOIT 방지·LCP 최적화 */}
         <link

@@ -12,7 +12,7 @@ export function TermTooltip({ term, definition, href }: TermTooltipProps) {
   const [isOpen, setIsOpen] = useState(false);
   const tooltipId = `tooltip-${term.toLowerCase().replace(/\s+/g, '-')}`;
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const tooltipRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLSpanElement>(null);
 
   // Escape 키로 닫기
   useEffect(() => {
@@ -39,8 +39,10 @@ export function TermTooltip({ term, definition, href }: TermTooltipProps) {
     }
   };
 
+  // 인라인(phrasing) 요소만 사용 — 본문 <p> 안에 중첩돼도 유효한 HTML 이 되도록
+  // (div/p 를 <p> 안에 넣으면 브라우저가 <p> 를 자동 종료 → 하이드레이션 불일치 발생)
   return (
-    <div className="relative inline-block">
+    <span className="relative inline-block">
       <button
         ref={buttonRef}
         type="button"
@@ -54,14 +56,14 @@ export function TermTooltip({ term, definition, href }: TermTooltipProps) {
       </button>
 
       {isOpen && (
-        <div
+        <span
           ref={tooltipRef}
           id={tooltipId}
           role="tooltip"
           onBlur={handleBlur}
-          className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 max-w-xs z-50 bg-bg-card border border-border-base rounded-lg shadow-lg p-3 text-sm text-text-secondary whitespace-normal"
+          className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 block max-w-xs z-50 bg-bg-card border border-border-base rounded-lg shadow-lg p-3 text-sm text-text-secondary whitespace-normal"
         >
-          <p className="mb-2">{definition}</p>
+          <span className="mb-2 block">{definition}</span>
           {href && (
             <a
               href={href}
@@ -72,8 +74,8 @@ export function TermTooltip({ term, definition, href }: TermTooltipProps) {
               <span aria-hidden="true">→</span>
             </a>
           )}
-        </div>
+        </span>
       )}
-    </div>
+    </span>
   );
 }
