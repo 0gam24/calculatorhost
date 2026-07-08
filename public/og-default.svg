@@ -3,13 +3,13 @@
   <!-- 배경: 다크 + radial gradient -->
   <defs>
     <radialGradient id="bg" cx="50%" cy="0%" r="80%">
-      <stop offset="0%" stop-color="#9D4EFF" stop-opacity="0.18"/>
-      <stop offset="60%" stop-color="#0A0E1A" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0A0E1A"/>
+      <stop offset="0%" stop-color="#1f7d6b" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#0f1614" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0f1614"/>
     </radialGradient>
     <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00FF88"/>
-      <stop offset="100%" stop-color="#00D4FF"/>
+      <stop offset="0%" stop-color="#2f9b85"/>
+      <stop offset="100%" stop-color="#8fc7ba"/>
     </linearGradient>
     <linearGradient id="card" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="rgba(20,25,40,0.85)"/>
@@ -17,13 +17,13 @@
     </linearGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="#0A0E1A"/>
+  <rect width="1200" height="630" fill="#0f1614"/>
   <rect width="1200" height="630" fill="url(#bg)"/>
 
   <!-- 좌측 글로우 원 -->
-  <circle cx="180" cy="540" r="220" fill="#9D4EFF" opacity="0.2"/>
+  <circle cx="180" cy="540" r="220" fill="#1f7d6b" opacity="0.2"/>
   <!-- 우측 글로우 원 -->
-  <circle cx="1050" cy="100" r="180" fill="#00FF88" opacity="0.2"/>
+  <circle cx="1050" cy="100" r="180" fill="#2f9b85" opacity="0.2"/>
 
   <!-- 카드 -->
   <rect x="80" y="80" width="1040" height="470" rx="32" fill="url(#card)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
@@ -59,13 +59,13 @@
   <!-- 하단 태그 칩 -->
   <g transform="translate(120, 490)">
     <rect x="0" y="0" width="98" height="34" rx="17" fill="rgba(0,255,136,0.12)" stroke="rgba(0,255,136,0.4)" stroke-width="1"/>
-    <text x="49" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#00FF88">무료</text>
+    <text x="49" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#2f9b85">무료</text>
 
     <rect x="110" y="0" width="160" height="34" rx="17" fill="rgba(157,78,255,0.12)" stroke="rgba(157,78,255,0.4)" stroke-width="1"/>
-    <text x="190" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#9D4EFF">회원가입 불필요</text>
+    <text x="190" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#1f7d6b">회원가입 불필요</text>
 
     <rect x="280" y="0" width="148" height="34" rx="17" fill="rgba(0,212,255,0.12)" stroke="rgba(0,212,255,0.4)" stroke-width="1"/>
-    <text x="354" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#00D4FF">모바일 최적화</text>
+    <text x="354" y="22" text-anchor="middle" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="14" font-weight="600" fill="#8fc7ba">모바일 최적화</text>
   </g>
 
   <!-- 우측 하단 도메인 -->

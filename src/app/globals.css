@@ -42,33 +42,34 @@
 }
 
 /* ============================================
-   다크 Fintech 테마 토큰 (ADR-004 참조)
+   딥 틸 그린 테마 토큰 (2026-07-08 리브랜딩, docs/bundle.html 시안)
+   라이트 = 시안 충실 재현 / 다크 = 틸 파생(운영자 승인 — 토글·E2E 골든패스 유지)
    ============================================ */
 @layer base {
   :root[data-theme='dark'] {
-    --bg-base: #272a2f;
-    --bg-card: #2f3238;
-    --bg-raised: #383c44;
-    --bg-sidebar: #1c1f24;
-    --text-primary: #f5f6f8;
-    --text-secondary: #a8adb5;
-    --text-tertiary: #6b7280;
-    --border-base: #3a3e45;
-    --border-subtle: #2f3238;
+    --bg-base: #0f1614;
+    --bg-card: #16211e;
+    --bg-raised: #1e2b27;
+    --bg-sidebar: #0b110f;
+    --text-primary: #eef2f1;
+    --text-secondary: #a9b6b2;
+    --text-tertiary: #7f8c88;
+    --border-base: #27342f;
+    --border-subtle: #1c2723;
     color-scheme: dark;
   }
 
   :root[data-theme='light'] {
-    --bg-base: #f7f8fa;
+    --bg-base: #f4f7f8;
     --bg-card: #ffffff;
-    --bg-raised: #f0f2f5;
-    --bg-sidebar: #f0f2f5;
-    --text-primary: #1a1d21;
-    --text-secondary: #3f4651;
-    /* WCAG AA: #4b5563 vs #ffffff = 7.56:1, vs #f7f8fa = 7.16:1 (이전 #6b7280 = 4.55 borderline) */
-    --text-tertiary: #4b5563;
-    --border-base: #e5e7eb;
-    --border-subtle: #f0f2f5;
+    --bg-raised: #e9edf0;
+    --bg-sidebar: #fafcfc;
+    --text-primary: #0e1720;
+    --text-secondary: #2a3742;
+    /* WCAG AA: #5f6b76 vs #ffffff ≈ 5.7:1, vs #f4f7f8 ≈ 5.3:1 */
+    --text-tertiary: #5f6b76;
+    --border-base: #e2e7ea;
+    --border-subtle: #e9edf0;
     color-scheme: light;
   }
 
@@ -166,7 +167,7 @@
 
   /* Hero 그라데이션 텍스트 */
   .hero-gradient {
-    background: linear-gradient(135deg, #595FF7 0%, #8EC9DC 100%);
+    background: linear-gradient(135deg, #1f7d6b 0%, #2f9b85 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;

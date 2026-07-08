@@ -18,13 +18,13 @@ const ROOT = process.cwd();
 const SVG_PATH = resolve(ROOT, 'public/og-default.svg');
 const DEFAULT_PNG = resolve(ROOT, 'public/og-default.png');
 
-// 카테고리 색상 매핑 (디자인 시스템 토큰)
+// 카테고리 색상 매핑 (2026-07-08 리브랜딩 — 딥 틸 그린 + 골드, docs/bundle.html 시안)
 const CATEGORY_ACCENT = {
-  근로: { from: '#00FF88', to: '#00D4FF', label: '근로·소득' },
-  세금: { from: '#FF6B9D', to: '#9D4EFF', label: '세금·세무' },
-  금융: { from: '#00D4FF', to: '#595FF7', label: '금융·대출' },
-  부동산: { from: '#F7C159', to: '#FF6B9D', label: '부동산' },
-  생활: { from: '#8EC9DC', to: '#00FF88', label: '생활·기타' },
+  근로: { from: '#2f9b85', to: '#8fc7ba', label: '근로·소득' },
+  세금: { from: '#1f7d6b', to: '#2f9b85', label: '세금·세무' },
+  금융: { from: '#14584c', to: '#1f7d6b', label: '금융·대출' },
+  부동산: { from: '#c68b2c', to: '#dbab4b', label: '부동산' },
+  생활: { from: '#8fc7ba', to: '#dbab4b', label: '생활·기타' },
 };
 
 // 31개 calculator 메타 — sitemap CALCULATOR_SLUGS 와 일치
@@ -108,8 +108,8 @@ function buildSvg({ title, category }) {
   <defs>
     <radialGradient id="bg" cx="50%" cy="0%" r="80%">
       <stop offset="0%" stop-color="${accent.from}" stop-opacity="0.18"/>
-      <stop offset="60%" stop-color="#0A0E1A" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#0A0E1A"/>
+      <stop offset="60%" stop-color="#0f1614" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0f1614"/>
     </radialGradient>
     <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="${accent.from}"/>
@@ -121,7 +121,7 @@ function buildSvg({ title, category }) {
     </linearGradient>
   </defs>
 
-  <rect width="1200" height="630" fill="#0A0E1A"/>
+  <rect width="1200" height="630" fill="#0f1614"/>
   <rect width="1200" height="630" fill="url(#bg)"/>
 
   <circle cx="180" cy="540" r="220" fill="${accent.to}" opacity="0.22"/>

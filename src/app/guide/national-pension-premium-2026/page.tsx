@@ -196,10 +196,10 @@ export default function NationalPensionPremium2026() {
                   title="2026년 4대보험 보험료율 비교"
                   caption="근로자 부담 기준 (국민연금법 §88·건강보험법 §75·고용보험법 §44·노인장기요양보험법 §37)"
                   bars={[
-                    { label: '국민연금', value: 4.75, color: '#595FF7' },
-                    { label: '건강보험', value: 3.595, color: '#8EC9DC' },
-                    { label: '고용보험', value: 0.9, color: '#F7C159' },
-                    { label: '장기요양', value: 0.466, color: '#FC354D' },
+                    { label: '국민연금', value: 4.75, color: '#1f7d6b' },
+                    { label: '건강보험', value: 3.595, color: '#2f9b85' },
+                    { label: '고용보험', value: 0.9, color: '#c68b2c' },
+                    { label: '장기요양', value: 0.466, color: '#dc2626' },
                   ]}
                   unit="%"
                 />

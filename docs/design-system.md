@@ -1,21 +1,26 @@
 # Design System (요약)
 
 > **Status**: SSoT — 토큰 확정판
-> **상세 템플릿**: `.claude/skills/design-system-fintech/REFERENCE.md`
-> **Last updated**: 2026-04-24
+> **상세 템플릿**: `.claude/skills/design-system-fintech/REFERENCE.md` (구 다크 Fintech 기준 — 토큰은 본 문서가 우선)
+> **Last updated**: 2026-07-08 (딥 틸 그린 리브랜딩)
 
 ## 1. 컨셉
-**다크 Fintech 대시보드**. 사용자 제공 Figma 레퍼런스 기반.
+**라이트 퍼스트 · 딥 틸 그린 신뢰 테마** (2026-07-08 운영자 제공 `docs/bundle.html` 시안 기반, shadcn/ui 계열).
+- 라이트 = 시안 충실 재현 / 다크 = 틸 파생(운영자 승인 — 토글·E2E 골든패스 theme.e2e.ts 유지)
+- 이전: 다크 Fintech 퍼플(#595FF7) — ADR-004. 리브랜딩 이력은 §11 로그 참조.
 
 ## 2. 컬러 토큰 (확정)
 
 ```ts
-// tailwind.config.ts 에 반영
+// tailwind.config.ts 에 반영 (2026-07-08 리브랜딩)
 {
-  primary:    { 500: '#595FF7', 600: '#4B51E8' },   // 파란퍼플
-  secondary:  { 500: '#8EC9DC', 600: '#5AA3BA' },   // 시안
-  highlight:  { 500: '#F7C159' },                    // 옐로
-  danger:     { 500: '#FC354D' },                    // 레드
+  primary: {  // 딥 틸 그린 램프 (bundle.html)
+    50:'#f0f7f5', 100:'#e2efeb', 200:'#c5e2da', 300:'#8fc7ba', 400:'#2f9b85',
+    500:'#1f7d6b', 600:'#1a6b5c', 700:'#14584c', 800:'#103f37', 900:'#0b2c26',
+  },
+  secondary:  { 500: '#5f6b76', 600: '#4a545e', 700: '#2a3742' },  // 뉴트럴 그레이블루
+  highlight:  { 500: '#c68b2c', 600: '#9c6413' },                   // 골드
+  danger:     { 500: '#dc2626', 600: '#b23a2f' },                   // 레드
 
   // CSS 변수로 토글
   bg: { base: 'var(--bg-base)', card: 'var(--bg-card)' },
@@ -25,21 +30,27 @@
 ```
 
 ```css
-:root[data-theme='dark'] {
-  --bg-base: #272A2F;
-  --bg-card: #2F3238;
-  --text-primary: #F5F6F8;
-  --text-secondary: #A8ADB5;
-  --border-base: #3A3E45;
+:root[data-theme='light'] {  /* 기본 — bundle 시안 충실 */
+  --bg-base: #f4f7f8;
+  --bg-card: #ffffff;
+  --bg-raised: #e9edf0;
+  --text-primary: #0e1720;
+  --text-secondary: #2a3742;
+  --text-tertiary: #5f6b76;   /* WCAG AA ≈5.7:1 on white */
+  --border-base: #e2e7ea;
 }
-:root[data-theme='light'] {
-  --bg-base: #F7F8FA;
-  --bg-card: #FFFFFF;
-  --text-primary: #1A1D21;
-  --text-secondary: #6B7280;
-  --border-base: #E5E7EB;
+:root[data-theme='dark'] {   /* 틸 파생 다크 */
+  --bg-base: #0f1614;
+  --bg-card: #16211e;
+  --bg-raised: #1e2b27;
+  --text-primary: #eef2f1;
+  --text-secondary: #a9b6b2;
+  --text-tertiary: #7f8c88;
+  --border-base: #27342f;
 }
 ```
+
+**차트/그래픽 파생색**: 데이터 시각화는 틸 계열(#1f7d6b·#2f9b85·#8fc7ba) + 골드(#c68b2c·#dbab4b) + 레드(#dc2626)만 사용. OG 이미지·아이콘 동일(scripts/generate-og-images.mjs·public/icon.svg).
 
 ## 3. 타이포그래피
 - 한글/UI: **Pretendard Variable**
@@ -49,9 +60,9 @@
 ## 4. 간격
 8px 기준. space-4 (16px) 기본.
 
-## 5. 라운드
-- 카드: 16px
-- 칩(단위 버튼): 24px
+## 5. 라운드 (2026-07-08 bundle 시안 기조 — --radius 0.5rem)
+- 카드: 12px (`rounded-card`)
+- 칩(단위 버튼): 8px (`rounded-chip`)
 - 인풋: 8px
 
 ## 6. AdSense 슬롯 특수 규칙
@@ -160,3 +171,4 @@ xl: 1280px ← 본문 max-width
 - 2026-04-24: §9 광고 배치 5슬롯 아키텍처 추가 (2026 AdSense 수익 전략 보고서 반영)
 - 2026-06-16: §10 가이드 아티클 본문 타이포그래피 추가 (H2 구분선 + 가로형 표 + 토큰 기반 스타일)
 - 2026-06-16: §10-1 H2 좌측 브랜드 액센트 바 추가 (하단 구분선 유지 — 풀 그라데이션 박스안은 테마 토큰 무시·YMYL 신뢰감 이유로 기각)
+- 2026-07-08: 딥 틸 그린 리브랜딩 — 운영자 제공 docs/bundle.html 시안 적용. §1 컨셉·§2 토큰(틸 램프/골드/뉴트럴)·§5 라운드(12px/8px) 전면 교체, 다크는 틸 파생으로 토글 유지. 차트·OG·파비콘 동일 팔레트.

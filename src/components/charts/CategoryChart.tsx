@@ -28,11 +28,11 @@ interface TooltipProps {
 }
 
 const mockData: CategoryData[] = [
-  { name: '세금', value: 10, color: '#00FF88' },
-  { name: '금융', value: 8, color: '#9D4EFF' },
-  { name: '부동산', value: 5, color: '#00D4FF' },
-  { name: '근로', value: 2, color: '#FF3B5C' },
-  { name: '생활', value: 2, color: '#F7C159' },
+  { name: '세금', value: 10, color: '#1f7d6b' },
+  { name: '금융', value: 8, color: '#2f9b85' },
+  { name: '부동산', value: 5, color: '#c68b2c' },
+  { name: '근로', value: 2, color: '#8fc7ba' },
+  { name: '생활', value: 2, color: '#dbab4b' },
 ];
 
 const CustomTooltip = ({ active, payload }: TooltipProps): ReactNode => {

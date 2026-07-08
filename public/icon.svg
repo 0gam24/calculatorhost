@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="calculatorhost">
   <defs>
     <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#00FF88"/>
-      <stop offset="100%" stop-color="#00D4FF"/>
+      <stop offset="0%" stop-color="#2f9b85"/>
+      <stop offset="100%" stop-color="#8fc7ba"/>
     </linearGradient>
   </defs>
   <!-- 다크 라운드 스퀘어 배경 (흰 검색결과 위에서 또렷) -->
-  <rect width="512" height="512" rx="116" fill="#0A0E1A"/>
+  <rect width="512" height="512" rx="116" fill="#0f1614"/>
   <!-- 계산기 본체 (솔리드 그라데이션 — 16px에서도 식별) -->
   <rect x="148" y="86" width="216" height="340" rx="40" fill="url(#brand)"/>
   <!-- 디스플레이 (어두운 컷아웃) -->
-  <rect x="184" y="128" width="144" height="74" rx="18" fill="#0A0E1A"/>
+  <rect x="184" y="128" width="144" height="74" rx="18" fill="#0f1614"/>
   <!-- 키패드 2x2 (어두운 컷아웃) -->
-  <circle cx="206" cy="270" r="24" fill="#0A0E1A"/>
-  <circle cx="306" cy="270" r="24" fill="#0A0E1A"/>
-  <circle cx="206" cy="356" r="24" fill="#0A0E1A"/>
-  <circle cx="306" cy="356" r="24" fill="#0A0E1A"/>
+  <circle cx="206" cy="270" r="24" fill="#0f1614"/>
+  <circle cx="306" cy="270" r="24" fill="#0f1614"/>
+  <circle cx="206" cy="356" r="24" fill="#0f1614"/>
+  <circle cx="306" cy="356" r="24" fill="#0f1614"/>
 </svg>

@@ -83,12 +83,12 @@ export function ActivityChart(): ReactNode {
       <LineChart data={mockData}>
         <defs>
           <linearGradient id="colorRequests" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#00FF88" stopOpacity={0.3} />
-            <stop offset="95%" stopColor="#00FF88" stopOpacity={0} />
+            <stop offset="5%" stopColor="#2f9b85" stopOpacity={0.3} />
+            <stop offset="95%" stopColor="#2f9b85" stopOpacity={0} />
           </linearGradient>
           <linearGradient id="colorUsers" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="5%" stopColor="#9D4EFF" stopOpacity={0.3} />
-            <stop offset="95%" stopColor="#9D4EFF" stopOpacity={0} />
+            <stop offset="5%" stopColor="#c68b2c" stopOpacity={0.3} />
+            <stop offset="95%" stopColor="#c68b2c" stopOpacity={0} />
           </linearGradient>
         </defs>
         <CartesianGrid
@@ -115,7 +115,7 @@ export function ActivityChart(): ReactNode {
         <Line
           type="monotone"
           dataKey="requests"
-          stroke="#00FF88"
+          stroke="#2f9b85"
           strokeWidth={2.5}
           dot={false}
           name="계산 요청"
@@ -125,7 +125,7 @@ export function ActivityChart(): ReactNode {
         <Line
           type="monotone"
           dataKey="users"
-          stroke="#9D4EFF"
+          stroke="#c68b2c"
           strokeWidth={2.5}
           dot={false}
           name="활성 사용자"
