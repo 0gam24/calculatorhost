@@ -247,6 +247,12 @@ const GUIDE_SLUGS = [
   'annual-leave-allowance-2026',
   // 주휴수당 계산법 (근로 페르소나 — 근로기준법 §55·시행령 §30·§18③ 초단시간)
   'weekly-holiday-allowance-2026',
+  // 2026-07-09 신규 5편 (근로·노동+임대차+투자 — 최저임금·통상임금·육아휴직·확정일자·해외주식)
+  'minimum-wage-2026',
+  'ordinary-wage-2026',
+  'parental-leave-benefit-2026',
+  'lease-priority-right-fixed-date-2026',
+  'overseas-stock-capital-gains-tax-2026',
   // 4대보험 요율 종합 (근로 페르소나 — 국민연금법 §88 7월 인상 / salary·severance cross-link)
   'four-major-insurance-rates-2026',
   // 주택연금 역모기지 (은퇴자 페르소나 — 주택금융공사법 / retirement 계산기 cross-link)

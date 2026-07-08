@@ -12,7 +12,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-26';
+const DATE_MODIFIED = '2026-07-09';
 
 export const metadata: Metadata = {
   title: '가이드 — 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
@@ -620,6 +620,52 @@ export const GUIDES: GuideEntry[] = [
       '중도상환수수료 = 중도상환원금 × 수수료율 × (잔존기간 ÷ 면제기간) 공식과 3년 경과 면제·부분상환·대환 시 차이. 1억·5천만·2억 대출 상환 시 수수료 시뮬레이션과 절약 전략.',
     category: '금융',
     publishedAt: '2026-06-21',
+    readingMinutes: 8,
+  },
+  // ─── 2026-07-09 신규 5편 (근로·노동+임대차+투자 — 최저임금·통상임금·육아휴직·확정일자·해외주식) ───
+  {
+    slug: 'minimum-wage-2026',
+    title: '2026년 최저임금 시급 10,320원 — 월급 환산·수습감액·계산법',
+    description:
+      '2026년 최저임금 시급 10,320원(2025년 대비 290원 인상). 월 기준 약 216만원 환산, 주휴 209시간 포함(최저임금법 §5), 수습 3개월 90% 감액, 산입범위(주휴·상여금·복리후생), 위반 벌칙(3년/2천만원).',
+    category: '근로',
+    publishedAt: '2026-07-09',
+    readingMinutes: 6,
+  },
+  {
+    slug: 'ordinary-wage-2026',
+    title: '통상임금 2026 — 정기상여 포함·연장수당 기초·판례 변경',
+    description:
+      '통상임금은 연장·야간·휴일수당의 산정 기준입니다(근로기준법 §2). 2024.12 대법원 전원합의체가 재직조건부 정기상여금도 통상임금에 포함하도록 변경한 내용과 시간급 계산법을 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-09',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'parental-leave-benefit-2026',
+    title: '육아휴직급여 2026 — 지급률 단계·월 상한·6+6 부모제',
+    description:
+      '육아휴직급여는 고용보험에서 지급합니다(고용보험법 §70). 통상임금 100%/80% 단계 지급률, 월 상한, 6+6 부모육아휴직제, 신청 자격·기간을 정리합니다. 정확한 현행 상한은 고용노동부 고시 기준.',
+    category: '근로',
+    publishedAt: '2026-07-09',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'lease-priority-right-fixed-date-2026',
+    title: '확정일자·전입신고 우선변제권 2026 — 전세보증금 지키는 법',
+    description:
+      '전입신고+점유로 대항력, 확정일자까지 갖추면 우선변제권이 생깁니다(주택임대차보호법 §3·§3의2). 소액임차인 최우선변제(§8)와 배당순위, 전세사기 예방 실무를 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-09',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'overseas-stock-capital-gains-tax-2026',
+    title: '해외주식 양도소득세 2026 — 250만원 공제·22%·5월 신고',
+    description:
+      '해외주식 양도차익은 연 250만원 공제 후 22%로 과세되고 다음해 5월 확정신고합니다(소득세법 §118의2). 환율 적용·손익통산·증권사 대행신고까지 사례로 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-09',
     readingMinutes: 8,
   },
   // ─── 2026-06-19 신규 5편 (근로·은퇴·퇴직 인접 토픽, 색인 표면 확장) ───
