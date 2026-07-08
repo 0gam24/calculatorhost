@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-07 신규 5편 (연말정산 공제 클러스터 2차 — 주담대이자·교육비·보험료·ISA·맞벌이배분)
+  'mortgage-interest-deduction-2026',
+  'education-expense-tax-credit-2026',
+  'insurance-premium-tax-credit-2026',
+  'isa-account-tax-benefit-2026',
+  'dual-income-couple-year-end-tax-2026',
   // 2026-07-03 신규 5편 (고CPC 미커버 갭 + 연말정산 공제 클러스터 — 취득세감면·신용카드·자녀·기부금·청약저축)
   'first-home-acquisition-tax-reduction-2026',
   'credit-card-income-deduction-2026',

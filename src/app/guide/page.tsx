@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-07-07 신규 5편 (연말정산 공제 클러스터 2차 — 주담대이자·교육비·보험료·ISA·맞벌이배분) ───
+  {
+    slug: 'mortgage-interest-deduction-2026',
+    title: '주택담보대출 이자 소득공제 2026 — 최대 2,000만원 절세',
+    description:
+      '무주택·1주택 세대주는 장기주택저당차입금 이자상환액을 소득공제받습니다(소득세법 §52). 기준시가 6억 이하 주택, 상환기간·금리·상환방식별 한도(600~2,000만원)를 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-07',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'education-expense-tax-credit-2026',
+    title: '교육비 세액공제 2026 — 15% 공제·초중고 300만·대학 900만',
+    description:
+      '교육비는 15% 세액공제됩니다(소득세법 §59의4). 취학전·초중고 1명당 300만원, 대학생 900만원, 본인 전액 한도와 급식비·교복·현장체험학습 등 공제 대상을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'insurance-premium-tax-credit-2026',
+    title: '보장성보험료 세액공제 2026 — 100만원 한도·12% 공제',
+    description:
+      '기본공제대상자를 피보험자로 한 보장성보험료는 연 100만원 한도 12% 세액공제됩니다(소득세법 §59의4). 장애인전용 15%, 저축성보험 제외 등 조건을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'isa-account-tax-benefit-2026',
+    title: 'ISA 계좌 세제혜택 2026 — 200만원 비과세·9.9% 분리과세',
+    description:
+      'ISA(개인종합자산관리계좌)는 일반형 200만·서민형 400만원까지 비과세, 초과분은 9.9% 분리과세됩니다(조특법 §91의18). 3년 의무가입·손익통산·연금전환 혜택을 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-07-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'dual-income-couple-year-end-tax-2026',
+    title: '맞벌이 부부 연말정산 배분 전략 2026 — 누가 받으면 절세할까',
+    description:
+      '맞벌이 부부는 부양가족·의료비·신용카드 공제를 누구에게 배분하느냐로 세금이 달라집니다(소득세법 §50·§59의2). 공제 항목별 유불리 기준과 시뮬 방법을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-07',
+    readingMinutes: 9,
+  },
   // ─── 2026-07-03 신규 5편 (고CPC 미커버 갭 + 연말정산 공제 클러스터 — 취득세감면·신용카드·자녀·기부금·청약저축) ───
   {
     slug: 'first-home-acquisition-tax-reduction-2026',
