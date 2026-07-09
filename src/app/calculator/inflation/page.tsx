@@ -22,9 +22,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/inflation/';
 
 export const metadata: Metadata = {
-  title: '화폐가치 계산기 2026 | 인플레이션·실질 구매력 | calculatorhost',
+  title: '화폐가치·물가상승률 계산기 2026 | 인플레이션 실질구매력 무료',
   description:
-    '화폐가치 계산기 2026. 과거 금액의 현재 가치 또는 현재 금액의 미래 가치를 인플레이션 반영해 계산. 구매력 비교 분석. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '화폐가치·물가상승률 계산기 2026. 과거 금액의 현재 가치, 현재 금액의 미래 가치를 인플레이션(소비자물가) 반영해 즉시 계산하고 구매력을 비교합니다. 최근 물가상승률(2024년 약 2.3%) 참고. 회원가입 없이 무료.',
   keywords: [
     '화폐가치 계산기',
     '인플레이션 계산기',
@@ -249,6 +249,33 @@ export default function InflationPage() {
 
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
+
+              {/* 물가상승률 답변 블록 — GSC '물가 상승률 계산기' 쿼리 타깃 */}
+              <section aria-label="물가상승률" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">우리나라 물가상승률은 몇 %인가요?</h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  최근 우리나라 소비자물가 상승률은 2022년 5.1%, 2023년 3.6%, 2024년 약 2.3%였습니다(통계청 소비자물가지수). 물가상승률만큼 돈의 구매력이 매년 줄어들기 때문에, 위 계산기에 예상 물가상승률을 넣으면 미래에 같은 금액으로 살 수 있는 양이 얼마나 줄어드는지 바로 확인할 수 있습니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표. 최근 연간 소비자물가 상승률 (통계청 CPI)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">연도</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">소비자물가 상승률</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base"><td className="px-4 py-2">2022년</td><td className="px-4 py-2 text-right tabular-nums">5.1%</td></tr>
+                      <tr className="border border-border-base bg-bg-card/50"><td className="px-4 py-2">2023년</td><td className="px-4 py-2 text-right tabular-nums">3.6%</td></tr>
+                      <tr className="border border-border-base"><td className="px-4 py-2">2024년</td><td className="px-4 py-2 text-right tabular-nums">약 2.3%</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-sm text-text-secondary">
+                  장기 평균 물가상승률은 대략 연 2~3% 수준입니다. 정확한 연도별·월별 물가상승률은 통계청 KOSIS(kosis.kr) 또는 한국은행 ECOS(ecos.bok.or.kr)에서 조회할 수 있습니다.
+                </p>
+              </section>
 
               {/* 화폐가치와 인플레이션 */}
               <section aria-label="화폐가치란" className="card">

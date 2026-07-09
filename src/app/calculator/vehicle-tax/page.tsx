@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
@@ -376,6 +377,48 @@ export default function VehicleTaxPage() {
                     <li>• 연납 신청(1월) 시 약 5% 할인 (지방세법 시행령 §125). 정확한 할인액은 선납 일수에 비례합니다.</li>
                   </ul>
                 </div>
+              </section>
+
+              {/* 자동차 취득세 답변 블록 — GSC '자동차 취득세 7%' 쿼리 타깃 + 전용 가이드 라우팅 */}
+              <section className="space-y-4" aria-label="자동차 취득세">
+                <h2 className="text-2xl font-bold text-text-primary">자동차 취득세는 얼마인가요? (매년 내는 자동차세와 별도)</h2>
+                <p className="text-text-secondary" data-speakable>
+                  비영업용 승용차의 자동차 취득세율은 7%입니다(지방세법 §12). 예를 들어 취득가액 3,000만 원 승용차의 취득세는 210만 원입니다. 경차·영업용은 4%로 더 낮습니다. 취득세는 차를 살 때 등록하며 한 번만 내고, 이 페이지의 자동차세는 보유하는 동안 매년 냅니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표. 자동차 취득세율 (지방세법 §12, 2026 기준)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">구분</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">취득세율</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">예: 취득가 3,000만 원</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base">
+                        <td className="px-4 py-2">비영업용 승용차</td>
+                        <td className="px-4 py-2 text-right tabular-nums"><strong>7%</strong></td>
+                        <td className="px-4 py-2 text-right tabular-nums">210만 원</td>
+                      </tr>
+                      <tr className="border border-border-base bg-bg-card/50">
+                        <td className="px-4 py-2">경차 (1,000cc 이하)</td>
+                        <td className="px-4 py-2 text-right tabular-nums"><strong>4%</strong></td>
+                        <td className="px-4 py-2 text-right tabular-nums">120만 원</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-4 py-2">영업용 승용차</td>
+                        <td className="px-4 py-2 text-right tabular-nums"><strong>4%</strong></td>
+                        <td className="px-4 py-2 text-right tabular-nums">120만 원</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="text-sm text-text-secondary">
+                  취득세는 취득가액(신차는 공급가액, 중고차는 시가표준액)에 세율을 곱해 계산합니다. 친환경차·경차·다자녀·장애인 감면 요건이 있을 수 있습니다. 취득가액별 정확한 취득세와 감면은{' '}
+                  <Link href="/guide/vehicle-acquisition-tax-2026/" className="text-primary-500 hover:underline font-medium">자동차 취득세 계산 가이드(승용 7%·경차 4%)</Link>
+                  에서 확인하세요.
+                </p>
               </section>
 
               {/* 차령경감표 */}
