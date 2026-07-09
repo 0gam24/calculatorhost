@@ -25,7 +25,7 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '분할매도 계산기 2026 (주식·코인) | 실현손익·세후·BEP | calculatorhost',
+  title: '분할매도 계산기 2026 | 주식·코인 실현손익·세후 손익분기',
   description:
     '주식·코인 분할매도 계산기 2026. 차수별 단가·수량을 입력해 실현손익·손익분기점·세후 수령액을 계산. 매도가 기준 세율 적용 가능. 무료, 회원가입 불필요.',
   keywords: [

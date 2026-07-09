@@ -23,9 +23,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/severance/';
 
 export const metadata: Metadata = {
-  title: '퇴직금 + 퇴직소득세 계산기 2026 | 근속연수공제·세후 | calculatorhost',
+  title: '퇴직금 계산기 2026 | 세후 실수령액·퇴직소득세 자동 계산',
   description:
-    '2026년 퇴직금·퇴직소득세 계산기. 입사·퇴직 날짜로 평균임금·법정 퇴직금 + 근속연수 공제 적용 퇴직소득세(5~42%) 세후 수령액 즉시 산출. DC·DB 유형별 비교. 무료.',
+    '입사·퇴직 날짜만 입력하면 법정 퇴직금과 세후 실수령액을 즉시 계산합니다. 평균임금·근속연수공제·퇴직소득세(연분연승법)를 반영하고 DB·DC 유형을 비교합니다. 무료·회원가입 불필요.',
   keywords: [
     '퇴직금 계산기',
     '퇴직소득세 계산기',
@@ -84,7 +84,7 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
 const RELATED = [
   { href: '/calculator/salary', title: '연봉 실수령액', description: '월 세후 급여' },
   { href: '/calculator/loan-limit', title: '대출한도 (DSR)', description: '주택담보대출 한도' },
-  { href: '/calculator/loan', title: '대출이자 계산기', description: '상환액·스케줄' },
+  { href: '/calculator/retirement', title: '은퇴자금 계산기', description: '노후 필요자금·연금' },
 ];
 
 export default function SeverancePage() {

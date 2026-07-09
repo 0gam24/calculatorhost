@@ -28,9 +28,9 @@ const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
 const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 
 export const metadata: Metadata = {
-  title: '프리랜서 종합소득세 계산기 2026 | 3.3% 원천징수 | calculatorhost',
+  title: '프리랜서 3.3% 원천징수 환급 계산기 2026 | 종합소득세·경비율',
   description:
-    '2026년 프리랜서 종합소득세 계산기. 수입액과 경비율(기준율 또는 실제)을 입력해 과세표준·세액·3.3% 원천징수를 계산. 절세 팁 제시. 무료.',
+    '3.3% 원천징수한 세금은 다음해 5월 종합소득세 신고로 환급받을 수 있습니다. 수입·경비율만 입력하면 과세표준·납부세액·환급액을 즉시 계산합니다. 무료·회원가입 불필요.',
   keywords: [
     '프리랜서 종합소득세',
     '프리랜서 세금 계산기',
@@ -104,9 +104,9 @@ const RELATED = [
     description: '퇴직금과 세금 계산',
   },
   {
-    href: '/calculator/loan-limit',
-    title: 'DSR 대출한도',
-    description: '주담대 한도 계산',
+    href: '/calculator/n-jobber-insurance',
+    title: 'N잡러 건강보험',
+    description: '부수입 건보료·피부양자',
   },
 ] as const;
 
