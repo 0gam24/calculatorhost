@@ -14,7 +14,9 @@
         "http://localhost:4173/guide/",
         "http://localhost:4173/guide/long-term-holding-special-deduction-80-percent/",
         "http://localhost:4173/guide/burden-gift-debt-assumption-tax/",
-        "http://localhost:4173/guide/child-house-gift-vs-sale-comparison/"
+        "http://localhost:4173/guide/child-house-gift-vs-sale-comparison/",
+        "http://localhost:4173/calculator/freelancer-tax/",
+        "http://localhost:4173/calculator/severance/"
       ],
       "numberOfRuns": 3,
       "settings": [

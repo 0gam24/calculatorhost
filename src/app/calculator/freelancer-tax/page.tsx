@@ -15,6 +15,7 @@ import {
   buildWebPageJsonLd,
   getCategoryUrlForCalculator,
   buildHowToJsonLd,
+  buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { FreelancerCalculator } from './FreelancerCalculator';
@@ -145,6 +146,18 @@ export default function FreelancerTaxPage() {
     { name: '프리랜서 종합소득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+  const definedTermLd = buildDefinedTermSetJsonLd({
+    name: '프리랜서 종합소득세 핵심 용어',
+    description: '프리랜서 3.3% 원천징수·경비율·종합소득세 신고 용어집',
+    url: 'https://calculatorhost.com/calculator/freelancer-tax/#glossary',
+    terms: [
+      { name: '3.3% 원천징수', description: '프리랜서·사업소득자에게 대가를 지급할 때 소득세 3% + 지방소득세 0.3%를 미리 떼고 지급하는 제도(소득세법 §127). 다음해 5월 종합소득세 신고로 정산해 환급 또는 추가납부한다.' },
+      { name: '단순경비율', description: '장부 없이 수입금액에 업종별로 정해진 비율을 곱해 필요경비를 인정하는 방식. 영세 사업자·프리랜서가 주로 적용받으며 업종코드별로 비율이 다르다.' },
+      { name: '기준경비율', description: '단순경비율 대상이 아닌 사업자가 주요경비(매입·임차료·인건비)는 증빙으로, 나머지는 기준경비율로 인정받는 방식. 단순경비율보다 낮아 세부담이 크다.' },
+      { name: '과세표준', description: '세율을 곱하는 기준 금액. 프리랜서는 (수입금액 − 필요경비 − 소득공제)로 계산하며 종합소득세 누진세율(6~45%)을 적용한다.' },
+      { name: '환급', description: '미리 낸 3.3% 원천징수액이 실제 산출세액보다 크면 차액을 돌려받는 것. 소득이 적거나 경비가 큰 프리랜서는 5월 신고 시 환급받는 경우가 많다.' },
+    ],
+  });
 
   return (
     <>
@@ -167,6 +180,10 @@ export default function FreelancerTaxPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermLd) }}
       />
       <script
         type="application/ld+json"
@@ -253,6 +270,23 @@ export default function FreelancerTaxPage() {
                   <PublicDataCitation citation={KOSIS_INCOME_CITATION} />로, 프리랜서 연 소득과
                   생활비 균형 판단에 참고할 수 있습니다.
                 </p>
+                <div className="overflow-x-auto mt-4">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표. 참고: 한국 가구·1인 월평균 소득 (통계청 KOSIS)</caption>
+                    <thead>
+                      <tr className="bg-primary-500/10 border border-border-base">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">구분</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">월평균 소득</th>
+                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">연 환산</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border border-border-base"><td className="px-4 py-2">가구 월평균 소득</td><td className="px-4 py-2 text-right tabular-nums">약 485만 원</td><td className="px-4 py-2 text-right tabular-nums">약 5,820만 원</td></tr>
+                      <tr className="border border-border-base bg-bg-card/50"><td className="px-4 py-2">1인당 월평균 소득</td><td className="px-4 py-2 text-right tabular-nums">약 185만 원</td><td className="px-4 py-2 text-right tabular-nums">약 2,220만 원</td></tr>
+                    </tbody>
+                  </table>
+                  <p className="mt-2 text-xs text-text-tertiary">본인 프리랜서 소득을 위 평균과 비교해 4대보험·노후 대비 규모를 가늠하는 참고용입니다. 정확한 출처·기준일은 위 인용 표기를 따릅니다.</p>
+                </div>
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
@@ -382,7 +416,7 @@ export default function FreelancerTaxPage() {
 
               {/* 업종별 단순경비율 참고표 */}
               <section aria-label="업종별 단순경비율" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">업종별 단순경비율 참고표</h2>
+                <h2 className="mb-4 text-2xl font-semibold">업종별 단순경비율은 얼마인가요?</h2>
                 <p className="mb-4 text-text-secondary">
                   다음은 대표적인 프리랜서 업종의 단순경비율입니다. 정확한 업종코드는 국세청 홈택스에서
                   확인하세요. (상세 업종코드는 총 100개 이상 존재)

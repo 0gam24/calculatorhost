@@ -279,7 +279,7 @@ export default function SeverancePage() {
 
               {/* 평균임금 vs 통상임금 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">평균임금 vs 통상임금</h2>
+                <h2 className="text-2xl font-bold">평균임금과 통상임금은 어떻게 다른가요?</h2>
                 <p className="text-text-secondary">
                   두 개념은 계산 목적이 다르므로, 햇갈리기 쉬워도 구분이 중요합니다.
                 </p>
@@ -320,7 +320,7 @@ export default function SeverancePage() {
 
               {/* DB형 vs DC형 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">퇴직연금 제도: DB형 vs DC형</h2>
+                <h2 className="text-2xl font-bold">DB형과 DC형 퇴직연금은 무엇이 다른가요?</h2>
                 <p className="text-text-secondary">
                   2005년 퇴직금 제도 개혁 이후, 회사는 DB형 또는 DC형 중 하나를 선택해야 합니다.
                 </p>
@@ -366,7 +366,7 @@ export default function SeverancePage() {
 
               {/* 퇴직소득세 계산 공식 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">퇴직소득세 계산 공식</h2>
+                <h2 className="text-2xl font-bold">퇴직소득세는 어떻게 계산하나요?</h2>
                 <p className="text-text-secondary">
                   퇴직소득세는 여러 단계의 공제를 거쳐 계산되므로, 단순 비례세율이 아닙니다. 큰 금액도 공제로 인해 실제 세 부담이 낮아집니다.
                 </p>
