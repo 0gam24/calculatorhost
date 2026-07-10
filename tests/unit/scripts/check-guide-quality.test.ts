@@ -108,6 +108,14 @@ describe('checkForbiddenPatterns: 금기 표현 검출', () => {
     expect(r2.pass).toBe(false);
   });
 
+  it('긴 줄표(em/en dash) AI 말버릇 → red (2026-07-10 운영자 지시)', () => {
+    const r1 = checkForbiddenPatterns('교육비 세액공제 2026 — 자녀 300만');
+    expect(r1.pass).toBe(false);
+    expect(r1.violations).toContain('긴 줄표(em-dash, AI 말버릇)');
+    const r2 = checkForbiddenPatterns('취득세 1~3% 구간, 쉼표와 중점·물결은 허용');
+    expect(r2.pass).toBe(true);
+  });
+
   it('정상 표현은 통과', () => {
     const normal = '2026년 양도세 절세 방법은 일시적 2주택 비과세를 활용하는 것입니다.';
     const result = checkForbiddenPatterns(normal);
