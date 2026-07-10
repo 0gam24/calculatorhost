@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-07-11 신규 5편 (임대차·투자·근로·상속 실무: 상가임대차·임차권등기·ETF세금·일용직·가업상속) ───
+  {
+    slug: 'commercial-building-lease-2026',
+    title: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임 5%',
+    description:
+      '자영업 임차인·건물주를 위한 상가 임대차보호법. 계약갱신요구권 10년, 권리금 회수기회 보호(§10의4), 차임 증액 상한 5%, 대항력과 환산보증금 기준을 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-11',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'lease-registration-order-2026',
+    title: '임차권등기명령 2026, 보증금 못 받고 이사할 때 대항력 유지',
+    description:
+      '임대차 종료 후 보증금을 못 받으면 임차인 단독으로 임차권등기명령을 신청합니다(주임법 §3의3). 신청 요건·절차·효과와 2023년 개정(송달 전 집행)을 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-11',
+    readingMinutes: 10,
+  },
+  {
+    slug: 'etf-tax-domestic-overseas-2026',
+    title: 'ETF 세금 2026, 국내 vs 해외상장 매매차익·분배금 과세',
+    description:
+      '국내주식형 ETF는 매매차익 비과세에 분배금 15.4%, 기타 ETF는 매매차익도 15.4%, 해외상장 ETF는 양도세 22%입니다. 유형별 과세 차이와 종합과세 기준을 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-11',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'daily-worker-income-tax-2026',
+    title: '일용직 근로소득세 2026, 일당 세금 6%·15만원 공제·분리과세',
+    description:
+      '일용근로자는 일급 15만원 공제 후 6% 세율, 세액공제 55%로 실효 약 2.7%가 원천징수되고 분리과세로 끝납니다(소득세법 §14③). 일급별 세액을 사례로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-11',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'family-business-inheritance-deduction-2026',
+    title: '가업상속공제 2026, 최대 600억 공제 요건·사후관리 5년',
+    description:
+      '중소·중견기업 가업 승계 시 영위기간별 최대 600억원 상속세 공제(상증법 §18의2). 10년 경영 요건과 사후관리 5년(고용·자산·지분 유지) 조건을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-11',
+    readingMinutes: 9,
+  },
   // ─── 2026-07-10 신규 5편 (투자·상속·부동산 실무 — 배당소득세·상속한정승인·오피스텔·사업자등록·코인2027) ───
   {
     slug: 'dividend-income-tax-2026',
@@ -1652,6 +1698,21 @@ const GUIDES_BY_CATEGORY: Record<GuideCategory, GuideEntry[]> = {
 };
 GUIDES.forEach((g) => GUIDES_BY_CATEGORY[g.category].push(g));
 
+// 카테고리 이모지 조회 (전체 목록 배지용)
+const CATEGORY_EMOJI = Object.fromEntries(
+  CATEGORIES.map((c) => [c.id, c.emoji])
+) as Record<GuideCategory, string>;
+
+// 전체 — 최신순 날짜별 그룹 (오늘 포스팅이 최상단)
+const GUIDES_BY_DATE: { date: string; items: GuideEntry[] }[] = [];
+[...GUIDES]
+  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+  .forEach((g) => {
+    const last = GUIDES_BY_DATE[GUIDES_BY_DATE.length - 1];
+    if (last && last.date === g.publishedAt) last.items.push(g);
+    else GUIDES_BY_DATE.push({ date: g.publishedAt, items: [g] });
+  });
+
 export default function GuideIndexPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -1697,6 +1758,12 @@ export default function GuideIndexPage() {
 
               {/* 카테고리 빠른 이동 칩 */}
               <nav aria-label="카테고리 빠른 이동" className="card flex flex-wrap gap-2">
+                <a
+                  href="#all"
+                  className="rounded-chip border border-primary-500 bg-primary-500/10 px-3 py-1.5 text-sm font-semibold text-primary-500 hover:bg-primary-500/20"
+                >
+                  🗂 전체 ({GUIDES.length})
+                </a>
                 <a
                   href="#seasonal"
                   className="rounded-chip border border-danger-500 bg-danger-500/10 px-3 py-1.5 text-sm font-semibold text-danger-700 dark:text-danger-300 hover:bg-danger-500/20"
@@ -1750,6 +1817,58 @@ export default function GuideIndexPage() {
                   </div>
                 </section>
               )}
+
+              {/* 전체 — 최신순 날짜별 (오늘 포스팅이 최상단) */}
+              <section id="all" aria-label="전체 가이드 (최신순)" className="card space-y-5">
+                <header className="flex items-baseline justify-between border-b border-border-base pb-2">
+                  <h2 className="text-2xl font-bold">
+                    🗂 전체 가이드{' '}
+                    <span className="text-base text-text-tertiary font-normal">
+                      (최신순 · {GUIDES.length})
+                    </span>
+                  </h2>
+                  <a href="#" className="text-caption text-text-tertiary hover:text-primary-500">
+                    ↑ 맨 위로
+                  </a>
+                </header>
+                <div className="space-y-6">
+                  {GUIDES_BY_DATE.map((group, gi) => (
+                    <div key={group.date} className="space-y-2">
+                      <h3 className="flex items-center gap-2 text-sm font-semibold text-text-secondary">
+                        <time dateTime={group.date}>{group.date.replace(/-/g, '. ')}</time>
+                        <span className="font-normal text-text-tertiary">
+                          ({group.items.length}편)
+                        </span>
+                        {gi === 0 && (
+                          <span className="rounded-chip bg-primary-500/15 px-2 py-0.5 text-caption font-semibold text-primary-500">
+                            최신
+                          </span>
+                        )}
+                      </h3>
+                      <ul className="divide-y divide-border-base border-t border-border-base">
+                        {group.items.map((g) => (
+                          <li key={g.slug}>
+                            <Link
+                              href={`/guide/${g.slug}/`}
+                              className="flex items-center gap-3 py-2 hover:bg-primary-500/5"
+                            >
+                              <span aria-hidden className="text-base">
+                                {CATEGORY_EMOJI[g.category]}
+                              </span>
+                              <span className="flex-1 text-sm font-medium text-text-primary hover:text-primary-500">
+                                {g.title}
+                              </span>
+                              <span className="hidden shrink-0 text-caption text-text-tertiary sm:inline">
+                                {g.category}
+                              </span>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ))}
+                </div>
+              </section>
 
               {/* 카테고리별 그룹화 */}
               {CATEGORIES.map((cat) => {

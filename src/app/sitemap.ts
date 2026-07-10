@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-11 신규 5편 (임대차·투자·근로·상속 실무: 상가임대차·임차권등기·ETF세금·일용직·가업상속)
+  'commercial-building-lease-2026',
+  'lease-registration-order-2026',
+  'etf-tax-domestic-overseas-2026',
+  'daily-worker-income-tax-2026',
+  'family-business-inheritance-deduction-2026',
   // 2026-07-10 신규 5편 (투자·상속·부동산 실무 — 배당소득세·상속한정승인·오피스텔·사업자등록·코인2027)
   'dividend-income-tax-2026',
   'inheritance-limited-acceptance-2026',
