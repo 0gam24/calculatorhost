@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-07-10 신규 5편 (투자·상속·부동산 실무 — 배당소득세·상속한정승인·오피스텔·사업자등록·코인2027) ───
+  {
+    slug: 'dividend-income-tax-2026',
+    title: '배당소득세 2026 — 15.4% 원천징수·금융소득 종합과세',
+    description:
+      '주식·펀드 배당금은 15.4%로 원천징수됩니다(소득세법 §17·§129). 이자+배당 합산 2,000만원 이하는 분리과세로 끝나고 초과분은 종합과세되는 구조를 사례로 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-10',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inheritance-limited-acceptance-2026',
+    title: '상속 한정승인·상속포기 2026 — 빚 초과 시 3개월 내 신고',
+    description:
+      '상속채무가 재산을 초과하면 3개월 내 한정승인 또는 상속포기를 신고합니다(민법 §1019). 한정승인·포기·특별한정승인의 차이와 후순위 승계 함정을 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-10',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'officetel-tax-2026',
+    title: '오피스텔 세금 2026 — 주택용 vs 업무용 취득·재산·양도세',
+    description:
+      '오피스텔은 실제 사용 용도에 따라 세금이 크게 달라집니다. 취득세 4.6%, 주거용의 주택 수 포함 여부, 재산세·종부세·양도세·부가세 차이를 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-10',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'business-registration-2026',
+    title: '개인사업자 등록 2026 — 프리랜서 전환·간이 vs 일반과세',
+    description:
+      '프리랜서에서 개인사업자로 전환할 때의 등록 절차와 간이과세(매출 1억 400만 미만) vs 일반과세 선택 기준을 정리합니다(부가세법 §8·§61). 4,800만 미만 납부면제까지.',
+    category: '세금',
+    publishedAt: '2026-07-10',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'virtual-asset-tax-2027',
+    title: '가상자산(코인) 과세 2027 — 250만 공제·22%·현재 비과세',
+    description:
+      '가상자산 양도차익은 현재(2026) 비과세이며 2027년 1월 시행 예정입니다(소득세법 §21). 연 250만원 공제 후 22% 분리과세·의제취득가액 구조를 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-10',
+    readingMinutes: 8,
+  },
   // ─── 2026-07-07 신규 5편 (연말정산 공제 클러스터 2차 — 주담대이자·교육비·보험료·ISA·맞벌이배분) ───
   {
     slug: 'mortgage-interest-deduction-2026',

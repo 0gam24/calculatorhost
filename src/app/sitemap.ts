@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-10 신규 5편 (투자·상속·부동산 실무 — 배당소득세·상속한정승인·오피스텔·사업자등록·코인2027)
+  'dividend-income-tax-2026',
+  'inheritance-limited-acceptance-2026',
+  'officetel-tax-2026',
+  'business-registration-2026',
+  'virtual-asset-tax-2027',
   // 2026-07-07 신규 5편 (연말정산 공제 클러스터 2차 — 주담대이자·교육비·보험료·ISA·맞벌이배분)
   'mortgage-interest-deduction-2026',
   'education-expense-tax-credit-2026',
