@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // ─── 2026-07-12 신규 5편 (양도세 필요경비·예금자보호1억·전월세신고제·국민연금조기연기·주민세) ───
+  {
+    slug: 'capital-gains-necessary-expenses-2026',
+    title: '양도소득세 필요경비 2026, 취득가·자본적지출·양도비 공제',
+    description:
+      '양도차익에서 빼주는 필요경비 3가지(취득가액·자본적지출·양도비)의 인정 범위. 새시·발코니 확장은 인정, 도배·장판은 제외. 증빙 요건과 절세 계산 사례를 소득세법 §97로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-12',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'deposit-protection-limit-2026',
+    title: '예금자보호 한도 1억원 2026, 시행일·대상·분산예치',
+    description:
+      '2025년 9월 1일부터 예금자보호 한도가 5천만원에서 1억원으로 상향됐습니다. 보호 대상과 제외 상품, 금융회사별 1인당 한도 적용, 분산예치 전략을 예금자보호법 §32로 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-07-12',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'lease-report-system-2026',
+    title: '전월세 신고제 2026, 대상·30일 기한·과태료·신고방법',
+    description:
+      '보증금 6천만원 초과 또는 월세 30만원 초과 주택 임대차는 계약일부터 30일 안에 신고해야 합니다. 대상, 온라인·주민센터 신고 방법, 과태료를 부동산 거래신고법 §6의2로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-12',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-early-deferred-2026',
+    title: '국민연금 조기수령·연기연금 2026, 감액 6%·증액 7.2%',
+    description:
+      '국민연금은 최대 5년 조기 수령하면 연 6%씩 최대 30% 깎이고, 최대 5년 연기하면 연 7.2%씩 최대 36% 늘어납니다. 손익분기와 선택 기준을 국민연금법 §61·§62로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-12',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'resident-tax-2026',
+    title: '주민세 2026, 개인분·사업소분·종업원분 세율과 8월 납부',
+    description:
+      '주민세는 개인분(1만원 이하 조례), 사업소분(연면적 1㎡당 250원), 종업원분(급여총액 0.5%)으로 나뉩니다. 유형별 세율과 8월 납부 일정, 면세 기준을 지방세법으로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-12',
+    readingMinutes: 7,
+  },
   // ─── 2026-07-11 신규 5편 (임대차·투자·근로·상속 실무: 상가임대차·임차권등기·ETF세금·일용직·가업상속) ───
   {
     slug: 'commercial-building-lease-2026',

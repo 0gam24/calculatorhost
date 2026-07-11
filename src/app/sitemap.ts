@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-12 신규 5편 (양도세 필요경비·예금자보호1억·전월세신고제·국민연금조기연기·주민세)
+  'capital-gains-necessary-expenses-2026',
+  'deposit-protection-limit-2026',
+  'lease-report-system-2026',
+  'national-pension-early-deferred-2026',
+  'resident-tax-2026',
   // 2026-07-11 신규 5편 (임대차·투자·근로·상속 실무: 상가임대차·임차권등기·ETF세금·일용직·가업상속)
   'commercial-building-lease-2026',
   'lease-registration-order-2026',
