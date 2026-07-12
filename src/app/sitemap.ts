@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-13 신규 5편 (간이과세부가세·기타소득60%·연금소득세·중소기업청년감면·간주임대료)
+  'simplified-taxation-vat-2026',
+  'other-income-necessary-expense-60-2026',
+  'pension-income-tax-withholding-2026',
+  'sme-youth-income-tax-reduction-2026',
+  'deemed-rental-income-2026',
   // 2026-07-12 신규 5편 (양도세 필요경비·예금자보호1억·전월세신고제·국민연금조기연기·주민세)
   'capital-gains-necessary-expenses-2026',
   'deposit-protection-limit-2026',

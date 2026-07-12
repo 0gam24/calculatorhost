@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-13 신규 5편 (간이과세부가세·기타소득60%·연금소득세·중소기업청년감면·간주임대료)
+  {
+    slug: 'simplified-taxation-vat-2026',
+    title: '간이과세자 부가가치세 2026, 기준 1억400만원·세금계산서 발급',
+    description:
+      '간이과세자는 직전연도 공급대가 1억400만원 미만 소규모 사업자입니다. 부가율 적용 세액, 세금계산서 발급 의무 4,800만원, 납부면제 조건을 부가가치세법 §61로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'other-income-necessary-expense-60-2026',
+    title: '기타소득 필요경비 60% 2026, 강연료·원고료 세금과 8.8% 원천징수',
+    description:
+      '강연료·원고료·자문료 기타소득은 증빙 없이 60% 필요경비가 인정돼 8.8%만 원천징수됩니다. 기타소득금액 300만원 이하 분리과세 선택과 절세 계산을 소득세법 §21로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'pension-income-tax-withholding-2026',
+    title: '연금소득세 2026, 사적연금 1500만원 분리과세와 연령별 3.3~5.5%',
+    description:
+      '연금저축·IRP 사적연금은 연 1,500만원까지 연령별 3.3~5.5% 저율 분리과세됩니다. 초과 시 종합·16.5% 분리과세 선택과 수령 절세 전략을 소득세법 §20의3으로 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-07-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'sme-youth-income-tax-reduction-2026',
+    title: '중소기업 취업 청년 소득세 감면 2026, 90% 5년·연 200만원 한도',
+    description:
+      '만 15~34세 청년이 중소기업에 취업하면 소득세 90%를 5년간 감면받습니다(연 200만원 한도). 대상, 신청 방법, 병역 연령 차감을 조세특례제한법 §30으로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'deemed-rental-income-2026',
+    title: '간주임대료 2026, 3주택·보증금 3억 초과 전세보증금 과세',
+    description:
+      '전세보증금도 3주택 이상이면서 합계 3억원을 초과하면 간주임대료로 과세됩니다. 계산식(초과분 × 60% × 정기예금이자율), 소형주택 제외, 신고 방법을 소득세법 §25로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-13',
+    readingMinutes: 8,
+  },
   // ─── 2026-07-12 신규 5편 (양도세 필요경비·예금자보호1억·전월세신고제·국민연금조기연기·주민세) ───
   {
     slug: 'capital-gains-necessary-expenses-2026',
