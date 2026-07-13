@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-14 신규 5편 (중도퇴사연말정산·기장의무·상생임대인·채권투자세금·계약갱신청구권)
+  'mid-year-resignation-year-end-tax-2026',
+  'bookkeeping-obligation-double-entry-vs-simple-2026',
+  'cooperative-landlord-capital-gains-exemption-2026',
+  'bond-investment-tax-2026',
+  'lease-renewal-request-implied-renewal-2026',
   // 2026-07-13 신규 5편 (간이과세부가세·기타소득60%·연금소득세·중소기업청년감면·간주임대료)
   'simplified-taxation-vat-2026',
   'other-income-necessary-expense-60-2026',

@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-14 신규 5편 (중도퇴사연말정산·기장의무·상생임대인·채권투자세금·계약갱신청구권)
+  {
+    slug: 'mid-year-resignation-year-end-tax-2026',
+    title: '중도퇴사 연말정산 2026, 재취업·5월 종소세로 환급받는 법',
+    description:
+      '연도 중간에 퇴사하면 기본공제만 반영돼 세금을 더 낸 상태가 됩니다. 재취업 시 종전근무지 합산, 미취업 시 5월 종합소득세 확정신고로 누락 공제를 되찾는 방법을 소득세법 §137로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-14',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'bookkeeping-obligation-double-entry-vs-simple-2026',
+    title: '복식부기 vs 간편장부 2026, 기장의무 기준과 무기장가산세',
+    description:
+      '개인사업자는 직전연도 수입금액에 따라 복식부기의무자(도소매 3억·제조 1.5억·서비스 7,500만원 이상)와 간편장부대상자로 나뉩니다. 무기장가산세 20%와 기장 이점을 소득세법 §160으로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-14',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'cooperative-landlord-capital-gains-exemption-2026',
+    title: '상생임대인 2026, 5% 이내 인상으로 양도세 거주요건 면제',
+    description:
+      '임대료를 직전 대비 5% 이내로 올린 1주택자는 양도소득세 비과세의 2년 거주요건을 면제받습니다. 직전계약 1년 6개월·상생계약 2년 요건과 2026년 말 일몰을 소득세법 시행령 §155의3으로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-14',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'bond-investment-tax-2026',
+    title: '채권투자 세금 2026, 표면이자 15.4%·매매차익 비과세',
+    description:
+      '개인이 직접 보유한 채권의 표면이자는 15.4% 과세되지만 매매차익은 비과세입니다. 저쿠폰채 절세, 금융소득 2,000만원 종합과세, 펀드·ETF 예외를 소득세법 §16으로 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-14',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'lease-renewal-request-implied-renewal-2026',
+    title: '계약갱신청구권·묵시적 갱신 2026, 5% 상한과 2+2년',
+    description:
+      '임차인은 계약갱신요구권으로 2+2년 거주와 5% 이내 인상 상한을 보장받습니다. 묵시적 갱신과의 차이, 갱신거절 정당사유, 3개월 해지 규정을 주택임대차보호법 §6·§6의3으로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-14',
+    readingMinutes: 8,
+  },
   // 2026-07-13 신규 5편 (간이과세부가세·기타소득60%·연금소득세·중소기업청년감면·간주임대료)
   {
     slug: 'simplified-taxation-vat-2026',
