@@ -1923,41 +1923,8 @@ export default function GuideIndexPage() {
                 })}
               </nav>
 
-              {/* 시즌 가이드 — 강조 배너 */}
-              {SEASONAL_GUIDES.length > 0 && (
-                <section
-                  id="seasonal"
-                  aria-label="시즌 가이드"
-                  className="card border-l-2 border-l-danger-500 bg-danger-500/5 space-y-4"
-                >
-                  <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
-                    🔥 시즌 가이드 — 지금 가장 검색 많은 주제
-                  </h2>
-                  <div className="grid gap-4 md:grid-cols-2">
-                    {SEASONAL_GUIDES.map((g) => (
-                      <Link
-                        key={g.slug}
-                        href={`/guide/${g.slug}/`}
-                        className="card card-hover flex flex-col gap-2 bg-bg-card border-2 border-danger-500/30"
-                      >
-                        <div className="flex items-center justify-between text-caption">
-                          <span className="rounded-chip bg-danger-500/20 px-2 py-0.5 text-danger-700 dark:text-danger-300 font-semibold">
-                            {g.seasonal}
-                          </span>
-                          <span className="text-text-tertiary">{g.readingMinutes}분 읽기</span>
-                        </div>
-                        <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
-                        <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
-                          {g.description}
-                        </p>
-                      </Link>
-                    ))}
-                  </div>
-                </section>
-              )}
-
-              {/* 전체 — 최신순 날짜별 (오늘 포스팅이 최상단) */}
-              <section id="all" aria-label="전체 가이드 (최신순)" className="card space-y-5">
+              {/* 전체 — 최신순 날짜별 (가이드 진입 시 바로 보이는 기본 목록) */}
+              <section id="all" aria-label="전체 가이드 (최신순)" className="card space-y-5 scroll-mt-4">
                 <header className="flex items-baseline justify-between border-b border-border-base pb-2">
                   <h2 className="text-2xl font-bold">
                     🗂 전체 가이드{' '}
@@ -1965,9 +1932,7 @@ export default function GuideIndexPage() {
                       (최신순 · {GUIDES.length})
                     </span>
                   </h2>
-                  <a href="#" className="text-caption text-text-tertiary hover:text-primary-500">
-                    ↑ 맨 위로
-                  </a>
+                  <span className="text-caption text-text-tertiary">최근 발행부터</span>
                 </header>
                 <div className="space-y-6">
                   {GUIDES_BY_DATE.map((group, gi) => (
@@ -2007,6 +1972,39 @@ export default function GuideIndexPage() {
                   ))}
                 </div>
               </section>
+
+              {/* 시즌 가이드 — 강조 배너 */}
+              {SEASONAL_GUIDES.length > 0 && (
+                <section
+                  id="seasonal"
+                  aria-label="시즌 가이드"
+                  className="card border-l-2 border-l-danger-500 bg-danger-500/5 space-y-4"
+                >
+                  <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
+                    🔥 시즌 가이드 — 지금 가장 검색 많은 주제
+                  </h2>
+                  <div className="grid gap-4 md:grid-cols-2">
+                    {SEASONAL_GUIDES.map((g) => (
+                      <Link
+                        key={g.slug}
+                        href={`/guide/${g.slug}/`}
+                        className="card card-hover flex flex-col gap-2 bg-bg-card border-2 border-danger-500/30"
+                      >
+                        <div className="flex items-center justify-between text-caption">
+                          <span className="rounded-chip bg-danger-500/20 px-2 py-0.5 text-danger-700 dark:text-danger-300 font-semibold">
+                            {g.seasonal}
+                          </span>
+                          <span className="text-text-tertiary">{g.readingMinutes}분 읽기</span>
+                        </div>
+                        <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
+                        <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
+                          {g.description}
+                        </p>
+                      </Link>
+                    ))}
+                  </div>
+                </section>
+              )}
 
               {/* 카테고리별 그룹화 */}
               {CATEGORIES.map((cat) => {
