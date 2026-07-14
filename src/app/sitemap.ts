@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-15 신규 5편 (혼인출산증여공제·건보임의계속가입·종소세중간예납·상가권리금보호·국내주식대주주양도세)
+  'marriage-childbirth-gift-deduction-2026',
+  'health-insurance-voluntary-continuation-2026',
+  'comprehensive-income-tax-interim-prepayment-2026',
+  'commercial-lease-premium-recovery-protection-2026',
+  'domestic-stock-major-shareholder-tax-2026',
   // 2026-07-14 신규 5편 (중도퇴사연말정산·기장의무·상생임대인·채권투자세금·계약갱신청구권)
   'mid-year-resignation-year-end-tax-2026',
   'bookkeeping-obligation-double-entry-vs-simple-2026',

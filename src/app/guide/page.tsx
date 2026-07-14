@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-15 신규 5편 (혼인출산증여공제·건보임의계속가입·종소세중간예납·상가권리금보호·국내주식대주주양도세)
+  {
+    slug: 'marriage-childbirth-gift-deduction-2026',
+    title: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 총정리',
+    description:
+      '결혼·출산 때 부모가 재산을 물려줘도 최대 1억원까지 증여세가 없습니다. 상증법 §53의2 혼인·출산 증여재산공제의 요건, 통합 1억 한도, 일반공제 5천만원과 합쳐 1.5억까지 무증여세로 받는 방법을 사례로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-15',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'health-insurance-voluntary-continuation-2026',
+    title: '건강보험 임의계속가입 2026, 퇴직 후 36개월 보험료 폭탄 막기',
+    description:
+      '퇴직하면 지역가입자로 바뀌며 재산·자동차까지 보험료에 반영돼 폭탄을 맞기 쉽습니다. 국민건강보험법 §110 임의계속가입으로 최대 36개월간 직장가입자 수준 보험료를 유지하는 요건과 신청기한을 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-15',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'comprehensive-income-tax-interim-prepayment-2026',
+    title: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 총정리',
+    description:
+      '개인사업자·프리랜서는 11월에 전년 종합소득세의 절반을 미리 냅니다. 소득세법 §65 중간예납의 고지 방식, 50만원 미만 제외, 사업 부진 시 추계신고, 분납 요건을 사례로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-15',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'commercial-lease-premium-recovery-protection-2026',
+    title: '상가 권리금 회수기회 보호 2026, 임대인 방해 시 손해배상',
+    description:
+      '임대인이 정당한 사유 없이 신규임차인과의 계약을 막으면 권리금 손해를 배상해야 합니다. 상가건물임대차보호법 §10의4 권리금 회수기회 보호의 방해금지 행위, 손해배상 한도, 3년 소멸시효를 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-15',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'domestic-stock-major-shareholder-tax-2026',
+    title: '국내주식 대주주 양도소득세 2026, 종목당 50억 기준과 세율',
+    description:
+      '국내 상장주식은 소액주주면 양도세가 없지만, 종목당 50억원 이상 보유한 대주주는 양도차익에 세금을 냅니다. 소득세법 §94와 시행령 §157 기준, 20~25% 세율, 반기별 신고를 사례로 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-15',
+    readingMinutes: 8,
+  },
   // 2026-07-14 신규 5편 (중도퇴사연말정산·기장의무·상생임대인·채권투자세금·계약갱신청구권)
   {
     slug: 'mid-year-resignation-year-end-tax-2026',
