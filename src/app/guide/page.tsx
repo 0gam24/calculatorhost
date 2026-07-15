@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-16 신규 5편 (국민연금임의가입·연금저축중도해지·비과세종합저축·신용카드매출세액공제·퇴직금중간정산)
+  {
+    slug: 'national-pension-voluntary-subscription-2026',
+    title: '국민연금 임의가입 2026, 전업주부 노후연금 만드는 법',
+    description:
+      '소득이 없어도 국민연금에 스스로 가입할 수 있습니다. 국민연금법 §10 임의가입과 §13 임의계속가입의 대상·보험료·최소 가입기간 10년 요건을 전업주부 사례로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'pension-savings-early-termination-tax-2026',
+    title: '연금저축 중도해지 세금 2026, 기타소득세 16.5% 폭탄 피하기',
+    description:
+      '연금저축·IRP를 중도해지하면 세액공제 받은 원금과 운용수익에 기타소득세 16.5%가 붙습니다. 소득세법 §59의3 과세 구조와 부득이한 사유 저율과세(3.3~5.5%)를 사례로 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-07-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'tax-free-comprehensive-savings-2026',
+    title: '비과세종합저축 2026, 5천만원 이자 세금 0원 만드는 법',
+    description:
+      '만 65세 이상·장애인 등이 5,000만원까지 이자·배당에 세금을 내지 않는 비과세종합저축. 조특법 §88의2 대상 요건, 2026년 신규가입 제한, 15.4% 절세 효과를 사례로 정리합니다.',
+    category: '금융',
+    publishedAt: '2026-07-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'credit-card-sales-vat-deduction-2026',
+    title: '신용카드 매출세액공제 2026, 부가세 최대 1000만원 깎는 법',
+    description:
+      '개인사업자가 신용카드·현금영수증 매출의 1.3%를 부가세에서 빼주는 신용카드 매출세액공제. 부가가치세법 §46 대상 요건, 연 1,000만원 한도, 2027년 축소 예정을 사례로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'retirement-pay-interim-settlement-2026',
+    title: '퇴직금 중간정산 2026, 법정 사유 7가지와 세금 함정',
+    description:
+      '퇴직금 중간정산은 아무 때나 못 하고 법이 정한 사유만 가능합니다. 근로자퇴직급여보장법 §8과 시행령 §3의 주택구입·요양·파산 등 사유와, 근속연수 리셋으로 커지는 퇴직소득세 함정을 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-16',
+    readingMinutes: 8,
+  },
   // 2026-07-15 신규 5편 (혼인출산증여공제·건보임의계속가입·종소세중간예납·상가권리금보호·국내주식대주주양도세)
   {
     slug: 'marriage-childbirth-gift-deduction-2026',

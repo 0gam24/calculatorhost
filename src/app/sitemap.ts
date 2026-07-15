@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-16 신규 5편 (국민연금임의가입·연금저축중도해지·비과세종합저축·신용카드매출세액공제·퇴직금중간정산)
+  'national-pension-voluntary-subscription-2026',
+  'pension-savings-early-termination-tax-2026',
+  'tax-free-comprehensive-savings-2026',
+  'credit-card-sales-vat-deduction-2026',
+  'retirement-pay-interim-settlement-2026',
   // 2026-07-15 신규 5편 (혼인출산증여공제·건보임의계속가입·종소세중간예납·상가권리금보호·국내주식대주주양도세)
   'marriage-childbirth-gift-deduction-2026',
   'health-insurance-voluntary-continuation-2026',
