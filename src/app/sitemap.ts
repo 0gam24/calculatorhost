@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-17 신규 5편 (노란우산공제·간이세액표·금융소득건보료·소액임차인최우선변제·종부세고령자장기보유공제)
+  'noran-umbrella-mutual-aid-deduction-2026',
+  'simplified-withholding-tax-table-2026',
+  'financial-income-health-insurance-premium-2026',
+  'small-tenant-priority-repayment-2026',
+  'comprehensive-real-estate-tax-elderly-longterm-credit-2026',
   // 2026-07-16 신규 5편 (국민연금임의가입·연금저축중도해지·비과세종합저축·신용카드매출세액공제·퇴직금중간정산)
   'national-pension-voluntary-subscription-2026',
   'pension-savings-early-termination-tax-2026',

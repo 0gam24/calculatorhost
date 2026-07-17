@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-17 신규 5편 (노란우산공제·간이세액표·금융소득건보료·소액임차인최우선변제·종부세고령자장기보유공제)
+  {
+    slug: 'noran-umbrella-mutual-aid-deduction-2026',
+    title: '노란우산공제 소득공제 2026, 사업자 최대 600만원 절세',
+    description:
+      '노란우산공제(소기업·소상공인 공제부금)는 사업소득금액에 따라 연 200~600만원을 소득공제합니다. 조세특례제한법 §86의3 기준 공제한도·해지 시 과세·가입 조건을 사업자·프리랜서 사례로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-07-17',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'simplified-withholding-tax-table-2026',
+    title: '근로소득 간이세액표 2026, 매월 원천징수 80·100·120% 선택',
+    description:
+      '매월 급여에서 떼는 소득세는 근로소득 간이세액표로 정합니다. 소득세법 §134 원천징수와 시행령 §194 간이세액표, 80·100·120% 선택이 연말정산에 미치는 영향을 직장인 사례로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-07-17',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'financial-income-health-insurance-premium-2026',
+    title: '금융소득 2천만원 건강보험료 2026, 피부양자 탈락 기준',
+    description:
+      '이자·배당 등 금융소득이 연 2천만원을 넘으면 건강보험 피부양자 자격을 잃거나 직장가입자 소득월액보험료가 부과됩니다. 국민건강보험법 §71 기준 부과 구조와 대응을 투자자 사례로 정리합니다.',
+    category: '투자',
+    publishedAt: '2026-07-17',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'small-tenant-priority-repayment-2026',
+    title: '소액임차인 최우선변제금 2026, 서울 5500만원 보호 기준',
+    description:
+      '소액임차인은 경매·공매 시 다른 담보권자보다 먼저 보증금 일부를 돌려받습니다. 주택임대차보호법 §8 기준 지역별 보증금 범위와 최우선변제금(서울 5,500만원 등)을 임차인 사례로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-17',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'comprehensive-real-estate-tax-elderly-longterm-credit-2026',
+    title: '종부세 고령자·장기보유 세액공제 2026, 최대 80% 감면',
+    description:
+      '1세대1주택자는 고령자 세액공제(최대 40%)와 장기보유 세액공제(최대 50%)를 합쳐 종합부동산세를 최대 80%까지 줄일 수 있습니다. 종합부동산세법 §9 기준 공제율과 계산법을 은퇴·주택자 사례로 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-17',
+    readingMinutes: 8,
+  },
   // 2026-07-16 신규 5편 (국민연금임의가입·연금저축중도해지·비과세종합저축·신용카드매출세액공제·퇴직금중간정산)
   {
     slug: 'national-pension-voluntary-subscription-2026',
