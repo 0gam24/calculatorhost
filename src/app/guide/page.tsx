@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-19 신규 5편 (성실신고확인제도·국민연금추납·조기재취업수당·상가환산보증금·국민주택채권매입)
+  {
+    slug: 'honest-tax-return-confirmation-2026',
+    title: '성실신고확인제도 2026, 대상 기준·6월 신고기한·세액공제',
+    description:
+      '업종별 수입금액이 기준 이상인 개인사업자는 종합소득세 신고 전 세무사의 성실신고확인을 받아야 합니다. 대상 기준(소득세법 시행령 §133), 6월 30일로 연장되는 신고기한, 확인비용 세액공제를 사례로 짚었습니다.',
+    category: '세금',
+    publishedAt: '2026-07-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-additional-payment-2026',
+    title: '국민연금 추납 2026, 추후납부 대상·119개월 한도·계산법',
+    description:
+      '국민연금 추납은 과거 납부예외기간 보험료를 나중에 내 가입기간을 되살리는 제도입니다. 최대 119개월·60회 분할 한도, 추납보험료 계산법, 2025년 11월 개정(국민연금법 §92)까지 담았습니다.',
+    category: '근로',
+    publishedAt: '2026-07-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'early-reemployment-allowance-2026',
+    title: '조기재취업수당 2026, 지급요건·잔여일수 계산·신청시기',
+    description:
+      '조기재취업수당은 소정급여일수를 절반 이상 남기고 재취업해 12개월 이상 근무하면 잔여일수의 절반을 받는 제도입니다. 지급요건 3가지와 계산 사례, 청구 시기를 고용보험법 §64 기준으로 설명합니다.',
+    category: '근로',
+    publishedAt: '2026-07-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'commercial-lease-conversion-deposit-2026',
+    title: '상가임대차 환산보증금 2026, 지역별 기준과 계산법',
+    description:
+      '환산보증금은 보증금에 월차임의 100배를 더한 금액으로 상가건물임대차보호법 전면 적용 여부를 가릅니다. 서울 9억 등 지역별 기준(§2)과 계산 사례, 초과 시에도 유지되는 임차인 보호를 함께 다룹니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-housing-bond-purchase-2026',
+    title: '국민주택채권 매입 2026, 매입금액·즉시매도 할인 계산법',
+    description:
+      '부동산 소유권이전등기 시 국민주택채권을 의무 매입하며 매입금액은 시가표준액에 매입률을 곱해 정합니다. 즉시매도 본인부담금 계산법과 절차, 면제 대상을 주택도시기금법 §8 기준으로 안내합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-19',
+    readingMinutes: 8,
+  },
   // 2026-07-17 신규 5편 (노란우산공제·간이세액표·금융소득건보료·소액임차인최우선변제·종부세고령자장기보유공제)
   {
     slug: 'noran-umbrella-mutual-aid-deduction-2026',

@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-19 신규 5편 (성실신고확인제도·국민연금추납·조기재취업수당·상가환산보증금·국민주택채권매입)
+  'honest-tax-return-confirmation-2026',
+  'national-pension-additional-payment-2026',
+  'early-reemployment-allowance-2026',
+  'commercial-lease-conversion-deposit-2026',
+  'national-housing-bond-purchase-2026',
   // 2026-07-17 신규 5편 (노란우산공제·간이세액표·금융소득건보료·소액임차인최우선변제·종부세고령자장기보유공제)
   'noran-umbrella-mutual-aid-deduction-2026',
   'simplified-withholding-tax-table-2026',
