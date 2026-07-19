@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-20 신규 5편 (근로장려금반기신청·전세보증금반환보증HUG·금투자세금·사업용계좌신고·본인부담상한제환급)
+  'earned-income-tax-credit-semiannual-application-2026',
+  'jeonse-guarantee-insurance-hug-2026',
+  'gold-investment-tax-2026',
+  'business-use-account-registration-2026',
+  'medical-expense-out-of-pocket-cap-refund-2026',
   // 2026-07-19 신규 5편 (성실신고확인제도·국민연금추납·조기재취업수당·상가환산보증금·국민주택채권매입)
   'honest-tax-return-confirmation-2026',
   'national-pension-additional-payment-2026',

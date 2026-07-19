@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-20 신규 5편 (근로장려금반기신청·전세보증금반환보증HUG·금투자세금·사업용계좌신고·본인부담상한제환급)
+  {
+    slug: 'earned-income-tax-credit-semiannual-application-2026',
+    title: '근로장려금 반기신청 2026, 9월 신청기간과 정기신청 차이',
+    description:
+      '근로소득만 있는 직장인은 5월 정기신청 대신 9월 반기신청으로 근로장려금을 미리 받을 수 있습니다. 반기신청 대상, 상반기분 9월 1~15일 기간, 정기신청과의 차이를 조세특례제한법 §100의6 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-20',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'jeonse-guarantee-insurance-hug-2026',
+    title: '전세보증금 반환보증 2026, HUG 가입조건과 보증료 신청방법',
+    description:
+      '전세보증금을 떼일까 걱정된다면 HUG 전세보증금 반환보증으로 대비할 수 있습니다. 가입 조건(보증금 한도·부채비율 90%), 보증료, 신청 기한, HUG·HF·SGI 차이를 임차인 눈높이로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-20',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'gold-investment-tax-2026',
+    title: '금 투자 세금 2026, KRX금·골드바·금통장·금ETF 과세 비교',
+    description:
+      '금 투자 방식마다 세금이 완전히 다릅니다. KRX 금현물시장은 매매차익 비과세, 골드바는 부가세 10%, 금통장·금ETF는 배당소득세 15.4%. 조세특례제한법 §126의7 기준으로 4가지 방식의 세금과 비용을 비교했습니다.',
+    category: '투자',
+    publishedAt: '2026-07-20',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'business-use-account-registration-2026',
+    title: '사업용계좌 신고 2026, 복식부기의무자 대상과 미신고 가산세',
+    description:
+      '복식부기의무자가 된 개인사업자는 과세기간 개시일부터 6개월 안에 사업용계좌를 신고해야 합니다. 신고 대상 업종별 기준, 6월 30일 기한, 미신고·미사용 가산세 0.2%를 소득세법 §160의5 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-20',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'medical-expense-out-of-pocket-cap-refund-2026',
+    title: '본인부담상한제 2026, 의료비 초과금 환급 조건과 신청방법',
+    description:
+      '1년간 낸 건강보험 본인부담금이 소득분위별 상한액을 넘으면 초과분을 돌려받습니다. 본인부담상한제의 사전급여·사후환급 구조, 2026년 최고상한액 843만원, 제외 항목, 신청 방법을 국민건강보험법 §44 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-20',
+    readingMinutes: 8,
+  },
   // 2026-07-19 신규 5편 (성실신고확인제도·국민연금추납·조기재취업수당·상가환산보증금·국민주택채권매입)
   {
     slug: 'honest-tax-return-confirmation-2026',
