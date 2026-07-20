@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-21 신규 5편 (폐업부가세확정신고·세대생략증여할증·퇴직금지급기한14일·비상장주식양도세·비과세급여항목)
+  'business-closure-vat-final-return-2026',
+  'generation-skipping-gift-surcharge-2026',
+  'severance-pay-deadline-14-days-2026',
+  'unlisted-stock-capital-gains-tax-2026',
+  'non-taxable-salary-allowances-2026',
   // 2026-07-20 신규 5편 (근로장려금반기신청·전세보증금반환보증HUG·금투자세금·사업용계좌신고·본인부담상한제환급)
   'earned-income-tax-credit-semiannual-application-2026',
   'jeonse-guarantee-insurance-hug-2026',

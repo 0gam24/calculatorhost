@@ -60,6 +60,52 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-21 신규 5편 (폐업부가세확정신고·세대생략증여할증·퇴직금지급기한14일·비상장주식양도세·비과세급여항목)
+  {
+    slug: 'business-closure-vat-final-return-2026',
+    title: '폐업 부가가치세 확정신고 2026, 폐업일 다음달 25일 신고방법',
+    description:
+      '개인사업자가 폐업하면 폐업일이 속한 달의 다음 달 25일까지 부가세 확정신고를 해야 합니다. 신고 기한, 남은 재고·비품(잔존재화) 간주공급, 간이과세자 처리, 미신고 가산세를 부가가치세법 §5·§49 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-21',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'generation-skipping-gift-surcharge-2026',
+    title: '세대생략 증여 할증과세 2026, 손주 증여 30% 할증과 절세',
+    description:
+      '조부모가 손주에게 바로 증여하면 증여세 산출세액에 30%가 할증됩니다(미성년+20억 초과 시 40%). 세대생략 할증 계산법, 증여재산공제, 절세 효과와 예외를 상속세및증여세법 §57 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-21',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'severance-pay-deadline-14-days-2026',
+    title: '퇴직금 지급기한 14일 2026, 안 주면 지연이자·신고방법',
+    description:
+      '퇴직금은 퇴직일부터 14일 이내에 지급해야 합니다. 기한을 넘기면 연 20% 지연이자가 붙고, 미지급 시 사업주는 형사처벌 대상입니다. 지급기한, 지연이자, 노동청 신고 절차를 근로자퇴직급여보장법 §9 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-21',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'unlisted-stock-capital-gains-tax-2026',
+    title: '비상장주식 양도소득세 2026, 중소기업 10%·대주주 세율',
+    description:
+      '비상장주식은 대주주가 아니어도 양도하면 양도소득세 신고 대상입니다. 중소기업 소액주주 10%, 대주주·비중소 20%(과표 3억 초과분 25%) 세율과 대주주 요건(지분 4%·시총 50억)을 소득세법 §94·§104 기준으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-07-21',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'non-taxable-salary-allowances-2026',
+    title: '비과세 급여 항목 2026, 식대·자가운전·보육수당 20만원',
+    description:
+      '월급에서 세금을 떼지 않는 비과세 급여 항목이 있습니다. 식대 월 20만원, 자가운전보조금 월 20만원, 6세 이하 자녀 보육수당 월 20만원 등 주요 비과세 한도와 요건, 주의할 점을 소득세법 §12 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-21',
+    readingMinutes: 7,
+  },
   // 2026-07-20 신규 5편 (근로장려금반기신청·전세보증금반환보증HUG·금투자세금·사업용계좌신고·본인부담상한제환급)
   {
     slug: 'earned-income-tax-credit-semiannual-application-2026',
