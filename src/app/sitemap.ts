@@ -60,6 +60,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-22 신규 5편 (간이과세자7월부가세·부가세매입세액불공제·재산세카드납부·청년월세지원·부가세가산세)
+  'simplified-taxpayer-july-vat-2026',
+  'vat-non-deductible-input-tax-2026',
+  'property-tax-credit-card-payment-2026',
+  'youth-monthly-rent-support-2026',
+  'vat-penalty-underreporting-2026',
   // 2026-07-21 신규 5편 (폐업부가세확정신고·세대생략증여할증·퇴직금지급기한14일·비상장주식양도세·비과세급여항목)
   'business-closure-vat-final-return-2026',
   'generation-skipping-gift-surcharge-2026',

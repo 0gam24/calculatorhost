@@ -60,6 +60,56 @@ const CATEGORIES: CategoryMeta[] = [
 ];
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-22 신규 5편 (간이과세자7월부가세·부가세매입세액불공제·재산세카드납부·청년월세지원·부가세가산세)
+  {
+    slug: 'simplified-taxpayer-july-vat-2026',
+    title: '간이과세자도 7월 부가세 신고하나요 2026, 예정부과·예정신고',
+    description:
+      '간이과세자는 원칙적으로 다음 해 1월에 부가세를 신고하지만, 직전기 납부세액이 있으면 7월에 예정부과 고지를 받고 세금계산서를 발급했다면 7월 예정신고를 해야 합니다. 2026년 마감일(7월 27일)과 예정부과세액 계산을 부가가치세법 §66 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-22',
+    readingMinutes: 8,
+    seasonal: '7월 부가세 신고 시즌',
+  },
+  {
+    slug: 'vat-non-deductible-input-tax-2026',
+    title: '부가세 매입세액 불공제 항목 2026, 공제 안 되는 7가지',
+    description:
+      '세금계산서를 받아도 접대비, 비영업용 승용차, 사업 무관 지출 등은 부가세 매입세액 공제가 되지 않습니다. 공제 못 받는 항목과 예외(경차·화물차), 사업자등록 전 매입 20일 규정을 부가가치세법 §39 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-22',
+    readingMinutes: 8,
+    seasonal: '7월 부가세 신고 시즌',
+  },
+  {
+    slug: 'property-tax-credit-card-payment-2026',
+    title: '재산세 신용카드 납부 2026, 수수료 0원·무이자 할부 챙기는 법',
+    description:
+      '재산세는 지방세라 신용카드로 내도 납부 대행 수수료가 0원입니다. 카드사별 무이자 할부·체크카드 캐시백은 매년 변동하므로 확인이 필수입니다. 재산세 7월 납기, 카드 납부 방법과 주의사항을 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-22',
+    readingMinutes: 7,
+    seasonal: '7월 재산세 납부',
+  },
+  {
+    slug: 'youth-monthly-rent-support-2026',
+    title: '청년 월세 특별지원 2026, 상시신청 전환·신청 방법 총정리',
+    description:
+      '청년 월세 특별지원이 상시신청 체계로 개편되며 무주택 청년의 월세 부담을 덜어줍니다. 지원 금액·소득기준·연령 요건은 지자체·연도별 공고에 따라 다르므로, 자격 판단과 복지로 신청 절차를 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-22',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'vat-penalty-underreporting-2026',
+    title: '부가세 가산세 2026, 무신고·과소신고·납부지연 계산법',
+    description:
+      '부가세를 신고하지 않으면 무신고가산세 20%, 과소신고는 10%, 납부지연은 하루 10만분의 22가 붙습니다. 가산세 종류별 계산법과 수정신고 감면을 국세기본법 §47의2·§47의3·§47의4·§48 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-22',
+    readingMinutes: 8,
+    seasonal: '7월 부가세 신고 시즌',
+  },
   // 2026-07-21 신규 5편 (폐업부가세확정신고·세대생략증여할증·퇴직금지급기한14일·비상장주식양도세·비과세급여항목)
   {
     slug: 'business-closure-vat-final-return-2026',
