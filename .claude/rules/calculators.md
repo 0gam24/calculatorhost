@@ -30,13 +30,16 @@ paths:
 ## 본문 길이 기준
 **2000자 하한** (계산기 UI 제외). 1500자로는 AdSense RPM·체류시간 부족.
 
-## 필수 구조화 데이터 (6종 — 모든 계산기 페이지에 자동 적용)
-1. `SoftwareApplication` (`buildSoftwareApplicationJsonLd`)
+## 구조화 데이터 (6종 — 모든 계산기 페이지에 자동 적용, 템플릿 일관성 유지)
+1. `SoftwareApplication` (`buildSoftwareApplicationJsonLd`) — ✅ 구글 리치결과 지원
 2. `WebPage` (`buildWebPageJsonLd` — datePublished/dateModified 명시)
-3. `BreadcrumbList` (`buildBreadcrumbJsonLd`)
-4. `FAQPage` (`buildFaqPageJsonLd` — FAQ 5~8개 매칭)
-5. `HowTo` (`buildHowToJsonLd` — 4~6 step 입력→계산→결과→면책 흐름) **← 모든 계산기 필수**
-6. `Speakable` (`buildSpeakableJsonLd` — 핵심 답변 셀렉터, 음성/AI 답변 최적화)
+3. `BreadcrumbList` (`buildBreadcrumbJsonLd`) — ✅ 구글·네이버 공통 지원
+4. `FAQPage` (`buildFaqPageJsonLd` — FAQ 5~8개 매칭) — 🔴 구글 2026-06 리치결과 폐지·네이버 미지원. 무해(보이는 FaqSection과 1:1 일치 조건)하나 SERP 효과 없음
+5. `HowTo` (`buildHowToJsonLd` — 4~6 step 입력→계산→결과→면책 흐름) — 🔴 구글 폐지. 무해하나 리치결과 기대 금지
+6. `Speakable` (`buildSpeakableJsonLd` — 핵심 답변 셀렉터) — 구글 베타·뉴스 한정
+
+> 2026-07-22 공식 가이드 동기화 (`docs/references/G-구글-공식가이드/05-structured-data-구조화데이터/search-gallery.md`, `H-네이버-공식가이드/08/`).
+> 4~6번은 마크업 유지하되 **리치결과를 근거로 한 신규 설계 금지**. 마크업은 항상 화면에 보이는 콘텐츠와 일치(sd-policies 스팸 정책).
 
 헬퍼: `src/lib/seo/jsonld.ts`. 빌드 시 `<script type="application/ld+json">` 으로 인라인 삽입.
 

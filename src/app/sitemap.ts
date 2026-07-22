@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { statSync, existsSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { getLastModifiedForRoute } from '@/lib/seo/date-modified-helper';
 
 // next.config.ts 의 output: 'export' 모드에서 route handler 도 정적 생성 필수.
 export const dynamic = 'force-static';
@@ -8,11 +9,14 @@ export const dynamic = 'force-static';
 const BASE = 'https://calculatorhost.com';
 
 /**
- * 각 페이지의 page.tsx 파일 mtime 을 lastModified 로 사용.
- * 빌드 시점 일괄 'now' 보다 정확 — 변경된 페이지만 Google 이 우선 크롤링.
- * 파일 없거나 stat 실패 시 빌드 시점(now) fallback.
+ * lastModified 우선순위: ① dateModified manifest (git 마지막 커밋 시각, prebuild 생성)
+ * ② page.tsx 파일 mtime ③ 빌드 시점(now).
+ *
+ * CI(Cloudflare Pages) 클론은 모든 파일 mtime 이 클론 시각이라 ②만 쓰면 전 URL 이
+ * 빌드 시각으로 뭉개짐 → Google 은 부정확한 lastmod 를 무시 (build-sitemap 가이드).
+ * git 커밋 시각 기반 manifest 가 정확한 freshness 신호. (2026-07-22 공식 가이드 동기화)
  */
-function pageLastModified(relativePath: string): string {
+function fileMtime(relativePath: string): string {
   try {
     const filePath = resolve(process.cwd(), relativePath);
     if (!existsSync(filePath)) return new Date().toISOString();
@@ -20,6 +24,10 @@ function pageLastModified(relativePath: string): string {
   } catch {
     return new Date().toISOString();
   }
+}
+
+function pageLastModified(route: string, relativePath: string): string {
+  return getLastModifiedForRoute(route, () => fileMtime(relativePath));
 }
 
 const CALCULATOR_SLUGS = [
@@ -394,67 +402,68 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: `${BASE}/`,
-      lastModified: pageLastModified('src/app/page.tsx'),
+      lastModified: pageLastModified('/', 'src/app/page.tsx'),
       changeFrequency: 'weekly',
       priority: 1.0,
     },
     ...CATEGORY_SLUGS.map((slug) => ({
       url: `${BASE}/category/${slug}/`,
-      lastModified: pageLastModified(`src/app/category/${slug}/page.tsx`),
+      lastModified: pageLastModified(`/category/${slug}/`, `src/app/category/${slug}/page.tsx`),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
     })),
     ...CALCULATOR_SLUGS.map((slug) => ({
       url: `${BASE}/calculator/${slug}/`,
-      lastModified: pageLastModified(`src/app/calculator/${slug}/page.tsx`),
+      lastModified: pageLastModified(`/calculator/${slug}/`, `src/app/calculator/${slug}/page.tsx`),
       changeFrequency: 'weekly' as const,
       priority: 0.9,
     })),
     // 용어사전 (단일 페이지, 18개 용어)
     {
       url: `${BASE}/glossary/`,
-      lastModified: pageLastModified('src/app/glossary/page.tsx'),
+      lastModified: pageLastModified('/glossary/', 'src/app/glossary/page.tsx'),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
     },
     // 가이드 인덱스
     {
       url: `${BASE}/guide/`,
-      lastModified: pageLastModified('src/app/guide/page.tsx'),
+      lastModified: pageLastModified('/guide/', 'src/app/guide/page.tsx'),
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
-    // 변경 이력 (Changelog) — Freshness 신호용 hub
+    // 변경 이력 (Changelog) — Freshness 신호용 hub.
+    // updates-log.ts 커밋이 페이지 실변경 신호이므로 manifest(page.tsx 기준) 대신 파일 mtime 유지.
     {
       url: `${BASE}/updates/`,
-      lastModified: pageLastModified('src/lib/constants/updates-log.ts'),
+      lastModified: fileMtime('src/lib/constants/updates-log.ts'),
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     },
     // 피드 구독 허브 (RSS·Atom·JSON·llms.txt 발견)
     {
       url: `${BASE}/feeds/`,
-      lastModified: pageLastModified('src/app/feeds/page.tsx'),
+      lastModified: pageLastModified('/feeds/', 'src/app/feeds/page.tsx'),
       changeFrequency: 'monthly' as const,
       priority: 0.4,
     },
     // 계산기 위젯 임베드 허브 (백링크 유도 + "계산기 위젯" 키워드 유입)
     {
       url: `${BASE}/embed-widgets/`,
-      lastModified: pageLastModified('src/app/embed-widgets/page.tsx'),
+      lastModified: pageLastModified('/embed-widgets/', 'src/app/embed-widgets/page.tsx'),
       changeFrequency: 'monthly' as const,
       priority: 0.5,
     },
     // 가이드 개별 게시물
     ...GUIDE_SLUGS.map((slug) => ({
       url: `${BASE}/guide/${slug}/`,
-      lastModified: pageLastModified(`src/app/guide/${slug}/page.tsx`),
+      lastModified: pageLastModified(`/guide/${slug}/`, `src/app/guide/${slug}/page.tsx`),
       changeFrequency: 'monthly' as const,
       priority: 0.6,
     })),
     ...['about', 'privacy', 'terms', 'contact', 'affiliate-disclosure'].map((slug) => ({
       url: `${BASE}/${slug}/`,
-      lastModified: pageLastModified(`src/app/${slug}/page.tsx`),
+      lastModified: pageLastModified(`/${slug}/`, `src/app/${slug}/page.tsx`),
       changeFrequency: 'monthly' as const,
       priority: 0.3,
     })),

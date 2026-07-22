@@ -19,7 +19,7 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 06. 16. 07:50 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 07. 22. 13:47 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
 - 사이트 라이브: ✅ HTTP 200
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 06. 16. 07:50 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 07. 22. 13:47 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -71,7 +71,7 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> 마지막 자동 점검: 2026. 06. 16. 07:50 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 07. 22. 13:47 (Asia/Seoul)
 
 - ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
 - ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
@@ -159,7 +159,7 @@
 - ~~pre-existing `tests/unit/scripts/` 3건 vitest transform fail~~ → 2026-05-13 해소 (vitest.config.ts exclude)
 - stuck.md 두 번째 stale 섹션 (2026-05-06 `developers.google.com`) — `replaceAll` 강화 검토
 - 정부 사이트 9개 N/A timeout (한국 외 IP) — IGNORE_DOMAINS 추가 또는 timeout 조정 검토
-- scripts/*.mjs shebang 으로 인한 vitest import 차단 — 항구적 해결: lib/cli.mjs(shebang) + lib/core.mjs(no shebang) 분리
+- scripts/*.mjs shebang 으로 인한 vitest import 차단 — 항구적 해결: lib/cli.mjs(shebang) + lib/core.mjs(no shebang) 분리. (2026-07-22) 4번째 파일 확인: `tests/unit/scripts/content-depth-audit.test.ts` 도 동일 클래스로 Windows 로컬 수집 실패 (CI 무영향, vitest.config exclude 3건과 같은 원인)
 - ~~(2026-06-10) 신규 가이드 §N 인용 0건 5편 + minimal 2편~~ → 2026-06-10 해소 (commit 13d46cc): content-writer 7병렬 + 1차출처(law.go.kr·국세청·소관부처) 교차검증으로 7편 모두 strong 전환. audit strong 90→97 / minimal 0 / missing 7(비-YMYL 계산기만). 부수 교정: 에이전트 오인용 2건(개소세법 §1의2 잠정세율→§1 제7항 탄력세율, 에너지법 §16의2↔§16의3 역할), 기존 오인용 1건(DSR 가이드 은행법 §43→§34 외 교체), JSX literal `**` 마크다운 9건
 - **(2026-06-10) 내부링크 현황** — 고아(인바운드 0) 19→0 달성. 인바운드 1개 21편 잔존 (`node scripts/_orphan-check.mjs` 재측정 가능, 단 category-mapping CROSS_GUIDES 링크는 미집계). 1슬롯 계산기 13종 잔여 AD-2 보강 후보 (고CPC 9종은 2026-06-10 완료)
 

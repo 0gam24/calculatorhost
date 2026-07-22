@@ -21,12 +21,14 @@ export const metadata = {
 };
 ```
 
-## 구조화 데이터 (필수 세트)
+## 구조화 데이터 (세트 — 템플릿 일관성 유지)
 `src/lib/seo/jsonld.ts` 헬퍼로 JSON-LD 생성:
-- **계산기 페이지 (필수 6종)**: SoftwareApplication + WebPage + BreadcrumbList + FAQPage + HowTo + Speakable
-- 가이드: Article + BreadcrumbList + WebPage
+- **계산기 페이지 (6종)**: SoftwareApplication + WebPage + BreadcrumbList + FAQPage + HowTo + Speakable
+- 가이드: Article + BreadcrumbList + WebPage (+ FAQPage/Speakable 템플릿 관행)
 - 용어사전: DefinedTerm + BreadcrumbList + WebPage
 - 정책 페이지(privacy/terms/contact/about): BreadcrumbList + WebPage
+
+> ⚠️ 2026-07-22 공식 가이드 동기화: **FAQPage(구글 리치결과 폐지·네이버 미지원)·HowTo(구글 폐지)·Speakable(베타·뉴스 한정)은 SERP 효과 없음.** 무해하므로 유지하되 리치결과 근거 설계 금지, 마크업은 보이는 콘텐츠와 1:1 일치 필수. 상세: `.claude/rules/new-post-seo-geo-harness.md` §4-1
 
 ## 영문 슬러그
 - 영문 URL (`/calculator/salary/`, `/category/tax/`)

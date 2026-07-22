@@ -212,14 +212,18 @@
 ## 4. 메타데이터 + JSON-LD (seo-auditor 검수)
 
 ### 4-1. 자동화 가능 (CI 게이트)
-- [ ] **메타 description 80~155자**: Google SERP 모바일 120자 권장
-- [ ] **JSON-LD 5종 유효성**: schema.org validator (FAQPage 필수, Speakable 음성 태그, ISO 8601 날짜)
+- [ ] **메타 description 80~155자**: Google SERP 모바일 120자 권장. 네이버 사이트 간단 체크는 제목 40자·설명 80자 이내 권장 (H/06-01)
+- [ ] **JSON-LD 유효성**: schema.org validator + 구글 리치결과 테스트 (ISO 8601 날짜)
+  - **리치결과 유효 (계속 필수)**: Article(가이드) · BreadcrumbList · WebPage · SoftwareApplication(계산기) — 구글 search-gallery 지원 목록 + 네이버 08 지원 목록 기준
+  - 🔴 **FAQPage — 구글 2026-06 리치결과 전면 폐지(공식 문서 삭제) + 네이버 구조화 데이터 미지원(H/08 전 문서에 부재)**. 기존·신규 모두 패널티는 없음(보이는 FaqSection과 1:1 일치 유지 조건). 리치결과를 근거로 한 설계 금지, 타 AI 엔진(비구글) 추출용 잔존 가치만
+  - **HowTo — 구글 폐지** (Recipe 하위 요소로만 잔존). **Speakable — 구글 베타·뉴스 콘텐츠 한정**. 둘 다 넣어도 무해하나 SERP 효과 없음
+  - 근거(2026-07-22 공식 가이드 동기화): `docs/references/G-구글-공식가이드/05-structured-data-구조화데이터/search-gallery.md` · `sd-policies.md`, `docs/references/H-네이버-공식가이드/08-구조화된 데이터 마크업/`
 - [ ] **법조항 §N ≥ 3개**: `npm run citations:audit` strong 티어
-- [ ] **canonical trailing slash**: `/guide/{slug}/` 형식 통일
-- [ ] **`metadata.keywords` 5~10개 필수** (2026-05-21 추가, 글로벌 layout keywords 상속 차단됨):
+- [ ] **canonical trailing slash**: `/guide/{slug}/` 형식 통일 (절대경로 — 네이버 H/04-01 요구)
+- [ ] **`metadata.keywords` 5~10개** (2026-05-21 추가, 글로벌 layout keywords 상속 차단됨):
   - 토픽 핵심 키워드 + §N 법조항 번호 1개 + 페르소나·시즌 키워드 포함
   - 예: `['N잡러 종합소득세', '부업 종합소득세', '직장인 부수입 신고', '5월 종소세 신고', '소득세법 14조']`
-  - articleLd.keywords와 동일 또는 더 풍부하게. Google은 무시하나 LLM 인용 신호용.
+  - articleLd.keywords와 동일 또는 더 풍부하게. ⚠️ 2026-07-22 확인: meta keywords는 **구글 미사용 명시(seo-starter-guide) + 네이버도 공식 권고 없음**(과거 "네이버 meta keywords 활용"은 목차 오기). SERP 신호 아님 — articleLd.keywords 동기화·LLM 추출용 관행으로만 유지
 
 ### 4-2. 수동 검토 (메인 스레드 게이트)
 - [ ] **AI Overview 답변 확인**: 우리가 미커버 엣지 케이스 식별 후 본문 추가
