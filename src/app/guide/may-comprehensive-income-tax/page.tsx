@@ -201,19 +201,19 @@ export default function MayComprehensiveIncomeTaxPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>신고 기한</strong>: 2026년 5월 1일~5월 31일 (성실신고확인대상 6월 30일)</li>
-                  <li>👥 <strong>대상</strong>: 프리랜서·1인사업자·임대인·강사·N잡러·이자배당 2천만 원 초과 등</li>
-                  <li>⚠️ <strong>무신고 시</strong>: 가산세 20% + 일 0.022% (연 약 8%) + 환급 못 받음</li>
-                  <li>💡 <strong>절세 5가지</strong>: 노란우산·연금저축·의료비·기부금·월세 세액공제</li>
-                  <li>💰 <strong>환급 시기</strong>: 신고 후 6월 말~7월 초 입금</li>
-                  <li>🛠 <strong>도구</strong>: 홈택스(hometax.go.kr) 또는 손택스 앱</li>
+                  <li><strong>신고 기한</strong>: 2026년 5월 1일~5월 31일 (성실신고확인대상 6월 30일)</li>
+                  <li><strong>대상</strong>: 프리랜서·1인사업자·임대인·강사·N잡러·이자배당 2천만 원 초과 등</li>
+                  <li>주의: <strong>무신고 시</strong>: 가산세 20% + 일 0.022% (연 약 8%) + 환급 못 받음</li>
+                  <li><strong>절세 5가지</strong>: 노란우산·연금저축·의료비·기부금·월세 세액공제</li>
+                  <li><strong>환급 시기</strong>: 신고 후 6월 말~7월 초 입금</li>
+                  <li><strong>도구</strong>: 홈택스(hometax.go.kr) 또는 손택스 앱</li>
                 </ul>
               </section>
 
               {/* D-day 카운트다운 */}
               <section aria-label="신고 일정" className="card bg-danger-500/5 border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-bold text-danger-700 dark:text-danger-300">
-                  🚨 신고 시즌 일정표
+                  신고 시즌 일정표
                 </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -238,7 +238,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                       </tr>
                       <tr className="border-b border-border-subtle bg-danger-500/10">
                         <td className="px-3 py-2 font-bold">5월 31일 (토)</td>
-                        <td className="px-3 py-2 font-bold">⚠️ 신고·납부 마감 (자동 연장: 6월 2일 월요일)</td>
+                        <td className="px-3 py-2 font-bold">주의: 신고·납부 마감 (자동 연장: 6월 2일 월요일)</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2">6월 30일</td>
@@ -282,7 +282,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <h2 className="text-2xl font-bold">2. 신고 대상 사례 — 본인이 해당하는지 확인</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="mb-2 font-semibold text-text-primary">✅ 신고 의무 (반드시 5월 신고)</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">신고 의무 (반드시 5월 신고)</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 프리랜서 (3.3% 원천징수 받은 모든 분야 — IT·디자인·강사·작가·통번역 등)</li>
                       <li>• 1인사업자·소상공인 (음식점·소매·온라인쇼핑몰 등)</li>
@@ -295,7 +295,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="mb-2 font-semibold text-text-primary">⚠️ 신고 의무는 없지만 신고 시 환급 가능</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">주의: 신고 의무는 없지만 신고 시 환급 가능</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 직장 근로자 중 연말정산에서 의료비·교육비·기부금·월세 세액공제 누락한 경우</li>
                       <li>• 중도퇴사자로 연말정산 안 한 경우 (퇴직 시 정산 안 한 경우)</li>
@@ -304,7 +304,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <p className="text-sm text-danger-700 dark:text-danger-300">
-                      <strong>⚠️ 흔한 오해</strong>: "부업으로 100만 원밖에 안 벌었어요" → <strong>1원이라도 사업소득
+                      <strong>주의: 흔한 오해</strong>: "부업으로 100만 원밖에 안 벌었어요" → <strong>1원이라도 사업소득
                       발생 시 신고 의무</strong>. 무신고 시 가산세 부과. 사업자등록 안 했어도 마찬가지.
                     </p>
                   </div>
@@ -477,7 +477,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <h2 className="text-2xl font-bold">6. 환급 받는 경우 vs 추가 납부 사례</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💰 환급 받는 케이스</h3>
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">환급 받는 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 프리랜서 — 3.3% 원천징수액 &gt; 실제 세액 (단순경비율 적용 시 흔함)</li>
                       <li>• 사업자 — 적자 발생 (손실 → 다음 해 결손금 이월)</li>
@@ -487,7 +487,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                     </ul>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">💸 추가 납부 케이스</h3>
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">추가 납부 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• N잡러 — 직장 + 부업 합산 시 누진세율 상위 적용</li>
                       <li>• 사업소득 큰 폭 증가 (3.3% 원천징수보다 실세액 큼)</li>
@@ -503,7 +503,7 @@ export default function MayComprehensiveIncomeTaxPage() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 개별 사정(다양한 소득·복잡한 공제)은 세무사 상담 권장.</li>
                   <li>• 단순경비율·기준경비율은 매년 시행령 변경 — 2026년 5월 신고 시 홈택스 자동 적용 확인.</li>
@@ -515,7 +515,7 @@ export default function MayComprehensiveIncomeTaxPage() {
 
               {/* 관련 도구 */}
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

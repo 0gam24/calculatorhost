@@ -217,7 +217,7 @@ export default function FourMajorInsuranceRates2026Page() {
                   월급이 659만 원을 초과하면, 상한선 이상의 급여에 대해서는 국민연금료가 공제되지 않습니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">💡 예시: 월급 300만 원 기준</p>
+                  <p className="font-semibold mb-1">예시: 월급 300만 원 기준</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li><strong>1~6월:</strong> 300만 × 4.5% = 13만 5,000원</li>
                     <li><strong>7월~12월:</strong> 300만 × 4.75% = 14만 2,500원</li>
@@ -233,7 +233,7 @@ export default function FourMajorInsuranceRates2026Page() {
                   건강보험료 계산 후, 추가로 <strong>장기요양보험료(건강보험료의 12.95%)</strong>가 별도 공제됩니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">💡 예시: 월급 300만 원 기준</p>
+                  <p className="font-semibold mb-1">예시: 월급 300만 원 기준</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li><strong>건강보험료:</strong> 300만 × 3.545% = 10만 6,350원</li>
                     <li><strong>장기요양보험료:</strong> 10만 6,350 × 12.95% ≈ 1만 3,772원</li>
@@ -249,7 +249,7 @@ export default function FourMajorInsuranceRates2026Page() {
                   나머지 고용안정·직업능력개발사업분(규모별 0.25~0.85%)은 사업주가 전액 부담합니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">💡 예시: 월급 300만 원 기준</p>
+                  <p className="font-semibold mb-1">예시: 월급 300만 원 기준</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li><strong>고용보험료(근로자 부담):</strong> 300만 × 0.9% = 2만 7,000원</li>
                     <li><strong>고용안정·직업개발사업분:</strong> 사업주 부담 (근로자 무관)</li>
@@ -264,7 +264,7 @@ export default function FourMajorInsuranceRates2026Page() {
                   따라서 직장인이 실제로 부담하는 보험료는 국민연금, 건강보험(장기요양 포함), 고용보험 3가지입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
-                  ⚠️ 단, 자영업자는 산재보험에 임의 가입할 수 있으며, 이 경우 본인이 부담합니다.
+                  주의: 단, 자영업자는 산재보험에 임의 가입할 수 있으며, 이 경우 본인이 부담합니다.
                 </p>
               </section>
 
@@ -275,7 +275,7 @@ export default function FourMajorInsuranceRates2026Page() {
                   2026년 1~6월은 637만 원, 7월부터는 659만 원이 상한선입니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">💡 예시: 월급 700만 원 기준 (7월~)</p>
+                  <p className="font-semibold mb-1">예시: 월급 700만 원 기준 (7월~)</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li><strong>계산:</strong> 659만(상한) × 4.75% = 31만 3,025원</li>
                     <li><strong>설명:</strong> 700만 × 4.75% = 33만 2,500원이지만, 상한선 이상은 공제 안 함</li>
@@ -330,27 +330,27 @@ export default function FourMajorInsuranceRates2026Page() {
                 <h2 className="text-2xl font-bold">자주 하는 실수 5가지</h2>
                 <ol className="space-y-2 text-sm">
                   <li>
-                    <strong>❌ 4대보험료를 세금으로 착각하기</strong>
+                    <strong>4대보험료를 세금으로 착각하기</strong>
                     <br />
                     <span className="text-text-tertiary">4대보험료는 소득세와 별개입니다. 국민연금·건강보험은 사회보장 제도이며, 추가로 소득세와 지방소득세가 공제됩니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 기준소득월액 상한선을 모르고 계산하기</strong>
+                    <strong>기준소득월액 상한선을 모르고 계산하기</strong>
                     <br />
                     <span className="text-text-tertiary">월급이 700만 원이라도 국민연금료는 상한선(659만 원)을 기준으로만 공제됩니다. 초과분은 공제 안 됨.</span>
                   </li>
                   <li>
-                    <strong>❌ 7월 인상을 미리 반영하지 않기</strong>
+                    <strong>7월 인상을 미리 반영하지 않기</strong>
                     <br />
                     <span className="text-text-tertiary">연봉협상 시 1월부터 12월까지 월급을 계산하면, 7월부터 국민연금이 0.25%p 인상되어 실제 연간 실수령액이 줄어듭니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 장기요양보험료를 놓치기</strong>
+                    <strong>장기요양보험료를 놓치기</strong>
                     <br />
                     <span className="text-text-tertiary">급여명세서에 따로 표시되지만, 건강보험료 계산 후 반드시 확인해야 실제 4대보험료를 제대로 파악할 수 있습니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 산재보험료를 근로자가 부담한다고 생각하기</strong>
+                    <strong>산재보험료를 근로자가 부담한다고 생각하기</strong>
                     <br />
                     <span className="text-text-tertiary">산재보험은 사업주만 납부합니다. 근로자는 부담하지 않으므로, 급여명세서에도 없어야 정상입니다.</span>
                   </li>
@@ -386,31 +386,31 @@ export default function FourMajorInsuranceRates2026Page() {
                 <h2 className="text-2xl font-bold">관련 가이드 & 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
                     {' — 4대보험료·세금 자동 반영해서 월급 확인'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/national-pension-premium-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/national-pension-premium-2026/" className="font-semibold text-primary-500 hover:underline">
                       국민연금 보험료 2026 상세 가이드
                     </Link>
                     {' — 7월 인상, 기준소득월액 상한 자세히'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/health-insurance-premium-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/health-insurance-premium-2026/" className="font-semibold text-primary-500 hover:underline">
                       건강보험료 계산 가이드
                     </Link>
                     {' — 피부양자 조건, 금액 산정법'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/unemployment-benefit-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/unemployment-benefit-2026/" className="font-semibold text-primary-500 hover:underline">
                       고용보험·실업급여 2026
                     </Link>
                     {' — 실업급여 수급 조건, 금액'}
                   </li>
                   <li>
-                    ➜ <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
                       퇴직금 계산기
                     </Link>
                     {' — 퇴직 시 받을 금액 확인'}

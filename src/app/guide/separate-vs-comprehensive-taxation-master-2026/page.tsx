@@ -164,7 +164,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="mb-2 text-left font-semibold text-text-primary">분리과세 한도 일괄표</caption>
@@ -265,7 +265,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 핵심 원리</p>
+                  <p className="font-semibold text-text-primary">핵심 원리</p>
                   <p className="mt-2">
                     분리과세는 "소수의 특정 소득에 낮은 일괄 세율을 주겠다"는 정책이고, 종합과세는 "모든 소득을 합산하여 공평하게 누진세를 적용한다"는 원칙입니다. 어느 것이 더 유리한지는 <strong>당신의 전체 소득 규모</strong>에 따라 달라집니다.
                   </p>
@@ -310,7 +310,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: 2,000만 1원이라도 경계 초과</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 2,000만 1원이라도 경계 초과</p>
                   <p className="mt-2">
                     금융소득이 정확히 2,000만 원이면 분리과세 가능하지만, 2,000만 원 1원이 되는 순간 전액 종합과세 의무입니다(소득세법 §14 ⑥). 국세청 홈택스는 센트 단위까지 계산하므로, 금융소득 신고 전에 정확한 합계를 확인하세요.
                   </p>
@@ -387,7 +387,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 팁: 수령 시기 전략</p>
+                  <p className="font-semibold text-text-primary">팁: 수령 시기 전략</p>
                   <p className="mt-2">
                     사적연금이 1,500만을 초과하면 다음 연도로 수령을 미루는 것도 전략입니다. 예: 2026년에 1,800만을 받을 예정이면, 1,500만은 2026년에, 300만은 2027년에 수령하면 각각 분리과세(3.3~5.5%)로 처리 가능합니다. 다만 연금 계약 조건을 먼저 확인하세요.
                   </p>
@@ -458,7 +458,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 홈택스 신고 팁</p>
+                  <p className="font-semibold text-text-primary">홈택스 신고 팁</p>
                   <p className="mt-2">
                     분리과세는 기본 선택입니다. 합산하려면 홈택스 종합소득세 신고 화면에서 <strong>"분리과세 배제 선택"</strong> 항목을 명시적으로 체크해야 합니다. 체크하지 않으면 자동으로 분리과세 22%로 처리됩니다.
                   </p>
@@ -637,7 +637,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
 
               {/* 최종 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 5월 31일 신고 전 필독 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">5월 31일 신고 전 필독 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>금융소득 2,000만 경계:</strong> 1원 차이로 분리과세 전체 불가능. 정확한 합계 확인 필수.
@@ -665,7 +665,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
 
               {/* 관련 링크 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

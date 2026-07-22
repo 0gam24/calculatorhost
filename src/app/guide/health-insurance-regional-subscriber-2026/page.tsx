@@ -221,7 +221,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
 
             <div className="bg-yellow-50 dark:bg-yellow-950 rounded-lg p-3 border-l-4 border-l-highlight-500">
               <p className="text-sm text-text-secondary">
-                <strong>⚠️ 다만:</strong> 퇴사 후 소득과 재산이 기준 이하면 직장가입자 배우자의 피부양자로 등록하는 것이 유리할 수
+                <strong>다만:</strong> 퇴사 후 소득과 재산이 기준 이하면 직장가입자 배우자의 피부양자로 등록하는 것이 유리할 수
                 있습니다. 피부양자 요건은 연소득 2,000만원 이하·재산 과표 9억원 이하입니다.
               </p>
             </div>
@@ -269,7 +269,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
 
             <div className="bg-yellow-50 dark:bg-yellow-950 rounded-lg p-3 border-l-4 border-l-highlight-500">
               <p className="text-sm text-text-secondary">
-                <strong>⚠️ 다만:</strong> 비과세 근로소득(월 20만원 식대, 1인당 연 500만원 이내 학자금 지원 등)은 제외됩니다. 또한
+                <strong>다만:</strong> 비과세 근로소득(월 20만원 식대, 1인당 연 500만원 이내 학자금 지원 등)은 제외됩니다. 또한
                 국민연금 수령액은 전액 포함되므로 은퇴자의 보험료가 생각보다 높을 수 있습니다.
               </p>
             </div>
@@ -336,7 +336,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
 
             <div className="bg-yellow-50 dark:bg-yellow-950 rounded-lg p-3 border-l-4 border-l-highlight-500">
               <p className="text-sm text-text-secondary">
-                <strong>⚠️ 다만:</strong> 재산 평가액은 <strong>실거래가나 공시가격이 아니라 시세 추정액</strong>을 기준으로 합니다.
+                <strong>다만:</strong> 재산 평가액은 <strong>실거래가나 공시가격이 아니라 시세 추정액</strong>을 기준으로 합니다.
                 정확한 계산은 국민건강보험공단 가입자 맞춤 모의계산기(nhis.or.kr)를 사용하는 것이 가장 정확합니다.
               </p>
             </div>
@@ -392,7 +392,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
 
             <div className="bg-yellow-50 dark:bg-yellow-950 rounded-lg p-3 border-l-4 border-l-highlight-500">
               <p className="text-sm text-text-secondary">
-                <strong>⚠️ 다만:</strong> 본 안내는 기본 구조에 대한 설명이며, 신고 누락·착오·변동사항에 따라 실제 부과액이 달라질 수
+                <strong>다만:</strong> 본 안내는 기본 구조에 대한 설명이며, 신고 누락·착오·변동사항에 따라 실제 부과액이 달라질 수
                 있습니다. 정정·감면 등 권리 신청은 국민건강보험공단 상담(1577-1000)을 통해 확인하세요.
               </p>
             </div>
@@ -459,7 +459,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
 
             <div className="bg-yellow-50 dark:bg-yellow-950 rounded-lg p-3 border-l-4 border-l-highlight-500">
               <p className="text-sm text-text-secondary">
-                <strong>⚠️ 다만:</strong> 임의계속가입은 "보험료 납부"의 편의일 뿐, 보험 급여(의료비 청구 시 실손 청구 등)는 일반
+                <strong>다만:</strong> 임의계속가입은 "보험료 납부"의 편의일 뿐, 보험 급여(의료비 청구 시 실손 청구 등)는 일반
                 지역가입자와 동일합니다. 또한 36개월이 끝나면 지역가입자로 전환되어 다시 보험료가 올라가므로, 그 이후 대비를 미리
                 해야 합니다.
               </p>

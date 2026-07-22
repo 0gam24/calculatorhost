@@ -167,7 +167,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-4 text-2xl font-bold text-danger-700 dark:text-danger-300">⚠️ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-danger-700 dark:text-danger-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -251,7 +251,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                         <li>산출세액 = 3,000만 × 15% − 126만 = 324만 원</li>
                         <li className="font-semibold text-danger-500">무신고가산세 = 324만 × 20% = 64.8만 원</li>
                         <li className="text-xs italic text-text-tertiary">
-                          ⚠️ 6월 1~30일 자진신고 시 50% 감면 → 32.4만 원
+                          주의: 6월 1~30일 자진신고 시 50% 감면 → 32.4만 원
                         </li>
                       </ul>
                     </div>
@@ -264,7 +264,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                         <li>산출세액 = 5,000만 × 15% − 126만 = 624만 원</li>
                         <li className="font-semibold text-danger-500">무신고가산세 = 624만 × 20% = 124.8만 원</li>
                         <li className="text-xs italic text-text-tertiary">
-                          ⚠️ 7월 신고 시 자진신고 감면 대상 아님 (6개월 넘음)
+                          주의: 7월 신고 시 자진신고 감면 대상 아님 (6개월 넘음)
                         </li>
                       </ul>
                     </div>
@@ -311,7 +311,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 조금이라도 빨리 내자</p>
+                  <p className="font-semibold text-text-primary">조금이라도 빨리 내자</p>
                   <p className="mt-2">
                     매일 0.022%씩 증가합니다. 6개월 지연 시 약 4%, 1년 지연 시 약 8% 추가. 신고 후 가능한 빨리
                     납부하는 것이 이득입니다.
@@ -346,14 +346,14 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   <p className="mb-3 font-semibold text-text-primary">부정행위 vs 단순 무신고</p>
                   <div className="text-sm text-text-secondary space-y-2">
                     <div>
-                      <p className="font-semibold text-text-primary">✅ 단순 무신고 (20% 가산세)</p>
+                      <p className="font-semibold text-text-primary">단순 무신고 (20% 가산세)</p>
                       <p>
                         "5월까지 바빴어요", "계산 복잡해서 미뤘어요" → 6월에 성의 있게 신고하고 자진신고 감면
                         받음. 가산세 50% 감면.
                       </p>
                     </div>
                     <div>
-                      <p className="font-semibold text-danger-600">❌ 부정행위 (40% 가산세 + 형사 처벌)</p>
+                      <p className="font-semibold text-danger-600">부정행위 (40% 가산세 + 형사 처벌)</p>
                       <p>
                         "영수증 조작해서 경비 늘렸어요", "소득 일부 현금으로 받고 안 신고했어요" → 세무조사
                         적발 후 부정행위 판정. 자진신고 감면 불가.
@@ -425,7 +425,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                 </div>
 
                 <div className="mt-4 rounded-lg bg-bg-raised p-4">
-                  <p className="font-semibold text-text-primary mb-3">🚨 지금 신고하면 (2026-05-20 기준)</p>
+                  <p className="font-semibold text-text-primary mb-3">지금 신고하면 (2026-05-20 기준)</p>
                   <ul className="text-sm text-text-secondary list-inside list-disc space-y-1">
                     <li>
                       <strong>5월 31일까지 신고 (11일 남음)</strong>: 가산세 0원 (정기 신고 기한)
@@ -438,7 +438,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 현실적 조언</p>
+                  <p className="font-semibold text-text-primary">현실적 조언</p>
                   <p className="mt-2">
                     5월 31일까지 신고하는 것이 가장 유리합니다(가산세 0). 하지만 부득이하게 6월에 신고하더라도 6월 말까지면
                     50% 감면을 받을 수 있으므로 서두르세요.
@@ -456,7 +456,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                 </p>
 
                 <div className="rounded-lg bg-danger-500/10 p-4 text-sm">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">⚠️ 환급 상실은 영구적입니다</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">주의: 환급 상실은 영구적입니다</p>
                   <p className="text-text-secondary">
                     5월 31일을 넘으면 "환급 청구권"이 소멸합니다(국세기본법 §26의2, 법정기한 5년이 지나면 완전 소멸).
                     예를 들어 환급 받을 돈이 200만 원인데 신고를 안 하면 그 200만 원은 영영 돌아오지 않습니다.
@@ -563,7 +563,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>5월 31일까지</strong> 신고하는 것이 가장 안전 (가산세 0, 자진신고 감면도 불필요)
@@ -586,7 +586,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

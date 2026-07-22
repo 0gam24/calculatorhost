@@ -231,7 +231,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                 </p>
                 <div className="space-y-3 rounded-lg bg-bg-card p-4 text-sm">
                   <div>
-                    <p className="mb-1 font-semibold text-text-primary">✅ 올바른 순서: 기존주택 → 상속주택</p>
+                    <p className="mb-1 font-semibold text-text-primary">올바른 순서: 기존주택 → 상속주택</p>
                     <ul className="list-inside list-disc space-y-0.5 text-text-secondary">
                       <li>기존주택 양도: 1세대1주택 비과세 적용 (12억 이하)</li>
                       <li>상속주택 양도: 2주택 상태로 일반 양도세</li>
@@ -239,7 +239,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                     </ul>
                   </div>
                   <div>
-                    <p className="mb-1 font-semibold text-text-primary">❌ 잘못된 순서: 상속주택 → 기존주택</p>
+                    <p className="mb-1 font-semibold text-text-primary">잘못된 순서: 상속주택 → 기존주택</p>
                     <ul className="list-inside list-disc space-y-0.5 text-text-secondary">
                       <li>상속주택 양도: 일반 2주택 양도세 (비과세 불가)</li>
                       <li>기존주택 양도: 비과세 특례 적용 불가</li>
@@ -376,7 +376,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
 
               {/* 8. 상속주택 자체는 비과세 대상이 아님 */}
               <section aria-label="상속주택 비과세 불가" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 상속주택 자체는 비과세 대상이 아닙니다</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 상속주택 자체는 비과세 대상이 아닙니다</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   이 특례는 기존 주택(상속 전부터 소유하던 주택)에만 적용되며, 상속주택은 비과세 대상이 아닙니다.
                   따라서 상속주택을 양도할 때는 2주택 이상(조정지역)이면 중과세(기본세율 + 20%p)가 적용됩니다.
@@ -444,7 +444,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
 
               {/* 11. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항 5가지</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항 5가지</h2>
                 <ul className="list-inside list-disc space-y-2 text-sm text-text-secondary">
                   <li>
                     <strong>5년 기한은 사망일 기준</strong> — 상속등기나 지분 분할일이 아님. 상속 신고 기한과도

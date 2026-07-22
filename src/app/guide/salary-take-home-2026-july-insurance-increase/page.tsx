@@ -215,7 +215,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   고소득자의 경우 이 상한선 인상이 추가 공제액을 결정하게 됩니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">💡 핵심: 누가 얼마나 부담이 증가하나?</p>
+                  <p className="font-semibold mb-1">핵심: 누가 얼마나 부담이 증가하나?</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li><strong>월급 300만원:</strong> 300만 × 0.25% = 월 7,500원 추가 공제</li>
                     <li><strong>월급 500만원:</strong> 500만 × 0.25% = 월 12,500원 추가 공제</li>
@@ -332,7 +332,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   1~6월에는 637만원, 7월부터는 659만원을 상한으로 국민연금료가 계산되며, 초과분에 대해서는 공제되지 않습니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">💡 상한선 적용 계산</p>
+                  <p className="font-semibold mb-1">상한선 적용 계산</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li><strong>1~6월:</strong> 637만(상한) × 4.5% = 28만 6,650원</li>
                     <li><strong>7월~:</strong> 659만(상한) × 4.75% = 31만 3,025원</li>
@@ -341,7 +341,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   </ul>
                 </div>
                 <p className="text-sm text-text-tertiary mt-3">
-                  ⚠️ 고소득자의 경우 상한선 인상(637만→659만)의 영향도 받습니다. 단순히 0.25%p만 봐서는 안 됩니다.
+                  주의: 고소득자의 경우 상한선 인상(637만→659만)의 영향도 받습니다. 단순히 0.25%p만 봐서는 안 됩니다.
                 </p>
               </section>
 
@@ -395,10 +395,10 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   단순히 월급 × 12를 계산하면 실제 연간 실수령액보다 많게 계산할 수 있습니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">❌ 흔한 실수</p>
+                  <p className="font-semibold mb-1">흔한 실수</p>
                   <p className="text-text-secondary mb-2">월급 300만 × 12개월 = 3,600만원 연봉</p>
                   <p className="text-text-secondary mb-3">이를 4대보험 30% 공제로 계산 → 월평균 공제액 100만원 추정... 오류!</p>
-                  <p className="font-semibold mb-1">✅ 올바른 계산</p>
+                  <p className="font-semibold mb-1">올바른 계산</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li>상반기(1~6월): 월 300만 × 6개월 = 1,800만원</li>
                     <li>하반기(7~12월): 월 300만 × 6개월 = 1,800만원</li>
@@ -453,7 +453,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   </tbody>
                 </table>
                 <p className="text-sm text-text-tertiary mt-3">
-                  ⚠️ 월급 600만원 이하는 기준소득월액 상한선이 아직 미적용되므로, 0.25%p 인상만 반영하면 됩니다.
+                  주의: 월급 600만원 이하는 기준소득월액 상한선이 아직 미적용되므로, 0.25%p 인상만 반영하면 됩니다.
                   700만원 이상은 상한선 인상이 추가 영향을 미칩니다.
                 </p>
               </section>
@@ -462,22 +462,22 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                 <h2 className="text-2xl font-bold">자주 하는 실수 4가지</h2>
                 <ol className="space-y-2 text-sm">
                   <li>
-                    <strong>❌ 7월 인상을 무시하고 월급 × 12만 계산하기</strong>
+                    <strong>7월 인상을 무시하고 월급 × 12만 계산하기</strong>
                     <br />
                     <span className="text-text-tertiary">월 300만 × 12 = 3,600만이 아니라, (월 300만 × 6 + 1~6월 4대보험) + (월 300만 × 6 + 7~12월 4대보험)으로 나눠 계산해야 정확한 연간 실수령액을 알 수 있습니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 기준소득월액 상한선(659만)을 넘는 고소득 월급 그대로 계산하기</strong>
+                    <strong>기준소득월액 상한선(659만)을 넘는 고소득 월급 그대로 계산하기</strong>
                     <br />
                     <span className="text-text-tertiary">월급이 700만원이면 국민연금료는 659만 × 4.75%로만 계산되지, 700만 × 4.75%가 아닙니다. 초과분 41만은 공제되지 않습니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 6월과 7월의 급여명세서를 다르게 보지 않기</strong>
+                    <strong>6월과 7월의 급여명세서를 다르게 보지 않기</strong>
                     <br />
                     <span className="text-text-tertiary">급여명세서에는 실제 국민연금 공제액이 명시됩니다. 6월은 4.5% 기준, 7월부터는 4.75% 기준으로 다르게 표시될 것입니다. 이를 확인해야 자신의 급여를 정확히 파악할 수 있습니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 건강보험·고용보험 변동 없음을 놓치기</strong>
+                    <strong>건강보험·고용보험 변동 없음을 놓치기</strong>
                     <br />
                     <span className="text-text-tertiary">7월에는 국민연금만 인상됩니다. 건강보험(3.545%), 장기요양보험(12.95%), 고용보험(0.9%)은 2026년 변동이 없으므로 혼동하지 않아야 합니다.</span>
                   </li>
@@ -508,25 +508,25 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                 <h2 className="text-2xl font-bold">관련 가이드 & 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
                     {' — 4대보험료·소득세 자동 반영, 7월 인상 미리 계산'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       2026년 4대보험 요율 종합 가이드
                     </Link>
                     {' — 국민연금·건강보험·고용보험·산재보험 요율표'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
                       연봉협상 전 실수령액 정확 시뮬레이션
                     </Link>
                     {' — 세전·세후, 상여금, 비과세 수당 반영'}
                   </li>
                   <li>
-                    ➜ <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
                       근로 계산기 모음
                     </Link>
                     {' — 연봉, 퇴직금, 4대보험 전체'}

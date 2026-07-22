@@ -153,7 +153,7 @@ export default function RentConversionRateGuidePage() {
               </header>
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">📌 핵심 요약</h2>
+                <h2 className="mb-2 text-xl font-semibold">핵심 요약</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <strong>법조항</strong>: 주택임대차보호법 §7의2 ② + 시행령 §9
@@ -239,7 +239,7 @@ export default function RentConversionRateGuidePage() {
               </section>
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">🧮 관련 계산기</h2>
+                <h2 className="mb-2 text-xl font-semibold">관련 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
@@ -265,7 +265,7 @@ export default function RentConversionRateGuidePage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-2 text-xl font-semibold">📖 관련 가이드</h2>
+                <h2 className="mb-2 text-xl font-semibold">관련 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

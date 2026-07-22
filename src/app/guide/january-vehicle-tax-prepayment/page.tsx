@@ -162,17 +162,17 @@ export default function JanuaryVehicleTaxPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>1월 16~31일 신청·납부</strong> = 5% 한도 내 공제 (선납 일수에 비례)</li>
-                  <li>🌐 <strong>신청처</strong>: 위택스(wetax.go.kr) 또는 자동차세 앱</li>
-                  <li>💳 <strong>신용카드</strong>: 2~6개월 무이자 할부 가능 (수수료 약 0.8% 본인)</li>
-                  <li>🚗 <strong>정확한 공제액</strong>: 본 계산기의 "연납 할인 적용" 옵션으로 확인</li>
-                  <li>↩️ <strong>매도 시</strong>: 일할 환급 (위택스 자동 처리)</li>
-                  <li>⚠️ <strong>1월 신청이 최대</strong> 선납 일수가 많을수록 공제액 증가</li>
+                  <li><strong>1월 16~31일 신청·납부</strong> = 5% 한도 내 공제 (선납 일수에 비례)</li>
+                  <li><strong>신청처</strong>: 위택스(wetax.go.kr) 또는 자동차세 앱</li>
+                  <li><strong>신용카드</strong>: 2~6개월 무이자 할부 가능 (수수료 약 0.8% 본인)</li>
+                  <li><strong>정확한 공제액</strong>: 본 계산기의 "연납 할인 적용" 옵션으로 확인</li>
+                  <li>↩ <strong>매도 시</strong>: 일할 환급 (위택스 자동 처리)</li>
+                  <li>주의: <strong>1월 신청이 최대</strong> 선납 일수가 많을수록 공제액 증가</li>
                 </ul>
               </section>
 
               <section aria-label="할인율표" className="card">
-                <h2 className="mb-3 text-xl font-bold">📊 연납 공제율 (지방세법 시행령 §125)</h2>
+                <h2 className="mb-3 text-xl font-bold">연납 공제율 (지방세법 시행령 §125)</h2>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">명목 공제율: 5% (1월 신청 시 최대)</p>
                   <p className="text-text-secondary mb-3">정확한 공제액은 선납 일수에 비례하여 계산됩니다. 예를 들어 1월 전체(31일) 신청 시 5% 공제를 받으며, 신청이 늦을수록 선납 일수가 줄어들어 공제액도 감소합니다.</p>
@@ -212,7 +212,7 @@ export default function JanuaryVehicleTaxPage() {
               </section>
 
               <section aria-label="cc별 절감액" className="card">
-                <h2 className="mb-3 text-xl font-bold">🚗 cc별 자동차세 + 1월 연납 절감액</h2>
+                <h2 className="mb-3 text-xl font-bold">cc별 자동차세 + 1월 연납 절감액</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
@@ -309,7 +309,7 @@ export default function JanuaryVehicleTaxPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 할인율은 정부 정책 — 매년 변동 가능. 위택스 안내 확인 필수.</li>
                   <li>• 신청 후 차량 매도·말소 시 환급 신청 필요 (위택스 자동 처리 또는 신청).</li>
@@ -319,7 +319,7 @@ export default function JanuaryVehicleTaxPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 도구</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 도구</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">자동차세 계산기 — 본인 차종 정확한 세액·연납 절감액</Link></li>
                   <li>→ <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">자동차세 제1기 6월 납부 가이드 — 연납 놓쳤을 때의 정기분 납부·차령경감</Link></li>

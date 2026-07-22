@@ -318,7 +318,7 @@ export default function NovemberYearEndPrepGuide() {
 
               {/* 8. 12월 마감 일정 */}
               <section aria-label="12월 마감 일정" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 12월 마감 일정</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 12월 마감 일정</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>12월 25일경: 금융사별 연금저축·IRP 납입 마감 (이체 지연 감안)</li>
                   <li>12월 31일: 현금영수증·기부금·청약통장·월세 모든 납입 완료</li>

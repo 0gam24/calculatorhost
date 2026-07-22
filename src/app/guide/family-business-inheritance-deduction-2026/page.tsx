@@ -219,7 +219,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   공제 한도는 피상속인의 최대주주 지분 취득 연도부터 상속개시 전일까지의 기간으로 계산합니다. 따라서 30년 이상 경영 사업자는 최대 600억원까지 공제받을 수 있습니다.
                 </p>
                 <p className="mt-4">
-                  ⚠️ 다만 공제 대상 자산이 공제 한도를 초과할 수 없습니다. 예를 들어 기업 자산이 500억원인데 공제 한도가 600억원이면, 500억원만 공제됩니다.
+                  다만 공제 대상 자산이 공제 한도를 초과할 수 없습니다. 예를 들어 기업 자산이 500억원인데 공제 한도가 600억원이면, 500억원만 공제됩니다.
                 </p>
               </section>
 
@@ -246,7 +246,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   </ul>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 요건이 복잡하므로, 정확한 판단은 반드시 세무 전문가(세무사, 변호사) 상담이 필수입니다.
+                  다만 요건이 복잡하므로, 정확한 판단은 반드시 세무 전문가(세무사, 변호사) 상담이 필수입니다.
                 </p>
               </section>
 
@@ -287,7 +287,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   </p>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 정당한 사유(기술·기능 부족·경영 악화 등)가 있으면 국세청에 사전 신청하여 조건을 완화받을 수 있습니다. 하지만 사전 신청 없이 위반하면 추징됩니다.
+                  다만 정당한 사유(기술·기능 부족·경영 악화 등)가 있으면 국세청에 사전 신청하여 조건을 완화받을 수 있습니다. 하지만 사전 신청 없이 위반하면 추징됩니다.
                 </p>
               </section>
 
@@ -365,7 +365,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 서류가 복잡하고 요건도 까다로우므로, 반드시 세무사나 변호사와 함께 진행하는 것이 안전합니다.
+                  다만 서류가 복잡하고 요건도 까다로우므로, 반드시 세무사나 변호사와 함께 진행하는 것이 안전합니다.
                 </p>
               </section>
 
@@ -435,7 +435,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 세법은 수시로 개정되므로, 정확한 최신 정보는 국세청(nts.go.kr) 또는 세무 전문가 상담이 필수입니다.
+                  다만 세법은 수시로 개정되므로, 정확한 최신 정보는 국세청(nts.go.kr) 또는 세무 전문가 상담이 필수입니다.
                 </p>
               </section>
 

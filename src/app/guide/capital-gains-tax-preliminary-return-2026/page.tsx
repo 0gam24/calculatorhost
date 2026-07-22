@@ -211,7 +211,7 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
                   부동산이 가장 흔한 경우이므로, "2개월 이내"를 기억하면 됩니다. 다만 부담부증여는 3개월이므로 혼동하지 않도록 주의하세요.
                 </p>
                 <p className="mt-4">
-                  ⚠️ 다만 기한 말일이 휴일이면 그 다음 영업일까지 연장됩니다(국세기본법 §51). 정확한 기한은 홈택스(hometax.go.kr)의 "신고기한 확인" 메뉴에서 확인하는 것이 안전합니다.
+                  다만 기한 말일이 휴일이면 그 다음 영업일까지 연장됩니다(국세기본법 §51). 정확한 기한은 홈택스(hometax.go.kr)의 "신고기한 확인" 메뉴에서 확인하는 것이 안전합니다.
                 </p>
               </section>
 
@@ -365,7 +365,7 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 "예정신고 세액공제 폐지"는 2024년 세법 개정이므로, 본인의 양도 연도에 따라 적용 여부가 달라질 수 있습니다. 정확한 확인은 홈택스 또는 세무사에 문의하세요.
+                  다만 "예정신고 세액공제 폐지"는 2024년 세법 개정이므로, 본인의 양도 연도에 따라 적용 여부가 달라질 수 있습니다. 정확한 확인은 홈택스 또는 세무사에 문의하세요.
                 </p>
               </section>
 
@@ -443,7 +443,7 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 위 사항들은 개인의 상황에 따라 적용이 달라질 수 있으므로, 불확실한 경우 반드시 홈택스 상담 또는 세무사 문의를 권장합니다.
+                  다만 위 사항들은 개인의 상황에 따라 적용이 달라질 수 있으므로, 불확실한 경우 반드시 홈택스 상담 또는 세무사 문의를 권장합니다.
                 </p>
               </section>
 

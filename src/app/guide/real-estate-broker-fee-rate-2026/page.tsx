@@ -282,7 +282,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 </ul>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     위 상한액은 <strong>상한일 뿐 강제사항이 아닙니다</strong>. 매매인과 중개사 간 협의로 상한액 이하로 인하받을 수 있습니다. 특히 거래액이 크거나 경기가 침체한 경우 협상 여지가 충분합니다. 계약 전에 여러 중개사의 견적을 비교하고, 부가세 포함 여부를 명시적으로 확인하세요.
                   </p>
@@ -363,7 +363,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 </ul>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     전세는 매매보다 요율이 낮지만, <strong>월세는 보증금과 월세를 함께 고려</strong>하여 거래금액을 환산합니다. 상세한 월세 환산 방법은 다음 섹션을 참고하세요.
                   </p>
@@ -420,7 +420,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 </ul>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     월세 환산액이 정확하게 계산되어야 요율 구간이 결정됩니다. 보증금이 높고 월세가 낮으면 환산액이 5,000만원 미만이 될 수 있으므로, <strong>계약 전에 중개사에 정확한 환산액을 확인</strong>하세요. 공식 불명확 시 시청 건축과나 공인중개사협회에 문의하는 것이 안전합니다.
                   </p>
@@ -459,7 +459,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     지자체(서울시, 경기도 등)에 따라 중개비 규제나 부가세 처리에 차이가 있을 수 있습니다. 거래 지역의 최신 정책을 확인하고, 중개사와의 계약서에 총 납부액을 명확히 기록하는 것이 분쟁을 예방하는 방법입니다.
                   </p>
@@ -492,7 +492,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     공인중개사법 시행규칙 별표는 시대에 따라 개정될 수 있습니다. 현재(2026년) 기준으로 최신 정보는 <Link href="https://www.kar.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">
                       한국공인중개사협회
@@ -512,7 +512,7 @@ export default function RealEstateBrokerFeeRatePage() {
                     href="/calculator/broker-fee/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
-                    <h4 className="font-semibold text-primary-500">👉 중개수수료 계산기</h4>
+                    <h4 className="font-semibold text-primary-500">중개수수료 계산기</h4>
                     <p className="mt-1 text-sm text-text-secondary">
                       거래금액 입력하면 요율·부가세 자동 계산
                     </p>

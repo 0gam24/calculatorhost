@@ -238,7 +238,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     협의 결과는 <strong>반드시 표준 거래계약서에 명시</strong>되어야 효력이 있습니다. 구두 합의만으로는 나중에 분쟁이 생길 수 있으므로, "중개수수료 240만원(부가세 별도 또는 포함)"이라고 정확히 기록하세요.
                   </p>
@@ -256,35 +256,35 @@ export default function BrokerFeeNegotiationSavingsPage() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">📊 거래금액이 클 때</h4>
+                    <h4 className="font-semibold text-text-primary">거래금액이 클 때</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       6억원 이상의 대형 거래는 협상 여지가 큽니다. 상한요율 기준 240만원의 1~2%를 할인하는 것이 현실적으로 가능합니다. 예를 들어 6억원을 200만원(0.33%)에 합의하면 40만원(17% 할인)을 절약할 수 있습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">📉 경기가 침체할 때</h4>
+                    <h4 className="font-semibold text-text-primary">경기가 침체할 때</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       거래량이 줄어드는 시기(금리 인상기, 경제 불황 등)에는 중개사도 거래를 유지하기 위해 협상에 응하기 쉽습니다. 이런 시기에는 상한요율에서 15~25% 할인을 받을 가능성이 높습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">🤝 매도·매수가 같은 중개사를 쓸 때</h4>
+                    <h4 className="font-semibold text-text-primary">매도·매수가 같은 중개사를 쓸 때</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       매도자의 중개사와 매수자의 중개사가 다르면 중개비가 두 배 청구됩니다. 그래서 많은 중개사들이 양쪽 거래를 직접 담당하려고 합니다. 이 경우 중개비를 협상으로 줄일 여지가 많습니다. 예를 들어 상한 240만원을 180만원으로 협의하고 양쪽에서 합의하면 중개사도 거래 효율성을 얻고 당사자도 비용을 절약합니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">🏢 거래가 단순할 때</h4>
+                    <h4 className="font-semibold text-text-primary">거래가 단순할 때</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       일반적인 아파트 매매처럼 복잡한 법적 문제가 없고, 번거로운 서류가 적을 때 협상 가능성이 높습니다. 반대로 상속, 경매, 임차권 관계 복잡한 거래는 업무량이 많아 협상 여지가 적습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">💰 당신이 좋은 거래선을 제공할 때</h4>
+                    <h4 className="font-semibold text-text-primary">당신이 좋은 거래선을 제공할 때</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       이미 다른 거래선으로 부동산을 중개해본 경험 있는 주인이라면, 신속하고 깔끔한 거래가 가능하다는 신호를 보내세요. 중개사는 대금 지급 불이행, 채무 문제, 기한 지연 등의 리스크를 줄이려고 하므로, 당신이 "신뢰할 수 있는 거래선"이라는 인상을 주면 중개비 협상이 수월합니다.
                     </p>
@@ -292,7 +292,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     반대로 거래가 복잡하거나, 당신이 새로운 거래선이거나, 경기가 좋아서 거래가 많은 시기에는 협상 여지가 거의 없을 수 있습니다. 이 경우 상한요율을 기준으로 청구될 가능성이 높으므로, 미리 여러 중개사의 견적을 받아 비교하는 것이 좋습니다.
                   </p>
@@ -312,35 +312,35 @@ export default function BrokerFeeNegotiationSavingsPage() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">1️⃣ 계약서 작성 전에 미리 협상하기</h4>
+                    <h4 className="font-semibold text-text-primary">1⃣ 계약서 작성 전에 미리 협상하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       부동산 거래는 계약 직전이 중개비 협상의 최적 시점입니다. 당사자가 이미 그 부동산으로 결정했고, 중개사 입장에서는 거래가 확정되는 단계이기 때문입니다. "이 조건이면 계약을 진행하겠습니다"라는 신호를 보내면 중개사도 협상에 응하기 쉽습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">2️⃣ 여러 중개사에 견적 비교하기</h4>
+                    <h4 className="font-semibold text-text-primary">2⃣ 여러 중개사에 견적 비교하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       같은 부동산이라도 중개사마다 제시하는 중개비가 다를 수 있습니다. A 중개사는 240만원(상한요율), B 중개사는 210만원, C 중개사는 190만원을 제시할 수 있습니다. 최소 3~5개 중개사에 비교 견적을 받으면 시장 가격을 파악할 수 있고, 그 정보를 바탕으로 협상을 유리하게 이끌 수 있습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">3️⃣ 부가세 포함 여부를 명확히 하기</h4>
+                    <h4 className="font-semibold text-text-primary">3⃣ 부가세 포함 여부를 명확히 하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       중개사가 240만원을 제시했을 때 "부가세는 별도인가?"를 반드시 확인하세요. 일반과세사업자라면 240만+24만(부가세)=264만원을 내야 합니다. 반면 중개사가 간이과세거나 면세사업자라면 부가세가 없습니다. 이를 명확히 하면, 상한요율 기준 총액(240만+부가세)에서 일부를 깎는 협상이 가능합니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">4️⃣ 매도·매수 모두에게 같은 중개사 추천하기</h4>
+                    <h4 className="font-semibold text-text-primary">4⃣ 매도·매수 모두에게 같은 중개사 추천하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       매도자와 매수자가 서로 다른 중개사를 쓰면 중개비가 두 배 청구됩니다. 거래 초기 단계에서 "한 중개사가 양쪽을 중개하면 중개비를 협상할 수 있다"고 상대방을 설득하세요. 일반적으로 양쪽이 같은 중개사를 쓰면 중개비를 10~15% 정도 깎을 수 있습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">5️⃣ 최종 금액을 계약서에 명시하기</h4>
+                    <h4 className="font-semibold text-text-primary">5⃣ 최종 금액을 계약서에 명시하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       협상 후 합의한 중개비(예: 200만원, 부가세 포함)를 <strong>반드시 표준 거래계약서의 "중개수수료" 칸에 기록</strong>하세요. 구두 약속만으로는 나중에 상한요율을 기준으로 청구될 수 있습니다. 계약서에 명시되어야만 법적 효력이 있습니다.
                     </p>
@@ -348,7 +348,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     무리한 협상 요청(예: 상한요율의 50% 이상 할인)은 중개사를 무시하는 것으로 느껴질 수 있고, 결과적으로 거래 진행을 방해할 수 있습니다. 상한요율에서 10~25% 정도 인하하는 것이 현실적이고 양쪽 모두 만족할 수 있는 범위입니다.
                   </p>
@@ -394,7 +394,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     부가세 포함 여부는 중개사의 과세 형태에 따라 결정되므로 "부가세를 깎아달라"는 요청은 불가능합니다. 다만 부가세가 발생하는 일반과세 사업자라면, 중개비 자체(예: 240만원)를 협상으로 200만원으로 낮추고, 부가세는 별도로 계산하도록 명확히 하는 방식으로 협상할 수 있습니다.
                   </p>
@@ -415,7 +415,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">✅ 반값 중개의 장점</h4>
+                    <h4 className="font-semibold text-text-primary">반값 중개의 장점</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       • 중개비가 전통 중개사의 50~60% 수준으로 매우 저렴
                       <br />
@@ -428,7 +428,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">⚠️ 반값 중개의 단점</h4>
+                    <h4 className="font-semibold text-text-primary">주의: 반값 중개의 단점</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       • 중개사 경험과 신뢰도가 확인되지 않을 수 있음
                       <br />
@@ -460,7 +460,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     중개수수료는 중개사의 서비스 원가입니다. 지나치게 저가 중개사는 서비스 품질 저하나 거래 위험 증가로 이어질 수 있습니다. 특히 첫 거래라면 경험 많은 중개사를 선택하고 중개비를 협상하는 것이 더 안전할 수 있습니다.
                   </p>
@@ -475,7 +475,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                     href="/calculator/broker-fee/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
-                    <h4 className="font-semibold text-primary-500">👉 중개수수료 계산기</h4>
+                    <h4 className="font-semibold text-primary-500">중개수수료 계산기</h4>
                     <p className="mt-1 text-sm text-text-secondary">
                       거래금액 입력하면 상한요율·부가세 자동 계산
                     </p>

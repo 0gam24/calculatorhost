@@ -212,7 +212,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                   </p>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 공제액 내에서는 <strong>세금이 나오지 않지만, 신고 의무가 여전히 있습니다.</strong> 신고 없이 적발되면 무신고 가산세가 부과됩니다.
+                  <strong>주의:</strong> 공제액 내에서는 <strong>세금이 나오지 않지만, 신고 의무가 여전히 있습니다.</strong> 신고 없이 적발되면 무신고 가산세가 부과됩니다.
                 </p>
               </section>
 
@@ -257,7 +257,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 다만:</strong> 배우자에게 주는 6억과 자녀에게 주는 5천만은 따로 계산됩니다. 부부가 함께 자녀에게 증여할 때, 배우자 공제와 자녀 공제가 중복되지는 않습니다. 각자의 증여에 각자의 공제를 적용합니다.
+                  <strong>다만:</strong> 배우자에게 주는 6억과 자녀에게 주는 5천만은 따로 계산됩니다. 부부가 함께 자녀에게 증여할 때, 배우자 공제와 자녀 공제가 중복되지는 않습니다. 각자의 증여에 각자의 공제를 적용합니다.
                 </p>
               </section>
 
@@ -302,7 +302,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 중요:</strong> 10년 기한은 "<strong>현재 증여일</strong>로부터 역산 10년"입니다. 즉, 2026년 증여는 2016년 이후 증여와 합산됩니다. 기산점을 명확히 해야 나중에 분쟁이 없습니다.
+                  <strong>중요:</strong> 10년 기한은 "<strong>현재 증여일</strong>로부터 역산 10년"입니다. 즉, 2026년 증여는 2016년 이후 증여와 합산됩니다. 기산점을 명확히 해야 나중에 분쟁이 없습니다.
                 </p>
               </section>
 
@@ -350,7 +350,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 다만:</strong> 기본 공제 5천만 + 혼인공제 1억을 합산하면 1.5억이지만, 혼인공제 1억 자체가 "추가"이므로 중복 선택은 불가합니다. 둘을 더하는 것이 맞습니다.
+                  <strong>다만:</strong> 기본 공제 5천만 + 혼인공제 1억을 합산하면 1.5억이지만, 혼인공제 1억 자체가 "추가"이므로 중복 선택은 불가합니다. 둘을 더하는 것이 맞습니다.
                 </p>
               </section>
 
@@ -412,7 +412,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 세율 구간별로 누진공제가 다릅니다. 과세표준이 정확해야 올바른 세액이 계산됩니다. 복잡한 경우 계산기나 세무사 상담을 권장합니다.
+                  <strong>주의:</strong> 세율 구간별로 누진공제가 다릅니다. 과세표준이 정확해야 올바른 세액이 계산됩니다. 복잡한 경우 계산기나 세무사 상담을 권장합니다.
                 </p>
               </section>
 
@@ -442,7 +442,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 필수:</strong> 공제 범위 내라도 신고는 반드시 하세요. 신고 후 결과는 세금 0이더라도, 신고 기록이 남아야 나중의 혼란이 없습니다.
+                  <strong>주의: 필수:</strong> 공제 범위 내라도 신고는 반드시 하세요. 신고 후 결과는 세금 0이더라도, 신고 기록이 남아야 나중의 혼란이 없습니다.
                 </p>
               </section>
 

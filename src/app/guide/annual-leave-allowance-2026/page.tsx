@@ -189,7 +189,7 @@ export default function AnnualLeaveAllowancePage() {
                   <strong>다만 주의할 점</strong>은 연차는 발생일로부터 1년간 미사용 시 소멸된다는 것입니다(§60⑦).
                   예를 들어 2025년 7월에 발생한 15일은 2026년 6월 30일까지만 사용 가능합니다.
                   그 이후에는 법적 보호를 받지 못합니다.
-                  ⚠️ 다만 회사가 사용촉진 절차(연차 사용 권고)를 명확히 이행했다면, 소멸된 연차에 대한 수당 청구 의무가 면제될 수도 있습니다.
+                  다만 회사가 사용촉진 절차(연차 사용 권고)를 명확히 이행했다면, 소멸된 연차에 대한 수당 청구 의무가 면제될 수도 있습니다.
                   실제로는 대부분의 회사가 수당으로 지급하므로, 퇴사 시 명확히 요청하세요.
                 </p>
               </section>
@@ -271,7 +271,7 @@ export default function AnnualLeaveAllowancePage() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-tertiary">
-                  ⚠️ 다만 이 금액은 <strong>세전</strong>이며, 실제로는 소득세·지방소득세·4대보험료가 공제됩니다.
+                  다만 이 금액은 <strong>세전</strong>이며, 실제로는 소득세·지방소득세·4대보험료가 공제됩니다.
                   따라서 실제 수령액은 약 80~85% 정도입니다.
                 </p>
               </section>
@@ -368,27 +368,27 @@ export default function AnnualLeaveAllowancePage() {
                 <h2 className="text-2xl font-bold">자주 하는 실수와 주의할 점</h2>
                 <ol className="space-y-2 text-sm">
                   <li>
-                    <strong>❌ 월급을 통상임금으로 계산하기</strong>
+                    <strong>월급을 통상임금으로 계산하기</strong>
                     <br />
                     <span className="text-text-tertiary">월급(총 급여) ≠ 통상임금. 상여금, 복리후생비 등을 제외한 기본급 + 고정 수당만 포함.</span>
                   </li>
                   <li>
-                    <strong>❌ 전체 연차를 일괄로 받을 수 있다고 가정하기</strong>
+                    <strong>전체 연차를 일괄로 받을 수 있다고 가정하기</strong>
                     <br />
                     <span className="text-text-tertiary">발생 연차 중 1년 초과 미사용분은 소멸되므로, 발생일별로 따로 계산해야 합니다(단순하려면 현재 미사용분만).</span>
                   </li>
                   <li>
-                    <strong>❌ 연차수당을 요청하지 않기</strong>
+                    <strong>연차수당을 요청하지 않기</strong>
                     <br />
                     <span className="text-text-tertiary">회사가 저절로 주는 경우는 드뭅니다. 인사팀에 서면으로 명확히 요청해야 합니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 세전 금액으로만 계획하기</strong>
+                    <strong>세전 금액으로만 계획하기</strong>
                     <br />
                     <span className="text-text-tertiary">연차수당은 세금을 공제받으므로, 실제 수령액은 약 80~85% 정도입니다. 미리 계산해 두세요.</span>
                   </li>
                   <li>
-                    <strong>❌ 소멸 기한 무시하기</strong>
+                    <strong>소멸 기한 무시하기</strong>
                     <br />
                     <span className="text-text-tertiary">발생일로부터 1년 경과 시 소멸됩니다. 퇴사 예정이면 소멸 기한을 반드시 확인하세요.</span>
                   </li>
@@ -422,25 +422,25 @@ export default function AnnualLeaveAllowancePage() {
                 <h2 className="text-2xl font-bold">관련 계산기 · 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
                     {' — 월급에서 4대보험·세금이 얼마나 공제되는지 확인'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
                       연봉협상 가이드
                     </Link>
                     {' — 이직 시 정확한 세후 수령액으로 협상하기'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/weekly-holiday-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/weekly-holiday-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       주휴수당 계산법 2026
                     </Link>
                     {' — 주중에 근무한 경우 받을 수 있는 수당'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       4대보험 요율 2026
                     </Link>
                     {' — 국민연금, 건강보험, 고용보험 최신 세율'}

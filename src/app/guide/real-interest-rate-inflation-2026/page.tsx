@@ -279,7 +279,7 @@ export default function RealInterestRateInflation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 세금을 반영하지 않습니다. 이자소득세 15.4%가 떨어지면 명목금리
+                  다만 위 계산은 세금을 반영하지 않습니다. 이자소득세 15.4%가 떨어지면 명목금리
                   자체가 줄어들므로, 세금을 먼저 차감한 후 물가를 빼야 합니다.
                 </p>
               </section>
@@ -336,7 +336,7 @@ export default function RealInterestRateInflation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 이자소득세 15.4%는 2026년 기준입니다. 세법이 변경되면 세율이 달라질 수
+                  다만 이자소득세 15.4%는 2026년 기준입니다. 세법이 변경되면 세율이 달라질 수
                   있으므로, 국세청 공시 기준을 따르세요. 또한 종합소득이 높으면 추가 누진세가
                   부과될 수 있습니다.
                 </p>
@@ -407,7 +407,7 @@ export default function RealInterestRateInflation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 현재(2026) 정기예금 금리는 4~5%대이고, 물가상승률은 정부 통계청
+                  다만 현재(2026) 정기예금 금리는 4~5%대이고, 물가상승률은 정부 통계청
                   소비자물가지수(CPI) 기준입니다. 예금금리는 시시각각 변하고, 물가도 산업별로
                   다르므로 단순 비교 목적으로만 참고하세요.
                 </p>
@@ -450,7 +450,7 @@ export default function RealInterestRateInflation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 한국(2026)은 명목금리 4~5%, 물가상승률 2~3% 수준이므로, 근사식과
+                  다만 한국(2026)은 명목금리 4~5%, 물가상승률 2~3% 수준이므로, 근사식과
                   정확식의 차이는 0.3% 미만입니다. 대부분의 가계금융 의사결정에서는 근사식으로
                   충분합니다.
                 </p>
@@ -507,7 +507,7 @@ export default function RealInterestRateInflation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 투자 상품은 원금 손실 위험이 있습니다. 실질금리가 음수라고 해서 무조건
+                  다만 투자 상품은 원금 손실 위험이 있습니다. 실질금리가 음수라고 해서 무조건
                   주식이나 채권으로 옮기는 것은 위험합니다. 자신의 위험 성향과 투자 기간을 고려한
                   분산 전략을 수립하고, 필요하면 재무 전문가와 상담하세요.
                 </p>
@@ -522,7 +522,7 @@ export default function RealInterestRateInflation2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

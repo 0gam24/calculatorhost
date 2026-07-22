@@ -308,7 +308,7 @@ export default function OctoberVatGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>법인은 예외 없이 예정신고 의무 — 미신고 시 가산세 20%(부가가치세법 §66).</li>
                   <li>예정고지 대상자도 통지 세액 미납 시 납부지연 가산세 부과.</li>

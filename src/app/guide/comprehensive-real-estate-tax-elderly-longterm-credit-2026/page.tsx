@@ -216,7 +216,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   </table>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 나이는 과세기준일인 6월 1일 현재를 기준으로 판정하고, 보유 기간도 6월 1일까지로 계산합니다. 생일이나 취득일이 경계에 가까우면 1년 차이로 공제율이 크게 달라질 수 있으니 정확한 기준일을 확인하세요.
+                  다만 나이는 과세기준일인 6월 1일 현재를 기준으로 판정하고, 보유 기간도 6월 1일까지로 계산합니다. 생일이나 취득일이 경계에 가까우면 1년 차이로 공제율이 크게 달라질 수 있으니 정확한 기준일을 확인하세요.
                 </p>
               </section>
 
@@ -258,7 +258,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   </p>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 위 종부세액은 이해를 돕기 위한 가정치입니다. 실제 산출세액은 공시가격, 공제금액(1세대1주택 12억), 공정시장가액비율(60%), 세율을 거쳐 계산되므로, 정확한 금액은 종부세 계산기나 홈택스로 확인하세요.
+                  다만 위 종부세액은 이해를 돕기 위한 가정치입니다. 실제 산출세액은 공시가격, 공제금액(1세대1주택 12억), 공정시장가액비율(60%), 세율을 거쳐 계산되므로, 정확한 금액은 종부세 계산기나 홈택스로 확인하세요.
                 </p>
               </section>
 
@@ -294,7 +294,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   </table>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 어느 방식이 유리한지는 공시가격, 두 사람의 나이, 보유 기간에 따라 매년 달라질 수 있습니다. 특례 신청은 정해진 기간에만 가능하므로, 매년 고지 전 두 방식을 비교해 선택하는 것이 좋습니다.
+                  다만 어느 방식이 유리한지는 공시가격, 두 사람의 나이, 보유 기간에 따라 매년 달라질 수 있습니다. 특례 신청은 정해진 기간에만 가능하므로, 매년 고지 전 두 방식을 비교해 선택하는 것이 좋습니다.
                 </p>
               </section>
 

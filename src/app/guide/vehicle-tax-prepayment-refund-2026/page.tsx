@@ -188,7 +188,7 @@ export default function VehicleTaxPrepaymentRefund2026Page() {
                   </p>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 임시 등록번호로 판매 전 시운전을 한 경우나, 사실상 소유권 이전이 아닌 경우는 환급 대상이 아닐 수 있습니다. 정확한 판단은 차량 등록지 시청·구청(이택스 또는 위택스)에 문의하세요.
+                  다만 임시 등록번호로 판매 전 시운전을 한 경우나, 사실상 소유권 이전이 아닌 경우는 환급 대상이 아닐 수 있습니다. 정확한 판단은 차량 등록지 시청·구청(이택스 또는 위택스)에 문의하세요.
                 </p>
               </section>
 
@@ -309,7 +309,7 @@ export default function VehicleTaxPrepaymentRefund2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 환급을 신청하려면 반드시 정확한 정보(소유권 이전일, 폐차일)가 전산에 반영되어야 합니다. 차량 등록지 시·군·구청 또는 위택스(wetax.go.kr) / 이택스(etax.seoul.go.kr) 사이트에서 본인 정보로 조회하여 확인하세요.
+                  다만 환급을 신청하려면 반드시 정확한 정보(소유권 이전일, 폐차일)가 전산에 반영되어야 합니다. 차량 등록지 시·군·구청 또는 위택스(wetax.go.kr) / 이택스(etax.seoul.go.kr) 사이트에서 본인 정보로 조회하여 확인하세요.
                 </p>
               </section>
 

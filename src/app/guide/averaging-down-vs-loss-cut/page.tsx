@@ -356,7 +356,7 @@ export default function AveragingDownVsLossCutPage() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항
+                  주의사항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 투자 권유가 아니며, 모든 투자 결정은 본인의 책임입니다.</li>

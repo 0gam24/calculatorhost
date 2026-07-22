@@ -242,7 +242,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 현찰 스프레드는 은행, 통화, 시기에 따라 수시로 변합니다. 일반적으로
+                  다만 현찰 스프레드는 은행, 통화, 시기에 따라 수시로 변합니다. 일반적으로
                   USD는 약 1.75% 수준이지만, EUR이나 JPY는 다를 수 있으므로 환전 전에 은행에
                   확인하세요.
                 </p>
@@ -283,7 +283,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   </ul>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 매매기준율은 은행마다 기준이 다를 수 있습니다. 한국은행 기준율,
+                  다만 매매기준율은 은행마다 기준이 다를 수 있습니다. 한국은행 기준율,
                   수출입은행 기준율, 또는 자신의 시장거래 평균값을 사용하는 은행도 있습니다.
                   따라서 같은 시간에도 은행별로 기초가 되는 매매기준율이 약간 다를 수 있습니다.
                 </p>
@@ -334,7 +334,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   </ul>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 은행별, 통화별로 스프레드가 다릅니다. USD는 약 1.75%, EUR은 2~2.5%,
+                  다만 은행별, 통화별로 스프레드가 다릅니다. USD는 약 1.75%, EUR은 2~2.5%,
                   JPY는 1~1.5% 수준이 일반적이지만, 은행과 시기에 따라 상이하므로 정확한 값은
                   환전 전에 은행에 문의하세요.
                 </p>
@@ -383,7 +383,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   부분만 극적으로 절감된다는 의미입니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 우대율도 시기와 은행에 따라 다릅니다. 명절이나 성수기, 시장 변동성이
+                  다만 우대율도 시기와 은행에 따라 다릅니다. 명절이나 성수기, 시장 변동성이
                   높을 때는 우대율이 줄어들 수 있으므로, 확실한 우대율은 환전 당일에 은행에
                   확인하세요.
                 </p>
@@ -436,7 +436,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   인출도 환율이 좋은 편이므로 혼합 전략을 추천합니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 송금 수수료는 별도(보통 5,000~10,000원)이므로, 소액 송금은 현찰 환전이
+                  다만 송금 수수료는 별도(보통 5,000~10,000원)이므로, 소액 송금은 현찰 환전이
                   더 유리할 수도 있습니다. 금액과 방식에 따라 각 은행의 환율과 수수료를 비교한
                   후 선택하세요.
                 </p>
@@ -479,7 +479,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   경향이 있습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 정기적으로 변동되므로, 환전 전에 여러 은행의 실시간 현찰 환율을
+                  다만 정기적으로 변동되므로, 환전 전에 여러 은행의 실시간 현찰 환율을
                   비교하는 것이 가장 확실합니다. 대부분의 은행 모바일 앱이나 웹사이트에서
                   실시간 환율을 제공합니다.
                 </p>
@@ -525,7 +525,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   충당하면 환전 수수료를 크게 줄일 수 있습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 목적지 국가의 카드 인수 상황, 환율 변동성, 현지 수수료 정책을 미리
+                  다만 목적지 국가의 카드 인수 상황, 환율 변동성, 현지 수수료 정책을 미리
                   조사하고 출발하세요. 특히 마이너한 통화나 개발도상국 여행은 현지 ATM이
                   없을 수도 있으므로 미리 준비가 필요합니다.
                 </p>
@@ -537,7 +537,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

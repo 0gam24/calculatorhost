@@ -187,7 +187,7 @@ export default function RetirementIncomeTaxPage() {
                   예를 들어 퇴직금 5,000만 원을 받을 때 근속 5년이면 총 세금이 약 350만 원 수준이지만, 근속 20년이면 약 95만 원으로 줄어듭니다. 이는 연분연승법 때문에 근속연수가 길수록 월 환산 세액이 낮아지기 때문입니다.
                 </p>
                 <div className="bg-bg-card rounded p-3 text-sm text-text-secondary border-l-2 border-primary-500">
-                  <strong>⚠️ 다만:</strong> 임금피크제를 적용하거나 퇴직 당해 연도에 다른 소득(양도세·사업소득 등)이 있으면 분리과세(퇴직소득) 또는 종합과세(다른 소득) 선택 시 세액이 달라질 수 있습니다. 개별 상황 검토 필수.
+                  <strong>다만:</strong> 임금피크제를 적용하거나 퇴직 당해 연도에 다른 소득(양도세·사업소득 등)이 있으면 분리과세(퇴직소득) 또는 종합과세(다른 소득) 선택 시 세액이 달라질 수 있습니다. 개별 상황 검토 필수.
                 </div>
               </section>
 
@@ -228,7 +228,7 @@ export default function RetirementIncomeTaxPage() {
                   </li>
                 </ol>
                 <div className="bg-bg-card rounded p-3 text-sm text-text-secondary border-l-2 border-primary-500">
-                  <strong>⚠️ 주의:</strong> 근속연수 1년 미만은 올림, 1년 이상은 소수점 버림으로 계산됩니다. 또한 모든 중간 계산값은 원 단위에서 10원 이하 절사하는 것이 국세청 기준입니다.
+                  <strong>주의:</strong> 근속연수 1년 미만은 올림, 1년 이상은 소수점 버림으로 계산됩니다. 또한 모든 중간 계산값은 원 단위에서 10원 이하 절사하는 것이 국세청 기준입니다.
                 </div>
               </section>
 
@@ -282,7 +282,7 @@ export default function RetirementIncomeTaxPage() {
                   근속 20년은 기본액 4,000만 + (20-20) × 300만 = 4,000만 원, 근속 25년은 4,000만 + (25-20) × 300만 = 5,500만 원입니다.
                 </p>
                 <div className="bg-bg-card rounded p-3 text-sm text-text-secondary border-l-2 border-primary-500">
-                  <strong>⚠️ 예외:</strong> 근속 5년 미만은 법정 퇴직금 지급 의무가 없습니다. 다만 퇴직연금(DC/DB)이나 임금피크제 등으로 조기 퇴직하는 경우 근속연수공제 대상이 될 수 있으니 회사 정책 확인 필수.
+                  <strong>예외:</strong> 근속 5년 미만은 법정 퇴직금 지급 의무가 없습니다. 다만 퇴직연금(DC/DB)이나 임금피크제 등으로 조기 퇴직하는 경우 근속연수공제 대상이 될 수 있으니 회사 정책 확인 필수.
                 </div>
               </section>
 
@@ -334,7 +334,7 @@ export default function RetirementIncomeTaxPage() {
                   예를 들어 환산급여가 1억 원이면 6,170만 + (1억 - 7,000만) × 45% = 6,170만 + 1,350만 = 7,520만 원 공제입니다. 기본세율은 과세표준 3,100만 원 기준 15% 구간에 해당하면 누진공제 126만 원을 적용해 최종 산출세액을 계산합니다(소득세법 §55).
                 </p>
                 <div className="bg-bg-card rounded p-3 text-sm text-text-secondary border-l-2 border-primary-500">
-                  <strong>⚠️ 핵심:</strong> 환산급여 금액에 따라 공제 비율이 다르므로, 같은 규모의 퇴직금이라도 환산급여(근속연수공제 후 12개월 환산)가 높으면 공제가 적어져 세액이 증가합니다.
+                  <strong>핵심:</strong> 환산급여 금액에 따라 공제 비율이 다르므로, 같은 규모의 퇴직금이라도 환산급여(근속연수공제 후 12개월 환산)가 높으면 공제가 적어져 세액이 증가합니다.
                 </div>
               </section>
 
@@ -381,7 +381,7 @@ export default function RetirementIncomeTaxPage() {
                 </p>
 
                 <div className="bg-bg-card rounded p-3 text-sm text-text-secondary border-l-2 border-primary-500">
-                  <strong>⚠️ 주의:</strong> 이 계산은 퇴직금만 있고 다른 소득이 없으며, 회사가 정시에 원천징수한다는 가정 하에 산출한 것입니다. 실제 세액은 소수점 처리, 임금피크제 적용 여부, 당해 연도 다른 소득 유무 등에 따라 달라질 수 있습니다.
+                  <strong>주의:</strong> 이 계산은 퇴직금만 있고 다른 소득이 없으며, 회사가 정시에 원천징수한다는 가정 하에 산출한 것입니다. 실제 세액은 소수점 처리, 임금피크제 적용 여부, 당해 연도 다른 소득 유무 등에 따라 달라질 수 있습니다.
                 </div>
               </section>
 
@@ -394,7 +394,6 @@ export default function RetirementIncomeTaxPage() {
                     href="/calculator/severance/"
                     className="flex items-center gap-2 rounded-lg bg-bg-card p-3 hover:bg-primary-500/10 transition"
                   >
-                    <span className="text-lg">🧮</span>
                     <div>
                       <p className="font-semibold text-text-primary">퇴직금 계산기</p>
                       <p className="text-xs text-text-secondary">평균임금·퇴직소득세 즉시 계산</p>
@@ -404,7 +403,6 @@ export default function RetirementIncomeTaxPage() {
                     href="/guide/severance-vs-pension-dc-db/"
                     className="flex items-center gap-2 rounded-lg bg-bg-card p-3 hover:bg-primary-500/10 transition"
                   >
-                    <span className="text-lg">⚖️</span>
                     <div>
                       <p className="font-semibold text-text-primary">DC vs DB 비교</p>
                       <p className="text-xs text-text-secondary">퇴직연금 제도 선택 가이드</p>
@@ -414,7 +412,6 @@ export default function RetirementIncomeTaxPage() {
                     href="/calculator/salary/"
                     className="flex items-center gap-2 rounded-lg bg-bg-card p-3 hover:bg-primary-500/10 transition"
                   >
-                    <span className="text-lg">💰</span>
                     <div>
                       <p className="font-semibold text-text-primary">연봉 실수령액</p>
                       <p className="text-xs text-text-secondary">4대보험·세금 공제 계산</p>
@@ -424,7 +421,6 @@ export default function RetirementIncomeTaxPage() {
                     href="/calculator/retirement/"
                     className="flex items-center gap-2 rounded-lg bg-bg-card p-3 hover:bg-primary-500/10 transition"
                   >
-                    <span className="text-lg">🎯</span>
                     <div>
                       <p className="font-semibold text-text-primary">은퇴자금 계산기</p>
                       <p className="text-xs text-text-secondary">필요 자금 규모 판단</p>

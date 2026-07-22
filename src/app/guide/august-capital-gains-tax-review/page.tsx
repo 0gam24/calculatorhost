@@ -293,7 +293,7 @@ export default function AugustCgtGuide() {
 
               {/* 8. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>잔금 청산일과 등기 접수일 중 빠른 날이 양도일 — 양도 직전 점검 필수.</li>
                   <li>거주 기간은 주민등록 이력 기준 — 이사 후 재입주는 단절로 처리.</li>

@@ -396,7 +396,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                 </p>
                 <ul className="space-y-2 border-l-4 border-l-danger-500 bg-card pl-4 py-3 text-sm">
                   <li>
-                    <strong>❌ 위험한 상황:</strong> IRP에 이체 후 3년 뒤 "급하게 돈이 필요해서" 일시금으로 인출
+                    <strong>위험한 상황:</strong> IRP에 이체 후 3년 뒤 "급하게 돈이 필요해서" 일시금으로 인출
                   </li>
                   <li>
                     <strong>결과:</strong> 과세이연이 종료되고, 이연되었던 전체 퇴직소득세를 그 시점에 내야 함
@@ -523,31 +523,31 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                 <h2 className="text-2xl font-bold">관련 계산기 & 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
                       퇴직금 계산기
                     </Link>
                     {' — 퇴직소득세 정확 계산 및 절감 시뮬'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/retirement-income-tax-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/retirement-income-tax-2026/" className="font-semibold text-primary-500 hover:underline">
                       퇴직소득세 계산법 2026
                     </Link>
                     {' — 연분연승·누진세 상세 가이드'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/severance-vs-pension-dc-db/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/severance-vs-pension-dc-db/" className="font-semibold text-primary-500 hover:underline">
                       DC·DB·퇴직금 비교
                     </Link>
                     {' — 연금 상품별 특징'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/private-pension-1500-million-separate-taxation-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/private-pension-1500-million-separate-taxation-2026/" className="font-semibold text-primary-500 hover:underline">
                       사적연금 과세
                     </Link>
                     {' — 연금수령 시 종합소득 과세'}
                   </li>
                   <li>
-                    ➜ <Link href="/calculator/retirement/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/retirement/" className="font-semibold text-primary-500 hover:underline">
                       은퇴자금 계산기
                     </Link>
                     {' — 필요한 총 은퇴 자산 역산'}

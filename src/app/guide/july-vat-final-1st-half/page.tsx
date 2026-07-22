@@ -188,9 +188,9 @@ export default function JulyVatGuide() {
                     <strong className="text-text-primary">신고·납부 기한</strong>: 2026년 7월 1일 ~ 7월 25일 (신고=납부).
                   </div>
                   <ul className="list-inside list-disc space-y-1.5">
-                    <li>✅ 부가세 과세 사업자 (사업등록한 개인·법인)</li>
-                    <li>✅ 일반과세자 + 간이과세자 (양식 다름)</li>
-                    <li>❌ 면세 사업자 (의료·교육·금융 이자 — 선택 신고 가능)</li>
+                    <li>부가세 과세 사업자 (사업등록한 개인·법인)</li>
+                    <li>일반과세자 + 간이과세자 (양식 다름)</li>
+                    <li>면세 사업자 (의료·교육·금융 이자 — 선택 신고 가능)</li>
                   </ul>
                   <p className="text-sm">
                     7월 25일이 토요일이라도 국세기본법 §5에 따라 익영업일(7월 27일 월) 까지 자동 연장됩니다.
@@ -314,7 +314,7 @@ export default function JulyVatGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>홈택스 서버 부하는 25일 직전 가장 심함 → 20일까지 신고 권장.</li>
                   <li>일반과세·간이과세 양식이 다름 — 잘못된 양식 신고 시 수정신고 필요.</li>

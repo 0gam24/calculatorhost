@@ -234,7 +234,7 @@ export default function LtvCalculation2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 금융기관마다 담보가치 계산 방식이 다릅니다. KB시세, 감정가, 매매계약가
+                  다만 금융기관마다 담보가치 계산 방식이 다릅니다. KB시세, 감정가, 매매계약가
                   중 어느 것을 기준으로 삼느냐에 따라 같은 집도 담보가치가 1~2억 원 차이날 수
                   있습니다.
                 </p>
@@ -270,7 +270,7 @@ export default function LtvCalculation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 LTV만 고려한 한도입니다. 실제 대출 시에는 DSR 규제가 이보다 더
+                  다만 위는 LTV만 고려한 한도입니다. 실제 대출 시에는 DSR 규제가 이보다 더
                   낮은 한도를 정할 수 있으므로, LTV 한도만으로 확정하지 말고 은행 대출 계산기나
                   상담을 통해 정확한 한도를 확인하세요.
                 </p>
@@ -328,7 +328,7 @@ export default function LtvCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 시장 상황이 급변하면 담보가치도 수시로 조정됩니다. 특히 경기 침체기에는
+                  다만 시장 상황이 급변하면 담보가치도 수시로 조정됩니다. 특히 경기 침체기에는
                   담보가치가 매입가보다 낮아지는 경우도 있으므로, 대출 신청 시점의 정확한 감정가를
                   확인하는 것이 중요합니다.
                 </p>
@@ -406,7 +406,7 @@ export default function LtvCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 세 기준의 정확한 값은 정부 정책에 따라 자주 변동됩니다. 특히 금리가
+                  다만 세 기준의 정확한 값은 정부 정책에 따라 자주 변동됩니다. 특히 금리가
                   오를 때나 부동산 시장이 과열될 때 금융위가 DTI·DSR 한도를 강화하므로, 대출 신청
                   시점에 최신 규제를 확인해야 합니다.
                 </p>
@@ -453,7 +453,7 @@ export default function LtvCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 이해를 돕기 위한 예시이며, 실제로는 금리 변동, 변동금리 인상률
+                  다만 위 계산은 이해를 돕기 위한 예시이며, 실제로는 금리 변동, 변동금리 인상률
                   예측, 보증보험료 등이 복합적으로 적용되므로, 정확한 한도는 대출한도 계산기나
                   은행 상담을 통해 확인하세요.
                 </p>
@@ -517,7 +517,7 @@ export default function LtvCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 정부의 지역 지정은 시장 상황에 따라 자주 변동됩니다. 특정 지역의 현재
+                  다만 정부의 지역 지정은 시장 상황에 따라 자주 변동됩니다. 특정 지역의 현재
                   규제 상태와 LTV 한도는 금융위 공식 발표나 은행 상담을 통해 확인해야 하며, 구체적인
                   규제지역 목록은 수시로 변경되므로 항상 최신 정보를 참고하세요.
                 </p>
@@ -570,7 +570,7 @@ export default function LtvCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 방공제(소액임차보증금) 범위는 정부 정책에 따라 변동됩니다. 예를 들어
+                  다만 방공제(소액임차보증금) 범위는 정부 정책에 따라 변동됩니다. 예를 들어
                   수도권과 비수도권의 범위가 다르므로, 자신의 지역이 해당하는지 확인하고 은행에
                   상담하세요.
                 </p>
@@ -582,7 +582,7 @@ export default function LtvCalculation2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

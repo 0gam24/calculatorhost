@@ -339,7 +339,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
 
               {/* 7. 함정 5가지 */}
               <section aria-label="함정 5가지" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 장기보유특별공제 함정 5가지</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 장기보유특별공제 함정 5가지</h2>
                 <div className="space-y-3 text-text-secondary">
                   <div>
                     <p className="mb-1">

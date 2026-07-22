@@ -186,12 +186,12 @@ export default function AprilVatPreliminaryQ1Page() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>기간</strong>: 4월 1~25일 (25일 토요일이면 익영업일)</li>
-                  <li>👥 <strong>대상</strong>: 일반과세 개인사업자·법인 (간이과세자 면제)</li>
-                  <li>📊 <strong>공식</strong>: 매출세액 (매출 × 10%) − 매입세액공제 = 납부세액</li>
-                  <li>💰 <strong>환급</strong>: 매입 &gt; 매출 시 약 30일 내 입금</li>
-                  <li>🛠 <strong>도구</strong>: 홈택스 전자신고 (의무)</li>
-                  <li>⚠️ <strong>가산세</strong>: 무신고 20%, 부정 40%, 납부지연 일 0.022%</li>
+                  <li><strong>기간</strong>: 4월 1~25일 (25일 토요일이면 익영업일)</li>
+                  <li><strong>대상</strong>: 일반과세 개인사업자·법인 (간이과세자 면제)</li>
+                  <li><strong>공식</strong>: 매출세액 (매출 × 10%) − 매입세액공제 = 납부세액</li>
+                  <li><strong>환급</strong>: 매입 &gt; 매출 시 약 30일 내 입금</li>
+                  <li><strong>도구</strong>: 홈택스 전자신고 (의무)</li>
+                  <li>주의: <strong>가산세</strong>: 무신고 20%, 부정 40%, 납부지연 일 0.022%</li>
                 </ul>
               </section>
 
@@ -245,7 +245,7 @@ export default function AprilVatPreliminaryQ1Page() {
                   </p>
                 </div>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary">📌 시뮬레이션 — 1~3월 신고</strong>
+                  <strong className="text-text-primary">시뮬레이션 — 1~3월 신고</strong>
                   <ul className="mt-2 text-text-secondary space-y-1">
                     <li>매출: 5,000만 원 (공급가액 기준, VAT 미포함)</li>
                     <li>매입: 2,000만 원 (사업 관련, 세금계산서 보유)</li>
@@ -267,7 +267,7 @@ export default function AprilVatPreliminaryQ1Page() {
                 <h2 className="text-2xl font-bold">3. 매입세액공제 받을 수 있는 비용</h2>
                 <div className="grid gap-3 md:grid-cols-2">
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">✅ 공제 가능</h3>
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">공제 가능</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 임대료 (사업장)</li>
                       <li>• 통신비·인터넷</li>
@@ -280,7 +280,7 @@ export default function AprilVatPreliminaryQ1Page() {
                     </ul>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">❌ 공제 불가</h3>
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">공제 불가</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 사업과 무관 매입 (사적 사용)</li>
                       <li>• 면세 매입 (의료·교육 등)</li>
@@ -337,7 +337,7 @@ export default function AprilVatPreliminaryQ1Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론 — 복잡한 케이스(다업종·해외 거래·면세 사업)는 세무사 상담 권장.</li>
                   <li>• 전자세금계산서 발급 의무 위반 시 매출액 0.5~2% 가산세.</li>
@@ -347,7 +347,7 @@ export default function AprilVatPreliminaryQ1Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 도구·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 도구·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link></li>
                   <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link></li>

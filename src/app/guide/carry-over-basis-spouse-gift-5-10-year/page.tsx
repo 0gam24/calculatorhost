@@ -439,7 +439,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
 
               {/* 6. 함정 5가지 */}
               <section aria-label="함정 5가지" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 이월과세 함정 5가지</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 이월과세 함정 5가지</h2>
                 <div className="space-y-3 text-text-secondary">
                   <div>
                     <p className="mb-1">

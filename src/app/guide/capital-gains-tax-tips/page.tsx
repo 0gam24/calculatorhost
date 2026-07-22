@@ -214,7 +214,7 @@ export default function CapitalGainsTaxTipsPage() {
                   적용 가능. 정책 변경 시기 모니터링 필수.
                 </p>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary block mb-2">📅 다주택 중과 유예 타임라인</strong>
+                  <strong className="text-text-primary block mb-2">다주택 중과 유예 타임라인</strong>
                   <ul className="text-text-secondary space-y-1">
                     <li>• 2018~2021: 조정대상지역 2주택 이상 중과 (기본세율 +20/30%)</li>
                     <li>• 2022: 부분 완화 (신규 취득분만 중과 유예)</li>
@@ -251,7 +251,7 @@ export default function CapitalGainsTaxTipsPage() {
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 실제 양도세는 거주 지역·정책 변경·개별 사정에 따라 달라집니다.</li>
                   <li>• 비과세·감면 적용 여부는 반드시 세무사 또는 국세청 홈택스 상담을 통해 확정하세요.</li>

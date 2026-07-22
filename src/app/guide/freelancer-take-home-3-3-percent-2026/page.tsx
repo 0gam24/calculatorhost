@@ -162,7 +162,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 한눈에 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">한눈에 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="sr-only">프리랜서 3.3% 원천징수 요약</caption>
@@ -245,7 +245,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">⚠️ 다만 원천징수는 선택이 아닌 의무</p>
+                  <p className="font-semibold text-text-primary">다만 원천징수는 선택이 아닌 의무</p>
                   <p className="mt-2">
                     "영수증 없이 줄게" 또는 "세금 앞당겨서 줄게" 해도 지급자(클라이언트)가 법적으로 3.3%를 떼야 합니다.
                     이를 위반하면 지급자가 가산세를 내야 하므로, 실무에서는 거의 모든 프리랜서 용역비에 3.3%가 적용됩니다.
@@ -304,7 +304,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">⚠️ 주의: 당월 실수령 = 최종 세후 수익이 아님</p>
+                  <p className="font-semibold text-text-primary">주의: 당월 실수령 = 최종 세후 수익이 아님</p>
                   <p className="mt-2">
                     위의 290.1만원은 "당월 입금액"입니다. 이것이 최종 세금이 적용된 수익은 아닙니다. 연말에 다른 소득·경비·공제를
                     모두 합산하여 5월에 종합소득세 신고를 하면, 최종 세액이 결정되고, 3.3%보다 많이 내거나 환급받을 수 있습니다.
@@ -353,7 +353,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 정산 결과의 3가지 경우</p>
+                  <p className="font-semibold text-text-primary">정산 결과의 3가지 경우</p>
                   <ul className="mt-2 space-y-2 list-inside list-disc">
                     <li>
                       <strong>환급 (가장 일반적)</strong> — 최종 세금 &lt; 기납부 3.3% → 차액 환급 (예: 계산 55.8만, 기납부
@@ -558,7 +558,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>3.3%는 최종 세금이 아닙니다</strong> — 5월 신고 시 환급·추가납부 가능. 현금 흐름 관리
@@ -583,7 +583,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

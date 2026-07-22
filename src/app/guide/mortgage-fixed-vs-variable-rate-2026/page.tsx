@@ -324,7 +324,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 모든 은행이 세 가지 유형을 다 제공하지는 않습니다. 은행과 상품에 따라
+                  다만 모든 은행이 세 가지 유형을 다 제공하지는 않습니다. 은행과 상품에 따라
                   선택지가 제한될 수 있으므로, 가입 전 반드시 상품 약관과 금리 유형을 확인하세요.
                 </p>
               </section>
@@ -378,7 +378,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 고정금리가 항상 변동금리보다 높은 것은 아닙니다. 금리 상황과 시장 전망에
+                  다만 고정금리가 항상 변동금리보다 높은 것은 아닙니다. 금리 상황과 시장 전망에
                   따라 역전될 수도 있으니, 현재 은행의 공시 금리를 직접 비교하는 것이 가장 정확합니다.
                 </p>
               </section>
@@ -484,7 +484,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 혼합형도 은행마다 제공 여부와 조건이 다릅니다. 전환 후 다시 고정금리로 바꿀 수
+                  주의: 혼합형도 은행마다 제공 여부와 조건이 다릅니다. 전환 후 다시 고정금리로 바꿀 수
                   있는지, 전환 수수료는 있는지 등을 미리 확인하세요.
                 </p>
               </section>
@@ -540,7 +540,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 기준금리와 COFIX는 항상 함께 움직이지만, 정확히 같은 폭으로 변하지는 않을 수
+                  주의: 기준금리와 COFIX는 항상 함께 움직이지만, 정확히 같은 폭으로 변하지는 않을 수
                   있습니다. 기준금리가 0.5%p 올라도 COFIX는 그보다 덜 올라갈 수 있으므로, 정기적으로
                   COFIX 추이를 확인하는 것이 좋습니다.
                 </p>
@@ -610,7 +610,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                 </ul>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 금리 선택은 은행 상담사와 함께 검토하는 것이 가장 좋습니다. 본인의 재무 상황,
+                  주의: 금리 선택은 은행 상담사와 함께 검토하는 것이 가장 좋습니다. 본인의 재무 상황,
                   대출 상품의 특징(조기상환 수수료, 재약정 조건 등), 시장 전망을 종합적으로 고려하여
                   결정하세요.
                 </p>
@@ -659,7 +659,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 대환은 신용도, 현재 대출금 잔액, 부동산 가치 변동 등 여러 요소에 따라 승인 여부가
+                  주의: 대환은 신용도, 현재 대출금 잔액, 부동산 가치 변동 등 여러 요소에 따라 승인 여부가
                   결정됩니다. 은행에 미리 상담을 받아보는 것이 좋습니다.
                 </p>
               </section>
@@ -673,7 +673,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

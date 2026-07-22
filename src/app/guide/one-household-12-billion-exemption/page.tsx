@@ -241,7 +241,7 @@ export default function OneHousehold12BillionGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>거주 요건은 <strong>취득 당시 조정대상지역</strong> 여부가 기준 — 양도 시점 해제는 영향 없음.</li>
                   <li>거주 입증 자료(주민등록등본·공과금 명세) 사전 준비 — 단순 주소 이전만으로는 인정 X.</li>

@@ -243,7 +243,7 @@ export default function InflationMoneyValuePage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     물가상승률은 <strong>실제 경제 상황에 따라 매년 달라집니다</strong>. 과거 평균값(약 2%)이나 한국은행 목표(2%)를 참고하되, 자신의 주요 지출 품목(주택, 교육, 의료 등)의 실제 상승률과 다를 수 있습니다. 본 계산은 추정치일 뿐, 개인 상황에 맞게 조정이 필요합니다.
                   </p>
@@ -281,7 +281,7 @@ export default function InflationMoneyValuePage() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     이 계산은 <strong>일정한 물가상승률을 가정한 추정치</strong>입니다. 실제로는 경기 순환, 정책 변화, 국제 유가 등에 따라 물가상승률이 크게 달라질 수 있습니다. 따라서 여러 시나리오(낙관·보수·비관)를 동시에 검토하는 것이 안전합니다.
                   </p>
@@ -331,7 +331,7 @@ export default function InflationMoneyValuePage() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     CPI는 <strong>전국 평균 물가</strong>이므로, 지역·소비 패턴에 따라 개인의 실제 물가상승률과 다를 수 있습니다. 특히 주택, 자동차, 의료비는 평균보다 훨씬 빨리 상승하는 경향이 있으므로, 본인의 지출 구조에 맞는 가중치 조정이 필요합니다.
                   </p>
@@ -392,7 +392,7 @@ export default function InflationMoneyValuePage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     금융 상품 이자 계산에서도 복리 개념이 중요합니다. 저축·적금·예금 등에서 받는 이자도 복리로 계산되므로, 장기 투자에서는 단리 금리보다 실제 복리 수익이 훨씬 더 크다는 점을 항상 기억하세요.
                   </p>
@@ -427,7 +427,7 @@ export default function InflationMoneyValuePage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     본인의 정확한 물가상승률을 계산하려면, 지난 1~2년간의 주요 지출(주택, 자녀 교육, 의료 등)을 묶음으로 관리하고, 그 범주의 CPI 추이를 추적하는 것이 이상적입니다. 전국 평균 CPI와 개인 상황을 동시에 고려해야 더 정확한 장기 재정 계획이 가능합니다.
                   </p>
@@ -445,7 +445,7 @@ export default function InflationMoneyValuePage() {
                     href="/calculator/inflation/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
-                    <h4 className="font-semibold text-primary-500">👉 화폐가치 계산기</h4>
+                    <h4 className="font-semibold text-primary-500">화폐가치 계산기</h4>
                     <p className="mt-1 text-sm text-text-secondary">
                       미래·과거 돈의 가치를 바로 계산해보세요
                     </p>

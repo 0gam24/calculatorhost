@@ -161,8 +161,8 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                     <li>2023년 1월 2일 이후: 신규 주택 취득 가능 (1년 경과)</li>
                     <li>2023년 6월 1일: 신규 주택 매매 계약</li>
                     <li>2023년 7월 15일: 신규 주택 잔금 청산 (2주택 보유 시작)</li>
-                    <li>2026년 7월 14일: 종전 주택 양도 마감 (3년 이내) ✅ 비과세</li>
-                    <li>2026년 7월 15일: 종전 주택 양도 (3년 초과) ❌ 과세</li>
+                    <li>2026년 7월 14일: 종전 주택 양도 마감 (3년 이내) 비과세</li>
+                    <li>2026년 7월 15일: 종전 주택 양도 (3년 초과) 과세</li>
                   </ul>
                 </div>
               </section>
@@ -286,7 +286,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
 
               {/* 7. 함정 5가지 */}
               <section aria-label="함정 5가지" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 일시적 2주택 비과세 함정 5가지</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 일시적 2주택 비과세 함정 5가지</h2>
                 <div className="space-y-3 text-text-secondary">
                   <div>
                     <p className="mb-1">

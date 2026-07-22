@@ -157,7 +157,7 @@ export default function RentIncrease5PercentCapGuidePage() {
               <AdSlot slot="guide-rent-increase-5-percent-cap-2026-top" format="horizontal" />
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">📌 핵심 요약</h2>
+                <h2 className="mb-2 text-xl font-semibold">핵심 요약</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <strong>법조항</strong>: 주택임대차보호법 §7 차임 등의 증감청구권
@@ -230,7 +230,7 @@ export default function RentIncrease5PercentCapGuidePage() {
               <section className="card space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">주의: 신규 계약은 5% 한도 없음</h2>
                 <p data-speakable>
-                  <strong>⚠️ 다만</strong>, 이 5% 상한은 기존 임차인이 계약을 갱신할 때만 적용됩니다. 기존 임차인이 나가고 새로운 임차인이
+                  <strong>다만</strong>, 이 5% 상한은 기존 임차인이 계약을 갱신할 때만 적용됩니다. 기존 임차인이 나가고 새로운 임차인이
                   들어오는 신규 계약의 경우, 임대인이 시장 상황에 따라 임대료를 자유롭게 책정할 수 있습니다. 예를 들어, 3억
                   보증금 계약이 끝나고 새 임차인을 받을 때 3억 5천만 원 이상으로 임대료를 올릴 수 있다는 의미입니다. 이는
                   계약갱신(기존 임차인)과 신규 계약의 근본적 차이이므로, 자신의 계약 상황을 정확히 파악해야 합니다.
@@ -283,7 +283,7 @@ export default function RentIncrease5PercentCapGuidePage() {
               <AdSlot slot="guide-rent-increase-5-percent-cap-2026-mid" format="rectangle" />
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">🔗 관련 계산기</h2>
+                <h2 className="mb-2 text-xl font-semibold">관련 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
@@ -309,7 +309,7 @@ export default function RentIncrease5PercentCapGuidePage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-2 text-xl font-semibold">📖 관련 가이드</h2>
+                <h2 className="mb-2 text-xl font-semibold">관련 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

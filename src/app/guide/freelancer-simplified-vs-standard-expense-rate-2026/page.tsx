@@ -164,7 +164,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -252,7 +252,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 핵심 차이</p>
+                  <p className="font-semibold text-text-primary">핵심 차이</p>
                   <p className="mt-2">
                     단순은 "매출의 고정%만 경비"이고, 기준은 "입증된 주요경비 + 추가경비"입니다. 따라서 실제 경비가 단순경비율보다
                     크면 기준이 더 유리합니다.
@@ -308,7 +308,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 </div>
 
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary mb-2">⚠️ 주의: 기준점은 매출 한계선</p>
+                  <p className="font-semibold text-text-primary mb-2">주의: 기준점은 매출 한계선</p>
                   <p>
                     기준점 이하 (예: 도소매 6,000만 이하)면 단순경비율 의무. 초과 (6,000만 초과)면 "선택지" 생김 — 단순 OR
                     기준경비율. 초과했다고 자동으로 기준경비율이 아니라, 신고 시 본인이 선택합니다.
@@ -339,7 +339,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                           소득금액 = (3,000만 − 임차료 500만) × (100% − 70%) = 약 750만 원 (더 유리)
                         </li>
                         <li className="text-xs italic text-text-tertiary mt-2">
-                          🎯 결론: 실경비 25% &lt; 단순경비율 70% → 단순경비율이 더 많은 경비 인정 → 단순 유리
+                          결론: 실경비 25% &lt; 단순경비율 70% → 단순경비율이 더 많은 경비 인정 → 단순 유리
                         </li>
                       </ul>
                     </div>
@@ -356,7 +356,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                           소득금액 = 8,000만 − 급여 1,500만 − 추가경비 etc. ≈ 약 4,800만 원 (더 유리)
                         </li>
                         <li className="text-xs italic text-text-tertiary mt-2">
-                          🎯 결론: 실경비 43.75% &gt; 단순경비율 25% → 기준경비율로 더 많은 경비 인정 → 기준 유리
+                          결론: 실경비 43.75% &gt; 단순경비율 25% → 기준경비율로 더 많은 경비 인정 → 기준 유리
                         </li>
                       </ul>
                     </div>
@@ -370,7 +370,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                         <li className="font-semibold text-text-primary mt-2">기준경비율 70% 선택:</li>
                         <li className="ml-4">소득금액 = (5,000만 − 2,000만) × (100% − 70%) + 기타경비 ≈ 1,100만 원</li>
                         <li className="text-xs italic text-text-tertiary mt-2">
-                          🎯 결론: 실경비 40% ≈ 단순경비율 70% 기준 → 거의 동등. 단순이 간편하므로 단순 선택 권장
+                          결론: 실경비 40% ≈ 단순경비율 70% 기준 → 거의 동등. 단순이 간편하므로 단순 선택 권장
                         </li>
                       </ul>
                     </div>
@@ -378,7 +378,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 선택 판단 기준</p>
+                  <p className="font-semibold text-text-primary">선택 판단 기준</p>
                   <p className="mt-2">
                     <strong>실경비 &lt; 단순경비율</strong> → 단순 선택 (경비를 더 많이 인정받음)
                     <br />
@@ -457,7 +457,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 </div>
 
                 <div className="rounded-lg bg-bg-raised p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary mb-2">🚨 조사 대응법</p>
+                  <p className="font-semibold text-text-primary mb-2">조사 대응법</p>
                   <ul className="list-inside list-disc space-y-1">
                     <li>단순경비율 선택해도 거래기록(카드 내역·통장) 보존 (5년)</li>
                     <li>
@@ -525,7 +525,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>5월 31일(금)</strong> 신고 기한. 주말이므로 다음 영업일 <strong>6월 2일(월)</strong> 자동 연장
@@ -550,7 +550,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

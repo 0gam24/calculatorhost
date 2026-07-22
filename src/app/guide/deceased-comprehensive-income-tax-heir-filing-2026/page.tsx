@@ -166,7 +166,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="text-left text-xs font-semibold text-text-secondary mb-2">
@@ -261,7 +261,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/10 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 예: 2026년 2월 15일 사망</p>
+                  <p className="font-semibold text-text-primary">예: 2026년 2월 15일 사망</p>
                   <p className="mt-2">
                     2026년 1월 1일 ~ 2월 15일까지 발생한 근로소득·이자·배당 등 모든 소득에 대해 2026년 종합소득세 신고 의무가 발생합니다.
                     2월 15일 이후의 소득은 제외됩니다.
@@ -269,7 +269,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg bg-danger-500/10 border-l-4 border-l-danger-500 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 다만: 상속세와는 다릅니다</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">다만: 상속세와는 다릅니다</p>
                   <p className="mt-2">
                     "사망자 소득세"와 "상속세"는 완전히 다릅니다. 종합소득세는 사망 연도의 "소득"에 대한 세금이고, 상속세는 상속받은
                     "재산"에 대한 세금입니다. 신고 기한도 다릅니다 (종합소득세 6개월 vs 상속세 10개월).
@@ -334,7 +334,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: 중복 신고 시 국세청 조정</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 중복 신고 시 국세청 조정</p>
                   <p className="mt-2">
                     같은 소득을 여러 상속인이 각각 신고하면 국세청이 조정하여 1건만 인정합니다. 다만 세액 중복 납부 사태를 피하려면
                     신고 전에 상속인 간 합의(대표 신고자 지정)를 문서화하는 것이 좋습니다.
@@ -383,7 +383,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 5월 31일 원칙</p>
+                  <p className="font-semibold text-text-primary">5월 31일 원칙</p>
                   <p className="mt-2">
                     한국 종합소득세 확정신고 마감은 매년 5월 31일입니다. 사망자 신고 기한도 이 원칙을 따르므로, 사망일이 1월 초라면
                     신고 기한이 5월 31일로 단축됩니다. 신고 여유 시간이 없으니 4월부터 준비하세요.
@@ -480,7 +480,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/10 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 퇴직금은 따로</p>
+                  <p className="font-semibold text-text-primary">퇴직금은 따로</p>
                   <p className="mt-2">
                     퇴직금(퇴직소득)은 종합소득세와 별개로 "퇴직소득세"를 신고합니다(소득세법 §145). 연금보험 일시금도 퇴직소득에 포함될 수
                     있으니 상속인 합의 시 이를 고려하세요.
@@ -547,7 +547,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: 세금 이중 부담 가능</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 세금 이중 부담 가능</p>
                   <p className="mt-2">
                     높은 소득이 있으면 종합소득세를 먼저 내고, 남은 재산에 대해 상속세를 다시 냅니다. 따라서 신고 전 세무사와 상의하여
                     납부 순서와 규모를 파악하는 것이 중요합니다.
@@ -579,7 +579,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 6월 신고는 자진신고 감면 50% 받음</p>
+                  <p className="font-semibold text-text-primary">6월 신고는 자진신고 감면 50% 받음</p>
                   <p className="mt-2">
                     5월 31일 기한을 넘기고 6월 1~30일에 신고하면 가산세가 50% 감면됩니다(국세기본법 §48). 즉 무신고가산세 20% → 10%로
                     줄어듭니다. 더 늦으면 감면이 없으므로 최대한 빨리 신고하세요.
@@ -587,7 +587,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg bg-danger-500/10 border-l-4 border-l-danger-500 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 환급금도 5년 후 소멸</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 환급금도 5년 후 소멸</p>
                   <p className="mt-2">
                     신고하지 않으면 돌려받을 환급금까지 5년 경과 후 국고에 귀속됩니다(국세기본법 §51). 그 사이 신고해도 환급받지 못합니다.
                     예를 들어 사망자가 2026년에 과다 납부한 세금이 있으면, 반드시 2026년 안에 신고하여 환급받아야 합니다.
@@ -653,7 +653,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>신고 의무는 상속인 전원</strong>이 지지만, 1명 대표 또는 전원 신고 선택 가능
@@ -678,7 +678,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

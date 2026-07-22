@@ -197,7 +197,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                   <li>2주택자: 15억 − 9억 = 6억원</li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ <strong>다만</strong> 공제금액은 공시가격 기준으로 차감되는 것이지, 과세표준에서 직접 차감되는 것이 아닙니다. 공정시장가액비율 60%를 곱한 후의 과세표준이 세율 적용 대상입니다.
+                  <strong>다만</strong> 공제금액은 공시가격 기준으로 차감되는 것이지, 과세표준에서 직접 차감되는 것이 아닙니다. 공정시장가액비율 60%를 곱한 후의 과세표준이 세율 적용 대상입니다.
                 </p>
               </section>
 
@@ -318,7 +318,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                 </div>
 
                 <p className="mt-4">
-                  ⚠️ <strong>다만</strong> 3주택 이상도 과세표준 기준에 따라 최저 0.5%부터 시작하며, 구간이 올라갈수록 세율이 높아집니다. 1~2주택의 누진공제와 달리 3주택 이상은 누진공제 없이 직접 세율만 적용됩니다.
+                  <strong>다만</strong> 3주택 이상도 과세표준 기준에 따라 최저 0.5%부터 시작하며, 구간이 올라갈수록 세율이 높아집니다. 1~2주택의 누진공제와 달리 3주택 이상은 누진공제 없이 직접 세율만 적용됩니다.
                 </p>
               </section>
 
@@ -398,7 +398,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                 </div>
 
                 <p className="mt-4">
-                  ⚠️ <strong>다만</strong> 세액공제는 종부세액에 먼저 적용되고, 감액된 세액에 대해 농특세 20%가 계산됩니다. 예를 들어 산출 종부세 1,000만원에서 80% 공제를 받으면 200만원만 납부하고, 농특세는 200만 × 20% = 40만원입니다.
+                  <strong>다만</strong> 세액공제는 종부세액에 먼저 적용되고, 감액된 세액에 대해 농특세 20%가 계산됩니다. 예를 들어 산출 종부세 1,000만원에서 80% 공제를 받으면 200만원만 납부하고, 농특세는 200만 × 20% = 40만원입니다.
                 </p>
               </section>
 

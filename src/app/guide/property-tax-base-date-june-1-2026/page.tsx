@@ -155,13 +155,13 @@ export default function PropertyTaxBaseDatePage() {
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>
                 <div className="space-y-2 text-sm" data-speakable>
                   <p className="font-bold text-danger-700 dark:text-danger-300">
-                    ⚠️ 6월 1일이 재산세 과세기준일 — 거래 잔금 한 끗 차이로 수십~수백만 원 부담 변동
+                    주의: 6월 1일이 재산세 과세기준일 — 거래 잔금 한 끗 차이로 수십~수백만 원 부담 변동
                   </p>
                   <ul className="space-y-1.5 text-text-secondary">
-                    <li>📅 <strong>5월 31일 이전 잔금</strong>: 매수자가 6월 1일 소유 → 매수자가 재산세 부담</li>
-                    <li>📅 <strong>6월 2일 이후 잔금</strong>: 매도자가 6월 1일 소유 → 매도자가 재산세 부담</li>
-                    <li>💰 <strong>재산세 금액</strong>: 공시가격 5억 기준 연 약 50~100만 원 (1세대1주택 특례 적용 시)</li>
-                    <li>📜 <strong>필수 조항</strong>: 매매계약서에 "재산세 부담자" 명시 필수 (기재 부재 시 추후 분쟁)</li>
+                    <li><strong>5월 31일 이전 잔금</strong>: 매수자가 6월 1일 소유 → 매수자가 재산세 부담</li>
+                    <li><strong>6월 2일 이후 잔금</strong>: 매도자가 6월 1일 소유 → 매도자가 재산세 부담</li>
+                    <li><strong>재산세 금액</strong>: 공시가격 5억 기준 연 약 50~100만 원 (1세대1주택 특례 적용 시)</li>
+                    <li><strong>필수 조항</strong>: 매매계약서에 "재산세 부담자" 명시 필수 (기재 부재 시 추후 분쟁)</li>
                   </ul>
                 </div>
               </section>
@@ -174,7 +174,7 @@ export default function PropertyTaxBaseDatePage() {
                 </p>
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">
-                    📌 핵심: "사실상 소유자" 기준
+                    핵심: "사실상 소유자" 기준
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     법적 등기일이 아니라 실질적으로 부동산을 취득한 날(=잔금일)을 기준으로 판정합니다.
@@ -210,7 +210,7 @@ export default function PropertyTaxBaseDatePage() {
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4 text-sm">
-                    <strong className="text-text-primary">💡 거래가 5억 일시적2주택 예시</strong>
+                    <strong className="text-text-primary">거래가 5억 일시적2주택 예시</strong>
                     <p className="mt-2 text-text-secondary">
                       • 재산세 추정: 약 100만 원/년 (1세대1주택 특례 미적용 시)<br />
                       • 잔금일 하나 차이로 → 100만 원을 누가 내는가 결정<br />
@@ -255,7 +255,7 @@ export default function PropertyTaxBaseDatePage() {
                   </table>
                 </div>
                 <p className="text-sm text-danger-700 dark:text-danger-300 bg-danger-500/5 p-3 rounded-lg mt-3">
-                  <strong>⚠️ 주의</strong>: 미납 시 가산금이 누적되므로, 7월 31일, 9월 30일 기한 엄수 필수.
+                  <strong>주의</strong>: 미납 시 가산금이 누적되므로, 7월 31일, 9월 30일 기한 엄수 필수.
                   거래 시 "잔금 후 재산세 고지서 수령 및 납부 주체"를 계약서에 명확히 기재하세요.
                 </p>
               </section>
@@ -306,7 +306,7 @@ export default function PropertyTaxBaseDatePage() {
                 </p>
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-400 mb-2">
-                    💰 추천 조항 예시
+                    추천 조항 예시
                   </p>
                   <p className="text-sm text-text-secondary">
                     "예상 잔금일이 6월 1일을 넘어가는 경우, 매도자가 부담한 재산세 중 매수자 점유분
@@ -333,7 +333,7 @@ export default function PropertyTaxBaseDatePage() {
                     <li>• 주택(분양권·미등기 건물 포함)</li>
                   </ul>
                   <p className="mt-3 text-text-tertiary border-t border-border-base pt-2">
-                    💡 거래 시나리오: 첫 주택을 5월 15일에 계약하고 6월 20일에 잔금받으면,
+                    거래 시나리오: 첫 주택을 5월 15일에 계약하고 6월 20일에 잔금받으면,
                     6월 1일 현재 매도자가 여전히 소유자이므로 매도자가 1세대1주택 특례를 적용받습니다.
                     매수자는 그 다음해(2027년)부터 적용받을 수 있습니다.
                   </p>
@@ -347,7 +347,7 @@ export default function PropertyTaxBaseDatePage() {
                   특히 잔금 지연으로 인해 재산세까지 부담하면 총 세액이 크게 증가합니다.
                 </p>
                 <div className="bg-bg-raised p-4 rounded-lg text-sm">
-                  <strong className="text-text-primary">📊 공시 5억 아파트 매도 시나리오 비교</strong>
+                  <strong className="text-text-primary">공시 5억 아파트 매도 시나리오 비교</strong>
                   <ul className="mt-3 space-y-2 text-text-secondary">
                     <li>
                       <strong>A. 5월 30일 잔금</strong><br />

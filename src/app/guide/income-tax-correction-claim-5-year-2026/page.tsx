@@ -166,7 +166,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -278,25 +278,25 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                           <td className="px-3 py-2 font-semibold">2021년</td>
                           <td className="px-3 py-2">2022-05-31</td>
                           <td className="px-3 py-2">2022-06-01 ~ 2027-05-31</td>
-                          <td className="px-3 py-2">✅ 가능 (5월 31일까지)</td>
+                          <td className="px-3 py-2">가능 (5월 31일까지)</td>
                         </tr>
                         <tr className="border-b border-border-base">
                           <td className="px-3 py-2 font-semibold">2022년</td>
                           <td className="px-3 py-2">2023-05-31</td>
                           <td className="px-3 py-2">2023-06-01 ~ 2028-05-31</td>
-                          <td className="px-3 py-2">✅ 가능</td>
+                          <td className="px-3 py-2">가능</td>
                         </tr>
                         <tr className="border-b border-border-base">
                           <td className="px-3 py-2 font-semibold">2023년</td>
                           <td className="px-3 py-2">2024-05-31</td>
                           <td className="px-3 py-2">2024-06-01 ~ 2029-05-31</td>
-                          <td className="px-3 py-2">✅ 가능</td>
+                          <td className="px-3 py-2">가능</td>
                         </tr>
                         <tr className="border-b border-border-base">
                           <td className="px-3 py-2 font-semibold">2024년</td>
                           <td className="px-3 py-2">2025-05-31</td>
                           <td className="px-3 py-2">2025-06-01 ~ 2030-05-31</td>
-                          <td className="px-3 py-2">✅ 가능</td>
+                          <td className="px-3 py-2">가능</td>
                         </tr>
                         <tr>
                           <td className="px-3 py-2 font-semibold">2025년</td>
@@ -311,7 +311,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    ⚠️ 주의: 신고한 날짜가 아니라 "신고 기한"으로 계산
+                    주의: 신고한 날짜가 아니라 "신고 기한"으로 계산
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     2021년 귀속 소득을 6월에 신고했든, 12월에 신고했든 관계없이, 법정신고기한인 2022년 5월 31일
@@ -469,7 +469,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    📌 증빙 서류 체크리스트
+                    증빙 서류 체크리스트
                   </p>
                   <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-text-secondary">
                     <li>의료비: 병원·약국 영수증 (스캔)</li>
@@ -541,7 +541,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    ℹ️ 환급가산금이란?
+                    ℹ 환급가산금이란?
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     정부가 신청자의 환급금을 늦게 준 것에 대한 '손해배상' 성격의 이자입니다(국세기본법 시행령
@@ -586,7 +586,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    📞 환급 추적 방법
+                    환급 추적 방법
                   </p>
                   <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-text-secondary">
                     <li>
@@ -611,7 +611,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg bg-danger-500/10 p-4">
-                    <p className="font-semibold text-danger-700 dark:text-danger-300">❌ 금지: 허위 공제 신청</p>
+                    <p className="font-semibold text-danger-700 dark:text-danger-300">금지: 허위 공제 신청</p>
                     <p className="mt-2 text-sm text-text-secondary">
                       없는 의료비, 가짜 영수증, 타인 명의 공제를 신청하면 "실질과세 원칙"(국세기본법 §14)에 위배되어
                       가산세 20~40%가 부과됩니다. <strong>반드시 실제 지출만 신청하세요.</strong>
@@ -620,7 +620,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                   <div className="rounded-lg bg-danger-500/10 p-4">
                     <p className="font-semibold text-danger-700 dark:text-danger-300">
-                      ⚠️ 주의: 무신고 가산세
+                      주의: 무신고 가산세
                     </p>
                     <p className="mt-2 text-sm text-text-secondary">
                       신고하지 않은 후 경정청구로 청구하면 무신고 가산세 2~10%가 적용됩니다(국세기본법 §95).
@@ -631,7 +631,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                   <div className="rounded-lg bg-danger-500/10 p-4">
                     <p className="font-semibold text-danger-700 dark:text-danger-300">
-                      ⚠️ 주의: 여러 연도 동시 신청 시 심사 기간 연장
+                      주의: 여러 연도 동시 신청 시 심사 기간 연장
                     </p>
                     <p className="mt-2 text-sm text-text-secondary">
                       2021~2025년 모두 경정청구하면 세무서 검토 기간이 길어질 수 있습니다. 1~2년씩 나누어 신청하는
@@ -708,7 +708,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
               {/* 면책 및 출처 */}
               <section className="space-y-4 border-t border-border-base pt-8">
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
-                  <p className="mb-2 font-semibold text-text-primary">📋 면책조항</p>
+                  <p className="mb-2 font-semibold text-text-primary">면책조항</p>
                   <p>
                     본 가이드는 정보 제공 목적이며 법적 조언이 아닙니다. 경정청구 전 국세청 또는 세무사와 상담하세요.
                     제시된 세율·공제 기준은 2026년 기준이며, 법령 변경에 따라 달라질 수 있습니다.
@@ -743,7 +743,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                 </div>
 
                 <div className="rounded-lg bg-primary-500/10 p-4 text-sm text-primary-700 dark:text-primary-300">
-                  <p className="font-semibold">🤖 AI 보조 작성</p>
+                  <p className="font-semibold">AI 보조 작성</p>
                   <p className="mt-1">
                     본 가이드는 Anthropic Claude AI 보조로 작성되었으며, 한국 세법 전문가에 의해 사실 정확성 검수되었습니다.
                     마지막 갱신: 2026-05-24.

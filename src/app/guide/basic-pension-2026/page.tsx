@@ -241,7 +241,7 @@ export default function BasicPension2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 다만,</strong> 공무원연금·사학연금·군인연금 등 직역연금을 받는 분과 그 배우자는 원칙적으로 기초연금 대상에서 제외됩니다.
+                    <strong>다만,</strong> 공무원연금·사학연금·군인연금 등 직역연금을 받는 분과 그 배우자는 원칙적으로 기초연금 대상에서 제외됩니다.
                     또 선정기준액은 &ldquo;소득&rdquo;이 아니라 재산까지 환산해 합친 &ldquo;소득인정액&rdquo; 기준이라는 점에 유의하세요.
                   </p>
                 </div>
@@ -280,7 +280,7 @@ export default function BasicPension2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 참고:</strong> 위 금액은 &ldquo;최대&rdquo;입니다.
+                    <strong>참고:</strong> 위 금액은 &ldquo;최대&rdquo;입니다.
                     소득인정액이 선정기준액에 가깝거나(소득역전 방지 감액), 국민연금을 많이 받으면(연계감액) 실제 수령액은 이보다 줄어듭니다.
                     반대로 소득·재산이 적은 어르신은 대부분 최대액을 받습니다.
                   </p>
@@ -306,7 +306,7 @@ export default function BasicPension2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 다만,</strong> 연계감액은 단순히 국민연금 액수만이 아니라 소득재분배급여(A급여) 부분을 함께 따져 계산합니다.
+                    <strong>다만,</strong> 연계감액은 단순히 국민연금 액수만이 아니라 소득재분배급여(A급여) 부분을 함께 따져 계산합니다.
                     본인의 정확한 감액 여부는 국민연금공단(1355)에서 A급여액을 조회해 확인하는 것이 정확합니다.
                   </p>
                 </div>
@@ -321,7 +321,7 @@ export default function BasicPension2026() {
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 왜 깎였나:</strong> 부부가 함께 살면 생활비를 일부 공유한다는 취지로 도입된 감액이지만, 1인 가구와의 형평성 논란이 이어져 폐지가 결정됐습니다.
+                    <strong>왜 깎였나:</strong> 부부가 함께 살면 생활비를 일부 공유한다는 취지로 도입된 감액이지만, 1인 가구와의 형평성 논란이 이어져 폐지가 결정됐습니다.
                     2027년 이후 적용 방식은 보건복지부 고시로 확정되므로 발표를 확인하세요.
                   </p>
                 </div>
@@ -368,7 +368,7 @@ export default function BasicPension2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 주의:</strong> 신청이 늦으면 늦은 만큼 받지 못합니다(소급 지급 안 됨).
+                    <strong>주의:</strong> 신청이 늦으면 늦은 만큼 받지 못합니다(소급 지급 안 됨).
                     65세 생일 한 달 전부터 신청 가능하므로 미리 챙기세요. 거동이 불편하면 찾아뵙는 서비스(방문 신청)도 신청할 수 있습니다.
                   </p>
                 </div>

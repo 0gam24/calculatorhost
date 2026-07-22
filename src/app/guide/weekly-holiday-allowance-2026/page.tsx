@@ -247,7 +247,7 @@ export default function WeeklyHolidayAllowancePage() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-tertiary">
-                  💡 <strong>주의:</strong> 풀타임(주 40시간) 기준으로 계산하는 이유는,
+                  <strong>주의:</strong> 풀타임(주 40시간) 기준으로 계산하는 이유는,
                   법정 유급휴일이 풀타임 기준 1일(8시간)이기 때문입니다.
                   따라서 시간제는 비례 계산하게 됩니다.
                 </p>
@@ -394,7 +394,7 @@ export default function WeeklyHolidayAllowancePage() {
                 <h2 className="text-2xl font-bold">자주 하는 질문 5가지</h2>
                 <ol className="space-y-3 text-sm">
                   <li>
-                    <strong>❌ "주휴수당은 안 받아도 되나요?"</strong>
+                    <strong>"주휴수당은 안 받아도 되나요?"</strong>
                     <br />
                     <span className="text-text-tertiary">
                       아닙니다. 근로기준법 §55는 의무 규정입니다. 회사가 주휴수당을 지급하지 않는 것은 위법이며,
@@ -402,7 +402,7 @@ export default function WeeklyHolidayAllowancePage() {
                     </span>
                   </li>
                   <li>
-                    <strong>❌ "주 15시간을 약간 넘으면 괜찮나요?"</strong>
+                    <strong>"주 15시간을 약간 넘으면 괜찮나요?"</strong>
                     <br />
                     <span className="text-text-tertiary">
                       아닙니다. 기준은 "평균 15시간 이상"입니다. 4주 평균으로 계산하므로 정확한 계산이 필요합니다.
@@ -410,7 +410,7 @@ export default function WeeklyHolidayAllowancePage() {
                     </span>
                   </li>
                   <li>
-                    <strong>❌ "휴가를 쓰면 그 주는 결근인가요?"</strong>
+                    <strong>"휴가를 쓰면 그 주는 결근인가요?"</strong>
                     <br />
                     <span className="text-text-tertiary">
                       아닙니다. 연차·특별휴가·출산휴가 등 유급 휴가는 개근에 포함됩니다.
@@ -418,7 +418,7 @@ export default function WeeklyHolidayAllowancePage() {
                     </span>
                   </li>
                   <li>
-                    <strong>❌ "회사가 주휴수당을 안 주는데, 포기하면 월급을 더 받나요?"</strong>
+                    <strong>"회사가 주휴수당을 안 주는데, 포기하면 월급을 더 받나요?"</strong>
                     <br />
                     <span className="text-text-tertiary">
                       절대 아닙니다. 주휴수당은 법정 최소 급여입니다. 포기할 수 없습니다.
@@ -426,7 +426,7 @@ export default function WeeklyHolidayAllowancePage() {
                     </span>
                   </li>
                   <li>
-                    <strong>❌ "주휴수당을 미리 계산해서 제시할 수 있나요?"</strong>
+                    <strong>"주휴수당을 미리 계산해서 제시할 수 있나요?"</strong>
                     <br />
                     <span className="text-text-tertiary">
                       네, 가능합니다. 이 가이드의 계산식을 이용해 본인의 주휴수당을 미리 계산할 수 있습니다.
@@ -463,25 +463,25 @@ export default function WeeklyHolidayAllowancePage() {
                 <h2 className="text-2xl font-bold">관련 계산기 & 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
                     {' — 월급에서 공제되는 4대보험·세금 확인'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/annual-leave-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/annual-leave-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       연차수당 계산법 2026
                     </Link>
                     {' — 주휴수당과 함께 알아둬야 할 연차 규칙'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       4대보험 요율 2026
                     </Link>
                     {' — 국민연금·건강보험·장기요양·고용보험 요율'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
                       연봉협상 전 확인사항
                     </Link>
                     {' — 이직 제안 검증 가이드'}

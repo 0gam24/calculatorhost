@@ -244,7 +244,7 @@ export default function JointOwnershipCgtGuide() {
 
               {/* 8. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항 + 흔한 오해</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항 + 흔한 오해</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>"공동명의 12억 = 24억" 오해 X — 1세대 합산 12억.</li>
                   <li>공동명의 비율과 실제 출자 비율 불일치 → 증여 추정 (증여세 부과 가능).</li>

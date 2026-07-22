@@ -269,7 +269,7 @@ export default function DsrLoanLimitTipsPage() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항
+                  주의사항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 실제 대출 한도는 금융기관 내부 기준·신용평점·거래 이력 등에 따라 달라집니다.</li>

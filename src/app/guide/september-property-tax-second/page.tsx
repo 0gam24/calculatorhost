@@ -299,7 +299,7 @@ export default function SeptemberPropertyTaxGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>9월 30일이 휴일이면 익영업일까지 자동 연장. 위택스는 자정까지 가능.</li>
                   <li>1차 미납분은 2차에 합쳐 납부해야 하며, 이미 가산금이 부과되어 있을 수 있음.</li>

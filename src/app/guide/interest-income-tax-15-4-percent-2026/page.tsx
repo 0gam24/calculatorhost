@@ -255,7 +255,7 @@ export default function InterestIncomeTax2026Page() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     기본 15.4%는 분리과세 세율입니다. 만약 연 금융소득(이자+배당) 합계가 <strong>2,000만원을 초과</strong>하면, 초과분에 대해 <strong>종합과세</strong>가 적용되어 누진 세율(6~45%)을 납부해야 하므로 세금이 훨씬 커집니다. 자세한 내용은 아래 "2천만원 초과 시 종합과세" 섹션을 참조하세요.
                   </p>
@@ -326,7 +326,7 @@ export default function InterestIncomeTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-blue-600/20 bg-blue-50/10 p-3 text-sm text-text-secondary dark:border-blue-500/30 dark:bg-blue-900/10">
-                  <p className="mb-2 font-semibold text-text-primary">📊 실제 사례</p>
+                  <p className="mb-2 font-semibold text-text-primary">실제 사례</p>
                   <table className="w-full border-collapse text-xs">
                     <thead>
                       <tr className="border-b border-blue-300/30">
@@ -368,7 +368,7 @@ export default function InterestIncomeTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     은행마다 이자 계산 방식(월복리·연복리·단리)과 세금 공제 시점이 약간 다를 수 있습니다. 정확한 금액은 금융기관 모바일 앱이나 통장에서 확인하는 것이 가장 정확합니다.
                   </p>
@@ -406,7 +406,7 @@ export default function InterestIncomeTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-blue-600/20 bg-blue-50/10 p-3 text-sm text-text-secondary dark:border-blue-500/30 dark:bg-blue-900/10">
-                  <p className="mb-2 font-semibold text-text-primary">💡 절감 비교: 기본 15.4% vs 세금우대 9.5%</p>
+                  <p className="mb-2 font-semibold text-text-primary">절감 비교: 기본 15.4% vs 세금우대 9.5%</p>
                   <table className="w-full border-collapse text-xs">
                     <thead>
                       <tr className="border-b border-blue-300/30">
@@ -452,7 +452,7 @@ export default function InterestIncomeTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     세금우대종합저축은 <strong>각 은행·증권사마다 가입 조건이 다릅니다</strong>. 시중은행(국민·신한·우리·하나 등), 인터넷은행, 증권사가 각각 독립적인 상품을 운영하므로, 직접 금융기관에 문의하여 "현재 세금우대 상품" 가입 가능 여부와 조건을 확인해야 합니다.
                   </p>
@@ -502,7 +502,7 @@ export default function InterestIncomeTax2026Page() {
                 </ul>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     <strong>금융소득에 "이자만" 해당하는 것이 아닙니다</strong>. 이자(예금·적금·채권), 배당금(주식·펀드), 배당 대체 소득 등이 모두 합산됩니다. 주식 배당을 받거나 펀드 배당금을 받는 투자자라면 더욱 주의해야 합니다.
                   </p>
@@ -569,7 +569,7 @@ export default function InterestIncomeTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     비과세 계좌의 정의 기준, 가입 자격, 연간 한도는 정부 정책에 따라 매년 변경될 수 있습니다. <strong>금융감독원(fss.or.kr)</strong> 또는 <strong>국세청(nts.go.kr)</strong>의 최신 안내를 반드시 확인하세요.
                   </p>
@@ -587,7 +587,7 @@ export default function InterestIncomeTax2026Page() {
                     href="/calculator/deposit/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
-                    <h4 className="font-semibold text-primary-500">👉 정기예금 이자 계산기</h4>
+                    <h4 className="font-semibold text-primary-500">정기예금 이자 계산기</h4>
                     <p className="mt-1 text-sm text-text-secondary">
                       원금·기간·금리 입력 → 세후 이자 실시간 계산
                     </p>
@@ -597,7 +597,7 @@ export default function InterestIncomeTax2026Page() {
                     href="/calculator/savings/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
-                    <h4 className="font-semibold text-primary-500">👉 적금 이자 계산기</h4>
+                    <h4 className="font-semibold text-primary-500">적금 이자 계산기</h4>
                     <p className="mt-1 text-sm text-text-secondary">
                       월 납입액·금리 입력 → 최종 수령액 자동 계산
                     </p>

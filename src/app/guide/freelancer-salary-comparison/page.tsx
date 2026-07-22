@@ -189,7 +189,7 @@ export default function FreelancerSalaryComparisonPage() {
                 <h2 className="text-2xl font-bold">시나리오 1. 연 3,000만 원 (월 250만) — 저소득 구간</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">📌 프리랜서 (IT 단순경비율 64.1%)</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (IT 단순경비율 64.1%)</h3>
                     <ul className="space-y-1 text-text-secondary">
                       <li>총 매출: 3,000만</li>
                       <li>경비 인정: 1,923만 (64.1%)</li>
@@ -204,7 +204,7 @@ export default function FreelancerSalaryComparisonPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">📌 일반직 (부양 1인)</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">일반직 (부양 1인)</h3>
                     <ul className="space-y-1 text-text-secondary">
                       <li>연봉: 3,000만</li>
                       <li>4대보험(본인): 약 270만</li>
@@ -227,7 +227,7 @@ export default function FreelancerSalaryComparisonPage() {
                 <h2 className="text-2xl font-bold">시나리오 2. 연 5,000만 원 (월 417만)</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">📌 프리랜서 (IT 단순경비율)</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (IT 단순경비율)</h3>
                     <ul className="space-y-1 text-text-secondary">
                       <li>총 매출: 5,000만</li>
                       <li>경비 인정: 3,205만 (64.1%)</li>
@@ -241,7 +241,7 @@ export default function FreelancerSalaryComparisonPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">📌 일반직 (부양 1인)</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">일반직 (부양 1인)</h3>
                     <ul className="space-y-1 text-text-secondary">
                       <li>연봉: 5,000만</li>
                       <li>4대보험(본인): 약 450만</li>
@@ -262,7 +262,7 @@ export default function FreelancerSalaryComparisonPage() {
                 <h2 className="text-2xl font-bold">시나리오 3. 연 1억 원 (고소득)</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">📌 프리랜서 (기준경비율 권장)</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (기준경비율 권장)</h3>
                     <ul className="space-y-1 text-text-secondary">
                       <li>총 매출: 1억</li>
                       <li>실제 경비(영수증): 4,000만</li>
@@ -275,7 +275,7 @@ export default function FreelancerSalaryComparisonPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">📌 일반직</h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">일반직</h3>
                     <ul className="space-y-1 text-text-secondary">
                       <li>연봉: 1억</li>
                       <li>4대보험(본인): 약 900만</li>
@@ -313,7 +313,7 @@ export default function FreelancerSalaryComparisonPage() {
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 시뮬레이션은 일반론(경비율 IT 기준, 부양 1인) — 실제는 업종·부양가족·세액공제에 따라 달라집니다.</li>
                   <li>• 건강·연금 보험료는 지역가입자 점수제로 재산·자동차 등 추가 변수 영향. 정확한 부담은 건강보험공단 확인.</li>

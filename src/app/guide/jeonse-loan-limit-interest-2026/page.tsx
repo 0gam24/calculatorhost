@@ -196,7 +196,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   </table>
                 </div>
                 <p className="text-sm text-text-tertiary">
-                  <strong>⚠️ 다만:</strong> 3가지 기준 중 가장 낮은 한도가 실제 가능액입니다. 예를 들어 보증비율상 1.6억 원이 가능하더라도, 보증한도가 1.4억 원이거나 DSR 때문에 1.3억 원으로 제한될 수 있습니다.
+                  <strong>다만:</strong> 3가지 기준 중 가장 낮은 한도가 실제 가능액입니다. 예를 들어 보증비율상 1.6억 원이 가능하더라도, 보증한도가 1.4억 원이거나 DSR 때문에 1.3억 원으로 제한될 수 있습니다.
                 </p>
               </section>
 
@@ -235,7 +235,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   </table>
                 </div>
                 <p className="text-sm text-text-tertiary">
-                  <strong>⚠️ 다만:</strong> 위 통상 수준은 참고용이며, 실제 한도는 보증금·소득·신용도·지역에 따라 크게 달라집니다. 정확한 한도는 금융기관 상담을 통해서만 확인할 수 있습니다.
+                  <strong>다만:</strong> 위 통상 수준은 참고용이며, 실제 한도는 보증금·소득·신용도·지역에 따라 크게 달라집니다. 정확한 한도는 금융기관 상담을 통해서만 확인할 수 있습니다.
                 </p>
               </section>
 
@@ -284,7 +284,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   </table>
                 </div>
                 <p className="text-sm text-text-tertiary">
-                  <strong>⚠️ 다만:</strong> 정책상품 조건(소득·보증금·나이·신용도)은 매년 변동합니다. 가입 전에 주택도시기금 공식 사이트에서 최신 조건을 반드시 확인하세요. 조건을 조금 벗어나더라도 상담받을 가치는 있습니다.
+                  <strong>다만:</strong> 정책상품 조건(소득·보증금·나이·신용도)은 매년 변동합니다. 가입 전에 주택도시기금 공식 사이트에서 최신 조건을 반드시 확인하세요. 조건을 조금 벗어나더라도 상담받을 가치는 있습니다.
                 </p>
               </section>
 
@@ -334,7 +334,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   </p>
                 </div>
                 <p className="text-sm text-text-tertiary mt-4">
-                  <strong>⚠️ 다만:</strong> 전세자금대출은 원금 상환이 만료 시점에 일괄 이루어지므로, DSR 계산 시 이자만 반영되거나 우대되는 경우가 많습니다. 하지만 기존에 다른 대출이 있으면 그것도 포함되므로, 정확한 한도는 금융기관에서 직접 계산해주어야 합니다.
+                  <strong>다만:</strong> 전세자금대출은 원금 상환이 만료 시점에 일괄 이루어지므로, DSR 계산 시 이자만 반영되거나 우대되는 경우가 많습니다. 하지만 기존에 다른 대출이 있으면 그것도 포함되므로, 정확한 한도는 금융기관에서 직접 계산해주어야 합니다.
                 </p>
               </section>
 

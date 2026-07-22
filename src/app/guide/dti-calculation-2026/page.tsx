@@ -242,7 +242,7 @@ export default function DtiCalculation2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 DTI 계산에서 중요한 점은 주담대는 원금과 이자를 모두 포함하지만, 신용대출,
+                  다만 DTI 계산에서 중요한 점은 주담대는 원금과 이자를 모두 포함하지만, 신용대출,
                   자동차할부 등 기타 대출은 이자만 포함한다는 것입니다. 이것이 DSR과의 가장 큰
                   차이입니다.
                 </p>
@@ -294,7 +294,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 단순 이해를 위한 예시입니다. 실제 원리금은 금리, 상환 기간,
+                  다만 위 계산은 단순 이해를 위한 예시입니다. 실제 원리금은 금리, 상환 기간,
                   변동금리 인상률 등에 따라 달라지며, 대출한도 계산기나 은행 상담을 통해 정확한
                   한도를 확인하세요.
                 </p>
@@ -359,7 +359,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 부업이나 임차수익이 있어도 세무신고가 되지 않으면 인정받기 어렵습니다.
+                  다만 부업이나 임차수익이 있어도 세무신고가 되지 않으면 인정받기 어렵습니다.
                   대출 전에 소득을 공식적으로 세무신고하는 것이 한도 결정에 도움이 됩니다.
                 </p>
               </section>
@@ -399,7 +399,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 기타 대출이 커질수록 DTI 한도는 높아 보일 수 있지만, 실제 대출 가능액은
+                  다만 기타 대출이 커질수록 DTI 한도는 높아 보일 수 있지만, 실제 대출 가능액은
                   DSR 규제에 의해 훨씬 낮아질 수 있습니다.
                 </p>
               </section>
@@ -461,7 +461,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 금융위원회가 금리 인상기에는 DTI 한도를 더 강화할 수 있습니다. 대출 신청
+                  다만 금융위원회가 금리 인상기에는 DTI 한도를 더 강화할 수 있습니다. 대출 신청
                   전에 금융위 공식 발표나 해당 은행의 최신 기준을 반드시 확인하세요.
                 </p>
               </section>
@@ -513,7 +513,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 DTI만 고려한 것입니다. 실제 대출은 DSR 규제가 더 제한적일 수
+                  다만 위 계산은 DTI만 고려한 것입니다. 실제 대출은 DSR 규제가 더 제한적일 수
                   있으므로, 신용대출을 먼저 상환하고 주담대를 신청하는 것이 유리합니다.
                 </p>
               </section>
@@ -564,7 +564,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 정확한 한도는 금융기관의 자체 판단에 따라 달라질 수 있습니다. 대출한도
+                  다만 정확한 한도는 금융기관의 자체 판단에 따라 달라질 수 있습니다. 대출한도
                   계산기나 은행 상담을 통해 당신의 정확한 한도를 확인하세요.
                 </p>
               </section>
@@ -605,7 +605,7 @@ export default function DtiCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 금융위는 금리 인상 시 스트레스 DSR(미래 금리 인상을 미리 반영한 보수적
+                  다만 금융위는 금리 인상 시 스트레스 DSR(미래 금리 인상을 미리 반영한 보수적
                   계산)을 도입하여 실제 DTI 규제는 더욱 강화될 수 있습니다. 금리 인상기에는 조기 대출
                   신청이 유리할 수 있습니다.
                 </p>
@@ -617,7 +617,7 @@ export default function DtiCalculation2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

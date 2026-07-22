@@ -85,7 +85,7 @@ const FAQ_ITEMS = [
   {
     question: '국민연금 수령 중 다시 일하면 어떻게 되나요?',
     answer:
-      '조기노령연금 수령자가 소득 있는 업무에 종사하면 일부 연금이 정지될 수 있습니다. 정상 수령(65세 이상)이나 연기연금 수령자는 일해도 감액 없이 전액 지급됩니다. 정확한 소득 기준과 감액 규모는 국민연금공단(☎1355)에 상담하세요.',
+      '조기노령연금 수령자가 소득 있는 업무에 종사하면 일부 연금이 정지될 수 있습니다. 정상 수령(65세 이상)이나 연기연금 수령자는 일해도 감액 없이 전액 지급됩니다. 정확한 소득 기준과 감액 규모는 국민연금공단(전화 1355)에 상담하세요.',
   },
 ];
 
@@ -235,7 +235,7 @@ export default function NationalPensionExpectedBenefitPage() {
                 </p>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     가입기간이 <strong>20년을 초과</strong>하면, 초과하는 1년마다 기본연금액에 <strong>50/1,000</strong>을 추가로 곱합니다. 예를 들어 가입기간이 25년(5년 초과)이면 추가 250/1,000이 적용되어 수령액이 추가로 인상됩니다.
                   </p>
@@ -297,7 +297,7 @@ export default function NationalPensionExpectedBenefitPage() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     공단의 '예상 수령액'은 <strong>현재 가입 기록 기준의 추정치</strong>입니다. 향후 추가 납부, 임의가입, 추납 등으로 가입기간이 늘어나면 수령액도 인상됩니다. 매년 정기적으로 재조회하여 최신 정보를 확인하세요.
                   </p>
@@ -365,9 +365,9 @@ export default function NationalPensionExpectedBenefitPage() {
                 </ul>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
-                    조기수령 신청 시 소득 있는 업무에 종사하지 않아야 합니다. 일하고 있다면 조기노령연금 신청이 제한될 수 있습니다. 정확한 소득 기준은 국민연금공단(☎1355)에 확인하세요.
+                    조기수령 신청 시 소득 있는 업무에 종사하지 않아야 합니다. 일하고 있다면 조기노령연금 신청이 제한될 수 있습니다. 정확한 소득 기준은 국민연금공단(전화 1355)에 확인하세요.
                   </p>
                 </div>
               </section>
@@ -431,7 +431,7 @@ export default function NationalPensionExpectedBenefitPage() {
                 </ul>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
                     연기연금 신청 후에도 중간에 취소할 수 있습니다. 예를 들어 70세까지 미루기로 신청했다가 68세에 갑자기 수령이 필요하면, 신청 시점까지의 증액률(14.4%)만 적용되어 수령할 수 있습니다.
                   </p>
@@ -475,9 +475,9 @@ export default function NationalPensionExpectedBenefitPage() {
                 </div>
 
                 <div className="rounded-lg border border-yellow-600/20 bg-yellow-50/10 p-3 text-sm text-text-secondary dark:border-yellow-500/30 dark:bg-yellow-900/10">
-                  <p className="mb-1 font-semibold text-text-primary">⚠️ 다만</p>
+                  <p className="mb-1 font-semibold text-text-primary">다만</p>
                   <p>
-                    임의가입·추납 시 장시간이 걸릴 수 있으므로, 조기에 전략을 짜야 합니다. 예를 들어 직장 퇴직 후 60세까지 5년간 임의가입하면 가입기간을 5년(60개월) 연장할 수 있습니다. 정확한 가입 기록은 국민연금공단(☎1355)에서 무료로 조회할 수 있습니다.
+                    임의가입·추납 시 장시간이 걸릴 수 있으므로, 조기에 전략을 짜야 합니다. 예를 들어 직장 퇴직 후 60세까지 5년간 임의가입하면 가입기간을 5년(60개월) 연장할 수 있습니다. 정확한 가입 기록은 국민연금공단(전화 1355)에서 무료로 조회할 수 있습니다.
                   </p>
                 </div>
               </section>

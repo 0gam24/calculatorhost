@@ -164,7 +164,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -254,7 +254,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 신고 안 하면 가산세</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 신고 안 하면 가산세</p>
                   <p className="mt-2">
                     종합소득세 신고 대상인데 신고하지 않으면 무신고가산세 20% 부과(국세기본법 §47의2). 부정행위(영수증 조작 등) 적발
                     시 40% 중과까지 가능합니다.
@@ -403,7 +403,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                         <li>근로소득 과세표준 약 4,000만 + 사업소득 과세표준 약 2,500만 (경비율 70%) = 6,500만</li>
                         <li>세액 = 6,500만 × 24% − 576만 = 984만</li>
                         <li className="font-semibold text-danger-500">추가 납부: 984만 − 474만 = 약 510만 원</li>
-                        <li className="text-xs italic text-text-tertiary">⚠️ 누진세율이 15% → 24%로 상향되어 추가 세금 510만</li>
+                        <li className="text-xs italic text-text-tertiary">주의: 누진세율이 15% → 24%로 상향되어 추가 세금 510만</li>
                       </ul>
                     </div>
 
@@ -414,14 +414,14 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                         <li>근로소득 4,000만 + 금융소득(소득금액계산 후) 2,000만 = 과세표준 약 6,000만</li>
                         <li>세액 = 6,000만 × 24% − 576만 = 864만</li>
                         <li className="font-semibold text-primary-600">추가 납부: 864만 − 474만 = 약 390만 원</li>
-                        <li className="text-xs italic text-text-tertiary">💡 2,000만 초과분만 합산이므로 1,000만분의 추가 세금 약 150만 + 기존 15.4% 308만 = 총 약 390만</li>
+                        <li className="text-xs italic text-text-tertiary">2,000만 초과분만 합산이므로 1,000만분의 추가 세금 약 150만 + 기존 15.4% 308만 = 총 약 390만</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 결론: 부업 소득은 합산 회피 불가능</p>
+                  <p className="font-semibold text-text-primary">결론: 부업 소득은 합산 회피 불가능</p>
                   <p className="mt-2">
                     사업소득과 임대소득은 무조건 합산이므로 누진세율 상향을 피할 수 없습니다. 다만 기타소득과 금융소득은 작으면 분리과세로
                     선택할 여지가 있습니다.
@@ -615,7 +615,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>5월 31일(금)</strong> 신고 기한. 주말이므로 다음 영업일 <strong>6월 2일(월)</strong> 자동 연장
@@ -640,7 +640,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

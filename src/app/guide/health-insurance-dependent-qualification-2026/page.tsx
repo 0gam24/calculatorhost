@@ -154,7 +154,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 1. 피부양자 정의 및 기본 요건 */}
               <section aria-label="피부양자 정의" className="space-y-4">
-                <h2 className="text-2xl font-semibold">1️⃣ 피부양자란? — 정의와 기본 요건</h2>
+                <h2 className="text-2xl font-semibold">1⃣ 피부양자란? — 정의와 기본 요건</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">정의</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -187,13 +187,13 @@ export default function HealthInsuranceDependentQualificationGuide() {
                   </table>
                 </div>
                 <p className="text-sm text-text-tertiary">
-                  ⚠️ <strong>다만</strong> 3가지 중 하나라도 초과하면 즉시 자격 상실. 공단은 매년 11월을 기준으로 전년도 소득·재산을 정기 재산정하여 자동 심사합니다.
+                  <strong>다만</strong> 3가지 중 하나라도 초과하면 즉시 자격 상실. 공단은 매년 11월을 기준으로 전년도 소득·재산을 정기 재산정하여 자동 심사합니다.
                 </p>
               </section>
 
               {/* 2. 소득 요건 상세 */}
               <section aria-label="소득 요건" className="space-y-4">
-                <h2 className="text-2xl font-semibold">2️⃣ 소득 요건 — 연 2,000만원 기본, 프리랜서 500만원</h2>
+                <h2 className="text-2xl font-semibold">2⃣ 소득 요건 — 연 2,000만원 기본, 프리랜서 500만원</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">핵심 기준</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -235,13 +235,13 @@ export default function HealthInsuranceDependentQualificationGuide() {
                 </div>
 
                 <p className="text-sm text-text-tertiary">
-                  💡 <strong>예외</strong>: 사적 연금(퇴직금, 개인연금보험 수령금)은 소득에 포함되지 않습니다. 국민연금은 포함되므로 월 170만원(연 2,040만원)을 받으면 2,000만원 한도를 초과합니다.
+                  <strong>예외</strong>: 사적 연금(퇴직금, 개인연금보험 수령금)은 소득에 포함되지 않습니다. 국민연금은 포함되므로 월 170만원(연 2,040만원)을 받으면 2,000만원 한도를 초과합니다.
                 </p>
               </section>
 
               {/* 3. 재산 요건 상세 */}
               <section aria-label="재산 요건" className="space-y-4">
-                <h2 className="text-2xl font-semibold">3️⃣ 재산 요건 — 과세표준 5.4억원 / 조건부 9억</h2>
+                <h2 className="text-2xl font-semibold">3⃣ 재산 요건 — 과세표준 5.4억원 / 조건부 9억</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">핵심 기준</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -261,15 +261,15 @@ export default function HealthInsuranceDependentQualificationGuide() {
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="py-2 pr-4 font-semibold text-text-primary">5억 4,000만원 이하</td>
-                        <td className="py-2">✅ 소득 요건 충족 시 자격 유지</td>
+                        <td className="py-2">소득 요건 충족 시 자격 유지</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="py-2 pr-4 font-semibold text-text-primary">5.4억 초과 ~ 9억 미만</td>
-                        <td className="py-2">⚠️ 연소득 1,000만원 이하일 때만 유지</td>
+                        <td className="py-2">주의: 연소득 1,000만원 이하일 때만 유지</td>
                       </tr>
                       <tr>
                         <td className="py-2 pr-4 font-semibold text-text-primary">9억원 초과</td>
-                        <td className="py-2">❌ 소득과 무관하게 즉시 탈락</td>
+                        <td className="py-2">소득과 무관하게 즉시 탈락</td>
                       </tr>
                     </tbody>
                   </table>
@@ -292,13 +292,13 @@ export default function HealthInsuranceDependentQualificationGuide() {
                 </ul>
 
                 <p className="text-sm text-text-tertiary">
-                  ⚠️ <strong>다만</strong> 부부 공동명의 재산은 합산됩니다. 배우자와 함께 피부양자 신청할 경우 두 사람의 재산을 모두 더하여 판정합니다.
+                  <strong>다만</strong> 부부 공동명의 재산은 합산됩니다. 배우자와 함께 피부양자 신청할 경우 두 사람의 재산을 모두 더하여 판정합니다.
                 </p>
               </section>
 
               {/* 4. 형제자매 특수 규칙 */}
               <section aria-label="형제자매 규칙" className="space-y-4">
-                <h2 className="text-2xl font-semibold">4️⃣ 형제자매 범위 — 만 30세 미만 또는 65세 이상만</h2>
+                <h2 className="text-2xl font-semibold">4⃣ 형제자매 범위 — 만 30세 미만 또는 65세 이상만</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">형제자매 나이 제한</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -324,7 +324,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 5. 탈락 기준 및 전환 */}
               <section aria-label="탈락 기준" className="space-y-4">
-                <h2 className="text-2xl font-semibold">5️⃣ 탈락 기준 — 언제 지역가입자로 바뀌나?</h2>
+                <h2 className="text-2xl font-semibold">5⃣ 탈락 기준 — 언제 지역가입자로 바뀌나?</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">탈락 시점</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -352,7 +352,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
                 </ul>
 
                 <div className="bg-danger-50 dark:bg-danger-900/10 rounded-lg border border-danger-200 dark:border-danger-800 p-4 mt-4">
-                  <p className="text-sm font-semibold text-danger-700 dark:text-danger-300">⚠️ 중요 — 지역가입자 전환 시 새로운 보험료 부과</p>
+                  <p className="text-sm font-semibold text-danger-700 dark:text-danger-300">중요 — 지역가입자 전환 시 새로운 보험료 부과</p>
                   <p className="mt-2 text-sm text-text-secondary">
                     피부양자에서 탈락하면 <strong>지역가입자</strong>로 전환되어 월 15~40만원의 보험료가 새로 부과됩니다. 보험료는 소득·재산을 종합 고려하여 산정되므로 개인별로 큰 차이가 발생합니다.
                   </p>
@@ -420,13 +420,13 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 면책조항 */}
               <div className="bg-bg-card rounded-lg border border-border-base p-4 text-xs text-text-tertiary">
-                <p className="font-semibold text-text-secondary mb-2">📋 면책조항 및 정보 출처</p>
+                <p className="font-semibold text-text-secondary mb-2">면책조항 및 정보 출처</p>
                 <ul className="space-y-1 list-inside list-disc">
                   <li>
                     본 가이드는 2026년 6월 15일 기준 국민건강보험공단 공식 기준(국민건강보험법 §5, 시행규칙 §2)을 참조합니다.
                   </li>
                   <li>
-                    개별 사례는 소득 신고 방식·재산 구성·부양 관계에 따라 달라질 수 있으므로, 최종 판정은 국민건강보험공단(☎ 1577-1000)에 문의하시기 바랍니다.
+                    개별 사례는 소득 신고 방식·재산 구성·부양 관계에 따라 달라질 수 있으므로, 최종 판정은 국민건강보험공단(전화 1577-1000)에 문의하시기 바랍니다.
                   </li>
                   <li>
                     본 콘텐츠는 AI 보조 작성 후 운영자가 법적 검증을 거쳐 발행했습니다.

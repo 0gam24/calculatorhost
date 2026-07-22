@@ -221,7 +221,7 @@ export default function NationalPension2026() {
                 </p>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 다만,</strong> 가입기간이 10년에 못 미치면 노령연금을 받지 못하고 그동안 낸 보험료에 이자를 더한 반환일시금만 받습니다.
+                    <strong>다만,</strong> 가입기간이 10년에 못 미치면 노령연금을 받지 못하고 그동안 낸 보험료에 이자를 더한 반환일시금만 받습니다.
                     가입기간이 부족하면 임의계속가입이나 추후납부(추납)로 10년을 채우는 방법을 검토하세요.
                   </p>
                 </div>
@@ -275,7 +275,7 @@ export default function NationalPension2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 보험료가 얼마나 오르나:</strong> 전체 가입자 평균소득(약 월 309만원)에 해당하는 사람이라면 보험료(총액)가 2025년 약 27.8만원에서 2026년 약 29.4만원으로 오릅니다.
+                    <strong>보험료가 얼마나 오르나:</strong> 전체 가입자 평균소득(약 월 309만원)에 해당하는 사람이라면 보험료(총액)가 2025년 약 27.8만원에서 2026년 약 29.4만원으로 오릅니다.
                     직장가입자는 이 중 절반만 본인이 부담합니다. 함께 시행되는 <strong>국가의 연금 지급 보장</strong> 명문화로 기금 소진 우려에 대한 안전장치도 마련됐습니다.
                   </p>
                 </div>
@@ -346,7 +346,7 @@ export default function NationalPension2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 주의:</strong> 블로그 등에서 보이는 &ldquo;평균 수령액 ○○만원&rdquo;은 본인 상황과 다를 수 있습니다.
+                    <strong>주의:</strong> 블로그 등에서 보이는 &ldquo;평균 수령액 ○○만원&rdquo;은 본인 상황과 다를 수 있습니다.
                     가입기간·소득 이력이 사람마다 달라, 반드시 본인 인증 후 조회한 금액을 기준으로 노후를 설계하세요.
                   </p>
                 </div>
@@ -400,7 +400,7 @@ export default function NationalPension2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 어떻게 고를까:</strong> 당장 생활비가 급하거나 건강이 좋지 않아 기대수명이 짧다면 조기수령이 유리할 수 있습니다.
+                    <strong>어떻게 고를까:</strong> 당장 생활비가 급하거나 건강이 좋지 않아 기대수명이 짧다면 조기수령이 유리할 수 있습니다.
                     반대로 다른 소득이 있고 건강해 오래 받을 것으로 예상되면 연기연금이 총수령액에서 유리합니다.
                     또 조기수령은 다른 소득이 일정 기준을 넘으면 신청이 제한되므로 본인 소득 상황도 함께 확인하세요.
                   </p>

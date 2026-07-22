@@ -166,18 +166,18 @@ export default function JunePropertyTaxPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>과세 기준일</strong>: 매년 6월 1일 (0시 기준 소유자에게 부과)</li>
-                  <li>💰 <strong>1차 납부</strong>: 7월 16~31일 (주택 본세의 1/2)</li>
-                  <li>💰 <strong>2차 납부</strong>: 9월 16~30일 (주택 나머지 1/2 + 토지·건축물 일괄)</li>
-                  <li>📊 <strong>과세표준</strong>: 공시가격 × 공정시장가액 60% (주택 기준)</li>
-                  <li>🏠 <strong>1세대1주택 특례</strong>: 공시 9억 이하 일반세율 1/2 적용</li>
-                  <li>📈 <strong>세부담 상한</strong>: 105~130% (공시가 구간별)</li>
+                  <li><strong>과세 기준일</strong>: 매년 6월 1일 (0시 기준 소유자에게 부과)</li>
+                  <li><strong>1차 납부</strong>: 7월 16~31일 (주택 본세의 1/2)</li>
+                  <li><strong>2차 납부</strong>: 9월 16~30일 (주택 나머지 1/2 + 토지·건축물 일괄)</li>
+                  <li><strong>과세표준</strong>: 공시가격 × 공정시장가액 60% (주택 기준)</li>
+                  <li><strong>1세대1주택 특례</strong>: 공시 9억 이하 일반세율 1/2 적용</li>
+                  <li><strong>세부담 상한</strong>: 105~130% (공시가 구간별)</li>
                 </ul>
               </section>
 
               <section aria-label="신고 일정" className="card bg-danger-500/5 border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-bold text-danger-700 dark:text-danger-300">
-                  🚨 2026년 재산세 일정표
+                  2026년 재산세 일정표
                 </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -190,7 +190,7 @@ export default function JunePropertyTaxPage() {
                     <tbody>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2 font-bold">6월 1일 (월)</td>
-                        <td className="px-3 py-2 font-bold">⚠️ 과세 기준일 — 이날 0시 기준 소유자에게 부과</td>
+                        <td className="px-3 py-2 font-bold">주의: 과세 기준일 — 이날 0시 기준 소유자에게 부과</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2">7월 초</td>
@@ -222,7 +222,7 @@ export default function JunePropertyTaxPage() {
                 </p>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 6월 1일 거래 주의</strong>: 5월 31일까지 잔금 → 매도자가 1년치 재산세 부담.
+                    <strong>6월 1일 거래 주의</strong>: 5월 31일까지 잔금 → 매도자가 1년치 재산세 부담.
                     6월 1일 이후 잔금 → 매수자가 부담. 한 끗 차이로 수십~수백만 원 부담 변동.
                     부동산 거래 계약 시 잔금 일정 신중히 협상.
                   </p>
@@ -287,7 +287,7 @@ export default function JunePropertyTaxPage() {
                   </ol>
                 </div>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary">📌 시뮬레이션 — 공시 5억 1세대1주택 (도시지역)</strong>
+                  <strong className="text-text-primary">시뮬레이션 — 공시 5억 1세대1주택 (도시지역)</strong>
                   <ul className="mt-2 text-text-secondary space-y-1">
                     <li>과세표준: 5억 × 60% = 3억</li>
                     <li>본세 (특례): (6천만 × 0.05%) + (9천만 × 0.1%) + (1.5억 × 0.2%) = 3만 + 9만 + 30만 = <strong>42만 원</strong></li>
@@ -399,7 +399,7 @@ export default function JunePropertyTaxPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 개별 사정(상속·증여 직후, 1세대 판정 모호)은 시·군청 상담 권장.</li>
                   <li>• 공정시장가액비율은 정부 정책에 따라 변경 가능 (시행령 §109).</li>
@@ -409,7 +409,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link> — 본인 공시가격으로 즉시 시뮬레이션</li>
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>

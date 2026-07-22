@@ -173,7 +173,7 @@ export default function NationalPensionEarlyDeferred2026Page() {
                   </p>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 조기수령은 소득이 있는 업무에 종사하지 않는 것을 전제로 합니다. 재취업으로 일정 기준 이상 소득이 생기면 지급이 정지·조정될 수 있습니다.
+                  다만 조기수령은 소득이 있는 업무에 종사하지 않는 것을 전제로 합니다. 재취업으로 일정 기준 이상 소득이 생기면 지급이 정지·조정될 수 있습니다.
                 </p>
               </section>
 
@@ -222,7 +222,7 @@ export default function NationalPensionEarlyDeferred2026Page() {
                   </table>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 이 감액은 평생 유지됩니다. 당장 생활비가 급해 5년 조기 수령하면 이후 80대, 90대에도 계속 70%만 받게 되므로 신중해야 합니다.
+                  다만 이 감액은 평생 유지됩니다. 당장 생활비가 급해 5년 조기 수령하면 이후 80대, 90대에도 계속 70%만 받게 되므로 신중해야 합니다.
                 </p>
               </section>
 
@@ -271,7 +271,7 @@ export default function NationalPensionEarlyDeferred2026Page() {
                   </table>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 연기하는 동안에는 연금을 받지 못합니다. 연기 기간의 생활비를 다른 소득이나 저축으로 감당할 수 있어야 연기가 실익이 있습니다.
+                  다만 연기하는 동안에는 연금을 받지 못합니다. 연기 기간의 생활비를 다른 소득이나 저축으로 감당할 수 있어야 연기가 실익이 있습니다.
                 </p>
               </section>
 

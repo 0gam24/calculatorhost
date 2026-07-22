@@ -164,7 +164,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -288,7 +288,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 핵심</p>
+                  <p className="font-semibold text-text-primary">핵심</p>
                   <p className="mt-2">
                     신고 후 환급금까지의 시간은{' '}
                     <strong>
@@ -377,13 +377,13 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                       <strong className="text-text-primary">3단계:</strong> 신고 시점에 같은 계좌가 기본값으로 반영됨
                     </p>
                     <p className="rounded-lg bg-bg-card p-2 text-xs italic">
-                      💡 Tip: 5월 신고 전에 미리 계좌 등록하면 신고 후 자동 이체되어 약 1주 단축됨.
+                      Tip: 5월 신고 전에 미리 계좌 등록하면 신고 후 자동 이체되어 약 1주 단축됨.
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300 mb-2">⚠️ 미등록 시 절차</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300 mb-2">주의: 미등록 시 절차</p>
                   <ol className="text-sm text-danger-600 dark:text-danger-400 list-inside list-decimal space-y-1">
                     <li>
                       <strong>환급액 결정</strong> — 홈택스 공지 (약 신고 후 25~30일)
@@ -464,7 +464,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의</p>
                   <p>
                     국세기본법 §51의2(국세환급금 충당)에 따르면, 환급금 결정 시점에 발견된 가산세·미납세금은 환급액에서
                     우선 차감됩니다. 예상한 환급액과 실제 입금액이 다를 수 있으니 홈택스에서 교부결정통지서를 확인해야
@@ -551,7 +551,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                 </p>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">⚠️ 환급 지연 원인 5가지</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">주의: 환급 지연 원인 5가지</p>
                   <ul className="text-sm text-danger-600 dark:text-danger-400 list-inside list-disc space-y-1">
                     <li>
                       <strong>계좌 오류</strong> — 계좌번호·예금주명 오기 시 자동 이체 실패. 홈택스에서 계좌 재확인 후
@@ -619,7 +619,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                 </div>
 
                 <div className="rounded-lg bg-bg-raised p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary mb-2">🎁 환급가산금의 의의</p>
+                  <p className="font-semibold text-text-primary mb-2">환급가산금의 의의</p>
                   <p>
                     환급금이 늦을수록 환급가산금이 조금이라도 늘어나므로, "5월 말에 신고해도 환급 때까지 이자가 붙는다"는
                     뜻입니다. 다만 금액은 매우 미미합니다 (45일 기준 약 1,500원/100만 원당).
@@ -631,21 +631,21 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 최종 요약 */}
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-primary-700 dark:text-primary-300">📋 최종 체크리스트</h2>
+                <h2 className="mb-3 text-lg font-semibold text-primary-700 dark:text-primary-300">최종 체크리스트</h2>
                 <ul className="space-y-2 text-sm text-primary-700 dark:text-primary-300">
-                  <li>☐ 5월 31일 이전 신고 완료 (자진신고 시 가산세 50% 차감)</li>
-                  <li>☐ 홈택스에서 계좌 사전 등록 (미등록 시 우편 통지 1~2주 추가 지연)</li>
+                  <li>□ 5월 31일 이전 신고 완료 (자진신고 시 가산세 50% 차감)</li>
+                  <li>□ 홈택스에서 계좌 사전 등록 (미등록 시 우편 통지 1~2주 추가 지연)</li>
                   <li>
-                    ☐ 신고 후 25~30일 경과 시 홈택스 "환급금 조회"에서 환급액 확인 (교부결정통지서 발송 후 1주일 내)
+                    □ 신고 후 25~30일 경과 시 홈택스 "환급금 조회"에서 환급액 확인 (교부결정통지서 발송 후 1주일 내)
                   </li>
-                  <li>☐ 신고 후 45일 이상 지연 시 국세청 콜센터(1588-0060) 문의</li>
-                  <li>☐ 체납세금 확인 (환급금에서 우선 차감됨)</li>
+                  <li>□ 신고 후 45일 이상 지연 시 국세청 콜센터(1588-0060) 문의</li>
+                  <li>□ 체납세금 확인 (환급금에서 우선 차감됨)</li>
                 </ul>
               </section>
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

@@ -255,7 +255,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 주의:</strong> 기한 후 신청은 5% 감액되지만, 신청하지 않으면 0원입니다.
+                    <strong>주의:</strong> 기한 후 신청은 5% 감액되지만, 신청하지 않으면 0원입니다.
                     예를 들어 근로장려금 예상액이 165만원이라면 정기신청 165만원, 기한 후 신청 157만원(95%)을 받을 수 있습니다.
                   </p>
                 </div>
@@ -376,7 +376,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 중요:</strong> 가구 재산은 부동산(공시가 평가액), 금융자산(예금·주식·펀드·채권), 자동차(시가 평가액) 등을 합산합니다.
+                    <strong>중요:</strong> 가구 재산은 부동산(공시가 평가액), 금융자산(예금·주식·펀드·채권), 자동차(시가 평가액) 등을 합산합니다.
                     부채는 차감하지 않으므로, 전세금이나 대출금이 많아도 차감되지 않습니다.
                     자신의 재산 규모가 불명확하면 홈택스 모의계산에서 확인 후 신청하세요.
                   </p>
@@ -464,7 +464,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 팁:</strong> 홈택스가 불편하다면 세무서 방문을 권장합니다.
+                    <strong>팁:</strong> 홈택스가 불편하다면 세무서 방문을 권장합니다.
                     직원이 함께 입력을 도와주므로 실수할 가능성이 적고, 현장에서 서류 부족 여부를 바로 확인할 수 있습니다.
                   </p>
                 </div>
@@ -505,7 +505,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>📋 서류 확인 팁:</strong> 신청 전에 홈택스에서 모의계산을 해보면,
+                    <strong>서류 확인 팁:</strong> 신청 전에 홈택스에서 모의계산을 해보면,
                     필요한 서류 목록이 자동으로 표시됩니다. 이를 참고해서 서류를 준비하면 누락 위험이 줄어듭니다.
                   </p>
                 </div>

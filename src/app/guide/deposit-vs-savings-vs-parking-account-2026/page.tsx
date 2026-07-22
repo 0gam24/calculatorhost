@@ -276,7 +276,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 현재(2026) 은행의 정기예금 금리는 대체로 4~5%대입니다. 또한 중도해지
+                  다만 현재(2026) 은행의 정기예금 금리는 대체로 4~5%대입니다. 또한 중도해지
                   시 약정이율이 적용되지 않으므로, 반드시 만기까지 거치할 수 있는 여유자금으로만
                   선택하세요.
                 </p>
@@ -345,7 +345,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 적금은 목돈이 없어도 매달 꾸준히 저축할 수 있다는 장점이 있습니다.
+                  다만 적금은 목돈이 없어도 매달 꾸준히 저축할 수 있다는 장점이 있습니다.
                   또한 중도해지가 가능하므로 예비자금이 필요할 때 인출할 수 있습니다(다만 미납
                   기간의 이자는 지급되지 않음).
                 </p>
@@ -396,7 +396,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 파킹통장의 높은 금리는 일시적입니다. 은행이 단기 자금이 필요한 시기에
+                  다만 파킹통장의 높은 금리는 일시적입니다. 은행이 단기 자금이 필요한 시기에
                   고금리로 모금하는 전술이므로, 3개월~6개월 후 금리가 크게 인하될 수 있습니다.
                   또한 한도 제약이 있어서, 금액이 크면 분산 입금이나 다른 은행 이용을 고려해야
                   합니다.
@@ -434,7 +434,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 이자소득세 15.4%는 국내 은행 상품 기준입니다. 외화 상품, 해외 은행
+                  다만 이자소득세 15.4%는 국내 은행 상품 기준입니다. 외화 상품, 해외 은행
                   송금 이자 등은 세율이 다를 수 있습니다. 또한 종합소득이 일정 수준 이상이면
                   추가 세금이 부과될 수 있으므로, 큰 금액은 세무사 상담을 권장합니다.
                 </p>
@@ -509,7 +509,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 현재 금리 환경은 저금리입니다. 정기예금 4~5%, 적금 3~4%, 파킹통장
+                  다만 현재 금리 환경은 저금리입니다. 정기예금 4~5%, 적금 3~4%, 파킹통장
                   3.5~5%대는 임시 책정이며, 시간에 따라 변할 수 있습니다. 상품 선택 전에 각
                   은행의 현재 금리를 비교한 후 선택하세요.
                 </p>
@@ -542,7 +542,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 보호한도가 연도별로 변하고, 상품별로도 차이가 있을 수 있으므로, 큰
+                  다만 보호한도가 연도별로 변하고, 상품별로도 차이가 있을 수 있으므로, 큰
                   금액을 예치하기 전에 예금보험공사(kdic.or.kr)에서 정확한 한도를 확인하세요.
                 </p>
               </section>
@@ -553,7 +553,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

@@ -212,7 +212,7 @@ export default function DsrRegulationZonesPage() {
                 <h2 className="text-2xl font-bold">시나리오별 대출 한도 비교 (2026 실전 사례)</h2>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-5">
-                  <h3 className="mb-2 font-semibold text-text-primary">📌 시나리오 1. 6억 주택 매매 (생애최초·연소득 6,000만)</h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">시나리오 1. 6억 주택 매매 (생애최초·연소득 6,000만)</h3>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• <strong>비규제지역</strong>: LTV 80% × 6억 = 4.8억 (단, DSR 40% 한도 내)</li>
                     <li>• <strong>조정대상지역</strong>: LTV 70% × 6억 = 4.2억</li>
@@ -227,7 +227,7 @@ export default function DsrRegulationZonesPage() {
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-5">
-                  <h3 className="mb-2 font-semibold text-text-primary">📌 시나리오 2. 12억 주택 매매 (1주택자·연소득 1.2억)</h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">시나리오 2. 12억 주택 매매 (1주택자·연소득 1.2억)</h3>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>• <strong>비규제지역</strong>: LTV 70% × 12억 = 8.4억 (DSR 한도 약 7억 추정)</li>
                     <li>• <strong>조정대상지역</strong>: LTV 50% × 12억 = 6억</li>
@@ -237,7 +237,7 @@ export default function DsrRegulationZonesPage() {
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 다주택자 주의</strong>: 조정대상지역·투기과열지구 다주택자는 LTV 0% — 신규 주택담보대출 불가.
+                    <strong>다주택자 주의</strong>: 조정대상지역·투기과열지구 다주택자는 LTV 0% — 신규 주택담보대출 불가.
                     유일한 대안은 신용대출(별도 DSR 영향) 또는 해당 지역 외 매수.
                   </p>
                 </div>
@@ -282,7 +282,7 @@ export default function DsrRegulationZonesPage() {
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 표는 2026년 5월 기준 — 조정대상지역·투기과열지구 지정·해제 잦으니 거래 직전 확인 필수.</li>
                   <li>• 실제 한도는 금융기관 내부 기준·신용평점·소득 증빙 방식에 따라 달라집니다.</li>

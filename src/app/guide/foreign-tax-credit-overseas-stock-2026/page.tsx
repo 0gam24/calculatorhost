@@ -171,7 +171,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
 
               {/* Structured Summary */}
               <section className="card space-y-4 bg-bg-card border border-border-base p-6" data-speakable>
-                <h2 className="text-xl font-semibold">⚡ 핵심 한눈에</h2>
+                <h2 className="text-xl font-semibold">핵심 한눈에</h2>
                 <table className="w-full text-sm border-collapse">
                   <tbody>
                     <tr className="border-b border-border-base">
@@ -220,7 +220,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                 </p>
                 <div className="card bg-primary-500/5 border border-primary-500/20 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-2">
-                    💡 이중과세 방지 원칙
+                    이중과세 방지 원칙
                   </p>
                   <p className="text-sm text-text-secondary">
                     같은 소득에 외국·한국에서 모두 세금을 물리는 "이중과세"를 피하기 위해,
@@ -240,7 +240,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
 
                 <div className="card space-y-4 border border-border-base p-4">
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">✅ 공제 대상 (O)</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">공제 대상 (O)</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
                         <strong>배당소득</strong> — 해외 주식 배당금 (미국 15%, 일본 20.42%, 중국 10% 등)
@@ -258,7 +258,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2">❌ 공제 제외 (X)</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">공제 제외 (X)</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
                         <strong>해외주식 양도소득</strong> — 주식 팔 때 이익. 한국에서 분리과세(22%)되므로
@@ -273,7 +273,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
 
                 <div className="card bg-danger-500/5 border border-danger-500/20 p-4">
                   <p className="text-sm font-semibold text-danger-700 dark:text-danger-300 mb-2">
-                    ⚠️ 주의: 해외주식 양도소득은 공제 대상이 아님
+                    주의: 해외주식 양도소득은 공제 대상이 아님
                   </p>
                   <p className="text-sm text-text-secondary">
                     미국 주식을 1억 원에 샀다가 1억 3,000만 원에 팔아서 3,000만 원 이익이 났다면,
@@ -498,7 +498,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
 
                 <div className="card bg-highlight-500/5 border border-highlight-500/20 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300 mb-2">
-                    💼 이월 사례
+                    이월 사례
                   </p>
                   <p className="text-sm text-text-secondary mb-3">
                     올해 외국배당 750만 × 15% = 112.5만 외국납부세액이 있지만, 한도 산출로 80만만 공제된다면,
@@ -565,7 +565,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
 
                 <div className="card bg-primary-500/5 border border-primary-500/20 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-300 mb-2">
-                    📋 홈택스 제출 방법 (5월 31일까지)
+                    홈택스 제출 방법 (5월 31일까지)
                   </p>
                   <ol className="text-sm text-text-secondary space-y-1 list-decimal list-inside">
                     <li>국세청 홈택스 로그인 → 종합소득세 신고 시작</li>

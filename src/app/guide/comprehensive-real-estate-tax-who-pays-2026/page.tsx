@@ -266,7 +266,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 주의:</strong> 종부세와 재산세는 중복해서 납부합니다. 다만 이중과세 완화를 위해 일부 공제 제도가 있습니다.
+                    <strong>주의:</strong> 종부세와 재산세는 중복해서 납부합니다. 다만 이중과세 완화를 위해 일부 공제 제도가 있습니다.
                   </p>
                 </div>
               </section>
@@ -423,7 +423,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 중요:</strong> 과세표준 3.6억까지는 2주택·3주택 세율이 0.7%로 같지만,
+                    <strong>중요:</strong> 과세표준 3.6억까지는 2주택·3주택 세율이 0.7%로 같지만,
                     과세표준 12억을 초과하면 3주택 이상 중과세율(2.0%~)이 일반세율(1.3%~)보다 훨씬 높아져 세액 격차가 크게 벌어집니다.
                     구간별 누진공제가 차감되므로 정확한 세액은 종합부동산세 계산기에서 확인하세요.
                   </p>
@@ -557,7 +557,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                 </p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">📅 납부 기한</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">납부 기한</h3>
                     <p className="text-sm text-text-secondary font-semibold">
                       2026년 12월 1일(화) ~ 12월 15일(화)
                     </p>
@@ -566,7 +566,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">💳 납부 방법</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">납부 방법</h3>
                     <ul className="space-y-1.5 text-sm text-text-secondary">
                       <li><strong>1. 온라인 (위택스):</strong> wetax.go.kr → 종부세 조회·납부 → 신용카드/계좌이체</li>
                       <li><strong>2. 지자체 방문:</strong> 관할 시·군·구 세무서 방문 납부 (현금·신용카드)</li>
@@ -586,10 +586,10 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">미납 시 불이익</h3>
                   <ul className="space-y-1.5 text-sm text-danger-700 dark:text-danger-300">
-                    <li>💰 <strong>가산세:</strong> 3개월 이내 20%, 3~6개월 50%, 6개월 초과 80% 이상 가산</li>
-                    <li>🏠 <strong>부동산 압류:</strong> 해당 부동산 또는 다른 재산 압류</li>
-                    <li>💳 <strong>신용등급 하락:</strong> 체계적 추심 기록, 신용 조회 시 기록 남음</li>
-                    <li>📄 <strong>행정 제재:</strong> 특정 지자체는 운영 제한 등 추가 조치</li>
+                    <li><strong>가산세:</strong> 3개월 이내 20%, 3~6개월 50%, 6개월 초과 80% 이상 가산</li>
+                    <li><strong>부동산 압류:</strong> 해당 부동산 또는 다른 재산 압류</li>
+                    <li><strong>신용등급 하락:</strong> 체계적 추심 기록, 신용 조회 시 기록 남음</li>
+                    <li><strong>행정 제재:</strong> 특정 지자체는 운영 제한 등 추가 조치</li>
                   </ul>
                 </div>
               </section>

@@ -251,7 +251,7 @@ export default function HighOilPriceReliefFund2026Application() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 참고:</strong> 지급액은 거주지(주소)에 따라 결정됩니다.
+                    <strong>참고:</strong> 지급액은 거주지(주소)에 따라 결정됩니다.
                     정확한 지급액과 거주지 분류는 정부24(gov.kr) 또는 행정안전부 홈페이지에서 주소를 입력해 조회할 수 있습니다.
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export default function HighOilPriceReliefFund2026Application() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 주의:</strong> 위 수치는 2026년 3월 30일 기준입니다.
+                    <strong>주의:</strong> 위 수치는 2026년 3월 30일 기준입니다.
                     가구원 수별로 기준이 다르고, 직장가입자와 지역가입자의 기준도 상이합니다.
                     정확한 대상 판정은 정부24(gov.kr) 또는 행정안전부(mois.go.kr)에서 건강보험료 조회로 확인하세요.
                   </p>
@@ -369,7 +369,7 @@ export default function HighOilPriceReliefFund2026Application() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 팁:</strong> 카드사 앱 또는 홈페이지 신청이 가장 빠르고 간편합니다.
+                    <strong>팁:</strong> 카드사 앱 또는 홈페이지 신청이 가장 빠르고 간편합니다.
                     다만 정확한 신청 위치가 헷갈리면 카드사 콜센터(카드 뒷면 전화번호)로 전화하여 "고유가 지원금 신청"이라고 말하면 담당자가 안내해줍니다.
                   </p>
                 </div>

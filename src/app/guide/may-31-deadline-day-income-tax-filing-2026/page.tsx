@@ -165,7 +165,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
 
               {/* 핵심 정리 */}
               <section aria-label="핵심 정리" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 5분 요약</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">5분 요약</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="mb-2 text-left font-semibold text-text-primary">5월 31일 당일 신고 핵심 타임라인</caption>
@@ -269,7 +269,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                     </div>
 
                     <div className="rounded-lg bg-danger-500/10 p-3">
-                      <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: "6월 1일"의 의미</p>
+                      <p className="font-semibold text-danger-700 dark:text-danger-300">주의: "6월 1일"의 의미</p>
                       <p className="mt-1 text-xs">
                         일요일(5/31) 다음 영업일이 월요일(6/1)이므로, 6월 1일 자정까지 신고하면 기한 내로 인정됩니다. 다만 이것은 마감일 연장이지,
                         초과 신고가 아닙니다.
@@ -279,7 +279,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 실수로 가산세 부과받는 사례</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 실수로 가산세 부과받는 사례</p>
                   <p className="mt-2">
                     많은 사람이 "6월 1일까지 신고 가능하다"는 것을 착각해 6월 1일 오후나 6월 2일에 신고합니다. 하지만 5월 31일(일요일)이 마감이므로,
                     <strong>5월 31일 자정 또는 6월 1일 자정까지만</strong> 기한 내 신고입니다. 6월 2일 신고는 무신고가산세 20% + 납부지연가산세 발생합니다.
@@ -355,7 +355,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 당일 신고 팁</p>
+                  <p className="font-semibold text-text-primary">당일 신고 팁</p>
                   <p className="mt-2">
                     "분납 가능한가?" 확인하며 진행하세요. 세액이 1,000만 원 초과면 5단계에서 분납 신청 체크박스가 활성화됩니다. 분납하면 가산세는 동일하나
                     6월 말 + 7월 말 2개월에 나눠 납부 가능합니다.
@@ -417,7 +417,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 추적 적발 시 가산세 50~100%</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 추적 적발 시 가산세 50~100%</p>
                   <p className="mt-2">
                     자진신고 감면은 <strong>"스스로 신고할 때만"</strong> 적용됩니다. 만약 국세청이 세무조사로 적발하면 가산세가 50~100% 상향될 수 있습니다. 특히
                     4대보험 기록·계좌이체·원천징수 등으로 적발되면 부정행위로 판정되어 추가 가산세까지 부과됩니다.
@@ -480,7 +480,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 시스템 장애로 인정받으려면</p>
+                  <p className="font-semibold text-text-primary">시스템 장애로 인정받으려면</p>
                   <p className="mt-2">
                     만약 오후 10시에 신고를 시작했는데 시스템 장애로 자정 이후 제출되면? 국세청에 "시스템 장애 증거"(스크린샷, 접속 기록 등)를 제출하면
                     기한 연장이 인정될 수 있습니다. 다만 개인의 인터넷 연결 끊김, 컴퓨터 오류는 인정되지 않으므로, <strong>여유 있게 오후 8시 이전 완료</strong>를
@@ -550,7 +550,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 분납 후 일찍 납부하면?</p>
+                  <p className="font-semibold text-text-primary">분납 후 일찍 납부하면?</p>
                   <p className="mt-2">
                     분납 신청했더라도 6월에 전액 납부 가능합니다. 일찍 납부하면 납부지연가산세 절감 효과가 있으므로, 여유가 되면 1차 기한(6월 말) 전에 1차분을
                     먼저 납부하는 것이 좋습니다.
@@ -563,7 +563,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
 
               {/* 최종 체크리스트 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📋 당일 신고 최종 체크리스트</h2>
+                <h2 className="mb-4 text-lg font-semibold">당일 신고 최종 체크리스트</h2>
                 <div className="space-y-2 text-sm">
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check1" className="mt-1" />
@@ -618,7 +618,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
 
               {/* 관련 링크 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
@@ -693,7 +693,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 </p>
                 <p className="mb-2">
                   <strong>면책 조항</strong>: 본 가이드는 정보 제공 목적이며 세무·법적 조언이 아닙니다. 당일 신고 시 발생 가능한 시스템 오류·홈택스 폭주로 인한
-                  기한 초과에 대해 calculatorhost는 책임지지 않습니다. 정확한 신고를 위해 국세청 상담(☎ 1330) 또는 세무사 문의를 권장합니다.
+                  기한 초과에 대해 calculatorhost는 책임지지 않습니다. 정확한 신고를 위해 국세청 상담(전화 1330) 또는 세무사 문의를 권장합니다.
                 </p>
                 <p>
                   <strong>AI 보조 작성</strong>: 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다(Google AI Content Policy

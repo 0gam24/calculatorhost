@@ -272,7 +272,7 @@ export default function SeveranceVsPensionDcDbPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">🎯 임금피크제 앞두고 DC로 전환해야 할까?</h2>
+                <h2 className="text-2xl font-bold">임금피크제 앞두고 DC로 전환해야 할까?</h2>
                 <p className="text-text-secondary leading-relaxed mb-4">
                   DB 또는 퇴직금은 <strong>최종 3개월 평균임금</strong>이 기준이므로, 임금 감소는 퇴직금 급감으로 직결.
                   DC로 전환하면 기존 적립액을 고정시킬 수 있습니다.
@@ -287,7 +287,7 @@ export default function SeveranceVsPensionDcDbPage() {
                   </p>
                 </div>
                 <p className="text-text-secondary text-sm mt-4">
-                  ⚠️ 주의: 임금피크제 실시 1년 전부터 근로자 동의 하에 전환 가능.
+                  주의: 임금피크제 실시 1년 전부터 근로자 동의 하에 전환 가능.
                   회사가 일방 강요 시 노조·노동청 상담 권장.
                 </p>
               </section>
@@ -325,7 +325,7 @@ export default function SeveranceVsPensionDcDbPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 제도 선택은 회사 정책에 따라 결정 — 개인 선택 불가능한 경우 다수</li>
                   <li>• DB→DC 전환 후 역방향 불가능 — 신중히 결정</li>
@@ -335,7 +335,7 @@ export default function SeveranceVsPensionDcDbPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/severance/" className="text-primary-600 underline dark:text-primary-500">퇴직금 계산기</Link> — DC/DB 시나리오 비교</li>
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link> — 임금피크 후 세후 월급 확인</li>

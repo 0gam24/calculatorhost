@@ -161,17 +161,17 @@ export default function VehicleTax2026Page() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>💰 <strong>배기량 cc당 세율</strong>: 1,000cc 이하 80원 / 1,001~1,600cc 140원 / 1,601cc 이상 200원</li>
-                  <li>📊 <strong>지방교육세</strong>: 자동차세의 30% 추가 납부 (지방세법 §151)</li>
-                  <li>🚗 <strong>차령경감</strong>: 3년차부터 연 5% (최대 50%, 12년차 이상 고정) (지방세법 §127①제2호, 배기량 과세차만)</li>
-                  <li>📅 <strong>납부 시기</strong>: 제1기 6월 16~30일 / 제2기 12월 16~31일 (또는 1월 연납)</li>
-                  <li>💳 <strong>연납 할인</strong>: 1월 신청 시 5% 공제율, 신청월별로 실효율 변동 (지방세법 시행령 §125)</li>
-                  <li>⚠️ <strong>주의</strong>: 미납 시 1.2배 이상 가산세 + 행정 제제</li>
+                  <li><strong>배기량 cc당 세율</strong>: 1,000cc 이하 80원 / 1,001~1,600cc 140원 / 1,601cc 이상 200원</li>
+                  <li><strong>지방교육세</strong>: 자동차세의 30% 추가 납부 (지방세법 §151)</li>
+                  <li><strong>차령경감</strong>: 3년차부터 연 5% (최대 50%, 12년차 이상 고정) (지방세법 §127①제2호, 배기량 과세차만)</li>
+                  <li><strong>납부 시기</strong>: 제1기 6월 16~30일 / 제2기 12월 16~31일 (또는 1월 연납)</li>
+                  <li><strong>연납 할인</strong>: 1월 신청 시 5% 공제율, 신청월별로 실효율 변동 (지방세법 시행령 §125)</li>
+                  <li><strong>주의</strong>: 미납 시 1.2배 이상 가산세 + 행정 제제</li>
                 </ul>
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">🔢 배기량별 cc당 세율</h2>
+                <h2 className="mb-4 text-2xl font-bold">배기량별 cc당 세율</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세법 §127 기준 비영업용 승용차</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -205,7 +205,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">📋 배기량별 자동차세 계산 사례</h2>
+                <h2 className="mb-4 text-2xl font-bold">배기량별 자동차세 계산 사례</h2>
                 <p className="mb-3 text-sm text-text-secondary">기본 자동차세(cc × 세율) + 지방교육세(세율의 30%) 합산. 차령경감·연납 할인 미적용.</p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -261,7 +261,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">⏱️ 차령경감 — 나이 많은 차일수록 세금 감소</h2>
+                <h2 className="mb-4 text-2xl font-bold">⏱ 차령경감 — 나이 많은 차일수록 세금 감소</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세법 §127①제2호 — 3년차부터 시작, 매년 5%씩 경감 (최대 50%). 배기량 과세차만 적용(전기차 정액 제외).</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">차령경감 공식</p>
@@ -323,7 +323,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">💳 연납 할인 — 1월 미리 내면 5% 공제</h2>
+                <h2 className="mb-4 text-2xl font-bold">연납 할인 — 1월 미리 내면 5% 공제</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125 — 1월 1~31일 신청, 5% 공제율 (선납 일수에 비례)</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">연납 공제 방식</p>
@@ -370,7 +370,7 @@ export default function VehicleTax2026Page() {
                   </table>
                 </div>
                 <div className="mt-4 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4 text-sm">
-                  <strong className="text-highlight-700 dark:text-highlight-300">⚠️ 주의사항</strong>
+                  <strong className="text-highlight-700 dark:text-highlight-300">주의사항</strong>
                   <ul className="text-text-secondary mt-2 space-y-1 list-disc list-inside">
                     <li><strong>1월만 신청 가능:</strong> 연납은 매년 1월 1~31일에만 신청 가능 (이후 6월·12월 정기 납부는 연납 공제 불가)</li>
                     <li><strong>신청처:</strong> 위택스(wetax.go.kr) 또는 관할 시·군청 세무서</li>
@@ -381,7 +381,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">📅 자동차세 납부 시기</h2>
+                <h2 className="mb-4 text-2xl font-bold">자동차세 납부 시기</h2>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">기본 납부: 연 2회 분할</p>
                   <ul className="text-text-secondary space-y-1">
@@ -391,13 +391,13 @@ export default function VehicleTax2026Page() {
                   <p className="text-text-secondary mt-3">신차 구매자는 등록월부터 시작합니다. 예: 8월 신규 등록 → 12월 제2기부터 납부.</p>
                 </div>
                 <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4 mb-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-2">🎁 대체 방법: 1월 연납</p>
+                  <p className="text-text-primary font-semibold mb-2">대체 방법: 1월 연납</p>
                   <p className="text-text-secondary">
                     1월에 연간 자동차세 전액을 미리 내면 5% 공제율(선납 일수 비례)을 받습니다. 가장 큰 절약은 1월 신청 시 약 4.81% 할인입니다.
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-2">📌 신청처</p>
+                  <p className="text-text-primary font-semibold mb-2">신청처</p>
                   <ul className="text-text-secondary space-y-1 list-disc list-inside">
                     <li>위택스(wetax.go.kr) — 24시간 온라인 신청 (추천)</li>
                     <li>스마트 위택스 앱 — 모바일 신청</li>
@@ -410,46 +410,46 @@ export default function VehicleTax2026Page() {
               <AdSlot slot="guide-vehicle-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">❓ 자주 묻는 질문</h2>
+                <h2 className="text-2xl font-bold">자주 묻는 질문</h2>
                 <FaqSection items={FAQ_ITEMS} />
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">🔗 관련 계산기·가이드</h2>
+                <h2 className="text-2xl font-bold">관련 계산기·가이드</h2>
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   <Link
                     href="/calculator/vehicle-tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">🚗 자동차세 계산기</h3>
+                    <h3 className="font-bold text-text-primary">자동차세 계산기</h3>
                     <p className="text-sm text-text-secondary mt-1">배기량 입력 → 연 납부액 즉시 계산. 차령경감·연납 할인 반영.</p>
                   </Link>
                   <Link
                     href="/guide/january-vehicle-tax-prepayment/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">📌 자동차세 1월 연납 가이드</h3>
+                    <h3 className="font-bold text-text-primary">자동차세 1월 연납 가이드</h3>
                     <p className="text-sm text-text-secondary mt-1">1월 신청 방법·할인 계산·카드 무이자 할부.</p>
                   </Link>
                   <Link
                     href="/guide/vehicle-tax-june-payment-annual-discount-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">📋 6월 자동차세 납부 완전 가이드</h3>
+                    <h3 className="font-bold text-text-primary">6월 자동차세 납부 완전 가이드</h3>
                     <p className="text-sm text-text-secondary mt-1">제1기 6월 납부·차령경감·연납 할인 해설.</p>
                   </Link>
                   <Link
                     href="/guide/electric-vehicle-tax-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">🔋 전기차 자동차세 (정액 13만원)</h3>
+                    <h3 className="font-bold text-text-primary">전기차 자동차세 (정액 13만원)</h3>
                     <p className="text-sm text-text-secondary mt-1">배기량 없는 전기차·수소차는 차령경감 없이 매년 정액. 하이브리드와의 차이.</p>
                   </Link>
                   <Link
                     href="/calculator/acquisition-tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">🏷️ 취득세 계산기</h3>
+                    <h3 className="font-bold text-text-primary">취득세 계산기</h3>
                     <p className="text-sm text-text-secondary mt-1">신차·중고차 구매 시 취득세·개별소비세 계산.</p>
                   </Link>
                 </div>

@@ -252,7 +252,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                   각 기관이 독립적으로 점수를 산정하므로, 두 점수가 약간 다를 수 있습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 2021년부터 기존의 신용"등급"(1~10등급) 체계가 신용"점수"(1~1000점) 체계로
+                  다만 2021년부터 기존의 신용"등급"(1~10등급) 체계가 신용"점수"(1~1000점) 체계로
                   전환되었습니다. 현재는 점수가 표준입니다.
                 </p>
               </section>
@@ -338,7 +338,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                   대역이라도 은행마다 심사 기준이 다르므로, 여러 기관에 문의하는 것이 좋습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 구체적인 점수 구간별 금리표는 시시각각 변동하고 금융기관·상품마다 상이하므로, 본
+                  다만 구체적인 점수 구간별 금리표는 시시각각 변동하고 금융기관·상품마다 상이하므로, 본
                   가이드에서는 정성적 설명으로만 기재합니다. 정확한 금리는 직접 은행에 문의하세요.
                 </p>
               </section>
@@ -375,7 +375,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                   관리하는 습관을 들이는 것이 좋습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 금융기관이 심사 목적으로 조회하는 '조회'(하드조회)는 신용점수를 떨어뜨립니다.
+                  다만 금융기관이 심사 목적으로 조회하는 '조회'(하드조회)는 신용점수를 떨어뜨립니다.
                   따라서 대출 신청 전에 점수가 떨어질 수 있음을 인식하고 신청하세요.
                 </p>
               </section>
@@ -431,7 +431,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 점수 올리기는 최소 3~6개월 이상의 시간이 필요합니다. 특히 최근 연체가 있었다면
+                  다만 점수 올리기는 최소 3~6개월 이상의 시간이 필요합니다. 특히 최근 연체가 있었다면
                   회복에 더 오래 걸릴 수 있습니다.
                 </p>
               </section>
@@ -471,7 +471,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 심각한 연체나 부도 기록은 신용정보가 5~10년 보관되므로, 그 이후에도 큰 대출
+                  다만 심각한 연체나 부도 기록은 신용정보가 5~10년 보관되므로, 그 이후에도 큰 대출
                   신청 시 심사 과정에서 불리할 수 있습니다. 따라서 처음부터 연체하지 않는 것이 가장 중요합니다.
                 </p>
               </section>
@@ -518,7 +518,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 금융기관마다 가중치가 다르므로, 대출 신청 전에 직접 은행에 '사전 심사'나
+                  다만 금융기관마다 가중치가 다르므로, 대출 신청 전에 직접 은행에 '사전 심사'나
                   '예상 한도' 문의를 통해 정보를 얻는 것이 좋습니다.
                 </p>
               </section>
@@ -562,7 +562,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 대출 가능 여부가 급할 때는 이런 점수 변동을 피할 수 없습니다. 중요한 금융 계획
+                  다만 대출 가능 여부가 급할 때는 이런 점수 변동을 피할 수 없습니다. 중요한 금융 계획
                   (예: 주택담보대출)이 3~6개월 후 있다면, 그 전에 불필요한 신용 신청을 피하는 것이 좋습니다.
                 </p>
               </section>
@@ -576,7 +576,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

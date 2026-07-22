@@ -223,10 +223,10 @@ export default function MonthlyRentTaxCreditPage() {
                   </table>
                 </div>
                 <ul className="mt-4 space-y-1.5 text-sm" data-speakable>
-                  <li>💰 <strong>최대 환급액</strong>: 750만 원 × 17% = 127.5만 원 (한도)</li>
-                  <li>📅 <strong>추가 신고 기한</strong>: 5월 31일(토) → 6월 2일(월) 자동 연장 가능</li>
-                  <li>⚠️ <strong>택일</strong>: 신용카드 소득공제와 중복 불가 (월세 세액공제 17% 권장)</li>
-                  <li>🏠 <strong>임차 대상</strong>: 주택·오피스텔·고시원 모두 가능(기준시가 4억 이하)</li>
+                  <li><strong>최대 환급액</strong>: 750만 원 × 17% = 127.5만 원 (한도)</li>
+                  <li><strong>추가 신고 기한</strong>: 5월 31일(토) → 6월 2일(월) 자동 연장 가능</li>
+                  <li>주의: <strong>택일</strong>: 신용카드 소득공제와 중복 불가 (월세 세액공제 17% 권장)</li>
+                  <li><strong>임차 대상</strong>: 주택·오피스텔·고시원 모두 가능(기준시가 4억 이하)</li>
                 </ul>
               </section>
 
@@ -312,7 +312,7 @@ export default function MonthlyRentTaxCreditPage() {
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <p className="text-sm text-danger-700 dark:text-danger-300">
-                      <strong>⚠️ 흔한 오류</strong>: 배우자가 주택 소유하면 본인도 "무주택"이라도 불가능합니다.
+                      <strong>주의: 흔한 오류</strong>: 배우자가 주택 소유하면 본인도 "무주택"이라도 불가능합니다.
                       "무주택 세대주"는 본인+배우자 공동 조건입니다.
                     </p>
                   </div>
@@ -382,7 +382,7 @@ export default function MonthlyRentTaxCreditPage() {
                     <ul className="text-sm text-text-secondary space-y-1.5">
                       <li><strong>월세 50만</strong> × 12개월 = 600만 원</li>
                       <li className="text-primary-600 dark:text-primary-500">
-                        ✅ 600만 {'<'} 750만 (한도 이내)
+                        600만 {'<'} 750만 (한도 이내)
                       </li>
                       <li>공제액 = 600만 × 17% = <strong>102만 원 환급</strong></li>
                     </ul>
@@ -392,7 +392,7 @@ export default function MonthlyRentTaxCreditPage() {
                     <ul className="text-sm text-text-secondary space-y-1.5">
                       <li><strong>월세 70만</strong> × 12개월 = 840만 원</li>
                       <li className="text-danger-600 dark:text-danger-500">
-                        ❌ 840만 {'>'} 750만 (한도 초과)
+                        840만 {'>'} 750만 (한도 초과)
                       </li>
                       <li>공제액 = 750만 × 17% = <strong>127.5만 원 (초과분 90만 버려짐)</strong></li>
                     </ul>
@@ -450,8 +450,7 @@ export default function MonthlyRentTaxCreditPage() {
                         <strong>조건:</strong> 무주택 세대주, 월세 50만 × 12개월 = 600만 원, 총급여 4,500만 원
                       </p>
                       <p>
-                        <strong>자격 확인:</strong> 무주택 ✅, 4,500만 {'<'} 7,000만 ✅, 한도 750만 ✅
-                      </p>
+                        <strong>자격 확인:</strong> 무주택, 4,500만 {'<'} 7,000만, 한도 750만 </p>
                       <p>
                         <strong>공제율:</strong> 4,500만 {'<'} 5,500만 → <strong>17% 적용</strong>
                       </p>
@@ -470,7 +469,7 @@ export default function MonthlyRentTaxCreditPage() {
                         <strong>조건:</strong> 무주택 세대주, 월세 70만 × 12개월 = 840만 원, 총급여 6,500만 원
                       </p>
                       <p>
-                        <strong>자격 확인:</strong> 무주택 ✅, 6,500만 {'<'} 7,000만 ✅, 한도 750만 (초과 주의)
+                        <strong>자격 확인:</strong> 무주택, 6,500만 {'<'} 7,000만, 한도 750만 (초과 주의)
                       </p>
                       <p>
                         <strong>공제율:</strong> 5,500만 {'<'} 6,500만 {'<'} 7,000만 → <strong>15% 적용</strong>
@@ -538,7 +537,7 @@ export default function MonthlyRentTaxCreditPage() {
                 </div>
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4">
                   <p className="text-sm text-highlight-700 dark:text-highlight-300">
-                    <strong>💡 연말정산 누락했다면</strong>: 5월 31일까지 종소세 "추가 신고"로 회수 가능.
+                    <strong>연말정산 누락했다면</strong>: 5월 31일까지 종소세 "추가 신고"로 회수 가능.
                     기한 내 신고 시 가산세 없음. 기한 경과 후에도 경정청구(5년 이내)로 환급 가능.
                   </p>
                 </div>
@@ -585,7 +584,7 @@ export default function MonthlyRentTaxCreditPage() {
                       <tr className="border border-border-base bg-primary-500/5">
                         <td className="px-3 py-2 font-semibold">월세 600만 시 효과</td>
                         <td className="px-3 py-2">한도 초과 (공제 불가)</td>
-                        <td className="px-3 py-2"><strong>102만 원 세액 환급</strong> ✅</td>
+                        <td className="px-3 py-2"><strong>102만 원 세액 환급</strong>가능</td>
                       </tr>
                     </tbody>
                   </table>
@@ -704,13 +703,13 @@ export default function MonthlyRentTaxCreditPage() {
                 <h2 className="text-2xl font-bold">핵심 정리</h2>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 text-sm">
                   <ul className="space-y-2 text-text-secondary">
-                    <li>✅ <strong>월세 세액공제</strong>는 무주택 직장인·프리랜서가 가장 쉽게 받는 환급</li>
-                    <li>✅ <strong>17% (또는 15%)</strong> 공제율로 월세 600만 시 102만 원 환급</li>
-                    <li>✅ <strong>한도 750만 원</strong> 초과분은 버려지므로 미리 계산</li>
-                    <li>✅ <strong>연말정산 누락</strong> 시 5월 종소세로 추가 신고 가능</li>
-                    <li>✅ <strong>계약서 + 송금 영수증</strong> 필수 증빙. 현금은 불가</li>
-                    <li>✅ <strong>배우자·자녀 주택 소유</strong> 시 "무주택"이 아님</li>
-                    <li>✅ <strong>5년 이내</strong> 경정청구로 소급 환급 가능</li>
+                    <li>가능<strong>월세 세액공제</strong>는 무주택 직장인·프리랜서가 가장 쉽게 받는 환급</li>
+                    <li>가능<strong>17% (또는 15%)</strong> 공제율로 월세 600만 시 102만 원 환급</li>
+                    <li>가능<strong>한도 750만 원</strong> 초과분은 버려지므로 미리 계산</li>
+                    <li>가능<strong>연말정산 누락</strong> 시 5월 종소세로 추가 신고 가능</li>
+                    <li>가능<strong>계약서 + 송금 영수증</strong> 필수 증빙. 현금은 불가</li>
+                    <li>가능<strong>배우자·자녀 주택 소유</strong> 시 "무주택"이 아님</li>
+                    <li>가능<strong>5년 이내</strong> 경정청구로 소급 환급 가능</li>
                   </ul>
                 </div>
               </section>

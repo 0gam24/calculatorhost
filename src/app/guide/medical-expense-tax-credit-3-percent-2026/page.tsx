@@ -166,7 +166,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -294,7 +294,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    ⚠️ 중요: 의료비가 총급여 3% 이하면 환급 0원
+                    중요: 의료비가 총급여 3% 이하면 환급 0원
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     총급여 5,000만 원이면 의료비 150만 원이 기준입니다. 의료비가 150만 원 이하면 세액공제 대상이 아닙니다.
@@ -323,64 +323,64 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">병원·의원 진료비</td>
-                        <td className="px-3 py-2">✅ 가능</td>
+                        <td className="px-3 py-2">가능</td>
                         <td className="px-3 py-2">내과·외과·이비인후과 등 일반 진료</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">약국 약제비</td>
-                        <td className="px-3 py-2">✅ 가능</td>
+                        <td className="px-3 py-2">가능</td>
                         <td className="px-3 py-2">의사 처방 약품. 감기약·소화제 등</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">수술비·입원비</td>
-                        <td className="px-3 py-2">✅ 가능</td>
+                        <td className="px-3 py-2">가능</td>
                         <td className="px-3 py-2">질병 치료 목적의 수술</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">안경·콘택트</td>
-                        <td className="px-3 py-2">✅ 가능 (50만원 한도)</td>
+                        <td className="px-3 py-2">가능 (50만원 한도)</td>
                         <td className="px-3 py-2">시력 교정용만. 선글라스 제외 (소득세법 시행령 §118 ①)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">보청기</td>
-                        <td className="px-3 py-2">✅ 가능</td>
+                        <td className="px-3 py-2">가능</td>
                         <td className="px-3 py-2">청각 장애 진단 후 처방</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">의수족·휠체어</td>
-                        <td className="px-3 py-2">✅ 가능</td>
+                        <td className="px-3 py-2">가능</td>
                         <td className="px-3 py-2">장애인 등급 확인서 필요</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">산후조리원</td>
-                        <td className="px-3 py-2">✅ 가능 (200만원 한도)</td>
+                        <td className="px-3 py-2">가능 (200만원 한도)</td>
                         <td className="px-3 py-2">총급여 7천만 이하, 출산 후 6주 이내 (조세특례제한법 §53 ②)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">난임 시술</td>
-                        <td className="px-3 py-2">✅ 가능 (30% 공제)</td>
+                        <td className="px-3 py-2">가능 (30% 공제)</td>
                         <td className="px-3 py-2">한도 없음, 공제율 30% (조세특례제한법 §53 ④)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">미용·성형수술</td>
-                        <td className="px-3 py-2">❌ 제외</td>
+                        <td className="px-3 py-2">제외</td>
                         <td className="px-3 py-2">
                           미용 목적. 단, 질병 치료(턱관절 교정) 시 세무서 판단 필요 (국세기본법 §14 실질과세)
                         </td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">건강검진·예방접종</td>
-                        <td className="px-3 py-2">❌ 제외</td>
+                        <td className="px-3 py-2">제외</td>
                         <td className="px-3 py-2">질병 예방 목적. 치료가 아님</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">한약·한의원</td>
-                        <td className="px-3 py-2">✅ 가능</td>
+                        <td className="px-3 py-2">가능</td>
                         <td className="px-3 py-2">의사 또는 한의사 진료 기반. 건강식품 제외</td>
                       </tr>
                       <tr>
                         <td className="px-3 py-2 font-semibold">건강식품·비타민</td>
-                        <td className="px-3 py-2">❌ 제외</td>
+                        <td className="px-3 py-2">제외</td>
                         <td className="px-3 py-2">의약품으로 분류되지 않음</td>
                       </tr>
                     </tbody>
@@ -389,7 +389,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                 <div className="rounded-lg bg-danger-500/10 p-4">
                   <p className="text-sm font-semibold text-danger-700 dark:text-danger-300">
-                    ❌ 금지: 의약분리 미신청
+                    금지: 의약분리 미신청
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     2017년 의약분리 이후 약국에서 구입한 약품은 <strong>의료비로 공제되지 않습니다</strong>. 의사 처방 후
@@ -493,14 +493,14 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                     <li>
                       세액공제 대상: 600만원(=1,000만−400만). 총급여 3% 초과분에 15% 적용.
                     </li>
-                    <li>❌ 실수: 1,000만 × 15% = 150만 (불가)</li>
-                    <li>✅ 정정: 600만 × 15% = 90만 (정답)</li>
+                    <li>실수: 1,000만 × 15% = 150만 (불가)</li>
+                    <li>정정: 600만 × 15% = 90만 (정답)</li>
                   </ul>
                 </div>
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    📌 팁: 보험금 증명서 첨부 필수
+                    팁: 보험금 증명서 첨부 필수
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     의료비 영수증과 함께 보험금 지급 증명서(보험회사 발급)를 첨부해야 합니다. 없으면 세무서가 보험금 차감을
@@ -636,7 +636,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    📋 증빙 서류 체크리스트
+                    증빙 서류 체크리스트
                   </p>
                   <ul className="mt-2 list-inside list-disc space-y-1 text-sm text-text-secondary">
                     <li>의료기관 영수증 (병원·의원·약국)</li>
@@ -657,7 +657,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg bg-danger-500/10 p-4">
-                    <p className="font-semibold text-danger-700 dark:text-danger-300">❌ 금지: 허위 의료비 신청</p>
+                    <p className="font-semibold text-danger-700 dark:text-danger-300">금지: 허위 의료비 신청</p>
                     <p className="mt-2 text-sm text-text-secondary">
                       없는 의료비, 가짜 영수증, 타인 명의 의료비를 신청하면 "실질과세 원칙"(국세기본법 §14)에 위배되어
                       가산세 20~40%가 부과됩니다. <strong>반드시 실제 지출 증명이 있는 의료비만 신청하세요.</strong>
@@ -666,7 +666,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                   <div className="rounded-lg bg-danger-500/10 p-4">
                     <p className="font-semibold text-danger-700 dark:text-danger-300">
-                      ⚠️ 주의: 보험금 미차감
+                      주의: 보험금 미차감
                     </p>
                     <p className="mt-2 text-sm text-text-secondary">
                       보험금을 받았는데 신청서에 기재하지 않으면 나중에 세무서 조사 시 적발될 수 있습니다. 초기부터 정직하게
@@ -676,7 +676,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                   <div className="rounded-lg bg-danger-500/10 p-4">
                     <p className="font-semibold text-danger-700 dark:text-danger-300">
-                      ⚠️ 주의: 중복 신청 금지
+                      주의: 중복 신청 금지
                     </p>
                     <p className="mt-2 text-sm text-text-secondary">
                       같은 의료비를 경정청구와 기존 신고 시 중복으로 신청하면 안 됩니다. 경정청구는 누락한 항목만 추가하는
@@ -686,7 +686,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
                   <div className="rounded-lg bg-highlight-500/10 p-4">
                     <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                      💡 팁: 미용 vs 치료 모호한 경우
+                      팁: 미용 vs 치료 모호한 경우
                     </p>
                     <p className="mt-2 text-sm text-text-secondary">
                       성형수술이 미용인지 치료인지 애매하다면 세무서에 사전 상담(유선 또는 방문)을 받으세요. 국세청
@@ -764,7 +764,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 면책조항 */}
               <section className="space-y-4 rounded-lg bg-bg-card p-4">
-                <h3 className="text-sm font-semibold text-text-secondary">📝 면책조항</h3>
+                <h3 className="text-sm font-semibold text-text-secondary">면책조항</h3>
                 <p className="text-xs text-text-tertiary leading-relaxed">
                   본 페이지는 일반적인 정보 제공 목적이며, 세무 상담은 아닙니다. 개인의 상황에 따라 세율·공제 대상·환급액이
                   달라질 수 있습니다. 정확한 신고는 세무사·국세청 상담(1577-0369) 또는 홈택스를 통해 진행하세요.

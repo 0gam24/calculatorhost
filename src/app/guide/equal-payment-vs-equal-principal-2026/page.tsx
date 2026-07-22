@@ -231,7 +231,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                   이자는 남은 잔액에 따라 매월 달라집니다. 따라서 월 상환액은 점차 감소합니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 은행 상품마다 상환 방식 선택 범위가 다릅니다. 일부는 원리금균등만
+                  다만 은행 상품마다 상환 방식 선택 범위가 다릅니다. 일부는 원리금균등만
                   제공하고, 일부는 선택 가능합니다. 가입 전 반드시 상품 약관을 확인하세요.
                 </p>
               </section>
@@ -281,7 +281,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 표준 금융 공식이며, 실제 은행 상품에서는 기산일(월중 거래일),
+                  다만 위는 표준 금융 공식이며, 실제 은행 상품에서는 기산일(월중 거래일),
                   일수 계산(30일 기준 또는 실제 일수), 반올림 방식이 다를 수 있으므로, 정확한
                   계산은 각 은행의 대출 계산기를 통해 확인하는 것이 좋습니다.
                 </p>
@@ -361,7 +361,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 이해를 돕기 위한 가정이며, 실제 대출은 금리 변동, 중도
+                  다만 위 계산은 이해를 돕기 위한 가정이며, 실제 대출은 금리 변동, 중도
                   상환, 보너스 상황에 따라 달라집니다. 정확한 계산은 대출이자 계산기에서 직접
                   확인하세요.
                 </p>
@@ -384,7 +384,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                   고려해야 합니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 총이자 절감이 항상 최선은 아닙니다. 초기 월부담을 더 견딜 수 있는
+                  다만 총이자 절감이 항상 최선은 아닙니다. 초기 월부담을 더 견딜 수 있는
                   여유자금이 다른 투자에 더 높은 수익을 가져올 수도 있기 때문입니다. 개인의
                   금융 상황과 목표에 맞춰 선택해야 합니다.
                 </p>
@@ -403,7 +403,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                   선호하기 쉬우므로, 원리금균등이 더 선호되는 이유입니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 현금 흐름이 향후 증가할 계획이라면(예: 3년 후 승진 예정, 추가 소득),
+                  다만 현금 흐름이 향후 증가할 계획이라면(예: 3년 후 승진 예정, 추가 소득),
                   초기에는 원리금균등으로 부담을 낮추다가 소득이 증가한 후 추가 상환으로
                   원금균등의 이점을 살릴 수도 있습니다. 유연한 대출 상환 정책이 있는지 은행에
                   문의해 보세요.
@@ -451,7 +451,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                 </ul>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 은행 상품에 따라 선택 범위가 제한될 수 있습니다. 또한 변동금리 대출의
+                  다만 은행 상품에 따라 선택 범위가 제한될 수 있습니다. 또한 변동금리 대출의
                   경우, 금리 인상 시 원금균등은 초기 고부담이 더욱 커질 수 있으므로 신중히
                   선택해야 합니다.
                 </p>
@@ -475,7 +475,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                   총이자 차이가 유의미하게 줄어드는 모습을 확인할 수 있습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 일부 은행은 추가 상환 시 중도상환수수료를 부과하거나, 월 한도를
+                  다만 일부 은행은 추가 상환 시 중도상환수수료를 부과하거나, 월 한도를
                   제한할 수 있습니다. 추가 상환을 계획한다면 반드시 대출 약관에서 조건을
                   확인하세요.
                 </p>
@@ -487,7 +487,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

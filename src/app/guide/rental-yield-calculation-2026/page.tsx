@@ -241,7 +241,7 @@ export default function RentalYieldCalculation2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 많은 부동산 광고는 제경비를 뺀 "순수익률" 대신 제경비를 포함하지 않은
+                  다만 많은 부동산 광고는 제경비를 뺀 "순수익률" 대신 제경비를 포함하지 않은
                   "표면수익률"을 표기합니다. 높아 보이지만 실제 수익과는 다르므로, 항상 제경비를
                   먼저 조사한 후 순수익률로 판단해야 합니다.
                 </p>
@@ -283,7 +283,7 @@ export default function RentalYieldCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 제경비 추정값도 주관적이므로, 실제 비슷한 건물의 재산세·관리비·수리비
+                  다만 제경비 추정값도 주관적이므로, 실제 비슷한 건물의 재산세·관리비·수리비
                   내역을 직접 확인하고 보수적으로 계산하는 것이 현명합니다. 시뮬레이션한 수익률이
                   현실과 다를 수 있으므로, 기간 경과 후에 실제 수익과 비교하여 가정값을 조정해야
                   합니다.
@@ -363,7 +363,7 @@ export default function RentalYieldCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 갭투자는 수익률이 높아지는 대신 리스크도 큽니다. 2년 후 전세보증금
+                  다만 갭투자는 수익률이 높아지는 대신 리스크도 큽니다. 2년 후 전세보증금
                   1.5억을 일시불로 반환해야 하는데, 그사이 시세가 떨어지거나 월세 수익이 대출이자를
                   감당하지 못하면 손실이 날 수 있습니다. 따라서 갭투자는 신중하게 계획해야 합니다.
                 </p>
@@ -448,7 +448,7 @@ export default function RentalYieldCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 제경비는 시간이 지나면서 변동됩니다. 재산세는 공시지가 변동에 따라
+                  다만 제경비는 시간이 지나면서 변동됩니다. 재산세는 공시지가 변동에 따라
                   변하고, 건물이 노후되면 수리비가 증가합니다. 특히 장기 투자자는 10년 후 제경비가
                   현재의 1.5배 이상 증가할 수 있다고 보수적으로 가정하는 것이 현명합니다.
                 </p>
@@ -541,7 +541,7 @@ export default function RentalYieldCalculation2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 높은 수익률에만 주목하여 갭투자를 무리하게 추진하면, 전세 만료 시점의
+                  다만 높은 수익률에만 주목하여 갭투자를 무리하게 추진하면, 전세 만료 시점의
                   자금 부담, 금리 인상에 따른 대출이자 증가, 시세 하락에 따른 손실 등을 감당하지
                   못할 수 있습니다. 각 시나리오의 리스크와 수익을 함께 평가한 후 투자 결정을 해야
                   합니다.
@@ -615,7 +615,7 @@ export default function RentalYieldCalculation2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 부동산 투자는 결국 개인의 재정 상황, 투자 목표, 리스크 성향에 따라 달라집니다.
+                  다만 부동산 투자는 결국 개인의 재정 상황, 투자 목표, 리스크 성향에 따라 달라집니다.
                   높은 수익률만 좇다가 예기치 않은 손실을 입을 수 있으므로, 보수적인 시나리오와
                   공격적인 시나리오를 함께 계획하고 진행해야 합니다.
                 </p>
@@ -627,7 +627,7 @@ export default function RentalYieldCalculation2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

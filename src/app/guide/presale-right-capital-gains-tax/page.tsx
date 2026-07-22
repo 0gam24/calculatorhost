@@ -160,8 +160,8 @@ export default function PresaleRightCgtGuide() {
                     <tbody>
                       <tr className="border-b border-border-subtle"><td className="py-2 pr-4">단계</td><td className="py-2 pr-4">건설 중·예정</td><td className="py-2 pr-4">완성·사용승인</td><td className="py-2">소유권등기 완료</td></tr>
                       <tr className="border-b border-border-subtle"><td className="py-2 pr-4">양도세율</td><td className="py-2 pr-4">70%/60% 고정</td><td className="py-2 pr-4">누진 6~45%</td><td className="py-2">누진 또는 비과세</td></tr>
-                      <tr className="border-b border-border-subtle"><td className="py-2 pr-4">1세대1주택 비과세</td><td className="py-2 pr-4">❌ 불가</td><td className="py-2 pr-4">✅ 조건부</td><td className="py-2">✅ 가능</td></tr>
-                      <tr><td className="py-2 pr-4">장기보유공제</td><td className="py-2 pr-4">❌ 불가</td><td className="py-2 pr-4">✅ 가능</td><td className="py-2">✅ 가능</td></tr>
+                      <tr className="border-b border-border-subtle"><td className="py-2 pr-4">1세대1주택 비과세</td><td className="py-2 pr-4">불가</td><td className="py-2 pr-4">조건부</td><td className="py-2">가능</td></tr>
+                      <tr><td className="py-2 pr-4">장기보유공제</td><td className="py-2 pr-4">불가</td><td className="py-2 pr-4">가능</td><td className="py-2">가능</td></tr>
                     </tbody>
                   </table>
                 </div>
@@ -247,7 +247,7 @@ export default function PresaleRightCgtGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>분양권 70%/60%는 2021-06-01 이후 취득분에 적용. 그 이전 취득은 다른 세율 체계.</li>
                   <li>1세대1주택 비과세 판정 시 분양권도 주택 수에 합산(시행령 §155).</li>

@@ -215,7 +215,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 다만:</strong> 부부 공동명의는 각자가 본인 지분에 대해 <strong>개별적으로 9억을 공제</strong>받는 별도 납세의무자입니다.
+                    <strong>다만:</strong> 부부 공동명의는 각자가 본인 지분에 대해 <strong>개별적으로 9억을 공제</strong>받는 별도 납세의무자입니다.
                     따라서 1세대1주택 단독명의(12억 단일 공제)와 달리, 부부 합산으로는 18억까지 공제 효과가 생깁니다.
                   </p>
                 </div>
@@ -364,7 +364,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                 </ul>
                 <div className="rounded-lg border-l-2 border-l-highlight-500 bg-highlight-500/5 p-4 mt-4">
                   <p className="text-sm text-highlight-700 dark:text-highlight-300">
-                    <strong>💡 권장:</strong> 공시가·나이·보유 기간을 종합하여 매년 9월 중에 위택스(홈택스)로 임시 시뮬레이션하거나,
+                    <strong>권장:</strong> 공시가·나이·보유 기간을 종합하여 매년 9월 중에 위택스(홈택스)로 임시 시뮬레이션하거나,
                     관할 지자체 세무서에 문의하여 유불리를 확정한 후 9월 30일 이전에 신청 여부를 결정하세요.
                   </p>
                 </div>
@@ -386,7 +386,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                       <li>대면: 관할 시·군·구 세무서 방문</li>
                       <li>서류: 신분증·부부관계증명서·부동산 등기사항증명서 준비</li>
                     </ul>
-                    <p className="border-t border-border-base pt-2 mt-2"><strong className="text-danger-600 dark:text-danger-400">⚠️ 주의:</strong> 종부세는 과세기준일(6월 1일) 기준으로 그해 11월 말 고지서가 발송되고 12월 1~15일에 납부합니다. 9월 신청 기한을 놓치면 그해는 특례를 적용받을 수 없습니다.</p>
+                    <p className="border-t border-border-base pt-2 mt-2"><strong className="text-danger-600 dark:text-danger-400">주의:</strong> 종부세는 과세기준일(6월 1일) 기준으로 그해 11월 말 고지서가 발송되고 12월 1~15일에 납부합니다. 9월 신청 기한을 놓치면 그해는 특례를 적용받을 수 없습니다.</p>
                   </div>
                 </div>
               </section>
@@ -397,7 +397,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                   공동명의 부동산은 혼인 중 공동재산이므로, 혼인 해제 시 <strong>지분 분할·양도에 따른 세금</strong>이 발생합니다.
                 </p>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                  <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">⚠️ 혼인 해제 시 리스크</h3>
+                  <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">주의: 혼인 해제 시 리스크</h3>
                   <ul className="space-y-1.5 text-sm text-danger-700 dark:text-danger-300">
                     <li>
                       <strong>① 지분 이전 등기:</strong> 공동명의를 각자 단독명의로 분할하려면 등기가 필요 → 취득세 발생

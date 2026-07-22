@@ -206,7 +206,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                   <p className="text-text-secondary">1주 = 월~일 합산 시간. 예: 월~금 각 9시간(45시간) = 5시간 연장근로</p>
                 </div>
                 <p className="mt-3 text-sm text-text-tertiary">
-                  ⚠️ 다만 포괄임금제 계약이라도 가산수당은 기본권입니다.
+                  다만 포괄임금제 계약이라도 가산수당은 기본권입니다.
                   "월급에 모든 수당 포함"이라는 계약이 있어도 실제 근무시간을 기록하면 차액을 청구할 수 있습니다.
                 </p>
               </section>
@@ -234,7 +234,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                   <p>• 야간 2시간 연장근로: 12,000 × 2 × 2.0(=1+0.5+0.5) = <strong>48,000원</strong></p>
                 </div>
                 <p className="mt-3 text-sm text-text-tertiary">
-                  ⚠️ 다만 포괄임금제 계약이나 "야간비 별도 불가" 특약이 있어도, 실제 근무 사실이 있으면 가산수당을 청구할 수 있습니다.
+                  다만 포괄임금제 계약이나 "야간비 별도 불가" 특약이 있어도, 실제 근무 사실이 있으면 가산수당을 청구할 수 있습니다.
                 </p>
               </section>
 
@@ -261,7 +261,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                   <p className="font-semibold mt-2">• 합계: 192,000원</p>
                 </div>
                 <p className="mt-3 text-sm text-text-tertiary">
-                  ⚠️ 다만 근로자대표와 서면으로 합의하면, 가산수당 지급을 갈음하여 보상휴가를 부여할 수 있습니다(근로기준법 §57 보상휴가제).
+                  다만 근로자대표와 서면으로 합의하면, 가산수당 지급을 갈음하여 보상휴가를 부여할 수 있습니다(근로기준법 §57 보상휴가제).
                 </p>
               </section>
 
@@ -321,7 +321,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-tertiary">
-                  ⚠️ 다만 이 금액은 <strong>세전</strong>이며, 실제로는 소득세·지방소득세·4대보험료가 공제됩니다.
+                  다만 이 금액은 <strong>세전</strong>이며, 실제로는 소득세·지방소득세·4대보험료가 공제됩니다.
                   실수령액은 약 80~85% 정도입니다.
                 </p>
               </section>
@@ -370,7 +370,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                   </div>
                 </div>
                 <p className="mt-3 text-sm text-text-tertiary">
-                  ⚠️ 다만 5인 미만이라도 채용공고나 계약서에 "가산수당 지급"이라고 명시했으면, 그 약정을 지켜야 합니다.
+                  다만 5인 미만이라도 채용공고나 계약서에 "가산수당 지급"이라고 명시했으면, 그 약정을 지켜야 합니다.
                 </p>
               </section>
 
@@ -378,32 +378,32 @@ export default function OvertimeNightHolidayAllowancePage() {
                 <h2 className="text-2xl font-bold">자주 하는 실수와 주의할 점</h2>
                 <ol className="space-y-2 text-sm">
                   <li>
-                    <strong>❌ 월급을 통상임금으로 착각하기</strong>
+                    <strong>월급을 통상임금으로 착각하기</strong>
                     <br />
                     <span className="text-text-tertiary">월급(총 급여) ≠ 통상임금. 상여금, 성과급, 식사비 등을 제외한 기본급 + 고정 수당만 포함.</span>
                   </li>
                   <li>
-                    <strong>❌ 야간 시간대를 잘못 이해하기</strong>
+                    <strong>야간 시간대를 잘못 이해하기</strong>
                     <br />
                     <span className="text-text-tertiary">야간은 정확히 22:00~06:00. 오후 9시 59분까지는 주간, 오후 10시 1분부터는 야간입니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 연장+야간을 곱하기로 계산하기</strong>
+                    <strong>연장+야간을 곱하기로 계산하기</strong>
                     <br />
                     <span className="text-text-tertiary">배수를 더합니다. 연장 50% + 야간 50% = 합계 100% 가산(=2배), 곱셈 아님.</span>
                   </li>
                   <li>
-                    <strong>❌ 포괄임금제면 가산수당을 못 받는다고 생각하기</strong>
+                    <strong>포괄임금제면 가산수당을 못 받는다고 생각하기</strong>
                     <br />
                     <span className="text-text-tertiary">포괄임금제라도 가산수당은 기본권. 실제 근무시간을 증명하면 차액을 청구할 수 있습니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 휴일근로 8시간 경계를 무시하기</strong>
+                    <strong>휴일근로 8시간 경계를 무시하기</strong>
                     <br />
                     <span className="text-text-tertiary">휴일근로는 8시간 이내(1.5배)와 초과(2배)를 구분해 계산. 한꺼번에 2배로 계산하면 과소 수당.</span>
                   </li>
                   <li>
-                    <strong>❌ 세전 금액으로 기대하기</strong>
+                    <strong>세전 금액으로 기대하기</strong>
                     <br />
                     <span className="text-text-tertiary">가산수당도 세금 공제 대상. 실제 수령액은 세전의 80~85% 정도입니다.</span>
                   </li>
@@ -463,31 +463,31 @@ export default function OvertimeNightHolidayAllowancePage() {
                 <h2 className="text-2xl font-bold">관련 계산기 · 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
                     {' — 기본급 + 가산수당의 세후 수령액 확인'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/annual-leave-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/annual-leave-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       연차수당 계산법 2026
                     </Link>
                     {' — 퇴사 시 받을 수 있는 미사용 연차 수당'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/weekly-holiday-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/weekly-holiday-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       주휴수당 계산법 2026
                     </Link>
                     {' — 주중 근무하지 않은 날 받는 유급휴일 수당'}
                   </li>
                   <li>
-                    ➜ <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       4대보험 요율 2026
                     </Link>
                     {' — 국민연금, 건강보험, 장기요양, 고용보험 최신 요율'}
                   </li>
                   <li>
-                    ➜ <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
                       근로 카테고리
                     </Link>
                     {' — 급여, 세금, 수당 관련 모든 가이드'}

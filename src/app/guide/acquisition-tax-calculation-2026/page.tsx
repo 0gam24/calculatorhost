@@ -222,7 +222,7 @@ export default function AcquisitionTaxCalculation2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ <strong>다만,</strong> 위 세율은 일반지역에서 1주택 구입 시입니다. 조정지역이거나 2주택 이상 소유 중이면 세율이 대폭
+                  <strong>다만,</strong> 위 세율은 일반지역에서 1주택 구입 시입니다. 조정지역이거나 2주택 이상 소유 중이면 세율이 대폭
                   높아집니다(다음 단계 참조).
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
@@ -289,7 +289,7 @@ export default function AcquisitionTaxCalculation2026Page() {
                   </p>
                 </div>
                 <p className="mt-4">
-                  ⚠️ <strong>다만,</strong> 위 예시에는 지방교육세와 농특세가 아직 미포함입니다. 다음 단계에서 이들을 추가 계산해야 합니다.
+                  <strong>다만,</strong> 위 예시에는 지방교육세와 농특세가 아직 미포함입니다. 다음 단계에서 이들을 추가 계산해야 합니다.
                 </p>
               </section>
 
@@ -337,7 +337,7 @@ export default function AcquisitionTaxCalculation2026Page() {
                   구입 전 반드시 확인하세요.
                 </p>
                 <p className="mt-4">
-                  ⚠️ <strong>다만,</strong> 2022년 6월 이후 취득세 감면의 소득요건이 폐지되어, 무주택이면 소득 제한 없이 감면 대상이 될 수
+                  <strong>다만,</strong> 2022년 6월 이후 취득세 감면의 소득요건이 폐지되어, 무주택이면 소득 제한 없이 감면 대상이 될 수
                   있습니다. 정확한 자격은 지자체에 문의하세요.
                 </p>
               </section>

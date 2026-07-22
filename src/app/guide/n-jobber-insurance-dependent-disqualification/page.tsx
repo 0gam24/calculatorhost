@@ -259,7 +259,7 @@ export default function NJobberDependentGuide() {
 
               {/* 8. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항 + 예방 체크리스트</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항 + 예방 체크리스트</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>부업 소득이 연 400~500만 원대면 추가 소득 자제 (한도 임박).</li>
                   <li>사업자등록 신청 전 세무사·공단 사전 상담 필수.</li>

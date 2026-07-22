@@ -681,7 +681,7 @@ export default function PersonalDeductionDependent2026Page() {
 
                 {/* Disclaimer */}
                 <div className="rounded-lg border border-border-base bg-bg-card p-6 text-sm">
-                  <p className="font-semibold">⚖️ 면책조항 및 정보</p>
+                  <p className="font-semibold">면책조항 및 정보</p>
                   <ul className="mt-3 space-y-2">
                     <li>
                       본 가이드는 2026년 세법을 기준으로 작성되었습니다. 법령 개정 시 내용이 변경될 수 있습니다.

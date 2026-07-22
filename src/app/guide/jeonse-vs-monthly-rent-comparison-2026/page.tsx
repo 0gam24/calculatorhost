@@ -239,7 +239,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 대출 금리와 기대 투자 수익은 시시각각 변하므로, 정기적으로 재계산하고 상황 변화에
+                  다만 대출 금리와 기대 투자 수익은 시시각각 변하므로, 정기적으로 재계산하고 상황 변화에
                   대응해야 합니다.
                 </p>
               </section>
@@ -282,7 +282,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 전세는 월 고정 비용 외에 계약 갱신료(보증금의 5~10%)가 발생할 수 있으므로, 계약 갱신
+                  다만 전세는 월 고정 비용 외에 계약 갱신료(보증금의 5~10%)가 발생할 수 있으므로, 계약 갱신
                   시기에 대비해야 합니다.
                 </p>
               </section>
@@ -312,7 +312,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 월세는 해마다 올라갈 가능성이 높으므로, 예상 인상률을 미리 반영해 장기 비용을
+                  다만 월세는 해마다 올라갈 가능성이 높으므로, 예상 인상률을 미리 반영해 장기 비용을
                   추정해야 합니다.
                 </p>
               </section>
@@ -352,7 +352,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 실제 계약 시 전환율은 법정 상한 내에서 집주인과 임차인의 협상으로 결정되므로, 상한보다
+                  다만 실제 계약 시 전환율은 법정 상한 내에서 집주인과 임차인의 협상으로 결정되므로, 상한보다
                   낮을 수 있습니다.
                 </p>
               </section>
@@ -442,7 +442,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 실제 계산 시 계약 갱신료(전세), 월세 인상률, 중개수수료, 관리비 변동 등 추가 요소가
+                  다만 실제 계산 시 계약 갱신료(전세), 월세 인상률, 중개수수료, 관리비 변동 등 추가 요소가
                   영향을 미치므로, 완벽한 비교는 어렵습니다.
                 </p>
               </section>
@@ -478,7 +478,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 전세보증보험의 보상 한도와 조건을 미리 확인해야 하며, 가입 대상 여부는 집주인의
+                  다만 전세보증보험의 보상 한도와 조건을 미리 확인해야 하며, 가입 대상 여부는 집주인의
                   부채 상황에 따라 결정됩니다.
                 </p>
               </section>
@@ -494,25 +494,25 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                 <div className="rounded-lg bg-bg-raised p-4">
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>
-                      ☐ 현재 전세대출 금리와 예금 이자율(또는 기대 투자 수익률)을 확인했는가?
+                      □ 현재 전세대출 금리와 예금 이자율(또는 기대 투자 수익률)을 확인했는가?
                     </li>
                     <li>
-                      ☐ 해당 시점의 한국은행 기준금리와 전월세 전환율 상한을 확인했는가?
+                      □ 해당 시점의 한국은행 기준금리와 전월세 전환율 상한을 확인했는가?
                     </li>
                     <li>
-                      ☐ 월세라면 향후 인상률(예: 연 3~5%)을 추정해 5년 이상 비용을 계산했는가?
+                      □ 월세라면 향후 인상률(예: 연 3~5%)을 추정해 5년 이상 비용을 계산했는가?
                     </li>
                     <li>
-                      ☐ 전세라면 계약 갱신료(보통 보증금의 5~10%)와 갱신 시기를 파악했는가?
+                      □ 전세라면 계약 갱신료(보통 보증금의 5~10%)와 갱신 시기를 파악했는가?
                     </li>
                     <li>
-                      ☐ 전세 선택 시 전세보증보험 가입 대상인지 확인했는가?
+                      □ 전세 선택 시 전세보증보험 가입 대상인지 확인했는가?
                     </li>
                     <li>
-                      ☐ 집주인의 신용과 부채 상황을 미리 조회했는가?
+                      □ 집주인의 신용과 부채 상황을 미리 조회했는가?
                     </li>
                     <li>
-                      ☐ 향후 5~10년 생활 계획(이직, 결혼, 자산 변화)을 고려했는가?
+                      □ 향후 5~10년 생활 계획(이직, 결혼, 자산 변화)을 고려했는가?
                     </li>
                   </ul>
                 </div>
@@ -520,7 +520,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

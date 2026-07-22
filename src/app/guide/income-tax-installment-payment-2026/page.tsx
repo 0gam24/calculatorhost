@@ -165,7 +165,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -391,7 +391,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 </p>
 
                 <div className="card mb-6 border-l-4 border-l-danger-500 bg-danger-50 dark:bg-danger-900/20">
-                  <h3 className="mb-3 font-semibold text-danger-600 dark:text-danger-400">⚠️ 주의: 2차 납부 지연 시</h3>
+                  <h3 className="mb-3 font-semibold text-danger-600 dark:text-danger-400">주의: 2차 납부 지연 시</h3>
                   <p className="text-sm leading-relaxed">
                     2차 납부 기한인 7월 31일을 넘기면, 그 다음날부터 <strong>납부지연가산세</strong> 일 0.022%(국세기본법 §47의4)가
                     부과됩니다. 이는 "지연된 기간 × 0.022%" 계산이므로, 8월 15일까지 미납 시 약 15일 × 0.022% ≈ 0.33% 가산세가 추가됩니다.
@@ -403,7 +403,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 </p>
                 <p className="leading-relaxed" data-speakable>
                   따라서 분납 신청은 좋은 제도지만, <strong>2차 납부일을 꼭 챙겨서 납부</strong>해야 합니다. 만약 현금흐름 이슈로 2차 납부가
-                  어렵다면, 선제적으로 국세청에 문의(☎ 1330)하여 추가 분납이나 납부유예를 신청할 수 있습니다.
+                  어렵다면, 선제적으로 국세청에 문의(전화 1330)하여 추가 분납이나 납부유예를 신청할 수 있습니다.
                 </p>
               </section>
 
@@ -574,7 +574,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 </p>
 
                 <div className="card mb-6 border-l-4 border-l-danger-500 bg-danger-50 dark:bg-danger-900/20">
-                  <h3 className="mb-3 font-semibold text-danger-600 dark:text-danger-400">⚠️ 실질과세 원칙이란?</h3>
+                  <h3 className="mb-3 font-semibold text-danger-600 dark:text-danger-400">주의: 실질과세 원칙이란?</h3>
                   <p className="mb-2 text-sm leading-relaxed">
                     국세기본법 §14에 따라, 세무당국은 형식적 신고가 아닌 <strong>실제 사실</strong>에 기반해 과세합니다. 예를 들어:
                   </p>
@@ -679,7 +679,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 <h2 className="mb-4 text-lg font-bold text-text-secondary">면책조항</h2>
                 <p className="text-sm text-text-secondary leading-relaxed">
                   본 페이지의 정보는 소득세법 §77 및 국세기본법 기준 2026년 시점의 일반적 정보입니다. 개인의 구체적 상황(사업 형태, 지역,
-                  추가 소득)에 따라 세액이나 분납 자격이 달라질 수 있으므로, 최종 판단은 국세청(☎ 1330) 또는 세무사·회계사 상담을
+                  추가 소득)에 따라 세액이나 분납 자격이 달라질 수 있으므로, 최종 판단은 국세청(전화 1330) 또는 세무사·회계사 상담을
                   권장합니다. 본 페이지는 AI 보조 작성 후 운영자 검수 완료되었습니다. 2026년 세법 개정 시 내용이 변경될 수 있습니다.
                 </p>
               </section>

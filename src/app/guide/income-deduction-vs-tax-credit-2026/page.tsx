@@ -169,7 +169,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <thead>
@@ -470,7 +470,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 핵심 원칙</p>
+                  <p className="font-semibold text-text-primary">핵심 원칙</p>
                   <p className="mt-2">
                     <strong>소득공제 절세액 = 공제액 × 본인의 누진세율</strong>
                     <br />
@@ -560,7 +560,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                 </div>
 
                 <div className="rounded-lg bg-bg-raised p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary mb-2">⚠️ 세무조사 시나리오</p>
+                  <p className="font-semibold text-text-primary mb-2">주의: 세무조사 시나리오</p>
                   <p>
                     프리랜서가 의료비 800만을 소득공제(누진세율 24% 적용 = 192만 절세)와 세액공제(15% = 120만
                     절세)를 동시에 신청했다면, 세무조사 시{' '}
@@ -584,21 +584,21 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   <p className="mb-3 font-semibold text-text-primary">선택 판단 기준</p>
                   <div className="space-y-3 text-sm text-text-secondary">
                     <div className="rounded-lg bg-bg-raised p-3">
-                      <p className="font-semibold text-text-primary mb-1">👤 단독자 (부양가족 0)</p>
+                      <p className="font-semibold text-text-primary mb-1">단독자 (부양가족 0)</p>
                       <p className="ml-3">
                         기본공제 150만 소득공제 + 근로소득세액공제 + 표준세액공제 13만. 세액공제 기본값 13만만 받으므로
                         추가 절세 가능성 낮음.
                       </p>
                     </div>
                     <div className="rounded-lg bg-bg-raised p-3">
-                      <p className="font-semibold text-text-primary mb-1">👨‍👩‍👧‍👦 부양가족 2명 + 자녀 1명</p>
+                      <p className="font-semibold text-text-primary mb-1">부양가족 2명 + 자녀 1명</p>
                       <p className="ml-3">
                         기본공제 450만 소득공제 + 자녀세액공제 15만. 의료비·교육비 추가 시 세액공제 합계 30만~40만.
                         둘 다 최대 활용 추천.
                       </p>
                     </div>
                     <div className="rounded-lg bg-bg-raised p-3">
-                      <p className="font-semibold text-text-primary mb-1">💼 고소득자 (연봉 8천만 이상)</p>
+                      <p className="font-semibold text-text-primary mb-1">고소득자 (연봉 8천만 이상)</p>
                       <p className="ml-3">
                         누진세율 24% 이상. 소득공제 절세 효과 크므로 기본공제·근로소득공제·기부금 모두 최대. 세액공제
                         기본값만 해도 충분.
@@ -612,7 +612,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>중복 공제 금지</strong> — 의료비·기부금·신용카드 공제 "중복 신청" 시 가산세 부과 위험
@@ -635,7 +635,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

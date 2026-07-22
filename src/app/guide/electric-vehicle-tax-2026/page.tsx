@@ -163,7 +163,7 @@ export default function ElectricVehicleTax2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="mb-2 text-left font-semibold text-text-primary">
@@ -293,7 +293,7 @@ export default function ElectricVehicleTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 법적 근거</p>
+                  <p className="font-semibold text-text-primary">법적 근거</p>
                   <p className="mt-2">
                     지방세법 §127①제3호 "그 밖의 승용자동차" — 배기량으로 분류되지 않는 승용자동차는 정액으로
                     과세합니다. 전기차·수소차는 내연기관 배기량이 없으므로 이 정액 항목이 적용됩니다.
@@ -349,7 +349,7 @@ export default function ElectricVehicleTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의: "전기차도 깎인다"는 잘못된 정보</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: "전기차도 깎인다"는 잘못된 정보</p>
                   <p className="mt-2">
                     많은 온라인 블로그나 자동차 관련 뉴스에서 "전기차 자동차세도 나이 먹으면 경감된다"고 잘못 설명합니다.
                     이는 <strong>사실이 아닙니다.</strong> 지방세법 원문(§127①제2호)을 확인하면, 차령경감의 계산식은 배기량
@@ -413,7 +413,7 @@ export default function ElectricVehicleTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 핵심 구분</p>
+                  <p className="font-semibold text-text-primary">핵심 구분</p>
                   <p className="mt-2">
                     <strong>배기량이 있으면 = cc 기준 세율 + 차령경감</strong> (하이브리드, PHEV) <br />
                     <strong>배기량이 없으면 = 정액 130,000원 + 차령경감 불가</strong> (전기차, 수소차)
@@ -549,7 +549,7 @@ export default function ElectricVehicleTax2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 혼동하기 쉬운 부분</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 혼동하기 쉬운 부분</p>
                   <p className="mt-2">
                     "전기차는 세금이 싸다" = 맞습니다. 다만 가장 큰 혜택은 <strong>구매 시점의 취득세·개소세 감면</strong>입니다.
                     자동차세만 보면 일반 가솔린차 1,500cc(273,000원)의 약 절반인 130,000원이지만, 이는 정책적 감면이 아니라
@@ -576,7 +576,7 @@ export default function ElectricVehicleTax2026Page() {
                 </p>
 
                 <div className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 영업용 등록 시 참고</p>
+                  <p className="font-semibold text-text-primary">영업용 등록 시 참고</p>
                   <p className="mt-2">
                     영업용(택시 등) 전기차는 자동차세 자체가 비영업용보다 낮게 책정됩니다. 다만 영업용 등록 요건·구매 시
                     취득세·개별소비세 감면 한도는 별도 규정을 따르므로, 정확한 적용은 관할 시·군·구청 세무과 또는 위택스에서
@@ -590,7 +590,7 @@ export default function ElectricVehicleTax2026Page() {
               {/* 최종 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 전기차 자동차세 결정 전 필독 주의사항
+                  주의: 전기차 자동차세 결정 전 필독 주의사항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
@@ -617,7 +617,7 @@ export default function ElectricVehicleTax2026Page() {
 
               {/* 관련 계산기·가이드 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

@@ -269,7 +269,7 @@ export default function CompoundInterest72Rule2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 현실의 금융상품에서는 단리를 찾기 어렵습니다. 대부분의 적금, 예금,
+                  다만 현실의 금융상품에서는 단리를 찾기 어렵습니다. 대부분의 적금, 예금,
                   정기예금이 복리를 기본으로 합니다. 학습 목적으로 단리는 이해하되, 실제 금융
                   상품 선택 시에는 금리(예: 연 5%), 복리 빈도(연 1회, 월 1회, 일 1회), 세후
                   이자를 함께 확인해야 합니다.
@@ -342,7 +342,7 @@ export default function CompoundInterest72Rule2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 세전(gross) 이자이며, 실제 금융상품의 이자는 이자소득세
+                  다만 위 계산은 세전(gross) 이자이며, 실제 금융상품의 이자는 이자소득세
                   15.4%(소득세법 §129 원천징수세율 14% + 지방소득세 1.4%)가 공제됩니다. 세후
                   이자는 총 이자 × (1 − 0.154)로 계산하세요.
                 </p>
@@ -445,7 +445,7 @@ export default function CompoundInterest72Rule2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 이율이 매우 높거나(20% 이상) 매우 낮을(1% 미만) 때는 오차가 커집니다.
+                  다만 이율이 매우 높거나(20% 이상) 매우 낮을(1% 미만) 때는 오차가 커집니다.
                   또한 72의 법칙은 "명목 이자율"을 기준으로 하며, 세후 이자율이 아닙니다. 실제
                   금융상품에서는 이자소득세 15.4%를 공제한 세후 이율로 다시 계산해야 합니다.
                 </p>
@@ -496,7 +496,7 @@ export default function CompoundInterest72Rule2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 복리가 약해 보인다고 해서 무시할 수는 없습니다. 장기적으로는 단리나
+                  다만 복리가 약해 보인다고 해서 무시할 수는 없습니다. 장기적으로는 단리나
                   미적립(저축하지 않음)보다는 훨씬 유리합니다. 특히 은퇴 준비처럼 20~30년의
                   긴 기간이라면, 매달 꾸준히 저축하는 것이 큰 자산을 만듭니다.
                 </p>
@@ -558,7 +558,7 @@ export default function CompoundInterest72Rule2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 팁들은 일반적인 가이드입니다. 금리, 세법, 금융상품은 시간에 따라
+                  다만 위 팁들은 일반적인 가이드입니다. 금리, 세법, 금융상품은 시간에 따라
                   변합니다. 특정 상품 선택이나 큰 금액 운용 전에는 항상 금융기관 상담이나
                   공식 자료를 확인하세요.
                 </p>
@@ -570,7 +570,7 @@ export default function CompoundInterest72Rule2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

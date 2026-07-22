@@ -203,8 +203,8 @@ export default function DecemberCgtDeadlineGuide() {
                     <tbody>
                       <tr className="border-b border-border-subtle"><td className="py-2 pr-4">귀속연도</td><td className="py-2 pr-4">2026</td><td className="py-2">2027</td></tr>
                       <tr className="border-b border-border-subtle"><td className="py-2 pr-4">신고 기한</td><td className="py-2 pr-4">2027-02-28</td><td className="py-2">2027-03-31</td></tr>
-                      <tr className="border-b border-border-subtle"><td className="py-2 pr-4">2026년 부동산 손실 상계</td><td className="py-2 pr-4">✅ 가능</td><td className="py-2">❌ 불가</td></tr>
-                      <tr className="border-b border-border-subtle"><td className="py-2 pr-4">2027 세법 개정 영향</td><td className="py-2 pr-4">❌ 적용 X</td><td className="py-2">✅ 적용</td></tr>
+                      <tr className="border-b border-border-subtle"><td className="py-2 pr-4">2026년 부동산 손실 상계</td><td className="py-2 pr-4">가능</td><td className="py-2">불가</td></tr>
+                      <tr className="border-b border-border-subtle"><td className="py-2 pr-4">2027 세법 개정 영향</td><td className="py-2 pr-4">적용 X</td><td className="py-2">적용</td></tr>
                       <tr className="border-b border-border-subtle"><td className="py-2 pr-4">기본공제 (§103, 250만)</td><td className="py-2 pr-4">2026 적용</td><td className="py-2">2027 적용</td></tr>
                       <tr><td className="py-2 pr-4">현금 흐름</td><td className="py-2 pr-4">2월 납부 (빠름)</td><td className="py-2">3월 납부 (여유)</td></tr>
                     </tbody>
@@ -265,11 +265,11 @@ export default function DecemberCgtDeadlineGuide() {
                 <div className="mt-3 rounded-lg bg-bg-card p-3 text-sm text-text-secondary">
                   <p className="mb-1"><strong className="text-text-primary">올바른 통산 사례 (그룹 1 내):</strong></p>
                   <ul className="list-inside list-disc space-y-0.5">
-                    <li>주택 양도차익 +5,000만 + 토지 양도손실 −2,000만 = 과세 3,000만 ✅</li>
+                    <li>주택 양도차익 +5,000만 + 토지 양도손실 −2,000만 = 과세 3,000만</li>
                   </ul>
                   <p className="mb-1 mt-2"><strong className="text-text-primary">잘못된 통산 (그룹 간 X):</strong></p>
                   <ul className="list-inside list-disc space-y-0.5">
-                    <li>주택 양도차익 +5,000만 + 주식 양도손실 −2,000만 = ❌ 통산 불가 (별도 그룹)</li>
+                    <li>주택 양도차익 +5,000만 + 주식 양도손실 −2,000만 = 통산 불가 (별도 그룹)</li>
                   </ul>
                 </div>
               </section>
@@ -309,7 +309,7 @@ export default function DecemberCgtDeadlineGuide() {
 
               {/* 8. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>잔금 청산일이 양도일 — 계약일·등기일과 혼동 X. 잔금 통장 입금일 확인.</li>
                   <li>일시적 2주택 D-day 1일 초과 시 비과세 상실. 만료 임박 시 무조건 만료 전 양도.</li>

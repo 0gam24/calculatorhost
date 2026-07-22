@@ -154,17 +154,17 @@ export default function VehicleTaxCardPayment2026Page() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>💳 <strong>신용카드 수수료:</strong> 무료 (지방세는 수수료 정책 다름)</li>
-                  <li>📅 <strong>1월 연납 할인:</strong> 5% 공제율 (선납 일수 비례) (지방세법 시행령 §125)</li>
-                  <li>📊 <strong>신청월별 실효율:</strong> 1월 약 4.81% / 3월 약 3.74% / 6월 약 2.93% / 9월 약 1.67%</li>
-                  <li>💰 <strong>무이자 할부:</strong> 카드사별 이벤트(보통 2~6개월) — 본인 카드 혜택 확인</li>
-                  <li>🔗 <strong>신청처:</strong> 위택스(wetax.go.kr) / 스마트 위택스 앱 / 시·군청 세무서 / 지역 앱</li>
+                  <li><strong>신용카드 수수료:</strong> 무료 (지방세는 수수료 정책 다름)</li>
+                  <li><strong>1월 연납 할인:</strong> 5% 공제율 (선납 일수 비례) (지방세법 시행령 §125)</li>
+                  <li><strong>신청월별 실효율:</strong> 1월 약 4.81% / 3월 약 3.74% / 6월 약 2.93% / 9월 약 1.67%</li>
+                  <li><strong>무이자 할부:</strong> 카드사별 이벤트(보통 2~6개월) — 본인 카드 혜택 확인</li>
+                  <li><strong>신청처:</strong> 위택스(wetax.go.kr) / 스마트 위택스 앱 / 시·군청 세무서 / 지역 앱</li>
                   <li>⏰ <strong>신청 기간:</strong> 1월 1~31일만 가능 (이후 6월·12월 정기 납부만 가능)</li>
                 </ul>
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">💳 신용카드 납부 — 수수료 무료</h2>
+                <h2 className="mb-4 text-2xl font-bold">신용카드 납부 — 수수료 무료</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세인 자동차세는 국세(소득세·법인세)와 달리 신용카드 수수료가 없습니다.</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">자동차세 카드납부 방식</p>
@@ -200,7 +200,7 @@ export default function VehicleTaxCardPayment2026Page() {
                   </table>
                 </div>
                 <div className="mt-4 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4 text-sm">
-                  <strong className="text-highlight-700 dark:text-highlight-300">⚠️ 주의: 카드사 혜택은 시기별로 다름</strong>
+                  <strong className="text-highlight-700 dark:text-highlight-300">주의: 카드사 혜택은 시기별로 다름</strong>
                   <p className="text-text-secondary mt-2">
                     신용카드 무이자 할부·캐시백은 카드사와 시점에 따라 다릅니다. 1월(연납 신청), 6월(정기 납부) 전에 본인 카드 앱을 확인하고 어떤 혜택이 있는지 미리 알아보세요.
                   </p>
@@ -208,7 +208,7 @@ export default function VehicleTaxCardPayment2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">📅 1월 연납 할인 — 5% 공제율</h2>
+                <h2 className="mb-4 text-2xl font-bold">1월 연납 할인 — 5% 공제율</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125 — 1월에 연간 자동차세를 모두 미리 내면 공제율을 받습니다.</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">연납 공제 방식</p>
@@ -265,10 +265,10 @@ export default function VehicleTaxCardPayment2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">🎁 카드 무이자 할부 + 연납 할인 조합</h2>
+                <h2 className="mb-4 text-2xl font-bold">카드 무이자 할부 + 연납 할인 조합</h2>
                 <p className="mb-3 text-sm text-text-secondary">신용카드 무이자 할부와 연납 할인을 함께 활용할 수 있습니다.</p>
                 <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4 mb-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-3">💡 절감 전략 예시</p>
+                  <p className="text-text-primary font-semibold mb-3">절감 전략 예시</p>
                   <p className="text-text-secondary mb-3">연세액: 52만원</p>
                   <div className="space-y-2">
                     <div className="bg-bg-card p-3 rounded">
@@ -289,17 +289,17 @@ export default function VehicleTaxCardPayment2026Page() {
                     </div>
                   </div>
                   <p className="text-text-secondary text-xs mt-3 border-t border-border-base pt-2">
-                    ⚠️ 무이자 할부는 카드사 이벤트일 때만 가능합니다. 무이자 이벤트가 아니면 카드사·개월수별 할부 수수료가 붙어 실제 부담이 달라집니다.
+                    주의: 무이자 할부는 카드사 이벤트일 때만 가능합니다. 무이자 이벤트가 아니면 카드사·개월수별 할부 수수료가 붙어 실제 부담이 달라집니다.
                   </p>
                 </div>
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">🔗 1월 연납 신청 방법</h2>
+                <h2 className="mb-4 text-2xl font-bold">1월 연납 신청 방법</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125 — 1월 1~31일 신청만 가능합니다.</p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">1️⃣ 위택스(wetax.go.kr) — 가장 추천</p>
+                    <p className="text-text-primary font-semibold mb-2">1⃣ 위택스(wetax.go.kr) — 가장 추천</p>
                     <ol className="text-text-secondary space-y-1 list-decimal list-inside">
                       <li>위택스(wetax.go.kr)에 공인인증서·금융인증서·간편인증으로 로그인</li>
                       <li>"세금 신청·신고" → "지방세" → "자동차세"</li>
@@ -310,15 +310,15 @@ export default function VehicleTaxCardPayment2026Page() {
                     </ol>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">2️⃣ 스마트 위택스 앱</p>
+                    <p className="text-text-primary font-semibold mb-2">2⃣ 스마트 위택스 앱</p>
                     <p className="text-text-secondary">Google Play / App Store에서 "스마트 위택스" 검색 → 앱 실행 → 로그인 → "자동차세 연납" 신청. 모바일에서도 24시간 가능.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">3️⃣ 관할 시·군청 세무서 (직접 방문)</p>
+                    <p className="text-text-primary font-semibold mb-2">3⃣ 관할 시·군청 세무서 (직접 방문)</p>
                     <p className="text-text-secondary">주민등록지 또는 차량 등록지 관할 세무서 방문 → 차량 등록증 지참 → 신청서 작성 → 제출.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">4️⃣ 지역별 앱 (서울·경기·인천 등)</p>
+                    <p className="text-text-primary font-semibold mb-2">4⃣ 지역별 앱 (서울·경기·인천 등)</p>
                     <ul className="text-text-secondary mt-2 space-y-1 list-disc list-inside">
                       <li>서울: STAX (스택) 앱</li>
                       <li>경기·인천: 지역 지방세 앱 (경기는 "한꺼번이", 인천은 "인천 지방세")</li>
@@ -335,7 +335,7 @@ export default function VehicleTaxCardPayment2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">📋 신용카드 결제 방법</h2>
+                <h2 className="mb-4 text-2xl font-bold">신용카드 결제 방법</h2>
                 <p className="mb-3 text-sm text-text-secondary">위택스, 지역 앱, 세무서에서 연납 신청 후 대납액 확인 → 신용카드로 결제합니다.</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">신용카드 결제 가능한 납부 채널</p>
@@ -351,7 +351,7 @@ export default function VehicleTaxCardPayment2026Page() {
               <AdSlot slot="guide-vehicle-tax-card-payment-2026-mid" format="rectangle" />
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">⚠️ 주의사항 및 예외 상황</h2>
+                <h2 className="mb-4 text-2xl font-bold">주의사항 및 예외 상황</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4 text-sm">
                     <p className="text-highlight-700 dark:text-highlight-300 font-semibold">차량 양도 시 환급</p>
@@ -375,46 +375,46 @@ export default function VehicleTaxCardPayment2026Page() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">❓ 자주 묻는 질문</h2>
+                <h2 className="text-2xl font-bold">자주 묻는 질문</h2>
                 <FaqSection items={FAQ_ITEMS} />
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">🔗 관련 계산기·가이드</h2>
+                <h2 className="text-2xl font-bold">관련 계산기·가이드</h2>
                 <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   <Link
                     href="/calculator/vehicle-tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">🚗 자동차세 계산기</h3>
+                    <h3 className="font-bold text-text-primary">자동차세 계산기</h3>
                     <p className="text-sm text-text-secondary mt-1">배기량 입력 → 연 납부액 즉시 계산. 차령경감·연납 할인 반영.</p>
                   </Link>
                   <Link
                     href="/guide/vehicle-tax-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">📊 자동차세 완전 정리 2026</h3>
+                    <h3 className="font-bold text-text-primary">자동차세 완전 정리 2026</h3>
                     <p className="text-sm text-text-secondary mt-1">배기량 세율·차령경감·연납 할인·납부 시기 종합 가이드.</p>
                   </Link>
                   <Link
                     href="/guide/january-vehicle-tax-prepayment/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">📌 1월 자동차세 연납 신청 가이드</h3>
+                    <h3 className="font-bold text-text-primary">1월 자동차세 연납 신청 가이드</h3>
                     <p className="text-sm text-text-secondary mt-1">위택스·앱 신청 방법, 할인 계산, 신청 기간.</p>
                   </Link>
                   <Link
                     href="/guide/electric-vehicle-tax-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">🔋 전기차 자동차세 2026</h3>
+                    <h3 className="font-bold text-text-primary">전기차 자동차세 2026</h3>
                     <p className="text-sm text-text-secondary mt-1">전기차·수소차 정액 과세(13만원), 차령경감 미적용.</p>
                   </Link>
                   <Link
                     href="/category/tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">📚 세금 계산기·가이드</h3>
+                    <h3 className="font-bold text-text-primary">세금 계산기·가이드</h3>
                     <p className="text-sm text-text-secondary mt-1">양도세·취득세·재산세·종부세 전체 보기.</p>
                   </Link>
                 </div>
@@ -422,7 +422,7 @@ export default function VehicleTaxCardPayment2026Page() {
 
               <section className="rounded-lg border border-border-base bg-bg-raised p-6 text-sm">
                 <p className="text-text-secondary mb-3">
-                  <strong>면책조항</strong>: 본 페이지의 자동차세 카드납부·연납 할인 정보는 2026년 현행 지방세법(§128, §151, 시행령 §125) 기준으로 작성되었습니다. 카드사의 무이자 할부·캐시백은 상시 변동되므로 결제 전 본인 카드사 앱에서 최신 이벤트를 확인하세요. 실제 할인액 계산, 신청 절차, 환급 대상 여부는 관할 시·군청 세무서(☎ 120) 또는 위택스(wetax.go.kr) 고객센터에 문의하시기 바랍니다. 법조항 인용: 지방세법 시행령 §125(연납 공제).
+                  <strong>면책조항</strong>: 본 페이지의 자동차세 카드납부·연납 할인 정보는 2026년 현행 지방세법(§128, §151, 시행령 §125) 기준으로 작성되었습니다. 카드사의 무이자 할부·캐시백은 상시 변동되므로 결제 전 본인 카드사 앱에서 최신 이벤트를 확인하세요. 실제 할인액 계산, 신청 절차, 환급 대상 여부는 관할 시·군청 세무서(전화 120) 또는 위택스(wetax.go.kr) 고객센터에 문의하시기 바랍니다. 법조항 인용: 지방세법 시행령 §125(연납 공제).
                 </p>
                 <p className="text-text-tertiary text-xs">
                   업데이트: 2026-06-28 · AI 보조 작성 후 검수 · 출처: 위택스 공식 가이드·지방세법·국세청 FAQ

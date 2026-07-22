@@ -281,27 +281,27 @@ export default function SalaryNegotiationTakeHomePage() {
                 <h2 className="text-2xl font-bold">자주 하는 실수 5가지</h2>
                 <ol className="space-y-2 text-sm">
                   <li>
-                    <strong>❌ 제시액 ÷ 12 = 월급</strong>
+                    <strong>제시액 ÷ 12 = 월급</strong>
                     <br />
                     <span className="text-text-tertiary">5,000만 원 ÷ 12 = 416만 원? 아닙니다. 4대보험·세금 공제 후 약 292만 원입니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 상여금을 월급에 더하기</strong>
+                    <strong>상여금을 월급에 더하기</strong>
                     <br />
                     <span className="text-text-tertiary">월 350만 원 + 상여금 500만 원 = 월 391만 원? 아닙니다. 상여금도 보험료와 세금이 공제되므로 월 약 30만 원만 추가됩니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 비과세 수당을 무시하기</strong>
+                    <strong>비과세 수당을 무시하기</strong>
                     <br />
                     <span className="text-text-tertiary">비과세 수당이 있으면 실제 세금이 줄어드는데, 협상 때 언급하지 않으면 손해봅니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 첫 달 월급을 기준으로 생각하기</strong>
+                    <strong>첫 달 월급을 기준으로 생각하기</strong>
                     <br />
                     <span className="text-text-tertiary">첫 달은 반 달치만 받을 수 있고, 4대보험 가입 시기에 따라 공제가 달라질 수 있습니다.</span>
                   </li>
                   <li>
-                    <strong>❌ 협상 후 "뭐, 이 정도구나" 하고 포기하기</strong>
+                    <strong>협상 후 "뭐, 이 정도구나" 하고 포기하기</strong>
                     <br />
                     <span className="text-text-tertiary">협상은 여러 번 가능합니다. 첫 제안이 최종이 아닙니다. 정확한 계산 결과를 들고 다시 협상하세요.</span>
                   </li>
@@ -334,19 +334,19 @@ export default function SalaryNegotiationTakeHomePage() {
                 <h2 className="text-2xl font-bold">관련 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    ➜ <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
                     {' — 여러 시나리오로 월급 비교'}
                   </li>
                   <li>
-                    ➜ <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
                       퇴직금 계산기
                     </Link>
                     {' — 퇴직 시 받을 수 있는 금액 확인'}
                   </li>
                   <li>
-                    ➜ <Link href="/calculator/freelancer-tax/" className="font-semibold text-primary-500 hover:underline">
+                    <Link href="/calculator/freelancer-tax/" className="font-semibold text-primary-500 hover:underline">
                       프리랜서 종합소득세 계산기
                     </Link>
                     {' — 1099/용역비 지급받는 경우'}

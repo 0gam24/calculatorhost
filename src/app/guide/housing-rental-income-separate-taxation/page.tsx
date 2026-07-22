@@ -266,7 +266,7 @@ export default function HousingRentalIncomeGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>주택 수는 부부 합산 기준 (배우자 명의 주택 포함).</li>
                   <li>분리과세 선택은 매년 신고 시 변경 가능 — 다른 소득 변동 시 재검토 필수.</li>

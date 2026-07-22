@@ -260,7 +260,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 다만:</strong> 배우자가 없으면 배우자공제를 받지 못하므로 상황이 완전히 달라집니다. 아래 "증여가 유리한 경우"를 참조하세요.
+                  <strong>다만:</strong> 배우자가 없으면 배우자공제를 받지 못하므로 상황이 완전히 달라집니다. 아래 "증여가 유리한 경우"를 참조하세요.
                 </p>
               </section>
 
@@ -313,7 +313,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 사전증여 합산(상속개시 10년 전 증여) 규정에 의해 상속 시 일부 증여분이 다시 합산되므로, 장기간 증여 전략을 세울 때는 반드시 세무사와 상담하세요.
+                  <strong>주의:</strong> 사전증여 합산(상속개시 10년 전 증여) 규정에 의해 상속 시 일부 증여분이 다시 합산되므로, 장기간 증여 전략을 세울 때는 반드시 세무사와 상담하세요.
                 </p>
               </section>
 
@@ -360,7 +360,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 더 자세히:</strong> 사전증여 합산, 세액 공제 방식 등 복잡한 규정에 대해서는 별도 가이드를 참조하거나 세무사와 상담하세요.
+                  <strong>주의: 더 자세히:</strong> 사전증여 합산, 세액 공제 방식 등 복잡한 규정에 대해서는 별도 가이드를 참조하거나 세무사와 상담하세요.
                 </p>
               </section>
 

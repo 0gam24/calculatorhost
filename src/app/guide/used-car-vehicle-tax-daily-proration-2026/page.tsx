@@ -169,12 +169,12 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>기준일</strong>: 소유권 이전일 (매도인 범위: 그 전날까지 / 매수인: 이전일부터 연말까지)</li>
-                  <li>📐 <strong>공식</strong>: 연 자동차세 × (소유 일수 ÷ 365일)</li>
-                  <li>🔢 <strong>예시</strong>: 8월 15일 이전 시 매도인 226일, 매수인 139일 부담</li>
-                  <li>📊 <strong>정산</strong>: 위택스 또는 시·군청에서 소유권 이전 증명서 제출 후 자동 처리 (1~2개월)</li>
-                  <li>💡 <strong>환급</strong>: 매도인이 이미 낸 세금 중 경과 일수분 환급받음</li>
-                  <li>⚠️ <strong>주의</strong>: 이전 전 위택스에서 세금 미납 여부 확인 필수</li>
+                  <li><strong>기준일</strong>: 소유권 이전일 (매도인 범위: 그 전날까지 / 매수인: 이전일부터 연말까지)</li>
+                  <li><strong>공식</strong>: 연 자동차세 × (소유 일수 ÷ 365일)</li>
+                  <li><strong>예시</strong>: 8월 15일 이전 시 매도인 226일, 매수인 139일 부담</li>
+                  <li><strong>정산</strong>: 위택스 또는 시·군청에서 소유권 이전 증명서 제출 후 자동 처리 (1~2개월)</li>
+                  <li><strong>환급</strong>: 매도인이 이미 낸 세금 중 경과 일수분 환급받음</li>
+                  <li><strong>주의</strong>: 이전 전 위택스에서 세금 미납 여부 확인 필수</li>
                 </ul>
               </section>
 
@@ -280,7 +280,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                 </div>
 
                 <p className="mt-4 text-xs text-text-tertiary">
-                  💡 <strong>팁</strong>: 3가지 사례 모두 매도인 부담 + 매수인 부담 = 연 자동차세임을 확인하세요. 반올림 또는 절사로 1원 차이가 날 수 있습니다.
+                  <strong>팁</strong>: 3가지 사례 모두 매도인 부담 + 매수인 부담 = 연 자동차세임을 확인하세요. 반올림 또는 절사로 1원 차이가 날 수 있습니다.
                 </p>
               </section>
 
@@ -328,7 +328,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                   </table>
                 </div>
                 <p className="text-xs text-text-tertiary" data-speakable>
-                  ⚠️ <strong>주의</strong>: 6월 16일 정기분 납기 기한 전후로 기준이 달라집니다. 예를 들어 6월 15일 이전 이전이면
+                  <strong>주의</strong>: 6월 16일 정기분 납기 기한 전후로 기준이 달라집니다. 예를 들어 6월 15일 이전 이전이면
                   1기분을 미리 내야 하는 경우도 있으니, 위택스에서 정확히 확인 필수입니다.
                 </p>
               </section>
@@ -377,7 +377,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
 
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 border-b-2 border-b-border-base pb-3 text-xl font-bold">
-                  ⚠️ 중고차 거래 전 체크리스트
+                  주의: 중고차 거래 전 체크리스트
                 </h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
@@ -403,7 +403,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 도구 · 가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 도구 · 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     → <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">

@@ -152,12 +152,12 @@ export default function AprilCptExclusionPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>신청 기간</strong>: 4월 1~30일 (홈택스)</li>
-                  <li>🏠 <strong>합산배제</strong>: 임대주택·미분양·사원용·기숙사·문화재 등</li>
-                  <li>🎁 <strong>과세특례</strong>: 일시적 2주택·고령자·장기보유·상속</li>
-                  <li>👴 <strong>고령자+장기보유</strong>: 합산 최대 80% 공제 (1세대1주택)</li>
-                  <li>⚠️ <strong>미신청 시</strong>: 다주택 중과 세율 (최고 6%) 적용 → 폭탄</li>
-                  <li>💰 <strong>종부세 납부</strong>: 12월 1~15일 (별도)</li>
+                  <li><strong>신청 기간</strong>: 4월 1~30일 (홈택스)</li>
+                  <li><strong>합산배제</strong>: 임대주택·미분양·사원용·기숙사·문화재 등</li>
+                  <li><strong>과세특례</strong>: 일시적 2주택·고령자·장기보유·상속</li>
+                  <li><strong>고령자+장기보유</strong>: 합산 최대 80% 공제 (1세대1주택)</li>
+                  <li>주의: <strong>미신청 시</strong>: 다주택 중과 세율 (최고 6%) 적용 → 폭탄</li>
+                  <li><strong>종부세 납부</strong>: 12월 1~15일 (별도)</li>
                 </ul>
               </section>
 
@@ -306,7 +306,7 @@ export default function AprilCptExclusionPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 임대 의무기간 중 자가 거주·매도 시 합산배제 박탈 + 과거 분 추징.</li>
                   <li>• 임대료 인상률 5% 초과 시 동일 — 신중한 임대료 관리.</li>
@@ -316,7 +316,7 @@ export default function AprilCptExclusionPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 도구·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 도구·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link></li>

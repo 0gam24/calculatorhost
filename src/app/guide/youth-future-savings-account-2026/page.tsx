@@ -262,7 +262,7 @@ export default function YouthFutureSavingsAccount2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 참고:</strong> 소득요건과 가구 중위소득 기준이 모두 충족되어야 가입할 수 있습니다.
+                    <strong>참고:</strong> 소득요건과 가구 중위소득 기준이 모두 충족되어야 가입할 수 있습니다.
                     자신이 요건을 충족하는지는 출시 후 취급 은행에 문의하거나, 은행 앱에서 자격 확인을 통해 조회할 수 있습니다.
                   </p>
                 </div>
@@ -305,7 +305,7 @@ export default function YouthFutureSavingsAccount2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 주의:</strong> 위 금액은 월 50만원을 3년 동안 균등하게 입금한다는 가정 하에 계산한 예상액입니다.
+                    <strong>주의:</strong> 위 금액은 월 50만원을 3년 동안 균등하게 입금한다는 가정 하에 계산한 예상액입니다.
                     실제 이자액과 정부기여금은 실제 입금 시점, 입금 금액, 은행의 정확한 이자 계산 방식에 따라 달라질 수 있습니다.
                     정확한 만기액은 출시 후 취급 은행의 모의계산 기능을 이용하여 확인하시기 바랍니다.
                   </p>
@@ -386,7 +386,7 @@ export default function YouthFutureSavingsAccount2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 팁:</strong> 청년도약계좌에 먼저 가입했다면, 2026년 6월 최초 가입 기간 동안 청년미래적금으로 갈아탈 수 있습니다.
+                    <strong>팁:</strong> 청년도약계좌에 먼저 가입했다면, 2026년 6월 최초 가입 기간 동안 청년미래적금으로 갈아탈 수 있습니다.
                     어느 것이 본인에게 유리한지 비교한 후 선택하면 됩니다.
                   </p>
                 </div>
@@ -421,7 +421,7 @@ export default function YouthFutureSavingsAccount2026() {
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <p className="text-sm text-text-secondary">
-                      <strong>📅 출시 일정:</strong> 2026년 6월 22일 취급 개시
+                      <strong>출시 일정:</strong> 2026년 6월 22일 취급 개시
                     </p>
                     <p className="text-sm text-text-secondary mt-2">
                       정확한 취급 은행 목록과 신청 방법은 출시 후 금융감독원 공식 웹사이트나 각 은행에서 확인하시기 바랍니다.

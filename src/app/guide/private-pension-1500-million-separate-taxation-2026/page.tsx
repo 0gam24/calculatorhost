@@ -181,12 +181,12 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📊 <strong>분리과세 기준</strong>: 연금저축 + IRP + 퇴직연금 합산 1,500만 원 이하 (소득세법 §14 ③ 9호)</li>
-                  <li>💰 <strong>연령별 분리과세 세율</strong>: 70세 미만 5.5% / 70~79세 4.4% / 80세 이상 3.3% (소득세법 §129 ⑤)</li>
-                  <li>📈 <strong>1,500만 원 초과</strong>: 종합과세(6~45% 누진) vs 6%·15% 단일세율 분리과세 선택 (소득세법 §64의4)</li>
-                  <li>⚠️ <strong>공적연금 별개</strong>: 국민연금, 공무원연금 등은 분리되어 계산 (소득세법 §20의3)</li>
-                  <li>📋 <strong>신고 기한</strong>: 2026년 5월 1일~5월 31일 (홈택스 종합소득세 신고)</li>
-                  <li>🚫 <strong>무신고 시</strong>: 가산세 20% + 납부지연가산세 일 0.022%</li>
+                  <li><strong>분리과세 기준</strong>: 연금저축 + IRP + 퇴직연금 합산 1,500만 원 이하 (소득세법 §14 ③ 9호)</li>
+                  <li><strong>연령별 분리과세 세율</strong>: 70세 미만 5.5% / 70~79세 4.4% / 80세 이상 3.3% (소득세법 §129 ⑤)</li>
+                  <li><strong>1,500만 원 초과</strong>: 종합과세(6~45% 누진) vs 6%·15% 단일세율 분리과세 선택 (소득세법 §64의4)</li>
+                  <li>주의: <strong>공적연금 별개</strong>: 국민연금, 공무원연금 등은 분리되어 계산 (소득세법 §20의3)</li>
+                  <li><strong>신고 기한</strong>: 2026년 5월 1일~5월 31일 (홈택스 종합소득세 신고)</li>
+                  <li><strong>무신고 시</strong>: 가산세 20% + 납부지연가산세 일 0.022%</li>
                 </ul>
               </section>
 
@@ -323,7 +323,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   </p>
                   <div className="space-y-2 text-sm text-text-secondary">
                     <div className="flex justify-between">
-                      <span>1️⃣ 분리과세 선택 (1,500만 + 초과 500만)</span>
+                      <span>1⃣ 분리과세 선택 (1,500만 + 초과 500만)</span>
                       <span className="font-semibold"></span>
                     </div>
                     <ul className="ml-4 space-y-1 text-xs text-text-secondary">
@@ -332,7 +332,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                       <li>• <strong>합계: 약 112.5만 원</strong></li>
                     </ul>
                     <div className="flex justify-between mt-3">
-                      <span>2️⃣ 종합과세 선택 (전체 2,000만 합산)</span>
+                      <span>2⃣ 종합과세 선택 (전체 2,000만 합산)</span>
                       <span className="font-semibold"></span>
                     </div>
                     <ul className="ml-4 space-y-1 text-xs text-text-secondary">
@@ -341,7 +341,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                       <li>• <strong>합계: 약 150~180만 원</strong></li>
                     </ul>
                     <div className="flex justify-between border-t border-border-base pt-2 mt-3">
-                      <span className="font-semibold">💰 절감액</span>
+                      <span className="font-semibold">절감액</span>
                       <span className="font-semibold">약 37.5~67.5만 원</span>
                     </div>
                   </div>
@@ -366,7 +366,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   <p className="text-sm text-text-secondary">
                     "국민연금도 많이 받으니 1,500만 원을 깎아야 하나?"
                     <br />
-                    ❌ <strong>아닙니다</strong>. 국민연금은 별개입니다.
+                    <strong>아닙니다</strong>. 국민연금은 별개입니다.
                     <br />
                     예: 국민연금 월 200만 (연 2,400만) + 연금저축 1,500만 수령 시,
                     <br />
@@ -440,21 +440,21 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                 <h2 className="text-2xl font-bold">7. 흔한 실수 & 절세 팁</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">⚠️ 실수 1: 여러 계좌를 각각 분리과세로 신고</h3>
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">주의: 실수 1: 여러 계좌를 각각 분리과세로 신고</h3>
                     <p className="text-sm text-danger-700 dark:text-danger-300">
                       연금저축 A은행 500만 + B증권 600만 을 각각 분리과세 신고 시
                       "각 1,500만 이하"로 착각하는 경우. 정답: 1,100만 원으로 합산 신고.
                     </p>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">⚠️ 실수 2: 공적연금도 1,500만 원에 포함시키기</h3>
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">주의: 실수 2: 공적연금도 1,500만 원에 포함시키기</h3>
                     <p className="text-sm text-danger-700 dark:text-danger-300">
                       국민연금 월 150만 + 연금저축 1,400만 = 2,150만 으로 계산.
                       정답: 국민연금은 별도(공적연금소득), 연금저축만 1,400만 으로 분리과세.
                     </p>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💡 절세 팁 1: 다른 소득 합산 효과 확인</h3>
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">절세 팁 1: 다른 소득 합산 효과 확인</h3>
                     <p className="text-sm text-primary-700 dark:text-primary-300">
                       프리랜서(사업소득 3,000만 + 연금 1,800만)인 경우,
                       연금 초과분 300만을 종합과세하면 전체 누진세율이 상향됩니다.
@@ -462,7 +462,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💡 절세 팁 2: 수령 연도 조정 검토</h3>
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">절세 팁 2: 수령 연도 조정 검토</h3>
                     <p className="text-sm text-primary-700 dark:text-primary-300">
                       연금저축이 충분히 준비되었다면, 본인이 고령(80세↑)이 될 때까지
                       수령을 지연하여 3.3% 저세율 혜택을 받는 것도 전략입니다.
@@ -470,7 +470,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💡 절세 팁 3: 배우자 공제 활용</h3>
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">절세 팁 3: 배우자 공제 활용</h3>
                     <p className="text-sm text-primary-700 dark:text-primary-300">
                       배우자가 없거나 소득이 없으면 본인이 단독 신고.
                       배우자가 있으면 인적공제(기본 150만 × 2 = 300만) 가능 → 약 45만 원 절세.
@@ -483,7 +483,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 중요 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">중요 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 정보 제공 목적이며 개별 세무 조언이 아닙니다. 복잡한 다중 소득, 특수 공제는 세무사 상담 필수.</li>
                   <li>• 2024년 개정(1,200만 → 1,500만 원)은 2024년 귀속분부터 적용. 이전 연도와 기준 다름.</li>
@@ -496,7 +496,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 관련 도구 */}
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

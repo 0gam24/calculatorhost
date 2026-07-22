@@ -149,11 +149,11 @@ export default function FebruaryRefundTrackingPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>환급 시기</strong>: 2~3월 급여일 (회사별 다름)</li>
-                  <li>🔍 <strong>확인 방법</strong>: 회사 결과서 또는 홈택스 "지급명세서 조회"</li>
-                  <li>💡 <strong>누락 공제 발견 시</strong>: 5월 종소세 신고로 정정 → 환급 추가</li>
+                  <li><strong>환급 시기</strong>: 2~3월 급여일 (회사별 다름)</li>
+                  <li><strong>확인 방법</strong>: 회사 결과서 또는 홈택스 "지급명세서 조회"</li>
+                  <li><strong>누락 공제 발견 시</strong>: 5월 종소세 신고로 정정 → 환급 추가</li>
                   <li>⏰ <strong>경정청구</strong>: 5년 이내 가능 (국세기본법 §45의2)</li>
-                  <li>📝 <strong>5월 종소세 준비</strong>: 부업 소득·기부금·노란우산 자료 정리</li>
+                  <li><strong>5월 종소세 준비</strong>: 부업 소득·기부금·노란우산 자료 정리</li>
                 </ul>
               </section>
 
@@ -225,11 +225,11 @@ export default function FebruaryRefundTrackingPage() {
                   누락 공제 정정 가능</strong>. 누락된 의료비·월세·인적공제 등 추가하면 환급 추가.
                 </p>
                 <div className="rounded-lg bg-primary-500/5 border-l-4 border-l-primary-500 p-4">
-                  <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">📝 5월 신고 대상 (직장인 기준)</h3>
+                  <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">5월 신고 대상 (직장인 기준)</h3>
                   <ul className="text-sm text-text-secondary space-y-1">
-                    <li>✅ <strong>의무</strong>: 부업 소득 (사업소득·임대료·기타소득 300만 초과)</li>
-                    <li>💡 <strong>선택 (환급 추가 목적)</strong>: 연말정산 누락 공제 정정</li>
-                    <li>💡 <strong>선택 (5년 이내)</strong>: 경정청구로 과거 연도 정정</li>
+                    <li>가능<strong>의무</strong>: 부업 소득 (사업소득·임대료·기타소득 300만 초과)</li>
+                    <li><strong>선택 (환급 추가 목적)</strong>: 연말정산 누락 공제 정정</li>
+                    <li><strong>선택 (5년 이내)</strong>: 경정청구로 과거 연도 정정</li>
                   </ul>
                 </div>
                 <p className="text-sm text-text-secondary">
@@ -245,15 +245,15 @@ export default function FebruaryRefundTrackingPage() {
                 <h2 className="text-2xl font-bold">5. 2~4월 5월 종소세 사전 준비 체크리스트</h2>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <ul className="space-y-2 text-text-secondary">
-                    <li>☐ 부업 소득 자료 정리 (3.3% 원천징수영수증 모음)</li>
-                    <li>☐ 사업 경비 영수증 정리 (단순경비율 X 시)</li>
-                    <li>☐ 노란우산공제 가입·추가 납입 (한도 500만)</li>
-                    <li>☐ 연금저축·IRP 추가 납입 (한도 700만, 13.2~16.5% 세액공제)</li>
-                    <li>☐ 기부금 영수증 모음 (정치자금·법정·지정·종교)</li>
-                    <li>☐ 의료비·교육비 누락 영수증 점검</li>
-                    <li>☐ 월세 송금영수증 + 임대차계약서 (무주택·7천 이하)</li>
-                    <li>☐ 안경·콘택트렌즈 영수증 (의료비 추가)</li>
-                    <li>☐ 임대 소득 (전세보증금 환산보증금 + 월세) 정리</li>
+                    <li>□ 부업 소득 자료 정리 (3.3% 원천징수영수증 모음)</li>
+                    <li>□ 사업 경비 영수증 정리 (단순경비율 X 시)</li>
+                    <li>□ 노란우산공제 가입·추가 납입 (한도 500만)</li>
+                    <li>□ 연금저축·IRP 추가 납입 (한도 700만, 13.2~16.5% 세액공제)</li>
+                    <li>□ 기부금 영수증 모음 (정치자금·법정·지정·종교)</li>
+                    <li>□ 의료비·교육비 누락 영수증 점검</li>
+                    <li>□ 월세 송금영수증 + 임대차계약서 (무주택·7천 이하)</li>
+                    <li>□ 안경·콘택트렌즈 영수증 (의료비 추가)</li>
+                    <li>□ 임대 소득 (전세보증금 환산보증금 + 월세) 정리</li>
                   </ul>
                 </div>
               </section>
@@ -261,7 +261,7 @@ export default function FebruaryRefundTrackingPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 경정청구는 5년 이내 가능 — 너무 오래된 누락은 못 받음.</li>
                   <li>• 추가 납부 결과를 5월 종소세로 줄이려면 누락 공제 명확히 입증 필요.</li>
@@ -270,7 +270,7 @@ export default function FebruaryRefundTrackingPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link></li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 완벽 가이드</Link></li>

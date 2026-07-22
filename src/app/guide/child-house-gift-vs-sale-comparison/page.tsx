@@ -225,7 +225,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </table>
               </div>
               <div className="space-y-2 rounded-lg bg-danger/5 p-4">
-                <p className="font-bold text-danger">⚠️ 중요한 논리</p>
+                <p className="font-bold text-danger">중요한 논리</p>
                 <p className="text-text-primary">
                   "30% 이상"과 "3억 이상"은 <strong>OR 관계가 아닌 AND 관계</strong>입니다. 두
                   조건을 <u>동시에 만족</u>해야만 저가양수도로 판정되어 차액이 증여세 과세 대상이
@@ -324,7 +324,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
 
               <div className="rounded-lg bg-highlight/10 p-4">
                 <p className="font-bold text-text-primary">
-                  📊 총 세금 비교 (단순화 근사치)
+                  총 세금 비교 (단순화 근사치)
                 </p>
                 <ul className="mt-2 space-y-1 text-sm text-text-primary">
                   <li>A. 시가 10억 매매: 약 9,400만</li>
@@ -386,7 +386,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
               </div>
 
               <div className="rounded-lg bg-danger/5 p-4">
-                <p className="font-bold text-danger">⚠️ 국세청 조사의 현실</p>
+                <p className="font-bold text-danger">주의: 국세청 조사의 현실</p>
                 <p className="mt-2 text-text-primary">
                   국세청이 "거래가 7억이지만 실제는 부모가 자금을 제공했다"고 판단하면, 전체 10억을
                   증여로 재과세합니다. 그러면 증여세는 약 2.25억까지 올라갑니다. 더하여 가산세(20%)와
@@ -625,7 +625,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </div>
 
                 <div className="rounded-lg bg-danger/5 p-4">
-                  <p className="font-bold text-danger">⚠️ 신고 기한 초과 시 페널티</p>
+                  <p className="font-bold text-danger">주의: 신고 기한 초과 시 페널티</p>
                   <ul className="mt-2 space-y-1 text-sm text-text-primary">
                     <li>• 무신고가산세: 40% (신고 없이 적발)</li>
                     <li>• 과소신고가산세: 10% (신고했으나 부족)</li>

@@ -284,7 +284,7 @@ export default function InheritanceTax10YearGuide() {
 
               {/* 8. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>증여 후 관계 단절(사실상 증여로 보기 어려운 경우) 국세청 추적 가능.</li>
                   <li>배우자 증여 공제 6억은 10년 누적 — 매년 6억 X.</li>

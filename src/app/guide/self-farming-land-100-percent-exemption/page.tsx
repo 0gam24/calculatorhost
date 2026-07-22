@@ -247,8 +247,8 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                       </tr>
                       <tr>
                         <td className="py-2 pr-4 font-semibold">감면 여부</td>
-                        <td className="py-2 pr-4 text-primary-600">✅ 가능</td>
-                        <td className="py-2 text-danger-500">❌ 불가</td>
+                        <td className="py-2 pr-4 text-primary-600">가능</td>
+                        <td className="py-2 text-danger-500">불가</td>
                       </tr>
                     </tbody>
                   </table>
@@ -331,9 +331,9 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   </p>
                   <ul className="list-inside list-disc space-y-1 text-sm text-text-secondary">
                     <li>농지 취득가 2억 / 양도가 2.5억 / 경비 500만 = 양도차익 5,000만 원</li>
-                    <li>자경 요건: 8년 이상 직접 경작 ✅</li>
-                    <li>거주 요건: 농지로부터 20km 이내 거주 ✅</li>
-                    <li>한도: 연 1억 미충족 (5,000만 원 &lt; 1억) ✅</li>
+                    <li>자경 요건: 8년 이상 직접 경작</li>
+                    <li>거주 요건: 농지로부터 20km 이내 거주</li>
+                    <li>한도: 연 1억 미충족 (5,000만 원 &lt; 1억)</li>
                     <li className="font-semibold text-primary-600">감면액 = 5,000만 원 (100% 감면)</li>
                     <li className="font-semibold text-text-primary">양도세 = 0원</li>
                   </ul>
@@ -345,8 +345,8 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   </p>
                   <ul className="list-inside list-disc space-y-1 text-sm text-text-secondary">
                     <li>농지 취득가 3억 / 양도가 6억 / 경비 1,000만 = 양도차익 2.9억</li>
-                    <li>자경 요건: 8년 이상 직접 경작 ✅</li>
-                    <li>거주 요건: 농지 인접 시·군·구 거주 ✅</li>
+                    <li>자경 요건: 8년 이상 직접 경작</li>
+                    <li>거주 요건: 농지 인접 시·군·구 거주</li>
                     <li>감면 대상: 1억 원 (조특법 §133 연 한도)</li>
                     <li>일반 양도세 대상: 1.9억 원 (초과분 — 자경농지는 사업용 토지 분류로 비사업용 중과 X)</li>
                     <li>과세표준 = 1.9억 − 250만(기본공제) = 1.875억 → 누진세율 38%(1.5~3억 구간) − 누진공제 1,994만</li>
@@ -362,8 +362,8 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   </p>
                   <ul className="list-inside list-disc space-y-1 text-sm text-text-secondary">
                     <li>농지 취득가 2억 / 양도가 2.5억 / 경비 500만 = 양도차익 5,000만 원</li>
-                    <li>자경 요건: 위탁경영 (위탁료 지급 기록) ❌</li>
-                    <li>거주 요건: 농지로부터 15km 이내 거주 ✅</li>
+                    <li>자경 요건: 위탁경영 (위탁료 지급 기록)</li>
+                    <li>거주 요건: 농지로부터 15km 이내 거주</li>
                     <li className="font-semibold text-danger-500">감면 불가 (자경 요건 미충족)</li>
                     <li className="font-semibold text-text-primary">
                       양도세: 약 2,000만 원 (일반 비사업용 토지 누진세 적용)
@@ -377,7 +377,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
 
               {/* 8. 함정 5가지 */}
               <section aria-label="함정 5가지" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 자경농지 양도세 감면 함정 5가지</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 자경농지 양도세 감면 함정 5가지</h2>
                 <div className="space-y-3 text-text-secondary">
                   <div>
                     <p className="mb-1">

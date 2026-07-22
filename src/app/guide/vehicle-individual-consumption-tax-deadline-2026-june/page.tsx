@@ -164,13 +164,13 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>
                 <div className="space-y-2 text-sm" data-speakable>
                   <p className="font-bold text-danger-700 dark:text-danger-300">
-                    ⚠️ 6월 30일 23:59(마감) 이전 출고 필수 — 계약일이 아닌 출고일이 기준
+                    주의: 6월 30일 23:59(마감) 이전 출고 필수 — 계약일이 아닌 출고일이 기준
                   </p>
                   <ul className="space-y-1.5 text-text-secondary">
-                    <li>📅 <strong>6월 30일 이전 출고</strong>: 개별소비세 3.5% 적용 (최대 143만원 절감)</li>
-                    <li>📅 <strong>7월 1일 이후 출고</strong>: 개별소비세 정상세율 5% 적용 (절감 없음)</li>
-                    <li>💰 <strong>절감액 143만원</strong>: 개소세 100만원 + 교육세 30만원 + 부가세 13만원 (최대값)</li>
-                    <li>🔧 <strong>필수 확인사항</strong>: 딜러에게 6월 내 출고 가능 여부를 꼭 문의하고 서면 확인 필요</li>
+                    <li><strong>6월 30일 이전 출고</strong>: 개별소비세 3.5% 적용 (최대 143만원 절감)</li>
+                    <li><strong>7월 1일 이후 출고</strong>: 개별소비세 정상세율 5% 적용 (절감 없음)</li>
+                    <li><strong>절감액 143만원</strong>: 개소세 100만원 + 교육세 30만원 + 부가세 13만원 (최대값)</li>
+                    <li><strong>필수 확인사항</strong>: 딜러에게 6월 내 출고 가능 여부를 꼭 문의하고 서면 확인 필요</li>
                   </ul>
                 </div>
               </section>
@@ -186,7 +186,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 </p>
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">
-                    📌 정책 마감: 2026년 6월 30일 23:59:59
+                    정책 마감: 2026년 6월 30일 23:59:59
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     이 날짜 이후 출고된 차량부터는 일반 5% 세율이 적용됩니다.
@@ -237,7 +237,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   </table>
                 </div>
                 <p className="text-sm text-danger-700 dark:text-danger-300 bg-danger-500/5 p-3 rounded-lg mt-3">
-                  <strong>⚠️ 참고</strong>: 위 금액은 최대값입니다. 실제 절감액은 구매 차량의 가격에 따라 달라질 수 있으므로, 딜러 견적에서 정확한 숫자를 확인하세요.
+                  <strong>참고</strong>: 위 금액은 최대값입니다. 실제 절감액은 구매 차량의 가격에 따라 달라질 수 있으므로, 딜러 견적에서 정확한 숫자를 확인하세요.
                 </p>
               </section>
 
@@ -249,7 +249,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 </p>
                 <div className="space-y-3 mt-4">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">❌ 착각하기 쉬운 경우</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">착각하기 쉬운 경우</h3>
                     <ul className="space-y-1.5 text-sm text-text-secondary">
                       <li>• 5월에 계약, 7월에 출고 → 출고일이 7월 1일 이후면 <strong>5% 정상세율 적용</strong></li>
                       <li>• 6월에 계약, 6월에 출고 → 6월 30일 이전 출고면 <strong>3.5% 인하 적용</strong></li>
@@ -257,7 +257,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">✅ 올바른 판단</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">올바른 판단</h3>
                     <p className="text-sm text-text-secondary">
                       개별소비세 인하 혜택 = 차량이 제조 완료되어 공장에서 출고되는 시점이 6월 30일 이전이어야 함.
                       계약서에 기재되는 "인수인도예정일"과도 다를 수 있으므로, 딜러에게 <strong>"실제 출고 가능 날짜"</strong>를 직접 문의해야 합니다.

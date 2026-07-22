@@ -52,7 +52,6 @@ export const metadata: Metadata = {
 
 interface MonthEntry {
   month: number;
-  emoji: string;
   events: Array<{
     date: string;
     title: string;
@@ -66,7 +65,6 @@ interface MonthEntry {
 const CALENDAR: MonthEntry[] = [
   {
     month: 1,
-    emoji: '❄️',
     events: [
       {
         date: '1월 15일',
@@ -95,7 +93,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 2,
-    emoji: '💝',
     events: [
       {
         date: '2월 급여일',
@@ -108,7 +105,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 3,
-    emoji: '🌱',
     events: [
       {
         date: '3월 31일',
@@ -121,7 +117,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 4,
-    emoji: '🌸',
     events: [
       {
         date: '4월 1~25일',
@@ -143,7 +138,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 5,
-    emoji: '🌷',
     events: [
       {
         date: '5월 1~31일',
@@ -164,7 +158,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 6,
-    emoji: '🌿',
     events: [
       {
         date: '6월 1일',
@@ -184,7 +177,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 7,
-    emoji: '☀️',
     events: [
       {
         date: '7월 1~25일',
@@ -211,7 +203,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 8,
-    emoji: '🌻',
     events: [
       {
         date: '8월 1~31일',
@@ -229,7 +220,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 9,
-    emoji: '🍂',
     events: [
       {
         date: '9월 16~30일',
@@ -243,7 +233,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 10,
-    emoji: '🍁',
     events: [
       {
         date: '10월 1~25일',
@@ -256,7 +245,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 11,
-    emoji: '🍃',
     events: [
       {
         date: '11월 30일',
@@ -268,7 +256,6 @@ const CALENDAR: MonthEntry[] = [
   },
   {
     month: 12,
-    emoji: '🎄',
     events: [
       {
         date: '12월 1~15일',
@@ -286,7 +273,7 @@ const CALENDAR: MonthEntry[] = [
       },
       {
         date: '12월 31일',
-        title: '⚠️ 연말 절세 마감 — 연금저축·IRP·기부금',
+        title: '연말 절세 마감 — 연금저축·IRP·기부금',
         description: '연금저축 600만 + IRP 100만 = 700만 한도, 13.2~16.5% 세액공제.',
         target: '직장인·사업자',
         guideHref: '/guide/year-end-tax-settlement/',
@@ -399,17 +386,17 @@ export default function TaxCalendar2026Page() {
                     href={`#m${m.month}`}
                     className="rounded-chip border border-border-base bg-bg-card px-3 py-1.5 text-sm font-medium hover:border-primary-500 hover:text-primary-500"
                   >
-                    {m.emoji} {m.month}월
+                    {m.month}월
                   </a>
                 ))}
               </nav>
 
               {/* 페르소나별 핵심 일정 요약 */}
               <section className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-3 text-xl font-bold">👤 본인 유형별 핵심 일정</h2>
+                <h2 className="mb-3 text-xl font-bold">본인 유형별 핵심 일정</h2>
                 <div className="grid gap-3 md:grid-cols-2 text-sm">
                   <div className="rounded-lg bg-bg-raised p-3">
-                    <strong className="text-text-primary block mb-1">💼 직장인</strong>
+                    <strong className="text-text-primary block mb-1">직장인</strong>
                     <ul className="text-text-secondary space-y-0.5">
                       <li>• 1월 15일~2월: 연말정산</li>
                       <li>• 5월: (누락 공제) 종소세 신고</li>
@@ -417,14 +404,14 @@ export default function TaxCalendar2026Page() {
                     </ul>
                   </div>
                   <div className="rounded-lg bg-bg-raised p-3">
-                    <strong className="text-text-primary block mb-1">💻 프리랜서·N잡러</strong>
+                    <strong className="text-text-primary block mb-1">프리랜서·N잡러</strong>
                     <ul className="text-text-secondary space-y-0.5">
                       <li>• 5월 1~31일: 종합소득세 신고</li>
                       <li>• 11월 30일: 중간예납</li>
                     </ul>
                   </div>
                   <div className="rounded-lg bg-bg-raised p-3">
-                    <strong className="text-text-primary block mb-1">🏪 사업자 (일반과세)</strong>
+                    <strong className="text-text-primary block mb-1">사업자 (일반과세)</strong>
                     <ul className="text-text-secondary space-y-0.5">
                       <li>• 4·10월: 부가세 예정신고</li>
                       <li>• 7월·1월: 부가세 확정신고</li>
@@ -432,7 +419,7 @@ export default function TaxCalendar2026Page() {
                     </ul>
                   </div>
                   <div className="rounded-lg bg-bg-raised p-3">
-                    <strong className="text-text-primary block mb-1">🏠 부동산 보유자</strong>
+                    <strong className="text-text-primary block mb-1">부동산 보유자</strong>
                     <ul className="text-text-secondary space-y-0.5">
                       <li>• 6월 1일: 과세 기준일</li>
                       <li>• 7월·9월: 재산세 1·2차</li>
@@ -440,14 +427,14 @@ export default function TaxCalendar2026Page() {
                     </ul>
                   </div>
                   <div className="rounded-lg bg-bg-raised p-3">
-                    <strong className="text-text-primary block mb-1">🚗 자동차 보유자</strong>
+                    <strong className="text-text-primary block mb-1">자동차 보유자</strong>
                     <ul className="text-text-secondary space-y-0.5">
                       <li>• 1월 16~31일: 연납 (5% 할인)</li>
                       <li>• 6월·12월: 정기분 (연납 X 시)</li>
                     </ul>
                   </div>
                   <div className="rounded-lg bg-bg-raised p-3">
-                    <strong className="text-text-primary block mb-1">🏢 법인 사업자</strong>
+                    <strong className="text-text-primary block mb-1">법인 사업자</strong>
                     <ul className="text-text-secondary space-y-0.5">
                       <li>• 1월 25일: 부가세 2기 확정</li>
                       <li>• 3월 31일: 법인세 (12월 결산)</li>
@@ -462,7 +449,7 @@ export default function TaxCalendar2026Page() {
                 <section key={m.month} id={`m${m.month}`} aria-label={`${m.month}월 일정`} className="space-y-3">
                   <header className="flex items-baseline justify-between border-b border-border-base pb-2">
                     <h2 className="text-2xl font-bold">
-                      <span aria-hidden>{m.emoji}</span> {m.month}월{' '}
+                      {m.month}월{' '}
                       <span className="text-base text-text-tertiary font-normal">
                         ({m.events.length}건)
                       </span>
@@ -488,7 +475,7 @@ export default function TaxCalendar2026Page() {
                               href={e.guideHref}
                               className="rounded-chip border border-primary-500/30 bg-primary-500/10 px-3 py-1 text-primary-700 dark:text-primary-300 hover:bg-primary-500/20"
                             >
-                              📖 가이드
+                              가이드
                             </Link>
                           )}
                           {e.calculatorHref && (
@@ -496,7 +483,7 @@ export default function TaxCalendar2026Page() {
                               href={e.calculatorHref}
                               className="rounded-chip border border-border-base bg-bg-card px-3 py-1 hover:border-primary-500 hover:text-primary-500"
                             >
-                              🧮 계산기
+                              계산기
                             </Link>
                           )}
                         </div>
@@ -509,7 +496,7 @@ export default function TaxCalendar2026Page() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 캘린더는 일반 일정 — 정책 변경 시 변동 가능 (홈택스·위택스 공지 확인).</li>
                   <li>• 무신고·미납 시 가산세 부과 — 기한 절대 엄수.</li>

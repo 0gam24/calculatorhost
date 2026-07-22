@@ -220,7 +220,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   기초공제는 상속재산이 클수록 상대적으로 의미가 작아집니다. 예를 들어 상속재산이 100억이면 2억은 2% 정도의 공제효과이지만, 상속재산이 5억이면 40% 정도의 공제효과가 됩니다.
                 </p>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 다만:</strong> 기초공제는 대부분 일괄공제(5억) 선택에 의해 실무적으로 생략됩니다. 즉, 기초공제 2억 vs 기타공제 합산액이 5억을 넘으면 5억이 공제되기 때문입니다.
+                  <strong>다만:</strong> 기초공제는 대부분 일괄공제(5억) 선택에 의해 실무적으로 생략됩니다. 즉, 기초공제 2억 vs 기타공제 합산액이 5억을 넘으면 5억이 공제되기 때문입니다.
                 </p>
               </section>
 
@@ -250,7 +250,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   </p>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 복잡한 부분:</strong> 배우자공제는 배우자의 법정상속분, 실제 상속액, 다른 상속인(자녀)의 구성에 따라 달라집니다. 정확한 계산은 세무사와 협의하세요.
+                  <strong>주의: 복잡한 부분:</strong> 배우자공제는 배우자의 법정상속분, 실제 상속액, 다른 상속인(자녀)의 구성에 따라 달라집니다. 정확한 계산은 세무사와 협의하세요.
                 </p>
               </section>
 
@@ -302,7 +302,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 이들 공제는 <strong>일괄공제 5억과 비교하여 큰 것을 선택</strong>하므로, 대부분 일괄공제가 선택됩니다. 자녀가 많거나 미성년자가 여럿이어야 일괄공제를 초과합니다.
+                  <strong>주의:</strong> 이들 공제는 <strong>일괄공제 5억과 비교하여 큰 것을 선택</strong>하므로, 대부분 일괄공제가 선택됩니다. 자녀가 많거나 미성년자가 여럿이어야 일괄공제를 초과합니다.
                 </p>
               </section>
 
@@ -369,7 +369,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   금융재산상속공제는 다른 상속공제와 <strong>중복 적용</strong>됩니다. 즉, 일괄공제 5억과 금융재산상속공제 1억을 함께 받을 수 있습니다.
                 </p>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 다만:</strong> 금융재산이 2,000만원 이하면 전액 공제되므로, 정기예금이나 단기 금융상품이 많으면 활용해볼 가치가 있습니다.
+                  <strong>다만:</strong> 금융재산이 2,000만원 이하면 전액 공제되므로, 정기예금이나 단기 금융상품이 많으면 활용해볼 가치가 있습니다.
                 </p>
               </section>
 
@@ -464,7 +464,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 동거주택·가업상속공제는 정책 변경이 빈번합니다. 해당되면 반드시 최신 세무사 상담을 받으세요.
+                  <strong>주의:</strong> 동거주택·가업상속공제는 정책 변경이 빈번합니다. 해당되면 반드시 최신 세무사 상담을 받으세요.
                 </p>
               </section>
 

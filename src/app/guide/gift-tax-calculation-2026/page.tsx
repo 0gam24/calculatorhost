@@ -198,7 +198,7 @@ export default function GiftTaxCalculation2026Page() {
                   </p>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 다만:</strong> 증여세와 상속세는 같은 세율표를 사용하지만, 적용되는 공제의 종류와 금액이 다르므로 과세표준 계산 단계부터 차이가 발생합니다.
+                  <strong>다만:</strong> 증여세와 상속세는 같은 세율표를 사용하지만, 적용되는 공제의 종류와 금액이 다르므로 과세표준 계산 단계부터 차이가 발생합니다.
                 </p>
               </section>
 
@@ -219,7 +219,7 @@ export default function GiftTaxCalculation2026Page() {
                   </ul>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 부동산은 감정평가를 받거나 공시가격을 기준으로 하되, 실제 거래 근거가 있으면 다시 조정될 수 있습니다. 국세청의 공정시장가액 평가가 최종 기준입니다.
+                  <strong>주의:</strong> 부동산은 감정평가를 받거나 공시가격을 기준으로 하되, 실제 거래 근거가 있으면 다시 조정될 수 있습니다. 국세청의 공정시장가액 평가가 최종 기준입니다.
                 </p>
               </section>
 
@@ -274,7 +274,7 @@ export default function GiftTaxCalculation2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 주의:</strong> 공제는 관계별로 따로 계산합니다. 배우자 6억, 자녀 5,000만은 별개이므로, 부부가 함께 증여받는 경우 각각 자신의 공제를 받을 수 있습니다.
+                  <strong>주의:</strong> 공제는 관계별로 따로 계산합니다. 배우자 6억, 자녀 5,000만은 별개이므로, 부부가 함께 증여받는 경우 각각 자신의 공제를 받을 수 있습니다.
                 </p>
               </section>
 
@@ -391,7 +391,7 @@ export default function GiftTaxCalculation2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>⚠️ 중요:</strong> 신고 기한은 증여일이 속한 달의 말일부터 3개월입니다. 기한 내 신고하지 않으면 신고세액공제를 받을 수 없고, 무신고·납부지연 가산세가 부과될 수 있습니다.
+                  <strong>중요:</strong> 신고 기한은 증여일이 속한 달의 말일부터 3개월입니다. 기한 내 신고하지 않으면 신고세액공제를 받을 수 없고, 무신고·납부지연 가산세가 부과될 수 있습니다.
                 </p>
               </section>
 

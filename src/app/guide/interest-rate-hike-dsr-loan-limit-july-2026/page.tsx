@@ -196,7 +196,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                   </table>
                 </div>
                 <div className="mt-4 rounded-lg border border-border-base bg-primary-500/5 p-3 text-sm text-text-secondary">
-                  <strong>💡 요점:</strong> 현재 빌린 돈의 금리가 오르는 것(기존 부채)과 새로 빌릴 수 있는 한도가 줄어드는 것(신규 심사)은 다른 문제입니다. 이 가이드는 후자를 중점 설명합니다.
+                  <strong>요점:</strong> 현재 빌린 돈의 금리가 오르는 것(기존 부채)과 새로 빌릴 수 있는 한도가 줄어드는 것(신규 심사)은 다른 문제입니다. 이 가이드는 후자를 중점 설명합니다.
                 </div>
               </section>
 
@@ -240,7 +240,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 주의:</strong> 이 글은 "만약 7월에 기준금리가 인상된다면"이라는 가정 하에 작성됐습니다.
+                    <strong>주의:</strong> 이 글은 "만약 7월에 기준금리가 인상된다면"이라는 가정 하에 작성됐습니다.
                     실제 금통위 결정 여부는 경제 상황, 인플레이션, 환율 등에 따라 결정되므로, 인상이 확정되지 않았습니다.
                   </p>
                 </div>
@@ -280,7 +280,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 팁:</strong> 가산금리는 신용도, 담보 종류, 지역, 대출 상품에 따라 다릅니다.
+                    <strong>팁:</strong> 가산금리는 신용도, 담보 종류, 지역, 대출 상품에 따라 다릅니다.
                     신용점수가 높을수록 가산금리가 낮고, 저신용자는 높을 수 있습니다.
                   </p>
                 </div>
@@ -322,7 +322,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 다만:</strong> 위 계산은 "새 대출의 금리"를 가정한 것입니다.
+                    <strong>다만:</strong> 위 계산은 "새 대출의 금리"를 가정한 것입니다.
                     은행은 신규 대출 심사 시 "스트레스금리"(현재보다 높은 미래 금리)를 기준으로 하므로,
                     실제 한도는 더 보수적으로 책정됩니다.
                   </p>
@@ -374,7 +374,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 요점:</strong> 스트레스금리는 은행별·상품별로 다르므로, 정확한 신규 대출 한도는 직접 은행에 문의해야 합니다.
+                    <strong>요점:</strong> 스트레스금리는 은행별·상품별로 다르므로, 정확한 신규 대출 한도는 직접 은행에 문의해야 합니다.
                   </p>
                 </div>
               </section>
@@ -435,7 +435,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 중요:</strong> 이 수치는 가정에 기반한 개략 추정입니다.
+                    <strong>중요:</strong> 이 수치는 가정에 기반한 개략 추정입니다.
                     실제 한도는 은행별 신용도 심사, LTV 규제, 추가 가산금리 인상, 기타 부채 여부에 따라 크게 달라질 수 있습니다.
                     정확한 한도는 우리 사이트의 <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">대출한도 계산기</Link>를 이용하거나 은행에 직접 문의하세요.
                   </p>
@@ -479,7 +479,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 의미:</strong> 무주택자 전세대출은 기준금리 인상 후에도 직접적인 한도 감소가 적습니다.
+                    <strong>의미:</strong> 무주택자 전세대출은 기준금리 인상 후에도 직접적인 한도 감소가 적습니다.
                     다만 은행이 가산금리를 올리면 실제 금리 부담은 증가합니다.
                   </p>
                 </div>
@@ -510,7 +510,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>⚠️ 다만:</strong> 일부 은행은 고정금리 기간 종료 후 변동금리로 전환하거나,
+                    <strong>다만:</strong> 일부 은행은 고정금리 기간 종료 후 변동금리로 전환하거나,
                     고정·변동 전환 옵션을 제공합니다. 계약서에 명시된 조건을 확인하세요.
                   </p>
                 </div>

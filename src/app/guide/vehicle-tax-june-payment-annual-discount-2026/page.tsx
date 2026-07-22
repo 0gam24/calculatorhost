@@ -165,13 +165,13 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                 <div className="space-y-3 text-sm" data-speakable>
                   <div className="bg-primary-500/5 p-3 rounded-lg border border-primary-500/20">
                     <p className="font-bold text-primary-700 dark:text-primary-400 mb-2">
-                      📅 2026년 자동차세 제1기 납부 기한: 6월 16일 ~ 30일
+                      2026년 자동차세 제1기 납부 기한: 6월 16일 ~ 30일
                     </p>
                     <ul className="space-y-1.5 text-text-secondary">
-                      <li>💰 <strong>1600cc 비영업용 승용차</strong>: 기본 224,000원 + 지방교육세(30%) = 약 291,200원</li>
-                      <li>📉 <strong>차령경감</strong>: 3년차부터 연 5%씩 (최대 50%)</li>
-                      <li>🎁 <strong>연납할인(1월 선납)</strong>: 공제율만큼 추가 절감</li>
-                      <li>⚠️ <strong>미납 불이익</strong>: 가산세 + 행정 제제 (신규 등록 불가 등)</li>
+                      <li><strong>1600cc 비영업용 승용차</strong>: 기본 224,000원 + 지방교육세(30%) = 약 291,200원</li>
+                      <li><strong>차령경감</strong>: 3년차부터 연 5%씩 (최대 50%)</li>
+                      <li><strong>연납할인(1월 선납)</strong>: 공제율만큼 추가 절감</li>
+                      <li>주의: <strong>미납 불이익</strong>: 가산세 + 행정 제제 (신규 등록 불가 등)</li>
                     </ul>
                   </div>
                 </div>
@@ -406,7 +406,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 중요:</strong> 1월을 놓친 경우 6월·12월 정기 납부 시에는 할인이 적용되지 않습니다.
+                    <strong>중요:</strong> 1월을 놓친 경우 6월·12월 정기 납부 시에는 할인이 적용되지 않습니다.
                     다만 위택스나 각 지자체 자동차세 관련 페이지에서 6월·12월 납부 시에도 소정의 기간 할인이 있을 수 있으니 확인하세요.
                   </p>
                 </div>
@@ -435,7 +435,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                 </p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">📅 납부 기한</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">납부 기한</h3>
                     <p className="text-sm text-text-secondary font-semibold">
                       2026년 6월 16일(화) ~ 6월 30일(화)
                     </p>
@@ -444,7 +444,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">💳 납부 방법</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">납부 방법</h3>
                     <ul className="space-y-1.5 text-sm text-text-secondary">
                       <li><strong>1. 온라인 (위택스):</strong> wetax.go.kr → 세금 조회·납부 → 신용카드/계좌이체</li>
                       <li><strong>2. 지자체 방문:</strong> 관할 시·군·구 세무서 방문 납부 (현금·신용카드 가능)</li>
@@ -515,9 +515,9 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <h3 className="font-semibold text-danger-700 dark:text-danger-300 mb-2">행정 제제</h3>
                   <ul className="space-y-1.5 text-sm text-danger-700 dark:text-danger-300">
-                    <li>📛 <strong>신규 등록·이전 등록 불가:</strong> 납기일로부터 60일 경과 후</li>
-                    <li>🚗 <strong>차량 운행 제지:</strong> 일부 지자체에서 단속 강화</li>
-                    <li>💳 <strong>신용등급 하락:</strong> 체계적 추심 및 신용 조회 시 기록 남음</li>
+                    <li><strong>신규 등록·이전 등록 불가:</strong> 납기일로부터 60일 경과 후</li>
+                    <li><strong>차량 운행 제지:</strong> 일부 지자체에서 단속 강화</li>
+                    <li><strong>신용등급 하락:</strong> 체계적 추심 및 신용 조회 시 기록 남음</li>
                   </ul>
                 </div>
               </section>

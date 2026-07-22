@@ -265,7 +265,7 @@ export default function HealthInsurancePremium2026() {
 
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 예시:</strong> 월 보수 300만원이면 건강보험료 본인 부담은 약 107,850원(300만 × 3.595%),
+                    <strong>예시:</strong> 월 보수 300만원이면 건강보험료 본인 부담은 약 107,850원(300만 × 3.595%),
                     장기요양은 그 13.14%의 절반인 약 7,000원대가 추가됩니다. 회사도 같은 금액을 함께 부담합니다.
                   </p>
                 </div>
@@ -305,7 +305,7 @@ export default function HealthInsurancePremium2026() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 주의:</strong> 재산 기준은 실거래가·공시가격이 아니라 <strong>재산세 과세표준</strong>입니다(공시가격 × 공정시장가액비율).
+                    <strong>주의:</strong> 재산 기준은 실거래가·공시가격이 아니라 <strong>재산세 과세표준</strong>입니다(공시가격 × 공정시장가액비율).
                     또 피부양자 자격은 매년 11월 정기심사에서 소득·재산을 재확인하므로, 기준을 살짝 넘으면 지역가입자로 전환되어 보험료가 새로 부과됩니다.
                   </p>
                 </div>

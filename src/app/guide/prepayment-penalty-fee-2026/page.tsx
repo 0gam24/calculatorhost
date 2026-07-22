@@ -224,7 +224,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                   한계 기준은 은행·상품·시점에 따라 다르므로, 약관 검토와 은행 상담이 필수입니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 소비자가 중도상환을 원할 때 은행이 수수료를 부과하지 않을 권리를 가진다고
+                  다만 소비자가 중도상환을 원할 때 은행이 수수료를 부과하지 않을 권리를 가진다고
                   단정할 수 없습니다. 계약서와 약관에 명시된 수수료 조건을 사전에 충분히 확인하고,
                   필요하면 은행 상담을 통해 감면 가능성을 문의하세요.
                 </p>
@@ -318,7 +318,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 사례는 모두 <strong>가정한 수수료율</strong>에 기반합니다. 실제 수수료는 은행,
+                  다만 위 사례는 모두 <strong>가정한 수수료율</strong>에 기반합니다. 실제 수수료는 은행,
                   상품, 시점, 고객 신용도 등에 따라 크게 달라질 수 있으므로, 정확한 금액은 해당
                   은행 약관이나 상담을 통해 확인하세요.
                 </p>
@@ -354,7 +354,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 업계 일반 관행이며, 모든 은행·상품이 동일하게 적용하지는
+                  다만 위는 업계 일반 관행이며, 모든 은행·상품이 동일하게 적용하지는
                   않습니다. 정확한 면제 조건은 본인의 대출 약관과 계약서에 명시되어 있으므로,
                   빠른 상환이나 갈아타기를 계획할 때는 반드시 은행에 문의하세요.
                 </p>
@@ -395,7 +395,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 개념 설명이며, 실제 절감액은 대출 상품·잔액·남은 기간·신용도에
+                  다만 위는 개념 설명이며, 실제 절감액은 대출 상품·잔액·남은 기간·신용도에
                   따라 크게 달라집니다. 정확한 비교는 대출이자 계산기에서 월 상환액을 직접
                   입력해 계산하거나, 금융기관 상담을 통해 확인하세요.
                 </p>
@@ -433,7 +433,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 일반적 팁이며, 개인의 재무 상황, 현금 흐름, 신용도에 따라 최선의
+                  다만 위는 일반적 팁이며, 개인의 재무 상황, 현금 흐름, 신용도에 따라 최선의
                   선택이 다릅니다. 중요한 재정 결정이 필요할 때는 반드시 금융기관 상담을 거치세요.
                 </p>
               </section>
@@ -444,7 +444,7 @@ export default function PrepaymentPenaltyFee2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

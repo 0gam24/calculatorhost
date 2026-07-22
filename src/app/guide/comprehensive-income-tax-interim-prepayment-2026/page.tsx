@@ -179,7 +179,7 @@ export default function ComprehensiveIncomeTaxInterimPrepayment2026Page() {
                   중요한 점은 중간예납이 세금을 더 걷는 것이 아니라는 것입니다. 11월에 미리 낸 금액은 다음 해 5월 확정신고 때 기납부세액으로 빠짐없이 차감됩니다.
                 </p>
                 <p className="mt-4">
-                  ⚠️ 다만 중간예납을 내지 않으면 확정신고 세액이 그대로 남는 데다 납부지연가산세까지 붙으므로, 결과적으로 더 많은 세금을 내게 됩니다. 미루지 말고 기한 내 처리하세요.
+                  다만 중간예납을 내지 않으면 확정신고 세액이 그대로 남는 데다 납부지연가산세까지 붙으므로, 결과적으로 더 많은 세금을 내게 됩니다. 미루지 말고 기한 내 처리하세요.
                 </p>
               </section>
 
@@ -222,7 +222,7 @@ export default function ComprehensiveIncomeTaxInterimPrepayment2026Page() {
                   </table>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 신규사업자는 직전 실적이 없어 중간예납 고지 대상이 아닙니다. 첫 사업연도에는 이듬해 5월 확정신고에서 전액을 정산하게 됩니다.
+                  다만 신규사업자는 직전 실적이 없어 중간예납 고지 대상이 아닙니다. 첫 사업연도에는 이듬해 5월 확정신고에서 전액을 정산하게 됩니다.
                 </p>
               </section>
 
@@ -288,7 +288,7 @@ export default function ComprehensiveIncomeTaxInterimPrepayment2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 추계신고는 상반기 장부와 증빙이 정리돼 있어야 정확히 산정할 수 있습니다. 근거 없이 임의로 낮춰 신고하면 이후 확정신고에서 부족분과 가산세가 발생할 수 있으니 주의하세요.
+                  다만 추계신고는 상반기 장부와 증빙이 정리돼 있어야 정확히 산정할 수 있습니다. 근거 없이 임의로 낮춰 신고하면 이후 확정신고에서 부족분과 가산세가 발생할 수 있으니 주의하세요.
                 </p>
               </section>
 

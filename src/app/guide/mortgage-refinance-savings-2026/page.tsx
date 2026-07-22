@@ -251,7 +251,7 @@ export default function MortgageRefinanceSavings2026Page() {
                   절감할 이자가 중도상환수수료보다 크면 갈아타기가 이득입니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 갈아타기는 새로운 대출 신청이므로 금융기관의 심사를 다시 받아야 하며, DSR·LTV
+                  다만 갈아타기는 새로운 대출 신청이므로 금융기관의 심사를 다시 받아야 하며, DSR·LTV
                   규제에 따라 한도가 줄어들 수 있습니다.
                 </p>
               </section>
@@ -282,7 +282,7 @@ export default function MortgageRefinanceSavings2026Page() {
                   기간, 정확한 금리, 상환 방식 등을 모두 고려해야 하므로 은행이나 대출 계산기를 활용하세요.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 대출을 받은 지 오래될수록(상환이 진행될수록) 남은 원금이 줄어들므로 절감액도
+                  다만 대출을 받은 지 오래될수록(상환이 진행될수록) 남은 원금이 줄어들므로 절감액도
                   줄어듭니다. 예를 들어 20년 약정 중 10년이 지났다면, 절감 기간은 약 10년 남습니다.
                 </p>
               </section>
@@ -316,7 +316,7 @@ export default function MortgageRefinanceSavings2026Page() {
                   꼼꼼히 확인하거나 은행에 문의하세요.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 최근에는 중도상환수수료가 없거나 매우 낮은 상품도 있으니, 갈아타기 전 현재 대출의
+                  다만 최근에는 중도상환수수료가 없거나 매우 낮은 상품도 있으니, 갈아타기 전 현재 대출의
                   약정 내용을 반드시 확인하세요.
                 </p>
               </section>
@@ -356,7 +356,7 @@ export default function MortgageRefinanceSavings2026Page() {
                   요청하세요.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 은행과 지역, 등기 전문가에 따라 비용이 크게 다르므로, 여러 기관에 견적을 받아
+                  다만 은행과 지역, 등기 전문가에 따라 비용이 크게 다르므로, 여러 기관에 견적을 받아
                   비교하는 것이 좋습니다.
                 </p>
               </section>
@@ -389,7 +389,7 @@ export default function MortgageRefinanceSavings2026Page() {
                   연 240만 원씩 절감할 수 있으므로 총 약 2,160만 원의 순이익이 생깁니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 금리 변동이 없다고 가정한 것입니다. 변동금리 대출이라면 금리 변동에 따라
+                  다만 위 계산은 금리 변동이 없다고 가정한 것입니다. 변동금리 대출이라면 금리 변동에 따라
                   결과가 달라질 수 있습니다.
                 </p>
               </section>
@@ -451,7 +451,7 @@ export default function MortgageRefinanceSavings2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 이 계산은 단순화한 예시입니다. 실제로는 상환액이 매달 줄어들고, 변동금리 대출일 경우
+                  다만 이 계산은 단순화한 예시입니다. 실제로는 상환액이 매달 줄어들고, 변동금리 대출일 경우
                   금리가 변할 수 있으며, 중도상환수수료와 체감 방식도 상품마다 다릅니다. 정확한 계산은 대출
                   계산기나 은행 상담을 통해 확인하세요.
                 </p>
@@ -501,7 +501,7 @@ export default function MortgageRefinanceSavings2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 갈아타기가 항상 이득인 것은 아닙니다. 금리 차이가 작거나 남은 기간이 짧다면 비용 때문에
+                  다만 갈아타기가 항상 이득인 것은 아닙니다. 금리 차이가 작거나 남은 기간이 짧다면 비용 때문에
                   손해볼 수 있습니다. 정확한 계산 후 신청하세요.
                 </p>
               </section>
@@ -515,7 +515,7 @@ export default function MortgageRefinanceSavings2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

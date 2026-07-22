@@ -246,7 +246,7 @@ export default function VehicleAcquisitionTax2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 과세표준은 신차와 중고차가 다릅니다. 신차는 취득가격(매매계약서상 금액)을
+                  다만 과세표준은 신차와 중고차가 다릅니다. 신차는 취득가격(매매계약서상 금액)을
                   기준으로 하고, 중고차는 국세청 시가표준액 또는 감정가를 기준으로 합니다. 같은 모델
                   차량이라도 연식·주행거리·상태에 따라 과세표준이 크게 달라질 수 있습니다.
                 </p>
@@ -317,7 +317,7 @@ export default function VehicleAcquisitionTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 승합차, 화물차, 특수 용도 차량(장애인용 개조차 등)은 세율이 상이하므로,
+                  다만 승합차, 화물차, 특수 용도 차량(장애인용 개조차 등)은 세율이 상이하므로,
                   정확한 세율은 구매 전에 위택스(wetax.go.kr)나 관할 지방청에서 반드시 확인하세요.
                 </p>
               </section>
@@ -368,7 +368,7 @@ export default function VehicleAcquisitionTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 중고차 구매 시 예상 취득세를 정확히 알기 위해서는 딜러나 관할 지방청에서
+                  다만 중고차 구매 시 예상 취득세를 정확히 알기 위해서는 딜러나 관할 지방청에서
                   해당 차량의 시가표준액을 사전에 문의해야 합니다. 시가표준액은 차량 연식, 주행거리,
                   상태, 시장 동향 등 여러 요소에 따라 달라질 수 있습니다.
                 </p>
@@ -440,7 +440,7 @@ export default function VehicleAcquisitionTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 기본 취득세 계산이며, 농어촌특별세, 감면 혜택 등 추가 요소가 있을 수 있습니다.
+                  다만 위는 기본 취득세 계산이며, 농어촌특별세, 감면 혜택 등 추가 요소가 있을 수 있습니다.
                   정확한 취득세는 구매 예정 차량의 세부 사항을 들고 관할 지방청이나 위택스에서 확인해야 합니다.
                 </p>
               </section>
@@ -480,7 +480,7 @@ export default function VehicleAcquisitionTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 친환경차 감면은 지방세특례제한법에 규정되어 있으나, 구체적인 조문 번호, 한도 금액,
+                  다만 친환경차 감면은 지방세특례제한법에 규정되어 있으나, 구체적인 조문 번호, 한도 금액,
                   적용 요건은 정부 정책에 따라 자주 변동됩니다. 친환경차 구매를 고려 중이라면, 구매 전에 반드시
                   위택스나 관할 시·군·구청에서 최신 감면 정책을 확인하세요.
                 </p>
@@ -554,7 +554,7 @@ export default function VehicleAcquisitionTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 부동산 취득세는 자동차 취득세와 별개이며, 부동산 거래 시에만 적용됩니다. 자동차와
+                  다만 부동산 취득세는 자동차 취득세와 별개이며, 부동산 거래 시에만 적용됩니다. 자동차와
                   부동산을 혼동하지 않도록 주의하세요.
                 </p>
               </section>
@@ -565,7 +565,7 @@ export default function VehicleAcquisitionTax2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

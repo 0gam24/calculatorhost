@@ -177,12 +177,12 @@ export default function MarchCorporateTaxPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>마감</strong>: 12월 결산 법인 3월 31일 / 연결법인 4월 30일</li>
-                  <li>📊 <strong>세율 4단계</strong>: 9% (2억 이하) / 19% / 21% / 24% (3000억 초과)</li>
-                  <li>➕ <strong>지방소득세</strong>: 법인세 × 10% (별도 신고)</li>
-                  <li>💰 <strong>분납</strong>: 1천만 초과 시 가능 (1개월, 중소 2개월)</li>
-                  <li>📝 <strong>전자신고</strong>: 홈택스 의무 + 외부조정 (세무사 검토)</li>
-                  <li>⚠️ <strong>가산세</strong>: 무신고 20%, 부정 40%, 납부지연 일 0.022%</li>
+                  <li><strong>마감</strong>: 12월 결산 법인 3월 31일 / 연결법인 4월 30일</li>
+                  <li><strong>세율 4단계</strong>: 9% (2억 이하) / 19% / 21% / 24% (3000억 초과)</li>
+                  <li><strong>지방소득세</strong>: 법인세 × 10% (별도 신고)</li>
+                  <li><strong>분납</strong>: 1천만 초과 시 가능 (1개월, 중소 2개월)</li>
+                  <li><strong>전자신고</strong>: 홈택스 의무 + 외부조정 (세무사 검토)</li>
+                  <li>주의: <strong>가산세</strong>: 무신고 20%, 부정 40%, 납부지연 일 0.022%</li>
                 </ul>
               </section>
 
@@ -223,7 +223,7 @@ export default function MarchCorporateTaxPage() {
                   </table>
                 </div>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary">📌 시뮬레이션</strong>
+                  <strong className="text-text-primary">시뮬레이션</strong>
                   <ul className="mt-2 text-text-secondary space-y-1">
                     <li>과표 1억 → 1억 × 9% = <strong>900만</strong> + 지방소득세 90만 = 990만</li>
                     <li>과표 5억 → 5억 × 19% − 2,000만 = <strong>7,500만</strong> + 지방소득세 750만 = 8,250만</li>
@@ -308,7 +308,7 @@ export default function MarchCorporateTaxPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 외부조정 의무 법인은 세무사·회계사 검토 필수 — 본 가이드는 일반 정보만.</li>
                   <li>• 결손법인도 신고 의무. 미신고 시 결손금 이월 못 받음.</li>
@@ -318,7 +318,7 @@ export default function MarchCorporateTaxPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고</Link></li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 (개인사업자)</Link></li>

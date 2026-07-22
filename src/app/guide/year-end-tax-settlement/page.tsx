@@ -167,18 +167,18 @@ export default function YearEndTaxSettlementPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>📅 <strong>일정</strong>: 1월 15일 간소화 자료 오픈 → 1월 말~2월 초 회사 제출 → 2월 급여 반영</li>
-                  <li>💳 <strong>신용카드 공제</strong>: 총급여 25% 초과분, 일반 15%/체크 30%/전통시장 40%</li>
-                  <li>🏥 <strong>의료비</strong>: 총급여 3% 초과분 15% (난임·미숙아 30%), 본인·65세·장애인 한도 X</li>
-                  <li>💰 <strong>연금저축·IRP</strong>: 연 700만 한도, 13.2~16.5% 세액공제 (92~115만 환급)</li>
-                  <li>🏠 <strong>월세 세액공제</strong>: 무주택·총급여 7천 이하, 17% (한도 750만 → 127만 환급)</li>
-                  <li>⚠️ <strong>추가 납부</strong>: 12월 전 연금저축·기부금 추가 → 회피 가능</li>
+                  <li><strong>일정</strong>: 1월 15일 간소화 자료 오픈 → 1월 말~2월 초 회사 제출 → 2월 급여 반영</li>
+                  <li><strong>신용카드 공제</strong>: 총급여 25% 초과분, 일반 15%/체크 30%/전통시장 40%</li>
+                  <li><strong>의료비</strong>: 총급여 3% 초과분 15% (난임·미숙아 30%), 본인·65세·장애인 한도 X</li>
+                  <li><strong>연금저축·IRP</strong>: 연 700만 한도, 13.2~16.5% 세액공제 (92~115만 환급)</li>
+                  <li><strong>월세 세액공제</strong>: 무주택·총급여 7천 이하, 17% (한도 750만 → 127만 환급)</li>
+                  <li>주의: <strong>추가 납부</strong>: 12월 전 연금저축·기부금 추가 → 회피 가능</li>
                 </ul>
               </section>
 
               <section aria-label="일정표" className="card bg-danger-500/5 border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-bold text-danger-700 dark:text-danger-300">
-                  📅 연말정산 일정표 (2026년 기준)
+                  연말정산 일정표 (2026년 기준)
                 </h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
@@ -191,7 +191,7 @@ export default function YearEndTaxSettlementPage() {
                     <tbody>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2">12월 31일</td>
-                        <td className="px-3 py-2">⚠️ 마감 — 연금저축·IRP 입금, 기부금, 신용카드 사용 마감일</td>
+                        <td className="px-3 py-2">주의: 마감 — 연금저축·IRP 입금, 기부금, 신용카드 사용 마감일</td>
                       </tr>
                       <tr className="border-b border-border-subtle bg-danger-500/10">
                         <td className="px-3 py-2 font-bold">1월 15일</td>
@@ -227,7 +227,7 @@ export default function YearEndTaxSettlementPage() {
                 </p>
                 <div className="grid gap-3 md:grid-cols-2">
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">💰 환급 받는 케이스</h3>
+                    <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">환급 받는 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 부양가족·자녀 수 많음</li>
                       <li>• 의료비·교육비 큰 지출</li>
@@ -238,7 +238,7 @@ export default function YearEndTaxSettlementPage() {
                     </ul>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">💸 추가 납부 케이스</h3>
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">추가 납부 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 인센티브·상여 큰 폭 증가</li>
                       <li>• 부양가족 변동 (이혼·자녀 독립)</li>
@@ -336,11 +336,11 @@ export default function YearEndTaxSettlementPage() {
                     12월 31일 전 추가 납부 예상 시 다음 액션으로 환급으로 전환 가능:
                   </p>
                   <ul className="mt-2 space-y-1.5 text-sm text-text-secondary">
-                    <li>1️⃣ <strong>연금저축·IRP 추가 입금</strong> — 100만 추가 시 약 13~16만 환급 추가</li>
-                    <li>2️⃣ <strong>기부금 영수증 챙기기</strong> — 연말 기부 + 정치자금 10만 (110% 환급)</li>
-                    <li>3️⃣ <strong>의료비 한 번에 결제</strong> — 가족 의료비 12월 몰아서 결제 (총급여 3% 초과분 공제)</li>
-                    <li>4️⃣ <strong>전통시장·대중교통 사용</strong> — 40% 공제율로 한도 적용 효과 ↑</li>
-                    <li>5️⃣ <strong>홈택스 예상세액 미리 확인</strong> — "연말정산 → 예상세액 계산"</li>
+                    <li>1⃣ <strong>연금저축·IRP 추가 입금</strong> — 100만 추가 시 약 13~16만 환급 추가</li>
+                    <li>2⃣ <strong>기부금 영수증 챙기기</strong> — 연말 기부 + 정치자금 10만 (110% 환급)</li>
+                    <li>3⃣ <strong>의료비 한 번에 결제</strong> — 가족 의료비 12월 몰아서 결제 (총급여 3% 초과분 공제)</li>
+                    <li>4⃣ <strong>전통시장·대중교통 사용</strong> — 40% 공제율로 한도 적용 효과 ↑</li>
+                    <li>5⃣ <strong>홈택스 예상세액 미리 확인</strong> — "연말정산 → 예상세액 계산"</li>
                   </ul>
                 </div>
               </section>
@@ -348,7 +348,7 @@ export default function YearEndTaxSettlementPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 주의사항</h2>
+                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 부양가족 중복 신청 금지 — 형제·자매 중 1명만 1명의 부양가족 받음</li>
                   <li>• 신용카드 가족카드 사용분도 본인 공제 (단, 본인 명의 카드만)</li>
@@ -358,7 +358,7 @@ export default function YearEndTaxSettlementPage() {
               </section>
 
               <section className="card">
-                <h2 className="mb-3 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link></li>
                   <li>→ <Link href="/guide/medical-expense-tax-credit-3-percent-2026/" className="text-primary-600 underline dark:text-primary-500">의료비 세액공제 3% 초과분 15%</Link> — 총급여 3% 넘는 의료비 공제·700만 한도</li>

@@ -310,7 +310,7 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-tertiary">
-                  ⚠️ <strong>주의:</strong> 위 사례는 기본공제만 적용한 단순화된 예시입니다. 실제 신고 시 배우자공제, 부양가족공제, 자녀공제,
+                  <strong>주의:</strong> 위 사례는 기본공제만 적용한 단순화된 예시입니다. 실제 신고 시 배우자공제, 부양가족공제, 자녀공제,
                   기부금 공제 등이 추가로 적용되므로 세액이 달라질 수 있습니다.
                 </p>
               </section>
@@ -428,7 +428,7 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                   </li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 주의: 프리랜서가 필요경비를 과다 계상하면 세무조사 대상이 될 수 있습니다. 영수증·거래명세서 등 증빙 자료를 철저히
+                  주의: 프리랜서가 필요경비를 과다 계상하면 세무조사 대상이 될 수 있습니다. 영수증·거래명세서 등 증빙 자료를 철저히
                   관리하세요.
                 </p>
               </section>

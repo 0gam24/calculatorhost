@@ -213,7 +213,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                   <strong>종합부동산세</strong>는 국세입니다. 세수는 중앙정부의 재정으로 귀속되며, 국세청(관할 세무서)에서 부과합니다. 고가 주택·다주택 보유에 따른 자산 불평등 완화 목표를 가집니다.
                 </p>
                 <p className="mt-4">
-                  ⚠️ 다만 세목이 다르다고 해서 두 세목을 피할 수는 없습니다. 모든 주택 보유자는 재산세를 내야 하고, 공시가격 합계가 기준을 초과하면 종부세도 함께 납부해야 합니다.
+                  다만 세목이 다르다고 해서 두 세목을 피할 수는 없습니다. 모든 주택 보유자는 재산세를 내야 하고, 공시가격 합계가 기준을 초과하면 종부세도 함께 납부해야 합니다.
                 </p>
               </section>
 
@@ -230,7 +230,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                   <li>1세대2주택 이상: 공시가격 합계 <strong>9억원 초과</strong> 시 과세 대상</li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 공시가격 기준이므로, 실제 시세가 높아도 공시가격이 낮으면 종부세 대상이 아닐 수 있습니다. 반대로 시세가 낮아도 공시가격이 높으면 종부세를 내야 합니다.
+                  다만 공시가격 기준이므로, 실제 시세가 높아도 공시가격이 낮으면 종부세 대상이 아닐 수 있습니다. 반대로 시세가 낮아도 공시가격이 높으면 종부세를 내야 합니다.
                 </p>
               </section>
 
@@ -339,7 +339,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                   </p>
                 </div>
                 <p className="mt-4">
-                  ⚠️ 다만 위 예시는 단순화된 것입니다. 실제 계산은 공정시장가액비율·도시지역분·공제 세부사항 등에 따라 달라집니다. 정확한 금액은 홈택스(hometax.go.kr) 또는 위택스(wetax.go.kr)에서 확인하세요.
+                  다만 위 예시는 단순화된 것입니다. 실제 계산은 공정시장가액비율·도시지역분·공제 세부사항 등에 따라 달라집니다. 정확한 금액은 홈택스(hometax.go.kr) 또는 위택스(wetax.go.kr)에서 확인하세요.
                 </p>
               </section>
 
@@ -376,7 +376,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                   <li>기한 경과 시 가산세: 1개월 이내 3%, 이후 매월 0.5%</li>
                 </ul>
                 <p className="mt-4">
-                  ⚠️ 다만 기한을 놓치면 가산세가 부과되고, 경우에 따라 체납 처분(압류·강제 추징)으로 이어질 수 있으니 반드시 기한 내에 납부하세요. 경제적 어려움이 있으면 미리 세무서에 상담하세요.
+                  다만 기한을 놓치면 가산세가 부과되고, 경우에 따라 체납 처분(압류·강제 추징)으로 이어질 수 있으니 반드시 기한 내에 납부하세요. 경제적 어려움이 있으면 미리 세무서에 상담하세요.
                 </p>
               </section>
 

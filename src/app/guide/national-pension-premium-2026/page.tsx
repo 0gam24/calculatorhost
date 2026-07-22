@@ -204,7 +204,7 @@ export default function NationalPensionPremium2026() {
                   unit="%"
                 />
                 <p className="mt-4 text-sm text-text-secondary">
-                  ⚠️ 다만 2026년 이후 매년 0.5%p씩 인상될 예정이므로, 2033년에는 13%까지 올라갑니다. 자세한 인상 일정은 공식 연금개혁안을 참고하세요.
+                  다만 2026년 이후 매년 0.5%p씩 인상될 예정이므로, 2033년에는 13%까지 올라갑니다. 자세한 인상 일정은 공식 연금개혁안을 참고하세요.
                 </p>
               </div>
 
@@ -234,7 +234,7 @@ export default function NationalPensionPremium2026() {
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  ⚠️ 주의: 6월까지는 9% 요율이 적용되고, 7월부터 9.5% 요율이 적용됩니다. 상반기와 하반기 금액이 다를 수 있습니다.
+                  주의: 6월까지는 9% 요율이 적용되고, 7월부터 9.5% 요율이 적용됩니다. 상반기와 하반기 금액이 다를 수 있습니다.
                 </p>
               </div>
 
@@ -276,7 +276,7 @@ export default function NationalPensionPremium2026() {
                   </tbody>
                 </table>
                 <p className="mt-4 text-sm text-text-secondary">
-                  ⚠️ 지역가입자는 소득뿐 아니라 재산도 반영될 수 있으며, 전년도 소득을 기준으로 당해연도 보험료가 산정됩니다. 정확한 금액은 국민연금공단 홈페이지의 "내 보험료" 메뉴에서 확인할 수 있습니다.
+                  주의: 지역가입자는 소득뿐 아니라 재산도 반영될 수 있으며, 전년도 소득을 기준으로 당해연도 보험료가 산정됩니다. 정확한 금액은 국민연금공단 홈페이지의 "내 보험료" 메뉴에서 확인할 수 있습니다.
                 </p>
               </div>
 
@@ -301,7 +301,7 @@ export default function NationalPensionPremium2026() {
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  ⚠️ 국민연금은 재분배 제도이므로, 고소득자는 상한액으로 보험료를 제한하되 연금 수령 시 일정 기준(최대 연금 한도)을 적용하는 구조입니다.
+                  주의: 국민연금은 재분배 제도이므로, 고소득자는 상한액으로 보험료를 제한하되 연금 수령 시 일정 기준(최대 연금 한도)을 적용하는 구조입니다.
                 </p>
               </div>
 
@@ -323,7 +323,7 @@ export default function NationalPensionPremium2026() {
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  ⚠️ 실제 절세 효과는 종합소득세 구간(누진세율 6~45%)과 다른 공제(근로소득공제, 부양가족공제 등)에 따라 달라집니다. 연말정산 시 국민연금 보험료 영수증을 제출하면 자동으로 공제됩니다.
+                  주의: 실제 절세 효과는 종합소득세 구간(누진세율 6~45%)과 다른 공제(근로소득공제, 부양가족공제 등)에 따라 달라집니다. 연말정산 시 국민연금 보험료 영수증을 제출하면 자동으로 공제됩니다.
                 </p>
               </div>
 
@@ -347,7 +347,7 @@ export default function NationalPensionPremium2026() {
                   </li>
                 </ul>
                 <p className="mt-4 text-sm text-text-secondary">
-                  ⚠️ 프리랜서가 회사와 "근로계약"을 맺으면 직장가입자로 전환되어야 합니다. 구분 기준은 업무의 자율성, 도구 소유, 장기 계약 여부 등을 종합 판단합니다.
+                  주의: 프리랜서가 회사와 "근로계약"을 맺으면 직장가입자로 전환되어야 합니다. 구분 기준은 업무의 자율성, 도구 소유, 장기 계약 여부 등을 종합 판단합니다.
                 </p>
               </div>
 
@@ -367,7 +367,7 @@ export default function NationalPensionPremium2026() {
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  💡 정확한 예상 수령액은 국민연금공단 홈페이지의 "연금 수령액 조회" 메뉴에서 개인별로 확인할 수 있습니다.
+                  정확한 예상 수령액은 국민연금공단 홈페이지의 "연금 수령액 조회" 메뉴에서 개인별로 확인할 수 있습니다.
                 </p>
               </div>
 

@@ -254,7 +254,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 참고:</strong> 월평균은 12개월 기준입니다. 실제 지원금은 신청 시점과 가구 상황에 따라 조정될 수 있습니다.
+                    <strong>참고:</strong> 월평균은 12개월 기준입니다. 실제 지원금은 신청 시점과 가구 상황에 따라 조정될 수 있습니다.
                     정확한 지원금은 에너지바우처 누리집(energyv.or.kr)의 모의계산 기능을 이용하면 확인할 수 있습니다.
                   </p>
                 </div>
@@ -302,7 +302,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 중요:</strong> 소득기준만 맞거나 세대원 특성만 맞아서는 안 됩니다.
+                    <strong>중요:</strong> 소득기준만 맞거나 세대원 특성만 맞아서는 안 됩니다.
                     예를 들어 노인 가구라도 기초생활보장 수급자가 아니면 신청 불가, 기초생활보장 수급자라도 취약계층 세대원이 없으면 신청 불가입니다.
                     둘 다 만족해야 지원받을 수 있습니다.
                   </p>
@@ -319,7 +319,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                   <h3 className="font-semibold text-primary-700 dark:text-primary-400 mb-3">신청 시기별 이점</h3>
                   <div className="space-y-2 text-sm text-text-secondary">
                     <p>
-                      <strong>6월 중 신청 (빠를수록 ★★★):</strong> 승인까지 1~2주 소요 후 7월 전기요금 차감 가능
+                      <strong>6월 중 신청 (빠를수록 유리):</strong> 승인까지 1~2주 소요 후 7월 전기요금 차감 가능
                     </p>
                     <p>
                       <strong>7월 초 신청:</strong> 7월 말~8월 초 요금부터 차감 가능 (일부 여름 냉방비 손실 위험)
@@ -331,7 +331,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 팁:</strong> 여름 냉방비 지원을 최대한 받으려면 6월 15일 신청 시작일에 가까운 시점(6월 중)에 신청하는 것이 좋습니다.
+                    <strong>팁:</strong> 여름 냉방비 지원을 최대한 받으려면 6월 15일 신청 시작일에 가까운 시점(6월 중)에 신청하는 것이 좋습니다.
                   </p>
                 </div>
               </section>
@@ -451,7 +451,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>💡 팁:</strong> 방문 신청이 편한 이유는 담당자가 함께 작성을 도와주고,
+                    <strong>팁:</strong> 방문 신청이 편한 이유는 담당자가 함께 작성을 도와주고,
                     그 자리에서 필요한 서류가 더 있는지 확인할 수 있기 때문입니다.
                     온라인이 불편하다면 행정복지센터 방문을 권장합니다.
                   </p>
@@ -484,7 +484,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                 </div>
                 <div className="rounded-lg border border-border-base bg-primary-500/5 p-4 mt-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>📋 서류 확인 팁:</strong> 신청 전에 관할 행정복지센터에 전화(읍면동 전번 조회)하거나,
+                    <strong>서류 확인 팁:</strong> 신청 전에 관할 행정복지센터에 전화(읍면동 전번 조회)하거나,
                     통합 상담센터 1600-3190(평일 09:00~18:00, 점심 12:00~13:00 제외)으로 전화하여
                     자신의 지역에서 필요한 서류를 미리 확인하는 것이 가장 정확합니다.
                   </p>

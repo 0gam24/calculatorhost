@@ -265,7 +265,7 @@ export default function RentConversionCalculationPage() {
                 </ol>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위는 법정 최대 한도이며, 실제 합의에서는 한도보다 낮은 전환율로 정할 수 있습니다.
+                  다만 위는 법정 최대 한도이며, 실제 합의에서는 한도보다 낮은 전환율로 정할 수 있습니다.
                   임차인과 임대인이 합의하면 법정 한도 이하의 전환율을 적용하는 것이 일반적입니다.
                 </p>
               </section>
@@ -308,7 +308,7 @@ export default function RentConversionCalculationPage() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 역산 공식은 이해도와 비교 목적으로 주로 사용되며,
+                  다만 역산 공식은 이해도와 비교 목적으로 주로 사용되며,
                   실제 전세 갱신 시 월세 전환 협상에서는 보증금(차액) → 월세 방향 계산이 더 일반적입니다.
                 </p>
               </section>
@@ -385,7 +385,7 @@ export default function RentConversionCalculationPage() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 계약 기간 중 기준금리가 변동해도 계약서에 명시한 월세는 변하지 않습니다.
+                  다만 계약 기간 중 기준금리가 변동해도 계약서에 명시한 월세는 변하지 않습니다.
                   갱신 또는 재계약 시 기준금리의 최신값이 적용됩니다.
                 </p>
               </section>
@@ -436,7 +436,7 @@ export default function RentConversionCalculationPage() {
                 </ol>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 계약 당시 기준금리를 명확히 기록해두고, 전환율 계산 근거를 보관하는 것이
+                  다만 계약 당시 기준금리를 명확히 기록해두고, 전환율 계산 근거를 보관하는 것이
                   분쟁 시 임차인의 권리 보호에 중요합니다.
                 </p>
               </section>
@@ -482,7 +482,7 @@ export default function RentConversionCalculationPage() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 갱신 시 월세 인상은 전환율 변동뿐 아니라
+                  다만 갱신 시 월세 인상은 전환율 변동뿐 아니라
                   월세 인상률 5% 한도(§7) 규제도 동시에 받으므로,
                   임대인이 원하는 인상폭이 두 규제 중 더 낮은 쪽으로 제한됩니다.
                 </p>
@@ -544,7 +544,7 @@ export default function RentConversionCalculationPage() {
                 </table>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 5.5% 전환율 기준이며,
+                  다만 위 계산은 5.5% 전환율 기준이며,
                   실제 합의에서는 법정 한도 이하의 낮은 전환율로 정할 수 있습니다.
                   또한 기준금리 변동 시 전환율 한도(기준금리 + 2%)도 함께 변동합니다.
                 </p>
@@ -552,7 +552,7 @@ export default function RentConversionCalculationPage() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

@@ -268,7 +268,7 @@ export default function ChildEarnedIncomeCreditGuide() {
 
               {/* 7. 주의사항 */}
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">⚠️ 주의사항</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>소득 1원이라도 기준 초과 시 지급액 0원 (점감 X 절대 한도).</li>
                   <li>자녀 나이는 신청 기한(5월 31일) 기준 — 2008년 1월 1일 이후 출생.</li>

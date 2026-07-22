@@ -164,7 +164,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">⚡ 핵심 정리</h2>
+                <h2 className="mb-4 text-2xl font-bold text-primary-700 dark:text-primary-300">핵심 정리</h2>
                 <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="mb-2 text-left font-semibold text-text-primary">사업소득 vs 기타소득 분류표</caption>
@@ -273,7 +273,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 가산세 위험</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 가산세 위험</p>
                   <p className="mt-2">
                     국세청과 세무조사에서는 "실질과세 원칙"(국세기본법 §14)을 적용합니다. 공식상 사업소득인데 기타소득으로 신고하면
                     부정행위로 판정되어 가산세 40%가 부과됩니다. 4대보험 미가입 여부가 주요 적발 단초입니다.
@@ -364,7 +364,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 주의</p>
+                  <p className="font-semibold text-text-primary">주의</p>
                   <p className="mt-2">
                     필요경비율은 <strong>분류(기타소득 내에서의 종류)가 정해지면 자동 적용</strong>됩니다. 증빙 유무와 관계없이 법정 정률을
                     사용하므로, 분류가 가장 중요합니다. 만약 강사료를 저술료로 신고하면 국세청이 이의 제기할 수 있습니다.
@@ -448,7 +448,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 결론</p>
+                  <p className="font-semibold text-text-primary">결론</p>
                   <p className="mt-2">
                     정기성은 명확한 법칙이 없으므로, <strong>보수적으로는 매월 고정 강사는 사업소득, 연 1~3회는 세무사 상담을 권장</strong>
                     합니다. 4대보험 납부 여부가 큰 신호이므로, 신고 전에 국세청 상담 또는 세무사 확인이 안전합니다.
@@ -535,7 +535,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 선택 전략</p>
+                  <p className="font-semibold text-text-primary">선택 전략</p>
                   <p className="mt-2">
                     <strong>직장 소득 1,500~3,000만 범위:</strong> 기타소득을 합산하면 누진세가 6% 구간 유지 가능 → 합산 유리
                     <br />
@@ -612,7 +612,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">💡 주의: "분리과세 포기 선택"은 홈택스에서</p>
+                  <p className="font-semibold text-text-primary">주의: "분리과세 포기 선택"은 홈택스에서</p>
                   <p className="mt-2">
                     기타소득 300만 이하 분리과세는 기본 선택입니다. 만약 합산하려면 5월 31일까지 홈택스 "종합소득세 신고" 페이지에서
                     "분리과세 배제 선택"을 명시해야 합니다. 선택하지 않으면 자동으로 분리과세로 처리됩니다.
@@ -664,7 +664,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 </div>
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-danger-700 dark:text-danger-300">⚠️ 세무조사 신호</p>
+                  <p className="font-semibold text-danger-700 dark:text-danger-300">주의: 세무조사 신호</p>
                   <p className="mt-2">
                     국세청은 사업소득 신고자인데 4대보험 미가입이면 의심합니다. 특히 정기적 강사인데 국민연금·건강보험이 없으면 기타소득으로
                     신고한 이유를 묻게 되고, 이는 수정신고 또는 가산세로 이어질 수 있습니다.
@@ -733,7 +733,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
 
               {/* 최종 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">⚠️ 최종 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>정기 강사는 사업소득:</strong> 월 1회 이상 정기적이면 사업소득 의무. 4대보험 미납부 시 세무조사 위험.
@@ -758,7 +758,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
 
               {/* 관련 링크 */}
               <section className="card">
-                <h2 className="mb-4 text-lg font-semibold">📊 관련 계산기·가이드</h2>
+                <h2 className="mb-4 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

@@ -248,7 +248,7 @@ export default function DsrDtiLtvDifference2026Page() {
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 세 규제의 구체적 한도는 정부 정책과 금융기관 자율 기준에 따라 수시로
+                  다만 세 규제의 구체적 한도는 정부 정책과 금융기관 자율 기준에 따라 수시로
                   변동되므로, 현재 기준은 금융위 공식 발표나 해당 은행의 상담으로 최신 정보를 확인해야
                   합니다.
                 </p>
@@ -275,7 +275,7 @@ export default function DsrDtiLtvDifference2026Page() {
                   (담보 기준)
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 금융기관마다 담보가치 계산 기준이 다릅니다. KB시세, 감정가, 매매계약가 중
+                  다만 금융기관마다 담보가치 계산 기준이 다릅니다. KB시세, 감정가, 매매계약가 중
                   가장 낮은 값을 선택하므로, 같은 집도 은행별로 담보가치가 1~2억 원 차이날 수 있습니다.
                 </p>
               </section>
@@ -301,7 +301,7 @@ export default function DsrDtiLtvDifference2026Page() {
                   (150만 × 12) ÷ 6,000만 × 100 = 30%
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 DTI는 주담대만 정확히 계산하고 기타 대출은 이자만 봅니다. 신용대출이 크면
+                  다만 DTI는 주담대만 정확히 계산하고 기타 대출은 이자만 봅니다. 신용대출이 크면
                   DSR이 더 제한적이 될 수 있습니다.
                 </p>
               </section>
@@ -328,7 +328,7 @@ export default function DsrDtiLtvDifference2026Page() {
                   원 → DSR = ((150+50)만 × 12) ÷ 6,000만 × 100 = 40%
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 기타 대출이 많을수록 DSR이 높아져 주담대 한도가 급격히 낮아질 수 있습니다.
+                  다만 기타 대출이 많을수록 DSR이 높아져 주담대 한도가 급격히 낮아질 수 있습니다.
                 </p>
               </section>
 
@@ -396,7 +396,7 @@ export default function DsrDtiLtvDifference2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 위 계산은 이해를 돕기 위한 예시입니다. 실제로는 금리 변동, 신용도, 보증보험료,
+                  다만 위 계산은 이해를 돕기 위한 예시입니다. 실제로는 금리 변동, 신용도, 보증보험료,
                   기존 대출의 정확한 상환액 등이 복합적으로 적용되므로, 정확한 한도는 대출한도 계산기나
                   은행 상담을 통해 확인하세요.
                 </p>
@@ -467,7 +467,7 @@ export default function DsrDtiLtvDifference2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 DSR은 기타 대출의 원금을 모두 포함하므로, 신용대출을 먼저 상환하고 주담대를
+                  다만 DSR은 기타 대출의 원금을 모두 포함하므로, 신용대출을 먼저 상환하고 주담대를
                   신청하는 것이 유리합니다.
                 </p>
               </section>
@@ -500,7 +500,7 @@ export default function DsrDtiLtvDifference2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 정부가 지역을 지정하거나 해제할 때마다 LTV 한도가 변동되므로, 특정 지역의
+                  다만 정부가 지역을 지정하거나 해제할 때마다 LTV 한도가 변동되므로, 특정 지역의
                   현재 규제 상태는 금융위 공식 발표나 은행 상담으로 확인해야 합니다.
                 </p>
               </section>
@@ -536,7 +536,7 @@ export default function DsrDtiLtvDifference2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 스트레스 DSR은 선택적으로 적용하는 금융기관도 있고 필수적으로 적용하는 기관도
+                  다만 스트레스 DSR은 선택적으로 적용하는 금융기관도 있고 필수적으로 적용하는 기관도
                   있으므로, 현재 기준은 해당 은행에 확인하세요.
                 </p>
               </section>
@@ -547,7 +547,7 @@ export default function DsrDtiLtvDifference2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

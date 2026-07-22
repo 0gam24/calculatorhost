@@ -289,7 +289,7 @@ export default function SplitSellProfitTakingPage() {
                   </div>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 선택한 방식의 원칙을 지키는 것이 더욱 중요합니다.
+                  다만 선택한 방식의 원칙을 지키는 것이 더욱 중요합니다.
                   "이번만 예외로" 하면서 감정적 판단으로 바꾸면, 어느 방식이든 손실로 이어집니다.
                 </p>
               </section>
@@ -396,7 +396,7 @@ export default function SplitSellProfitTakingPage() {
                   </li>
                 </ul>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 수수료는 낮으므로 세금이 더 중요합니다.
+                  다만 수수료는 낮으므로 세금이 더 중요합니다.
                   수익이 크면 양도소득세 신고 대상이 될 수 있으니 국세청 기준을 확인하세요.
                 </p>
               </section>
@@ -416,7 +416,7 @@ export default function SplitSellProfitTakingPage() {
                     <li><strong>5단계:</strong> 여러 시나리오 비교 (예: 3차 vs 4차, +20% vs +30% 목표)</li>
                   </ul>
                   <p className="mt-3 text-text-secondary">
-                    📊{' '}
+                    {' '}
                     <Link
                       href="/calculator/split-sell/"
                       className="text-primary-600 underline dark:text-primary-500"
@@ -431,7 +431,7 @@ export default function SplitSellProfitTakingPage() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책
+                  주의사항 및 면책
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

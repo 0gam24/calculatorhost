@@ -274,7 +274,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   </ul>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 할부금융을 받을 때는 신용도와 소득 증빙이 필요하며, 신용등급이 낮으면 금리가
+                  다만 할부금융을 받을 때는 신용도와 소득 증빙이 필요하며, 신용등급이 낮으면 금리가
                   올라갈 수 있습니다.
                 </p>
               </section>
@@ -301,7 +301,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   </ul>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 리스는 최종적으로 차를 소유하지 않으므로, 장기간 같은 자동차를 타야 한다면
+                  다만 리스는 최종적으로 차를 소유하지 않으므로, 장기간 같은 자동차를 타야 한다면
                   누적 리스료가 할부보다 비쌀 수 있습니다.
                 </p>
               </section>
@@ -329,7 +329,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   </ul>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 장기렌트는 렌트사별로 약관과 포함 항목이 다르므로, 계약 전에 세부 서비스
+                  다만 장기렌트는 렌트사별로 약관과 포함 항목이 다르므로, 계약 전에 세부 서비스
                   내용을 확인해야 합니다.
                 </p>
               </section>
@@ -401,7 +401,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   줄어듭니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 실제 할부금리는 신용도, 캐피탈사, 시장 금리에 따라 3~8% 범위에서 결정되므로,
+                  다만 실제 할부금리는 신용도, 캐피탈사, 시장 금리에 따라 3~8% 범위에서 결정되므로,
                   여러 금융기관의 상품을 비교해 가장 낮은 금리를 찾는 것이 중요합니다.
                 </p>
               </section>
@@ -495,7 +495,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   비싸질 수 있습니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 할부 시 자동차세(배기량별 상이, 지방교육세 30% 포함)와 보험료(연 수십만~백만 원대)는 별도이므로, 월
+                  다만 할부 시 자동차세(배기량별 상이, 지방교육세 30% 포함)와 보험료(연 수십만~백만 원대)는 별도이므로, 월
                   상환액에 더해 추가로 계산해야 정확한 월 부담액을 알 수 있습니다.
                 </p>
               </section>
@@ -530,7 +530,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   상담하세요.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 실제 경비처리 범위는 업종, 매출 규모, 회계 기준, 국세청 판단에 따라 달라질 수
+                  주의: 실제 경비처리 범위는 업종, 매출 규모, 회계 기준, 국세청 판단에 따라 달라질 수
                   있으므로, 세무전문가의 조언을 받은 후 결정하는 것이 필수입니다.
                 </p>
               </section>
@@ -606,7 +606,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                   있습니다. 따라서 계약 시 예상 보유 기간을 신중하게 판단해야 합니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 중도해지 위약금 계산은 계약서와 회사 정책에 따라 크게 다르므로, 계약 전에
+                  다만 중도해지 위약금 계산은 계약서와 회사 정책에 따라 크게 다르므로, 계약 전에
                   구체적으로 문의해야 합니다.
                 </p>
               </section>
@@ -617,7 +617,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

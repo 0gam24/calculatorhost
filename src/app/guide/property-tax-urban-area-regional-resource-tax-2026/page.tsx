@@ -310,7 +310,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 지역자원시설세의 구체적 세율은 지방자치단체(시·군·구)가 조례로 정하므로,
+                  다만 지역자원시설세의 구체적 세율은 지방자치단체(시·군·구)가 조례로 정하므로,
                   지역마다 다를 수 있습니다. 수도권과 비수도권, 또는 시별로도 세율이 달라질 수 있으므로,
                   자신의 고지서에 적힌 세율을 기준으로 이해하는 것이 정확합니다.
                 </p>
@@ -369,7 +369,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 실제 재산세 계산에는 여러 변수가 더 있습니다. 예를 들어 보유세 감면(일부
+                  다만 실제 재산세 계산에는 여러 변수가 더 있습니다. 예를 들어 보유세 감면(일부
                   지역·정책), 농어촌특별세, 1세대1주택 특례 여부 등에 따라 최종 세액이 달라질 수
                   있습니다. 고지서의 "부과액"과 "납부액"을 구분해 보면, 부과액에서 감면이 차감되어
                   납부액이 결정되는 구조를 이해할 수 있습니다.
@@ -434,7 +434,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 도시계획구역은 시간에 따라 변경될 수 있습니다. 신도시 개발이나 행정 경계
+                  다만 도시계획구역은 시간에 따라 변경될 수 있습니다. 신도시 개발이나 행정 경계
                   조정 시 도시계획구역이 확대되거나 축소될 수 있으므로, 고지서를 받을 때마다 항목을
                   꼼꼼히 확인하는 것이 좋습니다.
                 </p>
@@ -481,7 +481,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 지역자원시설세의 세율 세부 구간과 누진 폭은 지방자치단체마다 다르므로, 정확한
+                  다만 지역자원시설세의 세율 세부 구간과 누진 폭은 지방자치단체마다 다르므로, 정확한
                   세율을 알려면 해당 시·군·구청의 조례를 확인하거나, 고지서의 명세를 참조하는 것이
                   가장 확실합니다.
                 </p>
@@ -569,7 +569,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 1세대1주택 특례 기준은 지역과 정책에 따라 변경될 수 있습니다. 특히 규제지역
+                  다만 1세대1주택 특례 기준은 지역과 정책에 따라 변경될 수 있습니다. 특히 규제지역
                   지정이나 정부 정책 변화 시 특례 범위가 축소될 수 있으므로, 고지서의 "부과 사유" 또는
                   해당 지자체의 공시를 확인하는 것이 정확합니다.
                 </p>
@@ -581,7 +581,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>

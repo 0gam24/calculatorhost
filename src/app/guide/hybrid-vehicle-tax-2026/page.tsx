@@ -261,7 +261,7 @@ export default function HybridVehicleTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 차량 구매 시점의 배기량이 모두 기준이 됩니다. 같은 모델이라도 연식이나
+                  다만 차량 구매 시점의 배기량이 모두 기준이 됩니다. 같은 모델이라도 연식이나
                   트림에 따라 배기량이 1,400cc ~ 1,700cc 범위로 다를 수 있으므로, 자신의 차량
                   등록증(자동차등록원부)에 기재된 배기량을 확인하는 것이 중요합니다.
                 </p>
@@ -345,7 +345,7 @@ export default function HybridVehicleTax2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 1,001~1,600cc 구간의 경계가 중요합니다. 1,600cc와 1,601cc는 1원의 차이지만
+                  다만 1,001~1,600cc 구간의 경계가 중요합니다. 1,600cc와 1,601cc는 1원의 차이지만
                   세율이 140원에서 200원으로 크게 올라갑니다. 따라서 자신의 정확한 배기량을
                   확인하고 계산하는 것이 매우 중요합니다.
                 </p>
@@ -449,7 +449,7 @@ export default function HybridVehicleTax2026Page() {
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 차령경감은 자동으로 적용되지 않습니다. 등록 후 적용해야 하므로, 매해 5월
+                  다만 차령경감은 자동으로 적용되지 않습니다. 등록 후 적용해야 하므로, 매해 5월
                   자동차세 고지서를 확인할 때 경감액이 제대로 반영되었는지 확인하세요. 혹시
                   빠졌다면 관할 시·군·구청이나 이택스에서 직접 신청할 수 있습니다.
                 </p>
@@ -568,7 +568,7 @@ export default function HybridVehicleTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 자동차세는 차량 구매 의사결정의 작은 부분입니다. 구매가, 유지비, 충전
+                  다만 자동차세는 차량 구매 의사결정의 작은 부분입니다. 구매가, 유지비, 충전
                   인프라, 주행거리, 에너지 효율 등을 함께 종합적으로 판단하고 선택하는 것이
                   중요합니다.
                 </p>
@@ -610,7 +610,7 @@ export default function HybridVehicleTax2026Page() {
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  ⚠️ 다만 1월 일시납 기한(1월 31일)을 놓치면 5월 납부 기한(5월 말)에 기본 세액 전액을
+                  다만 1월 일시납 기한(1월 31일)을 놓치면 5월 납부 기한(5월 말)에 기본 세액 전액을
                   납부해야 합니다. 미납 시 연체료(0.3%/일)가 가산되므로 반드시 기한을 확인하세요.
                 </p>
               </section>
@@ -621,7 +621,7 @@ export default function HybridVehicleTax2026Page() {
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  ⚠️ 주의사항 및 면책조항
+                  주의사항 및 면책조항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
