@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-23 신규 5편 (배우자출산휴가·스트레스DSR3단계·신생아특례디딤돌대출·간이과세포기·분양권취득세)
+  {
+    slug: 'spouse-childbirth-leave-2026',
+    title: '배우자 출산휴가 2026, 20일 유급·급여·신청기한 정리',
+    description:
+      '배우자 출산휴가는 2026년 기준 20일 전부 유급입니다. 근무일 기준 계산, 통상임금 100% 급여와 상한, 최대 3회 분할, 신청 기한과 방법을 남녀고용평등법 §18의2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-23',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'stress-dsr-stage3-2026',
+    title: '스트레스 DSR 3단계 2026, 내 대출한도 얼마나 줄까',
+    description:
+      '스트레스 DSR 3단계는 실제 금리에 스트레스 금리 1.5%p를 더해 대출한도를 계산합니다. 2026년 전국 확대 적용으로 줄어드는 한도, 계산 방식, 예외 대출을 사례로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-23',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'newborn-special-mortgage-loan-2026',
+    title: '신생아 특례 디딤돌대출 2026, 소득요건·금리·한도 정리',
+    description:
+      '2년 내 출산한 무주택 가구를 위한 신생아 특례 디딤돌대출. 부부합산 소득요건, 특례금리 1.8~4.5%, 최대 4억 한도, 대상 주택과 신청 방법을 2026년 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-23',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'simplified-taxation-waiver-2026',
+    title: '간이과세 포기 신고 2026, 매입세액공제·3년 제한 정리',
+    description:
+      '간이과세 포기는 스스로 일반과세자가 되는 절차입니다. 매입세액 전액 공제와 세금계산서 발급이 목적이며, 신고한 달의 다음 달부터 적용되고 3년간 재적용이 제한됩니다. 부가가치세법 §70 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-23',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'presale-right-acquisition-tax-2026',
+    title: '분양권 취득세 2026, 주택 수 산입과 중과 기준 정리',
+    description:
+      '분양권 자체에는 취득세가 없고 잔금 때 주택 취득세를 냅니다. 다만 2020년 8월 12일 이후 취득한 분양권은 주택 수에 포함되어 다른 집 취득세 중과에 영향을 줍니다. 지방세법 §13의2·§13의3 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-23',
+    readingMinutes: 8,
+  },
   // 2026-07-22 신규 5편 (간이과세자7월부가세·부가세매입세액불공제·재산세카드납부·청년월세지원·부가세가산세)
   {
     slug: 'simplified-taxpayer-july-vat-2026',

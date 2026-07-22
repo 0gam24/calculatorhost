@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-23 신규 5편 (배우자출산휴가·스트레스DSR3단계·신생아특례디딤돌대출·간이과세포기·분양권취득세)
+  'spouse-childbirth-leave-2026',
+  'stress-dsr-stage3-2026',
+  'newborn-special-mortgage-loan-2026',
+  'simplified-taxation-waiver-2026',
+  'presale-right-acquisition-tax-2026',
   // 2026-07-22 신규 5편 (간이과세자7월부가세·부가세매입세액불공제·재산세카드납부·청년월세지원·부가세가산세)
   'simplified-taxpayer-july-vat-2026',
   'vat-non-deductible-input-tax-2026',
