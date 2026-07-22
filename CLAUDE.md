@@ -82,10 +82,10 @@
 **컨텍스트**: 본 repo의 운영자(0gam24)는 단독 운영자(=커미터=리뷰어=배포자). 다중 협업자 보호 / PR 리뷰 우회 우려가 적용되지 않음. 자기 결정·자기 책임 원칙.
 
 **룰**:
-- **운영자가 명시적으로 "푸쉬" / "push" / "푸시" / "푸시해" 키워드로 요청한 직후에만 자율 실행.**
-- **(2026-06-02 갱신) 포스팅 자동 push 상시 승인**: 콘텐츠 포스팅/발행 작업(신규 가이드·FAQ 증폭·관련 YMYL 수정)을 완료하고 전 게이트(typecheck/lint/test/build) PASS + 검증(calc-verifier/1차출처) 통과 시, 매 회 키워드 없이 `git push origin main` 자동 실행. push 전 `git fetch`+rebase(cron 충돌 회피), 자동생성 산출물 stash/pop. 게이트 실패·YMYL 불확실 수치 잔존 시 push 금지(발행 보류).
-- 단일 키워드로 일괄 트리거 가능 (`git push` + `gh pr create` + `gh pr merge` + `gh pr close` + `gh pr comment`).
-- 그 외 상황(포스팅 외 일반 코드 변경·빌드 완료·테스트 통과 등)에서 자율 push 금지 — 로컬 작업은 자율, 원격 반영은 운영자 승인. **파괴적 명령(force push·reset --hard·repo 삭제)은 자동화 대상 아님(영구 차단 유지).**
+- **(2026-07-23 갱신) 전 작업 자동 push 상시 승인**: 운영자 명시 지시("앞으로는 작업하면 자동 푸쉬해"). 콘텐츠 발행뿐 아니라 **모든 작업(코드·룰·문서 변경)** 완료 시 전 게이트(typecheck/lint/test/build) PASS 확인 후 매 회 키워드 없이 `git push origin main` 자동 실행. push 전 `git fetch`+rebase(cron 충돌 회피), 자동생성 산출물(STATE.md·stuck.md·date-modified-manifest 등) stash/pop 로 커밋 제외. 게이트 실패·YMYL 불확실 수치 잔존 시 push 금지(보류 후 보고).
+- (이력) 2026-06-02: 포스팅 자동 push 승인 / 2026-05-08: "푸쉬" 키워드 방식 — 2026-07-23 전면 자동으로 대체.
+- `gh pr create` / `gh pr merge` / `gh pr close` / `gh pr comment` 도 동일하게 작업 흐름상 필요 시 자율 실행.
+- **파괴적 명령(force push·reset --hard·repo 삭제)은 자동화 대상 아님(영구 차단 유지).**
 - `.claude/settings.json` `permissions.allow` 에 `Bash(git push:*)` / `Bash(gh pr create:*)` / `Bash(gh pr merge:*)` / `Bash(gh pr close:*)` / `Bash(gh pr comment:*)` 등재 (2026-05-08 운영자 명시 승인).
 
 **파괴적 명령 — 영구 차단 유지** (`.claude/settings.json` `deny`):
