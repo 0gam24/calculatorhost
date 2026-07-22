@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useState } from 'react';
+import Icon from '@/components/ui/Icon';
 
 // Kakao SDK 전역 타입 (sdk.kakao.com/v2 또는 v1 호환)
 declare global {
@@ -192,16 +193,17 @@ export function ShareButtons({ title, url, description, imageUrl }: ShareButtons
             disabled={!kakaoReady}
             className="rounded-lg border border-[#FEE500] bg-[#FEE500] px-4 py-2 text-sm font-medium text-[#191919] hover:opacity-90 disabled:opacity-50 transition-opacity"
           >
-            💬 카카오톡 공유
+            카카오톡 공유
           </button>
         ) : null}
         <button
           type="button"
           onClick={handleNativeShare}
           aria-label="공유 (네이티브)"
-          className="rounded-lg border border-border-base bg-bg-card px-4 py-2 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border-base bg-bg-card px-4 py-2 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-colors"
         >
-          📤 공유 (메일·메신저)
+          <Icon name="share" size={14} />
+          <span>공유 (메일·메신저)</span>
         </button>
         <button
           type="button"
@@ -217,15 +219,16 @@ export function ShareButtons({ title, url, description, imageUrl }: ShareButtons
           aria-label="Facebook 에 공유"
           className="rounded-lg border border-border-base bg-bg-card px-4 py-2 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-colors"
         >
-          📘 Facebook
+          Facebook
         </button>
         <button
           type="button"
           onClick={handleCopy}
           aria-label="링크 복사"
-          className="rounded-lg border border-border-base bg-bg-card px-4 py-2 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-border-base bg-bg-card px-4 py-2 text-sm font-medium hover:border-primary-500 hover:text-primary-500 transition-colors"
         >
-          {copied ? '✓ 복사됨' : '🔗 링크 복사'}
+          <Icon name={copied ? 'check' : 'link'} size={14} />
+          <span>{copied ? '복사됨' : '링크 복사'}</span>
         </button>
       </div>
       {error && <p className="text-caption text-danger-500">{error}</p>}

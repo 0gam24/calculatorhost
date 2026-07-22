@@ -367,7 +367,7 @@ export default function SplitSellPage() {
                 <h2 className="mb-3 text-2xl font-semibold">주의사항 및 면책</h2>
                 <div className="mb-4 rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
                   <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-200">
-                    ⚠️ 중요 안내
+                    중요 안내
                   </h3>
                   <p className="text-sm text-danger-600 dark:text-danger-300">
                     <strong>본 계산기는 투자 권유가 아닙니다.</strong> 분할매도 시점·비중은

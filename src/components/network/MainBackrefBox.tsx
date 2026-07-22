@@ -12,6 +12,8 @@
  * 의존성: 외부 아이콘 라이브러리 미사용(인라인 SVG) — First Load JS 영향 0.
  */
 
+import Icon from '@/components/ui/Icon';
+
 interface MainBackrefBoxProps {
   /** 메인 펄스(개별 글) 직접 link — 있으면 우선 사용 */
   mainPulseUrl?: string;
@@ -69,8 +71,9 @@ export function MainBackrefBox({
     >
       <div className="flex items-start gap-3">
         <div className="flex-1">
-          <p className="mb-1 text-xs font-semibold uppercase tracking-wide text-[#8b1538] dark:text-[#c9395f]">
-            📊 {title}
+          <p className="mb-1 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wide text-[#8b1538] dark:text-[#c9395f]">
+            <Icon name="bar-chart" size={12} />
+            <span>{title}</span>
           </p>
           <p className="mb-2 text-sm leading-relaxed text-gray-800 dark:text-gray-200">
             {subtitle}
@@ -81,7 +84,8 @@ export function MainBackrefBox({
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-sm font-bold text-[#8b1538] hover:underline dark:text-[#c9395f]"
           >
-            검증·해설 →{' '}
+            <span>검증·해설</span>
+            <Icon name="chevron-right" size={14} />
             <span className="font-extrabold">smartdatashop.kr</span>
             <ExternalLinkIcon className="h-3.5 w-3.5" />
           </a>

@@ -336,7 +336,7 @@ export function TransferTaxCalculator() {
           <div className="mt-4 space-y-2 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
             {result.warnings.map((warning, idx) => (
               <p key={idx} className="text-sm text-highlight-500">
-                ⚠️ {warning}
+                주의: {warning}
               </p>
             ))}
           </div>

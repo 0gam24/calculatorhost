@@ -106,7 +106,7 @@ export function AreaConverter() {
           className="w-full rounded-lg border border-primary-500 bg-primary-500/5 px-4 py-3 text-sm font-medium text-primary-500 transition hover:bg-primary-500/10"
           aria-label="단위 교환 (평 ↔ 제곱미터)"
         >
-          🔁 {unit === 'pyeong' ? '㎡로 보기' : '평으로 보기'}
+          {unit === 'pyeong' ? '㎡로 보기' : '평으로 보기'}
         </button>
       </FormCard>
 

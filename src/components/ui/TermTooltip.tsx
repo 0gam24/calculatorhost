@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
+import Icon from '@/components/ui/Icon';
 
 interface TermTooltipProps {
   term: string;
@@ -71,7 +72,7 @@ export function TermTooltip({ term, definition, href }: TermTooltipProps) {
               onClick={() => setIsOpen(false)}
             >
               용어사전에서 자세히
-              <span aria-hidden="true">→</span>
+              <Icon name="chevron-right" size={14} />
             </a>
           )}
         </span>

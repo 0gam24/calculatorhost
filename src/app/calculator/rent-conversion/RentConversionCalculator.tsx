@@ -339,7 +339,7 @@ export function RentConversionCalculator() {
             <div className="space-y-2 rounded-lg border border-warning-500/50 bg-warning-500/5 p-3">
               {result.warnings.map((warning, idx) => (
                 <div key={idx} className="text-sm text-warning-500">
-                  ⚠️ {warning}
+                  주의: {warning}
                 </div>
               ))}
             </div>
@@ -349,7 +349,7 @@ export function RentConversionCalculator() {
           {exceedsLegalLimit && (
             <div className="rounded-lg border border-danger-500/50 bg-danger-500/5 p-3">
               <div className="text-sm font-semibold text-danger-500">
-                ⛔ 법정 상한 초과
+                법정 상한 초과
               </div>
               <div className="mt-1 text-caption text-danger-500">
                 이 계약은 주택임대차보호법 §7의2를 위반할 수 있습니다.

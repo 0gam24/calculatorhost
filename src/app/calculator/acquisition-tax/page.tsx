@@ -9,6 +9,7 @@ import { FaqSection } from '@/components/calculator/FaqSection';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
+import Icon from '@/components/ui/Icon';
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -436,18 +437,18 @@ export default function AcquisitionTaxPage() {
 
               {/* 관련 가이드 */}
               <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    →{' '}
-                    <a href="/guide/property-tax-base-date-june-1-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
-                      📅 재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정
+                    <a href="/guide/property-tax-base-date-june-1-2026/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
+                      <Icon name="chevron-right" size={14} />
+                      <span>재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정</span>
                     </a>
                   </li>
                   <li>
-                    →{' '}
-                    <a href="/guide/june-property-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
-                      🏠 재산세 완벽 가이드 (6월 부과·7월 납부)
+                    <a href="/guide/june-property-tax/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
+                      <Icon name="chevron-right" size={14} />
+                      <span>재산세 완벽 가이드 (6월 부과·7월 납부)</span>
                     </a>
                   </li>
                 </ul>

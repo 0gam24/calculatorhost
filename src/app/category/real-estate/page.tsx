@@ -5,6 +5,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
+import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
@@ -277,9 +278,10 @@ export default function RealEstateCategoryPage() {
                       </div>
                       <Link
                         href={calc.href}
-                        className="inline-block w-fit rounded-lg bg-danger-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-danger-600"
+                        className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-danger-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-danger-600"
                       >
-                        {calc.title} 계산하기 →
+                        <span>{calc.title} 계산하기</span>
+                        <Icon name="chevron-right" size={16} />
                       </Link>
                     </div>
                   ))}
@@ -299,9 +301,10 @@ export default function RealEstateCategoryPage() {
                           <li key={slug}>
                             <Link
                               href={`/calculator/${slug}/`}
-                              className="text-primary-600 hover:underline dark:text-primary-500"
+                              className="inline-flex items-center gap-1 text-primary-600 hover:underline dark:text-primary-500"
                             >
-                              → /calculator/{slug}
+                              <Icon name="chevron-right" size={14} />
+                              <span>/calculator/{slug}</span>
                             </Link>
                           </li>
                         ))}
@@ -327,9 +330,10 @@ export default function RealEstateCategoryPage() {
                         <li key={g.slug}>
                           <Link
                             href={`/guide/${g.slug}/`}
-                            className="text-primary-600 hover:underline dark:text-primary-500"
+                            className="inline-flex items-center gap-1 text-primary-600 hover:underline dark:text-primary-500"
                           >
-                            → {g.title}
+                            <Icon name="chevron-right" size={14} />
+                            <span>{g.title}</span>
                           </Link>
                         </li>
                       ))}
@@ -358,9 +362,10 @@ export default function RealEstateCategoryPage() {
                     </ul>
                     <Link
                       href={`/glossary/#${encodeURIComponent(ref.sectionAnchor)}`}
-                      className="text-sm text-primary-600 hover:underline dark:text-primary-500"
+                      className="inline-flex items-center gap-1 text-sm text-primary-600 hover:underline dark:text-primary-500"
                     >
-                      → 용어사전 전체 보기 ({ref.sectionAnchor})
+                      <Icon name="chevron-right" size={14} />
+                      <span>용어사전 전체 보기 ({ref.sectionAnchor})</span>
                     </Link>
                   </section>
                 );

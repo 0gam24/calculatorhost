@@ -90,11 +90,11 @@ export default function AffiliateDisclosurePage() {
 
               {/* 핵심 원칙 */}
               <section aria-label="핵심 원칙" className="card space-y-4">
-                <h2 className="text-2xl font-semibold">📜 핵심 원칙</h2>
+                <h2 className="text-2xl font-semibold">핵심 원칙</h2>
                 <ol className="list-decimal space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
                     <strong>모든 어필리에이트 링크는 명확히 표시</strong> —
-                    "광고", "Affiliate", "📢" 등으로 일반 정보 링크와 시각적으로 구분합니다.
+                    "광고" 또는 "Affiliate" 라벨로 일반 정보 링크와 시각적으로 구분합니다.
                   </li>
                   <li>
                     <strong>HTML <code>rel="sponsored nofollow noopener noreferrer"</code> 적용</strong> —
@@ -120,7 +120,7 @@ export default function AffiliateDisclosurePage() {
 
               {/* 활성 파트너 목록 */}
               <section aria-label="활성 파트너" className="card space-y-4">
-                <h2 className="text-2xl font-semibold">🤝 활성 어필리에이트 파트너</h2>
+                <h2 className="text-2xl font-semibold">활성 어필리에이트 파트너</h2>
                 {activePartners.length === 0 ? (
                   <p className="text-sm text-text-secondary">
                     현재 활성된 어필리에이트 파트너가 없습니다. 파트너 등록은 운영자 검토 후 점진적으로 추가됩니다.
@@ -160,7 +160,7 @@ export default function AffiliateDisclosurePage() {
               {/* 검토 중인 파트너 */}
               {inactivePartners.length > 0 && (
                 <section aria-label="검토 중 파트너" className="card space-y-3">
-                  <h2 className="text-xl font-semibold">🔍 검토 중인 파트너</h2>
+                  <h2 className="text-xl font-semibold">검토 중인 파트너</h2>
                   <p className="text-sm text-text-secondary">
                     아래 파트너는 운영자 검토 단계로, 현재 사이트에서 어필리에이트 링크가 활성화되어 있지 않습니다.
                   </p>
@@ -176,7 +176,7 @@ export default function AffiliateDisclosurePage() {
 
               {/* 법적 근거 */}
               <section aria-label="법적 근거" className="card space-y-3">
-                <h2 className="text-xl font-semibold">⚖️ 법적 근거</h2>
+                <h2 className="text-xl font-semibold">법적 근거</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
                     <a
@@ -216,7 +216,7 @@ export default function AffiliateDisclosurePage() {
 
               {/* 사용자 권리 */}
               <section aria-label="사용자 권리" className="card space-y-3">
-                <h2 className="text-xl font-semibold">🛡️ 사용자 권리</h2>
+                <h2 className="text-xl font-semibold">사용자 권리</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
                     <strong>광고 거부권</strong>: 본 페이지 어필리에이트 링크 클릭은 전적으로 자유 의사이며,

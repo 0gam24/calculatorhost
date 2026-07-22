@@ -5,6 +5,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AdSlot } from '@/components/ads/AdSlot';
+import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
   buildItemListJsonLd,
@@ -284,9 +285,10 @@ export default function TaxCategoryPage() {
                       </div>
                       <Link
                         href={calc.href}
-                        className="inline-block w-fit rounded-lg bg-primary-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-primary-600"
+                        className="inline-flex w-fit items-center gap-1.5 rounded-lg bg-primary-500 px-4 py-2 font-semibold text-white transition-colors hover:bg-primary-600"
                       >
-                        {calc.title} 계산하기 →
+                        <span>{calc.title} 계산하기</span>
+                        <Icon name="chevron-right" size={16} />
                       </Link>
                     </div>
                   ))}
@@ -308,9 +310,10 @@ export default function TaxCategoryPage() {
                           <li key={slug}>
                             <Link
                               href={`/calculator/${slug}/`}
-                              className="text-primary-600 hover:underline dark:text-primary-500"
+                              className="inline-flex items-center gap-1 text-primary-600 hover:underline dark:text-primary-500"
                             >
-                              → /calculator/{slug}
+                              <Icon name="chevron-right" size={14} />
+                              <span>/calculator/{slug}</span>
                             </Link>
                           </li>
                         ))}
@@ -339,9 +342,10 @@ export default function TaxCategoryPage() {
                         <li key={g.slug}>
                           <Link
                             href={`/guide/${g.slug}/`}
-                            className="text-primary-600 hover:underline dark:text-primary-500"
+                            className="inline-flex items-center gap-1 text-primary-600 hover:underline dark:text-primary-500"
                           >
-                            → {g.title}
+                            <Icon name="chevron-right" size={14} />
+                            <span>{g.title}</span>
                           </Link>
                         </li>
                       ))}
@@ -371,9 +375,10 @@ export default function TaxCategoryPage() {
                     </ul>
                     <Link
                       href={`/glossary/#${encodeURIComponent(ref.sectionAnchor)}`}
-                      className="text-sm text-primary-600 hover:underline dark:text-primary-500"
+                      className="inline-flex items-center gap-1 text-sm text-primary-600 hover:underline dark:text-primary-500"
                     >
-                      → 용어사전 전체 보기 ({ref.sectionAnchor})
+                      <Icon name="chevron-right" size={14} />
+                      <span>용어사전 전체 보기 ({ref.sectionAnchor})</span>
                     </Link>
                   </section>
                 );
@@ -423,9 +428,9 @@ export default function TaxCategoryPage() {
                       부동산을 사고팔 때는 거래 비용을 정확히 예측하는 것이 필수입니다. 양도소득세 계산기로 매각 시 세금 부담을 먼저 확인하고, 취득세 계산기로 매입 시 비용을 파악하세요. 거래 전 최소 2-3주 여유를 두고 계산하면 협상 자료로도 활용할 수 있습니다.
                     </p>
                     <ul className="list-inside list-disc space-y-1 ml-2">
-                      <li>매도 예정: 양도소득세 → 세후 수익 확인</li>
-                      <li>매수 예정: 취득세 → 총 구매 비용 산출</li>
-                      <li>보유 중: 재산세 → 연간 세금 예산 계획</li>
+                      <li>매도 예정이라면 양도소득세로 세후 수익을 먼저 확인</li>
+                      <li>매수 예정이라면 취득세로 총 구매 비용을 산출</li>
+                      <li>보유 중이라면 재산세로 연간 세금 예산을 계획</li>
                     </ul>
                   </div>
 
@@ -452,7 +457,7 @@ export default function TaxCategoryPage() {
                 </div>
 
                 <div className="mt-6 space-y-2 rounded-lg bg-highlight-500 bg-opacity-10 p-4">
-                  <p className="font-semibold text-highlight-500">💡 활용 팁</p>
+                  <p className="font-semibold text-highlight-500">활용 팁</p>
                   <ul className="space-y-1 text-sm">
                     <li>• 모든 계산기는 2026년 최신 세율을 반영합니다</li>
                     <li>• 결과는 참고용이며, 정확한 신고는 세무 전문가와 상담하세요</li>

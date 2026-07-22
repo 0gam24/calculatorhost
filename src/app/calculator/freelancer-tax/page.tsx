@@ -687,12 +687,12 @@ export default function FreelancerTaxPage() {
               {/* 관련 계산기 */}
               {/* 관련 가이드 CTA — 시기성 콘텐츠 노출 */}
               <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
                     <a href="/guide/may-comprehensive-income-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
-                      🔥 5월 종합소득세 신고 완벽 가이드 (2026)
+                      5월 종합소득세 신고 완벽 가이드 (2026)
                     </a>{' '}
                     — 신고 대상·홈택스 단계별 신고법·절세 5가지 (시즌 직전 필독)
                   </li>

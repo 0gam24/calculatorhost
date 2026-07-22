@@ -306,7 +306,7 @@ export default function NJobberInsurancePage() {
               <div className="space-y-4">
                 <div className="rounded-lg border-l-4 border-danger-500 bg-bg-card p-4">
                   <h3 className="font-semibold text-danger-500 mb-3">
-                    ⚠️ 자격 상실 기준
+                    자격 상실 기준
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>

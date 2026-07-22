@@ -270,7 +270,7 @@ export default function ChildTaxCreditPage() {
                     <li>4,300만원 초과: 지급 불가</li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
-                    ⚠️ 배우자 소득도 포함됨
+                    주의: 배우자 소득도 포함됨
                   </p>
                 </div>
 
@@ -284,7 +284,7 @@ export default function ChildTaxCreditPage() {
                     <li>배우자 명의 자녀도 포함될 수 있음</li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
-                    ⚠️ 혼인 또는 근로소득이 있으면 제외 가능
+                    주의: 혼인 또는 근로소득이 있으면 제외 가능
                   </p>
                 </div>
 
@@ -297,7 +297,7 @@ export default function ChildTaxCreditPage() {
                     <li>주택, 토지, 금융자산 등 모두 포함</li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
-                    ⚠️ 재산세 과세명세서로 확인 가능
+                    주의: 재산세 과세명세서로 확인 가능
                   </p>
                 </div>
               </div>
@@ -354,7 +354,7 @@ export default function ChildTaxCreditPage() {
                 </li>
               </ul>
               <p className="text-xs text-text-secondary mt-4">
-                ⚠️ 정확한 서류는 세무서에 문의하세요.
+                주의: 정확한 서류는 세무서에 문의하세요.
               </p>
             </section>
 

@@ -285,7 +285,7 @@ export function HousingSubscriptionCalculator() {
           {/* 주의사항 */}
           <div className="rounded-lg bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 p-4">
             <p className="text-xs font-semibold text-blue-800 dark:text-blue-300 mb-2">
-              ⚠️ 중요 안내
+              중요 안내
             </p>
             <ul className="space-y-1 text-xs text-blue-700 dark:text-blue-200">
               <li>

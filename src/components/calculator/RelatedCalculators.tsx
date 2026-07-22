@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/ui/Icon';
 import { cn } from '@/lib/utils';
 
 export interface RelatedItem {
@@ -30,7 +31,7 @@ export function RelatedCalculators({ items, className }: RelatedCalculatorsProps
               ) : null}
             </div>
             <span aria-hidden className="text-primary-500">
-              →
+              <Icon name="chevron-right" size={16} />
             </span>
           </Link>
         ))}

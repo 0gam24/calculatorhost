@@ -265,7 +265,7 @@ export default function HousingSubscriptionPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
-                    ⚠️ 계산 기준일: 청약신청일
+                    주의: 계산 기준일은 청약신청일
                   </p>
                 </div>
 
@@ -285,7 +285,7 @@ export default function HousingSubscriptionPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
-                    ⚠️ 포함 범위: 본인 + 배우자 + 직계비속
+                    주의: 포함 범위는 본인, 배우자, 직계비속
                   </p>
                 </div>
 
@@ -302,7 +302,7 @@ export default function HousingSubscriptionPage() {
                     </li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
-                    ⚠️ 월 2만원 이상 납입 필수 (12개월 이후 청약 가능)
+                    주의: 월 2만원 이상 납입 필수 (12개월 이후 청약 가능)
                   </p>
                 </div>
               </div>

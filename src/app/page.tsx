@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { AdSlot } from '@/components/ads/AdSlot';
+import Icon from '@/components/ui/Icon';
 import {
   buildOrganizationJsonLd,
   buildWebSiteJsonLd,
@@ -19,11 +20,11 @@ export const metadata: Metadata = {
 };
 
 const CATEGORIES = [
-  { slug: 'work', title: '근로', icon: '💼', desc: '연봉·퇴직금·실수령액' },
-  { slug: 'tax', title: '세금', icon: '🧾', desc: '양도세·취득세·재산세' },
-  { slug: 'finance', title: '금융', icon: '💰', desc: '대출·예금·적금·환율' },
-  { slug: 'real-estate', title: '부동산', icon: '🏠', desc: '중개료·평수·임대수익률' },
-  { slug: 'lifestyle', title: '생활', icon: '📅', desc: 'BMI·D-day·자동차세' },
+  { slug: 'work', title: '근로', icon: 'briefcase', desc: '연봉·퇴직금·실수령액' },
+  { slug: 'tax', title: '세금', icon: 'receipt', desc: '양도세·취득세·재산세' },
+  { slug: 'finance', title: '금융', icon: 'banknote', desc: '대출·예금·적금·환율' },
+  { slug: 'real-estate', title: '부동산', icon: 'home', desc: '중개료·평수·임대수익률' },
+  { slug: 'lifestyle', title: '생활', icon: 'calendar', desc: 'BMI·D-day·자동차세' },
 ] as const;
 
 const POPULAR = [
@@ -37,7 +38,7 @@ const POPULAR = [
 
 const PERSONAS = [
   {
-    icon: '💼',
+    icon: 'briefcase',
     title: '직장인',
     desc: '연봉 협상·이직 전 세후 수치 확인이 필요한',
     calculators: [
@@ -47,7 +48,7 @@ const PERSONAS = [
     ],
   },
   {
-    icon: '🏠',
+    icon: 'home',
     title: '부동산 거래 직전자',
     desc: '매매·전세 계약 전 세금과 취득 비용을 확인해야 하는',
     calculators: [
@@ -57,7 +58,7 @@ const PERSONAS = [
     ],
   },
   {
-    icon: '💻',
+    icon: 'laptop',
     title: '프리랜서·1인사업자',
     desc: '종합소득세·경비율·세액공제를 정확히 계산해야 하는',
     calculators: [
@@ -67,7 +68,7 @@ const PERSONAS = [
     ],
   },
   {
-    icon: '🏦',
+    icon: 'landmark',
     title: '대출 실행 예정자',
     desc: '주담대·전세대출 한도와 월 상환액을 시뮬하려는',
     calculators: [
@@ -304,8 +305,11 @@ export default function HomePage() {
                       href={`/category/${cat.slug}`}
                       className="card card-hover flex flex-col items-start"
                     >
-                      <span className="mb-3 text-3xl" aria-hidden>
-                        {cat.icon}
+                      <span
+                        className="mb-3 inline-flex h-11 w-11 items-center justify-center rounded-chip bg-primary-50 text-primary-600 dark:bg-primary-900/40 dark:text-primary-300"
+                        aria-hidden
+                      >
+                        <Icon name={cat.icon} size={22} />
                       </span>
                       <span className="mb-1 font-semibold text-text-primary">{cat.title}</span>
                       <span className="text-sm text-text-tertiary">{cat.desc}</span>
@@ -328,8 +332,8 @@ export default function HomePage() {
                         <span className="font-semibold text-text-primary">{item.title}</span>
                         <span className="text-xs text-text-tertiary">{item.tag}</span>
                       </div>
-                      <span className="rounded-lg bg-primary-500/10 px-3 py-2 text-sm font-semibold text-primary-500">
-                        →
+                      <span className="rounded-lg bg-primary-500/10 px-3 py-2 text-primary-500">
+                        <Icon name="chevron-right" size={16} />
                       </span>
                     </Link>
                   ))}
@@ -374,8 +378,11 @@ export default function HomePage() {
                       className="card card-hover flex flex-col"
                     >
                       <div className="mb-4 flex items-start gap-4">
-                        <span className="text-5xl shrink-0" aria-hidden>
-                          {persona.icon}
+                        <span
+                          className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-chip bg-primary-50 text-primary-600 dark:bg-primary-900/40 dark:text-primary-300"
+                          aria-hidden
+                        >
+                          <Icon name={persona.icon} size={24} />
                         </span>
                         <div className="flex-1">
                           <h3 className="font-bold text-base text-text-primary">{persona.title}</h3>
@@ -387,9 +394,10 @@ export default function HomePage() {
                           <Link
                             key={calc.href}
                             href={calc.href}
-                            className="text-sm text-primary-500 font-medium transition hover:text-primary-400 hover:underline"
+                            className="inline-flex items-center gap-1 text-sm text-primary-500 font-medium transition hover:text-primary-400 hover:underline"
                           >
-                            → {calc.title}
+                            <Icon name="chevron-right" size={14} />
+                            <span>{calc.title}</span>
                           </Link>
                         ))}
                       </div>
@@ -471,7 +479,9 @@ export default function HomePage() {
                               href={calc.href}
                               className="text-sm text-text-secondary transition hover:text-primary-500 hover:underline flex items-center gap-2 group"
                             >
-                              <span className="text-primary-500 opacity-0 group-hover:opacity-100 transition">→</span>
+                              <span className="text-primary-500 opacity-0 group-hover:opacity-100 transition">
+                                <Icon name="chevron-right" size={14} />
+                              </span>
                               <span>{calc.title}</span>
                             </Link>
                           </li>

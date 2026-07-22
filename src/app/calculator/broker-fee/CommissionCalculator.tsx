@@ -270,7 +270,7 @@ export function CommissionCalculator() {
           <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-3">
             {result.warnings.map((warning, idx) => (
               <p key={idx} className="text-sm text-highlight-500 font-medium">
-                ⚠️ {warning}
+                주의: {warning}
               </p>
             ))}
           </div>

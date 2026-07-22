@@ -281,7 +281,7 @@ export default function TransferTaxPage() {
               {/* 2026년 세율 기준 및 개정 안내 */}
               <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
                 <p className="text-sm text-text-secondary">
-                  <strong className="text-highlight-700 dark:text-highlight-300">⚠️ 2026년 세율 기준:</strong> 본 계산은 2026년 현행 소득세법(누진 6~45%, 장기보유공제, 1세대1주택 비과세 12억)에 따른 계산입니다.
+                  <strong className="text-highlight-700 dark:text-highlight-300">2026년 세율 기준:</strong> 본 계산은 2026년 현행 소득세법(누진 6~45%, 장기보유공제, 1세대1주택 비과세 12억)에 따른 계산입니다.
                   정부의 부동산·세제 개혁 계획 예고에 따라 세율·공제·비과세 요건이 변경될 수 있으니,
                   <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">국세청</a>과
                   <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">홈택스</a>에서 최신 공지를 확인하세요.
@@ -551,7 +551,7 @@ export default function TransferTaxPage() {
                 </div>
 
                 <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
-                  <h3 className="mb-2 font-semibold text-text-primary">📌 사례 1. 5년 보유 나대지 양도</h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">사례 1. 5년 보유 나대지 양도</h3>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>취득가: 1억 원 (2021년)</li>
                     <li>양도가: 3억 원 (2026년)</li>
@@ -570,7 +570,7 @@ export default function TransferTaxPage() {
                 </div>
 
                 <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
-                  <h3 className="mb-2 font-semibold text-text-primary">📌 사례 2. 8년 자경 농지 양도 (감면 적용)</h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">사례 2. 8년 자경 농지 양도 (감면 적용)</h3>
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>취득가: 5,000만 원 (2017년)</li>
                     <li>양도가: 2억 원 (2026년, 9년 보유)</li>
@@ -587,7 +587,7 @@ export default function TransferTaxPage() {
 
                 <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>⚠️ 비사업용 토지 주의</strong>: 도시 외곽 나대지·임야 등이 비사업용으로 분류되면
+                    <strong>비사업용 토지 주의</strong>: 도시 외곽 나대지·임야 등이 비사업용으로 분류되면
                     누진세율에 +10%p 가산됩니다. 사업 사용 입증(임대·경작·자영업 등)으로 사업용 인정받아야
                     가산세 회피 가능. 정확한 분류는 국세청 양도소득세 전문가 상담 권장.
                   </p>
@@ -718,7 +718,7 @@ export default function TransferTaxPage() {
               {/* 관련 계산기 */}
               {/* 관련 가이드 CTA */}
               <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">📚 함께 보면 좋은 가이드</h2>
+                <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}

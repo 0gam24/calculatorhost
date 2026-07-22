@@ -473,7 +473,7 @@ export default function AveragingDownPage() {
                 <h2 className="mb-3 text-2xl font-semibold">주의사항 및 면책</h2>
                 <div className="mb-4 rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
                   <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-200">
-                    ⚠️ 중요 경고
+                    주의: 중요 경고
                   </h3>
                   <p className="text-sm text-danger-600 dark:text-danger-300 mb-2">
                     <strong>본 계산기는 투자 권유가 아닙니다.</strong> 물타기는 고위험 전략이며,
@@ -516,7 +516,7 @@ export default function AveragingDownPage() {
                 </p>
                 <div className="mb-4 grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
-                    <h3 className="mb-3 font-semibold text-text-primary">📈 주식 물타기</h3>
+                    <h3 className="mb-3 font-semibold text-text-primary">주식 물타기</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li><strong>수량 단위</strong>: 정수(주). 소수점 매수 불가(일부 미국주식 소수점 거래 예외)</li>
                       <li><strong>거래 시간</strong>: 정규장(09:00–15:30). 시간외 단일가 보조</li>
@@ -526,7 +526,7 @@ export default function AveragingDownPage() {
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
-                    <h3 className="mb-3 font-semibold text-text-primary">🪙 코인 물타기</h3>
+                    <h3 className="mb-3 font-semibold text-text-primary">코인 물타기</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li><strong>수량 단위</strong>: 소수점(BTC 8자리, 알트 4~8자리). 본 계산기는 소수점 입력 지원</li>
                       <li><strong>거래 시간</strong>: 24시간 365일</li>

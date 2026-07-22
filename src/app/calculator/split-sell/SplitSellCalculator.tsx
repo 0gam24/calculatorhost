@@ -213,7 +213,7 @@ export function SplitSellCalculator() {
       {result.warnings.length > 0 && (
         <div className="rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
           <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-200">
-            ⚠ 주의사항
+            주의사항
           </h3>
           <ul className="space-y-1 text-sm text-danger-600 dark:text-danger-300">
             {result.warnings.map((w, i) => (
@@ -322,7 +322,7 @@ export function SplitSellCalculator() {
       )}
 
       <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
-        <h3 className="mb-2 font-semibold">💡 사용 안내</h3>
+        <h3 className="mb-2 font-semibold">사용 안내</h3>
         <p className="text-xs text-text-secondary">
           평단·보유 수량과 차수별 매도 단가·수량을 입력하면 차수별 실현손익(수수료·거래세
           차감)과 누적 손익이 자동 계산됩니다. 자산 유형에 따라 매도 수수료·거래세

@@ -197,7 +197,7 @@ export function NJobberInsuranceCalculator() {
           {/* 피부양자 상실 경고 */}
           {result.dependentLossRisk && (
             <div className="mt-6 rounded-lg border-l-4 border-danger-500 bg-danger-500/10 p-4">
-              <h3 className="font-semibold text-danger-500 mb-2">⚠️ 피부양자 자격 상실 위험</h3>
+              <h3 className="font-semibold text-danger-500 mb-2">주의: 피부양자 자격 상실 위험</h3>
               <p className="text-sm text-text-secondary mb-3">
                 추가소득이 2,000만원 이상이면 건강보험 피부양자 자격을 잃고 지역가입자로 전환되어 보험료가 크게 증가할 수 있습니다.
               </p>
@@ -255,18 +255,18 @@ export function NJobberInsuranceCalculator() {
         <h3 className="text-lg font-semibold mb-4">N잡러 건강보험 안내</h3>
         <div className="space-y-4 text-sm text-text-secondary">
           <div>
-            <p className="font-semibold text-text-primary mb-1">📊 건강보험료 계산</p>
+            <p className="font-semibold text-text-primary mb-1">건강보험료 계산</p>
             <ul className="list-inside list-disc space-y-1">
               <li>근로소득: 월급의 3.545% (근로자 부담)</li>
               <li>추가소득: 2,000만원 초과분의 7.09% / 12월</li>
             </ul>
           </div>
           <div>
-            <p className="font-semibold text-text-primary mb-1">⚠️ 피부양자 상실 조건</p>
+            <p className="font-semibold text-text-primary mb-1">피부양자 상실 조건</p>
             <p>추가소득(사업소득 + 기타소득) ≥ 2,000만원</p>
           </div>
           <div>
-            <p className="font-semibold text-text-primary mb-1">💡 절세 팁</p>
+            <p className="font-semibold text-text-primary mb-1">절세 팁</p>
             <ul className="list-inside list-disc space-y-1">
               <li>추가소득 2,000만원 이하 유지 → 피부양자 자격 유지</li>
               <li>필요경비 적절히 공제 → 순소득 감소</li>

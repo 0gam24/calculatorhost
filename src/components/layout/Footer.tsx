@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Icon from '@/components/ui/Icon';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 
 export function Footer() {
@@ -12,7 +13,10 @@ export function Footer() {
               한국 생활 금융·세금 계산기 31종을 2026년 최신 기준으로 제공하는 무료 서비스.
             </p>
             <p className="mt-3 text-caption text-text-tertiary">
-              <Link href="/feeds/" className="hover:text-primary-500">📡 피드 구독 (RSS·Atom·JSON)</Link>
+              <Link href="/feeds/" className="inline-flex items-center gap-1.5 hover:text-primary-500">
+                <Icon name="rss" size={14} />
+                <span>피드 구독 (RSS·Atom·JSON)</span>
+              </Link>
             </p>
           </div>
           <div>
@@ -30,12 +34,17 @@ export function Footer() {
           <div>
             <h3 className="mb-2 font-semibold">가이드 & 사전</h3>
             <ul className="space-y-1 text-sm text-text-secondary">
-              <li><Link href="/guide/" className="hover:text-primary-500 font-semibold">📖 전체 가이드</Link></li>
-              <li><Link href="/guide/tax-calendar-2026/" className="hover:text-primary-500 font-semibold text-primary-700 dark:text-primary-300">📅 2026 세금 캘린더</Link></li>
+              <li>
+                <Link href="/guide/" className="inline-flex items-center gap-1.5 hover:text-primary-500 font-semibold">
+                  <Icon name="book-open" size={14} />
+                  <span>전체 가이드</span>
+                </Link>
+              </li>
+              <li><Link href="/guide/tax-calendar-2026/" className="inline-flex items-center gap-1.5 hover:text-primary-500 font-semibold text-primary-700 dark:text-primary-300"><Icon name="calendar" size={14} />2026 세금 캘린더</Link></li>
               <li><Link href="/guide/year-end-tax-settlement/" className="hover:text-primary-500">연말정산 (1~2월)</Link></li>
               <li><Link href="/guide/january-vehicle-tax-prepayment/" className="hover:text-primary-500">자동차세 연납 5%</Link></li>
-              <li><Link href="/guide/may-comprehensive-income-tax/" className="hover:text-primary-500">🔥 5월 종합소득세 신고</Link></li>
-              <li><Link href="/guide/june-property-tax/" className="hover:text-primary-500">🏠 재산세 (7월 납부)</Link></li>
+              <li><Link href="/guide/may-comprehensive-income-tax/" className="hover:text-primary-500">5월 종합소득세 신고</Link></li>
+              <li><Link href="/guide/june-property-tax/" className="hover:text-primary-500">재산세 (7월 납부)</Link></li>
               <li><Link href="/guide/dsr-loan-limit-tips/" className="hover:text-primary-500">DSR 한도 늘리는 5가지</Link></li>
               <li><Link href="/guide/capital-gains-tax-tips/" className="hover:text-primary-500">양도세 절세 7가지</Link></li>
               <li><Link href="/guide/dsr-regulation-zones/" className="hover:text-primary-500">DSR·LTV 규제지역 정리</Link></li>
@@ -47,7 +56,7 @@ export function Footer() {
             <h3 className="mb-2 font-semibold">정보</h3>
             <ul className="space-y-1 text-sm text-text-secondary">
               <li><Link href="/about" className="hover:text-primary-500">소개</Link></li>
-              <li><Link href="/updates/" className="hover:text-primary-500">📝 변경 이력 (Changelog)</Link></li>
+              <li><Link href="/updates/" className="hover:text-primary-500">변경 이력 (Changelog)</Link></li>
               <li><Link href="/privacy" className="hover:text-primary-500">개인정보처리방침</Link></li>
               <li><Link href="/terms" className="hover:text-primary-500">이용약관</Link></li>
               <li><Link href="/affiliate-disclosure/" className="hover:text-primary-500">어필리에이트 공시</Link></li>

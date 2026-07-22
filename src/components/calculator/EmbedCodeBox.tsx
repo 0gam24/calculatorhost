@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Icon from '@/components/ui/Icon';
 import { buildEmbedSnippet, type EmbedSnippetParams } from '@/lib/seo/embed';
 
 type EmbedCodeBoxProps = EmbedSnippetParams;
@@ -29,7 +30,10 @@ export function EmbedCodeBox({ embedPath, canonicalPath, title, height }: EmbedC
 
   return (
     <section aria-label="이 계산기 임베드" className="card flex flex-col gap-3">
-      <h2 className="text-base font-semibold">🔗 내 블로그·홈페이지에 이 계산기 넣기</h2>
+      <h2 className="inline-flex items-center gap-1.5 text-base font-semibold">
+        <Icon name="link" size={16} />
+        <span>내 블로그·홈페이지에 이 계산기 넣기</span>
+      </h2>
       <p className="text-sm text-text-secondary">
         아래 코드를 복사해 티스토리·워드프레스·네이버 블로그(HTML 모드) 등에 붙여넣으면 이 계산기를
         그대로 삽입할 수 있습니다. 무료이며, 출처 링크만 유지해 주세요.
@@ -47,9 +51,10 @@ export function EmbedCodeBox({ embedPath, canonicalPath, title, height }: EmbedC
           type="button"
           onClick={handleCopy}
           aria-label="임베드 코드 복사"
-          className="rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 hover:bg-primary-500/20 dark:text-primary-300 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 hover:bg-primary-500/20 dark:text-primary-300 transition-colors"
         >
-          {copied ? '✓ 복사됨' : '📋 임베드 코드 복사'}
+          <Icon name={copied ? 'check' : 'clipboard'} size={14} />
+          <span>{copied ? '복사됨' : '임베드 코드 복사'}</span>
         </button>
         <a
           href={embedPath}

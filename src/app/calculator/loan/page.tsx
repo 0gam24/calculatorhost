@@ -452,13 +452,13 @@ export default function LoanInterestPage() {
                 title="대출이자 계산기"
               />
 
-              {/* 📚 함께 보면 좋은 가이드 */}
+              {/* 함께 보면 좋은 가이드 */}
               <section
                 aria-label="관련 가이드"
                 className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-6 space-y-4"
               >
                 <h2 className="text-xl font-semibold flex items-center gap-2">
-                  <span>📚</span> 함께 보면 좋은 가이드
+                  <span></span> 함께 보면 좋은 가이드
                 </h2>
                 <ul className="space-y-3 text-sm">
                   <li>

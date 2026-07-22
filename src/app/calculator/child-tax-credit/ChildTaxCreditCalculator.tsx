@@ -73,7 +73,7 @@ export function ChildTaxCreditCalculator() {
             ))}
           </div>
           <p className="mt-2 text-xs text-text-secondary">
-            ⚠️ 단독 가구는 자녀장려금 대상이 아닙니다(근로장려금 대상).
+            주의: 단독 가구는 자녀장려금 대상이 아닙니다(근로장려금 대상).
           </p>
         </div>
 
@@ -235,17 +235,17 @@ export function ChildTaxCreditCalculator() {
         <h3 className="text-lg font-semibold mb-4">자녀장려금 신청 방법</h3>
         <div className="space-y-4 text-sm text-text-secondary">
           <div>
-            <p className="font-semibold text-text-primary mb-1">📅 신청 기간</p>
+            <p className="font-semibold text-text-primary mb-1">신청 기간</p>
             <p>매년 5월 귀속 종합소득세 신고 기간 중 함께 신청</p>
           </div>
           <div>
-            <p className="font-semibold text-text-primary mb-1">🏛️ 신청처</p>
+            <p className="font-semibold text-text-primary mb-1">신청처</p>
             <p>
               국세청 또는 세무서 (홈택스, 모바일 택스나 세무서 직접 방문)
             </p>
           </div>
           <div>
-            <p className="font-semibold text-text-primary mb-1">📋 필요 서류</p>
+            <p className="font-semibold text-text-primary mb-1">필요 서류</p>
             <ul className="list-inside list-disc space-y-1">
               <li>소득증명서 (근로소득 및 기타소득)</li>
               <li>가족관계증명서 또는 건강보험료 청구서</li>
@@ -253,7 +253,7 @@ export function ChildTaxCreditCalculator() {
             </ul>
           </div>
           <div>
-            <p className="font-semibold text-text-primary mb-1">💰 지급 시기</p>
+            <p className="font-semibold text-text-primary mb-1">지급 시기</p>
             <p>신고 후 약 2-3개월 뒤 국세청에서 지급</p>
           </div>
         </div>

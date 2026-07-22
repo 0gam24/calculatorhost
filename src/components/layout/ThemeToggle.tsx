@@ -1,6 +1,7 @@
 'use client';
 
 import { useCallback, useEffect, useState } from 'react';
+import Icon from '@/components/ui/Icon';
 
 type Theme = 'light' | 'dark';
 
@@ -26,7 +27,7 @@ export function ThemeToggle() {
       aria-label={theme === 'dark' ? '라이트 모드로 전환' : '다크 모드로 전환'}
       className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border-base text-lg hover:bg-bg-raised"
     >
-      <span aria-hidden>{theme === 'dark' ? '☀️' : '🌙'}</span>
+      <Icon name={theme === 'dark' ? 'sun' : 'moon'} size={18} />
     </button>
   );
 }

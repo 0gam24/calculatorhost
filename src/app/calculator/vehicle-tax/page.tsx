@@ -370,7 +370,7 @@ export default function VehicleTaxPage() {
                   </table>
                 </div>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-2">⚠️ 경계값 주의</p>
+                  <p className="text-text-primary font-semibold mb-2">경계값 주의</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li>• <strong>1000cc 정확</strong>: 80원/cc 적용 (1001cc부터 140원/cc)</li>
                     <li>• <strong>1600cc 정확</strong>: 140원/cc 적용 (1601cc부터 200원/cc) — 1cc 차이로 약 9만 원 차이</li>
@@ -476,7 +476,7 @@ export default function VehicleTaxPage() {
 
               {/* 주의사항 */}
               <section className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-6 space-y-3" aria-label="주의사항">
-                <h2 className="text-xl font-bold text-text-primary">⚠️ 주의사항</h2>
+                <h2 className="text-xl font-bold text-text-primary">주의사항</h2>
                 <ul className="space-y-2 text-text-secondary text-sm">
                   <li>
                     • <strong>영업용·승합·화물 차량</strong>: 본 계산기는 비영업용 승용차만 지원합니다.

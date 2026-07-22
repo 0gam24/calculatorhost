@@ -198,7 +198,7 @@ export default function DtiPage() {
               <AdSlot slot="dti-top" format="horizontal" />
 
               <section className="card border-l-4 border-l-primary-500 bg-primary-500/5">
-                <h2 className="mb-2 text-xl font-semibold">🔗 DTI·DSR·LTV 통합 계산</h2>
+                <h2 className="mb-2 text-xl font-semibold">DTI·DSR·LTV 통합 계산</h2>
                 <p className="mb-3 text-sm text-text-secondary">
                   DTI 만 단독으로 보면 실 대출한도를 정확히 알기 어렵습니다. 3개 규제 모두
                   통과해야 하므로 통합 계산기에서 결정적 제약 요인까지 확인하세요. 참고로 현재 한국은행 기준금리는{' '}

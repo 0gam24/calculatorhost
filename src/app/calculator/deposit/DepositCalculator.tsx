@@ -380,7 +380,7 @@ export function DepositCalculator() {
                 key={idx}
                 className="rounded-lg bg-danger-500/10 px-3 py-2 text-caption text-danger-500"
               >
-                ⚠️ {warning}
+                주의: {warning}
               </div>
             ))}
           </div>

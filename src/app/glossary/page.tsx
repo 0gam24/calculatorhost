@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
@@ -407,17 +408,19 @@ export default function GlossaryPage() {
                               href={term.url}
                               target="_blank"
                               rel="noopener noreferrer nofollow"
-                              className="text-primary-600 underline dark:text-primary-500"
+                              className="inline-flex items-center gap-1 text-primary-600 underline dark:text-primary-500"
                             >
-                              공식 출처 ↗
+                              <span>공식 출처</span>
+                              <Icon name="external-link" size={12} />
                             </a>
                           )}
                           {term.relatedCalculator && (
                             <Link
                               href={term.relatedCalculator.href}
-                              className="text-primary-600 underline dark:text-primary-500"
+                              className="inline-flex items-center gap-1 text-primary-600 underline dark:text-primary-500"
                             >
-                              → {term.relatedCalculator.label}
+                              <Icon name="chevron-right" size={14} />
+                              <span>{term.relatedCalculator.label}</span>
                             </Link>
                           )}
                         </div>

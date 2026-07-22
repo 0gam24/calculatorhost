@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import Icon, { type IconName } from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
@@ -47,16 +48,16 @@ type GuideCategory = '세금' | '세금·부동산' | '금융' | '투자' | '근
 
 interface CategoryMeta {
   id: GuideCategory;
-  emoji: string;
+  icon: IconName;
   description: string;
 }
 
 const CATEGORIES: CategoryMeta[] = [
-  { id: '세금', emoji: '🧾', description: '종합소득세·양도세·취득세·VAT 신고와 절세' },
-  { id: '세금·부동산', emoji: '🏠', description: '재산세·종합부동산세·임대차 세제' },
-  { id: '금융', emoji: '💰', description: 'DSR·LTV·대출한도·예적금·환율' },
-  { id: '투자', emoji: '📈', description: '주식·코인 평단·분할매수·분할매도' },
-  { id: '근로', emoji: '💼', description: '연봉·실수령·프리랜서·N잡러' },
+  { id: '세금', icon: 'receipt', description: '종합소득세·양도세·취득세·VAT 신고와 절세' },
+  { id: '세금·부동산', icon: 'home', description: '재산세·종합부동산세·임대차 세제' },
+  { id: '금융', icon: 'banknote', description: 'DSR·LTV·대출한도·예적금·환율' },
+  { id: '투자', icon: 'trending-up', description: '주식·코인 평단·분할매수·분할매도' },
+  { id: '근로', icon: 'briefcase', description: '연봉·실수령·프리랜서·N잡러' },
 ];
 
 export const GUIDES: GuideEntry[] = [
@@ -2162,10 +2163,10 @@ const GUIDES_BY_CATEGORY: Record<GuideCategory, GuideEntry[]> = {
 };
 GUIDES.forEach((g) => GUIDES_BY_CATEGORY[g.category].push(g));
 
-// 카테고리 이모지 조회 (전체 목록 배지용)
-const CATEGORY_EMOJI = Object.fromEntries(
-  CATEGORIES.map((c) => [c.id, c.emoji])
-) as Record<GuideCategory, string>;
+// 카테고리 아이콘 조회 (전체 목록 배지용)
+const CATEGORY_ICON = Object.fromEntries(
+  CATEGORIES.map((c) => [c.id, c.icon])
+) as Record<GuideCategory, IconName>;
 
 // 전체 — 최신순 날짜별 그룹 (오늘 포스팅이 최상단)
 const GUIDES_BY_DATE: { date: string; items: GuideEntry[] }[] = [];
@@ -2226,13 +2227,13 @@ export default function GuideIndexPage() {
                   href="#all"
                   className="rounded-chip border border-primary-500 bg-primary-500/10 px-3 py-1.5 text-sm font-semibold text-primary-500 hover:bg-primary-500/20"
                 >
-                  🗂 전체 ({GUIDES.length})
+                  전체 ({GUIDES.length})
                 </a>
                 <a
                   href="#seasonal"
                   className="rounded-chip border border-danger-500 bg-danger-500/10 px-3 py-1.5 text-sm font-semibold text-danger-700 dark:text-danger-300 hover:bg-danger-500/20"
                 >
-                  🔥 시즌 가이드 ({SEASONAL_GUIDES.length})
+                  시즌 가이드 ({SEASONAL_GUIDES.length})
                 </a>
                 {CATEGORIES.map((cat) => {
                   const count = GUIDES_BY_CATEGORY[cat.id].length;
@@ -2243,7 +2244,10 @@ export default function GuideIndexPage() {
                       href={`#${encodeURIComponent(cat.id)}`}
                       className="rounded-chip border border-border-base bg-bg-card px-3 py-1.5 text-sm font-medium hover:border-primary-500 hover:text-primary-500"
                     >
-                      {cat.emoji} {cat.id} ({count})
+                      <span aria-hidden className="mr-1 inline-flex align-[-3px] text-primary-500">
+                        <Icon name={cat.icon} size={14} />
+                      </span>
+                      {cat.id} ({count})
                     </a>
                   );
                 })}
@@ -2253,7 +2257,7 @@ export default function GuideIndexPage() {
               <section id="all" aria-label="전체 가이드 (최신순)" className="card space-y-5 scroll-mt-4">
                 <header className="flex items-baseline justify-between border-b border-border-base pb-2">
                   <h2 className="text-2xl font-bold">
-                    🗂 전체 가이드{' '}
+                    전체 가이드{' '}
                     <span className="text-base text-text-tertiary font-normal">
                       (최신순 · {GUIDES.length})
                     </span>
@@ -2281,8 +2285,8 @@ export default function GuideIndexPage() {
                               href={`/guide/${g.slug}/`}
                               className="flex items-center gap-3 py-2 hover:bg-primary-500/5"
                             >
-                              <span aria-hidden className="text-base">
-                                {CATEGORY_EMOJI[g.category]}
+                              <span aria-hidden className="shrink-0 text-primary-500">
+                                <Icon name={CATEGORY_ICON[g.category]} size={16} />
                               </span>
                               <span className="flex-1 text-sm font-medium text-text-primary hover:text-primary-500">
                                 {g.title}
@@ -2307,7 +2311,7 @@ export default function GuideIndexPage() {
                   className="card border-l-2 border-l-danger-500 bg-danger-500/5 space-y-4"
                 >
                   <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
-                    🔥 시즌 가이드 — 지금 가장 검색 많은 주제
+                    시즌 가이드: 지금 가장 검색 많은 주제
                   </h2>
                   <div className="grid gap-4 md:grid-cols-2">
                     {SEASONAL_GUIDES.map((g) => (
@@ -2339,8 +2343,11 @@ export default function GuideIndexPage() {
                 return (
                   <section key={cat.id} id={cat.id} aria-label={`${cat.id} 가이드`} className="space-y-4">
                     <header className="flex items-baseline justify-between border-b border-border-base pb-2">
-                      <h2 className="text-2xl font-bold">
-                        <span aria-hidden>{cat.emoji}</span> {cat.id}{' '}
+                      <h2 className="flex items-center gap-2 text-2xl font-bold">
+                        <span aria-hidden className="text-primary-500">
+                          <Icon name={cat.icon} size={22} />
+                        </span>{' '}
+                        {cat.id}{' '}
                         <span className="text-base text-text-tertiary font-normal">
                           ({guides.length})
                         </span>
@@ -2373,7 +2380,7 @@ export default function GuideIndexPage() {
                                   : 'rounded-chip bg-highlight-500/15 px-2 py-0.5 text-highlight-700 dark:text-highlight-300 font-semibold';
                                 return (
                                   <span key={tag} className={cls}>
-                                    {isSeasonal ? '⏰' : '🔥'} {tag}
+                                    {tag}
                                   </span>
                                 );
                               })}
@@ -2396,25 +2403,30 @@ export default function GuideIndexPage() {
 
               {/* 관련 자원 */}
               <section className="card space-y-3">
-                <h2 className="text-xl font-semibold">📚 관련 자원</h2>
+                <h2 className="flex items-center gap-2 text-xl font-semibold">
+                  <span aria-hidden className="text-primary-500">
+                    <Icon name="book-open" size={18} />
+                  </span>
+                  관련 자원
+                </h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    →{' '}
+                    
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
                       용어사전 (28개)
                     </Link>{' '}
                     — DSR·LTV·평단·BEP·양도차익 등 핵심 용어 정의
                   </li>
                   <li>
-                    →{' '}
+                    
                     <Link href="/" className="text-primary-600 underline dark:text-primary-500">
                       홈 — 31개 계산기 모음
                     </Link>
                   </li>
                   <li>
-                    →{' '}
+                    
                     <Link href="/feed.xml" className="text-primary-600 underline dark:text-primary-500">
-                      📡 RSS 피드 구독
+                      RSS 피드 구독
                     </Link>{' '}
                     — 새 가이드 알림
                   </li>

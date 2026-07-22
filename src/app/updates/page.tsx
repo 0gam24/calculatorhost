@@ -4,6 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
@@ -226,9 +227,10 @@ export default function UpdatesPage() {
                               href={entry.sourceUrl}
                               target="_blank"
                               rel="noopener noreferrer nofollow"
-                              className="text-primary-600 underline hover:text-primary-500 dark:text-primary-400"
+                              className="inline-flex items-center gap-1 text-primary-600 underline hover:text-primary-500 dark:text-primary-400"
                             >
-                              ↗ 출처 / 법령 보기
+                              <span>출처 / 법령 보기</span>
+                              <Icon name="external-link" size={12} />
                             </a>
                           </p>
                         )}
@@ -266,27 +268,27 @@ export default function UpdatesPage() {
                 <h2 className="mb-3 text-xl font-semibold">관련 페이지</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    →{' '}
-                    <Link href="/" className="text-primary-700 underline dark:text-primary-300">
-                      홈 (전체 계산기 31종)
+                    <Link href="/" className="inline-flex items-center gap-1 text-primary-700 underline dark:text-primary-300">
+                      <Icon name="chevron-right" size={14} />
+                      <span>홈 (전체 계산기 31종)</span>
                     </Link>
                   </li>
                   <li>
-                    →{' '}
-                    <Link href="/guide/" className="text-primary-700 underline dark:text-primary-300">
-                      가이드 — 시기성 세금·금융 가이드 14종
+                    <Link href="/guide/" className="inline-flex items-center gap-1 text-primary-700 underline dark:text-primary-300">
+                      <Icon name="chevron-right" size={14} />
+                      <span>가이드 (시기성 세금·금융 가이드 14종)</span>
                     </Link>
                   </li>
                   <li>
-                    →{' '}
-                    <Link href="/glossary/" className="text-primary-700 underline dark:text-primary-300">
-                      용어사전 (28개)
+                    <Link href="/glossary/" className="inline-flex items-center gap-1 text-primary-700 underline dark:text-primary-300">
+                      <Icon name="chevron-right" size={14} />
+                      <span>용어사전 (28개)</span>
                     </Link>
                   </li>
                   <li>
-                    →{' '}
-                    <Link href="/about/" className="text-primary-700 underline dark:text-primary-300">
-                      운영자 정보 (스마트데이터샵 / 김준혁)
+                    <Link href="/about/" className="inline-flex items-center gap-1 text-primary-700 underline dark:text-primary-300">
+                      <Icon name="chevron-right" size={14} />
+                      <span>운영자 정보 (스마트데이터샵 / 김준혁)</span>
                     </Link>
                   </li>
                 </ul>

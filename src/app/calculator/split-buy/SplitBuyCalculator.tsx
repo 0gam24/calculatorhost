@@ -188,7 +188,7 @@ export function SplitBuyCalculator() {
       {result.warnings.length > 0 && (
         <div className="rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
           <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-200">
-            ⚠ 주의사항
+            주의사항
           </h3>
           <ul className="space-y-1 text-sm text-danger-600 dark:text-danger-300">
             {result.warnings.map((w, i) => (
@@ -280,7 +280,7 @@ export function SplitBuyCalculator() {
       )}
 
       <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
-        <h3 className="mb-2 font-semibold">💡 사용 안내</h3>
+        <h3 className="mb-2 font-semibold">사용 안내</h3>
         <p className="text-xs text-text-secondary">
           차수별로 단가와 수량을 입력하면 가중평균 평단가, 차수별 누적 평단 추이, 수수료
           포함 실효 평단가, 손익분기점이 자동 계산됩니다. 자산 유형(주식/코인)에 따라
