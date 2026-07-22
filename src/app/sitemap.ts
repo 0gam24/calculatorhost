@@ -432,6 +432,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly' as const,
       priority: 0.7,
     },
+    // 가이드 카테고리 허브 5종 (2026-07-22 신설 — GUIDES SSoT 자동 반영)
+    ...(['tax', 'tax-real-estate', 'finance', 'investment', 'work'] as const).map((slug) => ({
+      url: `${BASE}/guide/category/${slug}/`,
+      lastModified: pageLastModified(`/guide/category/${slug}/`, 'src/app/guide/page.tsx'),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    })),
     // 변경 이력 (Changelog) — Freshness 신호용 hub.
     // updates-log.ts 커밋이 페이지 실변경 신호이므로 manifest(page.tsx 기준) 대신 파일 mtime 유지.
     {

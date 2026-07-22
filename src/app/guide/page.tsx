@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
 };
 
-interface GuideEntry {
+export interface GuideEntry {
   slug: string;
   title: string;
   description: string;
@@ -44,7 +44,7 @@ interface GuideEntry {
   tags?: string[];
 }
 
-type GuideCategory = '세금' | '세금·부동산' | '금융' | '투자' | '근로';
+export type GuideCategory = '세금' | '세금·부동산' | '금융' | '투자' | '근로';
 
 interface CategoryMeta {
   id: GuideCategory;
@@ -59,6 +59,15 @@ const CATEGORIES: CategoryMeta[] = [
   { id: '투자', icon: 'trending-up', description: '주식·코인 평단·분할매수·분할매도' },
   { id: '근로', icon: 'briefcase', description: '연봉·실수령·프리랜서·N잡러' },
 ];
+
+// 카테고리 전용 목록 페이지 슬러그 (/guide/category/{slug}/ — GuideCategoryIndex 와 동기)
+const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
+  세금: 'tax',
+  '세금·부동산': 'tax-real-estate',
+  금융: 'finance',
+  투자: 'investment',
+  근로: 'work',
+};
 
 export const GUIDES: GuideEntry[] = [
   // 2026-07-22 신규 5편 (간이과세자7월부가세·부가세매입세액불공제·재산세카드납부·청년월세지원·부가세가산세)
@@ -2239,16 +2248,16 @@ export default function GuideIndexPage() {
                   const count = GUIDES_BY_CATEGORY[cat.id].length;
                   if (count === 0) return null;
                   return (
-                    <a
+                    <Link
                       key={cat.id}
-                      href={`#${encodeURIComponent(cat.id)}`}
+                      href={`/guide/category/${CATEGORY_PAGE_SLUG[cat.id]}/`}
                       className="rounded-chip border border-border-base bg-bg-card px-3 py-1.5 text-sm font-medium hover:border-primary-500 hover:text-primary-500"
                     >
                       <span aria-hidden className="mr-1 inline-flex align-[-3px] text-primary-500">
                         <Icon name={cat.icon} size={14} />
                       </span>
                       {cat.id} ({count})
-                    </a>
+                    </Link>
                   );
                 })}
               </nav>
@@ -2352,12 +2361,13 @@ export default function GuideIndexPage() {
                           ({guides.length})
                         </span>
                       </h2>
-                      <a
-                        href="#"
-                        className="text-caption text-text-tertiary hover:text-primary-500"
+                      <Link
+                        href={`/guide/category/${CATEGORY_PAGE_SLUG[cat.id]}/`}
+                        className="inline-flex items-center gap-1 text-caption text-text-tertiary hover:text-primary-500"
                       >
-                        ↑ 맨 위로
-                      </a>
+                        이 카테고리만 보기
+                        <Icon name="chevron-right" size={12} />
+                      </Link>
                     </header>
                     <p className="text-text-secondary text-sm">{cat.description}</p>
                     <div className="grid gap-4 md:grid-cols-2">
