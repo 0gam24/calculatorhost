@@ -56,6 +56,8 @@
     --text-tertiary: #7f8c88;
     --border-base: #27342f;
     --border-subtle: #1c2723;
+    /* 가이드 콜아웃 박스 배경 (틸 틴트) */
+    --guide-callout-bg: rgba(31, 125, 107, 0.12);
     color-scheme: dark;
   }
 
@@ -70,6 +72,8 @@
     --text-tertiary: #5f6b76;
     --border-base: #e2e7ea;
     --border-subtle: #e9edf0;
+    /* 가이드 콜아웃 박스 배경 (틸 틴트) */
+    --guide-callout-bg: #f2f9f7;
     color-scheme: light;
   }
 
@@ -277,13 +281,68 @@ main li {
    ============================================ */
 
 @layer utilities {
-  /* H2 섹션 헤더 - 좌측 브랜드 액센트 바 + 얇은 하단 구분선
-     좌측 바: border-l-[3px] + border-primary-500 (브랜드 토큰)
-     하단 구분선: 명시 shorthand 로 분리 — @apply border-primary-500 이 4변 색을
-     덮어쓰므로, 하단만 var(--border-base) 로 재지정(뒤 선언이 이김). top/right 는 width 0. */
-  .guide-scope main article h2 {
-    @apply border-l-[3px] border-primary-500 pl-3 pb-2 mt-2;
-    border-bottom: 1px solid var(--border-base);
+  /* ============================================
+     가이드 포스팅 가독성 리디자인 (2026-07-22, 레퍼런스: 머니룩 아티클)
+     대상: 포스팅 본문(article.max-w-3xl)만 — 인덱스(max-w-5xl)·카테고리 허브 제외.
+     원칙: 장식(액센트 바·밑줄) 대신 크기·굵기·여백으로 위계. 본문 17px + 행간 1.85.
+     ============================================ */
+
+  /* 본문 기본 타이포 — 데스크톱 17px (모바일은 16px 유지) */
+  @media (min-width: 768px) {
+    .guide-scope main article.max-w-3xl {
+      font-size: 1.0625rem;
+    }
+  }
+  .guide-scope main article.max-w-3xl p {
+    line-height: 1.85;
+  }
+  .guide-scope main article.max-w-3xl li {
+    line-height: 1.8;
+  }
+
+  /* 헤더 위계: 메타(작게) → 제목(크게·타이트) → 리드(회색·큰 행간) */
+  .guide-scope main article.max-w-3xl > header h1 {
+    font-size: 2.25rem;
+    line-height: 1.28;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+  }
+  .guide-scope main article.max-w-3xl > header > p.text-lg {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+  }
+
+  /* H2: 장식 제거, 크기·상단 여백으로 섹션이 또렷이 끊어져 보이게 */
+  .guide-scope main article.max-w-3xl h2 {
+    font-size: 1.625rem;
+    line-height: 1.35;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+    margin-top: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .guide-scope main article.max-w-3xl h3 {
+    font-size: 1.1875rem;
+    font-weight: 700;
+    margin-top: 1.5rem;
+  }
+
+  /* 콜아웃·요약 박스: 좌측 틸 액센트 + 옅은 틸 배경 (본문과 확실히 구분).
+     링크 카드(hover 유틸 보유)는 제외 — 콘텐츠 박스만.
+     주의: .bg-bg-card 클래스 셀렉터는 Tailwind 순환 참조 오류 → 속성 셀렉터로 우회. */
+  .guide-scope main article.max-w-3xl div[class~='bg-bg-card']:not([class*='hover']) {
+    background: var(--guide-callout-bg);
+    border-left: 3px solid #2f9b85; /* primary-400 */
+  }
+
+  /* 표 캡션: 상단 왼쪽 정렬 소형 라벨 */
+  .guide-scope main article.max-w-3xl caption {
+    caption-side: top;
+    text-align: left;
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+    padding-bottom: 0.5rem;
   }
 
   /* 표 - 세로 그리드 제거 후 가로형 디자인 */

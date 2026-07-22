@@ -132,17 +132,30 @@ xl: 1280px ← 본문 max-width
 - 광고 AD-2, AD-4는 **콘텐츠 중간** → 본문 체류 시간 확보
 - 우측 AD-3 스티키 = knowingasset.com 실제 배치 방식
 
-## 10. 가이드 아티클 본문 타이포그래피 (2026-06-16)
+## 10. 가이드 아티클 본문 타이포그래피 (2026-06-16, **2026-07-22 가독성 리디자인**)
 
-**스코프**: `/guide/*` 라우트 (블로그 포스팅 페이지)
+**스코프**: `.guide-scope main article.max-w-3xl` — 포스팅 본문만 (인덱스 max-w-5xl·카테고리 허브 제외)
+**레퍼런스**: 머니룩(asiatop.co.kr) 아티클 — 운영자 지정 (2026-07-22). 장식 대신 크기·굵기·여백으로 위계.
 
-### 10-1. H2 섹션 헤더 (좌측 브랜드 액센트 바 + 하단 구분선)
-- **좌측 액센트 바**: `border-left 3px solid` 브랜드 primary-500 (`border-primary-500` 토큰) + `pl-3`(0.75rem) 텍스트 여백
-- **하단 구분선**: 1px solid `var(--border-base)` — `border-bottom` 명시 shorthand 로 분리 지정
-  - 이유: `@apply border-primary-500` 이 4변 색을 덮으므로, 하단만 토큰 색으로 재지정(뒤 선언 우선). top/right 는 width 0 으로 미표시
-- 패딩 하단 0.5rem (섹션 간격 space-y-8과 조화)
-- margin-top 0.5rem (상단 여백 절제, space-y-8이 이미 32px 담당)
-- 기능: 섹션 시작점을 또렷이 구분하되 색면 반복 없이 가벼움 유지 (콜아웃 "좌측 액센트" 방식과 일관). 풀 색면 박스는 다크/라이트 토큰 무시·YMYL 신뢰감 저하로 기각
+### 10-0. 본문 기본 타이포 (2026-07-22)
+- 데스크톱(md+) 본문 17px (`1.0625rem`), 모바일 16px 유지
+- 문단 line-height 1.85 / 리스트 1.8
+- H1(헤더): 2.25rem, line-height 1.28, letter-spacing -0.02em, weight 800
+- 리드 문단(`header > p.text-lg`): 1.125rem, 행간 1.8, `--text-secondary`
+
+### 10-1. H2 섹션 헤더 (2026-07-22 개정 — 장식 제거, 크기·여백 위계)
+- **액센트 바·하단 구분선 제거** (구 2026-06-16 스펙 폐기 — 시인성 약해 가독성 저하, 운영자 지시)
+- 크기 1.625rem / weight 800 / letter-spacing -0.01em / line-height 1.35
+- **margin-top 2.75rem** (+ 섹션 space-y-8) → 섹션이 시각적으로 확실히 끊어짐
+- H3: 1.1875rem / weight 700 / margin-top 1.5rem
+
+### 10-1-1. 콜아웃·요약 박스 (2026-07-22)
+- 대상: `div[class~='bg-bg-card']` 중 hover 유틸 없는 콘텐츠 박스 (링크 카드 제외)
+- 배경 `--guide-callout-bg` (라이트 `#f2f9f7` / 다크 `rgba(31,125,107,.12)`) + **좌측 3px `#2f9b85`(primary-400) 액센트**
+- 기능: TL;DR·주의·판별 기준 박스가 본문과 확실히 구분 (레퍼런스 "30초 요약" 박스 역할)
+
+### 10-1-2. 표 캡션 (2026-07-22)
+- `caption-side: top`, 좌측 정렬, 0.8125rem, `--text-tertiary`, 하단 패딩 0.5rem
 
 ### 10-2. 표 스타일 (세로 그리드 → 가로형 디자인)
 - **테이블 전체**: border-collapse, 외곽 border 제거
