@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-24 신규 5편 (주민세사업소분·출산전후휴가급여·육아기근로시간단축급여·주택청약1순위·국민연금반환일시금)
+  'resident-tax-business-establishment-2026',
+  'maternity-leave-benefit-2026',
+  'childcare-reduced-hours-benefit-2026',
+  'housing-subscription-first-priority-2026',
+  'national-pension-lump-sum-refund-2026',
   // 2026-07-23 신규 5편 (배우자출산휴가·스트레스DSR3단계·신생아특례디딤돌대출·간이과세포기·분양권취득세)
   'spouse-childbirth-leave-2026',
   'stress-dsr-stage3-2026',

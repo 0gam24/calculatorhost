@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-24 신규 5편 (주민세사업소분·출산전후휴가급여·육아기근로시간단축급여·주택청약1순위·국민연금반환일시금)
+  {
+    slug: 'resident-tax-business-establishment-2026',
+    title: '주민세 사업소분 2026, 8월 신고·세액·면세 기준',
+    description:
+      '주민세 사업소분은 사업주가 8월 1일부터 31일까지 스스로 신고·납부하는 지방세입니다. 개인 5만원·법인 자본금별 기본세액, 연면적 초과 가산, 종업원분과의 차이를 지방세법 §81 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-24',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'maternity-leave-benefit-2026',
+    title: '출산전후휴가 급여 2026, 90일 상한·신청·기간 정리',
+    description:
+      '출산전후휴가는 근로기준법 §74에 따라 90일(다태아 120일) 보장되고 통상임금 100%를 받습니다. 2026년 고용보험 급여 상한, 회사 규모별 지급 주체, 신청 기한과 계산법을 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'childcare-reduced-hours-benefit-2026',
+    title: '육아기 근로시간 단축 급여 2026, 계산·상한·기간',
+    description:
+      '육아기 근로시간 단축은 자녀를 키우며 주 15~35시간으로 일하는 제도입니다. 매주 최초 10시간은 통상임금 100%, 나머지는 80%로 급여가 나옵니다. 계산법·상한·최대 3년 사용 기간을 남녀고용평등법 §19의2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-subscription-first-priority-2026',
+    title: '주택청약 1순위 조건 2026, 국민·민영·규제지역 정리',
+    description:
+      '주택청약 1순위는 청약통장 가입기간, 납입횟수, 무주택 요건, 지역별 예치금으로 정해집니다. 국민주택과 민영주택, 규제지역의 1순위 조건 차이를 2026년판으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-lump-sum-refund-2026',
+    title: '국민연금 반환일시금 2026, 조건·금액·반납 정리',
+    description:
+      '국민연금 반환일시금은 60세에 가입기간 10년을 못 채웠거나 국적상실·국외이주 시 낸 보험료에 이자를 더해 돌려받는 급여입니다. 지급 조건, 금액 계산, 반납 제도, 청구 시효를 국민연금법 §77 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-24',
+    readingMinutes: 7,
+  },
   // 2026-07-23 신규 5편 (배우자출산휴가·스트레스DSR3단계·신생아특례디딤돌대출·간이과세포기·분양권취득세)
   {
     slug: 'spouse-childbirth-leave-2026',
