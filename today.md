@@ -76,6 +76,19 @@
 
 
 
+
+## 2026-07-24
+
+- [가이드] [육아기 근로시간 단축 급여 2026, 계산·상한·기간 | calculatorhost](https://calculatorhost.com/guide/childcare-reduced-hours-benefit-2026/) — 육아기 근로시간 단축은 자녀를 키우며 주 15~35시간으로 일하는 제도입니다. 매주 최초 10시간은 통상임금 100%, 나머지는 80%로 급여가 나옵니다. 계산법·상한·최대 3년 사용 기간을 남녀고용평등법 §19의…
+- [가이드] [주택청약 1순위 조건 2026, 국민·민영·규제지역 정리 | calculatorhost](https://calculatorhost.com/guide/housing-subscription-first-priority-2026/) — 주택청약 1순위는 청약통장 가입기간, 납입횟수, 무주택 요건, 지역별 예치금으로 정해집니다. 국민주택과 민영주택, 규제지역의 1순위 조건 차이를 주택공급에 관한 규칙 기준으로 2026년판으로 정리했습니다.
+- [가이드] [출산전후휴가 급여 2026, 90일 상한·신청·기간 정리 | calculatorhost](https://calculatorhost.com/guide/maternity-leave-benefit-2026/) — 출산전후휴가는 근로기준법 §74에 따라 90일(다태아 120일) 보장되고 통상임금 100%를 받습니다. 2026년 고용보험 급여 상한, 회사 규모별 지급 주체, 신청 기한과 계산법을 정리했습니다.
+- [가이드] [국민연금 반환일시금 2026, 조건·금액·반납 정리 | calculatorhost](https://calculatorhost.com/guide/national-pension-lump-sum-refund-2026/) — 국민연금 반환일시금은 60세에 가입기간 10년을 못 채웠거나 국적상실·국외이주 시 낸 보험료에 이자를 더해 돌려받는 급여입니다. 지급 조건, 금액 계산, 반납 제도, 청구 시효를 국민연금법 §77 기준으로 정리했습…
+- [가이드] [주민세 사업소분 2026, 8월 신고·세액·면세 기준 | calculatorhost](https://calculatorhost.com/guide/resident-tax-business-establishment-2026/) — 주민세 사업소분은 사업주가 8월 1일부터 31일까지 스스로 신고·납부하는 지방세입니다. 개인 5만원·법인 자본금별 기본세액, 연면적 330제곱미터 초과 가산, 종업원분과의 차이를 지방세법 §81 기준으로 정리했습니…
+- [가이드] [신생아 특례 디딤돌대출 2026, 소득요건·금리·한도 정리 | calculatorhost](https://calculatorhost.com/guide/newborn-special-mortgage-loan-2026/) — 2년 내 출산한 무주택 가구를 위한 신생아 특례 디딤돌대출. 부부합산 소득요건, 특례금리 1.8~4.5%, 최대 4억 한도, 대상 주택과 신청 방법을 2026년 기준으로 정리했습니다.
+- [가이드] [분양권 취득세 2026, 주택 수 산입과 중과 기준 정리 | calculatorhost](https://calculatorhost.com/guide/presale-right-acquisition-tax-2026/) — 분양권 자체에는 취득세가 없고 잔금 때 주택 취득세를 냅니다. 다만 2020년 8월 12일 이후 취득한 분양권은 주택 수에 포함되어 다른 집 취득세 중과에 영향을 줍니다. 지방세법 §13의2·§13의3 기준으로 정…
+- [가이드] [간이과세 포기 신고 2026, 매입세액공제·3년 제한 정리 | calculatorhost](https://calculatorhost.com/guide/simplified-taxation-waiver-2026/) — 간이과세 포기는 스스로 일반과세자가 되는 절차입니다. 매입세액 전액 공제와 세금계산서 발급이 목적이며, 신고한 달의 다음 달부터 적용되고 3년간 재적용이 제한됩니다. 부가가치세법 §70 기준으로 정리했습니다.
+- [가이드] [배우자 출산휴가 2026, 20일 유급·급여·신청기한 정리 | calculatorhost](https://calculatorhost.com/guide/spouse-childbirth-leave-2026/) — 배우자 출산휴가는 2026년 기준 20일 전부 유급입니다. 근무일 기준 계산, 통상임금 100% 급여와 상한, 최대 3회 분할, 신청 기한과 방법을 남녀고용평등법 §18의2 기준으로 정리했습니다.
+- [가이드] [스트레스 DSR 3단계 2026, 내 대출한도 얼마나 줄까 | calculatorhost](https://calculatorhost.com/guide/stress-dsr-stage3-2026/) — 스트레스 DSR 3단계는 실제 금리에 스트레스 금리 1.5%p를 더해 대출한도를 계산합니다. 2026년 전국 확대 적용으로 줄어드는 한도, 계산 방식, 예외 대출을 사례로 정리했습니다.
 ## 2026-07-23
 
 - [가이드] [재산세 신용카드 납부 2026, 수수료 0원·무이자 할부 챙기는 법](https://calculatorhost.com/guide/property-tax-credit-card-payment-2026/) — 재산세를 신용카드로 내면 수수료 없이 무이자 할부와 체크카드 캐시백까지 챙길 수 있습니다. 위택스·지자체앱 결제 절차, 카드사별 혜택 확인법, 7월·9월 납기까지 정리.
