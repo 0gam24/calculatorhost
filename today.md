@@ -77,6 +77,14 @@
 
 
 
+
+## 2026-07-25
+
+- [가이드] [법인세 중간예납 2026, 8월 신고·계산·면제 기준 | calculatorhost](https://calculatorhost.com/guide/corporate-tax-interim-prepayment-2026/) — 12월 결산 법인은 8월 31일까지 법인세 중간예납을 신고·납부합니다. 직전연도 기준과 가결산 두 방식의 계산법, 면제 대상, 분납·가산세를 법인세법 §63 기준으로 정리했습니다.
+- [가이드] [의제매입세액공제 2026, 음식점 공제율·한도·계산법 | calculatorhost](https://calculatorhost.com/guide/deemed-input-tax-credit-2026/) — 음식점·카페가 면세 농수산물을 사면 매입세액이 없어도 일정액을 공제받습니다. 업종별 공제율(8/108·9/109·6/106), 한도 계산, 준비 서류를 부가가치세법 §42 기준으로 정리했습니다.
+- [가이드] [전세권 설정 vs 확정일자 2026, 뭐가 유리할까 | calculatorhost](https://calculatorhost.com/guide/jeonse-right-vs-fixed-date-2026/) — 전세권 설정등기와 확정일자+전입신고는 보증금을 지키는 두 방법입니다. 대항력·우선변제권 차이, 비용, 임대인 동의 여부, 상황별 유리한 선택을 민법 §303·주택임대차보호법 §3의2 기준으로 정리했습니다.
+- [가이드] [리츠 배당금 세금 2026, 15.4% 원천징수와 절세법 | calculatorhost](https://calculatorhost.com/guide/reits-dividend-tax-2026/) — 리츠(REITs) 배당금은 15.4%가 원천징수되고 연 2천만원을 넘으면 종합과세됩니다. 공모리츠 분리과세 특례, ISA·연금계좌 절세, 예금·일반주식과의 세금 비교를 소득세법 §17 기준으로 정리했습니다.
+- [가이드] [복지포인트 세금 2026, 근로소득 과세와 이유 | calculatorhost](https://calculatorhost.com/guide/welfare-points-taxation-2026/) — 회사 복지포인트는 임금은 아니지만 근로소득으로 과세됩니다. 대법원 판결로 확인된 과세 근거, 공무원과의 차이, 세금이 얼마나 떼이는지, 경정청구 가능 여부를 소득세법 §20 기준으로 정리했습니다.
 ## 2026-07-24
 
 - [가이드] [육아기 근로시간 단축 급여 2026, 계산·상한·기간 | calculatorhost](https://calculatorhost.com/guide/childcare-reduced-hours-benefit-2026/) — 육아기 근로시간 단축은 자녀를 키우며 주 15~35시간으로 일하는 제도입니다. 매주 최초 10시간은 통상임금 100%, 나머지는 80%로 급여가 나옵니다. 계산법·상한·최대 3년 사용 기간을 남녀고용평등법 §19의…
