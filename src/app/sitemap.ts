@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-25 신규 5편 (법인세중간예납·의제매입세액공제·리츠배당세금·전세권vs확정일자·복지포인트과세)
+  'corporate-tax-interim-prepayment-2026',
+  'deemed-input-tax-credit-2026',
+  'reits-dividend-tax-2026',
+  'jeonse-right-vs-fixed-date-2026',
+  'welfare-points-taxation-2026',
   // 2026-07-24 신규 5편 (주민세사업소분·출산전후휴가급여·육아기근로시간단축급여·주택청약1순위·국민연금반환일시금)
   'resident-tax-business-establishment-2026',
   'maternity-leave-benefit-2026',

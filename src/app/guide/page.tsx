@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-25 신규 5편 (법인세중간예납·의제매입세액공제·리츠배당세금·전세권vs확정일자·복지포인트과세)
+  {
+    slug: 'corporate-tax-interim-prepayment-2026',
+    title: '법인세 중간예납 2026, 8월 신고·계산·면제 기준',
+    description:
+      '12월 결산 법인은 8월 31일까지 법인세 중간예납을 신고·납부합니다. 직전연도 기준과 가결산 두 방식의 계산법, 면제 대상, 분납·가산세를 법인세법 §63 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'deemed-input-tax-credit-2026',
+    title: '의제매입세액공제 2026, 음식점 공제율·한도·계산법',
+    description:
+      '음식점·카페가 면세 농수산물을 사면 매입세액이 없어도 일정액을 공제받습니다. 업종별 공제율(8/108·9/109·6/106), 한도 계산, 준비 서류를 부가가치세법 §42 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'reits-dividend-tax-2026',
+    title: '리츠 배당금 세금 2026, 15.4% 원천징수와 절세법',
+    description:
+      '리츠(REITs) 배당금은 15.4%가 원천징수되고 연 2천만원을 넘으면 종합과세됩니다. 공모리츠 분리과세 특례, ISA·연금계좌 절세, 예금·일반주식과의 세금 비교를 소득세법 §17 기준으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-07-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'jeonse-right-vs-fixed-date-2026',
+    title: '전세권 설정 vs 확정일자 2026, 뭐가 유리할까',
+    description:
+      '전세권 설정등기와 확정일자+전입신고는 보증금을 지키는 두 방법입니다. 대항력·우선변제권 차이, 비용, 임대인 동의 여부, 상황별 유리한 선택을 민법 §303·주택임대차보호법 §3의2 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'welfare-points-taxation-2026',
+    title: '복지포인트 세금 2026, 근로소득 과세와 이유',
+    description:
+      '회사 복지포인트는 임금은 아니지만 근로소득으로 과세됩니다. 대법원 판결로 확인된 과세 근거, 공무원과의 차이, 세금이 얼마나 떼이는지, 경정청구 가능 여부를 소득세법 §20 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-25',
+    readingMinutes: 7,
+  },
   // 2026-07-24 신규 5편 (주민세사업소분·출산전후휴가급여·육아기근로시간단축급여·주택청약1순위·국민연금반환일시금)
   {
     slug: 'resident-tax-business-establishment-2026',
