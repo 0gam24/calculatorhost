@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-26 신규 5편 (증여취득세·국민연금크레딧·IRP중도인출·기타소득300만분리과세·임차권등기명령)
+  {
+    slug: 'gift-acquisition-tax-2026',
+    title: '증여 취득세 2026, 아파트 증여 3.5%와 다주택 12% 중과',
+    description:
+      '부모가 자녀에게 아파트를 증여하면 증여세와 별개로 취득세를 냅니다. 무상취득 3.5%, 지방교육세·농특세 포함 총세율, 조정대상지역 다주택 12% 중과와 예외를 지방세법 §11 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-credit-system-2026',
+    title: '국민연금 크레딧 2026, 출산·군복무·실업 가입기간 추가',
+    description:
+      '국민연금 크레딧은 출산·군복무·실업 기간을 가입기간으로 더 인정해 연금을 늘려주는 제도입니다. 출산 최대 50개월, 군복무 6개월, 실업 최대 12개월의 조건과 신청법을 국민연금법 §18·§19 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'irp-early-withdrawal-conditions-2026',
+    title: 'IRP 중도인출 조건 2026, 주택구입·요양 법정 사유 정리',
+    description:
+      'IRP는 원칙적으로 만 55세 전 중도인출이 안 되지만, 무주택자 주택구입·6개월 이상 요양·파산 등 법정 사유면 가능합니다. 사유별 요건과 세금, DB형과의 차이를 근로자퇴직급여보장법 §7 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'other-income-300-separate-taxation-2026',
+    title: '기타소득 300만원 분리과세 2026, 종합과세 뭐가 유리',
+    description:
+      '강연료·원고료 같은 기타소득은 연 기타소득금액 300만원 이하면 분리과세와 종합과세 중 유리한 쪽을 고를 수 있습니다. 300만원 기준, 필요경비 60% 의제, 세율 비교를 소득세법 §14 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'tenant-lease-registration-injunction-2026',
+    title: '임차권등기명령 2026, 보증금 못 받을 때 신청 방법',
+    description:
+      '계약이 끝났는데 임대인이 보증금을 안 돌려주면 임차권등기명령으로 대항력·우선변제권을 지킨 채 이사할 수 있습니다. 신청 자격·절차·비용·기간과 이사 후 효력을 주택임대차보호법 §3의3 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-26',
+    readingMinutes: 8,
+  },
   // 2026-07-25 신규 5편 (법인세중간예납·의제매입세액공제·리츠배당세금·전세권vs확정일자·복지포인트과세)
   {
     slug: 'corporate-tax-interim-prepayment-2026',

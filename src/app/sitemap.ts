@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-26 신규 5편 (증여취득세·국민연금크레딧·IRP중도인출·기타소득300만분리과세·임차권등기명령)
+  'gift-acquisition-tax-2026',
+  'national-pension-credit-system-2026',
+  'irp-early-withdrawal-conditions-2026',
+  'other-income-300-separate-taxation-2026',
+  'tenant-lease-registration-injunction-2026',
   // 2026-07-25 신규 5편 (법인세중간예납·의제매입세액공제·리츠배당세금·전세권vs확정일자·복지포인트과세)
   'corporate-tax-interim-prepayment-2026',
   'deemed-input-tax-credit-2026',
