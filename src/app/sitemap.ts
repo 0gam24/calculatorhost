@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-27 신규 5편 (근로장려금지급일감액·자녀장려금지급액·국민연금분할연금·부가세대손세액공제·청약월25만인정한도)
+  'earned-income-tax-credit-payment-reduction-2026',
+  'child-tax-benefit-payment-2026',
+  'national-pension-divorce-split-2026',
+  'vat-bad-debt-tax-credit-2026',
+  'housing-subscription-monthly-25-recognition-2026',
   // 2026-07-26 신규 5편 (증여취득세·국민연금크레딧·IRP중도인출·기타소득300만분리과세·임차권등기명령)
   'gift-acquisition-tax-2026',
   'national-pension-credit-system-2026',

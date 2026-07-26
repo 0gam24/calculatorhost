@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-27 신규 5편 (근로장려금지급일감액·자녀장려금지급액·국민연금분할연금·부가세대손세액공제·청약월25만인정한도)
+  {
+    slug: 'earned-income-tax-credit-payment-reduction-2026',
+    title: '근로장려금 지급일 2026, 8월 27일 지급과 감액·환수 정리',
+    description:
+      '2026년 근로장려금 정기 지급일은 8월 27일입니다. 재산 1.7억 이상 시 50% 감액, 2.4억 이상 지급 제외, 체납 충당·기한후신청 감액까지 조세특례제한법 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-27',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'child-tax-benefit-payment-2026',
+    title: '자녀장려금 2026, 자녀 1명당 최대 100만원 지급액 계산법',
+    description:
+      '자녀장려금은 18세 미만 자녀 1명당 최소 50만원에서 최대 100만원을 지급합니다. 소득 7천만원 미만·재산 2.4억 미만 요건과 산정 공식을 조세특례제한법 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-27',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-divorce-split-2026',
+    title: '국민연금 분할연금 2026, 이혼하면 배우자 연금 나눠 받는 법',
+    description:
+      '이혼하면 전 배우자의 국민연금을 나눠 받을 수 있습니다. 혼인기간 5년 이상 등 4가지 요건, 1/2 균분 원칙, 선청구 제도, 5년 소멸시효를 국민연금법 제64조 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-27',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'vat-bad-debt-tax-credit-2026',
+    title: '부가세 대손세액공제 2026, 못 받은 외상값 세금 돌려받기',
+    description:
+      '거래처 파산·부도로 매출채권을 못 받았다면 이미 낸 부가세를 대손세액공제로 돌려받을 수 있습니다. 대손사유, 10/110 계산, 공급일 10년 기한을 부가가치세법 제45조 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-27',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-subscription-monthly-25-recognition-2026',
+    title: '청약통장 월 25만원, 인정한도 상향과 소득공제 300만원 정리',
+    description:
+      '청약통장 월 납입 인정한도가 10만원에서 25만원으로 올랐습니다. 공공분양에 유리해진 이유, 소득공제 연 300만원의 40% 한도, 얼마 넣어야 유리한지 실전 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-27',
+    readingMinutes: 8,
+  },
   // 2026-07-26 신규 5편 (증여취득세·국민연금크레딧·IRP중도인출·기타소득300만분리과세·임차권등기명령)
   {
     slug: 'gift-acquisition-tax-2026',
