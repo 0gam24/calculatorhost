@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-28 신규 5편 (주민세개인분·국민연금상한·자녀세대분리비과세·이혼재산분할세금·업무용승용차비용처리)
+  {
+    slug: 'resident-tax-individual-portion-2026',
+    title: '주민세 개인분 2026, 8월 납부기간과 세액 안 왔을 때 확인법',
+    description:
+      '주민세 개인분 정기분 납부기간은 2026년 8월 16일부터 31일까지입니다. 세액은 지자체 조례로 1만원 이하이며, 고지서가 안 왔을 때 위택스 조회·납부 방법과 면제 대상까지 지방세법 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-28',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'national-pension-income-upper-limit-2026',
+    title: '국민연금 상한액 인상 2026, 7월부터 고소득 직장인 보험료',
+    description:
+      '2026년 7월부터 국민연금 기준소득월액 상한액이 637만원에서 659만원으로 올랐습니다. 상한 소득 가입자의 월 보험료는 최고 626,050원, 직장가입자 본인 부담은 313,025원입니다. 상·하한액 조정 원리를 국민연금법 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-28',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'child-household-separation-capital-gains-exemption-2026',
+    title: '자녀 세대분리 1세대1주택 비과세 2026, 30세 미만 소득요건',
+    description:
+      '자녀를 세대분리하면 1세대1주택 양도세 비과세를 각각 받을 수 있지만, 30세 미만은 소득요건을 충족해야 인정됩니다. 소득세법 시행령 제152조의3 세대 요건과 실질 판단 기준, 서류상 분리의 함정까지 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-28',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'divorce-property-division-alimony-tax-2026',
+    title: '이혼 재산분할 위자료 세금 2026, 양도세·증여세·취득세 정리',
+    description:
+      '이혼 재산분할로 받는 재산에는 증여세·양도세가 없지만, 위자료를 부동산으로 주면 대물변제로 보아 주는 사람에게 양도소득세가 부과됩니다. 재산분할과 위자료의 세금 차이를 소득세법·상증법 기준으로 사례와 함께 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-28',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'business-vehicle-expense-deduction-2026',
+    title: '업무용 승용차 비용처리 2026, 감가상각 800만원 한도와 운행기록부',
+    description:
+      '개인사업자의 업무용 승용차 비용은 감가상각비 연 800만원 한도로 필요경비에 넣고, 운행기록부를 안 쓰면 관련비용 전체가 연 1,500만원으로 제한됩니다. 소득세법 제33조의2 기준으로 한도·운행기록부·업무사용비율을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-28',
+    readingMinutes: 8,
+  },
   // 2026-07-27 신규 5편 (근로장려금지급일감액·자녀장려금지급액·국민연금분할연금·부가세대손세액공제·청약월25만인정한도)
   {
     slug: 'earned-income-tax-credit-payment-reduction-2026',

@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-28 신규 5편 (주민세개인분·국민연금상한·자녀세대분리비과세·이혼재산분할세금·업무용승용차비용처리)
+  'resident-tax-individual-portion-2026',
+  'national-pension-income-upper-limit-2026',
+  'child-household-separation-capital-gains-exemption-2026',
+  'divorce-property-division-alimony-tax-2026',
+  'business-vehicle-expense-deduction-2026',
   // 2026-07-27 신규 5편 (근로장려금지급일감액·자녀장려금지급액·국민연금분할연금·부가세대손세액공제·청약월25만인정한도)
   'earned-income-tax-credit-payment-reduction-2026',
   'child-tax-benefit-payment-2026',
