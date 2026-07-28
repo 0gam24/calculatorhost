@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-29 신규 5편 (근로장려금지급액·사업용신용카드등록·상속세연부연납·겸용주택양도세·국민연금유족연금)
+  'earned-income-tax-credit-payment-amount-2026',
+  'business-credit-card-hometax-registration-2026',
+  'inheritance-tax-filing-payment-installment-2026',
+  'mixed-use-house-capital-gains-exemption-2026',
+  'national-pension-survivor-benefit-2026',
   // 2026-07-28 신규 5편 (주민세개인분·국민연금상한·자녀세대분리비과세·이혼재산분할세금·업무용승용차비용처리)
   'resident-tax-individual-portion-2026',
   'national-pension-income-upper-limit-2026',

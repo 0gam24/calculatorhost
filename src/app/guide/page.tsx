@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-29 신규 5편 (근로장려금지급액·사업용신용카드등록·상속세연부연납·겸용주택양도세·국민연금유족연금)
+  {
+    slug: 'earned-income-tax-credit-payment-amount-2026',
+    title: '근로장려금 얼마 받나 2026, 단독 165·홑벌이 285·맞벌이 330만',
+    description:
+      '근로장려금 최대 지급액은 단독가구 165만원, 홑벌이 285만원, 맞벌이 330만원입니다. 소득 구간별 점증·평탄·점감 산정 구조와 가구유형 판정 기준을 조세특례제한법으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'business-credit-card-hometax-registration-2026',
+    title: '사업용 신용카드 홈택스 등록 2026, 매입세액공제 간편하게',
+    description:
+      '개인사업자가 사업용 신용카드를 홈택스에 등록하면 사용내역이 자동 집계되어 부가세 매입세액공제가 간편해집니다. 등록 방법과 공제·불공제 구분을 부가가치세법으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inheritance-tax-filing-payment-installment-2026',
+    title: '상속세 신고기한 6개월, 분납·연부연납·물납 2026',
+    description:
+      '상속세는 사망일이 속한 달 말일부터 6개월 안에 신고해야 합니다. 세액 1천만원 초과 분납, 2천만원 초과 연부연납·물납 요건을 상속세및증여세법으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'mixed-use-house-capital-gains-exemption-2026',
+    title: '상가주택 양도세 2026, 겸용주택 1세대1주택 비과세 판정',
+    description:
+      '겸용주택은 실거래가 12억 이하이고 주택 면적이 상가보다 크면 전부 주택으로 봐 비과세됩니다. 12억 초과 고가겸용주택은 주택 부분만 인정하는 규칙을 소득세법 시행령으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-29',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-survivor-benefit-2026',
+    title: '국민연금 유족연금 2026, 수급요건과 지급률 40·50·60%',
+    description:
+      '국민연금 가입자나 수급자가 사망하면 유족에게 유족연금이 지급됩니다. 가입기간별 지급률 40·50·60%와 유족 순위, 본인 노령연금과 겹칠 때 선택 규칙을 국민연금법으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-29',
+    readingMinutes: 8,
+  },
   // 2026-07-28 신규 5편 (주민세개인분·국민연금상한·자녀세대분리비과세·이혼재산분할세금·업무용승용차비용처리)
   {
     slug: 'resident-tax-individual-portion-2026',
