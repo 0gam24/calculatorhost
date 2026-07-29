@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-30 신규 5편 (고향사랑기부제·주택자금조달계획서·청약재당첨제한·국민연금임의계속가입·ISA만기연금전환)
+  {
+    slug: 'hometown-love-donation-tax-credit-2026',
+    title: '고향사랑기부제 2026, 10만원 전액 세액공제와 답례품 30%',
+    description:
+      '고향사랑기부제는 10만원까지 사실상 전액 세액공제되고 기부액의 30% 답례품까지 받습니다. 공제 구조와 10만원·100만원 실제 계산, 신청 방법을 조세특례제한법 §58 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-30',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-fund-plan-source-of-funds-2026',
+    title: '주택 자금조달계획서 2026, 제출 대상·작성법·증여 증빙',
+    description:
+      '주택 자금조달계획서는 6억 이상 주택이나 규제지역 매수 시 계약 후 30일 안에 제출해야 합니다. 자기자금·차입금 기재법, 증여·차용 증빙, 자금출처조사 연계를 부동산 거래신고법 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-30',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-subscription-rewin-restriction-2026',
+    title: '청약 재당첨 제한 2026, 당첨되면 몇 년 묶이나',
+    description:
+      '청약에 당첨되면 지역·주택 유형에 따라 최장 10년간 다시 당첨될 수 없습니다. 재당첨 제한 기간, 세대원 전원 적용 원칙, 계약 포기해도 남는 제한을 주택공급규칙 §54 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-30',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-voluntary-continued-enrollment-2026',
+    title: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기',
+    description:
+      '국민연금 임의계속가입은 60세 이후에도 65세 전까지 가입을 이어가 최소 가입기간을 채우거나 연금액을 늘리는 제도입니다. 신청 자격·기한과 보험료 전액 본인부담을 국민연금법 §13 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-30',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'isa-maturity-pension-account-transfer-2026',
+    title: 'ISA 만기 연금계좌 전환 2026, 300만원 추가 세액공제',
+    description:
+      'ISA 만기자금을 60일 안에 연금저축·IRP로 옮기면 이전액의 10%, 최대 300만원을 추가로 세액공제받습니다. 60일 기한과 한도 없는 이체, 연 최대 1,200만원 공제 구조를 소득세법 §59의3 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-30',
+    readingMinutes: 8,
+  },
   // 2026-07-29 신규 5편 (근로장려금지급액·사업용신용카드등록·상속세연부연납·겸용주택양도세·국민연금유족연금)
   {
     slug: 'earned-income-tax-credit-payment-amount-2026',

@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-30 신규 5편 (고향사랑기부제·주택자금조달계획서·청약재당첨제한·국민연금임의계속가입·ISA만기연금전환)
+  'hometown-love-donation-tax-credit-2026',
+  'housing-fund-plan-source-of-funds-2026',
+  'housing-subscription-rewin-restriction-2026',
+  'national-pension-voluntary-continued-enrollment-2026',
+  'isa-maturity-pension-account-transfer-2026',
   // 2026-07-29 신규 5편 (근로장려금지급액·사업용신용카드등록·상속세연부연납·겸용주택양도세·국민연금유족연금)
   'earned-income-tax-credit-payment-amount-2026',
   'business-credit-card-hometax-registration-2026',
