@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-07-31 신규 5편 (6+6부모육아휴직제·성실신고확인제·조합원입주권양도세·디딤돌대출·계약갱신거절사유)
+  {
+    slug: 'parental-leave-6-plus-6-special-2026',
+    title: '6+6 부모육아휴직제 2026, 부부 첫 6개월 통상임금 100%',
+    description:
+      '부부가 모두 육아휴직을 쓰면 첫 6개월 급여를 통상임금 100%로 받고 사후지급금도 공제하지 않습니다. 월별 상한액과 부부 합산 실수령, 신청 방법을 고용보험법 시행령 §95의3 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-07-31',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'sincere-filing-confirmation-2026',
+    title: '성실신고확인제 2026, 대상 기준수입금액과 세무사 확인',
+    description:
+      '매출이 업종별 기준(도소매 15억, 제조 7.5억, 서비스 5억)을 넘는 개인사업자는 종합소득세를 세무사 확인 후 6월 말까지 신고해야 합니다. 대상 판정과 세액공제, 미제출 가산세를 소득세법 §70의2 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-07-31',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'redevelopment-membership-right-capital-gains-tax-2026',
+    title: '조합원입주권 양도소득세 2026, 1주택 비과세 3년 특례',
+    description:
+      '재개발·재건축 조합원입주권을 팔거나 종전주택을 팔 때 1세대1주택 비과세를 받을 수 있는지, 원조합원과 승계조합원의 차이, 3년 내 종전주택 양도 특례를 소득세법 §89·시행령 §156의2 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-31',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'didimdol-loan-conditions-2026',
+    title: '디딤돌대출 2026, 소득·한도·금리 조건 총정리',
+    description:
+      '디딤돌대출은 부부합산 연소득 6천만원 이하 무주택 세대주를 위한 정부 지원 주택담보대출입니다. 소득 요건, 대출 한도, 금리 수준, 대상 주택과 신청 방법을 주택도시기금 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-07-31',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'lease-renewal-refusal-grounds-2026',
+    title: '계약갱신청구권 거절 사유 2026, 집주인 실거주 9가지',
+    description:
+      '임대인은 주택임대차보호법 §6의3이 정한 9가지 사유가 있을 때만 임차인의 계약갱신 요구를 거절할 수 있습니다. 실거주 거절의 진위 판단, 거짓 거절 시 손해배상, 갱신 요구 기간을 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-07-31',
+    readingMinutes: 8,
+  },
   // 2026-07-30 신규 5편 (고향사랑기부제·주택자금조달계획서·청약재당첨제한·국민연금임의계속가입·ISA만기연금전환)
   {
     slug: 'hometown-love-donation-tax-credit-2026',

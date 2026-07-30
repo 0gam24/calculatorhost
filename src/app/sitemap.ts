@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-07-31 신규 5편 (6+6부모육아휴직제·성실신고확인제·조합원입주권양도세·디딤돌대출·계약갱신거절사유)
+  'parental-leave-6-plus-6-special-2026',
+  'sincere-filing-confirmation-2026',
+  'redevelopment-membership-right-capital-gains-tax-2026',
+  'didimdol-loan-conditions-2026',
+  'lease-renewal-refusal-grounds-2026',
   // 2026-07-30 신규 5편 (고향사랑기부제·주택자금조달계획서·청약재당첨제한·국민연금임의계속가입·ISA만기연금전환)
   'hometown-love-donation-tax-credit-2026',
   'housing-fund-plan-source-of-funds-2026',
