@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-01 신규 5편 (주담대6억한도·다주택취득세중과·법정상속순위상속분·간이과세세금계산서·임금체불대지급금)
+  'mortgage-loan-limit-6-billion-cap-2026',
+  'multi-house-acquisition-tax-heavy-8-12-percent-2026',
+  'legal-inheritance-order-share-2026',
+  'simplified-taxpayer-tax-invoice-obligation-2026',
+  'unpaid-wage-substitute-payment-2026',
   // 2026-07-31 신규 5편 (6+6부모육아휴직제·성실신고확인제·조합원입주권양도세·디딤돌대출·계약갱신거절사유)
   'parental-leave-6-plus-6-special-2026',
   'sincere-filing-confirmation-2026',

@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-01 신규 5편 (주담대6억한도·다주택취득세중과·법정상속순위상속분·간이과세세금계산서·임금체불대지급금)
+  {
+    slug: 'mortgage-loan-limit-6-billion-cap-2026',
+    title: '주택담보대출 6억 한도 규제 2026, 시가 15억·25억 구간별 정리',
+    description:
+      '수도권·규제지역 주택담보대출이 시가 구간별로 제한됩니다. 15억 이하 6억, 15억 초과 25억 이하 4억, 25억 초과 2억 한도와 LTV·스트레스 DSR을 함께 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-01',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'multi-house-acquisition-tax-heavy-8-12-percent-2026',
+    title: '다주택자 취득세 중과 2026, 조정 2주택 8%·3주택 12% 정리',
+    description:
+      '조정대상지역 2주택은 8%, 3주택 이상은 12% 중과 취득세가 적용됩니다. 비조정지역 기준, 일시적 2주택 제외, 지방 공시가 2억 이하 배제까지 지방세법 §13의2 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-01',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'legal-inheritance-order-share-2026',
+    title: '법정상속순위와 상속분 2026, 배우자 1.5·자녀 1 계산법',
+    description:
+      '재산 상속은 배우자와 직계비속이 1순위이며 배우자는 자녀보다 1.5배를 받습니다. 상속 순위, 법정상속분 계산, 유류분과 상속포기까지 민법 §1000·§1003·§1009 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-01',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'simplified-taxpayer-tax-invoice-obligation-2026',
+    title: '간이과세자 세금계산서 발급 의무 2026, 매출 4,800만원 기준',
+    description:
+      '간이과세자도 직전연도 공급대가 4,800만원 이상이면 세금계산서를 의무 발급해야 합니다. 영수증 발급 대상, 매입세액공제, 간이과세 기준까지 부가가치세법 §36 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-01',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'unpaid-wage-substitute-payment-2026',
+    title: '임금체불 대지급금 2026, 간이대지급금 최대 1,000만원 신청',
+    description:
+      '임금을 못 받으면 국가가 대신 지급하는 대지급금 제도가 있습니다. 간이대지급금 상한 1,000만원, 재직자·퇴직자 요건, 신청 절차를 임금채권보장법 §7·§7의2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-01',
+    readingMinutes: 7,
+  },
   // 2026-07-31 신규 5편 (6+6부모육아휴직제·성실신고확인제·조합원입주권양도세·디딤돌대출·계약갱신거절사유)
   {
     slug: 'parental-leave-6-plus-6-special-2026',
