@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-02 신규 5편 (주택임대사업자등록·신생아취득세감면·양도세환산취득가액·청약예치금액·가족돌봄휴직휴가)
+  'housing-rental-business-registration-2026',
+  'newborn-childbirth-acquisition-tax-reduction-2026',
+  'capital-gains-converted-acquisition-value-2026',
+  'private-housing-subscription-deposit-amount-2026',
+  'family-care-leave-2026',
   // 2026-08-01 신규 5편 (주담대6억한도·다주택취득세중과·법정상속순위상속분·간이과세세금계산서·임금체불대지급금)
   'mortgage-loan-limit-6-billion-cap-2026',
   'multi-house-acquisition-tax-heavy-8-12-percent-2026',

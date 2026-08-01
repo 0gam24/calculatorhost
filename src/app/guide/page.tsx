@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-02 신규 5편 (주택임대사업자등록·신생아취득세감면·양도세환산취득가액·청약예치금액·가족돌봄휴직휴가)
+  {
+    slug: 'housing-rental-business-registration-2026',
+    title: '주택임대사업자 등록 2026, 혜택·의무·자동말소 총정리',
+    description:
+      '주택임대사업자로 등록하면 종부세 합산배제와 양도세 특례를 받지만 10년 임대의무와 5% 증액제한을 어기면 감면이 추징됩니다. 등록 유형, 세제혜택, 자동말소까지 민간임대주택법 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-02',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'newborn-childbirth-acquisition-tax-reduction-2026',
+    title: '신생아 취득세 감면 2026, 500만원 면제 요건과 5년 규정',
+    description:
+      '자녀를 출산한 가구가 12억원 이하 1주택을 취득하면 취득세를 500만원 한도로 면제받습니다. 출산일부터 5년 규정, 상시거주 요건, 추징 사유를 지방세특례제한법 §36의5 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-02',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'capital-gains-converted-acquisition-value-2026',
+    title: '양도세 환산취득가액 2026, 취득가액 모를 때 계산과 가산세',
+    description:
+      '오래전 취득해 실제 취득가액을 모를 때는 환산취득가액으로 양도세를 계산할 수 있습니다. 환산가액 공식, 개산공제 3%, 신축 후 5년 내 양도 시 5% 가산세까지 소득세법 §97 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-02',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'private-housing-subscription-deposit-amount-2026',
+    title: '청약 예치금액 2026, 지역별·면적별 300만~1500만 기준',
+    description:
+      '민영주택 청약 1순위는 지역과 전용면적에 따라 정해진 예치기준금액을 채워야 합니다. 서울·부산 300만~1500만원 등 지역별 기준과 거주지 기준 원칙, 면적 상향 방법을 주택공급규칙 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-02',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'family-care-leave-2026',
+    title: '가족돌봄휴직·휴가 2026, 연 90일·10일 무급 사용법',
+    description:
+      '가족이 아프거나 돌봄이 필요하면 근로자는 연 90일 가족돌봄휴직과 연 10일 가족돌봄휴가를 쓸 수 있습니다. 무급 여부, 대상 가족, 분할 사용, 사업주 거부 예외를 남녀고용평등법 §22의2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-02',
+    readingMinutes: 7,
+  },
   // 2026-08-01 신규 5편 (주담대6억한도·다주택취득세중과·법정상속순위상속분·간이과세세금계산서·임금체불대지급금)
   {
     slug: 'mortgage-loan-limit-6-billion-cap-2026',
