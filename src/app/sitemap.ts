@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-03 신규 5편 (취득세일시적2주택중과배제·다자녀자동차취득세감면·국민연금납부예외·부동산해약금가계약금·양도세취득양도시기)
+  'acquisition-tax-temporary-two-houses-exclusion-2026',
+  'multi-child-vehicle-acquisition-tax-exemption-2026',
+  'national-pension-payment-exception-2026',
+  'real-estate-earnest-money-forfeit-2026',
+  'capital-gains-acquisition-timing-2026',
   // 2026-08-02 신규 5편 (주택임대사업자등록·신생아취득세감면·양도세환산취득가액·청약예치금액·가족돌봄휴직휴가)
   'housing-rental-business-registration-2026',
   'newborn-childbirth-acquisition-tax-reduction-2026',

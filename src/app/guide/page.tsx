@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-03 신규 5편 (취득세일시적2주택중과배제·다자녀자동차취득세감면·국민연금납부예외·부동산해약금가계약금·양도세취득양도시기)
+  {
+    slug: 'acquisition-tax-temporary-two-houses-exclusion-2026',
+    title: '취득세 일시적 2주택 중과 배제 2026, 종전주택 3년 처분',
+    description:
+      '이사하려고 새 집을 먼저 샀을 때 종전주택을 3년 안에 팔면 취득세 8% 중과 대신 1~3% 기본세율을 받습니다. 처분기한, 조정지역 통일 규정, 미처분 추징을 지방세법 시행령 §28의5 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'multi-child-vehicle-acquisition-tax-exemption-2026',
+    title: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50%',
+    description:
+      '18세 미만 자녀 3명 이상 양육자는 양육용 차 1대의 취득세를 면제받고(6인 이하 승용은 140만원 한도), 자녀 2명은 50% 경감됩니다. 차종·인승별 한도와 신청·추징을 지방세특례제한법 §22의2 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-pension-payment-exception-2026',
+    title: '국민연금 납부예외 2026, 소득 없을 때 신청·연금 영향',
+    description:
+      '실직이나 폐업으로 소득이 없으면 국민연금 보험료 납부를 미루는 납부예외를 신청할 수 있습니다. 신청 기한, 가입기간 미산입에 따른 연금 감소, 추후납부 회복을 국민연금법 §91 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'real-estate-earnest-money-forfeit-2026',
+    title: '부동산 계약금 해약금·가계약금 2026, 배액상환·반환 기준',
+    description:
+      '부동산 계약금을 걸고 마음이 바뀌면 매수인은 계약금 포기, 매도인은 배액상환으로 해제할 수 있습니다. 이행착수 시한, 가계약금 반환, 계약금 일부 지급 판례를 민법 §565 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-03',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'capital-gains-acquisition-timing-2026',
+    title: '양도세 취득·양도 시기 2026, 잔금일·등기일·계약일 기준',
+    description:
+      '양도소득세의 취득·양도 시기는 원칙적으로 잔금일(대금청산일)이며, 잔금 전 등기하면 등기접수일이 됩니다. 상속·증여·자가신축·분양의 시기 판정과 보유기간 기산을 소득세법 §98 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-03',
+    readingMinutes: 8,
+  },
   // 2026-08-02 신규 5편 (주택임대사업자등록·신생아취득세감면·양도세환산취득가액·청약예치금액·가족돌봄휴직휴가)
   {
     slug: 'housing-rental-business-registration-2026',
