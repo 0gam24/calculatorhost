@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-04 신규 5편 (1세대1주택거주요건·종부세합산배제신고·창업자금증여특례·평균임금통상임금·적격증빙가산세)
+  'one-house-2-year-residence-requirement-2026',
+  'comprehensive-real-estate-tax-exclusion-application-2026',
+  'startup-fund-gift-tax-special-2026',
+  'average-wage-vs-ordinary-wage-2026',
+  'qualified-receipt-evidence-penalty-2026',
   // 2026-08-03 신규 5편 (취득세일시적2주택중과배제·다자녀자동차취득세감면·국민연금납부예외·부동산해약금가계약금·양도세취득양도시기)
   'acquisition-tax-temporary-two-houses-exclusion-2026',
   'multi-child-vehicle-acquisition-tax-exemption-2026',

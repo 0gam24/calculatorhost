@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-04 신규 5편 (1세대1주택거주요건·종부세합산배제신고·창업자금증여특례·평균임금통상임금·적격증빙가산세)
+  {
+    slug: 'one-house-2-year-residence-requirement-2026',
+    title: '1세대1주택 양도세 거주요건 2026, 조정지역 2년·상생임대인 면제',
+    description:
+      '취득 당시 조정대상지역 주택만 2년 거주요건이 붙습니다. 강남3구·용산 취득이면 2년 보유 + 2년 거주, 그 외 지역은 2년 보유만. 상생임대인·부득이한 사유 면제까지 소득세법 시행령 §154 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-04',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'comprehensive-real-estate-tax-exclusion-application-2026',
+    title: '종부세 합산배제 신고 2026, 9월 16~30일 임대주택 빼는 법',
+    description:
+      '등록 임대주택을 종합부동산세 과세대상에서 빼는 합산배제 신고. 9월 16~30일 신고 기간, 대상 주택 요건, 최초 신고 후 변동신고, 추징 리스크를 종합부동산세법 §8 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-04',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'startup-fund-gift-tax-special-2026',
+    title: '창업자금 증여세 과세특례 2026, 5억 공제·10% 세율 조건',
+    description:
+      '60세 이상 부모가 18세 이상 자녀 창업자금을 증여하면 5억을 공제하고 10% 세율로 과세합니다. 한도 50억(10명 고용 시 100억), 2년 내 창업, 사후관리·상속 합산을 조세특례제한법 §30의5 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-04',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'average-wage-vs-ordinary-wage-2026',
+    title: '평균임금 통상임금 차이 2026, 퇴직금·수당 계산 기준',
+    description:
+      '퇴직금은 평균임금, 연장·야간·연차수당은 통상임금으로 계산합니다. 평균임금은 3개월 임금총액÷총일수, 통상임금은 정기·일률·고정 임금입니다. 산정법과 쓰임새 차이를 근로기준법 §2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-04',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'qualified-receipt-evidence-penalty-2026',
+    title: '적격증빙 증빙불비가산세 2026, 3만원 초과·미수취 2%',
+    description:
+      '세금계산서·계산서·카드전표·현금영수증 4종을 3만원 초과 거래에서 못 받으면 미수취 금액의 2% 가산세가 붙습니다. 적격증빙 종류, 3만원 기준, 소규모사업자 제외를 소득세법 §160의2·§81의6 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-04',
+    readingMinutes: 8,
+  },
   // 2026-08-03 신규 5편 (취득세일시적2주택중과배제·다자녀자동차취득세감면·국민연금납부예외·부동산해약금가계약금·양도세취득양도시기)
   {
     slug: 'acquisition-tax-temporary-two-houses-exclusion-2026',
