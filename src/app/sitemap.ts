@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-05 신규 5편 (세제개편안부동산·자동차채권환급·주민세종업원분·공모주청약배정·임대차원상복구)
+  'real-estate-tax-reform-2026',
+  'local-development-bond-refund-2026',
+  'resident-tax-employee-portion-2026',
+  'ipo-subscription-allocation-2026',
+  'lease-restoration-obligation-2026',
   // 2026-08-04 신규 5편 (1세대1주택거주요건·종부세합산배제신고·창업자금증여특례·평균임금통상임금·적격증빙가산세)
   'one-house-2-year-residence-requirement-2026',
   'comprehensive-real-estate-tax-exclusion-application-2026',

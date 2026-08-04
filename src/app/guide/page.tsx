@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-05 신규 5편 (세제개편안부동산·자동차채권환급·주민세종업원분·공모주청약배정·임대차원상복구)
+  {
+    slug: 'real-estate-tax-reform-2026',
+    title: '2026 세제개편안 부동산 세금, 장특공제 거주 중심 개편 정리',
+    description:
+      '2026년 8월 3일 발표된 세제개편안은 장기보유특별공제를 거주 중심으로 바꾸고 공제한도(2028년 20억, 2029년 10억)를 신설합니다. 실거주자·비거주 보유자·초고가주택 소유자에게 무엇이 달라지는지 정부안 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-05',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'local-development-bond-refund-2026',
+    title: '자동차 채권 환급금 조회·신청 2026, 지역개발채권·도시철도채권',
+    description:
+      '자동차 살 때 의무로 산 지역개발채권·도시철도채권은 만기 후 돌려받을 수 있습니다. 잠자는 미환급금 2,391억원. 채권 종류별 만기·소멸시효와 금고은행 조회·신청 방법을 단계별로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-05',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'resident-tax-employee-portion-2026',
+    title: '주민세 종업원분 2026, 세율 0.5%·면세점·신고 방법 정리',
+    description:
+      '주민세 종업원분은 사업소 종업원 급여총액의 0.5%를 매월 신고납부하는 지방세입니다. 최근 1년 월평균 급여총액 1억5천만원 이하면 면세점 적용. 세율·면세점·신고 기한·계산법을 지방세법 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-05',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'ipo-subscription-allocation-2026',
+    title: '공모주 청약 균등·비례배정 2026, 증거금·환불일 계산법',
+    description:
+      '공모주 청약은 균등배정과 비례배정으로 나뉩니다. 최소 청약수량만 넣으면 균등 물량을 나눠 받고, 남은 물량은 청약 수량 비례로 배정됩니다. 증거금 50%, 환불일, 중복청약 금지까지 초보자용으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-05',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'lease-restoration-obligation-2026',
+    title: '전세·월세 원상복구 의무 범위 2026, 못자국·도배·곰팡이 기준',
+    description:
+      '퇴거할 때 어디까지 원상복구해야 할까요. 자연스러운 못자국·벽지 변색 같은 통상손모는 임차인 책임이 아니고, 흡연 착색·곰팡이·파손 같은 고의·과실은 배상 대상입니다. 민법 §615·§623과 판례 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-05',
+    readingMinutes: 8,
+  },
   // 2026-08-04 신규 5편 (1세대1주택거주요건·종부세합산배제신고·창업자금증여특례·평균임금통상임금·적격증빙가산세)
   {
     slug: 'one-house-2-year-residence-requirement-2026',
