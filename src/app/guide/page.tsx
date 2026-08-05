@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-06 신규 5편 (2027최저임금·하이브리드개소세종료·고배당분리과세·현금영수증의무발행·근로계약서의무)
+  {
+    slug: 'minimum-wage-2027',
+    title: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 계산',
+    description:
+      '2027년 최저시급 10,700원(3.7% 인상) 기준 주휴 포함 월급 2,236,300원과 4대보험 공제 후 실수령액 약 202만원. 주휴수당 계산법과 수습 감액까지 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-06',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'hybrid-vehicle-consumption-tax-sunset-2026',
+    title: '하이브리드 개별소비세 감면 2026년 말 종료, 얼마 오르나',
+    description:
+      '2026 세제개편안으로 하이브리드차 개별소비세 감면(최대 70만원)이 2026년 12월 31일 종료됩니다. 연내·내년 구매의 세금 차이와 전기·수소차 감면 축소 일정을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-06',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'dividend-separate-taxation-value-up-2026',
+    title: '고배당기업 배당소득 분리과세 2026, 신청·유불리 총정리',
+    description:
+      '2026년 지급 배당부터 고배당기업 배당소득 분리과세(14~30% 저율)가 도입됐습니다. 종합과세와의 차이, 누구에게 유리한지, 신청서 제출과 밸류업 고배당기업 확인법을 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-06',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'cash-receipt-mandatory-issuance-2026',
+    title: '현금영수증 의무발행, 10만원·미발급 가산세 20% 정리',
+    description:
+      '의무발행업종은 건당 10만원 이상 현금거래 시 소비자 요구가 없어도 현금영수증을 발급해야 합니다. 미발급 가산세 20%, 자진발급 방법, 소비자 신고 절차를 소득세법 §162의3 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-06',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'employment-contract-written-obligation-2026',
+    title: '근로계약서 안 쓰면 벌금, 알바·정규직 처벌 차이 정리',
+    description:
+      '근로계약서 미작성은 정규직은 500만원 이하 벌금, 알바·기간제는 500만원 이하 과태료 대상입니다. 필수 명시사항과 미작성 시 신고 방법을 근로기준법 §17 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-06',
+    readingMinutes: 7,
+  },
   // 2026-08-05 신규 5편 (세제개편안부동산·자동차채권환급·주민세종업원분·공모주청약배정·임대차원상복구)
   {
     slug: 'real-estate-tax-reform-2026',

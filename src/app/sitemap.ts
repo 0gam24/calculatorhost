@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-06 신규 5편 (2027최저임금·하이브리드개소세종료·고배당분리과세·현금영수증의무발행·근로계약서의무)
+  'minimum-wage-2027',
+  'hybrid-vehicle-consumption-tax-sunset-2026',
+  'dividend-separate-taxation-value-up-2026',
+  'cash-receipt-mandatory-issuance-2026',
+  'employment-contract-written-obligation-2026',
   // 2026-08-05 신규 5편 (세제개편안부동산·자동차채권환급·주민세종업원분·공모주청약배정·임대차원상복구)
   'real-estate-tax-reform-2026',
   'local-development-bond-refund-2026',
