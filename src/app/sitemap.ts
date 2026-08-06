@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-07 신규 5편 (부동산인지세·상속주택취득세·5인미만근로기준법·수습최저임금90%·부가세예정고지)
+  'real-estate-sales-contract-stamp-tax-2026',
+  'inheritance-house-acquisition-tax-2026',
+  'small-business-under-5-employees-labor-law-2026',
+  'probation-period-minimum-wage-90-percent-2026',
+  'vat-preliminary-notice-individual-2026',
   // 2026-08-06 신규 5편 (2027최저임금·하이브리드개소세종료·고배당분리과세·현금영수증의무발행·근로계약서의무)
   'minimum-wage-2027',
   'hybrid-vehicle-consumption-tax-sunset-2026',

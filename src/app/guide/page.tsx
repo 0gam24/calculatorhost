@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-07 신규 5편 (부동산인지세·상속주택취득세·5인미만근로기준법·수습최저임금90%·부가세예정고지)
+  {
+    slug: 'real-estate-sales-contract-stamp-tax-2026',
+    title: '부동산 매매계약서 인지세 2026, 얼마·누가·언제 납부하나',
+    description:
+      '부동산 매매계약서 인지세는 기재금액에 따라 2만~35만원 정액이며, 계약 작성월 다음 달 10일까지 전자수입인지로 납부합니다. 1억 초과~10억은 15만원, 10억 초과는 35만원. 매수·매도인 연대납부와 미납 가산세까지 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inheritance-house-acquisition-tax-2026',
+    title: '상속 주택 취득세 2026, 무주택 1주택 특례 0.8%',
+    description:
+      '상속으로 주택을 받으면 취득세는 원칙 2.8%이지만, 무주택 세대가 1주택을 상속하면 특례세율 0.8%가 적용됩니다. 신고는 상속개시월 말일부터 6개월 이내이고 다주택 중과 대상이 아닙니다. 지방교육세까지 사례로 계산했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'small-business-under-5-employees-labor-law-2026',
+    title: '5인 미만 사업장 근로기준법 2026, 연차·연장수당 되나',
+    description:
+      '5인 미만 사업장은 최저임금·주휴수당·퇴직금·해고예고는 적용되지만, 연차휴가와 연장·야간·휴일 가산수당, 부당해고 구제신청은 적용되지 않습니다. 상시근로자 수 산정법과 적용·미적용 권리를 표로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'probation-period-minimum-wage-90-percent-2026',
+    title: '수습기간 최저임금 90% 2026, 9,288원 조건과 예외',
+    description:
+      '수습 최저임금 90% 감액(2026년 시급 9,288원)은 1년 이상 계약, 3개월 이내, 단순노무직 제외라는 3요건을 모두 충족해야 합법입니다. 계약직·단순노무 예외와 미달 지급 시 대응 방법까지 사례로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-07',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'vat-preliminary-notice-individual-2026',
+    title: '부가가치세 예정고지 2026, 개인사업자 4월·10월 납부',
+    description:
+      '개인 일반과세 사업자는 4월·10월에 부가세 예정고지를 받아 직전 확정 납부세액의 50%를 냅니다. 예정고지 세액이 50만원 미만이면 생략되고, 매출이 급감하면 예정신고를 선택할 수 있습니다. 확정신고 정산 구조까지 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-07',
+    readingMinutes: 8,
+  },
   // 2026-08-06 신규 5편 (2027최저임금·하이브리드개소세종료·고배당분리과세·현금영수증의무발행·근로계약서의무)
   {
     slug: 'minimum-wage-2027',
