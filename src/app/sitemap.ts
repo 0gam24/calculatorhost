@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-08 신규 5편 (간이지급명세서·포괄임금제·금리인하요구권·두루누리·소득금액증명원)
+  'simplified-payment-statement-obligation-2026',
+  'inclusive-wage-system-2026',
+  'interest-rate-cut-request-right-2026',
+  'durunuri-social-insurance-support-2026',
+  'income-certificate-issuance-2026',
   // 2026-08-07 신규 5편 (부동산인지세·상속주택취득세·5인미만근로기준법·수습최저임금90%·부가세예정고지)
   'real-estate-sales-contract-stamp-tax-2026',
   'inheritance-house-acquisition-tax-2026',

@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-08 신규 5편 (간이지급명세서·포괄임금제·금리인하요구권·두루누리·소득금액증명원)
+  {
+    slug: 'simplified-payment-statement-obligation-2026',
+    title: '간이지급명세서 2026, 제출기한과 미제출 가산세 0.25%',
+    description:
+      '근로소득·사업소득 간이지급명세서는 2026년까지 반기, 2027년부터 매월 제출로 바뀝니다. 미제출 가산세 0.25%(지연제출 0.125%)와 프리랜서 3.3% 인건비 신고 대상, 홈택스 제출 방법을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-08',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inclusive-wage-system-2026',
+    title: '포괄임금제 2026, 야근수당 못 받나 무효 요건',
+    description:
+      '포괄임금제라도 실근로가 약정 시간을 넘으면 초과분 수당을 추가로 청구할 수 있습니다. 유효 요건(동의·불이익 없음·수당 명시)과 최저임금 위반 판단, 무효 시 대응 방법을 사례로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-08',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'interest-rate-cut-request-right-2026',
+    title: '금리인하요구권 2026, 승진·소득증가 시 신청 방법',
+    description:
+      '취업·승진·소득 증가나 신용점수 개선 시 대출금리 인하를 요구할 수 있는 금리인하요구권. 신청 요건, 필요 서류, 심사 기간 10영업일, 거절 사유와 재신청 전략까지 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-08',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'durunuri-social-insurance-support-2026',
+    title: '두루누리 사회보험료 지원 2026, 10인 미만 80% 지원',
+    description:
+      '근로자 10명 미만 사업장의 월 보수 270만원 미만 신규 가입자와 사업주에게 국민연금·고용보험료의 80%를 최대 36개월 지원합니다. 지원 요건, 지원액 계산, 신청 방법, 제외 사유까지 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-08',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'income-certificate-issuance-2026',
+    title: '소득금액증명원 발급 2026, 프리랜서 안 될 때 대안',
+    description:
+      '소득금액증명원은 종합소득세 신고가 끝난 직전연도분을 대개 7월 이후 발급받습니다. 프리랜서 발급 불가 사유와 홈택스·정부24 발급 방법, 부가세 과세표준증명원, 발급 대안 서류까지 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-08',
+    readingMinutes: 8,
+  },
   // 2026-08-07 신규 5편 (부동산인지세·상속주택취득세·5인미만근로기준법·수습최저임금90%·부가세예정고지)
   {
     slug: 'real-estate-sales-contract-stamp-tax-2026',
