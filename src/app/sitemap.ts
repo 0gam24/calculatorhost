@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-09 신규 5편 (주52시간연장수당·해고예고수당·유류분·토지거래허가구역·부모급여아동수당)
+  '52-hour-workweek-overtime-pay-2026',
+  'dismissal-advance-notice-pay-2026',
+  'inheritance-legal-reserve-claim-2026',
+  'land-transaction-permit-zone-2026',
+  'parental-benefit-child-allowance-2026',
   // 2026-08-08 신규 5편 (간이지급명세서·포괄임금제·금리인하요구권·두루누리·소득금액증명원)
   'simplified-payment-statement-obligation-2026',
   'inclusive-wage-system-2026',

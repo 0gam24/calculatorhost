@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-09 신규 5편 (주52시간연장수당·해고예고수당·유류분·토지거래허가구역·부모급여아동수당)
+  {
+    slug: '52-hour-workweek-overtime-pay-2026',
+    title: '주 52시간 연장근로수당 2026, 계산법과 1.5배 기준',
+    description:
+      '주 52시간은 법정 40시간에 연장 12시간을 더한 상한입니다. 연장근로수당 1.5배 계산법, 야간·휴일 중복 가산, 1일 8시간 초과와 주 40시간 초과의 차이, 5인 미만 예외까지 근로기준법 조문으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-09',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'dismissal-advance-notice-pay-2026',
+    title: '해고예고수당 2026, 30일분 통상임금 계산과 예외',
+    description:
+      '해고 30일 전 예고를 받지 못했다면 30일분 통상임금을 받습니다. 계산법, 3개월 미만·천재지변 등 예외 3가지, 권고사직과의 차이, 못 받았을 때 대응까지 근로기준법 §26으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-09',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'inheritance-legal-reserve-claim-2026',
+    title: '유류분 2026, 반환청구 계산과 형제자매 위헌 정리',
+    description:
+      '유류분은 직계비속·배우자가 법정상속분의 1/2, 직계존속이 1/3을 보장받는 최소한의 상속 몫입니다. 2024년 형제자매 유류분 위헌, 계산법, 반환청구 소멸시효 1년·10년을 민법 조문으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-09',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'land-transaction-permit-zone-2026',
+    title: '토지거래허가구역 2026, 실거주 의무와 이행강제금',
+    description:
+      '토지거래허가구역에서 기준면적을 넘는 주택·토지를 사려면 관할 허가가 필요하고 주거용은 2년 실거주 의무가 붙어 갭투자가 막힙니다. 이용의무 위반 시 취득가액 10% 이행강제금까지 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-09',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'parental-benefit-child-allowance-2026',
+    title: '부모급여 아동수당 2026, 금액·중복·신청 총정리',
+    description:
+      '2026년 부모급여는 0세 월 100만 원, 1세 월 50만 원이고 아동수당은 만 8세 미만 월 10만 원입니다. 소득과 무관하며 0~1세는 둘 다 받습니다. 신청 시기(출생 60일 이내)와 지급일(매월 25일)까지 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-09',
+    readingMinutes: 7,
+  },
   // 2026-08-08 신규 5편 (간이지급명세서·포괄임금제·금리인하요구권·두루누리·소득금액증명원)
   {
     slug: 'simplified-payment-statement-obligation-2026',
