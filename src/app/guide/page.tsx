@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-10 신규 5편 (상속포기·이직연말정산·배당그로스업·초단시간근로자·결손금이월공제)
+  {
+    slug: 'inheritance-renunciation-3-months-2026',
+    title: '상속포기 2026, 기한 3개월과 빚 상속 막는 법',
+    description:
+      '부모가 빚만 남기고 돌아가셨다면 상속개시를 안 날부터 3개월 안에 가정법원에 상속포기를 신고해야 합니다. 한정승인과의 차이, 후순위로 빚이 넘어가는 함정, 3개월 경과 시 특별한정승인까지 민법 조문으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-10',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'reemployed-worker-year-end-tax-2026',
+    title: '이직 연말정산 2026, 전 직장 소득 합산 안 하면 생기는 일',
+    description:
+      '같은 해에 회사를 옮겼다면 전 직장과 현 직장 급여를 합쳐 연말정산해야 합니다. 전 직장 원천징수영수증 받는 법, 합산을 빠뜨렸을 때 5월 종합소득세로 정산하는 방법을 소득세법 §138로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-10',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'dividend-gross-up-tax-credit-2026',
+    title: '배당세액공제 그로스업 2026, 11% 가산과 이중과세 조정',
+    description:
+      '배당에 11%를 더했다가(그로스업) 그만큼 세액에서 빼주는 배당세액공제는 법인세와 소득세의 이중과세를 조정하는 장치입니다. 그로스업 대상·제외 배당과 금융소득 2천만원 기준을 소득세법 §17·§56으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-10',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'very-short-time-worker-15-hours-2026',
+    title: '초단시간 근로자 2026, 주 15시간 미만 주휴·퇴직금·4대보험',
+    description:
+      '주 15시간 미만으로 일하는 초단시간 근로자는 주휴수당·퇴직금·연차가 원칙적으로 적용되지 않습니다. 4대보험 가입 여부와 그래도 지켜지는 최저임금·근로계약서 권리를 근로기준법 §18로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-10',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'business-loss-carryforward-15-years-2026',
+    title: '사업 결손금 이월공제 2026, 15년 적용과 공제 순서',
+    description:
+      '사업이 적자를 내면 그 결손금을 이후 소득에서 빼주는 이월결손금 제도가 있습니다. 2020년 이후 발생분은 15년간 공제되며, 사업·근로·연금·기타·이자·배당 순으로 차감됩니다. 부동산임대업 특례까지 소득세법 §45로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-10',
+    readingMinutes: 8,
+  },
   // 2026-08-09 신규 5편 (주52시간연장수당·해고예고수당·유류분·토지거래허가구역·부모급여아동수당)
   {
     slug: '52-hour-workweek-overtime-pay-2026',

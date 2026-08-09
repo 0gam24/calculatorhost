@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-10 신규 5편 (상속포기·이직연말정산·배당그로스업·초단시간근로자·결손금이월공제)
+  'inheritance-renunciation-3-months-2026',
+  'reemployed-worker-year-end-tax-2026',
+  'dividend-gross-up-tax-credit-2026',
+  'very-short-time-worker-15-hours-2026',
+  'business-loss-carryforward-15-years-2026',
   // 2026-08-09 신규 5편 (주52시간연장수당·해고예고수당·유류분·토지거래허가구역·부모급여아동수당)
   '52-hour-workweek-overtime-pay-2026',
   'dismissal-advance-notice-pay-2026',
