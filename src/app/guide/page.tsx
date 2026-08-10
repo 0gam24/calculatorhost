@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-11 신규 5편 (전세사기피해자지원·취업후학자금상환·재건축부담금·연차사용촉진·스톡옵션세금)
+  {
+    slug: 'jeonse-fraud-victim-support-2026',
+    title: '전세사기 피해자 지원 신청 2026, 요건·절차·유효기간',
+    description:
+      '전세사기 피해자로 인정받는 4가지 요건과 결정 신청 절차를 정리했습니다. 보증금 5억원 이하 기준, 우선매수권과 LH 공공임대 지원, 조세채권 안분, 유효기간 2027년 5월 31일까지 전세사기특별법으로 안내합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-11',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'income-contingent-loan-repayment-2026',
+    title: '취업 후 학자금 상환 2026, 의무상환 소득과 상환액 계산',
+    description:
+      '취업 후 학자금 상환(ICL)은 연간 소득금액이 상환기준소득 3,037만원을 넘는 해부터 시작됩니다. 초과분에 학부 20%·대학원 25%를 곱하는 의무상환액 계산법과 원천공제, 상환 유예까지 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-11',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'reconstruction-excess-profit-levy-2026',
+    title: '재건축부담금 2026, 면제 8천만원·부과율 구간·계산법',
+    description:
+      '재건축초과이익환수제 부담금은 조합원 1인당 평균이익 8천만원 초과분에 10~50% 누진 부과율을 적용합니다. 면제 기준, 구간별 부과율, 1인당 부담금 계산 사례를 재건축초과이익 환수법으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-11',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'annual-leave-usage-promotion-2026',
+    title: '연차 사용촉진제도 2026, 절차와 미사용수당 소멸 조건',
+    description:
+      '연차 사용촉진제도는 회사가 근로기준법 절차를 지키면 미사용 연차수당 지급의무가 사라지는 제도입니다. 6개월 전 1차 서면 통보, 2개월 전 2차 지정 절차와 수당 소멸·유지 조건을 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-11',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'venture-stock-option-tax-2026',
+    title: '스톡옵션 세금 2026, 행사이익 과세와 벤처 비과세 특례',
+    description:
+      '스톡옵션 행사이익은 재직 중이면 근로소득, 퇴직 후면 기타소득으로 과세됩니다. 벤처기업 비과세 특례 연 2억원(누적 5억), 5년 분할납부, 양도소득 과세특례를 조세특례제한법으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-11',
+    readingMinutes: 8,
+  },
   // 2026-08-09 신규 5편 (주52시간연장수당·해고예고수당·유류분·토지거래허가구역·부모급여아동수당)
   {
     slug: '52-hour-workweek-overtime-pay-2026',

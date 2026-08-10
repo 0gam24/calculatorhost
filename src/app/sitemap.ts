@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-11 신규 5편 (전세사기피해자지원·취업후학자금상환·재건축부담금·연차사용촉진·스톡옵션세금)
+  'jeonse-fraud-victim-support-2026',
+  'income-contingent-loan-repayment-2026',
+  'reconstruction-excess-profit-levy-2026',
+  'annual-leave-usage-promotion-2026',
+  'venture-stock-option-tax-2026',
   // 2026-08-09 신규 5편 (주52시간연장수당·해고예고수당·유류분·토지거래허가구역·부모급여아동수당)
   '52-hour-workweek-overtime-pay-2026',
   'dismissal-advance-notice-pay-2026',
