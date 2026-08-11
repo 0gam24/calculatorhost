@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-12 신규 5편 (배우자상속공제·상병수당·노령연금소득감액·결혼세액공제·무주택기간산정)
+  {
+    slug: 'spouse-inheritance-deduction-2026',
+    title: '배우자 상속공제 2026, 최소 5억 최대 30억 계산법',
+    description:
+      '배우자가 살아 있으면 상속세에서 최소 5억원은 무조건 공제됩니다. 실제 상속액과 법정상속분에 따라 최대 30억원까지 늘어나는 배우자 상속공제의 한도 계산법과 분할신고 기한을 상속세및증여세법 §19 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-12',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'sickness-benefit-2026',
+    title: '상병수당 2026, 아파서 쉬어도 받는 지원금 신청 조건',
+    description:
+      '업무 외 질병·부상으로 일하지 못할 때 소득을 보전해 주는 상병수당 시범사업. 하루 지원금액(하한 48,150원, 상한 66,000원), 신청 자격, 시범 지역, 신청 방법을 국민건강보험법 §50 부가급여 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-12',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'national-pension-work-income-deduction-2026',
+    title: '노령연금 감액 2026, 일하면 월 519만원까지 안 깎인다',
+    description:
+      '은퇴 후 재취업하면 국민연금이 깎일까요. 2026년 6월 17일부터 감액 기준이 상향돼 월평균소득 약 519만원 미만이면 노령연금이 감액되지 않습니다. 감액 소득 기준, 감액 폭, 연기연금 대안을 국민연금법 §63의2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-12',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'marriage-tax-credit-2026',
+    title: '결혼세액공제 2026, 혼인신고만 해도 부부 100만원',
+    description:
+      '2024년부터 2026년 사이에 혼인신고를 하면 부부가 각각 50만원씩 최대 100만원의 세금을 돌려받습니다. 나이와 소득 제한 없이 생애 1회 적용되는 결혼세액공제의 조건과 신청 방법을 조세특례제한법 §92 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-12',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'housing-subscription-no-house-period-2026',
+    title: '청약 무주택기간 산정 2026, 만30세·혼인신고일 기준',
+    description:
+      '청약 가점의 핵심인 무주택기간은 만 30세부터, 30세 이전에 결혼했다면 혼인신고일부터 계산합니다. 과거 주택 처분 이력이 있을 때의 기산일과 32점 만점 가점표를 주택공급에 관한 규칙 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-12',
+    readingMinutes: 8,
+  },
   // 2026-08-11 신규 5편 (전세사기피해자지원·취업후학자금상환·재건축부담금·연차사용촉진·스톡옵션세금)
   {
     slug: 'jeonse-fraud-victim-support-2026',

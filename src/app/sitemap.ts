@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-12 신규 5편 (배우자상속공제·상병수당·노령연금소득감액·결혼세액공제·무주택기간산정)
+  'spouse-inheritance-deduction-2026',
+  'sickness-benefit-2026',
+  'national-pension-work-income-deduction-2026',
+  'marriage-tax-credit-2026',
+  'housing-subscription-no-house-period-2026',
   // 2026-08-11 신규 5편 (전세사기피해자지원·취업후학자금상환·재건축부담금·연차사용촉진·스톡옵션세금)
   'jeonse-fraud-victim-support-2026',
   'income-contingent-loan-repayment-2026',
