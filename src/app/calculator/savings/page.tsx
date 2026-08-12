@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '적금 이자 계산기 2026 — 세후 수령액 비교',
+    title: '적금 이자 계산기 2026, 세후 수령액 비교',
     description: '월 납입금과 기간, 이자 방식을 입력해 단리·복리별 세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',

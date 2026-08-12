@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-04';
 const DATE_MODIFIED = '2026-06-04';
 
 export const metadata: Metadata = {
-  title: '청년미래적금 2026 — 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%',
+  title: '청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%',
   description:
     '청년미래적금 2026 조건, 금리, 정부기여금을 정리했습니다. 만 19~34세 소득요건 충족 시 월 최대 50만원 납입, 기본금리 연 5% 고정, 이자소득 비과세. 정부기여금 6~12%. 6월 22일 출시. 청년도약계좌 중복불가.',
   keywords: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청년미래적금 2026 — 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%' }],
-    title: '청년미래적금 2026 — 월 50만원·5% + 정부 6~12% 기여, 6월 22일 출시',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%' }],
+    title: '청년미래적금 2026, 월 50만원·5% + 정부 6~12% 기여, 6월 22일 출시',
     description: '만 19~34세 소득요건 대상. 월 최대 50만원, 기본 5% + 정부기여금 6~12%. 3년 만기 약 2,200만원. 6월 22일 출시, 청년도약계좌와 중복불가.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청년미래적금 2026 — 월 50만원·5% + 정부기여금, 6월 22일 출시',
+    title: '청년미래적금 2026, 월 50만원·5% + 정부기여금, 6월 22일 출시',
     description: '조건·금리·정부기여금·청년도약계좌 비교. 만 19~34세·소득요건 대상.',
   },
 };
@@ -97,10 +97,10 @@ export default function YouthFutureSavingsAccount2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '청년미래적금 2026 — 조건·금리·정부기여금' },
+    { name: '청년미래적금 2026, 조건·금리·정부기여금' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '청년미래적금 2026 — 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%',
+    headline: '청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%',
     description:
       '청년미래적금 2026 조건, 금리, 정부기여금을 정리했습니다. 만 19~34세 소득요건 충족 시 월 최대 50만원 납입, 기본금리 연 5% 고정, 이자소득 비과세. 정부기여금 6~12%. 6월 22일 출시. 청년도약계좌 중복불가.',
     url: URL,
@@ -112,7 +112,7 @@ export default function YouthFutureSavingsAccount2026() {
     keywords: ['청년미래적금', '청년 저축', '정부기여금', '3년 적금'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '청년미래적금 2026 — 조건·금리·정부기여금·신청',
+    name: '청년미래적금 2026, 조건·금리·정부기여금·신청',
     description:
       '만 19~34세 소득요건 대상, 월 최대 50만원, 기본 5% + 정부 6~12% 기여, 이자 비과세. 6월 22일 출시, 청년도약계좌와 중복불가.',
     url: URL,
@@ -148,7 +148,7 @@ export default function YouthFutureSavingsAccount2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   청년미래적금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%</span>
+                  <span className="text-2xl text-text-secondary">· 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   정부가 청년을 위해 새로운 저축 상품을 출시합니다. 청년미래적금은 <strong>기본금리 5% + 정부기여금 6~12%</strong>를 제공하는 3년 만기 자유적립식 적금입니다.
@@ -214,7 +214,7 @@ export default function YouthFutureSavingsAccount2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 청년미래적금이란? — 누가 얼마를 받을 수 있나</h2>
+                <h2 className="text-2xl font-bold">1. 청년미래적금이란?, 누가 얼마를 받을 수 있나</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   청년미래적금은 정부가 청년의 자산 형성을 돕기 위해 새로 출시하는 저축 상품입니다.
                   일반 적금과 달리 기본금리가 <strong>연 5%로 고정</strong>이고, 여기에 <strong>정부기여금 6~12%</strong>가 추가됩니다.
@@ -224,7 +224,7 @@ export default function YouthFutureSavingsAccount2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 가입 대상 — 만 19~34세 + 소득요건</h2>
+                <h2 className="text-2xl font-bold">2. 가입 대상, 만 19~34세 + 소득요건</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   청년미래적금의 가입 대상은 <strong>청년기본법 §3에 따른 청년(만 19~34세)</strong>입니다.
                   청년기본법 제3조는 청년을 "19세 이상 34세 이하인 사람"으로 정의하며, 다른 법령·조례에서 달리 정한 경우 그에 따를 수 있도록 하고 있습니다.
@@ -266,7 +266,7 @@ export default function YouthFutureSavingsAccount2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 금리와 정부기여금 — 5% 고정 + 6~12%</h2>
+                <h2 className="text-2xl font-bold">3. 금리와 정부기여금, 5% 고정 + 6~12%</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   청년미래적금의 금리 구조는 매우 단순합니다.
                   기본금리는 <strong>연 5%로 3년 고정</strong>이고, 여기에 정부가 <strong>납입액의 6%(일반형) 또는 12%(우대형)</strong>를 추가로 넣어줍니다.
@@ -333,7 +333,7 @@ export default function YouthFutureSavingsAccount2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 청년도약계좌와의 비교 — 중복불가, 갈아타기 허용</h2>
+                <h2 className="text-2xl font-bold">5. 청년도약계좌와의 비교, 중복불가, 갈아타기 허용</h2>
                 <p className="text-text-secondary leading-relaxed">
                   청년미래적금과 청년도약계좌는 모두 청년을 위한 정부 지원 상품이지만, 중복 가입할 수 없습니다.
                   참고로 청년도약계좌의 이자·배당소득 비과세 근거는 <strong>조세특례제한법 §91의22</strong>(청년도약계좌에 대한 비과세)이며,
@@ -434,43 +434,43 @@ export default function YouthFutureSavingsAccount2026() {
                     → <Link href="/calculator/savings/" className="text-primary-600 underline dark:text-primary-500">
                       적금 이자 계산기
                     </Link>
-                    {' — 월 납입액과 금리로 만기액 미리 계산'}
+                    {'월 납입액과 금리로 만기액 미리 계산'}
                   </li>
                   <li>
                     → <Link href="/calculator/deposit/" className="text-primary-600 underline dark:text-primary-500">
                       정기예금 이자 계산기
                     </Link>
-                    {' — 예금과 적금의 이자 비교'}
+                    {'예금과 적금의 이자 비교'}
                   </li>
                   <li>
                     → <Link href="/guide/financial-income-comprehensive-vs-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">
                       금융 이자소득 비과세 조건
                     </Link>
-                    {' — 이자 과세와 비과세 차이'}
+                    {'이자 과세와 비과세 차이'}
                   </li>
                   <li>
                     → <Link href="/guide/unemployment-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      실업급여 2026 — 조건·금액·신청방법
+                      실업급여 2026, 조건·금액·신청방법
                     </Link>
-                    {' — 퇴사·이직 공백기에 청년이 함께 챙길 고용보험 급여'}
+                    {'퇴사·이직 공백기에 청년이 함께 챙길 고용보험 급여'}
                   </li>
                   <li>
                     → <Link href="/category/finance/" className="text-primary-600 underline dark:text-primary-500">
                       금융 계산기
                     </Link>
-                    {' — 대출, 예금, 적금 관련 모든 도구'}
+                    {'대출, 예금, 적금 관련 모든 도구'}
                   </li>
                   <li>
                     → <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026 금융·세금 달력
                     </Link>
-                    {' — 청년 정책과 금융 일정 정리'}
+                    {'청년 정책과 금융 일정 정리'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="청년미래적금 2026 — 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%"
+                title="청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%"
                 url={URL}
                 description="조건, 금리, 정부기여금, 청년도약계좌 비교. 6월 22일 출시. 월 50만원, 기본 5% + 정부 6~12%, 이자 비과세."
               />

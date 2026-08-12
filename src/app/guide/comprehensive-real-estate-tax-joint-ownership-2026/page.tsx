@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부부 공동명의 종부세 — 공동명의 18억 vs §10의2 특례 12억 비교',
+    title: '부부 공동명의 종부세, 공동명의 18억 vs §10의2 특례 12억 비교',
     description: '공동명의 인별 9억씩 공제 vs 특례 12억 + 세액공제. 고령·장기보유 시 유리.',
   },
 };
@@ -140,7 +140,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부부 공동명의 종합부동산세(종부세) 완벽 비교
                   <br />
-                  <span className="text-2xl text-text-secondary">— 공동명의 18억 공제 vs §10의2 특례 12억 + 세액공제</span>
+                  <span className="text-2xl text-text-secondary">· 공동명의 18억 공제 vs §10의2 특례 12억 + 세액공제</span>
                 </h1>
                 <p className="text-lg text-text-secondary leading-relaxed" data-speakable>
                   부부 공동명의 주택의 종합부동산세(종부세) 납부액은 <strong>명의 구조와 특례 신청 여부</strong>에 따라 크게 달라집니다.
@@ -180,7 +180,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                       </tr>
                       <tr>
                         <td className="border border-border-base px-2 py-1 font-semibold">신청 기한</td>
-                        <td className="border border-border-base px-2 py-1">—</td>
+                        <td className="border border-border-base px-2 py-1">·</td>
                         <td className="border border-border-base px-2 py-1">9월 16~30일 (매년)</td>
                       </tr>
                       <tr className="bg-primary-500/5">
@@ -194,7 +194,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 부부 공동명의 종부세 기본 구조 — 인별 과세, 각자 9억 공제</h2>
+                <h2 className="text-2xl font-bold">1. 부부 공동명의 종부세 기본 구조, 인별 과세, 각자 9억 공제</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   부부 공동명의 1주택은 종합부동산세법 §8에 따라 명의자(부부) 각자가 <strong>개별 납세의무자</strong>가 됩니다.
                   따라서 1세대1주택 단독명의의 12억 공제 대신, 인별(명의자별) 9억 원의 공제가 각자에게 적용됩니다.
@@ -219,7 +219,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 종부세법 §10의2 특례 — 부부 중 1인을 납세의무자로 12억 공제 + 세액공제</h2>
+                <h2 className="text-2xl font-bold">2. 종부세법 §10의2 특례, 부부 중 1인을 납세의무자로 12억 공제 + 세액공제</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   부부 공동명의 부동산도 <strong>종부세법 §10의2에 따른 특례 신청</strong>을 하면,
                   부부 중 1인을 납세의무자로 지정하여 단독명의처럼 12억 공제를 받을 수 있습니다(§10의2①).
@@ -265,7 +265,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 세액공제 분배 — 고령자공제 + 장기보유공제</h2>
+                <h2 className="text-2xl font-bold">3. 세액공제 분배, 고령자공제 + 장기보유공제</h2>
                 <p className="text-text-secondary leading-relaxed">
                   특례를 신청하면 §10의2로 지정된 납세의무자가 고령자공제(종부세법 §9①)와 장기보유공제(§9②)를 받을 수 있습니다.
                 </p>
@@ -366,7 +366,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 9월 신청 기한 — 매년 필수 재신청</h2>
+                <h2 className="text-2xl font-bold">5. 9월 신청 기한, 매년 필수 재신청</h2>
                 <p className="text-text-secondary leading-relaxed">
                   §10의2 특례는 <strong>1회 신청이 영구적이지 않으며, 매년 재신청</strong>해야 합니다(종합부동산세법 §10의2④).
                   신청 기한은 9월 16일 ~ 30일이며, 이 기간을 놓치면 그 해는 자동으로 기본 인별 과세(각자 9억 공제)가 적용됩니다.
@@ -418,35 +418,35 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                     <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       종합부동산세 계산기
                     </Link>
-                    {' — 공시가 입력 후 공동명의 vs 특례 유불리 시뮬'}
+                    {'공시가 입력 후 공동명의 vs 특례 유불리 시뮬'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/comprehensive-real-estate-tax-who-pays-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종부세 누가 내나? 12억 공제 완벽 정리 2026
                     </Link>
-                    {' — 종부세 기본 개념·세율·납부 일정'}
+                    {'종부세 기본 개념·세율·납부 일정'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/comprehensive-real-estate-tax-calculation-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종부세 계산법 완벽 이해 2026
                     </Link>
-                    {' — 과세표준·공정시장가액비율 60%·누진세율'}
+                    {'과세표준·공정시장가액비율 60%·누진세율'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">
                       부부 공동명의 양도세 절세 완전 정리
                     </Link>
-                    {' — 공동명의 양도 시 누진세 분산 효과'}
+                    {'공동명의 양도 시 누진세 분산 효과'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/tax/" className="text-primary-600 underline dark:text-primary-500">
                       세금 계산기 모음
                     </Link>
-                    {' — 모든 세금 계산기 한눈에'}
+                    {'모든 세금 계산기 한눈에'}
                   </li>
                 </ul>
               </section>

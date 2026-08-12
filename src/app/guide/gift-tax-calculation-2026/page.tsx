@@ -90,7 +90,7 @@ export default function GiftTaxCalculation2026Page() {
     { name: '증여세 계산법 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '증여세 계산법 2026 — 과세표준·공제·납부세액',
+    headline: '증여세 계산법 2026, 과세표준·공제·납부세액',
     description:
       '증여재산부터 최종 납부세액까지. 5단계 누진세율과 증여재산공제를 정확히 적용하는 방법.',
     url: URL,
@@ -138,7 +138,7 @@ export default function GiftTaxCalculation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   증여세 계산법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 과세표준부터 최종 납부세액까지</span>
+                  <span className="text-2xl text-text-secondary">· 과세표준부터 최종 납부세액까지</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   재산을 남에게 무상으로 주는 증여는 세금이 따릅니다. 증여받은 재산이 얼마나 될지, 세금은 얼마일지를 정확히 계산하는 것은 필수입니다. 증여재산 평가부터 증여재산공제, 5단계 누진세율까지 한 단계도 놓칠 수 없습니다. 이 가이드는 증여세를 처음부터 끝까지 정확하게 계산하는 방법을 체계적으로 설명합니다.
@@ -221,7 +221,7 @@ export default function GiftTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="text-2xl font-bold">2단계: 증여재산공제 적용 — 관계별 공제액 이해하기</h2>
+                <h2 className="text-2xl font-bold">2단계: 증여재산공제 적용, 관계별 공제액 이해하기</h2>
                 <p data-speakable>
                   증여세 계산에서 가장 중요한 단계입니다. 증여재산공제는 <strong>관계별로 차등 적용</strong>되며, 10년 동안 누적됩니다. 같은 증여자로부터 10년 이내에 여러 번 증여를 받았다면, 모든 증여액을 합산하여 공제를 적용합니다.
                 </p>
@@ -317,7 +317,7 @@ export default function GiftTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="text-2xl font-bold">4단계: 산출세액 계산 — 누진세율 적용</h2>
+                <h2 className="text-2xl font-bold">4단계: 산출세액 계산, 누진세율 적용</h2>
                 <p data-speakable>
                   <strong>산출세액 = 과세표준 × 세율 − 누진공제</strong>
                 </p>

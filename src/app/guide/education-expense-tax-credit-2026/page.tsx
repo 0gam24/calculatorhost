@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '교육비 세액공제 2026 | 15% 공제·초중고 300만·대학 900만' }],
-    title: '교육비 세액공제 2026 — 자녀 교육비 15% 공제받기',
+    title: '교육비 세액공제 2026, 자녀 교육비 15% 공제받기',
     description: '근로소득자 대상 교육비 세액공제. 초중고 1명당 300만원, 대학생 900만원, 본인 교육비 전액 공제. 대상 범위·계산법·유의사항 완전 정리.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '교육비 세액공제 2026 — 자녀 교육비로 세금 깎기',
+    title: '교육비 세액공제 2026, 자녀 교육비로 세금 깎기',
     description: '초중고 300만원, 대학 900만원 한도. 급식비·교복·현장학습비도 포함. 자세히 알아보기.',
   },
 };
@@ -73,7 +73,7 @@ const FAQ_ITEMS = [
   {
     question: '소득 제한이 있나요?',
     answer:
-      '교육비 세액공제는 교육비를 지출한 자녀 등이 기본공제대상자일 때 받을 수 있습니다 — 해당 부양가족의 연 소득금액이 100만원(근로소득만 있으면 총급여 500만원) 이하여야 합니다. 본인·배우자 교육비는 소득과 무관하게 공제됩니다. 정확한 부양가족 판정은 국세청 홈택스에서 확인하세요.',
+      '교육비 세액공제는 교육비를 지출한 자녀 등이 기본공제대상자일 때 받을 수 있습니다, 해당 부양가족의 연 소득금액이 100만원(근로소득만 있으면 총급여 500만원) 이하여야 합니다. 본인·배우자 교육비는 소득과 무관하게 공제됩니다. 정확한 부양가족 판정은 국세청 홈택스에서 확인하세요.',
   },
   {
     question: '직계존속(부모)의 교육비는 공제받을 수 있나요?',
@@ -99,7 +99,7 @@ export default function EducationExpenseTaxCredit2026Page() {
     { name: '교육비 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '교육비 세액공제 2026 — 자녀 교육비 15% 세금 깎기',
+    headline: '교육비 세액공제 2026, 자녀 교육비 15% 세금 깎기',
     description:
       '근로소득자 대상 교육비 세액공제 완벽 정리. 초중고 1명당 300만원 한도, 대학생 900만원, 본인 교육비 전액. 공제율 15%, 대상 항목, 소득 제한, 계산 사례, 주의사항까지.',
     url: URL,
@@ -147,7 +147,7 @@ export default function EducationExpenseTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   교육비 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 자녀 교육비로 세금 깎기</span>
+                  <span className="text-2xl text-text-secondary">· 자녀 교육비로 세금 깎기</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자녀를 키우는 부모들이 가장 큰 부담 중 하나가 교육비입니다. 좋은 소식은 이 교육비의 일부를 세금에서 직접 깎을 수 있다는 것입니다. 소득세법 §59의4에 따른 교육비 세액공제 제도를 활용하면, 자녀의 학년과 교육 항목에 따라 연 300만원~900만원까지 공제받을 수 있습니다. 이 가이드에서는 공제 대상, 한도, 계산법, 그리고 놓치기 쉬운 주의사항까지 완전히 정리해드립니다.
@@ -263,9 +263,9 @@ export default function EducationExpenseTaxCredit2026Page() {
                   <ul className="text-sm text-text-secondary space-y-2 ml-4">
                     <li>• 학자금 지원분 (장학금, 국가장학금 등)</li>
                     <li>• 사내근로복지기금에서 지원받은 교육비</li>
-                    <li>• 보육료 (보육 시설 비용 — 별도 공제 가능)</li>
+                    <li>• 보육료 (보육 시설 비용, 별도 공제 가능)</li>
                     <li>• 기숙사비, 통학비</li>
-                    <li>• 학원비 — 초등학생 이상은 공제 불가 (취학전 아동 학원비만 예외적으로 공제 대상)</li>
+                    <li>• 학원비, 초등학생 이상은 공제 불가 (취학전 아동 학원비만 예외적으로 공제 대상)</li>
                     <li>• 사설 과외비 (학원은 되지만 개인 과외는 불포함)</li>
                   </ul>
                 </div>

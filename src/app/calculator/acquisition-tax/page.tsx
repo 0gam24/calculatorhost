@@ -259,7 +259,7 @@ export default function AcquisitionTaxPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 답변형 H2 — 취득 원인별(매매·증여·상속) 대안·비교 (검증값: src/lib/tax/acquisition.ts) */}
+              {/* 답변형 H2, 취득 원인별(매매·증여·상속) 대안·비교 (검증값: src/lib/tax/acquisition.ts) */}
               <section aria-label="취득 원인별 취득세 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">같은 집이라도 매매·증여·상속에 따라 취득세가 다른가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
@@ -304,7 +304,7 @@ export default function AcquisitionTaxPage() {
               </section>
 
               <RateBarChart
-                title="취득세율 — 주택 수·가격별 (지방세법 §11)"
+                title="취득세율, 주택 수·가격별 (지방세법 §11)"
                 caption="취득세는 주택 수와 가격에 따라 세율이 크게 달라집니다. 1주택은 6억 이하 1.0%, 6~9억 1~3%, 9억 초과 3.0%이지만, 조정대상지역 2주택은 8%, 3주택 이상은 12%로 중과됩니다. 85㎡ 초과는 농특세, 지방교육세도 별도 가산됩니다."
                 unit="%"
                 max={13}
@@ -437,7 +437,7 @@ export default function AcquisitionTaxPage() {
                   <li>
                     <a href="/guide/property-tax-base-date-june-1-2026/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
                       <Icon name="chevron-right" size={14} />
-                      <span>재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정</span>
+                      <span>재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정</span>
                     </a>
                   </li>
                   <li>
@@ -478,7 +478,7 @@ export default function AcquisitionTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-500 hover:underline"
                     >
-                      국토교통부 실거래가 — 거래가액 확인
+                      국토교통부 실거래가, 거래가액 확인
                     </a>
                   </li>
                   <li>
@@ -488,7 +488,7 @@ export default function AcquisitionTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 지방세법 §11 (취득세 세율)
+                      국가법령정보센터, 지방세법 §11 (취득세 세율)
                     </a>
                   </li>
                   <li>
@@ -498,7 +498,7 @@ export default function AcquisitionTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 지방세법 (전체)
+                      국가법령정보센터, 지방세법 (전체)
                     </a>
                   </li>
                   <li>
@@ -508,7 +508,7 @@ export default function AcquisitionTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      위택스 — 지방세 신고
+                      위택스, 지방세 신고
                     </a>
                   </li>
                 </ul>

@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '건강보험 피부양자 자격조건 2026' }],
     title: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리',
-    description: '합산소득 2,000만원, 재산세 과세표준 5억 4천만원 — 피부양자 자격 판단 기준.',
+    description: '합산소득 2,000만원, 재산세 과세표준 5억 4천만원, 피부양자 자격 판단 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -109,7 +109,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '건강보험 피부양자 자격조건 2026',
-    description: '소득·재산 요건으로 피부양자 자격 판단 — 2,000만원 기준, 5.4억원 한도, 국민건강보험법 시행규칙 §2',
+    description: '소득·재산 요건으로 피부양자 자격 판단, 2,000만원 기준, 5.4억원 한도, 국민건강보험법 시행규칙 §2',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -141,7 +141,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
                 readingMinutes={7}
                 publishedDate="2026-06-15"
                 title="건강보험 피부양자 자격조건 2026"
-                subtitle="— 소득·재산 요건 총정리"
+                subtitle="· 소득·재산 요건 총정리"
                 lead={
                   <p data-speakable>
                     건강보험 피부양자는 직장가입자에게 생계를 의존하면서 소득·재산 요건을 모두 충족하는 가족으로, 국민건강보험법 시행규칙 §2에서 정한 기준을 따릅니다. 요건을 벗어나면 지역가입자로 전환되어 월 15~40만원의 보험료가 새로 부과됩니다.
@@ -151,7 +151,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 1. 피부양자 정의 및 기본 요건 */}
               <section aria-label="피부양자 정의" className="space-y-4">
-                <h2 className="text-2xl font-semibold">1⃣ 피부양자란? — 정의와 기본 요건</h2>
+                <h2 className="text-2xl font-semibold">1⃣ 피부양자란?, 정의와 기본 요건</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">정의</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -190,7 +190,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 2. 소득 요건 상세 */}
               <section aria-label="소득 요건" className="space-y-4">
-                <h2 className="text-2xl font-semibold">2⃣ 소득 요건 — 연 2,000만원 기본, 프리랜서 500만원</h2>
+                <h2 className="text-2xl font-semibold">2⃣ 소득 요건, 연 2,000만원 기본, 프리랜서 500만원</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">핵심 기준</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -238,7 +238,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 3. 재산 요건 상세 */}
               <section aria-label="재산 요건" className="space-y-4">
-                <h2 className="text-2xl font-semibold">3⃣ 재산 요건 — 과세표준 5.4억원 / 조건부 9억</h2>
+                <h2 className="text-2xl font-semibold">3⃣ 재산 요건, 과세표준 5.4억원 / 조건부 9억</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">핵심 기준</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -295,7 +295,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 4. 형제자매 특수 규칙 */}
               <section aria-label="형제자매 규칙" className="space-y-4">
-                <h2 className="text-2xl font-semibold">4⃣ 형제자매 범위 — 만 30세 미만 또는 65세 이상만</h2>
+                <h2 className="text-2xl font-semibold">4⃣ 형제자매 범위, 만 30세 미만 또는 65세 이상만</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">형제자매 나이 제한</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -321,7 +321,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 5. 탈락 기준 및 전환 */}
               <section aria-label="탈락 기준" className="space-y-4">
-                <h2 className="text-2xl font-semibold">5⃣ 탈락 기준 — 언제 지역가입자로 바뀌나?</h2>
+                <h2 className="text-2xl font-semibold">5⃣ 탈락 기준, 언제 지역가입자로 바뀌나?</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">탈락 시점</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -349,7 +349,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
                 </ul>
 
                 <div className="bg-danger-50 dark:bg-danger-900/10 rounded-lg border border-danger-200 dark:border-danger-800 p-4 mt-4">
-                  <p className="text-sm font-semibold text-danger-700 dark:text-danger-300">중요 — 지역가입자 전환 시 새로운 보험료 부과</p>
+                  <p className="text-sm font-semibold text-danger-700 dark:text-danger-300">중요, 지역가입자 전환 시 새로운 보험료 부과</p>
                   <p className="mt-2 text-sm text-text-secondary">
                     피부양자에서 탈락하면 <strong>지역가입자</strong>로 전환되어 월 15~40만원의 보험료가 새로 부과됩니다. 보험료는 소득·재산을 종합 고려하여 산정되므로 개인별로 큰 차이가 발생합니다.
                   </p>

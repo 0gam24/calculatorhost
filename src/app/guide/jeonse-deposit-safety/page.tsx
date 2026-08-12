@@ -138,7 +138,7 @@ export default function JeonseDepositSafetyPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   전세 보증금 안전 가이드
                   <br />
-                  <span className="text-2xl text-text-secondary">— 계약 전 반드시 확인할 8가지</span>
+                  <span className="text-2xl text-text-secondary">· 계약 전 반드시 확인할 8가지</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   깡통전세 피해가 갈수록 증가하면서 전세 계약 전 보증금 안전성 검증이 필수가 되었습니다. 임차인등기부등본 읽기부터 HUG 전세보증보험 신청까지, 당신의 보증금을 지키기 위한 8가지 필수 체크리스트를 정리했습니다.
@@ -146,7 +146,7 @@ export default function JeonseDepositSafetyPage() {
               </header>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">1. 부동산 등기부등본 확인 — 건물주 자산 파악</h2>
+                <h2 className="text-2xl font-bold">1. 부동산 등기부등본 확인, 건물주 자산 파악</h2>
                 <p>
                   전세 계약 전 가장 중요한 것은 '건물주가 보증금을 돌려줄 능력이 있는가'입니다. 이를 판단하는 첫 번째 근거는
                   <strong> 등기부등본</strong>입니다. 건물주 등기부등본이 아닌 <strong>임차인 등기부등본</strong>(세입자 입장에서 보는
@@ -173,7 +173,7 @@ export default function JeonseDepositSafetyPage() {
               </section>
 
               <section className="space-y-6">
-                <h2 className="text-2xl font-bold">3. 대출금 확인 — 선순위 저당권이 높으면 위험</h2>
+                <h2 className="text-2xl font-bold">3. 대출금 확인, 선순위 저당권이 높으면 위험</h2>
                 <p>
                   건물주가 은행에서 대출받은 금액(선순위 저당권)이 공시가의 80% 이상이면 주의하세요. 예컨대 공시가 10억에 저당권 9억이라면,
                   건물주의 남은 자산은 1억뿐입니다. 전세금 2억을 받으면 총 빚이 11억이 되는데, 시장이 9억으로 떨어지면 전세금을 못 돌려줄

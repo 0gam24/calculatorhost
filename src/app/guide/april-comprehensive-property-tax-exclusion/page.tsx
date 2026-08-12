@@ -65,7 +65,7 @@ const FAQ_ITEMS = [
   {
     question: '일시적 2주택 종부세 특례는?',
     answer:
-      '신규 주택 취득 후 기존 주택 양도까지 일시 2주택 보유 시 1주택자 우대 적용 가능. 신규 취득일부터 3년 (조정대상지역 2년) 이내 기존 주택 양도 조건. 양도소득세 일시적 2주택 비과세와 별도 — 종부세 신청 필요. 4월 신청 + 12월 산정 시 반영.',
+      '신규 주택 취득 후 기존 주택 양도까지 일시 2주택 보유 시 1주택자 우대 적용 가능. 신규 취득일부터 3년 (조정대상지역 2년) 이내 기존 주택 양도 조건. 양도소득세 일시적 2주택 비과세와 별도, 종부세 신청 필요. 4월 신청 + 12월 산정 시 반영.',
   },
   {
     question: '고령자·장기보유 공제는?',
@@ -80,7 +80,7 @@ const FAQ_ITEMS = [
   {
     question: '종부세 자체는 언제 납부?',
     answer:
-      '12월 1~15일. 합산배제·과세특례 신청 결과 반영된 고지서 11월 말 발송. 250만 원 초과 시 분납 가능 (납부기한 다음날부터 6개월 이내). 본 가이드는 4월 신청용 — 12월 종부세 별도 가이드 예정.',
+      '12월 1~15일. 합산배제·과세특례 신청 결과 반영된 고지서 11월 말 발송. 250만 원 초과 시 분납 가능 (납부기한 다음날부터 6개월 이내). 본 가이드는 4월 신청용, 12월 종부세 별도 가이드 예정.',
   },
 ] as const;
 
@@ -137,7 +137,7 @@ export default function AprilCptExclusionPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   4월 종부세 합산배제·과세특례 신청 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">— 12월 종부세 절세의 시작</span>
+                  <span className="text-2xl text-text-secondary">· 12월 종부세 절세의 시작</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   종합부동산세 신청은 12월에 납부하지만 <strong>합산배제·과세특례 신청은 4월 1~30일</strong>이
@@ -159,7 +159,7 @@ export default function AprilCptExclusionPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 합산배제 vs 과세특례 — 차이</h2>
+                <h2 className="text-2xl font-bold">1. 합산배제 vs 과세특례, 차이</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
@@ -230,7 +230,7 @@ export default function AprilCptExclusionPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 과세특례 — 1세대1주택자 우대</h2>
+                <h2 className="text-2xl font-bold">3. 과세특례, 1세대1주택자 우대</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">① 고령자 공제</h3>
@@ -266,7 +266,7 @@ export default function AprilCptExclusionPage() {
                 <h2 className="text-2xl font-bold">4. 일시적 2주택 종부세 특례</h2>
                 <p className="text-text-secondary leading-relaxed">
                   신규 주택 취득 후 기존 주택 양도 전 일시 2주택 상태에서도 1주택자 우대 적용
-                  가능. 양도소득세 일시적 2주택 비과세와 별도 — 종부세도 신청 필요.
+                  가능. 양도소득세 일시적 2주택 비과세와 별도, 종부세도 신청 필요.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <h3 className="mb-2 font-semibold text-text-primary">조건</h3>
@@ -306,9 +306,9 @@ export default function AprilCptExclusionPage() {
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 임대 의무기간 중 자가 거주·매도 시 합산배제 박탈 + 과거 분 추징.</li>
-                  <li>• 임대료 인상률 5% 초과 시 동일 — 신중한 임대료 관리.</li>
-                  <li>• 4월 30일 이후 신청 불가 — 12월 종부세 일반 세율 적용.</li>
-                  <li>• 본 가이드는 일반론 — 다주택자·복잡한 사례는 세무사 상담.</li>
+                  <li>• 임대료 인상률 5% 초과 시 동일, 신중한 임대료 관리.</li>
+                  <li>• 4월 30일 이후 신청 불가, 12월 종부세 일반 세율 적용.</li>
+                  <li>• 본 가이드는 일반론, 다주택자·복잡한 사례는 세무사 상담.</li>
                 </ul>
               </section>
 
@@ -318,10 +318,10 @@ export default function AprilCptExclusionPage() {
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link></li>
                   <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 완벽 가이드</Link></li>
-                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세</Link> — 합산배제와 별개의 양도 시 비과세</li>
-                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세</Link> — 합산배제 대상 사유</li>
-                  <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link> — 임대주택 합산배제와 연결</li>
-                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 명의 분산 시 종부세 영향</li>
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세</Link>, 합산배제와 별개의 양도 시 비과세</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세</Link>, 합산배제 대상 사유</li>
+                  <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link>, 임대주택 합산배제와 연결</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link>, 명의 분산 시 종부세 영향</li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link></li>
                   <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더</Link></li>
                 </ul>

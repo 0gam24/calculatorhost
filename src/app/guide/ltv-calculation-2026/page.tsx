@@ -428,7 +428,7 @@ export default function LtvCalculation2026Page() {
                       5,000만 원
                     </li>
                     <li>
-                      <strong>LTV 한도</strong>: 5억 × 70% = 3.5억 원 ✓
+                      <strong>LTV 한도</strong>: 5억 × 70% = 3.5억 원
                     </li>
                     <li>
                       <strong>DSR 계산</strong>: 연소득의 45% 한도
@@ -614,7 +614,7 @@ export default function LtvCalculation2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 주담대·전세자금대출 최대 한도 실시간 확인
+, 주담대·전세자금대출 최대 한도 실시간 확인
                   </li>
                   <li>
                     →{' '}
@@ -624,7 +624,7 @@ export default function LtvCalculation2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액 및 총이자
+, 원리금균등·만기일시별 월 상환액 및 총이자
                   </li>
                   <li>
                     →{' '}
@@ -634,7 +634,7 @@ export default function LtvCalculation2026Page() {
                     >
                       DSR 대출한도 늘리는 5가지 방법
                     </Link>{' '}
-                    — 신용대출 상환, 소득 합산 등 한도 확보 전략
+, 신용대출 상환, 소득 합산 등 한도 확보 전략
                   </li>
                   <li>
                     →{' '}
@@ -644,7 +644,7 @@ export default function LtvCalculation2026Page() {
                     >
                       조정지역·투기지역 DSR 규제 2026
                     </Link>{' '}
-                    — 지역별 LTV·DTI·DSR 한도 정리
+, 지역별 LTV·DTI·DSR 한도 정리
                   </li>
                   <li>
                     →{' '}
@@ -654,7 +654,7 @@ export default function LtvCalculation2026Page() {
                     >
                       기준금리 오르면 대출한도 줄어들까? 2026
                     </Link>{' '}
-                    — 금리 인상 시 LTV·DSR·DTI 영향 분석
+, 금리 인상 시 LTV·DSR·DTI 영향 분석
                   </li>
                   <li>
                     →{' '}
@@ -664,7 +664,7 @@ export default function LtvCalculation2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

@@ -328,24 +328,42 @@ export function DepositCalculator() {
             <p className="text-sm font-medium text-text-primary mb-3">3가지 이자 방식 비교</p>
             <div className="space-y-2 text-caption">
               <div className="flex justify-between">
-                <span className="text-text-secondary">
-                  {method === 'simple' ? '✓' : '○'} 단리
+                <span
+                  className={
+                    method === 'simple'
+                      ? 'font-semibold text-primary-600 dark:text-primary-400'
+                      : 'text-text-secondary'
+                  }
+                >
+                  단리
                 </span>
                 <span className="font-semibold text-text-primary">
                   {formatKRW(simpleResult.posttaxInterest)}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-text-secondary">
-                  {method === 'monthlyCompound' ? '✓' : '○'} 월복리
+                <span
+                  className={
+                    method === 'monthlyCompound'
+                      ? 'font-semibold text-primary-600 dark:text-primary-400'
+                      : 'text-text-secondary'
+                  }
+                >
+                  월복리
                 </span>
                 <span className="font-semibold text-text-primary">
                   {formatKRW(monthlyCompoundResult.posttaxInterest)}
                 </span>
               </div>
               <div className="flex justify-between">
-                <span className="text-text-secondary">
-                  {method === 'dailyCompound' ? '✓' : '○'} 일복리
+                <span
+                  className={
+                    method === 'dailyCompound'
+                      ? 'font-semibold text-primary-600 dark:text-primary-400'
+                      : 'text-text-secondary'
+                  }
+                >
+                  일복리
                 </span>
                 <span className="font-semibold text-text-primary">
                   {formatKRW(dailyCompoundResult.posttaxInterest)}

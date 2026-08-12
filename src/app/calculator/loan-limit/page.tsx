@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: 'DSR 계산기 · 대출한도 2026 — 최대 대출액 확인',
+    title: 'DSR 계산기 · 대출한도 2026, 최대 대출액 확인',
     description:
       '연소득·기존 대출·담보가치로 DSR·LTV·DTI 기준 최대 대출액을 즉시 계산',
     url: URL,
@@ -259,7 +259,7 @@ export default function LoanLimitPage() {
               {/* 규제 기준 실시간 데이터 공지 */}
               <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
                 <p className="text-sm text-text-secondary">
-                  <strong className="text-primary-700 dark:text-primary-300">ℹ️ 2026년 기준 최신 규제:</strong> 본 계산기는 2026년 DSR·스트레스 DSR 전면 시행, LTV/DTI 지역별·기관별 차등 규제를 반영합니다.
+                  <strong className="text-primary-700 dark:text-primary-300">2026년 기준 최신 규제:</strong> 본 계산기는 2026년 DSR·스트레스 DSR 전면 시행, LTV/DTI 지역별·기관별 차등 규제를 반영합니다.
                   금융기관·부동산 거래 시장의 변화로 정책이 변경될 수 있으니,
                   <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">금감원</a>에서 최신 공지를 확인하세요.
                 </p>
@@ -270,10 +270,10 @@ export default function LoanLimitPage() {
               <LoanLimitCalculator />
 
               {/* AD-2 Medium Rectangle (계산기-본문 사이, 300x250) */}
-              {/* FAQ (중간 배치 — GEO 최적화) */}
+              {/* FAQ (중간 배치, GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
-              {/* 답변형 H2 — 연소득별 최대 대출한도 대안·비교 (검증값: src/lib/finance/loan-limit.ts) */}
+              {/* 답변형 H2, 연소득별 최대 대출한도 대안·비교 (검증값: src/lib/finance/loan-limit.ts) */}
               <section aria-label="연소득별 최대 대출한도" className="card">
                 <h2 className="text-2xl font-bold">연소득별 최대 대출한도는 얼마인가요?</h2>
                 <p className="mt-3 text-text-secondary" data-speakable>
@@ -407,7 +407,7 @@ export default function LoanLimitPage() {
                 ]}
               />
 
-              {/* 산출 공식 및 예시 (자연어 prose — LLM 인용 친화) */}
+              {/* 산출 공식 및 예시 (자연어 prose, LLM 인용 친화) */}
               <section className="card space-y-3">
                 <h2 className="text-2xl font-bold">2026년 스트레스 DSR이 적용된 주담대 한도는 어떻게 계산하나요?</h2>
                 <p className="text-sm leading-relaxed text-text-secondary" data-speakable>
@@ -490,8 +490,8 @@ export default function LoanLimitPage() {
                     </ul>
                     <div className="mt-3 pt-3 border-t border-border-base text-sm">
                       <p className="text-text-secondary">
-                        <strong>DSR 계산:</strong> (신규 월원리금 약 224만 + 기존 이자 약 3만) / 833만 = 27.2% ✓ (40% 이하 통과)<br/>
-                        <strong>LTV 계산:</strong> 5억 / 8억 = 62.5% ✓ (조정 50% 규제는 불동산 수 기준, 이 사례는 1주택이므로 통과)<br/>
+                        <strong>DSR 계산:</strong> (신규 월원리금 약 224만 + 기존 이자 약 3만) / 833만 = 27.2% (40% 이하 통과)<br/>
+                        <strong>LTV 계산:</strong> 5억 / 8억 = 62.5% (조정 50% 규제는 불동산 수 기준, 이 사례는 1주택이므로 통과)<br/>
                         <strong>결론:</strong> DSR·LTV 모두 통과하여 5억 원 대출 가능
                       </p>
                     </div>
@@ -509,7 +509,7 @@ export default function LoanLimitPage() {
                     </ul>
                     <div className="mt-3 pt-3 border-t border-border-base text-sm">
                       <p className="text-text-secondary">
-                        <strong>DSR 계산:</strong> (신규 월원리금 약 191만 + 기존 전체 약 175만) / 667만 = 54.9% ✗ (40% 초과!)<br/>
+                        <strong>DSR 계산:</strong> (신규 월원리금 약 191만 + 기존 전체 약 175만) / 667만 = 54.9% (40% 초과!)<br/>
                         <strong>문제점:</strong> 기존 대출 상환액이 많아 DSR 규제 위배<br/>
                         <strong>해결책:</strong> 신용카드론 2,000만 원 먼저 상환하면 DSR 약 39%로 개선 가능. 신규 3억 원 정도 가능.
                       </p>
@@ -528,13 +528,13 @@ export default function LoanLimitPage() {
                     </ul>
                     <div className="mt-3 pt-3 border-t border-border-base text-sm space-y-2">
                       <p className="text-text-secondary">
-                        <strong>LTV 계산:</strong> 4.5억 ÷ 6억 = 75% (생애최초 80% 우대 적용 가능) ✓
+                        <strong>LTV 계산:</strong> 4.5억 ÷ 6억 = 75% (생애최초 80% 우대 적용 가능)
                       </p>
                       <p className="text-text-secondary">
-                        <strong>스트레스 DSR 미적용 (고정금리 4.0%):</strong> 월원리금 약 214만 ÷ 500만 = 42.8% ✗ (40% 초과)
+                        <strong>스트레스 DSR 미적용 (고정금리 4.0%):</strong> 월원리금 약 214만 ÷ 500만 = 42.8% (40% 초과)
                       </p>
                       <p className="text-text-secondary">
-                        <strong>스트레스 DSR 적용 (변동금리 4.0% + 1.5%p):</strong> 월원리금 약 256만 ÷ 500만 = 51.2% ✗ (40% 큰 폭 초과)
+                        <strong>스트레스 DSR 적용 (변동금리 4.0% + 1.5%p):</strong> 월원리금 약 256만 ÷ 500만 = 51.2% (40% 큰 폭 초과)
                       </p>
                       <p className="text-text-secondary">
                         <strong>결론:</strong> 생애최초 LTV 우대(80%)에도 불구하고 DSR로 제약.
@@ -583,7 +583,7 @@ export default function LoanLimitPage() {
               </section>
 
               {/* 관련 계산기 */}
-              {/* 관련 가이드 CTA — 계산기 → 학습 콘텐츠 유입 */}
+              {/* 관련 가이드 CTA, 계산기 → 학습 콘텐츠 유입 */}
               <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
@@ -592,21 +592,21 @@ export default function LoanLimitPage() {
                     <a href="/guide/dsr-loan-limit-tips/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       DSR 대출한도를 늘리는 5가지 실전 방법
                     </a>{' '}
-                    — 신용대출 상환·맞벌이 합산·고정금리 활용 등 실전 팁
+, 신용대출 상환·맞벌이 합산·고정금리 활용 등 실전 팁
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/dsr-regulation-zones/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       비규제·조정·투기과열 DSR·LTV 규제 완전 정리
                     </a>{' '}
-                    — 지역별 한도 차이 시뮬레이션
+, 지역별 한도 차이 시뮬레이션
                   </li>
                   <li>
                     →{' '}
                     <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       금융감독원 금융상품통합비교공시 (finlife)
                     </a>{' '}
-                    — 실제 은행별·상품별 DSR 적용 기준 및 우대 정책 확인
+, 실제 은행별·상품별 DSR 적용 기준 및 우대 정책 확인
                   </li>
                 </ul>
               </section>
@@ -638,7 +638,7 @@ export default function LoanLimitPage() {
                         rel="noopener noreferrer nofollow"
                         className="text-primary-600 underline dark:text-primary-500"
                       >
-                        국가법령정보센터 — 은행법 시행령 §24의4 (가계대출 관리)
+                        국가법령정보센터, 은행법 시행령 §24의4 (가계대출 관리)
                       </a>
                     </li>
                     <li>
@@ -648,7 +648,7 @@ export default function LoanLimitPage() {
                         rel="noopener noreferrer nofollow"
                         className="text-primary-600 underline dark:text-primary-500"
                       >
-                        한국은행 — 기준금리 결정사항
+                        한국은행, 기준금리 결정사항
                       </a>
                     </li>
                     <li>
@@ -658,7 +658,7 @@ export default function LoanLimitPage() {
                         rel="noopener noreferrer nofollow"
                         className="text-primary-600 underline dark:text-primary-500"
                       >
-                        금융감독원 — 가계대출 규제·동향
+                        금융감독원, 가계대출 규제·동향
                       </a>
                     </li>
                     <li>

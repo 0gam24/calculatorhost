@@ -97,7 +97,7 @@ export default function RealEstateBrokerFeeRatePage() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '주택 중개수수료(중개보수) 요율표 2026 — 매매·전세·월세 상한',
+    headline: '주택 중개수수료(중개보수) 요율표 2026, 매매·전세·월세 상한',
     description:
       '공인중개사법 §32·시행규칙 §20 기준 주택 매매·임대차 중개수수료 상한요율 완전 정리. 거래금액별 구간·계산법·부가세 포함.',
     url: URL,
@@ -117,7 +117,7 @@ export default function RealEstateBrokerFeeRatePage() {
   });
 
   const webPageLd = buildWebPageJsonLd({
-    name: '주택 중개수수료(중개보수) 요율표 2026 — 매매·전세·월세 상한',
+    name: '주택 중개수수료(중개보수) 요율표 2026, 매매·전세·월세 상한',
     description:
       '공인중개사법 제32조·시행규칙 제20조 기준으로 정확히 정리한 주택 거래 중개수수료 상한요율, 거래금액별 한도액, 월세 환산 공식.',
     url: URL,
@@ -154,7 +154,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   주택 중개수수료(중개보수) 요율표 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 매매·전세·월세 구간별 상한</span>
+                  <span className="text-2xl text-text-secondary">· 매매·전세·월세 구간별 상한</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   부동산 거래 시 내야 하는 중개수수료는 공인중개사법 제32조로 상한요율이 정해져 있습니다. 6억원 주택 매매는 0.4%, 3억원 전세는 0.3%, 월세 환산 등 거래 유형별로 요율이 다릅니다. 상한요율이므로 협의로 인하 가능하며, 부가세 여부를 미리 확인해야 합니다. 거래금액별 정확한 계산법을 한눈에 정리합니다.

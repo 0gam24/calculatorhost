@@ -37,14 +37,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '증여세 계산기 2026 — 배우자 6억·자녀 5천만',
+    title: '증여세 계산기 2026, 배우자 6억·자녀 5천만',
     description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여세 계산기 2026 — 배우자 6억·자녀 5천만',
+    title: '증여세 계산기 2026, 배우자 6억·자녀 5천만',
     description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
   },
   other: {
@@ -228,7 +228,7 @@ export default function GiftTaxPage() {
                 tldr={[
                   '증여세 = (증여재산 + 기증여 - 채무) - 공제 × 누진세율',
                   '배우자 증여는 6억, 자녀 5천만 원(성년)·2천만(미성년) 공제',
-                  '10년 내 합산 공제 원칙 — 분할 증여로 세금 분산 가능',
+                  '10년 내 합산 공제 원칙, 분할 증여로 세금 분산 가능',
                   '신고 기한 내 신고 시 신고세액공제 3% 추가',
                   '신고 기한: 증여일 속하는 달 말일 + 3개월',
                 ]}
@@ -241,7 +241,7 @@ export default function GiftTaxPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <RateBarChart
-                title="증여세 누진세율 — 과세표준 구간별 (상증세법 §56)"
+                title="증여세 누진세율, 과세표준 구간별 (상증세법 §56)"
                 caption="증여세는 과세표준 구간별로 10%에서 50%까지 5단계 누진 적용됩니다(상속세와 동일 세율). 증여재산공제(배우자 6억·성년 자녀 5천만·미성년 2천만)를 차감한 과세표준 기준이며, 기한 내 신고 시 신고세액공제 3%가 적용됩니다."
                 unit="%"
                 max={55}

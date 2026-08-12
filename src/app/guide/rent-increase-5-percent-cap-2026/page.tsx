@@ -21,7 +21,7 @@ const DATE_PUBLISHED = '2026-06-28';
 const DATE_MODIFIED = '2026-06-28';
 
 export const metadata: Metadata = {
-  title: '전월세 인상 5% 상한 계산 2026 — 계약갱신 임대료 한도',
+  title: '전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도',
   description:
     '2026년 주택임대차보호법 §7에 따른 전월세(월세·보증금) 인상 5% 상한선. 계약갱신 시 임대인이 임차인 동의 없이 인상 불가. 5% 초과 시 위반 처벌·소송 근거.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전월세 인상 5% 상한 계산 2026 — 계약갱신 임대료 한도' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도' }],
     title: '전월세 인상 5% 상한 계산 2026',
     description: '계약갱신 임대료·보증금 인상 법정 한도 + 계산 사례 + 소송·분쟁 가능성.',
     url: URL,
@@ -92,9 +92,9 @@ export default function RentIncrease5PercentCapGuidePage() {
     { name: '전월세 인상 5% 상한 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '전월세 인상 5% 상한 계산 2026 — 계약갱신 임대료 한도',
+    headline: '전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도',
     description:
-      '주택임대차보호법 §7 차임 등의 증감청구권 — 계약갱신 시 임대료·보증금 인상 5% 상한선 법정 한도와 실제 계산 사례 + 예외 상황.',
+      '주택임대차보호법 §7 차임 등의 증감청구권, 계약갱신 시 임대료·보증금 인상 5% 상한선 법정 한도와 실제 계산 사례 + 예외 상황.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -143,7 +143,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · {DATE_PUBLISHED}</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  전월세 인상 5% 상한 계산 2026 — 계약갱신 임대료 한도
+                  전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 주택임대차보호법 §7 "차임 등의 증감청구권"에 따라 임대인이 계약갱신 시 청구할 수
@@ -163,7 +163,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     <strong>인상 상한</strong>: 현재 월세 또는 보증금의 5% (20분의 1)
                   </li>
                   <li>
-                    <strong>적용 범위</strong>: 계약갱신(기존 임차인) 한정 — 신규 계약 제외
+                    <strong>적용 범위</strong>: 계약갱신(기존 임차인) 한정, 신규 계약 제외
                   </li>
                   <li>
                     <strong>재인상 금지</strong>: 인상 후 1년 이내 재증액 불가
@@ -272,7 +272,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                   </li>
                   <li>
                     <strong>계약갱신거절</strong>: 임대인의 부당한 인상 요구에 맞서 계약갱신을 거절할 수 있습니다(단, 임차인의
-                    계약갱신요구권 2회 한정—주택임대차보호법 §6의3).
+                    계약갱신요구권 2회 한정·주택임대차보호법 §6의3).
                   </li>
                 </ul>
               </section>
@@ -288,7 +288,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     >
                       전월세 전환 계산기
                     </Link>{' '}
-                    — 보증금↔월세 양방향 환산 및 전환율 한도 확인
+, 보증금↔월세 양방향 환산 및 전환율 한도 확인
                   </li>
                   <li>
                     →{' '}
@@ -298,7 +298,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     >
                       임대수익률 계산기
                     </Link>{' '}
-                    — 임대료 인상 후 예상 수익률 시뮬레이션
+, 임대료 인상 후 예상 수익률 시뮬레이션
                   </li>
                 </ul>
               </section>
@@ -314,7 +314,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     >
                       주택임대차보호법 전월세전환율 2026
                     </Link>{' '}
-                    — 월차임 전환율(기준금리 + 2%) 공식 및 계산
+, 월차임 전환율(기준금리 + 2%) 공식 및 계산
                   </li>
                   <li>
                     →{' '}
@@ -324,7 +324,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     >
                       주택임대소득 분리과세 2,000만 원
                     </Link>{' '}
-                    — 월세 수입 과세 기준 및 절세 전략
+, 월세 수입 과세 기준 및 절세 전략
                   </li>
                   <li>
                     →{' '}
@@ -339,7 +339,7 @@ export default function RentIncrease5PercentCapGuidePage() {
               </section>
 
               <ShareButtons
-                title="전월세 인상 5% 상한 계산 2026 — 계약갱신 임대료 한도"
+                title="전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도"
                 url={URL}
               />
 
@@ -357,7 +357,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     rel="noopener noreferrer nofollow"
                     className="text-primary-500 underline"
                   >
-                    국가법령정보센터 — 주택임대차보호법
+                    국가법령정보센터, 주택임대차보호법
                   </a>{' '}
                   ·{' '}
                   <a
@@ -366,7 +366,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                     rel="noopener noreferrer nofollow"
                     className="text-primary-500 underline"
                   >
-                    LH — 임대차분쟁조정위원회
+                    LH, 임대차분쟁조정위원회
                   </a>
                 </p>
                 <p className="mb-2">

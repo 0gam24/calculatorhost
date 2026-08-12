@@ -72,7 +72,7 @@ function SidebarContent({ isExpanded }: { isExpanded: boolean }) {
 export function Sidebar() {
   return (
     <>
-      {/* 아이콘 전용 사이드바 (md~lg) — 로고는 전역 Header 에 표시 */}
+      {/* 아이콘 전용 사이드바 (md~lg), 로고는 전역 Header 에 표시 */}
       <aside
         aria-label="사이드 네비게이션"
         className="sticky top-18 hidden h-[calc(100vh-4.5rem)] w-20 shrink-0 border-r border-border-subtle bg-bg-sidebar md:block lg:hidden"

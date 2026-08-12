@@ -56,7 +56,7 @@ const FAQ_ITEMS = [
   {
     question: '지역가입자란 무엇인가요?',
     answer:
-      '직장가입자가 아닌 모든 국민 — 자영업자, 프리랜서, 은퇴자, 무직자 등이 지역가입자로 분류됩니다(국민건강보험법 §5). 직장에서 건강보험료를 절반 내주지 않으므로 전액 본인이 부담합니다. 소득과 재산을 기준으로 보험료가 달라집니다.',
+      '직장가입자가 아닌 모든 국민, 자영업자, 프리랜서, 은퇴자, 무직자 등이 지역가입자로 분류됩니다(국민건강보험법 §5). 직장에서 건강보험료를 절반 내주지 않으므로 전액 본인이 부담합니다. 소득과 재산을 기준으로 보험료가 달라집니다.',
   },
   {
     question: '지역가입자 보험료는 어떻게 계산하나요?',
@@ -99,7 +99,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '2026 건강보험 지역가입자 보험료 — 소득·재산 점수 계산법',
+    headline: '2026 건강보험 지역가입자 보험료, 소득·재산 점수 계산법',
     description:
       '지역가입자 보험료 = 소득월액 × 7.19% + 재산점수 × 211.5원. 직장 퇴사 후 보험료 폭증 시 임의계속가입으로 완화 가능. 국민건강보험법 §69·§72 기준 정리.',
     authorName: 'calculatorhost',
@@ -151,7 +151,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
             readingMinutes={8}
             publishedDate="2026-06-15"
             title="2026 건강보험 지역가입자 보험료"
-            subtitle="— 소득·재산 점수 계산법"
+            subtitle="· 소득·재산 점수 계산법"
             lead={
               <p data-speakable>
                 지역가입자 건강보험료는 직장가입자와 달리 소득과 재산을 점수로 환산해 부과점수당 금액을 곱하는 방식으로 산정되며,
@@ -352,22 +352,22 @@ export default function HealthInsuranceRegionalSubscriber2026() {
             <h3 className="text-lg font-semibold text-text-primary">월 보험료 산정 절차</h3>
             <ol className="space-y-2 list-decimal list-inside text-sm">
               <li>
-                <strong>전년도 소득·재산 신고</strong> — 지역가입자로 등록되면 소득세·재산세 신고 내역 자동 반영
+                <strong>전년도 소득·재산 신고</strong>: 지역가입자로 등록되면 소득세·재산세 신고 내역 자동 반영
               </li>
               <li>
-                <strong>소득월액 계산</strong> — 합산소득 ÷ 12개월 = 소득월액
+                <strong>소득월액 계산</strong>: 합산소득 ÷ 12개월 = 소득월액
               </li>
               <li>
-                <strong>소득 부분 산정</strong> — 소득월액 × 7.19% (보험료율)
+                <strong>소득 부분 산정</strong>: 소득월액 × 7.19% (보험료율)
               </li>
               <li>
-                <strong>재산점수 계산</strong> — 기본공제 차감 후 점수 환산
+                <strong>재산점수 계산</strong>: 기본공제 차감 후 점수 환산
               </li>
               <li>
-                <strong>재산 부분 산정</strong> — 재산점수 × 211.5원
+                <strong>재산 부분 산정</strong>: 재산점수 × 211.5원
               </li>
               <li>
-                <strong>월 보험료 결정</strong> — (소득부) + (재산부) = 최종 월 보험료 (최저~최고 한도 적용)
+                <strong>월 보험료 결정</strong>: (소득부) + (재산부) = 최종 월 보험료 (최저~최고 한도 적용)
               </li>
             </ol>
 
@@ -505,7 +505,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
           {/* Share & Disclaimer */}
           <section className="space-y-4 pt-4 border-t border-border-base">
             <ShareButtons
-              title="2026 건강보험 지역가입자 보험료 — 소득·재산 점수 계산법"
+              title="2026 건강보험 지역가입자 보험료, 소득·재산 점수 계산법"
               url={URL}
               description="지역가입자 월 보험료 = 소득 × 7.19% + 재산점수 × 211.5원. 임의계속가입 제도로 보험료 부담 완화."
             />

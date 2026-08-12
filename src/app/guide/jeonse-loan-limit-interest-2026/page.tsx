@@ -155,7 +155,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   전세자금대출 한도·금리 구조
                   <br />
-                  <span className="text-2xl text-text-secondary">— 보증기관별 상품 비교 & 실제 가능액 확인</span>
+                  <span className="text-2xl text-text-secondary">· 보증기관별 상품 비교 & 실제 가능액 확인</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   전세 계약을 앞두고 부족한 보증금을 대출로 채우려면, 한도·금리·보증기관의 차이를 이해해야 합니다. 이 가이드는 3대 보증기관(한국주택금융공사·주택도시보증공사·SGI서울보증)의 상품 구조, 정책상품과 시중상품의 차이, 실제 대출 가능액을 결정하는 요소를 정리합니다.
@@ -163,7 +163,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </header>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">전세자금대출의 기본 구조 — 한도 결정 3가지 요소</h2>
+                <h2 className="text-2xl font-bold">전세자금대출의 기본 구조, 한도 결정 3가지 요소</h2>
                 <p>
                   전세자금대출의 한도는 다음 3가지 기준에 의해 결정됩니다. 금융기관과의 상담 시 이 3가지를 반드시 확인해야 실제 가능액을 알 수 있습니다.
                 </p>
@@ -198,7 +198,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">3대 보증기관 비교 — 한도·상품·특성</h2>
+                <h2 className="text-2xl font-bold">3대 보증기관 비교, 한도·상품·특성</h2>
                 <p>
                   전세자금대출을 보증하는 3개 기관의 상품 특성을 정리했습니다. 금융기관마다 어느 보증기관을 사용하는지 다르므로, 관심 있는 은행의 상담 시 어느 보증기관인지 확인하는 것이 중요합니다.
                 </p>
@@ -237,7 +237,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">정책상품(버팀목) vs 시중상품 — 금리와 조건 비교</h2>
+                <h2 className="text-2xl font-bold">정책상품(버팀목) vs 시중상품, 금리와 조건 비교</h2>
                 <p>
                   전세자금대출은 크게 정부 정책상품(주택도시기금)과 금융기관의 시중상품 2가지로 나뉩니다. 금리와 조건이 크게 다르므로, 자신의 자격을 먼저 확인한 후 비교하는 것이 좋습니다.
                 </p>
@@ -286,7 +286,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">금리 결정 요소 — 어떤 조건에 금리가 달라지나</h2>
+                <h2 className="text-2xl font-bold">금리 결정 요소, 어떤 조건에 금리가 달라지나</h2>
                 <p>
                   시중상품 금리는 고정된 숫자가 아니며, 여러 요소에 따라 결정됩니다. 동일한 상품이라도 고객의 조건에 따라 금리가 다를 수 있으므로, 여러 은행에 문의해보는 것이 현명합니다.
                 </p>
@@ -315,7 +315,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">DSR 규제와 전세자금대출 — 실제 대출 한도에 미치는 영향</h2>
+                <h2 className="text-2xl font-bold">DSR 규제와 전세자금대출, 실제 대출 한도에 미치는 영향</h2>
                 <p>
                   보증비율상 가능한 금액이 있더라도, DSR(총부채상환비율) 규제 때문에 더 적은 금액만 빌릴 수 있는 경우가 많습니다. 전세자금대출은 일반 주담대보다 DSR 규제가 덜 엄격한 편이지만, 여전히 중요한 한도 제약입니다.
                 </p>
@@ -334,7 +334,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">전세자금대출 신청 전 체크리스트 — 실제 가능액 정확히 파악하기</h2>
+                <h2 className="text-2xl font-bold">전세자금대출 신청 전 체크리스트, 실제 가능액 정확히 파악하기</h2>
                 <p>
                   여러 은행에서 상담받을 때, 다음 항목들을 반드시 정리하고 질문하세요. 이 정보들을 통해 실제 가능액을 정확히 판단할 수 있습니다.
                 </p>
@@ -375,7 +375,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">전세자금대출 받은 후 주의사항 — 보증금 안전과 계약 관리</h2>
+                <h2 className="text-2xl font-bold">전세자금대출 받은 후 주의사항, 보증금 안전과 계약 관리</h2>
                 <p>
                   대출을 받은 후에도, 부족한 부분을 건물주에게 안전하게 지급하고 계약을 철저히 관리해야 합니다. 대출 자체만으로는 보증금이 보호되지 않습니다.
                 </p>

@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-02';
 const DATE_MODIFIED = '2026-06-02';
 
 export const metadata: Metadata = {
-  title: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일',
+  title: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일',
   description:
     '2026년 종합부동산세 완벽 해설. 1주택 12억/다주택 9억 공제, 6월 1일 과세기준일 기준 소유자. 공시가 산정, 세율 0.5~5%, 12월 납부. 계산 사례 및 절세·공제 전략.',
   keywords: [
@@ -35,8 +35,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일' }],
-    title: '종합부동산세 2026 — 누가 내나, 과세기준일, 12억 공제',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일' }],
+    title: '종합부동산세 2026, 누가 내나, 과세기준일, 12억 공제',
     description: '1주택 12억, 다주택 9억 공제. 공정시장가액비율 60%, 세율 0.5~5%. 2026년 완전 해설.',
     url: URL,
     type: 'article',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합부동산세 2026 — 누가 내나, 과세기준일 6월 1일',
+    title: '종합부동산세 2026, 누가 내나, 과세기준일 6월 1일',
     description: '종부세 완벽 이해: 1주택 12억, 다주택 9억 공제, 6월 1일 기준.',
   },
 };
@@ -103,10 +103,10 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '종합부동산세 2026 — 누가 내나, 과세기준일, 12억 공제' },
+    { name: '종합부동산세 2026, 누가 내나, 과세기준일, 12억 공제' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일',
+    headline: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일',
     description:
       '종합부동산세 완벽 해설. 1주택 12억/다주택 9억 공제, 6월 1일 과세기준일. 공시가, 공정시장가액비율 60%, 세율표(0.5~5%), 12월 납부, 절세 전략.',
     url: URL,
@@ -118,7 +118,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
     keywords: ['종합부동산세', '종부세 2026', '12억 공제', '과세기준일'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일',
+    name: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일',
     description:
       '2026년 종합부동산세 완벽 가이드. 1주택 12억, 다주택 9억 공제, 6월 1일 과세기준일, 공정시장가액비율 60%, 세율 0.5~5%, 12월 납부.',
     url: URL,
@@ -147,14 +147,14 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '종합부동산세 2026 — 누가 내나, 과세기준일, 12억 공제' },
+                    { name: '종합부동산세 2026, 누가 내나, 과세기준일, 12억 공제' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 10분 읽기 · 2026-06-02</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합부동산세(종부세) 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 누가 내나, 12억 공제, 과세기준일</span>
+                  <span className="text-2xl text-text-secondary">· 누가 내나, 12억 공제, 과세기준일</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   종합부동산세(종부세)는 다주택 소유자나 일정 규모 이상의 부동산을 보유한 자가 내는 세금입니다.
@@ -269,7 +269,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 과세기준일 — 6월 1일 기준 소유자가 납세의무자</h2>
+                <h2 className="text-2xl font-bold">2. 과세기준일, 6월 1일 기준 소유자가 납세의무자</h2>
                 <p className="text-text-secondary leading-relaxed">
                   종합부동산세의 납세의무자는 <strong>6월 1일 현재 부동산을 소유하는 자</strong>입니다(종합부동산세법 §3, §7).
                   이를 '과세기준일'이라고 하며, 5월 31일 23:59분에 판 사람은 내지 않고, 6월 2일에 산 사람도 2026년 종부세는 내지 않습니다.
@@ -292,7 +292,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 공제 — 1주택은 12억, 다주택은 9억</h2>
+                <h2 className="text-2xl font-bold">3. 공제, 1주택은 12억, 다주택은 9억</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   종합부동산세의 과세표준은 <strong>공시가 합계에서 공제를 차감한 후 공정시장가액비율(60%)을 곱해서</strong> 계산합니다.
                   공제 규모에 따라 세금이 크게 달라지므로, 자신의 주택 수 분류가 매우 중요합니다.
@@ -350,7 +350,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 세율 — 1-2주택 0.5~2.7%, 3주택 이상 2.0~5.0%</h2>
+                <h2 className="text-2xl font-bold">4. 세율, 1-2주택 0.5~2.7%, 3주택 이상 2.0~5.0%</h2>
                 <p className="text-text-secondary leading-relaxed">
                   과세표준이 결정되면, 누진세 구조에 따라 세율을 적용합니다(종합부동산세법 §8).
                   1-2주택은 일반 세율, 3주택 이상은 중과세율이 적용되며, 각각 다른 구간을 가집니다.
@@ -428,7 +428,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 농어촌특별세 — 종부세의 20%</h2>
+                <h2 className="text-2xl font-bold">5. 농어촌특별세, 종부세의 20%</h2>
                 <p className="text-text-secondary leading-relaxed">
                   종합부동산세를 산출한 후, 추가로 <strong>농어촌특별세</strong>가 부과됩니다.
                   농어촌특별세는 종부세 산출세액의 20%이므로, 최종 납부액은 종부세 + 농특세입니다(농어촌특별세법 §5).
@@ -448,7 +448,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 1세대1주택자 세액공제 — 고령자·장기보유</h2>
+                <h2 className="text-2xl font-bold">6. 1세대1주택자 세액공제, 고령자·장기보유</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   1세대1주택자라면 <strong>고령자공제</strong>나 <strong>장기보유공제</strong>를 받을 수 있습니다(종합부동산세법 §9).
                   이는 산출세액에서 일정 비율을 차감해주는 제도로, 최대 80%까지 공제 가능합니다.
@@ -517,7 +517,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">7. 합산배제 신청 — 절세의 핵심 (4월 신청 기한)</h2>
+                <h2 className="text-2xl font-bold">7. 합산배제 신청, 절세의 핵심 (4월 신청 기한)</h2>
                 <p className="text-text-secondary leading-relaxed">
                   다주택자도 특정 조건을 충족하면 <strong>합산배제</strong>를 신청해서 일부 부동산을 종부세 과세 대상에서 제외할 수 있습니다.
                   합산배제는 4월에 신청해야 하므로, 2026년 공제가 필요하면 4월 중에 신청해야 합니다.
@@ -599,41 +599,41 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                     <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       종합부동산세 계산기
                     </Link>
-                    {' — 공시가 입력 후 과세표준·세액 즉시 계산'}
+                    {'공시가 입력 후 과세표준·세액 즉시 계산'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       재산세 계산기
                     </Link>
-                    {' — 종부세와는 별개의 재산세(7월·9월)'}
+                    {'종부세와는 별개의 재산세(7월·9월)'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/property-tax-base-date-june-1-2026/" className="text-primary-600 underline dark:text-primary-500">
                       재산세 과세기준일 7월 1일 (vs 종부세 6월 1일)
                     </Link>
-                    {' — 두 세금의 과세기준일 차이 설명'}
+                    {'두 세금의 과세기준일 차이 설명'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">
                       4월 합산배제 신청 가이드
                     </Link>
-                    {' — 임대주택·일시적2주택 절세 신청'}
+                    {'임대주택·일시적2주택 절세 신청'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>
-                    {' — 종부세·재산세·양도세 전체 납부 일정'}
+                    {'종부세·재산세·양도세 전체 납부 일정'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="종합부동산세 2026 — 누가 내나, 12억 공제, 과세기준일 6월 1일"
+                title="종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일"
                 url={URL}
                 description="종부세 완벽 해설. 1주택 12억, 다주택 9억 공제. 6월 1일 과세기준일, 12월 납부, 세율 0.5~5%."
               />

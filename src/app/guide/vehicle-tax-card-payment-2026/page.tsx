@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-28';
 const DATE_MODIFIED = '2026-06-28';
 
 export const metadata: Metadata = {
-  title: '자동차세 카드납부·연납 할인 2026 — 무이자·할인 받는 법',
+  title: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
   description:
     '자동차세는 신용카드 납부 수수료 무료, 무이자 할부 가능. 1월 연납 시 5% 공제율(신청월별 실효율 4.81% ~ 1.67%). 위택스·지역 앱에서 신청. 카드사별 캐시백 혜택 확인 필수.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 카드납부·연납 할인 2026' }],
-    title: '자동차세 카드납부·연납 할인 2026 — 무이자·할인 받는 법',
+    title: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
     description: '신용카드 수수료 무료 납부 + 1월 연납 5% 할인. 신청 기간·방법·카드 혜택 완전 정리.',
     url: URL,
     type: 'article',
@@ -95,7 +95,7 @@ export default function VehicleTaxCardPayment2026Page() {
     { name: '자동차세 카드납부·연납 할인 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 카드납부·연납 할인 2026 — 무이자·할인 받는 법',
+    headline: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
     description: '자동차세 신용카드 납부(수수료 무료) + 1월 연납 5% 할인(신청월별 실효율 4.81% ~ 1.67%) + 무이자 할부 전략. 위택스·지역 앱 신청 방법 완전 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -141,7 +141,7 @@ export default function VehicleTaxCardPayment2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차세 카드납부·연납 할인
                   <br />
-                  <span className="text-2xl text-text-secondary">— 무이자·할인 받는 법</span>
+                  <span className="text-2xl text-text-secondary">· 무이자·할인 받는 법</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자동차세는 지방세로서 신용카드 납부 수수료가 무료입니다(국세와 달리 지방세는 카드 납부 수수료가 없음). 더욱이 1월에 연간 자동차세 전액을 미리 내면 <strong>5% 공제율(지방세법 시행령 §125)</strong>을 받을 수 있으며, 신청 시기에 따라 실제 할인율은 약 4.81%~1.67% 범위입니다. 또한 카드사의 무이자 할부 이벤트를 활용하면 현금 흐름도 개선할 수 있습니다.
@@ -154,14 +154,14 @@ export default function VehicleTaxCardPayment2026Page() {
                   <li><strong>신용카드 수수료:</strong> 무료 (지방세는 수수료 정책 다름)</li>
                   <li><strong>1월 연납 할인:</strong> 5% 공제율 (선납 일수 비례) (지방세법 시행령 §125)</li>
                   <li><strong>신청월별 실효율:</strong> 1월 약 4.81% / 3월 약 3.74% / 6월 약 2.93% / 9월 약 1.67%</li>
-                  <li><strong>무이자 할부:</strong> 카드사별 이벤트(보통 2~6개월) — 본인 카드 혜택 확인</li>
+                  <li><strong>무이자 할부:</strong> 카드사별 이벤트(보통 2~6개월), 본인 카드 혜택 확인</li>
                   <li><strong>신청처:</strong> 위택스(wetax.go.kr) / 스마트 위택스 앱 / 시·군청 세무서 / 지역 앱</li>
                   <li>⏰ <strong>신청 기간:</strong> 1월 1~31일만 가능 (이후 6월·12월 정기 납부만 가능)</li>
                 </ul>
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">신용카드 납부 — 수수료 무료</h2>
+                <h2 className="mb-4 text-2xl font-bold">신용카드 납부, 수수료 무료</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세인 자동차세는 국세(소득세·법인세)와 달리 신용카드 수수료가 없습니다.</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">자동차세 카드납부 방식</p>
@@ -205,8 +205,8 @@ export default function VehicleTaxCardPayment2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">1월 연납 할인 — 5% 공제율</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125 — 1월에 연간 자동차세를 모두 미리 내면 공제율을 받습니다.</p>
+                <h2 className="mb-4 text-2xl font-bold">1월 연납 할인, 5% 공제율</h2>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월에 연간 자동차세를 모두 미리 내면 공제율을 받습니다.</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">연납 공제 방식</p>
                   <p className="text-text-secondary font-mono bg-bg-base p-2 rounded mb-2">공제액 = 연간 총액 × (선납일수 / 365일) × 5% 공제율</p>
@@ -225,7 +225,7 @@ export default function VehicleTaxCardPayment2026Page() {
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base bg-primary-500/5">
-                        <td className="px-3 py-2 font-bold">1월 신청 ⭐</td>
+                        <td className="px-3 py-2 font-bold">1월 신청</td>
                         <td className="px-3 py-2 text-right">351일</td>
                         <td className="px-3 py-2 text-right font-bold text-primary-700 dark:text-primary-300">약 4.81%</td>
                         <td className="px-3 py-2 tabular-nums">약 1.92만원 할인</td>
@@ -293,10 +293,10 @@ export default function VehicleTaxCardPayment2026Page() {
 
               <section className="card">
                 <h2 className="mb-4 text-2xl font-bold">1월 연납 신청 방법</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125 — 1월 1~31일 신청만 가능합니다.</p>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월 1~31일 신청만 가능합니다.</p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">1⃣ 위택스(wetax.go.kr) — 가장 추천</p>
+                    <p className="text-text-primary font-semibold mb-2">1⃣ 위택스(wetax.go.kr), 가장 추천</p>
                     <ol className="text-text-secondary space-y-1 list-decimal list-inside">
                       <li>위택스(wetax.go.kr)에 공인인증서·금융인증서·간편인증으로 로그인</li>
                       <li>"세금 신청·신고" → "지방세" → "자동차세"</li>
@@ -337,10 +337,10 @@ export default function VehicleTaxCardPayment2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">신용카드 결제 가능한 납부 채널</p>
                   <ul className="text-text-secondary space-y-1 list-disc list-inside">
-                    <li>위택스(wetax.go.kr) — "결제" 메뉴에서 신용카드 선택</li>
-                    <li>스마트 위택스 앱 — 결제 단계에서 카드 입력</li>
-                    <li>세무서 방문 — 현장에서 카드 결제 또는 지로 영수증 받아 은행·편의점에서 선결제 후 제출</li>
-                    <li>지로 — 은행 창구·ATM·편의점에서 현금 또는 카드 결제(기관마다 상이, 확인 필요)</li>
+                    <li>위택스(wetax.go.kr), "결제" 메뉴에서 신용카드 선택</li>
+                    <li>스마트 위택스 앱, 결제 단계에서 카드 입력</li>
+                    <li>세무서 방문, 현장에서 카드 결제 또는 지로 영수증 받아 은행·편의점에서 선결제 후 제출</li>
+                    <li>지로, 은행 창구·ATM·편의점에서 현금 또는 카드 결제(기관마다 상이, 확인 필요)</li>
                   </ul>
                 </div>
               </section>
@@ -425,7 +425,7 @@ export default function VehicleTaxCardPayment2026Page() {
               </section>
 
               <ShareButtons
-                title="자동차세 카드납부·연납 할인 2026 — 무이자·할인 받는 법"
+                title="자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법"
                 url={URL}
                 description="신용카드 수수료 무료 + 1월 연납 5% 할인(실효율 4.81%). 무이자 할부 조합 전략. 위택스·앱 신청 방법 정리."
               />

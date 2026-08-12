@@ -148,7 +148,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합소득세 무신고·지연 가산세 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 마감 11일 전 최후의 선택</span>
+                  <span className="text-2xl text-text-secondary">· 마감 11일 전 최후의 선택</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감까지 딱 11일 남았습니다. 아직 신고 안 했다면 가산세가 얼마나 되는지,
@@ -219,7 +219,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 1. 무신고가산세 정의 및 계산 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 무신고가산세 20% — 정의 및 계산</h2>
+                <h2 className="text-2xl font-bold">1. 무신고가산세 20%, 정의 및 계산</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   무신고가산세는 종합소득세 신고 기한(5월 31일)까지 신고하지 않은 경우, 산출세액에 20%를 붙이는 제재금입니다
                   (국세기본법 §47의2). 단순히 몇 개월 늦은 것이 아니라 신고 자체를 하지 않았을 때 적용됩니다.
@@ -279,7 +279,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 2. 납부지연가산세 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 납부지연가산세 일 0.022% — 매일 쌓인다</h2>
+                <h2 className="text-2xl font-bold">2. 납부지연가산세 일 0.022%, 매일 쌓인다</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   신고는 했지만 세금을 내지 않으면 납부지연가산세가 붙습니다. 원래 2022년 2월 15일 이전까지는 일 0.025%였지만,
                   개정되어 현재는 <strong>일 0.022%</strong>입니다(국세기본법 §47의4). 이자 같은 개념으로 매일 쌓입니다.
@@ -318,7 +318,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 3. 부정행위 시 40% 중과 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 부정행위 40% 중과 — 위험 신호</h2>
+                <h2 className="text-2xl font-bold">3. 부정행위 40% 중과, 위험 신호</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   단순히 "몰랐어요"라는 무신고와 다른 것이 있습니다. 바로
                   <strong> 의도적 탈세 = 부정행위</strong>입니다. 부정행위로 적발되면 가산세가 20%가 아니라
@@ -368,7 +368,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
 
               {/* 4. 자진신고 감면 타이밍 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 자진신고 감면 50~10% — 남은 시간을 활용하라</h2>
+                <h2 className="text-2xl font-bold">4. 자진신고 감면 50~10%, 남은 시간을 활용하라</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   5월 31일 마감을 지났어도 "자진신고 감면" 제도가 있습니다(국세기본법 §48). 신고 기한 후 일정 기간 내에 자발적으로
                   신고하면 가산세를 50~10%까지 깎을 수 있습니다. 이것이 현재 상황에서 최후의 방어선입니다.
@@ -564,7 +564,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                     • <strong>5월 31일까지</strong> 신고하는 것이 가장 안전 (가산세 0, 자진신고 감면도 불필요)
                   </li>
                   <li>
-                    • 신고 후 세금 납부는 별개 — 신고 후 30일 이내에 납부하지 않으면 납부지연가산세 매일 0.022%씩
+                    • 신고 후 세금 납부는 별개, 신고 후 30일 이내에 납부하지 않으면 납부지연가산세 매일 0.022%씩
                     증가
                   </li>
                   <li>
@@ -588,35 +588,35 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 신고 전 세액 미리 계산
+                    {' '}· 신고 전 세액 미리 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— N잡러 합산 세액 계산
+                    {' '}· N잡러 합산 세액 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/financial-income-comprehensive-vs-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">
                       금융소득 종합과세 vs 분리과세
                     </Link>
-                    {' '}— 이자·배당 2천만 기준
+                    {' '}· 이자·배당 2천만 기준
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">
                       연말정산 가이드
                     </Link>
-                    {' '}— 다음해 1월 대비 (의료비·교육비 누락 확인)
+                    {' '}· 다음해 1월 대비 (의료비·교육비 누락 확인)
                   </li>
                 </ul>
               </section>

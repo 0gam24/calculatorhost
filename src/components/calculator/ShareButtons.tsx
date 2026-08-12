@@ -113,7 +113,7 @@ export function ShareButtons({ title, url, description, imageUrl }: ShareButtons
         objectType: 'feed',
         content: {
           title,
-          description: description ?? '2026년 최신 세율 반영 계산기 — calculatorhost',
+          description: description ?? '2026년 최신 세율 반영 계산기, calculatorhost',
           imageUrl: getImageUrl(),
           link: { mobileWebUrl: shareUrl, webUrl: shareUrl },
         },

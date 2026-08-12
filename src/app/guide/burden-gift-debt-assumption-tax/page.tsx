@@ -214,7 +214,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
 
               {/* 3. 실제 시뮬레이션 */}
               <section aria-label="실제 시뮬레이션" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 — 자산 10억+채무 4억 부담부증여</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례, 자산 10억+채무 4억 부담부증여</h2>
 
                 <div className="mb-6 rounded-lg bg-bg-card p-4">
                   <p className="mb-3 font-semibold text-text-primary">조건</p>
@@ -264,9 +264,9 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                 </div>
               </section>
 
-              {/* 4. 채무 입증 — 전세보증금·은행대출 */}
+              {/* 4. 채무 입증, 전세보증금·은행대출 */}
               <section aria-label="채무 입증" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">채무 인수 입증 — 전세보증금과 은행대출</h2>
+                <h2 className="mb-4 text-2xl font-semibold">채무 인수 입증, 전세보증금과 은행대출</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   부담부증여의 가장 중요한 요소는 <strong>채무가 실제로 존재하고 수증자가 이를 인수했음을 입증</strong>하는
                   것입니다. 입증이 실패하면 국세청이 전체를 증여로 재과세하고 가산세를 부과합니다(국세기본법 §47).
@@ -304,7 +304,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
 
               {/* 5. 증여세 상세 */}
               <section aria-label="증여세 상세" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">증여세 — 공제와 세율</h2>
+                <h2 className="mb-4 text-2xl font-semibold">증여세, 공제와 세율</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   부담부증여에서 증여 부분(무상분)의 세금은 일반 증여세와 동일합니다. 다만 세율이 높으므로 공제 혜택을
                   정확히 적용하는 것이 중요합니다.
@@ -367,7 +367,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
 
               {/* 6. 양도세 상세 */}
               <section aria-label="양도세 상세" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">양도세 — 채무인수분 계산</h2>
+                <h2 className="mb-4 text-2xl font-semibold">양도세, 채무인수분 계산</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   양도세는 채무인수액을 양도가액으로 하여 계산합니다. 양도차익이 작으면 세금도 작지만, 취득가를 정확히
                   비례 배분하지 않으면 과다 과세될 수 있습니다.
@@ -434,7 +434,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                     </p>
                     <p className="text-sm">
                       채무인수 계약만 하고 실제로 전세보증금이나 대출을 변제하지 않으면 민법상 채무인수 효력이 인정되지
-                      않을 수 있습니다(민법 §453, §454 — 채권자 승낙 또는 제3자 변제). 특히 전세금 반환 시점에 문제가 됩니다.
+                      않을 수 있습니다(민법 §453, §454, 채권자 승낙 또는 제3자 변제). 특히 전세금 반환 시점에 문제가 됩니다.
                       반드시 실제 변제를 통장이나 영수증으로 증명해야 합니다.
                     </p>
                   </div>
@@ -545,25 +545,25 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>
-                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 1세대1주택·다주택·일시적2주택 시뮬
+                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 1세대1주택·다주택·일시적2주택 시뮬
                   </li>
                   <li>
-                    → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link> — 무상분(증여분) 증여세 자동 산정
+                    → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link>, 무상분(증여분) 증여세 자동 산정
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link> — 비과세 조건·비례 과세
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비과세 조건·비례 과세
                   </li>
                   <li>
-                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 완전 정리</Link> — 보유·거주 분리 계산
+                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 완전 정리</Link>, 보유·거주 분리 계산
                   </li>
                   <li>
-                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link> — 1년 경과·3년 기한
+                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link>, 1년 경과·3년 기한
                   </li>
                   <li>
-                    → <Link href="/guide/family-loan-agreement-gift-tax-avoidance/" className="text-primary-600 underline dark:text-primary-500">가족 간 차용증 작성과 증여세</Link> — 채무인수 대신 빌려주는 방식의 요건·함정
+                    → <Link href="/guide/family-loan-agreement-gift-tax-avoidance/" className="text-primary-600 underline dark:text-primary-500">가족 간 차용증 작성과 증여세</Link>, 채무인수 대신 빌려주는 방식의 요건·함정
                   </li>
                   <li>
-                    → <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">대출이자 계산기</Link> — 원리금균등·만기일시 상환
+                    → <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">대출이자 계산기</Link>, 원리금균등·만기일시 상환
                   </li>
                 </ul>
               </section>

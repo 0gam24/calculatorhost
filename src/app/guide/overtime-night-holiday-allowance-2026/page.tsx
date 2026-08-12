@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연장·야간·휴일근로수당 2026 | 1.5배·2배 가산 계산 | calculatorhost' }],
-    title: '연장·야간·휴일근로수당 계산 2026 — 근로기준법 §56',
+    title: '연장·야간·휴일근로수당 계산 2026, 근로기준법 §56',
     description: '통상임금의 1.5배, 0.5배, 2배 가산. 시간대별·조건별 정확한 계산법과 예시.',
     url: URL,
     type: 'article',
@@ -94,7 +94,7 @@ export default function OvertimeNightHolidayAllowancePage() {
     { name: '연장·야간·휴일근로수당' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연장·야간·휴일근로수당 계산 2026 — 통상임금의 1.5배·2배 완벽 정리',
+    headline: '연장·야간·휴일근로수당 계산 2026, 통상임금의 1.5배·2배 완벽 정리',
     description:
       '근로기준법 §56 기준 연장근로(1.5배), 야간근로(0.5배 추가), 휴일근로(1.5~2배) 가산수당 계산법. 통상시급 환산, 중복 적용, 세금 처리까지 완전 해설.',
     url: URL,
@@ -140,7 +140,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">근로 · 8분 읽기 · 2026-06-26</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  연장·야간·휴일근로수당 계산 2026 — 1.5배·2배 가산 완전정리
+                  연장·야간·휴일근로수당 계산 2026, 1.5배·2배 가산 완전정리
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   잔업, 야근, 휴일 근무에는 추가 가산수당이 나옵니다.
@@ -209,7 +209,7 @@ export default function OvertimeNightHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">야간근로수당 — 22:00~06:00 추가 가산</h2>
+                <h2 className="text-2xl font-bold">야간근로수당, 22:00~06:00 추가 가산</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 §56③은 야간근로(저녁 10시~오전 6시)에 대해 <strong>추가 50% 가산</strong>을 규정합니다.
                   이는 연장근로와 <strong>별도</strong>로 중첩되어 적용됩니다.
@@ -236,7 +236,7 @@ export default function OvertimeNightHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">휴일근로수당 — 일요일·법정휴일 1.5배·2배</h2>
+                <h2 className="text-2xl font-bold">휴일근로수당, 일요일·법정휴일 1.5배·2배</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 §56②는 휴일근로(일요일, 공휴일, 회사가 정한 휴무일)에 대해 <strong>8시간 이내 50%, 8시간 초과 100% 가산</strong>을 규정합니다.
                   즉 <strong>8시간 이내 1.5배, 8시간 초과 2배</strong>입니다.
@@ -270,10 +270,10 @@ export default function OvertimeNightHolidayAllowancePage() {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <strong>✓ 포함:</strong> 기본급, 직책급, 기술급, 근속급, 정기적 수당(보직수당, 위험수당 등)
+                    <strong>포함:</strong> 기본급, 직책급, 기술급, 근속급, 정기적 수당(보직수당, 위험수당 등)
                   </li>
                   <li>
-                    <strong>✗ 제외:</strong> 상여금, 성과급, 복리후생비, 교통비, 식사비, 상반기·하반기 특별상여, 1회성 보상금
+                    <strong>제외:</strong> 상여금, 성과급, 복리후생비, 교통비, 식사비, 상반기·하반기 특별상여, 1회성 보상금
                   </li>
                 </ul>
                 <p className="mt-3 text-sm">
@@ -324,7 +324,7 @@ export default function OvertimeNightHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">가산수당 세금 — 소득세·4대보험료</h2>
+                <h2 className="text-2xl font-bold">가산수당 세금, 소득세·4대보험료</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   가산수당도 일반 근로소득으로 간주되어 소득세, 지방소득세, 4대보험료가 공제됩니다.
                   퇴직금처럼 특별 세제 혜택은 없습니다.
@@ -349,7 +349,7 @@ export default function OvertimeNightHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">적용 범위 — 누가 받을 수 있나?</h2>
+                <h2 className="text-2xl font-bold">적용 범위, 누가 받을 수 있나?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 §56은 <strong>상시 5인 이상 사업장</strong>에 적용됩니다.
                   5인 미만 사업장(개인 카페, 소형 가게, 치과 등)은 가산수당 의무가 없습니다.
@@ -461,31 +461,31 @@ export default function OvertimeNightHolidayAllowancePage() {
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 기본급 + 가산수당의 세후 수령액 확인'}
+                    {'기본급 + 가산수당의 세후 수령액 확인'}
                   </li>
                   <li>
                     <Link href="/guide/annual-leave-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       연차수당 계산법 2026
                     </Link>
-                    {' — 퇴사 시 받을 수 있는 미사용 연차 수당'}
+                    {'퇴사 시 받을 수 있는 미사용 연차 수당'}
                   </li>
                   <li>
                     <Link href="/guide/weekly-holiday-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       주휴수당 계산법 2026
                     </Link>
-                    {' — 주중 근무하지 않은 날 받는 유급휴일 수당'}
+                    {'주중 근무하지 않은 날 받는 유급휴일 수당'}
                   </li>
                   <li>
                     <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       4대보험 요율 2026
                     </Link>
-                    {' — 국민연금, 건강보험, 장기요양, 고용보험 최신 요율'}
+                    {'국민연금, 건강보험, 장기요양, 고용보험 최신 요율'}
                   </li>
                   <li>
                     <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
                       근로 카테고리
                     </Link>
-                    {' — 급여, 세금, 수당 관련 모든 가이드'}
+                    {'급여, 세금, 수당 관련 모든 가이드'}
                   </li>
                 </ul>
               </section>

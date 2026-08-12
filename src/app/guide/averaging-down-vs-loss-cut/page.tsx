@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '물타기 vs 손절 vs 비중조절 비교 2026 | calculatorhost' }],
-    title: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나',
+    title: '물타기 vs 손절 vs 비중조절, 언제 무엇을 선택하나',
     description: '하락장에서의 3가지 전략 의사결정 기준.',
     url: URL,
     type: 'article',
@@ -67,7 +67,7 @@ const FAQ_ITEMS = [
   {
     question: '물타기에 얼마까지 자금을 투입해야 하나요?',
     answer:
-      '한 종목 비중을 전체 투자 자산의 5~10% 이상으로 늘리지 않는 것이 일반적 원칙. 물타기를 하더라도 추가 자금이 이 비중을 넘지 않도록 사전 한도를 정하세요. "물탈 자금이 없는 상태"에서의 추가 매수는 절대 금물 — 추가 하락 시 옵션이 사라집니다.',
+      '한 종목 비중을 전체 투자 자산의 5~10% 이상으로 늘리지 않는 것이 일반적 원칙. 물타기를 하더라도 추가 자금이 이 비중을 넘지 않도록 사전 한도를 정하세요. "물탈 자금이 없는 상태"에서의 추가 매수는 절대 금물, 추가 하락 시 옵션이 사라집니다.',
   },
   {
     question: '비중조절을 위해 분할매도 계산기를 어떻게 쓰나요?',
@@ -83,7 +83,7 @@ export default function AveragingDownVsLossCutPage() {
     { name: '물타기 vs 손절 vs 비중조절' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나 (2026)',
+    headline: '물타기 vs 손절 vs 비중조절, 언제 무엇을 선택하나 (2026)',
     description: '하락 종목 대응 3가지 전략의 의사결정 기준과 시뮬레이션.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -94,7 +94,7 @@ export default function AveragingDownVsLossCutPage() {
     keywords: ['물타기', '손절', '비중조절', '주식 전략', '코인 전략'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나 (2026)',
+    name: '물타기 vs 손절 vs 비중조절, 언제 무엇을 선택하나 (2026)',
     description: '하락 종목을 만났을 때 평단을 낮추는 물타기, 즉시 매도하는 손절, 단계적 매도하는 비중조절. 3가지 전략의 의사결정 기준과 시뮬레이션을 정리합니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -175,7 +175,7 @@ export default function AveragingDownVsLossCutPage() {
                   투자 · 8분 읽기 · 2026-05-03
                 </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  물타기 vs 손절 vs 비중조절 — 언제 무엇을 선택하나
+                  물타기 vs 손절 vs 비중조절, 언제 무엇을 선택하나
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   하락 종목을 만났을 때 우리는 항상 3가지 선택지를 마주합니다.
@@ -226,7 +226,7 @@ export default function AveragingDownVsLossCutPage() {
                   물타기는 "이 종목이 곧 회복할 것"이라는 강한 신념이 전제. 신념의 근거는
                   ① 펀더멘털(매출·이익·산업 전망)이 변하지 않았는데 시장이 과반응 ②
                   거시 환경(금리, 환율, 정치) 일시 충격 ③ 동종 업종 전반 동시 하락(개별
-                  종목 문제 아님) — 이 세 가지가 명확할 때.
+                  종목 문제 아님), 이 세 가지가 명확할 때.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
                   <strong>물타기 금지 시그널</strong>: ① 분기 실적 발표 후 가이던스 하향
@@ -294,7 +294,7 @@ export default function AveragingDownVsLossCutPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 코인 vs 주식 — 물타기 전략의 차이</h2>
+                <h2 className="text-2xl font-bold">4. 코인 vs 주식, 물타기 전략의 차이</h2>
                 <p className="text-text-secondary leading-relaxed">
                   물타기의 계산 공식은 동일하지만, 시장 특성이 매우 다르므로 실행 전략을 달리해야 합니다. 주식은 기업 실적, 산업 전망 등 펀더멘털 분석이 비교적 용이하지만 코인은 달라집니다. 코인 프로젝트의 기술 평가는 일반 투자자에겐 어렵고, 거래소 리스크(해킹, 갑작스런 서비스 중단) 추가 변수도 존재합니다.
                 </p>
@@ -373,21 +373,21 @@ export default function AveragingDownVsLossCutPage() {
                     <Link href="/calculator/averaging-down/" className="text-primary-600 underline dark:text-primary-500">
                       물타기 계산기
                     </Link>{' '}
-                    — 평단 하향 + 회복 필요 상승률 시뮬레이션
+, 평단 하향 + 회복 필요 상승률 시뮬레이션
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/split-buy/" className="text-primary-600 underline dark:text-primary-500">
                       분할매수 계산기
                     </Link>{' '}
-                    — 균등분할·차수별 가중평균
+, 균등분할·차수별 가중평균
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/split-sell/" className="text-primary-600 underline dark:text-primary-500">
                       분할매도 계산기
                     </Link>{' '}
-                    — 차수별 실현손익(세후)
+, 차수별 실현손익(세후)
                   </li>
                   <li>
                     →{' '}
@@ -403,7 +403,7 @@ export default function AveragingDownVsLossCutPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 자본시장과 금융투자업에 관한 법률 §4 (금융투자상품 정의) · §249의2 (투자자 보호의무) · 소득세법 §94 (양도소득 — 주식 양도세) · 금융투자업규정 §4-3 (적합성 원칙).
+                  <strong>법적 근거</strong>: 자본시장과 금융투자업에 관한 법률 §4 (금융투자상품 정의) · §249의2 (투자자 보호의무) · 소득세법 §94 (양도소득, 주식 양도세) · 금융투자업규정 §4-3 (적합성 원칙).
                 </p>
                 <p className="mb-2">
                   <strong>참고 자료</strong>:{' '}

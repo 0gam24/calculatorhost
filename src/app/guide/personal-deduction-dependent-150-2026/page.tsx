@@ -76,7 +76,7 @@ const FAQ_ITEMS = [
   {
     question: '형제자매도 부양가족으로 공제받을 수 있나요?',
     answer:
-      '네, 소득세법 §50 ① 5호에 따라 가능합니다. 조건: ①만 20세 이하 또는 만 60세 이상 ②연소득 100만 원 이하. 장애인이면 나이 제약 없음(§50 ① 5호 단서). 다만 여러 형제자매 중 1명만 공제 가능 — 복수 공제 불가. 부모와 다르게 경로우대 추가공제도 없습니다.',
+      '네, 소득세법 §50 ① 5호에 따라 가능합니다. 조건: ①만 20세 이하 또는 만 60세 이상 ②연소득 100만 원 이하. 장애인이면 나이 제약 없음(§50 ① 5호 단서). 다만 여러 형제자매 중 1명만 공제 가능, 복수 공제 불가. 부모와 다르게 경로우대 추가공제도 없습니다.',
   },
   {
     question: '연소득 100만 원은 어떻게 계산하나요?',
@@ -269,7 +269,7 @@ export default function PersonalDeductionDependent2026Page() {
 
                   {/* 직계존속 */}
                   <div className="rounded-lg border border-border-base p-5">
-                    <h3 className="mb-3 font-semibold">직계존속 — 부모·조부모·외조부모 (§50 ① 3호)</h3>
+                    <h3 className="mb-3 font-semibold">직계존속, 부모·조부모·외조부모 (§50 ① 3호)</h3>
                     <p>
                       직계존속은 <strong>만 60세 이상</strong>이어야 합니다. 2026년 신고 기준 <strong>1966년 이전 출생</strong>.
                       만나이 기준이므로, 생일이 아직 지나지 않았으면 아직 대상이 아닙니다.
@@ -285,7 +285,7 @@ export default function PersonalDeductionDependent2026Page() {
 
                   {/* 직계비속 */}
                   <div className="rounded-lg border border-border-base p-5">
-                    <h3 className="mb-3 font-semibold">직계비속 — 자녀·손자녀 (§50 ① 4호)</h3>
+                    <h3 className="mb-3 font-semibold">직계비속, 자녀·손자녀 (§50 ① 4호)</h3>
                     <p>
                       직계비속은 <strong>만 20세 이하</strong>여야 합니다. 2026년 신고 기준 <strong>2006년 이후 출생</strong>.
                       만나이 기준이므로, 정확히 생일이 지난 날을 기준으로 합니다.
@@ -398,13 +398,13 @@ export default function PersonalDeductionDependent2026Page() {
 
                 {/* H2: 추가공제 정확히 알기 */}
                 <section className="space-y-4">
-                  <h2 className="text-2xl font-bold">추가공제 4가지 — 기본공제에 더해 받기</h2>
+                  <h2 className="text-2xl font-bold">추가공제 4가지, 기본공제에 더해 받기</h2>
                   <p data-speakable>
                     기본공제 150만 원과 별개로, 특정 조건을 만족하면 추가공제를 받을 수 있습니다. 중복 적용도 가능합니다.
                   </p>
 
                   <div className="rounded-lg border border-border-base p-5">
-                    <h3 className="mb-3 font-semibold">1. 경로우대 공제 — 100만 원 (§51 ① 1호)</h3>
+                    <h3 className="mb-3 font-semibold">1. 경로우대 공제, 100만 원 (§51 ① 1호)</h3>
                     <p>
                       본인 또는 배우자·부모·형제자매 중 <strong>만 70세 이상</strong>인 사람에게 추가로 100만 원 공제합니다.
                       2026년 신고 기준 <strong>1956년 이전 출생</strong>.
@@ -416,7 +416,7 @@ export default function PersonalDeductionDependent2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base p-5">
-                    <h3 className="mb-3 font-semibold">2. 장애인 공제 — 200만 원 (§51 ① 2호)</h3>
+                    <h3 className="mb-3 font-semibold">2. 장애인 공제, 200만 원 (§51 ① 2호)</h3>
                     <p>
                       본인 또는 부양가족 중 <strong>장애인 등록</strong>이 되어 있으면 추가로 200만 원 공제합니다(기본공제 150만 별도).
                       장애인 등록증(보건복지부 또는 시군구청 발급)이 필수입니다.
@@ -431,7 +431,7 @@ export default function PersonalDeductionDependent2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base p-5">
-                    <h3 className="mb-3 font-semibold">3. 부녀자 공제 — 50만 원 (§51 ①)</h3>
+                    <h3 className="mb-3 font-semibold">3. 부녀자 공제, 50만 원 (§51 ①)</h3>
                     <p>
                       <strong>배우자가 없고 부양가족이 있는 여성</strong>에게 추가로 50만 원 공제합니다.
                       조건:
@@ -447,7 +447,7 @@ export default function PersonalDeductionDependent2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base p-5">
-                    <h3 className="mb-3 font-semibold">4. 한부모 공제 — 100만 원 (§51 ③)</h3>
+                    <h3 className="mb-3 font-semibold">4. 한부모 공제, 100만 원 (§51 ③)</h3>
                     <p>
                       <strong>배우자가 없고 만 20세 이하 자녀를 부양</strong>하는 경우 추가로 100만 원 공제합니다.
                       조건:

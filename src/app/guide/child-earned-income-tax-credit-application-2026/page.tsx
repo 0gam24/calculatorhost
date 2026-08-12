@@ -167,7 +167,7 @@ export default function ChildEarnedIncomeCreditGuide() {
 
               {/* 2. 자녀장려금 자격·금액 */}
               <section aria-label="자녀장려금" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-semibold">자녀장려금 — 자녀당 100만 원</h2>
+                <h2 className="mb-4 text-2xl font-semibold">자녀장려금, 자녀당 100만 원</h2>
                 <div className="space-y-3 text-text-secondary" data-speakable>
                   <div>
                     <h3 className="font-semibold text-text-primary">자격 요건 (모두 충족)</h3>
@@ -190,7 +190,7 @@ export default function ChildEarnedIncomeCreditGuide() {
 
               {/* 3. 근로장려금 자격·금액 */}
               <section aria-label="근로장려금" className="card border-l-4 border-l-secondary-500">
-                <h2 className="mb-4 text-2xl font-semibold">근로장려금 — 가구 유형별 최대 330만 원</h2>
+                <h2 className="mb-4 text-2xl font-semibold">근로장려금, 가구 유형별 최대 330만 원</h2>
                 <div className="overflow-x-auto" data-speakable>
                   <table className="w-full text-sm">
                     <thead>
@@ -266,7 +266,7 @@ export default function ChildEarnedIncomeCreditGuide() {
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>소득 1원이라도 기준 초과 시 지급액 0원 (점감 X 절대 한도).</li>
-                  <li>자녀 나이는 신청 기한(5월 31일) 기준 — 2008년 1월 1일 이후 출생.</li>
+                  <li>자녀 나이는 신청 기한(5월 31일) 기준, 2008년 1월 1일 이후 출생.</li>
                   <li>재산은 가구원 합산 (배우자·미혼 자녀 명의 포함).</li>
                   <li>본인 명의 통장 미입력 시 환급 지연 또는 불가.</li>
                   <li>5월 31일 이후 정기 신청 불가 (근로소득자만 9월 반기).</li>
@@ -277,11 +277,11 @@ export default function ChildEarnedIncomeCreditGuide() {
               <section aria-label="관련 가이드·계산기" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 가이드·계산기</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link> — 장려금과 동시 신고</li>
+                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link>, 장려금과 동시 신고</li>
                   <li>→ <Link href="/guide/earned-income-tax-credit-vs-child/" className="text-primary-600 underline dark:text-primary-500">근로장려금 vs 자녀세액공제 차이</Link></li>
-                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link> — 본인 소득 정확히 파악</li>
-                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세</Link> — 사업소득 신고</li>
-                  <li>→ <Link href="/calculator/child-tax-credit/" className="text-primary-600 underline dark:text-primary-500">자녀세액공제 계산기</Link> — 별도 세액공제(연말정산)</li>
+                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>, 본인 소득 정확히 파악</li>
+                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세</Link>, 사업소득 신고</li>
+                  <li>→ <Link href="/calculator/child-tax-credit/" className="text-primary-600 underline dark:text-primary-500">자녀세액공제 계산기</Link>, 별도 세액공제(연말정산)</li>
                 </ul>
               </section>
 

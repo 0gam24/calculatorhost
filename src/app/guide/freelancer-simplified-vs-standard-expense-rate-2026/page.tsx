@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '프리랜서 경비율 선택 기준 — 5월 31일까지',
+    title: '프리랜서 경비율 선택 기준, 5월 31일까지',
     description: '단순 vs 기준경비율 세전 손익 시뮬레이션',
   },
 };
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: '간편장부 의무는 매출 얼마부터인가요?',
     answer:
-      '소득세법 시행령 §209 — 사업소득 7,500만 이상이면 장부 비치 의무(간편 이상). 7,500만 미만이면 선택사항. 다만 기준경비율 선택 시 장부 비치 권장(감시 시 실거래 입증 용이).',
+      '소득세법 시행령 §209, 사업소득 7,500만 이상이면 장부 비치 의무(간편 이상). 7,500만 미만이면 선택사항. 다만 기준경비율 선택 시 장부 비치 권장(감시 시 실거래 입증 용이).',
   },
   {
     question: '추계신고와 장부신고는 뭐가 다른가요?',
@@ -148,7 +148,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   프리랜서 단순경비율 vs 기준경비율 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 5월 31일까지 10일, 선택 기준 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 5월 31일까지 10일, 선택 기준 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감까지 정확히 10일 남았습니다. 프리랜서와 1인사업자가 가장 고민하는 것이 바로
@@ -218,7 +218,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
 
               {/* 1. 단순경비율 vs 기준경비율 정의 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 단순경비율 vs 기준경비율 — 기본 개념</h2>
+                <h2 className="text-2xl font-bold">1. 단순경비율 vs 기준경비율, 기본 개념</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   두 경비율의 본질적 차이는 "경비 인정 방식"입니다(소득세법 §79, 시행령 §143~§145). 단순경비율은 국세청이
                   정한 고정 비율을 적용하는 간편 방식입니다. 기준경비율은 주요경비(임차료·급여 등)를 먼저 차감한 후, 추가로
@@ -307,7 +307,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary mb-2">주의: 기준점은 매출 한계선</p>
                   <p>
-                    기준점 이하 (예: 도소매 6,000만 이하)면 단순경비율 의무. 초과 (6,000만 초과)면 "선택지" 생김 — 단순 OR
+                    기준점 이하 (예: 도소매 6,000만 이하)면 단순경비율 의무. 초과 (6,000만 초과)면 "선택지" 생김, 단순 OR
                     기준경비율. 초과했다고 자동으로 기준경비율이 아니라, 신고 시 본인이 선택합니다.
                   </p>
                 </div>
@@ -315,7 +315,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
 
               {/* 3. 실경비 비교로 선택 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 어느 경비율이 더 유리? — 실경비와 비교</h2>
+                <h2 className="text-2xl font-bold">3. 어느 경비율이 더 유리?, 실경비와 비교</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   경비율 선택의 핵심은 "실제 경비액"입니다. 사무실 임차료·장비 구매·통신비·교통비·교육비 등 사업에 쓴
                   실제 금액이 중요합니다.
@@ -388,7 +388,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
 
               {/* 4. 추계신고 vs 장부신고 의무 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 추계신고 vs 장부신고 — 매출 규모와 의무</h2>
+                <h2 className="text-2xl font-bold">4. 추계신고 vs 장부신고, 매출 규모와 의무</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   경비율 선택만이 아니라, 신고 형식도 중요합니다(소득세법 §80~§81). 매출 규모에 따라 장부 비치 의무가 달라집니다.
                 </p>
@@ -475,32 +475,32 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check1" className="mt-1" />
                     <label htmlFor="check1" className="text-text-secondary">
-                      <strong>업종 확인</strong> — 본인 업종의 단순경비율 기준점 확인 (도소매 6,000만 / 강사
+                      <strong>업종 확인</strong>: 본인 업종의 단순경비율 기준점 확인 (도소매 6,000만 / 강사
                       2,400만 등)
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check2" className="mt-1" />
                     <label htmlFor="check2" className="text-text-secondary">
-                      <strong>매출 집계</strong> — 올해 예상 매출액 재확인 (기준점 초과 여부)
+                      <strong>매출 집계</strong>: 올해 예상 매출액 재확인 (기준점 초과 여부)
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check3" className="mt-1" />
                     <label htmlFor="check3" className="text-text-secondary">
-                      <strong>실경비 추정</strong> — 사무실 임차료, 용역비, 통신비, 교육비 합계
+                      <strong>실경비 추정</strong>: 사무실 임차료, 용역비, 통신비, 교육비 합계
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check4" className="mt-1" />
                     <label htmlFor="check4" className="text-text-secondary">
-                      <strong>경비율 선택</strong> — (실경비 &lt; 단순%) → 단순 / (실경비 &gt; 단순%) → 기준
+                      <strong>경비율 선택</strong>: (실경비 &lt; 단순%) → 단순 / (실경비 &gt; 단순%) → 기준
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check5" className="mt-1" />
                     <label htmlFor="check5" className="text-text-secondary">
-                      <strong>계산기 활용</strong> —{' '}
+                      <strong>계산기 활용</strong>: {' '}
                       <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline">
                         프리랜서 종합소득세 계산기
                       </Link>
@@ -510,7 +510,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check6" className="mt-1" />
                     <label htmlFor="check6" className="text-text-secondary">
-                      <strong>공제 빠짐 확인</strong> — 부양가족, 신용카드, 의료비, 교육비 등
+                      <strong>공제 빠짐 확인</strong>: 부양가족, 신용카드, 의료비, 교육비 등
                     </label>
                   </div>
                 </div>
@@ -526,13 +526,13 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                     • <strong>5월 31일(금)</strong> 신고 기한. 주말이므로 다음 영업일 <strong>6월 2일(월)</strong> 자동 연장
                   </li>
                   <li>
-                    • 경비율은 신고 시 선택 — 나중에 변경 불가능. 신고 전 충분히 검토
+                    • 경비율은 신고 시 선택, 나중에 변경 불가능. 신고 전 충분히 검토
                   </li>
                   <li>
                     • 단순경비율 선택해도 거래기록(카드·통장) 5년 보존 필수 (세무조사 대비)
                   </li>
                   <li>
-                    • 매출 7,500만 이상은 간편장부 이상 비치 의무 — 이만원 단위로 기록
+                    • 매출 7,500만 이상은 간편장부 이상 비치 의무, 이만원 단위로 기록
                   </li>
                   <li>
                     • 환급 대상이면 신고하지 않으면 영구 상실 (5년 법정기한 후 청구 불가)
@@ -552,35 +552,35 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 경비율별 세액 즉시 계산
+                    {' '}· 경비율별 세액 즉시 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-tax-late-filing-penalty-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종합소득세 무신고·지연 가산세 2026 정확 계산
                     </Link>
-                    {' '}— 마감 임박 시 자진신고 감면
+                    {' '}· 마감 임박 시 자진신고 감면
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/freelancer-salary-comparison/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 vs 일반직 실수령액 비교
                     </Link>
-                    {' '}— 4대보험·세금 차이
+                    {' '}· 4대보험·세금 차이
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— N잡러 합산 세액
+                    {' '}· N잡러 합산 세액
                   </li>
                 </ul>
               </section>

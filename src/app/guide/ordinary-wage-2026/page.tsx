@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '통상임금 2026 | 정기상여 포함·연장수당 기초' }],
-    title: '통상임금 2026 — 2024 대법 판례 이후 정의·계산·영향',
+    title: '통상임금 2026, 2024 대법 판례 이후 정의·계산·영향',
     description: '정기상여금도 통상임금? 2024.12.19 판례 변경 내용과 실제 급여·수당 계산에 미치는 영향을 완전히 정리했습니다.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '통상임금 2026 — 2024 판례 변경 후 정기상여 포함 여부',
+    title: '통상임금 2026, 2024 판례 변경 후 정기상여 포함 여부',
     description: '통상임금 정의·시간급 계산·재직요건부 상여금 포함 규칙을 다룹니다.',
   },
 };
@@ -100,7 +100,7 @@ export default function OrdinaryWage2026Page() {
     { name: '통상임금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '통상임금 2026 — 2024 대법 판례 이후 정의·계산·영향',
+    headline: '통상임금 2026, 2024 대법 판례 이후 정의·계산·영향',
     description:
       '정기상여금 포함, 시간급 산정, 연장·야간·휴일수당 기초 계산. 근로기준법 §2·§56과 2024.12.19 대법원 전원합의체 판결 내용.',
     url: URL,
@@ -112,7 +112,7 @@ export default function OrdinaryWage2026Page() {
     keywords: ['통상임금', '정기상여금', '판례', '수당 계산', '2024'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '통상임금 2026 — 2024 판례 변경과 실제 계산',
+    name: '통상임금 2026, 2024 판례 변경과 실제 계산',
     description:
       '통상임금의 정확한 정의, 포함 범위, 시간급 계산법, 법정수당 산정 기초.',
     url: URL,
@@ -148,7 +148,7 @@ export default function OrdinaryWage2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   통상임금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 2024 판례 이후 정기상여 포함·수당 기초 변화</span>
+                  <span className="text-2xl text-text-secondary">· 2024 판례 이후 정기상여 포함·수당 기초 변화</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   최근 몇 년간 통상임금에 대한 논란이 계속되고 있습니다. 특히 2024년 12월 19일 대법원 전원합의체 판결에서는 기존의 통상임금 판정 기준을 크게 바꿨습니다. 이제 정기상여금도 통상임금에 포함될 수 있다는 것입니다. 이 변화가 실제로 무엇을 의미하고, 어떻게 계산되며, 급여와 수당에 어떤 영향을 미치는지 완전히 정리해드립니다.
@@ -507,7 +507,7 @@ export default function OrdinaryWage2026Page() {
               </section>
 
               <ShareButtons
-                title="통상임금 2026 — 2024 판례 변경 완벽 가이드"
+                title="통상임금 2026, 2024 판례 변경 완벽 가이드"
                 url={URL}
               />
             </article>

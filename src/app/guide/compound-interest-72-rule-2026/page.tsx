@@ -603,7 +603,7 @@ export default function CompoundInterest72Rule2026Page() {
                     >
                       적금 이자 계산기
                     </Link>{' '}
-                    — 월불입 적금의 만기금액 및 세후 이자 실시간 계산
+, 월불입 적금의 만기금액 및 세후 이자 실시간 계산
                   </li>
                   <li>
                     →{' '}
@@ -613,7 +613,7 @@ export default function CompoundInterest72Rule2026Page() {
                     >
                       정기예금 이자 계산기
                     </Link>{' '}
-                    — 한 번에 맡기는 예금의 만기금액 및 이자
+, 한 번에 맡기는 예금의 만기금액 및 이자
                   </li>
                   <li>
                     →{' '}
@@ -623,7 +623,7 @@ export default function CompoundInterest72Rule2026Page() {
                     >
                       인플레이션과 화폐가치 2026
                     </Link>{' '}
-                    — 명목 수익률 vs 실질 수익률의 차이 이해
+, 명목 수익률 vs 실질 수익률의 차이 이해
                   </li>
                   <li>
                     →{' '}
@@ -633,7 +633,7 @@ export default function CompoundInterest72Rule2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 대출금의 원리금균등 상환액 및 총이자
+, 대출금의 원리금균등 상환액 및 총이자
                   </li>
                   <li>
                     →{' '}
@@ -643,7 +643,7 @@ export default function CompoundInterest72Rule2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

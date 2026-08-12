@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: 'DSR·DTI·LTV 차이와 계산법 2026 — 헷갈리는 대출 3대 지표 정리',
+  title: 'DSR·DTI·LTV 차이와 계산법 2026, 헷갈리는 대출 3대 지표 정리',
   description:
     'DSR·DTI·LTV 세 대출 규제 지표의 정의와 차이를 명확히 정리합니다. 각 지표 계산 공식, 한도 기준, 실제 대출한도 결정 방식을 사례로 설명. 2026년 기준 최신 정보.',
   keywords: [
@@ -577,7 +577,7 @@ export default function DsrDtiLtvDifference2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 주담대·전세자금대출 최대 한도 실시간 확인
+, 주담대·전세자금대출 최대 한도 실시간 확인
                   </li>
                   <li>
                     →{' '}
@@ -587,7 +587,7 @@ export default function DsrDtiLtvDifference2026Page() {
                     >
                       LTV 계산법 2026
                     </Link>{' '}
-                    — 담보인정비율의 정의, 공식, 대출가능액 역산
+, 담보인정비율의 정의, 공식, 대출가능액 역산
                   </li>
                   <li>
                     →{' '}
@@ -597,7 +597,7 @@ export default function DsrDtiLtvDifference2026Page() {
                     >
                       DSR 대출한도 늘리는 5가지 방법
                     </Link>{' '}
-                    — 신용대출 상환, 소득 합산 등 한도 확보 전략
+, 신용대출 상환, 소득 합산 등 한도 확보 전략
                   </li>
                   <li>
                     →{' '}
@@ -607,7 +607,7 @@ export default function DsrDtiLtvDifference2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액 및 총이자
+, 원리금균등·만기일시별 월 상환액 및 총이자
                   </li>
                   <li>
                     →{' '}
@@ -617,7 +617,7 @@ export default function DsrDtiLtvDifference2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

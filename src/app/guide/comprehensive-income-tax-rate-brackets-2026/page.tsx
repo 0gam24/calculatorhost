@@ -139,7 +139,7 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합소득세율 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 8단계 누진세 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 8단계 누진세 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   한국의 종합소득세는 8단계 누진 구조입니다. 같은 수입도 과세표준이 달라지면 세율이 확 달라지고, 누진공제를 빼먹으면

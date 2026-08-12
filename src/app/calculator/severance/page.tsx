@@ -225,7 +225,7 @@ export default function SeverancePage() {
               {/* 계산기 폼 */}
               <SeveranceCalculator />
 
-              {/* FAQ (중간 배치 — GEO 최적화) */}
+              {/* FAQ (중간 배치, GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
               {/* 왜 근속연수공제가 있는가 (GEO 해설) */}
@@ -497,7 +497,7 @@ export default function SeverancePage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 근로기준법 §34 (퇴직급여)
+                      국가법령정보센터, 근로기준법 §34 (퇴직급여)
                     </a>
                   </li>
                   <li>
@@ -507,7 +507,7 @@ export default function SeverancePage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 근로자퇴직급여 보장법
+                      국가법령정보센터, 근로자퇴직급여 보장법
                     </a>
                   </li>
                   <li>
@@ -517,7 +517,7 @@ export default function SeverancePage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      고용노동부 — 퇴직금·퇴직연금 제도 안내
+                      고용노동부, 퇴직금·퇴직연금 제도 안내
                     </a>
                   </li>
                   <li>
@@ -527,7 +527,7 @@ export default function SeverancePage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      근로복지공단 — 퇴직연금 가입정보 조회
+                      근로복지공단, 퇴직연금 가입정보 조회
                     </a>
                   </li>
                   <li>
@@ -537,7 +537,7 @@ export default function SeverancePage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 퇴직소득세 계산·신고
+                      국세청 홈택스, 퇴직소득세 계산·신고
                     </a>
                   </li>
                 </ul>

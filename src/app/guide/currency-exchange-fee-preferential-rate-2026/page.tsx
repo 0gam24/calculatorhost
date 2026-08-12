@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '환전 수수료·환율 우대율 계산 2026 — 매매기준율·스프레드 완전정리',
+  title: '환전 수수료·환율 우대율 계산 2026, 매매기준율·스프레드 완전정리',
   description:
     '환전할 때 "우대 90%"가 실제로 얼마를 절약하는지, 매매기준율·현찰 스프레드·우대율의 의미와 계산법을 공식으로 설명합니다. 해외 송금과 현찰의 차이도 정리.',
   keywords: [
@@ -288,7 +288,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
 
               <section className="space-y-4">
                 <h2 className="border-b border-border-base pb-2 text-2xl font-bold">
-                  현찰 스프레드 — 은행의 수수료
+                  현찰 스프레드, 은행의 수수료
                 </h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   현찰 스프레드(spread)는 은행이 현찰 때문에 발생하는 비용을 고객에게 전가하는
@@ -496,19 +496,19 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>
-                      <strong>1순위: 전신환(해외 송금)</strong> — 스프레드 0.5~1%, 수수료 별도
+                      <strong>1순위: 전신환(해외 송금)</strong>: 스프레드 0.5~1%, 수수료 별도
                       (대액 송금이나 미리 계획된 거래)
                     </li>
                     <li>
-                      <strong>2순위: 현찰 + 우대율 최대</strong> — 여행 1주 전부터 은행들 비교,
+                      <strong>2순위: 현찰 + 우대율 최대</strong>: 여행 1주 전부터 은행들 비교,
                       은행 모바일 앱의 환전 우대 쿠폰 활용
                     </li>
                     <li>
-                      <strong>3순위: 해외 ATM</strong> — 신용카드·체크카드로 현지 ATM 인출 (환율
+                      <strong>3순위: 해외 ATM</strong>: 신용카드·체크카드로 현지 ATM 인출 (환율
                       양호, 수수료 1~2만 원)
                     </li>
                     <li>
-                      <strong>4순위: 신용카드</strong> — 현지 카드 결제 (환율 양호하나 카드 수수료
+                      <strong>4순위: 신용카드</strong>: 현지 카드 결제 (환율 양호하나 카드 수수료
                       가능)
                     </li>
                     <li>
@@ -572,7 +572,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                     >
                       환율 계산기
                     </Link>{' '}
-                    — 실시간 환율 및 환전 비용 계산
+, 실시간 환율 및 환전 비용 계산
                   </li>
                   <li>
                     →{' '}
@@ -582,7 +582,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기
+, 대출, 예금, 적금, 환율 관련 모든 계산기
                   </li>
                   <li>
                     →{' '}
@@ -592,7 +592,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                     >
                       전체 가이드 목록
                     </Link>{' '}
-                    — 금융, 세금, 부동산 관련 실용 정보
+, 금융, 세금, 부동산 관련 실용 정보
                   </li>
                 </ul>
               </section>

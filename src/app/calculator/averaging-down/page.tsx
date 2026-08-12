@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '물타기 계산기 2026 — 주식·코인 평균단가·추매',
+    title: '물타기 계산기 2026, 주식·코인 평균단가·추매',
     description:
       '보유분 + 추가 매수(추매)로 새 평균단가 계산, 목표 단가 역산으로 필요 분할매수 수량까지 즉시 분석.',
     url: URL,
@@ -516,7 +516,7 @@ export default function AveragingDownPage() {
                     <h3 className="mb-3 font-semibold text-text-primary">주식 물타기</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li><strong>수량 단위</strong>: 정수(주). 소수점 매수 불가(일부 미국주식 소수점 거래 예외)</li>
-                      <li><strong>거래 시간</strong>: 정규장(09:00–15:30). 시간외 단일가 보조</li>
+                      <li><strong>거래 시간</strong>: 정규장(09:00~15:30). 시간외 단일가 보조</li>
                       <li><strong>거래 비용</strong>: 매수 수수료 0.015%대 + <strong>매도 시 증권거래세 0.18%</strong></li>
                       <li><strong>일일 변동폭</strong>: 상·하한 ±30% 제한</li>
                       <li><strong>회복 주기</strong>: 비교적 길고 펀더멘털 재평가까지 시간 필요</li>
@@ -543,7 +543,7 @@ export default function AveragingDownPage() {
 
               {/* 추매(추가 매수) 용어 정리 */}
               <section aria-label="추매란" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">추매(추가 매수) 계산기 — 용어 정리</h2>
+                <h2 className="mb-4 text-2xl font-semibold">추매(추가 매수) 계산기, 용어 정리</h2>
                 <p className="mb-4 text-text-secondary">
                   <strong>추매</strong>는 "추가 매수"의 줄임말로, 보유 중인 종목을 더 사는
                   모든 거래를 통칭합니다. 검색에서 "추매계산기"는 일반적으로 다음 두 가지

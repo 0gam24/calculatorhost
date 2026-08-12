@@ -87,7 +87,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
     { name: '금융소득 종합과세 vs 분리과세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '금융소득 종합과세 vs 분리과세 2026 — 2000만원 기준 완벽 정리',
+    headline: '금융소득 종합과세 vs 분리과세 2026, 2000만원 기준 완벽 정리',
     description:
       '금융소득 2000만원 기준·종합과세 vs 분리과세 비교 과세·세금 계산·배당세액공제·5월 신고 절차·함정 5가지.',
     url: URL,
@@ -131,7 +131,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  금융소득 종합과세 vs 분리과세 2026 — 2000만원 기준
+                  금융소득 종합과세 vs 분리과세 2026, 2000만원 기준
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   은행 이자, 주식 배당금, ETF 수익 등 금융소득의 세금이 언제 종합과세되고 언제 분리과세되는지 정확히 알아야
@@ -272,7 +272,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
 
               {/* 4. 실제 시뮬레이션 사례 */}
               <section aria-label="시뮬레이션 사례" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 — 3가지 시나리오</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례, 3가지 시나리오</h2>
 
                 {/* 사례 A */}
                 <div className="mb-8 rounded-lg bg-bg-card p-4">
@@ -368,7 +368,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
 
               {/* 5. 배당세액공제 (Gross-up) */}
               <section aria-label="배당세액공제" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">배당세액공제 (Gross-up) — 왜 배당소득이 유리한가</h2>
+                <h2 className="mb-4 text-2xl font-semibold">배당세액공제 (Gross-up), 왜 배당소득이 유리한가</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   배당소득이 종합과세될 때만 적용되는 <strong>배당세액공제</strong>가 핵심입니다. 이것이 때로는 종합과세를 더
                   유리하게 만들어줍니다(소득세법 §56).
@@ -412,7 +412,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
 
               {/* 6. 5월 31일 신고 절차 */}
               <section aria-label="신고 절차" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">5월 신고 절차 — 언제 어디서 신고하나</h2>
+                <h2 className="mb-4 text-2xl font-semibold">5월 신고 절차, 언제 어디서 신고하나</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   금융소득이 2000만원을 초과하면 <strong>5월 31일까지</strong> 종합소득세를 확정신고해야 합니다(소득세법 §70).
                 </p>
@@ -548,7 +548,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
 
                   <div className="rounded-lg bg-bg-card p-3">
                     <p className="mb-1">
-                      <strong className="text-text-primary">팁 4: 세무사 상담 — 2000만원 근처라면 필수</strong>
+                      <strong className="text-text-primary">팁 4: 세무사 상담, 2000만원 근처라면 필수</strong>
                     </p>
                     <p>
                       금융소득이 2000만원에 근접하거나 배당금과 이자금이 혼합되어 있다면, 개인 계산보다 세무사 상담이 저렴할 수
@@ -576,28 +576,28 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>
-                    → <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link> — 근로소득세와 4대보험 자동 계산
+                    → <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>, 근로소득세와 4대보험 자동 계산
                   </li>
                   <li>
-                    → <Link href="/calculator/savings/" className="text-primary-600 underline dark:text-primary-500">적금 이자 계산기</Link> — 이자소득 세후 계산
+                    → <Link href="/calculator/savings/" className="text-primary-600 underline dark:text-primary-500">적금 이자 계산기</Link>, 이자소득 세후 계산
                   </li>
                   <li>
-                    → <Link href="/calculator/deposit/" className="text-primary-600 underline dark:text-primary-500">정기예금 이자 계산기</Link> — 예금 이자와 세금
+                    → <Link href="/calculator/deposit/" className="text-primary-600 underline dark:text-primary-500">정기예금 이자 계산기</Link>, 예금 이자와 세금
                   </li>
                   <li>
-                    → <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 완벽 정리</Link> — 전체 절차 및 기한
+                    → <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 완벽 정리</Link>, 전체 절차 및 기한
                   </li>
                   <li>
-                    → <Link href="/guide/february-tax-refund-tracking/" className="text-primary-600 underline dark:text-primary-500">2월 환급금 조회 방법</Link> — 신고 후 환급 받기
+                    → <Link href="/guide/february-tax-refund-tracking/" className="text-primary-600 underline dark:text-primary-500">2월 환급금 조회 방법</Link>, 신고 후 환급 받기
                   </li>
                   <li>
-                    → <Link href="/guide/foreign-tax-credit-overseas-stock-2026/" className="text-primary-600 underline dark:text-primary-500">해외주식 외국납부세액공제 2026</Link> — 해외 배당·이자도 금융소득 2,000만 원 판정에 포함
+                    → <Link href="/guide/foreign-tax-credit-overseas-stock-2026/" className="text-primary-600 underline dark:text-primary-500">해외주식 외국납부세액공제 2026</Link>, 해외 배당·이자도 금융소득 2,000만 원 판정에 포함
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="금융소득 종합과세 vs 분리과세 2026 — 2000만원 기준"
+                title="금융소득 종합과세 vs 분리과세 2026, 2000만원 기준"
                 url={URL}
                 description="금융소득 2000만원 기준·종합 vs 분리 과세·세금 계산·배당세액공제·함정 5가지."
               />
@@ -609,7 +609,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §14 ⑦ (금융소득의 종합소득 합산 기준) · §16 (이자소득) · §17 (배당소득)
-                  · §55 (종합소득세율) · §56 (배당세액공제) · §62 (비교과세) · §70 ① (종합소득세 확정신고 — 5월 31일) ·
+                  · §55 (종합소득세율) · §56 (배당세액공제) · §62 (비교과세) · §70 ① (종합소득세 확정신고, 5월 31일) ·
                   지방세법 §103의2 (지방소득세 10% 부가) · 국세기본법 §47의2 (무신고 가산세). 참고:{' '}
                   <a
                     href="https://www.law.go.kr"

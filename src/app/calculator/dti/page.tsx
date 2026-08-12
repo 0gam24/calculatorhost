@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'DTI 계산기 2026 — LTV·DSR 통합 대출한도 계산' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'DTI 계산기 2026, LTV·DSR 통합 대출한도 계산' }],
     title: 'DTI 계산기 2026 | LTV·DSR 함께 계산',
     description: 'DTI 공식 + 한도 자동 계산.',
     url: URL,
@@ -230,13 +230,13 @@ DTI 한도 (2026):
                   계산 결과가 한도 안쪽이어도, 같은 차주의{' '}
                   <TermTooltip
                     term="DSR"
-                    definition="총부채원리금상환비율 — 연소득 대비 '모든 대출'의 연간 원리금 상환액 비율. 은행 40%, 제2금융권 50% 한도."
+                    definition="총부채원리금상환비율, 연소득 대비 '모든 대출'의 연간 원리금 상환액 비율. 은행 40%, 제2금융권 50% 한도."
                     href="/glossary/#dsr"
                   />
                   ·
                   <TermTooltip
                     term="LTV"
-                    definition="담보인정비율 — 담보(주택) 가치 대비 대출금 비율. 지역·실수요 여부에 따라 50~80% 한도."
+                    definition="담보인정비율, 담보(주택) 가치 대비 대출금 비율. 지역·실수요 여부에 따라 50~80% 한도."
                     href="/glossary/#ltv"
                   />{' '}
                   가 더 빠듯하면 실 한도는 DSR·LTV 기준으로 결정됩니다. 통합 계산기를 통해 결정적
@@ -251,22 +251,22 @@ DTI 한도 (2026):
                 </p>
                 <ol className="space-y-3 text-sm">
                   <li>
-                    <strong>1단계: 연소득 확인</strong> — 근로자는 최근 연봉 또는 원천징수영수증 기준(세전), 사업소득자는 소득세 신고액(최근 2년 평균 또는 기하평균 적용 가능).
+                    <strong>1단계: 연소득 확인</strong>: 근로자는 최근 연봉 또는 원천징수영수증 기준(세전), 사업소득자는 소득세 신고액(최근 2년 평균 또는 기하평균 적용 가능).
                   </li>
                   <li>
-                    <strong>2단계: 신규 대출 월 원리금 확인</strong> — 신청할 주택담보대출의 금리·기간·상환방식을 토대로 월 원리금 계산. 원리금균등상환식이 표준. (본 사이트 대출이자 계산기 참조)
+                    <strong>2단계: 신규 대출 월 원리금 확인</strong>: 신청할 주택담보대출의 금리·기간·상환방식을 토대로 월 원리금 계산. 원리금균등상환식이 표준. (본 사이트 대출이자 계산기 참조)
                   </li>
                   <li>
-                    <strong>3단계: 신규 대출 연 원리금 계산</strong> — 월 원리금 × 12개월.
+                    <strong>3단계: 신규 대출 연 원리금 계산</strong>: 월 원리금 × 12개월.
                   </li>
                   <li>
-                    <strong>4단계: 기존 대출 연이자 합산</strong> — 현재 보유한 모든 대출(신용대출, 전세자금대출, 카드론 등)의 연간 이자 합계. 약 평균금리로 계산하거나 차주가 직접 은행에서 조회한 값 사용.
+                    <strong>4단계: 기존 대출 연이자 합산</strong>: 현재 보유한 모든 대출(신용대출, 전세자금대출, 카드론 등)의 연간 이자 합계. 약 평균금리로 계산하거나 차주가 직접 은행에서 조회한 값 사용.
                   </li>
                   <li>
-                    <strong>5단계: DTI 비율 계산</strong> — (신규 연 원리금 + 기존 연 이자) ÷ 연소득 × 100. 결과가 지역별 한도(40% 또는 50%) 이하면 DTI 통과.
+                    <strong>5단계: DTI 비율 계산</strong>: (신규 연 원리금 + 기존 연 이자) ÷ 연소득 × 100. 결과가 지역별 한도(40% 또는 50%) 이하면 DTI 통과.
                   </li>
                   <li>
-                    <strong>6단계: DSR·LTV와 함께 확인</strong> — DTI 한도를 통과했어도, DSR이나 LTV가 더 빠듯하면 그것이 실 한도가 됨. 본 사이트 통합 계산기에서 3개 규제를 동시 검토 권장.
+                    <strong>6단계: DSR·LTV와 함께 확인</strong>: DTI 한도를 통과했어도, DSR이나 LTV가 더 빠듯하면 그것이 실 한도가 됨. 본 사이트 통합 계산기에서 3개 규제를 동시 검토 권장.
                   </li>
                 </ol>
               </section>
@@ -373,7 +373,7 @@ DTI 한도 (2026):
                       rel="noopener noreferrer nofollow"
                       className="text-primary-500 hover:underline"
                     >
-                      금융감독원 — 주택담보대출 DTI/DSR 규제 안내
+                      금융감독원, 주택담보대출 DTI/DSR 규제 안내
                     </a>
                   </li>
                   <li>
@@ -383,7 +383,7 @@ DTI 한도 (2026):
                       rel="noopener noreferrer nofollow"
                       className="text-primary-500 hover:underline"
                     >
-                      법령정보센터 — 은행법 시행령 §24의4 (DSR 기준)
+                      법령정보센터, 은행법 시행령 §24의4 (DSR 기준)
                     </a>
                   </li>
                 </ul>

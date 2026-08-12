@@ -165,11 +165,11 @@ export default function DsrLoanLimitTipsPage() {
                   핵심 요약
                 </h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>① <strong>신용대출 먼저 상환</strong> — DSR에 가장 무겁게 잡힘</li>
-                  <li>② <strong>맞벌이 공동명의로 소득 합산</strong> — 한도 50~80% 증가</li>
-                  <li>③ <strong>고정금리 대출 선택</strong> — 스트레스 DSR 가산 없음</li>
-                  <li>④ <strong>대환으로 만기 연장</strong> — 월 상환액 축소 = DSR 여유</li>
-                  <li>⑤ <strong>금융기관 변경</strong> — 2금융권 DSR 50% (단, 금리 ↑)</li>
+                  <li>① <strong>신용대출 먼저 상환</strong>: DSR에 가장 무겁게 잡힘</li>
+                  <li>② <strong>맞벌이 공동명의로 소득 합산</strong>: 한도 50~80% 증가</li>
+                  <li>③ <strong>고정금리 대출 선택</strong>: 스트레스 DSR 가산 없음</li>
+                  <li>④ <strong>대환으로 만기 연장</strong>: 월 상환액 축소 = DSR 여유</li>
+                  <li>⑤ <strong>금융기관 변경</strong>: 2금융권 DSR 50% (단, 금리 ↑)</li>
                 </ul>
               </section>
 
@@ -179,7 +179,7 @@ export default function DsrLoanLimitTipsPage() {
                   DSR은 모든 금융권 대출의 연 원리금을 합산해 연소득으로 나눈 비율입니다.
                   신용대출은 만기가 짧아(대개 1~5년) 연 원리금이 큰 비중을 차지합니다.
                   같은 1,000만 원이라도 5년 신용대출은 연 222만 원, 30년 주담대는
-                  연 70만 원 수준 — DSR 영향이 3배 차이입니다.
+                  연 70만 원 수준, DSR 영향이 3배 차이입니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
                   <strong>실행 우선순위</strong>: ① 카드론·현금서비스(고금리·짧은 만기) →
@@ -217,7 +217,7 @@ export default function DsrLoanLimitTipsPage() {
                 <p className="text-text-secondary leading-relaxed">
                   <strong>주의</strong>: 공동 차주는 한 명의 신용 문제가 다른 한 명에게도
                   영향(연체, 신용도 하락). 또한 이혼·사별 시 채무 분할 협의 필요. 하지만 한도
-                  확보 효과는 강력 — 부부 합산이면 단독 대비 한도 50~80% 증가로 소위 '조정지역 우회' 효과도 있습니다.
+                  확보 효과는 강력, 부부 합산이면 단독 대비 한도 50~80% 증가로 소위 '조정지역 우회' 효과도 있습니다.
                 </p>
               </section>
 
@@ -229,7 +229,7 @@ export default function DsrLoanLimitTipsPage() {
                 </p>
                 <p className="text-text-secondary leading-relaxed">
                   같은 4.0% 금리에서 고정 vs 변동을 비교하면, 고정은 DSR 산정 금리 4.0%,
-                  변동은 5.5% — 같은 한도를 받으려면 변동이 약 15~20% 더 작은 대출로
+                  변동은 5.5%, 같은 한도를 받으려면 변동이 약 15~20% 더 작은 대출로
                   잡힙니다. 단, 고정금리는 통상 변동보다 0.3~0.5%p 더 비싸 장기 총
                   이자비용 비교는 별도 필요.
                 </p>
@@ -252,7 +252,7 @@ export default function DsrLoanLimitTipsPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">방법 5. 금융기관 변경 (1금융 → 2금융)</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  은행 DSR 40% 대비 2금융권(저축은행·캐피탈·카드사) 50% — +10%p 여유.
+                  은행 DSR 40% 대비 2금융권(저축은행·캐피탈·카드사) 50%, +10%p 여유.
                   같은 연소득 1억 원이면 은행 4,000만 원 vs 2금융권 5,000만 원 (연 원리금 기준).
                 </p>
                 <p className="text-text-secondary leading-relaxed">
@@ -286,35 +286,35 @@ export default function DsrLoanLimitTipsPage() {
                     <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 본 가이드의 모든 시나리오를 직접 시뮬레이션
+, 본 가이드의 모든 시나리오를 직접 시뮬레이션
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/dsr-regulation-zones/" className="text-primary-600 underline dark:text-primary-500">
                       DSR·LTV 규제지역 가이드
                     </Link>{' '}
-                    — 조정대상지역·투기과열지구별 한도 차이
+, 조정대상지역·투기과열지구별 한도 차이
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액 계산
+, 원리금균등·만기일시별 월 상환액 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/interest-rate-hike-dsr-loan-limit-july-2026/" className="text-primary-600 underline dark:text-primary-500">
                       7월 금리 인상과 DSR 대출한도 2026
                     </Link>{' '}
-                    — 금리가 오르면 한도가 얼마나 줄어드는지 시나리오 분석
+, 금리가 오르면 한도가 얼마나 줄어드는지 시나리오 분석
                   </li>
                   <li>
                     →{' '}
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
                       금융 용어사전
                     </Link>{' '}
-                    — DSR·LTV·DTI·스트레스 DSR 정의
+, DSR·LTV·DTI·스트레스 DSR 정의
                   </li>
                 </ul>
               </section>

@@ -70,7 +70,7 @@ const FAQ_ITEMS = [
   {
     question: '단순경비율과 기준경비율 어느 쪽을 선택해야 하나요?',
     answer:
-      '매출 7,500만 원 미만은 단순경비율 자동 적용 (영수증 없이 업종별 비율 인정). 7,500만~3억은 둘 다 선택 가능 — 실제 경비가 단순경비율보다 크면 기준경비율(영수증 입증) 유리. 3억 초과는 기준경비율 의무. IT 64.1%, 컨설팅 70.1%, 디자인 70%대로 단순경비율이 높은 업종은 영수증 관리 부담 없이 단순경비율 권장.',
+      '매출 7,500만 원 미만은 단순경비율 자동 적용 (영수증 없이 업종별 비율 인정). 7,500만~3억은 둘 다 선택 가능, 실제 경비가 단순경비율보다 크면 기준경비율(영수증 입증) 유리. 3억 초과는 기준경비율 의무. IT 64.1%, 컨설팅 70.1%, 디자인 70%대로 단순경비율이 높은 업종은 영수증 관리 부담 없이 단순경비율 권장.',
   },
   {
     question: '직장인이 부업·프리랜서 소득이 있으면 어떻게 신고하나요?',
@@ -85,7 +85,7 @@ const FAQ_ITEMS = [
   {
     question: '종합소득세 절세 핵심 5가지는?',
     answer:
-      '①노란우산공제 — 연 500만 원까지 소득공제 (소상공인·자영업자) ②연금저축·IRP — 연 700만 원 한도 세액공제 13.2~16.5% ③의료비·교육비 — 신용카드 사용 시 추가 공제 ④기부금 — 정치자금·법정기부금 100% 세액공제 ⑤주택자금 공제 — 무주택자 월세 세액공제 17%. 5가지 합산 시 50만~200만 원 절세 가능.',
+      '①노란우산공제, 연 500만 원까지 소득공제 (소상공인·자영업자) ②연금저축·IRP, 연 700만 원 한도 세액공제 13.2~16.5% ③의료비·교육비, 신용카드 사용 시 추가 공제 ④기부금, 정치자금·법정기부금 100% 세액공제 ⑤주택자금 공제, 무주택자 월세 세액공제 17%. 5가지 합산 시 50만~200만 원 절세 가능.',
   },
   {
     question: '종합소득세 환급은 언제 받을 수 있나요?',
@@ -95,7 +95,7 @@ const FAQ_ITEMS = [
   {
     question: '신고 안 하면 어떻게 되나요?',
     answer:
-      '① 무신고가산세 20% (소득 자체가 큰 경우 40%) ② 납부지연가산세 일 0.022% (연 약 8%) ③ 환급 대상이라도 환급 못 받음 ④ 5년간 추징 가능 (국세기본법 §26의2). 부업으로 소액(연 100만 원)이라도 신고는 필수. 무지가 면책 사유 아님 — 모르고 안 한 경우도 가산세 부과.',
+      '① 무신고가산세 20% (소득 자체가 큰 경우 40%) ② 납부지연가산세 일 0.022% (연 약 8%) ③ 환급 대상이라도 환급 못 받음 ④ 5년간 추징 가능 (국세기본법 §26의2). 부업으로 소액(연 100만 원)이라도 신고는 필수. 무지가 면책 사유 아님, 모르고 안 한 경우도 가산세 부과.',
   },
 ] as const;
 
@@ -106,7 +106,7 @@ export default function MayComprehensiveIncomeTaxPage() {
     { name: '5월 종합소득세 신고 완벽 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '5월 종합소득세 신고 완벽 가이드 (2026) — 프리랜서·사업자·N잡러 필독',
+    headline: '5월 종합소득세 신고 완벽 가이드 (2026), 프리랜서·사업자·N잡러 필독',
     description:
       '2026년 5월 종합소득세 신고 시즌 가이드. 신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법.',
     url: URL,
@@ -184,7 +184,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   5월 종합소득세 신고 완벽 가이드 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">— 프리랜서·사업자·N잡러 필독</span>
+                  <span className="text-2xl text-text-secondary">· 프리랜서·사업자·N잡러 필독</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 5월 1일~31일은 종합소득세 신고 시즌입니다. 프리랜서·1인사업자·N잡러·임대인·강사 등
@@ -252,7 +252,7 @@ export default function MayComprehensiveIncomeTaxPage() {
 
               {/* 1. 종합소득세란? */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 종합소득세란? — 누가 신고해야 하나</h2>
+                <h2 className="text-2xl font-bold">1. 종합소득세란?, 누가 신고해야 하나</h2>
                 <p className="text-text-secondary leading-relaxed">
                   종합소득세는 한 해 동안 발생한 6가지 종합과세 대상 소득을 합산해 누진세율(6~45%)로
                   과세하는 국세입니다. 매년 5월 한 달간 본인이 직접 신고·납부합니다 (소득세법 §70).
@@ -260,12 +260,12 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="mb-2 font-semibold text-text-primary">종합과세 대상 소득 6종</h3>
                   <ol className="text-sm text-text-secondary space-y-1.5">
-                    <li><strong>① 근로소득</strong> — 직장에서 받는 월급·연봉. 직장에서 연말정산 끝났어도 N잡러는 합산 신고.</li>
-                    <li><strong>② 사업소득</strong> — 프리랜서·1인사업자·임대업·강사료(연 300만 원 초과). 가장 많은 신고 대상.</li>
-                    <li><strong>③ 이자소득</strong> — 예적금·채권 이자. 연 2,000만 원 초과 시 종합과세 (이하 분리과세 15.4%).</li>
-                    <li><strong>④ 배당소득</strong> — 주식 배당금. 연 2,000만 원 초과 시 종합과세.</li>
-                    <li><strong>⑤ 연금소득</strong> — 사적연금(연금저축·IRP 수령액). 연 1,500만 원 초과 종합과세 vs 분리과세 16.5% 선택.</li>
-                    <li><strong>⑥ 기타소득</strong> — 강의료·원고료·경품·복권 당첨금. 연 300만 원 초과 시 종합과세 의무.</li>
+                    <li><strong>① 근로소득</strong>: 직장에서 받는 월급·연봉. 직장에서 연말정산 끝났어도 N잡러는 합산 신고.</li>
+                    <li><strong>② 사업소득</strong>: 프리랜서·1인사업자·임대업·강사료(연 300만 원 초과). 가장 많은 신고 대상.</li>
+                    <li><strong>③ 이자소득</strong>: 예적금·채권 이자. 연 2,000만 원 초과 시 종합과세 (이하 분리과세 15.4%).</li>
+                    <li><strong>④ 배당소득</strong>: 주식 배당금. 연 2,000만 원 초과 시 종합과세.</li>
+                    <li><strong>⑤ 연금소득</strong>: 사적연금(연금저축·IRP 수령액). 연 1,500만 원 초과 종합과세 vs 분리과세 16.5% 선택.</li>
+                    <li><strong>⑥ 기타소득</strong>: 강의료·원고료·경품·복권 당첨금. 연 300만 원 초과 시 종합과세 의무.</li>
                   </ol>
                 </div>
                 <p className="text-text-secondary leading-relaxed">
@@ -276,17 +276,17 @@ export default function MayComprehensiveIncomeTaxPage() {
 
               {/* 2. 신고 대상 사례 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 신고 대상 사례 — 본인이 해당하는지 확인</h2>
+                <h2 className="text-2xl font-bold">2. 신고 대상 사례, 본인이 해당하는지 확인</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">신고 의무 (반드시 5월 신고)</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
-                      <li>• 프리랜서 (3.3% 원천징수 받은 모든 분야 — IT·디자인·강사·작가·통번역 등)</li>
+                      <li>• 프리랜서 (3.3% 원천징수 받은 모든 분야, IT·디자인·강사·작가·통번역 등)</li>
                       <li>• 1인사업자·소상공인 (음식점·소매·온라인쇼핑몰 등)</li>
-                      <li>• 임대인 (주택·상가 임대료 — 연 2,000만 원 초과는 의무, 이하는 분리과세 선택 가능)</li>
-                      <li>• N잡러 (직장 + 부업 모두 — 부업 소득 1원이라도 발생 시)</li>
-                      <li>• 강사·강연자 (학원·기업 강사료, 세미나 등 — 연 300만 원 초과)</li>
-                      <li>• 작가·창작자 (원고료·인세 — 연 300만 원 초과)</li>
+                      <li>• 임대인 (주택·상가 임대료, 연 2,000만 원 초과는 의무, 이하는 분리과세 선택 가능)</li>
+                      <li>• N잡러 (직장 + 부업 모두, 부업 소득 1원이라도 발생 시)</li>
+                      <li>• 강사·강연자 (학원·기업 강사료, 세미나 등, 연 300만 원 초과)</li>
+                      <li>• 작가·창작자 (원고료·인세, 연 300만 원 초과)</li>
                       <li>• 이자·배당소득 연 2,000만 원 초과자</li>
                       <li>• 사적연금 수령액 연 1,500만 원 초과자</li>
                     </ul>
@@ -310,7 +310,7 @@ export default function MayComprehensiveIncomeTaxPage() {
 
               {/* 3. 단순경비율 vs 기준경비율 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 단순경비율 vs 기준경비율 — 어느 쪽이 유리?</h2>
+                <h2 className="text-2xl font-bold">3. 단순경비율 vs 기준경비율, 어느 쪽이 유리?</h2>
                 <p className="text-text-secondary leading-relaxed">
                   사업소득의 경우 매출에서 경비를 빼고 소득금액을 산정합니다. 경비 인정 방식 2가지:
                 </p>
@@ -389,9 +389,9 @@ export default function MayComprehensiveIncomeTaxPage() {
                     <p className="text-text-secondary">
                       상단 "신고/납부" → "종합소득세" → "신고/납부" 클릭.
                       <br />
-                      <strong>모두채움 신고</strong> (단순경비율 대상자 권장 — 자동 채움)
+                      <strong>모두채움 신고</strong> (단순경비율 대상자 권장, 자동 채움)
                       <br />
-                      <strong>일반 신고</strong> (기준경비율·복잡한 케이스 — 직접 입력)
+                      <strong>일반 신고</strong> (기준경비율·복잡한 케이스, 직접 입력)
                     </p>
                   </li>
                   <li className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -419,7 +419,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                   <li className="rounded-lg border border-border-base bg-bg-card p-4">
                     <strong className="text-text-primary block mb-1">Step 6. 납부 또는 환급 통장 입력</strong>
                     <p className="text-text-secondary">
-                      <strong>추가 납부</strong>: 신용카드(0.8% 수수료) / 계좌이체 / 가상계좌 — 5월 31일까지<br />
+                      <strong>추가 납부</strong>: 신용카드(0.8% 수수료) / 계좌이체 / 가상계좌, 5월 31일까지<br />
                       <strong>환급</strong>: 본인 명의 통장 정확히 입력 → 6월 말~7월 초 입금
                     </p>
                   </li>
@@ -428,17 +428,17 @@ export default function MayComprehensiveIncomeTaxPage() {
 
               {/* 5. 절세 5가지 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 절세 핵심 5가지 — 합산 50만~200만 원 절감</h2>
+                <h2 className="text-2xl font-bold">5. 절세 핵심 5가지, 합산 50만~200만 원 절감</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">① 노란우산공제 — 소상공인·자영업자 필수</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">① 노란우산공제, 소상공인·자영업자 필수</h3>
                     <p className="text-sm text-text-secondary">
                       연 500만 원까지 소득공제. 소득금액 4,000만 이하 500만, 4,000만~1억 300만, 1억 초과 200만 한도.
                       절세 + 노후 대비. <strong>중소기업중앙회 신청</strong>. 이미 가입자도 5월 신고 시 자동 반영.
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">② 연금저축·IRP — 세액공제 13.2~16.5%</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">② 연금저축·IRP, 세액공제 13.2~16.5%</h3>
                     <p className="text-sm text-text-secondary">
                       연 700만 원 한도(연금저축 600만 + IRP 추가 100만). 종합소득금액 5,500만 이하 16.5%, 초과 13.2%.
                       예: 700만 납입 → 약 92~115만 원 세액 환급. 5월 신고 전 가입·납입해도 적용.
@@ -460,7 +460,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">⑤ 월세 세액공제 — 무주택 직장인·프리랜서</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">⑤ 월세 세액공제, 무주택 직장인·프리랜서</h3>
                     <p className="text-sm text-text-secondary">
                       총급여 7,000만 이하 무주택 + 국민주택규모 이하 임차 시 월세 17% 세액공제 (한도 750만).
                       예: 월세 50만 × 12개월 = 600만 → 102만 원 환급. 임대차계약서 + 월세 송금 영수증 필수.
@@ -476,9 +476,9 @@ export default function MayComprehensiveIncomeTaxPage() {
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">환급 받는 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
-                      <li>• 프리랜서 — 3.3% 원천징수액 &gt; 실제 세액 (단순경비율 적용 시 흔함)</li>
-                      <li>• 사업자 — 적자 발생 (손실 → 다음 해 결손금 이월)</li>
-                      <li>• 직장인 — 의료비·교육비·기부금 연말정산 누락 반영</li>
+                      <li>• 프리랜서, 3.3% 원천징수액 &gt; 실제 세액 (단순경비율 적용 시 흔함)</li>
+                      <li>• 사업자, 적자 발생 (손실 → 다음 해 결손금 이월)</li>
+                      <li>• 직장인, 의료비·교육비·기부금 연말정산 누락 반영</li>
                       <li>• 중도퇴사 후 미정산</li>
                       <li>• 노란우산·연금저축 추가 가입</li>
                     </ul>
@@ -486,7 +486,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">추가 납부 케이스</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
-                      <li>• N잡러 — 직장 + 부업 합산 시 누진세율 상위 적용</li>
+                      <li>• N잡러, 직장 + 부업 합산 시 누진세율 상위 적용</li>
                       <li>• 사업소득 큰 폭 증가 (3.3% 원천징수보다 실세액 큼)</li>
                       <li>• 임대료 증가</li>
                       <li>• 이자·배당 2,000만 초과</li>
@@ -503,10 +503,10 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 개별 사정(다양한 소득·복잡한 공제)은 세무사 상담 권장.</li>
-                  <li>• 단순경비율·기준경비율은 매년 시행령 변경 — 2026년 5월 신고 시 홈택스 자동 적용 확인.</li>
-                  <li>• 5월 25일 이후는 홈택스 트래픽 집중 — 가급적 5월 20일까지 신고 권장.</li>
-                  <li>• 무신고가산세 20% (소득 누락 큰 경우 40%)는 면제 사유 거의 없음 — 반드시 신고.</li>
-                  <li>• 환급 통장 본인 명의 정확히 — 타인 명의 입력 시 환급 지연·반환.</li>
+                  <li>• 단순경비율·기준경비율은 매년 시행령 변경, 2026년 5월 신고 시 홈택스 자동 적용 확인.</li>
+                  <li>• 5월 25일 이후는 홈택스 트래픽 집중, 가급적 5월 20일까지 신고 권장.</li>
+                  <li>• 무신고가산세 20% (소득 누락 큰 경우 40%)는 면제 사유 거의 없음, 반드시 신고.</li>
+                  <li>• 환급 통장 본인 명의 정확히, 타인 명의 입력 시 환급 지연·반환.</li>
                 </ul>
               </section>
 
@@ -519,7 +519,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 본 가이드의 모든 시나리오 직접 시뮬레이션
+                    {' '}· 본 가이드의 모든 시나리오 직접 시뮬레이션
                   </li>
                   <li>
                     →{' '}
@@ -538,7 +538,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                     <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">
                       부가가치세(VAT) 계산기
                     </Link>
-                    {' '}— 사업자 부가세 신고
+                    {' '}· 사업자 부가세 신고
                   </li>
                   <li>
                     →{' '}
@@ -551,47 +551,47 @@ export default function MayComprehensiveIncomeTaxPage() {
                     <Link href="/guide/financial-income-comprehensive-vs-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 금융소득 종합과세 vs 분리과세 (2,000만 기준)
                     </Link>
-                    {' '}— 5월 신고 시즈널 4티어
+                    {' '}· 5월 신고 시즈널 4티어
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/n-jobber-insurance-dependent-disqualification/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: N잡러 건강보험 피부양자 탈락
                     </Link>
-                    {' '}— 종소세 신고로 추적되는 합산소득 영향
+                    {' '}· 종소세 신고로 추적되는 합산소득 영향
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-31-deadline-day-income-tax-filing-2026/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 5월 31일 마감일 당일 종소세 신고
                     </Link>
-                    {' '}— 마감 직전 최단 경로 신고 체크리스트
+                    {' '}· 마감 직전 최단 경로 신고 체크리스트
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/separate-vs-comprehensive-taxation-master-2026/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 분리과세 vs 종합과세 마스터
                     </Link>
-                    {' '}— 어느 쪽이 유리한지 소득 유형별 판단 기준
+                    {' '}· 어느 쪽이 유리한지 소득 유형별 판단 기준
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/voluntary-filing-june-50-percent-reduction-2026/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 6월 기한후신고 가산세 50% 감면
                     </Link>
-                    {' '}— 5월 신고를 놓쳤을 때의 차선책
+                    {' '}· 5월 신고를 놓쳤을 때의 차선책
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/personal-deduction-dependent-150-2026/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 인적공제 부양가족 1인당 150만 원
                     </Link>
-                    {' '}— 종소세 신고 시 가장 기본이 되는 공제
+                    {' '}· 종소세 신고 시 가장 기본이 되는 공제
                   </li>
                   <li>
                     →{' '}
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
-                      용어사전 — 단순경비율·기준경비율·퇴직소득세·이월과세 등
+                      용어사전, 단순경비율·기준경비율·퇴직소득세·이월과세 등
                     </Link>
                   </li>
                 </ul>

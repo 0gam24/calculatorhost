@@ -86,7 +86,7 @@ export function Header() {
           </Link>
         </div>
 
-        {/* 중앙: 검색창 — 항상 중앙. 모바일에선 컴팩트하게. */}
+        {/* 중앙: 검색창, 항상 중앙. 모바일에선 컴팩트하게. */}
         <div className="flex flex-1 justify-center px-2 md:px-6">
           <div className="w-full max-w-xl">
             <SearchBox />

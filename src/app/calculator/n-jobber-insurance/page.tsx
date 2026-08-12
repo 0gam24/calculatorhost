@@ -320,8 +320,7 @@ export default function NJobberInsurancePage() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-primary-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-primary-500 mb-3">
-                    ✓ 자격 유지 팁
+                  <h3 className="font-semibold text-primary-500 mb-3">자격 유지 팁
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>추가소득 2,000만원 미만 유지</li>

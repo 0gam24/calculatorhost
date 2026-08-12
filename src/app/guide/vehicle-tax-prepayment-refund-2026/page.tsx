@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 연납 환급 2026 | 중고차 매각·폐차 환급' }],
-    title: '자동차세 연납 환급 2026 — 연중 매각·폐차 시 환급받기',
+    title: '자동차세 연납 환급 2026, 연중 매각·폐차 시 환급받기',
     description: '1월에 연납한 자동차세, 연중 매각·폐차·이전 시 소유하지 않은 기간 환급받는 방법.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 연납 환급 2026 — 연중 매각·폐차 시 환급받기',
+    title: '자동차세 연납 환급 2026, 연중 매각·폐차 시 환급받기',
     description: '1월 연납한 자동차세, 연중 매각·폐차·이전 시 소유하지 않은 기간만큼 일할계산으로 환급받는 방법. 지방세법 §127·§128 기준.',
   },
 };
@@ -90,7 +90,7 @@ export default function VehicleTaxPrepaymentRefund2026Page() {
     { name: '자동차세 연납 환급 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 연납 환급 2026 — 중고차 매각·폐차 시 일할 환급 받는 법',
+    headline: '자동차세 연납 환급 2026, 중고차 매각·폐차 시 일할 환급 받는 법',
     description:
       '1월에 연납한 자동차세, 연중 중고차 매각·폐차·소유권 이전 시 소유하지 않은 기간만큼 일할계산으로 환급받는 방법을 지방세법 §128에 기반해 설명합니다.',
     url: URL,
@@ -138,7 +138,7 @@ export default function VehicleTaxPrepaymentRefund2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차세 연납 환급 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 중고차 매각·폐차 시 일할 환급받기</span>
+                  <span className="text-2xl text-text-secondary">· 중고차 매각·폐차 시 일할 환급받기</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   1월에 자동차세를 연납하면 5% 할인을 받는다는 것을 알고 계신가요? 그런데 혹시 연중에 자동차를 팔거나 폐차해야 한다면 어떻게 될까요? 손해만 보는 걸까요? 아닙니다. 자동차세는 차량을 소유한 기간에만 부과되므로, 연중에 소유권을 이전하거나 폐차하면 소유하지 않게 된 잔여 기간만큼 세금을 돌려받을 수 있습니다. 이 가이드는 자동차세 연납 환급의 원리, 대상, 절차를 상세히 설명하고, 실제 환급 계산 사례까지 제시합니다.

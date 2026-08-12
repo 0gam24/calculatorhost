@@ -67,7 +67,7 @@ export function AffiliateRecommendation({
       aria-label={`${partner} 추천`}
       className="card border-l-4 border-l-primary-500 bg-primary-500/5"
     >
-      {/* 광고 라벨 — 표시광고법 준수 */}
+      {/* 광고 라벨, 표시광고법 준수 */}
       <p className="mb-2 text-[11px] font-medium uppercase tracking-wide text-text-tertiary">
         광고 · 어필리에이트 (Affiliate)
       </p>

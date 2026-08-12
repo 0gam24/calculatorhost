@@ -180,7 +180,7 @@ export function TransferTaxCalculator() {
           debounceMs={150}
         />
 
-        {/* 거주기간 — 1세대1주택 선택 시만 노출 */}
+        {/* 거주기간, 1세대1주택 선택 시만 노출 */}
         {showResidentYears && (
           <NumberInput
             id="resident-years"
@@ -229,7 +229,7 @@ export function TransferTaxCalculator() {
           </div>
         )}
 
-        {/* 세대 주택수 — 일반 케이스 선택 시만 노출 */}
+        {/* 세대 주택수, 일반 케이스 선택 시만 노출 */}
         {showHouseholdHouseCount && (
           <div className="flex flex-col gap-2">
             <label className="text-sm font-medium text-text-primary">세대 주택수</label>
@@ -259,7 +259,7 @@ export function TransferTaxCalculator() {
           </div>
         )}
 
-        {/* 조정지역 중과 — 일반 케이스 + 2주택 이상 선택 시 노출 */}
+        {/* 조정지역 중과, 일반 케이스 + 2주택 이상 선택 시 노출 */}
         {showAdjustedAreaSurcharge && (
           <RadioGroup<AdjustedAreaSurcharge>
             id="adjusted-area-surcharge"

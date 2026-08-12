@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 환급금 입금 시기 2026 | 신고 후 언제 받을까?' }],
-    title: '종합소득세 환급금 입금 시기 2026 — 신고 후 언제 받을까?',
+    title: '종합소득세 환급금 입금 시기 2026, 신고 후 언제 받을까?',
     description: '5월 신고 후 약 30~45일, 6월 중순~7월 말 환급금 입금 예상. 신고 시점·계좌 등록 여부·가산세 발생 시 차감.',
     url: URL,
     type: 'article',
@@ -148,7 +148,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합소득세 환급금 입금 시기 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 신고 후 언제 받을까?</span>
+                  <span className="text-2xl text-text-secondary">· 신고 후 언제 받을까?</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일을 앞두고 종합소득세 신고를 준비 중이라면, 환급금이 정말 중요한 관심사입니다.{' '}
@@ -205,13 +205,13 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                       <strong>5월 초 신고 = 6월 중순</strong>, 5월 말 신고 = 7월 중순~말
                     </li>
                     <li>
-                      <strong>계좌 등록 필수</strong> — 미등록 시 우편 통지 후 1~2주 추가 지연
+                      <strong>계좌 등록 필수</strong>: 미등록 시 우편 통지 후 1~2주 추가 지연
                     </li>
                     <li>
                       <strong>가산세 발생 시 자동 차감</strong> (국세기본법 §51의2)
                     </li>
                     <li>
-                      <strong>홈택스에서 단계별 확인</strong> — 신고→검사→결정→입금 추적 가능
+                      <strong>홈택스에서 단계별 확인</strong>: 신고→검사→결정→입금 추적 가능
                     </li>
                   </ul>
                 </div>
@@ -219,7 +219,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 1. 환급금 입금 기본 기간 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 환급금 입금 기본 기간 — 30~45일 (국세기본법 §51)</h2>
+                <h2 className="text-2xl font-bold">1. 환급금 입금 기본 기간, 30~45일 (국세기본법 §51)</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   종합소득세 신고 후 환급금 지급까지는{' '}
                   <strong>국세기본법 §51에 따라 일반적으로 30~45일 소요</strong>됩니다. 이 기간은 국세청이
@@ -234,7 +234,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                         1
                       </span>
                       <span>
-                        <strong>신고 접수</strong> — 홈택스 또는 세무서 직접 제출
+                        <strong>신고 접수</strong>: 홈택스 또는 세무서 직접 제출
                       </span>
                     </div>
                     <div className="ml-8 border-l-2 border-primary-500 pl-4 py-2">
@@ -245,7 +245,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                         2
                       </span>
                       <span>
-                        <strong>형식 검사</strong> — 신고서 필수 항목 확인
+                        <strong>형식 검사</strong>: 신고서 필수 항목 확인
                       </span>
                     </div>
                     <div className="ml-8 border-l-2 border-primary-500 pl-4 py-2">
@@ -256,7 +256,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                         3
                       </span>
                       <span>
-                        <strong>소득·공제 심사</strong> — 이전 연도 자료와 대조, 공제 적격성 검증
+                        <strong>소득·공제 심사</strong>: 이전 연도 자료와 대조, 공제 적격성 검증
                       </span>
                     </div>
                     <div className="ml-8 border-l-2 border-primary-500 pl-4 py-2">
@@ -267,7 +267,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                         4
                       </span>
                       <span>
-                        <strong>환급액 결정</strong> — 홈택스 공지 + 교부결정통지서 발송
+                        <strong>환급액 결정</strong>: 홈택스 공지 + 교부결정통지서 발송
                       </span>
                     </div>
                     <div className="ml-8 border-l-2 border-primary-500 pl-4 py-2">
@@ -278,7 +278,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                         5
                       </span>
                       <span>
-                        <strong>환급금 입금</strong> — 등록 계좌로 자동 이체 (또는 우편 통지)
+                        <strong>환급금 입금</strong>: 등록 계좌로 자동 이체 (또는 우편 통지)
                       </span>
                     </div>
                   </div>
@@ -298,7 +298,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 2. 신고 시점별 환급 예상일 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 신고 시점별 환급 예상일 — 5월 초 vs 5월 말</h2>
+                <h2 className="text-2xl font-bold">2. 신고 시점별 환급 예상일, 5월 초 vs 5월 말</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   5월 31일이 신고 마감이지만, 신고 시점에 따라 환급금 입금일이 최대 4주까지 차이납니다. 이는
                   국세청의 순차 처리로 인한 것입니다. 5월 초 신고자들을 먼저 검사하고, 월말에 가까워질수록 신고량이 폭증해
@@ -349,7 +349,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 3. 계좌 등록의 중요성 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 계좌 등록 필수 — 미등록 시 우편 통지 1~2주 추가 지연</h2>
+                <h2 className="text-2xl font-bold">3. 계좌 등록 필수, 미등록 시 우편 통지 1~2주 추가 지연</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   환급금 입금 방식은 두 가지입니다.{' '}
                   <strong>
@@ -381,16 +381,16 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   <p className="font-semibold text-danger-700 dark:text-danger-300 mb-2">주의: 미등록 시 절차</p>
                   <ol className="text-sm text-danger-600 dark:text-danger-400 list-inside list-decimal space-y-1">
                     <li>
-                      <strong>환급액 결정</strong> — 홈택스 공지 (약 신고 후 25~30일)
+                      <strong>환급액 결정</strong>: 홈택스 공지 (약 신고 후 25~30일)
                     </li>
                     <li>
-                      <strong>우편 통지(약신청서) 발송</strong> — 1주 후 수령
+                      <strong>우편 통지(약신청서) 발송</strong>: 1주 후 수령
                     </li>
                     <li>
-                      <strong>은행 방문 신청</strong> — 통지서 + 신분증 지참, 계좌 이체 신청
+                      <strong>은행 방문 신청</strong>: 통지서 + 신분증 지참, 계좌 이체 신청
                     </li>
                     <li>
-                      <strong>환급금 입금</strong> — 신청 후 1~2주 (총 3~4주 추가 소요)
+                      <strong>환급금 입금</strong>: 신청 후 1~2주 (총 3~4주 추가 소요)
                     </li>
                   </ol>
                 </div>
@@ -470,7 +470,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 5. 홈택스 환급금 추적 방법 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 홈택스 환급금 추적 — 단계별 상태 확인 방법</h2>
+                <h2 className="text-2xl font-bold">5. 홈택스 환급금 추적, 단계별 상태 확인 방법</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   신고 후 환급금이 지급될 때까지 홈택스에서 단계별로 상태를 확인할 수 있습니다. 신고됨 → 검사 중 →
                   환급액 결정 → 입금 완료로 진행되며, 각 단계에서 예상 일정을 파악할 수 있습니다.
@@ -511,25 +511,25 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   <div className="space-y-2 text-sm text-text-secondary">
                     <div className="flex justify-between">
                       <span>
-                        <strong>신고됨</strong> — 신고서 제출 후 1~3일
+                        <strong>신고됨</strong>: 신고서 제출 후 1~3일
                       </span>
                       <span className="text-xs text-text-tertiary">형식 검사 중</span>
                     </div>
                     <div className="flex justify-between">
                       <span>
-                        <strong>검사 중</strong> — 신고 후 3~25일
+                        <strong>검사 중</strong>: 신고 후 3~25일
                       </span>
                       <span className="text-xs text-text-tertiary">소득·공제 검증</span>
                     </div>
                     <div className="flex justify-between">
                       <span>
-                        <strong>환급 결정</strong> — 신고 후 25~35일
+                        <strong>환급 결정</strong>: 신고 후 25~35일
                       </span>
                       <span className="text-xs text-text-tertiary">최종 환급액 확정</span>
                     </div>
                     <div className="flex justify-between">
                       <span>
-                        <strong>입금 완료</strong> — 신고 후 30~45일
+                        <strong>입금 완료</strong>: 신고 후 30~45일
                       </span>
                       <span className="text-xs text-text-tertiary">계좌 자동 이체</span>
                     </div>
@@ -539,7 +539,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 6. 환급금이 늦어질 수 있는 상황 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 예상 못한 지연 — 환급금이 45일을 넘을 때</h2>
+                <h2 className="text-2xl font-bold">6. 예상 못한 지연, 환급금이 45일을 넘을 때</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   신고 후 60일이 넘어도 환급금이 입금되지 않으면, 뭔가 문제가 있는 것입니다. 흔한 원인은 (1)
                   계좌 오류, (2) 추가 검사, (3) 미등록 상태에서 우편 통지 미수령, (4) 체납 세금 우선 충당입니다.
@@ -549,23 +549,23 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   <p className="font-semibold text-danger-700 dark:text-danger-300 mb-3">주의: 환급 지연 원인 5가지</p>
                   <ul className="text-sm text-danger-600 dark:text-danger-400 list-inside list-disc space-y-1">
                     <li>
-                      <strong>계좌 오류</strong> — 계좌번호·예금주명 오기 시 자동 이체 실패. 홈택스에서 계좌 재확인 후
+                      <strong>계좌 오류</strong>: 계좌번호·예금주명 오기 시 자동 이체 실패. 홈택스에서 계좌 재확인 후
                       다시 신청.
                     </li>
                     <li>
-                      <strong>추가 검사</strong> — 소득·공제 대조 과정에서 문제 발견 시 국세청에서 추가 서류 요청. 회신
+                      <strong>추가 검사</strong>: 소득·공제 대조 과정에서 문제 발견 시 국세청에서 추가 서류 요청. 회신
                       기간 더해짐.
                     </li>
                     <li>
-                      <strong>우편 통지 미수령</strong> — 계좌 미등록 시 우편으로 발송되는 약신청서 미수령. 주소 변경
+                      <strong>우편 통지 미수령</strong>: 계좌 미등록 시 우편으로 발송되는 약신청서 미수령. 주소 변경
                       필수.
                     </li>
                     <li>
-                      <strong>체납세금 우선 충당</strong> (국세기본법 §51 ②) — 본인의 과거 미납 세금(취득세·자동차세 등)이
+                      <strong>체납세금 우선 충당</strong> (국세기본법 §51 ②), 본인의 과거 미납 세금(취득세·자동차세 등)이
                       있으면 환급금에서 차감.
                     </li>
                     <li>
-                      <strong>세무조사 진행 중</strong> — 신고 후 세무조사 대상으로 선정 시 환급금 지급이 보류될 수
+                      <strong>세무조사 진행 중</strong>: 신고 후 세무조사 대상으로 선정 시 환급금 지급이 보류될 수
                       있음.
                     </li>
                   </ul>
@@ -592,7 +592,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
 
               {/* 7. 환급가산금 1.2% */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">7. 의외의 수익 — 환급가산금 1.2% (국세기본법 §52)</h2>
+                <h2 className="text-2xl font-bold">7. 의외의 수익, 환급가산금 1.2% (국세기본법 §52)</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   환급금이 입금될 때 환급가산금이 함께 지급됩니다. 환급가산금은 국세청이 환급 결정 지연에 따른 사용자의
                   금융 비용을 보상하는 개념으로, 연 1.2% 수준입니다. 이는 자동으로 계산되어 환급금에 합산되므로 별도
@@ -647,35 +647,35 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 소득·공제·환급액 시뮬
+                    {' '}· 소득·공제·환급액 시뮬
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-tax-late-filing-penalty-2026/" className="text-primary-600 underline dark:text-primary-500">
                       무신고·지연 가산세 2026 정확 계산
                     </Link>
-                    {' '}— 6월 신고 시 가산세 50% 감면
+                    {' '}· 6월 신고 시 가산세 50% 감면
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-deduction-vs-tax-credit-2026/" className="text-primary-600 underline dark:text-primary-500">
                       소득공제 vs 세액공제 2026
                     </Link>
-                    {' '}— 신고 전 공제 전략
+                    {' '}· 신고 전 공제 전략
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 세후 월급 추정
+                    {' '}· 세후 월급 추정
                   </li>
                 </ul>
               </section>

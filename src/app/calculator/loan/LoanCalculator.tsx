@@ -241,7 +241,7 @@ export function LoanCalculator() {
 
       <ResultCard
         title="상환액 계산"
-        heroLabel={`${repaymentLabel} — ${repaymentSubtitle}`}
+        heroLabel={`${repaymentLabel}, ${repaymentSubtitle}`}
         heroValue={monthlyPaymentDisplay}
         heroNote={result ? `연 ${formatPercent(result.monthlyRate * 12)}` : undefined}
         rows={

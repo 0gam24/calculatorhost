@@ -204,7 +204,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                 </div>
               </section>
 
-              {/* 3. 자경의 정의 — 위탁경영과의 구분 */}
+              {/* 3. 자경의 정의, 위탁경영과의 구분 */}
               <section aria-label="자경의 정의" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">자경의 정의: 직접 경작 vs 위탁경영</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
@@ -318,7 +318,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
 
               {/* 6. 시뮬레이션 3가지 */}
               <section aria-label="시뮬레이션 3가지" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 — 감면액 계산 3가지</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례, 감면액 계산 3가지</h2>
 
                 <div className="mb-6 rounded-lg bg-bg-card p-4">
                   <p className="mb-2 font-semibold text-text-primary">
@@ -343,7 +343,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                     <li>자경 요건: 8년 이상 직접 경작</li>
                     <li>거주 요건: 농지 인접 시·군·구 거주</li>
                     <li>감면 대상: 1억 원 (조특법 §133 연 한도)</li>
-                    <li>일반 양도세 대상: 1.9억 원 (초과분 — 자경농지는 사업용 토지 분류로 비사업용 중과 X)</li>
+                    <li>일반 양도세 대상: 1.9억 원 (초과분, 자경농지는 사업용 토지 분류로 비사업용 중과 X)</li>
                     <li>과세표준 = 1.9억 − 250만(기본공제) = 1.875억 → 누진세율 38%(1.5~3억 구간) − 누진공제 1,994만</li>
                     <li className="font-semibold text-text-primary">
                       양도세 ≈ 1.875억 × 38% − 1,994만 ≈ 5,131만 + 지방소득세 약 513만 = 약 5,644만
@@ -519,7 +519,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                     <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">
                       양도소득세 계산기
                     </Link>{' '}
-                    — 실제 자경농지 감면 후 세금 시뮬레이션
+, 실제 자경농지 감면 후 세금 시뮬레이션
                   </li>
                   <li>
                     →{' '}
@@ -529,28 +529,28 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                     >
                       1세대1주택 12억 한도 완전 정리
                     </Link>{' '}
-                    — 주택 양도 시 비과세 조건 비교
+, 주택 양도 시 비과세 조건 비교
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">
                       양도세 절세 7가지
                     </Link>{' '}
-                    — 자경농지 외 양도세 감면 전략
+, 자경농지 외 양도세 감면 전략
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">
                       8월 양도세 검토 가이드
                     </Link>{' '}
-                    — 연간 양도세 일정 및 신고 기한
+, 연간 양도세 일정 및 신고 기한
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/capital-gains-tax-5-steps/" className="text-primary-600 underline dark:text-primary-500">
                       양도소득세 5단계 계산법
                     </Link>{' '}
-                    — 양도차익 → 기본공제 → 누진세 계산 정확히 이해하기
+, 양도차익 → 기본공제 → 누진세 계산 정확히 이해하기
                   </li>
                 </ul>
               </section>
@@ -569,8 +569,8 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 조세특례제한법 §69 (자경농지에 대한 양도소득세 감면) · §69 ①
                   (8년 이상 자경 시 100% 감면) · §69 ③ (상속 시 피상속인 기간 합산) · §133 (조세특례 적용 한도
-                  — 연 1억, 5년 2억) · 시행령 §66 ① 1호 (거주 요건 — 직선거리 30km) · 시행령 §66 ② (자경의 정의
-                  — 50% 이상 자기 노동력) · 소득세법 §104의3 (사업용 토지 분류) · §103 (양도소득 기본공제 250만 원)
+, 연 1억, 5년 2억) · 시행령 §66 ① 1호 (거주 요건, 직선거리 30km) · 시행령 §66 ② (자경의 정의
+, 50% 이상 자기 노동력) · 소득세법 §104의3 (사업용 토지 분류) · §103 (양도소득 기본공제 250만 원)
                   · 농지법 §2 (농지의 정의). 참고:{' '}
                   <a
                     href="https://www.nts.go.kr"

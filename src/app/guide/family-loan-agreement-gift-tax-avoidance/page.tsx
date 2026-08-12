@@ -609,7 +609,7 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                         rel="nofollow"
                         className="text-primary-500 hover:underline"
                       >
-                        국세청 — 증여세 신고 안내
+                        국세청, 증여세 신고 안내
                       </a>
                     </li>
                   </ul>

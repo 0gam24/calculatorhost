@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '확정일자·전입신고 우선변제권 2026 | 전세보증금 지키는 법' }],
-    title: '확정일자·전입신고 우선변제권 2026 — 전세보증금을 보호하는 법',
+    title: '확정일자·전입신고 우선변제권 2026, 전세보증금을 보호하는 법',
     description: '대항력·우선변제권·최우선변제의 정확한 개념 및 신청 방법. 보증금 손실을 방지하는 세입자 필수 가이드.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '확정일자·전입신고 우선변제권 2026 — 전세보증금 보호 가이드',
+    title: '확정일자·전입신고 우선변제권 2026, 전세보증금 보호 가이드',
     description: '전입신고 + 확정일자 → 우선변제권 획득. 건물주 채무 시에도 보증금 우선 배당받는 법.',
   },
 };
@@ -100,7 +100,7 @@ export default function LeapriorityRightFixedDate2026Page() {
     { name: '확정일자·전입신고 우선변제권 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '확정일자·전입신고 우선변제권 2026 — 대항력·우선변제·최우선변제 완전 정리',
+    headline: '확정일자·전입신고 우선변제권 2026, 대항력·우선변제·최우선변제 완전 정리',
     description:
       '전세 계약 후 반드시 챙겨야 할 대항력·우선변제권·최우선변제의 정확한 개념, 신청 방법, 지역별 최우선변제 금액 정리.',
     url: URL,
@@ -148,7 +148,7 @@ export default function LeapriorityRightFixedDate2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   확정일자·전입신고
                   <br />
-                  <span className="text-2xl text-text-secondary">— 전세보증금을 지키는 우선변제권</span>
+                  <span className="text-2xl text-text-secondary">· 전세보증금을 지키는 우선변제권</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   전세사기는 더 이상 남의 일이 아닙니다. 매년 수천 명의 세입자들이 임대인의 채무로 인해 보증금을 돌려받지 못하는 상황에 직면합니다. 하지만 이런 악사를 충분히 예방할 수 있는 법적 방어 수단이 있습니다. 바로 대항력·우선변제권·최우선변제입니다. 이 가이드는 전세 계약 후 반드시 해야 할 '전입신고'와 '확정일자' 신청의 정확한 의미, 단계별 신청 방법, 그리고 지역별 최우선변제 금액까지 완벽하게 정리해드립니다.

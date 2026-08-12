@@ -19,11 +19,11 @@ export interface AffiliateLinkProps {
   href: string;
   /** 링크 라벨 (사용자에게 표시) */
   children: ReactNode;
-  /** 파트너명 — 마이크로 라벨에 표시 (예: "광고 · 삼쩜삼") */
+  /** 파트너명, 마이크로 라벨에 표시 (예: "광고 · 삼쩜삼") */
   partner?: string;
   /** 추가 className (Tailwind) */
   className?: string;
-  /** 라벨 위치 — 'inline'(같은 줄) 또는 'top'(위쪽) */
+  /** 라벨 위치, 'inline'(같은 줄) 또는 'top'(위쪽) */
   labelPosition?: 'inline' | 'top';
 }
 

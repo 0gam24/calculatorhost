@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종소세 경정청구 5년 환급 2026 | 누락 공제·세액공제 회수 방법' }],
-    title: '종소세 경정청구 5년 환급 2026 — 누락 공제 찾아 환급받기',
+    title: '종소세 경정청구 5년 환급 2026, 누락 공제 찾아 환급받기',
     description: '지난 5년 신고 시 누락한 공제로 환급받는 경정청구. 의료비·월세·기부금 등 자주 놓친 항목 점검.',
     url: URL,
     type: 'article',
@@ -150,7 +150,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   경정청구로 5년 내 환급받기
                   <br />
-                  <span className="text-2xl text-text-secondary">— 누락한 공제·세액공제 회수 완전 가이드</span>
+                  <span className="text-2xl text-text-secondary">· 누락한 공제·세액공제 회수 완전 가이드</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감이 다가오면서 많은 사람이 간과하는 제도가 있습니다. 바로{' '}
@@ -217,7 +217,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
               {/* 1. 경정청구 정의 및 법적 근거 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 경정청구란? — 신고 후 5년 내 환급 청구 제도</h2>
+                <h2 className="text-2xl font-bold">1. 경정청구란?, 신고 후 5년 내 환급 청구 제도</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   경정청구는 <strong>신고 기한이 지난 후 5년 이내에 잘못 낸 세금을 환급받는 제도</strong>입니다
                   (국세기본법 §45의2 ①). 신고 당시 공제를 누락했거나, 세율을 잘못 적용했거나, 중복으로 낸 경우 등이
@@ -251,7 +251,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
               {/* 2. 5년 기한 정확 계산 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 5년 기한 정확히 계산하기 — 법정신고기한+5년</h2>
+                <h2 className="text-2xl font-bold">2. 5년 기한 정확히 계산하기, 법정신고기한+5년</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   경정청구의 5년 기한은 <strong>"신고 기한"이 끝나는 그 다음날부터 정확히 5년</strong>입니다
                   (국세기본법 §26의2). 종합소득세는 5월 31일이 신고 기한이므로, 5월 31일 다음날인 6월 1일부터
@@ -407,9 +407,9 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                 </div>
               </section>
 
-              {/* 4. 경정청구 신청 방법 — 4단계 */}
+              {/* 4. 경정청구 신청 방법, 4단계 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 경정청구 신청하는 법 — 홈택스 4단계</h2>
+                <h2 className="text-2xl font-bold">4. 경정청구 신청하는 법, 홈택스 4단계</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   경정청구는 홈택스(hometax.go.kr)에서 온라인으로 신청합니다. 복잡해 보이지만 5~10분이면 완료됩니다.
                 </p>
@@ -480,7 +480,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
               {/* 5. 실제 사례 3가지 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 실제 시뮬레이션 3가지 — 환급액 계산</h2>
+                <h2 className="text-2xl font-bold">5. 실제 시뮬레이션 3가지, 환급액 계산</h2>
 
                 <div className="rounded-lg bg-bg-raised p-4">
                   <p className="mb-3 font-semibold text-text-primary">사례 A: 2024년 의료비 누락</p>
@@ -538,7 +538,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="text-sm font-semibold text-highlight-700 dark:text-highlight-300">
-                    ℹ 환급가산금이란?
+                    환급가산금이란?
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
                     정부가 신청자의 환급금을 늦게 준 것에 대한 '손해배상' 성격의 이자입니다(국세기본법 시행령
@@ -601,7 +601,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
 
               {/* 7. 함정 및 주의사항 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">7. 주의사항 — 실질과세 원칙과 허위 신고</h2>
+                <h2 className="text-2xl font-bold">7. 주의사항, 실질과세 원칙과 허위 신고</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   경정청구는 합법적인 제도이지만, 잘못된 방식으로 신청하면 문제가 될 수 있습니다.
                 </p>
@@ -714,7 +714,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                   <p className="mb-3 font-semibold text-text-primary">출처 및 법조항</p>
                   <ul className="list-inside list-disc space-y-1 text-text-secondary">
                     <li>
-                      국세기본법 §45의2 (경정청구 — 청구권 기간 5년)
+                      국세기본법 §45의2 (경정청구, 청구권 기간 5년)
                     </li>
                     <li>
                       국세기본법 §26의2 (신고기한의 연장 및 승인)
@@ -726,7 +726,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                       국세기본법 §51의2 (환급금 결정)
                     </li>
                     <li>
-                      국세기본법 시행령 §43의3 (환급가산금 — 1.2%)
+                      국세기본법 시행령 §43의3 (환급가산금, 1.2%)
                     </li>
                     <li>
                       국세청 홈택스 경정청구 자료실 (hometax.go.kr)

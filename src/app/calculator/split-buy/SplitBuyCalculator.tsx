@@ -101,7 +101,7 @@ export function SplitBuyCalculator() {
           ))}
         </div>
         <p className="text-xs text-text-tertiary">
-          수수료 프리셋 — 주식: 매수/매도 {FEE_PRESETS.stock.buy}% + 거래세 {FEE_PRESETS.stock.tax}% / 코인: 매수/매도 {FEE_PRESETS.coin.buy}% (거래세 없음)
+          수수료 프리셋, 주식: 매수/매도 {FEE_PRESETS.stock.buy}% + 거래세 {FEE_PRESETS.stock.tax}% / 코인: 매수/매도 {FEE_PRESETS.coin.buy}% (거래세 없음)
         </p>
       </FormCard>
 

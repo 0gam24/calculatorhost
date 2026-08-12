@@ -214,19 +214,19 @@ export default function DecemberCgtDeadlineGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">4단계 의사결정 프레임</h2>
                 <ol className="list-inside list-decimal space-y-3 text-text-secondary" data-speakable>
                   <li>
-                    <strong className="text-text-primary">Step 1 — 같은 해 부동산 양도손실 확인</strong>
+                    <strong className="text-text-primary">Step 1, 같은 해 부동산 양도손실 확인</strong>
                     <p className="text-sm mt-1">2026년 다른 부동산을 양도해 손실이 났다면 12월 양도 유리(같은 해 통산 가능, 시행령 §178). 손실 없으면 다음 단계.</p>
                   </li>
                   <li>
-                    <strong className="text-text-primary">Step 2 — 2027 세제 개정안 모니터링</strong>
+                    <strong className="text-text-primary">Step 2, 2027 세제 개정안 모니터링</strong>
                     <p className="text-sm mt-1">11~12월 정부 세제 개정안 발표 확인. 양도세율 인상·공제 축소 발표 시 12월 양도 우선. 완화 예고 시 1월 양도 검토.</p>
                   </li>
                   <li>
-                    <strong className="text-text-primary">Step 3 — 보유 기간 경계 + 일시적 2주택 D-day</strong>
+                    <strong className="text-text-primary">Step 3, 보유 기간 경계 + 일시적 2주택 D-day</strong>
                     <p className="text-sm mt-1">잔금일 기준 1년/2년 보유 경계 도달 여부 확인(70%→60%→누진). 일시적 2주택 비과세 만료(신규 취득 +3년) 임박 시 만료 전 양도 우선.</p>
                   </li>
                   <li>
-                    <strong className="text-text-primary">Step 4 — 현금 흐름 + 세무사 상담</strong>
+                    <strong className="text-text-primary">Step 4, 현금 흐름 + 세무사 상담</strong>
                     <p className="text-sm mt-1">12월 양도 → 2월 말 신고·납부 (대출 상환·재투자 자금 압박). 1월 양도 → 3월 말 신고 (시간 여유). 다주택·복합 거래는 세무사 필수.</p>
                   </li>
                 </ol>
@@ -237,7 +237,7 @@ export default function DecemberCgtDeadlineGuide() {
 
               {/* 5. 양도손실 통산 정확 이해 */}
               <section aria-label="양도손실 통산" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">양도손실 통산 — 같은 자산 그룹 내에서만</h2>
+                <h2 className="mb-4 text-2xl font-semibold">양도손실 통산, 같은 자산 그룹 내에서만</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   양도소득은 자산 그룹별로 통산이 분리됩니다(소득세법 §102 + 시행령 §178). 부동산 양도차익은 같은 해
                   다른 <strong>부동산 양도손실</strong>과만 통산. 주식 손실로 부동산 차익을 상쇄할 수 없습니다.
@@ -291,11 +291,11 @@ export default function DecemberCgtDeadlineGuide() {
               <section aria-label="2027 세제 개정 모니터링" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">2027 세제 개정안 모니터링 포인트</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
-                  <li><strong>일시적 2주택 비과세 기한</strong> — 현행 3년 유지 vs 단축 논의</li>
-                  <li><strong>양도세율 누진 구간</strong> — 부동산 시장 상황에 따라 강화·완화</li>
-                  <li><strong>장기보유공제 비율</strong> — 보유·거주 각 4%/년 유지 여부</li>
-                  <li><strong>1세대1주택 비과세 12억 한도</strong> — 시장 가격 변화에 따른 조정</li>
-                  <li><strong>다주택 중과 +20/+30%p</strong> — 일시적 완화 또는 영구 폐지 논의</li>
+                  <li><strong>일시적 2주택 비과세 기한</strong>: 현행 3년 유지 vs 단축 논의</li>
+                  <li><strong>양도세율 누진 구간</strong>: 부동산 시장 상황에 따라 강화·완화</li>
+                  <li><strong>장기보유공제 비율</strong>: 보유·거주 각 4%/년 유지 여부</li>
+                  <li><strong>1세대1주택 비과세 12억 한도</strong>: 시장 가격 변화에 따른 조정</li>
+                  <li><strong>다주택 중과 +20/+30%p</strong>: 일시적 완화 또는 영구 폐지 논의</li>
                 </ul>
                 <p className="mt-3 text-sm text-text-tertiary">
                   공식 발표는 기획재정부 보도자료 + 국세청 고시 확인. 12월 중순까지 확정.
@@ -306,11 +306,11 @@ export default function DecemberCgtDeadlineGuide() {
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
-                  <li>잔금 청산일이 양도일 — 계약일·등기일과 혼동 X. 잔금 통장 입금일 확인.</li>
+                  <li>잔금 청산일이 양도일, 계약일·등기일과 혼동 X. 잔금 통장 입금일 확인.</li>
                   <li>일시적 2주택 D-day 1일 초과 시 비과세 상실. 만료 임박 시 무조건 만료 전 양도.</li>
                   <li>양도손실 통산은 같은 자산 그룹 내에서만(부동산↔주식 X).</li>
                   <li>12월 후반 매도 시 세무사 마감 일정 → 11월 중 사전 상담 권장.</li>
-                  <li>2027 세제 개정안은 12월 발표 — 발표 전 확정 매도는 신중.</li>
+                  <li>2027 세제 개정안은 12월 발표, 발표 전 확정 매도는 신중.</li>
                 </ul>
               </section>
 
@@ -318,12 +318,12 @@ export default function DecemberCgtDeadlineGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 잔금일 시나리오별 시뮬</li>
-                  <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link> — 보유 기간·일시적2주택 D-day</li>
-                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link> — 신규 1년 후·종전 3년 내 양도</li>
-                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link> — 보유 4% × 거주 4% 누적</li>
-                  <li>→ <Link href="/guide/carry-over-basis-spouse-gift-5-10-year/" className="text-primary-600 underline dark:text-primary-500">이월과세 5년→10년 확대</Link> — 배우자·직계 증여 후 양도 (12월 결정 영향)</li>
-                  <li>→ <Link href="/guide/self-farming-land-100-percent-exemption/" className="text-primary-600 underline dark:text-primary-500">자경농지 8년 100% 감면</Link> — 농지 매도 검토</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 잔금일 시나리오별 시뮬</li>
+                  <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link>, 보유 기간·일시적2주택 D-day</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link>, 신규 1년 후·종전 3년 내 양도</li>
+                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link>, 보유 4% × 거주 4% 누적</li>
+                  <li>→ <Link href="/guide/carry-over-basis-spouse-gift-5-10-year/" className="text-primary-600 underline dark:text-primary-500">이월과세 5년→10년 확대</Link>, 배우자·직계 증여 후 양도 (12월 결정 영향)</li>
+                  <li>→ <Link href="/guide/self-farming-land-100-percent-exemption/" className="text-primary-600 underline dark:text-primary-500">자경농지 8년 100% 감면</Link>, 농지 매도 검토</li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지 팁</Link></li>
                 </ul>
               </section>

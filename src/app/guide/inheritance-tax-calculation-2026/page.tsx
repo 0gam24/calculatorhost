@@ -90,7 +90,7 @@ export default function InheritanceTaxCalculation2026Page() {
     { name: '상속세 계산법 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상속세 계산법 2026 — 과세표준·공제·납부세액',
+    headline: '상속세 계산법 2026, 과세표준·공제·납부세액',
     description:
       '상속재산부터 최종 납부세액까지. 5단계 누진세율과 각종 공제를 정확히 적용하는 방법.',
     url: URL,
@@ -138,7 +138,7 @@ export default function InheritanceTaxCalculation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 계산법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 과세표준부터 최종 납부세액까지</span>
+                  <span className="text-2xl text-text-secondary">· 과세표준부터 최종 납부세액까지</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   상속이 발생하면 상속세를 정확히 계산하는 것은 복잡한 과정입니다. 상속재산 파악부터 각종 공제 적용, 5단계 누진세율까지 한 단계도 놓칠 수 없습니다. 이 가이드는 상속세를 처음부터 끝까지 정확하게 계산하는 방법을 체계적으로 설명합니다.
@@ -214,7 +214,7 @@ export default function InheritanceTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="text-2xl font-bold">2단계: 상속공제 적용 — 5가지 공제 이해하기</h2>
+                <h2 className="text-2xl font-bold">2단계: 상속공제 적용, 5가지 공제 이해하기</h2>
                 <p data-speakable>
                   상속세 계산에서 가장 중요한 단계입니다. 상속공제는 <strong>상증세법 §18~§21</strong>에서 규정하며, 5가지 종류가 있습니다. 이들 중 가장 유리한 방식을 선택하여 적용합니다.
                 </p>
@@ -292,7 +292,7 @@ export default function InheritanceTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="text-2xl font-bold">4단계: 산출세액 계산 — 누진세율 적용</h2>
+                <h2 className="text-2xl font-bold">4단계: 산출세액 계산, 누진세율 적용</h2>
                 <p data-speakable>
                   <strong>산출세액 = 과세표준 × 세율 − 누진공제</strong>
                 </p>
@@ -334,7 +334,7 @@ export default function InheritanceTaxCalculation2026Page() {
                   <p className="font-semibold text-text-primary text-sm mb-3">최종 납부 계산</p>
                   <p className="text-sm text-text-secondary space-y-2">
                     <span className="block">산출세액: (위 단계에서 계산)</span>
-                    <span className="block">− 신고세액공제: (기한 내 자진신고 시 적용 — 정확 % 신고 시점 협의)</span>
+                    <span className="block">− 신고세액공제: (기한 내 자진신고 시 적용, 정확 % 신고 시점 협의)</span>
                     <span className="block font-semibold">= 최종 납부세액</span>
                   </p>
                 </div>

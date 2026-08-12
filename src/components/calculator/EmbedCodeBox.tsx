@@ -23,7 +23,7 @@ export function EmbedCodeBox({ embedPath, canonicalPath, title, height }: EmbedC
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      setError('복사 실패 — 코드 영역을 직접 선택해 복사하세요.');
+      setError('복사 실패, 코드 영역을 직접 선택해 복사하세요.');
       setTimeout(() => setError(null), 3000);
     }
   };

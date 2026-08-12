@@ -96,7 +96,7 @@ export default function HousingPensionReverseMortgage2026() {
     { name: '주택연금(역모기지) 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택연금(역모기지) 2026 완벽 가이드 — 가입조건·공시가격·월지급금·배우자 승계',
+    headline: '주택연금(역모기지) 2026 완벽 가이드, 가입조건·공시가격·월지급금·배우자 승계',
     description:
       '집을 담보로 평생 월금을 받는 국가보증 역모기지. 만 55세 이상 가입조건, 공시가격 12억 원 한도, 월지급금 결정요인, 배우자 승계 절차, 우대지급방식, 세제 혜택까지 완벽 정리했습니다.',
     url: URL,
@@ -142,7 +142,7 @@ export default function HousingPensionReverseMortgage2026() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">금융 · 9분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  주택연금(역모기지) 2026 완벽 가이드 — 가입조건·공시가격·월지급금·배우자 승계
+                  주택연금(역모기지) 2026 완벽 가이드, 가입조건·공시가격·월지급금·배우자 승계
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   집을 담보로 평생 매월 연금을 받는 국가보증 역모기지, 주택연금. 가입조건부터 월지급금 결정요인, 배우자 승계, 세제 혜택까지 놓친 부분 없이 정리합니다.
@@ -198,11 +198,11 @@ export default function HousingPensionReverseMortgage2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">가입조건 — 누가 신청할 수 있을까?</h2>
+                <h2 className="text-2xl font-bold">가입조건, 누가 신청할 수 있을까?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금 가입의 핵심 조건은 <strong>나이, 주택가격, 주택 소유 현황</strong>입니다.
                 </p>
-                <h3 className="text-lg font-semibold mt-4">1⃣ 나이 조건 — 만 55세 이상</h3>
+                <h3 className="text-lg font-semibold mt-4">1⃣ 나이 조건, 만 55세 이상</h3>
                 <p className="text-text-secondary leading-relaxed text-sm">
                   <strong>부부 중 1명이라도 만 55세 이상</strong>이면 가입할 수 있습니다.
                   배우자가 만 60세, 본인이 만 53세라면, 배우자가 가입자가 되어 신청 가능합니다.
@@ -212,7 +212,7 @@ export default function HousingPensionReverseMortgage2026() {
                   다만 배우자가 가입자가 되는 경우, 본인은 배우자 사망 후 "승계자"가 될 수 있으므로 추가 신청 절차 없이 자동 계승됩니다.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">2⃣ 주택 조건 — 공시가격 12억 원 이하</h3>
+                <h3 className="text-lg font-semibold mt-4">2⃣ 주택 조건, 공시가격 12억 원 이하</h3>
                 <p className="text-text-secondary leading-relaxed text-sm">
                   <strong>가입 시점의 공시가격을 기준</strong>으로 다음이 적용됩니다.
                 </p>
@@ -239,7 +239,7 @@ export default function HousingPensionReverseMortgage2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월지급금 — 얼마를 받을 수 있을까?</h2>
+                <h2 className="text-2xl font-bold">월지급금, 얼마를 받을 수 있을까?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금의 월지급금은 <strong>가입 시점의 나이, 주택가격, 적용금리</strong>에 따라 결정됩니다.
                   동일한 집이라도 나이가 많을수록, 나중에 신청할수록 월지급금이 많습니다.
@@ -277,7 +277,7 @@ export default function HousingPensionReverseMortgage2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">지급방식 4가지 — 어떤 방식을 선택할까?</h2>
+                <h2 className="text-2xl font-bold">지급방식 4가지, 어떤 방식을 선택할까?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금은 4가지 지급방식을 선택할 수 있습니다. 각각 장단점이 있으므로 본인 상황에 맞게 선택하세요.
                 </p>
@@ -324,12 +324,12 @@ export default function HousingPensionReverseMortgage2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">배우자 승계 — 배우자가 사망 후 어떻게 되나?</h2>
+                <h2 className="text-2xl font-bold">배우자 승계, 배우자가 사망 후 어떻게 되나?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금의 큰 장점은 <strong>배우자가 사망해도 생존자(배우자 또는 본인)가 동일한 월금을 계속 받을 수 있다</strong>는 것입니다.
                   다만 가입 시 선택한 방식에 따라 절차가 달라집니다.
                 </p>
-                <h3 className="text-lg font-semibold mt-4">신탁방식 (권장) — 자동 승계, 절차 간단</h3>
+                <h3 className="text-lg font-semibold mt-4">신탁방식 (권장), 자동 승계, 절차 간단</h3>
                 <p className="text-sm text-text-secondary">
                   가입자와 배우자의 공동명의 또는 신탁 형태로 주택을 등록합니다.
                   가입자 사망 시, 배우자가 <strong>자동으로 계승하여 동일한 월금을 감액 없이 계속 받습니다.</strong>
@@ -339,7 +339,7 @@ export default function HousingPensionReverseMortgage2026() {
                   <strong>권장 이유:</strong> 배우자가 고령이면 번거로운 등기 절차를 할 수 없을 수 있으므로, 신탁방식이 훨씬 안전합니다.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">저당권방식 — 수동 승계, 절차 번거로움</h3>
+                <h3 className="text-lg font-semibold mt-4">저당권방식, 수동 승계, 절차 번거로움</h3>
                 <p className="text-sm text-text-secondary">
                   가입자 단독명의 주택에 저당권만 설정합니다.
                   가입자 사망 시, 배우자가 <strong>손수 소유권 이전, 근저당 변경 등 등기 절차를 처리</strong>해야 승계됩니다.
@@ -355,7 +355,7 @@ export default function HousingPensionReverseMortgage2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">세제 혜택 — 세금과 재산세</h2>
+                <h2 className="text-2xl font-bold">세제 혜택, 세금과 재산세</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금의 또 다른 장점은 세제 혜택입니다. 월지급금은 소득세 비과세이며,
                   관련 세금과 수수료도 감면됩니다.
@@ -477,37 +477,37 @@ export default function HousingPensionReverseMortgage2026() {
                     <Link href="/calculator/retirement/" className="font-semibold text-primary-500 hover:underline">
                       은퇴자금 계산기
                     </Link>
-                    {' — 필요한 총 은퇴자금 산출'}
+                    {'필요한 총 은퇴자금 산출'}
                   </li>
                   <li>
                     <Link href="/calculator/broker-fee/" className="font-semibold text-primary-500 hover:underline">
                       중개수수료 계산기
                     </Link>
-                    {' — 주택 매매 시 중개보수 상한 확인'}
+                    {'주택 매매 시 중개보수 상한 확인'}
                   </li>
                   <li>
                     <Link href="/calculator/inflation/" className="font-semibold text-primary-500 hover:underline">
                       화폐가치 계산기
                     </Link>
-                    {' — 30년 뒤 월지급금의 실질 구매력 확인'}
+                    {'30년 뒤 월지급금의 실질 구매력 확인'}
                   </li>
                   <li>
                     <Link href="/guide/national-pension-expected-benefit-2026/" className="font-semibold text-primary-500 hover:underline">
                       국민연금 예상수령액 2026
                     </Link>
-                    {' — 월 연금수령액 확인'}
+                    {'월 연금수령액 확인'}
                   </li>
                   <li>
                     <Link href="/guide/basic-pension-2026/" className="font-semibold text-primary-500 hover:underline">
                       기초연금 수급 조건 2026
                     </Link>
-                    {' — 우대지급방식 요건 확인'}
+                    {'우대지급방식 요건 확인'}
                   </li>
                   <li>
                     <Link href="/guide/private-pension-1500-million-separate-taxation-2026/" className="font-semibold text-primary-500 hover:underline">
                       사적연금 과세 2026
                     </Link>
-                    {' — 기타 연금소득 세제'}
+                    {'기타 연금소득 세제'}
                   </li>
                 </ul>
               </section>

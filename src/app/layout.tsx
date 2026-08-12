@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   title: {
     // 페이지마다 metadata.title 에 이미 "| calculatorhost" 가 포함돼 있으므로
     // template 에 사이트명을 추가하지 않음 (중복 방지). 사이트명 미포함 페이지는 default 사용.
-    default: 'calculatorhost — 2026 최신 세율 반영 한국 계산기 모음',
+    default: 'calculatorhost, 2026 최신 세율 반영 한국 계산기 모음',
     template: '%s',
   },
   description:
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     url: 'https://calculatorhost.com',
     siteName: 'calculatorhost',
-    title: 'calculatorhost — 2026 최신 세율 반영 한국 계산기 모음',
+    title: 'calculatorhost, 2026 최신 세율 반영 한국 계산기 모음',
     description:
       '연봉·양도세·취득세·대출이자 등 한국 생활 금융 계산기. 무료·회원가입 불필요.',
     images: [
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'calculatorhost — 2026 한국 생활 계산기 모음',
+        alt: 'calculatorhost, 2026 한국 생활 계산기 모음',
         type: 'image/png',
       },
     ],
@@ -89,7 +89,7 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-/* FOUC 방지용 테마 선주입 스크립트 — 디폴트 라이트 모드.
+/* FOUC 방지용 테마 선주입 스크립트, 디폴트 라이트 모드.
    사용자 명시 선택(localStorage)만 우선, 시스템 설정은 무시(라이트 고정 시작). */
 const themeInit = `
 (function() {
@@ -102,7 +102,7 @@ const themeInit = `
 })();
 `.trim();
 
-/* PWA Service Worker 등록 — 오프라인 fallback + 정적 자원 캐시.
+/* PWA Service Worker 등록, 오프라인 fallback + 정적 자원 캐시.
    load 이벤트 후 비동기 등록(메인 스레드 블록 X). 등록 실패는 silent. */
 const swInit = `
 (function() {
@@ -136,7 +136,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     // 를 설정 → 서버/클라 속성 불일치는 의도된 것이므로 React 경고만 억제(동작 정상)
     <html lang="ko-KR" suppressHydrationWarning>
       <head>
-        {/* Pretendard self-host preload — FOIT 방지·LCP 최적화 */}
+        {/* Pretendard self-host preload, FOIT 방지·LCP 최적화 */}
         <link
           rel="preload"
           as="font"
@@ -144,7 +144,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="/fonts/PretendardVariable.woff2"
           crossOrigin="anonymous"
         />
-        {/* Inter self-host preload — 결과 카드 숫자 폭 안정화(CLS 제거) */}
+        {/* Inter self-host preload, 결과 카드 숫자 폭 안정화(CLS 제거) */}
         <link
           rel="preload"
           as="font"
@@ -152,7 +152,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="/fonts/InterVariable.woff2"
           crossOrigin="anonymous"
         />
-        {/* AdSense 도메인 사전 연결 — DNS/TLS 핸드셰이크를 미리 해두고 JS 자체는 lazyOnload.
+        {/* AdSense 도메인 사전 연결, DNS/TLS 핸드셰이크를 미리 해두고 JS 자체는 lazyOnload.
             preconnect 만으로는 다운로드 X (실제 fetch는 lazyOnload 시점에). TBT 영향 X. */}
         {adsenseClient ? (
           <>
@@ -161,30 +161,30 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <link rel="dns-prefetch" href="https://adservice.google.com" />
           </>
         ) : null}
-        {/* 피드 자동 발견 (Feedly·Inoreader·NetNewsWire 등 RSS 리더가 <head> 에서 탐지) — /feeds 허브 참고 */}
+        {/* 피드 자동 발견 (Feedly·Inoreader·NetNewsWire 등 RSS 리더가 <head> 에서 탐지), /feeds 허브 참고 */}
         <link
           rel="alternate"
           type="application/rss+xml"
-          title="calculatorhost — 한국 금융·세금 계산기 업데이트"
+          title="calculatorhost, 한국 금융·세금 계산기 업데이트"
           href="/feed.xml"
         />
         <link
           rel="alternate"
           type="application/atom+xml"
-          title="calculatorhost — Atom"
+          title="calculatorhost, Atom"
           href="/atom.xml"
         />
         <link
           rel="alternate"
           type="application/feed+json"
-          title="calculatorhost — JSON Feed"
+          title="calculatorhost, JSON Feed"
           href="/feed.json"
         />
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script dangerouslySetInnerHTML={{ __html: swInit }} />
       </head>
       <body>
-        {/* WCAG 2.4.1 — 키보드 사용자 본문 점프 (헤더·사이드바 우회).
+        {/* WCAG 2.4.1, 키보드 사용자 본문 점프 (헤더·사이드바 우회).
             기본 sr-only, 포커스 시 가시화. 'main-content' id 는 각 페이지의 <main> 에 위치. */}
         <a
           href="#main-content"
@@ -200,7 +200,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Web Vitals → GA4 송신 (필드 데이터 수집) */}
         <WebVitalsReporter />
 
-        {/* Google AdSense — lazyOnload 전략 (TBT 최소화).
+        {/* Google AdSense, lazyOnload 전략 (TBT 최소화).
             window.load + idle callback 후 다운로드 → 메인 스레드 블록 X.
             adsbygoogle.push() 큐는 스크립트 로드 전에도 안전하게 누적되므로 RPM 영향 미미.
             preconnect 로 DNS/TLS 사전 완료 → lazyOnload 시점 fetch 빠름.
@@ -214,10 +214,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         ) : null}
 
-        {/* Google Analytics 4 — afterInteractive 전략.
+        {/* Google Analytics 4, afterInteractive 전략.
             lazyOnload 는 window.load + idle 후 → Google Tag Assistant·자동 감지 봇이 못 잡음.
             afterInteractive 는 hydration 직후 → LCP 영향 없으면서 detection 호환.
-            init 은 즉시 호출 (requestIdleCallback 래핑 제거 — 봇이 dataLayer 즉시 확인 필요). */}
+            init 은 즉시 호출 (requestIdleCallback 래핑 제거, 봇이 dataLayer 즉시 확인 필요). */}
         {gaId ? (
           <>
             <Script
@@ -233,10 +233,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         ) : null}
 
-        {/* Naver 웹로그분석 — lazyOnload + requestIdleCallback (TBT 보호).
+        {/* Naver 웹로그분석, lazyOnload + requestIdleCallback (TBT 보호).
             한국 검색 25% 점유율(Naver)은 GA4 외 별도 추적 필수.
             wcslog.js 는 // (프로토콜 상대) 로 제공되나 next/script 는 https 강제.
-            wcs_do() 호출 시 페이지뷰 카운트 — SPA 라우팅 시 추가 호출은 향후 분리.
+            wcs_do() 호출 시 페이지뷰 카운트, SPA 라우팅 시 추가 호출은 향후 분리.
             관련: https://wa.naver.com */}
         {naverAnalyticsId ? (
           <>

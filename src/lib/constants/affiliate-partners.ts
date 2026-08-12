@@ -73,7 +73,7 @@ export const REGISTERED_PARTNERS: AffiliatePartner[] = [
   {
     key: 'LINKPRICE',
     name: '링크프라이스',
-    description: '한국 어필리에이트 네트워크 — 가입 후 광고주별 캠페인 신청 (다수 브랜드)',
+    description: '한국 어필리에이트 네트워크, 가입 후 광고주별 캠페인 신청 (다수 브랜드)',
     category: '네트워크',
     signupUrl: 'https://www.linkprice.com',
     type: '어필리에이트 네트워크',

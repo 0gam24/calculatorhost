@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-05-31';
 const DATE_MODIFIED = '2026-05-31';
 
 export const metadata: Metadata = {
-  title: '분리과세 vs 종합과세 2026 마스터 가이드 — 금융소득·사적연금·기타소득',
+  title: '분리과세 vs 종합과세 2026 마스터 가이드, 금융소득·사적연금·기타소득',
   description:
     '5월 31일 종합소득세 마감일. 금융소득(이자배당) 2,000만·사적연금 1,500만·기타소득 300만 한도 내 분리과세 vs 누진세 종합과세 선택 기준. 실제 시뮬 3개로 최대 절세액 계산.',
   keywords: [
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분리과세 vs 종합과세 2026 마스터 가이드 — 금융소득·사적연금·기타소득' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분리과세 vs 종합과세 2026 마스터 가이드, 금융소득·사적연금·기타소득' }],
     title: '분리과세 vs 종합과세 선택 마스터 2026 | 최대 절세 전략',
     description: '금융소득·사적연금·기타소득 분리과세 한도 완벽 정리. 언제 분리? 언제 합산? 시뮬 3개로 당신의 최적 선택 계산.',
     url: URL,
@@ -100,7 +100,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
     { name: '분리과세 vs 종합과세' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '분리과세 vs 종합과세 2026 마스터 가이드 — 금융소득·사적연금·기타소득 선택 기준',
+    headline: '분리과세 vs 종합과세 2026 마스터 가이드, 금융소득·사적연금·기타소득 선택 기준',
     description:
       '5월 31일 종합소득세 마감. 금융소득 2,000만·사적연금 1,500만·기타소득 300만 한도 내 분리과세 vs 누진세 종합과세 선택 판단. 실제 사례 3개 시뮬로 최대 절세액 계산. 소득세법 §14.',
     url: URL,
@@ -146,7 +146,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                 readingMinutes={15}
                 publishedDate="2026-05-31"
                 title="분리과세 vs 종합과세 2026 마스터"
-                subtitle="— 금융소득·사적연금·기타소득 한도별 선택 기준"
+                subtitle="· 금융소득·사적연금·기타소득 한도별 선택 기준"
                 lead={
                   <p data-speakable>
                     <strong>5월 31일 오늘, 종합소득세 신고 당일입니다.</strong>
@@ -202,7 +202,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   </table>
                 </div>
                 <div className="rounded-lg bg-primary-500/10 p-4 text-sm text-primary-700 dark:text-primary-300">
-                  <p className="font-semibold">TL;DR — 5가지 판단 포인트</p>
+                  <p className="font-semibold">TL;DR, 5가지 판단 포인트</p>
                   <ul className="mt-2 list-inside list-disc space-y-1">
                     <li>
                       <strong>금융소득 2,000만:</strong> 넘으면 분리과세 불가능 → 모두 누진세 종합과세 의무
@@ -667,14 +667,14 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 근로소득 세액 시뮬레이션
+                    {' '}· 근로소득 세액 시뮬레이션
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
@@ -684,7 +684,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                     >
                       금융소득 2,000만 한도 분리과세 상세 가이드
                     </Link>
-                    {' '}— 금융소득만 집중 분석
+                    {' '}· 금융소득만 집중 분석
                   </li>
                   <li>
                     →{' '}
@@ -694,7 +694,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                     >
                       사업소득 vs 기타소득 분류 기준
                     </Link>
-                    {' '}— 강사료·원고료 분류 판정
+                    {' '}· 강사료·원고료 분류 판정
                   </li>
                   <li>
                     →{' '}
@@ -704,7 +704,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                     >
                       N잡러 종합소득세 합산 신고 2026
                     </Link>
-                    {' '}— 복수 소득 합산 규칙
+                    {' '}· 복수 소득 합산 규칙
                   </li>
                 </ul>
               </section>

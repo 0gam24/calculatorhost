@@ -15,13 +15,13 @@
 import Icon from '@/components/ui/Icon';
 
 interface MainBackrefBoxProps {
-  /** 메인 펄스(개별 글) 직접 link — 있으면 우선 사용 */
+  /** 메인 펄스(개별 글) 직접 link, 있으면 우선 사용 */
   mainPulseUrl?: string;
-  /** 메인 카테고리 hub link — 펄스 없을 때 fallback */
+  /** 메인 카테고리 hub link, 펄스 없을 때 fallback */
   mainCategoryUrl?: string;
-  /** 메인 펄스 제목 — 표시 시 부제로 사용 */
+  /** 메인 펄스 제목, 표시 시 부제로 사용 */
   pulseTitle?: string;
-  /** 박스 제목 — 기본 "본 데이터 출처" */
+  /** 박스 제목, 기본 "본 데이터 출처" */
   title?: string;
   /** 위치별 컨테이너 스타일 */
   variant?: 'inline' | 'sidebar' | 'footer';

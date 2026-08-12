@@ -19,7 +19,7 @@ const DATE_MODIFIED = '2026-06-27';
 
 export const metadata: Metadata = {
   title:
-    '신용점수와 대출금리 2026 — 점수 올리는 법·금리 영향 총정리',
+    '신용점수와 대출금리 2026, 점수 올리는 법·금리 영향 총정리',
   description:
     '신용점수(NICE·KCB)가 대출 승인과 금리에 미치는 영향을 정리합니다. 점수를 올리는 구체적 방법, 무료 조회 방법, 점수 회복 기간을 상세 설명합니다.',
   keywords: [
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
         alt: '신용점수와 대출금리 2026',
       },
     ],
-    title: '신용점수와 대출금리 2026 — 점수 올리는 법',
+    title: '신용점수와 대출금리 2026, 점수 올리는 법',
     description:
       '신용점수가 대출 이자에 미치는 영향과 점수를 개선하는 구체적 방법.',
     url: URL,
@@ -608,7 +608,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 월 상환액과 총 이자를 직접 계산해보기
+, 월 상환액과 총 이자를 직접 계산해보기
                   </li>
                   <li>
                     →{' '}
@@ -618,7 +618,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 신용점수 외 다른 심사 요소 확인하기
+, 신용점수 외 다른 심사 요소 확인하기
                   </li>
                   <li>
                     →{' '}
@@ -628,7 +628,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                     >
                       DSR·DTI·LTV 차이와 계산법 2026
                     </Link>{' '}
-                    — 신용점수 외 대출 심사 기준 학습
+, 신용점수 외 대출 심사 기준 학습
                   </li>
                   <li>
                     →{' '}
@@ -638,7 +638,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                     >
                       대출 갈아타기 손익 계산 2026
                     </Link>{' '}
-                    — 신용점수 회복 후 금리 개선 기회
+, 신용점수 회복 후 금리 개선 기회
                   </li>
                   <li>
                     →{' '}
@@ -648,7 +648,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                     >
                       중도상환수수료와 계산법 2026
                     </Link>{' '}
-                    — 갈아타기와 연계된 수수료 정보
+, 갈아타기와 연계된 수수료 정보
                   </li>
                   <li>
                     →{' '}
@@ -658,7 +658,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

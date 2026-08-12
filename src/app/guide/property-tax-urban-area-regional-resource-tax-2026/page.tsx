@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '재산세 도시지역분·지역자원시설세 2026 — 고지서 항목 완전 정리',
+  title: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
   description:
     '7월 재산세 고지서를 받으면 본세 외에 도시지역분·지역자원시설세·지방교육세가 함께 붙어옵니다. 각 항목이 무엇이고 어떻게 계산되는지, 고지서를 읽는 방법을 명확히 정리합니다. 2026년 기준.',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '재산세 도시지역분·지역자원시설세 2026 — 고지서 항목 완전 정리',
+        alt: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
       },
     ],
     title: '재산세 도시지역분·지역자원시설세 2026',
@@ -101,7 +101,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
     { name: '재산세 도시지역분·지역자원시설세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 도시지역분·지역자원시설세 2026 — 고지서 항목 완전 정리',
+    headline: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
     description:
       '7월 재산세 고지서의 4개 항목(재산세 본세·도시지역분·지역자원시설세·지방교육세)을 명확히 이해하는 방법',
     url: URL,
@@ -617,7 +617,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                     >
                       재산세 계산기
                     </Link>{' '}
-                    — 공시가격 입력으로 재산세 본세·도시지역분·지방교육세 즉시 계산
+, 공시가격 입력으로 재산세 본세·도시지역분·지방교육세 즉시 계산
                   </li>
                   <li>
                     →{' '}
@@ -627,7 +627,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                     >
                       재산세 계산 방법 완전 정리 2026
                     </Link>{' '}
-                    — 공시가격에서 세액까지 단계별 계산 원리
+, 공시가격에서 세액까지 단계별 계산 원리
                   </li>
                   <li>
                     →{' '}
@@ -637,7 +637,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                     >
                       재산세 7월 납기 일정 및 납부 방법 2026
                     </Link>{' '}
-                    — 분납 기간, 연납 할인, 납부처 정리
+, 분납 기간, 연납 할인, 납부처 정리
                   </li>
                   <li>
                     →{' '}
@@ -647,7 +647,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                     >
                       6월 재산세 시즌, 미리 알아두면 좋은 5가지
                     </Link>{' '}
-                    — 고지서 해석, 이의 신청, 감면 자격 확인
+, 고지서 해석, 이의 신청, 감면 자격 확인
                   </li>
                   <li>
                     →{' '}
@@ -657,7 +657,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                     >
                       부동산 카테고리
                     </Link>{' '}
-                    — 양도세, 취득세, 종부세 등 모든 부동산 세금 관련 계산기 및 가이드
+, 양도세, 취득세, 종부세 등 모든 부동산 세금 관련 계산기 및 가이드
                   </li>
                 </ul>
               </section>

@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-05-31';
 const DATE_MODIFIED = '2026-05-31';
 
 export const metadata: Metadata = {
-  title: '재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정 | calculatorhost',
+  title: '재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정 | calculatorhost',
   description:
     '재산세는 매년 6월 1일 기준 소유자에게 부과됩니다. 잔금일이 5월 31일 vs 6월 2일이면 누가 재산세를 내는가? 지방세법 §114에 따른 과세기준일 판정법과 거래 전 필수 협상 가이드.',
   keywords: [
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정 | calculatorhost' }],
-    title: '재산세 과세기준일 6월 1일 — 잔금 타이밍과 부담자',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정 | calculatorhost' }],
+    title: '재산세 과세기준일 6월 1일, 잔금 타이밍과 부담자',
     description: '지방세법 §114: 6월 1일 현재 소유자가 그 해 재산세 전액 부담. 5월 31일 잔금 vs 6월 2일 잔금 시 부담자 변경.',
     url: URL,
     type: 'article',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 과세기준일 6월 1일 — 잔금 타이밍과 부담자',
+    title: '재산세 과세기준일 6월 1일, 잔금 타이밍과 부담자',
     description: '지방세법 §114 기준 매도자/매수자 재산세 부담 판정.',
   },
 };
@@ -92,7 +92,7 @@ export default function PropertyTaxBaseDatePage() {
     { name: '재산세 과세기준일' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 과세기준일 6월 1일 — 잔금 타이밍과 매도자/매수자 부담 판정',
+    headline: '재산세 과세기준일 6월 1일, 잔금 타이밍과 매도자/매수자 부담 판정',
     description:
       '지방세법 §114에 따른 재산세 과세기준일 6월 1일 판정. 잔금일이 5월 31일 vs 6월 2일이면 누가 재산세를 내는가?',
     url: URL,
@@ -104,7 +104,7 @@ export default function PropertyTaxBaseDatePage() {
     keywords: ['재산세', '과세기준일', '6월 1일', '잔금', '매도자', '매수자'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '재산세 과세기준일 6월 1일 — 잔금 타이밍과 부담자 판정',
+    name: '재산세 과세기준일 6월 1일, 잔금 타이밍과 부담자 판정',
     description:
       '재산세는 지방세법 §114에 따라 매년 6월 1일 현재 사실상 소유자에게 부과. 잔금 타이밍에 따라 매도자 vs 매수자 중 누가 그 해 전체 재산세를 부담하는지 결정되므로 거래 전 반드시 계약서에 명시.',
     url: URL,
@@ -140,7 +140,7 @@ export default function PropertyTaxBaseDatePage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 과세기준일 6월 1일
                   <br />
-                  <span className="text-2xl text-text-secondary">— 잔금 타이밍과 납세 부담자</span>
+                  <span className="text-2xl text-text-secondary">· 잔금 타이밍과 납세 부담자</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   재산세는 지방세법 §114에 따라 매년 6월 1일 0시 기준 현재 소유자(사실상 소유자)가 그 해 전체 재산세를 부담합니다.
@@ -152,7 +152,7 @@ export default function PropertyTaxBaseDatePage() {
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>
                 <div className="space-y-2 text-sm" data-speakable>
                   <p className="font-bold text-danger-700 dark:text-danger-300">
-                    주의: 6월 1일이 재산세 과세기준일 — 거래 잔금 한 끗 차이로 수십~수백만 원 부담 변동
+                    주의: 6월 1일이 재산세 과세기준일, 거래 잔금 한 끗 차이로 수십~수백만 원 부담 변동
                   </p>
                   <ul className="space-y-1.5 text-text-secondary">
                     <li><strong>5월 31일 이전 잔금</strong>: 매수자가 6월 1일 소유 → 매수자가 재산세 부담</li>
@@ -164,7 +164,7 @@ export default function PropertyTaxBaseDatePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 재산세 과세기준일이란? — 6월 1일</h2>
+                <h2 className="text-2xl font-bold">1. 재산세 과세기준일이란?, 6월 1일</h2>
                 <p className="text-text-secondary leading-relaxed">
                   재산세는 지방세법 §114에 따라 매년 6월 1일 자정(0시) 기준으로 부동산을 소유한 사람(사실상 소유자)에게
                   그 해 1월 1일부터 12월 31일까지 12개월분 전체 재산세를 부과합니다.
@@ -186,7 +186,7 @@ export default function PropertyTaxBaseDatePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 거래 시나리오 — 언제 누가 재산세를 내나?</h2>
+                <h2 className="text-2xl font-bold">2. 거래 시나리오, 언제 누가 재산세를 내나?</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">시나리오 A: 5월 31일 잔금</h3>
@@ -218,7 +218,7 @@ export default function PropertyTaxBaseDatePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 재산세 납부 기한 — 7월·9월 분할</h2>
+                <h2 className="text-2xl font-bold">3. 재산세 납부 기한, 7월·9월 분할</h2>
                 <p className="text-text-secondary leading-relaxed">
                   주택분 재산세는 지방세법 §115에 따라 1년을 2회로 나누어 납부합니다. 6월 1일 기준 소유자가 이 두 차례 모두 납부할 책임이 있습니다.
                 </p>
@@ -266,7 +266,7 @@ export default function PropertyTaxBaseDatePage() {
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="font-semibold text-text-primary mb-2">① 잔금일 명시 (가장 중요)</h3>
                     <p className="text-sm text-text-secondary">
-                      예: "잔금일: 2026년 5월 25일 오후 2시" — 정확한 날짜·시간 기재.
+                      예: "잔금일: 2026년 5월 25일 오후 2시"정확한 날짜·시간 기재.
                       6월 1일 전후로 재산세 부담자가 결정되므로 명확히.
                     </p>
                   </div>
@@ -374,28 +374,28 @@ export default function PropertyTaxBaseDatePage() {
                     <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       재산세 계산기
                     </Link>
-                    {' — 본인 공시가격으로 즉시 시뮬레이션'}
+                    {'본인 공시가격으로 즉시 시뮬레이션'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       재산세 완벽 가이드 2026
                     </Link>
-                    {' — 세율·공제·납부 방법 전체'}
+                    {'세율·공제·납부 방법 전체'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">
                       취득세 계산기
                     </Link>
-                    {' — 매수자의 취득세 부담 계산'}
+                    {'매수자의 취득세 부담 계산'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">
                       양도소득세 계산기
                     </Link>
-                    {' — 매도자의 양도세 부담 계산'}
+                    {'매도자의 양도세 부담 계산'}
                   </li>
                   <li>
                     →{' '}
@@ -406,14 +406,14 @@ export default function PropertyTaxBaseDatePage() {
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      2026년 세금 달력 — 월별 신고·납부 일정
+                      2026년 세금 달력, 월별 신고·납부 일정
                     </Link>
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="재산세 과세기준일 6월 1일 — 잔금 타이밍과 부담자"
+                title="재산세 과세기준일 6월 1일, 잔금 타이밍과 부담자"
                 url={URL}
                 description="지방세법 §114: 6월 1일 현재 소유자가 그 해 전체 재산세 부담. 5월 31일 vs 6월 2일 잔금으로 누가 내는가 결정."
               />

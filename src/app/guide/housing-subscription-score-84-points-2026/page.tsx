@@ -141,10 +141,10 @@ export default function HousingSubscriptionScore84PointsPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   청약가점 84점 만점 계산법
                   <br />
-                  <span className="text-2xl text-text-secondary">— 무주택·부양가족·통장 3요소 점수표</span>
+                  <span className="text-2xl text-text-secondary">· 무주택·부양가족·통장 3요소 점수표</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  청약 당첨을 목표로 하는 무주택자에게 가점제는 필수 이해 영역입니다. 주택공급에 관한 규칙(별표1)에 정의된 청약가점 3요소—무주택기간(32점)·부양가족수(35점)·청약통장 가입기간(17점)—를 정확히 계산하고 합산하면 총 84점 만점이 나옵니다. 이 가이드는 각 요소별 점수 계산 방식을 표와 함께 명시하고, 실제 시뮬레이션으로 검증합니다.
+                  청약 당첨을 목표로 하는 무주택자에게 가점제는 필수 이해 영역입니다. 주택공급에 관한 규칙(별표1)에 정의된 청약가점 3요소·무주택기간(32점)·부양가족수(35점)·청약통장 가입기간(17점)·를 정확히 계산하고 합산하면 총 84점 만점이 나옵니다. 이 가이드는 각 요소별 점수 계산 방식을 표와 함께 명시하고, 실제 시뮬레이션으로 검증합니다.
                 </p>
               </header>
 
@@ -159,7 +159,7 @@ export default function HousingSubscriptionScore84PointsPage() {
               </div>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">1. 무주택기간(32점 만점) — 1년 미만 시 2점 시작</h2>
+                <h2 className="text-2xl font-bold">1. 무주택기간(32점 만점), 1년 미만 시 2점 시작</h2>
                 <p>
                   무주택기간은 <strong>청약 신청일 기준</strong>으로 계산됩니다. 1년 미만일 때 2점이 주어지고, 이후 매 1년마다 추가 2점씩 가산되어 15년 이상 시 32점(상한)에 도달합니다.
                 </p>
@@ -211,7 +211,7 @@ export default function HousingSubscriptionScore84PointsPage() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">2. 부양가족수(35점 만점) — 본인 포함 1명부터 5점씩</h2>
+                <h2 className="text-2xl font-bold">2. 부양가족수(35점 만점), 본인 포함 1명부터 5점씩</h2>
                 <p>
                   부양가족은 <strong>본인 포함</strong> 직계비속(자녀, 손주) 및 배우자의 직계비속입니다. 본인 1명부터 5점이 주어지고, 1명 추가될 때마다 5점씩 증가하여 6명 이상 시 35점(상한)에 도달합니다.
                 </p>
@@ -268,7 +268,7 @@ export default function HousingSubscriptionScore84PointsPage() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">3. 청약통장 가입기간(17점 만점) — 6개월 미만 시 1점</h2>
+                <h2 className="text-2xl font-bold">3. 청약통장 가입기간(17점 만점), 6개월 미만 시 1점</h2>
                 <p>
                   청약통장 가입기간은 <strong>실제 가입일부터 청약신청일까지</strong>의 기간입니다. 6개월 미만 시 1점이 주어지고, 6개월 이상부터는 기간이 늘어날수록 1년마다 1점씩 증가하여 15년 이상 시 17점(상한)에 도달합니다.
                 </p>
@@ -325,7 +325,7 @@ export default function HousingSubscriptionScore84PointsPage() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">4. 3요소 합산 시뮬레이션 — 실제 계산 사례</h2>
+                <h2 className="text-2xl font-bold">4. 3요소 합산 시뮬레이션, 실제 계산 사례</h2>
                 <p>
                   다음 세 가지 사례를 통해 84점 만점 구조를 확인해보겠습니다.
                 </p>
@@ -375,7 +375,7 @@ export default function HousingSubscriptionScore84PointsPage() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">5. 민영주택 가점제 vs 국민주택 순위제 — 신청 전 꼭 확인</h2>
+                <h2 className="text-2xl font-bold">5. 민영주택 가점제 vs 국민주택 순위제, 신청 전 꼭 확인</h2>
                 <p>
                   본 84점 만점 체계는 <strong>민영주택(전용면적 85㎡ 이하) 가점제</strong> 기준입니다. 그러나 청약 공고마다 가점제 또는 순위제가 다르게 적용됩니다.
                 </p>
@@ -424,11 +424,11 @@ export default function HousingSubscriptionScore84PointsPage() {
                 <p className="text-sm">
                   참고 링크:
                   <br />
-                  · <a href="https://applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">청약홈(applyhome.co.kr)</a> — 공식 청약 포털, 본인 가점 조회 및 모집공고
+                  · <a href="https://applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">청약홈(applyhome.co.kr)</a>, 공식 청약 포털, 본인 가점 조회 및 모집공고
                   <br />
-                  · <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">국토교통부(molit.go.kr)</a> — 주택공급에 관한 규칙 확인
+                  · <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">국토교통부(molit.go.kr)</a>, 주택공급에 관한 규칙 확인
                   <br />
-                  · <a href="https://law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">국가법령정보센터(law.go.kr)</a> — 주택공급에 관한 규칙 원문
+                  · <a href="https://law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 hover:underline">국가법령정보센터(law.go.kr)</a>, 주택공급에 관한 규칙 원문
                 </p>
               </section>
 

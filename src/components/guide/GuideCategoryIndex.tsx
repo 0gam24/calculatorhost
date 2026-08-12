@@ -31,7 +31,7 @@ interface CategoryPageMeta {
   icon: IconName;
   /** 페이지 리드 문단 겸 meta description 소재 */
   description: string;
-  /** metadata.title 의 키워드부 (개수 미포함 — 제목 안정성 유지) */
+  /** metadata.title 의 키워드부 (개수 미포함, 제목 안정성 유지) */
   titleKeywords: string;
 }
 

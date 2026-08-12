@@ -91,7 +91,7 @@ export default function InterestIncomeTax2026Page() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '예금·적금 이자소득세 15.4% 완전정리 2026 — 세후 이자 계산법',
+    headline: '예금·적금 이자소득세 15.4% 완전정리 2026, 세후 이자 계산법',
     description:
       '예금·적금 이자소득세 원천징수율 15.4% 구조 분석, 세금우대종합저축 9.5%, 금융소득 종합과세 2천만원 한계, 정기예금 세후 이자 계산 실예시.',
     url: URL,
@@ -111,7 +111,7 @@ export default function InterestIncomeTax2026Page() {
   });
 
   const webPageLd = buildWebPageJsonLd({
-    name: '예금·적금 이자소득세 15.4% 완전정리 2026 — 세후 이자 계산법',
+    name: '예금·적금 이자소득세 15.4% 완전정리 2026, 세후 이자 계산법',
     description:
       '소득세법 §129 기준 이자소득세 14%+1.4% 구조, 세금우대 조건, 금융소득 2천만원 종합과세 경계선, 실제 사례 계산.',
     url: URL,
@@ -148,7 +148,7 @@ export default function InterestIncomeTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   예금·적금 이자소득세 15.4%
                   <br />
-                  <span className="text-2xl text-text-secondary">— 세후 이자 계산법 완전정리 2026</span>
+                  <span className="text-2xl text-text-secondary">· 세후 이자 계산법 완전정리 2026</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   예금·적금의 이자는 원천징수로 기본 15.4%(소득세 14%+지방소득세 1.4%)의 세금이 공제됩니다. 소득세법 §129에 따른 이 세율은 모든 개인 금융상품(정기예금, 적금, 초단기펀드 등)에 일괄 적용되지만, 세금우대종합저축(9.5%)이나 ISA(비과세) 같은 대체수단으로 절감할 수 있습니다. 또한 연 금융소득 2,000만원을 초과하면 종합과세로 세금이 크게 증가합니다. 2026년 기준으로 정확한 세율 구조, 세금우대 조건, 종합과세 경계선, 실제 계산 사례를 한눈에 정리했습니다.
@@ -418,19 +418,19 @@ export default function InterestIncomeTax2026Page() {
                         <td className="px-2 py-1">원금</td>
                         <td className="px-2 py-1 text-right">1,000만원</td>
                         <td className="px-2 py-1 text-right">1,000만원</td>
-                        <td className="px-2 py-1 text-right">—</td>
+                        <td className="px-2 py-1 text-right">·</td>
                       </tr>
                       <tr className="border-b border-blue-300/20">
                         <td className="px-2 py-1">연이자율</td>
                         <td className="px-2 py-1 text-right">3.5%</td>
                         <td className="px-2 py-1 text-right">3.5%</td>
-                        <td className="px-2 py-1 text-right">—</td>
+                        <td className="px-2 py-1 text-right">·</td>
                       </tr>
                       <tr className="border-b border-blue-300/20">
                         <td className="px-2 py-1">1년 세전이자</td>
                         <td className="px-2 py-1 text-right">350,000원</td>
                         <td className="px-2 py-1 text-right">350,000원</td>
-                        <td className="px-2 py-1 text-right">—</td>
+                        <td className="px-2 py-1 text-right">·</td>
                       </tr>
                       <tr className="border-b border-blue-300/30">
                         <td className="px-2 py-1 font-semibold">세금</td>
@@ -442,7 +442,7 @@ export default function InterestIncomeTax2026Page() {
                         <td className="px-2 py-1 font-semibold">세후이자</td>
                         <td className="px-2 py-1 text-right font-semibold">296,100원</td>
                         <td className="px-2 py-1 text-right font-semibold text-green-600">316,750원</td>
-                        <td className="px-2 py-1 text-right">—</td>
+                        <td className="px-2 py-1 text-right">·</td>
                       </tr>
                     </tbody>
                   </table>

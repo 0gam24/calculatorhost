@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직소득세 이연 2026 | IRP 이체로 30% 감면받는 법 | calculatorhost' }],
-    title: '퇴직소득세 이연 2026 — IRP 이체로 30% 감면',
+    title: '퇴직소득세 이연 2026, IRP 이체로 30% 감면',
     description: '퇴직금을 연금계좌에 이체해 세금을 미루고, 나중에 30~40% 절감받는 구체적 방법.',
     url: URL,
     type: 'article',
@@ -91,10 +91,10 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '퇴직소득세 이연 — IRP 이체' },
+    { name: '퇴직소득세 이연, IRP 이체' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '퇴직소득세 이연 2026 — IRP 이체로 30% 감면받는 법',
+    headline: '퇴직소득세 이연 2026, IRP 이체로 30% 감면받는 법',
     description:
       '퇴직금을 IRP·연금저축에 60일 이내 이체하면 세금을 미룰 수 있고, 나중에 연금으로 수령할 때 30~40% 감면받을 수 있습니다. 과세이연 조건, 제한 시간, 실제 절감액을 정리했습니다.',
     url: URL,
@@ -140,7 +140,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금 · 9분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  퇴직소득세 이연 2026 — IRP 이체로 30% 감면받는 법
+                  퇴직소득세 이연 2026, IRP 이체로 30% 감면받는 법
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   퇴직금을 받은 직후의 결정이 세금을 크게 줄일 수 있습니다.
@@ -152,12 +152,12 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 체크리스트</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>✓ <strong>60일 기한 확인</strong> — 퇴직급여 지급일부터 정확히 60일 이내 이체</li>
-                  <li>✓ <strong>IRP/연금저축 계좌 개설</strong> — 금융기관(은행·증권사) 방문</li>
-                  <li>✓ <strong>이체 목적 명시</strong> — "퇴직금 과세이연"으로 신청</li>
-                  <li>✓ <strong>30% 절감 수령 조건</strong> — 만 55세 이상 + 10년 이내 연금 수령</li>
-                  <li>✓ <strong>중간 인출 위험</strong> — 일시금 인출 시 과세이연 종료, 전액 세금 부과</li>
-                  <li>✓ <strong>세액공제와 분리</strong> — 이연(세금 미룰 때) ≠ 세액공제(납입 시 공제)</li>
+                  <li><strong>60일 기한 확인</strong>: 퇴직급여 지급일부터 정확히 60일 이내 이체</li>
+                  <li><strong>IRP/연금저축 계좌 개설</strong>: 금융기관(은행·증권사) 방문</li>
+                  <li><strong>이체 목적 명시</strong>: "퇴직금 과세이연"으로 신청</li>
+                  <li><strong>30% 절감 수령 조건</strong>: 만 55세 이상 + 10년 이내 연금 수령</li>
+                  <li><strong>중간 인출 위험</strong>: 일시금 인출 시 과세이연 종료, 전액 세금 부과</li>
+                  <li><strong>세액공제와 분리</strong>: 이연(세금 미룰 때) ≠ 세액공제(납입 시 공제)</li>
                 </ul>
               </section>
 
@@ -189,7 +189,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">과세이연의 법적 근거 — 소득세법 §146의2</h2>
+                <h2 className="text-2xl font-bold">과세이연의 법적 근거, 소득세법 §146의2</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   소득세법 제146조의2는 "퇴직소득 과세이연" 규정으로, 다음 조건을 만족하면 세금 납부를 미룰 수 있습니다:
                 </p>
@@ -219,7 +219,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <caption className="mb-3 text-left text-xs font-semibold text-text-secondary">
-                      과세이연 퇴직소득 — 연금 수령 시 세율 (2026 기준)
+                      과세이연 퇴직소득, 연금 수령 시 세율 (2026 기준)
                     </caption>
                     <thead>
                       <tr className="border-b border-border-base bg-bg-raised">
@@ -338,10 +338,10 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                         <strong>상황:</strong> 50세에 퇴직금 5,000만 원 받음 → 퇴직소득세 1,000만 원 예상
                       </li>
                       <li>
-                        <strong>선택 1 — 일시금 수령:</strong> 세금 1,000만 원 즉시 납부, 실수령 4,000만 원
+                        <strong>선택 1, 일시금 수령:</strong> 세금 1,000만 원 즉시 납부, 실수령 4,000만 원
                       </li>
                       <li>
-                        <strong>선택 2 — IRP 이체 후 연금 수령:</strong>
+                        <strong>선택 2, IRP 이체 후 연금 수령:</strong>
                         <br />
                         · 지금: 세금 0원 (이연)
                         <br />
@@ -349,8 +349,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                         <br />
                         · 실제 절감: 300만 원
                       </li>
-                      <li className="text-highlight-500 font-semibold">
-                        ✓ 결과: 선택 2가 300만 원 더 저축됨
+                      <li className="text-highlight-500 font-semibold">결과: 선택 2가 300만 원 더 저축됨
                       </li>
                     </ul>
                   </div>
@@ -362,10 +361,10 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                         <strong>상황:</strong> 45세에 퇴직금 1억 원 받음 → 퇴직소득세 2,000만 원 예상
                       </li>
                       <li>
-                        <strong>선택 1 — 일시금 수령:</strong> 세금 2,000만 원 즉시 납부, 실수령 8,000만 원
+                        <strong>선택 1, 일시금 수령:</strong> 세금 2,000만 원 즉시 납부, 실수령 8,000만 원
                       </li>
                       <li>
-                        <strong>선택 2 — IRP 이체 후 장기 연금 수령 (11년+):</strong>
+                        <strong>선택 2, IRP 이체 후 장기 연금 수령 (11년+):</strong>
                         <br />
                         · 지금: 세금 0원 (이연)
                         <br />
@@ -373,8 +372,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                         <br />
                         · 실제 절감: 800만 원
                       </li>
-                      <li className="text-highlight-500 font-semibold">
-                        ✓ 결과: 선택 2가 800만 원 더 저축됨 (장기 보유 시 절감 더 큼)
+                      <li className="text-highlight-500 font-semibold">결과: 선택 2가 800만 원 더 저축됨 (장기 보유 시 절감 더 큼)
                       </li>
                     </ul>
                   </div>
@@ -408,7 +406,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">세액공제와의 차이점 — 혼동하면 안 됨</h2>
+                <h2 className="text-2xl font-bold">세액공제와의 차이점, 혼동하면 안 됨</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   많은 사람이 "과세이연"과 "세액공제"를 헷갈립니다.
                   두 제도는 완전히 다른 혜택이니 명확히 구분하세요.
@@ -459,7 +457,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연금 수령 기준 — 만 55세 이상 필수</h2>
+                <h2 className="text-2xl font-bold">연금 수령 기준, 만 55세 이상 필수</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   과세이연 퇴직금을 실제로 연금으로 수령하려면 몇 가지 조건을 충족해야 합니다.
                 </p>
@@ -521,31 +519,31 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                     <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
                       퇴직금 계산기
                     </Link>
-                    {' — 퇴직소득세 정확 계산 및 절감 시뮬'}
+                    {'퇴직소득세 정확 계산 및 절감 시뮬'}
                   </li>
                   <li>
                     <Link href="/guide/retirement-income-tax-2026/" className="font-semibold text-primary-500 hover:underline">
                       퇴직소득세 계산법 2026
                     </Link>
-                    {' — 연분연승·누진세 상세 가이드'}
+                    {'연분연승·누진세 상세 가이드'}
                   </li>
                   <li>
                     <Link href="/guide/severance-vs-pension-dc-db/" className="font-semibold text-primary-500 hover:underline">
                       DC·DB·퇴직금 비교
                     </Link>
-                    {' — 연금 상품별 특징'}
+                    {'연금 상품별 특징'}
                   </li>
                   <li>
                     <Link href="/guide/private-pension-1500-million-separate-taxation-2026/" className="font-semibold text-primary-500 hover:underline">
                       사적연금 과세
                     </Link>
-                    {' — 연금수령 시 종합소득 과세'}
+                    {'연금수령 시 종합소득 과세'}
                   </li>
                   <li>
                     <Link href="/calculator/retirement/" className="font-semibold text-primary-500 hover:underline">
                       은퇴자금 계산기
                     </Link>
-                    {' — 필요한 총 은퇴 자산 역산'}
+                    {'필요한 총 은퇴 자산 역산'}
                   </li>
                 </ul>
               </section>

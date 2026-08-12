@@ -30,7 +30,7 @@ const URL = 'https://calculatorhost.com/calculator/capital-gains-tax/';
 export const metadata: Metadata = {
   title: '양도소득세 계산기 2026 | 1세대1주택 비과세·장기보유공제 자동',
   description:
-    '양도소득세 계산기 2026 — 5억 매도 시 양도세 얼마? 1세대1주택 비과세·12억 한도·일시적2주택 특례·장기보유 30% 공제 자동 적용. 거래 전 최종 납부액 30초 확인.',
+    '양도소득세 계산기 2026, 5억 매도 시 양도세 얼마? 1세대1주택 비과세·12억 한도·일시적2주택 특례·장기보유 30% 공제 자동 적용. 거래 전 최종 납부액 30초 확인.',
   keywords: [
     '양도세 계산기',
     '양도소득세 계산기',
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '양도소득세 계산기 2026 — 1세대1주택 · 일시적2주택',
+    title: '양도소득세 계산기 2026, 1세대1주택 · 일시적2주택',
     description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도소득세 계산기 2026 — 1세대1주택 · 일시적2주택',
+    title: '양도소득세 계산기 2026, 1세대1주택 · 일시적2주택',
     description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인하세요.',
   },
 };
@@ -98,7 +98,7 @@ const FAQ_ITEMS = [
   {
     question: '토지 양도세 계산 사례는?',
     answer:
-      '예시 1 — 5년 보유 나대지 (취득 1억, 양도 3억): 양도차익 2억 − 장기보유공제 10%(연 2% × 5년) − 기본공제 250만 = 과세표준 1억 7,750만 → 누진세율 38% − 누진공제 1,994만 = 약 4,751만 원 + 지방소득세 10% = 약 5,226만 원. 예시 2 — 10년 보유 농지 자경(취득 5천, 양도 2억): 자경 8년 미만이면 일반 과세, 8년 이상이면 100% 감면 (조특법 §69, 한도 1억).',
+      '예시 1, 5년 보유 나대지 (취득 1억, 양도 3억): 양도차익 2억 − 장기보유공제 10%(연 2% × 5년) − 기본공제 250만 = 과세표준 1억 7,750만 → 누진세율 38% − 누진공제 1,994만 = 약 4,751만 원 + 지방소득세 10% = 약 5,226만 원. 예시 2, 10년 보유 농지 자경(취득 5천, 양도 2억): 자경 8년 미만이면 일반 과세, 8년 이상이면 100% 감면 (조특법 §69, 한도 1억).',
   },
   {
     question: '양도차익이 250만 원 이하면 비과세인가요?',
@@ -287,7 +287,7 @@ export default function TransferTaxPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 답변형 H2 — 12억 초과 비례과세 대안·비교 (검증값: src/lib/tax/transfer.ts) */}
+              {/* 답변형 H2, 12억 초과 비례과세 대안·비교 (검증값: src/lib/tax/transfer.ts) */}
               <section aria-label="12억 초과 양도세" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">1세대1주택인데 양도가액이 12억을 넘으면 세금이 얼마인가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
@@ -447,7 +447,7 @@ export default function TransferTaxPage() {
                 </div>
 
                 <RateBarChart
-                  title="양도소득세 기본세율 — 과세표준 구간별 (소득세법 §55)"
+                  title="양도소득세 기본세율, 과세표준 구간별 (소득세법 §55)"
                   caption="양도소득세 기본세율은 과세표준이 커질수록 6%에서 45%까지 8단계로 누진 적용됩니다. 1세대1주택 비과세와 장기보유특별공제를 적용한 뒤의 과세표준 기준이며, 2년 미만 단기 보유 주택은 별도 단일세율(40~70%)이 우선합니다."
                   bars={[
                     { label: '1,400만 이하', value: 6 },
@@ -519,9 +519,9 @@ export default function TransferTaxPage() {
                 </ul>
               </section>
 
-              {/* 토지 양도세 (별도 — 주택과 다른 규정) */}
+              {/* 토지 양도세 (별도, 주택과 다른 규정) */}
               <section aria-label="토지 양도세" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">토지 양도세 — 주택과 다른 규정</h2>
+                <h2 className="mb-4 text-2xl font-semibold">토지 양도세, 주택과 다른 규정</h2>
                 <p className="mb-4 text-sm text-text-secondary">
                   토지(나대지·농지·임야·잡종지 등)는 주택과 달리 <strong>1세대1주택 비과세 대상이 아닙니다.</strong>
                   거주 요건도 적용되지 않으며, 일반 누진세율 + 장기보유공제만 적용됩니다.
@@ -560,13 +560,13 @@ export default function TransferTaxPage() {
                   <ul className="text-sm text-text-secondary space-y-1">
                     <li>취득가: 5,000만 원 (2017년)</li>
                     <li>양도가: 2억 원 (2026년, 9년 보유)</li>
-                    <li>자경 기간: 8년 이상 ✓ (실제 농업 종사 증빙 필수)</li>
+                    <li>자경 기간: 8년 이상 (실제 농업 종사 증빙 필수)</li>
                   </ul>
                   <div className="mt-3 pt-3 border-t border-border-base text-sm">
                     <p className="text-text-secondary">
                       <strong>감면 적용:</strong> 양도세 100% 감면 (조특법 §69, 연 1억·5년 합 2억 한도 내)<br />
                       <strong>최종 부담:</strong> <strong className="text-primary-700 dark:text-primary-300">0원</strong> (단, 농지원부 등 자경 증빙 필요)<br />
-                      <strong>주의:</strong> 자경 기준 — 직접 농업 종사 + 거주 요건 (8년 + 농지 소재지 거주)
+                      <strong>주의:</strong> 자경 기준, 직접 농업 종사 + 거주 요건 (8년 + 농지 소재지 거주)
                     </p>
                   </div>
                 </div>
@@ -711,42 +711,42 @@ export default function TransferTaxPage() {
                     <a href="/guide/capital-gains-tax-tips/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       양도소득세 절세 7가지 방법 (2026)
                     </a>{' '}
-                    — 1세대1주택 비과세, 장기보유공제 80%, 자경 농지 100% 감면 등
+, 1세대1주택 비과세, 장기보유공제 80%, 자경 농지 100% 감면 등
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/one-household-12-billion-exemption/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       1세대1주택 12억 비과세 한도 완전 정리
                     </a>{' '}
-                    — 12억 초과분 비례 과세 공식과 장기보유공제 80% 결합 계산
+, 12억 초과분 비례 과세 공식과 장기보유공제 80% 결합 계산
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       일시적 2주택 양도세 비과세 3년
                     </a>{' '}
-                    — 신규 취득 후 3년 내 종전 주택 양도 요건과 지역별 기한
+, 신규 취득 후 3년 내 종전 주택 양도 요건과 지역별 기한
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       장기보유특별공제 80% 완전 정리
                     </a>{' '}
-                    — 보유 4%×10년 + 거주 4%×10년 = 최대 80% 공제율 표
+, 보유 4%×10년 + 거주 4%×10년 = 최대 80% 공제율 표
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/presale-right-capital-gains-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       분양권 양도소득세 완전 정리
                     </a>{' '}
-                    — 보유 기간 무관 60%/70% 단일 세율, 비과세·장특공제 미적용
+, 보유 기간 무관 60%/70% 단일 세율, 비과세·장특공제 미적용
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/capital-gains-tax-5-steps/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       양도소득세 5단계 시뮬
                     </a>{' '}
-                    — 양도가 산정부터 세율 적용까지 실전 계산 흐름 단계별 해설
+, 양도가 산정부터 세율 적용까지 실전 계산 흐름 단계별 해설
                   </li>
                 </ul>
               </section>
@@ -781,7 +781,7 @@ export default function TransferTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 소득세법 §94 (양도소득의 범위)
+                      국가법령정보센터, 소득세법 §94 (양도소득의 범위)
                     </a>
                   </li>
                   <li>
@@ -791,7 +791,7 @@ export default function TransferTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 소득세법 §104 (양도소득세율)
+                      국가법령정보센터, 소득세법 §104 (양도소득세율)
                     </a>
                   </li>
                   <li>
@@ -801,7 +801,7 @@ export default function TransferTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 소득세법 §89 (1세대1주택 비과세)
+                      국가법령정보센터, 소득세법 §89 (1세대1주택 비과세)
                     </a>
                   </li>
                   <li>
@@ -811,7 +811,7 @@ export default function TransferTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 양도소득세 신고 및 간이계산기
+                      국세청 홈택스, 양도소득세 신고 및 간이계산기
                     </a>
                   </li>
                   <li>
@@ -821,7 +821,7 @@ export default function TransferTaxPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 (nts.go.kr) — 최신 양도세 정책·공지·질의응답
+                      국세청 (nts.go.kr), 최신 양도세 정책·공지·질의응답
                     </a>
                   </li>
                 </ul>

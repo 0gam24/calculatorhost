@@ -63,7 +63,7 @@ export function VatCalculator() {
               className="mt-1 h-4 w-4 accent-primary-500"
             />
             <span className="text-sm">
-              <strong>사업자 부가세 계산</strong> — 일반/간이과세 매출세액 − 매입세액
+              <strong>사업자 부가세 계산</strong>: 일반/간이과세 매출세액 − 매입세액
             </span>
           </label>
           <label className="flex items-start gap-3 cursor-pointer">
@@ -75,7 +75,7 @@ export function VatCalculator() {
               className="mt-1 h-4 w-4 accent-primary-500"
             />
             <span className="text-sm">
-              <strong>VAT 포함 → 공급가액 환산</strong> — 부가세 분리
+              <strong>VAT 포함 → 공급가액 환산</strong>: 부가세 분리
             </span>
           </label>
           <label className="flex items-start gap-3 cursor-pointer">
@@ -87,7 +87,7 @@ export function VatCalculator() {
               className="mt-1 h-4 w-4 accent-primary-500"
             />
             <span className="text-sm">
-              <strong>공급가액 → VAT 포함 환산</strong> — 부가세 추가
+              <strong>공급가액 → VAT 포함 환산</strong>: 부가세 추가
             </span>
           </label>
         </div>

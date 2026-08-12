@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '은퇴자금 계산기 2026 — FIRE·4% 룰',
+    title: '은퇴자금 계산기 2026, FIRE·4% 룰',
     description:
       '현재 자산·월 저축액·기대수익률로 은퇴 예상자산 및 필요자금을 계산.',
     url: URL,
@@ -459,14 +459,14 @@ export default function RetirementPage() {
                     <a href="/guide/national-pension-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       국민연금 2026 총정리
                     </a>{' '}
-                    — 보험료율·수령 나이·예상 수령액 등 은퇴 소득의 기둥 확인
+, 보험료율·수령 나이·예상 수령액 등 은퇴 소득의 기둥 확인
                   </li>
                   <li>
                     →{' '}
                     <a href="/guide/basic-pension-2026/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       기초연금 2026 가이드
                     </a>{' '}
-                    — 선정기준액·국민연금 연계감액 등 65세 이후 수령 가능액 점검
+, 선정기준액·국민연금 연계감액 등 65세 이후 수령 가능액 점검
                   </li>
                 </ul>
               </section>

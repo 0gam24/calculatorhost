@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-06-13';
 const DATE_MODIFIED = '2026-06-13';
 
 export const metadata: Metadata = {
-  title: '국민연금 보험료 2026 — 계산법·상한액·직장/지역 차이',
+  title: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이',
   description:
     '2026년 국민연금 보험료율 9%→9.5%로 인상, 기준소득월액 상한 2026년 7월부터 637만원→659만원 조정. 직장가입자·지역가입자 납부액 계산, 상한액 적용 기준, 소득공제 혜택까지 정리했습니다.',
   keywords: [
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 보험료 2026 — 계산법·상한액·직장/지역 차이' }],
-    title: '국민연금 보험료 2026 — 계산법·상한액·직장/지역 차이',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이' }],
+    title: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이',
     description:
       '2026년 국민연금 보험료율 9.5%, 기준소득월액 상한 659만원(7월부터). 직장·지역 가입자 납부액 계산 및 절세 방법 정리.',
     url: URL,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 보험료 2026 — 계산법·상한·직장/지역',
+    title: '국민연금 보험료 2026, 계산법·상한·직장/지역',
     description: '보험료율 9.5%, 기준소득월액 상한 659만원. 납부액 시뮬레이션 및 소득공제.',
     images: ['/og-default.png'],
   },
@@ -97,10 +97,10 @@ export default function NationalPensionPremium2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '국민연금 보험료 2026 — 계산법·상한액·직장/지역 차이' },
+    { name: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '국민연금 보험료 2026 — 계산법·상한액·직장/지역 차이',
+    headline: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이',
     description:
       '2026년 국민연금 보험료율 9.5%, 기준소득월액 상한 2026년 7월부터 659만원. 직장가입자·지역가입자 계산, 소득공제 혜택을 정리했습니다.',
     url: URL,
@@ -112,7 +112,7 @@ export default function NationalPensionPremium2026() {
     keywords: ['국민연금 보험료', '국민연금 보험료율', '기준소득월액', '직장가입자', '지역가입자'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '국민연금 보험료 2026 — 계산법·상한액·직장/지역 차이',
+    name: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이',
     description:
       '2026년 국민연금 보험료율 9.5%, 기준소득월액 상한 659만원. 직장·지역가입자 계산과 소득공제.',
     url: URL,
@@ -148,7 +148,7 @@ export default function NationalPensionPremium2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   2026 국민연금 보험료 완전 정리
                   <br />
-                  <span className="text-2xl text-text-secondary">— 계산법·상한액·직장/지역 차이</span>
+                  <span className="text-2xl text-text-secondary">· 계산법·상한액·직장/지역 차이</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   국민연금 보험료는 2026년부터 <strong>9.5%</strong>로 인상되며, 기준소득월액 상한은 2026년 7월부터 <strong>637만원에서 659만원</strong>으로 조정됩니다. 직장가입자와 지역가입자에게 미치는 영향은 크게 다릅니다.
@@ -419,7 +419,7 @@ export default function NationalPensionPremium2026() {
             </article>
 
             <ShareButtons
-              title="2026 국민연금 보험료 완전 정리 — 계산법·상한액·직장/지역 차이"
+              title="2026 국민연금 보험료 완전 정리, 계산법·상한액·직장/지역 차이"
               url={URL}
               description="국민연금 보험료 2026년 9.5%, 기준소득월액 상한 659만원. 직장·지역가입자 계산과 절세 방법."
             />

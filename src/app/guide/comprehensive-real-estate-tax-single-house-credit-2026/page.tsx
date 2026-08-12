@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-07-01';
 export const metadata: Metadata = {
   title: '종합부동산세 1세대1주택 세액공제 2026 | 고령자·장기보유 최대 80%',
   description:
-    '종합부동산세 1세대1주택 세액공제 — 고령자 공제(20~40%) + 장기보유 공제(20~50%) 중복 적용, 합산 한도 80%. 세액공제 계산 공식·사례·부부공동명의 특례.',
+    '종합부동산세 1세대1주택 세액공제, 고령자 공제(20~40%) + 장기보유 공제(20~50%) 중복 적용, 합산 한도 80%. 세액공제 계산 공식·사례·부부공동명의 특례.',
   keywords: [
     '종합부동산세 세액공제',
     '1세대1주택 세액공제',
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 1세대1주택 세액공제 2026' }],
-    title: '종합부동산세 1세대1주택 세액공제 2026 — 고령자·장기보유 세액공제 완전 정리',
+    title: '종합부동산세 1세대1주택 세액공제 2026, 고령자·장기보유 세액공제 완전 정리',
     description: '고령자와 장기보유 세액공제를 중복 적용받아 최대 80%까지 세액을 줄일 수 있습니다. 정확한 계산법과 사례를 모두 담았습니다.',
     url: URL,
     type: 'article',
@@ -99,7 +99,7 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
     { name: '종합부동산세 1세대1주택 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합부동산세 1세대1주택 세액공제 2026 — 고령자·장기보유 공제 완전 정리',
+    headline: '종합부동산세 1세대1주택 세액공제 2026, 고령자·장기보유 공제 완전 정리',
     description:
       '1세대1주택 단독명의자가 받을 수 있는 고령자 세액공제와 장기보유 세액공제. 두 공제의 중복 적용, 합산 한도 80%, 정확한 계산 공식과 사례.',
     url: URL,
@@ -146,7 +146,7 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합부동산세 1세대1주택 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 고령자·장기보유 최대 80% 세액공제</span>
+                  <span className="text-2xl text-text-secondary">· 고령자·장기보유 최대 80% 세액공제</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   종합부동산세를 낼 때 1세대1주택이면 고령자 세액공제와 장기보유 세액공제를 받을 수 있습니다. 특히 두 공제를 중복으로 받으면 최대 80%까지 세액을 줄일 수 있어, 최종 납부액이 크게 달라집니다. 이 가이드에서는 두 공제의 정확한 기준·계산 공식·중복 적용 방법과 함께, 부부공동명의 특례까지 완벽하게 정리해드립니다.

@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '환율·환전 계산기 2026 — 스프레드·수수료 반영',
+    title: '환율·환전 계산기 2026, 스프레드·수수료 반영',
     description:
       '기준환율·스프레드·수수료로 실제 환전액과 실질 환율을 계산합니다.',
     url: URL,

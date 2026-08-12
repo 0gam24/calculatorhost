@@ -96,7 +96,7 @@ export default function NationalPensionExpectedBenefitPage() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '국민연금 예상 수령액 2026 — 조회·계산법·조기/연기 손익',
+    headline: '국민연금 예상 수령액 2026, 조회·계산법·조기/연기 손익',
     description:
       '가입기간과 평균소득으로 정해지는 국민연금 예상 수령액. 공단 조회 방법, 조기/연기 감액·증액률, 수령 시기별 손익분석.',
     url: URL,
@@ -115,7 +115,7 @@ export default function NationalPensionExpectedBenefitPage() {
   });
 
   const webPageLd = buildWebPageJsonLd({
-    name: '국민연금 예상 수령액 2026 — 조회·계산법·조기/연기 손익',
+    name: '국민연금 예상 수령액 2026, 조회·계산법·조기/연기 손익',
     description:
       '국민연금법 제51조·제61조·제62조·제66조 기준으로 정확히 정리한 예상 수령액 계산법, 조회 방법, 수령 시기별 손익 비교.',
     url: URL,
@@ -152,7 +152,7 @@ export default function NationalPensionExpectedBenefitPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   국민연금 예상 수령액 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 조회·계산법·조기/연기 손익</span>
+                  <span className="text-2xl text-text-secondary">· 조회·계산법·조기/연기 손익</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   국민연금 예상 수령액은 가입기간과 가입 중 평균소득에 따라 결정되며, 정확한 금액은 국민연금공단 '내 연금 알아보기'에서 조회할 수 있습니다. 60세 조기수령, 65세 정상수령, 70세 연기수령 중 어느 시기를 선택하느냐에 따라 평생 수령액이 30~36% 달라집니다. 국민연금법 제51조·제61조·제62조·제66조 기준으로 정확히 정리한 계산법, 조회 방법, 수령 시기별 손익을 한눈에 비교합니다.
@@ -339,7 +339,7 @@ export default function NationalPensionExpectedBenefitPage() {
                       <td className="border border-border-base px-3 py-2 text-text-primary">65세</td>
                       <td className="border border-border-base px-3 py-2">0%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">100만 원</td>
-                      <td className="border border-border-base px-3 py-2">—</td>
+                      <td className="border border-border-base px-3 py-2">·</td>
                     </tr>
                   </tbody>
                 </table>
@@ -395,7 +395,7 @@ export default function NationalPensionExpectedBenefitPage() {
                       <td className="border border-border-base px-3 py-2 text-text-primary">65세</td>
                       <td className="border border-border-base px-3 py-2">0%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">100만 원</td>
-                      <td className="border border-border-base px-3 py-2 text-green-600">—</td>
+                      <td className="border border-border-base px-3 py-2 text-green-600">·</td>
                     </tr>
                     <tr className="bg-bg-card/50">
                       <td className="border border-border-base px-3 py-2 text-text-primary">67세</td>

@@ -201,17 +201,17 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">상속주택 양도세 비과세 3가지 필수 조건</h2>
                 <ol className="list-inside list-decimal space-y-4 text-text-secondary" data-speakable>
                   <li>
-                    <strong>① 5년 이내 기존주택 양도</strong> — 피상속인 사망일부터 5년 이내에 기존 주택을
+                    <strong>① 5년 이내 기존주택 양도</strong>: 피상속인 사망일부터 5년 이내에 기존 주택을
                     양도해야 합니다(소득세법 시행령 §155②). 상속주택이 아닌 반드시 기존 주택을 양도해야 합니다.
                     5년은 사망일 기준이며 상속등기일이 아닙니다.
                   </li>
                   <li>
-                    <strong>② 기존주택 보유 2년 이상</strong> — 기존 주택은 원래 1세대1주택 비과세 조건을
+                    <strong>② 기존주택 보유 2년 이상</strong>: 기존 주택은 원래 1세대1주택 비과세 조건을
                     충족해야 합니다. 즉, 취득일부터 양도일까지 만 2년 이상 보유해야 합니다(소득세법 §89, 시행령
                     §154). 조정대상지역에서 취득한 기존주택이면 추가로 거주 2년도 필요합니다.
                   </li>
                   <li>
-                    <strong>③ 양도가 12억 원 이하</strong> — 기존 주택의 양도가액이 12억 원 이하여야 비과세됩니다
+                    <strong>③ 양도가 12억 원 이하</strong>: 기존 주택의 양도가액이 12억 원 이하여야 비과세됩니다
                     (소득세법 §89 ① 3호). 12억 초과 시 비례 과세 공식이 적용되며, 상속주택은 비과세 대상에서
                     제외됩니다.
                   </li>
@@ -267,7 +267,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
 
               {/* 5. 실제 사례 시뮬 */}
               <section aria-label="실제 사례 시뮬레이션" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 3개 — 양도가 11억 / 15억 / 20억</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례 3개, 양도가 11억 / 15억 / 20억</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   아래 사례들은 모두 기존주택을 먼저 양도하는 경우를 가정합니다. 상속 후 3년 이내, 기존주택 보유
                   2년 이상 충족한 상황입니다.
@@ -349,7 +349,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
 
               {/* 7. 공동상속 처리 */}
               <section aria-label="공동상속 처리" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">공동상속 — 지분별 비과세 적용</h2>
+                <h2 className="mb-4 text-2xl font-semibold">공동상속, 지분별 비과세 적용</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   여러 상속인이 있는 경우, 각자의 지분에 따라 비과세를 개별적으로 적용합니다. 형과 동생이 부모 유산을
                   1/2씩 상속받으면, 각자가 자신의 지분에 해당하는 양도차익에 대해 비과세 혜택을 받을 수 있습니다
@@ -393,7 +393,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
 
               {/* 9. 거주 요건 */}
               <section aria-label="거주 요건" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">거주 요건 — 기존주택 기준</h2>
+                <h2 className="mb-4 text-2xl font-semibold">거주 요건, 기존주택 기준</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   기존 주택은 원래 1세대1주택 비과세 조건을 그대로 충족해야 합니다. 비조정대상지역에서 취득한 기존주택은
                   거주 요건이 없고, 조정대상지역에서 취득한 주택(2017년 8월 3일 이후)은 보유 2년 + 거주 2년을
@@ -442,22 +442,22 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                 <h2 className="mb-3 text-xl font-semibold">주의사항 5가지</h2>
                 <ul className="list-inside list-disc space-y-2 text-sm text-text-secondary">
                   <li>
-                    <strong>5년 기한은 사망일 기준</strong> — 상속등기나 지분 분할일이 아님. 상속 신고 기한과도
+                    <strong>5년 기한은 사망일 기준</strong>: 상속등기나 지분 분할일이 아님. 상속 신고 기한과도
                     무관.
                   </li>
                   <li>
-                    <strong>반드시 기존주택을 먼저 양도</strong> — 상속주택을 먼저 양도하면 비과세 불가능. 순서
+                    <strong>반드시 기존주택을 먼저 양도</strong>: 상속주택을 먼저 양도하면 비과세 불가능. 순서
                     중요.
                   </li>
                   <li>
-                    <strong>상속주택은 비과세 대상 아님</strong> — 상속주택 양도 시 2주택 중과세(조정지역) 적용.
+                    <strong>상속주택은 비과세 대상 아님</strong>: 상속주택 양도 시 2주택 중과세(조정지역) 적용.
                   </li>
                   <li>
-                    <strong>기존주택 보유·거주 기간 재확인</strong> — 5년 유예는 별개이며, 원래 1세대1주택 조건
+                    <strong>기존주택 보유·거주 기간 재확인</strong>: 5년 유예는 별개이며, 원래 1세대1주택 조건
                     필수.
                   </li>
                   <li>
-                    <strong>공동상속인과 지분 확인</strong> — 지분별로 비과세가 개별 적용되므로 지분 비율 정확히 파악
+                    <strong>공동상속인과 지분 확인</strong>: 지분별로 비과세가 개별 적용되므로 지분 비율 정확히 파악
                     필수.
                   </li>
                 </ul>
@@ -472,35 +472,35 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                     <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">
                       양도소득세 계산기
                     </Link>{' '}
-                    — 상속주택 및 기존주택 양도세 상세 계산
+, 상속주택 및 기존주택 양도세 상세 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">
                       1세대1주택 12억 한도 완전 정리
                     </Link>{' '}
-                    — 비례 과세 공식·거주 요건·장기보유공제
+, 비례 과세 공식·거주 요건·장기보유공제
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">
                       일시적 2주택 양도세 비과세 3년
                     </Link>{' '}
-                    — 신규 주택 취득 후 기존 주택 매도 특례
+, 신규 주택 취득 후 기존 주택 매도 특례
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/inheritance-tax-10-year-prior-gift-aggregation/" className="text-primary-600 underline dark:text-primary-500">
                       상속세 사전 증여 합산 10년
                     </Link>{' '}
-                    — 상속과 증여의 통합 절세 전략
+, 상속과 증여의 통합 절세 전략
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">
                       장기보유특별공제 80% 활용법
                     </Link>{' '}
-                    — 10년 보유·거주 시 최대 절감
+, 10년 보유·거주 시 최대 절감
                   </li>
                 </ul>
               </section>

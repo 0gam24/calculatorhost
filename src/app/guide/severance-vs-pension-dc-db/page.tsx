@@ -138,7 +138,7 @@ export default function SeveranceVsPensionDcDbPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   퇴직금 vs DC/DB 퇴직연금
                   <br />
-                  <span className="text-2xl text-text-secondary">— 어떤 것을 선택할까?</span>
+                  <span className="text-2xl text-text-secondary">· 어떤 것을 선택할까?</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   퇴직연금 제도 선택은 평생 급여 차이를 만드는 중요한 결정입니다. 퇴직금·DC형(확정기여)·DB형(확정급여)
@@ -195,7 +195,7 @@ export default function SeveranceVsPensionDcDbPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">제도 1. 퇴직금 — 고전 방식, 보수적</h2>
+                <h2 className="text-2xl font-bold">제도 1. 퇴직금, 고전 방식, 보수적</h2>
                 <p className="text-text-secondary leading-relaxed">
                   2005년 12월 31일 이전 입사자의 기본 제도(근로기준법 §34).
                   회사가 퇴직 시점의 <strong>3개월 평균임금 × 근속연수 ÷ 12 × 30일</strong>로 계산.
@@ -220,7 +220,7 @@ export default function SeveranceVsPensionDcDbPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">제도 2. DB형 (확정급여형) — 회사 책임형</h2>
+                <h2 className="text-2xl font-bold">제도 2. DB형 (확정급여형), 회사 책임형</h2>
                 <p className="text-text-secondary leading-relaxed">
                   퇴직금을 연금화한 제도. 회사가 운용 책임. 퇴직 시점의 임금·근속연수 기반으로
                   금액 미리 약속 (연금보험사 또는 기금). 퇴직금처럼 예측 가능.
@@ -244,7 +244,7 @@ export default function SeveranceVsPensionDcDbPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">제도 3. DC형 (확정기여형) — 개인 운용형</h2>
+                <h2 className="text-2xl font-bold">제도 3. DC형 (확정기여형), 개인 운용형</h2>
                 <p className="text-text-secondary leading-relaxed">
                   회사가 월급의 일정 비율(최소 임금의 8.33%)을 개인 계좌에 적립.
                   근로자가 주식·채권·펀드를 직접 선택해 운용. 최종 금액은 수익률에 따라 결정.
@@ -275,7 +275,7 @@ export default function SeveranceVsPensionDcDbPage() {
                   DC로 전환하면 기존 적립액을 고정시킬 수 있습니다.
                 </p>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary block mb-2">시뮬레이션 — DB → DC 전환</strong>
+                  <strong className="text-text-primary block mb-2">시뮬레이션, DB → DC 전환</strong>
                   <p className="text-text-secondary">
                     현재 연봉 6,000만 (DB 적립액 2.5억) → 임금피크제로 5년 후 4,500만 → 5년 후 3,000만<br />
                     <strong>DB 미전환</strong>: 3,000만 기준 계산 → 약 1.2억 퇴직금 손실<br />
@@ -290,7 +290,7 @@ export default function SeveranceVsPensionDcDbPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">세금 비교 — 퇴직소득세</h2>
+                <h2 className="text-2xl font-bold">세금 비교, 퇴직소득세</h2>
                 <p className="text-text-secondary mb-3">
                   퇴직금·DC/DB 모두 <strong>퇴직소득세</strong> 적용. 일시금 vs 연금 선택 시 세율 차이 발생.
                 </p>
@@ -324,20 +324,20 @@ export default function SeveranceVsPensionDcDbPage() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 제도 선택은 회사 정책에 따라 결정 — 개인 선택 불가능한 경우 다수</li>
-                  <li>• DB→DC 전환 후 역방향 불가능 — 신중히 결정</li>
+                  <li>• 제도 선택은 회사 정책에 따라 결정, 개인 선택 불가능한 경우 다수</li>
+                  <li>• DB→DC 전환 후 역방향 불가능, 신중히 결정</li>
                   <li>• 임금피크제 시행 1년 전 사전 공고 필수 (법정)</li>
-                  <li>• 본 분석은 일반론 — 회사 규약·노조 협약 확인 필수</li>
+                  <li>• 본 분석은 일반론, 회사 규약·노조 협약 확인 필수</li>
                 </ul>
               </section>
 
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/calculator/severance/" className="text-primary-600 underline dark:text-primary-500">퇴직금 계산기</Link> — DC/DB 시나리오 비교</li>
-                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link> — 임금피크 후 세후 월급 확인</li>
-                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link> — 퇴직 전 세액공제 극대화</li>
-                  <li>→ <Link href="/guide/unemployment-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">실업급여 2026</Link> — 퇴직금과 함께 챙길 고용보험 구직급여 조건·금액</li>
+                  <li>→ <Link href="/calculator/severance/" className="text-primary-600 underline dark:text-primary-500">퇴직금 계산기</Link>, DC/DB 시나리오 비교</li>
+                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>, 임금피크 후 세후 월급 확인</li>
+                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link>, 퇴직 전 세액공제 극대화</li>
+                  <li>→ <Link href="/guide/unemployment-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">실업급여 2026</Link>, 퇴직금과 함께 챙길 고용보험 구직급여 조건·금액</li>
                 </ul>
               </section>
 

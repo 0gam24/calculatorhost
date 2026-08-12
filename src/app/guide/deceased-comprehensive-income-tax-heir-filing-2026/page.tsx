@@ -117,7 +117,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
     keywords: ['사망자 종합소득세', '상속인 신고', '소득세법 74', '6개월 기한', '신고 의무'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '사망자 종합소득세 상속인 신고 2026 — 6개월 기한·신고 의무',
+    name: '사망자 종합소득세 상속인 신고 2026, 6개월 기한·신고 의무',
     description:
       '5월 31일 신고 마감! 사망자 소득은 누가? 언제까지? 상속인 신고 의무·기한(사망일+6개월)·신고 대상·상속세와의 차이·무신고 가산세 20%·신고 체크리스트.',
     url: URL,
@@ -151,7 +151,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 readingMinutes={8}
                 publishedDate="2026-05-28"
                 title="사망자 종합소득세 상속인 신고 2026"
-                subtitle="— 6개월 기한·신고 의무·상속세와의 차이"
+                subtitle="· 6개월 기한·신고 의무·상속세와의 차이"
                 lead={
                   <p data-speakable>
                     부모님이나 배우자가 작년(또는 올해 사망)에 소득이 있었다면 세금 신고가 필요합니다.
@@ -242,7 +242,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <p className="mb-3 font-semibold text-text-primary">사망자 종합소득세의 법적 근거</p>
                   <div className="space-y-3 text-sm text-text-secondary">
                     <div>
-                      <p className="font-semibold text-text-primary mb-1">소득세법 §74 ① — 사망자 신고</p>
+                      <p className="font-semibold text-text-primary mb-1">소득세법 §74 ①, 사망자 신고</p>
                       <p className="italic text-text-tertiary">
                         "사망자의 소득에 대해서는 상속인이 사망한 날이 속하는 과세연도의 종합소득세 확정신고를 하여야 한다"
                       </p>
@@ -536,7 +536,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
                   <p className="mb-3 font-semibold text-text-primary">신고 순서: 먼저 종합소득세, 나중에 상속세</p>
                   <p>
-                    1. <strong>종합소득세 신고</strong> (6개월 or 5월 31일) 2. <strong>상속세 신고</strong> (10개월) — 순서가 중요합니다.
+                    1. <strong>종합소득세 신고</strong> (6개월 or 5월 31일) 2. <strong>상속세 신고</strong> (10개월), 순서가 중요합니다.
                     종합소득세에서 나올 세금이 상속재산을 줄이기 때문에 상속세 기초가 됩니다.
                   </p>
                 </div>
@@ -604,43 +604,43 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check1" className="mt-1" />
                     <label htmlFor="check1" className="text-text-secondary">
-                      <strong>사망자 기본 정보</strong> — 주민등록번호, 사망일자 확인
+                      <strong>사망자 기본 정보</strong>: 주민등록번호, 사망일자 확인
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check2" className="mt-1" />
                     <label htmlFor="check2" className="text-text-secondary">
-                      <strong>소득 자료 수집</strong> — 근무처 원천징수영수증, 통장(이자배당), 임대료 수기 기록
+                      <strong>소득 자료 수집</strong>: 근무처 원천징수영수증, 통장(이자배당), 임대료 수기 기록
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check3" className="mt-1" />
                     <label htmlFor="check3" className="text-text-secondary">
-                      <strong>신고 의무자 확정</strong> — 대표 신고자 정하고, 나머지는 신고 면제 신청서 작성
+                      <strong>신고 의무자 확정</strong>: 대표 신고자 정하고, 나머지는 신고 면제 신청서 작성
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check4" className="mt-1" />
                     <label htmlFor="check4" className="text-text-secondary">
-                      <strong>신고 기한 계산</strong> — 사망일 + 6개월 또는 5월 31일 중 늦은 날
+                      <strong>신고 기한 계산</strong>: 사망일 + 6개월 또는 5월 31일 중 늦은 날
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check5" className="mt-1" />
                     <label htmlFor="check5" className="text-text-secondary">
-                      <strong>신고 방법 선택</strong> — 홈택스 온라인 신고 또는 세무서 방문 신고
+                      <strong>신고 방법 선택</strong>: 홈택스 온라인 신고 또는 세무서 방문 신고
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check6" className="mt-1" />
                     <label htmlFor="check6" className="text-text-secondary">
-                      <strong>공제 확인</strong> — 부양가족, 신용카드, 의료비 등 합법적 공제 적용
+                      <strong>공제 확인</strong>: 부양가족, 신용카드, 의료비 등 합법적 공제 적용
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check7" className="mt-1" />
                     <label htmlFor="check7" className="text-text-secondary">
-                      <strong>세무사 상담</strong> — 복잡하면 전문가 도움 (수수료 vs 가산세 비교)
+                      <strong>세무사 상담</strong>: 복잡하면 전문가 도움 (수수료 vs 가산세 비교)
                     </label>
                   </div>
                 </div>
@@ -657,7 +657,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                     • <strong>기한은 사망일+6개월</strong>이나, 5월 31일이 더 앞면 5월 31일이 기한 (매년)
                   </li>
                   <li>
-                    • <strong>상속세와 독립적</strong> — 종합소득세 신고(6개월) 후 상속세 신고(10개월)
+                    • <strong>상속세와 독립적</strong>: 종합소득세 신고(6개월) 후 상속세 신고(10개월)
                   </li>
                   <li>
                     • <strong>신고 안 하면 무신고가산세 20%</strong> 부과 (6월 신고 시 50% 감면)
@@ -680,28 +680,28 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                     <Link href="/guide/inheritance-tax-10-year-prior-gift-aggregation/" className="text-primary-600 underline dark:text-primary-500">
                       상속세 사전 증여 합산 10년/5년 완벽 정리
                     </Link>
-                    {' '}— 사망 전 증여와 상속 합산 규칙
+                    {' '}· 사망 전 증여와 상속 합산 규칙
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-tax-late-filing-penalty-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종합소득세 무신고·지연 가산세 2026
                     </Link>
-                    {' '}— 신고하지 않을 시 가산세 규모
+                    {' '}· 신고하지 않을 시 가산세 규모
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 일반 종합소득세 신고 기본
+                    {' '}· 일반 종합소득세 신고 기본
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/inherited-house-capital-gains-exemption-5-year-2026/" className="text-primary-600 underline dark:text-primary-500">
                       상속주택 양도세 1세대1주택 합가 5년 특례 2026
                     </Link>
-                    {' '}— 상속 후 주택 양도세 계산
+                    {' '}· 상속 후 주택 양도세 계산
                   </li>
                 </ul>
               </section>

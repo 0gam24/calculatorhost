@@ -131,7 +131,7 @@ export default function PresaleRightCgtGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  분양권 양도세 완전 정리 2026 — 70% / 60% 고정세율
+                  분양권 양도세 완전 정리 2026, 70% / 60% 고정세율
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   분양권은 일반 주택과 완전히 다른 세제가 적용됩니다. 보유 1년 미만 70%, 1년 이상 60%
@@ -142,7 +142,7 @@ export default function PresaleRightCgtGuide() {
 
               {/* 1. 분양권 정의 + 입주권/주택 차이 */}
               <section aria-label="분양권 정의" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">분양권 vs 입주권 vs 주택 — 단계별 차이</h2>
+                <h2 className="mb-4 text-2xl font-semibold">분양권 vs 입주권 vs 주택, 단계별 차이</h2>
                 <div className="overflow-x-auto" data-speakable>
                   <table className="w-full text-sm">
                     <caption className="sr-only">분양권·입주권·주택 비교</caption>
@@ -196,7 +196,7 @@ export default function PresaleRightCgtGuide() {
 
               {/* 4. 보유기간 기산점 */}
               <section aria-label="보유기간 기산점" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">보유 기간 기산점 — 잔금 청산일</h2>
+                <h2 className="mb-4 text-2xl font-semibold">보유 기간 기산점, 잔금 청산일</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   분양권 취득일 = <strong>잔금 청산일</strong>이 원칙(소득세법 §98). 분양 신청일·계약서 서명일이 아닙니다.
                 </p>
@@ -234,7 +234,7 @@ export default function PresaleRightCgtGuide() {
                     예: 6월 양도 → 8월 31일까지. 무신고 시 무신고가산세 20% + 납부지연가산세 일 0.022%(국세기본법 §47의2·§47의4).
                   </p>
                   <p>
-                    양도소득 기본공제 250만 원 적용(소득세법 §103) — 부동산·기타자산 그룹 내 연 1회.
+                    양도소득 기본공제 250만 원 적용(소득세법 §103), 부동산·기타자산 그룹 내 연 1회.
                     예: 차익 1억 → 1억 − 250만 = 9,750만 × 60% = 5,850만 원 양도세.
                   </p>
                 </div>
@@ -256,11 +256,11 @@ export default function PresaleRightCgtGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 분양권 차익 즉시 시뮬</li>
-                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link> — 일반 주택 절세 전략</li>
-                  <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link> — 보유 기간·일시적2주택</li>
-                  <li>→ <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 마감 가이드</Link> — 연말 vs 연초 결정</li>
-                  <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link> — 입주권·주택 전환 시 비용</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 분양권 차익 즉시 시뮬</li>
+                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link>, 일반 주택 절세 전략</li>
+                  <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link>, 보유 기간·일시적2주택</li>
+                  <li>→ <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 마감 가이드</Link>, 연말 vs 연초 결정</li>
+                  <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link>, 입주권·주택 전환 시 비용</li>
                 </ul>
               </section>
 

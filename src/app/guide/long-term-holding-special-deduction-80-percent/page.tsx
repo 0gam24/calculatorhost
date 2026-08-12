@@ -200,7 +200,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                       </tr>
                       <tr>
                         <td className="py-2 pr-4 font-semibold">다주택 중과 시</td>
-                        <td className="py-2 pr-4">—</td>
+                        <td className="py-2 pr-4">·</td>
                         <td className="py-2">공제 배제</td>
                       </tr>
                     </tbody>
@@ -208,9 +208,9 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                 </div>
               </section>
 
-              {/* 3. 표2 상세 — 보유·거주 분리 */}
+              {/* 3. 표2 상세, 보유·거주 분리 */}
               <section aria-label="표2 보유 거주 분리" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-semibold">표2 (1세대1주택) — 보유·거주 분리 계산</h2>
+                <h2 className="mb-4 text-2xl font-semibold">표2 (1세대1주택), 보유·거주 분리 계산</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   1세대1주택의 장특공제는 <strong>보유 기간</strong>과 <strong>거주 기간</strong>을 별도로 계산합니다.
                   보유는 주택을 소유한 전체 기간이고, 거주는 실제로 살던 기간만 인정됩니다(시행령 §159의3 표2).
@@ -267,7 +267,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
 
               {/* 4. 거주 입증 */}
               <section aria-label="거주 입증" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">거주 기간 인증 — 주의할 점</h2>
+                <h2 className="mb-4 text-2xl font-semibold">거주 기간 인증, 주의할 점</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   거주 기간은 주민등록등본, 공과금 납부 기록, 자동차 등록증 등으로 입증합니다. 단순히 "살았다"는
                   말만으로는 인정되지 않습니다. 또한 조정대상지역에서 취득한 주택은 거주 2년 이상이 필수 요건입니다.
@@ -292,7 +292,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
 
               {/* 5. 시뮬레이션 3가지 */}
               <section aria-label="시뮬레이션 3가지" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 — 공제액 계산 3가지</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례, 공제액 계산 3가지</h2>
 
                 <div className="mb-6 rounded-lg bg-bg-card p-4">
                   <p className="mb-2 font-semibold text-text-primary">사례 1: 최대 공제 (1세대1주택, 보유 12년+거주 10년)</p>
@@ -458,19 +458,19 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>
-                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 1세대1주택·다주택·일시적2주택 시뮬
+                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 1세대1주택·다주택·일시적2주택 시뮬
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link> — 비과세 조건·비례 과세
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비과세 조건·비례 과세
                   </li>
                   <li>
-                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link> — 1년 경과·3년 기한·함정 5가지
+                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link>, 1년 경과·3년 기한·함정 5가지
                   </li>
                   <li>
-                    → <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link> — 연간 D-day·공제 계산 리뷰
+                    → <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link>, 연간 D-day·공제 계산 리뷰
                   </li>
                   <li>
-                    → <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link> — 장기보유·기본공제·필요경비 전략
+                    → <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link>, 장기보유·기본공제·필요경비 전략
                   </li>
                 </ul>
               </section>

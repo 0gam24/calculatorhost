@@ -42,7 +42,7 @@ const CURRENT_LEGAL_CAP_DISPLAY = (CURRENT_LEGAL_CAP_PCT * 100).toFixed(2);
 export const metadata: Metadata = {
   // 검색 의도 흡수: "주택임대차보호법 전월세전환율 기준금리 2% 2026" (GSC 1순위)
   // 즉답형 후크 + 법조항 + 현행 상한 수치 일부 노출 (구체성)
-  title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 §7의2 + 계산기`,
+  title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026, 주택임대차보호법 §7의2 + 계산기`,
   description: `2026년 전월세 전환 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + ${ADDITIONAL_RATE_PCT}%p, 연 ${ANNUAL_CAP_PCT}% 중 낮은 값). 주택임대차보호법 §7의2 근거 전세↔월세 즉시 환산 무료.`,
   keywords: [
     '전월세 전환율 계산기',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 — 주택임대차보호법 기준`,
+    title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026, 주택임대차보호법 기준`,
     description: `현행 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + 2%p). 전세↔월세 즉시 환산 계산기.`,
     url: URL,
     type: 'website',
@@ -188,7 +188,7 @@ export default function RentConversionPage() {
                   ]}
                 />
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  전월세 전환율 2026 — 주택임대차보호법 §7의2 기준 + 계산기
+                  전월세 전환율 2026, 주택임대차보호법 §7의2 기준 + 계산기
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택임대차보호법 §7의2(차임 등의 증감청구권) + 시행령 §9가 정한 법정 상한 안에서
@@ -198,7 +198,7 @@ export default function RentConversionPage() {
                 <AuthorByline datePublished="2026-04-24" dateModified="2026-05-15" />
               </header>
 
-              {/* 법조문 즉답 블록 — GSC 검색 의도 "주택임대차보호법 월차임 전환율 기준금리 2% 2026"
+              {/* 법조문 즉답 블록, GSC 검색 의도 "주택임대차보호법 월차임 전환율 기준금리 2% 2026"
                   사용자가 계산기보다 먼저 원하는 답: '현행 법정 상한이 정확히 얼마인가'.
                   수치는 SSoT 상수에서 import (sync-public-data cron 갱신 시 자동 반영). */}
               <section
@@ -216,7 +216,7 @@ export default function RentConversionPage() {
                 </p>
                 <ul className="mb-3 list-inside list-disc space-y-1 text-sm text-text-secondary">
                   <li>법적 근거: 주택임대차보호법 §7의2 (차임 등의 증감청구권) + 시행령 §9 (가산비율·상한)</li>
-                  <li>임대인 일방 인상 거부권 — 상한 초과 요구는 임차인이 거절 가능, 분쟁 시 임대차분쟁조정위원회</li>
+                  <li>임대인 일방 인상 거부권, 상한 초과 요구는 임차인이 거절 가능, 분쟁 시 임대차분쟁조정위원회</li>
                   <li>본 값은 <strong>법정 상한</strong>이며 실제 계약 환산율은 임대인·임차인 합의에 따라 정해짐</li>
                 </ul>
                 <p className="text-caption text-text-tertiary">
@@ -227,7 +227,7 @@ export default function RentConversionPage() {
                     rel="noopener noreferrer nofollow"
                     className="text-primary-500 hover:underline"
                   >
-                    국가법령정보센터 — 주택임대차보호법 §7의2
+                    국가법령정보센터, 주택임대차보호법 §7의2
                   </a>
                   {' · '}
                   <a
@@ -268,7 +268,7 @@ export default function RentConversionPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 보증금·월세 빠른 환산표 — 검색 의도 매칭 */}
+              {/* 보증금·월세 빠른 환산표, 검색 의도 매칭 */}
               <section aria-label="보증금 월세 환산 빠른 조회" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">보증금 ↔ 월세 환산 빠른 조회 (전환율 5.5% 기준)</h2>
                 <p className="mb-4 text-sm text-text-secondary">

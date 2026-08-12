@@ -200,22 +200,22 @@ export default function SeptemberPropertyTaxGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">5가지 납부 방법</h2>
                 <ol className="list-inside list-decimal space-y-3 text-text-secondary" data-speakable>
                   <li>
-                    <strong className="text-text-primary">위택스(wetax.go.kr) 온라인</strong> — PC/모바일 24시간. 계좌이체(수수료 무료),
+                    <strong className="text-text-primary">위택스(wetax.go.kr) 온라인</strong>: PC/모바일 24시간. 계좌이체(수수료 무료),
                     신용카드, 간편결제(카카오페이·네이버페이). 가장 편리.
                   </li>
                   <li>
-                    <strong className="text-text-primary">신용카드 무이자 할부</strong> — 위택스에서 카드 결제 → 카드사별 2~6개월 무이자 할부.
+                    <strong className="text-text-primary">신용카드 무이자 할부</strong>: 위택스에서 카드 결제 → 카드사별 2~6개월 무이자 할부.
                     체크·선불카드 제외. 결제대행 수수료 0~0.8%(카드사·수단별 상이) 별도.
                   </li>
                   <li>
-                    <strong className="text-text-primary">분할납부 신청</strong> — 본세 250만 원 초과 시 납기 다음 달 말까지 신청
+                    <strong className="text-text-primary">분할납부 신청</strong>: 본세 250만 원 초과 시 납기 다음 달 말까지 신청
                     (지방세법 §117의2). 최대 2개월 분할, 이자 없음. 위택스 또는 시·군·구청에서 신청.
                   </li>
                   <li>
-                    <strong className="text-text-primary">자동이체 등록</strong> — 한 번 등록하면 매년 자동 인출. 일부 자치단체 0.5% 할인 혜택.
+                    <strong className="text-text-primary">자동이체 등록</strong>: 한 번 등록하면 매년 자동 인출. 일부 자치단체 0.5% 할인 혜택.
                   </li>
                   <li>
-                    <strong className="text-text-primary">은행·편의점·가상계좌</strong> — 고지서 가상계좌로 송금, CU·GS·이마트 무인기 24시간 가능.
+                    <strong className="text-text-primary">은행·편의점·가상계좌</strong>: 고지서 가상계좌로 송금, CU·GS·이마트 무인기 24시간 가능.
                     별도 회원가입 불필요.
                   </li>
                 </ol>
@@ -308,11 +308,11 @@ export default function SeptemberPropertyTaxGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link> — 공시가격 입력 즉시 본세·도시지역분·교육세 계산</li>
-                  <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 완벽 가이드</Link> — 개념·세율·1세대1주택 특례</li>
-                  <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link> — 공시 9억 초과 1주택, 6억 초과 다주택</li>
-                  <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link> — 매수 시 비용</li>
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 매도 시 세금</li>
+                  <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link>, 공시가격 입력 즉시 본세·도시지역분·교육세 계산</li>
+                  <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 완벽 가이드</Link>, 개념·세율·1세대1주택 특례</li>
+                  <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link>, 공시 9억 초과 1주택, 6억 초과 다주택</li>
+                  <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link>, 매수 시 비용</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 매도 시 세금</li>
                 </ul>
               </section>
 

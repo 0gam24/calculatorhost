@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '개인사업자 등록 2026 | 프리랜서·간이·일반과세 비교' }],
-    title: '개인사업자 등록 2026 — 간이과세 vs 일반과세 선택 가이드',
+    title: '개인사업자 등록 2026, 간이과세 vs 일반과세 선택 가이드',
     description: '프리랜서 3.3% 원천징수에서 벗어나 사업자 등록하는 방법. 간이과세(매출 1억 400만원 미만) 기준과 세금 비교.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '개인사업자 등록 2026 — 간이 vs 일반과세 완벽 비교',
+    title: '개인사업자 등록 2026, 간이 vs 일반과세 완벽 비교',
     description: '프리랜서 3.3% 원천징수 탈출. 사업자 등록 절차·간이과세 1억 400만원 기준·부가세 납부 의무.',
   },
 };
@@ -99,7 +99,7 @@ export default function BusinessRegistration2026Page() {
     { name: '개인사업자 등록 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '개인사업자 등록 2026 — 프리랜서 전환·간이 vs 일반과세 완벽 비교',
+    headline: '개인사업자 등록 2026, 프리랜서 전환·간이 vs 일반과세 완벽 비교',
     description:
       '프리랜서 3.3% 원천징수 탈출. 사업자 개시일 20일 이내 등록 방법, 간이과세 1억 400만원 기준, 일반과세 선택 시 매입세액 환급까지 완전 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function BusinessRegistration2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   개인사업자 등록 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 간이·일반과세 선택 전략</span>
+                  <span className="text-2xl text-text-secondary">· 간이·일반과세 선택 전략</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   프리랜서 일을 하면서 3.3% 원천징수를 당하고 계신가요? 아니면 소규모 창업을 준비 중인가요? 개인사업자로 등록하면 세금 부담을 크게 줄일 수 있습니다. 이 가이드는 사업자 등록 절차부터 간이과세(매출 1억 400만원 미만)와 일반과세 중 어느 것을 선택해야 하는지, 그리고 선택에 따른 부가세 납부 방식까지 완전히 정리해드립니다.

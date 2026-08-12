@@ -94,7 +94,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
     { name: '상속세 공제 한도 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상속세 공제 한도 2026 — 얼마까지 면제될까?',
+    headline: '상속세 공제 한도 2026, 얼마까지 면제될까?',
     description:
       '상속공제 5가지 종류와 한도를 한눈에 파악. 배우자 있으면 최소 10억까지 면제 가능. 상증세법 §18~§21 완벽 정리.',
     url: URL,
@@ -142,7 +142,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 공제 한도 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 얼마까지 상속세가 안 나올까?</span>
+                  <span className="text-2xl text-text-secondary">· 얼마까지 상속세가 안 나올까?</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   상속이 발생하면 가장 먼저 알아야 할 것은 "상속세를 얼마나 내야 하는가"가 아니라, "이 공제로 얼마까지 면제될까"입니다. 상속공제는 상증세법 §18~§21에서 규정하며, 배우자가 있고 가족 구성이 적절하면 10억원 이상을 공제받아 상속세를 완전히 면할 수도 있습니다. 이 가이드는 5가지 상속공제의 한도를 명확하게 정리합니다.
@@ -222,7 +222,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 2: 배우자공제 (§19) — 상속의 핵심</h2>
+                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 2: 배우자공제 (§19), 상속의 핵심</h2>
                 <p data-speakable>
                   배우자만 받을 수 있는 공제입니다. <strong>최소 5억원부터 최대 30억원</strong>까지이며, 배우자의 법정상속분과 실제 상속액에 따라 결정됩니다.
                 </p>
@@ -304,7 +304,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 4: 일괄공제 5억원 (§21) — 실무 주요 공제</h2>
+                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 4: 일괄공제 5억원 (§21), 실무 주요 공제</h2>
                 <p data-speakable>
                   <strong>기초공제(2억) + §20 인적공제 합계 vs 5억원 중 큰 금액</strong>을 선택하는 공제입니다. 실무에서는 대부분 일괄공제 5억이 선택됩니다.
                 </p>
@@ -333,7 +333,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 5: 금융재산상속공제 (§22) — 정기예금·주식</h2>
+                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 5: 금융재산상속공제 (§22), 정기예금·주식</h2>
                 <p data-speakable>
                   금융재산(은행 예금, 주식, 펀드 등)이 있으면 순금융재산의 20%를 공제하는 제도입니다. 최대 2억원까지이며, 금융재산이 많을수록 유리합니다.
                 </p>
@@ -369,7 +369,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">최종 공제액 합산 — 실제 사례</h2>
+                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">최종 공제액 합산, 실제 사례</h2>
                 <p data-speakable>
                   모든 공제를 합산하면 실제로 얼마를 공제받을 수 있는지 확인해봅시다.
                 </p>

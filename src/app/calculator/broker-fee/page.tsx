@@ -245,7 +245,7 @@ export default function CommissionPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <RateBarChart
-                title="주택 매매 중개수수료 상한요율 — 거래금액 구간별 (공인중개사법 시행규칙 §20)"
+                title="주택 매매 중개수수료 상한요율, 거래금액 구간별 (공인중개사법 시행규칙 §20)"
                 caption="주택 매매 중개수수료는 거래금액 구간별 법정 상한요율로 정해집니다. 2억~9억 구간이 0.4%로 가장 낮고, 9억을 넘으면 0.5%, 12억 이상 0.6%, 15억 이상 0.7%로 올라갑니다. 상한 이내에서 중개인과 협의할 수 있으며 부가세 10%는 별도입니다."
                 unit="%"
                 max={0.8}
@@ -315,22 +315,22 @@ export default function CommissionPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 px-3">2억 ~ 9억</td>
                         <td className="py-2 px-3 text-right">0.4%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 px-3">9억 ~ 12억</td>
                         <td className="py-2 px-3 text-right">0.5%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 px-3">12억 ~ 15억</td>
                         <td className="py-2 px-3 text-right">0.6%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                       <tr>
                         <td className="py-2 px-3">15억 이상</td>
                         <td className="py-2 px-3 text-right">0.7%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                     </tbody>
                   </table>
@@ -371,22 +371,22 @@ export default function CommissionPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 px-3">1억 ~ 6억</td>
                         <td className="py-2 px-3 text-right">0.3%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 px-3">6억 ~ 12억</td>
                         <td className="py-2 px-3 text-right">0.4%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 px-3">12억 ~ 15억</td>
                         <td className="py-2 px-3 text-right">0.5%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                       <tr>
                         <td className="py-2 px-3">15억 이상</td>
                         <td className="py-2 px-3 text-right">0.6%</td>
-                        <td className="py-2 px-3 text-right">—</td>
+                        <td className="py-2 px-3 text-right">·</td>
                       </tr>
                     </tbody>
                   </table>
@@ -541,7 +541,7 @@ export default function CommissionPage() {
                   </div>
                   <div className="rounded-lg border border-border-subtle bg-bg-raised p-3 hover:border-primary-500 transition-colors">
                     <a href="/guide/jeonse-deposit-safety/" className="font-medium text-primary-500 hover:underline">
-                      전세금 안전 — 보증금 보호와 중개료
+                      전세금 안전, 보증금 보호와 중개료
                     </a>
                     <p className="text-text-secondary text-xs mt-1">전세 중개수수료 협상 팁과 보증금 반환 위험 회피</p>
                   </div>
@@ -553,7 +553,7 @@ export default function CommissionPage() {
                   </div>
                   <div className="rounded-lg border border-border-subtle bg-bg-raised p-3 hover:border-primary-500 transition-colors">
                     <a href="/guide/rent-conversion-rate-2026-housing-lease-act/" className="font-medium text-primary-500 hover:underline">
-                      전월세전환율 2026 — 보증금을 월세로
+                      전월세전환율 2026, 보증금을 월세로
                     </a>
                     <p className="text-text-secondary text-xs mt-1">전전환 기준율 및 중개료와의 연계 이해</p>
                   </div>
@@ -564,7 +564,7 @@ export default function CommissionPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
-                  <li>2026-06-01: FAQ 3개 추가 — "12억 구간 경계값", "협상으로 깎기 가능" 등 롱테일 키워드 확충</li>
+                  <li>2026-06-01: FAQ 3개 추가, "12억 구간 경계값", "협상으로 깎기 가능" 등 롱테일 키워드 확충</li>
                   <li>2026-04-24: 2026년 공인중개사법 기준 초판 공개</li>
                 </ul>
               </section>

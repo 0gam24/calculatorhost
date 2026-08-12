@@ -169,17 +169,17 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">일시적 2주택 비과세 3대 필수 조건</h2>
                 <ol className="list-inside list-decimal space-y-4 text-text-secondary" data-speakable>
                   <li>
-                    <strong>① 신규 주택 취득까지 1년 경과</strong> — 종전 주택 취득(잔금 청산)으로부터 1년 이상
+                    <strong>① 신규 주택 취득까지 1년 경과</strong>: 종전 주택 취득(잔금 청산)으로부터 1년 이상
                     경과한 후에 신규 주택을 취득해야 합니다(시행령 §155 ① 1호). 1년 미만에 신규 주택을 사면 비과세
                     불가능. 취득일은 계약일이 아닌 잔금 청산일 기준입니다.
                   </li>
                   <li>
-                    <strong>② 종전 주택 양도는 3년 이내</strong> — 신규 주택 취득(잔금 청산)으로부터 3년 이내에
+                    <strong>② 종전 주택 양도는 3년 이내</strong>: 신규 주택 취득(잔금 청산)으로부터 3년 이내에
                     종전 주택을 양도해야 합니다(시행령 §155 ① 2호). 2023년 1월 12일 시행령 개정 이전에는
                     조정대상지역 2년, 비조정지역 1년이었으나, 개정 후 모든 지역 3년으로 통일되었습니다.
                   </li>
                   <li>
-                    <strong>③ 종전 주택 보유 2년 이상</strong> — 종전 주택을 취득한 후 양도할 때까지 2년 이상
+                    <strong>③ 종전 주택 보유 2년 이상</strong>: 종전 주택을 취득한 후 양도할 때까지 2년 이상
                     보유해야 합니다(시행령 §154). 만약 조정대상지역에서 취득한 주택이면 보유 2년 + 거주 2년
                     의무(단, 2017년 8월 3일 이후 취득분만).
                   </li>
@@ -188,7 +188,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
 
               {/* 3. 양도 기한 변천사 */}
               <section aria-label="양도 기한 변천사" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">일시적 2주택 양도 기한 — 2023년 통일 정리</h2>
+                <h2 className="mb-4 text-2xl font-semibold">일시적 2주택 양도 기한, 2023년 통일 정리</h2>
                 <div className="overflow-x-auto" data-speakable>
                   <table className="w-full text-sm">
                     <caption className="sr-only">일시적 2주택 양도 기한 변천</caption>
@@ -221,7 +221,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
 
               {/* 4. 12억 한도 적용법 */}
               <section aria-label="12억 한도 적용법" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">12억 비과세 한도 — 비례 과세 공식</h2>
+                <h2 className="mb-4 text-2xl font-semibold">12억 비과세 한도, 비례 과세 공식</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   일시적 2주택도 1세대1주택과 동일하게 양도가액 12억 원 이하면 비과세입니다(소득세법 §89 ① 3호).
                   12억을 초과하면 초과분만 비례 과세되며, 초과분에 대해 누진세율과 장기보유공제 30%가 적용됩니다.
@@ -252,10 +252,10 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
               {/* 5. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 6. 거주 의무 — 2017년 이후 조정지역만 */}
+              {/* 6. 거주 의무, 2017년 이후 조정지역만 */}
               <section aria-label="거주 의무" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">
-                  거주 의무 — 2017년 8월 3일 이후 조정대상지역 취득분만
+                  거주 의무, 2017년 8월 3일 이후 조정대상지역 취득분만
                 </h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   일시적 2주택도 1세대1주택 거주 규칙을 그대로 적용합니다. 비조정대상지역에서 종전 주택을 취득한
@@ -364,22 +364,22 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>
-                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 일시적 2주택·12억 한도 시뮬
+                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 일시적 2주택·12억 한도 시뮬
                   </li>
                   <li>
-                    → <Link href="/calculator/broker-fee/" className="text-primary-600 underline dark:text-primary-500">중개수수료 계산기</Link> — 매매·전세 거래 시 중개보수 상한
+                    → <Link href="/calculator/broker-fee/" className="text-primary-600 underline dark:text-primary-500">중개수수료 계산기</Link>, 매매·전세 거래 시 중개보수 상한
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link> — 비례 과세·거주 요건·장기보유공제 80%
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비례 과세·거주 요건·장기보유공제 80%
                   </li>
                   <li>
-                    → <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link> — 장기보유·1세대1주택·분리 신고 전략
+                    → <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link>, 장기보유·1세대1주택·분리 신고 전략
                   </li>
                   <li>
-                    → <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link> — 일시적 2주택 D-day·기한 확인
+                    → <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link>, 일시적 2주택 D-day·기한 확인
                   </li>
                   <li>
-                    → <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 마감 가이드</Link> — 연말 매도 결정·신고 기한
+                    → <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 마감 가이드</Link>, 연말 매도 결정·신고 기한
                   </li>
                 </ul>
               </section>
@@ -398,7 +398,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §89 (1세대1주택 비과세) · §94 (양도소득) · §95 (장기보유특별
                   공제) · §98 (양도시기) · §103 (양도소득 기본공제) · §104 (양도세율) · §105 (예정신고) · §110
-                  (확정신고) · 시행령 §154 (1세대1주택 범위·보유·거주 요건) · §155 ① (일시적 2주택 특례 — 1년 경과 ·
+                  (확정신고) · 시행령 §154 (1세대1주택 범위·보유·거주 요건) · §155 ① (일시적 2주택 특례, 1년 경과 ·
                   3년 양도 기한). 참고:{' '}
                   <a
                     href="https://www.hometax.go.kr"

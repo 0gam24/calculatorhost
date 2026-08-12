@@ -211,7 +211,7 @@ export function SalaryCalculator() {
         {direction === 'reverse' && inferredAnnualGross > 0 && (
           <div className="mb-4 rounded-2xl border border-primary-500/30 bg-primary-500/10 p-5">
             <p className="text-caption uppercase tracking-wide text-primary-500">
-              역산 결과 — 추정 세전 연봉
+              역산 결과, 추정 세전 연봉
             </p>
             <p className="mt-1 text-3xl font-bold tabular-nums">
               {formatKRW(inferredAnnualGross)}

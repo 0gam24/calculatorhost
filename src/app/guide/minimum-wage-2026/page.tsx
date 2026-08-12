@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026년 최저임금 시급 10,320원 | 월급·주휴 환산·계산법' }],
-    title: '2026년 최저임금 시급 10,320원 — 월급 환산·수습감액·계산법 완벽 정리',
+    title: '2026년 최저임금 시급 10,320원, 월급 환산·수습감액·계산법 완벽 정리',
     description: '2026년 최저임금 확정 10,320원/시. 월 기준 약 216만원, 주휴포함 계산, 수습 3개월 90% 감액, 정기상여금 산입 기준까지.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026년 최저임금 시급 10,320원 확정 — 월급 환산 계산법',
+    title: '2026년 최저임금 시급 10,320원 확정, 월급 환산 계산법',
     description: '시급 10,320원 × 209시간 = 월 2,156,880원. 주휴·초과근무·수습감액 완전 정리.',
   },
 };
@@ -99,7 +99,7 @@ export default function MinimumWage2026Page() {
     { name: '2026년 최저임금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026년 최저임금 시급 10,320원 — 월급·주휴·수습감액·계산법 완벽 정리',
+    headline: '2026년 최저임금 시급 10,320원, 월급·주휴·수습감액·계산법 완벽 정리',
     description:
       '2026년 최저임금 시급 10,320원 확정. 월 기준 약 216만원, 주휴수당 포함 환산, 수습 3개월 90% 감액, 정기상여금·초과근무 산입범위, 위반 시 벌칙까지 완전 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function MinimumWage2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   2026년 최저임금
                   <br />
-                  <span className="text-2xl text-text-secondary">— 시급 10,320원, 월 216만원 기준</span>
+                  <span className="text-2xl text-text-secondary">· 시급 10,320원, 월 216만원 기준</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 최저임금이 확정되었습니다. 시급 10,320원으로 전년 10,030원에서 290원(2.9%) 인상되었으며, 17년 만에 노사 합의로 이루어진 결정입니다. 이 가이드는 최저임금이 정확히 얼마인지, 월급으로 환산하면 어떻게 되는지, 주휴와 수습 기간은 어떻게 적용되는지, 그리고 위반 시 벌칙까지 완벽하게 정리해드립니다.
@@ -288,35 +288,35 @@ export default function MinimumWage2026Page() {
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="p-3"><strong>기본급</strong></td>
-                        <td className="p-3">✓ 포함</td>
+                        <td className="p-3">포함</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3"><strong>주휴수당</strong></td>
-                        <td className="p-3">✓ 포함 (2024년부터)</td>
+                        <td className="p-3">포함 (2024년부터)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3"><strong>정기상여금</strong></td>
-                        <td className="p-3">✓ 포함 (2024년부터, 월 환산액)</td>
+                        <td className="p-3">포함 (2024년부터, 월 환산액)</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3"><strong>복리후생비</strong></td>
-                        <td className="p-3">✓ 포함 (2024년부터, 월 환산액)</td>
+                        <td className="p-3">포함 (2024년부터, 월 환산액)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3"><strong>초과근무수당</strong></td>
-                        <td className="p-3">✗ 제외 (별도 지급)</td>
+                        <td className="p-3">제외 (별도 지급)</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3"><strong>야근수당·휴일수당</strong></td>
-                        <td className="p-3">✗ 제외 (별도 지급)</td>
+                        <td className="p-3">제외 (별도 지급)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3"><strong>식대</strong></td>
-                        <td className="p-3">✗ 제외 (통상적 관행)</td>
+                        <td className="p-3">제외 (통상적 관행)</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3"><strong>교통비</strong></td>
-                        <td className="p-3">✗ 제외 (실비 변제)</td>
+                        <td className="p-3">제외 (실비 변제)</td>
                       </tr>
                     </tbody>
                   </table>

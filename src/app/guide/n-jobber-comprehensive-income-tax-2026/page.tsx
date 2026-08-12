@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'N잡러 종소세 합산 신고 2026 — 연말정산과 다른 5월 신고',
+    title: 'N잡러 종소세 합산 신고 2026, 연말정산과 다른 5월 신고',
     description: '부업 소득 얼마부터 신고? 연말정산했는데 또 신고?',
   },
 };
@@ -112,7 +112,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
     keywords: ['N잡러 종합소득세', '부업 소득 합산', '기타소득 분리과세', '금융소득 2천만', '5월 신고'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: 'N잡러 종합소득세 합산 신고 2026 — 근로+부업 소득 합산 필수',
+    name: 'N잡러 종합소득세 합산 신고 2026, 근로+부업 소득 합산 필수',
     description:
       '5월 31일 마감 10일 전! N잡러(직장+부업) 종합소득세 신고 필수 기준·소득 종류별 합산 의무·기타소득 300만 분리과세 선택권·누진세율 상향·세액 시뮬 3가지·신고 체크리스트 완벽 정리.',
     url: URL,
@@ -148,7 +148,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   N잡러 직장+부업 종합소득세 합산 신고 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 연말정산과 다른 5월 신고 완벽 가이드</span>
+                  <span className="text-2xl text-text-secondary">· 연말정산과 다른 5월 신고 완벽 가이드</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   직장을 다니면서 부업도 한다면 주의하세요.
@@ -318,7 +318,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
 
               {/* 3. 누진세율 상향 효과 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 소득 합산 시 누진세율 상향 — 세금은 50~200만 원 증가</h2>
+                <h2 className="text-2xl font-bold">3. 소득 합산 시 누진세율 상향, 세금은 50~200만 원 증가</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로소득과 부업 소득을 합산하면 과세표준이 높아져 누진세율 구간이 상향됩니다(소득세법 §55). 예를 들어 연봉 5,000만
                   원은 15% 구간이지만, 부업 2,000만을 합산하면 과세표준이 약 6,000~7,000만이 되어 24% 구간으로 올라갑니다. 이
@@ -550,37 +550,37 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check1" className="mt-1" />
                     <label htmlFor="check1" className="text-text-secondary">
-                      <strong>소득 종류 분류</strong> — 근로(직장) / 사업(프리랜서) / 기타(강의료 등) / 금융(배당 등) 구분
+                      <strong>소득 종류 분류</strong>: 근로(직장) / 사업(프리랜서) / 기타(강의료 등) / 금융(배당 등) 구분
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check2" className="mt-1" />
                     <label htmlFor="check2" className="text-text-secondary">
-                      <strong>수입 집계</strong> — 올해 예상 전체 소득액 (직장, 부업 각각)
+                      <strong>수입 집계</strong>: 올해 예상 전체 소득액 (직장, 부업 각각)
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check3" className="mt-1" />
                     <label htmlFor="check3" className="text-text-secondary">
-                      <strong>기타소득 300만 판단</strong> — 강의료·원고료·상금 합계 300만 이상 여부
+                      <strong>기타소득 300만 판단</strong>: 강의료·원고료·상금 합계 300만 이상 여부
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check4" className="mt-1" />
                     <label htmlFor="check4" className="text-text-secondary">
-                      <strong>금융소득 2천만 판단</strong> — 이자·배당 합계 2,000만 이상 여부
+                      <strong>금융소득 2천만 판단</strong>: 이자·배당 합계 2,000만 이상 여부
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check5" className="mt-1" />
                     <label htmlFor="check5" className="text-text-secondary">
-                      <strong>신고 의무 판단</strong> — 위 항목 중 하나라도 해당하면 신고 의무 있음
+                      <strong>신고 의무 판단</strong>: 위 항목 중 하나라도 해당하면 신고 의무 있음
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check6" className="mt-1" />
                     <label htmlFor="check6" className="text-text-secondary">
-                      <strong>세액 미리 계산</strong> —{' '}
+                      <strong>세액 미리 계산</strong>: {' '}
                       <Link href="/calculator/salary/" className="text-primary-600 underline">
                         연봉 실수령액 계산기
                       </Link>
@@ -594,13 +594,13 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check7" className="mt-1" />
                     <label htmlFor="check7" className="text-text-secondary">
-                      <strong>공제 확인</strong> — 부양가족, 신용카드, 의료비, 교육비, 기부금, 연금저축
+                      <strong>공제 확인</strong>: 부양가족, 신용카드, 의료비, 교육비, 기부금, 연금저축
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check8" className="mt-1" />
                     <label htmlFor="check8" className="text-text-secondary">
-                      <strong>분리과세 선택</strong> — 기타소득 ≤ 300만 또는 금융소득 ≤ 2천만이면 분리과세 여부 결정
+                      <strong>분리과세 선택</strong>: 기타소득 ≤ 300만 또는 금융소득 ≤ 2천만이면 분리과세 여부 결정
                     </label>
                   </div>
                 </div>
@@ -642,35 +642,35 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 근로소득 기준 세액 계산
+                    {' '}· 근로소득 기준 세액 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 사업소득 경비율별 세액
+                    {' '}· 사업소득 경비율별 세액
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-tax-late-filing-penalty-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종합소득세 무신고·지연 가산세 2026
                     </Link>
-                    {' '}— 신고 안 하면 가산세 얼마? 자진신고 감면
+                    {' '}· 신고 안 하면 가산세 얼마? 자진신고 감면
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/freelancer-simplified-vs-standard-expense-rate-2026/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 단순경비율 vs 기준경비율 2026 선택 기준
                     </Link>
-                    {' '}— 부업 사업소득 경비율 선택
+                    {' '}· 부업 사업소득 경비율 선택
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                 </ul>
               </section>

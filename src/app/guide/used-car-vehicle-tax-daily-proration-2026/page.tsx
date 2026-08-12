@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-27';
 const DATE_MODIFIED = '2026-06-27';
 
 export const metadata: Metadata = {
-  title: '중고차 자동차세 일할계산 2026 — 매도·매수 정산 누가 얼마',
+  title: '중고차 자동차세 일할계산 2026, 매도·매수 정산 누가 얼마',
   description:
     '중고차 매매 시 자동차세를 소유 일수만큼 나눠 내는 "일할계산" 가이드. 매도인·매수인 정산 규칙(지방세법 §128) + 실제 계산 사례 3가지 + 위택스 정산 방법.',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '중고차 자동차세 일할계산 2026 — 매도·매수 정산 누가 얼마',
+        alt: '중고차 자동차세 일할계산 2026, 매도·매수 정산 누가 얼마',
       },
     ],
     title: '중고차 자동차세 일할계산 2026',
@@ -90,7 +90,7 @@ const FAQ_ITEMS = [
   {
     question: '세부 정산 공식 예시를 하나 더 보여주실 수 있나요?',
     answer:
-      '예시: 1600cc 승용차 연세액 29.12만원, 4월 30일 소유권 이전. 매도인 1/1~4/29(119일) → 291,200 × 119/365 = 95,207원. 매수인 4/30~12/31(246일) → 291,200 × 246/365 = 195,993원. 합계 95,207 + 195,993 = 291,200원 ✓. 위택스의 "자동차세 일할계산" 메뉴에서 소유권 이전 증명서만 업로드하면 자동 계산됩니다.',
+      '예시: 1600cc 승용차 연세액 29.12만원, 4월 30일 소유권 이전. 매도인 1/1~4/29(119일) → 291,200 × 119/365 = 95,207원. 매수인 4/30~12/31(246일) → 291,200 × 246/365 = 195,993원. 합계 95,207 + 195,993 = 291,200원. 위택스의 "자동차세 일할계산" 메뉴에서 소유권 이전 증명서만 업로드하면 자동 계산됩니다.',
   },
   {
     question: '아직 1기분(1~6월) 자동차세 안 냈는데 8월에 사면?',
@@ -106,7 +106,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
     { name: '중고차 자동차세 일할계산' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '중고차 자동차세 일할계산 2026 — 매도·매수인 정산 규칙 + 계산 공식',
+    headline: '중고차 자동차세 일할계산 2026, 매도·매수인 정산 규칙 + 계산 공식',
     description:
       '중고차 매매 시 소유권 이전일 기준 자동차세 정산. 매도인·매수인 일수별 부담 공식 + 3가지 실제 계산 사례 + 위택스·시청 정산 절차.',
     url: URL,
@@ -154,7 +154,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   중고차 자동차세 일할계산 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 매도인·매수인 정산 규칙 + 계산 공식</span>
+                  <span className="text-2xl text-text-secondary">· 매도인·매수인 정산 규칙 + 계산 공식</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   중고차를 매매하거나 소유권을 이전할 때, 그 해의 자동차세를 매도인과 매수인이
@@ -247,7 +247,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                       <li>• 매도인 부담: 104,000 × (226 ÷ 365) = <strong>64,598원</strong></li>
                       <li>• 매수인 소유 기간: 8/15 ~ 12/31 = <strong>139일</strong></li>
                       <li>• 매수인 부담: 104,000 × (139 ÷ 365) = <strong>39,402원</strong></li>
-                      <li className="font-semibold text-text-primary">✓ 합계: 64,598 + 39,402 = 104,000원</li>
+                      <li className="font-semibold text-text-primary">합계: 64,598 + 39,402 = 104,000원</li>
                     </ul>
                   </div>
 
@@ -259,7 +259,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                       <li>• 매도인 부담: 291,200 × (119 ÷ 365) = <strong>95,207원</strong></li>
                       <li>• 매수인 소유 기간: 4/30 ~ 12/31 = <strong>246일</strong> (365 - 119 = 246)</li>
                       <li>• 매수인 부담: 291,200 × (246 ÷ 365) = <strong>195,993원</strong></li>
-                      <li className="font-semibold text-text-primary">✓ 합계: 95,207 + 195,993 = 291,200원</li>
+                      <li className="font-semibold text-text-primary">합계: 95,207 + 195,993 = 291,200원</li>
                     </ul>
                   </div>
 
@@ -271,7 +271,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                       <li>• 매도인 부담: 520,000 × (58 ÷ 365) = <strong>82,466원</strong></li>
                       <li>• 매수인 소유 기간: 2/28 ~ 12/31 = <strong>307일</strong> (365 - 58 = 307)</li>
                       <li>• 매수인 부담: 520,000 × (307 ÷ 365) = <strong>437,534원</strong></li>
-                      <li className="font-semibold text-text-primary">✓ 합계: 82,466 + 437,534 = 520,000원</li>
+                      <li className="font-semibold text-text-primary">합계: 82,466 + 437,534 = 520,000원</li>
                     </ul>
                   </div>
                 </div>
@@ -377,20 +377,15 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                   주의: 중고차 거래 전 체크리스트
                 </h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
-                  <li>
-                    ✓ <strong>매도인 세금 미납 확인</strong>: 위택스에서 차량번호 입력 → "자동차세 미납 조회" → 미납이 있으면 매수인이 물려받을 수 있음
+                  <li><strong>매도인 세금 미납 확인</strong>: 위택스에서 차량번호 입력 → "자동차세 미납 조회" → 미납이 있으면 매수인이 물려받을 수 있음
                   </li>
-                  <li>
-                    ✓ <strong>정기분 납기 기한 확인</strong>: 6월 16~30일(1기) · 12월 16~31일(2기). 기한 전후로 정산 방식이 다름
+                  <li><strong>정기분 납기 기한 확인</strong>: 6월 16~30일(1기) · 12월 16~31일(2기). 기한 전후로 정산 방식이 다름
                   </li>
-                  <li>
-                    ✓ <strong>계약서에 이전일 명시</strong>: 중고차 거래 계약서에 "소유권 이전 예정일" 명확히 기재 (분쟁 예방)
+                  <li><strong>계약서에 이전일 명시</strong>: 중고차 거래 계약서에 "소유권 이전 예정일" 명확히 기재 (분쟁 예방)
                   </li>
-                  <li>
-                    ✓ <strong>등록증 갱신 후 정산</strong>: 소유권 이전 후 새 등록증 받은 다음, 위택스에서 정산 신청 (보통 1~2주 후)
+                  <li><strong>등록증 갱신 후 정산</strong>: 소유권 이전 후 새 등록증 받은 다음, 위택스에서 정산 신청 (보통 1~2주 후)
                   </li>
-                  <li>
-                    ✓ <strong>환급 처리 기한</strong>: 정산 신청 후 1~2개월 소요. 연말 또는 연초는 지연될 수 있음
+                  <li><strong>환급 처리 기한</strong>: 정산 신청 후 1~2개월 소요. 연말 또는 연초는 지연될 수 있음
                   </li>
                 </ul>
               </section>
@@ -404,31 +399,31 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                     → <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 계산기
                     </Link>{' '}
-                    — 본인 차량 배기량 입력 후 연세액 및 월할 한도, 차령경감 포함 확인
+, 본인 차량 배기량 입력 후 연세액 및 월할 한도, 차령경감 포함 확인
                   </li>
                   <li>
                     → <Link href="/guide/vehicle-tax-2026/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 2026 기본 가이드
                     </Link>{' '}
-                    — 세율표, 차령경감, 전기차 정액과세 상세 설명
+, 세율표, 차령경감, 전기차 정액과세 상세 설명
                   </li>
                   <li>
                     → <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 연납 5% 할인 가이드
                     </Link>{' '}
-                    — 1월 미리납부로 절감액 확인 및 위택스 신청 방법
+, 1월 미리납부로 절감액 확인 및 위택스 신청 방법
                   </li>
                   <li>
                     → <Link href="/category/tax/" className="text-primary-600 underline dark:text-primary-500">
                       모든 세금 계산기·가이드
                     </Link>{' '}
-                    — 양도세, 취득세, 재산세 등
+, 양도세, 취득세, 재산세 등
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="중고차 자동차세 일할계산 2026 — 매도·매수 정산 누가 얼마"
+                title="중고차 자동차세 일할계산 2026, 매도·매수 정산 누가 얼마"
                 url={URL}
                 description="소유권 이전 기준 자동차세 정산. 공식 + 3가지 계산 사례 + 위택스 절차"
               />

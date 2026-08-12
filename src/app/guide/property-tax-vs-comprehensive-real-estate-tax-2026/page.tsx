@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-26';
 const DATE_MODIFIED = '2026-06-26';
 
 export const metadata: Metadata = {
-  title: '재산세 vs 종부세 차이 2026 — 둘 다 내나? 과세기준·세율 비교 | calculatorhost',
+  title: '재산세 vs 종부세 차이 2026, 둘 다 내나? 과세기준·세율 비교 | calculatorhost',
   description:
     '재산세는 모든 주택 보유자에게 부과되는 지방세, 종합부동산세는 공시가격 합계가 기준을 넘는 보유자에게 부과되는 국세입니다. 과세기준일·부과기관·과세대상·세율·납부시기의 차이와 이중과세 조정을 정리합니다.',
   keywords: [
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 vs 종합부동산세 2026 비교 가이드 | calculatorhost' }],
-    title: '재산세 vs 종부세 — 둘 다 내나? 2026 완벽 비교',
+    title: '재산세 vs 종부세, 둘 다 내나? 2026 완벽 비교',
     description: '지방세 재산세와 국세 종합부동산세의 차이점. 과세기준·세율·부과기관·납부시기 정리.',
     url: URL,
     type: 'article',
@@ -90,7 +90,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
     { name: '재산세 vs 종부세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 vs 종합부동산세 2026 — 둘 다 내야 할까?',
+    headline: '재산세 vs 종합부동산세 2026, 둘 다 내야 할까?',
     description:
       '재산세(지방세)와 종부세(국세)의 차이점. 과세대상·세율·납부시기·이중과세 조정까지 완벽 정리.',
     url: URL,
@@ -138,7 +138,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 vs 종부세
                   <br />
-                  <span className="text-2xl text-text-secondary">— 둘 다 내야 하나? 완벽 비교</span>
+                  <span className="text-2xl text-text-secondary">· 둘 다 내야 하나? 완벽 비교</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택 2채 이상을 소유한 사람이라면 매번 궁금해하는 질문이 있습니다. "재산세를 내는데 종부세도 내야 하나?" 답은 네, 둘 다 내야 합니다. 다만 둘은 완전히 다른 세목이며, 이중과세를 방지하기 위한 조정 과정이 있습니다. 이 가이드는 재산세와 종합부동산세의 차이점을 항목별로 정리하고, 어떻게 계산되는지 설명합니다.
@@ -202,7 +202,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">1. 세목 성격 — 지방세 vs 국세</h2>
+                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">1. 세목 성격, 지방세 vs 국세</h2>
                 <p>
                   <strong>재산세</strong>는 지방세입니다. 세수는 해당 시·군·구의 예산으로 사용되며, 시군구청에서 부과합니다. 주민 자치 사업·교육·의료 등에 쓰입니다.
                 </p>
@@ -215,7 +215,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">2. 과세 대상 — 모든 주택 vs 고가·다주택</h2>
+                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">2. 과세 대상, 모든 주택 vs 고가·다주택</h2>
                 <p>
                   <strong>재산세</strong>는 주택을 한 채만 소유해도 부과됩니다. 1세대1주택이든 2채 이상 보유자든 모두 내는 보유세입니다.
                 </p>
@@ -232,7 +232,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">3. 세율 구간 — 누진세 비교</h2>
+                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">3. 세율 구간, 누진세 비교</h2>
                 <p>
                   둘 다 누진세이지만, 세율 구간이 다릅니다.
                 </p>
@@ -295,7 +295,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">4. 나눠 내는 과정 — 재산세 먼저, 종부세 조정</h2>
+                <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">4. 나눠 내는 과정, 재산세 먼저, 종부세 조정</h2>
                 <p>
                   만약 당신이 공시가격 15억원인 주택 1채를 가진 1세대1주택이라면:
                 </p>

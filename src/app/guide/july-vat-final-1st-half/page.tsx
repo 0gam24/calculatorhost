@@ -187,7 +187,7 @@ export default function JulyVatGuide() {
                   <ul className="list-inside list-disc space-y-1.5">
                     <li>부가세 과세 사업자 (사업등록한 개인·법인)</li>
                     <li>일반과세자 + 간이과세자 (양식 다름)</li>
-                    <li>면세 사업자 (의료·교육·금융 이자 — 선택 신고 가능)</li>
+                    <li>면세 사업자 (의료·교육·금융 이자, 선택 신고 가능)</li>
                   </ul>
                   <p className="text-sm">
                     7월 25일이 토요일이라도 국세기본법 §5에 따라 익영업일(7월 27일 월) 까지 자동 연장됩니다.
@@ -277,7 +277,7 @@ export default function JulyVatGuide() {
                 </ol>
               </section>
 
-              {/* 5. FAQ (중간 배치 — GEO) */}
+              {/* 5. FAQ (중간 배치, GEO) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 6. 절세 5가지 */}
@@ -312,7 +312,7 @@ export default function JulyVatGuide() {
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>홈택스 서버 부하는 25일 직전 가장 심함 → 20일까지 신고 권장.</li>
-                  <li>일반과세·간이과세 양식이 다름 — 잘못된 양식 신고 시 수정신고 필요.</li>
+                  <li>일반과세·간이과세 양식이 다름, 잘못된 양식 신고 시 수정신고 필요.</li>
                   <li>매출 세금계산서는 매입측이 수령 확인해야 공제 가능 → 발급 후 수령 확인 필수.</li>
                   <li>신고 후 5년간 매출·매입 증빙(세금계산서·영수증·통장) 보관 의무.</li>
                 </ul>
@@ -322,13 +322,13 @@ export default function JulyVatGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link> — 본 가이드 시나리오 실시간 시뮬레이션</li>
-                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 사업소득세와 부가세 동시 계산</li>
-                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link> — 부가세 신고 직전 단계</li>
-                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고</Link> — 확정신고 전 단계, 예정고지·예정신고 차이</li>
-                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크</Link> — 7월에 겹치는 원천세 납부까지 한 번에</li>
-                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고</Link> — 확정신고 다음 분기 일정 미리 대비</li>
-                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 가이드</Link> — 부가세 신고 후 다음 단계</li>
+                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link>, 본 가이드 시나리오 실시간 시뮬레이션</li>
+                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link>, 사업소득세와 부가세 동시 계산</li>
+                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link>, 부가세 신고 직전 단계</li>
+                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고</Link>, 확정신고 전 단계, 예정고지·예정신고 차이</li>
+                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크</Link>, 7월에 겹치는 원천세 납부까지 한 번에</li>
+                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고</Link>, 확정신고 다음 분기 일정 미리 대비</li>
+                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 가이드</Link>, 부가세 신고 후 다음 단계</li>
                 </ul>
               </section>
 

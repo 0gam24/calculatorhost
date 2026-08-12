@@ -30,14 +30,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '무료 계산기 위젯 — 내 블로그에 삽입',
+    title: '무료 계산기 위젯, 내 블로그에 삽입',
     description: '양도세·연봉·대출 등 6종 계산기를 코드 한 줄로 내 사이트에 삽입하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '무료 계산기 위젯 — 내 블로그에 삽입',
+    title: '무료 계산기 위젯, 내 블로그에 삽입',
     description: '6종 계산기를 코드 한 줄로 내 사이트에 삽입하세요.',
   },
 };
@@ -212,7 +212,7 @@ export default function EmbedWidgetsPage() {
               </section>
 
               <section aria-label="삽입 방법" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">위젯 삽입 방법 — 4단계</h2>
+                <h2 className="mb-4 text-2xl font-semibold">위젯 삽입 방법, 4단계</h2>
                 <ol className="space-y-3 text-sm text-text-secondary">
                   <li>
                     <strong>1. 코드 복사:</strong> 위 목록에서 원하는 계산기의 &ldquo;임베드 코드 복사&rdquo;

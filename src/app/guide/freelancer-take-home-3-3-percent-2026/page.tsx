@@ -99,7 +99,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
     { name: '프리랜서 3.3% 원천징수와 실수령액' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '프리랜서 3.3% 원천징수와 실수령액 2026 — 5월 정산·환급·추가납부 완벽 이해',
+    headline: '프리랜서 3.3% 원천징수와 실수령액 2026, 5월 정산·환급·추가납부 완벽 이해',
     description:
       '프리랜서가 받는 3.3% 원천징수(소득세 3% + 지방세 0.3%)의 정체. 월 용역료 300만 → 3.3% 원천징수 9.9만 → 실수령 290.1만. 그러나 최종 세액은 다음해 5월 종합소득세 신고로 확정. 환급·추가납부 판단 기준·경비율·5가지 함정 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   프리랜서 3.3% 원천징수와 실수령액 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 5월 정산·환급·추가납부 완벽 이해</span>
+                  <span className="text-2xl text-text-secondary">· 5월 정산·환급·추가납부 완벽 이해</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   프리랜서가 용역비를 받을 때마다 느껴지는 답답함. <strong>월급처럼 3.3%가 톡 떨어진다</strong>는 것이죠.
@@ -201,13 +201,13 @@ export default function FreelancerTakeHome3Percent2026Page() {
                   <p className="font-semibold">핵심 원칙</p>
                   <ul className="mt-2 list-inside list-disc space-y-1">
                     <li>
-                      <strong>3.3%는 최종 세금이 아닌 "기납부세액"</strong> — 미리 낸 세금일 뿐
+                      <strong>3.3%는 최종 세금이 아닌 "기납부세액"</strong>: 미리 낸 세금일 뿐
                     </li>
                     <li>
-                      <strong>5월 신고 시 정산</strong> — 총 소득·경비·공제 종합 계산
+                      <strong>5월 신고 시 정산</strong>: 총 소득·경비·공제 종합 계산
                     </li>
                     <li>
-                      <strong>소득이 적거나 경비가 크면 환급</strong> — 3.3%보다 최종 세금이 작을 가능성 높음
+                      <strong>소득이 적거나 경비가 크면 환급</strong>: 3.3%보다 최종 세금이 작을 가능성 높음
                     </li>
                   </ul>
                 </div>
@@ -276,7 +276,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                         <li>용역료(세전): 300만원</li>
                         <li>원천징수액: 300만 × 3.3% = 9.9만원</li>
                         <li className="font-semibold text-text-primary mt-2">실수령액: 300만 − 9.9만 = 290.1만원</li>
-                        <li className="text-xs italic text-text-tertiary mt-1">✓ 검증: 300만 × 96.7% = 290.1만</li>
+                        <li className="text-xs italic text-text-tertiary mt-1">검증: 300만 × 96.7% = 290.1만</li>
                       </ul>
                     </div>
 
@@ -353,14 +353,14 @@ export default function FreelancerTakeHome3Percent2026Page() {
                   <p className="font-semibold text-text-primary">정산 결과의 3가지 경우</p>
                   <ul className="mt-2 space-y-2 list-inside list-disc">
                     <li>
-                      <strong>환급 (가장 일반적)</strong> — 최종 세금 &lt; 기납부 3.3% → 차액 환급 (예: 계산 55.8만, 기납부
+                      <strong>환급 (가장 일반적)</strong>: 최종 세금 &lt; 기납부 3.3% → 차액 환급 (예: 계산 55.8만, 기납부
                       118.8만 → 63만 환급)
                     </li>
                     <li>
-                      <strong>추가납부</strong> — 최종 세금 &gt; 기납부 3.3% → 차액 납부 (고소득·누진세율 상위 적용 시)
+                      <strong>추가납부</strong>: 최종 세금 &gt; 기납부 3.3% → 차액 납부 (고소득·누진세율 상위 적용 시)
                     </li>
                     <li>
-                      <strong>정산완료 (드물)</strong> — 최종 세금 = 기납부 3.3% → 추가 납부·환급 없음
+                      <strong>정산완료 (드물)</strong>: 최종 세금 = 기납부 3.3% → 추가 납부·환급 없음
                     </li>
                   </ul>
                 </div>
@@ -368,7 +368,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
 
               {/* 4. 환급·추가납부 예측 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 환급 vs 추가납부 — 언제 무엇을 예상할까?</h2>
+                <h2 className="text-2xl font-bold">4. 환급 vs 추가납부, 언제 무엇을 예상할까?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   프리랜서가 5월에 "얼마나 환급받을지" "얼마를 더 낼지"는 연소득, 경비, 공제에 따라 달라집니다.
                   주요 판단 기준을 이해하면 미리 자금 계획을 세울 수 있습니다.
@@ -506,26 +506,26 @@ export default function FreelancerTakeHome3Percent2026Page() {
                     <li className="flex items-start gap-2">
                       <span className="text-primary-600 dark:text-primary-400 font-bold">1.</span>
                       <span>
-                        <strong>연 매출액 집계</strong> — 모든 용역비 내역(월별, 클라이언트별) 정리. 누락된 수입 없는지 확인.
+                        <strong>연 매출액 집계</strong>: 모든 용역비 내역(월별, 클라이언트별) 정리. 누락된 수입 없는지 확인.
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary-600 dark:text-primary-400 font-bold">2.</span>
                       <span>
-                        <strong>경비 영수증 보관</strong> — 사무실 임차료, 통신비, 교재료, 장비 구매 등 사업 관련 영수증 모두
+                        <strong>경비 영수증 보관</strong>: 사무실 임차료, 통신비, 교재료, 장비 구매 등 사업 관련 영수증 모두
                         수집.
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary-600 dark:text-primary-400 font-bold">3.</span>
                       <span>
-                        <strong>원천징수액 합계</strong> — 연중 받은 모든 용역료의 3.3% 원천징수액 합산. (매월 영수증 필수)
+                        <strong>원천징수액 합계</strong>: 연중 받은 모든 용역료의 3.3% 원천징수액 합산. (매월 영수증 필수)
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary-600 dark:text-primary-400 font-bold">4.</span>
                       <span>
-                        <strong>세액 미리계산</strong> —{' '}
+                        <strong>세액 미리계산</strong>: {' '}
                         <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                           프리랜서 종합소득세 계산기
                         </Link>
@@ -535,13 +535,13 @@ export default function FreelancerTakeHome3Percent2026Page() {
                     <li className="flex items-start gap-2">
                       <span className="text-primary-600 dark:text-primary-400 font-bold">5.</span>
                       <span>
-                        <strong>절세 수단 점검</strong> — 연금저축(공제), 노란우산공제(공제), 신용카드 소비(공제) 추가 여부.
+                        <strong>절세 수단 점검</strong>: 연금저축(공제), 노란우산공제(공제), 신용카드 소비(공제) 추가 여부.
                       </span>
                     </li>
                     <li className="flex items-start gap-2">
                       <span className="text-primary-600 dark:text-primary-400 font-bold">6.</span>
                       <span>
-                        <strong>추가납부 자금 준비</strong> — 고소득이면 추가납부 규모 예상하여 현금 확보.
+                        <strong>추가납부 자금 준비</strong>: 고소득이면 추가납부 규모 예상하여 현금 확보.
                       </span>
                     </li>
                   </ul>
@@ -556,22 +556,22 @@ export default function FreelancerTakeHome3Percent2026Page() {
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
-                    • <strong>3.3%는 최종 세금이 아닙니다</strong> — 5월 신고 시 환급·추가납부 가능. 현금 흐름 관리
+                    • <strong>3.3%는 최종 세금이 아닙니다</strong>: 5월 신고 시 환급·추가납부 가능. 현금 흐름 관리
                     필수.
                   </li>
                   <li>
-                    • <strong>경비율은 업종별·상황별로 다릅니다</strong> — 본 가이드 수치는 일반론. 정확한 계산은 세무사
+                    • <strong>경비율은 업종별·상황별로 다릅니다</strong>: 본 가이드 수치는 일반론. 정확한 계산은 세무사
                     상담.
                   </li>
                   <li>
-                    • <strong>5월 31일 신고 기한 필수</strong> — 무신고·지연 시 가산세 20%. 환급금도 환급 청구 기한
+                    • <strong>5월 31일 신고 기한 필수</strong>: 무신고·지연 시 가산세 20%. 환급금도 환급 청구 기한
                     5년(경과 후 상실).
                   </li>
                   <li>
-                    • <strong>영수증·통장 기록 5년 보관</strong> — 세무조사 대비 필수. 경비 입증 자료 확보.
+                    • <strong>영수증·통장 기록 5년 보관</strong>: 세무조사 대비 필수. 경비 입증 자료 확보.
                   </li>
                   <li>
-                    • <strong>N잡 또는 고소득이면 세무사 상담 강력 권고</strong> — 누진세율·가산세 위험 회피.
+                    • <strong>N잡 또는 고소득이면 세무사 상담 강력 권고</strong>: 누진세율·가산세 위험 회피.
                   </li>
                 </ul>
               </section>
@@ -585,7 +585,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 연소득·경비율·공제 입력 후 세액·환급액 즉시 계산
+                    {' '}· 연소득·경비율·공제 입력 후 세액·환급액 즉시 계산
                   </li>
                   <li>
                     →{' '}
@@ -595,28 +595,28 @@ export default function FreelancerTakeHome3Percent2026Page() {
                     >
                       프리랜서 단순경비율 vs 기준경비율 2026 선택 기준
                     </Link>
-                    {' '}— 경비율 선택으로 세금 50만~200만 차이
+                    {' '}· 경비율 선택으로 세금 50만~200만 차이
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/freelancer-salary-comparison/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 vs 일반직 실수령액 비교
                     </Link>
-                    {' '}— 같은 연봉이라도 4대보험·세금 차이
+                    {' '}· 같은 연봉이라도 4대보험·세금 차이
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/work/" className="text-primary-600 underline dark:text-primary-500">
                       근로·소득 계산기 모음
                     </Link>
-                    {' '}— 연봉·N잡·부업 세금 계산 도구
+                    {' '}· 연봉·N잡·부업 세금 계산 도구
                   </li>
                 </ul>
               </section>

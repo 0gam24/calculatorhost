@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-01';
 const DATE_MODIFIED = '2026-06-01';
 
 export const metadata: Metadata = {
-  title: '자동차 개별소비세 인하 6월 30일 마감 — 출고 기준 143만원 절감 가이드 | calculatorhost',
+  title: '자동차 개별소비세 인하 6월 30일 마감, 출고 기준 143만원 절감 가이드 | calculatorhost',
   description:
     '자동차 개별소비세 인하(5% → 3.5%)는 2026년 6월 30일 종료. 최대 143만원 절감하려면 6월 30일 이전 출고 필수. 계약일이 아닌 출고일이 기준. 마감 1개월 남은 지금 꼭 확인해야 할 사항.',
   keywords: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차 개별소비세 인하 6월 30일 마감 — 출고 기준 143만원 절감 가이드 | calculatorhost' }],
-    title: '자동차 개별소비세 인하 6월 30일 마감 — 143만원 절감하는 방법',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차 개별소비세 인하 6월 30일 마감, 출고 기준 143만원 절감 가이드 | calculatorhost' }],
+    title: '자동차 개별소비세 인하 6월 30일 마감, 143만원 절감하는 방법',
     description: '개별소비세 5% → 3.5% 인하, 최대 143만원 절감. 기준은 계약일 아닌 출고일. 마감 D-30 필수 가이드.',
     url: URL,
     type: 'article',
@@ -100,7 +100,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
     { name: '자동차 개별소비세 6월 30일 마감' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차 개별소비세 인하 6월 30일 마감 — 최대 143만원 절감 가이드',
+    headline: '자동차 개별소비세 인하 6월 30일 마감, 최대 143만원 절감 가이드',
     description:
       '개별소비세 인하(5% → 3.5%)는 2026년 6월 30일 종료. 기준은 계약일이 아닌 출고일. 최대 143만원 절감하는 방법과 주의사항.',
     url: URL,
@@ -112,7 +112,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
     keywords: ['자동차 개별소비세', '6월 30일', '143만원 절감', '출고 기준'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '자동차 개별소비세 인하 6월 30일 마감 — 143만원 절감하는 방법',
+    name: '자동차 개별소비세 인하 6월 30일 마감, 143만원 절감하는 방법',
     description:
       '2026년 자동차 개별소비세 인하 정책 종료 D-30. 계약일이 아닌 출고일 기준으로 6월 30일까지만 5% → 3.5% 인하 적용. 최대 143만원 절감하려면 지금 바로 확인하세요.',
     url: URL,
@@ -148,7 +148,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차 개별소비세 인하
                   <br />
-                  <span className="text-2xl text-text-secondary">— 6월 30일 마감 D-30 필수 가이드</span>
+                  <span className="text-2xl text-text-secondary">· 6월 30일 마감 D-30 필수 가이드</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자동차 개별소비세 인하 정책(5% → 3.5%)은 2026년 6월 30일 자정을 기준으로 종료됩니다.
@@ -161,7 +161,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>
                 <div className="space-y-2 text-sm" data-speakable>
                   <p className="font-bold text-danger-700 dark:text-danger-300">
-                    주의: 6월 30일 23:59(마감) 이전 출고 필수 — 계약일이 아닌 출고일이 기준
+                    주의: 6월 30일 23:59(마감) 이전 출고 필수, 계약일이 아닌 출고일이 기준
                   </p>
                   <ul className="space-y-1.5 text-text-secondary">
                     <li><strong>6월 30일 이전 출고</strong>: 개별소비세 3.5% 적용 (최대 143만원 절감)</li>
@@ -239,7 +239,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 기준은 계약일이 아니라 출고일 — 가장 흔한 착각</h2>
+                <h2 className="text-2xl font-bold">3. 기준은 계약일이 아니라 출고일, 가장 흔한 착각</h2>
                 <p className="text-text-secondary leading-relaxed">
                   개별소비세 혜택을 받으려는 고객 중 가장 많이 하는 실수가 바로 이것입니다.
                   <strong>계약일 기준이 아니라 차량이 공장에서 출고되는 날(출고일)이 기준</strong>입니다.
@@ -350,48 +350,48 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                     <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 계산기
                     </Link>
-                    {' — 보유세 연간 납부액 계산 (개소세와 별개)'}
+                    {'보유세 연간 납부액 계산 (개소세와 별개)'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">
                       취득세 계산기
                     </Link>
-                    {' — 부동산 거래 시 취득세 (자동차와 별개)'}
+                    {'부동산 거래 시 취득세 (자동차와 별개)'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 제1기 6월 납부 가이드
                     </Link>
-                    {' — 차량 보유 시 매년 6월 내는 자동차세·차령경감 총정리'}
+                    {'차량 보유 시 매년 6월 내는 자동차세·차령경감 총정리'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
                       1월 자동차세 연납 신청 가이드
                     </Link>
-                    {' — 연납 신청으로 자동차세 약 5% 아끼는 법'}
+                    {'연납 신청으로 자동차세 약 5% 아끼는 법'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">
                       부동산 과세기준일 6월 1일 가이드
                     </Link>
-                    {' — 부동산 거래 시 중요한 날짜'}
+                    {'부동산 거래 시 중요한 날짜'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>
-                    {' — 월별 신고·납부 일정 전체'}
+                    {'월별 신고·납부 일정 전체'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="자동차 개별소비세 인하 6월 30일 마감 — 143만원 절감 가이드"
+                title="자동차 개별소비세 인하 6월 30일 마감, 143만원 절감 가이드"
                 url={URL}
                 description="개별소비세 5% → 3.5% 인하, 최대 143만원 절감. 기준은 계약일 아닌 출고일. 마감 D-30."
               />
@@ -402,7 +402,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 개별소비세법 §1(승용자동차 기본세율 5%, 제2항 제3호) ·
-                  개별소비세법 §1 제7항(탄력세율 — 정부가 기본세율의 ±30% 범위에서 조정) ·
+                  개별소비세법 §1 제7항(탄력세율, 정부가 기본세율의 ±30% 범위에서 조정) ·
                   개별소비세법 시행령 §2의2(자동차 개별소비세 한시 인하 3.5%) ·
                   교육세법 §5(개별소비세액의 30%) ·{' '}
                   <a

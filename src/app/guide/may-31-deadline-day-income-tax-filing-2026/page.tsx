@@ -148,7 +148,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                 readingMinutes={9}
                 publishedDate="2026-05-31"
                 title="5월 31일 마감 당일 종합소득세 신고 2026"
-                subtitle="— 자정까지 5단계로 완료하기"
+                subtitle="· 자정까지 5단계로 완료하기"
                 lead={
                   <p data-speakable>
                     5월 31일 자정까지 남은 시간이 제한적이신가요?
@@ -392,7 +392,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                     </div>
 
                     <div className="rounded-lg bg-highlight-500/10 p-3">
-                      <p className="font-semibold text-text-primary">자진신고 감면 (국세기본법 §48) — 6월 신고 시</p>
+                      <p className="font-semibold text-text-primary">자진신고 감면 (국세기본법 §48), 6월 신고 시</p>
                       <ul className="mt-2 list-inside list-disc space-y-1">
                         <li className="font-semibold text-highlight-700">감면율: 50% (6월 신고 기준)</li>
                         <li>감면된 가산세 = 125만 × 50% = 약 62.5만 원</li>
@@ -620,35 +620,35 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 당일 신고 전 세액 확인
+                    {' '}· 당일 신고 전 세액 확인
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 기타소득·사업소득 세액 시뮬
+                    {' '}· 기타소득·사업소득 세액 시뮬
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·절세·환급
+                    {' '}· 신고 대상·절세·환급
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-tax-late-filing-penalty-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종합소득세 무신고 가산세 정확 계산
                     </Link>
-                    {' '}— 자진신고 감면 가능성
+                    {' '}· 자진신고 감면 가능성
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-tax-installment-payment-2026/" className="text-primary-600 underline dark:text-primary-500">
                       종합소득세 분납 신청 가이드
                     </Link>
-                    {' '}— 분납 기한·절차·이점
+                    {' '}· 분납 기한·절차·이점
                   </li>
                 </ul>
               </section>

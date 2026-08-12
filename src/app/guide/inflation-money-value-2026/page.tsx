@@ -91,7 +91,7 @@ export default function InflationMoneyValuePage() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '화폐가치 계산 2026 — 인플레이션 계산법·10년 전 돈의 현재가치',
+    headline: '화폐가치 계산 2026, 인플레이션 계산법·10년 전 돈의 현재가치',
     description:
       '물가상승률로 미래·과거 화폐가치를 환산하는 방법. 복리 공식, CPI 환산, 품목별 물가상승률 차이를 명확히 정리했습니다.',
     url: URL,
@@ -110,7 +110,7 @@ export default function InflationMoneyValuePage() {
   });
 
   const webPageLd = buildWebPageJsonLd({
-    name: '화폐가치 계산 2026 — 인플레이션·물가상승률·미래가치 환산',
+    name: '화폐가치 계산 2026, 인플레이션·물가상승률·미래가치 환산',
     description:
       '복리 공식으로 미래 화폐가치를 계산하고, 통계청 CPI로 과거 돈의 현재 가치를 환산합니다. 물가상승 시뮬레이션·품목별 차이·계산법을 정리했습니다.',
     url: URL,
@@ -147,7 +147,7 @@ export default function InflationMoneyValuePage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   화폐가치 계산 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 인플레이션·물가상승률·미래가치 환산</span>
+                  <span className="text-2xl text-text-secondary">· 인플레이션·물가상승률·미래가치 환산</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   화폐가치는 물가상승률에 따라 시간이 지날수록 떨어집니다. 현재 100만원이 10년 후에는 약 134만원의 가치가 필요해질 수 있다는 뜻입니다. 복리 공식으로 미래 화폐가치를 계산하고, 통계청 소비자물가지수(CPI)로 과거 돈의 현재 가치를 환산하는 두 가지 방법을 명확히 정리했습니다. 은퇴 자금 계획, 투자 수익 분석, 실질 구매력 비교가 필요할 때 바로 활용하세요.

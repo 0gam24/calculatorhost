@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '보장성보험료 세액공제 2026 | 100만원 한도·12% 공제' }],
-    title: '보장성보험료 세액공제 2026 — 연말정산 100만원 한도 완벽 정리',
+    title: '보장성보험료 세액공제 2026, 연말정산 100만원 한도 완벽 정리',
     description: '기본공제대상자를 피보험자로 하는 보장성보험(손해보험·상해·질병·종신·화재)의 보험료 12% 공제. 한도·구간·필요 서류까지 한눈에.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '보장성보험료 세액공제 2026 — 100만원/12% 한도 정확히',
+    title: '보장성보험료 세액공제 2026, 100만원/12% 한도 정확히',
     description: '보장성보험료 세액공제의 대상, 한도, 공제율, 제외 대상을 소득세법 §59의4에 따라 정리했습니다.',
   },
 };
@@ -99,7 +99,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
     { name: '보장성보험료 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '보장성보험료 세액공제 2026 — 연말정산 100만원 한도 완벽 정리',
+    headline: '보장성보험료 세액공제 2026, 연말정산 100만원 한도 완벽 정리',
     description:
       '기본공제대상자를 피보험자로 하는 보장성보험의 보험료 세액공제. 일반 100만원 한도 12% 공제, 장애인 별도 100만원 한도 15% 공제. 대상 보험·제외 사항·연말정산 신청 방법까지 소득세법 §59의4 기준으로 정확히 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   보장성보험료 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 100만원 한도·12% 공제</span>
+                  <span className="text-2xl text-text-secondary">· 100만원 한도·12% 공제</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   연말정산 때 보험료를 낸 직장인이라면 한 번쯤 '보장성보험료 세액공제'를 들었을 겁니다. 하지만 정확히 어떤 보험이 대상인지, 한도가 얼마인지, 어떻게 신청하는지 헷갈리기 쉽습니다. 이 가이드에서는 소득세법 §59의4에 따른 보장성보험료 세액공제의 모든 것을 정리해드립니다. 한도·공제율·대상보험·제외 사항까지 한눈에 파악하고, 연말정산 때 최대한 공제받으세요.
@@ -258,9 +258,9 @@ export default function InsurancePremiumTaxCredit2026Page() {
                   <ul className="space-y-2 ml-4 list-disc text-sm text-text-secondary">
                     <li><strong>본인:</strong> 근로자 또는 자영업자 본인 (연소득 무관)</li>
                     <li><strong>배우자:</strong> 배우자의 연소득 100만원 이하</li>
-                    <li><strong>직계존속:</strong> 부모(친, 배우자 측 포함), 할머니할아버지 등 — 연소득 100만원 이하, 나이 만 60세 이상</li>
-                    <li><strong>직계비속:</strong> 자녀, 양자, 아동복지시설 입소아 등 — 연소득 100만원 이하, 나이 만 20세 이하 (2006년 이후 출생)</li>
-                    <li><strong>형제자매:</strong> 친형제자매, 배우자의 형제자매 — 연소득 100만원 이하, 나이 만 20세 이하 또는 만 60세 이상</li>
+                    <li><strong>직계존속:</strong> 부모(친, 배우자 측 포함), 할머니할아버지 등, 연소득 100만원 이하, 나이 만 60세 이상</li>
+                    <li><strong>직계비속:</strong> 자녀, 양자, 아동복지시설 입소아 등, 연소득 100만원 이하, 나이 만 20세 이하 (2006년 이후 출생)</li>
+                    <li><strong>형제자매:</strong> 친형제자매, 배우자의 형제자매, 연소득 100만원 이하, 나이 만 20세 이하 또는 만 60세 이상</li>
                   </ul>
                 </div>
                 <p className="mt-4">
@@ -279,7 +279,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
                   <p className="font-semibold text-text-primary">사례 1. 일반 보장성보험료 120만원 (한도 초과)</p>
                   <p className="text-sm text-text-secondary">
-                    · 피보험자: 본인 (기본공제대상자 ✓)
+                    · 피보험자: 본인 (기본공제대상자)
                     <br />
                     · 보험료: 실손의료보험 + 암보험 합계 120만원
                     <br />
@@ -315,7 +315,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
                   <p className="text-sm text-text-secondary">
                     · 피보험자: 배우자 (배우자 보장성보험료 60만원)
                     <br />
-                    · 배우자 연소득: 120만원 (기본공제 탈락 ✗)
+                    · 배우자 연소득: 120만원 (기본공제 탈락)
                     <br />
                     · 기본공제대상자? 아니오
                     <br />

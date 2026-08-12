@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '정기예금 이자 계산기 2026 — 단리·복리·세후 비교',
+    title: '정기예금 이자 계산기 2026, 단리·복리·세후 비교',
     description: '단리·월복리·일복리 방식별 세전·세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',

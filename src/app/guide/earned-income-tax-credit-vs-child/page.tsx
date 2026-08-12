@@ -95,7 +95,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
     { name: '근로장려금 vs 자녀장려금' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '근로장려금 vs 자녀장려금 차이 — 5월 신고 전 반드시 확인 (2026)',
+    headline: '근로장려금 vs 자녀장려금 차이, 5월 신고 전 반드시 확인 (2026)',
     description:
       '5월 종합소득세 신고 시 저소득 가구가 받을 수 있는 근로장려금과 자녀장려금. 두 제도의 자격 요건, 소득 기준, 재산 기준, 신청 방법의 차이를 명확히 정리했습니다.',
     url: URL,
@@ -165,7 +165,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
         <Sidebar />
         <main className="flex-1 px-4 py-8 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
-            {/* 광고 슬롯 — 헤더 아래 */}
+            {/* 광고 슬롯, 헤더 아래 */}
             <article>
               <Breadcrumb
                 items={[
@@ -176,14 +176,14 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
               />
 
               <h1 className="mt-6 text-3xl font-bold text-text-primary">
-                근로장려금 vs 자녀장려금 차이 — 5월 신고 전 반드시 확인 (2026)
+                근로장려금 vs 자녀장려금 차이, 5월 신고 전 반드시 확인 (2026)
               </h1>
 
               <p className="mt-4 text-lg text-text-secondary">
                 5월 종합소득세 신고 시 저소득 가구가 헷갈리기 쉬운 두 제도를 명확히 구분하고, 자신에게 해당하는 제도를 정확히 신청하는 방법을 정리했습니다.
               </p>
 
-              {/* 구조화 요약 — GEO 최적화 */}
+              {/* 구조화 요약, GEO 최적화 */}
               <div className="my-8 rounded-lg border border-border-base bg-bg-card p-6">
                 <h2 className="mb-4 text-xl font-semibold text-text-primary">한눈에 보기</h2>
                 <table className="w-full text-sm">
@@ -224,7 +224,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
                 </table>
               </div>
 
-              {/* 광고 슬롯 — 계산기-본문 사이 */}
+              {/* 광고 슬롯, 계산기-본문 사이 */}
               <section className="mt-8">
                 <h2 data-speakable className="text-2xl font-bold text-text-primary">
                   근로장려금이란 무엇인가?
@@ -273,12 +273,12 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
                 </p>
               </section>
 
-              {/* FAQ — 중간 배치 (GEO) */}
+              {/* FAQ, 중간 배치 (GEO) */}
               <section className="mt-8">
                 <FaqSection items={FAQ_ITEMS} />
               </section>
 
-              {/* 광고 슬롯 — 본문 중간 */}
+              {/* 광고 슬롯, 본문 중간 */}
               <section className="mt-8">
                 <h2 className="text-2xl font-bold text-text-primary">법적 근거 및 공식 출처</h2>
                 <ul className="mt-4 space-y-2 text-text-secondary">
@@ -294,7 +294,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
                       hometax.go.kr
                     </Link>
                     {' '}
-                    — 근로장려금·자녀장려금 신청 및 확인
+, 근로장려금·자녀장려금 신청 및 확인
                   </li>
                   <li>
                     • 조세특례제한법:

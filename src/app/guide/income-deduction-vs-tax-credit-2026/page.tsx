@@ -149,7 +149,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   소득공제 vs 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 누가 더 절세? 5월 신고 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 누가 더 절세? 5월 신고 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고가 다가오면서 많은 사람이 혼동해하는 것이 바로{' '}
@@ -221,7 +221,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
 
               {/* 1. 소득공제 정의 및 종류 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 소득공제 — 과세표준을 줄인다 (소득세법 §50~§52)</h2>
+                <h2 className="text-2xl font-bold">1. 소득공제, 과세표준을 줄인다 (소득세법 §50~§52)</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   소득공제는 <strong>총소득에서 일정 금액을 먼저 차감해서 과세표준을 줄이는 방식</strong>입니다.
                   결과적으로 누진세율을 적용받는 "기초"가 작아지므로, 특히 고소득자일수록 큰 절세 효과를 봅니다.
@@ -317,7 +317,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
 
               {/* 2. 세액공제 정의 및 종류 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 세액공제 — 세금에서 직접 깎는다 (소득세법 §59~§59의5)</h2>
+                <h2 className="text-2xl font-bold">2. 세액공제, 세금에서 직접 깎는다 (소득세법 §59~§59의5)</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   세액공제는 <strong>산출세액이 나온 후, 세금 자체에서 직접 차감하는 방식</strong>입니다. 공제액이
                   크수록 직접적인 절세 효과를 봅니다. 다만 누진세율의 영향을 받지 않으므로 소득 수준과 관계없이
@@ -610,20 +610,20 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">최종 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
-                    • <strong>중복 공제 금지</strong> — 의료비·기부금·신용카드 공제 "중복 신청" 시 가산세 부과 위험
+                    • <strong>중복 공제 금지</strong>: 의료비·기부금·신용카드 공제 "중복 신청" 시 가산세 부과 위험
                   </li>
                   <li>
-                    • <strong>소득공제 절세 = 공제액 × 누진세율</strong> — 고소득자일수록 유리
+                    • <strong>소득공제 절세 = 공제액 × 누진세율</strong>: 고소득자일수록 유리
                   </li>
                   <li>
-                    • <strong>표준세액공제 13만</strong> — 특별공제 합이 13만 미만이면 자동 적용
+                    • <strong>표준세액공제 13만</strong>: 특별공제 합이 13만 미만이면 자동 적용
                   </li>
                   <li>
                     • <strong>5월 31일 신고 시</strong> 공제 종류별로 구분하여 신청 (소득공제 / 세액공제 섹션
                     분리)
                   </li>
                   <li>
-                    • <strong>국세기본법 §14 실질과세</strong> — 형식만 맞춰도, 실질이 중복이면 가산세 부과
+                    • <strong>국세기본법 §14 실질과세</strong>: 형식만 맞춰도, 실질이 중복이면 가산세 부과
                   </li>
                 </ul>
               </section>
@@ -637,42 +637,42 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 4대보험·세금·공제 모두 반영
+                    {' '}· 4대보험·세금·공제 모두 반영
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/medical-expense-tax-credit-3-percent-2026/" className="text-primary-600 underline dark:text-primary-500">
                       의료비 세액공제 2026
                     </Link>
-                    {' '}— 대표적 세액공제, 총급여 3% 초과분 15% 공제
+                    {' '}· 대표적 세액공제, 총급여 3% 초과분 15% 공제
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 소득공제·경비율 세액 계산
+                    {' '}· 소득공제·경비율 세액 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/freelancer-simplified-vs-standard-expense-rate-2026/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 단순경비율 vs 기준경비율
                     </Link>
-                    {' '}— 경비율 선택으로 추가 절세
+                    {' '}· 경비율 선택으로 추가 절세
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">
                       연말정산 완벽 가이드
                     </Link>
-                    {' '}— 공제 항목 정정 및 추가 신청
+                    {' '}· 공제 항목 정정 및 추가 신청
                   </li>
                 </ul>
               </section>

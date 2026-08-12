@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '생애최초 취득세 감면 2026 | 200만원 한도·요건·신청' }],
-    title: '생애최초 취득세 감면 2026 — 첫 주택 200만원 세금 감면',
+    title: '생애최초 취득세 감면 2026, 첫 주택 200만원 세금 감면',
     description: '본인과 배우자가 처음 주택을 구입할 때 취득세에서 최대 200만원 감면. 요건, 계산, 거주요건까지 완벽 가이드.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '생애최초 취득세 감면 2026 — 첫 주택 구입 시 200만원 감면 받는 방법',
+    title: '생애최초 취득세 감면 2026, 첫 주택 구입 시 200만원 감면 받는 방법',
     description: '무주택자의 첫 주택 구입 취득세를 최대 200만원 감면. 자격, 한도, 거주요건 정리.',
   },
 };
@@ -99,7 +99,7 @@ export default function FirstHomeAcquisitionTaxReduction2026Page() {
     { name: '생애최초 취득세 감면 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '생애최초 취득세 감면 2026 — 첫 주택 200만원 세금 감면 완벽 가이드',
+    headline: '생애최초 취득세 감면 2026, 첫 주택 200만원 세금 감면 완벽 가이드',
     description:
       '본인과 배우자가 처음 주택을 구입할 때 취득세에서 최대 200만원 감면되는 제도. 자격요건, 계산 사례, 거주요건, 일몰기한까지 완전 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function FirstHomeAcquisitionTaxReduction2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   생애최초 취득세 감면 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 첫 주택 200만원 세금 감면</span>
+                  <span className="text-2xl text-text-secondary">· 첫 주택 200만원 세금 감면</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   무주택자가 처음 주택을 구입할 때 취득세에서 최대 200만원까지 감면받을 수 있습니다. 하지만 이 감면은 까다로운 자격요건이 있고, 감면을 받은 후 거주요건을 지키지 않으면 추징당할 수 있습니다. 이 가이드에서는 생애최초 취득세 감면의 정확한 요건, 계산 방법, 거주요건, 그리고 2026년 말 일몰까지 모든 것을 정리해드립니다.
@@ -341,7 +341,7 @@ export default function FirstHomeAcquisitionTaxReduction2026Page() {
                 </p>
                 <ul className="space-y-3 ml-6 list-disc text-text-secondary">
                   <li>
-                    <strong>일몰 기한: 2026년 12월 31일</strong> — 지방세특례제한법 부칙에 명시된 적용 기한입니다.
+                    <strong>일몰 기한: 2026년 12월 31일</strong>: 지방세특례제한법 부칙에 명시된 적용 기한입니다.
                   </li>
                   <li>
                     <strong>등기 기준:</strong> 감면 적용 기준은 일반적으로 등기일입니다. 2026년 12월 31일 이전에 등기를 마쳐야 감면을 받을 수 있습니다. 계약일이 아닌 등기일이므로 주의하세요.

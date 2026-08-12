@@ -299,7 +299,7 @@ export default function TaxCategoryPage() {
                 </div>
 
                 {/* SSoT 카테고리 매핑 (CATEGORY_CALCULATORS.tax) 中 위 카드에 없는 추가 계산기.
-                    누락 보강 — 종부세·증여세·상속세·자동차세·자녀세액공제 등 24편 묻힘 해소. */}
+                    누락 보강, 종부세·증여세·상속세·자동차세·자녀세액공제 등 24편 묻힘 해소. */}
                 {(() => {
                   const cardSlugs = new Set(CALCULATORS.map((c) => c.href.replace('/calculator/', '')));
                   const additional = CATEGORY_CALCULATORS.tax.filter((s) => !cardSlugs.has(s));
@@ -327,7 +327,7 @@ export default function TaxCategoryPage() {
                 })()}
               </section>
 
-              {/* 관련 가이드 — GUIDES 카테고리별 자동 필터 + CROSS_GUIDES 추가 매핑. SSoT 단일 source. */}
+              {/* 관련 가이드, GUIDES 카테고리별 자동 필터 + CROSS_GUIDES 추가 매핑. SSoT 단일 source. */}
               {(() => {
                 const labels = GUIDE_CATEGORY_LABEL.tax;
                 const cross = new Set(CROSS_GUIDES.tax);
@@ -358,7 +358,7 @@ export default function TaxCategoryPage() {
                 );
               })()}
 
-              {/* 관련 용어 — /glossary/ deep-link (sectionAnchor + 핵심 용어 명시). */}
+              {/* 관련 용어, /glossary/ deep-link (sectionAnchor + 핵심 용어 명시). */}
               {(() => {
                 const ref = CATEGORY_GLOSSARY.tax;
                 if (!ref) return null;

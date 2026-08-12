@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '의료비 세액공제 2026 3% 초과분 15% 공제 700만 한도 | calculatorhost' }],
-    title: '의료비 세액공제 2026 — 3% 초과분 15% 공제, 700만 한도',
+    title: '의료비 세액공제 2026, 3% 초과분 15% 공제, 700만 한도',
     description: '의료비 세액공제 정확한 계산법. 3% 초과분만 과세대상, 15% 공제율, 700만 한도 (단 본인·고령·6세 이하·장애인 무한도)',
     url: URL,
     type: 'article',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '의료비 세액공제 — 3% 초과분 15% 공제',
+    title: '의료비 세액공제, 3% 초과분 15% 공제',
     description: '총급여 3% 초과분만 세액공제 대상. 공제율 15% (난임 30%), 한도 700만원.',
   },
 };
@@ -149,7 +149,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   의료비 세액공제로 환급받기
                   <br />
-                  <span className="text-2xl text-text-secondary">— 3% 초과분 15% 공제, 700만 한도 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 3% 초과분 15% 공제, 700만 한도 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감이 다가오면서 많은 사람이 놓치는 세액공제가 있습니다. 바로{' '}
@@ -221,7 +221,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 1. 의료비 세액공제 정의 및 법적 근거 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 의료비 세액공제란? — 총급여 3% 초과분 15% 공제</h2>
+                <h2 className="text-2xl font-bold">1. 의료비 세액공제란?, 총급여 3% 초과분 15% 공제</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   의료비 세액공제는 <strong>본인과 부양가족을 위해 지출한 의료비 중 일정 기준을 초과한 부분에 대해
                   세금에서 직접 깎아주는 제도</strong>입니다(소득세법 §59의4, 조세특례제한법 §53). 핵심은 <strong>"3%
@@ -256,7 +256,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 2. 3% 초과분의 정확한 의미 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. "3% 초과분"의 정확한 의미 — 예시로 명확히</h2>
+                <h2 className="text-2xl font-bold">2. "3% 초과분"의 정확한 의미, 예시로 명확히</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   의료비 세액공제에서 가장 헷갈리는 부분이 <strong>"총급여의 3% 초과분"</strong>입니다. 이는 다음을
                   의미합니다:
@@ -302,7 +302,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 3. 공제 대상 의료비 vs 제외 항목 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 공제 대상 의료비 — 무엇을 신청할 수 있나</h2>
+                <h2 className="text-2xl font-bold">3. 공제 대상 의료비, 무엇을 신청할 수 있나</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   의료비 세액공제 대상은 <strong>진정한 의료 필요성</strong>이 있는 지출만 인정됩니다(소득세법 시행령
                   §118). 다음은 공제 가능 항목과 제외 항목입니다.
@@ -395,9 +395,9 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                 </div>
               </section>
 
-              {/* 4. 한도 구분 — 700만 vs 무한도 */}
+              {/* 4. 한도 구분, 700만 vs 무한도 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 한도 구분 — 700만원 vs 무한도</h2>
+                <h2 className="text-2xl font-bold">4. 한도 구분, 700만원 vs 무한도</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   의료비 세액공제 한도는 <strong>누가 의료비를 지출했느냐</strong>에 따라 다릅니다(조세특례제한법 §53 ③).
                   본인과 일부 가족은 한도가 없지만, 대부분 부양가족은 700만 원 합산 한도가 적용됩니다.
@@ -470,7 +470,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 5. 보험금 차감 의무 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 보험금 차감 의무 — 실비보험 받았다면</h2>
+                <h2 className="text-2xl font-bold">5. 보험금 차감 의무, 실비보험 받았다면</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   실비 의료보험, 암보험, 입원 보험 등에서 보험금을 받았다면 <strong>반드시 의료비에서 차감</strong>해야
                   합니다(소득세법 §59의4 ②). 이는 실제 본인이 부담한 의료비만 공제하겠다는 원칙입니다(국세기본법 §14
@@ -508,7 +508,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 6. 실제 시뮬레이션 3가지 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 실제 시뮬레이션 3가지 — 환급액 정확히 계산</h2>
+                <h2 className="text-2xl font-bold">6. 실제 시뮬레이션 3가지, 환급액 정확히 계산</h2>
 
                 <div className="rounded-lg bg-bg-raised p-4">
                   <p className="mb-3 font-semibold text-text-primary">사례 A: 총급여 4,000만 + 의료비 300만</p>
@@ -575,7 +575,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 7. 신청 방법 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">7. 의료비 세액공제 신청 방법 — 홈택스 4단계</h2>
+                <h2 className="text-2xl font-bold">7. 의료비 세액공제 신청 방법, 홈택스 4단계</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   의료비 세액공제는 홈택스(hometax.go.kr)에서 온라인으로 신청합니다. 신고서 작성 화면의 "세액공제"
                   항목에서 진행합니다.
@@ -647,7 +647,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
 
               {/* 8. 주의사항 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">8. 주의사항 — 실질과세 원칙과 가짜 영수증</h2>
+                <h2 className="text-2xl font-bold">8. 주의사항, 실질과세 원칙과 가짜 영수증</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   의료비 세액공제는 합법적인 제도이지만, 잘못된 방식으로 신청하면 문제가 됩니다.
                 </p>

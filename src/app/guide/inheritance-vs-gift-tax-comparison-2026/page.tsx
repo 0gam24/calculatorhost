@@ -94,7 +94,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
     { name: '상속세 vs 증여세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상속세 vs 증여세 2026 — 어느 쪽이 유리한가?',
+    headline: '상속세 vs 증여세 2026, 어느 쪽이 유리한가?',
     description:
       '공제 차이·세율·시점·사전증여 합산까지 명확하게 비교. 재산 상황별 절세 의사결정 가이드.',
     url: URL,
@@ -142,7 +142,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 vs 증여세 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 어느 쪽이 유리한가?</span>
+                  <span className="text-2xl text-text-secondary">· 어느 쪽이 유리한가?</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자녀에게 재산을 넘길 때, "상속을 받을 때까지 기다릴까, 아니면 미리 증여할까?" 이 질문에는 정답이 없습니다. 상속세와 증여세는 같은 5단계 누진세율을 쓰지만, 공제 방식·금액·시점이 완전히 다릅니다. 자산 규모, 가족 구성, 시간에 따라 유리한 쪽이 달라집니다. 이 가이드에서는 두 세금의 차이를 명확하게 비교하고, 상황별 절세 전략을 제시합니다.
@@ -315,7 +315,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">사전증여 합산 — 꼭 알아야 할 규칙</h2>
+                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">사전증여 합산, 꼭 알아야 할 규칙</h2>
                 <p data-speakable>
                   증여로 절세하려는 사람이 가장 놓치기 쉬운 부분입니다. 상속이 발생하면 일정 기간 전의 증여가 다시 합산되어 과세됩니다.
                 </p>

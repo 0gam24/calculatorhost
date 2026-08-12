@@ -14,7 +14,7 @@ import {
 import { UPDATES_LOG, type UpdateCategory } from '@/lib/constants/updates-log';
 
 const URL = 'https://calculatorhost.com/updates/';
-const PAGE_TITLE = '변경 이력 (Changelog) — 2026년 calculatorhost 업데이트';
+const PAGE_TITLE = '변경 이력 (Changelog), 2026년 calculatorhost 업데이트';
 
 export const metadata: Metadata = {
   title: '변경 이력 (Changelog) 2026 | calculatorhost',
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: PAGE_TITLE,
     description:
-      '2026년 calculatorhost 모든 변경 이력 — 신규·세율·규제·금리·제도 카테고리별 시계열 업데이트',
+      '2026년 calculatorhost 모든 변경 이력, 신규·세율·규제·금리·제도 카테고리별 시계열 업데이트',
     url: URL,
     type: 'article',
   },
@@ -81,7 +81,7 @@ export default function UpdatesPage() {
   const articleLd = buildArticleJsonLd({
     headline: PAGE_TITLE,
     description:
-      '2026년 calculatorhost 변경 이력 — 신규 계산기·세율·규제·제도 변경을 시계열로 정리',
+      '2026년 calculatorhost 변경 이력, 신규 계산기·세율·규제·제도 변경을 시계열로 정리',
     url: URL,
     datePublished: '2026-05-03',
     dateModified: lastModified,
@@ -99,7 +99,7 @@ export default function UpdatesPage() {
   // ItemList: 최신 5건의 변경사항을 LLM 인용용으로 노출
   const recentUpdates = UPDATES_LOG.slice(0, 5).map((entry) => {
     const title = entry.calculator
-      ? `${entry.calculator.title} — ${entry.item}`
+      ? `${entry.calculator.title}, ${entry.item}`
       : `${entry.item}`;
     return {
       name: title,

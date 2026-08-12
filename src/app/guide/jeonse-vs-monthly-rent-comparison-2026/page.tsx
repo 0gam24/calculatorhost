@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-26';
 const DATE_MODIFIED = '2026-06-26';
 
 export const metadata: Metadata = {
-  title: '전세 vs 월세 유불리 계산 2026 — 전월세 전환율로 손익 따지기',
+  title: '전세 vs 월세 유불리 계산 2026, 전월세 전환율로 손익 따지기',
   description:
     '전세와 월세 중 무엇이 유리한지 보증금의 기회비용과 전월세 전환율로 비교하는 법을 설명합니다. 전세대출 이자·예금이자와 월세를 등가로 환산해 판단하는 공식과 예시를 정리.',
   keywords: [
@@ -549,7 +549,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                     >
                       전월세 전환 계산기
                     </Link>{' '}
-                    — 보증금 차이를 월세로 실시간 환산
+, 보증금 차이를 월세로 실시간 환산
                   </li>
                   <li>
                     →{' '}
@@ -557,9 +557,9 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                       href="/guide/rent-conversion-rate-2026-housing-lease-act/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      전월세 전환율 상한 2026 — 주택임대차보호법 해설
+                      전월세 전환율 상한 2026, 주택임대차보호법 해설
                     </Link>{' '}
-                    — 기준금리와 상한의 관계, 법정 기준
+, 기준금리와 상한의 관계, 법정 기준
                   </li>
                   <li>
                     →{' '}
@@ -569,7 +569,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                     >
                       전세보증금 보호 및 보증보험 가이드
                     </Link>{' '}
-                    — HUG, JHF 전세보증보험 신청·대상 확인
+, HUG, JHF 전세보증보험 신청·대상 확인
                   </li>
                   <li>
                     →{' '}
@@ -579,7 +579,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 전세대출 월 이자 및 총 상환액
+, 전세대출 월 이자 및 총 상환액
                   </li>
                   <li>
                     →{' '}
@@ -589,7 +589,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                     >
                       적금 이자 계산기
                     </Link>{' '}
-                    — 보증금 차액의 기대 수익 시뮬레이션
+, 보증금 차액의 기대 수익 시뮬레이션
                   </li>
                   <li>
                     →{' '}
@@ -599,7 +599,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
                     >
                       부동산 카테고리
                     </Link>{' '}
-                    — 전세, 월세, 중개수수료, 임대수익률 관련 모든 계산기
+, 전세, 월세, 중개수수료, 임대수익률 관련 모든 계산기
                   </li>
                 </ul>
               </section>

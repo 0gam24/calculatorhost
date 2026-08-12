@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '임대수익률 계산기 2026 — 공실률·Cap Rate',
+    title: '임대수익률 계산기 2026, 공실률·Cap Rate',
     description: '구매가·보증금·월세·관리비로 연 수익률과 Cap Rate를 계산.',
     url: URL,
     type: 'website',
@@ -446,7 +446,7 @@ export default function RentalYieldPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §20(부동산 임대 수입), §25~§26(필요경비 인정), §70(종합소득세 신고 — 연 2,000만 원 초과 시). 참고: <a href="https://rt.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 실거래가</a> 시세, <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원</a> 부동산 통계, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 종합소득세 안내.
+                  <strong>법적 근거</strong>: 소득세법 §20(부동산 임대 수입), §25~§26(필요경비 인정), §70(종합소득세 신고, 연 2,000만 원 초과 시). 참고: <a href="https://rt.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 실거래가</a> 시세, <a href="https://www.reb.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국부동산원</a> 부동산 통계, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 종합소득세 안내.
                 </p>
                 <p>
                   본 계산기의 결과는 교육·참고용이며 법적 효력이 없습니다. 실제 임대차 투자는

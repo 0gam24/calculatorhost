@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자녀세액공제 2026 가이드' }],
-    title: '자녀세액공제 2026 — 8세 이상 자녀·손자녀 최대 연 115만원 세감 메커니즘',
+    title: '자녀세액공제 2026, 8세 이상 자녀·손자녀 최대 연 115만원 세감 메커니즘',
     description: '2024년 개정으로 확대된 자녀세액공제. 1명 25만원부터 3명 이상 95만원까지, 출산·입양 추가 공제.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자녀세액공제 2026 — 자녀 1명 연 25만원, 다자녀·출산 추가 혜택',
+    title: '자녀세액공제 2026, 자녀 1명 연 25만원, 다자녀·출산 추가 혜택',
     description: '소득세법 §59의2 자녀세액공제의 정확한 공제액·적용 기준·계산 사례.',
   },
 };
@@ -99,7 +99,7 @@ export default function ChildTaxCredit2026Page() {
     { name: '자녀세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자녀세액공제 2026 — 8세 이상 자녀·손자녀 최대 연 115만원 세감 메커니즘',
+    headline: '자녀세액공제 2026, 8세 이상 자녀·손자녀 최대 연 115만원 세감 메커니즘',
     description:
       '2024년 개정 자녀세액공제 완전 정리. 공제액(1명 25만·2명 55만·3명 95만), 출산입양 추가공제, 8세 기준, 맞벌이 적용, 손자녀 포함 여부까지.',
     url: URL,
@@ -147,7 +147,7 @@ export default function ChildTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자녀세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 8세 이상 자녀·손자녀 최대 연 115만원 세감</span>
+                  <span className="text-2xl text-text-secondary">· 8세 이상 자녀·손자녀 최대 연 115만원 세감</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자녀가 있으면 연말정산이나 종합소득세 신고 시 자녀세액공제를 받을 수 있습니다. 2024년 세법 개정으로 공제액이 크게 확대되었는데, 많은 사람들이 정확한 금액을 모르고 계신다는 것이 현실입니다. 이 가이드는 자녀세액공제의 정확한 공제액, 8세 기준, 출산·입양 추가공제, 맞벌이 적용 방법까지 완전히 정리해드립니다.
@@ -222,7 +222,7 @@ export default function ChildTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">자녀세액공제 적용 기준 — 8세 이상이 핵심</h2>
+                <h2 className="text-2xl font-bold">자녀세액공제 적용 기준, 8세 이상이 핵심</h2>
                 <p>
                   자녀세액공제가 적용되려면 몇 가지 기준을 만족해야 합니다. 가장 중요한 것이 8세 이상 기준입니다.
                 </p>

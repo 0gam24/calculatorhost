@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '화폐가치 계산기 2026 — 인플레이션·실질 구매력',
+    title: '화폐가치 계산기 2026, 인플레이션·실질 구매력',
     description:
       '금액의 미래 화폐가치, 현재가치, 실질 구매력을 계산하세요. CPI 기반 인플레이션 반영.',
     url: URL,
@@ -247,7 +247,7 @@ export default function InflationPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 물가상승률 답변 블록 — GSC '물가 상승률 계산기' 쿼리 타깃 */}
+              {/* 물가상승률 답변 블록, GSC '물가 상승률 계산기' 쿼리 타깃 */}
               <section aria-label="물가상승률" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">우리나라 물가상승률은 몇 %인가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>

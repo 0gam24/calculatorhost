@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-09';
 const DATE_MODIFIED = '2026-06-09';
 
 export const metadata: Metadata = {
-  title: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계',
+  title: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계',
   description:
     '2026년 기초연금 월 최대 349,700원(부부 559,520원)으로 인상. 선정기준액 단독 247만원·부부 395.2만원, 65세 소득하위 70% 대상. 국민연금 받으면 깎이는지(연계감액), 부부감액, 신청 방법까지 정리했습니다.',
   keywords: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계',
+    title: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계',
     description:
       '2026년 기초연금 월 최대 349,700원. 선정기준액 단독 247만원·부부 395.2만원, 국민연금 연계감액·부부감액·신청 방법 정리.',
     url: URL,
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기초연금 2026 — 월 최대 34만 9,700원',
+    title: '기초연금 2026, 월 최대 34만 9,700원',
     description: '선정기준액·국민연금 연계감액·부부감액·신청 방법 완정리.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
   },
 };
 
@@ -96,10 +96,10 @@ export default function BasicPension2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '기초연금 2026 — 수급자격·금액·신청' },
+    { name: '기초연금 2026, 수급자격·금액·신청' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계감액',
+    headline: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계감액',
     description:
       '2026년 기초연금 월 최대 349,700원(부부 559,520원). 선정기준액 단독 247만원·부부 395.2만원, 65세 소득하위 70% 대상. 국민연금 연계감액, 부부감액, 신청 방법을 정리했습니다.',
     url: URL,
@@ -111,7 +111,7 @@ export default function BasicPension2026() {
     keywords: ['기초연금', '기초연금 선정기준액', '기초연금 국민연금 연계감액', '기초연금 부부감액', '소득인정액'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '기초연금 2026 — 수급자격·금액·국민연금 연계·신청',
+    name: '기초연금 2026, 수급자격·금액·국민연금 연계·신청',
     description:
       '2026년 기초연금 월 최대 349,700원. 선정기준액 단독 247만원·부부 395.2만원, 국민연금 연계감액(최소 50% 보장), 부부감액, 신청 방법.',
     url: URL,
@@ -147,7 +147,7 @@ export default function BasicPension2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   기초연금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 월 최대 34만 9,700원, 선정기준·국민연금 연계</span>
+                  <span className="text-2xl text-text-secondary">· 월 최대 34만 9,700원, 선정기준·국민연금 연계</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   기초연금은 만 65세 이상 어르신 중 소득 하위 70%에게 매월 지급하는 노후 소득보장 제도입니다.
@@ -206,7 +206,7 @@ export default function BasicPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 기초연금이란? — 65세 이상 소득 하위 70%</h2>
+                <h2 className="text-2xl font-bold">1. 기초연금이란?, 65세 이상 소득 하위 70%</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   기초연금은 만 65세 이상이면서 소득인정액이 선정기준액 이하인 어르신에게 매월 지급됩니다(기초연금법 §3).
                   국민연금처럼 보험료를 낸 대가가 아니라, 노후 소득을 보장하기 위해 국가가 세금으로 지급하는 제도입니다.
@@ -245,7 +245,7 @@ export default function BasicPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 얼마 받나? — 2026년 월 최대 349,700원</h2>
+                <h2 className="text-2xl font-bold">2. 얼마 받나?, 2026년 월 최대 349,700원</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   2026년 기준연금액은 단독가구 기준 월 최대 349,700원입니다(기초연금법 §5).
                   2025년 342,510원에서 7,190원 인상됐습니다.
@@ -285,14 +285,14 @@ export default function BasicPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 국민연금 받으면 기초연금이 깎이나? — 연계감액</h2>
+                <h2 className="text-2xl font-bold">3. 국민연금 받으면 기초연금이 깎이나?, 연계감액</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   많이 받으면 일부 깎일 수 있지만, 대부분은 전액 받습니다.
                   국민연금 월 수령액이 기초연금 기준연금액의 1.5배(2026년 약 524,550원)를 넘으면 기초연금이 일부 감액됩니다(국민연금 연계감액, 기초연금법 §5).
                   국민연금이 그 이하라면 기초연금은 전혀 줄지 않습니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-2">핵심 안전장치 — 최소 50% 보장</h3>
+                  <h3 className="font-semibold text-text-primary mb-2">핵심 안전장치, 최소 50% 보장</h3>
                   <p className="text-sm text-text-secondary leading-relaxed">
                     연계감액이 적용되더라도 기준연금액의 <strong>50%(2026년 약 17만 5천원)</strong>는 반드시 보장됩니다.
                     즉 국민연금을 아무리 많이 받아도 기초연금이 0원이 되지는 않습니다.
@@ -308,7 +308,7 @@ export default function BasicPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 부부가 함께 받으면? — 부부감액 20%와 2027년 폐지</h2>
+                <h2 className="text-2xl font-bold">4. 부부가 함께 받으면?, 부부감액 20%와 2027년 폐지</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   현재는 부부가 모두 기초연금을 받으면 각각 20%씩 감액됩니다(기초연금법 §8).
                   그래서 2026년 부부 합산 최대액은 559,520원으로, 단독 2명(699,400원)보다 적습니다.
@@ -323,7 +323,7 @@ export default function BasicPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 소득인정액이란? — 신청 전에 알아야 할 기준</h2>
+                <h2 className="text-2xl font-bold">5. 소득인정액이란?, 신청 전에 알아야 할 기준</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   기초연금 수급 여부를 가르는 것은 단순 소득이 아니라 소득인정액입니다.
                   소득인정액은 소득평가액과 재산의 소득환산액을 더한 값입니다.
@@ -340,7 +340,7 @@ export default function BasicPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 신청 방법은? — 생일 한 달 전부터 신청</h2>
+                <h2 className="text-2xl font-bold">6. 신청 방법은?, 생일 한 달 전부터 신청</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   기초연금은 신청해야 받을 수 있으며, 자동으로 지급되지 않습니다.
                   만 65세 생일이 속한 달의 1개월 전부터 미리 신청할 수 있습니다.
@@ -348,16 +348,16 @@ export default function BasicPension2026() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <ol className="space-y-2 text-sm text-text-secondary">
                     <li>
-                      <strong>1) 신청 장소</strong> — 주소지 읍·면·동 주민센터, 국민연금공단 지사, 또는 복지로(bokjiro.go.kr) 온라인.
+                      <strong>1) 신청 장소</strong>: 주소지 읍·면·동 주민센터, 국민연금공단 지사, 또는 복지로(bokjiro.go.kr) 온라인.
                     </li>
                     <li>
-                      <strong>2) 준비물</strong> — 신분증, 본인 명의 통장, 배우자 금융정보 제공 동의서(부부의 경우), 전·월세 계약서(해당 시).
+                      <strong>2) 준비물</strong>: 신분증, 본인 명의 통장, 배우자 금융정보 제공 동의서(부부의 경우), 전·월세 계약서(해당 시).
                     </li>
                     <li>
-                      <strong>3) 소득·재산 조사</strong> — 신청 후 소득인정액 조사로 수급 여부와 금액이 결정됩니다.
+                      <strong>3) 소득·재산 조사</strong>: 신청 후 소득인정액 조사로 수급 여부와 금액이 결정됩니다.
                     </li>
                     <li>
-                      <strong>4) 결과 통지·지급</strong> — 결정 통지 후 신청일이 속한 달부터 매월 지급됩니다.
+                      <strong>4) 결과 통지·지급</strong>: 결정 통지 후 신청일이 속한 달부터 매월 지급됩니다.
                     </li>
                   </ol>
                 </div>
@@ -379,48 +379,48 @@ export default function BasicPension2026() {
                     <Link href="/guide/national-pension-expected-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">
                       국민연금 예상 수령액 2026
                     </Link>
-                    {' — 기초연금 연계감액의 기준이 되는 국민연금 월액 확인'}
+                    {'기초연금 연계감액의 기준이 되는 국민연금 월액 확인'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/severance-vs-pension-dc-db/" className="text-primary-600 underline dark:text-primary-500">
                       퇴직금 DC·DB 비교
                     </Link>
-                    {' — 국민연금·기초연금과 함께 짜는 노후 3층 연금'}
+                    {'국민연금·기초연금과 함께 짜는 노후 3층 연금'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/inflation/" className="text-primary-600 underline dark:text-primary-500">
                       화폐가치 계산기
                     </Link>
-                    {' — 30년 뒤 기초연금의 실질 구매력 확인'}
+                    {'30년 뒤 기초연금의 실질 구매력 확인'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/private-pension-1500-million-separate-taxation-2026/" className="text-primary-600 underline dark:text-primary-500">
                       사적연금 1,500만원 분리과세 2026
                     </Link>
-                    {' — 연금저축·IRP 수령 시 세금 갈림길'}
+                    {'연금저축·IRP 수령 시 세금 갈림길'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/inheritance-tax-10-year-prior-gift-aggregation/" className="text-primary-600 underline dark:text-primary-500">
                       상속세 10년 사전증여 합산
                     </Link>
-                    {' — 노후 자산을 자녀에게 물려줄 때의 세금'}
+                    {'노후 자산을 자녀에게 물려줄 때의 세금'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/work/" className="text-primary-600 underline dark:text-primary-500">
                       근로 계산기·가이드
                     </Link>
-                    {' — 연봉·퇴직금·은퇴자금 등 노후 설계 도구'}
+                    {'연봉·퇴직금·은퇴자금 등 노후 설계 도구'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="기초연금 2026 — 월 최대 34만 9,700원, 선정기준·국민연금 연계"
+                title="기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계"
                 url={URL}
                 description="2026년 기초연금 월 최대 349,700원(부부 559,520원). 선정기준액 단독 247만원·부부 395.2만원, 국민연금 연계감액·부부감액·신청 방법 정리."
               />

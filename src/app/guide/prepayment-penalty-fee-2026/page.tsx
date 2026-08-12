@@ -242,17 +242,17 @@ export default function PrepaymentPenaltyFee2026Page() {
                 </p>
                 <ul className="space-y-2 text-text-secondary">
                   <li>
-                    <strong>중도상환원금</strong> — 일부만 갚는 경우 그 금액, 전액 상환 시
+                    <strong>중도상환원금</strong>: 일부만 갚는 경우 그 금액, 전액 상환 시
                     남은 원금 전체
                   </li>
                   <li>
-                    <strong>수수료율</strong> — 대출 상품·신용도·금리 환경에 따라 달라지는 비율 (정확한 값은 약관 확인)
+                    <strong>수수료율</strong>: 대출 상품·신용도·금리 환경에 따라 달라지는 비율 (정확한 값은 약관 확인)
                   </li>
                   <li>
-                    <strong>잔존기간</strong> — 상환일 기준 대출 만기까지 남은 기간 (일수 기준)
+                    <strong>잔존기간</strong>: 상환일 기준 대출 만기까지 남은 기간 (일수 기준)
                   </li>
                   <li>
-                    <strong>면제기간</strong> — 대부분 3년(1,095일). <strong>분모 기준(대출약정기간 vs
+                    <strong>면제기간</strong>: 대부분 3년(1,095일). <strong>분모 기준(대출약정기간 vs
                     면제기간)은 은행별로 다를 수 있으므로 약관 확인 필수</strong>
                   </li>
                 </ul>
@@ -476,7 +476,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액 및 총 이자 계산
+, 원리금균등·만기일시별 월 상환액 및 총 이자 계산
                   </li>
                   <li>
                     →{' '}
@@ -486,7 +486,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 주담대·전세자금대출 최대 한도 시뮬레이션
+, 주담대·전세자금대출 최대 한도 시뮬레이션
                   </li>
                   <li>
                     →{' '}
@@ -496,7 +496,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                     >
                       DSR 대출한도 늘리는 5가지 방법
                     </Link>{' '}
-                    — 신용대출 상환, 소득 합산 등 한도 확보 전략
+, 신용대출 상환, 소득 합산 등 한도 확보 전략
                   </li>
                   <li>
                     →{' '}
@@ -506,14 +506,14 @@ export default function PrepaymentPenaltyFee2026Page() {
                     >
                       기준금리 오르면 대출한도 줄어들까? 2026
                     </Link>{' '}
-                    — 금리 인상 시 대출한도 및 월 상환액 변화 분석
+, 금리 인상 시 대출한도 및 월 상환액 변화 분석
                   </li>
                   <li>
                     →{' '}
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
                       금융 용어사전
                     </Link>{' '}
-                    — DSR, LTV, DTI, 원리금균등, 스트레스금리 정의
+, DSR, LTV, DTI, 원리금균등, 스트레스금리 정의
                   </li>
                   <li>
                     →{' '}
@@ -523,7 +523,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 가이드 및 계산기
+, 대출, 예금, 적금, 환율 관련 모든 가이드 및 계산기
                   </li>
                 </ul>
               </section>

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '오피스텔 세금 2026 | 주택용 vs 업무용 취득·재산·양도세' }],
-    title: '오피스텔 세금 2026 — 주택용 vs 업무용 세금 차이 완벽 정리',
+    title: '오피스텔 세금 2026, 주택용 vs 업무용 세금 차이 완벽 정리',
     description: '오피스텔은 건축법상 업무시설이지만 실제 사용 용도에 따라 취득세·재산세·양도세가 완전히 달라집니다. 정확한 계산과 주택 수 포함 규칙.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '오피스텔 세금 2026 — 주택용 vs 업무용 세금 완전 정리',
+    title: '오피스텔 세금 2026, 주택용 vs 업무용 세금 완전 정리',
     description: '오피스텔 취득세 4.6% vs 주택 1~3%, 재산세·종부세·양도세 차이. 실제 사용 용도에 따른 세금 판정 기준.',
   },
 };
@@ -99,7 +99,7 @@ export default function OfficetelTax2026Page() {
     { name: '오피스텔 세금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '오피스텔 세금 2026 — 주택용 vs 업무용 세금 차이 완벽 정리',
+    headline: '오피스텔 세금 2026, 주택용 vs 업무용 세금 차이 완벽 정리',
     description:
       '오피스텔은 건축법상 업무시설이지만 실제 사용 용도에 따라 취득세·재산세·종부세·양도세가 완전히 달라집니다. 주택용(1~3%) vs 업무용(4.6%) 취득세, 주택 수 포함 규칙, 양도세 비과세 조건까지 완벽 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function OfficetelTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   오피스텔 세금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 주택용 vs 업무용 취득·재산·양도세 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 주택용 vs 업무용 취득·재산·양도세 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   오피스텔은 건축법상 "업무시설"이지만, 실제 사용 용도에 따라 세법상 주택으로 분류될 수 있습니다. 이것이 핵심입니다. 주거용으로 쓰면 주택처럼 취득세·양도세·종부세가 적용되고, 업무용으로 쓰면 일반 건물 세율이 적용됩니다. 이 가이드는 오피스텔 취득부터 보유·양도까지 모든 단계에서 주택용과 업무용의 세금 차이를 정확히 설명합니다.
@@ -478,7 +478,7 @@ export default function OfficetelTax2026Page() {
                     <p className="font-semibold text-text-primary mb-2">취득 전 확인</p>
                     <ul className="space-y-2 ml-6 list-disc text-sm text-text-secondary">
                       <li>현재 보유 중인 부동산이 있는지 (다주택 판정 여부)</li>
-                      <li>취득 시점 (2020년 8월 12일 이전/이후 — 세율 차이 큼)</li>
+                      <li>취득 시점 (2020년 8월 12일 이전/이후, 세율 차이 큼)</li>
                       <li>용도 (실제 주거 vs 업무용)</li>
                       <li>취득세 예상액 (1~3% vs 4.6%)</li>
                       <li>공시가 등급 (9억 이상이면 1세대1주택 특례 제외)</li>

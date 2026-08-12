@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     'calculatorhost는 일부 페이지에서 어필리에이트 파트너 링크를 사용합니다. 표시광고법·공정거래위원회 가이드라인에 따라 광고 여부와 수익 구조를 투명하게 공시합니다.',
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '어필리에이트 공시 — calculatorhost' }],
-    title: '어필리에이트 공시 — calculatorhost',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '어필리에이트 공시, calculatorhost' }],
+    title: '어필리에이트 공시, calculatorhost',
     description: '광고 여부와 수익 구조 투명 공시. 표시광고법·공정위 가이드라인 준수.',
     url: URL,
     type: 'article',
@@ -41,7 +41,7 @@ export default function AffiliateDisclosurePage() {
   const webPageLd = buildWebPageJsonLd({
     name: '어필리에이트 공시 (Affiliate Disclosure)',
     description:
-      'calculatorhost 어필리에이트 파트너 링크 정책 — 표시광고법·공정거래위원회 가이드라인 준수 명시',
+      'calculatorhost 어필리에이트 파트너 링크 정책, 표시광고법·공정거래위원회 가이드라인 준수 명시',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -93,25 +93,25 @@ export default function AffiliateDisclosurePage() {
                 <h2 className="text-2xl font-semibold">핵심 원칙</h2>
                 <ol className="list-decimal space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>모든 어필리에이트 링크는 명확히 표시</strong> —
+                    <strong>모든 어필리에이트 링크는 명확히 표시</strong>: 
                     "광고" 또는 "Affiliate" 라벨로 일반 정보 링크와 시각적으로 구분합니다.
                   </li>
                   <li>
-                    <strong>HTML <code>rel="sponsored nofollow noopener noreferrer"</code> 적용</strong> —
+                    <strong>HTML <code>rel="sponsored nofollow noopener noreferrer"</code> 적용</strong>: 
                     Google 정책 + 보안 표준 준수.
                   </li>
                   <li>
-                    <strong>사용자 결제액 변동 없음</strong> —
+                    <strong>사용자 결제액 변동 없음</strong>: 
                     어필리에이트 링크를 통해 가입·결제하셔도 정상 가격으로 진행됩니다.
                     calculatorhost는 파트너로부터 일정 수수료를 받을 뿐, 사용자 부담은 0원입니다.
                   </li>
                   <li>
-                    <strong>편집 독립성</strong> —
+                    <strong>편집 독립성</strong>: 
                     어필리에이트 수익이 콘텐츠·세율 정보·계산 로직의 정확성에 영향을 주지 않습니다.
                     세율·금리·법령은 정부 1차 출처(국세청·기재부·한국은행)를 직접 확인합니다.
                   </li>
                   <li>
-                    <strong>회색지대·약관 위반 서비스 추천 금지</strong> —
+                    <strong>회색지대·약관 위반 서비스 추천 금지</strong>: 
                     OTT 계정 공유 같이 서비스 약관(TOS) 위반 가능성이 있는 어필리에이트는
                     추천하지 않습니다. 공식 가족요금제·연간 결제·실수요 매칭 서비스만 다룹니다.
                   </li>
@@ -167,7 +167,7 @@ export default function AffiliateDisclosurePage() {
                   <ul className="list-disc space-y-1 pl-5 text-sm text-text-secondary">
                     {inactivePartners.map((p) => (
                       <li key={p.key}>
-                        <strong>{p.name}</strong> — {p.description}
+                        <strong>{p.name}</strong>: {p.description}
                       </li>
                     ))}
                   </ul>
@@ -187,7 +187,7 @@ export default function AffiliateDisclosurePage() {
                     >
                       표시·광고의 공정화에 관한 법률
                     </a>{' '}
-                    — 추천·보증 등에 관한 표시·광고 심사지침 준수
+, 추천·보증 등에 관한 표시·광고 심사지침 준수
                   </li>
                   <li>
                     <a
@@ -196,7 +196,7 @@ export default function AffiliateDisclosurePage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      공정거래위원회 — 추천·보증 등에 관한 표시·광고 심사지침
+                      공정거래위원회, 추천·보증 등에 관한 표시·광고 심사지침
                     </a>{' '}
                     (2020.09.01 시행, 2023 개정)
                   </li>
@@ -209,7 +209,7 @@ export default function AffiliateDisclosurePage() {
                     >
                       Google AdSense 프로그램 정책
                     </a>{' '}
-                    — 어필리에이트 콘텐츠 가이드라인 준수
+, 어필리에이트 콘텐츠 가이드라인 준수
                   </li>
                 </ul>
               </section>

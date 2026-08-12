@@ -61,7 +61,7 @@ const FAQ_ITEMS = [
   {
     question: '자동차세 연납은 어디서 신청하나요?',
     answer:
-      '① 위택스(wetax.go.kr) — 가장 편리, 24시간 가능 ② 자동차세 미리납부 앱 ③ 시·군·구청 직접 방문 ④ 은행 창구. 서울은 STAX, 경기·인천 등 지자체별 별도 앱도 있음. 위택스 추천.',
+      '① 위택스(wetax.go.kr), 가장 편리, 24시간 가능 ② 자동차세 미리납부 앱 ③ 시·군·구청 직접 방문 ④ 은행 창구. 서울은 STAX, 경기·인천 등 지자체별 별도 앱도 있음. 위택스 추천.',
   },
   {
     question: '연납 후 차량 매도하면 환급받나요?',
@@ -102,7 +102,7 @@ export default function JanuaryVehicleTaxPage() {
     { name: '자동차세 연납 5% 할인' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 연납 5% 할인 가이드 (2026) — 1월 신청·납부',
+    headline: '자동차세 연납 5% 할인 가이드 (2026), 1월 신청·납부',
     description: '1월 신청 시 5% 한도 내 공제 + 신용카드 무이자 할부 + 위택스 신청법.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -148,7 +148,7 @@ export default function JanuaryVehicleTaxPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차세 연납 5% 할인 가이드 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">— 1월 16~31일 신청 시 최대 공제</span>
+                  <span className="text-2xl text-text-secondary">· 1월 16~31일 신청 시 최대 공제</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자동차세는 1년에 6월·12월 2회 분할 납부가 기본이지만, 1월에 1년치를 미리 내면
@@ -185,7 +185,7 @@ export default function JanuaryVehicleTaxPage() {
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base bg-primary-500/5">
-                        <td className="px-3 py-2 font-bold">1월 신청 ⭐</td>
+                        <td className="px-3 py-2 font-bold">1월 신청</td>
                         <td className="px-3 py-2 text-right font-semibold text-primary-700 dark:text-primary-300">5% 한도 내 최대 공제</td>
                       </tr>
                       <tr className="border border-border-base">
@@ -270,7 +270,7 @@ export default function JanuaryVehicleTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">신청 방법 — 위택스 3단계 (가장 간편)</h2>
+                <h2 className="text-2xl font-bold">신청 방법, 위택스 3단계 (가장 간편)</h2>
                 <ol className="space-y-3 text-sm">
                   <li className="rounded-lg border border-border-base bg-bg-card p-4">
                     <strong className="text-text-primary block mb-1">Step 1. 위택스 로그인</strong>
@@ -308,20 +308,20 @@ export default function JanuaryVehicleTaxPage() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 할인율은 정부 정책 — 매년 변동 가능. 위택스 안내 확인 필수.</li>
+                  <li>• 할인율은 정부 정책, 매년 변동 가능. 위택스 안내 확인 필수.</li>
                   <li>• 신청 후 차량 매도·말소 시 환급 신청 필요 (위택스 자동 처리 또는 신청).</li>
-                  <li>• 카드 결제 수수료 0.8% 본인 부담 — 무이자 할부 활용 시 실질 부담 줄임.</li>
-                  <li>• 1월 16일 이전·31일 이후는 할인율 다름 — 정확히 16~31일 사이 신청.</li>
+                  <li>• 카드 결제 수수료 0.8% 본인 부담, 무이자 할부 활용 시 실질 부담 줄임.</li>
+                  <li>• 1월 16일 이전·31일 이후는 할인율 다름, 정확히 16~31일 사이 신청.</li>
                 </ul>
               </section>
 
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 도구</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">자동차세 계산기 — 본인 차종 정확한 세액·연납 절감액</Link></li>
-                  <li>→ <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">자동차세 제1기 6월 납부 가이드 — 연납 놓쳤을 때의 정기분 납부·차령경감</Link></li>
-                  <li>→ <Link href="/guide/vehicle-individual-consumption-tax-deadline-2026-june/" className="text-primary-600 underline dark:text-primary-500">자동차 개별소비세 6월 30일 마감 가이드 — 신차 구매 시 개소세 인하 혜택</Link></li>
-                  <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더 — 모든 세금 일정</Link></li>
+                  <li>→ <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">자동차세 계산기, 본인 차종 정확한 세액·연납 절감액</Link></li>
+                  <li>→ <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">자동차세 제1기 6월 납부 가이드, 연납 놓쳤을 때의 정기분 납부·차령경감</Link></li>
+                  <li>→ <Link href="/guide/vehicle-individual-consumption-tax-deadline-2026-june/" className="text-primary-600 underline dark:text-primary-500">자동차 개별소비세 6월 30일 마감 가이드, 신차 구매 시 개소세 인하 혜택</Link></li>
+                  <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더, 모든 세금 일정</Link></li>
                 </ul>
               </section>
 

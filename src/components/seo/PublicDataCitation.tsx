@@ -15,7 +15,7 @@ import { formatCitationDateKR } from '@/lib/publicapi/public-citations';
 
 export interface PublicDataCitationProps {
   citation: PublicCitation;
-  /** 인라인 사용 (default true) — false 면 블록형 */
+  /** 인라인 사용 (default true), false 면 블록형 */
   inline?: boolean;
   className?: string;
 }

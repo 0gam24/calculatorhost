@@ -89,7 +89,7 @@ export default function SalaryNegotiationTakeHomePage() {
     { name: '연봉협상 실수령액 시뮬레이션' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연봉협상 전 꼭 확인하세요 — 실수령액 정확 시뮬레이션 (2026)',
+    headline: '연봉협상 전 꼭 확인하세요, 실수령액 정확 시뮬레이션 (2026)',
     description:
       '이직·협상 제안 받았을 때, 제시된 연봉 수치에 숨은 함정이 있을 수 있습니다. 세전·세후, 상여금, 비과세 수당, 자녀 공제까지 반영한 정확한 월 실수령액 계산 방법을 정리했습니다.',
     url: URL,
@@ -135,7 +135,7 @@ export default function SalaryNegotiationTakeHomePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">직장 · 7분 읽기 · 2026-05-06</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  연봉협상 전 꼭 확인하세요 — 실수령액 정확 시뮬레이션
+                  연봉협상 전 꼭 확인하세요, 실수령액 정확 시뮬레이션
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   이직·협상 제안을 받았을 때, 제시된 연봉 수치에 숨은 함정이 있을 수 있습니다.
@@ -146,12 +146,12 @@ export default function SalaryNegotiationTakeHomePage() {
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">협상 체크리스트</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>✓ <strong>제시액 확인</strong> — "세전" 또는 "세후"인지 명확히</li>
-                  <li>✓ <strong>상여금 포함 여부</strong> — 성과급·인센티브 따로 계산</li>
-                  <li>✓ <strong>비과세 수당</strong> — 식사비·교통비 금액 확인</li>
-                  <li>✓ <strong>4대보험 공제 반영</strong> — 월 약 4.5~5% 감액</li>
-                  <li>✓ <strong>자녀·부양가족 공제</strong> — 세금 절감액 계산</li>
-                  <li>✓ <strong>연봉협상 카드 작성</strong> — 정확한 세후 수치로 무장</li>
+                  <li><strong>제시액 확인</strong>: "세전" 또는 "세후"인지 명확히</li>
+                  <li><strong>상여금 포함 여부</strong>: 성과급·인센티브 따로 계산</li>
+                  <li><strong>비과세 수당</strong>: 식사비·교통비 금액 확인</li>
+                  <li><strong>4대보험 공제 반영</strong>: 월 약 4.5~5% 감액</li>
+                  <li><strong>자녀·부양가족 공제</strong>: 세금 절감액 계산</li>
+                  <li><strong>연봉협상 카드 작성</strong>: 정확한 세후 수치로 무장</li>
                 </ul>
               </section>
 
@@ -170,7 +170,7 @@ export default function SalaryNegotiationTakeHomePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">Step 1. 제시액의 성격 파악하기 — 세전? 세후?</h2>
+                <h2 className="text-2xl font-bold">Step 1. 제시액의 성격 파악하기, 세전? 세후?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   회사가 "연봉 5,000만 원"이라 하면, 이는 <strong>세전 총급여</strong>입니다.
                   여기서 4대보험료와 소득세가 공제되어야 실제 월급이 결정됩니다.
@@ -244,7 +244,7 @@ export default function SalaryNegotiationTakeHomePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">협상 카드 만드는 법 — 실수령액 정확 계산</h2>
+                <h2 className="text-2xl font-bold">협상 카드 만드는 법, 실수령액 정확 계산</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   이제 여러분의 상황에 맞게 정확한 월 실수령액을 계산해 봅시다.
                   <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>를 열어서 다음 정보를 입력하면,
@@ -332,19 +332,19 @@ export default function SalaryNegotiationTakeHomePage() {
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 여러 시나리오로 월급 비교'}
+                    {'여러 시나리오로 월급 비교'}
                   </li>
                   <li>
                     <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
                       퇴직금 계산기
                     </Link>
-                    {' — 퇴직 시 받을 수 있는 금액 확인'}
+                    {'퇴직 시 받을 수 있는 금액 확인'}
                   </li>
                   <li>
                     <Link href="/calculator/freelancer-tax/" className="font-semibold text-primary-500 hover:underline">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' — 1099/용역비 지급받는 경우'}
+                    {'1099/용역비 지급받는 경우'}
                   </li>
                 </ul>
               </section>

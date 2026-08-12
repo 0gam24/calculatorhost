@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '대출이자 계산기 2026 — 상환방식별 월 납입액 비교',
+    title: '대출이자 계산기 2026, 상환방식별 월 납입액 비교',
     description: '원리금균등·원금균등·만기일시 상환방식별 월 상환액 및 총이자를 즉시 비교.',
     url: URL,
     type: 'website',
@@ -240,7 +240,7 @@ export default function LoanInterestPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 금리에 따른 월 상환액 비교 — 답변형 H2 */}
+              {/* 금리에 따른 월 상환액 비교, 답변형 H2 */}
               <section aria-label="금리별 상환액 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">금리에 따라 월 상환액이 얼마나 달라지나요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
@@ -458,7 +458,7 @@ export default function LoanInterestPage() {
                 <ul className="space-y-3 text-sm">
                   <li>
                     <a href="/guide/equal-payment-vs-equal-principal-2026/" className="text-primary-500 hover:underline font-semibold">
-                      원리금균등 vs 원금균등 — 어느 쪽이 유리한가?
+                      원리금균등 vs 원금균등, 어느 쪽이 유리한가?
                     </a>
                     <p className="mt-1 text-text-secondary">초기 부담과 총 이자를 비교하여 최적의 상환방식을 선택하는 방법</p>
                   </li>
@@ -517,7 +517,7 @@ export default function LoanInterestPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-500 hover:underline"
                     >
-                      금융감독원 finlife — 상환방식 선택 및 대출 정보
+                      금융감독원 finlife, 상환방식 선택 및 대출 정보
                     </a>
                   </li>
                   <li>
@@ -527,7 +527,7 @@ export default function LoanInterestPage() {
                       rel="noopener noreferrer"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      금융감독원 — 대출 상품 비교 및 금리 정보
+                      금융감독원, 대출 상품 비교 및 금리 정보
                     </a>
                   </li>
                   <li>
@@ -537,7 +537,7 @@ export default function LoanInterestPage() {
                       rel="noopener noreferrer"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      한국은행 — 기준금리 및 금리 인상·인하 정보
+                      한국은행, 기준금리 및 금리 인상·인하 정보
                     </a>
                   </li>
                   <li>
@@ -547,7 +547,7 @@ export default function LoanInterestPage() {
                       rel="noopener noreferrer"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      금융결제원 — 금융 표준 및 정보
+                      금융결제원, 금융 표준 및 정보
                     </a>
                   </li>
                 </ul>

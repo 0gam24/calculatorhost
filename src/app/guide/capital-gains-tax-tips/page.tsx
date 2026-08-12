@@ -132,25 +132,25 @@ export default function CapitalGainsTaxTipsPage() {
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>① <strong>1세대1주택 비과세</strong> — 보유 2년 + 12억 이하 = 양도세 0원</li>
-                  <li>② <strong>장기보유공제 80%</strong> — 1주택 10년 보유 + 10년 거주</li>
-                  <li>③ <strong>일시적 2주택 3년 특례</strong> — 신규 취득 후 3년 내 구주택 양도</li>
-                  <li>④ <strong>자경 농지 100% 감면</strong> — 8년 이상 직접 농업 종사 (한도 2억)</li>
-                  <li>⑤ <strong>다주택 중과 면제 활용</strong> — 한시적 유예 시기 매도</li>
-                  <li>⑥ <strong>양도시기 분산</strong> — 연도 분산으로 누진세율 회피</li>
-                  <li>⑦ <strong>필요경비 적극 인정</strong> — 중개수수료·취득세 등 영수증 보관</li>
+                  <li>① <strong>1세대1주택 비과세</strong>: 보유 2년 + 12억 이하 = 양도세 0원</li>
+                  <li>② <strong>장기보유공제 80%</strong>: 1주택 10년 보유 + 10년 거주</li>
+                  <li>③ <strong>일시적 2주택 3년 특례</strong>: 신규 취득 후 3년 내 구주택 양도</li>
+                  <li>④ <strong>자경 농지 100% 감면</strong>: 8년 이상 직접 농업 종사 (한도 2억)</li>
+                  <li>⑤ <strong>다주택 중과 면제 활용</strong>: 한시적 유예 시기 매도</li>
+                  <li>⑥ <strong>양도시기 분산</strong>: 연도 분산으로 누진세율 회피</li>
+                  <li>⑦ <strong>필요경비 적극 인정</strong>: 중개수수료·취득세 등 영수증 보관</li>
                 </ul>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">방법 1. 1세대1주택 비과세 — 가장 강력한 무기</h2>
+                <h2 className="text-2xl font-bold">방법 1. 1세대1주택 비과세, 가장 강력한 무기</h2>
                 <p className="text-text-secondary leading-relaxed">
                   1세대가 1주택만 보유하고 <strong>2년 이상 보유</strong>(조정대상지역은 2년 거주 추가) 후
                   양도하면 양도가액 <strong>12억 원 이하 전액 비과세</strong>. 대한민국 양도세 절세의
                   가장 강력한 도구입니다.
                 </p>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary">시뮬레이션 — 1세대1주택 양도</strong>
+                  <strong className="text-text-primary">시뮬레이션, 1세대1주택 양도</strong>
                   <p className="mt-2 text-text-secondary">
                     취득 5억 (2020) → 양도 11억 (2026), 보유 6년<br />
                     <strong>비과세 적용</strong>: 양도세 <strong className="text-primary-700 dark:text-primary-300">0원</strong> (12억 이하)<br />
@@ -222,7 +222,7 @@ export default function CapitalGainsTaxTipsPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">방법 6. 양도시기 분산 — 누진세율 회피</h2>
+                <h2 className="text-2xl font-bold">방법 6. 양도시기 분산, 누진세율 회피</h2>
                 <p className="text-text-secondary leading-relaxed">
                   양도세는 누진세율(6~45%)이라 1년에 큰 양도가 몰리면 최고 구간 적용. 두 부동산을
                   연도를 나눠(예: 12월 vs 1월) 양도하면 각각 낮은 세율 적용 가능.
@@ -259,24 +259,24 @@ export default function CapitalGainsTaxTipsPage() {
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 가이드 (양도세 4티어 핫 키워드)</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세 한도</Link> — 비례 과세 공식·거주 요건</li>
-                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link> — 보유 4% × 10년 + 거주 4% × 10년</li>
-                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link> — 신규 1년 후·종전 3년 내</li>
-                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 50:50 분산 효과</li>
-                  <li>→ <Link href="/guide/presale-right-capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">분양권 양도세 60/70%</Link> — 단일 세율, 장특공제 X</li>
-                  <li>→ <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세</Link> — 채무인수 분리 과세</li>
-                  <li>→ <Link href="/guide/carry-over-basis-spouse-gift-5-10-year/" className="text-primary-600 underline dark:text-primary-500">이월과세 5년→10년 확대</Link> — 배우자·직계 증여 후 양도</li>
-                  <li>→ <Link href="/guide/child-house-gift-vs-sale-comparison/" className="text-primary-600 underline dark:text-primary-500">자녀 주택 증여 vs 매매</Link> — 저가양수도 30%·3억 룰</li>
-                  <li>→ <Link href="/guide/self-farming-land-100-percent-exemption/" className="text-primary-600 underline dark:text-primary-500">자경농지 8년 100% 감면</Link> — 조특법 §69, 1억 한도</li>
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세 한도</Link>, 비례 과세 공식·거주 요건</li>
+                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link>, 보유 4% × 10년 + 거주 4% × 10년</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link>, 신규 1년 후·종전 3년 내</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link>, 50:50 분산 효과</li>
+                  <li>→ <Link href="/guide/presale-right-capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">분양권 양도세 60/70%</Link>, 단일 세율, 장특공제 X</li>
+                  <li>→ <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세</Link>, 채무인수 분리 과세</li>
+                  <li>→ <Link href="/guide/carry-over-basis-spouse-gift-5-10-year/" className="text-primary-600 underline dark:text-primary-500">이월과세 5년→10년 확대</Link>, 배우자·직계 증여 후 양도</li>
+                  <li>→ <Link href="/guide/child-house-gift-vs-sale-comparison/" className="text-primary-600 underline dark:text-primary-500">자녀 주택 증여 vs 매매</Link>, 저가양수도 30%·3억 룰</li>
+                  <li>→ <Link href="/guide/self-farming-land-100-percent-exemption/" className="text-primary-600 underline dark:text-primary-500">자경농지 8년 100% 감면</Link>, 조특법 §69, 1억 한도</li>
                 </ul>
               </section>
 
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 계산기</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 위 7가지 시나리오 직접 시뮬레이션</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 위 7가지 시나리오 직접 시뮬레이션</li>
                   <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link></li>
-                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전 — 양도차익·장기보유공제·1세대1주택</Link></li>
+                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전, 양도차익·장기보유공제·1세대1주택</Link></li>
                 </ul>
               </section>
 

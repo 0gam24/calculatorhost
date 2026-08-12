@@ -51,7 +51,7 @@ const FAQ_ITEMS = [
   {
     question: '부가세 1기 예정신고 대상은 누구인가요?',
     answer:
-      '일반과세자 (개인사업자·법인). 간이과세자는 1년에 1회 (1월) 신고 — 4월 예정신고 의무 X. 단 일반과세자 중 직전 1년 매출 4,800만 원 미만은 예정고지서 자동 발급 (직전 부가세의 1/2). 신규 사업자는 예정신고 면제.',
+      '일반과세자 (개인사업자·법인). 간이과세자는 1년에 1회 (1월) 신고, 4월 예정신고 의무 X. 단 일반과세자 중 직전 1년 매출 4,800만 원 미만은 예정고지서 자동 발급 (직전 부가세의 1/2). 신규 사업자는 예정신고 면제.',
   },
   {
     question: '신고 기한과 방법은?',
@@ -97,7 +97,7 @@ export default function AprilVatPreliminaryQ1Page() {
     { name: '4월 부가세 1기 예정신고' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '4월 부가세 1기 예정신고 가이드 (2026) — 4월 1~25일',
+    headline: '4월 부가세 1기 예정신고 가이드 (2026), 4월 1~25일',
     description: '일반과세자 부가세 신고·매출세액·매입세액공제·홈택스 신고법.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -171,7 +171,7 @@ export default function AprilVatPreliminaryQ1Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   4월 부가세 1기 예정신고 가이드 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">— 4월 1~25일 신고·납부</span>
+                  <span className="text-2xl text-text-secondary">· 4월 1~25일 신고·납부</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   일반과세 개인사업자·법인은 4월 1~25일 부가세 1기 예정신고·납부 의무. 1~3월 매출과
@@ -197,7 +197,7 @@ export default function AprilVatPreliminaryQ1Page() {
                 <p className="text-text-secondary leading-relaxed">
                   부가가치세는 1년에 2기로 나누어 신고. 1기는 1~6월, 2기는 7~12월. 각 기마다
                   예정신고 (3개월 분) + 확정신고 (6개월 분 합산) 2회. 일반과세자는 의무, 간이과세자는
-                  1년 1회만 (1월) — 예정신고 면제.
+                  1년 1회만 (1월), 예정신고 면제.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -210,7 +210,7 @@ export default function AprilVatPreliminaryQ1Page() {
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base bg-primary-500/5">
-                        <td className="px-3 py-2 font-bold">4월 1~25일 ⭐</td>
+                        <td className="px-3 py-2 font-bold">4월 1~25일</td>
                         <td className="px-3 py-2">1~3월</td>
                         <td className="px-3 py-2">일반과세 (1기 예정신고)</td>
                       </tr>
@@ -242,7 +242,7 @@ export default function AprilVatPreliminaryQ1Page() {
                   </p>
                 </div>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary">시뮬레이션 — 1~3월 신고</strong>
+                  <strong className="text-text-primary">시뮬레이션, 1~3월 신고</strong>
                   <ul className="mt-2 text-text-secondary space-y-1">
                     <li>매출: 5,000만 원 (공급가액 기준, VAT 미포함)</li>
                     <li>매입: 2,000만 원 (사업 관련, 세금계산서 보유)</li>
@@ -323,11 +323,11 @@ export default function AprilVatPreliminaryQ1Page() {
                   신고 마감 전 다음을 확인해 부가세를 최소화하세요. 매입세액공제는 일 1~2회 판매 사업의 경우 큰 절세 효과가 있으니 반드시 챙기세요.
                 </p>
                 <ul className="space-y-2 text-sm text-text-secondary">
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>세금계산서 재확인</strong> — 매입 시 세금계산서 발급받았는지, 발급처가 유효한 사업자인지 점검</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>신용카드 영수증</strong> — 기업신용카드 사용분은 자료가 자동 제출되니 누락 확인</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>환급 대상 확인</strong> — 매입 {'>'}매출 시 환급 발생. 환급액이 큰 경우 추가 서류 요청 가능성 대비</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>면세 매입 구분</strong> — 의료·교육·생활용품 구입분은 부가세 대상 아님. 분류 오류 시 가산세</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>접대비 한도</strong> — 접대비 공제는 직전년도 매출액의 일정 비율 한도 초과 부분 불가. 회계사와 사전 확인</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>세금계산서 재확인</strong>: 매입 시 세금계산서 발급받았는지, 발급처가 유효한 사업자인지 점검</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>신용카드 영수증</strong>: 기업신용카드 사용분은 자료가 자동 제출되니 누락 확인</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>환급 대상 확인</strong>: 매입 {'>'}매출 시 환급 발생. 환급액이 큰 경우 추가 서류 요청 가능성 대비</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>면세 매입 구분</strong>: 의료·교육·생활용품 구입분은 부가세 대상 아님. 분류 오류 시 가산세</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>접대비 한도</strong>: 접대비 공제는 직전년도 매출액의 일정 비율 한도 초과 부분 불가. 회계사와 사전 확인</span></li>
                 </ul>
               </section>
 
@@ -336,10 +336,10 @@ export default function AprilVatPreliminaryQ1Page() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 본 가이드는 일반론 — 복잡한 케이스(다업종·해외 거래·면세 사업)는 세무사 상담 권장.</li>
+                  <li>• 본 가이드는 일반론, 복잡한 케이스(다업종·해외 거래·면세 사업)는 세무사 상담 권장.</li>
                   <li>• 전자세금계산서 발급 의무 위반 시 매출액 0.5~2% 가산세.</li>
-                  <li>• 매입세액공제는 세금계산서·적격증빙 필수 — 영수증만으로는 공제 불가.</li>
-                  <li>• 직전 연도 매출 4,800만 미만 일반과세자는 예정고지서 자동 발급 — 신고 X.</li>
+                  <li>• 매입세액공제는 세금계산서·적격증빙 필수, 영수증만으로는 공제 불가.</li>
+                  <li>• 직전 연도 매출 4,800만 미만 일반과세자는 예정고지서 자동 발급, 신고 X.</li>
                 </ul>
               </section>
 
@@ -349,9 +349,9 @@ export default function AprilVatPreliminaryQ1Page() {
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link></li>
                   <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link></li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고</Link></li>
-                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 부가세 1기 확정신고</Link> — 4월 예정신고 다음 단계, 상반기 전체 정산</li>
-                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크</Link> — 사업자 7월 세무 일정 한눈에</li>
-                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고</Link> — 하반기 예정신고·예정고지 대비</li>
+                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 부가세 1기 확정신고</Link>, 4월 예정신고 다음 단계, 상반기 전체 정산</li>
+                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크</Link>, 사업자 7월 세무 일정 한눈에</li>
+                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고</Link>, 하반기 예정신고·예정고지 대비</li>
                   <li>→ <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">2026 세금 캘린더</Link></li>
                 </ul>
               </section>

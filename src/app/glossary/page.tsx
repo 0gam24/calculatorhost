@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '금융·세금·투자 용어사전 — calculatorhost',
+    title: '금융·세금·투자 용어사전, calculatorhost',
     description: 'DSR·LTV·양도차익·평단·BEP 등 핵심 용어 정의 + 법적 근거.',
     url: URL,
     type: 'website',

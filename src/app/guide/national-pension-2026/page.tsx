@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-08';
 const DATE_MODIFIED = '2026-06-08';
 
 export const metadata: Metadata = {
-  title: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁',
+  title: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',
   description:
     '2026년 국민연금 개혁으로 보험료율 9%→9.5%, 소득대체율 41.5%→43%로 인상됩니다. 출생연도별 수령나이(61~65세), 예상수령액 결정 방법, 조기수령(최대 30%↓)·연기연금(최대 36%↑) 손익까지 정리했습니다.',
   keywords: [
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁',
+    title: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',
     description:
       '2026년 보험료율 9%→9.5%, 소득대체율 41.5%→43%. 출생연도별 수령나이, 조기수령·연기연금 손익 정리.',
     url: URL,
@@ -44,13 +44,13 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 2026 — 보험료율 9.5%·수령나이·개혁',
+    title: '국민연금 2026, 보험료율 9.5%·수령나이·개혁',
     description: '보험료율·소득대체율 인상, 수령나이, 조기·연기연금 손익 완정리.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁' }],
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁' }],
   },
 };
 
@@ -96,10 +96,10 @@ export default function NationalPension2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '국민연금 2026 — 보험료율·수령나이·예상수령액' },
+    { name: '국민연금 2026, 보험료율·수령나이·예상수령액' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁',
+    headline: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',
     description:
       '2026년 국민연금 개혁(보험료율 9%→9.5%, 소득대체율 41.5%→43%), 출생연도별 수령나이, 예상수령액 확인 방법, 조기수령·연기연금 손익을 정리했습니다.',
     url: URL,
@@ -111,7 +111,7 @@ export default function NationalPension2026() {
     keywords: ['국민연금', '국민연금 보험료율', '국민연금 수령나이', '조기노령연금', '연기연금'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '국민연금 2026 — 보험료율·수령나이·예상수령액·개혁',
+    name: '국민연금 2026, 보험료율·수령나이·예상수령액·개혁',
     description:
       '2026년 보험료율 9.5%·소득대체율 43%. 출생연도별 수령나이(61~65세), 조기수령(최대 30%↓)·연기연금(최대 36%↑) 손익.',
     url: URL,
@@ -147,12 +147,12 @@ export default function NationalPension2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   국민연금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 보험료율 9.5%·수령나이·예상수령액·개혁</span>
+                  <span className="text-2xl text-text-secondary">· 보험료율 9.5%·수령나이·예상수령액·개혁</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년은 18년 만의 국민연금 개혁이 처음 적용되는 해입니다.
                   보험료율은 9%에서 <strong>9.5%</strong>로, 소득대체율은 41.5%에서 <strong>43%</strong>로 오릅니다.
-                  내 국민연금은 몇 살부터, 얼마를 받을 수 있는지 — 출생연도별 수령나이, 예상수령액 확인 방법, 조기수령과 연기연금의 손익까지 정확히 정리했습니다.
+                  내 국민연금은 몇 살부터, 얼마를 받을 수 있는지, 출생연도별 수령나이, 예상수령액 확인 방법, 조기수령과 연기연금의 손익까지 정확히 정리했습니다.
                 </p>
               </header>
 
@@ -210,7 +210,7 @@ export default function NationalPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 국민연금이란? — 10년 채우면 평생 받는 노령연금</h2>
+                <h2 className="text-2xl font-bold">1. 국민연금이란?, 10년 채우면 평생 받는 노령연금</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   국민연금의 대표 급여는 노령연금이며, 가입기간이 10년(120개월) 이상이면 출생연도별 지급개시연령부터 사망할 때까지 매월 받습니다(국민연금법 §61).
                   보험료는 기준소득월액에 보험료율을 곱해 정해집니다.
@@ -225,7 +225,7 @@ export default function NationalPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 2026년 무엇이 바뀌나? — 보험료율과 소득대체율 인상</h2>
+                <h2 className="text-2xl font-bold">2. 2026년 무엇이 바뀌나?, 보험료율과 소득대체율 인상</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   2025년 통과된 연금개혁으로 2026년부터 더 내고 더 받는 구조로 바뀝니다.
                   보험료율은 2026년 9.5%로 오른 뒤 매년 0.5%포인트씩 인상되어 2033년 13%에 도달합니다(국민연금법 §88).
@@ -279,7 +279,7 @@ export default function NationalPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 몇 살부터 받나? — 출생연도별 수령나이</h2>
+                <h2 className="text-2xl font-bold">3. 몇 살부터 받나?, 출생연도별 수령나이</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   노령연금 지급개시연령은 출생연도에 따라 61세에서 65세까지 단계적으로 높아집니다.
                   1969년생 이후는 모두 65세부터 받습니다.
@@ -326,7 +326,7 @@ export default function NationalPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 얼마나 받나? — 예상수령액을 정하는 3가지</h2>
+                <h2 className="text-2xl font-bold">4. 얼마나 받나?, 예상수령액을 정하는 3가지</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   노령연금액은 크게 세 가지로 정해집니다(국민연금법 §63).
                   ① 전체 가입자의 평균소득(A값, 균등 부분), ② 내가 가입 기간 동안 번 평균소득(B값, 소득비례 부분), ③ 가입기간입니다.
@@ -348,7 +348,7 @@ export default function NationalPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 일찍 받을까 미룰까? — 조기수령 vs 연기연금</h2>
+                <h2 className="text-2xl font-bold">5. 일찍 받을까 미룰까?, 조기수령 vs 연기연금</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   수령 시기는 정상 시기보다 최대 5년 앞당기거나(조기노령연금, §61②) 최대 5년 미룰 수 있습니다(연기연금, §62).
                   앞당기면 1년당 6%씩 줄고(최대 30% 감액), 미루면 1년당 7.2%씩 늘어납니다(최대 36% 증액).
@@ -403,7 +403,7 @@ export default function NationalPension2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 보험료는 공제, 연금은 과세 — 세금 구조</h2>
+                <h2 className="text-2xl font-bold">6. 보험료는 공제, 연금은 과세, 세금 구조</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   국민연금은 낼 때 세금을 깎아주고 받을 때 세금을 매기는 구조입니다.
                   근로자가 낸 보험료(본인 부담분)는 연말정산에서 연금보험료 공제로 전액 소득공제됩니다.
@@ -421,48 +421,48 @@ export default function NationalPension2026() {
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 국민연금 등 4대보험 공제 후 세후 월급 확인'}
+                    {'국민연금 등 4대보험 공제 후 세후 월급 확인'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/severance-vs-pension-dc-db/" className="text-primary-600 underline dark:text-primary-500">
                       퇴직금 DC·DB 비교
                     </Link>
-                    {' — 국민연금과 함께 노후를 떠받치는 퇴직연금'}
+                    {'국민연금과 함께 노후를 떠받치는 퇴직연금'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/private-pension-1500-million-separate-taxation-2026/" className="text-primary-600 underline dark:text-primary-500">
                       사적연금 1,500만원 분리과세 2026
                     </Link>
-                    {' — 연금저축·IRP 수령 시 세금 갈림길'}
+                    {'연금저축·IRP 수령 시 세금 갈림길'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/basic-pension-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      기초연금 2026 — 월 최대 34만 9,700원
+                      기초연금 2026, 월 최대 34만 9,700원
                     </Link>
-                    {' — 국민연금 수령액에 따라 달라지는 기초연금 연계감액'}
+                    {'국민연금 수령액에 따라 달라지는 기초연금 연계감액'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/income-deduction-vs-tax-credit-2026/" className="text-primary-600 underline dark:text-primary-500">
                       소득공제 vs 세액공제 2026
                     </Link>
-                    {' — 국민연금 보험료 공제가 적용되는 연말정산 구조'}
+                    {'국민연금 보험료 공제가 적용되는 연말정산 구조'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/work/" className="text-primary-600 underline dark:text-primary-500">
                       근로 계산기·가이드
                     </Link>
-                    {' — 연봉·퇴직금·은퇴자금 등 직장인·은퇴 필수 도구'}
+                    {'연봉·퇴직금·은퇴자금 등 직장인·은퇴 필수 도구'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="국민연금 2026 — 보험료율 9.5%·수령나이·예상수령액·개혁"
+                title="국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁"
                 url={URL}
                 description="2026년 보험료율 9%→9.5%, 소득대체율 41.5%→43%. 출생연도별 수령나이, 조기수령·연기연금 손익 정리."
               />

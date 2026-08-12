@@ -193,8 +193,8 @@ export default function DsrRegulationZonesPage() {
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">9억 초과 LTV (투기과열)</td>
-                        <td className="px-3 py-2 text-right">—</td>
-                        <td className="px-3 py-2 text-right">—</td>
+                        <td className="px-3 py-2 text-right">·</td>
+                        <td className="px-3 py-2 text-right">·</td>
                         <td className="px-3 py-2 text-right text-xs">9억↓ 50% / 9~15억 30% / 15억↑ 0%</td>
                       </tr>
                     </tbody>
@@ -234,14 +234,14 @@ export default function DsrRegulationZonesPage() {
 
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>다주택자 주의</strong>: 조정대상지역·투기과열지구 다주택자는 LTV 0% — 신규 주택담보대출 불가.
+                    <strong>다주택자 주의</strong>: 조정대상지역·투기과열지구 다주택자는 LTV 0%, 신규 주택담보대출 불가.
                     유일한 대안은 신용대출(별도 DSR 영향) 또는 해당 지역 외 매수.
                   </p>
                 </div>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">스트레스 DSR — 변동금리 한도 큰 영향</h2>
+                <h2 className="text-2xl font-bold">스트레스 DSR, 변동금리 한도 큰 영향</h2>
                 <p className="text-text-secondary leading-relaxed">
                   2026년 스트레스 DSR 풀 적용으로 변동·혼합·주기형 대출은 <strong>현재 금리 + 1.5%p</strong>로
                   DSR 산정. 같은 4.0% 금리라도 고정 vs 변동 한도가 약 15~20% 차이.
@@ -281,7 +281,7 @@ export default function DsrRegulationZonesPage() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 본 표는 2026년 5월 기준 — 조정대상지역·투기과열지구 지정·해제 잦으니 거래 직전 확인 필수.</li>
+                  <li>• 본 표는 2026년 5월 기준, 조정대상지역·투기과열지구 지정·해제 잦으니 거래 직전 확인 필수.</li>
                   <li>• 실제 한도는 금융기관 내부 기준·신용평점·소득 증빙 방식에 따라 달라집니다.</li>
                   <li>• 본 가이드는 일반론이며 개별 상담은 금융기관 또는 모기지 전문가에게 받으세요.</li>
                 </ul>
@@ -293,8 +293,8 @@ export default function DsrRegulationZonesPage() {
                   <li>→ <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">대출한도 계산기 (DSR/LTV/DTI)</Link></li>
                   <li>→ <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">대출이자 계산기</Link></li>
                   <li>→ <Link href="/guide/dsr-loan-limit-tips/" className="text-primary-600 underline dark:text-primary-500">DSR 한도 늘리는 5가지 방법</Link></li>
-                  <li>→ <Link href="/guide/interest-rate-hike-dsr-loan-limit-july-2026/" className="text-primary-600 underline dark:text-primary-500">7월 금리 인상과 DSR 대출한도 2026</Link> — 금리 인상 시 지역별 한도 변화 시뮬레이션</li>
-                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전 — DSR·LTV·DTI·스트레스 DSR</Link></li>
+                  <li>→ <Link href="/guide/interest-rate-hike-dsr-loan-limit-july-2026/" className="text-primary-600 underline dark:text-primary-500">7월 금리 인상과 DSR 대출한도 2026</Link>, 금리 인상 시 지역별 한도 변화 시뮬레이션</li>
+                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전, DSR·LTV·DTI·스트레스 DSR</Link></li>
                 </ul>
               </section>
 

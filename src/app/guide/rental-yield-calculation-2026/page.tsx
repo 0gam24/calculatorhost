@@ -246,7 +246,7 @@ export default function RentalYieldCalculation2026Page() {
 
               <section className="space-y-4">
                 <h2 className="border-b border-border-base pb-2 text-2xl font-bold">
-                  표면수익률 vs 순수익률 — 뭐가 다른가요?
+                  표면수익률 vs 순수익률, 뭐가 다른가요?
                 </h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   부동산 광고에서 자주 보는 "수익률 4%"라는 표현은 보통 제경비를 빼기 전의
@@ -662,7 +662,7 @@ export default function RentalYieldCalculation2026Page() {
                     >
                       임대수익률 계산기
                     </Link>{' '}
-                    — 월세, 보증금, 제경비를 입력하여 순수익률 자동 계산
+, 월세, 보증금, 제경비를 입력하여 순수익률 자동 계산
                   </li>
                   <li>
                     →{' '}
@@ -672,7 +672,7 @@ export default function RentalYieldCalculation2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 갭투자 시 대출이자 월 상환액 확인
+, 갭투자 시 대출이자 월 상환액 확인
                   </li>
                   <li>
                     →{' '}
@@ -682,7 +682,7 @@ export default function RentalYieldCalculation2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV)
                     </Link>{' '}
-                    — 부동산 구매 시 최대 대출 한도 확인
+, 부동산 구매 시 최대 대출 한도 확인
                   </li>
                   <li>
                     →{' '}
@@ -692,7 +692,7 @@ export default function RentalYieldCalculation2026Page() {
                     >
                       LTV 계산법 2026
                     </Link>{' '}
-                    — 담보인정비율·대출가능액·DSR/DTI 차이
+, 담보인정비율·대출가능액·DSR/DTI 차이
                   </li>
                   <li>
                     →{' '}
@@ -702,7 +702,7 @@ export default function RentalYieldCalculation2026Page() {
                     >
                       중개수수료 계산기
                     </Link>{' '}
-                    — 취득부대비용 추정 (중개수수료·취득세)
+, 취득부대비용 추정 (중개수수료·취득세)
                   </li>
                   <li>
                     →{' '}
@@ -712,7 +712,7 @@ export default function RentalYieldCalculation2026Page() {
                     >
                       부동산 카테고리
                     </Link>{' '}
-                    — 전월세·평수·전환율·임대수익률 모든 계산기
+, 전월세·평수·전환율·임대수익률 모든 계산기
                   </li>
                 </ul>
               </section>

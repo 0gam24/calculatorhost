@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '자녀장려금 계산기 2026 — 자녀 1인당 100만원',
+    title: '자녀장려금 계산기 2026, 자녀 1인당 100만원',
     description:
       '가구 유형, 연소득, 자녀 수로 자녀장려금(CTC)을 즉시 계산합니다.',
     url: URL,
@@ -252,9 +252,9 @@ export default function ChildTaxCreditPage() {
                     1. 가구 유형
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
-                    <li>✓ 홑벌이 가구 (1인 근로)</li>
-                    <li>✓ 맞벌이 가구 (2인 이상 소득)</li>
-                    <li>✗ 단독가구 (자녀장려금 대상 아님)</li>
+                    <li>홑벌이 가구 (1인 근로)</li>
+                    <li>맞벌이 가구 (2인 이상 소득)</li>
+                    <li>단독가구 (자녀장려금 대상 아님)</li>
                   </ul>
                 </div>
 
@@ -338,17 +338,13 @@ export default function ChildTaxCreditPage() {
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">신청 시 필요 서류</h2>
               <ul className="space-y-2 text-sm text-text-secondary">
-                <li>
-                  ✓ 소득증명서 (근로소득, 기타소득 모두 포함)
+                <li>소득증명서 (근로소득, 기타소득 모두 포함)
                 </li>
-                <li>
-                  ✓ 가족관계증명서 또는 건강보험료 청구서 (자녀 확인)
+                <li>가족관계증명서 또는 건강보험료 청구서 (자녀 확인)
                 </li>
-                <li>
-                  ✓ 재산세 과세명세서 (재산 확인)
+                <li>재산세 과세명세서 (재산 확인)
                 </li>
-                <li>
-                  ✓ 배우자가 있으면 배우자 소득증명서
+                <li>배우자가 있으면 배우자 소득증명서
                 </li>
               </ul>
               <p className="text-xs text-text-secondary mt-4">

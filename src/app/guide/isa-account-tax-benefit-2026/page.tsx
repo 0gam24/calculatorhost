@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'ISA 계좌 세제혜택 2026 | 200만원 비과세·9.9% 분리과세' }],
-    title: 'ISA 계좌 세제혜택 2026 — 비과세 한도·분리과세율·의무기간 완전 정리',
+    title: 'ISA 계좌 세제혜택 2026, 비과세 한도·분리과세율·의무기간 완전 정리',
     description: '일반형 200만원, 서민형 400만원까지 이익이 비과세. 초과분은 9.9% 분리과세(금융소득종합과세 제외). 3년 의무가입, 손익통산 가능.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ISA 계좌 세제혜택 2026 — 비과세·분리과세 완벽 이해',
+    title: 'ISA 계좌 세제혜택 2026, 비과세·분리과세 완벽 이해',
     description: 'ISA 비과세 한도 200만~400만원, 초과분 9.9% 분리과세, 일반 금융소득 15.4% vs ISA 분리과세 최대 90% 절세 효과.',
   },
 };
@@ -100,7 +100,7 @@ export default function IsaAccountTaxBenefit2026Page() {
     { name: 'ISA 계좌 세제혜택 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: 'ISA 계좌 세제혜택 2026 — 비과세 한도·분리과세율·의무기간 완전 정리',
+    headline: 'ISA 계좌 세제혜택 2026, 비과세 한도·분리과세율·의무기간 완전 정리',
     description:
       '개인종합자산관리계좌(ISA)의 세제혜택 완벽 정리. 일반형 200만원·서민형 400만원 비과세, 초과분 9.9% 분리과세, 3년 의무가입, 손익통산, 연금계좌 전환 추가혜택.',
     url: URL,
@@ -148,7 +148,7 @@ export default function IsaAccountTaxBenefit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   ISA 계좌 세제혜택 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 200만원 비과세·9.9% 분리과세</span>
+                  <span className="text-2xl text-text-secondary">· 200만원 비과세·9.9% 분리과세</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   금융투자를 하다 보면 이자와 배당, 시세차익에 대한 세금이 부담입니다. 특히 금융소득이 2,000만원을 넘으면 금융소득종합과세 대상이 되어 최고 45%까지 세금을 내야 합니다. 그런데 개인종합자산관리계좌(ISA)는 일정 한도 내에서 이 세금을 완전히 면제해주고, 초과분도 15.4%가 아닌 9.9%만 부과합니다. 이 가이드는 ISA의 비과세 한도, 분리과세율, 의무가입 기간, 손익통산 방식까지 완전히 정리해드립니다.
@@ -310,7 +310,7 @@ export default function IsaAccountTaxBenefit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">손익통산 — ISA의 강점</h2>
+                <h2 className="text-2xl font-bold">손익통산, ISA의 강점</h2>
                 <p>
                   ISA의 중요한 특징은 계좌 내의 모든 상품 손익을 합산한다는 것입니다(조세특례제한법 §91의18 ⑤). 이를 손익통산이라고 부릅니다.
                 </p>

@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-27';
 const DATE_MODIFIED = '2026-06-27';
 
 export const metadata: Metadata = {
-  title: '정기예금 vs 정기적금 vs 파킹통장 2026 — 이자·유동성·세금 완전비교',
+  title: '정기예금 vs 정기적금 vs 파킹통장 2026, 이자·유동성·세금 완전비교',
   description:
     '정기예금, 정기적금, 파킹통장의 차이를 이자 계산방식, 유동성, 세금, 적합한 상황별로 명확히 정리합니다. 예금자보호, 이자소득세 15.4%, 실제 선택 기준까지 2026년 기준 최신 정보.',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '정기예금 vs 정기적금 vs 파킹통장 2026 — 이자·유동성·세금 완전비교',
+        alt: '정기예금 vs 정기적금 vs 파킹통장 2026, 이자·유동성·세금 완전비교',
       },
     ],
     title: '정기예금 vs 정기적금 vs 파킹통장 2026',
@@ -589,7 +589,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                     >
                       정기예금 이자 계산기
                     </Link>{' '}
-                    — 목돈 예치의 만기금액 및 세후 이자 실시간 계산
+, 목돈 예치의 만기금액 및 세후 이자 실시간 계산
                   </li>
                   <li>
                     →{' '}
@@ -599,7 +599,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                     >
                       정기적금 이자 계산기
                     </Link>{' '}
-                    — 월불입 적금의 최종 원리금 및 이자 계산
+, 월불입 적금의 최종 원리금 및 이자 계산
                   </li>
                   <li>
                     →{' '}
@@ -609,7 +609,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                     >
                       복리 계산법과 72의 법칙 2026
                     </Link>{' '}
-                    — 단리 vs 복리 차이, 원금 2배 기간 추정
+, 단리 vs 복리 차이, 원금 2배 기간 추정
                   </li>
                   <li>
                     →{' '}
@@ -619,7 +619,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                     >
                       인플레이션과 화폐가치 2026
                     </Link>{' '}
-                    — 명목 이자율 vs 실질 수익률 이해
+, 명목 이자율 vs 실질 수익률 이해
                   </li>
                   <li>
                     →{' '}
@@ -629,7 +629,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 대출 상환액과 총이자 비교
+, 대출 상환액과 총이자 비교
                   </li>
                   <li>
                     →{' '}
@@ -639,7 +639,7 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

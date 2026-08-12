@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속 한정승인·상속포기 2026 | 빚 초과 시 3개월 내 신고' }],
-    title: '상속 한정승인·상속포기 2026 — 채무 초과 시 선택 기준과 3개월 기한',
+    title: '상속 한정승인·상속포기 2026, 채무 초과 시 선택 기준과 3개월 기한',
     description: '피상속인 채무가 상속재산을 초과할 때 한정승인으로 빚 한도를 제한하거나 상속포기로 상속 자체를 포기할 수 있습니다. 민법 정확한 절차와 판단 기준.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속 한정승인·상속포기 2026 — 채무 초과 상황의 정확한 선택',
+    title: '상속 한정승인·상속포기 2026, 채무 초과 상황의 정확한 선택',
     description: '상속채무가 상속재산보다 클 때 한정승인 또는 상속포기로 대응. 민법 §1019 3개월 기한과 신고 절차.',
   },
 };
@@ -99,7 +99,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
     { name: '상속 한정승인·상속포기 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상속 한정승인·상속포기 2026 — 채무 초과 시 선택 기준과 3개월 기한',
+    headline: '상속 한정승인·상속포기 2026, 채무 초과 시 선택 기준과 3개월 기한',
     description:
       '피상속인 채무가 상속재산을 초과할 때의 정확한 대응. 민법 §1019 기한, 한정승인 vs 상속포기 차이, 신고 절차, 함정 사례 완전 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속 한정승인·상속포기 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 채무 초과 시 3개월 내 선택 절차</span>
+                  <span className="text-2xl text-text-secondary">· 채무 초과 시 3개월 내 선택 절차</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   부모가 남긴 빚이 재산보다 많을 때는 어떻게 할까요? 민법은 상속인을 무조건 보호하지 않지만, 한정승인과 상속포기라는 두 가지 길을 열어두었습니다. 이 가이드는 상속채무 초과 시 피상속인 사망을 안 날부터 3개월 이내에 선택해야 하는 한정승인·상속포기의 정확한 차이점, 신고 절차, 그리고 놓치기 쉬운 함정까지 완벽히 정리합니다.
@@ -360,7 +360,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">상속재산 처분 시 주의 — 자동 단순승인</h2>
+                <h2 className="text-2xl font-bold">상속재산 처분 시 주의, 자동 단순승인</h2>
                 <p>
                   민법 §1026 "법정단순승인"에 따르면, 상속인이 상속받은 재산을 처분·은닉·소비하면 단순승인한 것으로 간주됩니다. 이 경우 이미 한정승인이나 상속포기를 신고했더라도 효력이 없어질 수 있습니다.
                 </p>
@@ -392,7 +392,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">후순위 상속인의 책임 — 포기의 연쇄 효과</h2>
+                <h2 className="text-2xl font-bold">후순위 상속인의 책임, 포기의 연쇄 효과</h2>
                 <p>
                   상속포기 시 그 상속분은 자동으로 후순위 상속인(손자녀, 형제자매 등)에게 넘어갑니다. 피상속인의 빚이 전체 상속재산을 크게 초과한다면, 후순위까지 함께 포기해야 상속 사슬을 끝낼 수 있습니다.
                 </p>

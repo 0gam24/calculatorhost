@@ -95,7 +95,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
     { name: '2026년 7월 국민연금 인상 후 월급 변화' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026년 7월 국민연금 인상 후 월급 실수령액 변화 — 정확한 시뮬레이션',
+    headline: '2026년 7월 국민연금 인상 후 월급 실수령액 변화, 정확한 시뮬레이션',
     description:
       '7월 1일부터 시작되는 국민연금 요율 9.0→9.5% 인상(국민연금법 §88)으로 월급 실수령액이 얼마나 줄어드는지 정확히 계산. 기준소득월액 상한선 인상(637만→659만원) 함께 정리.',
     url: URL,
@@ -190,17 +190,17 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               <section className="card bg-card p-3">
                 <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary-500">한눈에 보기</h2>
                 <ul className="space-y-1 text-sm" data-speakable>
-                  <li>✓ 국민연금 근로자 부담 4.5% → 4.75% (0.25%p 인상)</li>
-                  <li>✓ 월급 300만원 기준 월 7,500원 추가 공제</li>
-                  <li>✓ 월급 500만원 기준 월 12,500원 추가 공제</li>
-                  <li>✓ 기준소득월액 상한선 637만 → 659만원 인상</li>
-                  <li>✓ 건강보험·고용보험·산재보험은 7월 변동 없음</li>
-                  <li>✓ 연봉협상 시 1~6월(4.5%) + 7~12월(4.75%) 구분 필수</li>
+                  <li>국민연금 근로자 부담 4.5% → 4.75% (0.25%p 인상)</li>
+                  <li>월급 300만원 기준 월 7,500원 추가 공제</li>
+                  <li>월급 500만원 기준 월 12,500원 추가 공제</li>
+                  <li>기준소득월액 상한선 637만 → 659만원 인상</li>
+                  <li>건강보험·고용보험·산재보험은 7월 변동 없음</li>
+                  <li>연봉협상 시 1~6월(4.5%) + 7~12월(4.75%) 구분 필수</li>
                 </ul>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">국민연금 인상 — 2026년 단계적 개혁의 첫 단계</h2>
+                <h2 className="text-2xl font-bold">국민연금 인상, 2026년 단계적 개혁의 첫 단계</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   국민연금 재정 안정을 위한 2026년 개혁의 일환으로, <strong>7월 1일부터 국민연금 요율이 9.0%에서 9.5%로 인상</strong>됩니다(국민연금법 §88).
                   근로자가 부담하는 비율은 4.5%에서 4.75%로 올라갑니다.
@@ -222,7 +222,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월급 300만원 기준 — 1~6월 vs 7~12월 비교</h2>
+                <h2 className="text-2xl font-bold">월급 300만원 기준, 1~6월 vs 7~12월 비교</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   월급 300만원을 기준으로 1~6월과 7~12월의 4대보험료 공제액을 정확히 비교해 봅시다.
                   국민연금 변화가 가장 크지만, 건강보험·고용보험·산재보험은 변하지 않습니다.
@@ -276,7 +276,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월급 500만원 기준 — 기준소득월액 상한선 미적용</h2>
+                <h2 className="text-2xl font-bold">월급 500만원 기준, 기준소득월액 상한선 미적용</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   월급 500만원은 기준소득월액 상한선(1~6월 637만, 7월~ 659만)보다 낮으므로, 전액 기준으로 국민연금료가 계산됩니다.
                 </p>
@@ -323,7 +323,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월급 700만원 기준 — 기준소득월액 상한선 적용</h2>
+                <h2 className="text-2xl font-bold">월급 700만원 기준, 기준소득월액 상한선 적용</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   월급 700만원은 기준소득월액 상한선을 초과합니다.
                   1~6월에는 637만원, 7월부터는 659만원을 상한으로 국민연금료가 계산되며, 초과분에 대해서는 공제되지 않습니다.
@@ -343,7 +343,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연간 누적 효과 — 상반기 vs 하반기</h2>
+                <h2 className="text-2xl font-bold">연간 누적 효과, 상반기 vs 하반기</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   월급 300만원 기준으로 연간 누적 효과를 계산하면, 7월 인상이 얼마나 중요한지 명확히 보입니다.
                 </p>
@@ -384,7 +384,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연봉협상 시 주의사항 — "7월 경계"를 반드시 고려하세요</h2>
+                <h2 className="text-2xl font-bold">연봉협상 시 주의사항, "7월 경계"를 반드시 고려하세요</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   2026년 연봉협상에서 가장 중요한 포인트는 <strong>1~6월과 7~12월의 세율 차이</strong>입니다.
                   단순히 월급 × 12를 계산하면 실제 연간 실수령액보다 많게 계산할 수 있습니다.
@@ -506,25 +506,25 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 4대보험료·소득세 자동 반영, 7월 인상 미리 계산'}
+                    {'4대보험료·소득세 자동 반영, 7월 인상 미리 계산'}
                   </li>
                   <li>
                     <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       2026년 4대보험 요율 종합 가이드
                     </Link>
-                    {' — 국민연금·건강보험·고용보험·산재보험 요율표'}
+                    {'국민연금·건강보험·고용보험·산재보험 요율표'}
                   </li>
                   <li>
                     <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
                       연봉협상 전 실수령액 정확 시뮬레이션
                     </Link>
-                    {' — 세전·세후, 상여금, 비과세 수당 반영'}
+                    {'세전·세후, 상여금, 비과세 수당 반영'}
                   </li>
                   <li>
                     <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
                       근로 계산기 모음
                     </Link>
-                    {' — 연봉, 퇴직금, 4대보험 전체'}
+                    {'연봉, 퇴직금, 4대보험 전체'}
                   </li>
                 </ul>
               </section>

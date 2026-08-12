@@ -136,7 +136,7 @@ export default function InheritanceTax10YearGuide() {
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   상속개시일(사망일) 이전 일정 기간 내 증여재산은 상속재산에 합산되어 상속세 과세 대상이 됩니다
                   (상증법 §13). 상속인은 <strong>10년</strong>, 비상속인은 <strong>5년</strong>. 10년 초과 증여는
-                  합산 X — 사전 증여 절세의 핵심. 합산 평가는 증여 당시 가액 기준이며 이미 낸 증여세는 상속세에서
+                  합산 X, 사전 증여 절세의 핵심. 합산 평가는 증여 당시 가액 기준이며 이미 낸 증여세는 상속세에서
                   공제(§28).
                 </p>
               </header>
@@ -265,7 +265,7 @@ export default function InheritanceTax10YearGuide() {
 
               {/* 7. 10년 초과 절세 핵심 */}
               <section aria-label="10년 초과 절세" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">10년 초과 증여 — 핵심 절세 전략</h2>
+                <h2 className="mb-4 text-2xl font-semibold">10년 초과 증여, 핵심 절세 전략</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   상속개시일 기준 10년 초과 증여는 상속재산에 합산되지 않습니다. 따라서 충분한 시간을 두고
                   사전 증여하면 합산 자체를 회피 가능. 60대 초반부터 자산 분산 증여 시작이 가장 효과적.
@@ -282,9 +282,9 @@ export default function InheritanceTax10YearGuide() {
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>증여 후 관계 단절(사실상 증여로 보기 어려운 경우) 국세청 추적 가능.</li>
-                  <li>배우자 증여 공제 6억은 10년 누적 — 매년 6억 X.</li>
+                  <li>배우자 증여 공제 6억은 10년 누적, 매년 6억 X.</li>
                   <li>상속세 신고 기한: 사망일 속한 달 말일부터 6개월 (상증법 §67).</li>
-                  <li>이중과세 공제 한도 산정 복잡 — 세무사 상담 필수.</li>
+                  <li>이중과세 공제 한도 산정 복잡, 세무사 상담 필수.</li>
                   <li>해외 거주 상속인은 별도 규정 적용.</li>
                 </ul>
               </section>
@@ -293,11 +293,11 @@ export default function InheritanceTax10YearGuide() {
               <section aria-label="관련 가이드·계산기" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 가이드·계산기</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/inheritance-tax/" className="text-primary-600 underline dark:text-primary-500">상속세 계산기</Link> — 실제 상속세 시뮬</li>
-                  <li>→ <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link> — 증여 단계별 부담</li>
-                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 사전 증여 후 매도 이월 과세</li>
+                  <li>→ <Link href="/calculator/inheritance-tax/" className="text-primary-600 underline dark:text-primary-500">상속세 계산기</Link>, 실제 상속세 시뮬</li>
+                  <li>→ <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link>, 증여 단계별 부담</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link>, 사전 증여 후 매도 이월 과세</li>
                   <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도</Link></li>
-                  <li>→ <Link href="/guide/deceased-comprehensive-income-tax-heir-filing-2026/" className="text-primary-600 underline dark:text-primary-500">고인 종합소득세 상속인 신고</Link> — 상속 개시 후 6개월 내 챙겨야 할 또 하나의 신고</li>
+                  <li>→ <Link href="/guide/deceased-comprehensive-income-tax-heir-filing-2026/" className="text-primary-600 underline dark:text-primary-500">고인 종합소득세 상속인 신고</Link>, 상속 개시 후 6개월 내 챙겨야 할 또 하나의 신고</li>
                 </ul>
               </section>
 
@@ -309,7 +309,7 @@ export default function InheritanceTax10YearGuide() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 상속세 및 증여세법 §13 (증여재산 합산) · §19 (배우자 상속공제) · §20 (그 밖의 인적공제 — 자녀·연로자·미성년자·장애인) · §21 (일괄공제 5억) · §26 (상속세율) · §28 (증여세액공제) · §53 (증여재산 공제 — 배우자·직계비속) · §56 (증여세율) · §67 (상속세 신고 기한 6개월). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
+                  <strong>법적 근거</strong>: 상속세 및 증여세법 §13 (증여재산 합산) · §19 (배우자 상속공제) · §20 (그 밖의 인적공제, 자녀·연로자·미성년자·장애인) · §21 (일괄공제 5억) · §26 (상속세율) · §28 (증여세액공제) · §53 (증여재산 공제, 배우자·직계비속) · §56 (증여세율) · §67 (상속세 신고 기한 6개월). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
                 </p>
                 <p className="mb-2">
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 가족 구성·해외 거주·법인 자산 등 개별 사정에 따라 적용이 달라지므로 반드시 세무사 또는 국세청 상담을 통해 확정하시기 바랍니다. 사전 증여 전략은 증여세 + 양도세 + 상속세 종합 비교 필수.

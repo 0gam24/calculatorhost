@@ -56,7 +56,7 @@ const FAQ_ITEMS = [
   {
     question: '1주택자가 월세를 받으면 무조건 비과세인가요?',
     answer:
-      '아닙니다. 1주택자라도 기준시가 12억 원 초과 고가주택을 임대하면 월세가 과세됩니다(소득세법 §12①4호 단서). 12억 이하 1주택 자가거주 또는 임대는 비과세. 단 전세 보증금은 1주택자 항상 비과세 — 간주임대료 과세는 3주택 이상부터 적용.',
+      '아닙니다. 1주택자라도 기준시가 12억 원 초과 고가주택을 임대하면 월세가 과세됩니다(소득세법 §12①4호 단서). 12억 이하 1주택 자가거주 또는 임대는 비과세. 단 전세 보증금은 1주택자 항상 비과세, 간주임대료 과세는 3주택 이상부터 적용.',
   },
   {
     question: '연 임대소득 2,000만 원의 기준은 무엇인가요?',
@@ -219,7 +219,7 @@ export default function HousingRentalIncomeGuide() {
 
               {/* 5. 간주임대료 */}
               <section aria-label="간주임대료" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">간주임대료 — 3주택 이상 보증금 과세</h2>
+                <h2 className="mb-4 text-2xl font-semibold">간주임대료, 3주택 이상 보증금 과세</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   3주택 이상 보유자가 받은 전세·월세 보증금 합계가 3억 원을 초과하면 초과분에 대해 간주임대료로 과세
                   (소득세법 시행령 §53). 1·2주택자는 보증금 간주임대료 비과세.
@@ -264,10 +264,10 @@ export default function HousingRentalIncomeGuide() {
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>주택 수는 부부 합산 기준 (배우자 명의 주택 포함).</li>
-                  <li>분리과세 선택은 매년 신고 시 변경 가능 — 다른 소득 변동 시 재검토 필수.</li>
+                  <li>분리과세 선택은 매년 신고 시 변경 가능, 다른 소득 변동 시 재검토 필수.</li>
                   <li>임대 사업자등록은 임대 개시일·취득일로부터 30일 이내 (지자체 + 세무서).</li>
-                  <li>미등록 임대인도 종합소득세 신고 의무 — 미신고 시 가산세 20% (국세기본법 §47의2).</li>
-                  <li>간주임대료 정기예금 이자율은 매년 국세청 고시 — 변동 가능.</li>
+                  <li>미등록 임대인도 종합소득세 신고 의무, 미신고 시 가산세 20% (국세기본법 §47의2).</li>
+                  <li>간주임대료 정기예금 이자율은 매년 국세청 고시, 변동 가능.</li>
                 </ul>
               </section>
 
@@ -275,12 +275,12 @@ export default function HousingRentalIncomeGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/rental-yield/" className="text-primary-600 underline dark:text-primary-500">임대수익률 계산기</Link> — 월세·보증금 실제 수익률</li>
+                  <li>→ <Link href="/calculator/rental-yield/" className="text-primary-600 underline dark:text-primary-500">임대수익률 계산기</Link>, 월세·보증금 실제 수익률</li>
                   <li>→ <Link href="/calculator/rent-conversion/" className="text-primary-600 underline dark:text-primary-500">전월세 전환율 계산기</Link></li>
-                  <li>→ <Link href="/guide/rent-conversion-rate-2026-housing-lease-act/" className="text-primary-600 underline dark:text-primary-500">전월세전환율 2026 기준금리 한도</Link> — 월차임 전환율 법정 상한</li>
-                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 임대 소득 합산 시</li>
+                  <li>→ <Link href="/guide/rent-conversion-rate-2026-housing-lease-act/" className="text-primary-600 underline dark:text-primary-500">전월세전환율 2026 기준금리 한도</Link>, 월차임 전환율 법정 상한</li>
+                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link>, 임대 소득 합산 시</li>
                   <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link></li>
-                  <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link> — 다주택 보유세</li>
+                  <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link>, 다주택 보유세</li>
                 </ul>
               </section>
 

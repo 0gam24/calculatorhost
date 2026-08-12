@@ -134,7 +134,7 @@ export default function OneHousehold12BillionGuide() {
                   1세대1주택 양도세 12억 한도 완전 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
-                  "양도가 15억이면 15억 전체에 세금?", "12억 초과분 전부 과세?" — 자주 헷갈리는
+                  "양도가 15억이면 15억 전체에 세금?", "12억 초과분 전부 과세?"자주 헷갈리는
                   1세대1주택 비과세 12억 한도를 정확히 정리합니다. 12억 초과 시 <strong>비례 과세 공식</strong>으로
                   초과분 일부만 과세되고, 보유·거주 10년 이상이면 장기보유공제 80%까지 동시 적용
                   (소득세법 §89·§95).
@@ -146,16 +146,16 @@ export default function OneHousehold12BillionGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">1세대1주택 비과세 3가지 필수 조건</h2>
                 <ol className="list-inside list-decimal space-y-3 text-text-secondary" data-speakable>
                   <li>
-                    <strong>① 보유 2년 이상</strong> — 취득일(잔금 청산일)부터 양도일까지 만 2년 이상
+                    <strong>① 보유 2년 이상</strong>: 취득일(잔금 청산일)부터 양도일까지 만 2년 이상
                     (소득세법 §89, 시행령 §154).
                   </li>
                   <li>
-                    <strong>② 거주 요건 (취득 당시 조정대상지역만)</strong> — 비조정대상지역에서 취득한 주택은
+                    <strong>② 거주 요건 (취득 당시 조정대상지역만)</strong>: 비조정대상지역에서 취득한 주택은
                     거주 요건 X (보유 2년만). 조정대상지역에서 취득한 주택만 보유 2년 + 거주 2년.
                     취득 당시 지역이 기준이며 양도 시점 조정 해제는 영향 없음.
                   </li>
                   <li>
-                    <strong>③ 양도가 12억 원 이하</strong> — 12억 초과 시 초과분만 비례 과세 (전부 과세 아님).
+                    <strong>③ 양도가 12억 원 이하</strong>: 12억 초과 시 초과분만 비례 과세 (전부 과세 아님).
                     양도가 기준(취득가 아님).
                   </li>
                 </ol>
@@ -176,7 +176,7 @@ export default function OneHousehold12BillionGuide() {
 
               {/* 3. 사례 시뮬 */}
               <section aria-label="사례 시뮬레이션" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 3개 — 양도가 12억 / 15억 / 20억</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례 3개, 양도가 12억 / 15억 / 20억</h2>
                 <div className="overflow-x-auto" data-speakable>
                   <table className="w-full text-sm">
                     <caption className="sr-only">12억 한도 사례별 양도세</caption>
@@ -238,8 +238,8 @@ export default function OneHousehold12BillionGuide() {
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
-                  <li>거주 요건은 <strong>취득 당시 조정대상지역</strong> 여부가 기준 — 양도 시점 해제는 영향 없음.</li>
-                  <li>거주 입증 자료(주민등록등본·공과금 명세) 사전 준비 — 단순 주소 이전만으로는 인정 X.</li>
+                  <li>거주 요건은 <strong>취득 당시 조정대상지역</strong> 여부가 기준, 양도 시점 해제는 영향 없음.</li>
+                  <li>거주 입증 자료(주민등록등본·공과금 명세) 사전 준비, 단순 주소 이전만으로는 인정 X.</li>
                   <li>배우자 소유 주택은 1세대에 합산. 부모·자녀와 같은 주소면 합산 가능성.</li>
                   <li>1세대1주택 비과세 적용 시 양도소득 기본공제 250만 원 별도 적용 X (시행령 §154의 8).</li>
                   <li>일시적 2주택 비과세 특례 적용 시에도 12억 한도 동일 적용(시행령 §155).</li>
@@ -250,11 +250,11 @@ export default function OneHousehold12BillionGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 12억 한도 시뮬</li>
-                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link> — 추가 절세 전략</li>
-                  <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link> — 일시적2주택 D-day·장기보유 80%</li>
-                  <li>→ <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 마감 가이드</Link> — 연말 매도 결정</li>
-                  <li>→ <Link href="/guide/presale-right-capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">분양권 양도세</Link> — 70%/60% 고정세율</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 12억 한도 시뮬</li>
+                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link>, 추가 절세 전략</li>
+                  <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link>, 일시적2주택 D-day·장기보유 80%</li>
+                  <li>→ <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 마감 가이드</Link>, 연말 매도 결정</li>
+                  <li>→ <Link href="/guide/presale-right-capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">분양권 양도세</Link>, 70%/60% 고정세율</li>
                 </ul>
               </section>
 

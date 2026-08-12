@@ -138,7 +138,7 @@ export default function AcquisitionTaxCalculation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   취득세 계산법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 주택 구입 시 내야 할 세금 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 주택 구입 시 내야 할 세금 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택을 구입할 때 내야 할 취득세는 구입가, 주택 개수, 지역에 따라 크게 달라집니다. 기본 세율은 1.0~3.0%지만,
@@ -202,7 +202,7 @@ export default function AcquisitionTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6">
-                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">1단계: 기본 세율 확인 — 구입가로 세율 결정</h2>
+                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">1단계: 기본 세율 확인, 구입가로 세율 결정</h2>
                 <p data-speakable>
                   취득세는 <strong>구입가(실제 거래계약서 금액)</strong>를 기준으로 계산합니다. 공시가격이나 감정가가 아닌, 당신이 실제로
                   지불한 금액입니다. 구입가에 따라 다음과 같이 세율이 결정됩니다(지방세법 §13, §11):
@@ -235,7 +235,7 @@ export default function AcquisitionTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6">
-                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">2단계: 중과세 여부 판정 — 조정지역 + 다주택</h2>
+                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">2단계: 중과세 여부 판정, 조정지역 + 다주택</h2>
                 <p data-speakable>
                   같은 구입가라도 <strong>조정지역 여부</strong>와 <strong>현재 보유 주택 개수</strong>에 따라 세율이 급격히 오른다는 점을 주의해야
                   합니다(지방세법 §13의2). 조정지역에서 2주택 이상을 소유하면 중과세가 적용됩니다:
@@ -291,7 +291,7 @@ export default function AcquisitionTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6">
-                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">3단계: 추가세 계산 — 지방교육세 + 농특세</h2>
+                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">3단계: 추가세 계산, 지방교육세 + 농특세</h2>
                 <p data-speakable>
                   취득세 외에 두 가지 추가 세금이 더 있습니다(지방교육세는 지방세법 §151, 농특세는 농어촌특별세법):
                 </p>
@@ -338,7 +338,7 @@ export default function AcquisitionTaxCalculation2026Page() {
               </section>
 
               <section className="space-y-6">
-                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">5단계: 납부 — 언제, 어디서, 얼마를?</h2>
+                <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">5단계: 납부, 언제, 어디서, 얼마를?</h2>
                 <p data-speakable>
                   취득세는 <strong>주택 취득일로부터 60일 이내</strong>에 관할 지자체에 신고·납부해야 합니다. 기한 내에 신고·납부하지
                   않으면 가산세가 부과되므로 반드시 기한을 지키세요. 정확한 가산세율·납부 절차는 관할 지자체 세무과에 확인하면 됩니다. 대부분

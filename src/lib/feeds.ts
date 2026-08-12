@@ -10,7 +10,7 @@
  */
 
 export const SITE_URL = 'https://calculatorhost.com';
-export const SITE_TITLE = 'calculatorhost — 한국 금융·세금·부동산 계산기';
+export const SITE_TITLE = 'calculatorhost, 한국 금융·세금·부동산 계산기';
 export const SITE_DESCRIPTION =
   '2026년 최신 세율·금리 반영 한국 생활 계산기 31종 + 가이드 + 용어사전. 운영자 김준혁(스마트데이터샵).';
 const AUTHOR_NAME = '김준혁';

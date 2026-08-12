@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '청약가점 계산기 2026 — 84점 만점',
+    title: '청약가점 계산기 2026, 84점 만점',
     description:
       '무주택 기간·부양가족·청약통장으로 청약가점과 당첨 확률을 계산합니다.',
     url: URL,
@@ -239,8 +239,8 @@ export default function HousingSubscriptionPage() {
                 올라갑니다.
               </p>
               <p>
-                청약은 크게 두 가지 방식이 있습니다: (1) 가점제(85%) — 점수 높은
-                사람부터 당첨, (2) 추첨제(15%) — 모두 동등한 확률로 복권. 같은
+                청약은 크게 두 가지 방식이 있습니다: (1) 가점제(85%), 점수 높은
+                사람부터 당첨, (2) 추첨제(15%), 모두 동등한 확률로 복권. 같은
                 단지라도 이 두 방식이 분리되어 모집되므로, 당신의 가점 순위를
                 미리 파악하는 것이 중요합니다.
               </p>
@@ -366,7 +366,7 @@ export default function HousingSubscriptionPage() {
                   >
                     청약홈(www.applyhome.co.kr)
                   </a>
-                  : 공식 청약 플랫폼 — 자격 확인, 청약 신청, 당첨 조회
+                  : 공식 청약 플랫폼, 자격 확인, 청약 신청, 당첨 조회
                 </li>
                 <li>
                   <a

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '맞벌이 부부 연말정산 공제 배분 전략 2026' }],
-    title: '맞벌이 부부 연말정산 공제 배분 전략 — 누가 어떤 공제를 받아야 절세할까',
+    title: '맞벌이 부부 연말정산 공제 배분 전략, 누가 어떤 공제를 받아야 절세할까',
     description: '부양가족 인적공제·의료비·자녀세액공제를 부부 중 누가 받느냐에 따라 절세액이 크게 달라집니다. 전략적 배분법을 배우세요.',
     url: URL,
     type: 'article',
@@ -100,7 +100,7 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
     { name: '맞벌이 부부 연말정산 공제 배분 전략 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '맞벌이 부부 연말정산 공제 배분 전략 2026 — 누가 어떤 공제를 받아야 절세할까',
+    headline: '맞벌이 부부 연말정산 공제 배분 전략 2026, 누가 어떤 공제를 받아야 절세할까',
     description:
       '부양가족 인적공제, 의료비 세액공제, 자녀세액공제를 전략적으로 배분하면 맞벌이 부부는 수백만원대 절세 가능. 소득세법 §50·§59의2 배분 기준과 실제 계산 사례 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   맞벌이 부부 연말정산
                   <br />
-                  <span className="text-2xl text-text-secondary">— 공제 배분으로 수백만원 절세하는 법</span>
+                  <span className="text-2xl text-text-secondary">· 공제 배분으로 수백만원 절세하는 법</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   맞벌이 부부는 연말정산 때 부양가족 공제, 의료비 세액공제, 자녀세액공제를 누가 받을지 선택할 수 있습니다. 이 결정이 실수하면 같은 지출을 했는데도 세금을 수백만원 더 낼 수도 있고, 반대로 똑같이 절세할 수도 있다는 뜻입니다. 이 가이드는 어떤 공제를 누가 받으면 유리한지, 실제 계산법은 무엇인지 완전히 정리해드립니다.
@@ -238,12 +238,12 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                     아내 조건: 과세표준 2,500만원 (세율 6%)
                     <br />
                     <br />
-                    배분 A — 남편이 인적공제 150만원 받음
+                    배분 A, 남편이 인적공제 150만원 받음
                     <br />
                     절세액 = 150만원 × 15% = <strong>22.5만원</strong>
                     <br />
                     <br />
-                    배분 B — 아내가 인적공제 150만원 받음
+                    배분 B, 아내가 인적공제 150만원 받음
                     <br />
                     절세액 = 150만원 × 6% = <strong>9만원</strong>
                     <br />
@@ -261,14 +261,14 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                     아내 조건: 총급여 3,000만원 (3% = 90만원)
                     <br />
                     <br />
-                    배분 A — 남편 명의 의료비 300만원
+                    배분 A, 남편 명의 의료비 300만원
                     <br />
                     공제 대상액 = 300만원 - 180만원 = 120만원
                     <br />
                     세액공제 = 120만원 × 15% = 18만원 (예상)
                     <br />
                     <br />
-                    배분 B — 아내 명의 의료비 300만원
+                    배분 B, 아내 명의 의료비 300만원
                     <br />
                     공제 대상액 = 300만원 - 90만원 = 210만원
                     <br />
@@ -288,14 +288,14 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                     아내: 총급여 3,000만원 (25% = 750만원)
                     <br />
                     <br />
-                    배분 A — 남편 카드 1,500만원
+                    배분 A, 남편 카드 1,500만원
                     <br />
                     공제 대상액 = 1,500만원 - 1,500만원 = 0원 (기준 딱 맞음)
                     <br />
                     소득공제 = 0원
                     <br />
                     <br />
-                    배분 B — 아내 카드 1,500만원
+                    배분 B, 아내 카드 1,500만원
                     <br />
                     공제 대상액 = 1,500만원 - 750만원 = 750만원
                     <br />

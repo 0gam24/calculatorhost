@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-02';
 const DATE_MODIFIED = '2026-06-02';
 
 export const metadata: Metadata = {
-  title: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026',
+  title: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026',
   description:
     '2026년 자동차세 제1기(6/16~30) 납부 시즌 가이드. 연납(1월 일괄 선납) 할인, 3년차부터 차령경감 연 5% 최대 50%. 세액 계산 사례 및 납부 방법 전체 해설.',
   keywords: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026' }],
-    title: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026' }],
+    title: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감',
     description: '3년차부터 차령경감 5%/년, 연납 할인. 1600cc 이하 예상 세액부터 납부 방법까지.',
     url: URL,
     type: 'article',
@@ -100,7 +100,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
     { name: '자동차세 제1기 6월 납부·연납 할인 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026',
+    headline: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026',
     description:
       '2026년 자동차세 제1기(6/16~30) 납부 시즌. 연납 할인, 차령경감 최대 50%, cc당 세율·지방교육세 완벽 해설. 세액 계산 사례·납부방법·주의사항 전체.',
     url: URL,
@@ -112,7 +112,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
     keywords: ['자동차세', '6월 납부', '연납 할인', '차령경감', '보유세'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026',
+    name: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026',
     description:
       '2026년 자동차세 제1기(6/16~30) 완전 가이드. 비영업용 승용차 연간 세액 계산, 연납할인 신청 방법, 차령경감 최대 50%, 납부 방법 및 주의사항 전체 해설.',
     url: URL,
@@ -148,7 +148,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차세 제1기 6월 납부
                   <br />
-                  <span className="text-2xl text-text-secondary">— 연납·차령경감 완전 가이드</span>
+                  <span className="text-2xl text-text-secondary">· 연납·차령경감 완전 가이드</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자동차세는 자동차 소유자가 매년 내는 보유세입니다. 2026년 제1기 납부 기간은 6월 16일부터 6월 30일까지.
@@ -219,7 +219,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 비영업용 승용차 세율 — cc당 얼마인가?</h2>
+                <h2 className="text-2xl font-bold">2. 비영업용 승용차 세율, cc당 얼마인가?</h2>
                 <p className="text-text-secondary leading-relaxed">
                   자동차세는 배기량(cc)을 기준으로 cc당 일정 금액을 곱해 산출합니다. 지방세법 §127에 따라 다음과 같이 적용됩니다.
                 </p>
@@ -258,7 +258,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 차령경감 — 3년차부터 최대 50%까지</h2>
+                <h2 className="text-2xl font-bold">3. 차령경감, 3년차부터 최대 50%까지</h2>
                 <p className="text-text-secondary leading-relaxed">
                   지방세법 §127①제2호에 따라 차량 나이(차령)가 증가하면서 자동차세가 경감됩니다.
                   3년 이상 차량부터 매년 5%씩 경감되며, 12년차 이상일 때는 최대 50%까지 경감됩니다.
@@ -332,7 +332,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 연납할인 — 1월에 미리 내면 절감</h2>
+                <h2 className="text-2xl font-bold">4. 연납할인, 1월에 미리 내면 절감</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   자동차세를 6월·12월 두 번에 나눠 내는 대신 1월에 연간 세액을 미리 내면 공제(할인)를 받을 수 있습니다.
                   2026년 현행 공제율은 <strong>5%(지방세법 시행령 §125)</strong>이며,
@@ -381,7 +381,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">연납할인 신청 방법</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
-                      <li><strong>① 신청 기간:</strong> 매년 1월 1일 ~ 31일 (1월 말까지만 신청 가능 — 6월·12월 정기 납부 시는 연납할인 미적용)</li>
+                      <li><strong>① 신청 기간:</strong> 매년 1월 1일 ~ 31일 (1월 말까지만 신청 가능, 6월·12월 정기 납부 시는 연납할인 미적용)</li>
                       <li><strong>② 신청처:</strong> 관할 지자체 세무서 또는 위택스(wetax.go.kr) 온라인 신청</li>
                       <li><strong>③ 납부:</strong> 신청 후 지정된 기한 내(보통 1월 말) 연간 세액을 일괄 입금</li>
                       <li><strong>④ 공제 공식:</strong> 할인액 = 연간 세액 × (선납일수/365) × 5% (지방세법 시행령 §125)</li>
@@ -410,14 +410,14 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 전기차 자동차세 — 정액 13만원</h2>
+                <h2 className="text-2xl font-bold">5. 전기차 자동차세, 정액 13만원</h2>
                 <p className="text-text-secondary leading-relaxed">
                   비영업용 전기차는 배기량 개념이 없으므로, 차종 크기와 관계없이 연간 정액으로 세금을 납부합니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="font-semibold text-text-primary mb-3">비영업용 전기차 자동차세</h3>
                   <div className="space-y-2 text-sm text-text-secondary">
-                    <p><strong>기본 자동차세:</strong> 10만원 (정액 — 그 밖의 승용자동차, 지방세법 §127)</p>
+                    <p><strong>기본 자동차세:</strong> 10만원 (정액, 그 밖의 승용자동차, 지방세법 §127)</p>
                     <p><strong>지방교육세:</strong> 3만원 (자동차세의 30%)</p>
                     <p className="border-t border-border-base pt-2 font-bold text-text-primary"><strong>연간 합계:</strong> 13만원</p>
                     <p className="mt-2 text-xs"><strong>연납할인:</strong> 1월 선납 시 약 2만원 절감 가능</p>
@@ -527,48 +527,48 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 계산기
                     </Link>
-                    {' — 배기량·차령·할인율 입력 후 즉시 세액 계산'}
+                    {'배기량·차령·할인율 입력 후 즉시 세액 계산'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/vehicle-individual-consumption-tax-deadline-2026-june/" className="text-primary-600 underline dark:text-primary-500">
                       자동차 개별소비세 6월 30일 마감 가이드
                     </Link>
-                    {' — 신차 구매 시 개소세 인하(5% → 3.5%) 혜택 가이드'}
+                    {'신차 구매 시 개소세 인하(5% → 3.5%) 혜택 가이드'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
                       1월 자동차세 연납 신청 가이드
                     </Link>
-                    {' — 내년 1월 연납 신청으로 약 5% 할인 받는 법'}
+                    {'내년 1월 연납 신청으로 약 5% 할인 받는 법'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/electric-vehicle-tax-2026/" className="text-primary-600 underline dark:text-primary-500">
                       전기차 자동차세 2026 가이드
                     </Link>
-                    {' — 전기차·수소차는 배기량 없이 정액 13만원, 차령경감 미적용'}
+                    {'전기차·수소차는 배기량 없이 정액 13만원, 차령경감 미적용'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>
-                    {' — 자동차세·취득세·양도세 전체 신고·납부 일정'}
+                    {'자동차세·취득세·양도세 전체 신고·납부 일정'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">
                       취득세 계산기
                     </Link>
-                    {' — 부동산 취득 시 세금 (자동차와 별개)'}
+                    {'부동산 취득 시 세금 (자동차와 별개)'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="자동차세 제1기 6월 납부 완전 가이드 — 연납·차령경감 2026"
+                title="자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026"
                 url={URL}
                 description="자동차세 제1기(6/16~30) 납부 시즌. 연납 할인, 차령경감 최대 50%, 세액 계산·납부방법 전체."
               />

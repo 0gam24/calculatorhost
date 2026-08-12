@@ -20,7 +20,7 @@ const DATE_PUBLISHED = '2026-06-11';
 const DATE_MODIFIED = '2026-06-11';
 
 export const metadata: Metadata = {
-  title: '건강보험료 2026 — 요율 7.19%·피부양자 자격·지역가입자',
+  title: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',
   description:
     '2026년 건강보험료율 7.09%→7.19%, 장기요양보험료율 12.95%→13.14%로 인상. 직장가입자 보험료 계산(근로자 3.595%), 피부양자 자격(소득 2,000만원·재산 과표 9억), 지역가입자 산정까지 1차출처로 정리했습니다.',
   keywords: [
@@ -37,8 +37,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '건강보험료 2026 — 요율 7.19%·피부양자 자격·지역가입자' }],
-    title: '건강보험료 2026 — 요율 7.19%·피부양자 자격·지역가입자',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자' }],
+    title: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',
     description:
       '2026년 건강보험료율 7.19%·장기요양 13.14%. 직장·지역가입자 보험료, 피부양자 자격(소득 2천만·재산 과표 9억) 정리.',
     url: URL,
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '건강보험료 2026 — 요율 7.19%·피부양자 자격',
+    title: '건강보험료 2026, 요율 7.19%·피부양자 자격',
     description: '직장·지역가입자 보험료, 피부양자 소득·재산 요건 완정리.',
     images: ['/og-default.png'],
   },
@@ -92,10 +92,10 @@ export default function HealthInsurancePremium2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '건강보험료 2026 — 요율·피부양자·지역가입자' },
+    { name: '건강보험료 2026, 요율·피부양자·지역가입자' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '건강보험료 2026 — 요율 7.19%·피부양자 자격·지역가입자',
+    headline: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',
     description:
       '2026년 건강보험료율 7.19%·장기요양 13.14% 인상. 직장가입자 보험료, 피부양자 자격(소득 2,000만원·재산 과표 9억), 지역가입자 산정을 정리했습니다.',
     url: URL,
@@ -107,7 +107,7 @@ export default function HealthInsurancePremium2026() {
     keywords: ['건강보험료', '건강보험료율', '피부양자 자격', '장기요양보험료율', '지역가입자'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '건강보험료 2026 — 요율·피부양자·지역가입자',
+    name: '건강보험료 2026, 요율·피부양자·지역가입자',
     description:
       '2026년 건강보험료율 7.19%·장기요양 13.14%. 직장·지역가입자 보험료, 피부양자 소득·재산 요건.',
     url: URL,
@@ -143,11 +143,11 @@ export default function HealthInsurancePremium2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   건강보험료 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 요율 7.19%·피부양자 자격·지역가입자</span>
+                  <span className="text-2xl text-text-secondary">· 요율 7.19%·피부양자 자격·지역가입자</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 건강보험료율이 7.09%에서 <strong>7.19%</strong>로, 장기요양보험료율도 건강보험료의 12.95%에서 <strong>13.14%</strong>로 올랐습니다.
-                  직장가입자는 얼마를 떼이는지, 가족의 피부양자가 되려면 소득·재산이 얼마 이하여야 하는지, 지역가입자 보험료는 어떻게 정해지는지 —
+                  직장가입자는 얼마를 떼이는지, 가족의 피부양자가 되려면 소득·재산이 얼마 이하여야 하는지, 지역가입자 보험료는 어떻게 정해지는지 ·
                   국민건강보험공단·보건복지부 공식 기준으로 정확히 정리했습니다.
                 </p>
               </header>
@@ -202,7 +202,7 @@ export default function HealthInsurancePremium2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 2026년 무엇이 바뀌나? — 요율 인상</h2>
+                <h2 className="text-2xl font-bold">1. 2026년 무엇이 바뀌나?, 요율 인상</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   2026년 건강보험료율은 7.19%로 올랐습니다(국민건강보험법 §73).
                   2025년 7.09%에서 0.1%포인트, 비율로는 1.48% 인상으로, 6년 만의 인상 흐름이 이어졌습니다.
@@ -240,7 +240,7 @@ export default function HealthInsurancePremium2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 직장가입자는 얼마를 내나? — 보수의 3.595% + 장기요양</h2>
+                <h2 className="text-2xl font-bold">2. 직장가입자는 얼마를 내나?, 보수의 3.595% + 장기요양</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   직장가입자 건강보험료는 보수월액에 7.19%를 곱한 뒤 회사와 절반씩 나눕니다(국민건강보험법 §69).
                   따라서 근로자 본인 부담은 보수월액의 <strong>3.595%</strong>이고, 여기에 장기요양보험료(건강보험료의 13.14%)의 절반이 더해집니다.
@@ -269,7 +269,7 @@ export default function HealthInsurancePremium2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 피부양자가 되려면? — 소득 2,000만·재산 과표 9억</h2>
+                <h2 className="text-2xl font-bold">3. 피부양자가 되려면?, 소득 2,000만·재산 과표 9억</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   소득과 재산 요건을 모두 충족해야 합니다(국민건강보험법 §5, 시행규칙 §2).
                   소득은 근로·이자·배당·연금·기타소득을 합산해 연 2,000만원 이하여야 하고, 사업소득은 사업자등록이 없으면 연 500만원 이하, 등록이 있으면 원칙적으로 0원이어야 합니다.
@@ -309,14 +309,14 @@ export default function HealthInsurancePremium2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 지역가입자는 어떻게 산정되나? — 소득+재산 점수</h2>
+                <h2 className="text-2xl font-bold">4. 지역가입자는 어떻게 산정되나?, 소득+재산 점수</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   지역가입자는 소득과 재산을 점수로 환산한 부과점수에 점수당 금액을 곱해 보험료를 매깁니다(국민건강보험법 §72).
                   직장가입자처럼 회사가 절반을 내주지 않고 <strong>전액 본인이 부담</strong>합니다.
                   소득(사업·이자·배당·연금 등)뿐 아니라 주택·토지·전월세 보증금 같은 재산도 반영되므로, 같은 소득이라도 재산에 따라 보험료 차이가 큽니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-2">퇴직 후 보험료가 걱정된다면 — 임의계속가입</h3>
+                  <h3 className="font-semibold text-text-primary mb-2">퇴직 후 보험료가 걱정된다면, 임의계속가입</h3>
                   <p className="text-sm text-text-secondary leading-relaxed">
                     직장에서 퇴직하면 지역가입자로 전환되어 보험료가 오를 수 있습니다.
                     이때 <strong>임의계속가입</strong>을 신청하면 최대 36개월 동안 퇴직 전 직장가입자 수준의 보험료로 낼 수 있습니다.
@@ -333,43 +333,43 @@ export default function HealthInsurancePremium2026() {
                   <li>
                     →{' '}
                     <Link href="/guide/national-pension-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      국민연금 2026 — 보험료율·수령나이
+                      국민연금 2026, 보험료율·수령나이
                     </Link>
-                    {' — 건강보험과 함께 오른 4대보험 보험료'}
+                    {'건강보험과 함께 오른 4대보험 보험료'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/n-jobber-insurance-dependent-disqualification/" className="text-primary-600 underline dark:text-primary-500">
                       N잡러 건강보험 피부양자 탈락
                     </Link>
-                    {' — 부수입이 생기면 피부양자에서 빠지는 기준'}
+                    {'부수입이 생기면 피부양자에서 빠지는 기준'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 건강보험 등 4대보험 공제 후 세후 월급'}
+                    {'건강보험 등 4대보험 공제 후 세후 월급'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/basic-pension-2026/" className="text-primary-600 underline dark:text-primary-500">
                       기초연금 2026
                     </Link>
-                    {' — 은퇴 후 소득·재산 기준이 함께 걸리는 제도'}
+                    {'은퇴 후 소득·재산 기준이 함께 걸리는 제도'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/work/" className="text-primary-600 underline dark:text-primary-500">
                       근로 계산기·가이드
                     </Link>
-                    {' — 연봉·퇴직금·4대보험 등 직장인 필수 도구'}
+                    {'연봉·퇴직금·4대보험 등 직장인 필수 도구'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="건강보험료 2026 — 요율 7.19%·피부양자 자격·지역가입자"
+                title="건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자"
                 url={URL}
                 description="2026년 건강보험료율 7.19%·장기요양 13.14%. 직장·지역가입자 보험료, 피부양자 소득(2천만)·재산(과표 9억) 요건 정리."
               />

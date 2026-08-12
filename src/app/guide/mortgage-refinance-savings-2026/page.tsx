@@ -19,7 +19,7 @@ const DATE_MODIFIED = '2026-06-26';
 
 export const metadata: Metadata = {
   title:
-    '대출 갈아타기 손익 계산 2026 — 중도상환수수료를 빼고도 이득일까',
+    '대출 갈아타기 손익 계산 2026, 중도상환수수료를 빼고도 이득일까',
   description:
     '대출 갈아타기(대환)가 이득인지 계산하려면 금리 인하분에서 중도상환수수료와 부대비용을 차감해야 합니다. 손익분기 회수기간 공식, 실제 계산 예시, DSR·LTV 재심사 주의점을 정리합니다.',
   keywords: [
@@ -545,7 +545,7 @@ export default function MortgageRefinanceSavings2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액 및 총 이자 비교
+, 원리금균등·만기일시별 월 상환액 및 총 이자 비교
                   </li>
                   <li>
                     →{' '}
@@ -555,7 +555,7 @@ export default function MortgageRefinanceSavings2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 갈아타기 후 신규 한도 확인
+, 갈아타기 후 신규 한도 확인
                   </li>
                   <li>
                     →{' '}
@@ -565,7 +565,7 @@ export default function MortgageRefinanceSavings2026Page() {
                     >
                       DSR·DTI·LTV 차이와 계산법 2026
                     </Link>{' '}
-                    — 대출 재심사 시 영향받을 규제 지표 학습
+, 대출 재심사 시 영향받을 규제 지표 학습
                   </li>
                   <li>
                     →{' '}
@@ -575,7 +575,7 @@ export default function MortgageRefinanceSavings2026Page() {
                     >
                       중도상환수수료와 계산법 2026
                     </Link>{' '}
-                    — 수수료 상세 설명
+, 수수료 상세 설명
                   </li>
                   <li>
                     →{' '}
@@ -585,7 +585,7 @@ export default function MortgageRefinanceSavings2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

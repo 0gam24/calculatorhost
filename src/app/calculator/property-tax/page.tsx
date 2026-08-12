@@ -257,7 +257,7 @@ export default function PropertyTaxPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 답변형 H2 — 공시가별 연 재산세 대안·비교 (검증값: src/lib/tax/property.ts) */}
+              {/* 답변형 H2, 공시가별 연 재산세 대안·비교 (검증값: src/lib/tax/property.ts) */}
               <section aria-label="공시가격별 연 재산세" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">공시가격별 재산세는 1년에 얼마인가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
@@ -308,7 +308,7 @@ export default function PropertyTaxPage() {
               </section>
 
               <RateBarChart
-                title="재산세 일반 세율 — 과세표준 구간별 (지방세법 §111)"
+                title="재산세 일반 세율, 과세표준 구간별 (지방세법 §111)"
                 caption="주택 재산세 일반세율은 과세표준(공시가격×60%) 구간별로 0.1%에서 0.4%까지 누진 적용됩니다. 1세대1주택(공시 9억 이하)은 특례로 약 절반 세율이 적용되고, 지방교육세 20%가 별도 가산됩니다."
                 unit="%"
                 max={0.45}
@@ -630,13 +630,13 @@ export default function PropertyTaxPage() {
                   <li>
                     <a href="/guide/june-property-tax/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
                       <Icon name="chevron-right" size={14} />
-                      <span>재산세 완벽 가이드 (6월 부과·7월 납부) — 7월 시즌 직전 필독</span>
+                      <span>재산세 완벽 가이드 (6월 부과·7월 납부), 7월 시즌 직전 필독</span>
                     </a>
                   </li>
                   <li>
                     <a href="/guide/property-tax-base-date-june-1-2026/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
                       <Icon name="chevron-right" size={14} />
-                      <span>재산세 과세기준일 6월 1일 — 매매 잔금 타이밍과 부담자 판정</span>
+                      <span>재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정</span>
                     </a>
                   </li>
                 </ul>

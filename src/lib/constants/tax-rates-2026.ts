@@ -194,7 +194,7 @@ export const ACQUISITION_TAX = {
   specialRuralTaxHeavy: 0.01,
 
   // ─── 지방교육세 ───
-  /** 지방교육세 (취득세의) — 지방세법 §265 */
+  /** 지방교육세 (취득세의) — 지방세법 §151 */
   localEducationTaxOfAcquisition: 0.1,
 
   // ─── 생애최초 주택 감면 ───

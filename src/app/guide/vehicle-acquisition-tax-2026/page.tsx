@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '자동차 취득세 계산 2026 — 승용 7%·경차 4%·과세표준 완전정리',
+  title: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 완전정리',
   description:
     '자동차를 구매할 때 내는 취득세를 정확히 계산하는 방법을 설명합니다. 비영업용 승용차 7%, 경차 4%, 신차·중고차 과세표준 차이, 친환경차 감면 요건까지 2026년 기준으로 완벽 정리합니다.',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '자동차 취득세 계산 2026 — 승용 7%·경차 4%·과세표준 완전정리',
+        alt: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 완전정리',
       },
     ],
     title: '자동차 취득세 계산 2026',
@@ -601,7 +601,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       자동차세 계산기
                     </Link>{' '}
-                    — 배기량별 cc당 세율, 차령경감, 지방교육세 반영
+, 배기량별 cc당 세율, 차령경감, 지방교육세 반영
                   </li>
                   <li>
                     →{' '}
@@ -611,7 +611,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       자동차세 계산법 2026
                     </Link>{' '}
-                    — 배기량 구간, 차령경감, 연납 할인 완벽 가이드
+, 배기량 구간, 차령경감, 연납 할인 완벽 가이드
                   </li>
                   <li>
                     →{' '}
@@ -621,7 +621,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       전기차 자동차세 2026
                     </Link>{' '}
-                    — 전기차 정액 세율, 하이브리드와의 차이
+, 전기차 정액 세율, 하이브리드와의 차이
                   </li>
                   <li>
                     →{' '}
@@ -631,7 +631,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       자동차 개별소비세
                     </Link>{' '}
-                    — 취득세와 함께 내는 개소세 개념과 신청 기한
+, 취득세와 함께 내는 개소세 개념과 신청 기한
                   </li>
                   <li>
                     →{' '}
@@ -641,7 +641,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       부동산 취득세 계산 (자동차 X)
                     </Link>{' '}
-                    — 주택·건물 거래 시 취득세 (자동차 취득세와 무관)
+, 주택·건물 거래 시 취득세 (자동차 취득세와 무관)
                   </li>
                   <li>
                     →{' '}
@@ -651,7 +651,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       생활 계산기 카테고리
                     </Link>{' '}
-                    — 자동차, BMI, D-day 등 생활 관련 모든 계산 도구
+, 자동차, BMI, D-day 등 생활 관련 모든 계산 도구
                   </li>
                 </ul>
               </section>

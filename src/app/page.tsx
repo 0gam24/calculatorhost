@@ -161,13 +161,13 @@ const SEASONAL_JUNE_JULY = [
   {
     href: '/guide/june-property-tax/',
     title: '6월 재산세 기준일·납부',
-    desc: '6월 1일 보유자 기준으로 올해 재산세가 확정 — 과세 기준일과 납부 일정 정리',
+    desc: '6월 1일 보유자 기준으로 올해 재산세가 확정, 과세 기준일과 납부 일정 정리',
     tag: '가이드',
   },
   {
     href: '/guide/vehicle-tax-june-payment-annual-discount-2026/',
     title: '자동차세 6월 연납',
-    desc: '6월 연납 신청 시 잔여 기간분 할인 — 대상·신청 방법·할인액 확인',
+    desc: '6월 연납 신청 시 잔여 기간분 할인, 대상·신청 방법·할인액 확인',
     tag: '가이드',
   },
   {
@@ -179,7 +179,7 @@ const SEASONAL_JUNE_JULY = [
   {
     href: '/guide/july-vat-final-1st-half/',
     title: '7월 부가세 확정신고',
-    desc: '상반기(1~6월) 부가가치세 확정신고는 7월 25일까지 — 일정·절차 가이드',
+    desc: '상반기(1~6월) 부가가치세 확정신고는 7월 25일까지, 일정·절차 가이드',
     tag: '가이드',
   },
   {
@@ -349,7 +349,7 @@ export default function HomePage() {
                 </div>
               </section>
 
-              {/* 6~7월 시즌 일정 — 재산세·자동차세 연납·부가세 확정신고 */}
+              {/* 6~7월 시즌 일정, 재산세·자동차세 연납·부가세 확정신고 */}
               <section className="space-y-6">
                 <div>
                   <h2 className="mb-2 text-2xl font-bold text-text-primary">6~7월 세금·금융 일정</h2>
@@ -415,7 +415,7 @@ export default function HomePage() {
                 </div>
               </section>
 
-              {/* 2026 주요 업데이트 — 시계열 Changelog 테이블 (GEO/AEO Freshness 신호) */}
+              {/* 2026 주요 업데이트, 시계열 Changelog 테이블 (GEO/AEO Freshness 신호) */}
               <section className="card card-hover space-y-6">
                 <div>
                   <h2 className="text-2xl font-bold text-text-primary">2026년 세율·금리 변경사항 (Changelog)</h2>
@@ -526,7 +526,7 @@ export default function HomePage() {
                 <div className="grid gap-6 sm:grid-cols-2">
                   <div className="space-y-3">
                     <h3 className="font-semibold text-primary-700 dark:text-primary-300 flex items-center gap-2">
-                      <span>✓</span> 공식 데이터 기반
+                      <span></span> 공식 데이터 기반
                     </h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li className="flex items-start gap-2"><span className="shrink-0">•</span> <span>국세청 세율표 및 공제 기준</span></li>
@@ -538,7 +538,7 @@ export default function HomePage() {
                   </div>
                   <div className="space-y-3">
                     <h3 className="font-semibold text-primary-700 dark:text-primary-300 flex items-center gap-2">
-                      <span>✓</span> 품질 관리
+                      <span></span> 품질 관리
                     </h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li className="flex items-start gap-2"><span className="shrink-0">•</span> <span>392개 테스트 케이스 통과</span></li>

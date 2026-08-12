@@ -143,7 +143,7 @@ export default function RentConversionRateGuidePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">부동산·임대차 · {DATE_PUBLISHED}</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  주택임대차보호법 전월세전환율 2026 — 기준금리 + 2% 완벽 가이드
+                  주택임대차보호법 전월세전환율 2026, 기준금리 + 2% 완벽 가이드
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 주택임대차보호법 §7의2 와 시행령 §9 에 따라 월차임 전환율의 법정 한도는
@@ -249,7 +249,7 @@ export default function RentConversionRateGuidePage() {
                     >
                       전월세 전환 계산기
                     </Link>{' '}
-                    — 보증금·월세 양방향 환산
+, 보증금·월세 양방향 환산
                   </li>
                   <li>
                     →{' '}
@@ -259,7 +259,7 @@ export default function RentConversionRateGuidePage() {
                     >
                       임대수익률 계산기
                     </Link>{' '}
-                    — 임대인 관점
+, 임대인 관점
                   </li>
                 </ul>
               </section>
@@ -275,7 +275,7 @@ export default function RentConversionRateGuidePage() {
                     >
                       주택임대소득 분리과세 2,000만 원
                     </Link>{' '}
-                    — 월세 전환 후 임대소득 과세·간주임대료
+, 월세 전환 후 임대소득 과세·간주임대료
                   </li>
                   <li>
                     →{' '}
@@ -285,7 +285,7 @@ export default function RentConversionRateGuidePage() {
                     >
                       전세보증금 안전 점검
                     </Link>{' '}
-                    — 반전세 환산 전 깡통전세 예방
+, 반전세 환산 전 깡통전세 예방
                   </li>
                 </ul>
               </section>
@@ -309,7 +309,7 @@ export default function RentConversionRateGuidePage() {
                     rel="noopener noreferrer nofollow"
                     className="text-primary-500 underline"
                   >
-                    국가법령정보센터 — 주택임대차보호법
+                    국가법령정보센터, 주택임대차보호법
                   </a>{' '}
                   ·{' '}
                   <a
@@ -318,7 +318,7 @@ export default function RentConversionRateGuidePage() {
                     rel="noopener noreferrer nofollow"
                     className="text-primary-500 underline"
                   >
-                    한국은행 — 기준금리
+                    한국은행, 기준금리
                   </a>
                 </p>
                 <p>

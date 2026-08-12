@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '외국납부세액공제 2026 — 해외주식 배당 환급 5월 신청',
+    title: '외국납부세액공제 2026, 해외주식 배당 환급 5월 신청',
     description: '미국·일본·싱가포르 배당세 먼저 나갔는데 한국에서도 내야 하나?',
   },
 };
@@ -104,7 +104,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
 
   const articleLd = buildArticleJsonLd({
-    headline: '외국납부세액공제 2026 — 해외주식·배당 환급 신청 완벽 가이드',
+    headline: '외국납부세액공제 2026, 해외주식·배당 환급 신청 완벽 가이드',
     description:
       '미국 주식 배당·이자·해외근로소득에서 이미 낸 세금을 한국 종소세에서 환급받는 방법.',
     url: URL,
@@ -159,7 +159,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                 readingMinutes={11}
                 publishedDate="2026-05-28"
                 title="외국납부세액공제 2026 해외주식·배당 환급 신청"
-                subtitle="— 미국 15% 원천징수 한도·계산·증빙"
+                subtitle="· 미국 15% 원천징수 한도·계산·증빙"
                 lead={
                   <p data-speakable>
                     해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 "외국납부세액공제"
@@ -240,16 +240,16 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     <h3 className="font-semibold text-text-primary mb-2">공제 대상 (O)</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
-                        <strong>배당소득</strong> — 해외 주식 배당금 (미국 15%, 일본 20.42%, 중국 10% 등)
+                        <strong>배당소득</strong>: 해외 주식 배당금 (미국 15%, 일본 20.42%, 중국 10% 등)
                       </li>
                       <li>
-                        <strong>이자소득</strong> — 해외 은행 이자, 해외 채권 이자
+                        <strong>이자소득</strong>: 해외 은행 이자, 해외 채권 이자
                       </li>
                       <li>
-                        <strong>해외근로소득</strong> — 해외 지점/자회사 급여, 파견·주재원 급여
+                        <strong>해외근로소득</strong>: 해외 지점/자회사 급여, 파견·주재원 급여
                       </li>
                       <li>
-                        <strong>기타 소득</strong> — 해외 저작권료, 강연료 등 일부
+                        <strong>기타 소득</strong>: 해외 저작권료, 강연료 등 일부
                       </li>
                     </ul>
                   </div>
@@ -258,11 +258,11 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     <h3 className="font-semibold text-text-primary mb-2">공제 제외 (X)</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
-                        <strong>해외주식 양도소득</strong> — 주식 팔 때 이익. 한국에서 분리과세(22%)되므로
+                        <strong>해외주식 양도소득</strong>: 주식 팔 때 이익. 한국에서 분리과세(22%)되므로
                         공제 대상 아님 (소득세법 §129)
                       </li>
                       <li>
-                        <strong>해외부동산 양도소득</strong> — 해외 부동산 팔 때 이익 (분리과세)
+                        <strong>해외부동산 양도소득</strong>: 해외 부동산 팔 때 이익 (분리과세)
                       </li>
                     </ul>
                   </div>
@@ -472,7 +472,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                             결과
                           </th>
                           <td className="py-2 px-2 font-semibold text-danger-600">
-                            외국납부세액공제 불가 — 분리과세만 적용
+                            외국납부세액공제 불가, 분리과세만 적용
                           </td>
                         </tr>
                       </tbody>
@@ -520,14 +520,14 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     <h3 className="font-semibold text-text-primary mb-2">미국 주식 배당 (가장 흔한 경우)</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
-                        <strong>1099-DIV</strong> — 미국 국세청(IRS)에서 발급. 배당금·원천징수세 기록.
+                        <strong>1099-DIV</strong>: 미국 국세청(IRS)에서 발급. 배당금·원천징수세 기록.
                         증권사(Fidelity, Charles Schwab 등) 웹사이트에서 다운로드 가능.
                       </li>
                       <li>
-                        <strong>배당 지급 명세서</strong> — 증권사에서 직접 제공하는 보고서 (PDF 또는 이메일)
+                        <strong>배당 지급 명세서</strong>: 증권사에서 직접 제공하는 보고서 (PDF 또는 이메일)
                       </li>
                       <li>
-                        <strong>한국 세무서 제출 시</strong> — 원본 또는 번역본(공식 영문 번역) 필요.
+                        <strong>한국 세무서 제출 시</strong>: 원본 또는 번역본(공식 영문 번역) 필요.
                         영문 원본만으로도 대부분 수용되나, 세무서에 미리 문의 권장.
                       </li>
                     </ul>
@@ -537,10 +537,10 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     <h3 className="font-semibold text-text-primary mb-2">해외 은행 이자</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
-                        <strong>Interest Statement</strong> — 해외 은행에서 발급 (USD, JPY 등)
+                        <strong>Interest Statement</strong>: 해외 은행에서 발급 (USD, JPY 등)
                       </li>
                       <li>
-                        <strong>이자 지급 기록</strong> — 원천징수 세금 명시된 명세서
+                        <strong>이자 지급 기록</strong>: 원천징수 세금 명시된 명세서
                       </li>
                     </ul>
                   </div>
@@ -549,10 +549,10 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     <h3 className="font-semibold text-text-primary mb-2">해외 근로소득</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
                       <li>
-                        <strong>급여명세서 (Payslip)</strong> — 해외 고용주 발급. 급여·원천징수세액 명시
+                        <strong>급여명세서 (Payslip)</strong>: 해외 고용주 발급. 급여·원천징수세액 명시
                       </li>
                       <li>
-                        <strong>W-2 (미국)</strong> — 미국 고용주가 1월 말까지 발급
+                        <strong>W-2 (미국)</strong>: 미국 고용주가 1월 말까지 발급
                       </li>
                     </ul>
                   </div>

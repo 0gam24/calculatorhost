@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-06-19';
 
 export const metadata: Metadata = {
-  title: '주휴수당 계산법 2026 — 주 15시간·개근 조건과 시급 환산 | calculatorhost',
+  title: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산 | calculatorhost',
   description:
     '주휴수당이란? 근로기준법에서 정한 1주 평균 15시간 이상·개근 조건. 월급제와 시급·일급제별 계산 방법, 결근 시 미발생 규칙, 단시간 근로자 적용 기준을 정리합니다.',
   keywords: [
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주휴수당 계산법 2026 — 주 15시간·개근 조건과 시급 환산 | calculatorhost' }],
-    title: '주휴수당 계산법 2026 — 근로기준법 §55',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산 | calculatorhost' }],
+    title: '주휴수당 계산법 2026, 근로기준법 §55',
     description: '주휴수당 요건·계산법·결근 시 규칙. 월급제·시급제별 사례 계산.',
     url: URL,
     type: 'article',
@@ -94,7 +94,7 @@ export default function WeeklyHolidayAllowancePage() {
     { name: '주휴수당 계산법' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주휴수당 계산법 2026 — 주 15시간·개근 조건과 시급 환산',
+    headline: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산',
     description:
       '근로기준법 §55에 정한 주휴수당이란 무엇인가? 주 15시간 이상·개근 조건, 월급제와 시급제별 계산 방법, 결근 시 미발생 규칙, 그리고 초단시간 근로자 예외 규칙을 정리합니다.',
     url: URL,
@@ -106,7 +106,7 @@ export default function WeeklyHolidayAllowancePage() {
     keywords: ['주휴수당', '근로기준법', '주휴일', '개근 조건', '시급'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '주휴수당 계산법 2026 — 주 15시간·개근 조건과 시급 환산',
+    name: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산',
     description:
       '주휴수당 요건·계산식·지급 형태. 월급제·시급제·단시간 근로자 별 규칙. 결근 시 미발생, 정당한 사유 판단.',
     url: URL,
@@ -140,7 +140,7 @@ export default function WeeklyHolidayAllowancePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">근로 · 6분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  주휴수당 계산법 2026 — 주 15시간·개근 조건과 시급 환산
+                  주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주휴수당은 근로기준법 §55에서 정한 법정 유급휴일입니다.
@@ -153,12 +153,12 @@ export default function WeeklyHolidayAllowancePage() {
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">주휴수당 기본 요건</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li>✓ <strong>1주 소정근로시간</strong> — 평균 15시간 이상 필수</li>
-                  <li>✓ <strong>개근</strong> — 1주를 모두 출근해야 주휴수당 발생</li>
-                  <li>✓ <strong>유급휴일</strong> — 근무하지 않아도 급여 지급</li>
-                  <li>✓ <strong>법적 근거</strong> — 근로기준법 §55①, 시행령 §30①</li>
-                  <li>✓ <strong>지급 형태</strong> — 월급제 포함 vs 시급제 별도 계산</li>
-                  <li>✓ <strong>결근 시</strong> — 해당 주 주휴수당 미발생</li>
+                  <li><strong>1주 소정근로시간</strong>: 평균 15시간 이상 필수</li>
+                  <li><strong>개근</strong>: 1주를 모두 출근해야 주휴수당 발생</li>
+                  <li><strong>유급휴일</strong>: 근무하지 않아도 급여 지급</li>
+                  <li><strong>법적 근거</strong>: 근로기준법 §55①, 시행령 §30①</li>
+                  <li><strong>지급 형태</strong>: 월급제 포함 vs 시급제 별도 계산</li>
+                  <li><strong>결근 시</strong>: 해당 주 주휴수당 미발생</li>
                 </ul>
               </section>
 
@@ -178,7 +178,7 @@ export default function WeeklyHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">주휴수당 요건 — "주 15시간 + 개근" 기준</h2>
+                <h2 className="text-2xl font-bold">주휴수당 요건, "주 15시간 + 개근" 기준</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 시행령 §30①은 주휴일 적용의 명확한 기준을 제시합니다.
                   "1주의 소정근로일을 개근한 자에게 1일 유급휴일을 부여한다"는 것인데,
@@ -203,7 +203,7 @@ export default function WeeklyHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">주휴수당 계산 방법 — 월급제 vs 시급제</h2>
+                <h2 className="text-2xl font-bold">주휴수당 계산 방법, 월급제 vs 시급제</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주휴수당 계산 방식은 근로 형태에 따라 크게 두 가지로 나뉩니다.
                   월급제는 주로 월급에 포함되지만, 시급·일급제는 별도로 산정합니다.
@@ -277,7 +277,7 @@ export default function WeeklyHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">초단시간 근로자 — 주 15시간 미만이면 제외</h2>
+                <h2 className="text-2xl font-bold">초단시간 근로자, 주 15시간 미만이면 제외</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 §18③이 "1주 평균 15시간 미만"을 초단시간 근로자로 규정하며,
                   이 경우 주휴일과 연차휴가가 적용되지 않습니다.
@@ -311,7 +311,7 @@ export default function WeeklyHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">주휴수당 지급 형태 — 월급에 포함? 별도 지급?</h2>
+                <h2 className="text-2xl font-bold">주휴수당 지급 형태, 월급에 포함? 별도 지급?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주휴수당이 월급에 포함되는지, 아니면 별도로 지급되는지는
                   근로계약서와 회사의 급여 규정에 명시되어 있어야 합니다.
@@ -334,7 +334,7 @@ export default function WeeklyHolidayAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">주휴수당 계산 가이드 — 실제 사례</h2>
+                <h2 className="text-2xl font-bold">주휴수당 계산 가이드, 실제 사례</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   다양한 근무 형태에서 주휴수당이 어떻게 계산되는지 예시로 정리했습니다.
                   본인의 상황과 비교해 보세요.
@@ -461,25 +461,25 @@ export default function WeeklyHolidayAllowancePage() {
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 월급에서 공제되는 4대보험·세금 확인'}
+                    {'월급에서 공제되는 4대보험·세금 확인'}
                   </li>
                   <li>
                     <Link href="/guide/annual-leave-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       연차수당 계산법 2026
                     </Link>
-                    {' — 주휴수당과 함께 알아둬야 할 연차 규칙'}
+                    {'주휴수당과 함께 알아둬야 할 연차 규칙'}
                   </li>
                   <li>
                     <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       4대보험 요율 2026
                     </Link>
-                    {' — 국민연금·건강보험·장기요양·고용보험 요율'}
+                    {'국민연금·건강보험·장기요양·고용보험 요율'}
                   </li>
                   <li>
                     <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
                       연봉협상 전 확인사항
                     </Link>
-                    {' — 이직 제안 검증 가이드'}
+                    {'이직 제안 검증 가이드'}
                   </li>
                 </ul>
               </section>

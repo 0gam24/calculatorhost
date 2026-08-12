@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가상자산(코인) 과세 2027 | 250만 공제·22% 과세·현재 비과세' }],
-    title: '가상자산(코인) 과세 2027 — 250만 공제 후 22% 분리과세 시행 예정',
+    title: '가상자산(코인) 과세 2027, 250만 공제 후 22% 분리과세 시행 예정',
     description: '2027년 1월부터 개인 가상자산 양도·대여 소득을 기타소득으로 과세. 250만원 기본공제, 22% 분리과세. 현재는 비과세 상태.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '가상자산 과세 2027 — 250만 공제 후 22% 분리과세',
+    title: '가상자산 과세 2027, 250만 공제 후 22% 분리과세',
     description: '2027.1.1 시행 예정. 현재(2026)는 비과세. 250만 공제, 20% 소득세 + 2% 지방소득세.',
   },
 };
@@ -100,7 +100,7 @@ export default function VirtualAssetTax2027Page() {
     { name: '가상자산(코인) 과세 2027' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '가상자산(코인) 과세 2027 — 250만 공제 후 22% 분리과세 시행 예정',
+    headline: '가상자산(코인) 과세 2027, 250만 공제 후 22% 분리과세 시행 예정',
     description:
       '2027년 1월부터 시행 예정인 가상자산 소득세. 250만원 기본공제, 22% 분리과세, 의제취득가액. 현재(2026)는 비과세 상태. 소득세법 §21 기타소득 기준.',
     url: URL,
@@ -148,7 +148,7 @@ export default function VirtualAssetTax2027Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   가상자산(코인) 과세 2027
                   <br />
-                  <span className="text-2xl text-text-secondary">— 250만 공제·22% 분리과세·현재 비과세</span>
+                  <span className="text-2xl text-text-secondary">· 250만 공제·22% 분리과세·현재 비과세</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   한국의 가상자산(암호화폐) 과세 제도는 2027년 1월 1일부터 본격 시행될 예정입니다. 현재(2026) 개인의 코인 양도차익은 비과세이지만, 내년부터는 기타소득으로 분류되어 250만원 공제 후 22% 분리과세가 됩니다. 이 가이드는 현재 상황, 2027년 과세 체계, 실제 계산 방법, 그리고 준비사항까지 완전히 정리해드립니다.
@@ -161,7 +161,7 @@ export default function VirtualAssetTax2027Page() {
                   지금(2026년 7월 현재) 개인이 코인이나 가상자산을 사고팔 때 발생하는 이익(양도차익)에 대한 세금은 **없습니다**. 소득세 과세 대상이 아니므로, 매매로 얻은 차익에 대해 세금을 보고할 필요가 없는 상태입니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <p className="font-semibold text-text-primary">2026년 현황 — 비과세 상태</p>
+                  <p className="font-semibold text-text-primary">2026년 현황, 비과세 상태</p>
                   <p className="mt-2 text-sm text-text-secondary">
                     개인이 가상자산(코인, 암호화폐)을 거래하여 얻은 차익: <strong>세금 없음</strong>
                     <br />

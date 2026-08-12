@@ -52,7 +52,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '원리금균등 vs 원금균등',
-    description: '대출 상환방식 비교 — 월 부담, 총이자, 선택 기준',
+    description: '대출 상환방식 비교, 월 부담, 총이자, 선택 기준',
   },
 };
 
@@ -520,7 +520,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·원금균등·만기일시별 월 상환액 및 총 이자 계산
+, 원리금균등·원금균등·만기일시별 월 상환액 및 총 이자 계산
                   </li>
                   <li>
                     →{' '}
@@ -530,7 +530,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 주담대·전세자금대출 최대 한도 확인
+, 주담대·전세자금대출 최대 한도 확인
                   </li>
                   <li>
                     →{' '}
@@ -540,7 +540,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                     >
                       중도상환수수료 계산·면제 조건 2026
                     </Link>{' '}
-                    — 빨리 갚거나 갈아탈 때 발생하는 수수료
+, 빨리 갚거나 갈아탈 때 발생하는 수수료
                   </li>
                   <li>
                     →{' '}
@@ -550,7 +550,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                     >
                       DSR 대출한도 늘리는 5가지 방법
                     </Link>{' '}
-                    — 신용대출 상환, 소득 합산 등 한도 확보 전략
+, 신용대출 상환, 소득 합산 등 한도 확보 전략
                   </li>
                   <li>
                     →{' '}
@@ -560,7 +560,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                     >
                       기준금리 오르면 대출한도 줄어들까? 2026
                     </Link>{' '}
-                    — 금리 인상 시 대출한도 및 월 상환액 영향 분석
+, 금리 인상 시 대출한도 및 월 상환액 영향 분석
                   </li>
                   <li>
                     →{' '}
@@ -570,7 +570,7 @@ export default function EqualPaymentVsPrincipal2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 가이드 및 계산기
+, 대출, 예금, 적금, 환율 관련 모든 가이드 및 계산기
                   </li>
                 </ul>
               </section>

@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-06-19';
 
 export const metadata: Metadata = {
-  title: '4대보험 요율 2026 — 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost',
+  title: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost',
   description:
     '2026년 4대보험(국민연금·건강보험·고용보험·산재보험) 요율 및 근로자 부담금 완벽 정리. 7월 국민연금 인상, 기준소득월액 상한, 장기요양보험료 계산법까지.',
   keywords: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '4대보험 요율 2026 — 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost' }],
-    title: '4대보험 요율 2026 — 근로자 부담금 완벽 정리',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost' }],
+    title: '4대보험 요율 2026, 근로자 부담금 완벽 정리',
     description: '2026년 최신 4대보험 요율, 7월 국민연금 인상, 장기요양보험료 계산, 기준소득월액 상한선까지 종합 가이드.',
     url: URL,
     type: 'article',
@@ -95,7 +95,7 @@ export default function FourMajorInsuranceRates2026Page() {
     { name: '4대보험 요율 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '4대보험 요율 2026 — 국민연금·건강·고용·산재 근로자 부담 총정리',
+    headline: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리',
     description:
       '2026년 4대보험(국민연금·건강보험·고용보험·산재보험) 요율 및 근로자 부담금 완벽 정리. 7월 국민연금 인상, 기준소득월액 상한, 장기요양보험료 계산법까지.',
     url: URL,
@@ -141,7 +141,7 @@ export default function FourMajorInsuranceRates2026Page() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">근로 · 8분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  4대보험 요율 2026 — 국민연금·건강·고용·산재 근로자 부담 총정리
+                  4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   직장인이라면 반드시 알아야 할 4대보험(국민연금·건강보험·고용보험·산재보험). 2026년 7월 국민연금 인상, 기준소득월액 상한, 장기요양보험료 계산법을 정확히 정리했습니다.
@@ -194,16 +194,16 @@ export default function FourMajorInsuranceRates2026Page() {
               <section className="card bg-card p-3">
                 <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary-500">한눈에 보기</h2>
                 <ul className="space-y-1 text-sm" data-speakable>
-                  <li>✓ 국민연금 7월부터 9.0%→9.5% 인상 (근로자 4.5%→4.75%)</li>
-                  <li>✓ 기준소득월액 상한: 1~6월 637만원, 7월~ 659만원</li>
-                  <li>✓ 장기요양보험료 = 건강보험료 × 12.95%</li>
-                  <li>✓ 산재보험은 근로자 부담 없음</li>
-                  <li>✓ 월급 300만원 기준 총 4대보험료 약 28~29만원(7월~)</li>
+                  <li>국민연금 7월부터 9.0%→9.5% 인상 (근로자 4.5%→4.75%)</li>
+                  <li>기준소득월액 상한: 1~6월 637만원, 7월~ 659만원</li>
+                  <li>장기요양보험료 = 건강보험료 × 12.95%</li>
+                  <li>산재보험은 근로자 부담 없음</li>
+                  <li>월급 300만원 기준 총 4대보험료 약 28~29만원(7월~)</li>
                 </ul>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2026년 국민연금료 인상 — 7월부터 변화</h2>
+                <h2 className="text-2xl font-bold">2026년 국민연금료 인상, 7월부터 변화</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   2026년 가장 주목할 변화는 <strong>7월부터 국민연금 요율 인상</strong>입니다.
                   1~6월에는 기존대로 9.0% 요율이 적용되지만, 7월부터는 9.5%로 상향됩니다(국민연금법 §88).
@@ -224,7 +224,7 @@ export default function FourMajorInsuranceRates2026Page() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">건강보험료 계산 — 보수월액 기준</h2>
+                <h2 className="text-2xl font-bold">건강보험료 계산, 보수월액 기준</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   건강보험료는 <strong>보수월액에 3.545%를 곱해</strong> 계산됩니다. 2026년에는 변화가 없습니다.
                   건강보험료 계산 후, 추가로 <strong>장기요양보험료(건강보험료의 12.95%)</strong>가 별도 공제됩니다.
@@ -240,7 +240,7 @@ export default function FourMajorInsuranceRates2026Page() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">고용보험료 — 실업급여 계정만 근로자 부담</h2>
+                <h2 className="text-2xl font-bold">고용보험료, 실업급여 계정만 근로자 부담</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   고용보험료는 총 1.8%이지만, 근로자가 부담하는 것은 <strong>실업급여 계정 0.9%뿐</strong>입니다.
                   나머지 고용안정·직업능력개발사업분(규모별 0.25~0.85%)은 사업주가 전액 부담합니다.
@@ -255,7 +255,7 @@ export default function FourMajorInsuranceRates2026Page() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">산재보험료 — 근로자는 부담하지 않음</h2>
+                <h2 className="text-2xl font-bold">산재보험료, 근로자는 부담하지 않음</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   산재보험료는 <strong>전액 사업주가 부담</strong>합니다. 근로자는 보험료를 납부하지 않으며, 급여명세서에도 표시되지 않습니다.
                   따라서 직장인이 실제로 부담하는 보험료는 국민연금, 건강보험(장기요양 포함), 고용보험 3가지입니다.
@@ -266,7 +266,7 @@ export default function FourMajorInsuranceRates2026Page() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">기준소득월액 상한선 — 높은 연봉자는 유의</h2>
+                <h2 className="text-2xl font-bold">기준소득월액 상한선, 높은 연봉자는 유의</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   국민연금료는 월급의 일정 비율로 계산되지만, <strong>기준소득월액 상한선 이상은 공제되지 않습니다</strong>.
                   2026년 1~6월은 637만 원, 7월부터는 659만 원이 상한선입니다.
@@ -384,31 +384,31 @@ export default function FourMajorInsuranceRates2026Page() {
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 4대보험료·세금 자동 반영해서 월급 확인'}
+                    {'4대보험료·세금 자동 반영해서 월급 확인'}
                   </li>
                   <li>
                     <Link href="/guide/national-pension-premium-2026/" className="font-semibold text-primary-500 hover:underline">
                       국민연금 보험료 2026 상세 가이드
                     </Link>
-                    {' — 7월 인상, 기준소득월액 상한 자세히'}
+                    {'7월 인상, 기준소득월액 상한 자세히'}
                   </li>
                   <li>
                     <Link href="/guide/health-insurance-premium-2026/" className="font-semibold text-primary-500 hover:underline">
                       건강보험료 계산 가이드
                     </Link>
-                    {' — 피부양자 조건, 금액 산정법'}
+                    {'피부양자 조건, 금액 산정법'}
                   </li>
                   <li>
                     <Link href="/guide/unemployment-benefit-2026/" className="font-semibold text-primary-500 hover:underline">
                       고용보험·실업급여 2026
                     </Link>
-                    {' — 실업급여 수급 조건, 금액'}
+                    {'실업급여 수급 조건, 금액'}
                   </li>
                   <li>
                     <Link href="/calculator/severance/" className="font-semibold text-primary-500 hover:underline">
                       퇴직금 계산기
                     </Link>
-                    {' — 퇴직 시 받을 금액 확인'}
+                    {'퇴직 시 받을 금액 확인'}
                   </li>
                 </ul>
               </section>

@@ -149,7 +149,7 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                 readingMinutes={10}
                 publishedDate="2026-05-31"
                 title="자진신고 6월 50% 감면 가이드 2026"
-                subtitle="— 종소세 마감 후 가산세 절반"
+                subtitle="· 종소세 마감 후 가산세 절반"
                 lead={`5월 31일 종합소득세 신고기한을 넘겼어도 늦지 않습니다. 6월 중 자진신고로 가산세의 50%를 감면받을 수 있습니다. 산출세액 500만 원이면 정상 가산세 100만 원에서 50만 원으로 줄어듭니다. 국세기본법 §48(자진신고 감면)의 가장 큰 혜택을 받는 마지막 기회입니다.`}
               />
 
@@ -299,7 +299,7 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                 <div className="bg-highlight-500/10 p-4 rounded-lg border-l-4 border-highlight-500">
                   <p className="font-semibold text-text-primary text-sm mb-1">팁</p>
                   <p className="text-sm text-text-secondary">
-                    신고와 동시에 납부도 함께하는 것이 좋습니다. 세금을 내지 않으면 납부지연가산세(일 0.022% — 국세기본법 §47의4)가 추가로 부과되기 때문입니다. 자진신고 감면은 무신고가산세에만 적용되므로 주의하세요.
+                    신고와 동시에 납부도 함께하는 것이 좋습니다. 세금을 내지 않으면 납부지연가산세(일 0.022%, 국세기본법 §47의4)가 추가로 부과되기 때문입니다. 자진신고 감면은 무신고가산세에만 적용되므로 주의하세요.
                   </p>
                 </div>
               </section>

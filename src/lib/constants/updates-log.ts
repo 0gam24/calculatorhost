@@ -118,7 +118,7 @@ export const UPDATES_LOG: UpdateEntry[] = [
   },
 ];
 
-/** 홈페이지 노출용 — 최근 N건 (기본 7) */
+/** 홈페이지 노출용, 최근 N건 (기본 7) */
 export function getRecentUpdates(limit = 7): UpdateEntry[] {
   return UPDATES_LOG.slice(0, limit);
 }

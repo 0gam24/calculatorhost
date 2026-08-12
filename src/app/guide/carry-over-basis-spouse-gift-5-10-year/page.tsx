@@ -272,10 +272,10 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
 
               {/* 4. 실제 시뮬레이션 */}
               <section aria-label="실제 시뮬레이션" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">실제 사례 2개 — 부부 증여와 직계비속 증여</h2>
+                <h2 className="mb-4 text-2xl font-semibold">실제 사례 2개, 부부 증여와 직계비속 증여</h2>
 
                 <div className="mb-8 rounded-lg border border-primary-500 bg-primary-500/5 p-4">
-                  <p className="mb-3 font-semibold text-text-primary">사례 1: 배우자 증여 — 주택 5억(취득) → 7억(시가) 증여 → 8년 후 10억 양도</p>
+                  <p className="mb-3 font-semibold text-text-primary">사례 1: 배우자 증여, 주택 5억(취득) → 7억(시가) 증여 → 8년 후 10억 양도</p>
                   <ul className="list-inside list-disc space-y-1 text-sm text-text-secondary mb-4">
                     <li>증여자(남편) 취득가: 5억원 (10년 전)</li>
                     <li>증여 시점 시가(시세감정): 7억원</li>
@@ -295,7 +295,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     </div>
 
                     <div className="rounded-lg bg-bg-card p-3">
-                      <p className="mb-2 text-sm font-semibold text-text-primary">양도세 계산 (이월과세 적용 — 5년 내, 다주택자 가정)</p>
+                      <p className="mb-2 text-sm font-semibold text-text-primary">양도세 계산 (이월과세 적용, 5년 내, 다주택자 가정)</p>
                       <p className="text-xs text-text-secondary">
                         양도차익 = 10억 − 5억(증여자 취득가 이월) − 2,000만 = 4.8억
                         <br />
@@ -323,7 +323,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 </div>
 
                 <div className="rounded-lg border border-secondary-500 bg-secondary-500/5 p-4">
-                  <p className="mb-3 font-semibold text-text-primary">사례 2: 자녀 증여 — 주택 8억(취득) → 11억(시가) 증여 → 4년 후 13억 양도</p>
+                  <p className="mb-3 font-semibold text-text-primary">사례 2: 자녀 증여, 주택 8억(취득) → 11억(시가) 증여 → 4년 후 13억 양도</p>
                   <ul className="list-inside list-disc space-y-1 text-sm text-text-secondary mb-4">
                     <li>증여자(부모) 취득가: 8억원 (12년 전)</li>
                     <li>증여 시점 시가: 11억원</li>
@@ -346,7 +346,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     </div>
 
                     <div className="rounded-lg bg-bg-card p-3">
-                      <p className="mb-2 text-sm font-semibold text-text-primary">양도세 계산 (이월과세 적용 — 4년, 자녀가 1세대1주택 가정)</p>
+                      <p className="mb-2 text-sm font-semibold text-text-primary">양도세 계산 (이월과세 적용, 4년, 자녀가 1세대1주택 가정)</p>
                       <p className="text-xs text-text-secondary">
                         양도차익 = 13억 − 8억(증여자 취득가 이월) − 3,000만 = 4.7억
                         <br />
@@ -438,7 +438,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 <div className="space-y-3 text-text-secondary">
                   <div>
                     <p className="mb-1">
-                      <strong className="text-text-primary">함정 1: 기간 계산 오류 — 5년 vs 10년</strong>
+                      <strong className="text-text-primary">함정 1: 기간 계산 오류, 5년 vs 10년</strong>
                     </p>
                     <p className="text-sm">
                       증여일이 2024년 12월 말과 2025년 1월 초 사이에 있으면, 5년인지 10년인지를 정확히 판단해야 합니다.
@@ -633,22 +633,22 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>
-                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 1세대1주택·다주택·일시적2주택 시뮬
+                    → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 1세대1주택·다주택·일시적2주택 시뮬
                   </li>
                   <li>
-                    → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">배우자 증여세 계산기</Link> — 증여재산공제·누진세율 자동 적용
+                    → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">배우자 증여세 계산기</Link>, 증여재산공제·누진세율 자동 적용
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link> — 비과세 조건·비례 과세
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비과세 조건·비례 과세
                   </li>
                   <li>
-                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 완전 정리</Link> — 보유·거주 분리 계산
+                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 완전 정리</Link>, 보유·거주 분리 계산
                   </li>
                   <li>
-                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link> — 1년 경과·3년 기한
+                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link>, 1년 경과·3년 기한
                   </li>
                   <li>
-                    → <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세 완벽 정리</Link> — 채무인수·증여 분리 과세
+                    → <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세 완벽 정리</Link>, 채무인수·증여 분리 과세
                   </li>
                 </ul>
               </section>
@@ -665,7 +665,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §97의2 (이월과세 — 2024년 본문 개정으로 5년→10년 확대,
+                  <strong>법적 근거</strong>: 소득세법 §97의2 (이월과세, 2024년 본문 개정으로 5년→10년 확대,
                   2025-01-01 이후 증여분부터 시행) · §95 (장기보유특별공제, 보유 합산) · §97 (필요경비) · §103 (양도소득
                   기본공제 250만 원) · §104 (양도세율) · §105 (예정신고) · 시행령 §163의2 (이월과세 면제 사유 별도 확인) ·
                   상속세및증여세법 §47 (증여재산가액) · §53 (증여재산공제) · §56 (증여세율). 참고:{' '}

@@ -134,7 +134,7 @@ export default function NJobberDependentGuide() {
                   N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
-                  직장인 부모·배우자에게 피부양자로 등재된 N잡러·프리랜서가 가장 많이 놓치는 함정 — 합산소득 2,000만 원 초과,
+                  직장인 부모·배우자에게 피부양자로 등재된 N잡러·프리랜서가 가장 많이 놓치는 함정, 합산소득 2,000만 원 초과,
                   사업자등록 + 사업소득 1원 이상, 사업자 없는 프리랜서 사업소득 500만 원 초과 시 자격 상실
                   (국민건강보험법 §5·§6·시행령 §2). 탈락 시 지역가입자로 전환되어 월 보험료 15~40만 원으로 폭증.
                 </p>
@@ -166,7 +166,7 @@ export default function NJobberDependentGuide() {
 
               {/* 2. 소득 기준 상세 */}
               <section aria-label="소득 기준" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-4 text-2xl font-semibold">소득 기준 — 합산 2,000만 + 프리랜서 500만</h2>
+                <h2 className="mb-4 text-2xl font-semibold">소득 기준, 합산 2,000만 + 프리랜서 500만</h2>
                 <div className="space-y-3 text-text-secondary" data-speakable>
                   <div>
                     <h3 className="font-semibold text-text-primary">합산 대상 소득 (2,000만 한도)</h3>
@@ -189,7 +189,7 @@ export default function NJobberDependentGuide() {
 
               {/* 3. 재산 기준 */}
               <section aria-label="재산 기준" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">재산 기준 — 과세표준 5.4억 / 9억</h2>
+                <h2 className="mb-4 text-2xl font-semibold">재산 기준, 과세표준 5.4억 / 9억</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary" data-speakable>
                   <li>재산세 과세표준 <strong>5억 4,000만 원 이하</strong> → 무조건 유지</li>
                   <li>5.4억 초과 ~ 9억 미만 + 연 소득 <strong>1,000만 원 이하</strong> → 유지 가능</li>
@@ -231,7 +231,7 @@ export default function NJobberDependentGuide() {
 
               {/* 6. 자동 탈락 트리거 */}
               <section aria-label="자동 탈락 트리거" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">자동 탈락 트리거 — 사업자등록의 함정</h2>
+                <h2 className="mb-4 text-2xl font-semibold">자동 탈락 트리거, 사업자등록의 함정</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
                   <li>플랫폼 셀러 (쿠팡·네이버 스마트스토어·배민 등) 사업자등록 → 사업소득 1원으로 탈락</li>
                   <li>블로그·유튜브 수익화 후 사업자등록 권유 받음 → 등록 전 피부양자 영향 점검 필수</li>
@@ -260,7 +260,7 @@ export default function NJobberDependentGuide() {
                   <li>사업자등록 신청 전 세무사·공단 사전 상담 필수.</li>
                   <li>이자·배당금 연 950만 원이면 합산 0 (1,000만 미만), 1,001만 원이면 전액 합산.</li>
                   <li>매년 11월 정기 재산정 시점 직전(10월 말)까지 소득 정리 권장.</li>
-                  <li>재산세 공시가 변경 시 과세표준도 변경 — 6월 1일 기준으로 갱신.</li>
+                  <li>재산세 공시가 변경 시 과세표준도 변경, 6월 1일 기준으로 갱신.</li>
                 </ul>
               </section>
 
@@ -268,10 +268,10 @@ export default function NJobberDependentGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/n-jobber-insurance/" className="text-primary-600 underline dark:text-primary-500">N잡 건강보험료 계산기</Link> — 지역가입자 보험료 시뮬</li>
-                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 사업소득 신고</li>
-                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link> — 직장 급여 + 부업 시뮬</li>
-                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link> — 부업 소득 신고</li>
+                  <li>→ <Link href="/calculator/n-jobber-insurance/" className="text-primary-600 underline dark:text-primary-500">N잡 건강보험료 계산기</Link>, 지역가입자 보험료 시뮬</li>
+                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link>, 사업소득 신고</li>
+                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>, 직장 급여 + 부업 시뮬</li>
+                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link>, 부업 소득 신고</li>
                 </ul>
               </section>
 
@@ -283,7 +283,7 @@ export default function NJobberDependentGuide() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 국민건강보험법 §5 (가입자 범위) · §6 (피부양자 범위) · §72 (보험료 부과) · §72의2 (피부양자 인정 기준 위임) · 시행령 §2 (피부양자 자격 인정 기준 — 소득·재산) · 시행규칙 §2의2 (소득 산정 세부). 참고: <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단</a> (1577-1000), <a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">정부24</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
+                  <strong>법적 근거</strong>: 국민건강보험법 §5 (가입자 범위) · §6 (피부양자 범위) · §72 (보험료 부과) · §72의2 (피부양자 인정 기준 위임) · 시행령 §2 (피부양자 자격 인정 기준, 소득·재산) · 시행규칙 §2의2 (소득 산정 세부). 참고: <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단</a> (1577-1000), <a href="https://www.gov.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">정부24</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
                 </p>
                 <p className="mb-2">
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·보험 조언이 아닙니다. 피부양자 자격은 개인 사정(상속·증여 병행, 임대사업, 해외 거주 등)에 따라 적용이 달라지므로 반드시 국민건강보험공단(1577-1000) 또는 세무 전문가와 상담 후 결정하시기 바랍니다. 보험료 정확한 산정은 공단 모의계산 시스템에서 확인 가능.

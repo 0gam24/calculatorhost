@@ -176,10 +176,10 @@ export default function GuidePage() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link> — 매출·매입 입력으로 납부세액 즉시 시뮬레이션</li>
-                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 부가세 1기 확정신고 가이드</Link> — 확정신고 대상·기한·홈택스 단계 상세</li>
-                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고 가이드</Link> — 예정신고·예정고지 차이부터 확인</li>
-                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고 가이드</Link> — 다음 분기 부가세 일정 미리 대비</li>
+                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link>, 매출·매입 입력으로 납부세액 즉시 시뮬레이션</li>
+                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 부가세 1기 확정신고 가이드</Link>, 확정신고 대상·기한·홈택스 단계 상세</li>
+                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 부가세 1기 예정신고 가이드</Link>, 예정신고·예정고지 차이부터 확인</li>
+                  <li>→ <Link href="/guide/october-vat-q2-preliminary/" className="text-primary-600 underline dark:text-primary-500">10월 부가세 2기 예정신고 가이드</Link>, 다음 분기 부가세 일정 미리 대비</li>
                 </ul>
               </section>
 

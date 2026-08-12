@@ -207,7 +207,7 @@ export default function OctoberVatGuide() {
                       <tr className="border-b border-border-base text-left">
                         <th className="py-2 pr-4 font-semibold">항목</th>
                         <th className="py-2 pr-4 font-semibold">4월 1기 예정</th>
-                        <th className="py-2 font-semibold">10월 2기 예정 ⭐</th>
+                        <th className="py-2 font-semibold">10월 2기 예정</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -220,7 +220,7 @@ export default function OctoberVatGuide() {
                 </div>
               </section>
 
-              {/* 3. FAQ (중간 배치 — GEO) */}
+              {/* 3. FAQ (중간 배치, GEO) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 4. 환급 가능성 점검 */}
@@ -305,7 +305,7 @@ export default function OctoberVatGuide() {
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
-                  <li>법인은 예외 없이 예정신고 의무 — 미신고 시 가산세 20%(부가가치세법 §66).</li>
+                  <li>법인은 예외 없이 예정신고 의무, 미신고 시 가산세 20%(부가가치세법 §66).</li>
                   <li>예정고지 대상자도 통지 세액 미납 시 납부지연 가산세 부과.</li>
                   <li>전자세금계산서 의무: 모든 법인 + 직전 연도 사업장별 과세 공급가액 8천만 원 이상 개인사업자(§32).</li>
                   <li>예정신고 환급과 1월 확정신고 환급은 별도 처리. 중복 환급 X.</li>
@@ -316,11 +316,11 @@ export default function OctoberVatGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link> — 매출/매입 입력 즉시 시뮬</li>
-                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 1기 예정신고 가이드</Link> — 1기 기본 설명</li>
-                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 1기 확정신고 가이드</Link> — 확정신고 완벽</li>
-                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크 가이드</Link> — 사업자 7월 세무 일정 한눈에</li>
-                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link> — 부가세 + 종소세 동시</li>
+                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기</Link>, 매출/매입 입력 즉시 시뮬</li>
+                  <li>→ <Link href="/guide/april-vat-preliminary-q1/" className="text-primary-600 underline dark:text-primary-500">4월 1기 예정신고 가이드</Link>, 1기 기본 설명</li>
+                  <li>→ <Link href="/guide/july-vat-final-1st-half/" className="text-primary-600 underline dark:text-primary-500">7월 1기 확정신고 가이드</Link>, 확정신고 완벽</li>
+                  <li>→ <Link href="/guide/july-vat-and-tax-withholding/" className="text-primary-600 underline dark:text-primary-500">7월 부가세·원천세 동시 체크 가이드</Link>, 사업자 7월 세무 일정 한눈에</li>
+                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link>, 부가세 + 종소세 동시</li>
                 </ul>
               </section>
 

@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '하이브리드 자동차세 2026 — 배기량 cc 과세·차령경감·전기차 정액 비교',
+  title: '하이브리드 자동차세 2026, 배기량 cc 과세·차령경감·전기차 정액 비교',
   description:
     '하이브리드 자동차세는 전기차처럼 정액 과세가 아니라 내연기관 배기량 기준 cc 과세입니다. 2026년 배기량별 세율, 차령경감, 전기차와의 차이를 명확히 정리합니다.',
   keywords: [
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '하이브리드 자동차세 2026 — 배기량 cc 과세·차령경감·전기차 정액 비교',
+        alt: '하이브리드 자동차세 2026, 배기량 cc 과세·차령경감·전기차 정액 비교',
       },
     ],
     title: '하이브리드 자동차세 2026',
@@ -653,7 +653,7 @@ export default function HybridVehicleTax2026Page() {
                     >
                       자동차세 계산기
                     </Link>{' '}
-                    — 배기량 입력으로 즉시 연 세액 계산
+, 배기량 입력으로 즉시 연 세액 계산
                   </li>
                   <li>
                     →{' '}
@@ -661,9 +661,9 @@ export default function HybridVehicleTax2026Page() {
                       href="/guide/electric-vehicle-tax-2026/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      전기차 자동차세 2026 — 배기량 없어 정액 13만
+                      전기차 자동차세 2026, 배기량 없어 정액 13만
                     </Link>{' '}
-                    — 전기차 vs 하이브리드 세금 차이
+, 전기차 vs 하이브리드 세금 차이
                   </li>
                   <li>
                     →{' '}
@@ -671,9 +671,9 @@ export default function HybridVehicleTax2026Page() {
                       href="/guide/vehicle-tax-2026/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      자동차세 세율 2026 — 배기량·차령·차량종별 정리
+                      자동차세 세율 2026, 배기량·차령·차량종별 정리
                     </Link>{' '}
-                    — 모든 자동차세 정보 한곳에
+, 모든 자동차세 정보 한곳에
                   </li>
                   <li>
                     →{' '}
@@ -681,9 +681,9 @@ export default function HybridVehicleTax2026Page() {
                       href="/guide/vehicle-tax-calculation-2026/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      자동차세 계산법 2026 — 차령경감·취등록세·1월 할인
+                      자동차세 계산법 2026, 차령경감·취등록세·1월 할인
                     </Link>{' '}
-                    — 실제 납부액 산출 가이드
+, 실제 납부액 산출 가이드
                   </li>
                   <li>
                     →{' '}
@@ -693,7 +693,7 @@ export default function HybridVehicleTax2026Page() {
                     >
                       생활 계산기 카테고리
                     </Link>{' '}
-                    — 자동차, 임대, 환율 등 생활 관련 모든 계산기
+, 자동차, 임대, 환율 등 생활 관련 모든 계산기
                   </li>
                 </ul>
               </section>

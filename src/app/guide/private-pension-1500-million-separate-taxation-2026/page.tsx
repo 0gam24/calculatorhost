@@ -163,7 +163,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   사적연금 1,500만 원 분리과세 vs 종합과세
                   <br />
-                  <span className="text-2xl text-text-secondary">— 연령별 세율·신고·절세 완벽 가이드 (2026)</span>
+                  <span className="text-2xl text-text-secondary">· 연령별 세율·신고·절세 완벽 가이드 (2026)</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   연금저축(연금계좌)이나 IRP(개인형 퇴직연금)에서 수령액이 연 1,500만 원 이하면
@@ -189,7 +189,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 1. 사적연금 분리과세란? */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 사적연금 분리과세란? — 정의와 기준</h2>
+                <h2 className="text-2xl font-bold">1. 사적연금 분리과세란?, 정의와 기준</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   사적연금 분리과세는 개인이 자발적으로 가입한 연금 상품(연금저축, IRP, 퇴직연금 정기인출)에서
                   받는 수령액에 대해 다른 소득과 분리하여 낮은 세율(3.3~5.5%)을 적용하는 제도입니다.
@@ -237,7 +237,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 2. 연금저축 + IRP = 합산 1,500만 원 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 연금저축 + IRP 합산 기준 — "개별"이 아닌 "통합"</h2>
+                <h2 className="text-2xl font-bold">2. 연금저축 + IRP 합산 기준, "개별"이 아닌 "통합"</h2>
                 <p className="text-text-secondary leading-relaxed">
                   중요한 포인트: 분리과세 기준 1,500만 원은 연금저축 또는 IRP 개별이 아니라
                   <strong> 전체 합산</strong> 기준입니다.
@@ -247,7 +247,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                     <h3 className="mb-2 font-semibold text-text-primary">합산 예시</h3>
                     <ul className="text-sm text-text-secondary space-y-2">
                       <li><strong>예 1 (분리과세 해당)</strong><br/>
-                        연금저축 700만 + IRP 800만 = 1,500만 원 → 분리과세 적용 ✓</li>
+                        연금저축 700만 + IRP 800만 = 1,500만 원 → 분리과세 적용</li>
                       <li><strong>예 2 (분리과세 초과)</strong><br/>
                         연금저축 900만 + IRP 700만 = 1,600만 원 → 초과 100만 원은 종합과세 또는 6%/15% 선택</li>
                       <li><strong>예 3 (종합과세 선택)</strong><br/>
@@ -264,7 +264,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 3. 연령별 분리과세 세율 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 연령별 분리과세 세율 — 나이가 많을수록 저세율</h2>
+                <h2 className="text-2xl font-bold">3. 연령별 분리과세 세율, 나이가 많을수록 저세율</h2>
                 <p className="text-text-secondary leading-relaxed">
                   분리과세가 적용되는 경우 수령자의 연령에 따라 세율이 달라집니다
                   (소득세법 §129 ⑤). 지방세(1.4%)가 포함된 최종 세율입니다.
@@ -307,7 +307,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 4. 분리과세 vs 종합과세 비교 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 1,500만 원 초과 시 — 분리과세 vs 종합과세 선택</h2>
+                <h2 className="text-2xl font-bold">4. 1,500만 원 초과 시, 분리과세 vs 종합과세 선택</h2>
                 <p className="text-text-secondary leading-relaxed">
                   사적연금 수령액이 1,500만 원을 초과하면 두 가지 선택이 있습니다:
                   (1) 초과분을 다른 소득과 합산하여 누진세율 적용 (종합과세),
@@ -352,7 +352,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
 
               {/* 5. 공적연금과의 구분 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 공적연금은 별개 — 국민연금, 공무원연금</h2>
+                <h2 className="text-2xl font-bold">5. 공적연금은 별개, 국민연금, 공무원연금</h2>
                 <p className="text-text-secondary leading-relaxed">
                   중요한 구분: 국민연금, 공무원연금, 군인연금 등 공적연금(공적연금소득, 소득세법 §20의3)은
                   <strong> 사적연금 1,500만 원 기준에 포함되지 않습니다</strong>.
@@ -393,7 +393,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                     </p>
                   </li>
                   <li className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <strong className="text-text-primary block mb-1">Step 3. 소득 입력 — 연금소득 섹션</strong>
+                    <strong className="text-text-primary block mb-1">Step 3. 소득 입력, 연금소득 섹션</strong>
                     <p className="text-text-secondary">
                       금융기관에서 보고한 연금소득이 자동 채워짐.
                       <br/>
@@ -500,40 +500,40 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 연금 수령액 포함 시뮬레이션 가능
+                    {' '}· 연금 수령액 포함 시뮬레이션 가능
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 직장인 연금 수령 시 합산 세액 확인
+                    {' '}· 직장인 연금 수령 시 합산 세액 확인
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/financial-income-comprehensive-vs-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 금융소득 종합과세 vs 분리과세 (2,000만 기준)
                     </Link>
-                    {' '}— 비슷한 구조의 이자·배당 과세
+                    {' '}· 비슷한 구조의 이자·배당 과세
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 종소세 신고 전체 프로세스
+                    {' '}· 종소세 신고 전체 프로세스
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/severance-vs-pension-dc-db/" className="text-primary-600 underline dark:text-primary-500">
                       가이드: 퇴직금 vs DC·DB 연금 비교
                     </Link>
-                    {' '}— 퇴직연금 구조 이해
+                    {' '}· 퇴직연금 구조 이해
                   </li>
                   <li>
                     →{' '}
                     <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
-                      용어사전 — 연금저축, IRP, 분리과세, 공적연금 등
+                      용어사전, 연금저축, IRP, 분리과세, 공적연금 등
                     </Link>
                   </li>
                 </ul>

@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연금저축·IRP 세액공제 2026 | 900만원 한도·최대 148만원 환급' }],
-    title: '연금저축·IRP 세액공제 2026 — 소득별 최대 148만원 환급받기',
+    title: '연금저축·IRP 세액공제 2026, 소득별 최대 148만원 환급받기',
     description: '연금저축·퇴직연금 합산 900만원 납입 시 세액공제 혜택. 소득 5,500만원 이하 15%, 초과 12%. 정확한 계산법과 주의사항.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연금저축·IRP 세액공제 2026 — 최대 148만원 환급',
+    title: '연금저축·IRP 세액공제 2026, 최대 148만원 환급',
     description: '900만원 한도에 15~12% 세액공제. 중도해지 시 기타소득세 16.5% 부과 주의.',
   },
 };
@@ -100,7 +100,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
     { name: '연금저축·IRP 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연금저축·IRP 세액공제 2026 — 900만원 한도에서 최대 148만원 환급받기',
+    headline: '연금저축·IRP 세액공제 2026, 900만원 한도에서 최대 148만원 환급받기',
     description:
       '연금저축과 퇴직연금(IRP) 세액공제 완전 정리. 합산 900만원 한도, 소득별 공제율(15%·12%), 최대 환급액 계산, 중도해지 주의사항.',
     url: URL,
@@ -147,7 +147,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   연금저축·IRP 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 900만원 한도에서 최대 148만원 환급</span>
+                  <span className="text-2xl text-text-secondary">· 900만원 한도에서 최대 148만원 환급</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   연금저축과 퇴직연금(IRP)에 납입하면 받을 수 있는 세액공제는 절세의 가장 기본이면서도 실질적인 효과가 큰 제도입니다. 소득세법 §59의3에 따른 이 혜택은 직장인뿐만 아니라 프리랜서, 자영업자도 활용할 수 있습니다. 이 가이드에서는 한도, 공제율, 실제 환급액, 그리고 중도해지 시 주의사항까지 완벽하게 정리해드립니다.
@@ -177,7 +177,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">연금저축과 IRP 한도 — 합산 900만원</h2>
+                <h2 className="text-2xl font-bold">연금저축과 IRP 한도, 합산 900만원</h2>
                 <p>
                   연금저축과 퇴직연금(IRP)의 세액공제는 각각 별도 한도가 아니라 합산으로 계산됩니다(소득세법 §59의3). 이는 개인이 자신의 상황에 맞춰 연금저축과 IRP를 자유롭게 조합할 수 있도록 설계된 것입니다.
                 </p>
@@ -220,7 +220,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">소득별 공제율 — 15% vs 12%</h2>
+                <h2 className="text-2xl font-bold">소득별 공제율, 15% vs 12%</h2>
                 <p>
                   세액공제 혜택의 크기는 개인의 소득 수준에 따라 달라집니다(소득세법 §59의3). 소득이 낮을수록 높은 공제율을 받는 정책으로, 저소득층의 노후자금 마련을 더 적극 지원하는 취지입니다.
                 </p>

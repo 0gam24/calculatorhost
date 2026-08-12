@@ -146,7 +146,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 readingMinutes={13}
                 publishedDate="2026-05-28"
                 title="사업소득 vs 기타소득 분류 기준 2026"
-                subtitle="— 강사·프리랜서 5월 신고 필독"
+                subtitle="· 강사·프리랜서 5월 신고 필독"
                 lead={
                   <p data-speakable>
                     프리랜서·강사·작가라면 주의하세요.
@@ -678,37 +678,37 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check1" className="mt-1" />
                     <label htmlFor="check1" className="text-text-secondary">
-                      <strong>정기성 판정</strong> — 매월? 매주? 연 1~2회? 연중 정기(봄·가을)?
+                      <strong>정기성 판정</strong>: 매월? 매주? 연 1~2회? 연중 정기(봄·가을)?
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check2" className="mt-1" />
                     <label htmlFor="check2" className="text-text-secondary">
-                      <strong>계약서·영수증 확인</strong> — "정기 강사" vs "특강" vs "프로젝트" 표현?
+                      <strong>계약서·영수증 확인</strong>: "정기 강사" vs "특강" vs "프로젝트" 표현?
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check3" className="mt-1" />
                     <label htmlFor="check3" className="text-text-secondary">
-                      <strong>4대보험 현황</strong> — 국민연금, 건강보험 가입 여부? (사업소득 의무)
+                      <strong>4대보험 현황</strong>: 국민연금, 건강보험 가입 여부? (사업소득 의무)
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check4" className="mt-1" />
                     <label htmlFor="check4" className="text-text-secondary">
-                      <strong>소득액 규모</strong> — 연 몇 만원? 300만 이상? (분리과세 선택권 결정)
+                      <strong>소득액 규모</strong>: 연 몇 만원? 300만 이상? (분리과세 선택권 결정)
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check5" className="mt-1" />
                     <label htmlFor="check5" className="text-text-secondary">
-                      <strong>기타소득 종류</strong> — 강사료(60%)? 원고료(60%)? 저술료(80%)?
+                      <strong>기타소득 종류</strong>: 강사료(60%)? 원고료(60%)? 저술료(80%)?
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check6" className="mt-1" />
                     <label htmlFor="check6" className="text-text-secondary">
-                      <strong>세액 비교</strong> —{' '}
+                      <strong>세액 비교</strong>: {' '}
                       <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline">
                         프리랜서 종합소득세 계산기
                       </Link>
@@ -718,7 +718,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check7" className="mt-1" />
                     <label htmlFor="check7" className="text-text-secondary">
-                      <strong>전문가 상담</strong> — 불확실하면 세무사 또는 국세청 상담 (상담료 10~30만 vs 가산세 40%)
+                      <strong>전문가 상담</strong>: 불확실하면 세무사 또는 국세청 상담 (상담료 10~30만 vs 가산세 40%)
                     </label>
                   </div>
                 </div>
@@ -760,14 +760,14 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                     <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">
                       프리랜서 종합소득세 계산기
                     </Link>
-                    {' '}— 사업소득 경비율별 세액 계산
+                    {' '}· 사업소득 경비율별 세액 계산
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/n-jobber-comprehensive-income-tax-2026/" className="text-primary-600 underline dark:text-primary-500">
                       N잡러 종합소득세 합산 신고 2026
                     </Link>
-                    {' '}— 부업 소득 합산 규칙 + 누진세율
+                    {' '}· 부업 소득 합산 규칙 + 누진세율
                   </li>
                   <li>
                     →{' '}
@@ -777,21 +777,21 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                     >
                       프리랜서 단순경비율 vs 기준경비율 2026
                     </Link>
-                    {' '}— 사업소득 경비율 선택 기준
+                    {' '}· 사업소득 경비율 선택 기준
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
                       5월 종합소득세 신고 완벽 가이드
                     </Link>
-                    {' '}— 신고 대상·기한·절세 5가지
+                    {' '}· 신고 대상·기한·절세 5가지
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">
                       연봉 실수령액 계산기
                     </Link>
-                    {' '}— 직장 소득 기준 세액 확인
+                    {' '}· 직장 소득 기준 세액 확인
                   </li>
                 </ul>
               </section>

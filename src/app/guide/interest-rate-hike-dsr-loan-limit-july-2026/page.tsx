@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기준금리와 대출한도 — 금리 오르면 한도는?',
+    title: '기준금리와 대출한도, 금리 오르면 한도는?',
     description: '현재 2.50% 동결. DSR·스트레스금리로 본 금리 변동 시 한도 영향(가정 사례).',
   },
 };
@@ -97,7 +97,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '기준금리와 대출한도 — 금리 변동 영향' },
+    { name: '기준금리와 대출한도, 금리 변동 영향' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026',
@@ -141,14 +141,14 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '기준금리와 대출한도 — 금리 변동 영향' },
+                    { name: '기준금리와 대출한도, 금리 변동 영향' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">금융·대출 · 9분 읽기 · 2026-06-02</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   기준금리 오르면 대출한도 줄어들까?
                   <br />
-                  <span className="text-2xl text-text-secondary">— DSR·스트레스금리로 본 영향</span>
+                  <span className="text-2xl text-text-secondary">· DSR·스트레스금리로 본 영향</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 6월 현재 기준금리는 2.50%로 8연속 동결 상태이며, 다음 금융통화위원회는 7월 16일(목)에 열립니다.
@@ -198,7 +198,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 기준금리란 무엇인가? — 금통위가 결정하는 기초 금리</h2>
+                <h2 className="text-2xl font-bold">1. 기준금리란 무엇인가?, 금통위가 결정하는 기초 금리</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   기준금리는 한국은행 금융통화위원회(금통위)가 <strong>한국은행법 §28</strong>에 따라 의결하는 <strong>정책금리</strong>입니다.
                   같은 조는 통화신용정책에 관한 사항을 금통위 의결사항으로 명시하고 있으며, 기준금리 결정·변경이 여기에 포함됩니다.
@@ -244,7 +244,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 기준금리 인상이 바로 내 대출금리가 되는가? — 가산금리의 역할</h2>
+                <h2 className="text-2xl font-bold">2. 기준금리 인상이 바로 내 대출금리가 되는가?, 가산금리의 역할</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   아닙니다. 은행이 고객에게 제시하는 <strong>실제 대출금리 = 기준금리 + 가산금리</strong>입니다.
                   기준금리가 오르면, 은행은 가산금리를 조정합니다.
@@ -284,7 +284,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. DSR이란? — 월 상환액으로 대출 한도를 제한하는 규제</h2>
+                <h2 className="text-2xl font-bold">3. DSR이란?, 월 상환액으로 대출 한도를 제한하는 규제</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   DSR(Debt Service Ratio)은 <strong>연 소득 대비 연 원리금 상환액의 비율</strong>입니다.
                   은행권에서는 DSR 40% 한도를 적용합니다(특정 대출은 50%).
@@ -327,7 +327,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 스트레스금리란? — "혹시 금리가 더 오르면" 대비하는 금리</h2>
+                <h2 className="text-2xl font-bold">4. 스트레스금리란?, "혹시 금리가 더 오르면" 대비하는 금리</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   은행은 신규 대출 심사 시 현재 금리가 아닌 <strong>&ldquo;미래 금리가 이 정도 올라도 버틸 수 있는가&rdquo;</strong>를 미리 시뮬레이션합니다.
                   이를 스트레스금리라고 부릅니다.
@@ -414,7 +414,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">DSR 40% 월 상환 한계</td>
-                        <td className="px-3 py-2" colSpan={2}>약 166.7만원 (연소득 5,000만 × 40% ÷ 12 — 소득 기반이라 금리와 무관)</td>
+                        <td className="px-3 py-2" colSpan={2}>약 166.7만원 (연소득 5,000만 × 40% ÷ 12, 소득 기반이라 금리와 무관)</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">신규 대출 한도 (30년·기존대출 없음)</td>
@@ -559,41 +559,41 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                     <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">
                       DSR·LTV 대출한도 계산기
                     </Link>
-                    {' — 현재 신규 대출 한도를 정확히 계산'}
+                    {'현재 신규 대출 한도를 정확히 계산'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/loan/" className="text-primary-600 underline dark:text-primary-500">
                       대출이자 계산기
                     </Link>
-                    {' — 월별 상환액, 총 이자 시뮬레이션'}
+                    {'월별 상환액, 총 이자 시뮬레이션'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/dsr-loan-limit-tips/" className="text-primary-600 underline dark:text-primary-500">
                       DSR 40% 규제를 피하는 5가지 팁
                     </Link>
-                    {' — 신규 대출 한도를 늘리는 전략'}
+                    {'신규 대출 한도를 늘리는 전략'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/dsr-regulation-zones/" className="text-primary-600 underline dark:text-primary-500">
                       DSR·규제지역 완벽 해석
                     </Link>
-                    {' — 지역별, 세대별 다른 규제 적용'}
+                    {'지역별, 세대별 다른 규제 적용'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/deposit/" className="text-primary-600 underline dark:text-primary-500">
                       정기예금 이자 계산기
                     </Link>
-                    {' — 금리 인상 시 예금 수익 변화'}
+                    {'금리 인상 시 예금 수익 변화'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="7월 기준금리 인상 시뮬레이션 — DSR·주담대 한도 변화 가이드"
+                title="7월 기준금리 인상 시뮬레이션, DSR·주담대 한도 변화 가이드"
                 url={URL}
                 description="금통위 기준금리 인상 → 월 상환액 증가 → DSR 악화 → 대출한도 감소. 메커니즘을 실제 계산으로 설명합니다."
               />
@@ -603,9 +603,9 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 한국은행법 §28(금융통화위원회 의결사항 — 기준금리 결정),
-                  은행법 §34(건전경영의 지도 — DSR 등 은행업감독규정의 모법),
-                  금융소비자 보호에 관한 법률 §19(설명의무 — 대출 금리·변동 여부·상환방법 설명) · {' '}
+                  <strong>법적 근거</strong>: 한국은행법 §28(금융통화위원회 의결사항, 기준금리 결정),
+                  은행법 §34(건전경영의 지도, DSR 등 은행업감독규정의 모법),
+                  금융소비자 보호에 관한 법률 §19(설명의무, 대출 금리·변동 여부·상환방법 설명) · {' '}
                   <a
                     href="https://www.bok.or.kr"
                     target="_blank"

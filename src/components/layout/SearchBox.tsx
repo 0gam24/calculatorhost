@@ -57,7 +57,7 @@ const SEARCH_DATA: SearchEntry[] = [
 
   { label: '홈', href: '/', kind: 'page' },
   { label: '용어사전 (DSR·LTV·평단·BEP·양도차익 등)', href: '/glossary/', kind: 'page', keywords: ['용어', '사전', 'glossary', '정의', '뜻', 'DSR이란', 'LTV란', '평단이란', '양도차익이란'] },
-  { label: '가이드 — 전체 목록', href: '/guide/', kind: 'page', keywords: ['가이드', '팁', 'guide', '실전', '전략', '방법'] },
+  { label: '가이드, 전체 목록', href: '/guide/', kind: 'page', keywords: ['가이드', '팁', 'guide', '실전', '전략', '방법'] },
 
   // 가이드 개별 게시물 — 검색으로 발견 가능하도록
   { label: '가이드: 2026 세금 캘린더 (1~12월 한눈에)', href: '/guide/tax-calendar-2026/', kind: 'page', keywords: ['세금 캘린더', '세금 일정', '2026 세금', '월별 세금'] },

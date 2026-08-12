@@ -145,7 +145,7 @@ export default function ElectricVehicleTax2026Page() {
                 readingMinutes={7}
                 publishedDate="2026-06-17"
                 title="전기차 자동차세 2026"
-                subtitle="— 13만원 정액 과세·차령경감 미적용 완벽 정리"
+                subtitle="· 13만원 정액 과세·차령경감 미적용 완벽 정리"
                 lead={
                   <p data-speakable>
                     <strong>전기차(배터리전기차 BEV)와 수소연료전지차(FCEV)를 구매했거나 구입 예정이신가요?</strong>
@@ -225,7 +225,7 @@ export default function ElectricVehicleTax2026Page() {
                   </table>
                 </div>
                 <div className="rounded-lg bg-primary-500/10 p-4 text-sm text-primary-700 dark:text-primary-300">
-                  <p className="font-semibold">TL;DR — 5가지 핵심</p>
+                  <p className="font-semibold">TL;DR, 5가지 핵심</p>
                   <ul className="mt-2 list-inside list-disc space-y-1">
                     <li>
                       <strong>전기차 정액 13만원(130,000원):</strong> 신차부터 20년차까지 변화 없음 (지방세법 §127①제3호)
@@ -292,7 +292,7 @@ export default function ElectricVehicleTax2026Page() {
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
                   <p className="font-semibold text-text-primary">법적 근거</p>
                   <p className="mt-2">
-                    지방세법 §127①제3호 "그 밖의 승용자동차" — 배기량으로 분류되지 않는 승용자동차는 정액으로
+                    지방세법 §127①제3호 "그 밖의 승용자동차"배기량으로 분류되지 않는 승용자동차는 정액으로
                     과세합니다. 전기차·수소차는 내연기관 배기량이 없으므로 이 정액 항목이 적용됩니다.
                   </p>
                 </div>
@@ -443,7 +443,7 @@ export default function ElectricVehicleTax2026Page() {
                         <li>3~11년차: 273,000원에서 매년 5%씩 경감 (5%→45%)</li>
                         <li>12~20년차: 136,500원 (50% 상한)</li>
                         <li className="font-semibold">20년 총액: 약 362만원</li>
-                        <li className="text-xs italic text-text-tertiary">(초기 높지만 중반부터 절감 — 정확액은 계산기로 확인)</li>
+                        <li className="text-xs italic text-text-tertiary">(초기 높지만 중반부터 절감, 정확액은 계산기로 확인)</li>
                       </ul>
                     </div>
                     <div className="rounded-lg bg-highlight-500/10 p-3">
@@ -516,14 +516,14 @@ export default function ElectricVehicleTax2026Page() {
                       <p className="font-semibold text-text-primary">구매 시 (일회성)</p>
                       <ul className="mt-2 list-inside list-disc space-y-1">
                         <li>
-                          <strong>취득세:</strong> 비영업 승용 7% (지방세법 §12) — 전기차는 지방세특례제한법에 따라 일정
+                          <strong>취득세:</strong> 비영업 승용 7% (지방세법 §12), 전기차는 지방세특례제한법에 따라 일정
                           한도까지 감면
                         </li>
                         <li>
                           <strong>개별소비세:</strong> 개별소비세법에 따라 한도 내 감면 (교육세·부가세도 연동 감소)
                         </li>
                         <li className="text-xs italic text-text-tertiary">
-                          (감면 한도·적용 기간은 연도·지자체별로 변동 — 위택스·관할 시·군·구 확인)
+                          (감면 한도·적용 기간은 연도·지자체별로 변동, 위택스·관할 시·군·구 확인)
                         </li>
                       </ul>
                     </div>
@@ -619,7 +619,7 @@ export default function ElectricVehicleTax2026Page() {
                     <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 계산기
                     </Link>
-                    {' '}— 배기량별 세액 즉시 계산
+                    {' '}· 배기량별 세액 즉시 계산
                   </li>
                   <li>
                     →{' '}
@@ -629,7 +629,7 @@ export default function ElectricVehicleTax2026Page() {
                     >
                       자동차세 6월 납부·연납 할인 완벽 가이드
                     </Link>
-                    {' '}— 1월 선납 5% 할인 신청 방법
+                    {' '}· 1월 선납 5% 할인 신청 방법
                   </li>
                   <li>
                     →{' '}
@@ -639,14 +639,14 @@ export default function ElectricVehicleTax2026Page() {
                     >
                       1월 자동차세 선납 할인 최대 절감법
                     </Link>
-                    {' '}— 신청 기간·기한·할인율
+                    {' '}· 신청 기간·기한·할인율
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/lifestyle/" className="text-primary-600 underline dark:text-primary-500">
                       생활 계산기 카테고리
                     </Link>
-                    {' '}— BMI, D-day, 평수 등 일상 계산
+                    {' '}· BMI, D-day, 평수 등 일상 계산
                   </li>
                 </ul>
               </section>

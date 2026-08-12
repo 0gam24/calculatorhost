@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '해외주식 양도소득세 2026 | 250만원 공제·22%·5월 신고' }],
-    title: '해외주식 양도소득세 2026 — 미국주식 매도 시 세금 정산법',
+    title: '해외주식 양도소득세 2026, 미국주식 매도 시 세금 정산법',
     description: '해외주식 양도차익에 연 250만원 기본공제, 22% 세율 적용. 거래일 기준환율로 환산하고 5월 확정신고. 손익통산·외국납부세액공제까지 해설.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '해외주식 양도소득세 2026 — 250만원 공제·22%·5월 신고',
+    title: '해외주식 양도소득세 2026, 250만원 공제·22%·5월 신고',
     description: '미국주식 등 해외주식 매도 차익에 대한 소득세. 연 250만원 공제, 22% 세율, 다음해 5월 확정신고.',
   },
 };
@@ -99,7 +99,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
     { name: '해외주식 양도소득세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '해외주식 양도소득세 2026 — 미국주식 매도 시 세금 정산법',
+    headline: '해외주식 양도소득세 2026, 미국주식 매도 시 세금 정산법',
     description:
       '해외주식 양도차익에 연 250만원 기본공제, 22% 세율 적용. 거래일 기준환율로 환산하고 다음해 5월 확정신고. 손익통산·환차익·외국납부세액공제까지 완전 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   해외주식 양도소득세 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 250만원 공제·22% 세율·5월 신고</span>
+                  <span className="text-2xl text-text-secondary">· 250만원 공제·22% 세율·5월 신고</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   미국주식, 홍콩 ETF, 인도 종목 등 해외에서 주식을 매도할 때 한국에 양도소득세를 내야 합니다. 하지만 국내주식과 달리 신고 시점, 공제액, 환율 기준일이 다르기 때문에 실수하기 쉽습니다. 이 가이드는 소득세법 §118의2에 따른 해외주식 양도소득세의 정확한 계산법, 250만원 기본공제, 22% 세율, 다음해 5월 신고 절차까지 완전히 정리해드립니다.
@@ -178,7 +178,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">기본공제 250만원 — 연간 한도</h2>
+                <h2 className="text-2xl font-bold">기본공제 250만원, 연간 한도</h2>
                 <p>
                   해외주식 양도소득에는 연 250만원의 기본공제가 적용됩니다(소득세법 §118의2). 이는 국내 대주주 등 다른 양도소득과 합산되지만, 총 공제액은 250만원이 최대입니다.
                 </p>
@@ -227,7 +227,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">22% 세율 구성 — 양도소득세 20% + 지방소득세 2%</h2>
+                <h2 className="text-2xl font-bold">22% 세율 구성, 양도소득세 20% + 지방소득세 2%</h2>
                 <p>
                   해외주식 양도소득세의 세율은 일정합니다(소득세법 §118의7). 누진세가 아니라 모든 양도차익에 22% 균일 세율이 적용됩니다.
                 </p>
@@ -250,7 +250,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">양도차익 계산 — 거래일 기준환율</h2>
+                <h2 className="text-2xl font-bold">양도차익 계산, 거래일 기준환율</h2>
                 <p>
                   해외주식의 양도차익을 계산할 때 가장 중요한 원칙은 취득가와 양도가를 각각의 거래일 기준환율로 원화 환산한다는 것입니다(소득세법 §118의4).
                 </p>
@@ -287,7 +287,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">손익통산 — 같은 연도 이익·손실 상계</h2>
+                <h2 className="text-2xl font-bold">손익통산, 같은 연도 이익·손실 상계</h2>
                 <p>
                   해외주식 거래에서 이익이 난 종목도 있고 손실이 난 종목도 있다면, 같은 과세연도(1월~12월) 내에서 모두 통산합니다(소득세법 §118의4).
                 </p>
@@ -315,7 +315,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">신고 절차 — 5월 확정신고</h2>
+                <h2 className="text-2xl font-bold">신고 절차, 5월 확정신고</h2>
                 <p>
                   해외주식을 매도한 해의 다음해 5월 1일~31일에 확정신고를 합니다(소득세법 §118의2). 국내주식과 달리 예정신고가 없으므로, 5월에 한 번만 신고하면 됩니다.
                 </p>
@@ -351,7 +351,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">외국납부세액공제 — 중복과세 방지</h2>
+                <h2 className="text-2xl font-bold">외국납부세액공제, 중복과세 방지</h2>
                 <p>
                   다른 국가에서 해외주식 양도소득세를 이미 냈다면, 한국 세금에서 그 금액만큼 공제받을 수 있습니다(소득세법 §118의7). 다만 미국은 개인의 주식 양도에 원천징수를 하지 않으므로 보통 미국에서의 세금 부담이 없습니다.
                 </p>
@@ -371,7 +371,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">필요한 기록과 증거 — 신고 준비물</h2>
+                <h2 className="text-2xl font-bold">필요한 기록과 증거, 신고 준비물</h2>
                 <p>
                   해외주식 양도소득세를 신고할 때는 다음 기록들을 반드시 준비해야 합니다.
                 </p>

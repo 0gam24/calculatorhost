@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-02';
 const DATE_MODIFIED = '2026-06-02';
 
 export const metadata: Metadata = {
-  title: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 6월 15일 신청',
+  title: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 6월 15일 신청',
   description:
     '2026 에너지바우처는 저소득층·취약계층의 냉방비를 최대 70만원까지 지원합니다. 신청 기간(6/15~12/31), 대상, 지원금액(세대원 수별), 신청 방법·필요 서류, 사용 방법을 완벽 정리했습니다.',
   keywords: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 6월 15일 신청' }],
-    title: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 신청 안내',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 6월 15일 신청' }],
+    title: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 신청 안내',
     description: '저소득층·노인·영유아·장애인 등 취약계층 최대 70만원 냉방비 지원. 신청 기한 6월 15일~12월 31일.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원',
+    title: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원',
     description: '신청 기한 6월 15일부터. 대상·신청방법·지원금액 정리.',
   },
 };
@@ -97,10 +97,10 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '2026 에너지바우처 — 여름 냉방비 지원' },
+    { name: '2026 에너지바우처, 여름 냉방비 지원' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 신청 기한 6월 15일 ~ 12월 31일',
+    headline: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 신청 기한 6월 15일 ~ 12월 31일',
     description:
       '저소득층·노인·영유아·장애인 등 취약계층 최대 70만원 냉방비·난방비 지원. 신청 대상, 지원금액, 신청 방법, 필요 서류 완벽 가이드.',
     url: URL,
@@ -112,7 +112,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
     keywords: ['에너지바우처 2026', '여름 냉방비 지원', '신청 기한 6월 15일', '저소득층 복지'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 신청 안내',
+    name: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 신청 안내',
     description:
       '6월 15일부터 신청 시작. 저소득층·취약계층 연간 최대 70만원 냉방·난방비 지원. 대상·신청 방법·지원금액 완정리.',
     url: URL,
@@ -141,14 +141,14 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '2026 에너지바우처 — 여름 냉방비 지원' },
+                    { name: '2026 에너지바우처, 여름 냉방비 지원' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">생활·복지 · 7분 읽기 · 2026-06-02</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   2026 에너지바우처
                   <br />
-                  <span className="text-2xl text-text-secondary">— 여름 냉방비 최대 70만원 지원 (6월 15일 신청)</span>
+                  <span className="text-2xl text-text-secondary">· 여름 냉방비 최대 70만원 지원 (6월 15일 신청)</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   올여름 에어컨 요금 걱정이 크다면, 에너지바우처를 신청해보세요.
@@ -208,7 +208,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 에너지바우처란? — 누가, 얼마를 받나</h2>
+                <h2 className="text-2xl font-bold">1. 에너지바우처란?, 누가, 얼마를 받나</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   에너지바우처는 <strong>에너지법 §16의3(에너지이용권의 발급 등)</strong>을 근거로 산업통상자원부와 한국에너지공단이 운영하는 에너지복지 제도로,
                   저소득층과 취약계층의 냉방비·난방비 부담을 덜어주는 사업입니다.
@@ -258,9 +258,9 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 신청 대상 — 두 가지 조건을 모두 충족해야 함</h2>
+                <h2 className="text-2xl font-bold">2. 신청 대상, 두 가지 조건을 모두 충족해야 함</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  에너지바우처를 받으려면 <strong>에너지법 §16의3 ①</strong>의 위임에 따라 대통령령이 정한 두 가지 요건 — <strong>소득기준</strong>과 <strong>세대원 특성 기준</strong> — 을 동시에 충족해야 합니다.
+                  에너지바우처를 받으려면 <strong>에너지법 §16의3 ①</strong>의 위임에 따라 대통령령이 정한 두 가지 요건, <strong>소득기준</strong>과 <strong>세대원 특성 기준</strong>: 을 동시에 충족해야 합니다.
                   두 조건 중 하나라도 맞지 않으면 신청 대상이 아닙니다.
                 </p>
                 <div className="space-y-4">
@@ -270,7 +270,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                       <strong>국민기초생활보장법 §7(급여의 종류)</strong>에서 정한 <strong>생계급여, 의료급여, 주거급여, 교육급여</strong> 중 어느 하나의 수급자
                     </p>
                     <p className="text-xs text-text-tertiary">
-                      (즉, 기초생활보장 수급자 명부에 등재되어 있어야 함 — 차상위계층은 별도 사업 대상)
+                      (즉, 기초생활보장 수급자 명부에 등재되어 있어야 함, 차상위계층은 별도 사업 대상)
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -307,7 +307,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 신청 기간과 사용 기간 — 언제 신청하나</h2>
+                <h2 className="text-2xl font-bold">3. 신청 기간과 사용 기간, 언제 신청하나</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   에너지바우처 신청은 한 해에 한 번, <strong>6월 15일부터 12월 31일까지</strong> 가능합니다.
                   승인된 지원금은 <strong>2026년 7월 1일부터 2027년 5월 31일까지</strong> 사용할 수 있습니다.
@@ -334,7 +334,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 2026년 주요 변경점 — 계절별 제한 폐지</h2>
+                <h2 className="text-2xl font-bold">4. 2026년 주요 변경점, 계절별 제한 폐지</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   2026년부터 에너지바우처의 <strong>가장 큰 변화</strong>는 계절별 제한이 없어졌다는 점입니다.
                   이전(2025년까지)에는 하절기(7~9월) 냉방과 동절기(10월~5월) 난방의 지원금이 따로 정해져 있었습니다.
@@ -388,7 +388,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 신청 방법 — 두 가지 선택지</h2>
+                <h2 className="text-2xl font-bold">5. 신청 방법, 두 가지 선택지</h2>
                 <p className="text-text-secondary leading-relaxed">
                   에너지바우처 신청 절차는 <strong>에너지법 §16의3</strong>과 <strong>에너지법 시행규칙 제3조의2</strong>에 따라 운영되며,
                   실무적으로는 <strong>행정복지센터 방문</strong>과 <strong>복지로 온라인</strong> 두 가지 경로 중 편한 방식을 선택하면 됩니다.
@@ -487,7 +487,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">7. 요금 차감 방식 — 자동 적용</h2>
+                <h2 className="text-2xl font-bold">7. 요금 차감 방식, 자동 적용</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   에너지바우처가 승인되면, 전기 요금에서 자동으로 지원금이 차감됩니다.
                   별도의 신청이나 영수증 제출 절차 없이, 전력회사가 자동으로 처리합니다.
@@ -535,27 +535,27 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                     <Link href="/guide/high-oil-price-relief-fund-2026-application/" className="text-primary-600 underline dark:text-primary-500">
                       2026 고유가 민생지원금 신청 가이드
                     </Link>
-                    {' — 에너지바우처와 함께 챙길 유가 부담 완화 지원금'}
+                    {'에너지바우처와 함께 챙길 유가 부담 완화 지원금'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금·복지 달력
                     </Link>
-                    {' — 세금 신청, 복지금 신청 전체 일정'}
+                    {'세금 신청, 복지금 신청 전체 일정'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/lifestyle/" className="text-primary-600 underline dark:text-primary-500">
                       생활 복지
                     </Link>
-                    {' — 주택, 기초생활, 보육, 저소득층 지원 계산기·가이드'}
+                    {'주택, 기초생활, 보육, 저소득층 지원 계산기·가이드'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="2026 에너지바우처 — 여름 냉방비 최대 70만원 지원, 신청 가이드"
+                title="2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 신청 가이드"
                 url={URL}
                 description="저소득층·취약계층 연간 최대 70만원 냉방·난방비 지원. 신청 기한 6월 15일~12월 31일. 대상·신청 방법·필요 서류 완정리."
               />

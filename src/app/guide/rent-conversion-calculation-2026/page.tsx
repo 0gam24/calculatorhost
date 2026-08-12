@@ -248,16 +248,16 @@ export default function RentConversionCalculationPage() {
                 </p>
                 <ol className="list-decimal space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    전환 대상 보증금(차액) 정하기 — 예: 3억 원 전세 중 2억 원 부분을 월세로 전환
+                    전환 대상 보증금(차액) 정하기, 예: 3억 원 전세 중 2억 원 부분을 월세로 전환
                   </li>
                   <li>
-                    현재 기준금리 확인 — 한국은행 공식 기준금리(예: 3.5%)
+                    현재 기준금리 확인, 한국은행 공식 기준금리(예: 3.5%)
                   </li>
                   <li>
-                    법정 전환율 한도 계산 — 기준금리 + 2% = 3.5% + 2% = 5.5%
+                    법정 전환율 한도 계산, 기준금리 + 2% = 3.5% + 2% = 5.5%
                   </li>
                   <li>
-                    월세 계산 — (2억 × 5.5%) ÷ 12 = 약 91.7만 원/월
+                    월세 계산, (2억 × 5.5%) ÷ 12 = 약 91.7만 원/월
                   </li>
                 </ol>
 
@@ -581,7 +581,7 @@ export default function RentConversionCalculationPage() {
                     >
                       전월세 전환 계산기
                     </Link>{' '}
-                    — 보증금과 월세를 양방향으로 실시간 환산
+, 보증금과 월세를 양방향으로 실시간 환산
                   </li>
                   <li>
                     →{' '}
@@ -591,7 +591,7 @@ export default function RentConversionCalculationPage() {
                     >
                       주택임대차보호법 전월세전환율 2026 완벽 가이드
                     </Link>{' '}
-                    — 법정 한도와 법조항 상세 설명
+, 법정 한도와 법조항 상세 설명
                   </li>
                   <li>
                     →{' '}
@@ -601,7 +601,7 @@ export default function RentConversionCalculationPage() {
                     >
                       전월세 인상 5% 상한 2026
                     </Link>{' '}
-                    — 월세 인상률 규제와 전환율의 차이
+, 월세 인상률 규제와 전환율의 차이
                   </li>
                   <li>
                     →{' '}
@@ -611,7 +611,7 @@ export default function RentConversionCalculationPage() {
                     >
                       전세 vs 월세 어느 쪽이 유리한가?
                     </Link>{' '}
-                    — 보증금 규모별 거래 형태 분석
+, 보증금 규모별 거래 형태 분석
                   </li>
                   <li>
                     →{' '}
@@ -621,7 +621,7 @@ export default function RentConversionCalculationPage() {
                     >
                       전세보증금 안전 점검
                     </Link>{' '}
-                    — 전환 전 깡통전세 위험 예방
+, 전환 전 깡통전세 위험 예방
                   </li>
                   <li>
                     →{' '}
@@ -631,7 +631,7 @@ export default function RentConversionCalculationPage() {
                     >
                       부동산 카테고리
                     </Link>{' '}
-                    — 임대차, 매매, 세금 관련 모든 계산기
+, 임대차, 매매, 세금 관련 모든 계산기
                   </li>
                 </ul>
               </section>

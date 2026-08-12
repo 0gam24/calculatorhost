@@ -178,7 +178,7 @@ export default function MonthlyRentTaxCreditPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   월세 세액공제 2026 환급 계산 가이드
                   <br />
-                  <span className="text-2xl text-text-secondary">— 무주택 직장인·프리랜서 17% 환급받는 법</span>
+                  <span className="text-2xl text-text-secondary">· 무주택 직장인·프리랜서 17% 환급받는 법</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 월세를 내고 있는 무주택 세대주라면 최대 127.5만 원까지 환급받을 수 있습니다.
@@ -229,7 +229,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 1. 월세 세액공제란? */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 월세 세액공제란? — 2024년 17%로 인상</h2>
+                <h2 className="text-2xl font-bold">1. 월세 세액공제란?, 2024년 17%로 인상</h2>
                 <p className="text-text-secondary leading-relaxed">
                   월세 세액공제는 무주택 세대주가 월세를 낼 때 일부를 세금에서 직접 차감해주는 제도입니다(조세특례제한법 §95의2).
                   소득공제(소득에서 빼기)가 아니라 세액공제(세금에서 빼기)이므로, 실제 환급 효과가 더 높습니다.
@@ -271,7 +271,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 2. 자격 조건 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 월세 세액공제 자격 조건 — 5가지 필수 요건</h2>
+                <h2 className="text-2xl font-bold">2. 월세 세액공제 자격 조건, 5가지 필수 요건</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-3 font-semibold text-text-primary">필수 자격 5가지</h3>
@@ -318,7 +318,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 3. 공제율 결정 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 공제율 결정 — 17% vs 15% 어디에 해당?</h2>
+                <h2 className="text-2xl font-bold">3. 공제율 결정, 17% vs 15% 어디에 해당?</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
@@ -368,7 +368,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 4. 공제 한도 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 공제 한도 750만 원 — 초과분은 버려집니다</h2>
+                <h2 className="text-2xl font-bold">4. 공제 한도 750만 원, 초과분은 버려집니다</h2>
                 <p className="text-text-secondary leading-relaxed">
                   월세 세액공제의 핵심은 <strong>한도입니다</strong>. 아무리 많은 월세를 내도
                   <strong>연 750만 원</strong>을 초과하면 초과분은 전혀 공제 받을 수 없습니다(버려짐).
@@ -438,7 +438,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 5. 실전 사례 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 실전 3가지 사례 — 환급액 시뮬레이션</h2>
+                <h2 className="text-2xl font-bold">5. 실전 3가지 사례, 환급액 시뮬레이션</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-primary-700 dark:text-primary-300">사례 A: 월세 50만, 연봉 4,500만 원</h3>
@@ -507,7 +507,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 6. 신청 방법 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 월세 세액공제 신청 방법 — 두 가지 경로</h2>
+                <h2 className="text-2xl font-bold">6. 월세 세액공제 신청 방법, 두 가지 경로</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="mb-3 font-semibold text-text-primary">경로 1: 직장인 연말정산 (1월 말~2월)</h3>
@@ -540,7 +540,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 7. 신용카드 소득공제와의 차이 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">7. 신용카드 소득공제 vs 월세 세액공제 — 택일</h2>
+                <h2 className="text-2xl font-bold">7. 신용카드 소득공제 vs 월세 세액공제, 택일</h2>
                 <p className="text-text-secondary leading-relaxed">
                   월세는 현금 거래가 많습니다. 현금영수증을 발급받으면 신용카드 소득공제 대상이 될 수도 있습니다.
                   하지만 <strong>같은 월세액에 대해 두 공제를 동시에 받을 수 없습니다</strong> (조세특례제한법 §95의2 ②).
@@ -596,7 +596,7 @@ export default function MonthlyRentTaxCreditPage() {
 
               {/* 8. 주의사항 */}
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">8. 주의사항 — 함정과 해결책</h2>
+                <h2 className="text-2xl font-bold">8. 주의사항, 함정과 해결책</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
                     <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">함정 1: 배우자가 주택 소유 시</h3>

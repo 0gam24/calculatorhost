@@ -36,14 +36,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '상속세 계산기 2026 — 기초공제 2억·일괄공제 5억',
+    title: '상속세 계산기 2026, 기초공제 2억·일괄공제 5억',
     description: '상속 시 세금을 미리 계산하고 공제 방식을 비교·선택하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속세 계산기 2026 — 기초공제 2억·일괄공제 5억',
+    title: '상속세 계산기 2026, 기초공제 2억·일괄공제 5억',
     description: '상속 시 세금을 미리 계산하고 공제 방식을 비교·선택하세요.',
   },
   other: {
@@ -253,7 +253,7 @@ export default function InheritanceTaxPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <RateBarChart
-                title="상속세 누진세율 — 과세표준 구간별 (상증세법 §26)"
+                title="상속세 누진세율, 과세표준 구간별 (상증세법 §26)"
                 caption="상속세는 과세표준 구간별로 10%에서 50%까지 5단계 누진 적용됩니다(증여세와 동일 세율). 일괄공제 5억(또는 기초공제 2억+인적공제)과 배우자공제(5억~30억)를 차감한 과세표준 기준입니다."
                 unit="%"
                 max={55}

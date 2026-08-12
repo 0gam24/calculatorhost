@@ -39,7 +39,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '부가가치세 계산기 2026 — 일반·간이·환산',
+    title: '부가가치세 계산기 2026, 일반·간이·환산',
     description: '매출세액 − 매입세액 / 간이과세 부가가치율 / VAT 포함↔공급가액 환산.',
     url: URL,
     type: 'website',
@@ -369,7 +369,7 @@ export default function VatPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 부가가치세법
+                      국가법령정보센터, 부가가치세법
                     </a>
                   </li>
                   <li>
@@ -379,7 +379,7 @@ export default function VatPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 부가세 전자신고
+                      국세청 홈택스, 부가세 전자신고
                     </a>
                   </li>
                   <li>
@@ -389,7 +389,7 @@ export default function VatPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 — 부가가치세 안내
+                      국세청, 부가가치세 안내
                     </a>
                   </li>
                 </ul>

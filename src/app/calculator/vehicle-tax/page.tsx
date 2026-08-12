@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/calculator/vehicle-tax/';
 export const metadata: Metadata = {
   // 검색 의도 "자동차세 얼마" 직접 흡수 + 즉답 후크 + 연납 5% 구체 숫자.
   // 한글 33자 — Google SERP 모바일 안전 폭. "calculatorhost" 브랜드는 SERP 도메인으로 노출됨.
-  title: '자동차세 얼마? 배기량별 즉시 계산 2026 — 연납 5% 할인',
+  title: '자동차세 얼마? 배기량별 즉시 계산 2026, 연납 5% 할인',
   // 의도 키워드("얼마") + 페르소나("내 차") + 구체 cc + 페이지 실제 산출 항목 + 신뢰 신호("무료/로그인 없음").
   description:
     '내 차 배기량(1600cc·2000cc·3000cc 등)만 입력하면 자동차세 + 지방교육세 즉시 산출. 2026년 연납 5% 할인·노후차 경감 자동 반영. 회원가입·로그인 없이 무료.',
@@ -235,7 +235,7 @@ export default function VehicleTaxPage() {
               <FaqSection items={FAQ_ITEMS} />
 
               <RateBarChart
-                title="자동차세 배기량별 cc당 세율 — 비영업용 승용차 (지방세법 §127)"
+                title="자동차세 배기량별 cc당 세율, 비영업용 승용차 (지방세법 §127)"
                 caption="비영업용 승용차 자동차세는 배기량 구간별로 cc당 세율이 정해집니다. 1,000cc 이하 경차는 80원/cc, 1,600cc 이하 140원/cc, 1,600cc 초과는 200원/cc입니다. 여기에 지방교육세 30%가 더해지고, 차령 3년차부터 매년 5%씩(최대 50%) 경감됩니다."
                 unit="원/cc"
                 max={220}
@@ -300,12 +300,12 @@ export default function VehicleTaxPage() {
                 </div>
               </section>
 
-              {/* cc별 빠른 조회표 — 검색 의도 직접 매칭 */}
+              {/* cc별 빠른 조회표, 검색 의도 직접 매칭 */}
               <section className="space-y-4" aria-label="배기량별 자동차세 빠른 조회">
                 <h2 className="text-2xl font-bold text-text-primary">cc별 자동차세 빠른 조회 (신차 기준)</h2>
                 <p className="text-text-secondary text-sm">
                   자주 검색되는 배기량의 연간 자동차세 (본세 + 지방교육세 30%, 차령 1년 차 기준).
-                  실제 세액은 차령경감·연납 할인에 따라 달라집니다 — 정확한 계산은 위 계산기 사용.
+                  실제 세액은 차령경감·연납 할인에 따라 달라집니다, 정확한 계산은 위 계산기 사용.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -368,13 +368,13 @@ export default function VehicleTaxPage() {
                   <p className="text-text-primary font-semibold mb-2">경계값 주의</p>
                   <ul className="space-y-1 text-text-secondary">
                     <li>• <strong>1000cc 정확</strong>: 80원/cc 적용 (1001cc부터 140원/cc)</li>
-                    <li>• <strong>1600cc 정확</strong>: 140원/cc 적용 (1601cc부터 200원/cc) — 1cc 차이로 약 9만 원 차이</li>
+                    <li>• <strong>1600cc 정확</strong>: 140원/cc 적용 (1601cc부터 200원/cc), 1cc 차이로 약 9만 원 차이</li>
                     <li>• 연납 신청(1월) 시 약 5% 할인 (지방세법 시행령 §125). 정확한 할인액은 선납 일수에 비례합니다.</li>
                   </ul>
                 </div>
               </section>
 
-              {/* 자동차 취득세 답변 블록 — GSC '자동차 취득세 7%' 쿼리 타깃 + 전용 가이드 라우팅 */}
+              {/* 자동차 취득세 답변 블록, GSC '자동차 취득세 7%' 쿼리 타깃 + 전용 가이드 라우팅 */}
               <section className="space-y-4" aria-label="자동차 취득세">
                 <h2 className="text-2xl font-bold text-text-primary">자동차 취득세는 얼마인가요? (매년 내는 자동차세와 별도)</h2>
                 <p className="text-text-secondary" data-speakable>
@@ -516,7 +516,7 @@ export default function VehicleTaxPage() {
 
               {/* 업데이트 로그 */}
               <section className="text-xs text-text-secondary border-t border-border-base pt-6">
-                <p>업데이트: 2026-06-18 — 전기차·수소차 정액 자동차세(연 13만 원, §127①제3호) FAQ 보강, 법적 근거 §137→§127①제2호 정정 (지방세법 §127·§128·§151·시행령 §125 기준)</p>
+                <p>업데이트: 2026-06-18, 전기차·수소차 정액 자동차세(연 13만 원, §127①제3호) FAQ 보강, 법적 근거 §137→§127①제2호 정정 (지방세법 §127·§128·§151·시행령 §125 기준)</p>
               </section>
 
               {/* 면책조항 */}

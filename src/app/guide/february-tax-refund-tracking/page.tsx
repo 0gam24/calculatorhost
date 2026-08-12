@@ -161,7 +161,7 @@ export default function FebruaryRefundTrackingPage() {
                     <h3 className="mb-2 font-semibold text-text-primary">① 회사 발급 "연말정산 결과 확인서"</h3>
                     <p className="text-sm text-text-secondary">
                       가장 빠른 방법. 1월 말~2월 초 회사 인사팀이 사내 시스템 또는 이메일로 발급.
-                      "차감징수세액" 항목 확인 — <strong>음수 = 환급, 양수 = 추가 납부</strong>.
+                      "차감징수세액" 항목 확인, <strong>음수 = 환급, 양수 = 추가 납부</strong>.
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -205,13 +205,13 @@ export default function FebruaryRefundTrackingPage() {
                   본인 또는 회사가 빠뜨리기 쉬운 공제. 5월 종소세 신고로 정정 가능 → 환급 추가.
                 </p>
                 <ul className="space-y-2 text-sm text-text-secondary">
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>안경·콘택트렌즈</strong> — 의료비 (한도 50만)</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>월세 세액공제</strong> — 무주택·총급여 7천 이하 (한도 750만, 17% = 약 127만)</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>부모님·시부모님 인적공제</strong> — 소득 100만 이하면 1인 150만 공제 (형제 중 1명만)</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>중도 입사 전 직장 자료</strong> — 전 직장 원천징수영수증 추가 합산</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>연말 기부금</strong> — 12월 후반 기부 영수증 누락 사례 多</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">6.</span> <span><strong>주택자금공제</strong> — 무주택 세대주 주택청약저축 240만 한도 40% 공제</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">7.</span> <span><strong>장애인 추가공제</strong> — 본인·가족 장애인 200만 추가 공제</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>안경·콘택트렌즈</strong>: 의료비 (한도 50만)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>월세 세액공제</strong>: 무주택·총급여 7천 이하 (한도 750만, 17% = 약 127만)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>부모님·시부모님 인적공제</strong>: 소득 100만 이하면 1인 150만 공제 (형제 중 1명만)</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>중도 입사 전 직장 자료</strong>: 전 직장 원천징수영수증 추가 합산</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>연말 기부금</strong>: 12월 후반 기부 영수증 누락 사례 多</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">6.</span> <span><strong>주택자금공제</strong>: 무주택 세대주 주택청약저축 240만 한도 40% 공제</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">7.</span> <span><strong>장애인 추가공제</strong>: 본인·가족 장애인 200만 추가 공제</span></li>
                 </ul>
               </section>
 
@@ -260,9 +260,9 @@ export default function FebruaryRefundTrackingPage() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 경정청구는 5년 이내 가능 — 너무 오래된 누락은 못 받음.</li>
+                  <li>• 경정청구는 5년 이내 가능, 너무 오래된 누락은 못 받음.</li>
                   <li>• 추가 납부 결과를 5월 종소세로 줄이려면 누락 공제 명확히 입증 필요.</li>
-                  <li>• 부업 소득 신고 안 하면 가산세 20%+ 부과 — 적은 금액이라도 신고.</li>
+                  <li>• 부업 소득 신고 안 하면 가산세 20%+ 부과, 적은 금액이라도 신고.</li>
                 </ul>
               </section>
 

@@ -76,7 +76,7 @@ const FAQ_ITEMS = [
   {
     question: '취득 후 배우자에게 일부 증여한 후 매도하면 절세되나요?',
     answer:
-      '가능하나 증여세 부담 vs 양도세 절세 비교 필수. 배우자 증여 공제 10년 6억(상증법 §53). 6억 이내 증여는 증여세 0. 그러나 양도세 이월 과세(상증법 §97의2) 적용 — 증여 후 10년 이내 양도 시 증여 전 취득가 기준으로 양도차익 계산 → 절세 효과 무력화 가능. 10년 후 양도해야 효과 발휘.',
+      '가능하나 증여세 부담 vs 양도세 절세 비교 필수. 배우자 증여 공제 10년 6억(상증법 §53). 6억 이내 증여는 증여세 0. 그러나 양도세 이월 과세(상증법 §97의2) 적용, 증여 후 10년 이내 양도 시 증여 전 취득가 기준으로 양도차익 계산 → 절세 효과 무력화 가능. 10년 후 양도해야 효과 발휘.',
   },
 ];
 
@@ -213,7 +213,7 @@ export default function JointOwnershipCgtGuide() {
 
               {/* 6. 사전 증여 후 매도 */}
               <section aria-label="사전 증여 후 매도" className="card border-l-4 border-l-secondary-500">
-                <h2 className="mb-4 text-2xl font-semibold">사전 증여 후 매도 — 10년 후 효과</h2>
+                <h2 className="mb-4 text-2xl font-semibold">사전 증여 후 매도, 10년 후 효과</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   배우자 증여 공제 10년 6억(상속세 및 증여세법 §53)을 활용해 부동산 일부를 증여한 후 매도하면
                   명의가 분산되어 누진세 절세. 단 <strong>증여 후 10년 이내 양도 시 이월 과세(상증법 §97의2)</strong> 적용 →
@@ -241,7 +241,7 @@ export default function JointOwnershipCgtGuide() {
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-semibold">주의사항 + 흔한 오해</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
-                  <li>"공동명의 12억 = 24억" 오해 X — 1세대 합산 12억.</li>
+                  <li>"공동명의 12억 = 24억" 오해 X, 1세대 합산 12억.</li>
                   <li>공동명의 비율과 실제 출자 비율 불일치 → 증여 추정 (증여세 부과 가능).</li>
                   <li>증여 후 10년 이내 양도 → 이월 과세로 절세 효과 무력화.</li>
                   <li>1세대1주택 비과세 적용 시 공동명의 효과 미미 (이미 0원).</li>
@@ -253,11 +253,11 @@ export default function JointOwnershipCgtGuide() {
               <section aria-label="관련 가이드·계산기" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 가이드·계산기</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 단독/공동명의 시뮬</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 단독/공동명의 시뮬</li>
                   <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link></li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link></li>
                   <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link></li>
-                  <li>→ <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link> — 사전 증여 부담 시뮬</li>
+                  <li>→ <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link>, 사전 증여 부담 시뮬</li>
                 </ul>
               </section>
 

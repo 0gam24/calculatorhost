@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연차수당 계산법 2026 | 미사용 연차 1일 통상임금 계산 | calculatorhost' }],
-    title: '연차수당 계산법 2026 — 통상임금 ÷ 209 × 8',
+    title: '연차수당 계산법 2026, 통상임금 ÷ 209 × 8',
     description: '퇴사 전에 꼭 알아야 할 연차수당 정확 계산. 법정 최대 25일, 근로기준법 §60으로 회사에 청구하는 방법.',
     url: URL,
     type: 'article',
@@ -94,7 +94,7 @@ export default function AnnualLeaveAllowancePage() {
     { name: '연차수당 계산법' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연차수당 계산법 2026 — 미사용 연차 1일 통상임금 ÷ 209 × 8',
+    headline: '연차수당 계산법 2026, 미사용 연차 1일 통상임금 ÷ 209 × 8',
     description:
       '퇴사 시 받아야 할 연차수당을 정확히 계산하는 법. 근로기준법 §60 기준 1일 통상임금 계산, 연차 발생 및 소멸 규칙, 회사에 청구하는 방법을 완벽 해설합니다.',
     url: URL,
@@ -140,7 +140,7 @@ export default function AnnualLeaveAllowancePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">근로 · 8분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  연차수당 계산법 2026 — 미사용 연차 정확히 받기
+                  연차수당 계산법 2026, 미사용 연차 정확히 받기
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   퇴사하기 전에 가장 많이 받는 질문은 "남은 연차는 돈으로 받을 수 있나요?"입니다.
@@ -192,7 +192,7 @@ export default function AnnualLeaveAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연차 발생 규칙 — 몇 일을 받을 수 있나?</h2>
+                <h2 className="text-2xl font-bold">연차 발생 규칙, 몇 일을 받을 수 있나?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 §60①②에 따르면 연차 발생 규칙은 다음과 같습니다.
                 </p>
@@ -223,10 +223,10 @@ export default function AnnualLeaveAllowancePage() {
                 </p>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <strong>✓ 포함:</strong> 기본급, 직책급, 기술급, 근속급, 보직수당(정기적이면)
+                    <strong>포함:</strong> 기본급, 직책급, 기술급, 근속급, 보직수당(정기적이면)
                   </li>
                   <li>
-                    <strong>✗ 제외:</strong> 상여금, 복리후생비, 교통비, 식사비, 1회성 보상, 초과근무수당
+                    <strong>제외:</strong> 상여금, 복리후생비, 교통비, 식사비, 1회성 보상, 초과근무수당
                   </li>
                 </ul>
                 <p className="mt-3 text-sm text-text-tertiary">
@@ -236,7 +236,7 @@ export default function AnnualLeaveAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연차수당 정확히 계산하기 — 공식과 단계별 예시</h2>
+                <h2 className="text-2xl font-bold">연차수당 정확히 계산하기, 공식과 단계별 예시</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   연차수당 계산은 다음 공식을 따릅니다.
                 </p>
@@ -274,7 +274,7 @@ export default function AnnualLeaveAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연차 소멸 규칙 — 발생일로부터 1년</h2>
+                <h2 className="text-2xl font-bold">연차 소멸 규칙, 발생일로부터 1년</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로기준법 §60⑦에 따르면 연차는 발생일로부터 <strong>1년간 미사용 시 소멸</strong>됩니다.
                   이는 매우 중요한 규칙입니다.
@@ -296,7 +296,7 @@ export default function AnnualLeaveAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연차수당 청구 방법 — 퇴사 시 체크리스트</h2>
+                <h2 className="text-2xl font-bold">연차수당 청구 방법, 퇴사 시 체크리스트</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   퇴사할 때 연차수당을 받기 위한 실질적인 방법을 정리했습니다.
                 </p>
@@ -335,7 +335,7 @@ export default function AnnualLeaveAllowancePage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연차수당 세금 — 얼마나 공제되나?</h2>
+                <h2 className="text-2xl font-bold">연차수당 세금, 얼마나 공제되나?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   연차수당은 근로소득으로 간주되어 소득세, 지방소득세, 4대보험료가 공제됩니다.
                   퇴직금처럼 특별한 세제 혜택이 없으므로, 계산할 때 이를 고려해야 합니다.
@@ -420,25 +420,25 @@ export default function AnnualLeaveAllowancePage() {
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {' — 월급에서 4대보험·세금이 얼마나 공제되는지 확인'}
+                    {'월급에서 4대보험·세금이 얼마나 공제되는지 확인'}
                   </li>
                   <li>
                     <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
                       연봉협상 가이드
                     </Link>
-                    {' — 이직 시 정확한 세후 수령액으로 협상하기'}
+                    {'이직 시 정확한 세후 수령액으로 협상하기'}
                   </li>
                   <li>
                     <Link href="/guide/weekly-holiday-allowance-2026/" className="font-semibold text-primary-500 hover:underline">
                       주휴수당 계산법 2026
                     </Link>
-                    {' — 주중에 근무한 경우 받을 수 있는 수당'}
+                    {'주중에 근무한 경우 받을 수 있는 수당'}
                   </li>
                   <li>
                     <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       4대보험 요율 2026
                     </Link>
-                    {' — 국민연금, 건강보험, 고용보험 최신 세율'}
+                    {'국민연금, 건강보험, 고용보험 최신 세율'}
                   </li>
                 </ul>
               </section>

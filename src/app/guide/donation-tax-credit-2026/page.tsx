@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기부금 세액공제 2026 | 15%·30% 공제율·한도·고향사랑기부금' }],
-    title: '기부금 세액공제 2026 — 기부액의 15~30%를 세금에서 직접 공제',
+    title: '기부금 세액공제 2026, 기부액의 15~30%를 세금에서 직접 공제',
     description: '기부금 공제율 1천만원 이하 15%, 초과분 30%. 정치자금·고향사랑·법정기부금별 공제 차이와 한도 정확 계산법.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기부금 세액공제 2026 — 15%·30% 공제율과 정치자금·고향사랑 기부금',
+    title: '기부금 세액공제 2026, 15%·30% 공제율과 정치자금·고향사랑 기부금',
     description: '기부금 1천만원 이하 15% 공제, 초과분 30%. 한도와 대상기부금 확인하고 절세하세요.',
   },
 };
@@ -100,7 +100,7 @@ export default function DonationTaxCredit2026Page() {
     { name: '기부금 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '기부금 세액공제 2026 — 15%·30% 공제율과 한도·정치자금·고향사랑기부금',
+    headline: '기부금 세액공제 2026, 15%·30% 공제율과 한도·정치자금·고향사랑기부금',
     description:
       '기부금 세액공제의 정확한 공제율(1천만 이하 15%, 초과분 30%), 한도(소득의 30%), 대상기부금(정치자금·고향사랑·법정기부금), 계산 사례, 개인사업자 다루기까지 완벽 정리.',
     url: URL,
@@ -148,7 +148,7 @@ export default function DonationTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   기부금 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 15%·30% 공제율·한도·정치자금·고향사랑기부금</span>
+                  <span className="text-2xl text-text-secondary">· 15%·30% 공제율·한도·정치자금·고향사랑기부금</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   종합소득세 계산 때 기부금을 낸 금액의 일정 비율을 직접 세금에서 뺄 수 있는 제도가 바로 기부금 세액공제입니다. 소득세법 §59의4에 따라 기부액 규모별로 15%와 30%의 두 단계 공제율이 적용되며, 대상기부금도 일반기부금·정치자금·고향사랑기부금별로 다릅니다. 이 가이드는 기부금 세액공제의 정확한 공제율, 한도, 대상기부금을 정리하고, 실제 계산 방법과 함정까지 완전히 설명해드립니다.
@@ -176,7 +176,7 @@ export default function DonationTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">기부금 공제율 — 15%와 30%의 두 단계</h2>
+                <h2 className="text-2xl font-bold">기부금 공제율, 15%와 30%의 두 단계</h2>
                 <p>
                   기부금 세액공제율은 기부 규모에 따라 누진적으로 적용됩니다(소득세법 §59의4). 1천만원 이하의 기부는 15%, 이를 초과하는 부분은 30%의 공제율이 적용됩니다.
                 </p>
@@ -262,7 +262,7 @@ export default function DonationTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">정치자금 기부금 — 별도의 높은 공제율</h2>
+                <h2 className="text-2xl font-bold">정치자금 기부금, 별도의 높은 공제율</h2>
                 <p>
                   정치자금 기부금은 일반기부금과 다른 공제율이 적용됩니다. 민주주의 정치 활동을 장려하기 위해 의도적으로 공제율이 더 높게 설정되었습니다(소득세법 §59의4 1항 2호).
                 </p>
@@ -299,7 +299,7 @@ export default function DonationTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">고향사랑기부금 — 10만원까지 100% 공제</h2>
+                <h2 className="text-2xl font-bold">고향사랑기부금, 10만원까지 100% 공제</h2>
                 <p>
                   고향사랑기부금은 2022년 신설된 제도로, 지자체에 기부한 금액에 대해 특별한 공제 혜택을 제공합니다. 기부자는 세액공제뿐만 아니라 지자체 답례품도 함께 받을 수 있습니다(고향사랑기부금법).
                 </p>
@@ -336,7 +336,7 @@ export default function DonationTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">기부금 공제 한도 — 소득의 30% 제한</h2>
+                <h2 className="text-2xl font-bold">기부금 공제 한도, 소득의 30% 제한</h2>
                 <p>
                   기부금 세액공제를 받으려면 기부 금액이 한도 이내여야 합니다. 한도는 기부금의 종류에 따라 다릅니다(소득세법 §59의4).
                 </p>
@@ -359,7 +359,7 @@ export default function DonationTaxCredit2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
-                <h2 className="text-2xl font-bold">개인사업자의 기부금 처리 — 세액공제가 아닌 필요경비</h2>
+                <h2 className="text-2xl font-bold">개인사업자의 기부금 처리, 세액공제가 아닌 필요경비</h2>
                 <p>
                   개인사업자가 사업과 관련하여 기부금을 낸 경우, 일반인처럼 세액공제를 받을 수 없습니다. 대신 필요경비로 산입됩니다(소득세법 §25).
                 </p>

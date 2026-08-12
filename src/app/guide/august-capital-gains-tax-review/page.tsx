@@ -174,11 +174,11 @@ export default function AugustCgtGuide() {
               <section aria-label="5가지 검토 핵심" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">8월에 반드시 점검할 5가지</h2>
                 <ol className="list-inside list-decimal space-y-3 text-text-secondary" data-speakable>
-                  <li><strong>일시적 2주택 3년 만료 D-day</strong> — 신규 취득 잔금일 +3년이 만료점(시행령 §155). 1일 초과 양도 시 비과세 특례 상실.</li>
-                  <li><strong>장기보유공제 80% 도달</strong> — 1세대1주택 12억 초과분, 보유 10년+거주 10년 동시(소득세법 §95).</li>
-                  <li><strong>단기 1년/2년 경계</strong> — 1년 미만 70% / 1~2년 60% / 2년 이상 누진(§104①2호 가목).</li>
-                  <li><strong>양도 시점 vs 귀속연도</strong> — 잔금 청산일 기준(§98). 8월 양도 = 2026 귀속, 2027년 5월 신고.</li>
-                  <li><strong>세법 개정안 모니터링</strong> — 정부 하반기 개정 발표 시 2027 귀속분부터 적용 가능 → 8월 양도가 보수적.</li>
+                  <li><strong>일시적 2주택 3년 만료 D-day</strong>: 신규 취득 잔금일 +3년이 만료점(시행령 §155). 1일 초과 양도 시 비과세 특례 상실.</li>
+                  <li><strong>장기보유공제 80% 도달</strong>: 1세대1주택 12억 초과분, 보유 10년+거주 10년 동시(소득세법 §95).</li>
+                  <li><strong>단기 1년/2년 경계</strong>: 1년 미만 70% / 1~2년 60% / 2년 이상 누진(§104①2호 가목).</li>
+                  <li><strong>양도 시점 vs 귀속연도</strong>: 잔금 청산일 기준(§98). 8월 양도 = 2026 귀속, 2027년 5월 신고.</li>
+                  <li><strong>세법 개정안 모니터링</strong>: 정부 하반기 개정 발표 시 2027 귀속분부터 적용 가능 → 8월 양도가 보수적.</li>
                 </ol>
               </section>
 
@@ -202,7 +202,7 @@ export default function AugustCgtGuide() {
 
               {/* 3. 장기보유공제 80% */}
               <section aria-label="장기보유공제 80%" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">장기보유공제 80% 도달 — 보유 10년 + 거주 10년</h2>
+                <h2 className="mb-4 text-2xl font-semibold">장기보유공제 80% 도달, 보유 10년 + 거주 10년</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
                   장기보유특별공제(소득세법 §95)는 1세대1주택 비과세 12억 초과분에 적용. 보유 기간 연 4% + 거주 기간 연 4%,
                   각 최대 40% = 합 80%. 보유 10년 + 거주 10년 동시 충족이 80% 도달 조건.
@@ -231,7 +231,7 @@ export default function AugustCgtGuide() {
 
               {/* 4. 단기 1년/2년 */}
               <section aria-label="단기 보유 1년/2년 경계" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">단기 1년/2년 경계 — 한 달 차이가 수백만 원</h2>
+                <h2 className="mb-4 text-2xl font-semibold">단기 1년/2년 경계, 한 달 차이가 수백만 원</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm" data-speakable>
                     <caption className="sr-only">주택 양도세 단기 보유 세율</caption>
@@ -254,7 +254,7 @@ export default function AugustCgtGuide() {
                 </p>
               </section>
 
-              {/* 5. FAQ (중간 배치 — GEO) */}
+              {/* 5. FAQ (중간 배치, GEO) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 6. 양도 시점 vs 귀속 */}
@@ -278,11 +278,11 @@ export default function AugustCgtGuide() {
               <section aria-label="절세 5가지" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">양도세 절세 5가지</h2>
                 <div className="space-y-3 text-text-secondary">
-                  <div><strong className="text-text-primary">① 기한 내 신고</strong> — 양도일 속한 달 말일부터 2개월 이내. 무신고 가산세 20%(국세기본법 §47의2).</div>
-                  <div><strong className="text-text-primary">② 1세대1주택 비과세 재확인</strong> — 보유 2년 + 거주 요건 + 12억 이하(§89). 12억 초과분만 과세.</div>
-                  <div><strong className="text-text-primary">③ 장기보유공제 최대 활용</strong> — 거주 기간 단절 주의. 보유 10년+거주 10년이면 80%(§95).</div>
-                  <div><strong className="text-text-primary">④ 부부 공동명의</strong> — 양도소득금액 분할로 누진세율 상위 구간 회피.</div>
-                  <div><strong className="text-text-primary">⑤ 일시적 2주택 3년 D-day</strong> — 1일 초과 시 비과세 특례 상실. 잔금일 정확히 기록.</div>
+                  <div><strong className="text-text-primary">① 기한 내 신고</strong>: 양도일 속한 달 말일부터 2개월 이내. 무신고 가산세 20%(국세기본법 §47의2).</div>
+                  <div><strong className="text-text-primary">② 1세대1주택 비과세 재확인</strong>: 보유 2년 + 거주 요건 + 12억 이하(§89). 12억 초과분만 과세.</div>
+                  <div><strong className="text-text-primary">③ 장기보유공제 최대 활용</strong>: 거주 기간 단절 주의. 보유 10년+거주 10년이면 80%(§95).</div>
+                  <div><strong className="text-text-primary">④ 부부 공동명의</strong>: 양도소득금액 분할로 누진세율 상위 구간 회피.</div>
+                  <div><strong className="text-text-primary">⑤ 일시적 2주택 3년 D-day</strong>: 1일 초과 시 비과세 특례 상실. 잔금일 정확히 기록.</div>
                 </div>
               </section>
 
@@ -290,10 +290,10 @@ export default function AugustCgtGuide() {
               <section aria-label="주의사항" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-3 text-xl font-semibold">주의사항</h2>
                 <ul className="list-inside list-disc space-y-1.5 text-sm text-text-secondary">
-                  <li>잔금 청산일과 등기 접수일 중 빠른 날이 양도일 — 양도 직전 점검 필수.</li>
-                  <li>거주 기간은 주민등록 이력 기준 — 이사 후 재입주는 단절로 처리.</li>
-                  <li>조정대상지역 여부는 국토부 공고 확인 — 2026년 일부 해제 진행 중.</li>
-                  <li>다주택·상속·증여 병행 케이스는 세무사 상담 권장 — 본 가이드는 일반론.</li>
+                  <li>잔금 청산일과 등기 접수일 중 빠른 날이 양도일, 양도 직전 점검 필수.</li>
+                  <li>거주 기간은 주민등록 이력 기준, 이사 후 재입주는 단절로 처리.</li>
+                  <li>조정대상지역 여부는 국토부 공고 확인, 2026년 일부 해제 진행 중.</li>
+                  <li>다주택·상속·증여 병행 케이스는 세무사 상담 권장, 본 가이드는 일반론.</li>
                 </ul>
               </section>
 
@@ -301,12 +301,12 @@ export default function AugustCgtGuide() {
               <section aria-label="관련 계산기·가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
-                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link> — 본 가이드 시나리오 즉시 시뮬</li>
-                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link> — 신규 1년 후·종전 3년 내</li>
-                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link> — 1세대1주택 보유 4% × 거주 4%</li>
-                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세 한도</Link> — 비례 과세 공식</li>
-                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 누진세 분산</li>
-                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지 팁</Link> — 종합 절세 전략 hub</li>
+                  <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 본 가이드 시나리오 즉시 시뮬</li>
+                  <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 비과세 3년</Link>, 신규 1년 후·종전 3년 내</li>
+                  <li>→ <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80%</Link>, 1세대1주택 보유 4% × 거주 4%</li>
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세 한도</Link>, 비례 과세 공식</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link>, 누진세 분산</li>
+                  <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지 팁</Link>, 종합 절세 전략 hub</li>
                 </ul>
               </section>
 
@@ -318,7 +318,7 @@ export default function AugustCgtGuide() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §89 (1세대1주택 비과세) · §94 (양도소득) · §95 (장기보유특별공제) · §98 (양도일) · §104 (양도세율) · §104의3 (다주택 중과) · §118 (예정신고) · 시행령 §154 (1세대1주택 비과세) · §155 (일시적 2주택) · §159의3 (장기보유공제 — 일반) · 국세기본법 §47의2·§47의4 (가산세). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
+                  <strong>법적 근거</strong>: 소득세법 §89 (1세대1주택 비과세) · §94 (양도소득) · §95 (장기보유특별공제) · §98 (양도일) · §104 (양도세율) · §104의3 (다주택 중과) · §118 (예정신고) · 시행령 §154 (1세대1주택 비과세) · §155 (일시적 2주택) · §159의3 (장기보유공제, 일반) · 국세기본법 §47의2·§47의4 (가산세). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
                 </p>
                 <p className="mb-2">
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 다주택, 상속·증여 병행, 해외 거주, 임대 등 개별 사정은 반드시 세무사 또는 국세청 상담을 통해 확정하시기 바랍니다.

@@ -288,7 +288,7 @@ export default function WorkCategoryPage() {
                 })()}
               </section>
 
-              {/* 관련 가이드 — GUIDES 카테고리별 자동 필터 + CROSS_GUIDES. SSoT 단일 source. */}
+              {/* 관련 가이드, GUIDES 카테고리별 자동 필터 + CROSS_GUIDES. SSoT 단일 source. */}
               {(() => {
                 const labels = GUIDE_CATEGORY_LABEL.work;
                 const cross = new Set(CROSS_GUIDES.work);
@@ -317,7 +317,7 @@ export default function WorkCategoryPage() {
                 );
               })()}
 
-              {/* 관련 용어 — /glossary/ deep-link. */}
+              {/* 관련 용어, /glossary/ deep-link. */}
               {(() => {
                 const ref = CATEGORY_GLOSSARY.work;
                 if (!ref) return null;

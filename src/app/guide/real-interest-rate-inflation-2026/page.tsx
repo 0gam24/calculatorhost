@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-28';
 const DATE_MODIFIED = '2026-06-28';
 
 export const metadata: Metadata = {
-  title: '실질금리 계산 2026 — 예금 이자가 물가를 이기려면',
+  title: '실질금리 계산 2026, 예금 이자가 물가를 이기려면',
   description:
     '명목금리와 실질금리의 차이를 명확히 이해하고, 세후 명목금리에서 물가상승률을 차감하는 실질 수익률을 계산합니다. 피셔방정식·이자소득세 15.4% 반영.',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '실질금리 계산 2026 — 예금 이자가 물가를 이기려면',
+        alt: '실질금리 계산 2026, 예금 이자가 물가를 이기려면',
       },
     ],
     title: '실질금리 계산 2026',
@@ -101,7 +101,7 @@ export default function RealInterestRateInflation2026Page() {
     { name: '실질금리 계산 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '실질금리 계산 2026 — 예금 이자가 물가를 이기려면',
+    headline: '실질금리 계산 2026, 예금 이자가 물가를 이기려면',
     description:
       '명목금리 vs 실질금리. 세후 수익률에서 물가상승률을 차감하는 정확한 계산법과 실전 사례.',
     url: URL,
@@ -171,7 +171,7 @@ export default function RealInterestRateInflation2026Page() {
                   금융 · 10분 읽기 · 2026-06-28
                 </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  실질금리 계산 2026 — 예금 이자가 물가를 이기려면
+                  실질금리 계산 2026, 예금 이자가 물가를 이기려면
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   정기예금이 연 4% 이자를 준다면, 당신의 실제 구매력은 4% 늘어날까요? 아닙니다.
@@ -552,7 +552,7 @@ export default function RealInterestRateInflation2026Page() {
                     >
                       정기예금 이자 계산기
                     </Link>{' '}
-                    — 명목금리와 세후 이자 계산
+, 명목금리와 세후 이자 계산
                   </li>
                   <li>
                     →{' '}
@@ -562,7 +562,7 @@ export default function RealInterestRateInflation2026Page() {
                     >
                       정기적금 이자 계산기
                     </Link>{' '}
-                    — 월불입 적금의 세후 이자 계산
+, 월불입 적금의 세후 이자 계산
                   </li>
                   <li>
                     →{' '}
@@ -572,7 +572,7 @@ export default function RealInterestRateInflation2026Page() {
                     >
                       인플레이션 계산기
                     </Link>{' '}
-                    — 물가상승으로 인한 화폐가치 변화
+, 물가상승으로 인한 화폐가치 변화
                   </li>
                   <li>
                     →{' '}
@@ -582,7 +582,7 @@ export default function RealInterestRateInflation2026Page() {
                     >
                       인플레이션과 화폐가치 2026
                     </Link>{' '}
-                    — 명목 vs 실질의 완전 해설
+, 명목 vs 실질의 완전 해설
                   </li>
                   <li>
                     →{' '}
@@ -592,7 +592,7 @@ export default function RealInterestRateInflation2026Page() {
                     >
                       정기예금 vs 정기적금 vs 파킹통장 2026
                     </Link>{' '}
-                    — 세 가지 저축 상품 비교
+, 세 가지 저축 상품 비교
                   </li>
                   <li>
                     →{' '}
@@ -602,7 +602,7 @@ export default function RealInterestRateInflation2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 모든 금융 계산기 및 가이드
+, 모든 금융 계산기 및 가이드
                   </li>
                 </ul>
               </section>

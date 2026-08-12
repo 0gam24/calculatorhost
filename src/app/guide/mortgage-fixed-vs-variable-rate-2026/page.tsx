@@ -106,7 +106,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
     { name: '주담대 고정 vs 변동금리 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주담대 고정 vs 변동금리 2026 — 어떤 상황에 뭐가 유리할까',
+    headline: '주담대 고정 vs 변동금리 2026, 어떤 상황에 뭐가 유리할까',
     description:
       '주택담보대출의 고정금리, 변동금리, 혼합형 특징을 비교하고 선택 기준을 정리합니다. 금리 결정 방식, 월부담, 이자 비용, 리스크를 분석합니다.',
     url: URL,
@@ -699,7 +699,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 금리, 기간, 상환방식을 입력하여 월 상환액과 총이자 계산
+, 금리, 기간, 상환방식을 입력하여 월 상환액과 총이자 계산
                   </li>
                   <li>
                     →{' '}
@@ -709,7 +709,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV)
                     </Link>{' '}
-                    — 주택담보대출 최대 한도를 DSR, LTV 기준으로 확인
+, 주택담보대출 최대 한도를 DSR, LTV 기준으로 확인
                   </li>
                   <li>
                     →{' '}
@@ -719,7 +719,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                     >
                       원리금균등 vs 원금균등 2026
                     </Link>{' '}
-                    — 상환 방식에 따른 월부담과 총이자 비교
+, 상환 방식에 따른 월부담과 총이자 비교
                   </li>
                   <li>
                     →{' '}
@@ -729,7 +729,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                     >
                       중도상환수수료 계산 및 면제 조건 2026
                     </Link>{' '}
-                    — 대환 또는 조기상환 시 발생하는 수수료 정보
+, 대환 또는 조기상환 시 발생하는 수수료 정보
                   </li>
                   <li>
                     →{' '}
@@ -739,7 +739,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                     >
                       LTV 계산기 및 대출 한도
                     </Link>{' '}
-                    — 주택 가격과 대출액 비율로 한도 확인
+, 주택 가격과 대출액 비율로 한도 확인
                   </li>
                   <li>
                     →{' '}
@@ -749,7 +749,7 @@ export default function MortgageFixedVsVariableRate2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기와 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기와 가이드
                   </li>
                 </ul>
               </section>

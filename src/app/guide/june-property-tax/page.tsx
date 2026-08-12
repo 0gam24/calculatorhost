@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 완벽 가이드 2026 | calculatorhost' }],
-    title: '재산세 완벽 가이드 2026 — 7월 납부 시즌 직전 필독',
+    title: '재산세 완벽 가이드 2026, 7월 납부 시즌 직전 필독',
     description: '공시가격 × 공정시장가액 60% 산정 + 1세대1주택 특례 + 분할 납부.',
     url: URL,
     type: 'article',
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 완벽 가이드 2026 — 7월 납부 시즌',
+    title: '재산세 완벽 가이드 2026, 7월 납부 시즌',
     description: '공시가격·공정시장가액·1세대1주택 특례·분할 납부 정리.',
 
   },
@@ -88,7 +88,7 @@ const FAQ_ITEMS = [
   {
     question: '재산세 분할 납부·신용카드 납부는?',
     answer:
-      '본세 250만 원 초과 시 분할 납부 신청 가능 (납기 다음 달 말까지 2개월 분납). 신청은 위택스(wetax.go.kr) 또는 시·군·구청. 신용카드 납부는 위택스에서 가능 — 일부 카드사 무이자 할부 (2~6개월). 단, 신용카드 결제 수수료 약 0.8% 본인 부담.',
+      '본세 250만 원 초과 시 분할 납부 신청 가능 (납기 다음 달 말까지 2개월 분납). 신청은 위택스(wetax.go.kr) 또는 시·군·구청. 신용카드 납부는 위택스에서 가능, 일부 카드사 무이자 할부 (2~6개월). 단, 신용카드 결제 수수료 약 0.8% 본인 부담.',
   },
   {
     question: '재산세와 종합부동산세 차이는?',
@@ -104,7 +104,7 @@ export default function JunePropertyTaxPage() {
     { name: '재산세 완벽 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 완벽 가이드 (2026) — 6월 부과·7월 납부·공정시장가액 60%',
+    headline: '재산세 완벽 가이드 (2026), 6월 부과·7월 납부·공정시장가액 60%',
     description:
       '재산세 과세 기준일·납부 기한·계산식·1세대1주택 특례·세부담 상한·분할 납부 한 페이지.',
     url: URL,
@@ -151,7 +151,7 @@ export default function JunePropertyTaxPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 완벽 가이드 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">— 6월 부과·7월 납부·공정시장가액 60%</span>
+                  <span className="text-2xl text-text-secondary">· 6월 부과·7월 납부·공정시장가액 60%</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   재산세는 매년 6월 1일 부동산 소유자에게 부과되어 7월·9월 두 차례 납부합니다.
@@ -187,7 +187,7 @@ export default function JunePropertyTaxPage() {
                     <tbody>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2 font-bold">6월 1일 (월)</td>
-                        <td className="px-3 py-2 font-bold">주의: 과세 기준일 — 이날 0시 기준 소유자에게 부과</td>
+                        <td className="px-3 py-2 font-bold">주의: 과세 기준일, 이날 0시 기준 소유자에게 부과</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2">7월 초</td>
@@ -211,7 +211,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 재산세란? — 누구에게 부과되나</h2>
+                <h2 className="text-2xl font-bold">1. 재산세란?, 누구에게 부과되나</h2>
                 <p className="text-text-secondary leading-relaxed">
                   재산세는 부동산(주택·토지·건축물)·자동차·선박·항공기 보유자에게 매년 부과되는
                   지방세입니다. 시·군·구청에서 부과·징수하며, 6월 1일 기준 소유자에게 부과합니다
@@ -227,7 +227,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 재산세 계산식 — 단계별 정리</h2>
+                <h2 className="text-2xl font-bold">2. 재산세 계산식, 단계별 정리</h2>
                 <div className="rounded-lg border border-primary-500/20 bg-primary-500/5 p-4 mb-4 text-sm">
                   <strong className="text-text-primary">공정시장가액비율 60%란?</strong>
                   <p className="mt-1 text-text-secondary">
@@ -284,7 +284,7 @@ export default function JunePropertyTaxPage() {
                   </ol>
                 </div>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
-                  <strong className="text-text-primary">시뮬레이션 — 공시 5억 1세대1주택 (도시지역)</strong>
+                  <strong className="text-text-primary">시뮬레이션, 공시 5억 1세대1주택 (도시지역)</strong>
                   <ul className="mt-2 text-text-secondary space-y-1">
                     <li>과세표준: 5억 × 60% = 3억</li>
                     <li>본세 (특례): (6천만 × 0.05%) + (9천만 × 0.1%) + (1.5억 × 0.2%) = 3만 + 9만 + 30만 = <strong>42만 원</strong></li>
@@ -303,7 +303,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 1세대1주택 특례 — 절세 50%</h2>
+                <h2 className="text-2xl font-bold">3. 1세대1주택 특례, 절세 50%</h2>
                 <p className="text-text-secondary leading-relaxed">
                   공시가격 9억 원 이하 1주택 보유 1세대에게 적용되는 특례 세율. 일반 세율 대비 약
                   50% 낮은 세율 적용. 위택스에서 자동 판정되어 별도 신청 불필요.
@@ -319,7 +319,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 세부담 상한제 — 급등 방지</h2>
+                <h2 className="text-2xl font-bold">4. 세부담 상한제, 급등 방지</h2>
                 <p className="text-text-secondary leading-relaxed">
                   공시가격 급등으로 재산세가 폭증하지 않도록 전년 대비 상승 한도를 설정하는 제도
                   (지방세법 §122).
@@ -346,22 +346,22 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 납부 방법 — 5가지 옵션</h2>
+                <h2 className="text-2xl font-bold">5. 납부 방법, 5가지 옵션</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">① 위택스(wetax.go.kr) — 가장 편리</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">① 위택스(wetax.go.kr), 가장 편리</h3>
                     <p className="text-sm text-text-secondary">로그인 → "납부" → 재산세 선택 → 계좌이체·신용카드·간편결제</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">② 신용카드 — 무이자 할부 가능</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">② 신용카드, 무이자 할부 가능</h3>
                     <p className="text-sm text-text-secondary">위택스 또는 카드사 앱. 일부 카드사 2~6개월 무이자. 결제 수수료 약 0.8% 본인 부담.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">③ 분할 납부 — 본세 250만 원 초과 시</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">③ 분할 납부, 본세 250만 원 초과 시</h3>
                     <p className="text-sm text-text-secondary">납기 다음 달 말까지 2개월 분납. 위택스 또는 시·군·구청 신청.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-1">④ 자동이체 신청 — 한 번 등록 매년 자동</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">④ 자동이체 신청, 한 번 등록 매년 자동</h3>
                     <p className="text-sm text-text-secondary">위택스 자동이체 신청. 일부 시·군은 0.5% 할인.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
@@ -372,7 +372,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 재산세 vs 종합부동산세 — 차이 정리</h2>
+                <h2 className="text-2xl font-bold">6. 재산세 vs 종합부동산세, 차이 정리</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
                     <thead>
@@ -400,29 +400,29 @@ export default function JunePropertyTaxPage() {
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 본 가이드는 일반론이며 개별 사정(상속·증여 직후, 1세대 판정 모호)은 시·군청 상담 권장.</li>
                   <li>• 공정시장가액비율은 정부 정책에 따라 변경 가능 (시행령 §109).</li>
-                  <li>• 1세대1주택 특례는 6월 1일 기준 — 5월말 매수 시 본인이 특례 받을지 매도자가 받을지 계약서 확인.</li>
-                  <li>• 미납 가산금 누적 — 7월 31일·9월 30일 기한 절대 엄수.</li>
+                  <li>• 1세대1주택 특례는 6월 1일 기준, 5월말 매수 시 본인이 특례 받을지 매도자가 받을지 계약서 확인.</li>
+                  <li>• 미납 가산금 누적, 7월 31일·9월 30일 기한 절대 엄수.</li>
                 </ul>
               </section>
 
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link> — 본인 공시가격으로 즉시 시뮬레이션</li>
+                  <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link>, 본인 공시가격으로 즉시 시뮬레이션</li>
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link></li>
-                  <li>→ <Link href="/guide/september-property-tax-second/" className="text-primary-600 underline dark:text-primary-500">9월 재산세 2차 납부 가이드</Link> — 후속 납부 일정</li>
-                  <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link> — 12월 종부세 사전 절세</li>
-                  <li>→ <Link href="/guide/comprehensive-real-estate-tax-who-pays-2026/" className="text-primary-600 underline dark:text-primary-500">종부세 누가 내나 2026</Link> — 재산세와 별도로 부과되는 종부세 대상·공제 기준</li>
-                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link> — 명의 분산 시 보유세 영향</li>
-                  <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link> — 임대주택 보유세 함께 검토</li>
+                  <li>→ <Link href="/guide/september-property-tax-second/" className="text-primary-600 underline dark:text-primary-500">9월 재산세 2차 납부 가이드</Link>, 후속 납부 일정</li>
+                  <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link>, 12월 종부세 사전 절세</li>
+                  <li>→ <Link href="/guide/comprehensive-real-estate-tax-who-pays-2026/" className="text-primary-600 underline dark:text-primary-500">종부세 누가 내나 2026</Link>, 재산세와 별도로 부과되는 종부세 대상·공제 기준</li>
+                  <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link>, 명의 분산 시 보유세 영향</li>
+                  <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link>, 임대주택 보유세 함께 검토</li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">가이드: 양도세 절세 7가지</Link></li>
-                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전 — 공정시장가액비율·1세대1주택·이월과세 등</Link></li>
+                  <li>→ <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">용어사전, 공정시장가액비율·1세대1주택·이월과세 등</Link></li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="재산세 완벽 가이드 (2026) — 6월 부과·7월 납부"
+                title="재산세 완벽 가이드 (2026), 6월 부과·7월 납부"
                 url={URL}
                 description="공시가격 × 공정시장가액 60% + 1세대1주택 특례 + 분할 납부."
               />

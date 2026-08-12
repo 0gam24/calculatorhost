@@ -53,7 +53,7 @@ export function BmiCalculator() {
     if (result.category === 'normal') {
       return (
         <div className="rounded-lg bg-primary-500/5 border border-primary-500/30 px-4 py-3">
-          <p className="text-sm text-text-primary font-medium">✓ 정상 범위입니다.</p>
+          <p className="text-sm text-text-primary font-medium">정상 범위입니다.</p>
         </div>
       );
     }

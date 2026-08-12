@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-02';
 const DATE_MODIFIED = '2026-06-02';
 
 export const metadata: Metadata = {
-  title: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급 (6월~11월)',
+  title: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급 (6월~11월)',
   description:
     '5월 정기신청을 놓쳤어도 11월 30일까지 기한 후 신청하면 95%를 받을 수 있습니다. 2026 근로장려금·자녀장려금 신청 기한, 지급액, 신청 방법, 소득·재산 요건을 완벽 정리했습니다.',
   keywords: [
@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급 (6월~11월)' }],
-    title: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급 (6월~11월)' }],
+    title: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급',
     description: '정기신청(5월 1~31일) 놓쳤어도 6월~11월 기한 후 신청으로 95% 수령. 신청 방법·지급일·소득 요건 가이드.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로·자녀장려금 기한 후 신청 2026 — 95% 지급',
+    title: '근로·자녀장려금 기한 후 신청 2026, 95% 지급',
     description: '5월 놓쳤어도 11월까지 기한 후 신청 가능. 95% 지급 받는 방법.',
   },
 };
@@ -97,10 +97,10 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '근로·자녀장려금 기한 후 신청 2026 — 95% 지급' },
+    { name: '근로·자녀장려금 기한 후 신청 2026, 95% 지급' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급 (6월~11월)',
+    headline: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급 (6월~11월)',
     description:
       '정기신청을 놓친 직장인·자영업자를 위한 기한 후 신청 완벽 가이드. 95% 지급, 신청 기한 6월~11월 30일, 소득·재산 요건, 지급일.',
     url: URL,
@@ -112,7 +112,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
     keywords: ['근로장려금 기한 후 신청', '자녀장려금 신청', '95% 지급', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '근로·자녀장려금 기한 후 신청 2026 — 95% 지급, 신청 기한 6월~11월',
+    name: '근로·자녀장려금 기한 후 신청 2026, 95% 지급, 신청 기한 6월~11월',
     description:
       '5월 정기신청 놓쳤어도 11월 30일까지 기한 후 신청하면 95% 수령. 신청 절차·지급액·소득 요건 완벽 정리.',
     url: URL,
@@ -148,7 +148,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   근로·자녀장려금 기한 후 신청
                   <br />
-                  <span className="text-2xl text-text-secondary">— 5월을 놓쳤다면? 95% 지급 (6월~11월)</span>
+                  <span className="text-2xl text-text-secondary">· 5월을 놓쳤다면? 95% 지급 (6월~11월)</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   근로장려금과 자녀장려금의 정기신청 기한은 5월 1일부터 5월 31일까지입니다.
@@ -259,7 +259,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 기한 후 신청 가능 기간 — 6월 1일부터 11월 30일까지</h2>
+                <h2 className="text-2xl font-bold">2. 기한 후 신청 가능 기간, 6월 1일부터 11월 30일까지</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   정기신청 기한을 놓쳤다면, 6월 1일부터 11월 30일까지 기한 후 신청할 수 있습니다.
                   총 184일 동안 신청 기회가 있으므로, 충분한 시간을 가지고 서류를 준비해서 신청하면 됩니다.
@@ -285,7 +285,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 근로장려금 — 소득요건·지급액·가구 분류</h2>
+                <h2 className="text-2xl font-bold">3. 근로장려금, 소득요건·지급액·가구 분류</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로장려금은 저소득 근로자를 지원하는 제도로, 조세특례제한법 §100의3에 신청자격이 규정되어 있습니다.
                   과세기간 중 사업소득·근로소득·종교인소득이 있는 거주자 중 같은 법 시행령이 정한 요건을 갖춘 사람이 신청할 수 있으며,
@@ -340,7 +340,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 재산요건 — 2억 4,000만원 미만 (1억 7,000만 초과 시 50% 지급)</h2>
+                <h2 className="text-2xl font-bold">4. 재산요건, 2억 4,000만원 미만 (1억 7,000만 초과 시 50% 지급)</h2>
                 <p className="text-text-secondary leading-relaxed">
                   근로장려금을 받으려면 소득요건뿐 아니라 재산요건도 충족해야 합니다.
                   2025년 6월 1일 기준 가구 재산 합계(부채 미차감)가 2억 4,000만원 미만이어야 하며,
@@ -381,7 +381,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 자녀장려금 — 18세 미만 부양자녀가 있을 때</h2>
+                <h2 className="text-2xl font-bold">5. 자녀장려금, 18세 미만 부양자녀가 있을 때</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   근로장려금 외에, 18세 미만 부양자녀가 있으면 추가로 자녀장려금을 받을 수 있습니다.
                   조세특례제한법 §100의28(자녀장려금의 신청자격)에 따라 거주자(배우자 포함)의 연간 총소득 합계가 7,000만원 미만이어야 하며,
@@ -550,34 +550,34 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                     <Link href="/calculator/child-tax-credit/" className="text-primary-600 underline dark:text-primary-500">
                       자녀장려금 계산기
                     </Link>
-                    {' — 부양자녀 수, 부부 소득 입력 후 예상 지급액 확인'}
+                    {'부양자녀 수, 부부 소득 입력 후 예상 지급액 확인'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/child-earned-income-tax-credit-application-2026/" className="text-primary-600 underline dark:text-primary-500">
                       자녀장려금 신청 가이드
                     </Link>
-                    {' — 자녀장려금 요건·신청 방법·지급일 상세 설명'}
+                    {'자녀장려금 요건·신청 방법·지급일 상세 설명'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/earned-income-tax-credit-vs-child/" className="text-primary-600 underline dark:text-primary-500">
                       근로장려금 vs 자녀장려금
                     </Link>
-                    {' — 두 장려금의 차이, 중복 수급 방법'}
+                    {'두 장려금의 차이, 중복 수급 방법'}
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>
-                    {' — 근로·자녀장려금 신청 기한, 지급일 전체 일정'}
+                    {'근로·자녀장려금 신청 기한, 지급일 전체 일정'}
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="근로·자녀장려금 기한 후 신청 2026 — 5월 놓쳤다면 95% 지급"
+                title="근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급"
                 url={URL}
                 description="정기신청 놓친 경우 6월~11월 기한 후 신청으로 95% 수령 가능. 신청 방법·지급액·소득요건 완벽 정리."
               />

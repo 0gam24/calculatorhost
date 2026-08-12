@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 계산법 2026 | 주택 재산세율·과세표준 가이드 | calculatorhost' }],
-    title: '재산세 계산법 2026 — 정확한 세율 & 누진공제',
+    title: '재산세 계산법 2026, 정확한 세율 & 누진공제',
     description: '주택 재산세의 과세표준부터 최종 납부액까지. 1세대1주택 특례와 지방교육세 포함.',
     url: URL,
     type: 'article',
@@ -90,7 +90,7 @@ export default function PropertyTaxCalculation2026Page() {
     { name: '재산세 계산법 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 계산법 2026 — 주택 과세표준·세율·누진공제 완벽 정리',
+    headline: '재산세 계산법 2026, 주택 과세표준·세율·누진공제 완벽 정리',
     description:
       '주택 재산세를 정확히 이해하고 계산하는 방법. 과세표준부터 누진공제, 1세대1주택 특례, 지방교육세까지 모두 정리.',
     url: URL,
@@ -138,7 +138,7 @@ export default function PropertyTaxCalculation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 계산법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 과세표준·세율·누진공제 완전 정리</span>
+                  <span className="text-2xl text-text-secondary">· 과세표준·세율·누진공제 완전 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   매년 6월이면 도착하는 재산세 납세 통지서. 그런데 그 금액이 정확히 어떻게 계산되는지 아는 사람은 많지 않습니다. 과세표준에서 세율을 곱하고, 누진공제를 차감하고, 지방교육세까지 더하는 복잡한 과정이 있거든요. 이 가이드는 주택 재산세의 계산 원리를 단계별로 풀어 설명하고, 1세대1주택 특례와 지방교육세까지 모두 정리해드립니다.

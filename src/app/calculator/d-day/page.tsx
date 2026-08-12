@@ -332,7 +332,7 @@ export default function DdayPage() {
                       • <strong>2025-02-28</strong> (금) ~ <strong>2025-03-01</strong> (토): 2일 (2025년은 평년)
                     </li>
                     <li>
-                      • <strong>2024-01-01</strong> (월) + 366일 = <strong>2025-01-01</strong> (수) ✓
+                      • <strong>2024-01-01</strong> (월) + 366일 = <strong>2025-01-01</strong> (수)
                     </li>
                   </ul>
                 </div>

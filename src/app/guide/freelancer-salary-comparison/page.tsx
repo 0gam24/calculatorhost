@@ -50,7 +50,7 @@ const FAQ_ITEMS = [
   {
     question: '프리랜서는 4대보험을 어떻게 가입하나요?',
     answer:
-      '국민연금: 지역가입자로 본인 100% 부담 (소득의 9%). 건강보험: 지역가입자로 소득·재산·자동차 점수제. 고용보험·산재보험: 임의 가입(예술인·특수고용직 의무화 추세). 일반직 4대보험은 회사가 절반 부담하지만 프리랜서는 본인 100% — 부담률이 약 2배.',
+      '국민연금: 지역가입자로 본인 100% 부담 (소득의 9%). 건강보험: 지역가입자로 소득·재산·자동차 점수제. 고용보험·산재보험: 임의 가입(예술인·특수고용직 의무화 추세). 일반직 4대보험은 회사가 절반 부담하지만 프리랜서는 본인 100%, 부담률이 약 2배.',
   },
   {
     question: '프리랜서가 직장인보다 실수령액이 적을 수도 있나요?',
@@ -65,7 +65,7 @@ const FAQ_ITEMS = [
   {
     question: '프리랜서 절세 핵심 3가지는?',
     answer:
-      '① 영수증 보관 — 업무 관련 비용 모두 영수증·세금계산서로 입증. ② 노란우산공제·연금저축 — 소득공제·세액공제 활용. ③ 부가세 신고 — 일반과세자라면 매입세액공제 누락 없이.',
+      '① 영수증 보관, 업무 관련 비용 모두 영수증·세금계산서로 입증. ② 노란우산공제·연금저축, 소득공제·세액공제 활용. ③ 부가세 신고, 일반과세자라면 매입세액공제 누락 없이.',
   },
 ];
 
@@ -130,7 +130,7 @@ export default function FreelancerSalaryComparisonPage() {
               </header>
 
               <section aria-label="요약 비교" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-3 text-xl font-bold">한눈에 보기 — 핵심 차이</h2>
+                <h2 className="mb-3 text-xl font-bold">한눈에 보기, 핵심 차이</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse" data-speakable>
                     <caption className="sr-only">프리랜서와 일반직 핵심 차이 비교</caption>
@@ -183,7 +183,7 @@ export default function FreelancerSalaryComparisonPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">시나리오 1. 연 3,000만 원 (월 250만) — 저소득 구간</h2>
+                <h2 className="text-2xl font-bold">시나리오 1. 연 3,000만 원 (월 250만), 저소득 구간</h2>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                     <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (IT 단순경비율 64.1%)</h3>
@@ -300,7 +300,7 @@ export default function FreelancerSalaryComparisonPage() {
                   </ul>
                   <p className="mt-3"><strong className="text-text-primary">일반직이 유리한 경우</strong></p>
                   <ul className="ml-5 list-disc">
-                    <li>저소득(연 3천 이하) — 회사 4대보험 50% 부담 효과 큼</li>
+                    <li>저소득(연 3천 이하), 회사 4대보험 50% 부담 효과 큼</li>
                     <li>퇴직금·연차·복지 + 고용 안정 우선</li>
                     <li>세무 신고·영수증 관리 부담 회피</li>
                   </ul>
@@ -312,9 +312,9 @@ export default function FreelancerSalaryComparisonPage() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 본 시뮬레이션은 일반론(경비율 IT 기준, 부양 1인) — 실제는 업종·부양가족·세액공제에 따라 달라집니다.</li>
+                  <li>• 본 시뮬레이션은 일반론(경비율 IT 기준, 부양 1인), 실제는 업종·부양가족·세액공제에 따라 달라집니다.</li>
                   <li>• 건강·연금 보험료는 지역가입자 점수제로 재산·자동차 등 추가 변수 영향. 정확한 부담은 건강보험공단 확인.</li>
-                  <li>• 프리랜서 종합소득세 신고는 5월. 무신고 시 가산세 20% — 반드시 신고.</li>
+                  <li>• 프리랜서 종합소득세 신고는 5월. 무신고 시 가산세 20%, 반드시 신고.</li>
                 </ul>
               </section>
 
@@ -325,7 +325,7 @@ export default function FreelancerSalaryComparisonPage() {
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기 (직장인)</Link></li>
                   <li>→ <Link href="/calculator/n-jobber-insurance/" className="text-primary-600 underline dark:text-primary-500">N잡러 건강보험 계산기</Link></li>
                   <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기 (프리랜서 사업자)</Link></li>
-                  <li>→ <Link href="/guide/salary-negotiation-take-home/" className="text-primary-600 underline dark:text-primary-500">연봉 협상 실수령액 가이드</Link> — 세전 인상액이 세후로 얼마나 남는지 협상 전 확인</li>
+                  <li>→ <Link href="/guide/salary-negotiation-take-home/" className="text-primary-600 underline dark:text-primary-500">연봉 협상 실수령액 가이드</Link>, 세전 인상액이 세후로 얼마나 남는지 협상 전 확인</li>
                 </ul>
               </section>
 

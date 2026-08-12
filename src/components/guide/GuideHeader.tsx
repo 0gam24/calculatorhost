@@ -20,7 +20,7 @@ export interface GuideHeaderProps {
   /** 경로 항목 배열 */
   breadcrumbItems: BreadcrumbItem[];
 
-  /** 카테고리 (필수) — "세금" | "금융" | "부동산" 등 */
+  /** 카테고리 (필수), "세금" | "금융" | "부동산" 등 */
   category: string;
 
   /** 읽기 소요 시간 (분) */
@@ -32,7 +32,7 @@ export interface GuideHeaderProps {
   /** H1 제목 텍스트 */
   title: string;
 
-  /** 부제목 텍스트 (선택) — "— " 접두 자동 처리 안 함. 호출자가 포함 */
+  /** 부제목 텍스트 (선택), "" 접두 자동 처리 안 함. 호출자가 포함 */
   subtitle?: string;
 
   /** 리드 문단 (React.ReactNode) */
@@ -78,17 +78,17 @@ export function GuideHeader({
         {category} · {readingMinutes}분 읽기 · {publishedDate}
       </p>
 
-      {/* H1 title — 압도적 크기 + 위 여백 */}
+      {/* H1 title, 압도적 크기 + 위 여백 */}
       <h1 className="mb-3 mt-3 text-4xl font-bold tracking-tight leading-tight md:text-5xl">
         {title}
       </h1>
 
-      {/* subtitle (선택) — 별도 라인, 중간 크기, title과 시각적 구분 */}
+      {/* subtitle (선택), 별도 라인, 중간 크기, title과 시각적 구분 */}
       {subtitle && (
         <p className="mb-6 mt-2 text-xl font-medium text-text-secondary md:text-2xl">{subtitle}</p>
       )}
 
-      {/* lead 문단 — 큰 여백 분리, 좌측 보더 강조 */}
+      {/* lead 문단, 큰 여백 분리, 좌측 보더 강조 */}
       <div className="border-l-4 border-l-primary-500 pl-4">
         <div className="text-lg text-text-secondary leading-relaxed">{lead}</div>
       </div>

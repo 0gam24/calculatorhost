@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 세금 캘린더 1월~12월 | calculatorhost' }],
-    title: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
+    title: '2026 세금 캘린더, 1월부터 12월까지 한눈에',
     description: '월별 D-day + 관련 가이드 링크 모음.',
     url: URL,
     type: 'article',
@@ -272,7 +272,7 @@ const CALENDAR: MonthEntry[] = [
       },
       {
         date: '12월 31일',
-        title: '연말 절세 마감 — 연금저축·IRP·기부금',
+        title: '연말 절세 마감, 연금저축·IRP·기부금',
         description: '연금저축 600만 + IRP 100만 = 700만 한도, 13.2~16.5% 세액공제.',
         target: '직장인·사업자',
         guideHref: '/guide/year-end-tax-settlement/',
@@ -321,7 +321,7 @@ export default function TaxCalendar2026Page() {
     { name: '2026 세금 캘린더' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
+    headline: '2026 세금 캘린더, 1월부터 12월까지 한눈에',
     description: '월별 세금·납부 일정 + D-day + 관련 가이드 링크 모음.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -332,7 +332,7 @@ export default function TaxCalendar2026Page() {
     keywords: ['2026 세금', '세금 일정', '세금 캘린더', '납부 일정'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '2026 세금 캘린더 — 1월부터 12월까지 한눈에',
+    name: '2026 세금 캘린더, 1월부터 12월까지 한눈에',
     description:
       '2026년 1월~12월 세금·납부 일정 한눈에. 연말정산·종소세·재산세·종부세·자동차세·부가세·법인세까지 월별 D-day와 관련 가이드 링크 모음.',
     url: URL,
@@ -366,7 +366,7 @@ export default function TaxCalendar2026Page() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금 허브 · 6분 읽기 · 2026-05-03</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  2026 세금 캘린더 — 1월부터 12월까지 한눈에
+                  2026 세금 캘린더, 1월부터 12월까지 한눈에
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 한 해 동안 내야 할 모든 세금·신고 일정을 월별로 정리했습니다. 각 일정에서
@@ -459,7 +459,7 @@ export default function TaxCalendar2026Page() {
                         <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                           <h3 className="font-semibold text-text-primary">
                             <span className="text-primary-700 dark:text-primary-300">{e.date}</span>{' '}
-                            — {e.title}
+, {e.title}
                           </h3>
                           <span className="rounded-chip bg-bg-raised px-2 py-0.5 text-caption text-text-tertiary">
                             {e.target}
@@ -495,13 +495,13 @@ export default function TaxCalendar2026Page() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 본 캘린더는 일반 일정 — 정책 변경 시 변동 가능 (홈택스·위택스 공지 확인).</li>
-                  <li>• 무신고·미납 시 가산세 부과 — 기한 절대 엄수.</li>
+                  <li>• 본 캘린더는 일반 일정, 정책 변경 시 변동 가능 (홈택스·위택스 공지 확인).</li>
+                  <li>• 무신고·미납 시 가산세 부과, 기한 절대 엄수.</li>
                   <li>• 일부 일정은 휴일에 따라 자동 연장 가능 (예: 5월 31일 토요일 → 6월 2일).</li>
                 </ul>
               </section>
 
-              <ShareButtons title="2026 세금 캘린더 — 1월부터 12월까지 한눈에" url={URL} description="월별 세금 일정 + 가이드/계산기 1-click 이동." />
+              <ShareButtons title="2026 세금 캘린더, 1월부터 12월까지 한눈에" url={URL} description="월별 세금 일정 + 가이드/계산기 1-click 이동." />
 
               {/* smartdatashop network 메인 사이트 backref */}
               <MainBackrefBox mainCategoryUrl={getMainCategoryUrl('tax')} />

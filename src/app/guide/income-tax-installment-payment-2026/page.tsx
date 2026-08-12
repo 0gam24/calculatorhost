@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부' }],
-    title: '종합소득세 분납 신청 2026 — 1천만 초과 2개월 분할',
+    title: '종합소득세 분납 신청 2026, 1천만 초과 2개월 분할',
     description: '분납 가능한가? 분납 비율은? 2차 납부일은? 사례 3개 시뮬 + 가산세 0원 확인.',
     url: URL,
     type: 'article',
@@ -91,7 +91,7 @@ const FAQ_ITEMS = [
   {
     question: '세무조사가 나면 분납 상태에서 어떻게 되나요?',
     answer:
-      '분납 중 추가 세액 결정 시 2차 납부일 전이면 신규 세액을 2차 납부에 포함. 2차 후면 별도 고지. 분납 신청 자체는 조사 대상 아님 — 소득·경비 누락이 있으면 실질과세 원칙(국세기본법 §14) 적용되지만, 분납은 순전히 납부 일정일 뿐.',
+      '분납 중 추가 세액 결정 시 2차 납부일 전이면 신규 세액을 2차 납부에 포함. 2차 후면 별도 고지. 분납 신청 자체는 조사 대상 아님, 소득·경비 누락이 있으면 실질과세 원칙(국세기본법 §14) 적용되지만, 분납은 순전히 납부 일정일 뿐.',
   },
 ];
 
@@ -102,7 +102,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
     { name: '종합소득세 분납 신청 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합소득세 분납 신청 2026 — 1천만 초과 2개월 분할 납부 완벽 가이드',
+    headline: '종합소득세 분납 신청 2026, 1천만 초과 2개월 분할 납부 완벽 가이드',
     description:
       '5월 31일 종합소득세 마감 5일 전! 납부 세액 1,000만 원 초과 시 분납 신청 가능. 분납 비율·기한·신청 방법·이자 없음·분납 vs 지연 납부 차이·사례별 시뮬레이션.',
     url: URL,
@@ -150,7 +150,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합소득세 분납 신청 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 5월 31일까지 5일, 1천만 초과 2개월 분할</span>
+                  <span className="text-2xl text-text-secondary">· 5월 31일까지 5일, 1천만 초과 2개월 분할</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감이 정확히 5일 남았습니다. 연간 사업소득이나 부업으로 인한 종합소득세 납부액이 생각보다 크다면, 혼자 감당하기 어려울 수 있습니다. 다행히
@@ -222,19 +222,19 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 </p>
                 <ul className="mb-4 space-y-2 pl-5">
                   <li className="leading-relaxed">
-                    ① <strong>사업소득이 있는 자영업자</strong> — 프리랜서, 소상공인, 1인사업자
+                    ① <strong>사업소득이 있는 자영업자</strong>: 프리랜서, 소상공인, 1인사업자
                   </li>
                   <li className="leading-relaxed">
-                    ② <strong>부동산임대소득자</strong> — 건물·주택·상가 월세·전세 임대인
+                    ② <strong>부동산임대소득자</strong>: 건물·주택·상가 월세·전세 임대인
                   </li>
                   <li className="leading-relaxed">
-                    ③ <strong>기타소득자</strong> — 강의료, 원고료, 세미나 강사료, 기타 수입
+                    ③ <strong>기타소득자</strong>: 강의료, 원고료, 세미나 강사료, 기타 수입
                   </li>
                   <li className="leading-relaxed">
-                    ④ <strong>직장인 부업자</strong> — 본직장 + 부업으로 종합소득세 신고 대상
+                    ④ <strong>직장인 부업자</strong>: 본직장 + 부업으로 종합소득세 신고 대상
                   </li>
                   <li className="leading-relaxed">
-                    ⑤ <strong>프리랜서 3.3% 원천징수</strong> — 건설용역비, 디자인료 등 수령
+                    ⑤ <strong>프리랜서 3.3% 원천징수</strong>: 건설용역비, 디자인료 등 수령
                   </li>
                 </ul>
                 <p className="mb-4 leading-relaxed" data-speakable>

@@ -11,13 +11,13 @@ const DATE_PUBLISHED = '2026-06-29';
 const DATE_MODIFIED = '2026-06-29';
 
 export const metadata: Metadata = {
-  title: '피드 구독 — RSS · Atom · JSON Feed | calculatorhost',
+  title: '피드 구독, RSS · Atom · JSON Feed | calculatorhost',
   description:
     'calculatorhost의 새 가이드·계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요. RSS 리더 등록 방법과 AI·검색 엔진용 파일(llms.txt·robots.txt·사이트맵)도 함께 안내합니다.',
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '피드 구독 — RSS · Atom · JSON Feed' }],
-    title: '피드 구독 — RSS · Atom · JSON Feed',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '피드 구독, RSS · Atom · JSON Feed' }],
+    title: '피드 구독, RSS · Atom · JSON Feed',
     description: '새 가이드·계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요.',
     url: URL,
     type: 'website',
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '피드 구독 — RSS · Atom · JSON Feed',
+    title: '피드 구독, RSS · Atom · JSON Feed',
     description: 'RSS·Atom·JSON Feed 구독 안내',
   },
 };
@@ -63,7 +63,7 @@ export default function FeedsPage() {
     { name: '피드 구독' },
   ]);
   const webPageLd = buildWebPageJsonLd({
-    name: '피드 구독 — RSS · Atom · JSON Feed',
+    name: '피드 구독, RSS · Atom · JSON Feed',
     description:
       'calculatorhost의 새 가이드·계산기 업데이트를 구독하는 RSS·Atom·JSON Feed와 AI·검색 엔진용 파일 안내.',
     url: URL,
@@ -101,7 +101,7 @@ export default function FeedsPage() {
                         type={f.type}
                         className="font-semibold text-primary-600 underline dark:text-primary-500"
                       >
-                        {f.label} <span className="text-text-tertiary">— {f.href}</span>
+                        {f.label} <span className="text-text-tertiary">· {f.href}</span>
                       </a>
                       <p className="mt-1 text-sm text-text-secondary">{f.desc}</p>
                     </li>
@@ -115,7 +115,7 @@ export default function FeedsPage() {
                   {ENGINE.map((f) => (
                     <li key={f.href} className="rounded-lg border border-border-base bg-bg-card p-4">
                       <a href={f.href} className="font-semibold text-primary-600 underline dark:text-primary-500">
-                        {f.label} <span className="text-text-tertiary">— {f.href}</span>
+                        {f.label} <span className="text-text-tertiary">· {f.href}</span>
                       </a>
                       <p className="mt-1 text-sm text-text-secondary">{f.desc}</p>
                     </li>

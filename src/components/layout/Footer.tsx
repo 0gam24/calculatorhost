@@ -69,7 +69,7 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        {/* smartdatashop network — 메인 사이트 backref (NETWORK.md v0.6 dual-brand) */}
+        {/* smartdatashop network, 메인 사이트 backref (NETWORK.md v0.6 dual-brand) */}
         <section aria-label="네트워크" className="mt-8">
           <h3 className="mb-2 text-sm font-semibold text-text-secondary">네트워크</h3>
           <MainBackrefBox variant="footer" />

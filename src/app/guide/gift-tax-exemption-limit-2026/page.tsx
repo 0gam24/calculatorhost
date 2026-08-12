@@ -99,7 +99,7 @@ export default function GiftTaxExemptionLimit2026Page() {
     { name: '증여세 면제한도 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '증여세 면제한도 2026 — 공제액·10년 합산·혼인공제',
+    headline: '증여세 면제한도 2026, 공제액·10년 합산·혼인공제',
     description:
       '배우자, 자녀, 혼인·출산 공제까지. 얼마까지 증여세 없이 재산을 줄 수 있는지 명확히 정리합니다.',
     url: URL,
@@ -146,7 +146,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   증여세 면제한도 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 배우자·자녀·혼인공제까지 정확히 계산</span>
+                  <span className="text-2xl text-text-secondary">· 배우자·자녀·혼인공제까지 정확히 계산</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   재산을 자녀나 배우자에게 줄 때, 가장 먼저 묻는 질문이 있습니다. "얼마까지 세금 없이 줄 수 있을까?" 그 답이 바로 증여재산공제입니다. 상증법 §53에 정해진 공제액만큼은 증여세를 내지 않아도 되며, 신고 의무도 없습니다. 다만 10년 단위로 합산되고, 2024년부터는 혼인·출산공제 같은 추가 공제도 생겼습니다. 이 가이드에서는 관계별 공제 한도와 함정을 명확하게 정리합니다.
@@ -259,7 +259,7 @@ export default function GiftTaxExemptionLimit2026Page() {
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">10년 합산의 의미 — 같은 증여자로부터</h2>
+                <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">10년 합산의 의미, 같은 증여자로부터</h2>
                 <p data-speakable>
                   증여재산공제의 가장 중요한 규칙은 <strong>10년 합산</strong>입니다. 이것을 정확히 이해해야 절세 계획이 가능합니다.
                 </p>
@@ -340,7 +340,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                     <span className="block font-semibold">추가 혼인공제: 1억 (혼인 2년 전~2년 후 범위)</span>
                     <span className="block font-semibold">→ 총 공제: 5천만 + 1억 = 1.5억</span>
                     <span className="block font-semibold">→ 과세표준: 1.5억 - 1.5억 = 0</span>
-                    <span className="block font-semibold">→ 증여세: 0원 ✓ (혼인 없었으면 세금 500만원)</span>
+                    <span className="block font-semibold">→ 증여세: 0원 (혼인 없었으면 세금 500만원)</span>
                   </p>
                 </div>
 

@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-29';
 const DATE_MODIFIED = '2026-06-29';
 
 export const metadata: Metadata = {
-  title: 'DTI 계산법 2026 — 주택담보대출 총부채상환비율·연소득 기준 한도',
+  title: 'DTI 계산법 2026, 주택담보대출 총부채상환비율·연소득 기준 한도',
   description:
     'DTI(총부채상환비율) 계산법을 명확히 정리합니다. 주담대 원리금 공식, 연소득 산정, 기타 대출 이자 포함, 연소득 대비 한도 계산, DSR과의 차이를 사례로 설명. 2026년 기준.',
   keywords: [
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'DTI 계산법 2026 — 총부채상환비율·연소득 기준 대출한도',
+        alt: 'DTI 계산법 2026, 총부채상환비율·연소득 기준 대출한도',
       },
     ],
     title: 'DTI 계산법 2026',
@@ -527,7 +527,7 @@ export default function DtiCalculation2026Page() {
                 <div className="space-y-4">
                   <div className="rounded-lg bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">
-                      DTI — 주담대 소득 기준
+                      DTI, 주담대 소득 기준
                     </h3>
                     <p className="text-sm text-text-secondary">
                       주담대 원리금 + 기타 대출 이자만 본다. 기타 대출의 원금은 미포함. 한도는 60~70%.
@@ -536,7 +536,7 @@ export default function DtiCalculation2026Page() {
 
                   <div className="rounded-lg bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">
-                      DSR — 모든 대출 소득 기준
+                      DSR, 모든 대출 소득 기준
                     </h3>
                     <p className="text-sm text-text-secondary">
                       주담대, 신용대출, 자동차할부 등 모든 대출의 원리금을 포함. 가장 엄격한 규제. 한도는
@@ -546,7 +546,7 @@ export default function DtiCalculation2026Page() {
 
                   <div className="rounded-lg bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">
-                      LTV — 담보 기준
+                      LTV, 담보 기준
                     </h3>
                     <p className="text-sm text-text-secondary">
                       주택 담보가치만 본다. 소득은 무관. 한도는 일반지역 70%, 조정지역 60%.
@@ -651,7 +651,7 @@ export default function DtiCalculation2026Page() {
                     >
                       DTI 계산기
                     </Link>{' '}
-                    — 연소득 대비 주담대 월 상환액 실시간 확인
+, 연소득 대비 주담대 월 상환액 실시간 확인
                   </li>
                   <li>
                     →{' '}
@@ -661,7 +661,7 @@ export default function DtiCalculation2026Page() {
                     >
                       대출한도 계산기 (DSR/LTV/DTI)
                     </Link>{' '}
-                    — 주담대·전세자금대출 최대 한도 확인
+, 주담대·전세자금대출 최대 한도 확인
                   </li>
                   <li>
                     →{' '}
@@ -671,7 +671,7 @@ export default function DtiCalculation2026Page() {
                     >
                       DSR·DTI·LTV 차이와 계산법 2026
                     </Link>{' '}
-                    — 세 대출 규제 지표의 정의, 공식, 차이 총정리
+, 세 대출 규제 지표의 정의, 공식, 차이 총정리
                   </li>
                   <li>
                     →{' '}
@@ -681,7 +681,7 @@ export default function DtiCalculation2026Page() {
                     >
                       LTV 계산법 2026
                     </Link>{' '}
-                    — 담보인정비율의 정의, 공식, 대출가능액 역산
+, 담보인정비율의 정의, 공식, 대출가능액 역산
                   </li>
                   <li>
                     →{' '}
@@ -691,7 +691,7 @@ export default function DtiCalculation2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액 및 총이자
+, 원리금균등·만기일시별 월 상환액 및 총이자
                   </li>
                   <li>
                     →{' '}
@@ -701,7 +701,7 @@ export default function DtiCalculation2026Page() {
                     >
                       DSR 대출한도 늘리는 5가지 방법
                     </Link>{' '}
-                    — 신용대출 상환, 소득 합산 등 한도 확보 전략
+, 신용대출 상환, 소득 합산 등 한도 확보 전략
                   </li>
                   <li>
                     →{' '}
@@ -711,7 +711,7 @@ export default function DtiCalculation2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

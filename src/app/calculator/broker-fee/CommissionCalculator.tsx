@@ -126,7 +126,7 @@ export function CommissionCalculator() {
           ]}
         />
 
-        {/* 거래금액 입력 — 거래 유형에 따라 노출 필드 변경 */}
+        {/* 거래금액 입력, 거래 유형에 따라 노출 필드 변경 */}
         {transactionType === 'monthly' ? (
           <>
             <NumberInput

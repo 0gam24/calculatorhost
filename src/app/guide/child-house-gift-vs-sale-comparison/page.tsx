@@ -152,25 +152,25 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 <li className="flex gap-3 rounded-lg bg-bg-card p-3">
                   <span className="font-bold text-primary">A.</span>
                   <span>
-                    <strong>시가대로 매매</strong> (10억 매매) — 정상 거래. 자금출처 명확 필요.
+                    <strong>시가대로 매매</strong> (10억 매매), 정상 거래. 자금출처 명확 필요.
                   </span>
                 </li>
                 <li className="flex gap-3 rounded-lg bg-bg-card p-3">
                   <span className="font-bold text-primary">B.</span>
                   <span>
-                    <strong>30% 할인 매매</strong> (7억 매매) — 차액 3억 = 경계선. 정상 거래 인정 가능.
+                    <strong>30% 할인 매매</strong> (7억 매매), 차액 3억 = 경계선. 정상 거래 인정 가능.
                   </span>
                 </li>
                 <li className="flex gap-3 rounded-lg bg-bg-card p-3">
                   <span className="font-bold text-primary">C.</span>
                   <span>
-                    <strong>50% 할인 매매</strong> (5억 매매) — 차액 5억 초과. 4억 증여세 + 부모 양도세.
+                    <strong>50% 할인 매매</strong> (5억 매매), 차액 5억 초과. 4억 증여세 + 부모 양도세.
                   </span>
                 </li>
                 <li className="flex gap-3 rounded-lg bg-bg-card p-3">
                   <span className="font-bold text-primary">D.</span>
                   <span>
-                    <strong>전액 증여</strong> (10억 증여) — 자금출처 증명 불필요. 증여세 부담 최대.
+                    <strong>전액 증여</strong> (10억 증여), 자금출처 증명 불필요. 증여세 부담 최대.
                   </span>
                 </li>
               </ul>
@@ -247,7 +247,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
 
               {/* 부모 양도세 공통 */}
               <div className="mb-4 rounded-lg bg-bg-card p-3 text-sm text-text-secondary">
-                <p className="mb-1 font-semibold text-text-primary">공통: 부모 양도세 (소득세법 §101 부당행위계산 부인 — 시가 10억 기준)</p>
+                <p className="mb-1 font-semibold text-text-primary">공통: 부모 양도세 (소득세법 §101 부당행위계산 부인, 시가 10억 기준)</p>
                 <p>양도차익 = 10억 − 8억 = 2억 / 기본공제 250만 → 과세표준 1.975억 / 누진세율 38%(1.5억~3억 구간) − 누진공제 1,994만 → 양도세 ≈ 5,511만 + 지방소득세 약 551만 = <strong>약 6,062만</strong></p>
               </div>
 
@@ -266,13 +266,13 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
 
               {/* 시나리오 B */}
               <div className="mb-6 rounded-lg border-l-4 border-secondary bg-bg-card p-4">
-                <h3 className="mb-3 font-bold text-secondary">B. 30% 할인 매매 (7억) — 경계선</h3>
+                <h3 className="mb-3 font-bold text-secondary">B. 30% 할인 매매 (7억), 경계선</h3>
                 <div className="space-y-2 text-sm text-text-primary">
                   <p>거래가: 7억 / 차액: 3억 (시가의 30% AND 3억)</p>
                   <p>저가양수도 판정: 차액이 시가 30% 또는 3억과 정확히 같은 경계선. 안전하게는 "초과"가 아닌 "이상" 해석으로 저가양수도로 분류될 위험. 실무상 차액을 시가의 29% 이하 또는 2.99억 이하로 설계하는 것이 안전.</p>
                   <p>자녀 취득세 (7억 × 2% + 지방교육세 0.2%) ≈ 약 1,540만</p>
                   <p>자녀 증여세 (만약 저가양수도 적용 시): 차액 3억 − min(시가 30%=3억, 3억) = 0 → 증여세 0</p>
-                  <p>부모 양도세 + 지방세 ≈ 6,062만 (시가 10억 기준 — §101)</p>
+                  <p>부모 양도세 + 지방세 ≈ 6,062만 (시가 10억 기준, §101)</p>
                   <p className="rounded bg-bg-base p-2 font-bold">
                     총 세금 ≈ 약 7,602만 (자녀 1,540만 + 부모 6,062만)
                   </p>
@@ -284,11 +284,11 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
 
               {/* 시나리오 C */}
               <div className="mb-6 rounded-lg border-l-4 border-danger bg-bg-card p-4">
-                <h3 className="mb-3 font-bold text-danger">C. 50% 할인 매매 (5억) — 저가양수도 확정</h3>
+                <h3 className="mb-3 font-bold text-danger">C. 50% 할인 매매 (5억), 저가양수도 확정</h3>
                 <div className="space-y-2 text-sm text-text-primary">
                   <p>거래가: 5억 / 차액: 5억 (시가의 50%)</p>
                   <p>저가양수도 판정: 차액 5억 &gt; 시가 30%(3억) AND &gt; 3억 → 저가양수도 적용</p>
-                  <p>증여재산가액 = 차액 5억 − min(시가 30%=3억, 3억) = <strong>2억</strong> (5억이 아님 — 상증법 §35 ① 1호)</p>
+                  <p>증여재산가액 = 차액 5억 − min(시가 30%=3억, 3억) = <strong>2억</strong> (5억이 아님, 상증법 §35 ① 1호)</p>
                   <p>자녀 증여세: 2억 − 직계비속 공제 5천 = 1.5억 → 1.5억 × 20%(5억 이하) − 누진공제 1,000만 = <strong>약 2,000만</strong></p>
                   <p>자녀 취득세 (5억 × 1% + 지방교육세 0.1%) ≈ 약 550만</p>
                   <p>부모 양도세 + 지방세 ≈ 6,062만 (시가 10억 기준)</p>
@@ -304,10 +304,10 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
 
               {/* 시나리오 D */}
               <div className="mb-6 rounded-lg border-l-4 border-danger bg-bg-card p-4">
-                <h3 className="mb-3 font-bold text-danger">D. 전액 증여 (10억) — 자금출처 무관</h3>
+                <h3 className="mb-3 font-bold text-danger">D. 전액 증여 (10억), 자금출처 무관</h3>
                 <div className="space-y-2 text-sm text-text-primary">
                   <p>증여재산: 10억 − 직계비속 공제 5천 = 9.5억 (10억 이하 구간)</p>
-                  <p>증여세 = 9.5억 × 30% − 누진공제 6,000만 = <strong>약 2.25억</strong> (상증법 §56 — 30% 구간)</p>
+                  <p>증여세 = 9.5억 × 30% − 누진공제 6,000만 = <strong>약 2.25억</strong> (상증법 §56, 30% 구간)</p>
                   <p>증여취득세 (3.5% + 지방교육세 0.3%) ≈ 약 3,800만 (1세대1주택 1.5% 특례 적용 시 약 1,800만)</p>
                   <p>부모 양도세: 0 (양도 아님). 단, 향후 자녀가 양도 시 이월과세 10년 적용 (소득세법 §97의2)</p>
                   <p className="rounded bg-bg-base p-2 font-bold">
@@ -331,7 +331,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </ul>
                 <p className="mt-2 text-xs text-text-tertiary">
                   ※ A·B·C 세 가지 매매 시나리오는 부모 양도세가 시가 10억 동일 적용되어 큰 차이가 없습니다. B·C 차이는
-                  취득세와 (소액) 증여세에서 발생. 가장 큰 차이는 D(전액 증여) — 부모는 세금이 없지만 자녀가 2.6억 부담.
+                  취득세와 (소액) 증여세에서 발생. 가장 큰 차이는 D(전액 증여), 부모는 세금이 없지만 자녀가 2.6억 부담.
                 </p>
               </div>
             </section>
@@ -339,7 +339,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
             {/* 섹션 4: 자금출처 조사 */}
             <section className="mb-10">
               <h2 className="mb-4 text-2xl font-bold text-text-primary">
-                4. 자금출처 조사 — 국세청의 무기
+                4. 자금출처 조사, 국세청의 무기
               </h2>
               <p className="mb-4 text-text-primary">
                 매매로 처리하려면 <strong>자녀가 실제로 자금을 냈다는 증거</strong>가 필수입니다. 국세청은
@@ -569,7 +569,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                     <tr className="border-t border-border-base bg-bg-card">
                       <td className="px-3 py-2 font-bold text-text-primary">이번 세금 총액 (근사)</td>
                       <td className="px-3 py-2 text-text-secondary font-bold">약 9,400만</td>
-                      <td className="px-3 py-2 text-green-600 font-bold">약 7,602만 ⭐</td>
+                      <td className="px-3 py-2 text-green-600 font-bold">약 7,602만</td>
                       <td className="px-3 py-2 text-danger font-bold">약 2.63억</td>
                     </tr>
                   </tbody>
@@ -596,7 +596,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
 
               <div className="space-y-4">
                 <div className="rounded-lg bg-bg-card p-4">
-                  <p className="mb-2 font-bold text-text-primary">✓ 매매 선택 시</p>
+                  <p className="mb-2 font-bold text-text-primary">매매 선택 시</p>
                   <ul className="space-y-1 text-sm text-text-secondary">
                     <li>• 부모: 양도소득세 신고 (거래 다음해 5월 31일 기한)</li>
                     <li>• 자녀: 취득세 신고 (거래 후 60일 이내, 등기 전 필수)</li>
@@ -605,7 +605,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </div>
 
                 <div className="rounded-lg bg-bg-card p-4">
-                  <p className="mb-2 font-bold text-text-primary">✓ 증여 선택 시</p>
+                  <p className="mb-2 font-bold text-text-primary">증여 선택 시</p>
                   <ul className="space-y-1 text-sm text-text-secondary">
                     <li>
                       • 자녀: 증여세 신고 (증여일 속하는 달 말일 + 3개월 이내, 예: 1월 증여 → 4월 30일)
@@ -694,32 +694,32 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                     href="/calculator/capital-gains-tax/"
                     className="text-primary hover:underline"
                   >
-                    양도소득세 계산기 — 부모의 양도세 정확하게 계산
+                    양도소득세 계산기, 부모의 양도세 정확하게 계산
                   </Link>
                 </li>
                 <li>
                   <Link href="/calculator/gift-tax/" className="text-primary hover:underline">
-                    증여세 계산기 — 자녀 증여 시 증여세 미리 계산
+                    증여세 계산기, 자녀 증여 시 증여세 미리 계산
                   </Link>
                 </li>
                 <li>
                   <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary hover:underline">
-                    일시적 2주택 양도세 비과세 가이드 — 양도 시점 차이와 보유 기간
+                    일시적 2주택 양도세 비과세 가이드, 양도 시점 차이와 보유 기간
                   </Link>
                 </li>
                 <li>
                   <Link href="/calculator/acquisition-tax/" className="text-primary hover:underline">
-                    취득세 계산기 — 자녀의 취득세 미리 확인
+                    취득세 계산기, 자녀의 취득세 미리 확인
                   </Link>
                 </li>
                 <li>
                   <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary hover:underline">
-                    부담부증여 양도+증여세 완벽 정리 — 채무 인수 시 세금 계산
+                    부담부증여 양도+증여세 완벽 정리, 채무 인수 시 세금 계산
                   </Link>
                 </li>
                 <li>
                   <Link href="/guide/inheritance-tax-10-year-prior-gift-aggregation/" className="text-primary hover:underline">
-                    상속세 10년 기증여 합산 가이드 — 증여 후 발생할 상속세 고려
+                    상속세 10년 기증여 합산 가이드, 증여 후 발생할 상속세 고려
                   </Link>
                 </li>
               </ul>

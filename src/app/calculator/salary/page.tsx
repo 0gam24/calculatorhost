@@ -35,7 +35,7 @@ const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
 const URL = 'https://calculatorhost.com/calculator/salary/';
 
 export const metadata: Metadata = {
-  title: '연봉 실수령액 계산기 2026 — 4대보험·소득세 자동',
+  title: '연봉 실수령액 계산기 2026, 4대보험·소득세 자동',
   description:
     '2026년 연봉 실수령액 계산기. 세전 연봉을 입력하면 소득세·4대보험·특별소득공제 등을 자동 계산해 월 실수령액·연간 세후액을 확인. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   keywords: [
@@ -260,7 +260,7 @@ export default function SalaryPage() {
               {/* FAQ (중간 배치 - GEO 권장) */}
               <FaqSection items={[...FAQ_ITEMS]} />
 
-              {/* 답변형 H2 — 연봉별 월 실수령 대안·비교 (검증값: src/lib/tax/income.ts) */}
+              {/* 답변형 H2, 연봉별 월 실수령 대안·비교 (검증값: src/lib/tax/income.ts) */}
               <section aria-label="연봉별 월 실수령액" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">연봉별 월 실수령액은 얼마인가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
@@ -313,7 +313,7 @@ export default function SalaryPage() {
               </section>
 
               {/* AD-4 Infeed (본문 중간) */}
-              {/* 월급별 실수령액 빠른 조회표 — 검색 의도 직접 매칭 */}
+              {/* 월급별 실수령액 빠른 조회표, 검색 의도 직접 매칭 */}
               <section aria-label="월급별 실수령액 빠른 조회" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">월급별 실수령액 빠른 조회 (2026)</h2>
                 <p className="mb-4 text-sm text-text-secondary">
@@ -566,7 +566,7 @@ export default function SalaryPage() {
                     <a href="/guide/freelancer-salary-comparison/" className="text-primary-700 dark:text-primary-300 underline font-medium">
                       프리랜서 vs 일반직 실수령액 비교
                     </a>{' '}
-                    — 같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이
+, 같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이
                   </li>
                 </ul>
               </section>
@@ -589,7 +589,7 @@ export default function SalaryPage() {
                 </ul>
               </section>
 
-              {/* 참고 자료 — 법령·고시 deep-link */}
+              {/* 참고 자료, 법령·고시 deep-link */}
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
@@ -600,7 +600,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 소득세법 §55 (종합소득세 누진세율 8단계)
+                      국가법령정보센터, 소득세법 §55 (종합소득세 누진세율 8단계)
                     </a>
                   </li>
                   <li>
@@ -610,7 +610,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 소득세법 §12 (비과세 근로소득 — 식대 월 20만 원)
+                      국가법령정보센터, 소득세법 §12 (비과세 근로소득, 식대 월 20만 원)
                     </a>
                   </li>
                   <li>
@@ -620,7 +620,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 소득세법 §59의2 (자녀세액공제)
+                      국가법령정보센터, 소득세법 §59의2 (자녀세액공제)
                     </a>
                   </li>
                   <li>
@@ -630,7 +630,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 국민연금법 (보험료율 4.5% 근로자 부담)
+                      국가법령정보센터, 국민연금법 (보험료율 4.5% 근로자 부담)
                     </a>
                   </li>
                   <li>
@@ -640,7 +640,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터 — 국민건강보험법 (보험료율 7.09% / 근로자 3.545%)
+                      국가법령정보센터, 국민건강보험법 (보험료율 7.09% / 근로자 3.545%)
                     </a>
                   </li>
                   <li>
@@ -650,7 +650,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스 — 근로소득 간이세액표 조회 (월 원천징수 기준)
+                      국세청 홈택스, 근로소득 간이세액표 조회 (월 원천징수 기준)
                     </a>
                   </li>
                   <li>
@@ -660,7 +660,7 @@ export default function SalaryPage() {
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      4대사회보험정보연계센터 — 4대보험 요율·납부액 조회
+                      4대사회보험정보연계센터, 4대보험 요율·납부액 조회
                     </a>
                   </li>
                 </ul>

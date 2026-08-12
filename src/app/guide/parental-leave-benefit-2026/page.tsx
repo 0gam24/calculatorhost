@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '육아휴직급여 2026 | 월 상한·통상임금 100%·6+6 부모제' }],
-    title: '육아휴직급여 2026 — 월 상한액·지급률·6+6 부모제 완벽 정리',
+    title: '육아휴직급여 2026, 월 상한액·지급률·6+6 부모제 완벽 정리',
     description: '2025년부터 대폭 인상된 육아휴직급여. 첫 3개월 통상임금 100%, 월 상한액 약 250만원, 6+6 부모제로 12개월 전체 상한 인상. 고용보험법 §70.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '육아휴직급여 2026 — 통상임금 100% 지급·월 상한액·6+6 부모제',
+    title: '육아휴직급여 2026, 통상임금 100% 지급·월 상한액·6+6 부모제',
     description: '2025년 개정 육아휴직급여 현행. 첫 3개월 100%, 이후 조정, 7개월~ 80%. 부모 모두 육아휴직 시 상한 상향. 고용보험법 §70.',
   },
 };
@@ -99,7 +99,7 @@ export default function ParentalLeaveBenefit2026Page() {
     { name: '육아휴직급여 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '육아휴직급여 2026 — 월 상한액·지급률·6+6 부모제 완벽 정리',
+    headline: '육아휴직급여 2026, 월 상한액·지급률·6+6 부모제 완벽 정리',
     description:
       '2025년 개정된 육아휴직급여 현행 기준. 통상임금 100~80% 지급, 월 상한액, 6+6 부모육아휴직제, 신청 방법까지 상세 해석.',
     url: URL,
@@ -147,7 +147,7 @@ export default function ParentalLeaveBenefit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   육아휴직급여 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 월 상한·통상임금 100%·6+6 부모제</span>
+                  <span className="text-2xl text-text-secondary">· 월 상한·통상임금 100%·6+6 부모제</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자녀 양육을 위해 직장을 떠나는 근로자의 소득을 보장하는 육아휴직급여. 2025년 1월부터 대폭 개정되어 첫 3개월부터 통상임금의 100%를 받을 수 있게 되었습니다. 이 가이드에서는 2026년 현행 기준 지급률, 월 상한액, 6+6 부모육아휴직제, 신청 방법까지 완벽하게 정리해드립니다.
@@ -274,7 +274,7 @@ export default function ParentalLeaveBenefit2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">6+6 부모육아휴직제 — 부모 모두 사용 시</h2>
+                <h2 className="text-2xl font-bold">6+6 부모육아휴직제, 부모 모두 사용 시</h2>
                 <p>
                   2025년 개정의 핵심 중 하나는 부모가 모두 육아휴직을 사용할 때의 혜택 강화입니다. 한 자녀에 대해 부모 각각 최대 1년씩(합 2년) 사용할 수 있으며, 그중 첫 6개월 동안은 월 상한액이 인상됩니다.
                 </p>

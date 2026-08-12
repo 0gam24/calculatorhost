@@ -51,7 +51,7 @@ export const LAW_INCOME_TAX_89: AuthorityLink = {
 };
 
 export const LAW_INCOME_TAX_12: AuthorityLink = {
-  label: '소득세법 §12 (비과세 근로소득 — 식대 등)',
+  label: '소득세법 §12 (비과세 근로소득: 식대 등)',
   url: 'https://www.law.go.kr/법령/소득세법/제12조',
   type: 'law',
 };

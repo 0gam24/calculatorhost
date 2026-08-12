@@ -28,7 +28,7 @@ export function EmbedShell({ children, title, canonicalUrl }: EmbedShellProps) {
             rel="noopener noreferrer"
             className="font-medium text-primary-600 underline dark:text-primary-400"
           >
-            {title} — calculatorhost.com
+            {title}, calculatorhost.com
           </a>{' '}
           · 2026년 최신 세율 반영
         </p>

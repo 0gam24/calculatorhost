@@ -18,7 +18,7 @@ const DATE_PUBLISHED = '2026-06-26';
 const DATE_MODIFIED = '2026-06-26';
 
 export const metadata: Metadata = {
-  title: '자동차 할부 vs 리스 vs 장기렌트 2026 — 어떤 게 유리할까',
+  title: '자동차 할부 vs 리스 vs 장기렌트 2026, 어떤 게 유리할까',
   description:
     '자동차를 살 때 할부·리스·장기렌트 중 무엇이 유리한지 소유권·월 납입·세금·보험 부담 주체·중도해지·사업자 경비처리 기준으로 비교하고, 할부 월 납입액 계산 공식과 예시를 정리합니다.',
   keywords: [
@@ -102,7 +102,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
     { name: '자동차 할부 vs 리스 vs 장기렌트 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차 할부 vs 리스 vs 장기렌트 2026 — 어떤 게 유리할까',
+    headline: '자동차 할부 vs 리스 vs 장기렌트 2026, 어떤 게 유리할까',
     description:
       '할부·리스·장기렌트 세 방식을 소유권·월 납입 구성·세금·보험·경비처리·중도해지 기준으로 비교하고, 할부 월 납입액 계산 공식과 실제 예시로 정리합니다.',
     url: URL,
@@ -652,7 +652,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                     >
                       대출이자 계산기
                     </Link>{' '}
-                    — 원리금균등·만기일시별 월 상환액, 총이자, 상환일정표
+, 원리금균등·만기일시별 월 상환액, 총이자, 상환일정표
                   </li>
                   <li>
                     →{' '}
@@ -662,7 +662,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                     >
                       중도상환수수료 계산 2026
                     </Link>{' '}
-                    — 할부 중도 상환 시 수수료 계산법
+, 할부 중도 상환 시 수수료 계산법
                   </li>
                   <li>
                     →{' '}
@@ -672,7 +672,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                     >
                       자동차 취득세 2026
                     </Link>{' '}
-                    — 할부 차량 구입 시 취득세 계산
+, 할부 차량 구입 시 취득세 계산
                   </li>
                   <li>
                     →{' '}
@@ -682,7 +682,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                     >
                       자동차세 계산 2026
                     </Link>{' '}
-                    — 할부 소유 차량의 연간 자동차세
+, 할부 소유 차량의 연간 자동차세
                   </li>
                   <li>
                     →{' '}
@@ -692,7 +692,7 @@ export default function CarInstallmentVsLeaseVsRent2026Page() {
                     >
                       금융 카테고리
                     </Link>{' '}
-                    — 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
+, 대출, 예금, 적금, 환율 관련 모든 계산기 및 가이드
                   </li>
                 </ul>
               </section>

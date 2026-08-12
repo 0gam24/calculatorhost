@@ -137,7 +137,7 @@ export default function CapitalGainsTax5StepsPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   양도소득세 계산 5단계
                   <br />
-                  <span className="text-2xl text-text-secondary">— 1세대1주택부터 중과세까지</span>
+                  <span className="text-2xl text-text-secondary">· 1세대1주택부터 중과세까지</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택 판매 시 내야 할 양도소득세를 정확히 계산하는 것은 생각보다 복잡합니다. 취득가와 양도가, 보유 기간, 조정지역 여부에 따라
@@ -164,7 +164,7 @@ export default function CapitalGainsTax5StepsPage() {
               </section>
 
               <section className="space-y-6">
-                <h2 className="text-2xl font-bold">2단계: 보유 기간 확인 — 2년 vs 3년 기준</h2>
+                <h2 className="text-2xl font-bold">2단계: 보유 기간 확인, 2년 vs 3년 기준</h2>
                 <p>
                   <strong>2년 이상</strong> 보유하면 1세대1주택 비과세 가능성이 있습니다. <strong>3년 이상</strong> 보유하면
                   장기보유특별공제(최대 6%)를 받을 수 있고, 세율도 낮아집니다. 취득일부터 양도일까지 정확히 계산하되, 월 단위로 끝나면
@@ -206,7 +206,7 @@ export default function CapitalGainsTax5StepsPage() {
                       <tr className="border-b border-border-base">
                         <td className="p-2">1세대 2주택, 보유 1년 이상</td>
                         <td className="p-2">누진세율 적용</td>
-                        <td className="p-2">—</td>
+                        <td className="p-2">·</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-2">조정지역 2주택</td>

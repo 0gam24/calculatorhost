@@ -16,7 +16,7 @@ export interface RateBar {
 export interface RateBarChartProps {
   /** 도표 제목 (figure 상단) */
   title: string;
-  /** 설명 캡션 (figcaption — 네이버/LLM 추출 + 접근성) */
+  /** 설명 캡션 (figcaption, 네이버/LLM 추출 + 접근성) */
   caption: string;
   bars: RateBar[];
   /** 값 단위 (기본 '%') */

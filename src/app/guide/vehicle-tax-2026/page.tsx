@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 계산 2026 | 배기량별 세율·연납 할인·차령경감' }],
-    title: '자동차세 계산 2026 — 배기량별 세율·연납 할인·차령경감',
+    title: '자동차세 계산 2026, 배기량별 세율·연납 할인·차령경감',
     description: '1,000cc 이하 80원, 1,601cc 이상 200원/cc. 차령경감·연납 할인 포함 완전 계산.',
     url: URL,
     type: 'article',
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 계산 2026 — 배기량별 세율·연납 할인',
+    title: '자동차세 계산 2026, 배기량별 세율·연납 할인',
     description: '1,000cc 이하 80원/cc부터 1,601cc 이상 200원/cc까지. 지방세법 §127 기준.',
   },
 };
@@ -100,7 +100,7 @@ export default function VehicleTax2026Page() {
     { name: '자동차세 계산 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 완전 정리 (2026) — 배기량별 세율·연납 할인·차령경감',
+    headline: '자동차세 완전 정리 (2026), 배기량별 세율·연납 할인·차령경감',
     description: '비영업용 승용차 배기량별 cc당 세율(80~200원)에 지방교육세 30%를 더한 자동차세 계산 방법. 차령경감, 연납 할인, 납부 시기 완전 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -146,7 +146,7 @@ export default function VehicleTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   2026 자동차세 완전 정리
                   <br />
-                  <span className="text-2xl text-text-secondary">— 배기량 세율·연납 할인·차령경감</span>
+                  <span className="text-2xl text-text-secondary">· 배기량 세율·연납 할인·차령경감</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   자동차세는 비영업용 승용차 기준 배기량(cc)에 cc당 세율을 곱하고, 지방교육세 30%를 더해 산정합니다
@@ -258,8 +258,8 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">⏱ 차령경감 — 나이 많은 차일수록 세금 감소</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 §127①제2호 — 3년차부터 시작, 매년 5%씩 경감 (최대 50%). 배기량 과세차만 적용(전기차 정액 제외).</p>
+                <h2 className="mb-4 text-2xl font-bold">⏱ 차령경감, 나이 많은 차일수록 세금 감소</h2>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 §127①제2호, 3년차부터 시작, 매년 5%씩 경감 (최대 50%). 배기량 과세차만 적용(전기차 정액 제외).</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">차령경감 공식</p>
                   <p className="text-text-secondary font-mono bg-bg-base p-2 rounded mb-2">(차령 - 2) × 5% = 경감률 (단, ≤ 50%)</p>
@@ -320,8 +320,8 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">연납 할인 — 1월 미리 내면 5% 공제</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125 — 1월 1~31일 신청, 5% 공제율 (선납 일수에 비례)</p>
+                <h2 className="mb-4 text-2xl font-bold">연납 할인, 1월 미리 내면 5% 공제</h2>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월 1~31일 신청, 5% 공제율 (선납 일수에 비례)</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">연납 공제 방식</p>
                   <p className="text-text-secondary">공제액 = 연간 총액 × (선납일수 / 365일) × 5% 공제율</p>
@@ -340,7 +340,7 @@ export default function VehicleTax2026Page() {
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base bg-primary-500/5">
-                        <td className="px-3 py-2 font-bold">1월 신청 ⭐</td>
+                        <td className="px-3 py-2 font-bold">1월 신청</td>
                         <td className="px-3 py-2 text-right">351일</td>
                         <td className="px-3 py-2 text-right font-bold text-primary-700 dark:text-primary-300">약 4.81%</td>
                         <td className="px-3 py-2">최대 절약</td>
@@ -382,8 +382,8 @@ export default function VehicleTax2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">기본 납부: 연 2회 분할</p>
                   <ul className="text-text-secondary space-y-1">
-                    <li>① <strong>제1기:</strong> 6월 16일(월)~6월 30일(월) — 연간 1/2</li>
-                    <li>② <strong>제2기:</strong> 12월 16일(월)~12월 31일(수) — 연간 1/2</li>
+                    <li>① <strong>제1기:</strong> 6월 16일(월)~6월 30일(월), 연간 1/2</li>
+                    <li>② <strong>제2기:</strong> 12월 16일(월)~12월 31일(수), 연간 1/2</li>
                   </ul>
                   <p className="text-text-secondary mt-3">신차 구매자는 등록월부터 시작합니다. 예: 8월 신규 등록 → 12월 제2기부터 납부.</p>
                 </div>
@@ -396,10 +396,10 @@ export default function VehicleTax2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">신청처</p>
                   <ul className="text-text-secondary space-y-1 list-disc list-inside">
-                    <li>위택스(wetax.go.kr) — 24시간 온라인 신청 (추천)</li>
-                    <li>스마트 위택스 앱 — 모바일 신청</li>
-                    <li>관할 시·군청 세무서 — 직접 방문</li>
-                    <li>지역별 앱 — 서울(STAX), 경기·인천 등 지자체별 앱</li>
+                    <li>위택스(wetax.go.kr), 24시간 온라인 신청 (추천)</li>
+                    <li>스마트 위택스 앱, 모바일 신청</li>
+                    <li>관할 시·군청 세무서, 직접 방문</li>
+                    <li>지역별 앱, 서울(STAX), 경기·인천 등 지자체별 앱</li>
                   </ul>
                 </div>
               </section>
@@ -460,7 +460,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <ShareButtons
-                title="2026 자동차세 완전 정리 — 배기량 세율·연납 할인·차령경감"
+                title="2026 자동차세 완전 정리, 배기량 세율·연납 할인·차령경감"
                 url={URL}
                 description="비영업용 승용차 자동차세 계산 방법. 배기량별 cc당 세율(80~200원) + 지방교육세 30% + 차령경감·연납 할인. 지방세법 §127 기준."
               />

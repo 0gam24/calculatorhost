@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부가가치세 조기환급 2026 | 수출·시설투자 15일 내 환급' }],
-    title: '부가가치세 조기환급 2026 — 수출·시설투자 시 일반환급보다 15일 빠르게',
+    title: '부가가치세 조기환급 2026, 수출·시설투자 시 일반환급보다 15일 빠르게',
     description: '영세율·사업설비투자·재무구조개선 시 일반환급(30일) 대신 15일 내 환급받는 방법. 7월 1기 확정신고 시즌.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가가치세 조기환급 2026 — 수출·시설투자 15일 내 환급',
+    title: '부가가치세 조기환급 2026, 수출·시설투자 15일 내 환급',
     description: '영세율 적용 수출업체, 설비 신설·투자 기업은 일반 30일이 아닌 15일 내 환급. 부가세법 §59.',
   },
 };
@@ -99,7 +99,7 @@ export default function VatEarlyRefund2026Page() {
     { name: '부가가치세 조기환급 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '부가가치세 조기환급 2026 — 수출·시설투자 시 일반환급보다 15일 빠르게',
+    headline: '부가가치세 조기환급 2026, 수출·시설투자 시 일반환급보다 15일 빠르게',
     description:
       '영세율·사업설비투자·재무구조개선 시 조기환급 받는 방법. 일반환급(30일) 대신 15일 내 환급. 7월 1기 부가세 확정신고 시즌 필독.',
     url: URL,
@@ -147,7 +147,7 @@ export default function VatEarlyRefund2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부가가치세 조기환급 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 수출·시설투자 시 15일 내 환급</span>
+                  <span className="text-2xl text-text-secondary">· 수출·시설투자 시 15일 내 환급</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   부가가치세는 일반적으로 확정신고기한 경과 후 30일 내에 환급됩니다. 그런데 특정한 상황에서는 이보다 훨씬 빠르게 환급받을 수 있습니다. 영세율이 적용되는 수출 사업, 사업설비에 큰 투자를 하는 기업, 또는 재무구조를 개선 중인 회사라면 조기환급 제도를 활용할 수 있습니다. 이 가이드는 조기환급의 대상·요건·절차·주의사항을 완전히 정리합니다.

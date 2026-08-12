@@ -25,7 +25,7 @@ const EXTERNAL_SOURCES = [
 ];
 
 export const metadata: Metadata = {
-  title: '소개 | calculatorhost — 운영자 김준혁 / 스마트데이터샵',
+  title: '소개 | calculatorhost, 운영자 김준혁 / 스마트데이터샵',
   description:
     '2026년 최신 세율을 반영한 한국 금융·세금·부동산 계산기 31종 운영. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 모든 계산 공식·세율·법조항은 1차 출처 직접 확인 후 반영.',
   alternates: { canonical: 'https://calculatorhost.com/about/' },
@@ -225,7 +225,7 @@ export default function AboutPage() {
                 <li>
                   <strong>CI 자동 검증 게이트</strong>: 본문 2,000자 하한, 외부 권위 링크 2개 이상,
                   금지 표현(투자 권유·수익 보장·확정 절세 등) 자동 검출, 세율 % / 법조항 §번호 정규식
-                  추출 후 SSoT 상수와 자동 대조, AI 생성 표기 의무 — 위반 시 PR 차단.
+                  추출 후 SSoT 상수와 자동 대조, AI 생성 표기 의무, 위반 시 PR 차단.
                 </li>
                 <li>
                   <strong>운영자 검수 SLA</strong>: 발행 전 최소 30분 실질 검토(법조항 정확성·세율값
@@ -236,7 +236,7 @@ export default function AboutPage() {
                   "AI 보조 작성·운영자 최종 검증 (YYYY-MM-DD)" 표기를 포함합니다.
                 </li>
                 <li>
-                  <strong>점진 도입</strong>: 6개월 파일럿(월 5–10편 → 20편 → 30편). Search Console
+                  <strong>점진 도입</strong>: 6개월 파일럿(월 5~10편 → 20편 → 30편). Search Console
                   순위 -10% 하락 또는 Google Manual Action 알림 시 즉시 중단·전수 재검수.
                 </li>
                 <li>
@@ -252,7 +252,7 @@ export default function AboutPage() {
               <ol className="list-decimal space-y-2 pl-5">
                 <li>법조항 원문 또는 국세청·금감원 공식 문서로 세율·공제 1차 검증</li>
                 <li>국세청 홈택스 간이계산기·은행 공식 계산기로 결과 대조 (대표 케이스 3개 이상)</li>
-                <li>단위 테스트(<code className="text-caption">Vitest</code>) 작성 — 경계값·예외 처리 검증</li>
+                <li>단위 테스트(<code className="text-caption">Vitest</code>) 작성, 경계값·예외 처리 검증</li>
                 <li>세법 개정 시 즉시 재검증 후 반영 (연 1회 이상 정기 점검)</li>
               </ol>
 

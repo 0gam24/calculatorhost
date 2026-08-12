@@ -93,7 +93,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
     { name: '재산세 7월 납부 일정·분납 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 7월 납부 일정·분납 2026 — 주택 건축물 토지 납기와 분할납부 완벽 정리',
+    headline: '재산세 7월 납부 일정·분납 2026, 주택 건축물 토지 납기와 분할납부 완벽 정리',
     description:
       '2026년 재산세 7월 1기분, 9월 2기분 정확한 납부 기한. 건축물과 토지의 다른 납기, 250만원 초과 분할납부 신청 방법, 가산세 피하기까지.',
     url: URL,
@@ -141,7 +141,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 7월 납부 일정·분납 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 주택 건축물 토지 납기와 분할납부 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 주택 건축물 토지 납기와 분할납부 완벽 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   6월이 되면 도착하는 재산세 납세 통지서. 그런데 7월에 낸다고 했는데 9월에도 또 내야 한다는 통지서가 오고, 건축물과 토지의 납기가 다르다니 복잡하기만 합니다. 이 가이드는 2026년 재산세 납부 일정을 정확히 정리해드립니다. 주택분 1기분과 2기분의 차이, 건축물과 토지의 다른 납기, 250만원 초과 분할납부 신청 방법까지 모두 담았습니다.
@@ -149,7 +149,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
               </header>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">재산세 납부 기한 — 7월과 9월</h2>
+                <h2 className="text-2xl font-bold">재산세 납부 기한, 7월과 9월</h2>
                 <p>
                   지방세법 §115에 따라 주택분 재산세는 연 2회로 나뉘어 납부됩니다. 1년 세액을 두 번에 나눠서 내므로, 각각의 납기를 정확히 알아야 기한을 넘기지 않습니다.
                 </p>
@@ -167,7 +167,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">물건별 납기 차이 — 건축물과 토지</h2>
+                <h2 className="text-2xl font-bold">물건별 납기 차이, 건축물과 토지</h2>
                 <p>
                   같은 부동산이지만 건축물과 토지는 지방세법 §115에서 별도로 납기를 정합니다. 특히 전원주택이나 토지 소유가 있는 경우 두 세목을 나누어 납부해야 합니다.
                 </p>
@@ -206,7 +206,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">분할납부 — 250만원 초과 시 가능</h2>
+                <h2 className="text-2xl font-bold">분할납부, 250만원 초과 시 가능</h2>
                 <p>
                   지방세법 §118에 따르면, 납부할 세액이 250만원을 초과하면 세액의 일부를 분할납부할 수 있습니다. 신청 방법과 분납 기한은 납세 통지서 또는 관할 시·군·구청(위택스) 안내에 따릅니다.
                 </p>
@@ -246,7 +246,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">기한을 지났을 때 — 가산세</h2>
+                <h2 className="text-2xl font-bold">기한을 지났을 때, 가산세</h2>
                 <p>
                   재산세는 지방세이며, 지정된 납기를 넘기면 가산금이 부과됩니다. 가산금의 정확한 규모와 산정 방법은 관할 시·군·구청(위택스) 기준에 따르므로, 반드시 기한 내 납부하는 것이 중요합니다.
                 </p>
@@ -261,15 +261,15 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
               </section>
 
               <section className="space-y-6" data-speakable>
-                <h2 className="text-2xl font-bold">납부 방법 — 온라인·현금·계좌이체</h2>
+                <h2 className="text-2xl font-bold">납부 방법, 온라인·현금·계좌이체</h2>
                 <p>
                   재산세는 여러 방법으로 납부할 수 있습니다. 대부분의 시군구에서 온라인 결제 시스템을 제공하고 있으므로, 가장 편리한 방법을 선택하면 됩니다.
                 </p>
                 <ul className="space-y-2 ml-6 list-disc text-text-secondary">
-                  <li><strong>위택스(wetax.go.kr)</strong> — 전국 지방세 온라인 조회·납부 (신용카드·계좌이체)</li>
-                  <li><strong>이택스(etax.seoul.go.kr)</strong> — 서울시 지방세 온라인 납부</li>
-                  <li><strong>은행 자동이체</strong> — 관할 시·군·구청 또는 금융기관 신청 시 자동 납부</li>
-                  <li><strong>현금 직접 납부</strong> — 관할 시·군·구청, ARS·은행 창구</li>
+                  <li><strong>위택스(wetax.go.kr)</strong>: 전국 지방세 온라인 조회·납부 (신용카드·계좌이체)</li>
+                  <li><strong>이택스(etax.seoul.go.kr)</strong>: 서울시 지방세 온라인 납부</li>
+                  <li><strong>은행 자동이체</strong>: 관할 시·군·구청 또는 금융기관 신청 시 자동 납부</li>
+                  <li><strong>현금 직접 납부</strong>: 관할 시·군·구청, ARS·은행 창구</li>
                 </ul>
                 <p className="mt-4">
                   온라인 납부가 가장 빠르고 안전하므로, 납세 통지서를 받으면 위택스(서울은 이택스)에서 납세 통지서를 조회한 뒤 즉시 결제하시기를 권장합니다.

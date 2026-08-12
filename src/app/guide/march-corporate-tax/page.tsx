@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '법인세 신고 가이드 2026 (3월 31일 마감) | calculatorhost' }],
-    title: '법인세 신고 가이드 2026 — 3월 31일 마감',
+    title: '법인세 신고 가이드 2026, 3월 31일 마감',
     description: '법인세 세율·공제·분납·전자신고 종합.',
     url: URL,
     type: 'article',
@@ -88,7 +88,7 @@ export default function MarchCorporateTaxPage() {
     { name: '3월 법인세 신고' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '법인세 신고 가이드 (2026) — 3월 31일 마감',
+    headline: '법인세 신고 가이드 (2026), 3월 31일 마감',
     description: '법인세 세율 (9~24%) + 공제·세액공제 + 분납 + 전자신고.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -162,7 +162,7 @@ export default function MarchCorporateTaxPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   법인세 신고 가이드 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">— 12월 결산 법인 3월 31일 마감</span>
+                  <span className="text-2xl text-text-secondary">· 12월 결산 법인 3월 31일 마감</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   12월 결산 법인의 법인세 신고·납부 기한은 매년 3월 31일입니다. 무신고 시 가산세
@@ -184,7 +184,7 @@ export default function MarchCorporateTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 법인세란? — 누가 신고하나</h2>
+                <h2 className="text-2xl font-bold">1. 법인세란?, 누가 신고하나</h2>
                 <p className="text-text-secondary leading-relaxed">
                   법인세는 영리법인의 사업연도 소득에 부과되는 국세 (법인세법 §3, §55). 주식회사·
                   유한회사·합자회사·합명회사 등 모든 영리법인이 대상. 비영리법인도 수익사업 한정.
@@ -212,7 +212,7 @@ export default function MarchCorporateTaxPage() {
                       </tr>
                     </thead>
                     <tbody className="text-text-secondary">
-                      <tr className="border border-border-base"><td className="px-3 py-2">2억 이하</td><td className="px-3 py-2 text-right">9%</td><td className="px-3 py-2 text-right">—</td></tr>
+                      <tr className="border border-border-base"><td className="px-3 py-2">2억 이하</td><td className="px-3 py-2 text-right">9%</td><td className="px-3 py-2 text-right">·</td></tr>
                       <tr className="border border-border-base"><td className="px-3 py-2">2억 ~ 200억</td><td className="px-3 py-2 text-right">19%</td><td className="px-3 py-2 text-right tabular-nums">2,000만</td></tr>
                       <tr className="border border-border-base"><td className="px-3 py-2">200억 ~ 3000억</td><td className="px-3 py-2 text-right">21%</td><td className="px-3 py-2 text-right tabular-nums">4억 2,000만</td></tr>
                       <tr className="border border-border-base"><td className="px-3 py-2">3000억 초과</td><td className="px-3 py-2 text-right">24%</td><td className="px-3 py-2 text-right tabular-nums">94억 2,000만</td></tr>
@@ -230,13 +230,13 @@ export default function MarchCorporateTaxPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 주요 세액공제 — 절세 핵심</h2>
+                <h2 className="text-2xl font-bold">3. 주요 세액공제, 절세 핵심</h2>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="mb-1 font-semibold text-text-primary">① 연구·인력개발비 세액공제 (R&D)</h3>
                     <p className="text-sm text-text-secondary">
                       중소기업 25% / 중견 8~15% / 대기업 0~2%. 신성장·원천기술 분야는 추가 우대.
-                      가장 큰 절세 항목 — 연구개발 비용 명확히 입증.
+                      가장 큰 절세 항목, 연구개발 비용 명확히 입증.
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -294,11 +294,11 @@ export default function MarchCorporateTaxPage() {
                   결산서를 작성한 후 세무조정 단계에서 정합성을 맞춰야 합니다. 아래 항목들을 놓치면 불필요한 세금을 많이 낼 수 있으니 주의하세요. 특히 중소기업은 R&D 세액공제, 고용증대 공제, 노란우산공제 등을 빠뜨리는 경우가 많습니다.
                 </p>
                 <ul className="space-y-2 text-sm text-text-secondary">
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>접대비 한도</strong> — 직전년도 매출액의 0.1% (최저 200만) 또는 1000만 중 작은 금액. 초과분은 비용 불인정.</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>R&D 세액공제</strong> — 연구개발비 영수증·자료 갖춰야 공제 가능. 25%~30% 공제율이므로 빠뜨리면 큰 손실.</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>고용증대 세액공제</strong> — 정규직 신규 고용 시 1인당 최대 1,200만원. 고용보험·사회보험료 기록 필수.</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>감가상각</strong> — 고정자산 취득 후 잘못된 내용연수 적용 시 세무 조정. 국세청 기준 확인.</span></li>
-                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>기부금 한도</strong> — 지정기부금은 전액 공제지만, 일반기부금은 기업 소득 5% 한도. 초과분은 비용 불인정.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">1.</span> <span><strong>접대비 한도</strong>: 직전년도 매출액의 0.1% (최저 200만) 또는 1000만 중 작은 금액. 초과분은 비용 불인정.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">2.</span> <span><strong>R&D 세액공제</strong>: 연구개발비 영수증·자료 갖춰야 공제 가능. 25%~30% 공제율이므로 빠뜨리면 큰 손실.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">3.</span> <span><strong>고용증대 세액공제</strong>: 정규직 신규 고용 시 1인당 최대 1,200만원. 고용보험·사회보험료 기록 필수.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">4.</span> <span><strong>감가상각</strong>: 고정자산 취득 후 잘못된 내용연수 적용 시 세무 조정. 국세청 기준 확인.</span></li>
+                  <li className="flex items-start gap-2"><span className="text-primary-500 font-bold">5.</span> <span><strong>기부금 한도</strong>: 지정기부금은 전액 공제지만, 일반기부금은 기업 소득 5% 한도. 초과분은 비용 불인정.</span></li>
                 </ul>
               </section>
 
@@ -307,9 +307,9 @@ export default function MarchCorporateTaxPage() {
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 외부조정 의무 법인은 세무사·회계사 검토 필수 — 본 가이드는 일반 정보만.</li>
+                  <li>• 외부조정 의무 법인은 세무사·회계사 검토 필수, 본 가이드는 일반 정보만.</li>
                   <li>• 결손법인도 신고 의무. 미신고 시 결손금 이월 못 받음.</li>
-                  <li>• 법인세 세율 변경은 매년 정부 발표 — 신고 직전 확인.</li>
+                  <li>• 법인세 세율 변경은 매년 정부 발표, 신고 직전 확인.</li>
                   <li>• 과세표준 2억 이하 9% 우대 세율은 중소·중견기업 한정 (대기업 적용 X 케이스).</li>
                 </ul>
               </section>
@@ -324,7 +324,7 @@ export default function MarchCorporateTaxPage() {
                 </ul>
               </section>
 
-              <ShareButtons title="법인세 신고 가이드 2026 — 3월 31일 마감" url={URL} />
+              <ShareButtons title="법인세 신고 가이드 2026, 3월 31일 마감" url={URL} />
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">

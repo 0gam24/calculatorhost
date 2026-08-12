@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 분납(분할납부) 2026 | 250만원 초과 시 신청·기한·한도' }],
-    title: '재산세 분납(분할납부) 2026 — 250만원 초과 시 분할납부 방법과 한도',
+    title: '재산세 분납(분할납부) 2026, 250만원 초과 시 분할납부 방법과 한도',
     description: '재산세 본세가 250만원을 초과하면 분할납부 가능. 분납 신청 방법, 한도, 납기별 유의사항을 완벽 정리.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 분납 2026 — 250만원 초과 분할납부 신청 방법',
+    title: '재산세 분납 2026, 250만원 초과 분할납부 신청 방법',
     description: '재산세 본세 250만원 초과 시 분할납부 신청 가능. 위택스·세무서 접수 방법, 한도 계산, 가산금 면제 조건.',
   },
 };
@@ -94,7 +94,7 @@ export default function PropertyTaxInstallmentPayment2026Page() {
     { name: '재산세 분납 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 분납(분할납부) 2026 — 250만원 초과 시 분할납부 방법과 한도',
+    headline: '재산세 분납(분할납부) 2026, 250만원 초과 시 분할납부 방법과 한도',
     description:
       '재산세 본세가 250만원을 초과하면 분할납부 가능. 신청 방법(위택스·세무서), 분납 한도(최대 50%), 2개월 납기 기한, 가산금 면제 조건, 7월 1기·9월 2기별 유의사항 정리.',
     url: URL,
@@ -141,7 +141,7 @@ export default function PropertyTaxInstallmentPayment2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 분납(분할납부) 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 250만원 초과 시 분할납부 신청·한도·기한</span>
+                  <span className="text-2xl text-text-secondary">· 250만원 초과 시 분할납부 신청·한도·기한</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   7월이 재산세 1기 납부 시즌입니다. 높은 재산세를 한 번에 내기 어렵다면 분할납부(분납)를 고려해보세요. 재산세 본세가 250만원을 초과하면 최대 2개월에 걸쳐 나누어 낼 수 있으며, 기한 내에 납부하면 가산금 없이 처리됩니다. 이 가이드는 분납의 기준, 한도, 신청 방법, 납기별 주의사항을 완벽하게 정리합니다.
@@ -263,7 +263,7 @@ export default function PropertyTaxInstallmentPayment2026Page() {
                   분납 신청은 온라인과 오프라인 두 가지 방법으로 가능합니다. 각 방법의 장단점을 이해하면 자신에게 맞는 방식을 선택할 수 있습니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
-                  <p className="font-semibold text-text-primary">방법 1. 위택스(wetax.go.kr) 온라인 신청 — 빠르고 편함</p>
+                  <p className="font-semibold text-text-primary">방법 1. 위택스(wetax.go.kr) 온라인 신청, 빠르고 편함</p>
                   <p className="text-sm text-text-secondary">
                     · 위택스 사이트(wetax.go.kr) 접속
                     <br />

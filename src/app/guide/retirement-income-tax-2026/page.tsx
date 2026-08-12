@@ -83,7 +83,7 @@ export default function RetirementIncomeTaxPage() {
     { name: '퇴직소득세 계산 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '퇴직소득세 계산 2026 — 연분연승법·근속연수공제',
+    headline: '퇴직소득세 계산 2026, 연분연승법·근속연수공제',
     description:
       '2026년 퇴직소득세 계산 완전 가이드. 근속연수공제, 환산급여공제, 기본세율 적용부터 실전 시뮬레이션까지.',
     url: URL,
@@ -130,7 +130,7 @@ export default function RetirementIncomeTaxPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   2026 퇴직소득세 계산법
                   <br />
-                  <span className="text-2xl text-text-secondary">— 연분연승법·근속연수공제</span>
+                  <span className="text-2xl text-text-secondary">· 연분연승법·근속연수공제</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   퇴직소득세는 근속연수가 길수록 세 부담이 줄도록 설계된 제도입니다. 퇴직소득금액에서 근속연수공제와 환산급여공제를 차감한 과세표준에 기본세율을 적용하고, 연분연승법으로 월 환산해 최종 세액을 계산합니다(소득세법 §48·§55).
@@ -428,7 +428,7 @@ export default function RetirementIncomeTaxPage() {
                 <h3 className="font-semibold text-text-primary">법적 근거 및 참고자료</h3>
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
-                    • <a href="https://www.law.go.kr/법령/소득세법/제48조" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">소득세법 제48조</a> (퇴직소득공제 — 근속연수공제·환산급여공제)
+                    • <a href="https://www.law.go.kr/법령/소득세법/제48조" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">소득세법 제48조</a> (퇴직소득공제, 근속연수공제·환산급여공제)
                   </li>
                   <li>
                     • <a href="https://www.law.go.kr/법령/소득세법/제55조" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">소득세법 제55조</a> (기본세율)

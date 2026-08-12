@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택청약저축 소득공제 2026 | 무주택·연 300만 40% 공제' }],
-    title: '주택청약저축 소득공제 2026 — 연 300만원 40% 공제로 최대 120만원 절세',
+    title: '주택청약저축 소득공제 2026, 연 300만원 40% 공제로 최대 120만원 절세',
     description: '무주택 세대주·총급여 7천만원 이하면 주택청약종합저축 납입액의 40%를 소득공제. 계산법과 적용 조건 완전 정리.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택청약저축 소득공제 2026 — 무주택 연 300만 40% 공제로 절세',
+    title: '주택청약저축 소득공제 2026, 무주택 연 300만 40% 공제로 절세',
     description: '무주택·연소득 7천만 이하면 청약저축 납입액 300만원 한도로 40% 공제. 최대 절세 약 18~45만원.',
   },
 };
@@ -99,7 +99,7 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
     { name: '주택청약저축 소득공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택청약저축 소득공제 2026 — 무주택 세대주 연 300만원 40% 공제로 최대 120만원 절세',
+    headline: '주택청약저축 소득공제 2026, 무주택 세대주 연 300만원 40% 공제로 최대 120만원 절세',
     description:
       '주택청약종합저축 납입액의 40% 소득공제 제도. 무주택·연 7천만원 이하 직장인 대상, 연 300만원 한도, 최대 120만원 소득공제, 최대 약 45만원 절세 가능. 계산법, 적용 조건, 추징 위험까지 완전 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   주택청약저축 소득공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 무주택 연 300만 40% 공제로 최대 120만원 절세</span>
+                  <span className="text-2xl text-text-secondary">· 무주택 연 300만 40% 공제로 최대 120만원 절세</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   무주택 직장인이라면 주택청약종합저축에 돈을 넣을 때마다 일정 금액을 세금에서 깎아주는 제도가 있습니다. 바로 조세특례제한법 §87의 주택청약저축 소득공제입니다. 연 300만원까지 납입액의 40%를 소득에서 공제받아, 최대 120만원의 세금 감면 효과를 누릴 수 있습니다. 이 가이드는 공제 대상, 한도, 실제 절세액 계산법, 그리고 주의할 함정까지 완전히 정리해드립니다.

@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택담보대출 이자 소득공제 2026' }],
-    title: '주택담보대출 이자 소득공제 2026 — 연 2,000만원까지 소득에서 차감',
+    title: '주택담보대출 이자 소득공제 2026, 연 2,000만원까지 소득에서 차감',
     description: '무주택 또는 1주택 세대주의 주택담보대출 이자를 최대 연 2,000만원까지 소득공제. 조건·한도·계산법 완벽 정리.',
     url: URL,
     type: 'article',
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택담보대출 이자 소득공제 2026 — 최대 2,000만원 절세 가능',
+    title: '주택담보대출 이자 소득공제 2026, 최대 2,000만원 절세 가능',
     description: '기준시가 6억 이하 주택, 무주택/1주택 세대주라면 연 800~2,000만원 공제. 소득세법 §52.',
   },
 };
@@ -99,7 +99,7 @@ export default function MortgageInterestDeduction2026Page() {
     { name: '주택담보대출 이자 소득공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택담보대출 이자 소득공제 2026 — 연 2,000만원까지 소득에서 차감',
+    headline: '주택담보대출 이자 소득공제 2026, 연 2,000만원까지 소득에서 차감',
     description:
       '무주택 또는 1주택 세대주를 위한 장기주택저당차입금 이자상환액 소득공제. 조건·기준시가·차입 조건별 한도(800~2,000만원)와 계산법 완벽 정리.',
     url: URL,
@@ -147,7 +147,7 @@ export default function MortgageInterestDeduction2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   주택담보대출 이자 소득공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">— 최대 연 2,000만원 소득에서 차감</span>
+                  <span className="text-2xl text-text-secondary">· 최대 연 2,000만원 소득에서 차감</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택을 구입하기 위해 차입한 대출금의 이자를 소득금액에서 직접 차감하는 제도, 바로 주택담보대출 이자 소득공제입니다. 무주택이거나 1주택을 보유한 세대주라면 연 800만원에서 2,000만원까지 공제받을 수 있습니다. 하지만 조건이 까다로우므로, 이 가이드에서 기준시가·차입 조건·한도를 정확히 정리했습니다.

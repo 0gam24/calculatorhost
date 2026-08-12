@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분할매도 익절 전략 2026 | calculatorhost' }],
-    title: '분할매도 익절 전략 — 평균 매도단가로 수익을 지키는 방법',
+    title: '분할매도 익절 전략, 평균 매도단가로 수익을 지키는 방법',
     description: '목표가 도달 후 단계적으로 익절하는 분할매도 전략의 의사결정 기준과 시뮬레이션.',
     url: URL,
     type: 'article',
@@ -65,7 +65,7 @@ const FAQ_ITEMS = [
   {
     question: '분할매도에서 수수료·세금을 고려해야 하나요?',
     answer:
-      '반드시 고려해야 합니다. 거래당 수수료(증권사별 0.015~0.03%)와 양도소득세(보유 기간·개인 여부에 따라 다름 — 구체 세율은 국세청 또는 증권사 확인 필수)가 누적되므로, 계산기에서 수수료율을 입력해 실제 실현손익을 확인하세요.',
+      '반드시 고려해야 합니다. 거래당 수수료(증권사별 0.015~0.03%)와 양도소득세(보유 기간·개인 여부에 따라 다름, 구체 세율은 국세청 또는 증권사 확인 필수)가 누적되므로, 계산기에서 수수료율을 입력해 실제 실현손익을 확인하세요.',
   },
   {
     question: '손절과 익절을 함께 전략으로 세울 수 있나요?',
@@ -86,7 +86,7 @@ export default function SplitSellProfitTakingPage() {
     { name: '분할매도 익절 전략 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '분할매도 익절 전략 — 평균 매도단가로 수익을 지키는 방법 (2026)',
+    headline: '분할매도 익절 전략, 평균 매도단가로 수익을 지키는 방법 (2026)',
     description: '목표가 도달 후 단계적으로 익절하는 분할매도 전략의 의사결정 기준, 계산 공식, 실전 사례.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -97,7 +97,7 @@ export default function SplitSellProfitTakingPage() {
     keywords: ['분할매도', '익절', '평균 매도단가', '수익실현', '투자 전략', '주식'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '분할매도 익절 전략 — 평균 매도단가로 수익을 지키는 방법 (2026)',
+    name: '분할매도 익절 전략, 평균 매도단가로 수익을 지키는 방법 (2026)',
     description: '목표가 도달 후 보유분을 나눠 익절하는 분할매도 전략. 고점 선택 리스크 분산, 추세 지속 시 추가 수익. 계산 공식, 실전 사례, 의사결정 플로우.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -183,7 +183,7 @@ export default function SplitSellProfitTakingPage() {
                   투자 · 8분 읽기 · 2026-06-28
                 </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  분할매도 익절 전략 — 평균 매도단가로 수익을 지키는 방법
+                  분할매도 익절 전략, 평균 매도단가로 수익을 지키는 방법
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주식·코인 투자에서 가장 어려운 순간은 "언제 팔 것인가"입니다.
@@ -314,7 +314,7 @@ export default function SplitSellProfitTakingPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4">
-                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">케이스 B: 분할매도 vs 일괄 — 상황별 비교</h3>
+                    <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-300">케이스 B: 분할매도 vs 일괄, 상황별 비교</h3>
                     <p className="text-sm text-text-secondary">
                       신약 기업을 3만원에 100주 매수. 임상 결과 발표 후 4만원까지 상승.
                       <br />
@@ -454,35 +454,35 @@ export default function SplitSellProfitTakingPage() {
                     <Link href="/calculator/split-sell/" className="text-primary-600 underline dark:text-primary-500">
                       분할매도 계산기
                     </Link>{' '}
-                    — 평균 매도단가, 차수별 실현손익(수수료 차감)
+, 평균 매도단가, 차수별 실현손익(수수료 차감)
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/split-buy/" className="text-primary-600 underline dark:text-primary-500">
                       분할매수 계산기
                     </Link>{' '}
-                    — 평균 매수단가, 회복 필요 상승률
+, 평균 매수단가, 회복 필요 상승률
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/averaging-down/" className="text-primary-600 underline dark:text-primary-500">
                       물타기 계산기
                     </Link>{' '}
-                    — 추가 매수 후 평단 변화
+, 추가 매수 후 평단 변화
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/averaging-down-vs-loss-cut/" className="text-primary-600 underline dark:text-primary-500">
                       물타기 vs 손절 vs 비중조절 가이드
                     </Link>{' '}
-                    — 하락 상황의 세 가지 대응 전략
+, 하락 상황의 세 가지 대응 전략
                   </li>
                   <li>
                     →{' '}
                     <Link href="/category/finance/" className="text-primary-600 underline dark:text-primary-500">
                       금융 카테고리
                     </Link>{' '}
-                    — 다른 투자 계산기 및 가이드
+, 다른 투자 계산기 및 가이드
                   </li>
                 </ul>
               </section>
