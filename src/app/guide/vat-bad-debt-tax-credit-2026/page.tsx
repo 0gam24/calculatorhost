@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function VatBadDebtTaxCredit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-vat-bad-debt-tax-credit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대손세액공제란 무엇인가요?</h2>
                 <p>
@@ -232,8 +229,6 @@ export default function VatBadDebtTaxCredit2026Page() {
                   다만 대손세액공제를 받은 뒤 그 채권을 나중에 회수하면, 회수한 금액에 해당하는 대손세액을 회수한 과세기간의 매출세액에 다시 더해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-vat-bad-debt-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">언제, 어떻게 신청하나요?</h2>

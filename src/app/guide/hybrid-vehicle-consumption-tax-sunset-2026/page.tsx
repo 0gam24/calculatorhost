@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function HybridVehicleConsumptionTaxSunset2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-hybrid-vehicle-consumption-tax-sunset-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">하이브리드 개소세 감면은 언제 끝나나</h2>
                 <p>
@@ -294,8 +291,6 @@ export default function HybridVehicleConsumptionTaxSunset2026Page() {
                   다만 위 금액과 일정은 모두 정부안이며 국회 심의 과정에서 바뀔 수 있습니다. 구매 계획을 세울 때는 확정 법률과 소관부처 고시를 다시 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-hybrid-vehicle-consumption-tax-sunset-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">연내 구매하려면 무엇을 확인해야 하나</h2>

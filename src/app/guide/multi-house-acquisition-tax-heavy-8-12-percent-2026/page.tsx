@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function MultiHouseAcquisitionTaxHeavy2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-multi-house-acquisition-tax-heavy-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">다주택자 취득세 중과세율은 몇 %인가요?</h2>
                 <p>
@@ -267,8 +264,6 @@ export default function MultiHouseAcquisitionTaxHeavy2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-multi-house-acquisition-tax-heavy-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">중과에서 빠지는 경우와 배제 요건</h2>

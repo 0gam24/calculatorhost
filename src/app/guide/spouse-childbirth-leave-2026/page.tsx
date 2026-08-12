@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function SpouseChildbirthLeave2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-spouse-childbirth-leave-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배우자 출산휴가는 며칠인가요?</h2>
                 <p>
@@ -255,8 +252,6 @@ export default function SpouseChildbirthLeave2026Page() {
                   다만 분할 횟수가 늘어나면 급여 신청 절차도 그만큼 반복됩니다. 서류 준비와 회사 결재 부담을 고려해 필요한 만큼만 나누는 것이 실무상 편리합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-spouse-childbirth-leave-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배우자 출산휴가와 육아휴직은 어떻게 다른가요?</h2>

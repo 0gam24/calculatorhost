@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function SmallTenantPriorityRepayment2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-small-tenant-priority-repayment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">최우선변제금은 어떤 제도인가요?</h2>
                 <p>
@@ -254,8 +251,6 @@ export default function SmallTenantPriorityRepayment2026Page() {
                   다만 최우선변제금 총액은 배당할 주택가액(대지가액 포함)의 2분의 1을 넘지 못합니다. 소액임차인이 여러 명이면 이 한도 안에서 안분되므로, 다가구주택에서는 개인이 받는 금액이 표의 상한보다 줄어들 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-small-tenant-priority-repayment-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">최우선변제를 받으려면 무엇을 해야 하나요?</h2>

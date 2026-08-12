@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function DurunuriSocialInsurancePage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-durunuri-social-insurance-support-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">두루누리란 무엇인가</h2>
                 <p>
@@ -240,8 +237,6 @@ export default function DurunuriSocialInsurancePage() {
                   다만 국민연금 보험료율은 2026년 시기별로 조정되는 단계 인상이 있어, 정확한 금액은 공단 고지서로 확인하는 것이 정확합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-durunuri-social-insurance-support-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">못 받는 경우와 신청 방법</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -175,8 +174,6 @@ export default function VehicleAcquisitionTax2026Page() {
                   명확히 설명합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vehicle-acquisition-tax-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
@@ -558,8 +555,6 @@ export default function VehicleAcquisitionTax2026Page() {
                   부동산을 혼동하지 않도록 주의하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-vehicle-acquisition-tax-mid" format="rectangle" />
 
               <FaqSection items={FAQ_ITEMS} />
 

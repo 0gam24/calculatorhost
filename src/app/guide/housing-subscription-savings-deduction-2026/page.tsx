@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
                   무주택 직장인이라면 주택청약종합저축에 돈을 넣을 때마다 일정 금액을 세금에서 깎아주는 제도가 있습니다. 바로 조세특례제한법 §87의 주택청약저축 소득공제입니다. 연 300만원까지 납입액의 40%를 소득에서 공제받아, 최대 120만원의 세금 감면 효과를 누릴 수 있습니다. 이 가이드는 공제 대상, 한도, 실제 절세액 계산법, 그리고 주의할 함정까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-housing-subscription-savings-deduction-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택청약저축 소득공제의 기본</h2>
@@ -338,8 +335,6 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
                   다만 추징은 당첨 후 일정 기간 내에 당첨자 본인이 신고해야 적용됩니다. 신고하지 않으면 나중에 세무조사 때 적발될 수 있으므로, 당첨 후에는 반드시 은행이나 세무서에 알리세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-housing-subscription-savings-deduction-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">부부가 함께 가입하면 공제를 두 배로 받을 수 있나요?</h2>

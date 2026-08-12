@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                   맞벌이 부부는 연말정산 때 부양가족 공제, 의료비 세액공제, 자녀세액공제를 누가 받을지 선택할 수 있습니다. 이 결정이 실수하면 같은 지출을 했는데도 세금을 수백만원 더 낼 수도 있고, 반대로 똑같이 절세할 수도 있다는 뜻입니다. 이 가이드는 어떤 공제를 누가 받으면 유리한지, 실제 계산법은 무엇인지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-dual-income-couple-year-end-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">맞벌이 부부 연말정산, 왜 배분이 중요한가</h2>
@@ -392,8 +389,6 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                   </li>
                 </ul>
               </section>
-
-              <AdSlot slot="guide-dual-income-couple-year-end-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">자주 하는 실수와 주의사항</h2>

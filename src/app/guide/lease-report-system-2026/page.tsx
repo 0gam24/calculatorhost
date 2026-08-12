@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function LeaseReportSystem2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-lease-report-system-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전월세 신고제란 무엇인가요?</h2>
                 <p>
@@ -254,8 +251,6 @@ export default function LeaseReportSystem2026Page() {
                   다만 과태료 금액과 부과 세부 기준은 지자체 운영에 따라 달라질 수 있습니다. 기한을 놓쳤더라도 최대한 빨리 신고하면 지연 기간이 짧아져 과태료가 줄어듭니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-lease-report-system-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">전입신고·확정일자와 무엇이 다른가요?</h2>

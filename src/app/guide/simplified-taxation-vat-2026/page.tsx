@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function SimplifiedTaxationVat2026Page() {
                   카페, 온라인 판매, 1인 스튜디오처럼 매출 규모가 작은 사업자라면 간이과세가 세금을 크게 줄여줍니다. 그런데 2024년 7월 기준금액이 오르고 세금계산서 발급 규칙이 바뀌면서 헷갈리는 분이 많습니다. 이 가이드는 간이과세자의 기준, 세액이 왜 낮은지, 세금계산서를 언제 발급해야 하는지, 그리고 부가세를 아예 안 내도 되는 조건까지 부가가치세법 조문으로 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-simplified-taxation-vat-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세자란 누구인가</h2>
@@ -309,8 +306,6 @@ export default function SimplifiedTaxationVat2026Page() {
                   다만 신규 개업자는 직전연도 매출이 없으므로 개업 첫해에는 세금계산서 발급 의무가 없습니다. 다음해에 직전연도(개업연도) 실적을 기준으로 판정하니, 첫해 매출이 4,800만원을 넘었다면 이듬해부터 발급을 준비하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-simplified-taxation-vat-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세 vs 일반과세, 무엇을 고를까</h2>

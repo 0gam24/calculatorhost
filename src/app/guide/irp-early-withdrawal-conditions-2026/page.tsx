@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function IrpEarlyWithdrawalConditions2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-irp-early-withdrawal-conditions-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">IRP는 아무 때나 인출이 되나요?</h2>
                 <p>
@@ -254,8 +251,6 @@ export default function IrpEarlyWithdrawalConditions2026Page() {
                   다만 퇴직급여로 이체된 재원(퇴직소득)이나 법정 사유의 종류에 따라 퇴직소득세율이 적용되기도 합니다. 세율 구조가 복잡하므로 인출 전 금융기관이나 홈택스로 세후 금액을 확인하는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-irp-early-withdrawal-conditions-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">중도인출과 해지, 어느 쪽이 유리한가요?</h2>

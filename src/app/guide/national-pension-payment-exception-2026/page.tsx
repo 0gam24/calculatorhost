@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function NationalPensionPaymentException2026Page() {
                   실직이나 폐업으로 당장 소득이 끊겼는데 매달 국민연금 고지서가 날아옵니다. 그냥 안 내도 될까, 아니면 반드시 신고를 해야 할까. 안 내면 나중에 연금이 얼마나 줄어들까. 이 가이드는 국민연금법 91조의 납부예외 제도를 기준으로, 신청 자격과 기한, 가입기간에 미치는 영향, 그리고 92조 추후납부로 회복하는 방법까지 한 번에 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-national-pension-payment-exception-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 국민연금 납부예외란 무엇인가요?</h2>
@@ -319,8 +316,6 @@ export default function NationalPensionPaymentException2026Page() {
                   다만, 최소 가입기간 10년(120개월)을 채우지 못하면 노령연금 자체를 받지 못합니다. 납부예외 기간이 길어져 가입기간이 짧아질 위험이 있다면, 반환일시금·임의계속가입 등 다른 선택지도 함께 검토해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-payment-exception-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 나중에 추후납부로 메울 수 있나요?</h2>

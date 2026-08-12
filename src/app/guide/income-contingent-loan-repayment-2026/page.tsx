@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function IncomeContingentLoanRepayment2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-income-contingent-loan-repayment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">취업 후 학자금 상환이란?</h2>
                 <p>
@@ -256,8 +253,6 @@ export default function IncomeContingentLoanRepayment2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-income-contingent-loan-repayment-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">회사 원천공제와 자진납부, 무엇이 다른가요?</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -160,8 +159,6 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   </p>
                 }
               />
-
-              <AdSlot slot="guide-may-31-deadline-day-top" format="horizontal" />
 
               {/* 핵심 정리 */}
               <section aria-label="핵심 정리" className="card border-l-4 border-l-primary-500">
@@ -424,8 +421,6 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-may-31-deadline-day-mid" format="rectangle" />
 
               {/* 4. 홈택스 폭주 시간대 회피 */}
               <section className="space-y-4">

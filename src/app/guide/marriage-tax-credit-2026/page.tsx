@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function MarriageTaxCredit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-marriage-tax-credit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">결혼세액공제란 무엇인가요?</h2>
                 <p>
@@ -263,8 +260,6 @@ export default function MarriageTaxCredit2026Page() {
                   다만 한쪽 소득이 적더라도 그 사람에게 산출세액이 조금이라도 있으면 그 범위에서 공제되므로, 부부 각자 연말정산을 챙기는 것이 유리합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-marriage-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">다른 신혼 혜택과 중복되나요?</h2>

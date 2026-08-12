@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
@@ -154,8 +153,6 @@ export default function RentIncrease5PercentCapGuidePage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-rent-increase-5-percent-cap-2026-top" format="horizontal" />
-
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">핵심 요약</h2>
                 <ul className="space-y-2 text-sm">
@@ -279,8 +276,6 @@ export default function RentIncrease5PercentCapGuidePage() {
                   </li>
                 </ul>
               </section>
-
-              <AdSlot slot="guide-rent-increase-5-percent-cap-2026-mid" format="rectangle" />
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">관련 계산기</h2>

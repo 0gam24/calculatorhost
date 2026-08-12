@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { GuideHeader } from '@/components/guide/GuideHeader';
@@ -162,8 +161,6 @@ export default function HealthInsuranceRegionalSubscriber2026() {
           />
 
           {/* Top Ad */}
-          <AdSlot slot="guide-health-regional-top" format="horizontal" />
-
           {/* Structured Summary */}
           <section className="space-y-4">
             <div className="bg-bg-card rounded-lg p-4 border border-border-base">
@@ -232,8 +229,6 @@ export default function HealthInsuranceRegionalSubscriber2026() {
           </section>
 
           {/* Mid Ad */}
-          <AdSlot slot="guide-health-regional-mid" format="rectangle" />
-
           {/* Section 2: 소득점수 계산 */}
           <section className="space-y-3">
             <h2 className="text-2xl font-bold text-text-primary">소득점수는 어떻게 계산하나요?</h2>

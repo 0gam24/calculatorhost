@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -148,8 +147,6 @@ export default function FourMajorInsuranceRates2026Page() {
                   직장인이라면 반드시 알아야 할 4대보험(국민연금·건강보험·고용보험·산재보험). 2026년 7월 국민연금 인상, 기준소득월액 상한, 장기요양보험료 계산법을 정확히 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-insurance-rates-top" format="horizontal" />
 
               {/* Structured Summary */}
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
@@ -356,8 +353,6 @@ export default function FourMajorInsuranceRates2026Page() {
                   </li>
                 </ol>
               </section>
-
-              <AdSlot slot="guide-insurance-rates-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">관련 법령 & 공식 출처</h2>

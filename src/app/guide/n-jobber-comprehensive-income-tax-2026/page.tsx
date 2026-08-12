@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -159,8 +158,6 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   소득 합산 규칙·분리과세 선택권·누진세율 효과를 완벽히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-n-jobber-comprehensive-tax-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -428,8 +425,6 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-n-jobber-comprehensive-tax-mid" format="rectangle" />
 
               {/* 4. 기타소득 300만 원 분리과세 선택 */}
               <section className="space-y-4">

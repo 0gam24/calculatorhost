@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function NationalHousingBondPurchase2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-housing-bond-purchase-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민주택채권 매입이란 무엇인가</h2>
                 <p>
@@ -299,8 +296,6 @@ export default function NationalHousingBondPurchase2026Page() {
                   다만 면제·감액 요건은 세부 조건이 복잡하고 개정될 수 있으므로, 등기 신청 전 주택도시기금 고객센터 또는 담당 은행 창구에서 해당 여부를 직접 확인하는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-housing-bond-purchase-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">매입 절차는 어떻게 진행되나</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function StressDsrStage3_2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-stress-dsr-stage3-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">스트레스 DSR 3단계란 무엇인가요?</h2>
                 <p>
@@ -244,8 +241,6 @@ export default function StressDsrStage3_2026Page() {
                   다만 한도가 줄었다고 해서 반드시 최대한 빌려야 하는 것은 아닙니다. 스트레스 DSR은 금리 상승기에 상환 능력을 보수적으로 보려는 안전장치라는 취지도 함께 이해하는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-stress-dsr-stage3-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비수도권도 이제 1.5%p가 적용되나요?</h2>

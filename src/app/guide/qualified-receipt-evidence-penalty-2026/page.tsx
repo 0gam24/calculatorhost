@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -160,8 +159,6 @@ export default function QualifiedReceiptEvidencePenalty2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-qualified-receipt-evidence-penalty-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">적격증빙이란 무엇인가</h2>
                 <p>
@@ -247,8 +244,6 @@ export default function QualifiedReceiptEvidencePenalty2026Page() {
                   다만 소규모사업자 판정 기준(수입금액, 업종)은 세부 요건이 있고 매년 달라질 수 있으므로, 정확한 대상 여부는 홈택스 신고 도움 자료나 세무 전문가로 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-qualified-receipt-evidence-penalty-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증빙이 없으면 비용도 못 넣나요?</h2>

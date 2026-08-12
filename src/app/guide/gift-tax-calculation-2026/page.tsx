@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -146,8 +145,6 @@ export default function GiftTaxCalculation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-gift-tax-calculation-top" format="horizontal" />
-
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">증여세 5단계 세율표와 누진공제</h2>
                 <p data-speakable>
@@ -277,8 +274,6 @@ export default function GiftTaxCalculation2026Page() {
                   <strong>주의:</strong> 공제는 관계별로 따로 계산합니다. 배우자 6억, 자녀 5,000만은 별개이므로, 부부가 함께 증여받는 경우 각각 자신의 공제를 받을 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-gift-tax-calculation-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">3단계: 과세표준 계산</h2>

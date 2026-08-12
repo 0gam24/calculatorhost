@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -160,8 +159,6 @@ export default function AverageWageVsOrdinaryWage2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-average-wage-vs-ordinary-wage-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">평균임금과 통상임금, 무엇이 다른가</h2>
                 <p>
@@ -225,8 +222,6 @@ export default function AverageWageVsOrdinaryWage2026Page() {
                   예외: 어떤 수당이 통상임금에 포함되는지는 정기성, 일률성, 고정성 판단에 달려 있고, 2024년 대법원 판례로 정기상여금 등의 기준이 조정되었습니다. 최신 판례와 취업규칙을 함께 확인해야 정확합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-average-wage-vs-ordinary-wage-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어디에 무엇을 쓰나요?</h2>

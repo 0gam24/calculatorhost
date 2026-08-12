@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function EitcPaymentReduction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-earned-income-tax-credit-payment-reduction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로장려금 정기분은 언제 지급되나요?</h2>
                 <p>
@@ -260,8 +257,6 @@ export default function EitcPaymentReduction2026Page() {
                   예외: 기한후신청 마감(11월 30일)까지도 신청하지 않으면 그 해 근로장려금은 받을 수 없습니다. 소득·재산 요건이 된다면 늦더라도 11월 30일 전에 반드시 신청하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-earned-income-tax-credit-payment-reduction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">지급액과 심사 결과 조회 방법</h2>

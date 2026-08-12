@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function NationalPensionVoluntarySubscription2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-voluntary-subscription-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임의가입이란 무엇인가</h2>
                 <p>
@@ -276,8 +273,6 @@ export default function NationalPensionVoluntarySubscription2026Page() {
                   다만 임의계속가입도 65세를 넘겨서는 할 수 없습니다. 60세 시점에 가입기간이 크게 부족하면(예: 5년 미만) 65세까지 채우기 어려울 수 있으므로, 이 경우 반환일시금 수령과 계속 납부의 실익을 공단 상담으로 비교하는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-voluntary-subscription-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임의가입은 어떻게 신청하나</h2>

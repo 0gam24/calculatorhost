@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function FinancialIncomeHealthInsurancePremium2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-financial-income-health-insurance-premium-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">왜 금융소득에 건강보험료가 붙나요?</h2>
                 <p>
@@ -234,8 +231,6 @@ export default function FinancialIncomeHealthInsurancePremium2026Page() {
                   다만 위 계산에서 건강보험료율은 매년 고시되어 변동되므로 구체 금액은 표기하지 않았습니다. 2026년 정확한 요율과 장기요양보험료는 국민건강보험공단 고시로 확인하세요. 소득월액보험료에는 상한이 있어 초과분이 아무리 커도 무한정 늘지는 않습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-financial-income-health-insurance-premium-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">금융소득종합과세와 무엇이 다른가요?</h2>

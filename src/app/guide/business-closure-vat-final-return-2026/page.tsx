@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function BusinessClosureVatFinalReturn2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-business-closure-vat-final-return-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">폐업하면 부가세 신고는 언제까지 하나요?</h2>
                 <p>
@@ -265,8 +262,6 @@ export default function BusinessClosureVatFinalReturn2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-business-closure-vat-final-return-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세자와 일반과세자, 폐업신고가 다른가요?</h2>

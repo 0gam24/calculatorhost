@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function NationalPensionSurvivorBenefit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-survivor-benefit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">유족연금은 누구에게 지급되나요?</h2>
                 <p>
@@ -277,8 +274,6 @@ export default function NationalPensionSurvivorBenefit2026Page() {
                   다만 유족연금이 본인 노령연금보다 훨씬 큰 경우에는 유족연금 선택이 유리할 수 있습니다. 각자의 연금액에 따라 결과가 달라지므로, 청구 전 국민연금공단에서 두 경우를 비교해 보세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-survivor-benefit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">재혼하면 유족연금이 없어지나요?</h2>

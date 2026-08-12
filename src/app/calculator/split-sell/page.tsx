@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -265,8 +264,6 @@ export default function SplitSellPage() {
                   '보유 수량 초과 매도는 자동으로 잔여만큼만 처리',
                 ]}
               />
-
-              <AdSlot slot="split-sell-top" format="horizontal" />
 
               <SplitSellCalculator />
 

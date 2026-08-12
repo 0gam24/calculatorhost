@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function ParentalBenefitChildAllowance2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-parental-benefit-child-allowance-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">부모급여와 아동수당은 무엇이 다른가요?</h2>
                 <p>
@@ -227,8 +224,6 @@ export default function ParentalBenefitChildAllowance2026Page() {
                   주의: 아동이 만 8세가 되는 달의 기준을 넘어가면 지급이 종료됩니다. 또한 부정한 방법으로 받은 아동수당은 아동수당법 §11에 따라 환수될 수 있으므로, 계좌 변경이나 국외 체류 등 자격 변동 사항은 제때 신고해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-parental-benefit-child-allowance-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">언제 어떻게 신청하나요?</h2>

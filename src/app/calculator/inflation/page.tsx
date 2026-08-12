@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -241,8 +240,6 @@ export default function InflationPage() {
                   '한국은행 물가 목표: 연 2%, 실제는 1.8~3.6% 범위',
                 ]}
               />
-
-              <AdSlot slot="inflation-top" format="horizontal" />
 
               {/* 계산기 */}
               <InflationCalculator />

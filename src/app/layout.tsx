@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import Script from 'next/script';
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter';
-import { MobileAnchorAdGuard } from '@/components/ads/MobileAnchorAdGuard';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -197,7 +196,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* AD-5 모바일 앵커 (lg 이하에서만 고정 하단 표시) */}
         {/* AdSense 정책: 정책 페이지(/privacy, /terms, /contact, /about)에서는 광고 비활성화 */}
-        <MobileAnchorAdGuard />
 
         {/* Web Vitals → GA4 송신 (필드 데이터 수집) */}
         <WebVitalsReporter />

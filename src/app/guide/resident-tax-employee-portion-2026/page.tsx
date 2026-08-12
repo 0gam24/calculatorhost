@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function ResidentTaxEmployeePortion2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-resident-tax-employee-portion-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 주민세 종업원분이란 무엇인가요?</h2>
                 <p>
@@ -267,8 +264,6 @@ export default function ResidentTaxEmployeePortion2026Page() {
                   다만 급여총액에서 비과세 근로소득을 제외하는 계산과 조례 세율 반영에 따라 실제 세액이 달라질 수 있으니, 위택스 신고 화면의 자동 계산을 함께 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-resident-tax-employee-portion-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신고·납부는 어떻게 하나요?</h2>

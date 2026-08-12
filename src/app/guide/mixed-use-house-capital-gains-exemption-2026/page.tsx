@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function MixedUseHouseCapitalGainsExemption2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-mixed-use-house-capital-gains-exemption-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상가주택은 양도세를 어떻게 판정하나요?</h2>
                 <p>
@@ -269,8 +266,6 @@ export default function MixedUseHouseCapitalGainsExemption2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-mixed-use-house-capital-gains-exemption-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">부수토지는 어떻게 나누나요?</h2>

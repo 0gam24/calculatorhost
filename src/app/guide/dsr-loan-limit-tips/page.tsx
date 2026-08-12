@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
@@ -160,8 +159,6 @@ export default function DsrLoanLimitTipsPage() {
                   최대화하는 5가지 실전 방법을 시뮬레이션과 함께 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-dsr-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

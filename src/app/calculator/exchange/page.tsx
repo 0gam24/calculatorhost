@@ -1,13 +1,8 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -232,7 +227,6 @@ export default function ExchangePage() {
 
             {/* AD-1 헤더 광고 */}
             <div className="my-8">
-              <AdSlot slot="exchange-top" format="horizontal" />
             </div>
 
             {/* 계산기 폼 */}
@@ -246,8 +240,6 @@ export default function ExchangePage() {
             <FaqSection items={FAQ_ITEMS} />
 
               {/* AD-4 Infeed */}
-              <InfeedAd slot="exchange-infeed" />
-
             {/* 환율 설명 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">환율·환전이란 무엇인가요?</h2>

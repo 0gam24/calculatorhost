@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function HonestTaxReturnConfirmation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-honest-tax-return-confirmation-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">성실신고확인제도란 무엇인가요?</h2>
                 <p>
@@ -278,8 +275,6 @@ export default function HonestTaxReturnConfirmation2026Page() {
                   다만 부가가치세 신고나 다른 세목의 신고기한까지 연장되는 것은 아닙니다. 성실신고확인 대상자라도 부가가치세는 일반 일정대로 신고해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-honest-tax-return-confirmation-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">확인비용은 세액공제 받을 수 있나요?</h2>

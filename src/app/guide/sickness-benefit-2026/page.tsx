@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function SicknessBenefit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-sickness-benefit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상병수당이란 무엇인가요?</h2>
                 <p>
@@ -256,8 +253,6 @@ export default function SicknessBenefit2026Page() {
                   다만 진단서 발급 비용은 본인이 부담해야 하고, 근로활동 불가에 대한 의학적 판단이 지급의 핵심 기준이므로 진단 내용이 충실해야 심사가 원활합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-sickness-benefit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">산재보험과 무엇이 다른가요?</h2>

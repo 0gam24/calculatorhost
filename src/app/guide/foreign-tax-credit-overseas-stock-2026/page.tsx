@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -205,8 +204,6 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                   </tbody>
                 </table>
               </section>
-
-              <AdSlot slot="guide-foreign-tax-credit-top" format="horizontal" />
 
               {/* 1. 외국납부세액공제란 */}
               <section className="space-y-4">
@@ -483,8 +480,6 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-foreign-tax-credit-mid" format="rectangle" />
 
               {/* 5. 10년 이월 */}
               <section className="space-y-4">

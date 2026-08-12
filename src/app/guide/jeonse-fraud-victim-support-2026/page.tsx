@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function JeonseFraudVictimSupport2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-jeonse-fraud-victim-support-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세사기 피해자로 인정받는 4가지 요건은?</h2>
                 <p>
@@ -235,8 +232,6 @@ export default function JeonseFraudVictimSupport2026Page() {
                   제출 서류로는 임대차계약서, 주민등록등본(전입 확인), 확정일자 확인 자료, 경매개시결정문 등 피해 증빙, 개인정보 수집·이용 동의서 등이 필요합니다. 예외: 서류가 일부 미비해도 접수 후 보완이 가능한 경우가 있으므로, 마감을 이유로 신청을 미루지 마세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-jeonse-fraud-victim-support-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">피해자로 결정되면 어떤 지원을 받나요?</h2>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -223,8 +222,6 @@ export default function SeverancePage() {
               />
 
               {/* AD-1 리더보드 (상단) */}
-              <AdSlot slot="severance-top" format="horizontal" />
-
               {/* 계산기 폼 */}
               <SeveranceCalculator />
 
@@ -275,8 +272,6 @@ export default function SeverancePage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="severance-mid" format="rectangle" />
-
               {/* 평균임금 vs 통상임금 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">평균임금과 통상임금은 어떻게 다른가요?</h2>

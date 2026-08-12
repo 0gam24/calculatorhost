@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -158,8 +157,6 @@ export default function ElectricVehicleTax2026Page() {
                   </p>
                 }
               />
-
-              <AdSlot slot="guide-electric-vehicle-tax-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -420,8 +417,6 @@ export default function ElectricVehicleTax2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-electric-vehicle-tax-mid" format="rectangle" />
 
               {/* 4. 실제 비교 시뮬레이션 */}
               <section className="space-y-4">

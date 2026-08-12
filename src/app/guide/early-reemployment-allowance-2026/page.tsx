@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function EarlyReemploymentAllowance2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-early-reemployment-allowance-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조기재취업수당이란 무엇인가요?</h2>
                 <p>
@@ -298,8 +295,6 @@ export default function EarlyReemploymentAllowance2026Page() {
                   다만 잔여일수 기준일은 재취업일 "전날"이므로, 재취업일 자체를 며칠 앞당기거나 늦추는 것만으로 하루 차이가 요건 충족 여부를 가를 수 있습니다. 정확한 잔여일수는 고용센터 또는 워크넷 실업인정 내역에서 확인해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-early-reemployment-allowance-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">조기재취업수당은 언제, 어떻게 청구하나요?</h2>

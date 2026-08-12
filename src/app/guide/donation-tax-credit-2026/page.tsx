@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function DonationTaxCredit2026Page() {
                   종합소득세 계산 때 기부금을 낸 금액의 일정 비율을 직접 세금에서 뺄 수 있는 제도가 바로 기부금 세액공제입니다. 소득세법 §59의4에 따라 기부액 규모별로 15%와 30%의 두 단계 공제율이 적용되며, 대상기부금도 일반기부금·정치자금·고향사랑기부금별로 다릅니다. 이 가이드는 기부금 세액공제의 정확한 공제율, 한도, 대상기부금을 정리하고, 실제 계산 방법과 함정까지 완전히 설명해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-donation-tax-credit-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기부금 세액공제란 무엇인가</h2>
@@ -360,8 +357,6 @@ export default function DonationTaxCredit2026Page() {
                   다만 한도 초과분을 이월공제할 때는 종합소득세 신고 시 명시해야 합니다. 자동으로 이월되는 것이 아니므로, 신고 시 이전 연도의 초과분이 있는지 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-donation-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">개인사업자의 기부금 처리 — 세액공제가 아닌 필요경비</h2>

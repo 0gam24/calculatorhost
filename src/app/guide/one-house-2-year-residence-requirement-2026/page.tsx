@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function OneHouseResidenceRequirement2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-one-house-2-year-residence-requirement-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">거주요건, 언제 붙고 언제 안 붙나</h2>
                 <p>
@@ -245,8 +242,6 @@ export default function OneHouseResidenceRequirement2026Page() {
                   다만 부득이한 사유는 자동으로 인정되지 않고 납세자가 증빙으로 소명해야 합니다. 사유가 발생하면 그 시점의 서류를 즉시 확보해 두는 것이 나중의 세무 다툼을 막는 길입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-one-house-2-year-residence-requirement-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사례로 보는 거주요건 판단</h2>

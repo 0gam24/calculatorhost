@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function NoranUmbrellaMutualAidDeduction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-noran-umbrella-mutual-aid-deduction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">노란우산공제란 무엇인가요?</h2>
                 <p>
@@ -274,8 +271,6 @@ export default function NoranUmbrellaMutualAidDeduction2026Page() {
                   다만 실질과세 원칙(국세기본법 §14)상 명목이 아닌 실질에 따라 과세되므로, 절세만을 노린 단기 가입 후 해지는 오히려 손해입니다. 노란우산공제는 최소 폐업·노후 시점까지 유지할 수 있는 여력 안에서 가입하는 것이 핵심입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-noran-umbrella-mutual-aid-deduction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연금저축·IRP와 무엇이 다른가요?</h2>

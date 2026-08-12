@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function RealEstateTaxReform2026Page() {
                   이 글은 집을 가진 사람, 팔지 말지 고민하는 1주택자, 오래 보유만 하고 거주하지 않은 소유자를 위해 2026년 8월 3일 발표된 세제개편안의 부동산 세금 변화를 쉽게 정리한 글입니다. 아직 확정된 법이 아니라 국회 심의를 앞둔 정부안이라는 점을 전제로, 장기보유특별공제가 어떻게 바뀌는지, 공제한도가 왜 생기는지, 실거주자와 비거주자에게 각각 어떤 영향이 있는지를 순서대로 설명합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-real-estate-tax-reform-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 2026 세제개편안, 부동산 세금 핵심은 무엇인가요?</h2>
@@ -309,8 +306,6 @@ export default function RealEstateTaxReform2026Page() {
                   다만 사례의 숫자는 개편안 가정치이며 확정 세액이 아닙니다. 경계선(양도차익이 공제한도 부근)에 있는 주택은 시행 연도에 따라 유불리가 갈리므로 개별 시뮬레이션이 필요합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-real-estate-tax-reform-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 종합부동산세는 어떻게 달라지나요?</h2>

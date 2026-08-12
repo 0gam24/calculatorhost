@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function InterestIncomeTax2026Page() {
                   예금·적금의 이자는 원천징수로 기본 15.4%(소득세 14%+지방소득세 1.4%)의 세금이 공제됩니다. 소득세법 §129에 따른 이 세율은 모든 개인 금융상품(정기예금, 적금, 초단기펀드 등)에 일괄 적용되지만, 세금우대종합저축(9.5%)이나 ISA(비과세) 같은 대체수단으로 절감할 수 있습니다. 또한 연 금융소득 2,000만원을 초과하면 종합과세로 세금이 크게 증가합니다. 2026년 기준으로 정확한 세율 구조, 세금우대 조건, 종합과세 경계선, 실제 계산 사례를 한눈에 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-interest-income-tax-top" format="horizontal" />
 
               {/* Structured Summary */}
               <div className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4">
@@ -458,8 +455,6 @@ export default function InterestIncomeTax2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-interest-income-tax-mid" format="rectangle" />
 
               {/* Section 4: 금융소득 종합과세 */}
               <section className="space-y-4">

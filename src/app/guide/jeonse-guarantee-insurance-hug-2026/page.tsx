@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -153,8 +152,6 @@ export default function JeonseGuaranteeInsuranceHug2026Page() {
                   전세계약 만료 후에도 보증금을 돌려받지 못하는 사고가 매년 반복됩니다. HUG(주택도시보증공사) 전세보증금 반환보증은 이런 상황을 대비해 임차인이 미리 가입해 두는 보험형 상품으로, 임대인이 반환 의무를 지키지 못하면 보증기관이 대신 지급해 줍니다. 이 가이드는 가입 조건, 보증료, 신청 기한, HUG·HF·SGI 비교, 안심전세 앱 신청 절차까지 임차인 관점에서 하나씩 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-jeonse-guarantee-insurance-hug-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세보증금 반환보증이란 무엇인가요?</h2>
@@ -309,8 +306,6 @@ export default function JeonseGuaranteeInsuranceHug2026Page() {
                   다만 요율과 할인율은 정책 변화에 따라 자주 조정됩니다. 계약 시점에 알려진 요율과 실제 접수 시점의 요율이 다를 수 있으니, 예산 계산은 여유 있게 잡아두는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-jeonse-guarantee-insurance-hug-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">HUG·HF·SGI 무엇이 다른가요?</h2>

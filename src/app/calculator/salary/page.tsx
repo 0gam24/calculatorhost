@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -12,13 +10,7 @@ import { EmbedCodeBox } from '@/components/calculator/EmbedCodeBox';
 import { RateBarChart } from '@/components/charts/RateBarChart';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
-const SkyscraperAd = dynamic(() => import('@/components/ads/SkyscraperAd').then(mod => ({ default: mod.SkyscraperAd })), {
-  loading: () => <div className="hidden lg:block w-[300px] min-h-[620px] sticky top-20 z-30" aria-hidden="true" />,
-});
 
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -262,8 +254,6 @@ export default function SalaryPage() {
                 ]}
               />
 
-              <AdSlot slot="salary-top" format="horizontal" />
-
               {/* 계산기 */}
               <SalaryCalculator />
 
@@ -323,8 +313,6 @@ export default function SalaryPage() {
               </section>
 
               {/* AD-4 Infeed (본문 중간) */}
-              <InfeedAd slot="salary-infeed" />
-
               {/* 월급별 실수령액 빠른 조회표 — 검색 의도 직접 매칭 */}
               <section aria-label="월급별 실수령액 빠른 조회" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">월급별 실수령액 빠른 조회 (2026)</h2>
@@ -700,7 +688,6 @@ export default function SalaryPage() {
               </div>
 
               {/* 우측 AD-3 Skyscraper (lg+) */}
-              <SkyscraperAd slot="salary-skyscraper" />
             </div>
           </main>
         </div>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -194,8 +193,6 @@ export default function MayComprehensiveIncomeTaxPage() {
                   단계별 신고법·절세 5가지·환급 받는 법까지 모두 해결됩니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-may-tax-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

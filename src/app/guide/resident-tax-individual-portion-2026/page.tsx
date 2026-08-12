@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -164,8 +163,6 @@ export default function ResidentTaxIndividualPortion2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-resident-tax-individual-portion-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주민세 개인분이란 무엇인가</h2>
                 <p>
@@ -313,8 +310,6 @@ export default function ResidentTaxIndividualPortion2026Page() {
                   다만 구체적 면제 대상과 신청 절차는 지자체 조례로 정해지므로 지역마다 차이가 있습니다. 자신이 면제 대상에 해당하는지 확인하려면 관할 시·군·구청 세무과에 문의하거나, 위택스에서 감면 신청 메뉴를 이용해 서류를 제출해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-resident-tax-individual-portion-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">개인분·사업소분·종업원분 비교</h2>

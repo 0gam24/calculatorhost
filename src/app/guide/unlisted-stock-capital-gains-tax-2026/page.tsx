@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function UnlistedStockCapitalGainsTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-unlisted-stock-capital-gains-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비상장주식을 팔면 세금을 내나요?</h2>
                 <p>
@@ -263,8 +260,6 @@ export default function UnlistedStockCapitalGainsTax2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-unlisted-stock-capital-gains-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대주주 요건, 어디까지 합산하나요?</h2>

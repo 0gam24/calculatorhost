@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function HometownLoveDonationTaxCredit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-hometown-love-donation-tax-credit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">고향사랑기부제란 무엇인가요?</h2>
                 <p>
@@ -252,8 +249,6 @@ export default function HometownLoveDonationTaxCredit2026Page() {
                   예외: 두 사례 모두 낼 세금(결정세액)이 공제액보다 충분히 많다는 전제입니다. 소득이 적어 원래 낼 세금이 적으면, 그 세금 한도까지만 돌려받게 되어 위 계산보다 혜택이 줄어들 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-hometown-love-donation-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">다른 기부금 세액공제와 무엇이 다른가요?</h2>

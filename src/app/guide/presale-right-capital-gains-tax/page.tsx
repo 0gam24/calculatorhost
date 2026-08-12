@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -141,8 +140,6 @@ export default function PresaleRightCgtGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-presale-cgt-top" format="horizontal" />
-
               {/* 1. 분양권 정의 + 입주권/주택 차이 */}
               <section aria-label="분양권 정의" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">분양권 vs 입주권 vs 주택 — 단계별 차이</h2>
@@ -193,8 +190,6 @@ export default function PresaleRightCgtGuide() {
                   근거: 소득세법 §104①2호 나목 (2021-06-01 이후 취득 분양권). 지방소득세 10%(양도세의) 별도 부과.
                 </p>
               </section>
-
-              <AdSlot slot="guide-presale-cgt-mid" format="rectangle" />
 
               {/* 3. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

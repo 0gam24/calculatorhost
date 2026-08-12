@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -161,8 +160,6 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                   누락되는 공제 항목, 신청 방법, 환급 추적까지 완벽하게 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-correction-claim-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -646,8 +643,6 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                 <h2 className="text-2xl font-bold">자주 묻는 질문 (FAQ)</h2>
                 <FaqSection items={FAQ_ITEMS} />
               </section>
-
-              <AdSlot slot="guide-correction-claim-mid" format="rectangle" />
 
               {/* 관련 계산기 및 가이드 */}
               <section className="space-y-4">

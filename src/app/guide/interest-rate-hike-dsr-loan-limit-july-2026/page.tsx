@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                   이 글은 현재 금리를 기준으로 그 구조와 영향을 가정 사례로 미리 점검합니다(특정 시점 인상을 단정하지 않습니다).
                 </p>
               </header>
-
-              <AdSlot slot="guide-interest-rate-hike-dsr-loan-limit-july-2026-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
@@ -328,8 +325,6 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-interest-rate-hike-dsr-loan-limit-july-2026-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">4. 스트레스금리란? — "혹시 금리가 더 오르면" 대비하는 금리</h2>

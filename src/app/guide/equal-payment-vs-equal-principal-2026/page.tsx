@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -164,8 +163,6 @@ export default function EqualPaymentVsPrincipal2026Page() {
                   선택하는 데 도움을 드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-equal-payment-vs-principal-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
@@ -480,8 +477,6 @@ export default function EqualPaymentVsPrincipal2026Page() {
                   확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-equal-payment-vs-principal-mid" format="rectangle" />
 
               <FaqSection items={FAQ_ITEMS} />
 

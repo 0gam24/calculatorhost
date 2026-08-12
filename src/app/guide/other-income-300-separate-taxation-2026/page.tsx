@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function OtherIncome300SeparateTaxation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-other-income-300-separate-taxation-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기타소득 300만원 기준이란 무엇인가요?</h2>
                 <p>
@@ -255,8 +252,6 @@ export default function OtherIncome300SeparateTaxation2026Page() {
                   경계 비교: 같은 기타소득금액이라도 사례 1은 종합과세, 사례 2는 분리과세가 유리합니다. 갈림길은 다른 소득까지 합산한 한계세율이 22%보다 낮은지 높은지입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-other-income-300-separate-taxation-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떻게 선택하고 신고하나요?</h2>

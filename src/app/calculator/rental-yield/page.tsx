@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -236,8 +235,6 @@ export default function RentalYieldPage() {
                 ]}
               />
 
-              <AdSlot slot="rental-yield-top" format="horizontal" />
-
               {/* 계산기 */}
               <RentalYieldCalculator />
 
@@ -268,8 +265,6 @@ export default function RentalYieldPage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="rental-yield-mid" format="rectangle" />
-
               {/* Cap Rate와 ROI */}
               <section aria-label="Cap Rate" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">Cap Rate와 ROI의 차이</h2>

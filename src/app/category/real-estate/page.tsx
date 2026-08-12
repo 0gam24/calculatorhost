@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
@@ -216,12 +215,6 @@ export default function RealEstateCategoryPage() {
               </div>
 
               {/* AD-1 리더보드 */}
-              <AdSlot
-                slot="category-real-estate-top"
-                format="horizontal"
-                className="my-6 rounded-lg border border-border-base"
-              />
-
               {/* Structured Summary */}
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <h2 className="text-xl font-semibold text-text-primary">부동산 계산기 라인업</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -140,8 +139,6 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 통해 각 방식의 세금 구조와 함정을 분석합니다.
               </p>
             </div>
-
-            <AdSlot slot="guide-child-house-top" format="horizontal" />
 
             {/* 섹션 1: 결정 프레임 */}
             <section className="mb-10">
@@ -338,8 +335,6 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </p>
               </div>
             </section>
-
-            <AdSlot slot="guide-child-house-mid" format="rectangle" />
 
             {/* 섹션 4: 자금출처 조사 */}
             <section className="mb-10">
@@ -581,8 +576,6 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </table>
               </div>
             </section>
-
-            <AdSlot slot="guide-child-house-low" format="fluid" />
 
             {/* 섹션 8: FAQ */}
             <section className="mb-10">

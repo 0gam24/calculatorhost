@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -271,8 +270,6 @@ export default function AveragingDownPage() {
                   '투자 권유 아님. 기업 분석·시장 판단 후 자체 결정',
                 ]}
               />
-
-              <AdSlot slot="averaging-down-top" format="horizontal" />
 
               {/* 계산기 */}
               <AveragingDownCalculator />

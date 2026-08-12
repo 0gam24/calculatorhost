@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   마감까지 정확히 한 달 남았으니 딜러 확인 후 신청이 필수입니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vehicle-individual-consumption-tax-deadline-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>
@@ -342,8 +339,6 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-vehicle-individual-consumption-tax-deadline-mid" format="rectangle" />
 
               <FaqSection items={[...FAQ_ITEMS]} />
 

@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -160,8 +159,6 @@ export default function StartupFundGiftTaxSpecial2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-startup-fund-gift-tax-special-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">창업자금 증여세 과세특례란</h2>
                 <p>
@@ -241,8 +238,6 @@ export default function StartupFundGiftTaxSpecial2026Page() {
                   예외: 업종 판단은 세부 분류에 따라 갈리고, 같은 사업이라도 형태에 따라 창업 인정 여부가 달라집니다. 창업 계획 단계에서 국세청 안내나 세무 전문가로 대상 여부를 먼저 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-startup-fund-gift-tax-special-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">창업 기한과 사후관리는 어떻게 되나요?</h2>

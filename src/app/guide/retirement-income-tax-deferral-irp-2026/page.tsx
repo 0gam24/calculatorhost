@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -149,8 +148,6 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                   즉시 세금을 내지 않고 나중에 연금으로 수령할 때 30~40% 절감받을 수 있는 과세이연 제도를 소개합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-retirement-irp-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 체크리스트</h2>
@@ -487,8 +484,6 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                   연금 개시 나이와 기간을 미리 확인해 두세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-retirement-irp-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">관련 법령 & 공식 출처</h2>

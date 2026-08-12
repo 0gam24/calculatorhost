@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -153,8 +152,6 @@ export default function GiftTaxExemptionLimit2026Page() {
                   재산을 자녀나 배우자에게 줄 때, 가장 먼저 묻는 질문이 있습니다. "얼마까지 세금 없이 줄 수 있을까?" 그 답이 바로 증여재산공제입니다. 상증법 §53에 정해진 공제액만큼은 증여세를 내지 않아도 되며, 신고 의무도 없습니다. 다만 10년 단위로 합산되고, 2024년부터는 혼인·출산공제 같은 추가 공제도 생겼습니다. 이 가이드에서는 관계별 공제 한도와 함정을 명확하게 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-gift-tax-exemption-limit-top" format="horizontal" />
 
               <section className="space-y-6">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">증여재산공제 한눈에: 관계별 공제액 표</h2>
@@ -305,8 +302,6 @@ export default function GiftTaxExemptionLimit2026Page() {
                   <strong>중요:</strong> 10년 기한은 "<strong>현재 증여일</strong>로부터 역산 10년"입니다. 즉, 2026년 증여는 2016년 이후 증여와 합산됩니다. 기산점을 명확히 해야 나중에 분쟁이 없습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-gift-tax-exemption-limit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">혼인·출산공제: 2024년 신설 추가 공제</h2>

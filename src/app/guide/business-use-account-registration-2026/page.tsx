@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function BusinessUseAccountRegistration2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-business-use-account-registration-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사업용계좌 신고란 무엇인가요?</h2>
                 <p>
@@ -303,8 +300,6 @@ export default function BusinessUseAccountRegistration2026Page() {
                   다만 여기서 인용한 0.2% 가산세율은 국세청 안내와 소득세법 사업용계좌 관련 가산세 규정을 요약한 것으로, 정확한 조항 번호와 계산 방식은 개정될 수 있으므로 최신 국세청 자료를 함께 확인하시기 바랍니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-business-use-account-registration-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사업용계좌는 어떻게 사용하나요?</h2>

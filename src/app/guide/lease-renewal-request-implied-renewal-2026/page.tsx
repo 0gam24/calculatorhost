@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function LeaseRenewalRequest2026Page() {
                   전세·월세 계약 만기가 다가올 때 임차인이 활용할 수 있는 제도는 크게 두 가지입니다. 하나는 주택임대차보호법 §6의3에 규정된 계약갱신요구권이고, 다른 하나는 §6의 묵시적 갱신입니다. 이름은 비슷해도 통지 시기, 갱신 횟수, 임대료 인상 규칙, 중도 해지 방법이 각기 다릅니다. 이 가이드에서는 두 제도의 차이와 5% 상한, 그리고 실제 인상액 계산 사례를 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-lease-renewal-request-implied-renewal-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">계약갱신요구권이란 무엇인가요?</h2>
@@ -367,8 +364,6 @@ export default function LeaseRenewalRequest2026Page() {
                   다만 임대인이 실거주 사유로 갱신을 거절해놓고 정당한 사유 없이 제3자에게 그 주택을 임대한 경우, 종전 임차인에게 손해배상 책임을 집니다. 이사비, 중개보수, 새 주거지 임대료 차액 등이 배상 대상이 될 수 있으므로 임차인은 관련 지출 증빙과 새로 들어온 임차인의 임대차 계약 사실을 확인할 수 있는 자료(등기부, 확정일자 등)를 보관해두는 편이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-lease-renewal-request-implied-renewal-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">묵시적 갱신 후에도 계약해지가 가능한가요?</h2>

@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function HousingSubscriptionMonthly25Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-housing-subscription-monthly-25-recognition-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">월 납입 인정한도가 왜 25만원으로 올랐나요?</h2>
                 <p>
@@ -237,8 +234,6 @@ export default function HousingSubscriptionMonthly25Page() {
                   다만 소득공제는 무주택 세대주 요건과 총급여 7,000만원 이하 요건을 충족해야 적용됩니다. 세대주가 아니거나 급여가 기준을 넘으면 소득공제를 받을 수 없으니, 본인 요건을 먼저 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-housing-subscription-monthly-25-recognition-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">그래서 나는 얼마를 넣어야 하나요?</h2>

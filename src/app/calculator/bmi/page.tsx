@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -196,8 +191,6 @@ export default function BmiPage() {
                 ]}
               />
 
-              <AdSlot slot="bmi-top" format="horizontal" />
-
               {/* 계산기 */}
               <BmiCalculator />
 
@@ -205,8 +198,6 @@ export default function BmiPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* AD-4 Infeed */}
-              <InfeedAd slot="bmi-infeed" />
-
               {/* BMI란? */}
               <section aria-label="BMI 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">BMI(체질량지수)란?</h2>

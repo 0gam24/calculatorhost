@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function InheritanceLegalReserveClaim2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-inheritance-legal-reserve-claim-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">유류분이란 무엇인가요?</h2>
                 <p>
@@ -258,8 +255,6 @@ export default function InheritanceLegalReserveClaim2026Page() {
                   다만 실제 사건에서는 산입되는 증여의 범위, 부동산 등 재산의 평가 시점, 특별수익과 기여분 등 다툼이 많아 정확한 금액은 개별 판단이 필요합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inheritance-legal-reserve-claim-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">유류분 반환청구는 언제까지 하나요?</h2>

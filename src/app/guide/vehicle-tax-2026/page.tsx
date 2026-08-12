@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function VehicleTax2026Page() {
                   시작되는 <strong>차령경감</strong>(연 5%, 최대 50%)과 1월 <strong>연납 할인</strong>(5% 공제율)을 반영하면 실제 납부액을 정확히 계산할 수 있습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vehicle-tax-2026-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
@@ -406,8 +403,6 @@ export default function VehicleTax2026Page() {
                   </ul>
                 </div>
               </section>
-
-              <AdSlot slot="guide-vehicle-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">자주 묻는 질문</h2>

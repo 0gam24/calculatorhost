@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function NationalPensionEarlyDeferred2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-early-deferred-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조기수령과 연기연금이 무엇인가요?</h2>
                 <p>
@@ -298,8 +295,6 @@ export default function NationalPensionEarlyDeferred2026Page() {
                   다만 손익분기는 물가 상승에 따른 연금액 조정, 세금·건강보험료 영향을 단순화한 계산입니다. 실제 판단에는 건강 상태와 다른 노후 소득을 함께 고려해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-early-deferred-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">누가 조기수령이 유리한가요?</h2>

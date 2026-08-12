@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function SeverancePayDeadline14Days2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-severance-pay-deadline-14-days-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">퇴직금은 언제까지 줘야 하나요?</h2>
                 <p>
@@ -225,8 +222,6 @@ export default function SeverancePayDeadline14Days2026Page() {
                   다만 반의사불벌죄이므로, 합의로 체불액을 받으면 처벌 의사를 철회하는 것이 일반적입니다. 처벌만이 목적이 아니라 체불액 회수가 핵심이라면, 진정과 합의를 병행하는 전략이 현실적입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-severance-pay-deadline-14-days-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재직 중 체불과 퇴직 후 체불, 지연이자가 다른가요?</h2>

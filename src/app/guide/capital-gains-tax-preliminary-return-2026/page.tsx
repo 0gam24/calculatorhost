@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
                   부동산을 팔고 나면 그 이익에 대해 양도소득세를 내야 합니다. 그런데 많은 사람들이 놓치는 것이 바로 "예정신고"입니다. 양도일부터 2개월 이내에 신고하지 않으면 20%의 무신고 가산세가 붙습니다. 이 가이드는 예정신고의 기한, 계산법, 무신고 시 페널티, 그리고 2회 이상 양도 시 확정신고 합산 방법까지 완벽하게 설명합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-capital-gains-tax-preliminary-return-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">양도소득세 예정신고란 무엇인가</h2>
@@ -393,8 +390,6 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-capital-gains-tax-preliminary-return-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">예정신고 시 준비할 서류</h2>

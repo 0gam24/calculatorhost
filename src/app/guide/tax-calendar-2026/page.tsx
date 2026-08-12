@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
@@ -375,8 +374,6 @@ export default function TaxCalendar2026Page() {
                   본인 해당 일정만 빠르게 확인하세요.
                 </p>
               </header>
-
-              <AdSlot slot="guide-calendar-top" format="horizontal" />
 
               {/* 월별 빠른 이동 */}
               <nav aria-label="월별 빠른 이동" className="card flex flex-wrap gap-2">

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function ResidentTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-resident-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주민세란 무엇인가요?</h2>
                 <p>
@@ -255,8 +252,6 @@ export default function ResidentTax2026Page() {
                   다만 지자체는 조례로 표준세율의 50% 범위에서 세율을 가감할 수 있고, 면세점 기준은 시행령에 따르므로 정확한 금액은 관할 지자체에서 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-resident-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">주민세 납부 일정 한눈에 보기</h2>

@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function CapitalGainsConvertedAcquisitionValue2026Page() {
                   1990년대 이전에 취득했거나 상속·증여로 물려받아 취득 당시 매매계약서가 남아 있지 않은 부동산을 팔면, 양도세 계산의 첫 단추인 취득가액을 어떻게 잡을지가 문제입니다. 이럴 때 소득세법이 마지막 순서로 인정하는 방식이 환산취득가액입니다. 이 가이드는 공식, 개산공제 3%, 신축 후 5년 이내 양도 시 붙는 5% 가산세, 실거래가와의 비교까지 소득세법 §97·§114의2를 기준으로 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-capital-gains-converted-acquisition-value-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">환산취득가액이란 무엇인가</h2>
@@ -335,8 +332,6 @@ export default function CapitalGainsConvertedAcquisitionValue2026Page() {
                   다만, 신축 후 6년이 지나 양도하거나 실지 취득가액을 정상적으로 신고한다면 이 가산세는 발생하지 않습니다. 신축 부동산을 처분할 계획이라면 보유 기간 5년 경과 여부를 반드시 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-capital-gains-converted-acquisition-value-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">실거래가 vs 환산취득가액, 어느 쪽이 유리한가요?</h2>

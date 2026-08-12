@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -140,8 +139,6 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                   6월 1일은 종합부동산세의 과세기준일입니다. 2주택 이상 보유하고 있다면, 국세청의 공시가격 합계에 기반한 종부세가 부과됩니다. 그런데 공시가격만으로는 세액이 결정되지 않습니다. 공제금액을 차감하고, 공정시장가액비율을 곱하고, 세율 구간을 찾아 누진공제를 적용하는 복잡한 과정이 필요합니다. 이 가이드는 종합부동산세 계산의 각 단계를 명확하게 설명하여 최종 납부액을 정확히 이해할 수 있도록 돕습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-comprehensive-real-estate-tax-calculation-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">종합부동산세 계산 기본 흐름</h2>
@@ -401,8 +398,6 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                   <strong>다만</strong> 세액공제는 종부세액에 먼저 적용되고, 감액된 세액에 대해 농특세 20%가 계산됩니다. 예를 들어 산출 종부세 1,000만원에서 80% 공제를 받으면 200만원만 납부하고, 농특세는 200만 × 20% = 40만원입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-comprehensive-real-estate-tax-calculation-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">6월 1일 과세기준일 이해하기</h2>

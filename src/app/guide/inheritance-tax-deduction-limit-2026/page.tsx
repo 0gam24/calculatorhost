@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -149,8 +148,6 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   상속이 발생하면 가장 먼저 알아야 할 것은 "상속세를 얼마나 내야 하는가"가 아니라, "이 공제로 얼마까지 면제될까"입니다. 상속공제는 상증세법 §18~§21에서 규정하며, 배우자가 있고 가족 구성이 적절하면 10억원 이상을 공제받아 상속세를 완전히 면할 수도 있습니다. 이 가이드는 5가지 상속공제의 한도를 명확하게 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-inheritance-tax-deduction-limit-top" format="horizontal" />
 
               <section className="space-y-6">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">상속공제 5가지 한도 한눈에</h2>
@@ -305,8 +302,6 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   <strong>주의:</strong> 이들 공제는 <strong>일괄공제 5억과 비교하여 큰 것을 선택</strong>하므로, 대부분 일괄공제가 선택됩니다. 자녀가 많거나 미성년자가 여럿이어야 일괄공제를 초과합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inheritance-tax-deduction-limit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 4: 일괄공제 5억원 (§21) — 실무 주요 공제</h2>

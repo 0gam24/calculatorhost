@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -149,8 +148,6 @@ export default function AnnualLeaveAllowancePage() {
                   정확한 계산법과 회사에 청구하는 방법을 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-annual-leave-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">연차수당 요약</h2>
@@ -297,8 +294,6 @@ export default function AnnualLeaveAllowancePage() {
                   퇴사 예정이면 소멸 전에 사용하거나 수당 청구를 준비해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-annual-leave-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">연차수당 청구 방법 — 퇴사 시 체크리스트</h2>

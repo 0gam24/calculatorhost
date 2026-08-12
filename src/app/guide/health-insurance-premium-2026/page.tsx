@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { RateBarChart } from '@/components/charts/RateBarChart';
@@ -152,8 +151,6 @@ export default function HealthInsurancePremium2026() {
                   국민건강보험공단·보건복지부 공식 기준으로 정확히 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-health-insurance-premium-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
@@ -310,8 +307,6 @@ export default function HealthInsurancePremium2026() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-health-insurance-premium-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">4. 지역가입자는 어떻게 산정되나? — 소득+재산 점수</h2>

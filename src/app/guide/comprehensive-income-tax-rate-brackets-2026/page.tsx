@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -148,8 +147,6 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                   체계적으로 설명합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-income-tax-rate-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">종합소득세 8단계 누진세율표 (2026)</h2>
@@ -314,8 +311,6 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                   기부금 공제 등이 추가로 적용되므로 세액이 달라질 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-income-tax-rate-mid" format="rectangle" />
 
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">누진공제가 정말 필요한 이유</h2>

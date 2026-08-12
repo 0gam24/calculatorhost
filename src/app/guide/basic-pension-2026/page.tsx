@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function BasicPension2026() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-basic-pension-top" format="horizontal" />
-
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <div className="space-y-3 text-sm" data-speakable>
@@ -286,8 +283,6 @@ export default function BasicPension2026() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-basic-pension-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. 국민연금 받으면 기초연금이 깎이나? — 연계감액</h2>

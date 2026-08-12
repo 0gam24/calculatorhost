@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function PensionSavingsEarlyTerminationTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-pension-savings-early-termination-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">중도해지 세금은 무엇에 붙나</h2>
                 <p>
@@ -256,8 +253,6 @@ export default function PensionSavingsEarlyTerminationTax2026Page() {
                   다만 위 금액은 과세대상 산정을 단순화한 예시입니다. 세액공제받지 않은 원금 비중, 퇴직급여 재원 포함 여부에 따라 실제 세액은 달라지므로, 해지 전 금융회사에서 예상 세금을 반드시 조회하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-pension-savings-early-termination-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">해지 전에 검토할 대안은</h2>

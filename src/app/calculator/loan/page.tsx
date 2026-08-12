@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -235,8 +234,6 @@ export default function LoanInterestPage() {
                 ]}
               />
 
-              <AdSlot slot="loan-top" format="horizontal" />
-
               {/* 계산기 */}
               <LoanCalculator />
 
@@ -305,8 +302,6 @@ export default function LoanInterestPage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="loan-mid" format="rectangle" />
-
               {/* 상환 방식 비교 */}
               <section aria-label="상환 방식 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">상환 방식 비교</h2>

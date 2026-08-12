@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function CooperativeLandlord2026Page() {
                   1주택을 임대 중인 집주인이 세입자와 상생하기 위해 임대료 인상을 5% 이내로 자제하면, 정부는 그 대가로 1세대1주택 양도세 비과세에 요구되던 2년 거주요건을 면제해 줍니다. 이 가이드는 상생임대인 제도의 요건 4가지, 5% 상한을 계산하는 방법, 2026년 말까지 연장된 일몰기한, 그리고 임대인이 실무에서 반드시 확인해야 할 함정을 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-cooperative-landlord-capital-gains-exemption-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상생임대인 제도란 무엇인가요?</h2>
@@ -314,8 +311,6 @@ export default function CooperativeLandlord2026Page() {
                   다만 상생임대인 특례는 어디까지나 거주요건을 대체할 뿐, 보유요건 2년이나 양도가액 12억 한도 자체를 없애 주지는 않습니다. 12억을 초과하는 금액에 대해서는 소득세법 §89의 고가주택 과세 방식이 그대로 적용되므로, 매도 시 예상 세액을 별도로 계산해 봐야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-cooperative-landlord-capital-gains-exemption-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">적용기한은 언제까지인가요?</h2>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -240,8 +239,6 @@ export default function FreelancerTaxPage() {
                 ]}
               />
 
-              <AdSlot slot="freelancer-tax-top" format="horizontal" />
-
               {/* 계산기 */}
               <FreelancerCalculator />
 
@@ -290,8 +287,6 @@ export default function FreelancerTaxPage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="freelancer-tax-mid" format="rectangle" />
-
               {/* 3.3% 원천징수 메커니즘 */}
               <section aria-label="3.3% 원천징수" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">3.3% 원천징수는 무엇인가요?</h2>

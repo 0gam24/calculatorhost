@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -196,8 +195,6 @@ export default function BusinessVehicleExpenseDeduction2026Page() {
                 </ul>
               </div>
 
-              <AdSlot slot="guide-business-vehicle-expense-deduction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">업무용 승용차 비용처리란 무엇인가요?</h2>
                 <p>
@@ -310,8 +307,6 @@ export default function BusinessVehicleExpenseDeduction2026Page() {
                   예외: 리스료 중 감가상각비 상당액을 제외한 이자·부대비용은 800만원 한도와 별개로 관련비용에 포함되며, 운행기록부 유무에 따른 1,500만원 한도의 적용을 받습니다. 따라서 리스 계약서에서 이자·감가상각비 상당액이 구분되어 있는지 확인해두는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-business-vehicle-expense-deduction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">개인사업자와 법인의 차이는 무엇인가요?</h2>

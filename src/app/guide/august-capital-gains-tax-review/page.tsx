@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -171,8 +170,6 @@ export default function AugustCgtGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-aug-cgt-top" format="horizontal" />
-
               {/* 1. 5가지 핵심 */}
               <section aria-label="5가지 검토 핵심" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">8월에 반드시 점검할 5가지</h2>
@@ -231,8 +228,6 @@ export default function AugustCgtGuide() {
                   거주 기간은 주민등록등본 이력 기준. 일반 주택(비-1세대1주택)은 연 2%·최대 30%(시행령 §159의3).
                 </p>
               </section>
-
-              <AdSlot slot="guide-aug-cgt-mid" format="rectangle" />
 
               {/* 4. 단기 1년/2년 */}
               <section aria-label="단기 보유 1년/2년 경계" className="card">

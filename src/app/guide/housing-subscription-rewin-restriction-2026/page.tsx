@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function HousingSubscriptionRewinRestriction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-housing-subscription-rewin-restriction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재당첨 제한이란 무엇인가요?</h2>
                 <p>
@@ -234,8 +231,6 @@ export default function HousingSubscriptionRewinRestriction2026Page() {
                   따라서 청약은 실제로 계약하고 입주할 의사가 확실한 단지에만 넣어야 합니다. 시세차익만 노리고 여러 단지에 무분별하게 청약했다가 원하지 않는 단지에 당첨되면, 정작 살고 싶은 단지가 나왔을 때 제한에 걸려 청약조차 못 하는 상황이 벌어집니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-housing-subscription-rewin-restriction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">세대원 전원에게 적용된다고요?</h2>

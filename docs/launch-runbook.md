@@ -50,7 +50,7 @@ npm run audit:adsense
 | 증상 | 원인 | 해결 |
 |---|---|---|
 | 페이지당 5개+ 광고 | MAX_ADS_PER_PAGE=4 초과 | 슬롯 1개 제거 (우선순위: INFEED/ANCHOR) |
-| 정책 페이지에 광고 | /privacy 등에 AdSlot 배치 | 해당 페이지에서 광고 컴포넌트 제거 |
+| 정책 페이지에 광고 | /privacy 등에 광고 컴포넌트 배치 | 해당 페이지에서 광고 컴포넌트 제거 |
 | "투자 권유" 금칙어 | 면책조항 없음 | "본 계산기는 일반 정보용이며..." 추가 |
 | 슬롯 중복 사용 | slot="ad-1" 다중 페이지 | 각 슬롯 이름 고유화 (slot="ad-{pageId}-1") |
 
@@ -323,7 +323,7 @@ npm run monitor:week1
 |---|---|---|
 | 페이지당 광고 5개+ | MAX_ADS=4 초과 | audit:adsense 리포트 |
 | "투자 권유" 키워드 | 면책조항 없음 | src/app/calculator/*/page.tsx 검색 |
-| /privacy 등에 광고 | 정책 페이지 광고 배치 | AdSlot/SkyscraperAd 컴포넌트 포함 확인 |
+| /privacy 등에 광고 | 정책 페이지 광고 배치 | 광고 컴포넌트 잔존 확인 (Auto ads 단독 운영이므로 0개여야 정상) |
 | 슬롯 중복 사용 | slot="ad-1" 다중 페이지 | grep -r 'slot="' src/app |
 
 ### 수정 + 재배포 (1-2시간)

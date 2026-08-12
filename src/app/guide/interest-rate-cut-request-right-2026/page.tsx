@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function InterestRateCutRequestPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-interest-rate-cut-request-right-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">금리인하요구권이란 무엇인가</h2>
                 <p>
@@ -241,8 +238,6 @@ export default function InterestRateCutRequestPage() {
                   예외: 거절되더라도 신용점수에 불이익은 없습니다. 불수용 사유를 확인해 부족했던 증빙을 보완하면 재신청할 수 있고, 다음 소득 상승 시점에 다시 시도하는 전략도 유효합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-interest-rate-cut-request-right-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자주 하는 실수와 활용 전략</h2>

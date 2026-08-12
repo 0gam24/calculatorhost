@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -149,8 +148,6 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   자녀에게 재산을 넘길 때, "상속을 받을 때까지 기다릴까, 아니면 미리 증여할까?" 이 질문에는 정답이 없습니다. 상속세와 증여세는 같은 5단계 누진세율을 쓰지만, 공제 방식·금액·시점이 완전히 다릅니다. 자산 규모, 가족 구성, 시간에 따라 유리한 쪽이 달라집니다. 이 가이드에서는 두 세금의 차이를 명확하게 비교하고, 상황별 절세 전략을 제시합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-inheritance-vs-gift-tax-comparison-top" format="horizontal" />
 
               <section className="space-y-6">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">상속세와 증여세의 핵심 차이 한눈에</h2>
@@ -316,8 +313,6 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   <strong>주의:</strong> 사전증여 합산(상속개시 10년 전 증여) 규정에 의해 상속 시 일부 증여분이 다시 합산되므로, 장기간 증여 전략을 세울 때는 반드시 세무사와 상담하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inheritance-vs-gift-tax-comparison-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">사전증여 합산 — 꼭 알아야 할 규칙</h2>

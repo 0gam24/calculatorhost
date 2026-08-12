@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -148,8 +147,6 @@ export default function AcquisitionTaxCalculation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-acq-tax-top" format="horizontal" />
-
               <section className="space-y-6">
                 <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">취득세란?</h2>
                 <p data-speakable>
@@ -292,8 +289,6 @@ export default function AcquisitionTaxCalculation2026Page() {
                   <strong>다만,</strong> 위 예시에는 지방교육세와 농특세가 아직 미포함입니다. 다음 단계에서 이들을 추가 계산해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-acq-tax-mid" format="rectangle" />
 
               <section className="space-y-6">
                 <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">3단계: 추가세 계산 — 지방교육세 + 농특세</h2>

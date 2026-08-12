@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -141,8 +140,6 @@ export default function NJobberDependentGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-dependent-top" format="horizontal" />
-
               {/* 1. 3대 자격 기준 */}
               <section aria-label="3대 자격 기준" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">피부양자 자격 3대 기준</h2>
@@ -203,8 +200,6 @@ export default function NJobberDependentGuide() {
                   국민건강보험공단 "재산 모의계산" 메뉴에서 확인.
                 </p>
               </section>
-
-              <AdSlot slot="guide-dependent-mid" format="rectangle" />
 
               {/* 4. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

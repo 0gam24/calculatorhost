@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function BondInvestmentTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-bond-investment-tax-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">채권 세금의 기본 구조: 이자소득과 매매차익</h2>
                 <p>
@@ -290,8 +287,6 @@ export default function BondInvestmentTax2026Page() {
                   다만 국내 상장 채권 ETF와 해외 상장 채권 ETF는 과세 구조가 또 다릅니다. 해외 ETF는 매매차익이 양도소득세(22% 분리과세, 250만원 기본공제)로 과세되는 등 규정이 상이하니, 상품 선택 전 개별 상품설명서와 판매사의 세제 안내를 반드시 확인하시기 바랍니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-bond-investment-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">채권 세금 계산: 3가지 실전 사례</h2>

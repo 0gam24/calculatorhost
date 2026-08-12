@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function InsurancePremiumTaxCredit2026Page() {
                   연말정산 때 보험료를 낸 직장인이라면 한 번쯤 '보장성보험료 세액공제'를 들었을 겁니다. 하지만 정확히 어떤 보험이 대상인지, 한도가 얼마인지, 어떻게 신청하는지 헷갈리기 쉽습니다. 이 가이드에서는 소득세법 §59의4에 따른 보장성보험료 세액공제의 모든 것을 정리해드립니다. 한도·공제율·대상보험·제외 사항까지 한눈에 파악하고, 연말정산 때 최대한 공제받으세요.
                 </p>
               </header>
-
-              <AdSlot slot="guide-insurance-premium-tax-credit-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">보장성보험료 세액공제란 무엇인가</h2>
@@ -359,8 +356,6 @@ export default function InsurancePremiumTaxCredit2026Page() {
                   <li>1월~12월 전체 납입액이 기재됨</li>
                 </ul>
               </section>
-
-              <AdSlot slot="guide-insurance-premium-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">피해야 할 실수들</h2>

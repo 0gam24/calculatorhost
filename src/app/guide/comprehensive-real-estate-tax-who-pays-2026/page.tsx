@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -164,8 +163,6 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                   12월에 납부하는 이 세금을 완벽히 이해하는 방법을 설명합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-comprehensive-real-estate-tax-who-pays-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
@@ -546,8 +543,6 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-comprehensive-real-estate-tax-who-pays-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">8. 납부 일정 및 방법</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -141,8 +140,6 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-financial-top" format="horizontal" />
-
               {/* 1. 핵심 정의 */}
               <section aria-label="금융소득 정의" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">금융소득이란?</h2>
@@ -272,8 +269,6 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-financial-mid" format="rectangle" />
 
               {/* 4. 실제 시뮬레이션 사례 */}
               <section aria-label="시뮬레이션 사례" className="card">

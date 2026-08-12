@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -161,8 +160,6 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   </p>
                 }
               />
-
-              <AdSlot slot="guide-deceased-income-tax-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -390,8 +387,6 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-deceased-income-tax-mid" format="rectangle" />
 
               {/* 4. 신고 대상: 사망일 전까지의 모든 소득 */}
               <section className="space-y-4">

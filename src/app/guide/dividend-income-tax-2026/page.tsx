@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function DividendIncomeTax2026Page() {
                   주식이나 펀드에서 받은 배당금은 받을 때마다 15.4%가 세금으로 빠져나갑니다. 하지만 이것이 최종 세금이 아닐 수도 있습니다. 이자와 배당금을 합친 금융소득이 연 2,000만원을 초과하면, 다른 종합소득과 함께 더 높은 누진세율로 다시 계산됩니다. 이 가이드는 배당소득세가 어떻게 계산되고, 언제 추가 세금이 필요한지 명확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-dividend-income-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배당소득세란 무엇인가</h2>
@@ -440,8 +437,6 @@ export default function DividendIncomeTax2026Page() {
                   </li>
                 </ul>
               </section>
-
-              <AdSlot slot="guide-dividend-income-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">배당소득세 절약 전략 3가지</h2>

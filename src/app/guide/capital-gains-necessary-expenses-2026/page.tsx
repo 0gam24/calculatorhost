@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function CapitalGainsNecessaryExpenses2026Page() {
                   집을 팔 때 내는 양도소득세는 양도차익에 매겨집니다. 그런데 이 양도차익을 계산할 때 양도가액에서 빼주는 항목이 바로 필요경비입니다. 필요경비를 정확히 챙기면 세금이 수백만원 단위로 줄어들 수 있지만, 무엇이 인정되고 무엇이 빠지는지 헷갈리는 분이 많습니다. 이 가이드는 소득세법 §97을 기준으로 필요경비 3가지와 인정 기준, 증빙, 절세 계산법을 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-capital-gains-necessary-expenses-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">필요경비란 무엇인가요?</h2>
@@ -310,8 +307,6 @@ export default function CapitalGainsNecessaryExpenses2026Page() {
                   다만 적격증빙 없이 계좌이체만 있는 경우, 지출의 성격(자본적지출인지)까지 소명해야 하므로 계약서가 함께 있어야 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-capital-gains-necessary-expenses-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">필요경비에서 자주 하는 실수</h2>

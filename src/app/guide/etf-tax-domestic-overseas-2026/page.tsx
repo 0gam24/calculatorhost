@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function EtfTaxDomesticOverseas2026Page() {
                   ETF는 간편한 분산 투자 수단으로 인기이지만, 세금 구조는 종류마다 크게 다릅니다. 국내상장 국내주식형 ETF는 매매차익이 비과세인 반면, 국내상장 기타 ETF와 해외상장 ETF는 다른 방식으로 과세됩니다. 이 가이드는 ETF 종류별 과세 기준, 배당소득세와 양도소득세의 차이, 그리고 실제 세액 계산법까지 완벽하게 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-etf-tax-domestic-overseas-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">ETF 세금의 기본 원리</h2>
@@ -373,8 +370,6 @@ export default function EtfTaxDomesticOverseas2026Page() {
                   다만 해외상장 ETF의 양도소득세 22%는 기본공제 250만원이 있으므로 1000만원 차익이면 실제 과세표준은 750만원입니다. 국내상장 해외지수 ETF의 15.4%는 기본공제가 없으므로 상황에 따라 둘의 실효세율이 비슷할 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-etf-tax-domestic-overseas-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">ETF 투자 시 세금 절감 전략</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function SincereFilingConfirmation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-sincere-filing-confirmation-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">성실신고확인제란 무엇인가요?</h2>
                 <p>
@@ -251,8 +248,6 @@ export default function SincereFilingConfirmation2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-sincere-filing-confirmation-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">혜택과 불이익은 무엇인가요?</h2>

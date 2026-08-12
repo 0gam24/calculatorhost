@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function VirtualAssetTax2027Page() {
                   한국의 가상자산(암호화폐) 과세 제도는 2027년 1월 1일부터 본격 시행될 예정입니다. 현재(2026) 개인의 코인 양도차익은 비과세이지만, 내년부터는 기타소득으로 분류되어 250만원 공제 후 22% 분리과세가 됩니다. 이 가이드는 현재 상황, 2027년 과세 체계, 실제 계산 방법, 그리고 준비사항까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-virtual-asset-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">현재(2026): 가상자산 양도차익은 비과세</h2>
@@ -346,8 +343,6 @@ export default function VirtualAssetTax2027Page() {
                   </li>
                 </ul>
               </section>
-
-              <AdSlot slot="guide-virtual-asset-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">과거 2회 유예와 현 상황</h2>

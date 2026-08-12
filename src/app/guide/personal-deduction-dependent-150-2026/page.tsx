@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -708,8 +707,6 @@ export default function PersonalDeductionDependent2026Page() {
                 url={URL}
                 description="기본공제·배우자·부모·자녀·형제자매 공제 요건과 추가공제 완벽 정리."
               />
-
-              <AdSlot slot="guide-personal-deduction-dependent-mid" format="rectangle" />
 
               <Footer />
             </article>

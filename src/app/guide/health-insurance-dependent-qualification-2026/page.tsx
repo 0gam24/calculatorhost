@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -149,8 +148,6 @@ export default function HealthInsuranceDependentQualificationGuide() {
                   </p>
                 }
               />
-
-              <AdSlot slot="guide-health-dependent-top" format="horizontal" />
 
               {/* 1. 피부양자 정의 및 기본 요건 */}
               <section aria-label="피부양자 정의" className="space-y-4">
@@ -358,8 +355,6 @@ export default function HealthInsuranceDependentQualificationGuide() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-health-dependent-mid" format="rectangle" />
 
               {/* FAQ */}
               <section aria-label="자주 묻는 질문">

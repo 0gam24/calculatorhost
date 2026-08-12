@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function HighOilPriceReliefFund2026Application() {
                   신청 대상, 지급액, 신청 방법을 정확히 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-high-oil-price-relief-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
@@ -374,8 +371,6 @@ export default function HighOilPriceReliefFund2026Application() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-high-oil-price-relief-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">5. 신용카드 vs 체크카드 vs 상품권 — 뭘 선택할까</h2>

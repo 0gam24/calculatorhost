@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function InclusiveWageSystemPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-inclusive-wage-system-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">포괄임금제란 무엇인가</h2>
                 <p>
@@ -252,8 +249,6 @@ export default function InclusiveWageSystemPage() {
                   다만 최저임금 산입 범위는 상여·복리후생비 등 항목별로 규정이 있어 사안마다 다릅니다. 정확한 판단은 급여명세서 항목을 기준으로 노무 전문가나 고용노동부에 확인하는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inclusive-wage-system-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">수당을 못 받았다면 어떻게 대응하나</h2>

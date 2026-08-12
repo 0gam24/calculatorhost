@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function VentureStockOptionTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-venture-stock-option-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">스톡옵션 행사이익은 어떻게 과세되나요?</h2>
                 <p>
@@ -275,8 +272,6 @@ export default function VentureStockOptionTax2026Page() {
                   다만 특례는 벤처기업 요건과 적격 스톡옵션 요건을 충족해야 적용됩니다. 일반 기업 스톡옵션은 특례 없이 행사이익 전액이 과세되는 것이 원칙입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-venture-stock-option-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로소득과 양도소득, 어느 쪽이 유리한가요?</h2>

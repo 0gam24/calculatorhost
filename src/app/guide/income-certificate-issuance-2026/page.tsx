@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function IncomeCertificateIssuancePage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-income-certificate-issuance-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">소득금액증명원이란 무엇인가</h2>
                 <p>
@@ -240,8 +237,6 @@ export default function IncomeCertificateIssuancePage() {
                   예외: 은행이 프리랜서에게 소득금액증명원 대신 종합소득세 과세표준 확정신고 계산서를 요청하는 경우도 있습니다. 어떤 서류가 필요한지 금융기관에 먼저 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-income-certificate-issuance-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어디서 어떻게 발급하나</h2>

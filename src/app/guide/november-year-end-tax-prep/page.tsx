@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -184,8 +183,6 @@ export default function NovemberYearEndPrepGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-nov-prep-top" format="horizontal" />
-
               {/* 1. 11월 골든타임 이유 */}
               <section aria-label="11월 골든타임" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">왜 11월이 마지막 절세 기회인가</h2>
@@ -229,8 +226,6 @@ export default function NovemberYearEndPrepGuide() {
                   홈택스에서 계좌 개설 → 즉시 납입.
                 </p>
               </section>
-
-              <AdSlot slot="guide-nov-prep-mid" format="rectangle" />
 
               {/* 3. 신용카드 공제 */}
               <section aria-label="신용카드 공제" className="card">

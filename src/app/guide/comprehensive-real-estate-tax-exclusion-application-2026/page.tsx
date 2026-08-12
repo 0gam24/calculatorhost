@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function ComprehensiveRealEstateTaxExclusion2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-comprehensive-real-estate-tax-exclusion-application-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">합산배제란 무엇인가</h2>
                 <p>
@@ -230,8 +227,6 @@ export default function ComprehensiveRealEstateTaxExclusion2026Page() {
                   다만 변동을 신고하지 않고 그대로 두면 실제와 다른 세액이 부과되거나, 요건 이탈분에 대해 추징이 발생할 수 있으니 변화가 있을 때마다 챙겨야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-comprehensive-real-estate-tax-exclusion-application-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떤 주택이 합산배제되나요?</h2>

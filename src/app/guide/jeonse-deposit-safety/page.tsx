@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -146,8 +145,6 @@ export default function JeonseDepositSafetyPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-jeonse-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1. 부동산 등기부등본 확인 — 건물주 자산 파악</h2>
                 <p>
@@ -205,8 +202,6 @@ export default function JeonseDepositSafetyPage() {
                   공식 중개인을 거치세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-jeonse-mid" format="rectangle" />
 
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">6. 임차권 등기 즉시 신청</h2>

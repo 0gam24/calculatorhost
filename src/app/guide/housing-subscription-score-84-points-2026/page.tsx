@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -148,8 +147,6 @@ export default function HousingSubscriptionScore84PointsPage() {
                   청약 당첨을 목표로 하는 무주택자에게 가점제는 필수 이해 영역입니다. 주택공급에 관한 규칙(별표1)에 정의된 청약가점 3요소—무주택기간(32점)·부양가족수(35점)·청약통장 가입기간(17점)—를 정확히 계산하고 합산하면 총 84점 만점이 나옵니다. 이 가이드는 각 요소별 점수 계산 방식을 표와 함께 명시하고, 실제 시뮬레이션으로 검증합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-housing-subscription-score-84-points-2026-top" format="horizontal" />
 
               <div className="rounded-lg border border-border-base bg-bg-card p-4">
                 <p className="font-semibold text-text-primary">청약가점 3요소 합산 구조</p>
@@ -326,8 +323,6 @@ export default function HousingSubscriptionScore84PointsPage() {
                   <strong>중요:</strong> 통장 해약 후 재가입하면 이전 기간은 합산되지 않습니다. 또한 통장 잔액은 가점 계산에 영향을 주지 않으며, 청약 당첨 후에도 월납으로 충당 가능합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-housing-subscription-score-84-points-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">4. 3요소 합산 시뮬레이션 — 실제 계산 사례</h2>

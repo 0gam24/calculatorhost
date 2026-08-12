@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function LeaseRenewalRefusalGrounds2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-lease-renewal-refusal-grounds-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">집주인이 아무 이유나 대며 거절할 수 있나요?</h2>
                 <p>
@@ -253,8 +250,6 @@ export default function LeaseRenewalRefusalGrounds2026Page() {
                   다만 임대인이 실거주하다가 예상치 못한 사정으로 짧은 기간만 거주하게 된 경우 등은 개별적으로 판단됩니다. 실거주 거절에 의문이 있으면 나가기 전에 관련 사실을 기록해 두는 것이 대응에 유리합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-lease-renewal-refusal-grounds-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">거짓 실거주 거절, 손해배상은 얼마인가요?</h2>

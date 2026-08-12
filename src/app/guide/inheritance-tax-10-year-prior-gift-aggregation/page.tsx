@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function InheritanceTax10YearGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-inherit-10yr-top" format="horizontal" />
-
               {/* 1. 10년 vs 5년 차이 */}
               <section aria-label="10년 vs 5년" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">상속인 10년 vs 비상속인 5년 합산</h2>
@@ -209,8 +206,6 @@ export default function InheritanceTax10YearGuide() {
                   계산: 과세표준 × 세율 − 누진공제. 예: 5억 → 5억 × 20% − 1,000만 = 9,000만 원.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inherit-10yr-mid" format="rectangle" />
 
               {/* 4. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

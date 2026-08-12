@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -138,8 +137,6 @@ export default function RetirementIncomeTaxPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-retirement-tax-top" format="horizontal" />
-
               <section className="space-y-6">
                 <div className="rounded-lg bg-bg-card p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">핵심 정의</h3>
@@ -231,8 +228,6 @@ export default function RetirementIncomeTaxPage() {
                   <strong>주의:</strong> 근속연수 1년 미만은 올림, 1년 이상은 소수점 버림으로 계산됩니다. 또한 모든 중간 계산값은 원 단위에서 10원 이하 절사하는 것이 국세청 기준입니다.
                 </div>
               </section>
-
-              <AdSlot slot="guide-retirement-tax-mid" format="rectangle" />
 
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold text-text-primary">

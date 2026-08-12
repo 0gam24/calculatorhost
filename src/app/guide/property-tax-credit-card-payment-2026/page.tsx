@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -164,8 +163,6 @@ export default function PropertyTaxCreditCardPayment2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-property-tax-credit-card-payment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 재산세를 카드로 내면 수수료가 붙나요?</h2>
                 <p>
@@ -300,8 +297,6 @@ export default function PropertyTaxCreditCardPayment2026Page() {
                   다만 카드사별 혜택 정보를 모아둔 “카드고릴라”, “카드슈퍼마켓” 같은 비교 사이트는 참고용으로만 활용하고, 최종 개월수와 조건은 반드시 카드사 공식 앱에서 재확인하세요. 광고성 링크와 실제 이벤트 조건이 다를 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-property-tax-credit-card-payment-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 체크카드 캐시백은 얼마인가요?</h2>

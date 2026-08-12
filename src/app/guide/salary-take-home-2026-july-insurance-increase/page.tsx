@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -150,8 +149,6 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   월급에서 공제되는 4대보험료가 얼마나 달라지는지 정확히 계산해 봅시다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-salary-take-home-july-top" format="horizontal" />
 
               {/* Structured Summary */}
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
@@ -385,8 +382,6 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   상반기 6개월은 4.5%, 하반기 6개월은 4.75%가 적용되므로, 평년도(12개월 모두 4.5%)보다 약 45,000원 추가 부담합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-salary-take-home-july-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">연봉협상 시 주의사항 — "7월 경계"를 반드시 고려하세요</h2>

@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                   부모나 배우자가 돌아가시고 살던 집을 물려받게 되면 가장 먼저 부딪히는 세금이 취득세입니다. 상속 주택 취득세는 유상거래와 완전히 다른 규정을 따르며, 무주택 세대에는 특례세율 0.8%가 적용되어 세 부담이 크게 낮아집니다. 이 가이드는 기본 세율 2.8%와 특례 0.8%의 정확한 적용 조건, 신고 기한, 지방교육세·농특세 처리, 증여와의 결정적 차이까지 지방세법 원문을 근거로 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-inheritance-house-acquisition-tax-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약, 상속 취득세 핵심 3가지</h2>
@@ -349,8 +346,6 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                   다만, 정확한 유예 기간(통상 5년 이내로 알려짐)과 세부 요건은 지방세법 시행령·시행규칙에 따라 상황별로 다르므로 반드시 관할 시군구 세정과 또는 세무사 확인이 필요합니다. 5년이 지나면 상속 주택도 정상 주택 수로 편입되어 이후 매수 시 중과 대상이 될 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inheritance-house-acquisition-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">지방교육세·농어촌특별세도 함께 붙나요</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function ChildcareReducedHoursBenefit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-childcare-reduced-hours-benefit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">육아기 근로시간 단축이란?</h2>
                 <p>
@@ -227,8 +224,6 @@ export default function ChildcareReducedHoursBenefit2026Page() {
                   다만 상한·하한 금액은 매년 고용노동부 고시로 바뀝니다. 예산·정책에 따라 인상되는 경우가 많으므로, 신청 시점의 정확한 금액은 고용보험 홈페이지에서 반드시 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-childcare-reduced-hours-benefit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">육아기 근로시간 단축 급여 계산 사례</h2>

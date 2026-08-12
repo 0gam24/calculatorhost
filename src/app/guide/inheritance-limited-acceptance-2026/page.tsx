@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function InheritanceLimitedAcceptance2026Page() {
                   부모가 남긴 빚이 재산보다 많을 때는 어떻게 할까요? 민법은 상속인을 무조건 보호하지 않지만, 한정승인과 상속포기라는 두 가지 길을 열어두었습니다. 이 가이드는 상속채무 초과 시 피상속인 사망을 안 날부터 3개월 이내에 선택해야 하는 한정승인·상속포기의 정확한 차이점, 신고 절차, 그리고 놓치기 쉬운 함정까지 완벽히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-inheritance-limited-acceptance-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">한정승인과 상속포기의 차이</h2>
@@ -393,8 +390,6 @@ export default function InheritanceLimitedAcceptance2026Page() {
                   따라서 한정승인이나 상속포기를 고려 중이라면, 상속재산에 손을 대지 않거나 매우 신중하게 접근해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inheritance-limited-acceptance-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">후순위 상속인의 책임 — 포기의 연쇄 효과</h2>

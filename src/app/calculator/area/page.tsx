@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -214,8 +209,6 @@ export default function AreaConversionPage() {
                 ]}
               />
 
-              <AdSlot slot="area-top" format="horizontal" />
-
               {/* 계산기 */}
               <AreaConverter />
 
@@ -223,8 +216,6 @@ export default function AreaConversionPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* AD-4 Infeed */}
-              <InfeedAd slot="area-infeed" />
-
               {/* 평과 제곱미터의 관계 */}
               <section aria-label="평과 제곱미터의 관계" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">평과 제곱미터의 관계</h2>

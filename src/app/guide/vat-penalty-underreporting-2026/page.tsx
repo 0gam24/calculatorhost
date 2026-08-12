@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function VatPenaltyUnderreporting2026Page() {
                   7월 25일 부가가치세 확정신고 마감일(주말인 경우 다음 영업일)이 다가오면 사업자들의 가장 큰 걱정은 가산세입니다. 신고를 놓쳤을 때 얼마가 붙는지, 이미 신고했는데 세액을 잘못 계산했다면 어떻게 되는지, 자진해서 수정신고하면 감면받을 수 있는지 모두 국세기본법 §47의2·3·4와 §48, 그리고 부가가치세법 §60에 규정돼 있습니다. 이 가이드는 가산세 유형별 세율과 실제 계산 사례, 감면 구간까지 한 번에 정리해 드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vat-penalty-underreporting-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 부가세를 늦게 신고하면 가산세가 얼마인가요?</h2>
@@ -358,8 +355,6 @@ export default function VatPenaltyUnderreporting2026Page() {
                   다만 위 사례는 신고·납부 가산세만 계산한 값입니다. 실제로는 세금계산서 미발급(2%), 사업자 미등록(1%) 등이 함께 적용될 수 있어 최종 부담은 더 커질 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-vat-penalty-underreporting-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 가산세 감면받을 수 있나요? (수정신고 §48)</h2>

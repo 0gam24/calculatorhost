@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -145,8 +144,6 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                   주택 2채 이상을 소유한 사람이라면 매번 궁금해하는 질문이 있습니다. "재산세를 내는데 종부세도 내야 하나?" 답은 네, 둘 다 내야 합니다. 다만 둘은 완전히 다른 세목이며, 이중과세를 방지하기 위한 조정 과정이 있습니다. 이 가이드는 재산세와 종합부동산세의 차이점을 항목별로 정리하고, 어떻게 계산되는지 설명합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-property-tax-vs-comprehensive-real-estate-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">재산세 vs 종부세 한눈에 비교</h2>
@@ -355,8 +352,6 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                   따라서 같은 재산에 대해 재산세와 종부세를 완전히 이중으로 내는 것은 아니며, 정책적으로 고가 주택·다주택 보유에 대한 추가 과세(종부세)를 하면서도 기본 보유세(재산세)는 모든 주택에 공평하게 부과하는 구조입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-property-tax-vs-comprehensive-real-estate-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold border-l-4 border-primary-500 pl-3 pb-2 border-b border-border-base">6. 납부 기한 및 페널티</h2>

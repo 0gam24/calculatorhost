@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function BusinessCreditCardHometaxRegistration2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-business-credit-card-hometax-registration-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사업용 신용카드를 왜 홈택스에 등록하나요?</h2>
                 <p>
@@ -268,8 +265,6 @@ export default function BusinessCreditCardHometaxRegistration2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-business-credit-card-hometax-registration-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">공제되지 않는 사용은 무엇인가요?</h2>

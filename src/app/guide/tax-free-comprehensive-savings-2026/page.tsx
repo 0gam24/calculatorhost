@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function TaxFreeComprehensiveSavings2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-tax-free-comprehensive-savings-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비과세종합저축이란</h2>
                 <p>
@@ -251,8 +248,6 @@ export default function TaxFreeComprehensiveSavings2026Page() {
                   다만 한도 5,000만원은 원금(가입금액) 기준이며 전 금융기관을 합산합니다. 여러 은행에 나눠 가입해도 합산되므로, 총 납입 원금이 5,000만원을 넘지 않도록 관리해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-tax-free-comprehensive-savings-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가입 전에 확인할 함정은</h2>

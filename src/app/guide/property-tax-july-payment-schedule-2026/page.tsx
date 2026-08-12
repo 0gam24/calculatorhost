@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -149,8 +148,6 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-property-tax-july-payment-schedule-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재산세 납부 기한 — 7월과 9월</h2>
                 <p>
@@ -278,8 +275,6 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
                   온라인 납부가 가장 빠르고 안전하므로, 납세 통지서를 받으면 위택스(서울은 이택스)에서 납세 통지서를 조회한 뒤 즉시 결제하시기를 권장합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-property-tax-july-payment-schedule-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">2026년 재산세 일정 체크리스트</h2>

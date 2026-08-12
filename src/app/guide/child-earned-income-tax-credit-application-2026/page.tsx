@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -141,8 +140,6 @@ export default function ChildEarnedIncomeCreditGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-credit-app-top" format="horizontal" />
-
               {/* 1. 비교 */}
               <section aria-label="자녀 vs 근로 장려금 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">자녀장려금 vs 근로장려금 비교</h2>
@@ -214,8 +211,6 @@ export default function ChildEarnedIncomeCreditGuide() {
                   소득 구간별 점감 적용. 정확한 금액은 홈택스 "장려금 자동 계산" 메뉴에서 시뮬 가능. 재산 기준 2.4억 미만 동일.
                 </p>
               </section>
-
-              <AdSlot slot="guide-credit-app-mid" format="rectangle" />
 
               {/* 4. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

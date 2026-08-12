@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function NewbornSpecialMortgageLoan2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-newborn-special-mortgage-loan-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신생아 특례 디딤돌대출이란?</h2>
                 <p>
@@ -252,8 +249,6 @@ export default function NewbornSpecialMortgageLoan2026Page() {
                   주의: 특례금리와 한도의 구체적 값은 소관 부처 고시로 정해지고 수시로 바뀝니다. 반드시 국토교통부와 주택도시기금에서 확정 값을 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-newborn-special-mortgage-loan-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떻게 신청하나요?</h2>

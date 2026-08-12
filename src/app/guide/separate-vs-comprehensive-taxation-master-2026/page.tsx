@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -159,8 +158,6 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   </p>
                 }
               />
-
-              <AdSlot slot="guide-separate-vs-comprehensive-taxation-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -393,8 +390,6 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-separate-vs-comprehensive-taxation-mid" format="rectangle" />
 
               {/* 4. 기타소득 300만 선택권 */}
               <section className="space-y-4">

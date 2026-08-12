@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function TenantLeaseRegistrationInjunction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-tenant-lease-registration-injunction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임차권등기명령이란 무엇인가요?</h2>
                 <p>
@@ -262,8 +259,6 @@ export default function TenantLeaseRegistrationInjunction2026Page() {
                   다만 실제 절차와 필요 서류는 개별 사안마다 다르므로, 금액이 크거나 다툼이 복잡한 경우에는 대한법률구조공단 등 전문기관의 도움을 받는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-tenant-lease-registration-injunction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임차권등기 후에는 무엇을 해야 하나요?</h2>

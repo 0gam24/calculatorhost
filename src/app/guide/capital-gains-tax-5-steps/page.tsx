@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -146,8 +145,6 @@ export default function CapitalGainsTax5StepsPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-cg-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1단계: 취득가와 양도가 확인</h2>
                 <p>
@@ -228,8 +225,6 @@ export default function CapitalGainsTax5StepsPage() {
                   <strong>일시적2주택</strong>: 신주택 구입 후 2년 내 구주택 양도 시 1세대1주택으로 인정 가능(조정지역 6개월, 투기지역 1개월).
                 </p>
               </section>
-
-              <AdSlot slot="guide-cg-tax-mid" format="rectangle" />
 
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">5단계: 과세표준 및 세액 계산</h2>

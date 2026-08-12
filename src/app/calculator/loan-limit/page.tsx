@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -14,13 +12,7 @@ import { MathFormula } from '@/components/seo/MathFormula';
 import { DataFreshness } from '@/components/ui/DataFreshness';
 
 // Dynamic import — AdSense 슬롯 로딩 지연 (First Load JS 최적화)
-const SkyscraperAd = dynamic(() => import('@/components/ads/SkyscraperAd').then(mod => ({ default: mod.SkyscraperAd })), {
-  loading: () => <div className="hidden lg:block w-[300px] min-h-[620px] sticky top-20 z-30" aria-hidden="true" />,
-});
 
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import {
   buildSoftwareApplicationJsonLd,
   buildFaqPageJsonLd,
@@ -274,14 +266,10 @@ export default function LoanLimitPage() {
               </div>
 
               {/* AD-1 리더보드 (상단) */}
-              <AdSlot slot="loan-limit-top" format="horizontal" />
-
               {/* 계산기 폼 */}
               <LoanLimitCalculator />
 
               {/* AD-2 Medium Rectangle (계산기-본문 사이, 300x250) */}
-              <AdSlot slot="loan-limit-middle" format="rectangle" />
-
               {/* FAQ (중간 배치 — GEO 최적화) */}
               <FaqSection items={FAQ_ITEMS} />
 
@@ -330,8 +318,6 @@ export default function LoanLimitPage() {
               </section>
 
               {/* AD-4 Infeed (본문 중간) */}
-              <InfeedAd slot="loan-limit-infeed" />
-
               {/* DSR이란? */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">DSR(부채원리금상환비율)이란?</h2>
@@ -709,7 +695,6 @@ export default function LoanLimitPage() {
 
           {/* 우측 AdSense 사이드바 (lg+) */}
           {/* AD-3 우측 Skyscraper (lg+) */}
-          <SkyscraperAd slot="loan-limit-skyscraper" />
         </div>
         <Footer />
       </div>

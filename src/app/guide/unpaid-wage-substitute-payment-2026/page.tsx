@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function UnpaidWageSubstitutePayment2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-unpaid-wage-substitute-payment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대지급금은 어떤 제도인가요?</h2>
                 <p>
@@ -266,8 +263,6 @@ export default function UnpaidWageSubstitutePayment2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-unpaid-wage-substitute-payment-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">신청 기한과 놓치기 쉬운 점</h2>

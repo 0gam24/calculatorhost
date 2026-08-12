@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function ParentalLeaveBenefit2026Page() {
                   자녀 양육을 위해 직장을 떠나는 근로자의 소득을 보장하는 육아휴직급여. 2025년 1월부터 대폭 개정되어 첫 3개월부터 통상임금의 100%를 받을 수 있게 되었습니다. 이 가이드에서는 2026년 현행 기준 지급률, 월 상한액, 6+6 부모육아휴직제, 신청 방법까지 완벽하게 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-parental-leave-benefit-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">육아휴직급여란 무엇인가</h2>
@@ -371,8 +368,6 @@ export default function ParentalLeaveBenefit2026Page() {
                   다만 사업장별로 통상임금 계산 방식이 다를 수 있습니다. 급여 명세서를 자세히 검토하고, 의문이 있으면 직장의 인사팀이나 고용센터에 직접 문의하는 것이 가장 정확합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-parental-leave-benefit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">육아휴직급여와 다른 제도의 관계</h2>

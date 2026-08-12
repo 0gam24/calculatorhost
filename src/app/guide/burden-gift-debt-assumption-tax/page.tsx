@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-burden-top" format="horizontal" />
-
               {/* 1. 정의 */}
               <section aria-label="부담부증여 정의" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">부담부증여란?</h2>
@@ -266,8 +263,6 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-burden-mid" format="rectangle" />
 
               {/* 4. 채무 입증 — 전세보증금·은행대출 */}
               <section aria-label="채무 입증" className="card">

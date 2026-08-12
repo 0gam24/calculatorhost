@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -152,8 +151,6 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   비과세 대상이 아닌 점에 주의해야 합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-inherited-house-exemption-top" format="horizontal" />
 
               {/* 1. 정의 및 Structured Summary */}
               <section aria-label="특례 정의 및 핵심 요약" className="card">
@@ -346,8 +343,6 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-inherited-house-exemption-mid" format="rectangle" />
 
               {/* 6. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

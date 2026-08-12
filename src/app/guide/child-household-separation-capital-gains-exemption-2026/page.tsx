@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -170,8 +169,6 @@ export default function ChildHouseholdSeparationCapitalGainsExemption2026Page() 
                   부모와 자녀가 각각 주택 한 채씩 가지고 있을 때, 세대분리 여부에 따라 양도소득세가 전액 비과세되거나 수천만원 이상 부과되는 결과가 갈립니다. 특히 30세 미만 자녀는 나이만으로는 세대분리가 인정되지 않고 소득요건까지 갖춰야 합니다. 이 가이드는 소득세법 시행령 §152의3에 따른 세대 요건, 실질과세 판정 기준, 위장 분리의 함정까지 실무 관점에서 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-child-household-separation-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 세대분리가 왜 양도세 비과세와 직결되나요?</h2>
@@ -378,8 +375,6 @@ export default function ChildHouseholdSeparationCapitalGainsExemption2026Page() 
                   다만 위 세액은 개산이며 조정지역 여부, 보유·거주기간에 따른 장기보유특별공제, 다주택 중과 배제 특례 등에 따라 실제 부담은 달라집니다. 정확한 계산은 아래 양도소득세 계산기에서 조건을 넣어 확인해 보세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-child-household-separation-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 세대분리 입증 서류와 실무 팁</h2>

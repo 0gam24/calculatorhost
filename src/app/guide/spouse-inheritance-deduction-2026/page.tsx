@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function SpouseInheritanceDeduction2026Page() {
                   부모 중 한 분이 돌아가시고 배우자가 생존해 있으면 상속세 부담이 크게 줄어듭니다. 배우자 상속공제 덕분에 최소 5억원은 조건 없이 공제되고, 상황에 따라 최대 30억원까지 공제되기 때문입니다. 이 가이드는 배우자 상속공제의 정확한 한도 계산법, 법정상속분과의 관계, 분할신고 기한, 그리고 실제 계산 사례를 상속세및증여세법 §19를 기준으로 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-spouse-inheritance-deduction-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배우자 상속공제란 무엇인가요?</h2>
@@ -317,8 +314,6 @@ export default function SpouseInheritanceDeduction2026Page() {
                   다만 사망 전 10년 이내에 상속인에게 증여한 재산(5년 이내 상속인 외 증여 포함)은 상속재산에 합산되고, 보험금이나 추정상속재산이 과세가액에 더해질 수 있습니다. 따라서 단순히 재산이 10억원 이하라고 해서 무조건 세금이 0이 되는 것은 아닙니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-spouse-inheritance-deduction-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">분할신고 기한을 놓치면 어떻게 되나요?</h2>

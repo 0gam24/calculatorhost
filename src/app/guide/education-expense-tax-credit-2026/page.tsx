@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function EducationExpenseTaxCredit2026Page() {
                   자녀를 키우는 부모들이 가장 큰 부담 중 하나가 교육비입니다. 좋은 소식은 이 교육비의 일부를 세금에서 직접 깎을 수 있다는 것입니다. 소득세법 §59의4에 따른 교육비 세액공제 제도를 활용하면, 자녀의 학년과 교육 항목에 따라 연 300만원~900만원까지 공제받을 수 있습니다. 이 가이드에서는 공제 대상, 한도, 계산법, 그리고 놓치기 쉬운 주의사항까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-education-expense-tax-credit-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">교육비 세액공제 제도 개요</h2>
@@ -396,8 +393,6 @@ export default function EducationExpenseTaxCredit2026Page() {
                   다만 국민내일배움카드, 국방부 교육비 지원 등 특정 정책자금은 공제 대상에서 제외되지 않을 수도 있으므로, 의심스러운 지원금은 세무서에 문의하는 것이 정확합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-education-expense-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">직계존속 교육비와 예외 상황</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function BusinessRegistration2026Page() {
                   프리랜서 일을 하면서 3.3% 원천징수를 당하고 계신가요? 아니면 소규모 창업을 준비 중인가요? 개인사업자로 등록하면 세금 부담을 크게 줄일 수 있습니다. 이 가이드는 사업자 등록 절차부터 간이과세(매출 1억 400만원 미만)와 일반과세 중 어느 것을 선택해야 하는지, 그리고 선택에 따른 부가세 납부 방식까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-business-registration-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">개인사업자 등록이란 무엇인가</h2>
@@ -397,8 +394,6 @@ export default function BusinessRegistration2026Page() {
                   홈택스의 "신고납부" 메뉴에서 모든 절차를 진행할 수 있으므로, 미리 숙지해두면 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-business-registration-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">실제 세부담 비교 (3가지 시나리오)</h2>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RateBarChart } from '@/components/charts/RateBarChart';
@@ -247,8 +246,6 @@ export default function InheritanceTaxPage() {
                 ]}
               />
 
-              <AdSlot slot="inheritance-tax-top" format="horizontal" />
-
               {/* 계산기 */}
               <InheritanceTaxCalculator />
 
@@ -293,8 +290,6 @@ export default function InheritanceTaxPage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="inheritance-tax-mid" format="rectangle" />
-
               {/* 상속공제 체계 */}
               <section aria-label="상속공제" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">

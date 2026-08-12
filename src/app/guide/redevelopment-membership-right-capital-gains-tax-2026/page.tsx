@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function RedevelopmentMembershipRightCgt2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-redevelopment-membership-right-capital-gains-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조합원입주권이란 무엇인가요?</h2>
                 <p>
@@ -268,8 +265,6 @@ export default function RedevelopmentMembershipRightCgt2026Page() {
                   다만 승계조합원도 신축주택이 완공되어 실제 주택으로 보유·거주한 뒤 양도하면 그때부터의 보유기간에 대해 일반 주택 비과세를 검토할 수 있습니다. 입주권 상태와 완공 후 주택 상태를 구분해 판단하는 것이 중요합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-redevelopment-membership-right-capital-gains-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">과세될 때 세금은 얼마인가요?</h2>

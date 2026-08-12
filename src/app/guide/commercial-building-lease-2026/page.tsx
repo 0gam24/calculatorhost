@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function CommercialBuildingLease2026Page() {
                   전국 수백만의 자영업자가 남의 건물에서 사업을 합니다. 그런데 임대차 계약이 끝나면 어떻게 될까요? 임대인이 일방적으로 퇴출할 수 있을까요? 다행히 상가건물 임대차보호법이 임차인의 기본 권리를 지켜줍니다. 이 가이드는 계약갱신요구권, 권리금 회수, 차임 인상 상한, 대항력까지 자영업자가 꼭 알아야 할 법의 핵심을 명확하게 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-commercial-building-lease-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상가건물 임대차보호법이란 무엇인가</h2>
@@ -410,8 +407,6 @@ export default function CommercialBuildingLease2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-commercial-building-lease-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">자영업자가 꼭 챙겨야 할 실무 체크리스트</h2>

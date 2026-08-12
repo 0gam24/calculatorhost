@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function SimplifiedTaxationWaiver2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-simplified-taxation-waiver-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세 포기란 무엇인가요?</h2>
                 <p>
@@ -226,8 +223,6 @@ export default function SimplifiedTaxationWaiver2026Page() {
                   주의: 큰 설비 투자를 앞두고 있다면, 그 매입이 일반과세 전환 이후 시점에 이뤄지도록 신고 타이밍을 맞춰야 매입세액 공제를 온전히 받을 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-simplified-taxation-waiver-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세와 일반과세 중 어느 쪽이 유리한가요?</h2>

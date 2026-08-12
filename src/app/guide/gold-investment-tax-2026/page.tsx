@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function GoldInvestmentTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-gold-investment-tax-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">금 투자하면 세금 얼마나 내나요?</h2>
                 <p>
@@ -303,8 +300,6 @@ export default function GoldInvestmentTax2026Page() {
                   다만 해외 금 ETF는 환율 변동을 그대로 떠안습니다. 금 시세가 올라도 원달러가 크게 떨어지면 원화 기준 수익이 줄어들 수 있습니다. 또한 5월 자진 신고를 누락하면 무신고 가산세와 납부 지연 이자가 붙으니 매년 신고 일정을 챙겨야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-gold-investment-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">네 가지 방식 세금·비용 비교</h2>

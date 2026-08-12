@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   정의·계산·면제 사유·함정·절세 전략을 정확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-carry-over-top" format="horizontal" />
 
               {/* 1. 이월과세 정의 */}
               <section aria-label="이월과세 정의" className="card">
@@ -378,8 +375,6 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-carry-over-mid" format="rectangle" />
 
               {/* 5. 이월과세 면제 사유 5가지 */}
               <section aria-label="면제 사유" className="card border-l-4 border-l-highlight-500">

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function PropertyTaxBurdenCap2026Page() {
                   최근 몇 년간 공시가격이 급등하면서 주택소유자들의 재산세 부담이 크게 늘었습니다. 그런데 정부는 이런 급격한 세부담 증가를 완화하기 위해 세부담상한제라는 제도를 운영 중입니다. 이 가이드는 공시가가 올라도 실제로 납부하는 재산세가 어떻게 제한되는지, 상한율은 무엇인지, 그리고 그 계산법까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-property-tax-burden-cap-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">세부담상한제란 무엇인가</h2>
@@ -322,8 +319,6 @@ export default function PropertyTaxBurdenCap2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-property-tax-burden-cap-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">세부담상한제와 다른 감면 제도의 관계</h2>

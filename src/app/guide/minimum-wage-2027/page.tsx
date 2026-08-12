@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function MinimumWage2027Page() {
                   이 가이드는 2027년부터 오르는 최저임금이 내 월급을 얼마나 바꾸는지 궁금한 직장인과 아르바이트 근로자를 위한 글입니다. 확정된 시급 10,700원을 기준으로 주휴수당 포함 월급, 4대보험을 뗀 실수령액, 그리고 주휴수당을 직접 계산하는 방법까지 단계별로 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-minimum-wage-2027-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">2027년 최저시급은 얼마인가</h2>
@@ -316,8 +313,6 @@ export default function MinimumWage2027Page() {
                   다만 2027년 국민연금·건강보험 요율은 아직 확정 전이므로 위 공제액은 추정치입니다. 국민연금 보험료율은 단계적 인상이 예정돼 있어 실제 공제액이 달라질 수 있습니다. 정확한 실수령액은 급여명세서와 확정 요율로 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-minimum-wage-2027-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">수습·감액과 미달 지급 시 대응</h2>

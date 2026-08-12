@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function OneHousehold12BillionGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-12bill-top" format="horizontal" />
-
               {/* 1. 비과세 3가지 조건 */}
               <section aria-label="비과세 조건" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">1세대1주택 비과세 3가지 필수 조건</h2>
@@ -203,8 +200,6 @@ export default function OneHousehold12BillionGuide() {
                   계산: 과세 비율 = (양도가 − 12억) ÷ 양도가. 15억 사례 → 9억 × 20% = 1.8억 과세 → 누진세 38% − 누진공제 1,994만 ≈ 약 4,846만 원 양도세 (지방세 별도).
                 </p>
               </section>
-
-              <AdSlot slot="guide-12bill-mid" format="rectangle" />
 
               {/* 4. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

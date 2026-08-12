@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                 </p>
               </header>
 
-              <AdSlot slot="guide-comprehensive-real-estate-tax-elderly-longterm-credit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떤 세액공제가 있나요?</h2>
                 <p>
@@ -261,8 +258,6 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   다만 위 종부세액은 이해를 돕기 위한 가정치입니다. 실제 산출세액은 공시가격, 공제금액(1세대1주택 12억), 공정시장가액비율(60%), 세율을 거쳐 계산되므로, 정확한 금액은 종부세 계산기나 홈택스로 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-comprehensive-real-estate-tax-elderly-longterm-credit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">공동명의는 어떻게 하는 게 유리한가요?</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
@@ -135,8 +134,6 @@ export default function DsrRegulationZonesPage() {
                   은행별 가산금리를 더해 결정됩니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-dsr-zones-top" format="horizontal" />
 
               <section aria-label="규제 비교표" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-3 text-xl font-bold">2026년 지역별 LTV·DSR·DTI 비교표</h2>

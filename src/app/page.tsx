@@ -3,7 +3,6 @@ import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { Sidebar } from '@/components/layout/Sidebar';
-import { AdSlot } from '@/components/ads/AdSlot';
 import Icon from '@/components/ui/Icon';
 import {
   buildOrganizationJsonLd,
@@ -305,8 +304,6 @@ export default function HomePage() {
               </header>
 
               {/* AD-1 리더보드 */}
-              <AdSlot slot="home-top" format="horizontal" className="rounded-lg border border-border-base" />
-
               {/* 카테고리 */}
               <section>
                 <h2 className="mb-6 text-2xl font-bold text-text-primary">카테고리별 계산기</h2>

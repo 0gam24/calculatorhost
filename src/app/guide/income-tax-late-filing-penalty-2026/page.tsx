@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -163,8 +162,6 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-income-tax-late-filing-penalty-top" format="horizontal" />
-
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-4 text-2xl font-bold text-danger-700 dark:text-danger-300">핵심 정리</h2>
@@ -318,8 +315,6 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-income-tax-late-filing-penalty-mid" format="rectangle" />
 
               {/* 3. 부정행위 시 40% 중과 */}
               <section className="space-y-4">

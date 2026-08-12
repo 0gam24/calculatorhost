@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RateBarChart } from '@/components/charts/RateBarChart';
@@ -254,8 +253,6 @@ export default function AcquisitionTaxPage() {
                 ]}
               />
 
-              <AdSlot slot="acquisition-tax-top" format="horizontal" />
-
               {/* 계산기 */}
               <AcquisitionCalculator />
 
@@ -357,8 +354,6 @@ export default function AcquisitionTaxPage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="acquisition-tax-mid" format="rectangle" />
-
               {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">2026년 취득세는 어떻게 계산하나요?</h2>

@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { MathFormula } from '@/components/seo/MathFormula';
@@ -212,8 +207,6 @@ export default function DepositPage() {
                 ]}
               />
 
-              <AdSlot slot="deposit-top" format="horizontal" />
-
               {/* 계산기 */}
               <DepositCalculator />
 
@@ -221,8 +214,6 @@ export default function DepositPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* AD-4 Infeed */}
-              <InfeedAd slot="deposit-infeed" />
-
               {/* 정기예금이란 무엇인가 */}
               <section aria-label="정기예금 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">정기예금이란 무엇인가요?</h2>

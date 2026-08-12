@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function MaternityLeaveBenefit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-maternity-leave-benefit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">출산전후휴가란 무엇인가요?</h2>
                 <p>
@@ -256,8 +253,6 @@ export default function MaternityLeaveBenefit2026Page() {
                   다만 우선지원대상기업이라도 통상임금이 상한을 넘으면 상한까지만 지급되므로, 실수령이 통상임금보다 적을 수 있습니다. 대규모기업 근로자는 최초 60일 동안 회사가 통상임금 전액을 채워주므로 이 구간의 차액 손실이 없습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-maternity-leave-benefit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">급여는 어떻게 신청하나요?</h2>

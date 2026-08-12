@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-temp2house-top" format="horizontal" />
-
               {/* 1. 일시적 2주택 정의 */}
               <section aria-label="일시적 2주택 정의" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">일시적 2주택이란?</h2>
@@ -251,8 +248,6 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                   </ul>
                 </div>
               </section>
-
-              <AdSlot slot="guide-temp2house-mid" format="rectangle" />
 
               {/* 5. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

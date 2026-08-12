@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function NationalPensionDivorceSplit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-divorce-split-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">분할연금이란 무엇인가요?</h2>
                 <p>
@@ -235,8 +232,6 @@ export default function NationalPensionDivorceSplit2026Page() {
                   다만 2016년 12월 30일 이후 지급사유가 발생한 경우부터는 당사자 간 협의나 법원 재판으로 분할 비율을 달리 정할 수 있습니다(국민연금법 §64의2). 이혼 소송에서 재산분할과 함께 연금 분할 비율을 정해두면 이후 다툼을 줄일 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-divorce-split-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">아직 연금 나이가 안 됐다면? 선청구 제도</h2>

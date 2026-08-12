@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function YouthMonthlyRentSupport2026Page() {
                   청년 월세 특별지원은 무주택 청년의 주거비 부담을 덜기 위해 정부와 지자체가 함께 운영해 온 사업입니다. 2026년에는 기존 한시 접수 방식에서 상시신청이 가능한 체계로 개편되는 방향이 예고되어, 신청 시점을 놓쳐 지원을 받지 못하던 문제가 완화될 것으로 안내되고 있습니다. 이 가이드는 대상, 소득·재산 요건의 대체적인 방향, 신청 절차, 다른 주거지원과의 관계를 정리하되, 구체적인 금액과 상한선은 반드시 복지로와 거주지 지자체 공고에서 확인해야 하는 부분임을 함께 짚어 드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-youth-monthly-rent-support-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">청년 월세 지원 2026, 상시신청으로 바뀌었나요?</h2>
@@ -343,8 +340,6 @@ export default function YouthMonthlyRentSupport2026Page() {
                   다만 위 관계는 일반적인 방향일 뿐이며, 각 사업의 세부 지침에 따라 예외가 존재합니다. 이미 다른 주거지원을 이용 중이라면 신청 전 반드시 복지로 상담센터(129) 또는 거주지 행정복지센터에 중복 수급 가능 여부를 문의해 확정해 두는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-youth-monthly-rent-support-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">필요 서류와 지급 방식</h2>

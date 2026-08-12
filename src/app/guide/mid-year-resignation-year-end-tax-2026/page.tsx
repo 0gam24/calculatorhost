@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function MidYearResignationYearEndTax2026Page() {
                   연도 중간에 회사를 그만두면 회사는 마지막 급여를 지급할 때 그 해 근로소득을 한 번 정산합니다. 그런데 이 정산에는 대부분 특별공제가 빠져 있어 세금을 더 낸 상태로 마무리되기 쉽습니다. 이 가이드는 소득세법 §137, §70을 기준으로 재취업 시 합산 정산, 미재취업 시 5월 종합소득세 신고로 환급받는 절차를 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-mid-year-resignation-year-end-tax-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">중도퇴사자는 왜 세금을 더 냈을까?</h2>
@@ -349,8 +346,6 @@ export default function MidYearResignationYearEndTax2026Page() {
                   다만 사례의 숫자는 예시일 뿐이며, 실제 환급액은 부양가족 수, 의료비·교육비 지출액, 신용카드 사용액에 따라 크게 달라집니다. 반드시 홈택스 모의계산을 활용해 개인별 예상 환급액을 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-mid-year-resignation-year-end-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">원천징수영수증은 어디서 확인?</h2>

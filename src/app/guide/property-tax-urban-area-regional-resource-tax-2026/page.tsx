@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -176,8 +175,6 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                   명확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-property-tax-urban-regional-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
@@ -574,8 +571,6 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                   해당 지자체의 공시를 확인하는 것이 정확합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-property-tax-urban-regional-mid" format="rectangle" />
 
               <FaqSection items={FAQ_ITEMS} />
 

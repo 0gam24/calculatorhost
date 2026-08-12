@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function GiftAcquisitionTax2026Page() {
                   부모가 자녀에게, 또는 배우자끼리 아파트를 증여할 때 많은 분이 증여세만 생각하지만, 부동산을 무상으로 취득하면 취득세도 함께 부과됩니다. 이 가이드는 증여 취득세의 기본세율 3.5%가 어떻게 계산되는지, 지방교육세와 농어촌특별세를 더한 총세율은 얼마인지, 그리고 조정대상지역 다주택 증여 시 12% 중과가 언제 적용되는지를 계산 사례와 함께 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-gift-acquisition-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증여받으면 증여세와 취득세를 모두 내나요?</h2>
@@ -319,8 +316,6 @@ export default function GiftAcquisitionTax2026Page() {
                   경계 비교: 같은 5억원 증여라도 사례 1은 1,900만원, 사례 3은 6,000만원을 넘습니다. 조정대상지역 여부와 다주택 여부가 세액을 3배 이상 갈라놓습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-gift-acquisition-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증여 취득세를 줄이는 방법은?</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function LeapriorityRightFixedDate2026Page() {
                   전세사기는 더 이상 남의 일이 아닙니다. 매년 수천 명의 세입자들이 임대인의 채무로 인해 보증금을 돌려받지 못하는 상황에 직면합니다. 하지만 이런 악사를 충분히 예방할 수 있는 법적 방어 수단이 있습니다. 바로 대항력·우선변제권·최우선변제입니다. 이 가이드는 전세 계약 후 반드시 해야 할 '전입신고'와 '확정일자' 신청의 정확한 의미, 단계별 신청 방법, 그리고 지역별 최우선변제 금액까지 완벽하게 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-lease-priority-right-fixed-date-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대항력·우선변제권·최우선변제란</h2>
@@ -426,8 +423,6 @@ export default function LeapriorityRightFixedDate2026Page() {
                   다만 이 모든 과정은 '세입자의 주의'에만 의존합니다. 부동산 중개업소나 임대인은 이런 법률 조언을 제공할 수 없습니다. 정부는 세입자 보호를 위해 정보 지원·보증금 안전장치 등을 제공하고 있으니, 한국주택금융공사(www.hf.go.kr)나 지역 주택관리사무소에 문의하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-lease-priority-right-fixed-date-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">전세사기 피해 시 대응 방법</h2>

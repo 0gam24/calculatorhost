@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function CreditCardSalesVatDeduction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-credit-card-sales-vat-deduction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신용카드 매출세액공제란</h2>
                 <p>
@@ -248,8 +245,6 @@ export default function CreditCardSalesVatDeduction2026Page() {
                   다만 공제는 납부할 부가세를 한도로 적용됩니다. 낼 세액보다 공제액이 크더라도 그 차액이 환급되지는 않는다는 점을 유의하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-credit-card-sales-vat-deduction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">놓치기 쉬운 함정은</h2>

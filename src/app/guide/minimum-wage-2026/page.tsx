@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function MinimumWage2026Page() {
                   2026년 최저임금이 확정되었습니다. 시급 10,320원으로 전년 10,030원에서 290원(2.9%) 인상되었으며, 17년 만에 노사 합의로 이루어진 결정입니다. 이 가이드는 최저임금이 정확히 얼마인지, 월급으로 환산하면 어떻게 되는지, 주휴와 수습 기간은 어떻게 적용되는지, 그리고 위반 시 벌칙까지 완벽하게 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-minimum-wage-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">2026년 최저임금 확정값</h2>
@@ -383,8 +380,6 @@ export default function MinimumWage2026Page() {
                   불명확한 부분이 있으면 입사 전에 반드시 회사에 확인하고, 합의한 내용을 계약서에 명시하도록 하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-minimum-wage-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">최저임금 관련 기관·문의</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function OverseasStockCapitalGainsTax2026Page() {
                   미국주식, 홍콩 ETF, 인도 종목 등 해외에서 주식을 매도할 때 한국에 양도소득세를 내야 합니다. 하지만 국내주식과 달리 신고 시점, 공제액, 환율 기준일이 다르기 때문에 실수하기 쉽습니다. 이 가이드는 소득세법 §118의2에 따른 해외주식 양도소득세의 정확한 계산법, 250만원 기본공제, 22% 세율, 다음해 5월 신고 절차까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-overseas-stock-capital-gains-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">해외주식 양도소득세란</h2>
@@ -396,8 +393,6 @@ export default function OverseasStockCapitalGainsTax2026Page() {
                   기록이 불충분하면 국세청 조사 시 세금을 추가로 낼 수 있으므로, 매년 거래가 끝난 후 정리본을 만들어 3년 이상 보관하는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-overseas-stock-capital-gains-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">ISA, 연금계좌 내 해외주식과의 차이</h2>

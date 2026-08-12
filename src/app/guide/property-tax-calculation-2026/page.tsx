@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -146,8 +145,6 @@ export default function PropertyTaxCalculation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-property-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재산세 계산의 기본 공식</h2>
                 <p>
@@ -274,8 +271,6 @@ export default function PropertyTaxCalculation2026Page() {
                   다만 도시지역(지방세법 §112)에 위치한 주택은 추가로 도시지역분이 부과될 수 있으므로, 정확한 납부액은 세무서의 납세 통지서를 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-property-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">재산세 절감 팁</h2>

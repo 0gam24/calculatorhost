@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -158,8 +157,6 @@ export default function AcquisitionTaxTemporaryTwoHousesExclusion2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-acquisition-tax-temporary-two-houses-exclusion-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">일시적 2주택 취득세 중과 배제란 무엇인가</h2>
                 <p>
@@ -262,8 +259,6 @@ export default function AcquisitionTaxTemporaryTwoHousesExclusion2026Page() {
                   다만, 이 표의 세율은 취득세 본세만 나타낸 값입니다. 지방교육세는 취득세의 10%가 추가되고, 국민주택규모(전용 85㎡)를 초과하는 주택에는 농어촌특별세 0.2%가 별도로 붙습니다. 실제 총 부담액은 본세 계산 후 지방교육세·농특세를 더해서 확정해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-acquisition-tax-temporary-two-houses-exclusion-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">처분기한 내 못 팔면 어떻게 되나</h2>

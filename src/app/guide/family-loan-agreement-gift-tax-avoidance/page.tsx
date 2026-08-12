@@ -6,7 +6,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                   차용증 작성법부터 함정 5가지, 신고 절차까지 정확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-family-loan-top" format="horizontal" />
 
               {/* Structured Summary */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -319,8 +316,6 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-family-loan-mid" format="rectangle" />
 
               {/* 4. 차용증 필수 요소 */}
               <section aria-label="차용증 작성법" className="card border-l-4 border-l-highlight-500">
@@ -501,8 +496,6 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-family-loan-mid-lower" format="rectangle" />
 
               {/* 7. 신고 절차 */}
               <section aria-label="신고 방법" className="card">

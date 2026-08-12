@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -129,8 +128,6 @@ export default function FreelancerSalaryComparisonPage() {
                   시뮬레이션과 함께 비교합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-freelancer-top" format="horizontal" />
 
               <section aria-label="요약 비교" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-3 text-xl font-bold">한눈에 보기 — 핵심 차이</h2>

@@ -9,7 +9,7 @@ paths:
 - `src/components/layout/` — Header, Sidebar, Footer, ThemeToggle
 - `src/components/calculator/` — Form, Result, UnitButtons, Comparison
 - `src/components/charts/` — LineChart, DonutChart, BarChart (Recharts 래퍼)
-- `src/components/ads/` — AdSlot, ConsentBanner
+- `src/components/ads-or-seo/` — 공공데이터 인용 등 (광고 컴포넌트는 2026-08-12 폐지, Auto ads 단독)
 - `src/components/ui/` — Button, Input, Select, Chip, Card (원자)
 
 ## 스타일링

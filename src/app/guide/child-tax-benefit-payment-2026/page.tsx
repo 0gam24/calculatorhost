@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function ChildTaxBenefit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-child-tax-benefit-payment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자녀장려금은 자녀 1명당 얼마를 받나요?</h2>
                 <p>
@@ -253,8 +250,6 @@ export default function ChildTaxBenefit2026Page() {
                   예외: 위 계산은 재산이 1억 7천만원 미만이라고 가정한 것입니다. 재산이 1억 7천만원 이상 2억 4천만원 미만이면 위 지급액의 50%만 지급되고, 2억 4천만원 이상이면 지급되지 않습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-child-tax-benefit-payment-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로장려금과 자녀장려금, 함께 받을 수 있나요?</h2>

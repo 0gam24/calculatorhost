@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -202,8 +201,6 @@ export default function SavingsPage() {
                   '세후 수령액 = 원금 + (이자 - 세금)',
                 ]}
               />
-
-              <AdSlot slot="savings-top" format="horizontal" />
 
               {/* 계산기 */}
               <SavingsCalculator />

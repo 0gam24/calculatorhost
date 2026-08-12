@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function LeaseRegistrationOrder2026Page() {
                   임대차가 끝나고 집에서 나가야 하는데 임대인이 보증금을 돌려주지 않는 경우가 있습니다. 더 위험한 것은 그대로 이사를 가면 기존에 얻었던 대항력을 잃을 수 있다는 것입니다. 다행히 법원의 임차권등기명령 제도를 통해 이사 후에도 대항력과 우선변제권을 유지하고 보증금을 우선적으로 돌려받을 수 있습니다. 이 가이드에서는 임차권등기명령의 요건, 신청 절차, 효과, 그리고 2023년 개정으로 강화된 보호 방식까지 완벽하게 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-lease-registration-order-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임차권등기명령이란</h2>
@@ -314,8 +311,6 @@ export default function LeaseRegistrationOrder2026Page() {
                   정리하면, 확정일자는 입주 직후 선제적으로 받는 것이 좋고, 임차권등기명령은 퇴거 후 보증금 분쟁 시 법원을 통한 사후 구제이며, 전세권설정은 원래 계약 단계에서 합의해야 하는 제도입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-lease-registration-order-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">실제 사례와 주의사항</h2>

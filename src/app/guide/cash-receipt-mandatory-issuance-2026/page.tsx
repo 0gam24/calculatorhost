@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function CashReceiptMandatoryIssuance2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-cash-receipt-mandatory-issuance-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">현금영수증 의무발행이란</h2>
                 <p>
@@ -256,8 +253,6 @@ export default function CashReceiptMandatoryIssuance2026Page() {
                   다만 가산세는 자진발급으로 예방할 수 있습니다. 손님이 인적사항을 주지 않아도 5일 내 자진발급하면 의무를 이행한 것이 되어 가산세가 부과되지 않습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-cash-receipt-mandatory-issuance-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">소비자는 어떻게 신고하나</h2>

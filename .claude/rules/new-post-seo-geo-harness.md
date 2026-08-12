@@ -43,7 +43,7 @@
 | **법조항 §N 정확화** | 가짜 항번호 금지 (§59의2 ≠ §56) | YMYL 신뢰성 붕괴, AdSense 정책 위반 위험 |
 | **누진공제 정확화** | 시뮬에 누진공제 빠뜨리지 않음 | 50% 이상 오차, 사용자 손해, 법적 리스크 |
 | **AI 보조 표기** | 본문 면책조항에 "AI 보조 작성" 명시 | Google AI Content Policy 위반 |
-| **CLS 0** | AdSlot/이미지 min-height 예약 필수 | CWV 회귀, 검색 순위 하락 |
+| **CLS 0** | 이미지·임베드에 크기 예약 필수 (광고는 Auto ads 가 처리) | CWV 회귀, 검색 순위 하락 |
 
 ---
 
@@ -158,11 +158,7 @@
 - [ ] FAQ 답변 첫 문장에 부여 (이미 적용 중)
 - 효과: LLM·음성검색 추출 정확도 +10%, 우리 결론만 인용
 
-### 2-12. AdSlot이 speakable 영역 침입 금지 (2026-05-26 추가, GEO 보호)
-- [ ] AD-1 top: 리드 문단(`data-speakable`) **종료 후** 배치 (사이에 빈 줄 1개+)
-- [ ] AD-2 mid: H2 답변 첫 문장과 광고 사이 **최소 100px gap**
-- [ ] AdSlot에 `aria-label="광고"` (LLM이 콘텐츠로 오인 차단)
-- 효과: LLM이 광고를 답변으로 인용 0%, AdSense 정책 보호
+### 2-12. (폐지) AdSlot speakable 침입 방지 — 2026-08-12 Auto ads 전환으로 불필요
 
 ### 2-13. 네이버 AI 브리핑 5축 (2026-06-10 추가, deep-research 검증)
 > 근거: 네이버 공식 "콘텐츠 셀프체크 가이드" — AI 브리핑 인용 기준. ⚠️ "FAQ 구조가 인용에 유리"는 적대검증 기각(0-3) — FAQ는 구글 AEO용이지 네이버 인용 기준 아님. 상세: `.claude/reports/deep-research-2026-06-10-traffic-adsense.md`
@@ -260,23 +256,13 @@
 
 ---
 
-## 6. 광고 슬롯 배치 (adsense-guardian 검수)
+## 6. 광고 (Google Auto ads 단독 — 2026-08-12~)
 
-### 6-1. 슬롯 배치
-- [ ] **AD-1 top (horizontal)**: 리드 직후, 첫 섹션 시작 전
-- [ ] **AD-2 mid (rectangle)**: FAQ 직후 또는 본문 중앙
-- [ ] **본문 2,500자↑ + 모바일 60%↑**: AD-3 (인피드 fluid) 추가 검토
-- [ ] **페이지당 광고 ≤ 4개**: AdSense §5 정책
+수동 슬롯 배치 체크리스트는 폐지됐다. 신규 페이지에 **광고 컴포넌트를 넣지 않는다.**
 
-### 6-2. props 정확성 (TypeScript 타입 일치)
-- [ ] `slot=` (NOT `slotId=`)
-- [ ] `format=` 'horizontal'|'rectangle'|'vertical'|'fluid'|'anchor' (NOT 'billboard'|'rect'|'infeed')
-- [ ] 슬롯 ID 패턴: `guide-{slug}-{position}` (예: `guide-burden-gift-top`)
-
-### 6-3. CLS 방지
-- [ ] AdSlot 컴포넌트 사용 (min-height 자동 예약)
-- [ ] 라이트 배경 강제 (`#FFFFFF`, 다크 모드에서도)
-- [ ] aria-label="광고" 자동 적용
+- [ ] 페이지 코드에 광고 관련 컴포넌트·`ins.adsbygoogle` 직접 삽입 없음
+- [ ] 콘텐츠 컬럼(`max-w-3xl`)과 섹션 여백(`space-y-8`)을 유지 — Auto ads 가 이 여백에 삽입한다
+- [ ] 광고처럼 보이는 UI(가짜 배너·오인 유도 카드) 금지
 
 ---
 
@@ -364,7 +350,7 @@
 ```
 1. content-writer 호출 (프롬프트에 §2 포함)
    → 초안 페이지 생성
-2. 메인 스레드 자가검수 (§3 시뮬 / §4 메타 / §6 AdSlot props)
+2. 메인 스레드 자가검수 (§3 시뮬 / §4 메타 / §6 광고 컴포넌트 부재)
    → 오류 교정
 3. calc-logic-verifier 호출 (시뮬 포함 시)
    → §3 검증 PASS 확인
@@ -379,7 +365,7 @@
 **작업**: src/app/guide/{slug}/page.tsx 신규 가이드 작성
 **컨텍스트**: STATE.md 라이브 운영 중
 **필수 준수**: .claude/rules/new-post-seo-geo-harness.md §2 (작성 체크리스트)
-  + §3 (시뮬 검증) + §4 (메타) + §6 (AdSlot props) + §7 (UI props)
+  + §3 (시뮬 검증) + §4 (메타) + §6 (광고 없음) + §7 (UI props)
 **§N 법조항**: docs/data-model.md SSoT 우선
 **산출**: 페이지 전체 코드 (TSX). sitemap·index 등록은 메인 스레드 처리.
 ```

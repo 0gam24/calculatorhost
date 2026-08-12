@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -141,8 +140,6 @@ export default function JointOwnershipCgtGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-joint-cgt-top" format="horizontal" />
-
               {/* 1. 분리 과세 원칙 */}
               <section aria-label="분리 과세 원칙" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">양도소득 명의자별 분리 과세 원칙</h2>
@@ -181,8 +178,6 @@ export default function JointOwnershipCgtGuide() {
                   계산: 누진세율 6/15/24/35/38/40/42/45% 적용. 누진공제 (5천만 126만/8.8천 576만/1.5억 1,544만/3억 1,994만 등) 차감 후. 지방소득세 10% 별도.
                 </p>
               </section>
-
-              <AdSlot slot="guide-joint-cgt-mid" format="rectangle" />
 
               {/* 3. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

@@ -69,14 +69,10 @@ paths:
 - 건강 → 대한비만학회(kosso.or.kr), 보건복지부(mohw.go.kr)
 - 법령 → 국가법령정보센터(law.go.kr)
 
-## 광고 슬롯 배치 (CLS 방지 + eCPM 최대화)
-- **AD-1 리더보드**: 헤더 아래 (728×90 / 970×250)
-- **AD-2 Medium Rectangle**: 계산기-본문 사이 (300×250)
-- **AD-3 Skyscraper 스티키**: 우측 사이드바 (300×600, lg+)
-- **AD-4 인피드**: 본문 중간 (반응형)
-- **AD-5 모바일 앵커**: 화면 하단 고정 (320×50)
-
-페이지당 ≤ 4개 활성 (모바일 기준).
+## 광고 (Google Auto ads 단독 — 2026-08-12~)
+수동 광고 슬롯(AD-1~AD-5) 아키텍처는 **폐지**됐다. 페이지 코드에 광고 컴포넌트를 넣지 않는다.
+삽입 위치·개수는 Google Auto ads 가 결정하며, 통합 지점은 `src/app/layout.tsx` 의 adsbygoogle 스크립트뿐이다.
+회귀 가드: `tests/e2e/adsense.e2e.ts` 가 수동 슬롯 마크업 부재를 검증한다.
 
 ## URL/슬러그
 - **영문 슬러그**만 사용 (`/calculator/salary/`, `/calculator/capital-gains-tax/`)
@@ -86,7 +82,7 @@ paths:
 ## 금지
 - 계산 로직을 컴포넌트 안에 작성 금지 → `src/lib/tax/` 또는 `src/lib/finance/` 순수 함수로
 - 세율 상수 하드코딩 금지 → `src/lib/constants/tax-rates-{year}.ts`에서 import
-- 광고 슬롯 다크 배경 금지
+- 페이지 코드에 광고 컴포넌트 직접 삽입 금지 (Auto ads 단독)
 - "투자 권유" / "수익 보장" 표현 금지
 - HowTo / 외부 권위 링크 / WebPage JSON-LD 누락 금지 (모든 계산기에 자동 적용)
 
@@ -94,6 +90,5 @@ paths:
 - `@/components/calculator/Form` — 입력 폼 섀시
 - `@/components/calculator/Result` — 결과 카드
 - `@/components/calculator/UnitButtons` — 억/천만/백만 단위 버튼
-- `@/components/ads/AdSlot` — AdSense 슬롯 (라이트 카드)
 - `@/components/layout/Breadcrumb` — 시각적 빵부스러기 (JSON-LD와 동일 항목)
 - `@/components/layout/RelatedCalculators` — 관련 계산기 하단 링크

@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -176,8 +175,6 @@ export default function SmallBusinessUnder5EmployeesLaborLaw2026Page() {
                   "우리 회사는 5인 미만이니 연차도 없고 야근수당도 없다"는 말을 자주 듣습니다. 절반은 맞고 절반은 틀립니다. 근로기준법은 5인 미만 사업장에도 적용되지만 시행령 별표1이 정한 일부 조항만 적용됩니다. 이 가이드는 연차·연장가산수당·부당해고 구제가 왜 안 되는지, 반대로 주휴수당·퇴직금·최저임금·근로계약서·해고예고·산재는 왜 그대로 보장되는지, 상시근로자 수는 어떻게 세는지를 실제 임금 사례와 함께 정확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-small-business-under-5-employees-labor-law-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">한눈에 보기: 5인 미만과 5인 이상, 무엇이 다른가</h2>
@@ -365,8 +362,6 @@ export default function SmallBusinessUnder5EmployeesLaborLaw2026Page() {
                   주의: 사업주가 상시근로자 수를 인위적으로 4명 이하로 맞추기 위해 단기간에 인원을 조정한 경우, 판례·행정해석은 실질을 우선해 5인 이상 사업장으로 보기도 합니다. 명목상 4.2명이라도 상시적으로 5명 이상을 사용한다면 다툴 여지가 있으므로 관할 고용노동청 상담이 필요합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-small-business-under-5-employees-labor-law-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">실제 임금 계산 사례로 확인하기</h2>

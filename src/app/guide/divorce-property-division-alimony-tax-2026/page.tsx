@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -170,8 +169,6 @@ export default function DivorcePropertyDivisionAlimonyTax2026Page() {
                   이혼할 때 아파트를 나누는 방법은 크게 두 가지입니다. 부부가 함께 모은 재산을 나누는 재산분할이거나, 정신적 손해를 배상하는 위자료입니다. 같은 아파트를 넘기더라도 어느 명목으로 처리하느냐에 따라 세금이 크게 달라집니다. 이 가이드는 재산분할과 위자료의 세법상 차이를 소득세법·상증법·민법 기준으로 사례와 함께 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-divorce-property-division-alimony-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">이혼할 때 재산 넘기면 세금이 붙나요?</h2>
@@ -403,8 +400,6 @@ export default function DivorcePropertyDivisionAlimonyTax2026Page() {
                   다만 실무에서는 재산분할과 위자료가 혼재되는 경우가 많고, 부동산이 여러 채이거나 다주택 상태에서 이전하는 경우 계산이 복잡해집니다. 예외: 이혼 협의서에 명목을 재산분할로 기재했어도 국세기본법 §14의 실질과세 원칙에 따라 국세청이 실질을 위자료·증여로 재구성할 수 있으므로, 명목 기재만으로 안심하지 말고 실질을 뒷받침할 자료(혼인 기간, 재산 형성 기여도, 분할 비율의 합리적 근거)를 준비해 두는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-divorce-property-division-alimony-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">취득세는 누가 얼마나 내나요?</h2>

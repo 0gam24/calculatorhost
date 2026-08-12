@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { GuideHeader } from '@/components/guide/GuideHeader';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                 lead={`5월 31일 종합소득세 신고기한을 넘겼어도 늦지 않습니다. 6월 중 자진신고로 가산세의 50%를 감면받을 수 있습니다. 산출세액 500만 원이면 정상 가산세 100만 원에서 50만 원으로 줄어듭니다. 국세기본법 §48(자진신고 감면)의 가장 큰 혜택을 받는 마지막 기회입니다.`}
               />
 
-              <AdSlot slot="guide-voluntary-filing-june-top" format="horizontal" />
-
               {/* 정의 + 핵심 수치 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-text-primary">자진신고란 무엇인가?</h2>
@@ -261,8 +258,6 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-voluntary-filing-june-mid" format="rectangle" />
 
               {/* 신고 단계별 가이드 */}
               <section className="space-y-4">

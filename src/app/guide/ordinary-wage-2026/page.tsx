@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function OrdinaryWage2026Page() {
                   최근 몇 년간 통상임금에 대한 논란이 계속되고 있습니다. 특히 2024년 12월 19일 대법원 전원합의체 판결에서는 기존의 통상임금 판정 기준을 크게 바꿨습니다. 이제 정기상여금도 통상임금에 포함될 수 있다는 것입니다. 이 변화가 실제로 무엇을 의미하고, 어떻게 계산되며, 급여와 수당에 어떤 영향을 미치는지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-ordinary-wage-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">통상임금이란 무엇인가</h2>
@@ -381,8 +378,6 @@ export default function OrdinaryWage2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-ordinary-wage-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">통상임금과 세금·4대보험의 관계</h2>

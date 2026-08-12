@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function SmeYouthIncomeTaxReduction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-sme-youth-income-tax-reduction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">감면 제도란 무엇인가</h2>
                 <p>
@@ -267,8 +264,6 @@ export default function SmeYouthIncomeTaxReduction2026Page() {
                   ※ 위 세액은 이해를 돕기 위한 개략적 예시입니다. 실제 결정세액은 부양가족·각종 공제에 따라 달라지므로 홈택스 연말정산 미리보기로 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-sme-youth-income-tax-reduction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신청은 어떻게 하나</h2>

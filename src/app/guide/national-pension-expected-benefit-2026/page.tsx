@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -159,8 +158,6 @@ export default function NationalPensionExpectedBenefitPage() {
                   국민연금 예상 수령액은 가입기간과 가입 중 평균소득에 따라 결정되며, 정확한 금액은 국민연금공단 '내 연금 알아보기'에서 조회할 수 있습니다. 60세 조기수령, 65세 정상수령, 70세 연기수령 중 어느 시기를 선택하느냐에 따라 평생 수령액이 30~36% 달라집니다. 국민연금법 제51조·제61조·제62조·제66조 기준으로 정확히 정리한 계산법, 조회 방법, 수령 시기별 손익을 한눈에 비교합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-pension-benefit-top" format="horizontal" />
 
               {/* Structured Summary */}
               <div className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4">
@@ -371,8 +368,6 @@ export default function NationalPensionExpectedBenefitPage() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-pension-benefit-mid" format="rectangle" />
 
               {/* Section 4: 연기연금 손익 */}
               <section className="space-y-4">

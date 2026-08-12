@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function EmploymentContractWrittenObligation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-employment-contract-written-obligation-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로계약서는 꼭 써야 하나</h2>
                 <p>
@@ -238,8 +235,6 @@ export default function EmploymentContractWrittenObligation2026Page() {
                   예외: 계약서를 썼더라도 임금·근로시간 같은 필수 항목이 빠져 있으면 명시의무 위반이 될 수 있습니다. 양식만 갖추는 것이 아니라 내용이 실제로 담겨야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-employment-contract-written-obligation-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상황별 판단 사례</h2>

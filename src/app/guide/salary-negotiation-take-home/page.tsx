@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -143,8 +142,6 @@ export default function SalaryNegotiationTakeHomePage() {
                   세전·세후의 차이, 상여금의 영향, 비과세 수당, 자녀 공제까지 반영한 정확한 월 실수령액을 계산하는 법을 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-salary-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">협상 체크리스트</h2>
@@ -307,8 +304,6 @@ export default function SalaryNegotiationTakeHomePage() {
                   </li>
                 </ol>
               </section>
-
-              <AdSlot slot="guide-salary-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">관련 법령 & 공식 출처</h2>

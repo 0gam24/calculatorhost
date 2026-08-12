@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function ChildTaxCredit2026Page() {
                   자녀가 있으면 연말정산이나 종합소득세 신고 시 자녀세액공제를 받을 수 있습니다. 2024년 세법 개정으로 공제액이 크게 확대되었는데, 많은 사람들이 정확한 금액을 모르고 계신다는 것이 현실입니다. 이 가이드는 자녀세액공제의 정확한 공제액, 8세 기준, 출산·입양 추가공제, 맞벌이 적용 방법까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-child-tax-credit-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자녀세액공제란 무엇인가</h2>
@@ -384,8 +381,6 @@ export default function ChildTaxCredit2026Page() {
                   다만 맞벌이 부부의 최적 전략은 배우자의 소득수준·세 부담 현황 등에 따라 달라지므로, 연말정산 시 전문가와 상담하는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-child-tax-credit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">자녀세액공제 신청 방법</h2>

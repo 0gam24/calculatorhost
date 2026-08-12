@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import { RateBarChart } from '@/components/charts/RateBarChart';
@@ -208,8 +207,6 @@ export default function NationalPensionPremium2026() {
                 </p>
               </div>
 
-              <AdSlot slot="guide-national-pension-premium-2026-top" format="horizontal" aria-label="광고" />
-
               <div>
                 <h2 className="mb-3 text-2xl font-bold">월급별 실제 납부액, 이렇게 계산합니다</h2>
                 <p className="mb-4 text-base text-text-primary" data-speakable>
@@ -304,8 +301,6 @@ export default function NationalPensionPremium2026() {
                   주의: 국민연금은 재분배 제도이므로, 고소득자는 상한액으로 보험료를 제한하되 연금 수령 시 일정 기준(최대 연금 한도)을 적용하는 구조입니다.
                 </p>
               </div>
-
-              <AdSlot slot="guide-national-pension-premium-2026-mid" format="rectangle" aria-label="광고" />
 
               <div>
                 <h2 className="mb-3 text-2xl font-bold">국민연금 보험료로 세금을 줄일 수 있나?</h2>

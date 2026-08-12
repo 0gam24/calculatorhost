@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -163,8 +162,6 @@ export default function JeonseeLoanLimitInterest2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-jeonse-loan-limit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세자금대출의 기본 구조 — 한도 결정 3가지 요소</h2>
                 <p>
@@ -316,8 +313,6 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-jeonse-loan-limit-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">DSR 규제와 전세자금대출 — 실제 대출 한도에 미치는 영향</h2>

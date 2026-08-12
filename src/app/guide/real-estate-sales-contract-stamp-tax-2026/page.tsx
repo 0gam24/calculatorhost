@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function RealEstateSalesContractStampTax2026Page() {
                   집을 사고팔면 취득세와 중개수수료만 챙기다 인지세를 잊는 경우가 많습니다. 매매계약서에 서명한 순간부터 인지세 납부 의무가 시작되며, 작성월 다음 달 10일까지 전자수입인지로 납부하지 않으면 미납세액의 최대 300%까지 가산세가 붙습니다. 이 가이드는 아파트·오피스텔·단독주택 매매 당사자를 위해 얼마·누가·언제·어떻게 내야 하는지, 취득세·중개수수료와 무엇이 다른지 인지세법 §3·§8 기준으로 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-real-estate-sales-contract-stamp-tax-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약, 기재금액별 인지세액</h2>
@@ -381,8 +378,6 @@ export default function RealEstateSalesContractStampTax2026Page() {
                   다만 매매가를 인위적으로 낮게 기재하는 이른바 "다운계약"은 부동산 거래신고 등에 관한 법률 위반이며, 인지세 몇 만 원을 아끼려다 훨씬 큰 과태료·양도세 추징을 부를 수 있습니다. 실거래가 그대로 신고·기재하는 것이 원칙입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-real-estate-sales-contract-stamp-tax-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">인지세 vs 취득세 vs 중개수수료, 뭐가 다른가요?</h2>

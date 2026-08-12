@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -214,7 +213,6 @@ export default function ChildTaxCreditPage() {
 
             {/* AD-1 헤더 광고 */}
             <div className="my-8">
-              <AdSlot slot="child-tax-credit-top" format="horizontal" />
             </div>
 
             {/* 계산기 폼 */}

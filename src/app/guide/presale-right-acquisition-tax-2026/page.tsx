@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function PresaleRightAcquisitionTax2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-presale-right-acquisition-tax-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">분양권에도 취득세가 있나요?</h2>
                 <p>
@@ -246,8 +243,6 @@ export default function PresaleRightAcquisitionTax2026Page() {
                   주의: 위 세율은 기본 틀이며, 취득 지역이 조정대상지역인지 여부와 실제 주택 수에 따라 달라집니다. 비조정지역이나 일시적 2주택 등에는 다른 기준이 적용되므로, 정확한 세율은 위택스와 관할 지자체에서 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-presale-right-acquisition-tax-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">취득세 계산 사례로 이해하기</h2>

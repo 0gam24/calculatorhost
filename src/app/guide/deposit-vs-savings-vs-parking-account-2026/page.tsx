@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -181,8 +180,6 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                   상황에 맞는 상품을 선택하는 기준을 제시합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-deposit-vs-savings-vs-parking-account-2026-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
@@ -546,8 +543,6 @@ export default function DepositVsSavingsVsParkingAccount2026Page() {
                   금액을 예치하기 전에 예금보험공사(kdic.or.kr)에서 정확한 한도를 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-deposit-vs-savings-vs-parking-account-2026-mid" format="rectangle" />
 
               <FaqSection items={FAQ_ITEMS} />
 

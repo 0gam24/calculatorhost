@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -149,8 +148,6 @@ export default function HousingPensionReverseMortgage2026() {
                   집을 담보로 평생 매월 연금을 받는 국가보증 역모기지, 주택연금. 가입조건부터 월지급금 결정요인, 배우자 승계, 세제 혜택까지 놓친 부분 없이 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-housing-pension-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">주택연금 한눈에</h2>
@@ -391,8 +388,6 @@ export default function HousingPensionReverseMortgage2026() {
                   주택연금 월금으로 재산세를 내야 한다는 점을 고려해 가입 결정하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-housing-pension-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">주택연금 신청 절차</h2>

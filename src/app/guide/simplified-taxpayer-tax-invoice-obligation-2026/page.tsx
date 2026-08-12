@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function SimplifiedTaxpayerTaxInvoiceObligation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-simplified-taxpayer-tax-invoice-obligation-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세자도 세금계산서를 끊어야 하나요?</h2>
                 <p>
@@ -225,8 +222,6 @@ export default function SimplifiedTaxpayerTaxInvoiceObligation2026Page() {
                   예외: 최종 소비자(비사업자)를 상대하는 거래는 상대가 매입세액공제를 받을 일이 없으므로 세금계산서 발급 실익이 크지 않습니다. 이 경우 현금영수증·신용카드 매출전표로 대체됩니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-simplified-taxpayer-tax-invoice-obligation-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">간이과세 기준과 일반과세 전환</h2>

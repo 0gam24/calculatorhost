@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function HousingRentalIncomeGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-rental-income-top" format="horizontal" />
-
               {/* 1. 1/2/3주택 과세 차이 */}
               <section aria-label="주택 수별 과세" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">1주택 vs 2주택 vs 3주택 이상 과세 차이</h2>
@@ -216,8 +213,6 @@ export default function HousingRentalIncomeGuide() {
                   </ul>
                 </div>
               </section>
-
-              <AdSlot slot="guide-rental-income-mid" format="rectangle" />
 
               {/* 4. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

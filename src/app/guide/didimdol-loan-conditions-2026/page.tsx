@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function DidimdolLoanConditions2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-didimdol-loan-conditions-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">디딤돌대출이란 무엇인가요?</h2>
                 <p>
@@ -243,8 +240,6 @@ export default function DidimdolLoanConditions2026Page() {
                   다만 표의 한도는 상한일 뿐, 실제 대출액은 주택가격에 LTV를 곱한 금액과 상환능력 심사로 더 낮아질 수 있습니다. 표시 한도만 보고 자금 계획을 세우면 잔금이 부족해질 수 있으니 유의하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-didimdol-loan-conditions-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">월 상환액은 얼마나 되나요?</h2>

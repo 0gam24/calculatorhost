@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -171,8 +170,6 @@ export default function DecemberCgtDeadlineGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-dec-cgt-top" format="horizontal" />
-
               {/* 1. 귀속연도 원칙 */}
               <section aria-label="귀속연도 원칙" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">귀속연도 = 양도일 = 잔금 청산일</h2>
@@ -211,8 +208,6 @@ export default function DecemberCgtDeadlineGuide() {
                   </table>
                 </div>
               </section>
-
-              <AdSlot slot="guide-dec-cgt-mid" format="rectangle" />
 
               {/* 3. 4단계 결정 프레임 */}
               <section aria-label="4단계 결정 프레임" className="card border-l-4 border-l-primary-500">

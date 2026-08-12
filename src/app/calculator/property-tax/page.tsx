@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RateBarChart } from '@/components/charts/RateBarChart';
@@ -251,8 +250,6 @@ export default function PropertyTaxPage() {
                   '세부담 상한 제도 있음 (본 계산기 미반영)',
                 ]}
               />
-
-              <AdSlot slot="property-tax-top" format="horizontal" />
 
               {/* 계산기 */}
               <PropertyTaxCalculator />

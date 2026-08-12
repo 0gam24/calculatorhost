@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function DepositProtectionLimit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-deposit-protection-limit-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">예금자보호 한도가 얼마로 올랐나요?</h2>
                 <p>
@@ -249,8 +246,6 @@ export default function DepositProtectionLimit2026Page() {
                   즉 보호받는 금액(1억원)은 같지만, 보호 주체와 세부 절차가 은행·저축은행과 다릅니다. 상호금융에 거액을 예치할 때는 해당 조합의 재무 건전성과 중앙회 보호 방식을 함께 살펴보는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-deposit-protection-limit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">실전 분산예치 전략</h2>

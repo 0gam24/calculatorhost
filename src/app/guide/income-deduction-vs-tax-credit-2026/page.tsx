@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -164,8 +163,6 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   계산 순서, 그리고 언제 어느 공제가 유리한지를 완벽하게 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-income-deduction-vs-tax-credit-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -410,8 +407,6 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   </div>
                 </div>
               </section>
-
-              <AdSlot slot="guide-income-deduction-vs-tax-credit-mid" format="rectangle" />
 
               {/* 3. 누진세 효과 비교 */}
               <section className="space-y-4">

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -193,8 +192,6 @@ export default function SplitSellProfitTakingPage() {
                   추세가 계속 이어져도 추가 수익을 챙길 수 있습니다. 실전 계산과 의사결정 기준을 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-split-sell-profit-taking-strategy-2026-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

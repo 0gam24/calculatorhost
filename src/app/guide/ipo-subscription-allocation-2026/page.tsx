@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function IpoSubscriptionAllocation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-ipo-subscription-allocation-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 공모주 청약은 어떻게 배정되나요?</h2>
                 <p>
@@ -263,8 +260,6 @@ export default function IpoSubscriptionAllocation2026Page() {
                   예외: 소수점 이하 배정분은 추첨이나 우선순위 규칙으로 처리됩니다. 증권사마다 단수주 처리 방식이 다를 수 있으니 공고를 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-ipo-subscription-allocation-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">공모주 청약 단계별 절차</h2>

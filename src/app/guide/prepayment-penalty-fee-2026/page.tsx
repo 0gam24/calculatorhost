@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -172,8 +171,6 @@ export default function PrepaymentPenaltyFee2026Page() {
                   표준 산식, 실제 사례, 면제·감면 일반 관행을 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-prepayment-penalty-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
@@ -437,8 +434,6 @@ export default function PrepaymentPenaltyFee2026Page() {
                   선택이 다릅니다. 중요한 재정 결정이 필요할 때는 반드시 금융기관 상담을 거치세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-prepayment-penalty-mid" format="rectangle" />
 
               <FaqSection items={FAQ_ITEMS} />
 

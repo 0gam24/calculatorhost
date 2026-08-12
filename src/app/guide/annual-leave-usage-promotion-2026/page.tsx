@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function AnnualLeaveUsagePromotion2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-annual-leave-usage-promotion-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연차 사용촉진제도란 무엇인가요?</h2>
                 <p>
@@ -243,8 +240,6 @@ export default function AnnualLeaveUsagePromotion2026Page() {
                   예외: 회사가 절차를 지켰어도 지정일 출근을 방치하면 안 됩니다. 이 경우 근로가 이루어진 것으로 보아 수당을 지급해야 하므로, 회사는 지정일에 노무 수령 거부 의사를 명확히 해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-annual-leave-usage-promotion-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">미사용 연차수당은 얼마인가요? 계산 사례</h2>

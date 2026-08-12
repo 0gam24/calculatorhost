@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function ResidentTaxBusinessEstablishment2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-resident-tax-business-establishment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주민세 사업소분이란 무엇인가요?</h2>
                 <p>
@@ -279,8 +276,6 @@ export default function ResidentTaxBusinessEstablishment2026Page() {
                   예외: 신규 개업으로 직전 연도 실적이 없거나, 국가·지자체·비영리 등 지방세법상 비과세 대상이면 판정이 달라집니다. 애매하면 관할 지자체 세무부서에 사업자등록증을 들고 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-resident-tax-business-establishment-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">종업원분은 무엇이 다른가요?</h2>

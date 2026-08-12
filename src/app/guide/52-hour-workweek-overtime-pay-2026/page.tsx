@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function Workweek52OvertimePay2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-52-hour-workweek-overtime-pay-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주 52시간은 어떻게 나온 숫자인가요?</h2>
                 <p>
@@ -269,8 +266,6 @@ export default function Workweek52OvertimePay2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-52-hour-workweek-overtime-pay-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">하루 8시간 초과와 주 40시간 초과는 왜 다른가요?</h2>

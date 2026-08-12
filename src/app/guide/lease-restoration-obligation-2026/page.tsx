@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function LeaseRestorationObligation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-lease-restoration-obligation-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 원상복구 의무란 무엇인가요?</h2>
                 <p>
@@ -224,8 +221,6 @@ export default function LeaseRestorationObligation2026Page() {
                   예외: 표는 일반적 경향이며, 실제 판단은 손상 정도, 사용 기간, 특약, 입주 시 상태에 따라 달라집니다. 같은 &quot;곰팡이&quot;라도 건물 하자로 인한 것이면 임대인 책임이 될 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-lease-restoration-obligation-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사례로 보는 원상복구 판단</h2>

@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function RealEstateEarnestMoneyForfeit2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-real-estate-earnest-money-forfeit-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">계약금을 걸고 계약을 취소할 수 있나요</h2>
                 <p>
@@ -287,8 +284,6 @@ export default function RealEstateEarnestMoneyForfeit2026Page() {
                   다만, 상대방이 계약을 위반한 경우(예: 잔금기일에 매도인이 이전등기 협력을 거부, 매수인이 잔금을 정당한 사유 없이 미납)에는 이행 착수 이후에도 채무불이행을 이유로 한 법정 해제(민법 §544 이하)가 가능합니다. 이 경우 실제 손해액 산정이 별도로 필요합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-real-estate-earnest-money-forfeit-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가계약금·계약금·위약금의 차이 비교</h2>

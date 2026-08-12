@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -183,8 +182,6 @@ export default function CreditScoreLoanInterestRate2026Page() {
                   구체적인 방법을 설명합니다. 또한 무료 조회 방법과 점수 회복 기간도 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-credit-score-loan-interest-rate-2026-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
@@ -566,11 +563,6 @@ export default function CreditScoreLoanInterestRate2026Page() {
                   (예: 주택담보대출)이 3~6개월 후 있다면, 그 전에 불필요한 신용 신청을 피하는 것이 좋습니다.
                 </p>
               </section>
-
-              <AdSlot
-                slot="guide-credit-score-loan-interest-rate-2026-mid"
-                format="rectangle"
-              />
 
               <FaqSection items={FAQ_ITEMS} />
 

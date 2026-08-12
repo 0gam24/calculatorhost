@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function MultiChildVehicleAcquisitionTaxExemption2026Page() {
                   아이가 셋이면 차 한 대는 통째로 취득세를 안 낼 수 있고, 둘이어도 절반은 깎일 수 있다는 이야기를 어렴풋이 들어봤을 겁니다. 문제는 어떤 차종이 되는지, 몇 인승이어야 전액 면제인지, 6인 이하 승용은 왜 140만원이라는 숫자가 붙는지가 지자체마다 안내가 조금씩 달라 혼란스럽다는 점입니다. 이 가이드는 지방세특례제한법 §22의2를 기준으로 다자녀 자동차 취득세 감면의 대상·한도·신청 기한·추징 조건을 하나하나 정리해, 아이를 태울 차를 계약하기 직전에 놓치지 않도록 돕습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-multi-child-vehicle-acquisition-tax-exemption-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">다자녀 자동차 취득세 감면이란 무엇인가요?</h2>
@@ -341,8 +338,6 @@ export default function MultiChildVehicleAcquisitionTaxExemption2026Page() {
                   다만, 리스·렌터카 차량은 명의 구조상 감면 대상이 아닌 경우가 많고, 법인 명의 차량은 다자녀 감면 취지에 맞지 않아 제외됩니다. 중고차라도 지방세특례제한법 §22의2 요건(양육 목적, 세대당 1대, 자녀 3명 이상 등)을 충족하면 감면 대상이 될 수 있으나, 이전 소유자의 감면 이력이 있으면 승계 여부를 관할 지자체에서 반드시 확인해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-multi-child-vehicle-acquisition-tax-exemption-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">언제, 어떻게 신청하나요?</h2>

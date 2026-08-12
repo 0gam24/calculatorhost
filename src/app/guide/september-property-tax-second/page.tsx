@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -170,8 +169,6 @@ export default function SeptemberPropertyTaxGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-sep-prop-top" format="horizontal" />
-
               {/* 1. 납부 일정 */}
               <section aria-label="납부 일정" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">9월 재산세 납부 일정</h2>
@@ -223,8 +220,6 @@ export default function SeptemberPropertyTaxGuide() {
                   </li>
                 </ol>
               </section>
-
-              <AdSlot slot="guide-sep-prop-mid" format="rectangle" />
 
               {/* 3. FAQ */}
               <FaqSection items={[...FAQ_ITEMS]} />

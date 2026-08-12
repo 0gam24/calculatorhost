@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -141,8 +140,6 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                   조건을 정확히 정리합니다(소득세법 §95 ②, 시행령 §159의3).
                 </p>
               </header>
-
-              <AdSlot slot="guide-ltsd-top" format="horizontal" />
 
               {/* 1. 정의 */}
               <section aria-label="정의" className="card">
@@ -292,8 +289,6 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                   살면 거주 5년이 아니라 3년 (마지막 거주 기간)으로만 계산될 수 있으므로 세무사 확인 필수.
                 </p>
               </section>
-
-              <AdSlot slot="guide-ltsd-mid" format="rectangle" />
 
               {/* 5. 시뮬레이션 3가지 */}
               <section aria-label="시뮬레이션 3가지" className="card">

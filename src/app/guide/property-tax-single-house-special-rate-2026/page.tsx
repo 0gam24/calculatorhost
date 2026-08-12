@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -150,8 +149,6 @@ export default function PropertyTaxSingleHouseSpecialRate2026Page() {
                   매년 6월 재산세 고지서가 도착할 때마다 많은 1세대1주택 보유자들이 궁금해합니다. "왜 남들과 세율이 다른가?" "특례세율이 정확히 뭔가?" 이 가이드는 1세대1주택을 위한 재산세 특례세율을 집중 분석합니다. 일반세율 대비 0.05%p 인하의 의미, 누진공제 구조, 실제 절감액을 사례와 함께 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-property-tax-single-house-special-rate-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1세대1주택 특례세율이란?</h2>
@@ -369,8 +366,6 @@ export default function PropertyTaxSingleHouseSpecialRate2026Page() {
                   위 사례들에서 보듯이, 과세표준이 클수록 특례세율로 인한 절감액이 더 커집니다. 절감액은 세율 인하분(0.05%p) × 과세표준이므로, 과세표준이 크면 그 효과도 선형적으로 증가합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-property-tax-single-house-special-rate-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">특례세율 관련 주의사항</h2>

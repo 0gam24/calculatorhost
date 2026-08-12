@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-mortgage-loan-limit-6-billion-cap-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택담보대출이 6억까지만 되는 이유는?</h2>
                 <p>
@@ -265,8 +262,6 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-mortgage-loan-limit-6-billion-cap-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">규제 전후로 달라진 점 비교</h2>

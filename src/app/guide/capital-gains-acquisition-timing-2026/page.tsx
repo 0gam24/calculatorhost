@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function CapitalGainsAcquisitionTiming2026Page() {
                   양도소득세 계산의 첫 단추는 언제를 취득일과 양도일로 볼지 정하는 일입니다. 이 하루가 밀리거나 당겨지는지에 따라 1세대1주택 2년 보유 요건, 장기보유특별공제 구간, 단기양도 세율 적용이 완전히 뒤바뀝니다. 이 가이드는 소득세법 §98과 시행령 §162에 근거해 잔금일·등기일·계약일 중 어느 날을 기준으로 보는지, 상속·증여·자가신축·분양은 어떻게 다른지 정확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-capital-gains-acquisition-timing-2026-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">양도·취득 시기의 원칙은 잔금일입니다</h2>
@@ -338,8 +335,6 @@ export default function CapitalGainsAcquisitionTiming2026Page() {
                   다만 이는 원칙적 판정입니다. 조합원입주권·분양권으로 취득한 신축주택은 잔금청산일과 사용승인일 중 어느 날을 볼지가 개별 상황에 따라 다를 수 있고, 매매 형태가 특수한 경우(교환·현물출자 등)도 별도 규정이 적용됩니다. 세액 차이가 큰 경우에는 반드시 국세청 상담 또는 세무 전문가의 검토를 받으세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-capital-gains-acquisition-timing-2026-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">계약일은 시기 판정에 쓰지 않습니다</h2>

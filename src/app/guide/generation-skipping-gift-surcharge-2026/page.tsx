@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-generation-skipping-gift-surcharge-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">세대생략 증여란 무엇인가</h2>
                 <p>
@@ -260,8 +257,6 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
                   다만 이는 단순 비교이며, 자녀가 이미 보유한 재산 규모, 향후 상속 계획, 증여 시점에 따라 결과가 달라집니다. 거액 증여는 반드시 세무 전문가와 시뮬레이션한 뒤 결정하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-generation-skipping-gift-surcharge-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">손주 증여의 또 다른 장점, 상속 합산 기간</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -149,8 +148,6 @@ export default function CommercialLeaseConversionDeposit2026Page() {
                   환산보증금은 보증금에 월차임의 100배를 더해 산출하는 금액으로, 상가건물임대차보호법이 내 계약에 얼마나 폭넓게 적용되는지를 가르는 기준입니다. 상가를 임차하려는 자영업자라면 계약 전에 이 수치부터 계산해봐야 합니다. 이 가이드는 계산 공식, 서울·광역시 등 지역별 기준 금액, 기준을 넘어도 유지되는 보호까지 순서대로 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-commercial-lease-conversion-deposit-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">환산보증금이란 무엇인가요?</h2>
@@ -330,8 +327,6 @@ export default function CommercialLeaseConversionDeposit2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-commercial-lease-conversion-deposit-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">환산보증금, 어떻게 확인하나요?</h2>

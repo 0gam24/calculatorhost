@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -161,8 +160,6 @@ export default function VatNonDeductibleInputTax2026Page() {
                   카드로 결제하고 세금계산서까지 받았는데 왜 부가세가 공제되지 않는지, 접대비·차량·식비가 헷갈리는 사업자를 위한 가이드입니다. 부가가치세법 §39에 따라 공제받지 못하는 매입세액 7가지를 계산 사례와 함께 정리했습니다. 2026년 7월 부가세 확정신고 시즌 전에 반드시 확인하세요.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vat-non-deductible-input-tax-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">매입세액 불공제란 무엇인가요?</h2>
@@ -381,8 +378,6 @@ export default function VatNonDeductibleInputTax2026Page() {
                   예외로 사업자등록 신청일이 등록 전 매입세액의 공제 기한을 지났다 하더라도, 등록 후 정상적으로 발생하는 매입세액은 당연히 공제됩니다. 즉, 이 규정은 "등록 이전 지출한 부가세"의 소급 공제 기한에 대한 것임을 정확히 이해해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-vat-non-deductible-input-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">불공제 실수로 인한 가산세, 어떻게 피하나요?</h2>

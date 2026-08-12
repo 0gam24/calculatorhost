@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function SimplifiedPaymentStatementPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-simplified-payment-statement-obligation-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이지급명세서란 무엇인가</h2>
                 <p>
@@ -293,8 +290,6 @@ export default function SimplifiedPaymentStatementPage() {
                   다만 소득 종류나 지급 형태에 따라 제출 대상·기한이 달라질 수 있으므로, 애매한 경우 국세청 상담센터(126) 또는 관할 세무서에 확인하는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-simplified-payment-statement-obligation-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">홈택스 제출은 어떻게 하나</h2>

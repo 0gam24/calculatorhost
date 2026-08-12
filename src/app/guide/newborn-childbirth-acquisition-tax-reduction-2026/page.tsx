@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function NewbornChildbirthAcquisitionTaxReduction2026Page() {
                   자녀를 출산한 가구가 상시 거주 목적으로 12억원 이하의 1주택을 취득하면, 지방세특례제한법 §36의5에 따라 취득세를 500만원 한도로 면제받을 수 있습니다. 산출세액이 500만원 이하이면 전액 면제이고, 그 이상이면 500만원을 공제한 잔액만 납부합니다. 이 가이드는 감면 요건, 출산일부터 5년의 기산법, 사후관리 위반 시 추징 사유, 신청 절차를 지방세특례제한법과 위택스 기준으로 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-newborn-childbirth-acquisition-tax-reduction-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 신생아 취득세 감면이란 무엇인가요?</h2>
@@ -376,8 +373,6 @@ export default function NewbornChildbirthAcquisitionTaxReduction2026Page() {
                   다만 부득이한 사유로 인한 처분(예: 근무지 이전에 따른 이사, 배우자 사망 등)은 시행령상 예외적으로 추징이 유예되거나 감면이 유지될 수 있습니다. 개인 사정에 해당 여부는 관할 시·군·구청 세정과에 서면 문의로 확인받는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-newborn-childbirth-acquisition-tax-reduction-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 생애최초·다자녀 감면과 무엇이 다른가요?</h2>

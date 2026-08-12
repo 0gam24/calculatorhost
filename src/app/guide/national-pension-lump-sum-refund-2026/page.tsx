@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function NationalPensionLumpSumRefund2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-lump-sum-refund-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">반환일시금이란 무엇인가요?</h2>
                 <p>
@@ -257,8 +254,6 @@ export default function NationalPensionLumpSumRefund2026Page() {
                   다만 어느 쪽이 유리한지는 남은 가입 기간, 건강·수명 전망, 목돈의 필요성에 따라 다릅니다. 결정 전 국민연금공단에 두 경우의 예상액을 함께 문의해 비교하는 것이 안전합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-lump-sum-refund-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">반납하면 무엇이 좋나요?</h2>

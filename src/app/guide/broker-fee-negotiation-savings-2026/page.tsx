@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -161,8 +160,6 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-broker-fee-negotiation-savings-2026-top" format="horizontal" />
-
               {/* Structured Summary */}
               <div className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4">
                 <div>
@@ -298,8 +295,6 @@ export default function BrokerFeeNegotiationSavingsPage() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-broker-fee-negotiation-savings-2026-mid" format="rectangle" />
 
               {/* Section 3: 중개비 협상 실전 팁 */}
               <section className="space-y-4">

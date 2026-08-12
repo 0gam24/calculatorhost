@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -160,8 +159,6 @@ export default function JeonseRightVsFixedDate2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-jeonse-right-vs-fixed-date-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세권 설정과 확정일자, 뭐가 다른가요?</h2>
                 <p>
@@ -250,8 +247,6 @@ export default function JeonseRightVsFixedDate2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-jeonse-right-vs-fixed-date-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비용과 절차는 어떻게 다른가요?</h2>

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -157,8 +156,6 @@ export default function HousingSubscriptionFirstPriority2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-housing-subscription-first-priority-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택청약 1순위란?</h2>
                 <p>
@@ -284,8 +281,6 @@ export default function HousingSubscriptionFirstPriority2026Page() {
                   다만 예치금 기준은 지역별로 다릅니다. 기타 광역시, 기타 시·군은 서울·부산보다 낮은 금액이 적용되므로, 청약홈에서 청약 지역 기준을 확인하세요. 가입기간은 수도권 비규제 1년, 규제지역 2년입니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-housing-subscription-first-priority-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1순위 자격 점검 사례</h2>

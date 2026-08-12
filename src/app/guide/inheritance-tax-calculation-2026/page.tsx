@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -146,8 +145,6 @@ export default function InheritanceTaxCalculation2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-inheritance-tax-top" format="horizontal" />
-
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">상속세 5단계 세율표와 누진공제</h2>
                 <p data-speakable>
@@ -263,8 +260,6 @@ export default function InheritanceTaxCalculation2026Page() {
                   <strong>실무 팁:</strong> 일괄공제 5억이 기초공제+기타인적공제보다 크면 일괄공제를 선택합니다. 배우자가 있는 경우, 배우자공제(최소 5억)가 일괄공제 5억과 기타공제보다 크면 배우자공제를 선택하는 것이 유리합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-inheritance-tax-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">3단계: 과세표준 계산</h2>

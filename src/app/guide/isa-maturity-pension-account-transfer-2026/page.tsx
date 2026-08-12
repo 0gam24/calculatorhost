@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function IsaMaturityPensionAccountTransfer2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-isa-maturity-pension-account-transfer-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">ISA 만기 연금전환이란 무엇인가요?</h2>
                 <p>
@@ -250,8 +247,6 @@ export default function IsaMaturityPensionAccountTransfer2026Page() {
                   예외: 두 사례 모두 낼 세금(결정세액)이 공제액보다 많다는 전제입니다. 원래 낼 세금이 적으면 그 한도까지만 돌려받으며, 연금저축 세액공제는 환급 성격이라 결정세액이 없으면 효과가 줄어듭니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-isa-maturity-pension-account-transfer-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">60일 기한을 놓치면 어떻게 되나요?</h2>

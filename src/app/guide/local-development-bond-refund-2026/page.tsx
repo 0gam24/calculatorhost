@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -151,8 +150,6 @@ export default function LocalDevelopmentBondRefund2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-local-development-bond-refund-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 자동차 채권 환급금이란 무엇인가요?</h2>
                 <p>
@@ -244,8 +241,6 @@ export default function LocalDevelopmentBondRefund2026Page() {
                   예외: 오래되어 온라인에서 조회되지 않거나 상속 등 명의 문제가 얽힌 채권은 은행 창구 방문과 추가 서류가 필요할 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-local-development-bond-refund-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 실제 환급액은 얼마나 되나요?</h2>

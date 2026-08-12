@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -149,8 +148,6 @@ export default function ParentalLeave66Special2026Page() {
                   이 가이드는 생후 18개월 이내 자녀를 부부가 함께 돌보려는 맞벌이 부모를 위한 것입니다. 부부가 모두 육아휴직을 쓰면 각자 첫 6개월 급여가 통상임금의 100%로 올라가고, 일반 육아휴직에 있던 사후지급금 공제도 없이 매달 전액을 받습니다. 월별 상한액, 부부 합산 실수령, 신청 절차를 순서대로 정리했습니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-parental-leave-6-plus-6-special-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">6+6 부모육아휴직제란 무엇인가요?</h2>
@@ -307,8 +304,6 @@ export default function ParentalLeave66Special2026Page() {
                   예외: 위 금액은 특례가 적용되는 첫 6개월 기준입니다. 육아휴직을 7개월 이상 이어 쓰면 7개월 차부터는 일반 육아휴직 급여로 계산되므로, 전체 수령액은 사용 기간에 따라 달라집니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-parental-leave-6-plus-6-special-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떻게 신청하나요?</h2>

@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -244,8 +243,6 @@ export default function ComprehensivePropertyTaxPage() {
                 ]}
               />
 
-              <AdSlot slot="comprehensive-property-tax-top" format="horizontal" />
-
               {/* 계산기 */}
               <ComprehensivePropertyTaxCalculator />
 
@@ -269,8 +266,6 @@ export default function ComprehensivePropertyTaxPage() {
               </section>
 
               {/* AD-2 Medium Rectangle (본문 중간) */}
-              <AdSlot slot="comprehensive-property-tax-mid" format="rectangle" />
-
               {/* 세율표: 일반 vs 3주택 이상 중과 */}
               <section aria-label="종합부동산세 세율" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">종합부동산세 세율표</h2>

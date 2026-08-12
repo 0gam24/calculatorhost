@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -271,8 +270,6 @@ export default function SplitBuyPage() {
                   '균등분할은 시점 리스크 분산, 가중분할(피라미드/역피라미드)은 전략적 비중 조절',
                 ]}
               />
-
-              <AdSlot slot="split-buy-top" format="horizontal" />
 
               <SplitBuyCalculator />
 

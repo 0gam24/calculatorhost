@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -142,8 +141,6 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   시행령 §66).
                 </p>
               </header>
-
-              <AdSlot slot="guide-farming-top" format="horizontal" />
 
               {/* 1. 자경농지 감면의 정의 */}
               <section aria-label="자경농지 감면의 정의" className="card">
@@ -297,8 +294,6 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   확인합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-farming-mid" format="rectangle" />
 
               {/* 5. 한도 (1억/5년 2억) */}
               <section aria-label="한도 규정" className="card border-l-4 border-l-danger-500">

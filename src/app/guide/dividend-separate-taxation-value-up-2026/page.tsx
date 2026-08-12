@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-dividend-separate-taxation-value-up-2026-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">고배당기업 배당소득 분리과세란</h2>
                 <p>
@@ -289,8 +286,6 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                   다만 실제 유불리는 배당 규모, 다른 소득, 각종 공제까지 종합해 계산해야 정확합니다. 신고 전 홈택스 모의계산이나 세무 전문가 상담으로 두 방식을 비교하는 것을 권합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-dividend-separate-taxation-value-up-2026-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떻게 신청하고 고배당기업은 어떻게 확인하나</h2>

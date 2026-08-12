@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function NationalPensionCreditSystem2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-credit-system-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민연금 크레딧이란 무엇인가요?</h2>
                 <p>
@@ -257,8 +254,6 @@ export default function NationalPensionCreditSystem2026Page() {
                   예외: 일정 수준 이상의 재산이나 소득이 있으면 실업 크레딧 지원 대상에서 제외될 수 있습니다. 지원 자격은 신청 시점에 국민연금공단이 확인합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-credit-system-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">크레딧으로 연금이 얼마나 늘어나나요?</h2>

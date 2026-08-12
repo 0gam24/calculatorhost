@@ -5,7 +5,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-national-pension-voluntary-continued-enrollment-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임의계속가입은 어떤 제도인가요?</h2>
                 <p>
@@ -225,8 +222,6 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
                   예외: 60세 이후 이미 반환일시금을 받았거나, 가입기간 전체가 미납 또는 납부예외인 경우에는 신청이 제한됩니다. 본인이 대상인지 헷갈리면 국민연금공단(1355)에 문의해 가입 이력을 확인하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-national-pension-voluntary-continued-enrollment-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임의계속가입 vs 추후납부, 무엇을 고를까요?</h2>

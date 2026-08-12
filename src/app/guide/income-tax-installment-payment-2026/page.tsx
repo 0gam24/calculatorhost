@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -160,8 +159,6 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                   이 페이지에서는 분납 가능 조건, 분납 비율, 신청 방법, 분납 vs 지연 납부의 차이를 정확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-installment-payment-top" format="horizontal" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
@@ -406,8 +403,6 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                   어렵다면, 선제적으로 국세청에 문의(전화 1330)하여 추가 분납이나 납부유예를 신청할 수 있습니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-installment-payment-mid" format="rectangle" />
 
               {/* 분납 vs 지연 납부 */}
               <section>

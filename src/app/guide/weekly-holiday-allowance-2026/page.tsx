@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import {
   buildBreadcrumbJsonLd,
@@ -150,8 +149,6 @@ export default function WeeklyHolidayAllowancePage() {
                   이 가이드에서는 주휴수당의 요건부터 월급제·시급제별 계산 방법, 결근 규칙까지 정확히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-weekly-holiday-allowance-top" format="horizontal" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">주휴수당 기본 요건</h2>
@@ -335,8 +332,6 @@ export default function WeeklyHolidayAllowancePage() {
                   불명확하면 인사팀에 서면 확인을 요청하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-weekly-holiday-allowance-mid" format="rectangle" />
 
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">주휴수당 계산 가이드 — 실제 사례</h2>

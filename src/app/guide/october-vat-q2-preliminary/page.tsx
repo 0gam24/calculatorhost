@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -170,8 +169,6 @@ export default function OctoberVatGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-oct-vat-top" format="horizontal" />
-
               {/* 1. 신고 대상 구분 */}
               <section aria-label="신고 대상 구분" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">예정신고 vs 예정고지 vs 면제</h2>
@@ -222,8 +219,6 @@ export default function OctoberVatGuide() {
                   </table>
                 </div>
               </section>
-
-              <AdSlot slot="guide-oct-vat-mid" format="rectangle" />
 
               {/* 3. FAQ (중간 배치 — GEO) */}
               <FaqSection items={[...FAQ_ITEMS]} />

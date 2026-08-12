@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function VatEarlyRefund2026Page() {
                   부가가치세는 일반적으로 확정신고기한 경과 후 30일 내에 환급됩니다. 그런데 특정한 상황에서는 이보다 훨씬 빠르게 환급받을 수 있습니다. 영세율이 적용되는 수출 사업, 사업설비에 큰 투자를 하는 기업, 또는 재무구조를 개선 중인 회사라면 조기환급 제도를 활용할 수 있습니다. 이 가이드는 조기환급의 대상·요건·절차·주의사항을 완전히 정리합니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vat-early-refund-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조기환급이란 무엇인가</h2>
@@ -331,8 +328,6 @@ export default function VatEarlyRefund2026Page() {
                   즉, 조기환급은 "세금을 덜 내는 것"이 아니라 "일시적 현금 부족을 해결하는 것"입니다. 향후 사업이 정상적으로 진행될 것을 전제한 제도이므로, 신청 후에도 조기환급 요건을 계속 충족하고 있는지 관리해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-vat-early-refund-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">7월 1기 확정신고와 조기환급</h2>

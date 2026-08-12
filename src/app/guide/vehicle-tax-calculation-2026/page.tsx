@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -140,8 +139,6 @@ export default function VehicleTaxCalculation2026Page() {
                   6월이 되면 자동차 소유자들에게 도착하는 자동차세 통지서. 그 안의 숫자가 어떻게 나왔는지 궁금한 사람들이 많습니다. 배기량에 따라 cc당 세율이 달라지고, 차가 오래될수록 감면이 이루어지며, 전기차는 정액으로 과세되거든요. 이 가이드는 자동차세의 계산 원리를 단계별로 풀어 설명하고, 차령경감, 전기차 정액세, 지방교육세, 연납할인까지 모두 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-vehicle-tax-calculation-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자동차세 계산의 기본 원리</h2>
@@ -403,8 +400,6 @@ export default function VehicleTaxCalculation2026Page() {
                   납세 통지서는 각 기한 약 2주 전부터 우편으로 발송됩니다. 기한을 넘기면 가산세가 부과되므로, 반드시 지정된 기한 내에 납부해야 합니다.
                 </p>
               </section>
-
-              <AdSlot slot="guide-vehicle-tax-calculation-mid" format="rectangle" />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">자동차세 절감 팁</h2>

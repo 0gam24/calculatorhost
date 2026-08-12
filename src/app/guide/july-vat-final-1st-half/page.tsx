@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -176,8 +175,6 @@ export default function JulyVatGuide() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-july-vat-top" format="horizontal" />
-
               {/* 1. 신고 대상과 기한 */}
               <section aria-label="신고 대상과 기한" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">신고 대상과 기한</h2>
@@ -241,8 +238,6 @@ export default function JulyVatGuide() {
                   운수·창고 10% / 부동산임대 면세.
                 </p>
               </section>
-
-              <AdSlot slot="guide-july-vat-mid" format="rectangle" />
 
               {/* 3. 세액 계산 단계 */}
               <section aria-label="세액 계산 단계" className="card">

@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -155,8 +154,6 @@ export default function SimplifiedWithholdingTaxTable2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-simplified-withholding-tax-table-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이세액표는 어떻게 작동하나요?</h2>
                 <p>
@@ -237,8 +234,6 @@ export default function SimplifiedWithholdingTaxTable2026Page() {
                   다만 위 금액은 이해를 돕기 위한 가정치이며, 실제 월 원천징수액은 본인의 월급여액과 부양가족 수에 따라 국세청 간이세액표로 정확히 정해집니다. 정확한 매월 세액은 국세청 홈택스의 간이세액표 조회를 이용하세요.
                 </p>
               </section>
-
-              <AdSlot slot="guide-simplified-withholding-tax-table-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">원천징수 비율은 어떻게 바꾸나요?</h2>

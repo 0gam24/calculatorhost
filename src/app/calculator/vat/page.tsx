@@ -3,7 +3,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -243,8 +242,6 @@ export default function VatPage() {
                   '신고: 일반 4회/년, 간이 1회/년 (홈택스)',
                 ]}
               />
-
-              <AdSlot slot="vat-top" format="horizontal" />
 
               <VatCalculator />
 

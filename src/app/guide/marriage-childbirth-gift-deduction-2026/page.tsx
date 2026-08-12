@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -156,8 +155,6 @@ export default function MarriageChildbirthGiftDeduction2026Page() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-marriage-childbirth-gift-deduction-top" format="horizontal" />
-
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">혼인·출산 증여재산공제란 무엇인가요?</h2>
                 <p>
@@ -278,8 +275,6 @@ export default function MarriageChildbirthGiftDeduction2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-marriage-childbirth-gift-deduction-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신고는 꼭 해야 하나요?</h2>

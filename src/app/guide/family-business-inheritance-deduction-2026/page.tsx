@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   중소·중견기업 경영진이라면, 사업을 자녀에게 물려줄 때 상속세가 얼마나 무거운 부담인지 알고 있을 것입니다. 기업 자산이 크면 상속세로 수십억원을 내야 하는 상황도 발생합니다. 하지만 정부는 가업상속공제라는 제도를 통해 이런 부담을 크게 줄여주고 있습니다. 이 가이드는 공제 한도, 적격 기업 기준, 상속인 자격, 그리고 핵심인 5년 사후관리 조건까지 완전히 정리해드립니다.
                 </p>
               </header>
-
-              <AdSlot slot="guide-family-business-inheritance-top" format="horizontal" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가업상속공제란 무엇인가</h2>
@@ -339,8 +336,6 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-family-business-inheritance-mid" format="rectangle" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가업상속공제 받기 위한 실무 절차</h2>

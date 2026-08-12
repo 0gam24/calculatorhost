@@ -4,7 +4,6 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { AdSlot } from '@/components/ads/AdSlot';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
 import {
@@ -154,8 +153,6 @@ export default function InflationMoneyValuePage() {
                   화폐가치는 물가상승률에 따라 시간이 지날수록 떨어집니다. 현재 100만원이 10년 후에는 약 134만원의 가치가 필요해질 수 있다는 뜻입니다. 복리 공식으로 미래 화폐가치를 계산하고, 통계청 소비자물가지수(CPI)로 과거 돈의 현재 가치를 환산하는 두 가지 방법을 명확히 정리했습니다. 은퇴 자금 계획, 투자 수익 분석, 실질 구매력 비교가 필요할 때 바로 활용하세요.
                 </p>
               </header>
-
-              <AdSlot slot="guide-inflation-money-value-top" format="horizontal" />
 
               {/* Structured Summary */}
               <div className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4">
@@ -398,8 +395,6 @@ export default function InflationMoneyValuePage() {
                   </p>
                 </div>
               </section>
-
-              <AdSlot slot="guide-inflation-money-value-mid" format="rectangle" />
 
               {/* Section 5: 품목별 물가상승률 차이 */}
               <section className="space-y-4">

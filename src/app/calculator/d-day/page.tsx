@@ -1,12 +1,7 @@
 import type { Metadata } from 'next';
-import dynamic from 'next/dynamic';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { AdSlot } from '@/components/ads/AdSlot';
-const InfeedAd = dynamic(() => import('@/components/ads/InfeedAd').then(mod => ({ default: mod.InfeedAd })), {
-  loading: () => <div className="my-6 md:my-8 min-h-[280px]" aria-hidden="true" />,
-});
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
@@ -192,8 +187,6 @@ export default function DdayPage() {
                 ]}
               />
 
-              <AdSlot slot="d-day-top" format="horizontal" />
-
               {/* 계산기 */}
               <DdayCalculator />
 
@@ -201,8 +194,6 @@ export default function DdayPage() {
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* AD-4 Infeed */}
-              <InfeedAd slot="d-day-infeed" />
-
               {/* D-day란? */}
               <section aria-label="D-day 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">D-day란?</h2>
