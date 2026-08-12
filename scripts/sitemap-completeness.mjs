@@ -54,6 +54,25 @@ if (isCli) {
 
   const files = listFilesRecursive(appDir).map((f) => 'src/app/' + f);
   const pages = extractPagePaths(files);
+
+  // out/sitemap.xml 은 빌드 산출물이라 소스보다 오래되면 결과 전체가 허위가 된다.
+  // (2026-08-12 감사: 3주 묵은 산출물 탓에 최신 15편이 "누락"으로 잘못 보고됨)
+  const sitemapMtime = fs.statSync(sitemapPath).mtimeMs;
+  const newestPageMtime = Math.max(
+    ...listFilesRecursive(appDir)
+      .filter((f) => f.endsWith('page.tsx'))
+      .map((f) => fs.statSync(path.join(appDir, f)).mtimeMs),
+  );
+  if (newestPageMtime > sitemapMtime) {
+    const days = Math.floor((newestPageMtime - sitemapMtime) / 86_400_000);
+    console.error(
+      `\n⚠️  out/sitemap.xml 이 소스보다 오래됨 (${days}일 차이).\n` +
+        `   지금 비교하면 최신 페이지가 전부 "누락"으로 잘못 잡힌다.\n` +
+        `   → \`npm run build\` 후 다시 실행할 것. (검증 건너뜀)\n`,
+    );
+    process.exit(0);
+  }
+
   const xml = fs.readFileSync(sitemapPath, 'utf8');
   const sitemap = extractSitemapUrls(xml, 'https://calculatorhost.com');
   const diff = diffPagesVsSitemap(pages, sitemap);

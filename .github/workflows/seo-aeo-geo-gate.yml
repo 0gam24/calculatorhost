@@ -5,12 +5,20 @@ name: SEO+AEO+GEO Gate
 # - 검사: §N 정확도, 메타데이터+JSON-LD 정합성, §N 인용 strong 강도
 # - 실패 시: PR 머지 차단
 
+# 운영 실태 반영 (2026-08-12): 콘텐츠는 PR 없이 main 에 직접 push 되는 경우가 많아
+# pull_request 트리거만으로는 게이트가 사실상 실행되지 않았다. push 도 함께 감시한다.
 on:
   pull_request:
     branches: [main]
     paths:
       - 'src/app/**/page.tsx'
       - 'src/app/sitemap.ts'
+  push:
+    branches: [main]
+    paths:
+      - 'src/app/**/page.tsx'
+      - 'src/app/sitemap.ts'
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -37,7 +45,17 @@ jobs:
       - name: 변경된 page.tsx 식별
         id: changed
         run: |
-          changed=$(git diff --name-only origin/main...HEAD -- 'src/app/**/page.tsx' | tr '\n' ' ')
+          # PR: base 대비 diff / push: 직전 커밋 대비 diff (main 직접 push 대응)
+          if [ "${{ github.event_name }}" = "pull_request" ]; then
+            range="origin/main...HEAD"
+          else
+            range="${{ github.event.before }} ${{ github.sha }}"
+            # 첫 푸시 등으로 before 가 비어 있으면 직전 커밋으로 폴백
+            case "${{ github.event.before }}" in
+              ''|0000000000000000000000000000000000000000) range="HEAD^ HEAD" ;;
+            esac
+          fi
+          changed=$(git diff --name-only $range -- 'src/app/**/page.tsx' | tr '\n' ' ')
           echo "files=${changed}" >> $GITHUB_OUTPUT
           echo "변경 page.tsx: ${changed}"
 

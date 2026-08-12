@@ -112,6 +112,33 @@ function checkPage(filePath) {
   }
 }
 
+/**
+ * out/ 은 빌드 산출물이라 소스보다 오래되면 신규 페이지가 통째로 점검 사각지대가 된다.
+ * (2026-08-12 감사: 371 라우트 중 274개만 점검되고 있었음)
+ */
+function newestPageMtime(dir) {
+  let newest = 0;
+  for (const entry of readdirSync(dir)) {
+    const full = join(dir, entry);
+    const st = statSync(full);
+    if (st.isDirectory()) newest = Math.max(newest, newestPageMtime(full));
+    else if (entry === 'page.tsx') newest = Math.max(newest, st.mtimeMs);
+  }
+  return newest;
+}
+
+function warnIfStale() {
+  const newestPage = newestPageMtime(resolve(ROOT, 'src', 'app'));
+  const outMtime = statSync(OUT_DIR).mtimeMs;
+  if (newestPage > outMtime) {
+    const days = Math.floor((newestPage - outMtime) / 86_400_000);
+    console.warn(
+      `\n⚠️  out/ 이 소스보다 오래됨 (${days}일 차이) — 최신 페이지는 점검되지 않는다.\n` +
+        `   정확한 결과가 필요하면 \`npm run build\` 후 재실행할 것.\n`,
+    );
+  }
+}
+
 function main() {
   try {
     statSync(OUT_DIR);
@@ -119,6 +146,8 @@ function main() {
     console.error('[seo:validate] out/ 디렉터리 없음 — 먼저 npm run build 실행');
     process.exit(1);
   }
+
+  warnIfStale();
 
   for (const file of walk(OUT_DIR)) checkPage(file);
 

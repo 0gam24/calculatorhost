@@ -30,37 +30,37 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Ralph Step 1: Meta Audit
+      - name: "Ralph Step 1: Meta Audit"
         id: meta
         run: npm run ralph:meta
         continue-on-error: true
 
-      - name: Ralph Step 2: Link Health
+      - name: "Ralph Step 2: Link Health"
         id: links
         run: npm run ralph:link-health
         continue-on-error: true
 
-      - name: Ralph Step 3: Sync Health
+      - name: "Ralph Step 3: Sync Health"
         id: sync
         run: npm run sync:health
         continue-on-error: true
 
-      - name: Ralph Step 4: Launch Checklist
+      - name: "Ralph Step 4: Launch Checklist"
         id: checklist
         run: npm run launch:checklist
         continue-on-error: true
 
-      - name: Ralph Step 5: Type Check
+      - name: "Ralph Step 5: Type Check"
         id: types
         run: npm run typecheck
         continue-on-error: true
 
-      - name: Ralph Step 6: Unit Tests
+      - name: "Ralph Step 6: Unit Tests"
         id: tests
         run: npm test -- --run
         continue-on-error: true
 
-      - name: Ralph Step 7: AdSense Audit
+      - name: "Ralph Step 7: AdSense Audit"
         id: adsense
         run: npm run audit:adsense
         continue-on-error: true

@@ -15,6 +15,13 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import {
+  extractMetadataBody,
+  extractQuotedField,
+  extractKeywordsCount as countKeywords,
+  resolveCanonical,
+  displayLength,
+} from './meta-parser-core.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -29,33 +36,9 @@ function listFilesRecursive(dir, out = []) {
   return out;
 }
 
-function extractMetadata(content) {
-  // export const metadata: Metadata = { ... };
-  const m = content.match(/export const metadata(?::\s*Metadata)?\s*=\s*\{([\s\S]*?)\n\};/);
-  return m ? m[1] : null;
-}
-
-function extractStringField(metaBody, field) {
-  // title: '...' 또는 title: "..." 또는 title: `...`
-  const re = new RegExp(`${field}:\\s*['"\`]([^'"\`]+)['"\`]`);
-  const m = metaBody.match(re);
-  return m ? m[1] : null;
-}
-
-function extractTemplateField(metaBody, field) {
-  // description:\n    '...' 같은 멀티라인. 첫 단일 따옴표 안 추출.
-  const re = new RegExp(`${field}:\\s*\\n?\\s*['"\`]([^'"\`]+)['"\`]`);
-  const m = metaBody.match(re);
-  if (!m) return null;
-  // template literal ${VAR} 자리는 실제 렌더 시 짧은 값으로 치환되므로 길이 카운트에서 제외 (대표 4자로 가정)
-  return m[1].replace(/\$\{[^}]+\}/g, '0000');
-}
-
-function extractKeywordsCount(metaBody) {
-  const m = metaBody.match(/keywords:\s*\[([\s\S]*?)\]/);
-  if (!m) return 0;
-  return (m[1].match(/['"`][^'"`]+['"`]/g) || []).length;
-}
+// 파싱은 scripts/meta-parser-core.mjs 로 일원화 (2026-08-12 SEO 감사).
+// 구 정규식은 ① 문자열 안의 다른 따옴표에서 절단(113자→6자 오판)
+// ② 빌더 함수형 metadata 를 "누락" 으로 오판 하는 결함이 있었다.
 
 export function validatePage(filePath, content) {
   const violations = [];
@@ -69,41 +52,49 @@ export function validatePage(filePath, content) {
   // 가이드 인덱스 페이지(/guide/page.tsx)는 카탈로그라 별도 룰 (개별 가이드 검사만)
   if (rel.endsWith(path.sep + 'guide' + path.sep + 'page.tsx')) return [];
 
-  const metaBody = extractMetadata(content);
-  if (!metaBody) {
+  // noindex 페이지(임베드 위젯 등)는 SERP 표면이 아니므로 메타 길이 검사 면제.
+  if (/robots\s*:\s*\{[^}]*index\s*:\s*false/.test(content)) return [];
+
+  const { present, computed, body: metaBody } = extractMetadataBody(content);
+  if (!present) {
     violations.push({ file: rel, field: 'metadata', reason: 'metadata export 누락' });
     return violations;
   }
+  // 빌더 함수형(`export const metadata = buildGuideCategoryMetadata('tax')`)은
+  // 정적 분석 대상이 아니다. 값은 빌더 자체의 단위 테스트로 보장.
+  if (computed) return [];
 
   // title 60자 이내
-  const title = extractStringField(metaBody, 'title');
+  const title = extractQuotedField(metaBody, 'title');
   if (!title) {
     violations.push({ file: rel, field: 'title', reason: '누락' });
-  } else if (title.length > 65) {
-    violations.push({ file: rel, field: 'title', reason: `${title.length}자 (65자 초과)` });
+  } else if (displayLength(title) > 65) {
+    violations.push({ file: rel, field: 'title', reason: `${displayLength(title)}자 (65자 초과)` });
   }
 
   // description 80~155자
-  const description = extractTemplateField(metaBody, 'description') || extractStringField(metaBody, 'description');
+  const description = extractQuotedField(metaBody, 'description');
   if (!description) {
     violations.push({ file: rel, field: 'description', reason: '누락' });
-  } else if (description.length < 80) {
-    violations.push({ file: rel, field: 'description', reason: `${description.length}자 (80자 미만)` });
-  } else if (description.length > 160) {
-    violations.push({ file: rel, field: 'description', reason: `${description.length}자 (160자 초과)` });
+  } else if (displayLength(description) < 80) {
+    violations.push({ file: rel, field: 'description', reason: `${displayLength(description)}자 (80자 미만)` });
+  } else if (displayLength(description) > 160) {
+    violations.push({ file: rel, field: 'description', reason: `${displayLength(description)}자 (160자 초과)` });
   }
 
-  // canonical trailing slash
-  const canonicalMatch = metaBody.match(/canonical:\s*([A-Z_]+|['"`][^'"`]+['"`])/);
-  // URL 상수 통한 간접 참조도 허용 — 파일에서 URL 상수 추출
-  const urlConstMatch = content.match(/const URL\s*=\s*['"`]([^'"`]+)['"`]/);
-  if (urlConstMatch && !urlConstMatch[1].endsWith('/')) {
-    violations.push({ file: rel, field: 'canonical', reason: `trailing slash 누락: ${urlConstMatch[1]}` });
+  // canonical — 변수 참조(`canonical: URL`) 포함 해석 후 절대경로 + trailing slash 확인
+  const canonical = resolveCanonical(content, metaBody);
+  if (!canonical) {
+    violations.push({ file: rel, field: 'canonical', reason: '누락' });
+  } else if (!canonical.startsWith('https://calculatorhost.com')) {
+    violations.push({ file: rel, field: 'canonical', reason: `절대 URL 아님: ${canonical}` });
+  } else if (!canonical.endsWith('/')) {
+    violations.push({ file: rel, field: 'canonical', reason: `trailing slash 누락: ${canonical}` });
   }
 
   // keywords 5~10개 (가이드만 — 계산기는 글로벌 처리 가능)
   if (isGuide) {
-    const kwCount = extractKeywordsCount(metaBody);
+    const kwCount = countKeywords(metaBody);
     if (kwCount === 0) {
       violations.push({ file: rel, field: 'keywords', reason: '누락 (5~10개 의무)' });
     } else if (kwCount < 5) {

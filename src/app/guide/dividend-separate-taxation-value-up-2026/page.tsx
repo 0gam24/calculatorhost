@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   {
     question: '세율은 얼마인가요?',
     answer:
-      '배당금액 구간에 따라 14%에서 30% 사이의 저율이 적용됩니다(지방소득세 별도). 낮은 구간은 일반 배당 원천징수율과 같은 14%부터 시작하고, 금액이 커질수록 세율이 올라갑니다. 다만 종합과세 최고세율(45%)보다는 낮습니다. 구체적 구간과 세율은 정부안이므로 확정 법률과 국세청 안내로 확인하세요.',
+      '배당금액 구간에 따라 14%에서 30% 사이의 저율이 적용됩니다(지방소득세 별도). 조세특례제한법 §104의27에 따라 2,000만원 이하 14%, 3억원 이하 20%, 50억원 이하 25%, 50억원 초과 30%입니다. 종합과세 최고세율 45%보다 낮으며, 2026년 지급분부터 2028년 사업연도 배당분까지 한시 적용됩니다.',
   },
   {
     question: '기존 배당 과세와 무엇이 다른가요?',
@@ -181,11 +181,40 @@ export default function DividendSeparateTaxationValueUp2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">세율은 얼마이고 종합과세와 뭐가 다른가</h2>
                 <p>
-                  분리과세 세율은 배당금액 구간에 따라 14%에서 30% 사이로 차등 적용됩니다(지방소득세 별도). 종합과세 최고세율 45%보다 낮은 것이 핵심 이점입니다.
+                  분리과세 세율은 배당금액 구간에 따라 14%에서 30% 사이로 차등 적용됩니다(지방소득세 별도). 근거는 조세특례제한법 §104의27(고배당기업 주식 배당소득에 대한 과세특례)이며, 종합과세 최고세율 45%보다 낮은 것이 핵심 이점입니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 배당 과세 방식 비교 (정부 발표 기준, 지방소득세 별도)</caption>
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 분리과세 세율 구간 (조세특례제한법 §104의27, 지방소득세 별도)</caption>
+                    <thead>
+                      <tr className="border-b border-border-base">
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">특례 배당소득 구간</th>
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">소득세율</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border-base">
+                        <td className="p-3">2,000만원 이하</td>
+                        <td className="p-3">14%</td>
+                      </tr>
+                      <tr className="border-b border-border-base bg-bg-card/50">
+                        <td className="p-3">2,000만원 초과 ~ 3억원 이하</td>
+                        <td className="p-3">20%</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="p-3">3억원 초과 ~ 50억원 이하</td>
+                        <td className="p-3">25%</td>
+                      </tr>
+                      <tr className="border-b border-border-base bg-bg-card/50">
+                        <td className="p-3">50억원 초과</td>
+                        <td className="p-3">30%</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm border-collapse">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 2. 배당 과세 방식 비교 (지방소득세 별도)</caption>
                     <thead>
                       <tr className="border-b border-border-base">
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">구분</th>
@@ -221,7 +250,7 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                   일반 배당은 연간 금융소득(이자+배당)이 2,000만원을 넘으면 초과분이 종합과세됩니다. 분리과세를 신청하면 이 합산에서 빠져 저율로 과세가 마무리됩니다.
                 </p>
                 <p className="mt-4">
-                  다만 위 14~30% 구간과 세부 경계는 정부안 기준입니다. 확정 세율과 구간은 국회 통과 후 개정 법률과 국세청 안내로 반드시 확인하세요.
+                  다만 이 특례는 한시 제도입니다. 조세특례제한법 §104의27은 2026년 1월 1일 이후 지급받는 배당소득부터 적용되며, 2028년이 속하는 사업연도 배당분까지 3년간 시행됩니다. 연장 여부는 이후 세법개정에 따라 달라지므로 배당 수령 시점의 국세청 안내를 함께 확인하세요.
                 </p>
               </section>
 
@@ -288,13 +317,13 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                 <h2 className="text-2xl font-bold">신청 전 챙겨야 할 주의점</h2>
                 <ul className="space-y-3 ml-6 list-disc text-text-secondary">
                   <li>
-                    <strong>한시적 제도:</strong> 2026년 지급 배당부터 2030년 5월 신고까지 운영되는 것으로 발표됐습니다. 매년 요건과 대상 기업이 달라질 수 있으니 배당 시즌마다 확인하세요.
+                    <strong>한시적 제도:</strong> 조세특례제한법 §104의27은 2026년 1월 1일 이후 지급 배당분부터 2028년이 속하는 사업연도 배당분까지 3년간 적용됩니다. 매년 요건과 대상 기업이 달라질 수 있으니 배당 시즌마다 확인하세요.
                   </li>
                   <li>
                     <strong>건강보험료 영향:</strong> 배당소득은 건강보험료 산정에 영향을 줄 수 있습니다. 분리과세 여부와 별개로 지역가입자·피부양자 자격에 미치는 영향을 함께 살펴야 합니다.
                   </li>
                   <li>
-                    <strong>정부안 단계:</strong> 세부 세율·구간·요건은 국회 심의 과정에서 조정될 수 있습니다. 최종 확정 전까지는 국세청·소관부처 안내를 기준으로 판단하세요.
+                    <strong>공시 요건 확인:</strong> 특례는 기업이 요건 충족 사실을 한국거래소 공시로 밝힌 경우에만 적용됩니다. 배당성향이 높아 보여도 공시가 없으면 대상이 아니므로, 종목별로 공시 여부를 직접 확인해야 합니다.
                   </li>
                 </ul>
               </section>
@@ -352,7 +381,7 @@ export default function DividendSeparateTaxationValueUp2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 종목 투자를 권유하거나 수익을 보장하지 않습니다. 고배당기업 배당소득 분리과세의 세율·구간·요건·적용기한은 2026년 세제개편 발표 및 정부안을 기준으로 정리한 것으로, 국회 심의 과정에서 변경될 수 있습니다. 개인별 유불리는 소득 구조에 따라 다르므로, 신고 전 홈택스 모의계산 또는 세무 전문가 상담으로 확인하세요. 본 콘텐츠는 2026-08-06 기준으로 작성됐으며, 근거는 조세특례제한법상 고배당기업 배당소득 과세특례 및 소득세법 금융소득 종합과세 규정입니다. 정확한 조문·세율은 소관부처 고시를 참조하세요. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 종목 투자를 권유하거나 수익을 보장하지 않습니다. 고배당기업 배당소득 분리과세의 세율·구간·요건·적용기한은 조세특례제한법 §104의27(2026년 1월 1일 시행, 2028년 사업연도 배당분까지 한시)을 기준으로 정리했습니다. 개인별 유불리는 소득 구조에 따라 다르므로, 신고 전 홈택스 모의계산 또는 세무 전문가 상담으로 확인하세요. 본 콘텐츠는 2026-08-06 기준으로 작성됐으며, 근거는 조세특례제한법 §104의27 및 소득세법 §14(금융소득 종합과세) 규정입니다. 정확한 조문·세율은 소관부처 고시를 참조하세요. AI 보조 작성 후 운영자 검수 완료.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

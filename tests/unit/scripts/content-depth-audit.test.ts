@@ -6,7 +6,7 @@ import {
   stripHtmlToText,
   countKorean,
   auditCalculators,
-} from '../../../scripts/content-depth-audit.mjs';
+} from '../../../scripts/content-depth-core.mjs';
 
 describe('stripHtmlToText()', () => {
   it('extracts only the #main-content region and strips tags', () => {
