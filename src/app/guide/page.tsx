@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-13 신규 5편 (상속포기·전입신고·퇴직연금디폴트옵션·증여취소반환·국민취업지원제도)
+  {
+    slug: 'inheritance-renunciation-2026',
+    title: '상속포기 신고 방법·기한 2026, 빚 상속 안 받는 법',
+    description:
+      '부모님 빚이 재산보다 많을 때 상속포기로 채무를 넘겨받지 않을 수 있습니다. 사망을 안 날부터 3개월 이내 가정법원 신고, 후순위 상속인까지 포기해야 하는 이유, 한정승인과의 차이를 민법 §1019·§1041 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'resident-registration-move-in-report-2026',
+    title: '전입신고 방법·기한 2026, 14일 넘기면 과태료 얼마',
+    description:
+      '이사하면 14일 이내 전입신고를 해야 합니다. 정부24 온라인 신고 절차, 늦었을 때 최대 5만원 과태료, 세입자라면 확정일자를 함께 받아야 하는 이유를 주민등록법 §16·§40 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'retirement-pension-default-option-2026',
+    title: '퇴직연금 디폴트옵션 2026, 안 정하면 생기는 일',
+    description:
+      'DC형·IRP 퇴직연금은 운용 지시를 안 하면 방치돼 수익이 0에 가깝습니다. 사전지정운용제도(디폴트옵션)의 상품 3유형, 지정 방법, 직접운용과의 비교를 근로자퇴직급여보장법 §21의2 기준으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'gift-return-cancellation-2026',
+    title: '증여 취소 반환 2026, 3개월 안에 돌려주면 세금 0원',
+    description:
+      '증여했다가 마음이 바뀌면 언제까지 돌려줘야 증여세를 안 낼까요. 신고기한 이내 반환은 처음부터 없던 것, 이후 3개월 내 반환은 반환분만 비과세, 현금 증여는 취소해도 과세되는 규칙을 상속세및증여세법 §4 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-13',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'national-employment-support-allowance-2026',
+    title: '국민취업지원제도 2026, 구직촉진수당 자격·신청법',
+    description:
+      '실업급여를 못 받는 구직자도 국민취업지원제도 1유형이면 구직촉진수당을 6개월간 받으며 취업 지원을 받습니다. 소득·재산 자격, 청년 완화 요건, 부양가족 추가, 신청 방법을 구직자취업촉진법 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-13',
+    readingMinutes: 8,
+  },
   // 2026-08-12 신규 5편 (배우자상속공제·상병수당·노령연금소득감액·결혼세액공제·무주택기간산정)
   {
     slug: 'spouse-inheritance-deduction-2026',

@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-13 신규 5편 (상속포기·전입신고·퇴직연금디폴트옵션·증여취소반환·국민취업지원제도)
+  'inheritance-renunciation-2026',
+  'resident-registration-move-in-report-2026',
+  'retirement-pension-default-option-2026',
+  'gift-return-cancellation-2026',
+  'national-employment-support-allowance-2026',
   // 2026-08-12 신규 5편 (배우자상속공제·상병수당·노령연금소득감액·결혼세액공제·무주택기간산정)
   'spouse-inheritance-deduction-2026',
   'sickness-benefit-2026',
