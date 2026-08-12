@@ -161,7 +161,7 @@ export default function JunePropertyTaxPage() {
                 </p>
               </header>
 
-              <AdSlot slot="guide-property-tax-top" format="horizontal" />
+              <AdSlot slot="guide-june-property-tax-top" format="horizontal" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

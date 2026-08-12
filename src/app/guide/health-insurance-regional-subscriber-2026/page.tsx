@@ -12,6 +12,7 @@ import {
   buildArticleJsonLd,
   buildWebPageJsonLd,
   buildFaqPageJsonLd,
+  buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/guide/health-insurance-regional-subscriber-2026/';
@@ -125,6 +126,8 @@ export default function HealthInsuranceRegionalSubscriber2026() {
     }))
   );
 
+  const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+
   return (
     <div className="min-h-screen flex flex-col bg-bg-base">
       <Header />
@@ -136,6 +139,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
           <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
+          <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
 
           {/* Guide Header */}
           <GuideHeader

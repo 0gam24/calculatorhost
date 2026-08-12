@@ -4,7 +4,7 @@ import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
-import { buildBreadcrumbJsonLd } from '@/lib/seo/jsonld';
+import { buildBreadcrumbJsonLd, buildWebPageJsonLd } from '@/lib/seo/jsonld';
 
 const CATEGORIES = [
   { href: '/category/work/', label: '근로 계산기', desc: '연봉 실수령액·퇴직금·은퇴자금·N잡러 건강보험' },
@@ -36,12 +36,23 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: '소개' },
 ]);
 
+const webPageJsonLd = buildWebPageJsonLd({
+  name: 'calculatorhost 소개',
+  description: metadata.description as string,
+  url: 'https://calculatorhost.com/about/',
+  datePublished: '2026-04-24',
+});
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-bg-base">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <Header />
       <div className="flex">

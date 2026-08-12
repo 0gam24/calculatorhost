@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-06-19';
 
 export const metadata: Metadata = {
-  title: '주택연금(역모기지) 2026 완벽 가이드 | 가입조건·공시가격·월지급금 결정요인 | calculatorhost',
+  title: '주택연금 2026, 가입조건·공시가격·월지급금 | calculatorhost',
   description:
     '주택연금은 집을 담보로 평생 월금을 받는 국가보증 역모기지입니다. 만 55세 이상 가입조건, 공시가격 12억 한도, 배우자 승계, 우대지급방식, 월지급금 결정요인을 정리합니다.',
   keywords: [

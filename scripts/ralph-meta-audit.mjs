@@ -194,7 +194,8 @@ function validatePage(filePath, content, routePath) {
     if (!jsonLd.includes('WebPage')) {
       issues.push({ severity: 'warning', check: 'jsonld', msg: 'WebPage JSON-LD recommended' });
     }
-    if (!jsonLd.includes('BreadcrumbList')) {
+    // 루트(/)는 계층상 상위가 없어 BreadcrumbList 가 성립하지 않는다 (구글 가이드).
+    if (routePath !== '/' && !jsonLd.includes('BreadcrumbList')) {
       issues.push({ severity: 'warning', check: 'jsonld', msg: 'BreadcrumbList JSON-LD recommended' });
     }
   }

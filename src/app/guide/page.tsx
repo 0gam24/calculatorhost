@@ -2685,6 +2685,17 @@ export const GUIDES: GuideEntry[] = [
     seasonal: '7월 1~25일',
     tags: ['시즈널'],
   },
+  {
+    slug: 'july-vat-and-tax-withholding',
+    title: '7월 부가세 확정신고·연말정산 사전점검 2026',
+    description:
+      '7월에 겹치는 부가가치세 확정신고와 하반기 연말정산 사전점검. 신고 기한·공제 항목·준비 서류를 한 번에 정리.',
+    category: '세금',
+    publishedAt: '2026-05-15',
+    readingMinutes: 9,
+    seasonal: '7월 세무 일정',
+    tags: ['시즈널'],
+  },
   // ─── 8월 ───
   {
     slug: 'august-capital-gains-tax-review',

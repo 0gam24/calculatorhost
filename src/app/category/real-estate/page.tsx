@@ -8,6 +8,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
+  buildWebPageJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
   buildDefinedTermSetJsonLd,
@@ -117,6 +118,12 @@ export default function RealEstateCategoryPage() {
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '부동산' },
   ]);
+  const webPageLd = buildWebPageJsonLd({
+    name: '부동산 계산기 모음',
+    description: metadata.description as string,
+    url: 'https://calculatorhost.com/category/real-estate/',
+    datePublished: '2026-04-24',
+  });
   const itemListLd = buildItemListJsonLd(
     CALCULATORS.map((c) => ({
       name: c.title,
@@ -169,6 +176,10 @@ export default function RealEstateCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"

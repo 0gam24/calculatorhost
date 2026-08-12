@@ -8,6 +8,7 @@ import Icon from '@/components/ui/Icon';
 import {
   buildOrganizationJsonLd,
   buildWebSiteJsonLd,
+  buildWebPageJsonLd,
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 import { getRecentUpdates } from '@/lib/constants/updates-log';
@@ -240,6 +241,13 @@ export default function HomePage() {
   const orgJsonLd = buildOrganizationJsonLd();
   const webSiteJsonLd = buildWebSiteJsonLd();
   const faqJsonLd = buildFaqPageJsonLd(HOME_FAQ);
+  const webPageJsonLd = buildWebPageJsonLd({
+    name: '한국 금융·세금·부동산 계산기 모음',
+    description: metadata.description as string,
+    url: 'https://calculatorhost.com/',
+    datePublished: '2026-04-24',
+    isPartOf: 'https://calculatorhost.com/#website',
+  });
 
   // ItemList JSON-LD (모든 계산기)
   const allCalcsFlat = ALL_CALCULATORS.flatMap((cat) => cat.items);
@@ -263,6 +271,10 @@ export default function HomePage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webSiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageJsonLd) }}
       />
       <script
         type="application/ld+json"

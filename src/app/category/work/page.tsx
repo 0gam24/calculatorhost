@@ -8,6 +8,7 @@ import { AdSlot } from '@/components/ads/AdSlot';
 import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
+  buildWebPageJsonLd,
   buildItemListJsonLd,
   buildFaqPageJsonLd,
   buildDefinedTermSetJsonLd,
@@ -98,6 +99,12 @@ export default function WorkCategoryPage() {
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '근로' },
   ]);
+  const webPageLd = buildWebPageJsonLd({
+    name: '근로 계산기 모음',
+    description: metadata.description as string,
+    url: 'https://calculatorhost.com/category/work/',
+    datePublished: '2026-04-24',
+  });
   const itemListLd = buildItemListJsonLd(
     CALCULATORS.map((c) => ({
       name: c.title,
@@ -150,6 +157,10 @@ export default function WorkCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
       />
       <script
         type="application/ld+json"
