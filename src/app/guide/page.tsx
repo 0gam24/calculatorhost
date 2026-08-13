@@ -3149,20 +3149,20 @@ const GUIDES_BY_CATEGORY: Record<GuideCategory, GuideEntry[]> = {
 };
 GUIDES.forEach((g) => GUIDES_BY_CATEGORY[g.category].push(g));
 
-// 카테고리 아이콘 조회 (전체 목록 배지용)
-const CATEGORY_ICON = Object.fromEntries(
-  CATEGORIES.map((c) => [c.id, c.icon])
-) as Record<GuideCategory, IconName>;
+/**
+ * 인덱스에 실제로 펼치는 개수.
+ *
+ * 2026-08-12: 313편을 한 페이지에 전부(그것도 최신순·카테고리별로 두 번) 나열하던 구조를
+ * 큐레이션 방식으로 교체. 전량 나열은 '글 찍어내는 공장' 인상을 주고 스크롤이 6만 픽셀을 넘겼다.
+ * 개별 가이드로 가는 크롤 경로는 카테고리 허브(/guide/category/*)가 전량 유지한다.
+ */
+const RECENT_LIMIT = 12;
+const PER_CATEGORY_LIMIT = 6;
+const SEASONAL_LIMIT = 6;
 
-// 전체 — 최신순 날짜별 그룹 (오늘 포스팅이 최상단)
-const GUIDES_BY_DATE: { date: string; items: GuideEntry[] }[] = [];
-[...GUIDES]
-  .sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
-  .forEach((g) => {
-    const last = GUIDES_BY_DATE[GUIDES_BY_DATE.length - 1];
-    if (last && last.date === g.publishedAt) last.items.push(g);
-    else GUIDES_BY_DATE.push({ date: g.publishedAt, items: [g] });
-  });
+const GUIDES_RECENT: GuideEntry[] = [...GUIDES].sort((a, b) =>
+  b.publishedAt.localeCompare(a.publishedAt),
+);
 
 export default function GuideIndexPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
@@ -3239,54 +3239,37 @@ export default function GuideIndexPage() {
                 })}
               </nav>
 
-              {/* 전체, 최신순 날짜별 (가이드 진입 시 바로 보이는 기본 목록) */}
-              <section id="all" aria-label="전체 가이드 (최신순)" className="card space-y-5 scroll-mt-4">
+              {/* 최근 발행 (큐레이션). 전량 목록은 카테고리 허브가 담당한다. */}
+              <section id="all" aria-label="최근 발행 가이드" className="space-y-4 scroll-mt-4">
                 <header className="flex items-baseline justify-between border-b border-border-base pb-2">
-                  <h2 className="text-2xl font-bold">
-                    전체 가이드{' '}
-                    <span className="text-base text-text-tertiary font-normal">
-                      (최신순 · {GUIDES.length})
-                    </span>
-                  </h2>
-                  <span className="text-caption text-text-tertiary">최근 발행부터</span>
+                  <h2 className="text-2xl font-bold">최근 발행</h2>
+                  <span className="text-caption text-text-tertiary">
+                    전체 {GUIDES.length}편 중 최신 {Math.min(RECENT_LIMIT, GUIDES.length)}편
+                  </span>
                 </header>
-                <div className="space-y-6">
-                  {GUIDES_BY_DATE.map((group, gi) => (
-                    <div key={group.date} className="space-y-2">
-                      <h3 className="flex items-center gap-2 text-sm font-semibold text-text-secondary">
-                        <time dateTime={group.date}>{group.date.replace(/-/g, '. ')}</time>
-                        <span className="font-normal text-text-tertiary">
-                          ({group.items.length}편)
+                <ul className="divide-y divide-border-base border-t border-border-base">
+                  {GUIDES_RECENT.slice(0, RECENT_LIMIT).map((g) => (
+                    <li key={g.slug}>
+                      <Link
+                        href={`/guide/${g.slug}/`}
+                        className="group flex items-baseline gap-3 py-3 transition-colors hover:bg-primary-500/5"
+                      >
+                        <time
+                          dateTime={g.publishedAt}
+                          className="w-[5.5rem] shrink-0 tabular-nums text-caption text-text-tertiary"
+                        >
+                          {g.publishedAt.replace(/-/g, '. ')}
+                        </time>
+                        <span className="flex-1 text-sm font-medium text-text-primary group-hover:text-primary-600 dark:group-hover:text-primary-400">
+                          {g.title}
                         </span>
-                        {gi === 0 && (
-                          <span className="rounded-chip bg-primary-500/15 px-2 py-0.5 text-caption font-semibold text-primary-500">
-                            최신
-                          </span>
-                        )}
-                      </h3>
-                      <ul className="divide-y divide-border-base border-t border-border-base">
-                        {group.items.map((g) => (
-                          <li key={g.slug}>
-                            <Link
-                              href={`/guide/${g.slug}/`}
-                              className="flex items-center gap-3 py-2 hover:bg-primary-500/5"
-                            >
-                              <span aria-hidden className="shrink-0 text-primary-500">
-                                <Icon name={CATEGORY_ICON[g.category]} size={16} />
-                              </span>
-                              <span className="flex-1 text-sm font-medium text-text-primary hover:text-primary-500">
-                                {g.title}
-                              </span>
-                              <span className="hidden shrink-0 text-caption text-text-tertiary sm:inline">
-                                {g.category}
-                              </span>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                        <span className="hidden shrink-0 text-caption text-text-tertiary sm:inline">
+                          {g.category}
+                        </span>
+                      </Link>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </section>
 
               {/* 시즌 가이드, 강조 배너 */}
@@ -3296,11 +3279,16 @@ export default function GuideIndexPage() {
                   aria-label="시즌 가이드"
                   className="card border-l-2 border-l-danger-500 bg-danger-500/5 space-y-4"
                 >
-                  <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
-                    시즌 가이드: 지금 가장 검색 많은 주제
-                  </h2>
+                  <header className="flex items-baseline justify-between">
+                    <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
+                      시즌 가이드: 지금 가장 검색 많은 주제
+                    </h2>
+                    <span className="text-caption text-text-tertiary">
+                      전체 {SEASONAL_GUIDES.length}편 중 {Math.min(SEASONAL_LIMIT, SEASONAL_GUIDES.length)}편
+                    </span>
+                  </header>
                   <div className="grid gap-4 md:grid-cols-2">
-                    {SEASONAL_GUIDES.map((g) => (
+                    {SEASONAL_GUIDES.slice(0, SEASONAL_LIMIT).map((g) => (
                       <Link
                         key={g.slug}
                         href={`/guide/${g.slug}/`}
@@ -3348,7 +3336,7 @@ export default function GuideIndexPage() {
                     </header>
                     <p className="text-text-secondary text-sm">{cat.description}</p>
                     <div className="grid gap-4 md:grid-cols-2">
-                      {guides.map((g) => (
+                      {guides.slice(0, PER_CATEGORY_LIMIT).map((g) => (
                         <Link
                           key={g.slug}
                           href={`/guide/${g.slug}/`}
@@ -3384,6 +3372,15 @@ export default function GuideIndexPage() {
                         </Link>
                       ))}
                     </div>
+                    {guides.length > PER_CATEGORY_LIMIT && (
+                      <Link
+                        href={`/guide/category/${CATEGORY_PAGE_SLUG[cat.id]}/`}
+                        className="inline-flex items-center gap-1 text-sm font-medium text-primary-600 hover:text-primary-500 dark:text-primary-400"
+                      >
+                        {cat.id} 가이드 {guides.length}편 전체 보기
+                        <Icon name="chevron-right" size={14} />
+                      </Link>
+                    )}
                   </section>
                 );
               })}

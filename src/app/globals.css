@@ -115,6 +115,73 @@
     @apply outline-none ring-2 ring-primary-500 ring-offset-2 ring-offset-bg-base;
   }
 
+  /* ── 마감 디테일 (2026-08-12) ─────────────────────────────
+     하나하나는 사소하지만, 모여서 '손이 간 사이트'와 '찍어낸 사이트'를 가른다. */
+
+  /* 드래그 선택 색을 브랜드 틸로 */
+  ::selection {
+    background-color: rgba(31, 125, 107, 0.18);
+    color: var(--text-primary);
+  }
+
+  /* 제목은 줄 끝이 들쭉날쭉하지 않게 균형 배치 + 자간을 한 단계 조인다 */
+  h1,
+  h2,
+  h3 {
+    letter-spacing: -0.021em;
+    text-wrap: balance;
+    word-break: keep-all;
+  }
+
+  h1 {
+    line-height: 1.24;
+  }
+
+  /* 본문 문단은 고아 단어(마지막 줄에 한 단어만) 방지 */
+  p {
+    text-wrap: pretty;
+  }
+
+  /* 밑줄이 글자에 붙지 않도록 간격 확보 */
+  a:not([class*='no-underline']) {
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: from-font;
+  }
+
+  /* 숫자는 항상 등폭으로 — 표·결과값이 자릿수마다 흔들리지 않는다 */
+  td,
+  th,
+  time,
+  output {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* 스크롤바도 테마를 따르게 (기본 회색 막대가 주는 '기본값' 인상 제거) */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-base) transparent;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--border-base);
+    border: 3px solid transparent;
+    border-radius: 9999px;
+    background-clip: content-box;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--text-tertiary);
+  }
+
   /* 접근성: reduced-motion 존중 */
   @media (prefers-reduced-motion: reduce) {
     *,
@@ -128,16 +195,23 @@
 }
 
 @layer components {
-  /* 공통 카드 - 향상된 버전 */
+  /* 공통 카드
+     2026-08-12: 테두리 없이 그림자만 쓰면 밝은 배경에서 카드 경계가 흐려진다.
+     머리카락 굵기(1px) 테두리 + 2단 그림자 조합이 경계는 또렷하게, 인상은 부드럽게 만든다. */
   .card {
-    @apply rounded-2xl bg-bg-card p-6 shadow-card dark:shadow-card-dark lg:p-8;
-    border: none;
+    @apply rounded-2xl border border-border-subtle bg-bg-card p-6 shadow-card dark:shadow-card-dark lg:p-8;
   }
 
-
-  /* 카드 호버 효과 */
+  /* 카드 호버: 그림자만 키우지 않고 1px 들어 올려 '집을 수 있는 것' 처럼 보이게 한다. */
   .card-hover {
-    @apply transition-all duration-200 hover:shadow-card-hover;
+    @apply transition-[transform,box-shadow,border-color] duration-200 ease-out
+      hover:-translate-y-px hover:border-primary-500/25 hover:shadow-card-hover;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .card-hover:hover {
+      transform: none;
+    }
   }
 
   /* Hero 수치 스타일 (반응형, tabular-nums, 한 줄 강제)

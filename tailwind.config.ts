@@ -75,9 +75,12 @@ const config: Config = {
         '18': '4.5rem',
       },
       boxShadow: {
-        card: '0 1px 3px rgba(14,23,32,0.07)',
-        'card-dark': '0 8px 32px rgba(0,0,0,0.35)',
-        'card-hover': '0 8px 24px rgba(20,88,76,0.14)',
+        // 2026-08-12: 단일 그림자 → 2단 레이어. 가까운 그림자가 모서리를 잡아 주고
+        // 먼 그림자가 부드럽게 퍼져 카드가 종이처럼 떠 보인다 (프리미엄 사이트 공통 패턴).
+        card: '0 1px 2px rgba(14,23,32,0.04), 0 4px 14px rgba(14,23,32,0.045)',
+        'card-dark': '0 1px 2px rgba(0,0,0,0.4), 0 8px 26px rgba(0,0,0,0.3)',
+        'card-hover':
+          '0 2px 4px rgba(14,23,32,0.05), 0 14px 32px rgba(20,88,76,0.11)',
         glow: '0 0 0 2px rgba(31,125,107,0.25)',
       },
       animation: {

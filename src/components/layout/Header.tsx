@@ -59,7 +59,9 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 bg-bg-base/95 backdrop-blur-sm border-b border-border-subtle">
+      {/* 2026-08-12: 반투명도를 낮추고 blur·saturate 를 올려, 스크롤한 본문이
+          헤더 뒤로 비쳐 보이던 현상을 없앴다. 하단 경계는 hairline 로 유지. */}
+      <header className="sticky top-0 z-40 border-b border-border-subtle bg-bg-base/80 backdrop-blur-xl backdrop-saturate-150 supports-[not(backdrop-filter:blur(0))]:bg-bg-base">
         <div className="mx-auto flex h-18 items-center justify-between gap-6 px-4 md:px-8">
           {/* 좌측: 모바일 햄버거 + 로고 (모든 브레이크포인트에서 노출). */}
           <div className="flex items-center gap-3 shrink-0">

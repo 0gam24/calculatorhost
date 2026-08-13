@@ -30,6 +30,7 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '계산기 임베드 위젯' }],
     title: '무료 계산기 위젯, 내 블로그에 삽입',
     description: '양도세·연봉·대출 등 6종 계산기를 코드 한 줄로 내 사이트에 삽입하세요.',
     url: URL,
