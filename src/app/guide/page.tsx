@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-14 신규 5편 (국세미환급금·추석상여금·증여세분납연부연납·연금계좌이전·사택비과세)
+  {
+    slug: 'national-tax-unclaimed-refund-2026',
+    title: '국세 미환급금 찾기 2026, 안 찾아간 세금 돌려받는 법',
+    description:
+      '연말정산·종합소득세를 더 냈는데 못 받은 국세 미환급금은 홈택스·손택스·정부24·ARS 1544-9944로 로그인 없이 조회할 수 있습니다. 발생 원인, 수령 방법, 5년이 지나면 국고로 사라지는 소멸시효, 지방세 미환급금 조회까지 국세기본법 §51·§54 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-14',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'chuseok-bonus-tax-2026',
+    title: '추석 상여금 세금 2026, 명절 보너스 얼마나 떼나',
+    description:
+      '추석 상여금은 월급과 같은 근로소득이라 소득세와 4대보험을 모두 뗍니다. 명절 선물세트도 원칙적으로 과세되고, 많이 뗀 세금은 연말정산으로 정산됩니다. 상여금 원천징수 방식과 실수령액 계산을 소득세법 §20 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-14',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'gift-tax-installment-payment-2026',
+    title: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법',
+    description:
+      '증여세가 1천만원을 넘으면 2개월 내 분납, 2천만원을 넘으면 담보를 걸고 최대 5년간 연부연납으로 나눠 낼 수 있습니다. 분납·연부연납의 조건, 금액 한도, 연 3.5% 가산금, 담보를 상속세및증여세법 §70·§71 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-14',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'pension-account-transfer-2026',
+    title: '연금저축·IRP 계좌 이전 2026, 세금 없이 갈아타는 법',
+    description:
+      '수수료가 비싸거나 상품이 마음에 안 들면 연금저축·IRP 계좌를 다른 금융사로 옮길 수 있습니다. 계좌 이체는 인출이 아니라 세금이 없고 세액공제도 유지됩니다. 이전 절차, 연금저축과 IRP 상호 이체의 55세·5년 요건, 해지공제액 주의점을 소득세법 기준으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-14',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'company-housing-nontaxable-2026',
+    title: '사택 제공 세금 2026, 회사 집 공짜로 받으면 근로소득?',
+    description:
+      '회사가 무상·저가로 제공한 사택은 종업원과 주주 아닌 임원이라면 근로소득으로 과세하지 않습니다. 다만 지배주주 임원이거나 회사 명의 계약이 아니면 과세될 수 있습니다. 사택 비과세 조건과 계산을 소득세법 §12·시행령 §38 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-14',
+    readingMinutes: 8,
+  },
   // 2026-08-13 신규 5편 (상속포기·전입신고·퇴직연금디폴트옵션·증여취소반환·국민취업지원제도)
   {
     slug: 'inheritance-renunciation-2026',

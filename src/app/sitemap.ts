@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-14 신규 5편 (국세미환급금·추석상여금·증여세분납연부연납·연금계좌이전·사택비과세)
+  'national-tax-unclaimed-refund-2026',
+  'chuseok-bonus-tax-2026',
+  'gift-tax-installment-payment-2026',
+  'pension-account-transfer-2026',
+  'company-housing-nontaxable-2026',
   // 2026-08-13 신규 5편 (상속포기·전입신고·퇴직연금디폴트옵션·증여취소반환·국민취업지원제도)
   'inheritance-renunciation-2026',
   'resident-registration-move-in-report-2026',
