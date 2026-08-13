@@ -109,7 +109,12 @@ const swInit = `
   if (!('serviceWorker' in navigator)) return;
   if (location.hostname === 'localhost' && location.port) return;
   window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(function() {});
+    // updateViaCache: 'none' — sw.js 를 HTTP 캐시에서 재사용하지 않고 항상 재검증.
+    // 이게 없으면 새 워커 배포가 브라우저 캐시 TTL 만큼 늦게 적용된다.
+    navigator.serviceWorker
+      .register('/sw.js', { scope: '/', updateViaCache: 'none' })
+      .then(function(reg) { reg.update(); })
+      .catch(function() {});
   });
 })();
 `.trim();

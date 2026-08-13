@@ -38,6 +38,13 @@
   Cache-Control: public, max-age=14400, must-revalidate
   Content-Type: text/plain; charset=utf-8
 
+# Service Worker — 절대 캐시하지 않음
+# 브라우저가 sw.js 를 HTTP 캐시에서 재사용하면 새 워커를 며칠씩 못 받는다.
+# 2026-08-13 장애(첫 진입 시 몇 달 전 화면 노출)의 확산 원인이라 no-cache 로 고정.
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Content-Type: text/javascript; charset=utf-8
+
 # site.webmanifest — 1주일 (PWA 메타 변경 빈도 낮음)
 /site.webmanifest
   Cache-Control: public, max-age=604800

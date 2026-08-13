@@ -1,27 +1,27 @@
 /**
  * calculatorhost — 최소 Service Worker
  *
- * 전략: stale-while-revalidate (정적 export 환경 호환)
- * - 같은 origin GET 요청만 캐시
- * - 캐시 hit 시 즉시 반환 + 백그라운드 갱신
- * - 캐시 miss 시 네트워크, 실패 시 offline 페이지 fallback
- * - HTML 응답은 짧은 TTL, 정적 자산은 영구
+ * 전략 (요청 종류별로 다름):
+ *  - 페이지 이동(navigate/HTML) : **network-first**. 캐시는 오프라인 fallback 으로만 쓴다.
+ *  - 해시된 정적 자산(_next/static, fonts) : cache-first (파일명이 바뀌므로 안전)
+ *  - 그 밖의 같은 origin GET : stale-while-revalidate
+ *
+ * ⚠️ 2026-08-13 버그 수정 — HTML 을 stale-while-revalidate 로 주던 것이 원인이었다.
+ * 첫 진입 시 몇 달 전 캐시된 HTML(리브랜딩 이전 보라색 테마·이모지 아이콘)이 그대로 보이고,
+ * 사이트 안에서 한 번 이동했다 돌아오면(=클라이언트 라우팅) 최신 화면이 나오는 증상이 났다.
+ * HTML 은 용량이 작고 신선도가 훨씬 중요하므로 network-first 가 맞다.
  *
  * 외부 리소스(AdSense·GA·구글폰트)는 캐시하지 않음 (CSP·CORS 안정성).
  */
 
-const VERSION = '2026-05-03';
+// 캐시 무효화 키. 배포 후 화면이 낡아 보이면 이 값을 올린다.
+const VERSION = '2026-08-13';
 const STATIC_CACHE = `static-${VERSION}`;
 const RUNTIME_CACHE = `runtime-${VERSION}`;
 const OFFLINE_URL = '/offline.html';
 
-// 설치 시 핵심 정적 자원 사전 캐시 (선택적 — 실패해도 SW 활성화)
-const PRECACHE_URLS = [
-  '/',
-  '/offline.html',
-  '/site.webmanifest',
-  '/icon-192.png',
-];
+// 설치 시 사전 캐시. HTML(`/`)은 **오프라인 대비용**일 뿐, 온라인에서는 쓰이지 않는다.
+const PRECACHE_URLS = ['/', OFFLINE_URL, '/site.webmanifest', '/icon-192.png'];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -30,7 +30,7 @@ self.addEventListener('install', (event) => {
       .then((cache) =>
         Promise.allSettled(
           PRECACHE_URLS.map((url) =>
-            fetch(url, { credentials: 'same-origin' })
+            fetch(url, { cache: 'reload', credentials: 'same-origin' })
               .then((res) => {
                 if (res && res.ok) return cache.put(url, res);
               })
@@ -67,6 +67,80 @@ function isExternalScript(url) {
   );
 }
 
+/** 페이지 이동이거나 HTML 문서를 원하는 요청인가. */
+function isNavigation(request) {
+  return (
+    request.mode === 'navigate' ||
+    (request.destination === 'document') ||
+    (request.headers.get('accept') || '').includes('text/html')
+  );
+}
+
+/** 해시가 박힌 불변 자산인가 (파일명이 바뀌므로 영구 캐시해도 안전). */
+function isImmutableAsset(url) {
+  return url.pathname.startsWith('/_next/static/') || url.pathname.startsWith('/fonts/');
+}
+
+/** 네트워크 우선. 성공하면 캐시를 갱신하고, 실패했을 때만 캐시·오프라인 페이지로 내려간다. */
+function networkFirst(request) {
+  return fetch(request)
+    .then((res) => {
+      if (res && res.ok) {
+        const clone = res.clone();
+        caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, clone));
+      }
+      return res;
+    })
+    .catch(() =>
+      caches
+        .match(request)
+        .then((cached) => cached || caches.match(OFFLINE_URL))
+        .then(
+          (res) =>
+            res ||
+            new Response('', { status: 504, statusText: 'Gateway Timeout' }),
+        ),
+    );
+}
+
+/** 캐시 우선 (불변 자산 전용). */
+function cacheFirst(request) {
+  return caches.match(request).then((cached) => {
+    if (cached) return cached;
+    return fetch(request).then((res) => {
+      if (res && res.ok) {
+        const clone = res.clone();
+        caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone));
+      }
+      return res;
+    });
+  });
+}
+
+/** 캐시를 즉시 주고 뒤에서 갱신 (HTML 이 아닌 보조 자원 전용). */
+function staleWhileRevalidate(request, event) {
+  return caches.match(request).then((cached) => {
+    const networkFetch = fetch(request)
+      .then((res) => {
+        if (res && res.ok) {
+          const clone = res.clone();
+          caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, clone));
+        }
+        return res;
+      })
+      .catch(() => undefined);
+
+    if (cached) {
+      event.waitUntil(networkFetch);
+      return cached;
+    }
+
+    return networkFetch.then(
+      (res) => res || new Response('', { status: 504, statusText: 'Gateway Timeout' }),
+    );
+  });
+}
+
 self.addEventListener('fetch', (event) => {
   const request = event.request;
 
@@ -77,50 +151,16 @@ self.addEventListener('fetch', (event) => {
   if (isExternalScript(url)) return;
   if (url.pathname.startsWith('/_next/data/')) return; // 데이터 청크 캐시 X
 
-  // 정적 export 청크는 immutable 캐시 우선 (cache-first)
-  if (url.pathname.startsWith('/_next/static/') || url.pathname.startsWith('/fonts/')) {
-    event.respondWith(
-      caches.match(request).then((cached) => {
-        if (cached) return cached;
-        return fetch(request).then((res) => {
-          if (res && res.ok) {
-            const clone = res.clone();
-            caches.open(STATIC_CACHE).then((cache) => cache.put(request, clone));
-          }
-          return res;
-        });
-      }),
-    );
+  // HTML 은 항상 네트워크 우선 — 낡은 화면이 먼저 보이는 일이 없도록.
+  if (isNavigation(request)) {
+    event.respondWith(networkFirst(request));
     return;
   }
 
-  // HTML/기타 — stale-while-revalidate
-  event.respondWith(
-    caches.match(request).then((cached) => {
-      const networkFetch = fetch(request)
-        .then((res) => {
-          if (res && res.ok) {
-            const clone = res.clone();
-            caches.open(RUNTIME_CACHE).then((cache) => cache.put(request, clone));
-          }
-          return res;
-        })
-        .catch(() => undefined);
+  if (isImmutableAsset(url)) {
+    event.respondWith(cacheFirst(request));
+    return;
+  }
 
-      if (cached) {
-        // 캐시 hit: 즉시 반환 + 백그라운드 네트워크 갱신
-        event.waitUntil(networkFetch);
-        return cached;
-      }
-
-      // 캐시 miss: 네트워크 시도, 실패 시 offline fallback
-      return networkFetch.then((res) => {
-        if (res) return res;
-        if (request.mode === 'navigate') {
-          return caches.match(OFFLINE_URL);
-        }
-        return new Response('', { status: 504, statusText: 'Gateway Timeout' });
-      });
-    }),
-  );
+  event.respondWith(staleWhileRevalidate(request, event));
 });
