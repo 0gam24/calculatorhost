@@ -98,6 +98,14 @@
 
 
 
+
+## 2026-08-15
+
+- [가이드] [달러예금 세금 2026, 이자 15.4%와 환차익 과세 정리 | calculatorhost](https://calculatorhost.com/guide/foreign-currency-deposit-tax-2026/) — 달러예금 이자는 15.4% 원천징수되고, 개인의 환차익은 원칙적으로 비과세입니다. 연 2,000만원 초과 시 금융소득종합과세로 합산되며, 원화 환산 1억원까지 예금자보호됩니다.
+- [가이드] [생활비 용돈 증여세 2026, 비과세 한도와 과세 기준 | calculatorhost](https://calculatorhost.com/guide/living-expenses-allowance-gift-tax-exemption-2026/) — 부모 자녀 간 생활비와 용돈은 사회통념 범위에서 쓰면 증여세가 없습니다(상증법 §46). 직접 지출해야 비과세되고, 모아서 예금·주식·부동산을 사면 과세됩니다. 공제 한도와 계산 사례까지 정리했습니다.
+- [가이드] [부동산 실거래 신고 2026, 30일 기한과 과태료 정리 | calculatorhost](https://calculatorhost.com/guide/real-estate-transaction-report-2026/) — 부동산 실거래 신고는 계약일부터 30일 이내에 해야 하며, 미신고는 500만원 이하 과태료 대상입니다. 신고 주체, 지연·거짓신고 과태료, 해제신고까지 부동산 거래신고 등에 관한 법률 §3·§28 기준으로 정리합니…
+- [가이드] [단기 육아휴직 2026, 1주·2주 신청과 급여 정리 | calculatorhost](https://calculatorhost.com/guide/short-term-parental-leave-2026/) — 단기 육아휴직은 2026년 8월 20일부터 1주 또는 2주 단위로 쓸 수 있습니다. 만 8세 이하 자녀의 질병·방학 등 긴급 돌봄이 대상이며, 남녀고용평등법 19조에 근거합니다. 급여는 일할계산이며 신청 기한은 7…
+- [가이드] [배우자 유산·사산 휴가 2026, 5일·유급·신청 총정리 | calculatorhost](https://calculatorhost.com/guide/spouse-miscarriage-stillbirth-leave-2026/) — 배우자 유산·사산 휴가는 2026년 9월 18일부터 5일 범위(최초 3일 유급)로 신설됩니다. 유산·사산일부터 20일 이내 청구, 우선지원대상기업 1일 상한 84,210원. 배우자 출산휴가는 출산 예정일 50일 전…
 ## 2026-08-14
 
 - [가이드] [추석 상여금 세금 2026, 명절 보너스 얼마나 떼나](https://calculatorhost.com/guide/chuseok-bonus-tax-2026/) — 추석 상여금은 월급과 같은 근로소득이라 소득세와 4대보험을 모두 뗍니다. 명절 선물세트도 원칙적으로 과세되며, 더 낸 세금은 연말정산으로 정산됩니다. 상여금 원천징수와 실수령액 계산을 소득세법 §20 기준으로 정리…
