@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-15 신규 5편 (단기육아휴직·배우자유산사산휴가·생활비용돈증여세·달러예금세금·부동산실거래신고)
+  {
+    slug: 'short-term-parental-leave-2026',
+    title: '단기 육아휴직 2026, 1주·2주 신청과 급여 정리',
+    description:
+      '단기 육아휴직은 2026년 8월 20일부터 만 8세 이하 자녀를 위해 1주 또는 2주 단위로 쓸 수 있습니다. 대상, 급여 일할계산, 신청 기한(7일 전), 기존 육아휴직과의 차감·분할횟수 차이를 남녀고용평등법 §19 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-15',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'spouse-miscarriage-stillbirth-leave-2026',
+    title: '배우자 유산·사산 휴가 2026, 5일 유급과 신청 정리',
+    description:
+      '배우자 유산·사산 휴가는 2026년 9월 18일부터 유산·사산일부터 20일 이내 청구해 5일 범위(최초 3일 유급)로 쓸 수 있습니다. 정부 지원 상한, 배우자 출산휴가 20일과의 차이, 출산 예정일 50일 전 사용 확대를 남녀고용평등법 §18의2 기준으로 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-15',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'living-expenses-allowance-gift-tax-exemption-2026',
+    title: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준',
+    description:
+      '부모 자녀 간 생활비와 용돈은 사회통념 범위에서 그 용도로 직접 쓰면 증여세가 없습니다(상증법 §46). 다만 모아서 예금·주식·집을 사면 과세됩니다. 증여재산공제(성년 5천만·미성년 2천만)와 명절 용돈 기준, 누진세율 계산을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-15',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'foreign-currency-deposit-tax-2026',
+    title: '달러예금 세금 2026, 이자 15.4%와 환차익 과세',
+    description:
+      '달러예금 이자는 15.4%로 원천징수되고, 개인의 환차익은 원칙적으로 비과세입니다(소득세법 §16). 금융소득이 연 2,000만원을 넘으면 종합과세되고, 외화예금도 원화 환산 1억원까지 예금자보호됩니다. 계산 사례와 신고 방법을 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-15',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'real-estate-transaction-report-2026',
+    title: '부동산 실거래 신고 2026, 30일 기한과 과태료',
+    description:
+      '부동산 실거래 신고는 계약일부터 30일 이내에 해야 하고, 미신고는 500만원 이하 과태료 대상입니다(부동산 거래신고법 §3·§28). 신고 주체, 지연신고 차등 과태료, 다운·업계약 거짓신고 제재, 해제신고까지 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-15',
+    readingMinutes: 8,
+  },
   // 2026-08-14 신규 5편 (국세미환급금·추석상여금·증여세분납연부연납·연금계좌이전·사택비과세)
   {
     slug: 'national-tax-unclaimed-refund-2026',

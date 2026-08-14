@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-15 신규 5편 (단기육아휴직·배우자유산사산휴가·생활비용돈증여세·달러예금세금·부동산실거래신고)
+  'short-term-parental-leave-2026',
+  'spouse-miscarriage-stillbirth-leave-2026',
+  'living-expenses-allowance-gift-tax-exemption-2026',
+  'foreign-currency-deposit-tax-2026',
+  'real-estate-transaction-report-2026',
   // 2026-08-14 신규 5편 (국세미환급금·추석상여금·증여세분납연부연납·연금계좌이전·사택비과세)
   'national-tax-unclaimed-refund-2026',
   'chuseok-bonus-tax-2026',
