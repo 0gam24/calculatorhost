@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-16 신규 5편 (폭염산재작업중지권·2026세제개편안·청약통장전환·분양권전매제한·기업업무추진비한도)
+  {
+    slug: 'heatwave-heat-illness-work-injury-2026',
+    title: '폭염 야외작업 쓰러지면 산재·작업중지권 2026',
+    description:
+      '폭염에 야외에서 일하다 온열질환으로 쓰러지면 업무상 재해로 산재 보상을 받을 수 있습니다(산재보험법 §37). 근로자는 급박한 위험 시 작업을 멈출 권리가 있고 그 이유로 불이익을 받지 않습니다(산안법 §52). 보상 종류와 신청 절차를 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'tax-reform-2026-key-changes',
+    title: '2026 세제개편안 핵심 정리, 뭐가 바뀌나',
+    description:
+      '2026년 8월 3일 발표된 정부 세제개편안의 방향을 직장인, 자산가, 자영업자, 자동차 구매자로 나눠 정리했습니다. 근로장려금과 월세 세액공제 확대, 하이브리드 감면 종료 등 큰 흐름과 국회 입법 일정, 확정 전 유의점을 담았습니다.',
+    category: '세금',
+    publishedAt: '2026-08-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-subscription-account-conversion-2026',
+    title: '청약통장 전환 2026, 9월 30일 마감 갈아타기',
+    description:
+      '청약저축·청약예금·청약부금을 주택청약종합저축으로 전환하면 공공과 민영을 모두 청약할 수 있습니다. 전환 기한이 2026년 9월 30일로 연장됐고 기존 납입금액과 가입기간은 그대로 인정됩니다. 전환 대상, 방법, 유의점을 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-16',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'presale-right-resale-restriction-2026',
+    title: '분양권 전매제한 2026, 기간·위반 처벌·재당첨 제한',
+    description:
+      '분양권 전매제한은 당첨된 분양권을 일정 기간 팔지 못하게 하는 규제입니다(주택법 §64). 지역·주택 유형별 기간의 틀, 위반 시 3년 이하 징역 또는 3천만원 이하 벌금(§101), 재당첨 제한과 양도세까지 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-16',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'business-entertainment-expense-limit-2026',
+    title: '기업업무추진비(접대비) 한도 2026, 계산과 증빙',
+    description:
+      '접대비의 정식 이름은 기업업무추진비입니다(법인세법 §25). 비용 인정 한도는 기본한도(중소 3,600만·일반 1,200만)에 수입금액별 한도를 더해 계산하고, 건당 3만원을 넘으면 적격증빙이 필요합니다. 한도 계산과 증빙 규칙을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-16',
+    readingMinutes: 8,
+  },
   // 2026-08-15 신규 5편 (단기육아휴직·배우자유산사산휴가·생활비용돈증여세·달러예금세금·부동산실거래신고)
   {
     slug: 'short-term-parental-leave-2026',

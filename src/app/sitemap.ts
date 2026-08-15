@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-16 신규 5편 (폭염산재작업중지권·2026세제개편안·청약통장전환·분양권전매제한·기업업무추진비한도)
+  'heatwave-heat-illness-work-injury-2026',
+  'tax-reform-2026-key-changes',
+  'housing-subscription-account-conversion-2026',
+  'presale-right-resale-restriction-2026',
+  'business-entertainment-expense-limit-2026',
   // 2026-08-15 신규 5편 (단기육아휴직·배우자유산사산휴가·생활비용돈증여세·달러예금세금·부동산실거래신고)
   'short-term-parental-leave-2026',
   'spouse-miscarriage-stillbirth-leave-2026',
