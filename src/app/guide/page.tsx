@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-17 신규 5편 (부모자녀계좌이체증여세·실업급여알바신고·버팀목전세대출·상속부동산감정평가·농지연금)
+  {
+    slug: 'parent-child-account-transfer-gift-tax-2026',
+    title: '부모 자식 계좌이체 증여세 2026, 얼마까지 괜찮을까',
+    description:
+      '부모가 계좌로 보내준 돈은 원칙적으로 증여로 봅니다(상증세법 §4). 성년 자녀 10년 5천만원 공제, 사회통념상 생활비 비과세(§46), 무이자 대여 약 2억1,700만원 안전선(§41의4), 자금출처 소명(§45)까지 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-17',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'unemployment-benefit-part-time-work-2026',
+    title: '실업급여 받으면서 알바 2026, 신고 안 하면 부정수급',
+    description:
+      '실업급여 수급 중 알바는 가능하지만 일한 날은 실업인정일에 반드시 자진신고해야 합니다(고용보험법 §47). 주 15시간 기준, 근로일 미지급·이월, 미신고 시 최대 5배 추가징수(§61·§62)까지 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-17',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'beotimok-jeonse-loan-conditions-2026',
+    title: '버팀목 전세자금대출 2026, 소득·자산·한도 조건',
+    description:
+      '버팀목 전세자금대출은 무주택 세대주를 위한 주택도시기금 정책상품입니다. 부부합산 소득 5천만원 이하 기준, 순자산 요건, 한도·금리, 청년버팀목 차이, 디딤돌과의 비교, 신청 절차를 2026년 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-17',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'inheritance-real-estate-appraisal-vs-official-price-2026',
+    title: '상속 부동산 감정평가 vs 공시가격 2026, 어느 쪽이 유리할까',
+    description:
+      '상속 부동산을 공시가격으로 신고하면 상속세는 줄지만 나중에 팔 때 양도세가 커집니다(소득세법 §97). 감정평가로 취득가액을 높이는 절세 전략과 국세청 감정평가 사업 위험을 상증세법 §60·§61 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-17',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'farmland-pension-2026',
+    title: '농지연금 2026, 가입조건·수령액·수령방식 총정리',
+    description:
+      '농지연금은 60세 이상 영농경력 5년 이상 농업인이 소유 농지를 담보로 매달 연금을 받는 제도입니다. 담보 농지 평가, 종신형·기간형 수령방식, 주택연금과의 차이, 재산세 감면과 사망 시 처리까지 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-17',
+    readingMinutes: 8,
+  },
   // 2026-08-16 신규 5편 (폭염산재작업중지권·2026세제개편안·청약통장전환·분양권전매제한·기업업무추진비한도)
   {
     slug: 'heatwave-heat-illness-work-injury-2026',

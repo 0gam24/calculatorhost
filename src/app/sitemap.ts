@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-17 신규 5편 (부모자녀계좌이체증여세·실업급여알바신고·버팀목전세대출·상속부동산감정평가·농지연금)
+  'parent-child-account-transfer-gift-tax-2026',
+  'unemployment-benefit-part-time-work-2026',
+  'beotimok-jeonse-loan-conditions-2026',
+  'inheritance-real-estate-appraisal-vs-official-price-2026',
+  'farmland-pension-2026',
   // 2026-08-16 신규 5편 (폭염산재작업중지권·2026세제개편안·청약통장전환·분양권전매제한·기업업무추진비한도)
   'heatwave-heat-illness-work-injury-2026',
   'tax-reform-2026-key-changes',
