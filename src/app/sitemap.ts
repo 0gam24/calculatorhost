@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-18 신규 5편 (증권거래세인상·상가권리금세금·기장세액공제·금융재산상속공제·저축성보험비과세)
+  'securities-transaction-tax-increase-2026',
+  'commercial-premium-goodwill-tax-2026',
+  'bookkeeping-tax-credit-2026',
+  'financial-asset-inheritance-deduction-2026',
+  'savings-insurance-tax-exemption-2026',
   // 2026-08-17 신규 5편 (부모자녀계좌이체증여세·실업급여알바신고·버팀목전세대출·상속부동산감정평가·농지연금)
   'parent-child-account-transfer-gift-tax-2026',
   'unemployment-benefit-part-time-work-2026',

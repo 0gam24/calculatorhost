@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-18 신규 5편 (증권거래세인상·상가권리금세금·기장세액공제·금융재산상속공제·저축성보험비과세)
+  {
+    slug: 'securities-transaction-tax-increase-2026',
+    title: '증권거래세 인상 2026, 코스피 코스닥 세율 얼마 오르나',
+    description:
+      '2026년 1월 양도분부터 증권거래세가 오릅니다. 코스피는 거래세 0.05%에 농특세 0.15%를 더해 0.20%, 코스닥은 0.20%로 모두 0.15%에서 0.05%p 인상. 손익과 무관하게 매도마다 붙는 세금 계산법을 정리했습니다(증권거래세법 §8).',
+    category: '투자',
+    publishedAt: '2026-08-18',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'commercial-premium-goodwill-tax-2026',
+    title: '상가 권리금 세금 2026, 기타소득 원천징수 8.8% 계산',
+    description:
+      '상가 권리금은 기타소득으로 과세됩니다(소득세법 §21). 필요경비 60%를 뺀 금액의 22%, 즉 권리금의 8.8%를 지급자가 원천징수합니다. 기타소득금액 300만원 기준 분리과세와 종합소득세 신고까지 사례로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-18',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'bookkeeping-tax-credit-2026',
+    title: '기장세액공제 2026, 간편장부 대상자 복식부기 최대 100만원',
+    description:
+      '간편장부 대상자가 복식부기로 종합소득세를 신고하면 산출세액의 20%, 최대 100만원을 공제받습니다(소득세법 §56의2). 공제 계산식, 요건, 무기장가산세 회피, 간편장부와 복식부기 비교를 사례로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-18',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'financial-asset-inheritance-deduction-2026',
+    title: '금융재산 상속공제 2026, 예금 주식 최대 2억 공제',
+    description:
+      '상속재산 중 예금·주식 같은 순금융재산이 있으면 상속세에서 최대 2억원까지 공제합니다(상증법 §22). 2천만원 이하 전액, 1억 초과 시 20%, 10억 초과 시 2억 한도 등 구간별 계산과 제외 대상을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-18',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'savings-insurance-tax-exemption-2026',
+    title: '저축성보험 비과세 2026, 10년 유지 월 150만 일시납 1억',
+    description:
+      '저축성보험 보험차익은 요건을 갖추면 비과세됩니다(소득세법 §16, 시행령 §25). 일시납은 1억원 이하 10년 유지, 월적립식은 월 150만원 이하 5년 이상 납입에 10년 유지가 조건. 요건 미달 시 15.4% 과세까지 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-18',
+    readingMinutes: 8,
+  },
   // 2026-08-17 신규 5편 (부모자녀계좌이체증여세·실업급여알바신고·버팀목전세대출·상속부동산감정평가·농지연금)
   {
     slug: 'parent-child-account-transfer-gift-tax-2026',
