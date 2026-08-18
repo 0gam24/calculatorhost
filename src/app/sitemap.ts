@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-19 신규 5편 (장기보유특별공제표1·근로소득공제·문화비소득공제·상속세인적공제·증여취득세시가인정액)
+  'long-term-holding-special-deduction-general-2026',
+  'earned-income-deduction-brackets-2026',
+  'culture-expense-income-deduction-2026',
+  'inheritance-other-personal-deduction-2026',
+  'gift-acquisition-tax-market-value-2026',
   // 2026-08-18 신규 5편 (증권거래세인상·상가권리금세금·기장세액공제·금융재산상속공제·저축성보험비과세)
   'securities-transaction-tax-increase-2026',
   'commercial-premium-goodwill-tax-2026',

@@ -72,6 +72,51 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 export const GUIDES: GuideEntry[] = [
   // 2026-08-18 신규 5편 (증권거래세인상·상가권리금세금·기장세액공제·금융재산상속공제·저축성보험비과세)
   {
+    slug: 'long-term-holding-special-deduction-general-2026',
+    title: '장기보유특별공제 일반 표1 2026, 3년 6%부터 15년 30%',
+    description:
+      '상가·토지·다주택을 3년 이상 보유하고 팔면 양도차익의 6~30%를 장기보유특별공제로 빼줍니다(소득세법 §95②). 표1 연 2% 공제율, 1세대1주택 표2(최대 80%)와의 차이, 보유기간 경계값 계산을 사례로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'earned-income-deduction-brackets-2026',
+    title: '근로소득공제 2026, 총급여 구간별 계산과 2000만원 한도',
+    description:
+      '근로소득공제는 총급여에서 자동으로 빼주는 개산공제로, 구간별 70%에서 2%까지 차등 적용되고 최대 2,000만원 한도가 있습니다(소득세법 §47). 총급여와 근로소득금액의 차이, 연봉 3천·5천·1억 계산 사례를 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-19',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'culture-expense-income-deduction-2026',
+    title: '문화비 소득공제 2026, 도서 공연 영화 30% 공제 요건',
+    description:
+      '총급여 7,000만원 이하 근로자가 도서·공연·영화·박물관·신문·헬스장 이용료를 결제하면 30%를 문화비 소득공제로 받습니다(조특법 §126의2). 대상 품목, 통합 추가한도, 계산과 2026 세제개편안 방향까지 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-19',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'inheritance-other-personal-deduction-2026',
+    title: '상속세 인적공제 2026, 자녀 5천만 미성년 장애인 계산',
+    description:
+      '상속세 인적공제는 자녀·연로자 각 5천만, 미성년자·장애인은 1천만에 연수를 곱해 계산합니다(상증법 §20). 기초공제 2억을 더한 합계와 일괄공제 5억 중 유리한 쪽을 고르는 원리를 사례로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-19',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'gift-acquisition-tax-market-value-2026',
+    title: '증여 취득세 과세표준 2026, 시가인정액 개정 후 계산',
+    description:
+      '2023년부터 부동산 증여 취득세 과세표준이 시가표준액에서 시가인정액으로 바뀌어 세부담이 커졌습니다(지방세법 §10의2). 시가인정액 정의, 평가기간, 시가표준액 1억 이하 예외, 아파트 증여 취득세 계산을 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-19',
+    readingMinutes: 8,
+  },
+  {
     slug: 'securities-transaction-tax-increase-2026',
     title: '증권거래세 인상 2026, 코스피 코스닥 세율 얼마 오르나',
     description:
