@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-21 신규 5편 (생산적금융ISA·부양가족소득요건300만·신용카드대중교통공제폐지·고령자지방이주양도세감면·상생임대주택일몰유예)
+  'productive-finance-isa-2026-tax-reform',
+  'dependent-income-requirement-300-2026-reform',
+  'credit-card-transit-40-percent-abolished-2026-reform',
+  'senior-metro-to-provincial-move-cgt-reduction-2026-reform',
+  'sangsaeng-landlord-sunset-2026-2027-transition',
   // 2026-08-19 신규 5편 (장기보유특별공제표1·근로소득공제·문화비소득공제·상속세인적공제·증여취득세시가인정액)
   'long-term-holding-special-deduction-general-2026',
   'earned-income-deduction-brackets-2026',
