@@ -19,11 +19,11 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 07. 22. 13:47 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 08. 21. 02:23 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
-- 사이트 라이브: ✅ HTTP 200
-- 호스팅: cloudflare (Cloudflare Pages 추정)
+- 사이트 라이브: ❌ HTTP 403 
+- 호스팅: unknown (Cloudflare Pages 추정)
 - AdSense 게시자: ✅ pub-7830821732287404
 <!-- /AUTO:infra -->
 
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 07. 22. 13:47 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 08. 21. 02:23 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -71,17 +71,7 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> 마지막 자동 점검: 2026. 07. 22. 13:47 (Asia/Seoul)
-
-- ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
-- ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
-- ✅ active: IndexNow + Sitemap Ping (.github/workflows/indexnow-ping.yml)
-- ✅ active: Lighthouse CI (.github/workflows/lighthouse.yml)
-- ✅ active: ralph-daily (.github/workflows/ralph-daily-recommendation.yml)
-- ✅ active: .github/workflows/ralph-daily.yml (.github/workflows/ralph-daily.yml)
-- ✅ active: SEO+AEO+GEO Gate (.github/workflows/seo-aeo-geo-gate.yml)
-- ✅ active: Sync Public Data (.github/workflows/sync-public-data.yml)
-- ✅ active: today-update (.github/workflows/today-update.yml)
+> gh CLI 미설치 또는 인증 미됨 — 수동 확인 필요
 <!-- /AUTO:workflows -->
 
 ### 운영자 수동 갱신
