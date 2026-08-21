@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-22 신규 5편 (유산취득세전환·종부세가액기준전환·월세세액공제확대·장특공거주요건재편·근로장려금확대)
+  'inheritance-acquisition-tax-conversion-2026-reform',
+  'comprehensive-real-estate-tax-value-based-reform-2026',
+  'monthly-rent-tax-credit-expansion-2026-reform',
+  'long-term-holding-special-deduction-residence-requirement-2026-reform',
+  'earned-income-tax-credit-expansion-2027-reform',
   // 2026-08-21 신규 5편 (생산적금융ISA·부양가족소득요건300만·신용카드대중교통공제폐지·고령자지방이주양도세감면·상생임대주택일몰유예)
   'productive-finance-isa-2026-tax-reform',
   'dependent-income-requirement-300-2026-reform',

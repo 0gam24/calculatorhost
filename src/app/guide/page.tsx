@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-22 신규 5편 (유산취득세전환·종부세가액기준전환·월세세액공제확대·장특공거주요건재편·근로장려금확대)
+  {
+    slug: 'inheritance-acquisition-tax-conversion-2026-reform',
+    title: '유산취득세 전환 2026 개편안, 자녀공제 5억 언제부터',
+    description:
+      '2026 세제개편안이 상속세를 유산세에서 유산취득세로 바꾸는 방향을 담았습니다. 유산세와 유산취득세 차이, 자녀공제 5천만원에서 5억원 상향, 지금 상속하면 적용되는지, 시행 목표 2028년까지 정리합니다(상속세 및 증여세법 §13·§20 개정안).',
+    category: '세금',
+    publishedAt: '2026-08-22',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'comprehensive-real-estate-tax-value-based-reform-2026',
+    title: '종부세 주택가액 기준 전환 2026 개편안, 1주택 공제 14억',
+    description:
+      '2026 세제개편안이 종합부동산세를 주택 수에서 주택가액 기준으로 바꾸는 방향을 담았습니다. 1세대1주택 기본공제 실거주 14억, 비거주 9억으로 차등, 시가 약 20억 이하 과세 제외, 고가주택 과세 강화까지 정리합니다(종합부동산세법 §8·§9 개정안).',
+    category: '세금·부동산',
+    publishedAt: '2026-08-22',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'monthly-rent-tax-credit-expansion-2026-reform',
+    title: '월세 세액공제 확대 2026 개편안, 한도 1200만 급여무관 17%',
+    description:
+      '2026 세제개편안이 월세 세액공제 한도를 연 1,000만원에서 1,200만원으로 올리고 공제율을 총급여와 무관하게 17%로 단일화하는 방향을 담았습니다. 현행 조건과 얼마 돌려받는지, 확대 시 최대 환급액까지 정리합니다(조세특례제한법 §95의2).',
+    category: '세금',
+    publishedAt: '2026-08-22',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'long-term-holding-special-deduction-residence-requirement-2026-reform',
+    title: '장기보유특별공제 거주요건 재편 2026, 10년 살아야 80%',
+    description:
+      '2026 세제개편안이 1세대1주택 장기보유특별공제를 단순 보유보다 실거주 중심으로 재편하는 방향을 담았습니다. 현행 보유·거주 각 연 4%로 최대 80% 구조, 거주 없이 보유만 하면 얼마 줄어드는지, 언제 양도분부터인지 정리합니다(소득세법 §95).',
+    category: '세금·부동산',
+    publishedAt: '2026-08-22',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'earned-income-tax-credit-expansion-2027-reform',
+    title: '근로장려금 확대 2026 개편안, 맞벌이 최대 360만 소득 5200만',
+    description:
+      '2026 세제개편안이 근로장려금 최대 지급액을 단독 180만, 홑벌이 310만, 맞벌이 360만으로 올리고 소득요건을 단독 2,600만, 홑벌이 3,700만, 맞벌이 5,200만으로 완화하는 방향을 담았습니다. 현행 기준과 얼마 오르는지 정리합니다(조세특례제한법 §100의3·§100의5).',
+    category: '근로',
+    publishedAt: '2026-08-22',
+    readingMinutes: 7,
+  },
   // 2026-08-21 신규 5편 (생산적금융ISA·부양가족소득요건300만·신용카드대중교통공제폐지·고령자지방이주양도세감면·상생임대주택일몰유예)
   {
     slug: 'productive-finance-isa-2026-tax-reform',
