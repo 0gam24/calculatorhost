@@ -11,7 +11,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - 카테고리: 금융 / 세금 / 부동산 / 근로 / 생활 (5개)
 <!-- AUTO:COUNTS:START -->
 - 계산기: 31종
-- 가이드: 353편
+- 가이드: 358편
 <!-- AUTO:COUNTS:END -->
 - 라이선스: 모든 콘텐츠는 정보 제공 목적, 인용 시 출처 표기 권장
 - 업데이트: 세율·시행령 변경 즉시. 계산 로직은 단위 테스트로 회귀 검증하며, 인용한 법조항 §번호는 CI 게이트로 실재 여부를 확인합니다.
@@ -75,7 +75,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [투자 가이드](https://calculatorhost.com/guide/category/investment/)
 
 <!-- AUTO:GUIDES:START -->
-### 세금 (135편)
+### 세금 (137편)
 
 - [4월 부가세 1기 예정신고 가이드 (2026), 1~3월 매출·매입](https://calculatorhost.com/guide/april-vat-preliminary-q1/)
 - [복식부기 vs 간편장부 2026, 기장의무 기준과 무기장가산세](https://calculatorhost.com/guide/bookkeeping-obligation-double-entry-vs-simple-2026/)
@@ -141,6 +141,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [경정청구로 5년 내 환급받기 2026 | 누락 공제·세액공제 회수 완벽 가이드](https://calculatorhost.com/guide/income-tax-correction-claim-5-year-2026/)
 - [종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부](https://calculatorhost.com/guide/income-tax-installment-payment-2026/)
 - [종합소득세 무신고·지연 가산세 2026 정확 계산](https://calculatorhost.com/guide/income-tax-late-filing-penalty-2026/)
+- [유산취득세 전환 2026 개편안, 자녀공제 5억 언제부터](https://calculatorhost.com/guide/inheritance-acquisition-tax-conversion-2026-reform/)
 - [유류분 2026, 반환청구 계산과 형제자매 위헌 정리](https://calculatorhost.com/guide/inheritance-legal-reserve-claim-2026/)
 - [상속 한정승인·상속포기 2026, 빚 초과 시 3개월 내 신고](https://calculatorhost.com/guide/inheritance-limited-acceptance-2026/)
 - [상속세 인적공제 2026, 자녀 5천만 미성년 장애인 계산](https://calculatorhost.com/guide/inheritance-other-personal-deduction-2026/)
@@ -164,6 +165,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [5월 종합소득세 신고 완벽 가이드 (2026), 프리랜서·사업자·N잡러 필독](https://calculatorhost.com/guide/may-comprehensive-income-tax/)
 - [의료비 세액공제 2026 3% 초과분 15% 공제 | 700만 한도·난임 30%](https://calculatorhost.com/guide/medical-expense-tax-credit-3-percent-2026/)
 - [중도퇴사 연말정산 2026, 재취업·5월 종소세로 환급받는 법](https://calculatorhost.com/guide/mid-year-resignation-year-end-tax-2026/)
+- [월세 세액공제 확대 2026 개편안, 한도 1200만 급여무관 17%](https://calculatorhost.com/guide/monthly-rent-tax-credit-expansion-2026-reform/)
 - [주택담보대출 이자 소득공제 2026, 최대 2,000만원 절세](https://calculatorhost.com/guide/mortgage-interest-deduction-2026/)
 - [다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50%](https://calculatorhost.com/guide/multi-child-vehicle-acquisition-tax-exemption-2026/)
 - [국세 미환급금 찾기 2026, 안 찾아간 세금 돌려받는 법](https://calculatorhost.com/guide/national-tax-unclaimed-refund-2026/)
@@ -213,7 +215,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [자진신고 6월 50% 감면 가이드 2026 | 종소세 마감 후 가산세 절반](https://calculatorhost.com/guide/voluntary-filing-june-50-percent-reduction-2026/)
 - [연말정산 완벽 가이드 (2026), "13월의 월급" 받는 법](https://calculatorhost.com/guide/year-end-tax-settlement/)
 
-### 세금·부동산 (83편)
+### 세금·부동산 (85편)
 
 - [취득세 계산법 2026, 주택 구입 세율·중과·농특세](https://calculatorhost.com/guide/acquisition-tax-calculation-2026/)
 - [취득세 일시적 2주택 중과 배제 2026, 종전주택 3년 처분](https://calculatorhost.com/guide/acquisition-tax-temporary-two-houses-exclusion-2026/)
@@ -230,6 +232,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [종부세 합산배제 신고 2026, 9월 16~30일 임대주택 빼는 법](https://calculatorhost.com/guide/comprehensive-real-estate-tax-exclusion-application-2026/)
 - [부부 공동명의 종부세 특례 vs 단독명의 유불리 2026](https://calculatorhost.com/guide/comprehensive-real-estate-tax-joint-ownership-2026/)
 - [종부세 1세대1주택 세액공제 2026, 고령자·장기보유 최대 80%](https://calculatorhost.com/guide/comprehensive-real-estate-tax-single-house-credit-2026/)
+- [종부세 주택가액 기준 전환 2026 개편안, 1주택 공제 14억](https://calculatorhost.com/guide/comprehensive-real-estate-tax-value-based-reform-2026/)
 - [종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일](https://calculatorhost.com/guide/comprehensive-real-estate-tax-who-pays-2026/)
 - [상생임대인 2026, 5% 이내 인상으로 양도세 거주요건 면제](https://calculatorhost.com/guide/cooperative-landlord-capital-gains-exemption-2026/)
 - [12월 양도세 vs 1월 양도세 가이드 (2026), 연말 매도 결정 프레임](https://calculatorhost.com/guide/december-capital-gains-tax-deadline/)
@@ -263,6 +266,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [전월세 신고제 2026, 대상·30일 기한·과태료·신고방법](https://calculatorhost.com/guide/lease-report-system-2026/)
 - [전세·월세 원상복구 의무 범위 2026, 못자국·도배·곰팡이 기준](https://calculatorhost.com/guide/lease-restoration-obligation-2026/)
 - [장기보유특별공제 일반 표1 2026, 3년 6%부터 15년 30%](https://calculatorhost.com/guide/long-term-holding-special-deduction-general-2026/)
+- [장기보유특별공제 거주요건 재편 2026, 10년 살아야 80%](https://calculatorhost.com/guide/long-term-holding-special-deduction-residence-requirement-2026-reform/)
 - [상가주택 양도세 2026, 겸용주택 1세대1주택 비과세 판정](https://calculatorhost.com/guide/mixed-use-house-capital-gains-exemption-2026/)
 - [월세 세액공제 2026 무주택 직장인 환급 계산 | 17% + 750만 한도](https://calculatorhost.com/guide/monthly-rent-tax-credit-2026/)
 - [다주택자 취득세 중과 2026, 조정 2주택 8%·3주택 12% 정리](https://calculatorhost.com/guide/multi-house-acquisition-tax-heavy-8-12-percent-2026/)
@@ -299,7 +303,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [임차권등기명령 2026, 보증금 못 받을 때 신청 방법](https://calculatorhost.com/guide/tenant-lease-registration-injunction-2026/)
 - [청년 월세 특별지원 2026, 상시신청 전환·신청 방법 총정리](https://calculatorhost.com/guide/youth-monthly-rent-support-2026/)
 
-### 근로 (69편)
+### 근로 (70편)
 
 - [주 52시간 연장근로수당 2026, 계산법과 1.5배 기준](https://calculatorhost.com/guide/52-hour-workweek-overtime-pay-2026/)
 - [연차수당 계산법 (2026), 미사용 연차 얼마 받나](https://calculatorhost.com/guide/annual-leave-allowance-2026/)
@@ -314,6 +318,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [두루누리 사회보험료 지원 2026, 10인 미만 80% 지원](https://calculatorhost.com/guide/durunuri-social-insurance-support-2026/)
 - [조기재취업수당 2026, 지급요건·잔여일수 계산·신청시기](https://calculatorhost.com/guide/early-reemployment-allowance-2026/)
 - [근로소득공제 2026, 총급여 구간별 계산과 2000만원 한도](https://calculatorhost.com/guide/earned-income-deduction-brackets-2026/)
+- [근로장려금 확대 2026 개편안, 맞벌이 최대 360만 소득 5200만](https://calculatorhost.com/guide/earned-income-tax-credit-expansion-2027-reform/)
 - [근로장려금 얼마 받나 2026, 단독 165·홑벌이 285·맞벌이 330만](https://calculatorhost.com/guide/earned-income-tax-credit-payment-amount-2026/)
 - [근로계약서 안 쓰면 벌금, 알바·정규직 처벌 차이 정리](https://calculatorhost.com/guide/employment-contract-written-obligation-2026/)
 - [가족돌봄휴직·휴가 2026, 연 90일·10일 무급 사용법](https://calculatorhost.com/guide/family-care-leave-2026/)
