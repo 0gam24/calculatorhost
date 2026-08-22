@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-23 신규 5편 (유튜버세금·직장인건보료4월정산·장기수선충당금반환·온라인셀러세금·중고거래세금)
+  'youtuber-creator-income-tax-2026',
+  'health-insurance-year-end-settlement-2026',
+  'long-term-repair-reserve-refund-2026',
+  'online-seller-smartstore-tax-2026',
+  'secondhand-trading-income-tax-2026',
   // 2026-08-22 신규 5편 (유산취득세전환·종부세가액기준전환·월세세액공제확대·장특공거주요건재편·근로장려금확대)
   'inheritance-acquisition-tax-conversion-2026-reform',
   'comprehensive-real-estate-tax-value-based-reform-2026',
