@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-23 신규 5편 (유튜버세금·직장인건보료4월정산·장기수선충당금반환·온라인셀러세금·중고거래세금)
+  {
+    slug: 'youtuber-creator-income-tax-2026',
+    title: '유튜버 세금 2026, 애드센스 종합소득세·부가세 영세율',
+    description:
+      '유튜브·애드센스 수익이 생기면 5월 종합소득세 신고 대상입니다. 사업자등록 업종코드(940306·921505), 애드센스 부가세 영세율(부가가치세법 §22), 필요경비 공제, 신고 사례까지 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-08-23',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'health-insurance-year-end-settlement-2026',
+    title: '건강보험료 연말정산 2026, 4월 추가징수·환급 이유',
+    description:
+      '직장인 건강보험료는 전년 보수총액이 확정되는 4월에 정산됩니다. 연봉이 오르면 추가징수, 줄면 환급이 되는 원리와 계산법, 최대 12회 분할납부까지 국민건강보험법 시행령 §39 기준으로 정리합니다.',
+    category: '근로',
+    publishedAt: '2026-08-23',
+    readingMinutes: 7,
+  },
+  {
+    slug: 'long-term-repair-reserve-refund-2026',
+    title: '장기수선충당금 반환 2026, 전세·월세 이사 시 돌려받기',
+    description:
+      '아파트 관리비에 포함된 장기수선충당금은 원래 집주인 부담이라 세입자가 이사 갈 때 돌려받을 수 있습니다. 반환 근거(공동주택관리법 §30·시행령 §31), 계산법, 못 받는 경우와 청구 절차를 정리합니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-23',
+    readingMinutes: 6,
+  },
+  {
+    slug: 'online-seller-smartstore-tax-2026',
+    title: '스마트스토어 세금 2026, 사업자등록·간이과세·부가세',
+    description:
+      '온라인 판매를 시작하면 사업자등록과 통신판매업 신고, 부가가치세, 5월 종합소득세가 따라옵니다. 간이·일반과세 차이, 4,800만원 납부면제(부가가치세법 §69), 매출별 세금 구조를 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-08-23',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'secondhand-trading-income-tax-2026',
+    title: '중고거래 세금 2026, 당근마켓 어디부터 사업소득인가',
+    description:
+      '쓰던 물건을 파는 일상 중고거래는 세금이 없지만, 영리 목적으로 계속·반복해 팔면 사업소득으로 과세됩니다. 당근마켓·번개장터 과세 기준, 플랫폼 자료제출, 사업자등록 여부를 소득세법 §19 기준으로 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-08-23',
+    readingMinutes: 6,
+  },
   // 2026-08-22 신규 5편 (유산취득세전환·종부세가액기준전환·월세세액공제확대·장특공거주요건재편·근로장려금확대)
   {
     slug: 'inheritance-acquisition-tax-conversion-2026-reform',

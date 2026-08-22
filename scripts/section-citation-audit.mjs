@@ -71,6 +71,7 @@ export const CITATION_EXEMPT = {
   '/guide/mortgage-refinance-savings-2026/': '대환 시뮬 — 상품 약관 기반',
   '/guide/jeonse-loan-limit-interest-2026/': '보증기관 상품 기준 기반',
   '/guide/didimdol-loan-conditions-2026/': '주택도시기금 상품 기준(기금운용계획) 기반',
+  '/guide/beotimok-jeonse-loan-conditions-2026/': '주택도시기금 버팀목 전세대출 상품 기준(기금운용계획) 기반',
   '/guide/newborn-special-mortgage-loan-2026/': '주택도시기금 상품 기준 기반',
   '/guide/credit-score-loan-interest-rate-2026/': '신용평가사 산정 기준 — 법률 §N 부재',
   '/guide/currency-exchange-fee-preferential-rate-2026/': '은행 환전 수수료 약관 기반',
@@ -84,7 +85,9 @@ export const CITATION_EXEMPT = {
   '/guide/housing-subscription-first-priority-2026/': '주택공급규칙(국토부령)·고시 기반',
   '/guide/housing-subscription-no-house-period-2026/': '주택공급규칙(국토부령)·고시 기반',
   '/guide/housing-subscription-score-84-points-2026/': '주택공급규칙(국토부령)·고시 기반',
+  '/guide/housing-subscription-account-conversion-2026/': '주택공급규칙(국토부령)·청년주택드림 고시 기반',
   '/guide/housing-pension-reverse-mortgage-2026/': 'HF 주택연금 상품 기준 기반',
+  '/guide/farmland-pension-2026/': '한국농어촌공사 농지연금 상품 기준 기반',
   '/guide/youth-monthly-rent-support-2026/': '지자체·국토부 사업 공고 기반',
   '/guide/income-contingent-loan-repayment-2026/': '한국장학재단 상환 기준 기반',
 };
