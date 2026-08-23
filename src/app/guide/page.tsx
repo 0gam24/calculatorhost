@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-24 신규 5편 (헬스장수영장소득공제·전세대출원리금부부각각·회사출산지원금비과세·청년형ISA·프리랜서원천징수인하)
+  {
+    slug: 'gym-pool-tax-deduction-2026',
+    title: '헬스장 수영장 소득공제 2026, 연말정산 30% 받는 법',
+    description:
+      '2025년 7월부터 헬스장·수영장 시설이용료도 문화비 소득공제 대상입니다. 총급여 7천만원 이하 근로자 30% 공제, 시설이용료와 PT 구분, 통합 한도까지 정리(조세특례제한법 §126의2).',
+    category: '세금',
+    publishedAt: '2026-08-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'housing-lease-loan-principal-deduction-couple-2026-reform',
+    title: '전세대출 원리금 소득공제 2026, 무주택 부부 각각 개편안',
+    description:
+      '전세·월세 보증금 대출 원리금상환액의 40%를 소득공제하는 주택임차차입금 공제. 2026 세제개편안은 주거를 달리하는 무주택 부부가 각각 받도록 확대합니다(소득세법 §52).',
+    category: '세금·부동산',
+    publishedAt: '2026-08-24',
+    readingMinutes: 9,
+  },
+  {
+    slug: 'employer-childbirth-grant-nontax-2026-reform',
+    title: '회사 출산지원금 비과세 2026, 임신 중 지급도 확대 개편안',
+    description:
+      '기업이 주는 출산지원금은 출생 후 2년 이내 2회까지 전액 근로소득 비과세입니다. 2026 세제개편안은 임신 기간 지급분과 위탁아동 보육수당까지 확대합니다(소득세법 §12).',
+    category: '근로',
+    publishedAt: '2026-08-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'youth-isa-2026-reform',
+    title: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 정리',
+    description:
+      '2026 세제개편안이 34세 이하 청년 전용 ISA를 신설합니다. 납입액 10% 소득공제(최대 200만원), 이자·배당 전액 비과세, 연 2천만원 한도. 가입 조건과 일반 ISA 비교를 정리합니다(조세특례제한법 §91의18).',
+    category: '투자',
+    publishedAt: '2026-08-24',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'freelancer-withholding-3-3-to-2-2-2026-reform',
+    title: '프리랜서 원천징수 3.3% 2.2% 인하 2026 개편안 정리',
+    description:
+      '2026 세제개편안이 인적용역 사업소득 원천징수 세율을 3%에서 2%로 낮춥니다. 지방세 포함 3.3%에서 2.2%로. 매달 현금흐름은 늘지만 최종 세금은 5월 정산으로 같습니다(소득세법 §129).',
+    category: '세금',
+    publishedAt: '2026-08-24',
+    readingMinutes: 8,
+  },
   // 2026-08-22 신규 5편 (유산취득세전환·종부세가액기준전환·월세세액공제확대·장특공거주요건재편·근로장려금확대)
   {
     slug: 'inheritance-acquisition-tax-conversion-2026-reform',

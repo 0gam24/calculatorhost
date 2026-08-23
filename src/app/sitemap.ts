@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-24 신규 5편 (헬스장수영장소득공제·전세대출원리금부부각각·회사출산지원금비과세·청년형ISA·프리랜서원천징수인하)
+  'gym-pool-tax-deduction-2026',
+  'housing-lease-loan-principal-deduction-couple-2026-reform',
+  'employer-childbirth-grant-nontax-2026-reform',
+  'youth-isa-2026-reform',
+  'freelancer-withholding-3-3-to-2-2-2026-reform',
   // 2026-08-22 신규 5편 (유산취득세전환·종부세가액기준전환·월세세액공제확대·장특공거주요건재편·근로장려금확대)
   'inheritance-acquisition-tax-conversion-2026-reform',
   'comprehensive-real-estate-tax-value-based-reform-2026',
