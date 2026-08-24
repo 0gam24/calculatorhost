@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-25 신규 5편 (연말정산추가공제·자동차구입세금·초단시간근로자·엔젤투자소득공제·농어촌주택특례)
+  {
+    slug: 'year-end-additional-deduction-elderly-disabled-single-parent-2026',
+    title: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모',
+    description:
+      '기본공제에 더해지는 추가공제 4종. 경로우대 100만원, 장애인 200만원, 부녀자 50만원, 한부모 100만원의 공제액과 소득·나이 요건, 부녀자·한부모 중복 규칙까지 소득세법 §51 기준으로 정리.',
+    category: '세금',
+    publishedAt: '2026-08-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'car-purchase-taxes-breakdown-2026',
+    title: '자동차 살 때 세금 2026, 개소세·교육세·부가세·취득세',
+    description:
+      '새 차를 사면 개별소비세 5%, 교육세 30%, 부가가치세 10%, 취득세 7%가 순서대로 붙습니다. 공급가액 3천만원 차량 기준 세금 총액과 계산 순서, 전기차·경차 감면까지 정리(개별소비세법 §1, 지방세법 §12).',
+    category: '세금',
+    publishedAt: '2026-08-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'ultra-short-time-worker-rights-2026',
+    title: '초단시간 근로자 2026, 주15시간 미만 주휴·연차·퇴직금',
+    description:
+      '주 15시간 미만 초단시간 근로자는 주휴수당·연차·퇴직금이 원칙적으로 제외되지만 최저임금·산재보험은 반드시 적용됩니다. 4대보험 가입 여부와 실제 근로시간 판단까지 근로기준법 §18 기준으로 정리.',
+    category: '근로',
+    publishedAt: '2026-08-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'angel-investment-income-deduction-2026',
+    title: '엔젤투자 소득공제 2026, 3천만원까지 100% 공제',
+    description:
+      '벤처기업·개인투자조합 투자에 대한 소득공제. 3천만원 이하 100%, 5천만원 이하 70%, 초과분 30% 공제율과 종합소득금액 50% 한도, 3년 유지 요건까지 조세특례제한법 §16 기준으로 정리.',
+    category: '투자',
+    publishedAt: '2026-08-25',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'rural-house-one-household-exemption-special-2026',
+    title: '농어촌주택 양도세 특례 2026, 시골집 있어도 1주택',
+    description:
+      '일반주택 보유자가 농어촌주택을 취득해 3년 이상 보유하면 일반주택 양도 시 1세대1주택 비과세를 받는 특례. 지역·기준시가 3억(한옥 4억)·면적·취득 순서 요건을 조세특례제한법 §99의4 기준으로 정리.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-25',
+    readingMinutes: 8,
+  },
   // 2026-08-24 신규 5편 (헬스장수영장소득공제·전세대출원리금부부각각·회사출산지원금비과세·청년형ISA·프리랜서원천징수인하)
   {
     slug: 'gym-pool-tax-deduction-2026',

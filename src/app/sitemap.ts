@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-25 신규 5편 (연말정산추가공제·자동차구입세금·초단시간근로자·엔젤투자소득공제·농어촌주택특례)
+  'year-end-additional-deduction-elderly-disabled-single-parent-2026',
+  'car-purchase-taxes-breakdown-2026',
+  'ultra-short-time-worker-rights-2026',
+  'angel-investment-income-deduction-2026',
+  'rural-house-one-household-exemption-special-2026',
   // 2026-08-24 신규 5편 (헬스장수영장소득공제·전세대출원리금부부각각·회사출산지원금비과세·청년형ISA·프리랜서원천징수인하)
   'gym-pool-tax-deduction-2026',
   'housing-lease-loan-principal-deduction-couple-2026-reform',
