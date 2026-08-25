@@ -70,6 +70,52 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-26 신규 5편 (연말정산미리보기·청년도약계좌만기·난임치료휴가·배당기준일배당락·분양권입주권비교)
+  {
+    slug: 'year-end-tax-preview-service-2026',
+    title: '연말정산 미리보기 2026, 환급금 미리 계산하고 준비하는 법',
+    description:
+      '연말정산 미리보기는 10~12월에 지출을 조정해 환급을 늘릴 마지막 기회입니다. 홈택스 접속 경로, 신용카드 25% 확인, 연금저축 900만원 세액공제 계산까지 소득세법 §137 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'youth-leap-account-maturity-2026',
+    title: '청년도약계좌 2026, 만기·중도해지·정부기여금 완전 정리',
+    description:
+      '청년도약계좌 신규 가입은 2025년 말 종료됐지만 기존 가입자의 비과세와 정부기여금은 만기까지 유지됩니다. 중도해지 3년 기준, 특별중도해지 사유, 청년미래적금 전환까지 조세특례제한법 §91의22 기준으로 정리했습니다.',
+    category: '금융',
+    publishedAt: '2026-08-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'infertility-treatment-leave-2026',
+    title: '난임치료휴가 2026, 연 6일·유급 일수·급여 신청 총정리',
+    description:
+      '난임치료휴가는 연간 6일 이내로 쓸 수 있고 그중 일부는 유급입니다. 2026년 11월 27일부터 유급 일수가 확대되며, 중소기업 근로자는 정부 급여 지원을 받습니다. 남녀고용평등법 §18의3 기준으로 일수·급여·신청 절차를 정리했습니다.',
+    category: '근로',
+    publishedAt: '2026-08-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'dividend-record-date-ex-dividend-2026',
+    title: '배당기준일 배당락일 차이 2026, 언제까지 사야 배당받나',
+    description:
+      '배당을 받으려면 배당기준일 2영업일 전, 즉 배당락일 바로 전 영업일까지 주식을 사야 합니다. 배당락일에 팔아도 배당은 나오며, 배당금에서는 15.4%가 원천징수됩니다. 상법 §354와 소득세법 기준으로 정리했습니다.',
+    category: '투자',
+    publishedAt: '2026-08-26',
+    readingMinutes: 8,
+  },
+  {
+    slug: 'presale-right-vs-membership-right-2026',
+    title: '분양권 vs 입주권 차이 2026, 주택수·양도세·취득세 비교',
+    description:
+      '분양권은 청약으로, 입주권은 재개발·재건축 조합원 권리로 생깁니다. 주택 수 포함 시점, 분양권 양도세 60~70%, 입주권의 주택 취급까지 소득세법 §104와 지방세법 §13의2 기준으로 한눈에 비교했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-08-26',
+    readingMinutes: 9,
+  },
   // 2026-08-25 신규 5편 (연말정산추가공제·자동차구입세금·초단시간근로자·엔젤투자소득공제·농어촌주택특례)
   {
     slug: 'year-end-additional-deduction-elderly-disabled-single-parent-2026',
