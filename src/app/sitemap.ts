@@ -68,6 +68,12 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  // 2026-08-26 신규 5편 (연말정산미리보기·청년도약계좌만기·난임치료휴가·배당기준일배당락·분양권입주권비교)
+  'year-end-tax-preview-service-2026',
+  'youth-leap-account-maturity-2026',
+  'infertility-treatment-leave-2026',
+  'dividend-record-date-ex-dividend-2026',
+  'presale-right-vs-membership-right-2026',
   // 2026-08-25 신규 5편 (연말정산추가공제·자동차구입세금·초단시간근로자·엔젤투자소득공제·농어촌주택특례)
   'year-end-additional-deduction-elderly-disabled-single-parent-2026',
   'car-purchase-taxes-breakdown-2026',
