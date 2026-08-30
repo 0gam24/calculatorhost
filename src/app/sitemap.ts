@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'revised-tax-invoice-issuance-reasons-2026',
   'tax-invoice-late-issuance-penalty-2026',
   // 2026-08-25 신규 5편 (연말정산추가공제·자동차구입세금·초단시간근로자·엔젤투자소득공제·농어촌주택특례)
   'year-end-additional-deduction-elderly-disabled-single-parent-2026',

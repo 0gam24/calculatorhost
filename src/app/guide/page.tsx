@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-31 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'revised-tax-invoice-issuance-reasons-2026',
+    title: '수정세금계산서 발급 사유와 작성일자 정하는 법 2026 | calculatorhost',
+    description:
+      '수정세금계산서는 발급 사유별로 작성일자 기준이 다릅니다. 사유 7가지와 작성일자 결정 방법을 정리해 가산세 위험을 줄이세요.',
+    category: '세금',
+    publishedAt: '2026-08-31',
+    readingMinutes: 7,
+  },
   // 2026-08-30 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'tax-invoice-late-issuance-penalty-2026',
