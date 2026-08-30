@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-08-30 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'tax-invoice-late-issuance-penalty-2026',
+    title: '세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost',
+    description:
+      '세금계산서를 공급일 다음 달 10일까지 발급하지 않으면 가산세가 부과됩니다. 지연발급·미발급 유형별 가산세 기준과 절차를 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-30',
+    readingMinutes: 7,
+  },
   // 2026-08-25 신규 5편 (연말정산추가공제·자동차구입세금·초단시간근로자·엔젤투자소득공제·농어촌주택특례)
   {
     slug: 'year-end-additional-deduction-elderly-disabled-single-parent-2026',
