@@ -1,0 +1,188 @@
+name: daily-auto-post
+
+# 매일 05:00 KST 가이드 1편 자동 발행 → main 직접 push → Cloudflare Pages 자동 배포.
+#
+# 운영자 지시(2026-08-30): "매일 05:00 포스팅 1개, 내 승인 없이, 무조건 웹사이트에서 보이게".
+# 따라서 PR·auto-merge 경유가 아니라 게이트 통과 후 main 직접 push 를 택했다.
+# (기존 auto-guide-cron 은 PR 방식이라 게이트 1개만 흔들려도 글이 사이트에 안 뜬다.)
+#
+# 게이트는 그대로 유지한다. 아래 중 하나라도 실패하면 push 하지 않고 워크플로가 실패한다:
+#   품질 게이트(금지표현·분량·출처·AI표기) → sitemap 정합 → typecheck → lint → 단위 테스트 → 프로덕션 빌드
+#
+# 중단 스위치: repo variable `DAILY_AUTO_POST_ENABLED` 를 'false' 로 두면 즉시 멈춘다.
+# (미설정 시 활성 — 운영자가 별도 세팅 없이 바로 돌게 하기 위함)
+#
+# 주의: AI 생성 문자열(title·description)은 절대 `${{ }}` 로 run 스크립트에 직접
+# 보간하지 않는다. 따옴표·백틱이 섞이면 셸이 깨지거나 임의 명령이 실행될 수 있어
+# 전부 env 로 넘겨 "$VAR" 로만 참조한다.
+#
+# [revenue-lever: indexing+traffic] — 색인 페이지 수와 롱테일 유입 표면을 매일 1페이지씩 증가.
+
+on:
+  schedule:
+    # 05:00 KST = 20:00 UTC (전날). KST 는 DST 없음.
+    - cron: '0 20 * * *'
+  workflow_dispatch:
+    inputs:
+      topic:
+        description: '슬러그 지정 (비우면 daily-topic-pool 에서 자동 선정)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-auto-post
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    if: ${{ vars.DAILY_AUTO_POST_ENABLED != 'false' }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check ANTHROPIC_API_KEY
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "::error::ANTHROPIC_API_KEY secret 미설정 — 발행 불가"
+            exit 1
+          fi
+
+      # 1) 초안 생성. 토픽은 daily-topic-pool 에서 오늘 것 1개.
+      #    풀 소진 시 status=exhausted 로 실패시켜 운영자에게 보충을 요구한다.
+      - name: Generate draft
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TOPIC_INPUT: ${{ github.event.inputs.topic }}
+        run: |
+          ARGS="--daily"
+          if [ -n "$TOPIC_INPUT" ]; then ARGS="--topic $TOPIC_INPUT"; fi
+          node scripts/ralph-auto-guide.mjs $ARGS > draft-result.json || true
+          cat draft-result.json
+          node -e "
+            const fs = require('fs');
+            let r;
+            try { r = JSON.parse(fs.readFileSync('draft-result.json', 'utf8')); }
+            catch (e) { console.error('::error::생성 스크립트 출력 파싱 실패'); process.exit(1); }
+            if (r.status !== 'generated') {
+              console.error('::error::생성 실패 status=' + r.status + ' ' + (r.reason || r.error || ''));
+              process.exit(1);
+            }
+            const put = (k, v) =>
+              fs.appendFileSync(process.env.GITHUB_OUTPUT, k + '<<__GHEOF__\n' + String(v ?? '') + '\n__GHEOF__\n');
+            put('slug', r.slug);
+            put('title', r.title);
+            put('description', r.description);
+            put('category', r.category);
+            put('reading', r.readingMinutes);
+            put('file', r.filePath);
+            put('remaining', r.poolRemaining);
+          "
+
+      # 2) 품질 게이트 (금지 표현·분량·권위 출처·AI 표기)
+      - name: Quality gate
+        env:
+          FILE: ${{ steps.generate.outputs.file }}
+        run: node scripts/check-guide-quality.mjs "$FILE"
+
+      # 3) 사이트에서 실제로 보이게 등록.
+      #    GUIDES 인덱스(= /guide/ 목록·카테고리 허브·최신글) + sitemap 둘 다.
+      #    이 단계가 없으면 URL 직접 입력으로만 도달하는 고아 페이지가 된다.
+      - name: Register in guide index and sitemap
+        env:
+          SLUG: ${{ steps.generate.outputs.slug }}
+          TITLE: ${{ steps.generate.outputs.title }}
+          DESCRIPTION: ${{ steps.generate.outputs.description }}
+          CATEGORY: ${{ steps.generate.outputs.category }}
+          READING: ${{ steps.generate.outputs.reading }}
+        run: |
+          node scripts/register-guide.mjs \
+            --slug "$SLUG" \
+            --title "$TITLE" \
+            --description "$DESCRIPTION" \
+            --category "$CATEGORY" \
+            --published-at "$(TZ=Asia/Seoul date +%Y-%m-%d)" \
+            --reading-minutes "$READING"
+
+      - name: Verify sitemap completeness
+        run: node scripts/sitemap-completeness.mjs
+
+      # 4) 회귀 게이트 (가드레일 2순위 — 하나라도 실패하면 push 안 함)
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Production build
+        run: npm run build
+
+      # 5) 의도한 3개 경로만 커밋. prebuild 자동생성 산출물은 제외한다
+      #    (CLAUDE.md §자동 push 룰: STATE.md·manifest 등 커밋 제외).
+      - name: Commit and push to main
+        env:
+          SLUG: ${{ steps.generate.outputs.slug }}
+          TITLE: ${{ steps.generate.outputs.title }}
+        run: |
+          set -e
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "src/app/guide/${SLUG}/page.tsx" src/app/guide/page.tsx src/app/sitemap.ts
+          DATE=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          git commit -m "feat(guide): ${SLUG} 자동 발행 (${DATE}) [revenue-lever: indexing+traffic]" \
+                     -m "$TITLE" \
+                     -m "AI 초안 자동 생성 후 품질·타입·린트·단위테스트·빌드 게이트 통과."
+          # 다른 cron(today-update 등)과의 경합 대비: rebase 후 push, 최대 3회.
+          for i in 1 2 3; do
+            git fetch origin main
+            if git rebase origin/main; then
+              if git push origin HEAD:main; then
+                echo "push 성공 (시도 $i)"
+                exit 0
+              fi
+            else
+              git rebase --abort || true
+            fi
+            echo "push 재시도 $i"
+            sleep 10
+          done
+          echo "::error::main push 실패"
+          exit 1
+
+      - name: Summary
+        if: always()
+        env:
+          SLUG: ${{ steps.generate.outputs.slug }}
+          TITLE: ${{ steps.generate.outputs.title }}
+          REMAINING: ${{ steps.generate.outputs.remaining }}
+        run: |
+          {
+            echo "## daily-auto-post"
+            echo "- slug: \`${SLUG}\`"
+            echo "- title: ${TITLE}"
+            echo "- URL: https://calculatorhost.com/guide/${SLUG}/"
+            echo "- 남은 토픽: ${REMAINING}"
+          } >> "$GITHUB_STEP_SUMMARY"

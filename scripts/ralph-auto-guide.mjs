@@ -29,6 +29,7 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { validateGuideContent } from './check-guide-quality.mjs';
+import { pickDailyTopic, remainingTopicCount } from './daily-topic-pool.mjs';
 
 const REPO_ROOT = process.cwd();
 const SITE = 'https://calculatorhost.com';
@@ -169,11 +170,11 @@ export function buildSystemPrompt() {
 // ─────────────────────────────────────────────────────────────
 export function buildUserPrompt(topic) {
   const today = new Date().toISOString().slice(0, 10);
+  const monthLine = topic.month ? `\n- 대상 월: ${topic.month}월 (시즌별)` : '';
   return `다음 토픽으로 가이드 초안을 작성하세요.
 
 - 슬러그(URL): /guide/${topic.slug}/
-- 제목 가이드라인: ${topic.title}
-- 대상 월: ${topic.month}월 (시즌별)
+- 제목 가이드라인: ${topic.title}${monthLine}
 - 작성일(dateModified 용): ${today}
 - 사이트 컨텍스트: 한국 거주자 대상, 모바일 최적, 무료, 회원가입 불필요
 
@@ -410,9 +411,11 @@ ${authorityJsx}
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>작성 방식</strong>: 본 가이드는 Anthropic Claude AI 의 보조로 자동 초안이 생성되었으며,
-                  운영자(김준혁, 스마트데이터샵)가 발행 전 법조항·세율·중복 콘텐츠를 검수하여 발행했습니다.
-                  최종 검증일: ${datePublished}.
+                  <strong>작성 방식</strong>: 본 가이드는 Anthropic Claude AI 가 자동 생성한 초안으로,
+                  금지 표현·출처·분량 자동 품질 게이트를 통과해 ${datePublished} 자동 발행되었습니다.
+                  발행 시점에 사람의 사전 검수는 거치지 않았으며, 운영자(김준혁, 스마트데이터샵)가
+                  발행 후 법조항·세율·중복 여부를 점검해 필요 시 수정합니다.
+                  구체적 세율·법조항 수치는 이 글이 아니라 아래 공식 출처와 calculatorhost 계산기에서 확인하세요.
                 </p>
                 <p>
                   본 가이드는 참고용이며 법적 효력이 없습니다. 실제 세무·금융 처리는 세무사·국세청 등
@@ -429,6 +432,20 @@ ${authorityJsx}
   );
 }
 `;
+}
+
+/**
+ * 읽기 소요 시간(분) 추정. 한국어 성인 묵독 속도 약 500자/분 기준,
+ * 기존 가이드 엔트리와 눈높이를 맞추기 위해 5~15분으로 클램프.
+ */
+export function estimateReadingMinutes(json) {
+  const body = [
+    json.leadParagraph ?? '',
+    ...(json.sections ?? []).flatMap((s) => [s.heading ?? '', ...(s.paragraphs ?? [])]),
+    ...(json.faq ?? []).flatMap((f) => [f.question ?? '', f.answer ?? '']),
+    json.conclusion ?? '',
+  ].join('');
+  return Math.min(15, Math.max(5, Math.round(body.length / 500)));
 }
 
 // 안전한 JSX 텍스트 escape (간단)
@@ -453,8 +470,25 @@ if (isMain) {
     const topicArgIdx = args.indexOf('--topic');
     const explicitSlug = topicArgIdx >= 0 ? args[topicArgIdx + 1] : null;
 
+    // --daily: 매일 1편 발행 모드. 시즌 캘린더(12개)가 아니라 daily-topic-pool 사용.
+    // 시즌 캘린더는 2026-05 에 12개 전부 발행되어 항상 skipped 를 반환했다.
+    const daily = args.includes('--daily');
+
     let topic = null;
-    if (explicitSlug) {
+    if (daily && !explicitSlug) {
+      topic = pickDailyTopic();
+      if (!topic) {
+        // 풀 소진은 조용히 넘어가면 안 된다 (매일 발행이 무단 중단됨).
+        // exit 3 으로 워크플로를 실패시켜 운영자에게 보충을 요구한다.
+        console.log(
+          JSON.stringify({
+            status: 'exhausted',
+            reason: 'daily-topic-pool 소진. scripts/daily-topic-pool.mjs 에 토픽 추가 필요',
+          }),
+        );
+        process.exit(3);
+      }
+    } else if (explicitSlug) {
       // 명시 슬러그 모드 — 캘린더에서 매칭
       for (const m of Object.keys(SEASONAL_GUIDES)) {
         const e = SEASONAL_GUIDES[m];
@@ -523,10 +557,17 @@ if (isMain) {
           {
             status: 'generated',
             slug: topic.slug,
-            title: topic.title,
+            // 인덱스 등록(register-guide.mjs)에는 캘린더 제목이 아니라
+            // 실제 페이지에 쓰인 제목·설명이 들어가야 한다.
+            title: json.title,
+            description: json.description,
+            category: topic.category ?? '세금',
+            readingMinutes: estimateReadingMinutes(json),
+            topicTitle: topic.title,
             month: topic.month,
             filePath,
             quality: qualityResult.overall,
+            poolRemaining: remainingTopicCount(),
             usage,
           },
           null,
