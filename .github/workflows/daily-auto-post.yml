@@ -155,6 +155,9 @@ jobs:
           git commit -m "feat(guide): ${SLUG} 자동 발행 (${DATE}) [revenue-lever: indexing+traffic]" \
                      -m "$TITLE" \
                      -m "AI 초안 자동 생성 후 품질·타입·린트·단위테스트·빌드 게이트 통과."
+          # prebuild(llms.txt·og 이미지·STATE.md·date-modified-manifest 등)가 만든
+          # 잔여 변경을 치운다. 남겨두면 rebase 가 "unstaged changes" 로 거부된다.
+          git stash push --include-untracked --quiet || true
           # 다른 cron(today-update 등)과의 경합 대비: rebase 후 push, 최대 3회.
           for i in 1 2 3; do
             git fetch origin main
