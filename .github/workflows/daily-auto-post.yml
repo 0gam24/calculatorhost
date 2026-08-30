@@ -20,8 +20,14 @@ name: daily-auto-post
 
 on:
   schedule:
-    # 05:00 KST = 20:00 UTC (전날). KST 는 DST 없음.
-    - cron: '0 20 * * *'
+    # 07:00 KST = 22:00 UTC (전날). KST 는 DST 없음.
+    #
+    # 주 발행자는 클라우드 루틴 "03 calculatorhost (05:00)" 이다 (다른 사이트
+    # awoo·asiatop·smartdatashop 과 동일한 방식). 이 워크플로는 그 루틴이
+    # 실패했거나 돌지 않았을 때만 대신 발행하는 **백업**이다.
+    # 아래 "Guard" 단계가 오늘(KST) 이미 발행된 글이 있으면 전부 건너뛴다.
+    # → 하루 2편 발행은 구조적으로 불가능하다.
+    - cron: '0 22 * * *'
   workflow_dispatch:
     inputs:
       topic:
@@ -49,16 +55,37 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      # 오늘(KST) 이미 발행된 글이 있으면 중단. 클라우드 루틴이 05:00 에
+      # 발행을 마쳤을 때 07:00 백업이 두 번째 글을 올리는 것을 막는다.
+      # workflow_dispatch 는 운영자 의도이므로 가드를 적용하지 않는다.
+      - name: Guard against double publish
+        id: guard
+        run: |
+          TODAY=$(TZ=Asia/Seoul date +%Y-%m-%d)
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "수동 실행 — 가드 생략"
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          elif grep -q "publishedAt: '${TODAY}'" src/app/guide/page.tsx; then
+            echo "오늘(${TODAY}) 발행분이 이미 있음 — 백업 발행 생략"
+            echo "publish=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "오늘(${TODAY}) 발행분 없음 — 백업 발행 진행"
+            echo "publish=true" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Setup Node.js
+        if: steps.guard.outputs.publish == 'true'
         uses: actions/setup-node@v4
         with:
           node-version: '20'
           cache: 'npm'
 
       - name: Install dependencies
+        if: steps.guard.outputs.publish == 'true'
         run: npm ci
 
       - name: Check ANTHROPIC_API_KEY
+        if: steps.guard.outputs.publish == 'true'
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
@@ -70,6 +97,7 @@ jobs:
       # 1) 초안 생성. 토픽은 daily-topic-pool 에서 오늘 것 1개.
       #    풀 소진 시 status=exhausted 로 실패시켜 운영자에게 보충을 요구한다.
       - name: Generate draft
+        if: steps.guard.outputs.publish == 'true'
         id: generate
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -101,6 +129,7 @@ jobs:
 
       # 2) 품질 게이트 (금지 표현·분량·권위 출처·AI 표기)
       - name: Quality gate
+        if: steps.guard.outputs.publish == 'true'
         env:
           FILE: ${{ steps.generate.outputs.file }}
         run: node scripts/check-guide-quality.mjs "$FILE"
@@ -109,6 +138,7 @@ jobs:
       #    GUIDES 인덱스(= /guide/ 목록·카테고리 허브·최신글) + sitemap 둘 다.
       #    이 단계가 없으면 URL 직접 입력으로만 도달하는 고아 페이지가 된다.
       - name: Register in guide index and sitemap
+        if: steps.guard.outputs.publish == 'true'
         env:
           SLUG: ${{ steps.generate.outputs.slug }}
           TITLE: ${{ steps.generate.outputs.title }}
@@ -125,24 +155,30 @@ jobs:
             --reading-minutes "$READING"
 
       - name: Verify sitemap completeness
+        if: steps.guard.outputs.publish == 'true'
         run: node scripts/sitemap-completeness.mjs
 
       # 4) 회귀 게이트 (가드레일 2순위 — 하나라도 실패하면 push 안 함)
       - name: Typecheck
+        if: steps.guard.outputs.publish == 'true'
         run: npm run typecheck
 
       - name: Lint
+        if: steps.guard.outputs.publish == 'true'
         run: npm run lint
 
       - name: Unit tests
+        if: steps.guard.outputs.publish == 'true'
         run: npm test
 
       - name: Production build
+        if: steps.guard.outputs.publish == 'true'
         run: npm run build
 
       # 5) 의도한 3개 경로만 커밋. prebuild 자동생성 산출물은 제외한다
       #    (CLAUDE.md §자동 push 룰: STATE.md·manifest 등 커밋 제외).
       - name: Commit and push to main
+        if: steps.guard.outputs.publish == 'true'
         env:
           SLUG: ${{ steps.generate.outputs.slug }}
           TITLE: ${{ steps.generate.outputs.title }}
@@ -176,7 +212,7 @@ jobs:
           exit 1
 
       - name: Summary
-        if: always()
+        if: always() && steps.guard.outputs.publish == 'true'
         env:
           SLUG: ${{ steps.generate.outputs.slug }}
           TITLE: ${{ steps.generate.outputs.title }}
