@@ -234,10 +234,22 @@ export function extractJsonFromResponse(text) {
 // ─────────────────────────────────────────────────────────────
 // JSON → TSX 템플릿 조립
 // ─────────────────────────────────────────────────────────────
-export function assembleTsxFromJson(slug, json) {
+export function assembleTsxFromJson(slug, json, options = {}) {
   const safeSlug = sanitizeSlug(slug);
   const url = `${SITE}/guide/${safeSlug}/`;
   const datePublished = new Date().toISOString().slice(0, 10);
+
+  // 토픽 클러스터 내부 링크 (고립 페이지 차단 — 품질 게이트 red 항목)
+  const clusterJsx = clusterLinksFor(options.category)
+    .map(
+      (l) => `                  <li>
+                    <Link href="${l.href}" className="text-primary-600 hover:underline dark:text-primary-500">
+                      ${escape(l.label)}
+                    </Link>
+                    <span className="text-text-tertiary"> ${escape(l.cta)}</span>
+                  </li>`,
+    )
+    .join('\n');
 
   // 섹션 → JSX
   const sectionsJsx = json.sections
@@ -275,7 +287,7 @@ ${s.paragraphs.map((p) => `                <p className="leading-relaxed text-te
     )
     .join('\n');
 
-  return `// [revenue-lever: traffic+indexing] — 자동 발행 가이드는 트래픽·색인 표면 동시 증가 (북극성 룰).
+  return `// [revenue-lever: traffic+indexing] 자동 발행 가이드는 트래픽·색인 표면 동시 증가 (북극성 룰).
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
@@ -312,6 +324,15 @@ export const metadata: Metadata = {
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
+    // alt 누락 시 네이버 "Alt 속성 누락" 경고 (품질 게이트 yellow 항목)
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: ${jsString(json.title)},
+      },
+    ],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -394,13 +415,17 @@ ${authorityJsx}
 
               <ShareButtons title={${jsString(json.title)}} url={URL} />
 
-              {/* 관련 자원 — 내부 링크 mesh (북극성 룰: 고립 페이지 차단, 토픽 클러스터 형성) */}
+              {/* 관련 자원: 내부 링크 mesh (북극성 룰, 고립 페이지 차단·토픽 클러스터 형성) */}
               <section aria-label="관련 자원" className="card space-y-2">
-                <h2 className="text-lg font-semibold">관련 자원</h2>
+                <h2 className="text-lg font-semibold">함께 보면 좋은 계산기</h2>
                 <ul className="space-y-1 text-sm">
-                  <li>→ <Link href="/guide/" className="text-primary-600 hover:underline dark:text-primary-500">가이드 모음 (전체)</Link></li>
-                  <li>→ <Link href="/glossary/" className="text-primary-600 hover:underline dark:text-primary-500">용어사전 (28개 용어)</Link></li>
-                  <li>→ <Link href="/" className="text-primary-600 hover:underline dark:text-primary-500">홈 — 31개 계산기</Link></li>
+${clusterJsx}
+                  <li>
+                    <Link href="/guide/" className="text-primary-600 hover:underline dark:text-primary-500">
+                      가이드 전체 보기
+                    </Link>
+                    <span className="text-text-tertiary"> 세금·금융·부동산·근로 실전 가이드 모음</span>
+                  </li>
                 </ul>
               </section>
 
@@ -432,6 +457,77 @@ ${authorityJsx}
   );
 }
 `;
+}
+
+/**
+ * AI 말버릇 결정론적 제거.
+ *
+ * 시스템 프롬프트로 금지해도 모델이 긴 줄표·이모지를 섞어 내보내는 경우가 있고,
+ * 그러면 품질 게이트가 RED 로 막아 그날 발행이 통째로 날아간다. 프롬프트에만
+ * 의존하지 않고 조립 직전에 기계적으로 치환한다.
+ * (`scripts/check-guide-quality.mjs` FORBIDDEN_PATTERNS 와 대응)
+ */
+export function stripAiTics(value) {
+  if (typeof value !== 'string') return value;
+  return value
+    // 긴 줄표 → 쉼표 (.claude/rules/new-post-seo-geo-harness.md §2-14 대체 규칙)
+    .replace(/\s*[—–]\s*/g, ', ')
+    // 픽토그램 이모지 제거 (화살표·체크는 게이트 제외 대상이라 건드리지 않음)
+    .replace(/[\u{1F000}-\u{1FAFF}\u{2600}-\u{26FF}\u{2700}-\u{2712}\u{2714}-\u{2716}\u{2718}-\u{27BF}]/gu, '')
+    // 치환 후 생길 수 있는 중복 구두점·공백 정리
+    .replace(/,\s*,/g, ',')
+    .replace(/\s+,/g, ',')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+/** JSON 응답 전체(문자열 값)에 stripAiTics 재귀 적용. */
+export function sanitizeGuideJson(json) {
+  if (Array.isArray(json)) return json.map(sanitizeGuideJson);
+  if (json && typeof json === 'object') {
+    return Object.fromEntries(Object.entries(json).map(([k, v]) => [k, sanitizeGuideJson(v)]));
+  }
+  return stripAiTics(json);
+}
+
+/**
+ * 카테고리별 토픽 클러스터 링크.
+ *
+ * 품질 게이트의 내부 링크 판정은 `/(calculator|guide|glossary|category)/<something>` 처럼
+ * 세그먼트가 하나 더 있어야 매칭된다. 기존 템플릿은 `/guide/`·`/glossary/` 같은
+ * 인덱스 루트만 걸어 두어 내부 링크 0 으로 판정돼 RED 였다.
+ */
+const CLUSTER_LINKS = {
+  '세금': [
+    { href: '/category/tax/', label: '세금 계산기 모음', cta: '종합소득세·양도세·증여세를 한 곳에서 계산' },
+    { href: '/calculator/capital-gains-tax/', label: '양도소득세 계산기', cta: '보유·거주 기간을 넣어 예상 세액 확인' },
+    { href: '/calculator/freelancer-tax/', label: '프리랜서 종합소득세 계산기', cta: '3.3% 원천징수분 환급 여부 확인' },
+  ],
+  '세금·부동산': [
+    { href: '/category/real-estate/', label: '부동산 계산기 모음', cta: '취득·보유·임대차 관련 계산을 모아 확인' },
+    { href: '/calculator/property-tax/', label: '재산세 계산기', cta: '공시가격으로 올해 재산세 추산' },
+    { href: '/calculator/acquisition-tax/', label: '취득세 계산기', cta: '주택 수·면적별 취득세율 적용 결과 확인' },
+  ],
+  '금융': [
+    { href: '/category/finance/', label: '금융 계산기 모음', cta: '대출·예적금·환율 계산을 한 번에' },
+    { href: '/calculator/loan/', label: '대출이자 계산기', cta: '원리금균등 기준 월 상환액 계산' },
+    { href: '/calculator/loan-limit/', label: '대출한도 계산기', cta: 'DSR 기준 가능 한도 확인' },
+  ],
+  '투자': [
+    { href: '/category/finance/', label: '금융·투자 계산기 모음', cta: '예적금·수익률 계산을 한 곳에서' },
+    { href: '/calculator/savings/', label: '적금 이자 계산기', cta: '세후 수령액까지 반영해 비교' },
+    { href: '/calculator/deposit/', label: '예금 이자 계산기', cta: '만기 세후 이자 확인' },
+  ],
+  '근로': [
+    { href: '/category/work/', label: '근로 계산기 모음', cta: '연봉·퇴직금·4대보험 계산' },
+    { href: '/calculator/salary/', label: '연봉 실수령액 계산기', cta: '세금·4대보험 공제 후 월 실수령액 확인' },
+    { href: '/calculator/severance/', label: '퇴직금 계산기', cta: '평균임금 기준 예상 퇴직금 계산' },
+  ],
+};
+
+/** 카테고리 → 클러스터 링크 (미지정 시 세금 기본값). */
+export function clusterLinksFor(category) {
+  return CLUSTER_LINKS[category] ?? CLUSTER_LINKS['세금'];
 }
 
 /**
@@ -529,8 +625,9 @@ if (isMain) {
       const system = buildSystemPrompt();
       const user = buildUserPrompt(topic);
       const { text, usage } = await callClaudeApi({ system, user });
-      const json = extractJsonFromResponse(text);
-      const tsx = assembleTsxFromJson(topic.slug, json);
+      // 프롬프트 금지만으로는 긴 줄표·이모지가 새어 나온다. 조립 전에 기계적으로 정화.
+      const json = sanitizeGuideJson(extractJsonFromResponse(text));
+      const tsx = assembleTsxFromJson(topic.slug, json, { category: topic.category });
 
       // 사전 품질 게이트 — RED 면 파일 생성 안 함
       const qualityResult = validateGuideContent(tsx);
