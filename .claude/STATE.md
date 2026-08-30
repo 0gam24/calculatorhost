@@ -74,8 +74,18 @@
 > gh CLI 미설치 또는 인증 미됨 — 수동 확인 필요
 <!-- /AUTO:workflows -->
 
+### 매일 자동 발행 (2026-08-30 운영자 지시로 신설)
+- ✅ **`daily-auto-post`** (`.github/workflows/daily-auto-post.yml`) — **매일 05:00 KST 가이드 1편 자동 발행**
+  · 흐름: `daily-topic-pool.mjs` 토픽 선정 → Claude API 초안 → 품질 게이트 → `register-guide.mjs` 가 GUIDES 인덱스·sitemap 등록 → typecheck·lint·단위테스트·프로덕션 빌드 → **main 직접 push** → Cloudflare Pages 자동 배포
+  · 운영자 승인 없이 발행됨 (운영자 전권 위임, 2026-08-30). 사전 검수 없음 → **사후 점검이 운영자 책임**
+  · 게이트 1개라도 실패 시 push 안 함 + 워크플로 실패 (Actions 탭에 빨간 표시)
+  · **중단 스위치**: repo variable `DAILY_AUTO_POST_ENABLED` = `false` (미설정 시 활성)
+  · 토픽 풀 잔량은 워크플로 Summary 의 "남은 토픽" 참조. 소진 시 워크플로가 실패하므로 `scripts/daily-topic-pool.mjs` 에 항목 추가 필요
+  · 첫 검증 발행: `/guide/tax-invoice-late-issuance-penalty-2026/` (2026-08-30, 라이브 200 확인)
+- ⚠️ 기존 `auto-guide-cron` (주간, PR+auto-merge 방식)은 `AUTO_GUIDE_ENABLED` 미설정으로 **계속 skip 상태**. daily-auto-post 가 대체하므로 그대로 둠
+
 ### 운영자 수동 갱신
-- **`AUTO_GUIDE_ENABLED` repo variable**: (운영자 확인) — 미설정 시 자동 가이드 cron 비활성
+- **`AUTO_GUIDE_ENABLED` repo variable**: 미설정 (= 주간 auto-guide-cron 비활성, 의도된 상태)
 
 ---
 
