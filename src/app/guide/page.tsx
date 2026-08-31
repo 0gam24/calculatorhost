@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-01 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'property-tax-objection-appeal-2026',
+    title: '재산세 이의신청 기간·절차 2026, 90일 안에 하는 법',
+    description:
+      '재산세 고지서가 잘못됐다고 생각되면 처분을 안 날부터 90일 이내 시장·군수·구청장에게 이의신청할 수 있습니다. 신청 방법, 결정 기간, 결과에 불복할 때의 심사청구·심판청구·행정소송까지 지방세기본법 §90·§96 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-01',
+    readingMinutes: 8,
+  },
   // 2026-08-31 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'electronic-tax-invoice-mandatory-target-2026',
