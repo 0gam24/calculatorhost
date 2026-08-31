@@ -80,8 +80,11 @@
 
 **(1) 주 발행자 — 클라우드 루틴 `03 calculatorhost (05:00)`**
 - Claude Code 루틴 패널에서 관리 (awoo·asiatop·smartdatashop 과 동일 방식)
-- 매일 05:00 KST. 클라우드 에이전트가 직접 본문 작성 → 게이트 → main push
-- 관리 URL: https://claude.ai/code/routines
+- 매일 05:00 KST (cron `0 20 * * *` UTC). 클라우드 에이전트가 직접 본문 작성 → 게이트 → main push
+- 관리 URL: https://claude.ai/code/routines · trigger id `trig_01SoqJaA8dbuvQ18S3tTWn2C`
+- 루틴 자체도 §0.6 에서 오늘 발행분을 먼저 확인해 중복 발행을 막는다
+- 검증 실행 (2026-08-31): `/guide/electronic-tax-invoice-mandatory-target-2026/` 라이브 200.
+  WebFetch 로 nts.go.kr·law.go.kr 확인 후 개인사업자 기준 8천만원·부가가치세법 §32 인용
 - API 스크립트와 달리 에이전트가 WebSearch 로 1차출처(law.go.kr·nts.go.kr) 확인 후 §N·세율 인용 가능
 
 **(2) 백업 — `.github/workflows/daily-auto-post.yml`**
