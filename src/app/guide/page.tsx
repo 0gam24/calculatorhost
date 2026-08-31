@@ -72,6 +72,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 export const GUIDES: GuideEntry[] = [
   // 2026-08-31 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
+    slug: 'electronic-tax-invoice-mandatory-target-2026',
+    title: '전자세금계산서 의무발급 대상 기준 2026',
+    description:
+      '법인사업자는 전원, 개인사업자는 직전연도 공급가액 8천만원 이상이면 전자세금계산서를 의무 발급해야 합니다. 기준금액 계산법, 의무 시작 시점, 종이 발급 시 불이익까지 부가가치세법 §32·시행령 §68 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-08-31',
+    readingMinutes: 7,
+  },
+  // 2026-08-31 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
     slug: 'revised-tax-invoice-issuance-reasons-2026',
     title: '수정세금계산서 발급 사유와 작성일자 정하는 법 2026 | calculatorhost',
     description:
