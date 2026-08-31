@@ -154,9 +154,6 @@ jobs:
             --published-at "$(TZ=Asia/Seoul date +%Y-%m-%d)" \
             --reading-minutes "$READING"
 
-      - name: Verify sitemap completeness
-        if: steps.guard.outputs.publish == 'true'
-        run: node scripts/sitemap-completeness.mjs
 
       # 4) 회귀 게이트 (가드레일 2순위 — 하나라도 실패하면 push 안 함)
       - name: Typecheck
@@ -174,6 +171,11 @@ jobs:
       - name: Production build
         if: steps.guard.outputs.publish == 'true'
         run: npm run build
+      # sitemap 정합 검증은 out/sitemap.xml 이 있어야 의미가 있다.
+      # 빌드 전에 돌리면 스크립트가 경고만 내고 exit 0 으로 통과해 버린다.
+      - name: Verify sitemap completeness
+        if: steps.guard.outputs.publish == 'true'
+        run: node scripts/sitemap-completeness.mjs
 
       # 5) 의도한 3개 경로만 커밋. prebuild 자동생성 산출물은 제외한다
       #    (CLAUDE.md §자동 push 룰: STATE.md·manifest 등 커밋 제외).
