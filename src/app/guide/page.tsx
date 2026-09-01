@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-02 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'withholding-tax-semiannual-payment-2026',
+    title: '원천세 반기납부 신청 조건·기간 2026, 20인 이하 사업자',
+    description:
+      '직전 연도 상시고용인원 평균 20명 이하 사업장(금융·보험업 제외)은 매달 내는 원천세를 반기(6개월)에 한 번만 납부할 수 있습니다. 상반기 적용은 전년도 12월, 하반기 적용은 6월에 신청해야 합니다.',
+    category: '세금',
+    publishedAt: '2026-09-02',
+    readingMinutes: 8,
+  },
   // 2026-09-01 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'property-tax-objection-appeal-2026',

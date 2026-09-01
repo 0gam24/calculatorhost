@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'withholding-tax-semiannual-payment-2026',
   'property-tax-objection-appeal-2026',
   'electronic-tax-invoice-mandatory-target-2026',
   'revised-tax-invoice-issuance-reasons-2026',
