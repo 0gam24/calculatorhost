@@ -86,6 +86,7 @@
 - 검증 실행 (2026-08-31): `/guide/electronic-tax-invoice-mandatory-target-2026/` 라이브 200.
   WebFetch 로 nts.go.kr·law.go.kr 확인 후 개인사업자 기준 8천만원·부가가치세법 §32 인용
 - API 스크립트와 달리 에이전트가 WebSearch 로 1차출처(law.go.kr·nts.go.kr) 확인 후 §N·세율 인용 가능
+- **(2026-09-02 운영자 지시)** 매 발행 완료 보고의 **가장 마지막 줄**에 발행한 글의 클릭 가능한 마크다운 링크를 남길 것: `[오늘의 발행글 보기](https://calculatorhost.com/guide/<slug>/)`. 그 뒤에 다른 문장을 덧붙이지 말 것(운영자가 클릭 한 번으로 바로 들어갈 수 있도록). §0.6 에 따라 발행을 건너뛴 날도 그날 이미 나간 글의 링크를 같은 형식으로 마지막 줄에 남긴다. (트리거 프롬프트 자체는 http_api 로 생성되어 에이전트가 직접 수정 불가 — 대신 이 SSoT 로 지시를 전달)
 
 **(2) 백업 — `.github/workflows/daily-auto-post.yml`**
 - 매일 07:00 KST. **오늘(KST) 발행분이 이미 있으면 자동 skip** (Guard 단계)
