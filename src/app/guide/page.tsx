@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-03 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'year-end-tax-simplified-service-schedule-2026',
+    title: '연말정산 간소화서비스 일정, 자료 확인 순서 총정리',
+    description:
+      '연말정산 간소화서비스는 매년 1월 중순 개통되고 확정자료는 그보다 며칠 뒤 제공됩니다. 개통일과 확정자료일이 왜 다른지, 회사 일괄제공 서비스 신청 시기, 자료를 확인하는 순서를 소득세법 §165·시행령 §216의3 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-03',
+    readingMinutes: 7,
+  },
   // 2026-09-02 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'withholding-tax-semiannual-payment-2026',
