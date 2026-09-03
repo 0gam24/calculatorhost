@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-04 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'donation-deduction-carryover-10-year-2026',
+    title: '기부금 이월공제 10년, 못 받은 공제 살리는 법',
+    description:
+      '기부금이 한도를 넘으면 초과분은 사라지지 않고 다음 해부터 10년간 이월해 세액공제를 받을 수 있습니다. 이월 순서와 이월이 안 되는 기부금, 실제 계산 사례를 소득세법 §59의4·§61 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-04',
+    readingMinutes: 8,
+  },
   // 2026-09-03 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'year-end-tax-simplified-service-schedule-2026',
