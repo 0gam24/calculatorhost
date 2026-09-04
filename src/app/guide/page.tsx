@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-05 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'foreign-worker-flat-tax-rate-2026',
+    title: '외국인근로자 단일세율 19% 과세특례 신청 방법 2026',
+    description:
+      '외국인 근로자는 최초 근로제공일부터 20년간 근로소득의 19%만 내는 단일세율을 선택할 수 있습니다. 대상 요건, 신청서 제출 방법과 기한을 조세특례제한법 §18조의2 기준으로 정리하고, 2026년 세제개편안의 21% 인상안까지 확인합니다.',
+    category: '세금',
+    publishedAt: '2026-09-05',
+    readingMinutes: 9,
+  },
   // 2026-09-04 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'donation-deduction-carryover-10-year-2026',
