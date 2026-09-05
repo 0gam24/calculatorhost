@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-06 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'overseas-financial-account-reporting-2026',
+    title: '해외금융계좌 신고 대상 2026, 미신고 과태료 총정리',
+    description:
+      '해외금융계좌 잔액 합계가 매월 말일 중 하루라도 5억원을 넘으면 다음 해 6월에 신고해야 하며, 미신고 시 최대 20%의 벌금과 형사처벌까지 받을 수 있습니다.',
+    category: '세금',
+    publishedAt: '2026-09-06',
+    readingMinutes: 8,
+  },
   // 2026-09-05 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'foreign-worker-flat-tax-rate-2026',
