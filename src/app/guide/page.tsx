@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-07 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'overseas-real-estate-acquisition-report-2026',
+    title: '해외부동산 취득·보유 신고 의무 2026, 미신고 과태료',
+    description:
+      '해외부동산 취득 시 외국환거래법상 사전신고·취득보고·수시보고·처분보고와 소득세법 §165의2에 따른 국세청 명세서 제출 의무를 기한·과태료와 함께 정리합니다.',
+    category: '세금',
+    publishedAt: '2026-09-07',
+    readingMinutes: 8,
+  },
   // 2026-09-06 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'overseas-financial-account-reporting-2026',
