@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'tax-audit-selection-criteria-2026',
   'overseas-real-estate-acquisition-report-2026',
   'overseas-financial-account-reporting-2026',
   'foreign-worker-flat-tax-rate-2026',

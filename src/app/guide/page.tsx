@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-08 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'tax-audit-selection-criteria-2026',
+    title: '세무조사 선정 기준 2026, 정기·비정기 조사 대상 되는 이유',
+    description:
+      '세무조사 대상은 무작위로 정해지지 않습니다. 국세기본법 §81-6에 따른 신고성실도 분석·장기 미조사·무작위추출 정기선정 기준과 탈세 제보 등 비정기 조사 사유, 매출 규모별 순환조사 주기를 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-08',
+    readingMinutes: 8,
+  },
   // 2026-09-07 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'overseas-real-estate-acquisition-report-2026',
