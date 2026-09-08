@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-09 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'tax-appeal-objection-procedure-2026',
+    title: '조세불복 절차 2026, 이의신청·심사청구·심판청구 차이',
+    description:
+      '과세처분에 불복할 때는 이의신청·심사청구·심판청구 중 하나를 선택해 처분을 안 날부터 90일 이내 제기해야 합니다. 국세기본법 §55·§61·§68 기준 청구기한과 관할기관, 필요적 전치주의, 국선대리인 무료지원 요건을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-09',
+    readingMinutes: 9,
+  },
   // 2026-09-08 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'tax-audit-selection-criteria-2026',
