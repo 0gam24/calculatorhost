@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-10 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'national-tax-delinquency-seizure-2026',
+    title: '국세 체납 압류 절차·해제 조건 2026, 예금·급여 압류 기준',
+    description:
+      '국세를 기한까지 못 내면 독촉 후 압류로 이어집니다. 압류가 시작되는 시점, 예금·급여 압류가 제한되는 금액, 공매까지 가는 순서, 완납 외에 압류가 즉시 해제되는 조건을 국세징수법 §10·§31·§41·§42·§57 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-10',
+    readingMinutes: 8,
+  },
   // 2026-09-09 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'tax-appeal-objection-procedure-2026',
