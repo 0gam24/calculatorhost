@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-12 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'religious-worker-income-tax-2026',
+    title: '종교인소득 신고 방법·필요경비 2026, 기타 근로소득 비교',
+    description:
+      '종교인소득은 기타소득과 근로소득 중 매년 선택해 신고할 수 있습니다. 기타소득으로 신고하면 소득 구간별로 최대 80%까지 필요경비가 인정되는데, 소득세법 시행령 §87 기준 4단계 계산법과 원천징수·확정신고 절차, 비과세 항목을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-12',
+    readingMinutes: 8,
+  },
   // 2026-09-11 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'tax-payment-deadline-extension-2026',
