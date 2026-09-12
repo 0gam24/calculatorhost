@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'capital-gains-tax-installment-payment-2026',
   'religious-worker-income-tax-2026',
   'tax-payment-deadline-extension-2026',
   'national-tax-delinquency-seizure-2026',

@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-13 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'capital-gains-tax-installment-payment-2026',
+    title: '양도소득세 분납 조건과 신청 방법 2026, 1천만원 초과 기준',
+    description:
+      '양도소득세 납부세액이 1천만원을 초과하면 최대 절반까지 납부기한 경과 후 2개월 이내 나눠 낼 수 있습니다. 소득세법 §112·시행령 §175 기준 분납 가능 금액과 확정신고서 기재 방법을 세액 구간별 계산 사례로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-13',
+    readingMinutes: 8,
+  },
   // 2026-09-12 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'religious-worker-income-tax-2026',
