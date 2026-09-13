@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-14 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'gift-tax-annuity-payment-2026',
+    title: '증여세 연부연납 조건·담보 제공 방법 2026',
+    description:
+      '증여세 연부연납은 세액이 2천만원을 넘을 때 담보를 걸고 5년(가업승계 특례 15년)에 나눠 내는 제도입니다. 신청 자격 3요건, 담보 종류별 즉시허가 특례, 가산금 이자율을 상속세및증여세법 §71 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-14',
+    readingMinutes: 9,
+  },
   // 2026-09-13 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'capital-gains-tax-installment-payment-2026',
