@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-15 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'inheritance-tax-annuity-payment-collateral-2026',
+    title: '상속세 연부연납 기간과 담보 요건 2026, 몇 년까지 나눌까',
+    description:
+      '상속세 납부세액이 2천만원을 넘으면 담보를 제공하고 최대 10년, 가업상속재산은 최대 20년까지 나눠 낼 수 있습니다. 담보로 인정되는 것과 안 되는 것, 가산율까지 상속세및증여세법 §71 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-15',
+    readingMinutes: 8,
+  },
   // 2026-09-14 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'gift-tax-annuity-payment-2026',
