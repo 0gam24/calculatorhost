@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-16 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'family-business-succession-gift-special-2026',
+    title: '가업승계 증여세 과세특례 2026, 공제·세율·사후관리 5년',
+    description:
+      '조세특례제한법 §30의6에 따라 60세 이상 부모의 가업을 18세 이상 자녀가 증여받으면 과세가액에서 10억원을 공제하고 10%(120억 초과분 20%) 세율만 적용합니다. 대표이사 취임 기한과 사후관리 5년 요건을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-16',
+    readingMinutes: 8,
+  },
   // 2026-09-15 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'inheritance-tax-annuity-payment-collateral-2026',
