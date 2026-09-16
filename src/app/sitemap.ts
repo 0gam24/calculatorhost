@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'insurance-payout-inheritance-tax-2026',
   'family-business-succession-gift-special-2026',
   'inheritance-tax-annuity-payment-collateral-2026',
   'gift-tax-annuity-payment-2026',

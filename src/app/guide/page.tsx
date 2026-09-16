@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-17 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'insurance-payout-inheritance-tax-2026',
+    title: '보험금 상속세 증여세 2026, 계약자·수익자별 과세 판단',
+    description:
+      '사망보험금은 받는 사람의 고유재산이지만 상증법 §8에 따라 상속재산에 합산돼 상속세가 과세됩니다. 계약자와 수익자가 다르면 증여세(§34)가 나오는 경우도 있어 판단 기준을 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-17',
+    readingMinutes: 8,
+  },
   // 2026-09-16 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'family-business-succession-gift-special-2026',
