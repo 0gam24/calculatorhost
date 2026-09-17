@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-18 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'severance-pay-inheritance-tax-2026',
+    title: '사망 퇴직금 상속재산 포함 여부 2026, 상속세 과세 기준',
+    description:
+      '재직 중 사망하면 퇴직금은 원칙적으로 간주상속재산에 해당해 상속세 과세 대상입니다. 다만 단체협약·취업규칙에서 근로기준법상 유족에게 지급하도록 정한 경우 유족 고유재산으로 상속세가 붙지 않는 예외를 상증법 §10과 2023년 대법원 판례 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-18',
+    readingMinutes: 8,
+  },
   // 2026-09-17 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'insurance-payout-inheritance-tax-2026',
