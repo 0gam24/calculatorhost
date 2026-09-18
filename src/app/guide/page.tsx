@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-19 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'low-price-transfer-deemed-gift-2026',
+    title: '저가양수도 증여의제 2026, 시가 대비 몇 %부터 과세되나',
+    description:
+      '특수관계인 간 저가 거래는 시가와 대가의 차액이 시가의 30% 이상이거나 3억 원 이상이면 증여세 대상입니다. 매도인의 양도소득세는 별도로 5% 기준이 적용되어, 매도인만 시가로 재과세되고 매수인은 증여세가 없는 구간도 있습니다.',
+    category: '세금',
+    publishedAt: '2026-09-19',
+    readingMinutes: 8,
+  },
   // 2026-09-18 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'severance-pay-inheritance-tax-2026',
