@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-20 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'title-trust-deemed-gift-2026',
+    title: '명의신탁 증여의제 2026, 차명 주식·부동산 세금 차이',
+    description:
+      '차명 주식은 조세회피 목적이 있으면 명의자 앞으로 증여세가 부과됩니다. 반면 차명 부동산은 증여의제가 아니라 부동산실명법상 과징금·형사처벌 대상입니다. 상증법 §45의2와 부동산실명법 §3·§5·§7 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-20',
+    readingMinutes: 8,
+  },
   // 2026-09-19 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'low-price-transfer-deemed-gift-2026',
