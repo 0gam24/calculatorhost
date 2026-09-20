@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-21 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'borrowed-name-account-taxation-2026',
+    title: '차명계좌 적발 시 증여세·가산세 2026, 얼마나 나올까',
+    description:
+      '가족 명의를 빌려 만든 차명계좌는 금융정보분석원 정보와 국세청 전산 분석으로 드러납니다. 적발되면 원금에 증여세, 무신고가산세 최대 40%, 납부지연가산세가 함께 붙고 금융실명법 위반 형사처벌까지 받을 수 있습니다. 국세기본법 §14, 상속세및증여세법 §45 기준으로 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-21',
+    readingMinutes: 8,
+  },
   // 2026-09-20 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'title-trust-deemed-gift-2026',
