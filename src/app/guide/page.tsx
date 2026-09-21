@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-22 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'wedding-gift-money-tax-2026',
+    title: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리',
+    description:
+      '결혼식 축의금은 원칙적으로 증여세가 없습니다. 예단·예물 등 혼수용품도 통상 필요한 수준이면 비과세입니다(상증법 §46, 시행령 §35④). 사치품·신혼집의 과세 경계와 계산 사례까지 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-22',
+    readingMinutes: 8,
+  },
   // 2026-09-21 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'borrowed-name-account-taxation-2026',
