@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-23 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'acquisition-tax-refund-contract-cancellation-2026',
+    title: '취득세 환급 조건 2026, 계약 해제 시 돌려받는 법',
+    description:
+      '부동산 매매계약을 해제해도 취득세가 무조건 환급되지는 않습니다. 등기 전 60일 이내 해제 입증이 핵심 조건입니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-23',
+    readingMinutes: 8,
+  },
   // 2026-09-22 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'wedding-gift-money-tax-2026',
