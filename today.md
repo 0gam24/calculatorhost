@@ -138,6 +138,10 @@
 
 
 
+
+## 2026-09-24
+
+- [가이드] [취득세 시가표준액 실거래가 차이 2026 | calculatorhost](https://calculatorhost.com/guide/acquisition-tax-standard-market-price-2026/) — 부동산을 사서 등기할 때 취득세는 실제로 지급한 사실상의 취득가격 기준으로 매겨지지만, 증여·상속으로 받을 때는 시가인정액 또는 시가표준액이 기준이 됩니다. 지방세법 §4·§10·§10의2에 따라 취득 유형별로 달…
 ## 2026-09-23
 
 - [가이드] [취득세 환급 조건 2026, 계약 해제 시 돌려받는 법 | calculatorhost](https://calculatorhost.com/guide/acquisition-tax-refund-contract-cancellation-2026/) — 부동산 매매계약을 해제해도 취득세가 무조건 환급되지는 않습니다. 등기 전 취득일로부터 60일 이내 해제를 입증해야 하고, 등기를 마친 뒤에는 원칙적으로 돌려받지 못합니다. 지방세법 시행령 §20, 경정청구 절차까지…
