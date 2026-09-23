@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-24 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'acquisition-tax-standard-market-price-2026',
+    title: '취득세 시가표준액 실거래가 차이 2026 | calculatorhost',
+    description:
+      '부동산을 사서 등기할 때 취득세는 실제로 지급한 사실상의 취득가격 기준으로 매겨지지만, 증여ㆍ상속으로 받을 때는 시가인정액 또는 시가표준액이 기준이 됩니다. 지방세법 §4ㆍ§10ㆍ§10의2에 따라 취득 유형별로 달라지는 과세표준 기준과 확인 방법을 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-24',
+    readingMinutes: 8,
+  },
   // 2026-09-23 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'acquisition-tax-refund-contract-cancellation-2026',
