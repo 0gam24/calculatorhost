@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-25 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'parents-living-expenses-gift-tax-2026',
+    title: '부모님이 준 생활비 증여세, 비과세 범위와 조건 2026',
+    description:
+      '부모가 자녀에게 주는 생활비·교육비는 상속세및증여세법 §46, 시행령 §35에 따라 부양의무자 사이에서 필요할 때마다 실제로 쓴 금액만 증여세가 비과세됩니다. 예적금이나 집 사는 데 쓰면 과세되는 이유와 증여재산공제와의 차이를 정리했습니다.',
+    category: '세금',
+    publishedAt: '2026-09-25',
+    readingMinutes: 8,
+  },
   // 2026-09-24 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'acquisition-tax-standard-market-price-2026',
