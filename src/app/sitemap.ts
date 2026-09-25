@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'official-land-price-objection-2026',
   'parents-living-expenses-gift-tax-2026',
   'acquisition-tax-standard-market-price-2026',
   'acquisition-tax-refund-contract-cancellation-2026',

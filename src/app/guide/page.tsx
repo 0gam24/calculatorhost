@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-26 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'official-land-price-objection-2026',
+    title: '개별공시지가 이의신청 기한·절차 2026, 30일 안에 하는 법',
+    description:
+      '개별공시지가에 이의가 있다면 결정·공시일부터 30일 이내에 시장·군수·구청장에게 서면으로 이의신청을 해야 합니다. 신청 서류, 처리 기한, 표준지공시지가와의 차이, 재산세·종합부동산세에 미치는 영향까지 부동산 가격공시에 관한 법률 §7·§11 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-26',
+    readingMinutes: 7,
+  },
   // 2026-09-25 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'parents-living-expenses-gift-tax-2026',
