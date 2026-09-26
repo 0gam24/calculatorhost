@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-27 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'individual-house-price-announcement-2026',
+    title: '개별주택가격 공시 2026, 재산세·종부세에 미치는 영향',
+    description:
+      '개별주택가격은 매년 1월 1일 기준으로 산정되어 4월 30일 결정·공시되며, 재산세·종합부동산세는 물론 상속·증여재산 평가와 건강보험료 산정에도 그대로 쓰이는 시가표준액입니다. 공시 절차와 30일 이의신청 기한을 부동산 가격공시에 관한 법률 §17·지방세법 §110 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-27',
+    readingMinutes: 8,
+  },
   // 2026-09-26 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'official-land-price-objection-2026',
