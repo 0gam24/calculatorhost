@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-28 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'demolished-house-land-capital-gains-2026',
+    title: '멸실주택 부수토지 양도세 2026, 나대지인가 주택인가',
+    description:
+      '집을 헐고 나서 팔면 원칙적으로 양도일 현재 나대지로 보아 1세대1주택 비과세를 받지 못합니다. 다만 매매특약에 따라 잔금 전 철거한 경우는 계약일 현재로 판정합니다. 부수토지 배율과 비사업용 토지 중과까지 소득세법 §89·§104·§104의3·시행령 §154 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-28',
+    readingMinutes: 8,
+  },
   // 2026-09-27 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'individual-house-price-announcement-2026',
