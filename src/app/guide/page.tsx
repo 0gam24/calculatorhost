@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-29 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'non-business-land-heavy-taxation-2026',
+    title: '비사업용 토지 양도세 중과 2026, 사업용 인정받는 법',
+    description:
+      '비사업용 토지로 판정되면 양도소득세가 기본세율보다 10%포인트 높게 부과됩니다. 농지를 사업용으로 인정받는 재촌·자경 3가지 기준과 상속·공익제한 예외를 소득세법 §104의3·시행령 §168의8 기준으로 정리했습니다.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-29',
+    readingMinutes: 8,
+  },
   // 2026-09-28 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'demolished-house-land-capital-gains-2026',

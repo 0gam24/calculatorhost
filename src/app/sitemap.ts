@@ -68,6 +68,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'non-business-land-heavy-taxation-2026',
   'demolished-house-land-capital-gains-2026',
   'individual-house-price-announcement-2026',
   'official-land-price-objection-2026',
