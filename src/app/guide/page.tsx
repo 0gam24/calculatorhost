@@ -70,6 +70,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-09-30 자동 발행 (AI 초안 + 자동 품질 게이트)
+  {
+    slug: 'farmland-ledger-registration-2026',
+    title: '농지대장 등록 의무 2026, 미신고 과태료 총정리',
+    description:
+      '농지를 소유·임차한 사람은 임대차 계약 체결·변경·해제 등이 있으면 60일 이내 농지대장 변경신청을 해야 합니다. 미신고 시 최대 300만원, 거짓신고 시 최대 500만원의 과태료가 부과될 수 있습니다. 농지법 §49의2·§64 기준 신청 대상과 절차 정리.',
+    category: '세금·부동산',
+    publishedAt: '2026-09-30',
+    readingMinutes: 7,
+  },
   // 2026-09-29 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'non-business-land-heavy-taxation-2026',
