@@ -79,7 +79,7 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '자동차세와 취득세 차이는?',
     answer:
-      '자동차세는 매년 납부하는 세금이고, 취득세는 구매 시 한 번만 납부합니다. 3,000만 원 차량 구매 시 취득세 약 300~900만 원, 이후 매년 배기량에 따라 자동차세를 냅니다.',
+      '자동차세는 매년 납부하는 세금이고, 취득세는 구매 시 한 번만 납부합니다. 과세표준 3,000만 원인 비영업용 승용차의 감면 전 취득세는 기본 세율 7%를 적용한 210만 원입니다. 이후 자동차세는 차종·용도·배기량 등에 따라 매년 냅니다.',
   },
   {
     question: '전기차·하이브리드 자동차세는 얼마인가요?',
@@ -427,7 +427,16 @@ export default function VehicleTaxPage() {
                   자동차 취득세는 얼마인가요? (매년 내는 자동차세와 별도)
                 </h2>
                 <p className="text-text-secondary" data-speakable>
-                  비영업용 승용차의 취득세 기본 세율은 7%입니다(지방세법 §12). 예를 들어 과세표준
+                  비영업용 승용차의 취득세 기본 세율은 7%입니다(
+                  <a
+                    href="https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0012&lsiSeq=282559&urlMode=lsScJoRltInfoR"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    지방세법 제12조, 2026년 1월 1일 시행
+                  </a>
+                  ). 예를 들어 과세표준
                   3,000만 원 승용차는 감면 전 취득세가 210만 원입니다. 법령상 경자동차와 영업용
                   자동차의 기본 세율은 4%입니다. 비영업용 승합·화물차 등은 5%, 법령상 해당
                   이륜자동차는 2% 등 차종별 세율이 다릅니다.

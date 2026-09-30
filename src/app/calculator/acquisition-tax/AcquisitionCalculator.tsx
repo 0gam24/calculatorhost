@@ -327,8 +327,8 @@ export function AcquisitionCalculator() {
               ]}
             />
             <p className="text-sm text-text-secondary">
-              법정 국민주택규모와 해당 주택의 전용면적을 확인하세요. 초과 여부는 농어촌특별세 판단에
-              사용합니다.
+              전용면적 기준 일반 85㎡ 이하이며, 수도권 밖 도시지역이 아닌 읍·면은 100㎡ 이하입니다.
+              해당 지역의 법정 기준을 확인해 초과 여부를 선택하세요. 농어촌특별세 판단에 사용합니다.
             </p>
           </>
         )}
@@ -394,7 +394,8 @@ export function AcquisitionCalculator() {
         {result?.note && <p className="text-sm text-text-secondary">계산 조건: {result.note}</p>}
         <p className="text-sm text-text-secondary">
           취득세 추정액입니다. 취득일의 법령과 지방자치단체의 과세표준·세대·특례 판단을 확인하세요.
-          미지원 조건에는 금액을 제시하지 않습니다.
+          국민주택규모는 전용면적 일반 85㎡, 수도권 밖 비도시 읍·면 100㎡ 기준의 해당 여부를 확인해야
+          합니다. 미지원 조건에는 금액을 제시하지 않습니다.
         </p>
       </div>
       <ResultBanner />

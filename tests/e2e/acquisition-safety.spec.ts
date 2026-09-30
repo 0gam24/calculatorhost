@@ -61,12 +61,22 @@ test('acquisition: ordinary residential 600m and 750m have independent tax total
   expect(new URL(page.url()).search).toBe('');
 });
 
-test('acquisition: ambiguous rate rounding, first-home relief and unsupported target block totals', async ({
+test('acquisition: ordinary 700m and 800m retain statutory rounded rates and size-based rural tax', async ({
   page,
 }) => {
+  // Independently fixed statutory fixtures: 7억 => 1.67%, 8억 => 2.33%.
+  // Education is 10% of acquisition; rural is .2% only over national size.
   await fillAmount(page.locator('#acquisition-price'), 700_000_000);
-  await expectBlocked(page);
-  await fillAmount(page.locator('#acquisition-price'), 600_000_000);
+  await expectTotal(page, 12_859_000);
+  await choose(page, '국민주택규모를 초과하나요?', '초과함');
+  await expectTotal(page, 14_259_000);
+  await fillAmount(page.locator('#acquisition-price'), 800_000_000);
+  await expectTotal(page, 22_104_000);
+  await choose(page, '국민주택규모를 초과하나요?', '초과하지 않음');
+  await expectTotal(page, 20_504_000);
+});
+
+test('acquisition: first-home relief and unsupported target block totals', async ({ page }) => {
   await expectTotal(page, 6_600_000);
   await page.locator('#first-home').check();
   await expectBlocked(page);

@@ -161,7 +161,7 @@ export interface AcquisitionTaxBracket {
   rate: number;
 }
 
-/** 주택 일반 매매 세율. 6억 초과~9억 미만 반올림 적용은 현재 계산기에서 확인 전 보류. */
+/** 주택 일반 매매 세율. 6억 초과~9억 미만은 지방세법 §11①8나의 소수 계수 넷째 자리 반올림. */
 export const ACQUISITION_TAX_SINGLE_HOUSE_PURCHASE: AcquisitionTaxBracket[] = [
   { upperBound: 600_000_000, rate: 0.01 }, // 6억 이하 1.0% — 지방세법 §11①8
   { upperBound: 900_000_000, rate: -1 }, // 6억~9억 선형보간 (-1 은 선형 마커, 함수에서 처리)

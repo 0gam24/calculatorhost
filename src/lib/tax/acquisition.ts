@@ -7,8 +7,12 @@
  * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0151&lsiSeq=282559&urlMode=lsScJoRltInfoR
  * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=06&joNo=0028&lsiSeq=288831&urlMode=lsScJoRltInfoR
  * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0005&lsiSeq=285905&urlMode=lsScJoRltInfoR
+ * 일반매매 반올림 교차확인: 대덕구 공식 2020 안내 PDF 인쇄11쪽, 7억1.67%·8억2.33%.
+ * https://www.daedeok.go.kr/ebook/site/src/viewer/download.php?host=main&no=2&site=20200103_154912
+ * 10원 미만 절사: 지방세기본법 §59 [시행 2026-02-05]가 국고금 관리법 §47을 준용.
+ * https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000577035
+ * https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900052683
  * 생애최초 감면, 상속 특례, 부담부증여 및 매매 특례는 조건 확인 후 별도 계산 필요.
- * 6억 초과~9억 미만 일반 매매는 반올림이 불필요한 정확한 세율만 지원.
  * 미지원·미확인 조건은 0원 결과 대신 Error로 반환한다.
  */
 
@@ -58,16 +62,18 @@ export interface AcquisitionTaxResult {
 }
 
 /**
- * 기존 6억~9억 보간식을 보존한다. 소수 넷째 자리까지 정확한 세율만 메인 함수에서 허용한다.
- * 기존 소수점 처리와 지방세법 §11①8나의 반올림 적용을 아직 동일하다고 인증하지 않는다.
+ * 지방세법 §11①8나: ((가격 × 2 / 3억원) - 3) / 100.
+ * 세율의 소수 계수를 소수 다섯째 자리에서 반올림하여 넷째 자리까지 적용한다.
+ * 즉 0.0001 단위(표시 백분율의 0.01%p). 7억→0.0167,8억→0.0233.
+ * 부동소수점 없이 유리수의 양수 round-half-up을 정수로 계산한다.
  */
 function resolveOrdinaryPurchaseRate(price: number): number {
   if (price <= 600_000_000) return 0.01;
   if (price < 900_000_000) {
-    const numerator = price * 2 - 900_000_000;
-    if (numerator % 3_000_000 === 0) return numerator / 30_000_000_000;
-    const legacyRate = ((price * 2) / 300_000_000 - 3) / 100;
-    return Math.round(legacyRate * 100_000) / 100_000;
+    const numerator = BigInt(price) * BigInt(2) - BigInt(900_000_000);
+    const denominator = BigInt(3_000_000);
+    const rateUnits = (numerator * BigInt(2) + denominator) / (denominator * BigInt(2));
+    return Number(rateUnits) / 10_000;
   }
   return 0.03;
 }
@@ -84,15 +90,6 @@ function resolveMainRate(input: AcquisitionTaxInput): number {
     if (input.adjustedArea && input.houseCount === 2) return ACQUISITION_TAX.adjustedTwoHouses;
     if (!input.adjustedArea && input.houseCount === 3)
       return ACQUISITION_TAX.nonAdjustedThreeHouses;
-    if (
-      input.acquisitionPrice > 600_000_000 &&
-      input.acquisitionPrice < 900_000_000 &&
-      (input.acquisitionPrice * 2 - 900_000_000) % 3_000_000 !== 0
-    ) {
-      throw new Error(
-        '이 주택가액의 일반 매매 세율은 반올림 기준 확인 중입니다. 위택스 또는 관할 지자체에서 금액을 확인해 주세요.',
-      );
-    }
     return resolveOrdinaryPurchaseRate(input.acquisitionPrice);
   }
 
