@@ -77,15 +77,6 @@ export function GiftTaxCalculator() {
   // ─── 관계별 공제 표시 ───
   const relationLabel = RELATION_OPTIONS.find((opt) => opt.value === relation)?.label;
 
-  // ─── 신고 기한 안내 ───
-  const getReportingDeadlineExample = () => {
-    const today = new Date();
-    const exampleMonth = (today.getMonth() + 4) % 12 || 12; // 4개월 후 예시
-    const exampleYear = today.getFullYear() + Math.floor((today.getMonth() + 4) / 12);
-    const deadline = new Date(exampleYear, exampleMonth - 1, 0); // 달 말일
-    return deadline.toLocaleDateString('ko-KR');
-  };
-
   return (
     <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="gift-tax">
       <FormCard title="입력">
@@ -169,7 +160,8 @@ export function GiftTaxCalculator() {
           </span>
         </label>
         <p className="text-xs text-text-tertiary">
-          신고 기한: 증여일 속하는 달 말일 + 3개월 (예: {getReportingDeadlineExample()}까지)
+          신고 기한: 증여일이 속하는 달의 말일부터 3개월 이내 (예: 2026년 1월 증여 → 2026년 4월
+          30일까지). 공휴일 등 기한 특례는 별도로 확인하세요.
         </p>
       </FormCard>
 
