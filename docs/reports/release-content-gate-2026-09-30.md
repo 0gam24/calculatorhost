@@ -163,3 +163,19 @@ FAQ 대조 중 실제 지원 범위와 산식까지 확인했다. 초기 매매 
 최신 반올림 복구·자동차 FAQ/출처 교정 후 CLI는 **exit 1, 미등록 191회/25조합, pending 539회/79조합(guide 536, calculator 3), unknown-law 0**이다. 540→539는 자동차 FAQ를 정확한 예시로 고치며 중복 §12 문자열 한 개가 감소한 결과이며, registry 검증 승격이나 새 오류가 아니다. 로그 `content-gate-supported-purchase-statute-cli.log`, 집계 `content-gate-supported-purchase-statute-results.json`를 따로 보존했다. 앞선183/541·191/540 기록을 최신 수치로 덮어 숨기지 않는다.
 
 일반 매매 반올림을 지원하는 최종 소스의 전체 검사는 **63파일 1,164/1,164 통과**, 실패·skip 0이며 `tsc --noEmit`와 Next lint도 exit 0이다. 증거 `../preview-evidence/content-gate-supported-purchase-unit-results.json`. 취득세 66개에는 공식 7억·8억원 세목/합계와 6억·9억 ±1원, 반올림 정확한 절반 지점 ±1원, 세목별 10원 버림이 포함된다. 기존 합계는 같으나 세목 구성이 잘못됐던 교차검증도 공식 구성액으로 검증한다.
+
+일반 매매 복구 소스 커밋은 `83ca5bb28d196e16d76b46b0a489126c60d75faa`이다. 그 이후 manifest를 다시 수동 생성하여 435개 URL 키와 날짜 유효성을 확인했고, 직전 snapshot 대비 마지막으로 바뀐 취득세·자동차세 **2개 경로만** 새 수정일을 반영했다(`content-gate-supported-purchase-manifest-results.json`). 전체 후속 내용 교정 기준으로는 동일한 12개 페이지 범위다. 원격 push나 운영 반영은 없다.
+
+## 최종 생성 화면 검증 및 증거 한계
+
+검증 제품 소스는 `83ca5bb`와 최신 수정일 manifest다. 직접 Next production build는 exit 0, **503/503 정적 페이지** 생성이었다. `content-gate-supported-purchase-build.log`에 보존했다. 생성된 sitemap도 기존 **435 URL**이다. 생성 robots는 필수 `/_next/static/`와 `/_next/image`를 허용한다.
+
+Google Chrome headless의 별도 프로필에서 수정 12개 URL의 실제 HTTP 200·H1 하나·title/description·self canonical·Breadcrumb 및 Article/SoftwareApplication·main 내 공식 출처 링크·런타임 오류를 검증해 **12/12 통과**했다. 자동차세 페이지의 공식 링크 부재를 처음 발견한 11/12 실패 JSON도 보존했으며, 제12조 링크 추가와 틀린 FAQ의 3,000만원 차량 300~900만원 예시를 감면 전 비영업용 승용 210만원으로 교정했다. 최신 증거는 `content-gate-supported-purchase-response-results.json`이다.
+
+취득세 최신 브라우저 E2E는 데스크톱8+모바일8 **16/16 통과**, 26.329초, 실패·skip·flaky 0이다. 7억·8억원의 법정 세율/합계(규모 이하·초과), 7.5억원 결과 복사, 증여 과세표준·전체 가액의 분리, 미확인/미지원 조건의 금액·복사·다음 계산 차단과 결과 확인 focus를 확인했다. `acquisition-supported-purchase-e2e-results.json`이 최신 실제 실행 증거다. 별도 31개 공통 UI의 74/74 결과와 앞선 핵심12/12 결과는 보존했으며, 이번 16개와 독립 전체 시나리오 수로 합산하지 않는다. 마지막 일반 매매 변경 후 과거 전체74를 다시 반복한 것은 아니다.
+
+증거 보존 실수: 이전 취득세14개 실제 실행 JSON `acquisition-safety-e2e-results.json`은 후속 `--list`가 동일 reporter 경로에 출력해 발견 목록으로 덮었다. 당시 실제 통과 stdout·기록·이미지는 남았지만 원래 실행 JSON은 복구되지 않았으므로 재사용하지 않는다. 최신16개 완전한 JSON을 기준으로 판단한다. 기존74/핵심12/단위 검사 및 초기12URL 실패 JSON은 보존됐다. 발견 목록 reporter와 실제 실행 출력 경로를 분리했다.
+
+모바일 390×844 정상 7억 화면과 증여 미확인 화면의 스크린샷을 새 이름으로 저장했다. 정상 화면은 root가 픽셀로 직접 확인하여 **12,859,000원·1.67%** 정합과 입력/오류/결과 겹침 없음이 확인됐다. 취득세는 필요한 조건이 많아 모바일 첫 화면 안에 결과까지 들어오지는 않는다. 로컬 SDK OFF이므로 실제 Auto Ads 겹침/CLS나 이미 로드된 운영 SDK의 개인정보 전송을 입증하는 검사가 아니다.
+
+미해결 배포 게이트는 Cloudflare 실제 production/branch/build/rollback 설정과 Auto Ads/GA4 운영 확인이다. 부모가 계정 접근을 담당하고 있으며, 새 인증정보·권한을 만들거나 보안 확인을 우회하지 않는다. 일반 7억·8억원 매매 제한은 해소됐다. 법적 조건이 미확인인 증여·상속·감면·특례는 제한을 명시하고 확정 금액을 내지 않는다. 원본과 원격은 변경하지 않았고 모든 자동화 OFF를 유지한다.
