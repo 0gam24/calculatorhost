@@ -92,7 +92,13 @@
 > - 클라우드 루틴 `03 calculatorhost (05:00)`: **운영자가 삭제** (2026-09-30 확인, 루틴 목록에 calculatorhost 관련 0개)
 > - GitHub Actions `daily-auto-post`·`auto-guide-cron`: **disabled_manually** (`gh workflow enable <file>` 로만 복구). 이중 잠금으로 repo variable `DAILY_AUTO_POST_ENABLED=false` 유지
 > - `scripts/daily-topic-pool.mjs` `POOL_FROZEN=true` (pickDailyTopic 항상 null)
-> - 남은 스케줄 워크플로는 발행과 무관: `today-update`(today.md 로그), `ralph-daily`·`ralph-daily-recommendation`(리포트·이슈), `sync-public-data`(공공데이터)
+> - **(2026-09-30 운영자 지시: "혼자 하는 액션은 모두 멈춰") GitHub Actions 10개 전부 disabled_manually.**
+>   예약 실행(today-update·sync-public-data·ralph-daily·ralph-daily-recommendation)과 push/PR 트리거(Auto Guide Quality Gate·IndexNow·Lighthouse CI·SEO+AEO+GEO Gate) 모두 포함. 운영자 명시 요청 없이 다시 켜지 말 것.
+>   - CI 게이트 대체: push 전 로컬에서 `npm run typecheck && npm run lint && npm test && npm run build` (CLAUDE.md 커밋 전 필수와 동일). 가이드는 `node scripts/check-guide-quality.mjs <page.tsx>` 도 로컬 실행
+>   - IndexNow 는 자동 전송 안 됨. 필요 시 운영자 요청으로 워크플로를 1회만 켜서 수동 실행
+>   - 공공데이터(금리·환율 등) 자동 갱신도 멈춤 → 계산기 인용 수치가 낡을 수 있으니 분기 1회 `npm run sync-data` 수동 실행 권장
+>   - GitHub 자체 자동화: Dependabot 설정 없음 · 보안 자동 수정 꺼짐 · CodeQL 미설정 (2026-09-30 확인)
+>   - 유일하게 남은 자동 동작은 **main push 시 Cloudflare Pages 배포**. 운영자가 push 할 때만 일어나며 수동 발행이 사이트에 반영되는 경로이므로 유지
 > - 사유: 8/30~9/28 자동발행 33편이 28일 노출 27·클릭 0. 사이트 전체도 5개월간 가이드 4배 증가에 클릭 16→14 (성숙 코호트 편당 월 0.02~0.03클릭). 사전 검수 없는 자동 생성 콘텐츠는 AdSense 게시자 정책(수동 검토·큐레이션 없는 자동 생성 콘텐츠에 광고 게재 금지) 노출면.
 > - 후속 정리: 33편 중 18편 삭제(노출 0 · 기존 페이지 인바운드 0 · 상속·증여 클러스터 아님). 남은 15편은 운영자 검수 대상(3~6주차).
 > - 재개 조건: 12/31 판정 이후, 수요 근거 + 운영자 사전 검수 + 주 1회 PR(auto-merge 없음) 형태로만.
