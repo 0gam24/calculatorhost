@@ -20,6 +20,36 @@ import {
 } from '@/lib/tax/income';
 import { INCOME_TAX_BRACKETS } from '@/lib/constants/tax-rates-2026';
 
+describe('검색 가이드 보험료 예시 회귀', () => {
+  it.each([
+    [0, 0],
+    [2_999_999, 26_999],
+    [3_000_000, 27_000],
+    [3_000_001, 27_000],
+  ])('고용보험 %i원의 원 단위 경계는 %i원', (income, expected) => {
+    expect(calculateEmployment(income)).toBe(expected);
+  });
+  it.each([1, 6, 7, 12])(
+    '2026년 %i월 월급 300만원 보험료는 같은 연중 요율을 적용한다',
+    (calculationMonth) => {
+      const result = calculateTakeHome({
+        wageType: 'monthly',
+        wageAmount: 3_000_000,
+        severance: 'separate',
+        nontaxableMonthly: 0,
+        dependents: 1,
+        children: 0,
+        calculationMonth,
+      });
+      expect(result.pension).toBe(142_500);
+      expect(result.health).toBe(107_850);
+      expect(result.longTermCare).toBe(14_171);
+      expect(result.employment).toBe(27_000);
+      expect(result.totalInsuranceDeductions).toBe(291_521);
+    },
+  );
+});
+
 describe('calculateProgressiveTax', () => {
   it('0원 → 0원', () => {
     expect(calculateProgressiveTax(0, INCOME_TAX_BRACKETS)).toBe(0);
@@ -209,7 +239,7 @@ describe('calculateHealth / LongTermCare / Employment', () => {
   });
 
   it('고용보험: 월 300만 × 0.9%', () => {
-    expect(calculateEmployment(3_000_000)).toBe(Math.floor(3_000_000 * 0.009));
+    expect(calculateEmployment(3_000_000)).toBe(27_000);
   });
 });
 

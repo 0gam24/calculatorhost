@@ -63,6 +63,8 @@ export interface IncomeCalculationResult {
   employment: number;
   incomeTax: number;
   localIncomeTax: number;
+  /** 월 보험료 공제 합계. 소득세와 지방소득세 제외. */
+  totalInsuranceDeductions: number;
 
   /** 월 실수령액 */
   monthlyNetIncome: number;
@@ -156,7 +158,9 @@ export function calculateLongTermCare(health: number): number {
  * 고용보험 (근로자 부담)
  */
 export function calculateEmployment(monthlyIncome: number): number {
-  return Math.floor(monthlyIncome * SOCIAL_INSURANCE_2026.employment.employee);
+  // 3,000,000 × 0.009 = 26,999.999999999996 같은 이진소수 오차로 1원 덜 절사하지 않도록 한다.
+  const numerator = Math.round(SOCIAL_INSURANCE_2026.employment.employee * 1_000);
+  return Math.floor((monthlyIncome * numerator) / 1_000);
 }
 
 /**
@@ -303,6 +307,7 @@ export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculat
     employment,
     incomeTax,
     localIncomeTax,
+    totalInsuranceDeductions: pension + health + longTermCare + employment,
     monthlyNetIncome,
     hourlyWage: Math.floor(monthlyNetIncome / 209),
     annualNetIncome: monthlyNetIncome * 12,

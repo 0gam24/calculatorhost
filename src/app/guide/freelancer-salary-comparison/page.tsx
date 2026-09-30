@@ -1,5 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { calculateTakeHome } from '@/lib/tax/income';
+import { formatKRW } from '@/lib/utils';
+const SALARY_EXAMPLES = [30_000_000, 50_000_000, 100_000_000].map((wageAmount) =>
+  calculateTakeHome({
+    wageType: 'yearly',
+    wageAmount,
+    severance: 'separate',
+    nontaxableMonthly: 0,
+    dependents: 1,
+    children: 0,
+    calculationMonth: 7,
+  }),
+);
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
@@ -15,16 +28,30 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/freelancer-salary-comparison/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-03';
+const DATE_MODIFIED = '2026-09-30';
 
 export const metadata: Metadata = {
   title: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
   description:
     '같은 연봉 5천만 원 기준 프리랜서와 일반직의 실수령액 차이. 4대보험·세금·경비 비교. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
-  keywords: ['프리랜서 실수령액', '프리랜서 vs 직장인', '프리랜서 4대보험', '프리랜서 종합소득세', '사업소득 vs 근로소득', '3.3% 원천징수'],
+  keywords: [
+    '프리랜서 실수령액',
+    '프리랜서 vs 직장인',
+    '프리랜서 4대보험',
+    '프리랜서 종합소득세',
+    '사업소득 vs 근로소득',
+    '3.3% 원천징수',
+  ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost' }],
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
+      },
+    ],
     title: '프리랜서 vs 일반직 실수령액 비교 2026',
     description: '같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이 시뮬레이션.',
     url: URL,
@@ -45,17 +72,17 @@ const FAQ_ITEMS = [
   {
     question: '프리랜서가 단순경비율과 기준경비율 중 어떤 것을 선택해야 하나요?',
     answer:
-      '단순경비율: 영수증 없어도 업종별 일정 비율(IT 64.1%, 컨설팅 70.1% 등)을 경비로 인정. 기준경비율: 실제 영수증으로 입증, 일반적으로 단순경비율보다 큰 경비 인정 가능. 매출 7,500만 미만이면 단순경비율 자동 적용. 7,500만~3억은 단순/기준 선택, 3억 초과는 기준경비율 의무.',
+      '장부를 작성하면 실제 필요경비로 신고합니다. 추계신고 시 단순·기준경비율은 업종코드, 직전연도 수입금액, 당해연도 수입금액과 신규사업자 여부에 따라 적용이 달라집니다. 모든 프리랜서에게 하나의 매출 기준이나 IT 경비율이 자동 적용되는 것은 아닙니다.',
   },
   {
     question: '프리랜서는 4대보험을 어떻게 가입하나요?',
     answer:
-      '국민연금: 지역가입자로 본인 100% 부담 (소득의 9%). 건강보험: 지역가입자로 소득·재산·자동차 점수제. 고용보험·산재보험: 임의 가입(예술인·특수고용직 의무화 추세). 일반직 4대보험은 회사가 절반 부담하지만 프리랜서는 본인 100%, 부담률이 약 2배.',
+      '국민연금 지역가입 대상자는 2026년 기준소득월액의 9.5%를 본인이 부담합니다. 가입대상·납부예외는 개인별로 확인합니다. 지역 건강보험은 소득과 재산 등을 반영하므로 매출에 3.595%를 곱하는 직장가입자 방식과 다릅니다. 직장인은 국민연금 4.75%, 건강보험 3.595%, 건강보험료의 13.14%인 장기요양보험료와 고용보험 근로자 부담분을 공제합니다. 예술인·노무제공자 등의 고용·산재보험은 별도 가입조건을 확인하세요.',
   },
   {
     question: '프리랜서가 직장인보다 실수령액이 적을 수도 있나요?',
     answer:
-      '네. 같은 연 5,000만 원 매출이라도 경비 인정이 적고 4대보험 본인 100% 부담이면 실수령액이 직장인 동일 연봉보다 적을 수 있음. 단, 경비를 충분히 인정받고(IT 단순경비율 64.1% 등) 절세 전략을 잘 활용하면 직장인보다 유리할 수도 있음. 시뮬레이션 필수.',
+      '같은 금액의 사업 매출과 근로 연봉은 직접 비교할 수 없습니다. 프리랜서는 실제 사업 비용, 최종 세금, 공단에서 확인한 보험료를 모두 차감해야 사용할 수 있는 돈을 알 수 있습니다. 경비율로 세금 계산에 인정된 금액이 실제 현금 지출액과 같다고 가정하면 안 됩니다.',
   },
   {
     question: 'N잡러(직장 + 프리랜서)는 어떻게 신고하나요?',
@@ -88,7 +115,8 @@ export default function FreelancerSalaryComparisonPage() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '프리랜서 vs 일반직 실수령액 비교 2026',
-    description: '같은 연봉 5천만 원이라도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액은 큰 차이. 4대보험 부담·종합소득세·경비 인정 차이를 시뮬레이션과 함께 비교.',
+    description:
+      '같은 연봉 5천만 원이라도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액은 큰 차이. 4대보험 부담·종합소득세·경비 인정 차이를 시뮬레이션과 함께 비교.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -98,11 +126,26 @@ export default function FreelancerSalaryComparisonPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
@@ -123,19 +166,19 @@ export default function FreelancerSalaryComparisonPage() {
                   프리랜서 vs 일반직 실수령액 비교 (2026)
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  같은 연 5천만 원 받아도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액은
-                  최대 1천만 원 이상 차이 날 수 있습니다. 4대보험 부담·종합소득세·경비 인정 차이를
-                  시뮬레이션과 함께 비교합니다.
+                  프리랜서의 매출과 직장인의 연봉을 비교할 때는 실제 사업 비용, 최종 세금, 보험료와
+                  퇴직금 등을 함께 봐야 합니다. 2026년 보험료 기준을 적용한 직장인 예시와 프리랜서
+                  비교에 필요한 조건을 정리합니다.
                 </p>
               </header>
 
               <section aria-label="요약 비교" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-3 text-xl font-bold">한눈에 보기, 핵심 차이</h2>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse" data-speakable>
+                  <table className="w-full border-collapse text-sm" data-speakable>
                     <caption className="sr-only">프리랜서와 일반직 핵심 차이 비교</caption>
                     <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
+                      <tr className="border border-border-base bg-primary-500/10">
                         <th className="px-3 py-2 text-left">항목</th>
                         <th className="px-3 py-2">프리랜서 (사업소득)</th>
                         <th className="px-3 py-2">일반직 (근로소득)</th>
@@ -154,13 +197,19 @@ export default function FreelancerSalaryComparisonPage() {
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">4대보험 본인부담</td>
-                        <td className="px-3 py-2 text-danger-700 dark:text-danger-300">100% (지역가입자)</td>
-                        <td className="px-3 py-2 text-primary-700 dark:text-primary-300">50% (회사 50%)</td>
+                        <td className="text-danger-700 dark:text-danger-300 px-3 py-2">
+                          국민연금·지역 건강보험 본인 부담
+                        </td>
+                        <td className="px-3 py-2 text-primary-700 dark:text-primary-300">
+                          연금·건강보험 절반, 고용·산재는 별도
+                        </td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">경비 인정</td>
-                        <td className="px-3 py-2 text-primary-700 dark:text-primary-300">단순/기준경비율 (수입의 60~80%)</td>
-                        <td className="px-3 py-2">근로소득공제 (정액)</td>
+                        <td className="px-3 py-2 text-primary-700 dark:text-primary-300">
+                          실제 필요경비 또는 적용 가능한 추계 경비율
+                        </td>
+                        <td className="px-3 py-2">총급여 구간별 근로소득공제</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">신고</td>
@@ -169,7 +218,7 @@ export default function FreelancerSalaryComparisonPage() {
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">퇴직금</td>
-                        <td className="px-3 py-2 text-danger-700 dark:text-danger-300">없음</td>
+                        <td className="text-danger-700 dark:text-danger-300 px-3 py-2">없음</td>
                         <td className="px-3 py-2">법정 (1년 이상)</td>
                       </tr>
                       <tr className="border border-border-base">
@@ -183,137 +232,86 @@ export default function FreelancerSalaryComparisonPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">시나리오 1. 연 3,000만 원 (월 250만), 저소득 구간</h2>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (IT 단순경비율 64.1%)</h3>
-                    <ul className="space-y-1 text-text-secondary">
-                      <li>총 매출: 3,000만</li>
-                      <li>경비 인정: 1,923만 (64.1%)</li>
-                      <li>소득금액: 1,077만</li>
-                      <li>3.3% 원천징수: 약 99만</li>
-                      <li>종합소득세: 약 70만 (6%)</li>
-                      <li>건강보험: 약 200만 (지역·재산 점수)</li>
-                      <li>국민연금: 약 270만 (9% 전액 자부담)</li>
-                    </ul>
-                    <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 2,358만</strong> (환급 후 최종)
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">일반직 (부양 1인)</h3>
-                    <ul className="space-y-1 text-text-secondary">
-                      <li>연봉: 3,000만</li>
-                      <li>4대보험(본인): 약 270만</li>
-                      <li>소득세+지방세: 약 60만</li>
-                      <li>(회사 4대보험 부담 270만 별도)</li>
-                      <li>실제 비용: 330만 (회사 부담)</li>
-                    </ul>
-                    <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 2,670만</strong> (회사 비용 제외)
-                    </p>
-                  </div>
+                <h2 className="text-2xl font-bold">직장인 예시: 연 3천만·5천만·1억원</h2>
+                <p>
+                  퇴직금 별도, 비과세 급여 없음, 본인만 기본공제, 자녀세액공제 없음, 2026년 7월
+                  보험료 기준입니다. 급여 계산기와 같은 함수로 산출하며, 실제 국세청 간이세액표
+                  조회가 아닌 소득세 근사치입니다. 사회보험료 공제·근로소득세액공제·특별공제와 실제
+                  연말정산은 반영하지 않습니다.
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left">월급·보험료·세금 참고 예시</caption>
+                    <thead>
+                      <tr>
+                        <th scope="col">연봉</th>
+                        <th scope="col">월 보험료</th>
+                        <th scope="col">월 소득세·지방세</th>
+                        <th scope="col">월 실수령 추정</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SALARY_EXAMPLES.map((row) => (
+                        <tr key={row.annualGrossIncome} className="border-b border-border-base">
+                          <td className="p-3">{formatKRW(row.annualGrossIncome)}</td>
+                          <td className="p-3">{formatKRW(row.totalInsuranceDeductions)}</td>
+                          <td className="p-3">
+                            소득세 {formatKRW(row.incomeTax)} / 지방세{' '}
+                            {formatKRW(row.localIncomeTax)}
+                          </td>
+                          <td className="p-3">{formatKRW(row.monthlyNetIncome)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-                <p className="text-sm text-text-secondary">
-                  <strong>차이</strong>: 일반직 약 +312만 (월 26만). 저소득 구간에서는 회사 4대보험 50% 부담 효과가 압도적이어서
-                  프리랜서가 세금 우대를 받아도 실수령액에선 불리합니다. 다만 프리랜서는 경비 추가 인정 시뮬도 검토 필요.
+                <p>
+                  하반기 기준을 매월 같게 적용한 예시이며, 국민연금 상하한에 해당하는 경우 1~6월
+                  값은 달라질 수 있습니다.
                 </p>
               </section>
-
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">시나리오 2. 연 5,000만 원 (월 417만)</h2>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (IT 단순경비율)</h3>
-                    <ul className="space-y-1 text-text-secondary">
-                      <li>총 매출: 5,000만</li>
-                      <li>경비 인정: 3,205만 (64.1%)</li>
-                      <li>소득금액: 1,795만</li>
-                      <li>종합소득세: 약 145만 (15% 구간)</li>
-                      <li>건강보험: 약 330만</li>
-                      <li>국민연금: 약 450만</li>
-                    </ul>
-                    <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 4,075만</strong>
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">일반직 (부양 1인)</h3>
-                    <ul className="space-y-1 text-text-secondary">
-                      <li>연봉: 5,000만</li>
-                      <li>4대보험(본인): 약 450만</li>
-                      <li>소득세+지방세: 약 350만</li>
-                    </ul>
-                    <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 4,200만</strong>
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-text-secondary">
-                  <strong>차이</strong>: 거의 비슷 (일반직 +125만). 프리랜서는 경비 인정 잘 받으면 일반직과
-                  거의 동률 달성 가능.
+                <h2 className="text-2xl font-bold">프리랜서 매출과 비교하는 순서</h2>
+                <ol className="ml-5 list-decimal space-y-2">
+                  <li>
+                    총매출에서 실제 사업에 쓴 비용을 확인합니다. 세금 산정용 경비율과 현금 지출은
+                    구분합니다.
+                  </li>
+                  <li>
+                    사업소득·인적공제·실제 보험료 납부액 등을 입력해 최종 종합소득세와 지방소득세를
+                    추정합니다. 3.3% 원천징수는 기납부세액이므로 최종 세금에 다시 더해 빼지
+                    않습니다.
+                  </li>
+                  <li>
+                    공단에서 확인한 지역 건강보험료와 국민연금 납부액을 반영합니다. 매출을 국민연금
+                    기준소득으로 단정하거나 지역 건강보험료를 임의로 정하지 않습니다.
+                  </li>
+                  <li>
+                    실제로 쓸 수 있는 금액과 별개로 퇴직금, 유급휴가, 장비·사무실 비용, 계약 공백을
+                    비교합니다.
+                  </li>
+                </ol>
+                <p>
+                  개인별 실제 비용과 보험료가 없으므로 프리랜서의 확정 실수령액이나 직장인 대비
+                  우위를 일률적인 금액으로 제시하지 않습니다.
                 </p>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold">시나리오 3. 연 1억 원 (고소득)</h2>
-                <div className="grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">프리랜서 (기준경비율 권장)</h3>
-                    <ul className="space-y-1 text-text-secondary">
-                      <li>총 매출: 1억</li>
-                      <li>실제 경비(영수증): 4,000만</li>
-                      <li>소득금액: 6,000만</li>
-                      <li>종합소득세: 약 884만 (24% 구간)</li>
-                      <li>건강·연금: 약 1,200만</li>
-                    </ul>
-                    <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 7,916만</strong>
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <h3 className="mb-2 font-semibold text-text-primary">일반직</h3>
-                    <ul className="space-y-1 text-text-secondary">
-                      <li>연봉: 1억</li>
-                      <li>4대보험(본인): 약 900만</li>
-                      <li>소득세+지방세: 약 1,400만</li>
-                    </ul>
-                    <p className="mt-2 pt-2 border-t border-border-base">
-                      <strong>실수령: 약 7,700만</strong>
-                    </p>
-                  </div>
-                </div>
-                <p className="text-sm text-text-secondary">
-                  <strong>차이</strong>: 프리랜서 +216만 우위. 고소득 구간에서는 경비 인정 효과가 4대보험
-                  부담을 능가. 단, 영수증·세무 신고 부담 대신 자율성·세무 리스크 감수.
-                </p>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold">의사결정 가이드</h2>
-                <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm text-text-secondary leading-loose">
-                  <p><strong className="text-text-primary">프리랜서가 유리한 경우</strong></p>
-                  <ul className="ml-5 list-disc">
-                    <li>고소득(연 5천 이상) + 경비 인정 가능한 업종(IT 64.1%, 컨설팅 70.1%, 디자인 등)</li>
-                    <li>실제 사업 비용 영수증 관리 가능</li>
-                    <li>퇴직금·고용 안정보다 자율성·복수 클라이언트 선호</li>
-                  </ul>
-                  <p className="mt-3"><strong className="text-text-primary">일반직이 유리한 경우</strong></p>
-                  <ul className="ml-5 list-disc">
-                    <li>저소득(연 3천 이하), 회사 4대보험 50% 부담 효과 큼</li>
-                    <li>퇴직금·연차·복지 + 고용 안정 우선</li>
-                    <li>세무 신고·영수증 관리 부담 회피</li>
-                  </ul>
-                </div>
               </section>
 
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-2 text-lg font-semibold text-danger-700 dark:text-danger-300">주의사항</h2>
-                <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
-                  <li>• 본 시뮬레이션은 일반론(경비율 IT 기준, 부양 1인), 실제는 업종·부양가족·세액공제에 따라 달라집니다.</li>
-                  <li>• 건강·연금 보험료는 지역가입자 점수제로 재산·자동차 등 추가 변수 영향. 정확한 부담은 건강보험공단 확인.</li>
+                <h2 className="text-danger-700 dark:text-danger-300 mb-2 text-lg font-semibold">
+                  주의사항
+                </h2>
+                <ul className="text-danger-700 dark:text-danger-300 space-y-2 text-sm">
+                  <li>
+                    • 급여 예시는 근사 세금 계산이며 실제 급여명세서·연말정산과 차이가 납니다.
+                    프리랜서 매출과 직접 비교하지 마세요.
+                  </li>
+                  <li>
+                    • 지역 건강보험료는 소득·재산 등, 국민연금은 신고한 기준소득월액과 가입조건을
+                    확인해야 합니다. 자동차에 대한 지역 건강보험료 부과는 2024년 폐지되었습니다.
+                  </li>
                   <li>• 프리랜서 종합소득세 신고는 5월. 무신고 시 가산세 20%, 반드시 신고.</li>
                 </ul>
               </section>
@@ -321,11 +319,52 @@ export default function FreelancerSalaryComparisonPage() {
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 도구</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/calculator/freelancer-tax/" className="text-primary-600 underline dark:text-primary-500">프리랜서 종합소득세 계산기</Link></li>
-                  <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기 (직장인)</Link></li>
-                  <li>→ <Link href="/calculator/n-jobber-insurance/" className="text-primary-600 underline dark:text-primary-500">N잡러 건강보험 계산기</Link></li>
-                  <li>→ <Link href="/calculator/vat/" className="text-primary-600 underline dark:text-primary-500">부가가치세 계산기 (프리랜서 사업자)</Link></li>
-                  <li>→ <Link href="/guide/salary-negotiation-take-home/" className="text-primary-600 underline dark:text-primary-500">연봉 협상 실수령액 가이드</Link>, 세전 인상액이 세후로 얼마나 남는지 협상 전 확인</li>
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/calculator/freelancer-tax/"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      프리랜서 종합소득세 계산기
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/calculator/salary/"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      연봉 실수령액 계산기 (직장인)
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/calculator/n-jobber-insurance/"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      N잡러 건강보험 계산기
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/calculator/vat/"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      부가가치세 계산기 (프리랜서 사업자)
+                    </Link>
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link
+                      href="/guide/salary-negotiation-take-home/"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      연봉 협상 실수령액 가이드
+                    </Link>
+                    , 세전 인상액이 세후로 얼마나 남는지 협상 전 확인
+                  </li>
                 </ul>
               </section>
 
@@ -334,13 +373,57 @@ export default function FreelancerSalaryComparisonPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §19·§20 · 국민건강보험법 §69 · 국민연금법 §88 ·
-                  부가가치세법 시행령 §111. 참고:{' '}
-                  <a href="https://www.hometax.go.kr/guide/0206000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종합소득세 신고</a>,{' '}
-                  <a href="https://www.nhis.or.kr/nhis/together/wbhkup02400m01.do" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단 지역가입자 보험료 계산</a>,{' '}
-                  <a href="https://www.nps.or.kr/jsppage/support/insure_01_01.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민연금공단 지역가입자 정보</a>.
+                  <strong>법적 근거</strong>: 소득세법 §19·§20 · 국민건강보험법 §69 · 국민연금법 §88
+                  · 소득세법 §55. 참고:{' '}
+                  <a
+                    href="https://www.hometax.go.kr/guide/0206000000.jsp"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국세청 홈택스 종합소득세 신고
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.nhis.or.kr/nhis/together/wbhkup02400m01.do"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국민건강보험공단 지역가입자 보험료 계산
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0038M0.do?menuId=MN24001113"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국민연금공단 보험료 기준
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.mohw.go.kr/menu.es?mid=a10705010500"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline"
+                  >
+                    2026년 건강보험 요율
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.mohw.go.kr/menu.es?mid=a10712030100"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline"
+                  >
+                    2026년 장기요양보험 요율
+                  </a>
+                  .
                 </p>
-                <p><strong>업데이트</strong>: {DATE_MODIFIED}</p>
+                <p>
+                  <strong>업데이트</strong>: {DATE_MODIFIED}
+                </p>
               </section>
             </article>
           </main>

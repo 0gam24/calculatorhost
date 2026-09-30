@@ -3,6 +3,7 @@
 import Script from 'next/script';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
+import { canLoadAdsOnPath, canLoadNaverTracker } from '@/lib/analytics/public-service-policy';
 
 interface Props {
   gaId: string;
@@ -37,19 +38,24 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
   }, [live, gaReady, canonical]);
 
   useEffect(() => {
-    // Naver's bundled tracker reads location itself. Do not activate it on URLs containing user data.
-    if (!live || !naverReady || window.location.search || window.location.hash) return;
+    // The bundled tracker reads both location and document.referrer itself.
+    if (!live || !naverReady || !canLoadNaverTracker(window.location.href, document.referrer))
+      return;
     const client = window as NaverWindow;
     if (client.wcs && client.wcs_do) client.wcs_do();
   }, [live, naverReady, pathname]);
 
   if (!live) return null;
-  const policyPage = ['/about', '/privacy', '/terms', '/contact'].some(
-    (p) => pathname === p || pathname === `${p}/`,
-  );
+  const robotsContent = Array.from(
+    document.querySelectorAll<HTMLMetaElement>('meta[name="robots"]'),
+  )
+    .map((meta) => meta.content)
+    .join(',');
+  const adsAllowed = canLoadAdsOnPath(pathname, robotsContent);
+  const naverAllowed = canLoadNaverTracker(window.location.href, document.referrer);
   return (
     <>
-      {adsenseClient && !policyPage ? (
+      {adsenseClient && adsAllowed ? (
         <Script
           id="adsbygoogle-init"
           src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
@@ -77,7 +83,7 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
           setGaReady(true);
         }}
       />
-      {naverAnalyticsId && !window.location.search && !window.location.hash ? (
+      {naverAnalyticsId && naverAllowed ? (
         <Script
           id="naver-library"
           src="https://wcs.naver.net/wcslog.js"

@@ -5,11 +5,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import Icon, { type IconName } from '@/components/ui/Icon';
-import {
-  buildBreadcrumbJsonLd,
-  buildWebPageJsonLd,
-  buildItemListJsonLd,
-} from '@/lib/seo/jsonld';
+import { buildBreadcrumbJsonLd, buildWebPageJsonLd, buildItemListJsonLd } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/guide/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -21,7 +17,14 @@ export const metadata: Metadata = {
     '한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정을 위한 실전 가이드 모음. 시기성 콘텐츠(5월 종소세, 7월 재산세) + 분야별 절세·전략 가이드.',
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가이드, 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost' }],
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '가이드, 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
+      },
+    ],
     title: 'calculatorhost 가이드, 카테고리별 모음',
     description: '시기성 + 분야별 실전 의사결정 가이드.',
     url: URL,
@@ -95,7 +98,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'title-trust-deemed-gift-2026',
     title: '명의신탁 증여의제 2026, 차명 주식·부동산 세금 차이',
     description:
-      '차명 주식은 조세회피 목적이 있으면 명의자 앞으로 증여세가 부과됩니다. 반면 차명 부동산은 증여의제가 아니라 부동산실명법상 과징금·형사처벌 대상입니다. 상증법 §45의2와 부동산실명법 §3·§5·§7 기준으로 정리했습니다.',
+      '차명 주식은 조세회피 목적이 있으면 실제소유자에게 증여세 납부의무가 있습니다. 반면 차명 부동산은 증여의제가 아니라 부동산실명법상 과징금·형사처벌 대상입니다. 상증법 §45의2와 부동산실명법 §3·§5·§7 기준으로 정리했습니다.',
     category: '세금',
     publishedAt: '2026-09-20',
     readingMinutes: 8,
@@ -2892,8 +2895,7 @@ export const GUIDES: GuideEntry[] = [
   {
     slug: 'february-tax-refund-tracking',
     title: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비',
-    description:
-      '환급 결과 확인 + 누락 공제 정정 + 경정청구 + 5월 종소세 신고 준비 체크리스트.',
+    description: '환급 결과 확인 + 누락 공제 정정 + 경정청구 + 5월 종소세 신고 준비 체크리스트.',
     category: '근로',
     publishedAt: '2026-05-03',
     readingMinutes: 7,
@@ -3750,11 +3752,11 @@ const SEASONAL_GUIDES = GUIDES.filter((g) => g.seasonal);
 
 // 카테고리별 그룹화
 const GUIDES_BY_CATEGORY: Record<GuideCategory, GuideEntry[]> = {
-  '세금': [],
+  세금: [],
   '세금·부동산': [],
-  '금융': [],
-  '투자': [],
-  '근로': [],
+  금융: [],
+  투자: [],
+  근로: [],
 };
 GUIDES.forEach((g) => GUIDES_BY_CATEGORY[g.category].push(g));
 
@@ -3790,14 +3792,23 @@ export default function GuideIndexPage() {
       name: g.title,
       url: `https://calculatorhost.com/guide/${g.slug}/`,
     })),
-    'calculatorhost 가이드'
+    'calculatorhost 가이드',
   );
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
+      />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
@@ -3807,12 +3818,10 @@ export default function GuideIndexPage() {
             <article className="mx-auto max-w-5xl space-y-10">
               <header>
                 <Breadcrumb items={[{ name: '홈', href: '/' }, { name: '가이드' }]} />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  가이드, 카테고리별 모음
-                </h1>
+                <h1 className="mb-3 text-4xl font-bold tracking-tight">가이드, 카테고리별 모음</h1>
                 <p className="text-lg text-text-secondary">
-                  한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정 가이드.
-                  현재 <strong>{GUIDES.length}개</strong> 발행 · 5개 카테고리 · 매월 추가됨.
+                  한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정 가이드. 현재{' '}
+                  <strong>{GUIDES.length}개</strong> 발행 · 5개 카테고리 · 매월 추가됨.
                 </p>
               </header>
 
@@ -3826,7 +3835,7 @@ export default function GuideIndexPage() {
                 </a>
                 <a
                   href="#seasonal"
-                  className="rounded-chip border border-danger-500 bg-danger-500/10 px-3 py-1.5 text-sm font-semibold text-danger-700 dark:text-danger-300 hover:bg-danger-500/20"
+                  className="text-danger-700 dark:text-danger-300 rounded-chip border border-danger-500 bg-danger-500/10 px-3 py-1.5 text-sm font-semibold hover:bg-danger-500/20"
                 >
                   시즌 가이드 ({SEASONAL_GUIDES.length})
                 </a>
@@ -3849,7 +3858,7 @@ export default function GuideIndexPage() {
               </nav>
 
               {/* 최근 발행 (큐레이션). 전량 목록은 카테고리 허브가 담당한다. */}
-              <section id="all" aria-label="최근 발행 가이드" className="space-y-4 scroll-mt-4">
+              <section id="all" aria-label="최근 발행 가이드" className="scroll-mt-4 space-y-4">
                 <header className="flex items-baseline justify-between border-b border-border-base pb-2">
                   <h2 className="text-2xl font-bold">최근 발행</h2>
                   <span className="text-caption text-text-tertiary">
@@ -3865,7 +3874,7 @@ export default function GuideIndexPage() {
                       >
                         <time
                           dateTime={g.publishedAt}
-                          className="w-[5.5rem] shrink-0 tabular-nums text-caption text-text-tertiary"
+                          className="w-[5.5rem] shrink-0 text-caption tabular-nums text-text-tertiary"
                         >
                           {g.publishedAt.replace(/-/g, '. ')}
                         </time>
@@ -3886,14 +3895,15 @@ export default function GuideIndexPage() {
                 <section
                   id="seasonal"
                   aria-label="시즌 가이드"
-                  className="card border-l-2 border-l-danger-500 bg-danger-500/5 space-y-4"
+                  className="card space-y-4 border-l-2 border-l-danger-500 bg-danger-500/5"
                 >
                   <header className="flex items-baseline justify-between">
-                    <h2 className="text-2xl font-bold text-danger-700 dark:text-danger-300">
+                    <h2 className="text-danger-700 dark:text-danger-300 text-2xl font-bold">
                       시즌 가이드: 지금 가장 검색 많은 주제
                     </h2>
                     <span className="text-caption text-text-tertiary">
-                      전체 {SEASONAL_GUIDES.length}편 중 {Math.min(SEASONAL_LIMIT, SEASONAL_GUIDES.length)}편
+                      전체 {SEASONAL_GUIDES.length}편 중{' '}
+                      {Math.min(SEASONAL_LIMIT, SEASONAL_GUIDES.length)}편
                     </span>
                   </header>
                   <div className="grid gap-4 md:grid-cols-2">
@@ -3901,16 +3911,16 @@ export default function GuideIndexPage() {
                       <Link
                         key={g.slug}
                         href={`/guide/${g.slug}/`}
-                        className="card card-hover flex flex-col gap-2 bg-bg-card border-2 border-danger-500/30"
+                        className="card card-hover flex flex-col gap-2 border-2 border-danger-500/30 bg-bg-card"
                       >
                         <div className="flex items-center justify-between text-caption">
-                          <span className="rounded-chip bg-danger-500/20 px-2 py-0.5 text-danger-700 dark:text-danger-300 font-semibold">
+                          <span className="text-danger-700 dark:text-danger-300 rounded-chip bg-danger-500/20 px-2 py-0.5 font-semibold">
                             {g.seasonal}
                           </span>
                           <span className="text-text-tertiary">{g.readingMinutes}분 읽기</span>
                         </div>
                         <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
-                        <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
+                        <p className="line-clamp-3 text-sm leading-relaxed text-text-secondary">
                           {g.description}
                         </p>
                       </Link>
@@ -3924,14 +3934,19 @@ export default function GuideIndexPage() {
                 const guides = GUIDES_BY_CATEGORY[cat.id];
                 if (guides.length === 0) return null;
                 return (
-                  <section key={cat.id} id={cat.id} aria-label={`${cat.id} 가이드`} className="space-y-4">
+                  <section
+                    key={cat.id}
+                    id={cat.id}
+                    aria-label={`${cat.id} 가이드`}
+                    className="space-y-4"
+                  >
                     <header className="flex items-baseline justify-between border-b border-border-base pb-2">
                       <h2 className="flex items-center gap-2 text-2xl font-bold">
                         <span aria-hidden className="text-primary-500">
                           <Icon name={cat.icon} size={22} />
                         </span>{' '}
                         {cat.id}{' '}
-                        <span className="text-base text-text-tertiary font-normal">
+                        <span className="text-base font-normal text-text-tertiary">
                           ({guides.length})
                         </span>
                       </h2>
@@ -3943,7 +3958,7 @@ export default function GuideIndexPage() {
                         <Icon name="chevron-right" size={12} />
                       </Link>
                     </header>
-                    <p className="text-text-secondary text-sm">{cat.description}</p>
+                    <p className="text-sm text-text-secondary">{cat.description}</p>
                     <div className="grid gap-4 md:grid-cols-2">
                       {guides.slice(0, PER_CATEGORY_LIMIT).map((g) => (
                         <Link
@@ -3953,7 +3968,7 @@ export default function GuideIndexPage() {
                         >
                           <div className="flex items-center justify-between text-caption text-text-tertiary">
                             <div className="flex flex-wrap items-center gap-1.5">
-                              <span className="rounded-chip bg-primary-500/10 px-2 py-0.5 text-primary-700 dark:text-primary-300 font-medium">
+                              <span className="rounded-chip bg-primary-500/10 px-2 py-0.5 font-medium text-primary-700 dark:text-primary-300">
                                 {g.category}
                               </span>
                               {g.tags?.map((tag) => {
@@ -3972,12 +3987,10 @@ export default function GuideIndexPage() {
                             <span>{g.readingMinutes}분 읽기</span>
                           </div>
                           <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
-                          <p className="text-sm text-text-secondary leading-relaxed line-clamp-3">
+                          <p className="line-clamp-3 text-sm leading-relaxed text-text-secondary">
                             {g.description}
                           </p>
-                          <p className="text-caption text-text-tertiary mt-auto">
-                            {g.publishedAt}
-                          </p>
+                          <p className="mt-auto text-caption text-text-tertiary">{g.publishedAt}</p>
                         </Link>
                       ))}
                     </div>
@@ -4004,24 +4017,27 @@ export default function GuideIndexPage() {
                 </h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    
-                    <Link href="/glossary/" className="text-primary-600 underline dark:text-primary-500">
+                    <Link
+                      href="/glossary/"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
                       용어사전 (28개)
                     </Link>{' '}
-, DSR·LTV·평단·BEP·양도차익 등 핵심 용어 정의
+                    , DSR·LTV·평단·BEP·양도차익 등 핵심 용어 정의
                   </li>
                   <li>
-                    
                     <Link href="/" className="text-primary-600 underline dark:text-primary-500">
                       홈, 31개 계산기 모음
                     </Link>
                   </li>
                   <li>
-                    
-                    <Link href="/feed.xml" className="text-primary-600 underline dark:text-primary-500">
+                    <Link
+                      href="/feed.xml"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
                       RSS 피드 구독
                     </Link>{' '}
-, 새 가이드 알림
+                    , 새 가이드 알림
                   </li>
                 </ul>
               </section>
@@ -4031,7 +4047,11 @@ export default function GuideIndexPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 본 가이드 카테고리에 포함된 콘텐츠는 다음 법령을 근거로 작성됩니다, 소득세법 §48·§55·§70·§94·§103 (소득세·양도세·퇴직소득세) · 지방세법 §11·§13의2·§111·§128·§150 (취득세·재산세·자동차세·지방교육세) · 주택임대차보호법 §3·§3의2·§8 (임대차) · 은행법 §38·시행령 §24의4 (DSR·대출 규제) · 부가가치세법 §49 (예정 신고).
+                  <strong>법적 근거</strong>: 본 가이드 카테고리에 포함된 콘텐츠는 다음 법령을
+                  근거로 작성됩니다, 소득세법 §48·§55·§70·§94·§103 (소득세·양도세·퇴직소득세) ·
+                  지방세법 §11·§13의2·§111·§128·§150 (취득세·재산세·자동차세·지방교육세) ·
+                  주택임대차보호법 §3·§3의2·§8 (임대차) · 은행법 §38·시행령 §24의4 (DSR·대출 규제) ·
+                  부가가치세법 §49 (예정 신고).
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
