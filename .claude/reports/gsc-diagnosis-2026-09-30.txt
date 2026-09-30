@@ -1,0 +1,123 @@
+=== 노출 상위 20 페이지 ===
+  626 imp  1 clk   8.0 pos /calculator/inflation/
+  127 imp  1 clk   6.6 pos /guide/category/tax-real-estate/
+   91 imp  1 clk   7.4 pos /guide/overtime-night-holiday-allowance-2026/
+   79 imp  0 clk  13.0 pos /guide/four-major-insurance-rates-2026/
+   68 imp  0 clk  16.9 pos /calculator/vehicle-tax/
+   64 imp  3 clk   8.7 pos /guide/freelancer-salary-comparison/
+   62 imp  0 clk   8.7 pos /calculator/capital-gains-tax/
+   56 imp  0 clk  14.9 pos /calculator/salary/
+   55 imp  0 clk  19.2 pos /calculator/vat/
+   53 imp  0 clk   9.6 pos /calculator/property-tax/
+   52 imp  0 clk   8.8 pos /calculator/broker-fee/
+   52 imp  0 clk   8.5 pos /guide/inflation-money-value-2026/
+   47 imp  2 clk   7.1 pos /guide/sangsaeng-landlord-sunset-2026-2027-transition/
+   44 imp  0 clk   4.3 pos /guide/securities-transaction-tax-increase-2026/
+   38 imp  0 clk   7.8 pos /calculator/d-day/
+   37 imp  1 clk   7.9 pos /calculator/split-buy/
+   37 imp  0 clk  32.0 pos /guide/etf-tax-domestic-overseas-2026/
+   35 imp  0 clk  35.4 pos /calculator/inheritance-tax/
+   35 imp  0 clk   4.8 pos /calculator/split-sell/
+   31 imp  0 clk  16.2 pos /calculator/area/
+=== 클릭 있는 페이지 (전부) ===
+ 3 clk   64 imp   8.7 pos /guide/freelancer-salary-comparison/
+ 2 clk   47 imp   7.1 pos /guide/sangsaeng-landlord-sunset-2026-2027-transition/
+ 1 clk    4 imp   1.8 pos /about/
+ 1 clk   11 imp   6.0 pos /calculator/bmi/
+ 1 clk  626 imp   8.0 pos /calculator/inflation/
+ 1 clk   37 imp   7.9 pos /calculator/split-buy/
+ 1 clk    4 imp   4.5 pos /contact/
+ 1 clk  127 imp   6.6 pos /guide/category/tax-real-estate/
+ 1 clk   91 imp   7.4 pos /guide/overtime-night-holiday-allowance-2026/
+ 1 clk   14 imp   9.8 pos /guide/real-estate-sales-contract-stamp-tax-2026/
+ 1 clk    7 imp  14.7 pos /guide/savings-insurance-tax-exemption-2026/
+=== 노출 상위 25 쿼리 ===
+ 10 imp  0 clk  60.1 pos 상속세 계산기
+  9 imp  0 clk   4.2 pos 엔젤투자소득공제 계산기
+  9 imp  0 clk  51.2 pos 증여세 계산기
+  8 imp  0 clk  42.0 pos dti
+  8 imp  0 clk  41.3 pos dti 계산기
+  8 imp  0 clk   8.9 pos 부가세 사전 점검
+  5 imp  0 clk  44.0 pos 종합 부동산 세 계산기
+  3 imp  1 clk   6.7 pos 2026 bmi
+  3 imp  0 clk   9.7 pos 1998cc 자동차세
+  3 imp  0 clk  36.7 pos vat 계산기
+  3 imp  0 clk  10.0 pos 국가법령정보센터 주택임대차보호법 전월세전환율 기준금리 2퍼센트
+  3 imp  0 clk  47.7 pos 국내 상장 해외 etf 세금
+  3 imp  0 clk  42.7 pos 다주택자 종부세 계산기
+  3 imp  0 clk  50.0 pos 부가세 몇 프로
+  3 imp  0 clk  43.7 pos 프리랜서 세후계산기
+  2 imp  0 clk  40.5 pos 2000cc 자동차 세금
+  2 imp  0 clk  32.0 pos 2026년 4대보험 요율
+  2 imp  0 clk  28.0 pos 2026년 4대보험요율
+  2 imp  0 clk  27.0 pos 4대보험 요율 2026
+  2 imp  0 clk  60.0 pos vat 부가세
+  2 imp  0 clk  36.5 pos 무주택기간 계산기
+  2 imp  0 clk  66.5 pos 배우자 상속세
+  2 imp  0 clk  51.5 pos 부가세 몇프로
+  2 imp  0 clk  47.0 pos 부동산 증여세 계산기
+  2 imp  0 clk  35.5 pos 분양권양도세
+=== "계산기" 포함 쿼리 (수요 있는 키워드) ===
+ 10 imp  0 clk  60.1 pos 상속세 계산기
+  9 imp  0 clk   4.2 pos 엔젤투자소득공제 계산기
+  9 imp  0 clk  51.2 pos 증여세 계산기
+  8 imp  0 clk  41.3 pos dti 계산기
+  5 imp  0 clk  44.0 pos 종합 부동산 세 계산기
+  3 imp  0 clk  36.7 pos vat 계산기
+  3 imp  0 clk  42.7 pos 다주택자 종부세 계산기
+  3 imp  0 clk  43.7 pos 프리랜서 세후계산기
+  2 imp  0 clk  36.5 pos 무주택기간 계산기
+  2 imp  0 clk  47.0 pos 부동산 증여세 계산기
+  2 imp  0 clk  54.5 pos 상속세계산기
+  2 imp  0 clk  52.0 pos 세전 세후 계산기
+  2 imp  0 clk  30.5 pos 청약 가점 계산기
+  1 imp  0 clk  43.0 pos 3.3 원천징수 계산기
+  1 imp  0 clk   3.0 pos 8.8 원천징수 계산기
+  1 imp  0 clk  25.0 pos vat계산기
+  1 imp  0 clk  48.0 pos 납부지연가산세 계산기
+  1 imp  0 clk  46.0 pos 농지 양도소득세 계산기
+  1 imp  0 clk  48.0 pos 대출한도계산기
+  1 imp  0 clk  27.0 pos 무주택 기간 계산기
+  1 imp  0 clk  33.0 pos 물가 계산기
+  1 imp  0 clk  33.0 pos 물가계산기
+  1 imp  0 clk  34.0 pos 물가상승률 계산기
+  1 imp  0 clk  39.0 pos 상속 비율 계산기
+  1 imp  0 clk  27.0 pos 임대수익률 계산기
+  1 imp  0 clk   9.0 pos 자녀장려금 계산기
+  1 imp  0 clk  36.0 pos 자동차 세금 계산기
+  1 imp  0 clk  34.0 pos 자동차세 계산기
+  1 imp  0 clk  46.0 pos 재산세 계산기
+  1 imp  0 clk  41.0 pos 종합부동산세 계산기
+  1 imp  0 clk  76.0 pos 주택담보대출 한도 계산기
+  1 imp  0 clk  44.0 pos 증여세계산기
+  1 imp  0 clk  26.0 pos 청약가 점 계산기
+  1 imp  0 clk  30.0 pos 청약가점 계산기
+  1 imp  0 clk  22.0 pos 청약가점계산기
+  1 imp  0 clk  35.0 pos 청약점수계산기
+  1 imp  0 clk  20.0 pos 평단 계산기
+  1 imp  0 clk  39.0 pos 평당 계산기
+  1 imp  0 clk  48.0 pos 프리랜서 세금 계산기
+  1 imp  0 clk  50.0 pos 프리랜서 종합소득세 계산기
+  1 imp  0 clk  52.0 pos 현재 가치 계산기
+  1 imp  0 clk  50.0 pos 현재가치 계산기
+  1 imp  0 clk  41.0 pos 홈택스 종부세 계산기
+  1 imp  0 clk  21.0 pos 화폐가치 계산기
+  1 imp  0 clk  41.0 pos 환율 우대 계산기
+=== 계산기 페이지 성과 (/calculator/) ===
+계산기 페이지 수 31 노출 1387 클릭 3
+ 626 imp  1 clk   8.0 pos /calculator/inflation/
+  68 imp  0 clk  16.9 pos /calculator/vehicle-tax/
+  62 imp  0 clk   8.7 pos /calculator/capital-gains-tax/
+  56 imp  0 clk  14.9 pos /calculator/salary/
+  55 imp  0 clk  19.2 pos /calculator/vat/
+  53 imp  0 clk   9.6 pos /calculator/property-tax/
+  52 imp  0 clk   8.8 pos /calculator/broker-fee/
+  38 imp  0 clk   7.8 pos /calculator/d-day/
+  37 imp  1 clk   7.9 pos /calculator/split-buy/
+  35 imp  0 clk  35.4 pos /calculator/inheritance-tax/
+  35 imp  0 clk   4.8 pos /calculator/split-sell/
+  31 imp  0 clk  16.2 pos /calculator/area/
+=== 8/30 이후 자동발행 33편의 GSC 성과 ===
+노출 잡힌 편수 10 /33 · 노출 합 27 · 클릭 합 0
+=== 가이드 vs 계산기 비중 ===
+가이드 249 p 노출 1695 클릭 9

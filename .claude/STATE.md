@@ -19,11 +19,11 @@
 ## 2. 인프라 (자동 갱신)
 
 <!-- AUTO:infra -->
-> 마지막 자동 점검: 2026. 08. 22. 02:24 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 09. 30. 13:20 (Asia/Seoul)
 
 - 도메인: https://calculatorhost.com
-- 사이트 라이브: ❌ HTTP 403 
-- 호스팅: unknown (Cloudflare Pages 추정)
+- 사이트 라이브: ✅ HTTP 200
+- 호스팅: cloudflare (Cloudflare Pages 추정)
 - AdSense 게시자: ✅ pub-7830821732287404
 <!-- /AUTO:infra -->
 
@@ -33,7 +33,7 @@
 
 ### 자동 영역 — ads.txt 게시자 ID 등
 <!-- AUTO:adsense -->
-> 마지막 자동 점검: 2026. 08. 22. 02:24 (Asia/Seoul)
+> 마지막 자동 점검: 2026. 09. 30. 13:20 (Asia/Seoul)
 
 - public/ads.txt 게시자 ID: pub-7830821732287404
 - AdSense 운영 상태: ✅ 라이브 (ads.txt 배포됨)
@@ -71,10 +71,29 @@
 ## 5. GitHub Actions (자동 갱신)
 
 <!-- AUTO:workflows -->
-> gh CLI 미설치 또는 인증 미됨 — 수동 확인 필요
+> 마지막 자동 점검: 2026. 09. 30. 13:20 (Asia/Seoul)
+
+- ✅ active: auto-guide-cron (.github/workflows/auto-guide-cron.yml)
+- ✅ active: Auto Guide Quality Gate (.github/workflows/auto-guide-quality.yml)
+- ✅ active: daily-auto-post (.github/workflows/daily-auto-post.yml)
+- ✅ active: IndexNow + Sitemap Ping (.github/workflows/indexnow-ping.yml)
+- ✅ active: Lighthouse CI (.github/workflows/lighthouse.yml)
+- ✅ active: ralph-daily (.github/workflows/ralph-daily-recommendation.yml)
+- ✅ active: Ralph — Daily Monitoring (YORO Phase P) (.github/workflows/ralph-daily.yml)
+- ✅ active: SEO+AEO+GEO Gate (.github/workflows/seo-aeo-geo-gate.yml)
+- ✅ active: Sync Public Data (.github/workflows/sync-public-data.yml)
+- ✅ active: today-update (.github/workflows/today-update.yml)
 <!-- /AUTO:workflows -->
 
-### 매일 자동 발행 (2026-08-30 신설, 2026-08-31 루틴 주도로 개편)
+### 매일 자동 발행 (2026-08-30 신설, 2026-08-31 루틴 주도로 개편) · ⛔ 2026-09-30 일시정지
+
+> **⛔ 현재 상태: 일시정지 (2026-09-30 운영자 결정)**
+> - 루틴 `03 calculatorhost (05:00)` enabled=false · repo variable `DAILY_AUTO_POST_ENABLED=false` · `scripts/daily-topic-pool.mjs` `POOL_FROZEN=true`(pickDailyTopic 항상 null)
+> - 사유: 8/30~9/28 자동발행 33편이 28일 노출 27·클릭 0. 사이트 전체도 5개월간 가이드 4배 증가에 클릭 16→14 (성숙 코호트 편당 월 0.02~0.03클릭). 사전 검수 없는 자동 생성 콘텐츠는 AdSense 게시자 정책(수동 검토·큐레이션 없는 자동 생성 콘텐츠에 광고 게재 금지) 노출면.
+> - 후속 정리: 33편 중 18편 삭제(노출 0 · 기존 페이지 인바운드 0 · 상속·증여 클러스터 아님). 남은 15편은 운영자 검수 대상(3~6주차).
+> - 재개 조건: 12/31 판정 이후, 수요 근거 + 운영자 사전 검수 + 주 1회 PR(auto-merge 없음) 형태로만.
+> - 근거: `.claude/reports/adsense-90day-plan-2026-09-30.md`
+> - **아래 내용은 과거 운영 기록이다. 다시 켜기 전에 위 재개 조건을 먼저 확인할 것.**
 
 **이중 구조. 하루 정확히 1편.**
 
@@ -120,7 +139,7 @@
 - ✅ Google AdSense (pub-7830821732287404)
 - ✅ Google Analytics 4 (env에 `NEXT_PUBLIC_GA_ID` 등록됨)
 - ✅ Google Search Console (운영자 확인)
-- ✅ Naver Search Advisor (운영자 확인)
+- ❌ Naver Search Advisor — **소유확인 미완료로 판단 (2026-09-30 정정)**. 과거 "✅ 운영자 확인" 표기는 2026-05-11 STATE 초판에 근거 없이 적힌 것이었다. 라이브 `<head>` 에 `naver-site-verification` 메타 없음(Cloudflare env `NEXT_PUBLIC_NAVER_SITE_VERIFICATION` 미설정), public/ 에 인증 파일 이력 0건. 네이버는 미등록 사이트도 자동 수집하므로 `site:` 색인 184건은 수동적 수집일 뿐, 사이트맵 제출·수집요청·노출 리포트는 소유확인 전엔 불가. 소유확인 완료 시에만 ✅ 로 바꿀 것 (1년 후 만료일 함께 기록)
 - ✅ Kakao Developers (env에 JS 키 등록)
 - ❓ data.go.kr 활용신청 (RTMS, JUSO 등 — 운영자 확인)
 - ❓ Anthropic Console (Auto Guide Phase 2)
@@ -131,7 +150,35 @@
 
 > 운영자가 매주·격주로 갱신. 에이전트 호출 시 이 섹션을 읽어 우선순위 판단.
 
-### 진행 중 (2026-05-12 ~ 06-10, 4주 GSC 효과 모니터링)
+### ▶ 현재 진행: 90일 수익화 조건 만들기 (2026-10-01 ~ 12-31)
+
+> **계획서**: `.claude/reports/adsense-90day-plan-2026-09-30.md` (5개 관점 진단 → 회의론자 3인 검증 → 합성)
+> **핵심 판단**: 3개월 수익 0원은 광고 설정이 아니라 트래픽 규모 문제. 월 10만원엔 월 1만~2만 PV 필요(현재 추정 60~300). 90일 계획은 수익 계획이 아니라 **수익 조건(네이버 채널 가동 · 무검수 부채 0 · 첫 외부 링크)** 을 만드는 계획.
+
+**기준선 (GSC 28일, 2026-08-31~09-28)** — 12/31 판정의 비교 기준
+- 노출 3,125 · 클릭 14 · CTR 0.45% · 가중평균순위 10.7 · 노출 페이지 295
+- 익명(희소) 쿼리 노출 비율 **92.3%** (쿼리 리포트 합 241 vs 페이지 합 3,125)
+- 4~10위 CTR 0.53% = AWR 2026-07 벤치마크(4~10위 0.46~1.71%) 범위 안 → **CTR 작업 금지** (메울 격차 없음, 6~7월 커밋 6개로 이미 해봤으나 무효)
+- 헤드텀 9개 순위: 상속세 계산기 60 · 증여세 51 · dti 41 · 종부세 44 · 재산세 46 · 자동차세 34 · 청약가점 30 · 주담대 한도 76 · 프리랜서 종소세 50 (중앙값 46)
+
+**12/31 판정 규칙** (gsc-pull 28일 창)
+- 구글 트랙 유지 = [클릭 ≥ 30] AND [상속세·증여세·dti 계산기 중 1개 이상 평균순위 ≤ 20]. 30은 기준선 14 대비 약 4σ.
+- 미달 시 구글 전용 작업 전부 중단(정책 위생만 유지), 네이버 트랙에 집중.
+- 12월은 종부세 납부 시즌이라 30 이상이면 1월 창으로 재확인 후 확정. 코어 업데이트가 창 안에 있으면 롤아웃 +14일 창으로 재측정.
+
+**하지 말 것 (동결 목록)**
+- 제목·메타 리라이트, FAQ 스키마 추가, 4~20위 리프트 같은 CTR 작업
+- 수요 근거 없는 신규 가이드 발행 (토픽 풀 동결)
+- 광고 설정 실험 (Auto ads 로드·형식·수동 슬롯) — 월 5,000 PV 또는 일 광고 노출 1,000회 전까지
+- 클리앙·뽐뿌·디시·지식iN·네이버 카페 링크 게시 (규정 위반, 실명 브랜드 손상)
+- 네이버 블로그 자동 게시 (API 2020-05 종료, 약관 금지)
+
+**운영자 확인 대기 (2026-09-30 기준 미확인)**
+- AdSense 90일 광고 노출수 (0이면 게재 문제, >0이면 트래픽 문제) · 정책 센터 · AdSense PV ÷ GA4 PV
+- GSC 보안 및 수동 조치
+- 네이버 서치어드바이저 소유확인 → §6 참조
+
+### (종료) 2026-05-12 ~ 06-10, 4주 GSC 효과 모니터링
 - **누적 23+ PR 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
   · 색인 인프라: IndexNow workflow + sitemap 검증 + indexing-guard E2E
   · §N 보강: 12페이지 (strong 33→51, missing 15→7)

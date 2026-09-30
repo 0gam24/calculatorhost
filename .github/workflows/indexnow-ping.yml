@@ -99,7 +99,33 @@ jobs:
             exit 1
           fi
 
-      - name: Naver Search Advisor (수동 한정)
+      # 네이버는 자체 IndexNow 엔드포인트를 운영한다 (searchadvisor.naver.com/guide/indexnow-request).
+      # 키 파일(public/{key}.txt)로 소유를 증명하므로 서치어드바이저 소유확인과 무관하게 동작.
+      # 이전에는 echo 두 줄뿐이라 네이버로 나간 핑이 0건이었다 (2026-09-30 확인).
+      # 한국 유입 62.9% 가 네이버라 api.indexnow.org 공유에만 기대지 않고 직접 보낸다.
+      # 실패해도 워크플로는 실패시키지 않는다 (Bing 핑이 주 경로, 네이버는 보조 채널).
+      - name: Naver IndexNow (직접 전송)
+        env:
+          KEY: ${{ secrets.INDEXNOW_KEY }}
+          URL_LIST: ${{ steps.changed.outputs.url_list }}
         run: |
-          echo "Naver Search Advisor 는 사이트맵 자동 핑 미지원."
-          echo "운영자가 https://searchadvisor.naver.com 에서 정기적으로 색인 요청 (월 1회)."
+          if [ -z "$KEY" ]; then
+            echo "INDEXNOW_KEY 미설정 — 네이버 핑 skip"
+            exit 0
+          fi
+          if [ -z "$URL_LIST" ]; then
+            URL_LIST='["https://calculatorhost.com/sitemap.xml"]'
+          fi
+          HTTP_CODE=$(curl -sS -o /tmp/naver.body -w "%{http_code}" -X POST "https://searchadvisor.naver.com/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            -d "{
+              \"host\": \"calculatorhost.com\",
+              \"key\": \"$KEY\",
+              \"keyLocation\": \"https://calculatorhost.com/$KEY.txt\",
+              \"urlList\": $URL_LIST
+            }" || echo "000")
+          echo "Naver IndexNow HTTP $HTTP_CODE"
+          echo "Naver body: $(cat /tmp/naver.body 2>/dev/null || echo '<empty>')"
+          if [ "$HTTP_CODE" != "200" ] && [ "$HTTP_CODE" != "202" ]; then
+            echo "::warning::Naver IndexNow HTTP $HTTP_CODE (보조 채널이라 워크플로는 계속)"
+          fi

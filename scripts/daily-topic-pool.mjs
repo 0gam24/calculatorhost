@@ -1,6 +1,14 @@
 /**
  * daily-topic-pool.mjs
  *
+ * ⛔ DEPRECATED 2026-09-30: 수요 미검증 풀, 발행 금지.
+ *   8/30~9/30 이 풀에서 나간 33편이 28일 노출 27·클릭 0 이었고, 사전 검수 없는
+ *   자동 생성 콘텐츠는 AdSense 게시자 정책(수동 검토·큐레이션 없는 자동 생성 콘텐츠에
+ *   광고 게재 금지) 노출면이 된다. 그래서 POOL_FROZEN 으로 pickDailyTopic 이 항상
+ *   null 을 반환하게 막았다. 루틴이 다시 켜져도 '풀 소진' 으로 발행 없이 종료된다.
+ *   재개는 수요 근거(GSC 노출 또는 검색광고 키워드도구 검색량)와 운영자 사전 검수가
+ *   붙은 뒤에만. 근거: .claude/reports/adsense-90day-plan-2026-09-30.md
+ *
  * 매일 1편 자동 발행(`.github/workflows/daily-auto-post.yml`)용 토픽 풀.
  *
  * 배경: 기존 `ralph-auto-guide.mjs` 의 SEASONAL_GUIDES 는 12개 시즌 토픽 전용이라
@@ -19,6 +27,9 @@
  */
 import { existsSync, readdirSync } from 'node:fs';
 import { resolve } from 'node:path';
+
+/** 동결 스위치. true 인 동안 pickDailyTopic 은 항상 null (위 DEPRECATED 사유 참조). */
+export const POOL_FROZEN = true;
 
 /** @typedef {{slug: string, title: string, category: string, months?: number[]}} DailyTopic */
 
@@ -178,6 +189,7 @@ export function readExistingSlugs(repoRoot = process.cwd()) {
  * @returns {DailyTopic|null}
  */
 export function pickDailyTopic({ existingSlugs, now = new Date() } = {}) {
+  if (POOL_FROZEN) return null;
   const taken = existingSlugs ?? readExistingSlugs();
   const koreaMonth = Number(
     new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Seoul', month: 'numeric' }).format(now),
