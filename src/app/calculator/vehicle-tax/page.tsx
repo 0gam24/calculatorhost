@@ -427,15 +427,17 @@ export default function VehicleTaxPage() {
                   자동차 취득세는 얼마인가요? (매년 내는 자동차세와 별도)
                 </h2>
                 <p className="text-text-secondary" data-speakable>
-                  비영업용 승용차의 자동차 취득세율은 7%입니다(지방세법 §12). 예를 들어 취득가액
-                  3,000만 원 승용차의 취득세는 210만 원입니다. 경차·영업용은 4%로 더 낮습니다.
+                  비영업용 승용차의 취득세 기본 세율은 7%입니다(지방세법 §12). 예를 들어 과세표준
+                  3,000만 원 승용차는 감면 전 취득세가 210만 원입니다. 법령상 경자동차와 영업용
+                  자동차의 기본 세율은 4%입니다. 비영업용 승합·화물차 등은 5%, 법령상 해당
+                  이륜자동차는 2% 등 차종별 세율이 다릅니다.
                   취득세는 차를 살 때 등록하며 한 번만 내고, 이 페이지의 자동차세는 보유하는 동안
                   매년 냅니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
                     <caption className="mb-2 text-left text-xs text-text-secondary">
-                      표. 자동차 취득세율 (지방세법 §12, 2026 기준)
+                      표. 자동차 취득세 기본 세율 예시 (지방세법 §12, 2026년 1월 1일 시행, 감면 제외)
                     </caption>
                     <thead>
                       <tr className="border border-border-base bg-primary-500/10">
@@ -452,7 +454,7 @@ export default function VehicleTaxPage() {
                           scope="col"
                           className="px-4 py-3 text-right font-bold text-text-primary"
                         >
-                          예: 취득가 3,000만 원
+                          예: 과세표준 3,000만 원 (감면 전)
                         </th>
                       </tr>
                     </thead>
@@ -465,7 +467,7 @@ export default function VehicleTaxPage() {
                         <td className="px-4 py-2 text-right tabular-nums">210만 원</td>
                       </tr>
                       <tr className="bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2">경차 (1,000cc 이하)</td>
+                        <td className="px-4 py-2">경자동차 (법령상 경차 요건 충족)</td>
                         <td className="px-4 py-2 text-right tabular-nums">
                           <strong>4%</strong>
                         </td>
@@ -482,8 +484,9 @@ export default function VehicleTaxPage() {
                   </table>
                 </div>
                 <p className="text-sm text-text-secondary">
-                  취득세는 취득가액(신차는 공급가액, 중고차는 시가표준액)에 세율을 곱해 계산합니다.
-                  친환경차·경차·다자녀·장애인 감면 요건이 있을 수 있습니다. 취득가액별 정확한
+                  위 표와 예시는 차량 과세표준에 기본 세율을 적용한 감면 전 금액입니다.
+                  친환경차·경차·다자녀·장애인 감면 요건이 있을 수 있으며, 차량의 과세표준과
+                  감면 적용은 관할 지방자치단체에서 확인하세요. 정확한
                   취득세와 감면은{' '}
                   <Link
                     href="/guide/vehicle-acquisition-tax-2026/"

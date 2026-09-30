@@ -161,9 +161,9 @@ export interface AcquisitionTaxBracket {
   rate: number;
 }
 
-/** 주택 매매 1주택자 기본 세율 (6억~9억 구간 선형보간) */
+/** 주택 일반 매매 세율. 6억 초과~9억 미만 반올림 적용은 현재 계산기에서 확인 전 보류. */
 export const ACQUISITION_TAX_SINGLE_HOUSE_PURCHASE: AcquisitionTaxBracket[] = [
-  { upperBound: 600_000_000, rate: 0.01 }, // 6억 이하 1.0% — 지방세법 §13
+  { upperBound: 600_000_000, rate: 0.01 }, // 6억 이하 1.0% — 지방세법 §11①8
   { upperBound: 900_000_000, rate: -1 }, // 6억~9억 선형보간 (-1 은 선형 마커, 함수에서 처리)
   { upperBound: null, rate: 0.03 }, // 9억 초과 3.0%
 ];
@@ -174,14 +174,18 @@ export const ACQUISITION_TAX = {
   singleHousePurchase: ACQUISITION_TAX_SINGLE_HOUSE_PURCHASE,
 
   // ─── 중과 세율 (비조정지역) ───
-  /** 비조정지역 3주택 이상 — 지방세법 §13의2 */
-  nonAdjustedThreeOrMore: 0.12,
+  /** 비조정지역 3주택 — 지방세법 §13의2①2 */
+  nonAdjustedThreeHouses: 0.08,
+  /** 비조정지역 4주택 이상 — 지방세법 §13의2①3 */
+  nonAdjustedFourOrMore: 0.12,
 
   // ─── 증여 취득세 ───
-  /** 증여 기본 세율 — 지특법 §13의2 */
+  /** 일반 증여 기본 세율 — 지방세법 §11①2 */
   giftBasic: 0.035,
-  /** 증여 + 조정지역 + 3주택 이상 중과 — 지특법 §13의2 */
+  /** 조정지역 증여 중과 — 지방세법 §13의2②, 시행령 §28의6 (증여자 예외 별도 확인) */
   giftAdjustedHeavy: 0.12,
+  /** 증여 중과 판단용 전체 주택 시가표준액 기준 — 시행령 §28의6① */
+  giftHeavyStandardPrice: 300_000_000,
 
   // ─── 상속 취득세 ───
   /** 상속 기본 세율 */
@@ -193,20 +197,28 @@ export const ACQUISITION_TAX = {
   /** 조정지역 3주택 이상 세율 — 지방세법 §13의2 */
   adjustedThreeOrMore: 0.12,
 
-  // ─── 농어촌특별세 (85㎡ 초과) ───
-  /** 85㎡ 초과 일반 농특세 — 농어촌특별세법 */
+  // ─── 농어촌특별세 (국민주택규모 초과, 감면 없는 일반 취득) ───
+  /** 일반 농특세 — 농어촌특별세법 §5①6 */
   specialRuralTaxOver85: 0.002,
-  /** 85㎡ 초과 + 중과 농특세 — 농어촌특별세법 */
+  /** 취득세 8% 중과 농특세 — 농어촌특별세법 §5①6 */
+  specialRuralTaxEightPercentHeavy: 0.006,
+  /** 취득세 12% 중과 농특세 — 농어촌특별세법 §5①6 */
   specialRuralTaxHeavy: 0.01,
 
   // ─── 지방교육세 ───
-  /** 지방교육세 (취득세의) — 지방세법 §151 */
+  /** 일반 주택 매매 지방교육세 (취득세의 10%) — 지방세법 §151①1 */
   localEducationTaxOfAcquisition: 0.1,
+  /** 일반 증여 지방교육세 (과세표준의 0.3%) — 지방세법 §151①1가 */
+  localEducationTaxGift: 0.003,
+  /** 일반 상속 지방교육세 (과세표준의 0.16%) — 지방세법 §151①1가 */
+  localEducationTaxInheritance: 0.0016,
+  /** §13의2 중과 지방교육세 (과세표준의 0.4%) — 지방세법 §151①1나 */
+  localEducationTaxHeavy: 0.004,
 
   // ─── 생애최초 주택 감면 ───
-  /** 생애최초 주택 감면 한도 (원) — 지특법 §36의3 */
+  /** 생애최초 일반 주택 감면 한도. 일부 주택 300만원 등 별도 요건으로 자동 감면 계산 보류. */
   firstHomeBuyerMaxDiscount: 2_000_000,
-  /** 생애최초 감면 주택가액 제한 — 지특법 §36의3 (소득요건은 2022.6.21자로 폐지됨, 무주택 세대만 필요) */
+  /** 생애최초 감면 주택가액 제한 — 지특법 §36의3 (본인·배우자 이력 등 별도 조건 필요) */
   firstHomeBuyerMaxPrice: 1_200_000_000,
 } as const;
 

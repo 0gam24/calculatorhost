@@ -408,11 +408,11 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
     // 과세표준 = 500M
     // 세율 = 8% (조정지역 + 2주택, 지방세법 §13의2)
     // 취득세 = 500M × 0.08 = 40M
-    // 농특세 (85㎡ 초과) = 500M × 0.2% = 1M
-    // 지교세 = 40M × 0.1 = 4M
-    // 총 = 40M + 1M + 4M = 45M
-    // 근거: 지방세법 §13의2 (조정지역 중과)
-    // 검증: 부산·대구·인천·울산 조정지역 사례
+    // 농특세 (국민주택규모 초과, 8% 중과) = 500M × 0.6% = 3M
+    // 지교세 (중과 과표 기준) = 500M × 0.4% = 2M
+    // 총 = 40M + 3M + 2M = 45M
+    // 근거: 지방세법 §13의2①2·§151①1나 [시행2026.1.1], 농어촌특별세법 §5①6 [시행2026.5.12]
+    // 검증: 공식 본문 세율에 따른 독립 금액 검산 (지역 지정 여부를 자동 판단하는 테스트는 아님)
     it('취득세 조정지역 2주택 5억원 85m²초과: 8% 중과 → 4,500만원', () => {
       const result = calculateAcquisitionTax({
         method: 'purchase',
@@ -424,9 +424,9 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
         firstHomeBuyerDiscount: false,
       });
       const expectedAcquisitionTax = 40_000_000; // 500M × 0.08
-      const expectedSpecialRuralTax = 1_000_000; // 500M × 0.002
-      const expectedEducationTax = 4_000_000; // 40M × 0.1
-      const expectedTotal = 45_000_000; // 40M + 1M + 4M
+      const expectedSpecialRuralTax = 3_000_000; // 500M × 0.006
+      const expectedEducationTax = 2_000_000; // 500M × 0.004
+      const expectedTotal = 45_000_000; // 40M + 3M + 2M
 
       expect(result.acquisitionTax).toBe(expectedAcquisitionTax);
       expect(result.specialRuralTax).toBe(expectedSpecialRuralTax);
