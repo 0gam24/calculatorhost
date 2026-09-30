@@ -87,8 +87,12 @@
 
 ### 매일 자동 발행 (2026-08-30 신설, 2026-08-31 루틴 주도로 개편) · ⛔ 2026-09-30 일시정지
 
-> **⛔ 현재 상태: 일시정지 (2026-09-30 운영자 결정)**
-> - 루틴 `03 calculatorhost (05:00)` enabled=false · repo variable `DAILY_AUTO_POST_ENABLED=false` · `scripts/daily-topic-pool.mjs` `POOL_FROZEN=true`(pickDailyTopic 항상 null)
+> **⛔ 현재 상태: 자동 포스팅 폐지, 수동 발행 전용 (2026-09-30 운영자 결정)**
+> - **운영자 지시: "앞으로는 수동으로만"**. 자동 포스팅 루틴·워크플로·예약 작업을 새로 만들거나 다시 켜지 말 것. 운영자가 명시적으로 요청할 때만 예외.
+> - 클라우드 루틴 `03 calculatorhost (05:00)`: **운영자가 삭제** (2026-09-30 확인, 루틴 목록에 calculatorhost 관련 0개)
+> - GitHub Actions `daily-auto-post`·`auto-guide-cron`: **disabled_manually** (`gh workflow enable <file>` 로만 복구). 이중 잠금으로 repo variable `DAILY_AUTO_POST_ENABLED=false` 유지
+> - `scripts/daily-topic-pool.mjs` `POOL_FROZEN=true` (pickDailyTopic 항상 null)
+> - 남은 스케줄 워크플로는 발행과 무관: `today-update`(today.md 로그), `ralph-daily`·`ralph-daily-recommendation`(리포트·이슈), `sync-public-data`(공공데이터)
 > - 사유: 8/30~9/28 자동발행 33편이 28일 노출 27·클릭 0. 사이트 전체도 5개월간 가이드 4배 증가에 클릭 16→14 (성숙 코호트 편당 월 0.02~0.03클릭). 사전 검수 없는 자동 생성 콘텐츠는 AdSense 게시자 정책(수동 검토·큐레이션 없는 자동 생성 콘텐츠에 광고 게재 금지) 노출면.
 > - 후속 정리: 33편 중 18편 삭제(노출 0 · 기존 페이지 인바운드 0 · 상속·증여 클러스터 아님). 남은 15편은 운영자 검수 대상(3~6주차).
 > - 재개 조건: 12/31 판정 이후, 수요 근거 + 운영자 사전 검수 + 주 1회 PR(auto-merge 없음) 형태로만.
