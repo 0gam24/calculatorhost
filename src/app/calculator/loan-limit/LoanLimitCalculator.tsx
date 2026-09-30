@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 대출한도 계산기 (DSR·LTV·DTI) — MVP #4
  *
@@ -9,7 +12,7 @@
  */
 
 import { ResultBanner } from '@/components/calculator/ResultBanner';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -52,35 +55,45 @@ interface ResultRowData {
 
 export function LoanLimitCalculator() {
   // 기본 입력값
-  const [annualIncome, setAnnualIncome] = useState(60_000_000); // 6천만원
-  const [existingDebtPayment, setExistingDebtPayment] = useState(0);
-  const [existingDebtInterest, setExistingDebtInterest] = useState(0);
-  const [collateralValue, setCollateralValue] = useState(500_000_000); // 5억원
+  const [annualIncome, setAnnualIncome] = useCalculatorState('loan-limit:annualIncome', 60_000_000); // 6천만원
+  const [existingDebtPayment, setExistingDebtPayment] = useCalculatorState(
+    'loan-limit:existingDebtPayment',
+    0,
+  );
+  const [existingDebtInterest, setExistingDebtInterest] = useCalculatorState(
+    'loan-limit:existingDebtInterest',
+    0,
+  );
+  const [collateralValue, setCollateralValue] = useCalculatorState(
+    'loan-limit:collateralValue',
+    500_000_000,
+  ); // 5억원
 
   // 규제 옵션
-  const [region, setRegion] = useState<RegionType>('nonRegulated');
-  const [housingStatus, setHousingStatus] = useState<HousingStatus>('general');
-  const [lender, setLender] = useState<LenderType>('bank');
+  const [region, setRegion] = useCalculatorState<RegionType>('loan-limit:region', 'nonRegulated');
+  const [housingStatus, setHousingStatus] = useCalculatorState<HousingStatus>(
+    'loan-limit:housingStatus',
+    'general',
+  );
+  const [lender, setLender] = useCalculatorState<LenderType>('loan-limit:lender', 'bank');
 
   // 대출 조건
-  const [newLoanRate, setNewLoanRate] = useState(4.0);
-  const [loanTermYears, setLoanTermYears] = useState(30);
-  const [applyStressDsr, setApplyStressDsr] = useState(true);
-  const [repaymentType, setRepaymentType] = useState<RepaymentType>('amortization');
+  const [newLoanRate, setNewLoanRate] = useCalculatorState('loan-limit:newLoanRate', 4.0);
+  const [loanTermYears, setLoanTermYears] = useCalculatorState('loan-limit:loanTermYears', 30);
+  const [applyStressDsr, setApplyStressDsr] = useCalculatorState('loan-limit:applyStressDsr', true);
+  const [repaymentType, setRepaymentType] = useCalculatorState<RepaymentType>(
+    'loan-limit:repaymentType',
+    'amortization',
+  );
 
   // 기존 대출 이자가 기본값과 다를 수 있으므로,
   // 입력하지 않으면 연원리금과 동일로 간주
-  const effectiveExistingInterest = existingDebtInterest || existingDebtPayment;
+  const effectiveExistingInterest = existingDebtInterest;
 
   // 계산 수행 (모든 입력값이 변경될 때 useMemo로 재계산)
   const result = useMemo(() => {
     // 검증: 기본 필수값 체크
-    if (
-      annualIncome < 0 ||
-      collateralValue < 0 ||
-      newLoanRate < 0 ||
-      loanTermYears <= 0
-    ) {
+    if (annualIncome < 0 || collateralValue < 0 || newLoanRate < 0 || loanTermYears <= 0) {
       return null;
     }
 
@@ -122,15 +135,22 @@ export function LoanLimitCalculator() {
     const rows: ResultRowData[] = [
       {
         label: '결정적 제약',
-        value: result.bindingConstraint === 'collateral'
-          ? '담보가치 상한'
-          : `${result.bindingConstraint} (${
-              result.bindingConstraint === 'DSR' ? formatPercent(lender === 'bank' ? 0.4 : 0.5) :
-              result.bindingConstraint === 'LTV' ? `${Math.round(
-                region === 'nonRegulated' ? 70 : housingStatus === 'firstOrSubsistence' ? 80 : 50
-              )}%` :
-              formatPercent(region === 'nonRegulated' ? 0.5 : 0.4)
-            })`,
+        value:
+          result.bindingConstraint === 'collateral'
+            ? '담보가치 상한'
+            : `${result.bindingConstraint} (${
+                result.bindingConstraint === 'DSR'
+                  ? formatPercent(lender === 'bank' ? 0.4 : 0.5)
+                  : result.bindingConstraint === 'LTV'
+                    ? `${Math.round(
+                        region === 'nonRegulated'
+                          ? 70
+                          : housingStatus === 'firstOrSubsistence'
+                            ? 80
+                            : 50,
+                      )}%`
+                    : formatPercent(region === 'nonRegulated' ? 0.5 : 0.4)
+              })`,
         note: '이 규제가 한도를 가장 낮게 제한하는 요소',
       },
       {
@@ -142,7 +162,7 @@ export function LoanLimitCalculator() {
         label: 'LTV 기준',
         value: formatKRW(result.ltvLimit),
         note: `${Math.round(
-          region === 'nonRegulated' ? 70 : housingStatus === 'firstOrSubsistence' ? 80 : 50
+          region === 'nonRegulated' ? 70 : housingStatus === 'firstOrSubsistence' ? 80 : 50,
         )}% 규제 적용`,
       },
       {
@@ -173,11 +193,11 @@ export function LoanLimitCalculator() {
     if (!result || result.warnings.length === 0) return null;
 
     return (
-      <div className="rounded-lg bg-danger-500/5 border border-danger-500/20 p-4">
-        <p className="text-sm font-medium text-danger-700 dark:text-danger-300 mb-2">주의</p>
+      <div className="rounded-lg border border-danger-500/20 bg-danger-500/5 p-4">
+        <p className="text-danger-700 dark:text-danger-300 mb-2 text-sm font-medium">주의</p>
         <ul className="space-y-1">
           {result.warnings.map((warning, idx) => (
-            <li key={idx} className="text-sm text-danger-700 dark:text-danger-300">
+            <li key={idx} className="text-danger-700 dark:text-danger-300 text-sm">
               • {warning}
             </li>
           ))}
@@ -187,7 +207,7 @@ export function LoanLimitCalculator() {
   }, [result]);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="loan-limit">
       {/* ========== 입력 폼 ========== */}
       <FormCard title="대출 조건 입력">
         <NumberInput
@@ -199,6 +219,7 @@ export function LoanLimitCalculator() {
           unitButtons={ANNUAL_INCOME_UNIT_BUTTONS}
           helpText="무직 또는 소득 없음 = 0"
           debounceMs={150}
+          unit="원"
         />
 
         <NumberInput
@@ -210,6 +231,7 @@ export function LoanLimitCalculator() {
           helpText="현재 갚고 있는 모든 대출의 연간 원리금 합"
           unitButtons={DEBT_UNIT_BUTTONS}
           debounceMs={150}
+          unit="원"
         />
 
         <NumberInput
@@ -217,10 +239,11 @@ export function LoanLimitCalculator() {
           label="기존 대출 연 이자 (DTI 용)"
           value={existingDebtInterest}
           onChange={setExistingDebtInterest}
-          placeholder="연 원리금과 동일로 계산됨"
-          helpText="비우면 위의 연 원리금과 동일로 계산됩니다"
+          placeholder="예: 0"
+          helpText="기타 대출의 연간 이자를 입력하세요. 이자가 없으면 0으로 입력합니다."
           unitButtons={DEBT_UNIT_BUTTONS}
           debounceMs={150}
+          unit="원"
         />
 
         <NumberInput
@@ -231,6 +254,7 @@ export function LoanLimitCalculator() {
           placeholder="예: 500,000,000"
           unitButtons={COLLATERAL_UNIT_BUTTONS}
           debounceMs={150}
+          unit="원"
         />
 
         <RadioGroup
@@ -277,6 +301,7 @@ export function LoanLimitCalculator() {
           max={20}
           helpText="소수점 2자리까지 입력 가능"
           debounceMs={150}
+          unit="%"
         />
 
         <div className="flex flex-col gap-2">
@@ -296,12 +321,12 @@ export function LoanLimitCalculator() {
           </select>
         </div>
 
-        <label className="flex items-center gap-3 cursor-pointer p-3 rounded-lg border border-border-base hover:bg-bg-card/50">
+        <label className="hover:bg-bg-card/50 flex cursor-pointer items-center gap-3 rounded-lg border border-border-base p-3">
           <input
             type="checkbox"
             checked={applyStressDsr}
             onChange={(e) => setApplyStressDsr(e.target.checked)}
-            className="w-4 h-4 accent-primary-500"
+            className="h-4 w-4 accent-primary-500"
           />
           <span className="text-sm font-medium text-text-primary">
             스트레스 DSR 적용 (변동금리 가정, +1.5%p)
@@ -336,16 +361,16 @@ export function LoanLimitCalculator() {
                 emphasize: row.emphasize,
               }))}
             />
-        <ResultBanner note="실제 대출 한도는 은행 내부 기준에 따라 달라집니다." />
+            <ResultBanner note="실제 대출 한도는 은행 내부 기준에 따라 달라집니다." />
 
             {warningsElement}
           </>
         ) : (
-          <div className="card flex items-center justify-center min-h-[300px]">
+          <div className="card flex min-h-[300px] items-center justify-center">
             <p className="text-text-secondary">조건을 입력하여 계산하세요</p>
           </div>
         )}
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

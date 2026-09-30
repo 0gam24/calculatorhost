@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 취득세 계산기 (MVP #6)
  *
@@ -7,7 +10,7 @@
  * 공식: src/lib/tax/acquisition.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -30,14 +33,32 @@ const ACQUISITION_PRICE_UNIT_BUTTONS = [
 ];
 
 export function AcquisitionCalculator() {
-  const [method, setMethod] = useState<AcquisitionMethod>('purchase');
-  const [target, setTarget] = useState<AcquisitionTarget>('residential');
-  const [houseCount, setHouseCount] = useState<HouseCount>(1);
-  const [areaOver85, setAreaOver85] = useState(false);
-  const [adjustedArea, setAdjustedArea] = useState(false);
-  const [acquisitionPrice, setAcquisitionPrice] = useState(600_000_000);
-  const [standardPrice, setStandardPrice] = useState(600_000_000);
-  const [firstHomeBuyer, setFirstHomeBuyer] = useState(false);
+  const [method, setMethod] = useCalculatorState<AcquisitionMethod>(
+    'acquisition-tax:method',
+    'purchase',
+  );
+  const [target, setTarget] = useCalculatorState<AcquisitionTarget>(
+    'acquisition-tax:target',
+    'residential',
+  );
+  const [houseCount, setHouseCount] = useCalculatorState<HouseCount>(
+    'acquisition-tax:houseCount',
+    1,
+  );
+  const [areaOver85, setAreaOver85] = useCalculatorState('acquisition-tax:areaOver85', false);
+  const [adjustedArea, setAdjustedArea] = useCalculatorState('acquisition-tax:adjustedArea', false);
+  const [acquisitionPrice, setAcquisitionPrice] = useCalculatorState(
+    'acquisition-tax:acquisitionPrice',
+    600_000_000,
+  );
+  const [standardPrice, setStandardPrice] = useCalculatorState(
+    'acquisition-tax:standardPrice',
+    600_000_000,
+  );
+  const [firstHomeBuyer, setFirstHomeBuyer] = useCalculatorState(
+    'acquisition-tax:firstHomeBuyer',
+    false,
+  );
 
   // 증여·상속 시 시가표준액 사용, 아니면 취득가 사용
   const effectivePrice = method === 'purchase' ? acquisitionPrice : standardPrice;
@@ -61,7 +82,7 @@ export function AcquisitionCalculator() {
   const rateLabel = `취득세율 ${ratePercent}%`;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="acquisition-tax">
       <FormCard title="입력">
         <RadioGroup<AcquisitionMethod>
           id="method"
@@ -183,6 +204,7 @@ export function AcquisitionCalculator() {
             unitButtons={ACQUISITION_PRICE_UNIT_BUTTONS}
             max={10_000_000_000}
             debounceMs={150}
+            unit="원"
           />
         ) : (
           <NumberInput
@@ -195,6 +217,7 @@ export function AcquisitionCalculator() {
             unitButtons={ACQUISITION_PRICE_UNIT_BUTTONS}
             max={10_000_000_000}
             debounceMs={150}
+            unit="원"
           />
         )}
 
@@ -254,7 +277,7 @@ export function AcquisitionCalculator() {
           },
         ]}
       />
-        <ResultBanner />
-    </div>
+      <ResultBanner />
+    </CalculatorWorkspace>
   );
 }

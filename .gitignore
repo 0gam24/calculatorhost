@@ -8,6 +8,8 @@
 /coverage
 /test-results
 /playwright-report
+/artifacts/
+/tests/e2e/artifacts/
 /playwright/.cache
 
 # next.js

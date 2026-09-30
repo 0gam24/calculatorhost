@@ -11,11 +11,24 @@ type EmbedCodeBoxProps = EmbedSnippetParams;
  *
  * 스니펫 생성은 buildEmbedSnippet (순수 함수, SSoT) 에 위임. 본 컴포넌트는 표시·복사 UI만 담당.
  */
-export function EmbedCodeBox({ embedPath, canonicalPath, title, height }: EmbedCodeBoxProps) {
+export function EmbedCodeBox({
+  embedPath,
+  canonicalPath,
+  title,
+  height,
+  showCredit = true,
+}: EmbedCodeBoxProps) {
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [includeCredit, setIncludeCredit] = useState(showCredit);
 
-  const snippet = buildEmbedSnippet({ embedPath, canonicalPath, title, height });
+  const snippet = buildEmbedSnippet({
+    embedPath,
+    canonicalPath,
+    title,
+    height,
+    showCredit: includeCredit,
+  });
 
   const handleCopy = async () => {
     try {
@@ -36,8 +49,16 @@ export function EmbedCodeBox({ embedPath, canonicalPath, title, height }: EmbedC
       </h2>
       <p className="text-sm text-text-secondary">
         아래 코드를 복사해 티스토리·워드프레스·네이버 블로그(HTML 모드) 등에 붙여넣으면 이 계산기를
-        그대로 삽입할 수 있습니다. 무료이며, 출처 링크만 유지해 주세요.
+        그대로 삽입할 수 있습니다. 출처 표시는 선택 사항이며, 계산기는 무료로 사용할 수 있습니다.
       </p>
+      <label className="flex min-h-12 items-center gap-2 text-sm text-text-secondary">
+        <input
+          type="checkbox"
+          checked={includeCredit}
+          onChange={(e) => setIncludeCredit(e.target.checked)}
+        />
+        calculatorhost 출처 표시 포함 (선택)
+      </label>
       <textarea
         readOnly
         value={snippet}
@@ -51,7 +72,7 @@ export function EmbedCodeBox({ embedPath, canonicalPath, title, height }: EmbedC
           type="button"
           onClick={handleCopy}
           aria-label="임베드 코드 복사"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 hover:bg-primary-500/20 dark:text-primary-300 transition-colors"
+          className="inline-flex items-center gap-1.5 rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-500/20 dark:text-primary-300"
         >
           <Icon name={copied ? 'check' : 'clipboard'} size={14} />
           <span>{copied ? '복사됨' : '임베드 코드 복사'}</span>

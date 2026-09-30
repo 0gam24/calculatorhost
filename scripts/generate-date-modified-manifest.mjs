@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { buildManifest, pageFileToRoute } from './date-modified-core.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -31,33 +31,63 @@ function listPageFiles(dir, base = '') {
   return out;
 }
 
-function getGitLastModifiedIso(absFile) {
+function shallowBoundaryCommits() {
+  try {
+    const shallowPath = execFileSync('git', ['rev-parse', '--git-path', 'shallow'], {
+      cwd: ROOT_DIR,
+      encoding: 'utf8',
+      stdio: ['ignore', 'pipe', 'ignore'],
+    }).trim();
+    const absolute = path.resolve(ROOT_DIR, shallowPath);
+    if (!fs.existsSync(absolute)) return new Set();
+    return new Set(fs.readFileSync(absolute, 'utf8').trim().split(/\s+/));
+  } catch {
+    return new Set();
+  }
+}
+
+function getGitLastModifiedIso(absFile, boundaries) {
   try {
     const cwd = ROOT_DIR;
     const rel = path.relative(cwd, absFile).replace(/\\/g, '/');
-    const out = execSync(`git log -1 --format=%cI -- "${rel}"`, {
+    const out = execFileSync('git', ['log', '-1', '--format=%H %cI', '--', rel], {
       cwd,
       encoding: 'utf8',
       stdio: ['ignore', 'pipe', 'ignore'],
     }).trim();
-    return out || '';
+    const [commit, iso] = out.split(/\s+/);
+    // A shallow boundary presents every file as newly added. Preserve known
+    // dates instead of stamping the entire site with that checkout commit.
+    return boundaries.has(commit) ? '' : iso || '';
   } catch {
     return '';
   }
 }
 
 function main() {
+  let previous = {};
+  if (fs.existsSync(MANIFEST_PATH)) {
+    previous = JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'));
+  }
+  const boundaries = shallowBoundaryCommits();
   const appDir = path.join(ROOT_DIR, 'src', 'app');
   const relFiles = listPageFiles(appDir).map((f) => 'src/app/' + f);
 
-  const entries = relFiles.map((rel) => {
-    const route = pageFileToRoute(rel);
-    if (!route) return null;
-    const abs = path.join(ROOT_DIR, rel);
-    return { file: rel, isoDate: getGitLastModifiedIso(abs) };
-  }).filter(Boolean);
+  const entries = relFiles
+    .map((rel) => {
+      const route = pageFileToRoute(rel);
+      if (!route) return null;
+      const sources = [rel];
+      if (route === '/updates/') sources.push('src/lib/constants/updates-log.ts');
+      const dates = sources
+        .map((file) => getGitLastModifiedIso(path.join(ROOT_DIR, file), boundaries))
+        .filter((date) => date && !Number.isNaN(Date.parse(date)))
+        .sort((a, b) => Date.parse(b) - Date.parse(a));
+      return { file: rel, isoDate: dates[0] || '' };
+    })
+    .filter(Boolean);
 
-  const manifest = buildManifest(entries);
+  const manifest = buildManifest(entries, previous);
   const sortedKeys = Object.keys(manifest).sort();
   const ordered = {};
   for (const k of sortedKeys) ordered[k] = manifest[k];
@@ -65,12 +95,19 @@ function main() {
   fs.mkdirSync(path.dirname(MANIFEST_PATH), { recursive: true });
   fs.writeFileSync(MANIFEST_PATH, JSON.stringify(ordered, null, 2) + '\n', 'utf8');
 
-  console.log(`📅 date-modified manifest: ${Object.keys(manifest).length}개 라우트 → ${path.relative(ROOT_DIR, MANIFEST_PATH)}`);
+  console.log(
+    `📅 date-modified manifest: ${Object.keys(manifest).length}개 라우트 → ${path.relative(ROOT_DIR, MANIFEST_PATH)}`,
+  );
 }
 
 const isCli = process.argv[1]
   ? fileURLToPath(import.meta.url) === path.resolve(process.argv[1])
   : false;
 if (isCli) {
-  try { main(); } catch (e) { console.error('❌', e.message); process.exit(0); }
+  try {
+    main();
+  } catch (e) {
+    console.error('❌', e.message);
+    process.exit(0);
+  }
 }

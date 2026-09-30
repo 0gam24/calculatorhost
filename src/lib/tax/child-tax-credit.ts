@@ -1,160 +1,87 @@
 /**
- * 자녀장려금 계산 — 순수 함수
- *
- * 법적 근거:
- * - 조세특례제한법 §100의3
- * - 2026년 세율 기준 (자녀 1인당 연 100만원)
- *
- * 명세: docs/calculator-spec/자녀장려금.md
- *
- * ⚠️ 모든 수정은 calc-logic-verifier 에이전트 통과 후.
+ * 자녀장려금 연간 예상액 - 연속 산식 추정.
+ * 조세특례제한법100의28(자격),100의29(산정),100의5④·100의31(재산감액).
+ * https://www.law.go.kr/법령/조세특례제한법/제100조의29
+ * 국세청 산정표 구간값,자녀세액공제 중복조정,기한후신청·체납 미반영.
  */
-
 import {
   CHILD_TAX_BENEFIT_PER_CHILD,
   CHILD_TAX_BENEFIT_INCOME_CAP,
   CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START,
+  CHILD_TAX_BENEFIT_DUAL_PHASE_OUT_START,
+  CHILD_TAX_BENEFIT_ASSET_CAP,
+  CHILD_TAX_BENEFIT_ASSET_REDUCTION_START,
 } from '@/lib/constants/tax-rates-2026';
-
-// ============================================
-// 타입 정의
-// ============================================
-
-/** 가구 유형 */
 export type HouseholdType = 'singleEarner' | 'dualEarner' | 'single';
-
-/** 자녀장려금 계산 입력 */
 export interface ChildTaxCreditInput {
-  /** 가구 유형: singleEarner(홑벌이) / dualEarner(맞벌이) / single(단독, 비해당) */
   householdType: HouseholdType;
-  /** 연 총소득 (원) */
+  /** 신청자격 판단용 부부합산 연 총소득 */
   totalAnnualIncome: number;
-  /** 18세 미만 자녀 수 */
+  /** 지급액 산정용 총급여액등. 생략 시 총소득과 같다고 가정 */
+  annualGrossPay?: number;
   childCount: number;
-  /** 재산 2.4억 미만 여부 */
   passesAssetTest: boolean;
+  /** 가구 재산 합계. 생략 시1.7억원 미만 가정 */
+  householdAssets?: number;
 }
-
-/** 자녀장려금 계산 결과 */
 export interface ChildTaxCreditResult {
-  /** 해당 자녀 수 */
   eligibleChildCount: number;
-  /** 감액 전 총 지급액 (자녀수 × 100만) */
   grossPayment: number;
-  /** 감액률 (0~1) */
   reductionRate: number;
-  /** 최종 지급액 (원) */
   finalPayment: number;
-  /** 경고 메시지 배열 */
   warnings: string[];
 }
-
-// ============================================
-// 메인 계산 함수
-// ============================================
-
-/**
- * 자녀장려금 계산
- *
- * 로직:
- * 1. 가구 유형 검증: single → 0 (단독은 근로장려금 대상)
- * 2. 자산 검증: passesAssetTest false → 0
- * 3. 자녀 검증: childCount <= 0 → 0
- * 4. 소득 기준:
- *    - <= 3600만: 100% 지급 (자녀당 100만)
- *    - > 4300만: 0% (지급 불가)
- *    - 3600만 < 소득 < 4300만: 선형 감액
- *      감액률 = (소득 - 3600만) / 700만
- *      지급액 = 자녀수 × 100만 × (1 - 감액률)
- * 5. 반올림: 10원 단위 절사
- */
-export function calculateChildTaxCredit(
-  input: ChildTaxCreditInput
-): ChildTaxCreditResult {
-  const warnings: string[] = [];
-
-  // 1. 가구 유형 검증
-  if (input.householdType === 'single') {
-    warnings.push('단독가구는 자녀장려금 대상이 아닙니다. 근로장려금(EITC) 대상으로 별도 확인하세요.');
-    return {
-      eligibleChildCount: 0,
-      grossPayment: 0,
-      reductionRate: 0,
-      finalPayment: 0,
-      warnings,
-    };
+export function calculateChildTaxCredit(input: ChildTaxCreditInput): ChildTaxCreditResult {
+  const grossPay = input.annualGrossPay ?? input.totalAnnualIncome;
+  for (const value of [input.totalAnnualIncome, grossPay, input.householdAssets ?? 0]) {
+    if (!Number.isFinite(value) || value < 0)
+      throw new RangeError('소득과 재산은0이상의 유한한 금액이어야 합니다.');
   }
-
-  // 2. 자산 검증
-  if (!input.passesAssetTest) {
-    warnings.push('재산이 2.4억원을 초과하면 자녀장려금 지급 불가입니다.');
-    return {
-      eligibleChildCount: 0,
-      grossPayment: 0,
-      reductionRate: 0,
-      finalPayment: 0,
-      warnings,
-    };
-  }
-
-  // 3. 자녀 수 검증
-  if (input.childCount <= 0) {
-    warnings.push('18세 미만 자녀가 없으면 자녀장려금 대상이 아닙니다.');
-    return {
-      eligibleChildCount: 0,
-      grossPayment: 0,
-      reductionRate: 0,
-      finalPayment: 0,
-      warnings,
-    };
-  }
-
-  const childCount = Math.floor(input.childCount);
-  const eligibleChildCount = childCount;
-
-  // 감액 전 총 지급액
+  if (!Number.isFinite(input.childCount)) throw new RangeError('자녀 수를 확인하세요.');
+  const warnings = [
+    '연속 산식의 추정액입니다. 국세청 산정표, 자녀세액공제 중복조정·기한후 신청·체납은 별도로 확인하세요.',
+  ];
+  const childCount = Math.max(0, Math.floor(input.childCount));
+  const empty = (message: string): ChildTaxCreditResult => ({
+    eligibleChildCount: 0,
+    grossPayment: 0,
+    reductionRate: 0,
+    finalPayment: 0,
+    warnings: [message, ...warnings],
+  });
+  if (input.householdType === 'single')
+    return empty('단독가구는 부양자녀가 없는 가구로 자녀장려금 대상이 아닙니다.');
+  if (!input.passesAssetTest || (input.householdAssets ?? 0) >= CHILD_TAX_BENEFIT_ASSET_CAP)
+    return empty('가구 재산 합계가2.4억원 이상이면 대상이 아닙니다.');
+  if (childCount === 0) return empty('자녀장려금 부양자녀 요건을 충족하는 자녀가 없습니다.');
+  if (input.totalAnnualIncome >= CHILD_TAX_BENEFIT_INCOME_CAP)
+    return empty('부부합산 연 총소득이7,000만원 이상이면 대상이 아닙니다.');
+  if (grossPay <= 0) return empty('총급여액등과 근로·사업·종교인 소득 자격을 확인하세요.');
+  const start =
+    input.householdType === 'dualEarner'
+      ? CHILD_TAX_BENEFIT_DUAL_PHASE_OUT_START
+      : CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START;
+  //100의29: 최대100만원에서 최저50만원까지 감액.7000만원 자격상한 별도.
+  const reductionRate = Math.min(
+    0.5,
+    Math.max(0, ((grossPay - start) / (CHILD_TAX_BENEFIT_INCOME_CAP - start)) * 0.5),
+  );
   const grossPayment = childCount * CHILD_TAX_BENEFIT_PER_CHILD;
-
-  // 4. 소득 기준 적용
-  let reductionRate = 0;
-  let finalPayment = 0;
-
-  if (input.totalAnnualIncome <= CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START) {
-    // 3600만 이하: 전액 지급
-    reductionRate = 0;
-    finalPayment = grossPayment;
-  } else if (
-    input.totalAnnualIncome >= CHILD_TAX_BENEFIT_INCOME_CAP
-  ) {
-    // 4300만 이상: 지급 불가
-    reductionRate = 1;
-    finalPayment = 0;
-    warnings.push(`소득 ${CHILD_TAX_BENEFIT_INCOME_CAP.toLocaleString()}만원 이상이므로 자녀장려금을 받을 수 없습니다.`);
-  } else {
-    // 3600~4300만: 선형 감액
-    const phaseOutRange =
-      CHILD_TAX_BENEFIT_INCOME_CAP -
-      CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START;
-    const excess = input.totalAnnualIncome - CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START;
-    reductionRate = excess / phaseOutRange;
-
-    finalPayment = Math.floor(
-      (grossPayment * (1 - reductionRate)) / 10
-    ) * 10;
+  const assetMultiplier =
+    (input.householdAssets ?? 0) >= CHILD_TAX_BENEFIT_ASSET_REDUCTION_START ? 0.5 : 1;
+  if (assetMultiplier === 0.5)
+    warnings.push('재산1.7억원 이상2.4억원 미만으로 산정액의50%를 감액했습니다.');
+  if (input.annualGrossPay === undefined)
     warnings.push(
-      `소득이 ${CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START.toLocaleString()}~${CHILD_TAX_BENEFIT_INCOME_CAP.toLocaleString()}만원 구간이므로 자녀장려금이 감액됩니다.`
+      '총급여액등을 연 총소득과 같다고 가정했습니다. 두 금액은 소득 종류에 따라 다릅니다.',
     );
-  }
-
-  // 소수점 4자리 반올림
-  const roundedReductionRate =
-    Math.round(reductionRate * 10000) / 10000;
-
+  if (input.householdAssets === undefined)
+    warnings.push('재산1.7억원 미만을 가정했습니다. 재산감액 여부를 확인하세요.');
   return {
-    eligibleChildCount,
+    eligibleChildCount: childCount,
     grossPayment,
-    reductionRate: roundedReductionRate,
-    finalPayment,
+    reductionRate: Math.round(reductionRate * 10000) / 10000,
+    finalPayment: Math.floor((grossPayment * (1 - reductionRate) * assetMultiplier) / 10) * 10,
     warnings,
   };
 }

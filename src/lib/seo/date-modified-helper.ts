@@ -30,11 +30,11 @@ export function getDateModifiedFromManifest(
  * CI(Cloudflare Pages) 클론은 mtime 이 전부 빌드 시각이 되므로 git 기반 manifest 가
  * 정확한 lastmod 신호다 (Google: lastmod 는 일관·정확할 때만 신뢰).
  */
-export function getLastModifiedForRoute(
+export function getLastModifiedForRoute<T extends string | undefined>(
   route: string,
-  fallback: () => string,
+  fallback: () => T,
   source: DateModifiedManifest = manifest as DateModifiedManifest,
-): string {
+): string | T {
   const iso = source[route];
   if (iso) {
     const d = new Date(iso);

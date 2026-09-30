@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     description: '특정일까지 D-day, 두 날짜 사이 일수, N일 후 날짜를 즉시 계산하세요.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
@@ -109,7 +108,9 @@ export default function DdayPage() {
       { name: '결과 확인', text: '남은 일수, 도달 날짜, 요일, 기간 환산값을 확인합니다.' },
     ],
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
@@ -147,26 +148,39 @@ export default function DdayPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '생활', href: '/category/lifestyle/' },
-                    { name: 'D-day' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">D-day 계산기 2026</h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  특정일까지 며칠 남았는지, 두 날짜 사이의 차이가 얼마나 되는지, 기준일에서 특정 일수 후의 날짜가 언제인지를 즉시 계산할 수 있는 무료 도구입니다. 기념일 카운팅, 시험 준비, 출산 예정일, 휴가 계획 등 일상의 모든 날짜 계산에 활용하세요.
-                </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '생활', href: '/category/lifestyle/' },
+                      { name: 'D-day' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">D-day 계산기 2026</h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    두 날짜 사이의 일수와 기념일을 확인하세요.
+                  </p>
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                </header>
+              }
+              calculator={<DdayCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={[...RELATED]} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="D-day는 목표 날짜까지 남은 일수를 나타내는 표현입니다. 기준일(보통 오늘)에서 목표일까지의 차이를 일 단위로 계산하며, 양수는 남은 날을, 음수는 지난 날을 의미합니다."
                 table={{
@@ -186,29 +200,23 @@ export default function DdayPage() {
                   '요일(월·화·수 등)도 함께 표시',
                 ]}
               />
-
-              {/* 계산기 */}
-              <DdayCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* AD-4 Infeed */}
-              {/* D-day란? */}
               <section aria-label="D-day 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">D-day란?</h2>
                 <p className="mb-4 text-text-secondary">
-                  D-day(디데이)는 특정 목표 날짜까지 남은 일수를 나타내는 표현입니다. 원래는 군사용어로 "Day of Invasion(침공일)" 또는 "Designated Day(지정된 날)" 를 의미했으나, 일상에서는 "목표로 삼은 날까지 얼마나 남았는가"를 뜻합니다.
+                  D-day(디데이)는 특정 목표 날짜까지 남은 일수를 나타내는 표현입니다. 원래는
+                  군사용어로 "Day of Invasion(침공일)" 또는 "Designated Day(지정된 날)" 를
+                  의미했으나, 일상에서는 "목표로 삼은 날까지 얼마나 남았는가"를 뜻합니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  예를 들어 "생일까지 D-10"이라고 하면 생일이 10일 남았다는 뜻이고, "시험을 치른 지 D+30"이라고 하면 시험 후 30일이 지났다는 뜻입니다. 한국에서는 결혼식, 입시, 군 제대 등 중요한 일정을 계산할 때 자주 사용됩니다.
+                  예를 들어 "생일까지 D-10"이라고 하면 생일이 10일 남았다는 뜻이고, "시험을 치른 지
+                  D+30"이라고 하면 시험 후 30일이 지났다는 뜻입니다. 한국에서는 결혼식, 입시, 군
+                  제대 등 중요한 일정을 계산할 때 자주 사용됩니다.
                 </p>
                 <p className="text-text-secondary">
-                  본 계산기를 이용하면 복잡한 날짜 계산 없이 버튼 몇 번으로 정확한 D-day를 알 수 있습니다.
+                  본 계산기를 이용하면 복잡한 날짜 계산 없이 버튼 몇 번으로 정확한 D-day를 알 수
+                  있습니다.
                 </p>
               </section>
-
-              {/* 3가지 모드 상세 설명 */}
               <section aria-label="계산 모드 설명" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">3가지 계산 모드 활용법</h2>
 
@@ -237,7 +245,8 @@ export default function DdayPage() {
                       2. 기간 계산 모드 (시작일 → 종료일)
                     </h3>
                     <p className="mb-3 text-sm text-text-secondary">
-                      두 날짜 사이의 정확한 기간을 계산합니다. "양 끝 포함", "시작일만", "종료일만", "제외" 네 가지 포함 방식을 선택할 수 있습니다.
+                      두 날짜 사이의 정확한 기간을 계산합니다. "양 끝 포함", "시작일만", "종료일만",
+                      "제외" 네 가지 포함 방식을 선택할 수 있습니다.
                     </p>
                     <div className="rounded-lg bg-bg-card p-4 text-sm">
                       <p className="mb-2 font-medium text-text-primary">사용 예시:</p>
@@ -255,7 +264,8 @@ export default function DdayPage() {
                       3. N일 후 모드 (기준일 + 일수)
                     </h3>
                     <p className="mb-3 text-sm text-text-secondary">
-                      기준일에서 특정 일수를 더하거나 빼서 도달할 날짜를 계산합니다. 기념일 계산에 특히 유용합니다.
+                      기준일에서 특정 일수를 더하거나 빼서 도달할 날짜를 계산합니다. 기념일 계산에
+                      특히 유용합니다.
                     </p>
                     <div className="rounded-lg bg-bg-card p-4 text-sm">
                       <p className="mb-2 font-medium text-text-primary">사용 예시:</p>
@@ -268,8 +278,6 @@ export default function DdayPage() {
                   </div>
                 </div>
               </section>
-
-              {/* 기념일·이벤트별 100일, 1000일 예시 */}
               <section aria-label="기념일 계산 예시" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">기념일별 100일·1000일 계산</h2>
                 <p className="mb-4 text-sm text-text-secondary">
@@ -279,13 +287,22 @@ export default function DdayPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-3 py-2 text-left font-semibold text-text-secondary"
+                        >
                           기념일
                         </th>
-                        <th scope="col" className="px-3 py-2 text-center font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-3 py-2 text-center font-semibold text-text-secondary"
+                        >
                           100일
                         </th>
-                        <th scope="col" className="px-3 py-2 text-center font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-3 py-2 text-center font-semibold text-text-secondary"
+                        >
                           1000일
                         </th>
                       </tr>
@@ -315,21 +332,23 @@ export default function DdayPage() {
                   </table>
                 </div>
               </section>
-
-              {/* 윤년과 요일 처리 */}
               <section aria-label="윤년 및 요일 처리" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">윤년·요일 자동 처리</h2>
                 <p className="mb-4 text-text-secondary">
-                  본 계산기는 모든 날짜 계산에서 윤년을 완벽하게 처리합니다. 2월 29일 같은 특수한 날짜도 정확하게 계산되며, 각 날짜의 요일(월·화·수·목·금·토·일)도 자동으로 표시됩니다.
+                  본 계산기는 모든 날짜 계산에서 윤년을 완벽하게 처리합니다. 2월 29일 같은 특수한
+                  날짜도 정확하게 계산되며, 각 날짜의 요일(월·화·수·목·금·토·일)도 자동으로
+                  표시됩니다.
                 </p>
                 <div className="rounded-lg bg-bg-card p-4 text-sm">
                   <p className="mb-3 font-medium text-text-primary">윤년 처리 예시:</p>
                   <ul className="space-y-2 text-text-secondary">
                     <li>
-                      • <strong>2024-02-28</strong> (수) ~ <strong>2024-02-29</strong> (목): 2일 (윤년이므로 2월이 29일까지)
+                      • <strong>2024-02-28</strong> (수) ~ <strong>2024-02-29</strong> (목): 2일
+                      (윤년이므로 2월이 29일까지)
                     </li>
                     <li>
-                      • <strong>2025-02-28</strong> (금) ~ <strong>2025-03-01</strong> (토): 2일 (2025년은 평년)
+                      • <strong>2025-02-28</strong> (금) ~ <strong>2025-03-01</strong> (토): 2일
+                      (2025년은 평년)
                     </li>
                     <li>
                       • <strong>2024-01-01</strong> (월) + 366일 = <strong>2025-01-01</strong> (수)
@@ -337,57 +356,76 @@ export default function DdayPage() {
                   </ul>
                 </div>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">D-day 계산 시 주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>유효하지 않은 날짜 입력</strong>: "2월 30일" 같은 존재하지 않는 날짜를 입력하면 오류 알림이 나타납니다. 다시 올바른 날짜를 입력해주세요.
+                    <strong>유효하지 않은 날짜 입력</strong>: "2월 30일" 같은 존재하지 않는 날짜를
+                    입력하면 오류 알림이 나타납니다. 다시 올바른 날짜를 입력해주세요.
                   </li>
                   <li>
-                    <strong>공휴일 제외 안 함</strong>: 본 계산기는 순수 일수만 계산하며, 공휴일이나 휴일은 반영하지 않습니다. 실제 업무일 수나 수업일 수를 계산할 때는 공휴일을 별도로 차감해주세요.
+                    <strong>공휴일 제외 안 함</strong>: 본 계산기는 순수 일수만 계산하며, 공휴일이나
+                    휴일은 반영하지 않습니다. 실제 업무일 수나 수업일 수를 계산할 때는 공휴일을
+                    별도로 차감해주세요.
                   </li>
                   <li>
-                    <strong>시간 단위 미포함</strong>: 계산기는 날짜 단위만 처리하므로 시간, 분, 초는 고려하지 않습니다.
+                    <strong>시간 단위 미포함</strong>: 계산기는 날짜 단위만 처리하므로 시간, 분,
+                    초는 고려하지 않습니다.
                   </li>
                   <li>
-                    <strong>매우 먼 과거/미래</strong>: 1900년 이전이나 2100년 이후 같은 극단적인 날짜 계산은 의도하지 않았으므로, 일반적인 생활 범위 내(1950~2100년)의 날짜만 입력해주세요.
+                    <strong>매우 먼 과거/미래</strong>: 1900년 이전이나 2100년 이후 같은 극단적인
+                    날짜 계산은 의도하지 않았으므로, 일반적인 생활 범위 내(1950~2100년)의 날짜만
+                    입력해주세요.
                   </li>
                   <li>
-                    <strong>기념일 정확성</strong>: 100일, 1000일 같은 기념일 계산 시 정확한 기준일(출생일, 결혼일 등)을 입력해야 합니다.
+                    <strong>기념일 정확성</strong>: 100일, 1000일 같은 기념일 계산 시 정확한
+                    기준일(출생일, 결혼일 등)을 입력해야 합니다.
                   </li>
                   <li>
-                    <strong>참고용</strong>: 본 계산기의 결과는 일반 정보 제공 목적이며, 법적·공식적 기한 계산(계약만료, 세무신고 기한 등)에는 반드시 공식 기관의 안내를 확인해주세요.
+                    <strong>참고용</strong>: 본 계산기의 결과는 일반 정보 제공 목적이며, 법적·공식적
+                    기한 계산(계약만료, 세무신고 기한 등)에는 반드시 공식 기관의 안내를
+                    확인해주세요.
                   </li>
                 </ul>
               </section>
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={[...RELATED]} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-04-24: D-day 계산기 초판 공개 (3 모드 완벽 지원)</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>계산 기준</strong>: UTC(협정세계시) 자정 기준 일수 계산, 윤년 완벽 처리. 참고: <a href="https://www.kasi.re.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국천문연구원</a> 표준시, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국가법령정보센터</a>
+                  <strong>계산 기준</strong>: UTC(협정세계시) 자정 기준 일수 계산, 윤년 완벽 처리.
+                  참고:{' '}
+                  <a
+                    href="https://www.kasi.re.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    한국천문연구원
+                  </a>{' '}
+                  표준시,{' '}
+                  <a
+                    href="https://www.law.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국가법령정보센터
+                  </a>
                 </p>
                 <p>
-                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 법적 기한(계약, 신고, 소송 등)과 관련된 날짜 계산에는 반드시 공식 기관(법원, 국세청, 행정기관)의 안내를 확인하시기 바랍니다.
+                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 법적 기한(계약, 신고, 소송
+                  등)과 관련된 날짜 계산에는 반드시 공식 기관(법원, 국세청, 행정기관)의 안내를
+                  확인하시기 바랍니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

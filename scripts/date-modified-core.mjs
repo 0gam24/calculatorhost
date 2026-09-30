@@ -17,12 +17,14 @@ export function pageFileToRoute(file) {
   return route;
 }
 
-export function buildManifest(entries) {
+export function buildManifest(entries, previous = {}) {
   const out = {};
   for (const { file, isoDate } of entries) {
     const route = pageFileToRoute(file);
-    if (!route || !isoDate) continue;
-    out[route] = isoDate;
+    if (!route) continue;
+    const date = isoDate || previous[route];
+    if (!date || Number.isNaN(Date.parse(date))) continue;
+    out[route] = date;
   }
   return out;
 }

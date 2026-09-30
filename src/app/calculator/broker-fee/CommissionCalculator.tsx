@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 부동산 중개수수료 계산기 (MVP #8)
  *
@@ -7,7 +10,7 @@
  * 공식: src/lib/finance/realty-commission.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -30,14 +33,22 @@ const PRICE_UNIT_BUTTONS = [
 
 export function CommissionCalculator() {
   // 입력 상태
-  const [transactionType, setTransactionType] = useState<TransactionType>('sale');
-  const [propertyKind, setPropertyKind] = useState<PropertyKind>('house');
-  const [salePrice, setSalePrice] = useState(500_000_000);
-  const [deposit, setDeposit] = useState(200_000_000);
-  const [monthlyRent, setMonthlyRent] = useState(3_000_000);
-  const [negotiatedRate, setNegotiatedRate] = useState<number | undefined>();
-  const [includeVat, setIncludeVat] = useState(false);
-
+  const [transactionType, setTransactionType] = useCalculatorState<TransactionType>(
+    'broker-fee:transactionType',
+    'sale',
+  );
+  const [propertyKind, setPropertyKind] = useCalculatorState<PropertyKind>(
+    'broker-fee:propertyKind',
+    'house',
+  );
+  const [salePrice, setSalePrice] = useCalculatorState('broker-fee:salePrice', 500_000_000);
+  const [deposit, setDeposit] = useCalculatorState('broker-fee:deposit', 200_000_000);
+  const [monthlyRent, setMonthlyRent] = useCalculatorState('broker-fee:monthlyRent', 3_000_000);
+  const [negotiatedRate, setNegotiatedRate] = useCalculatorState<number | undefined>(
+    'broker-fee:negotiatedRate',
+    undefined,
+  );
+  const [includeVat, setIncludeVat] = useCalculatorState('broker-fee:includeVat', false);
 
   // 계산 실행
   const result: CommissionResult = useMemo(() => {
@@ -66,15 +77,7 @@ export function CommissionCalculator() {
         warnings: ['계산 중 오류가 발생했습니다'],
       };
     }
-  }, [
-    transactionType,
-    propertyKind,
-    salePrice,
-    deposit,
-    monthlyRent,
-    negotiatedRate,
-    includeVat,
-  ]);
+  }, [transactionType, propertyKind, salePrice, deposit, monthlyRent, negotiatedRate, includeVat]);
 
   // 협의 요율 입력 (%, 예: "0.3" = 0.3%)
   const handleNegotiatedRateChange = (text: string) => {
@@ -89,16 +92,14 @@ export function CommissionCalculator() {
   };
 
   // 표시용 협의 요율 (%)
-  const negotiatedRateDisplay = negotiatedRate
-    ? (negotiatedRate * 100).toFixed(2)
-    : '';
+  const negotiatedRateDisplay = negotiatedRate ? (negotiatedRate * 100).toFixed(2) : '';
 
   // 세율 표기
   const ratePercent = formatPercent(result.appliedRate);
   const rateLabel = `상한요율 ${ratePercent}`;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="broker-fee">
       <FormCard title="입력">
         {/* 거래 유형 */}
         <RadioGroup<TransactionType>
@@ -137,6 +138,7 @@ export function CommissionCalculator() {
               placeholder="예: 200,000,000"
               unitButtons={PRICE_UNIT_BUTTONS}
               max={10_000_000_000}
+              unit="원"
             />
             <NumberInput
               id="monthly-rent"
@@ -150,6 +152,7 @@ export function CommissionCalculator() {
                 { label: '만', value: 10_000 },
               ]}
               max={100_000_000}
+              unit="원"
             />
           </>
         ) : transactionType === 'jeonse' ? (
@@ -161,6 +164,7 @@ export function CommissionCalculator() {
             placeholder="예: 500,000,000"
             unitButtons={PRICE_UNIT_BUTTONS}
             max={10_000_000_000}
+            unit="원"
           />
         ) : (
           <NumberInput
@@ -171,6 +175,7 @@ export function CommissionCalculator() {
             placeholder="예: 500,000,000"
             unitButtons={PRICE_UNIT_BUTTONS}
             max={10_000_000_000}
+            unit="원"
           />
         )}
 
@@ -187,7 +192,7 @@ export function CommissionCalculator() {
               value={negotiatedRateDisplay}
               onChange={(e) => handleNegotiatedRateChange(e.target.value)}
               placeholder="예: 0.3"
-              className="w-full rounded-lg border border-border-base bg-bg-card pl-4 pr-10 py-3 text-right text-lg font-semibold text-text-primary placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+              className="w-full rounded-lg border border-border-base bg-bg-card py-3 pl-4 pr-10 text-right text-lg font-semibold text-text-primary placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
               aria-describedby="negotiated-rate-help"
             />
             <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-sm text-text-secondary">
@@ -269,14 +274,14 @@ export function CommissionCalculator() {
         {result.warnings.length > 0 && (
           <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-3">
             {result.warnings.map((warning, idx) => (
-              <p key={idx} className="text-sm text-highlight-500 font-medium">
+              <p key={idx} className="text-sm font-medium text-highlight-500">
                 주의: {warning}
               </p>
             ))}
           </div>
         )}
       </ResultCard>
-        <ResultBanner />
-    </div>
+      <ResultBanner />
+    </CalculatorWorkspace>
   );
 }

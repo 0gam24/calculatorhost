@@ -1,4 +1,8 @@
 'use client';
+import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
+
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
  * 예금(정기예금) 이자 계산기 (MVP #12)
@@ -7,7 +11,7 @@
  * 공식: src/lib/finance/deposit.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
@@ -24,7 +28,7 @@ import { formatKRW } from '@/lib/utils';
 // Recharts 차트 컴포넌트 동적 import (번들 분리)
 const DepositChart = dynamic(() => import('./DepositChart'), {
   ssr: false,
-  loading: () => <div className="h-80 animate-pulse bg-bg-card rounded-lg" />,
+  loading: () => <div className="h-80 animate-pulse rounded-lg bg-bg-card" />,
 });
 
 const PRINCIPAL_UNIT_BUTTONS = [
@@ -83,11 +87,14 @@ const TAX_TYPE_LABELS: TaxTypeLabel[] = [
 ];
 
 export function DepositCalculator() {
-  const [principal, setPrincipal] = useState(10_000_000); // 천만원
-  const [annualRate, setAnnualRate] = useState(3.5);
-  const [termMonths, setTermMonths] = useState(12);
-  const [method, setMethod] = useState<DepositCompoundingMethod>('simple');
-  const [taxType, setTaxType] = useState<TaxType>('general');
+  const [principal, setPrincipal] = useCalculatorState('deposit:principal', 10_000_000); // 천만원
+  const [annualRate, setAnnualRate] = useCalculatorState('deposit:annualRate', 3.5);
+  const [termMonths, setTermMonths] = useCalculatorState('deposit:termMonths', 12);
+  const [method, setMethod] = useCalculatorState<DepositCompoundingMethod>(
+    'deposit:method',
+    'simple',
+  );
+  const [taxType, setTaxType] = useCalculatorState<TaxType>('deposit:taxType', 'general');
 
   const result = useMemo(() => {
     if (principal <= 0 || termMonths <= 0 || annualRate < 0) {
@@ -170,9 +177,7 @@ export function DepositCalculator() {
       let interest = 0;
 
       if (method === 'simple') {
-        interest = Math.floor(
-          (principal * annualRate / 100) * (monthFraction / 12) / 10
-        ) * 10;
+        interest = Math.floor((((principal * annualRate) / 100) * (monthFraction / 12)) / 10) * 10;
       } else if (method === 'monthlyCompound') {
         const r = annualRate / 100 / 12;
         if (r === 0) {
@@ -208,16 +213,18 @@ export function DepositCalculator() {
   }, [result, principal, termMonths, annualRate, method]);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="deposit">
       <FormCard title="입력">
         <NumberInput
           id="principal"
           label="예치 원금"
+          min={1}
           value={principal}
           onChange={setPrincipal}
           placeholder="예: 10,000,000"
           unitButtons={PRINCIPAL_UNIT_BUTTONS}
           max={10_000_000_000}
+          unit="원"
         />
 
         <NumberInput
@@ -226,21 +233,24 @@ export function DepositCalculator() {
           value={annualRate}
           onChange={setAnnualRate}
           placeholder="예: 3.5"
-          min={0.01}
+          min={0}
           max={15}
+          unit="%"
         />
 
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-text-primary">예치 기간 (개월)</label>
           <NumberInput
             id="term-months"
-            label=""
+            label="가입 기간"
             value={termMonths}
             onChange={setTermMonths}
             placeholder="예: 12"
             min={1}
             max={360}
             className="mb-2"
+            integer
+            unit="개월"
           />
           <div className="flex flex-wrap gap-2">
             {TERM_MONTH_BUTTONS.map((btn) => (
@@ -260,31 +270,36 @@ export function DepositCalculator() {
           </div>
         </div>
 
-        <RadioGroup<DepositCompoundingMethod>
-          id="method"
-          label="이자 방식"
-          value={method}
-          onChange={setMethod}
-          options={COMPOUNDING_LABELS.map((l) => ({
-            value: l.method,
-            label: l.label,
-          }))}
-        />
+        <CalculatorDetails
+          summary={`${method === 'simple' ? '단리' : '복리'} · ${taxType === 'general' ? '일반과세' : taxType === 'exempt' ? '비과세' : '세금우대'}`}
+        >
+          <RadioGroup<DepositCompoundingMethod>
+            id="method"
+            label="이자 방식"
+            value={method}
+            onChange={setMethod}
+            options={COMPOUNDING_LABELS.map((l) => ({
+              value: l.method,
+              label: l.label,
+            }))}
+          />
 
-        <RadioGroup<TaxType>
-          id="tax-type"
-          label="이자 과세 방식"
-          value={taxType}
-          onChange={setTaxType}
-          options={TAX_TYPE_LABELS.map((l) => ({
-            value: l.type,
-            label: l.label,
-          }))}
-        />
+          <RadioGroup<TaxType>
+            id="tax-type"
+            label="이자 과세 방식"
+            value={taxType}
+            onChange={setTaxType}
+            options={TAX_TYPE_LABELS.map((l) => ({
+              value: l.type,
+              label: l.label,
+            }))}
+          />
+        </CalculatorDetails>
       </FormCard>
 
       <ResultCard
         title="예금 계산"
+        empty={!result}
         heroLabel={`${method === 'simple' ? '단리' : method === 'monthlyCompound' ? '월복리' : '일복리'} 세후 만기 수령액`}
         heroValue={result ? formatKRW(result.maturityAmount) : '계산하려면 값을 입력해 주세요'}
         heroNote={result ? `세율 ${taxRatePercent}% 적용` : undefined}
@@ -325,7 +340,7 @@ export function DepositCalculator() {
         {/* 3가지 이자 방식 비교 박스 */}
         {result && simpleResult && monthlyCompoundResult && dailyCompoundResult && (
           <div className="mt-4 rounded-lg bg-highlight-500/10 p-4">
-            <p className="text-sm font-medium text-text-primary mb-3">3가지 이자 방식 비교</p>
+            <p className="mb-3 text-sm font-medium text-text-primary">3가지 이자 방식 비교</p>
             <div className="space-y-2 text-caption">
               <div className="flex justify-between">
                 <span
@@ -376,13 +391,13 @@ export function DepositCalculator() {
                     Math.max(
                       simpleResult.posttaxInterest,
                       monthlyCompoundResult.posttaxInterest,
-                      dailyCompoundResult.posttaxInterest
+                      dailyCompoundResult.posttaxInterest,
                     ) -
                       Math.min(
                         simpleResult.posttaxInterest,
                         monthlyCompoundResult.posttaxInterest,
-                        dailyCompoundResult.posttaxInterest
-                      )
+                        dailyCompoundResult.posttaxInterest,
+                      ),
                   )}
                 </span>{' '}
                 차이
@@ -404,21 +419,21 @@ export function DepositCalculator() {
           </div>
         )}
       </ResultCard>
-        <ResultBanner />
+      <ResultBanner />
 
       {result && (
         <>
           {/* 누적 원리금 추이 차트 */}
           <div className="col-span-1 lg:col-span-2">
-            <section aria-label="누적 원리금 추이 차트" className="card">
+            <CalculatorDetails title="월별 상세" lazy>
               <h3 className="mb-4 text-lg font-semibold">누적 원리금 추이</h3>
               <div className="min-h-80 w-full">
                 <DepositChart data={chartData} />
               </div>
-            </section>
+            </CalculatorDetails>
           </div>
         </>
       )}
-    </div>
+    </CalculatorWorkspace>
   );
 }

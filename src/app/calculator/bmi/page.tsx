@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -38,7 +38,6 @@ export const metadata: Metadata = {
     description: '키와 몸무게로 BMI를 계산하고 건강한 체중 범위를 확인하세요.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
@@ -88,7 +87,8 @@ const RELATED = [
 export default function BmiPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: 'BMI 계산기',
-    description: '키와 몸무게로 BMI를 계산하고 대한비만학회 기준 체중 분류와 정상 체중 범위를 확인하는 무료 도구',
+    description:
+      '키와 몸무게로 BMI를 계산하고 대한비만학회 기준 체중 분류와 정상 체중 범위를 확인하는 무료 도구',
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
@@ -106,11 +106,16 @@ export default function BmiPage() {
       { name: '키 입력', text: 'cm 단위로 자신의 키를 입력합니다.' },
       { name: '체중 입력', text: 'kg 단위로 자신의 현재 체중을 입력합니다.' },
       { name: 'BMI 계산', text: '입력한 값으로 자동으로 BMI(체중 ÷ 키²)가 계산됩니다.' },
-      { name: '결과 해석', text: 'BMI에 따라 저체중, 정상, 과체중, 비만 등 상태가 판단됩니다 (대한비만학회 기준).' },
+      {
+        name: '결과 해석',
+        text: 'BMI에 따라 저체중, 정상, 과체중, 비만 등 상태가 판단됩니다 (대한비만학회 기준).',
+      },
       { name: '표준체중 확인', text: '자신의 키에 맞는 표준체중 범위를 확인합니다.' },
     ],
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
@@ -148,26 +153,39 @@ export default function BmiPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '생활', href: '/category/lifestyle/' },
-                    { name: 'BMI' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">BMI 계산기 2026</h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  키와 몸무게로 체질량지수(BMI)를 즉시 계산할 수 있는 무료 도구입니다. 대한비만학회 2022 기준에 따라 저체중, 정상, 과체중, 비만 단계를 분류하고 개인별 정상 체중 범위를 제시합니다. 간단한 입력으로 현재의 건강한 체중 상태를 파악하세요.
-                </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '생활', href: '/category/lifestyle/' },
+                      { name: 'BMI' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">BMI 계산기 2026</h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    키와 몸무게로 체질량지수를 확인하세요.
+                  </p>
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                </header>
+              }
+              calculator={<BmiCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={[...RELATED]} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="BMI(체질량지수)는 키와 몸무게로 계산한 체중의 적절성을 판단하는 지표입니다. BMI = 몸무게(kg) ÷ 키(m)²로 계산되며, 다양한 건강 상태를 분류하는 기초 자료로 사용됩니다."
                 table={{
@@ -190,43 +208,36 @@ export default function BmiPage() {
                   '정상 BMI 범위는 18.5~22.9',
                 ]}
               />
-
-              {/* 계산기 */}
-              <BmiCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* AD-4 Infeed */}
-              {/* BMI란? */}
               <section aria-label="BMI 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">BMI(체질량지수)란?</h2>
                 <p className="mb-4 text-text-secondary">
-                  BMI(Body Mass Index, 체질량지수)는 인체의 비만도를 나타내는 지표입니다. 키와 몸무게의 관계를 수치화하여 저체중, 정상, 과체중, 비만 등의 상태를 분류합니다. 간단한 계산으로 얻을 수 있어 건강 검진과 보건 통계에 널리 사용됩니다.
+                  BMI(Body Mass Index, 체질량지수)는 인체의 비만도를 나타내는 지표입니다. 키와
+                  몸무게의 관계를 수치화하여 저체중, 정상, 과체중, 비만 등의 상태를 분류합니다.
+                  간단한 계산으로 얻을 수 있어 건강 검진과 보건 통계에 널리 사용됩니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  BMI는 1830년대 벨기에 수학자 아돌프 케틀레(Adolphe Quetelet)가 개발했으며, 현재는 세계보건기구(WHO)를 비롯한 국제 기구와 각 국가의 보건 기관에서 표준 지표로 채택하고 있습니다.
+                  BMI는 1830년대 벨기에 수학자 아돌프 케틀레(Adolphe Quetelet)가 개발했으며, 현재는
+                  세계보건기구(WHO)를 비롯한 국제 기구와 각 국가의 보건 기관에서 표준 지표로
+                  채택하고 있습니다.
                 </p>
                 <p className="text-text-secondary">
-                  하지만 BMI는 체지방과 근육을 구분하지 못하고 개인의 신체 구성, 연령, 성별 차이를 반영하지 못하므로, 의학적 진단이나 개별 건강 평가에는 다른 지표들과 함께 종합적으로 사용되어야 합니다.
+                  하지만 BMI는 체지방과 근육을 구분하지 못하고 개인의 신체 구성, 연령, 성별 차이를
+                  반영하지 못하므로, 의학적 진단이나 개별 건강 평가에는 다른 지표들과 함께
+                  종합적으로 사용되어야 합니다.
                 </p>
               </section>
-
-              {/* 계산 공식 */}
               <section aria-label="BMI 계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">BMI 계산 공식</h2>
                 <div className="mb-6 rounded-lg bg-bg-card p-4">
-                  <p className="text-center font-mono text-lg font-semibold text-primary-500 mb-2">
+                  <p className="mb-2 text-center font-mono text-lg font-semibold text-primary-500">
                     BMI = 몸무게(kg) ÷ 키(m)²
                   </p>
-                  <p className="text-center text-sm text-text-secondary">
-                    (키는 cm에서 m로 변환)
-                  </p>
+                  <p className="text-center text-sm text-text-secondary">(키는 cm에서 m로 변환)</p>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="text-lg font-semibold text-text-primary mb-2">계산 예시</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-text-primary">계산 예시</h3>
                     <div className="rounded-lg bg-bg-card p-4 text-sm">
                       <p className="mb-2">
                         <strong>예: 키 170cm, 몸무게 70kg</strong>
@@ -234,31 +245,43 @@ export default function BmiPage() {
                       <ul className="space-y-1 text-text-secondary">
                         <li>• 키를 m 단위로 변환: 170cm = 1.7m</li>
                         <li>• 키의 제곱: 1.7 × 1.7 = 2.89</li>
-                        <li>• BMI = 70 ÷ 2.89 = <strong>24.22</strong></li>
-                        <li>• 분류: <strong>과체중 (비만 전단계)</strong></li>
+                        <li>
+                          • BMI = 70 ÷ 2.89 = <strong>24.22</strong>
+                        </li>
+                        <li>
+                          • 분류: <strong>과체중 (비만 전단계)</strong>
+                        </li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </section>
-
-              {/* 한국 vs WHO 기준 비교 */}
               <section aria-label="한국 vs WHO BMI 기준" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">한국 vs WHO 기준 비교</h2>
                 <p className="mb-4 text-text-secondary">
-                  대한비만학회는 아시아인의 체형과 건강 위험을 반영하여 WHO 기준보다 낮은 기준을 적용합니다. 같은 BMI 수치도 나라와 기준에 따라 분류가 달라질 수 있습니다.
+                  대한비만학회는 아시아인의 체형과 건강 위험을 반영하여 WHO 기준보다 낮은 기준을
+                  적용합니다. 같은 BMI 수치도 나라와 기준에 따라 분류가 달라질 수 있습니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-3 py-2 text-left font-semibold text-text-secondary"
+                        >
                           분류
                         </th>
-                        <th scope="col" className="px-3 py-2 text-center font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-3 py-2 text-center font-semibold text-text-secondary"
+                        >
                           한국 (대한비만학회)
                         </th>
-                        <th scope="col" className="px-3 py-2 text-center font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-3 py-2 text-center font-semibold text-text-secondary"
+                        >
                           WHO (서양)
                         </th>
                       </tr>
@@ -294,21 +317,23 @@ export default function BmiPage() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary">
-                  <strong>주의:</strong> 본 계산기는 한국의 대한비만학회 2022 기준을 적용합니다. 국제 비교나 의학적 진단이 필요한 경우 해당 국가의 기준과 전문의 의견을 참고하세요.
+                  <strong>주의:</strong> 본 계산기는 한국의 대한비만학회 2022 기준을 적용합니다.
+                  국제 비교나 의학적 진단이 필요한 경우 해당 국가의 기준과 전문의 의견을 참고하세요.
                 </p>
               </section>
-
-              {/* 분류별 건강 가이드 */}
               <section aria-label="BMI 분류별 건강 가이드" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">BMI 분류별 건강 가이드</h2>
                 <p className="mb-6 text-text-secondary">
-                  각 BMI 분류별로 권장되는 건강 관리 방법을 제시합니다. 그러나 이는 일반 정보일 뿐, 개인의 건강 상태는 다양한 요소를 고려해야 하므로 전문의와 상담하세요.
+                  각 BMI 분류별로 권장되는 건강 관리 방법을 제시합니다. 그러나 이는 일반 정보일 뿐,
+                  개인의 건강 상태는 다양한 요소를 고려해야 하므로 전문의와 상담하세요.
                 </p>
 
                 <div className="space-y-4">
                   <div className="rounded-lg border border-secondary-500/30 bg-secondary-500/5 p-4">
-                    <h3 className="font-semibold text-secondary-500 mb-2">저체중 (BMI 18.4 이하)</h3>
-                    <ul className="text-sm text-text-secondary space-y-1">
+                    <h3 className="mb-2 font-semibold text-secondary-500">
+                      저체중 (BMI 18.4 이하)
+                    </h3>
+                    <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• 균형잡힌 영양식 섭취</li>
                       <li>• 근력 운동과 유산소 운동 병행</li>
                       <li>• 규칙적인 식습관 형성</li>
@@ -317,8 +342,8 @@ export default function BmiPage() {
                   </div>
 
                   <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
-                    <h3 className="font-semibold text-primary-500 mb-2">정상 (BMI 18.5~22.9)</h3>
-                    <ul className="text-sm text-text-secondary space-y-1">
+                    <h3 className="mb-2 font-semibold text-primary-500">정상 (BMI 18.5~22.9)</h3>
+                    <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• 현재 건강한 체중 유지</li>
                       <li>• 균형잡힌 식단 계속 유지</li>
                       <li>• 주 3회 이상 규칙적 운동</li>
@@ -327,8 +352,10 @@ export default function BmiPage() {
                   </div>
 
                   <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
-                    <h3 className="font-semibold text-highlight-500 mb-2">과체중 (BMI 23.0~24.9)</h3>
-                    <ul className="text-sm text-text-secondary space-y-1">
+                    <h3 className="mb-2 font-semibold text-highlight-500">
+                      과체중 (BMI 23.0~24.9)
+                    </h3>
+                    <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• 3~5kg 감량 목표 설정</li>
                       <li>• 칼로리 섭취 제한 (하루 500~700kcal 감)</li>
                       <li>• 주 5회 이상 운동 (30분 이상)</li>
@@ -337,8 +364,8 @@ export default function BmiPage() {
                   </div>
 
                   <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
-                    <h3 className="font-semibold text-danger-500 mb-2">비만 (BMI 25.0 이상)</h3>
-                    <ul className="text-sm text-text-secondary space-y-1">
+                    <h3 className="mb-2 font-semibold text-danger-500">비만 (BMI 25.0 이상)</h3>
+                    <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• 전문의 및 영양사 상담 필수</li>
                       <li>• 체계적인 식단 관리</li>
                       <li>• 규칙적 운동 (주 5회, 중강도)</li>
@@ -348,88 +375,118 @@ export default function BmiPage() {
                   </div>
                 </div>
 
-                <p className="mt-6 text-sm text-text-secondary border-t border-border-subtle pt-4">
-                  <strong>면책:</strong> 위 내용은 일반 정보 제공 목적이며 의학적 진단이나 치료 권고가 아닙니다. 개인의 건강 상태에 따라 전문의 상담이 필수입니다.
+                <p className="mt-6 border-t border-border-subtle pt-4 text-sm text-text-secondary">
+                  <strong>면책:</strong> 위 내용은 일반 정보 제공 목적이며 의학적 진단이나 치료
+                  권고가 아닙니다. 개인의 건강 상태에 따라 전문의 상담이 필수입니다.
                 </p>
               </section>
-
-              {/* BMI의 한계 */}
               <section aria-label="BMI의 한계" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">BMI의 한계와 주의사항</h2>
                 <p className="mb-4 text-text-secondary">
-                  BMI는 간단하고 유용한 지표이지만, 다음과 같은 한계가 있으므로 다른 건강 지표와 함께 평가해야 합니다.
+                  BMI는 간단하고 유용한 지표이지만, 다음과 같은 한계가 있으므로 다른 건강 지표와
+                  함께 평가해야 합니다.
                 </p>
 
                 <div className="space-y-4">
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2 text-lg">1. 근육량 미구분</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-text-primary">
+                      1. 근육량 미구분
+                    </h3>
                     <p className="text-sm text-text-secondary">
-                      BMI는 체지방과 근육을 구분하지 않습니다. 근육이 많은 운동선수나 보디빌더는 BMI상 비만으로 분류될 수 있지만, 실제 건강도는 우수할 수 있습니다.
+                      BMI는 체지방과 근육을 구분하지 않습니다. 근육이 많은 운동선수나 보디빌더는
+                      BMI상 비만으로 분류될 수 있지만, 실제 건강도는 우수할 수 있습니다.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2 text-lg">2. 연령별 차이 미반영</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-text-primary">
+                      2. 연령별 차이 미반영
+                    </h3>
                     <p className="text-sm text-text-secondary">
-                      같은 BMI라도 나이에 따라 건강 상태가 다를 수 있습니다. 고령층은 근감소로 인해 같은 BMI에서도 다른 위험도를 가집니다.
+                      같은 BMI라도 나이에 따라 건강 상태가 다를 수 있습니다. 고령층은 근감소로 인해
+                      같은 BMI에서도 다른 위험도를 가집니다.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2 text-lg">3. 성별 차이 미반영</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-text-primary">
+                      3. 성별 차이 미반영
+                    </h3>
                     <p className="text-sm text-text-secondary">
-                      남녀의 신체 구성과 대사 특성이 다르므로, 같은 BMI라도 건강 영향이 다를 수 있습니다.
+                      남녀의 신체 구성과 대사 특성이 다르므로, 같은 BMI라도 건강 영향이 다를 수
+                      있습니다.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2 text-lg">4. 체지방률 반영 부족</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-text-primary">
+                      4. 체지방률 반영 부족
+                    </h3>
                     <p className="text-sm text-text-secondary">
-                      체지방의 양과 분포가 건강에 미치는 영향은 BMI보다 중요할 수 있습니다. 특히 복부 비만이 더 위험합니다.
+                      체지방의 양과 분포가 건강에 미치는 영향은 BMI보다 중요할 수 있습니다. 특히
+                      복부 비만이 더 위험합니다.
                     </p>
                   </div>
 
                   <div>
-                    <h3 className="font-semibold text-text-primary mb-2 text-lg">5. 특수 집단 부적용</h3>
+                    <h3 className="mb-2 text-lg font-semibold text-text-primary">
+                      5. 특수 집단 부적용
+                    </h3>
                     <p className="text-sm text-text-secondary">
-                      소아, 청소년, 임산부, 운동선수 등은 BMI 기준을 달리 적용해야 합니다. 이들은 반드시 전문의와 상담하세요.
+                      소아, 청소년, 임산부, 운동선수 등은 BMI 기준을 달리 적용해야 합니다. 이들은
+                      반드시 전문의와 상담하세요.
                     </p>
                   </div>
                 </div>
 
-                <p className="mt-6 text-sm text-text-secondary border-t border-border-subtle pt-4">
-                  <strong>권장사항:</strong> BMI와 함께 허리둘레, 체지방률, 혈압, 혈당, 콜레스테롤, 운동능력 등을 종합적으로 평가하여 개인의 건강 상태를 파악하고, 전문의와 상담하세요.
+                <p className="mt-6 border-t border-border-subtle pt-4 text-sm text-text-secondary">
+                  <strong>권장사항:</strong> BMI와 함께 허리둘레, 체지방률, 혈압, 혈당, 콜레스테롤,
+                  운동능력 등을 종합적으로 평가하여 개인의 건강 상태를 파악하고, 전문의와
+                  상담하세요.
                 </p>
               </section>
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={[...RELATED]} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-04-24: BMI 계산기 초판 공개 (대한비만학회 2022 기준 적용)</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>공식 근거</strong>: <a href="https://www.kosso.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">대한비만학회</a> 「비만 진료지침」 2022 개정판, <a href="https://www.mohw.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">보건복지부</a> 국민건강정보.
+                  <strong>공식 근거</strong>:{' '}
+                  <a
+                    href="https://www.kosso.or.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    대한비만학회
+                  </a>{' '}
+                  「비만 진료지침」 2022 개정판,{' '}
+                  <a
+                    href="https://www.mohw.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    보건복지부
+                  </a>{' '}
+                  국민건강정보.
                 </p>
                 <p className="mb-2">
                   <strong>계산 기준</strong>: BMI = 몸무게(kg) ÷ 키(m)², 소수점 둘째 자리까지 표시
                 </p>
                 <p>
-                  <strong>의학적 면책</strong>: 본 계산기의 결과는 일반 정보 제공 목적이며 의학적 진단이나 치료 권고가 아닙니다. BMI는 참고 지표일 뿐이므로 건강 상태에 관한 모든 판단은 의료 전문가(의사, 영양사 등)와 상담하여 이루어져야 합니다. 임산부, 소아, 만성질환자는 반드시 전문의와 상담하세요.
+                  <strong>의학적 면책</strong>: 본 계산기의 결과는 일반 정보 제공 목적이며 의학적
+                  진단이나 치료 권고가 아닙니다. BMI는 참고 지표일 뿐이므로 건강 상태에 관한 모든
+                  판단은 의료 전문가(의사, 영양사 등)와 상담하여 이루어져야 합니다. 임산부, 소아,
+                  만성질환자는 반드시 전문의와 상담하세요.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

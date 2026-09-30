@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -133,7 +133,9 @@ export default function AcquisitionTaxPage() {
       { name: '취득세 결과 확인', text: '기본 세율, 중과세율, 감면액, 총 납부액을 확인합니다.' },
     ],
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
@@ -178,28 +180,33 @@ export default function AcquisitionTaxPage() {
               terms: [
                 {
                   name: '취득세',
-                  description: '부동산·자동차·선박·항공기 등 자산 취득 시 부과되는 지방세. 주택은 거래가 기준 1~12% (조정지역·다주택 가산). 근거: 지방세법 §10 이하.',
+                  description:
+                    '부동산·자동차·선박·항공기 등 자산 취득 시 부과되는 지방세. 주택은 거래가 기준 1~12% (조정지역·다주택 가산). 근거: 지방세법 §10 이하.',
                   url: 'https://www.wetax.go.kr',
                 },
                 {
                   name: '농어촌특별세',
                   alternateName: '농특세',
-                  description: '취득세에 부가되는 국세. 표준세율 0.2% (감면 대상은 다른 비율). 근거: 농어촌특별세법.',
+                  description:
+                    '취득세에 부가되는 국세. 표준세율 0.2% (감면 대상은 다른 비율). 근거: 농어촌특별세법.',
                 },
                 {
                   name: '지방교육세',
-                  description: '취득세에 부가되는 지방세. 표준 0.4% (취득세율의 일정 비율). 근거: 지방세법 §150.',
+                  description:
+                    '취득세에 부가되는 지방세. 표준 0.4% (취득세율의 일정 비율). 근거: 지방세법 §150.',
                 },
                 {
                   name: '생애최초 주택구입 감면',
-                  description: '생애최초 주택 취득 시 취득세 감면 (요건: 무주택 세대, 취득가 12억 이하). 산정된 취득세에서 최대 200만 원 감면. 근거: 지방세특례제한법 §36의3 (소득요건은 2022.6.21자로 폐지됨).',
+                  description:
+                    '생애최초 주택 취득 시 취득세 감면 (요건: 무주택 세대, 취득가 12억 이하). 산정된 취득세에서 최대 200만 원 감면. 근거: 지방세특례제한법 §36의3 (소득요건은 2022.6.21자로 폐지됨).',
                 },
                 {
                   name: '조정대상지역 다주택 중과',
-                  description: '조정대상지역 내 2주택 이상 보유자가 신규 주택 취득 시 취득세 8~12% 중과. 1주택 일반 1~3% 대비 큰 부담. 근거: 지방세법 §13의2.',
+                  description:
+                    '조정대상지역 내 2주택 이상 보유자가 신규 주택 취득 시 취득세 8~12% 중과. 1주택 일반 1~3% 대비 큰 부담. 근거: 지방세법 §13의2.',
                 },
               ],
-            })
+            }),
           ),
         }}
       />
@@ -207,30 +214,48 @@ export default function AcquisitionTaxPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
-                    { name: '취득세' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  취득세 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 최신 지방세율을 반영한 무료 취득세 계산기입니다. 주택 매매·증여·상속 시
-                  주택 수·조정지역 여부·면적·생애최초 감면까지 모두 반영하여 농어촌특별세와
-                  지방교육세를 포함한 총 납부액을 즉시 확인할 수 있습니다.
-                </p>
-                <AuthorByline dateModified="2026-06-01" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '세금', href: '/category/tax/' },
+                      { name: '취득세' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">취득세 계산기 2026</h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    주택 가격과 취득 조건으로 예상 취득세를 확인하세요.
+                  </p>
+                  <AuthorByline dateModified="2026-06-01" />
+                </header>
+              }
+              calculator={<AcquisitionCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+              tools={
+                <>
+                  <EmbedCodeBox
+                    embedPath="/embed/acquisition-tax/"
+                    canonicalPath="/calculator/acquisition-tax/"
+                    title="취득세 계산기"
+                  />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="취득세는 부동산을 취득할 때 부과되는 지방세입니다. 매매·증여·상속 등 취득 방법과 취득 시점의 주택 수, 조정대상지역 여부, 주택 면적에 따라 세율이 달라집니다(지방세법 §10-§17)."
                 table={{
@@ -252,57 +277,78 @@ export default function AcquisitionTaxPage() {
                   '지방교육세는 취득세의 10%, 생애최초 감면은 최대 200만 원',
                 ]}
               />
-
-              {/* 계산기 */}
-              <AcquisitionCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 답변형 H2, 취득 원인별(매매·증여·상속) 대안·비교 (검증값: src/lib/tax/acquisition.ts) */}
               <section aria-label="취득 원인별 취득세 비교" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">같은 집이라도 매매·증여·상속에 따라 취득세가 다른가요?</h2>
+                <h2 className="mb-4 text-2xl font-semibold">
+                  같은 집이라도 매매·증여·상속에 따라 취득세가 다른가요?
+                </h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  네, 취득 원인에 따라 크게 다릅니다. 5억 원 주택(85㎡ 이하·비조정·1주택)의 취득세는 매매 550만 원, 상속 1,540만 원, 증여 1,925만 원으로, 세율이 각각 1.0%·2.8%·3.5%이기 때문입니다.
+                  네, 취득 원인에 따라 크게 다릅니다. 5억 원 주택(85㎡ 이하·비조정·1주택)의 취득세는
+                  매매 550만 원, 상속 1,540만 원, 증여 1,925만 원으로, 세율이 각각
+                  1.0%·2.8%·3.5%이기 때문입니다.
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 취득 원인별 취득세 비교 (주택 5억 원·85㎡ 이하·비조정대상지역·1주택)</caption>
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">
+                      표. 취득 원인별 취득세 비교 (주택 5억 원·85㎡ 이하·비조정대상지역·1주택)
+                    </caption>
                     <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">취득 원인</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">세율</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">취득세+지방교육세</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">신고·납부 기한</th>
+                      <tr className="border border-border-base bg-primary-500/10">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">
+                          취득 원인
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          세율
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          취득세+지방교육세
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          신고·납부 기한
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2">매매</td>
                         <td className="px-4 py-2 text-right tabular-nums">1.0%</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">550만 원 (본세 500 + 지방교육세 50)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          550만 원 (본세 500 + 지방교육세 50)
+                        </td>
                         <td className="px-4 py-2 text-right">취득일부터 60일</td>
                       </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2">상속</td>
                         <td className="px-4 py-2 text-right tabular-nums">2.8%</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">1,540만 원 (본세 1,400 + 지방교육세 140)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          1,540만 원 (본세 1,400 + 지방교육세 140)
+                        </td>
                         <td className="px-4 py-2 text-right">상속개시월 말일부터 6개월</td>
                       </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2">증여</td>
                         <td className="px-4 py-2 text-right tabular-nums">3.5%</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">1,925만 원 (본세 1,750 + 지방교육세 175)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          1,925만 원 (본세 1,750 + 지방교육세 175)
+                        </td>
                         <td className="px-4 py-2 text-right">취득일이 속한 달 말일부터 3개월</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="mt-3 text-xs text-text-tertiary">
-                  * 85㎡ 초과 시 농어촌특별세(0.2%)가 별도 가산되며, 다주택·조정대상지역은 중과세율(8~12%)이 적용됩니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
+                  * 85㎡ 초과 시 농어촌특별세(0.2%)가 별도 가산되며, 다주택·조정대상지역은
+                  중과세율(8~12%)이 적용됩니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
                 </p>
               </section>
-
               <RateBarChart
                 title="취득세율, 주택 수·가격별 (지방세법 §11)"
                 caption="취득세는 주택 수와 가격에 따라 세율이 크게 달라집니다. 1주택은 6억 이하 1.0%, 6~9억 1~3%, 9억 초과 3.0%이지만, 조정대상지역 2주택은 8%, 3주택 이상은 12%로 중과됩니다. 85㎡ 초과는 농특세, 지방교육세도 별도 가산됩니다."
@@ -316,8 +362,6 @@ export default function AcquisitionTaxPage() {
                   { label: '조정 3주택↑', value: 12, display: '12%', highlight: true },
                 ]}
               />
-
-              {/* 왜 1.0~3.0% 사이를 오가는가 (GEO 해설) */}
               <section
                 aria-label="취득세 구간별 해설"
                 className="card border-l-4 border-l-primary-500"
@@ -327,8 +371,8 @@ export default function AcquisitionTaxPage() {
                   취득세 세율이 1.0~3.0% 사이를 오가는 이유는 지방세법 §11과 §13의2에서 주택 가격과
                   주택 수에 따라 차등을 두기 때문입니다. 6억 원 이하는 1.0% 고정, 6~9억 원은
                   선형보간 공식 ((가격 − 6억) ÷ 3억 × 2% + 1%)으로 가격이 오를수록 세율이 가파르게
-                  증가하며, 9억 원 초과는 3.0%로 확정됩니다. 같은 2억 원 차이라도 6~9억 구간과
-                  9억 초과 구간의 세 부담은 200만 원대에서 600만 원대로 벌어집니다.
+                  증가하며, 9억 원 초과는 3.0%로 확정됩니다. 같은 2억 원 차이라도 6~9억 구간과 9억
+                  초과 구간의 세 부담은 200만 원대에서 600만 원대로 벌어집니다.
                 </p>
                 <p className="text-text-secondary" data-speakable>
                   조정대상지역 내 2주택 이상 보유자는 기본 세율에 +20%p 또는 +30%p가 가산되어 8~12%
@@ -337,24 +381,19 @@ export default function AcquisitionTaxPage() {
                   표시 세율보다 약 15~25% 더 커집니다.
                 </p>
               </section>
-
-              {/* 취득세란 무엇인가 */}
               <section aria-label="취득세 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">취득세란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
                   취득세는 토지·건물·주택 등 부동산을 취득할 때 부과되는 지방세입니다(지방세법 §10).
-                  매매·증여·상속·교환 등 모든 형태의 유상·무상 취득에 적용됩니다. 취득일로부터
-                  60일 이내에 시·도청에 신고하고 납부해야 합니다.
+                  매매·증여·상속·교환 등 모든 형태의 유상·무상 취득에 적용됩니다. 취득일로부터 60일
+                  이내에 시·도청에 신고하고 납부해야 합니다.
                 </p>
                 <p className="text-text-secondary">
-                  취득세 = 과세표준(취득가 또는 시가표준액) × 세율. 매매의 경우 실제 거래가를, 증여·상속의
-                  경우 국세청 시가표준액을 과세표준으로 합니다. 기본 취득세 외에 85㎡ 초과 시
-                  농어촌특별세(0.2~1%)와 취득세의 10%에 해당하는 지방교육세가 추가됩니다.
+                  취득세 = 과세표준(취득가 또는 시가표준액) × 세율. 매매의 경우 실제 거래가를,
+                  증여·상속의 경우 국세청 시가표준액을 과세표준으로 합니다. 기본 취득세 외에 85㎡
+                  초과 시 농어촌특별세(0.2~1%)와 취득세의 10%에 해당하는 지방교육세가 추가됩니다.
                 </p>
               </section>
-
-              {/* AD-2 Medium Rectangle (본문 중간) */}
-              {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">2026년 취득세는 어떻게 계산하나요?</h2>
                 <ol className="space-y-3 text-sm leading-relaxed">
@@ -382,83 +421,79 @@ export default function AcquisitionTaxPage() {
                   </li>
                 </ol>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    본 계산기는 일반적인 취득세 계산을 기준으로 합니다. 특수한 상황(일시적 2주택, 조정지역
-                    해제, 재산세 납부 상황 등)에서는 세율이 달라질 수 있으므로 관할 시청의 세무과에 확인하세요.
+                    본 계산기는 일반적인 취득세 계산을 기준으로 합니다. 특수한 상황(일시적 2주택,
+                    조정지역 해제, 재산세 납부 상황 등)에서는 세율이 달라질 수 있으므로 관할 시청의
+                    세무과에 확인하세요.
                   </li>
                   <li>
-                    생애최초 주택 감면은 무주택 세대(본인·배우자 무주택), 주택가액 12억 원 이하, 1주택 매매
-                    조건을 만족해야 적용됩니다(지특법 §36의3, 2022.6.21자 소득요건 폐지).
+                    생애최초 주택 감면은 무주택 세대(본인·배우자 무주택), 주택가액 12억 원 이하,
+                    1주택 매매 조건을 만족해야 적용됩니다(지특법 §36의3, 2022.6.21자 소득요건 폐지).
                   </li>
                   <li>
-                    증여·상속의 경우 실거래가가 아닌 국세청 시가표준액을 기준으로 합니다. 공시지가보다
-                    높을 수 있습니다.
+                    증여·상속의 경우 실거래가가 아닌 국세청 시가표준액을 기준으로 합니다.
+                    공시지가보다 높을 수 있습니다.
                   </li>
                   <li>
-                    취득세는 취득일로부터 60일 이내에 납부해야 합니다. 초과 시 가산세 20%와 이자가 부과됩니다.
+                    취득세는 취득일로부터 60일 이내에 납부해야 합니다. 초과 시 가산세 20%와 이자가
+                    부과됩니다.
                   </li>
                   <li>
-                    2026년 세율을 기준으로 합니다. 세법 개정 시 변경될 수 있으므로 거래 전 최신 정보를
-                    확인하세요.
+                    2026년 세율을 기준으로 합니다. 세법 개정 시 변경될 수 있으므로 거래 전 최신
+                    정보를 확인하세요.
                   </li>
                 </ul>
               </section>
-
-              {/* 절세·활용 팁 */}
               <section aria-label="절세 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">절세·활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
                   <li>
-                    <strong>생애최초 감면 활용</strong>: 조건을 충족하면 반드시 신청하세요. 최대 200만 원을
-                    절세할 수 있습니다.
+                    <strong>생애최초 감면 활용</strong>: 조건을 충족하면 반드시 신청하세요. 최대
+                    200만 원을 절세할 수 있습니다.
                   </li>
                   <li>
-                    <strong>면적 확인</strong>: 등기부상 면적이 85㎡를 넘는지 확인해 농특세 부담을 예측하세요.
+                    <strong>면적 확인</strong>: 등기부상 면적이 85㎡를 넘는지 확인해 농특세 부담을
+                    예측하세요.
                   </li>
                   <li>
-                    <strong>거래가 협상</strong>: 취득세는 거래가에 직결되므로 계약 전 정확한 계산이 중요합니다.
+                    <strong>거래가 협상</strong>: 취득세는 거래가에 직결되므로 계약 전 정확한 계산이
+                    중요합니다.
                   </li>
                   <li>
-                    <strong>조정지역 여부 확인</strong>: 조정지역은 중과세율(8~12%)이 적용되므로 거래 전
-                    관할청에 확인하세요.
+                    <strong>조정지역 여부 확인</strong>: 조정지역은 중과세율(8~12%)이 적용되므로
+                    거래 전 관할청에 확인하세요.
                   </li>
                 </ul>
               </section>
-
-              {/* 관련 가이드 */}
-              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+              <section
+                aria-label="관련 가이드"
+                className="card border-l-4 border-l-primary-500 bg-primary-500/5"
+              >
                 <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    <a href="/guide/property-tax-base-date-june-1-2026/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/property-tax-base-date-june-1-2026/"
+                      className="inline-flex items-center gap-1 font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       <Icon name="chevron-right" size={14} />
                       <span>재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정</span>
                     </a>
                   </li>
                   <li>
-                    <a href="/guide/june-property-tax/" className="inline-flex items-center gap-1 text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/june-property-tax/"
+                      className="inline-flex items-center gap-1 font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       <Icon name="chevron-right" size={14} />
                       <span>재산세 완벽 가이드 (6월 부과·7월 납부)</span>
                     </a>
                   </li>
                 </ul>
               </section>
-
-              <EmbedCodeBox
-                embedPath="/embed/acquisition-tax/"
-                canonicalPath="/calculator/acquisition-tax/"
-                title="취득세 계산기"
-              />
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
@@ -466,8 +501,6 @@ export default function AcquisitionTaxPage() {
                   <li>2026-04-24: 2026년 지방세율 반영 초판 공개</li>
                 </ul>
               </section>
-
-              {/* 참고 자료 */}
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
@@ -513,23 +546,21 @@ export default function AcquisitionTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 지방세법 §10-§17, 지방세법 시행령 §22, 농어촌특별세법, 지특법
-                  §36의3 (생애최초 감면).
+                  <strong>법적 근거</strong>: 지방세법 §10-§17, 지방세법 시행령 §22, 농어촌특별세법,
+                  지특법 §36의3 (생애최초 감면).
                 </p>
                 <p>
-                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 취득세 신고·납부는 관할 시청
-                  세무과 또는 세무사의 안내를 받으시기 바랍니다. AI 보조 작성 후 운영자 검수를 거쳤습니다.
+                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 취득세 신고·납부는 관할
+                  시청 세무과 또는 세무사의 안내를 받으시기 바랍니다. AI 보조 작성 후 운영자 검수를
+                  거쳤습니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

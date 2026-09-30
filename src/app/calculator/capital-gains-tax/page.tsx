@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -149,11 +149,16 @@ export default function TransferTaxPage() {
       { name: '양도가 입력', text: '부동산을 판매하는 금액(양도가)을 입력합니다.' },
       { name: '취득가 입력', text: '부동산을 구매한 금액(취득가)을 입력합니다.' },
       { name: '보유기간·주택수 설정', text: '보유 기간(년)과 현재 보유한 주택 수를 입력합니다.' },
-      { name: '특례 확인', text: '1세대1주택 비과세, 일시적 2주택 특례 등 적용 여부를 확인합니다.' },
+      {
+        name: '특례 확인',
+        text: '1세대1주택 비과세, 일시적 2주택 특례 등 적용 여부를 확인합니다.',
+      },
       { name: '양도세 결과 확인', text: '양도차익, 기본세율, 가산세율, 최종 납부액을 확인합니다.' },
     ],
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
@@ -167,25 +172,30 @@ export default function TransferTaxPage() {
     terms: [
       {
         name: '양도차익',
-        description: '양도가액에서 취득가액·필요경비(중개수수료, 세금 등)를 뺀 금액. 양도소득세 과세 표준의 출발점. 산식: 양도가액 − 취득가액 − 필요경비 − 장기보유특별공제.',
+        description:
+          '양도가액에서 취득가액·필요경비(중개수수료, 세금 등)를 뺀 금액. 양도소득세 과세 표준의 출발점. 산식: 양도가액 − 취득가액 − 필요경비 − 장기보유특별공제.',
       },
       {
         name: '장기보유특별공제',
         alternateName: '장특공제',
-        description: '부동산을 일정 기간 이상 보유한 경우 양도차익에서 공제하는 제도. 일반 부동산 3년 이상 6~30%, 1세대1주택 8~80%(최대 80%). 근거: 소득세법 §95.',
+        description:
+          '부동산을 일정 기간 이상 보유한 경우 양도차익에서 공제하는 제도. 일반 부동산 3년 이상 6~30%, 1세대1주택 8~80%(최대 80%). 근거: 소득세법 §95.',
         url: 'https://www.nts.go.kr',
       },
       {
         name: '1세대1주택 비과세',
-        description: '1세대가 1주택만 보유하고 2년 이상 보유(조정대상지역 거주 2년 이상)한 후 양도 시 양도차익 비과세. 단, 양도가액 12억 원 초과분은 과세. 근거: 소득세법 §89.',
+        description:
+          '1세대가 1주택만 보유하고 2년 이상 보유(조정대상지역 거주 2년 이상)한 후 양도 시 양도차익 비과세. 단, 양도가액 12억 원 초과분은 과세. 근거: 소득세법 §89.',
       },
       {
         name: '일시적 2주택 특례',
-        description: '기존 주택 보유 중 신규 주택 취득 시 일정 기간(원칙 3년, 조정지역 2년) 내 기존 주택 양도하면 1세대1주택 비과세 적용. 근거: 소득세법 시행령 §155.',
+        description:
+          '기존 주택 보유 중 신규 주택 취득 시 일정 기간(원칙 3년, 조정지역 2년) 내 기존 주택 양도하면 1세대1주택 비과세 적용. 근거: 소득세법 시행령 §155.',
       },
       {
         name: '중과세율',
-        description: '조정대상지역 다주택자 양도 시 기본세율에 가산하는 세율. 2주택자 +20%p, 3주택 이상 +30%p (한시적 유예 적용 시 제외). 근거: 소득세법 §104의7.',
+        description:
+          '조정대상지역 다주택자 양도 시 기본세율에 가산하는 세율. 2주택자 +20%p, 3주택 이상 +30%p (한시적 유예 적용 시 제외). 근거: 소득세법 §104의7.',
       },
     ],
   });
@@ -224,32 +234,52 @@ export default function TransferTaxPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8 lg:max-w-none lg:grid lg:grid-cols-[1fr_300px]">
-              {/* 메인 콘텐츠 */}
-              <div className="flex flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
-                    { name: '양도소득세' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  양도소득세 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 최신 소득세율을 반영한 무료 양도소득세 계산기입니다. 주택 판매 시 1세대1주택
-                  비과세, 일시적 2주택 특례, 장기보유특별공제까지 모두 반영하여 최종 납부액을 거래 전에
-                  정확히 확인할 수 있습니다.
-                </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-07-03" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '세금', href: '/category/tax/' },
+                      { name: '양도소득세' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">양도소득세 계산기 2026</h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    주택 양도 조건으로 예상 세금과 공제 내역을 확인하세요.
+                  </p>
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-07-03" />
+                </header>
+              }
+              calculator={<TransferTaxCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+              tools={
+                <>
+                  <ShareButtons
+                    title="양도소득세 계산기 (2026)"
+                    url="https://calculatorhost.com/calculator/capital-gains-tax/"
+                  />
+                  <EmbedCodeBox
+                    embedPath="/embed/capital-gains-tax/"
+                    canonicalPath="/calculator/capital-gains-tax/"
+                    title="양도소득세 계산기"
+                  />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="양도소득세는 부동산 양도(판매) 시 발생한 차익에 부과되는 국세입니다. 기본 누진세율(6~45%), 단기 보유 세율(40~70%), 장기보유특별공제, 1세대1주택 비과세 등 다양한 조건에 따라 세액이 달라집니다(소득세법 §92-§118)."
                 table={{
@@ -269,71 +299,108 @@ export default function TransferTaxPage() {
                   '조정지역 2주택↑는 누진세에 20~30%p 중과',
                 ]}
               />
-
-              {/* 2026년 세율 기준 및 개정 안내 */}
               <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
                 <p className="text-sm text-text-secondary">
-                  <strong className="text-highlight-700 dark:text-highlight-300">2026년 세율 기준:</strong> 본 계산은 2026년 현행 소득세법(누진 6~45%, 장기보유공제, 1세대1주택 비과세 12억)에 따른 계산입니다.
-                  정부의 부동산·세제 개혁 계획 예고에 따라 세율·공제·비과세 요건이 변경될 수 있으니,
-                  <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">국세청</a>과
-                  <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="font-semibold underline">홈택스</a>에서 최신 공지를 확인하세요.
+                  <strong className="text-highlight-700 dark:text-highlight-300">
+                    2026년 세율 기준:
+                  </strong>{' '}
+                  본 계산은 2026년 현행 소득세법(누진 6~45%, 장기보유공제, 1세대1주택 비과세 12억)에
+                  따른 계산입니다. 정부의 부동산·세제 개혁 계획 예고에 따라 세율·공제·비과세 요건이
+                  변경될 수 있으니,
+                  <a
+                    href="https://www.nts.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="font-semibold underline"
+                  >
+                    국세청
+                  </a>
+                  과
+                  <a
+                    href="https://www.hometax.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="font-semibold underline"
+                  >
+                    홈택스
+                  </a>
+                  에서 최신 공지를 확인하세요.
                 </p>
               </div>
-
-              {/* 계산기 */}
-              <TransferTaxCalculator />
-
-              {/* AD-2 Medium Rectangle (계산기-본문 사이, 300x250) */}
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 답변형 H2, 12억 초과 비례과세 대안·비교 (검증값: src/lib/tax/transfer.ts) */}
               <section aria-label="12억 초과 양도세" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">1세대1주택인데 양도가액이 12억을 넘으면 세금이 얼마인가요?</h2>
+                <h2 className="mb-4 text-2xl font-semibold">
+                  1세대1주택인데 양도가액이 12억을 넘으면 세금이 얼마인가요?
+                </h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  1세대1주택은 양도가액 12억 원까지 비과세이고 12억을 초과하는 부분에만 과세되므로, 실제 세액은 생각보다 작습니다. 예를 들어 15억 원에 팔아도(취득 10억·10년 보유·거주) 양도세는 약 150만 원 수준입니다.
+                  1세대1주택은 양도가액 12억 원까지 비과세이고 12억을 초과하는 부분에만 과세되므로,
+                  실제 세액은 생각보다 작습니다. 예를 들어 15억 원에 팔아도(취득 10억·10년
+                  보유·거주) 양도세는 약 150만 원 수준입니다.
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 1세대1주택 12억 초과 양도가액별 세액 (취득가 10억, 10년 보유·거주로 장기보유특별공제 80%·기본공제 250만 적용)</caption>
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">
+                      표. 1세대1주택 12억 초과 양도가액별 세액 (취득가 10억, 10년 보유·거주로
+                      장기보유특별공제 80%·기본공제 250만 적용)
+                    </caption>
                     <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">양도가액</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">과세표준</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">양도세+지방세 총액</th>
+                      <tr className="border border-border-base bg-primary-500/10">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          양도가액
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          과세표준
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          양도세+지방세 총액
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2 text-right tabular-nums">13억 원</td>
                         <td className="px-4 py-2 text-right tabular-nums">2,115,385원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 14만 원 (139,610원)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          약 14만 원 (139,610원)
+                        </td>
                       </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2 text-right tabular-nums">15억 원</td>
                         <td className="px-4 py-2 text-right tabular-nums">17,500,000원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 150만 원 (1,501,500원)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          약 150만 원 (1,501,500원)
+                        </td>
                       </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2 text-right tabular-nums">20억 원</td>
                         <td className="px-4 py-2 text-right tabular-nums">77,500,000원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 1,412만 원 (14,124,000원)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          약 1,412만 원 (14,124,000원)
+                        </td>
                       </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2 text-right tabular-nums">30억 원</td>
                         <td className="px-4 py-2 text-right tabular-nums">237,500,000원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 7,734만 원 (77,341,000원)</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          약 7,734만 원 (77,341,000원)
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="mt-3 text-xs text-text-tertiary">
-                  * 취득가액과 보유·거주 기간(장기보유특별공제율), 기본공제에 따라 세액이 달라집니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
+                  * 취득가액과 보유·거주 기간(장기보유특별공제율), 기본공제에 따라 세액이
+                  달라집니다. 본인 조건의 정확한 세액은 위 계산기로 확인하세요.
                 </p>
               </section>
-
-              {/* AD-4 Infeed (본문 중간) */}
-              {/* 양도소득세란 무엇인가 */}
               <section aria-label="양도소득세 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">양도소득세란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
@@ -342,25 +409,29 @@ export default function TransferTaxPage() {
                   양도소득이 되고, 여기에 누진 세율이 적용됩니다. 지방소득세(10%)와 함께 부과됩니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  양도소득세는 보유 기간, 자산 종류(주택/분양권/토지), 세대 주택수, 조정지역 여부에 따라
-                  매우 복잡한 계산이 필요합니다. 특히 1세대1주택 비과세(12억 원 이하), 일시적 2주택 특례,
-                  장기보유특별공제 등 여러 특례가 있어 정확한 이해 없이는 납부액을 예측하기 어렵습니다.
+                  양도소득세는 보유 기간, 자산 종류(주택/분양권/토지), 세대 주택수, 조정지역 여부에
+                  따라 매우 복잡한 계산이 필요합니다. 특히 1세대1주택 비과세(12억 원 이하), 일시적
+                  2주택 특례, 장기보유특별공제 등 여러 특례가 있어 정확한 이해 없이는 납부액을
+                  예측하기 어렵습니다.
                 </p>
                 <p className="text-text-secondary">
-                  본 계산기는 일반·1세대1주택·일시적 2주택 3가지 케이스와 주택·분양권 2가지 자산만 지원합니다.
-                  상속주택, 농어촌주택, 임대등록주택 등 특수 특례는 세무사 상담을 권장합니다.
+                  본 계산기는 일반·1세대1주택·일시적 2주택 3가지 케이스와 주택·분양권 2가지 자산만
+                  지원합니다. 상속주택, 농어촌주택, 임대등록주택 등 특수 특례는 세무사 상담을
+                  권장합니다.
                 </p>
               </section>
-
-              {/* 3가지 케이스 비교 */}
               <section aria-label="케이스별 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">3가지 케이스 비교</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">항목</th>
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">일반</th>
+                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
+                          항목
+                        </th>
+                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
+                          일반
+                        </th>
                         <th className="px-3 py-2 text-left font-semibold text-text-primary">
                           1세대1주택
                         </th>
@@ -370,27 +441,25 @@ export default function TransferTaxPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">세율</td>
                         <td className="px-3 py-2">누진 6~45%</td>
                         <td className="px-3 py-2">누진 6~45%</td>
                         <td className="px-3 py-2">누진 6~45%</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">비과세</td>
                         <td className="px-3 py-2">없음</td>
                         <td className="px-3 py-2">12억 이하</td>
                         <td className="px-3 py-2">12억 이하 (취득 3년 내)</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">장기보유공제</td>
                         <td className="px-3 py-2">연 2% (3년↑, 최대 30%)</td>
-                        <td className="px-3 py-2">
-                          연 4%×2 (각 10년↑, 최대 80%)
-                        </td>
+                        <td className="px-3 py-2">연 4%×2 (각 10년↑, 최대 80%)</td>
                         <td className="px-3 py-2">연 2% (일반)</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">조정지역 중과</td>
                         <td className="px-3 py-2">+20% (2주택) /+30% (3주택↑)</td>
                         <td className="px-3 py-2">적용 없음</td>
@@ -406,8 +475,6 @@ export default function TransferTaxPage() {
                   </table>
                 </div>
               </section>
-
-              {/* 세율 체계 */}
               <section aria-label="세율 체계" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">양도소득세 세율 체계</h2>
 
@@ -421,7 +488,9 @@ export default function TransferTaxPage() {
                         <th className="px-3 py-2 text-left font-semibold text-text-primary">
                           과세표준
                         </th>
-                        <th className="px-3 py-2 text-right font-semibold text-text-primary">세율</th>
+                        <th className="px-3 py-2 text-right font-semibold text-text-primary">
+                          세율
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
@@ -435,7 +504,7 @@ export default function TransferTaxPage() {
                         ['5억~10억', '42%'],
                         ['10억 초과', '45%'],
                       ].map(([range, rate]) => (
-                        <tr key={range} className="border-b border-border-base/50">
+                        <tr key={range} className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">{range}</td>
                           <td className="px-3 py-2 text-right font-medium text-primary-500">
                             {rate}
@@ -487,8 +556,6 @@ export default function TransferTaxPage() {
                   <li>• 3주택 이상 (2년 이상 보유): 기본 누진세율 + 30%p</li>
                 </ul>
               </section>
-
-              {/* 장기보유특별공제 */}
               <section aria-label="장기보유특별공제" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">장기보유특별공제 (시행령 §159의3)</h2>
                 <p className="mb-4 text-sm text-text-secondary">
@@ -497,9 +564,7 @@ export default function TransferTaxPage() {
 
                 <h3 className="mb-2 text-lg font-semibold text-text-primary">일반 주택</h3>
                 <ul className="mb-4 space-y-1 text-sm text-text-secondary">
-                  <li>
-                    • 3년 이상 보유: 연 2% (3년 → 6%, 4년 → 8%, ... 15년 이상 → 최대 30%)
-                  </li>
+                  <li>• 3년 이상 보유: 연 2% (3년 → 6%, 4년 → 8%, ... 15년 이상 → 최대 30%)</li>
                   <li>• 3년 미만: 공제 불가</li>
                 </ul>
 
@@ -507,38 +572,44 @@ export default function TransferTaxPage() {
                   1세대1주택 (보유 + 거주 누적)
                 </h3>
                 <ul className="space-y-1 text-sm text-text-secondary">
-                  <li>
-                    • 보유 기간: 연 4% (최대 10년, 40%)
-                  </li>
-                  <li>
-                    • 거주 기간: 연 4% (최대 10년, 40%)
-                  </li>
-                  <li>
-                    • 합계 최대 80% (예: 보유 10년 + 거주 10년 = 80%)
-                  </li>
+                  <li>• 보유 기간: 연 4% (최대 10년, 40%)</li>
+                  <li>• 거주 기간: 연 4% (최대 10년, 40%)</li>
+                  <li>• 합계 최대 80% (예: 보유 10년 + 거주 10년 = 80%)</li>
                 </ul>
               </section>
-
-              {/* 토지 양도세 (별도, 주택과 다른 규정) */}
               <section aria-label="토지 양도세" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">토지 양도세, 주택과 다른 규정</h2>
                 <p className="mb-4 text-sm text-text-secondary">
-                  토지(나대지·농지·임야·잡종지 등)는 주택과 달리 <strong>1세대1주택 비과세 대상이 아닙니다.</strong>
+                  토지(나대지·농지·임야·잡종지 등)는 주택과 달리{' '}
+                  <strong>1세대1주택 비과세 대상이 아닙니다.</strong>
                   거주 요건도 적용되지 않으며, 일반 누진세율 + 장기보유공제만 적용됩니다.
                 </p>
-                <div className="mb-4 rounded-lg border border-border-base bg-bg-card p-4 space-y-3">
+                <div className="mb-4 space-y-3 rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="font-semibold text-text-primary">토지 양도세 핵심 규정</h3>
-                  <ul className="text-sm text-text-secondary space-y-2">
-                    <li>• <strong>일반 누진세율</strong>: 6%~45% (8단계, 주택과 동일)</li>
-                    <li>• <strong>장기보유공제</strong>: 연 2%, 3년 이상 보유부터, <strong>최대 30%</strong> (주택 1세대1주택 80%와 큰 차이)</li>
-                    <li>• <strong>비사업용 토지 가산</strong>: <strong>+10%p</strong> 추가 (소득세법 §104의3) → 최고 55%까지</li>
-                    <li>• <strong>비과세·감면 특례</strong>: 8년 이상 자경 농지 100% 감면 (조특법 §69, 한도 연 1억·5년 합 2억)</li>
+                  <ul className="space-y-2 text-sm text-text-secondary">
+                    <li>
+                      • <strong>일반 누진세율</strong>: 6%~45% (8단계, 주택과 동일)
+                    </li>
+                    <li>
+                      • <strong>장기보유공제</strong>: 연 2%, 3년 이상 보유부터,{' '}
+                      <strong>최대 30%</strong> (주택 1세대1주택 80%와 큰 차이)
+                    </li>
+                    <li>
+                      • <strong>비사업용 토지 가산</strong>: <strong>+10%p</strong> 추가 (소득세법
+                      §104의3) → 최고 55%까지
+                    </li>
+                    <li>
+                      • <strong>비과세·감면 특례</strong>: 8년 이상 자경 농지 100% 감면 (조특법 §69,
+                      한도 연 1억·5년 합 2억)
+                    </li>
                   </ul>
                 </div>
 
                 <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
-                  <h3 className="mb-2 font-semibold text-text-primary">사례 1. 5년 보유 나대지 양도</h3>
-                  <ul className="text-sm text-text-secondary space-y-1">
+                  <h3 className="mb-2 font-semibold text-text-primary">
+                    사례 1. 5년 보유 나대지 양도
+                  </h3>
+                  <ul className="space-y-1 text-sm text-text-secondary">
                     <li>취득가: 1억 원 (2021년)</li>
                     <li>양도가: 3억 원 (2026년)</li>
                     <li>양도차익: 2억 원</li>
@@ -546,41 +617,52 @@ export default function TransferTaxPage() {
                     <li>기본공제: 250만 원 (소득세법 §103)</li>
                     <li>과세표준: 1억 7,750만 원</li>
                   </ul>
-                  <div className="mt-3 pt-3 border-t border-border-base text-sm">
+                  <div className="mt-3 border-t border-border-base pt-3 text-sm">
                     <p className="text-text-secondary">
-                      <strong>세액 계산:</strong> 1억 7,750만 × 38% − 누진공제 1,994만 = <strong>4,751만 원</strong> (양도세)<br />
+                      <strong>세액 계산:</strong> 1억 7,750만 × 38% − 누진공제 1,994만 ={' '}
+                      <strong>4,751만 원</strong> (양도세)
+                      <br />
                       <strong>지방소득세:</strong> 4,751만 × 10% = 475만 원<br />
-                      <strong>총 부담:</strong> 약 <strong className="text-primary-700 dark:text-primary-300">5,226만 원</strong> (양도차익의 약 26.1%)
+                      <strong>총 부담:</strong> 약{' '}
+                      <strong className="text-primary-700 dark:text-primary-300">5,226만 원</strong>{' '}
+                      (양도차익의 약 26.1%)
                     </p>
                   </div>
                 </div>
 
                 <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
-                  <h3 className="mb-2 font-semibold text-text-primary">사례 2. 8년 자경 농지 양도 (감면 적용)</h3>
-                  <ul className="text-sm text-text-secondary space-y-1">
+                  <h3 className="mb-2 font-semibold text-text-primary">
+                    사례 2. 8년 자경 농지 양도 (감면 적용)
+                  </h3>
+                  <ul className="space-y-1 text-sm text-text-secondary">
                     <li>취득가: 5,000만 원 (2017년)</li>
                     <li>양도가: 2억 원 (2026년, 9년 보유)</li>
                     <li>자경 기간: 8년 이상 (실제 농업 종사 증빙 필수)</li>
                   </ul>
-                  <div className="mt-3 pt-3 border-t border-border-base text-sm">
+                  <div className="mt-3 border-t border-border-base pt-3 text-sm">
                     <p className="text-text-secondary">
-                      <strong>감면 적용:</strong> 양도세 100% 감면 (조특법 §69, 연 1억·5년 합 2억 한도 내)<br />
-                      <strong>최종 부담:</strong> <strong className="text-primary-700 dark:text-primary-300">0원</strong> (단, 농지원부 등 자경 증빙 필요)<br />
-                      <strong>주의:</strong> 자경 기준, 직접 농업 종사 + 거주 요건 (8년 + 농지 소재지 거주)
+                      <strong>감면 적용:</strong> 양도세 100% 감면 (조특법 §69, 연 1억·5년 합 2억
+                      한도 내)
+                      <br />
+                      <strong>최종 부담:</strong>{' '}
+                      <strong className="text-primary-700 dark:text-primary-300">0원</strong> (단,
+                      농지원부 등 자경 증빙 필요)
+                      <br />
+                      <strong>주의:</strong> 자경 기준, 직접 농업 종사 + 거주 요건 (8년 + 농지
+                      소재지 거주)
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-danger-500 bg-danger-500/5 p-4">
-                  <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>비사업용 토지 주의</strong>: 도시 외곽 나대지·임야 등이 비사업용으로 분류되면
-                    누진세율에 +10%p 가산됩니다. 사업 사용 입증(임대·경작·자영업 등)으로 사업용 인정받아야
-                    가산세 회피 가능. 정확한 분류는 국세청 양도소득세 전문가 상담 권장.
+                  <p className="text-danger-700 dark:text-danger-300 text-sm">
+                    <strong>비사업용 토지 주의</strong>: 도시 외곽 나대지·임야 등이 비사업용으로
+                    분류되면 누진세율에 +10%p 가산됩니다. 사업 사용 입증(임대·경작·자영업 등)으로
+                    사업용 인정받아야 가산세 회피 가능. 정확한 분류는 국세청 양도소득세 전문가 상담
+                    권장.
                   </p>
                 </div>
               </section>
-
-              {/* 1세대1주택 비과세 */}
               <section aria-label="1세대1주택 비과세" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">1세대1주택 비과세 (소득세법 §94)</h2>
                 <p className="mb-4 text-sm text-text-secondary">
@@ -591,8 +673,8 @@ export default function TransferTaxPage() {
                     <strong>1. 보유 기간 2년 이상</strong>
                   </li>
                   <li>
-                    <strong>2. 거주 요건:</strong> 조정지역 외 2년 이상 거주 또는 조정지역 1년
-                    이상 거주
+                    <strong>2. 거주 요건:</strong> 조정지역 외 2년 이상 거주 또는 조정지역 1년 이상
+                    거주
                   </li>
                   <li>
                     <strong>3. 양도가액 12억 원 이하</strong>
@@ -608,8 +690,6 @@ export default function TransferTaxPage() {
                   확인하세요.
                 </p>
               </section>
-
-              {/* 일시적 2주택 특례 */}
               <section aria-label="일시적 2주택 특례" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">일시적 2주택 특례 (시행령 §154)</h2>
                 <p className="mb-4 text-sm text-text-secondary">
@@ -629,28 +709,26 @@ export default function TransferTaxPage() {
                   적용되므로 신규 매매 계약 후 구주택 판매 일정을 신중하게 계획해야 합니다.
                 </p>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
                   <li>
                     <strong>본 계산기의 범위:</strong> 본 계산은 일반·1세대1주택·일시적 2주택 3가지
-                    케이스와 주택·분양권 2가지 자산만 지원합니다. 상속주택, 농어촌주택, 임대등록주택,
-                    기타 특수 특례는 세무사 상담을 권장합니다.
+                    케이스와 주택·분양권 2가지 자산만 지원합니다. 상속주택, 농어촌주택,
+                    임대등록주택, 기타 특수 특례는 세무사 상담을 권장합니다.
                   </li>
                   <li>
-                    <strong>조정지역 여부 확인:</strong> 1세대1주택 비과세와 조정지역 중과는 주소지에
-                    따라 크게 달라집니다. 양도 전 반드시 구청 또는 시청 세무과에 조정지역 여부를
-                    확인하세요.
+                    <strong>조정지역 여부 확인:</strong> 1세대1주택 비과세와 조정지역 중과는
+                    주소지에 따라 크게 달라집니다. 양도 전 반드시 구청 또는 시청 세무과에 조정지역
+                    여부를 확인하세요.
                   </li>
                   <li>
                     <strong>1세대 판정:</strong> 부부와 미성년 자녀를 기준으로 합니다. 성인 자녀나
                     부모가 함께 소유하면 1세대1주택이 아닐 수 있으므로 세무사 상담을 받으세요.
                   </li>
                   <li>
-                    <strong>거주 기간 증명:</strong> 1세대1주택 비과세 신청 시 주민등록등본, 건강보험
-                    자격확인서 등으로 거주 기간을 증명해야 합니다.
+                    <strong>거주 기간 증명:</strong> 1세대1주택 비과세 신청 시 주민등록등본,
+                    건강보험 자격확인서 등으로 거주 기간을 증명해야 합니다.
                   </li>
                   <li>
                     <strong>2026년 세율 기준:</strong> 본 계산은 2026년 세율로 계산됩니다. 세법 개정
@@ -658,8 +736,6 @@ export default function TransferTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 절세 팁 */}
               <section aria-label="절세 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">절세·활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
@@ -673,13 +749,13 @@ export default function TransferTaxPage() {
                     취득일부터 3년 이내에 구주택을 양도해야 일시적 2주택 특례를 받을 수 있습니다.
                   </li>
                   <li>
-                    <strong>필요경비 정확히 계산:</strong> 매매 중개비, 리모델링 비용, 양도 시 취득세
-                    등 필요경비를 완전히 증명해야 합니다. 영수증을 보관하세요.
+                    <strong>필요경비 정확히 계산:</strong> 매매 중개비, 리모델링 비용, 양도 시
+                    취득세 등 필요경비를 완전히 증명해야 합니다. 영수증을 보관하세요.
                   </li>
                   <li>
-                    <strong>장기보유 = 30% 절세:</strong> 일반 주택 15년 이상 보유면 양도차익의 30%를
-                    공제받습니다. 기본 누진세율만 해도 수억 대 차익이면 세금이 많으므로, 보유 기간의
-                    가치를 항상 계산하세요.
+                    <strong>장기보유 = 30% 절세:</strong> 일반 주택 15년 이상 보유면 양도차익의
+                    30%를 공제받습니다. 기본 누진세율만 해도 수억 대 차익이면 세금이 많으므로, 보유
+                    기간의 가치를 항상 계산하세요.
                   </li>
                   <li>
                     <strong>분양권은 고세율:</strong> 분양권은 1년 미만 70%, 1년 이상 60%로 고정
@@ -687,8 +763,6 @@ export default function TransferTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 신고 기한 */}
               <section aria-label="신고 기한" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">신고 기한</h2>
                 <p className="mb-3 text-sm text-text-secondary">
@@ -696,81 +770,88 @@ export default function TransferTaxPage() {
                   소득세 시행령 §247).
                 </p>
                 <p className="text-sm text-text-secondary">
-                  <strong>예시:</strong> 2026년 3월 15일 양도 → 3월 31일부터 기산 → 5월 31일까지 신고
-                  (정상). 6월 1일 이후 신고 → 가산세 20% + 기간 이자 부과.
+                  <strong>예시:</strong> 2026년 3월 15일 양도 → 3월 31일부터 기산 → 5월 31일까지
+                  신고 (정상). 6월 1일 이후 신고 → 가산세 20% + 기간 이자 부과.
                 </p>
               </section>
-
-              {/* 관련 계산기 */}
-              {/* 관련 가이드 CTA */}
-              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+              <section
+                aria-label="관련 가이드"
+                className="card border-l-4 border-l-primary-500 bg-primary-500/5"
+              >
                 <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
-                    <a href="/guide/capital-gains-tax-tips/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/capital-gains-tax-tips/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       양도소득세 절세 7가지 방법 (2026)
                     </a>{' '}
-, 1세대1주택 비과세, 장기보유공제 80%, 자경 농지 100% 감면 등
+                    , 1세대1주택 비과세, 장기보유공제 80%, 자경 농지 100% 감면 등
                   </li>
                   <li>
                     →{' '}
-                    <a href="/guide/one-household-12-billion-exemption/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/one-household-12-billion-exemption/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       1세대1주택 12억 비과세 한도 완전 정리
                     </a>{' '}
-, 12억 초과분 비례 과세 공식과 장기보유공제 80% 결합 계산
+                    , 12억 초과분 비례 과세 공식과 장기보유공제 80% 결합 계산
                   </li>
                   <li>
                     →{' '}
-                    <a href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/temporary-two-houses-capital-gains-exemption/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       일시적 2주택 양도세 비과세 3년
                     </a>{' '}
-, 신규 취득 후 3년 내 종전 주택 양도 요건과 지역별 기한
+                    , 신규 취득 후 3년 내 종전 주택 양도 요건과 지역별 기한
                   </li>
                   <li>
                     →{' '}
-                    <a href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/long-term-holding-special-deduction-80-percent/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       장기보유특별공제 80% 완전 정리
                     </a>{' '}
-, 보유 4%×10년 + 거주 4%×10년 = 최대 80% 공제율 표
+                    , 보유 4%×10년 + 거주 4%×10년 = 최대 80% 공제율 표
                   </li>
                   <li>
                     →{' '}
-                    <a href="/guide/presale-right-capital-gains-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/presale-right-capital-gains-tax/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       분양권 양도소득세 완전 정리
                     </a>{' '}
-, 보유 기간 무관 60%/70% 단일 세율, 비과세·장특공제 미적용
+                    , 보유 기간 무관 60%/70% 단일 세율, 비과세·장특공제 미적용
                   </li>
                   <li>
                     →{' '}
-                    <a href="/guide/capital-gains-tax-5-steps/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/capital-gains-tax-5-steps/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       양도소득세 5단계 시뮬
                     </a>{' '}
-, 양도가 산정부터 세율 적용까지 실전 계산 흐름 단계별 해설
+                    , 양도가 산정부터 세율 적용까지 실전 계산 흐름 단계별 해설
                   </li>
                 </ul>
               </section>
-
-              <ShareButtons title="양도소득세 계산기 (2026)" url="https://calculatorhost.com/calculator/capital-gains-tax/" />
-
-              <EmbedCodeBox
-                embedPath="/embed/capital-gains-tax/"
-                canonicalPath="/calculator/capital-gains-tax/"
-                title="양도소득세 계산기"
-              />
-
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
-                  <li>2026-07-03: 세율표 FAQ 추가, 토지 사례 기본공제 250만 원 반영 교정, 메타 표현 정비</li>
+                  <li>
+                    2026-07-03: 세율표 FAQ 추가, 토지 사례 기본공제 250만 원 반영 교정, 메타 표현
+                    정비
+                  </li>
                   <li>2026-04-24: 2026년 세율 반영 초판 공개 (일반·1세대1주택·일시적2주택)</li>
                 </ul>
               </section>
-
-              {/* 참고 자료 */}
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
@@ -826,8 +907,6 @@ export default function TransferTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
@@ -843,10 +922,7 @@ export default function TransferTaxPage() {
                   간이계산기 또는 세무사의 안내를 받으시기 바랍니다.
                 </p>
               </section>
-              </div>
-
-              {/* 우측 AD-3 Skyscraper (lg+) */}
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

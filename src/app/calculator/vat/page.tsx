@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -50,7 +50,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '부가세 계산기 (VAT) 2026',
     description: '일반·간이과세 + VAT 환산. 사업자·프리랜서 필수.',
-
   },
 };
 
@@ -113,8 +112,7 @@ const RELATED = [
 export default function VatPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '부가가치세(VAT) 계산기',
-    description:
-      '한국 부가가치세 10% 계산기. 일반과세자/간이과세자/VAT 환산 모두 지원.',
+    description: '한국 부가가치세 10% 계산기. 일반과세자/간이과세자/VAT 환산 모두 지원.',
     url: URL,
   });
   const webpageLd = buildWebPageJsonLd({
@@ -126,7 +124,7 @@ export default function VatPage() {
     isPartOf: getCategoryUrlForCalculator('vat'),
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -188,39 +186,73 @@ export default function VatPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webpageLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howtoLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(definedTermSetLd) }}
+      />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
-                    { name: '부가가치세 계산기' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  부가가치세(VAT) 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  한국 부가세 10% 기준 계산기. 일반과세자(매출세액 − 매입세액) /
-                  간이과세자(업종별 부가가치율) / VAT 포함↔공급가액 환산 모두 지원합니다.
-                  사업자·프리랜서·소상공인의 분기·반기 신고 시뮬레이션에 사용하세요.
-                </p>
-                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
-              </header>
-
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '세금', href: '/category/tax/' },
+                      { name: '부가가치세 계산기' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    부가가치세(VAT) 계산기 2026
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    거래 금액과 과세 유형으로 부가세를 확인하세요.
+                  </p>
+                  <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
+                </header>
+              }
+              calculator={<VatCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="부가가치세(VAT)는 사업자가 재화·용역 공급 시 거래 단계마다 부가된 가치에 부과되는 간접세로, 한국은 표준 10%를 적용합니다. 일반과세자는 매출세액에서 매입세액을 빼고, 간이과세자는 매출에 업종별 부가가치율(5~40%)과 10%를 곱하는 방식입니다."
                 table={{
@@ -242,34 +274,28 @@ export default function VatPage() {
                   '신고: 일반 4회/년, 간이 1회/년 (홈택스)',
                 ]}
               />
-
-              <VatCalculator />
-
-              <FaqSection items={[...FAQ_ITEMS]} />
-
               <section aria-label="부가세란" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">부가가치세란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
-                  부가가치세(Value Added Tax, VAT)는 재화나 용역의 공급 단계마다 부가되는
-                  가치에 부과되는 간접세입니다. 한국은 1977년 도입 이후 표준세율 10%를
-                  유지하고 있으며, 사업자가 소비자로부터 받아 국세청에 납부하는 구조입니다.
+                  부가가치세(Value Added Tax, VAT)는 재화나 용역의 공급 단계마다 부가되는 가치에
+                  부과되는 간접세입니다. 한국은 1977년 도입 이후 표준세율 10%를 유지하고 있으며,
+                  사업자가 소비자로부터 받아 국세청에 납부하는 구조입니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  핵심 원리는 <strong>"부가가치 부분만 과세"</strong>입니다. 사업자가 매출 시
-                  10%를 받고(매출세액), 매입 시 부담한 10%를 차감(매입세액공제)해 차액만
-                  납부합니다. 결과적으로 사업자는 자기가 부가한 가치(매출 − 매입)에 대해서만
-                  세금을 부담하는 셈입니다.
+                  핵심 원리는 <strong>"부가가치 부분만 과세"</strong>입니다. 사업자가 매출 시 10%를
+                  받고(매출세액), 매입 시 부담한 10%를 차감(매입세액공제)해 차액만 납부합니다.
+                  결과적으로 사업자는 자기가 부가한 가치(매출 − 매입)에 대해서만 세금을 부담하는
+                  셈입니다.
                 </p>
                 <p className="text-text-secondary">
-                  최종 부담자는 소비자입니다. 영수증·세금계산서의 합계 금액에는 이미
-                  부가세 10%가 포함되어 있으며, 이를 사업자가 모아서 국세청에 신고·납부합니다.
+                  최종 부담자는 소비자입니다. 영수증·세금계산서의 합계 금액에는 이미 부가세 10%가
+                  포함되어 있으며, 이를 사업자가 모아서 국세청에 신고·납부합니다.
                 </p>
               </section>
-
               <section aria-label="일반 vs 간이과세자" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">일반과세자 vs 간이과세자</h2>
                 <div className="space-y-4">
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold">일반과세자</h3>
                     <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• 연 매출 8,000만 원 이상 또는 간이과세 배제 업종</li>
@@ -279,7 +305,7 @@ export default function VatPage() {
                       <li>• 신고: 1년 4회 (예정 4·10월, 확정 7·1월)</li>
                     </ul>
                   </div>
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold">간이과세자</h3>
                     <ul className="space-y-1 text-sm text-text-secondary">
                       <li>• 연 매출 8,000만 원 미만 (일부 업종 제외)</li>
@@ -292,19 +318,20 @@ export default function VatPage() {
                   </div>
                 </div>
               </section>
-
               <section aria-label="계산 공식" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">2026년 부가가치세(VAT)는 어떻게 계산하나요?</h2>
+                <h2 className="mb-4 text-2xl font-semibold">
+                  2026년 부가가치세(VAT)는 어떻게 계산하나요?
+                </h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>일반과세자 납부세액</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       납부세액 = (매출 × 10%) − (매입 × 10%)
                     </p>
                   </li>
                   <li>
                     <strong>간이과세자 납부세액</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       납부세액 = 매출 × 부가가치율 × 10%
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -314,54 +341,60 @@ export default function VatPage() {
                   </li>
                   <li>
                     <strong>VAT 포함 가격 → 공급가액 분리</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
-                      공급가액 = VAT 포함 가격 ÷ 1.1<br />
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
+                      공급가액 = VAT 포함 가격 ÷ 1.1
+                      <br />
                       VAT = VAT 포함 가격 − 공급가액
                     </p>
                   </li>
                   <li>
                     <strong>공급가액 → VAT 포함 가격 추가</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
-                      VAT = 공급가액 × 10%<br />
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
+                      VAT = 공급가액 × 10%
+                      <br />
                       VAT 포함 가격 = 공급가액 + VAT
                     </p>
                   </li>
                 </ol>
               </section>
-
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항 및 면책</h2>
-                <div className="mb-4 rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
-                  <p className="text-sm text-danger-700 dark:text-danger-300">
+                <div className="bg-danger-50 dark:border-danger-400 mb-4 rounded-lg border-l-4 border-danger-500 p-4 dark:bg-red-950 dark:bg-opacity-20">
+                  <p className="text-danger-700 dark:text-danger-300 text-sm">
                     <strong>본 계산기는 교육·참고 목적입니다.</strong> 실제 부가세 신고는
                     홈택스(hometax.go.kr)에서 정식 신고하거나 세무사 상담을 권장합니다.
                   </p>
                 </div>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>7월 확정신고 마감:</strong> 일반과세자의 2026년 제1기(1~6월) 확정신고·납부
-                    기간은 7월 1일~7월 25일입니다. 기한 경과 시 가산세가 부과되므로 본 계산기로 납부세액을
-                    미리 점검해 두세요.
+                    <strong>7월 확정신고 마감:</strong> 일반과세자의 2026년 제1기(1~6월)
+                    확정신고·납부 기간은 7월 1일~7월 25일입니다. 기한 경과 시 가산세가 부과되므로 본
+                    계산기로 납부세액을 미리 점검해 두세요.
                   </li>
-                  <li>본 계산기는 표준세율 10% 기준입니다. 영세율(0%) 또는 면세 항목은 별도 처리됩니다.</li>
-                  <li>간이과세 부가가치율은 2026년 시행령 기준이며, 정부 개정에 따라 달라질 수 있습니다.</li>
-                  <li>의제매입세액공제, 신용카드매출 세액공제 등 특수 공제는 미반영입니다 (홈택스 자동 계산).</li>
+                  <li>
+                    본 계산기는 표준세율 10% 기준입니다. 영세율(0%) 또는 면세 항목은 별도
+                    처리됩니다.
+                  </li>
+                  <li>
+                    간이과세 부가가치율은 2026년 시행령 기준이며, 정부 개정에 따라 달라질 수
+                    있습니다.
+                  </li>
+                  <li>
+                    의제매입세액공제, 신용카드매출 세액공제 등 특수 공제는 미반영입니다 (홈택스 자동
+                    계산).
+                  </li>
                   <li>전자세금계산서 미발급 가산세, 신고 누락 가산세 등은 별도 산정해야 합니다.</li>
                 </ul>
               </section>
-
-              <RelatedCalculators items={RELATED} />
-
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-05-03: 초판 공개 (일반·간이·환산 3가지 모드)</li>
                 </ul>
               </section>
-
               <section aria-label="법적 근거" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
-                <ul className="space-y-2 text-sm text-text-secondary mb-4">
+                <ul className="mb-4 space-y-2 text-sm text-text-secondary">
                   <li>
                     <a
                       href="https://www.law.go.kr/법령/부가가치세법"
@@ -394,20 +427,20 @@ export default function VatPage() {
                   </li>
                 </ul>
               </section>
-
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 부가가치세법 §3·§13·§14·§38·§61·§63, 부가가치세법 시행령 §111.
+                  <strong>법적 근거</strong>: 부가가치세법 §3·§13·§14·§38·§61·§63, 부가가치세법
+                  시행령 §111.
                 </p>
                 <p>
-                  <strong>면책</strong>: 본 계산기는 일반적 산식 기반의 추정치이며,
-                  실제 신고·납부 금액은 홈택스 또는 세무사 산정 결과를 따릅니다.
+                  <strong>면책</strong>: 본 계산기는 일반적 산식 기반의 추정치이며, 실제 신고·납부
+                  금액은 홈택스 또는 세무사 산정 결과를 따릅니다.
                 </p>
               </section>
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

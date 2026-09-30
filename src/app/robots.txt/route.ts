@@ -26,8 +26,9 @@ Allow: /
 Allow: /network-mirror.json
 Allow: /feed.json
 Disallow: /api/
-Disallow: /_next/
 Disallow: /*.json$
+Allow: /_next/static/
+Allow: /_next/image
 
 # 이전 WordPress 잔재 — 봇 자동 스캔·색인 차단 (Search Console 404·NOINDEX 정리)
 Disallow: /wp-admin/
@@ -67,7 +68,6 @@ Allow: /
 User-Agent: GPTBot
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 User-Agent: ChatGPT-User
 Allow: /
@@ -78,7 +78,6 @@ Allow: /
 User-Agent: ClaudeBot
 Allow: /
 Disallow: /api/
-Disallow: /_next/
 
 User-Agent: Claude-Web
 Allow: /

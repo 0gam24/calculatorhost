@@ -3,7 +3,7 @@
  *
  * 법적 근거:
  * - 소득세법 §55 (세율)
- * - 소득세법 §59의2 (근로소득공제)
+ * - 소득세법 §47 (근로소득공제), §59의2 (자녀세액공제)
  * - 국민연금법, 국민건강보험법, 고용보험법
  *
  * 상수: src/lib/constants/tax-rates-2026.ts
@@ -36,8 +36,10 @@ export interface IncomeCalculationInput {
   nontaxableMonthly: number;
   /** 부양가족 수 (본인 포함) */
   dependents: number;
-  /** 20세 이하 자녀 수 */
+  /** 자녀세액공제 요건을 충족하는 기본공제대상 자녀·손자녀 수 */
   children: number;
+  /** 2026년 적용월 (1~12). 생략 시 7월 이후 기준 */
+  calculationMonth?: number;
 }
 
 export interface IncomeCalculationResult {
@@ -49,6 +51,10 @@ export interface IncomeCalculationResult {
   monthlyNontaxable: number;
   /** 월 과세대상 소득 */
   monthlyTaxableIncome: number;
+  /** 계산에 적용한 2026년 월과 국민연금 기준소득월액 범위 */
+  calculationMonth: number;
+  pensionLowerMonthly: number;
+  pensionUpperMonthly: number;
 
   // 공제 (월)
   pension: number;
@@ -92,9 +98,9 @@ export function calculateEarnedIncomeDeduction(annualGross: number): number {
 
   for (const bracket of EARNED_INCOME_DEDUCTION_BRACKETS) {
     if (bracket.upperBound === null || annualGross <= bracket.upperBound) {
-      const prev = EARNED_INCOME_DEDUCTION_BRACKETS[
-        EARNED_INCOME_DEDUCTION_BRACKETS.indexOf(bracket) - 1
-      ]?.upperBound ?? 0;
+      const prev =
+        EARNED_INCOME_DEDUCTION_BRACKETS[EARNED_INCOME_DEDUCTION_BRACKETS.indexOf(bracket) - 1]
+          ?.upperBound ?? 0;
       const amount = bracket.fixed + Math.max(0, annualGross - prev) * bracket.rate;
       return bracket.cap ? Math.min(amount, bracket.cap) : amount;
     }
@@ -105,9 +111,30 @@ export function calculateEarnedIncomeDeduction(annualGross: number): number {
 /**
  * 국민연금 — 기준소득월액 하/상한 적용
  */
-export function calculatePension(monthlyIncome: number): number {
+export function getPensionBounds(calculationMonth = 7): {
+  lowerMonthly: number;
+  upperMonthly: number;
+} {
+  if (!Number.isInteger(calculationMonth) || calculationMonth < 1 || calculationMonth > 12) {
+    throw new RangeError('2026년 적용월은 1~12의 정수여야 합니다.');
+  }
   const { pension } = SOCIAL_INSURANCE_2026;
-  const base = Math.max(pension.lowerMonthly, Math.min(monthlyIncome, pension.upperMonthly));
+  return calculationMonth >= 7
+    ? { lowerMonthly: pension.lowerMonthlyFromJuly, upperMonthly: pension.upperMonthlyFromJuly }
+    : { lowerMonthly: pension.lowerMonthly, upperMonthly: pension.upperMonthly };
+}
+
+export function calculatePension(monthlyIncome: number, calculationMonth = 7): number {
+  const bounds = getPensionBounds(calculationMonth);
+  if (!Number.isFinite(monthlyIncome) || monthlyIncome < 0) {
+    throw new RangeError('월 소득은 0 이상의 유한한 금액이어야 합니다.');
+  }
+  // 0원은 무급여 추정으로 처리. 실제 가입·납부예외 여부는 별도 확인.
+  if (monthlyIncome === 0) return 0;
+  // 국민연금 기준소득월액은 신고 소득에서 천원 미만을 버린 금액.
+  const roundedIncome = Math.floor(monthlyIncome / 1_000) * 1_000;
+  const base = Math.max(bounds.lowerMonthly, Math.min(roundedIncome, bounds.upperMonthly));
+  const { pension } = SOCIAL_INSURANCE_2026;
   return Math.floor(base * pension.employee);
 }
 
@@ -133,10 +160,10 @@ export function calculateEmployment(monthlyIncome: number): number {
 }
 
 /**
- * 근로소득세(월) — 간이세액 간략 추정.
- * 정밀 계산은 국세청 간이세액표 매핑 필요하나,
- * MVP 에서는 연간 과세표준 기반 산출세액 / 12 로 근사.
- * (경계값 테스트에서 소폭 오차 허용, 추후 간이세액표 파일 연동 시 교체.)
+ * 근로소득세(월) — 연간 과세표준 기반 산출세액 / 12 근사.
+ * 국세청 간이세액표를 조회하는 함수가 아니다. 사회보험료 소득공제,
+ * 근로소득세액공제·특별공제 및 회사의 원천징수 비율을 반영하지 않는다.
+ * 실제 월 원천징수액 또는 연말정산 결정세액과 차이가 날 수 있다.
  */
 export function estimateMonthlyIncomeTax(
   annualGross: number,
@@ -145,9 +172,10 @@ export function estimateMonthlyIncomeTax(
   children: number,
 ): number {
   // 과세표준 산출
-  const earnedDeduction = calculateEarnedIncomeDeduction(annualGross);
+  const taxableGross = Math.max(0, annualGross - nontaxableAnnual);
+  const earnedDeduction = calculateEarnedIncomeDeduction(taxableGross);
   const personalDeduction = dependents * PERSONAL_DEDUCTION.basic;
-  const taxableBase = Math.max(0, annualGross - nontaxableAnnual - earnedDeduction - personalDeduction);
+  const taxableBase = Math.max(0, taxableGross - earnedDeduction - personalDeduction);
 
   // 산출세액
   const grossTax = calculateProgressiveTax(taxableBase, INCOME_TAX_BRACKETS);
@@ -195,6 +223,7 @@ export function inferGrossFromNet(
       nontaxableMonthly: options.nontaxableMonthly,
       dependents: options.dependents,
       children: options.children,
+      calculationMonth: options.calculationMonth,
     });
     if (result.monthlyNetIncome < targetMonthlyNet) {
       lo = mid + 1;
@@ -211,6 +240,23 @@ export function inferGrossFromNet(
  * 종합 실수령액 계산 (메인 엔트리)
  */
 export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculationResult {
+  for (const value of [input.wageAmount, input.nontaxableMonthly]) {
+    if (!Number.isFinite(value) || value < 0) {
+      throw new RangeError('급여와 비과세 금액은 0 이상의 유한한 금액이어야 합니다.');
+    }
+  }
+  if (
+    !Number.isInteger(input.dependents) ||
+    input.dependents < 1 ||
+    !Number.isInteger(input.children) ||
+    input.children < 0
+  ) {
+    throw new RangeError(
+      '부양가족은 본인 포함 1명 이상, 공제대상 자녀는 0명 이상의 정수여야 합니다.',
+    );
+  }
+  const calculationMonth = input.calculationMonth ?? 7;
+  const pensionBounds = getPensionBounds(calculationMonth);
   // 1. 연봉 정규화
   let annualGross = input.wageType === 'yearly' ? input.wageAmount : input.wageAmount * 12;
 
@@ -220,11 +266,11 @@ export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculat
   }
 
   const monthlyGrossIncome = Math.floor(annualGross / 12);
-  const monthlyNontaxable = Math.max(0, input.nontaxableMonthly);
+  const monthlyNontaxable = Math.min(monthlyGrossIncome, input.nontaxableMonthly);
   const monthlyTaxableIncome = Math.max(0, monthlyGrossIncome - monthlyNontaxable);
 
   // 2. 4대보험
-  const pension = calculatePension(monthlyTaxableIncome);
+  const pension = calculatePension(monthlyTaxableIncome, calculationMonth);
   const health = calculateHealth(monthlyTaxableIncome);
   const longTermCare = calculateLongTermCare(health);
   const employment = calculateEmployment(monthlyTaxableIncome);
@@ -241,13 +287,16 @@ export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculat
 
   // 4. 실수령액
   const totalDeductions = pension + health + longTermCare + employment + incomeTax + localIncomeTax;
-  const monthlyNetIncome = monthlyGrossIncome - totalDeductions;
+  const monthlyNetIncome = Math.max(0, monthlyGrossIncome - totalDeductions);
 
   return {
     annualGrossIncome: Math.floor(annualGross),
     monthlyGrossIncome,
     monthlyNontaxable,
     monthlyTaxableIncome,
+    calculationMonth,
+    pensionLowerMonthly: pensionBounds.lowerMonthly,
+    pensionUpperMonthly: pensionBounds.upperMonthly,
     pension,
     health,
     longTermCare,

@@ -1,0 +1,354 @@
+{
+  "scope": "Static import coverage; module tests are not independent official-law verification.",
+  "records": [
+    {
+      "slug": "acquisition-tax",
+      "clients": ["AcquisitionCalculator.tsx"],
+      "logicModules": ["@/lib/tax/acquisition"],
+      "unitTestFiles": [
+        "tests/unit/tax/acquisition.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "area",
+      "clients": ["AreaConverter.tsx"],
+      "logicModules": ["@/lib/utils/area"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/utils/area.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "averaging-down",
+      "clients": ["AveragingDownCalculator.tsx"],
+      "logicModules": ["@/lib/finance/averaging-down"],
+      "unitTestFiles": [
+        "tests/unit/finance/averaging-down.test.ts",
+        "tests/unit/finance/branch-coverage.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "bmi",
+      "clients": ["BmiCalculator.tsx"],
+      "logicModules": ["@/lib/utils/bmi"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/utils/bmi.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "broker-fee",
+      "clients": ["CommissionCalculator.tsx"],
+      "logicModules": ["@/lib/finance/realty-commission"],
+      "unitTestFiles": [
+        "tests/unit/finance/realty-commission.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "capital-gains-tax",
+      "clients": ["TransferTaxCalculator.tsx"],
+      "logicModules": ["@/lib/tax/transfer"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/tax/transfer.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "child-tax-credit",
+      "clients": ["ChildTaxCreditCalculator.tsx"],
+      "logicModules": ["@/lib/tax/child-tax-credit"],
+      "unitTestFiles": [
+        "tests/unit/tax/child-tax-credit.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "comprehensive-property-tax",
+      "clients": ["ComprehensivePropertyTaxCalculator.tsx"],
+      "logicModules": ["@/lib/tax/comprehensive-property"],
+      "unitTestFiles": [
+        "tests/unit/tax/comprehensive-property.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "d-day",
+      "clients": ["DdayCalculator.tsx"],
+      "logicModules": ["@/lib/utils/dday"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/utils/dday.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "deposit",
+      "clients": ["DepositCalculator.tsx", "DepositChart.tsx"],
+      "logicModules": ["@/lib/finance/deposit"],
+      "unitTestFiles": [
+        "tests/unit/finance/deposit.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "dti",
+      "clients": ["DtiCalculator.tsx"],
+      "logicModules": ["@/lib/finance/dti"],
+      "unitTestFiles": ["tests/unit/finance/dti.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "exchange",
+      "clients": ["ExchangeCalculator.tsx"],
+      "logicModules": ["@/lib/finance/exchange"],
+      "unitTestFiles": [
+        "tests/unit/finance/exchange.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "freelancer-tax",
+      "clients": ["FreelancerCalculator.tsx"],
+      "logicModules": ["@/lib/tax/freelancer"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/tax/freelancer.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "gift-tax",
+      "clients": ["GiftTaxCalculator.tsx"],
+      "logicModules": ["@/lib/tax/gift"],
+      "unitTestFiles": ["tests/unit/tax/cross-verification.test.ts", "tests/unit/tax/gift.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "housing-subscription",
+      "clients": ["HousingSubscriptionCalculator.tsx"],
+      "logicModules": ["@/lib/utils/housing-subscription"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/utils/housing-subscription.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "inflation",
+      "clients": ["InflationCalculator.tsx"],
+      "logicModules": ["@/lib/finance/inflation"],
+      "unitTestFiles": ["tests/unit/finance/inflation.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "inheritance-tax",
+      "clients": ["InheritanceTaxCalculator.tsx"],
+      "logicModules": ["@/lib/tax/inheritance"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/tax/inheritance.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "loan",
+      "clients": ["LoanCalculator.tsx", "LoanChart.tsx"],
+      "logicModules": ["@/lib/finance/loan"],
+      "unitTestFiles": [
+        "tests/unit/finance/branch-coverage.test.ts",
+        "tests/unit/finance/loan.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "loan-limit",
+      "clients": ["LoanLimitCalculator.tsx"],
+      "logicModules": ["@/lib/finance/loan-limit"],
+      "unitTestFiles": [
+        "tests/unit/finance/branch-coverage.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "n-jobber-insurance",
+      "clients": ["NJobberInsuranceCalculator.tsx"],
+      "logicModules": ["@/lib/tax/n-jobber-insurance"],
+      "unitTestFiles": ["tests/unit/tax/n-jobber-insurance.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "property-tax",
+      "clients": ["PropertyTaxCalculator.tsx"],
+      "logicModules": ["@/lib/tax/property"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/tax/property.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "rent-conversion",
+      "clients": ["RentConversionCalculator.tsx"],
+      "logicModules": ["@/lib/finance/rent-conversion"],
+      "unitTestFiles": [
+        "tests/unit/finance/rent-conversion.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "rental-yield",
+      "clients": ["RentalYieldCalculator.tsx"],
+      "logicModules": ["@/lib/finance/rental-yield"],
+      "unitTestFiles": [
+        "tests/unit/finance/rental-yield.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "retirement",
+      "clients": ["RetirementCalculator.tsx"],
+      "logicModules": ["@/lib/finance/retirement"],
+      "unitTestFiles": [
+        "tests/unit/finance/retirement.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "salary",
+      "clients": ["SalaryCalculator.tsx"],
+      "logicModules": ["@/lib/tax/income"],
+      "unitTestFiles": [
+        "tests/unit/tax/cross-verification.test.ts",
+        "tests/unit/tax/income.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "savings",
+      "clients": ["SavingsCalculator.tsx", "SavingsChart.tsx"],
+      "logicModules": ["@/lib/finance/savings"],
+      "unitTestFiles": [
+        "tests/unit/finance/savings.test.ts",
+        "tests/unit/tax/cross-verification.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    },
+    {
+      "slug": "severance",
+      "clients": ["SeveranceCalculator.tsx"],
+      "logicModules": ["@/lib/tax/severance"],
+      "unitTestFiles": ["tests/unit/tax/severance.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "split-buy",
+      "clients": ["SplitBuyCalculator.tsx"],
+      "logicModules": ["@/lib/finance/split-buy"],
+      "unitTestFiles": ["tests/unit/finance/split-buy.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "split-sell",
+      "clients": ["SplitSellCalculator.tsx"],
+      "logicModules": ["@/lib/finance/split-sell"],
+      "unitTestFiles": [
+        "tests/unit/finance/branch-coverage.test.ts",
+        "tests/unit/finance/split-sell.test.ts"
+      ],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "vat",
+      "clients": ["VatCalculator.tsx"],
+      "logicModules": ["@/lib/tax/vat"],
+      "unitTestFiles": ["tests/unit/tax/vat.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": false
+    },
+    {
+      "slug": "vehicle-tax",
+      "clients": ["VehicleTaxCalculator.tsx"],
+      "logicModules": ["@/lib/tax/vehicle"],
+      "unitTestFiles": ["tests/unit/tax/vehicle.test.ts"],
+      "numberInput": true,
+      "rawNumberInputs": false,
+      "minConstraints": true
+    }
+  ]
+}

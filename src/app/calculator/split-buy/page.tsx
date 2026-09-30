@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -52,7 +52,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '분할매수 계산기 2026 (주식·코인)',
     description: '차수별 평단·실효 평단·BEP까지 한 번에. 균등분할 자동채움 지원.',
-
   },
 };
 
@@ -134,7 +133,7 @@ export default function SplitBuyPage() {
     isPartOf: getCategoryUrlForCalculator('split-buy'),
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -204,22 +203,26 @@ export default function SplitBuyPage() {
                 {
                   name: '분할매수 (DCA)',
                   alternateName: 'Dollar Cost Averaging',
-                  description: '한 종목을 한 번에 매수하지 않고 여러 차수에 나눠 매수하는 전략. 시점 분산으로 평균단가 안정화, 단기 변동성 부담 완화.',
+                  description:
+                    '한 종목을 한 번에 매수하지 않고 여러 차수에 나눠 매수하는 전략. 시점 분산으로 평균단가 안정화, 단기 변동성 부담 완화.',
                 },
                 {
                   name: '균등분할',
-                  description: '매 차수 동일 금액(또는 수량)을 매수하는 가장 단순한 분할매수 방식. 정기 자동 매수에 적합.',
+                  description:
+                    '매 차수 동일 금액(또는 수량)을 매수하는 가장 단순한 분할매수 방식. 정기 자동 매수에 적합.',
                 },
                 {
                   name: '실효 평단가',
-                  description: '매수 수수료를 포함한 실제 매입 평균단가. 산식: (총 매수금액 + 총 매수수수료) ÷ 총 수량. 손익 판단의 실질 기준.',
+                  description:
+                    '매수 수수료를 포함한 실제 매입 평균단가. 산식: (총 매수금액 + 총 매수수수료) ÷ 총 수량. 손익 판단의 실질 기준.',
                 },
                 {
                   name: '무한매수법',
-                  description: '라오어가 제안한 분할매수 전략. 시드를 N등분(예: 40)해 매 회차 정액 매수, 평단 LOC 분할 매도 결합. 본 계산기는 정액 분할로 시뮬레이션 가능.',
+                  description:
+                    '라오어가 제안한 분할매수 전략. 시드를 N등분(예: 40)해 매 회차 정액 매수, 평단 LOC 분할 매도 결합. 본 계산기는 정액 분할로 시뮬레이션 가능.',
                 },
               ],
-            })
+            }),
           ),
         }}
       />
@@ -227,29 +230,42 @@ export default function SplitBuyPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '금융', href: '/category/finance/' },
-                    { name: '분할매수 계산기' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  분할매수 계산기 2026 <span className="text-text-tertiary text-2xl font-semibold">(주식·코인)</span>
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  주식·코인을 여러 차례 나눠 매수했을 때의 가중평균 평단가, 수수료
-                  포함 실효 평단가, 매도 시 본전이 되는 손익분기점(BEP)을 즉시 계산합니다.
-                  차수별 단가·수량을 자유롭게 입력하거나, 총 투자금에서 균등분할로
-                  자동 채울 수 있습니다.
-                </p>
-                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
-              </header>
-
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '금융', href: '/category/finance/' },
+                      { name: '분할매수 계산기' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    분할매수 계산기 2026{' '}
+                    <span className="text-2xl font-semibold text-text-tertiary">(주식·코인)</span>
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    매수 계획별 평균 단가와 투자 금액을 확인하세요.
+                  </p>
+                  <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
+                </header>
+              }
+              calculator={<SplitBuyCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="분할매수(DCA, Dollar Cost Averaging)는 한 종목을 한 번에 매수하지 않고 여러 차례 나눠 사는 방법입니다. 시점 분산으로 평균단가를 안정시키고 단기 변동성의 심리적 부담을 줄입니다."
                 table={{
@@ -260,7 +276,10 @@ export default function SplitBuyPage() {
                     ['총 수량', 'Σ(차수별 수량)'],
                     ['가중평균 평단가', '총 투자금 ÷ 총 수량'],
                     ['실효 평단가', '(총 투자금 + 총 매수수수료) ÷ 총 수량'],
-                    ['손익분기점(BEP)', '평단 × (1 + 매수수수료율) ÷ (1 − 매도수수료율 − 거래세율)'],
+                    [
+                      '손익분기점(BEP)',
+                      '평단 × (1 + 매수수수료율) ÷ (1 − 매도수수료율 − 거래세율)',
+                    ],
                   ],
                 }}
                 tldr={[
@@ -270,194 +289,203 @@ export default function SplitBuyPage() {
                   '균등분할은 시점 리스크 분산, 가중분할(피라미드/역피라미드)은 전략적 비중 조절',
                 ]}
               />
-
-              <SplitBuyCalculator />
-
-              <FaqSection items={[...FAQ_ITEMS]} />
-
               <section aria-label="분할매수란" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">분할매수란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
-                  분할매수(DCA, Dollar Cost Averaging)는 한 종목에 투입할 자금을 여러
-                  차례에 나눠 매수하는 방식입니다. 한 시점에 모든 자금을 투입하는 일시
-                  매수와 달리, 여러 시점에 분산해 평균단가를 안정적으로 형성하고 단기
-                  변동성에 따른 심리적 부담을 줄일 수 있습니다.
+                  분할매수(DCA, Dollar Cost Averaging)는 한 종목에 투입할 자금을 여러 차례에 나눠
+                  매수하는 방식입니다. 한 시점에 모든 자금을 투입하는 일시 매수와 달리, 여러 시점에
+                  분산해 평균단가를 안정적으로 형성하고 단기 변동성에 따른 심리적 부담을 줄일 수
+                  있습니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  분할매수의 가장 큰 장점은 <strong>시점 리스크 분산</strong>입니다.
-                  시장 타이밍을 정확히 맞히기는 매우 어렵기 때문에, 매수 시점을 분산해
-                  "고점에 몰빵"하는 위험을 줄입니다. 또한 정기 매수 규칙을 미리 정해두면
-                  변동성에 휘둘려 충동 매수하는 것을 막을 수 있습니다.
+                  분할매수의 가장 큰 장점은 <strong>시점 리스크 분산</strong>입니다. 시장 타이밍을
+                  정확히 맞히기는 매우 어렵기 때문에, 매수 시점을 분산해 "고점에 몰빵"하는 위험을
+                  줄입니다. 또한 정기 매수 규칙을 미리 정해두면 변동성에 휘둘려 충동 매수하는 것을
+                  막을 수 있습니다.
                 </p>
                 <p className="text-text-secondary">
-                  반면 분명한 한계도 있습니다. 시장이 강한 상승 추세에 있을 때는
-                  일시 매수가 분할매수보다 결과가 더 좋습니다. 또한 분할매수가 자동으로
-                  손실을 보호해 주지는 않습니다. 분할매수는 "시장 타이밍을 포기하는
-                  대신 평균치를 사겠다"는 전략입니다.
+                  반면 분명한 한계도 있습니다. 시장이 강한 상승 추세에 있을 때는 일시 매수가
+                  분할매수보다 결과가 더 좋습니다. 또한 분할매수가 자동으로 손실을 보호해 주지는
+                  않습니다. 분할매수는 "시장 타이밍을 포기하는 대신 평균치를 사겠다"는 전략입니다.
                 </p>
               </section>
-
               <section aria-label="분할매수 전략" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">분할매수 전략 4가지</h2>
                 <div className="space-y-4 text-sm">
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">① 균등분할 (Equal DCA)</h3>
                     <p className="text-text-secondary">
-                      매 회차 같은 금액(또는 같은 수량)을 매수합니다. 예: 매월 100만 원.
-                      가장 단순하고 규율 있는 방식. 본 계산기의 "균등분할 자동채움"이
-                      이 방식을 빠르게 시뮬레이션합니다.
+                      매 회차 같은 금액(또는 같은 수량)을 매수합니다. 예: 매월 100만 원. 가장
+                      단순하고 규율 있는 방식. 본 계산기의 "균등분할 자동채움"이 이 방식을 빠르게
+                      시뮬레이션합니다.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">② 피라미드형 (Pyramid)</h3>
                     <p className="text-text-secondary">
-                      차수가 올라갈수록(상승 추세 확인 후) 비중을 줄여 매수합니다.
-                      추세 추종 + 리스크 관리. 신뢰할 만한 상승 시그널 확인 시 활용.
+                      차수가 올라갈수록(상승 추세 확인 후) 비중을 줄여 매수합니다. 추세 추종 +
+                      리스크 관리. 신뢰할 만한 상승 시그널 확인 시 활용.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
-                    <h3 className="mb-2 font-semibold text-text-primary">③ 역피라미드형 (Reverse Pyramid)</h3>
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
+                    <h3 className="mb-2 font-semibold text-text-primary">
+                      ③ 역피라미드형 (Reverse Pyramid)
+                    </h3>
                     <p className="text-text-secondary">
-                      가격이 내려갈수록 비중을 늘려 매수합니다. 평단 하향 효과가 크지만
-                      추가 하락 시 손실도 커집니다. 물타기 성격이 강한 전략.
+                      가격이 내려갈수록 비중을 늘려 매수합니다. 평단 하향 효과가 크지만 추가 하락 시
+                      손실도 커집니다. 물타기 성격이 강한 전략.
                     </p>
                   </div>
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
-                    <h3 className="mb-2 font-semibold text-text-primary">④ 정액 분할 (라오어식 무한매수법 호환)</h3>
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
+                    <h3 className="mb-2 font-semibold text-text-primary">
+                      ④ 정액 분할 (라오어식 무한매수법 호환)
+                    </h3>
                     <p className="text-text-secondary">
-                      시드를 N등분(예: 40등분)해 매 회차 동일한 금액으로 매수.
-                      평단 LOC 분할 주문과 결합하면 라오어식 "무한매수법" 의도와
-                      유사한 결과. 본 계산기는 차수 수량을 자유롭게 입력해 모든 정액
-                      전략을 시뮬레이션할 수 있습니다.
+                      시드를 N등분(예: 40등분)해 매 회차 동일한 금액으로 매수. 평단 LOC 분할 주문과
+                      결합하면 라오어식 "무한매수법" 의도와 유사한 결과. 본 계산기는 차수 수량을
+                      자유롭게 입력해 모든 정액 전략을 시뮬레이션할 수 있습니다.
                     </p>
                   </div>
                 </div>
               </section>
-
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>총 투자금</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       총투자금 = Σ(차수별 단가 × 차수별 수량)
                     </p>
                   </li>
                   <li>
                     <strong>가중평균 평단가</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       평단 = 총투자금 ÷ 총수량
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      모든 차수의 단가를 수량으로 가중 평균한 값. 단순 산술평균이 아닌
-                      가중평균을 사용해야 정확합니다.
+                      모든 차수의 단가를 수량으로 가중 평균한 값. 단순 산술평균이 아닌 가중평균을
+                      사용해야 정확합니다.
                     </p>
                   </li>
                   <li>
                     <strong>실효 평단가 (수수료 포함)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       실효평단 = (총투자금 + 총 매수수수료) ÷ 총수량
                     </p>
                   </li>
                   <li>
                     <strong>손익분기점 (BEP)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       BEP = 평단 × (1 + 매수수수료율) ÷ (1 − 매도수수료율 − 거래세율)
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      매도 시 수수료와 거래세까지 차감하고도 본전이 되는 가격.
-                      한국 주식은 거래세 0.18%(코스피·코스닥 동일), 코인은 거래세 없음.
+                      매도 시 수수료와 거래세까지 차감하고도 본전이 되는 가격. 한국 주식은 거래세
+                      0.18%(코스피·코스닥 동일), 코인은 거래세 없음.
                     </p>
                   </li>
                 </ol>
               </section>
-
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항 및 면책</h2>
-                <div className="mb-4 rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
-                  <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-200">
+                <div className="bg-danger-50 dark:border-danger-400 mb-4 rounded-lg border-l-4 border-danger-500 p-4 dark:bg-red-950 dark:bg-opacity-20">
+                  <h3 className="text-danger-700 dark:text-danger-200 mb-2 font-semibold">
                     중요 안내
                   </h3>
-                  <p className="text-sm text-danger-600 dark:text-danger-300">
-                    <strong>본 계산기는 투자 권유가 아닙니다.</strong> 분할매수 자체가
-                    수익을 보장하지 않으며, 시장 추세에 따라 일시 매수보다 결과가 나쁠
-                    수도 있습니다. 모든 투자 결정은 본인의 책임입니다.
+                  <p className="dark:text-danger-300 text-sm text-danger-600">
+                    <strong>본 계산기는 투자 권유가 아닙니다.</strong> 분할매수 자체가 수익을
+                    보장하지 않으며, 시장 추세에 따라 일시 매수보다 결과가 나쁠 수도 있습니다. 모든
+                    투자 결정은 본인의 책임입니다.
                   </p>
                 </div>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    수수료·거래세 프리셋은 한국 시장의 평균값을 사용합니다. 실제 거래
-                    수수료는 증권사·거래소·고객 등급에 따라 다르므로, 정확한 BEP
-                    계산을 위해서는 본인의 실효 수수료를 확인하세요.
+                    수수료·거래세 프리셋은 한국 시장의 평균값을 사용합니다. 실제 거래 수수료는
+                    증권사·거래소·고객 등급에 따라 다르므로, 정확한 BEP 계산을 위해서는 본인의 실효
+                    수수료를 확인하세요.
                   </li>
                   <li>
-                    한국 주식 매도 시 증권거래세는 2026년 시행령 기준이며, 정부의
-                    세제 개편에 따라 달라질 수 있습니다. 최신 정보는 한국거래소 또는
-                    국세청 공지를 확인하세요.
+                    한국 주식 매도 시 증권거래세는 2026년 시행령 기준이며, 정부의 세제 개편에 따라
+                    달라질 수 있습니다. 최신 정보는 한국거래소 또는 국세청 공지를 확인하세요.
                   </li>
                   <li>
-                    본 계산기는 동일 종목의 분할매수만 다룹니다. 환율 변동(해외주식),
-                    배당 재투자, 이체 수수료 등은 별도로 고려해야 합니다.
+                    본 계산기는 동일 종목의 분할매수만 다룹니다. 환율 변동(해외주식), 배당 재투자,
+                    이체 수수료 등은 별도로 고려해야 합니다.
                   </li>
                 </ul>
               </section>
-
               <section aria-label="활용 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
                   <li>
-                    <strong>차수 간격 정하기</strong>: 시간 기준(매월/매주) 또는 가격
-                    기준(−5% 하락 시마다)으로 미리 규칙을 정해두세요. 충동 매수를
-                    방지합니다.
+                    <strong>차수 간격 정하기</strong>: 시간 기준(매월/매주) 또는 가격 기준(−5% 하락
+                    시마다)으로 미리 규칙을 정해두세요. 충동 매수를 방지합니다.
                   </li>
                   <li>
-                    <strong>BEP를 손절 기준 옆에 두기</strong>: BEP가 너무 높게
-                    나오면(과도한 평단), 손절 기준과 비교해 추가 진입 여부를
-                    판단하세요.
+                    <strong>BEP를 손절 기준 옆에 두기</strong>: BEP가 너무 높게 나오면(과도한 평단),
+                    손절 기준과 비교해 추가 진입 여부를 판단하세요.
                   </li>
                   <li>
-                    <strong>실효 평단으로 의사결정</strong>: 단순 평단보다 수수료
-                    포함 실효 평단을 기준으로 매도 가격·수익률을 판단하면 실제
-                    수령액에 가까운 시뮬레이션이 가능합니다.
+                    <strong>실효 평단으로 의사결정</strong>: 단순 평단보다 수수료 포함 실효 평단을
+                    기준으로 매도 가격·수익률을 판단하면 실제 수령액에 가까운 시뮬레이션이
+                    가능합니다.
                   </li>
                   <li>
-                    <strong>코인은 변동성에 맞춰 차수를 늘리기</strong>: 변동성이 큰
-                    종목일수록 더 많은 차수로 나누는 것이 평균치 형성에 유리합니다.
+                    <strong>코인은 변동성에 맞춰 차수를 늘리기</strong>: 변동성이 큰 종목일수록 더
+                    많은 차수로 나누는 것이 평균치 형성에 유리합니다.
                   </li>
                   <li>
-                    <strong>분할매도와 짝맞추기</strong>: 분할매수로 평단을 만들고,
-                    분할매도로 차수별로 익절하는 전략은 심리적 부담을 줄여줍니다.
+                    <strong>분할매도와 짝맞추기</strong>: 분할매수로 평단을 만들고, 분할매도로
+                    차수별로 익절하는 전략은 심리적 부담을 줄여줍니다.
                   </li>
                 </ul>
               </section>
-
-              <RelatedCalculators items={RELATED} />
-
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-05-03: 초판 공개 (가중평균 평단·실효 평단·BEP·균등분할 지원)</li>
                 </ul>
               </section>
-
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>:
-                  {' '}<a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국거래소(KRX)</a> 거래 정보,
-                  {' '}<a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금융감독원</a> 투자자 보호,
-                  {' '}<a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 증권거래세 안내.
+                  <strong>법적 근거 및 참고 자료</strong>:{' '}
+                  <a
+                    href="https://www.krx.co.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    한국거래소(KRX)
+                  </a>{' '}
+                  거래 정보,{' '}
+                  <a
+                    href="https://www.fss.or.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    금융감독원
+                  </a>{' '}
+                  투자자 보호,{' '}
+                  <a
+                    href="https://www.nts.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국세청
+                  </a>{' '}
+                  증권거래세 안내.
                 </p>
                 <p>
-                  <strong>면책 조항</strong>: 본 계산기는 교육·참고 목적이며 투자 권유가
-                  아닙니다. 계산 결과는 수학적 추정일 뿐 실제 손익을 보장하지 않습니다.
-                  수수료·거래세는 정책 변경 시 차이가 있을 수 있으며, 모든 투자 결정은
-                  투자자 본인의 책임입니다.
+                  <strong>면책 조항</strong>: 본 계산기는 교육·참고 목적이며 투자 권유가 아닙니다.
+                  계산 결과는 수학적 추정일 뿐 실제 손익을 보장하지 않습니다. 수수료·거래세는 정책
+                  변경 시 차이가 있을 수 있으며, 모든 투자 결정은 투자자 본인의 책임입니다.
                 </p>
               </section>
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

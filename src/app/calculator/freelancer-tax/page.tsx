@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -78,7 +78,7 @@ const FAQ_ITEMS = [
   {
     question: '자녀세액공제는 어떻게 받나요?',
     answer:
-      '종합소득세법에 따라 20세 이하 자녀가 있으면 세액공제를 받을 수 있습니다. 첫 자녀 150만원, 둘째 자녀 200만원, 셋째 이상 각 400만원입니다. 본 계산기에 자녀 수를 입력하면 자동으로 적용됩니다.',
+      '소득세법 제59조의2의 기본공제대상 자녀·손자녀 중 세액공제 요건을 충족하면 1명 연 25만 원, 2명 합계 55만 원, 3명째부터 각 40만 원을 추가 공제합니다. 연령·소득 요건을 확인한 공제대상 인원만 입력하세요.',
   },
   {
     question: '국민연금·건강보험 보험료는 공제되나요?',
@@ -132,12 +132,15 @@ export default function FreelancerTaxPage() {
       { name: '연 수입 입력', text: '지난해(또는 올해 예상) 프리랜서 총 수입을 입력합니다.' },
       { name: '필요경비 입력', text: '단순경비율을 적용하거나, 실제 경비를 직접 입력합니다.' },
       { name: '원천징수 입력', text: '발주처에서 받은 3.3% 원천징수 총액을 입력합니다.' },
-      { name: '자녀·보험료 공제 입력', text: '자녀세액공제, 국민연금·건강보험료를 입력합니다(선택).' },
+      {
+        name: '자녀·보험료 공제 입력',
+        text: '자녀세액공제, 국민연금·건강보험료를 입력합니다(선택).',
+      },
       { name: '납부액·환급액 확인', text: '최종 납부액 또는 환급액을 확인합니다.' },
     ],
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -150,11 +153,31 @@ export default function FreelancerTaxPage() {
     description: '프리랜서 3.3% 원천징수·경비율·종합소득세 신고 용어집',
     url: 'https://calculatorhost.com/calculator/freelancer-tax/#glossary',
     terms: [
-      { name: '3.3% 원천징수', description: '프리랜서·사업소득자에게 대가를 지급할 때 소득세 3% + 지방소득세 0.3%를 미리 떼고 지급하는 제도(소득세법 §127). 다음해 5월 종합소득세 신고로 정산해 환급 또는 추가납부한다.' },
-      { name: '단순경비율', description: '장부 없이 수입금액에 업종별로 정해진 비율을 곱해 필요경비를 인정하는 방식. 영세 사업자·프리랜서가 주로 적용받으며 업종코드별로 비율이 다르다.' },
-      { name: '기준경비율', description: '단순경비율 대상이 아닌 사업자가 주요경비(매입·임차료·인건비)는 증빙으로, 나머지는 기준경비율로 인정받는 방식. 단순경비율보다 낮아 세부담이 크다.' },
-      { name: '과세표준', description: '세율을 곱하는 기준 금액. 프리랜서는 (수입금액 − 필요경비 − 소득공제)로 계산하며 종합소득세 누진세율(6~45%)을 적용한다.' },
-      { name: '환급', description: '미리 낸 3.3% 원천징수액이 실제 산출세액보다 크면 차액을 돌려받는 것. 소득이 적거나 경비가 큰 프리랜서는 5월 신고 시 환급받는 경우가 많다.' },
+      {
+        name: '3.3% 원천징수',
+        description:
+          '프리랜서·사업소득자에게 대가를 지급할 때 소득세 3% + 지방소득세 0.3%를 미리 떼고 지급하는 제도(소득세법 §127). 다음해 5월 종합소득세 신고로 정산해 환급 또는 추가납부한다.',
+      },
+      {
+        name: '단순경비율',
+        description:
+          '장부 없이 수입금액에 업종별로 정해진 비율을 곱해 필요경비를 인정하는 방식. 영세 사업자·프리랜서가 주로 적용받으며 업종코드별로 비율이 다르다.',
+      },
+      {
+        name: '기준경비율',
+        description:
+          '단순경비율 대상이 아닌 사업자가 주요경비(매입·임차료·인건비)는 증빙으로, 나머지는 기준경비율로 인정받는 방식. 단순경비율보다 낮아 세부담이 크다.',
+      },
+      {
+        name: '과세표준',
+        description:
+          '세율을 곱하는 기준 금액. 프리랜서는 (수입금액 − 필요경비 − 소득공제)로 계산하며 종합소득세 누진세율(6~45%)을 적용한다.',
+      },
+      {
+        name: '환급',
+        description:
+          '미리 낸 3.3% 원천징수액이 실제 산출세액보다 크면 차액을 돌려받는 것. 소득이 적거나 경비가 큰 프리랜서는 5월 신고 시 환급받는 경우가 많다.',
+      },
     ],
   });
 
@@ -192,31 +215,49 @@ export default function FreelancerTaxPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
-                    { name: '프리랜서 종합소득세' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  프리랜서 종합소득세 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  프리랜서와 개인사업자를 위한 종합소득세 계산 도구입니다. 3.3% 원천징수, 단순경비율,
-                  자녀세액공제, 사회보험료 공제를 적용하여 2026년 최신 세율로 정확한 세금을 계산합니다.
-                  회원가입 없이 무료로 이용할 수 있으며, 5월 종합소득세 신고 전 납부액과 환급액을
-                  미리 확인하세요.
-                </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '세금', href: '/category/tax/' },
+                      { name: '프리랜서 종합소득세' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    프리랜서 종합소득세 계산기 2026
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    수입과 경비 조건으로 종합소득세 예상액을 확인하세요.
+                  </p>
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                </header>
+              }
+              calculator={<FreelancerCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={[...RELATED]} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+              tools={
+                <>
+                  <ShareButtons
+                    title="프리랜서 종합소득세 계산기 (2026)"
+                    url="https://calculatorhost.com/calculator/freelancer-tax/"
+                  />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="프리랜서 종합소득세는 프리랜서의 사업소득(수입 - 경비)에 대해 부과되는 누진세입니다. 3.3% 원천징수 후 5월 31일 소득세 신고 시 최종 정산하며, 과세표준에서 부양가족 공제와 사회보험료 공제를 뺀 후 8단계 누진세율을 적용합니다."
                 table={{
@@ -238,14 +279,6 @@ export default function FreelancerTaxPage() {
                   '수입 7,500만원 초과 시 단순경비율 적용 제한, 세무사 상담 권장',
                 ]}
               />
-
-              {/* 계산기 */}
-              <FreelancerCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 프리랜서 종합소득세란? */}
               <section aria-label="프리랜서 종합소득세 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">프리랜서 종합소득세란?</h2>
                 <p className="mb-4 text-text-secondary">
@@ -255,39 +288,60 @@ export default function FreelancerTaxPage() {
                   다양한 직종의 자영업자가 대상입니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  종합소득세는 매년 1월 1일부터 12월 31일까지의 수입을 기준으로 계산되며, 매해
-                  5월 31일까지 국세청(홈택스)에 신고하고 납부합니다. 이때 발주처가 미리 걷어간
-                  3.3% 원천징수액을 차감하여 최종 납부액 또는 환급액을 결정합니다.
+                  종합소득세는 매년 1월 1일부터 12월 31일까지의 수입을 기준으로 계산되며, 매해 5월
+                  31일까지 국세청(홈택스)에 신고하고 납부합니다. 이때 발주처가 미리 걷어간 3.3%
+                  원천징수액을 차감하여 최종 납부액 또는 환급액을 결정합니다.
                 </p>
                 <p className="text-text-secondary">
                   특히 단순경비율 적용 조건, 수입 규모, 업종코드, 기록 방식(간편장부·복식부기) 등에
                   따라 세금이 크게 달라질 수 있으므로, 본 계산기로 대략의 규모를 파악한 후 세무사나
                   국세청 홈택스 상담을 통해 정확한 신고를 권장합니다. 참고로 통계청 KOSIS 기준 한국
-                  가구 월평균 소득은{' '}
-                  <PublicDataCitation citation={KOSIS_INCOME_CITATION} />로, 프리랜서 연 소득과
-                  생활비 균형 판단에 참고할 수 있습니다.
+                  가구 월평균 소득은 <PublicDataCitation citation={KOSIS_INCOME_CITATION} />
+                  로, 프리랜서 연 소득과 생활비 균형 판단에 참고할 수 있습니다.
                 </p>
-                <div className="overflow-x-auto mt-4">
-                  <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표. 참고: 한국 가구·1인 월평균 소득 (통계청 KOSIS)</caption>
+                <div className="mt-4 overflow-x-auto">
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">
+                      표. 참고: 한국 가구·1인 월평균 소득 (통계청 KOSIS)
+                    </caption>
                     <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">구분</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">월평균 소득</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">연 환산</th>
+                      <tr className="border border-border-base bg-primary-500/10">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">
+                          구분
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          월평균 소득
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          연 환산
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border border-border-base"><td className="px-4 py-2">가구 월평균 소득</td><td className="px-4 py-2 text-right tabular-nums">약 485만 원</td><td className="px-4 py-2 text-right tabular-nums">약 5,820만 원</td></tr>
-                      <tr className="border border-border-base bg-bg-card/50"><td className="px-4 py-2">1인당 월평균 소득</td><td className="px-4 py-2 text-right tabular-nums">약 185만 원</td><td className="px-4 py-2 text-right tabular-nums">약 2,220만 원</td></tr>
+                      <tr className="border border-border-base">
+                        <td className="px-4 py-2">가구 월평균 소득</td>
+                        <td className="px-4 py-2 text-right tabular-nums">약 485만 원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">약 5,820만 원</td>
+                      </tr>
+                      <tr className="bg-bg-card/50 border border-border-base">
+                        <td className="px-4 py-2">1인당 월평균 소득</td>
+                        <td className="px-4 py-2 text-right tabular-nums">약 185만 원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">약 2,220만 원</td>
+                      </tr>
                     </tbody>
                   </table>
-                  <p className="mt-2 text-xs text-text-tertiary">본인 프리랜서 소득을 위 평균과 비교해 4대보험·노후 대비 규모를 가늠하는 참고용입니다. 정확한 출처·기준일은 위 인용 표기를 따릅니다.</p>
+                  <p className="mt-2 text-xs text-text-tertiary">
+                    본인 프리랜서 소득을 위 평균과 비교해 4대보험·노후 대비 규모를 가늠하는
+                    참고용입니다. 정확한 출처·기준일은 위 인용 표기를 따릅니다.
+                  </p>
                 </div>
               </section>
-
-              {/* AD-2 Medium Rectangle (본문 중간) */}
-              {/* 3.3% 원천징수 메커니즘 */}
               <section aria-label="3.3% 원천징수" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">3.3% 원천징수는 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
@@ -297,7 +351,7 @@ export default function FreelancerTaxPage() {
                 </p>
 
                 <div className="mb-6 rounded-lg bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-3">계산 예시</h3>
+                  <h3 className="mb-3 font-semibold text-text-primary">계산 예시</h3>
                   <div className="space-y-2 text-sm">
                     <div className="flex justify-between">
                       <span>계약금(수입)</span>
@@ -307,7 +361,7 @@ export default function FreelancerTaxPage() {
                       <span>원천징수 (3.3%)</span>
                       <span className="font-medium text-danger-500">-3,300,000원</span>
                     </div>
-                    <div className="border-t border-border-base pt-2 flex justify-between font-medium">
+                    <div className="flex justify-between border-t border-border-base pt-2 font-medium">
                       <span>실제 입금액</span>
                       <span>96,700,000원</span>
                     </div>
@@ -321,8 +375,8 @@ export default function FreelancerTaxPage() {
 
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
-                    • <strong>환급 경우</strong>: 경비율이 높거나 부양가족·자녀가 많으면, 원천징수액이
-                    최종 세금보다 많아 환급받을 수 있습니다.
+                    • <strong>환급 경우</strong>: 경비율이 높거나 부양가족·자녀가 많으면,
+                    원천징수액이 최종 세금보다 많아 환급받을 수 있습니다.
                   </li>
                   <li>
                     • <strong>추가납부 경우</strong>: 과세표준이 높아지면 최종 세금이 원천징수액보다
@@ -335,8 +389,6 @@ export default function FreelancerTaxPage() {
                   통해 정산하세요.
                 </p>
               </section>
-
-              {/* 단순경비율 vs 기준경비율 vs 복식부기 */}
               <section aria-label="경비 산정 방식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">
                   단순경비율 vs 기준경비율 vs 복식부기
@@ -371,16 +423,16 @@ export default function FreelancerTaxPage() {
                           업종별 정해진 비율로 자동 계산. 영수증 불필요. 가장 간편.
                         </td>
                         <td className="px-3 py-2 text-text-secondary">4,800만원 이하</td>
-                        <td className="px-3 py-2 text-text-secondary">수입 1억 × 64.1% = 경비 6,410만</td>
+                        <td className="px-3 py-2 text-text-secondary">
+                          수입 1억 × 64.1% = 경비 6,410만
+                        </td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2 font-semibold text-text-primary">기준경비율</td>
                         <td className="px-3 py-2 text-text-secondary">
                           단순경비율보다 낮은 비율. 실제 경비가 많으면 장부 제출로 차이 인정 가능.
                         </td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          4,800만~7,500만원
-                        </td>
+                        <td className="px-3 py-2 text-text-secondary">4,800만~7,500만원</td>
                         <td className="px-3 py-2 text-text-secondary">
                           수입 5,000만 × 52% = 경비 2,600만
                         </td>
@@ -390,9 +442,7 @@ export default function FreelancerTaxPage() {
                         <td className="px-3 py-2 text-text-secondary">
                           전표·통장 전체 기록. 실제 경비를 정확히 계산. 가장 복잡. 세무사 필요.
                         </td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          7,500만원 초과 (의무)
-                        </td>
+                        <td className="px-3 py-2 text-text-secondary">7,500만원 초과 (의무)</td>
                         <td className="px-3 py-2 text-text-secondary">
                           영수증·통장 기록으로 실제 경비 산출
                         </td>
@@ -403,18 +453,16 @@ export default function FreelancerTaxPage() {
 
                 <div className="mt-6 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
                   <p className="text-sm text-text-secondary">
-                    <strong>주의:</strong> 수입 규모와 영수증 보유 상태에 따라 국세청에서 세무 조사 시
-                    적용 기준이 달라질 수 있습니다. 정확한 판단은 세무사와 상담하세요.
+                    <strong>주의:</strong> 수입 규모와 영수증 보유 상태에 따라 국세청에서 세무 조사
+                    시 적용 기준이 달라질 수 있습니다. 정확한 판단은 세무사와 상담하세요.
                   </p>
                 </div>
               </section>
-
-              {/* 업종별 단순경비율 참고표 */}
               <section aria-label="업종별 단순경비율" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">업종별 단순경비율은 얼마인가요?</h2>
                 <p className="mb-4 text-text-secondary">
-                  다음은 대표적인 프리랜서 업종의 단순경비율입니다. 정확한 업종코드는 국세청 홈택스에서
-                  확인하세요. (상세 업종코드는 총 100개 이상 존재)
+                  다음은 대표적인 프리랜서 업종의 단순경비율입니다. 정확한 업종코드는 국세청
+                  홈택스에서 확인하세요. (상세 업종코드는 총 100개 이상 존재)
                 </p>
 
                 <div className="overflow-x-auto">
@@ -482,57 +530,51 @@ export default function FreelancerTaxPage() {
                   정확한 수치는 국세청 홈택스 또는 세무사와 상담하세요.
                 </p>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">프리랜서 종합소득세 주의사항</h2>
 
                 <div className="space-y-4">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">
-                      1. 업종코드는 정확하게
-                    </h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">1. 업종코드는 정확하게</h3>
                     <p className="text-sm text-text-secondary">
                       같은 "프리랜서"라도 구체적인 업무 내용에 따라 업종코드가 달라집니다. 예를 들어
-                      "IT 개발"과 "학원 강사"는 다른 단순경비율이 적용됩니다. 홈택스 신고 시 업종코드를
-                      정확히 선택해야 합니다.
+                      "IT 개발"과 "학원 강사"는 다른 단순경비율이 적용됩니다. 홈택스 신고 시
+                      업종코드를 정확히 선택해야 합니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">
+                    <h3 className="mb-2 font-semibold text-text-primary">
                       2. 수입 규모에 따른 제약
                     </h3>
                     <p className="text-sm text-text-secondary">
-                      • 수입 4,800만원 초과(인적용역 기준): 기준경비율 적용 가능, 기납부 원천징수액이
-                      높음
-                      <br />
-                      • 수입 7,500만원 초과: 간편장부 대신 복식부기 기장 필수. 세무사 도움 강력 권장.
+                      • 수입 4,800만원 초과(인적용역 기준): 기준경비율 적용 가능, 기납부
+                      원천징수액이 높음
+                      <br />• 수입 7,500만원 초과: 간편장부 대신 복식부기 기장 필수. 세무사 도움
+                      강력 권장.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">
-                      3. 부양가족 공제 조건
-                    </h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">3. 부양가족 공제 조건</h3>
                     <p className="text-sm text-text-secondary">
-                      인적공제(1인당 150만원)는 기본공제입니다. 본인 포함 부양가족에 대해 적용되지만,
-                      배우자와 자녀의 소득 요건 등이 있으므로 자세한 내용은 국세청 상담을 받으세요.
+                      인적공제(1인당 150만원)는 기본공제입니다. 본인 포함 부양가족에 대해
+                      적용되지만, 배우자와 자녀의 소득 요건 등이 있으므로 자세한 내용은 국세청
+                      상담을 받으세요.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">
-                      4. 사회보험료 공제
-                    </h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">4. 사회보험료 공제</h3>
                     <p className="text-sm text-text-secondary">
-                      지역가입자(프리랜서)의 국민연금·건강보험료는 사회보험료공제로 과세표준을 낮춥니다.
-                      피부양자 요건이나 소득 제한 등 세부 조건이 있으므로, 납부한 금액을 정확히 입력하세요.
+                      지역가입자(프리랜서)의 국민연금·건강보험료는 사회보험료공제로 과세표준을
+                      낮춥니다. 피부양자 요건이나 소득 제한 등 세부 조건이 있으므로, 납부한 금액을
+                      정확히 입력하세요.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">
+                    <h3 className="mb-2 font-semibold text-text-primary">
                       5. 호출처(원천징수의무자) 확인
                     </h3>
                     <p className="text-sm text-text-secondary">
@@ -542,34 +584,32 @@ export default function FreelancerTaxPage() {
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">
-                      6. 5월 신고 기한 준수
-                    </h3>
+                    <h3 className="mb-2 font-semibold text-text-primary">6. 5월 신고 기한 준수</h3>
                     <p className="text-sm text-text-secondary">
                       종합소득세 신고 기한은 매해 5월 31일입니다. 지연 시 가산세 및 지연이자가
-                      부과됩니다. 온라인 신고(홈택스)는 편리하지만, 복잡한 경우 세무사 신고를 권장합니다.
+                      부과됩니다. 온라인 신고(홈택스)는 편리하지만, 복잡한 경우 세무사 신고를
+                      권장합니다.
                     </p>
                   </div>
                 </div>
 
-                <p className="mt-6 text-sm text-text-secondary border-t border-border-subtle pt-4">
+                <p className="mt-6 border-t border-border-subtle pt-4 text-sm text-text-secondary">
                   <strong>면책:</strong> 본 계산기의 결과는 참고용입니다. 정확한 세금 계산은 국세청
                   홈택스 간편신고 또는 세무사 상담을 통해 이루어져야 합니다. 개인의 상황(주택 보유,
                   이전 연도 이월 손실, 특수 공제 등)에 따라 세금이 다를 수 있으므로, 반드시 전문가
                   검토를 거치세요.
                 </p>
               </section>
-
-              {/* 환급 vs 추가납부 시나리오 */}
               <section aria-label="환급·추가납부 시나리오" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">환급 vs 추가납부 시나리오</h2>
                 <p className="mb-6 text-text-secondary">
-                  같은 3.3% 원천징수를 받아도, 경비율, 부양가족, 자녀 수에 따라 최종 정산액이 달라집니다.
+                  같은 3.3% 원천징수를 받아도, 경비율, 부양가족, 자녀 수에 따라 최종 정산액이
+                  달라집니다.
                 </p>
 
                 <div className="space-y-4">
                   <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
-                    <h3 className="font-semibold text-green-600 dark:text-green-400 mb-3">
+                    <h3 className="mb-3 font-semibold text-green-600 dark:text-green-400">
                       시나리오 1: 환급 (경비율 높음)
                     </h3>
                     <div className="space-y-1 text-sm">
@@ -611,15 +651,13 @@ export default function FreelancerTaxPage() {
                       </div>
                       <div className="flex justify-between border-t border-green-500/30 pt-1 font-medium">
                         <span>추가납부액</span>
-                        <span className="text-danger-600 dark:text-danger-400">
-                          322,740원
-                        </span>
+                        <span className="dark:text-danger-400 text-danger-600">322,740원</span>
                       </div>
                     </div>
                   </div>
 
                   <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
-                    <h3 className="font-semibold text-danger-600 dark:text-danger-400 mb-3">
+                    <h3 className="dark:text-danger-400 mb-3 font-semibold text-danger-600">
                       시나리오 2: 추가납부 (부양가족 많음)
                     </h3>
                     <div className="space-y-1 text-sm">
@@ -665,9 +703,7 @@ export default function FreelancerTaxPage() {
                       </div>
                       <div className="flex justify-between border-t border-danger-500/30 pt-1 font-medium">
                         <span>환급액</span>
-                        <span className="text-green-600 dark:text-green-400">
-                          205,260원
-                        </span>
+                        <span className="text-green-600 dark:text-green-400">205,260원</span>
                       </div>
                     </div>
                   </div>
@@ -678,63 +714,78 @@ export default function FreelancerTaxPage() {
                   소득)를 고려하므로 더 복잡합니다.
                 </p>
               </section>
-
-              {/* 관련 계산기 */}
-              {/* 관련 가이드 CTA, 시기성 콘텐츠 노출 */}
-              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+              <section
+                aria-label="관련 가이드"
+                className="card border-l-4 border-l-primary-500 bg-primary-500/5"
+              >
                 <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
-                    <a href="/guide/may-comprehensive-income-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/may-comprehensive-income-tax/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       5월 종합소득세 신고 완벽 가이드 (2026)
                     </a>{' '}
-, 신고 대상·홈택스 단계별 신고법·절세 5가지 (시즌 직전 필독)
+                    , 신고 대상·홈택스 단계별 신고법·절세 5가지 (시즌 직전 필독)
                   </li>
                   <li>
                     →{' '}
-                    <a href="/guide/freelancer-salary-comparison/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/freelancer-salary-comparison/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       프리랜서 vs 일반직 실수령액 비교
                     </a>
                   </li>
                 </ul>
               </section>
-
-              <ShareButtons title="프리랜서 종합소득세 계산기 (2026)" url="https://calculatorhost.com/calculator/freelancer-tax/" />
-
-              <RelatedCalculators items={[...RELATED]} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-04-24: 프리랜서 종합소득세 계산기 초판 공개 (2026 세율 적용)</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
                   <strong>공식 근거</strong>: 소득세법 §55(종합소득세율) · §80(과세표준) ·
-                  §127·§129(원천징수) · 시행령 §143(단순경비율). 참고: <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>, <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">기획재정부</a>.
+                  §127·§129(원천징수) · 시행령 §143(단순경비율). 참고:{' '}
+                  <a
+                    href="https://www.hometax.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국세청 홈택스
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.moef.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    기획재정부
+                  </a>
+                  .
                 </p>
                 <p className="mb-2">
-                  <strong>계산 기준</strong>: 2026년 세율 기준, 누진 8단계 적용, 지방소득세
-                  10%, 3.3% 원천징수, 부양가족 공제 1인당 150만원, 자녀세액공제 차등 적용
+                  <strong>계산 기준</strong>: 2026년 세율 기준, 누진 8단계 적용, 지방소득세 10%,
+                  3.3% 원천징수, 부양가족 공제 1인당 150만원, 자녀세액공제 차등 적용
                 </p>
                 <p>
-                  <strong>YMYL 면책</strong>: 본 계산기의 결과는 일반 정보 제공 목적이며 개인의
-                  세금 신고 상담이 아닙니다. 실제 납부 의무는 개인의 상황(주택 보유, 해외 소득,
-                  이전 연도 이월손실 등)을 모두 고려해야 하므로, 반드시 홈택스 간편신고 또는 세무사
-                  상담을 거쳐 정확한 신고를 진행하세요. 신고 오류로 인한 손실은 본 사이트에서 책임지지
+                  <strong>YMYL 면책</strong>: 본 계산기의 결과는 일반 정보 제공 목적이며 개인의 세금
+                  신고 상담이 아닙니다. 실제 납부 의무는 개인의 상황(주택 보유, 해외 소득, 이전 연도
+                  이월손실 등)을 모두 고려해야 하므로, 반드시 홈택스 간편신고 또는 세무사 상담을
+                  거쳐 정확한 신고를 진행하세요. 신고 오류로 인한 손실은 본 사이트에서 책임지지
                   않습니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

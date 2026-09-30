@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 자동차세 계산기 (MVP Phase 2 #4)
  *
@@ -14,7 +17,7 @@
  * - 자동차세·지방교육세·연납 할인 결과
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -23,10 +26,19 @@ import { ResultBanner } from '@/components/calculator/ResultBanner';
 import { calculateVehicleTax, type VehicleUsage } from '@/lib/tax/vehicle';
 
 export function VehicleTaxCalculator() {
-  const [usage, setUsage] = useState<VehicleUsage>('passengerNonBusiness');
-  const [engineCc, setEngineCc] = useState<number>(1998);
-  const [vehicleAgeYears, setVehicleAgeYears] = useState<number>(0);
-  const [includeAnnualDiscount, setIncludeAnnualDiscount] = useState<boolean>(false);
+  const [usage, setUsage] = useCalculatorState<VehicleUsage>(
+    'vehicle-tax:usage',
+    'passengerNonBusiness',
+  );
+  const [engineCc, setEngineCc] = useCalculatorState<number>('vehicle-tax:engineCc', 1998);
+  const [vehicleAgeYears, setVehicleAgeYears] = useCalculatorState<number>(
+    'vehicle-tax:vehicleAgeYears',
+    0,
+  );
+  const [includeAnnualDiscount, setIncludeAnnualDiscount] = useCalculatorState<boolean>(
+    'vehicle-tax:includeAnnualDiscount',
+    false,
+  );
 
   // 즉시 계산 (useMemo)
   const result = useMemo(() => {
@@ -125,7 +137,7 @@ export function VehicleTaxCalculator() {
     if (result.totalAnnual > 0) {
       return (
         <div className="rounded-lg border border-border-base bg-bg-card p-4">
-          <p className="text-sm font-medium text-text-primary mb-2">납부 일정</p>
+          <p className="mb-2 text-sm font-medium text-text-primary">납부 일정</p>
           <p className="text-sm text-text-secondary">
             일반: 6월(상반기), 12월(하반기) 분할 납부. 연납(1월): 5% 할인 가능.
           </p>
@@ -143,88 +155,92 @@ export function VehicleTaxCalculator() {
   const heroLabel = includeAnnualDiscount ? '최종 연납액' : '연간 총액';
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* 기본 입력 폼 */}
-      <FormCard title="자동차 정보 입력">
-        <div className="flex flex-col gap-5">
-          {/* 차량 용도 */}
-          <RadioGroup<VehicleUsage>
-            id="vehicle-usage"
-            label="차량 용도"
-            value={usage}
-            onChange={setUsage}
-            options={[
-              { value: 'passengerNonBusiness', label: '비영업용 승용 (MVP 지원)' },
-            ]}
-          />
-          <p className="text-xs text-text-secondary">
-            영업용·승합·화물 차량은 세무 전문가 상담이 필요합니다.
-          </p>
-
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-            {/* 배기량 */}
-            <NumberInput
-              id="vehicle-engine-cc"
-              label="배기량"
-              value={engineCc}
-              onChange={setEngineCc}
-              placeholder="1998"
-              unit="cc"
-              min={0}
-              max={5000}
-              helpText="엔진 배기량을 입력하세요"
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="vehicle-tax">
+      <div className="min-w-0 space-y-5">
+        {/* 기본 입력 폼 */}
+        <FormCard title="자동차 정보 입력">
+          <div className="flex flex-col gap-5">
+            {/* 차량 용도 */}
+            <RadioGroup<VehicleUsage>
+              id="vehicle-usage"
+              label="차량 용도"
+              value={usage}
+              onChange={setUsage}
+              options={[{ value: 'passengerNonBusiness', label: '비영업용 승용 (MVP 지원)' }]}
             />
+            <p className="text-xs text-text-secondary">
+              영업용·승합·화물 차량은 세무 전문가 상담이 필요합니다.
+            </p>
 
-            {/* 차령(연수) */}
-            <NumberInput
-              id="vehicle-age-years"
-              label="차령(년)"
-              value={vehicleAgeYears}
-              onChange={setVehicleAgeYears}
-              placeholder="0"
-              unit="년"
-              min={0}
-              max={30}
-              helpText="현재 연도 - 등록 연도 = 경과 연수"
-            />
-          </div>
-
-          {/* 연납 할인 체크박스 */}
-          <div className="flex items-center gap-3">
-            <label className="flex items-center gap-2 cursor-pointer">
-              <input
-                type="checkbox"
-                checked={includeAnnualDiscount}
-                onChange={(e) => setIncludeAnnualDiscount(e.target.checked)}
-                className="w-4 h-4 rounded border-2 border-border-base checked:bg-primary-500 checked:border-primary-500"
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {/* 배기량 */}
+              <NumberInput
+                id="vehicle-engine-cc"
+                label="배기량"
+                value={engineCc}
+                onChange={setEngineCc}
+                placeholder="1998"
+                unit="cc"
+                min={0}
+                max={5000}
+                helpText="엔진 배기량을 입력하세요"
+                integer
               />
-              <span className="text-sm font-medium text-text-primary">
-                연납 할인 적용 (1월 일괄 납부)
-              </span>
-            </label>
-            <span className="text-xs text-text-secondary">약 5% 할인</span>
-          </div>
-        </div>
-      </FormCard>
 
-      {/* 결과 카드 */}
-      {hasValidResult ? (
-        <ResultCard
-          title="계산 결과"
-          heroLabel={heroLabel}
-          heroValue={`${heroValue.toLocaleString()}원`}
-          rows={resultRows}
-        >
-          {warningOrInfoElements}
-        </ResultCard>
-      ) : (
-        <div className="rounded-lg border border-border-base bg-bg-card p-6 text-center">
-          <p className="text-text-secondary">
-            배기량과 차령을 입력하면 자동차세가 자동 계산됩니다.
-          </p>
-        <ResultBanner />
-        </div>
-      )}
-    </div>
+              {/* 차령(연수) */}
+              <NumberInput
+                id="vehicle-age-years"
+                label="차령(년)"
+                value={vehicleAgeYears}
+                onChange={setVehicleAgeYears}
+                placeholder="0"
+                unit="년"
+                min={0}
+                max={30}
+                helpText="현재 연도 - 등록 연도 = 경과 연수"
+                integer
+              />
+            </div>
+
+            {/* 연납 할인 체크박스 */}
+            <div className="flex items-center gap-3">
+              <label className="flex cursor-pointer items-center gap-2">
+                <input
+                  type="checkbox"
+                  checked={includeAnnualDiscount}
+                  onChange={(e) => setIncludeAnnualDiscount(e.target.checked)}
+                  className="h-4 w-4 rounded border-2 border-border-base checked:border-primary-500 checked:bg-primary-500"
+                />
+                <span className="text-sm font-medium text-text-primary">
+                  연납 할인 적용 (1월 일괄 납부)
+                </span>
+              </label>
+              <span className="text-xs text-text-secondary">약 5% 할인</span>
+            </div>
+          </div>
+        </FormCard>
+
+        {/* 결과 카드 */}
+      </div>
+      <div className="min-w-0 space-y-4">
+        {hasValidResult ? (
+          <ResultCard
+            title="계산 결과"
+            heroLabel={heroLabel}
+            heroValue={`${heroValue.toLocaleString()}원`}
+            rows={resultRows}
+          >
+            {warningOrInfoElements}
+          </ResultCard>
+        ) : (
+          <div className="rounded-lg border border-border-base bg-bg-card p-6 text-center">
+            <p className="text-text-secondary">
+              배기량과 차령을 입력하면 자동차세가 자동 계산됩니다.
+            </p>
+            <ResultBanner />
+          </div>
+        )}
+      </div>
+    </CalculatorWorkspace>
   );
 }

@@ -8,7 +8,7 @@ import {
   partitionMissing,
   countCitations,
   classifyCitations,
-} from '../../../scripts/section-citation-audit.mjs';
+} from '../../../scripts/section-citation-core.mjs';
 
 describe('countCitations()', () => {
   it('counts §N section markers in source text', () => {
@@ -79,7 +79,9 @@ describe('CITATION_EXEMPT', () => {
     // 카테고리 허브(/guide/category/*)는 본문이 없는 목록 페이지라 대상 외.
     const taxish = Object.keys(CITATION_EXEMPT)
       .filter((r) => !r.startsWith('/guide/category/'))
-      .filter((r) => /(-tax|tax-|taxation|\/vat\/|gift|inheritance|acquisition|capital-gains)/.test(r));
+      .filter((r) =>
+        /(-tax|tax-|taxation|\/vat\/|gift|inheritance|acquisition|capital-gains)/.test(r),
+      );
     expect(taxish).toEqual([]);
   });
 });

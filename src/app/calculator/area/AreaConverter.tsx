@@ -1,4 +1,8 @@
 'use client';
+import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
+
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
  * 평수 환산 계산기 (MVP #10)
@@ -7,29 +11,35 @@
  * 공식: src/lib/utils/area.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
-import { convertArea, type AreaUnit, type AreaKind, SQM_PER_PYEONG, PYEONG_PER_SQM } from '@/lib/utils/area';
+import {
+  convertArea,
+  type AreaUnit,
+  type AreaKind,
+  SQM_PER_PYEONG,
+  PYEONG_PER_SQM,
+} from '@/lib/utils/area';
 
 /** 자주 쓰는 평수 환산표 */
 const COMMON_CONVERSIONS = [
   { pyeong: 12, sqm: 39.67 },
-  { pyeong: 18, sqm: 59.50 },
+  { pyeong: 18, sqm: 59.5 },
   { pyeong: 24, sqm: 79.34 },
   { pyeong: 32, sqm: 105.78 },
-  { pyeong: 34, sqm: 112.40 },
+  { pyeong: 34, sqm: 112.4 },
   { pyeong: 45, sqm: 148.76 },
   { pyeong: 60, sqm: 198.35 },
 ];
 
 export function AreaConverter() {
-  const [inputValue, setInputValue] = useState(34);
-  const [unit, setUnit] = useState<AreaUnit>('pyeong');
-  const [areaKind, setAreaKind] = useState<AreaKind>('exclusive');
+  const [inputValue, setInputValue] = useCalculatorState('area:inputValue', 34);
+  const [unit, setUnit] = useCalculatorState<AreaUnit>('area:unit', 'pyeong');
+  const [areaKind, setAreaKind] = useCalculatorState<AreaKind>('area:areaKind', 'exclusive');
 
   const result = useMemo(
     () =>
@@ -53,14 +63,10 @@ export function AreaConverter() {
 
   // 면적 종류 라벨 (정보용)
   const areaKindLabel =
-    areaKind === 'exclusive'
-      ? '전용면적'
-      : areaKind === 'supply'
-        ? '공급면적'
-        : '대지면적';
+    areaKind === 'exclusive' ? '전용면적' : areaKind === 'supply' ? '공급면적' : '대지면적';
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="area">
       {/* 입력 폼 */}
       <FormCard title="입력">
         {/* 입력 값 */}
@@ -83,21 +89,27 @@ export function AreaConverter() {
             { value: 'pyeong', label: '평' },
             { value: 'sqm', label: '제곱미터 (㎡)' },
           ]}
-          onChange={setUnit}
+          onChange={(next) => {
+            if (next === unit) return;
+            setInputValue(next === 'sqm' ? result.sqm : result.pyeong);
+            setUnit(next);
+          }}
         />
 
         {/* 면적 종류 (정보용) */}
-        <RadioGroup<AreaKind>
-          id="area-kind"
-          label="면적 종류 (참고용)"
-          value={areaKind}
-          options={[
-            { value: 'exclusive', label: '전용면적' },
-            { value: 'supply', label: '공급면적' },
-            { value: 'land', label: '대지면적' },
-          ]}
-          onChange={setAreaKind}
-        />
+        <CalculatorDetails summary={`${areaKindLabel}`}>
+          <RadioGroup<AreaKind>
+            id="area-kind"
+            label="면적 종류 (참고용)"
+            value={areaKind}
+            options={[
+              { value: 'exclusive', label: '전용면적' },
+              { value: 'supply', label: '공급면적' },
+              { value: 'land', label: '대지면적' },
+            ]}
+            onChange={setAreaKind}
+          />
+        </CalculatorDetails>
 
         {/* 단위 교환 버튼 */}
         <button
@@ -141,7 +153,8 @@ export function AreaConverter() {
           {/* 공식 안내 */}
           <div className="mt-4 rounded-lg border border-border-base bg-bg-base p-3">
             <p className="text-caption text-text-tertiary">
-              <strong>계량법 기준:</strong> 1평 = {(SQM_PER_PYEONG).toFixed(4)}㎡, 1㎡ = {(PYEONG_PER_SQM).toFixed(4)}평
+              <strong>계량법 기준:</strong> 1평 = {SQM_PER_PYEONG.toFixed(4)}㎡, 1㎡ ={' '}
+              {PYEONG_PER_SQM.toFixed(4)}평
             </p>
           </div>
         </ResultCard>
@@ -155,14 +168,16 @@ export function AreaConverter() {
               <thead>
                 <tr className="border-b border-border-base">
                   <th className="px-3 py-2 text-left font-semibold text-text-primary">평</th>
-                  <th className="px-3 py-2 text-right font-semibold text-text-primary">제곱미터 (㎡)</th>
+                  <th className="px-3 py-2 text-right font-semibold text-text-primary">
+                    제곱미터 (㎡)
+                  </th>
                 </tr>
               </thead>
               <tbody>
                 {COMMON_CONVERSIONS.map((conv) => (
-                  <tr key={conv.pyeong} className="border-b border-border-base/50">
+                  <tr key={conv.pyeong} className="border-border-base/50 border-b">
                     <td className="px-3 py-2 text-text-secondary">{conv.pyeong}평</td>
-                    <td className="px-3 py-2 text-right text-text-primary font-medium tabular-nums">
+                    <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
                       {conv.sqm.toFixed(2)}㎡
                     </td>
                   </tr>
@@ -172,6 +187,6 @@ export function AreaConverter() {
           </div>
         </section>
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

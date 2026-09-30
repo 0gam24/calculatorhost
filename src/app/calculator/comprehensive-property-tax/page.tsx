@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -95,13 +95,16 @@ export default function ComprehensivePropertyTaxPage() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '종합부동산세 계산기 2026',
-    description: '주택 공시가 합계, 주택 수, 공제 조건을 입력해 과세표준과 종부세 납부액을 즉시 계산',
+    description:
+      '주택 공시가 합계, 주택 수, 공제 조건을 입력해 과세표준과 종부세 납부액을 즉시 계산',
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
     isPartOf: getCategoryUrlForCalculator('comprehensive-property-tax'),
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
@@ -141,25 +144,29 @@ export default function ComprehensivePropertyTaxPage() {
     terms: [
       {
         name: '공제금액',
-        description: '종부세 과세표준 산정 시 공시가 합계에서 차감하는 금액. 1세대1주택자는 12억 원, 다주택자는 9억 원의 공제를 받음. 공제를 초과하는 부분만 과세 대상이 됨(종부세법 §7)',
+        description:
+          '종부세 과세표준 산정 시 공시가 합계에서 차감하는 금액. 1세대1주택자는 12억 원, 다주택자는 9억 원의 공제를 받음. 공제를 초과하는 부분만 과세 대상이 됨(종부세법 §7)',
         alternateName: '기본공제',
         url: 'https://law.go.kr',
       },
       {
         name: '공정시장가액비율',
-        description: '실제 매매가와 공시가의 차이를 반영하기 위해 공시가에 곱하는 비율로, 일반적으로 60%가 적용됨. 과세표준 = (공시가 합계 - 공제) × 공정시장가액비율(종부세법 시행령)',
+        description:
+          '실제 매매가와 공시가의 차이를 반영하기 위해 공시가에 곱하는 비율로, 일반적으로 60%가 적용됨. 과세표준 = (공시가 합계 - 공제) × 공정시장가액비율(종부세법 시행령)',
         alternateName: '비율 적용',
         url: 'https://www.hometax.go.kr',
       },
       {
         name: '과세표준',
-        description: '세율을 적용하여 세액을 계산하기 위한 기준이 되는 가액. 종부세는 (보유 주택 공시가 합계 - 공제금액) × 공정시장가액비율 60%로 산정됨. 음수면 0원으로 계산(종부세법 §8)',
+        description:
+          '세율을 적용하여 세액을 계산하기 위한 기준이 되는 가액. 종부세는 (보유 주택 공시가 합계 - 공제금액) × 공정시장가액비율 60%로 산정됨. 음수면 0원으로 계산(종부세법 §8)',
         alternateName: '과세 기준액',
         url: 'https://law.go.kr',
       },
       {
         name: '농어촌특별세',
-        description: '종합부동산세 순세액의 20%로 계산되어 종부세와 함께 부과되는 세금. 예: 종부세 500만 원이면 농특세 100만 원, 총 600만 원 납부(농어촌특별세법 §5)',
+        description:
+          '종합부동산세 순세액의 20%로 계산되어 종부세와 함께 부과되는 세금. 예: 종부세 500만 원이면 농특세 100만 원, 총 600만 원 납부(농어촌특별세법 §5)',
         alternateName: '농특세',
         url: 'https://www.realtyprice.kr',
       },
@@ -200,28 +207,49 @@ export default function ComprehensivePropertyTaxPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
-                    { name: '종합부동산세' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">종합부동산세 계산기 2026</h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 종부세법을 기준으로 한 무료 종합부동산세 계산기입니다. 보유 주택 수와 공시가
-                  합계, 1세대1주택 특례 여부, 고령자·장기보유 정보를 입력하면 공정시장가액비율 60%
-                  적용으로 과세표준과 세액공제를 반영한 최종 납부세액을 즉시 확인할 수 있습니다.
-                </p>
-                <AuthorByline dateModified="2026-04-24" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '세금', href: '/category/tax/' },
+                      { name: '종합부동산세' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    종합부동산세 계산기 2026
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    공시가격과 보유 조건으로 예상 종부세를 확인하세요.
+                  </p>
+                  <AuthorByline dateModified="2026-04-24" />
+                </header>
+              }
+              calculator={<ComprehensivePropertyTaxCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+              tools={
+                <>
+                  <ShareButtons
+                    title="종합부동산세 계산기 (2026)"
+                    url="https://calculatorhost.com/calculator/comprehensive-property-tax/"
+                  />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="종합부동산세는 주택 공시가 합계에서 공제를 차감한 후 공정시장가액비율 60%를 적용한 과세표준에 누진세를 곱하고, 농어촌특별세 20%를 더하여 계산되는 국세입니다(종부세법 §7·§8·§9, 농특세법 §5)."
                 table={{
@@ -242,31 +270,21 @@ export default function ComprehensivePropertyTaxPage() {
                   '농어촌특별세는 순세액의 20% (종부세에 포함)',
                 ]}
               />
-
-              {/* 계산기 */}
-              <ComprehensivePropertyTaxCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 종합부동산세란 무엇인가 */}
               <section aria-label="종합부동산세 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">종합부동산세란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
-                  종합부동산세(종부세)는 고가 주택을 다수 보유한 자산가에게 매년 부과되는 국세입니다(종부세법
-                  §1). 보유 주택의 공시가 합계에서 공제를 차감한 후, 공정시장가액비율 60%를 적용하여 과세표준을
-                  산정하고, 누진세를 적용합니다. 1세대1주택자는 12억 원의 공제를 받을 수 있으며, 고령자·장기보유
-                  세액공제도 적용됩니다.
+                  종합부동산세(종부세)는 고가 주택을 다수 보유한 자산가에게 매년 부과되는
+                  국세입니다(종부세법 §1). 보유 주택의 공시가 합계에서 공제를 차감한 후,
+                  공정시장가액비율 60%를 적용하여 과세표준을 산정하고, 누진세를 적용합니다.
+                  1세대1주택자는 12억 원의 공제를 받을 수 있으며, 고령자·장기보유 세액공제도
+                  적용됩니다.
                 </p>
                 <p className="text-text-secondary">
-                  다주택자는 9억 원의 공제만 받고, 세액공제 혜택이 없습니다. 3주택 이상을 보유하면 과세표준
-                  12억 원을 초과하는 부분부터 중과세율이 적용되어 세 부담이 크게 증가합니다. 농어촌특별세법에 따라
-                  종부세의 20%가 농특세로 추가 부과됩니다.
+                  다주택자는 9억 원의 공제만 받고, 세액공제 혜택이 없습니다. 3주택 이상을 보유하면
+                  과세표준 12억 원을 초과하는 부분부터 중과세율이 적용되어 세 부담이 크게
+                  증가합니다. 농어촌특별세법에 따라 종부세의 20%가 농특세로 추가 부과됩니다.
                 </p>
               </section>
-
-              {/* AD-2 Medium Rectangle (본문 중간) */}
-              {/* 세율표: 일반 vs 3주택 이상 중과 */}
               <section aria-label="종합부동산세 세율" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">종합부동산세 세율표</h2>
 
@@ -290,32 +308,32 @@ export default function ComprehensivePropertyTaxPage() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">3억 원 이하</td>
                           <td className="px-3 py-2 text-right text-text-primary">0.5%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">0원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">3억~6억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">0.7%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">60만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">6억~12억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">1.0%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">240만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">12억~25억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">1.3%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">600만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">25억~50억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">1.5%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">1,100만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">50억~94억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">2.0%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">3,600만 원</td>
@@ -323,7 +341,9 @@ export default function ComprehensivePropertyTaxPage() {
                         <tr>
                           <td className="px-3 py-2 text-text-secondary">94억 원 초과</td>
                           <td className="px-3 py-2 text-right text-text-primary">2.7%</td>
-                          <td className="px-3 py-2 text-right text-text-secondary">1억 1,800만 원</td>
+                          <td className="px-3 py-2 text-right text-text-secondary">
+                            1억 1,800만 원
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -348,48 +368,50 @@ export default function ComprehensivePropertyTaxPage() {
                         </tr>
                       </thead>
                       <tbody>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">3억 원 이하</td>
                           <td className="px-3 py-2 text-right text-text-primary">0.5%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">0원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">3억~6억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">0.7%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">60만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">6억~12억 원</td>
                           <td className="px-3 py-2 text-right text-text-primary">1.0%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">240만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">12억~25억 원</td>
-                          <td className="px-3 py-2 text-right text-primary-500 font-semibold">
+                          <td className="px-3 py-2 text-right font-semibold text-primary-500">
                             2.0%
                           </td>
                           <td className="px-3 py-2 text-right text-text-secondary">1,440만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">25억~50억 원</td>
-                          <td className="px-3 py-2 text-right text-primary-500 font-semibold">
+                          <td className="px-3 py-2 text-right font-semibold text-primary-500">
                             3.0%
                           </td>
                           <td className="px-3 py-2 text-right text-text-secondary">3,940만 원</td>
                         </tr>
-                        <tr className="border-b border-border-base/50">
+                        <tr className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">50억~94억 원</td>
-                          <td className="px-3 py-2 text-right text-primary-500 font-semibold">
+                          <td className="px-3 py-2 text-right font-semibold text-primary-500">
                             4.0%
                           </td>
                           <td className="px-3 py-2 text-right text-text-secondary">8,940만 원</td>
                         </tr>
                         <tr>
                           <td className="px-3 py-2 text-text-secondary">94억 원 초과</td>
-                          <td className="px-3 py-2 text-right text-primary-500 font-semibold">
+                          <td className="px-3 py-2 text-right font-semibold text-primary-500">
                             5.0%
                           </td>
-                          <td className="px-3 py-2 text-right text-text-secondary">1억 8,340만 원</td>
+                          <td className="px-3 py-2 text-right text-text-secondary">
+                            1억 8,340만 원
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -400,8 +422,6 @@ export default function ComprehensivePropertyTaxPage() {
                   </p>
                 </div>
               </section>
-
-              {/* 공제금액 비교 */}
               <section aria-label="공제금액 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">공제금액 비교</h2>
                 <p className="mb-4 text-text-secondary">
@@ -422,7 +442,7 @@ export default function ComprehensivePropertyTaxPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 font-medium text-primary-500">1세대1주택</td>
                         <td className="px-3 py-2 text-right font-semibold text-primary-500">
                           12억 원
@@ -455,13 +475,11 @@ export default function ComprehensivePropertyTaxPage() {
                   <li>→ 다주택의 과세표준이 2배 높아 종부세 부담이 큼</li>
                 </ul>
               </section>
-
-              {/* 세액공제 상세 설명 */}
               <section aria-label="세액공제" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">1세대1주택 세액공제</h2>
                 <p className="mb-4 text-text-secondary">
-                  1세대1주택자만 고령자공제와 장기보유공제를 받을 수 있으며, 합계는 80% 한도입니다(종부세법
-                  §9).
+                  1세대1주택자만 고령자공제와 장기보유공제를 받을 수 있으며, 합계는 80%
+                  한도입니다(종부세법 §9).
                 </p>
 
                 <h3 className="mb-3 text-lg font-medium text-text-primary">고령자공제</h3>
@@ -478,15 +496,15 @@ export default function ComprehensivePropertyTaxPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">60세 미만</td>
                         <td className="px-3 py-2 text-right text-text-primary">0%</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">60~64세</td>
                         <td className="px-3 py-2 text-right text-text-primary">20%</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">65~69세</td>
                         <td className="px-3 py-2 text-right text-text-primary">30%</td>
                       </tr>
@@ -512,15 +530,15 @@ export default function ComprehensivePropertyTaxPage() {
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">5년 미만</td>
                         <td className="px-3 py-2 text-right text-text-primary">0%</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">5~10년 미만</td>
                         <td className="px-3 py-2 text-right text-text-primary">20%</td>
                       </tr>
-                      <tr className="border-b border-border-base/50">
+                      <tr className="border-border-base/50 border-b">
                         <td className="px-3 py-2 text-text-secondary">10~15년 미만</td>
                         <td className="px-3 py-2 text-right text-text-primary">40%</td>
                       </tr>
@@ -537,8 +555,6 @@ export default function ComprehensivePropertyTaxPage() {
                   적용으로 실제는 80% 공제를 받습니다.
                 </p>
               </section>
-
-              {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">종합부동산세 계산 공식</h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
@@ -546,19 +562,20 @@ export default function ComprehensivePropertyTaxPage() {
                     <strong>1. 공제금액 결정</strong>: 1세대1주택이면 12억, 다주택이면 9억 원 공제.
                   </li>
                   <li>
-                    <strong>2. 과세표준 산정</strong>: (보유 주택 공시가 합계 − 공제) × 60%(공정시장가액비율).
-                    음수면 0원.
+                    <strong>2. 과세표준 산정</strong>: (보유 주택 공시가 합계 − 공제) ×
+                    60%(공정시장가액비율). 음수면 0원.
                   </li>
                   <li>
-                    <strong>3. 세율 구간 선택</strong>: 1-2주택은 일반세율, 3주택 이상은 일반세율(12억
-                    이하) + 중과세율(12억 초과).
+                    <strong>3. 세율 구간 선택</strong>: 1-2주택은 일반세율, 3주택 이상은
+                    일반세율(12억 이하) + 중과세율(12억 초과).
                   </li>
                   <li>
-                    <strong>4. 종부세 산출세액 계산</strong>: 과세표준에 누진세 적용 (10원 단위 절사).
+                    <strong>4. 종부세 산출세액 계산</strong>: 과세표준에 누진세 적용 (10원 단위
+                    절사).
                   </li>
                   <li>
-                    <strong>5. 세액공제 계산 (1세대1주택자만)</strong>: 고령자공제 + 장기보유공제, 합계
-                    80% 한도.
+                    <strong>5. 세액공제 계산 (1세대1주택자만)</strong>: 고령자공제 + 장기보유공제,
+                    합계 80% 한도.
                   </li>
                   <li>
                     <strong>6. 종부세 순세액</strong>: 산출세액 − 세액공제액 (최소 0원).
@@ -571,81 +588,92 @@ export default function ComprehensivePropertyTaxPage() {
                   </li>
                 </ol>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>세대 합산</strong>: 종부세는 1세대 단위로 합산되므로, 배우자명의 주택도 모두
-                    포함되어야 합니다. 부부의 명의를 분리해도 1세대로 봅니다.
+                    <strong>세대 합산</strong>: 종부세는 1세대 단위로 합산되므로, 배우자명의 주택도
+                    모두 포함되어야 합니다. 부부의 명의를 분리해도 1세대로 봅니다.
                   </li>
                   <li>
-                    <strong>과세 기준일</strong>: 보유 여부는 6월 1일을 기준으로 판단됩니다. 6월 1일 23시
-                    59분 현재 소유한 주택만 과세 대상입니다.
+                    <strong>과세 기준일</strong>: 보유 여부는 6월 1일을 기준으로 판단됩니다. 6월 1일
+                    23시 59분 현재 소유한 주택만 과세 대상입니다.
                   </li>
                   <li>
-                    <strong>공시가격 확정</strong>: 공시가격이 확정되기 전 추정값으로 계산했다면, 확정 후
-                    실제 세액이 달라질 수 있습니다.
+                    <strong>공시가격 확정</strong>: 공시가격이 확정되기 전 추정값으로 계산했다면,
+                    확정 후 실제 세액이 달라질 수 있습니다.
                   </li>
                   <li>
-                    <strong>조정지역 변경</strong>: 조정지역 지정·해제는 수시로 변할 수 있으므로, 최신
-                    정보를 확인해야 합니다.
+                    <strong>조정지역 변경</strong>: 조정지역 지정·해제는 수시로 변할 수 있으므로,
+                    최신 정보를 확인해야 합니다.
                   </li>
                   <li>
-                    <strong>세무사 상담 필수</strong>: 본 계산기는 참고용이며, 정확한 계산과 신고는 세무사의
-                    도움을 받으시기 바랍니다. 세대 판정, 공시가격 이의 신청 등 복잡한 사항은 전문가 상담이
-                    필수입니다.
+                    <strong>세무사 상담 필수</strong>: 본 계산기는 참고용이며, 정확한 계산과 신고는
+                    세무사의 도움을 받으시기 바랍니다. 세대 판정, 공시가격 이의 신청 등 복잡한
+                    사항은 전문가 상담이 필수입니다.
                   </li>
                   <li>
-                    본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 종부세는 국세청의 확정세액
-                    고지를 따릅니다.
+                    본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 종부세는 국세청의
+                    확정세액 고지를 따릅니다.
                   </li>
                 </ul>
               </section>
-
-              {/* 관련 계산기 */}
-              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+              <section
+                aria-label="관련 가이드"
+                className="card border-l-4 border-l-primary-500 bg-primary-500/5"
+              >
                 <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
-                    <a href="/guide/june-property-tax/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/june-property-tax/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       재산세 완벽 가이드 (재산세 vs 종부세 차이 정리)
                     </a>
                   </li>
                 </ul>
               </section>
-
-              <ShareButtons title="종합부동산세 계산기 (2026)" url="https://calculatorhost.com/calculator/comprehensive-property-tax/" />
-
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-04-24: 2026년 종부세법 기준 초판 공개</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
                   <strong>출처</strong>: 종합부동산세법 §7(과세표준), §8(세율), §9(1세대1주택
-                  세액공제) · 농어촌특별세법 §5(농특세) · 공정시장가액비율 고시 · <a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스</a>, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>.
+                  세액공제) · 농어촌특별세법 §5(농특세) · 공정시장가액비율 고시 ·{' '}
+                  <a
+                    href="https://www.hometax.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국세청 홈택스
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.nts.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    국세청
+                  </a>
+                  .
                 </p>
                 <p>
                   본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 세대 판정, 조정지역 중과 폐지,
-                  세액공제 한도, 공시가격 확정 여부 등 변수는 실제 고지액에 영향을 미칠 수 있습니다. 정확한
-                  종부세 계산 및 신고는 관할 세무서 또는 세무사의 안내를 받으시기 바랍니다.
+                  세액공제 한도, 공시가격 확정 여부 등 변수는 실제 고지액에 영향을 미칠 수 있습니다.
+                  정확한 종부세 계산 및 신고는 관할 세무서 또는 세무사의 안내를 받으시기 바랍니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

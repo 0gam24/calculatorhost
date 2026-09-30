@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 프리랜서 종합소득세 계산기 (MVP #15, 블루오션 니치)
  *
@@ -13,7 +16,7 @@
  * - 종합소득세·지방소득세·최종 정산액 계산
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -34,20 +37,44 @@ const PRESET_EXPENSE_RATES = [
 
 export function FreelancerCalculator() {
   // 기본 입력
-  const [annualRevenue, setAnnualRevenue] = useState<number>(30_000_000);
-  const [expenseMethod, setExpenseMethod] = useState<ExpenseMethod>('simpleRate');
-  const [simpleExpenseRatePercent, setSimpleExpenseRatePercent] = useState<number>(64.1);
-  const [actualExpenses, setActualExpenses] = useState<number>(0);
+  const [annualRevenue, setAnnualRevenue] = useCalculatorState<number>(
+    'freelancer-tax:annualRevenue',
+    30_000_000,
+  );
+  const [expenseMethod, setExpenseMethod] = useCalculatorState<ExpenseMethod>(
+    'freelancer-tax:expenseMethod',
+    'simpleRate',
+  );
+  const [simpleExpenseRatePercent, setSimpleExpenseRatePercent] = useCalculatorState<number>(
+    'freelancer-tax:simpleExpenseRatePercent',
+    64.1,
+  );
+  const [actualExpenses, setActualExpenses] = useCalculatorState<number>(
+    'freelancer-tax:actualExpenses',
+    0,
+  );
 
   // 원천징수액
-  const [useAutoWithholding, setUseAutoWithholding] = useState<boolean>(true);
-  const [withholdingPaid, setWithholdingPaid] = useState<number>(0);
+  const [useAutoWithholding, setUseAutoWithholding] = useCalculatorState<boolean>(
+    'freelancer-tax:useAutoWithholding',
+    true,
+  );
+  const [withholdingPaid, setWithholdingPaid] = useCalculatorState<number>(
+    'freelancer-tax:withholdingPaid',
+    0,
+  );
 
   // 부양가족·공제
-  const [dependents, setDependents] = useState<number>(1);
-  const [children, setChildren] = useState<number>(0);
-  const [nationalPensionPaid, setNationalPensionPaid] = useState<number>(0);
-  const [healthInsurancePaid, setHealthInsurancePaid] = useState<number>(0);
+  const [dependents, setDependents] = useCalculatorState<number>('freelancer-tax:dependents', 1);
+  const [children, setChildren] = useCalculatorState<number>('freelancer-tax:children', 0);
+  const [nationalPensionPaid, setNationalPensionPaid] = useCalculatorState<number>(
+    'freelancer-tax:nationalPensionPaid',
+    0,
+  );
+  const [healthInsurancePaid, setHealthInsurancePaid] = useCalculatorState<number>(
+    'freelancer-tax:healthInsurancePaid',
+    0,
+  );
 
   // 즉시 계산 (useMemo)
   const result = useMemo(() => {
@@ -108,9 +135,7 @@ export function FreelancerCalculator() {
       label: '필요경비',
       value: formatKRW(result.expenseAmount),
       note:
-        expenseMethod === 'simpleRate'
-          ? `단순경비율 ${simpleExpenseRatePercent}%`
-          : '실제 경비',
+        expenseMethod === 'simpleRate' ? `단순경비율 ${simpleExpenseRatePercent}%` : '실제 경비',
     });
 
     rows.push({
@@ -173,234 +198,233 @@ export function FreelancerCalculator() {
     });
 
     return rows;
-  }, [
-    result,
-    dependents,
-    children,
-    expenseMethod,
-    simpleExpenseRatePercent,
-    useAutoWithholding,
-  ]);
+  }, [result, dependents, children, expenseMethod, simpleExpenseRatePercent, useAutoWithholding]);
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* 입력 폼 */}
-      <FormCard title="소득 정보">
-        <div className="flex flex-col gap-5">
-          {/* 연간 수입 */}
-          <div>
-            <label htmlFor="freelancer-revenue" className="mb-3 block text-sm font-semibold">
-              연간 총 수입 (매출)
-            </label>
-            <NumberInput
-              id="freelancer-revenue"
-              label="연간 총 수입 (매출)"
-              value={annualRevenue}
-              onChange={setAnnualRevenue}
-              placeholder="30,000,000"
-              unit="원"
-              min={0}
-            />
-            <div className="mt-3 flex flex-wrap gap-2">
-              <button
-                onClick={() => setAnnualRevenue(10_000_000)}
-                className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm hover:bg-primary-500/20 transition-colors"
-              >
-                1,000만
-              </button>
-              <button
-                onClick={() => setAnnualRevenue(50_000_000)}
-                className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm hover:bg-primary-500/20 transition-colors"
-              >
-                5,000만
-              </button>
-              <button
-                onClick={() => setAnnualRevenue(100_000_000)}
-                className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm hover:bg-primary-500/20 transition-colors"
-              >
-                1억
-              </button>
-            </div>
-          </div>
-
-          {/* 경비 산정 방식 */}
-          <RadioGroup<ExpenseMethod>
-            id="freelancer-expense-method"
-            label="경비 산정 방식"
-            value={expenseMethod}
-            onChange={setExpenseMethod}
-            options={[
-              { value: 'simpleRate', label: '단순경비율 사용 (일반적)' },
-              { value: 'actual', label: '실제 경비 직접 입력' },
-            ]}
-          />
-
-          {/* 단순경비율 입력 (expenseMethod === 'simpleRate' 일 때만) */}
-          {expenseMethod === 'simpleRate' && (
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="freelancer-tax">
+      <div className="min-w-0 space-y-5">
+        {/* 입력 폼 */}
+        <FormCard title="계산 조건 입력">
+          <div className="flex flex-col gap-5">
+            {/* 연간 수입 */}
             <div>
-              <label htmlFor="freelancer-expense-rate" className="mb-3 block text-sm font-semibold">
-                단순경비율 (%)
+              <label htmlFor="freelancer-revenue" className="mb-3 block text-sm font-semibold">
+                연간 총 수입 (매출)
               </label>
               <NumberInput
-                id="freelancer-expense-rate"
-                label="단순경비율 (%)"
-                value={simpleExpenseRatePercent}
-                onChange={setSimpleExpenseRatePercent}
-                placeholder="64.1"
-                unit="%"
+                id="freelancer-revenue"
+                label="연간 총 수입 (매출)"
+                value={annualRevenue}
+                onChange={setAnnualRevenue}
+                placeholder="30,000,000"
+                unit="원"
                 min={0}
-                max={100}
               />
               <div className="mt-3 flex flex-wrap gap-2">
-                {PRESET_EXPENSE_RATES.map(({ label, rate }) => (
-                  <button
-                    key={rate}
-                    onClick={() => setSimpleExpenseRatePercent(rate)}
-                    className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm hover:bg-primary-500/20 transition-colors"
-                  >
-                    {label}
-                  </button>
-                ))}
+                <button
+                  onClick={() => setAnnualRevenue(10_000_000)}
+                  className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
+                >
+                  1,000만
+                </button>
+                <button
+                  onClick={() => setAnnualRevenue(50_000_000)}
+                  className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
+                >
+                  5,000만
+                </button>
+                <button
+                  onClick={() => setAnnualRevenue(100_000_000)}
+                  className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
+                >
+                  1억
+                </button>
               </div>
-              <p className="mt-2 text-xs text-text-tertiary">
-                업종별로 정해진 경비율입니다. 정확한 업종코드 확인이 필요합니다.
-              </p>
             </div>
-          )}
 
-          {/* 실제 경비 입력 (expenseMethod === 'actual' 일 때만) */}
-          {expenseMethod === 'actual' && (
+            {/* 경비 산정 방식 */}
+            <RadioGroup<ExpenseMethod>
+              id="freelancer-expense-method"
+              label="경비 산정 방식"
+              value={expenseMethod}
+              onChange={setExpenseMethod}
+              options={[
+                { value: 'simpleRate', label: '단순경비율 사용 (일반적)' },
+                { value: 'actual', label: '실제 경비 직접 입력' },
+              ]}
+            />
+
+            {/* 단순경비율 입력 (expenseMethod === 'simpleRate' 일 때만) */}
+            {expenseMethod === 'simpleRate' && (
+              <div>
+                <label
+                  htmlFor="freelancer-expense-rate"
+                  className="mb-3 block text-sm font-semibold"
+                >
+                  단순경비율 (%)
+                </label>
+                <NumberInput
+                  id="freelancer-expense-rate"
+                  label="단순경비율 (%)"
+                  value={simpleExpenseRatePercent}
+                  onChange={setSimpleExpenseRatePercent}
+                  placeholder="64.1"
+                  unit="%"
+                  min={0}
+                  max={100}
+                />
+                <div className="mt-3 flex flex-wrap gap-2">
+                  {PRESET_EXPENSE_RATES.map(({ label, rate }) => (
+                    <button
+                      key={rate}
+                      onClick={() => setSimpleExpenseRatePercent(rate)}
+                      className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
+                    >
+                      {label}
+                    </button>
+                  ))}
+                </div>
+                <p className="mt-2 text-xs text-text-tertiary">
+                  업종별로 정해진 경비율입니다. 정확한 업종코드 확인이 필요합니다.
+                </p>
+              </div>
+            )}
+
+            {/* 실제 경비 입력 (expenseMethod === 'actual' 일 때만) */}
+            {expenseMethod === 'actual' && (
+              <NumberInput
+                id="freelancer-actual-expenses"
+                label="실제 경비"
+                value={actualExpenses}
+                onChange={setActualExpenses}
+                placeholder="10,000,000"
+                unit="원"
+                min={0}
+              />
+            )}
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <label className="flex cursor-pointer items-center gap-2">
+              <input
+                type="checkbox"
+                checked={useAutoWithholding}
+                onChange={(e) => setUseAutoWithholding(e.target.checked)}
+                className="cursor-pointer"
+              />
+              <span className="text-sm font-medium">자동 계산 (수입 × 3.3%)</span>
+            </label>
+
+            {useAutoWithholding ? (
+              <div className="rounded-lg bg-bg-card p-3 text-sm text-text-secondary">
+                자동 계산: {formatKRW(annualRevenue)} × 3.3% ={' '}
+                {formatKRW(Math.round(annualRevenue * 0.033))}
+              </div>
+            ) : (
+              <NumberInput
+                id="freelancer-withholding"
+                label="직접 입력"
+                value={withholdingPaid}
+                onChange={setWithholdingPaid}
+                placeholder="0"
+                unit="원"
+                min={0}
+              />
+            )}
+
+            <p className="text-xs text-text-tertiary">
+              3.3% 원천징수는 소득세법 §127에 따른 의무 원천징수입니다.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <NumberInput
-              id="freelancer-actual-expenses"
-              label="실제 경비"
-              value={actualExpenses}
-              onChange={setActualExpenses}
-              placeholder="10,000,000"
-              unit="원"
+              id="freelancer-dependents"
+              label="부양가족 수 (본인 포함)"
+              value={dependents}
+              onChange={setDependents}
+              min={1}
+              max={10}
+              placeholder="1"
+              integer
+              unit="명"
+            />
+
+            <NumberInput
+              id="freelancer-children"
+              label="공제대상 자녀·손자녀 수"
+              value={children}
+              onChange={setChildren}
               min={0}
+              max={10}
+              placeholder="0"
+              integer
+              unit="명"
             />
-          )}
-        </div>
-      </FormCard>
 
-      {/* 원천징수 설정 */}
-      <FormCard title="기납부 원천징수액">
-        <div className="flex flex-col gap-4">
-          <label className="flex items-center gap-2 cursor-pointer">
-            <input
-              type="checkbox"
-              checked={useAutoWithholding}
-              onChange={(e) => setUseAutoWithholding(e.target.checked)}
-              className="cursor-pointer"
-            />
-            <span className="text-sm font-medium">자동 계산 (수입 × 3.3%)</span>
-          </label>
-
-          {useAutoWithholding ? (
-            <div className="rounded-lg bg-bg-card p-3 text-sm text-text-secondary">
-              자동 계산: {formatKRW(annualRevenue)} × 3.3% = {formatKRW(Math.round(annualRevenue * 0.033))}
-            </div>
-          ) : (
             <NumberInput
-              id="freelancer-withholding"
-              label="직접 입력"
-              value={withholdingPaid}
-              onChange={setWithholdingPaid}
+              id="freelancer-pension"
+              label="연 국민연금 납부액"
+              value={nationalPensionPaid}
+              onChange={setNationalPensionPaid}
               placeholder="0"
               unit="원"
               min={0}
             />
-          )}
 
-          <p className="text-xs text-text-tertiary">
-            3.3% 원천징수는 소득세법 §127에 따른 의무 원천징수입니다.
-          </p>
-        </div>
-      </FormCard>
-
-      {/* 부양가족·공제 */}
-      <FormCard title="부양가족 · 공제">
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-          <NumberInput
-            id="freelancer-dependents"
-            label="부양가족 수 (본인 포함)"
-            value={dependents}
-            onChange={setDependents}
-            min={1}
-            max={10}
-            placeholder="1"
-          />
-
-          <NumberInput
-            id="freelancer-children"
-            label="20세 이하 자녀 수"
-            value={children}
-            onChange={setChildren}
-            min={0}
-            max={10}
-            placeholder="0"
-          />
-
-          <NumberInput
-            id="freelancer-pension"
-            label="연 국민연금 납부액"
-            value={nationalPensionPaid}
-            onChange={setNationalPensionPaid}
-            placeholder="0"
-            unit="원"
-            min={0}
-          />
-
-          <NumberInput
-            id="freelancer-health"
-            label="연 건강보험 납부액"
-            value={healthInsurancePaid}
-            onChange={setHealthInsurancePaid}
-            placeholder="0"
-            unit="원"
-            min={0}
-          />
-        </div>
-      </FormCard>
-
-      {/* 결과 카드 */}
-      <ResultCard
-        title="계산 결과"
-        heroLabel="최종 정산액"
-        heroValue={formatKRW(Math.abs(result.settlementAmount)).replace('원', '')}
-        rows={resultRows}
-      >
-        {/* 정산 상태 박스 */}
-        <div className={`rounded-lg border p-4 ${settlementBg}`}>
-          <p className={`text-sm font-medium ${settlementColor}`}>
-            {result.settlementAmount > 0
-              ? `추가 납부 예상: ${formatKRW(result.settlementAmount)}`
-              : result.settlementAmount < 0
-                ? `환급 예상: ${formatKRW(Math.abs(result.settlementAmount))}`
-                : '납부 불필요 (0원)'}
-          </p>
-          <p className="mt-2 text-xs text-text-secondary">
-            {result.settlementAmount > 0
-              ? '5월 종합소득세 신고 시 추가로 납부해야 합니다.'
-              : '기납부 원천징수액이 최종 세액보다 많아 환급받을 수 있습니다.'}
-          </p>
-        </div>
-
-        {/* 경고 메시지 */}
-        {result.warnings.length > 0 && (
-          <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
-            <p className="text-sm font-medium text-text-primary mb-2">주의사항</p>
-            <ul className="space-y-1">
-              {result.warnings.map((warn, idx) => (
-                <li key={idx} className="text-xs text-text-secondary">
-                  • {warn}
-                </li>
-              ))}
-            </ul>
+            <NumberInput
+              id="freelancer-health"
+              label="연 건강보험 납부액"
+              value={healthInsurancePaid}
+              onChange={setHealthInsurancePaid}
+              placeholder="0"
+              unit="원"
+              min={0}
+            />
           </div>
-        )}
-      </ResultCard>
+        </FormCard>
+
+        {/* 결과 카드 */}
+      </div>
+      <div className="min-w-0 space-y-4">
+        <ResultCard
+          title="계산 결과"
+          heroLabel="최종 정산액"
+          heroValue={formatKRW(Math.abs(result.settlementAmount)).replace('원', '')}
+          rows={resultRows}
+        >
+          {/* 정산 상태 박스 */}
+          <div className={`rounded-lg border p-4 ${settlementBg}`}>
+            <p className={`text-sm font-medium ${settlementColor}`}>
+              {result.settlementAmount > 0
+                ? `추가 납부 예상: ${formatKRW(result.settlementAmount)}`
+                : result.settlementAmount < 0
+                  ? `환급 예상: ${formatKRW(Math.abs(result.settlementAmount))}`
+                  : '납부 불필요 (0원)'}
+            </p>
+            <p className="mt-2 text-xs text-text-secondary">
+              {result.settlementAmount > 0
+                ? '5월 종합소득세 신고 시 추가로 납부해야 합니다.'
+                : '기납부 원천징수액이 최종 세액보다 많아 환급받을 수 있습니다.'}
+            </p>
+          </div>
+
+          {/* 경고 메시지 */}
+          {result.warnings.length > 0 && (
+            <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
+              <p className="mb-2 text-sm font-medium text-text-primary">주의사항</p>
+              <ul className="space-y-1">
+                {result.warnings.map((warn, idx) => (
+                  <li key={idx} className="text-xs text-text-secondary">
+                    • {warn}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </ResultCard>
         <ResultBanner />
-    </div>
+      </div>
+    </CalculatorWorkspace>
   );
 }

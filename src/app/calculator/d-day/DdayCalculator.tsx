@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * D-day 계산기 (MVP #14)
  *
@@ -12,7 +15,7 @@
  * - C: N일 후 (기준일 + 일수)
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -45,20 +48,23 @@ type DdayMode = 'dday' | 'duration' | 'after-n-days';
 
 export function DdayCalculator() {
   // 모드 선택
-  const [mode, setMode] = useState<DdayMode>('dday');
+  const [mode, setMode] = useCalculatorState<DdayMode>('d-day:mode', 'dday');
 
   // 모드 A: D-day
-  const [ddayBase, setDdayBase] = useState(getTodayString());
-  const [ddayTarget, setDdayTarget] = useState('');
+  const [ddayBase, setDdayBase] = useCalculatorState('d-day:ddayBase', getTodayString());
+  const [ddayTarget, setDdayTarget] = useCalculatorState('d-day:ddayTarget', '');
 
   // 모드 B: 기간 계산
-  const [durationStart, setDurationStart] = useState('');
-  const [durationEnd, setDurationEnd] = useState('');
-  const [inclusionMode, setInclusionMode] = useState<InclusionMode>('both');
+  const [durationStart, setDurationStart] = useCalculatorState('d-day:durationStart', '');
+  const [durationEnd, setDurationEnd] = useCalculatorState('d-day:durationEnd', '');
+  const [inclusionMode, setInclusionMode] = useCalculatorState<InclusionMode>(
+    'd-day:inclusionMode',
+    'both',
+  );
 
   // 모드 C: N일 후
-  const [afterBase, setAfterBase] = useState(getTodayString());
-  const [afterDays, setAfterDays] = useState(100);
+  const [afterBase, setAfterBase] = useCalculatorState('d-day:afterBase', getTodayString());
+  const [afterDays, setAfterDays] = useCalculatorState('d-day:afterDays', 100);
 
   // ===== 계산 수행 =====
 
@@ -202,150 +208,161 @@ export function DdayCalculator() {
   };
 
   return (
-    <div className="flex flex-col gap-6">
-      {/* ===== 모드 선택 탭 ===== */}
-      <FormCard title="계산 모드 선택">
-        <RadioGroup<DdayMode>
-          id="dday-mode"
-          label="계산 방식"
-          value={mode}
-          onChange={setMode}
-          options={[
-            { value: 'dday', label: 'D-day (기준→목표일)' },
-            { value: 'duration', label: '기간 계산 (시작→종료일)' },
-            { value: 'after-n-days', label: 'N일 후 (기준+일수)' },
-          ]}
-        />
-      </FormCard>
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="d-day">
+      <div className="min-w-0 space-y-5">
+        {/* ===== 모드 선택 탭 ===== */}
+        <FormCard title="계산 모드 선택">
+          <RadioGroup<DdayMode>
+            id="dday-mode"
+            label="계산 방식"
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: 'dday', label: 'D-day (기준→목표일)' },
+              { value: 'duration', label: '기간 계산 (시작→종료일)' },
+              { value: 'after-n-days', label: 'N일 후 (기준+일수)' },
+            ]}
+          />
+        </FormCard>
 
-      {/* ===== 모드 A: D-day ===== */}
-      {mode === 'dday' && (
-        <FormCard title="D-day 계산">
-          <div className="flex flex-col gap-5">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+        {/* ===== 모드 A: D-day ===== */}
+        {mode === 'dday' && (
+          <FormCard title="D-day 계산">
+            <div className="flex flex-col gap-5">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="dday-base" className="text-sm font-medium text-text-primary">
+                    기준일
+                  </label>
+                  <input
+                    id="dday-base"
+                    type="date"
+                    required
+                    value={ddayBase}
+                    onChange={(e) => setDdayBase(e.target.value)}
+                    className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+                    lang="ko"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="dday-target" className="text-sm font-medium text-text-primary">
+                    목표일
+                  </label>
+                  <input
+                    id="dday-target"
+                    type="date"
+                    required
+                    value={ddayTarget}
+                    onChange={(e) => setDdayTarget(e.target.value)}
+                    className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+                    lang="ko"
+                  />
+                </div>
+              </div>
+            </div>
+          </FormCard>
+        )}
+
+        {/* ===== 모드 B: 기간 계산 ===== */}
+        {mode === 'duration' && (
+          <FormCard title="기간 계산">
+            <div className="flex flex-col gap-5">
+              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="duration-start" className="text-sm font-medium text-text-primary">
+                    시작일
+                  </label>
+                  <input
+                    id="duration-start"
+                    type="date"
+                    required
+                    value={durationStart}
+                    onChange={(e) => setDurationStart(e.target.value)}
+                    className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+                    lang="ko"
+                  />
+                </div>
+                <div className="flex flex-col gap-2">
+                  <label htmlFor="duration-end" className="text-sm font-medium text-text-primary">
+                    종료일
+                  </label>
+                  <input
+                    id="duration-end"
+                    type="date"
+                    required
+                    value={durationEnd}
+                    onChange={(e) => setDurationEnd(e.target.value)}
+                    className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+                    lang="ko"
+                  />
+                </div>
+              </div>
+
+              <RadioGroup<InclusionMode>
+                id="inclusion-mode"
+                label="포함 방식"
+                value={inclusionMode}
+                onChange={setInclusionMode}
+                options={[
+                  { value: 'both', label: '양 끝 포함' },
+                  { value: 'start', label: '시작일만' },
+                  { value: 'end', label: '종료일만' },
+                  { value: 'exclude', label: '제외' },
+                ]}
+              />
+            </div>
+          </FormCard>
+        )}
+
+        {/* ===== 모드 C: N일 후 ===== */}
+        {mode === 'after-n-days' && (
+          <FormCard title="N일 후 계산">
+            <div className="flex flex-col gap-5">
               <div className="flex flex-col gap-2">
-                <label htmlFor="dday-base" className="text-sm font-medium text-text-primary">
+                <label htmlFor="after-base" className="text-sm font-medium text-text-primary">
                   기준일
                 </label>
                 <input
-                  id="dday-base"
+                  id="after-base"
                   type="date"
-                  value={ddayBase}
-                  onChange={(e) => setDdayBase(e.target.value)}
+                  required
+                  value={afterBase}
+                  onChange={(e) => setAfterBase(e.target.value)}
                   className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
                   lang="ko"
                 />
               </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="dday-target" className="text-sm font-medium text-text-primary">
-                  목표일
-                </label>
-                <input
-                  id="dday-target"
-                  type="date"
-                  value={ddayTarget}
-                  onChange={(e) => setDdayTarget(e.target.value)}
-                  className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
-                  lang="ko"
-                />
-              </div>
-            </div>
-          </div>
-        </FormCard>
-      )}
 
-      {/* ===== 모드 B: 기간 계산 ===== */}
-      {mode === 'duration' && (
-        <FormCard title="기간 계산">
-          <div className="flex flex-col gap-5">
-            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-              <div className="flex flex-col gap-2">
-                <label htmlFor="duration-start" className="text-sm font-medium text-text-primary">
-                  시작일
-                </label>
-                <input
-                  id="duration-start"
-                  type="date"
-                  value={durationStart}
-                  onChange={(e) => setDurationStart(e.target.value)}
-                  className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
-                  lang="ko"
-                />
-              </div>
-              <div className="flex flex-col gap-2">
-                <label htmlFor="duration-end" className="text-sm font-medium text-text-primary">
-                  종료일
-                </label>
-                <input
-                  id="duration-end"
-                  type="date"
-                  value={durationEnd}
-                  onChange={(e) => setDurationEnd(e.target.value)}
-                  className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
-                  lang="ko"
-                />
-              </div>
-            </div>
-
-            <RadioGroup<InclusionMode>
-              id="inclusion-mode"
-              label="포함 방식"
-              value={inclusionMode}
-              onChange={setInclusionMode}
-              options={[
-                { value: 'both', label: '양 끝 포함' },
-                { value: 'start', label: '시작일만' },
-                { value: 'end', label: '종료일만' },
-                { value: 'exclude', label: '제외' },
-              ]}
-            />
-          </div>
-        </FormCard>
-      )}
-
-      {/* ===== 모드 C: N일 후 ===== */}
-      {mode === 'after-n-days' && (
-        <FormCard title="N일 후 계산">
-          <div className="flex flex-col gap-5">
-            <div className="flex flex-col gap-2">
-              <label htmlFor="after-base" className="text-sm font-medium text-text-primary">
-                기준일
-              </label>
-              <input
-                id="after-base"
-                type="date"
-                value={afterBase}
-                onChange={(e) => setAfterBase(e.target.value)}
-                className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
-                lang="ko"
+              <NumberInput
+                id="after-days"
+                label="일수"
+                value={afterDays}
+                onChange={setAfterDays}
+                placeholder="100"
+                unit="일"
+                min={-100_000}
+                max={100_000}
+                integer
+                helpText="음수 가능 (과거 날짜)"
               />
             </div>
+          </FormCard>
+        )}
 
-            <NumberInput
-              id="after-days"
-              label="일수"
-              value={afterDays}
-              onChange={setAfterDays}
-              placeholder="100"
-              unit="일"
-              helpText="음수 가능 (과거 날짜)"
-            />
-          </div>
-        </FormCard>
-      )}
-
-      {/* ===== 결과 카드 ===== */}
-      {hasValidResult() ? (
+        {/* ===== 결과 카드 ===== */}
+      </div>
+      <div className="min-w-0 space-y-4">
         <ResultCard
           title="계산 결과"
+          empty={!hasValidResult()}
           heroLabel={getHeroLabel()}
-          heroValue={getHeroValue()}
-          rows={resultRows}
+          heroValue={hasValidResult() ? getHeroValue() : '필요한 날짜를 입력해 주세요'}
+          rows={hasValidResult() ? resultRows : []}
         >
           {warningElements}
         </ResultCard>
-      ) : null}
         <ResultBanner />
-    </div>
+      </div>
+    </CalculatorWorkspace>
   );
 }

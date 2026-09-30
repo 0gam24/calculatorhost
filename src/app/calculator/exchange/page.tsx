@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -28,7 +28,7 @@ const URL = 'https://calculatorhost.com/calculator/exchange/';
 export const metadata: Metadata = {
   title: '환율·환전 계산기 2026 | 스프레드·수수료 반영 | calculatorhost',
   description:
-    '환율·환전 계산기 2026. 실시간 환율 반영 한국은행 기준·스프레드·수수료까지 포함해 송금액을 계산. 주요 통화별 비교 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '환율·환전 계산기. 표시된 기준 환율과 스프레드·수수료를 반영해 예상 환전액을 확인하세요. 환율 데이터의 기준일과 출처를 함께 제공합니다. 무료·회원가입 불필요.',
   keywords: [
     '환율 계산기',
     '환전 계산기',
@@ -40,11 +40,9 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: '환율·환전 계산기 2026, 스프레드·수수료 반영',
-    description:
-      '기준환율·스프레드·수수료로 실제 환전액과 실질 환율을 계산합니다.',
+    description: '기준환율·스프레드·수수료로 실제 환전액과 실질 환율을 계산합니다.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
@@ -141,7 +139,7 @@ export default function ExchangePage() {
     ],
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -178,35 +176,51 @@ export default function ExchangePage() {
       />
       <Header />
       <div className="flex flex-1 flex-col lg:flex-row">
-        <Sidebar />
-        <main id="main-content" className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
-          <article className="mx-auto max-w-4xl">
-            {/* 헤더 */}
-            <Breadcrumb
-              items={[
-                { name: '홈', href: '/' },
-                { name: '금융', href: '/category/finance/' },
-                { name: '환율·환전' },
-              ]}
-            />
-            <h1 className="text-4xl font-bold tracking-tight">
-              환율·환전 계산기 2026
-            </h1>
-            <p className="mt-4 text-lg text-text-secondary">
-              기준환율과 은행 스프레드, 수수료를 반영한 실제 환전액과 실질
-              환율을 즉시 계산하세요. 원화에서 외화로, 외화에서 원화로 양방향
-              지원합니다.
-              {EXIM_USD_CITATION && (
-                <>
-                  {' '}참고: 현재{' '}
-                  <PublicDataCitation citation={EXIM_USD_CITATION} />가
-                  한국수출입은행 매매기준율 기준입니다.
-                </>
-              )}
-            </p>
-            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-
-            {/* Structured Summary */}
+        <main
+          id="main-content"
+          className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+        >
+          <CalculatorPageContent
+            intro={
+              <header>
+                <Breadcrumb
+                  items={[
+                    { name: '홈', href: '/' },
+                    { name: '금융', href: '/category/finance/' },
+                    { name: '환율·환전' },
+                  ]}
+                />
+                <h1 className="text-4xl font-bold tracking-tight">환율·환전 계산기 2026</h1>
+                <p className="mt-4 text-lg text-text-secondary">
+                  환율과 수수료를 반영해 받을 금액을 확인하세요.
+                </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+              </header>
+            }
+            calculator={<ExchangeCalculator />}
+            related={
+              <>
+                <RelatedCalculators items={RELATED} />
+              </>
+            }
+            faq={
+              <>
+                <FaqSection items={FAQ_ITEMS} />
+              </>
+            }
+          >
+            <section aria-label="환율 데이터 기준" className="card">
+              <h2 className="mb-3 text-lg font-semibold">환율 데이터 기준</h2>
+              <p className="text-sm text-text-secondary">
+                표시된 환율의 출처와 수집일:{' '}
+                {EXIM_USD_CITATION ? (
+                  <PublicDataCitation citation={EXIM_USD_CITATION} />
+                ) : (
+                  '한국수출입은행 데이터 수집 기록을 확인하세요'
+                )}
+                . 실제 환전 시점의 금융기관 적용 환율과 수수료는 다를 수 있습니다.
+              </p>
+            </section>
             <StructuredSummary
               definition="환율 계산기는 기준환율에 은행 스프레드와 수수료를 적용해, 실제 받게 될 환전액을 계산하는 도구입니다. 원화를 외화로 바꿀 때와 외화를 원화로 바꿀 때 적용되는 환율이 다르며, 각각 은행의 매도/매입 환율과 수수료가 영향을 미칩니다."
               table={{
@@ -224,90 +238,59 @@ export default function ExchangePage() {
                 '수수료까지 고려하면 실질환율은 기준환율과 크게 다를 수 있습니다.',
               ]}
             />
-
-            {/* AD-1 헤더 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* 계산기 폼 */}
-            <ExchangeCalculator />
-
-            {/* AD-2 중간 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* FAQ */}
-            <FaqSection items={FAQ_ITEMS} />
-
-              {/* AD-4 Infeed */}
-            {/* 환율 설명 */}
+            <div className="my-8"></div>
+            <div className="my-8"></div>
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">환율·환전이란 무엇인가요?</h2>
               <p>
-                환율은 한 나라 통화를 다른 나라 통화로 바꿀 때의 가격입니다.
-                예를 들어, 기준환율이 USD 1 = KRW 1,350이면, 달러 1달러를
-                1,350원에 교환할 수 있다는 뜻입니다. 하지만 실제로는 은행이 수익을
-                위해 매도/매입 환율을 다르게 책정하고, 거래 수수료를 징수합니다.
+                환율은 한 나라 통화를 다른 나라 통화로 바꿀 때의 가격입니다. 예를 들어, 기준환율이
+                USD 1 = KRW 1,350이면, 달러 1달러를 1,350원에 교환할 수 있다는 뜻입니다. 하지만
+                실제로는 은행이 수익을 위해 매도/매입 환율을 다르게 책정하고, 거래 수수료를
+                징수합니다.
               </p>
               <p>
-                한국은행은 매일 오전 중앙은행 기준환율(중간값)을 발표합니다.
-                이것이 바로 뉴스에 나오는 "오늘 환율"입니다. 하지만 은행 창구나
-                환전소에서는 이 기준환율을 그대로 쓰지 않고, 은행의 거래비용과
-                수익을 반영한 "매도/매입 환율"을 쓰며, 여기에 거래 수수료를
+                한국은행은 매일 오전 중앙은행 기준환율(중간값)을 발표합니다. 이것이 바로 뉴스에
+                나오는 "오늘 환율"입니다. 하지만 은행 창구나 환전소에서는 이 기준환율을 그대로 쓰지
+                않고, 은행의 거래비용과 수익을 반영한 "매도/매입 환율"을 쓰며, 여기에 거래 수수료를
                 추가합니다.
               </p>
             </section>
-
-            {/* 계산 공식 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">환율 계산 공식</h2>
               <div className="space-y-4">
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="font-semibold">원 → 외화 (매도)</h3>
-                  <code className="mt-2 block text-sm">
-                    적용환율 = 기준환율 × (1 + 스프레드%)
-                  </code>
-                  <code className="mt-1 block text-sm">
-                    받을외화 = 환전원화 ÷ 적용환율
-                  </code>
-                  <code className="mt-1 block text-sm">
-                    최종수령액 = 받을외화 - 수수료
-                  </code>
+                  <code className="mt-2 block text-sm">적용환율 = 기준환율 × (1 + 스프레드%)</code>
+                  <code className="mt-1 block text-sm">받을외화 = 환전원화 ÷ 적용환율</code>
+                  <code className="mt-1 block text-sm">최종수령액 = 받을외화 - 수수료</code>
                   <p className="mt-3 text-sm text-text-secondary">
-                    은행이 기준환율보다 높은 환율을 제시하므로, 실제로 받는
-                    외화는 계산보다 적습니다.
+                    은행이 기준환율보다 높은 환율을 제시하므로, 실제로 받는 외화는 계산보다
+                    적습니다.
                   </p>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <h3 className="font-semibold">외화 → 원 (매입)</h3>
-                  <code className="mt-2 block text-sm">
-                    적용환율 = 기준환율 × (1 - 스프레드%)
-                  </code>
-                  <code className="mt-1 block text-sm">
-                    받을원화 = 환전외화 × 적용환율
-                  </code>
-                  <code className="mt-1 block text-sm">
-                    최종수령액 = 받을원화 - 수수료
-                  </code>
+                  <code className="mt-2 block text-sm">적용환율 = 기준환율 × (1 - 스프레드%)</code>
+                  <code className="mt-1 block text-sm">받을원화 = 환전외화 × 적용환율</code>
+                  <code className="mt-1 block text-sm">최종수령액 = 받을원화 - 수수료</code>
                   <p className="mt-3 text-sm text-text-secondary">
-                    은행이 기준환율보다 낮은 환율을 제시하므로, 실제로 받는
-                    원화는 계산보다 적습니다.
+                    은행이 기준환율보다 낮은 환율을 제시하므로, 실제로 받는 원화는 계산보다
+                    적습니다.
                   </p>
                 </div>
               </div>
             </section>
-
-            {/* 거래 방식별 환율 비교 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">거래 방식별 환율 및 수수료 비교</h2>
               <p className="text-text-secondary">
-                같은 금액을 환전하더라도 거래 방식에 따라 실질 환율과 수수료가 크게 다릅니다. 상황별로 최적의 방식을 선택하세요.
+                같은 금액을 환전하더라도 거래 방식에 따라 실질 환율과 수수료가 크게 다릅니다.
+                상황별로 최적의 방식을 선택하세요.
               </p>
               <div className="overflow-x-auto">
-                <table className="w-full text-sm border-collapse">
+                <table className="w-full border-collapse text-sm">
                   <thead>
-                    <tr className="bg-primary-500/10 border border-border-base">
+                    <tr className="border border-border-base bg-primary-500/10">
                       <th className="px-4 py-3 text-left font-semibold">거래 방식</th>
                       <th className="px-4 py-3 text-center font-semibold">스프레드</th>
                       <th className="px-4 py-3 text-center font-semibold">수수료</th>
@@ -321,11 +304,13 @@ export default function ExchangePage() {
                       <td className="px-4 py-3 text-center">없음</td>
                       <td className="px-4 py-3 text-text-secondary">안전, 스프레드 상대적 높음</td>
                     </tr>
-                    <tr className="border border-border-base bg-bg-card/50">
+                    <tr className="bg-bg-card/50 border border-border-base">
                       <td className="px-4 py-3 font-medium">해외 송금</td>
                       <td className="px-4 py-3 text-center">1.0~1.5%</td>
                       <td className="px-4 py-3 text-center">5,000~15,000원</td>
-                      <td className="px-4 py-3 text-text-secondary">대액 송금에 유리, 정액 수수료</td>
+                      <td className="px-4 py-3 text-text-secondary">
+                        대액 송금에 유리, 정액 수수료
+                      </td>
                     </tr>
                     <tr className="border border-border-base">
                       <td className="px-4 py-3 font-medium">신용카드(해외)</td>
@@ -333,7 +318,7 @@ export default function ExchangePage() {
                       <td className="px-4 py-3 text-center">1~2%</td>
                       <td className="px-4 py-3 text-text-secondary">편리, 총 수수료 높음</td>
                     </tr>
-                    <tr className="border border-border-base bg-bg-card/50">
+                    <tr className="bg-bg-card/50 border border-border-base">
                       <td className="px-4 py-3 font-medium">여행자수표</td>
                       <td className="px-4 py-3 text-center">0.5~1.0%</td>
                       <td className="px-4 py-3 text-center">1~2%</td>
@@ -349,74 +334,76 @@ export default function ExchangePage() {
                 </table>
               </div>
             </section>
-
-            {/* 상황별 환전 전략 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">상황별 환전 전략 가이드</h2>
               <div className="space-y-4">
                 <div className="rounded-lg border-l-4 border-primary-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-primary-500 mb-2">단기 해외 여행 (1~2주)</h3>
-                  <p className="text-sm text-text-secondary mb-2">
-                    현금 환전 또는 신용카드 병행. 현금은 필요액의 30~50%만 준비하고, 나머지는 카드 사용.
-                    출국 3일 전 은행에서 현금 환전하면 환율 변동을 피할 수 있습니다. 예상 지출: 500만 원이면 현금 200만 원 + 카드.
+                  <h3 className="mb-2 font-semibold text-primary-500">단기 해외 여행 (1~2주)</h3>
+                  <p className="mb-2 text-sm text-text-secondary">
+                    현금 환전 또는 신용카드 병행. 현금은 필요액의 30~50%만 준비하고, 나머지는 카드
+                    사용. 출국 3일 전 은행에서 현금 환전하면 환율 변동을 피할 수 있습니다. 예상
+                    지출: 500만 원이면 현금 200만 원 + 카드.
                   </p>
                 </div>
                 <div className="rounded-lg border-l-4 border-secondary-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-secondary-500 mb-2">해외 유학 또는 장기 체류 (3개월+)</h3>
-                  <p className="text-sm text-text-secondary mb-2">
-                    해외 송금 또는 트래블카드 추천. 대액 송금 시 은행에 우대 환율 협상 가능. 거액이면 분할 송금도 검토.
-                    현지 은행 개설 후 현지 송금이 더 저렴할 수 있으므로 도착 후 확인하세요.
+                  <h3 className="mb-2 font-semibold text-secondary-500">
+                    해외 유학 또는 장기 체류 (3개월+)
+                  </h3>
+                  <p className="mb-2 text-sm text-text-secondary">
+                    해외 송금 또는 트래블카드 추천. 대액 송금 시 은행에 우대 환율 협상 가능.
+                    거액이면 분할 송금도 검토. 현지 은행 개설 후 현지 송금이 더 저렴할 수 있으므로
+                    도착 후 확인하세요.
                   </p>
                 </div>
                 <div className="rounded-lg border-l-4 border-highlight-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-highlight-500 mb-2">사업 관련 정기 송금</h3>
-                  <p className="text-sm text-text-secondary mb-2">
-                    고정 송금은 은행의 "수시 송금" 또는 "정액 송금" 상품 이용. VIP 고객 대우 시 우대 환율 가능.
-                    월 1,000만 원 이상이면 은행 관리자에게 직접 상담 요청해 수수료 인하 협상하세요.
+                  <h3 className="mb-2 font-semibold text-highlight-500">사업 관련 정기 송금</h3>
+                  <p className="mb-2 text-sm text-text-secondary">
+                    고정 송금은 은행의 "수시 송금" 또는 "정액 송금" 상품 이용. VIP 고객 대우 시 우대
+                    환율 가능. 월 1,000만 원 이상이면 은행 관리자에게 직접 상담 요청해 수수료 인하
+                    협상하세요.
                   </p>
                 </div>
                 <div className="rounded-lg border-l-4 border-danger-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-danger-500 mb-2">긴급 소액 환전</h3>
-                  <p className="text-sm text-text-secondary mb-2">
-                    해외 ATM 이용이 가장 빠름. 수수료는 약간 높지만 대기 시간이 없고, 현지 화폐를 즉시 확보 가능.
-                    카드사 환율 + 정액 수수료 방식이므로, 100만 원 이상이면 현지 환전소 추가 확인.
+                  <h3 className="mb-2 font-semibold text-danger-500">긴급 소액 환전</h3>
+                  <p className="mb-2 text-sm text-text-secondary">
+                    해외 ATM 이용이 가장 빠름. 수수료는 약간 높지만 대기 시간이 없고, 현지 화폐를
+                    즉시 확보 가능. 카드사 환율 + 정액 수수료 방식이므로, 100만 원 이상이면 현지
+                    환전소 추가 확인.
                   </p>
                 </div>
               </div>
             </section>
-
-            {/* 주의사항 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">환율 거래 시 주의사항</h2>
               <ul className="list-inside list-disc space-y-2 text-text-secondary">
                 <li>
-                  본 계산기의 결과는 참고용입니다. 실제 환율과 수수료는 거래 시점,
-                  은행, 거래 방식에 따라 달라질 수 있습니다.
+                  본 계산기의 결과는 참고용입니다. 실제 환율과 수수료는 거래 시점, 은행, 거래 방식에
+                  따라 달라질 수 있습니다.
                 </li>
                 <li>
-                  기준환율은 한국은행이 매일 오전 10시 30분경 발표하며, 오후에는 변동합니다.
-                  가장 유리한 환율 기준은 매일 다르므로, 거래 직전에 신문이나 은행 홈페이지에서 확인하세요.
+                  기준환율은 한국은행이 매일 오전 10시 30분경 발표하며, 오후에는 변동합니다. 가장
+                  유리한 환율 기준은 매일 다르므로, 거래 직전에 신문이나 은행 홈페이지에서
+                  확인하세요.
                 </li>
                 <li>
-                  현금 환전, 송금, 카드 거래는 서로 다른 환율과 수수료를
-                  적용합니다. 거래 전 은행에 정확히 확인하세요.
+                  현금 환전, 송금, 카드 거래는 서로 다른 환율과 수수료를 적용합니다. 거래 전 은행에
+                  정확히 확인하세요.
                 </li>
                 <li>
-                  해외 ATM, P2P 환전, 환전소 등 다양한 방법이 있습니다. 금액·상황에 따라 최적의 방법을 선택하세요.
-                  불법 거래나 추천하지 않는 채널은 피하고, 공식 금융기관 이용을 권합니다.
+                  해외 ATM, P2P 환전, 환전소 등 다양한 방법이 있습니다. 금액·상황에 따라 최적의
+                  방법을 선택하세요. 불법 거래나 추천하지 않는 채널은 피하고, 공식 금융기관 이용을
+                  권합니다.
                 </li>
                 <li>
-                  본 계산기는 금융 투자 조언이 아니며, 환율 상승/하락 예측 자료가
-                  아닙니다. 환율 변동 위험을 자체적으로 판단하고 거래하세요.
+                  본 계산기는 금융 투자 조언이 아니며, 환율 상승/하락 예측 자료가 아닙니다. 환율
+                  변동 위험을 자체적으로 판단하고 거래하세요.
                 </li>
                 <li>
-                  대액 환전 (1,000만 원 이상)은 신분증 확인 및 특정 금융거래 보고서 제출이 필요할 수 있습니다.
-                  사전에 은행에 문의하세요.
+                  대액 환전 (1,000만 원 이상)은 신분증 확인 및 특정 금융거래 보고서 제출이 필요할 수
+                  있습니다. 사전에 은행에 문의하세요.
                 </li>
               </ul>
             </section>
-
-            {/* 환율 절약 팁 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">환전 수수료 절약 팁</h2>
               <div className="space-y-3">
@@ -430,75 +417,78 @@ export default function ExchangePage() {
                 <div className="rounded-lg border-l-4 border-highlight-500 bg-bg-card p-4">
                   <h3 className="font-semibold">2. 거래 방식 비교</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    현금 환전 &gt; 송금 &gt; 카드 사용 순으로 실질 환율이 유리할 수
-                    있습니다. 상황에 맞춰 선택하세요.
+                    현금 환전 &gt; 송금 &gt; 카드 사용 순으로 실질 환율이 유리할 수 있습니다. 상황에
+                    맞춰 선택하세요.
                   </p>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-highlight-500 bg-bg-card p-4">
                   <h3 className="font-semibold">3. 체크카드 해외 사용</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    신용카드보다 체크카드가 수수료가 낮을 수 있습니다. 수수료 없는
-                    상품도 있으니 확인하세요.
+                    신용카드보다 체크카드가 수수료가 낮을 수 있습니다. 수수료 없는 상품도 있으니
+                    확인하세요.
                   </p>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-highlight-500 bg-bg-card p-4">
                   <h3 className="font-semibold">4. 해외 ATM 활용</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    정액 수수료만 내면 되어, 큰 금액 환전 시 % 수수료보다
-                    유리할 수 있습니다.
+                    정액 수수료만 내면 되어, 큰 금액 환전 시 % 수수료보다 유리할 수 있습니다.
                   </p>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-highlight-500 bg-bg-card p-4">
                   <h3 className="font-semibold">5. 환전소 비교</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    공항 환전소는 편하지만 수수료가 높습니다. 일반 환전소가 더
-                    저렴할 수 있으니 비교하세요.
+                    공항 환전소는 편하지만 수수료가 높습니다. 일반 환전소가 더 저렴할 수 있으니
+                    비교하세요.
                   </p>
                 </div>
               </div>
             </section>
-
-            {/* AD-4 인피드 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* 관련 계산기 */}
-            <RelatedCalculators items={RELATED} />
-
-            {/* 업데이트 로그 */}
+            <div className="my-8"></div>
             <section className="mt-12 border-t border-border-base pt-6">
               <h2 className="text-lg font-semibold">업데이트 로그</h2>
               <ul className="mt-3 space-y-2 text-sm text-text-secondary">
                 <li>2026-04-24: 초판 발행 (2026 기준환율 반영)</li>
               </ul>
             </section>
-
-            {/* 출처·면책 */}
-            <section className="mt-6 border-t border-border-base pt-6 mb-6">
-              <p className="text-xs text-text-secondary mb-2">
-                <strong>공식 출처</strong>: 한국은행 <a href="https://ecos.bok.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">ECOS(경제통계시스템)</a> 기준환율 데이터, <a href="https://www.koreaexim.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국수출입은행</a> 환율 정보.
+            <section className="mb-6 mt-6 border-t border-border-base pt-6">
+              <p className="mb-2 text-xs text-text-secondary">
+                <strong>공식 출처</strong>: 한국은행{' '}
+                <a
+                  href="https://ecos.bok.or.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  ECOS(경제통계시스템)
+                </a>{' '}
+                기준환율 데이터,{' '}
+                <a
+                  href="https://www.koreaexim.go.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  한국수출입은행
+                </a>{' '}
+                환율 정보.
               </p>
             </section>
-
-            {/* 면책조항 */}
             <section className="mt-6 border-t border-border-base pt-6">
               <p className="text-xs text-text-secondary">
-                본 계산기는 참고용입니다. 실제 환율, 스프레드, 수수료는 은행,
-                시점, 거래 방식에 따라 달라질 수 있습니다. 중요한 거래 전에
-                금융기관에 정확한 정보를 확인하세요. 본 서비스는 금융 투자 조언이
-                아닙니다.
+                본 계산기는 참고용입니다. 실제 환율, 스프레드, 수수료는 은행, 시점, 거래 방식에 따라
+                달라질 수 있습니다. 중요한 거래 전에 금융기관에 정확한 정보를 확인하세요. 본
+                서비스는 금융 투자 조언이 아닙니다.
               </p>
             </section>
-          </article>
+          </CalculatorPageContent>
         </main>
 
         {/* AD-3 우측 스티키 광고 (lg+ 이상) */}
         <aside className="hidden w-80 bg-bg-base p-4 lg:block">
-          <div className="sticky top-[5rem]">
-          </div>
+          <div className="sticky top-[5rem]"></div>
         </aside>
       </div>
       <Footer />

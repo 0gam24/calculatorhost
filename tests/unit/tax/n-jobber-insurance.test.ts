@@ -29,12 +29,12 @@ function createInput(overrides: Partial<NJobberInsuranceInput>): NJobberInsuranc
 // ============================================
 
 describe('calculateNJobberInsurance — 주 근로만', () => {
-  it('주근로 5000만 자영업 0 → 월 약 148K (근로 기준)', () => {
-    // 5000만 / 12 × 3.545% = 약 148,542
+  it('주근로 5000만 자영업 0 → 월 약 150K (근로 기준)', () => {
+    // 5000만 / 12 × 3.595% = 약 149,792
     const result = calculateNJobberInsurance(
       createInput({
         mainWageIncome: 50_000_000,
-      })
+      }),
     );
 
     expect(result.monthlyWagePremium).toBeGreaterThan(140_000);
@@ -47,7 +47,7 @@ describe('calculateNJobberInsurance — 주 근로만', () => {
     const result = calculateNJobberInsurance(
       createInput({
         mainWageIncome: 0,
-      })
+      }),
     );
 
     expect(result.monthlyWagePremium).toBe(0);
@@ -64,7 +64,7 @@ describe('calculateNJobberInsurance — 부업 2000만 미만', () => {
       createInput({
         mainWageIncome: 50_000_000,
         sideBusinessIncome: 10_000_000,
-      })
+      }),
     );
 
     expect(result.totalExtraIncome).toBe(10_000_000);
@@ -78,7 +78,7 @@ describe('calculateNJobberInsurance — 부업 2000만 미만', () => {
         mainWageIncome: 0,
         sideBusinessIncome: 15_000_000,
         isDependent: true,
-      })
+      }),
     );
 
     expect(result.totalExtraIncome).toBe(15_000_000);
@@ -91,14 +91,14 @@ describe('calculateNJobberInsurance — 부업 2000만 미만', () => {
 // ============================================
 
 describe('calculateNJobberInsurance — 부업 2000만 이상', () => {
-  it('주근로 5000만 + 부업 3000만 → 추가보험 약 59K (월)', () => {
+  it('주근로 5000만 + 부업 3000만 → 추가보험 약 60K (월)', () => {
     // 초과분 = 3000만 - 2000만 = 1000만
-    // 추가월 = 1000만 / 12 × 7.09% ≈ 59,083
+    // 추가월 = 1000만 / 12 × 7.19% ≈ 59,917
     const result = calculateNJobberInsurance(
       createInput({
         mainWageIncome: 50_000_000,
         sideBusinessIncome: 30_000_000,
-      })
+      }),
     );
 
     expect(result.totalExtraIncome).toBe(30_000_000);
@@ -113,7 +113,7 @@ describe('calculateNJobberInsurance — 부업 2000만 이상', () => {
         mainWageIncome: 50_000_000,
         sideBusinessIncome: 25_000_000,
         isDependent: true,
-      })
+      }),
     );
 
     expect(result.dependentLossRisk).toBe(true);
@@ -132,7 +132,7 @@ describe('calculateNJobberInsurance — 기타 소득', () => {
       createInput({
         mainWageIncome: 30_000_000,
         sideOtherIncome: 15_000_000,
-      })
+      }),
     );
 
     expect(result.totalExtraIncome).toBe(15_000_000);
@@ -147,7 +147,7 @@ describe('calculateNJobberInsurance — 기타 소득', () => {
         mainWageIncome: 40_000_000,
         sideBusinessIncome: 15_000_000,
         sideOtherIncome: 8_000_000,
-      })
+      }),
     );
 
     expect(result.totalExtraIncome).toBe(23_000_000);
@@ -165,7 +165,7 @@ describe('calculateNJobberInsurance — 피부양자 상실', () => {
       createInput({
         isDependent: true,
         sideBusinessIncome: 15_000_000,
-      })
+      }),
     );
 
     expect(result.dependentLossRisk).toBe(false);
@@ -176,7 +176,7 @@ describe('calculateNJobberInsurance — 피부양자 상실', () => {
       createInput({
         isDependent: true,
         sideBusinessIncome: 20_000_000,
-      })
+      }),
     );
 
     expect(result.dependentLossRisk).toBe(true);
@@ -188,7 +188,7 @@ describe('calculateNJobberInsurance — 피부양자 상실', () => {
         isDependent: true,
         sideBusinessIncome: 25_000_000,
         sideOtherIncome: 5_000_000,
-      })
+      }),
     );
 
     expect(result.dependentLossRisk).toBe(true);
@@ -199,7 +199,7 @@ describe('calculateNJobberInsurance — 피부양자 상실', () => {
       createInput({
         isDependent: false,
         sideBusinessIncome: 30_000_000,
-      })
+      }),
     );
 
     expect(result.dependentLossRisk).toBe(false);
@@ -216,7 +216,7 @@ describe('calculateNJobberInsurance — 경계값', () => {
       createInput({
         mainWageIncome: 50_000_000,
         sideBusinessIncome: 20_000_000,
-      })
+      }),
     );
 
     expect(result.extraIncomeMonthlyPremium).toBe(0);
@@ -227,7 +227,7 @@ describe('calculateNJobberInsurance — 경계값', () => {
       createInput({
         mainWageIncome: 50_000_000,
         sideBusinessIncome: 21_000_000,
-      })
+      }),
     );
 
     expect(result.extraIncomeMonthlyPremium).toBeGreaterThan(0);
@@ -245,7 +245,7 @@ describe('calculateNJobberInsurance — 복합', () => {
         mainWageIncome: 60_000_000,
         sideBusinessIncome: 35_000_000,
         sideOtherIncome: 10_000_000,
-      })
+      }),
     );
 
     expect(result.totalExtraIncome).toBe(45_000_000);
@@ -259,7 +259,7 @@ describe('calculateNJobberInsurance — 복합', () => {
         mainWageIncome: 0,
         sideBusinessIncome: 40_000_000,
         isDependent: true,
-      })
+      }),
     );
 
     expect(result.dependentLossRisk).toBe(true);
@@ -279,7 +279,7 @@ describe('calculateNJobberInsurance — 음수·0', () => {
         mainWageIncome: 50_000_000,
         sideBusinessIncome: 0,
         sideOtherIncome: 0,
-      })
+      }),
     );
 
     // 정상적인 주근로 소득만 있을 때
@@ -292,7 +292,7 @@ describe('calculateNJobberInsurance — 음수·0', () => {
         mainWageIncome: 0,
         sideBusinessIncome: 0,
         sideOtherIncome: 0,
-      })
+      }),
     );
 
     expect(result.totalMonthlyPremium).toBe(0);

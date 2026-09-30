@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 증여세 계산기 (MVP Phase 2 #1)
  *
@@ -13,7 +16,7 @@
  * - 부담부증여 채무인수 지원
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { ResultCard } from '@/components/calculator/Result';
@@ -38,19 +41,25 @@ const RELATION_OPTIONS: Array<{ value: RelationType; label: string; description:
 
 export function GiftTaxCalculator() {
   // ─── 증여재산 가액 ───
-  const [giftValue, setGiftValue] = useState(100_000_000);
+  const [giftValue, setGiftValue] = useCalculatorState('gift-tax:giftValue', 100_000_000);
 
   // ─── 관계 선택 ───
-  const [relation, setRelation] = useState<RelationType>('adultDescendant');
+  const [relation, setRelation] = useCalculatorState<RelationType>(
+    'gift-tax:relation',
+    'adultDescendant',
+  );
 
   // ─── 10년 내 기증여액 ───
-  const [priorGiftValue, setPriorGiftValue] = useState(0);
+  const [priorGiftValue, setPriorGiftValue] = useCalculatorState('gift-tax:priorGiftValue', 0);
 
   // ─── 부담부증여 채무인수 ───
-  const [assumedDebt, setAssumedDebt] = useState(0);
+  const [assumedDebt, setAssumedDebt] = useCalculatorState('gift-tax:assumedDebt', 0);
 
   // ─── 기한 내 신고 여부 ───
-  const [reportWithinDeadline, setReportWithinDeadline] = useState(true);
+  const [reportWithinDeadline, setReportWithinDeadline] = useCalculatorState(
+    'gift-tax:reportWithinDeadline',
+    true,
+  );
 
   // ─── 계산 실행 ───
   const result = useMemo(
@@ -71,14 +80,14 @@ export function GiftTaxCalculator() {
   // ─── 신고 기한 안내 ───
   const getReportingDeadlineExample = () => {
     const today = new Date();
-    const exampleMonth = ((today.getMonth() + 4) % 12) || 12; // 4개월 후 예시
+    const exampleMonth = (today.getMonth() + 4) % 12 || 12; // 4개월 후 예시
     const exampleYear = today.getFullYear() + Math.floor((today.getMonth() + 4) / 12);
     const deadline = new Date(exampleYear, exampleMonth - 1, 0); // 달 말일
     return deadline.toLocaleDateString('ko-KR');
   };
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="gift-tax">
       <FormCard title="입력">
         {/* 증여재산 가액 */}
         <NumberInput
@@ -103,7 +112,7 @@ export function GiftTaxCalculator() {
                   'flex cursor-pointer items-center gap-3 rounded-lg border-2 px-4 py-3 transition-colors',
                   relation === value
                     ? 'border-primary-500 bg-primary-500/10'
-                    : 'border-border-base hover:border-border-base/80',
+                    : 'hover:border-border-base/80 border-border-base',
                 )}
               >
                 <input
@@ -229,6 +238,6 @@ export function GiftTaxCalculator() {
           </div>
         )}
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

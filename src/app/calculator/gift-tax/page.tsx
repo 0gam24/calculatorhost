@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
   },
   other: {
-    'dateModified': '2026-04-24',
+    dateModified: '2026-04-24',
   },
 };
 
@@ -88,7 +88,11 @@ const FAQ_ITEMS = [
 const RELATED = [
   { href: '/calculator/inheritance-tax', title: '상속세', description: '배우자·자녀 상속' },
   { href: '/calculator/capital-gains-tax', title: '양도소득세', description: '부동산 판매' },
-  { href: '/calculator/acquisition-tax', title: '취득세', description: '증여 시 취득세도 별도 발생' },
+  {
+    href: '/calculator/acquisition-tax',
+    title: '취득세',
+    description: '증여 시 취득세도 별도 발생',
+  },
   { href: '/calculator/property-tax', title: '재산세', description: '증여 후 연간 부과' },
 ];
 
@@ -106,7 +110,9 @@ export default function GiftTaxPage() {
     dateModified: '2026-04-27',
     isPartOf: getCategoryUrlForCalculator('gift-tax'),
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
@@ -118,10 +124,22 @@ export default function GiftTaxPage() {
     description: '재산 증여 시 증여세를 5단계로 계산합니다.',
     steps: [
       { name: '증여재산 가액 입력', text: '증여받는 재산의 공정시장가액을 입력합니다.' },
-      { name: '증여자와의 관계 선택', text: '배우자, 자녀, 부모 등 증여자와의 관계를 선택하면 공제액이 자동으로 적용됩니다.' },
-      { name: '10년 기증여액 입력 (선택)', text: '같은 증여자로부터 10년 내에 받은 이전 증여액이 있으면 입력합니다. 상증세법 §53에 따라 10년 내 공제를 합산하여 적용합니다.' },
-      { name: '부담부증여 입력 (선택)', text: '증여자가 진 채무를 수증자가 갚을 경우 채무액을 입력합니다. 상증세법 §47에 따라 채무는 증여가액에서 차감됩니다.' },
-      { name: '신고 기한 확인 및 결과 조회', text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. "신고 기한 내 자진신고" 체크박스를 확인하고 최종 납부액을 조회합니다. 신고 기한은 증여일이 속하는 달 말일부터 3개월입니다(상증세법 §48).' },
+      {
+        name: '증여자와의 관계 선택',
+        text: '배우자, 자녀, 부모 등 증여자와의 관계를 선택하면 공제액이 자동으로 적용됩니다.',
+      },
+      {
+        name: '10년 기증여액 입력 (선택)',
+        text: '같은 증여자로부터 10년 내에 받은 이전 증여액이 있으면 입력합니다. 상증세법 §53에 따라 10년 내 공제를 합산하여 적용합니다.',
+      },
+      {
+        name: '부담부증여 입력 (선택)',
+        text: '증여자가 진 채무를 수증자가 갚을 경우 채무액을 입력합니다. 상증세법 §47에 따라 채무는 증여가액에서 차감됩니다.',
+      },
+      {
+        name: '신고 기한 확인 및 결과 조회',
+        text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. "신고 기한 내 자진신고" 체크박스를 확인하고 최종 납부액을 조회합니다. 신고 기한은 증여일이 속하는 달 말일부터 3개월입니다(상증세법 §48).',
+      },
     ],
   });
   const definedTermSetLd = buildDefinedTermSetJsonLd({
@@ -131,25 +149,29 @@ export default function GiftTaxPage() {
     terms: [
       {
         name: '증여재산공제',
-        description: '증여자와의 관계에 따라 일정 금액을 증여재산 가액에서 차감하는 제도. 배우자는 6억, 성년 자녀는 5천만 원, 미성년 자녀는 2천만 원, 직계존속과 기타 친족은 각각 5천만 원과 1천만 원(상증세법 §53)',
+        description:
+          '증여자와의 관계에 따라 일정 금액을 증여재산 가액에서 차감하는 제도. 배우자는 6억, 성년 자녀는 5천만 원, 미성년 자녀는 2천만 원, 직계존속과 기타 친족은 각각 5천만 원과 1천만 원(상증세법 §53)',
         alternateName: '공제',
         url: 'https://www.nts.go.kr/support/tax01.asp',
       },
       {
         name: '증여재산가산',
-        description: '같은 증여자로부터 10년 이내에 받은 모든 증여를 합산하여 적용하는 원칙. 분할 증여로 세금을 분산할 수 있으나 10년 합산 규칙에 따라 공제를 합산 적용함(상증세법 §53)',
+        description:
+          '같은 증여자로부터 10년 이내에 받은 모든 증여를 합산하여 적용하는 원칙. 분할 증여로 세금을 분산할 수 있으나 10년 합산 규칙에 따라 공제를 합산 적용함(상증세법 §53)',
         alternateName: '10년 합산',
         url: 'https://www.hometax.go.kr',
       },
       {
         name: '누진공제',
-        description: '세액 계산의 편의를 위해 도입된 제도로, 5단계 누진세율 구간에 따라 일정 금액을 차감하는 것. 예: 과세표준 3억 원이면 (3억 × 20%) - 1,000만 원 = 5,000만 원(상증세법 §26)',
+        description:
+          '세액 계산의 편의를 위해 도입된 제도로, 5단계 누진세율 구간에 따라 일정 금액을 차감하는 것. 예: 과세표준 3억 원이면 (3억 × 20%) - 1,000만 원 = 5,000만 원(상증세법 §26)',
         alternateName: '세액공제',
         url: 'https://law.go.kr',
       },
       {
         name: '신고세액공제',
-        description: '증여세를 기한 내 자진신고하는 경우 산출세액의 3%를 공제해주는 제도. 신고 기한은 증여일이 속하는 달 말일부터 3개월(상증세법 §68)',
+        description:
+          '증여세를 기한 내 자진신고하는 경우 산출세액의 3%를 공제해주는 제도. 신고 기한은 증여일이 속하는 달 말일부터 3개월(상증세법 §68)',
         alternateName: '신고공제',
         url: 'https://www.hometax.go.kr',
       },
@@ -190,28 +212,39 @@ export default function GiftTaxPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
-                    { name: '증여세' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">증여세 계산기 2026</h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 최신 상증세법을 반영한 무료 증여세 계산기입니다. 배우자·자녀·부모·친족별
-                  10년 합산 공제, 5단계 누진 세율, 신고세액공제까지 모두 반영하여 재산 증여 시 최종
-                  납부 세액을 거래 전에 정확히 확인할 수 있습니다.
-                </p>
-                <AuthorByline dateModified="2026-04-24" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '세금', href: '/category/tax/' },
+                      { name: '증여세' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">증여세 계산기 2026</h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    증여 금액과 관계를 반영해 예상 증여세를 확인하세요.
+                  </p>
+                  <AuthorByline dateModified="2026-04-24" />
+                </header>
+              }
+              calculator={<GiftTaxCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="증여세는 타인으로부터 재산을 무상으로 받을 때 부과되는 국세입니다. 증여 대상과의 관계(배우자·자녀·부모·친족)에 따라 공제액이 다르고, 10년 내 동일 증여자로부터의 증여는 공제를 합산하여 적용합니다(상증세법 §26, §53)."
                 table={{
@@ -233,13 +266,6 @@ export default function GiftTaxPage() {
                   '신고 기한: 증여일 속하는 달 말일 + 3개월',
                 ]}
               />
-
-              {/* 계산기 */}
-              <GiftTaxCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
               <RateBarChart
                 title="증여세 누진세율, 과세표준 구간별 (상증세법 §56)"
                 caption="증여세는 과세표준 구간별로 10%에서 50%까지 5단계 누진 적용됩니다(상속세와 동일 세율). 증여재산공제(배우자 6억·성년 자녀 5천만·미성년 2천만)를 차감한 과세표준 기준이며, 기한 내 신고 시 신고세액공제 3%가 적용됩니다."
@@ -253,8 +279,6 @@ export default function GiftTaxPage() {
                   { label: '30억 초과', value: 50, display: '50%', highlight: true },
                 ]}
               />
-
-              {/* 증여세란 무엇인가 */}
               <section aria-label="증여세 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">증여세란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
@@ -274,16 +298,13 @@ export default function GiftTaxPage() {
                   상담을 권장합니다.
                 </p>
               </section>
-
-              {/* AD-2 Medium Rectangle (본문 중간) */}
-              {/* 증여재산공제 및 10년 합산 */}
               <section aria-label="증여재산공제" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">
                   증여재산공제 (10년 합산, 상증세법 §53)
                 </h2>
                 <p className="mb-4 text-text-secondary">
-                  증여세에서 가장 중요한 개념은 <strong>10년 합산 공제</strong>입니다. 같은 증여자로부터
-                  10년 이내에 받은 모든 증여에 대해 공제를 합산하여 적용합니다.
+                  증여세에서 가장 중요한 개념은 <strong>10년 합산 공제</strong>입니다. 같은
+                  증여자로부터 10년 이내에 받은 모든 증여에 대해 공제를 합산하여 적용합니다.
                 </p>
 
                 <h3 className="mb-3 text-lg font-semibold text-text-primary">관계별 공제액</h3>
@@ -291,7 +312,9 @@ export default function GiftTaxPage() {
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">관계</th>
+                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
+                          관계
+                        </th>
                         <th className="px-3 py-2 text-right font-semibold text-text-primary">
                           공제액
                         </th>
@@ -305,7 +328,7 @@ export default function GiftTaxPage() {
                         ['직계존속(부모·조부모·증조부모)', '5천만 원'],
                         ['기타 친족(형제자매·며느리·사위 등)', '1천만 원'],
                       ].map(([relation, deduction]) => (
-                        <tr key={relation} className="border-b border-border-base/50">
+                        <tr key={relation} className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">{relation}</td>
                           <td className="px-3 py-2 text-right font-medium text-primary-500">
                             {deduction}
@@ -340,8 +363,6 @@ export default function GiftTaxPage() {
                   효과적인 절세 전략입니다(단, 정확한 계산과 신고는 세무사 상담 필수).
                 </p>
               </section>
-
-              {/* 증여세 세율 */}
               <section aria-label="세율 체계" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">증여세 세율 (상증세법 §26)</h2>
                 <p className="mb-4 text-sm text-text-secondary">
@@ -355,7 +376,9 @@ export default function GiftTaxPage() {
                         <th className="px-3 py-2 text-left font-semibold text-text-primary">
                           과세표준
                         </th>
-                        <th className="px-3 py-2 text-right font-semibold text-text-primary">세율</th>
+                        <th className="px-3 py-2 text-right font-semibold text-text-primary">
+                          세율
+                        </th>
                         <th className="px-3 py-2 text-right font-semibold text-text-primary">
                           누진공제
                         </th>
@@ -369,7 +392,7 @@ export default function GiftTaxPage() {
                         ['10억~30억', '40%', '1억 6,000만 원'],
                         ['30억 초과', '50%', '4억 6,000만 원'],
                       ].map(([range, rate, deduction]) => (
-                        <tr key={range} className="border-b border-border-base/50">
+                        <tr key={range} className="border-border-base/50 border-b">
                           <td className="px-3 py-2 text-text-secondary">{range}</td>
                           <td className="px-3 py-2 text-right font-medium text-primary-500">
                             {rate}
@@ -382,16 +405,12 @@ export default function GiftTaxPage() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary">
-                  <strong>누진공제란:</strong> 계산의 편의를 위해 도입된 제도입니다. 예: 과세표준 3억
-                  원이면 (3억 × 20%) - 1,000만 = 6,000 - 1,000 = 5,000만 원.
+                  <strong>누진공제란:</strong> 계산의 편의를 위해 도입된 제도입니다. 예: 과세표준
+                  3억 원이면 (3억 × 20%) - 1,000만 = 6,000 - 1,000 = 5,000만 원.
                 </p>
               </section>
-
-              {/* 부담부증여 */}
               <section aria-label="부담부증여" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">
-                  부담부증여 개념 (상증세법 §47, §55)
-                </h2>
+                <h2 className="mb-4 text-2xl font-semibold">부담부증여 개념 (상증세법 §47, §55)</h2>
                 <p className="mb-4 text-text-secondary">
                   부담부증여는 증여자가 지닌 채무를 수증자(받는 사람)가 인수(대신 갚기로 약정)하는
                   경우를 말합니다. 이 경우 <strong>증여재산 가액에서 채무액을 차감</strong>하여 과세
@@ -429,13 +448,11 @@ export default function GiftTaxPage() {
                   보관해야 하며, 정확한 채무액 계산은 세무사 상담이 필수입니다.
                 </p>
               </section>
-
-              {/* 신고세액공제 */}
               <section aria-label="신고세액공제" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">신고세액공제 3% (상증세법 §68)</h2>
                 <p className="mb-4 text-text-secondary">
-                  증여세는 기한 내에 자진신고하는 경우 산출세액의 <strong>3%를 공제</strong>해줍니다.
-                  신고 기한은 <strong>증여일이 속하는 달 말일부터 3개월</strong>입니다.
+                  증여세는 기한 내에 자진신고하는 경우 산출세액의 <strong>3%를 공제</strong>
+                  해줍니다. 신고 기한은 <strong>증여일이 속하는 달 말일부터 3개월</strong>입니다.
                 </p>
 
                 <h3 className="mb-2 text-lg font-semibold text-text-primary">신고 기한 예시</h3>
@@ -459,15 +476,14 @@ export default function GiftTaxPage() {
                   것이 절세의 기본입니다.
                 </p>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
                   <li>
                     <strong>10년 합산 원칙의 복잡성:</strong> 정확한 10년 합산 과세는 기증여 당시의
-                    과세표준과 세율까지 반영하여 재계산해야 합니다. 단순 합산이 아니므로 복잡한 케이스
-                    (여러 번의 분할 증여, 기증여 세율 변화 등)는 반드시 세무사 상담을 받으세요.
+                    과세표준과 세율까지 반영하여 재계산해야 합니다. 단순 합산이 아니므로 복잡한
+                    케이스 (여러 번의 분할 증여, 기증여 세율 변화 등)는 반드시 세무사 상담을
+                    받으세요.
                   </li>
                   <li>
                     <strong>부동산 증여 시 취득세 별도 부과:</strong> 증여세 외에도 취득세(1~3%)가
@@ -478,9 +494,9 @@ export default function GiftTaxPage() {
                     관계를 정확히 증명해야 합니다. 법률혼 배우자만 배우자 공제를 받을 수 있습니다.
                   </li>
                   <li>
-                    <strong>공정시장가액 평가:</strong> 부동산, 주식, 비상장주식 등의 경우 공정시장가액
-                    평가가 중요합니다. 낮게 평가하면 세무조사 대상이 될 수 있으므로 전문가 평가를
-                    권장합니다.
+                    <strong>공정시장가액 평가:</strong> 부동산, 주식, 비상장주식 등의 경우
+                    공정시장가액 평가가 중요합니다. 낮게 평가하면 세무조사 대상이 될 수 있으므로
+                    전문가 평가를 권장합니다.
                   </li>
                   <li>
                     <strong>2026년 세율 기준:</strong> 본 계산은 2026년 세율로 계산됩니다. 세법 개정
@@ -488,8 +504,6 @@ export default function GiftTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 절세 팁 */}
               <section aria-label="절세 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">절세·활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
@@ -504,12 +518,12 @@ export default function GiftTaxPage() {
                     0.
                   </li>
                   <li>
-                    <strong>미성년 자녀 주의:</strong> 미성년 자녀는 공제가 2천만 원으로 낮으므로, 가능
-                    하면 성년 후 증여하는 것이 절세입니다. 예: 자녀 나이 만 20세 도달 후 증여.
+                    <strong>미성년 자녀 주의:</strong> 미성년 자녀는 공제가 2천만 원으로 낮으므로,
+                    가능 하면 성년 후 증여하는 것이 절세입니다. 예: 자녀 나이 만 20세 도달 후 증여.
                   </li>
                   <li>
-                    <strong>신고 기한 준수:</strong> 신고 기한 내 신고 시 3% 공제를 받습니다. 예: 1억
-                    세금이면 300만 원을 절약합니다.
+                    <strong>신고 기한 준수:</strong> 신고 기한 내 신고 시 3% 공제를 받습니다. 예:
+                    1억 세금이면 300만 원을 절약합니다.
                   </li>
                   <li>
                     <strong>상속과의 비교:</strong> 증여세와 상속세 납부 시점과 금액을 모두 계산하여
@@ -517,8 +531,6 @@ export default function GiftTaxPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 신고 기한 및 절차 */}
               <section aria-label="신고 기한" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">신고 기한 및 절차</h2>
                 <p className="mb-3 text-sm text-text-secondary">
@@ -544,10 +556,7 @@ export default function GiftTaxPage() {
                   신고 시에도 초과 기간에 대한 이자는 발생합니다.
                 </p>
               </section>
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={RELATED} />
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

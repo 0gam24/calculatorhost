@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -35,17 +35,14 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: 'N잡러 건강보험 계산기 2026',
-    description:
-      '주근로·부업·기타소득으로 월 건강보험료 및 피부양자 위험을 계산합니다.',
+    description: '주근로·부업·기타소득으로 월 건강보험료 및 피부양자 위험을 계산합니다.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
     title: 'N잡러 건강보험 계산기 2026',
-    description:
-      'N잡 건강보험료 즉시 계산: 주근로, 부업, 기타소득으로 월보 확인.',
+    description: 'N잡 건강보험료 즉시 계산: 주근로, 부업, 기타소득으로 월보 확인.',
   },
 };
 
@@ -53,7 +50,7 @@ const FAQ_ITEMS = [
   {
     question: 'N잡러가 낼 건강보험료는 얼마인가요?',
     answer:
-      'N잡러의 건강보험료는 주 근로소득과 추가소득(부업·기타)에 따라 나뉩니다. 주 근로소득이 있으면 월급의 3.545%(근로자 부담)를 냅니다. 추가소득이 2,000만원을 초과하면, 초과분에 대해 추가로 월 건보료를 냅니다 (7.09% 전액 본인부담). 예를 들어, 주근로 5,000만 + 부업 3,000만이면, 주근로 월보 약 148K + 추가 월보 약 59K = 월 약 207K를 냅니다.',
+      'N잡러의 건강보험료는 주 근로소득과 추가소득(부업·기타)에 따라 나뉩니다. 주 근로소득이 있으면 월급의 3.595%(근로자 부담)를 냅니다. 추가소득이 2,000만원을 초과하면, 초과분에 대해 추가로 월 건보료를 냅니다 (7.19% 전액 본인부담). 예를 들어, 주근로 5,000만 + 부업 3,000만이면, 주근로 월보 약 150K + 추가 월보 약 60K = 월 약 210K를 냅니다.',
   },
   {
     question: '피부양자 자격을 잃으면 어떻게 되나요?',
@@ -132,17 +129,30 @@ export default function NJobberInsurancePage() {
   });
   const howToLd = buildHowToJsonLd({
     name: 'N잡러 건강보험 계산기 사용 방법',
-    description: '직장 소득, 부업 소득, 기타 소득을 입력하여 월 건강보험료를 계산하는 단계별 가이드',
+    description:
+      '직장 소득, 부업 소득, 기타 소득을 입력하여 월 건강보험료를 계산하는 단계별 가이드',
     steps: [
       { name: '주근로 소득 입력', text: '직장에서 받는 월 급여(또는 연봉)를 입력합니다.' },
-      { name: '부업 소득 입력', text: '자영업·프리랜서 등 부업으로 버는 순 소득(연간)을 입력합니다.' },
-      { name: '기타 소득 입력', text: '이자·배당·강의료 등 기타 부가소득이 있으면 입력합니다(선택).' },
-      { name: '건강보험료 자동 계산', text: '주근로와 추가소득에 따른 월 건강보험료가 자동 계산됩니다.' },
-      { name: '피부양자 위험 확인', text: '총 소득이 2,000만 원을 초과하면 피부양자 자격 상실 위험을 경고합니다.' },
+      {
+        name: '부업 소득 입력',
+        text: '자영업·프리랜서 등 부업으로 버는 순 소득(연간)을 입력합니다.',
+      },
+      {
+        name: '기타 소득 입력',
+        text: '이자·배당·강의료 등 기타 부가소득이 있으면 입력합니다(선택).',
+      },
+      {
+        name: '건강보험료 자동 계산',
+        text: '주근로와 추가소득에 따른 월 건강보험료가 자동 계산됩니다.',
+      },
+      {
+        name: '피부양자 위험 확인',
+        text: '총 소득이 2,000만 원을 초과하면 피부양자 자격 상실 위험을 경고합니다.',
+      },
     ],
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -179,133 +189,112 @@ export default function NJobberInsurancePage() {
       />
       <Header />
       <div className="flex flex-1 flex-col lg:flex-row">
-        <Sidebar />
-        <main id="main-content" className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
-          <article className="mx-auto max-w-4xl">
-            {/* 헤더 */}
-            <Breadcrumb
-              items={[
-                { name: '홈', href: '/' },
-                { name: '세금', href: '/category/tax/' },
-                { name: 'N잡러 건강보험' },
-              ]}
-            />
-            <h1 className="text-4xl font-bold tracking-tight">
-              N잡러 건강보험 계산기 2026
-            </h1>
-            <p className="mt-4 text-lg text-text-secondary">
-              주 근로소득과 부업, 기타소득을 입력해 월 건강보험료를 즉시 계산하세요.
-              피부양자 자격 상실 여부도 미리 확인할 수 있습니다.
-            </p>
-            <AuthorByline datePublished="2026-04-24" dateModified="2026-06-01" />
-
-            {/* Structured Summary */}
+        <main
+          id="main-content"
+          className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+        >
+          <CalculatorPageContent
+            intro={
+              <header>
+                <Breadcrumb
+                  items={[
+                    { name: '홈', href: '/' },
+                    { name: '세금', href: '/category/tax/' },
+                    { name: 'N잡러 건강보험' },
+                  ]}
+                />
+                <h1 className="text-4xl font-bold tracking-tight">N잡러 건강보험 계산기 2026</h1>
+                <p className="mt-4 text-lg text-text-secondary">
+                  직장 외 소득으로 추가 건강보험료를 예상해 보세요.
+                </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-06-01" />
+              </header>
+            }
+            calculator={<NJobberInsuranceCalculator />}
+            related={
+              <>
+                <RelatedCalculators items={RELATED} />
+              </>
+            }
+            faq={
+              <>
+                <FaqSection items={FAQ_ITEMS} />
+              </>
+            }
+          >
             <StructuredSummary
               definition="N잡러 건강보험은 주 직장 외 추가 소득이 있는 근로자의 건강보험료 계산 방식입니다. 주 근로소득과 추가소득(부업·기타)에 따라 보험료가 달라지며, 추가소득 2,000만원 기준으로 피부양자 자격이 상실될 수 있습니다."
               table={{
                 caption: 'N잡러 보험료 구간별 계산',
                 headers: ['소득 구간', '건보료 계산'],
                 rows: [
-                  ['주근로만', '월급 × 3.545%'],
+                  ['주근로만', '월급 × 3.595%'],
                   ['추가소득 ~2,000만', '주근로 보험료만'],
                   ['추가소득 2,000만 초과', '주근로 + 추가 월보'],
                 ],
               }}
               tldr={[
-                '주근로는 근로자 부담 3.545%입니다.',
+                '주근로는 근로자 부담 3.595%입니다.',
                 '추가소득 2,000만원이 기준점입니다.',
                 '2,000만 초과 시 피부양자 자격 상실 위험이 있습니다.',
               ]}
             />
-
-            {/* AD-1 헤더 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* 계산기 폼 */}
-            <NJobberInsuranceCalculator />
-
-            {/* AD-2 중간 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* FAQ */}
-            <FaqSection items={FAQ_ITEMS} />
-
-            {/* N잡러란 섹션 */}
+            <div className="my-8"></div>
+            <div className="my-8"></div>
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">N잡러와 건강보험</h2>
               <p>
-                "N잡러"는 본 직장 외에 2개 이상의 추가 소득원을 가진 근로자를
-                의미합니다. 일반적으로 주 직장의 월급 + 부업(프리랜서, 투잡) +
-                기타소득(이자, 배당)의 조합으로 생계를 유지합니다. 이러한 N잡러는
-                건강보험료 계산이 복잡해지며, 특히 추가소득이 많을 경우
-                피부양자 자격을 잃고 지역가입자로 전환되어 보험료가 크게 인상될 수
-                있습니다.
+                "N잡러"는 본 직장 외에 2개 이상의 추가 소득원을 가진 근로자를 의미합니다. 일반적으로
+                주 직장의 월급 + 부업(프리랜서, 투잡) + 기타소득(이자, 배당)의 조합으로 생계를
+                유지합니다. 이러한 N잡러는 건강보험료 계산이 복잡해지며, 특히 추가소득이 많을 경우
+                피부양자 자격을 잃고 지역가입자로 전환되어 보험료가 크게 인상될 수 있습니다.
               </p>
               <p>
-                따라서 N잡러는 정기적으로 본인의 총 소득을 파악하고, 2,000만원
-                기준에 가까워지면 국민건강보험공단에 미리 상담하여 자격 유지 전략을
-                세우는 것이 중요합니다.
+                따라서 N잡러는 정기적으로 본인의 총 소득을 파악하고, 2,000만원 기준에 가까워지면
+                국민건강보험공단에 미리 상담하여 자격 유지 전략을 세우는 것이 중요합니다.
               </p>
             </section>
-
-            {/* 건보료 계산 방식 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">건강보험료 계산 방식</h2>
               <div className="space-y-4">
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-primary-500 mb-3">
-                    1. 주 근로소득 건보료
-                  </h3>
+                  <h3 className="mb-3 font-semibold text-primary-500">1. 주 근로소득 건보료</h3>
                   <div className="space-y-2 text-sm text-text-secondary">
-                    <p className="font-mono">
-                      월 건보료 = 월 급여 × 3.545%
-                    </p>
+                    <p className="font-mono">월 건보료 = 월 급여 × 3.595%</p>
                     <p>
-                      직장에서 이미 월급에서 공제되는 건강보험료입니다. 이는 근로자 부담분(3.545%)만 계산하며, 고용주 부담분은 별도입니다.
+                      직장에서 이미 월급에서 공제되는 건강보험료입니다. 이는 근로자 부담분(3.595%)만
+                      계산하며, 고용주 부담분은 별도입니다.
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-secondary-500 mb-3">
+                  <h3 className="mb-3 font-semibold text-secondary-500">
                     2. 추가소득 건보료 (2,000만 초과분)
                   </h3>
                   <div className="space-y-2 text-sm text-text-secondary">
-                    <p className="font-mono">
-                      월 추가보험료 = (총추가소득 - 2,000만) / 12 × 7.09%
-                    </p>
+                    <p className="font-mono">월 추가보험료 = (총추가소득 - 2,000만) / 12 × 7.19%</p>
                     <p>
-                      추가소득이 2,000만원을 초과하면, 초과분에 대해 추가 건보료를 냅니다. 이 경우 근로자가 전액 부담합니다 (7.09%, 고용주 부담 없음).
+                      추가소득이 2,000만원을 초과하면, 초과분에 대해 추가 건보료를 냅니다. 이 경우
+                      근로자가 전액 부담합니다 (7.19%, 고용주 부담 없음).
                     </p>
                   </div>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-highlight-500 mb-3">
-                    3. 월 총 건보료
-                  </h3>
+                  <h3 className="mb-3 font-semibold text-highlight-500">3. 월 총 건보료</h3>
                   <div className="space-y-2 text-sm text-text-secondary">
-                    <p className="font-mono">
-                      월 총보험료 = 주근로 월보 + 추가소득 월보
-                    </p>
-                    <p>
-                      두 부분을 더한 것이 당신이 실제로 내야 할 월 건강보험료입니다.
-                    </p>
+                    <p className="font-mono">월 총보험료 = 주근로 월보 + 추가소득 월보</p>
+                    <p>두 부분을 더한 것이 당신이 실제로 내야 할 월 건강보험료입니다.</p>
                   </div>
                 </div>
               </div>
             </section>
-
-            {/* 피부양자 기준 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">피부양자 자격 기준</h2>
               <div className="space-y-4">
                 <div className="rounded-lg border-l-4 border-danger-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-danger-500 mb-3">
-                    자격 상실 기준
-                  </h3>
+                  <h3 className="mb-3 font-semibold text-danger-500">자격 상실 기준</h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>
                       <strong>소득 기준:</strong> 연 소득 2,000만원 이상
@@ -320,8 +309,7 @@ export default function NJobberInsurancePage() {
                 </div>
 
                 <div className="rounded-lg border-l-4 border-primary-500 bg-bg-card p-4">
-                  <h3 className="font-semibold text-primary-500 mb-3">자격 유지 팁
-                  </h3>
+                  <h3 className="mb-3 font-semibold text-primary-500">자격 유지 팁</h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>추가소득 2,000만원 미만 유지</li>
                     <li>부업 필요경비 적절히 공제</li>
@@ -331,94 +319,99 @@ export default function NJobberInsurancePage() {
                 </div>
               </div>
             </section>
-
-            {/* AD-4 인피드 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* 주의사항 */}
+            <div className="my-8"></div>
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">N잡러 건강보험 주의사항</h2>
               <div className="space-y-4 text-sm text-text-secondary">
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-2">
+                  <h3 className="mb-2 font-semibold text-text-primary">
                     1. 지역가입자 전환 시 보험료 급증
                   </h3>
                   <p>
-                    피부양자에서 지역가입자로 전환되면, 소득뿐 아니라 재산까지
-                    고려하여 보험료가 산정됩니다. 같은 소득이어도 근로자(직장가입)
-                    대비 3-5배 이상 높을 수 있습니다.
+                    피부양자에서 지역가입자로 전환되면, 소득뿐 아니라 재산까지 고려하여 보험료가
+                    산정됩니다. 같은 소득이어도 근로자(직장가입) 대비 3-5배 이상 높을 수 있습니다.
                   </p>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-2">
-                    2. 과거 보험료 소급 징수
-                  </h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">2. 과거 보험료 소급 징수</h3>
                   <p>
-                    건강보험공단이 자격 상실을 뒤늦게 발견하면, 과거 보험료를
-                    소급 징수할 수 있습니다. 체납하면 세무 조사 대상이 될 수
-                    있으므로, 자격 변동이 있으면 즉시 신고하세요.
+                    건강보험공단이 자격 상실을 뒤늦게 발견하면, 과거 보험료를 소급 징수할 수
+                    있습니다. 체납하면 세무 조사 대상이 될 수 있으므로, 자격 변동이 있으면 즉시
+                    신고하세요.
                   </p>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-2">
-                    3. 소득 신고와 보험료
-                  </h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">3. 소득 신고와 보험료</h3>
                   <p>
-                    세무서에 신고하는 소득과 건강보험공단에 신고하는 소득이
-                    일치해야 합니다. 불일치하면 조사 대상이 될 수 있으므로,
-                    정확한 소득을 일관되게 신고하세요.
+                    세무서에 신고하는 소득과 건강보험공단에 신고하는 소득이 일치해야 합니다.
+                    불일치하면 조사 대상이 될 수 있으므로, 정확한 소득을 일관되게 신고하세요.
                   </p>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-text-primary mb-2">
-                    4. 부업 필요경비 적절히
-                  </h3>
+                  <h3 className="mb-2 font-semibold text-text-primary">4. 부업 필요경비 적절히</h3>
                   <p>
-                    과도한 필요경비 공제는 세무 조사 대상입니다. 합법적인 범위
-                    내에서만 공제하고, 세무사와 상담하여 절세 방안을 세우세요.
+                    과도한 필요경비 공제는 세무 조사 대상입니다. 합법적인 범위 내에서만 공제하고,
+                    세무사와 상담하여 절세 방안을 세우세요.
                   </p>
                 </div>
               </div>
             </section>
-
-            {/* 관련 계산기 */}
-            <RelatedCalculators items={RELATED} />
-
-            {/* 업데이트 로그 */}
             <section className="mt-12 border-t border-border-base pt-6">
               <h2 className="text-lg font-semibold">업데이트 로그</h2>
               <ul className="mt-3 space-y-2 text-sm text-text-secondary">
                 <li>2026-04-24: 초판 발행 (2026 건강보험료율 기준)</li>
               </ul>
             </section>
-
-            {/* 출처·면책 */}
-            <section className="mt-6 border-t border-border-base pt-6 mb-6">
-              <p className="text-xs text-text-secondary mb-2">
-                <strong>법적 근거</strong>: 국민건강보험법 §72(보험료 산정), §72의2(피부양자 자격) · 국민연금법 §3(가입자 정의), §10(임의가입). 공식 출처: <a href="https://www.nhis.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민건강보험공단</a> 건강보험료 산정 기준, <a href="https://www.nps.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국민연금공단</a> 가입자 안내, <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a> 소득 신고 기준.
+            <section className="mb-6 mt-6 border-t border-border-base pt-6">
+              <p className="mb-2 text-xs text-text-secondary">
+                <strong>법적 근거</strong>: 국민건강보험법 §72(보험료 산정), §72의2(피부양자 자격) ·
+                국민연금법 §3(가입자 정의), §10(임의가입). 공식 출처:{' '}
+                <a
+                  href="https://www.nhis.or.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  국민건강보험공단
+                </a>{' '}
+                건강보험료 산정 기준,{' '}
+                <a
+                  href="https://www.nps.or.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  국민연금공단
+                </a>{' '}
+                가입자 안내,{' '}
+                <a
+                  href="https://www.nts.go.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  국세청
+                </a>{' '}
+                소득 신고 기준.
               </p>
             </section>
-
-            {/* 면책조항 */}
             <section className="mt-6 border-t border-border-base pt-6">
               <p className="text-xs text-text-secondary">
-                본 계산기는 참고용입니다. 실제 건강보험료는 국민건강보험공단의 소득 인정
-                기준과 재산 평가에 따라 달라질 수 있습니다. 피부양자 자격과 보험료 책정은
-                매년 변경될 수 있으므로, 정확한 정보는 국민건강보험공단(1577-1000)에
-                문의하세요. 본 서비스는 법률·세무·보험 조언이 아닙니다.
+                본 계산기는 참고용입니다. 실제 건강보험료는 국민건강보험공단의 소득 인정 기준과 재산
+                평가에 따라 달라질 수 있습니다. 피부양자 자격과 보험료 책정은 매년 변경될 수
+                있으므로, 정확한 정보는 국민건강보험공단(1577-1000)에 문의하세요. 본 서비스는
+                법률·세무·보험 조언이 아닙니다.
               </p>
             </section>
-          </article>
+          </CalculatorPageContent>
         </main>
 
         {/* AD-3 우측 스티키 광고 (lg+ 이상) */}
         <aside className="hidden w-80 bg-bg-base p-4 lg:block">
-          <div className="sticky top-[5rem]">
-          </div>
+          <div className="sticky top-[5rem]"></div>
         </aside>
       </div>
       <Footer />

@@ -29,7 +29,11 @@ export function RadioGroup<T extends string>({
       <legend id={`${id}-label`} className="text-sm font-medium text-text-primary">
         {label}
       </legend>
-      <div className="flex flex-wrap gap-2 sm:gap-3" role="radiogroup" aria-labelledby={`${id}-label`}>
+      <div
+        className="flex flex-wrap gap-2 sm:gap-3"
+        role="radiogroup"
+        aria-labelledby={`${id}-label`}
+      >
         {options.map((opt) => {
           const active = opt.value === value;
           return (
@@ -38,13 +42,38 @@ export function RadioGroup<T extends string>({
               type="button"
               role="radio"
               aria-checked={active}
+              tabIndex={active ? 0 : -1}
               onClick={() => onChange(opt.value)}
+              onKeyDown={(event) => {
+                if (
+                  !['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].includes(
+                    event.key,
+                  )
+                )
+                  return;
+                event.preventDefault();
+                const position = options.findIndex((item) => item.value === value);
+                const offset = event.key === 'ArrowLeft' || event.key === 'ArrowUp' ? -1 : 1;
+                const next =
+                  event.key === 'Home'
+                    ? 0
+                    : event.key === 'End'
+                      ? options.length - 1
+                      : (position + offset + options.length) % options.length;
+                const choice = options[next];
+                if (choice) onChange(choice.value);
+                const buttons =
+                  event.currentTarget.parentElement?.querySelectorAll<HTMLButtonElement>(
+                    '[role="radio"]',
+                  );
+                buttons?.[next]?.focus();
+              }}
               className={cn(
-                'rounded-chip border min-h-11 px-4 py-3 sm:py-2 text-sm font-medium transition-all duration-100 focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
+                'min-h-12 rounded-xl border px-4 py-3 text-sm font-medium transition-colors focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2',
                 active
-                  // WCAG AA: text-primary-700 (#3D43D0) on bg-primary-500/10 (#dee0fb) ≈ 6.2:1 (pass)
-                  // 이전 text-primary-500 (#595FF7) ≈ 3.7:1 (fail)
-                  ? 'border-primary-500 bg-primary-500/10 text-primary-700 dark:text-primary-300'
+                  ? // WCAG AA: text-primary-700 (#3D43D0) on bg-primary-500/10 (#dee0fb) ≈ 6.2:1 (pass)
+                    // 이전 text-primary-500 (#595FF7) ≈ 3.7:1 (fail)
+                    'border-primary-500 bg-primary-500/10 text-primary-700 dark:text-primary-300'
                   : 'border-border-base text-text-secondary hover:border-primary-500',
               )}
             >

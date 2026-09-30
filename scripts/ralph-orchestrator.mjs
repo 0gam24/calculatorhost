@@ -145,10 +145,10 @@ ${!results.adsense ? '- [ ] AdSense Audit 실패 → 광고 정책 재점검' : 
 
 ## Next Steps
 
-1. 실패 항목의 상세 리포트 확인 (`./.claude/reports/ralph-*-${today}.md`)
+1. 실패 항목의 상세 리포트 확인 (\`./.claude/reports/ralph-*-${today}.md\`)
 2. 필요시 로컬에서 재현 (\`npm run ralph:meta\` 등)
 3. 수정 후 커밋: \`git commit -m "ralph(...): {수정내용}"\`
-4. 자동 재실행: 내일 03:00 KST 또는 \`gh workflow run ralph-daily.yml\`
+4. 자동화는 비활성 상태로 유지하고, 필요한 검증만 로컬에서 수동 실행
 
 ---
 

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from 'next';
-import Script from 'next/script';
+import { PublicServices } from '@/components/analytics/PublicServices';
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter';
 import './globals.css';
 
@@ -34,8 +34,7 @@ export const metadata: Metadata = {
     url: 'https://calculatorhost.com',
     siteName: 'calculatorhost',
     title: 'calculatorhost, 2026 최신 세율 반영 한국 계산기 모음',
-    description:
-      '연봉·양도세·취득세·대출이자 등 한국 생활 금융 계산기. 무료·회원가입 불필요.',
+    description: '연봉·양도세·취득세·대출이자 등 한국 생활 금융 계산기. 무료·회원가입 불필요.',
     images: [
       {
         url: '/og-default.png',
@@ -83,7 +82,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   themeColor: [
     { media: '(prefers-color-scheme: dark)', color: '#0f1614' },
-    { media: '(prefers-color-scheme: light)', color: '#f4f7f8' },
+    { media: '(prefers-color-scheme: light)', color: '#f7f6f3' },
   ],
   width: 'device-width',
   initialScale: 1,
@@ -161,8 +160,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             preconnect 만으로는 다운로드 X (실제 fetch는 lazyOnload 시점에). TBT 영향 X. */}
         {adsenseClient ? (
           <>
-            <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossOrigin="anonymous" />
-            <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
+            <link
+              rel="preconnect"
+              href="https://pagead2.googlesyndication.com"
+              crossOrigin="anonymous"
+            />
+            <link
+              rel="preconnect"
+              href="https://googleads.g.doubleclick.net"
+              crossOrigin="anonymous"
+            />
             <link rel="dns-prefetch" href="https://adservice.google.com" />
           </>
         ) : null}
@@ -199,72 +206,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         {children}
 
-        {/* AD-5 모바일 앵커 (lg 이하에서만 고정 하단 표시) */}
-        {/* AdSense 정책: 정책 페이지(/privacy, /terms, /contact, /about)에서는 광고 비활성화 */}
-
-        {/* Web Vitals → GA4 송신 (필드 데이터 수집) */}
         <WebVitalsReporter />
-
-        {/* Google AdSense, lazyOnload 전략 (TBT 최소화).
-            window.load + idle callback 후 다운로드 → 메인 스레드 블록 X.
-            adsbygoogle.push() 큐는 스크립트 로드 전에도 안전하게 누적되므로 RPM 영향 미미.
-            preconnect 로 DNS/TLS 사전 완료 → lazyOnload 시점 fetch 빠름.
-            슬롯별 push 는 AdSlot 컴포넌트가 IntersectionObserver 로 viewport 진입 시점에 호출. */}
-        {adsenseClient ? (
-          <Script
-            id="adsbygoogle-init"
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
-            strategy="lazyOnload"
-            crossOrigin="anonymous"
-          />
-        ) : null}
-
-        {/* Google Analytics 4, afterInteractive 전략.
-            lazyOnload 는 window.load + idle 후 → Google Tag Assistant·자동 감지 봇이 못 잡음.
-            afterInteractive 는 hydration 직후 → LCP 영향 없으면서 detection 호환.
-            init 은 즉시 호출 (requestIdleCallback 래핑 제거, 봇이 dataLayer 즉시 확인 필요). */}
-        {gaId ? (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="ga-init" strategy="afterInteractive">
-              {`window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}', { anonymize_ip: true });`}
-            </Script>
-          </>
-        ) : null}
-
-        {/* Naver 웹로그분석, lazyOnload + requestIdleCallback (TBT 보호).
-            한국 검색 25% 점유율(Naver)은 GA4 외 별도 추적 필수.
-            wcslog.js 는 // (프로토콜 상대) 로 제공되나 next/script 는 https 강제.
-            wcs_do() 호출 시 페이지뷰 카운트, SPA 라우팅 시 추가 호출은 향후 분리.
-            관련: https://wa.naver.com */}
-        {naverAnalyticsId ? (
-          <>
-            <Script
-              src="https://wcs.naver.net/wcslog.js"
-              strategy="lazyOnload"
-            />
-            <Script id="naver-analytics-init" strategy="lazyOnload">
-              {`var initNaver = function() {
-                  if (!window.wcs_add) window.wcs_add = {};
-                  window.wcs_add.wa = '${naverAnalyticsId}';
-                  if (window.wcs && typeof window.wcs_do === 'function') {
-                    window.wcs_do();
-                  }
-                };
-                if ('requestIdleCallback' in window) {
-                  requestIdleCallback(initNaver, { timeout: 2000 });
-                } else {
-                  setTimeout(initNaver, 1);
-                }`}
-            </Script>
-          </>
-        ) : null}
+        <PublicServices
+          gaId={gaId}
+          adsenseClient={adsenseClient}
+          naverAnalyticsId={naverAnalyticsId}
+        />
       </body>
     </html>
   );

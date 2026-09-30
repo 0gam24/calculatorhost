@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 재산세 계산기 (MVP #7)
  *
@@ -7,7 +10,7 @@
  * 공식: src/lib/tax/property.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { ResultCard } from '@/components/calculator/Result';
@@ -23,9 +26,15 @@ const PUBLISHED_PRICE_UNIT_BUTTONS = [
 ];
 
 export function PropertyTaxCalculator() {
-  const [publishedPrice, setPublishedPrice] = useState(600_000_000);
-  const [oneHouseholdOneHouse, setOneHouseholdOneHouse] = useState(true);
-  const [urbanArea, setUrbanArea] = useState(false);
+  const [publishedPrice, setPublishedPrice] = useCalculatorState(
+    'property-tax:publishedPrice',
+    600_000_000,
+  );
+  const [oneHouseholdOneHouse, setOneHouseholdOneHouse] = useCalculatorState(
+    'property-tax:oneHouseholdOneHouse',
+    true,
+  );
+  const [urbanArea, setUrbanArea] = useCalculatorState('property-tax:urbanArea', false);
 
   const result = useMemo(
     () =>
@@ -42,11 +51,10 @@ export function PropertyTaxCalculator() {
     result.appliedBracket === 'oneHouseSpecial' ? '1세대1주택 특례 적용' : '일반세율 적용';
 
   // 1세대1주택 특례 표시 여부
-  const showSpecialWarning =
-    oneHouseholdOneHouse && publishedPrice > 900_000_000;
+  const showSpecialWarning = oneHouseholdOneHouse && publishedPrice > 900_000_000;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="property-tax">
       <FormCard title="입력">
         {/* 공시가격 */}
         <NumberInput
@@ -57,6 +65,7 @@ export function PropertyTaxCalculator() {
           placeholder="예: 600,000,000"
           unitButtons={PUBLISHED_PRICE_UNIT_BUTTONS}
           max={10_000_000_000}
+          unit="원"
         />
 
         {/* 1세대1주택 특례 */}
@@ -96,7 +105,7 @@ export function PropertyTaxCalculator() {
         </div>
 
         {/* 지역자원시설세 고지 */}
-        <div className="rounded-lg border border-border-base bg-bg-card/50 p-3">
+        <div className="bg-bg-card/50 rounded-lg border border-border-base p-3">
           <p className="text-caption text-text-secondary">
             <strong>지역자원시설세</strong>
             <br />
@@ -168,7 +177,7 @@ export function PropertyTaxCalculator() {
           </div>
         )}
       </ResultCard>
-        <ResultBanner />
-    </div>
+      <ResultBanner />
+    </CalculatorWorkspace>
   );
 }
