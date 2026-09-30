@@ -115,6 +115,11 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
 
 const RELATED: Array<{ href: string; title: string; description: string }> = [
   {
+    href: '/guide/vehicle-acquisition-tax-2026/',
+    title: '자동차 취득세 안내',
+    description: '자동차 구매 시 세율·감면 확인',
+  },
+  {
     href: '/guide/electric-vehicle-tax-2026/',
     title: '전기차 자동차세 가이드',
     description: '정액 13만 원·§127①제3호',
@@ -124,13 +129,6 @@ const RELATED: Array<{ href: string; title: string; description: string }> = [
     title: '자동차세 2026 종합 가이드',
     description: '세율·차령경감·연납 총정리',
   },
-  {
-    href: '/guide/vehicle-tax-june-payment-annual-discount-2026/',
-    title: '6월 자동차세·연납 할인',
-    description: '납부 시기·연납 5% 절세',
-  },
-  { href: '/calculator/acquisition-tax', title: '취득세 계산', description: '자동차 구매 시' },
-  { href: '/calculator/property-tax', title: '재산세 계산', description: '부동산·자동차' },
 ];
 
 export default function VehicleTaxPage() {
