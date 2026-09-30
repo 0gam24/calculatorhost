@@ -23,7 +23,7 @@ const URL = 'https://calculatorhost.com/calculator/inflation/';
 export const metadata: Metadata = {
   title: '화폐가치·물가상승률 계산기 2026 | 인플레이션 실질구매력 무료',
   description:
-    '화폐가치·물가상승률 계산기 2026. 과거 금액의 현재 가치, 현재 금액의 미래 가치를 인플레이션(소비자물가) 반영해 즉시 계산하고 구매력을 비교합니다. 최근 물가상승률(2024년 약 2.3%) 참고. 회원가입 없이 무료.',
+    '입력한 연간 물가상승률로 같은 물건의 미래 필요 금액, 미래 금액의 현재 구매력, 보유 금액의 미래 구매력을 구분해 계산합니다. 일정 물가 상승 가정이며 이자·투자 수익·세금은 제외합니다. 회원가입 없이 무료.',
   keywords: [
     '화폐가치 계산기',
     '인플레이션 계산기',
@@ -36,32 +36,32 @@ export const metadata: Metadata = {
   openGraph: {
     title: '화폐가치 계산기 2026, 인플레이션·실질 구매력',
     description:
-      '금액의 미래 화폐가치, 현재가치, 실질 구매력을 계산하세요. CPI 기반 인플레이션 반영.',
+      '입력한 물가상승률로 미래 필요 금액과 구매력을 구분해 계산하세요. 실제 CPI 자동 조회 없이 일정 상승률을 가정합니다.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: '화폐가치 계산기 2026',
-    description: '미래 화폐가치·현재가치·실질 구매력: 인플레이션 반영 즉시 계산.',
+    description: '같은 물건의 미래 필요 금액·미래 금액의 현재 구매력·보유 금액의 미래 구매력 계산.',
   },
 };
 
 const FAQ_ITEMS = [
   {
-    question: '미래 화폐가치(Future Value)는 무엇인가요?',
+    question: '미래 필요 금액은 무엇인가요?',
     answer:
-      '미래 화폐가치는 현재의 금액이 인플레이션으로 인해 미래에 얼마나 가치가 떨어질지를 계산하는 것입니다. 예: 현재 1,000만 원이 연 2% 인플레이션으로 10년 후 얼마나 가치가 떨어질지. 실제로는 돈의 액수는 같지만 (1,000만 원은 여전히 1,000만 원), 그 돈으로 살 수 있는 상품의 양이 줄어듭니다.',
+      '지금 사는 같은 물건을 미래에 사는 데 필요한 명목 금액입니다. 현재 비용에 물가계수를 곱합니다. 예를 들어 1,000만 원인 물건에 연 2% 물가 상승을 10년 적용하면 약 1,219만 원이 필요합니다. 보유한 돈 자체가 이만큼 늘어난다는 뜻은 아닙니다.',
   },
   {
-    question: '현재가치(Present Value)와 미래가치(Future Value)의 차이는?',
+    question: '미래 필요 금액과 현재 구매력은 어떻게 다른가요?',
     answer:
-      '미래가치는 "10년 후 인플레이션 고려 시 1,000만 원의 가치가 얼마나 떨어질까?"입니다. 현재가치는 "10년 후 1,000만 원을 받는 것이 오늘의 몇 원 가치일까?"입니다. 역함수 관계입니다. 예: 미래 1,000만 원의 현재가치 = 1,000만 원 ÷ (1.02)^10 ≈ 820만 원.',
+      '미래 필요 금액은 현재 비용에 물가계수를 곱하고, 미래 금액의 현재 구매력은 미래 금액을 물가계수로 나눕니다. 연 2%·10년이면 현재 1,000만 원인 물건의 미래 비용은 약 1,219만 원이고, 미래에 받을 1,000만 원의 오늘 기준 구매력은 약 820만 원입니다.',
   },
   {
     question: '실질 구매력(Purchasing Power)은 무엇인가요?',
     answer:
-      '실질 구매력은 "실제로 물건을 몇 개 살 수 있을까?"를 의미합니다. 현재가치와 동일한 계산입니다. 예: 현재 1,000만 원으로 상품 100개를 살 수 있다면, 10년 후 인플레이션 후 1,000만 원으로는 약 80개만 살 수 있습니다(연 2% 인플레이션 기준). 이를 "구매력이 80%로 떨어졌다"고 합니다(한국은행 자료).',
+      '같은 잔액으로 살 수 있는 물건의 양을 뜻합니다. 현재 금액을 물가계수로 나눠 미래 구매력을 오늘의 금액으로 표시합니다. 연 2%·10년이면 잔액 1,000만 원의 구매력은 약 820만 원이며, 지금 100개 살 수 있는 물건은 약 82개 살 수 있습니다. 이자 없이 보유한 잔액 자체는 변하지 않습니다.',
   },
   {
     question: '한국은행의 기대 인플레이션은 몇 %인가요?',
@@ -71,7 +71,7 @@ const FAQ_ITEMS = [
   {
     question: '은퇴 계획할 때 인플레이션을 어떻게 고려해야 하나요?',
     answer:
-      '은퇴 후 필요한 자금을 계산할 때, 현재 기준 생활비에 인플레이션을 곱해서 은퇴 시점의 명목 생활비를 구합니다. 예: 현재 연 4,000만 원 지출, 은퇴까지 30년, 인플레이션 2.5%면 은퇴 시점의 필요액은 약 8,500만 원입니다. 이를 역으로 계산(현재가치)하면 오늘 기준 필요 자산액을 알 수 있습니다.',
+      '현재 생활비에 물가계수를 곱해 은퇴 시점의 명목 생활비를 구합니다. 현재 연 4,000만 원 지출, 30년, 연 2.5% 가정이면 약 8,390만 원입니다. 미래 금액을 물가계수로 나눈 값은 오늘 기준 구매력이지 오늘 저축해야 할 금액이 아닙니다. 필요 저축액에는 투자 수익·인출 기간 등을 별도로 반영해야 합니다.',
   },
   {
     question: '과거 물가 상승률을 알 수 있나요?',
@@ -101,16 +101,15 @@ const RELATED = [
 export default function InflationPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '화폐가치 계산기',
-    description:
-      '금액과 기간, 연간 인플레이션률을 입력해 미래 화폐가치, 현재가치, 실질 구매력을 즉시 계산합니다.',
+    description: '금액·기간·연간 물가상승률로 미래 필요 금액과 구매력을 구분해 계산합니다.',
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
     name: '화폐가치 계산기 2026',
-    description: '금액, 기간, 인플레이션을 입력해 미래 화폐가치, 현재가치, 실질 구매력을 즉시 계산',
+    description: '입력한 물가상승률로 같은 물건의 미래 필요 금액과 현재·미래 구매력을 구분해 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('inflation'),
   });
   const faqLd = buildFaqPageJsonLd(
@@ -128,7 +127,7 @@ export default function InflationPage() {
     steps: [
       {
         name: '계산 방식 선택',
-        text: '"미래가치" / "현재가치" / "실질 구매력" 중 선택합니다.',
+        text: '"미래 필요 금액" / "현재 구매력" / "보유 금액의 구매력" 중 선택합니다.',
       },
       {
         name: '금액 입력',
@@ -144,7 +143,7 @@ export default function InflationPage() {
       },
       {
         name: '결과 확인',
-        text: '미래 화폐가치, 현재가치, 실질 구매력, 누적 인플레이션이 즉시 계산됩니다.',
+        text: '선택한 방식의 금액과 누적 물가 상승을 확인합니다. 미래 필요 금액과 구매력은 서로 다른 의미입니다.',
       },
     ],
   });
@@ -195,9 +194,9 @@ export default function InflationPage() {
                   />
                   <h1 className="mb-3 text-4xl font-bold tracking-tight">화폐가치 계산기 2026</h1>
                   <p className="text-lg text-text-secondary" data-speakable>
-                    같은 돈의 구매력이 시간에 따라 얼마나 달라지는지 확인하세요.
+                    같은 물건의 미래 비용과, 같은 돈의 구매력 변화를 구분해 확인하세요.
                   </p>
-                  <AuthorByline dateModified="2026-04-24" />
+                  <AuthorByline dateModified="2026-10-01" />
                 </header>
               }
               calculator={<InflationCalculator />}
@@ -213,23 +212,26 @@ export default function InflationPage() {
               }
             >
               <StructuredSummary
-                definition="화폐가치는 인플레이션(물가 상승)에 따라 시간에 따라 변합니다. 미래가치는 오늘의 1원이 미래에 얼마나 가치가 떨어지는지, 현재가치는 미래의 1원이 오늘 기준 얼마나 가치인지를 계산합니다. 실질 구매력은 '앞으로 몇 개 물건을 살 수 있을까'를 의미하며 현재가치와 동일합니다(한국은행 물가정보)."
+                definition="물가가 오르면 같은 물건을 사는 데 필요한 명목 금액은 늘고, 같은 잔액의 구매력은 줄어듭니다. 미래 필요 금액은 현재 비용에 물가계수를 곱합니다. 구매력은 금액을 물가계수로 나누어 오늘의 금액으로 환산합니다. 입력한 상승률을 매년 일정하게 가정하며 실제 CPI를 자동 조회하지 않습니다."
                 table={{
                   caption: '화폐가치 계산 핵심 공식',
                   headers: ['항목', '공식/설명'],
                   rows: [
                     ['인플레이션 계수', '(1 + 연 인플레이션율)^년수'],
-                    ['미래가치', '현재금액 ÷ 인플레이션계수'],
-                    ['현재가치', '미래금액 ÷ 인플레이션계수'],
-                    ['실질 구매력', '현재가치와 동일 (미래 금액의 오늘 기준 가치)'],
+                    ['미래 필요 금액', '현재 비용 × 인플레이션계수'],
+                    ['미래 금액의 현재 구매력', '미래금액 ÷ 인플레이션계수'],
+                    [
+                      '보유 금액의 미래 구매력',
+                      '현재 보유 금액 ÷ 인플레이션계수 (오늘의 금액으로 환산)',
+                    ],
                     ['누적 인플레이션', '(인플레이션계수 - 1) × 100%'],
                   ],
                 }}
                 tldr={[
                   '화폐가치 = 시간과 인플레이션에 따른 돈의 가치 변화',
-                  '미래가치 감소: 오늘의 1,000만 원이 10년 후 약 820만 원 가치(연 2% 기준)',
-                  '현재가치 = 미래 금액의 오늘 기준 가치',
-                  '한국은행 물가 목표: 연 2%, 실제는 1.8~3.6% 범위',
+                  '미래 필요 금액: 현재 1,000만 원인 물건은 10년 후 약 1,219만 원(연 2% 가정)',
+                  '구매력: 1,000만 원 잔액을 유지하면 10년 후 오늘 기준 약 820만 원(연 2% 가정)',
+                  '이자·투자 수익·세금 제외, 결과 금액의 원 미만 버림',
                 ]}
               />
               <section aria-label="물가상승률" className="card">
@@ -299,12 +301,11 @@ export default function InflationPage() {
                   변동하며, 상품별로도 차이가 큽니다(한국은행 통계).
                 </p>
               </section>
-              <section aria-label="미래가치 vs 현재가치" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">미래가치 vs 현재가치</h2>
+              <section aria-label="미래 필요 금액과 구매력" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">미래 필요 금액과 구매력</h2>
                 <p className="mb-4 text-text-secondary">
-                  화폐의 시간 가치를 계산하는 두 가지 주요 개념입니다. 미래가치는 "오늘의 돈이
-                  미래에 얼마나 가치가 떨어질까"를 계산하고, 현재가치는 "미래의 돈이 오늘 기준
-                  얼마나 가치일까"를 계산합니다.
+                  같은 물건의 미래 비용과 같은 잔액의 구매력은 구분해야 합니다. 물가가 오르면 미래
+                  비용은 증가하지만, 같은 잔액으로 살 수 있는 양은 감소합니다.
                 </p>
                 <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">예시</h3>
@@ -313,35 +314,35 @@ export default function InflationPage() {
                       <strong>시나리오: 오늘 1,000만 원, 10년, 연 2% 인플레이션</strong>
                     </div>
                     <div className="flex justify-between border-b border-border-subtle pb-2">
-                      <span>미래가치</span>
-                      <span className="font-mono font-semibold">820만 원 (가치 하락)</span>
+                      <span>같은 물건의 미래 필요 금액</span>
+                      <span className="font-mono font-semibold">약 1,219만 원</span>
                     </div>
                     <div className="flex justify-between pb-2">
                       <span>해석</span>
                       <span className="text-xs text-text-secondary">
-                        오늘 1,000만 원은 10년 후 820만 원 수준의 구매력
+                        현재 1,000만 원인 물건을 사려면 10년 후 약 219만 원 더 필요
                       </span>
                     </div>
 
                     <div className="mt-3 border-t border-border-subtle pt-3">
-                      <strong>역산: 10년 후 1,000만 원을 원한다면?</strong>
+                      <strong>보유 잔액을 1,000만 원으로 유지한다면?</strong>
                     </div>
                     <div className="flex justify-between border-b border-border-subtle pb-2">
-                      <span>현재가치</span>
-                      <span className="font-mono font-semibold">820만 원 (필요 저축액)</span>
+                      <span>10년 후 구매력 (오늘의 금액)</span>
+                      <span className="font-mono font-semibold">약 820만 원</span>
                     </div>
                     <div className="flex justify-between">
                       <span>해석</span>
                       <span className="text-xs text-text-secondary">
-                        10년 후 1,000만 원 가치 확보 위해 오늘 820만 원 필요
+                        잔액은 그대로지만 구매력은 오늘 기준 약 820만 원으로 감소
                       </span>
                     </div>
                   </div>
                 </div>
                 <p className="text-text-secondary">
-                  두 계산은 수학적으로 역함수 관계이며, 동일한 인플레이션 가정 하에 같은 결과를
-                  냅니다. 미래가치는 "저축의 침식 계획", 현재가치는 "필요한 저축액 목표 설정"에
-                  유용합니다.
+                  미래 필요 금액의 곱셈과 구매력 환산의 나눗셈은 반대 방향의 계산입니다. 같은 입력
+                  금액에 적용하면 결과가 다릅니다. 현재가치 모드는 미래에 받을 금액의 오늘 기준
+                  구매력을 표시하며, 필요한 저축 원금은 계산하지 않습니다.
                 </p>
               </section>
               <section aria-label="실질 구매력" className="card">
@@ -377,19 +378,20 @@ export default function InflationPage() {
                     </p>
                   </li>
                   <li>
-                    <strong>미래가치 (Future Value)</strong>
+                    <strong>같은 물건의 미래 필요 금액</strong>
                     <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
-                      FV = 현재금액 ÷ 인플레이션계수
+                      미래 필요 금액 = 현재 비용 × 인플레이션계수
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      오늘의 돈이 미래에 얼마나 가치 떨어질지 계산합니다. 예: 1,000만 원 ÷ 1.219 ≈
-                      820만 원.
+                      같은 물건을 사는 데 필요한 미래 비용입니다. 예: 1,000만 원 × 1.219 ≈ 1,219만
+                      원. 보유한 돈의 구매력이나 투자 수익이 아닙니다.
                     </p>
                   </li>
                   <li>
-                    <strong>현재가치 (Present Value)</strong>
+                    <strong>현재가치·보유 금액의 구매력</strong>
                     <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
-                      PV = 미래금액 ÷ 인플레이션계수
+                      현재 구매력 = 미래금액 ÷ 인플레이션계수 / 보유 금액의 미래 구매력 = 현재금액 ÷
+                      인플레이션계수
                     </p>
                     <p className="mt-2 text-text-secondary">
                       미래의 돈이 오늘 기준 얼마나 가치인지 계산합니다. 예: 10년 후 1,000만 원 ÷
@@ -407,12 +409,13 @@ export default function InflationPage() {
                     </p>
                   </li>
                   <li>
-                    <strong>연간 등가 (Annual Equivalent)</strong>
+                    <strong>연평균 금액 변화</strong>
                     <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
-                      연간등가(%) = 누적인플레이션 / 년수
+                      연평균 금액 변화(원/년) = |결과 금액 − 입력 금액| ÷ 년수
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      평균 연간 인플레이션을 뜻합니다. 예: 21.9% ÷ 10 ≈ 2.19% (입력 2%와 근사).
+                      금액 변화의 절댓값을 기간으로 나눈 값이며 원 미만을 버립니다. 연간
+                      물가상승률이 아닙니다. 기간이 0년이면 0원/년입니다.
                     </p>
                   </li>
                 </ol>
@@ -448,12 +451,13 @@ export default function InflationPage() {
                 <ul className="space-y-3 text-sm text-text-secondary">
                   <li>
                     <strong>은퇴 계획</strong>: 현재 생활비를 입력해 은퇴 시점의 필요 자금을
-                    계산하세요. 현재가치 역산으로 "오늘 기준 필요 저축액"을 알 수 있습니다.
+                    계산하세요. 필요한 저축액은 투자 수익·은퇴 후 지출 기간 등을 별도로 반영해야
+                    합니다.
                   </li>
                   <li>
-                    <strong>대출 상환 검토</strong>: 10년 장기 대출 시 원금 1억 원의 미래가치를
-                    계산해 "실질 상환액"을 파악할 수 있습니다. (대출금은 고정이지만 인플레이션으로
-                    인해 상대적 부담이 줄어듦)
+                    <strong>대출 상환 검토</strong>: 10년 장기 대출 시 미래 상환 금액의 현재
+                    구매력을 계산해 "실질 상환액"을 파악할 수 있습니다. (대출금은 고정이지만
+                    인플레이션으로 인해 상대적 부담이 줄어듦)
                   </li>
                   <li>
                     <strong>역사적 인플레이션 비교</strong>: 한국은행 통계에서 과거 5년, 10년 평균
@@ -472,6 +476,10 @@ export default function InflationPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
+                  <li>
+                    2026-10-01: 미래 필요 금액·구매력 의미와 공식 일치, 추가 필요 금액·연평균 금액
+                    변화 표시 교정
+                  </li>
                   <li>2026-04-24: 초판 공개 (미래가치·현재가치·실질 구매력 계산)</li>
                 </ul>
               </section>
@@ -480,9 +488,17 @@ export default function InflationPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>: 한국은행(ecos.bok.or.kr) 물가 통계,
-                  기본금융이론, 금융감독원 자료. 본 계산기는 교육·참고 목적이며 CPI 기반 공식
-                  인플레이션만 반영합니다.
+                  <strong>참고 자료</strong>: 한국은행(ecos.bok.or.kr) 물가 통계 및{' '}
+                  <a
+                    className="underline"
+                    href="https://www.bankofengland.co.uk/monetary-policy/inflation/inflation-calculator"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    영란은행의 물가·구매력 계산 설명
+                  </a>
+                  . 본 계산기는 입력한 상승률을 일정하게 가정하는 교육·참고 도구이며 실제 CPI를 자동
+                  조회하지 않습니다.
                 </p>
                 <p>
                   본 계산기의 결과는 교육용이며 법적 효력이 없습니다. 실제 금융 계획(은퇴, 대출,

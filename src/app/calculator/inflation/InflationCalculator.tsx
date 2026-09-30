@@ -36,15 +36,26 @@ export function InflationCalculator() {
   const getModeLabel = () => {
     switch (mode) {
       case 'futureValue':
-        return '오늘의 돈이 미래에 얼마나 가치 떨어질까?';
+        return '지금 사는 같은 물건을 미래에 사려면 얼마가 필요할까요?';
       case 'presentValue':
-        return '미래의 돈이 오늘 기준 얼마나 가치일까?';
+        return '미래에 받을 금액은 오늘 기준 얼마의 구매력일까요?';
       case 'purchasingPower':
-        return '구매력이 얼마나 떨어질까?';
+        return '지금 가진 돈을 그대로 보유하면 미래 구매력이 얼마나 줄어들까요?';
       default:
         return '';
     }
   };
+
+  const amountLabel = mode === 'presentValue' ? '미래에 받을 금액' : '현재 금액';
+  const resultLabel =
+    mode === 'futureValue'
+      ? '같은 물건의 미래 필요 금액'
+      : mode === 'presentValue'
+        ? '미래 금액의 현재 구매력'
+        : '보유 금액의 미래 구매력';
+  const changeAmount = Math.abs(result.resultAmount - result.originalAmount);
+  const changePercent = amount > 0 ? (changeAmount / amount) * 100 : 0;
+  const money = (value: number) => formatKRW(value, { truncateTen: false });
 
   return (
     <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="inflation">
@@ -61,7 +72,7 @@ export function InflationCalculator() {
                 className="h-4 w-4 accent-primary-500"
               />
               <span className="text-sm font-medium">
-                미래가치: 오늘의 돈 → 미래에 얼마나 떨어질까?
+                미래 필요 금액: 같은 물건을 사는 데 필요한 돈
               </span>
             </label>
             <label className="flex items-center gap-3">
@@ -73,7 +84,7 @@ export function InflationCalculator() {
                 className="h-4 w-4 accent-primary-500"
               />
               <span className="text-sm font-medium">
-                현재가치: 미래의 돈 → 오늘 기준 얼마나 가치?
+                현재 구매력: 미래에 받을 돈의 오늘 기준 가치
               </span>
             </label>
             <label className="flex items-center gap-3">
@@ -85,7 +96,7 @@ export function InflationCalculator() {
                 className="h-4 w-4 accent-primary-500"
               />
               <span className="text-sm font-medium">
-                실질 구매력: 실제 사용 가능한 양이 얼마나 떨어질까?
+                보유 금액의 구매력: 같은 돈으로 나중에 얼마나 살까?
               </span>
             </label>
           </div>
@@ -94,7 +105,7 @@ export function InflationCalculator() {
           <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
             <NumberInput
               id="amount"
-              label={mode === 'futureValue' ? '현재 금액' : '미래 금액'}
+              label={amountLabel}
               value={amount}
               onChange={setAmount}
               unit="원"
@@ -126,7 +137,7 @@ export function InflationCalculator() {
               unit="%"
               min={0}
               max={20}
-              helpText="연간 평균 물가 상승률. 한국은행 목표: 2%"
+              helpText="기간 내내 같은 상승률을 가정합니다. 기본값 2%는 계산 가정입니다."
             />
           </div>
         </FormCard>
@@ -135,25 +146,23 @@ export function InflationCalculator() {
       </div>
       <div className="min-w-0 space-y-4">
         <ResultCard
-          title="화폐가치 분석"
-          heroLabel={mode === 'futureValue' ? '미래 화폐가치' : '현재 기준 가치'}
-          heroValue={formatKRW(result.resultAmount)}
+          title="물가 반영 결과"
+          heroLabel={resultLabel}
+          heroValue={money(result.resultAmount)}
           heroNote={
-            result.resultAmount < result.originalAmount
-              ? `${Math.round(((result.originalAmount - result.resultAmount) / result.originalAmount) * 100)}% 감소`
-              : result.resultAmount > result.originalAmount
-                ? `${Math.round(((result.resultAmount - result.originalAmount) / result.originalAmount) * 100)}% 증가`
-                : '동일'
+            mode === 'futureValue'
+              ? `현재 비용보다 ${changePercent.toFixed(2)}% 증가`
+              : `오늘의 금액으로 환산 · 구매력 ${changePercent.toFixed(2)}% 감소`
           }
           rows={[
             {
-              label: mode === 'futureValue' ? '현재 금액' : '미래 금액',
-              value: formatKRW(result.originalAmount),
+              label: amountLabel,
+              value: money(result.originalAmount),
               emphasize: false,
             },
             {
               label: '계산 기간',
-              value: `${result.annualEquivalent > 0 ? years : 0}년`,
+              value: `${years}년`,
               emphasize: false,
             },
             {
@@ -163,15 +172,18 @@ export function InflationCalculator() {
               emphasize: false,
             },
             {
-              label: '연간 평균',
-              value: `${result.annualEquivalent.toFixed(2)}%`,
-              note: '기간 동안의 평균 연간 인플레이션',
+              label: '연평균 금액 변화',
+              value: `${money(result.annualEquivalent)}/년`,
+              note: '금액 변화의 절댓값 ÷ 기간 (원 미만 버림). 연간 물가상승률이 아닙니다.',
               emphasize: false,
             },
             {
-              label: mode === 'futureValue' ? '미래 화폐가치' : '현재 기준 가치',
-              value: formatKRW(result.resultAmount),
-              note: mode === 'futureValue' ? '인플레이션 반영 후 실질 가치' : '오늘 기준 실질 가치',
+              label: mode === 'futureValue' ? '추가 필요 금액' : '구매력 감소 금액',
+              value: money(changeAmount),
+              note:
+                mode === 'futureValue'
+                  ? '미래 비용 − 현재 비용'
+                  : '입력 금액 − 오늘의 금액으로 환산한 구매력',
               emphasize: true,
             },
           ]}
@@ -183,10 +195,14 @@ export function InflationCalculator() {
           <h3 className="mb-3 font-semibold">계산 해석</h3>
           <p className="text-sm text-text-secondary">
             {mode === 'futureValue'
-              ? `오늘 ${formatKRW(amount)}이 ${years}년 후 연 ${annualInflationPercent}% 인플레이션하에서 ${formatKRW(result.resultAmount)} 수준의 구매력을 가집니다. 즉, 같은 물건을 사려면 ${formatKRW(result.originalAmount - result.resultAmount)}을 더 소비해야 합니다.`
+              ? `지금 ${money(amount)}인 같은 물건은 ${years}년 후 연 ${annualInflationPercent}% 물가 상승을 가정하면 ${money(result.resultAmount)}이 필요합니다. 현재보다 ${money(changeAmount)} 더 필요합니다. 돈 자체가 이만큼 불어나는 것은 아닙니다.`
               : mode === 'presentValue'
-                ? `${years}년 후 ${formatKRW(amount)}을 받는 것은, 오늘 기준 ${formatKRW(result.resultAmount)} 수준의 가치입니다. 은퇴 계획 시 필요한 자산을 역산할 때 유용합니다.`
-                : `오늘 ${formatKRW(amount)}으로 살 수 있는 물건을, ${years}년 후에는 약 ${formatKRW(result.resultAmount)}에만 살 수 있습니다. 구매력이 ${Math.round((1 - result.resultAmount / result.originalAmount) * 100)}% 떨어집니다.`}
+                ? `${years}년 후 받을 ${money(amount)}의 구매력은 오늘의 금액으로 ${money(result.resultAmount)}입니다. 이는 물가로 환산한 가치이며, 오늘 저축해야 할 금액이나 투자 수익을 뜻하지 않습니다.`
+                : `지금 가진 ${money(amount)}을 이자 없이 그대로 보유하면 ${years}년 후 잔액은 같지만, 구매력은 오늘의 금액으로 ${money(result.resultAmount)}입니다. 구매력이 ${changePercent.toFixed(2)}% 감소합니다.`}
+          </p>
+          <p className="mt-3 text-xs text-text-secondary">
+            입력한 물가상승률이 매년 일정하다고 가정합니다. 실제 CPI를 자동 조회하지 않으며,
+            이자·투자 수익·세금은 제외합니다. 금액 결과는 원 미만을 버립니다.
           </p>
         </div>
       </div>

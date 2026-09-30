@@ -11,6 +11,7 @@ export interface InflationResult {
   originalAmount: number;
   resultAmount: number;
   totalInflationPercent: number;
+  /** Absolute average annual amount change, in KRW/year (not a percentage). */
   annualEquivalent: number;
   warnings: string[];
 }
@@ -54,9 +55,8 @@ export function calculateInflation(input: InflationInput): InflationResult {
     }
   }
 
-  const totalInflationPercent = years > 0
-    ? (Math.pow(1 + inflationPercent / 100, years) - 1) * 100
-    : 0;
+  const totalInflationPercent =
+    years > 0 ? (Math.pow(1 + inflationPercent / 100, years) - 1) * 100 : 0;
 
   let annualEquivalent = 0;
   if (years > 0) {
