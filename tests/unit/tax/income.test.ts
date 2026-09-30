@@ -13,10 +13,42 @@ import {
   calculateHealth,
   calculateLongTermCare,
   calculateEmployment,
+  getPensionBounds,
+  estimateMonthlyIncomeTax,
   calculateTakeHome,
   inferGrossFromNet,
 } from '@/lib/tax/income';
 import { INCOME_TAX_BRACKETS } from '@/lib/constants/tax-rates-2026';
+
+describe('검색 가이드 보험료 예시 회귀', () => {
+  it.each([
+    [0, 0],
+    [2_999_999, 26_999],
+    [3_000_000, 27_000],
+    [3_000_001, 27_000],
+  ])('고용보험 %i원의 원 단위 경계는 %i원', (income, expected) => {
+    expect(calculateEmployment(income)).toBe(expected);
+  });
+  it.each([1, 6, 7, 12])(
+    '2026년 %i월 월급 300만원 보험료는 같은 연중 요율을 적용한다',
+    (calculationMonth) => {
+      const result = calculateTakeHome({
+        wageType: 'monthly',
+        wageAmount: 3_000_000,
+        severance: 'separate',
+        nontaxableMonthly: 0,
+        dependents: 1,
+        children: 0,
+        calculationMonth,
+      });
+      expect(result.pension).toBe(142_500);
+      expect(result.health).toBe(107_850);
+      expect(result.longTermCare).toBe(14_171);
+      expect(result.employment).toBe(27_000);
+      expect(result.totalInsuranceDeductions).toBe(291_521);
+    },
+  );
+});
 
 describe('calculateProgressiveTax', () => {
   it('0원 → 0원', () => {
@@ -153,31 +185,61 @@ describe('calculateEarnedIncomeDeduction', () => {
 });
 
 describe('calculatePension (국민연금)', () => {
-  it('월소득 300만 → 4.5% = 13.5만', () => {
-    expect(calculatePension(3_000_000)).toBe(135_000);
+  it('2026년 월소득 300만 → 4.75% = 142,500원', () => {
+    expect(calculatePension(3_000_000)).toBe(142_500);
   });
 
-  it('월소득 상한 초과 (1000만) → 637만 × 4.5%', () => {
-    expect(calculatePension(10_000_000)).toBe(Math.floor(6_370_000 * 0.045));
+  it('7월 이후 월소득 상한 초과 → 659만 × 4.75%', () => {
+    expect(calculatePension(10_000_000)).toBe(313_025);
   });
 
-  it('월소득 하한 미만 (30만) → 40만 × 4.5%', () => {
-    expect(calculatePension(300_000)).toBe(Math.floor(400_000 * 0.045));
+  it('7월 이후 월소득 하한 미만 → 41만 × 4.75%', () => {
+    expect(calculatePension(300_000)).toBe(19_475);
+  });
+
+  it('1~6월 상하한과 7월 전환을 적용한다', () => {
+    expect(getPensionBounds(6)).toEqual({ lowerMonthly: 400_000, upperMonthly: 6_370_000 });
+    expect(getPensionBounds(7)).toEqual({ lowerMonthly: 410_000, upperMonthly: 6_590_000 });
+    expect(calculatePension(300_000, 6)).toBe(19_000);
+    expect(calculatePension(10_000_000, 6)).toBe(302_575);
+  });
+
+  it.each([1, 6, 7, 12])('월 %i 상하한의 안팎과 기준소득 천원미만 절사', (month) => {
+    const { lowerMonthly, upperMonthly } = getPensionBounds(month);
+    const minimum = Math.floor(lowerMonthly * 0.0475);
+    const maximum = Math.floor(upperMonthly * 0.0475);
+    expect(calculatePension(lowerMonthly - 1, month)).toBe(minimum);
+    expect(calculatePension(lowerMonthly, month)).toBe(minimum);
+    expect(calculatePension(lowerMonthly + 999, month)).toBe(minimum);
+    expect(calculatePension(upperMonthly - 1, month)).toBe(
+      Math.floor((upperMonthly - 1_000) * 0.0475),
+    );
+    expect(calculatePension(upperMonthly, month)).toBe(maximum);
+    expect(calculatePension(upperMonthly + 1, month)).toBe(maximum);
+    expect(calculatePension(3_000_999, month)).toBe(142_500);
+  });
+
+  it('0원은 무급여 추정, 잘못된 값·적용월은 거부한다', () => {
+    expect(calculatePension(0)).toBe(0);
+    for (const amount of [-1, NaN, Infinity])
+      expect(() => calculatePension(amount)).toThrow(RangeError);
+    for (const month of [0, 13, 6.5, NaN])
+      expect(() => getPensionBounds(month)).toThrow(RangeError);
   });
 });
 
 describe('calculateHealth / LongTermCare / Employment', () => {
-  it('건강보험: 월 300만 × 3.545%', () => {
-    expect(calculateHealth(3_000_000)).toBe(Math.floor(3_000_000 * 0.03545));
+  it('건강보험: 월 300만 × 3.595%', () => {
+    expect(calculateHealth(3_000_000)).toBe(107_850);
   });
 
-  it('장기요양: 건보료 × 12.95%', () => {
+  it('장기요양: 건보료 × 13.14%', () => {
     const health = calculateHealth(3_000_000);
-    expect(calculateLongTermCare(health)).toBe(Math.floor(health * 0.1295));
+    expect(calculateLongTermCare(health)).toBe(14_171);
   });
 
   it('고용보험: 월 300만 × 0.9%', () => {
-    expect(calculateEmployment(3_000_000)).toBe(Math.floor(3_000_000 * 0.009));
+    expect(calculateEmployment(3_000_000)).toBe(27_000);
   });
 });
 
@@ -236,8 +298,9 @@ describe('calculateTakeHome — 통합 시나리오', () => {
       dependents: 1,
       children: 0,
     });
-    // 최소 보험료(하한)는 발생하므로 음수일 수도 있지만 MVP 에서는 수치 확인만
     expect(result.monthlyGrossIncome).toBe(0);
+    expect(result.monthlyNetIncome).toBe(0);
+    expect(result.pension).toBe(0);
   });
 
   it('연봉에 퇴직금 포함 시 실수령액이 별도일 때보다 낮음', () => {
@@ -281,8 +344,7 @@ describe('calculateTakeHome — 통합 시나리오', () => {
       dependents: 1,
       children: 0,
     });
-    // 월급 약 833만, 상한 637만 적용 → 연금은 637만 × 4.5%
-    expect(result.pension).toBe(Math.floor(6_370_000 * 0.045));
+    expect(result.pension).toBe(313_025);
   });
 });
 
@@ -329,5 +391,63 @@ describe('inferGrossFromNet (역산)', () => {
     const noChildren = inferGrossFromNet(3_000_000, { ...baseOptions, children: 0 });
     const withChildren = inferGrossFromNet(3_000_000, { ...baseOptions, children: 2 });
     expect(withChildren).toBeLessThanOrEqual(noChildren);
+  });
+
+  it('역산에서도 적용월을 보존한다', () => {
+    for (const calculationMonth of [6, 7]) {
+      const options = { ...baseOptions, calculationMonth };
+      const annualGross = inferGrossFromNet(6_000_000, options);
+      const result = calculateTakeHome({
+        wageType: 'yearly',
+        wageAmount: annualGross,
+        severance: 'separate',
+        ...options,
+      });
+      expect(result.calculationMonth).toBe(calculationMonth);
+      expect(Math.abs(result.monthlyNetIncome - 6_000_000)).toBeLessThan(1_000);
+    }
+  });
+});
+
+describe('2026 급여 산식 입력·세액 경계', () => {
+  const base = {
+    wageType: 'monthly' as const,
+    wageAmount: 3_000_000,
+    severance: 'separate' as const,
+    nontaxableMonthly: 0,
+    dependents: 1,
+    children: 0,
+    calculationMonth: 7,
+  };
+
+  it('비과세가 월급보다 커도 월급까지만 적용한다', () => {
+    const result = calculateTakeHome({ ...base, nontaxableMonthly: 4_000_000 });
+    expect(result.monthlyNontaxable).toBe(3_000_000);
+    expect(result.monthlyTaxableIncome).toBe(0);
+    expect(result.monthlyNetIncome).toBe(3_000_000);
+  });
+
+  it.each([-1, NaN, Infinity])('유효하지 않은 급여 %s를 거부한다', (wageAmount) => {
+    expect(() => calculateTakeHome({ ...base, wageAmount })).toThrow(RangeError);
+  });
+
+  it('잘못된 비과세·가족 수를 거부한다', () => {
+    expect(() => calculateTakeHome({ ...base, nontaxableMonthly: NaN })).toThrow(RangeError);
+    expect(() => calculateTakeHome({ ...base, dependents: 1.5 })).toThrow(RangeError);
+    expect(() => calculateTakeHome({ ...base, children: -1 })).toThrow(RangeError);
+  });
+
+  it('비과세 제외 총급여로 근로소득공제를 산정한다 (소득세법 §47)', () => {
+    // 3000만 - 비과세240만 - 공제939만 - 기본공제150만 = 과세표준1671만
+    // (1671만 ×15% -126만) /12 = 103875 → 103870
+    expect(estimateMonthlyIncomeTax(30_000_000, 2_400_000, 1, 0)).toBe(103_870);
+  });
+
+  it('공제대상 자녀 0~3명에 연 25만·55만·95만원 세액공제 적용', () => {
+    expect(estimateMonthlyIncomeTax(60_000_000, 0, 1, 0)).toBe(466_870);
+    expect(estimateMonthlyIncomeTax(60_000_000, 0, 1, 1)).toBe(446_040);
+    expect(estimateMonthlyIncomeTax(60_000_000, 0, 1, 2)).toBe(421_040);
+    expect(estimateMonthlyIncomeTax(60_000_000, 0, 1, 3)).toBe(387_700);
+    expect(estimateMonthlyIncomeTax(5_000_000, 0, 1, 3)).toBe(0);
   });
 });

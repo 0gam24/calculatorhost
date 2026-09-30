@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 양도소득세 계산기 (MVP #5)
  *
@@ -12,7 +15,7 @@
  * - 미지원: 토지, 입주권, 기타 (전문가 상담 안내)
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -37,27 +40,49 @@ const PRICE_UNIT_BUTTONS = [
 
 export function TransferTaxCalculator() {
   // ─── 케이스 선택 ───
-  const [caseType, setCaseType] = useState<TransferCaseType>('general');
+  const [caseType, setCaseType] = useCalculatorState<TransferCaseType>(
+    'capital-gains-tax:caseType',
+    'general',
+  );
 
   // ─── 자산 종류 ───
-  const [assetType, setAssetType] = useState<TransferAssetType>('house');
+  const [assetType, setAssetType] = useCalculatorState<TransferAssetType>(
+    'capital-gains-tax:assetType',
+    'house',
+  );
 
   // ─── 금액 ───
-  const [salePrice, setSalePrice] = useState(600_000_000);
-  const [acquisitionPrice, setAcquisitionPrice] = useState(500_000_000);
-  const [necessaryExpenses, setNecessaryExpenses] = useState(0);
+  const [salePrice, setSalePrice] = useCalculatorState('capital-gains-tax:salePrice', 600_000_000);
+  const [acquisitionPrice, setAcquisitionPrice] = useCalculatorState(
+    'capital-gains-tax:acquisitionPrice',
+    500_000_000,
+  );
+  const [necessaryExpenses, setNecessaryExpenses] = useCalculatorState(
+    'capital-gains-tax:necessaryExpenses',
+    0,
+  );
 
   // ─── 기간 ───
-  const [holdingYears, setHoldingYears] = useState(5);
-  const [residentYears, setResidentYears] = useState(3);
-  const [householdHouseCount, setHouseholdHouseCount] = useState<1 | 2 | 3>(1);
+  const [holdingYears, setHoldingYears] = useCalculatorState('capital-gains-tax:holdingYears', 5);
+  const [residentYears, setResidentYears] = useCalculatorState(
+    'capital-gains-tax:residentYears',
+    3,
+  );
+  const [householdHouseCount, setHouseholdHouseCount] = useCalculatorState<1 | 2 | 3>(
+    'capital-gains-tax:householdHouseCount',
+    1,
+  );
 
   // ─── 체크박스 ───
-  const [isShortTerm, setIsShortTerm] = useState(false);
-  const [isSubscriptionRightShort, setIsSubscriptionRightShort] = useState(false);
+  const [isShortTerm, setIsShortTerm] = useCalculatorState('capital-gains-tax:isShortTerm', false);
+  const [isSubscriptionRightShort, setIsSubscriptionRightShort] = useCalculatorState(
+    'capital-gains-tax:isSubscriptionRightShort',
+    false,
+  );
 
   // ─── 조정지역 중과 ───
-  const [adjustedAreaSurcharge, setAdjustedAreaSurcharge] = useState<AdjustedAreaSurcharge>('none');
+  const [adjustedAreaSurcharge, setAdjustedAreaSurcharge] =
+    useCalculatorState<AdjustedAreaSurcharge>('capital-gains-tax:adjustedAreaSurcharge', 'none');
 
   // ─── 계산 실행 ───
   const result = useMemo(
@@ -102,7 +127,7 @@ export function TransferTaxCalculator() {
   const showSubscriptionRightShortCheckbox = assetType === 'subscription-right';
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="capital-gains-tax">
       <FormCard title="입력">
         {/* 케이스 유형 */}
         <RadioGroup<TransferCaseType>
@@ -141,6 +166,7 @@ export function TransferTaxCalculator() {
           unitButtons={PRICE_UNIT_BUTTONS}
           max={10_000_000_000}
           debounceMs={150}
+          unit="원"
         />
 
         {/* 취득가액 */}
@@ -153,6 +179,7 @@ export function TransferTaxCalculator() {
           unitButtons={PRICE_UNIT_BUTTONS}
           max={10_000_000_000}
           debounceMs={150}
+          unit="원"
         />
 
         {/* 필요경비 */}
@@ -166,6 +193,7 @@ export function TransferTaxCalculator() {
           unitButtons={PRICE_UNIT_BUTTONS}
           max={1_000_000_000}
           debounceMs={150}
+          unit="원"
         />
 
         {/* 보유기간 */}
@@ -178,6 +206,8 @@ export function TransferTaxCalculator() {
           helpText="소수점 1자리까지 입력 가능 (예: 2.5년)"
           max={100}
           debounceMs={150}
+          integer
+          unit="년"
         />
 
         {/* 거주기간, 1세대1주택 선택 시만 노출 */}
@@ -191,6 +221,8 @@ export function TransferTaxCalculator() {
             helpText="1세대1주택 장기보유특별공제 계산용. 소수점 1자리까지 입력 가능"
             max={100}
             debounceMs={150}
+            integer
+            unit="년"
           />
         )}
 
@@ -220,10 +252,7 @@ export function TransferTaxCalculator() {
               className="h-5 w-5 rounded border-border-base text-primary-500 focus:ring-2 focus:ring-primary-500/30"
               aria-label="분양권 1년 미만"
             />
-            <label
-              htmlFor="subscription-short"
-              className="text-sm font-medium text-text-primary"
-            >
+            <label htmlFor="subscription-short" className="text-sm font-medium text-text-primary">
               분양권 1년 미만
             </label>
           </div>
@@ -342,6 +371,6 @@ export function TransferTaxCalculator() {
           </div>
         )}
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

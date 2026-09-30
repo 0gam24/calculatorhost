@@ -149,7 +149,7 @@ describe('calculateFreelancerTax', () => {
   });
 
   describe('케이스 3: 자녀세액공제', () => {
-    it('자녀 1명 세액공제 (15만원)', () => {
+    it('자녀 1명 세액공제 (25만원)', () => {
       const input: FreelancerInput = {
         annualRevenue: 50_000_000,
         expenseMethod: 'simpleRate',
@@ -158,11 +158,11 @@ describe('calculateFreelancerTax', () => {
       };
 
       const result = calculateFreelancerTax(input);
-      expect(result.childTaxCredit).toBe(150_000);
+      expect(result.childTaxCredit).toBe(250_000);
       expect(result.finalTax).toBeLessThan(result.grossTax);
     });
 
-    it('자녀 2명 세액공제 (35만원 = 15만 + 20만)', () => {
+    it('자녀 2명 세액공제 (55만원 = 25만 + 30만)', () => {
       const input: FreelancerInput = {
         annualRevenue: 50_000_000,
         expenseMethod: 'simpleRate',
@@ -171,11 +171,11 @@ describe('calculateFreelancerTax', () => {
       };
 
       const result = calculateFreelancerTax(input);
-      expect(result.childTaxCredit).toBe(150_000 + 200_000);
-      expect(result.childTaxCredit).toBe(350_000);
+      expect(result.childTaxCredit).toBe(250_000 + 300_000);
+      expect(result.childTaxCredit).toBe(550_000);
     });
 
-    it('자녀 3명 세액공제 (55만원 = 15만 + 20만 + 40만)', () => {
+    it('자녀 3명 세액공제 (95만원 = 25만 + 30만 + 40만)', () => {
       const input: FreelancerInput = {
         annualRevenue: 50_000_000,
         expenseMethod: 'simpleRate',
@@ -184,8 +184,8 @@ describe('calculateFreelancerTax', () => {
       };
 
       const result = calculateFreelancerTax(input);
-      expect(result.childTaxCredit).toBe(150_000 + 200_000 + 400_000);
-      expect(result.childTaxCredit).toBe(750_000);
+      expect(result.childTaxCredit).toBe(250_000 + 300_000 + 400_000);
+      expect(result.childTaxCredit).toBe(950_000);
     });
   });
 
@@ -453,7 +453,7 @@ describe('calculateFreelancerTax', () => {
           ...input,
           nationalPensionPaid: 0,
           healthInsurancePaid: 0,
-        }).taxableBase
+        }).taxableBase,
       );
     });
   });

@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -35,17 +35,14 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: '청약가점 계산기 2026, 84점 만점',
-    description:
-      '무주택 기간·부양가족·청약통장으로 청약가점과 당첨 확률을 계산합니다.',
+    description: '무주택 기간·부양가족·청약통장으로 청약가점과 당첨 확률을 계산합니다.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
     title: '청약가점 계산기 2026',
-    description:
-      '청약가점 즉시 계산: 무주택 기간, 부양가족, 청약통장 기간으로 당첨 가능성 판단.',
+    description: '청약가점 즉시 계산: 무주택 기간, 부양가족, 청약통장 기간으로 당첨 가능성 판단.',
   },
 };
 
@@ -127,7 +124,8 @@ export default function HousingSubscriptionPage() {
   });
   const howToLd = buildHowToJsonLd({
     name: '청약가점 계산기 사용 방법',
-    description: '무주택 기간, 부양가족, 청약통장 기간을 입력하여 청약가점을 계산하는 단계별 가이드',
+    description:
+      '무주택 기간, 부양가족, 청약통장 기간을 입력하여 청약가점을 계산하는 단계별 가이드',
     steps: [
       { name: '무주택 기간 입력', text: '오늘 기준 무주택으로 경과한 년·월을 입력합니다.' },
       { name: '부양가족 입력', text: '본인 포함 직계 부양가족 수를 입력합니다.' },
@@ -137,7 +135,7 @@ export default function HousingSubscriptionPage() {
     ],
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -174,28 +172,39 @@ export default function HousingSubscriptionPage() {
       />
       <Header />
       <div className="flex flex-1 flex-col lg:flex-row">
-        <Sidebar />
-        <main id="main-content" className="flex-1 px-4 py-6 sm:px-6 lg:px-8">
-          <article className="mx-auto max-w-4xl">
-            {/* 헤더 */}
-            <Breadcrumb
-              items={[
-                { name: '홈', href: '/' },
-                { name: '부동산', href: '/category/real-estate/' },
-                { name: '청약가점' },
-              ]}
-            />
-            <h1 className="text-4xl font-bold tracking-tight">
-              청약가점 계산기 2026
-            </h1>
-            <p className="mt-4 text-lg text-text-secondary">
-              무주택 기간, 부양가족 수, 청약통장 가입 기간으로 청약가점을
-              즉시 계산하세요. 총 84점 만점 기준으로 당신의 청약 가능성을
-              판단할 수 있습니다.
-            </p>
-            <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-
-            {/* Structured Summary */}
+        <main
+          id="main-content"
+          className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+        >
+          <CalculatorPageContent
+            intro={
+              <header>
+                <Breadcrumb
+                  items={[
+                    { name: '홈', href: '/' },
+                    { name: '부동산', href: '/category/real-estate/' },
+                    { name: '청약가점' },
+                  ]}
+                />
+                <h1 className="text-4xl font-bold tracking-tight">청약가점 계산기 2026</h1>
+                <p className="mt-4 text-lg text-text-secondary">
+                  무주택 기간과 가족 조건으로 청약 가점을 확인하세요.
+                </p>
+                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+              </header>
+            }
+            calculator={<HousingSubscriptionCalculator />}
+            related={
+              <>
+                <RelatedCalculators items={RELATED} />
+              </>
+            }
+            faq={
+              <>
+                <FaqSection items={FAQ_ITEMS} />
+              </>
+            }
+          >
             <StructuredSummary
               definition="청약가점은 주택청약 모집 시 가점제 방식에서 당첨자를 선정하기 위한 점수입니다. 무주택 기간(32점), 부양가족 수(35점), 청약통장 가입 기간(17점)으로 총 84점 만점이며, 점수가 높을수록 당첨 확률이 올라갑니다."
               table={{
@@ -213,62 +222,40 @@ export default function HousingSubscriptionPage() {
                 '무주택 기간, 부양가족 수, 통장 가입 기간 3가지로 구성됩니다.',
               ]}
             />
-
-            {/* AD-1 헤더 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* 계산기 폼 */}
-            <HousingSubscriptionCalculator />
-
-            {/* AD-2 중간 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* FAQ */}
-            <FaqSection items={FAQ_ITEMS} />
-
-            {/* 청약가점 설명 */}
+            <div className="my-8"></div>
+            <div className="my-8"></div>
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">청약가점이란 무엇인가요?</h2>
               <p>
-                청약가점은 주택 청약 모집 때 "가점제"로 진행될 때 당첨자를 선정하기
-                위해 사용하는 점수입니다. 국토교통부가 정한 규칙에 따라, 무주택
-                기간, 부양가족 수, 청약통장 가입 기간 등을 점수화하며, 총 84점
-                만점입니다. 같은 단지의 청약에서 가점이 높을수록 당첨 확률이
-                올라갑니다.
+                청약가점은 주택 청약 모집 때 "가점제"로 진행될 때 당첨자를 선정하기 위해 사용하는
+                점수입니다. 국토교통부가 정한 규칙에 따라, 무주택 기간, 부양가족 수, 청약통장 가입
+                기간 등을 점수화하며, 총 84점 만점입니다. 같은 단지의 청약에서 가점이 높을수록 당첨
+                확률이 올라갑니다.
               </p>
               <p>
-                청약은 크게 두 가지 방식이 있습니다: (1) 가점제(85%), 점수 높은
-                사람부터 당첨, (2) 추첨제(15%), 모두 동등한 확률로 복권. 같은
-                단지라도 이 두 방식이 분리되어 모집되므로, 당신의 가점 순위를
-                미리 파악하는 것이 중요합니다.
+                청약은 크게 두 가지 방식이 있습니다: (1) 가점제(85%), 점수 높은 사람부터 당첨, (2)
+                추첨제(15%), 모두 동등한 확률로 복권. 같은 단지라도 이 두 방식이 분리되어
+                모집되므로, 당신의 가점 순위를 미리 파악하는 것이 중요합니다.
               </p>
             </section>
-
-            {/* 가점 구성 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">청약가점 구성 (총 84점)</h2>
               <div className="space-y-4">
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-primary-500 mb-3">
+                  <h3 className="mb-3 font-semibold text-primary-500">
                     1. 무주택 기간 (최대 32점)
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>1년 미만: 2점</li>
                     <li>1년 이상 2년 미만: 4점</li>
                     <li>2년 이상: 매년 2점씩 증가</li>
-                    <li className="font-semibold text-text-primary">
-                      15년 이상: 32점 (최대값)
-                    </li>
+                    <li className="font-semibold text-text-primary">15년 이상: 32점 (최대값)</li>
                   </ul>
-                  <p className="mt-3 text-xs text-text-secondary">
-                    주의: 계산 기준일은 청약신청일
-                  </p>
+                  <p className="mt-3 text-xs text-text-secondary">주의: 계산 기준일은 청약신청일</p>
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-secondary-500 mb-3">
+                  <h3 className="mb-3 font-semibold text-secondary-500">
                     2. 부양가족 수 (최대 35점)
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
@@ -278,9 +265,7 @@ export default function HousingSubscriptionPage() {
                     <li>3명: 20점</li>
                     <li>4명: 25점</li>
                     <li>5명: 30점</li>
-                    <li className="font-semibold text-text-primary">
-                      6명 이상: 35점 (최대값)
-                    </li>
+                    <li className="font-semibold text-text-primary">6명 이상: 35점 (최대값)</li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
                     주의: 포함 범위는 본인, 배우자, 직계비속
@@ -288,16 +273,14 @@ export default function HousingSubscriptionPage() {
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <h3 className="font-semibold text-highlight-500 mb-3">
+                  <h3 className="mb-3 font-semibold text-highlight-500">
                     3. 청약통장 가입 기간 (최대 17점)
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>6개월 미만: 1점</li>
                     <li>6개월 이상 1년 미만: 2점</li>
                     <li>1년 이상: 2 + (년수)점</li>
-                    <li className="font-semibold text-text-primary">
-                      15년 이상: 17점 (최대값)
-                    </li>
+                    <li className="font-semibold text-text-primary">15년 이상: 17점 (최대값)</li>
                   </ul>
                   <p className="mt-3 text-xs text-text-secondary">
                     주의: 월 2만원 이상 납입 필수 (12개월 이후 청약 가능)
@@ -305,55 +288,47 @@ export default function HousingSubscriptionPage() {
                 </div>
               </div>
             </section>
-
-            {/* 가점 전략 */}
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">청약 당첨 전략</h2>
               <div className="space-y-4">
                 <div className="rounded-lg border-l-4 border-primary-500 bg-bg-card p-4">
                   <h3 className="font-semibold">전략 1: 시간 벌기</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    가장 확실한 방법입니다. 무주택 기간과 청약통장 기간은 시간이
-                    지나면 자동으로 올라갑니다. 1년마다 무주택 2점 + 청약통장 1점 =
-                    3점씩 올라갑니다. 3년 버티면 9점 상승입니다.
+                    가장 확실한 방법입니다. 무주택 기간과 청약통장 기간은 시간이 지나면 자동으로
+                    올라갑니다. 1년마다 무주택 2점 + 청약통장 1점 = 3점씩 올라갑니다. 3년 버티면 9점
+                    상승입니다.
                   </p>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-secondary-500 bg-bg-card p-4">
                   <h3 className="font-semibold">전략 2: 가족 구성 변경</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    부양가족을 증가시키는 것입니다. 자녀 출산/입양 시 부양가족 1명
-                    추가마다 5점씩 상승합니다. 부모와 함께 거주 시 부양 인정을 위한
-                    서류(건강보험, 가족관계증명서 등) 준비해두세요.
+                    부양가족을 증가시키는 것입니다. 자녀 출산/입양 시 부양가족 1명 추가마다 5점씩
+                    상승합니다. 부모와 함께 거주 시 부양 인정을 위한 서류(건강보험, 가족관계증명서
+                    등) 준비해두세요.
                   </p>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-highlight-500 bg-bg-card p-4">
                   <h3 className="font-semibold">전략 3: 단지 선택</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    같은 지역이라도 신규 단지는 경쟁이 치열하고, 기존 단지는 상대적으로
-                    쉬울 수 있습니다. 청약 통계를 보고 당신의 가점 순위를 파악한 후,
-                    당첨 확률이 높은 단지를 선택하세요.
+                    같은 지역이라도 신규 단지는 경쟁이 치열하고, 기존 단지는 상대적으로 쉬울 수
+                    있습니다. 청약 통계를 보고 당신의 가점 순위를 파악한 후, 당첨 확률이 높은 단지를
+                    선택하세요.
                   </p>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-danger-500 bg-bg-card p-4">
                   <h3 className="font-semibold">주의: 일시적 2주택 함정</h3>
                   <p className="mt-2 text-sm text-text-secondary">
-                    새로 주택을 사더라도 기존 주택을 팔 때까지 일시적으로 2주택 상태가
-                    됩니다. 이 기간 동안 다른 청약은 불가하니 주의하세요. 또한 배우자나
-                    자녀 명의의 주택도 "부양 관계" 때문에 청약 자격 판단에 영향을 줄 수
-                    있으므로 미리 확인하세요.
+                    새로 주택을 사더라도 기존 주택을 팔 때까지 일시적으로 2주택 상태가 됩니다. 이
+                    기간 동안 다른 청약은 불가하니 주의하세요. 또한 배우자나 자녀 명의의 주택도
+                    "부양 관계" 때문에 청약 자격 판단에 영향을 줄 수 있으므로 미리 확인하세요.
                   </p>
                 </div>
               </div>
             </section>
-
-            {/* AD-4 인피드 광고 */}
-            <div className="my-8">
-            </div>
-
-            {/* 청약 정보 자료 */}
+            <div className="my-8"></div>
             <section className="mt-12 space-y-6">
               <h2 className="text-2xl font-bold">관련 정보 자료</h2>
               <ul className="list-inside list-disc space-y-2 text-text-secondary">
@@ -392,41 +367,59 @@ export default function HousingSubscriptionPage() {
                 </li>
               </ul>
             </section>
-
-            {/* 관련 계산기 */}
-            <RelatedCalculators items={RELATED} />
-
-            {/* 업데이트 로그 */}
             <section className="mt-12 border-t border-border-base pt-6">
               <h2 className="text-lg font-semibold">업데이트 로그</h2>
               <ul className="mt-3 space-y-2 text-sm text-text-secondary">
                 <li>2026-04-24: 초판 발행 (2026 가점제 기준)</li>
               </ul>
             </section>
-
-            {/* 출처·면책 */}
-            <section className="mt-6 border-t border-border-base pt-6 mb-6">
-              <p className="text-xs text-text-secondary mb-2">
-                <strong>법적 근거</strong>: 주택공급에 관한 규칙 §27(가점제 항목·배점), §28(무주택 기간 산정), §29(부양가족 인정 범위). 공식 출처: <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">청약홈(applyhome.co.kr)</a>, <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">LH(한국토지주택공사)</a>, <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부</a> 주택공급규칙.
+            <section className="mb-6 mt-6 border-t border-border-base pt-6">
+              <p className="mb-2 text-xs text-text-secondary">
+                <strong>법적 근거</strong>: 주택공급에 관한 규칙 §27(가점제 항목·배점), §28(무주택
+                기간 산정), §29(부양가족 인정 범위). 공식 출처:{' '}
+                <a
+                  href="https://www.applyhome.co.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  청약홈(applyhome.co.kr)
+                </a>
+                ,{' '}
+                <a
+                  href="https://www.lh.or.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  LH(한국토지주택공사)
+                </a>
+                ,{' '}
+                <a
+                  href="https://www.molit.go.kr"
+                  target="_blank"
+                  rel="noopener noreferrer nofollow"
+                  className="text-primary-600 underline dark:text-primary-500"
+                >
+                  국토교통부
+                </a>{' '}
+                주택공급규칙.
               </p>
             </section>
-
-            {/* 면책조항 */}
             <section className="mt-6 border-t border-border-base pt-6">
               <p className="text-xs text-text-secondary">
-                본 계산기는 참고용입니다. 실제 청약가점은 당첨 당시 국토교통부 기준에
-                따라 재확인됩니다. 청약 자격, 부양가족 인정 범위, 무주택 여부 등은
-                복잡한 규칙이 있으니, 청약홈에서 "자격확인"을 통해 정확히 확인하세요.
-                본 서비스는 법률·재정 조언이 아닙니다.
+                본 계산기는 참고용입니다. 실제 청약가점은 당첨 당시 국토교통부 기준에 따라
+                재확인됩니다. 청약 자격, 부양가족 인정 범위, 무주택 여부 등은 복잡한 규칙이 있으니,
+                청약홈에서 "자격확인"을 통해 정확히 확인하세요. 본 서비스는 법률·재정 조언이
+                아닙니다.
               </p>
             </section>
-          </article>
+          </CalculatorPageContent>
         </main>
 
         {/* AD-3 우측 스티키 광고 (lg+ 이상) */}
         <aside className="hidden w-80 bg-bg-base p-4 lg:block">
-          <div className="sticky top-[5rem]">
-          </div>
+          <div className="sticky top-[5rem]"></div>
         </aside>
       </div>
       <Footer />

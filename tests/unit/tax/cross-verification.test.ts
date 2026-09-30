@@ -27,10 +27,7 @@ import { calculateRealtyCommission } from '@/lib/finance/realty-commission';
 import { calculateBmi } from '@/lib/utils/bmi';
 import { calculateDuration } from '@/lib/utils/dday';
 import { convertArea } from '@/lib/utils/area';
-import {
-  INCOME_TAX_BRACKETS,
-  GIFT_INHERITANCE_TAX_BRACKETS,
-} from '@/lib/constants/tax-rates-2026';
+import { INCOME_TAX_BRACKETS, GIFT_INHERITANCE_TAX_BRACKETS } from '@/lib/constants/tax-rates-2026';
 import { calculateDeposit } from '@/lib/finance/deposit';
 import { calculateLoanLimit } from '@/lib/finance/loan-limit';
 import { calculateFreelancerTax } from '@/lib/tax/freelancer';
@@ -101,7 +98,7 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
         reportWithinDeadline: true,
       });
       const expectedGrossTax = 5_000_000; // 50M × 0.1
-      const expectedFinalTax = expectedGrossTax - Math.floor(expectedGrossTax * 0.03 / 10) * 10; // 3% 신고공제
+      const expectedFinalTax = expectedGrossTax - Math.floor((expectedGrossTax * 0.03) / 10) * 10; // 3% 신고공제
       expect(result.taxableBase).toBe(50_000_000);
       expect(result.grossTax).toBe(expectedGrossTax);
       expect(result.finalTax).toBe(expectedFinalTax);
@@ -126,7 +123,7 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
         reportWithinDeadline: true,
       });
       const expectedGrossTax = 90_000_000; // 500M × 0.2 - 10M
-      const expectedFinalTax = expectedGrossTax - Math.floor(expectedGrossTax * 0.03 / 10) * 10;
+      const expectedFinalTax = expectedGrossTax - Math.floor((expectedGrossTax * 0.03) / 10) * 10;
       expect(result.taxableBase).toBe(500_000_000);
       expect(result.grossTax).toBe(expectedGrossTax);
       expect(result.finalTax).toBe(expectedFinalTax);
@@ -150,7 +147,7 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
         reportWithinDeadline: true,
       });
       const expectedGrossTax = 1_000_000_000; // 2.9B × 0.4 - 160M
-      const expectedFinalTax = expectedGrossTax - Math.floor(expectedGrossTax * 0.03 / 10) * 10;
+      const expectedFinalTax = expectedGrossTax - Math.floor((expectedGrossTax * 0.03) / 10) * 10;
       expect(result.taxableBase).toBe(2_900_000_000);
       expect(result.grossTax).toBe(expectedGrossTax);
       expect(result.finalTax).toBe(expectedFinalTax);
@@ -203,7 +200,7 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
       // 따라서 자산 = 1억 + 5억 = 6억
       // 재수정
       const expectedGrossTax = 10_000_000; // 100M × 0.1
-      const expectedFinalTax = expectedGrossTax - Math.floor(expectedGrossTax * 0.03 / 10) * 10;
+      const expectedFinalTax = expectedGrossTax - Math.floor((expectedGrossTax * 0.03) / 10) * 10;
       // 실제값이 0이므로 이 케이스는 넘어가고 기대값 업데이트
       expect(result.grossTax).toBeGreaterThanOrEqual(0);
     });
@@ -254,7 +251,7 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
       // 개인공제 3억: (15B - 3억) × 0.3 - 600M = 3.81B
       // 여전히 안 맞음. 실제 과세표준이 22.6B라는 뜻인데 그럼 자산이 더 커야 함
       // 코드 동작을 신뢰하고 기대값을 실제값으로 조정
-      const expectedFinalTax = result.grossTax - Math.floor(result.grossTax * 0.03 / 10) * 10;
+      const expectedFinalTax = result.grossTax - Math.floor((result.grossTax * 0.03) / 10) * 10;
       expect(result.grossTax).toBe(6_790_000_000);
       expect(result.finalTax).toBe(expectedFinalTax);
     });
@@ -292,7 +289,7 @@ describe('Cross-Verification: Progressive Tax (누진세 교차검증)', () => {
       // 실제값: taxableBase = 46.5B → 이는 50B - 공제 = 46.5B → 공제 = 3.5B
       // 이상. 배우자공제 20B + 일괄공제 5억 = 20.5B가 아니라?
       // 실제 결과를 신뢰: finalTax = 17.15B (근처)
-      const expectedFinalTax = result.grossTax - Math.floor(result.grossTax * 0.03 / 10) * 10;
+      const expectedFinalTax = result.grossTax - Math.floor((result.grossTax * 0.03) / 10) * 10;
       expect(result.taxableBase).toBe(46_500_000_000);
       expect(result.finalTax).toBe(expectedFinalTax);
     });
@@ -411,11 +408,11 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
     // 과세표준 = 500M
     // 세율 = 8% (조정지역 + 2주택, 지방세법 §13의2)
     // 취득세 = 500M × 0.08 = 40M
-    // 농특세 (85㎡ 초과) = 500M × 0.2% = 1M
-    // 지교세 = 40M × 0.1 = 4M
-    // 총 = 40M + 1M + 4M = 45M
-    // 근거: 지방세법 §13의2 (조정지역 중과)
-    // 검증: 부산·대구·인천·울산 조정지역 사례
+    // 농특세 (국민주택규모 초과, 8% 중과) = 500M × 0.6% = 3M
+    // 지교세 (중과 과표 기준) = 500M × 0.4% = 2M
+    // 총 = 40M + 3M + 2M = 45M
+    // 근거: 지방세법 §13의2①2·§151①1나 [시행2026.1.1], 농어촌특별세법 §5①6 [시행2026.5.12]
+    // 검증: 공식 본문 세율에 따른 독립 금액 검산 (지역 지정 여부를 자동 판단하는 테스트는 아님)
     it('취득세 조정지역 2주택 5억원 85m²초과: 8% 중과 → 4,500만원', () => {
       const result = calculateAcquisitionTax({
         method: 'purchase',
@@ -427,9 +424,9 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
         firstHomeBuyerDiscount: false,
       });
       const expectedAcquisitionTax = 40_000_000; // 500M × 0.08
-      const expectedSpecialRuralTax = 1_000_000; // 500M × 0.002
-      const expectedEducationTax = 4_000_000; // 40M × 0.1
-      const expectedTotal = 45_000_000; // 40M + 1M + 4M
+      const expectedSpecialRuralTax = 3_000_000; // 500M × 0.006
+      const expectedEducationTax = 2_000_000; // 500M × 0.004
+      const expectedTotal = 45_000_000; // 40M + 3M + 2M
 
       expect(result.acquisitionTax).toBe(expectedAcquisitionTax);
       expect(result.specialRuralTax).toBe(expectedSpecialRuralTax);
@@ -791,9 +788,9 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
   });
 });
 
-  // ════════════════════════════════════════════════════════════════
-  // 생활·근로 카테고리 교차검증 (YORO+TDD Phase F: 6 케이스 추가)
-  // ════════════════════════════════════════════════════════════════
+// ════════════════════════════════════════════════════════════════
+// 생활·근로 카테고리 교차검증 (YORO+TDD Phase F: 6 케이스 추가)
+// ════════════════════════════════════════════════════════════════
 
 describe('Cross-Verification: Lifestyle & Work (생활·근로 교차검증)', () => {
   describe('주택청약 가점 — 누적 점수 검증', () => {
@@ -1118,7 +1115,7 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       expect(result.grossPayment).toBe(1_000_000);
       expect(result.reductionRate).toBe(0);
       expect(result.finalPayment).toBe(1_000_000);
-      expect(result.warnings.length).toBe(0);
+      expect(result.warnings.join(' ')).toContain('추정');
     });
 
     // ─────────────────────────────────────────────────────────────
@@ -1132,7 +1129,7 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
     // 최종 = 300만 × (1 - 0.5714) = 300만 × 0.4286 ≈ 128.58만원 → 128만원 (10원 단위)
     // 근거: 조세특례제한법 §100의2, 소득 구간별 감액 기준
     // 검증: 국세청 예시 계산
-    it('자녀장려금 자녀 3명 + 소득 4,000만: 선형 감액 → 약 128만원', () => {
+    it('자녀장려금 자녀 3명 + 소득 4,000만: 맞벌이 선형 감액 → 250만원', () => {
       const result = calculateChildTaxCredit({
         householdType: 'dualEarner',
         totalAnnualIncome: 40_000_000,
@@ -1141,10 +1138,9 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       });
       expect(result.eligibleChildCount).toBe(3);
       expect(result.grossPayment).toBe(3_000_000);
-      expect(result.reductionRate).toBeGreaterThan(0.5);
-      expect(result.reductionRate).toBeLessThan(0.6);
-      expect(result.finalPayment).toBeGreaterThan(1_280_000);
-      expect(result.finalPayment).toBeLessThan(1_300_000);
+      expect(result.reductionRate).toBeCloseTo(1 / 6, 4);
+
+      expect(result.finalPayment).toBe(2_500_000);
     });
   });
 
@@ -1683,14 +1679,14 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
     // ─────────────────────────────────────────────────────────────
     // 입력: { wageType: 'monthly', wageAmount: 3.5M, nontaxableMonthly: 0, dependents: 1, children: 0 }
     // 월급 과세: 3,500,000원
-    // 국민연금: 3,500,000 × 4.5% = 157,500원 (상한 미달)
-    // 건강보험: 3,500,000 × 3.545% = 124,075원
-    // 장기요양: 124,075 × 12.95% ≈ 16,067원
+    // 국민연금: 3,500,000 × 4.75% = 166,250원 (상한 미달)
+    // 건강보험: 3,500,000 × 3.595% = 125,825원
+    // 장기요양: 125,825 × 13.14% ≈ 16,533원
     // 고용보험: 3,500,000 × 0.9% = 31,500원
-    // 합계 4대보험: 157,500 + 124,075 + 16,067 + 31,500 = 329,142원
+    // 합계 4대보험: 166,250 + 125,825 + 16,533 + 31,500 = 340,108원
     // 근거: 국민연금법 §73, 국민건강보험법 §79, 근로기준법 §42
     // 검증: 근로복지공단 2026 기준 보험료율
-    it('월급 350만 + 비과세 0 → 4대보험 합산 약 32.9만원', () => {
+    it('월급 350만 + 비과세 0 → 4대보험 합산 약 34.0만원', () => {
       const result = calculateTakeHome({
         wageType: 'monthly',
         wageAmount: 3_500_000,
@@ -1701,27 +1697,28 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       });
 
       expect(result.monthlyGrossIncome).toBe(3_500_000);
-      expect(result.pension).toBe(157_500); // 3.5M × 4.5%
-      expect(result.health).toBe(124_075); // 3.5M × 3.545% = 124,075원
-      expect(result.longTermCare).toBeCloseTo(16_067, -1); // 124,075 × 12.95% ≈ 16,067
+      expect(result.pension).toBe(166_250); // 3.5M × 4.75%
+      expect(result.health).toBe(125_825); // 3.5M × 3.595% = 125,825원
+      expect(result.longTermCare).toBeCloseTo(16_533, -1); // 125,825 × 13.14% ≈ 16,533
       expect(result.employment).toBeCloseTo(31_500, -1); // 3.5M × 0.9% (반올림 미세 오차 허용)
-      const totalInsurance = result.pension + result.health + result.longTermCare + result.employment;
-      expect(totalInsurance).toBeCloseTo(329_142, -1);
+      const totalInsurance =
+        result.pension + result.health + result.longTermCare + result.employment;
+      expect(totalInsurance).toBeCloseTo(340_108, -1);
     });
 
     // ─────────────────────────────────────────────────────────────
-    // 케이스 56: 월급 700만원 + 상한선 적용 (국민연금 기준소득월액 637만)
+    // 케이스 56: 월급 700만원 + 상한선 적용 (국민연금 기준소득월액 659만)
     // ─────────────────────────────────────────────────────────────
     // 입력: { wageType: 'monthly', wageAmount: 7.0M, nontaxableMonthly: 0, dependents: 1, children: 0 }
     // 월급 과세: 7,000,000원
-    // 국민연금: min(7,000,000, 6,370,000) × 4.5% = 6,370,000 × 4.5% = 286,650원 (상한 적용)
-    // 건강보험: 7,000,000 × 3.545% = 248,150원
-    // 장기요양: 248,150 × 12.95% ≈ 32,134원
+    // 국민연금: min(7,000,000, 6,590,000) × 4.75% = 6,590,000 × 4.75% = 313,025원 (상한 적용)
+    // 건강보험: 7,000,000 × 3.595% = 251,650원
+    // 장기요양: 251,650 × 13.14% ≈ 33,066원
     // 고용보험: 7,000,000 × 0.9% = 63,000원
-    // 합계: 286,650 + 248,150 + 32,134 + 63,000 = 629,934원
-    // 근거: 국민연금법 §73 상한선(기준소득월액 637만원)
-    // 검증: 국민연금공단 2026 고지서 기준
-    it('월급 700만 + 상한 적용(기준소득월액 637만) → 국민연금 28.7만, 합계 63만', () => {
+    // 합계: 313,025 + 251,650 + 33,066 + 63,000 = 660,741원
+    // 근거: 국민연금법 §73 상한선(기준소득월액 659만원)
+    // 검증: NPS·MOHW 2026 공식 요율, 원 미만 절사 추정
+    it('월급 700만 + 상한 적용(기준소득월액 659만) → 국민연금 31.3만, 합계 66.1만', () => {
       const result = calculateTakeHome({
         wageType: 'monthly',
         wageAmount: 7_000_000,
@@ -1732,13 +1729,14 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       });
 
       expect(result.monthlyGrossIncome).toBe(7_000_000);
-      // 국민연금은 상한선 6,370,000 × 4.5% = 286,650
-      expect(result.pension).toBe(286_650);
-      expect(result.health).toBe(248_150); // 7.0M × 3.545%
-      expect(result.longTermCare).toBeCloseTo(32_134, -1);
+      // 국민연금은 상한선 6,590,000 × 4.75% = 313,025
+      expect(result.pension).toBe(313_025);
+      expect(result.health).toBe(251_650); // 7.0M × 3.595%
+      expect(result.longTermCare).toBeCloseTo(33_066, -1);
       expect(result.employment).toBeCloseTo(63_000, -1); // 7.0M × 0.9% (반올림 미세 오차 허용)
-      const totalInsurance = result.pension + result.health + result.longTermCare + result.employment;
-      expect(totalInsurance).toBeCloseTo(629_934, -1);
+      const totalInsurance =
+        result.pension + result.health + result.longTermCare + result.employment;
+      expect(totalInsurance).toBeCloseTo(660_741, -1);
     });
   });
 
@@ -1920,10 +1918,11 @@ describe('Cross-Verification: Rounding & Boundary (반올림·경계값 최종 6
         dependents: 1,
         children: 0,
       });
-      const totalInsurance = result.pension + result.health + result.longTermCare + result.employment;
+      const totalInsurance =
+        result.pension + result.health + result.longTermCare + result.employment;
       expect(totalInsurance).toBeGreaterThan(0);
       expect(totalInsurance).toBeLessThan(30_000_000); // 합리적 범위
-      expect(result.pension).toBe(286_650); // 상한선 적용 확인
+      expect(result.pension).toBe(313_025); // 2026년7월 이후 상한659만 ×4.75%
     });
   });
 
@@ -2568,7 +2567,7 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
     // 총 세금: 56만 + 5.6만 = 61.6만
     // 근거: 소득세법 §55, §80, 시행령 §143, 조세특례제한법 §100의3
     // ─────────────────────────────────────────────────────────────
-    it('프리랜서 6,000만원 + 70% 경비율 + 부양3 + 자녀2: 자녀공제 350만 (1st 150K + 2nd 200K)', () => {
+    it('프리랜서 6,000만원 + 70% 경비율 + 부양3 + 자녀2: 자녀공제 55만 (25만 +30만)', () => {
       const result = calculateFreelancerTax({
         annualRevenue: 60_000_000,
         expenseMethod: 'simpleRate',
@@ -2582,9 +2581,9 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
       expect(result.personalDeduction).toBe(4_500_000); // 150만 × 3
       expect(result.taxableBase).toBe(13_500_000); // 1,800만 - 450만
       expect(result.grossTax).toBe(810_000); // 1,350만 × 6% - 0
-      expect(result.childTaxCredit).toBeCloseTo(350_000, -3); // 자녀 2명: 150K + 200K
-      expect(result.finalTax).toBe(460_000); // 81만 - 35만
-      expect(result.totalTaxLiability).toBeCloseTo(506_000, -3); // 46만 + 4.6만
+      expect(result.childTaxCredit).toBe(550_000); // 자녀 2명: 250K + 300K
+      expect(result.finalTax).toBe(260_000); // 81만 -55만
+      expect(result.totalTaxLiability).toBe(286_000); // 26만 +2.6만
       expect(result.settlementAmount).toBeLessThan(0); // 환급 (음수)
     });
 
@@ -2605,7 +2604,7 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
     // 추가납부: 508.97만 - 396만 = 112.97만
     // 근거: 소득세법 §55, 시행령 §143 (기준경비율 7,500만 경계)
     // ─────────────────────────────────────────────────────────────
-    it('프리랜서 1.2억원 + 기준경비율 강제 + 부양2 + 자녀1: 자녀공제 150만, 추가납부 약 109만', () => {
+    it('프리랜서 1.2억원 + 기준경비율 강제 + 부양2 + 자녀1: 자녀공제 25만, 추가납부 약99만', () => {
       const result = calculateFreelancerTax({
         annualRevenue: 120_000_000,
         expenseMethod: 'simpleRate',
@@ -2620,10 +2619,9 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
       expect(result.personalDeduction).toBe(3_000_000); // 150만 × 2
       expect(result.taxableBase).toBeCloseTo(40_080_000, -3); // 4,308만 - 300만
       expect(result.grossTax).toBeCloseTo(4_752_000, -3); // 4,008만 × 15% - 126만
-      expect(result.childTaxCredit).toBeCloseTo(150_000, -3); // 자녀 1명 = 150K
-      expect(result.finalTax).toBeCloseTo(4_602_000, -3); // 475.2만 - 15만
-      expect(result.settlementAmount).toBeCloseTo(1_102_200, -2); // 추가납부 약 110만
+      expect(result.childTaxCredit).toBe(250_000); // 자녀1명 =250K
+      expect(result.finalTax).toBe(4_502_000); // 475.2만 -25만
+      expect(result.settlementAmount).toBe(992_200); // 추가납부 약99만
     });
   });
 });
-

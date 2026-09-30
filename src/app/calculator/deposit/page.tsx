@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -22,10 +22,7 @@ import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getFssDepositRateCitation } from '@/lib/publicapi/public-citations';
 import financeProducts from '@/data/finance-products.json';
 
-const FSS_DEPOSIT_CITATION = getFssDepositRateCitation(
-  financeProducts,
-  '2026-04-27',
-);
+const FSS_DEPOSIT_CITATION = getFssDepositRateCitation(financeProducts, '2026-04-27');
 
 const URL = 'https://calculatorhost.com/calculator/deposit/';
 
@@ -47,7 +44,6 @@ export const metadata: Metadata = {
     description: '단리·월복리·일복리 방식별 세전·세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
@@ -92,7 +88,11 @@ const FAQ_ITEMS = [
 const RELATED = [
   { href: '/calculator/savings', title: '적금 이자', description: '월 납입금별 세후 수령액' },
   { href: '/calculator/loan', title: '대출이자', description: '상환방식별 월상환액' },
-  { href: '/calculator/inflation', title: '화폐가치(물가상승)', description: '인플레이션 반영 실질가치' },
+  {
+    href: '/calculator/inflation',
+    title: '화폐가치(물가상승)',
+    description: '인플레이션 반영 실질가치',
+  },
   { href: '/calculator/salary', title: '연봉 실수령액', description: '세후 월급' },
 ];
 
@@ -112,7 +112,7 @@ export default function DepositPage() {
     isPartOf: getCategoryUrlForCalculator('deposit'),
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -162,30 +162,41 @@ export default function DepositPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '금융', href: '/category/finance/' },
-                    { name: '정기예금 이자' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  정기예금 이자 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  목돈 예치금, 연 이자율, 예치 기간을 입력하면 단리·월복리·일복리 방식별 세전·세후
-                  이자와 만기 수령액을 즉시 계산합니다. 이자소득세(일반과세 15.4%·세금우대
-                  9.5%·비과세)를 실시간으로 반영합니다.
-                </p>
-                <AuthorByline dateModified="2026-04-24" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '금융', href: '/category/finance/' },
+                      { name: '정기예금 이자' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    정기예금 이자 계산기 2026
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    예치 금액과 기간으로 만기 금액과 세후 이자를 확인하세요.
+                  </p>
+                  <AuthorByline dateModified="2026-04-24" />
+                </header>
+              }
+              calculator={<DepositCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="정기예금은 목돈을 은행에 예치하고 정해진 기간 후 원금과 이자를 받는 금융상품입니다. 이자는 단리(원금에만 붙는 이자), 월복리(매월 이자에 붙는 이자), 일복리(매일 이자에 붙는 이자)로 계산되며, 세후 수익률은 이자소득세(일반 15.4%, 세금우대 9.5%, 비과세)에 따라 달라집니다(소득세법 §129, 조세특례제한법 §89의2·§91)."
                 table={{
@@ -206,36 +217,27 @@ export default function DepositPage() {
                   '세후 수령액 = 원금 + (세전이자 - 세금)',
                 ]}
               />
-
-              {/* 계산기 */}
-              <DepositCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* AD-4 Infeed */}
-              {/* 정기예금이란 무엇인가 */}
               <section aria-label="정기예금 개념" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">정기예금이란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
                   정기예금은 목돈을 은행이나 저축은행에 일정 기간 동안 예치하고, 만기일에 원금과
-                  이자를 받는 금융상품입니다. 예금자보호법에 따라 1인당 5천만원까지 보호되므로, 안전한
-                  자산 운용 방법입니다. 예치 기간 중에는 이자율이 고정되어 있어 예측 가능한 수익을
-                  얻을 수 있습니다(금융감독원 금융상식 기준).
+                  이자를 받는 금융상품입니다. 예금자보호법에 따라 1인당 5천만원까지 보호되므로,
+                  안전한 자산 운용 방법입니다. 예치 기간 중에는 이자율이 고정되어 있어 예측 가능한
+                  수익을 얻을 수 있습니다(금융감독원 금융상식 기준).
                   {FSS_DEPOSIT_CITATION && (
                     <>
-                      {' '}현재{' '}
-                      <PublicDataCitation citation={FSS_DEPOSIT_CITATION} />
-                      {' '}수준이 시중은행 평균입니다.
+                      {' '}
+                      현재 <PublicDataCitation citation={FSS_DEPOSIT_CITATION} /> 수준이 시중은행
+                      평균입니다.
                     </>
                   )}
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  정기예금은 적금과 다릅니다. 적금은 정해진 금액을 매달 저축하다가 만기에 받는 상품인
-                  반면, 예금은 목돈을 한 번에 예치하는 상품입니다. 따라서 같은 이자율이라도 예금이
-                  더 많은 이자를 받을 수 있습니다. 예를 들어, 천만원을 12개월 동안 연 3%로 운용할 때,
-                  예금은 약 30만원의 이자를 받지만, 월 83만원씩 납입하는 적금은 약 20만원의 이자를
-                  받습니다(단리 기준).
+                  정기예금은 적금과 다릅니다. 적금은 정해진 금액을 매달 저축하다가 만기에 받는
+                  상품인 반면, 예금은 목돈을 한 번에 예치하는 상품입니다. 따라서 같은 이자율이라도
+                  예금이 더 많은 이자를 받을 수 있습니다. 예를 들어, 천만원을 12개월 동안 연 3%로
+                  운용할 때, 예금은 약 30만원의 이자를 받지만, 월 83만원씩 납입하는 적금은 약
+                  20만원의 이자를 받습니다(단리 기준).
                 </p>
                 <p className="text-text-secondary">
                   정기예금 이자에는 세금이 부과됩니다. 일반 정기예금은 이자소득세 14% + 지방소득세
@@ -244,29 +246,39 @@ export default function DepositPage() {
                   가입 조건(연소득, 나이, 거주지 등)이 있으므로 은행에 확인 후 신청하세요.
                 </p>
               </section>
-
-              {/* 단리 vs 월복리 vs 일복리 */}
               <section aria-label="이자 방식 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">단리 vs 월복리 vs 일복리</h2>
                 <p className="mb-4 text-text-secondary">
-                  예금 이자 계산 방식에는 단리, 월복리, 일복리 3가지가 있습니다. 각각의 특징과 차이를
-                  이해하면 더 유리한 상품을 선택할 수 있습니다.
+                  예금 이자 계산 방식에는 단리, 월복리, 일복리 3가지가 있습니다. 각각의 특징과
+                  차이를 이해하면 더 유리한 상품을 선택할 수 있습니다.
                 </p>
-                <div className="overflow-x-auto mb-4">
+                <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm">
                     <caption className="sr-only">단리, 월복리, 일복리 비교</caption>
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           구분
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           단리
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           월복리
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           일복리
                         </th>
                       </tr>
@@ -280,13 +292,13 @@ export default function DepositPage() {
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">계산식</td>
-                        <td className="px-4 py-3 text-text-secondary text-xs font-mono">
+                        <td className="px-4 py-3 font-mono text-xs text-text-secondary">
                           P × r × t
                         </td>
-                        <td className="px-4 py-3 text-text-secondary text-xs font-mono">
+                        <td className="px-4 py-3 font-mono text-xs text-text-secondary">
                           P × (1+r)^n
                         </td>
-                        <td className="px-4 py-3 text-text-secondary text-xs font-mono">
+                        <td className="px-4 py-3 font-mono text-xs text-text-secondary">
                           P × (1+r)^d
                         </td>
                       </tr>
@@ -299,7 +311,8 @@ export default function DepositPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">차이 크기</td>
                         <td colSpan={3} className="px-4 py-3 text-text-secondary">
-                          기간과 이율이 클수록 차이 증가 (예: 12개월 3% 천만원 = 30만 → 30.1 → 30.2만)
+                          기간과 이율이 클수록 차이 증가 (예: 12개월 3% 천만원 = 30만 → 30.1 →
+                          30.2만)
                         </td>
                       </tr>
                       <tr className="border-b border-border-subtle">
@@ -313,19 +326,17 @@ export default function DepositPage() {
                 </div>
                 <p className="text-text-secondary">
                   <strong>결론:</strong> 복리(월복리, 일복리)가 단리보다 더 유리하지만, 그 차이는
-                  상품과 조건에 따라 다릅니다. 현재 대부분의 정기예금은 단리를 기본으로 하며, 일부 고급
-                  상품에서만 월복리나 일복리 옵션을 제공합니다. 예금 신청 시 은행에 계산 방식을 꼭
-                  확인하세요.
+                  상품과 조건에 따라 다릅니다. 현재 대부분의 정기예금은 단리를 기본으로 하며, 일부
+                  고급 상품에서만 월복리나 일복리 옵션을 제공합니다. 예금 신청 시 은행에 계산 방식을
+                  꼭 확인하세요.
                 </p>
               </section>
-
-              {/* 이자소득세 방식 */}
               <section aria-label="이자소득세" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">이자소득세 3가지 방식</h2>
                 <div className="space-y-4">
                   <div className="rounded-lg border border-border-subtle p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">1) 일반과세 (15.4%)</h3>
-                    <p className="text-sm text-text-secondary mb-2">
+                    <h3 className="mb-2 font-semibold text-text-primary">1) 일반과세 (15.4%)</h3>
+                    <p className="mb-2 text-sm text-text-secondary">
                       대부분의 일반 정기예금이 해당합니다. 이자소득세 14% + 지방소득세(이자세의 10%)
                       1.4% = 15.4%가 적용됩니다(소득세법 §129, 지방세법).
                     </p>
@@ -334,8 +345,8 @@ export default function DepositPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-subtle p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">2) 세금우대 (9.5%)</h3>
-                    <p className="text-sm text-text-secondary mb-2">
+                    <h3 className="mb-2 font-semibold text-text-primary">2) 세금우대 (9.5%)</h3>
+                    <p className="mb-2 text-sm text-text-secondary">
                       세금우대 종합저축, 세금우대저축(조세특례제한법 §89의2) 등 특정 상품입니다.
                       이자소득세 9% + 지방소득세 0.9% = 9.5%가 적용됩니다. 단, 일정 소득 이하·가입
                       한도·최소 기간 등 조건이 있습니다.
@@ -345,8 +356,8 @@ export default function DepositPage() {
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-subtle p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">3) 비과세 (0%)</h3>
-                    <p className="text-sm text-text-secondary mb-2">
+                    <h3 className="mb-2 font-semibold text-text-primary">3) 비과세 (0%)</h3>
+                    <p className="mb-2 text-sm text-text-secondary">
                       ISA(개인종합자산관리계좌), 청년도약계좌 등 정부 지원 상품입니다(조세특례제한법
                       §91 등). 이자소득세가 전혀 부과되지 않습니다. 가입 조건과 한도가 제한적입니다.
                     </p>
@@ -356,26 +367,33 @@ export default function DepositPage() {
                   </div>
                 </div>
               </section>
-
-              {/* 정기예금 vs 적금 */}
               <section aria-label="정기예금 vs 적금" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">정기예금 vs 적금 비교</h2>
                 <p className="mb-4 text-text-secondary">
                   정기예금과 적금은 모두 은행 저축 상품이지만, 입금 방식과 이자 계산에 차이가
                   있습니다. 각 상품의 특징을 이해하면 자신의 상황에 맞는 상품을 선택할 수 있습니다.
                 </p>
-                <div className="overflow-x-auto mb-4">
+                <div className="mb-4 overflow-x-auto">
                   <table className="w-full text-sm">
                     <caption className="sr-only">정기예금과 적금 비교</caption>
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           항목
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           정기예금
                         </th>
-                        <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-left font-semibold text-text-secondary"
+                        >
                           적금
                         </th>
                       </tr>
@@ -389,13 +407,13 @@ export default function DepositPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">이자 계산</td>
                         <td className="px-4 py-3 text-text-secondary">전액이 처음부터 이자 발생</td>
-                        <td className="px-4 py-3 text-text-secondary">각 월 납입분이 다른 기간에 이자 발생</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          각 월 납입분이 다른 기간에 이자 발생
+                        </td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">이자 규모</td>
-                        <td className="px-4 py-3 text-text-secondary">
-                          같은 금액이면 더 많음
-                        </td>
+                        <td className="px-4 py-3 text-text-secondary">같은 금액이면 더 많음</td>
                         <td className="px-4 py-3 text-text-secondary">예금보다 적은 편</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
@@ -405,20 +423,22 @@ export default function DepositPage() {
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">예시</td>
-                        <td className="px-4 py-3 text-text-secondary">천만원 12개월 3% = 약 30만원</td>
-                        <td className="px-4 py-3 text-text-secondary">월 83만 12개월 3% = 약 20.5만원</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          천만원 12개월 3% = 약 30만원
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          월 83만 12개월 3% = 약 20.5만원
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="text-text-secondary">
-                  <strong>선택 기준:</strong> 정기예금은 목돈이 있거나 한 번에 큰 금액을 저축하고 싶을
-                  때, 적금은 월급의 일부를 꾸준히 저축하고 싶을 때 적합합니다. 상황에 따라 둘을
+                  <strong>선택 기준:</strong> 정기예금은 목돈이 있거나 한 번에 큰 금액을 저축하고
+                  싶을 때, 적금은 월급의 일부를 꾸준히 저축하고 싶을 때 적합합니다. 상황에 따라 둘을
                   혼합해서 활용할 수도 있습니다.
                 </p>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
@@ -444,19 +464,17 @@ export default function DepositPage() {
                     실제 예금은 금융기관의 정보공시서와 상품설명서를 확인한 후 가입하세요.
                   </li>
                   <li>
-                    실제 일복리 상품은 드물며, 대부분의 정기예금은 단리 또는 월복리만 제공합니다.
-                    이 계산기의 일복리는 일일 복리 공식의 근사치(월 × 30.4167일)입니다.
+                    실제 일복리 상품은 드물며, 대부분의 정기예금은 단리 또는 월복리만 제공합니다. 이
+                    계산기의 일복리는 일일 복리 공식의 근사치(월 × 30.4167일)입니다.
                   </li>
                 </ul>
               </section>
-
-              {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>단리 정기예금</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       세전 이자 = 원금 × (연이자율 ÷ 100) × 개월 ÷ 12
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -471,54 +489,60 @@ export default function DepositPage() {
                       className="my-2 rounded bg-bg-raised p-3 text-base"
                       latex={String.raw`A = P(1+r)^{n}`}
                     />
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
-                      월이자율 r = 연이자율 ÷ 100 ÷ 12<br />
-                      만기원리금 = 원금 × (1+r)^n<br />
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
+                      월이자율 r = 연이자율 ÷ 100 ÷ 12
+                      <br />
+                      만기원리금 = 원금 × (1+r)^n
+                      <br />
                       세전 이자 = 만기원리금 − 원금
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      매월 붙은 이자에 다시 이자가 붙습니다. r = 0인 경우 이자는 0입니다. 예: 천만원 12개월
-                      3% → (1+0.03/12)^12 - 1 = 약 3.04% → 약 30만원 이자.
+                      매월 붙은 이자에 다시 이자가 붙습니다. r = 0인 경우 이자는 0입니다. 예: 천만원
+                      12개월 3% → (1+0.03/12)^12 - 1 = 약 3.04% → 약 30만원 이자.
                     </p>
                   </li>
                   <li>
                     <strong>일복리 정기예금 (근사)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
-                      일이자율 r = 연이자율 ÷ 100 ÷ 365<br />
-                      총일수 d = 개월 × 30.4167<br />
-                      만기원리금 = 원금 × (1+r)^d<br />
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
+                      일이자율 r = 연이자율 ÷ 100 ÷ 365
+                      <br />
+                      총일수 d = 개월 × 30.4167
+                      <br />
+                      만기원리금 = 원금 × (1+r)^d
+                      <br />
                       세전 이자 = 만기원리금 − 원금
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      매일 붙은 이자에 이자가 붙습니다. 월 × 30.4167은 월 평균 일수(연 365일 ÷ 12)를 사용한
-                      근사치입니다. 실제 일복리 상품은 거의 없으므로 참고만 하세요.
+                      매일 붙은 이자에 이자가 붙습니다. 월 × 30.4167은 월 평균 일수(연 365일 ÷ 12)를
+                      사용한 근사치입니다. 실제 일복리 상품은 거의 없으므로 참고만 하세요.
                     </p>
                   </li>
                   <li>
                     <strong>이자소득세 계산</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
-                      세금 = 세전 이자 × 세율 (일반 15.4% / 세금우대 9.5% / 비과세 0%)<br />
-                      세후 이자 = 세전 이자 - 세금<br />
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
+                      세금 = 세전 이자 × 세율 (일반 15.4% / 세금우대 9.5% / 비과세 0%)
+                      <br />
+                      세후 이자 = 세전 이자 - 세금
+                      <br />
                       세후 수령액 = 원금 + 세후 이자
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      모든 계산 결과는 10원 단위로 절사합니다(세금 표준 처리). 예: 15.49만원 → 15.4만원.
+                      모든 계산 결과는 10원 단위로 절사합니다(세금 표준 처리). 예: 15.49만원 →
+                      15.4만원.
                     </p>
                   </li>
                   <li>
                     <strong>연환산 세후 이자율</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       연환산 세후 이자율 (%) = (세후이자 ÷ 원금) × (12 ÷ 개월) × 100
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      실제 예치 기간과 무관하게 1년 기준으로 환산한 세후 수익률입니다. 예: 6개월 예금의 세후
-                      이자가 15만원이면 연환산 이자율은 약 3% 입니다.
+                      실제 예치 기간과 무관하게 1년 기준으로 환산한 세후 수익률입니다. 예: 6개월
+                      예금의 세후 이자가 15만원이면 연환산 이자율은 약 3% 입니다.
                     </p>
                   </li>
                 </ol>
               </section>
-
-              {/* 활용 팁 */}
               <section aria-label="활용 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
@@ -531,21 +555,21 @@ export default function DepositPage() {
                     차이도 고액 예금에서는 수십만원 차이가 납니다.
                   </li>
                   <li>
-                    <strong>기간별 계산</strong>: 3개월, 6개월, 12개월, 24개월, 36개월 등 다양한 기간으로
-                    계산해 유동성과 수익률을 균형있게 계획하세요.
+                    <strong>기간별 계산</strong>: 3개월, 6개월, 12개월, 24개월, 36개월 등 다양한
+                    기간으로 계산해 유동성과 수익률을 균형있게 계획하세요.
                   </li>
                   <li>
-                    <strong>금액별 계산</strong>: 1백만원, 1천만원, 1억원 등으로 변경해가며 목표 금액에
-                    따른 이자를 확인하세요.
+                    <strong>금액별 계산</strong>: 1백만원, 1천만원, 1억원 등으로 변경해가며 목표
+                    금액에 따른 이자를 확인하세요.
                   </li>
                   <li>
-                    <strong>세금 검토</strong>: 세금우대·비과세 상품 자격이 있다면 세전·세후 이자 차이를
-                    비교해 최적의 상품을 선택하세요. 예: 일반(15.4%)과 세금우대(9.5%) = 약 6% 수익률
-                    향상.
+                    <strong>세금 검토</strong>: 세금우대·비과세 상품 자격이 있다면 세전·세후 이자
+                    차이를 비교해 최적의 상품을 선택하세요. 예: 일반(15.4%)과 세금우대(9.5%) = 약 6%
+                    수익률 향상.
                   </li>
                   <li>
-                    <strong>목표 금액 역산</strong>: 목표 수령액이 있다면, 원금과 이자율을 변경해가며
-                    필요한 예치 금액과 기간을 역산할 수 있습니다.
+                    <strong>목표 금액 역산</strong>: 목표 수령액이 있다면, 원금과 이자율을
+                    변경해가며 필요한 예치 금액과 기간을 역산할 수 있습니다.
                   </li>
                   <li>
                     <strong>분할 예치</strong>: 큰 금액은 여러 은행으로 분할 예치해 예금자보호(1인당
@@ -553,35 +577,45 @@ export default function DepositPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-04-24: 초판 공개 (단리·월복리·일복리·일반과세·세금우대·비과세 지원)</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §14(이자소득), §129(이자소득세), 조세특례제한법
-                  §89의2(세금우대종합저축), §91(비과세 저축성 보험료·ISA 등), <a href="https://www.bok.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국은행</a>, <a href="https://finlife.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금감원 금융상품 한눈에</a>.
+                  <strong>법적 근거</strong>: 소득세법 §14(이자소득), §129(이자소득세),
+                  조세특례제한법 §89의2(세금우대종합저축), §91(비과세 저축성 보험료·ISA 등),{' '}
+                  <a
+                    href="https://www.bok.or.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    한국은행
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://finlife.fss.or.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    금감원 금융상품 한눈에
+                  </a>
+                  .
                 </p>
                 <p>
                   본 계산기의 결과는 교육·참고용이며 법적 효력이 없습니다. 실제 정기예금은 은행별로
-                  우대금리·수수료·계산 방식이 상이하므로 예금 신청 전 금융기관에 정확한 이자를 확인하시기
-                  바랍니다. 중도해지 시 이율과 위약금은 계산에 포함되지 않습니다.
+                  우대금리·수수료·계산 방식이 상이하므로 예금 신청 전 금융기관에 정확한 이자를
+                  확인하시기 바랍니다. 중도해지 시 이율과 위약금은 계산에 포함되지 않습니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

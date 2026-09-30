@@ -1,8 +1,9 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
+import { calculateTakeHome } from '@/lib/tax/income';
+import { formatKRW as formatExactCurrency } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
-import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
 import { RelatedCalculators } from '@/components/calculator/RelatedCalculators';
 import { ShareButtons } from '@/components/calculator/ShareButtons';
@@ -26,18 +27,13 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref';
-import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
-import { getKosisHouseholdIncomeCitation } from '@/lib/publicapi/public-citations';
-import kosisIncome from '@/data/kosis-income.json';
-
-const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
 
 const URL = 'https://calculatorhost.com/calculator/salary/';
 
 export const metadata: Metadata = {
   title: '연봉 실수령액 계산기 2026, 4대보험·소득세 자동',
   description:
-    '2026년 연봉 실수령액 계산기. 세전 연봉을 입력하면 소득세·4대보험·특별소득공제 등을 자동 계산해 월 실수령액·연간 세후액을 확인. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '2026년 연봉 실수령액 계산기. 세전 연봉을 입력하면 2026년 4대보험과 소득세 근사치를 계산해 월 실수령액·연간 세후액을 확인. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
   keywords: [
     '연봉 실수령액 계산기',
     '연봉 계산기 2026',
@@ -59,57 +55,62 @@ export const metadata: Metadata = {
   },
 };
 
+const formatCurrency = (value: number) => formatExactCurrency(value, { truncateTen: false });
+
+const EXAMPLE_OPTIONS = {
+  wageType: 'yearly' as const,
+  severance: 'separate' as const,
+  nontaxableMonthly: 200_000,
+  dependents: 1,
+  children: 0,
+  calculationMonth: 7,
+};
+const ANNUAL_EXAMPLES = [
+  30_000_000, 40_000_000, 50_000_000, 60_000_000, 70_000_000, 80_000_000, 100_000_000,
+].map((wageAmount) => ({ wageAmount, ...calculateTakeHome({ ...EXAMPLE_OPTIONS, wageAmount }) }));
 const FAQ_ITEMS = [
-  {
-    question: '연봉 3000만 원의 월 실수령액은 얼마인가요?',
+  ...[30_000_000, 50_000_000, 70_000_000].map((wageAmount) => ({
+    question:
+      '연봉 ' + (wageAmount / 10_000).toLocaleString('ko-KR') + '만 원의 월 실수령액은 얼마인가요?',
     answer:
-      '부양가족 1인, 비과세 없음 기준 월 실수령액은 약 227만 원입니다. 세전 월급 250만 원에서 4대보험 약 22.5만 원(국민연금 11.3만, 건강보험 8.9만, 고용보험 2.3만)과 소득세·지방소득세 약 5,000원이 공제됩니다. 비과세 식대 월 20만 원을 받으면 4대보험 기준소득도 낮아져 실수령액이 약 5천 원 더 늘어납니다.',
-  },
+      '본 계산기의 월 실수령 추정액은 ' +
+      formatCurrency(calculateTakeHome({ ...EXAMPLE_OPTIONS, wageAmount }).monthlyNetIncome) +
+      '입니다. 2026년 7월 이후, 퇴직금 별도·부양가족 본인 1명·공제대상 자녀 0명·월 비과세 20만 원 가정입니다. 소득세는 연간 누진세를 월 환산한 근사치로, 실제 국세청 간이세액표 조회 결과와 다릅니다.',
+  })),
   {
-    question: '연봉 5000만 원의 월 실수령액은 얼마인가요?',
+    question: '2026년 4대보험은 어떻게 계산되나요?',
     answer:
-      '부양가족 1인, 비과세 없음 기준 월 실수령액은 약 350만 원입니다. 세전 월급 약 416.7만 원에서 4대보험 약 37.5만 원과 소득세·지방소득세 약 29.2만 원이 공제되며, 자녀 2인 공제(소득세법 §59의2)를 반영하면 약 360만 원대까지 증가합니다.',
-  },
-  {
-    question: '4대보험은 어떻게 계산되나요?',
-    answer:
-      '2026년 근로자 부담 4대보험은 월 소득의 약 9% 수준입니다. 국민연금 4.5%, 건강보험 3.545%, 장기요양 건보료의 12.95%, 고용보험 0.9% 합계로, 연봉 3,000만 원 기준 월 약 22만 원이 공제됩니다. 국민연금은 기준소득월액 상한 637만 원이 적용되어 연봉 1억 원 초과부터는 추가로 늘어나지 않습니다.',
+      '근로자 부담률은 국민연금 4.75%, 건강보험 3.595%, 장기요양보험은 건강보험료의 13.14%, 고용보험 0.9%입니다. 국민연금 기준소득월액은 1~6월 40만~637만 원, 7~12월 41만~659만 원 범위이며 천 원 미만을 버립니다. 실제 보험료는 공단에 신고된 기준소득·보수월액, 가입조건과 정산에 따라 달라집니다.',
   },
   {
     question: '비과세 식대 20만 원은 어떻게 적용되나요?',
     answer:
-      '월 20만 원 이하 식대는 소득세법 §12에 따라 비과세 근로소득으로 분류되어 소득세와 4대보험 과세기준에서 모두 제외됩니다. 본 계산기 "비과세 (월)" 항목에 200,000을 입력하면 4대보험료가 감소하여 같은 연봉이라도 실수령액이 월 5~10만 원 증가합니다.',
+      '비과세 요건을 충족하는 식대는 월 20만 원 한도로 소득세 대상 급여에서 제외됩니다. 계산기에는 월급에 포함된 비과세액을 입력합니다. 이 도구는 같은 금액을 보험료 산정 소득에서도 제외하는 가정이며, 실제 보험료 제외 여부는 각 비과세 항목과 공단 신고내역을 확인하세요.',
   },
   {
-    question: '부양가족·자녀 공제 기준은?',
+    question: '부양가족·자녀 공제 기준은 무엇인가요?',
     answer:
-      '본인을 포함한 부양가족 1인당 기본공제 150만 원을 연 소득세에서 차감합니다. 20세 이하 자녀는 별도 자녀세액공제가 추가되어 1인 15만, 2인 20만, 3인째부터는 각 40만 원을 세액에서 직접 공제합니다(소득세법 §59의2). 부양가족 중 배우자는 월 급여 100만 원 이하여야 합니다.',
+      '부양가족은 본인을 포함하며 기본공제 요건을 충족하는 인원입니다. 기본공제는 1인당 연 150만 원을 소득에서 차감합니다. 공제대상 자녀·손자녀 세액공제는 1명 연 25만 원, 2명 합계 55만 원, 3명째부터 각 40만 원 추가입니다(소득세법 제59조의2). 자녀의 연령·소득 요건을 확인하고 입력하세요.',
   },
   {
     question: '연봉에 퇴직금이 포함되면 어떻게 다른가요?',
     answer:
-      '퇴직금 포함 연봉은 관행상 총액을 13등분하여 월급으로 계산합니다. 동일 연봉이라도 월 급여는 12등분(퇴직금 미포함) 대비 약 7.7% 낮아져 세전 월급이 약 32만 원 감소합니다. 4대보험과 소득세도 낮은 월급을 기준으로 계산되므로, 근로계약서의 "퇴직금 포함 여부" 표기를 반드시 확인하세요.',
+      '퇴직금 포함을 선택하면 입력 연봉을 13으로 나눈 금액을 월급으로 가정합니다. 이는 비교용 가정이며 실제 급여와 법정 퇴직급여는 근로계약과 평균임금 기준을 별도로 확인해야 합니다.',
   },
   {
-    question: '연봉 협상 시 세후로 얼마를 고려해야 하나요?',
+    question: '실제 급여명세서와 다른 이유는 무엇인가요?',
     answer:
-      '세후 기준 월 30만 원 차이를 원한다면 세전 연봉으로는 약 450~500만 원 추가가 필요합니다. 연봉 5,000만 원에서 6,000만 원으로 올리면 세후 월급은 약 350만 원에서 410만 원으로 늘어나 월 60만 원 증가합니다. 누진세 때문에 연봉 구간이 높아질수록 세전 추가분 대비 세후 증가율이 낮아지므로, 협상 시 세전이 아닌 실수령액 기준으로 목표를 설정하는 것이 합리적입니다.',
+      '본 도구는 국세청 간이세액표를 직접 조회하지 않습니다. 사회보험료 소득공제, 근로소득세액공제·특별공제 및 회사의 원천징수 비율을 반영하지 않은 연간 누진세의 월 환산 추정입니다. 보험료 신고기준, 정산, 자녀 공제조건도 달라질 수 있어 회사 급여명세서의 확정액과 차이가 납니다.',
   },
-  {
-    question: '연봉 2400만 원(저소득) 실수령액은?',
-    answer:
-      '부양가족 1인, 비과세 없음 기준 월 실수령액은 약 180~185만 원입니다. 세전 월급 200만 원에서 4대보험 약 18만 원과 소득세·지방소득세 약 5~10만 원이 공제됩니다. 저소득층은 근로소득공제(소득세법 §59)가 적용되어 세전·세후 차이가 상대적으로 작습니다. 자녀가 있으면 자녀세액공제로 세금이 더 줄어들 수 있습니다.',
-  },
-  {
-    question: '연봉 7000만 원 실수령액은?',
-    answer:
-      '부양가족 1인, 비과세 없음 기준 월 실수령액은 약 465~480만 원입니다. 세전 월급 약 583만 원에서 4대보험 약 52만 원과 소득세·지방소득세 약 51만 원이 공제됩니다. 누진세 누적으로 인해 5,000만 원 구간 대비 세금 부담률이 높아지고 있습니다. 자녀 2인 공제와 비과세 식대를 활용하면 실수령액이 490만 원대까지 증가할 수 있습니다.',
-  },
-] as const;
+];
 
 const RELATED = [
   { href: '/calculator/severance', title: '퇴직금', description: 'DB·DC 퇴직금 예상' },
-  { href: '/calculator/loan-limit', title: '대출한도 (DSR)', description: '연소득 기반 대출 가능액' },
+  {
+    href: '/calculator/loan-limit',
+    title: '대출한도 (DSR)',
+    description: '연소득 기반 대출 가능액',
+  },
   { href: '/calculator/freelancer-tax', title: '프리랜서 종합소득세', description: '경비율 반영' },
   { href: '/calculator/savings', title: '적금 이자', description: '월급 저축 계획' },
 ];
@@ -125,7 +126,7 @@ export default function SalaryPage() {
     description: '2026년 최신 세율로 연봉 실수령액 즉시 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-09-30',
     isPartOf: getCategoryUrlForCalculator('salary'),
   });
   const howToLd = buildHowToJsonLd({
@@ -133,13 +134,21 @@ export default function SalaryPage() {
     description: '연봉을 입력하여 월 실수령액, 4대보험, 소득세를 계산하는 단계별 가이드',
     steps: [
       { name: '연봉 입력', text: '세전 연봉(또는 월급) 금액을 입력합니다.' },
-      { name: '부양가족 설정', text: '본인을 포함한 부양가족 수와 20세 이하 자녀 수를 입력합니다.' },
+      {
+        name: '부양가족 설정',
+        text: '본인을 포함한 부양가족 수와 공제대상 자녀·손자녀 수를 입력합니다.',
+      },
       { name: '비과세 입력', text: '월 식대 등 비과세 근로소득이 있으면 입력합니다(선택).' },
-      { name: '세금·보험료 자동계산', text: '2026년 기준 4대보험과 소득세·지방소득세가 자동 계산됩니다.' },
+      {
+        name: '세금·보험료 자동계산',
+        text: '2026년 기준 4대보험과 소득세·지방소득세가 자동 계산됩니다.',
+      },
       { name: '결과 확인', text: '월 실수령액, 시급, 세금 상세내역을 확인합니다.' },
     ],
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '근로', url: 'https://calculatorhost.com/category/work/' },
@@ -153,21 +162,25 @@ export default function SalaryPage() {
     terms: [
       {
         name: '4대보험',
-        description: '직장인이 고용주와 함께 부담하는 4가지 사회보험. 국민연금(근로자 4.5%), 건강보험(3.545%), 장기요양보험(건보료의 12.95%), 고용보험(0.9%). 실수령액에서 직접 공제됨. 근거: 국민연금법·국민건강보험법·고용보험법.',
+        description:
+          '직장인이 고용주와 함께 부담하는 4가지 사회보험. 국민연금(근로자 4.75%), 건강보험(3.595%), 장기요양보험(건보료의 13.14%), 고용보험(0.9%). 실수령액에서 직접 공제됨. 근거: 국민연금법·국민건강보험법·고용보험법.',
         url: 'https://www.4insure.or.kr',
       },
       {
         name: '비과세 근로소득',
         alternateName: '비과세',
-        description: '소득세 과세 대상에서 제외되는 근로소득. 월 식대 20만 원 이하, 자가운전보조금 월 20만 원, 숙직비, 시간외근무수당 중 일부가 해당(소득세법 §12). 4대보험 기준 소득에서도 제외되어 실수령액 증가.',
+        description:
+          '소득세 과세 대상에서 제외되는 근로소득. 월 식대 20만 원 이하, 자가운전보조금 월 20만 원, 숙직비, 시간외근무수당 중 일부가 해당(소득세법 §12). 4대보험 기준 소득에서도 제외되어 실수령액 증가.',
       },
       {
         name: '근로소득세',
-        description: '직장인 연봉에 부과되는 국세. 2026년 소득세법 §55 누진세율(6%~45%) 적용 후 자녀세액공제를 차감하고 12로 나눠 월 원천징수(간이세액표 기준). 지방소득세 10%가 별도 부과.',
+        description:
+          '직장인 연봉에 부과되는 국세. 2026년 소득세법 §55 누진세율(6%~45%) 적용 후 자녀세액공제를 차감하고 12로 나눠 월 소득세 근사치(간이세액표 직접 조회 아님). 지방소득세 10%가 별도 부과.',
       },
       {
         name: '자녀세액공제',
-        description: '20세 이하 자녀 1인당 연 15만 원, 2인 20만 원, 3인째 이상 각 40만 원을 근로소득세에서 직접 차감. 연말정산 시 정산. 근거: 소득세법 §59의2.',
+        description:
+          '공제대상 자녀·손자녀 1명 연 25만 원, 2명 합계 55만 원, 3명째부터 각 40만 원을 근로소득세에서 직접 차감. 연말정산 시 정산. 근거: 소득세법 §59의2.',
       },
     ],
   });
@@ -206,390 +219,179 @@ export default function SalaryPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8 lg:max-w-none lg:grid lg:grid-cols-[1fr_300px]">
-              {/* 메인 콘텐츠 */}
-              <div className="flex flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '근로', href: '/category/work/' },
-                    { name: '연봉 실수령액' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  연봉 실수령액 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 최신 소득세율·4대보험 요율을 반영한 무료 연봉 실수령액 계산기입니다.
-                  연봉·월급 입력 만으로 월 실수령액과 시급을 즉시 확인할 수 있으며, 부양가족·자녀·비과세까지
-                  반영됩니다.
-                </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
-              <StructuredSummary
-                definition="연봉 실수령액은 세전 연봉에서 국민연금·건강보험·장기요양·고용보험 등 4대보험과 근로소득세·지방소득세를 공제한 후 실제 수령하는 금액입니다."
-                table={{
-                  caption: '연봉별 월 실수령액 요약 (부양 1인 기준)',
-                  headers: ['연봉 (세전)', '월 실수령 (대략)'],
-                  rows: [
-                    ['3,000만 원', '약 227만 원'],
-                    ['4,000만 원', '약 293만 원'],
-                    ['5,000만 원', '약 350만 원'],
-                    ['7,000만 원', '약 472만 원'],
-                    ['1억 원', '약 644만 원'],
-                  ],
-                }}
-                tldr={[
-                  '실수령액 = 세전 월급 − 4대보험 − 근로소득세 − 지방소득세',
-                  '4대보험 합계는 월 소득의 약 9% 내외',
-                  '연봉 1억 초과부터는 국민연금 상한(637만 원)이 적용됩니다',
-                  '비과세 식대 월 20만 원 설정 시 실수령액이 소폭 증가',
-                  '자녀 세액공제는 20세 이하 기준, 3인째부터 40만 원',
-                ]}
-              />
-
-              {/* 계산기 */}
-              <SalaryCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 답변형 H2, 연봉별 월 실수령 대안·비교 (검증값: src/lib/tax/income.ts) */}
-              <section aria-label="연봉별 월 실수령액" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">연봉별 월 실수령액은 얼마인가요?</h2>
-                <p className="mb-4 text-text-secondary" data-speakable>
-                  연봉 5,000만 원이면 월 실수령액은 약 344만 원입니다(부양가족 1인·식대 비과세 월 20만 원·자녀 0 기준). 연봉이 오를수록 4대보험과 소득세 누진으로 실수령 증가폭은 완만해집니다.
-                </p>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-tertiary">표. 연봉별 월 실수령액 (부양 1인·식대 비과세 월 20만·자녀 0, 2026 기준)</caption>
-                    <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">연봉</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">월 실수령액</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">3,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 217만 원 (2,174,407원)</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">4,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 281만 원 (2,812,495원)</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">5,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 344만 원 (3,443,710원)</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">6,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 407만 원 (4,068,055원)</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">7,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 467만 원 (4,668,873원)</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">8,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 522만 원 (5,219,188원)</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">1억 원</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">약 639만 원 (6,386,120원)</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p className="mt-3 text-xs text-text-tertiary">
-                  * 이 표는 식대 비과세(월 20만 원)를 반영한 값으로, 위의 &lsquo;세전 월급별&rsquo; 표(비과세 미적용)와 가정 기준이 다릅니다. 본인 조건의 정확한 실수령액은 위 계산기로 확인하세요.
-                </p>
-              </section>
-
-              {/* AD-4 Infeed (본문 중간) */}
-              {/* 월급별 실수령액 빠른 조회표, 검색 의도 직접 매칭 */}
-              <section aria-label="월급별 실수령액 빠른 조회" className="card">
-                <h2 className="mb-3 text-2xl font-semibold">월급별 실수령액 빠른 조회 (2026)</h2>
-                <p className="mb-4 text-sm text-text-secondary">
-                  자주 검색되는 세전 월급액의 실수령액 (부양가족 1인, 비과세 식대 미적용 기준).
-                  자녀 공제·식대 비과세 적용 시 약 5~15만 원 더 늘어납니다.
-                  참고: 통계청 KOSIS 기준 한국 가구 월평균 소득은{' '}
-                  <PublicDataCitation citation={KOSIS_INCOME_CITATION} />입니다.
-                </p>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
-                    <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th className="px-4 py-3 text-right font-bold text-text-primary">세전 월급</th>
-                        <th className="px-4 py-3 text-right font-bold text-text-primary">연봉 환산</th>
-                        <th className="px-4 py-3 text-right font-bold text-text-primary">4대보험</th>
-                        <th className="px-4 py-3 text-right font-bold text-text-primary">소득세+지방세</th>
-                        <th className="px-4 py-3 text-right font-bold text-text-primary">월 실수령</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">2,000,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">2,400만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−188,081</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−75,070</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">1,736,849원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">2,500,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,000만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−235,101</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−142,300</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,122,599원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">3,000,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,600만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−282,121</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−212,430</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,505,449원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">3,300,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">3,960만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−310,333</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−254,500</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,735,167원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">3,500,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">4,200만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−329,141</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−282,550</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">2,888,309원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">4,000,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">4,800만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−376,163</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−356,800</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">3,267,037원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">4,500,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">5,400만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−423,183</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−435,180</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">3,641,637원</td>
-                      </tr>
-                      <tr className="border border-border-base hover:bg-bg-card/50">
-                        <td className="px-4 py-2 text-right tabular-nums">5,000,000원</td>
-                        <td className="px-4 py-2 text-right tabular-nums text-text-tertiary">6,000만</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−470,203</td>
-                        <td className="px-4 py-2 text-right tabular-nums">−513,550</td>
-                        <td className="px-4 py-2 text-right font-bold text-primary-700 dark:text-primary-300 tabular-nums">4,016,247원</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p className="mt-3 text-xs text-text-tertiary">
-                  * 위 표는 부양가족 1인·비과세 항목 미적용·근로소득공제 표준 적용 추정치입니다.
-                  실제 본인 조건(부양가족, 자녀, 비과세 식대, 퇴직금 포함 여부)으로 정확한 실수령액을
-                  확인하려면 위 계산기를 사용하세요.
-                </p>
-              </section>
-
-              {/* 계산 공식 */}
-              <section aria-label="계산 공식" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">2026년 연봉 실수령액 산출 공식 및 예시</h2>
-                <p className="mb-4 text-sm leading-relaxed text-text-secondary">
-                  2026년 연봉 실수령액은 <strong>세전 월급에서 4대보험(국민연금·건강보험·장기요양·고용보험)과
-                  근로소득세·지방소득세를 차례대로 공제</strong>하여 산출합니다. 공식은 다음과 같습니다.
-                </p>
-                <div className="mb-4 rounded-lg border border-border-base bg-bg-card p-4 font-mono text-sm">
-                  실수령액 = (연봉 ÷ 12) − 4대보험 합계 − (근로소득세 + 지방소득세)
-                </div>
-                <ol className="space-y-3 text-sm leading-relaxed">
-                  <li>
-                    <strong>1. 월 소득(세전) 산출</strong>: 연봉을 12로 나눕니다. 근로계약서에
-                    "퇴직금 포함 연봉"으로 표기되어 있으면 13으로 나누는 것이 관행이며, 이 경우 동일 연봉
-                    대비 월 소득이 약 7.7% 낮아집니다. 예: 세전 연봉 5,000만 원 → 월 소득 약 416.7만 원.
-                  </li>
-                  <li>
-                    <strong>2. 과세 대상 소득</strong>: 월 소득에서 비과세 항목(식대 월 20만 원 이하,
-                    숙직비, 자가운전보조금 월 20만 원 등)을 차감합니다. 비과세 항목은 4대보험과 소득세 모두의
-                    과세표준에서 제외되므로 같은 연봉이라도 비과세 식대를 받으면 실수령액이 늘어납니다.
-                  </li>
-                  <li>
-                    <strong>3. 4대보험 공제</strong>: 과세 대상 소득에 각 요율을 곱해 산출합니다.
-                    2026년 기준 근로자 부담분은 국민연금 4.5%, 건강보험 3.545%, 장기요양 0.4593%
-                    (건보료의 12.95%), 고용보험 0.9%로 총 약 9% 수준입니다. 국민연금은 기준소득월액
-                    하한 40만 원, 상한 637만 원이 적용되어 연봉 1억 원 초과부터는 정액으로 부과됩니다.
-                  </li>
-                  <li>
-                    <strong>4. 근로소득세</strong>: 연 과세표준에 소득세법 §55의 8단계 누진세율(6%~45%)을
-                    적용한 뒤 자녀세액공제(1인 15만/2인 20만/3인째부터 각 40만 원)를 차감하고 12로 나눠
-                    월 소득세를 구합니다. 국세청 근로소득 간이세액표가 매월 원천징수 기준입니다.
-                  </li>
-                  <li>
-                    <strong>5. 지방소득세</strong>: 소득세 × 10%를 별도로 부과합니다(지방세법 §92).
-                  </li>
-                  <li>
-                    <strong>6. 실수령액</strong>: 월 소득(세전)에서 4대보험과 소득세·지방소득세를 모두
-                    차감한 금액이 매월 통장에 입금됩니다.
-                  </li>
-                </ol>
-                <p className="mt-4 text-sm leading-relaxed text-text-secondary">
-                  <strong>실제 예시 (연봉 5,000만 원, 부양 1인, 비과세 없음)</strong>: 월 세전 약 416.7만 원에서
-                  국민연금 18.7만 원, 건강보험 14.8만 원, 장기요양 1.9만 원, 고용보험 3.7만 원(4대보험 합계
-                  약 39.1만 원)과 근로소득세 약 21.5만 원, 지방소득세 약 2.2만 원이 공제되어 <strong>실수령액은
-                  약 350만 원</strong>이 됩니다. 자녀 2인 공제와 비과세 식대 20만 원을 적용하면 같은 연봉에서도
-                  약 360만 원대까지 늘어납니다.
-                </p>
-              </section>
-
-              {/* 4대보험 상세 설명 */}
-              <section aria-label="4대보험 상세" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">4대보험 요율 상세</h2>
-                <p className="mb-4 text-text-secondary text-sm">
-                  2026년 기준, 근로자가 부담하는 4대보험 요율은 다음과 같습니다(국민연금법·건강보험법·고용보험법):
-                </p>
-                <div className="overflow-x-auto mb-4">
-                  <table className="w-full text-sm border-collapse">
-                    <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th className="px-3 py-2 text-left font-semibold">보험 종류</th>
-                        <th className="px-3 py-2 text-center font-semibold">근로자 부담률</th>
-                        <th className="px-3 py-2 text-left font-semibold">상한선</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-text-secondary">국민연금</td>
-                        <td className="px-3 py-2 text-center font-medium">4.5%</td>
-                        <td className="px-3 py-2 text-text-secondary">기준소득월액 최고 637만원</td>
-                      </tr>
-                      <tr className="border border-border-base bg-bg-card/50">
-                        <td className="px-3 py-2 text-text-secondary">건강보험</td>
-                        <td className="px-3 py-2 text-center font-medium">3.545%</td>
-                        <td className="px-3 py-2 text-text-secondary">상한선 없음</td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-text-secondary">장기요양보험</td>
-                        <td className="px-3 py-2 text-center font-medium">건보료의 12.95%</td>
-                        <td className="px-3 py-2 text-text-secondary">건강보험료 기준</td>
-                      </tr>
-                      <tr className="border border-border-base bg-bg-card/50">
-                        <td className="px-3 py-2 text-text-secondary">고용보험</td>
-                        <td className="px-3 py-2 text-center font-medium">0.9%</td>
-                        <td className="px-3 py-2 text-text-secondary">상한선 없음</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <RateBarChart
-                  title="연봉에서 빠지는 4대보험 근로자 부담률 (2026)"
-                  caption="월급에서 국민연금 4.5%, 건강보험 3.545%, 장기요양보험(건강보험료의 12.95% ≈ 보수의 0.46%), 고용보험 0.9%가 먼저 공제되고, 이후 소득세·지방소득세가 추가로 빠집니다. 합계 약 9% 수준이며, 비과세 식대 등은 보험료 산정에서 제외됩니다."
-                  max={5}
-                  bars={[
-                    { label: '국민연금', value: 4.5, highlight: true },
-                    { label: '건강보험', value: 3.545, display: '3.545%' },
-                    { label: '장기요양', value: 0.46, display: '≈0.46%' },
-                    { label: '고용보험', value: 0.9 },
-                  ]}
-                />
-                <p className="text-text-secondary text-sm">
-                  <strong>예시:</strong> 월 소득 350만 원일 때, 4대보험 합계 공제액은 약 31.5만 원(9%)입니다.
-                  연봉이 높아질수록 국민연금 상한으로 인해 전체 공제율이 하락합니다.
-                </p>
-              </section>
-
-              {/* 연봉별 절세 팁 */}
-              <section aria-label="절세 팁" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">연봉별 실수령액 최대화 팁</h2>
-                <div className="space-y-4">
-                  <div className="rounded-lg bg-bg-card p-4">
-                    <h3 className="font-semibold text-primary-500 mb-2">비과세 식대 활용</h3>
-                    <p className="text-sm text-text-secondary">
-                      월 20만 원 이하의 식비·식사비는 소득세법 §12(1)에 따라 비과세입니다. 회사에 식대 지급을
-                      요청하면 실수령액을 증가시킬 수 있습니다. 기숙사 숙식비(월 15만 원)도 비과세 대상입니다.
-                    </p>
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '근로', href: '/category/work/' },
+                      { name: '연봉 실수령액' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    연봉 실수령액 계산기 2026
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    세전 급여와 적용월로 월 실수령액을 예상해 보세요.
+                  </p>
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-09-30" />
+                </header>
+              }
+              calculator={<SalaryCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              tools={
+                <>
+                  <ShareButtons
+                    title="연봉 실수령액 계산기 (2026)"
+                    url="https://calculatorhost.com/calculator/salary/"
+                  />
+                  <EmbedCodeBox
+                    embedPath="/embed/salary/"
+                    canonicalPath="/calculator/salary/"
+                    title="연봉 실수령액 계산기"
+                  />
+                </>
+              }
+            >
+              <details className="card">
+                <summary className="cursor-pointer font-semibold">급여별 실수령액 예시</summary>
+                <section aria-label="연봉별 월 실수령액" className="mt-4">
+                  <h2 className="mb-3 text-xl font-semibold">연봉별 월 실수령액은 얼마인가요?</h2>
+                  <p className="mb-4 text-sm text-text-secondary">
+                    2026년 7월 이후·퇴직금 별도·본인 1명·공제대상 자녀 0명·비과세 월 20만 원 가정.
+                    아래 표는 위 계산기와 같은 산식의 추정값이며, 실제 원천징수와 차이가 있습니다.
+                  </p>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <caption className="sr-only">연봉별 월 실수령액 추정</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col" className="p-3 text-left">
+                            세전 연봉
+                          </th>
+                          <th scope="col" className="p-3 text-right">
+                            월 실수령 추정
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {ANNUAL_EXAMPLES.map((example) => (
+                          <tr key={example.wageAmount} className="border-t border-border-base">
+                            <td className="p-3">{formatCurrency(example.wageAmount)}</td>
+                            <td className="p-3 text-right font-semibold tabular-nums">
+                              {formatCurrency(example.monthlyNetIncome)}
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
                   </div>
-                  <div className="rounded-lg bg-bg-card p-4">
-                    <h3 className="font-semibold text-secondary-500 mb-2">자녀 세액공제 확인</h3>
-                    <p className="text-sm text-text-secondary">
-                      20세 이하 자녀가 있으면 자녀 세액공제(1인 15만, 2인 20만, 3인째부터 40만 원)를 받을 수 있습니다.
-                      부양가족 등록을 통해 기본공제(1인 150만 원)도 놓치지 마세요.
-                    </p>
-                  </div>
-                  <div className="rounded-lg bg-bg-card p-4">
-                    <h3 className="font-semibold text-highlight-500 mb-2">연말정산 활용</h3>
-                    <p className="text-sm text-text-secondary">
-                      의료비·교육비·기부금·주택담보대출 이자 등의 세액공제를 충분히 활용하면 환급금을 받을 수 있습니다.
-                      올해 예상 급여 기준으로 계산기를 통해 미리 실수령액을 추정해두면 가계 계획이 용이합니다.
-                    </p>
-                  </div>
-                  <div className="rounded-lg bg-bg-card p-4">
-                    <h3 className="font-semibold text-danger-500 mb-2">연봉 협상 전략</h3>
-                    <p className="text-sm text-text-secondary">
-                      세전 기준이 아닌 세후 월 실수령액을 기준으로 협상하세요. 예를 들어 "월 400만 원(세후)"
-                      목표라면 세전 연봉은 약 5,800~6,000만 원 수준이 필요합니다. 이 계산기를 활용해 상대방을
-                      설득할 근거 자료를 만드세요.
-                    </p>
-                  </div>
+                </section>
+              </details>
+              <details className="card">
+                <summary className="cursor-pointer font-semibold">자주 묻는 질문</summary>
+                <div className="mt-4">
+                  <FaqSection items={FAQ_ITEMS} />
                 </div>
-              </section>
-
-              {/* 주의사항 */}
-              <section aria-label="주의사항" className="card">
-                <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
-                <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
-                  <li>
-                    본 계산기의 소득세는 연 과세표준을 12등분한 근사치입니다. 실제 월 원천징수는 국세청 근로소득
-                    간이세액표에 따라 소폭 다를 수 있으며, 연말정산으로 정산됩니다.
-                  </li>
-                  <li>건강보험료 및 장기요양요율은 매년 조정됩니다. 배포 시점 기준 2026년 요율.</li>
-                  <li>연봉 1억 초과 시 국민연금 기준소득월액 상한이 자동 적용됩니다.</li>
-                  <li>실제 급여명세서와는 회사의 비과세 운영 방식에 따라 차이가 있을 수 있습니다.</li>
-                  <li>본 계산기는 정규 직원 기준이며, 일용직·프리랜서는 다른 세율 적용 대상입니다.</li>
-                </ul>
-              </section>
-
-              {/* 관련 계산기 */}
-              {/* 관련 가이드 CTA */}
-              <section aria-label="관련 가이드" className="card border-l-4 border-l-primary-500 bg-primary-500/5">
+              </details>
+              <details className="card">
+                <summary className="cursor-pointer font-semibold">계산 기준·가정·공식</summary>
+                <section
+                  aria-label="계산 공식"
+                  className="mt-4 space-y-4 text-sm leading-relaxed text-text-secondary"
+                >
+                  <h2 className="text-xl font-semibold text-text-primary">
+                    2026년 연봉 실수령액 산출 공식
+                  </h2>
+                  <p>
+                    월 실수령 추정액 = 세전 월급 − 국민연금 − 건강보험 − 장기요양 − 고용보험 −
+                    소득세 근사치 − 지방소득세.
+                  </p>
+                  <p>
+                    연봉은 12개월로 나누고, 퇴직금 포함 선택 시 13등분한 월급을 가정합니다. 월
+                    비과세액은 월급 범위까지만 반영합니다. 무급여 0원 입력은 공제액과 실수령액을
+                    0원으로 추정하며 실제 가입·납부예외 여부를 판정하지 않습니다.
+                  </p>
+                  <h3 className="font-semibold text-text-primary">
+                    보험료: 2026년 1월 1일부터 적용
+                  </h3>
+                  <p>
+                    근로자 부담 국민연금 4.75%, 건강보험 3.595%, 장기요양보험은 건강보험료의 13.14%,
+                    고용보험 0.9%입니다. 국민연금 기준소득월액은 천 원 미만을 버린 뒤 1~6월
+                    40만~637만 원, 7~12월 41만~659만 원으로 제한합니다. 보험료 금액은 원 미만을
+                    버리는 추정이며 실제 고지액의 절사·정산 방식과 차이가 날 수 있습니다.
+                  </p>
+                  <RateBarChart
+                    title="2026년 근로자 부담 보험료율"
+                    caption="국민연금 상하한 적용 전, 일반 급여 기준. 장기요양은 건강보험료 대비 13.14%."
+                    max={5}
+                    bars={[
+                      { label: '국민연금', value: 4.75, highlight: true },
+                      { label: '건강보험', value: 3.595, display: '3.595%' },
+                      { label: '장기요양', value: 0.4724, display: '약 0.4724%' },
+                      { label: '고용보험', value: 0.9 },
+                    ]}
+                  />
+                  <p>
+                    보험료 산정 소득은 세전 월급에서 입력 비과세를 뺀 금액으로 가정합니다. 공단에
+                    신고한 기준소득·보수월액, 비과세 종류, 가입조건·정산을 반영하지 않습니다.
+                    건강보험 상하한과 다중사업장 합산도 반영하지 않으므로 고액 급여·특수한
+                    고용조건은 공단 고지액을 확인하세요.
+                  </p>
+                  <h3 className="font-semibold text-text-primary">
+                    소득세: 국세청 간이세액표 직접 조회 아님
+                  </h3>
+                  <p>
+                    연 급여에서 비과세액을 제외한 총급여를 기준으로 근로소득공제(소득세법 제47조)와
+                    기본공제(1인당 150만 원)를 빼고, 누진세율(제55조)을 적용합니다. 공제대상
+                    자녀·손자녀 세액공제(1명 25만 원, 2명 합계 55만 원, 3명째부터 40만 원 추가)를
+                    차감한 뒤 12개월로 나눕니다. 지방소득세는 월 소득세의 10%이며 두 세액 모두 10원
+                    미만을 버립니다.
+                  </p>
+                  <p>
+                    사회보험료 소득공제, 근로소득세액공제·특별공제 및 회사의 80%·100%·120% 원천징수
+                    선택을 반영하지 않은 근사치입니다. 실제 월 원천징수액 및 연말정산 결정세액과
+                    차이가 날 수 있습니다. 기본공제대상 가족과 자녀 세액공제의 연령·소득 요건은 실제
+                    조건을 확인한 인원만 입력하세요.
+                  </p>
+                </section>
+              </details>
+              <section
+                aria-label="관련 가이드"
+                className="card border-l-4 border-l-primary-500 bg-primary-500/5"
+              >
                 <h2 className="mb-2 text-xl font-semibold">함께 보면 좋은 가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     →{' '}
-                    <a href="/guide/freelancer-salary-comparison/" className="text-primary-700 dark:text-primary-300 underline font-medium">
+                    <a
+                      href="/guide/freelancer-salary-comparison/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
                       프리랜서 vs 일반직 실수령액 비교
                     </a>{' '}
-, 같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이
+                    , 같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이
                   </li>
                 </ul>
               </section>
-
-              <ShareButtons title="연봉 실수령액 계산기 (2026)" url="https://calculatorhost.com/calculator/salary/" />
-
-              <EmbedCodeBox
-                embedPath="/embed/salary/"
-                canonicalPath="/calculator/salary/"
-                title="연봉 실수령액 계산기"
-              />
-
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
-                  <li>2026-04-24: 2026년 소득세율·4대보험 요율 반영 초판 공개</li>
+                  <li>
+                    2026-09-30: 2026년 보험료율·국민연금 적용월 상하한 수정, 소득세 근사 방식과 예시
+                    기준 명시
+                  </li>
                 </ul>
               </section>
-
-              {/* 참고 자료, 법령·고시 deep-link */}
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
@@ -625,22 +427,22 @@ export default function SalaryPage() {
                   </li>
                   <li>
                     <a
-                      href="https://www.law.go.kr/법령/국민연금법"
+                      href="https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0097M0.do"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터, 국민연금법 (보험료율 4.5% 근로자 부담)
+                      국민연금공단, 2026년 보험료율 9.5%·근로자 4.75%·기준소득월액
                     </a>
                   </li>
                   <li>
                     <a
-                      href="https://www.law.go.kr/법령/국민건강보험법"
+                      href="https://www.mohw.go.kr/menu.es?mid=a10705010500"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터, 국민건강보험법 (보험료율 7.09% / 근로자 3.545%)
+                      보건복지부, 건강보험료율 7.19% / 근로자 3.595%
                     </a>
                   </li>
                   <li>
@@ -665,30 +467,22 @@ export default function SalaryPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* smartdatashop network 메인 사이트 backref (1차 출처 데이터 저널) */}
-              <MainBackrefBox
-                mainCategoryUrl={getMainCategoryUrlForCalculatorSlug('salary')}
-              />
-
-              {/* 출처·면책 */}
+              <MainBackrefBox mainCategoryUrl={getMainCategoryUrlForCalculatorSlug('salary')} />
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §55, §59의2, 국민건강보험법, 국민연금법, 국세청
-                  근로소득 간이세액표(2026).
+                  <strong>법적 근거</strong>: 소득세법 §55, §59의2, 국민건강보험법, 국민연금법,
+                  국세청 근로소득 간이세액표는 실제 원천징수 확인용이며 본 도구에 직접 연동되어 있지
+                  않습니다.
                 </p>
                 <p>
-                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 세무 처리는 세무사의 안내를
-                  받으시기 바랍니다.
+                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 세무 처리는 세무사의
+                  안내를 받으시기 바랍니다.
                 </p>
               </section>
-              </div>
-
-              {/* 우측 AD-3 Skyscraper (lg+) */}
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/angel-investment-income-deduction-2026/';
 const DATE_PUBLISHED = '2026-08-25';
-const DATE_MODIFIED = '2026-08-25';
+const DATE_MODIFIED = '2026-09-30';
 
 export const metadata: Metadata = {
-  title: '엔젤투자 소득공제 2026, 3천만원까지 100% 공제',
+  title: '엔젤투자 소득공제 2026, 적격 투자 3천만원까지 100% 공제',
   description:
-    '벤처기업·개인투자조합에 투자하면 종합소득금액에서 공제받는 엔젤투자 소득공제. 3천만원 이하 100%, 5천만원 이하 70%, 초과분 30% 공제율과 종합소득금액 50% 한도, 3년 유지 요건까지 조세특례제한법 §16 기준으로 정리합니다.',
+    '벤처기업·개인투자조합에 투자하면 종합소득금액에서 공제받는 엔젤투자 소득공제. 제1항 제3·4·6호의 적격 투자에 한해 3천만원 이하 100%, 5천만원 이하 70%, 초과분 30% 공제율과 종합소득금액 50% 한도, 3년 유지 요건까지 조세특례제한법 §16 기준으로 정리합니다.',
   keywords: [
     '엔젤투자 소득공제',
     '벤처투자조합 소득공제',
@@ -34,9 +34,17 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '엔젤투자 소득공제 2026, 3천만원까지 100% 공제' }],
+    images: [
+      {
+        url: '/og-default.png',
+        width: 1200,
+        height: 630,
+        alt: '엔젤투자 소득공제 2026, 적격 투자 3천만원까지 100% 공제',
+      },
+    ],
     title: '엔젤투자 소득공제 2026, 공제율과 한도 총정리',
-    description: '3천만원 이하 100%, 5천만원 이하 70%, 초과 30%. 종합소득금액 50% 한도와 3년 유지 요건을 조세특례제한법 §16 기준으로 정리.',
+    description:
+      '적격 투자 구간별 100%·70%·30%, 그 외 대상 유형은 10%. 종합소득금액 50% 한도와 3년 유지 요건을 조세특례제한법 §16 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,7 +54,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '엔젤투자 소득공제 2026, 공제율·한도 정리',
-    description: '3천만원 100%, 5천만원 70%, 초과 30%. 종합소득금액 50% 한도. 조특법 §16.',
+    description:
+      '적격 투자 구간별 100%·70%·30%와 그 외 대상 유형의 10% 공제를 구분합니다. 종합소득금액 50% 한도. 조특법 §16.',
   },
 };
 
@@ -59,7 +68,7 @@ const FAQ_ITEMS = [
   {
     question: '공제율은 어떻게 되나요?',
     answer:
-      '투자금액 구간별로 다릅니다(조세특례제한법 §16). 3,000만원 이하는 100%, 3,000만원 초과 5,000만원 이하는 70%, 5,000만원 초과분은 30%를 소득공제합니다. 예를 들어 4,000만원을 투자하면 3,000만원의 100%와 1,000만원의 70%를 더해 3,700만원을 공제합니다.',
+      '투자 방식에 따라 다릅니다(조세특례제한법 §16). 제1항 제1·2·5호는 투자금의 10%이며, 제3·4·6호의 적격 투자에 한해 3,000만원 이하분 100%, 3,000만원 초과 5,000만원 이하분 70%, 초과분 30%를 적용합니다. 아래 계산 예시는 제3·4·6호의 요건을 충족한 투자라는 가정입니다.',
   },
   {
     question: '공제에 한도가 있나요?',
@@ -102,7 +111,7 @@ export default function AngelInvestmentIncomeDeductionPage() {
   const articleLd = buildArticleJsonLd({
     headline: '엔젤투자 소득공제 2026, 공제율과 한도 총정리',
     description:
-      '벤처기업·개인투자조합 투자에 대한 엔젤투자 소득공제. 3천만원 100%, 5천만원 70%, 초과 30% 공제율과 종합소득금액 50% 한도, 3년 유지 요건을 조세특례제한법 §16 기준으로 정리.',
+      '벤처기업·개인투자조합 투자에 대한 엔젤투자 소득공제. 적격 투자 구간별 100%·70%·30%와 그 외 대상 유형의 10% 공제율과 종합소득금액 50% 한도, 3년 유지 요건을 조세특례제한법 §16 기준으로 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -124,11 +133,26 @@ export default function AngelInvestmentIncomeDeductionPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(speakableLd) }}
+      />
 
       <div className="min-h-screen bg-bg-base">
         <Header />
@@ -144,179 +168,292 @@ export default function AngelInvestmentIncomeDeductionPage() {
                     { name: '엔젤투자 소득공제 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">투자자 · 절세 · 8분 읽기 · 2026-08-25</p>
+                <p className="mb-2 text-caption text-text-tertiary">
+                  투자자 · 절세 · 8분 읽기 · 2026-08-25
+                </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   엔젤투자 소득공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 3천만원까지 100% 공제</span>
+                  <span className="text-2xl text-text-secondary">
+                    · 적격 투자 3천만원까지 100% 공제
+                  </span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  고소득자가 세금을 줄이는 방법을 찾다 보면 엔젤투자 소득공제라는 제도를 만나게 됩니다. 벤처기업이나 개인투자조합에 투자한 금액을 소득에서 통째로 빼 주는데, 3천만원까지는 100% 공제라 절세 효과가 상당합니다. 이 가이드는 투자자를 위해 공제율 구조, 종합소득금액 50% 한도, 그리고 서둘러 팔면 공제가 추징되는 3년 유지 요건을 조세특례제한법 §16 기준으로 정리합니다.
+                  고소득자가 세금을 줄이는 방법을 찾다 보면 엔젤투자 소득공제라는 제도를 만나게
+                  됩니다. 투자 유형과 법령상 요건에 따라 공제율이 다릅니다. 제1항 제3·4·6호의 적격
+                  투자에만 3천만원 이하분 100% 등 구간별 공제율이 적용되며, 제1·2·5호의 투자는
+                  10%입니다. 이 가이드는 투자자를 위해 공제율 구조, 종합소득금액 50% 한도, 그리고
+                  서둘러 팔면 공제가 추징되는 3년 유지 요건을 조세특례제한법 §16 기준으로
+                  정리합니다.
                 </p>
               </header>
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">엔젤투자 소득공제란 무엇인가요?</h2>
                 <p>
-                  엔젤투자 소득공제는 개인이 벤처기업 등에 투자한 금액을 종합소득금액에서 공제해 주는 제도입니다(조세특례제한법 §16, 정식 명칭은 벤처투자조합 출자 등에 대한 소득공제). 세액에서 직접 빼는 세액공제가 아니라 과세표준을 낮추는 소득공제라는 점이 핵심입니다.
+                  엔젤투자 소득공제는 개인이 벤처기업 등에 투자한 금액을 종합소득금액에서 공제해
+                  주는 제도입니다(조세특례제한법 §16, 정식 명칭은 벤처투자조합 출자 등에 대한
+                  소득공제). 세액에서 직접 빼는 세액공제가 아니라 과세표준을 낮추는 소득공제라는
+                  점이 핵심입니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <p className="font-semibold text-text-primary">정의: 엔젤투자 소득공제 (조세특례제한법 §16)</p>
+                  <p className="font-semibold text-text-primary">
+                    정의: 엔젤투자 소득공제 (조세특례제한법 §16)
+                  </p>
                   <p className="mt-2 text-sm text-text-secondary">
-                    벤처기업·개인투자조합 등에 투자한 금액을 종합소득금액에서 공제. 핵심 수치: 3천만원 이하 100% 공제, 종합소득금액 50% 한도.
+                    벤처기업·개인투자조합 등에 투자한 금액을 종합소득금액에서 공제. 핵심 수치: 제1항
+                    제1·2·5호 10%, 제3·4·6호 적격 투자는 3천만원 이하분 100% 등 구간별 공제.
+                    종합소득금액 50% 한도.
                   </p>
                 </div>
                 <p>
-                  소득공제이므로 절세액은 본인의 한계세율에 비례합니다. 같은 3천만원을 공제받아도 세율 15% 구간과 42% 구간의 절세액은 크게 차이가 납니다. 그래서 소득이 높은 사람일수록 활용도가 높은 제도입니다.
+                  소득공제이므로 절세액은 본인의 한계세율에 비례합니다. 같은 3천만원을 공제받아도
+                  세율 15% 구간과 42% 구간의 절세액은 크게 차이가 납니다. 그래서 소득이 높은
+                  사람일수록 활용도가 높은 제도입니다.
                 </p>
               </section>
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">공제율은 얼마이고 한도는 어떻게 되나요?</h2>
                 <p>
-                  공제율은 투자금액 구간에 따라 100%, 70%, 30%로 나뉘고, 전체 공제액은 종합소득금액의 50%를 넘을 수 없습니다(조세특례제한법 §16).
+                  조세특례제한법 §16 제1항 제1·2·5호의 출자·투자 공제율은 10%입니다. 제3·4·6호에
+                  해당하는 적격 출자·투자만 아래 구간별 100%·70%·30%를 적용합니다. 전체 공제액은
+                  종합소득금액의 50% 한도이며, 기존 지분 양수 등은 제외될 수 있습니다.
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 엔젤투자 소득공제 공제율 (조세특례제한법 §16)</caption>
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">
+                      표 1. 제1항 제3·4·6호 적격 투자 공제율 (조세특례제한법 §16)
+                    </caption>
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">투자금액 구간</th>
-                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">공제율</th>
+                        <th scope="col" className="bg-bg-card p-3 text-left font-semibold">
+                          투자금액 구간
+                        </th>
+                        <th scope="col" className="bg-bg-card p-3 text-left font-semibold">
+                          공제율
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="p-3">3,000만원 이하</td>
-                        <td className="p-3"><strong>100%</strong></td>
+                        <td className="p-3">
+                          <strong>100%</strong>
+                        </td>
                       </tr>
-                      <tr className="border-b border-border-base bg-bg-card/50">
+                      <tr className="bg-bg-card/50 border-b border-border-base">
                         <td className="p-3">3,000만원 초과 5,000만원 이하</td>
-                        <td className="p-3"><strong>70%</strong></td>
+                        <td className="p-3">
+                          <strong>70%</strong>
+                        </td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">5,000만원 초과분</td>
-                        <td className="p-3"><strong>30%</strong></td>
+                        <td className="p-3">
+                          <strong>30%</strong>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p>
-                  다만, 산식으로 계산한 공제액이 종합소득금액의 50%를 초과하면 그 한도까지만 공제됩니다. 즉 공제율만큼 늘 다 받는 것이 아니라 본인 소득 크기가 또 하나의 상한이 됩니다.
+                  다만, 산식으로 계산한 공제액이 종합소득금액의 50%를 초과하면 그 한도까지만
+                  공제됩니다. 즉 공제율만큼 늘 다 받는 것이 아니라 본인 소득 크기가 또 하나의 상한이
+                  됩니다.
                 </p>
               </section>
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">실제로 얼마나 공제되나요?</h2>
                 <p>
-                  두 가지 사례로 공제 산식과 한도가 어떻게 작동하는지 살펴봅니다.
+                  아래 두 사례는 제1항 제3·4·6호의 적격 투자 요건을 모두 충족했다고 가정한 단순
+                  예시입니다. 제1·2·5호의 10% 공제 대상에 적용하지 마세요.
                 </p>
-                <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
-                  <p className="font-semibold text-text-primary">사례 1. 종합소득금액 8,000만원, 4,000만원 투자</p>
+                <div className="mt-4 space-y-3 rounded-lg border border-border-base bg-bg-card p-4">
+                  <p className="font-semibold text-text-primary">
+                    사례 1. 종합소득금액 8,000만원, 4,000만원 투자
+                  </p>
                   <p className="text-sm text-text-secondary">
-                    · 공제액 = 3,000만 × 100% + 1,000만 × 70% = 3,000만 + 700만 = <strong>3,700만원</strong>
+                    · 공제액 = 3,000만 × 100% + 1,000만 × 70% = 3,000만 + 700만 ={' '}
+                    <strong>3,700만원</strong>
                     <br />
                     · 한도 = 8,000만 × 50% = 4,000만원 (한도 이내)
+                    <br />· 최종 공제액 = <strong>3,700만원</strong>
                     <br />
-                    · 최종 공제액 = <strong>3,700만원</strong>
-                    <br />
-                    <span className="text-xs text-text-tertiary">한계세율 24% 가정 시 절세액은 3,700만 × 24% × 1.1 = 약 977만원(지방소득세 포함, 예시).</span>
+                    <span className="text-xs text-text-tertiary">
+                      공제액을 한계세율 하나에 곱한 금액은 실제 절세액을 보장하지 않습니다. 공제
+                      전후 과세표준의 누진구간과 다른 공제·세액공제를 함께 계산해야 합니다.
+                    </span>
                   </p>
                 </div>
-                <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
-                  <p className="font-semibold text-text-primary">사례 2. 종합소득금액 3,000만원, 6,000만원 투자 (한도가 막는 경우)</p>
+                <div className="mt-4 space-y-3 rounded-lg border border-border-base bg-bg-card p-4">
+                  <p className="font-semibold text-text-primary">
+                    사례 2. 종합소득금액 3,000만원, 6,000만원 투자 (한도가 막는 경우)
+                  </p>
                   <p className="text-sm text-text-secondary">
-                    · 산식 공제액 = 3,000만 × 100% + 2,000만 × 70% + 1,000만 × 30% = 3,000 + 1,400 + 300 = 4,700만원
+                    · 산식 공제액 = 3,000만 × 100% + 2,000만 × 70% + 1,000만 × 30% = 3,000 + 1,400 +
+                    300 = 4,700만원
                     <br />
                     · 한도 = 3,000만 × 50% = 1,500만원
+                    <br />· 최종 공제액 = <strong>1,500만원</strong> (한도로 제한)
                     <br />
-                    · 최종 공제액 = <strong>1,500만원</strong> (한도로 제한)
-                    <br />
-                    <span className="text-xs text-text-tertiary">소득 대비 과도하게 큰 투자는 한도에 걸려 공제를 다 못 받을 수 있습니다.</span>
+                    <span className="text-xs text-text-tertiary">
+                      소득 대비 과도하게 큰 투자는 한도에 걸려 공제를 다 못 받을 수 있습니다.
+                    </span>
                   </p>
                 </div>
                 <p className="mt-4">
-                  위 절세액은 이해를 돕기 위한 예시이며, 실제 세액은 다른 공제와 세율 구간에 따라 달라집니다. 정확한 계산은 홈택스 또는 세무 전문가의 도움을 받으세요.
+                  위 절세액은 이해를 돕기 위한 예시이며, 실제 세액은 다른 공제와 세율 구간에 따라
+                  달라집니다. 정확한 계산은 홈택스 또는 세무 전문가의 도움을 받으세요.
                 </p>
               </section>
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">투자 후 3년 안에 팔면 어떻게 되나요?</h2>
                 <p>
-                  공제를 받은 뒤 원칙적으로 3년 이내에 지분이나 주식을 양도·회수하면 이미 받은 소득공제가 추징될 수 있습니다(조세특례제한법 §16). 절세만 노리고 단기 회수를 계획하면 공제가 사후에 취소되어 오히려 가산세까지 낼 수 있습니다.
+                  공제를 받은 뒤 원칙적으로 3년 이내에 지분이나 주식을 양도·회수하면 이미 받은
+                  소득공제가 추징될 수 있습니다(조세특례제한법 §16). 절세만 노리고 단기 회수를
+                  계획하면 공제가 사후에 취소되어 오히려 가산세까지 낼 수 있습니다.
                 </p>
                 <p>
-                  따라서 이 제도는 최소 3년 이상 자금을 묶어 둘 수 있는 여윳돈으로 접근해야 합니다. 벤처투자는 회수까지 수년이 걸리는 것이 보통이므로, 유동성이 필요한 자금으로는 적합하지 않습니다.
+                  따라서 이 제도는 최소 3년 이상 자금을 묶어 둘 수 있는 여윳돈으로 접근해야 합니다.
+                  벤처투자는 회수까지 수년이 걸리는 것이 보통이므로, 유동성이 필요한 자금으로는
+                  적합하지 않습니다.
                 </p>
                 <p>
-                  다만, 사후관리 기간과 추징 요건은 투자 유형(직접투자, 조합 출자 등)에 따라 세부 규정이 다를 수 있으므로, 투자 전 대상 상품의 약관과 조세특례제한법 규정을 함께 확인하세요.
+                  다만, 사후관리 기간과 추징 요건은 투자 유형(직접투자, 조합 출자 등)에 따라 세부
+                  규정이 다를 수 있으므로, 투자 전 대상 상품의 약관과 조세특례제한법 규정을 함께
+                  확인하세요.
                 </p>
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="text-2xl font-bold">공제만 보고 투자해도 될까요?</h2>
                 <p>
-                  절세와 투자 위험은 분리해서 봐야 합니다. 벤처기업·초기기업 투자는 원금 손실 가능성이 큰 고위험 영역입니다. 소득공제는 세금을 줄여 줄 뿐 손실을 보전하지 않습니다.
+                  절세와 투자 위험은 분리해서 봐야 합니다. 벤처기업·초기기업 투자는 원금 손실
+                  가능성이 큰 고위험 영역입니다. 소득공제는 세금을 줄여 줄 뿐 손실을 보전하지
+                  않습니다.
                 </p>
-                <ul className="space-y-3 ml-6 list-disc text-text-secondary">
+                <ul className="ml-6 list-disc space-y-3 text-text-secondary">
                   <li>공제 효과보다 투자 원금 손실 위험이 더 클 수 있습니다.</li>
                   <li>3년 이상 회수가 어려운 자금 성격을 고려해야 합니다.</li>
                   <li>대상 기업의 사업성·회수 구조를 먼저 검토하는 것이 순서입니다.</li>
                 </ul>
                 <p>
-                  예외: 소액을 분산해 여러 대상에 투자하면 개별 위험을 낮출 수 있으나, 그렇다고 손실 가능성이 사라지는 것은 아닙니다. 본 가이드는 특정 상품의 투자를 권하지 않으며, 투자 판단과 책임은 본인에게 있습니다.
+                  예외: 소액을 분산해 여러 대상에 투자하면 개별 위험을 낮출 수 있으나, 그렇다고 손실
+                  가능성이 사라지는 것은 아닙니다. 본 가이드는 특정 상품의 투자를 권하지 않으며,
+                  투자 판단과 책임은 본인에게 있습니다.
                 </p>
               </section>
 
-              <h2 className="text-2xl font-bold mb-6">자주 묻는 질문</h2>
+              <h2 className="mb-6 text-2xl font-bold">자주 묻는 질문</h2>
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h3 className="text-lg font-semibold text-text-primary">관련 계산기 및 가이드</h3>
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Link href="/guide/venture-stock-option-tax-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
+                  <Link
+                    href="/guide/venture-stock-option-tax-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
+                  >
                     <div className="font-semibold text-primary-500">벤처기업 스톡옵션 세금</div>
-                    <p className="mt-1 text-sm text-text-secondary">벤처 투자·보상의 또 다른 세제 혜택을 확인하세요.</p>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      벤처 투자·보상의 또 다른 세제 혜택을 확인하세요.
+                    </p>
                   </Link>
-                  <Link href="/guide/startup-fund-gift-tax-special-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
+                  <Link
+                    href="/guide/startup-fund-gift-tax-special-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
+                  >
                     <div className="font-semibold text-primary-500">창업자금 증여세 특례</div>
-                    <p className="mt-1 text-sm text-text-secondary">창업 지원을 위한 증여세 과세특례 제도.</p>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      창업 지원을 위한 증여세 과세특례 제도.
+                    </p>
                   </Link>
-                  <Link href="/guide/isa-account-tax-benefit-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
+                  <Link
+                    href="/guide/isa-account-tax-benefit-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
+                  >
                     <div className="font-semibold text-primary-500">ISA 계좌 절세 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">투자자를 위한 대표 절세 계좌를 함께 활용하세요.</p>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      투자자를 위한 대표 절세 계좌를 함께 활용하세요.
+                    </p>
                   </Link>
-                  <Link href="/guide/domestic-stock-major-shareholder-tax-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
+                  <Link
+                    href="/guide/domestic-stock-major-shareholder-tax-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
+                  >
                     <div className="font-semibold text-primary-500">국내주식 대주주 양도세</div>
-                    <p className="mt-1 text-sm text-text-secondary">주식 투자 시 양도세 과세 기준을 확인하세요.</p>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      주식 투자 시 양도세 과세 기준을 확인하세요.
+                    </p>
                   </Link>
-                  <Link href="/guide/pension-savings-irp-tax-credit-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
+                  <Link
+                    href="/guide/pension-savings-irp-tax-credit-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
+                  >
                     <div className="font-semibold text-primary-500">연금저축·IRP 세액공제</div>
-                    <p className="mt-1 text-sm text-text-secondary">위험이 낮은 대표 절세 수단과 비교해 보세요.</p>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      위험이 낮은 대표 절세 수단과 비교해 보세요.
+                    </p>
                   </Link>
-                  <Link href="/category/tax/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
+                  <Link
+                    href="/category/tax/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
+                  >
                     <div className="font-semibold text-primary-500">모든 세금 가이드</div>
-                    <p className="mt-1 text-sm text-text-secondary">투자·소득 관련 절세 가이드 모음.</p>
+                    <p className="mt-1 text-sm text-text-secondary">
+                      투자·소득 관련 절세 가이드 모음.
+                    </p>
                   </Link>
                 </div>
               </section>
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·투자 조언이 아닙니다. 공제 대상 여부, 공제율, 한도, 사후관리(3년) 요건은 투자 유형과 대상 기업 요건에 따라 달라지므로 투자 전 조세특례제한법 규정과 국세청·중소벤처기업부 안내로 확인하세요. 벤처투자는 원금 손실 가능성이 있는 고위험 투자이며 본 콘텐츠는 특정 투자를 권유하지 않습니다. 본 콘텐츠는 2026-08-25 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>조세특례제한법 §16(벤처투자조합 출자 등에 대한 소득공제)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형
+                  세무·투자 조언이 아닙니다. 공제 대상 여부, 공제율, 한도, 사후관리(3년) 요건은 투자
+                  유형과 대상 기업 요건에 따라 달라지므로 투자 전 조세특례제한법 규정과
+                  국세청·중소벤처기업부 안내로 확인하세요. 벤처투자는 원금 손실 가능성이 있는 고위험
+                  투자이며 본 콘텐츠는 특정 투자를 권유하지 않습니다. 본 콘텐츠는 2026-08-25
+                  기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은{' '}
+                  <strong>조세특례제한법 §16(벤처투자조합 출자 등에 대한 소득공제)</strong>입니다.
+                  AI 보조 작성 후 운영자 검수 완료.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
-                  <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터</a>,{' '}
-                  <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청</a>,{' '}
-                  <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">홈택스</a>.
+                  <a
+                    href="https://www.law.go.kr/법령/조세특례제한법/제16조"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    법제처 국가법령정보센터
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.nts.go.kr/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    국세청
+                  </a>
+                  ,{' '}
+                  <a
+                    href="https://www.hometax.go.kr/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    홈택스
+                  </a>
+                  .
                 </p>
               </section>
 
-              <ShareButtons
-                title="엔젤투자 소득공제 2026 가이드"
-                url={URL}
-              />
+              <ShareButtons title="엔젤투자 소득공제 2026 가이드" url={URL} />
             </article>
           </main>
         </div>

@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -39,7 +39,6 @@ export const metadata: Metadata = {
       '금액의 미래 화폐가치, 현재가치, 실질 구매력을 계산하세요. CPI 기반 인플레이션 반영.',
     url: URL,
     type: 'website',
-
   },
   twitter: {
     card: 'summary_large_image',
@@ -115,7 +114,7 @@ export default function InflationPage() {
     isPartOf: getCategoryUrlForCalculator('inflation'),
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -125,8 +124,7 @@ export default function InflationPage() {
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   const howtoLd = buildHowToJsonLd({
     name: '화폐가치 계산하기',
-    description:
-      '금액, 기간, 인플레이션 방식을 선택해 화폐가치를 계산하는 방법',
+    description: '금액, 기간, 인플레이션 방식을 선택해 화폐가치를 계산하는 방법',
     steps: [
       {
         name: '계산 방식 선택',
@@ -181,56 +179,50 @@ export default function InflationPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '금융', href: '/category/finance/' },
-                    { name: '화폐가치' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  화폐가치 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  금액, 기간, 연간 인플레이션을 입력하면 미래 화폐가치, 현재가치,
-                  실질 구매력을 즉시 계산합니다. 인플레이션이 돈의 가치에 미치는 영향을
-                  정확히 파악하기 위한 필수 도구입니다.
-                </p>
-                <AuthorByline dateModified="2026-04-24" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '금융', href: '/category/finance/' },
+                      { name: '화폐가치' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">화폐가치 계산기 2026</h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    같은 돈의 구매력이 시간에 따라 얼마나 달라지는지 확인하세요.
+                  </p>
+                  <AuthorByline dateModified="2026-04-24" />
+                </header>
+              }
+              calculator={<InflationCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="화폐가치는 인플레이션(물가 상승)에 따라 시간에 따라 변합니다. 미래가치는 오늘의 1원이 미래에 얼마나 가치가 떨어지는지, 현재가치는 미래의 1원이 오늘 기준 얼마나 가치인지를 계산합니다. 실질 구매력은 '앞으로 몇 개 물건을 살 수 있을까'를 의미하며 현재가치와 동일합니다(한국은행 물가정보)."
                 table={{
                   caption: '화폐가치 계산 핵심 공식',
                   headers: ['항목', '공식/설명'],
                   rows: [
-                    [
-                      '인플레이션 계수',
-                      '(1 + 연 인플레이션율)^년수',
-                    ],
-                    [
-                      '미래가치',
-                      '현재금액 ÷ 인플레이션계수',
-                    ],
-                    [
-                      '현재가치',
-                      '미래금액 ÷ 인플레이션계수',
-                    ],
-                    [
-                      '실질 구매력',
-                      '현재가치와 동일 (미래 금액의 오늘 기준 가치)',
-                    ],
-                    [
-                      '누적 인플레이션',
-                      '(인플레이션계수 - 1) × 100%',
-                    ],
+                    ['인플레이션 계수', '(1 + 연 인플레이션율)^년수'],
+                    ['미래가치', '현재금액 ÷ 인플레이션계수'],
+                    ['현재가치', '미래금액 ÷ 인플레이션계수'],
+                    ['실질 구매력', '현재가치와 동일 (미래 금액의 오늘 기준 가치)'],
+                    ['누적 인플레이션', '(인플레이션계수 - 1) × 100%'],
                   ],
                 }}
                 tldr={[
@@ -240,71 +232,81 @@ export default function InflationPage() {
                   '한국은행 물가 목표: 연 2%, 실제는 1.8~3.6% 범위',
                 ]}
               />
-
-              {/* 계산기 */}
-              <InflationCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 물가상승률 답변 블록, GSC '물가 상승률 계산기' 쿼리 타깃 */}
               <section aria-label="물가상승률" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">우리나라 물가상승률은 몇 %인가요?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  최근 우리나라 소비자물가 상승률은 2022년 5.1%, 2023년 3.6%, 2024년 약 2.3%였습니다(통계청 소비자물가지수). 물가상승률만큼 돈의 구매력이 매년 줄어들기 때문에, 위 계산기에 예상 물가상승률을 넣으면 미래에 같은 금액으로 살 수 있는 양이 얼마나 줄어드는지 바로 확인할 수 있습니다.
+                  최근 우리나라 소비자물가 상승률은 2022년 5.1%, 2023년 3.6%, 2024년 약
+                  2.3%였습니다(통계청 소비자물가지수). 물가상승률만큼 돈의 구매력이 매년 줄어들기
+                  때문에, 위 계산기에 예상 물가상승률을 넣으면 미래에 같은 금액으로 살 수 있는 양이
+                  얼마나 줄어드는지 바로 확인할 수 있습니다.
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표. 최근 연간 소비자물가 상승률 (통계청 CPI)</caption>
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs text-text-secondary">
+                      표. 최근 연간 소비자물가 상승률 (통계청 CPI)
+                    </caption>
                     <thead>
-                      <tr className="bg-primary-500/10 border border-border-base">
-                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">연도</th>
-                        <th scope="col" className="px-4 py-3 text-right font-bold text-text-primary">소비자물가 상승률</th>
+                      <tr className="border border-border-base bg-primary-500/10">
+                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">
+                          연도
+                        </th>
+                        <th
+                          scope="col"
+                          className="px-4 py-3 text-right font-bold text-text-primary"
+                        >
+                          소비자물가 상승률
+                        </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border border-border-base"><td className="px-4 py-2">2022년</td><td className="px-4 py-2 text-right tabular-nums">5.1%</td></tr>
-                      <tr className="border border-border-base bg-bg-card/50"><td className="px-4 py-2">2023년</td><td className="px-4 py-2 text-right tabular-nums">3.6%</td></tr>
-                      <tr className="border border-border-base"><td className="px-4 py-2">2024년</td><td className="px-4 py-2 text-right tabular-nums">약 2.3%</td></tr>
+                      <tr className="border border-border-base">
+                        <td className="px-4 py-2">2022년</td>
+                        <td className="px-4 py-2 text-right tabular-nums">5.1%</td>
+                      </tr>
+                      <tr className="bg-bg-card/50 border border-border-base">
+                        <td className="px-4 py-2">2023년</td>
+                        <td className="px-4 py-2 text-right tabular-nums">3.6%</td>
+                      </tr>
+                      <tr className="border border-border-base">
+                        <td className="px-4 py-2">2024년</td>
+                        <td className="px-4 py-2 text-right tabular-nums">약 2.3%</td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="mt-3 text-sm text-text-secondary">
-                  장기 평균 물가상승률은 대략 연 2~3% 수준입니다. 정확한 연도별·월별 물가상승률은 통계청 KOSIS(kosis.kr) 또는 한국은행 ECOS(ecos.bok.or.kr)에서 조회할 수 있습니다.
+                  장기 평균 물가상승률은 대략 연 2~3% 수준입니다. 정확한 연도별·월별 물가상승률은
+                  통계청 KOSIS(kosis.kr) 또는 한국은행 ECOS(ecos.bok.or.kr)에서 조회할 수 있습니다.
                 </p>
               </section>
-
-              {/* 화폐가치와 인플레이션 */}
               <section aria-label="화폐가치란" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">화폐가치와 인플레이션</h2>
                 <p className="mb-4 text-text-secondary">
-                  화폐가치는 "돈이 사물을 사는 능력"을 의미합니다. 인플레이션(물가 상승)이
-                  발생하면, 같은 액수의 돈으로 살 수 있는 물건이 줄어듭니다. 예를 들어,
-                  현재 1,000만 원으로 자동차를 살 수 있지만, 10년 후 같은 자동차는
-                  1,200만 원일 수 있습니다. 따라서 화폐의 구매력은 시간에 따라 감소합니다.
+                  화폐가치는 "돈이 사물을 사는 능력"을 의미합니다. 인플레이션(물가 상승)이 발생하면,
+                  같은 액수의 돈으로 살 수 있는 물건이 줄어듭니다. 예를 들어, 현재 1,000만 원으로
+                  자동차를 살 수 있지만, 10년 후 같은 자동차는 1,200만 원일 수 있습니다. 따라서
+                  화폐의 구매력은 시간에 따라 감소합니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
-                  화폐가치의 변화는 금융 계획에 중요합니다. 장기 저축(은퇴자금, 자녀 교육비),
-                  대출 상환, 투자 수익률 평가 시에는 반드시 인플레이션을 고려해야 합니다.
-                  예를 들어, 연 3% 수익률이라도 연 2% 인플레이션이 있으면 실질 수익률은
-                  약 1%입니다. 이를 "실질 수익률(실수익률)"이라 합니다.
+                  화폐가치의 변화는 금융 계획에 중요합니다. 장기 저축(은퇴자금, 자녀 교육비), 대출
+                  상환, 투자 수익률 평가 시에는 반드시 인플레이션을 고려해야 합니다. 예를 들어, 연
+                  3% 수익률이라도 연 2% 인플레이션이 있으면 실질 수익률은 약 1%입니다. 이를 "실질
+                  수익률(실수익률)"이라 합니다.
                 </p>
                 <p className="text-text-secondary">
-                  한국은행은 중기 물가 안정 목표로 연 2%를 설정하고 있습니다. 이는 "건전한
-                  경제 성장의 조건"으로 간주됩니다. 다만 실제 인플레이션은 시기에 따라
-                  0~4% 사이에서 변동하며, 상품별로도 차이가 큽니다(한국은행 통계).
+                  한국은행은 중기 물가 안정 목표로 연 2%를 설정하고 있습니다. 이는 "건전한 경제
+                  성장의 조건"으로 간주됩니다. 다만 실제 인플레이션은 시기에 따라 0~4% 사이에서
+                  변동하며, 상품별로도 차이가 큽니다(한국은행 통계).
                 </p>
               </section>
-
-              {/* 미래가치 vs 현재가치 */}
               <section aria-label="미래가치 vs 현재가치" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">미래가치 vs 현재가치</h2>
                 <p className="mb-4 text-text-secondary">
-                  화폐의 시간 가치를 계산하는 두 가지 주요 개념입니다. 미래가치는 "오늘의
-                  돈이 미래에 얼마나 가치가 떨어질까"를 계산하고, 현재가치는 "미래의 돈이
-                  오늘 기준 얼마나 가치일까"를 계산합니다.
+                  화폐의 시간 가치를 계산하는 두 가지 주요 개념입니다. 미래가치는 "오늘의 돈이
+                  미래에 얼마나 가치가 떨어질까"를 계산하고, 현재가치는 "미래의 돈이 오늘 기준
+                  얼마나 가치일까"를 계산합니다.
                 </p>
-                <div className="mb-4 rounded-lg border border-border-base p-4 bg-bg-raised">
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">예시</h3>
                   <div className="space-y-3 text-sm">
                     <div>
@@ -312,9 +314,7 @@ export default function InflationPage() {
                     </div>
                     <div className="flex justify-between border-b border-border-subtle pb-2">
                       <span>미래가치</span>
-                      <span className="font-mono font-semibold">
-                        820만 원 (가치 하락)
-                      </span>
+                      <span className="font-mono font-semibold">820만 원 (가치 하락)</span>
                     </div>
                     <div className="flex justify-between pb-2">
                       <span>해석</span>
@@ -328,9 +328,7 @@ export default function InflationPage() {
                     </div>
                     <div className="flex justify-between border-b border-border-subtle pb-2">
                       <span>현재가치</span>
-                      <span className="font-mono font-semibold">
-                        820만 원 (필요 저축액)
-                      </span>
+                      <span className="font-mono font-semibold">820만 원 (필요 저축액)</span>
                     </div>
                     <div className="flex justify-between">
                       <span>해석</span>
@@ -341,21 +339,18 @@ export default function InflationPage() {
                   </div>
                 </div>
                 <p className="text-text-secondary">
-                  두 계산은 수학적으로 역함수 관계이며, 동일한 인플레이션 가정 하에 같은
-                  결과를 냅니다. 미래가치는 "저축의 침식 계획", 현재가치는 "필요한 저축액
-                  목표 설정"에 유용합니다.
+                  두 계산은 수학적으로 역함수 관계이며, 동일한 인플레이션 가정 하에 같은 결과를
+                  냅니다. 미래가치는 "저축의 침식 계획", 현재가치는 "필요한 저축액 목표 설정"에
+                  유용합니다.
                 </p>
               </section>
-
-              {/* 실질 구매력 */}
               <section aria-label="실질 구매력" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">실질 구매력의 의미</h2>
                 <p className="mb-4 text-text-secondary">
                   실질 구매력(Purchasing Power)은 "돈으로 실제 몇 개의 물건을 살 수 있을까"를
                   의미합니다. 현재가치와 동일한 개념이며, 금액이 아닌 "상품의 개수" 관점으로
-                  생각하면 됩니다. 예를 들어 라면이 현재 3,000원이고 10년 후 3,600원이
-                  되었다면, 현재 300만 원으로 라면 1,000개를 사지만 10년 후에는 833개만
-                  살 수 있습니다.
+                  생각하면 됩니다. 예를 들어 라면이 현재 3,000원이고 10년 후 3,600원이 되었다면,
+                  현재 300만 원으로 라면 1,000개를 사지만 10년 후에는 833개만 살 수 있습니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
                   실질 구매력 감소는 장기 저축자들에게 매우 중요한 개념입니다. 은퇴 후 20~30년을
@@ -369,14 +364,12 @@ export default function InflationPage() {
                   받아야 실질 자산이 보존됩니다(기본금융이론).
                 </p>
               </section>
-
-              {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>인플레이션 계수 (Inflation Factor)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       인플레이션계수 = (1 + 연인플레이션율 / 100)^년수
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -385,7 +378,7 @@ export default function InflationPage() {
                   </li>
                   <li>
                     <strong>미래가치 (Future Value)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       FV = 현재금액 ÷ 인플레이션계수
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -395,26 +388,27 @@ export default function InflationPage() {
                   </li>
                   <li>
                     <strong>현재가치 (Present Value)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       PV = 미래금액 ÷ 인플레이션계수
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      미래의 돈이 오늘 기준 얼마나 가치인지 계산합니다. 예: 10년 후 1,000만 원 ÷ 1.219
-                      ≈ 820만 원.
+                      미래의 돈이 오늘 기준 얼마나 가치인지 계산합니다. 예: 10년 후 1,000만 원 ÷
+                      1.219 ≈ 820만 원.
                     </p>
                   </li>
                   <li>
                     <strong>누적 인플레이션 (Cumulative Inflation)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       누적인플레이션(%) = (인플레이션계수 - 1) × 100
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      10년간 총 물가 상승률을 단일 백분율로 표시합니다. 예: (1.219 - 1) × 100 = 21.9%.
+                      10년간 총 물가 상승률을 단일 백분율로 표시합니다. 예: (1.219 - 1) × 100 =
+                      21.9%.
                     </p>
                   </li>
                   <li>
                     <strong>연간 등가 (Annual Equivalent)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       연간등가(%) = 누적인플레이션 / 년수
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -423,27 +417,25 @@ export default function InflationPage() {
                   </li>
                 </ol>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항 및 한계</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    본 계산기는 균일한 인플레이션을 가정합니다. 실제로는 상품별, 시기별
-                    인플레이션이 크게 다릅니다. 의료비(3~5%)는 평균보다 높고, 전자기기는 디플레이션할
-                    수 있습니다.
+                    본 계산기는 균일한 인플레이션을 가정합니다. 실제로는 상품별, 시기별 인플레이션이
+                    크게 다릅니다. 의료비(3~5%)는 평균보다 높고, 전자기기는 디플레이션할 수
+                    있습니다.
                   </li>
                   <li>
-                    입력한 인플레이션률은 추정치입니다. 실제 인플레이션은 경제 상황에 따라
-                    크게 변동합니다. 보수적 계획은 2~3% 사이를 권장합니다.
+                    입력한 인플레이션률은 추정치입니다. 실제 인플레이션은 경제 상황에 따라 크게
+                    변동합니다. 보수적 계획은 2~3% 사이를 권장합니다.
                   </li>
                   <li>
-                    본 계산기는 기본 명목-실질 변환만 계산하며, 세금, 이자, 투자 수익은
-                    포함하지 않습니다. 대출 상환, 투자 평가 시에는 별도 계산이 필요합니다.
+                    본 계산기는 기본 명목-실질 변환만 계산하며, 세금, 이자, 투자 수익은 포함하지
+                    않습니다. 대출 상환, 투자 평가 시에는 별도 계산이 필요합니다.
                   </li>
                   <li>
-                    해외 화폐(달러, 유로 등)의 화폐가치는 "환율 변동"도 함께 고려해야 하므로
-                    본 계산기로는 부정확합니다.
+                    해외 화폐(달러, 유로 등)의 화폐가치는 "환율 변동"도 함께 고려해야 하므로 본
+                    계산기로는 부정확합니다.
                   </li>
                   <li>
                     본 계산기는 교육·참고용입니다. 개인의 금융 계획(은퇴, 대출, 투자)은 반드시
@@ -451,8 +443,6 @@ export default function InflationPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 활용 팁 */}
               <section aria-label="활용 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
@@ -462,8 +452,8 @@ export default function InflationPage() {
                   </li>
                   <li>
                     <strong>대출 상환 검토</strong>: 10년 장기 대출 시 원금 1억 원의 미래가치를
-                    계산해 "실질 상환액"을 파악할 수 있습니다. (대출금은 고정이지만 인플레이션으로 인해
-                    상대적 부담이 줄어듦)
+                    계산해 "실질 상환액"을 파악할 수 있습니다. (대출금은 고정이지만 인플레이션으로
+                    인해 상대적 부담이 줄어듦)
                   </li>
                   <li>
                     <strong>역사적 인플레이션 비교</strong>: 한국은행 통계에서 과거 5년, 10년 평균
@@ -479,35 +469,28 @@ export default function InflationPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>2026-04-24: 초판 공개 (미래가치·현재가치·실질 구매력 계산)</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>: 한국은행(ecos.bok.or.kr) 물가 통계, 기본금융이론,
-                  금융감독원 자료. 본 계산기는 교육·참고 목적이며 CPI 기반 공식 인플레이션만 반영합니다.
+                  <strong>법적 근거 및 참고 자료</strong>: 한국은행(ecos.bok.or.kr) 물가 통계,
+                  기본금융이론, 금융감독원 자료. 본 계산기는 교육·참고 목적이며 CPI 기반 공식
+                  인플레이션만 반영합니다.
                 </p>
                 <p>
                   본 계산기의 결과는 교육용이며 법적 효력이 없습니다. 실제 금융 계획(은퇴, 대출,
-                  투자)은 복합적인 요소를 고려해야 합니다. 반드시 금융전문가(재무설계사, 세무사) 상담을
-                  통해 개인 맞춤형 계획을 수립하시기 바랍니다.
+                  투자)은 복합적인 요소를 고려해야 합니다. 반드시 금융전문가(재무설계사, 세무사)
+                  상담을 통해 개인 맞춤형 계획을 수립하시기 바랍니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

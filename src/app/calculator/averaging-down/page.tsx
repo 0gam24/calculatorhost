@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -53,7 +53,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '물타기 계산기 2026 (주식·코인)',
     description: '평균단가·추매·목표단가 즉시 계산. 손익분기 회복 상승률까지.',
-
   },
 };
 
@@ -130,7 +129,7 @@ export default function AveragingDownPage() {
     isPartOf: getCategoryUrlForCalculator('averaging-down'),
   });
   const faqLd = buildFaqPageJsonLd(
-    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer }))
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
@@ -200,24 +199,28 @@ export default function AveragingDownPage() {
                 {
                   name: '물타기 (Averaging Down)',
                   alternateName: '평단 낮추기',
-                  description: '보유 종목 가격이 하락했을 때 추가 매수해 평균단가를 낮추는 전략. 손익분기점이 낮아져 회복에 필요한 상승률이 감소하지만, 추가 하락 시 손실이 가중됨.',
+                  description:
+                    '보유 종목 가격이 하락했을 때 추가 매수해 평균단가를 낮추는 전략. 손익분기점이 낮아져 회복에 필요한 상승률이 감소하지만, 추가 하락 시 손실이 가중됨.',
                 },
                 {
                   name: '평균단가 (가중평균)',
                   alternateName: '평단',
-                  description: '보유 종목의 매입 단가를 가중평균한 값. 산식: Σ(매입가 × 매입수량) ÷ 총 보유수량. 분할매도는 평단을 변경하지 않음.',
+                  description:
+                    '보유 종목의 매입 단가를 가중평균한 값. 산식: Σ(매입가 × 매입수량) ÷ 총 보유수량. 분할매도는 평단을 변경하지 않음.',
                 },
                 {
                   name: '추매 (추가 매수)',
-                  description: '이미 보유 중인 종목을 더 사는 모든 거래의 총칭. 하락 시 추매는 물타기, 상승 시 추매는 불타기(피라미딩)로 구분.',
+                  description:
+                    '이미 보유 중인 종목을 더 사는 모든 거래의 총칭. 하락 시 추매는 물타기, 상승 시 추매는 불타기(피라미딩)로 구분.',
                 },
                 {
                   name: '손익분기점 (BEP)',
                   alternateName: 'BEP',
-                  description: 'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.18% 추가 부담.',
+                  description:
+                    'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.18% 추가 부담.',
                 },
               ],
-            })
+            }),
           ),
         }}
       />
@@ -225,31 +228,52 @@ export default function AveragingDownPage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '금융', href: '/category/finance/' },
-                    { name: '물타기 계산기' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  물타기 계산기 2026 <span className="text-text-tertiary text-2xl font-semibold">(주식·코인 추매)</span>
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  주식·코인 가격이 하락했을 때 추가 매수(추매)로 평균단가를 낮추는
-                  물타기 전략을 분석합니다. 보유분과 추매 정보로 새 평균단가를 즉시
-                  계산하거나, 목표 평균단가 달성에 필요한 분할매수 수량을 역산합니다.
-                  손실 회복 필요 상승률·손익분기점까지 한 번에 확인하세요.
-                </p>
-                <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '금융', href: '/category/finance/' },
+                      { name: '물타기 계산기' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    물타기 계산기 2026{' '}
+                    <span className="text-2xl font-semibold text-text-tertiary">
+                      (주식·코인 추매)
+                    </span>
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    추가 매수 후 평균 단가와 필요한 자금을 확인하세요.
+                  </p>
+                  <AuthorByline datePublished={DATE_PUBLISHED} dateModified={DATE_MODIFIED} />
+                </header>
+              }
+              calculator={<AveragingDownCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={[...FAQ_ITEMS]} />
+                </>
+              }
+              tools={
+                <>
+                  <ShareButtons
+                    title="물타기 계산기 (주식·코인) 2026"
+                    url="https://calculatorhost.com/calculator/averaging-down/"
+                  />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="물타기(Averaging Down)는 보유한 주식이 하락했을 때, 더 낮은 가격에 추가로 매수해 평균 단가를 내리는 투자 기법입니다. 평균단가를 낮추면 손익분기점이 낮아져 회복에 필요한 상승률이 감소합니다. 하지만 주가가 계속 하락하면 손실이 더 커질 수 있으므로 신중해야 합니다."
                 table={{
@@ -260,7 +284,10 @@ export default function AveragingDownPage() {
                     ['총 수량', '기존수량 + 신규수량'],
                     ['새 평균단가', '총 투자금 ÷ 총 수량'],
                     ['손실 회복 상승률', '(목표가 - 평균단가) ÷ 평균단가 × 100%'],
-                    ['필요 수량 (목표달성)', '(목표단가 × 기존수량 - 기존투자금) ÷ (신규단가 - 목표단가)'],
+                    [
+                      '필요 수량 (목표달성)',
+                      '(목표단가 × 기존수량 - 기존투자금) ÷ (신규단가 - 목표단가)',
+                    ],
                   ],
                 }}
                 tldr={[
@@ -270,21 +297,13 @@ export default function AveragingDownPage() {
                   '투자 권유 아님. 기업 분석·시장 판단 후 자체 결정',
                 ]}
               />
-
-              {/* 계산기 */}
-              <AveragingDownCalculator />
-
-              {/* FAQ (중간 배치 - GEO 권장) */}
-              <FaqSection items={[...FAQ_ITEMS]} />
-
-              {/* 물타기 개념 */}
               <section aria-label="물타기란" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">물타기란 무엇인가요?</h2>
                 <p className="mb-4 text-text-secondary">
-                  물타기(Averaging Down)는 보유한 주식의 가격이 하락했을 때, 더 낮은 가격에
-                  추가로 매수하는 투자 전략입니다. 이렇게 하면 전체 투자금을 기준으로 한
-                  평균 매수가가 낮아집니다. 예를 들어 10,000원에 100주를 매수한 후 5,000원까지
-                  하락하면, 5,000원에 100주를 추가 매수해 평균단가를 7,500원으로 낮출 수 있습니다.
+                  물타기(Averaging Down)는 보유한 주식의 가격이 하락했을 때, 더 낮은 가격에 추가로
+                  매수하는 투자 전략입니다. 이렇게 하면 전체 투자금을 기준으로 한 평균 매수가가
+                  낮아집니다. 예를 들어 10,000원에 100주를 매수한 후 5,000원까지 하락하면, 5,000원에
+                  100주를 추가 매수해 평균단가를 7,500원으로 낮출 수 있습니다.
                 </p>
                 <p className="mb-4 text-text-secondary">
                   물타기의 이점은 손익분기점이 낮아진다는 것입니다. 위 예시에서 원금 회복을 위해서는
@@ -298,15 +317,15 @@ export default function AveragingDownPage() {
                   "시장이 과도하게 약한 것 같다"고 판단할 때만 신중하게 사용해야 합니다.
                 </p>
               </section>
-
-              {/* 물타기 vs 분할 매수 */}
               <section aria-label="물타기 vs 분할매수" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">물타기 vs 분할 매수</h2>
                 <p className="mb-4 text-text-secondary">
                   두 전략 모두 장기 투자에 유리하지만, 목적과 방식이 다릅니다.
                 </p>
-                <div className="mb-4 rounded-lg border border-border-base p-4 bg-bg-raised">
-                  <h3 className="mb-3 font-semibold text-text-primary">분할 매수 (Dollar Cost Averaging)</h3>
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
+                  <h3 className="mb-3 font-semibold text-text-primary">
+                    분할 매수 (Dollar Cost Averaging)
+                  </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>
                       <strong>목적</strong>: 시장 변동성에 상관없이 일정 금액을 정기적으로 사기
@@ -325,7 +344,7 @@ export default function AveragingDownPage() {
                     </li>
                   </ul>
                 </div>
-                <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">물타기 (Averaging Down)</h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>
@@ -346,19 +365,17 @@ export default function AveragingDownPage() {
                   </ul>
                 </div>
               </section>
-
-              {/* 손실 회복 필요 상승률 */}
               <section aria-label="필요 상승률" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">손실 회복 필요 상승률</h2>
                 <p className="mb-4 text-text-secondary">
                   물타기의 핵심 메트릭은 "원금 회복까지 주가가 얼마나 올라야 하는가"입니다.
                   평균단가를 낮춰도 여전히 상당한 상승이 필요합니다.
                 </p>
-                <div className="mb-4 rounded-lg border border-border-base p-4 bg-bg-raised">
+                <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">예시 시뮬레이션</h3>
                   <div className="space-y-4 text-sm">
                     <div>
-                      <strong className="block mb-2">상황 1: 물타기 없음</strong>
+                      <strong className="mb-2 block">상황 1: 물타기 없음</strong>
                       <div className="flex justify-between">
                         <span>최초 매수</span>
                         <span className="font-mono">10,000원 × 100주 = 1,000만 원</span>
@@ -367,7 +384,7 @@ export default function AveragingDownPage() {
                         <span>현재 주가</span>
                         <span className="font-mono">5,000원 (50% 손실)</span>
                       </div>
-                      <div className="border-t border-border-subtle pt-2 mt-2">
+                      <div className="mt-2 border-t border-border-subtle pt-2">
                         <div className="flex justify-between">
                           <span>필요 상승률</span>
                           <span className="font-mono">100% (5,000 → 10,000)</span>
@@ -376,7 +393,7 @@ export default function AveragingDownPage() {
                     </div>
 
                     <div className="border-t border-border-subtle pt-4">
-                      <strong className="block mb-2">상황 2: 물타기 실행</strong>
+                      <strong className="mb-2 block">상황 2: 물타기 실행</strong>
                       <div className="flex justify-between">
                         <span>기존 투자</span>
                         <span className="font-mono">1,000만 원</span>
@@ -393,12 +410,12 @@ export default function AveragingDownPage() {
                         <span>평균단가</span>
                         <span className="font-mono">7,500원 (100주 → 200주)</span>
                       </div>
-                      <div className="border-t border-border-subtle pt-2 mt-2">
+                      <div className="mt-2 border-t border-border-subtle pt-2">
                         <div className="flex justify-between">
                           <span>필요 상승률</span>
                           <span className="font-mono">33% (5,000 → 7,500)</span>
                         </div>
-                        <p className="text-xs text-text-secondary mt-2">
+                        <p className="mt-2 text-xs text-text-secondary">
                           물타기로 100%에서 33%로 낮았지만, 자본이 1,500만 원으로 증가
                         </p>
                       </div>
@@ -412,14 +429,12 @@ export default function AveragingDownPage() {
                   신중하게 사용해야 합니다.
                 </p>
               </section>
-
-              {/* 계산 공식 */}
               <section aria-label="계산 공식" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">계산 공식</h2>
                 <ol className="space-y-4 text-sm leading-relaxed">
                   <li>
                     <strong>총 투자금</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       총투자금 = (기존단가 × 기존수량) + (추가단가 × 추가수량)
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -428,16 +443,14 @@ export default function AveragingDownPage() {
                   </li>
                   <li>
                     <strong>총 수량</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       총수량 = 기존수량 + 추가수량
                     </p>
-                    <p className="mt-2 text-text-secondary">
-                      현재 보유한 전체 주식 수입니다.
-                    </p>
+                    <p className="mt-2 text-text-secondary">현재 보유한 전체 주식 수입니다.</p>
                   </li>
                   <li>
                     <strong>새 평균단가</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       평균단가 = 총투자금 ÷ 총수량
                     </p>
                     <p className="mt-2 text-text-secondary">
@@ -446,17 +459,19 @@ export default function AveragingDownPage() {
                   </li>
                   <li>
                     <strong>손실 회복 필요 상승률</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
                       필요상승률(%) = (원래목표가 - 평균단가) ÷ 평균단가 × 100
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      원금 회복 또는 목표 달성까지 주가가 얼마나 올라야 하는지를 퍼센트로 표시합니다.
+                      원금 회복 또는 목표 달성까지 주가가 얼마나 올라야 하는지를 퍼센트로
+                      표시합니다.
                     </p>
                   </li>
                   <li>
                     <strong>필요 수량 (목표 달성 역산)</strong>
-                    <p className="mt-1 text-text-secondary font-mono text-xs bg-bg-raised p-3 rounded">
-                      필요수량 = (목표단가 × 기존수량 - 기존투자금)<br /> / (추가단가 - 목표단가)
+                    <p className="mt-1 rounded bg-bg-raised p-3 font-mono text-xs text-text-secondary">
+                      필요수량 = (목표단가 × 기존수량 - 기존투자금)
+                      <br /> / (추가단가 - 목표단가)
                     </p>
                     <p className="mt-2 text-text-secondary">
                       목표 평균단가를 달성하기 위해 추가로 매수해야 할 주식 수를 계산합니다.
@@ -464,15 +479,13 @@ export default function AveragingDownPage() {
                   </li>
                 </ol>
               </section>
-
-              {/* 주의사항 */}
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항 및 면책</h2>
-                <div className="mb-4 rounded-lg border-l-4 border-danger-500 bg-danger-50 p-4 dark:border-danger-400 dark:bg-red-950 dark:bg-opacity-20">
-                  <h3 className="mb-2 font-semibold text-danger-700 dark:text-danger-200">
+                <div className="bg-danger-50 dark:border-danger-400 mb-4 rounded-lg border-l-4 border-danger-500 p-4 dark:bg-red-950 dark:bg-opacity-20">
+                  <h3 className="text-danger-700 dark:text-danger-200 mb-2 font-semibold">
                     주의: 중요 경고
                   </h3>
-                  <p className="text-sm text-danger-600 dark:text-danger-300 mb-2">
+                  <p className="dark:text-danger-300 mb-2 text-sm text-danger-600">
                     <strong>본 계산기는 투자 권유가 아닙니다.</strong> 물타기는 고위험 전략이며,
                     주가가 계속 하락할 경우 손실이 가중될 수 있습니다. 모든 투자 결정은 본인의
                     책임이며, 충분한 분석과 위험 관리 후 신중하게 진행하세요.
@@ -501,72 +514,94 @@ export default function AveragingDownPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 코인 물타기 vs 주식 물타기 */}
               <section aria-label="코인 물타기와 주식 물타기" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">코인 물타기와 주식 물타기, 무엇이 다른가요?</h2>
+                <h2 className="mb-4 text-2xl font-semibold">
+                  코인 물타기와 주식 물타기, 무엇이 다른가요?
+                </h2>
                 <p className="mb-4 text-text-secondary">
                   본 계산기는 주식·코인 모두에서 동일한 가중평균 공식
-                  <code className="mx-1 rounded bg-bg-raised px-1.5 py-0.5 text-xs">평균단가 = Σ(단가 × 수량) ÷ Σ수량</code>
-                  으로 평균단가를 계산합니다. 다만 두 자산은 시장 구조와 거래 조건이
-                  다르므로 입력·해석 시 다음 차이를 알아두면 도움이 됩니다.
+                  <code className="mx-1 rounded bg-bg-raised px-1.5 py-0.5 text-xs">
+                    평균단가 = Σ(단가 × 수량) ÷ Σ수량
+                  </code>
+                  으로 평균단가를 계산합니다. 다만 두 자산은 시장 구조와 거래 조건이 다르므로
+                  입력·해석 시 다음 차이를 알아두면 도움이 됩니다.
                 </p>
                 <div className="mb-4 grid gap-4 md:grid-cols-2">
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-3 font-semibold text-text-primary">주식 물타기</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
-                      <li><strong>수량 단위</strong>: 정수(주). 소수점 매수 불가(일부 미국주식 소수점 거래 예외)</li>
-                      <li><strong>거래 시간</strong>: 정규장(09:00~15:30). 시간외 단일가 보조</li>
-                      <li><strong>거래 비용</strong>: 매수 수수료 0.015%대 + <strong>매도 시 증권거래세 0.18%</strong></li>
-                      <li><strong>일일 변동폭</strong>: 상·하한 ±30% 제한</li>
-                      <li><strong>회복 주기</strong>: 비교적 길고 펀더멘털 재평가까지 시간 필요</li>
+                      <li>
+                        <strong>수량 단위</strong>: 정수(주). 소수점 매수 불가(일부 미국주식 소수점
+                        거래 예외)
+                      </li>
+                      <li>
+                        <strong>거래 시간</strong>: 정규장(09:00~15:30). 시간외 단일가 보조
+                      </li>
+                      <li>
+                        <strong>거래 비용</strong>: 매수 수수료 0.015%대 +{' '}
+                        <strong>매도 시 증권거래세 0.18%</strong>
+                      </li>
+                      <li>
+                        <strong>일일 변동폭</strong>: 상·하한 ±30% 제한
+                      </li>
+                      <li>
+                        <strong>회복 주기</strong>: 비교적 길고 펀더멘털 재평가까지 시간 필요
+                      </li>
                     </ul>
                   </div>
-                  <div className="rounded-lg border border-border-base p-4 bg-bg-raised">
+                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                     <h3 className="mb-3 font-semibold text-text-primary">코인 물타기</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
-                      <li><strong>수량 단위</strong>: 소수점(BTC 8자리, 알트 4~8자리). 본 계산기는 소수점 입력 지원</li>
-                      <li><strong>거래 시간</strong>: 24시간 365일</li>
-                      <li><strong>거래 비용</strong>: 거래소별 매수·매도 수수료 0.04~0.25%, 거래세 없음</li>
-                      <li><strong>일일 변동폭</strong>: 제한 없음(±30% 이상 흔함)</li>
-                      <li><strong>회복 주기</strong>: 변동성이 커서 단기 반등·급락 모두 빈번</li>
+                      <li>
+                        <strong>수량 단위</strong>: 소수점(BTC 8자리, 알트 4~8자리). 본 계산기는
+                        소수점 입력 지원
+                      </li>
+                      <li>
+                        <strong>거래 시간</strong>: 24시간 365일
+                      </li>
+                      <li>
+                        <strong>거래 비용</strong>: 거래소별 매수·매도 수수료 0.04~0.25%, 거래세
+                        없음
+                      </li>
+                      <li>
+                        <strong>일일 변동폭</strong>: 제한 없음(±30% 이상 흔함)
+                      </li>
+                      <li>
+                        <strong>회복 주기</strong>: 변동성이 커서 단기 반등·급락 모두 빈번
+                      </li>
                     </ul>
                   </div>
                 </div>
                 <p className="text-text-secondary">
                   <strong>실무 팁</strong>: 코인 물타기는 변동성이 커 한 번에 추매하기보다
-                  <strong>분할매수(단계적 추매)</strong> 가 권장됩니다. 본 계산기의
-                  "필요 수량 계산" 모드를 활용하면 목표 평균단가에서 역산해 적정 추매 수량을
-                  단계별로 산정할 수 있습니다.
+                  <strong>분할매수(단계적 추매)</strong> 가 권장됩니다. 본 계산기의 "필요 수량 계산"
+                  모드를 활용하면 목표 평균단가에서 역산해 적정 추매 수량을 단계별로 산정할 수
+                  있습니다.
                 </p>
               </section>
-
-              {/* 추매(추가 매수) 용어 정리 */}
               <section aria-label="추매란" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">추매(추가 매수) 계산기, 용어 정리</h2>
                 <p className="mb-4 text-text-secondary">
-                  <strong>추매</strong>는 "추가 매수"의 줄임말로, 보유 중인 종목을 더 사는
-                  모든 거래를 통칭합니다. 검색에서 "추매계산기"는 일반적으로 다음 두 가지
-                  의도를 포함합니다.
+                  <strong>추매</strong>는 "추가 매수"의 줄임말로, 보유 중인 종목을 더 사는 모든
+                  거래를 통칭합니다. 검색에서 "추매계산기"는 일반적으로 다음 두 가지 의도를
+                  포함합니다.
                 </p>
                 <ol className="mb-4 list-decimal space-y-3 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>평균단가 추매</strong>: 추매 단가·수량을 입력해 새 평균단가를 확인
-                    → 본 계산기의 <strong>"평균단가 계산" 모드</strong> 사용
+                    <strong>평균단가 추매</strong>: 추매 단가·수량을 입력해 새 평균단가를 확인 → 본
+                    계산기의 <strong>"평균단가 계산" 모드</strong> 사용
                   </li>
                   <li>
-                    <strong>목표 평단 역산 추매</strong>: 목표 평균단가에서 역산해 필요한 추매
-                    수량 계산 → 본 계산기의 <strong>"필요 수량 계산" 모드</strong> 사용
+                    <strong>목표 평단 역산 추매</strong>: 목표 평균단가에서 역산해 필요한 추매 수량
+                    계산 → 본 계산기의 <strong>"필요 수량 계산" 모드</strong> 사용
                   </li>
                 </ol>
                 <p className="text-text-secondary">
                   추매가 곧 물타기는 아닙니다. 상승 중 추매(피라미딩, 불타기)는 평균단가가
-                  올라가지만, 하락 중 추매(물타기)는 평균단가가 내려갑니다. 본 계산기는 두
-                  방향 모두 동일한 가중평균으로 정확하게 계산합니다.
+                  올라가지만, 하락 중 추매(물타기)는 평균단가가 내려갑니다. 본 계산기는 두 방향 모두
+                  동일한 가중평균으로 정확하게 계산합니다.
                 </p>
               </section>
-
-              {/* 활용 팁 */}
               <section aria-label="활용 팁" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">활용 팁</h2>
                 <ul className="space-y-3 text-sm text-text-secondary">
@@ -583,8 +618,8 @@ export default function AveragingDownPage() {
                     사세요. 5,000원 → 4,000원 → 3,000원 같이 단계적으로.
                   </li>
                   <li>
-                    <strong>목표가 설정</strong>: "이 주가까지 올라가면 판다"는 목표가를 미리 정하고,
-                    그곳에서 반드시 일부라도 익절하세요.
+                    <strong>목표가 설정</strong>: "이 주가까지 올라가면 판다"는 목표가를 미리
+                    정하고, 그곳에서 반드시 일부라도 익절하세요.
                   </li>
                   <li>
                     <strong>포지션 사이징</strong>: 전체 투자 자산의 5~10% 이상을 한 주식에 투자하지
@@ -592,28 +627,40 @@ export default function AveragingDownPage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 관련 계산기 */}
-              <ShareButtons title="물타기 계산기 (주식·코인) 2026" url="https://calculatorhost.com/calculator/averaging-down/" />
-
-              <RelatedCalculators items={RELATED} />
-
-              {/* 업데이트 로그 */}
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
-                <ul className="text-sm text-text-secondary space-y-1">
-                  <li>2026-05-03: 코인 물타기 가이드 추가, 추매·분할매수 키워드 보강, WebPage 구조화 데이터 추가</li>
+                <ul className="space-y-1 text-sm text-text-secondary">
+                  <li>
+                    2026-05-03: 코인 물타기 가이드 추가, 추매·분할매수 키워드 보강, WebPage 구조화
+                    데이터 추가
+                  </li>
                   <li>2026-04-24: 초판 공개 (평균단가·목표단가 계산)</li>
                 </ul>
               </section>
-
-              {/* 출처·면책 */}
               <section
                 aria-label="출처 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거 및 참고 자료</strong>: <a href="https://www.krx.co.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">한국거래소</a> 주식 정보, <a href="https://www.fss.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">금감원</a> 투자자 보호 정보.
+                  <strong>법적 근거 및 참고 자료</strong>:{' '}
+                  <a
+                    href="https://www.krx.co.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    한국거래소
+                  </a>{' '}
+                  주식 정보,{' '}
+                  <a
+                    href="https://www.fss.or.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    금감원
+                  </a>{' '}
+                  투자자 보호 정보.
                 </p>
                 <p>
                   <strong>면책 조항</strong>: 본 계산기는 교육·참고 목적이며 투자 권유가 아닙니다.
@@ -622,8 +669,7 @@ export default function AveragingDownPage() {
                   진행하세요. 손실은 언제든 발생할 수 있습니다.
                 </p>
               </section>
-
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

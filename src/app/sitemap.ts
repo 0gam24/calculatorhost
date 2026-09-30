@@ -1,6 +1,4 @@
 import type { MetadataRoute } from 'next';
-import { statSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
 import { getLastModifiedForRoute } from '@/lib/seo/date-modified-helper';
 
 // next.config.ts 의 output: 'export' 모드에서 route handler 도 정적 생성 필수.
@@ -8,26 +6,17 @@ export const dynamic = 'force-static';
 
 const BASE = 'https://calculatorhost.com';
 
-/**
- * lastModified 우선순위: ① dateModified manifest (git 마지막 커밋 시각, prebuild 생성)
- * ② page.tsx 파일 mtime ③ 빌드 시점(now).
- *
- * CI(Cloudflare Pages) 클론은 모든 파일 mtime 이 클론 시각이라 ②만 쓰면 전 URL 이
- * 빌드 시각으로 뭉개짐 → Google 은 부정확한 lastmod 를 무시 (build-sitemap 가이드).
- * git 커밋 시각 기반 manifest 가 정확한 freshness 신호. (2026-07-22 공식 가이드 동기화)
+/** Only verified content dates belong in lastmod; an unknown date is omitted.
+ * Checkout mtime and build time do not describe a page's substantive update.
  */
-function fileMtime(relativePath: string): string {
-  try {
-    const filePath = resolve(process.cwd(), relativePath);
-    if (!existsSync(filePath)) return new Date().toISOString();
-    return statSync(filePath).mtime.toISOString();
-  } catch {
-    return new Date().toISOString();
-  }
-}
-
-function pageLastModified(route: string, relativePath: string): string {
-  return getLastModifiedForRoute(route, () => fileMtime(relativePath));
+function pageLastModified(route: string, relativePath: string): string | undefined {
+  const sourceRoute =
+    relativePath === 'src/app/page.tsx'
+      ? '/'
+      : relativePath.replace(/^src\/app/, '').replace(/\/page\.tsx$/, '/');
+  return getLastModifiedForRoute(route, () =>
+    getLastModifiedForRoute(sourceRoute, () => undefined),
+  );
 }
 
 const CALCULATOR_SLUGS = [
@@ -641,10 +630,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
     })),
     // 변경 이력 (Changelog) — Freshness 신호용 hub.
-    // updates-log.ts 커밋이 페이지 실변경 신호이므로 manifest(page.tsx 기준) 대신 파일 mtime 유지.
+    // 검증된 Git 날짜를 사용하며 업데이트 목록의 변경일도 manifest에 반영.
     {
       url: `${BASE}/updates/`,
-      lastModified: fileMtime('src/lib/constants/updates-log.ts'),
+      lastModified: pageLastModified('/updates/', 'src/app/updates/page.tsx'),
       changeFrequency: 'weekly' as const,
       priority: 0.6,
     },

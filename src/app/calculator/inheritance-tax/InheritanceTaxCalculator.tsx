@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 상속세 계산기 (MVP Phase 2 #2)
  *
@@ -13,7 +16,7 @@
  * - 신고세액공제 3% (기한 내 신고 시)
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { ResultCard } from '@/components/calculator/Result';
@@ -49,31 +52,52 @@ const DEDUCTION_MODE_OPTIONS: Array<{ value: DeductionMode; label: string; descr
 
 export function InheritanceTaxCalculator() {
   // ─── 상속재산 총액 ───
-  const [totalAssets, setTotalAssets] = useState(1_000_000_000);
+  const [totalAssets, setTotalAssets] = useCalculatorState(
+    'inheritance-tax:totalAssets',
+    1_000_000_000,
+  );
 
   // ─── 장례비·공과금 ───
-  const [funeralAndDebts, setFuneralAndDebts] = useState(0);
+  const [funeralAndDebts, setFuneralAndDebts] = useCalculatorState(
+    'inheritance-tax:funeralAndDebts',
+    0,
+  );
 
   // ─── 배우자 상속 여부 ───
-  const [hasSpouse, setHasSpouse] = useState(true);
+  const [hasSpouse, setHasSpouse] = useCalculatorState('inheritance-tax:hasSpouse', true);
 
   // ─── 배우자 실제 상속액 ───
-  const [spouseInheritedAmount, setSpouseInheritedAmount] = useState(500_000_000);
+  const [spouseInheritedAmount, setSpouseInheritedAmount] = useCalculatorState(
+    'inheritance-tax:spouseInheritedAmount',
+    500_000_000,
+  );
 
   // ─── 자녀 수 ───
-  const [childrenCount, setChildrenCount] = useState(2);
+  const [childrenCount, setChildrenCount] = useCalculatorState('inheritance-tax:childrenCount', 2);
 
   // ─── 미성년 자녀 수 ───
-  const [minorChildrenCount, setMinorChildrenCount] = useState(0);
+  const [minorChildrenCount, setMinorChildrenCount] = useCalculatorState(
+    'inheritance-tax:minorChildrenCount',
+    0,
+  );
 
   // ─── 미성년 자녀 평균 나이 ───
-  const [minorChildrenAverageAgeYears, setMinorChildrenAverageAgeYears] = useState(10);
+  const [minorChildrenAverageAgeYears, setMinorChildrenAverageAgeYears] = useCalculatorState(
+    'inheritance-tax:minorChildrenAverageAgeYears',
+    10,
+  );
 
   // ─── 공제 방식 선택 ───
-  const [deductionMode, setDeductionMode] = useState<DeductionMode>('auto');
+  const [deductionMode, setDeductionMode] = useCalculatorState<DeductionMode>(
+    'inheritance-tax:deductionMode',
+    'auto',
+  );
 
   // ─── 기한 내 신고 여부 ───
-  const [reportWithinDeadline, setReportWithinDeadline] = useState(true);
+  const [reportWithinDeadline, setReportWithinDeadline] = useCalculatorState(
+    'inheritance-tax:reportWithinDeadline',
+    true,
+  );
 
   // ─── 계산 실행 ───
   const result = useMemo(
@@ -103,7 +127,7 @@ export function InheritanceTaxCalculator() {
   );
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="inheritance-tax">
       <FormCard title="입력">
         {/* 상속재산 총액 */}
         <NumberInput
@@ -142,7 +166,7 @@ export function InheritanceTaxCalculator() {
 
         {/* 배우자 실제 상속액 (조건부 노출) */}
         {hasSpouse && (
-          <div className="rounded-lg border border-border-base/50 bg-primary-500/5 p-4">
+          <div className="border-border-base/50 rounded-lg border bg-primary-500/5 p-4">
             <NumberInput
               id="spouse-inherited"
               label="배우자 실제 상속액"
@@ -170,6 +194,7 @@ export function InheritanceTaxCalculator() {
           min={0}
           max={10}
           helpText="성년 자녀와 미성년 자녀를 모두 포함한 전체 자녀 수"
+          integer
         />
 
         {/* 미성년 자녀 수 (childrenCount > 0 일 때만) */}
@@ -185,6 +210,7 @@ export function InheritanceTaxCalculator() {
               min={0}
               max={childrenCount}
               helpText="미성년 자녀는 추가로 공제를 받습니다"
+              integer
             />
 
             {/* 미성년 자녀 평균 나이 (minorChildrenCount > 0 일 때만) */}
@@ -199,6 +225,7 @@ export function InheritanceTaxCalculator() {
                 min={0}
                 max={18}
                 helpText="미성년자공제 = 1천만원 × (19세 - 현재나이) × 미성년자 수"
+                integer
               />
             )}
           </>
@@ -215,7 +242,7 @@ export function InheritanceTaxCalculator() {
                   'flex cursor-pointer items-center gap-3 rounded-lg border-2 px-4 py-3 transition-colors',
                   deductionMode === value
                     ? 'border-primary-500 bg-primary-500/10'
-                    : 'border-border-base hover:border-border-base/80',
+                    : 'hover:border-border-base/80 border-border-base',
                 )}
               >
                 <input
@@ -333,7 +360,7 @@ export function InheritanceTaxCalculator() {
                 </span>
               </div>
             )}
-            <div className="border-t border-border-base/50 pt-2">
+            <div className="border-border-base/50 border-t pt-2">
               <div className="flex justify-between">
                 <span className="text-text-secondary">
                   {result.selectedMode === 'lumpSum' ? '일괄공제' : '기초+인적공제 합계'}
@@ -372,6 +399,6 @@ export function InheritanceTaxCalculator() {
           </div>
         )}
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

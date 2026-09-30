@@ -14,9 +14,7 @@ const SW = readFileSync(resolve(process.cwd(), 'public/sw.js'), 'utf8');
 describe('sw.js 캐시 전략', () => {
   it('페이지 이동(HTML)은 네트워크 우선으로 처리한다', () => {
     // isNavigation 분기가 networkFirst 로 연결돼야 한다.
-    const navigationBranch = SW.match(
-      /if \(isNavigation\(request\)\) \{[\s\S]*?\}/,
-    )?.[0];
+    const navigationBranch = SW.match(/if \(isNavigation\(request\)\) \{[\s\S]*?\}/)?.[0];
     expect(navigationBranch, 'isNavigation 분기가 없음').toBeTruthy();
     expect(navigationBranch).toContain('networkFirst');
     expect(navigationBranch).not.toContain('staleWhileRevalidate');
@@ -59,7 +57,10 @@ describe('sw.js 캐시 전략', () => {
 });
 
 describe('_headers', () => {
-  const HEADERS = readFileSync(resolve(process.cwd(), 'public/_headers'), 'utf8');
+  const HEADERS = readFileSync(resolve(process.cwd(), 'public/_headers'), 'utf8').replaceAll(
+    '\r\n',
+    '\n',
+  );
 
   it('sw.js 는 캐시하지 않아야 새 워커가 즉시 감지된다', () => {
     const block = HEADERS.match(/^\/sw\.js\s*\n(?:\s{2}.*\n)+/m)?.[0];

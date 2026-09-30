@@ -1,4 +1,8 @@
 'use client';
+import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
+
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
  * 대출이자 계산기 (MVP #3)
@@ -7,24 +11,20 @@
  * 공식: src/lib/finance/loan.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
-import {
-  calculateLoan,
-  type RepaymentType,
-  type TermUnit,
-} from '@/lib/finance/loan';
+import { calculateLoan, type RepaymentType, type TermUnit } from '@/lib/finance/loan';
 import { formatKRW, formatPercent } from '@/lib/utils';
 
 // Recharts 차트 컴포넌트 동적 import (번들 분리)
 const LoanChart = dynamic(() => import('./LoanChart'), {
   ssr: false,
-  loading: () => <div className="h-80 animate-pulse bg-bg-card rounded-lg" />,
+  loading: () => <div className="h-80 animate-pulse rounded-lg bg-bg-card" />,
 });
 
 const PRINCIPAL_UNIT_BUTTONS = [
@@ -74,13 +74,19 @@ const REPAYMENT_LABELS: RepaymentLabel[] = [
 ];
 
 export function LoanCalculator() {
-  const [principal, setPrincipal] = useState(100_000_000); // 1억
-  const [annualRate, setAnnualRate] = useState(4.0);
-  const [term, setTerm] = useState(30);
-  const [termUnit, setTermUnit] = useState<TermUnit>('years');
-  const [repayment, setRepayment] = useState<RepaymentType>('amortization');
-  const [graceMonths, setGraceMonths] = useState(0);
-  const [showFullSchedule, setShowFullSchedule] = useState(false);
+  const [principal, setPrincipal] = useCalculatorState('loan:principal', 100_000_000); // 1억
+  const [annualRate, setAnnualRate] = useCalculatorState('loan:annualRate', 4.0);
+  const [term, setTerm] = useCalculatorState('loan:term', 30);
+  const [termUnit, setTermUnit] = useCalculatorState<TermUnit>('loan:termUnit', 'years');
+  const [repayment, setRepayment] = useCalculatorState<RepaymentType>(
+    'loan:repayment',
+    'amortization',
+  );
+  const [graceMonths, setGraceMonths] = useCalculatorState('loan:graceMonths', 0);
+  const [showFullSchedule, setShowFullSchedule] = useCalculatorState(
+    'loan:showFullSchedule',
+    false,
+  );
 
   const result = useMemo(() => {
     if (principal <= 0 || term <= 0 || annualRate < 0) {
@@ -101,10 +107,8 @@ export function LoanCalculator() {
   }, [principal, annualRate, term, termUnit, repayment, graceMonths]);
 
   // 상환 방식 라벨
-  const repaymentLabel =
-    REPAYMENT_LABELS.find((l) => l.type === repayment)?.label || '원리금균등';
-  const repaymentSubtitle =
-    REPAYMENT_LABELS.find((l) => l.type === repayment)?.subtitle || '';
+  const repaymentLabel = REPAYMENT_LABELS.find((l) => l.type === repayment)?.label || '원리금균등';
+  const repaymentSubtitle = REPAYMENT_LABELS.find((l) => l.type === repayment)?.subtitle || '';
 
   // 월 상환액 표시 (원금균등의 경우 범위, 나머지는 단일값)
   let monthlyPaymentDisplay = '';
@@ -148,34 +152,33 @@ export function LoanCalculator() {
   }, [result]);
 
   // 표시할 스케줄 행 분리 (처음 12개월, 생략 표시, 마지막 12개월)
-  const displayRowsWithGap: DisplayRowsWithGap = useMemo(
-    () => {
-      if (!result) {
-        return { hasGap: false, rows: [] };
-      }
-      const schedule = result.schedule;
-      if (schedule.length <= 24) {
-        return { hasGap: false, rows: scheduleDisplayRows };
-      }
-      // scheduleDisplayRows는 first12 + last12이므로
-      const first12 = scheduleDisplayRows.slice(0, 12);
-      const last12 = scheduleDisplayRows.slice(12);
-      return { hasGap: true, first12, last12 };
-    },
-    [result, scheduleDisplayRows]
-  );
+  const displayRowsWithGap: DisplayRowsWithGap = useMemo(() => {
+    if (!result) {
+      return { hasGap: false, rows: [] };
+    }
+    const schedule = result.schedule;
+    if (schedule.length <= 24) {
+      return { hasGap: false, rows: scheduleDisplayRows };
+    }
+    // scheduleDisplayRows는 first12 + last12이므로
+    const first12 = scheduleDisplayRows.slice(0, 12);
+    const last12 = scheduleDisplayRows.slice(12);
+    return { hasGap: true, first12, last12 };
+  }, [result, scheduleDisplayRows]);
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="loan">
       <FormCard title="입력">
         <NumberInput
           id="principal"
           label="대출 금액"
+          min={1}
           value={principal}
           onChange={setPrincipal}
           placeholder="예: 100,000,000"
           unitButtons={PRINCIPAL_UNIT_BUTTONS}
           max={10_000_000_000}
+          unit="원"
         />
 
         <NumberInput
@@ -186,26 +189,32 @@ export function LoanCalculator() {
           placeholder="예: 4.5"
           min={0}
           max={20}
+          unit="%"
         />
 
         <div className="flex flex-col gap-2">
-          <label className="text-sm font-medium text-text-primary">대출 기간</label>
           <div className="flex gap-2">
             <NumberInput
               id="term"
-              label=""
+              label="대출 기간"
               value={term}
               onChange={setTerm}
               placeholder="예: 30"
-              min={1}
-              max={50}
+              min={termUnit === 'years' ? 1 / 12 : 1}
+              max={termUnit === 'years' ? 50 : 600}
+              integer={termUnit === 'months'}
               className="flex-1"
+              unit={termUnit === 'years' ? '년' : '개월'}
             />
             <RadioGroup<TermUnit>
               id="term-unit"
-              label=""
+              label="단위"
               value={termUnit}
-              onChange={setTermUnit}
+              onChange={(next) => {
+                if (next === termUnit) return;
+                setTerm(next === 'months' ? term * 12 : term / 12);
+                setTermUnit(next);
+              }}
               options={[
                 { value: 'years', label: '년' },
                 { value: 'months', label: '개월' },
@@ -226,21 +235,26 @@ export function LoanCalculator() {
         />
 
         {repayment !== 'bullet' && (
-          <NumberInput
-            id="grace-months"
-            label="거치 기간 (개월)"
-            value={graceMonths}
-            onChange={setGraceMonths}
-            placeholder="기본값: 0 (거치 없음)"
-            min={0}
-            max={360}
-            helpText="원리금균등·원금균등 선택 시에만 적용"
-          />
+          <CalculatorDetails summary={`거치 ${graceMonths}개월`}>
+            <NumberInput
+              id="grace-months"
+              label="거치 기간 (개월)"
+              value={graceMonths}
+              onChange={setGraceMonths}
+              placeholder="기본값: 0 (거치 없음)"
+              min={0}
+              max={360}
+              helpText="원리금균등·원금균등 선택 시에만 적용"
+              integer
+              unit="개월"
+            />
+          </CalculatorDetails>
         )}
       </FormCard>
 
       <ResultCard
         title="상환액 계산"
+        empty={!result}
         heroLabel={`${repaymentLabel}, ${repaymentSubtitle}`}
         heroValue={monthlyPaymentDisplay}
         heroNote={result ? `연 ${formatPercent(result.monthlyRate * 12)}` : undefined}
@@ -277,13 +291,13 @@ export function LoanCalculator() {
               ]
         }
       />
-        <ResultBanner />
+      <ResultBanner />
 
       {result && (
         <>
           {/* 상환 스케줄 테이블 */}
           <div className="col-span-1 lg:col-span-2">
-            <section aria-label="상환 스케줄" className="card">
+            <CalculatorDetails title="월별 상세" lazy>
               <div className="mb-4 flex items-center justify-between">
                 <h3 className="text-lg font-semibold">상환 스케줄</h3>
                 {result.schedule.length > 24 && (
@@ -301,19 +315,34 @@ export function LoanCalculator() {
                 <table className="w-full text-sm">
                   <thead>
                     <tr className="border-b border-border-base">
-                      <th scope="col" className="px-4 py-3 text-left font-semibold text-text-secondary">
+                      <th
+                        scope="col"
+                        className="px-4 py-3 text-left font-semibold text-text-secondary"
+                      >
                         개월
                       </th>
-                      <th scope="col" className="px-4 py-3 text-right font-semibold text-text-secondary tabular-nums">
+                      <th
+                        scope="col"
+                        className="px-4 py-3 text-right font-semibold tabular-nums text-text-secondary"
+                      >
                         원금
                       </th>
-                      <th scope="col" className="px-4 py-3 text-right font-semibold text-text-secondary tabular-nums">
+                      <th
+                        scope="col"
+                        className="px-4 py-3 text-right font-semibold tabular-nums text-text-secondary"
+                      >
                         이자
                       </th>
-                      <th scope="col" className="px-4 py-3 text-right font-semibold text-text-secondary tabular-nums">
+                      <th
+                        scope="col"
+                        className="px-4 py-3 text-right font-semibold tabular-nums text-text-secondary"
+                      >
                         상환액
                       </th>
-                      <th scope="col" className="px-4 py-3 text-right font-semibold text-text-secondary tabular-nums">
+                      <th
+                        scope="col"
+                        className="px-4 py-3 text-right font-semibold tabular-nums text-text-secondary"
+                      >
                         잔금
                       </th>
                     </tr>
@@ -323,7 +352,7 @@ export function LoanCalculator() {
                       ? result.schedule.map((row, idx) => (
                           <tr
                             key={idx}
-                            className="border-b border-border-subtle last:border-0 hover:bg-bg-raised/50"
+                            className="hover:bg-bg-raised/50 border-b border-border-subtle last:border-0"
                           >
                             <td className="px-4 py-2">{row.month}</td>
                             <td className="px-4 py-2 text-right tabular-nums">
@@ -332,7 +361,7 @@ export function LoanCalculator() {
                             <td className="px-4 py-2 text-right tabular-nums">
                               {formatKRW(row.interest)}
                             </td>
-                            <td className="px-4 py-2 text-right tabular-nums font-medium">
+                            <td className="px-4 py-2 text-right font-medium tabular-nums">
                               {formatKRW(row.totalPayment)}
                             </td>
                             <td className="px-4 py-2 text-right tabular-nums">
@@ -348,7 +377,7 @@ export function LoanCalculator() {
                                 {(first12 || []).map((row: ScheduleDisplayRow, idx: number) => (
                                   <tr
                                     key={idx}
-                                    className="border-b border-border-subtle hover:bg-bg-raised/50"
+                                    className="hover:bg-bg-raised/50 border-b border-border-subtle"
                                   >
                                     <td className="px-4 py-2">{row.month}</td>
                                     <td className="px-4 py-2 text-right tabular-nums">
@@ -357,7 +386,7 @@ export function LoanCalculator() {
                                     <td className="px-4 py-2 text-right tabular-nums">
                                       {row.interestPayment}
                                     </td>
-                                    <td className="px-4 py-2 text-right tabular-nums font-medium">
+                                    <td className="px-4 py-2 text-right font-medium tabular-nums">
                                       {row.totalPayment}
                                     </td>
                                     <td className="px-4 py-2 text-right tabular-nums">
@@ -366,14 +395,17 @@ export function LoanCalculator() {
                                   </tr>
                                 ))}
                                 <tr>
-                                  <td colSpan={5} className="px-4 py-3 text-center text-caption text-text-tertiary">
+                                  <td
+                                    colSpan={5}
+                                    className="px-4 py-3 text-center text-caption text-text-tertiary"
+                                  >
                                     · · · (총 {result.schedule.length}개월, 생략) · · ·
                                   </td>
                                 </tr>
                                 {(last12 || []).map((row: ScheduleDisplayRow, idx: number) => (
                                   <tr
                                     key={`last-${idx}`}
-                                    className="border-b border-border-subtle last:border-0 hover:bg-bg-raised/50"
+                                    className="hover:bg-bg-raised/50 border-b border-border-subtle last:border-0"
                                   >
                                     <td className="px-4 py-2">{row.month}</td>
                                     <td className="px-4 py-2 text-right tabular-nums">
@@ -382,7 +414,7 @@ export function LoanCalculator() {
                                     <td className="px-4 py-2 text-right tabular-nums">
                                       {row.interestPayment}
                                     </td>
-                                    <td className="px-4 py-2 text-right tabular-nums font-medium">
+                                    <td className="px-4 py-2 text-right font-medium tabular-nums">
                                       {row.totalPayment}
                                     </td>
                                     <td className="px-4 py-2 text-right tabular-nums">
@@ -393,43 +425,43 @@ export function LoanCalculator() {
                               </>
                             );
                           })()
-                        : (displayRowsWithGap.rows || []).map((row: ScheduleDisplayRow, idx: number) => (
-                            <tr
-                              key={idx}
-                              className="border-b border-border-subtle last:border-0 hover:bg-bg-raised/50"
-                            >
-                              <td className="px-4 py-2">{row.month}</td>
-                              <td className="px-4 py-2 text-right tabular-nums">
-                                {row.principalPayment}
-                              </td>
-                              <td className="px-4 py-2 text-right tabular-nums">
-                                {row.interestPayment}
-                              </td>
-                              <td className="px-4 py-2 text-right tabular-nums font-medium">
-                                {row.totalPayment}
-                              </td>
-                              <td className="px-4 py-2 text-right tabular-nums">
-                                {row.balance}
-                              </td>
-                            </tr>
-                          ))}
+                        : (displayRowsWithGap.rows || []).map(
+                            (row: ScheduleDisplayRow, idx: number) => (
+                              <tr
+                                key={idx}
+                                className="hover:bg-bg-raised/50 border-b border-border-subtle last:border-0"
+                              >
+                                <td className="px-4 py-2">{row.month}</td>
+                                <td className="px-4 py-2 text-right tabular-nums">
+                                  {row.principalPayment}
+                                </td>
+                                <td className="px-4 py-2 text-right tabular-nums">
+                                  {row.interestPayment}
+                                </td>
+                                <td className="px-4 py-2 text-right font-medium tabular-nums">
+                                  {row.totalPayment}
+                                </td>
+                                <td className="px-4 py-2 text-right tabular-nums">{row.balance}</td>
+                              </tr>
+                            ),
+                          )}
                   </tbody>
                 </table>
               </div>
-            </section>
+            </CalculatorDetails>
           </div>
 
           {/* 잔금 추이 차트 */}
           <div className="col-span-1 lg:col-span-2">
-            <section aria-label="잔금 추이 차트" className="card">
+            <CalculatorDetails title="잔액 추이" lazy>
               <h3 className="mb-4 text-lg font-semibold">잔금 추이</h3>
               <div className="min-h-80 w-full">
                 <LoanChart data={chartData} />
               </div>
-            </section>
+            </CalculatorDetails>
           </div>
         </>
       )}
-    </div>
+    </CalculatorWorkspace>
   );
 }

@@ -47,6 +47,33 @@ export interface UpdateEntry {
 
 export const UPDATES_LOG: UpdateEntry[] = [
   {
+    calculator: { title: '자녀장려금', slug: 'child-tax-credit' },
+    item: '소득 기준·재산 감액 수정',
+    detail:
+      '연 총소득 7,000만원 미만. 홑벌이 2,100만·맞벌이 2,500만원부터 지급액 감액, 재산 1.7억원 이상 2.4억원 미만 50% 감액. 실제 산정표 직접 조회가 아닌 연속산식 예상액.',
+    date: '2026-09-30',
+    category: '버그수정',
+    sourceUrl: 'https://www.law.go.kr/법령/조세특례제한법/제100조의29',
+  },
+  {
+    calculator: { title: '연봉 실수령액', slug: 'salary' },
+    item: '2026년 보험료·적용월 수정',
+    detail:
+      '국민연금 근로자 4.75%, 건강보험 3.595%, 장기요양 건보료의 13.14%. 국민연금 기준소득월액은 1~6월 40만~637만 원, 7월 이후 41만~659만 원 적용.',
+    date: '2026-09-30',
+    category: '버그수정',
+    sourceUrl: 'https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0097M0.do',
+  },
+  {
+    calculator: { title: '연봉·프리랜서', slug: 'salary' },
+    item: '공제대상 자녀 세액공제 수정',
+    detail:
+      '1명 연 25만 원, 2명 합계 55만 원, 3명째부터 각 40만 원 추가 반영. 소득세는 간이세액표 직접 조회가 아닌 근사 계산임을 명시.',
+    date: '2026-09-30',
+    category: '버그수정',
+    sourceUrl: 'https://www.law.go.kr/법령/소득세법/제59조의2',
+  },
+  {
     calculator: { title: '부가가치세(VAT)', slug: 'vat' },
     item: '신규 추가',
     detail: '일반·간이·환산 3 모드 부가세 계산기 신규 공개',
@@ -71,7 +98,7 @@ export const UPDATES_LOG: UpdateEntry[] = [
   {
     calculator: { title: '연봉 실수령액', slug: 'salary' },
     item: '소득세율 구간',
-    detail: '8단계 누진세율(6~45%) 유지 확정 + 국세청 간이세액표 반영',
+    detail: '8단계 누진세율(6~45%) 기반 근사 계산 공개. 국세청 간이세액표 직접 조회는 미연동',
     date: '2026-04-27',
     category: '세율',
     sourceUrl: 'https://www.law.go.kr/법령/소득세법/제55조',
@@ -79,7 +106,7 @@ export const UPDATES_LOG: UpdateEntry[] = [
   {
     calculator: { title: '연봉·프리랜서·N잡', slug: 'salary' },
     item: '국민연금 보험료',
-    detail: '근로자 부담 4.5% 유지, 기준소득월액 상한 637만 원',
+    detail: '초기 구현의 과거 요율·상한 오류를 2026-09-30에 수정. 2026년 근로자 부담률은 4.75%',
     date: '2026-04-24',
     category: '세율',
     sourceUrl: 'https://www.law.go.kr/법령/국민연금법',

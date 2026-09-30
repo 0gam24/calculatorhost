@@ -1,10 +1,7 @@
 // date-modified-manifest pure function tests.
 // Verifies route key normalization and manifest building from git timestamps.
 import { describe, expect, it } from 'vitest';
-import {
-  pageFileToRoute,
-  buildManifest,
-} from '../../../scripts/date-modified-core.mjs';
+import { pageFileToRoute, buildManifest } from '../../../scripts/date-modified-core.mjs';
 
 describe('pageFileToRoute()', () => {
   it('converts src/app paths to canonical routes with trailing slash', () => {
@@ -38,5 +35,28 @@ describe('buildManifest()', () => {
       { file: 'src/app/calculator/salary/page.tsx', isoDate: '' },
     ]);
     expect(Object.keys(m)).toHaveLength(0);
+  });
+
+  it('preserves known dates when git history is missing or shallow', () => {
+    const m = buildManifest(
+      [
+        { file: 'src/app/calculator/salary/page.tsx', isoDate: '' },
+        { file: 'src/app/calculator/loan/page.tsx', isoDate: '2026-09-10T00:00:00Z' },
+      ],
+      {
+        '/calculator/salary/': '2026-08-12T00:00:00Z',
+        '/calculator/loan/': '2026-08-12T00:00:00Z',
+        '/deleted/': '2026-08-12T00:00:00Z',
+      },
+    );
+    expect(m['/calculator/salary/']).toBe('2026-08-12T00:00:00Z');
+    expect(m['/calculator/loan/']).toBe('2026-09-10T00:00:00Z');
+    expect(m['/deleted/']).toBeUndefined();
+  });
+
+  it('omits invalid dates instead of replacing them with build time', () => {
+    expect(
+      buildManifest([{ file: 'src/app/calculator/salary/page.tsx', isoDate: 'not-a-date' }]),
+    ).toEqual({});
   });
 });

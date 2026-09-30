@@ -1,107 +1,36 @@
 'use client';
 
-import { useState } from 'react';
 import Link from 'next/link';
-import { ThemeToggle } from './ThemeToggle';
 import { SearchBox } from './SearchBox';
-import { MobileDrawer } from './MobileDrawer';
-
-function HamburgerIcon() {
-  return (
-    <svg
-      width="20"
-      height="20"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <line x1="3" y1="6" x2="21" y2="6" />
-      <line x1="3" y1="12" x2="21" y2="12" />
-      <line x1="3" y1="18" x2="21" y2="18" />
-    </svg>
-  );
-}
-
-function CalculatorLogoIcon() {
-  return (
-    <svg
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <rect x="4" y="2" width="16" height="20" rx="2" />
-      <line x1="8" x2="16" y1="6" y2="6" />
-      <line x1="8" x2="8" y1="10" y2="10" />
-      <line x1="12" x2="12" y1="10" y2="10" />
-      <line x1="16" x2="16" y1="10" y2="10" />
-      <line x1="8" x2="8" y1="14" y2="14" />
-      <line x1="12" x2="12" y1="14" y2="14" />
-      <line x1="16" x2="16" y1="14" y2="14" />
-      <line x1="8" x2="8" y1="18" y2="18" />
-      <line x1="12" x2="12" y1="18" y2="18" />
-      <line x1="16" x2="16" y1="18" y2="18" />
-    </svg>
-  );
-}
 
 export function Header() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <>
-      {/* 2026-08-12: 반투명도를 낮추고 blur·saturate 를 올려, 스크롤한 본문이
-          헤더 뒤로 비쳐 보이던 현상을 없앴다. 하단 경계는 hairline 로 유지. */}
-      <header className="sticky top-0 z-40 border-b border-border-subtle bg-bg-base/80 backdrop-blur-xl backdrop-saturate-150 supports-[not(backdrop-filter:blur(0))]:bg-bg-base">
-        <div className="mx-auto flex h-18 items-center justify-between gap-6 px-4 md:px-8">
-          {/* 좌측: 모바일 햄버거 + 로고 (모든 브레이크포인트에서 노출). */}
-          <div className="flex items-center gap-3 shrink-0">
-            <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="inline-flex md:hidden items-center justify-center h-10 w-10 rounded-lg text-text-secondary hover:bg-bg-raised transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 focus-visible:ring-offset-bg-base"
-              aria-label="메뉴"
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-drawer"
-            >
-              <HamburgerIcon />
-            </button>
-          <Link
-            href="/"
-            className="flex items-center gap-2.5 shrink-0"
-          >
-            <span className="inline-flex h-10 w-10 rounded-xl bg-primary-500/15 text-primary-500 items-center justify-center shrink-0">
-              <CalculatorLogoIcon />
-            </span>
-            <span className="hidden sm:flex flex-col leading-tight">
-              <span className="font-bold text-base text-text-primary">calculatorhost</span>
-              <span className="text-caption text-text-tertiary">계산기 · 2026년 한국 세율 반영</span>
-            </span>
-          </Link>
+    <header className="sticky top-0 z-40 border-b border-border-base bg-bg-card">
+      <nav
+        aria-label="주요 메뉴"
+        className="mx-auto flex min-h-16 max-w-6xl items-center gap-3 px-4 md:gap-8 md:px-8"
+      >
+        <Link
+          href="/"
+          aria-label="calculatorhost 홈"
+          className="shrink-0 text-base font-bold tracking-tight text-primary-700 dark:text-primary-300"
+        >
+          <span className="sm:hidden">계산기</span>
+          <span className="hidden sm:inline">
+            calculatorhost<span className="text-primary-500">.</span>
+          </span>
+        </Link>
+        <div className="min-w-0 flex-1">
+          <SearchBox />
         </div>
-
-        {/* 중앙: 검색창, 항상 중앙. 모바일에선 컴팩트하게. */}
-        <div className="flex flex-1 justify-center px-2 md:px-6">
-          <div className="w-full max-w-xl">
-            <SearchBox />
-          </div>
-        </div>
-
-        {/* 우측: 테마 토글 */}
-        <div className="flex items-center gap-2 shrink-0">
-          <ThemeToggle />
-        </div>
-      </div>
+        <Link
+          href="/#all-calculators"
+          className="inline-flex min-h-12 shrink-0 items-center text-sm font-medium text-text-secondary hover:text-primary-700"
+        >
+          <span className="sm:hidden">전체</span>
+          <span className="hidden sm:inline">전체 계산기</span>
+        </Link>
+      </nav>
     </header>
-      <MobileDrawer isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
-    </>
   );
 }

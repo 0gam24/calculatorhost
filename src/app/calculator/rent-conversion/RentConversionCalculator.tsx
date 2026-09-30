@@ -1,4 +1,9 @@
 'use client';
+import { ResultCard } from '@/components/calculator/Result';
+import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
+
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
  * 전월세 전환 계산기 (MVP #9)
@@ -14,7 +19,7 @@
  */
 
 import { ResultBanner } from '@/components/calculator/ResultBanner';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import {
@@ -57,26 +62,52 @@ const MODES: ModeConfig[] = [
 
 export function RentConversionCalculator() {
   // 입력 상태
-  const [mode, setMode] = useState<ConversionMode>('jeonseToMonthly');
+  const [mode, setMode] = useCalculatorState<ConversionMode>(
+    'rent-conversion:mode',
+    'jeonseToMonthly',
+  );
 
   // Mode A: 전세 → 월세
-  const [jeonseDeposit, setJeonseDeposit] = useState(500_000_000);
-  const [newDeposit, setNewDeposit] = useState(200_000_000);
+  const [jeonseDeposit, setJeonseDeposit] = useCalculatorState(
+    'rent-conversion:jeonseDeposit',
+    500_000_000,
+  );
+  const [newDeposit, setNewDeposit] = useCalculatorState('rent-conversion:newDeposit', 200_000_000);
 
   // Mode B: 월세 → 전세
-  const [baseDeposit, setBaseDeposit] = useState(100_000_000);
-  const [monthlyRent, setMonthlyRent] = useState(500_000);
+  const [baseDeposit, setBaseDeposit] = useCalculatorState(
+    'rent-conversion:baseDeposit',
+    100_000_000,
+  );
+  const [monthlyRent, setMonthlyRent] = useCalculatorState('rent-conversion:monthlyRent', 500_000);
 
   // Mode C: 전환율 역산
-  const [jeonseDepositC, setJeonseDepositC] = useState(500_000_000);
-  const [newDepositC, setNewDepositC] = useState(200_000_000);
-  const [monthlyRentC, setMonthlyRentC] = useState(1_375_000);
+  const [jeonseDepositC, setJeonseDepositC] = useCalculatorState(
+    'rent-conversion:jeonseDepositC',
+    500_000_000,
+  );
+  const [newDepositC, setNewDepositC] = useCalculatorState(
+    'rent-conversion:newDepositC',
+    200_000_000,
+  );
+  const [monthlyRentC, setMonthlyRentC] = useCalculatorState(
+    'rent-conversion:monthlyRentC',
+    1_375_000,
+  );
 
   // 공통 (고급 설정)
-  const [showAdvanced, setShowAdvanced] = useState(false);
-  const [baseRatePercent, setBaseRatePercent] = useState(3.5);
-  const [additionalRatePercent, setAdditionalRatePercent] = useState(2.0);
-  const [annualCapPercent, setAnnualCapPercent] = useState(10.0);
+  const [baseRatePercent, setBaseRatePercent] = useCalculatorState(
+    'rent-conversion:baseRatePercent',
+    3.5,
+  );
+  const [additionalRatePercent, setAdditionalRatePercent] = useCalculatorState(
+    'rent-conversion:additionalRatePercent',
+    2.0,
+  );
+  const [annualCapPercent, setAnnualCapPercent] = useCalculatorState(
+    'rent-conversion:annualCapPercent',
+    10.0,
+  );
 
   // 계산 실행
   const result: RentConversionResult = useMemo(() => {
@@ -161,7 +192,7 @@ export function RentConversionCalculator() {
   }
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="rent-conversion">
       <FormCard title="입력">
         {/* 모드 선택 탭 */}
         <div className="mb-2">
@@ -199,6 +230,7 @@ export function RentConversionCalculator() {
               placeholder="예: 500,000,000"
               unitButtons={PRICE_UNIT_BUTTONS}
               max={10_000_000_000}
+              unit="원"
             />
             <NumberInput
               id="new-deposit"
@@ -209,6 +241,7 @@ export function RentConversionCalculator() {
               unitButtons={PRICE_UNIT_BUTTONS}
               max={10_000_000_000}
               helpText="기존 전세보증금보다 작아야 월세가 발생합니다"
+              unit="원"
             />
           </>
         )}
@@ -223,6 +256,7 @@ export function RentConversionCalculator() {
               placeholder="예: 100,000,000"
               unitButtons={PRICE_UNIT_BUTTONS}
               max={10_000_000_000}
+              unit="원"
             />
             <NumberInput
               id="monthly-rent"
@@ -236,6 +270,7 @@ export function RentConversionCalculator() {
                 { label: '만', value: 10_000 },
               ]}
               max={100_000_000}
+              unit="원"
             />
           </>
         )}
@@ -250,6 +285,7 @@ export function RentConversionCalculator() {
               placeholder="예: 500,000,000"
               unitButtons={PRICE_UNIT_BUTTONS}
               max={10_000_000_000}
+              unit="원"
             />
             <NumberInput
               id="new-deposit-c"
@@ -259,6 +295,7 @@ export function RentConversionCalculator() {
               placeholder="예: 200,000,000"
               unitButtons={PRICE_UNIT_BUTTONS}
               max={10_000_000_000}
+              unit="원"
             />
             <NumberInput
               id="monthly-rent-c"
@@ -272,21 +309,15 @@ export function RentConversionCalculator() {
                 { label: '만', value: 10_000 },
               ]}
               max={100_000_000}
+              unit="원"
             />
           </>
         )}
 
         {/* 고급 설정 토글 */}
-        <button
-          type="button"
-          onClick={() => setShowAdvanced(!showAdvanced)}
-          className="mt-2 text-sm font-medium text-primary-500 hover:text-primary-600"
+        <CalculatorDetails
+          summary={`기준금리 ${baseRatePercent}% · 가산 ${additionalRatePercent}%p · 연 상한 ${annualCapPercent}%`}
         >
-          {showAdvanced ? '▼' : '▶'} 고급 설정
-        </button>
-
-        {/* 고급 설정 */}
-        {showAdvanced && (
           <div className="mt-4 space-y-4 rounded-lg border border-border-base bg-bg-raised p-4">
             <NumberInput
               id="base-rate"
@@ -322,70 +353,60 @@ export function RentConversionCalculator() {
               법정 상한 = min(기준금리 + 가산비율, 연 상한율)
             </p>
           </div>
-        )}
+          <p className="text-xs text-text-secondary">
+            기준금리는 예시 입력값입니다. 실제 적용 시점의 공시 금리를 직접 확인하세요.
+          </p>
+        </CalculatorDetails>
       </FormCard>
 
       {/* 결과 카드 */}
       <div className="flex flex-col gap-6">
-        <div className="card flex flex-col gap-6">
-          <header className="hero-number-container">
-            <h2 className="text-lg font-semibold text-text-secondary">결과</h2>
-            <p className="mt-2 text-caption text-text-tertiary">{heroLabel}</p>
-            <p className="mt-4 hero-number" aria-label={`${heroLabel}: ${heroValue}`}>{heroValue}</p>
-          </header>
-
-          {/* 경고 박스 */}
+        <ResultCard
+          title="전월세 전환 결과"
+          heroLabel={heroLabel}
+          heroValue={heroValue}
+          heroNote="기준금리는 직접 입력한 예시값입니다. 실시간 금리 조회가 아닙니다."
+          rows={[
+            { label: '적용 전환율', value: formatPercent(result.appliedConversionRate) },
+            ...(mode !== 'rateReverse'
+              ? [{ label: '환산보증금', value: formatKRW(result.convertedDeposit) }]
+              : []),
+            {
+              label: '입력 기준 상한율',
+              value:
+                Math.min(baseRatePercent + additionalRatePercent, annualCapPercent).toFixed(2) +
+                '%',
+            },
+          ]}
+        >
           {hasWarnings && (
-            <div className="space-y-2 rounded-lg border border-warning-500/50 bg-warning-500/5 p-3">
+            <div className="border-warning-500/50 bg-warning-500/5 space-y-2 rounded-lg border p-3">
               {result.warnings.map((warning, idx) => (
-                <div key={idx} className="text-sm text-warning-500">
+                <div key={idx} className="text-warning-500 text-sm">
                   주의: {warning}
                 </div>
               ))}
             </div>
           )}
-
-          {/* 법정 상한 초과 강조 */}
           {exceedsLegalLimit && (
             <div className="rounded-lg border border-danger-500/50 bg-danger-500/5 p-3">
-              <div className="text-sm font-semibold text-danger-500">
-                법정 상한 초과
-              </div>
+              <div className="text-sm font-semibold text-danger-500">법정 상한 초과</div>
               <div className="mt-1 text-caption text-danger-500">
-                이 계약은 주택임대차보호법 §7의2를 위반할 수 있습니다.
-                분쟁 시 주택임대차분쟁조정위원회 조정을 신청할 수 있습니다.
+                이 계약은 주택임대차보호법 §7의2를 위반할 수 있습니다. 분쟁 시
+                주택임대차분쟁조정위원회 조정을 신청할 수 있습니다.
               </div>
             </div>
           )}
-
-          {/* 핵심 정보 테이블 */}
-          <div className="space-y-3 rounded-lg border border-border-base bg-bg-raised p-4">
-            <div className="flex items-center justify-between">
-              <span className="text-sm text-text-secondary">적용된 전환율</span>
-              <span className="font-semibold text-text-primary">
-                {formatPercent(result.appliedConversionRate)}
-              </span>
-            </div>
-            {mode !== 'rateReverse' && (
-              <div className="flex items-center justify-between border-t border-border-base pt-3">
-                <span className="text-sm text-text-secondary">환산보증금</span>
-                <span className="font-semibold text-text-primary">
-                  {formatKRW(result.convertedDeposit)}
-                </span>
-              </div>
-            )}
-          </div>
-
-          {/* 추가 설명 */}
-          <p className="text-caption text-text-tertiary">
-            {mode === 'jeonseToMonthly' &&
-              '월세 = (기존 전세 - 새 보증금) × 전환율 ÷ 12'}
-            {mode === 'monthlyToJeonse' &&
-              '환산 전세 = 보증금 + (월세 × 12 ÷ 전환율)'}
-            {mode === 'rateReverse' &&
-              '실제 전환율 = (월세 × 12) ÷ (기존 전세 - 새 보증금) × 100'}
-          </p>
-        </div>
+          <CalculatorDetails title="계산 기준">
+            <p className="text-sm text-text-secondary">
+              {mode === 'jeonseToMonthly'
+                ? '월세 = (기존 전세 - 새 보증금) × 전환율 ÷ 12'
+                : mode === 'monthlyToJeonse'
+                  ? '환산 전세 = 보증금 + (월세 × 12 ÷ 전환율)'
+                  : '전환율 = (월세 × 12) ÷ (기존 전세 - 새 보증금) × 100'}
+            </p>
+          </CalculatorDetails>
+        </ResultCard>
 
         {/* 법정 상한 계산식 */}
         <div className="rounded-lg border border-border-base bg-bg-raised p-4">
@@ -411,6 +432,6 @@ export function RentConversionCalculator() {
         </div>
         <ResultBanner />
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

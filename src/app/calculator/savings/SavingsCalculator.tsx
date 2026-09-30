@@ -1,4 +1,8 @@
 'use client';
+import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
+
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
  * 적금 이자 계산기 (MVP #11)
@@ -7,24 +11,20 @@
  * 공식: src/lib/finance/savings.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo } from 'react';
 import dynamic from 'next/dynamic';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
-import {
-  calculateSavings,
-  type CompoundingMethod,
-  type TaxType,
-} from '@/lib/finance/savings';
+import { calculateSavings, type CompoundingMethod, type TaxType } from '@/lib/finance/savings';
 import { formatKRW } from '@/lib/utils';
 
 // Recharts 차트 컴포넌트 동적 import (번들 분리)
 const SavingsChart = dynamic(() => import('./SavingsChart'), {
   ssr: false,
-  loading: () => <div className="h-80 animate-pulse bg-bg-card rounded-lg" />,
+  loading: () => <div className="h-80 animate-pulse rounded-lg bg-bg-card" />,
 });
 
 const MONTHLY_DEPOSIT_UNIT_BUTTONS = [
@@ -79,11 +79,35 @@ const TAX_TYPE_LABELS: TaxTypeLabel[] = [
 ];
 
 export function SavingsCalculator() {
-  const [monthlyDeposit, setMonthlyDeposit] = useState(1_000_000); // 100만원
-  const [annualRate, setAnnualRate] = useState(3.5);
-  const [termMonths, setTermMonths] = useState(12);
-  const [method, setMethod] = useState<CompoundingMethod>('simple');
-  const [taxType, setTaxType] = useState<TaxType>('general');
+  const [monthlyDeposit, setMonthlyDeposit] = useCalculatorState(
+    'savings:monthlyDeposit',
+    1_000_000,
+  ); // 100만원
+  const [annualRate, setAnnualRate] = useCalculatorState('savings:annualRate', 3.5);
+  const [termMonths, setTermMonths] = useCalculatorState('savings:termMonths', 12);
+  const [method, setMethod] = useCalculatorState<CompoundingMethod>('savings:method', 'simple');
+  const [taxType, setTaxType] = useCalculatorState<TaxType>('savings:taxType', 'general');
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem('calculatorhost:handoff:v1:savings');
+      if (!raw) return;
+      const payload = JSON.parse(raw) as { monthlyDeposit?: unknown; createdAt?: unknown };
+      sessionStorage.removeItem('calculatorhost:handoff:v1:savings');
+      if (
+        typeof payload.monthlyDeposit === 'number' &&
+        Number.isFinite(payload.monthlyDeposit) &&
+        payload.monthlyDeposit > 0 &&
+        payload.monthlyDeposit <= 10_000_000 &&
+        typeof payload.createdAt === 'number' &&
+        Date.now() - payload.createdAt >= 0 &&
+        Date.now() - payload.createdAt <= 30 * 60 * 1000
+      ) {
+        setMonthlyDeposit(payload.monthlyDeposit);
+      }
+    } catch {
+      /* The independent calculator remains usable without storage. */
+    }
+  }, [setMonthlyDeposit]);
 
   const result = useMemo(() => {
     if (monthlyDeposit <= 0 || termMonths <= 0 || annualRate < 0) {
@@ -108,7 +132,8 @@ export function SavingsCalculator() {
       return null;
     }
     try {
-      const alternativeMethod: CompoundingMethod = method === 'simple' ? 'monthlyCompound' : 'simple';
+      const alternativeMethod: CompoundingMethod =
+        method === 'simple' ? 'monthlyCompound' : 'simple';
       return calculateSavings({
         monthlyDeposit,
         annualRatePercent: annualRate,
@@ -134,9 +159,8 @@ export function SavingsCalculator() {
 
       if (method === 'simple') {
         // 단리: m(m+1)/2 / 12 공식의 일부
-        interest = Math.floor(
-          (monthlyDeposit * annualRate / 100 * m * (m + 1) / 2 / 12) / 10
-        ) * 10;
+        interest =
+          Math.floor((((monthlyDeposit * annualRate) / 100) * m * (m + 1)) / 2 / 12 / 10) * 10;
       } else {
         // 월복리: 월별 누적 계산
         const r = annualRate / 100 / 12;
@@ -169,16 +193,18 @@ export function SavingsCalculator() {
       : 0;
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="savings">
       <FormCard title="입력">
         <NumberInput
           id="monthly-deposit"
           label="월 납입금액"
+          min={1}
           value={monthlyDeposit}
           onChange={setMonthlyDeposit}
           placeholder="예: 1,000,000"
           unitButtons={MONTHLY_DEPOSIT_UNIT_BUTTONS}
           max={10_000_000}
+          unit="원"
         />
 
         <NumberInput
@@ -187,21 +213,24 @@ export function SavingsCalculator() {
           value={annualRate}
           onChange={setAnnualRate}
           placeholder="예: 3.5"
-          min={0.01}
+          min={0}
           max={15}
+          unit="%"
         />
 
         <div className="flex flex-col gap-2">
           <label className="text-sm font-medium text-text-primary">가입 기간 (개월)</label>
           <NumberInput
             id="term-months"
-            label=""
+            label="가입 기간"
             value={termMonths}
             onChange={setTermMonths}
             placeholder="예: 12"
             min={1}
             max={360}
             className="mb-2"
+            integer
+            unit="개월"
           />
           <div className="flex flex-wrap gap-2">
             {TERM_MONTH_BUTTONS.map((btn) => (
@@ -221,31 +250,36 @@ export function SavingsCalculator() {
           </div>
         </div>
 
-        <RadioGroup<CompoundingMethod>
-          id="method"
-          label="이자 방식"
-          value={method}
-          onChange={setMethod}
-          options={COMPOUNDING_LABELS.map((l) => ({
-            value: l.method,
-            label: l.label,
-          }))}
-        />
+        <CalculatorDetails
+          summary={`${method === 'simple' ? '단리' : '월복리'} · ${taxType === 'general' ? '일반과세' : taxType === 'exempt' ? '비과세' : '세금우대'}`}
+        >
+          <RadioGroup<CompoundingMethod>
+            id="method"
+            label="이자 방식"
+            value={method}
+            onChange={setMethod}
+            options={COMPOUNDING_LABELS.map((l) => ({
+              value: l.method,
+              label: l.label,
+            }))}
+          />
 
-        <RadioGroup<TaxType>
-          id="tax-type"
-          label="이자 과세 방식"
-          value={taxType}
-          onChange={setTaxType}
-          options={TAX_TYPE_LABELS.map((l) => ({
-            value: l.type,
-            label: l.label,
-          }))}
-        />
+          <RadioGroup<TaxType>
+            id="tax-type"
+            label="이자 과세 방식"
+            value={taxType}
+            onChange={setTaxType}
+            options={TAX_TYPE_LABELS.map((l) => ({
+              value: l.type,
+              label: l.label,
+            }))}
+          />
+        </CalculatorDetails>
       </FormCard>
 
       <ResultCard
         title="적금 계산"
+        empty={!result}
         heroLabel={`${method === 'simple' ? '단리' : '월복리'} 세후 만기 수령액`}
         heroValue={result ? formatKRW(result.maturityAmount) : '계산하려면 값을 입력해 주세요'}
         heroNote={result ? `세율 ${taxRatePercent}% 적용` : undefined}
@@ -306,21 +340,21 @@ export function SavingsCalculator() {
           </div>
         )}
       </ResultCard>
-        <ResultBanner />
+      <ResultBanner />
 
       {result && (
         <>
           {/* 누적 잔액 추이 차트 */}
           <div className="col-span-1 lg:col-span-2">
-            <section aria-label="누적 잔액 추이 차트" className="card">
+            <CalculatorDetails title="월별 상세" lazy>
               <h3 className="mb-4 text-lg font-semibold">누적 잔액 추이</h3>
               <div className="min-h-80 w-full">
                 <SavingsChart data={chartData} />
               </div>
-            </section>
+            </CalculatorDetails>
           </div>
         </>
       )}
-    </div>
+    </CalculatorWorkspace>
   );
 }

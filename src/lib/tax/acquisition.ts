@@ -1,249 +1,202 @@
 /**
- * 취득세 계산 — 순수 함수
- *
- * 법적 근거:
- * - 지방세법 §10-§17, 시행령 §22
- * - 농어촌특별세법 §3
- * - 지특법 §36의3 (생애최초 감면, 2022.6.21자 소득요건 폐지)
- *
- * 상수: src/lib/constants/tax-rates-2026.ts
- * 명세: docs/calculator-spec/취득세.md
- *
- * ⚠️ 모든 수정은 calc-logic-verifier 에이전트 통과 후.
+ * 주택 취득세 계산 — 감면·특례를 제외한 확인된 일반 취득만 지원.
+ * 확인 기준: 2026-09-30. 지방세법 §11·§13의2·§151 [시행 2026-01-01],
+ * 지방세법 시행령 §28의6 [시행 2026-09-18], 농어촌특별세법 §4·§5
+ * [시행 2026-05-12] 및 시행령 §4 [시행 2026-01-02].
+ * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=02&joNo=0013&lsiSeq=282559&urlMode=lsScJoRltInfoR
+ * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0151&lsiSeq=282559&urlMode=lsScJoRltInfoR
+ * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=06&joNo=0028&lsiSeq=288831&urlMode=lsScJoRltInfoR
+ * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0005&lsiSeq=285905&urlMode=lsScJoRltInfoR
+ * 일반매매 반올림 교차확인: 대덕구 공식 2020 안내 PDF 인쇄11쪽, 7억1.67%·8억2.33%.
+ * https://www.daedeok.go.kr/ebook/site/src/viewer/download.php?host=main&no=2&site=20200103_154912
+ * 10원 미만 절사: 지방세기본법 §59 [시행 2026-02-05]가 국고금 관리법 §47을 준용.
+ * https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1000577035
+ * https://www.law.go.kr/LSW/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=900052683
+ * 생애최초 감면, 상속 특례, 부담부증여 및 매매 특례는 조건 확인 후 별도 계산 필요.
+ * 미지원·미확인 조건은 0원 결과 대신 Error로 반환한다.
  */
 
 import { ACQUISITION_TAX } from '@/lib/constants/tax-rates-2026';
 
-// ============================================
-// 타입 정의
-// ============================================
-
 export type AcquisitionMethod = 'purchase' | 'gift' | 'inheritance' | 'primitive';
 export type AcquisitionTarget = 'residential' | 'farmland' | 'land' | 'other';
 export type HouseCount = 1 | 2 | 3 | 4;
+export type AcquisitionCondition = 'unknown' | 'applicable' | 'notApplicable';
 
 export interface AcquisitionTaxInput {
-  /** 취득 방법 */
   method: AcquisitionMethod;
-  /** 대상 (주거용만 MVP 지원, 농지/토지/기타는 "전문가 상담" 반환) */
+  /** 주택만 지원 */
   target: AcquisitionTarget;
-  /** 취득 시점 주택수 (본인 기준) */
+  /** 취득 후 1세대 기준 주택 수. 주택 수 산정 제외·특례는 별도 확인. */
   houseCount: HouseCount;
-  /** 대상 면적이 85㎡ 초과인지 여부 */
+  /** 국민주택규모를 초과하는지 확인한 값. 기존 저장 키 이름 유지. */
   areaOver85: boolean;
-  /** 조정대상지역 취득인지 여부 */
   adjustedArea: boolean;
-  /** 취득가 또는 시가표준액 (원) */
+  /** 확인된 취득세 과세표준(원). 증여 과세표준과 중과 판단용 시가표준액은 구별. */
   acquisitionPrice: number;
-  /** 생애최초 주택 감면 적용 여부 (소득/가격 조건 사전 확인 가정) */
+  /** true이면 감면 요건·한도 및 부가세 확인이 필요하여 자동 계산 보류 */
   firstHomeBuyerDiscount: boolean;
+  /** 지분 취득·일시적 2주택 등 특례가 없는 일반 주택 매매만 지원. 누락은 ordinary. */
+  purchaseSpecial?: 'unknown' | 'ordinary' | 'special';
+  /** 조정지역 증여 중과 판단용 전체 주택의 시가표준액(증여 지분 가액이 아님) */
+  giftWholeHouseStandardPrice?: number;
+  /** 증여자 1세대1주택 및 배우자·직계존비속 증여의 중과 예외 요건 확인 */
+  giftOneHouseFamilyExemption?: AcquisitionCondition;
+  /** 부담부증여 여부. false로 확인된 일반 증여만 지원 */
+  giftBurdened?: boolean | null;
+  /** 1가구1주택 상속 등 특례가 적용되지 않는 것으로 확인된 일반 상속만 지원 */
+  inheritanceSpecial?: AcquisitionCondition;
 }
 
 export interface AcquisitionTaxResult {
-  /** 과세표준 (원) */
   taxBase: number;
-  /** 취득세 (원) */
   acquisitionTax: number;
-  /** 농어촌특별세 (원) */
   specialRuralTax: number;
-  /** 지방교육세 (원) */
   localEducationTax: number;
-  /** 총 납부액 (원) = acquisitionTax + specialRuralTax + localEducationTax */
   totalPayment: number;
-  /** 적용된 세율 (소수, 0.01 = 1%) */
+  /** 소수, 0.01 = 1% */
   appliedRate: number;
-  /** 감면액 (생애최초 적용 시) (원) */
+  /** 감면 자동 계산은 보류 중이므로 지원 범위에서는 0 */
   discountAmount: number;
-  /** 비고 */
   note: string;
 }
 
-// ============================================
-// 헬퍼 함수: 주택 1개 구매 기본세율 (6억~9억 선형보간)
-// ============================================
-
 /**
- * 주택 1주택자 매매 시 기본 세율 결정
- * 6억 이하: 1.0%
- * 6억~9억: 선형보간 (지방세법 시행령 §22)
- * 9억 초과: 3.0%
- *
- * 선형보간 공식:
- * 세율 = (취득가액 × 2 / 3억원 − 3) ÷ 100
- * = (가격 × 2 / 300_000_000 - 3) / 100
+ * 지방세법 §11①8나: ((가격 × 2 / 3억원) - 3) / 100.
+ * 세율의 소수 계수를 소수 다섯째 자리에서 반올림하여 넷째 자리까지 적용한다.
+ * 즉 0.0001 단위(표시 백분율의 0.01%p). 7억→0.0167,8억→0.0233.
+ * 부동소수점 없이 유리수의 양수 round-half-up을 정수로 계산한다.
  */
-function resolveSingleHousePurchaseRate(acquisitionPrice: number): number {
-  if (acquisitionPrice <= 600_000_000) {
-    return 0.01;
-  }
-  if (acquisitionPrice <= 900_000_000) {
-    // 선형보간: (가격 × 2 / 3억 - 3) / 100
-    const rate = (acquisitionPrice * 2 / 300_000_000 - 3) / 100;
-    // 소수점 다섯째 자리에서 반올림 (지방세법 §11 ②)
-    return Math.round(rate * 100_000) / 100_000;
+function resolveOrdinaryPurchaseRate(price: number): number {
+  if (price <= 600_000_000) return 0.01;
+  if (price < 900_000_000) {
+    const numerator = BigInt(price) * BigInt(2) - BigInt(900_000_000);
+    const denominator = BigInt(3_000_000);
+    const rateUnits = (numerator * BigInt(2) + denominator) / (denominator * BigInt(2));
+    return Number(rateUnits) / 10_000;
   }
   return 0.03;
 }
 
-/**
- * 주택/농지/토지 여부와 구매(매매/증여/상속) 기본 세율 결정
- */
 function resolveMainRate(input: AcquisitionTaxInput): number {
-  // MVP 스코프: 주택만 지원
-  if (input.target !== 'residential') {
-    throw new Error('전문가 상담 필요 (농지/토지/기타는 미지원)');
-  }
-
-  // 매매 취득
   if (input.method === 'purchase') {
-    // 조정지역 & 2주택
-    if (input.adjustedArea && input.houseCount === 2) {
-      return ACQUISITION_TAX.adjustedTwoHouses; // 8%
+    if (input.purchaseSpecial !== undefined && input.purchaseSpecial !== 'ordinary') {
+      throw new Error(
+        '지분 취득·일시적 2주택 등 매매 특례 여부를 확인해 주세요. 특례 거래는 별도 계산이 필요합니다.',
+      );
     }
-    // 조정지역 & 3주택 이상
-    if (input.adjustedArea && input.houseCount >= 3) {
-      return ACQUISITION_TAX.adjustedThreeOrMore; // 12%
-    }
-    // 비조정지역 & 3주택 이상
-    if (!input.adjustedArea && input.houseCount >= 3) {
-      return ACQUISITION_TAX.nonAdjustedThreeOrMore; // 12%
-    }
-    // 1주택자 또는 비조정지역 2주택
-    if (input.houseCount === 1) {
-      return resolveSingleHousePurchaseRate(input.acquisitionPrice);
-    }
-    // 비조정지역 2주택자: 1.0% (기본)
-    return 0.01;
+    if (input.adjustedArea && input.houseCount >= 3) return ACQUISITION_TAX.adjustedThreeOrMore;
+    if (!input.adjustedArea && input.houseCount >= 4) return ACQUISITION_TAX.nonAdjustedFourOrMore;
+    if (input.adjustedArea && input.houseCount === 2) return ACQUISITION_TAX.adjustedTwoHouses;
+    if (!input.adjustedArea && input.houseCount === 3)
+      return ACQUISITION_TAX.nonAdjustedThreeHouses;
+    return resolveOrdinaryPurchaseRate(input.acquisitionPrice);
   }
 
-  // 증여 취득
   if (input.method === 'gift') {
-    // 조정지역 & 3주택 이상: 중과 12%
-    if (input.adjustedArea && input.houseCount >= 3) {
-      return ACQUISITION_TAX.giftAdjustedHeavy; // 12%
+    if (input.giftBurdened !== false) {
+      throw new Error(
+        '부담부증여 여부를 확인해 주세요. 채무를 함께 인수하는 증여는 이 계산기의 일반 증여 계산 범위에 포함되지 않습니다.',
+      );
     }
-    // 기본 3.5%
-    return ACQUISITION_TAX.giftBasic; // 3.5%
+    if (input.adjustedArea) {
+      const wholePrice = input.giftWholeHouseStandardPrice;
+      if (wholePrice === undefined || !Number.isSafeInteger(wholePrice) || wholePrice <= 0) {
+        throw new Error(
+          '조정대상지역 증여는 전체 주택의 시가표준액을 입력해 주세요. 과세표준 또는 증여 지분 가액과 구별해야 합니다.',
+        );
+      }
+      if (wholePrice >= ACQUISITION_TAX.giftHeavyStandardPrice) {
+        if (input.giftOneHouseFamilyExemption === 'applicable') return ACQUISITION_TAX.giftBasic;
+        if (input.giftOneHouseFamilyExemption === 'notApplicable')
+          return ACQUISITION_TAX.giftAdjustedHeavy;
+        throw new Error(
+          '증여자 1세대1주택 및 가족 간 증여의 중과 예외 여부를 확인해 주세요. 수증자의 주택 수만으로 중과를 판단할 수 없습니다.',
+        );
+      }
+    }
+    return ACQUISITION_TAX.giftBasic;
   }
 
-  // 상속 취득
-  if (input.method === 'inheritance') {
-    return ACQUISITION_TAX.inheritanceBasic; // 2.8%
+  if (input.inheritanceSpecial !== 'notApplicable') {
+    throw new Error(
+      '1가구1주택 상속 등 상속 특례 여부를 확인해 주세요. 특례가 적용되는 상속은 별도 계산이 필요합니다.',
+    );
   }
-
-  // 원시취득
-  if (input.method === 'primitive') {
-    throw new Error('전문가 상담 필요 (원시취득은 미지원)');
-  }
-
-  return 0;
+  return ACQUISITION_TAX.inheritanceBasic;
 }
 
-/**
- * 농특세 세율 결정 (85㎡ 초과일 때만)
- * 중과 조건: 조정지역 & 3주택 이상, 또는 비조정지역 & 3주택 이상
- */
-function resolveSpecialRuralTaxRate(input: AcquisitionTaxInput): number {
-  if (!input.areaOver85) {
-    return 0;
-  }
-
-  // 중과 조건: 조정/비조정 모두 3주택 이상
-  const isHeavy = input.houseCount >= 3;
-
-  return isHeavy ? ACQUISITION_TAX.specialRuralTaxHeavy : ACQUISITION_TAX.specialRuralTaxOver85;
+/** 원 단위 과표와 지원 범위의 세율로 10원 미만 절사. 부동소수점 곱셈 오차 방지. */
+function amountAtRate(taxBase: number, rate: number): number {
+  const numerator = BigInt(Math.round(rate * 1_000_000));
+  return Number((BigInt(taxBase) * numerator) / BigInt(10_000_000)) * 10;
 }
 
-// ============================================
-// 메인 계산 함수
-// ============================================
-
-/**
- * 취득세 계산 (메인 엔트리)
- */
 export function calculateAcquisitionTax(input: AcquisitionTaxInput): AcquisitionTaxResult {
-  // 입력값 검증
-  if (input.acquisitionPrice < 0) {
-    throw new Error('취득가는 0 이상이어야 합니다');
+  if (!Number.isSafeInteger(input.acquisitionPrice) || input.acquisitionPrice < 0) {
+    throw new Error('취득세 과세표준은 0 이상인 유효한 원 단위 금액을 입력해 주세요.');
   }
-
-  // 과세표준 (유상: 실거래가, 무상: 시가표준액)
-  const taxBase = input.acquisitionPrice;
-
-  // 주택이 아니거나 원시취득이면 예외 발생
   if (input.target !== 'residential') {
-    return {
-      taxBase,
-      acquisitionTax: 0,
-      specialRuralTax: 0,
-      localEducationTax: 0,
-      totalPayment: 0,
-      appliedRate: 0,
-      discountAmount: 0,
-      note: '전문가 상담 필요 (농지/토지/기타는 미지원)',
-    };
+    throw new Error(
+      '농지·토지·기타 대상은 현재 계산 범위에 포함되지 않습니다. 관할 지자체에서 취득세를 확인해 주세요.',
+    );
   }
-
   if (input.method === 'primitive') {
-    return {
-      taxBase,
-      acquisitionTax: 0,
-      specialRuralTax: 0,
-      localEducationTax: 0,
-      totalPayment: 0,
-      appliedRate: 0,
-      discountAmount: 0,
-      note: '전문가 상담 필요 (원시취득은 미지원)',
-    };
+    throw new Error(
+      '원시취득은 현재 계산 범위에 포함되지 않습니다. 관할 지자체에서 취득세를 확인해 주세요.',
+    );
+  }
+  if (!['purchase', 'gift', 'inheritance'].includes(input.method)) {
+    throw new Error('취득 방법을 확인해 주세요.');
+  }
+  if (
+    ![1, 2, 3, 4].includes(input.houseCount) ||
+    typeof input.areaOver85 !== 'boolean' ||
+    typeof input.adjustedArea !== 'boolean'
+  ) {
+    throw new Error('세대 주택 수·국민주택규모·조정대상지역 조건을 확인해 주세요.');
+  }
+  if (input.firstHomeBuyerDiscount !== false) {
+    throw new Error(
+      '생애최초 감면은 본인·배우자의 주택 보유 이력과 주택별 200만·300만원 한도 등 확인이 필요합니다. 자동 감면 계산은 현재 보류 중입니다.',
+    );
   }
 
-  // 기본 취득세 세율 결정
+  const taxBase = input.acquisitionPrice;
   const mainRate = resolveMainRate(input);
+  const isHeavy =
+    mainRate === ACQUISITION_TAX.adjustedTwoHouses ||
+    mainRate === ACQUISITION_TAX.giftAdjustedHeavy;
+  const ruralRate = !input.areaOver85
+    ? 0
+    : mainRate === ACQUISITION_TAX.giftAdjustedHeavy
+      ? ACQUISITION_TAX.specialRuralTaxHeavy
+      : mainRate === ACQUISITION_TAX.adjustedTwoHouses
+        ? ACQUISITION_TAX.specialRuralTaxEightPercentHeavy
+        : ACQUISITION_TAX.specialRuralTaxOver85;
+  const educationRate = isHeavy
+    ? ACQUISITION_TAX.localEducationTaxHeavy
+    : input.method === 'gift'
+      ? ACQUISITION_TAX.localEducationTaxGift
+      : input.method === 'inheritance'
+        ? ACQUISITION_TAX.localEducationTaxInheritance
+        : mainRate * ACQUISITION_TAX.localEducationTaxOfAcquisition;
 
-  // 취득세 계산 (과세표준 × 세율, 10원 단위 절사)
-  let acquisitionTax = Math.floor((taxBase * mainRate) / 10) * 10;
-
-  // 생애최초 감면 적용
-  let discountAmount = 0;
-  if (input.firstHomeBuyerDiscount) {
-    // 감면액 = min(취득세, 200만원)
-    discountAmount = Math.min(acquisitionTax, ACQUISITION_TAX.firstHomeBuyerMaxDiscount);
-    acquisitionTax = Math.max(0, acquisitionTax - discountAmount);
-  }
-
-  // 농어촌특별세 (취득세가 아닌 과세표준 기준, 10원 단위 절사)
-  const specialRuralTaxRate = resolveSpecialRuralTaxRate(input);
-  const specialRuralTax = Math.floor((taxBase * specialRuralTaxRate) / 10) * 10;
-
-  // 지방교육세 (취득세 기준의 10%, 10원 단위 절사)
-  // 생애최초 감면은 취득세에만 적용되므로 지교세 계산 시 감면 후 취득세 사용
-  const localEducationTax = Math.floor((acquisitionTax * ACQUISITION_TAX.localEducationTaxOfAcquisition) / 10) * 10;
-
-  // 총 납부액
-  const totalPayment = acquisitionTax + specialRuralTax + localEducationTax;
-
-  // 비고
-  const notes: string[] = [];
-  if (input.firstHomeBuyerDiscount) {
-    notes.push(`생애최초 감면 ${discountAmount.toLocaleString()}원 적용`);
-  }
-  if (input.houseCount >= 2 && input.adjustedArea) {
-    notes.push('조정지역 다주택 중과 적용');
-  }
-  if (input.areaOver85) {
-    notes.push('85㎡ 초과 농특세 포함');
-  }
-
-  const note = notes.length > 0 ? notes.join(' | ') : '';
+  const acquisitionTax = amountAtRate(taxBase, mainRate);
+  const specialRuralTax = amountAtRate(taxBase, ruralRate);
+  const localEducationTax = amountAtRate(taxBase, educationRate);
+  const notes = ['감면·특례를 제외한 일반 취득의 예상 세액'];
+  if (isHeavy) notes.push('주택 중과 세율 적용');
+  if (input.areaOver85) notes.push('국민주택규모 초과 농어촌특별세 포함');
 
   return {
     taxBase,
     acquisitionTax,
     specialRuralTax,
     localEducationTax,
-    totalPayment,
+    totalPayment: acquisitionTax + specialRuralTax + localEducationTax,
     appliedRate: mainRate,
-    discountAmount,
-    note,
+    discountAmount: 0,
+    note: notes.join(' | '),
   };
 }

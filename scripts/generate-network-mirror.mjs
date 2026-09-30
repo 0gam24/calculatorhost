@@ -20,8 +20,9 @@
  *  - 본문 전체 복제 X (summary 200자 이내만)
  *  - HQ spec 외 양식 변형 X
  */
-import { existsSync, readFileSync, statSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+import { extractPageMeta, latestMirroredModification } from './network-mirror-core.mjs';
 
 const REPO_ROOT = process.cwd();
 const SITE = 'https://calculatorhost.com';
@@ -36,6 +37,7 @@ const CALCULATOR_SLUGS = [
   'severance',
   'loan',
   'loan-limit',
+  'dti',
   'capital-gains-tax',
   'acquisition-tax',
   'property-tax',
@@ -106,6 +108,7 @@ const CALCULATOR_TO_CATEGORY = {
   'rental-yield': 'real-estate',
   'housing-subscription': 'real-estate',
   loan: 'finance',
+  dti: 'finance',
   'loan-limit': 'finance',
   deposit: 'finance',
   savings: 'finance',
@@ -156,34 +159,7 @@ function readPageMeta(relPath) {
   if (!existsSync(fullPath)) return null;
   const src = readFileSync(fullPath, 'utf8');
 
-  const titleMatch = src.match(/title:\s*(['"`])([^'"`]+?)\1/);
-  // description 은 멀티라인 연결을 위해 description: 다음의 첫 string literal 매치
-  const descMatch = src.match(/description:\s*(?:\r?\n\s*)?(['"`])([^'"`]+?)\1/);
-
-  let datePublished = null;
-  const dpConst = src.match(/const\s+DATE_PUBLISHED\s*=\s*['"](\d{4}-\d{2}-\d{2})['"]/);
-  if (dpConst) datePublished = dpConst[1];
-  else {
-    const dp = src.match(/datePublished:\s*['"](\d{4}-\d{2}-\d{2})['"]/);
-    if (dp) datePublished = dp[1];
-  }
-
-  let dateModified = null;
-  const dmConst = src.match(/const\s+DATE_MODIFIED\s*=\s*['"](\d{4}-\d{2}-\d{2})['"]/);
-  if (dmConst) dateModified = dmConst[1];
-  else {
-    const dm = src.match(/dateModified:\s*['"](\d{4}-\d{2}-\d{2})['"]/);
-    if (dm) dateModified = dm[1];
-  }
-
-  const mtime = statSync(fullPath).mtime.toISOString().slice(0, 10);
-
-  return {
-    title: titleMatch ? titleMatch[2] : null,
-    description: descMatch ? descMatch[2] : null,
-    datePublished: datePublished ?? mtime,
-    dateModified: dateModified ?? mtime,
-  };
+  return extractPageMeta(src);
 }
 
 function truncate(str, n) {
@@ -259,8 +235,7 @@ function buildGlossaryPosts() {
 
   // GLOSSARY 배열 내 { name: '...', ..., description: '...' } 블록 정규식 추출.
   // alternateName / url / relatedCalculator 등은 각 term 의 옵셔널 필드라 무시.
-  const termRegex =
-    /\{\s*name:\s*(['"`])([^'"`]+?)\1[\s\S]*?description:\s*(['"`])([^'"`]+?)\3/g;
+  const termRegex = /\{\s*name:\s*(['"`])([^'"`]+?)\1[\s\S]*?description:\s*(['"`])([^'"`]+?)\3/g;
 
   const posts = [];
   const seen = new Set();
@@ -298,7 +273,10 @@ const mirror = {
   site: SITE_NAME,
   siteName: SITE_NAME,
   domain: SITE,
-  lastUpdated: new Date().toISOString(),
+  lastUpdated: latestMirroredModification(
+    JSON.parse(readFileSync(resolve(REPO_ROOT, 'src/data/date-modified-manifest.json'), 'utf8')),
+    allPosts.map((post) => new URL(post.url).pathname),
+  ),
   totalPosts: allPosts.length,
   categories: CATEGORIES,
   personas: ['모든 페르소나'],

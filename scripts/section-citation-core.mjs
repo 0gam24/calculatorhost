@@ -1,0 +1,99 @@
+/** Pure citation rules shared by CLI and tests. */
+export function countCitations(src) {
+  if (!src) return 0;
+  let count = 0;
+  // §N 또는 §N의M 패턴 (영문 §)
+  const sectionA = src.match(/§\s*\d+(?:의\d+)?/g) || [];
+  count += sectionA.length;
+  // 제N조 또는 제N조의M 패턴 (한국어 표기)
+  const sectionB = src.match(/제\s*\d+\s*조(?:의\s*\d+)?/g) || [];
+  count += sectionB.length;
+  return count;
+}
+
+/**
+ * §N 인용 0건이어도 게이트를 막지 않는 경로 — **명시 등재된 것만** 면제한다(default-deny).
+ *
+ * 배경 (2026-08-12 SEO 감사): missing 1건만 있어도 exit 1 이라 SEO+AEO+GEO Gate 가
+ * 상시 실패했고, 그 결과 게이트 자체가 무시되어 진짜 YMYL 회귀를 막지 못했다.
+ * 면제는 "법조항 개념이 성립하지 않는 페이지"로 한정하며 사유를 반드시 남긴다.
+ * 세금 페이지는 어떤 경우에도 면제하지 않는다 (tests 가 이를 강제).
+ */
+export const CITATION_EXEMPT = {
+  // 계산 유틸 — 법령이 아니라 산술 공식만 다룸
+  '/calculator/bmi/': '건강 지표 계산 — 근거 법령 없음',
+  '/calculator/d-day/': '날짜 계산 유틸 — 근거 법령 없음',
+  '/calculator/area/': '단위 환산 유틸 — 근거 법령 없음',
+  '/calculator/inflation/': '화폐가치 환산 — 통계 기반, 법령 없음',
+  '/calculator/exchange/': '환율 환산 — 시장 시세 기반, 법령 없음',
+  '/calculator/averaging-down/': '투자 평단 시뮬 — 법령 없음',
+  '/calculator/split-buy/': '분할매수 시뮬 — 법령 없음',
+  '/calculator/split-sell/': '분할매도 시뮬 — 법령 없음',
+
+  // 카테고리 허브 — 개별 가이드로 보내는 목록 페이지
+  '/guide/category/tax/': '카테고리 허브(목록) — 본문 없음',
+  '/guide/category/tax-real-estate/': '카테고리 허브(목록) — 본문 없음',
+  '/guide/category/finance/': '카테고리 허브(목록) — 본문 없음',
+  '/guide/category/investment/': '카테고리 허브(목록) — 본문 없음',
+  '/guide/category/work/': '카테고리 허브(목록) — 본문 없음',
+
+  // 금융 상품·산식 가이드 — 근거가 법률 조문이 아니라 감독규정·약관·상품 고시
+  '/guide/dsr-dti-ltv-difference-2026/': '금융위 감독규정·행정지도 기반 — 법률 §N 부재',
+  '/guide/dti-calculation-2026/': '금융위 감독규정 기반 — 법률 §N 부재',
+  '/guide/ltv-calculation-2026/': '금융위 감독규정 기반 — 법률 §N 부재',
+  '/guide/stress-dsr-stage3-2026/': '금융위 행정지도(스트레스 DSR) 기반 — 법률 §N 부재',
+  '/guide/equal-payment-vs-equal-principal-2026/': '상환방식 산식 비교 — 법령 없음',
+  '/guide/prepayment-penalty-fee-2026/': '은행 약관·상품설명서 기반',
+  '/guide/mortgage-fixed-vs-variable-rate-2026/': '금리 유형 비교 — 상품 약관 기반',
+  '/guide/mortgage-refinance-savings-2026/': '대환 시뮬 — 상품 약관 기반',
+  '/guide/jeonse-loan-limit-interest-2026/': '보증기관 상품 기준 기반',
+  '/guide/didimdol-loan-conditions-2026/': '주택도시기금 상품 기준(기금운용계획) 기반',
+  '/guide/newborn-special-mortgage-loan-2026/': '주택도시기금 상품 기준 기반',
+  '/guide/credit-score-loan-interest-rate-2026/': '신용평가사 산정 기준 — 법률 §N 부재',
+  '/guide/currency-exchange-fee-preferential-rate-2026/': '은행 환전 수수료 약관 기반',
+  '/guide/car-installment-vs-lease-vs-rent-2026/': '금융상품 비교 — 상품 약관 기반',
+  '/guide/rental-yield-calculation-2026/': '수익률 산식 — 법령 없음',
+  '/guide/inflation-money-value-2026/': '물가 환산 — 통계 기반',
+  '/guide/split-sell-profit-taking-strategy-2026/': '투자 전략 시뮬 — 법령 없음',
+  '/guide/ipo-subscription-allocation-2026/': '증권사 배정 규정·인수업무규정 기반',
+
+  // 공급·지원 제도 — 국토부 규칙·지자체 고시 기반 (법률 조문 아님)
+  '/guide/housing-subscription-first-priority-2026/': '주택공급규칙(국토부령)·고시 기반',
+  '/guide/housing-subscription-no-house-period-2026/': '주택공급규칙(국토부령)·고시 기반',
+  '/guide/housing-subscription-score-84-points-2026/': '주택공급규칙(국토부령)·고시 기반',
+  '/guide/housing-pension-reverse-mortgage-2026/': 'HF 주택연금 상품 기준 기반',
+  '/guide/youth-monthly-rent-support-2026/': '지자체·국토부 사업 공고 기반',
+  '/guide/income-contingent-loan-repayment-2026/': '한국장학재단 상환 기준 기반',
+};
+
+/**
+ * missing 목록을 "게이트 차단(blocking)" 과 "명시 면제(exempted)" 로 가른다.
+ * 등재되지 않은 경로는 전부 blocking — 신규 페이지가 조용히 빠져나가지 못한다.
+ */
+export function partitionMissing(missingPaths, exempt = CITATION_EXEMPT) {
+  const blocking = [];
+  const exempted = [];
+  for (const p of missingPaths) {
+    if (Object.prototype.hasOwnProperty.call(exempt, p)) exempted.push(p);
+    else blocking.push(p);
+  }
+  return { blocking, exempted };
+}
+
+/**
+ * 페이지별 카운트를 missing/minimal/strong 으로 분류.
+ *  - 0     → missing
+ *  - 1~2   → minimal
+ *  - 3+    → strong
+ */
+export function classifyCitations(entries) {
+  const missing = [];
+  const minimal = [];
+  const strong = [];
+  for (const e of entries) {
+    if (e.count === 0) missing.push(e.path);
+    else if (e.count <= 2) minimal.push(e.path);
+    else strong.push(e.path);
+  }
+  return { missing, minimal, strong };
+}

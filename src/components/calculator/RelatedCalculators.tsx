@@ -16,13 +16,13 @@ export interface RelatedCalculatorsProps {
 export function RelatedCalculators({ items, className }: RelatedCalculatorsProps) {
   return (
     <section aria-label="관련 계산기" className={cn('flex flex-col gap-4', className)}>
-      <h2 className="text-2xl font-semibold">관련 계산기</h2>
-      <div className="grid gap-3 md:grid-cols-2">
-        {items.map((item) => (
+      <h2 className="text-lg font-semibold">관련 계산기</h2>
+      <div className="grid gap-3 md:grid-cols-3">
+        {items.slice(0, 3).map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="card flex items-center justify-between transition hover:border-primary-500"
+            className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-border-base bg-bg-card px-4 py-3 transition hover:border-primary-500"
           >
             <div className="flex flex-col">
               <span className="font-medium">{item.title}</span>

@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * 종합부동산세 계산기 (MVP #2)
  *
@@ -9,12 +12,11 @@
  */
 
 import { ResultBanner } from '@/components/calculator/ResultBanner';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup, type RadioOption } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
-        <ResultBanner note="공정시장가액비율 60% 적용. 1세대 1주택 12억 공제 반영." />
 import {
   calculateComprehensivePropertyTax,
   type HouseCount,
@@ -35,12 +37,30 @@ const HOUSE_COUNT_OPTIONS: RadioOption<HouseCount>[] = [
 ];
 
 export function ComprehensivePropertyTaxCalculator() {
-  const [houseCount, setHouseCount] = useState<HouseCount>('one');
-  const [totalPublishedPrice, setTotalPublishedPrice] = useState(1_500_000_000);
-  const [isOneHouseholdOneHouse, setIsOneHouseholdOneHouse] = useState(true);
-  const [seniorAgeYears, setSeniorAgeYears] = useState(60);
-  const [holdingYears, setHoldingYears] = useState(5);
-  const [includesAdjustedArea, setIncludesAdjustedArea] = useState(false);
+  const [houseCount, setHouseCount] = useCalculatorState<HouseCount>(
+    'comprehensive-property-tax:houseCount',
+    'one',
+  );
+  const [totalPublishedPrice, setTotalPublishedPrice] = useCalculatorState(
+    'comprehensive-property-tax:totalPublishedPrice',
+    1_500_000_000,
+  );
+  const [isOneHouseholdOneHouse, setIsOneHouseholdOneHouse] = useCalculatorState(
+    'comprehensive-property-tax:isOneHouseholdOneHouse',
+    true,
+  );
+  const [seniorAgeYears, setSeniorAgeYears] = useCalculatorState(
+    'comprehensive-property-tax:seniorAgeYears',
+    60,
+  );
+  const [holdingYears, setHoldingYears] = useCalculatorState(
+    'comprehensive-property-tax:holdingYears',
+    5,
+  );
+  const [includesAdjustedArea, setIncludesAdjustedArea] = useCalculatorState(
+    'comprehensive-property-tax:includesAdjustedArea',
+    false,
+  );
 
   const result = useMemo(
     () =>
@@ -52,7 +72,14 @@ export function ComprehensivePropertyTaxCalculator() {
         holdingYears,
         includesAdjustedArea,
       }),
-    [houseCount, totalPublishedPrice, isOneHouseholdOneHouse, seniorAgeYears, holdingYears, includesAdjustedArea],
+    [
+      houseCount,
+      totalPublishedPrice,
+      isOneHouseholdOneHouse,
+      seniorAgeYears,
+      holdingYears,
+      includesAdjustedArea,
+    ],
   );
 
   // 세율 표기
@@ -68,7 +95,7 @@ export function ComprehensivePropertyTaxCalculator() {
   const show3PlusOptions = houseCount === 'threeOrMore';
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
+    <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="comprehensive-property-tax">
       <FormCard title="입력">
         {/* 보유 주택 수 */}
         <RadioGroup
@@ -88,6 +115,7 @@ export function ComprehensivePropertyTaxCalculator() {
           placeholder="예: 1,500,000,000"
           unitButtons={PUBLISHED_PRICE_UNIT_BUTTONS}
           max={100_000_000_000}
+          unit="원"
         />
 
         {/* 1세대1주택자 여부 (1주택 선택 시만) */}
@@ -119,6 +147,8 @@ export function ComprehensivePropertyTaxCalculator() {
             min={0}
             max={150}
             helpText="60세 이상: 20~40% 고령자공제 적용"
+            integer
+            unit="세"
           />
         )}
 
@@ -133,6 +163,8 @@ export function ComprehensivePropertyTaxCalculator() {
             min={0}
             max={100}
             helpText="5년 이상: 20~50% 장기보유공제 적용"
+            integer
+            unit="년"
           />
         )}
 
@@ -218,6 +250,7 @@ export function ComprehensivePropertyTaxCalculator() {
           </div>
         )}
       </ResultCard>
-    </div>
+      <ResultBanner note="입력한 공시가격과 보유 조건을 기준으로 한 예상 결과입니다." />
+    </CalculatorWorkspace>
   );
 }

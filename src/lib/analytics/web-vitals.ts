@@ -27,7 +27,11 @@ export interface WebVitalMetric {
  * useReportWebVitals 콜백에서 호출.
  */
 export function sendWebVitalToGA4(metric: WebVitalMetric): void {
-  if (typeof window === 'undefined' || !window.gtag) {
+  if (
+    typeof window === 'undefined' ||
+    window.location.hostname !== 'calculatorhost.com' ||
+    !window.gtag
+  ) {
     return;
   }
 

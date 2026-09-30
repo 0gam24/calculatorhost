@@ -1,6 +1,6 @@
+import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
-import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
 import { FaqSection } from '@/components/calculator/FaqSection';
@@ -102,16 +102,28 @@ export default function SeverancePage() {
   });
   const howToLd = buildHowToJsonLd({
     name: '퇴직금 계산기 사용 방법',
-    description: '입사일, 퇴사일, 월 임금을 입력하여 법정 퇴직금과 세후 실수령액을 계산하는 단계별 가이드',
+    description:
+      '입사일, 퇴사일, 월 임금을 입력하여 법정 퇴직금과 세후 실수령액을 계산하는 단계별 가이드',
     steps: [
       { name: '입사·퇴사 날짜 입력', text: '회사 입사일과 퇴사(예정)일을 입력합니다.' },
       { name: '근속연수 자동 계산', text: '입력한 날짜로 근속연수가 자동 계산됩니다.' },
-      { name: '월 임금 및 상여 입력', text: '기본급, 상여금, 연차수당을 입력하여 평균임금을 산출합니다.' },
-      { name: '퇴직금·세금 자동 계산', text: '법정 퇴직금(근속 × 30일 임금), 퇴직소득세가 자동 계산됩니다.' },
-      { name: '세후 실수령액 확인', text: '세전 퇴직금에서 퇴직소득세를 뺀 최종 수령액을 확인합니다.' },
+      {
+        name: '월 임금 및 상여 입력',
+        text: '기본급, 상여금, 연차수당을 입력하여 평균임금을 산출합니다.',
+      },
+      {
+        name: '퇴직금·세금 자동 계산',
+        text: '법정 퇴직금(근속 × 30일 임금), 퇴직소득세가 자동 계산됩니다.',
+      },
+      {
+        name: '세후 실수령액 확인',
+        text: '세전 퇴직금에서 퇴직소득세를 뺀 최종 수령액을 확인합니다.',
+      },
     ],
   });
-  const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
+  const faqLd = buildFaqPageJsonLd(
+    FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
+  );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '근로', url: 'https://calculatorhost.com/category/work/' },
@@ -125,19 +137,23 @@ export default function SeverancePage() {
     terms: [
       {
         name: '평균임금',
-        description: '퇴직금 계산 기준이 되는 1일 임금. 퇴직 이전 3개월 임금총액(기본급 + 상여금월할 + 연차수당월할 등)을 일수(91~92일)로 나눔. 근거: 근로기준법 §2.',
+        description:
+          '퇴직금 계산 기준이 되는 1일 임금. 퇴직 이전 3개월 임금총액(기본급 + 상여금월할 + 연차수당월할 등)을 일수(91~92일)로 나눔. 근거: 근로기준법 §2.',
       },
       {
         name: '통상임금',
-        description: '소정근로시간에 대해 정기적·일률적으로 지급하는 기본급·직책급·고정수당. 퇴직금 계산과 달리 초과근무수당·4대보험 기준으로 쓰임. 상여금·연차는 제외.',
+        description:
+          '소정근로시간에 대해 정기적·일률적으로 지급하는 기본급·직책급·고정수당. 퇴직금 계산과 달리 초과근무수당·4대보험 기준으로 쓰임. 상여금·연차는 제외.',
       },
       {
         name: '근속연수공제',
-        description: '퇴직소득세 계산 시 근속연수에 따라 공제하는 금액. 5년이하 100만/년, 5~10년 500만+200만/년, 10~20년 1,500만+250만/년, 20년초과 4,000만+300만/년. 근거: 소득세법 §99.',
+        description:
+          '퇴직소득세 계산 시 근속연수에 따라 공제하는 금액. 5년이하 100만/년, 5~10년 500만+200만/년, 10~20년 1,500만+250만/년, 20년초과 4,000만+300만/년. 근거: 소득세법 §99.',
       },
       {
         name: 'DC형/DB형',
-        description: '퇴직연금 제도. DB형(확정급여)은 사업주가 법정 수준 보장, DC형(확정기여)은 사업주가 월 급여 8.3% 이상만 적립해 운용수익에 따라 변동. 근거: 근로자퇴직급여 보장법 §4.',
+        description:
+          '퇴직연금 제도. DB형(확정급여)은 사업주가 법정 수준 보장, DC형(확정기여)은 사업주가 월 급여 8.3% 이상만 적립해 운용수익에 따라 변동. 근거: 근로자퇴직급여 보장법 §4.',
       },
     ],
   });
@@ -176,30 +192,41 @@ export default function SeverancePage() {
       <div className="min-h-screen bg-bg-base">
         <Header />
         <div className="flex">
-          <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
-            <div className="mx-auto flex max-w-4xl flex-col gap-8">
-              {/* H1 + 리드 */}
-              <header>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '근로', href: '/category/work/' },
-                    { name: '퇴직금' },
-                  ]}
-                />
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  퇴직금·퇴직소득세 계산기 2026
-                </h1>
-                <p className="text-lg text-text-secondary" data-speakable>
-                  입사일, 퇴사일, 월 통상임금으로 법정 퇴직금과 퇴직소득세를 자동 계산합니다.
-                  근속연수공제, 환산급여공제, 지방소득세까지 포함되며, 세후 실수령액을 즉시 확인할 수 있습니다.
-                  DB형·DC형 선택 가능.
-                </p>
-                <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
-              </header>
-
-              {/* GEO/AEO Structured Summary */}
+          <main
+            id="main-content"
+            className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
+          >
+            <CalculatorPageContent
+              intro={
+                <header>
+                  <Breadcrumb
+                    items={[
+                      { name: '홈', href: '/' },
+                      { name: '근로', href: '/category/work/' },
+                      { name: '퇴직금' },
+                    ]}
+                  />
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">
+                    퇴직금·퇴직소득세 계산기 2026
+                  </h1>
+                  <p className="text-lg text-text-secondary" data-speakable>
+                    근무 기간과 급여로 예상 퇴직금을 확인하세요.
+                  </p>
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                </header>
+              }
+              calculator={<SeveranceCalculator />}
+              related={
+                <>
+                  <RelatedCalculators items={RELATED} />
+                </>
+              }
+              faq={
+                <>
+                  <FaqSection items={FAQ_ITEMS} />
+                </>
+              }
+            >
               <StructuredSummary
                 definition="퇴직금은 1년 이상 근무한 근로자가 퇴직할 때 사업주가 지급하는 금액으로, 근로기준법 §2에서 정의한 1일 평균임금에 30일을 곱한 후 재직일수를 반영하여 계산합니다(근로자퇴직급여 보장법 §8). 평균임금 = 퇴직 이전 3개월 임금총액 ÷ 일수이며, 상여금·연차수당도 포함됩니다."
                 table={{
@@ -220,15 +247,6 @@ export default function SeverancePage() {
                   'DC형은 적립금 + 운용수익이므로 법정 금액과 상이 가능',
                 ]}
               />
-
-              {/* AD-1 리더보드 (상단) */}
-              {/* 계산기 폼 */}
-              <SeveranceCalculator />
-
-              {/* FAQ (중간 배치, GEO 최적화) */}
-              <FaqSection items={FAQ_ITEMS} />
-
-              {/* 왜 근속연수공제가 있는가 (GEO 해설) */}
               <section
                 aria-label="근속연수공제 해설"
                 className="card border-l-4 border-l-primary-500"
@@ -238,24 +256,24 @@ export default function SeverancePage() {
                   퇴직소득세에서 가장 큰 혜택은 근속연수공제(소득세법 §48)입니다. 공제액은
                   근속연수별로 5년 이하 연 100만 원, 5~10년은 기본 500만 원 + 초과분당 200만 원,
                   10~20년은 기본 1,500만 원 + 초과분당 250만 원, 20년 초과는 기본 4,000만 원 +
-                  초과분당 300만 원이 누적됩니다. 예를 들어 근속 7년이면 500만 + 200만 × 2 =
-                  900만 원이 공제됩니다.
+                  초과분당 300만 원이 누적됩니다. 예를 들어 근속 7년이면 500만 + 200만 × 2 = 900만
+                  원이 공제됩니다.
                 </p>
                 <p className="text-text-secondary" data-speakable>
-                  여기에 환산급여공제(소득세법 §48)까지 적용되면, 명목상 최고 45% 누진세율이
-                  실제 실효세율 10~20% 수준으로 내려갑니다. 이는 일시소득의 불평탄성을 완화하고
+                  여기에 환산급여공제(소득세법 §48)까지 적용되면, 명목상 최고 45% 누진세율이 실제
+                  실효세율 10~20% 수준으로 내려갑니다. 이는 일시소득의 불평탄성을 완화하고
                   장기근속자의 노후 자산 형성을 지원하기 위한 정책 설계입니다. 같은 퇴직금 1억
                   원이라도 근속 5년과 25년의 실제 세 부담은 4~5배 차이가 발생할 수 있습니다.
                 </p>
               </section>
-
-              {/* 퇴직금이란? */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">퇴직금이란 무엇이고 언제 받을 수 있나요?</h2>
                 <p className="text-text-secondary">
-                  퇴직금은 근로자가 회사를 떠날 때 사업주가 지급하는 금액입니다. 근로기준법과 근로자퇴직급여 보장법에 따라 규정되며, 1년 이상 근무한 근로자에게 지급 의무가 있습니다.
+                  퇴직금은 근로자가 회사를 떠날 때 사업주가 지급하는 금액입니다. 근로기준법과
+                  근로자퇴직급여 보장법에 따라 규정되며, 1년 이상 근무한 근로자에게 지급 의무가
+                  있습니다.
                 </p>
-                <div className="bg-bg-card rounded-lg p-4 space-y-3">
+                <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
                     <span className="font-semibold">지급 대상:</span>
                     1년 이상 근무한 근로자 (정규직, 계약직, 기간제 등 모두 포함)
@@ -270,84 +288,120 @@ export default function SeverancePage() {
                   </p>
                 </div>
               </section>
-
-              {/* AD-2 Medium Rectangle (본문 중간) */}
-              {/* 평균임금 vs 통상임금 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">평균임금과 통상임금은 어떻게 다른가요?</h2>
                 <p className="text-text-secondary">
                   두 개념은 계산 목적이 다르므로, 햇갈리기 쉬워도 구분이 중요합니다.
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
+                  <table className="w-full border-collapse text-sm">
                     <thead>
-                      <tr className="bg-bg-card border-b border-border-base">
-                        <th className="px-4 py-3 text-left text-text-primary font-semibold">항목</th>
-                        <th className="px-4 py-3 text-left text-text-primary font-semibold">평균임금</th>
-                        <th className="px-4 py-3 text-left text-text-primary font-semibold">통상임금</th>
+                      <tr className="border-b border-border-base bg-bg-card">
+                        <th className="px-4 py-3 text-left font-semibold text-text-primary">
+                          항목
+                        </th>
+                        <th className="px-4 py-3 text-left font-semibold text-text-primary">
+                          평균임금
+                        </th>
+                        <th className="px-4 py-3 text-left font-semibold text-text-primary">
+                          통상임금
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border-base">
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">정의</td>
-                        <td className="px-4 py-3 text-text-secondary">퇴직 이전 3개월 임금 총액 ÷ 일수</td>
-                        <td className="px-4 py-3 text-text-secondary">소정근로시간에 대해 지급하는 기본급·직책급·고정수당</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          퇴직 이전 3개월 임금 총액 ÷ 일수
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          소정근로시간에 대해 지급하는 기본급·직책급·고정수당
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">포함 항목</td>
-                        <td className="px-4 py-3 text-text-secondary">기본급 + 상여금(월할) + 연차(월할) + 기타수당</td>
-                        <td className="px-4 py-3 text-text-secondary">기본급 + 직책급 + 고정수당 (상여금·연차 제외)</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          기본급 + 상여금(월할) + 연차(월할) + 기타수당
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          기본급 + 직책급 + 고정수당 (상여금·연차 제외)
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">쓰임</td>
-                        <td className="px-4 py-3 text-text-secondary">퇴직금 계산, 해고예고수당 등</td>
-                        <td className="px-4 py-3 text-text-secondary">초과근무수당, 4대보험 기준</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          퇴직금 계산, 해고예고수당 등
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          초과근무수당, 4대보험 기준
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">예시</td>
-                        <td className="px-4 py-3 text-text-secondary">월 300만 × 3 + 상여금월할 100만 + 연차월할 50만 = 1050만 ÷ 91일 = 약 115만/일</td>
-                        <td className="px-4 py-3 text-text-secondary">월 기본급 250만 + 직책급 50만 = 300만 (상여금·연차 미포함)</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          월 300만 × 3 + 상여금월할 100만 + 연차월할 50만 = 1050만 ÷ 91일 = 약
+                          115만/일
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          월 기본급 250만 + 직책급 50만 = 300만 (상여금·연차 미포함)
+                        </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </section>
-
-              {/* DB형 vs DC형 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">DB형과 DC형 퇴직연금은 무엇이 다른가요?</h2>
                 <p className="text-text-secondary">
                   2005년 퇴직금 제도 개혁 이후, 회사는 DB형 또는 DC형 중 하나를 선택해야 합니다.
                 </p>
                 <div className="overflow-x-auto">
-                  <table className="w-full text-sm border-collapse">
+                  <table className="w-full border-collapse text-sm">
                     <thead>
-                      <tr className="bg-bg-card border-b border-border-base">
-                        <th className="px-4 py-3 text-left text-text-primary font-semibold">항목</th>
-                        <th className="px-4 py-3 text-left text-text-primary font-semibold">DB형 (확정급여)</th>
-                        <th className="px-4 py-3 text-left text-text-primary font-semibold">DC형 (확정기여)</th>
+                      <tr className="border-b border-border-base bg-bg-card">
+                        <th className="px-4 py-3 text-left font-semibold text-text-primary">
+                          항목
+                        </th>
+                        <th className="px-4 py-3 text-left font-semibold text-text-primary">
+                          DB형 (확정급여)
+                        </th>
+                        <th className="px-4 py-3 text-left font-semibold text-text-primary">
+                          DC형 (확정기여)
+                        </th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-border-base">
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">의미</td>
                         <td className="px-4 py-3 text-text-secondary">사업주가 법정 수준 보장</td>
-                        <td className="px-4 py-3 text-text-secondary">사업주가 매월 8.3% 이상만 적립</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          사업주가 매월 8.3% 이상만 적립
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">근로자 위험</td>
                         <td className="px-4 py-3 text-text-secondary">낮음 (보장됨)</td>
-                        <td className="px-4 py-3 text-text-secondary">높음 (운용수익에 따라 변동)</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          높음 (운용수익에 따라 변동)
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">예상 수령액</td>
-                        <td className="px-4 py-3 text-text-secondary">본 계산기 결과와 동일 수준</td>
-                        <td className="px-4 py-3 text-text-secondary">적립금(월 급여 8.3%) + 운용수익 (본 계산기와 다를 수 있음)</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          본 계산기 결과와 동일 수준
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          적립금(월 급여 8.3%) + 운용수익 (본 계산기와 다를 수 있음)
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">이직 시</td>
-                        <td className="px-4 py-3 text-text-secondary">일시금 수령 또는 연금 선택</td>
-                        <td className="px-4 py-3 text-text-secondary">개인계정 이전 가능 (중도인출 제한)</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          일시금 수령 또는 연금 선택
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          개인계정 이전 가능 (중도인출 제한)
+                        </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">세금</td>
@@ -358,21 +412,20 @@ export default function SeverancePage() {
                   </table>
                 </div>
               </section>
-
-              {/* 퇴직소득세 계산 공식 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">퇴직소득세는 어떻게 계산하나요?</h2>
                 <p className="text-text-secondary">
-                  퇴직소득세는 여러 단계의 공제를 거쳐 계산되므로, 단순 비례세율이 아닙니다. 큰 금액도 공제로 인해 실제 세 부담이 낮아집니다.
+                  퇴직소득세는 여러 단계의 공제를 거쳐 계산되므로, 단순 비례세율이 아닙니다. 큰
+                  금액도 공제로 인해 실제 세 부담이 낮아집니다.
                 </p>
 
-                <div className="bg-bg-card rounded-lg p-4 space-y-3">
+                <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
                     <span className="font-semibold">Step 1: 근속연수공제</span>
                     <br />
                     근속연수에 따라 법정 공제액이 정해집니다.
                   </p>
-                  <div className="ml-4 text-sm text-text-secondary space-y-1">
+                  <div className="ml-4 space-y-1 text-sm text-text-secondary">
                     <p>• 5년 이하: 근속연수 × 100만 원</p>
                     <p>• 5년 초과 ~10년: 500만 + (근속연수 − 5) × 200만 원</p>
                     <p>• 10년 초과 ~20년: 1,500만 + (근속연수 − 10) × 250만 원</p>
@@ -380,7 +433,7 @@ export default function SeverancePage() {
                   </div>
                 </div>
 
-                <div className="bg-bg-card rounded-lg p-4 space-y-3">
+                <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
                     <span className="font-semibold">Step 2: 환산급여 계산</span>
                     <br />
@@ -391,13 +444,13 @@ export default function SeverancePage() {
                   </p>
                 </div>
 
-                <div className="bg-bg-card rounded-lg p-4 space-y-3">
+                <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
                     <span className="font-semibold">Step 3: 환산급여공제</span>
                     <br />
                     환산급여 구간에 따라 누진공제 (매우 크므로 실효세율을 낮춤)
                   </p>
-                  <div className="ml-4 text-sm text-text-secondary space-y-1">
+                  <div className="ml-4 space-y-1 text-sm text-text-secondary">
                     <p>• ~800만 원: 전액 공제</p>
                     <p>• 800만~7,000만: 800만 + (초과분) × 60%</p>
                     <p>• 7,000만~1억: 4,520만 + (초과분) × 55%</p>
@@ -406,7 +459,7 @@ export default function SeverancePage() {
                   </div>
                 </div>
 
-                <div className="bg-bg-card rounded-lg p-4 space-y-3">
+                <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
                     <span className="font-semibold">Step 4: 과세표준 및 세금 계산</span>
                     <br />
@@ -422,71 +475,66 @@ export default function SeverancePage() {
                 <p className="text-sm text-text-secondary">
                   <span className="font-semibold">예시:</span> 근속 10년, 퇴직금 3억 원
                   <br />
-                  근속공제 1,500만 → 환산급여 2.4억 → 환산급여공제 약 6,170만 →
-                  과세표준 1.78억 → 누진세율(24%) → 세금 약 850만 → 월할 및 근속연수 반영 =
-                  실제 퇴직소득세 약 710만 원
+                  근속공제 1,500만 → 환산급여 2.4억 → 환산급여공제 약 6,170만 → 과세표준 1.78억 →
+                  누진세율(24%) → 세금 약 850만 → 월할 및 근속연수 반영 = 실제 퇴직소득세 약 710만
+                  원
                 </p>
               </section>
-
-              {/* 주의사항 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">주의사항</h2>
-                <div className="bg-highlight-500/5 border border-highlight-500/30 rounded-lg p-4 space-y-2">
-                  <p className="text-sm text-text-primary font-medium">
-                    본 계산기는 표준 시나리오 기반이며, 실제 퇴직금은 다음 요인에 따라 달라질 수 있습니다:
+                <div className="space-y-2 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4">
+                  <p className="text-sm font-medium text-text-primary">
+                    본 계산기는 표준 시나리오 기반이며, 실제 퇴직금은 다음 요인에 따라 달라질 수
+                    있습니다:
                   </p>
-                  <ul className="text-sm text-text-secondary space-y-1">
+                  <ul className="space-y-1 text-sm text-text-secondary">
                     <li>• DC형의 경우 실제 운용수익이 반영되므로 계산기 결과와 상이할 수 있음</li>
                     <li>• 중간정산 이력이 있으면 남은 퇴직금 기준으로 재계산</li>
                     <li>• 연금 전환, 일시금 수령 선택 시 세제 혜택이 달라질 수 있음</li>
                     <li>• 사업장 폐업, 임금체불 등 특수 상황은 퇴직급여보장기금 지급</li>
                     <li>• 비과세 퇴직금(공무원 등)은 본 계산 대상 외</li>
                   </ul>
-                  <p className="text-sm text-text-primary font-medium mt-2">
+                  <p className="mt-2 text-sm font-medium text-text-primary">
                     정확한 수액은 퇴직 시점에 사업장의 퇴직연금 담당자 또는 세무사와 확인하세요.
                   </p>
                 </div>
               </section>
-
-              {/* 절세 및 활용 팁 */}
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">절세 및 활용 팁</h2>
                 <div className="space-y-3">
-                  <div className="bg-bg-card rounded-lg p-4">
+                  <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">1. 퇴직연금 선택 검토</p>
-                    <p className="text-sm text-text-secondary mt-1">
-                      DC형 가입 시 운용 수익률이 좋은 상품 선택이 중요합니다. 은행 정기예금(1.5-2%)보다 기업형 투자상품(3-5%)을 고려하되, 고령(55세+)이면 안정성 우선.
+                    <p className="mt-1 text-sm text-text-secondary">
+                      DC형 가입 시 운용 수익률이 좋은 상품 선택이 중요합니다. 은행
+                      정기예금(1.5-2%)보다 기업형 투자상품(3-5%)을 고려하되, 고령(55세+)이면 안정성
+                      우선.
                     </p>
                   </div>
-                  <div className="bg-bg-card rounded-lg p-4">
+                  <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">2. 연금 수령 vs 일시금</p>
-                    <p className="text-sm text-text-secondary mt-1">
-                      일시금은 분할 수령 시 세 부담이 적을 수 있습니다. 5년 이상 분할하면 연도별 세금이 낮아지므로, 은퇴 연금 설계와 함께 검토하세요.
+                    <p className="mt-1 text-sm text-text-secondary">
+                      일시금은 분할 수령 시 세 부담이 적을 수 있습니다. 5년 이상 분할하면 연도별
+                      세금이 낮아지므로, 은퇴 연금 설계와 함께 검토하세요.
                     </p>
                   </div>
-                  <div className="bg-bg-card rounded-lg p-4">
+                  <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">3. 이직 시 중도이전</p>
-                    <p className="text-sm text-text-secondary mt-1">
-                      DC형은 적립금을 새 회사 계정으로 이전 가능. DB형도 기업 규모 축소 시 이전 가능한 경우가 있으므로 확인하세요.
+                    <p className="mt-1 text-sm text-text-secondary">
+                      DC형은 적립금을 새 회사 계정으로 이전 가능. DB형도 기업 규모 축소 시 이전
+                      가능한 경우가 있으므로 확인하세요.
                     </p>
                   </div>
-                  <div className="bg-bg-card rounded-lg p-4">
+                  <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">4. 확인해야 할 서류</p>
-                    <p className="text-sm text-text-secondary mt-1">
+                    <p className="mt-1 text-sm text-text-secondary">
                       • 근로계약서 (DB/DC형 확인)
                       <br />
                       • 임금대장 (3개월 통상임금, 상여금 확인)
-                      <br />
-                      • 퇴직금 지급 안내서 (사업주 산정 방식)
+                      <br />• 퇴직금 지급 안내서 (사업주 산정 방식)
                     </p>
                   </div>
                 </div>
               </section>
-
-              {/* 관련 계산기 */}
-              <RelatedCalculators items={RELATED} />
-
-              {/* 법적 근거 및 공식 출처 */}
               <section aria-label="참고 자료" className="card">
                 <h2 className="mb-3 text-lg font-semibold">법적 근거 및 공식 출처</h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
@@ -542,8 +590,6 @@ export default function SeverancePage() {
                   </li>
                 </ul>
               </section>
-
-              {/* 업데이트 및 출처 */}
               <section className="space-y-4 border-t border-border-base pt-6">
                 <h2 className="text-lg font-semibold">업데이트</h2>
                 <p className="text-sm text-text-secondary">
@@ -552,16 +598,15 @@ export default function SeverancePage() {
                   최종 업데이트: 2026-04-24
                 </p>
               </section>
-
-              {/* 면책조항 */}
-              <section className="bg-bg-card rounded-lg p-4 text-sm text-text-tertiary border border-border-base">
-                <p className="font-medium text-text-secondary mb-2">면책조항</p>
+              <section className="rounded-lg border border-border-base bg-bg-card p-4 text-sm text-text-tertiary">
+                <p className="mb-2 font-medium text-text-secondary">면책조항</p>
                 <p>
-                  본 계산기는 일반적인 퇴직금 계산 기준을 따른 참고용이며, 실제 지급액은 사업장의 퇴직연금 규약, 개별 계약 내용, 세무 처리 방식, 중간정산 이력 등에 따라 달라질 수 있습니다.
-                  세금 및 법적 조언이 필요한 경우 세무사·노무사·고용노동부에 상담하세요.
+                  본 계산기는 일반적인 퇴직금 계산 기준을 따른 참고용이며, 실제 지급액은 사업장의
+                  퇴직연금 규약, 개별 계약 내용, 세무 처리 방식, 중간정산 이력 등에 따라 달라질 수
+                  있습니다. 세금 및 법적 조언이 필요한 경우 세무사·노무사·고용노동부에 상담하세요.
                 </p>
               </section>
-            </div>
+            </CalculatorPageContent>
           </main>
         </div>
         <Footer />

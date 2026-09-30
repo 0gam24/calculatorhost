@@ -1,5 +1,8 @@
 'use client';
 
+import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import { useCalculatorState } from '@/components/calculator/useCalculatorState';
+
 /**
  * BMI 계산기 (MVP #13)
  *
@@ -7,7 +10,7 @@
  * 공식: src/lib/finance/bmi.ts
  */
 
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { ResultCard, type ResultRowProps } from '@/components/calculator/Result';
@@ -15,8 +18,8 @@ import { ResultBanner } from '@/components/calculator/ResultBanner';
 import { calculateBmi, type BmiCategory } from '@/lib/utils/bmi';
 
 export function BmiCalculator() {
-  const [height, setHeight] = useState(170);
-  const [weight, setWeight] = useState(65);
+  const [height, setHeight] = useCalculatorState('bmi:height', 170);
+  const [weight, setWeight] = useCalculatorState('bmi:weight', 65);
 
   const result = useMemo(() => {
     return calculateBmi({
@@ -52,14 +55,14 @@ export function BmiCalculator() {
   const warningOrInfoElements = useMemo(() => {
     if (result.category === 'normal') {
       return (
-        <div className="rounded-lg bg-primary-500/5 border border-primary-500/30 px-4 py-3">
-          <p className="text-sm text-text-primary font-medium">정상 범위입니다.</p>
+        <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 px-4 py-3">
+          <p className="text-sm font-medium text-text-primary">정상 범위입니다.</p>
         </div>
       );
     }
     if (result.category === 'underweight') {
       return (
-        <div className="rounded-lg bg-sky-500/5 border border-sky-500/30 px-4 py-3">
+        <div className="rounded-lg border border-sky-500/30 bg-sky-500/5 px-4 py-3">
           <p className="text-sm text-sky-600 dark:text-sky-300">
             저체중입니다. 균형 잡힌 식단과 운동으로 건강을 관리하세요.
           </p>
@@ -68,16 +71,16 @@ export function BmiCalculator() {
     }
     if (result.category === 'overweight') {
       return (
-        <div className="rounded-lg bg-warning-500/5 border border-warning-500/30 px-4 py-3">
-          <p className="text-sm text-warning-600 dark:text-warning-300">
+        <div className="bg-warning-500/5 border-warning-500/30 rounded-lg border px-4 py-3">
+          <p className="text-warning-600 dark:text-warning-300 text-sm">
             과체중입니다. 꾸준한 운동과 식습관 개선을 권장합니다.
           </p>
         </div>
       );
     }
     return (
-      <div className="rounded-lg bg-danger-500/5 border border-danger-500/30 px-4 py-3">
-        <p className="text-sm text-danger-600 dark:text-danger-300">
+      <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 px-4 py-3">
+        <p className="dark:text-danger-300 text-sm text-danger-600">
           비만입니다. 의료 전문가와 상담하여 건강 계획을 수립하시기 바랍니다.
         </p>
       </div>
@@ -89,12 +92,11 @@ export function BmiCalculator() {
       label: '정상 체중 범위',
       value: `${Math.round(result.normalWeightLower)} ~ ${Math.round(result.normalWeightUpper)} kg`,
     },
-
   ];
 
   return (
-    <div className="flex flex-col gap-6 lg:grid lg:grid-cols-2">
-      <div className="order-2 lg:order-1">
+    <CalculatorWorkspace className="flex flex-col gap-6 lg:grid lg:grid-cols-2" slug="bmi">
+      <div className="order-1">
         <FormCard title="입력">
           <NumberInput
             id="bmi-height"
@@ -119,36 +121,32 @@ export function BmiCalculator() {
         </FormCard>
       </div>
 
-      <div className="order-1 lg:order-2">
+      <div className="order-2">
         {result ? (
-        <ResultCard
-          title="계산 결과"
-          heroLabel="BMI"
-          heroValue={result.bmi.toString()}
-          rows={resultRows}
-        >
-          {/* 분류 칩 */}
-          <div className="flex flex-col gap-3">
-            <div
-              className={`rounded-lg border p-4 ${getCategoryBg(result.category)}`}
-            >
-              <p className={`text-lg font-bold ${getCategoryColor(result.category)}`}>
-                {result.categoryLabel}
-              </p>
-            </div>
+          <ResultCard
+            title="계산 결과"
+            heroLabel="BMI"
+            heroValue={result.bmi.toString()}
+            rows={resultRows}
+          >
+            {/* 분류 칩 */}
+            <div className="flex flex-col gap-3">
+              <div className={`rounded-lg border p-4 ${getCategoryBg(result.category)}`}>
+                <p className={`text-lg font-bold ${getCategoryColor(result.category)}`}>
+                  {result.categoryLabel}
+                </p>
+              </div>
 
-            {warningOrInfoElements}
-          </div>
-        </ResultCard>
+              {warningOrInfoElements}
+            </div>
+          </ResultCard>
         ) : (
-        <div className="rounded-lg border border-border-base bg-bg-card p-6 text-center">
-          <p className="text-text-secondary">
-            키와 몸무게를 입력하면 BMI가 자동 계산됩니다.
-          </p>
-        <ResultBanner />
-        </div>
+          <div className="rounded-lg border border-border-base bg-bg-card p-6 text-center">
+            <p className="text-text-secondary">키와 몸무게를 입력하면 BMI가 자동 계산됩니다.</p>
+            <ResultBanner />
+          </div>
         )}
       </div>
-    </div>
+    </CalculatorWorkspace>
   );
 }

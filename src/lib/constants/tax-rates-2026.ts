@@ -35,23 +35,29 @@ export const INCOME_TAX_BRACKETS: TaxBracket[] = [
 // 4대보험 요율 — 2026년 기준
 // ============================================
 export const SOCIAL_INSURANCE_2026 = {
-  /** 국민연금 — 근로자 부담분 4.5% (총 9%) */
+  /** 국민연금법 §88 — 2026년 총 9.5%, 근로자 절반 부담.
+   * https://www.nps.or.kr/pnsinfo/ntpsklg/getOHAF0038M0.do?menuId=MN24001113 */
   pension: {
-    employee: 0.045,
-    total: 0.09,
-    /** 기준소득월액 하한 */
+    employee: 0.0475,
+    total: 0.095,
+    /** 2026년 1~6월 기준소득월액 하한 */
     lowerMonthly: 400_000,
-    /** 기준소득월액 상한 */
+    /** 2026년 1~6월 기준소득월액 상한 */
     upperMonthly: 6_370_000,
+    /** 국민연금법 시행령 §5 — 2026-07-01부터 적용 */
+    lowerMonthlyFromJuly: 410_000,
+    upperMonthlyFromJuly: 6_590_000,
   },
-  /** 건강보험 — 근로자 부담분 3.545% (총 7.09%) */
+  /** 국민건강보험법 시행령 §44 — 2026년 총 7.19%, 근로자 절반 부담.
+   * https://www.mohw.go.kr/menu.es?mid=a10705010500 */
   health: {
-    employee: 0.03545,
-    total: 0.0709,
+    employee: 0.03595,
+    total: 0.0719,
   },
-  /** 장기요양 — 건강보험료의 12.95% */
+  /** 노인장기요양보험법 시행령 §4 — 2026년 건강보험료 대비 13.14%.
+   * https://www.mohw.go.kr/menu.es?mid=a10712030100 */
   longTermCare: {
-    rateOfHealth: 0.1295,
+    rateOfHealth: 0.1314,
   },
   /** 고용보험 — 근로자 부담분 0.9% (총 1.8%) */
   employment: {
@@ -100,9 +106,9 @@ export const PERSONAL_DEDUCTION = {
 // 자녀세액공제 — 2026년 기준
 // ============================================
 export const CHILD_TAX_CREDIT = {
-  first: 150_000, // 1인
-  second: 200_000, // 2인째
-  thirdPlus: 400_000, // 3인째부터 각 (공제가 상향되었을 수 있음 → 국세청 확인)
+  first: 250_000, // 소득세법 §59의2: 1명 연 25만원
+  second: 300_000, // 2명 합계 연 55만원
+  thirdPlus: 400_000, // 3명째부터 각 연 40만원
 } as const;
 
 // ============================================
@@ -136,14 +142,14 @@ export const TRANSFER_TAX = {
 /** 일반 장기보유특별공제: 연 2% (3년 이상 ~ 15년 이상 최대 30%) */
 export const LONG_TERM_HOLDING_DEDUCTION_GENERAL_PER_YEAR = 0.02;
 export const LONG_TERM_HOLDING_DEDUCTION_GENERAL_MAX_YEARS = 15;
-export const LONG_TERM_HOLDING_DEDUCTION_GENERAL_MAX = 0.30;
+export const LONG_TERM_HOLDING_DEDUCTION_GENERAL_MAX = 0.3;
 
 /** 1세대1주택 보유 장기보유특별공제: 연 4% (최대 10년, 40%) — 시행령 §159의3① */
 export const LONG_TERM_HOLDING_DEDUCTION_ONE_HOUSE_HOLD_PER_YEAR = 0.04;
 /** 1세대1주택 거주 장기보유특별공제: 연 4% (최대 10년, 40%) — 시행령 §159의3① */
 export const LONG_TERM_HOLDING_DEDUCTION_ONE_HOUSE_RESIDE_PER_YEAR = 0.04;
 export const LONG_TERM_HOLDING_DEDUCTION_ONE_HOUSE_MAX_YEARS_EACH = 10;
-export const LONG_TERM_HOLDING_DEDUCTION_ONE_HOUSE_MAX = 0.80;
+export const LONG_TERM_HOLDING_DEDUCTION_ONE_HOUSE_MAX = 0.8;
 
 // ============================================
 // 취득세 — 지방세법 §10-§17, 시행령 §22
@@ -155,9 +161,9 @@ export interface AcquisitionTaxBracket {
   rate: number;
 }
 
-/** 주택 매매 1주택자 기본 세율 (6억~9억 구간 선형보간) */
+/** 주택 일반 매매 세율. 6억 초과~9억 미만은 지방세법 §11①8나의 소수 계수 넷째 자리 반올림. */
 export const ACQUISITION_TAX_SINGLE_HOUSE_PURCHASE: AcquisitionTaxBracket[] = [
-  { upperBound: 600_000_000, rate: 0.01 }, // 6억 이하 1.0% — 지방세법 §13
+  { upperBound: 600_000_000, rate: 0.01 }, // 6억 이하 1.0% — 지방세법 §11①8
   { upperBound: 900_000_000, rate: -1 }, // 6억~9억 선형보간 (-1 은 선형 마커, 함수에서 처리)
   { upperBound: null, rate: 0.03 }, // 9억 초과 3.0%
 ];
@@ -168,14 +174,18 @@ export const ACQUISITION_TAX = {
   singleHousePurchase: ACQUISITION_TAX_SINGLE_HOUSE_PURCHASE,
 
   // ─── 중과 세율 (비조정지역) ───
-  /** 비조정지역 3주택 이상 — 지방세법 §13의2 */
-  nonAdjustedThreeOrMore: 0.12,
+  /** 비조정지역 3주택 — 지방세법 §13의2①2 */
+  nonAdjustedThreeHouses: 0.08,
+  /** 비조정지역 4주택 이상 — 지방세법 §13의2①3 */
+  nonAdjustedFourOrMore: 0.12,
 
   // ─── 증여 취득세 ───
-  /** 증여 기본 세율 — 지특법 §13의2 */
+  /** 일반 증여 기본 세율 — 지방세법 §11①2 */
   giftBasic: 0.035,
-  /** 증여 + 조정지역 + 3주택 이상 중과 — 지특법 §13의2 */
+  /** 조정지역 증여 중과 — 지방세법 §13의2②, 시행령 §28의6 (증여자 예외 별도 확인) */
   giftAdjustedHeavy: 0.12,
+  /** 증여 중과 판단용 전체 주택 시가표준액 기준 — 시행령 §28의6① */
+  giftHeavyStandardPrice: 300_000_000,
 
   // ─── 상속 취득세 ───
   /** 상속 기본 세율 */
@@ -187,20 +197,28 @@ export const ACQUISITION_TAX = {
   /** 조정지역 3주택 이상 세율 — 지방세법 §13의2 */
   adjustedThreeOrMore: 0.12,
 
-  // ─── 농어촌특별세 (85㎡ 초과) ───
-  /** 85㎡ 초과 일반 농특세 — 농어촌특별세법 */
+  // ─── 농어촌특별세 (국민주택규모 초과, 감면 없는 일반 취득) ───
+  /** 일반 농특세 — 농어촌특별세법 §5①6 */
   specialRuralTaxOver85: 0.002,
-  /** 85㎡ 초과 + 중과 농특세 — 농어촌특별세법 */
+  /** 취득세 8% 중과 농특세 — 농어촌특별세법 §5①6 */
+  specialRuralTaxEightPercentHeavy: 0.006,
+  /** 취득세 12% 중과 농특세 — 농어촌특별세법 §5①6 */
   specialRuralTaxHeavy: 0.01,
 
   // ─── 지방교육세 ───
-  /** 지방교육세 (취득세의) — 지방세법 §151 */
+  /** 일반 주택 매매 지방교육세 (취득세의 10%) — 지방세법 §151①1 */
   localEducationTaxOfAcquisition: 0.1,
+  /** 일반 증여 지방교육세 (과세표준의 0.3%) — 지방세법 §151①1가 */
+  localEducationTaxGift: 0.003,
+  /** 일반 상속 지방교육세 (과세표준의 0.16%) — 지방세법 §151①1가 */
+  localEducationTaxInheritance: 0.0016,
+  /** §13의2 중과 지방교육세 (과세표준의 0.4%) — 지방세법 §151①1나 */
+  localEducationTaxHeavy: 0.004,
 
   // ─── 생애최초 주택 감면 ───
-  /** 생애최초 주택 감면 한도 (원) — 지특법 §36의3 */
+  /** 생애최초 일반 주택 감면 한도. 일부 주택 300만원 등 별도 요건으로 자동 감면 계산 보류. */
   firstHomeBuyerMaxDiscount: 2_000_000,
-  /** 생애최초 감면 주택가액 제한 — 지특법 §36의3 (소득요건은 2022.6.21자로 폐지됨, 무주택 세대만 필요) */
+  /** 생애최초 감면 주택가액 제한 — 지특법 §36의3 (본인·배우자 이력 등 별도 조건 필요) */
   firstHomeBuyerMaxPrice: 1_200_000_000,
 } as const;
 
@@ -328,10 +346,10 @@ export const INHERITANCE_SPOUSE_MAX_DEDUCTION = 3_000_000_000;
 export const COMPREHENSIVE_PROPERTY_TAX_BRACKETS_GENERAL: TaxBracket[] = [
   { upperBound: 300_000_000, rate: 0.005, cumulativeDeduction: 0 },
   { upperBound: 600_000_000, rate: 0.007, cumulativeDeduction: 600_000 },
-  { upperBound: 1_200_000_000, rate: 0.010, cumulativeDeduction: 2_400_000 },
+  { upperBound: 1_200_000_000, rate: 0.01, cumulativeDeduction: 2_400_000 },
   { upperBound: 2_500_000_000, rate: 0.013, cumulativeDeduction: 6_000_000 },
   { upperBound: 5_000_000_000, rate: 0.015, cumulativeDeduction: 11_000_000 },
-  { upperBound: 9_400_000_000, rate: 0.020, cumulativeDeduction: 36_000_000 },
+  { upperBound: 9_400_000_000, rate: 0.02, cumulativeDeduction: 36_000_000 },
   { upperBound: null, rate: 0.027, cumulativeDeduction: 101_800_000 },
 ];
 
@@ -339,11 +357,11 @@ export const COMPREHENSIVE_PROPERTY_TAX_BRACKETS_GENERAL: TaxBracket[] = [
 export const COMPREHENSIVE_PROPERTY_TAX_BRACKETS_MULTI: TaxBracket[] = [
   { upperBound: 300_000_000, rate: 0.005, cumulativeDeduction: 0 },
   { upperBound: 600_000_000, rate: 0.007, cumulativeDeduction: 600_000 },
-  { upperBound: 1_200_000_000, rate: 0.010, cumulativeDeduction: 2_400_000 },
-  { upperBound: 2_500_000_000, rate: 0.020, cumulativeDeduction: 14_400_000 },
-  { upperBound: 5_000_000_000, rate: 0.030, cumulativeDeduction: 39_400_000 },
-  { upperBound: 9_400_000_000, rate: 0.040, cumulativeDeduction: 89_400_000 },
-  { upperBound: null, rate: 0.050, cumulativeDeduction: 183_400_000 },
+  { upperBound: 1_200_000_000, rate: 0.01, cumulativeDeduction: 2_400_000 },
+  { upperBound: 2_500_000_000, rate: 0.02, cumulativeDeduction: 14_400_000 },
+  { upperBound: 5_000_000_000, rate: 0.03, cumulativeDeduction: 39_400_000 },
+  { upperBound: 9_400_000_000, rate: 0.04, cumulativeDeduction: 89_400_000 },
+  { upperBound: null, rate: 0.05, cumulativeDeduction: 183_400_000 },
 ];
 
 /** 1세대1주택 공제 한도 (12억) — 종부세법 §8① */
@@ -360,19 +378,19 @@ export const RURAL_SPECIAL_TAX_ON_COMPREHENSIVE_PROPERTY_RATE = 0.2;
 
 // ─── 1세대1주택 세액공제율 — 종부세법 §9 ───
 /** 60~64세 고령자공제 */
-export const ONE_HOUSE_SENIOR_CREDIT_60_64 = 0.20;
+export const ONE_HOUSE_SENIOR_CREDIT_60_64 = 0.2;
 /** 65~69세 고령자공제 */
-export const ONE_HOUSE_SENIOR_CREDIT_65_69 = 0.30;
+export const ONE_HOUSE_SENIOR_CREDIT_65_69 = 0.3;
 /** 70세 이상 고령자공제 */
-export const ONE_HOUSE_SENIOR_CREDIT_70_PLUS = 0.40;
+export const ONE_HOUSE_SENIOR_CREDIT_70_PLUS = 0.4;
 /** 5~10년 장기보유공제 */
-export const ONE_HOUSE_LONG_HOLD_5_10 = 0.20;
+export const ONE_HOUSE_LONG_HOLD_5_10 = 0.2;
 /** 10~15년 장기보유공제 */
-export const ONE_HOUSE_LONG_HOLD_10_15 = 0.40;
+export const ONE_HOUSE_LONG_HOLD_10_15 = 0.4;
 /** 15년 이상 장기보유공제 */
-export const ONE_HOUSE_LONG_HOLD_15_PLUS = 0.50;
+export const ONE_HOUSE_LONG_HOLD_15_PLUS = 0.5;
 /** 세액공제 합계 한도 (80%) — 종부세법 §9② */
-export const ONE_HOUSE_TOTAL_CREDIT_CAP = 0.80;
+export const ONE_HOUSE_TOTAL_CREDIT_CAP = 0.8;
 
 // ============================================
 // 프리랜서 사업소득 계산 관련 상수
@@ -384,18 +402,20 @@ export const FREELANCER_WITHHOLDING_RATE = 0.033;
 export const FREELANCER_DEFAULT_SIMPLE_EXPENSE_RATE = 64.1;
 
 // ============================================
-// 자녀장려금 — 조세특례제한법 §100의3 (2026)
+// 자녀장려금 — 조세특례제한법 §100의28·29 (2026)
 // ============================================
 /** 자녀 1인당 연 지급액 (원) */
 export const CHILD_TAX_BENEFIT_PER_CHILD = 1_000_000;
 
-/** 자녀장려금 소득 상한 (원) — 조세특례제한법 §100의3 */
-export const CHILD_TAX_BENEFIT_INCOME_CAP = 43_000_000;
+/** 자녀장려금 소득 상한 (원) — 조세특례제한법 §100의28 */
+export const CHILD_TAX_BENEFIT_INCOME_CAP = 70_000_000; // §100의28: 미만
 
-/** 자녀장려금 소득 감액 시작점 (원) — 조세특례제한법 §100의3 */
-export const CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START = 36_000_000;
+/** 자녀장려금 소득 감액 시작점 (원) — 조세특례제한법 §100의29 */
+export const CHILD_TAX_BENEFIT_INCOME_PHASE_OUT_START = 21_000_000; // §100의29: 홑벌이
+export const CHILD_TAX_BENEFIT_DUAL_PHASE_OUT_START = 25_000_000; // §100의29: 맞벌이
+export const CHILD_TAX_BENEFIT_ASSET_REDUCTION_START = 170_000_000; // §100의5④, §100의31 준용
 
-/** 자녀장려금 재산 상한 (원) — 조세특례제한법 §100의3 */
+/** 자녀장려금 재산 상한 (원) — 조세특례제한법 §100의28 */
 export const CHILD_TAX_BENEFIT_ASSET_CAP = 240_000_000;
 
 // ============================================

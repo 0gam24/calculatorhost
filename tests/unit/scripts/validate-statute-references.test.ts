@@ -18,10 +18,13 @@ import {
 describe('validateFile()', () => {
   it('검증된 조항은 위반이 아니다', () => {
     expect(validateFile('a.tsx', '소득세법 §55에 따른 세율')).toEqual([]);
+    expect(validateFile('a.tsx', '국세기본법 §45의3 기한후신고')).toEqual([]);
+    expect(validateFile('a.tsx', '상증법 §4의2 실제소유자 납세의무')).toEqual([]);
   });
 
   it('미검증(pending) 조항은 게이트를 막지 않는 경고로 분류한다', () => {
-    const v = validateFile('a.tsx', '소득세법 §17 배당소득');
+    const v = validateFile('a.tsx', '소득세법 §97 필요경비');
+    expect(v).toHaveLength(1);
     for (const x of v) expect(x.reason).toBe('pending-verification');
   });
 
@@ -33,7 +36,7 @@ describe('validateFile()', () => {
   });
 
   it('등록되지 않은 법명은 unknown-law 로 분류한다', () => {
-    const v = validateFile('a.tsx', '조세범처벌법 §73 · 지방세법 §151');
+    const v = validateFile('a.tsx', '조세범처벌법 §3 · 지방세법 §151');
     expect(v).toEqual([]);
   });
 });
@@ -51,5 +54,18 @@ describe('레지스트리 정합성', () => {
   it('2010년 삭제된 지방세법 §265 는 어느 쪽에도 없다 (재발 방지)', () => {
     expect(STATUTE_REGISTRY['지방세법']?.has('265') ?? false).toBe(false);
     expect(PENDING_VERIFICATION['지방세법']?.has('265') ?? false).toBe(false);
+  });
+
+  it('잘못된 법명과 허위 번호를 pending 경고로 통과시키지 않는다', () => {
+    for (const citation of [
+      '소득세법 §50의2',
+      '소득세법 §122의3',
+      '상증법 §30의6',
+      '조세범처벌법 §73',
+    ]) {
+      expect(validateFile('a.tsx', citation)).toEqual([
+        expect.objectContaining({ reason: 'unregistered' }),
+      ]);
+    }
   });
 });
