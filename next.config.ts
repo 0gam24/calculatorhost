@@ -1,38 +1,9 @@
 import type { NextConfig } from 'next';
-import { existsSync, readFileSync } from 'node:fs';
-import { resolve } from 'node:path';
 import bundleAnalyzer from '@next/bundle-analyzer';
 
-/**
- * .my 파일이 있으면 자동으로 process.env 에 주입 (Next.js 빌드 타임).
- * - .env.local 작성 불필요 — 사용자는 .my 한 곳만 관리
- * - 이미 process.env 에 있는 키는 덮어쓰지 X (CI/CD·Cloudflare Pages 환경변수 우선)
- * - .my 가 없으면 조용히 무시 (배포 환경 fallback)
- * - 키 값은 콘솔에 절대 출력 X
- */
-(() => {
-  try {
-    const myPath = resolve(process.cwd(), '.my');
-    if (!existsSync(myPath)) return;
-    const content = readFileSync(myPath, 'utf8');
-    let loaded = 0;
-    for (const rawLine of content.split(/\r?\n/)) {
-      const line = rawLine.trim();
-      if (!line || line.startsWith('#')) continue;
-      const eq = line.indexOf('=');
-      if (eq === -1) continue;
-      const key = line.slice(0, eq).trim();
-      const value = line.slice(eq + 1).trim();
-      if (!key || !value) continue;
-      if (process.env[key]) continue; // 시스템 환경변수 우선
-      process.env[key] = value;
-      loaded++;
-    }
-    if (loaded > 0) console.log(`[next.config] .my 에서 ${loaded}개 키 자동 로드`);
-  } catch {
-    /* 조용히 무시 */
-  }
-})();
+// Build uses reviewed repository data and the environment supplied by the host.
+// Private .my files are never read implicitly during a build. Data synchronization
+// remains a separate, explicitly invoked maintenance command.
 
 const nextConfig: NextConfig = {
   output: 'export',

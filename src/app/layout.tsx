@@ -121,7 +121,9 @@ const swInit = `
 // 환경변수 유효성 검증 — placeholder("ca-pub-", "G-")만 있고 값 비어있는 경우 차단.
 // 깨진 스크립트 URL 이 빌드 산출물에 박히는 것을 방지.
 const rawAdsense = process.env.NEXT_PUBLIC_ADSENSE_CLIENT?.trim();
-const adsenseClient = rawAdsense && /^ca-pub-\d{8,}$/.test(rawAdsense) ? rawAdsense : undefined;
+const cloudflarePreview = process.env.CF_PAGES === '1' && process.env.CF_PAGES_BRANCH !== 'main';
+const adsenseClient =
+  !cloudflarePreview && rawAdsense && /^ca-pub-\d{8,}$/.test(rawAdsense) ? rawAdsense : undefined;
 
 // GA4 Measurement ID — 공개 식별자 (HTML 응답에 노출).
 // calculatorhost.com 의 정식 측정 ID 를 코드에 고정 — Cloudflare env 의 placeholder/오타가
@@ -206,12 +208,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </a>
         {children}
 
-        <WebVitalsReporter />
-        <PublicServices
-          gaId={gaId}
-          adsenseClient={adsenseClient}
-          naverAnalyticsId={naverAnalyticsId}
-        />
+        {!cloudflarePreview && <WebVitalsReporter />}
+        {!cloudflarePreview && (
+          <PublicServices
+            gaId={gaId}
+            adsenseClient={adsenseClient}
+            naverAnalyticsId={naverAnalyticsId}
+          />
+        )}
       </body>
     </html>
   );
