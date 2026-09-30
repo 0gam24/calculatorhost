@@ -7,6 +7,7 @@
 - 원본: `D:\Bibe-Code\00 Website\03 calculatorhost`. HEAD `e90d279200f5aefb9cd5df672e14662dfed5a261`, 추적 파일 변경 없음. 기존 `.agents`, `.codex`, `AGENTS.md`, `.claude/reports`, `.playwright-mcp`의 미추적 파일을 보존한다.
 - 별도 작업본: `calculatorhost-preview`, 브랜치 `codex/premium-calculators-2026`.
 - 1차 개편 로컬 커밋: `ffdac556653ee136656da545a35ca5dfa29694cc`, 124개 파일. 지침 복사본 `.agents/`, `AGENTS.md`와 생성 테스트 산출물·인증 파일은 포함하지 않았다. 실행되는 Git 훅은 없었다.
+- 출시 차단 교정 로컬 커밋: `af13717`, 20개 파일. 금융 예시·허위 조문·기한후신고 표현·옛 농어촌 조건·광고/분석 초기 로드 보호와 검토 증거를 보존했다. 추가 기능·원격 push는 없다.
 - 원본 통합은 이후 해당 폴더의 status와 원격 기준점을 다시 확인한 뒤 로컬 작업본을 remote로 fetch하고 별도 브랜치로 checkout하는 방식으로 진행한다. reset/clean/강제 덮어쓰기 없이 기존 미추적 파일을 유지한다. 원격 main이 바뀌면 새 기준에서 변경 충돌과 테스트를 다시 확인한다.
 
 ## 배포 경로와 실제 확인 범위
@@ -71,15 +72,17 @@ Cloudflare는 Git 연동에서 production뿐 아니라 preview branch push도 �
 
 현재 statute CLI는 여전히 **exit 1: blocking 183회/25개 조합, pending 541회/79개 조합**이다. 원본 대비 차단 발생 수의 유일한 변화는 `조세특례제한법 §30의6`의 11→13회다. 잘못된 법명을 올바르게 정정한 인용이 이 조합에 추가됐고 해당 조문은 여전히 일괄 등록하지 않았다. 숫자 증가는 새로운 잘못된 산식 2개를 의미하지 않는다. 공식 원문과 수정 문맥을 검증한 상증법4의2와 국세기본법45의3만 제한 등록했으며, 미검증 조문을 일괄 등록해 실패를 숨기지 않았다. 회사사택 비과세 근거, 상속재산과 민사상 고유재산의 구분, 가업승계/투자공제의 남은 적격조건 등은 별도의 내용 검토가 필요해 출시 차단을 유지한다. 농어촌주택의 옛 660㎡ 확정조건은 해당 문서에서 제거하고 취득시점 법령 확인 안내로 교정했다.
 
-## 반영 게이트와 롤백
-
 ## 교정 후 실행한 검증
 
 - 전체 Vitest: **63개 파일, 1,133개 통과**, 실패/skip 0. `../preview-evidence/release-unit-results.json`.
 - 전체 `tsc --noEmit`: exit0.
 - Next lint: exit0, 오류·경고 없음.
+- 코드 커밋 후 Git 수정일 manifest를 수동 재생성했다. **435개 경로 키를 그대로 보존**, 날짜 형식 모두 유효, 실제 변경된 42개 항목만 갱신했다. 자동 prebuild의 데이터 동기화와 STATE 갱신은 실행하지 않았다.
 - 최초 Vitest sandbox 실행은 esbuild의 상위 디렉터리 metadata 읽기 제한 때문에 테스트 시작 전 실패했다. 동일 로컬 명령이 자동 검토 승인 후 성공했다. 코드 실패나 테스트 제외로 처리하지 않았다.
-- Production build 및 Chrome 핵심 E2E12: 코드 커밋과 Git 수정일 manifest 갱신 후 실행한다. 기존 74개 E2E 증거는 별도로 보존한다.
+- 자동 prebuild 없이 직접 Next production build: **exit0, 503개 페이지 생성**. `../preview-evidence/release-build.log`.
+- 갱신된 정적 출력에서 Google Chrome 헤드리스 핵심 E2E: **12/12 통과**, 22.5초, 실패·skip·flaky 0. 데스크톱·모바일 및 적용월 시나리오를 확인했다. `../preview-evidence/release-core-e2e-results.json`.
+- 앞선 전체 31개 계산기 기본 기능·핵심 흐름 E2E **74/74 통과** 증거는 `artifacts/premium-e2e.json`에 별도 보존했다. 이번 12개는 교정 후 핵심 재검증이며 86개의 독립 시나리오로 합산하지 않는다.
+- 검증한 제품 코드는 `af13717`과 갱신된 manifest다. 법령 CLI의 실패와 운영 계정·광고 미검증은 위 성공 검사와 별개로 남아 있다. 과거 전체 legacy E2E/시각 스냅샷을 모두 재실행한 것은 아니다.
 
 ## 반영 게이트와 롤백
 
