@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/capital-gains-tax-installment-payment-2026/';
 const DATE_PUBLISHED = '2026-09-13';
-const DATE_MODIFIED = '2026-09-13';
+const DATE_MODIFIED = '2026-09-30';
 
 export const metadata: Metadata = {
   title: '양도소득세 분납 조건과 신청 방법 2026, 1천만원 초과 기준',
@@ -238,8 +238,8 @@ export default function CapitalGainsTaxInstallmentPayment2026Page() {
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">2,001만원</td>
-                        <td className="p-3">1,000만 500원</td>
-                        <td className="p-3">1,000만 500원</td>
+                        <td className="p-3">1,000만 5,000원</td>
+                        <td className="p-3">1,000만 5,000원</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">4,000만원</td>
@@ -250,7 +250,7 @@ export default function CapitalGainsTaxInstallmentPayment2026Page() {
                   </table>
                 </div>
                 <p className="mt-4">
-                  다만, 세액이 2천만원을 넘는 순간 분납 한도 계산식이 초과분 방식에서 세액의 50% 방식으로 바뀝니다. 경계값인 2,000만원과 2,001만원의 분납 가능 금액이 1,000만원에서 1,000만 500원으로 크게 달라지지 않는 것도 이 때문이며, 세액이 커질수록 두 방식의 차이는 벌어집니다.
+                  다만, 세액이 2천만원을 넘는 순간 분납 한도 계산식이 초과분 방식에서 세액의 50% 방식으로 바뀝니다. 경계값인 2,000만원과 2,001만원의 분납 가능 금액이 1,000만원에서 1,000만 5,000원으로 크게 달라지지 않는 것도 이 때문이며, 세액이 커질수록 두 방식의 차이는 벌어집니다.
                 </p>
               </section>
 
