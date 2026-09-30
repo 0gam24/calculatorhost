@@ -281,13 +281,6 @@ export default function ElectronicTaxInvoiceMandatoryTarget2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">공급대가 4,800만원 기준 간이과세자 발급 의무 정리.</p>
                   </Link>
                   <Link
-                    href="/guide/revised-tax-invoice-issuance-reasons-2026/"
-                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
-                  >
-                    <div className="font-semibold text-primary-500">수정세금계산서 발급 사유</div>
-                    <p className="mt-1 text-sm text-text-secondary">이미 발급한 세금계산서를 고쳐야 할 때의 절차.</p>
-                  </Link>
-                  <Link
                     href="/calculator/vat/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >

@@ -306,20 +306,6 @@ export default function NationalTaxDelinquencySeizure2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">압류를 피하려면 먼저 확인할 분납 조건.</p>
                   </Link>
                   <Link
-                    href="/guide/tax-appeal-objection-procedure-2026/"
-                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
-                  >
-                    <div className="font-semibold text-primary-500">세금 이의신청 절차</div>
-                    <p className="mt-1 text-sm text-text-secondary">부과 자체가 부당하다면 압류 전에 다툴 방법.</p>
-                  </Link>
-                  <Link
-                    href="/guide/tax-audit-selection-criteria-2026/"
-                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
-                  >
-                    <div className="font-semibold text-primary-500">세무조사 대상 선정 기준</div>
-                    <p className="mt-1 text-sm text-text-secondary">체납 이전 단계, 세무조사가 시작되는 조건.</p>
-                  </Link>
-                  <Link
                     href="/guide/property-tax-installment-payment-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >

@@ -316,20 +316,6 @@ export default function TaxPaymentDeadlineExtension2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">연장을 신청하지 않고 기한을 넘기면 이어지는 절차입니다.</p>
                   </Link>
                   <Link
-                    href="/guide/tax-appeal-objection-procedure-2026/"
-                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
-                  >
-                    <div className="font-semibold text-primary-500">세금 이의신청 절차</div>
-                    <p className="mt-1 text-sm text-text-secondary">부과 자체를 다투려면 연장과는 별도로 이 절차를 확인하세요.</p>
-                  </Link>
-                  <Link
-                    href="/guide/tax-audit-selection-criteria-2026/"
-                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
-                  >
-                    <div className="font-semibold text-primary-500">세무조사 대상 선정 기준</div>
-                    <p className="mt-1 text-sm text-text-secondary">납부 여력과 별개로 세무조사 대상이 되는 기준도 함께 알아두세요.</p>
-                  </Link>
-                  <Link
                     href="/calculator/freelancer-tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >

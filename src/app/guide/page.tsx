@@ -70,56 +70,6 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
-  // 2026-09-30 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'farmland-ledger-registration-2026',
-    title: '농지대장 등록 의무 2026, 미신고 과태료 총정리',
-    description:
-      '농지를 소유·임차한 사람은 임대차 계약 체결·변경·해제 등이 있으면 60일 이내 농지대장 변경신청을 해야 합니다. 미신고 시 최대 300만원, 거짓신고 시 최대 500만원의 과태료가 부과될 수 있습니다. 농지법 §49의2·§64 기준 신청 대상과 절차 정리.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-30',
-    readingMinutes: 7,
-  },
-  // 2026-09-29 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'non-business-land-heavy-taxation-2026',
-    title: '비사업용 토지 양도세 중과 2026, 사업용 인정받는 법',
-    description:
-      '비사업용 토지로 판정되면 양도소득세가 기본세율보다 10%포인트 높게 부과됩니다. 농지를 사업용으로 인정받는 재촌·자경 3가지 기준과 상속·공익제한 예외를 소득세법 §104의3·시행령 §168의8 기준으로 정리했습니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-29',
-    readingMinutes: 8,
-  },
-  // 2026-09-28 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'demolished-house-land-capital-gains-2026',
-    title: '멸실주택 부수토지 양도세 2026, 나대지인가 주택인가',
-    description:
-      '집을 헐고 나서 팔면 원칙적으로 양도일 현재 나대지로 보아 1세대1주택 비과세를 받지 못합니다. 다만 매매특약에 따라 잔금 전 철거한 경우는 계약일 현재로 판정합니다. 부수토지 배율과 비사업용 토지 중과까지 소득세법 §89·§104·§104의3·시행령 §154 기준으로 정리했습니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-28',
-    readingMinutes: 8,
-  },
-  // 2026-09-27 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'individual-house-price-announcement-2026',
-    title: '개별주택가격 공시 2026, 재산세·종부세에 미치는 영향',
-    description:
-      '개별주택가격은 매년 1월 1일 기준으로 산정되어 4월 30일 결정·공시되며, 재산세·종합부동산세는 물론 상속·증여재산 평가와 건강보험료 산정에도 그대로 쓰이는 시가표준액입니다. 공시 절차와 30일 이의신청 기한을 부동산 가격공시에 관한 법률 §17·지방세법 §110 기준으로 정리했습니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-27',
-    readingMinutes: 8,
-  },
-  // 2026-09-26 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'official-land-price-objection-2026',
-    title: '개별공시지가 이의신청 기한·절차 2026, 30일 안에 하는 법',
-    description:
-      '개별공시지가에 이의가 있다면 결정·공시일부터 30일 이내에 시장·군수·구청장에게 서면으로 이의신청을 해야 합니다. 신청 서류, 처리 기한, 표준지공시지가와의 차이, 재산세·종합부동산세에 미치는 영향까지 부동산 가격공시에 관한 법률 §7·§11 기준으로 정리했습니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-26',
-    readingMinutes: 7,
-  },
   // 2026-09-25 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'parents-living-expenses-gift-tax-2026',
@@ -130,26 +80,6 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-09-25',
     readingMinutes: 8,
   },
-  // 2026-09-24 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'acquisition-tax-standard-market-price-2026',
-    title: '취득세 시가표준액 실거래가 차이 2026 | calculatorhost',
-    description:
-      '부동산을 사서 등기할 때 취득세는 실제로 지급한 사실상의 취득가격 기준으로 매겨지지만, 증여ㆍ상속으로 받을 때는 시가인정액 또는 시가표준액이 기준이 됩니다. 지방세법 §4ㆍ§10ㆍ§10의2에 따라 취득 유형별로 달라지는 과세표준 기준과 확인 방법을 정리했습니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-24',
-    readingMinutes: 8,
-  },
-  // 2026-09-23 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'acquisition-tax-refund-contract-cancellation-2026',
-    title: '취득세 환급 조건 2026, 계약 해제 시 돌려받는 법',
-    description:
-      '부동산 매매계약을 해제해도 취득세가 무조건 환급되지는 않습니다. 등기 전 60일 이내 해제 입증이 핵심 조건입니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-23',
-    readingMinutes: 8,
-  },
   // 2026-09-22 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'wedding-gift-money-tax-2026',
@@ -158,16 +88,6 @@ export const GUIDES: GuideEntry[] = [
       '결혼식 축의금은 원칙적으로 증여세가 없습니다. 예단·예물 등 혼수용품도 통상 필요한 수준이면 비과세입니다(상증법 §46, 시행령 §35④). 사치품·신혼집의 과세 경계와 계산 사례까지 정리했습니다.',
     category: '세금',
     publishedAt: '2026-09-22',
-    readingMinutes: 8,
-  },
-  // 2026-09-21 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'borrowed-name-account-taxation-2026',
-    title: '차명계좌 적발 시 증여세·가산세 2026, 얼마나 나올까',
-    description:
-      '가족 명의를 빌려 만든 차명계좌는 금융정보분석원 정보와 국세청 전산 분석으로 드러납니다. 적발되면 원금에 증여세, 무신고가산세 최대 40%, 납부지연가산세가 함께 붙고 금융실명법 위반 형사처벌까지 받을 수 있습니다. 국세기본법 §14, 상속세및증여세법 §45 기준으로 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-09-21',
     readingMinutes: 8,
   },
   // 2026-09-20 자동 발행 (AI 초안 + 자동 품질 게이트)
@@ -250,16 +170,6 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-09-13',
     readingMinutes: 8,
   },
-  // 2026-09-12 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'religious-worker-income-tax-2026',
-    title: '종교인소득 신고 방법·필요경비 2026, 기타 근로소득 비교',
-    description:
-      '종교인소득은 기타소득과 근로소득 중 매년 선택해 신고할 수 있습니다. 기타소득으로 신고하면 소득 구간별로 최대 80%까지 필요경비가 인정되는데, 소득세법 시행령 §87 기준 4단계 계산법과 원천징수·확정신고 절차, 비과세 항목을 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-09-12',
-    readingMinutes: 8,
-  },
   // 2026-09-11 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'tax-payment-deadline-extension-2026',
@@ -280,76 +190,6 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-09-10',
     readingMinutes: 8,
   },
-  // 2026-09-09 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'tax-appeal-objection-procedure-2026',
-    title: '조세불복 절차 2026, 이의신청·심사청구·심판청구 차이',
-    description:
-      '과세처분에 불복할 때는 이의신청·심사청구·심판청구 중 하나를 선택해 처분을 안 날부터 90일 이내 제기해야 합니다. 국세기본법 §55·§61·§68 기준 청구기한과 관할기관, 필요적 전치주의, 국선대리인 무료지원 요건을 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-09-09',
-    readingMinutes: 9,
-  },
-  // 2026-09-08 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'tax-audit-selection-criteria-2026',
-    title: '세무조사 선정 기준 2026, 정기·비정기 조사 대상 되는 이유',
-    description:
-      '세무조사 대상은 무작위로 정해지지 않습니다. 국세기본법 §81-6에 따른 신고성실도 분석·장기 미조사·무작위추출 정기선정 기준과 탈세 제보 등 비정기 조사 사유, 매출 규모별 순환조사 주기를 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-09-08',
-    readingMinutes: 8,
-  },
-  // 2026-09-07 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'overseas-real-estate-acquisition-report-2026',
-    title: '해외부동산 취득·보유 신고 의무 2026, 미신고 과태료',
-    description:
-      '해외부동산 취득 시 외국환거래법상 사전신고·취득보고·수시보고·처분보고와 소득세법 §165의2에 따른 국세청 명세서 제출 의무를 기한·과태료와 함께 정리합니다.',
-    category: '세금',
-    publishedAt: '2026-09-07',
-    readingMinutes: 8,
-  },
-  // 2026-09-06 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'overseas-financial-account-reporting-2026',
-    title: '해외금융계좌 신고 대상 2026, 미신고 과태료 총정리',
-    description:
-      '해외금융계좌 잔액 합계가 매월 말일 중 하루라도 5억원을 넘으면 다음 해 6월에 신고해야 하며, 미신고 시 최대 20%의 벌금과 형사처벌까지 받을 수 있습니다.',
-    category: '세금',
-    publishedAt: '2026-09-06',
-    readingMinutes: 8,
-  },
-  // 2026-09-05 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'foreign-worker-flat-tax-rate-2026',
-    title: '외국인근로자 단일세율 19% 과세특례 신청 방법 2026',
-    description:
-      '외국인 근로자는 최초 근로제공일부터 20년간 근로소득의 19%만 내는 단일세율을 선택할 수 있습니다. 대상 요건, 신청서 제출 방법과 기한을 조세특례제한법 §18조의2 기준으로 정리하고, 2026년 세제개편안의 21% 인상안까지 확인합니다.',
-    category: '세금',
-    publishedAt: '2026-09-05',
-    readingMinutes: 9,
-  },
-  // 2026-09-04 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'donation-deduction-carryover-10-year-2026',
-    title: '기부금 이월공제 10년, 못 받은 공제 살리는 법',
-    description:
-      '기부금이 한도를 넘으면 초과분은 사라지지 않고 다음 해부터 10년간 이월해 세액공제를 받을 수 있습니다. 이월 순서와 이월이 안 되는 기부금, 실제 계산 사례를 소득세법 §59의4·§61 기준으로 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-09-04',
-    readingMinutes: 8,
-  },
-  // 2026-09-03 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'year-end-tax-simplified-service-schedule-2026',
-    title: '연말정산 간소화서비스 일정, 자료 확인 순서 총정리',
-    description:
-      '연말정산 간소화서비스는 매년 1월 중순 개통되고 확정자료는 그보다 며칠 뒤 제공됩니다. 개통일과 확정자료일이 왜 다른지, 회사 일괄제공 서비스 신청 시기, 자료를 확인하는 순서를 소득세법 §165·시행령 §216의3 기준으로 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-09-03',
-    readingMinutes: 7,
-  },
   // 2026-09-02 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'withholding-tax-semiannual-payment-2026',
@@ -360,32 +200,12 @@ export const GUIDES: GuideEntry[] = [
     publishedAt: '2026-09-02',
     readingMinutes: 8,
   },
-  // 2026-09-01 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'property-tax-objection-appeal-2026',
-    title: '재산세 이의신청 기간·절차 2026, 90일 안에 하는 법',
-    description:
-      '재산세 고지서가 잘못됐다고 생각되면 처분을 안 날부터 90일 이내 시장·군수·구청장에게 이의신청할 수 있습니다. 신청 방법, 결정 기간, 결과에 불복할 때의 심사청구·심판청구·행정소송까지 지방세기본법 §90·§96 기준으로 정리했습니다.',
-    category: '세금·부동산',
-    publishedAt: '2026-09-01',
-    readingMinutes: 8,
-  },
   // 2026-08-31 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'electronic-tax-invoice-mandatory-target-2026',
     title: '전자세금계산서 의무발급 대상 기준 2026',
     description:
       '법인사업자는 전원, 개인사업자는 직전연도 공급가액 8천만원 이상이면 전자세금계산서를 의무 발급해야 합니다. 기준금액 계산법, 의무 시작 시점, 종이 발급 시 불이익까지 부가가치세법 §32·시행령 §68 기준으로 정리했습니다.',
-    category: '세금',
-    publishedAt: '2026-08-31',
-    readingMinutes: 7,
-  },
-  // 2026-08-31 자동 발행 (AI 초안 + 자동 품질 게이트)
-  {
-    slug: 'revised-tax-invoice-issuance-reasons-2026',
-    title: '수정세금계산서 발급 사유와 작성일자 정하는 법 2026 | calculatorhost',
-    description:
-      '수정세금계산서는 발급 사유별로 작성일자 기준이 다릅니다. 사유 7가지와 작성일자 결정 방법을 정리해 가산세 위험을 줄이세요.',
     category: '세금',
     publishedAt: '2026-08-31',
     readingMinutes: 7,
