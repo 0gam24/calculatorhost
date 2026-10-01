@@ -18,6 +18,7 @@ import { Sidebar } from '@/components/layout/Sidebar';
 import { Footer } from '@/components/layout/Footer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { FaqSection } from '@/components/calculator/FaqSection';
+import { GuideCalculatorLink } from '@/components/guide/GuideCalculatorLink';
 import {
   buildBreadcrumbJsonLd,
   buildArticleJsonLd,
@@ -28,12 +29,13 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/freelancer-salary-comparison/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-09-30';
+const DATE_MODIFIED = '2026-10-01';
+const DESCRIPTION =
+  '프리랜서 매출과 직장인 연봉을 비교하기 전에 실제 사업 비용·최종 세금·보험료 조건을 확인하세요. 직장인 급여 예시와 비교 순서를 정리하고, 연봉 실수령액·프리랜서 세금 계산기에 각각 본인 조건을 입력해 추정할 수 있습니다.';
 
 export const metadata: Metadata = {
   title: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
-  description:
-    '같은 연봉 5천만 원 기준 프리랜서와 일반직의 실수령액 차이. 4대보험·세금·경비 비교. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+  description: DESCRIPTION,
   keywords: [
     '프리랜서 실수령액',
     '프리랜서 vs 직장인',
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
       },
     ],
     title: '프리랜서 vs 일반직 실수령액 비교 2026',
-    description: '같은 연봉이라도 다른 실수령. 4대보험·세금·경비 차이 시뮬레이션.',
+    description: DESCRIPTION,
     url: URL,
     type: 'article',
 
@@ -104,7 +106,7 @@ export default function FreelancerSalaryComparisonPage() {
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '프리랜서 vs 일반직 실수령액 비교 (2026)',
-    description: '같은 연봉이라도 다른 실수령. 4대보험·세금·경비 인정 시뮬레이션.',
+    description: DESCRIPTION,
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,8 +117,7 @@ export default function FreelancerSalaryComparisonPage() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '프리랜서 vs 일반직 실수령액 비교 2026',
-    description:
-      '같은 연봉 5천만 원이라도 프리랜서(사업소득)와 일반직(근로소득)의 실수령액은 큰 차이. 4대보험 부담·종합소득세·경비 인정 차이를 시뮬레이션과 함께 비교.',
+    description: DESCRIPTION,
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -151,7 +152,7 @@ export default function FreelancerSalaryComparisonPage() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="min-w-0 flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb
@@ -171,6 +172,28 @@ export default function FreelancerSalaryComparisonPage() {
                   비교에 필요한 조건을 정리합니다.
                 </p>
               </header>
+
+              <section aria-labelledby="compare-with-your-conditions" className="card space-y-3">
+                <h2 id="compare-with-your-conditions" className="text-xl font-semibold">
+                  내 조건으로 각각 계산하기
+                </h2>
+                <p className="text-sm text-text-secondary">
+                  각 계산기에서 연봉이나 매출·경비 등 본인 조건을 직접 입력하세요. 입력값은 자동으로
+                  전달되지 않습니다.
+                </p>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  <GuideCalculatorLink source="freelancer-salary-comparison" target="salary">
+                    직장인 월 실수령액 추정
+                  </GuideCalculatorLink>
+                  <GuideCalculatorLink source="freelancer-salary-comparison" target="freelancer-tax">
+                    프리랜서 소득세·정산액 추정
+                  </GuideCalculatorLink>
+                </div>
+                <p className="text-sm text-text-secondary">
+                  프리랜서 세금·정산액 추정은 실제로 쓸 수 있는 돈이나 보험료를 계산한 값이
+                  아닙니다. 실제 사업 비용과 공단에서 확인한 보험료는 별도로 비교하세요.
+                </p>
+              </section>
 
               <section aria-label="요약 비교" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-3 text-xl font-bold">한눈에 보기, 핵심 차이</h2>

@@ -19,11 +19,13 @@ import { InflationCalculator } from './InflationCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/inflation/';
+const TITLE = '물가상승률 계산기 2026 | 미래 필요 금액·구매력';
+const DESCRIPTION =
+  '금액·기간·예상 연간 물가상승률을 입력해 같은 물건의 미래 필요 금액과 돈의 구매력 변화를 계산하세요. 입력한 상승률이 매년 일정하다고 가정하며 실제 소비자물가지수(CPI)를 자동 조회하지 않습니다. 이자·투자 수익·세금은 제외합니다.';
 
 export const metadata: Metadata = {
-  title: '화폐가치·물가상승률 계산기 2026 | 인플레이션 실질구매력 무료',
-  description:
-    '입력한 연간 물가상승률로 같은 물건의 미래 필요 금액, 미래 금액의 현재 구매력, 보유 금액의 미래 구매력을 구분해 계산합니다. 일정 물가 상승 가정이며 이자·투자 수익·세금은 제외합니다. 회원가입 없이 무료.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     '화폐가치 계산기',
     '인플레이션 계산기',
@@ -34,16 +36,15 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '화폐가치 계산기 2026, 인플레이션·실질 구매력',
-    description:
-      '입력한 물가상승률로 미래 필요 금액과 구매력을 구분해 계산하세요. 실제 CPI 자동 조회 없이 일정 상승률을 가정합니다.',
+    title: TITLE,
+    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '화폐가치 계산기 2026',
-    description: '같은 물건의 미래 필요 금액·미래 금액의 현재 구매력·보유 금액의 미래 구매력 계산.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -100,13 +101,13 @@ const RELATED = [
 
 export default function InflationPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
-    name: '화폐가치 계산기',
-    description: '금액·기간·연간 물가상승률로 미래 필요 금액과 구매력을 구분해 계산합니다.',
+    name: '물가상승률 계산기 2026',
+    description: DESCRIPTION,
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '화폐가치 계산기 2026',
-    description: '입력한 물가상승률로 같은 물건의 미래 필요 금액과 현재·미래 구매력을 구분해 계산',
+    name: '물가상승률 계산기 2026',
+    description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-10-01',
@@ -122,8 +123,8 @@ export default function InflationPage() {
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   const howtoLd = buildHowToJsonLd({
-    name: '화폐가치 계산하기',
-    description: '금액, 기간, 인플레이션 방식을 선택해 화폐가치를 계산하는 방법',
+    name: '물가상승률로 미래 필요 금액·구매력 계산하기',
+    description: DESCRIPTION,
     steps: [
       {
         name: '계산 방식 선택',
@@ -192,9 +193,14 @@ export default function InflationPage() {
                       { name: '화폐가치' },
                     ]}
                   />
-                  <h1 className="mb-3 text-4xl font-bold tracking-tight">화폐가치 계산기 2026</h1>
+                  <h1 className="mb-3 text-4xl font-bold tracking-tight">물가상승률 계산기 2026</h1>
                   <p className="text-lg text-text-secondary" data-speakable>
-                    같은 물건의 미래 비용과, 같은 돈의 구매력 변화를 구분해 확인하세요.
+                    금액·기간·예상 연간 물가상승률을 입력해 같은 물건의 미래 필요 금액과 돈의
+                    구매력 변화를 구분해 확인하세요.
+                  </p>
+                  <p className="mt-2 text-sm text-text-secondary">
+                    입력한 상승률이 매년 일정하다고 가정합니다. 실제 소비자물가지수(CPI)는 자동
+                    조회하지 않으며, 이자·투자 수익·세금은 제외합니다.
                   </p>
                   <AuthorByline dateModified="2026-10-01" />
                 </header>

@@ -10,6 +10,7 @@
  */
 
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -83,7 +84,9 @@ export function buildGuideCategoryMetadata(slug: GuideCategorySlug): Metadata {
   const meta = getMeta(slug);
   const url = `https://calculatorhost.com/guide/category/${slug}/`;
   const title = `${meta.id} 가이드 모음 | ${meta.titleKeywords} | calculatorhost`;
-  const description = `${meta.description} 2026년 최신 세율·기준 반영, 법조항 근거와 단계별 계산 사례 포함. 무료·회원가입 불필요.`;
+  const description = slug === 'tax-real-estate'
+    ? `${meta.description} 집을 살 때·보유할 때·팔 때 필요한 계산기를 선택하고, 각 도구의 지원 조건과 가이드의 적용 기준을 확인하세요.`
+    : `${meta.description} 2026년 최신 세율·기준 반영, 법조항 근거와 단계별 계산 사례 포함. 무료·회원가입 불필요.`;
   return {
     title,
     description,
@@ -100,7 +103,17 @@ export function buildGuideCategoryMetadata(slug: GuideCategorySlug): Metadata {
   };
 }
 
-export default function GuideCategoryIndex({ slug }: { slug: GuideCategorySlug }) {
+interface GuideCategoryIndexProps {
+  slug: GuideCategorySlug;
+  purposeNavigation?: ReactNode;
+  modifiedDate?: string;
+}
+
+export default function GuideCategoryIndex({
+  slug,
+  purposeNavigation,
+  modifiedDate,
+}: GuideCategoryIndexProps) {
   const meta = getMeta(slug);
   const URL = `https://calculatorhost.com/guide/category/${slug}/`;
   const guides = GUIDES.filter((g) => g.category === meta.id).sort((a, b) =>
@@ -118,7 +131,7 @@ export default function GuideCategoryIndex({ slug }: { slug: GuideCategorySlug }
     description: meta.description,
     url: URL,
     datePublished: '2026-07-22',
-    dateModified: guides[0]?.publishedAt ?? '2026-07-22',
+    dateModified: modifiedDate ?? guides[0]?.publishedAt ?? '2026-07-22',
   });
   const itemListLd = buildItemListJsonLd(
     guides.map((g) => ({
@@ -188,6 +201,8 @@ export default function GuideCategoryIndex({ slug }: { slug: GuideCategorySlug }
                   )
                 )}
               </nav>
+
+              {purposeNavigation}
 
               {/* 카테고리 글 목록 (최신순) */}
               <section aria-label={`${meta.id} 가이드 목록`} className="card space-y-1">
