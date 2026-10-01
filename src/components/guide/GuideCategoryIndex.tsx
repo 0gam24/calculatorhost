@@ -48,8 +48,8 @@ export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
     slug: 'tax-real-estate',
     id: '세금·부동산',
     icon: 'home',
-    description: '재산세·종합부동산세·임대차 세제 등 부동산 보유·거래 세금 가이드.',
-    titleKeywords: '재산세·종부세·임대차 세제',
+    description: '집을 살 때 취득세, 보유할 때 재산세·종부세, 팔 때 양도세를 확인하는 부동산 세금 가이드.',
+    titleKeywords: '취득세·재산세·양도세',
   },
   {
     slug: 'finance',

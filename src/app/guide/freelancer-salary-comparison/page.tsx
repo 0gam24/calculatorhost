@@ -30,11 +30,12 @@ import {
 const URL = 'https://calculatorhost.com/guide/freelancer-salary-comparison/';
 const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-10-01';
+const TITLE = '프리랜서 vs 직장인 실수령액 비교 2026';
 const DESCRIPTION =
   '프리랜서 매출과 직장인 연봉을 비교하기 전에 실제 사업 비용·최종 세금·보험료 조건을 확인하세요. 직장인 급여 예시와 비교 순서를 정리하고, 연봉 실수령액·프리랜서 세금 계산기에 각각 본인 조건을 입력해 추정할 수 있습니다.';
 
 export const metadata: Metadata = {
-  title: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
+  title: `${TITLE} | calculatorhost`,
   description: DESCRIPTION,
   keywords: [
     '프리랜서 실수령액',
@@ -51,10 +52,10 @@ export const metadata: Metadata = {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: '프리랜서 vs 일반직 실수령액 비교 2026 | calculatorhost',
+        alt: TITLE,
       },
     ],
-    title: '프리랜서 vs 일반직 실수령액 비교 2026',
+    title: TITLE,
     description: DESCRIPTION,
     url: URL,
     type: 'article',
@@ -102,10 +103,10 @@ export default function FreelancerSalaryComparisonPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '프리랜서 vs 일반직 비교' },
+    { name: '프리랜서 vs 직장인 비교' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '프리랜서 vs 일반직 실수령액 비교 (2026)',
+    headline: TITLE,
     description: DESCRIPTION,
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -116,7 +117,7 @@ export default function FreelancerSalaryComparisonPage() {
     keywords: ['프리랜서', '실수령액', '4대보험', '종합소득세', '사업소득'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '프리랜서 vs 일반직 실수령액 비교 2026',
+    name: TITLE,
     description: DESCRIPTION,
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -159,17 +160,16 @@ export default function FreelancerSalaryComparisonPage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '프리랜서 vs 일반직 비교' },
+                    { name: '프리랜서 vs 직장인 비교' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">근로 · 7분 읽기 · 2026-05-03</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  프리랜서 vs 일반직 실수령액 비교 (2026)
+                  {TITLE}
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  프리랜서의 매출과 직장인의 연봉을 비교할 때는 실제 사업 비용, 최종 세금, 보험료와
-                  퇴직금 등을 함께 봐야 합니다. 2026년 보험료 기준을 적용한 직장인 예시와 프리랜서
-                  비교에 필요한 조건을 정리합니다.
+                  같은 금액의 매출과 연봉은 바로 비교할 수 없습니다. 같은 기간으로 맞춘 뒤 실제
+                  사업 비용·최종 세금·보험료를 반영해 비교하세요.
                 </p>
               </header>
 
@@ -199,12 +199,12 @@ export default function FreelancerSalaryComparisonPage() {
                 <h2 className="mb-3 text-xl font-bold">한눈에 보기, 핵심 차이</h2>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm" data-speakable>
-                    <caption className="sr-only">프리랜서와 일반직 핵심 차이 비교</caption>
+                    <caption className="sr-only">프리랜서와 직장인 핵심 차이 비교</caption>
                     <thead>
                       <tr className="border border-border-base bg-primary-500/10">
                         <th className="px-3 py-2 text-left">항목</th>
                         <th className="px-3 py-2">프리랜서 (사업소득)</th>
-                        <th className="px-3 py-2">일반직 (근로소득)</th>
+                        <th className="px-3 py-2">직장인 (근로소득)</th>
                       </tr>
                     </thead>
                     <tbody>

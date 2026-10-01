@@ -65,9 +65,9 @@ const FAQ_ITEMS = [
       '같은 잔액으로 살 수 있는 물건의 양을 뜻합니다. 현재 금액을 물가계수로 나눠 미래 구매력을 오늘의 금액으로 표시합니다. 연 2%·10년이면 잔액 1,000만 원의 구매력은 약 820만 원이며, 지금 100개 살 수 있는 물건은 약 82개 살 수 있습니다. 이자 없이 보유한 잔액 자체는 변하지 않습니다.',
   },
   {
-    question: '한국은행의 기대 인플레이션은 몇 %인가요?',
+    question: '한국은행의 물가안정목표 2%를 전망으로 써도 되나요?',
     answer:
-      '한국은행의 중기 물가 안정목표(2020-2024)는 연 2%입니다. 2026년 전망도 유사합니다. 하지만 실제 인플레이션은 물가지수(CPI), 시기, 상품에 따라 다릅니다. 최근 5년 평균(2019-2024)은 약 1.8~2.5% 범위입니다. 의료비·교육비는 평균보다 높고(3~5%), 전자기기·에너지는 변동성이 큽니다.',
+      '한국은행은 2019년 이후 소비자물가 상승률 기준 물가안정목표를 2%로 설정하고 있습니다. 이는 정책 목표이며 특정 연도의 전망이나 개인 생활비 상승률을 뜻하지 않습니다. 계산기에 2%를 넣으면 매년 같은 비율로 오른다는 가정의 결과이며, 실제 물가와 차이가 날 수 있습니다.',
   },
   {
     question: '은퇴 계획할 때 인플레이션을 어떻게 고려해야 하나요?',
@@ -77,7 +77,7 @@ const FAQ_ITEMS = [
   {
     question: '과거 물가 상승률을 알 수 있나요?',
     answer:
-      '한국은행 통계(ecos.bok.or.kr)에서 연도별, 월별 물가상승률을 조회할 수 있습니다. 예: 2024년 평균 약 2.4%, 2023년 약 3.6%. 10년, 20년, 50년 평균을 역산해 "실제 인플레이션"을 추정할 수 있습니다. 본 계산기는 향후 일정 인플레이션을 가정한 추정 도구이며, 과거 데이터는 한국은행 공식 자료를 참고하세요.',
+      '2024년 연간 소비자물가지수는 전년보다 2.3% 상승했습니다(2024년 12월 31일 발표). 다른 연도와 월별 수치는 KOSIS 또는 한국은행 ECOS에서 기간과 지표를 확인하세요. 과거 상승률은 미래 예측이 아니며, 이 계산기는 실제 지수를 자동 조회하지 않고 입력한 연간 상승률이 일정하다고 가정합니다.',
   },
 ] as const;
 
@@ -241,50 +241,25 @@ export default function InflationPage() {
                 ]}
               />
               <section aria-label="물가상승률" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">우리나라 물가상승률은 몇 %인가요?</h2>
+                <h2 className="mb-4 text-2xl font-semibold">공식 물가 통계와 계산 가정은 구분하세요</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  최근 우리나라 소비자물가 상승률은 2022년 5.1%, 2023년 3.6%, 2024년 약
-                  2.3%였습니다(통계청 소비자물가지수). 물가상승률만큼 돈의 구매력이 매년 줄어들기
-                  때문에, 위 계산기에 예상 물가상승률을 넣으면 미래에 같은 금액으로 살 수 있는 양이
-                  얼마나 줄어드는지 바로 확인할 수 있습니다.
+                  통계청이 2024년 12월 31일 발표한{' '}
+                  <a
+                    className="underline"
+                    href="https://www.kostat.go.kr/board.es?act=view&amp;bid=213&amp;list_no=434615&amp;mid=a10301040200"
+                  >
+                    2024년 연간 소비자물가동향
+                  </a>
+                  에 따르면 소비자물가지수는 전년보다 2.3% 상승했습니다. 이는 2024년의 연간
+                  통계이며 현재 상승률이나 앞으로의 전망을 뜻하지 않습니다.
                 </p>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse text-sm">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">
-                      표. 최근 연간 소비자물가 상승률 (통계청 CPI)
-                    </caption>
-                    <thead>
-                      <tr className="border border-border-base bg-primary-500/10">
-                        <th scope="col" className="px-4 py-3 text-left font-bold text-text-primary">
-                          연도
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-4 py-3 text-right font-bold text-text-primary"
-                        >
-                          소비자물가 상승률
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border border-border-base">
-                        <td className="px-4 py-2">2022년</td>
-                        <td className="px-4 py-2 text-right tabular-nums">5.1%</td>
-                      </tr>
-                      <tr className="bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2">2023년</td>
-                        <td className="px-4 py-2 text-right tabular-nums">3.6%</td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-4 py-2">2024년</td>
-                        <td className="px-4 py-2 text-right tabular-nums">약 2.3%</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
                 <p className="mt-3 text-sm text-text-secondary">
-                  장기 평균 물가상승률은 대략 연 2~3% 수준입니다. 정확한 연도별·월별 물가상승률은
-                  통계청 KOSIS(kosis.kr) 또는 한국은행 ECOS(ecos.bok.or.kr)에서 조회할 수 있습니다.
+                  다른 연도나 월별 수치는{' '}
+                  <a className="underline" href="https://kosis.kr/">KOSIS</a>
+                  {' '}또는{' '}
+                  <a className="underline" href="https://ecos.bok.or.kr/">한국은행 ECOS</a>
+                  에서 기간과 지표를 확인하세요. 과거 값을 입력해도 미래 물가가 그 비율로 계속
+                  오른다는 보장은 없습니다. 본 계산기는 입력한 비율을 매년 일정하게 적용합니다.
                 </p>
               </section>
               <section aria-label="화폐가치란" className="card">
@@ -302,9 +277,14 @@ export default function InflationPage() {
                   수익률(실수익률)"이라 합니다.
                 </p>
                 <p className="text-text-secondary">
-                  한국은행은 중기 물가 안정 목표로 연 2%를 설정하고 있습니다. 이는 "건전한 경제
-                  성장의 조건"으로 간주됩니다. 다만 실제 인플레이션은 시기에 따라 0~4% 사이에서
-                  변동하며, 상품별로도 차이가 큽니다(한국은행 통계).
+                  <a
+                    className="underline"
+                    href="https://www.bok.or.kr/portal/main/contents.do?menuNo=200291"
+                  >
+                    한국은행의 물가안정목표
+                  </a>
+                  는 2019년 이후 소비자물가 상승률 기준 2%입니다. 정책 목표와 실제 물가, 미래
+                  전망은 서로 다르며, 개인이 구매하는 품목에 따라 체감 상승률도 달라질 수 있습니다.
                 </p>
               </section>
               <section aria-label="미래 필요 금액과 구매력" className="card">
@@ -431,12 +411,13 @@ export default function InflationPage() {
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
                     본 계산기는 균일한 인플레이션을 가정합니다. 실제로는 상품별, 시기별 인플레이션이
-                    크게 다릅니다. 의료비(3~5%)는 평균보다 높고, 전자기기는 디플레이션할 수
-                    있습니다.
+                    크게 다릅니다. 개인의 소비 품목과 전체 소비자물가지수의 구성이 다르면
+                    생활비 변화도 계산 결과와 다를 수 있습니다.
                   </li>
                   <li>
                     입력한 인플레이션률은 추정치입니다. 실제 인플레이션은 경제 상황에 따라 크게
-                    변동합니다. 보수적 계획은 2~3% 사이를 권장합니다.
+                    변동합니다. 하나의 비율을 정답이나 안전한 기준으로 해석하지 말고, 자신이
+                    정한 여러 가정에서 결과가 얼마나 달라지는지 비교하세요.
                   </li>
                   <li>
                     본 계산기는 기본 명목-실질 변환만 계산하며, 세금, 이자, 투자 수익은 포함하지
@@ -470,12 +451,15 @@ export default function InflationPage() {
                     인플레이션을 조회해 입력하면 "실제 구매력 변화"를 추정할 수 있습니다.
                   </li>
                   <li>
-                    <strong>시나리오 비교</strong>: 인플레이션을 1%, 2%, 3%로 각각 계산해 "최악,
-                    중간, 낙관 시나리오"를 준비하세요.
+                    <strong>시나리오 비교</strong>: 예를 들어 1%, 2%, 3%를 사용자가 정한 가정으로
+                    각각 계산해 결과를 비교할 수 있습니다. 이 비율은 전망이나 최악·최선의 범위를
+                    뜻하지 않습니다.
                   </li>
                   <li>
-                    <strong>투자 수익 평가</strong>: 연 4% 투자 수익은 인플레이션 2%를 제외하면 실질
-                    수익 2%입니다. 이렇게 실질 수익률을 계산해 정확한 의사결정을 하세요.
+                    <strong>투자 수익과 구분</strong>: 연 수익률 4%·물가상승률 2%를 가정하면 단순
+                    차감 근사는 약 2%이고, 정확한 실질 수익률은 (1.04 ÷ 1.02 − 1) × 100으로
+                    약 1.96%입니다. 세금·수수료는 제외한 예시이며 본 계산기는 투자 수익률을
+                    계산하지 않습니다.
                   </li>
                 </ul>
               </section>
