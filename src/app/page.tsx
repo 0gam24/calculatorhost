@@ -175,10 +175,10 @@ export default function HomePage() {
             생활에 필요한 31가지 계산
           </p>
           <h1 className="text-2xl font-bold leading-tight md:text-3xl">
-            복잡한 숫자, 간단하게 확인하세요.
+            얼마가 남을지, 얼마나 필요할지.
           </h1>
           <p className="mt-3 max-w-2xl text-base text-text-secondary">
-            내 조건에 맞는 답을 찾고, 다음 계획까지 이어가세요.
+            월급부터 대출·세금까지, 내 생활에 필요한 계산을 한곳에서.
           </p>
         </header>
         <section aria-labelledby="popular-calculators">
