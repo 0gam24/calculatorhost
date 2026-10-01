@@ -70,8 +70,10 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
         onLoad={() => {
           const client = window as NaverWindow;
           client.dataLayer = client.dataLayer || [];
-          window.gtag = (command, ...args) => {
-            client.dataLayer!.push([command, ...args]);
+          window.gtag = function () {
+            // gtag.js consumes the official Arguments queue format, not arrays.
+            // eslint-disable-next-line prefer-rest-params
+            client.dataLayer!.push(arguments);
           };
           window.gtag('js', new Date());
           window.gtag('config', gaId, {
