@@ -200,8 +200,12 @@ export function NextCalculation({ from, monthlyNet }: { from: string; monthlyNet
     router.push(`/calculator/${next.to}`);
   };
   return (
-    <aside className="rounded-xl border border-border-base bg-bg-base p-4" aria-label="다음 계산">
-      <p className="text-xs font-medium text-text-secondary">다음으로 해볼 계산</p>
+    <aside
+      data-next-calculation
+      className="rounded-xl border border-border-base bg-bg-card p-4 sm:p-5"
+      aria-label="다음 계산"
+    >
+      <h3 className="text-base font-semibold text-text-primary">다음으로 해볼 계산</h3>
       <p className="mt-2 text-sm leading-relaxed text-text-primary">{next.reason}</p>
       {isSalaryFlow ? (
         <>
@@ -229,17 +233,22 @@ export function NextCalculation({ from, monthlyNet }: { from: string; monthlyNet
                 );
             }}
             aria-invalid={!!error}
-            className="mt-2 min-h-12 w-full rounded-xl border border-border-base bg-bg-card px-4 py-3 text-right text-base font-semibold tabular-nums"
+            aria-describedby={error ? 'chosen-monthly-saving-error' : undefined}
+            className="mt-2 min-h-12 w-full rounded-xl border border-border-base bg-bg-card px-4 py-3 text-right text-base font-semibold tabular-nums focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
           />
           {error ? (
-            <p role="alert" className="mt-2 text-sm text-danger-500">
+            <p
+              id="chosen-monthly-saving-error"
+              role="alert"
+              className="mt-2 text-sm text-danger-500"
+            >
               {error}
             </p>
           ) : null}
           <button
             type="button"
             onClick={proceed}
-            className="mt-3 min-h-12 w-full rounded-lg border border-primary-500 px-3 py-3 text-sm font-semibold text-primary-700 dark:text-primary-300"
+            className="mt-3 min-h-12 w-full rounded-lg border border-primary-500 px-3 py-3 text-sm font-semibold text-primary-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:text-primary-300"
           >
             이 저축액으로 적금 계산 →
           </button>
@@ -251,7 +260,7 @@ export function NextCalculation({ from, monthlyNet }: { from: string; monthlyNet
         <Link
           href={`/calculator/${next.to}`}
           onClick={() => trackNextCalculator(from, next.to)}
-          className="mt-3 inline-flex min-h-12 items-center text-sm font-semibold text-primary-700 dark:text-primary-300"
+          className="mt-3 inline-flex min-h-12 items-center text-sm font-semibold text-primary-700 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:text-primary-300"
         >
           {next.label} →
         </Link>

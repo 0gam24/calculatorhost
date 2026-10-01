@@ -4,7 +4,7 @@ import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 
 export function Footer() {
   const links = [
-    ['/guide/', '가이드'],
+    ['/guide/', '계산·생활정보'],
     ['/updates/', '변경 이력'],
     ['/about/', '소개'],
     ['/privacy/', '개인정보처리방침'],
@@ -31,7 +31,7 @@ export function Footer() {
             <Link
               key={href}
               href={href}
-              className="inline-flex min-h-10 items-center hover:text-primary-700"
+              className="inline-flex min-h-12 items-center hover:text-primary-700 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:hover:text-primary-300"
             >
               {label}
             </Link>
@@ -39,7 +39,6 @@ export function Footer() {
         </nav>
         <p className="mt-4 max-w-3xl text-sm text-text-tertiary">
           계산 결과는 입력한 조건에 따른 참고값입니다. 실제 세금·금융 거래는 담당 기관에 확인하세요.
-
         </p>
         <details className="mt-4 text-sm text-text-tertiary">
           <summary className="cursor-pointer">피드 · 추가 정보</summary>

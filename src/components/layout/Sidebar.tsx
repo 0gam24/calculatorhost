@@ -40,27 +40,31 @@ function SidebarContent({ isExpanded }: { isExpanded: boolean }) {
     <nav className="flex flex-col gap-1 px-3 py-4">
       {SIDEBAR_ITEMS.map((item) => {
         const active = isActive(item.href);
+        const isGuide = item.href === '/guide' || item.href === '/guide/';
+        const label = isGuide ? '계산·생활정보' : item.label;
         const { Icon } = item;
         return (
           <Link
             key={item.href}
             href={item.href}
             className={cn(
-              'flex items-center rounded-lg transition-all text-sm font-medium',
+              'flex items-center rounded-lg text-sm font-medium transition-all',
               isExpanded ? 'gap-3 px-3 py-3' : 'flex-col gap-1.5 px-2 py-3',
               active
                 ? 'bg-primary-500/15 text-primary-500'
-                : 'text-text-secondary hover:text-text-primary hover:bg-bg-raised/50',
+                : 'hover:bg-bg-raised/50 text-text-secondary hover:text-text-primary',
             )}
-            aria-label={item.label}
+            aria-label={label}
             aria-current={active ? 'page' : undefined}
-            title={isExpanded ? undefined : item.label}
+            title={isExpanded ? undefined : label}
           >
             <Icon width={isExpanded ? 20 : 22} height={isExpanded ? 20 : 22} />
             {isExpanded ? (
-              <span>{item.label}</span>
+              <span>{label}</span>
             ) : (
-              <span className="text-[11px] leading-tight">{item.label.replace(' 계산기', '')}</span>
+              <span className="text-[11px] leading-tight">
+                {isGuide ? '생활정보' : label.replace(' 계산기', '')}
+              </span>
             )}
           </Link>
         );
@@ -83,9 +87,9 @@ export function Sidebar() {
       {/* 확장된 사이드바 (lg+) */}
       <aside
         aria-label="사이드 네비게이션 (확장)"
-        className="sticky top-18 hidden h-[calc(100vh-4.5rem)] w-56 shrink-0 border-r border-border-subtle bg-bg-sidebar overflow-y-auto lg:block"
+        className="sticky top-18 hidden h-[calc(100vh-4.5rem)] w-56 shrink-0 overflow-y-auto border-r border-border-subtle bg-bg-sidebar lg:block"
       >
-        <div className="flex flex-col h-full">
+        <div className="flex h-full flex-col">
           {/* 네비게이션 (로고는 전역 Header 에 표시) */}
           <SidebarContent isExpanded={true} />
 
@@ -95,7 +99,7 @@ export function Sidebar() {
               type="button"
               aria-label="설정 (준비 중)"
               disabled
-              className="flex items-center gap-3 rounded-lg px-3 py-3 w-full text-text-secondary hover:text-text-primary hover:bg-bg-raised/50 transition-all text-sm font-medium disabled:cursor-not-allowed disabled:opacity-60"
+              className="hover:bg-bg-raised/50 flex w-full items-center gap-3 rounded-lg px-3 py-3 text-sm font-medium text-text-secondary transition-all hover:text-text-primary disabled:cursor-not-allowed disabled:opacity-60"
             >
               <SettingsIcon />
               <span>설정</span>

@@ -1,12 +1,13 @@
 'use client';
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
 import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
 import { NextCalculation } from '@/components/calculator/NextCalculation';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
+import { AmountPresets } from '@/components/calculator/AmountPresets';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
@@ -31,6 +32,7 @@ const MONTHLY_BUTTONS = [
 ];
 
 export function SalaryCalculator() {
+  const [amountPresetToken, setAmountPresetToken] = useState(0);
   const [direction, setDirection] = useCalculatorState<CalcDirection>(
     'salary:direction',
     'forward',
@@ -107,7 +109,7 @@ export function SalaryCalculator() {
     <CalculatorWorkspace slug="salary" className="grid gap-6 lg:grid-cols-2">
       <FormCard title="내 급여 입력">
         {direction === 'forward' ? (
-          <>
+          <div className="space-y-3">
             <NumberInput
               id={wageType === 'yearly' ? 'yearly-amount' : 'monthly-amount'}
               label={wageType === 'yearly' ? '연봉 (세전)' : '월급 (세전)'}
@@ -117,20 +119,58 @@ export function SalaryCalculator() {
               min={1}
               max={wageType === 'yearly' ? 100_000_000_000 : 100_000_000}
               unitButtons={wageType === 'yearly' ? YEARLY_BUTTONS : MONTHLY_BUTTONS}
+              resetToken={amountPresetToken}
             />
-          </>
+            <AmountPresets
+              label={wageType === 'yearly' ? '연봉 예시' : '월급 예시'}
+              value={wageAmount}
+              options={
+                wageType === 'yearly'
+                  ? [
+                      { label: '3천만원', value: 30_000_000 },
+                      { label: '5천만원', value: 50_000_000 },
+                      { label: '7천만원', value: 70_000_000 },
+                    ]
+                  : [
+                      { label: '250만원', value: 2_500_000 },
+                      { label: '350만원', value: 3_500_000 },
+                      { label: '500만원', value: 5_000_000 },
+                    ]
+              }
+              onSelect={(amount) => {
+                setWageAmount(amount);
+                setAmountPresetToken((token) => token + 1);
+              }}
+            />
+          </div>
         ) : (
-          <NumberInput
-            id="target-monthly-net"
-            label="목표 월 실수령액"
-            value={targetMonthlyNet}
-            onChange={setTargetMonthlyNet}
-            unit="원"
-            min={1}
-            max={100_000_000}
-            unitButtons={MONTHLY_BUTTONS}
-            helpText="이 월 수령액에 필요한 세전 연봉을 추정합니다."
-          />
+          <div className="space-y-3">
+            <NumberInput
+              id="target-monthly-net"
+              label="목표 월 실수령액"
+              value={targetMonthlyNet}
+              onChange={setTargetMonthlyNet}
+              unit="원"
+              min={1}
+              max={100_000_000}
+              unitButtons={MONTHLY_BUTTONS}
+              helpText="이 월 수령액에 필요한 세전 연봉을 추정합니다."
+              resetToken={amountPresetToken}
+            />
+            <AmountPresets
+              label="월 실수령액 예시"
+              value={targetMonthlyNet}
+              options={[
+                { label: '200만원', value: 2_000_000 },
+                { label: '300만원', value: 3_000_000 },
+                { label: '400만원', value: 4_000_000 },
+              ]}
+              onSelect={(amount) => {
+                setTargetMonthlyNet(amount);
+                setAmountPresetToken((token) => token + 1);
+              }}
+            />
+          </div>
         )}
         <div className="flex flex-col gap-2">
           <label htmlFor="calculation-month" className="text-sm font-medium">

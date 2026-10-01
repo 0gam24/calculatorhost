@@ -190,7 +190,7 @@ export default function HomePage() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="flex min-h-24 flex-col justify-center rounded-2xl border border-border-base bg-bg-card px-4 py-4 transition hover:border-primary-500 md:px-6"
+                className="flex min-h-24 flex-col justify-center rounded-2xl border border-border-base bg-bg-card px-4 py-4 shadow-sm hover:border-primary-500 hover:bg-primary-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:hover:bg-bg-raised md:px-6"
               >
                 <span className="text-sm text-text-tertiary">{item.tag}</span>
                 <span className="mt-1 font-semibold">
@@ -211,7 +211,7 @@ export default function HomePage() {
             {FLOWS.map((flow) => (
               <article
                 key={flow.href}
-                className="flex flex-col rounded-2xl border border-border-base bg-bg-card p-5"
+                className="flex min-w-0 flex-col border-l-2 border-primary-200 py-1 pl-4 dark:border-primary-700"
               >
                 <h3 className="text-lg font-semibold">{flow.title}</h3>
                 <p className="mt-3 text-sm font-medium text-primary-700 dark:text-primary-300">
@@ -220,7 +220,7 @@ export default function HomePage() {
                 <p className="my-3 text-sm text-text-secondary">{flow.note}</p>
                 <Link
                   href={flow.href}
-                  className="mt-auto inline-flex min-h-12 items-center font-semibold text-primary-700 dark:text-primary-300"
+                  className="mt-auto inline-flex min-h-12 items-center self-start font-semibold text-primary-700 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:text-primary-300"
                 >
                   {flow.action}{' '}
                   <span aria-hidden className="ml-2">
@@ -231,7 +231,11 @@ export default function HomePage() {
             ))}
           </div>
         </section>
-        <section id="all-calculators" aria-labelledby="all-title">
+        <section
+          id="all-calculators"
+          aria-labelledby="all-title"
+          className="border-t border-border-base pt-6"
+        >
           <div className="mb-4 flex items-baseline justify-between gap-4">
             <h2 id="all-title" className="text-lg font-semibold">
               전체 계산기
@@ -249,7 +253,7 @@ export default function HomePage() {
                     <li key={item.href}>
                       <Link
                         href={item.href}
-                        className="flex min-h-12 items-center justify-between border-b border-border-subtle py-2 text-base hover:text-primary-700"
+                        className="flex min-h-12 items-center justify-between gap-3 border-b border-border-subtle py-2 text-base hover:text-primary-700 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:hover:text-primary-300"
                       >
                         <span>{item.title}</span>
                         <span aria-hidden className="text-text-tertiary">
@@ -277,8 +281,11 @@ export default function HomePage() {
               변경 이력
             </Link>{' '}
             ·{' '}
-            <Link href="/guide/" className="underline">
-              전체 가이드
+            <Link
+              href="/guide/"
+              className="inline-flex min-h-12 items-center underline focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+            >
+              계산·생활정보
             </Link>
           </p>
         </section>

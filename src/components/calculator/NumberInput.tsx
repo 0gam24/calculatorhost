@@ -18,6 +18,8 @@ export interface NumberInputProps {
   className?: string;
   debounceMs?: number;
   integer?: boolean;
+  /** Explicit canonical-value replacement, including repeated selections after invalid drafts. */
+  resetToken?: number;
 }
 export function NumberInput({
   id,
@@ -33,6 +35,7 @@ export function NumberInput({
   className,
   debounceMs = 0,
   integer = false,
+  resetToken,
 }: NumberInputProps) {
   const [draft, setDraft] = useState(String(value));
   const [focused, setFocused] = useState(false);
@@ -42,6 +45,7 @@ export function NumberInput({
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const composing = useRef(false);
   const latest = useRef(value);
+  const previousResetToken = useRef(resetToken);
   const workspace = useCalculatorWorkspace();
   const reportValidity = workspace?.reportValidity;
 
@@ -52,6 +56,21 @@ export function NumberInput({
     }
     latest.current = value;
   }, [value, factor]);
+  useEffect(() => {
+    if (previousResetToken.current === resetToken) return;
+    previousResetToken.current = resetToken;
+    if (timer.current) clearTimeout(timer.current);
+    latest.current = value;
+    setDraft(String(value / factor));
+    setError(
+      !Number.isFinite(value) ||
+        value < min ||
+        (max !== undefined && value > max) ||
+        (integer && !Number.isInteger(value))
+        ? '입력 조건과 범위를 확인해 주세요.'
+        : undefined,
+    );
+  }, [resetToken, value, factor, min, max, integer]);
   useEffect(() => {
     reportValidity?.(id, error);
     return () => reportValidity?.(id);

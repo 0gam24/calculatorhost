@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { useCalculatorWorkspace } from './CalculatorWorkspace';
 import { CalculatorDetails } from './CalculatorDetails';
@@ -53,6 +53,9 @@ export function ResultCard({
   const workspace = useCalculatorWorkspace();
   const invalid = workspace && Object.keys(workspace.invalidFields).length > 0;
   const [copyStatus, setCopyStatus] = useState('결과 복사');
+  useEffect(() => {
+    setCopyStatus('결과 복사');
+  }, [title, heroLabel, heroValue, heroNote, invalid]);
   const prominent = [
     ...rows.filter((row) => row.emphasize),
     ...rows.filter((row) => !row.emphasize),
@@ -74,68 +77,81 @@ export function ResultCard({
     }
   };
   return (
-    <section
-      aria-label="계산 결과"
-      data-calculation-result
-      tabIndex={-1}
-      className={cn(
-        'card flex min-w-0 flex-col gap-4 outline-none focus-visible:ring-2 focus-visible:ring-primary-500 sm:gap-5',
-      )}
-    >
-      <header aria-live="polite" aria-atomic="true">
-        <h2 className="text-base font-semibold text-text-primary">{title}</h2>
-        <p className="mt-2 text-sm text-text-secondary">{heroLabel}</p>
-        <p
+    <div className="min-w-0 space-y-4" data-calculation-output>
+      <section
+        aria-label="계산 결과"
+        data-calculation-result
+        tabIndex={-1}
+        className={cn(
+          'card flex min-w-0 flex-col gap-4 outline-none focus-visible:ring-2 focus-visible:ring-primary-500 sm:gap-5',
+        )}
+      >
+        <header
+          aria-live="polite"
+          aria-atomic="true"
           className={cn(
-            'mt-3 break-words font-bold tabular-nums leading-tight tracking-tight',
+            'min-w-0 rounded-xl border p-4',
             invalid || empty
-              ? 'text-lg text-text-secondary'
-              : 'text-3xl text-primary-700 dark:text-primary-300 sm:text-4xl',
+              ? 'border-border-base bg-bg-base'
+              : 'border-primary-200 bg-primary-50 dark:border-primary-700 dark:bg-primary-900/40',
           )}
-          aria-label={`${heroLabel}: ${invalid ? '입력을 확인해 주세요' : heroValue}`}
         >
-          {invalid ? '입력을 확인해 주세요' : heroValue}
-        </p>
-        {heroNote && !invalid ? (
-          <p className="mt-3 text-xs leading-relaxed text-text-secondary">{heroNote}</p>
-        ) : null}
-      </header>
-      {!invalid && !empty ? (
-        <>
-          {prominent.length ? (
-            <div>
-              {prominent.map((row) => (
-                <ResultRow key={row.label} {...row} />
-              ))}
-            </div>
+          <h2 className="text-base font-semibold text-text-primary">{title}</h2>
+          <p className="mt-2 text-sm text-text-secondary">{heroLabel}</p>
+          <p
+            className={cn(
+              'mt-3 min-w-0 font-bold tabular-nums leading-tight tracking-tight [overflow-wrap:anywhere] [word-break:normal]',
+              invalid || empty
+                ? 'text-lg text-text-secondary'
+                : 'text-[2rem] text-primary-800 dark:text-primary-200 min-[390px]:text-[2.5rem] lg:text-[3rem]',
+            )}
+            aria-label={`${heroLabel}: ${invalid ? '입력을 확인해 주세요' : heroValue}`}
+          >
+            {invalid ? '입력을 확인해 주세요' : heroValue}
+          </p>
+          {heroNote && !invalid ? (
+            <p className="mt-3 text-xs leading-relaxed text-text-secondary">{heroNote}</p>
           ) : null}
-          {detailed.length ? (
-            <CalculatorDetails title="결과 상세">
+        </header>
+        {!invalid && !empty ? (
+          <>
+            {prominent.length ? (
               <div>
-                {detailed.map((row) => (
+                {prominent.map((row) => (
                   <ResultRow key={row.label} {...row} />
                 ))}
               </div>
-            </CalculatorDetails>
-          ) : null}
-          {children}
-          <button
-            type="button"
-            onClick={copy}
-            className="min-h-12 self-start rounded-lg border border-border-base px-4 py-3 text-sm font-medium text-text-secondary hover:border-primary-500"
-            aria-live="polite"
-          >
-            {copyStatus}
-          </button>
-          {nextStep ?? (workspace ? <NextCalculation from={workspace.slug} /> : null)}
-        </>
-      ) : (
-        <p className="text-sm text-text-secondary">
-          {empty && !invalid
-            ? '필요한 입력을 채우면 결과가 자동으로 표시됩니다.'
-            : '비어 있거나 잘못된 값을 수정하면 결과가 다시 표시됩니다.'}
-        </p>
-      )}
-    </section>
+            ) : null}
+            {detailed.length ? (
+              <CalculatorDetails title="결과 상세">
+                <div>
+                  {detailed.map((row) => (
+                    <ResultRow key={row.label} {...row} />
+                  ))}
+                </div>
+              </CalculatorDetails>
+            ) : null}
+            {children}
+            <button
+              type="button"
+              onClick={copy}
+              className="min-h-12 self-start rounded-lg border border-border-base px-4 py-3 text-sm font-medium text-text-secondary hover:border-primary-500"
+              aria-live="polite"
+            >
+              {copyStatus}
+            </button>
+          </>
+        ) : (
+          <p className="text-sm text-text-secondary">
+            {empty && !invalid
+              ? '필요한 입력을 채우면 결과가 자동으로 표시됩니다.'
+              : '비어 있거나 잘못된 값을 수정하면 결과가 다시 표시됩니다.'}
+          </p>
+        )}
+      </section>
+      {!invalid && !empty
+        ? (nextStep ?? (workspace ? <NextCalculation from={workspace.slug} /> : null))
+        : null}
+    </div>
   );
 }

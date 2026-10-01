@@ -11,10 +11,11 @@ import { useCalculatorState } from '@/components/calculator/useCalculatorState';
  * 공식: src/lib/finance/loan.ts
  */
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
+import { AmountPresets } from '@/components/calculator/AmountPresets';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
@@ -74,6 +75,7 @@ const REPAYMENT_LABELS: RepaymentLabel[] = [
 ];
 
 export function LoanCalculator() {
+  const [principalPresetToken, setPrincipalPresetToken] = useState(0);
   const [principal, setPrincipal] = useCalculatorState('loan:principal', 100_000_000); // 1억
   const [annualRate, setAnnualRate] = useCalculatorState('loan:annualRate', 4.0);
   const [term, setTerm] = useCalculatorState('loan:term', 30);
@@ -110,17 +112,10 @@ export function LoanCalculator() {
   const repaymentLabel = REPAYMENT_LABELS.find((l) => l.type === repayment)?.label || '원리금균등';
   const repaymentSubtitle = REPAYMENT_LABELS.find((l) => l.type === repayment)?.subtitle || '';
 
-  // 월 상환액 표시 (원금균등의 경우 범위, 나머지는 단일값)
-  let monthlyPaymentDisplay = '';
-  if (!result) {
-    monthlyPaymentDisplay = '계산하려면 값을 입력해 주세요';
-  } else if (repayment === 'principal-equal') {
-    monthlyPaymentDisplay = `${formatKRW(result.firstMonthPayment)} ~ ${formatKRW(result.lastMonthPayment)}`;
-  } else if (repayment === 'bullet') {
-    monthlyPaymentDisplay = `${formatKRW(result.firstMonthPayment)} (월 이자)`;
-  } else {
-    monthlyPaymentDisplay = formatKRW(result.firstMonthPayment);
-  }
+  const monthlyPaymentDisplay = result
+    ? formatKRW(result.firstMonthPayment)
+    : '계산하려면 값을 입력해 주세요';
+  const paymentVaries = repayment !== 'amortization' || graceMonths > 0;
 
   // 상환 스케줄 표시용 (처음 12개월 + 마지막 12개월, 또는 전체 24개월 이하)
   const scheduleDisplayRows: ScheduleDisplayRow[] = useMemo(() => {
@@ -169,17 +164,33 @@ export function LoanCalculator() {
   return (
     <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="loan">
       <FormCard title="입력">
-        <NumberInput
-          id="principal"
-          label="대출 금액"
-          min={1}
-          value={principal}
-          onChange={setPrincipal}
-          placeholder="예: 100,000,000"
-          unitButtons={PRINCIPAL_UNIT_BUTTONS}
-          max={10_000_000_000}
-          unit="원"
-        />
+        <div className="space-y-3">
+          <NumberInput
+            id="principal"
+            label="대출 금액"
+            min={1}
+            value={principal}
+            onChange={setPrincipal}
+            placeholder="예: 100,000,000"
+            unitButtons={PRINCIPAL_UNIT_BUTTONS}
+            max={10_000_000_000}
+            unit="원"
+            resetToken={principalPresetToken}
+          />
+          <AmountPresets
+            label="대출 금액 예시"
+            value={principal}
+            options={[
+              { label: '5천만원', value: 50_000_000 },
+              { label: '1억원', value: 100_000_000 },
+              { label: '3억원', value: 300_000_000 },
+            ]}
+            onSelect={(amount) => {
+              setPrincipal(amount);
+              setPrincipalPresetToken((token) => token + 1);
+            }}
+          />
+        </div>
 
         <NumberInput
           id="annual-rate"
@@ -255,9 +266,13 @@ export function LoanCalculator() {
       <ResultCard
         title="상환액 계산"
         empty={!result}
-        heroLabel={`${repaymentLabel}, ${repaymentSubtitle}`}
+        heroLabel={paymentVaries ? '첫 달 갚을 금액' : '매달 갚을 금액'}
         heroValue={monthlyPaymentDisplay}
-        heroNote={result ? `연 ${formatPercent(result.monthlyRate * 12)}` : undefined}
+        heroNote={
+          result
+            ? `${repaymentLabel} · ${repaymentSubtitle} · 연 ${formatPercent(result.monthlyRate * 12)}${graceMonths > 0 && repayment !== 'bullet' ? ' · 거치 중에는 이자만 납부' : ''}`
+            : undefined
+        }
         rows={
           result
             ? [
@@ -281,6 +296,9 @@ export function LoanCalculator() {
                         value: formatKRW(result.graceInterestTotal),
                       },
                     ]
+                  : []),
+                ...(paymentVaries
+                  ? [{ label: '마지막 달 갚을 금액', value: formatKRW(result.lastMonthPayment) }]
                   : []),
               ]
             : [
