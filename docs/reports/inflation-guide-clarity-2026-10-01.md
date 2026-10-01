@@ -45,3 +45,21 @@
 3. Network에서 g/collect의 tid와 en 두 이름만 확인하고 cookie/client_id/전체 요청을 저장하지 않는다. 기존 GA4 Realtime에서 두 이름 수신을 대조한다. Google은 수집 시작에 최대 30분이 걸릴 수 있다고 안내하며 Realtime 확인을 권한다. HTTP204만으로 계정 수신을 확정하지 않는다. 수동 gtag 호출·debug 주입·반복 트래픽은 수행하지 않는다.
 
 기존 API 404·법령 출처 레지스트리 잔여·실제 광고 노출/계정 수신·Google Rich Results Test는 이번 한 페이지의 로컬 교정 밖이다. 사이트 전수 법률 인증이나 유입/수익 보장을 의미하지 않는다.
+
+
+## 운영 GA 교정과 로컬 릴리스 통합 검증 (2026-10-01 15:10 UTC)
+
+운영 기준점은 e191802fc36dec744a07e3013ea77679ab2a48bc이며, 별도 로컬 브랜치 codex/release-inflation-guide-2026에서 안내글 승인본 9f6e78c49124c6a98cb86a14fbb314fc082b16f5를 충돌 없이 cherry-pick한 코드 커밋은 49d9733b9aec5de65fa419f311753384dc37679c이다. 안내글 파일은 승인본과 동일한 Git blob(a2f66d70cab4790817892d33d29a99b52eef87c0)이고 PublicServices.tsx는 운영 e191802와 동일한 blob(e5ea444320f2c7530da02fee3cb24ba7d9cee915)이다. 운영 대비 변경은 기존 안내글 한 페이지, 해당 manifest 수정일, 이 보고서뿐이다. 계산식·신규 글·API·계정 설정은 변경하지 않았다.
+
+- 기존 운영 GA 교정본의 전체 단위 테스트 69개 파일·1,292개 통과 결과를 재사용했다. 통합 후 영향 범위 단위 테스트 4개 파일·59개를 새로 실행해 모두 통과했으며 typecheck와 lint도 통과했다.
+- 통합 후 실제 npm run build의 prebuild/build/postbuild가 종료 코드 0으로 완료됐다. 정적 경로 503개 생성, 이번 build guard 9개 모두 외부 요청과 비밀 .my 파일 읽기 시도 0건이다. 기존 자동화나 데이터 동기화를 실행하지 않았다.
+- 새 export를 운영 e191802 기준 산출물과 비교했다. sitemap 435개 URL·canonical·index를 보존하고 metadata/JSON-LD 및 lastmod 변경은 안내글 한 URL에만 있다. FAQ 6개는 공개 본문과 구조화 데이터가 일치하며 다른 페이지 메타는 동일하다.
+- 별도 Chrome 격리 프로필의 로컬 산출물 검사 10건 통과: 320/360/390/1440px 레이아웃, 단일 48px 이상 계산기 링크, 세 모드 결과, 뒤로 가기 후 입력 보존, JavaScript 비활성 링크, runtime 오류 0건. 320/1440px 스크린샷을 직접 확인했다.
+- 실제 공개 Google 태그 fixture를 사용하되 모든 요청을 로컬로 응답한 GA 검사 5건 통과: page_view, 기존 프리랜서 안내글 클릭, 유효 결과 버튼 이벤트, 금융 입력·query/hash·referrer 미전송, localhost 외부 태그 억제. 실제 GA 수집 서버에 보낸 요청은 0건이다. 물가 안내글 링크는 기존 이벤트 allowlist를 확장하지 않았다.
+- 공개 HTML 444개에서 본문·검색/공유 메타·aria/alt/title·JSON-LD의 삭제 대상 작성도구 언급은 모두 0건이다. 내부 기술 식별자나 URL을 임의 삭제하지 않았다.
+
+부모가 13:15 UTC 실제 GA 계정에서 guide_calculator_open 1회, calculator_complete 1회, page_view 2회를 확인했다. 앞 절의 실제 수신 미확인 상태는 이 확인으로 해소되었다. 이는 검증용 정상 사용 트래픽이며 유입·검색 순위·수익 개선 성과를 뜻하지 않는다. 앞 절의 안내글 품질 검사 작성도구 표기 요구와 사용자 삭제 지시 충돌, 기존 API/법령 검증 한계는 그대로 구분한다.
+
+새 근거는 저장소 밖 preview-evidence의 inflation-guide-release-before.json, inflation-guide-release-export-qa.json, inflation-guide-release-browser-qa.json, inflation-guide-release-ga-qa.json, inflation-guide-release-public-copy.json 및 동일 접두사의 build/unit/typecheck/lint 로그와 화면 이미지에 보존했다. 기존 검증 파일은 덮어쓰지 않았다.
+
+이 단계에서는 원격 push·운영 배포·원본 D: 폴더 통합을 수행하지 않았다. 원본 폴더와 원격 main은 e191802 기준으로 보존하며 기존 미추적 사용자 파일, 안내글 원본 브랜치, 다른 미배포 API/홈 데이터 브랜치를 유지한다. GitHub 자동화 10개 OFF를 변경하지 않았다. 별도 로컬 릴리스는 검토용이며 운영 반영은 다음 지시 전까지 보류한다.
