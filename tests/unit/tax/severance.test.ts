@@ -37,11 +37,144 @@ function createInput(overrides: Partial<SeveranceInput>): SeveranceInput {
 // ============================================
 
 describe('calculateSeverance', () => {
+  it.each([
+    ['2025-01-01', '2026-01-01', 1, 1_000_000],
+    ['2025-01-01', '2026-01-02', 2, 2_000_000],
+    ['2024-01-01', '2025-01-01', 1, 1_000_000],
+    ['2024-01-01', '2025-01-02', 2, 2_000_000],
+    ['2024-02-29', '2025-03-01', 1, 1_000_000],
+    ['2024-02-29', '2025-03-02', 2, 2_000_000],
+  ])('소득세법48 단수: %s → %s는 %i년 공제', (hireDate, leaveDate, years, deduction) => {
+    const result = calculateSeverance(
+      createInput({ hireDate, leaveDate, ordinaryDailyWage: 100_000 }),
+    );
+    expect(result.serviceYearsRounded).toBe(years);
+    expect(result.serviceYearsDeduction).toBe(deduction);
+  });
+
+  it('통상 일 임금이 더 높은 1년 근무: 정밀 비교 후 원 미만 반올림', () => {
+    const result = calculateSeverance(
+      createInput({
+        hireDate: '2025-01-01',
+        leaveDate: '2026-01-01',
+        ordinaryDailyWage: (3_000_000 / 209) * 8,
+        includeTax: false,
+      }),
+    );
+    // 독립 계산: 365일, 10/1~12/31의 92일. 24,000,000/209 ×30=3,444,976.0765원.
+    expect(result.serviceDays).toBe(365);
+    expect(result.threeMonthDays).toBe(92);
+    expect(result.averageDailyWage).toBeCloseTo(97_826.08695652174, 8);
+    expect(result.ordinaryDailyWage).toBeCloseTo(114_832.53588516747, 8);
+    expect(result.basisDailyWage).toBe(result.ordinaryDailyWage);
+    expect(result.wageBasis).toBe('ordinary');
+    expect(result.isEligibleForStatutory).toBe(true);
+    expect(result.statutorySeverance).toBe(3_444_976);
+    expect(result.netSeverance).toBe(3_444_976);
+    expect(result.warnings).toContainEqual(expect.stringContaining('원 미만'));
+  });
+
+  it('평균 일 임금이 높으면 통상임금으로 낮추지 않는다', () => {
+    const result = calculateSeverance(
+      createInput({
+        hireDate: '2025-01-01',
+        leaveDate: '2026-01-01',
+        ordinaryDailyWage: 90_000,
+        includeTax: false,
+      }),
+    );
+    expect(result.wageBasis).toBe('average');
+    expect(result.basisDailyWage).toBeCloseTo(97_826.08695652174, 8);
+    expect(result.statutorySeverance).toBe(2_934_783);
+  });
+
+  it('동일한 평균·통상 일 임금도 정밀 값으로 계산한다', () => {
+    const result = calculateSeverance(
+      createInput({
+        hireDate: '2025-01-01',
+        leaveDate: '2026-01-01',
+        ordinaryDailyWage: 9_000_000 / 92,
+        includeTax: false,
+      }),
+    );
+    expect(result.wageBasis).toBe('average');
+    expect(result.statutorySeverance).toBe(2_934_783);
+  });
+
+  it('호환 호출의 통상임금 누락은 평균만의 참고액 경고로 구분', () => {
+    const result = calculateSeverance(
+      createInput({ hireDate: '2025-01-01', leaveDate: '2026-01-01', includeTax: false }),
+    );
+    expect(result.ordinaryDailyWage).toBeNull();
+    expect(result.wageBasis).toBe('averageOnly');
+    expect(result.warnings).toContainEqual(expect.stringContaining('통상임금 미확인'));
+  });
+
+  it.each([0, -1, NaN, Infinity, -Infinity])(
+    '명시된 잘못된 통상임금 %s는 참고액도 생성하지 않는다',
+    (ordinaryDailyWage) => {
+      expect(() => calculateSeverance(createInput({ ordinaryDailyWage }))).toThrow('통상임금');
+    },
+  );
+
+  it.each(['', '0000-00-00', '2025-02-29', '2024-02-30', '2025-13-01', '2025-1-01', 'abc'])(
+    '실제 달력에 없는 날짜 %s 거부',
+    (leaveDate) => {
+      expect(() => calculateSeverance(createInput({ leaveDate }))).toThrow('날짜');
+    },
+  );
+
+  it.each([-1, NaN, Infinity])('잘못된 평균임금 자료 %s 거부', (monthlyOrdinaryWage) => {
+    expect(() => calculateSeverance(createInput({ monthlyOrdinaryWage }))).toThrow('평균임금');
+  });
+
+  it('새 평균월임금 alias와 통상 일 임금은 독립 입력', () => {
+    const result = calculateSeverance(
+      createInput({ averageMonthlyWage: 2_000_000, ordinaryDailyWage: 100_000 }),
+    );
+    expect(result.threeMonthWageTotal).toBe(6_000_000);
+    expect(result.basisDailyWage).toBe(100_000);
+  });
+
+  it.each([
+    ['2024-01-02', '2025-01-01', 365, false],
+    ['2024-01-02', '2025-01-02', 366, true],
+    ['2024-02-29', '2025-02-28', 365, false],
+    ['2024-02-29', '2025-03-01', 366, true],
+    ['2025-01-01', '2025-12-31', 364, false],
+    ['2025-01-01', '2026-01-01', 365, true],
+  ])('역년 자격과 end-exclusive: %s → %s (%i일)', (hireDate, leaveDate, serviceDays, eligible) => {
+    // 민법160: 해당일 없는 2월의 기간은 월말에 만료; 퇴직일은 그 다음 날.
+    const result = calculateSeverance(
+      createInput({ hireDate, leaveDate, ordinaryDailyWage: 100_000 }),
+    );
+    expect(result.serviceDays).toBe(serviceDays);
+    expect(result.isEligibleForStatutory).toBe(eligible);
+    expect(result.statutorySeverance > 0).toBe(eligible);
+  });
+
+  it.each([
+    ['2026-01-01', 92],
+    ['2026-05-29', 89],
+    ['2026-05-30', 90],
+    ['2026-05-31', 91],
+    ['2024-05-29', 90],
+    ['2024-05-30', 90],
+    ['2024-05-31', 91],
+    ['2026-07-31', 92],
+    ['2026-12-31', 92],
+    ['2026-08-31', 92],
+  ])('MOEL 공개 계산기 미산입기간 없는 월말 기간: %s → %i일', (leaveDate, days) => {
+    // retire_cal.js setDate의 5월 idx=3 예외/나머지 idx=4 첫달 dd 분기에서 독립 산정.
+    const result = calculateSeverance(createInput({ hireDate: '2020-01-01', leaveDate }));
+    expect(result.threeMonthDays).toBe(days);
+  });
+
   // ─── §1: 기본 케이스 (근속 3년 10개월) ───
   it('근속 3년 월급 300만 → 법정퇴직금 계산', () => {
-    // 2020-01-01 ~ 2023-12-31 = 1,461일 (4년, 윤년 포함)
-    // 재직연수 = 1461 / 365 = 4.002...
-    // serviceYearsRounded = Math.floor(4.002) = 4
+    // 2020-01-01 ~ 2023-12-31 종료일 제외 = 1,460일
+    // 재직연수 = 1460 / 365 = 4
+    // 기존 세금 참고 계산의 근속연수 = 4
     const result = calculateSeverance(
       createInput({
         hireDate: '2020-01-01',
@@ -50,20 +183,20 @@ describe('calculateSeverance', () => {
       }),
     );
 
-    expect(result.serviceDays).toBe(1461);
-    expect(result.serviceYears).toBeCloseTo(4.0027, 3);
+    expect(result.serviceDays).toBe(1460);
+    expect(result.serviceYears).toBe(4);
     expect(result.serviceYearsRounded).toBe(4);
 
     // 3개월 임금 = 3M × 3 = 9M
     // 일수 = 2023-10-01 ~ 2023-12-31 = 92일
-    // avgDailyWage = floor(9,000,000 / 92) = floor(97,826.09) = 97,826
+    // avgDailyWage = 9,000,000 / 92; 일 임금 중간 절사 없음
     expect(result.threeMonthDays).toBe(92);
-    expect(result.averageDailyWage).toBe(97_826);
+    expect(result.averageDailyWage).toBeCloseTo(97_826.08695652174, 8);
 
     // 법정퇴직금 = 97,826 × 30 × (1461 / 365) = 97,826 × 30 × 4.0027...
     // = 97,826 × 120.08... = 11,750,XXX
-    expect(result.statutorySeverance).toBeGreaterThan(11_000_000);
-    expect(result.statutorySeverance).toBeLessThan(12_000_000);
+    expect(result.statutorySeverance).toBe(11_739_130);
+    expect(result.wageBasis).toBe('averageOnly');
   });
 
   // ─── §2: 재직 1년 미만 → 법정 의무 없음 ───
@@ -75,24 +208,18 @@ describe('calculateSeverance', () => {
       }),
     );
 
-    expect(result.serviceDays).toBe(182); // 2023-07-01 ~ 2023-12-29 = 182일
+    expect(result.serviceDays).toBe(181); // 퇴직일 제외
     expect(result.statutorySeverance).toBe(0);
     expect(result.warnings).toContain('재직 1년 미만은 법정 퇴직금 지급 의무가 없습니다.');
   });
 
-  // ─── §3: 퇴사일 < 입사일 ───
-  it('퇴사일 < 입사일 → 결과 0 + 경고', () => {
-    const result = calculateSeverance(
-      createInput({
-        hireDate: '2023-12-31',
-        leaveDate: '2023-01-01',
-      }),
-    );
-
-    expect(result.serviceDays).toBe(0);
-    expect(result.warnings).toContain('퇴사일은 입사일보다 이후여야 합니다.');
+  it('퇴직일이 입사일 이전 또는 같은 날이면 오류', () => {
+    for (const leaveDate of ['2023-01-01', '2023-12-31']) {
+      expect(() => calculateSeverance(createInput({ hireDate: '2023-12-31', leaveDate }))).toThrow(
+        '입사일보다 이후',
+      );
+    }
   });
-
   // ─── §4: 근속연수공제 경계 — 5년 ───
   it('근속 5년 → 근속공제 = 5 × 1,000,000 = 5,000,000', () => {
     const result = calculateSeverance(
@@ -178,33 +305,21 @@ describe('calculateSeverance', () => {
     expect(result.convertedSalaryDeduction).toBe(0);
   });
 
-  // ─── §9: 환산급여공제 경계 — 1억 원 ───
-  it('환산급여 1억 원 → 공제 = 61,700,000 (실제 75,200,000)', () => {
-    // 근속 10년, 퇴직금으로부터 환산급여가 1억이 되도록
-    // 환산급여 = (퇴직금 - 15M) × 12 / 10 = 1억
-    // → 퇴직금 = (1억 / 12) × 10 + 15M = 83.33M + 15M = 98.33M
-    //
-    // 실제로는 근사값으로 테스트:
-    // 환산급여 1억에서 공제 구간:
-    // 1억은 7,000만 < 1억 ≤ 3억이므로
-    // base(45,200,000) + (100M - 70M) × 0.55 = 45.2M + 16.5M = 61.7M
+  it('기존 퇴직소득세 공제 계산: 정밀 퇴직금 반영 후 독립 수작업 fixture', () => {
     const result = calculateSeverance(
       createInput({
         hireDate: '2014-01-01',
-        leaveDate: '2024-01-01', // 10년
+        leaveDate: '2024-01-01',
         monthlyOrdinaryWage: 10_000_000,
-        includeTax: true,
       }),
     );
-
-    expect(result.serviceYearsRounded).toBe(10);
-    // 환산급여가 대략 이 범위에 들어올 것 (정확한 계산은 법정퇴직금에 따라)
-    // 여기서는 공제 함수의 정확성 검증
-    if (result.convertedSalary === 100_000_000) {
-      expect(result.convertedSalaryDeduction).toBe(61_700_000);
-    }
+    // 3천만원/92일 ×30×3652/365 = 97,879,690원(반올림).
+    // (97,879,690-15,000,000)×12/10=99,455,628.
+    // 45,200,000+(99,455,628-70,000,000)×55%=61,400,595.4.
+    expect(result.statutorySeverance).toBe(97_879_690);
+    expect(result.convertedSalary).toBe(99_455_628);
+    expect(result.convertedSalaryDeduction).toBe(61_400_595);
   });
-
   // ─── §10: 상여금·연차수당 3개월분 반영 ───
   it('연간 상여금 1,200만 + 연차수당 480만 → 3개월분 가산', () => {
     // 3개월 임금 = 300만 × 3 + 1,200만 × 3/12 + 480만 × 3/12 + 0
@@ -259,7 +374,7 @@ describe('calculateSeverance', () => {
   });
 
   // ─── 추가 1: 윤년 처리 (2024는 윤년) ───
-  it('2024-01-01 ~ 2024-12-31 (윤년) → 366일', () => {
+  it('2024-01-01 ~ 2024-12-31 종료일 제외 → 365일, 역년 1년 미만', () => {
     const result = calculateSeverance(
       createInput({
         hireDate: '2024-01-01',
@@ -269,7 +384,9 @@ describe('calculateSeverance', () => {
       }),
     );
 
-    expect(result.serviceDays).toBe(366);
+    expect(result.serviceDays).toBe(365);
+    expect(result.isEligibleForStatutory).toBe(false);
+    expect(result.statutorySeverance).toBe(0);
   });
 
   // ─── 추가 2: 지방소득세 (퇴직소득세의 10%) ───
@@ -299,7 +416,9 @@ describe('calculateSeverance', () => {
       }),
     );
 
-    expect(result.warnings).toContain('월 통상임금이 0원입니다. 계산 불가능합니다.');
+    expect(result.warnings).toContain(
+      '평균임금 자료의 합계가 0원입니다. 실제 지급된 임금 자료를 확인해 주세요.',
+    );
   });
 
   // ─── 추가 4: 정확한 기초일수 계산 (3개월 구간) ───
@@ -335,7 +454,7 @@ describe('calculateSeverance', () => {
   });
 
   // ─── 추가 6: 10원 단위 절사 (법정퇴직금) ───
-  it('법정퇴직금은 10원 단위 절사', () => {
+  it('퇴직소득세와 지방소득세 참고 계산은 기존 10원 단위 절사 유지', () => {
     const result = calculateSeverance(
       createInput({
         hireDate: '2020-01-01',

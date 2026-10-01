@@ -6,7 +6,7 @@
  * - 지방세법 §111 (세율) + §111의2 (1세대1주택 특례)
  * - 지방세법 §112 (도시지역분)
  * - 지방세법 §150 (지방교육세)
- * - 공정시장가액비율 고시 (주택 60%)
+ * - 지방세법 시행령 §109 (일반 60%, 2026년 1세대1주택 43·44·45%)
  *
  * 상수: src/lib/constants/tax-rates-2026.ts
  * 명세: docs/calculator-spec/재산세.md
@@ -18,6 +18,7 @@ import {
   PROPERTY_TAX_BRACKETS_GENERAL,
   PROPERTY_TAX_BRACKETS_ONE_HOUSE,
   PROPERTY_TAX_ASSESSMENT_RATIO,
+  PROPERTY_TAX_ONE_HOUSE_ASSESSMENT_RATIOS_2026,
   PROPERTY_EDUCATION_TAX_RATE,
   PROPERTY_URBAN_AREA_TAX_RATE,
   PROPERTY_ONE_HOUSE_SPECIAL_CAP,
@@ -39,14 +40,16 @@ const INSTALLMENT_THRESHOLD = 200_000;
 export interface PropertyTaxInput {
   /** 공시가격 (원) */
   publishedPrice: number;
-  /** 1세대1주택 특례 신청 여부 */
+  /** 시행령 §110의2에 따른 1세대1주택 해당 여부 (9억원 세율 특례와 별도) */
   oneHouseholdOneHouse: boolean;
   /** 도시지역 여부 */
   urbanArea: boolean;
 }
 
 export interface PropertyTaxResult {
-  /** 과세표준 (공시가 × 공정시장가액비율 60%) */
+  /** 적용한 공정시장가액비율 (일반 60%, 2026년 1세대1주택 43·44·45%) */
+  assessmentRatio: number;
+  /** 과세표준 (공시가 × 적용 비율, 과세표준 상한은 별도) */
   taxBase: number;
   /** 적용 세율 유형 */
   appliedBracket: 'general' | 'oneHouseSpecial';
@@ -72,24 +75,34 @@ export interface PropertyTaxResult {
 
 /**
  * 과세표준 계산
- * 공시가격 × 공정시장가액비율 60%
+ * 공시가격 × 공정시장가액비율. 자격 미지정인 기존 호출은 일반 60% 유지.
  */
-export function calculateTaxBase(publishedPrice: number): number {
-  if (publishedPrice <= 0) return 0;
-  return Math.floor(publishedPrice * PROPERTY_TAX_ASSESSMENT_RATIO);
+export function calculateTaxBase(publishedPrice: number, oneHouseholdOneHouse = false): number {
+  if (!Number.isSafeInteger(publishedPrice) || publishedPrice < 0) {
+    throw new Error('공시가격은 0 이상의 유효한 원 단위 금액으로 입력해 주세요.');
+  }
+  const ratio = calculateAssessmentRatio(publishedPrice, oneHouseholdOneHouse);
+  // 비율의 이진 부동소수점 오차로 1원 경계가 어긋나지 않도록 정수 유리수 계산.
+  return Number((BigInt(publishedPrice) * BigInt(Math.round(ratio * 100))) / BigInt(100));
+}
+
+export function calculateAssessmentRatio(
+  publishedPrice: number,
+  oneHouseholdOneHouse = false,
+): number {
+  if (!oneHouseholdOneHouse) return PROPERTY_TAX_ASSESSMENT_RATIO;
+  const ratios = PROPERTY_TAX_ONE_HOUSE_ASSESSMENT_RATIOS_2026;
+  if (publishedPrice <= 300_000_000) return ratios.upToThreeHundredMillion;
+  if (publishedPrice <= 600_000_000) return ratios.upToSixHundredMillion;
+  return ratios.aboveSixHundredMillion;
 }
 
 /**
  * 적용 세율 구간 선택
  * 1세대1주택 특례: 공시가 9억 이하일 때만 적용
  */
-export function selectPropertyTaxBrackets(
-  input: PropertyTaxInput,
-): 'general' | 'oneHouseSpecial' {
-  if (
-    input.oneHouseholdOneHouse &&
-    input.publishedPrice <= PROPERTY_ONE_HOUSE_SPECIAL_CAP
-  ) {
+export function selectPropertyTaxBrackets(input: PropertyTaxInput): 'general' | 'oneHouseSpecial' {
+  if (input.oneHouseholdOneHouse && input.publishedPrice <= PROPERTY_ONE_HOUSE_SPECIAL_CAP) {
     return 'oneHouseSpecial';
   }
   return 'general';
@@ -131,9 +144,10 @@ export function calculateLocalEducationTax(propertyTax: number): number {
  * 20만원 이하: 7월 일괄
  * 초과: 7월 1/2, 9월 1/2 (분할 합계는 정확히 총액)
  */
-export function splitInstallments(
-  totalTax: number,
-): { installmentJuly: number; installmentSeptember: number } {
+export function splitInstallments(totalTax: number): {
+  installmentJuly: number;
+  installmentSeptember: number;
+} {
   if (totalTax <= INSTALLMENT_THRESHOLD) {
     return { installmentJuly: totalTax, installmentSeptember: 0 };
   }
@@ -156,13 +170,18 @@ export function calculatePropertyTaxTotal(input: PropertyTaxInput): PropertyTaxR
   const warnings: string[] = [];
 
   // 과세표준 계산
-  const taxBase = calculateTaxBase(input.publishedPrice);
+  const taxBase = calculateTaxBase(input.publishedPrice, input.oneHouseholdOneHouse);
+  const assessmentRatio = calculateAssessmentRatio(
+    input.publishedPrice,
+    input.oneHouseholdOneHouse,
+  );
 
   // 공시가 0 체크
   if (input.publishedPrice <= 0) {
     warnings.push('공시가격을 입력해 주세요.');
     return {
       taxBase: 0,
+      assessmentRatio,
       appliedBracket: 'general',
       propertyTax: 0,
       urbanAreaTax: 0,
@@ -184,7 +203,7 @@ export function calculatePropertyTaxTotal(input: PropertyTaxInput): PropertyTaxR
   // 특례 신청했지만 9억 초과인 경우 경고
   if (input.oneHouseholdOneHouse && input.publishedPrice > PROPERTY_ONE_HOUSE_SPECIAL_CAP) {
     warnings.push(
-      '공시가격이 9억원을 초과하여 1세대1주택 특례가 적용되지 않아 일반세율을 적용했습니다.',
+      '공시가격이 9억원을 초과하여 1세대1주택 세율 특례가 적용되지 않아 일반세율을 적용했습니다. 1세대1주택 공정시장가액비율 45%는 유지됩니다.',
     );
   }
 
@@ -205,7 +224,7 @@ export function calculatePropertyTaxTotal(input: PropertyTaxInput): PropertyTaxR
 
   // 공통 경고 (MVP 에서 세부담 상한 미반영)
   warnings.push(
-    '본 계산은 기본세율 기준이며, 세부담 상한·지역자원시설세 등은 제외되어 있습니다.',
+    '본 계산은 기본세율 기준의 예상액이며, 과세표준 상한·세부담 상한·지역자원시설세 등은 제외되어 있습니다. 실제 고지액은 달라질 수 있습니다.',
   );
 
   // 도시지역분 적용 안내
@@ -215,6 +234,7 @@ export function calculatePropertyTaxTotal(input: PropertyTaxInput): PropertyTaxR
 
   return {
     taxBase,
+    assessmentRatio,
     appliedBracket,
     propertyTax,
     urbanAreaTax,

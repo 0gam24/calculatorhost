@@ -241,6 +241,14 @@ export const PROPERTY_TAX_BRACKETS_ONE_HOUSE: TaxBracket[] = [
 ];
 
 export const PROPERTY_TAX_ASSESSMENT_RATIO = 0.6; // 공정시장가액비율
+/** 2026년 1세대1주택 공정시장가액비율: 시행령 §109② (9억원 세율 특례와 별도)
+ * https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0109&lsiSeq=290815&urlMode=lsScJoRltInfoR
+ */
+export const PROPERTY_TAX_ONE_HOUSE_ASSESSMENT_RATIOS_2026 = {
+  upToThreeHundredMillion: 0.43,
+  upToSixHundredMillion: 0.44,
+  aboveSixHundredMillion: 0.45,
+} as const;
 export const PROPERTY_EDUCATION_TAX_RATE = 0.2; // 재산세의 20%
 /** 도시지역분 세율 — 지방세법 §112 */
 export const PROPERTY_URBAN_AREA_TAX_RATE = 0.0014; // 0.14%

@@ -438,18 +438,14 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
 
   describe('재산세 — 공시가격 기준 누진세', () => {
     // ─────────────────────────────────────────────────────────────
-    // 케이스 13: 1세대1주택 공시가 2.1억 (특례 0.05% 구간)
+    // 케이스 13: 2026년 1세대1주택 공시가 2.1억 (비율43%, 특례0.1% 구간)
     // ─────────────────────────────────────────────────────────────
     // 입력: { publishedPrice: 210_000_000, oneHouseholdOneHouse: true, urbanArea: true }
-    // 과세표준 = 210M × 60% = 126M (공정시장가액비율)
-    // 특례 세율 구간 = 126M는 6천만~1.5억 사이이므로 0.1% (특례 상한)
-    // 재산세 = 126M × 0.001 - 30K = 126K - 30K = 96K (누진공제 3만)
-    // 도시지역분 = 126M × 0.14% = 176.4K
-    // 지교세 = 96K × 20% = 19.2K
-    // 총 = 96K + 176.4K + 19.2K = 291.6K → 290K (10원 단위 절사)
-    // 근거: 지방세법 §111의2 (1세대1주택 특례, 공시가 9억 이하)
-    // 검증: 홈택스 재산세 계산 (평촌·수원 아파트 실거래 사례)
-    it('재산세 1세대1주택 2.1억원 도시지역: 특례 0.1% + 도시지역분 + 교육세 → 29만원', () => {
+    // 과세표준 = 210M ×43%=90.3M (시행령109②의 3억 이하43%)
+    // 본세 =30K+(90.3M-60M)×0.001=60,300 (111의2 공식 세율표)
+    // 도시지역분 =90.3M×0.14%=126,420; 지방교육세=60,300×20%=12,060
+    // 기본세율 예상합계=60,300+126,420+12,060=198,780원. 상한 등 별도.
+    it('2026 재산세 1세대1주택 2.1억원 도시지역: 비율43% → 198780원', () => {
       const result = calculatePropertyTaxTotal({
         publishedPrice: 210_000_000,
         oneHouseholdOneHouse: true,
@@ -457,20 +453,20 @@ describe('Cross-Verification: Real Estate Tax (부동산세 교차검증)', () =
       });
 
       // 과세표준
-      expect(result.taxBase).toBe(126_000_000); // 210M × 0.6
+      expect(result.taxBase).toBe(90_300_000);
+      expect(result.assessmentRatio).toBe(0.43);
 
       // 특례 적용 여부
       expect(result.appliedBracket).toBe('oneHouseSpecial');
 
-      // 본세 (재산세법 구간: 6천~1.5억은 0.1%, 누진공제 3만)
-      // 126M × 0.001 - 30K = 126K - 30K = 96K → 960,000
-      expect(result.propertyTax).toBeGreaterThan(0);
+      expect(result.propertyTax).toBe(60_300);
 
       // 도시지역분 포함 여부
-      expect(result.urbanAreaTax).toBeGreaterThan(0);
+      expect(result.urbanAreaTax).toBe(126_420);
+      expect(result.localEducationTax).toBe(12_060);
 
       // 총 납부액
-      expect(result.totalTax).toBeGreaterThan(0);
+      expect(result.totalTax).toBe(198_780);
     });
 
     // ─────────────────────────────────────────────────────────────

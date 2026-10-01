@@ -179,6 +179,94 @@ describe('splitInstallments', () => {
 });
 
 describe('calculatePropertyTaxTotal', () => {
+  it.each([
+    [299_999_999, 0.43, 128_999_999, 'oneHouseSpecial'],
+    [300_000_000, 0.43, 129_000_000, 'oneHouseSpecial'],
+    [300_000_001, 0.44, 132_000_000, 'oneHouseSpecial'],
+    [599_999_999, 0.44, 263_999_999, 'oneHouseSpecial'],
+    [600_000_000, 0.44, 264_000_000, 'oneHouseSpecial'],
+    [600_000_001, 0.45, 270_000_000, 'oneHouseSpecial'],
+    [899_999_999, 0.45, 404_999_999, 'oneHouseSpecial'],
+    [900_000_000, 0.45, 405_000_000, 'oneHouseSpecial'],
+    [900_000_001, 0.45, 405_000_000, 'general'],
+  ])(
+    '2026 ratio 및 세율 특례 독립 경계 공시 %i원',
+    (publishedPrice, ratio, taxBase, appliedBracket) => {
+      // 시행령109② 정수 가격×43/44/45÷100, 111의2의9억 cap는 세율에만 적용.
+      const result = calculatePropertyTaxTotal({
+        publishedPrice,
+        oneHouseholdOneHouse: true,
+        urbanArea: false,
+      });
+      expect(result.assessmentRatio).toBe(ratio);
+      expect(result.taxBase).toBe(taxBase);
+      expect(result.appliedBracket).toBe(appliedBracket);
+      expect(calculateTaxBase(publishedPrice, true)).toBe(taxBase);
+    },
+  );
+
+  it.each([
+    [300_000_000, 99_000, 19_800, 180_600, 299_400],
+    [600_000_000, 348_000, 69_600, 369_600, 787_200],
+    [900_000_000, 787_500, 157_500, 567_000, 1_512_000],
+  ])(
+    '공시%i 1주택 도시지역 독립 금액 fixture',
+    (publishedPrice, propertyTax, educationTax, urbanTax, total) => {
+      // 각 과표129/264/405M: 본세 과표×특례세율-누진공제, 교육본세20%, 도시과표0.14%.
+      const result = calculatePropertyTaxTotal({
+        publishedPrice,
+        oneHouseholdOneHouse: true,
+        urbanArea: true,
+      });
+      expect(result.propertyTax).toBe(propertyTax);
+      expect(result.localEducationTax).toBe(educationTax);
+      expect(result.urbanAreaTax).toBe(urbanTax);
+      expect(result.totalTax).toBe(total);
+      expect(result.installmentJuly + result.installmentSeptember).toBe(total);
+    },
+  );
+
+  it('1주택 9억 초과는45% 과표와 일반세율을 함께 적용', () => {
+    const result = calculatePropertyTaxTotal({
+      publishedPrice: 900_000_001,
+      oneHouseholdOneHouse: true,
+      urbanArea: true,
+    });
+    expect(result.assessmentRatio).toBe(0.45);
+    expect(result.propertyTax).toBe(990_000);
+    expect(result.localEducationTax).toBe(198_000);
+    expect(result.urbanAreaTax).toBe(567_000);
+    expect(result.totalTax).toBe(1_755_000);
+  });
+
+  it('자격 미지정 calculateTaxBase는 기존 일반60% 계약 유지', () => {
+    expect(calculateTaxBase(600_000_000)).toBe(360_000_000);
+    const result = calculatePropertyTaxTotal({
+      publishedPrice: 600_000_000,
+      oneHouseholdOneHouse: false,
+      urbanArea: false,
+    });
+    expect(result.assessmentRatio).toBe(0.6);
+  });
+
+  it.each([-1, NaN, Infinity, -Infinity, 0.5])(
+    '잘못된 공시가격 %s는 결과 대신 오류',
+    (publishedPrice) => {
+      expect(() =>
+        calculatePropertyTaxTotal({ publishedPrice, oneHouseholdOneHouse: true, urbanArea: false }),
+      ).toThrow('공시가격');
+    },
+  );
+
+  it('상한 미반영 예상액을 실제 고지액으로 확언하지 않는다', () => {
+    const result = calculatePropertyTaxTotal({
+      publishedPrice: 600_000_000,
+      oneHouseholdOneHouse: true,
+      urbanArea: false,
+    });
+    expect(result.warnings).toContainEqual(expect.stringContaining('과세표준 상한·세부담 상한'));
+  });
+
   it('공시 3억 일반 → 과표 1.8억 → 본세 27만 + 도시 25.2만 + 교육 5.4만', () => {
     const result = calculatePropertyTaxTotal({
       publishedPrice: 300_000_000,
@@ -203,8 +291,12 @@ describe('calculatePropertyTaxTotal', () => {
     });
 
     expect(result.appliedBracket).toBe('oneHouseSpecial');
-    // 과표 3.6억 (3억 초과), 특례 0.35% - 63만 = 1,260,000 - 630,000 = 630,000
-    expect(result.propertyTax).toBe(630_000);
+    // 2026 ratio44% 과표2.64억, 특례0.2%-18만원=348000원.
+    expect(result.assessmentRatio).toBe(0.44);
+    expect(result.taxBase).toBe(264_000_000);
+    expect(result.propertyTax).toBe(348_000);
+    expect(result.localEducationTax).toBe(69_600);
+    expect(result.totalTax).toBe(417_600);
   });
 
   it('공시 9억 1세대1주택 경계 → 특례 적용', () => {
@@ -215,9 +307,7 @@ describe('calculatePropertyTaxTotal', () => {
     });
 
     expect(result.appliedBracket).toBe('oneHouseSpecial');
-    expect(result.warnings).not.toContainEqual(
-      expect.stringContaining('특례가 적용되지 않'),
-    );
+    expect(result.warnings).not.toContainEqual(expect.stringContaining('특례가 적용되지 않'));
   });
 
   it('공시 9.5억 1세대1주택 신청 → 특례 미적용 + warning', () => {
@@ -228,9 +318,7 @@ describe('calculatePropertyTaxTotal', () => {
     });
 
     expect(result.appliedBracket).toBe('general');
-    expect(result.warnings).toContainEqual(
-      expect.stringContaining('특례가 적용되지 않'),
-    );
+    expect(result.warnings).toContainEqual(expect.stringContaining('특례가 적용되지 않'));
   });
 
   it('공시 1억 일반 → 과표 6000만 → 본세 6만', () => {
@@ -244,7 +332,7 @@ describe('calculatePropertyTaxTotal', () => {
     expect(result.propertyTax).toBe(60_000);
   });
 
-  it('공시 1억 1세대1주택 → 과표 6000만 → 본세 3만', () => {
+  it('공시 1억 1세대1주택 → 과표 4300만 → 본세 21500원', () => {
     const result = calculatePropertyTaxTotal({
       publishedPrice: 100_000_000,
       oneHouseholdOneHouse: true,
@@ -252,7 +340,8 @@ describe('calculatePropertyTaxTotal', () => {
     });
 
     expect(result.appliedBracket).toBe('oneHouseSpecial');
-    expect(result.propertyTax).toBe(30_000);
+    expect(result.taxBase).toBe(43_000_000);
+    expect(result.propertyTax).toBe(21_500);
   });
 
   it('공시 0 → 0 + warning', () => {

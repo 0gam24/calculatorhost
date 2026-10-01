@@ -1,7 +1,10 @@
 'use client';
 import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
 
-import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import {
+  CalculatorWorkspace,
+  useCalculatorWorkspace,
+} from '@/components/calculator/CalculatorWorkspace';
 import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
@@ -11,14 +14,18 @@ import { useCalculatorState } from '@/components/calculator/useCalculatorState';
  * 공식: src/lib/tax/severance.ts
  */
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard, type ResultRowProps } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
 import { calculateSeverance, type SeverancePlanType } from '@/lib/tax/severance';
-import { formatKRW } from '@/lib/utils';
+
+// Preserve the corrected formula's won precision; the shared formatter truncates tens.
+const formatKRW = (value: number) => `${Math.round(value).toLocaleString('ko-KR')}원`;
+const formatDailyKRW = (value: number) =>
+  `${value.toLocaleString('ko-KR', { maximumFractionDigits: 2 })}원`;
 
 // ============================================
 // 입력 UI 상수
@@ -34,6 +41,27 @@ const ALLOWANCE_UNIT_BUTTONS = [
   { label: '백만', value: 1_000_000 },
   { label: '십만', value: 100_000 },
 ];
+
+function SeveranceReadiness({ error }: { error?: string }) {
+  const reportValidity = useCalculatorWorkspace()?.reportValidity;
+  useEffect(() => {
+    reportValidity?.('severance:conditions', error);
+    return () => reportValidity?.('severance:conditions');
+  }, [error, reportValidity]);
+  if (!error) return null;
+  return (
+    <div
+      data-testid="severance-conditions"
+      tabIndex={-1}
+      aria-invalid="true"
+      aria-live="polite"
+      className="rounded-lg border border-border-base p-4 text-sm text-text-primary"
+    >
+      <strong>조건 확인 필요</strong>
+      <p className="mt-1">{error}</p>
+    </div>
+  );
+}
 
 // ============================================
 // 메인 계산기 컴포넌트
@@ -56,6 +84,29 @@ export function SeveranceCalculator() {
     'severance:annualLeaveAllowance',
     0,
   ); // 연차수당
+  const [ordinaryWageMode, setOrdinaryWageMode] = useCalculatorState<'daily' | 'monthly'>(
+    'severance:ordinaryWageMode',
+    'daily',
+  );
+  const [ordinaryDailyWage, setOrdinaryDailyWage] = useCalculatorState(
+    'severance:ordinaryDailyWage',
+    0,
+  );
+  const [retirementMonthlyOrdinaryWage, setRetirementMonthlyOrdinaryWage] = useCalculatorState(
+    'severance:retirementMonthlyOrdinaryWage',
+    0,
+  );
+  const [monthlyOrdinaryHours, setMonthlyOrdinaryHours] = useCalculatorState(
+    'severance:monthlyOrdinaryHours',
+    209,
+  );
+  const [dailyOrdinaryHours, setDailyOrdinaryHours] = useCalculatorState(
+    'severance:dailyOrdinaryHours',
+    8,
+  );
+  const [workCondition, setWorkCondition] = useCalculatorState<
+    'unknown' | 'ordinary' | 'shortHours' | 'exception'
+  >('severance:workCondition', 'unknown');
 
   // 퇴직연금 제도 & 세금
   const [planType, setPlanType] = useCalculatorState<SeverancePlanType>(
@@ -65,24 +116,53 @@ export function SeveranceCalculator() {
   const [includeTax, setIncludeTax] = useCalculatorState('severance:includeTax', true);
 
   // 계산 수행
-  const result = useMemo(() => {
-    if (!hireDate || !leaveDate || monthlyOrdinaryWage <= 0) {
-      return null;
-    }
-
+  const { result, error } = useMemo(() => {
     try {
-      return calculateSeverance({
+      if (!hireDate || !leaveDate)
+        throw new Error('입사일과 마지막 근무일 다음날인 퇴직일을 입력해 주세요.');
+      if (workCondition !== 'ordinary')
+        throw new Error(
+          '주 15시간 이상이고 휴직·임금 변동 등 별도 검토 사항이 없는 일반 근무 조건만 지원합니다. 해당 여부를 확인하거나 고용노동부·회사 담당자에게 산정을 요청해 주세요.',
+        );
+      if (!Number.isFinite(monthlyOrdinaryWage) || monthlyOrdinaryWage <= 0)
+        throw new Error(
+          '직전 3개월 임금의 월평균 기초액을 입력해 주세요. 0원과 미입력은 확정 계산할 수 없습니다.',
+        );
+      const dailyWage =
+        ordinaryWageMode === 'daily'
+          ? ordinaryDailyWage
+          : (retirementMonthlyOrdinaryWage / monthlyOrdinaryHours) * dailyOrdinaryHours;
+      if (
+        ordinaryWageMode === 'monthly' &&
+        (!Number.isFinite(monthlyOrdinaryHours) ||
+          monthlyOrdinaryHours <= 0 ||
+          !Number.isFinite(dailyOrdinaryHours) ||
+          dailyOrdinaryHours <= 0 ||
+          !Number.isFinite(retirementMonthlyOrdinaryWage) ||
+          retirementMonthlyOrdinaryWage <= 0)
+      )
+        throw new Error('퇴직 당시 월 통상임금과 월·일 통상임금 산정 시간을 확인해 주세요.');
+      if (!Number.isFinite(dailyWage) || dailyWage <= 0)
+        throw new Error(
+          '퇴직 당시 1일 통상임금을 확인해 입력해 주세요. 평균임금 자료를 통상임금으로 자동 적용하지 않습니다.',
+        );
+      const calculated = calculateSeverance({
         hireDate,
         leaveDate,
         monthlyOrdinaryWage,
-        monthlyExtraAllowance: Math.max(0, monthlyExtraAllowance),
-        annualBonus: Math.max(0, annualBonus),
-        annualLeaveAllowance: Math.max(0, annualLeaveAllowance),
+        ordinaryDailyWage: dailyWage,
+        monthlyExtraAllowance,
+        annualBonus,
+        annualLeaveAllowance,
         planType,
         includeTax,
       });
-    } catch {
-      return null;
+      return { result: calculated, error: undefined };
+    } catch (cause) {
+      return {
+        result: null,
+        error: cause instanceof Error ? cause.message : '입력 조건을 확인해 주세요.',
+      };
     }
   }, [
     hireDate,
@@ -93,6 +173,12 @@ export function SeveranceCalculator() {
     annualLeaveAllowance,
     planType,
     includeTax,
+    ordinaryWageMode,
+    ordinaryDailyWage,
+    retirementMonthlyOrdinaryWage,
+    monthlyOrdinaryHours,
+    dailyOrdinaryHours,
+    workCondition,
   ]);
 
   // 결과 카드 행 구성
@@ -110,12 +196,26 @@ export function SeveranceCalculator() {
       },
       {
         label: '1일 평균임금',
-        value: formatKRW(result.averageDailyWage),
+        value: formatDailyKRW(result.averageDailyWage),
       },
       {
         label: '법정 퇴직금',
         value: formatKRW(result.statutorySeverance),
       },
+      {
+        label: '1일 통상임금',
+        value:
+          result.ordinaryDailyWage === null ? '미확인' : formatDailyKRW(result.ordinaryDailyWage),
+      },
+      {
+        label: '적용 1일 임금',
+        value: formatDailyKRW(result.basisDailyWage),
+        note:
+          result.wageBasis === 'ordinary'
+            ? '통상임금이 평균임금보다 높아 적용'
+            : '평균임금과 통상임금 비교 후 적용',
+      },
+      { label: '직전 3개월 산정일수', value: `${result.threeMonthDays.toLocaleString('ko-KR')}일` },
     ];
 
     // 세금 포함 시에만 추가 항목
@@ -159,8 +259,8 @@ export function SeveranceCalculator() {
     return (
       <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
         <p className="text-sm text-text-secondary">
-          DC형은 실제 적립금·운용수익을 기반으로 합니다. 본 계산기는 법정 평균임금 기준 추정치만
-          제공합니다.
+          DC형의 실제 수령액은 적립금·운용수익 등을 확인해야 합니다. 아래 값은 평균임금과 통상임금을
+          비교한 법정 퇴직금 기준 참고액이며, 실제 DC 적립금·수령액 계산을 지원하지 않습니다.
         </p>
       </div>
     );
@@ -181,6 +281,7 @@ export function SeveranceCalculator() {
                 <input
                   id="hire-date"
                   type="date"
+                  required
                   value={hireDate}
                   onChange={(e) => setHireDate(e.target.value)}
                   className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
@@ -189,11 +290,12 @@ export function SeveranceCalculator() {
               </div>
               <div className="flex flex-col gap-2">
                 <label htmlFor="leave-date" className="text-sm font-medium text-text-primary">
-                  퇴사일
+                  퇴직일 (마지막 근무일 다음날)
                 </label>
                 <input
                   id="leave-date"
                   type="date"
+                  required
                   value={leaveDate}
                   onChange={(e) => setLeaveDate(e.target.value)}
                   className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
@@ -201,18 +303,99 @@ export function SeveranceCalculator() {
                 />
               </div>
             </div>
+            <p className="text-sm text-text-secondary">
+              퇴직일은 마지막으로 근무한 날의 다음날입니다. 이전 화면의 ‘퇴사일’로 저장한 날짜는
+              그대로 유지합니다. 마지막 근무일을 넣었다면 직접 확인해 수정하세요. 자동으로 하루를
+              더하지 않으며, 입력한 퇴직일은 재직기간에서 제외합니다.
+            </p>
 
             {/* 월 통상임금 */}
             <NumberInput
               id="monthly-ordinary-wage"
-              label="퇴직 전 3개월 월 통상임금"
+              label="직전 3개월 월평균 임금 기초액"
               value={monthlyOrdinaryWage}
               onChange={setMonthlyOrdinaryWage}
               placeholder="예: 3000000"
               unit="원"
               unitButtons={WAGE_UNIT_BUTTONS}
-              helpText="기본급 + 직책급 + 고정 수당 (상여금·연차 제외)"
+              min={1}
+              helpText="직전 3개월의 기본급·고정수당 합계 ÷ 3입니다. 아래에 별도 입력하는 기타수당·상여금·연차수당을 중복 포함하지 마세요. 퇴직 당시 통상임금과는 별도 자료입니다."
             />
+
+            <RadioGroup<'unknown' | 'ordinary' | 'shortHours' | 'exception'>
+              id="work-condition"
+              label="근무 조건 확인"
+              value={workCondition}
+              onChange={setWorkCondition}
+              options={[
+                { value: 'unknown', label: '확인 필요' },
+                { value: 'ordinary', label: '주 15시간 이상·별도 예외 없음' },
+                { value: 'shortHours', label: '주 15시간 미만' },
+                { value: 'exception', label: '휴직·불규칙 임금 등 예외' },
+              ]}
+            />
+            <p className="text-sm text-text-secondary">
+              평균임금 산정에서 제외할 휴직 기간이나 불규칙한 임금, 근로시간 변동 등이 있으면 별도
+              산정이 필요합니다. 이 화면은 해당 예외 조건의 확정 지급액을 계산하지 않습니다.
+            </p>
+            <RadioGroup<'daily' | 'monthly'>
+              id="ordinary-wage-mode"
+              label="퇴직 당시 통상임금 입력 방식"
+              value={ordinaryWageMode}
+              onChange={setOrdinaryWageMode}
+              options={[
+                { value: 'daily', label: '1일 통상임금 직접 입력' },
+                { value: 'monthly', label: '월 통상임금과 산정 시간' },
+              ]}
+            />
+            {ordinaryWageMode === 'daily' ? (
+              <NumberInput
+                id="ordinary-daily-wage"
+                label="퇴직 당시 1일 통상임금"
+                value={ordinaryDailyWage}
+                onChange={setOrdinaryDailyWage}
+                min={0}
+                unit="원"
+                helpText="회사 담당자 등에게 확인한 1일 통상임금을 입력하세요. 원 미만 소수 입력을 유지해 비교하며, 초기 0은 미확인 상태입니다."
+              />
+            ) : (
+              <>
+                <NumberInput
+                  id="retirement-monthly-ordinary-wage"
+                  label="퇴직 당시 월 통상임금"
+                  value={retirementMonthlyOrdinaryWage}
+                  onChange={setRetirementMonthlyOrdinaryWage}
+                  min={0}
+                  unit="원"
+                  unitButtons={WAGE_UNIT_BUTTONS}
+                  helpText="평균임금 계산 재료와 별개로 퇴직 당시 통상임금에 해당하는 월 금액을 확인하세요. 초기 0은 미확인입니다."
+                />
+                <div className="grid gap-4 md:grid-cols-2">
+                  <NumberInput
+                    id="monthly-ordinary-hours"
+                    label="월 통상임금 산정 기준시간"
+                    value={monthlyOrdinaryHours}
+                    onChange={setMonthlyOrdinaryHours}
+                    min={0}
+                    unit="시간"
+                  />
+                  <NumberInput
+                    id="daily-ordinary-hours"
+                    label="1일 소정근로시간"
+                    value={dailyOrdinaryHours}
+                    onChange={setDailyOrdinaryHours}
+                    min={0}
+                    max={24}
+                    unit="시간"
+                  />
+                </div>
+                <p className="text-sm text-text-secondary">
+                  1일 통상임금 = 월 통상임금 ÷ 월 산정 기준시간 × 1일 소정근로시간입니다. 기본
+                  209시간·8시간은 주 40시간·주 5일의 표준 근무 가정입니다. 단시간 근로자에게 그대로
+                  적용하지 마세요. 실제 산정 시간을 확인하거나 1일 통상임금을 직접 입력하세요.
+                </p>
+              </>
+            )}
 
             {/* 기타 수당 */}
             <CalculatorDetails
@@ -226,7 +409,7 @@ export function SeveranceCalculator() {
                 placeholder="0"
                 unit="원"
                 unitButtons={ALLOWANCE_UNIT_BUTTONS}
-                helpText="주휴수당·야간수당·연장수당 등 총액 (월 3개월간 합계)"
+                helpText="위 기초액에 포함하지 않은 평균임금 산입 대상 수당의 직전 3개월 합계입니다. 같은 임금을 중복 입력하지 마세요."
               />
 
               {/* 연간 상여금 */}
@@ -238,7 +421,7 @@ export function SeveranceCalculator() {
                 placeholder="0"
                 unit="원"
                 unitButtons={ALLOWANCE_UNIT_BUTTONS}
-                helpText="연 1회분 전체 금액 (1년간 예상액)"
+                helpText="평균임금 산입 대상으로 확인한 직전 1년 상여금 합계입니다. 예상 상여나 산입 대상이 아닌 금액은 넣지 마세요."
               />
 
               {/* 연차수당 */}
@@ -250,7 +433,7 @@ export function SeveranceCalculator() {
                 placeholder="0"
                 unit="원"
                 unitButtons={ALLOWANCE_UNIT_BUTTONS}
-                helpText="연간 사용하지 않은 연차 수당"
+                helpText="평균임금 산입 대상으로 확인한 직전 1년 연차수당입니다. 퇴직으로 새로 발생한 미사용 연차수당을 자동 포함하지 마세요."
               />
             </CalculatorDetails>
 
@@ -281,6 +464,7 @@ export function SeveranceCalculator() {
                 세금 계산 포함
               </label>
             </div>
+            <SeveranceReadiness error={error} />
           </div>
         </FormCard>
 
@@ -290,8 +474,15 @@ export function SeveranceCalculator() {
         {result ? (
           <>
             <ResultCard
-              title="퇴직금 계산 결과"
-              heroLabel={includeTax ? '세후 실수령액' : '법정 퇴직금'}
+              title={
+                planType === 'DC' ? '법정 기준 참고 계산 (DC 적립금 제외)' : '퇴직금 참고 계산 결과'
+              }
+              heroLabel={includeTax ? '세후 법정 기준 참고액' : '법정 퇴직금 참고액'}
+              heroNote={
+                planType === 'DC'
+                  ? 'DC 실제 적립금·운용수익 제외한 법정 기준 참고액 · 평균임금·통상임금 비교 · 최종 퇴직금 원 단위 반올림'
+                  : '평균임금과 통상임금 중 큰 금액 적용 · 최종 퇴직금은 원 단위 반올림 참고액'
+              }
               heroValue={
                 includeTax ? formatKRW(result.netSeverance) : formatKRW(result.statutorySeverance)
               }
@@ -342,7 +533,25 @@ export function SeveranceCalculator() {
             </ResultCard>
             <ResultBanner />
           </>
-        ) : null}
+        ) : (
+          <>
+            <ResultCard
+              title="조건 확인 필요"
+              heroLabel="퇴직금 참고 계산"
+              heroValue="조건을 확인해 주세요"
+              rows={[]}
+              empty
+            />
+            {error && (
+              <p
+                role="status"
+                className="rounded-lg border border-border-base p-4 text-sm text-text-primary"
+              >
+                {error}
+              </p>
+            )}
+          </>
+        )}
       </div>
     </CalculatorWorkspace>
   );

@@ -20,11 +20,20 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/severance/';
+const DESCRIPTION =
+  '입사일과 마지막 근무 다음 날인 퇴직일, 3개월 산입 임금과 1일 통상임금을 입력해 예상 퇴직금·퇴직소득세·세후 참고액을 확인합니다. 평균임금과 통상임금 중 큰 금액을 적용하며, DC 실제 적립금·휴직·중간정산은 별도 확인이 필요합니다.';
+const AVERAGE_WAGE_DESCRIPTION =
+  '평균임금은 퇴직일 이전 3개월의 산입 임금 총액을 그 기간의 실제 달력 일수로 나눈 1일 금액입니다. 상여금·연차수당은 산입 대상 여부를 먼저 확인합니다. 평균임금이 1일 통상임금보다 적으면 통상임금을 기준으로 합니다(근로기준법 §2).';
+const ORDINARY_WAGE_DESCRIPTION =
+  '통상임금은 소정근로의 대가로 정기적·일률적으로 지급하기로 정한 임금입니다. 상여금이라는 명칭만으로 일괄 제외하지 않으며, 지급 조건과 소정근로시간을 확인해 1일 통상임금을 별도로 입력해야 합니다.';
+const BONUS_DESCRIPTION =
+  '상여금과 연차수당은 평균임금 산입 대상인 연간 금액의 3/12을 3개월 임금에 더합니다. 연간 상여금 1,200만 원이 산입 대상이면 300만 원을 더합니다. 연차수당은 발생·지급 사유와 대상 연도를 확인하며, 퇴직으로 새로 발생하는 미사용 연차수당을 자동 포함하지 않습니다.';
+const PLAN_DESCRIPTION =
+  'DB형은 규약에 따른 급여를 지급하고, DC형은 사용자가 연간 임금총액의 1/12 이상을 부담금으로 납입합니다. DC 실제 수령액은 적립금과 운용 결과에 따라 달라지므로 이 계산기의 법정 기준 참고액과 같다고 볼 수 없습니다.';
 
 export const metadata: Metadata = {
   title: '퇴직금 계산기 2026 | 세후 실수령액·퇴직소득세 자동 계산',
-  description:
-    '입사·퇴직 날짜만 입력하면 법정 퇴직금과 세후 실수령액을 즉시 계산합니다. 평균임금·근속연수공제·퇴직소득세(연분연승법)를 반영하고 DB·DC 유형을 비교합니다. 무료·회원가입 불필요.',
+  description: DESCRIPTION,
   keywords: [
     '퇴직금 계산기',
     '퇴직소득세 계산기',
@@ -36,14 +45,14 @@ export const metadata: Metadata = {
   alternates: { canonical: URL },
   openGraph: {
     title: '퇴직금 계산기 2026',
-    description: '퇴직 전 세후 실수령액을 정확히 계산',
+    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: '퇴직금 계산기 2026',
-    description: '법정 퇴직금 + 퇴직소득세 즉시 계산',
+    description: DESCRIPTION,
   },
 };
 
@@ -51,32 +60,29 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '퇴직금 지급 조건은 무엇인가요?',
     answer:
-      '근로기준법에 따라 1년 이상 근무한 근로자에게만 퇴직금 지급 의무가 있습니다. 1년 미만 근무 후 퇴직하면 퇴직금을 받지 못하지만, 미지급 급여는 청구할 수 있습니다. 대신 이직, 정년, 계약 만료, 해고 등 모든 퇴직 사유가 대상입니다.',
+      '근로자퇴직급여 보장법의 적용 대상은 계속근로기간 1년 이상이며, 4주간 평균 1주 소정근로시간이 15시간 이상인 근로자입니다. 퇴직 사유나 고용형태만으로 제외하지 않습니다. 근로시간 변동이나 계속근로기간에서 제외되는 기간이 있으면 별도 확인이 필요합니다.',
   },
   {
     question: '평균임금과 통상임금은 어떻게 다른가요?',
-    answer:
-      '평균임금은 퇴직 이전 3개월의 임금(상여금·연차수당 포함) 총액을 일수로 나눈 것으로, 퇴직금 계산에 쓰입니다. 통상임금은 소정근로시간에 대해 지급하는 기본급·직책급·고정수당으로, 기본급을 산정할 때 쓰입니다. 상여금·연차는 통상임금에 포함되지 않으나, 평균임금 계산 시에는 포함됩니다.',
+    answer: AVERAGE_WAGE_DESCRIPTION + ' ' + ORDINARY_WAGE_DESCRIPTION,
   },
   {
     question: 'DB형과 DC형은 무엇인가요?',
-    answer:
-      'DB형(Defined Benefit, 확정급여)은 사업주가 법정 퇴직금 수준을 보장하는 형태이고, DC형(Defined Contribution, 확정기여)은 사업주가 매월 급여의 8.3% 이상을 기금에 적립하되, 실제 수령액은 운용 수익에 따라 달라집니다. DC형은 적립금 + 운용수익이 적용되므로, 본 계산기의 법정 기준 금액과 다를 수 있습니다.',
+    answer: PLAN_DESCRIPTION,
   },
   {
     question: '상여금과 연차수당은 퇴직금에 포함되나요?',
-    answer:
-      '평균임금 계산 시 직전 3개월 상여금의 1/4(월할액), 연차수당의 1/12(월할액)이 포함됩니다. 예를 들어 연간 상여금 1200만 원이면 월 100만 원으로 환산되어 3개월분 300만 원이 평균임금 계산에 더해집니다.',
+    answer: BONUS_DESCRIPTION,
   },
   {
     question: '퇴직소득세는 어떻게 계산되나요?',
     answer:
-      '퇴직소득세는 근속연수공제(근로기준법)를 한 후, 환산급여(월급 환산), 환산급여공제(누진공제)를 거쳐 과세표준을 산정하고, 종합소득세 세율표를 적용해 계산합니다. 계산 과정이 복잡하므로, 본 계산기가 이를 자동으로 처리합니다. 자세한 공식은 "계산 공식" 섹션을 참고하세요.',
+      '소득세법 §48의 근속연수공제와 환산급여공제를 적용해 과세표준을 구한 뒤, §55의 세율과 누진공제를 반영하고 근속연수를 적용합니다. 환산급여는 세금 계산을 위한 값이며 실제 월급이 아닙니다. 지방소득세를 포함한 세후 금액은 일반적인 일시금 수령 참고값입니다.',
   },
   {
     question: '중간정산이나 퇴직연금 전환 시 세금은?',
     answer:
-      '중간정산(예: 무주택 구입·의료비) 시에도 퇴직소득세가 적용되며, 퇴직연금 계약자 변경 등 일부 경우는 조건부 비과세가 적용될 수 있습니다. 개별 사항은 사업장의 퇴직연금 담당자 또는 세무사와 상담이 필요합니다.',
+      '중간정산 이력, 과세 이연, 연금 수령은 금액과 과세 시점에 영향을 줍니다. 본 계산기는 이를 자동 반영하지 않습니다. 사업장 퇴직연금 담당자와 국세청 안내를 통해 적용 요건을 확인하세요.',
   },
 ];
 
@@ -89,35 +95,38 @@ const RELATED = [
 export default function SeverancePage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '퇴직금 계산기',
-    description: '입사·퇴사 날짜와 월 임금으로 법정 퇴직금, 퇴직소득세, 세후 실수령액을 계산',
+    description: DESCRIPTION,
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
     name: '퇴직금 계산기 2026',
-    description: '퇴직 전 세후 실수령액을 정확히 계산',
+    description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('severance'),
   });
   const howToLd = buildHowToJsonLd({
     name: '퇴직금 계산기 사용 방법',
     description:
-      '입사일, 퇴사일, 월 임금을 입력하여 법정 퇴직금과 세후 실수령액을 계산하는 단계별 가이드',
+      '입사일·퇴직일, 평균임금 산입 재료와 1일 통상임금을 입력해 퇴직금과 세후 참고액을 확인하는 단계별 안내',
     steps: [
-      { name: '입사·퇴사 날짜 입력', text: '회사 입사일과 퇴사(예정)일을 입력합니다.' },
+      {
+        name: '입사·퇴직 날짜 입력',
+        text: '입사일과 마지막 근무일의 다음 날을 퇴직일로 입력합니다. 퇴직일 자체는 재직일수에 포함하지 않습니다.',
+      },
       { name: '근속연수 자동 계산', text: '입력한 날짜로 근속연수가 자동 계산됩니다.' },
       {
         name: '월 임금 및 상여 입력',
-        text: '기본급, 상여금, 연차수당을 입력하여 평균임금을 산출합니다.',
+        text: '3개월 월평균 기초임금, 3개월 추가 임금과 산입 대상 연간 상여금·연차수당을 입력합니다. 1일 통상임금은 별도로 입력합니다.',
       },
       {
         name: '퇴직금·세금 자동 계산',
-        text: '법정 퇴직금(근속 × 30일 임금), 퇴직소득세가 자동 계산됩니다.',
+        text: '중간 절사하지 않은 1일 평균임금과 1일 통상임금 중 큰 금액으로 퇴직금 참고액을 계산합니다.',
       },
       {
         name: '세후 실수령액 확인',
-        text: '세전 퇴직금에서 퇴직소득세를 뺀 최종 수령액을 확인합니다.',
+        text: '일반적인 일시금 수령을 가정한 세후 참고액과 지원 범위를 확인합니다. DC 실제 계좌 잔액이나 특수 과세는 별도 확인합니다.',
       },
     ],
   });
@@ -137,23 +146,20 @@ export default function SeverancePage() {
     terms: [
       {
         name: '평균임금',
-        description:
-          '퇴직금 계산 기준이 되는 1일 임금. 퇴직 이전 3개월 임금총액(기본급 + 상여금월할 + 연차수당월할 등)을 일수(91~92일)로 나눔. 근거: 근로기준법 §2.',
+        description: AVERAGE_WAGE_DESCRIPTION,
       },
       {
         name: '통상임금',
-        description:
-          '소정근로시간에 대해 정기적·일률적으로 지급하는 기본급·직책급·고정수당. 퇴직금 계산과 달리 초과근무수당·4대보험 기준으로 쓰임. 상여금·연차는 제외.',
+        description: ORDINARY_WAGE_DESCRIPTION,
       },
       {
         name: '근속연수공제',
         description:
-          '퇴직소득세 계산 시 근속연수에 따라 공제하는 금액. 5년이하 100만/년, 5~10년 500만+200만/년, 10~20년 1,500만+250만/년, 20년초과 4,000만+300만/년. 근거: 소득세법 §99.',
+          '퇴직소득세 계산 시 근속연수에 따라 공제하는 금액. 5년 이하는 연 100만 원, 5년 초과 10년 이하는 500만 원 + 5년 초과분당 200만 원, 10년 초과 20년 이하는 1,500만 원 + 10년 초과분당 250만 원, 20년 초과는 4,000만 원 + 20년 초과분당 300만 원입니다. 근거: 소득세법 §48.',
       },
       {
         name: 'DC형/DB형',
-        description:
-          '퇴직연금 제도. DB형(확정급여)은 사업주가 법정 수준 보장, DC형(확정기여)은 사업주가 월 급여 8.3% 이상만 적립해 운용수익에 따라 변동. 근거: 근로자퇴직급여 보장법 §4.',
+        description: PLAN_DESCRIPTION,
       },
     ],
   });
@@ -210,9 +216,9 @@ export default function SeverancePage() {
                     퇴직금·퇴직소득세 계산기 2026
                   </h1>
                   <p className="text-lg text-text-secondary" data-speakable>
-                    근무 기간과 급여로 예상 퇴직금을 확인하세요.
+                    마지막 근무 다음 날을 퇴직일로 입력하고 평균임금과 통상임금을 비교하세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-01" />
                 </header>
               }
               calculator={<SeveranceCalculator />}
@@ -228,23 +234,23 @@ export default function SeverancePage() {
               }
             >
               <StructuredSummary
-                definition="퇴직금은 1년 이상 근무한 근로자가 퇴직할 때 사업주가 지급하는 금액으로, 근로기준법 §2에서 정의한 1일 평균임금에 30일을 곱한 후 재직일수를 반영하여 계산합니다(근로자퇴직급여 보장법 §8). 평균임금 = 퇴직 이전 3개월 임금총액 ÷ 일수이며, 상여금·연차수당도 포함됩니다."
+                definition="퇴직금은 계속근로기간 1년 이상, 4주 평균 1주 소정근로시간 15시간 이상인 근로자의 퇴직급여입니다. 1일 평균임금과 통상임금 중 큰 금액 × 30 × 재직일수 ÷ 365로 일반 참고액을 계산합니다. 휴직 등 제외기간이나 중간정산은 별도 확인해야 합니다."
                 table={{
                   caption: '퇴직금 계산의 주요 구성요소',
                   headers: ['항목', '계산 방식'],
                   rows: [
-                    ['1일 평균임금', '3개월 임금총액(상여·연차포함) ÷ 91-92일'],
-                    ['법정 퇴직금', '평균임금 × 30 × 재직일수÷365'],
+                    ['1일 평균임금', '3개월 산입 임금총액 ÷ 실제 달력 일수(일반적으로 89~92일)'],
+                    ['세전 퇴직금 참고액', '평균임금·통상임금 중 큰 1일 금액 × 30 × 재직일수÷365'],
                     ['근속연수공제', '근속연수별 공제액 (5년이하 100만/년)'],
                     ['환산급여공제', '환산급여 구간별 누진공제'],
-                    ['퇴직소득세', '(환산급여 − 공제액) × 세율 ÷ 12 × 근속년수'],
+                    ['퇴직소득세', '(과세표준 × 구간세율 − 누진공제) ÷ 12 × 근속연수'],
                   ],
                 }}
                 tldr={[
-                  '퇴직금 = 1일 평균임금 × 30일 × (재직일수 ÷ 365)',
-                  '1년 이상 근무가 지급 조건',
-                  '퇴직소득세는 근속연수공제·환산급여공제로 대폭 인하',
-                  'DC형은 적립금 + 운용수익이므로 법정 금액과 상이 가능',
+                  '퇴직금 참고액 = 평균임금·통상임금 중 큰 1일 금액 × 30 × 재직일수 ÷ 365',
+                  '계속근로 1년 이상·4주 평균 주 15시간 이상 조건 확인',
+                  '퇴직소득세는 근속연수공제·환산급여공제·구간별 누진공제를 반영',
+                  'DC 실제 적립금·운용 결과는 이 계산기로 산출하지 않음',
                 ]}
               />
               <section
@@ -260,23 +266,22 @@ export default function SeverancePage() {
                   원이 공제됩니다.
                 </p>
                 <p className="text-text-secondary" data-speakable>
-                  여기에 환산급여공제(소득세법 §48)까지 적용되면, 명목상 최고 45% 누진세율이 실제
-                  실효세율 10~20% 수준으로 내려갑니다. 이는 일시소득의 불평탄성을 완화하고
-                  장기근속자의 노후 자산 형성을 지원하기 위한 정책 설계입니다. 같은 퇴직금 1억
-                  원이라도 근속 5년과 25년의 실제 세 부담은 4~5배 차이가 발생할 수 있습니다.
+                  환산급여공제와 구간별 세율·누진공제를 함께 반영합니다. 같은 퇴직금이라도
+                  근속연수와 과세 대상 금액에 따라 세금이 달라지므로, 특정 실효세율이나 절감 배수를
+                  일률적으로 적용할 수 없습니다.
                 </p>
               </section>
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">퇴직금이란 무엇이고 언제 받을 수 있나요?</h2>
                 <p className="text-text-secondary">
                   퇴직금은 근로자가 회사를 떠날 때 사업주가 지급하는 금액입니다. 근로기준법과
-                  근로자퇴직급여 보장법에 따라 규정되며, 1년 이상 근무한 근로자에게 지급 의무가
-                  있습니다.
+                  근로자퇴직급여 보장법에 따라 계속근로기간 1년 이상이고 4주 평균 1주 소정근로시간이
+                  15시간 이상인 근로자가 적용 대상입니다.
                 </p>
                 <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
                     <span className="font-semibold">지급 대상:</span>
-                    1년 이상 근무한 근로자 (정규직, 계약직, 기간제 등 모두 포함)
+                    계속근로 1년 이상·4주 평균 주 소정근로시간 15시간 이상인 근로자
                   </p>
                   <p className="text-sm">
                     <span className="font-semibold">퇴직 사유:</span>
@@ -289,9 +294,27 @@ export default function SeverancePage() {
                 </div>
               </section>
               <section className="space-y-4">
+                <h2 className="text-2xl font-bold">퇴직일과 임금 입력 기준</h2>
+                <p className="text-text-secondary">
+                  퇴직일은 마지막 근무일의 다음 날입니다. 입사일은 재직기간에 포함하고 퇴직일은
+                  포함하지 않습니다. 퇴직 직전 3개월의 달력 일수는 퇴직일에 따라 달라집니다.
+                </p>
+                <p className="text-text-secondary">
+                  3개월 월평균 기초임금은 평균임금을 계산하기 위한 재료이며 통상임금이 아닙니다. 이
+                  값의 3배와 별도 추가 임금에 산입 대상 연간 상여금·연차수당의 3/12을 더합니다. 임금
+                  변동이 있다면 실제 3개월 총액과 일치하도록 월평균 재료를 확인해야 합니다.
+                </p>
+                <p className="text-text-secondary">{BONUS_DESCRIPTION}</p>
+                <p className="text-sm text-text-secondary">
+                  1일 통상임금은 임금 항목과 소정근로시간을 확인해 별도로 산정합니다. 휴직 등
+                  제외기간, 계속근로기간 중 단절, 주 15시간 미만 구간, 중간정산이 있는 경우에는 이
+                  일반 계산의 결과를 확정 지급액으로 사용하지 마세요.
+                </p>
+              </section>
+              <section className="space-y-4">
                 <h2 className="text-2xl font-bold">평균임금과 통상임금은 어떻게 다른가요?</h2>
                 <p className="text-text-secondary">
-                  두 개념은 계산 목적이 다르므로, 햇갈리기 쉬워도 구분이 중요합니다.
+                  {AVERAGE_WAGE_DESCRIPTION} {ORDINARY_WAGE_DESCRIPTION}
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
@@ -315,35 +338,36 @@ export default function SeverancePage() {
                           퇴직 이전 3개월 임금 총액 ÷ 일수
                         </td>
                         <td className="px-4 py-3 text-text-secondary">
-                          소정근로시간에 대해 지급하는 기본급·직책급·고정수당
+                          소정근로의 대가로 정기적·일률적으로 지급하기로 정한 임금
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">포함 항목</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          기본급 + 상여금(월할) + 연차(월할) + 기타수당
+                          3개월 산입 임금 + 산입 대상 연간 상여금·연차수당의 3/12
                         </td>
                         <td className="px-4 py-3 text-text-secondary">
-                          기본급 + 직책급 + 고정수당 (상여금·연차 제외)
+                          임금 명칭보다 지급 조건과 소정근로의 대가 여부로 판단
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">쓰임</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          퇴직금 계산, 해고예고수당 등
+                          퇴직금 기준(통상임금보다 작으면 통상임금 적용)
                         </td>
                         <td className="px-4 py-3 text-text-secondary">
-                          초과근무수당, 4대보험 기준
+                          연장근로수당·해고예고수당 등, 퇴직금 평균임금의 하한
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">예시</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          월 300만 × 3 + 상여금월할 100만 + 연차월할 50만 = 1050만 ÷ 91일 = 약
-                          115만/일
+                          3개월 기초임금 900만 + 산입 상여금 100만 + 산입 연차수당 50만 = 1,050만 ÷
+                          91일 ≈ 115,384.62원/일
                         </td>
                         <td className="px-4 py-3 text-text-secondary">
-                          월 기본급 250만 + 직책급 50만 = 300만 (상여금·연차 미포함)
+                          월 통상임금 300만 ÷ 209시간 × 8시간 ≈ 114,832.54원/일 (주 40시간·1일
+                          8시간·월 209시간 가정, 모든 근로자에 공통인 기준은 아님)
                         </td>
                       </tr>
                     </tbody>
@@ -353,7 +377,7 @@ export default function SeverancePage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">DB형과 DC형 퇴직연금은 무엇이 다른가요?</h2>
                 <p className="text-text-secondary">
-                  2005년 퇴직금 제도 개혁 이후, 회사는 DB형 또는 DC형 중 하나를 선택해야 합니다.
+                  {PLAN_DESCRIPTION} 사업장의 퇴직급여 제도와 규약을 확인하세요.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
@@ -375,12 +399,14 @@ export default function SeverancePage() {
                         <td className="px-4 py-3 font-semibold text-text-primary">의미</td>
                         <td className="px-4 py-3 text-text-secondary">사업주가 법정 수준 보장</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          사업주가 매월 8.3% 이상만 적립
+                          사용자가 연간 임금총액의 1/12 이상 부담금 납입
                         </td>
                       </tr>
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">근로자 위험</td>
-                        <td className="px-4 py-3 text-text-secondary">낮음 (보장됨)</td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          규약에 따른 급여·지급 보장 요건 확인
+                        </td>
                         <td className="px-4 py-3 text-text-secondary">
                           높음 (운용수익에 따라 변동)
                         </td>
@@ -388,10 +414,10 @@ export default function SeverancePage() {
                       <tr>
                         <td className="px-4 py-3 font-semibold text-text-primary">예상 수령액</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          본 계산기 결과와 동일 수준
+                          법정 기준 참고액이며 규약·개별 조건 확인 필요
                         </td>
                         <td className="px-4 py-3 text-text-secondary">
-                          적립금(월 급여 8.3%) + 운용수익 (본 계산기와 다를 수 있음)
+                          실제 계좌 적립금과 운용 결과(본 계산기에서 계산하지 않음)
                         </td>
                       </tr>
                       <tr>
@@ -440,7 +466,7 @@ export default function SeverancePage() {
                     (퇴직금 − 근속연수공제) × 12 ÷ 근속연수
                   </p>
                   <p className="text-caption text-text-tertiary">
-                    퇴직금을 월급 기준으로 환산하여 누진세율 적용 준비
+                    세금 계산을 위한 환산 값이며 실제 월급을 뜻하지 않습니다.
                   </p>
                 </div>
 
@@ -465,7 +491,7 @@ export default function SeverancePage() {
                     <br />
                     과세표준 = 환산급여 − 환산급여공제
                     <br />
-                    산출세액 = (과세표준 × 누진세율) ÷ 12 × 근속연수
+                    산출세액 = (과세표준 × 구간세율 − 누진공제) ÷ 12 × 근속연수
                   </p>
                   <p className="text-caption text-text-tertiary">
                     누진세율은 소득세법 §55 종합소득세 세율표 적용
@@ -473,11 +499,12 @@ export default function SeverancePage() {
                 </div>
 
                 <p className="text-sm text-text-secondary">
-                  <span className="font-semibold">예시:</span> 근속 10년, 퇴직금 3억 원
+                  <span className="font-semibold">국세청 일반 계산 예시:</span> 근속 20년, 퇴직소득
+                  1억 원
                   <br />
-                  근속공제 1,500만 → 환산급여 2.4억 → 환산급여공제 약 6,170만 → 과세표준 1.78억 →
-                  누진세율(24%) → 세금 약 850만 → 월할 및 근속연수 반영 = 실제 퇴직소득세 약 710만
-                  원
+                  근속공제 4,000만 → 환산급여 3,600만 → 환산급여공제 2,480만 → 과세표준 1,120만 →
+                  환산산출세액 67만 2,000원 → 퇴직소득세 112만 원. 지방소득세와 과세 이연은 이 예시
+                  금액에 포함하지 않습니다.
                 </p>
               </section>
               <section className="space-y-4">
@@ -491,11 +518,14 @@ export default function SeverancePage() {
                     <li>• DC형의 경우 실제 운용수익이 반영되므로 계산기 결과와 상이할 수 있음</li>
                     <li>• 중간정산 이력이 있으면 남은 퇴직금 기준으로 재계산</li>
                     <li>• 연금 전환, 일시금 수령 선택 시 세제 혜택이 달라질 수 있음</li>
-                    <li>• 사업장 폐업, 임금체불 등 특수 상황은 퇴직급여보장기금 지급</li>
-                    <li>• 비과세 퇴직금(공무원 등)은 본 계산 대상 외</li>
+                    <li>• 휴직 등 평균임금 제외기간·불규칙 임금·근로시간 변동은 별도 검토 필요</li>
+                    <li>
+                      • 법정 참고액은 최종 원 단위 반올림 표시이며 실제 지급·과세 처리와 다를 수
+                      있음
+                    </li>
                   </ul>
                   <p className="mt-2 text-sm font-medium text-text-primary">
-                    정확한 수액은 퇴직 시점에 사업장의 퇴직연금 담당자 또는 세무사와 확인하세요.
+                    실제 지급액은 퇴직 시점에 사업장의 퇴직연금 담당자 또는 세무사와 확인하세요.
                   </p>
                 </div>
               </section>
@@ -505,23 +535,22 @@ export default function SeverancePage() {
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">1. 퇴직연금 선택 검토</p>
                     <p className="mt-1 text-sm text-text-secondary">
-                      DC형 가입 시 운용 수익률이 좋은 상품 선택이 중요합니다. 은행
-                      정기예금(1.5-2%)보다 기업형 투자상품(3-5%)을 고려하되, 고령(55세+)이면 안정성
-                      우선.
+                      DC형은 실제 적립금과 운용 결과를 확인하세요. 상품별 위험·수수료·보장 조건과
+                      은퇴 시점을 비교하고, 예상 수익률을 확정 수령액으로 해석하지 마세요.
                     </p>
                   </div>
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">2. 연금 수령 vs 일시금</p>
                     <p className="mt-1 text-sm text-text-secondary">
-                      일시금은 분할 수령 시 세 부담이 적을 수 있습니다. 5년 이상 분할하면 연도별
-                      세금이 낮아지므로, 은퇴 연금 설계와 함께 검토하세요.
+                      일시금과 연금은 과세 시점과 적용 요건이 다릅니다. 단순 분할 횟수만으로 세금이
+                      줄어든다고 가정하지 말고 국세청과 연금기관의 안내를 확인하세요.
                     </p>
                   </div>
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="font-semibold text-text-primary">3. 이직 시 중도이전</p>
                     <p className="mt-1 text-sm text-text-secondary">
-                      DC형은 적립금을 새 회사 계정으로 이전 가능. DB형도 기업 규모 축소 시 이전
-                      가능한 경우가 있으므로 확인하세요.
+                      이직 시 계좌 이전과 중도인출 가능 여부는 제도와 법정 요건에 따라 다릅니다.
+                      사업장 퇴직연금 담당자와 금융기관에 자신의 계좌 처리 절차를 확인하세요.
                     </p>
                   </div>
                   <div className="rounded-lg bg-bg-card p-4">
@@ -529,7 +558,7 @@ export default function SeverancePage() {
                     <p className="mt-1 text-sm text-text-secondary">
                       • 근로계약서 (DB/DC형 확인)
                       <br />
-                      • 임금대장 (3개월 통상임금, 상여금 확인)
+                      • 임금대장 (3개월 산입 임금과 1일 통상임금의 별도 산정 근거 확인)
                       <br />• 퇴직금 지급 안내서 (사업주 산정 방식)
                     </p>
                   </div>
@@ -560,12 +589,12 @@ export default function SeverancePage() {
                   </li>
                   <li>
                     <a
-                      href="https://www.moel.go.kr"
+                      href="https://www.moel.go.kr/retirementpayCal.do"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      고용노동부, 퇴직금·퇴직연금 제도 안내
+                      고용노동부, 퇴직금 계산 예시·퇴직일·평균임금 안내
                     </a>
                   </li>
                   <li>
@@ -580,12 +609,12 @@ export default function SeverancePage() {
                   </li>
                   <li>
                     <a
-                      href="https://www.hometax.go.kr"
+                      href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?mi=6444&amp;cntntsId=7880"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스, 퇴직소득세 계산·신고
+                      국세청, 퇴직소득세 계산 구조·공제·계산 예시
                     </a>
                   </li>
                 </ul>
