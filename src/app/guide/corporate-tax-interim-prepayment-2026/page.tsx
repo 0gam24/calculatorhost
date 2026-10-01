@@ -385,7 +385,7 @@ export default function CorporateTaxInterimPrepayment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인·법인 맞춤 세무 조언이 아닙니다. 실제 중간예납세액, 면제 여부, 분납 한도는 법인의 결산 상황에 따라 달라지므로 관할 세무서 또는 세무대리인, 홈택스(hometax.go.kr)에서 반드시 확인하세요. 본 콘텐츠는 2026-07-25 기준이며, 인용한 법조항은 <strong>법인세법 §63(중간예납 의무), §63의2(중간예납세액의 계산), §55(세율)</strong>입니다. 세율·소액 기준 등 세부 수치는 개정될 수 있으니 국세청 고시를 우선하세요. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인·법인 맞춤 세무 조언이 아닙니다. 실제 중간예납세액, 면제 여부, 분납 한도는 법인의 결산 상황에 따라 달라지므로 관할 세무서 또는 세무대리인, 홈택스(hometax.go.kr)에서 반드시 확인하세요. 본 콘텐츠는 2026-07-25 기준이며, 인용한 법조항은 <strong>법인세법 §63(중간예납 의무), §63의2(중간예납세액의 계산), §55(세율)</strong>입니다. 세율·소액 기준 등 세부 수치는 개정될 수 있으니 국세청 고시를 우선하세요.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -341,7 +341,7 @@ export default function VentureStockOptionTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·투자 자문이 아닙니다. 특정 종목의 매수·매도를 권유하지 않습니다. 스톡옵션 과세는 벤처기업·적격 스톡옵션 요건, 행사 시점, 개인 소득 규모에 따라 크게 달라지므로, 실제 세액과 특례 적용은 국세청 상담과 세무 전문가 자문으로 확인하세요. 인용 법령은 <strong>소득세법 §20, §21, 조세특례제한법 §16의2, §16의3, §16의4</strong>입니다. 본 콘텐츠는 2026-08-11 기준이며 법령 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·투자 자문이 아닙니다. 특정 종목의 매수·매도를 권유하지 않습니다. 스톡옵션 과세는 벤처기업·적격 스톡옵션 요건, 행사 시점, 개인 소득 규모에 따라 크게 달라지므로, 실제 세액과 특례 적용은 국세청 상담과 세무 전문가 자문으로 확인하세요. 인용 법령은 <strong>소득세법 §20, §21, 조세특례제한법 §16의2, §16의3, §16의4</strong>입니다. 본 콘텐츠는 2026-08-11 기준이며 법령 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

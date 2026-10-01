@@ -343,7 +343,7 @@ export default function CashReceiptMandatoryIssuance2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 의무발행업종 목록은 소득세법 시행령 별표로 정해지며 수시로 확대되므로, 본인 업종 해당 여부는 홈택스·관할 세무서에서 확인하세요. 가산세율·발급 기준은 세법 개정 시 달라질 수 있습니다. 본 콘텐츠는 2026-08-06 기준으로 작성됐으며, 인용 법조항은 <strong>소득세법 §162의3(발급의무)·§81의9(가산세), 법인세법 §117의2·§75의6</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 의무발행업종 목록은 소득세법 시행령 별표로 정해지며 수시로 확대되므로, 본인 업종 해당 여부는 홈택스·관할 세무서에서 확인하세요. 가산세율·발급 기준은 세법 개정 시 달라질 수 있습니다. 본 콘텐츠는 2026-08-06 기준으로 작성됐으며, 인용 법조항은 <strong>소득세법 §162의3(발급의무)·§81의9(가산세), 법인세법 §117의2·§75의6</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

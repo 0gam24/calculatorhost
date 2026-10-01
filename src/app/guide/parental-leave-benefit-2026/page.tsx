@@ -464,7 +464,7 @@ export default function ParentalLeaveBenefit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 근로 상담이 아닙니다. 실제 육아휴직급여 수급 여부, 지급액, 신청 절차는 고용센터 또는 work24.go.kr에서 반드시 확인하세요. 특히 고용보험 가입 기간, 통상임금 산정, 자녀 대상 요건 등은 직장과 고용센터를 통해 정확히 파악하는 것이 안전합니다. 본 콘텐츠는 2026-07-09를 기준으로 작성되었으며, 고용보험법 개정 시 즉시 업데이트됩니다. 육아휴직급여의 정확한 기준은 법조항 <strong>고용보험법 §70(육아휴직급여), 시행령 §95</strong>를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 근로 상담이 아닙니다. 실제 육아휴직급여 수급 여부, 지급액, 신청 절차는 고용센터 또는 work24.go.kr에서 반드시 확인하세요. 특히 고용보험 가입 기간, 통상임금 산정, 자녀 대상 요건 등은 직장과 고용센터를 통해 정확히 파악하는 것이 안전합니다. 본 콘텐츠는 2026-07-09를 기준으로 작성되었으며, 고용보험법 개정 시 즉시 업데이트됩니다. 육아휴직급여의 정확한 기준은 법조항 <strong>고용보험법 §70(육아휴직급여), 시행령 §95</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

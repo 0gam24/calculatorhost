@@ -370,7 +370,7 @@ export default function NationalPensionEarlyDeferred2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무·연금 자문이 아닙니다. 손익분기 계산은 물가 조정·세금·건강보험료 영향을 단순화한 예시이며, 실제 예상 수령액과 감액·증액 금액은 국민연금공단에서 본인 기준으로 확인하시기 바랍니다. 본 콘텐츠는 2026-07-12 기준으로 작성되었고 제도 변경 시 업데이트됩니다. 인용 법조항: <strong>국민연금법 §61(노령연금·조기노령연금), §62(지급의 연기에 따른 가산)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무·연금 자문이 아닙니다. 손익분기 계산은 물가 조정·세금·건강보험료 영향을 단순화한 예시이며, 실제 예상 수령액과 감액·증액 금액은 국민연금공단에서 본인 기준으로 확인하시기 바랍니다. 본 콘텐츠는 2026-07-12 기준으로 작성되었고 제도 변경 시 업데이트됩니다. 인용 법조항: <strong>국민연금법 §61(노령연금·조기노령연금), §62(지급의 연기에 따른 가산)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

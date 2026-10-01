@@ -483,7 +483,7 @@ export default function PropertyTaxInstallmentPayment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 분납 신청 가능 여부, 한도액, 기한, 최종 납부액은 관할 시·군·구청 세무서 또는 위택스(wetax.go.kr)에서 반드시 확인하세요. 특히 신축·증축·용도변경·소유권 이전 등의 경우 상황이 복잡할 수 있으므로 직접 문의하는 것이 안전합니다. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 지방세법 개정 시 즉시 업데이트됩니다. 분납 기준은 법조항 <strong>지방세법 §118(분할납부)</strong>, <strong>지방세법 시행령 §116</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 분납 신청 가능 여부, 한도액, 기한, 최종 납부액은 관할 시·군·구청 세무서 또는 위택스(wetax.go.kr)에서 반드시 확인하세요. 특히 신축·증축·용도변경·소유권 이전 등의 경우 상황이 복잡할 수 있으므로 직접 문의하는 것이 안전합니다. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 지방세법 개정 시 즉시 업데이트됩니다. 분납 기준은 법조항 <strong>지방세법 §118(분할납부)</strong>, <strong>지방세법 시행령 §116</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

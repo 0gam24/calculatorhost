@@ -333,7 +333,7 @@ export default function HousingSubscriptionRewinRestriction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 청약 상담이 아닙니다. 재당첨 제한 기간, 규제지역 지정, 무순위·특별공급 적용 여부는 정부 정책과 단지별 모집공고에 따라 달라지므로, 청약 전 청약홈과 입주자모집공고에서 반드시 확인하세요. 실제 자격 판정은 세대 구성 등 개별 사정에 따라 달라질 수 있습니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 규정 개정 시 즉시 업데이트됩니다. 근거 규정: <strong>주택공급에 관한 규칙 §54(재당첨 제한)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 청약 상담이 아닙니다. 재당첨 제한 기간, 규제지역 지정, 무순위·특별공급 적용 여부는 정부 정책과 단지별 모집공고에 따라 달라지므로, 청약 전 청약홈과 입주자모집공고에서 반드시 확인하세요. 실제 자격 판정은 세대 구성 등 개별 사정에 따라 달라질 수 있습니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 규정 개정 시 즉시 업데이트됩니다. 근거 규정: <strong>주택공급에 관한 규칙 §54(재당첨 제한)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

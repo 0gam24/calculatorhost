@@ -354,7 +354,7 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 세대생략 증여의 할증 여부, 증여재산공제 잔여 한도, 상속 합산 여부는 가족 관계와 증여 이력에 따라 달라지므로 세무대리인·관할 세무서 또는 홈택스에서 반드시 확인하세요. 본 콘텐츠는 2026-07-21 기준이며 세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>상속세및증여세법 §57(직계비속에 대한 증여의 할증과세)·§53(증여재산공제)·§56(증여세율)·§13(상속세 과세가액)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 세대생략 증여의 할증 여부, 증여재산공제 잔여 한도, 상속 합산 여부는 가족 관계와 증여 이력에 따라 달라지므로 세무대리인·관할 세무서 또는 홈택스에서 반드시 확인하세요. 본 콘텐츠는 2026-07-21 기준이며 세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>상속세및증여세법 §57(직계비속에 대한 증여의 할증과세)·§53(증여재산공제)·§56(증여세율)·§13(상속세 과세가액)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

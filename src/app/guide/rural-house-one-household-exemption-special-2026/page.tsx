@@ -402,7 +402,7 @@ export default function RuralHouseOneHouseholdExemptionPage() {
                     조세특례제한법 §99의4(농어촌주택 등 취득자에 대한 양도소득세 과세특례), 소득세법
                     §89(비과세 양도소득)
                   </strong>
-                  입니다. AI 보조 작성 후 운영자 검수 완료.
+                  입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

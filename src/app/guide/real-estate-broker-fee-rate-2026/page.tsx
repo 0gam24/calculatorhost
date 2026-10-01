@@ -573,9 +573,6 @@ export default function RealEstateBrokerFeeRatePage() {
                 <p className="mb-3">
                   상한요율은 법적 한도일 뿐이며, 실제 중개수수료는 중개사와의 협의로 결정됩니다. 부가세, 지자체 규제, 거래 유형 등에 따라 최종 납부액이 달라질 수 있습니다. 거래 전에 중개사와 <strong>총 납부액을 명시적으로 합의</strong>하고 표준 계약서에 기록하세요.
                 </p>
-                <p className="mb-3">
-                  본 가이드는 <strong>Claude(Anthropic)의 지원을 받아 작성된 후 운영자가 공인중개사법, 국토교통부 공시, 한국공인중개사협회 기준으로 검수</strong>했습니다.
-                </p>
                 <p>
                   최신 법령 및 지자체 규제는 <Link href="https://www.kar.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">
                     한국공인중개사협회

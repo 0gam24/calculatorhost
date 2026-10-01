@@ -365,7 +365,7 @@ export default function JeonseRightVsFixedDate2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개별 사건에 대한 법률 자문이 아닙니다. 실제 권리 순위와 배당은 등기부 상태, 선순위 권리, 경매 진행에 따라 달라지므로, 고액 보증금이나 분쟁 우려가 있으면 변호사·법무사 등 전문가와 상담하세요. 본 콘텐츠는 2026-07-25 기준이며, 인용한 법조항은 <strong>민법 §303(전세권의 내용), §318(전세권자의 경매청구권), 주택임대차보호법 §3(대항력), §3의2(보증금의 회수·우선변제권)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개별 사건에 대한 법률 자문이 아닙니다. 실제 권리 순위와 배당은 등기부 상태, 선순위 권리, 경매 진행에 따라 달라지므로, 고액 보증금이나 분쟁 우려가 있으면 변호사·법무사 등 전문가와 상담하세요. 본 콘텐츠는 2026-07-25 기준이며, 인용한 법조항은 <strong>민법 §303(전세권의 내용), §318(전세권자의 경매청구권), 주택임대차보호법 §3(대항력), §3의2(보증금의 회수·우선변제권)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

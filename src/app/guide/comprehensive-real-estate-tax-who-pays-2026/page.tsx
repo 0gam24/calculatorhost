@@ -677,7 +677,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                   종합부동산세 제도는 정부 정책 및 세법 개정에 따라 변경될 수 있으므로,
                   정확한 세액 계산이 필요하면 위택스 또는 관할 지자체 세무서, 세무사 상담을 받으시기 바랍니다.
                   특히 합산배제 신청(4월)·고령자·장기보유공제·일시적2주택 등 특례 조건은 지자체별로 상이하므로
-                  꼭 확인하세요. 본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+                  꼭 확인하세요.
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

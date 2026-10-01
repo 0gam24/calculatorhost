@@ -338,7 +338,7 @@ export default function LeaseRenewalRefusalGrounds2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 법률 조언이 아닙니다. 계약갱신 거절과 손해배상은 개별 사실관계와 판례에 따라 결론이 달라지므로, 구체적 분쟁은 대한법률구조공단, 주택임대차분쟁조정위원회 또는 변호사와 상담하세요. 본 콘텐츠는 2026-07-31 기준이며 관련 법령은 <strong>주택임대차보호법 §6의3</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 법률 조언이 아닙니다. 계약갱신 거절과 손해배상은 개별 사실관계와 판례에 따라 결론이 달라지므로, 구체적 분쟁은 대한법률구조공단, 주택임대차분쟁조정위원회 또는 변호사와 상담하세요. 본 콘텐츠는 2026-07-31 기준이며 관련 법령은 <strong>주택임대차보호법 §6의3</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

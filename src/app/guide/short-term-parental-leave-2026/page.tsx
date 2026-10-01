@@ -438,7 +438,7 @@ export default function ShortTermParentalLeave2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률·노무 조언이 아닙니다. 실제 단기 육아휴직 신청 요건, 급여 지급액, 상한 반영, 사업주 협의 절차 등은 개별 사정과 해당 시점의 고용노동부 고시에 따라 달라질 수 있습니다. 정확한 정보는 고용노동부(moel.go.kr), 고용24(work24.go.kr), 관할 고용센터, 또는 사내 인사부서에서 반드시 확인하세요. 본 콘텐츠는 2026-08-15을 기준으로 작성되었으며, 관련 법령이나 고시가 개정되면 즉시 업데이트됩니다. 인용한 법조항은 <strong>남녀고용평등법 §19(육아휴직)</strong>, <strong>고용보험법 §70(육아휴직 급여)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률·노무 조언이 아닙니다. 실제 단기 육아휴직 신청 요건, 급여 지급액, 상한 반영, 사업주 협의 절차 등은 개별 사정과 해당 시점의 고용노동부 고시에 따라 달라질 수 있습니다. 정확한 정보는 고용노동부(moel.go.kr), 고용24(work24.go.kr), 관할 고용센터, 또는 사내 인사부서에서 반드시 확인하세요. 본 콘텐츠는 2026-08-15을 기준으로 작성되었으며, 관련 법령이나 고시가 개정되면 즉시 업데이트됩니다. 인용한 법조항은 <strong>남녀고용평등법 §19(육아휴직)</strong>, <strong>고용보험법 §70(육아휴직 급여)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

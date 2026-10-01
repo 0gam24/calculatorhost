@@ -327,7 +327,7 @@ export default function OtherIncome300SeparateTaxation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 분리·종합과세 선택의 유불리는 본인의 전체 소득과 세율 구간, 건강보험료 등 부수적 영향에 따라 달라지므로 국세청 홈택스 또는 세무 전문가로 확인하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 소득세법 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>소득세법 §14(과세표준의 계산), §21(기타소득), §84(기타소득의 과세최저한)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 분리·종합과세 선택의 유불리는 본인의 전체 소득과 세율 구간, 건강보험료 등 부수적 영향에 따라 달라지므로 국세청 홈택스 또는 세무 전문가로 확인하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 소득세법 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>소득세법 §14(과세표준의 계산), §21(기타소득), §84(기타소득의 과세최저한)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

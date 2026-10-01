@@ -675,7 +675,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                 <p className="text-sm text-text-secondary leading-relaxed">
                   본 페이지의 정보는 소득세법 §77 및 국세기본법 기준 2026년 시점의 일반적 정보입니다. 개인의 구체적 상황(사업 형태, 지역,
                   추가 소득)에 따라 세액이나 분납 자격이 달라질 수 있으므로, 최종 판단은 국세청(전화 1330) 또는 세무사·회계사 상담을
-                  권장합니다. 본 페이지는 AI 보조 작성 후 운영자 검수 완료되었습니다. 2026년 세법 개정 시 내용이 변경될 수 있습니다.
+                  권장합니다. 2026년 세법 개정 시 내용이 변경될 수 있습니다.
                 </p>
               </section>
 

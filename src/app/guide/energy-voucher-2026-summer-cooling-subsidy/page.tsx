@@ -601,7 +601,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                   복지로(bokjiro.go.kr)의 모의계산 기능을 사용하거나,
                   통합 상담센터 1600-3190 또는 거주지 행정복지센터에 상담하시기 바랍니다.
                   지원금액, 신청 대상, 사용 기간 등은 지역과 신청 시점에 따라 다를 수 있습니다.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

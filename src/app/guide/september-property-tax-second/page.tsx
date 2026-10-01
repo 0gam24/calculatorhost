@@ -330,7 +330,7 @@ export default function SeptemberPropertyTaxGuide() {
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 카드사 무이자 할부 조건·결제대행 수수료는 결제 시점에 변동될 수 있으므로 결제 직전 화면에서 최종 금액을 확인하세요. 개별 사정(상속·증여 병행, 다주택, 비주거용 부동산)은 위택스 1899-0001 또는 관할 시·군·구청 세무과 상담 권장.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵). 본 가이드는 AI 보조 작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                 </p>
               </section>
             </article>

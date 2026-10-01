@@ -660,8 +660,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                   받으시기 바랍니다.
                 </p>
                 <p>
-                  <strong>AI 보조 작성</strong>: 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다(Google AI Content
-                  Policy 준수). 업데이트: {DATE_MODIFIED}
+                  업데이트: {DATE_MODIFIED}
                 </p>
               </section>
             </article>

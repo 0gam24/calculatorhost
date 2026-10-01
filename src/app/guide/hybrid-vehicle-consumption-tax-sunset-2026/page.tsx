@@ -366,7 +366,7 @@ export default function HybridVehicleConsumptionTaxSunset2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·구매 조언이 아닙니다. 하이브리드·전기·수소차 개별소비세 감면 내용은 2026년 8월 발표된 세제개편안 정부안 기준이며, 국회 심의 과정에서 금액·시점·경과규정이 바뀔 수 있습니다. 취득세 감면 적용 여부는 위택스·관할 지자체에서, 개별 차량의 정확한 세액은 견적서로 확인하세요. 본 콘텐츠는 2026-08-06 기준으로 작성됐으며, 인용 법조항은 <strong>조세특례제한법 §109, 교육세법 §5, 지방세특례제한법 §66</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·구매 조언이 아닙니다. 하이브리드·전기·수소차 개별소비세 감면 내용은 2026년 8월 발표된 세제개편안 정부안 기준이며, 국회 심의 과정에서 금액·시점·경과규정이 바뀔 수 있습니다. 취득세 감면 적용 여부는 위택스·관할 지자체에서, 개별 차량의 정확한 세액은 견적서로 확인하세요. 본 콘텐츠는 2026-08-06 기준으로 작성됐으며, 인용 법조항은 <strong>조세특례제한법 §109, 교육세법 §5, 지방세특례제한법 §66</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

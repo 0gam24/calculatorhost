@@ -324,7 +324,7 @@ export default function DepositProtectionLimit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 상품 가입을 권하는 글이 아니고 개별 금융 자문도 아닙니다. 예금자보호 세부 적용 범위와 상품별 한도는 상황에 따라 다르므로, 실제 예치 전 예금보험공사(KDIC) 및 해당 금융회사 안내를 확인하시기 바랍니다. 본 콘텐츠는 2026-07-12 기준으로 작성되었고 제도 변경 시 업데이트됩니다. 인용 법조항: <strong>예금자보호법 §32(보험금의 지급한도 등)</strong> 및 관련 시행령, 상호금융 각 개별법. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 상품 가입을 권하는 글이 아니고 개별 금융 자문도 아닙니다. 예금자보호 세부 적용 범위와 상품별 한도는 상황에 따라 다르므로, 실제 예치 전 예금보험공사(KDIC) 및 해당 금융회사 안내를 확인하시기 바랍니다. 본 콘텐츠는 2026-07-12 기준으로 작성되었고 제도 변경 시 업데이트됩니다. 인용 법조항: <strong>예금자보호법 §32(보험금의 지급한도 등)</strong> 및 관련 시행령, 상호금융 각 개별법.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

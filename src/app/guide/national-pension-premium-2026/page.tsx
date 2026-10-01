@@ -410,9 +410,6 @@ export default function NationalPensionPremium2026() {
                   <strong>주의:</strong> 이 콘텐츠는 일반 정보 제공 목적이며, 개인의 세무·연금 상담은 국민연금공단 또는 세무사와 상의하시기 바랍니다.
                 </p>
                 <p>
-                  <strong>AI 보조 작성:</strong> 본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳐 발행되었습니다(Google AI Content Policy 준수).
-                </p>
-                <p>
                   <strong>최종 수정:</strong> {DATE_MODIFIED}
                 </p>
               </div>

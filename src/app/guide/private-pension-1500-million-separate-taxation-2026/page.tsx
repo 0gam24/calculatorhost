@@ -557,10 +557,6 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?rbsSn=1447" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 사적연금소득 안내</a>.
                 </p>
                 <p className="mb-2">
-                  <strong>AI 보조 표기</strong>: 본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다
-                  (Google AI Content Policy 준수).
-                </p>
-                <p className="mb-2">
                   <strong>면책 조항</strong>: 본 가이드는 정보 제공 목적이며 세무·법적 조언이 아닙니다.
                   개별 사정(복잡한 다중 소득, 특수 공제, 경정청구 등)은 반드시 세무사 또는 세무서 상담을 통해
                   확정하시기 바랍니다. 무신고 또는 부정신고에 따른 책임은 신고자가 부담합니다.

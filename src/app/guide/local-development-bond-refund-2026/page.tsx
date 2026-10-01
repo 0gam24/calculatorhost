@@ -353,7 +353,7 @@ export default function LocalDevelopmentBondRefund2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 금융·법률 조언이 아닙니다. 채권 매입 의무, 만기, 소멸시효, 매입률은 지방자치단체 조례와 발행 조건에 따라 지역마다 다르므로, 본인 채권의 정확한 상환 가능 금액과 시효는 해당 지자체 금고은행에서 반드시 확인하세요. 근거 법령은 <strong>도시철도법 §20</strong> 등과 <strong>지방자치단체 기금관리기본법</strong>, 지방재정법 및 각 시·도 조례입니다. 미환급금 규모(2,391억원)는 행정안전부 발표 기준이며, 본 콘텐츠는 2026-08-05 기준입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 금융·법률 조언이 아닙니다. 채권 매입 의무, 만기, 소멸시효, 매입률은 지방자치단체 조례와 발행 조건에 따라 지역마다 다르므로, 본인 채권의 정확한 상환 가능 금액과 시효는 해당 지자체 금고은행에서 반드시 확인하세요. 근거 법령은 <strong>도시철도법 §20</strong> 등과 <strong>지방자치단체 기금관리기본법</strong>, 지방재정법 및 각 시·도 조례입니다. 미환급금 규모(2,391억원)는 행정안전부 발표 기준이며, 본 콘텐츠는 2026-08-05 기준입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

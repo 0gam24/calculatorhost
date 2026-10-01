@@ -358,7 +358,7 @@ export default function NewbornSpecialMortgageLoan2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 대출상품 권유가 아닙니다. 소득·순자산 요건, 특례금리, 한도, 대상 주택 기준은 매년 기금운용계획과 소관 부처 고시에 따라 달라집니다. 본문 수치는 2026년 시점의 일반적 기준이며 실제 자격·한도·금리는 국토교통부, 주택도시기금 기금e든든, 수탁은행에서 반드시 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 정책 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 대출상품 권유가 아닙니다. 소득·순자산 요건, 특례금리, 한도, 대상 주택 기준은 매년 기금운용계획과 소관 부처 고시에 따라 달라집니다. 본문 수치는 2026년 시점의 일반적 기준이며 실제 자격·한도·금리는 국토교통부, 주택도시기금 기금e든든, 수탁은행에서 반드시 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 정책 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

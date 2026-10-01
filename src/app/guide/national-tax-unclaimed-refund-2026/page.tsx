@@ -378,7 +378,7 @@ export default function NationalTaxUnclaimedRefund2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 미환급금 조회 결과, 소멸시효 중단 여부, 상속인 청구 절차 등 구체적인 사안은 홈택스, 위택스 또는 관할 세무서에서 반드시 확인하세요. 본 콘텐츠는 2026-08-14 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용한 법조항은 <strong>국세기본법 §51(국세환급금의 충당과 환급), §52(국세환급가산금), §54(소멸시효)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 미환급금 조회 결과, 소멸시효 중단 여부, 상속인 청구 절차 등 구체적인 사안은 홈택스, 위택스 또는 관할 세무서에서 반드시 확인하세요. 본 콘텐츠는 2026-08-14 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용한 법조항은 <strong>국세기본법 §51(국세환급금의 충당과 환급), §52(국세환급가산금), §54(소멸시효)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

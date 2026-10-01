@@ -416,7 +416,7 @@ export default function SincereFilingConfirmation2026Page() {
                   <strong>
                     소득세법 §70의2·§122의3, 소득세법 시행령 §133, 조세특례제한법 §126의6
                   </strong>
-                  을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

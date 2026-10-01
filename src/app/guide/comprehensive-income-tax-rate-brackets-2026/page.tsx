@@ -487,7 +487,7 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                   <a href="https://nts.go.kr" rel="nofollow" className="text-primary-500 hover:underline">
                     국세청 공식 사이트
                   </a>
-                  를 참고하세요. AI 보조 작성 후 운영자 검수 완료.
+                  를 참고하세요.
                 </p>
               </section>
 

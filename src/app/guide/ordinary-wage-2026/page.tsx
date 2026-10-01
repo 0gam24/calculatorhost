@@ -496,7 +496,7 @@ export default function OrdinaryWage2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 통상임금 산정, 수당 계산, 분쟁 해결은 회사 인사팀, 고용노동부, 또는 노동법 전문가와 상담하세요. 본 콘텐츠는 2026-07-09을 기준으로 작성되었으며, 법원 판례 변경 시 즉시 업데이트됩니다. 통상임금의 정확한 정의와 기준은 법조항 <strong>근로기준법 §2(임금 정의), §56(통상임금) 및 근로기준법 시행령 §6</strong>과 <strong>2024년 12월 19일 대법원 전원합의체 판결</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 통상임금 산정, 수당 계산, 분쟁 해결은 회사 인사팀, 고용노동부, 또는 노동법 전문가와 상담하세요. 본 콘텐츠는 2026-07-09을 기준으로 작성되었으며, 법원 판례 변경 시 즉시 업데이트됩니다. 통상임금의 정확한 정의와 기준은 법조항 <strong>근로기준법 §2(임금 정의), §56(통상임금) 및 근로기준법 시행령 §6</strong>과 <strong>2024년 12월 19일 대법원 전원합의체 판결</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

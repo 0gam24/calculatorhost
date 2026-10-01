@@ -27,7 +27,7 @@ const EXTERNAL_SOURCES = [
 export const metadata: Metadata = {
   title: '소개 | calculatorhost, 운영자 김준혁 / 스마트데이터샵',
   description:
-    '2026년 최신 세율을 반영한 한국 금융·세금·부동산 계산기 31종 운영. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 모든 계산 공식·세율·법조항은 1차 출처 직접 확인 후 반영.',
+    '한국 금융·세금·부동산 계산기 31종과 참고 가이드를 운영합니다. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 계산의 적용 조건과 기준일·출처를 확인하고 실제 처리는 담당 기관에 문의하세요.',
   alternates: { canonical: 'https://calculatorhost.com/about/' },
 };
 
@@ -98,9 +98,8 @@ export default function AboutPage() {
                   </dd>
                 </dl>
                 <p className="mt-4 text-caption text-text-tertiary">
-                  본 사이트의 모든 계산 공식·세율·법조항 인용은 운영자 김준혁이 국세청·기획재정부·
-                  한국은행·금융감독원 등 1차 출처를 직접 확인해 작성·검수합니다. 콘텐츠 작성에
-                  AI 도구를 보조적으로 활용하지만, 모든 결과물은 운영자가 최종 검토합니다.
+                  계산 결과와 가이드는 참고용 정보입니다. 적용 조건·기준일·출처를 함께 확인하고,
+                  신고·계약·금융 거래 전에는 담당 기관이나 전문가에게 본인의 조건을 확인하세요.
                 </p>
               </div>
 
@@ -115,12 +114,12 @@ export default function AboutPage() {
               <h2 className="text-2xl font-semibold text-text-primary">원칙</h2>
               <ul className="list-disc space-y-2 pl-5">
                 <li>
-                  <strong>정확성</strong>: 모든 세율·공제·공식은 관련 법조항(소득세법·지방세법 등)을
-                  근거로 하며, 매년 개정 내용을 반영합니다.
+                  <strong>적용 조건 확인</strong>: 같은 금액이라도 세대 구성, 소득 종류, 거래 시점 등에
+                  따라 적용 규정과 결과가 달라질 수 있습니다.
                 </li>
                 <li>
-                  <strong>최신성</strong>: 세법 개정 시 즉시 업데이트하며, 각 페이지에 업데이트 날짜를
-                  명시합니다.
+                  <strong>기준일 확인</strong>: 페이지의 업데이트 날짜와 계산 기준을 확인하세요.
+                  개정된 규정이 아직 반영되지 않은 내용은 담당 기관의 최신 안내를 우선하세요.
                 </li>
                 <li>
                   <strong>투명성</strong>: 계산 공식과 근거를 각 페이지에 공개합니다.
@@ -156,10 +155,9 @@ export default function AboutPage() {
 
               <h2 className="text-2xl font-semibold text-text-primary">데이터 출처 및 권위</h2>
               <p>
-                calculatorhost 의 모든 세율·요율·공제 기준은 다음 공식 기관의 자료를 1차 출처로 합니다.
-                세법 개정·금리 변동·고시가 갱신이 있을 때마다 출처를 재확인하여 반영합니다. YMYL
-                (Your Money or Your Life) 카테고리에 해당하므로, 실제 세무·금융 처리 전에 반드시
-                공식 기관 자료를 추가 확인하시기 바랍니다.
+                세율·요율·공제 기준과 신청 절차를 확인할 수 있는 공식 기관입니다.
+                세법 개정·금리 변동·고시 갱신에 따라 기준이 달라질 수 있으므로,
+                실제 세무·금융 처리 전에는 해당 기관의 최신 자료를 확인하시기 바랍니다.
               </p>
               <ul className="mt-4 grid gap-2 not-prose">
                 {EXTERNAL_SOURCES.map((src) => (
@@ -177,83 +175,12 @@ export default function AboutPage() {
                 ))}
               </ul>
 
-              <h2 className="text-2xl font-semibold text-text-primary">콘텐츠 제작 방식 (AI 활용 공개)</h2>
-              <p>
-                Google 의{' '}
-                <a
-                  href="https://developers.google.com/search/blog/2023/02/google-search-and-ai-content"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                  className="text-primary-500"
-                >
-                  AI 생성 콘텐츠 가이드
-                </a>
-                에 따라 본 사이트의 콘텐츠 제작 프로세스를 투명하게 공개합니다.
-              </p>
-              <ul className="list-disc space-y-2 pl-5">
-                <li>
-                  <strong>계산 공식·세율 상수</strong>: 운영자가 소득세법·지방세법·국세청 공식 문서를
-                  직접 확인하여 코드(<code className="text-caption">src/lib/constants/</code>)에 반영합니다.
-                  AI 가 자동 생성한 세율은 <strong>없습니다</strong>.
-                </li>
-                <li>
-                  <strong>설명·FAQ 본문</strong>: 운영자가 작성한 초안에 대해 AI 도구(Claude)를 사용하여
-                  표현 다듬기·구조화·검수를 보조합니다. 모든 결과물은 운영자가 최종 검토합니다.
-                </li>
-                <li>
-                  <strong>코드 구현</strong>: AI 코딩 도구를 활용하나, 계산 로직은 단위 테스트와
-                  국세청 간이계산기 결과 대조로 검증합니다.
-                </li>
-                <li>
-                  <strong>AI 미사용 영역</strong>: 세율 수치, 법조항 인용, 면책 문구는 AI 자동 생성을
-                  사용하지 않으며 운영자가 1차 출처를 직접 확인합니다.
-                </li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-text-primary">자동 가이드 발행 프로세스 (2026-05~ 도입)</h2>
-              <p>
-                일부 시즌별 가이드(연말정산·종소세 신고 등 시기성 콘텐츠)는 Anthropic Claude API 를
-                활용해 자동으로 초안을 생성합니다. 모든 자동 생성 콘텐츠는 다음 검증 절차를 거친 후에만
-                발행됩니다.
-              </p>
-              <ul className="list-disc space-y-2 pl-5">
-                <li>
-                  <strong>자동 생성 범위</strong>: 가이드 본문(정의·방법론·시장 트렌드·FAQ)에 한정.{' '}
-                  <strong>세율표·공제 금액·법조항 §번호 인용은 자동 발행 대상이 아닙니다</strong>{' '}
-                  (운영자가 SSoT 상수<code className="text-caption">src/lib/constants/</code>에서 직접 인용).
-                </li>
-                <li>
-                  <strong>CI 자동 검증 게이트</strong>: 본문 2,000자 하한, 외부 권위 링크 2개 이상,
-                  금지 표현(투자 권유·수익 보장·확정 절세 등) 자동 검출, 세율 % / 법조항 §번호 정규식
-                  추출 후 SSoT 상수와 자동 대조, AI 생성 표기 의무, 위반 시 PR 차단.
-                </li>
-                <li>
-                  <strong>운영자 검수 SLA</strong>: 발행 전 최소 30분 실질 검토(법조항 정확성·세율값
-                  대조·중복 콘텐츠 검사). RED 항목 1개라도 발견 시 즉시 폐기 또는 재작성합니다.
-                </li>
-                <li>
-                  <strong>가이드 하단 표기 의무</strong>: 자동 초안으로 작성된 가이드는 본문 하단에
-                  "AI 보조 작성·운영자 최종 검증 (YYYY-MM-DD)" 표기를 포함합니다.
-                </li>
-                <li>
-                  <strong>점진 도입</strong>: 6개월 파일럿(월 5~10편 → 20편 → 30편). Search Console
-                  순위 -10% 하락 또는 Google Manual Action 알림 시 즉시 중단·전수 재검수.
-                </li>
-                <li>
-                  <strong>월 1회 정기 감사</strong>: 자동 발행분 무작위 표본 + 핵심 시즌 토픽(5월 종소세
-                  등)을 운영자 또는 외부 세무 전문가가 재검증합니다.
-                </li>
-              </ul>
-
-              <h2 className="text-2xl font-semibold text-text-primary">검증 절차</h2>
-              <p>
-                각 계산기 출시 전 다음 절차를 거칩니다.
-              </p>
+              <h2 className="text-2xl font-semibold text-text-primary">계산 결과와 가이드 이용 방법</h2>
               <ol className="list-decimal space-y-2 pl-5">
-                <li>법조항 원문 또는 국세청·금감원 공식 문서로 세율·공제 1차 검증</li>
-                <li>국세청 홈택스 간이계산기·은행 공식 계산기로 결과 대조 (대표 케이스 3개 이상)</li>
-                <li>단위 테스트(<code className="text-caption">Vitest</code>) 작성, 경계값·예외 처리 검증</li>
-                <li>세법 개정 시 즉시 재검증 후 반영 (연 1회 이상 정기 점검)</li>
+                <li>계산기에 지원되는 조건과 제외되는 예외를 먼저 확인하세요.</li>
+                <li>페이지에 표시된 기준일과 공식 출처를 확인하세요.</li>
+                <li>가이드의 예시는 개인별 세액이나 거래 결과를 확정하지 않습니다.</li>
+                <li>중요한 신고·계약·거래 전에는 담당 기관이나 전문가에게 최종 확인하세요.</li>
               </ol>
 
               <h2 className="text-2xl font-semibold text-text-primary">면책</h2>

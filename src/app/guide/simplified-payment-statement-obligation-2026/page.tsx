@@ -364,7 +364,7 @@ export default function SimplifiedPaymentStatementPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 간이지급명세서 제출 대상·기한·가산세는 소득 종류와 지급 형태에 따라 달라질 수 있고, 2027년 매월 제출 전환 시점은 세법 개정·시행 일정에 따라 변동될 수 있습니다. 실제 제출 의무와 기한은 홈택스 공지와 최신 소득세법, 관할 세무서를 통해 반드시 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>소득세법 §164의3(간이지급명세서의 제출), §81의11(지급명세서 등 제출 불성실 가산세)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 간이지급명세서 제출 대상·기한·가산세는 소득 종류와 지급 형태에 따라 달라질 수 있고, 2027년 매월 제출 전환 시점은 세법 개정·시행 일정에 따라 변동될 수 있습니다. 실제 제출 의무와 기한은 홈택스 공지와 최신 소득세법, 관할 세무서를 통해 반드시 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>소득세법 §164의3(간이지급명세서의 제출), §81의11(지급명세서 등 제출 불성실 가산세)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

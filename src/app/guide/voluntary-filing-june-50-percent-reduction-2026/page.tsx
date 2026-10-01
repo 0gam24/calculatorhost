@@ -540,9 +540,6 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                   <strong>면책조항:</strong> 본 가이드는 2026년 5월 31일 현재 종합소득세 신고 규정을 기반으로 작성되었습니다. 세법은 국세청 고시에 따라 수시로 변경될 수 있으므로, 실제 신고 전 국세청 홈택스 또는 세무 전문가 상담을 권장합니다. 인용한 법조항: 국세기본법 §48(자진신고 감면), §47의2(무신고가산세), §47의4(납부지연가산세), §14(실질과세 원칙).
                 </p>
                 <p className="text-sm text-text-secondary">
-                  <strong>AI 보조 작성:</strong> 본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳐 발행되었습니다(Google AI Content Policy 준수).
-                </p>
-                <p className="text-sm text-text-secondary">
                   <strong>업데이트:</strong> 2026년 5월 31일 작성
                 </p>
               </section>

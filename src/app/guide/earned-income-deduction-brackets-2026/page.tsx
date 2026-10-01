@@ -378,7 +378,7 @@ export default function EarnedIncomeDeductionBrackets2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 실제 근로소득공제액과 세액은 비과세소득 범위·기타 공제에 따라 달라지므로 홈택스 연말정산 결과 또는 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-19 기준이며 세법 개정 시 업데이트됩니다. 인용 법조항: <strong>소득세법 §47(근로소득공제), §59(근로소득세액공제)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 실제 근로소득공제액과 세액은 비과세소득 범위·기타 공제에 따라 달라지므로 홈택스 연말정산 결과 또는 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-19 기준이며 세법 개정 시 업데이트됩니다. 인용 법조항: <strong>소득세법 §47(근로소득공제), §59(근로소득세액공제)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

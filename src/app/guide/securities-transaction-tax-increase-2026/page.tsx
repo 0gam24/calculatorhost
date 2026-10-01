@@ -373,7 +373,7 @@ export default function SecuritiesTransactionTaxIncrease2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·투자 조언이 아닙니다. 특정 종목의 매매를 권유하지 않습니다. 증권거래세율과 시행 시점은 개정될 수 있으므로 실제 거래 전 소관 부처 고시와 법령을 확인하세요. 본 콘텐츠는 2026-08-18 기준으로 작성되었으며, 인용 법조항은 <strong>증권거래세법 §8(세율), 농어촌특별세법(농특세 세율)</strong>입니다. 비상장주식·해외주식 과세는 개별 상황에 따라 달라집니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·투자 조언이 아닙니다. 특정 종목의 매매를 권유하지 않습니다. 증권거래세율과 시행 시점은 개정될 수 있으므로 실제 거래 전 소관 부처 고시와 법령을 확인하세요. 본 콘텐츠는 2026-08-18 기준으로 작성되었으며, 인용 법조항은 <strong>증권거래세법 §8(세율), 농어촌특별세법(농특세 세율)</strong>입니다. 비상장주식·해외주식 과세는 개별 상황에 따라 달라집니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -397,7 +397,7 @@ export default function RealEstateTaxReform2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 본문에 소개한 2026 세제개편안 내용은 2026년 8월 3일 기획재정부가 발표한 정부안으로, 국회 심의·의결을 거쳐야 확정됩니다. 세율, 공제한도, 시행 시기 등은 확정 전까지 변경될 수 있으므로 실제 거래 전에는 개정 법령과 국세청 안내를 반드시 확인하세요. 현행 장기보유특별공제의 근거는 <strong>소득세법 §95(양도소득금액)</strong>, 종합부동산세는 <strong>종합부동산세법</strong>을 따릅니다. 본 콘텐츠는 2026-08-05 기준이며 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 본문에 소개한 2026 세제개편안 내용은 2026년 8월 3일 기획재정부가 발표한 정부안으로, 국회 심의·의결을 거쳐야 확정됩니다. 세율, 공제한도, 시행 시기 등은 확정 전까지 변경될 수 있으므로 실제 거래 전에는 개정 법령과 국세청 안내를 반드시 확인하세요. 현행 장기보유특별공제의 근거는 <strong>소득세법 §95(양도소득금액)</strong>, 종합부동산세는 <strong>종합부동산세법</strong>을 따릅니다. 본 콘텐츠는 2026-08-05 기준이며 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

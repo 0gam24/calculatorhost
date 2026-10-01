@@ -310,7 +310,7 @@ export default function IncomeCertificateIssuancePage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 소득금액증명원 발급 가능 시점은 신고·자료 처리 상황에 따라 달라질 수 있고, 금융기관이 인정하는 소득 증빙 서류는 기관마다 다릅니다. 실제 발급 여부와 필요 서류는 홈택스·정부24 안내와 제출처(은행 등)에 미리 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>소득세법 §70(종합소득 과세표준 확정신고), 부가가치세법 §48·§49(예정·확정신고)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 소득금액증명원 발급 가능 시점은 신고·자료 처리 상황에 따라 달라질 수 있고, 금융기관이 인정하는 소득 증빙 서류는 기관마다 다릅니다. 실제 발급 여부와 필요 서류는 홈택스·정부24 안내와 제출처(은행 등)에 미리 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>소득세법 §70(종합소득 과세표준 확정신고), 부가가치세법 §48·§49(예정·확정신고)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

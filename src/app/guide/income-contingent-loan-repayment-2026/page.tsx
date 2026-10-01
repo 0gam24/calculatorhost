@@ -346,7 +346,7 @@ export default function IncomeContingentLoanRepayment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·금융 자문이 아닙니다. 상환기준소득과 상환율, 유예 요건은 연도·개인 상황에 따라 달라지므로, 실제 의무상환액은 국세청 취업 후 학자금 상환 시스템의 간편 계산과 안내로 확인하세요. 인용 법령은 <strong>취업 후 학자금 상환 특별법</strong>이며, 소득금액 산정 시 근로소득공제는 소득세법을 따릅니다. 본 콘텐츠는 2026-08-11 기준이며 제도 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·금융 자문이 아닙니다. 상환기준소득과 상환율, 유예 요건은 연도·개인 상황에 따라 달라지므로, 실제 의무상환액은 국세청 취업 후 학자금 상환 시스템의 간편 계산과 안내로 확인하세요. 인용 법령은 <strong>취업 후 학자금 상환 특별법</strong>이며, 소득금액 산정 시 근로소득공제는 소득세법을 따릅니다. 본 콘텐츠는 2026-08-11 기준이며 제도 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

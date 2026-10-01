@@ -357,7 +357,7 @@ export default function OneHouseResidenceRequirement2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 조정대상지역 지정 현황, 취득 시점 판단, 상생임대인 요건, 부득이한 사유 인정 여부는 개별 사실관계에 따라 달라집니다. 실제 비과세 판단과 세액은 관할 세무서 또는 국세청 상담(126)과 홈택스 모의계산으로 반드시 확인하세요. 본 콘텐츠는 2026-08-04 기준이며 관련 법령은 <strong>소득세법 §89, 소득세법 시행령 §154</strong>를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 조정대상지역 지정 현황, 취득 시점 판단, 상생임대인 요건, 부득이한 사유 인정 여부는 개별 사실관계에 따라 달라집니다. 실제 비과세 판단과 세액은 관할 세무서 또는 국세청 상담(126)과 홈택스 모의계산으로 반드시 확인하세요. 본 콘텐츠는 2026-08-04 기준이며 관련 법령은 <strong>소득세법 §89, 소득세법 시행령 §154</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

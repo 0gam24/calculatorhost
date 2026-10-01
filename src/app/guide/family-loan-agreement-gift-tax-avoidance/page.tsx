@@ -566,9 +566,6 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                     전에는 반드시 <strong>세무사나 국세청 상담</strong>을 받으시기 바랍니다.
                   </p>
                   <p className="mb-3">
-                    본 콘텐츠는 <strong>AI 보조 작성 후 운영자 검수</strong>를 거쳤습니다(Google AI Content Policy 준수).
-                  </p>
-                  <p className="mb-3">
                     <strong>법적 근거:</strong>
                   </p>
                   <ul className="list-inside list-disc space-y-1">

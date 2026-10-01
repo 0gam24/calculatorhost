@@ -446,7 +446,7 @@ export default function PropertyTaxBaseDatePage() {
                 <p className="mb-2">
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며, 개별 거래 상황(상속·증여 직후, 부부 공동명의, 조정지역 등)에 따라
                   적용이 다를 수 있습니다. 매매계약 작성 시 변호사·공인중개사·세무사와 상담 후 계약서를 작성하시기 바랍니다.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

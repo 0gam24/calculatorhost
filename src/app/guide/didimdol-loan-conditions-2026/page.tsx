@@ -316,7 +316,7 @@ export default function DidimdolLoanConditions2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 금융 조언이 아닙니다. 디딤돌대출의 소득 요건, 대출 한도, 금리, 대상 주택 기준은 부동산 정책과 시장 상황에 따라 수시로 변경됩니다. 본문의 수치는 기준 예시이며, 실제 신청 전 기금e든든과 수탁은행에서 그 시점의 정확한 조건을 반드시 확인하세요. 본 콘텐츠는 2026-07-31 기준이며 근거는 <strong>주택도시기금법 및 국토교통부·주택도시기금 고시</strong>를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 금융 조언이 아닙니다. 디딤돌대출의 소득 요건, 대출 한도, 금리, 대상 주택 기준은 부동산 정책과 시장 상황에 따라 수시로 변경됩니다. 본문의 수치는 기준 예시이며, 실제 신청 전 기금e든든과 수탁은행에서 그 시점의 정확한 조건을 반드시 확인하세요. 본 콘텐츠는 2026-07-31 기준이며 근거는 <strong>주택도시기금법 및 국토교통부·주택도시기금 고시</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

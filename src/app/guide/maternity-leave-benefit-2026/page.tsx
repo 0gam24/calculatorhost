@@ -376,7 +376,7 @@ export default function MaternityLeaveBenefit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 급여 상한액은 매년 고용노동부 고시로 조정되고, 피보험 단위기간·통상임금 산정·계약 형태에 따라 실제 지급액이 달라집니다. 신청 전 고용보험 홈페이지(고용24) 또는 관할 고용센터에서 반드시 확인하세요. 본 콘텐츠는 2026-07-24 기준이며 법령·고시 개정 시 업데이트됩니다. 근거 법조항은 <strong>근로기준법 §74(임산부의 보호), 고용보험법 §75(출산전후휴가 급여), §76(지급기간)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 급여 상한액은 매년 고용노동부 고시로 조정되고, 피보험 단위기간·통상임금 산정·계약 형태에 따라 실제 지급액이 달라집니다. 신청 전 고용보험 홈페이지(고용24) 또는 관할 고용센터에서 반드시 확인하세요. 본 콘텐츠는 2026-07-24 기준이며 법령·고시 개정 시 업데이트됩니다. 근거 법조항은 <strong>근로기준법 §74(임산부의 보호), 고용보험법 §75(출산전후휴가 급여), §76(지급기간)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

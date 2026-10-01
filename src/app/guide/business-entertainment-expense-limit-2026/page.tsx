@@ -341,7 +341,7 @@ export default function BusinessEntertainmentExpenseLimit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 기업업무추진비 한도, 수입금액별 적용률, 증빙 요건은 개정될 수 있고 업종·규모에 따라 적용이 달라지므로, 실제 신고 시에는 국세청 기준과 세무 대리인 확인이 필요합니다. 본 콘텐츠는 2026-08-16 기준으로 작성됐으며, 세법 개정 시 즉시 업데이트됩니다. 인용 근거: <strong>법인세법 §25(기업업무추진비의 손금불산입), 소득세법 §35(기업업무추진비의 필요경비 불산입)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 기업업무추진비 한도, 수입금액별 적용률, 증빙 요건은 개정될 수 있고 업종·규모에 따라 적용이 달라지므로, 실제 신고 시에는 국세청 기준과 세무 대리인 확인이 필요합니다. 본 콘텐츠는 2026-08-16 기준으로 작성됐으며, 세법 개정 시 즉시 업데이트됩니다. 인용 근거: <strong>법인세법 §25(기업업무추진비의 손금불산입), 소득세법 §35(기업업무추진비의 필요경비 불산입)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

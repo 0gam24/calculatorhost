@@ -738,9 +738,8 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                 </div>
 
                 <div className="rounded-lg bg-primary-500/10 p-4 text-sm text-primary-700 dark:text-primary-300">
-                  <p className="font-semibold">AI 보조 작성</p>
                   <p className="mt-1">
-                    본 가이드는 Anthropic Claude AI 보조로 작성되었으며, 한국 세법 전문가에 의해 사실 정확성 검수되었습니다.
+
                     마지막 갱신: 2026-05-24.
                   </p>
                 </div>

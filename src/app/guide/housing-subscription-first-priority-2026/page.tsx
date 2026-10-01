@@ -389,7 +389,7 @@ export default function HousingSubscriptionFirstPriority2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 청약 조언이 아닙니다. 1순위 요건과 예치금·규제지역 기준은 주택공급에 관한 규칙 개정과 규제지역 지정 변경에 따라 달라집니다. 규제지역 지정은 수시로 변동되므로, 실제 청약 전 청약홈(applyhome.co.kr) 공고문의 자격 요건을 반드시 확인하세요. 본 콘텐츠는 2026-07-24 기준이며 규칙·고시 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 청약 조언이 아닙니다. 1순위 요건과 예치금·규제지역 기준은 주택공급에 관한 규칙 개정과 규제지역 지정 변경에 따라 달라집니다. 규제지역 지정은 수시로 변동되므로, 실제 청약 전 청약홈(applyhome.co.kr) 공고문의 자격 요건을 반드시 확인하세요. 본 콘텐츠는 2026-07-24 기준이며 규칙·고시 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

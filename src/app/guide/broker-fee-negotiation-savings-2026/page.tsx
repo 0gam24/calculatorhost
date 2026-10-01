@@ -536,9 +536,6 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 <p className="mb-3">
                   중개수수료 상한요율은 협의 가능한 한도일 뿐이며, 실제 중개비는 거래 상황, 거래액, 경기, 중개사 형태 등에 따라 결정됩니다. 모든 협의는 계약서 작성 전에 명시적으로 이루어져야 하며, 계약서에 최종 금액(부가세 포함 여부)이 명확히 기록되어야 분쟁을 예방할 수 있습니다.
                 </p>
-                <p className="mb-3">
-                  본 가이드는 <strong>Claude(Anthropic)의 지원을 받아 작성된 후 운영자가 공인중개사법, 한국공인중개사협회 기준으로 검수</strong>했습니다.
-                </p>
                 <p>
                   최신 법령, 요율, 지자체 규제는 <Link href="https://www.kar.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">
                     한국공인중개사협회

@@ -462,7 +462,7 @@ export default function JeonseGuaranteeInsuranceHug2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률·금융 자문이 아닙니다. 실제 가입 가능 여부, 보증금 한도, 부채비율 판정, 보증료율, 할인율은 신청 시점의 HUG 최신 공고와 심사 결과에 따라 달라질 수 있으므로 반드시 HUG 홈페이지·안심전세 앱 또는 위탁은행 창구에서 확인하세요. 본 콘텐츠는 2026-07-20 기준이며, 관련 법령·요율 개정 시 즉시 업데이트됩니다. 인용 근거는 <strong>주택도시기금법(HUG 설립·보증 업무), 주택임대차보호법 §3(대항력)·§3의2(우선변제권)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률·금융 자문이 아닙니다. 실제 가입 가능 여부, 보증금 한도, 부채비율 판정, 보증료율, 할인율은 신청 시점의 HUG 최신 공고와 심사 결과에 따라 달라질 수 있으므로 반드시 HUG 홈페이지·안심전세 앱 또는 위탁은행 창구에서 확인하세요. 본 콘텐츠는 2026-07-20 기준이며, 관련 법령·요율 개정 시 즉시 업데이트됩니다. 인용 근거는 <strong>주택도시기금법(HUG 설립·보증 업무), 주택임대차보호법 §3(대항력)·§3의2(우선변제권)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

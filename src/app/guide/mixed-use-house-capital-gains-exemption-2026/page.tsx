@@ -330,7 +330,7 @@ export default function MixedUseHouseCapitalGainsExemption2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 겸용주택의 면적 안분, 부수토지 한도, 용도변경 효과는 사안별로 다르고 다툼의 소지가 있으므로, 실제 양도 전 관할 세무서 또는 세무대리인과 상담하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 소득세법 <strong>§89(비과세 양도소득), §95(장기보유특별공제)</strong>, 시행령 <strong>§154(1세대1주택의 범위), §160(고가주택)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 겸용주택의 면적 안분, 부수토지 한도, 용도변경 효과는 사안별로 다르고 다툼의 소지가 있으므로, 실제 양도 전 관할 세무서 또는 세무대리인과 상담하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 소득세법 <strong>§89(비과세 양도소득), §95(장기보유특별공제)</strong>, 시행령 <strong>§154(1세대1주택의 범위), §160(고가주택)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

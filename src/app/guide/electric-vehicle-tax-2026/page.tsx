@@ -698,8 +698,7 @@ export default function ElectricVehicleTax2026Page() {
                   감면 정책이 다를 수 있으므로, 실제 납부 전 주민센터 또는 시청 세무과 상담을 권장합니다.
                 </p>
                 <p>
-                  <strong>AI 보조 작성</strong>: 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다(Google AI Content Policy
-                  준수). 업데이트: {DATE_MODIFIED}
+                  업데이트: {DATE_MODIFIED}
                 </p>
               </section>
             </article>

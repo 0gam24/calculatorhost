@@ -308,7 +308,7 @@ export default function InterestRateCutRequestPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 금융상품의 투자·가입을 권유하지 않습니다. 금리 인하 폭·수용 여부는 금융회사의 심사와 상품별 금리 체계에 따라 달라지며, 신청 요건·서류는 회사마다 다를 수 있습니다. 실제 신청은 거래 금융회사 안내와 최신 규정을 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>은행법 §30의2(금리인하 요구), 상호저축은행법·여신전문금융업법의 동일 취지 규정</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 특정 금융상품의 투자·가입을 권유하지 않습니다. 금리 인하 폭·수용 여부는 금융회사의 심사와 상품별 금리 체계에 따라 달라지며, 신청 요건·서류는 회사마다 다를 수 있습니다. 실제 신청은 거래 금융회사 안내와 최신 규정을 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>은행법 §30의2(금리인하 요구), 상호저축은행법·여신전문금융업법의 동일 취지 규정</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

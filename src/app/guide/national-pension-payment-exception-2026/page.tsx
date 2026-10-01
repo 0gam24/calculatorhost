@@ -439,7 +439,7 @@ export default function NationalPensionPaymentException2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·연금 조언이 아닙니다. 실제 납부예외 인정 여부, 인정 기간, 추후납부 한도와 이자, 실업크레딧 병행 가능 여부는 국민연금공단(국번 없이 1355) 또는 nps.or.kr에서 반드시 확인하세요. 개별 상황(사유 종류, 증빙 유무, 기존 가입 이력)에 따라 처리 결과가 다를 수 있습니다. 본 콘텐츠는 2026-08-03을 기준으로 작성되었으며, 국민연금법 개정 시 즉시 업데이트됩니다. 인용 법조항은 <strong>국민연금법 §91(연금보험료 납부의 예외), §92(추후납부)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·연금 조언이 아닙니다. 실제 납부예외 인정 여부, 인정 기간, 추후납부 한도와 이자, 실업크레딧 병행 가능 여부는 국민연금공단(국번 없이 1355) 또는 nps.or.kr에서 반드시 확인하세요. 개별 상황(사유 종류, 증빙 유무, 기존 가입 이력)에 따라 처리 결과가 다를 수 있습니다. 본 콘텐츠는 2026-08-03을 기준으로 작성되었으며, 국민연금법 개정 시 즉시 업데이트됩니다. 인용 법조항은 <strong>국민연금법 §91(연금보험료 납부의 예외), §92(추후납부)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

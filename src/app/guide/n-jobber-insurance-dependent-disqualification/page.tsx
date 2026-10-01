@@ -289,7 +289,7 @@ export default function NJobberDependentGuide() {
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·보험 조언이 아닙니다. 피부양자 자격은 개인 사정(상속·증여 병행, 임대사업, 해외 거주 등)에 따라 적용이 달라지므로 반드시 국민건강보험공단(1577-1000) 또는 세무 전문가와 상담 후 결정하시기 바랍니다. 보험료 정확한 산정은 공단 모의계산 시스템에서 확인 가능.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵). 본 가이드는 AI 보조 작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                 </p>
               </section>
             </article>

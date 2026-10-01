@@ -334,7 +334,7 @@ export default function UltraShortTimeWorkerRightsPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 초단시간 판단, 4대보험 가입 여부, 주휴·연차·퇴직금 발생 여부는 실제 근로 실태와 사업장 상황에 따라 달라지므로 고용노동부·근로복지공단·관할 고용노동청에서 반드시 확인하세요. 본 콘텐츠는 2026-08-25 기준이며 관련 법령·판례 변화 시 업데이트됩니다. 근거 법조항은 <strong>근로기준법 §18(단시간근로자 근로조건), §55(주휴일), §60(연차), §17(근로조건 명시), 근로자퇴직급여 보장법 §4</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 초단시간 판단, 4대보험 가입 여부, 주휴·연차·퇴직금 발생 여부는 실제 근로 실태와 사업장 상황에 따라 달라지므로 고용노동부·근로복지공단·관할 고용노동청에서 반드시 확인하세요. 본 콘텐츠는 2026-08-25 기준이며 관련 법령·판례 변화 시 업데이트됩니다. 근거 법조항은 <strong>근로기준법 §18(단시간근로자 근로조건), §55(주휴일), §60(연차), §17(근로조건 명시), 근로자퇴직급여 보장법 §4</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

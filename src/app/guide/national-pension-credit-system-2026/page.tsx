@@ -342,7 +342,7 @@ export default function NationalPensionCreditSystem2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 재무·연금 조언이 아닙니다. 실제 크레딧 인정 개월, 신청 가능 여부, 연금 증가액은 개인의 가입 이력과 소득에 따라 달라지므로 국민연금공단(1355) 또는 지사 상담으로 반드시 확인하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 국민연금법 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>국민연금법 §18(군복무 크레딧), §19(출산 크레딧), §19의2(실업 크레딧)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 재무·연금 조언이 아닙니다. 실제 크레딧 인정 개월, 신청 가능 여부, 연금 증가액은 개인의 가입 이력과 소득에 따라 달라지므로 국민연금공단(1355) 또는 지사 상담으로 반드시 확인하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 국민연금법 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>국민연금법 §18(군복무 크레딧), §19(출산 크레딧), §19의2(실업 크레딧)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

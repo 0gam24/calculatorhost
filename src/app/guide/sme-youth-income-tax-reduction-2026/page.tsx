@@ -357,7 +357,7 @@ export default function SmeYouthIncomeTaxReduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 감면 대상 여부, 중소기업·업종 해당 여부, 병역 차감, 감면 한도 적용은 개인·회사 상황에 따라 달라지므로 회사 급여 담당자와 국세청에서 반드시 확인하세요. 감면 일몰 기한(2026-12-31 취업)과 연장 여부는 세법 개정에 따라 변동될 수 있습니다. 본 콘텐츠는 2026-07-13 기준으로 작성되었습니다. 인용 조문: <strong>조세특례제한법 §30(중소기업 취업자에 대한 소득세 감면)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 감면 대상 여부, 중소기업·업종 해당 여부, 병역 차감, 감면 한도 적용은 개인·회사 상황에 따라 달라지므로 회사 급여 담당자와 국세청에서 반드시 확인하세요. 감면 일몰 기한(2026-12-31 취업)과 연장 여부는 세법 개정에 따라 변동될 수 있습니다. 본 콘텐츠는 2026-07-13 기준으로 작성되었습니다. 인용 조문: <strong>조세특례제한법 §30(중소기업 취업자에 대한 소득세 감면)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

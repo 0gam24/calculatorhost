@@ -341,7 +341,7 @@ export default function CommercialLeasePremiumRecoveryProtection2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개별 사건에 대한 법률 자문이 아닙니다. 권리금 분쟁은 구체적 사실관계와 입증에 따라 결과가 달라지므로, 실제 대응은 변호사·대한법률구조공단·상가건물임대차분쟁조정위원회 등 전문 기관의 도움을 받으세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 법령·판례 변경 시 업데이트됩니다. 인용 법조항은 <strong>상가건물 임대차보호법 §10의4(권리금 회수기회 보호 등), §10(계약갱신 요구 등)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개별 사건에 대한 법률 자문이 아닙니다. 권리금 분쟁은 구체적 사실관계와 입증에 따라 결과가 달라지므로, 실제 대응은 변호사·대한법률구조공단·상가건물임대차분쟁조정위원회 등 전문 기관의 도움을 받으세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 법령·판례 변경 시 업데이트됩니다. 인용 법조항은 <strong>상가건물 임대차보호법 §10의4(권리금 회수기회 보호 등), §10(계약갱신 요구 등)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

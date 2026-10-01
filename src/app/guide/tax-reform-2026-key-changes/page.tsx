@@ -399,7 +399,7 @@ export default function TaxReform2026KeyChangesPage() {
                     §52의2(장애인 증여재산의 과세가액 불산입: 현행 합산 5억원 한도, 신탁·신청 요건
                     적용), 개별소비세법(자동차 감면)
                   </strong>
-                  . AI 보조 작성 후 운영자 검수 완료.
+                  .
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

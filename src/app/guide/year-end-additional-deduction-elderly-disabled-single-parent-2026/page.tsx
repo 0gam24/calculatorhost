@@ -363,7 +363,7 @@ export default function YearEndAdditionalDeductionPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 추가공제 대상 여부, 소득·나이 요건, 증빙 서류는 개인 상황에 따라 달라지므로 홈택스 연말정산 서비스와 국세청 안내를 반드시 확인하세요. 본 콘텐츠는 2026-08-25 기준이며 소득세법 개정 시 업데이트됩니다. 추가공제의 근거는 <strong>소득세법 §51(추가공제)</strong>이고, 기본공제 소득·나이 요건은 소득세법 §50을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 추가공제 대상 여부, 소득·나이 요건, 증빙 서류는 개인 상황에 따라 달라지므로 홈택스 연말정산 서비스와 국세청 안내를 반드시 확인하세요. 본 콘텐츠는 2026-08-25 기준이며 소득세법 개정 시 업데이트됩니다. 추가공제의 근거는 <strong>소득세법 §51(추가공제)</strong>이고, 기본공제 소득·나이 요건은 소득세법 §50을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

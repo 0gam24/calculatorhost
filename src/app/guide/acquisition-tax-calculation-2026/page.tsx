@@ -426,7 +426,7 @@ export default function AcquisitionTaxCalculation2026Page() {
                   <strong>법적 근거:</strong> 지방세법 §10~§17 (취득세 기본), §13·§13의2(세율·중과세), §151(지방교육세), 농어촌특별세법(농어촌특별세), 지방세특례제한법 §36의3(생애최초 감면). 정확한 적용 기준은 관할 지자체 세무과에 문의하세요.
                   <br />
                   <br />
-                  <strong>AI 보조 작성 후 운영자 검수 완료.</strong>
+
                 </p>
               </section>
 

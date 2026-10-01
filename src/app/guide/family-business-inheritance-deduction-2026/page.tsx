@@ -500,8 +500,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   특히 기업 규모, 경영 기간, 상속인 자격, 사후관리 조건이 복잡할 수 있으므로, 반드시
                   세무사나 변호사 상담이 필수입니다. 본 콘텐츠는 2026-07-11을 기준으로 작성되었으며,
                   상속세 및 증여세법 개정 시 즉시 업데이트됩니다. 가업상속공제의 정확한 기준은
-                  법조항 <strong>상속세 및 증여세법 §18의2</strong>를 따릅니다. AI 보조 작성 후
-                  운영자 검수 완료.
+                  법조항 <strong>상속세 및 증여세법 §18의2</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료:</strong>{' '}

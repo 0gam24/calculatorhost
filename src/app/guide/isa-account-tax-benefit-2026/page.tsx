@@ -484,7 +484,7 @@ export default function IsaAccountTaxBenefit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 투자 조언이 아닙니다. ISA 가입 여부, 유형 선택, 세제혜택의 정확한 적용은 금융기관(증권사·은행·보험사)과 국세청에 반드시 확인하세요. 특히 금융소득종합과세 대상 여부, 서민형 소득 기준 심사, 중도해지 페널티 등은 개별 상황에 따라 달라질 수 있습니다. 본 콘텐츠는 2026-07-07을 기준으로 작성되었으며, 조세특례제한법 개정 시 즉시 업데이트됩니다. ISA의 정확한 기준은 법조항 <strong>조세특례제한법 §91의18(개인종합자산관리계좌에 대한 과세특례)</strong> 및 <strong>소득세법 §59의3(연금계좌 전환 세액공제)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 투자 조언이 아닙니다. ISA 가입 여부, 유형 선택, 세제혜택의 정확한 적용은 금융기관(증권사·은행·보험사)과 국세청에 반드시 확인하세요. 특히 금융소득종합과세 대상 여부, 서민형 소득 기준 심사, 중도해지 페널티 등은 개별 상황에 따라 달라질 수 있습니다. 본 콘텐츠는 2026-07-07을 기준으로 작성되었으며, 조세특례제한법 개정 시 즉시 업데이트됩니다. ISA의 정확한 기준은 법조항 <strong>조세특례제한법 §91의18(개인종합자산관리계좌에 대한 과세특례)</strong> 및 <strong>소득세법 §59의3(연금계좌 전환 세액공제)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

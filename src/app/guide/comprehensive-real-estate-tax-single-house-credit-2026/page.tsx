@@ -552,7 +552,7 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 세액공제율 적용, 공제 대상 판정, 최종 종부세액은 관할 시·도세무서 또는 위택스에서 반드시 확인하세요. 특히 부부공동명의, 특례 신청, 연령 기준 등이 복잡한 경우 직접 문의하는 것이 안전합니다. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 종합부동산세법 개정 시 즉시 업데이트됩니다. 세액공제의 정확한 기준은 <strong>종합부동산세법 §9(세액공제)</strong>, <strong>§10의2(부부공동명의 특례)</strong>, <strong>§8(공제기준금액)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 세액공제율 적용, 공제 대상 판정, 최종 종부세액은 관할 시·도세무서 또는 위택스에서 반드시 확인하세요. 특히 부부공동명의, 특례 신청, 연령 기준 등이 복잡한 경우 직접 문의하는 것이 안전합니다. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 종합부동산세법 개정 시 즉시 업데이트됩니다. 세액공제의 정확한 기준은 <strong>종합부동산세법 §9(세액공제)</strong>, <strong>§10의2(부부공동명의 특례)</strong>, <strong>§8(공제기준금액)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

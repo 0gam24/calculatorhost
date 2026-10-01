@@ -386,7 +386,7 @@ export default function ParentChildAccountTransferGiftTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 증여 여부·공제 적용·자금출처 소명은 개별 사실관계에 따라 달라지므로, 실제 신고 전 국세청 또는 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-17 기준이며 관련 법령 개정 시 업데이트됩니다. 인용 조항: 상속세및증여세법 <strong>§2·§4(증여 정의)·§41의4(금전 무상대출 이익)·§45(재산취득자금 증여추정)·§46(비과세)·§53(증여재산공제)·§56(세율)·§69(신고세액공제)</strong>, 국세기본법 <strong>§14(실질과세)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 증여 여부·공제 적용·자금출처 소명은 개별 사실관계에 따라 달라지므로, 실제 신고 전 국세청 또는 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-17 기준이며 관련 법령 개정 시 업데이트됩니다. 인용 조항: 상속세및증여세법 <strong>§2·§4(증여 정의)·§41의4(금전 무상대출 이익)·§45(재산취득자금 증여추정)·§46(비과세)·§53(증여재산공제)·§56(세율)·§69(신고세액공제)</strong>, 국세기본법 <strong>§14(실질과세)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

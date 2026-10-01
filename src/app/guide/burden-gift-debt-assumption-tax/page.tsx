@@ -617,8 +617,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                   명확히 입증하는 것이 가장 중요합니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost). 본 가이드는 AI 보조
-                  작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost).
                 </p>
               </section>
             </article>

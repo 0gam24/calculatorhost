@@ -370,7 +370,7 @@ export default function BusinessClosureVatFinalReturn2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 폐업일 판정, 잔존재화 시가·경과기간 산정, 간이과세자 세액 계산은 사업 상황에 따라 달라지므로 홈택스 또는 세무대리인·관할 세무서에서 반드시 확인하세요. 본 콘텐츠는 2026-07-21 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>부가가치세법 §5(과세기간)·§10(재화 공급의 특례)·§49(확정신고와 납부)·§67(폐업 시 신고)</strong> 및 소득세법 §70입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 폐업일 판정, 잔존재화 시가·경과기간 산정, 간이과세자 세액 계산은 사업 상황에 따라 달라지므로 홈택스 또는 세무대리인·관할 세무서에서 반드시 확인하세요. 본 콘텐츠는 2026-07-21 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>부가가치세법 §5(과세기간)·§10(재화 공급의 특례)·§49(확정신고와 납부)·§67(폐업 시 신고)</strong> 및 소득세법 §70입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -304,7 +304,7 @@ export default function ParentalBenefitChildAllowance2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 조언이 아닙니다. 부모급여·아동수당의 금액, 대상 연령, 지급·신청 방식은 정부 정책과 예산에 따라 달라질 수 있으므로, 최신 기준과 개인별 자격은 복지로(bokjiro.go.kr) 또는 관할 주민센터에서 확인하시기 바랍니다. 부모급여는 보건복지부의 양육 지원 사업으로 운영되며, 아동수당은 <strong>아동수당법 §4(지급대상), §5(지급 신청), §11(아동수당의 환수)</strong>을 따릅니다. 본 콘텐츠는 2026-08-09를 기준으로 작성되었으며 정책 변경 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 조언이 아닙니다. 부모급여·아동수당의 금액, 대상 연령, 지급·신청 방식은 정부 정책과 예산에 따라 달라질 수 있으므로, 최신 기준과 개인별 자격은 복지로(bokjiro.go.kr) 또는 관할 주민센터에서 확인하시기 바랍니다. 부모급여는 보건복지부의 양육 지원 사업으로 운영되며, 아동수당은 <strong>아동수당법 §4(지급대상), §5(지급 신청), §11(아동수당의 환수)</strong>을 따릅니다. 본 콘텐츠는 2026-08-09를 기준으로 작성되었으며 정책 변경 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

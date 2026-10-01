@@ -462,7 +462,7 @@ export default function BusinessUseAccountRegistration2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 신고 대상 여부, 기한 계산, 미신고·미사용 가산세 계산은 관할 세무서 또는 세무대리인에게 반드시 확인하세요. 본 콘텐츠는 2026-07-20을 기준으로 작성되었으며, 소득세법 및 시행령 개정 시 즉시 업데이트됩니다. 사업용계좌의 신고·사용 의무는 <strong>소득세법 §160의5</strong>, 복식부기의무자 판단 기준은 <strong>소득세법 시행령 §208</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 신고 대상 여부, 기한 계산, 미신고·미사용 가산세 계산은 관할 세무서 또는 세무대리인에게 반드시 확인하세요. 본 콘텐츠는 2026-07-20을 기준으로 작성되었으며, 소득세법 및 시행령 개정 시 즉시 업데이트됩니다. 사업용계좌의 신고·사용 의무는 <strong>소득세법 §160의5</strong>, 복식부기의무자 판단 기준은 <strong>소득세법 시행령 §208</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

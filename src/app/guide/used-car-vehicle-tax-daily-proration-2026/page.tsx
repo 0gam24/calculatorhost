@@ -441,7 +441,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                   .
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · <strong>작성·검수</strong>: 김준혁 · <strong>공시</strong>: AI 보조 작성 후 운영자 검수.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · <strong>작성·검수</strong>: 김준혁 · <strong>공시</strong>:
                   정산 금액은 지자체별·반올림 규칙별로 1원 이상 차이가 날 수 있으니, 위택스 고지서를 최종 기준으로 하세요.
                 </p>
               </section>

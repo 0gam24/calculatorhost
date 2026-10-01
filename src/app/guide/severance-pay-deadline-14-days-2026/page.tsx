@@ -322,7 +322,7 @@ export default function SeverancePayDeadline14Days2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개별 노무·법률 자문이 아닙니다. 실제 지급기한 연장 합의 여부, 지연이자 산정, 진정·소송 절차는 사안에 따라 달라지므로 고용노동부(국번없이 1350) 또는 공인노무사·변호사와 상담하세요. 본 콘텐츠는 2026-07-21 기준이며 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>근로자퇴직급여보장법 §4(퇴직급여제도 설정)·§9(퇴직금의 지급)·§10(소멸시효)·§44(벌칙)</strong> 및 근로기준법 §37(미지급 임금 지연이자)입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개별 노무·법률 자문이 아닙니다. 실제 지급기한 연장 합의 여부, 지연이자 산정, 진정·소송 절차는 사안에 따라 달라지므로 고용노동부(국번없이 1350) 또는 공인노무사·변호사와 상담하세요. 본 콘텐츠는 2026-07-21 기준이며 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>근로자퇴직급여보장법 §4(퇴직급여제도 설정)·§9(퇴직금의 지급)·§10(소멸시효)·§44(벌칙)</strong> 및 근로기준법 §37(미지급 임금 지연이자)입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

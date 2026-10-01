@@ -339,7 +339,7 @@ export default function TaxCategoryPage() {
                       관련 가이드 ({related.length}편)
                     </h2>
                     <p className="text-sm text-text-secondary">
-                      세금 절세·신고 전략을 정리한 실전 가이드. AI Overview 인용 가능한 §N 법조항 기반 정확 답변.
+                      세금 절세·신고 전략을 정리한 실전 가이드. 관련 법조항과 적용 조건을 함께 확인하세요.
                     </p>
                     <ul className="grid gap-2 sm:grid-cols-2">
                       {related.map((g) => (

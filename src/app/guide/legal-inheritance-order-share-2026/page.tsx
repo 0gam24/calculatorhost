@@ -335,7 +335,7 @@ export default function LegalInheritanceOrderShare2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 상속인 확정, 상속분 계산, 유류분·상속포기 절차는 가족관계와 개별 사정에 따라 달라지므로, 분쟁이 예상되거나 재산·채무 규모가 크면 변호사·법무사 등 전문가 상담을 받으세요. 본 콘텐츠의 법적 기준은 <strong>민법 §1000(상속순위)</strong>, <strong>민법 §1003(배우자 상속)</strong>, <strong>민법 §1009(법정상속분)</strong>, <strong>민법 §1112(유류분)</strong>, <strong>민법 §1019(승인·포기 기간)</strong>을 따르며, 2026-08-01 기준으로 작성되었습니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 상속인 확정, 상속분 계산, 유류분·상속포기 절차는 가족관계와 개별 사정에 따라 달라지므로, 분쟁이 예상되거나 재산·채무 규모가 크면 변호사·법무사 등 전문가 상담을 받으세요. 본 콘텐츠의 법적 기준은 <strong>민법 §1000(상속순위)</strong>, <strong>민법 §1003(배우자 상속)</strong>, <strong>민법 §1009(법정상속분)</strong>, <strong>민법 §1112(유류분)</strong>, <strong>민법 §1019(승인·포기 기간)</strong>을 따르며, 2026-08-01 기준으로 작성되었습니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

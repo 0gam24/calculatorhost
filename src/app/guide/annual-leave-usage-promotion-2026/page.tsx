@@ -314,7 +314,7 @@ export default function AnnualLeaveUsagePromotion2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인·기업 맞춤형 노무 자문이 아닙니다. 사용촉진 절차의 적법성, 통상임금 범위, 수당 소멸 여부는 사업장 사정과 판례에 따라 달라지므로, 실제 적용은 고용노동부 상담이나 공인노무사 자문으로 확인하세요. 인용 법령은 <strong>근로기준법 §60, §61, §62</strong>입니다. 본 콘텐츠는 2026-08-11 기준이며 법령·판례 변경 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인·기업 맞춤형 노무 자문이 아닙니다. 사용촉진 절차의 적법성, 통상임금 범위, 수당 소멸 여부는 사업장 사정과 판례에 따라 달라지므로, 실제 적용은 고용노동부 상담이나 공인노무사 자문으로 확인하세요. 인용 법령은 <strong>근로기준법 §60, §61, §62</strong>입니다. 본 콘텐츠는 2026-08-11 기준이며 법령·판례 변경 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -446,7 +446,7 @@ export default function PrivateHousingSubscriptionDepositAmount2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 청약 조언이 아닙니다. 실제 예치기준금액, 지역구분, 순위 순차, 규제지역 추가 요건 등은 개별 단지 입주자모집공고문과 청약홈(applyhome.co.kr)에서 반드시 확인하세요. 특히 세종·제주 등 특별자치 지역구분, 규제지역 추가 요건, 특별공급 자격은 개정될 수 있습니다. 본 콘텐츠는 2026-08-02을 기준으로 작성되었으며, 주택공급에 관한 규칙 개정 시 업데이트됩니다. 예치금액 및 순위 기준은 <strong>주택공급에 관한 규칙 §10①(예치기준금액), 별표2, §27·§28(민영주택 일반공급 순위·순차)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 청약 조언이 아닙니다. 실제 예치기준금액, 지역구분, 순위 순차, 규제지역 추가 요건 등은 개별 단지 입주자모집공고문과 청약홈(applyhome.co.kr)에서 반드시 확인하세요. 특히 세종·제주 등 특별자치 지역구분, 규제지역 추가 요건, 특별공급 자격은 개정될 수 있습니다. 본 콘텐츠는 2026-08-02을 기준으로 작성되었으며, 주택공급에 관한 규칙 개정 시 업데이트됩니다. 예치금액 및 순위 기준은 <strong>주택공급에 관한 규칙 §10①(예치기준금액), 별표2, §27·§28(민영주택 일반공급 순위·순차)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

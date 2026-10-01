@@ -359,7 +359,7 @@ export default function HometownLoveDonationTaxCredit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 고향사랑기부금의 세액공제율, 연간 기부 한도, 답례품 규정은 개정될 수 있으므로 기부·신고 전 고향사랑e음과 국세청에서 최신 내용을 반드시 확인하세요. 실제 환급액은 개인의 결정세액 규모에 따라 달라집니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법령: <strong>조세특례제한법 §58(고향사랑 기부금에 대한 세액공제), 고향사랑 기부금에 관한 법률</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 고향사랑기부금의 세액공제율, 연간 기부 한도, 답례품 규정은 개정될 수 있으므로 기부·신고 전 고향사랑e음과 국세청에서 최신 내용을 반드시 확인하세요. 실제 환급액은 개인의 결정세액 규모에 따라 달라집니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법령: <strong>조세특례제한법 §58(고향사랑 기부금에 대한 세액공제), 고향사랑 기부금에 관한 법률</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

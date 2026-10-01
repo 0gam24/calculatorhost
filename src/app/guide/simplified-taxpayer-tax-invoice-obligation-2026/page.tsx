@@ -311,7 +311,7 @@ export default function SimplifiedTaxpayerTaxInvoiceObligation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 세금계산서 발급 의무 여부, 공급대가 기준 판정, 업종별 영수증 발급 규정, 간이과세 적용 여부는 개별 사업자의 업종·매출·거래 상대에 따라 달라지므로, 반드시 홈택스 또는 관할 세무서에서 본인의 사업자 유형을 확인하세요. 본 콘텐츠의 기준은 <strong>부가가치세법 §36(영수증 발급)</strong>, <strong>부가가치세법 §32(세금계산서)</strong>, <strong>부가가치세법 §61(간이과세)</strong>을 따르며, 구체적 금액 기준은 시행령과 국세청 고시를 따릅니다. 2026-08-01 기준으로 작성되었습니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 세금계산서 발급 의무 여부, 공급대가 기준 판정, 업종별 영수증 발급 규정, 간이과세 적용 여부는 개별 사업자의 업종·매출·거래 상대에 따라 달라지므로, 반드시 홈택스 또는 관할 세무서에서 본인의 사업자 유형을 확인하세요. 본 콘텐츠의 기준은 <strong>부가가치세법 §36(영수증 발급)</strong>, <strong>부가가치세법 §32(세금계산서)</strong>, <strong>부가가치세법 §61(간이과세)</strong>을 따르며, 구체적 금액 기준은 시행령과 국세청 고시를 따릅니다. 2026-08-01 기준으로 작성되었습니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

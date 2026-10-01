@@ -605,8 +605,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   잘못된 신고로 가산세나 추징이 발생할 수 있습니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵). 본 가이드는
-                  AI 보조 작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                 </p>
               </section>
             </article>

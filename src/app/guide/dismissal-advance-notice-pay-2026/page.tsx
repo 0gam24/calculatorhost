@@ -366,7 +366,7 @@ export default function DismissalAdvanceNoticePay2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 실제 예고수당 지급 여부와 금액은 근속기간, 통상임금 구성, 해고의 성격에 따라 달라질 수 있으므로, 구체적 사안은 고용노동부 또는 공인노무사와 상담하시기 바랍니다. 본 콘텐츠는 2026-08-09를 기준으로 작성되었으며 법령 개정 시 업데이트됩니다. 인용 조문은 <strong>근로기준법 §26(해고의 예고), §27(해고사유 등의 서면통지)</strong>이며, 임금채권 소멸시효는 근로기준법 §49를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 실제 예고수당 지급 여부와 금액은 근속기간, 통상임금 구성, 해고의 성격에 따라 달라질 수 있으므로, 구체적 사안은 고용노동부 또는 공인노무사와 상담하시기 바랍니다. 본 콘텐츠는 2026-08-09를 기준으로 작성되었으며 법령 개정 시 업데이트됩니다. 인용 조문은 <strong>근로기준법 §26(해고의 예고), §27(해고사유 등의 서면통지)</strong>이며, 임금채권 소멸시효는 근로기준법 §49를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

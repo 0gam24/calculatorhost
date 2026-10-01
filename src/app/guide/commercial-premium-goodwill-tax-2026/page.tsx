@@ -357,7 +357,7 @@ export default function CommercialPremiumGoodwillTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 권리금의 소득 구분, 부가세 발생 여부, 원천징수 방법은 개별 거래 조건에 따라 달라질 수 있으므로 실제 계약 전 관할 세무서나 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-18 기준으로 작성되었으며, 인용 법조항은 <strong>소득세법 §21(기타소득), 시행령 §87(필요경비), §129(원천징수), §14(분리과세), 부가가치세법 §10(포괄양수도), 국세기본법 §14(실질과세)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 권리금의 소득 구분, 부가세 발생 여부, 원천징수 방법은 개별 거래 조건에 따라 달라질 수 있으므로 실제 계약 전 관할 세무서나 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-18 기준으로 작성되었으며, 인용 법조항은 <strong>소득세법 §21(기타소득), 시행령 §87(필요경비), §129(원천징수), §14(분리과세), 부가가치세법 §10(포괄양수도), 국세기본법 §14(실질과세)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

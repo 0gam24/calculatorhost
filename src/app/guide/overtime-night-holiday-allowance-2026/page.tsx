@@ -500,9 +500,6 @@ export default function OvertimeNightHolidayAllowancePage() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>AI 보조 작성 · 운영자 검수:</strong> 본 가이드는 AI 보조로 작성되었으며, 법조항·가산율 정보는 운영자가 검수했습니다.
-                </p>
-                <p className="text-xs text-text-tertiary">
                   인용한 법조항: 근로기준법 §50 (주당 근로시간), §56 (가산수당), §55 (대체휴무)
                 </p>
                 <p className="text-xs text-text-tertiary">

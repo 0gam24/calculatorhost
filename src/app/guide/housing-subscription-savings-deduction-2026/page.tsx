@@ -432,7 +432,7 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 소득공제 적용 여부, 공제액, 추징 규칙은 관할 세무서 또는 은행에서 반드시 확인하세요. 특히 주택 당첨, 중도해지, 무주택확인서 제출 시기 등은 개인 상황에 따라 복잡할 수 있으므로 전문가와 상담하는 것이 안전합니다. 본 콘텐츠는 2026-07-03을 기준으로 작성되었으며, 조세특례제한법 개정 시 즉시 업데이트됩니다. 주택청약저축 소득공제의 정확한 기준은 법조항 <strong>조세특례제한법 §87(주택청약종합저축 등에 대한 소득공제 등)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 소득공제 적용 여부, 공제액, 추징 규칙은 관할 세무서 또는 은행에서 반드시 확인하세요. 특히 주택 당첨, 중도해지, 무주택확인서 제출 시기 등은 개인 상황에 따라 복잡할 수 있으므로 전문가와 상담하는 것이 안전합니다. 본 콘텐츠는 2026-07-03을 기준으로 작성되었으며, 조세특례제한법 개정 시 즉시 업데이트됩니다. 주택청약저축 소득공제의 정확한 기준은 법조항 <strong>조세특례제한법 §87(주택청약종합저축 등에 대한 소득공제 등)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

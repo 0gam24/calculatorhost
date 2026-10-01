@@ -326,7 +326,7 @@ export default function RetirementPayInterimSettlement2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무·세무 조언이 아닙니다. 중간정산 가능 여부, 사유별 세부 요건, 예상 퇴직소득세는 회사 담당 부서와 고용노동부(1350), 세무 전문가에게 반드시 확인하세요. 본 콘텐츠는 2026-07-16 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 조항은 <strong>근로자퇴직급여보장법 §8(퇴직금의 중간정산)·시행령 §3(중간정산 사유), 소득세법 §48(퇴직소득공제)·§55(세율)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무·세무 조언이 아닙니다. 중간정산 가능 여부, 사유별 세부 요건, 예상 퇴직소득세는 회사 담당 부서와 고용노동부(1350), 세무 전문가에게 반드시 확인하세요. 본 콘텐츠는 2026-07-16 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 조항은 <strong>근로자퇴직급여보장법 §8(퇴직금의 중간정산)·시행령 §3(중간정산 사유), 소득세법 §48(퇴직소득공제)·§55(세율)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

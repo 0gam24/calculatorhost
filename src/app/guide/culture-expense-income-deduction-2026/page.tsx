@@ -341,7 +341,7 @@ export default function CultureExpenseIncomeDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 실제 문화비 소득공제 인정 여부·한도·절세액은 사용 내역과 가맹점 등록 여부에 따라 달라지므로 문화비 소득공제 누리집과 홈택스 연말정산 결과로 확인하세요. 2026 세제개편안 관련 내용은 발표된 개정안이며 국회 통과 전으로 확정 사항이 아닙니다. 본 콘텐츠는 2026-08-19 기준이며 세법 개정 시 업데이트됩니다. 인용 법조항: <strong>조세특례제한법 §126의2(신용카드 등 사용금액에 대한 소득공제)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 실제 문화비 소득공제 인정 여부·한도·절세액은 사용 내역과 가맹점 등록 여부에 따라 달라지므로 문화비 소득공제 누리집과 홈택스 연말정산 결과로 확인하세요. 2026 세제개편안 관련 내용은 발표된 개정안이며 국회 통과 전으로 확정 사항이 아닙니다. 본 콘텐츠는 2026-08-19 기준이며 세법 개정 시 업데이트됩니다. 인용 법조항: <strong>조세특례제한법 §126의2(신용카드 등 사용금액에 대한 소득공제)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

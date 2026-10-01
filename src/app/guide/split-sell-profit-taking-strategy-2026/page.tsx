@@ -440,9 +440,6 @@ export default function SplitSellProfitTakingPage() {
                   <li>
                     • 양도소득세 등 세금 관련 구체 금액은 국세청 또는 증권사에 사전 확인하시기 바랍니다.
                   </li>
-                  <li>
-                    • 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
-                  </li>
                 </ul>
               </section>
 

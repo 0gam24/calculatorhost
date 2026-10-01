@@ -464,9 +464,7 @@ export default function FamilyBusinessSuccessionGiftSpecial2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 이 글은 AI 보조로 자동 생성되어 자동 품질 게이트를
-                  통과한 뒤 발행되었습니다. 발행 시점에 사람의 사전 검수는 없었으며, 운영자가 사후
-                  점검합니다. 가업승계 증여세 과세특례의 실제 적용 여부, 공제 한도, 사후관리 위반
+                  <strong>면책조항:</strong> 가업승계 증여세 과세특례의 실제 적용 여부, 공제 한도, 사후관리 위반
                   판정, 추징 세액은 회사·지분 구조와 개별 사실관계에 따라 크게 달라지므로 반드시
                   관할 세무서 또는 세무사·회계사와 확인하세요. 본 콘텐츠는 2026-09-16을 기준으로
                   작성되었으며, 관련 법령 개정 시 업데이트됩니다. 인용 법조항: 조세특례제한법

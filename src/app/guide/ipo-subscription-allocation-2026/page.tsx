@@ -341,7 +341,7 @@ export default function IpoSubscriptionAllocation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 공모주 청약 구조를 설명하는 정보 제공 목적이며, 특정 종목의 매수·매도를 권하지 않습니다. 투자 판단과 그에 따른 손익은 전적으로 본인 책임입니다. 균등·비례배정 비율, 증거금률, 청약 한도, 환불 일정은 종목과 증권사에 따라 다르므로, 청약 전 증권신고서와 청약 공고를 반드시 확인하세요. 관련 제도는 <strong>자본시장과 금융투자업에 관한 법률</strong> 및 금융투자협회 인수업무 규정을 따르며, 세부 배정 방식은 개정될 수 있습니다. 본 콘텐츠는 2026-08-05 기준입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 공모주 청약 구조를 설명하는 정보 제공 목적이며, 특정 종목의 매수·매도를 권하지 않습니다. 투자 판단과 그에 따른 손익은 전적으로 본인 책임입니다. 균등·비례배정 비율, 증거금률, 청약 한도, 환불 일정은 종목과 증권사에 따라 다르므로, 청약 전 증권신고서와 청약 공고를 반드시 확인하세요. 관련 제도는 <strong>자본시장과 금융투자업에 관한 법률</strong> 및 금융투자협회 인수업무 규정을 따르며, 세부 배정 방식은 개정될 수 있습니다. 본 콘텐츠는 2026-08-05 기준입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

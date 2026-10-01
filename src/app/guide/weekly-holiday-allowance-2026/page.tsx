@@ -495,9 +495,6 @@ export default function WeeklyHolidayAllowancePage() {
                 <p className="text-xs text-text-tertiary">
                   <strong>마지막 갱신:</strong> 2026-06-19 | 근로기준법 §55, 시행령 §30, 근로기준법 §18 기준
                 </p>
-                <p className="text-xs text-text-tertiary">
-                  <strong>AI 보조 작성:</strong> 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
-                </p>
               </section>
             </article>
           </main>

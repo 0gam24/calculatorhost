@@ -351,7 +351,7 @@ export default function NationalPensionVoluntarySubscription2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무·연금 조언이 아닙니다. 임의가입 자격, 최저 기준소득월액, 실제 예상 연금액은 국민연금공단(1355) 또는 홈페이지에서 반드시 확인하세요. 연금보험료율·기준소득월액 상·하한은 국민연금공단 고시에 따라 매년 달라집니다. 본 콘텐츠는 2026-07-16 기준이며 관련 법령·고시 개정 시 업데이트됩니다. 근거 조항은 <strong>국민연금법 §10(임의가입자)·§13(임의계속가입자)·§88(연금보험료)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무·연금 조언이 아닙니다. 임의가입 자격, 최저 기준소득월액, 실제 예상 연금액은 국민연금공단(1355) 또는 홈페이지에서 반드시 확인하세요. 연금보험료율·기준소득월액 상·하한은 국민연금공단 고시에 따라 매년 달라집니다. 본 콘텐츠는 2026-07-16 기준이며 관련 법령·고시 개정 시 업데이트됩니다. 근거 조항은 <strong>국민연금법 §10(임의가입자)·§13(임의계속가입자)·§88(연금보험료)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

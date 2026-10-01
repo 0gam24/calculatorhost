@@ -344,7 +344,7 @@ export default function DomesticStockMajorShareholderTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 투자·세무 조언이 아닙니다. 대주주 판정은 특수관계인 합산 등 변수가 있고 세제는 개정될 수 있으므로, 매매 전 홈택스·증권사·세무 전문가를 통해 최신 기준과 개별 판정을 반드시 확인하세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 인용 법조항은 <strong>소득세법 §94(양도소득의 범위), §103(양도소득 기본공제), §104(양도소득세의 세율), 시행령 §157(주권상장법인 대주주의 범위)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 투자·세무 조언이 아닙니다. 대주주 판정은 특수관계인 합산 등 변수가 있고 세제는 개정될 수 있으므로, 매매 전 홈택스·증권사·세무 전문가를 통해 최신 기준과 개별 판정을 반드시 확인하세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 인용 법조항은 <strong>소득세법 §94(양도소득의 범위), §103(양도소득 기본공제), §104(양도소득세의 세율), 시행령 §157(주권상장법인 대주주의 범위)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

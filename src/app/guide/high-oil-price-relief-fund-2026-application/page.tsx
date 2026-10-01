@@ -524,7 +524,7 @@ export default function HighOilPriceReliefFund2026Application() {
                   고유가 피해지원금은 정부 정책에 따라 신청 기간, 지급액, 대상 기준이 변경될 수 있습니다.
                   정확한 신청 대상 판정과 지급액은 정부24(gov.kr)에서 건강보험료 조회 또는 행정안전부(mois.go.kr)에서 확인하세요.
                   신청 카드사 또는 거주지 주민센터에 문의하여 최신 정보를 확인하시기 바랍니다.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

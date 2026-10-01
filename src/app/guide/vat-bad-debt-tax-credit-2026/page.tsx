@@ -314,7 +314,7 @@ export default function VatBadDebtTaxCredit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 대손 사유의 인정 여부와 공제 시점은 개별 거래와 증빙에 따라 달라지므로, 실제 신고 전 관할 세무서 또는 세무대리인에게 반드시 확인하세요. 본 콘텐츠는 2026-07-27 기준으로 작성되었으며 법령 개정 시 업데이트됩니다. 근거 법령은 부가가치세법 §45(대손세액의 공제특례)입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 대손 사유의 인정 여부와 공제 시점은 개별 거래와 증빙에 따라 달라지므로, 실제 신고 전 관할 세무서 또는 세무대리인에게 반드시 확인하세요. 본 콘텐츠는 2026-07-27 기준으로 작성되었으며 법령 개정 시 업데이트됩니다. 근거 법령은 부가가치세법 §45(대손세액의 공제특례)입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

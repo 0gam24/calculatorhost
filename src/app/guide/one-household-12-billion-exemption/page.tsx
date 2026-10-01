@@ -272,7 +272,7 @@ export default function OneHousehold12BillionGuide() {
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 일시적 2주택, 상속·증여, 거주 기간 단절 등 개별 사정에 따라 적용이 달라지므로 반드시 세무사 또는 국세청 상담을 통해 확정하시기 바랍니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵). 본 가이드는 AI 보조 작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                 </p>
               </section>
             </article>

@@ -379,7 +379,7 @@ export default function ParentalLeave66Special2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 6+6 부모육아휴직제의 월별 상한액과 지급 조건은 매년 고용노동부 고시와 시행령 개정으로 달라질 수 있으므로, 실제 신청 전 고용24 또는 관할 고용센터에서 최신 기준을 반드시 확인하세요. 본 콘텐츠는 2026-07-31 기준이며 관련 법령은 <strong>고용보험법 §70, 고용보험법 시행령 §95·§95의3</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 6+6 부모육아휴직제의 월별 상한액과 지급 조건은 매년 고용노동부 고시와 시행령 개정으로 달라질 수 있으므로, 실제 신청 전 고용24 또는 관할 고용센터에서 최신 기준을 반드시 확인하세요. 본 콘텐츠는 2026-07-31 기준이며 관련 법령은 <strong>고용보험법 §70, 고용보험법 시행령 §95·§95의3</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

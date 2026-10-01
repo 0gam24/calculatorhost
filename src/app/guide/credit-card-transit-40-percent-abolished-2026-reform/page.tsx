@@ -395,7 +395,7 @@ export default function CreditCardTransit40PercentAbolished2026ReformPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 2026년 세제개편안은 국회 심의 결과에 따라 최종 조문·시행일·부칙이 달라질 수 있으며, 실제 적용 시점의 공제율·한도·대상은 반드시 국세청 홈택스와 연말정산 종합안내를 통해 재확인하세요. 본 콘텐츠는 2026-08-21을 기준으로 작성되었고, 조세특례제한법 개정 확정 시 즉시 업데이트됩니다. 인용 법조항: <strong>조세특례제한법 §126의2 (신용카드등 사용금액에 대한 소득공제)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 2026년 세제개편안은 국회 심의 결과에 따라 최종 조문·시행일·부칙이 달라질 수 있으며, 실제 적용 시점의 공제율·한도·대상은 반드시 국세청 홈택스와 연말정산 종합안내를 통해 재확인하세요. 본 콘텐츠는 2026-08-21을 기준으로 작성되었고, 조세특례제한법 개정 확정 시 즉시 업데이트됩니다. 인용 법조항: <strong>조세특례제한법 §126의2 (신용카드등 사용금액에 대한 소득공제)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -455,7 +455,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   <strong>관련 법규:</strong> 주택도시기금법, 한국주택금융공사법, 주택도시보증공사법, 금융감독 관련 규제(LTV·DSR·DTI), 주택임대차보호법.
                 </p>
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 법적 조언이나 투자 조언이 아닙니다. 전세자금대출 신청 시 금융기관 정식 상담을 받고, 계약 전 법무사·변호사와 상의하세요. 본 콘텐츠는 {DATE_MODIFIED}을 기준으로 작성되었으며, 금융 정책·세율 변경 시 즉시 업데이트됩니다. 본 가이드는 AI 보조 작성 후 운영자 검수 과정을 거쳤습니다.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 법적 조언이나 투자 조언이 아닙니다. 전세자금대출 신청 시 금융기관 정식 상담을 받고, 계약 전 법무사·변호사와 상의하세요. 본 콘텐츠는 {DATE_MODIFIED}을 기준으로 작성되었으며, 금융 정책·세율 변경 시 즉시 업데이트됩니다.
                 </p>
               </section>
 

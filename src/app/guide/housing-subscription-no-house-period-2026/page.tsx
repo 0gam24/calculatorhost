@@ -350,7 +350,7 @@ export default function HousingSubscriptionNoHousePeriod2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 조언이 아닙니다. 무주택기간 산정, 소형·저가주택 특례, 분양권·입주권 주택 수 산정, 특별공급 요건 등은 공급 유형과 시점에 따라 달라집니다. 청약 신청 전에는 청약홈(applyhome.co.kr)의 청약가점 계산기와 안내를 반드시 확인하세요. 가점을 잘못 입력하면 부적격 당첨으로 처리될 수 있습니다. 본 콘텐츠는 2026-08-12 기준으로 작성되었습니다. 근거: <strong>주택공급에 관한 규칙(청약가점제 무주택기간 산정 기준)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 조언이 아닙니다. 무주택기간 산정, 소형·저가주택 특례, 분양권·입주권 주택 수 산정, 특별공급 요건 등은 공급 유형과 시점에 따라 달라집니다. 청약 신청 전에는 청약홈(applyhome.co.kr)의 청약가점 계산기와 안내를 반드시 확인하세요. 가점을 잘못 입력하면 부적격 당첨으로 처리될 수 있습니다. 본 콘텐츠는 2026-08-12 기준으로 작성되었습니다. 근거: <strong>주택공급에 관한 규칙(청약가점제 무주택기간 산정 기준)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

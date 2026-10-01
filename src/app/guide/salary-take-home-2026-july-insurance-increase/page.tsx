@@ -538,9 +538,6 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>생성 정보:</strong> AI 보조 작성 후 운영자 검수
-                </p>
-                <p className="text-xs text-text-tertiary">
                   마지막 갱신: 2026-06-29 | 2026년 국민연금법 §88 인상 반영, 기준소득월액 상한선(637만→659만원) 포함
                 </p>
               </section>

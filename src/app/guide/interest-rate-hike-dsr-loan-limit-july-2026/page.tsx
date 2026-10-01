@@ -639,7 +639,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                   7월 기준금리 인상은 아직 공식 결정되지 않았으며, 실제 기준금리 인상폭, 은행별 가산금리 조정, 개인의 신용도 및 기타 부채에 따라
                   신규 대출 한도는 크게 달라질 수 있습니다.
                   정확한 대출 한도 및 금리는 은행에 직접 문의하시거나 우리 사이트의 <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">대출한도 계산기</Link>를 이용하세요.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

@@ -499,7 +499,7 @@ export default function PropertyTaxCreditCardPayment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·재무 조언이 아닙니다. 카드사별 무이자 할부 개월수, 부분무이자 조건, 체크카드 캐시백 비율·한도, 사전응모 여부는 매년·매월 카드사 이벤트마다 변동되므로, 반드시 결제 직전에 각 카드사 앱·홈페이지와 위택스(또는 지자체 이택스)에서 최신 조건을 확인하세요. 본 콘텐츠는 2026-07-22 기준이며, 관련 법령·이벤트 정책 변경 시 업데이트됩니다. 재산세 카드 납부 근거는 <strong>지방세징수법 §23(신용카드등에 의한 지방세 납부)</strong>, 납기 근거는 <strong>지방세법 §114(재산세 납기)</strong>, 분할납부 근거는 <strong>지방세법 §118</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·재무 조언이 아닙니다. 카드사별 무이자 할부 개월수, 부분무이자 조건, 체크카드 캐시백 비율·한도, 사전응모 여부는 매년·매월 카드사 이벤트마다 변동되므로, 반드시 결제 직전에 각 카드사 앱·홈페이지와 위택스(또는 지자체 이택스)에서 최신 조건을 확인하세요. 본 콘텐츠는 2026-07-22 기준이며, 관련 법령·이벤트 정책 변경 시 업데이트됩니다. 재산세 카드 납부 근거는 <strong>지방세징수법 §23(신용카드등에 의한 지방세 납부)</strong>, 납기 근거는 <strong>지방세법 §114(재산세 납기)</strong>, 분할납부 근거는 <strong>지방세법 §118</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

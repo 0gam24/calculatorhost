@@ -615,9 +615,6 @@ export default function FourMajorInsuranceRates2026Page() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>생성 정보:</strong> AI 보조 작성 후 운영자 검수
-                </p>
-                <p className="text-xs text-text-tertiary">
                   마지막 갱신: 2026-09-30 | 2026년 최신 국민연금법 §88·4대보험 요율 반영
                 </p>
               </section>

@@ -334,7 +334,7 @@ export default function TenantLeaseRegistrationInjunction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 신청 요건, 필요 서류, 절차 기간, 비용, 이사 시점 판단은 개별 사안과 관할 법원에 따라 달라지므로 관할 법원, 대한법률구조공단 또는 변호사와 반드시 상담하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>주택임대차보호법 §3의3(임차권등기명령)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 신청 요건, 필요 서류, 절차 기간, 비용, 이사 시점 판단은 개별 사안과 관할 법원에 따라 달라지므로 관할 법원, 대한법률구조공단 또는 변호사와 반드시 상담하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>주택임대차보호법 §3의3(임차권등기명령)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

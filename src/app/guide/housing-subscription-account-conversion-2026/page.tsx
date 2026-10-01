@@ -314,7 +314,7 @@ export default function HousingSubscriptionAccountConversion2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 청약·금융 조언이 아닙니다. 전환 마감일, 순위 인정, 예치금 기준, 소득공제 요건은 제도 변경에 따라 달라질 수 있으므로 가입 은행과 청약홈, 국토교통부 안내로 반드시 확인하세요. 전환은 되돌리기 어려운 결정일 수 있으니 본인의 청약 목표를 먼저 정하고 조건을 대조한 뒤 진행하시기 바랍니다. 본 콘텐츠는 2026-08-16 기준으로 작성됐으며, 관련 규정(주택공급에 관한 규칙) 개정 시 즉시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 청약·금융 조언이 아닙니다. 전환 마감일, 순위 인정, 예치금 기준, 소득공제 요건은 제도 변경에 따라 달라질 수 있으므로 가입 은행과 청약홈, 국토교통부 안내로 반드시 확인하세요. 전환은 되돌리기 어려운 결정일 수 있으니 본인의 청약 목표를 먼저 정하고 조건을 대조한 뒤 진행하시기 바랍니다. 본 콘텐츠는 2026-08-16 기준으로 작성됐으며, 관련 규정(주택공급에 관한 규칙) 개정 시 즉시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

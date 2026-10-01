@@ -405,7 +405,7 @@ export default function EarnedIncomeTaxCreditPaymentAmount2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 본문의 표와 사례는 산정 구조 이해를 돕기 위한 것으로, 실제 지급액은 소득·재산·부양가족 등 개별 요건에 따라 달라집니다. 정확한 예상액은 홈택스 또는 손택스의 근로·자녀장려금 모의계산에서 반드시 확인하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 조세특례제한법 <strong>§100의3(신청자격)</strong>, <strong>§100의5(근로장려금의 산정)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 본문의 표와 사례는 산정 구조 이해를 돕기 위한 것으로, 실제 지급액은 소득·재산·부양가족 등 개별 요건에 따라 달라집니다. 정확한 예상액은 홈택스 또는 손택스의 근로·자녀장려금 모의계산에서 반드시 확인하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 조세특례제한법 <strong>§100의3(신청자격)</strong>, <strong>§100의5(근로장려금의 산정)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

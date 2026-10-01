@@ -521,9 +521,6 @@ export default function HousingPensionReverseMortgage2026() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>AI 보조 표기:</strong> 본 가이드는 AI(Claude) 보조 작성 후 운영자 검수를 거쳤습니다.
-                </p>
-                <p className="text-xs text-text-tertiary">
                   마지막 갱신: 2026-06-19 | 한국주택금융공사법, 한국주택금융공사 상품안내 기준
                 </p>
               </section>

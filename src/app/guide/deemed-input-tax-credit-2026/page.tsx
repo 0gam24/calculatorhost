@@ -378,7 +378,7 @@ export default function DeemedInputTaxCredit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤 세무 조언이 아닙니다. 실제 공제율·한도율·공제 가능액은 업종, 과세표준, 신고 시점의 법령에 따라 달라지므로 관할 세무서, 세무대리인, 홈택스(hometax.go.kr)에서 반드시 확인하세요. 특히 2026년 한도율은 개정 논의가 있어 이 글에서는 특정 수치를 단정하지 않았습니다. 본 콘텐츠는 2026-07-25 기준이며, 인용한 법조항은 <strong>부가가치세법 §42(면세농산물등 의제매입세액 공제특례), 같은 법 시행령 §84</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤 세무 조언이 아닙니다. 실제 공제율·한도율·공제 가능액은 업종, 과세표준, 신고 시점의 법령에 따라 달라지므로 관할 세무서, 세무대리인, 홈택스(hometax.go.kr)에서 반드시 확인하세요. 특히 2026년 한도율은 개정 논의가 있어 이 글에서는 특정 수치를 단정하지 않았습니다. 본 콘텐츠는 2026-07-25 기준이며, 인용한 법조항은 <strong>부가가치세법 §42(면세농산물등 의제매입세액 공제특례), 같은 법 시행령 §84</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

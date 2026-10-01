@@ -342,7 +342,7 @@ export default function JeonseFraudVictimSupport2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 법률 자문이 아닙니다. 전세사기 피해자 인정 여부와 지원 적용은 사건별 사실관계에 따라 달라지며, 관할 시·도와 국토교통부 전세사기피해지원위원회의 심의로 최종 결정됩니다. 반드시 전세사기피해자 지원관리시스템 또는 관할 지원기관에서 확인하세요. 인용 법령은 <strong>전세사기피해자 지원 및 주거안정에 관한 특별법 §3</strong> 등입니다. 본 콘텐츠는 2026-08-11 기준이며 법령 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 법률 자문이 아닙니다. 전세사기 피해자 인정 여부와 지원 적용은 사건별 사실관계에 따라 달라지며, 관할 시·도와 국토교통부 전세사기피해지원위원회의 심의로 최종 결정됩니다. 반드시 전세사기피해자 지원관리시스템 또는 관할 지원기관에서 확인하세요. 인용 법령은 <strong>전세사기피해자 지원 및 주거안정에 관한 특별법 §3</strong> 등입니다. 본 콘텐츠는 2026-08-11 기준이며 법령 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

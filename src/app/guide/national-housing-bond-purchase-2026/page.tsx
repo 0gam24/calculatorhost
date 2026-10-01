@@ -372,7 +372,7 @@ export default function NationalHousingBondPurchase2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·법률 조언이 아닙니다. 본문의 매입률·할인율 수치는 계산 구조를 설명하기 위한 <strong>예시</strong>이며, 실제 매입금액과 본인부담금은 매입 당일 주택도시기금 사이트(nhuf.molit.go.kr) 또는 담당 은행 창구에서 반드시 확인해야 합니다. 본 콘텐츠는 2026-07-19을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법조항은 <strong>주택도시기금법 §8(국민주택채권의 매입)</strong> 및 <strong>같은 법 시행령 §8(매입 대상과 매입 기준)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·법률 조언이 아닙니다. 본문의 매입률·할인율 수치는 계산 구조를 설명하기 위한 <strong>예시</strong>이며, 실제 매입금액과 본인부담금은 매입 당일 주택도시기금 사이트(nhuf.molit.go.kr) 또는 담당 은행 창구에서 반드시 확인해야 합니다. 본 콘텐츠는 2026-07-19을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법조항은 <strong>주택도시기금법 §8(국민주택채권의 매입)</strong> 및 <strong>같은 법 시행령 §8(매입 대상과 매입 기준)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

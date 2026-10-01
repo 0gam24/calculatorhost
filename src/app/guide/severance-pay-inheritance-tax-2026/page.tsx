@@ -425,9 +425,7 @@ export default function SeverancePayInheritanceTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 이 글은 AI 보조로 자동 생성되어 자동 품질 게이트를
-                  통과한 뒤 발행되었습니다. 발행 시점에 사람의 사전 검수는 없었으며, 운영자가 사후
-                  점검합니다. 본 가이드는 교육 목적의 일반 정보이며 개인 맞춤형 세무·법률 조언이
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적의 일반 정보이며 개인 맞춤형 세무·법률 조언이
                   아닙니다. 사망퇴직금의 상속재산 해당 여부는 회사 퇴직금 규정·지급 경위·개별 사안에
                   따라 달라지므로 반드시 세무서·국세상담센터 또는 세무 전문가와 확인하세요. 본
                   콘텐츠는 2026-09-18을 기준으로 작성되었으며, 관련 법령·판례 변경 시

@@ -558,7 +558,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>작성 정보:</strong> AI 보조 작성 후 운영자 검수.
+                  <strong>작성 정보:</strong>
                 </p>
                 <p className="text-xs text-text-tertiary">
                   마지막 갱신: 2026-06-19 | 2026년 최신 세율 및 소득세법 §146의2·§129①제5의2호 반영

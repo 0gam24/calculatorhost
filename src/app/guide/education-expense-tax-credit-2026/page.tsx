@@ -511,7 +511,7 @@ export default function EducationExpenseTaxCredit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 교육비 세액공제의 정확한 범위, 공제 대상, 한도는 개인의 소득 상황과 자녀의 부양 인정 여부에 따라 달라질 수 있습니다. 실제 공제 신청 전에 국세청 홈택스, 세무서, 또는 세무사에 반드시 상담하세요. 본 콘텐츠는 2026-07-07을 기준으로 작성되었으며, 소득세법 개정 시 즉시 업데이트됩니다. 교육비 세액공제의 정확한 기준은 법조항 <strong>소득세법 §59의4(교육비 세액공제)</strong>, <strong>소득세법 시행령 §119의4(공제 대상 교육비)</strong>를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 교육비 세액공제의 정확한 범위, 공제 대상, 한도는 개인의 소득 상황과 자녀의 부양 인정 여부에 따라 달라질 수 있습니다. 실제 공제 신청 전에 국세청 홈택스, 세무서, 또는 세무사에 반드시 상담하세요. 본 콘텐츠는 2026-07-07을 기준으로 작성되었으며, 소득세법 개정 시 즉시 업데이트됩니다. 교육비 세액공제의 정확한 기준은 법조항 <strong>소득세법 §59의4(교육비 세액공제)</strong>, <strong>소득세법 시행령 §119의4(공제 대상 교육비)</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

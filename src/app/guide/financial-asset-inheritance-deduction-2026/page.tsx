@@ -327,7 +327,7 @@ export default function FinancialAssetInheritanceDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 금융재산의 범위, 순금융재산 산정, 최대주주 주식·차명재산 제외 여부는 개별 상속 상황에 따라 달라지므로 홈택스 모의계산이나 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-18 기준으로 작성되었으며, 인용 법조항은 <strong>상속세 및 증여세법 §22(금융재산 상속공제)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 금융재산의 범위, 순금융재산 산정, 최대주주 주식·차명재산 제외 여부는 개별 상속 상황에 따라 달라지므로 홈택스 모의계산이나 세무 전문가에게 확인하세요. 본 콘텐츠는 2026-08-18 기준으로 작성되었으며, 인용 법조항은 <strong>상속세 및 증여세법 §22(금융재산 상속공제)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

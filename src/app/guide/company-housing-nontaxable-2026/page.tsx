@@ -409,7 +409,7 @@ export default function CompanyHousingNontaxable2026Page() {
                     소득세법 §12(비과세소득), §20(근로소득), 소득세법 시행령 §38(근로소득의
                     범위)·소득세법 시행령 §17의4(복리후생적 급여의 범위)
                   </strong>
-                  입니다. AI 보조 작성 후 운영자 검수 완료.
+                  입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

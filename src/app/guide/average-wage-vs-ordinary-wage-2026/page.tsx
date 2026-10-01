@@ -312,7 +312,7 @@ export default function AverageWageVsOrdinaryWage2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 통상임금 포함 항목 판단, 평균임금 산정 기간 제외 사유, 상여금 처리는 취업규칙과 최신 판례에 따라 달라집니다. 실제 계산과 다툼은 고용노동부 상담(1350), 근로복지공단, 노무사에게 확인하세요. 본 콘텐츠는 2026-08-04 기준이며 관련 법령은 <strong>근로기준법 §2, §56</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 통상임금 포함 항목 판단, 평균임금 산정 기간 제외 사유, 상여금 처리는 취업규칙과 최신 판례에 따라 달라집니다. 실제 계산과 다툼은 고용노동부 상담(1350), 근로복지공단, 노무사에게 확인하세요. 본 콘텐츠는 2026-08-04 기준이며 관련 법령은 <strong>근로기준법 §2, §56</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

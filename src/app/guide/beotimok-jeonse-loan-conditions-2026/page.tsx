@@ -348,7 +348,7 @@ export default function BeotimokJeonseLoanConditions2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 금융 조언이 아닙니다. 버팀목 전세자금대출의 소득·자산 요건, 한도, 금리, 대상주택 기준은 국토교통부 고시와 주택도시기금 운용 계획에 따라 매년 변동됩니다. 본문의 수치는 방향을 잡는 참고용이며, 실제 신청 전 반드시 주택도시기금 포털 또는 수탁은행에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-17 기준입니다. 근거: <strong>주택도시기금법</strong> 및 국토교통부 주택도시기금 운용 기준. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 금융 조언이 아닙니다. 버팀목 전세자금대출의 소득·자산 요건, 한도, 금리, 대상주택 기준은 국토교통부 고시와 주택도시기금 운용 계획에 따라 매년 변동됩니다. 본문의 수치는 방향을 잡는 참고용이며, 실제 신청 전 반드시 주택도시기금 포털 또는 수탁은행에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-17 기준입니다. 근거: <strong>주택도시기금법</strong> 및 국토교통부 주택도시기금 운용 기준.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

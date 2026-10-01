@@ -509,9 +509,6 @@ export default function InflationMoneyValuePage() {
                   </Link>
                   에서 직접 CPI 데이터를 조회하여 계산하시기 바랍니다.
                 </p>
-                <p className="mb-3">
-                  본 가이드는 <strong>Claude(Anthropic)의 지원을 받아 작성된 후 운영자가 통계청 CPI, 한국은행 물가안정목표, 금융 문헌으로 검수</strong>했습니다.
-                </p>
                 <p>
                   © 2026 <Link href="/" className="text-primary-500 underline">
                     calculatorhost.com

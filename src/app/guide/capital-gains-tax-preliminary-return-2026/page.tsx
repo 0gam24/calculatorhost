@@ -495,7 +495,7 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 예정신고 기한, 세액 계산, 감면 적용 여부는 홈택스(hometax.go.kr) 또는 관할 세무서에서 반드시 확인하세요. 특히 복수 양도, 일시적 2주택, 조정지역 거주 등의 경우 세율이 크게 달라질 수 있으므로 전문가 상담을 권합니다. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 소득세법 개정 시 즉시 업데이트됩니다. 양도소득세 예정신고의 정확한 기준은 법조항 <strong>소득세법 §105(양도소득과세표준 예정신고), §106(예정신고납부), 국세기본법 §47의2(무신고가산세)</strong>를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 예정신고 기한, 세액 계산, 감면 적용 여부는 홈택스(hometax.go.kr) 또는 관할 세무서에서 반드시 확인하세요. 특히 복수 양도, 일시적 2주택, 조정지역 거주 등의 경우 세율이 크게 달라질 수 있으므로 전문가 상담을 권합니다. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 소득세법 개정 시 즉시 업데이트됩니다. 양도소득세 예정신고의 정확한 기준은 법조항 <strong>소득세법 §105(양도소득과세표준 예정신고), §106(예정신고납부), 국세기본법 §47의2(무신고가산세)</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

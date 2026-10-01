@@ -453,7 +453,7 @@ export default function SpouseMiscarriageStillbirthLeave2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 노무 조언이 아닙니다. 실제 휴가 부여 요건, 유급 급여 지급 방식, 정부 지원 상한액과 세부 신청 절차는 관할 고용노동청, 회사 인사팀, 또는 노무사 자문으로 반드시 확인하세요. 본 콘텐츠는 2026-08-15을 기준으로 작성됐으며, 시행일 이후 지침이나 상한액 고시가 변경되면 즉시 업데이트됩니다. 관련 법조항: <strong>남녀고용평등법 §18의2</strong>(배우자 출산휴가), <strong>근로기준법 §74</strong>(본인 유산·사산 휴가), 그리고 신설된 배우자 유산·사산 휴가는 <strong>남녀고용평등법 개정(2026년 9월 18일 시행)</strong>에 근거합니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 노무 조언이 아닙니다. 실제 휴가 부여 요건, 유급 급여 지급 방식, 정부 지원 상한액과 세부 신청 절차는 관할 고용노동청, 회사 인사팀, 또는 노무사 자문으로 반드시 확인하세요. 본 콘텐츠는 2026-08-15을 기준으로 작성됐으며, 시행일 이후 지침이나 상한액 고시가 변경되면 즉시 업데이트됩니다. 관련 법조항: <strong>남녀고용평등법 §18의2</strong>(배우자 출산휴가), <strong>근로기준법 §74</strong>(본인 유산·사산 휴가), 그리고 신설된 배우자 유산·사산 휴가는 <strong>남녀고용평등법 개정(2026년 9월 18일 시행)</strong>에 근거합니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

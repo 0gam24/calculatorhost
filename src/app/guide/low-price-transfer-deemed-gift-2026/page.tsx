@@ -495,9 +495,7 @@ export default function LowPriceTransferDeemedGift2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 이 글은 AI 보조로 자동 생성되어 자동 품질 게이트를
-                  통과한 뒤 발행되었습니다. 발행 시점에 사람의 사전 검수는 없었으며, 운영자가 사후
-                  점검합니다. 저가양수도 증여의제와 부당행위계산 부인의 실제 적용은 자산 종류,
+                  <strong>면책조항:</strong> 저가양수도 증여의제와 부당행위계산 부인의 실제 적용은 자산 종류,
                   특수관계 여부, 시가 산정 방식에 따라 달라지므로, 실제 거래 전에는 반드시 국세청
                   또는 세무 전문가와 확인하세요. 본 콘텐츠는 2026-09-19를 기준으로 작성되었으며,
                   관련 법령·판례 변경 시 업데이트됩니다. 인용 법조항: 상속세및증여세법

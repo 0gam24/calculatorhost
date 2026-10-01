@@ -347,7 +347,7 @@ export default function RedevelopmentMembershipRightCgt2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 조합원입주권 비과세와 종전주택 특례는 관리처분인가일, 보유·거주 요건, 신축주택 전입 요건 등 세부 조건이 많고 개별 사안마다 결론이 달라집니다. 실제 양도 전 국세청 또는 세무 전문가에게 반드시 확인하세요. 본 콘텐츠는 2026-07-31 기준이며 관련 법령은 <strong>소득세법 §89·§104, 소득세법 시행령 §156의2</strong>를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 조합원입주권 비과세와 종전주택 특례는 관리처분인가일, 보유·거주 요건, 신축주택 전입 요건 등 세부 조건이 많고 개별 사안마다 결론이 달라집니다. 실제 양도 전 국세청 또는 세무 전문가에게 반드시 확인하세요. 본 콘텐츠는 2026-07-31 기준이며 관련 법령은 <strong>소득세법 §89·§104, 소득세법 시행령 §156의2</strong>를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

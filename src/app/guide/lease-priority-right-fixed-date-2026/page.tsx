@@ -529,7 +529,7 @@ export default function LeapriorityRightFixedDate2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 전세 계약 판단, 등기부등본 해석, 보증금 보장 여부 판단은 부동산 전문가(공인중개사·법무사)나 법률 전문가(변호사)와 상담하여 진행하세요. 본 콘텐츠는 2026-07-09를 기준으로 작성되었으며, 주택임대차보호법 개정 시 즉시 업데이트됩니다. 확정일자·전입신고·우선변제권의 정확한 기준은 법조항 <strong>주택임대차보호법 §3(대항력), §3의2(우선변제권), §8(최우선변제)</strong>과 <strong>시행령 §10·§11(지역별 기준액)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 실제 전세 계약 판단, 등기부등본 해석, 보증금 보장 여부 판단은 부동산 전문가(공인중개사·법무사)나 법률 전문가(변호사)와 상담하여 진행하세요. 본 콘텐츠는 2026-07-09를 기준으로 작성되었으며, 주택임대차보호법 개정 시 즉시 업데이트됩니다. 확정일자·전입신고·우선변제권의 정확한 기준은 법조항 <strong>주택임대차보호법 §3(대항력), §3의2(우선변제권), §8(최우선변제)</strong>과 <strong>시행령 §10·§11(지역별 기준액)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료:</strong>{' '}

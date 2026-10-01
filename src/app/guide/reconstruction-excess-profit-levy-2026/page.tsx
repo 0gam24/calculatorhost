@@ -338,7 +338,7 @@ export default function ReconstructionExcessProfitLevy2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·법률 자문이 아닙니다. 재건축부담금은 준공 시점 주택가격과 사업별 개발비용, 감면 요건에 따라 크게 달라지므로, 실제 부담금은 조합과 관할 지자체, 국토교통부 자료로 확인해야 합니다. 인용 법령은 <strong>재건축초과이익 환수에 관한 법률 §12</strong>입니다. 본 콘텐츠는 2026-08-11 기준이며 법령 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무·법률 자문이 아닙니다. 재건축부담금은 준공 시점 주택가격과 사업별 개발비용, 감면 요건에 따라 크게 달라지므로, 실제 부담금은 조합과 관할 지자체, 국토교통부 자료로 확인해야 합니다. 인용 법령은 <strong>재건축초과이익 환수에 관한 법률 §12</strong>입니다. 본 콘텐츠는 2026-08-11 기준이며 법령 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

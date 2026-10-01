@@ -644,8 +644,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                   부과되므로 주의하시기 바랍니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost). 본 가이드는 AI 보조 작성 후 운영자
-                  검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost).
                 </p>
               </section>
             </article>

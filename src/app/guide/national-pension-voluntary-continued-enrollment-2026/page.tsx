@@ -315,7 +315,7 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 연금 상담이 아닙니다. 임의계속가입의 유불리는 개인의 가입기간, 소득, 기대수명, 현금 흐름에 따라 크게 달라지므로, 신청 전 국민연금공단(1355)에서 본인 이력을 확인하고 상담받으세요. 보험료율·기준소득월액 상한 등 세부 수치는 개정될 수 있습니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법령: <strong>국민연금법 §13(임의계속가입자)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 연금 상담이 아닙니다. 임의계속가입의 유불리는 개인의 가입기간, 소득, 기대수명, 현금 흐름에 따라 크게 달라지므로, 신청 전 국민연금공단(1355)에서 본인 이력을 확인하고 상담받으세요. 보험료율·기준소득월액 상한 등 세부 수치는 개정될 수 있습니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법령: <strong>국민연금법 §13(임의계속가입자)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

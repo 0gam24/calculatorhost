@@ -337,7 +337,7 @@ export default function InheritanceRealEstateAppraisal2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 감정평가와 공시가 신고의 유불리는 상속공제 규모, 양도 시점, 장기보유특별공제, 비과세 여부에 따라 크게 달라지므로, 실제 신고 전 감정평가법인·세무 전문가와 상담해 총부담을 계산하세요. 본 콘텐츠는 2026-08-17 기준이며 관련 법령 개정 시 업데이트됩니다. 인용 조항: 상속세및증여세법 <strong>§60(평가의 원칙)·§61(부동산 보충적 평가)·§66(저당권 설정 재산 평가특례)</strong>, 같은 법 시행령 <strong>§49(시가의 범위·평가기간)</strong>, 소득세법 <strong>§97(양도 취득가액)</strong>, 국세기본법 <strong>§14(실질과세)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 감정평가와 공시가 신고의 유불리는 상속공제 규모, 양도 시점, 장기보유특별공제, 비과세 여부에 따라 크게 달라지므로, 실제 신고 전 감정평가법인·세무 전문가와 상담해 총부담을 계산하세요. 본 콘텐츠는 2026-08-17 기준이며 관련 법령 개정 시 업데이트됩니다. 인용 조항: 상속세및증여세법 <strong>§60(평가의 원칙)·§61(부동산 보충적 평가)·§66(저당권 설정 재산 평가특례)</strong>, 같은 법 시행령 <strong>§49(시가의 범위·평가기간)</strong>, 소득세법 <strong>§97(양도 취득가액)</strong>, 국세기본법 <strong>§14(실질과세)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

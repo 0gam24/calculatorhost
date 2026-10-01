@@ -346,7 +346,7 @@ export default function JulyVatGuide() {
                   <strong>면책조항</strong>: 본 가이드는 정보 제공 목적이며 세무·법적 조언이 아닙니다. 개별 사정(복잡한 거래, 특수 산업, 재정·금융 사업자 등)은 반드시 세무사 또는 국세청 상담을 통해 확정하시기 바랍니다. 신고 후 이의제기·경정청구는 신고일로부터 3개월 이내 가능합니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵). 본 가이드는 AI 보조 작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                 </p>
               </section>
             </article>

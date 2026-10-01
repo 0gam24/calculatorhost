@@ -39,7 +39,7 @@ export function Footer() {
         </nav>
         <p className="mt-4 max-w-3xl text-sm text-text-tertiary">
           계산 결과는 입력한 조건에 따른 참고값입니다. 실제 세금·금융 거래는 담당 기관에 확인하세요.
-          콘텐츠 작성에 AI 도구를 보조적으로 활용합니다.
+
         </p>
         <details className="mt-4 text-sm text-text-tertiary">
           <summary className="cursor-pointer">피드 · 추가 정보</summary>

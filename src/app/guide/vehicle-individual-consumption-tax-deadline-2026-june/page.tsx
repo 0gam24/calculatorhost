@@ -437,7 +437,7 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   <strong>면책조항</strong>: 본 가이드는 2026년 6월 1일 기준 정보를 제공합니다.
                   정부 정책은 변경될 수 있으므로, 차량 구매 전 딜러 또는 국세청에 최신 정보를 재확인하시기 바랍니다.
                   개별 거래 상황(사업용 차량, 특수 용도, 법인 구매 등)에 따라 세금 계산이 다를 수 있습니다.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

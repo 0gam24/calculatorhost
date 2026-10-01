@@ -428,7 +428,7 @@ export default function ProductiveFinanceIsa2026TaxReformPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·투자 조언이 아닙니다. 생산적금융 ISA는 2026-08-03 발표된 세제개편안 신설 내용으로, 국회 통과 이전 잠정 조건입니다. 국회 심의 과정에서 투자 대상·한도·청년 소득공제 요건이 조정될 수 있으며, 최종 시행 조건은 조세특례제한법 개정안과 시행령·시행규칙 고시로 확정됩니다. 관련 법조항은 <strong>조세특례제한법 §91의18</strong>(개인종합자산관리계좌), <strong>소득세법 §55</strong>(종합소득세율), <strong>소득세법 §59의3</strong>(연금계좌 세액공제), <strong>소득세법 §94</strong>(양도소득)를 참조하시기 바랍니다. 본 콘텐츠는 2026-08-21을 기준으로 작성되었으며, 관련 법령 개정 및 시행령 확정 시 즉시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·투자 조언이 아닙니다. 생산적금융 ISA는 2026-08-03 발표된 세제개편안 신설 내용으로, 국회 통과 이전 잠정 조건입니다. 국회 심의 과정에서 투자 대상·한도·청년 소득공제 요건이 조정될 수 있으며, 최종 시행 조건은 조세특례제한법 개정안과 시행령·시행규칙 고시로 확정됩니다. 관련 법조항은 <strong>조세특례제한법 §91의18</strong>(개인종합자산관리계좌), <strong>소득세법 §55</strong>(종합소득세율), <strong>소득세법 §59의3</strong>(연금계좌 세액공제), <strong>소득세법 §94</strong>(양도소득)를 참조하시기 바랍니다. 본 콘텐츠는 2026-08-21을 기준으로 작성되었으며, 관련 법령 개정 및 시행령 확정 시 즉시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

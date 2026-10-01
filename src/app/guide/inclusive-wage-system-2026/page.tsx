@@ -323,7 +323,7 @@ export default function InclusiveWageSystemPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 포괄임금 약정의 유효성은 계약 내용과 근로 실태에 따라 개별적으로 판단되며, 최저임금 산입 범위·소멸시효 등은 사안마다 다릅니다. 실제 분쟁은 근로계약서·급여명세서를 근거로 고용노동부 또는 공인노무사와 상담해 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>근로기준법 §56(연장·야간 및 휴일 근로), §17(근로조건의 명시), §15(위반 근로계약)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 조언이 아닙니다. 포괄임금 약정의 유효성은 계약 내용과 근로 실태에 따라 개별적으로 판단되며, 최저임금 산입 범위·소멸시효 등은 사안마다 다릅니다. 실제 분쟁은 근로계약서·급여명세서를 근거로 고용노동부 또는 공인노무사와 상담해 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>근로기준법 §56(연장·야간 및 휴일 근로), §17(근로조건의 명시), §15(위반 근로계약)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

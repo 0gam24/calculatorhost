@@ -702,8 +702,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   반드시 세무사 또는 국세청 상담을 통해 개인 상황에 맞는 정확한 계산을 받으시기 바랍니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost). 본 가이드는 AI 보조
-                  작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost).
                 </p>
               </section>
             </article>

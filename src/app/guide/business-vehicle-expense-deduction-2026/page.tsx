@@ -415,7 +415,7 @@ export default function BusinessVehicleExpenseDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 감가상각 한도, 운행기록부 인정 여부, 업무사용비율 산정, 부인액 처분 방식은 사업자 유형과 차량 사용 형태, 최신 시행령 개정 내용에 따라 달라지므로 관할 세무서, 홈택스 또는 세무대리인의 확인을 받으시기 바랍니다. 본 콘텐츠는 2026-07-28을 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 주요 근거 조항은 <strong>소득세법 §33의2</strong>, <strong>소득세법 시행령 §78의3</strong>, <strong>법인세법 §27의2</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 감가상각 한도, 운행기록부 인정 여부, 업무사용비율 산정, 부인액 처분 방식은 사업자 유형과 차량 사용 형태, 최신 시행령 개정 내용에 따라 달라지므로 관할 세무서, 홈택스 또는 세무대리인의 확인을 받으시기 바랍니다. 본 콘텐츠는 2026-07-28을 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 주요 근거 조항은 <strong>소득세법 §33의2</strong>, <strong>소득세법 시행령 §78의3</strong>, <strong>법인세법 §27의2</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

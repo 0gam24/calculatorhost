@@ -332,7 +332,7 @@ export default function ComprehensiveRealEstateTaxExclusion2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 합산배제 임대주택 요건(등록 시점별 공시가격 상한, 의무임대기간, 임대료 제한)은 매우 복잡하고 개별 사실관계에 따라 달라집니다. 대상 여부, 신고 방법, 추징 가능성은 반드시 홈택스 조회와 관할 세무서, 국세청 상담(126)으로 확인하세요. 본 콘텐츠는 2026-08-04 기준이며 관련 법령은 <strong>종합부동산세법 §8</strong> 및 같은 법 시행령을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 합산배제 임대주택 요건(등록 시점별 공시가격 상한, 의무임대기간, 임대료 제한)은 매우 복잡하고 개별 사실관계에 따라 달라집니다. 대상 여부, 신고 방법, 추징 가능성은 반드시 홈택스 조회와 관할 세무서, 국세청 상담(126)으로 확인하세요. 본 콘텐츠는 2026-08-04 기준이며 관련 법령은 <strong>종합부동산세법 §8</strong> 및 같은 법 시행령을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

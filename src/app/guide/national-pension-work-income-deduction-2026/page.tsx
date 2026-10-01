@@ -341,7 +341,7 @@ export default function NationalPensionWorkIncomeDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 조언이 아닙니다. A값, 감액 시작 기준, 구간별 감액 방식은 매년 갱신되고 2026년 6월 17일 개정이 반영됩니다. 본문의 구간표는 감액 구조 이해를 위한 참고 자료이며, 개정 기준을 반영한 실제 감액 금액과 대상 여부는 국민연금공단에서 반드시 확인하세요. 본 콘텐츠는 2026-08-12 기준으로 작성되었습니다. 인용 법조항: <strong>국민연금법 §63의2(소득활동에 따른 노령연금액), §62(연기연금)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 조언이 아닙니다. A값, 감액 시작 기준, 구간별 감액 방식은 매년 갱신되고 2026년 6월 17일 개정이 반영됩니다. 본문의 구간표는 감액 구조 이해를 위한 참고 자료이며, 개정 기준을 반영한 실제 감액 금액과 대상 여부는 국민연금공단에서 반드시 확인하세요. 본 콘텐츠는 2026-08-12 기준으로 작성되었습니다. 인용 법조항: <strong>국민연금법 §63의2(소득활동에 따른 노령연금액), §62(연기연금)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

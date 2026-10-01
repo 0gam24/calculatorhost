@@ -691,8 +691,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   기한 초과에 대해 calculatorhost는 책임지지 않습니다. 정확한 신고를 위해 국세청 상담(전화 1330) 또는 세무사 문의를 권장합니다.
                 </p>
                 <p>
-                  <strong>AI 보조 작성</strong>: 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다(Google AI Content Policy
-                  준수). 업데이트: {DATE_MODIFIED}
+                  업데이트: {DATE_MODIFIED}
                 </p>
               </section>
             </article>

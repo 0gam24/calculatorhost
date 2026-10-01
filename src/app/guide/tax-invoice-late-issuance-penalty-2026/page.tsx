@@ -247,13 +247,6 @@ export default function GuidePage() {
                 aria-label="작성 방식 및 면책"
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
-                <p className="mb-2">
-                  <strong>작성 방식</strong>: 본 가이드는 Anthropic Claude AI 가 자동 생성한 초안으로,
-                  금지 표현·출처·분량 자동 품질 게이트를 통과해 2026-08-30 자동 발행되었습니다.
-                  발행 시점에 사람의 사전 검수는 거치지 않았으며, 운영자(김준혁, 스마트데이터샵)가
-                  발행 후 법조항·세율·중복 여부를 점검해 필요 시 수정합니다.
-                  구체적 세율·법조항 수치는 이 글이 아니라 아래 공식 출처와 calculatorhost 계산기에서 확인하세요.
-                </p>
                 <p>
                   본 가이드는 참고용이며 법적 효력이 없습니다. 실제 세무·금융 처리는 세무사·국세청 등
                   공식 채널 안내를 받으시기 바랍니다. 세율·법조항 정확값은 calculatorhost 의 계산기 페이지

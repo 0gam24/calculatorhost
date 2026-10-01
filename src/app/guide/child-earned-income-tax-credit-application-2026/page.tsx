@@ -299,7 +299,7 @@ export default function ChildEarnedIncomeCreditGuide() {
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 소득·재산 산정, 점감 구간별 정확한 금액, 가구 유형 판정 등 개별 사정은 반드시 국세청(1566-3636) 또는 세무사와 상담을 통해 확정하시기 바랍니다. 정확한 시뮬은 홈택스 "장려금 자동 계산" 메뉴 활용.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵). 본 가이드는 AI 보조 작성 후 운영자 검수 발행되었습니다.
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).
                 </p>
               </section>
             </article>

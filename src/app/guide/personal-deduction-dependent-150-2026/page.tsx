@@ -686,9 +686,6 @@ export default function PersonalDeductionDependent2026Page() {
                       본 가이드는 2026년 세법을 기준으로 작성되었습니다. 법령 개정 시 내용이 변경될 수 있습니다.
                     </li>
                     <li>
-                      <strong>AI 보조 작성:</strong> 본문은 Claude AI의 보조를 받아 작성된 후 운영자에 의해 검수되었습니다.
-                    </li>
-                    <li>
                       구체적인 세무 상담은 세무사·공인회계사·국세청(1544-9944)에 문의하시기 바랍니다.
                     </li>
                     <li>

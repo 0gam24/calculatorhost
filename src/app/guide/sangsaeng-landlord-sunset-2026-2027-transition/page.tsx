@@ -423,7 +423,7 @@ export default function SangsaengLandlordSunsetPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 2026-08-03 세제개편안의 유예 조항은 국회 통과와 시행령 개정 후 최종 확정되며, 개정 진행 상황에 따라 세부 문언이 조정될 수 있습니다. 실제 계약 종료일 판정, 양도기한 계산, 최종 세액은 반드시 국세청 상담센터(126) 또는 관할 세무서·세무사와 확인하세요. 본 콘텐츠는 2026-08-21을 기준으로 작성되었으며, 관련 법령은 <strong>소득세법 §89(양도소득세 비과세)</strong>와 <strong>동법 시행령 §155의3(상생임대주택 특례)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 2026-08-03 세제개편안의 유예 조항은 국회 통과와 시행령 개정 후 최종 확정되며, 개정 진행 상황에 따라 세부 문언이 조정될 수 있습니다. 실제 계약 종료일 판정, 양도기한 계산, 최종 세액은 반드시 국세청 상담센터(126) 또는 관할 세무서·세무사와 확인하세요. 본 콘텐츠는 2026-08-21을 기준으로 작성되었으며, 관련 법령은 <strong>소득세법 §89(양도소득세 비과세)</strong>와 <strong>동법 시행령 §155의3(상생임대주택 특례)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

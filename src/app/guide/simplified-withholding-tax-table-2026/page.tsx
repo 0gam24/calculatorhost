@@ -331,7 +331,7 @@ export default function SimplifiedWithholdingTaxTable2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 매월 원천징수 세액과 연말정산 결과는 개인의 급여·부양가족·공제 항목에 따라 달라지므로, 정확한 세액은 국세청 홈택스 간이세액표 조회 또는 회사 급여 담당 부서에서 확인하세요. 본 콘텐츠는 2026-07-17을 기준으로 작성되었으며, 관련 법령은 <strong>소득세법 §134(근로소득 원천징수), 시행령 §194(간이세액표), §55(세율)</strong>를 따릅니다. 구체 세액표 값은 국세청 간이세액표를 참조하도록 헤지하였습니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 매월 원천징수 세액과 연말정산 결과는 개인의 급여·부양가족·공제 항목에 따라 달라지므로, 정확한 세액은 국세청 홈택스 간이세액표 조회 또는 회사 급여 담당 부서에서 확인하세요. 본 콘텐츠는 2026-07-17을 기준으로 작성되었으며, 관련 법령은 <strong>소득세법 §134(근로소득 원천징수), 시행령 §194(간이세액표), §55(세율)</strong>를 따릅니다. 구체 세액표 값은 국세청 간이세액표를 참조하도록 헤지하였습니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -334,7 +334,7 @@ export default function SimplifiedTaxationWaiver2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 간이과세 기준 금액, 업종별 부가가치율, 재적용 조건은 세법 개정에 따라 달라질 수 있으므로, 실제 신고 전에는 국세청 홈택스 또는 세무대리인을 통해 본인 사업 기준으로 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>부가가치세법 §70(간이과세의 포기)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 간이과세 기준 금액, 업종별 부가가치율, 재적용 조건은 세법 개정에 따라 달라질 수 있으므로, 실제 신고 전에는 국세청 홈택스 또는 세무대리인을 통해 본인 사업 기준으로 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>부가가치세법 §70(간이과세의 포기)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

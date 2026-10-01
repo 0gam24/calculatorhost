@@ -390,7 +390,7 @@ export default function RealEstateTransactionReport2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률·세무 조언이 아닙니다. 신고 의무자, 신고 기한, 과태료 금액은 개별 거래 상황과 법령 개정 시점에 따라 달라질 수 있으므로, 실제 신고와 이의 대응은 국토교통부, 관할 시·군·구청, 세무사 등 전문가 확인을 병행하시기 바랍니다. 본 콘텐츠는 2026-08-15을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용한 법조항은 <strong>부동산 거래신고 등에 관한 법률 §3(부동산 거래의 신고), §28(과태료)</strong>이며, 지연·거짓신고 과태료 세부 금액은 <strong>같은 법 시행령 별표3</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률·세무 조언이 아닙니다. 신고 의무자, 신고 기한, 과태료 금액은 개별 거래 상황과 법령 개정 시점에 따라 달라질 수 있으므로, 실제 신고와 이의 대응은 국토교통부, 관할 시·군·구청, 세무사 등 전문가 확인을 병행하시기 바랍니다. 본 콘텐츠는 2026-08-15을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용한 법조항은 <strong>부동산 거래신고 등에 관한 법률 §3(부동산 거래의 신고), §28(과태료)</strong>이며, 지연·거짓신고 과태료 세부 금액은 <strong>같은 법 시행령 별표3</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

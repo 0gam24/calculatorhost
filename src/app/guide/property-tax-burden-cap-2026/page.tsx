@@ -404,7 +404,7 @@ export default function PropertyTaxBurdenCap2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 세부담상한 적용 여부, 상한액, 최종 납부액은 관할 시·군·구청 세무서 또는 위택스에서 반드시 확인하세요. 특히 신축, 증축, 용도변경, 특례 적용 변경 등의 경우 상황이 복잡할 수 있으므로 직접 문의하는 것이 안전합니다. 본 콘텐츠는 2026-06-30을 기준으로 작성되었으며, 지방세법 개정 시 즉시 업데이트됩니다. 세부담상한제의 정확한 기준은 법조항 <strong>지방세법 §122(세부담의 상한)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 세부담상한 적용 여부, 상한액, 최종 납부액은 관할 시·군·구청 세무서 또는 위택스에서 반드시 확인하세요. 특히 신축, 증축, 용도변경, 특례 적용 변경 등의 경우 상황이 복잡할 수 있으므로 직접 문의하는 것이 안전합니다. 본 콘텐츠는 2026-06-30을 기준으로 작성되었으며, 지방세법 개정 시 즉시 업데이트됩니다. 세부담상한제의 정확한 기준은 법조항 <strong>지방세법 §122(세부담의 상한)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

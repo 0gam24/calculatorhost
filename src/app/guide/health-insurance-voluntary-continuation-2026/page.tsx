@@ -333,7 +333,7 @@ export default function HealthInsuranceVoluntaryContinuation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 조언이 아닙니다. 본문의 보험료 금액은 이해를 돕기 위한 가정치이며, 실제 임의계속 보험료와 지역보험료는 개인의 소득·재산에 따라 달라지므로 국민건강보험공단(1577-1000)에서 반드시 확인하세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 관련 제도 변경 시 업데이트됩니다. 인용 법조항은 <strong>국민건강보험법 §110(실업자에 대한 특례)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 조언이 아닙니다. 본문의 보험료 금액은 이해를 돕기 위한 가정치이며, 실제 임의계속 보험료와 지역보험료는 개인의 소득·재산에 따라 달라지므로 국민건강보험공단(1577-1000)에서 반드시 확인하세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 관련 제도 변경 시 업데이트됩니다. 인용 법조항은 <strong>국민건강보험법 §110(실업자에 대한 특례)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

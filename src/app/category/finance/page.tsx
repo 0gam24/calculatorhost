@@ -345,7 +345,7 @@ export default function FinanceCategoryPage() {
                   <section aria-label="관련 가이드" className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                     <h2 className="text-2xl font-bold text-text-primary">관련 가이드 ({related.length}편)</h2>
                     <p className="text-sm text-text-secondary">
-                      DSR·LTV·금리·환율 관련 실전 가이드. AI Overview 인용 가능한 §N 법조항 기반.
+                      DSR·LTV·금리·환율 관련 실전 가이드. 관련 법조항과 적용 조건을 함께 확인하세요.
                     </p>
                     <ul className="grid gap-2 sm:grid-cols-2">
                       {related.map((g) => (

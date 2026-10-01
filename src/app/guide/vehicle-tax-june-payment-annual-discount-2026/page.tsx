@@ -612,7 +612,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                   세금 법령 및 정부 정책은 변경될 수 있으므로, 자동차세 납부 전 위택스 또는 관할 지자체 세무서에 최신 정보를 확인하시기 바랍니다.
                   특히 연납 공제율은 매년 국고예규에 따라 정해지므로, 신청 전 위택스에서 현재 공제율을 반드시 확인하세요.
                   개별 차량(영업용 차량, 특수 용도, 법인 소유 등)에 따라 세액이 달라질 수 있습니다.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

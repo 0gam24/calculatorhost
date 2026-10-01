@@ -691,7 +691,7 @@ export default function VehicleAcquisitionTax2026Page() {
                   .
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED}. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>업데이트</strong>: {DATE_MODIFIED}.
                 </p>
                 <p className="mt-2 text-xs">
                   <strong>법조항 인용</strong>: 지방세법 §12① (자동차 취득세 세율) ·

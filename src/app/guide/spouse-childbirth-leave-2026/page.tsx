@@ -363,7 +363,7 @@ export default function SpouseChildbirthLeave2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 상담이 아닙니다. 배우자 출산휴가 일수·급여 상한·신청 요건은 사업장 규모와 고용보험 가입 이력에 따라 달라질 수 있으므로, 실제 적용은 고용노동부·고용24(고용보험) 또는 관할 고용센터에서 반드시 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 법령·고시 개정 시 업데이트됩니다. 근거 법조항은 <strong>남녀고용평등법 §18의2(배우자 출산휴가)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 노무 상담이 아닙니다. 배우자 출산휴가 일수·급여 상한·신청 요건은 사업장 규모와 고용보험 가입 이력에 따라 달라질 수 있으므로, 실제 적용은 고용노동부·고용24(고용보험) 또는 관할 고용센터에서 반드시 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 법령·고시 개정 시 업데이트됩니다. 근거 법조항은 <strong>남녀고용평등법 §18의2(배우자 출산휴가)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -367,7 +367,7 @@ export default function PensionIncomeTaxWithholding2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·재무 조언이 아닙니다. 연금 수령 방식, 세율 적용, 종합·분리과세 선택은 개인의 연금 종류·연령·다른 소득에 따라 달라지므로 금융회사·국세청과 확인하세요. 본 콘텐츠는 2026-07-13 기준으로 작성되었으며, 소득세법 개정 시 업데이트됩니다. 인용 조문: <strong>소득세법 §20의3(연금소득), §64의4(연금소득 세액계산 특례), §129(원천징수세율)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무·재무 조언이 아닙니다. 연금 수령 방식, 세율 적용, 종합·분리과세 선택은 개인의 연금 종류·연령·다른 소득에 따라 달라지므로 금융회사·국세청과 확인하세요. 본 콘텐츠는 2026-07-13 기준으로 작성되었으며, 소득세법 개정 시 업데이트됩니다. 인용 조문: <strong>소득세법 §20의3(연금소득), §64의4(연금소득 세액계산 특례), §129(원천징수세율)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

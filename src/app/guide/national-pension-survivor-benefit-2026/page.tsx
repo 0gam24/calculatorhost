@@ -344,7 +344,7 @@ export default function NationalPensionSurvivorBenefit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 연금 상담이 아닙니다. 유족연금의 수급요건, 지급 정지·재개, 실제 수령액은 사망자의 가입 이력과 유족의 상황에 따라 달라지므로, 구체적 사안은 국민연금공단(국번 없이 1355)에서 확인하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 국민연금법 <strong>§56(중복급여의 조정), §72(유족연금의 수급권자), §73(유족의 범위), §74(유족연금액), §75(수급권 소멸)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 연금 상담이 아닙니다. 유족연금의 수급요건, 지급 정지·재개, 실제 수령액은 사망자의 가입 이력과 유족의 상황에 따라 달라지므로, 구체적 사안은 국민연금공단(국번 없이 1355)에서 확인하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 국민연금법 <strong>§56(중복급여의 조정), §72(유족연금의 수급권자), §73(유족의 범위), §74(유족연금액), §75(수급권 소멸)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

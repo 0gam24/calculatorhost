@@ -489,7 +489,7 @@ export default function YouthMonthlyRentSupport2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항</strong>: 본 가이드는 청년 주거지원 정책의 이해를 돕기 위한 교육 목적의 정리이며, 개인 맞춤 상담이 아닙니다. 청년 월세 특별지원의 대상 연령, 소득·재산 요건, 임차보증금·월세 상한, 월 지원 금액, 총 지원 기간, 신청 창구, 중복 수급 여부는 국토교통부 사업 지침과 각 지자체 공고에 따라 매년, 지역별로 달라집니다. 반드시 복지로(bokjiro.go.kr), 마이홈포털(myhome.go.kr), 국토교통부(molit.go.kr) 및 거주지 시·군·구청 공고에서 최신 기준을 확인한 뒤 신청하시기 바랍니다. 본 콘텐츠는 2026-07-22 기준으로 작성되었으며, 사업 지침 개편 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항</strong>: 본 가이드는 청년 주거지원 정책의 이해를 돕기 위한 교육 목적의 정리이며, 개인 맞춤 상담이 아닙니다. 청년 월세 특별지원의 대상 연령, 소득·재산 요건, 임차보증금·월세 상한, 월 지원 금액, 총 지원 기간, 신청 창구, 중복 수급 여부는 국토교통부 사업 지침과 각 지자체 공고에 따라 매년, 지역별로 달라집니다. 반드시 복지로(bokjiro.go.kr), 마이홈포털(myhome.go.kr), 국토교통부(molit.go.kr) 및 거주지 시·군·구청 공고에서 최신 기준을 확인한 뒤 신청하시기 바랍니다. 본 콘텐츠는 2026-07-22 기준으로 작성되었으며, 사업 지침 개편 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

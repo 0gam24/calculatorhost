@@ -424,9 +424,6 @@ export default function HealthInsuranceDependentQualificationGuide() {
                     개별 사례는 소득 신고 방식·재산 구성·부양 관계에 따라 달라질 수 있으므로, 최종 판정은 국민건강보험공단(전화 1577-1000)에 문의하시기 바랍니다.
                   </li>
                   <li>
-                    본 콘텐츠는 AI 보조 작성 후 운영자가 법적 검증을 거쳐 발행했습니다.
-                  </li>
-                  <li>
                     내용 오류 발견 시 <Link href="/contact/" className="text-primary-500 hover:underline">문의 페이지</Link>로 알려주세요.
                   </li>
                 </ul>

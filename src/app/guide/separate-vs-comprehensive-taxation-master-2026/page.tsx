@@ -746,8 +746,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   <strong>면책 조항</strong>: 본 가이드는 정보 제공 목적이며 세무·법적 조언이 아닙니다. 개별 상황·세율 변경·과세관청 판단에 따라 결과가 달라질 수 있으므로, 실제 신고 전 세무사 또는 국세청 상담을 받으시기 바랍니다.
                 </p>
                 <p>
-                  <strong>AI 보조 작성</strong>: 본 가이드는 AI 보조 작성 후 운영자 검수를 거쳤습니다(Google AI Content Policy
-                  준수). 업데이트: {DATE_MODIFIED}
+                  업데이트: {DATE_MODIFIED}
                 </p>
               </section>
             </article>

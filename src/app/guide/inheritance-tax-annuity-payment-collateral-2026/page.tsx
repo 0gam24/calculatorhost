@@ -405,7 +405,7 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 이 글은 AI 보조로 자동 생성되어 자동 품질 게이트를 통과한 뒤 발행되었습니다. 발행 시점에 사람의 사전 검수는 없었으며, 운영자가 사후 점검합니다. 연부연납의 실제 허가 여부, 담보 인정 범위, 가산율은 신청 시점과 개별 사안에 따라 달라지므로, 반드시 관할 세무서 또는 세무사와 확인하세요. 본 콘텐츠는 2026-09-15 기준이며, 인용 법조항은 상속세및증여세법 <strong>§71(연부연납)</strong>, 국세징수법 <strong>§18(납세담보의 종류)</strong>입니다.
+                  <strong>면책조항:</strong> 연부연납의 실제 허가 여부, 담보 인정 범위, 가산율은 신청 시점과 개별 사안에 따라 달라지므로, 반드시 관할 세무서 또는 세무사와 확인하세요. 본 콘텐츠는 2026-09-15 기준이며, 인용 법조항은 상속세및증여세법 <strong>§71(연부연납)</strong>, 국세징수법 <strong>§18(납세담보의 종류)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

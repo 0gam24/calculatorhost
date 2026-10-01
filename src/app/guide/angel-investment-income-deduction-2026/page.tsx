@@ -419,7 +419,7 @@ export default function AngelInvestmentIncomeDeductionPage() {
                   투자이며 본 콘텐츠는 특정 투자를 권유하지 않습니다. 본 콘텐츠는 2026-08-25
                   기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은{' '}
                   <strong>조세특례제한법 §16(벤처투자조합 출자 등에 대한 소득공제)</strong>입니다.
-                  AI 보조 작성 후 운영자 검수 완료.
+
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

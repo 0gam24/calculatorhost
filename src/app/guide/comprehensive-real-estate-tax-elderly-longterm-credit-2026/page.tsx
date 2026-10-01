@@ -367,7 +367,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 세액공제 적용 여부, 공제율, 보유 기간 산정, 공동명의 특례는 개인의 나이·보유 기간·세대 구성에 따라 달라지므로, 실제 세액은 국세청 홈택스 또는 세무 전문가와 반드시 확인하세요. 본 콘텐츠는 2026-07-17을 기준으로 작성되었으며, 관련 법령은 <strong>종합부동산세법 §9(세액공제, 고령자·장기보유), §8(과세표준)</strong>을 따릅니다. 공제율(고령자 20·30·40%, 장기보유 20·40·50%, 합산한도 80%)은 현행 기준입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 세액공제 적용 여부, 공제율, 보유 기간 산정, 공동명의 특례는 개인의 나이·보유 기간·세대 구성에 따라 달라지므로, 실제 세액은 국세청 홈택스 또는 세무 전문가와 반드시 확인하세요. 본 콘텐츠는 2026-07-17을 기준으로 작성되었으며, 관련 법령은 <strong>종합부동산세법 §9(세액공제, 고령자·장기보유), §8(과세표준)</strong>을 따릅니다. 공제율(고령자 20·30·40%, 장기보유 20·40·50%, 합산한도 80%)은 현행 기준입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

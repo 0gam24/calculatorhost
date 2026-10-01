@@ -316,7 +316,7 @@ export default function DurunuriSocialInsurancePage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 조언이 아닙니다. 두루누리 지원 기준 금액(보수 상한·재산·소득 요건)과 지원율은 매년 조정될 수 있으며, 국민연금 보험료율도 시기별로 다릅니다. 실제 지원 자격과 금액은 근로복지공단·국민연금공단·4대 사회보험 정보연계센터의 최신 공고로 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>고용보험 및 산업재해보상보험의 보험료징수 등에 관한 법률 §21(보험료의 지원), 국민연금법의 연금보험료 지원 규정</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 조언이 아닙니다. 두루누리 지원 기준 금액(보수 상한·재산·소득 요건)과 지원율은 매년 조정될 수 있으며, 국민연금 보험료율도 시기별로 다릅니다. 실제 지원 자격과 금액은 근로복지공단·국민연금공단·4대 사회보험 정보연계센터의 최신 공고로 확인하세요. 본 콘텐츠는 2026-08-08 기준이며, 인용 법조항은 <strong>고용보험 및 산업재해보상보험의 보험료징수 등에 관한 법률 §21(보험료의 지원), 국민연금법의 연금보험료 지원 규정</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -364,7 +364,7 @@ export default function ChuseokBonusTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 상여금 원천징수액, 4대보험 공제, 복지포인트·경조사비 과세 여부 등은 회사 급여 담당이나 세무대리인, 국세청 상담(126)으로 확인하세요. 본 콘텐츠는 2026-08-14 기준으로 작성되었으며, 관련 법령·요율 개정 시 즉시 업데이트됩니다. 인용한 법조항은 <strong>소득세법 §20(근로소득), §134~§137(원천징수·연말정산)</strong>이며, 4대보험 요율은 각 공단 고시를 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 상여금 원천징수액, 4대보험 공제, 복지포인트·경조사비 과세 여부 등은 회사 급여 담당이나 세무대리인, 국세청 상담(126)으로 확인하세요. 본 콘텐츠는 2026-08-14 기준으로 작성되었으며, 관련 법령·요율 개정 시 즉시 업데이트됩니다. 인용한 법조항은 <strong>소득세법 §20(근로소득), §134~§137(원천징수·연말정산)</strong>이며, 4대보험 요율은 각 공단 고시를 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

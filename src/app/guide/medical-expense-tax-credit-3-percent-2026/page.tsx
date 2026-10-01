@@ -766,7 +766,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                   조세특례제한법 및 소득세법의 개정으로 내용이 변경될 수 있으며, 최신 정보는 국세청(nts.go.kr)을 참조하세요.
                   <br />
                   <br />
-                  이 페이지는 AI 보조 작성 후 운영자 검수를 거친 콘텐츠입니다.
+
                   <br />
                   마지막 업데이트: 2026-05-26
                 </p>

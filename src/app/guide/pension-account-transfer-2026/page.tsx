@@ -360,7 +360,7 @@ export default function PensionAccountTransfer2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육·정보 제공 목적으로 작성되었으며, 특정 금융상품 가입 권유나 투자 자문이 아닙니다. 이전 가능 여부, 해지공제액, 환매수수료, 부분이체 제한, 연금저축과 IRP 상호 이체 요건은 상품과 금융사에 따라 다르므로 해당 금융사와 금융감독원 통합연금포털에서 반드시 확인하세요. 세액공제 한도·공제율은 개인 소득과 연도에 따라 달라집니다. 본 콘텐츠는 2026-08-14 기준으로 작성되었습니다. 인용한 법조항은 <strong>소득세법 §20의3(연금소득), §59의3(연금계좌세액공제)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육·정보 제공 목적으로 작성되었으며, 특정 금융상품 가입 권유나 투자 자문이 아닙니다. 이전 가능 여부, 해지공제액, 환매수수료, 부분이체 제한, 연금저축과 IRP 상호 이체 요건은 상품과 금융사에 따라 다르므로 해당 금융사와 금융감독원 통합연금포털에서 반드시 확인하세요. 세액공제 한도·공제율은 개인 소득과 연도에 따라 달라집니다. 본 콘텐츠는 2026-08-14 기준으로 작성되었습니다. 인용한 법조항은 <strong>소득세법 §20의3(연금소득), §59의3(연금계좌세액공제)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

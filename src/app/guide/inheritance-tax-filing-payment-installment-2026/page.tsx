@@ -335,7 +335,7 @@ export default function InheritanceTaxFilingPaymentInstallment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 분납·연부연납·물납의 구체적 허가 여부, 담보 요건, 가산금 이율은 사안과 시점에 따라 달라지므로, 실제 신청은 관할 세무서 또는 세무대리인과 상담하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 상속세및증여세법 <strong>§67(신고), §69(신고세액공제), §70(분납), §71(연부연납), §73(물납)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 분납·연부연납·물납의 구체적 허가 여부, 담보 요건, 가산금 이율은 사안과 시점에 따라 달라지므로, 실제 신청은 관할 세무서 또는 세무대리인과 상담하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 상속세및증여세법 <strong>§67(신고), §69(신고세액공제), §70(분납), §71(연부연납), §73(물납)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

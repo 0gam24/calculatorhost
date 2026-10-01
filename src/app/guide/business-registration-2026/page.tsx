@@ -542,7 +542,7 @@ export default function BusinessRegistration2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 사업자 등록, 간이·일반과세 선택, 부가세 계산은 관할 세무서 또는 홈택스(hometax.go.kr)에서 반드시 확인하세요. 특히 업종 분류, 간이과세 배제 여부, 초기 투자 상황에 따른 세무 전략은 세무사·회계사의 개인 상담을 받는 것이 가장 안전합니다. 본 콘텐츠는 2026-07-10을 기준으로 작성되었으며, 부가가치세법 개정 시 즉시 업데이트됩니다. 법적 근거: <strong>부가가치세법 §8(사업자등록), §61(간이과세), 소득세법 §168(사업자등록)</strong>. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 사업자 등록, 간이·일반과세 선택, 부가세 계산은 관할 세무서 또는 홈택스(hometax.go.kr)에서 반드시 확인하세요. 특히 업종 분류, 간이과세 배제 여부, 초기 투자 상황에 따른 세무 전략은 세무사·회계사의 개인 상담을 받는 것이 가장 안전합니다. 본 콘텐츠는 2026-07-10을 기준으로 작성되었으며, 부가가치세법 개정 시 즉시 업데이트됩니다. 법적 근거: <strong>부가가치세법 §8(사업자등록), §61(간이과세), 소득세법 §168(사업자등록)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

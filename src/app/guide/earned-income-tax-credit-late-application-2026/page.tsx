@@ -621,7 +621,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
                   근로장려금·자녀장려금 제도는 정부 정책 및 세법 개정에 따라 변경될 수 있으므로,
                   정확한 지급액 계산이 필요하면 홈택스 모의계산 기능을 사용하거나 관할 세무서·국세청에 상담하시기 바랍니다.
                   소득·재산 판정 기준 및 자녀 인정 요건은 신청 시점에 따라 달라질 수 있습니다.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

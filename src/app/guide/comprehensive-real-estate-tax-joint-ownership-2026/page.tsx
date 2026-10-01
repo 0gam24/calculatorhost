@@ -496,7 +496,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                   부부 공동명의 여부·특례 신청 여부는 개별 사정(공시가, 나이, 보유 기간, 향후 양도 계획, 혼인 상황)에 따라 세금이 크게 달라지므로,
                   정확한 신청 판단이 필요하면 반드시 위택스(시뮬레이션)·관할 지자체 세무서·세무사 상담을 받으시기 바랍니다.
                   특히 매년 9월 신청 기한을 놓치면 그 해 특례 혜택을 받을 수 없으므로 주의하세요.
-                  본 콘텐츠는 AI 보조 작성 후 운영자 검수를 거쳤습니다.
+
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)

@@ -8,12 +8,12 @@ import { buildBreadcrumbJsonLd, buildWebPageJsonLd } from '@/lib/seo/jsonld';
 
 const URL = 'https://calculatorhost.com/feeds/';
 const DATE_PUBLISHED = '2026-06-29';
-const DATE_MODIFIED = '2026-06-29';
+const DATE_MODIFIED = '2026-10-01';
 
 export const metadata: Metadata = {
   title: '피드 구독, RSS · Atom · JSON Feed | calculatorhost',
   description:
-    'calculatorhost의 새 가이드·계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요. RSS 리더 등록 방법과 AI·검색 엔진용 파일(llms.txt·robots.txt·사이트맵)도 함께 안내합니다.',
+    'calculatorhost의 새 가이드·계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요. RSS 리더 등록 방법과 검색 엔진용 파일(llms.txt·robots.txt·사이트맵)도 함께 안내합니다.',
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '피드 구독, RSS · Atom · JSON Feed' }],
@@ -46,13 +46,13 @@ const FEEDS = [
   {
     href: '/feed.json',
     label: 'JSON Feed 1.1',
-    desc: 'JSON 기반 모던 포맷. 개발·자동화·AI 도구 연동에 편리합니다.',
+    desc: 'JSON 기반 모던 포맷. 개발 도구와 피드 리더 연동에 편리합니다.',
     type: 'application/feed+json',
   },
 ];
 
 const ENGINE = [
-  { href: '/llms.txt', label: 'llms.txt', desc: 'AI·LLM 검색/답변 엔진용 사이트 안내 파일.' },
+  { href: '/llms.txt', label: 'llms.txt', desc: '사이트의 주요 페이지와 사용 범위를 안내하는 파일.' },
   { href: '/sitemap.xml', label: 'sitemap.xml', desc: '검색 엔진 색인용 전체 페이지 목록.' },
   { href: '/robots.txt', label: 'robots.txt', desc: '크롤러 접근 정책 + 사이트맵 위치.' },
 ];
@@ -65,7 +65,7 @@ export default function FeedsPage() {
   const webPageLd = buildWebPageJsonLd({
     name: '피드 구독, RSS · Atom · JSON Feed',
     description:
-      'calculatorhost의 새 가이드·계산기 업데이트를 구독하는 RSS·Atom·JSON Feed와 AI·검색 엔진용 파일 안내.',
+      'calculatorhost의 새 가이드·계산기 업데이트를 구독하는 RSS·Atom·JSON Feed와 검색 엔진용 파일 안내.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -110,7 +110,7 @@ export default function FeedsPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="border-b border-border-base pb-2 text-2xl font-bold">AI · 검색 엔진</h2>
+                <h2 className="border-b border-border-base pb-2 text-2xl font-bold">검색 엔진용 파일</h2>
                 <ul className="space-y-3">
                   {ENGINE.map((f) => (
                     <li key={f.href} className="rounded-lg border border-border-base bg-bg-card p-4">

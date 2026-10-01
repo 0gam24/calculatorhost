@@ -359,7 +359,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 재산세 납부 기한, 분할납부 조건, 가산금은 관할 시·군·구청 또는 위택스에 직접 확인 후 진행하세요. 본 콘텐츠는 2026-06-24을 기준으로 작성되었으며, 지방세법 개정 시 즉시 업데이트됩니다. 납부 납기, 분할납부, 과세기준일 등 정확한 기준은 법조항 <strong>지방세법 §114(과세기준일)·§115(납기)·§118(분할납부)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 재산세 납부 기한, 분할납부 조건, 가산금은 관할 시·군·구청 또는 위택스에 직접 확인 후 진행하세요. 본 콘텐츠는 2026-06-24을 기준으로 작성되었으며, 지방세법 개정 시 즉시 업데이트됩니다. 납부 납기, 분할납부, 과세기준일 등 정확한 기준은 법조항 <strong>지방세법 §114(과세기준일)·§115(납기)·§118(분할납부)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

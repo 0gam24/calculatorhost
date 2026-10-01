@@ -355,7 +355,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 금융 조언이 아닙니다. 주택담보대출 구간별 한도, LTV 비율, 스트레스 DSR 가산금리, 적용 지역은 금융위원회 가계부채 관리방안과 각 은행의 내부 기준에 따라 수시로 바뀝니다. 이 규제는 법률 조항이 아니라 은행법 <strong>은행법 §34(경영지도기준)</strong>에 근거한 금융당국의 행정 조치이므로, 실제 대출 실행 전 반드시 은행 창구와 금융위원회 공지에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-01 기준으로 작성되었습니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 금융 조언이 아닙니다. 주택담보대출 구간별 한도, LTV 비율, 스트레스 DSR 가산금리, 적용 지역은 금융위원회 가계부채 관리방안과 각 은행의 내부 기준에 따라 수시로 바뀝니다. 이 규제는 법률 조항이 아니라 은행법 <strong>은행법 §34(경영지도기준)</strong>에 근거한 금융당국의 행정 조치이므로, 실제 대출 실행 전 반드시 은행 창구와 금융위원회 공지에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-01 기준으로 작성되었습니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

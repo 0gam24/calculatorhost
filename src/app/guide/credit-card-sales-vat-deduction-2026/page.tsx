@@ -323,7 +323,7 @@ export default function CreditCardSalesVatDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 공제율·한도·대상 요건은 세법 개정으로 달라질 수 있으므로 신고 전 국세청 홈택스(126)와 세무대리인에게 반드시 확인하세요. 본 콘텐츠는 2026-07-16 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 조항은 <strong>부가가치세법 §46(신용카드등의 사용에 따른 세액공제), §37(납부세액), §61(간이과세), 국세기본법 §14(실질과세)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 공제율·한도·대상 요건은 세법 개정으로 달라질 수 있으므로 신고 전 국세청 홈택스(126)와 세무대리인에게 반드시 확인하세요. 본 콘텐츠는 2026-07-16 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 조항은 <strong>부가가치세법 §46(신용카드등의 사용에 따른 세액공제), §37(납부세액), §61(간이과세), 국세기본법 §14(실질과세)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

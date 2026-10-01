@@ -358,7 +358,7 @@ export default function BusinessCreditCardHometaxRegistration2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 매입세액 공제 여부는 사업 관련성, 상대방 사업자 유형, 전표 형식에 따라 달라지므로, 구체적 사안은 세무대리인 또는 관할 세무서에 확인하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 부가가치세법 <strong>§38(공제하는 매입세액)</strong>, <strong>§39(공제하지 아니하는 매입세액)</strong>, <strong>§46(신용카드 등의 사용에 따른 세액공제 등)</strong>을 따릅니다. 사업용 신용카드 등록제도의 운영 주체는 국세청입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 매입세액 공제 여부는 사업 관련성, 상대방 사업자 유형, 전표 형식에 따라 달라지므로, 구체적 사안은 세무대리인 또는 관할 세무서에 확인하세요. 본 콘텐츠는 2026-07-29 기준이며, 관련 법령은 부가가치세법 <strong>§38(공제하는 매입세액)</strong>, <strong>§39(공제하지 아니하는 매입세액)</strong>, <strong>§46(신용카드 등의 사용에 따른 세액공제 등)</strong>을 따릅니다. 사업용 신용카드 등록제도의 운영 주체는 국세청입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

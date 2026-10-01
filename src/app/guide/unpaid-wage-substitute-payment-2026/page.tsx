@@ -341,7 +341,7 @@ export default function UnpaidWageSubstitutePayment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 대지급금 상한, 재직자 소득 요건, 사업주 요건, 신청 기한과 서식은 개별 사정에 따라 달라지므로, 반드시 근로복지공단·고용노동부에서 확인하고 필요하면 공인노무사 등 전문가 상담을 받으세요. 본 콘텐츠의 기준은 <strong>임금채권보장법 §7(도산대지급금)</strong>과 <strong>임금채권보장법 §7의2(간이대지급금)</strong>를 따르며, 2026-08-01 기준으로 작성되었습니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 법률 조언이 아닙니다. 대지급금 상한, 재직자 소득 요건, 사업주 요건, 신청 기한과 서식은 개별 사정에 따라 달라지므로, 반드시 근로복지공단·고용노동부에서 확인하고 필요하면 공인노무사 등 전문가 상담을 받으세요. 본 콘텐츠의 기준은 <strong>임금채권보장법 §7(도산대지급금)</strong>과 <strong>임금채권보장법 §7의2(간이대지급금)</strong>를 따르며, 2026-08-01 기준으로 작성되었습니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

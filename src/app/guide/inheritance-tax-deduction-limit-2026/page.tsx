@@ -522,7 +522,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   <strong>법적 근거:</strong> 상속세 및 증여세법 §18(기초공제)·§19(배우자공제)·§20(자녀·미성년자·연로자·장애인공제)·§21(일괄공제)·§22(금융재산상속공제)·§23의2(동거주택상속공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-30 작성. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>업데이트:</strong> 2026-06-30 작성.
                 </p>
               </section>
 

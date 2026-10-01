@@ -449,7 +449,7 @@ export default function VatEarlyRefund2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 조기환급 신청 요건, 신청 기한, 필요 서류, 추징 여부는 개별 사업 상황에 따라 달라질 수 있습니다. 반드시 관할 세무서 또는 홈택스에서 직접 확인하거나, 세무 전문가(세무사·회계사)와 상담하세요. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 부가가치세법 개정 시 즉시 업데이트됩니다. 조기환금의 정확한 기준은 법조항 <strong>부가가치세법 §59(환급)</strong>, <strong>부가가치세법 시행령 §107(조기환급)</strong>을 따릅니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 조기환급 신청 요건, 신청 기한, 필요 서류, 추징 여부는 개별 사업 상황에 따라 달라질 수 있습니다. 반드시 관할 세무서 또는 홈택스에서 직접 확인하거나, 세무 전문가(세무사·회계사)와 상담하세요. 본 콘텐츠는 2026-07-01을 기준으로 작성되었으며, 부가가치세법 개정 시 즉시 업데이트됩니다. 조기환금의 정확한 기준은 법조항 <strong>부가가치세법 §59(환급)</strong>, <strong>부가가치세법 시행령 §107(조기환급)</strong>을 따릅니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

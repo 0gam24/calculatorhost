@@ -342,7 +342,7 @@ export default function MultiHouseAcquisitionTaxHeavy2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 취득세 중과 여부, 주택 수 산정, 일시적 2주택 처분 기한, 부가세목(지방교육세·농어촌특별세) 합계는 취득 시점의 조정대상지역 지정과 세대 구성에 따라 달라집니다. 반드시 위택스 또는 관할 시·군·구청 세무서에서 확인하세요. 본 콘텐츠의 세율 기준은 <strong>지방세법 §11(취득세 표준세율)</strong>과 <strong>지방세법 §13의2(법인·다주택 주택 취득 중과)</strong>를 따르며, 2026-08-01 기준으로 작성되었습니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 취득세 중과 여부, 주택 수 산정, 일시적 2주택 처분 기한, 부가세목(지방교육세·농어촌특별세) 합계는 취득 시점의 조정대상지역 지정과 세대 구성에 따라 달라집니다. 반드시 위택스 또는 관할 시·군·구청 세무서에서 확인하세요. 본 콘텐츠의 세율 기준은 <strong>지방세법 §11(취득세 표준세율)</strong>과 <strong>지방세법 §13의2(법인·다주택 주택 취득 중과)</strong>를 따르며, 2026-08-01 기준으로 작성되었습니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

@@ -406,7 +406,7 @@ export default function ResidentTaxBusinessEstablishment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 사업소분 세액은 자치단체 조례에 따라 표준세율의 50% 범위에서 가감될 수 있고, 개별 사업소의 자본금·연면적·비과세 요건에 따라 달라집니다. 실제 신고 전 위택스(wetax.go.kr) 또는 관할 시·군·구청 세무부서에서 반드시 확인하세요. 본 콘텐츠는 2026-07-24 기준이며 지방세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>지방세법 §75(납세의무자), §81(사업소분 세율), §84의3(종업원분 세율), §84의4(종업원분 면세점)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 사업소분 세액은 자치단체 조례에 따라 표준세율의 50% 범위에서 가감될 수 있고, 개별 사업소의 자본금·연면적·비과세 요건에 따라 달라집니다. 실제 신고 전 위택스(wetax.go.kr) 또는 관할 시·군·구청 세무부서에서 반드시 확인하세요. 본 콘텐츠는 2026-07-24 기준이며 지방세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>지방세법 §75(납세의무자), §81(사업소분 세율), §84의3(종업원분 세율), §84의4(종업원분 면세점)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

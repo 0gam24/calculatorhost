@@ -453,9 +453,6 @@ export default function AnnualLeaveAllowancePage() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>AI 보조 작성 · 운영자 검수:</strong> 본 가이드는 AI 보조로 작성되었으며, 법조항·세율 정보는 운영자가 검수했습니다.
-                </p>
-                <p className="text-xs text-text-tertiary">
                   인용한 법조항: 근로기준법 §60 (연차 발생·지급), §61 (사용촉진)
                 </p>
                 <p className="text-xs text-text-tertiary">

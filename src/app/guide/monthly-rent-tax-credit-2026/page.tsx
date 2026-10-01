@@ -714,7 +714,7 @@ export default function MonthlyRentTaxCreditPage() {
                 <p className="text-xs text-text-tertiary">
                   <strong>면책조항</strong>: 본 가이드는 조세특례제한법 §95의2(2024년 개정) 기준으로 작성되었습니다.
                   실제 세무 처리는 개인의 사정에 따라 달라질 수 있으므로, 정확한 공제 여부나 환급액은 국세청 홈택스,
-                  또는 세무사·회계사 상담을 권장합니다. 본 콘텐츠는 AI 보조로 작성되었으며 사람이 검수했습니다.
+                  또는 세무사·회계사 상담을 권장합니다.
                   <strong>최종 수정: 2026년 5월 23일</strong>
                 </p>
               </section>

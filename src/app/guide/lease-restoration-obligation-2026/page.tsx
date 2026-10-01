@@ -342,7 +342,7 @@ export default function LeaseRestorationObligation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개별 사건에 대한 법률 자문이 아닙니다. 원상복구 책임은 손상 정도, 거주 기간, 입주 시 상태, 특약 내용, 개별 판례에 따라 달라지므로, 실제 분쟁은 증거를 갖춰 전문가 상담이나 주택임대차분쟁조정위원회 등을 통해 해결하세요. 근거는 <strong>민법 §615(원상회복)·§654(준용)·§623(임대인 수선의무)</strong>이며, 본문의 사례 판단은 판례 경향을 정리한 것으로 확정된 결과가 아닙니다. 본 콘텐츠는 2026-08-05 기준입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개별 사건에 대한 법률 자문이 아닙니다. 원상복구 책임은 손상 정도, 거주 기간, 입주 시 상태, 특약 내용, 개별 판례에 따라 달라지므로, 실제 분쟁은 증거를 갖춰 전문가 상담이나 주택임대차분쟁조정위원회 등을 통해 해결하세요. 근거는 <strong>민법 §615(원상회복)·§654(준용)·§623(임대인 수선의무)</strong>이며, 본문의 사례 판단은 판례 경향을 정리한 것으로 확정된 결과가 아닙니다. 본 콘텐츠는 2026-08-05 기준입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

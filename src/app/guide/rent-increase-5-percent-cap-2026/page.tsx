@@ -370,7 +370,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                   </a>
                 </p>
                 <p className="mb-2">
-                  <strong>AI 보조 작성</strong> 후 운영자 검수 | 마지막 갱신: {DATE_MODIFIED}
+                  마지막 갱신: {DATE_MODIFIED}
                 </p>
                 <p>
                   본 가이드는 참고용이며, 실제 임대차 분쟁은 임대차분쟁조정위원회(LH) 또는 변호사 상담을 받으시기 바랍니다.

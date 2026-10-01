@@ -688,10 +688,6 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                   공식 지침을 기반으로 작성되었습니다.
                 </p>
                 <p>
-                  <strong>AI 보조 작성:</strong> 본 가이드는 Claude AI의 보조를 받아 작성되었으며, 발행 전 운영자 검수를
-                  거쳤습니다.
-                </p>
-                <p>
                   <strong>개인 상황에 따라 다릅니다.</strong> 본 가이드는 일반 정보이며, 실제 세액은 개인·가구의 소득 구성,
                   거주지, 조세조약 등에 따라 달라질 수 있습니다. 정확한 신고는 세무사·국세청 상담을 권장합니다.
                 </p>

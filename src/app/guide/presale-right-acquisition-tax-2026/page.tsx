@@ -348,7 +348,7 @@ export default function PresaleRightAcquisitionTax2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 취득세 중과세율, 주택 수 산입 예외, 지방 미분양 특례, 조정대상지역 지정은 정책과 세법 개정에 따라 달라질 수 있으므로, 실제 취득 전에는 위택스, 관할 지자체, 세무 전문가를 통해 본인 상황으로 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>지방세법 §13의2(중과세율)·§13의3(주택 수의 판단 범위)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 취득세 중과세율, 주택 수 산입 예외, 지방 미분양 특례, 조정대상지역 지정은 정책과 세법 개정에 따라 달라질 수 있으므로, 실제 취득 전에는 위택스, 관할 지자체, 세무 전문가를 통해 본인 상황으로 확인하세요. 본 콘텐츠는 2026-07-23을 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 근거 법조항은 <strong>지방세법 §13의2(중과세율)·§13의3(주택 수의 판단 범위)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

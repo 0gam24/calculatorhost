@@ -331,7 +331,7 @@ export default function FarmlandPension2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무 조언이 아닙니다. 농지연금의 가입 요건, 담보 평가, 수령액, 재산세 감면 기준은 한국농어촌공사 운용 기준과 지자체 조례에 따라 매년 변동됩니다. 본문의 금액은 이해를 돕기 위한 예시이며, 실제 가입 전 반드시 한국농어촌공사 농지은행과 관할 지자체에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-17 기준입니다. 근거: <strong>농지법</strong>(농지의 정의·이용) 및 한국농어촌공사 농지연금 운용 기준. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무 조언이 아닙니다. 농지연금의 가입 요건, 담보 평가, 수령액, 재산세 감면 기준은 한국농어촌공사 운용 기준과 지자체 조례에 따라 매년 변동됩니다. 본문의 금액은 이해를 돕기 위한 예시이며, 실제 가입 전 반드시 한국농어촌공사 농지은행과 관할 지자체에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-17 기준입니다. 근거: <strong>농지법</strong>(농지의 정의·이용) 및 한국농어촌공사 농지연금 운용 기준.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

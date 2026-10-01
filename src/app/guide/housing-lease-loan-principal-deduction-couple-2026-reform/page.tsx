@@ -389,7 +389,7 @@ export default function HousingLeaseLoanPrincipalDeductionCouple2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 실제 공제 대상 여부, 요건(무주택·주택 규모·차입 시기), 합산 한도는 홈택스 연말정산 간소화 자료와 국세청에서 반드시 확인하세요. 근거 법조항은 <strong>소득세법 §52(특별소득공제)</strong>와 주택청약종합저축 소득공제(조세특례제한법 §87)입니다. 무주택 부부 각각 공제 확대안은 2026년 8월 3일 발표된 세제개편안(정부안) 기준으로, 국회 논의 과정에서 달라질 수 있습니다. 본 콘텐츠는 2026-08-24를 기준으로 작성됐으며, 세법 개정 시 업데이트됩니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 실제 공제 대상 여부, 요건(무주택·주택 규모·차입 시기), 합산 한도는 홈택스 연말정산 간소화 자료와 국세청에서 반드시 확인하세요. 근거 법조항은 <strong>소득세법 §52(특별소득공제)</strong>와 주택청약종합저축 소득공제(조세특례제한법 §87)입니다. 무주택 부부 각각 공제 확대안은 2026년 8월 3일 발표된 세제개편안(정부안) 기준으로, 국회 논의 과정에서 달라질 수 있습니다. 본 콘텐츠는 2026-08-24를 기준으로 작성됐으며, 세법 개정 시 업데이트됩니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

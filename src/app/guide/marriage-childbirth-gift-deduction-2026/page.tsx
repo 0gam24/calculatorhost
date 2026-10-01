@@ -377,7 +377,7 @@ export default function MarriageChildbirthGiftDeduction2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 혼인·출산 증여재산공제의 실제 적용 여부, 공제 한도, 납부세액은 개별 증여 시점과 과거 증여 이력에 따라 달라지므로 홈택스 또는 세무 전문가에게 반드시 확인하세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 인용 법조항은 <strong>상속세 및 증여세법 §53(증여재산 공제), §53의2(혼인·출산 증여재산 공제), §56(증여세 세율, §26 세율표 준용)</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 혼인·출산 증여재산공제의 실제 적용 여부, 공제 한도, 납부세액은 개별 증여 시점과 과거 증여 이력에 따라 달라지므로 홈택스 또는 세무 전문가에게 반드시 확인하세요. 본 콘텐츠는 2026-07-15 기준으로 작성되었으며, 세법 개정 시 업데이트됩니다. 인용 법조항은 <strong>상속세 및 증여세법 §53(증여재산 공제), §53의2(혼인·출산 증여재산 공제), §56(증여세 세율, §26 세율표 준용)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

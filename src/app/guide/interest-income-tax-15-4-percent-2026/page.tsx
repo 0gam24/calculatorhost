@@ -651,7 +651,7 @@ export default function InterestIncomeTax2026Page() {
                   </Link> 또는 거래 금융기관에서 최신 정보를 확인하세요.
                 </p>
                 <p className="mb-3">
-                  본 가이드는 <strong>Claude(Anthropic)의 지원을 받아 작성된 후 운영자가 소득세법, 국세청 공식 자료, 금융감독원 기준으로 검수</strong>했습니다. 실제 계산 사례는 개인의 정확한 거래 내역 기반으로 금융기관이나 국세청(hometax.go.kr)에서 재확인하시기 바랍니다.
+                  실제 계산 사례는 개인의 정확한 거래 내역 기반으로 금융기관이나 국세청(hometax.go.kr)에서 재확인하시기 바랍니다.
                 </p>
                 <p>
                   © 2026 <Link href="/" className="text-primary-500 underline">

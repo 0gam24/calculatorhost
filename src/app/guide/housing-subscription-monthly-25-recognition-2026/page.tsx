@@ -322,7 +322,7 @@ export default function HousingSubscriptionMonthly25Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무·세무 조언이 아닙니다. 청약 순위 요건과 소득공제·비과세 적용 기준은 주택 유형·지역·소득에 따라 달라지고 제도가 개정될 수 있으므로, 청약홈과 가입 은행, 홈택스에서 본인 기준으로 반드시 확인하세요. 본 콘텐츠는 2026-07-27 기준으로 작성되었으며 제도 변경 시 업데이트됩니다. 소득공제 근거 법령은 조세특례제한법 §87(주택청약종합저축 등에 대한 소득공제)입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 재무·세무 조언이 아닙니다. 청약 순위 요건과 소득공제·비과세 적용 기준은 주택 유형·지역·소득에 따라 달라지고 제도가 개정될 수 있으므로, 청약홈과 가입 은행, 홈택스에서 본인 기준으로 반드시 확인하세요. 본 콘텐츠는 2026-07-27 기준으로 작성되었으며 제도 변경 시 업데이트됩니다. 소득공제 근거 법령은 조세특례제한법 §87(주택청약종합저축 등에 대한 소득공제)입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

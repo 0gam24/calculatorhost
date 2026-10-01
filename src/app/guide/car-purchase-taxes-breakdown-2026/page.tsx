@@ -335,7 +335,7 @@ export default function CarPurchaseTaxesBreakdownPage() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 개별소비세 탄력세율, 친환경차·경차 감면 한도와 일몰 시한, 취득세 부가 세목은 수시로 개정되므로 구입 전 반드시 기획재정부·국세청·위택스와 관할 지자체에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-25 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>개별소비세법 §1, 교육세법 §5, 부가가치세법 §29, 지방세법 §12</strong>입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 세무 조언이 아닙니다. 개별소비세 탄력세율, 친환경차·경차 감면 한도와 일몰 시한, 취득세 부가 세목은 수시로 개정되므로 구입 전 반드시 기획재정부·국세청·위택스와 관할 지자체에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-25 기준이며 관련 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>개별소비세법 §1, 교육세법 §5, 부가가치세법 §29, 지방세법 §12</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

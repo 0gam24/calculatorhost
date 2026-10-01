@@ -344,7 +344,7 @@ export default function IrpEarlyWithdrawalConditions2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 재무·세무 조언이 아닙니다. 중도인출 인정 사유, 필요 서류, 신청 기한, 적용 세율은 재원 종류와 개별 상황에 따라 달라지므로 가입한 금융기관 및 고용노동부·국세청 안내로 반드시 확인하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>근로자퇴직급여보장법 §7(급여의 지급 등) 및 동법 시행령</strong>. 세부 요건은 소관 부처 고시를 참조하세요. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 재무·세무 조언이 아닙니다. 중도인출 인정 사유, 필요 서류, 신청 기한, 적용 세율은 재원 종류와 개별 상황에 따라 달라지므로 가입한 금융기관 및 고용노동부·국세청 안내로 반드시 확인하세요. 본 콘텐츠는 2026-07-26을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 인용 법조항: <strong>근로자퇴직급여보장법 §7(급여의 지급 등) 및 동법 시행령</strong>. 세부 요건은 소관 부처 고시를 참조하세요.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

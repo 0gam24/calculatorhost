@@ -531,7 +531,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
                   • 정확한 예상액은 국민건강보험공단 가입자 맞춤 모의계산기(nhis.or.kr)에서 확인하시기 바랍니다.
                 </li>
                 <li>
-                  • 본 내용은 AI 보조 작성 후 운영자 검수를 거쳤습니다. (2026-06-15)
+                  • 본 내용은  (2026-06-15)
                 </li>
               </ul>
             </div>

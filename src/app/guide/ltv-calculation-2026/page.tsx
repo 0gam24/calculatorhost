@@ -704,7 +704,7 @@ export default function LtvCalculation2026Page() {
                   .
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED}. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>업데이트</strong>: {DATE_MODIFIED}.
                 </p>
               </section>
             </article>

@@ -309,7 +309,7 @@ export default function NationalPensionDivorceSplit2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 법률·연금 조언이 아닙니다. 분할연금 수급 요건·비율·금액은 혼인기간과 협의·재판 내용에 따라 달라지므로, 정확한 내용은 국민연금공단(1355) 또는 관할 지사에서 반드시 확인하세요. 본 콘텐츠는 2026-07-27 기준으로 작성되었으며 법령 개정 시 업데이트됩니다. 근거 법령은 국민연금법 §64(분할연금 수급권자), §64의2(분할 비율), §64의3(분할연금 선청구)입니다. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며 개인 맞춤형 법률·연금 조언이 아닙니다. 분할연금 수급 요건·비율·금액은 혼인기간과 협의·재판 내용에 따라 달라지므로, 정확한 내용은 국민연금공단(1355) 또는 관할 지사에서 반드시 확인하세요. 본 콘텐츠는 2026-07-27 기준으로 작성되었으며 법령 개정 시 업데이트됩니다. 근거 법령은 국민연금법 §64(분할연금 수급권자), §64의2(분할 비율), §64의3(분할연금 선청구)입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

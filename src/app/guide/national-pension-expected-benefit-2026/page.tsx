@@ -566,9 +566,6 @@ export default function NationalPensionExpectedBenefitPage() {
                     국민연금공단
                   </Link> 에서 '내 연금 알아보기' 서비스로 조회하시기 바랍니다. 본 가이드의 시뮬레이션은 예시일 뿐 법적 근거가 되지 않습니다.
                 </p>
-                <p className="mb-3">
-                  본 가이드는 <strong>Claude(Anthropic)의 지원을 받아 작성된 후 운영자가 국민연금법, 국민연금공단 공식 자료, 학술 논문으로 검수</strong>했습니다.
-                </p>
                 <p>
                   © 2026 <Link href="/" className="text-primary-500 underline">
                     calculatorhost.com

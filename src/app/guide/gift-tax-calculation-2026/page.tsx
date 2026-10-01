@@ -467,7 +467,7 @@ export default function GiftTaxCalculation2026Page() {
                   <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§68(신고세액공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-22 작성. AI 보조 작성 후 운영자 검수 완료.
+                  <strong>업데이트:</strong> 2026-06-22 작성.
                 </p>
               </section>
 
