@@ -29,11 +29,13 @@ import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref';
 
 const URL = 'https://calculatorhost.com/calculator/salary/';
+const TITLE = '연봉 실수령액 계산기 2026 | 4대보험·소득세 추정';
+const DESCRIPTION =
+  '세전 연봉·월급과 적용월·부양가족·비과세 조건으로 실수령액을 추정하세요. 2026년 보험료와 소득세 근사치를 사용하며 국세청 간이세액표를 직접 조회하지 않습니다. 연말정산과 실제 급여명세서의 확정액은 다를 수 있습니다.';
 
 export const metadata: Metadata = {
-  title: '연봉 실수령액 계산기 2026, 4대보험·소득세 자동',
-  description:
-    '2026년 연봉 실수령액 계산기. 세전 연봉을 입력하면 2026년 4대보험과 소득세 근사치를 계산해 월 실수령액·연간 세후액을 확인. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     '연봉 실수령액 계산기',
     '연봉 계산기 2026',
@@ -45,13 +47,15 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '연봉 실수령액 계산기 2026',
-    description: '2026년 최신 세율로 연봉 실수령액 즉시 계산',
+    title: TITLE,
+    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -118,20 +122,20 @@ const RELATED = [
 export default function SalaryPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '연봉 실수령액 계산기',
-    description: '2026년 최신 소득세율과 4대보험 요율 반영',
+    description: DESCRIPTION,
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
     name: '연봉 실수령액 계산기 2026',
-    description: '2026년 최신 세율로 연봉 실수령액 즉시 계산',
+    description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-09-30',
+    dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('salary'),
   });
   const howToLd = buildHowToJsonLd({
     name: '연봉 실수령액 계산기 사용 방법',
-    description: '연봉을 입력하여 월 실수령액, 4대보험, 소득세를 계산하는 단계별 가이드',
+    description: DESCRIPTION,
     steps: [
       { name: '연봉 입력', text: '세전 연봉(또는 월급) 금액을 입력합니다.' },
       {
@@ -239,7 +243,7 @@ export default function SalaryPage() {
                   <p className="text-lg text-text-secondary" data-speakable>
                     세전 급여와 적용월로 월 실수령액을 예상해 보세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-09-30" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-01" />
                 </header>
               }
               calculator={<SalaryCalculator />}

@@ -9,7 +9,7 @@ import { buildBreadcrumbJsonLd, buildWebPageJsonLd, buildItemListJsonLd } from '
 
 const URL = 'https://calculatorhost.com/guide/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-07-09';
+const DATE_MODIFIED = '2026-10-01';
 
 export const metadata: Metadata = {
   title: '가이드, 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
@@ -3770,6 +3770,20 @@ GUIDES.forEach((g) => GUIDES_BY_CATEGORY[g.category].push(g));
 const RECENT_LIMIT = 12;
 const PER_CATEGORY_LIMIT = 6;
 const SEASONAL_LIMIT = 6;
+const TOPIC_GUIDE_SUMMARIES: Record<string, string> = {
+  'simplified-taxpayer-july-vat-2026':
+    '간이과세자의 부가세 신고와 예정부과 차이를 확인하는 안내입니다. 본인의 신고 대상 여부와 적용 기간을 확인하세요.',
+  'vat-non-deductible-input-tax-2026':
+    '사업 지출 중 부가세 매입세액 공제가 제한되는 항목과 예외를 살펴보는 안내입니다.',
+  'property-tax-credit-card-payment-2026':
+    '재산세를 카드로 납부할 때 확인할 절차와 주의사항을 정리한 안내입니다. 카드사 혜택은 납부 시점에 확인하세요.',
+  'vat-penalty-underreporting-2026':
+    '부가세 신고·납부를 놓쳤을 때 살펴볼 가산세 종류와 수정신고 조건을 정리한 안내입니다.',
+  'property-tax-installment-payment-2026':
+    '재산세 분할납부를 검토할 때 확인할 대상 요건, 신청 방법과 납부 기한을 정리한 안내입니다.',
+  'vat-early-refund-2026':
+    '부가세 조기환급을 검토할 때 확인할 대상 거래와 신고 절차를 정리한 안내입니다.',
+};
 
 const GUIDES_RECENT: GuideEntry[] = [...GUIDES].sort((a, b) =>
   b.publishedAt.localeCompare(a.publishedAt),
@@ -3837,7 +3851,7 @@ export default function GuideIndexPage() {
                   href="#seasonal"
                   className="text-danger-700 dark:text-danger-300 rounded-chip border border-danger-500 bg-danger-500/10 px-3 py-1.5 text-sm font-semibold hover:bg-danger-500/20"
                 >
-                  시즌 가이드 ({SEASONAL_GUIDES.length})
+                  주제별 안내 ({SEASONAL_GUIDES.length})
                 </a>
                 {CATEGORIES.map((cat) => {
                   const count = GUIDES_BY_CATEGORY[cat.id].length;
@@ -3890,22 +3904,26 @@ export default function GuideIndexPage() {
                 </ul>
               </section>
 
-              {/* 시즌 가이드, 강조 배너 */}
+              {/* 기존 주제 가이드, 전체 목록과 URL은 유지 */}
               {SEASONAL_GUIDES.length > 0 && (
                 <section
                   id="seasonal"
-                  aria-label="시즌 가이드"
+                  aria-label="주제별 계산 안내"
                   className="card space-y-4 border-l-2 border-l-danger-500 bg-danger-500/5"
                 >
                   <header className="flex items-baseline justify-between">
                     <h2 className="text-danger-700 dark:text-danger-300 text-2xl font-bold">
-                      시즌 가이드: 지금 가장 검색 많은 주제
+                      주제별 계산 안내
                     </h2>
                     <span className="text-caption text-text-tertiary">
                       전체 {SEASONAL_GUIDES.length}편 중{' '}
                       {Math.min(SEASONAL_LIMIT, SEASONAL_GUIDES.length)}편
                     </span>
                   </header>
+                  <p className="text-sm text-text-secondary">
+                    신고·납부 전에 확인할 항목을 주제별로 살펴보세요. 각 글의 기준일과 본인의 적용
+                    조건을 확인하세요.
+                  </p>
                   <div className="grid gap-4 md:grid-cols-2">
                     {SEASONAL_GUIDES.slice(0, SEASONAL_LIMIT).map((g) => (
                       <Link
@@ -3915,13 +3933,13 @@ export default function GuideIndexPage() {
                       >
                         <div className="flex items-center justify-between text-caption">
                           <span className="text-danger-700 dark:text-danger-300 rounded-chip bg-danger-500/20 px-2 py-0.5 font-semibold">
-                            {g.seasonal}
+                            {g.category}
                           </span>
                           <span className="text-text-tertiary">{g.readingMinutes}분 읽기</span>
                         </div>
                         <h3 className="text-base font-semibold text-text-primary">{g.title}</h3>
                         <p className="line-clamp-3 text-sm leading-relaxed text-text-secondary">
-                          {g.description}
+                          {TOPIC_GUIDE_SUMMARIES[g.slug] ?? g.description}
                         </p>
                       </Link>
                     ))}

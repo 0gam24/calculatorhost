@@ -1,5 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -21,11 +22,13 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/broker-fee/';
+const TITLE = '중개수수료 계산기 2026 | 매매·전세·월세 상한·협의요율';
+const DESCRIPTION =
+  '매매·전세·월세의 거래금액과 물건 종류로 중개보수 상한을 확인하세요. 협의 요율과 부가세 포함 여부를 선택해 예상 지급액을 계산합니다. 오피스텔은 계산기의 적용 조건을 확인하고, 실제 요율과 세금은 중개사와 확인하세요.';
 
 export const metadata: Metadata = {
-  title: '중개수수료 계산기 2026 | 5억 매매 720만 한도·부가세 포함',
-  description:
-    '5억 매매 중개료 최대 720만원? 법정 상한요율(0.4~0.7%) + 부가세 10%·9억/15억 구간 자동 적용. 34평·매매·전세·월세별 한도. 협상 기준 즉시 확인.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     '중개수수료 계산기',
     '부동산 중개수수료',
@@ -37,16 +40,15 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '중개수수료 계산기 2026 | 법정 상한요율 및 한도액',
-    description:
-      '2026년 공인중개사법 기준. 매매·전세·월세·오피스텔 중개수수료를 거래 직전 정확히 계산.',
+    title: TITLE,
+    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '중개수수료 계산기 2026',
-    description: '2026년 법정 상한요율·한도액 기준 중개수수료 계산.',
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -54,12 +56,12 @@ const FAQ_ITEMS = [
   {
     question: '9억 주택 매매 중개수수료 상한은 얼마인가요?',
     answer:
-      '9억 원의 주택 매매는 상한요율 0.5% 구간에 해당합니다(공인중개사법 시행규칙 §20). 따라서 중개수수료는 9억 × 0.5% = 450만 원입니다. 부가세(10%)를 포함하면 495만 원입니다.',
+      '9억 원의 주택 매매는 상한요율 0.5% 구간에 해당합니다(공인중개사법 시행규칙 §20). 따라서 상한 중개보수는 9억 × 0.5% = 450만 원입니다. 계산기에서 부가세 10% 포함을 선택하면 예상 지급액은 495만 원이며, 실제 부가세 적용은 중개사업자의 과세유형을 확인하세요.',
   },
   {
     question: '12억 매매 중개수수료 상한은 얼마인가요?',
     answer:
-      '12억 원 정확히일 때는 "12억 이상 15억 미만" 구간으로 상한요율 0.6%가 적용됩니다(공인중개사법 시행규칙 별표). 12억 × 0.6% = 720만 원이 상한 중개보수이며 부가세는 별도입니다. 12억 원 미만이면 "9억 이상 12억 미만" 구간의 0.5%가 적용되고, 15억을 초과하면 0.7%로 올라갑니다. 요율은 구간별 "상한"이므로 그 범위 안에서 중개인과 협의할 수 있습니다.',
+      '12억 원 정확히일 때는 "12억 이상 15억 미만" 구간으로 상한요율 0.6%가 적용됩니다(공인중개사법 시행규칙 별표). 12억 × 0.6% = 720만 원이 상한 중개보수이며 부가세는 별도입니다. 12억 원 미만이면 "9억 이상 12억 미만" 구간의 0.5%가 적용되고, 15억 이상이면 0.7%로 올라갑니다. 요율은 구간별 "상한"이므로 그 범위 안에서 중개인과 협의할 수 있습니다.',
   },
   {
     question: '전세 중개수수료는 협의 가능한가요?',
@@ -69,7 +71,7 @@ const FAQ_ITEMS = [
   {
     question: '부가세 10%는 중개수수료에 별도로 붙나요?',
     answer:
-      '네, 부가세는 별도입니다(부가가치세법). 예를 들어 상한 중개수수료가 450만 원이면 부가세는 45만 원으로 총 495만 원을 지급합니다. 중개인이 세금계산서를 발급하면 부가세가 부과됩니다.',
+      '실제 부가세 적용 여부와 금액은 중개사업자의 과세유형 등을 확인해야 합니다. 세금계산서 발급 여부만으로 부가세가 없다고 판단하지 마세요. 본 계산기는 부가세 포함을 선택한 경우 중개보수의 10%를 더한 예상 지급액을 표시합니다.',
   },
   {
     question: '중개수수료를 협상으로 깎을 수 있나요?',
@@ -84,7 +86,7 @@ const FAQ_ITEMS = [
   {
     question: '오피스텔 중개보수는 주택과 다른가요?',
     answer:
-      '네, 다릅니다(공인중개사법 시행규칙 §20 ④). 오피스텔(주거용, 전용 85㎡ 이하)은 매매·교환 시 0.5%, 임대차 시 0.4%의 고정 요율이 적용됩니다. 구간별 차등 요율 없이 고정이고, 한도액도 없습니다.',
+      '네, 다릅니다(공인중개사법 시행규칙 §20 ④). 전용면적 85㎡ 이하이고 전용입식 부엌·전용수세식 화장실·목욕시설 등 요건을 갖춘 오피스텔은 매매·교환 상한요율 0.5%, 임대차 상한요율 0.4%입니다. 해당 상한 이내에서 협의하며, 위 요건에 해당하지 않는 오피스텔은 이 계산기의 주거용 오피스텔 가정과 다릅니다.',
   },
   {
     question: '중개수수료 한도액이 언제 적용되나요?',
@@ -103,29 +105,38 @@ const RELATED = [
 export default function CommissionPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '중개수수료 계산기',
-    description: '2026년 법정 상한요율 반영, 매매·전세·월세·오피스텔 중개수수료',
+    description: DESCRIPTION,
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
     name: '중개수수료 계산기 2026',
-    description: '2026년 법정 상한요율·한도액 기준 중개수수료 계산',
+    description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-06-01',
+    dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('broker-fee'),
   });
   const howToLd = buildHowToJsonLd({
     name: '중개수수료 계산기 사용 방법',
-    description: '거래금액과 거래유형을 입력하여 법정 상한 중개수수료를 계산하는 단계별 가이드',
+    description: DESCRIPTION,
     steps: [
-      { name: '거래유형 선택', text: '매매·전세·월세·오피스텔 중 거래 유형을 선택합니다.' },
-      { name: '거래금액 입력', text: '부동산 거래 금액을 입력합니다(월세는 보증금+월세×100).' },
+      {
+        name: '거래유형과 물건 종류 선택',
+        text: '매매·교환·전세·월세 거래유형과 주택·오피스텔·기타 물건 종류를 선택합니다. 오피스텔은 표시된 적용 조건을 확인합니다.',
+      },
+      {
+        name: '거래금액 입력',
+        text: '매매가 또는 전세보증금을 입력합니다. 월세는 보증금과 월세를 입력하며, 보증금+월세×100이 5,000만 원 미만이면 보증금+월세×70으로 거래금액을 다시 계산합니다.',
+      },
       { name: '협의요율 설정', text: '법정 상한요율 이내에서 협의 요율을 입력합니다(선택).' },
       {
         name: '상한수수료 계산',
         text: '입력된 금액과 요율에 따라 상한 중개수수료가 자동 계산됩니다.',
       },
-      { name: '부가세 포함 최종액 확인', text: '부가세 10%를 포함한 최종 지급액을 확인합니다.' },
+      {
+        name: '부가세 선택과 예상 지급액 확인',
+        text: '부가세 포함을 선택한 경우 중개보수의 10%를 더해 예상 지급액을 표시합니다. 실제 부가세 적용 여부는 중개사와 확인하세요.',
+      },
     ],
   });
   const faqLd = buildFaqPageJsonLd(
@@ -192,7 +203,7 @@ export default function CommissionPage() {
                 {
                   name: '월세 거래금액',
                   description:
-                    '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + (월세×100) 또는 (월세×70) 중 더 큰 값 (공인중개사법 시행규칙 §20 ③).',
+                    '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + 월세×100이 5천만원 미만이면 보증금 + 월세×70으로 다시 계산합니다 (공인중개사법 시행규칙 §20 ③).',
                 },
               ],
             }),
@@ -219,14 +230,22 @@ export default function CommissionPage() {
                   />
                   <h1 className="mb-3 text-4xl font-bold tracking-tight">중개수수료 계산기 2026</h1>
                   <p className="text-lg text-text-secondary" data-speakable>
-                    거래 종류와 금액으로 중개보수 상한을 확인하세요.
+                    매매·전세·월세의 중개보수 상한과 협의 요율·부가세 선택에 따른 지급액을
+                    확인하세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-06-01" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-01" />
                 </header>
               }
               calculator={<CommissionCalculator />}
               related={
                 <>
+                  <Link
+                    data-search-guide-link
+                    href="/guide/category/tax-real-estate/"
+                    className="inline-flex min-h-12 items-center text-sm font-medium text-primary-700 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-primary-300"
+                  >
+                    부동산 거래비용 안내 찾기
+                  </Link>
                   <RelatedCalculators items={RELATED} />
                 </>
               }
@@ -245,7 +264,7 @@ export default function CommissionPage() {
                     ['주택 매매 (2억~9억원)', '0.4%'],
                     ['주택 매매 (9억 이상)', '0.5% 이상'],
                     ['주택 전세 (1억~6억)', '0.3%'],
-                    ['오피스텔 주거용', '0.5% (고정)'],
+                    ['오피스텔 요건 충족 시 매매', '상한 0.5%'],
                     ['기타 (상가·토지)', '0.9% 협의'],
                   ],
                 }}
@@ -253,13 +272,13 @@ export default function CommissionPage() {
                   '중개수수료 = 거래금액 × 상한요율 (한도액 존재 시 최소값)',
                   '소액 거래(5천만 이하)는 한도액 25~30만원으로 제한',
                   '법정 상한 이내에서 중개인과 협의 가능',
-                  '부가세(10%)는 별도 부과 (세금계산서 발급 시)',
+                  '부가세 적용은 중개사업자의 과세유형 확인; 선택 시 10% 추정',
                   '월세 거래금액 = 보증금 + (월세×100) 또는 × 70',
                 ]}
               />
               <RateBarChart
                 title="주택 매매 중개수수료 상한요율, 거래금액 구간별 (공인중개사법 시행규칙 §20)"
-                caption="주택 매매 중개수수료는 거래금액 구간별 법정 상한요율로 정해집니다. 2억~9억 구간이 0.4%로 가장 낮고, 9억을 넘으면 0.5%, 12억 이상 0.6%, 15억 이상 0.7%로 올라갑니다. 상한 이내에서 중개인과 협의할 수 있으며 부가세 10%는 별도입니다."
+                caption="주택 매매 중개수수료는 거래금액 구간별 상한요율로 정해집니다. 2억 이상 9억 미만은 0.4%, 9억 이상 12억 미만은 0.5%, 12억 이상 15억 미만은 0.6%, 15억 이상은 0.7%입니다. 상한 이내에서 협의하며, 부가세 적용은 중개사업자의 과세유형을 확인하세요."
                 unit="%"
                 max={0.8}
                 bars={[
@@ -282,8 +301,9 @@ export default function CommissionPage() {
                 <p className="text-text-secondary">
                   거래금액과 물건의 종류(주택·오피스텔·기타)에 따라 법정 상한요율이 결정되며,
                   중개인과 의뢰인은 그 상한 범위 내에서 자유롭게 요율을 협의할 수 있습니다. 협의
-                  없이 거래하면 법정 상한요율이 기본 적용됩니다. 중개수수료 외에 부가세(VAT 10%)와
-                  전월세 전환·명의 변경 등 부대비용이 별도로 발생할 수 있으므로 주의가 필요합니다.
+                  없이 계산하면 계산기는 상한요율을 사용합니다. 중개수수료 외에 과세유형에 따른
+                  부가세와 전월세 전환·명의 변경 등 부대비용이 별도로 발생할 수 있으므로 주의가
+                  필요합니다.
                 </p>
               </section>
               <section aria-label="중개수수료 요율표" className="card">
@@ -450,8 +470,8 @@ export default function CommissionPage() {
                     (월세×100) 또는 × 70을 기준으로 계산합니다.
                   </li>
                   <li>
-                    <strong>2. 물건 종류 확인</strong>: 주택(매매/임차별 요율), 오피스텔(고정
-                    0.5%/0.4%), 기타(0.9% 협의).
+                    <strong>2. 물건 종류 확인</strong>: 주택(매매/임차별 상한요율), 적용 요건을 갖춘
+                    오피스텔(매매 상한 0.5%·임대차 상한 0.4%), 기타(상한 0.9% 이내 협의).
                   </li>
                   <li>
                     <strong>3. 상한요율 결정</strong>: 거래금액에 해당하는 요율을 찾습니다. 소액
@@ -466,7 +486,8 @@ export default function CommissionPage() {
                     이하만 유효).
                   </li>
                   <li>
-                    <strong>6. 부가세</strong>: 최종 중개수수료 × 10% (세금계산서 발급 시).
+                    <strong>6. 부가세</strong>: 계산기에서 포함을 선택하면 중개보수의 10%를
+                    더합니다. 실제 적용 여부와 금액은 중개사업자의 과세유형을 확인하세요.
                   </li>
                   <li>
                     <strong>7. 총 지급액</strong>: (상한 또는 협의 중개수수료) + 부가세.
@@ -485,8 +506,16 @@ export default function CommissionPage() {
                     상황·중개사의 정책에 따라 다를 수 있습니다.
                   </li>
                   <li>
-                    부가세는 중개인이 세금계산서를 발급할 때만 부과됩니다. 세금계산서 미발급 거래는
-                    부가세가 발생하지 않습니다.
+                    부가세 적용 여부와 금액은 중개사업자의 과세유형 등을 확인해야 합니다.
+                    세금계산서나 영수증 발급 여부만으로 부가세가 없다고 판단하지 마세요.{' '}
+                    <a
+                      href="https://d.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7693&mi=2272"
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      국세청 부가가치세 안내
+                    </a>
                   </li>
                   <li>
                     월세 거래금액 계산 시 보증금 + (월세 × 100)의 결과가 5,000만 원 미만이면 월세 ×
@@ -514,8 +543,8 @@ export default function CommissionPage() {
                     적용되므로, 상한요율보다 한도액으로 계산하는 것이 유리합니다.
                   </li>
                   <li>
-                    <strong>부가세 여부 확인</strong>: 세금계산서 발급 여부를 미리 확인하고 부가세를
-                    포함한 총액을 계산하세요.
+                    <strong>부가세 여부 확인</strong>: 중개사업자의 과세유형, 실제 부가세 금액과
+                    증빙 발급을 확인하고 총 지급액을 비교하세요.
                   </li>
                   <li>
                     <strong>양측 요율 차이 협상</strong>: 매도자와 매수자의 요율이 다를 수 있습니다.

@@ -1,5 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { StructuredSummary } from '@/components/calculator/StructuredSummary';
@@ -24,11 +25,13 @@ import { PropertyTaxCalculator } from './PropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 
 const URL = 'https://calculatorhost.com/calculator/property-tax/';
+const TITLE = '재산세 계산기 2026 | 공시가격·1세대1주택·도시지역분';
+const DESCRIPTION =
+  '주택 공시가격과 1세대1주택·도시지역 조건으로 재산세 본세·지방교육세·선택한 도시지역분을 추정하세요. 지역자원시설세와 세부담 상한은 반영하지 않아 실제 고지액과 다를 수 있습니다.';
 
 export const metadata: Metadata = {
-  title: '재산세 계산기 2026 | 공시가·특례·도시지역 | calculatorhost',
-  description:
-    '2026년 재산세 계산기. 공시가격·공정시장가액비율을 입력해 재산세를 계산. 1세대1주택 특례·연납 할인·도시지역세 등 반영. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+  title: TITLE,
+  description: DESCRIPTION,
   keywords: [
     '재산세 계산기',
     '주택 재산세 계산',
@@ -39,15 +42,15 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '재산세 계산기 2026 | 공시가·특례·도시지역분',
-    description: '2026년 지방세법 기준 재산세 계산기. 공시가격 입력으로 연간 총 납부액 확인.',
+    title: TITLE,
+    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 계산기 2026 | 공시가·특례·도시지역분',
-    description: '공시가격 입력으로 연간 납부액, 7·9월 분납액 즉시 확인',
+    title: TITLE,
+    description: DESCRIPTION,
   },
 };
 
@@ -108,32 +111,31 @@ const RELATED = [
 export default function PropertyTaxPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '재산세 계산기',
-    description: '2026년 지방세법 기준 재산세 계산기',
+    description: DESCRIPTION,
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
     name: '재산세 계산기 2026',
-    description: '공시가격 입력으로 연간 납부액, 7·9월 분납액 즉시 확인',
+    description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-05-31',
+    dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('property-tax'),
   });
   const howToLd = buildHowToJsonLd({
     name: '재산세 계산기 사용 방법',
-    description: '공시가격과 주택 정보를 입력하여 연간 재산세를 계산하는 단계별 가이드',
+    description: DESCRIPTION,
     steps: [
-      { name: '공시가격 입력', text: '부동산의 공시가격을 입력합니다(주택은 국토부 발표 공시가).' },
+      { name: '공시가격 입력', text: '주택의 공시가격을 원 단위로 입력합니다.' },
       {
-        name: '주택 수 및 면적 입력',
-        text: '현재 보유한 주택 수와 주택의 주택 면적(㎡)을 입력합니다.',
+        name: '1세대1주택 조건 선택',
+        text: '1세대1주택 특례 해당 여부를 선택합니다. 계산기는 공시가격 9억 원 이하일 때 특례세율을 적용합니다.',
       },
-      { name: '지역 정보 설정', text: '도시지역 여부, 조정지역 여부를 확인합니다.' },
+      { name: '도시지역 조건 선택', text: '도시지역분을 포함할 경우 도시지역 항목을 선택합니다.' },
       {
-        name: '1세대1주택 특례 확인',
-        text: '해당하면 1세대1주택 특례(9억 원 이하)가 자동 적용됩니다.',
+        name: '추정 결과 확인',
+        text: '재산세 본세·지방교육세·선택한 도시지역분을 확인합니다. 지역자원시설세와 세부담 상한은 제외되므로 실제 고지액과 다를 수 있습니다.',
       },
-      { name: '결과 확인', text: '연간 총 납부액과 7월·9월 분납액을 확인합니다.' },
     ],
   });
   const faqLd = buildFaqPageJsonLd(
@@ -232,14 +234,21 @@ export default function PropertyTaxPage() {
                   />
                   <h1 className="mb-3 text-4xl font-bold tracking-tight">재산세 계산기 2026</h1>
                   <p className="text-lg text-text-secondary" data-speakable>
-                    공시가격과 보유 조건으로 예상 재산세를 확인하세요.
+                    주택 공시가격과 1세대1주택·도시지역 조건으로 재산세를 추정하세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-05-31" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-01" />
                 </header>
               }
               calculator={<PropertyTaxCalculator />}
               related={
                 <>
+                  <Link
+                    data-search-guide-link
+                    href="/guide/category/tax-real-estate/"
+                    className="inline-flex min-h-12 items-center text-sm font-medium text-primary-700 focus-visible:rounded focus-visible:ring-2 focus-visible:ring-primary-500 dark:text-primary-300"
+                  >
+                    보유세·납부 조건 안내 찾기
+                  </Link>
                   <RelatedCalculators items={RELATED} />
                 </>
               }

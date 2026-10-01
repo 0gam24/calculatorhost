@@ -21,6 +21,10 @@ import {
 } from '@/lib/data/category-mapping';
 
 const URL = 'https://calculatorhost.com/category/tax/';
+const ONE_HOME_EXEMPTION_SOURCE =
+  'https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cntntsId=7707&mi=2308';
+const ONE_HOME_EXEMPTION_DESCRIPTION =
+  '소득세법 §89①제3호에 따른 1세대 1주택 비과세는 원칙적으로 양도일 현재 국내 1주택과 2년 이상 보유가 기준입니다. 2017년 8월 3일 이후 취득 당시 조정대상지역에 있던 주택은 2년 이상 거주 요건도 적용됩니다. 고가주택 판단은 공시가격이 아닌 주택과 부수토지의 양도 당시 실지거래가액 합계로 하며, 12억 원을 초과하면 전액 비과세 대상에서 제외됩니다. 보유·거주 요건 예외와 일시적 2주택 등의 특례는 별도 확인하세요.';
 
 export const metadata: Metadata = {
   title: '세금 계산기 모음 2026 | 양도·취득·재산·증여·상속 | calculatorhost',
@@ -42,20 +46,21 @@ export const metadata: Metadata = {
     description: '양도세·취득세·재산세·종부세 계산기 모음',
     url: URL,
     type: 'website',
-
   },
 };
 
 const CALCULATORS = [
   {
     title: '양도소득세 계산기',
-    description: '주택 또는 토지 매각 시 발생하는 양도소득세를 계산합니다. 보유 기간, 조정지역, 다주택 여부를 반영합니다.',
+    description:
+      '주택 또는 토지 매각 시 발생하는 양도소득세를 계산합니다. 보유 기간, 조정지역, 다주택 여부를 반영합니다.',
     href: '/calculator/capital-gains-tax',
     tags: ['부동산 거래', '세금'],
   },
   {
     title: '취득세 계산기',
-    description: '부동산 매입 시 납부하는 취득세와 농특세, 지방교육세를 2026년 최신 세율로 계산합니다.',
+    description:
+      '부동산 매입 시 납부하는 취득세와 농특세, 지방교육세를 2026년 최신 세율로 계산합니다.',
     href: '/calculator/acquisition-tax',
     tags: ['구매비용', '세금'],
   },
@@ -85,7 +90,8 @@ const CALCULATORS = [
   },
   {
     title: '부가가치세(VAT) 계산기',
-    description: '한국 부가세 10% 일반과세·간이과세 산출 + VAT 포함↔공급가액 환산. 사업자·프리랜서 필수.',
+    description:
+      '한국 부가세 10% 일반과세·간이과세 산출 + VAT 포함↔공급가액 환산. 사업자·프리랜서 필수.',
     href: '/calculator/vat',
     tags: ['VAT', '부가세', '사업자'],
   },
@@ -99,13 +105,16 @@ const FAQ_ITEMS = [
   },
   {
     question: '1주택 보유자 양도세 비과세 조건은?',
-    answer:
-      '소득세법 §94에 따라 1세대 1주택을 2년 이상 보유 후 양도하되, 공시가격 9억 원 이하인 경우 양도소득세가 비과세됩니다. 거주 요건은 보유 기간 중 대부분 거주해야 한다는 실질적 기준이 적용됩니다.',
+    answer: ONE_HOME_EXEMPTION_DESCRIPTION,
+    sourceUrl: ONE_HOME_EXEMPTION_SOURCE,
+    sourceLabel: '국세청 1세대 1주택 비과세 안내',
   },
   {
     question: '일시적 2주택은 언제 비과세되나요?',
     answer:
-      '구 주택 양도와 신 주택 취득이 2년 내에 일어나는 경우, 구 주택이 양도세 비과세 요건을 충족하면 비과세될 수 있습니다. 다만 양도 당시 기준으로 2주택 이상 보유했다면 세율이 올라가므로 정확한 일정 확인이 중요합니다.',
+      '갈아타기로 일시적 2주택이 된 경우에도 요건을 충족하면 1세대 1주택 비과세 특례를 적용받을 수 있습니다. 종전 주택의 보유·거주 요건, 신규 주택 취득 시점과 지역, 종전 주택 양도 기한을 함께 확인해야 합니다. 주택 수나 일정 하나만으로 비과세 또는 중과 여부를 확정할 수 없으므로 적용 시점의 특례와 예외를 확인하세요.',
+    sourceUrl: 'https://www.law.go.kr/lsLawLinkInfo.do?chrClsCd=010202&lsJoLnkSeq=1001061953',
+    sourceLabel: '소득세법 시행령 제155조 특례·적용 조건 확인',
   },
   {
     question: '재산세와 종합부동산세 차이는?',
@@ -164,9 +173,8 @@ export default function TaxCategoryPage() {
       },
       {
         name: '1세대 1주택 비과세',
-        description:
-          '소득세법 §94에 따른 세제 혜택으로, 1세대가 1주택만 소유하고 2년 이상 보유·거주 후 공시가격 9억 원 이하로 양도할 때 양도소득세를 내지 않습니다. 가장 강력한 세제 혜택이나 조건이 엄격하며, 다주택 전환 시 비과세 지위가 상실됩니다.',
-        url: 'https://www.nts.go.kr',
+        description: ONE_HOME_EXEMPTION_DESCRIPTION,
+        url: ONE_HOME_EXEMPTION_SOURCE,
       },
       {
         name: '경비율',
@@ -207,17 +215,11 @@ export default function TaxCategoryPage() {
             <article className="mx-auto max-w-4xl space-y-8">
               {/* H1 */}
               <div>
-                <Breadcrumb
-                  items={[
-                    { name: '홈', href: '/' },
-                    { name: '세금 계산기' },
-                  ]}
-                />
-                <h1 className="mb-4 text-4xl font-bold text-text-primary">
-                  세금 계산기 모음 2026
-                </h1>
+                <Breadcrumb items={[{ name: '홈', href: '/' }, { name: '세금 계산기' }]} />
+                <h1 className="mb-4 text-4xl font-bold text-text-primary">세금 계산기 모음 2026</h1>
                 <p className="text-lg text-text-secondary">
-                  부동산 거래와 부동산 보유 관련 세금을 정확하게 계산하세요. 양도소득세, 취득세, 재산세, 퇴직금, 프리랜서 소득세까지 한 곳에서 확인할 수 있습니다.
+                  부동산 거래와 부동산 보유 관련 세금을 정확하게 계산하세요. 양도소득세, 취득세,
+                  재산세, 퇴직금, 프리랜서 소득세까지 한 곳에서 확인할 수 있습니다.
                 </p>
               </div>
 
@@ -273,9 +275,7 @@ export default function TaxCategoryPage() {
                       key={calc.href}
                       className="flex flex-col rounded-lg border border-border-base bg-bg-card p-6 transition-all hover:shadow-md"
                     >
-                      <h3 className="mb-2 text-xl font-semibold text-text-primary">
-                        {calc.title}
-                      </h3>
+                      <h3 className="mb-2 text-xl font-semibold text-text-primary">{calc.title}</h3>
                       <p className="mb-4 flex-1 text-text-secondary">{calc.description}</p>
                       <div className="mb-4 flex flex-wrap gap-2">
                         {calc.tags.map((tag) => (
@@ -301,7 +301,9 @@ export default function TaxCategoryPage() {
                 {/* SSoT 카테고리 매핑 (CATEGORY_CALCULATORS.tax) 中 위 카드에 없는 추가 계산기.
                     누락 보강, 종부세·증여세·상속세·자동차세·자녀세액공제 등 24편 묻힘 해소. */}
                 {(() => {
-                  const cardSlugs = new Set(CALCULATORS.map((c) => c.href.replace('/calculator/', '')));
+                  const cardSlugs = new Set(
+                    CALCULATORS.map((c) => c.href.replace('/calculator/', '')),
+                  );
                   const additional = CATEGORY_CALCULATORS.tax.filter((s) => !cardSlugs.has(s));
                   if (additional.length === 0) return null;
                   return (
@@ -331,15 +333,21 @@ export default function TaxCategoryPage() {
               {(() => {
                 const labels = GUIDE_CATEGORY_LABEL.tax;
                 const cross = new Set(CROSS_GUIDES.tax);
-                const related = GUIDES.filter((g) => labels.includes(g.category) || cross.has(g.slug));
+                const related = GUIDES.filter(
+                  (g) => labels.includes(g.category) || cross.has(g.slug),
+                );
                 if (related.length === 0) return null;
                 return (
-                  <section aria-label="관련 가이드" className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
+                  <section
+                    aria-label="관련 가이드"
+                    className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6"
+                  >
                     <h2 className="text-2xl font-bold text-text-primary">
                       관련 가이드 ({related.length}편)
                     </h2>
                     <p className="text-sm text-text-secondary">
-                      세금 절세·신고 전략을 정리한 실전 가이드. 관련 법조항과 적용 조건을 함께 확인하세요.
+                      세금 절세·신고 전략을 정리한 실전 가이드. 관련 법조항과 적용 조건을 함께
+                      확인하세요.
                     </p>
                     <ul className="grid gap-2 sm:grid-cols-2">
                       {related.map((g) => (
@@ -363,7 +371,10 @@ export default function TaxCategoryPage() {
                 const ref = CATEGORY_GLOSSARY.tax;
                 if (!ref) return null;
                 return (
-                  <section aria-label="관련 용어" className="space-y-3 rounded-lg border border-border-base bg-bg-card p-6">
+                  <section
+                    aria-label="관련 용어"
+                    className="space-y-3 rounded-lg border border-border-base bg-bg-card p-6"
+                  >
                     <h2 className="text-2xl font-bold text-text-primary">관련 용어</h2>
                     <ul className="flex flex-wrap gap-2">
                       {ref.highlightTerms.map((term) => (
@@ -390,32 +401,34 @@ export default function TaxCategoryPage() {
 
               {/* 사용 시점 가이드 */}
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
-                <h2 className="text-2xl font-bold text-text-primary">
-                  세금 계산기가 필요한 순간
-                </h2>
+                <h2 className="text-2xl font-bold text-text-primary">세금 계산기가 필요한 순간</h2>
                 <div className="space-y-4">
                   <div>
                     <h3 className="font-semibold text-text-primary">집을 매매하기 전</h3>
                     <p className="text-text-secondary">
-                      양도소득세와 취득세를 미리 계산해 실제 수령액과 거래 비용을 확인하세요. 특히 조정지역이나 다주택자는 세율이 크게 올라가므로 사전 계산이 필수입니다.
+                      양도소득세와 취득세를 미리 계산해 실제 수령액과 거래 비용을 확인하세요. 특히
+                      조정지역이나 다주택자는 세율이 크게 올라가므로 사전 계산이 필수입니다.
                     </p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-text-primary">매년 재산세 납부 전</h3>
                     <p className="text-text-secondary">
-                      소유 부동산의 공시가격이 바뀌면 재산세도 달라집니다. 계산기로 미리 예상액을 확인해 예산을 준비하세요.
+                      소유 부동산의 공시가격이 바뀌면 재산세도 달라집니다. 계산기로 미리 예상액을
+                      확인해 예산을 준비하세요.
                     </p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-text-primary">퇴직 계획을 세울 때</h3>
                     <p className="text-text-secondary">
-                      퇴직금이 실제로 손에 들어올 때 얼마인지 세금을 포함해 계산합니다. 은퇴 자금 계획을 수립하는 데 필수입니다.
+                      퇴직금이 실제로 손에 들어올 때 얼마인지 세금을 포함해 계산합니다. 은퇴 자금
+                      계획을 수립하는 데 필수입니다.
                     </p>
                   </div>
                   <div>
                     <h3 className="font-semibold text-text-primary">사업 소득을 신고할 때</h3>
                     <p className="text-text-secondary">
-                      프리랜서나 1인 사업자는 소득세 신고 전에 경비율을 정확하게 파악해야 종합소득세를 계산할 수 있습니다.
+                      프리랜서나 1인 사업자는 소득세 신고 전에 경비율을 정확하게 파악해야
+                      종합소득세를 계산할 수 있습니다.
                     </p>
                   </div>
                 </div>
@@ -423,15 +436,20 @@ export default function TaxCategoryPage() {
 
               {/* 세금 계산기 활용 가이드 */}
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
-                <h2 className="text-2xl font-bold text-text-primary">세금 계산기를 어떻게 활용하나요?</h2>
+                <h2 className="text-2xl font-bold text-text-primary">
+                  세금 계산기를 어떻게 활용하나요?
+                </h2>
 
                 <div className="space-y-6 text-text-secondary">
                   <div>
                     <h3 className="mb-2 font-semibold text-text-primary">부동산 거래 시</h3>
                     <p className="mb-3">
-                      부동산을 사고팔 때는 거래 비용을 정확히 예측하는 것이 필수입니다. 양도소득세 계산기로 매각 시 세금 부담을 먼저 확인하고, 취득세 계산기로 매입 시 비용을 파악하세요. 거래 전 최소 2-3주 여유를 두고 계산하면 협상 자료로도 활용할 수 있습니다.
+                      부동산을 사고팔 때는 거래 비용을 정확히 예측하는 것이 필수입니다. 양도소득세
+                      계산기로 매각 시 세금 부담을 먼저 확인하고, 취득세 계산기로 매입 시 비용을
+                      파악하세요. 거래 전 최소 2-3주 여유를 두고 계산하면 협상 자료로도 활용할 수
+                      있습니다.
                     </p>
-                    <ul className="list-inside list-disc space-y-1 ml-2">
+                    <ul className="ml-2 list-inside list-disc space-y-1">
                       <li>매도 예정이라면 양도소득세로 세후 수익을 먼저 확인</li>
                       <li>매수 예정이라면 취득세로 총 구매 비용을 산출</li>
                       <li>보유 중이라면 재산세로 연간 세금 예산을 계획</li>
@@ -441,21 +459,26 @@ export default function TaxCategoryPage() {
                   <div>
                     <h3 className="mb-2 font-semibold text-text-primary">근로소득 협상 시</h3>
                     <p className="mb-3">
-                      이직이나 연봉 협상 시 세전 연봉만으로는 부족합니다. 연봉 실수령액 계산기를 사용해 실제로 통장에 들어올 금액을 확인하세요. 부양가족과 자녀 수도 반영되므로 정확한 세후 금액으로 생활비를 검토할 수 있습니다.
+                      이직이나 연봉 협상 시 세전 연봉만으로는 부족합니다. 연봉 실수령액 계산기를
+                      사용해 실제로 통장에 들어올 금액을 확인하세요. 부양가족과 자녀 수도 반영되므로
+                      정확한 세후 금액으로 생활비를 검토할 수 있습니다.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="mb-2 font-semibold text-text-primary">사업 및 프리랜서</h3>
                     <p className="mb-3">
-                      프리랜서나 1인사업자라면 종합소득세 계산기로 연간 세금을 미리 예측해 월별 적립금을 준비하세요. 경비율을 반영한 정확한 계산으로 세금 폭탄을 방지할 수 있습니다.
+                      프리랜서나 1인사업자라면 종합소득세 계산기로 연간 세금을 미리 예측해 월별
+                      적립금을 준비하세요. 경비율을 반영한 정확한 계산으로 세금 폭탄을 방지할 수
+                      있습니다.
                     </p>
                   </div>
 
                   <div>
                     <h3 className="mb-2 font-semibold text-text-primary">생애 주요 사건</h3>
                     <p className="mb-3">
-                      퇴직이 예정되거나 상속이 발생했다면 해당 계산기를 통해 미리 세금을 파악하세요. 예상치 못한 세금 고지서로 당황하는 것보다 사전에 준비하는 것이 현명합니다.
+                      퇴직이 예정되거나 상속이 발생했다면 해당 계산기를 통해 미리 세금을 파악하세요.
+                      예상치 못한 세금 고지서로 당황하는 것보다 사전에 준비하는 것이 현명합니다.
                     </p>
                   </div>
                 </div>
@@ -478,31 +501,38 @@ export default function TaxCategoryPage() {
                   <div>
                     <dt className="font-semibold text-text-primary">과세표준</dt>
                     <dd className="mt-1">
-                      세율을 적용하는 대상이 되는 소득금액. 소득세법 §47에 따라 총소득에서 특정 공제를 뺀 금액입니다. 예를 들어 양도소득세는 양도가액에서 취득가와 비용을 뺀 양도소득이 과세표준이 되며, 여기에 세율을 곱해 세액을 계산합니다.
+                      세율을 적용하는 대상이 되는 소득금액. 소득세법 §47에 따라 총소득에서 특정
+                      공제를 뺀 금액입니다. 예를 들어 양도소득세는 양도가액에서 취득가와 비용을 뺀
+                      양도소득이 과세표준이 되며, 여기에 세율을 곱해 세액을 계산합니다.
                     </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-text-primary">누진공제</dt>
                     <dd className="mt-1">
-                      누진세에서 낮은 구간 세금을 자동으로 공제하는 금액(소득세법 §55). 누진세율 테이블에 직접 명시되어 있으며, 과세표준이 높아질수록 실제 세율을 조정하는 역할을 합니다. 이를 통해 세율 구간 경계에서 급격한 세금 증가를 완화합니다.
+                      누진세에서 낮은 구간 세금을 자동으로 공제하는 금액(소득세법 §55). 누진세율
+                      테이블에 직접 명시되어 있으며, 과세표준이 높아질수록 실제 세율을 조정하는
+                      역할을 합니다. 이를 통해 세율 구간 경계에서 급격한 세금 증가를 완화합니다.
                     </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-text-primary">양도소득금액</dt>
                     <dd className="mt-1">
-                      부동산 판매 시 실제 이득 = (양도가액 - 취득가 - 필요경비). 소득세법 §93에 따라 계산되며, 이것이 과세표준이 됩니다. 양도가액이 높아도 취득가가 높으면 소득은 작아집니다. 장기보유(2년 이상)하면 양도소득 공제(보유 기간별)가 적용되어 과세표준을 낮춥니다.
+                      부동산 판매 시 실제 이득 = (양도가액 - 취득가 - 필요경비). 소득세법 §93에 따라
+                      계산되며, 이것이 과세표준이 됩니다. 양도가액이 높아도 취득가가 높으면 소득은
+                      작아집니다. 장기보유(2년 이상)하면 양도소득 공제(보유 기간별)가 적용되어
+                      과세표준을 낮춥니다.
                     </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-text-primary">1세대 1주택 비과세</dt>
-                    <dd className="mt-1">
-                      소득세법 §94에 따른 세제 혜택으로, 1세대가 1주택만 소유하고 2년 이상 보유·거주 후 공시가격 9억 원 이하로 양도할 때 양도소득세를 내지 않습니다. 가장 강력한 세제 혜택이나 조건이 엄격하며, 다주택 전환 시 비과세 지위가 상실됩니다.
-                    </dd>
+                    <dd className="mt-1">{ONE_HOME_EXEMPTION_DESCRIPTION}</dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-text-primary">경비율</dt>
                     <dd className="mt-1">
-                      사업소득에서 필요경비를 계산할 때 국세청이 정한 비율(소득세법 §25). 프리랜서와 1인사업자는 실제 경비를 입증할 수 없을 때 기본경비율을 적용할 수 있습니다. 업종별로 30~80% 범위이며, 경비율 선택이 종합소득세 크기에 큰 영향을 미칩니다.
+                      사업소득에서 필요경비를 계산할 때 국세청이 정한 비율(소득세법 §25). 프리랜서와
+                      1인사업자는 실제 경비를 입증할 수 없을 때 기본경비율을 적용할 수 있습니다.
+                      업종별로 30~80% 범위이며, 경비율 선택이 종합소득세 크기에 큰 영향을 미칩니다.
                     </dd>
                   </div>
                 </dl>
@@ -512,7 +542,9 @@ export default function TaxCategoryPage() {
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <h2 className="text-2xl font-bold text-text-primary">공식 출처 및 법적 근거</h2>
                 <p className="text-text-secondary">
-                  본 카테고리의 모든 계산기는 국세청, 기획재정부, 지방세청의 공식 법령과 지침을 기반합니다. 2026년 개정된 세율과 과세 기준은 기획재정부 보도자료를 통해 즉시 반영되며, 월별로 확인·업데이트됩니다.
+                  본 카테고리의 모든 계산기는 국세청, 기획재정부, 지방세청의 공식 법령과 지침을
+                  기반합니다. 2026년 개정된 세율과 과세 기준은 기획재정부 보도자료를 통해 즉시
+                  반영되며, 월별로 확인·업데이트됩니다.
                 </p>
                 <ul className="grid gap-2">
                   <li>
@@ -523,7 +555,9 @@ export default function TaxCategoryPage() {
                       className="flex flex-col rounded-xl border border-border-base px-4 py-2 transition-colors hover:border-primary-500"
                     >
                       <span className="font-medium text-primary-500">국세청 홈택스</span>
-                      <span className="text-caption text-text-secondary">세금 신고, 납부, 간이 계산기</span>
+                      <span className="text-caption text-text-secondary">
+                        세금 신고, 납부, 간이 계산기
+                      </span>
                     </a>
                   </li>
                   <li>
@@ -534,7 +568,9 @@ export default function TaxCategoryPage() {
                       className="flex flex-col rounded-xl border border-border-base px-4 py-2 transition-colors hover:border-primary-500"
                     >
                       <span className="font-medium text-primary-500">국세청</span>
-                      <span className="text-caption text-text-secondary">국세 법령, 세율, 공제 해석</span>
+                      <span className="text-caption text-text-secondary">
+                        국세 법령, 세율, 공제 해석
+                      </span>
                     </a>
                   </li>
                   <li>
@@ -545,7 +581,9 @@ export default function TaxCategoryPage() {
                       className="flex flex-col rounded-xl border border-border-base px-4 py-2 transition-colors hover:border-primary-500"
                     >
                       <span className="font-medium text-primary-500">기획재정부</span>
-                      <span className="text-caption text-text-secondary">세법 개정안, 세제 정책</span>
+                      <span className="text-caption text-text-secondary">
+                        세법 개정안, 세제 정책
+                      </span>
                     </a>
                   </li>
                   <li>
@@ -556,7 +594,9 @@ export default function TaxCategoryPage() {
                       className="flex flex-col rounded-xl border border-border-base px-4 py-2 transition-colors hover:border-primary-500"
                     >
                       <span className="font-medium text-primary-500">위택스</span>
-                      <span className="text-caption text-text-secondary">지방세(취득세, 재산세) 기준</span>
+                      <span className="text-caption text-text-secondary">
+                        지방세(취득세, 재산세) 기준
+                      </span>
                     </a>
                   </li>
                 </ul>
@@ -567,14 +607,21 @@ export default function TaxCategoryPage() {
                 <h2 className="text-2xl font-bold text-text-primary">자주 묻는 질문</h2>
                 <div className="space-y-4">
                   {FAQ_ITEMS.map((item, idx) => (
-                    <details
-                      key={idx}
-                      className="group rounded-lg border border-border-base p-4"
-                    >
+                    <details key={idx} className="group rounded-lg border border-border-base p-4">
                       <summary className="cursor-pointer font-semibold text-text-primary">
                         {item.question}
                       </summary>
                       <p className="mt-3 text-text-secondary">{item.answer}</p>
+                      {item.sourceUrl && (
+                        <a
+                          href={item.sourceUrl}
+                          target="_blank"
+                          rel="noopener noreferrer nofollow"
+                          className="mt-2 inline-flex min-h-12 items-center text-primary-600 underline dark:text-primary-500"
+                        >
+                          {item.sourceLabel}
+                        </a>
+                      )}
                     </details>
                   ))}
                 </div>
@@ -618,7 +665,9 @@ export default function TaxCategoryPage() {
               {/* 면책조항 */}
               <div className="space-y-2 border-t border-border-base pt-6 text-sm text-text-secondary">
                 <p>
-                  본 계산기는 일반적인 세율과 공식을 기반으로 하며, 실제 세금은 개별 상황에 따라 달라질 수 있습니다. 정확한 세금 계산 및 신고는 국세청 홈택스나 세무 전문가와 상담하시기 바랍니다.
+                  본 계산기는 일반적인 세율과 공식을 기반으로 하며, 실제 세금은 개별 상황에 따라
+                  달라질 수 있습니다. 정확한 세금 계산 및 신고는 국세청 홈택스나 세무 전문가와
+                  상담하시기 바랍니다.
                 </p>
                 <p>최종 업데이트: 2026년 4월</p>
               </div>
