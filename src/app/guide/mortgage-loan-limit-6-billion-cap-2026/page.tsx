@@ -1,4 +1,4 @@
-// [revenue-lever: indexing+traffic]
+// [revenue-lever: guard] Protect loan-search readers from overstated borrowing limits.
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/mortgage-loan-limit-6-billion-cap-2026/';
 const DATE_PUBLISHED = '2026-08-01';
-const DATE_MODIFIED = '2026-08-01';
+const DATE_MODIFIED = '2026-10-02';
+const DESCRIPTION = '수도권 또는 규제지역의 주택구입목적 주담대 한도는 시가 15억 이하 6억, 15억 초과 25억 이하 4억, 25억 초과 2억입니다. 2025년 10월 16일 전후 비교와 중도금·이주비 예외, LTV·DSR 조건을 정리합니다.';
 
 export const metadata: Metadata = {
   title: '주택담보대출 6억 한도 규제 2026, 시가 15억·25억 구간별 정리',
-  description:
-    '수도권·규제지역 주택담보대출이 시가 구간별로 제한됩니다. 15억 이하 6억, 15억 초과 25억 이하 4억, 25억 초과 2억 한도와 LTV·스트레스 DSR을 함께 정리했습니다. 금융위 가계부채 관리방안 기준.',
+  description: DESCRIPTION,
   keywords: [
     '주택담보대출 6억 한도',
     '주담대 한도 규제',
@@ -30,13 +30,12 @@ export const metadata: Metadata = {
     '25억 주택 대출',
     '수도권 규제지역 대출',
     '스트레스 DSR',
-    '은행법 34조',
   ],
   alternates: { canonical: URL },
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택담보대출 6억 한도 규제 2026, 시가 15억·25억 구간별 정리' }],
     title: '주택담보대출 6억 한도 규제 2026, 시가 구간별 대출한도',
-    description: '수도권·규제지역 주담대는 시가 15억 이하 6억, 15억 초과 25억 이하 4억, 25억 초과 2억으로 제한됩니다.',
+    description: DESCRIPTION,
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '주택담보대출 6억 한도 규제 2026',
-    description: '수도권·규제지역 주담대 시가 구간별 한도(6억·4억·2억)와 LTV·스트레스 DSR 정리.',
+    description: DESCRIPTION,
   },
 };
 
@@ -54,12 +53,12 @@ const FAQ_ITEMS = [
   {
     question: '주택담보대출이 왜 6억까지만 되나요?',
     answer:
-      '수도권·규제지역 고가주택에 대출이 과도하게 쏠리는 것을 막기 위한 금융위원회 가계부채 관리방안 때문입니다. 시가 15억원 이하 주택은 주택담보대출을 최대 6억원까지만 받을 수 있도록 절대 한도를 둔 것으로, 2025년 하반기부터 수도권·규제지역에 적용되고 있습니다.',
+      '수도권 또는 규제지역의 주택구입목적 주담대에는 2025년 6월 28일부터 최대 6억원 한도가 적용됐습니다. 2025년 10월 16일부터는 주택 시가에 따라 6억·4억·2억원으로 차등화됐습니다. 이 금액은 승인 보장이 아니라 상한이며 LTV·DSR 등 다른 조건도 충족해야 합니다.',
   },
   {
     question: '시가 15억 초과 주택은 대출한도가 얼마인가요?',
     answer:
-      '시가 15억원 초과 25억원 이하는 4억원, 25억원 초과는 2억원까지입니다. 주택 가격이 높을수록 절대 한도가 더 줄어드는 구조로, 고가주택일수록 자기자본 비중을 크게 두도록 설계되어 있습니다.',
+      '수도권 또는 규제지역의 주택구입목적 주담대는 시가 15억원 초과 25억원 이하이면 최대 4억원, 25억원 초과이면 최대 2억원입니다. 시가 15억원 이하의 상한은 6억원이며, LTV·DSR 및 금융회사 심사에 따라 실제 대출액은 더 작거나 대출이 거절될 수 있습니다.',
   },
   {
     question: '모든 지역에 적용되나요?',
@@ -69,7 +68,7 @@ const FAQ_ITEMS = [
   {
     question: 'LTV·DSR 한도와는 어떻게 겹치나요?',
     answer:
-      '실제 대출액은 세 가지 중 가장 작은 금액으로 정해집니다. 구간별 절대 한도(6억·4억·2억), LTV(담보가치 대비 비율), DSR(소득 대비 원리금 비율)을 각각 계산한 뒤 그중 최솟값이 한도가 됩니다. 절대 한도가 여유 있어도 소득이 낮으면 DSR에서 먼저 막힐 수 있습니다.',
+      '구간별 절대 한도, LTV 한도, DSR 한도 중 가장 작은 금액을 비교 상한으로 볼 수 있습니다. 이 계산이 승인을 보장하지는 않습니다. 보유주택·대출 목적·상품 자격·DTI·신용 심사 등 추가 조건에 따라 더 줄거나 대출이 거절될 수 있습니다.',
   },
   {
     question: '스트레스 DSR이 무엇인가요?',
@@ -79,12 +78,27 @@ const FAQ_ITEMS = [
   {
     question: '생애최초·신혼부부는 예외가 있나요?',
     answer:
-      '정책대출(디딤돌·버팀목 등)과 실수요자 요건은 별도의 기준이 적용될 수 있습니다. 다만 정책대출도 순차적으로 DSR 산정에 포함되는 추세이므로, 본인의 소득·주택 가격·무주택 여부에 따라 은행과 주택도시기금 창구에서 개별 확인하는 것이 정확합니다.',
+      '생애최초 등 차주 요건과 정책대출은 상품별 LTV·소득·주택가격·한도 기준을 따로 확인해야 합니다. 생애최초나 신혼부부라는 이유만으로 모든 한도와 DSR이 면제되는 것은 아닙니다. 은행·주택도시기금·한국주택금융공사의 해당 상품 공지를 확인하세요.',
   },
   {
     question: '대출 규제는 계속 유지되나요?',
     answer:
-      '가계부채 관리방안은 법률이 아니라 금융당국의 행정 조치이므로 시장 상황에 따라 강화되거나 완화될 수 있습니다. 구간 금액과 적용 지역, LTV 비율은 수시로 조정될 수 있으니, 대출 실행 시점의 금융위원회·은행 공지를 반드시 확인하세요.',
+      '2026년 8월 13일 금융위원회 후속 대책에서도 6억·4억·2억원 한도 유지를 확인했습니다. 이후 지역 지정과 상품별 조건은 달라질 수 있으므로 신청 시점의 공식 공지와 금융회사 기준을 확인해야 합니다. 이 글이 모든 지역·상품의 최신 예외를 자동 판정하지는 않습니다.',
+  },
+  {
+    question: '20억·30억 주택의 차등화 직전 한도는 얼마였나요?',
+    answer:
+      '동일한 수도권·규제지역 주택구입목적 대출과 LTV 40%를 가정하면, 직전에도 최대 6억원 상한이 있었습니다. 따라서 20억원 주택은 6억에서 4억원으로, 30억원 주택은 6억에서 2억원으로 줄었습니다. 8억·12억원은 LTV만 곱한 값이며 직전 승인 한도가 아닙니다. DSR 등은 이 비교에서 제외했습니다.',
+  },
+  {
+    question: '중도금·이주비와 생활안정자금에도 같은 한도가 적용되나요?',
+    answer:
+      '중도금대출은 가격별 절대 한도 적용에서 제외되지만 잔금대출 전환 시에는 적용됩니다. 이주비대출은 가격별 축소 대신 기존 최대 6억원 한도를 유지합니다. 생활안정자금은 이번 가격별 차등화 대상이 아닙니다. 이는 LTV·DSR 등 다른 규제가 모두 면제된다는 뜻이 아닙니다.',
+  },
+  {
+    question: '2025년 10월 16일 전에 계약했다면 종전 기준인가요?',
+    answer:
+      '공식 FAQ는 10월 15일까지 금융회사 전산 신청 접수 완료 또는 정식 매매계약 체결과 계약금 납부 입증 등 경과조치를 안내합니다. 집단대출·토지거래허가·분양권 전매에는 별도 요건과 예외가 있어 계약일만으로 확정할 수 없습니다. 증빙과 신청 경위를 금융회사에 확인하세요.',
   },
 ];
 
@@ -96,8 +110,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '주택담보대출 6억 한도 규제 2026, 시가 15억·25억 구간별 대출한도',
-    description:
-      '수도권·규제지역 주택담보대출 시가 구간별 절대 한도(6억·4억·2억), LTV·스트레스 DSR과의 관계, 실제 대출 가능액 계산 사례까지 정리.',
+    description: DESCRIPTION,
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -108,8 +121,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '주택담보대출 6억 한도 규제 2026',
-    description:
-      '수도권·규제지역 주담대 시가 구간별 절대 한도와 LTV·DSR 관계를 정리한 실전 가이드.',
+    description: DESCRIPTION,
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -129,7 +141,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="min-w-0 flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb
@@ -139,31 +151,31 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                     { name: '주택담보대출 6억 한도 규제 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">대출 실행 예정자 · 8분 읽기 · 2026-08-01</p>
+                <p className="mb-2 text-caption text-text-tertiary">대출 실행 예정자 · 8분 읽기 · 자료 확인 2026-10-02</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   주택담보대출 6억 한도 규제 2026
                   <br />
                   <span className="text-2xl text-text-secondary">시가 15억·25억 구간별 대출한도</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  집을 사기 전 가장 먼저 궁금한 것은 대출이 얼마나 나오느냐입니다. 그런데 2025년 하반기부터 수도권·규제지역에서는 주택 시가 구간에 따라 주택담보대출에 절대 한도가 걸려, 소득이 아무리 높아도 일정 금액 이상은 받을 수 없게 되었습니다. 이 가이드는 시가 15억·25억을 기준으로 한 6억·4억·2억 한도가 정확히 어떻게 적용되는지, LTV·DSR과 어떻게 겹쳐 최종 한도가 정해지는지 실수요자 관점에서 정리합니다.
+                  수도권 또는 규제지역에서 집을 살 때는 LTV·DSR뿐 아니라 주택구입목적 주담대의 절대 한도도 확인해야 합니다. 2025년 6월 28일 최대 6억원 상한이 도입됐고, 10월 16일부터 시가에 따라 6억·4억·2억원으로 차등화됐습니다. 2026년 8월 후속 대책에서도 한도 유지를 확인했습니다. 아래에서는 직전 제도와의 차이, 대출 목적별 예외와 경과조치를 구분합니다.
                 </p>
               </header>
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택담보대출이 6억까지만 되는 이유는?</h2>
                 <p>
-                  고가주택에 과도한 대출이 쏠리는 것을 막기 위한 규제입니다. 금융위원회는 가계부채 관리방안을 통해 수도권·규제지역 주택에 대해 담보가치나 소득과 무관하게 적용되는 대출 절대 한도를 도입했습니다. 시가 15억원 이하 주택은 주택담보대출을 최대 6억원까지만 받을 수 있습니다.
+                  금융위원회 가계부채 관리방안에 따라 수도권 또는 규제지역의 주택구입목적 주담대에는 절대 한도가 적용됩니다. 시가 15억원 이하의 상한은 6억원입니다. 해당 금액을 전부 빌릴 수 있다는 뜻은 아니며 담보가치·소득·보유주택과 상품별 요건도 충족해야 합니다.
                 </p>
                 <p>
-                  이 조치는 은행의 건전경영을 규율하는 은행법 §34(경영지도기준)와 금융당국의 행정지도에 근거한 관리방안으로, 국회가 정한 세법 같은 법률 조항이 아니라 시장 상황에 따라 조정되는 행정 규제라는 점이 특징입니다. 따라서 금액과 적용 범위는 언제든 바뀔 수 있습니다.
+                  2025년 10월 15일 발표는 당시 최대 6억원 상한을 주택 가격별로 낮추는 조치였습니다. 2026년 4월 1일 발표는 같은 구간을 재확인하면서 온라인투자연계금융업자에게 관련 규제를 의무화한 내용도 포함합니다. 그 업권의 적용일인 4월 2일을 일반 주담대 차등화의 최초 시행일로 혼동하면 안 됩니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <p className="font-semibold text-text-primary">핵심 원리</p>
                   <p className="mt-2 text-sm text-text-secondary">
-                    최종 대출 가능액 = min(구간별 절대 한도, LTV 한도, DSR 한도)
+                    단순 비교 상한 = min(구간별 절대 한도, LTV 한도, DSR 한도)
                     <br />
-                    세 가지 중 가장 작은 금액이 실제 한도가 됩니다. 절대 한도가 남아 있어도 소득이 낮으면 DSR에서 먼저 막힙니다.
+                    다른 대출 요건을 충족한다는 가정의 비교입니다. DTI·신용 심사·보유주택·상품 자격 등 추가 조건에 따라 더 줄거나 대출이 거절될 수 있습니다.
                   </p>
                 </div>
               </section>
@@ -171,11 +183,11 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">시가 구간별 대출한도는 얼마인가요?</h2>
                 <p>
-                  시가가 높을수록 절대 한도가 줄어듭니다. 수도권·규제지역 기준 세 구간으로 나뉩니다.
+                  2025년 10월 16일부터 신규 신청하는 수도권 또는 규제지역의 주택구입목적 주담대 기준입니다. 시가는 대출 신청일의 KB 일반평균가·한국부동산원 시세 등 금융회사 인정 기준으로 확인하며, 경과조치 대상은 별도 검토해야 합니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 수도권·규제지역 주택담보대출 구간별 절대 한도 (금융위 가계부채 관리방안 기준)</caption>
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 수도권 또는 규제지역 주택구입목적 주담대 상한 (2025-10-16 시행)</caption>
                     <thead>
                       <tr className="border-b border-border-base">
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">주택 시가</th>
@@ -207,10 +219,20 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                 </p>
               </section>
 
+              <section className="space-y-4 border-t border-border-base pt-8">
+                <h2 className="text-2xl font-bold">중도금·이주비와 경과조치는 따로 확인하세요</h2>
+                <p>
+                  중도금대출은 가격별 절대 한도 적용에서 제외되지만 잔금대출로 전환할 때는 적용됩니다. 이주비대출은 가격별 4억·2억원 축소 대상에서 제외되고 기존 최대 6억원을 유지합니다. 생활안정자금대출은 이번 가격별 차등화 대상이 아니며 다른 목적별 제한은 별도로 적용됩니다. 어느 경우도 LTV·DSR 등 다른 규제가 모두 면제된다는 뜻은 아닙니다.
+                </p>
+                <p>
+                  2025년 10월 15일까지 금융회사 전산 신청 접수를 완료했거나 정식 매매계약과 계약금 납부를 입증하는 경우 등에는 종전 기준을 적용하는 경과조치가 있습니다. 집단대출·토지거래허가·분양권 전매의 별도 조건을 확인해야 하므로 계약일 하나만으로 종전 한도를 확정하지 마세요.
+                </p>
+              </section>
+
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">LTV·스트레스 DSR과 어떻게 겹치나요?</h2>
                 <p>
-                  절대 한도, LTV, DSR 세 가지가 동시에 걸립니다. 규제지역에서는 통상 LTV 40% 수준이 적용되고, 여기에 상환 능력을 보는 DSR과, 금리 상승을 미리 반영하는 스트레스 DSR이 더해집니다.
+                  절대 한도 외에 담보가치에 대한 LTV와 상환 능력을 보는 DSR, 금리 상승 위험을 반영하는 스트레스 DSR을 함께 확인합니다. 아래 예시의 LTV 40%는 해당 비율이 적용되는 차주를 가정한 값입니다. 수도권 전체나 생애최초 등 모든 차주에게 같은 LTV가 적용된다는 뜻은 아닙니다.
                 </p>
                 <p>
                   스트레스 DSR은 실제 금리에 가산금리(스트레스 금리)를 더해 원리금 부담을 크게 계산하는 방식입니다. 2025년 시행된 3단계 스트레스 DSR로 수도권 주택담보대출의 한도가 추가로 줄었습니다. 결국 같은 집이라도 소득이 낮으면 절대 한도가 아니라 DSR에서 먼저 한도가 결정됩니다.
@@ -223,7 +245,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">내 대출 가능액 계산 사례</h2>
                 <p>
-                  구간별 한도와 LTV가 어떻게 최종 한도를 만드는지 세 가지 사례로 살펴보겠습니다. LTV는 규제지역 40%를 가정한 예시입니다.
+                  수도권 또는 규제지역의 주택구입목적 대출에서 LTV 40%가 적용되는 동일한 차주를 가정합니다. 아래는 절대 한도와 LTV만 비교하며 DSR·DTI·상품 자격·신용 심사는 제외합니다. 승인 금액을 확정하는 계산이 아닙니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
                   <p className="font-semibold text-text-primary">사례 1. 시가 14억원 주택</p>
@@ -232,7 +254,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                     <br />
                     · LTV 40%: 14억 × 40% = 5.6억원
                     <br />
-                    · 최종 한도: min(6억, 5.6억) = <strong>5.6억원</strong> (LTV가 먼저 제약)
+                    · 비교 상한: min(6억, 5.6억) = <strong>5.6억원</strong> (LTV가 먼저 제약)
                     <br />
                     <span className="text-xs text-text-tertiary">결론: 절대 한도 6억이 남아 있어도 LTV 때문에 5.6억이 상한. DSR이 더 낮으면 그만큼 더 줄어듭니다.</span>
                   </p>
@@ -244,9 +266,9 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                     <br />
                     · LTV 40%: 20억 × 40% = 8억원
                     <br />
-                    · 최종 한도: min(4억, 8억) = <strong>4억원</strong> (구간 절대 한도가 제약)
+                    · 비교 상한: min(4억, 8억) = <strong>4억원</strong> (구간 절대 한도가 제약)
                     <br />
-                    <span className="text-xs text-text-tertiary">결론: LTV로는 8억이 가능하지만 구간 한도 4억이 상한. 나머지 16억은 자기자본이 필요합니다.</span>
+                    <span className="text-xs text-text-tertiary">결론: 8억원은 LTV만 곱한 값입니다. 절대 상한은 4억원이며 주택가격과의 차이는 최소 16억원입니다. DSR 등으로 대출이 줄거나 취득 부대비용이 발생하면 필요한 자금은 더 커집니다.</span>
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
@@ -256,26 +278,26 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                     <br />
                     · LTV 40%: 30억 × 40% = 12억원
                     <br />
-                    · 최종 한도: min(2억, 12억) = <strong>2억원</strong> (구간 절대 한도가 제약)
+                    · 비교 상한: min(2억, 12억) = <strong>2억원</strong> (구간 절대 한도가 제약)
                     <br />
-                    <span className="text-xs text-text-tertiary">결론: 30억 주택도 주담대는 2억이 최대. 사실상 현금 매수에 가까운 자금 계획이 필요합니다.</span>
+                    <span className="text-xs text-text-tertiary">결론: 12억원은 LTV만 곱한 값이고 절대 상한은 2억원입니다. 주택가격과의 차이는 최소 28억원이며 추가 심사와 취득 부대비용을 따로 고려해야 합니다.</span>
                   </p>
                 </div>
               </section>
 
               <section className="space-y-6 border-t border-border-base pt-8">
-                <h2 className="text-2xl font-bold">규제 전후로 달라진 점 비교</h2>
+                <h2 className="text-2xl font-bold">2025년 10월 16일 차등화 직전·이후 비교</h2>
                 <p>
-                  구간별 절대 한도가 도입되기 전에는 LTV·DSR 범위 안에서라면 고가주택도 큰 금액을 대출받을 수 있었습니다. 지금은 시가가 15억을 넘는 순간 한도가 크게 꺾입니다.
+                  차등화 직전에도 2025년 6월 28일 도입된 최대 6억원 상한이 있었습니다. 따라서 20억원 주택은 6억에서 4억원으로, 30억원 주택은 6억에서 2억원으로 줄어든 비교가 맞습니다. LTV만 곱한 8억·12억원을 직전 대출 한도로 비교하면 감소 폭을 과장하게 됩니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 2. 규제 전후 대출 가능액 비교 (LTV 40% 가정, 예시)</caption>
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 2. 동일 지역·차주의 LTV 40% 가정 비교 (직전 6억원 상한 반영, DSR 등 제외)</caption>
                     <thead>
                       <tr className="border-b border-border-base">
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">시가</th>
-                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">LTV만 적용 시</th>
-                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">구간 한도 적용 시</th>
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">차등화 직전 (최대 6억·LTV)</th>
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">차등화 이후 (구간 한도·LTV)</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -286,13 +308,13 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">20억</td>
-                        <td className="p-3">8억</td>
-                        <td className="p-3">4억 (4억 축소)</td>
+                        <td className="p-3">6억</td>
+                        <td className="p-3">4억 (2억 감소)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">30억</td>
-                        <td className="p-3">12억</td>
-                        <td className="p-3">2억 (10억 축소)</td>
+                        <td className="p-3">6억</td>
+                        <td className="p-3">2억 (4억 감소)</td>
                       </tr>
                     </tbody>
                   </table>
@@ -313,7 +335,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">대출한도 계산기</div>
-                    <p className="mt-1 text-sm text-text-secondary">소득과 담보가치를 입력해 DSR·LTV 한도를 계산해보세요.</p>
+                    <p className="mt-1 text-sm text-text-secondary">소득과 담보가치로 DSR·LTV를 비교하세요. 가격별 절대 한도와 경과조치는 별도 확인이 필요합니다.</p>
                   </Link>
                   <Link
                     href="/guide/stress-dsr-stage3-2026/"
@@ -355,13 +377,15 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 금융 조언이 아닙니다. 주택담보대출 구간별 한도, LTV 비율, 스트레스 DSR 가산금리, 적용 지역은 금융위원회 가계부채 관리방안과 각 은행의 내부 기준에 따라 수시로 바뀝니다. 이 규제는 법률 조항이 아니라 은행법 <strong>은행법 §34(경영지도기준)</strong>에 근거한 금융당국의 행정 조치이므로, 실제 대출 실행 전 반드시 은행 창구와 금융위원회 공지에서 최신 기준을 확인하세요. 본 콘텐츠는 2026-08-01 기준으로 작성되었습니다.
+                  <strong>확인 범위:</strong> 2026-10-02에 아래 공식 자료를 대조해 가격별 한도와 예시를 교정했습니다. 2026-08-13 후속 대책에서도 6억·4억·2억원 한도 유지를 확인했습니다. 지역 지정·담보 평가·정책상품·집단대출의 모든 예외를 판정하는 글은 아니며 대출 신청 전에는 해당 금융회사와 최신 공식 공지를 확인해야 합니다. 정보 제공용으로 금융 상담이나 승인 보장이 아닙니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
-                  <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터(은행법)</a>,{' '}
-                  <a href="https://www.fss.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">금융감독원</a>,{' '}
-                  <a href="https://www.fsc.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">금융위원회</a>.
+                  <a href="https://www.fsc.go.kr/no010101/84824" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">2025-06-27 최대 6억원 발표</a>,{' '}
+                  <a href="https://www.fsc.go.kr/no010101/85432" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">2025-10-15 가격별 차등화 발표</a>,{' '}
+                  <a href="https://www.fsc.go.kr/po020201/85518?curPage=1" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">적용 목적·시가·경과조치 FAQ</a>,{' '}
+                  <a href="https://www.fsc.go.kr/no010101/86606" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">2026-04-01 가계부채 관리방안</a>,{' '}
+                  <a href="https://www.fsc.go.kr/comm/getFile?fileNo=3&fileTy=ATTACH&srvcId=BBSTY1&upperNo=87542" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">2026-08-13 후속 대책 (PDF 11쪽)</a>.
                 </p>
               </section>
 
