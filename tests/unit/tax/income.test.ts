@@ -388,8 +388,8 @@ describe('inferGrossFromNet (역산)', () => {
   });
 
   it('자녀 2명 시 동일 목표 실수령액에 필요한 세전이 더 낮다 (자녀세액공제 효과)', () => {
-    const noChildren = inferGrossFromNet(3_000_000, { ...baseOptions, children: 0 });
-    const withChildren = inferGrossFromNet(3_000_000, { ...baseOptions, children: 2 });
+    const noChildren = inferGrossFromNet(3_000_000, { ...baseOptions, dependents: 3, children: 0 });
+    const withChildren = inferGrossFromNet(3_000_000, { ...baseOptions, dependents: 3, children: 2 });
     expect(withChildren).toBeLessThanOrEqual(noChildren);
   });
 

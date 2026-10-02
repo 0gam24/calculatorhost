@@ -21,6 +21,11 @@ import {
   CHILD_TAX_CREDIT,
   type TaxBracket,
 } from '@/lib/constants/tax-rates-2026';
+import {
+  WITHHOLDING_ROWS_2026,
+  WITHHOLDING_HIGH_WAGE_BRACKETS_2026,
+} from '@/lib/constants/withholding-table-2026';
+import { calculateMonthlyWithholding, type WithholdingRate } from './withholding';
 
 export type WageType = 'yearly' | 'monthly';
 export type SeveranceInclusion = 'separate' | 'included';
@@ -36,10 +41,11 @@ export interface IncomeCalculationInput {
   nontaxableMonthly: number;
   /** 부양가족 수 (본인 포함) */
   dependents: number;
-  /** 자녀세액공제 요건을 충족하는 기본공제대상 자녀·손자녀 수 */
+  /** 기본공제대상 가족에 포함된 8~20세 자녀 수(본인 제외 가족 수 이내) */
   children: number;
-  /** 2026년 적용월 (1~12). 생략 시 7월 이후 기준 */
+  /** 2026년 급여 지급·원천징수 월(1~12). 보험 적용월도 같다고 가정. 생략 시 7월 */
   calculationMonth?: number;
+  withholdingRate?: WithholdingRate;
 }
 
 export interface IncomeCalculationResult {
@@ -62,6 +68,8 @@ export interface IncomeCalculationResult {
   longTermCare: number;
   employment: number;
   incomeTax: number;
+  withholdingReferenceTax: number;
+  withholdingRate: WithholdingRate;
   localIncomeTax: number;
   /** 월 보험료 공제 합계. 소득세와 지방소득세 제외. */
   totalInsuranceDeductions: number;
@@ -196,54 +204,134 @@ export function estimateMonthlyIncomeTax(
   return Math.max(0, Math.floor(afterCredits / 12 / 10) * 10);
 }
 
+export interface GrossFromNetResult {
+  annualGrossIncome: number;
+  achievedMonthlyNet: number;
+  /** 달성 실수령액 − 목표 실수령액. 양수는 목표 초과. */
+  difference: number;
+  targetMatched: boolean;
+  atSearchLimit: boolean;
+}
+
 /**
- * 역산: 월 실수령액 → 세전 연봉 추정.
- *
- * 이분 탐색으로 목표 실수령액을 산출하는 세전 연봉을 찾는다.
- * Naver 검색 "실수령 227만원" 류 키워드 대응. ±오차 1,000원 이내 수렴.
- *
- * 60회 루프 / 0 ~ 1,000,000,000 (10억) 범위 / 클라이언트 실행 < 1ms.
- *
- * @param targetMonthlyNet 목표 월 실수령액 (원)
- * @param options 비과세 / 부양가족 / 자녀 등 (wageType·wageAmount·severance 무시)
- * @returns 세전 연봉 추정치 (원)
+ * 월급의 원 단위 후보를 비교하는 역산(연봉 최대10억원).
+ * 공식 표와 연금의 계단 때문에 전체에 대한 단일 이분 탐색은 사용할 수 없다.
+ * 모든 표·고액세율·연금 경계를 분리한 뒤 끝점과 목표 근처 후보를 실제 재계산한다.
+ * 달성 불가능한 목표와 탐색 한계는 반환값으로 드러낸다. 같은 오차는 낮은 연봉을 선택.
  */
+export function inferGrossFromNetDetailed(
+  targetMonthlyNet: number,
+  options: Omit<IncomeCalculationInput, 'wageType' | 'wageAmount' | 'severance'>,
+): GrossFromNetResult {
+  if (!Number.isFinite(targetMonthlyNet) || targetMonthlyNet < 0) {
+    throw new RangeError('목표 월 실수령액은 0 이상인 유한한 금액이어야 합니다.');
+  }
+  const input = { wageType: 'monthly' as const, wageAmount: 0, severance: 'separate' as const, ...options };
+  calculateTakeHome(input); // 금액·가족·월·비율 검증을 정방향과 공유.
+  const maximum = Math.floor(1_000_000_000 / 12);
+  const nonTaxable = options.nontaxableMonthly;
+  const month = options.calculationMonth ?? 7;
+  const rate = options.withholdingRate ?? 100;
+  let bestGross = 0;
+  let bestNet = 0;
+  let bestDistance = targetMonthlyNet;
+  const cache = new Map<number, number>();
+  const netAt = (gross: number): number => {
+    let net = cache.get(gross);
+    if (net === undefined) {
+      net = calculateTakeHome({ ...input, wageAmount: gross }).monthlyNetIncome;
+      cache.set(gross, net);
+    }
+    const distance = Math.abs(net - targetMonthlyNet);
+    if (distance < bestDistance || (distance === bestDistance && gross < bestGross)) {
+      bestDistance = distance;
+      bestGross = gross;
+      bestNet = net;
+    }
+    return net;
+  };
+  if (targetMonthlyNet > 0) {
+    const boundaries = new Set<number>([0, maximum + 1]);
+    const addTaxableBoundary = (taxable: number) => {
+      const gross = nonTaxable + taxable;
+      if (gross > 0 && gross <= maximum && Number.isSafeInteger(gross)) boundaries.add(gross);
+    };
+    addTaxableBoundary(1); // 무급여→최소 국민연금의 별도 계단.
+    for (const row of WITHHOLDING_ROWS_2026) {
+      addTaxableBoundary(row.lower);
+      addTaxableBoundary(row.upper);
+    }
+    addTaxableBoundary(10_000_001); // 정확히1천만원 행과 고액 가산식의 불연속.
+    const { lowerMonthly, upperMonthly } = getPensionBounds(month);
+    for (let taxable = lowerMonthly + 1_000; taxable <= upperMonthly; taxable += 1_000) {
+      addTaxableBoundary(taxable);
+    }
+    for (const bracket of WITHHOLDING_HIGH_WAGE_BRACKETS_2026) {
+      addTaxableBoundary(bracket.lowerExclusive + 1);
+      const upper = Math.min(bracket.upperInclusive ?? maximum, maximum - nonTaxable);
+      let lo = bracket.lowerExclusive + 1;
+      let hi = upper;
+      // 가족11명 초과 조정 후 고액 구간 내부에서 소액부징수가 끝나는 경우도 분리.
+      if (lo <= hi && calculateMonthlyWithholding(hi, options.dependents, options.children, month, rate).incomeTax > 0) {
+        while (lo < hi) {
+          const middle = Math.floor((lo + hi) / 2);
+          if (calculateMonthlyWithholding(middle, options.dependents, options.children, month, rate).incomeTax > 0) hi = middle;
+          else lo = middle + 1;
+        }
+        addTaxableBoundary(lo);
+      }
+    }
+    const ordered = [...boundaries].sort((a, b) => a - b);
+    const segments = ordered.slice(0, -1).map((start, index) => {
+      const end = ordered[index + 1]! - 1;
+      const startNet = netAt(start);
+      const endNet = netAt(end);
+      return { start, end, startNet, endNet };
+    });
+    for (const { start, end, startNet, endNet } of segments) {
+      // 구간 내 끝수 처리의 작은 요동을 포함한다. 큰 불연속은 위에서 이미 분리했다.
+      const outside = targetMonthlyNet < Math.min(startNet, endNet) - 32 ||
+        targetMonthlyNet > Math.max(startNet, endNet) + 32;
+      const endpointDistance = Math.min(Math.abs(startNet - targetMonthlyNet), Math.abs(endNet - targetMonthlyNet));
+      if (outside && endpointDistance > bestDistance + 32) continue;
+      let lo = start;
+      let hi = end;
+      while (lo < hi) {
+        const middle = Math.floor((lo + hi) / 2);
+        if (netAt(middle) < targetMonthlyNet) lo = middle + 1;
+        else hi = middle;
+      }
+      // 같은 구간의 끝수 오차 합은32원 미만, 순증 기울기는0.35 이상이다.
+      // ±128원 재계산으로 비단조 끝수·동일 실수령 후보를 비교한다.
+      for (let gross = Math.max(start, lo - 128); gross <= Math.min(end, lo + 128); gross++) netAt(gross);
+      if (start < end) { netAt(start + 1); netAt(end - 1); }
+    }
+  }
+  return {
+    annualGrossIncome: bestGross * 12,
+    achievedMonthlyNet: bestNet,
+    difference: bestNet - targetMonthlyNet,
+    targetMatched: bestNet === targetMonthlyNet,
+    atSearchLimit: bestGross === maximum,
+  };
+}
+
+/** 기존 숫자 반환 API. 잘못된 목표값의0 반환 호환성만 유지한다. */
 export function inferGrossFromNet(
   targetMonthlyNet: number,
   options: Omit<IncomeCalculationInput, 'wageType' | 'wageAmount' | 'severance'>,
 ): number {
   if (!Number.isFinite(targetMonthlyNet) || targetMonthlyNet <= 0) return 0;
-
-  let lo = 0;
-  let hi = 1_000_000_000; // 10억
-  let bestGuess = 0;
-
-  for (let i = 0; i < 60; i++) {
-    const mid = Math.floor((lo + hi) / 2);
-    const result = calculateTakeHome({
-      wageType: 'yearly',
-      wageAmount: mid,
-      severance: 'separate',
-      nontaxableMonthly: options.nontaxableMonthly,
-      dependents: options.dependents,
-      children: options.children,
-      calculationMonth: options.calculationMonth,
-    });
-    if (result.monthlyNetIncome < targetMonthlyNet) {
-      lo = mid + 1;
-    } else {
-      hi = mid;
-      bestGuess = mid;
-    }
-    if (hi - lo <= 1) break;
-  }
-  return bestGuess || lo;
+  return inferGrossFromNetDetailed(targetMonthlyNet, options).annualGrossIncome;
 }
 
 /**
  * 종합 실수령액 계산 (메인 엔트리)
  */
 export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculationResult {
+  if (!Number.isSafeInteger(input.nontaxableMonthly)) {
+    throw new RangeError('월 비과세액은 안전한 원 단위 정수여야 합니다.');
+  }
   for (const value of [input.wageAmount, input.nontaxableMonthly]) {
     if (!Number.isFinite(value) || value < 0) {
       throw new RangeError('급여와 비과세 금액은 0 이상의 유한한 금액이어야 합니다.');
@@ -270,8 +358,15 @@ export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculat
   }
 
   const monthlyGrossIncome = Math.floor(annualGross / 12);
+  if (!Number.isSafeInteger(monthlyGrossIncome)) {
+    throw new RangeError('정규화 월급은 안전한 원 단위 정수 범위여야 합니다.');
+  }
   const monthlyNontaxable = Math.min(monthlyGrossIncome, input.nontaxableMonthly);
   const monthlyTaxableIncome = Math.max(0, monthlyGrossIncome - monthlyNontaxable);
+  const withholdingRate = input.withholdingRate ?? 100;
+  const withholding = calculateMonthlyWithholding(
+    monthlyTaxableIncome, input.dependents, input.children, calculationMonth, withholdingRate,
+  );
 
   // 2. 4대보험
   const pension = calculatePension(monthlyTaxableIncome, calculationMonth);
@@ -280,14 +375,11 @@ export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculat
   const employment = calculateEmployment(monthlyTaxableIncome);
 
   // 3. 소득세
-  const nontaxableAnnual = monthlyNontaxable * 12;
-  const incomeTax = estimateMonthlyIncomeTax(
-    annualGross,
-    nontaxableAnnual,
-    Math.max(1, input.dependents),
-    Math.max(0, input.children),
-  );
-  const localIncomeTax = Math.floor((incomeTax * LOCAL_INCOME_TAX_RATE) / 10) * 10;
+  const incomeTax = withholding.incomeTax;
+  // 지방세법103의13: 징수하는 소득세의10%. 특별징수는 일반 고지서2천원 부징수와 다르다.
+  // 지방세기본법59조·국고금관리법47조: 최종 지방소득세의10원 미만 끝수 버림.
+  const localNumerator = Math.round(LOCAL_INCOME_TAX_RATE * 100);
+  const localIncomeTax = Number(BigInt(incomeTax) * BigInt(localNumerator) / 1_000n) * 10;
 
   // 4. 실수령액
   const totalDeductions = pension + health + longTermCare + employment + incomeTax + localIncomeTax;
@@ -306,6 +398,8 @@ export function calculateTakeHome(input: IncomeCalculationInput): IncomeCalculat
     longTermCare,
     employment,
     incomeTax,
+    withholdingReferenceTax: withholding.referenceTax,
+    withholdingRate,
     localIncomeTax,
     totalInsuranceDeductions: pension + health + longTermCare + employment,
     monthlyNetIncome,

@@ -11,6 +11,7 @@ const SALARY_EXAMPLES = [30_000_000, 50_000_000, 100_000_000].map((wageAmount) =
     dependents: 1,
     children: 0,
     calculationMonth: 7,
+    withholdingRate: 100,
   }),
 );
 import { Header } from '@/components/layout/Header';
@@ -29,10 +30,10 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/freelancer-salary-comparison/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-10-01';
+const DATE_MODIFIED = '2026-10-02';
 const TITLE = '프리랜서 vs 직장인 실수령액 비교 2026';
 const DESCRIPTION =
-  '프리랜서 매출과 직장인 연봉을 비교하기 전에 실제 사업 비용·최종 세금·보험료 조건을 확인하세요. 직장인 급여 예시와 비교 순서를 정리하고, 연봉 실수령액·프리랜서 세금 계산기에 각각 본인 조건을 입력해 추정할 수 있습니다.';
+  '프리랜서 매출과 직장인 연봉은 실제 사업 비용·최종 세금·보험료 조건을 확인해 비교하세요. 직장인 예시는 공식 간이세액표 100% 기준이며, 프리랜서 세금은 별도의 경비·소득 조건에 따른 추정입니다.';
 
 export const metadata: Metadata = {
   title: `${TITLE} | calculatorhost`,
@@ -216,7 +217,7 @@ export default function FreelancerSalaryComparisonPage() {
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">원천징수</td>
                         <td className="px-3 py-2">3.3% (사업소득세 3 + 지방세 0.3)</td>
-                        <td className="px-3 py-2">간이세액표 기준</td>
+                        <td className="px-3 py-2">공식 간이세액표 기준 (아래 예시 100%)</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">4대보험 본인부담</td>
@@ -257,10 +258,10 @@ export default function FreelancerSalaryComparisonPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">직장인 예시: 연 3천만·5천만·1억원</h2>
                 <p>
-                  퇴직금 별도, 비과세 급여 없음, 본인만 기본공제, 자녀세액공제 없음, 2026년 7월
-                  보험료 기준입니다. 급여 계산기와 같은 함수로 산출하며, 실제 국세청 간이세액표
-                  조회가 아닌 소득세 근사치입니다. 사회보험료 공제·근로소득세액공제·특별공제와 실제
-                  연말정산은 반영하지 않습니다.
+                  퇴직금 별도, 비과세 급여 없음, 공제대상 가족 본인 1명, 가족에 포함된 8~20세
+                  자녀 0명, 2026년 7월 지급·원천징수, 원천징수 100% 기준입니다. 급여 계산기와
+                  같은 함수로 공식 근로소득 간이세액표를 적용합니다. 보험료는 같은 지급월의
+                  입력 조건으로 추정하며 실제 공단 신고기준과 연말정산 결정세액은 반영하지 않습니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
@@ -328,8 +329,9 @@ export default function FreelancerSalaryComparisonPage() {
                 </h2>
                 <ul className="text-danger-700 dark:text-danger-300 space-y-2 text-sm">
                   <li>
-                    • 급여 예시는 근사 세금 계산이며 실제 급여명세서·연말정산과 차이가 납니다.
-                    프리랜서 매출과 직접 비교하지 마세요.
+                    • 직장인 예시의 월 소득세는 공식 간이세액표 100% 기준입니다. 보험료는 추정이며
+                    연말정산 결정세액은 별도입니다. 프리랜서 경비·최종 세금 추정과는 구분하고
+                    사업 매출을 월 실수령액과 직접 비교하지 마세요.
                   </li>
                   <li>
                     • 지역 건강보험료는 소득·재산 등, 국민연금은 신고한 기준소득월액과 가입조건을

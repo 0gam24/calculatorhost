@@ -1,6 +1,7 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import { calculateTakeHome } from '@/lib/tax/income';
+import { WITHHOLDING_TABLE_2026_SOURCE } from '@/lib/constants/withholding-table-2026';
 import { formatKRW as formatExactCurrency } from '@/lib/utils';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -31,7 +32,7 @@ import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref'
 const URL = 'https://calculatorhost.com/calculator/salary/';
 const TITLE = '연봉 실수령액 계산기 2026 | 4대보험·소득세 추정';
 const DESCRIPTION =
-  '세전 연봉·월급과 적용월·부양가족·비과세 조건으로 실수령액을 추정하세요. 2026년 보험료와 소득세 근사치를 사용하며 국세청 간이세액표를 직접 조회하지 않습니다. 연말정산과 실제 급여명세서의 확정액은 다를 수 있습니다.';
+  '세전 연봉·월급과 지급월·공제대상 가족·비과세 조건으로 실수령액을 추정하세요. 공식 2026년 근로소득 간이세액표와 80·100·120% 원천징수 선택을 반영합니다. 보험료 신고기준과 연말정산에 따라 실제 급여명세서와 다를 수 있습니다.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -68,6 +69,7 @@ const EXAMPLE_OPTIONS = {
   dependents: 1,
   children: 0,
   calculationMonth: 7,
+  withholdingRate: 100 as const,
 };
 const ANNUAL_EXAMPLES = [
   30_000_000, 40_000_000, 50_000_000, 60_000_000, 70_000_000, 80_000_000, 100_000_000,
@@ -79,7 +81,7 @@ const FAQ_ITEMS = [
     answer:
       '본 계산기의 월 실수령 추정액은 ' +
       formatCurrency(calculateTakeHome({ ...EXAMPLE_OPTIONS, wageAmount }).monthlyNetIncome) +
-      '입니다. 2026년 7월 이후, 퇴직금 별도·부양가족 본인 1명·공제대상 자녀 0명·월 비과세 20만 원 가정입니다. 소득세는 연간 누진세를 월 환산한 근사치로, 실제 국세청 간이세액표 조회 결과와 다릅니다.',
+      '입니다. 2026년 7월 지급·원천징수, 퇴직금 별도·공제대상 가족 본인 1명·8~20세 해당 자녀 0명·월 비과세 20만 원·원천징수 100% 가정입니다. 소득세는 공식 근로소득 간이세액표를 적용하며, 실제 보험료 신고기준과 연말정산에 따라 수령액은 달라질 수 있습니다.',
   })),
   {
     question: '2026년 4대보험은 어떻게 계산되나요?',
@@ -92,9 +94,9 @@ const FAQ_ITEMS = [
       '비과세 요건을 충족하는 식대는 월 20만 원 한도로 소득세 대상 급여에서 제외됩니다. 계산기에는 월급에 포함된 비과세액을 입력합니다. 이 도구는 같은 금액을 보험료 산정 소득에서도 제외하는 가정이며, 실제 보험료 제외 여부는 각 비과세 항목과 공단 신고내역을 확인하세요.',
   },
   {
-    question: '부양가족·자녀 공제 기준은 무엇인가요?',
+    question: '공제대상 가족·자녀 입력 기준은 무엇인가요?',
     answer:
-      '부양가족은 본인을 포함하며 기본공제 요건을 충족하는 인원입니다. 기본공제는 1인당 연 150만 원을 소득에서 차감합니다. 공제대상 자녀·손자녀 세액공제는 1명 연 25만 원, 2명 합계 55만 원, 3명째부터 각 40만 원 추가입니다(소득세법 제59조의2). 자녀의 연령·소득 요건을 확인하고 입력하세요.',
+      '공제대상 가족은 본인을 포함해 기본공제 요건을 충족하는 인원입니다. 자녀 입력은 그 가족에 포함된 8세 이상 20세 이하 자녀 수입니다. 2026년 1~2월 원천징수는 자녀 1명 월 12,500원, 2명 29,160원, 2명 초과 시 1명당 25,000원을 추가 공제합니다. 3월 1일 이후 원천징수는 각각 20,830원, 45,830원, 추가 33,330원을 적용합니다. 이 월 원천징수 기준과 연말정산 자녀세액공제 요건은 구분해 확인하세요.',
   },
   {
     question: '연봉에 퇴직금이 포함되면 어떻게 다른가요?',
@@ -104,7 +106,17 @@ const FAQ_ITEMS = [
   {
     question: '실제 급여명세서와 다른 이유는 무엇인가요?',
     answer:
-      '본 도구는 국세청 간이세액표를 직접 조회하지 않습니다. 사회보험료 소득공제, 근로소득세액공제·특별공제 및 회사의 원천징수 비율을 반영하지 않은 연간 누진세의 월 환산 추정입니다. 보험료 신고기준, 정산, 자녀 공제조건도 달라질 수 있어 회사 급여명세서의 확정액과 차이가 납니다.',
+      '일반 월급여의 소득세는 공식 간이세액표와 선택한 원천징수 비율로 계산합니다. 실제 급여명세서는 보험료 신고기준, 비과세 항목, 상여·복수 근무지 등 개별 조건과 다를 수 있습니다. 이 도구는 연말정산의 최종 결정세액을 계산하지 않으며, 일용근로·해외소득·별도 보험료 기준도 반영하지 않습니다.',
+  },
+  {
+    question: '원천징수 80%·100%·120%는 무엇인가요?',
+    answer:
+      '간이세액표 세액을 기준으로 미리 낼 소득세의 비율이며 소득세율을 선택하는 기능은 아닙니다. 기본은 100%입니다. 80%는 월 원천징수액이 적고 120%는 많지만, 연말정산 결정세액 자체를 바꾸지는 않습니다. 환급이나 추가 납부는 실제 연말정산 결과에 따라 달라집니다.',
+  },
+  {
+    question: '실수령액 역산은 목표 금액과 항상 같나요?',
+    answer:
+      '연봉 10억 원 이내에서 같은 가족·자녀·비과세·지급월·원천징수 비율로 필요한 연봉을 찾습니다. 세액표 구간과 원 단위 처리 때문에 목표와 정확히 일치하지 않을 수 있어 계산상 달성 월 실수령액과 차이를 함께 표시합니다. 탐색 상한에 도달하면 그 사실을 안내하며 실제 급여를 보장하지 않습니다.',
   },
 ];
 
@@ -130,7 +142,7 @@ export default function SalaryPage() {
     description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-10-01',
+    dateModified: '2026-10-02',
     isPartOf: getCategoryUrlForCalculator('salary'),
   });
   const howToLd = buildHowToJsonLd({
@@ -140,12 +152,16 @@ export default function SalaryPage() {
       { name: '연봉 입력', text: '세전 연봉(또는 월급) 금액을 입력합니다.' },
       {
         name: '부양가족 설정',
-        text: '본인을 포함한 부양가족 수와 공제대상 자녀·손자녀 수를 입력합니다.',
+        text: '본인을 포함한 공제대상 가족 수와 그 가족에 포함된 8~20세 자녀 수를 입력합니다.',
       },
       { name: '비과세 입력', text: '월 식대 등 비과세 근로소득이 있으면 입력합니다(선택).' },
       {
+        name: '원천징수 조건 확인',
+        text: '2026년 급여 지급·원천징수월과 80%·100%·120% 비율을 선택합니다. 보험료도 같은 지급월 기준으로 추정합니다.',
+      },
+      {
         name: '세금·보험료 자동계산',
-        text: '2026년 기준 4대보험과 소득세·지방소득세가 자동 계산됩니다.',
+        text: '비과세 제외 월급여로 공식 간이세액표를 적용하고, 보험료와 지방소득세를 계산합니다.',
       },
       { name: '결과 확인', text: '월 실수령액, 시급, 세금 상세내역을 확인합니다.' },
     ],
@@ -174,17 +190,17 @@ export default function SalaryPage() {
         name: '비과세 근로소득',
         alternateName: '비과세',
         description:
-          '소득세 과세 대상에서 제외되는 근로소득. 월 식대 20만 원 이하, 자가운전보조금 월 20만 원, 숙직비, 시간외근무수당 중 일부가 해당(소득세법 §12). 4대보험 기준 소득에서도 제외되어 실수령액 증가.',
+          '소득세 과세 대상에서 제외되는 근로소득. 실제 급여 항목의 비과세 요건을 확인해야 함. 이 도구는 입력한 비과세액을 보험료 산정 소득에서도 제외하는 가정이며 실제 공단 신고내역과 다를 수 있음.',
       },
       {
         name: '근로소득세',
         description:
-          '직장인 연봉에 부과되는 국세. 2026년 소득세법 §55 누진세율(6%~45%) 적용 후 자녀세액공제를 차감하고 12로 나눠 월 소득세 근사치(간이세액표 직접 조회 아님). 지방소득세 10%가 별도 부과.',
+          '일반 월급여에서 비과세를 제외한 금액과 공제대상 가족 수로 공식 근로소득 간이세액표를 적용해 구한 소득세. 해당 자녀 공제와 선택한 원천징수 비율을 반영하며 연말정산 결정세액과는 다름.',
       },
       {
-        name: '자녀세액공제',
+        name: '간이세액표의 자녀 공제',
         description:
-          '공제대상 자녀·손자녀 1명 연 25만 원, 2명 합계 55만 원, 3명째부터 각 40만 원을 근로소득세에서 직접 차감. 연말정산 시 정산. 근거: 소득세법 §59의2.',
+          '공제대상 가족에 포함된 8~20세 자녀 수에 따른 월 원천징수 공제. 2026년 3월 1일 이후 원천징수분부터 개정 공제액을 적용하며, 연말정산 자녀세액공제와 구분함. 근거: 소득세법 시행령 별표 2.',
       },
     ],
   });
@@ -243,7 +259,7 @@ export default function SalaryPage() {
                   <p className="text-lg text-text-secondary" data-speakable>
                     세전 급여와 적용월로 월 실수령액을 예상해 보세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-01" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-02" />
                 </header>
               }
               calculator={<SalaryCalculator />}
@@ -271,8 +287,9 @@ export default function SalaryPage() {
                 <section aria-label="연봉별 월 실수령액" className="mt-4">
                   <h2 className="mb-3 text-xl font-semibold">연봉별 월 실수령액은 얼마인가요?</h2>
                   <p className="mb-4 text-sm text-text-secondary">
-                    2026년 7월 이후·퇴직금 별도·본인 1명·공제대상 자녀 0명·비과세 월 20만 원 가정.
-                    아래 표는 위 계산기와 같은 산식의 추정값이며, 실제 원천징수와 차이가 있습니다.
+                    2026년 7월 지급·원천징수·퇴직금 별도·공제대상 가족 본인 1명·8~20세 해당 자녀
+                    0명·비과세 월 20만 원·원천징수 100% 가정입니다. 아래 표는 위 계산기와 같은
+                    공식 간이세액표 및 보험료 가정으로 산출하며 실제 급여명세서와 차이가 있습니다.
                   </p>
                   <div className="overflow-x-auto">
                     <table className="w-full text-sm">
@@ -318,12 +335,12 @@ export default function SalaryPage() {
                   </h2>
                   <p>
                     월 실수령 추정액 = 세전 월급 − 국민연금 − 건강보험 − 장기요양 − 고용보험 −
-                    소득세 근사치 − 지방소득세.
+                    간이세액표 소득세 − 지방소득세.
                   </p>
                   <p>
                     연봉은 12개월로 나누고, 퇴직금 포함 선택 시 13등분한 월급을 가정합니다. 월
-                    비과세액은 월급 범위까지만 반영합니다. 무급여 0원 입력은 공제액과 실수령액을
-                    0원으로 추정하며 실제 가입·납부예외 여부를 판정하지 않습니다.
+                    비과세액은 월급 범위까지만 반영합니다. 실제 보험 가입·납부예외 여부는 이
+                    화면에서 판정하지 않습니다.
                   </p>
                   <h3 className="font-semibold text-text-primary">
                     보험료: 2026년 1월 1일부터 적용
@@ -352,20 +369,32 @@ export default function SalaryPage() {
                     고용조건은 공단 고지액을 확인하세요.
                   </p>
                   <h3 className="font-semibold text-text-primary">
-                    소득세: 국세청 간이세액표 직접 조회 아님
+                    소득세: 공식 근로소득 간이세액표 적용
                   </h3>
                   <p>
-                    연 급여에서 비과세액을 제외한 총급여를 기준으로 근로소득공제(소득세법 제47조)와
-                    기본공제(1인당 150만 원)를 빼고, 누진세율(제55조)을 적용합니다. 공제대상
-                    자녀·손자녀 세액공제(1명 25만 원, 2명 합계 55만 원, 3명째부터 40만 원 추가)를
-                    차감한 뒤 12개월로 나눕니다. 지방소득세는 월 소득세의 10%이며 두 세액 모두 10원
-                    미만을 버립니다.
+                    세전 월급에서 입력 비과세액을 제외한 월급여로 공식 표의 급여 구간과
+                    공제대상 가족 수를 조회합니다. 가족은 본인을 포함하며, 그 가족에 포함된
+                    8~20세 자녀의 월 공제액을 반영합니다. 고액 월급여와 가족 11명 초과는 공식
+                    별표의 별도 계산 규칙을 적용합니다.
                   </p>
                   <p>
-                    사회보험료 소득공제, 근로소득세액공제·특별공제 및 회사의 80%·100%·120% 원천징수
-                    선택을 반영하지 않은 근사치입니다. 실제 월 원천징수액 및 연말정산 결정세액과
-                    차이가 날 수 있습니다. 기본공제대상 가족과 자녀 세액공제의 연령·소득 요건은 실제
-                    조건을 확인한 인원만 입력하세요.
+                    자녀 공제액은 2026년 1~2월 원천징수분과 3월 1일 이후 원천징수분을 구분합니다.
+                    1~2월은 자녀 1명 12,500원, 2명 29,160원, 초과 1명당 25,000원이고,
+                    3월 이후는 1명 20,830원, 2명 45,830원, 초과 1명당 33,330원입니다.
+                    기준은 급여 귀속월이 아닌 지급·원천징수 시점입니다.
+                  </p>
+                  <p>
+                    간이세액표 기준액에 선택한 80%·100%·120% 원천징수 비율을 적용합니다.
+                    소득세는 최종 10원 미만을 버리며, 징수세액이 1천 원 미만이면 징수하지
+                    않습니다. 지방소득세는 징수 소득세의 10%로 계산해 10원 미만을 버립니다.
+                    원천징수 비율은 세율 선택이 아니라 선납 금액의 선택입니다. 연말정산
+                    결정세액이나 개인별 환급·추가 납부는 계산하지 않습니다.
+                  </p>
+                  <p>
+                    일반적인 단일 근무지 급여만 계산합니다. 상여, 복수 근무지, 일용근로,
+                    해외소득, 별도 보험료 신고기준은 반영하지 않습니다. 지급·원천징수월과
+                    보험료 적용월이 같다는 가정이므로 실제 원천징수영수증과 급여명세서를
+                    확인하세요.
                   </p>
                 </section>
               </details>
@@ -391,6 +420,10 @@ export default function SalaryPage() {
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
                   <li>
+                    2026-10-02: 공식 근로소득 간이세액표·지급월별 자녀 공제·원천징수 비율 적용,
+                    역산 달성액과 목표 차이 표시
+                  </li>
+                  <li>
                     2026-09-30: 2026년 보험료율·국민연금 적용월 상하한 수정, 소득세 근사 방식과 예시
                     기준 명시
                   </li>
@@ -401,12 +434,12 @@ export default function SalaryPage() {
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
                     <a
-                      href="https://www.law.go.kr/법령/소득세법/제55조"
+                      href="https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0189&lsiSeq=290841&urlMode=lsScJoRltInfoR"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터, 소득세법 §55 (종합소득세 누진세율 8단계)
+                      국가법령정보센터, 소득세법 시행령 제189조 (근로소득 간이세액표)
                     </a>
                   </li>
                   <li>
@@ -421,12 +454,12 @@ export default function SalaryPage() {
                   </li>
                   <li>
                     <a
-                      href="https://www.law.go.kr/법령/소득세법/제59조의2"
+                      href="https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0194&lsiSeq=290841&urlMode=lsScJoRltInfoR"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국가법령정보센터, 소득세법 §59의2 (자녀세액공제)
+                      국가법령정보센터, 소득세법 시행령 제194조 (원천징수 비율)
                     </a>
                   </li>
                   <li>
@@ -451,12 +484,32 @@ export default function SalaryPage() {
                   </li>
                   <li>
                     <a
-                      href="https://www.hometax.go.kr"
+                      href={WITHHOLDING_TABLE_2026_SOURCE.tableUrl}
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      국세청 홈택스, 근로소득 간이세액표 조회 (월 원천징수 기준)
+                      국가법령정보센터, 현행 근로소득 간이세액표 (시행령 별표 2)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={WITHHOLDING_TABLE_2026_SOURCE.pdfUrl}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      근로소득 간이세액표 공식 PDF 원문
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href={WITHHOLDING_TABLE_2026_SOURCE.amendmentUrl}
+                      target="_blank"
+                      rel="noopener noreferrer nofollow"
+                      className="text-primary-600 underline dark:text-primary-500"
+                    >
+                      대통령령 제36129호 개정·부칙 (2026년 3월 1일 적용 근거)
                     </a>
                   </li>
                   <li>
@@ -477,8 +530,9 @@ export default function SalaryPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §55, §59의2, 국민건강보험법, 국민연금법,
-                  국세청 근로소득 간이세액표는 실제 원천징수 확인용이며 본 도구에 직접 연동되어 있지
+                  <strong>계산 기준</strong>: 소득세법 시행령 제189조·제194조·별표 2의 공식
+                  근로소득 간이세액표를 일반 월급여에 적용합니다. 보험료는 입력 조건에 따른
+                  추정이며 실제 공단 신고기준과 다를 수 있습니다. 연말정산 결정세액은 계산하지
                   않습니다.
                 </p>
                 <p>

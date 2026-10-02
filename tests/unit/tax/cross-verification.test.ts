@@ -2215,24 +2215,10 @@ describe('Cross-Verification: Rounding & Boundary (반올림·경계값 최종 6
   });
 
   describe('적금 + 자녀세액공제 통합 (세후 월급 최종 계산)', () => {
-    // ─────────────────────────────────────────────────────────────
-    // 케이스 73: 연봉 7,000만 + 부양 4 + 자녀 2
-    // ─────────────────────────────────────────────────────────────
-    // 입력: { wageType: 'yearly', wageAmount: 70M, dependents: 4, children: 2,
-    //        nontaxableMonthly: 200_000 }
-    // ※ 주의: estimateMonthlyIncomeTax() 함수의 자녀세액공제 구현 확인 필요
-    //   현재 월환산 시 / 12 로 재분할되어 예상값과 차이 발생.
-    //   MVP 단계에서는 과세표준 및 누진세 정확도 중심으로 검증.
-    // 연봉 = 70M
-    // 월급 = 70M / 12 ≈ 5,833,333원
-    // 근로소득공제 + 인적공제 후 과세표준 ≈ 38.5M
-    // 산출세액 ≈ 4.515M (누진 적용)
-    // 실제 소득세(월) ≈ 470,200원 (자녀세액공제 미적용 상태)
-    // 지방소득세, 4대보험 포함 총 공제 ≈ 150만원
-    // 실수령 ≈ 5,833k - 1,500k ≈ 4,333만원(월)
-    // 근거: 소득세법 §59의2, §50-51
-    // 추후 개선: CHILD_TAX_CREDIT 월 기준 재설계 및 / 12 중복 분할 제거
-    it('연봉 7000만 + 부양4 + 자녀2: 누진세 계산 및 4대보험 정확 → 월급 약 432만', () => {
+    // 공식2026 PDF18쪽5620~5640천원 가족4명299080−3월이후 자녀2명45830=253250.
+    // 보험:연금267567/건보202518/요양26610/고용50699, 지방세25320.
+    // 월급5833333−보험547394−소득253250−지방25320=5007369.
+    it('연봉7000만/가족4명/자녀2명: 공식 월 원천징수253250원·실수령5007369원', () => {
       const result = calculateTakeHome({
         wageType: 'yearly',
         wageAmount: 70_000_000,
@@ -2240,34 +2226,23 @@ describe('Cross-Verification: Rounding & Boundary (반올림·경계값 최종 6
         children: 2,
         nontaxableMonthly: 200_000,
         severance: 'separate',
+        calculationMonth: 7,
       });
-      expect(result.annualGrossIncome).toBeCloseTo(70_000_000, -6);
-      expect(result.monthlyGrossIncome).toBeCloseTo(5_833_333, -3);
-      // 실제 소득세: 470,200원/월 (현 함수 구현 기준)
-      expect(result.incomeTax).toBeGreaterThan(400_000);
-      expect(result.incomeTax).toBeLessThan(550_000);
-      expect(result.monthlyNetIncome).toBeGreaterThan(4_700_000); // 470만 이상
-      expect(result.monthlyNetIncome).toBeLessThan(4_900_000); // 490만 이하
+      expect(result.annualGrossIncome).toBe(70_000_000);
+      expect(result.monthlyGrossIncome).toBe(5_833_333);
+      expect(result.incomeTax).toBe(253_250);
+      expect(result.localIncomeTax).toBe(25_320);
+      expect(result.pension).toBe(267_567);
+      expect(result.health).toBe(202_518);
+      expect(result.longTermCare).toBe(26_610);
+      expect(result.employment).toBe(50_699);
+      expect(result.monthlyNetIncome).toBe(5_007_369);
     });
 
-    // ─────────────────────────────────────────────────────────────
-    // 케이스 74: 연봉 1.2억 + 부양 5 + 자녀 3
-    // ─────────────────────────────────────────────────────────────
-    // 입력: { wageType: 'yearly', wageAmount: 120M, dependents: 5, children: 3,
-    //        nontaxableMonthly: 200_000 }
-    // ※ 주의: estimateMonthlyIncomeTax() 함수의 자녀세액공제 구현 확인 필요
-    //   현재 월환산 시 / 12 로 재분할되어 예상값과 차이 발생.
-    //   MVP 단계에서는 과세표준 및 누진세 정확도 중심으로 검증.
-    // 연봉 = 120M
-    // 월급 = 120M / 12 = 10M
-    // 근로소득공제 + 인적공제 후 과세표준 ≈ 89.25M
-    // 산출세액 ≈ 15.84M (누진 적용, 24% 구간)
-    // 실제 소득세(월) ≈ 1,420,200원 (자녀세액공제 미적용 상태)
-    // 지방소득세, 4대보험 포함 총 공제 ≈ 150~160만원
-    // 실수령 ≈ 10M - 1,600k ≈ 8.4M(월)
-    // 근거: 소득세법 §59의2, §50-51
-    // 추후 개선: CHILD_TAX_CREDIT 월 기준 재설계 및 / 12 중복 분할 제거
-    it('연봉 1.2억 + 부양5 + 자녀3: 누진세 고액 구간 정확 → 월급 약 840만', () => {
+    // 공식 PDF26쪽9800~9820천원 가족5명1099340−자녀3명79160=1020180.
+    // 보험:연금상한313025/건보352310/요양46293/고용88200, 지방세102010.
+    // 10000000−799828−1020180−102010=8077982.
+    it('연봉1.2억/가족5명/자녀3명: 공식 월 원천징수1020180원·실수령8077982원', () => {
       const result = calculateTakeHome({
         wageType: 'yearly',
         wageAmount: 120_000_000,
@@ -2275,15 +2250,19 @@ describe('Cross-Verification: Rounding & Boundary (반올림·경계값 최종 6
         children: 3,
         nontaxableMonthly: 200_000,
         severance: 'separate',
+        calculationMonth: 7,
       });
-      expect(result.annualGrossIncome).toBeCloseTo(120_000_000, -6);
+      expect(result.annualGrossIncome).toBe(120_000_000);
       expect(result.monthlyGrossIncome).toBe(10_000_000);
-      // 실제 소득세: 1,420,200원/월 (현 함수 구현 기준)
-      expect(result.incomeTax).toBeGreaterThan(1_300_000);
-      expect(result.incomeTax).toBeLessThan(1_600_000);
-      expect(result.monthlyNetIncome).toBeGreaterThan(7_500_000); // 750만 이상
-      expect(result.monthlyNetIncome).toBeLessThan(7_800_000); // 780만 이하
+      expect(result.incomeTax).toBe(1_020_180);
+      expect(result.localIncomeTax).toBe(102_010);
+      expect(result.pension).toBe(313_025);
+      expect(result.health).toBe(352_310);
+      expect(result.longTermCare).toBe(46_293);
+      expect(result.employment).toBe(88_200);
+      expect(result.monthlyNetIncome).toBe(8_077_982);
     });
+
   });
 });
 
