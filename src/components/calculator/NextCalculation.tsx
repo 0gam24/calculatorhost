@@ -16,7 +16,7 @@ const NEXT: Record<string, { to: string; label: string; reason: string }> = {
   area: {
     to: 'acquisition-tax',
     label: '취득 비용 알아보기',
-    reason: '면적을 확인했다면 주택 취득 비용을 계산해 보세요.',
+    reason: '주택 매매를 계획한다면 가격과 전용면적을 별도로 확인해 취득세를 계산해 보세요.',
   },
   'averaging-down': {
     to: 'split-buy',
@@ -56,7 +56,7 @@ const NEXT: Record<string, { to: string; label: string; reason: string }> = {
   deposit: {
     to: 'savings',
     label: '매달 모으는 적금 계산',
-    reason: '한 번에 예치하는 금액과 매달 모으는 금액을 비교해 보세요.',
+    reason: '목돈 예치와 매달 저축을 비교하려면 월 저축액을 직접 정해 적금도 계산해 보세요.',
   },
   dti: {
     to: 'loan-limit',
@@ -141,7 +141,7 @@ const NEXT: Record<string, { to: string; label: string; reason: string }> = {
   severance: {
     to: 'deposit',
     label: '퇴직금 예금 계획하기',
-    reason: '생활비를 남겨 두고 예치할 금액을 직접 입력하세요.',
+    reason: '실제 퇴직금 지급액을 확인한 뒤 생활비를 남겨 두고 예치할 금액을 직접 정하세요.',
   },
   'split-buy': {
     to: 'averaging-down',

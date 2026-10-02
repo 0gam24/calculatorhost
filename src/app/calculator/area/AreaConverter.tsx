@@ -78,6 +78,7 @@ export function AreaConverter() {
           placeholder={unit === 'pyeong' ? '예: 34' : '예: 112.40'}
           unit={unit === 'pyeong' ? '평' : '㎡'}
           max={10_000}
+          helpText="전용 84㎡는 약 25.41평입니다. 같은 면적의 단위만 환산하며, 전용면적과 공급면적을 서로 바꾸는 계산은 아닙니다."
         />
 
         {/* 단위 선택 */}

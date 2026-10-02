@@ -225,6 +225,7 @@ export function DepositCalculator() {
           unitButtons={PRINCIPAL_UNIT_BUTTONS}
           max={10_000_000_000}
           unit="원"
+          helpText="처음에 한 번 맡기는 목돈입니다. 매달 넣는 금액을 계산하려면 적금 계산기를 이용하세요."
         />
 
         <NumberInput
@@ -340,7 +341,10 @@ export function DepositCalculator() {
         {/* 3가지 이자 방식 비교 박스 */}
         {result && simpleResult && monthlyCompoundResult && dailyCompoundResult && (
           <div className="mt-4 rounded-lg bg-highlight-500/10 p-4">
-            <p className="mb-3 text-sm font-medium text-text-primary">3가지 이자 방식 비교</p>
+            <p className="mb-3 text-sm font-medium text-text-primary">같은 조건의 세후 이자 비교</p>
+            <p className="mb-3 text-caption text-text-secondary">
+              같은 원금·금리·기간을 가정한 비교입니다. 실제 상품의 이자 방식을 확인하세요.
+            </p>
             <div className="space-y-2 text-caption">
               <div className="flex justify-between">
                 <span
