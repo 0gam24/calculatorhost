@@ -1,6 +1,9 @@
 'use client';
 
-import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
+import {
+  CalculatorWorkspace,
+  useCalculatorWorkspace,
+} from '@/components/calculator/CalculatorWorkspace';
 import { useCalculatorState } from '@/components/calculator/useCalculatorState';
 
 /**
@@ -10,7 +13,7 @@ import { useCalculatorState } from '@/components/calculator/useCalculatorState';
  * 공식: src/lib/finance/realty-commission.ts
  */
 
-import { useMemo } from 'react';
+import { useEffect, useMemo } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -31,6 +34,15 @@ const PRICE_UNIT_BUTTONS = [
   { label: '십만', value: 100_000 },
 ];
 
+function CommissionReadiness({ error }: { error?: string }) {
+  const reportValidity = useCalculatorWorkspace()?.reportValidity;
+  useEffect(() => {
+    reportValidity?.('broker-fee:conditions', error);
+    return () => reportValidity?.('broker-fee:conditions');
+  }, [error, reportValidity]);
+  return null;
+}
+
 export function CommissionCalculator() {
   // 입력 상태
   const [transactionType, setTransactionType] = useCalculatorState<TransactionType>(
@@ -44,59 +56,74 @@ export function CommissionCalculator() {
   const [salePrice, setSalePrice] = useCalculatorState('broker-fee:salePrice', 500_000_000);
   const [deposit, setDeposit] = useCalculatorState('broker-fee:deposit', 200_000_000);
   const [monthlyRent, setMonthlyRent] = useCalculatorState('broker-fee:monthlyRent', 3_000_000);
-  const [negotiatedRate, setNegotiatedRate] = useCalculatorState<number | undefined>(
-    'broker-fee:negotiatedRate',
-    undefined,
+  const [negotiatedRateDraft, setNegotiatedRateDraft] = useCalculatorState(
+    'broker-fee:negotiatedRateDraft',
+    '',
   );
   const [includeVat, setIncludeVat] = useCalculatorState('broker-fee:includeVat', false);
 
-  // 계산 실행
-  const result: CommissionResult = useMemo(() => {
+  // Preserve the old numeric key; migrate only when no new draft has been saved.
+  useEffect(() => {
     try {
-      return calculateRealtyCommission({
-        transactionType,
-        propertyKind,
-        salePrice: transactionType === 'monthly' ? undefined : salePrice,
-        deposit: transactionType === 'monthly' ? deposit : undefined,
-        monthlyRent: transactionType === 'monthly' ? monthlyRent : undefined,
-        negotiatedRate,
-        includeVat,
-      });
-    } catch (e) {
-      // 오류 발생 시 기본값 반환 (UI는 계속 표시)
-      console.error('Commission calculation error:', e);
+      const prefix = 'calculatorhost:input:v1:broker-fee:';
+      if (sessionStorage.getItem(`${prefix}negotiatedRateDraft`) !== null) return;
+      const saved = sessionStorage.getItem(`${prefix}negotiatedRate`);
+      if (saved === null) return;
+      const legacy: unknown = JSON.parse(saved);
+      if (typeof legacy === 'number' && Number.isFinite(legacy) && legacy >= 0) {
+        setNegotiatedRateDraft(String(legacy * 100));
+      }
+    } catch {
+      // Storage is optional; continue with the current draft.
+    }
+  }, [setNegotiatedRateDraft]);
+
+  const rateText = negotiatedRateDraft.trim();
+  const parsedRate = /^(?:\d+\.?\d*|\.\d+)$/.test(rateText) ? Number(rateText) : NaN;
+  const rateError =
+    rateText === ''
+      ? undefined
+      : !Number.isFinite(parsedRate)
+        ? '협의 요율을 올바른 숫자로 입력해 주세요.'
+        : parsedRate === 0
+          ? '0% 협의는 이 계산기에서 지원하지 않습니다. 상한요율을 사용하려면 비워 주세요.'
+          : undefined;
+  const negotiatedRate = rateText !== '' && !rateError ? parsedRate / 100 : undefined;
+
+  // 계산 실행
+  const calculation = useMemo((): { result: CommissionResult | null; error?: string } => {
+    if (rateError) return { result: null, error: rateError };
+    try {
       return {
-        transactionAmount: 0,
-        appliedRate: 0,
-        limit: null,
-        maxCommission: 0,
-        negotiatedCommission: null,
-        vat: 0,
-        total: 0,
-        bothSideTotal: 0,
-        warnings: ['계산 중 오류가 발생했습니다'],
+        result: calculateRealtyCommission({
+          transactionType,
+          propertyKind,
+          salePrice: transactionType === 'monthly' ? undefined : salePrice,
+          deposit: transactionType === 'monthly' ? deposit : undefined,
+          monthlyRent: transactionType === 'monthly' ? monthlyRent : undefined,
+          negotiatedRate,
+          includeVat,
+        }),
+      };
+    } catch (e) {
+      return {
+        result: null,
+        error: e instanceof Error ? e.message : '입력 조건을 확인해 주세요.',
       };
     }
-  }, [transactionType, propertyKind, salePrice, deposit, monthlyRent, negotiatedRate, includeVat]);
+  }, [
+    transactionType,
+    propertyKind,
+    salePrice,
+    deposit,
+    monthlyRent,
+    negotiatedRate,
+    includeVat,
+    rateError,
+  ]);
 
-  // 협의 요율 입력 (%, 예: "0.3" = 0.3%)
-  const handleNegotiatedRateChange = (text: string) => {
-    if (text === '') {
-      setNegotiatedRate(undefined);
-    } else {
-      const num = parseFloat(text);
-      if (!isNaN(num)) {
-        setNegotiatedRate(num / 100); // 소수로 변환
-      }
-    }
-  };
-
-  // 표시용 협의 요율 (%)
-  const negotiatedRateDisplay = negotiatedRate ? (negotiatedRate * 100).toFixed(2) : '';
-
-  // 세율 표기
-  const ratePercent = formatPercent(result.appliedRate);
-  const rateLabel = `상한요율 ${ratePercent}`;
+  const { result, error } = calculation;
+  const rateLabel = result ? `상한요율 ${formatPercent(result.appliedRate)}` : undefined;
 
   return (
     <CalculatorWorkspace className="grid gap-6 lg:grid-cols-2" slug="broker-fee">
@@ -189,11 +216,13 @@ export function CommissionCalculator() {
               id="negotiated-rate"
               type="text"
               inputMode="decimal"
-              value={negotiatedRateDisplay}
-              onChange={(e) => handleNegotiatedRateChange(e.target.value)}
+              value={negotiatedRateDraft}
+              onChange={(e) => setNegotiatedRateDraft(e.target.value)}
+              onBlur={() => setNegotiatedRateDraft((draft) => draft.trim())}
               placeholder="예: 0.3"
-              className="w-full rounded-lg border border-border-base bg-bg-card py-3 pl-4 pr-10 text-right text-lg font-semibold text-text-primary placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
-              aria-describedby="negotiated-rate-help"
+              className="min-h-12 w-full rounded-lg border border-border-base bg-bg-card py-3 pl-4 pr-10 text-right text-lg font-semibold text-text-primary placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+              aria-invalid={!!rateError}
+              aria-describedby={`negotiated-rate-help${rateError ? ' negotiated-rate-error' : ''}`}
             />
             <span className="pointer-events-none absolute inset-y-0 right-4 flex items-center text-sm text-text-secondary">
               %
@@ -202,6 +231,11 @@ export function CommissionCalculator() {
           <p id="negotiated-rate-help" className="text-caption text-text-tertiary">
             법정 상한 이하에서 협의한 요율을 입력하세요. 공란이면 상한요율 적용.
           </p>
+          {rateError ? (
+            <p id="negotiated-rate-error" role="alert" className="text-sm text-danger-500">
+              {rateError}
+            </p>
+          ) : null}
         </div>
 
         {/* 부가세 포함 */}
@@ -218,60 +252,76 @@ export function CommissionCalculator() {
             부가세 (VAT 10%) 포함
           </label>
         </div>
+        <CommissionReadiness error={error} />
+        {error && !rateError ? (
+          <div
+            data-testid="commission-conditions"
+            aria-invalid="true"
+            tabIndex={-1}
+            className="text-sm text-danger-500"
+          >
+            <p role="alert">{error}</p>
+          </div>
+        ) : null}
       </FormCard>
 
       <ResultCard
         title="총 지급액"
         heroLabel="중개수수료 + 부가세"
-        heroValue={formatKRW(result.total)}
+        heroValue={result ? formatKRW(result.total) : '입력을 확인해 주세요'}
         heroNote={rateLabel}
-        rows={[
-          {
-            label: '거래금액',
-            value: formatKRW(result.transactionAmount),
-          },
-          {
-            label: '적용 상한요율',
-            value: formatPercent(result.appliedRate),
-            ...(result.limit !== null && {
-              note: `한도액 ${formatKRW(result.limit)}`,
-            }),
-          },
-          {
-            label: '상한 중개수수료',
-            value: formatKRW(result.maxCommission),
-          },
-          ...(negotiatedRate !== undefined && result.negotiatedCommission !== null
+        empty={!result}
+        rows={
+          result
             ? [
                 {
-                  label: '협의 요율 반영 수수료',
-                  value: formatKRW(result.negotiatedCommission),
+                  label: '거래금액',
+                  value: formatKRW(result.transactionAmount),
                 },
-              ]
-            : []),
-          ...(includeVat
-            ? [
                 {
-                  label: '부가세',
-                  note: '(10%)',
-                  value: formatKRW(result.vat),
+                  label: '적용 상한요율',
+                  value: formatPercent(result.appliedRate),
+                  ...(result.limit !== null && {
+                    note: `한도액 ${formatKRW(result.limit)}`,
+                  }),
+                },
+                {
+                  label: '상한 중개수수료',
+                  value: formatKRW(result.maxCommission),
+                },
+                ...(negotiatedRate !== undefined && result.negotiatedCommission !== null
+                  ? [
+                      {
+                        label: '협의 요율 반영 수수료',
+                        value: formatKRW(result.negotiatedCommission),
+                      },
+                    ]
+                  : []),
+                ...(includeVat
+                  ? [
+                      {
+                        label: '부가세',
+                        note: '(10%)',
+                        value: formatKRW(result.vat),
+                      },
+                    ]
+                  : []),
+                {
+                  label: '총 지급액',
+                  value: formatKRW(result.total),
+                  emphasize: true,
+                },
+                {
+                  label: '양측 합계',
+                  note: '(매도자+매수자 참고용)',
+                  value: formatKRW(result.bothSideTotal),
                 },
               ]
-            : []),
-          {
-            label: '총 지급액',
-            value: formatKRW(result.total),
-            emphasize: true,
-          },
-          {
-            label: '양측 합계',
-            note: '(매도자+매수자 참고용)',
-            value: formatKRW(result.bothSideTotal),
-          },
-        ]}
+            : []
+        }
       >
         {/* 경고 메시지 */}
-        {result.warnings.length > 0 && (
+        {result && result.warnings.length > 0 && (
           <div className="rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-3">
             {result.warnings.map((warning, idx) => (
               <p key={idx} className="text-sm font-medium text-highlight-500">
