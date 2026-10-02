@@ -99,7 +99,7 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '2400cc 자동차세는 얼마인가요?',
     answer:
-      '비영업용 승용차 2400cc 의 2026년 연간 자동차세는 본세 약 480,000원 (200원/cc × 2,400cc), 지방교육세 30%(144,000원) 포함 총 약 624,000원입니다.',
+      '비영업용 승용차 2400cc에 표준세율을 적용하고 차령경감·연납 할인·일할 계산·별도 감면을 제외하면 연간 본세 480,000원(2,400cc × 200원), 지방교육세 144,000원(본세의 30%), 합계 624,000원입니다. 각 반기의 법정 차령이 3년 이상이면 차령경감에 따라 달라집니다.',
   },
   {
     question: '3000cc 자동차세는 얼마인가요?',
@@ -323,8 +323,9 @@ export default function VehicleTaxPage() {
                   cc별 자동차세 빠른 조회 (신차 기준)
                 </h2>
                 <p className="text-sm text-text-secondary">
-                  자주 검색되는 배기량의 연간 자동차세 (본세 + 지방교육세 30%, 차령 1년 차 기준).
-                  실제 세액은 차령경감·연납 할인에 따라 달라집니다, 정확한 계산은 위 계산기 사용.
+                  비영업용 승용차에 표준세율을 적용한 연간 자동차세입니다. 차령경감·연납 할인·일할
+                  계산·별도 감면은 제외하고, 지방교육세 30%를 포함합니다. 실제 고지액은 과세 조건에
+                  따라 달라질 수 있습니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
@@ -374,6 +375,15 @@ export default function VehicleTaxPage() {
                         </td>
                       </tr>
                       <tr className="hover:bg-bg-card/50 border border-border-base">
+                        <td className="px-4 py-2 text-text-secondary">2.4L 승용차</td>
+                        <td className="px-4 py-2 text-right tabular-nums">2400cc</td>
+                        <td className="px-4 py-2 text-right tabular-nums">480,000원</td>
+                        <td className="px-4 py-2 text-right tabular-nums">+144,000원</td>
+                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
+                          624,000원
+                        </td>
+                      </tr>
+                      <tr className="hover:bg-bg-card/50 border border-border-base">
                         <td className="px-4 py-2 text-text-secondary">그랜저·K8</td>
                         <td className="px-4 py-2 text-right tabular-nums">2500cc</td>
                         <td className="px-4 py-2 text-right tabular-nums">500,000원</td>
@@ -403,6 +413,13 @@ export default function VehicleTaxPage() {
                     </tbody>
                   </table>
                 </div>
+                <p className="text-sm text-text-secondary">
+                  2400cc 예시: 2,400 × 200원 = 본세 480,000원, 본세 × 30% = 지방교육세
+                  144,000원으로 합계 624,000원입니다. 배기량별 표준세율과 차령경감은{' '}
+                  <a href="https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1021848893" target="_blank" rel="noopener noreferrer" className="underline">지방세법 제127조</a>, 지방교육세는{' '}
+                  <a href="https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1026499929" target="_blank" rel="noopener noreferrer" className="underline">제151조</a>를 따릅니다. 차령은{' '}
+                  <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=120290" target="_blank" rel="noopener noreferrer" className="underline">시행령 제122조</a>에 따라 기산일과 과세 반기로 확인합니다.
+                </p>
                 <div className="rounded-lg bg-bg-raised p-4 text-sm">
                   <p className="mb-2 font-semibold text-text-primary">경계값 주의</p>
                   <ul className="space-y-1 text-text-secondary">

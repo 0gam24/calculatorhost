@@ -197,7 +197,7 @@ export function VehicleTaxCalculator() {
                 unit="년"
                 min={0}
                 max={30}
-                helpText="현재 연도 - 등록 연도 = 경과 연수"
+                helpText="차령은 최초등록 등 기산일과 과세 반기를 기준으로 확인하세요. 단순 경과 연수와 다를 수 있습니다."
                 integer
               />
             </div>

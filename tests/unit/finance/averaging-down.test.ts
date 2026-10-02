@@ -32,6 +32,18 @@ function createTargetInput(
 }
 
 describe('calculateNewAverage — 기본 평균단가', () => {
+  it('공개 예시: 100만원 + 50만원 = 150만원, 200주, 평균 7500원', () => {
+    const result = calculateNewAverage({
+      currentPosition: { price: 10_000, quantity: 100 },
+      additionalPurchase: { price: 5_000, quantity: 100 },
+    });
+
+    expect(result.totalInvestment).toBe(1_500_000);
+    expect(result.totalQuantity).toBe(200);
+    expect(result.averagePrice).toBe(7_500);
+    expect(result.costBasisChangePercent).toBe(-25);
+  });
+
   it('50000 × 100 + 40000 × 50 = 평균 46666원', () => {
     const result = calculateNewAverage(createAveragingInput({}));
 

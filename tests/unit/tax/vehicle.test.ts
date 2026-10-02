@@ -7,6 +7,27 @@ import { describe, expect, it } from 'vitest';
 import { calculateVehicleTax } from '@/lib/tax/vehicle';
 
 describe('자동차세 계산 (vehicle.ts)', () => {
+  it.each([
+    [0, 480_000, 144_000, 624_000],
+    [1, 480_000, 144_000, 624_000],
+    [2, 480_000, 144_000, 624_000],
+    [3, 456_000, 136_800, 592_800],
+    [12, 240_000, 72_000, 312_000],
+  ])('2400cc 공개 예시: 법정 차령 %i, 연납 할인 제외', (age, tax, education, total) => {
+    // 지방세법 제127조·제151조: 표준세율, 두 과세 반기의 차령이 같다고 가정.
+    const result = calculateVehicleTax({
+      usage: 'passengerNonBusiness',
+      engineCc: 2400,
+      vehicleAgeYears: age,
+      includeAnnualDiscount: false,
+    });
+    expect(result.vehicleTaxAfterReduction).toBe(tax);
+    expect(result.localEducationTax).toBe(education);
+    expect(result.totalAnnual).toBe(total);
+    expect(result.finalAnnualPayment).toBe(total);
+    expect(result.annualPaymentDiscount).toBe(0);
+  });
+
   describe('기본 세율 구간 (cc당 요율)', () => {
     it('999cc → 80원/cc 적용', () => {
       const r = calculateVehicleTax({
