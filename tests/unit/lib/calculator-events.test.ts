@@ -45,6 +45,27 @@ describe('Privacy-safe calculator events', () => {
     expect(gtag).not.toHaveBeenCalled();
   });
 
+  it('measures the guide calculator with its fixed existing URL and no wage or hours', () => {
+    const gtag = setup();
+    window.location.href =
+      'https://calculatorhost.com/guide/overtime-night-holiday-allowance-2026/?hourlyWage=12000&hours=10';
+    trackCalculationComplete('overtime-night-holiday-allowance-2026');
+    expect(gtag).toHaveBeenCalledOnce();
+    expect(gtag.mock.calls[0]).toEqual([
+      'event',
+      'calculator_complete',
+      {
+        calculator_slug: 'overtime-night-holiday-allowance-2026',
+        page_location: 'https://calculatorhost.com/guide/overtime-night-holiday-allowance-2026/',
+        page_referrer: '',
+      },
+    ]);
+    expect(JSON.stringify(gtag.mock.calls)).not.toContain('12000');
+    expect(JSON.stringify(gtag.mock.calls)).not.toContain('hours=10');
+    trackCalculationComplete('overtime-night-holiday-allowance-2026?hourlyWage=12000');
+    expect(gtag).toHaveBeenCalledOnce();
+  });
+
   it.each(['localhost', '127.0.0.1', 'preview.calculatorhost.com', 'calculatorhost.pages.dev'])(
     'does not measure preview host %s',
     (hostname) => {

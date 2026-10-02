@@ -33,8 +33,18 @@ export const CALCULATOR_SLUGS = [
   'dti',
 ] as const;
 
-export type CalculatorSlug = (typeof CALCULATOR_SLUGS)[number];
-const KNOWN_SLUGS = new Set<string>(CALCULATOR_SLUGS);
+// A calculator inside an existing guide keeps its real, fixed guide URL.
+const GUIDE_CALCULATOR_URLS: Readonly<Record<string, string>> = {
+  'overtime-night-holiday-allowance-2026':
+    'https://calculatorhost.com/guide/overtime-night-holiday-allowance-2026/',
+};
+export type CalculatorSlug =
+  | (typeof CALCULATOR_SLUGS)[number]
+  | 'overtime-night-holiday-allowance-2026';
+const KNOWN_SLUGS = new Set<string>([
+  ...CALCULATOR_SLUGS,
+  ...Object.keys(GUIDE_CALCULATOR_URLS),
+]);
 
 export function isCalculatorSlug(value: unknown): value is CalculatorSlug {
   return typeof value === 'string' && KNOWN_SLUGS.has(value);
@@ -53,7 +63,7 @@ function emit(name: string, slugs: Record<string, string>, source?: string): voi
       ...slugs,
       // Override automatic location/referrer values with a known, input-free URL.
       page_location: source
-        ? `https://calculatorhost.com/calculator/${source}/`
+        ? (GUIDE_CALCULATOR_URLS[source] ?? `https://calculatorhost.com/calculator/${source}/`)
         : 'https://calculatorhost.com/',
       page_referrer: '',
     });
