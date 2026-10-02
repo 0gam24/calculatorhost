@@ -365,7 +365,7 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">배당·이자 비과세·분리과세 한도 활용.</p>
                   </Link>
                   <Link
-                    href="/category/investment/"
+                    href="/guide/category/investment/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">투자 가이드 모음</div>

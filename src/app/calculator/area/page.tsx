@@ -19,11 +19,13 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/area/';
+const PAGE_TITLE = '평수 계산기 | ㎡↔평 변환·84㎡는 몇 평?';
+const PAGE_DESCRIPTION =
+  '제곱미터(㎡)와 평을 양방향으로 환산합니다. 84㎡는 25.41평, 34평은 약 112.40㎡입니다. 같은 면적의 단위만 변환하며 전용·공급면적을 서로 환산하지 않습니다.';
 
 export const metadata: Metadata = {
-  title: '평수 계산기 2026 | 평·㎡·넓이 환산·평 단위 변환 | calculatorhost',
-  description:
-    '평·제곱미터·㎡·평수 즉시 양방향 환산. 80㎡·100㎡ 등 면적별 평 변환 + 평수 제곱미터 전환 + 넓이 환산. 1평 = 3.3058㎡ 계량법 공식 기반. 무료, 회원가입 불필요.',
+  title: PAGE_TITLE,
+  description: PAGE_DESCRIPTION,
   keywords: [
     '평수 계산기',
     '평 계산기',
@@ -38,15 +40,15 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '평수 계산기 2026 | 평↔제곱미터 변환',
-    description: '1평 = 약 3.3058㎡ 공식 기반 양방향 변환 계산기.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '평수 계산기 2026',
-    description: '평과 제곱미터를 즉시 양방향 변환하세요.',
+    title: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
   },
 };
 
@@ -54,42 +56,42 @@ const FAQ_ITEMS = [
   {
     question: '1평은 몇 제곱미터인가요?',
     answer:
-      '1평은 약 3.3058㎡입니다(정확히는 400/121㎡). 이는 일본의 전통 척관법에서 유래한 한국의 관습 단위로, 한국의 부동산 표기에서 아직도 널리 사용됩니다(계량법 시행령 §9).',
+      '이 계산기는 관습 단위인 평을 환산할 때 1평 = 400/121㎡(약 3.3058㎡), 1㎡ = 0.3025평의 계수를 사용합니다.',
   },
   {
     question: '34평은 몇 제곱미터인가요?',
     answer:
-      '34평은 약 112.40㎡입니다(34 × 3.3058 ≒ 112.40). 아파트 표기에서 "34평"은 건설사가 분양 기준으로 사용하는 대략적인 면적이며, 실제 공급면적은 단지마다 다를 수 있습니다.',
+      '34평은 약 112.40㎡입니다. 같은 면적을 다른 단위로 표현한 값이며, 전용면적 34평인지 공급면적 34평인지는 해당 문서에서 따로 확인해야 합니다.',
   },
   {
     question: '전용면적·공급면적·대지면적은 무엇인가요?',
     answer:
-      '전용면적은 실제로 사용할 수 있는 면적(거실, 침실, 욕실 등), 공급면적은 전용면적에 공용 부분(엘리베이터, 복도 등)을 포함한 면적, 대지면적은 건물이 지어진 땅의 면적입니다. 일반적으로 아파트 "평수"는 공급면적을 기준으로 표기됩니다.',
+      '전용면적은 세대 내부의 전용 공간, 공급면적은 전용면적과 주거공용면적을 합한 면적, 대지면적은 땅의 면적을 가리킵니다. 포함 범위가 다르므로 계약서의 면적 종류를 확인하세요. 이 계산기는 전용면적과 공급면적을 서로 환산하지 않습니다.',
   },
   {
-    question: '국토교통부는 왜 제곱미터를 사용하나요?',
+    question: '평과 제곱미터를 비교할 때 무엇을 확인해야 하나요?',
     answer:
-      '제곱미터(㎡)는 국제표준 단위계(SI)의 넓이 단위로, 2002년부터 모든 공식 부동산 거래와 정부 문서에서 의무적으로 사용됩니다(계량법 §1 및 시행령 §9). 반면 "평"은 관습 단위로 일반 거래에서만 선택적으로 사용됩니다.',
+      '두 수치가 같은 면적 종류인지 먼저 확인하세요. 전용면적은 전용면적끼리, 공급면적은 공급면적끼리 단위를 바꾸어 비교해야 합니다. 단위가 다른 것과 면적 기준이 다른 것은 별개의 문제입니다.',
   },
   {
     question: '아파트 84㎡는 평으로 몇 평인가요?',
     answer:
-      '84㎡는 약 25.41평입니다(84 ÷ 3.3058 ≒ 25.4). 하지만 건설사 표기에서는 보통 "26평"이라고 표현합니다. 공급면적(84㎡)과 전용면적의 차이 때문에 실제 표기되는 평수가 다를 수 있습니다.',
+      '84㎡는 25.41평입니다(84 × 0.3025 = 25.41). 전용면적 84㎡라면 전용면적 25.41평이라는 뜻입니다. 공급면적이나 광고의 평형과 같은 값으로 볼 수는 없습니다.',
   },
   {
-    question: '음수나 0을 입력하면 어떻게 되나요?',
+    question: '면적을 입력할 때 주의할 점은 무엇인가요?',
     answer:
-      '음수를 입력하면 경고 메시지와 함께 0으로 처리됩니다. 0을 입력하면 변환값도 0이 됩니다. 일반적으로 면적은 양수만 입력하므로, 음수 입력은 실수로 본 것으로 간주합니다.',
+      '선택한 단위에 맞는 유효한 숫자를 입력하세요. 빈 입력이나 잘못된 값은 입력 안내를 확인해 수정해야 합니다. 0과 빈 입력은 서로 다르며, 소수점이 있는 면적도 입력할 수 있습니다.',
   },
   {
     question: '80 제곱미터는 몇 평인가요?',
     answer:
-      '80㎡는 약 24.20평입니다 (80 ÷ 3.3058 ≒ 24.2). 아파트 분양 표기에서 "25평형"으로 자주 표시되는 면적대입니다. 100㎡ ≒ 30.25평, 60㎡ ≒ 18.15평, 40㎡ ≒ 12.10평입니다.',
+      '80㎡는 24.20평입니다(80 × 0.3025 = 24.20). 같은 방식으로 100㎡는 30.25평, 60㎡는 18.15평, 40㎡는 12.10평입니다. 모두 같은 면적의 단위 환산값입니다.',
   },
   {
     question: '평 변환·평수 제곱미터 전환·넓이 환산은 어떻게 다른가요?',
     answer:
-      '모두 동일한 변환 작업의 다른 표현입니다. 1평 = 3.3058㎡ 공식을 사용해 양방향으로 환산합니다. "평 변환" / "평 단위환산" / "평수 제곱미터 전환" / "면적 평수 전환" / "넓이 환산" 모두 본 계산기 한 곳에서 즉시 처리 가능합니다.',
+      '이 페이지에서는 모두 평과 제곱미터 사이의 단위 환산을 뜻합니다. 전용면적과 공급면적의 포함 범위를 바꾸는 계산은 지원하지 않습니다.',
   },
   {
     question: '평수 계산기와 평 계산기, 평수 계산은 어떻게 다른가요?',
@@ -106,13 +108,13 @@ const RELATED = [
 
 export default function AreaConversionPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
-    name: '평수 계산기',
-    description: '계량법 기준 평과 제곱미터 양방향 변환 계산기',
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '평수 계산기 2026',
-    description: '평과 제곱미터를 양방향으로 변환하는 무료 계산기',
+    name: PAGE_TITLE,
+    description: PAGE_DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-04-27',
@@ -120,7 +122,7 @@ export default function AreaConversionPage() {
   });
   const howToLd = buildHowToJsonLd({
     name: '평수 계산기 사용 방법',
-    description: '평과 제곱미터를 양방향으로 변환하는 단계별 가이드',
+    description: '같은 면적의 평과 제곱미터 단위를 양방향으로 환산하는 단계별 안내',
     steps: [
       {
         name: '변환 유형 선택',
@@ -133,7 +135,7 @@ export default function AreaConversionPage() {
       },
       {
         name: '면적 유형 고려',
-        text: '전용면적, 공급면적, 대지면적 등 면적의 종류를 구분하여 정확히 변환합니다.',
+        text: '문서의 면적 종류를 확인합니다. 면적 종류 선택은 참고 표시이며 전용면적과 공급면적을 서로 환산하지 않습니다.',
       },
       { name: '결과 활용', text: '변환된 값을 거래 계약서나 부동산 거래에 참고합니다.' },
     ],
@@ -212,9 +214,9 @@ export default function AreaConversionPage() {
               }
             >
               <StructuredSummary
-                definition="평(坪)은 한국 부동산에서 관습적으로 사용되는 단위로, 1평 = 약 3.3058㎡입니다. 국제표준인 제곱미터(㎡)와 달리 계량법상 법정 단위가 아니지만, 일반 부동산 거래와 아파트 분양 기준으로 광범위하게 사용됩니다(계량법 시행령 §9)."
+                definition="평은 관습적으로 사용되는 면적 단위입니다. 이 계산기는 1평 = 400/121㎡(약 3.3058㎡), 1㎡ = 0.3025평의 계수로 같은 면적의 단위를 환산합니다."
                 table={{
-                  caption: '주요 평수 변환표',
+                  caption: '같은 면적의 평·제곱미터 환산표',
                   headers: ['평', '제곱미터 (㎡)'],
                   rows: [
                     ['12평', '약 39.67㎡'],
@@ -224,255 +226,101 @@ export default function AreaConversionPage() {
                   ],
                 }}
                 tldr={[
-                  '1평 = 3.3058㎡, 1㎡ = 0.3025평',
-                  '전용면적(실사용), 공급면적(공용포함), 대지면적(땅)의 3가지 구분',
-                  '아파트 분양은 주로 "공급면적" 기준으로 "평"으로 표기',
-                  '실제 거래·등기에는 제곱미터만 공식',
-                  '건설사 "34평"과 공시가격 "84㎡"는 같은 아파트를 다르게 표현한 것',
+                  '84㎡ = 25.41평, 34평 ≒ 112.40㎡',
+                  '평과 ㎡는 같은 면적을 표현하는 서로 다른 단위',
+                  '전용면적과 공급면적은 포함 범위가 다른 면적 기준',
+                  '전용·공급면적을 서로 바꾸는 계산은 지원하지 않음',
+                  '비교할 때는 계약서의 면적 종류와 단위를 함께 확인',
                 ]}
               />
               <section aria-label="평과 제곱미터의 관계" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">평과 제곱미터의 관계</h2>
                 <p className="mb-4 text-text-secondary">
-                  한국의 부동산 시장에서 "평"은 여전히 널리 사용되는 단위이지만, 국제표준인
-                  제곱미터(㎡)도 함께 사용됩니다. "평"은 일본의 척관법에서 유래한 단위로, 1평은
-                  정확히 400/121㎡ 즉 약 3.3058㎡입니다(계량법 시행령 §9).
-                </p>
-                <p className="mb-4 text-text-secondary">
-                  정부와 공공 문서에서는 2002년부터 제곱미터만 사용하도록 의무화했지만, 일반인의
-                  부동산 거래에서는 아직도 "평"으로 표현하는 것이 관습입니다. 예를 들어 아파트 분양
-                  광고에서 "34평"이라고 하면, 이는 공급면적이 약 112.4㎡ 정도라는 의미입니다.
+                  같은 면적을 평으로 표시하거나 제곱미터(㎡)로 표시할 수 있습니다. 이 계산기는
+                  관습 단위인 평을 환산할 때 1평 = 400/121㎡의 계수를 사용합니다.
                 </p>
                 <p className="text-text-secondary">
-                  양쪽 단위를 모두 이해하고 자유롭게 변환할 수 있으면, 부동산 거래 시 정확한 의사
-                  결정을 내리는 데 도움이 됩니다.
+                  예를 들어 34평은 약 112.40㎡이고, 84㎡는 25.41평입니다. 두 수치는 서로 같은
+                  면적이 아닙니다. 광고의 평형과 문서의 면적을 비교하려면 단위뿐 아니라 면적의
+                  종류도 확인해야 합니다.
                 </p>
               </section>
               <section aria-label="면적 종류 설명" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">
-                  아파트의 4가지 면적: 전용·공급·공용·대지
-                </h2>
-                <div className="mb-6 overflow-x-auto">
-                  <table className="w-full border-collapse text-sm">
-                    <thead>
-                      <tr className="border-b border-border-base">
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
-                          면적 종류
-                        </th>
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
-                          포함 범위
-                        </th>
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
-                          용도
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 font-medium text-text-primary">전용면적</td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          거실, 침실, 주방, 욕실, 발코니 확장 등 입주자만 사용 가능한 면적
-                        </td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          개인 거주 공간, 계약·등기 기준
-                        </td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 font-medium text-text-primary">공급면적</td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          전용면적 + 엘리베이터홀, 복도, 계단실 등 공용 부분 배분액
-                        </td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          분양가 기준, 아파트 분양 광고 "평수" 기준
-                        </td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 font-medium text-text-primary">공용면적</td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          로비, 복도, 계단실, 엘리베이터, 기계실 등 모든 주민이 사용하는 공간
-                        </td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          아파트 전체 면적 파악, 관리비 기준
-                        </td>
-                      </tr>
-                      <tr>
-                        <td className="px-3 py-2 font-medium text-text-primary">대지면적</td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          아파트 건물이 지어진 부지(땅)의 면적
-                        </td>
-                        <td className="px-3 py-2 text-text-secondary">
-                          등기부등본 기재, 양도세·취득세 기준
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
+                <h2 className="mb-4 text-2xl font-semibold">전용면적과 공급면적 구분하기</h2>
+                <p className="mb-4 text-text-secondary">
+                  전용면적은 세대 내부의 전용 공간을, 공급면적은 전용면적과 주거공용면적을 합한
+                  면적을 가리킵니다. 대지면적은 땅의 면적입니다. 문서에 적힌 면적 종류를 확인한
+                  뒤 같은 기준끼리 비교하세요.
+                </p>
                 <p className="text-text-secondary">
-                  <strong>예시</strong>: 아파트 공급면적 84㎡(약 25.4평)인 경우, 전용면적은 약
-                  59㎡(18평), 공용면적 배분액이 약 25㎡(7.6평) 정도가 됩니다. 광고에서는 보통
-                  공급면적 기준으로 "26평"이라고 표기합니다.
+                  전용면적 84㎡를 환산하면 전용면적 25.41평입니다. 공급면적은 별도로 확인해야
+                  하며, 일정 비율을 곱해 추정할 수 없습니다. 계산기의 면적 종류 선택은 참고
+                  표시이며 환산 계수를 바꾸지 않습니다.
                 </p>
               </section>
               <section aria-label="아파트 표기 팁" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">
-                  아파트 거래 시 주의: "34평" vs "84㎡" 차이
-                </h2>
-                <p className="mb-4 text-text-secondary">
-                  부동산 거래 시 가장 혼동하기 쉬운 부분이 "평"과 "제곱미터"의 표기 차이입니다. 예를
-                  들어 건설사 광고에서는 "34평 아파트"라고 하지만, 실제 등기부등본이나 공시가격은
-                  "공급면적 84㎡"로 표기됩니다.
-                </p>
-                <p className="mb-4 text-text-secondary">
-                  이 차이는 단순한 단위 변환이 아니라, <strong>기준이 다르기 때문</strong>입니다:
-                </p>
-                <ul className="mb-4 list-disc space-y-2 pl-5 text-text-secondary">
-                  <li>
-                    <strong>건설사 "34평"</strong>: 분양 기준 공급면적을 대략적인 평수로 표현한 것.
-                    실제로는 84~86㎡ 수준일 수 있음.
-                  </li>
-                  <li>
-                    <strong>정부 "84㎡"</strong>: 공식 등기와 공시가격에 기재되는 정확한 공급면적.
-                    양도세, 취득세, 재산세 계산의 기준.
-                  </li>
-                  <li>
-                    <strong>계약서</strong>: 보통 "공급면적 84.56㎡(약 25.6평)"이라고 양쪽 단위를
-                    모두 기재합니다.
-                  </li>
+                <h2 className="mb-4 text-2xl font-semibold">광고의 평형과 계약서 면적 비교하기</h2>
+                <ul className="list-disc space-y-2 pl-5 text-text-secondary">
+                  <li>계약서나 매물 자료에서 전용·공급·대지 중 어떤 면적인지 확인하세요.</li>
+                  <li>같은 면적 종류의 수치를 평 또는 ㎡로 맞추어 비교하세요.</li>
+                  <li>광고의 ‘34평형’만으로 전용면적이나 공급면적을 확정하지 마세요.</li>
+                  <li>발코니·서비스 면적은 문서에서 별도로 어떻게 표시하는지 확인하세요.</li>
                 </ul>
-                <p className="mb-4 text-text-secondary">
-                  <strong>거래 팁</strong>: 아파트 계약 전에 계약서의 "공급면적(㎡)"을 정확히
-                  확인하고, 이것이 광고 "평수"와 실제로 맞는지 재확인하세요. 1평 차이도 거래액에 몇
-                  백만원의 영향을 미칠 수 있습니다.
-                </p>
               </section>
               <section aria-label="주요 평수 대조표" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">주요 평수와 제곱미터 대조표</h2>
+                <h2 className="mb-4 text-2xl font-semibold">같은 면적의 평·제곱미터 대조표</h2>
                 <p className="mb-4 text-sm text-text-tertiary">
-                  한국 아파트 분양에서 자주 사용되는 평수별 공급면적 대조표입니다.
+                  아래 값은 단위 환산 결과입니다. 전용면적 비율이나 침실 수를 나타내지 않습니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
                     <thead>
                       <tr className="border-b border-border-base">
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
-                          분양 표기 (평)
-                        </th>
+                        <th className="px-3 py-2 text-left font-semibold text-text-primary">평</th>
                         <th className="px-3 py-2 text-right font-semibold text-text-primary">
-                          공급면적 (㎡)
-                        </th>
-                        <th className="px-3 py-2 text-right font-semibold text-text-primary">
-                          전용면적 (대략)
-                        </th>
-                        <th className="px-3 py-2 text-left font-semibold text-text-primary">
-                          비고
+                          같은 면적의 제곱미터 (㎡)
                         </th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 text-text-secondary">12평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          39.67㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 28㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">원룸·오피스텔</td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 text-text-secondary">18평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          59.50㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 42㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">1침실</td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 text-text-secondary">24평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          79.34㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 56㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">2침실 소형</td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 text-text-secondary">32평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          105.78㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 75㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">2-3침실 표준</td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 text-text-secondary">34평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          112.40㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 79㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">3침실 표준</td>
-                      </tr>
-                      <tr className="border-border-base/50 border-b">
-                        <td className="px-3 py-2 text-text-secondary">45평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          148.76㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 105㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">3-4침실 대형</td>
-                      </tr>
-                      <tr>
-                        <td className="px-3 py-2 text-text-secondary">60평</td>
-                        <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                          198.35㎡
-                        </td>
-                        <td className="px-3 py-2 text-right tabular-nums text-text-secondary">
-                          약 140㎡
-                        </td>
-                        <td className="px-3 py-2 text-text-tertiary">4침실 초대형</td>
-                      </tr>
+                      {[
+                        ['12평', '39.67㎡'],
+                        ['18평', '59.50㎡'],
+                        ['24평', '79.34㎡'],
+                        ['32평', '105.79㎡'],
+                        ['34평', '112.40㎡'],
+                        ['45평', '148.76㎡'],
+                        ['60평', '198.35㎡'],
+                      ].map(([pyeong, sqm]) => (
+                        <tr key={pyeong} className="border-b border-border-base/50">
+                          <td className="px-3 py-2 text-text-secondary">{pyeong}</td>
+                          <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
+                            약 {sqm}
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
-                <p className="mt-4 text-caption text-text-tertiary">
-                  <strong>주의</strong>: 실제 아파트의 공급면적은 단지와 구조에 따라 다소 차이가 날
-                  수 있습니다. 정확한 면적은 항상 계약서와 등기부등본을 확인하세요.
-                </p>
               </section>
               <section aria-label="주의사항" className="card">
-                <h2 className="mb-3 text-2xl font-semibold">평수환산 시 주의사항</h2>
+                <h2 className="mb-3 text-2xl font-semibold">평수 환산 시 주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>발코니 확장 영향</strong>: 발코니를 확장한 경우 전용면적이 증가하므로
-                    기본 전용면적과 다릅니다. 계약서에서 확장 전후 면적을 확인하세요.
+                    <strong>면적 기준</strong>: 전용면적과 공급면적은 서로 다른 범위입니다. 같은
+                    단위로 바꾸어도 두 면적이 같아지는 것은 아닙니다.
                   </li>
                   <li>
-                    <strong>서비스 면적</strong>: 일부 아파트는 "서비스 면적"(발코니 등 조건부
-                    면적)을 별도로 표기하기도 합니다. 이는 면적 계산에 포함되지 않습니다.
+                    <strong>발코니 확장</strong>: 확장 여부만으로 계약서의 전용면적이 늘었다고
+                    판단하지 마세요. 계약서에 적힌 면적 종류와 별도 면적 표시를 확인하세요.
                   </li>
                   <li>
-                    <strong>건물 구조에 따른 차이</strong>: 같은 34평이라도 건설사, 지역, 연도에
-                    따라 실제 공급면적(㎡)은 달를 수 있습니다.
+                    <strong>소수점 표시</strong>: 환산값을 반올림해 표시하면 마지막 자릿수에
+                    차이가 생길 수 있습니다. 정확한 원래 면적은 해당 문서에서 확인하세요.
                   </li>
                   <li>
-                    <strong>정부 공식 기준</strong>: 세금 계산, 등기, 공시가격은 모두 제곱미터(㎡)
-                    기준입니다. 평은 참고용일 뿐 법적 기준이 아닙니다.
-                  </li>
-                  <li>
-                    <strong>해외 아파트</strong>: 미국(평방피트), 일본(제곱미터), 유럽(제곱미터) 등
-                    국가마다 단위가 다르므로 별도 변환이 필요합니다.
-                  </li>
-                  <li>
-                    본 계산기는 참고용이며, 실제 부동산 거래나 세금 계산 시에는 공식 문서(계약서,
-                    등기부등본, 공시가격)를 반드시 확인하세요.
+                    본 계산기는 단위 환산 참고용입니다. 실제 거래나 세금 계산에 필요한 면적의
+                    종류와 수치는 계약서 등 해당 자료에서 별도로 확인하세요.
                   </li>
                 </ul>
               </section>
@@ -484,10 +332,10 @@ export default function AreaConversionPage() {
                       평에서 제곱미터로 변환
                     </h3>
                     <p className="mb-3 rounded-lg bg-bg-card p-3 font-mono text-sm text-text-primary">
-                      제곱미터 (㎡) = 평 × 3.3058
+                      제곱미터 (㎡) = 평 × (400 / 121)
                     </p>
                     <p className="text-sm text-text-secondary">
-                      <strong>예시</strong>: 34평 × 3.3058 = 112.40㎡
+                      <strong>예시</strong>: 34평 × (400 / 121) ≒ 112.40㎡
                     </p>
                   </div>
                   <div>
@@ -498,16 +346,16 @@ export default function AreaConversionPage() {
                       평 = 제곱미터 (㎡) × 0.3025
                     </p>
                     <p className="text-sm text-text-secondary">
-                      <strong>예시</strong>: 112.40㎡ × 0.3025 = 34.00평
+                      <strong>예시</strong>: 84㎡ × 0.3025 = 25.41평
                     </p>
                   </div>
                   <div>
-                    <h3 className="mb-2 text-lg font-medium text-text-primary">정확한 계수</h3>
+                    <h3 className="mb-2 text-lg font-medium text-text-primary">계산기에 사용하는 계수</h3>
                     <p className="text-sm text-text-secondary">
-                      <strong>1평 = 400/121 m² = 3.3057851239669...㎡</strong>
+                      <strong>1평 = 400/121㎡ ≒ 3.3057851239669…㎡</strong>
                     </p>
                     <p className="text-caption text-text-tertiary">
-                      출처: 계량법 시행령 §9. 한국은 1평을 정확히 400/121㎡로 규정합니다.
+                      관습 단위인 평을 환산하기 위해 이 계산기에 적용한 계수입니다.
                     </p>
                   </div>
                 </div>
@@ -523,34 +371,23 @@ export default function AreaConversionPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 계량법 §1 · 계량법 시행령 §9 · 건축법 시행령 §2
-                  (바닥면적)
+                  <strong>단위 안내</strong>: 국가기술표준원은 제곱미터(㎡)를 법정단위로,
+                  평을 비법정단위로 안내하며 1평의 환산값을 약 3.3058㎡로 제시합니다.
                 </p>
                 <p className="mb-2">
                   <strong>공식 출처</strong>:{' '}
                   <a
-                    href="https://www.law.go.kr"
+                    href="https://www.kats.go.kr/content.do?cmsid=78"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"
                   >
-                    국가법령정보센터
-                  </a>{' '}
-                  법령 검색,{' '}
-                  <a
-                    href="https://kostat.go.kr"
-                    target="_blank"
-                    rel="noopener noreferrer nofollow"
-                    className="text-primary-600 underline dark:text-primary-500"
-                  >
-                    통계청
-                  </a>{' '}
-                  표준 단위 정보.
+                    국가기술표준원 법정단위 FAQ
+                  </a>
                 </p>
                 <p>
-                  본 계산기의 결과는 참고용이며 법적 효력이 없습니다. 실제 부동산 거래, 세금 계산,
-                  등기 시에는 정부 공식 문서(계약서, 등기부등본, 공시가격)를 반드시 확인하시기
-                  바랍니다.
+                  계산기에 적용한 400/121 계수 설명과 법정단위 안내는 구분됩니다. 결과는 단위
+                  환산 참고값이며, 계약서의 면적 종류를 바꾸거나 법적 면적을 확정하지 않습니다.
                 </p>
               </section>
             </CalculatorPageContent>

@@ -30,7 +30,7 @@ const COMMON_CONVERSIONS = [
   { pyeong: 12, sqm: 39.67 },
   { pyeong: 18, sqm: 59.5 },
   { pyeong: 24, sqm: 79.34 },
-  { pyeong: 32, sqm: 105.78 },
+  { pyeong: 32, sqm: 105.79 },
   { pyeong: 34, sqm: 112.4 },
   { pyeong: 45, sqm: 148.76 },
   { pyeong: 60, sqm: 198.35 },
@@ -154,7 +154,7 @@ export function AreaConverter() {
           {/* 공식 안내 */}
           <div className="mt-4 rounded-lg border border-border-base bg-bg-base p-3">
             <p className="text-caption text-text-tertiary">
-              <strong>계량법 기준:</strong> 1평 = {SQM_PER_PYEONG.toFixed(4)}㎡, 1㎡ ={' '}
+              <strong>환산 기준:</strong> 1평 ≈ {SQM_PER_PYEONG.toFixed(4)}㎡, 1㎡ ={' '}
               {PYEONG_PER_SQM.toFixed(4)}평
             </p>
           </div>

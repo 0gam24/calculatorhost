@@ -349,7 +349,7 @@ export default function PensionAccountTransfer2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">연금 수령 시 세금과 분리과세 기준.</p>
                   </Link>
                   <Link
-                    href="/category/investment/"
+                    href="/guide/category/investment/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">투자·자산 가이드 모음</div>

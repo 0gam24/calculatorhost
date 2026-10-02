@@ -334,7 +334,7 @@ export default function YouthIsa2026ReformPage() {
                     <p className="mt-1 text-sm text-text-secondary">일반 계좌 이자·배당 원천징수율을 확인하세요.</p>
                   </Link>
                   <Link
-                    href="/category/investment/"
+                    href="/guide/category/investment/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">모든 투자 가이드</div>
