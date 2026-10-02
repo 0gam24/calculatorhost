@@ -59,22 +59,22 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '자동차세는 언제 납부하나요?',
     answer:
-      '자동차세는 통상 6월(상반기)과 12월(하반기) 두 번에 나누어 납부합니다. 단, 1월에 일괄 납부하면 약 5% 연납 할인을 받을 수 있습니다.',
+      '자동차세는 통상 6월(상반기)과 12월(하반기)에 나누어 납부합니다. 이 계산기는 각 반기의 법정 차령을 반영한 예상액을 표시합니다. 2026년 1월 연납은 2~12월분에 법정 이자율 5%를 적용해 공제하며, 연세액 전체의 5% 공제가 아닙니다.',
   },
   {
     question: '연납 할인율은 얼마인가요?',
     answer:
-      '2026년 기준 자동차세 연납(1월 일괄 납부) 할인율은 약 5%입니다 (지방세법 시행령 §125). 정확한 할인액은 선납 일수에 따라 비례합니다. 본 계산기에서 연납 할인 옵션을 체크하면 실시간 확인 가능합니다.',
+      '지방세법 시행령 제125조제6항의 법정 이자율은 5%입니다. 2026년 1월 연납에서는 2~12월의 334일분에 적용하므로 334/365 × 5%, 연세액 대비 약 4.58%에 해당합니다. 최종 납부액은 자동차세와 지방교육세 각각의 10원 미만 끝수 처리를 반영하므로 실제 감소액은 고지서에서 확인하세요.',
   },
   {
     question: '노후차·경차는 감면되나요?',
     answer:
-      '차령경감(노후차 감면)을 자동 반영합니다. 3년 차부터 연 5%씩 경감되어 최대 50% 한도입니다. 경차(1000cc 이하)는 80원/cc로 낮은 세율이 적용됩니다.',
+      '입력한 각 반기의 법정 차령에 따라 경감합니다. 차령 0~2년은 경감이 없고, 3년 이상은 5% × (차령 - 2), 최대 50%입니다. 하반기 차령이 1년 높으면 해당 옵션을 선택하세요. 기산일과 법정 차령은 고지서 등에서 확인해야 하며 등록일로 자동 추정하지 않습니다. 1000cc 이하에는 80원/cc 세율이 적용됩니다.',
   },
   {
     question: '영업용·승합·화물 차량은 어떻게 하나요?',
     answer:
-      '본 계산기는 비영업용 승용차만 지원합니다. 영업용 승용, 승합, 화물 차량은 국세청 자동차세 계산기(hometax.go.kr)나 세무 전문가와 상담이 필요합니다.',
+      '본 계산기는 배기량에 따라 과세하는 비영업용 승용차의 일반 조건만 지원합니다. 영업용·승합·화물 차량이나 전기차 정액 과세는 계산하지 않으므로 관할 지방자치단체와 고지서에서 확인하세요.',
   },
   {
     question: '자동차세와 취득세 차이는?',
@@ -94,7 +94,7 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '2000cc 자동차세는 얼마인가요?',
     answer:
-      '비영업용 승용차 2000cc 의 2026년 연간 자동차세는 본세 약 400,000원 (200원/cc × 2,000cc) 입니다. 지방교육세 30%(120,000원) 가산하여 총 약 520,000원입니다. 1월 연납 시 5% 한도 내 할인이 적용됩니다 (정확한 할인액은 선납 일수에 비례).',
+      '비영업용 승용차 2000cc에 차령경감·일할 계산·별도 감면을 적용하지 않으면 연간 본세 400,000원(200원/cc × 2,000cc), 지방교육세 120,000원으로 합계 520,000원입니다. 2026년 1월 연납은 2~12월의 334/365에 법정 이자율 5%를 적용한 약 4.58% 공제와 최종 끝수 처리를 반영합니다.',
   },
   {
     question: '2400cc 자동차세는 얼마인가요?',
@@ -104,7 +104,7 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: '3000cc 자동차세는 얼마인가요?',
     answer:
-      '비영업용 승용차 3000cc 의 2026년 연간 자동차세는 본세 약 600,000원 (200원/cc × 3,000cc), 지방교육세 포함 총 약 780,000원입니다. 1월 연납 할인 적용 시 약 730,000원입니다.',
+      '비영업용 승용차 3000cc에 차령경감·일할 계산·별도 감면을 적용하지 않으면 연간 본세 600,000원(200원/cc × 3,000cc), 지방교육세 포함 총 780,000원입니다. 1월 연납액은 2~12월분의 5% 공제와 최종 끝수 처리를 반영하여 계산합니다. 연세액 전체의 5%를 빼는 계산은 아닙니다.',
   },
   {
     question: '배기량별 자동차세 cc당 세율은?',
@@ -135,12 +135,12 @@ export default function VehicleTaxPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: '자동차세 계산기',
     description:
-      '배기량과 차령으로 자동차세를 즉시 계산. 지방세법 기준 자동차세·지방교육세·차령경감·연납 할인을 반영한 정확한 세액 도구',
+      '배기량과 각 반기의 법정 차령으로 비영업용 승용차 일반 조건의 2026년 자동차세·지방교육세와 1월 연납 예상액을 계산합니다.',
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
     name: '자동차세 계산기 2026',
-    description: '배기량과 차령으로 자동차세를 정확히 계산하세요',
+    description: '배기량과 각 반기의 법정 차령으로 자동차세 예상액을 확인하세요',
     url: URL,
     datePublished: '2026-04-24',
     dateModified: '2026-06-18',
@@ -148,11 +148,14 @@ export default function VehicleTaxPage() {
   });
   const howToLd = buildHowToJsonLd({
     name: '자동차세 계산기 사용 방법',
-    description: '배기량과 차령(경과년수)을 입력하여 연간 자동차세를 계산하는 단계별 가이드',
+    description: '배기량과 각 반기의 법정 차령을 입력하여 2026년 자동차세 예상액을 확인하는 방법',
     steps: [
       { name: '배기량 입력', text: '자동차의 배기량(cc)을 입력합니다(예: 2000cc).' },
-      { name: '차량 종류 선택', text: '일반 승용차·경차·특수 중 차량 종류를 선택합니다.' },
-      { name: '구매연도 입력', text: '자동차 구매(등록) 연도를 입력하여 차령을 계산합니다.' },
+      { name: '지원 조건 확인', text: '배기량으로 과세하는 비영업용 승용차의 일반 조건인지 확인합니다.' },
+      {
+        name: '반기 차령 입력',
+        text: '고지서 등에서 확인한 상반기 법정 차령을 입력하고, 하반기 차령이 1년 높으면 해당 옵션을 선택합니다. 등록일로 자동 추정하지 않습니다.',
+      },
       {
         name: '납부 방식 선택',
         text: '반기별 납부(6월, 12월) 또는 연납 할인(1월 일괄) 중 선택합니다.',
@@ -244,17 +247,17 @@ export default function VehicleTaxPage() {
                     ['1000cc 이하', '80원/cc'],
                     ['1000~1600cc', '140원/cc'],
                     ['1600cc 초과', '200원/cc'],
-                    ['차령경감', '3년 차부터 연 5% (최대 50%)'],
+                    ['차령경감', '각 반기 차령 3년 이상: 5% × (차령 - 2), 최대 50%'],
                     ['지방교육세', '자동차세의 30%'],
-                    ['연납할인', '1월 납부 시 5%'],
+                    ['1월 연납', '2026년 334/365 × 5% ≒ 4.58% 공제'],
                   ],
                 }}
                 tldr={[
-                  '신차 1998cc는 기본세 약 40만 원',
-                  '5년차 1998cc는 경감으로 약 37만 원',
-                  '지방교육세 포함 연간 약 48만 원',
-                  '1월 일괄 납부 시 약 45만 원',
-                  '6월·12월 반기 납부도 가능',
+                  '배기량 과세 비영업용 승용차의 일반 조건만 지원',
+                  '상·하반기 법정 차령을 각각 확인해 경감 반영',
+                  '차령 0~2년 경감 없음·최대 경감률 50%',
+                  '2026년 1월 연납 실효 공제율 약 4.58%',
+                  '연간 참고액과 반기 합계는 끝수 처리로 차이 가능',
                 ]}
               />
               <RateBarChart
@@ -416,7 +419,7 @@ export default function VehicleTaxPage() {
                 <p className="text-sm text-text-secondary">
                   2400cc 예시: 2,400 × 200원 = 본세 480,000원, 본세 × 30% = 지방교육세
                   144,000원으로 합계 624,000원입니다. 배기량별 표준세율과 차령경감은{' '}
-                  <a href="https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1021848893" target="_blank" rel="noopener noreferrer" className="underline">지방세법 제127조</a>, 지방교육세는{' '}
+                  <a href="https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1021848893" target="_blank" rel="noopener noreferrer" className="underline">지방세법 제127·128조</a>, 지방교육세는{' '}
                   <a href="https://law.go.kr/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1026499929" target="_blank" rel="noopener noreferrer" className="underline">제151조</a>를 따릅니다. 차령은{' '}
                   <a href="https://law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lspttninfSeq=120290" target="_blank" rel="noopener noreferrer" className="underline">시행령 제122조</a>에 따라 기산일과 과세 반기로 확인합니다.
                 </p>
@@ -431,8 +434,8 @@ export default function VehicleTaxPage() {
                       차이로 약 9만 원 차이
                     </li>
                     <li>
-                      • 연납 신청(1월) 시 약 5% 할인 (지방세법 시행령 §125). 정확한 할인액은 선납
-                      일수에 비례합니다.
+                      • 2026년 1월 연납은 2~12월분에 5%를 적용해 연세액 대비 약 4.58%를 공제합니다.
+                      최종 납부액은 각 세목의 10원 미만 끝수 처리를 반영합니다.
                     </li>
                   </ul>
                 </div>
@@ -524,7 +527,8 @@ export default function VehicleTaxPage() {
               <section className="space-y-4" aria-label="차령 경감률">
                 <h2 className="text-2xl font-bold text-text-primary">차령경감률 (노후차 할인)</h2>
                 <p className="text-sm text-text-secondary">
-                  3년 차부터 연 5%씩 경감, 최대 50% (지방세법 §127①제2호)
+                  각 반기의 법정 차령이 3년 이상이면 5% × (차령 - 2), 최대 50%입니다
+                  (지방세법 §127①제2호). 0~2년은 경감하지 않습니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse text-sm">
@@ -566,10 +570,24 @@ export default function VehicleTaxPage() {
               <section className="space-y-4" aria-label="연납 할인">
                 <h2 className="text-2xl font-bold text-text-primary">연납 할인 (1월 일괄 납부)</h2>
                 <p className="leading-relaxed text-text-secondary">
-                  자동차세는 6월과 12월 두 차례로 납부하는 것이 기본이지만, 1월에 연간 전액을 일괄
-                  납부하면 약 5% 할인을 받을 수 있습니다 (지방세법 시행령 §125). 정확한 공제액은
-                  선납 일수에 따라 비례합니다. 본 계산기에서 연납 할인 옵션을 체크하면 실시간 확인
-                  가능합니다.
+                  법정 이자율 5%는 연세액 전체에 적용하는 할인율이 아닙니다. 2026년 1월 연납은
+                  2~12월의 334일분에 적용하므로 334/365 × 5%, 연세액 대비 약 4.58%를 공제합니다.
+                  공제액부터 끝수를 버리는 것이 아니라 공제 후 자동차세와 지방교육세 각각의
+                  최종 납부액에서 10원 미만 끝수를 처리합니다. 연간 참고액과 반기별 납부액 합계도
+                  끝수 처리 때문에 차이가 날 수 있습니다. 근거는{' '}
+                  <a
+                    href="https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0125&lsiSeq=290815&urlMode=lsScJoRltInfoR"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline"
+                  >
+                    지방세법 시행령 제125조제6항
+                  </a>
+                  입니다.
+                </p>
+                <p className="text-sm text-text-secondary">
+                  연 본세 10만 원 이하 차량의 정기 일괄납부 특례(추가 공제·고지 일정)는 반영하지
+                  않습니다. 표시액은 예상액이며 실제 고지액·납부기한·횟수는 고지서에서 확인하세요.
                 </p>
               </section>
               <section
@@ -580,20 +598,25 @@ export default function VehicleTaxPage() {
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
                     • <strong>영업용·승합·화물 차량</strong>: 본 계산기는 비영업용 승용차만
-                    지원합니다. 다른 용도 차량은 세율이 상이하므로 국세청 자동차세 계산기를
-                    이용하세요.
+                    지원합니다. 다른 용도 차량은 세율이 다르므로 관할 지방자치단체에서 확인하세요.
                   </li>
                   <li>
                     • <strong>전기차·하이브리드</strong>: 친환경 차량에는 별도의 감면 제도가
-                    있습니다. 정확한 감면율은 국세청 공식 고시나 지자체 공지를 확인하세요.
+                    있을 수 있습니다. 전기차 정액 과세와 별도 감면은 이 화면에서 계산하지 않으므로
+                    고지서와 관할 지방자치단체에서 확인하세요.
                   </li>
                   <li>
                     • <strong>특수 용도</strong>: 영농용·임업용·비상 운송용 등 특수 용도 차량도 감면
                     대상이 될 수 있습니다.
                   </li>
                   <li>
-                    • <strong>연 할인율 변경</strong>: 연납 할인율은 매년 국고예규에 따라 변동될 수
-                    있습니다.
+                    • <strong>지원 범위</strong>: 신규 등록·말소·이전의 일할 계산, 별도 감면과 조례,
+                    영업용·전기차 정액 과세 특례는 지원하지 않습니다. 법정 기산일이나 등록일로
+                    차령을 자동 추정하지 않습니다.
+                  </li>
+                  <li>
+                    • 연 본세 10만 원 이하 정기 일괄납부 특례의 추가 공제·고지 일정은 반영하지
+                    않습니다. 실제 고지액·납부기한·횟수는 고지서에서 확인하세요.
                   </li>
                 </ul>
               </section>
@@ -604,15 +627,15 @@ export default function VehicleTaxPage() {
                 <h2 className="text-2xl font-bold text-text-primary">자동차세 절세 팁</h2>
                 <ul className="space-y-3 text-text-secondary">
                   <li>
-                    <strong>1. 연납 활용</strong>: 1월 일괄 납부로 5% 한도 내 공제. 정확한 할인액은
-                    선납 일수에 비례합니다.
+                    <strong>1. 연납 확인</strong>: 2026년 1월 연납은 334/365 × 5%, 약 4.58%
+                    공제와 최종 납부액의 끝수 처리를 반영합니다.
                   </li>
                   <li>
                     <strong>2. 차령경감 확인</strong>: 3년 차 이상 자동으로 경감되지만, 정기적으로
                     세액 확인
                   </li>
                   <li>
-                    <strong>3. 친환경 차량 전환</strong>: 전기차·수소차·하이브리드는 5년간 감면 대상
+                    <strong>3. 별도 감면 확인</strong>: 적용 대상과 요건은 관할 지방자치단체에서 확인
                   </li>
                   <li>
                     <strong>4. 배기량 고려</strong>: 신차 구매 시 배기량 선택 시 향후 자동차세 부담
@@ -632,8 +655,8 @@ export default function VehicleTaxPage() {
               >
                 <h3 className="text-sm font-bold text-text-primary">면책조항</h3>
                 <p className="text-xs leading-relaxed text-text-secondary">
-                  본 계산기는 참고 목적으로만 제공되며, 정확한 자동차세는 지자체 및 국세청 공식
-                  시스템을 통해 확인해야 합니다. 세율 변경, 개인별 감면 사항, 영업용·특수 용도 차량
+                  본 계산기는 참고 목적으로만 제공되며, 실제 자동차세는 고지서와 관할
+                  지방자치단체에서 확인해야 합니다. 세율 변경, 개인별 감면 사항, 영업용·특수 용도 차량
                   등에 따라 실제 납부액이 상이할 수 있습니다.
                 </p>
                 <p className="mt-2 text-xs text-text-secondary">

@@ -4,7 +4,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
-import { calculateVehicleTax } from '@/lib/tax/vehicle';
+import { calculateVehicleTax, getVehiclePaymentCalendar } from '@/lib/tax/vehicle';
 
 describe('자동차세 계산 (vehicle.ts)', () => {
   it.each([
@@ -133,26 +133,17 @@ describe('자동차세 계산 (vehicle.ts)', () => {
       expect(r.semiAnnualPayment).toBe(Math.floor(r.totalAnnual / 2 / 10) * 10); // 259,740원
     });
 
-    it('1998cc 신차 → 연납 할인 5% 기간 비례식 적용 (1월 신청, 약 4.58%)', () => {
-      // 지방세법 시행령 §125: 공제율 5%, 기간 비례 적용 (선납일수 / 365)
-      // 1월 신청 기준: 1월 중순 신청 → 1월 17일 ~ 12월 31일 = 약 349일
-      // 실효 공제율 ≈ (349/365) × 5% ≈ 4.78% (보수: 351/365 = 4.58%)
-      // 표준: 351일 / 365일 × 5% = 4.808% → 4.58% 범위 내
+    it('1998cc 신차 → 2026년 1월 연납은 2/1부터 334일을 적용', () => {
+      // §128③, 시행령 §125⑥: 334/365 × 5%. 중간 공제 절사 없이 최종 세목별 절사.
       const r = calculateVehicleTax({
-        usage: 'passengerNonBusiness',
-        engineCc: 1998,
-        vehicleAgeYears: 0,
+        usage: 'passengerNonBusiness', engineCc: 1998, vehicleAgeYears: 0,
         includeAnnualDiscount: true,
       });
-      // totalAnnual = 519,480원
-      // 선납일수 351일 / 365일 = 0.9616..., 공제율 5%
-      // 할인 = 519,480 × (351/365) × 0.05 = 519,480 × 0.04808 = 24,976... → 10원 절사 = 24,970원
-      // 검증: 경향신문 2025-01-12 "1월 연납 시 약 4.58% 공제" 기준
-      expect(r.annualPaymentDiscount).toBeGreaterThan(0);
-      expect(r.annualPaymentDiscount).toBeLessThan(30000); // 5% 이하, 기간 비례
-      expect(r.annualPaymentDiscount % 10).toBe(0); // 10원 단위 절사
-      // 대략 값: 24,970 ± 500
-      expect(r.annualPaymentDiscount).toBeCloseTo(24970, -2);
+      // 본세399600×6966/7300=381317.260... →381310;
+      // 교육세114395.178... →114390. 합계495700, 기준519480 대비23780원 감소.
+      expect(r.finalAnnualPayment).toBe(495_700);
+      expect(r.paymentDueNow).toBe(495_700);
+      expect(r.annualPaymentDiscount).toBe(23_780);
     });
   });
 
@@ -247,9 +238,8 @@ describe('자동차세 계산 (vehicle.ts)', () => {
         includeAnnualDiscount: false,
       });
       expect(r.reductionRate).toBeCloseTo(0.15, 2);
-      const expectedReduction = Math.floor((399600 * 0.15) / 10) * 10;
-      expect(r.reductionAmount).toBe(expectedReduction);
-      expect(r.vehicleTaxAfterReduction).toBe(399600 - expectedReduction);
+      expect(r.reductionAmount).toBe(59_940);
+      expect(r.vehicleTaxAfterReduction).toBe(339_660);
     });
 
     it('지방교육세 계산 (10원 절사)', () => {
@@ -384,18 +374,15 @@ describe('자동차세 계산 (vehicle.ts)', () => {
       expect(r.totalAnnual % 10).toBe(0); // 10원 단위
     });
 
-    it('연납 할인 10원 절사 (기간 비례 5% 적용)', () => {
+    it('연납 후 최종 세목별 끝수 처리를 반영한 기준액 대비 감소액', () => {
       const r = calculateVehicleTax({
         usage: 'passengerNonBusiness',
         engineCc: 1998,
         vehicleAgeYears: 0,
         includeAnnualDiscount: true,
       });
-      // totalAnnual = 519,480
-      // 할인 = 519,480 × (선납일수/365) × 0.05 (기간 비례)
-      expect(r.annualPaymentDiscount % 10).toBe(0); // 10원 단위
-      // 5% 전액이 아닌 기간 비례이므로 현저히 낮음
-      expect(r.annualPaymentDiscount).toBeLessThan(26000); // 519480 × 0.05 = 25974보다 작거나 같음
+      expect(r.annualPaymentDiscount).toBe(23_780);
+      expect(r.finalAnnualPayment % 10).toBe(0);
     });
   });
 
@@ -429,4 +416,173 @@ describe('자동차세 계산 (vehicle.ts)', () => {
       expect(r1.semiAnnualPayment).toBe(r2.semiAnnualPayment);
     });
   });
+  describe('2026년 법정 연납 기준과 반기별 차령 회귀', () => {
+    // 지방세법 §128③: Jan334/365·Mar275/365, June제2기전체·Sept92/184.
+    // 시행령 §125⑥ 5%. 기대값은 아래 정수 금액을 독립 검산한 고정 fixture.
+    it.each([
+      [1, 43_420, 905_580],
+      [3, 35_750, 913_250],
+    ])('3650cc 신차 %i월: 감소 %i원, 납부 %i원', (month, discount, payment) => {
+      // A=3650×200=730000, 교육219000. Jan본세33400+교육10020 공제;
+      // Mar본세27500+교육8250 공제. 모든 결과 끝수가 정확히 10원 단위이다.
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 3650, vehicleAgeYears: 0,
+        includeAnnualDiscount: true, annualPaymentMonthOfApplication: month, taxYear: 2026,
+      });
+      expect(r.totalAnnual).toBe(949_000);
+      expect(r.annualPaymentDiscount).toBe(discount);
+      expect(r.finalAnnualPayment).toBe(payment);
+      expect(r.paymentDueNow).toBe(payment);
+      expect(r.warnings).toEqual([]);
+    });
+
+    it.each([
+      [6, 15_600, 296_400, 608_400],
+      [9, 7_800, 304_200, 616_200],
+    ])('2400cc %i월: 감소 %i원, 제2기 선납 %i원, 연합산 %i원', (month, discount, due, annual) => {
+      // 제2기 본세240000+교육72000=312000. June5%=15600, Sept92/184×5%=7800.
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: 0,
+        includeAnnualDiscount: true, annualPaymentMonthOfApplication: month,
+      });
+      expect(r.totalAnnual).toBe(624_000);
+      expect(r.firstHalfPayment).toBe(312_000);
+      expect(r.secondHalfPayment).toBe(312_000);
+      expect(r.paymentDueNow).toBe(due);
+      expect(r.finalAnnualPayment).toBe(annual);
+      expect(r.annualPaymentDiscount).toBe(discount);
+    });
+
+    it('2400cc 상반기 법정차령2 / 하반기3: 두 반기를 별도 경감', () => {
+      // §127①2: H1본세240000, H2본세228000; 교육72000+68400. 합계608400.
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: 2,
+        vehicleAgeYearsSecondHalf: 3, includeAnnualDiscount: false,
+      });
+      expect(r.reductionRate).toBe(0);
+      expect(r.reductionRateSecondHalf).toBe(0.05);
+      expect(r.reductionAmount).toBe(12_000);
+      expect(r.vehicleTaxAfterReduction).toBe(468_000);
+      expect(r.localEducationTax).toBe(140_400);
+      expect(r.totalAnnual).toBe(608_400);
+      expect(r.firstHalfPayment).toBe(312_000);
+      expect(r.secondHalfPayment).toBe(296_400);
+      expect(r.semiAnnualPayment).toBe(312_000);
+      expect(r.paymentDueNow).toBe(312_000);
+      expect(r.finalAnnualPayment).toBe(608_400);
+    });
+
+    it('차령12년 경감 상한은 다음 반기13년에도 50%', () => {
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: 12,
+        vehicleAgeYearsSecondHalf: 13, includeAnnualDiscount: false,
+      });
+      expect(r.reductionRateSecondHalf).toBe(0.5);
+      expect(r.firstHalfPayment).toBe(156_000);
+      expect(r.secondHalfPayment).toBe(156_000);
+      expect(r.totalAnnual).toBe(312_000);
+    });
+
+    it('교육세 과표는 자동차세 끝수 처리 전 금액이며 중간 경감액을 절사하지 않음', () => {
+      // 1098×140=153720, 5%경감 후146034. 본세146030;
+      // 교육세146034×.3=43810.2 →43810 (146030×.3을 다시 절사한43800은 잘못).
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 1098, vehicleAgeYears: 3,
+        includeAnnualDiscount: false,
+      });
+      expect(r.reductionAmount).toBe(7_686);
+      expect(r.vehicleTaxAfterReduction).toBe(146_030);
+      expect(r.localEducationTax).toBe(43_810);
+      expect(r.totalAnnual).toBe(189_840);
+      // 반기별 최종 징수 끝수: 본세73017→73010, 교육21905.1→21900. 양반기189820.
+      expect(r.firstHalfPayment).toBe(94_910);
+      expect(r.secondHalfPayment).toBe(94_910);
+      expect(r.finalAnnualPayment).toBe(189_840); // 비연납 연간 참고액 계약
+    });
+
+    it('999cc 차령3년: 경감액 3996원을 중간 10원 절사하지 않음', () => {
+      // 79920×.95=75924; 교육22777.2. 최종 본세75920+교육22770=98690.
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 999, vehicleAgeYears: 3,
+        includeAnnualDiscount: false,
+      });
+      expect(r.reductionAmount).toBe(3_996);
+      expect(r.totalAnnual).toBe(98_690);
+    });
+  });
+
+  describe('지원연도·신청월·반기차령 검증', () => {
+    it.each([2025, 2027, 2024, 0, NaN, Infinity])('미지원 정책연도 %s는 warning과 0원', (taxYear) => {
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: 2,
+        includeAnnualDiscount: true, taxYear,
+      });
+      expect(r.warnings.some((w) => w.includes('2026년'))).toBe(true);
+      expect(r.totalAnnual).toBe(0);
+      expect(r.finalAnnualPayment).toBe(0);
+      expect(r.paymentDueNow).toBe(0);
+      expect(r.firstHalfPayment).toBe(0);
+      expect(r.secondHalfPayment).toBe(0);
+    });
+
+    it.each([0, 2, 12, 1.5, NaN, Infinity])('신청월 %s는 보간·기본값 대체 없이 제한', (month) => {
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: 2,
+        includeAnnualDiscount: true, annualPaymentMonthOfApplication: month,
+      });
+      expect(r.warnings.some((w) => w.includes('신청월'))).toBe(true);
+      expect(r.finalAnnualPayment).toBe(0);
+    });
+
+    it.each([-1, 1, 4, 2.5, NaN, Infinity])('H1차령2에 대해 H2 %s는 지원하지 않음', (age) => {
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: 2,
+        vehicleAgeYearsSecondHalf: age, includeAnnualDiscount: false,
+      });
+      expect(r.warnings.some((w) => w.includes('하반기'))).toBe(true);
+      expect(r.totalAnnual).toBe(0);
+    });
+
+    it.each([NaN, Infinity, 2.5])('유효하지 않은 H1차령 %s도 0원 제한', (age) => {
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400, vehicleAgeYears: age,
+        includeAnnualDiscount: false,
+      });
+      expect(r.warnings.length).toBeGreaterThan(0);
+      expect(r.totalAnnual).toBe(0);
+    });
+
+    it('분수 배기량은 정수형 세액 산식에 통과시키지 않음', () => {
+      const r = calculateVehicleTax({
+        usage: 'passengerNonBusiness', engineCc: 2400.5, vehicleAgeYears: 2,
+        includeAnnualDiscount: false,
+      });
+      expect(r.warnings.some((w) => w.includes('배기량'))).toBe(true);
+      expect(r.totalAnnual).toBe(0);
+    });
+  });
+
+  describe('달력 전용 윤년 검사 (다른 연도 공제율 인증 아님)', () => {
+    it.each([
+      [2026, 1, 334, 365],
+      [2024, 1, 335, 366],
+      [2028, 1, 335, 366],
+      [2026, 3, 275, 365],
+      [2024, 3, 275, 366],
+      [2026, 6, 184, 365],
+      [2026, 9, 92, 365],
+    ])('%i년 %i월: 잔여%i일 / 연%i일', (year, month, remaining, annualDays) => {
+      expect(getVehiclePaymentCalendar(year, month)).toEqual({
+        daysRemaining: remaining, daysInYear: annualDays, daysInSecondHalf: 184,
+      });
+    });
+
+    it.each([NaN, 0, 99, 10000, 2026.5])('잘못된 달력 연도%s는 거부', (year) => {
+      expect(() => getVehiclePaymentCalendar(year, 1)).toThrow('달력 연도');
+    });
+    it('달력 함수도 미지원 신청월2를 보간하지 않음', () => {
+      expect(() => getVehiclePaymentCalendar(2026, 2)).toThrow('신청월');
+    });
+  });
+
 });
