@@ -2,8 +2,9 @@
 
 import Script from 'next/script';
 import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { canLoadAdsOnPath, canLoadNaverTracker } from '@/lib/analytics/public-service-policy';
+import { getSearchReferrerOrigin } from '@/lib/analytics/search-referrer';
 
 interface Props {
   gaId: string;
@@ -23,6 +24,7 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
   const [live, setLive] = useState(false);
   const [gaReady, setGaReady] = useState(false);
   const [naverReady, setNaverReady] = useState(false);
+  const firstPageReferrer = useRef('');
   useEffect(() => {
     setLive(window.location.hostname === 'calculatorhost.com');
   }, []);
@@ -32,9 +34,11 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
     if (!live || !gaReady || !window.gtag) return;
     window.gtag('event', 'page_view', {
       page_location: canonical,
-      page_referrer: '',
+      page_referrer: firstPageReferrer.current,
       page_title: document.title,
     });
+    // A browser landing source is not a new referral on later SPA navigation.
+    firstPageReferrer.current = '';
   }, [live, gaReady, canonical]);
 
   useEffect(() => {
@@ -76,10 +80,11 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
             client.dataLayer!.push(arguments);
           };
           window.gtag('js', new Date());
+          firstPageReferrer.current = getSearchReferrerOrigin(document.referrer);
           window.gtag('config', gaId, {
             send_page_view: false,
             page_location: canonical,
-            page_referrer: '',
+            page_referrer: firstPageReferrer.current,
             anonymize_ip: true,
           });
           setGaReady(true);

@@ -56,6 +56,7 @@ beforeEach(() => {
   );
   controls.pathname = '/calculator/salary/';
   controls.scripts.clear();
+  vi.spyOn(document, 'referrer', 'get').mockReturnValue('');
   history.replaceState({}, '', '/calculator/salary/');
   document.title = '연봉 실수령액 계산기';
   document.head.querySelectorAll('meta[name="robots"]').forEach((node) => node.remove());
@@ -65,10 +66,46 @@ beforeEach(() => {
 afterEach(() => {
   expect(fetch).not.toHaveBeenCalled();
   cleanup();
+  vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
 
 describe('PublicServices Google command queue', () => {
+  it.each([
+    ['https://www.google.com/search?q=private-search#private-fragment', 'https://www.google.com/'],
+    ['https://search.naver.com/search.naver?query=private-search', 'https://search.naver.com/'],
+  ])('preserves only fixed search origin on the landing page: %s', (referrer, origin) => {
+    vi.spyOn(document, 'referrer', 'get').mockReturnValue(referrer);
+    history.replaceState({}, '', '/calculator/salary/?salary=private-input&utm_source=private-utm');
+    const component = render(createElement(PublicServices, props));
+    loadGoogle();
+    const initial = queuedCommands();
+    expect(initial[1]?.[2]).toMatchObject({ page_referrer: origin });
+    expect(initial[2]?.[2]).toMatchObject({ page_referrer: origin });
+    controls.pathname = '/calculator/loan/';
+    component.rerender(createElement(PublicServices, props));
+    controls.pathname = '/calculator/salary/';
+    component.rerender(createElement(PublicServices, props));
+    const commands = queuedCommands();
+    const events = commands.filter((command) => command[0] === 'event');
+    expect(events).toHaveLength(3);
+    expect(
+      events.slice(1).map((command) => (command[2] as { page_referrer: string }).page_referrer),
+    ).toEqual(['', '']);
+    const serialized = JSON.stringify(commands);
+    for (const marker of [
+      'private-search',
+      'private-fragment',
+      'private-input',
+      'private-utm',
+      '?',
+      '#',
+    ]) {
+      expect(serialized).not.toContain(marker);
+    }
+    expect(commands.filter((command) => command[0] === 'config')).toHaveLength(1);
+  });
+
   it('keeps initialization at library onLoad and queues genuine Arguments records', () => {
     render(createElement(PublicServices, props));
     expect(window.gtag).toBeUndefined();
