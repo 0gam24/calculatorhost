@@ -16,7 +16,7 @@ import { useCalculatorState } from '@/components/calculator/useCalculatorState';
  * - 종합소득세·지방소득세·최종 정산액 계산
  */
 
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
@@ -36,6 +36,8 @@ const PRESET_EXPENSE_RATES = [
 ] as const;
 
 export function FreelancerCalculator() {
+  const [revenueResetToken, setRevenueResetToken] = useState(0);
+  const [expenseRateResetToken, setExpenseRateResetToken] = useState(0);
   // 기본 입력
   const [annualRevenue, setAnnualRevenue] = useCalculatorState<number>(
     'freelancer-tax:annualRevenue',
@@ -215,6 +217,7 @@ export function FreelancerCalculator() {
                 id="freelancer-revenue"
                 label="연간 총 수입 (매출)"
                 value={annualRevenue}
+                resetToken={revenueResetToken}
                 onChange={setAnnualRevenue}
                 placeholder="30,000,000"
                 unit="원"
@@ -222,19 +225,28 @@ export function FreelancerCalculator() {
               />
               <div className="mt-3 flex flex-wrap gap-2">
                 <button
-                  onClick={() => setAnnualRevenue(10_000_000)}
+                  onClick={() => {
+                    setAnnualRevenue(10_000_000);
+                    setRevenueResetToken((token) => token + 1);
+                  }}
                   className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
                 >
                   1,000만
                 </button>
                 <button
-                  onClick={() => setAnnualRevenue(50_000_000)}
+                  onClick={() => {
+                    setAnnualRevenue(50_000_000);
+                    setRevenueResetToken((token) => token + 1);
+                  }}
                   className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
                 >
                   5,000만
                 </button>
                 <button
-                  onClick={() => setAnnualRevenue(100_000_000)}
+                  onClick={() => {
+                    setAnnualRevenue(100_000_000);
+                    setRevenueResetToken((token) => token + 1);
+                  }}
                   className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
                 >
                   1억
@@ -267,6 +279,7 @@ export function FreelancerCalculator() {
                   id="freelancer-expense-rate"
                   label="단순경비율 (%)"
                   value={simpleExpenseRatePercent}
+                  resetToken={expenseRateResetToken}
                   onChange={setSimpleExpenseRatePercent}
                   placeholder="64.1"
                   unit="%"
@@ -277,7 +290,10 @@ export function FreelancerCalculator() {
                   {PRESET_EXPENSE_RATES.map(({ label, rate }) => (
                     <button
                       key={rate}
-                      onClick={() => setSimpleExpenseRatePercent(rate)}
+                      onClick={() => {
+                        setSimpleExpenseRatePercent(rate);
+                        setExpenseRateResetToken((token) => token + 1);
+                      }}
                       className="rounded-full border border-border-base bg-bg-card px-3 py-1 text-sm transition-colors hover:bg-primary-500/20"
                     >
                       {label}

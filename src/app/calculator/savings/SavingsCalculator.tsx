@@ -11,7 +11,7 @@ import { useCalculatorState } from '@/components/calculator/useCalculatorState';
  * 공식: src/lib/finance/savings.ts
  */
 
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import dynamic from 'next/dynamic';
 import { FormCard } from '@/components/calculator/Form';
 import { NumberInput } from '@/components/calculator/NumberInput';
@@ -79,6 +79,7 @@ const TAX_TYPE_LABELS: TaxTypeLabel[] = [
 ];
 
 export function SavingsCalculator() {
+  const [termResetToken, setTermResetToken] = useState(0);
   const [monthlyDeposit, setMonthlyDeposit] = useCalculatorState(
     'savings:monthlyDeposit',
     1_000_000,
@@ -224,6 +225,7 @@ export function SavingsCalculator() {
             id="term-months"
             label="가입 기간"
             value={termMonths}
+            resetToken={termResetToken}
             onChange={setTermMonths}
             placeholder="예: 12"
             min={1}
@@ -237,7 +239,10 @@ export function SavingsCalculator() {
               <button
                 key={btn.value}
                 type="button"
-                onClick={() => setTermMonths(btn.value)}
+                onClick={() => {
+                  setTermMonths(btn.value);
+                  setTermResetToken((token) => token + 1);
+                }}
                 className={`rounded-chip border px-3 py-1 text-caption font-medium transition ${
                   termMonths === btn.value
                     ? 'border-primary-500 bg-primary-500/10 text-primary-500'

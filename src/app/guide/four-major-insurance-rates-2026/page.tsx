@@ -162,7 +162,7 @@ export default function FourMajorInsuranceRates2026Page() {
         <Header />
         <div className="flex">
           <Sidebar />
-          <main id="main-content" className="flex-1 px-4 py-8 md:px-8">
+          <main id="main-content" className="min-w-0 flex-1 px-4 py-8 md:px-8">
             <article className="mx-auto max-w-3xl space-y-8">
               <header>
                 <Breadcrumb
@@ -188,69 +188,76 @@ export default function FourMajorInsuranceRates2026Page() {
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">
                   2026년 4대보험 핵심 요율
                 </h2>
-                <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">
-                    근로자 부담 요율 기준(국민연금법 §88, 건강보험법, 고용보험법)
-                  </caption>
-                  <thead>
-                    <tr className="border-b border-border-base">
-                      <th scope="col" className="px-3 py-2 text-left font-semibold">
-                        보험
-                      </th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">
-                        1~6월
-                      </th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">
-                        7월~
-                      </th>
-                      <th scope="col" className="px-3 py-2 text-left font-semibold">
-                        비고
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">국민연금</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>4.75%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>4.75%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-xs text-text-secondary">1월부터 연중 동일</td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">건강보험</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>3.595%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>3.595%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-xs text-text-secondary">변화 없음</td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">고용보험</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>0.9%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>0.9%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-xs text-text-secondary">실업급여 계정만</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2 font-semibold">산재보험</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>0%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>0%</strong>
-                      </td>
-                      <td className="px-3 py-2 text-xs text-text-secondary">전액 사업주 부담</td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div
+                  role="region"
+                  aria-label="4대보험 요율 표"
+                  tabIndex={0}
+                  className="overflow-x-auto rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">
+                      근로자 부담 요율 기준(국민연금법 §88, 건강보험법, 고용보험법)
+                    </caption>
+                    <thead>
+                      <tr className="border-b border-border-base">
+                        <th scope="col" className="px-3 py-2 text-left font-semibold">
+                          보험
+                        </th>
+                        <th scope="col" className="px-3 py-2 text-center font-semibold">
+                          1~6월
+                        </th>
+                        <th scope="col" className="px-3 py-2 text-center font-semibold">
+                          7월~
+                        </th>
+                        <th scope="col" className="px-3 py-2 text-left font-semibold">
+                          비고
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 font-semibold">국민연금</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>4.75%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>4.75%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-xs text-text-secondary">1월부터 연중 동일</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 font-semibold">건강보험</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>3.595%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>3.595%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-xs text-text-secondary">변화 없음</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 font-semibold">고용보험</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>0.9%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>0.9%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-xs text-text-secondary">실업급여 계정만</td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-semibold">산재보험</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>0%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>0%</strong>
+                        </td>
+                        <td className="px-3 py-2 text-xs text-text-secondary">전액 사업주 부담</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </section>
 
               {/* TL;DR */}
@@ -385,62 +392,69 @@ export default function FourMajorInsuranceRates2026Page() {
                   공단 신고소득·정산·가입조건과 실제 납부 단위에 따라 급여명세서는 달라질 수
                   있습니다.
                 </p>
-                <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">
-                    월급 300만 원 기준 4대보험료 공제액 (2026년 7월~12월)
-                  </caption>
-                  <thead>
-                    <tr className="border-b border-border-base">
-                      <th scope="col" className="px-3 py-2 text-left font-semibold">
-                        항목
-                      </th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">
-                        계산식
-                      </th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">
-                        공제액
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">국민연금</td>
-                      <td className="px-3 py-2 text-center text-xs">300만 × 4.75%</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>
-                          {formatKRW(INSURANCE_EXAMPLE.pension, { truncateTen: false })}
-                        </strong>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">건강보험</td>
-                      <td className="px-3 py-2 text-center text-xs">300만 × 3.595%</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>
-                          {formatKRW(INSURANCE_EXAMPLE.health, { truncateTen: false })}
-                        </strong>
-                      </td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">장기요양</td>
-                      <td className="px-3 py-2 text-center text-xs">107,850 × 13.14%</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>
-                          {formatKRW(INSURANCE_EXAMPLE.longTermCare, { truncateTen: false })}
-                        </strong>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2 font-semibold">고용보험</td>
-                      <td className="px-3 py-2 text-center text-xs">300만 × 0.9%</td>
-                      <td className="px-3 py-2 text-center">
-                        <strong>
-                          {formatKRW(INSURANCE_EXAMPLE.employment, { truncateTen: false })}
-                        </strong>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div
+                  role="region"
+                  aria-label="월급 300만 원 보험료 계산 예시 표"
+                  tabIndex={0}
+                  className="overflow-x-auto rounded-lg focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500"
+                >
+                  <table className="w-full border-collapse text-sm">
+                    <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">
+                      월급 300만 원 기준 4대보험료 공제액 (2026년 7월~12월)
+                    </caption>
+                    <thead>
+                      <tr className="border-b border-border-base">
+                        <th scope="col" className="px-3 py-2 text-left font-semibold">
+                          항목
+                        </th>
+                        <th scope="col" className="px-3 py-2 text-center font-semibold">
+                          계산식
+                        </th>
+                        <th scope="col" className="px-3 py-2 text-center font-semibold">
+                          공제액
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 font-semibold">국민연금</td>
+                        <td className="px-3 py-2 text-center text-xs">300만 × 4.75%</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>
+                            {formatKRW(INSURANCE_EXAMPLE.pension, { truncateTen: false })}
+                          </strong>
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 font-semibold">건강보험</td>
+                        <td className="px-3 py-2 text-center text-xs">300만 × 3.595%</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>
+                            {formatKRW(INSURANCE_EXAMPLE.health, { truncateTen: false })}
+                          </strong>
+                        </td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 font-semibold">장기요양</td>
+                        <td className="px-3 py-2 text-center text-xs">107,850 × 13.14%</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>
+                            {formatKRW(INSURANCE_EXAMPLE.longTermCare, { truncateTen: false })}
+                          </strong>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 font-semibold">고용보험</td>
+                        <td className="px-3 py-2 text-center text-xs">300만 × 0.9%</td>
+                        <td className="px-3 py-2 text-center">
+                          <strong>
+                            {formatKRW(INSURANCE_EXAMPLE.employment, { truncateTen: false })}
+                          </strong>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                 <p className="bg-card p-3 text-center text-lg font-semibold">
                   <strong>
                     합계:{' '}
