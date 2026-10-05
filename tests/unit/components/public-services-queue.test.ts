@@ -71,14 +71,14 @@ afterEach(() => {
 });
 
 describe('PublicServices Google command queue', () => {
-  it('excludes only Ad Intents on calculator routes before the unchanged display loader mounts', () => {
+  it('preserves the SSR body marker and unchanged display loader without imperative body mutations', () => {
     const classesAtAdMount: string[] = [];
     const originalSet = controls.scripts.set.bind(controls.scripts);
     vi.spyOn(controls.scripts, 'set').mockImplementation((id, value) => {
       if (id === 'adsbygoogle-init') classesAtAdMount.push(document.body.className);
       return originalSet(id, value);
     });
-    document.body.classList.add('existing-theme');
+    document.body.className = 'existing-theme google-anno-skip';
     const adProps = { ...props, adsenseClient: 'ca-pub-test' };
     const component = render(createElement(PublicServices, adProps));
     expect(classesAtAdMount.length).toBeGreaterThan(0);
@@ -95,12 +95,10 @@ describe('PublicServices Google command queue', () => {
     ]) {
       controls.pathname = path;
       component.rerender(createElement(PublicServices, adProps));
-      expect(document.body.classList.contains('google-anno-skip')).toBe(
-        path.startsWith('/calculator/'),
-      );
+      expect(document.body.classList.contains('google-anno-skip')).toBe(true);
       expect(document.body.classList.contains('existing-theme')).toBe(true);
     }
-    document.body.classList.remove('existing-theme');
+    document.body.className = '';
   });
   it.each([
     ['https://www.google.com/search?q=private-search#private-fragment', 'https://www.google.com/'],

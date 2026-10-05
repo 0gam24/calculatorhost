@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from 'next';
 import { PublicServices } from '@/components/analytics/PublicServices';
 import { WebVitalsReporter } from '@/components/analytics/WebVitalsReporter';
+import { SiteBody } from '@/components/layout/SiteBody';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -197,7 +198,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script dangerouslySetInnerHTML={{ __html: themeInit }} />
         <script dangerouslySetInnerHTML={{ __html: swInit }} />
       </head>
-      <body>
+      <SiteBody>
         {/* WCAG 2.4.1, 키보드 사용자 본문 점프 (헤더·사이드바 우회).
             기본 sr-only, 포커스 시 가시화. 'main-content' id 는 각 페이지의 <main> 에 위치. */}
         <a
@@ -216,7 +217,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             naverAnalyticsId={naverAnalyticsId}
           />
         )}
-      </body>
+      </SiteBody>
     </html>
   );
 }

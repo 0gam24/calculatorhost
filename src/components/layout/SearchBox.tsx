@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { trackCalculatorSearch } from '@/lib/analytics/calculator-events';
+import { needsCalculatorDocument } from '@/lib/analytics/ad-intents-navigation';
 
 /* ─── 검색 대상 데이터 (정적) ───
  * 계산기 31개 + 카테고리 5개 + 홈 + 용어사전 + 가이드.
@@ -516,7 +517,11 @@ export function SearchBox() {
         setIsOpen(false);
         setQuery('');
         recordSelection(picked.href);
-        router.push(picked.href);
+        if (needsCalculatorDocument(window.location.pathname, new URL(picked.href, window.location.href).pathname)) {
+          window.location.assign(picked.href);
+        } else {
+          router.push(picked.href);
+        }
       }
     } else if (e.key === 'Escape') {
       setIsOpen(false);
