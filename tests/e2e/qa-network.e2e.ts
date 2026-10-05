@@ -48,6 +48,8 @@ test('common fixture is active before first navigation and prevents transport to
   const origin = `http://127.0.0.1:${address.port}`;
   try {
     await expect(page.goto(origin + '/first-document')).rejects.toThrow();
+    const popup = await page.context().newPage();
+    await expect(popup.goto(origin + '/popup-probe')).rejects.toThrow();
     expect(received).toBe(0);
     expect(qaNetwork.aborted.some((x) => x.path === '/first-document')).toBe(true);
   } finally { await closeProbe(sink); }

@@ -17,14 +17,14 @@ export function createQaRequest(client: APIRequestContext, baseURL: string): QaR
 export const test = base.extend<{ qaNetwork: QaNetwork; qaRequest: QaRequest }>({
   serviceWorkers: 'block',
   page: async ({ context, qaNetwork }, use) => {
-    // Depend on the automatic guard before page creation. Drain local fetches
-    // before page/context disposal so unfinished handlers cannot mask failures.
+    // Depend on the automatic guard before page creation. Keep the guard until
+    // every page/popup closes, then drain handlers without a transmission gap.
     void qaNetwork;
     const page = await context.newPage();
     await use(page);
     qaNetwork.closing = true;
+    await Promise.all(context.pages().map((openPage) => openPage.close()));
     await context.unrouteAll({ behavior: 'wait' });
-    await page.close();
   },
   qaNetwork: [async ({ context, baseURL }, use, testInfo) => {
     const origin = localQaOrigin(baseURL);
