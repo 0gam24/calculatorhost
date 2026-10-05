@@ -1,4 +1,4 @@
-import { test, expect, devices } from '@playwright/test';
+import { test, expect, devices } from '../support/network-fixture';
 
 test.describe('Visual Regression: Guide — 전세보증금 안전 가이드', () => {
   test('desktop dark theme', async ({ page }) => {

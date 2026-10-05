@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/network-fixture';
 
 /**
  * 골든패스 #6 — 중개수수료

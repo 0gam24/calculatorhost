@@ -1,4 +1,4 @@
-import { expect, test, type Page, type Locator } from '@playwright/test';
+import { expect, test, type Page, type Locator } from '../support/network-fixture';
 
 const hero = (page: Page) =>
   page.locator('[data-calculation-result] > header > p[aria-label]').first();
@@ -258,7 +258,8 @@ test('month: current month, human keyboard replacement, pension caps, and back p
 }) => {
   await ready(page, 'salary');
   const month = page.locator('#calculation-month');
-  await expect(month).toHaveValue('9');
+  const currentMonth = await page.evaluate(() => String(new Date().getMonth() + 1));
+  await expect(month).toHaveValue(currentMonth);
   const annual = page.locator('#yearly-amount');
   await annual.focus();
   await annual.press('ControlOrMeta+A');

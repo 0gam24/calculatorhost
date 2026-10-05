@@ -1,4 +1,4 @@
-import { test, expect, devices } from '@playwright/test';
+import { test, expect, devices } from '../support/network-fixture';
 
 test.describe('Visual Regression: Updates Page', () => {
   test('desktop dark theme', async ({ page }) => {

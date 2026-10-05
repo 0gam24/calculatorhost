@@ -1,4 +1,5 @@
 import { defineConfig } from '@playwright/test';
+import { localQaOrigin, QA_CHROME_ARGS } from '../support/network-policy';
 
 export default defineConfig({
   testDir: '.',
@@ -10,7 +11,9 @@ export default defineConfig({
   reporter: [['list'], ['json', { outputFile: '../../artifacts/premium-e2e.json' }]],
   outputDir: '../../artifacts/premium-e2e',
   use: {
-    baseURL: process.env.PREVIEW_URL || 'http://localhost:3100',
+    baseURL: localQaOrigin(process.env.PREVIEW_URL || 'http://localhost:3100'),
+    serviceWorkers: 'block',
+    launchOptions: { args: QA_CHROME_ARGS },
     channel: 'chrome',
     headless: true,
     screenshot: 'only-on-failure',

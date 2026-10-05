@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/network-fixture';
 
 /**
  * 골든패스 #3 — 다크↔라이트 토글 + localStorage 영속성

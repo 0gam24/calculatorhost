@@ -66,12 +66,18 @@ beforeEach(() => {
 afterEach(() => {
   expect(fetch).not.toHaveBeenCalled();
   cleanup();
+  document.querySelector('script[data-ad-library-fixture]')?.remove();
+  vi.useRealTimers();
   vi.restoreAllMocks();
   vi.unstubAllGlobals();
 });
 
 describe('PublicServices Google command queue', () => {
   it('preserves the SSR body marker and unchanged display loader without imperative body mutations', () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('requestIdleCallback', undefined);
+    vi.stubGlobal('cancelIdleCallback', undefined);
+    vi.spyOn(document, 'readyState', 'get').mockReturnValue('complete');
     const classesAtAdMount: string[] = [];
     const originalSet = controls.scripts.set.bind(controls.scripts);
     vi.spyOn(controls.scripts, 'set').mockImplementation((id, value) => {
@@ -81,11 +87,13 @@ describe('PublicServices Google command queue', () => {
     document.body.className = 'existing-theme google-anno-skip';
     const adProps = { ...props, adsenseClient: 'ca-pub-test' };
     const component = render(createElement(PublicServices, adProps));
+    expect(classesAtAdMount).toHaveLength(0);
+    act(() => vi.runOnlyPendingTimers());
     expect(classesAtAdMount.length).toBeGreaterThan(0);
     expect(classesAtAdMount.every((classes) => classes.includes('google-anno-skip'))).toBe(true);
     expect(controls.scripts.get('adsbygoogle-init')).toMatchObject({
       src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-test',
-      strategy: 'lazyOnload',
+      strategy: 'afterInteractive',
     });
     for (const path of [
       '/guide/freelancer-salary-comparison/',
@@ -261,5 +269,73 @@ describe('PublicServices Google command queue', () => {
     expect(controls.scripts.has('naver-library')).toBe(false);
     loadGoogle();
     expect(queuedCommands()[1]?.[2]).toMatchObject({ send_page_view: false });
+  });
+
+  it('replaces a document only once when an already loaded ad library reaches noindex', async () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('requestIdleCallback', undefined);
+    vi.stubGlobal('cancelIdleCallback', undefined);
+    vi.spyOn(document, 'readyState', 'get').mockReturnValue('complete');
+    const replace = vi.fn();
+    const location = {
+      hostname: 'calculatorhost.com',
+      pathname: '/guide/example/',
+      href: 'https://calculatorhost.com/guide/example/',
+      replace,
+    };
+    const testWindow = Object.create(window) as Window;
+    Object.defineProperty(testWindow, 'location', { value: location });
+    vi.stubGlobal('window', testWindow);
+    controls.pathname = location.pathname;
+    const adProps = { ...props, adsenseClient: 'ca-pub-test' };
+    const component = render(createElement(PublicServices, adProps));
+    act(() => vi.runOnlyPendingTimers());
+    // Model only this app's loaded-script marker: no src and no Google library.
+    const library = document.createElement('script');
+    library.id = 'adsbygoogle-init';
+    library.setAttribute('data-ad-library-fixture', '');
+    document.body.append(library);
+    const robots = document.createElement('meta');
+    robots.name = 'robots';
+    robots.content = 'noindex, follow';
+    location.pathname = '/guide/unknown/';
+    location.href = 'https://calculatorhost.com/guide/unknown/#content';
+    controls.pathname = location.pathname;
+    await act(async () => {
+      document.head.append(robots);
+      component.rerender(createElement(PublicServices, adProps));
+      await Promise.resolve();
+    });
+    act(() => vi.runOnlyPendingTimers());
+    expect(replace).toHaveBeenCalledExactlyOnceWith(location.href);
+    expect(library.isConnected).toBe(true);
+    await act(async () => {
+      robots.content = 'noindex';
+      await Promise.resolve();
+    });
+    act(() => vi.runOnlyPendingTimers());
+    expect(replace).toHaveBeenCalledTimes(1);
+  });
+
+  it('does not reload a fresh excluded document and keeps its existing GA policy', () => {
+    vi.useFakeTimers();
+    const replace = vi.fn();
+    const testWindow = Object.create(window) as Window;
+    Object.defineProperty(testWindow, 'location', {
+      value: {
+        hostname: 'calculatorhost.com',
+        pathname: '/privacy/',
+        href: 'https://calculatorhost.com/privacy/',
+        replace,
+      },
+    });
+    vi.stubGlobal('window', testWindow);
+    controls.pathname = '/privacy/';
+    render(createElement(PublicServices, { ...props, adsenseClient: 'ca-pub-test' }));
+    act(() => vi.runOnlyPendingTimers());
+    expect(replace).not.toHaveBeenCalled();
+    expect(controls.scripts.has('adsbygoogle-init')).toBe(false);
+    loadGoogle();
+    expect(queuedCommands().at(-1)?.[1]).toBe('page_view');
   });
 });

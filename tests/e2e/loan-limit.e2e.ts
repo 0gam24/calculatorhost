@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/network-fixture';
 
 /**
  * 골든패스 #2 — 대출한도 (DSR/LTV/DTI)

@@ -1,4 +1,4 @@
-import { test, expect, type Page } from '@playwright/test';
+import { test, expect, type Page } from '../support/network-fixture';
 
 const hero = (page: Page) =>
   page.locator('[data-calculation-result] > header > p[aria-label]').first();
@@ -18,14 +18,6 @@ const ready = async (page: Page) => {
     Object.keys(sessionStorage).some((k) => k.startsWith('calculatorhost:input:v1:inflation:')),
   );
 };
-test.beforeEach(async ({ context, baseURL }) => {
-  const ownHost = new URL(baseURL!).hostname;
-  // Synthetic QA inputs never reach third-party ads or analytics.
-  await context.route('**/*', (route) =>
-    new URL(route.request().url()).hostname === ownHost ? route.continue() : route.abort(),
-  );
-});
-
 test('inflation: future cost, purchasing power, input retention and formulas agree', async ({
   page,
 }) => {

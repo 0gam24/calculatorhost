@@ -1,4 +1,4 @@
-import { test, expect, devices } from '@playwright/test';
+import { test, expect, devices } from '../support/network-fixture';
 
 test.describe('Visual Regression: Loan Limit Calculator (DSR)', () => {
   test('desktop dark theme', async ({ page }) => {

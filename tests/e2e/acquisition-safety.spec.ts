@@ -1,4 +1,4 @@
-import { expect, test, type Locator, type Page } from '@playwright/test';
+import { expect, test, type Locator, type Page } from '../support/network-fixture';
 
 const result = (page: Page) => page.locator('[data-calculation-result]').first();
 const hero = (page: Page) => result(page).locator(':scope > header > p[aria-label]').first();

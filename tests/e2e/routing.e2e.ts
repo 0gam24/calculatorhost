@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/network-fixture';
 
 /**
  * 골든패스 #4 — 홈 → 카테고리 → 계산기 네비게이션

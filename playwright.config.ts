@@ -1,4 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
+import { localQaOrigin, QA_CHROME_ARGS } from './tests/support/network-policy';
+
+const baseURL = localQaOrigin('http://localhost:3000');
 
 export default defineConfig({
   testDir: './tests',
@@ -8,7 +11,9 @@ export default defineConfig({
   workers: process.env.CI ? 1 : undefined,
   reporter: 'html',
   use: {
-    baseURL: 'http://localhost:3000',
+    baseURL,
+    serviceWorkers: 'block',
+    launchOptions: { args: QA_CHROME_ARGS },
     trace: 'on-first-retry',
   },
   projects: [

@@ -5,6 +5,11 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { canLoadAdsOnPath, canLoadNaverTracker } from '@/lib/analytics/public-service-policy';
 import { getSearchReferrerOrigin } from '@/lib/analytics/search-referrer';
+import {
+  documentRobotsContent,
+  observeDocumentRobots,
+} from '@/lib/analytics/ad-intents-navigation';
+import { CancellableAdSense } from './CancellableAdSense';
 
 interface Props {
   gaId: string;
@@ -25,10 +30,43 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
   const [gaReady, setGaReady] = useState(false);
   const [naverReady, setNaverReady] = useState(false);
   const firstPageReferrer = useRef('');
+  const refreshingExcludedDocument = useRef(false);
   useEffect(() => {
     setLive(window.location.hostname === 'calculatorhost.com');
   }, []);
   const canonical = `https://calculatorhost.com${pathname}`;
+
+  useEffect(() => {
+    if (!live || !adsenseClient) return;
+    let timer: number | undefined;
+    const check = () => {
+      timer = undefined;
+      if (
+        refreshingExcludedDocument.current ||
+        canLoadAdsOnPath(window.location.pathname, documentRobotsContent(document)) ||
+        !document.querySelector('script#adsbygoogle-init')
+      )
+        return;
+      // A previously initialized library belongs to this document. Dispose the
+      // document, never Google's DOM, if an excluded destination was reached by SPA/history.
+      refreshingExcludedDocument.current = true;
+      window.location.replace(window.location.href);
+    };
+    const defer = () => {
+      if (timer !== undefined) window.clearTimeout(timer);
+      timer = window.setTimeout(check, 0);
+    };
+    const stopObserving = observeDocumentRobots(document, defer);
+    window.addEventListener('popstate', defer);
+    window.addEventListener('pageshow', defer);
+    defer();
+    return () => {
+      if (timer !== undefined) window.clearTimeout(timer);
+      stopObserving();
+      window.removeEventListener('popstate', defer);
+      window.removeEventListener('pageshow', defer);
+    };
+  }, [live, adsenseClient, pathname]);
 
   useEffect(() => {
     if (!live || !gaReady || !window.gtag) return;
@@ -50,22 +88,13 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
   }, [live, naverReady, pathname]);
 
   if (!live) return null;
-  const robotsContent = Array.from(
-    document.querySelectorAll<HTMLMetaElement>('meta[name="robots"]'),
-  )
-    .map((meta) => meta.content)
-    .join(',');
+  const robotsContent = documentRobotsContent(document);
   const adsAllowed = canLoadAdsOnPath(pathname, robotsContent);
   const naverAllowed = canLoadNaverTracker(window.location.href, document.referrer);
   return (
     <>
       {adsenseClient && adsAllowed ? (
-        <Script
-          id="adsbygoogle-init"
-          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseClient}`}
-          strategy="lazyOnload"
-          crossOrigin="anonymous"
-        />
+        <CancellableAdSense adsenseClient={adsenseClient} pathname={pathname} />
       ) : null}
       <Script
         id="ga-library"

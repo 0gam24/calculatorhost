@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/network-fixture';
 
 /**
  * SEO + GEO 회귀 자동 감시.
@@ -105,15 +105,15 @@ test.describe('GEO 회귀 — Speakable + 구조화 데이터', () => {
 });
 
 test.describe('SEO 회귀 — 사이트 차원', () => {
-  test('robots.txt 200 + sitemap 참조', async ({ page }) => {
-    const res = await page.request.get('/robots.txt');
+  test('robots.txt 200 + sitemap 참조', async ({ qaRequest }) => {
+    const res = await qaRequest.get('/robots.txt');
     expect(res.status()).toBe(200);
     const body = await res.text();
     expect(body).toMatch(/sitemap/i);
   });
 
-  test('sitemap.xml 200 + 계산기 URL 포함', async ({ page }) => {
-    const res = await page.request.get('/sitemap.xml');
+  test('sitemap.xml 200 + 계산기 URL 포함', async ({ qaRequest }) => {
+    const res = await qaRequest.get('/sitemap.xml');
     expect(res.status()).toBe(200);
     const body = await res.text();
     expect(body).toContain('/calculator/salary/');

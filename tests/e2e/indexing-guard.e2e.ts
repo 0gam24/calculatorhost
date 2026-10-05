@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from '../support/network-fixture';
 
 /**
  * 색인 회귀 가드.
@@ -18,8 +18,8 @@ const SAMPLE_INDEXED = [
 ];
 
 test.describe('robots.txt drift 감시', () => {
-  test('robots.txt 가 핵심 라우트를 Disallow 하지 않음', async ({ page }) => {
-    const res = await page.request.get('/robots.txt');
+  test('robots.txt 가 핵심 라우트를 Disallow 하지 않음', async ({ qaRequest }) => {
+    const res = await qaRequest.get('/robots.txt');
     expect(res.status()).toBe(200);
     const body = await res.text();
 
@@ -38,8 +38,8 @@ test.describe('robots.txt drift 감시', () => {
 });
 
 test.describe('Sitemap 완성도 + 응답 코드', () => {
-  test('sitemap.xml 항목들이 모두 200 또는 3xx 응답', async ({ page }) => {
-    const res = await page.request.get('/sitemap.xml');
+  test('sitemap.xml 항목들이 모두 200 또는 3xx 응답', async ({ qaRequest }) => {
+    const res = await qaRequest.get('/sitemap.xml');
     expect(res.status()).toBe(200);
     const body = await res.text();
 
@@ -55,7 +55,8 @@ test.describe('Sitemap 완성도 + 응답 코드', () => {
     // 표본 5개만 확인 (CI 시간 절약)
     const sample = urls.slice(0, 5);
     for (const url of sample) {
-      const r = await page.request.get(url, { maxRedirects: 0 });
+      const localPath = new URL(url).pathname;
+      const r = await qaRequest.get(localPath);
       expect(r.status(), `${url} returned ${r.status()}`).toBeLessThan(400);
     }
   });

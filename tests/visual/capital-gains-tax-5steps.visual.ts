@@ -1,4 +1,4 @@
-import { test, expect, devices } from '@playwright/test';
+import { test, expect, devices } from '../support/network-fixture';
 
 test.describe('Visual Regression: Guide — 양도소득세 단계별 계산법', () => {
   test('desktop dark theme', async ({ page }) => {

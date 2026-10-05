@@ -1,4 +1,4 @@
-import { test, expect, devices } from '@playwright/test';
+import { test, expect, devices } from '../support/network-fixture';
 
 test.describe('Visual Regression: Capital Gains Tax Calculator', () => {
   test('desktop dark theme with results', async ({ page }) => {
