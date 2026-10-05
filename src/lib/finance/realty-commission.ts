@@ -45,6 +45,8 @@ export interface CommissionInput {
   monthlyRent?: number;
   /** 협의 요율 (소수, 0.005 = 0.5%) — 선택, 상한 이하면 사용 */
   negotiatedRate?: number;
+  /** Original validated percentage text, preserving decimal boundaries before Number conversion. */
+  negotiatedRatePercentText?: string;
   /** 부가세 포함 여부 (10%) */
   includeVat: boolean;
 }
@@ -79,10 +81,7 @@ export interface CommissionResult {
  * 기본: 보증금 + (월세 × 100)
  * 5천만 미만이면: 보증금 + (월세 × 70)
  */
-function calculateMonthlyTransactionAmount(
-  deposit: number,
-  monthlyRent: number
-): number {
+function calculateMonthlyTransactionAmount(deposit: number, monthlyRent: number): number {
   const highBase = deposit + monthlyRent * MONTHLY_RENT_MULTIPLIER_HIGH;
   if (highBase >= MONTHLY_RENT_THRESHOLD) {
     return highBase;
@@ -114,7 +113,7 @@ function calculateMonthlyTransactionAmount(
  */
 function resolveBracket(
   transactionAmount: number,
-  brackets: CommissionBracket[]
+  brackets: CommissionBracket[],
 ): { rate: number; limit: number | null } {
   for (const bracket of brackets) {
     // null 은 상한 없음 (마지막 구간), 또는 transactionAmount가 구간 내
@@ -131,12 +130,38 @@ function resolveBracket(
  * 중개수수료 최대액 계산 (한도액 적용)
  * 10원 단위 절사
  */
+/** Exact decimal multiplication followed by the calculator's existing 10-won truncation.
+ * No epsilon is added: a genuine amount just below a boundary must remain below it.
+ */
+function decimalRatio(value: number): [bigint, bigint] {
+  if (!Number.isFinite(value) || value < 0) {
+    throw new Error('금액과 요율은 0 이상의 유한한 숫자여야 합니다');
+  }
+  const [mantissa = '0', exponent = '0'] = String(value).toLowerCase().split('e');
+  const [integer = '0', fraction = ''] = mantissa.split('.');
+  const digits = BigInt(integer + fraction);
+  const scale = fraction.length - Number(exponent);
+  return scale >= 0 ? [digits, 10n ** BigInt(scale)] : [digits * 10n ** BigInt(-scale), 1n];
+}
+
+function truncateDecimalProduct(
+  amount: number,
+  rate: number,
+  exactRate?: [bigint, bigint],
+): number {
+  const [amountNumerator, amountDenominator] = decimalRatio(amount);
+  const [rateNumerator, rateDenominator] = exactRate ?? decimalRatio(rate);
+  return Number(
+    ((amountNumerator * rateNumerator) / (amountDenominator * rateDenominator * 10n)) * 10n,
+  );
+}
+
 function calculateMaxCommission(
   transactionAmount: number,
   rate: number,
-  limit: number | null
+  limit: number | null,
 ): number {
-  const gross = Math.floor((transactionAmount * rate) / 10) * 10; // 10원 단위 절사
+  const gross = truncateDecimalProduct(transactionAmount, rate);
   if (limit === null) {
     return gross;
   }
@@ -178,10 +203,7 @@ export function calculateRealtyCommission(input: CommissionInput): CommissionRes
     ) {
       throw new Error('보증금과 월세는 0 이상의 숫자여야 합니다');
     }
-    transactionAmount = calculateMonthlyTransactionAmount(
-      input.deposit,
-      input.monthlyRent
-    );
+    transactionAmount = calculateMonthlyTransactionAmount(input.deposit, input.monthlyRent);
   }
 
   // ========== 상한 요율 및 한도액 결정 ==========
@@ -220,16 +242,35 @@ export function calculateRealtyCommission(input: CommissionInput): CommissionRes
   // ========== 협의 요율 처리 ==========
   let negotiatedCommission: number | null = null;
 
-  if (input.negotiatedRate !== undefined && input.negotiatedRate > 0) {
-    if (input.negotiatedRate > appliedRate) {
+  if (
+    input.negotiatedRatePercentText !== undefined ||
+    (input.negotiatedRate !== undefined && input.negotiatedRate > 0)
+  ) {
+    let exactRate: [bigint, bigint] | undefined;
+    if (input.negotiatedRatePercentText !== undefined) {
+      const text = input.negotiatedRatePercentText.trim();
+      if (!/^(?:\d+\.?\d*|\.\d+)$/.test(text)) {
+        throw new Error('협의 요율을 올바른 숫자로 입력해 주세요.');
+      }
+      const [integer = '', fraction = ''] = text.split('.');
+      exactRate = [BigInt((integer || '0') + fraction), 100n * 10n ** BigInt(fraction.length)];
+      if (exactRate[0] === 0n) throw new Error('0% 협의는 이 계산기에서 지원하지 않습니다.');
+    }
+    const [numerator, denominator] = exactRate ?? decimalRatio(input.negotiatedRate ?? 0);
+    const [capNumerator, capDenominator] = decimalRatio(appliedRate);
+    if (numerator * capDenominator > capNumerator * denominator) {
       // 상한 초과 시 상한 적용 + 경고
       warnings.push(
-        `협의 요율 ${(input.negotiatedRate * 100).toFixed(2)}%가 법정 상한 ${(appliedRate * 100).toFixed(2)}%를 초과해 상한을 적용했습니다`
+        `협의 요율 ${((input.negotiatedRate ?? 0) * 100).toFixed(2)}%가 법정 상한 ${(appliedRate * 100).toFixed(2)}%를 초과해 상한을 적용했습니다`,
       );
       negotiatedCommission = maxCommission;
     } else {
       // 상한 이하면 협의 요율 적용 (10원 단위 절사)
-      negotiatedCommission = Math.floor((transactionAmount * input.negotiatedRate) / 10) * 10;
+      negotiatedCommission = truncateDecimalProduct(
+        transactionAmount,
+        input.negotiatedRate ?? 0,
+        exactRate,
+      );
       if (limit !== null) {
         negotiatedCommission = Math.min(negotiatedCommission, limit);
       }
@@ -238,9 +279,7 @@ export function calculateRealtyCommission(input: CommissionInput): CommissionRes
 
   // ========== 부가세 계산 (10원 단위 절사) ==========
   const baseForVat = negotiatedCommission ?? maxCommission;
-  const vat = input.includeVat
-    ? Math.floor((baseForVat * REALTY_VAT_RATE) / 10) * 10
-    : 0;
+  const vat = input.includeVat ? truncateDecimalProduct(baseForVat, REALTY_VAT_RATE) : 0;
 
   // ========== 총액 및 양측 합계 ==========
   const total = baseForVat + vat;

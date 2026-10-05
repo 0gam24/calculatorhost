@@ -70,7 +70,7 @@ const TAX_TYPE_LABELS: TaxTypeLabel[] = [
   },
   {
     type: 'preferential',
-    label: '세금우대 (9.5%)',
+    label: '기존 세금우대 (9.5% 가정)',
   },
   {
     type: 'exempt',

@@ -26,6 +26,15 @@ export function PublicServices({ gaId, adsenseClient, naverAnalyticsId }: Props)
   const [naverReady, setNaverReady] = useState(false);
   const firstPageReferrer = useRef('');
   useEffect(() => {
+    // Google's supported page-level exclusion targets only Ad Intents, not display ads.
+    // Apply before live activation can render the lazy AdSense script.
+    // https://support.google.com/adsense/answer/13844047
+    document.body.classList.toggle(
+      'google-anno-skip',
+      pathname === '/calculator' || pathname.startsWith('/calculator/'),
+    );
+  }, [pathname]);
+  useEffect(() => {
     setLive(window.location.hostname === 'calculatorhost.com');
   }, []);
   const canonical = `https://calculatorhost.com${pathname}`;

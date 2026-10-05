@@ -113,7 +113,7 @@ export default function CommissionPage() {
     description: DESCRIPTION,
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-10-01',
+    dateModified: '2026-10-05T12:50:36Z',
     isPartOf: getCategoryUrlForCalculator('broker-fee'),
   });
   const howToLd = buildHowToJsonLd({
@@ -233,7 +233,7 @@ export default function CommissionPage() {
                     매매·전세·월세의 중개보수 상한과 협의 요율·부가세 선택에 따른 지급액을
                     확인하세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-01" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-05T12:50:36Z" />
                 </header>
               }
               calculator={<CommissionCalculator />}

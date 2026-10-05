@@ -71,6 +71,37 @@ afterEach(() => {
 });
 
 describe('PublicServices Google command queue', () => {
+  it('excludes only Ad Intents on calculator routes before the unchanged display loader mounts', () => {
+    const classesAtAdMount: string[] = [];
+    const originalSet = controls.scripts.set.bind(controls.scripts);
+    vi.spyOn(controls.scripts, 'set').mockImplementation((id, value) => {
+      if (id === 'adsbygoogle-init') classesAtAdMount.push(document.body.className);
+      return originalSet(id, value);
+    });
+    document.body.classList.add('existing-theme');
+    const adProps = { ...props, adsenseClient: 'ca-pub-test' };
+    const component = render(createElement(PublicServices, adProps));
+    expect(classesAtAdMount.length).toBeGreaterThan(0);
+    expect(classesAtAdMount.every((classes) => classes.includes('google-anno-skip'))).toBe(true);
+    expect(controls.scripts.get('adsbygoogle-init')).toMatchObject({
+      src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-test',
+      strategy: 'lazyOnload',
+    });
+    for (const path of [
+      '/guide/freelancer-salary-comparison/',
+      '/calculator/loan/',
+      '/',
+      '/calculator/savings/',
+    ]) {
+      controls.pathname = path;
+      component.rerender(createElement(PublicServices, adProps));
+      expect(document.body.classList.contains('google-anno-skip')).toBe(
+        path.startsWith('/calculator/'),
+      );
+      expect(document.body.classList.contains('existing-theme')).toBe(true);
+    }
+    document.body.classList.remove('existing-theme');
+  });
   it.each([
     ['https://www.google.com/search?q=private-search#private-fragment', 'https://www.google.com/'],
     ['https://search.naver.com/search.naver?query=private-search', 'https://search.naver.com/'],

@@ -88,7 +88,8 @@ export function CommissionCalculator() {
         : parsedRate === 0
           ? '0% 협의는 이 계산기에서 지원하지 않습니다. 상한요율을 사용하려면 비워 주세요.'
           : undefined;
-  const negotiatedRate = rateText !== '' && !rateError ? parsedRate / 100 : undefined;
+  // Shift the validated decimal text, rather than dividing a binary float (0.35 / 100).
+  const negotiatedRate = rateText !== '' && !rateError ? Number(`${rateText}e-2`) : undefined;
 
   // 계산 실행
   const calculation = useMemo((): { result: CommissionResult | null; error?: string } => {
@@ -102,6 +103,7 @@ export function CommissionCalculator() {
           deposit: transactionType === 'monthly' ? deposit : undefined,
           monthlyRent: transactionType === 'monthly' ? monthlyRent : undefined,
           negotiatedRate,
+          negotiatedRatePercentText: negotiatedRate !== undefined ? rateText : undefined,
           includeVat,
         }),
       };
@@ -118,6 +120,7 @@ export function CommissionCalculator() {
     deposit,
     monthlyRent,
     negotiatedRate,
+    rateText,
     includeVat,
     rateError,
   ]);

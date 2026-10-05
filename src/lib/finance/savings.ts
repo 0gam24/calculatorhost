@@ -4,7 +4,7 @@
  * 법적 근거:
  * - 소득세법 §14 (이자소득)
  * - 소득세법 §129 (이자소득세)
- * - 조세특례제한법 §89의2, §91
+ * - 조세특례제한법 §89, §91
  *
  * 명세: docs/calculator-spec/적금.md
  *
@@ -202,7 +202,7 @@ export function calculateSavings(input: SavingsInput): SavingsResult {
 
   if (input.taxType === 'preferential') {
     warnings.push(
-      '세금우대종합저축은 가입 조건(일정 소득 이하·가입 한도 등)이 있습니다'
+      '9.5%는 2014년 말까지 가입한 세금우대종합저축의 요건 충족 계약을 가정합니다. 적용 여부를 금융기관에 확인하세요'
     );
   }
 

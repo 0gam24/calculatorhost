@@ -57,7 +57,7 @@ const FAQ_ITEMS = [
   {
     question: '적금 단리와 복리 중 어떤 게 유리한가요?',
     answer:
-      '복리는 "이자에 붙는 이자"를 계산하므로 단리보다 이자가 더 많습니다. 기간과 이자율이 높을수록 그 차이가 커집니다. 예를 들어 월 100만원, 연 3.5%, 2년 적금의 경우 단리는 약 41만원, 월복리는 약 42만원의 이자를 받으므로 약 1만원의 차이가 발생합니다. 장기 적금일수록 복리가 유리합니다.',
+      '같은 납입 시점·기간·양수 금리라면 월복리 이자가 단리보다 많습니다. 월초에 100만원씩, 연 3.5%, 24개월 납입하는 이 계산기의 가정에서 세전 이자는 단리 875,000원, 월복리 894,880원입니다. 상품별 금리와 납입일이 다르면 실제 결과도 달라집니다.',
   },
   {
     question: '적금 이자소득세 15.4%는 어떻게 구성되나요?',
@@ -67,7 +67,7 @@ const FAQ_ITEMS = [
   {
     question: '세금우대 종합저축 조건은?',
     answer:
-      '세금우대 종합저축(소득세율 9.5%)은 조세특례제한법 §89의2에 따른 상품입니다. 일정 소득 이하·가입 한도·최소 저축 기간 등 조건이 있으며, 은행별로 상이합니다. 세금우대 상품 이용 시 반드시 은행에 가입 조건을 확인하세요. 조건을 충족하지 않으면 일반과세(15.4%)가 적용됩니다.',
+      '세금우대종합저축은 조세특례제한법 §89에 따라 2014년 12월 31일까지 가입한 저축 중 요건을 충족하는 경우에 적용됩니다. 소득세 9%와 농어촌특별세 0.5%를 합한 9.5% 가정으로 비교하며, 개인지방소득세는 부과하지 않습니다. 현재 신규 가입 상품의 세율로일반화할 수 없으므로 금융기관에 기존 계약의 적용 여부를 확인하세요.',
   },
   {
     question: '청년도약계좌·ISA는 비과세인가요?',
@@ -105,7 +105,7 @@ export default function SavingsPage() {
       '월 납입금, 연 이자율, 기간을 입력해 단리·월복리별 세후 이자와 만기 수령액을 즉시 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-10-05T12:50:36Z',
     isPartOf: getCategoryUrlForCalculator('savings'),
   });
   const faqLd = buildFaqPageJsonLd(
@@ -177,7 +177,7 @@ export default function SavingsPage() {
                   <p className="text-lg text-text-secondary" data-speakable>
                     매월 저축할 금액으로 만기 금액과 세후 이자를 확인하세요.
                   </p>
-                  <AuthorByline dateModified="2026-04-24" />
+                  <AuthorByline dateModified="2026-10-05T12:50:36Z" />
                 </header>
               }
               calculator={<SavingsCalculator />}
@@ -193,7 +193,7 @@ export default function SavingsPage() {
               }
             >
               <StructuredSummary
-                definition="적금은 일정 기간 동안 정기적으로 일정 금액을 저축하여 만기일에 원금과 이자를 받는 금융상품입니다. 이자는 단리(원금에만 붙는 이자) 또는 월복리(매월 이자에 붙는 이자)로 계산되며, 세후 수익률은 이자소득세(일반 15.4%, 세금우대 9.5%, 비과세)에 따라 달라집니다(소득세법 §129, 조세특례제한법 §89의2·§91)."
+                definition="적금은 일정 기간 동안 정기적으로 일정 금액을 저축하여 만기일에 원금과 이자를 받는 금융상품입니다. 이자는 단리(원금에만 붙는 이자) 또는 월복리(매월 이자에 붙는 이자)로 계산되며, 세후 수익률은 이자소득세(일반 15.4%, 세금우대 9.5%, 비과세)에 따라 달라집니다(소득세법 §129, 조세특례제한법 §89·§91)."
                 table={{
                   caption: '세율 유형별 이자소득세',
                   headers: ['세율 유형', '세율'],
@@ -201,7 +201,7 @@ export default function SavingsPage() {
                     ['일반과세', '15.4%'],
                     ['세금우대', '9.5%'],
                     ['비과세', '0%'],
-                    ['단리 기초 (월 100만×12개월×3.5%)', '약 20.5만원'],
+                    ['월초 100만원·12개월·연 3.5% 단리', '세전 227,500원'],
                   ],
                 }}
                 tldr={[
@@ -276,9 +276,11 @@ export default function SavingsPage() {
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">이자 계산</td>
-                        <td className="px-4 py-3 text-text-secondary">이자 = 원금 × 연율 × 기간</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          이자 = 원금 × ((1+r)^n - 1) / r
+                          세전 이자 = 월납입금 × 연이율 ÷ 100 × n(n+1) ÷ 2 ÷ 12
+                        </td>
+                        <td className="px-4 py-3 text-text-secondary">
+                          세전 이자 = 월납입금 × ((1+r)^n - 1) ÷ r × (1+r) - 원금
                         </td>
                       </tr>
                       <tr className="border-b border-border-subtle">
@@ -295,20 +297,20 @@ export default function SavingsPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">예시</td>
                         <td className="px-4 py-3 text-text-secondary">
-                          월 100만 × 12개월 × 3.5% = 이자 약 20.5만
+                          월초 100만원씩 12개월·연 3.5%: 세전 227,500원, 일반과세 세후 192,470원
                         </td>
                         <td className="px-4 py-3 text-text-secondary">
-                          월 100만 × 12개월 × 3.5% = 이자 약 21.3만
+                          월초 100만원씩 12개월·연 3.5%: 세전 229,950원, 일반과세 세후 194,540원
                         </td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="text-text-secondary">
-                  <strong>결론:</strong> 월복리가 단리보다 항상 유리하지만, 그 차이는 상품과 조건에
-                  따라 다릅니다. 대부분의 정기적금은 단리를 기본으로 하며, 일부 상품(ISA,
-                  세금우대저축 등)에서는 월복리 또는 선택 가능한 형태로 제공됩니다. 상품 선택 시
-                  은행에 계산 방식을 확인하세요.
+                  <strong>결론:</strong> 동일한 납입 시점·기간·양수 금리에서는 월복리 이자가 더
+                  많지만, 그 차이는 상품과 조건에 따라 다릅니다. 대부분의 정기적금은 단리를 기본으로
+                  하며, 일부 상품(ISA, 세금우대저축 등)에서는 월복리 또는 선택 가능한 형태로
+                  제공됩니다. 상품 선택 시 은행에 계산 방식을 확인하세요.
                 </p>
               </section>
               <section aria-label="이자소득세" className="card">
@@ -327,9 +329,28 @@ export default function SavingsPage() {
                   <div className="rounded-lg border border-border-subtle p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">2) 세금우대 (9.5%)</h3>
                     <p className="mb-2 text-sm text-text-secondary">
-                      세금우대 종합저축, 세금우대저축(조세특례제한법 §89의2) 등 특정 상품입니다.
-                      이자소득세 9.0% + 지방소득세 0.9% = 9.5%가 적용됩니다. 단, 일정 소득 이하·가입
-                      한도·최소 기간 등 조건이 있습니다.
+                      2014년 12월 31일까지 가입한 세금우대종합저축 중 요건을 충족하는 기존 계약을
+                      가정합니다(조세특례제한법 §89). 소득세 9% + 농어촌특별세 0.5% = 9.5%이며
+                      개인지방소득세는 부과하지 않습니다. 신규 가입 상품의 일반 세율이 아니므로
+                      금융기관에 기존 계약의 적용 여부를 확인하세요. 근거:{' '}
+                      <a
+                        className="underline"
+                        href="https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&lsJoLnkSeq=1032879985"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        조세특례제한법 제89조
+                      </a>
+                      ,{' '}
+                      <a
+                        className="underline"
+                        href="https://www.law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0005&lsiSeq=285905&urlMode=lsScJoRltInfoR"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        농어촌특별세법 제5조
+                      </a>
+                      .
                     </p>
                     <p className="text-caption text-text-tertiary">
                       예: 이자 100만원 → 세금 9.5만원 → 세후 90.5만원
@@ -422,7 +443,8 @@ export default function SavingsPage() {
                       세후 수령액 = 원금 + 세후 이자
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      모든 계산 결과는 10원 단위로 절사합니다(세금 표준 처리).
+                      이 계산기는 세전 이자와 합산 세금을 각각 10원 미만 절사하는 비교용 가정입니다.
+                      은행의 실제 납입일·일수 및 세목별 원천징수 처리에 따라 차이가 날 수 있습니다.
                     </p>
                   </li>
                 </ol>
@@ -448,8 +470,8 @@ export default function SavingsPage() {
                   </li>
                   <li>
                     <strong>세금 검토</strong>: 세금우대·비과세 상품 자격이 있다면 세전·세후 이자
-                    차이를 비교해 최적의 상품을 선택하세요. 예: 일반 vs 세금우대 = 약 5.9% 수익률
-                    향상.
+                    차이를 비교하세요. 일반과세 15.4%와 기존 계약의 세금우대 9.5%는 이자에 적용하는
+                    세율이 5.9%포인트 다르며, 전체 투자 수익률 차이를 뜻하지 않습니다.
                   </li>
                   <li>
                     <strong>규칙적 저축</strong>: 적금은 강제적 저축 효과가 있습니다. 중도해지
@@ -469,7 +491,7 @@ export default function SavingsPage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §14(이자소득), §129(이자소득세),
-                  조세특례제한법 §89의2(세금우대종합저축), §91(비과세 저축성 보험료·ISA 등). 참고:{' '}
+                  조세특례제한법 §89(세금우대종합저축), §91(비과세 저축성 보험료·ISA 등). 참고:{' '}
                   <a
                     href="https://www.bok.or.kr"
                     target="_blank"
