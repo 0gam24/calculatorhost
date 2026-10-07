@@ -188,6 +188,17 @@
 - GSC 보안 및 수동 조치
 - 네이버 서치어드바이저 소유확인 → §6 참조
 
+### ▶ 네이버 빈틈 키워드 시스템 (2026-10-07 이식, awoo 원본)
+
+> 운영자 지시(2026-10-07): "네이버 허브 API 로 상위 노출할 수 있는 빈틈 키워드를 찾아 포스팅, 일 200달러까지". 수요 근거가 있는 글감만 쓰므로 위 동결 목록의 "수요 근거 없는 신규 가이드"와 충돌하지 않는다.
+
+- **사용법**: 세션에서 `목록` → 채팅 위젯 → [발행 지시]/[보류]/[실측]/[눈확인]/[선점] 버튼. 발행은 `/post` 절차(수동 전용, 새 가이드 하루 1건, 기존 계산기·가이드 보강 우선)
+- **자동화 없음**: 운영자가 목록을 열 때만 로컬에서 API 호출. 예약 실행·워크플로 만들지 말 것
+- **정찰 키 대기**: NAVER API HUB 새 앱 키를 운영자가 `.env.local` 에 `NCP_API_KEY_ID`·`NCP_API_KEY` 로 넣어야 검색 결과 정찰이 된다. 지금은 기존 개발자센터 키로 검색량(데이터랩)만 잰다(webkr 401)
+- **금액은 가정**: 하루 달러 = 가정 RPM $5 (`docs/ops/adsense-private/rpm-groups.json`, gitignore). 애드센스 실자료가 생기면 고칠 것. 주제 배수 전부 1.0
+- 파일: 프로파일 `docs/ops/SITE-KEYWORD-PROFILE.md` · 큰 키워드 `docs/ops/big-keywords.json` · 선점 캘린더 `docs/ops/landgrab-calendar.json` · 파이프라인 `scripts/keyword-pipeline.mjs` · 위젯 `scripts/ops-widget.mjs` · 명령 `.claude/commands/목록.md`·`post.md`
+- 첫 실측(2026-10-07) 요점: 수요와 글 배치가 거꾸로다(퇴직금 계산기 245·4대보험 92·주휴수당 77 에 가이드 9편, 증여세 28·상속세 24·양도세 22 에 69편). 연말정산(1월 피크 1,728)은 계산기가 없다 → 신규 계산기 여부 운영자 결정 대기
+
 ### (종료) 2026-05-12 ~ 06-10, 4주 GSC 효과 모니터링
 - **누적 23+ PR 효과 측정** — 색인 40 → ?, GSC CTR/노출, AdSense RPM
   · 색인 인프라: IndexNow workflow + sitemap 검증 + indexing-guard E2E

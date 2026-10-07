@@ -29,9 +29,10 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { formatUsage } from './lib/api-quota.mjs';
-import { EYE_LABEL, eyeFor, loadEyeStore } from './lib/eye-offset.mjs';
+import { EYE_LABEL, loadEyeStore } from './lib/eye-offset.mjs';
 import { apiGet, authFor, loadEnv } from './lib/naver-api.mjs';
-import { SITE_HOST, buildAbove, parseResults, stripTags, verdicts } from './lib/serp-classify.mjs';
+import { measureQuery } from './lib/scout.mjs';
+import { SITE_HOST } from './lib/serp-classify.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const TARGETS_FILE = join(ROOT, 'docs', 'ops', 'rank-targets.json');
@@ -43,14 +44,9 @@ const DELAY_MS = 300;
 const MAX_PER_RUN = 40;
 const MAX_SCOUT_PER_RUN = 35; // awoo 정찰 예산과 같다. 쿼리당 호출 2회(webkr·news)
 const KEEP_DAYS = 90;
-const WEBKR_DISPLAY = 30;
-const NEWS_DISPLAY = 100;
-const NEWS_DAYS = 7;
-const MEASURED_BY = 'webkr-api';
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const kstDate = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
-const kstYear = () => Number(kstDate().slice(0, 4));
 
 async function loadSisterHosts() {
   try {
@@ -59,70 +55,6 @@ async function loadSisterHosts() {
   } catch {
     return new Set();
   }
-}
-
-const newsTitleKey = (t) =>
-  stripTags(t)
-    .replace(/\[[^\]]*\]|【[^】]*】/g, '')
-    .replace(/[^가-힣A-Za-z0-9]/g, '')
-    .toLowerCase();
-
-/** 뉴스 벽(언론 점령 대리지표). 최근 7일 기사 수와 같은 제목 묶음 최대 크기. 판정에는 쓰지 않고 경고만. */
-async function fetchNewsWall(get, query) {
-  const json = await get('news', { query, display: NEWS_DISPLAY, sort: 'date' });
-  const since = Date.now() - NEWS_DAYS * 86400_000;
-  const recent = (json.items ?? []).filter((it) => {
-    const t = Date.parse(it.pubDate);
-    return Number.isFinite(t) && t >= since;
-  });
-  const groups = new Map();
-  for (const it of recent) {
-    const k = newsTitleKey(it.title);
-    if (k.length >= 8) groups.set(k, (groups.get(k) ?? 0) + 1);
-  }
-  return {
-    newsWall: recent.length,
-    newsWallCapped: recent.length >= NEWS_DISPLAY,
-    newsSameTitle: groups.size ? Math.max(...groups.values()) : 0,
-  };
-}
-
-/** 한 쿼리 측정 */
-async function measure(get, query, ctx) {
-  const json = await get('webkr', { query, display: WEBKR_DISPLAY, start: 1 });
-  const s = parseResults(json, { sisters: ctx.sisters, year: kstYear() });
-  const news = await fetchNewsWall(get, query);
-  const idx = s.webDocs.findIndex((d) => d.kind === 'us');
-  const rank = idx === -1 ? null : idx + 1;
-  const { above, wholeWindow } = buildAbove(s.webDocs, idx);
-  const eyeOffset = eyeFor(ctx.eyeStore, query);
-  const v = verdicts({ rank, above, eyeOffset, news });
-  return {
-    query,
-    rank,
-    url: idx === -1 ? null : s.webDocs[idx].url,
-    webDocCount: s.webDocCount,
-    webDocRaw: s.webDocRaw,
-    webDocTotal: s.webDocTotal,
-    aboveIsWholeBlock: wholeWindow,
-    ...v,
-    webDocOffset: null, // API 로 잴 수 없다 → eyeOffset
-    eyeOffset,
-    ...news,
-    toolCount: s.toolCount,
-    pressCount: s.pressCount,
-    commercialCount: s.commercialCount,
-    sisterCount: s.sisterCount,
-    institutionalCount: s.institutionalCount,
-    institutionalOpenCount: s.institutionalOpenCount,
-    mainGovCount: s.mainGovCount,
-    onPage: null,
-    parseOk: true,
-    measuredBy: ctx.mock ? 'mock' : MEASURED_BY,
-    measuredAt: new Date().toISOString(),
-    unmeasured: ['webDocOffset', 'pressAbove', 'ugc', 'onPage'],
-    above,
-  };
 }
 
 /** --mock: 픽스처에서 webkr 응답을 꺼내고 뉴스는 빈 응답. 픽스처에 없는 쿼리는 빈 결과. */
@@ -245,7 +177,7 @@ async function main() {
   const failed = [];
   for (const [i, q] of queries.entries()) {
     try {
-      const m = await measure(get, q, ctx);
+      const m = await measureQuery(get, q, ctx);
       results.push(m);
       console.error(summary(m));
     } catch (e) {

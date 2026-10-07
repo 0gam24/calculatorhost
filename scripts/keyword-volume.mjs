@@ -43,9 +43,22 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 const fmt = (d) => d.toISOString().slice(0, 10);
 const kstDate = () => new Date(Date.now() + 9 * 3600 * 1000).toISOString().slice(0, 10);
 
+/**
+ * season 은 완결된 13개월(지난달 말까지)만 쓴다. 진행 중인 이번 달을 넣으면 마지막 점이 며칠치뿐이라
+ * "작년 같은 달 대비"가 0.1 대로 잘못 나온다(2026-10-07 실측: 10월 7일치 vs 작년 10월 전체).
+ * awoo 원본은 이번 달을 포함한다 — 여기서만 고쳤다.
+ */
+function seasonWindow(now = new Date()) {
+  const kst = new Date(now.getTime() + 9 * 3600 * 1000);
+  const end = new Date(Date.UTC(kst.getUTCFullYear(), kst.getUTCMonth(), 0)); // 지난달 말일
+  const start = new Date(Date.UTC(end.getUTCFullYear(), end.getUTCMonth() - 12, 1)); // 13개월 전 1일
+  return { start, end };
+}
+
 async function queryGroup(auth, terms, { season = false } = {}) {
-  const end = new Date();
-  const start = new Date(end.getTime() - (season ? 396 : DAYS) * 86400_000);
+  const { start, end } = season
+    ? seasonWindow()
+    : { end: new Date(), start: new Date(Date.now() - DAYS * 86400_000) };
   const body = {
     startDate: fmt(start),
     endDate: fmt(end),
