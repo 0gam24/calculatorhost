@@ -34,6 +34,8 @@
     "gsc:report": "node scripts/gsc-report.mjs",
     "gsc": "node scripts/gsc-pull.mjs && node scripts/gsc-report.mjs",
     "naver:trend": "node scripts/naver-trend.mjs",
+    "rank:check": "node scripts/naver-rank-check.mjs",
+    "rank:scout": "node scripts/naver-rank-check.mjs --mode=scout --query=",
     "validate:statute": "node scripts/validate-statute-references.mjs",
     "validate:metadata": "node scripts/validate-guide-metadata.mjs",
     "validate:seo": "npm run validate:statute && npm run validate:metadata && npm run citations:audit",

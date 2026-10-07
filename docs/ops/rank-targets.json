@@ -1,0 +1,18 @@
+{
+  "_comment": "추적 모드(node scripts/naver-rank-check.mjs) 대상. 우리가 자리를 잡으려는 계산기 헤드텀. 기준선은 STATE.md §7 (GSC 구글 순위). 네이버 순위는 이 파일로 처음 잰다. 결과는 docs/ops/naver-ranks.json (gitignore, 로컬 전용).",
+  "updatedAt": "2026-10-07",
+  "targets": [
+    { "query": "상속세 계산기", "page": "/calculator/inheritance-tax/" },
+    { "query": "증여세 계산기", "page": "/calculator/gift-tax/" },
+    { "query": "양도소득세 계산기", "page": "/calculator/capital-gains-tax/" },
+    { "query": "취득세 계산기", "page": "/calculator/acquisition-tax/" },
+    { "query": "재산세 계산기", "page": "/calculator/property-tax/" },
+    { "query": "종합부동산세 계산기", "page": "/calculator/comprehensive-property-tax/" },
+    { "query": "자동차세 계산기", "page": "/calculator/vehicle-tax/" },
+    { "query": "청약가점 계산기", "page": "/calculator/housing-subscription/" },
+    { "query": "퇴직금 계산기", "page": "/calculator/severance/" },
+    { "query": "연봉 실수령액 계산기", "page": "/calculator/salary/" },
+    { "query": "dti 계산기", "page": "/calculator/dti/" },
+    { "query": "프리랜서 종합소득세 계산기", "page": "/calculator/freelancer-tax/" }
+  ]
+}

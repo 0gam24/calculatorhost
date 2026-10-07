@@ -91,3 +91,12 @@ CLAUDE.local.md
 
 # 폰트 서브셋팅 백업 (롤백용 로컬 보관 — repo 비대화 방지)
 public/fonts/*.original.woff2
+
+# 네이버 키워드 시스템 운영 데이터 (로컬 전용, 공개 저장소에 전략 노출 방지)
+docs/ops/naver-ranks.json
+docs/ops/eye-offset.json
+docs/ops/pipeline-queue.json
+docs/ops/DAILY-KEYWORDS.md
+docs/ops/dashboard.html
+docs/ops/volume-*.json
+docs/ops/radar-*.json

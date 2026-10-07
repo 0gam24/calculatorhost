@@ -1,0 +1,28 @@
+{
+  "_comment": "자매 사이트 호스트. scripts/naver-rank-check.mjs 가 웹문서를 kind:'sister' 로 분류할 때 읽는다. 자매는 openSlots(열린 자리)에서 빼고 sisterAbove 로 따로 센다. 뺏을 자리도 막는 벽도 아니고 한 집안 자기잠식 신호다. 원본: awoo docs/ops/sister-sites.json (2026-09-10). calculatorhost 자신은 넣지 않는다(kind:'us'). awoo.or.kr 은 여기서 자매다.",
+  "updatedAt": "2026-10-07",
+  "hosts": [
+    "awoo.or.kr",
+    "smartdatashop.kr",
+    "smartdata-shop.com",
+    "asiatop.co.kr",
+    "iknowhowinfo.com",
+    "bizdata.kr",
+    "retiredata.kr",
+    "familydata.kr",
+    "homedata.kr",
+    "aidata.kr"
+  ],
+  "roles": {
+    "awoo.or.kr": "지원금",
+    "smartdatashop.kr": "메인(데이터 저널)",
+    "asiatop.co.kr": "사회초년생",
+    "iknowhowinfo.com": "투자",
+    "bizdata.kr": "비즈니스",
+    "retiredata.kr": "은퇴",
+    "familydata.kr": "가정",
+    "homedata.kr": "부동산",
+    "aidata.kr": "AI",
+    "calculatorhost.com": "계산기 (자사)"
+  }
+}

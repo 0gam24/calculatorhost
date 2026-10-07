@@ -1,0 +1,24 @@
+{
+  "_comment": "--mock 전용 가짜 웹문서 검색 응답. 2026-10-07 네이버 실측에서 보인 호스트 구성을 흉내 낸 것이다. 실제 순위 데이터가 아니다.",
+  "청약가점 계산기": {
+    "total": 41230,
+    "items": [
+      { "title": "<b>청약가점 계산기</b> 2026", "link": "https://aptalimi.com/calc", "description": "무주택 기간 부양가족 통장 가입기간" },
+      { "title": "청약홈 가점 계산", "link": "https://www.applyhome.co.kr/ap/apg/selectSubscrptCalculatorView.do", "description": "청약홈 공식" },
+      { "title": "청약가점 계산하기", "link": "https://onetoolhub.com/apt-score", "description": "" },
+      { "title": "2024 청약 가점표", "link": "https://enolasoft.com/score", "description": "" },
+      { "title": "청약 가점제 안내", "link": "https://www.khug.or.kr/bbs/board.do?nttId=1", "description": "" },
+      { "title": "블로그 글", "link": "https://blog.naver.com/abc/1", "description": "" },
+      { "title": "청약가점 계산기 2026 | calculatorhost", "link": "https://calculatorhost.com/calculator/housing-subscription/", "description": "" }
+    ]
+  },
+  "자동차세 연납": {
+    "total": 88120,
+    "items": [
+      { "title": "위택스 자동차세 연납 신청", "link": "https://www.wetax.go.kr/main", "description": "2026년 1월" },
+      { "title": "자동차세 연납 할인 2026", "link": "https://www.mois.go.kr/frt/a", "description": "" },
+      { "title": "서울시 이택스", "link": "https://etax.seoul.go.kr/", "description": "" },
+      { "title": "자동차세 연납 신청 방법", "link": "https://www.newsjeju.net/news/1", "description": "" }
+    ]
+  }
+}
