@@ -53,7 +53,11 @@ export function buildCandidates({ bigKeywords, calendar, today }) {
         cluster: k.cluster,
         calculator: k.calculator ?? null,
         ...(k.widgetRisk ? { widgetRisk: true } : {}),
-        action: isHead ? { type: 'calculator', target: k.calculator } : { type: 'new', target: null },
+        action: !isHead
+          ? { type: 'new', target: null }
+          : k.calculator
+            ? { type: 'calculator', target: k.calculator }
+            : { type: 'new-calculator', target: null },
       });
     }
   }

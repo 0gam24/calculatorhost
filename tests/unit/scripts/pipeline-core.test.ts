@@ -60,6 +60,11 @@ describe('buildCandidates', () => {
     const c = buildCandidates({ bigKeywords: big, calendar: { items: [] }, today: '2026-10-07' });
     expect(c[0]?.action).toEqual({ type: 'calculator', target: '/calculator/severance/' });
   });
+  it('계산기 검색어인데 맞는 계산기가 없으면 신규 계산기로 간다', () => {
+    const none = { keywords: [{ term: '연차수당 계산기', cluster: '연차수당', calculator: null, aliases: [] }] };
+    const c = buildCandidates({ bigKeywords: none, calendar: { items: [] }, today: '2026-10-07' });
+    expect(c[0]?.action).toEqual({ type: 'new-calculator', target: null });
+  });
   it('같은 검색어는 한 번만', () => {
     const dup = { keywords: [{ ...big.keywords[0], aliases: ['퇴직금 계산기', '퇴직금계산기'] }] };
     const c = buildCandidates({ bigKeywords: dup, calendar: { items: [] }, today: '2026-10-07' });

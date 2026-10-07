@@ -57,7 +57,8 @@ git fetch origin && git rebase --autostash origin/main
 - `.claude/STATE.md` §1 "현재 모드"(라이브 운영 중) 한 단락
 - 큐 브리프(맨 앞에 `exposure.reasons`) + 1단계 수요 결과
 - 하네스 §2(작성)·§3(계산 검증)·§4(메타)·§6(광고 컴포넌트 없음)·§7(GuideHeader 등 UI props)
-- §2-14: 긴 줄표·이모지 금지, AI 보조 작성 표기
+- §2-14: 긴 줄표·이모지 금지
+- 방문자에게 보이는 작성도구(AI·자동 작성) 관련 문구를 넣지 않는다. 운영자가 2026-10-01 릴리스에서 사이트 전체에서 이런 문구를 지웠다(`docs/reports/copy-release-2026-10-01.md`). 하네스 §2-9 의 "AI 보조 표기"보다 이 결정이 우선한다. 사람 검수를 보증하는 문구도 쓰지 않는다
 - 세율·공제는 `src/lib/constants/tax-rates-2026.ts` 와 `docs/data-model.md` 에서만. 법조항 §N 은 law.go.kr 1차출처로 확인한 것만
 - 내부 링크: 관련 계산기 1개 이상 + 기존 가이드 cross-link(내부 링크 0 인 고립 페이지 금지)
 
@@ -76,6 +77,7 @@ node scripts/check-guide-quality.mjs src/app/guide/<slug>/page.tsx
 npm run typecheck && npm run lint && npm test && npm run build
 npm run sitemap:check && npm run citations:audit
 ```
+`check-guide-quality` 의 "AI 보조 작성 표기" 항목은 위 2026-10-01 결정 때문에 수동 발행에선 적용하지 않는다(그 항목만 red 면 통과로 본다). 나머지 항목은 모두 통과해야 한다.
 GitHub Actions 가 꺼져 있어서 CI 게이트가 없다. 로컬에서 위가 전부 통과해야 한다. 실패하면 고쳐서 다시 돌리고(최대 2회), 그래도 안 되면 발행하지 않고 보고한다. YMYL 수치에 확인 못 한 값이 남아 있으면 발행하지 않는다.
 
 ### 5. 발행

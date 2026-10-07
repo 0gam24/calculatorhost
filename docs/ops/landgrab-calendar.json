@@ -9,14 +9,126 @@
   "updated": "2026-10-07",
   "benchmark": "실업급여",
   "items": [
-    { "key": "jongbu-2026", "query": "종합부동산세", "peakMonth": 11, "peakRelative": 20.49, "writeBy": "2026-10-07", "calculator": "/calculator/comprehensive-property-tax/", "family": "A", "kind": "refresh", "note": "11월 말 고지. 9편 가이드 있음, 새 글보다 계산기·대표 가이드 2026 고지 기준 갱신. --season 판정 '선점 적기 D-1'" },
-    { "key": "yearend-2027", "query": "연말정산", "peakMonth": 1, "peakRelative": 1727.9, "writeBy": "2026-12-01", "calculator": null, "family": "A", "kind": "new-calculator", "note": "전체 최대 피크. 연말정산 계산기 없음 → 신규 계산기 후보(운영자 결정 필요). 자매 asiatop '첫 연말정산'·awoo 환급 각도와 겹치지 않게 결정세액·환급액 계산 각도만" },
-    { "key": "car-annual-2027", "query": "자동차세 연납", "peakMonth": 1, "peakRelative": 438.41, "writeBy": "2026-12-10", "calculator": "/calculator/vehicle-tax/", "family": "A", "kind": "refresh", "note": "1월 16~31일 연납. 2027 공제율·기간 1차출처(위택스) 확인 후 갱신" },
-    { "key": "salary-2027", "query": "연봉 실수령액", "peakMonth": 1, "peakRelative": 117.36, "writeBy": "2026-12-15", "calculator": "/calculator/salary/", "family": "A", "kind": "refresh", "note": "연봉협상 시즌. 2027 4대보험 요율·간이세액표 반영 필요(고시 확인 후)" },
-    { "key": "severance-2027", "query": "퇴직금 계산기", "peakMonth": 1, "peakRelative": 301.07, "writeBy": "2026-12-15", "calculator": "/calculator/severance/", "family": "A", "kind": "refresh", "note": "연중 상시 수요(평균 232). 1월 피크 전 계산기 설명·결과표 보강" },
-    { "key": "vat-2027-1", "query": "부가세 신고", "peakMonth": 1, "peakRelative": 68.08, "writeBy": "2026-12-20", "calculator": "/calculator/vat/", "family": "A", "kind": "refresh", "note": "2기 확정신고 1월 25일" },
-    { "key": "income-tax-2027", "query": "종합소득세", "peakMonth": 5, "peakRelative": 294.81, "writeBy": "2027-04-01", "calculator": "/calculator/freelancer-tax/", "family": "A", "kind": "refresh", "note": "5월 신고" },
-    { "key": "property-tax-2027", "query": "재산세", "peakMonth": 7, "peakRelative": 125.57, "writeBy": "2027-06-01", "calculator": "/calculator/property-tax/", "family": "A", "kind": "refresh", "note": "7·9월 납부, 6/1 과세기준일" },
-    { "key": "minimum-wage-2028", "query": "최저임금", "peakMonth": 7, "peakRelative": 102.82, "writeBy": "2027-06-20", "calculator": "/calculator/salary/", "family": "V", "kind": "refresh", "note": "7월 결정. 결정 전엔 V형('아직 확정 아님'), 결정 직후 주휴수당·월급 환산 갱신. 1/1 시행은 T1 사건" }
+    {
+      "key": "jongbu-2026",
+      "query": "종합부동산세",
+      "peakMonth": 11,
+      "peakRelative": 20.49,
+      "writeBy": "2026-10-07",
+      "calculator": "/calculator/comprehensive-property-tax/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "11월 말 고지. 9편 가이드 있음, 새 글보다 계산기·대표 가이드 2026 고지 기준 갱신. --season 판정 '선점 적기 D-1'"
+    },
+    {
+      "key": "jongbu-payment-2026",
+      "query": "종부세 납부기간",
+      "peakMonth": 11,
+      "peakRelative": 9.58,
+      "writeBy": "2026-10-25",
+      "calculator": null,
+      "family": "B",
+      "kind": "new",
+      "note": "2026-10-07 --season 선점 적기(11월 피크). 9편 중 고지·납부·분납을 다루는 글 없음. 11월 하순 고지 전 발행. 계산기 페이지에 일정 섹션 먼저 추가"
+    },
+    {
+      "key": "yearend-2027",
+      "query": "연말정산",
+      "peakMonth": 1,
+      "peakRelative": 1727.9,
+      "writeBy": "2026-12-01",
+      "calculator": null,
+      "family": "A",
+      "kind": "new-calculator",
+      "note": "전체 최대 피크. 연말정산 계산기 없음 → 신규 계산기 후보(운영자 결정 필요). 자매 asiatop '첫 연말정산'·awoo 환급 각도와 겹치지 않게 결정세액·환급액 계산 각도만"
+    },
+    {
+      "key": "annual-leave-calc-2027",
+      "query": "연차수당 계산기",
+      "peakMonth": 1,
+      "peakRelative": 31.77,
+      "writeBy": "2026-12-01",
+      "calculator": null,
+      "family": "A",
+      "kind": "new-calculator",
+      "note": "평균 17, 1월 피크 31.8. 급여 계산기는 연차수당을 계산하지 않음 → 신규 계산기. 주휴수당 계산기와 같은 src/lib/work 패턴"
+    },
+    {
+      "key": "car-annual-2027",
+      "query": "자동차세 연납",
+      "peakMonth": 1,
+      "peakRelative": 438.41,
+      "writeBy": "2026-12-10",
+      "calculator": "/calculator/vehicle-tax/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "1월 16~31일 연납. 2027 공제율·기간 1차출처(위택스) 확인 후 갱신"
+    },
+    {
+      "key": "salary-2027",
+      "query": "연봉 실수령액",
+      "peakMonth": 1,
+      "peakRelative": 117.36,
+      "writeBy": "2026-12-15",
+      "calculator": "/calculator/salary/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "연봉협상 시즌. 2027 4대보험 요율·간이세액표 반영 필요(고시 확인 후)"
+    },
+    {
+      "key": "severance-2027",
+      "query": "퇴직금 계산기",
+      "peakMonth": 1,
+      "peakRelative": 301.07,
+      "writeBy": "2026-12-15",
+      "calculator": "/calculator/severance/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "연중 상시 수요(평균 232). 1월 피크 전 계산기 설명·결과표 보강"
+    },
+    {
+      "key": "vat-2027-1",
+      "query": "부가세 신고",
+      "peakMonth": 1,
+      "peakRelative": 68.08,
+      "writeBy": "2026-12-20",
+      "calculator": "/calculator/vat/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "2기 확정신고 1월 25일"
+    },
+    {
+      "key": "income-tax-2027",
+      "query": "종합소득세",
+      "peakMonth": 5,
+      "peakRelative": 294.81,
+      "writeBy": "2027-04-01",
+      "calculator": "/calculator/freelancer-tax/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "5월 신고"
+    },
+    {
+      "key": "property-tax-2027",
+      "query": "재산세",
+      "peakMonth": 7,
+      "peakRelative": 125.57,
+      "writeBy": "2027-06-01",
+      "calculator": "/calculator/property-tax/",
+      "family": "A",
+      "kind": "refresh",
+      "note": "7·9월 납부, 6/1 과세기준일"
+    },
+    {
+      "key": "minimum-wage-2028",
+      "query": "최저임금",
+      "peakMonth": 7,
+      "peakRelative": 102.82,
+      "writeBy": "2027-06-20",
+      "calculator": "/calculator/salary/",
+      "family": "V",
+      "kind": "refresh",
+      "note": "7월 결정. 결정 전엔 V형('아직 확정 아님'), 결정 직후 주휴수당·월급 환산 갱신. 1/1 시행은 T1 사건"
+    }
   ]
 }

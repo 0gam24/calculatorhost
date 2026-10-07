@@ -6,7 +6,8 @@
     "widgetRisk = 네이버 자체 계산기 위젯이 웹문서 블록을 밀어낼 가능성(가설). 검색량이 커도 운영자 눈 확인이 \"그 아래\"면 닫힘이다.",
     "aliases 는 세부 의도 탐색 시드다. 아직 검색량을 재지 않았다 — 파이프라인이 잰다. 데이터랩 값은 게이트가 아니라 정렬용이다.",
     "thin = 이번 측정에서 모든 형태가 1.5 미만이라 뺀 것. 네이버 수요가 얇다는 뜻이지 구글·익명 롱테일 수요가 없다는 뜻은 아니다(화폐가치 계산기는 GSC 28일 노출 626).",
-    "자매 사이트 몫(대출 상품·청약 일정·연금 수령 전략 등)은 계산 각도만 쓴다. docs/ops/SITE-KEYWORD-PROFILE.md §6."
+    "자매 사이트 몫(대출 상품·청약 일정·연금 수령 전략 등)은 계산 각도만 쓴다. docs/ops/SITE-KEYWORD-PROFILE.md §6.",
+    "calculator = null 이면 그 계산기가 아직 없다(파이프라인이 신규 계산기 후보로 표시). 2026-10-07: 연차수당·중도상환수수료는 기존 계산기가 계산하지 않아 null 로 정정, 주휴수당은 신규 계산기로 연결."
   ],
   "updated": "2026-10-07",
   "benchmark": "실업급여",
@@ -278,7 +279,7 @@
       "term": "주휴수당 계산기",
       "cluster": "주휴수당",
       "axis": "근로·급여",
-      "calculator": "/calculator/salary/",
+      "calculator": "/calculator/weekly-holiday-allowance/",
       "aliases": [
         "주휴수당 조건",
         "주 15시간",
@@ -744,7 +745,7 @@
       "term": "연차수당 계산기",
       "cluster": "연차수당",
       "axis": "근로·급여",
-      "calculator": "/calculator/salary/",
+      "calculator": null,
       "aliases": [
         "연차 발생 기준",
         "퇴사 연차수당",
@@ -801,7 +802,7 @@
       "term": "중도상환수수료 계산기",
       "cluster": "중도상환수수료",
       "axis": "금융",
-      "calculator": "/calculator/loan/",
+      "calculator": null,
       "aliases": [
         "중도상환수수료 면제"
       ],
