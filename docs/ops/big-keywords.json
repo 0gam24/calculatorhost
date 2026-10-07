@@ -1,0 +1,951 @@
+{
+  "_readme": [
+    "T2 \"대형 세부 롱테일\" 트랙의 입력. 파이프라인이 keywords[].term · aliases 로 후보를 만든다 (이식 지침서 2·3단계).",
+    "목록 기준: 2026-10-07 데이터랩 실측(실업급여=100, 최근 30일)에서 어느 한 형태라도 최근 7일 1.5 이상인 클러스터만 넣었다. 측정 원본 docs/ops/volume-2026-10-07*.json (로컬, gitignore).",
+    "evidence.datalab.forms = 측정한 검색 형태별 {recent7, rel30, trend}. term 은 그중 최근 7일이 가장 큰 형태다. \"퇴직금 계산기\"(245)와 \"퇴직금\"(17)처럼 형태마다 10배 넘게 다르다.",
+    "widgetRisk = 네이버 자체 계산기 위젯이 웹문서 블록을 밀어낼 가능성(가설). 검색량이 커도 운영자 눈 확인이 \"그 아래\"면 닫힘이다.",
+    "aliases 는 세부 의도 탐색 시드다. 아직 검색량을 재지 않았다 — 파이프라인이 잰다. 데이터랩 값은 게이트가 아니라 정렬용이다.",
+    "thin = 이번 측정에서 모든 형태가 1.5 미만이라 뺀 것. 네이버 수요가 얇다는 뜻이지 구글·익명 롱테일 수요가 없다는 뜻은 아니다(화폐가치 계산기는 GSC 28일 노출 626).",
+    "자매 사이트 몫(대출 상품·청약 일정·연금 수령 전략 등)은 계산 각도만 쓴다. docs/ops/SITE-KEYWORD-PROFILE.md §6."
+  ],
+  "updated": "2026-10-07",
+  "benchmark": "실업급여",
+  "keywords": [
+    {
+      "term": "환율 계산기",
+      "cluster": "환율",
+      "axis": "금융",
+      "calculator": "/calculator/exchange/",
+      "aliases": [
+        "환전 수수료",
+        "환율 우대"
+      ],
+      "widgetRisk": true,
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "환율 계산기": {
+              "recent7": 1329.59,
+              "rel30": 1367.49,
+              "trend": 0.96
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "currency-exchange-fee-preferential-rate-2026",
+        "foreign-currency-deposit-tax-2026"
+      ]
+    },
+    {
+      "term": "디데이 계산기",
+      "cluster": "디데이",
+      "axis": "생활",
+      "calculator": "/calculator/d-day/",
+      "aliases": [
+        "날짜 계산",
+        "100일 계산"
+      ],
+      "widgetRisk": true,
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "디데이 계산기": {
+              "recent7": 296.87,
+              "rel30": 314.97,
+              "trend": 0.93
+            }
+          }
+        }
+      },
+      "existingSlugs": []
+    },
+    {
+      "term": "대출이자 계산기",
+      "cluster": "대출이자",
+      "axis": "금융",
+      "calculator": "/calculator/loan/",
+      "aliases": [
+        "원리금균등 원금균등",
+        "만기일시상환 이자"
+      ],
+      "widgetRisk": true,
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "대출이자 계산기": {
+              "recent7": 259.3,
+              "rel30": 274.05,
+              "trend": 0.93
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "comprehensive-income-tax-interim-prepayment-2026",
+        "corporate-tax-interim-prepayment-2026",
+        "credit-score-loan-interest-rate-2026",
+        "equal-payment-vs-equal-principal-2026",
+        "housing-pension-reverse-mortgage-2026",
+        "january-vehicle-tax-prepayment",
+        "mortgage-fixed-vs-variable-rate-2026",
+        "mortgage-interest-deduction-2026",
+        "mortgage-loan-limit-6-billion-cap-2026",
+        "mortgage-refinance-savings-2026",
+        "newborn-special-mortgage-loan-2026",
+        "prepayment-penalty-fee-2026",
+        "vehicle-tax-prepayment-refund-2026"
+      ]
+    },
+    {
+      "term": "퇴직금 계산기",
+      "cluster": "퇴직금",
+      "axis": "근로·급여",
+      "calculator": "/calculator/severance/",
+      "aliases": [
+        "퇴직금 계산 방법",
+        "퇴직금 지급기한",
+        "퇴직소득세",
+        "1년 미만 퇴직금"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "퇴직금 계산기": {
+              "recent7": 245.46,
+              "rel30": 241.83,
+              "trend": 1.02
+            },
+            "퇴직금": {
+              "recent7": 17.02,
+              "rel30": 17.93,
+              "trend": 0.93
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "retirement-income-tax-2026",
+        "retirement-income-tax-deferral-irp-2026",
+        "retirement-pay-interim-settlement-2026",
+        "severance-pay-deadline-14-days-2026",
+        "severance-pay-inheritance-tax-2026",
+        "severance-vs-pension-dc-db"
+      ]
+    },
+    {
+      "term": "평수 계산기",
+      "cluster": "평수",
+      "axis": "부동산 거래비용",
+      "calculator": "/calculator/area/",
+      "aliases": [
+        "제곱미터 평 변환",
+        "84제곱미터 평수"
+      ],
+      "widgetRisk": true,
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "평수 계산기": {
+              "recent7": 121.85,
+              "rel30": 131.68,
+              "trend": 0.9
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "property-tax-urban-area-regional-resource-tax-2026"
+      ]
+    },
+    {
+      "term": "예금이자 계산기",
+      "cluster": "예금이자",
+      "axis": "금융",
+      "calculator": "/calculator/deposit/",
+      "aliases": [
+        "정기예금 세후 이자",
+        "이자소득세 15.4"
+      ],
+      "widgetRisk": true,
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "예금이자 계산기": {
+              "recent7": 112.58,
+              "rel30": 113.72,
+              "trend": 0.99
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "commercial-lease-conversion-deposit-2026",
+        "deposit-protection-limit-2026",
+        "deposit-vs-savings-vs-parking-account-2026",
+        "foreign-currency-deposit-tax-2026",
+        "interest-income-tax-15-4-percent-2026",
+        "jeonse-deposit-safety",
+        "private-housing-subscription-deposit-amount-2026"
+      ]
+    },
+    {
+      "term": "4대보험 계산기",
+      "cluster": "4대보험",
+      "axis": "근로·급여",
+      "calculator": "/calculator/salary/",
+      "aliases": [
+        "4대보험 요율",
+        "4대보험 근로자 부담",
+        "두루누리"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "4대보험 계산기": {
+              "recent7": 91.95,
+              "rel30": 75.94,
+              "trend": 1.3
+            },
+            "4대보험": {
+              "recent7": 62.77,
+              "rel30": 56.4,
+              "trend": 1.15
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "durunuri-social-insurance-support-2026",
+        "four-major-insurance-rates-2026"
+      ]
+    },
+    {
+      "term": "부가세 계산기",
+      "cluster": "부가세",
+      "axis": "세금",
+      "calculator": "/calculator/vat/",
+      "aliases": [
+        "부가세 신고기간",
+        "간이과세자 부가세",
+        "부가세 환급",
+        "부가세 역산"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "부가세 계산기": {
+              "recent7": 88.46,
+              "rel30": 78.63,
+              "trend": 1.17
+            },
+            "부가세": {
+              "recent7": 9.41,
+              "rel30": 7.65,
+              "trend": 1.33
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "april-vat-preliminary-q1",
+        "business-closure-vat-final-return-2026",
+        "credit-card-sales-vat-deduction-2026",
+        "july-vat-and-tax-withholding",
+        "july-vat-final-1st-half",
+        "october-vat-q2-preliminary",
+        "private-housing-subscription-deposit-amount-2026",
+        "private-pension-1500-million-separate-taxation-2026",
+        "simplified-taxation-vat-2026",
+        "simplified-taxation-waiver-2026",
+        "simplified-taxpayer-july-vat-2026",
+        "vat-bad-debt-tax-credit-2026",
+        "vat-early-refund-2026",
+        "vat-non-deductible-input-tax-2026",
+        "vat-penalty-underreporting-2026",
+        "vat-preliminary-notice-individual-2026"
+      ]
+    },
+    {
+      "term": "주휴수당 계산기",
+      "cluster": "주휴수당",
+      "axis": "근로·급여",
+      "calculator": "/calculator/salary/",
+      "aliases": [
+        "주휴수당 조건",
+        "주 15시간",
+        "주휴수당 계산법",
+        "알바 주휴수당"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "주휴수당 계산기": {
+              "recent7": 77.32,
+              "rel30": 66.11,
+              "trend": 1.24
+            },
+            "주휴수당": {
+              "recent7": 55.76,
+              "rel30": 51.71,
+              "trend": 1.11
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "weekly-holiday-allowance-2026"
+      ]
+    },
+    {
+      "term": "연봉 실수령액",
+      "cluster": "연봉 실수령액",
+      "axis": "근로·급여",
+      "calculator": "/calculator/salary/",
+      "aliases": [
+        "연봉 4000 실수령액",
+        "연봉 5000 실수령액",
+        "세후 월급",
+        "비과세 식대"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "연봉 실수령액 계산기": {
+              "recent7": 1.01,
+              "rel30": 1.1,
+              "trend": 0.89
+            },
+            "연봉 실수령액": {
+              "recent7": 63.48,
+              "rel30": 65.54,
+              "trend": 0.96
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "freelancer-salary-comparison",
+        "freelancer-take-home-3-3-percent-2026",
+        "non-taxable-salary-allowances-2026",
+        "salary-negotiation-take-home",
+        "salary-take-home-2026-july-insurance-increase"
+      ]
+    },
+    {
+      "term": "재산세",
+      "cluster": "재산세",
+      "axis": "세금",
+      "calculator": "/calculator/property-tax/",
+      "aliases": [
+        "재산세 납부기간",
+        "재산세 고지서",
+        "재산세 카드납부",
+        "1세대1주택 재산세"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "재산세 계산기": {
+              "recent7": 3.98,
+              "rel30": 8.58,
+              "trend": 0.4
+            },
+            "재산세": {
+              "recent7": 53.9,
+              "rel30": 101.93,
+              "trend": 0.46
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "april-comprehensive-property-tax-exclusion",
+        "june-property-tax",
+        "property-tax-base-date-june-1-2026",
+        "property-tax-burden-cap-2026",
+        "property-tax-calculation-2026",
+        "property-tax-credit-card-payment-2026",
+        "property-tax-installment-payment-2026",
+        "property-tax-july-payment-schedule-2026",
+        "property-tax-single-house-special-rate-2026",
+        "property-tax-urban-area-regional-resource-tax-2026",
+        "property-tax-vs-comprehensive-real-estate-tax-2026",
+        "september-property-tax-second"
+      ]
+    },
+    {
+      "term": "취득세 계산기",
+      "cluster": "취득세",
+      "axis": "세금",
+      "calculator": "/calculator/acquisition-tax/",
+      "aliases": [
+        "생애최초 취득세 감면",
+        "취득세 중과",
+        "오피스텔 취득세",
+        "취득세 납부기한"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "취득세 계산기": {
+              "recent7": 30.97,
+              "rel30": 31.04,
+              "trend": 1
+            },
+            "취득세": {
+              "recent7": 9.64,
+              "rel30": 10.43,
+              "trend": 0.9
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "acquisition-tax-calculation-2026",
+        "acquisition-tax-temporary-two-houses-exclusion-2026",
+        "first-home-acquisition-tax-reduction-2026",
+        "gift-acquisition-tax-2026",
+        "gift-acquisition-tax-market-value-2026",
+        "inheritance-acquisition-tax-conversion-2026-reform",
+        "inheritance-house-acquisition-tax-2026",
+        "multi-child-vehicle-acquisition-tax-exemption-2026",
+        "multi-house-acquisition-tax-heavy-8-12-percent-2026",
+        "newborn-childbirth-acquisition-tax-reduction-2026",
+        "presale-right-acquisition-tax-2026",
+        "vehicle-acquisition-tax-2026"
+      ]
+    },
+    {
+      "term": "중개수수료 계산기",
+      "cluster": "중개수수료",
+      "axis": "부동산 거래비용",
+      "calculator": "/calculator/broker-fee/",
+      "aliases": [
+        "부동산 중개수수료 요율",
+        "전세 중개수수료"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "중개수수료 계산기": {
+              "recent7": 29.5,
+              "rel30": 26.61,
+              "trend": 1.15
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "broker-fee-negotiation-savings-2026",
+        "real-estate-broker-fee-rate-2026"
+      ]
+    },
+    {
+      "term": "증여세",
+      "cluster": "증여세",
+      "axis": "세금",
+      "calculator": "/calculator/gift-tax/",
+      "aliases": [
+        "증여세 면제 한도",
+        "부모 자녀 증여",
+        "증여세 신고기한",
+        "부담부증여"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "증여세 계산기": {
+              "recent7": 12.64,
+              "rel30": 13.64,
+              "trend": 0.91
+            },
+            "증여세": {
+              "recent7": 28.41,
+              "rel30": 32.24,
+              "trend": 0.85
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "burden-gift-debt-assumption-tax",
+        "carry-over-basis-spouse-gift-5-10-year",
+        "child-house-gift-vs-sale-comparison",
+        "family-business-succession-gift-special-2026",
+        "family-loan-agreement-gift-tax-avoidance",
+        "generation-skipping-gift-surcharge-2026",
+        "gift-acquisition-tax-2026",
+        "gift-acquisition-tax-market-value-2026",
+        "gift-return-cancellation-2026",
+        "gift-tax-annuity-payment-2026",
+        "gift-tax-calculation-2026",
+        "gift-tax-exemption-limit-2026",
+        "gift-tax-installment-payment-2026",
+        "inheritance-tax-10-year-prior-gift-aggregation",
+        "inheritance-vs-gift-tax-comparison-2026",
+        "living-expenses-allowance-gift-tax-exemption-2026",
+        "low-price-transfer-deemed-gift-2026",
+        "marriage-childbirth-gift-deduction-2026",
+        "parent-child-account-transfer-gift-tax-2026",
+        "parents-living-expenses-gift-tax-2026",
+        "startup-fund-gift-tax-special-2026",
+        "title-trust-deemed-gift-2026",
+        "wedding-gift-money-tax-2026"
+      ]
+    },
+    {
+      "term": "복리 계산기",
+      "cluster": "복리",
+      "axis": "투자 계산",
+      "calculator": "/calculator/savings/",
+      "aliases": [
+        "72의 법칙",
+        "월복리"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "복리 계산기": {
+              "recent7": 24.67,
+              "rel30": 24.86,
+              "trend": 0.99
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "compound-interest-72-rule-2026"
+      ]
+    },
+    {
+      "term": "상속세",
+      "cluster": "상속세",
+      "axis": "세금",
+      "calculator": "/calculator/inheritance-tax/",
+      "aliases": [
+        "상속세 공제",
+        "배우자 상속공제",
+        "상속세 신고기한",
+        "상속 순위"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "상속세 계산기": {
+              "recent7": 6.07,
+              "rel30": 6.69,
+              "trend": 0.88
+            },
+            "상속세": {
+              "recent7": 24.21,
+              "rel30": 27.71,
+              "trend": 0.84
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "family-business-inheritance-deduction-2026",
+        "financial-asset-inheritance-deduction-2026",
+        "inheritance-acquisition-tax-conversion-2026-reform",
+        "inheritance-house-acquisition-tax-2026",
+        "inheritance-legal-reserve-claim-2026",
+        "inheritance-limited-acceptance-2026",
+        "inheritance-other-personal-deduction-2026",
+        "inheritance-real-estate-appraisal-vs-official-price-2026",
+        "inheritance-renunciation-2026",
+        "inheritance-tax-10-year-prior-gift-aggregation",
+        "inheritance-tax-annuity-payment-collateral-2026",
+        "inheritance-tax-calculation-2026",
+        "inheritance-tax-deduction-limit-2026",
+        "inheritance-tax-filing-payment-installment-2026",
+        "inheritance-vs-gift-tax-comparison-2026",
+        "inherited-house-capital-gains-exemption-5-year-2026",
+        "insurance-payout-inheritance-tax-2026",
+        "legal-inheritance-order-share-2026",
+        "severance-pay-inheritance-tax-2026",
+        "spouse-inheritance-deduction-2026"
+      ]
+    },
+    {
+      "term": "양도소득세",
+      "cluster": "양도소득세",
+      "axis": "세금",
+      "calculator": "/calculator/capital-gains-tax/",
+      "aliases": [
+        "1세대1주택 비과세",
+        "일시적 2주택",
+        "장기보유특별공제",
+        "양도세 신고기한",
+        "필요경비"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "양도소득세 계산기": {
+              "recent7": 20.26,
+              "rel30": 20.67,
+              "trend": 0.97
+            },
+            "양도소득세": {
+              "recent7": 22.46,
+              "rel30": 22.97,
+              "trend": 0.97
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "acquisition-tax-temporary-two-houses-exclusion-2026",
+        "august-capital-gains-tax-review",
+        "capital-gains-acquisition-timing-2026",
+        "capital-gains-converted-acquisition-value-2026",
+        "capital-gains-necessary-expenses-2026",
+        "capital-gains-tax-5-steps",
+        "capital-gains-tax-installment-payment-2026",
+        "capital-gains-tax-preliminary-return-2026",
+        "capital-gains-tax-tips",
+        "child-household-separation-capital-gains-exemption-2026",
+        "cooperative-landlord-capital-gains-exemption-2026",
+        "december-capital-gains-tax-deadline",
+        "inherited-house-capital-gains-exemption-5-year-2026",
+        "joint-ownership-couple-capital-gains-tax-savings",
+        "long-term-holding-special-deduction-80-percent",
+        "long-term-holding-special-deduction-general-2026",
+        "long-term-holding-special-deduction-residence-requirement-2026-reform",
+        "mixed-use-house-capital-gains-exemption-2026",
+        "one-house-2-year-residence-requirement-2026",
+        "one-household-12-billion-exemption",
+        "overseas-stock-capital-gains-tax-2026",
+        "presale-right-capital-gains-tax",
+        "redevelopment-membership-right-capital-gains-tax-2026",
+        "rural-house-one-household-exemption-special-2026",
+        "temporary-two-houses-capital-gains-exemption",
+        "unlisted-stock-capital-gains-tax-2026"
+      ]
+    },
+    {
+      "term": "적금이자 계산기",
+      "cluster": "적금이자",
+      "axis": "금융",
+      "calculator": "/calculator/savings/",
+      "aliases": [
+        "적금 단리 복리",
+        "적금 세후 이자"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "적금이자 계산기": {
+              "recent7": 20.53,
+              "rel30": 21.17,
+              "trend": 0.96
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "broker-fee-negotiation-savings-2026",
+        "deposit-vs-savings-vs-parking-account-2026",
+        "housing-subscription-savings-deduction-2026",
+        "joint-ownership-couple-capital-gains-tax-savings",
+        "mortgage-refinance-savings-2026",
+        "pension-savings-early-termination-tax-2026",
+        "pension-savings-irp-tax-credit-2026",
+        "savings-insurance-tax-exemption-2026",
+        "tax-free-comprehensive-savings-2026",
+        "youth-future-savings-account-2026"
+      ]
+    },
+    {
+      "term": "BMI 계산기",
+      "cluster": "BMI",
+      "axis": "생활",
+      "calculator": "/calculator/bmi/",
+      "aliases": [
+        "비만도 계산"
+      ],
+      "widgetRisk": true,
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "BMI 계산기": {
+              "recent7": 18.98,
+              "rel30": 20.38,
+              "trend": 0.91
+            }
+          }
+        }
+      },
+      "existingSlugs": []
+    },
+    {
+      "term": "자동차세 계산기",
+      "cluster": "자동차세",
+      "axis": "세금",
+      "calculator": "/calculator/vehicle-tax/",
+      "aliases": [
+        "자동차세 연납",
+        "전기차 자동차세",
+        "자동차세 차령 경감",
+        "2000cc 자동차세"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "자동차세 계산기": {
+              "recent7": 18.23,
+              "rel30": 18.22,
+              "trend": 1
+            },
+            "자동차세": {
+              "recent7": 11.95,
+              "rel30": 13.48,
+              "trend": 0.86
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "electric-vehicle-tax-2026",
+        "hybrid-vehicle-consumption-tax-sunset-2026",
+        "hybrid-vehicle-tax-2026",
+        "january-vehicle-tax-prepayment",
+        "used-car-vehicle-tax-daily-proration-2026",
+        "vehicle-tax-2026",
+        "vehicle-tax-calculation-2026",
+        "vehicle-tax-card-payment-2026",
+        "vehicle-tax-june-payment-annual-discount-2026",
+        "vehicle-tax-prepayment-refund-2026"
+      ]
+    },
+    {
+      "term": "연차수당 계산기",
+      "cluster": "연차수당",
+      "axis": "근로·급여",
+      "calculator": "/calculator/salary/",
+      "aliases": [
+        "연차 발생 기준",
+        "퇴사 연차수당",
+        "1년 미만 연차"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "연차수당 계산기": {
+              "recent7": 14.81,
+              "rel30": 14.26,
+              "trend": 1.05
+            },
+            "연차수당": {
+              "recent7": 6.41,
+              "rel30": 6.6,
+              "trend": 0.96
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "annual-leave-allowance-2026",
+        "annual-leave-usage-promotion-2026"
+      ]
+    },
+    {
+      "term": "물타기 계산기",
+      "cluster": "물타기",
+      "axis": "투자 계산",
+      "calculator": "/calculator/averaging-down/",
+      "aliases": [
+        "평단가 계산",
+        "주식 평단"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "물타기 계산기": {
+              "recent7": 14.36,
+              "rel30": 17.29,
+              "trend": 0.79
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "averaging-down-vs-loss-cut"
+      ]
+    },
+    {
+      "term": "중도상환수수료 계산기",
+      "cluster": "중도상환수수료",
+      "axis": "금융",
+      "calculator": "/calculator/loan/",
+      "aliases": [
+        "중도상환수수료 면제"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "중도상환수수료 계산기": {
+              "recent7": 12.61,
+              "rel30": 12.32,
+              "trend": 1.03
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "comprehensive-income-tax-interim-prepayment-2026",
+        "corporate-tax-interim-prepayment-2026",
+        "january-vehicle-tax-prepayment",
+        "prepayment-penalty-fee-2026",
+        "vehicle-tax-prepayment-refund-2026"
+      ]
+    },
+    {
+      "term": "전월세 전환율",
+      "cluster": "전월세 전환율",
+      "axis": "부동산 거래비용",
+      "calculator": "/calculator/rent-conversion/",
+      "aliases": [
+        "월세 전환율",
+        "보증금 월세 전환"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "전월세 전환율 계산기": {
+              "recent7": 0.67,
+              "rel30": 0.7,
+              "trend": 0.95
+            },
+            "전월세 전환율": {
+              "recent7": 6.65,
+              "rel30": 6.14,
+              "trend": 1.11
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "rent-conversion-calculation-2026",
+        "rent-conversion-rate-2026-housing-lease-act"
+      ]
+    },
+    {
+      "term": "종부세",
+      "cluster": "종합부동산세",
+      "axis": "세금",
+      "calculator": "/calculator/comprehensive-property-tax/",
+      "aliases": [
+        "종부세 고지서",
+        "종부세 합산배제",
+        "종부세 1주택 공제",
+        "종부세 납부기한"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-07",
+          "forms": {
+            "종합부동산세 계산기": {
+              "recent7": 1.33,
+              "rel30": 2.41,
+              "trend": 0.48
+            },
+            "종합부동산세": {
+              "recent7": 5.6,
+              "rel30": 8.19,
+              "trend": 0.62
+            },
+            "종부세": {
+              "recent7": 6.02,
+              "rel30": 10,
+              "trend": 0.53
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "april-comprehensive-property-tax-exclusion",
+        "comprehensive-real-estate-tax-calculation-2026",
+        "comprehensive-real-estate-tax-elderly-longterm-credit-2026",
+        "comprehensive-real-estate-tax-exclusion-application-2026",
+        "comprehensive-real-estate-tax-joint-ownership-2026",
+        "comprehensive-real-estate-tax-single-house-credit-2026",
+        "comprehensive-real-estate-tax-value-based-reform-2026",
+        "comprehensive-real-estate-tax-who-pays-2026",
+        "property-tax-vs-comprehensive-real-estate-tax-2026"
+      ]
+    }
+  ],
+  "thin": [
+    {
+      "term": "대출한도 계산기",
+      "recent7": 0.54
+    },
+    {
+      "term": "대출한도",
+      "recent7": 1.38
+    },
+    {
+      "term": "DSR 계산",
+      "recent7": 1.17
+    },
+    {
+      "term": "청약가점 계산기",
+      "recent7": 2.13
+    },
+    {
+      "term": "청약가점",
+      "recent7": 0.5
+    },
+    {
+      "term": "임대수익률 계산기",
+      "recent7": 0.46
+    },
+    {
+      "term": "임대수익률",
+      "recent7": 0.02
+    },
+    {
+      "term": "화폐가치 계산기",
+      "recent7": 0.18
+    },
+    {
+      "term": "화폐가치",
+      "recent7": 0.35
+    },
+    {
+      "term": "프리랜서 3.3 계산기",
+      "recent7": 0.03
+    },
+    {
+      "term": "프리랜서 종합소득세",
+      "recent7": 0.55
+    }
+  ]
+}
