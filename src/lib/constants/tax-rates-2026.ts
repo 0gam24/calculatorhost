@@ -347,10 +347,10 @@ export const INHERITANCE_SPOUSE_MIN_DEDUCTION = 500_000_000;
 export const INHERITANCE_SPOUSE_MAX_DEDUCTION = 3_000_000_000;
 
 // ============================================
-// 종합부동산세 (누진 7단계) — 종부세법 §7·§8
+// 종합부동산세 (누진 7단계) — 종부세법 §8(과세표준·공제)·§9(세율)
 // ============================================
 
-/** 일반 세율 구간 (1-2주택) — 종부세법 §8 */
+/** 일반 세율 구간 (2주택 이하) — 종부세법 §9①1호 */
 export const COMPREHENSIVE_PROPERTY_TAX_BRACKETS_GENERAL: TaxBracket[] = [
   { upperBound: 300_000_000, rate: 0.005, cumulativeDeduction: 0 },
   { upperBound: 600_000_000, rate: 0.007, cumulativeDeduction: 600_000 },
@@ -361,7 +361,7 @@ export const COMPREHENSIVE_PROPERTY_TAX_BRACKETS_GENERAL: TaxBracket[] = [
   { upperBound: null, rate: 0.027, cumulativeDeduction: 101_800_000 },
 ];
 
-/** 중과 세율 구간 (3주택 이상) — 종부세법 §8② */
+/** 중과 세율 구간 (3주택 이상) — 종부세법 §9①2호 */
 export const COMPREHENSIVE_PROPERTY_TAX_BRACKETS_MULTI: TaxBracket[] = [
   { upperBound: 300_000_000, rate: 0.005, cumulativeDeduction: 0 },
   { upperBound: 600_000_000, rate: 0.007, cumulativeDeduction: 600_000 },
@@ -397,7 +397,7 @@ export const ONE_HOUSE_LONG_HOLD_5_10 = 0.2;
 export const ONE_HOUSE_LONG_HOLD_10_15 = 0.4;
 /** 15년 이상 장기보유공제 */
 export const ONE_HOUSE_LONG_HOLD_15_PLUS = 0.5;
-/** 세액공제 합계 한도 (80%) — 종부세법 §9② */
+/** 세액공제 합계 한도 (80%) — 종부세법 §9 (1세대1주택 세액공제, 고령자·장기보유 중복 한도) */
 export const ONE_HOUSE_TOTAL_CREDIT_CAP = 0.8;
 
 // ============================================

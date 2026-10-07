@@ -52,12 +52,12 @@ const FAQ_ITEMS = [
   {
     question: '종합부동산세와 재산세는 무엇이 다른가요?',
     answer:
-      '종합부동산세(종부세)는 고가 주택을 다수 보유한 자산가에게 부과되는 국세이고, 재산세는 모든 주택 보유자에게 매년 부과되는 지방세입니다. 재산세는 공시가 9억 원 이하 1세대1주택이면 특례 세율을 받지만, 종부세는 1세대1주택 특례는 없고 대신 고령자·장기보유 세액공제만 적용됩니다(종부세법 §8·§9).',
+      '종합부동산세(종부세)는 주택 공시가격 합계가 공제금액을 넘는 사람에게 부과되는 국세이고, 재산세는 모든 주택 보유자에게 매년 부과되는 지방세입니다. 재산세는 공시가 9억 원 이하 1세대1주택이면 특례 세율을 받고, 종부세는 1세대1주택자에게 12억 원 공제(종부세법 §8①)와 고령자·장기보유 세액공제(§9)를 줍니다.',
   },
   {
     question: '1세대1주택자 공제 12억은?',
     answer:
-      '종부세법 §7에 따라 1세대1주택자는 공시가 합계에서 12억 원의 공제를 받을 수 있습니다. 예를 들어 공시가 15억 원이면 (15억 − 12억) × 60% = 1.8억이 과세표준이 되는데, 일반인(다주택자)은 9억 원만 공제받아 과세표준이 더 높아집니다. 조건: 2주택 이상이 아니어야 하고, 정부 조정지역도 제약이 있을 수 있습니다.',
+      '종부세법 §8①에 따라 1세대1주택자는 공시가 합계에서 12억 원의 공제를 받습니다. 예를 들어 공시가 15억 원이면 (15억 − 12억) × 60% = 1.8억이 과세표준이 되는데, 다주택자는 9억 원만 공제받아 과세표준이 더 높아집니다. 세대원 전체가 주택 1채만 가져야 하며, 일시적 2주택·상속주택·지방 저가주택은 9월 16~30일에 신청하면 1세대1주택으로 볼 수 있습니다.',
   },
   {
     question: '고령자·장기보유 공제는 어떻게 적용되나요?',
@@ -67,7 +67,7 @@ const FAQ_ITEMS = [
   {
     question: '3주택 이상 중과세율은 언제 적용되나요?',
     answer:
-      '종부세법 §8②에 따라 3주택 이상을 보유한 경우, 과세표준 12억 원을 초과하는 부분부터 중과 세율이 적용됩니다. 예: 과세표준 20억인 경우, 12억 이하는 일반세율(최고 2.7%)을, 12억 초과 20억까지는 중과세율(최고 5%)을 받습니다. 2023년 개정으로 조정지역 추가 중과는 폐지되었습니다.',
+      '3주택 이상이면 종부세법 §9①2호의 중과 세율표가 적용됩니다. 과세표준 12억 원 이하 구간은 일반 세율(0.5~1.0%)과 같고, 12억 원 초과 구간부터 2.0~5.0%로 높아집니다. 예: 과세표준 20억 원이면 일반 세율로는 20억 × 1.3% − 600만 = 2,000만 원, 중과 세율로는 20억 × 2.0% − 1,440만 = 2,560만 원입니다. 2023년 개정으로 조정대상지역 2주택 중과는 폐지되었습니다.',
   },
   {
     question: '농어촌특별세는 별도인가요?',
@@ -99,7 +99,7 @@ export default function ComprehensivePropertyTaxPage() {
       '주택 공시가 합계, 주택 수, 공제 조건을 입력해 과세표준과 종부세 납부액을 즉시 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-10-07',
     isPartOf: getCategoryUrlForCalculator('comprehensive-property-tax'),
   });
   const faqLd = buildFaqPageJsonLd(
@@ -145,7 +145,7 @@ export default function ComprehensivePropertyTaxPage() {
       {
         name: '공제금액',
         description:
-          '종부세 과세표준 산정 시 공시가 합계에서 차감하는 금액. 1세대1주택자는 12억 원, 다주택자는 9억 원의 공제를 받음. 공제를 초과하는 부분만 과세 대상이 됨(종부세법 §7)',
+          '종부세 과세표준 산정 시 공시가 합계에서 차감하는 금액. 1세대1주택자는 12억 원, 다주택자는 9억 원의 공제를 받음. 공제를 초과하는 부분만 과세 대상이 됨(종부세법 §8①)',
         alternateName: '기본공제',
         url: 'https://law.go.kr',
       },
@@ -227,7 +227,7 @@ export default function ComprehensivePropertyTaxPage() {
                   <p className="text-lg text-text-secondary" data-speakable>
                     공시가격과 보유 조건으로 예상 종부세를 확인하세요.
                   </p>
-                  <AuthorByline dateModified="2026-04-24" />
+                  <AuthorByline dateModified="2026-10-07" />
                 </header>
               }
               calculator={<ComprehensivePropertyTaxCalculator />}
@@ -251,7 +251,7 @@ export default function ComprehensivePropertyTaxPage() {
               }
             >
               <StructuredSummary
-                definition="종합부동산세는 주택 공시가 합계에서 공제를 차감한 후 공정시장가액비율 60%를 적용한 과세표준에 누진세를 곱하고, 농어촌특별세 20%를 더하여 계산되는 국세입니다(종부세법 §7·§8·§9, 농특세법 §5)."
+                definition="종합부동산세는 주택 공시가 합계에서 공제를 차감한 후 공정시장가액비율 60%를 적용한 과세표준에 누진세를 곱하고, 농어촌특별세 20%를 더하여 계산되는 국세입니다(종부세법 §8·§9, 농특세법 §5)."
                 table={{
                   caption: '1세대1주택 기준 공시가별 종부세 예상액',
                   headers: ['보유 공시가', '예상 종부세 (공제 미적용)'],
@@ -342,7 +342,7 @@ export default function ComprehensivePropertyTaxPage() {
                           <td className="px-3 py-2 text-text-secondary">94억 원 초과</td>
                           <td className="px-3 py-2 text-right text-text-primary">2.7%</td>
                           <td className="px-3 py-2 text-right text-text-secondary">
-                            1억 1,800만 원
+                            1억 180만 원
                           </td>
                         </tr>
                       </tbody>
@@ -418,14 +418,14 @@ export default function ComprehensivePropertyTaxPage() {
                   </div>
 
                   <p className="mt-4 text-sm text-text-tertiary">
-                    <strong>출처</strong>: 종합부동산세법 §8(세율), §8②(3주택 이상 중과)
+                    <strong>출처</strong>: 종합부동산세법 §9①1호(2주택 이하), §9①2호(3주택 이상)
                   </p>
                 </div>
               </section>
               <section aria-label="공제금액 비교" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">공제금액 비교</h2>
                 <p className="mb-4 text-text-secondary">
-                  종합부동산세는 보유 주택 구성에 따라 다른 공제금액을 적용합니다(종부세법 §7).
+                  종합부동산세는 보유 주택 구성에 따라 다른 공제금액을 적용합니다(종부세법 §8①).
                 </p>
 
                 <div className="overflow-x-auto">
@@ -588,6 +588,90 @@ export default function ComprehensivePropertyTaxPage() {
                   </li>
                 </ol>
               </section>
+              <section aria-label="계산기에 빠진 항목" className="card">
+                <h2 className="mb-3 text-2xl font-semibold">이 계산기 결과가 실제 고지액보다 클 수 있나요?</h2>
+                <p className="text-sm leading-relaxed text-text-secondary" data-speakable>
+                  네, 클 수 있습니다. 이 계산기는 재산세 중복분 공제와 세부담 상한을 아직 반영하지 않습니다.
+                </p>
+                <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-text-secondary">
+                  <li>
+                    <strong>재산세 중복분 공제</strong>: 같은 주택에 이미 낸 재산세 중 종부세 과세표준과 겹치는
+                    부분은 종부세에서 빼 줍니다(종부세법 §9③). 실제 고지액은 이만큼 줄어듭니다.
+                  </li>
+                  <li>
+                    <strong>세부담 상한</strong>: 올해 재산세와 종부세 합계가 직전 연도의 150%를 넘으면 넘는
+                    부분은 걷지 않습니다(종부세법 §10).
+                  </li>
+                </ul>
+                <p className="mt-3 text-sm text-text-secondary">
+                  다만, 두 항목은 재산세 과세표준과 작년 세액이 있어야 계산할 수 있어 최종 금액은 11월 하순
+                  홈택스 고지서로 확인해야 합니다.
+                </p>
+              </section>
+              <section aria-label="고지와 납부 일정" className="card">
+                <h2 className="mb-3 text-2xl font-semibold">2026년 종부세는 언제 고지되고 언제 내나요?</h2>
+                <p className="text-sm leading-relaxed text-text-secondary" data-speakable>
+                  2026년 12월 1일부터 12월 15일(화)까지 냅니다. 고지서는 보통 11월 하순에 나옵니다.
+                </p>
+                <div className="mt-3 overflow-x-auto">
+                  <table className="w-full border-collapse text-sm" data-speakable>
+                    <caption className="mb-2 text-left text-xs text-text-tertiary">
+                      2026년 종합부동산세 일정과 분납 기준 (종부세법 §3·§16·§20)
+                    </caption>
+                    <thead>
+                      <tr className="border-b border-border-base">
+                        <th scope="col" className="px-3 py-2 text-left font-semibold">항목</th>
+                        <th scope="col" className="px-3 py-2 text-left font-semibold">내용</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 text-text-secondary">과세기준일</td>
+                        <td className="px-3 py-2 text-text-primary">2026년 6월 1일 보유 기준 (§3)</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 text-text-secondary">고지서 발송</td>
+                        <td className="px-3 py-2 text-text-primary">11월 하순 (우편, 전자고지 신청자는 홈택스·모바일)</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 text-text-secondary">납부기한</td>
+                        <td className="px-3 py-2 text-text-primary">12월 1일 ~ 12월 15일 (§16①)</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 text-text-secondary">신고납부 선택</td>
+                        <td className="px-3 py-2 text-text-primary">고지 대신 같은 기간에 직접 신고·납부 가능 (§16③)</td>
+                      </tr>
+                      <tr className="border-b border-border-base">
+                        <td className="px-3 py-2 text-text-secondary">분납</td>
+                        <td className="px-3 py-2 text-text-primary">
+                          세액 250만 원 초과 시 일부를 납부기한 다음 날부터 6개월 안에 (§20)
+                        </td>
+                      </tr>
+                      <tr>
+                        <td className="px-3 py-2 text-text-secondary">분납 가능 금액</td>
+                        <td className="px-3 py-2 text-text-primary">
+                          500만 원 이하: 250만 원 초과분 / 500만 원 초과: 세액의 50% 이하
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-3 text-sm text-text-secondary">
+                  예를 들어 고지세액이 400만 원이면 250만 원을 12월 15일까지 내고 150만 원은 2027년 6월
+                  15일까지 낼 수 있습니다. 세액이 1,000만 원이면 500만 원까지 미룰 수 있습니다.
+                </p>
+                <p className="mt-3 text-sm text-text-secondary">
+                  다만, 2026년 9월 국회에 제출된 세제개편 정부안(1주택 공제 조정 등)은 아직 심사 중이라 올해
+                  12월 납부분에는 적용되지 않습니다. 올해 고지는 현행 기준(1세대1주택 12억 원, 그 외 9억 원)을
+                  따릅니다.{' '}
+                  <a
+                    href="/guide/comprehensive-real-estate-tax-value-based-reform-2026/"
+                    className="font-medium text-primary-700 underline dark:text-primary-300"
+                  >
+                    개편안 진행 상황 보기
+                  </a>
+                </p>
+              </section>
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
@@ -633,11 +717,39 @@ export default function ComprehensivePropertyTaxPage() {
                       재산세 완벽 가이드 (재산세 vs 종부세 차이 정리)
                     </a>
                   </li>
+                  <li>
+                    →{' '}
+                    <a
+                      href="/guide/comprehensive-real-estate-tax-calculation-2026/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
+                      종합부동산세 계산법 2026 (공시가격·공제·세율 단계별 예시)
+                    </a>
+                  </li>
+                  <li>
+                    →{' '}
+                    <a
+                      href="/guide/comprehensive-real-estate-tax-single-house-credit-2026/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
+                      1세대1주택 고령자·장기보유 세액공제 (최대 80%)
+                    </a>
+                  </li>
+                  <li>
+                    →{' '}
+                    <a
+                      href="/guide/comprehensive-real-estate-tax-joint-ownership-2026/"
+                      className="font-medium text-primary-700 underline dark:text-primary-300"
+                    >
+                      부부 공동명의 종부세 특례 vs 단독명의 비교
+                    </a>
+                  </li>
                 </ul>
               </section>
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
+                  <li>2026-10-07: 고지·납부·분납 일정 추가, 일반세율 94억 원 초과 누진공제 표기 정정(1억 180만 원), 조항 표기 정정, 계산에서 빠진 항목(재산세 중복분 공제·세부담 상한) 안내</li>
                   <li>2026-04-24: 2026년 종부세법 기준 초판 공개</li>
                 </ul>
               </section>
@@ -646,8 +758,8 @@ export default function ComprehensivePropertyTaxPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>출처</strong>: 종합부동산세법 §7(과세표준), §8(세율), §9(1세대1주택
-                  세액공제) · 농어촌특별세법 §5(농특세) · 공정시장가액비율 고시 ·{' '}
+                  <strong>출처</strong>: 종합부동산세법 §8(과세표준·공제), §9(세율·1세대1주택
+                  세액공제), §10(세부담 상한), §16(부과·징수), §20(분납) · 농어촌특별세법 §5(농특세) · 공정시장가액비율 고시 ·{' '}
                   <a
                     href="https://www.hometax.go.kr"
                     target="_blank"
