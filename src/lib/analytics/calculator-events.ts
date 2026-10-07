@@ -31,6 +31,7 @@ export const CALCULATOR_SLUGS = [
   'split-sell',
   'vat',
   'dti',
+  'weekly-holiday-allowance',
 ] as const;
 
 // A calculator inside an existing guide keeps its real, fixed guide URL.

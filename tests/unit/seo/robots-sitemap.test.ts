@@ -59,10 +59,10 @@ describe('Crawler rendering assets', () => {
 describe('Sitemap dates and stable URLs', () => {
   afterEach(() => vi.useRealTimers());
 
-  it('includes all 31 calculator canonical URLs without build-time lastmod', () => {
+  it('includes all 32 calculator canonical URLs without build-time lastmod', () => {
     const entries = sitemap();
     const calculators = entries.filter((entry) => entry.url.includes('/calculator/'));
-    expect(calculators).toHaveLength(31);
+    expect(calculators).toHaveLength(32);
     expect(new Set(entries.map((entry) => entry.url)).size).toBe(entries.length);
     expect(entries.every((entry) => entry.url.endsWith('/'))).toBe(true);
     const dates = entries.map((e) => e.lastModified).filter(Boolean);

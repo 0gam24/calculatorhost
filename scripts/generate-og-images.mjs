@@ -59,6 +59,7 @@ const CALCULATORS = [
   { slug: 'area', title: '평수 환산', category: '생활' },
   { slug: 'bmi', title: 'BMI', category: '생활' },
   { slug: 'd-day', title: 'D-day', category: '생활' },
+  { slug: 'weekly-holiday-allowance', title: '주휴수당', category: '근로' },
 ];
 
 // 5개 카테고리 허브 페이지 메타

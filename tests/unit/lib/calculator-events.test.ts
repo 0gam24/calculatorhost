@@ -85,6 +85,26 @@ describe('Privacy-safe calculator events', () => {
     });
   });
 
+  it('accepts the weekly-holiday-allowance slug with its own fixed URL', () => {
+    const gtag = setup();
+    trackCalculationComplete('weekly-holiday-allowance');
+    trackNextCalculator('weekly-holiday-allowance', 'salary');
+    expect(gtag).toHaveBeenCalledTimes(2);
+    expect(gtag.mock.calls[0]).toEqual([
+      'event',
+      'calculator_complete',
+      {
+        calculator_slug: 'weekly-holiday-allowance',
+        page_location: 'https://calculatorhost.com/calculator/weekly-holiday-allowance/',
+        page_referrer: '',
+      },
+    ]);
+    expect(gtag.mock.calls[1]?.[2]).toMatchObject({
+      calculator_slug: 'weekly-holiday-allowance',
+      next_calculator_slug: 'salary',
+    });
+  });
+
   it('does not break user actions when analytics throws or is absent', () => {
     setup();
     window.gtag = () => {

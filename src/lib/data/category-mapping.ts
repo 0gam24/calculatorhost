@@ -19,6 +19,7 @@ export const CATEGORY_CALCULATORS: Record<CategoryId, string[]> = {
   work: [
     'salary',
     'severance',
+    'weekly-holiday-allowance',
     'freelancer-tax',
     'n-jobber-insurance',
     'child-tax-credit',

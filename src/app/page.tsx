@@ -10,7 +10,7 @@ import {
 } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-  title: '한국 금융·세금·부동산 계산기 31개 | calculatorhost',
+  title: '한국 금융·세금·부동산 계산기 32개 | calculatorhost',
   description:
     '연봉 실수령액·대출이자·취득세·적금 등 생활 계산기 31개. 내 조건에 따른 예상값과 계산 기준을 함께 확인하세요. 회원가입 없이 무료로 이용할 수 있습니다.',
   alternates: { canonical: 'https://calculatorhost.com/' },
@@ -72,6 +72,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
     items: [
       { href: '/calculator/salary', title: '연봉 실수령액' },
       { href: '/calculator/severance', title: '퇴직금' },
+      { href: '/calculator/weekly-holiday-allowance', title: '주휴수당' },
     ],
   },
   // 부동산
@@ -172,7 +173,7 @@ export default function HomePage() {
       <main id="main-content" className="mx-auto max-w-6xl space-y-10 px-4 py-7 md:px-8 md:py-10">
         <header>
           <p className="mb-2 text-sm font-medium text-primary-700 dark:text-primary-300">
-            생활에 필요한 31가지 계산
+            생활에 필요한 32가지 계산
           </p>
           <h1 className="text-2xl font-bold leading-tight md:text-3xl">
             얼마가 남을지, 얼마나 필요할지.
@@ -240,7 +241,7 @@ export default function HomePage() {
             <h2 id="all-title" className="text-lg font-semibold">
               전체 계산기
             </h2>
-            <span className="text-sm text-text-tertiary">31개 · 무료</span>
+            <span className="text-sm text-text-tertiary">32개 · 무료</span>
           </div>
           <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2 lg:grid-cols-3">
             {ALL_CALCULATORS.map((cat) => (

@@ -36,6 +36,20 @@ const SEARCH_DATA: SearchEntry[] = [
     keywords: ['DC', 'DB', '퇴직소득세'],
   },
   {
+    label: '주휴수당 계산기',
+    href: '/calculator/weekly-holiday-allowance/',
+    kind: 'calculator',
+    keywords: [
+      '주휴수당',
+      '주휴수당 계산',
+      '주휴수당 조건',
+      '알바 주휴수당',
+      '주 15시간',
+      '최저시급 주휴수당',
+      '근로기준법 55조',
+    ],
+  },
+  {
     label: '대출이자 계산기',
     href: '/calculator/loan/',
     kind: 'calculator',

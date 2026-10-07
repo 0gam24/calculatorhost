@@ -51,6 +51,7 @@ const CALCULATOR_SLUGS = [
   'split-sell',
   'vat',
   'dti',
+  'weekly-holiday-allowance',
 ];
 
 const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];

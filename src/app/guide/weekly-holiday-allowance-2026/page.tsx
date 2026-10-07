@@ -15,7 +15,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/weekly-holiday-allowance-2026/';
 const DATE_PUBLISHED = '2026-06-19';
-const DATE_MODIFIED = '2026-06-19';
+const DATE_MODIFIED = '2026-10-07';
 
 export const metadata: Metadata = {
   title: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산 | calculatorhost',
@@ -53,7 +53,7 @@ const FAQ_ITEMS = [
   {
     question: '주 20시간만 일하는데 주휴수당을 받을 수 있나요?',
     answer:
-      '네, 받을 수 있습니다. 근로기준법 시행령 §30①에서는 1주 소정근로시간이 15시간 이상이면 주휴일 적용 대상입니다. 따라서 주 20시간 이상이면 충분합니다. 다만 1주를 모두 출근해야 하고, 한 번이라도 결근하면 그 주 주휴수당은 미발생합니다. (단시간·초단시간 기준은 근로기준법 §18)',
+      '네, 받을 수 있습니다. 근로기준법 §18③에 따라 4주 평균 1주 소정근로시간이 15시간 이상이면 주휴일(§55①)이 적용되므로 주 20시간이면 충분합니다. 다만 그 주 소정근로일을 모두 출근해야 하고(시행령 §30①), 한 번이라도 결근하면 그 주 주휴수당은 생기지 않습니다.',
   },
   {
     question: '월급 200만 원인데 주휴수당이 얼마인가요?',
@@ -68,7 +68,7 @@ const FAQ_ITEMS = [
   {
     question: '한 주 중 하루 결근했는데 주휴수당은 어떻게 되나요?',
     answer:
-      '근로기준법 시행령 §30①에 따르면, 1주를 개근해야 주휴일이 적용됩니다. 따라서 한 번이라도 결근하면 그 주의 주휴수당은 발생하지 않습니다. 다만 "정당한 사유"(질병, 공상, 공용·공식 행사 참석 등)가 있다면 개근 판정에 포함될 수 있으니, 회사에 반드시 사전에 신고하세요.',
+      '근로기준법 시행령 §30①에 따르면, 1주를 개근해야 주휴일이 적용됩니다. 따라서 한 번이라도 결근하면 그 주의 주휴수당은 발생하지 않습니다. 다만 지각·조퇴는 결근이 아니라서 주휴수당에 영향이 없고(고용노동부 근로기준과-5560, 2009.12.23), 연차휴가 사용일처럼 법령상 유급으로 처리되는 날도 결근으로 보지 않습니다.',
   },
   {
     question: '월급제와 시급제의 주휴수당 계산 방식이 다른가요?',
@@ -78,7 +78,7 @@ const FAQ_ITEMS = [
   {
     question: '주 14시간만 일하는데 주휴수당을 못 받는다고 했어요.',
     answer:
-      '맞습니다. 근로기준법 시행령 §30①과 근로기준법 §18③에 따르면, "1주 평균 소정근로시간이 15시간 미만"인 초단시간 근로자는 주휴일과 연차휴가가 적용되지 않습니다. 따라서 주 14시간이면 주휴수당 자격이 없습니다.',
+      '맞습니다. 근로기준법 §18③에 따라 4주 동안을 평균해 1주 소정근로시간이 15시간 미만인 근로자에게는 §55(주휴일)와 §60(연차)이 적용되지 않습니다. 따라서 주 14시간이면 주휴수당 자격이 없습니다.',
   },
   {
     question: '월급 명세서에 주휴수당이 별도 항목으로 나타나야 하나요?',
@@ -150,13 +150,29 @@ export default function WeeklyHolidayAllowancePage() {
                 </p>
               </header>
 
+              <aside
+                aria-label="주휴수당 바로 계산"
+                className="rounded-xl border border-primary-200 bg-primary-50 p-4 text-sm dark:border-primary-700 dark:bg-primary-900/30"
+              >
+                <p className="text-text-primary">
+                  <strong>바로 계산해 보기:</strong>{' '}
+                  <Link
+                    href="/calculator/weekly-holiday-allowance/"
+                    className="font-semibold text-primary-700 underline hover:text-primary-800 dark:text-primary-200"
+                  >
+                    주휴수당 계산기 2026
+                  </Link>
+                  . 시급과 1주 소정근로시간을 넣으면 주휴수당·주휴시간·월 환산액이 즉시 나옵니다.
+                </p>
+              </aside>
+
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">주휴수당 기본 요건</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
                   <li><strong>1주 소정근로시간</strong>: 평균 15시간 이상 필수</li>
                   <li><strong>개근</strong>: 1주를 모두 출근해야 주휴수당 발생</li>
                   <li><strong>유급휴일</strong>: 근무하지 않아도 급여 지급</li>
-                  <li><strong>법적 근거</strong>: 근로기준법 §55①, 시행령 §30①</li>
+                  <li><strong>법적 근거</strong>: 근로기준법 §55①(주휴일)·§18③(4주 평균 주 15시간 미만 제외), 시행령 §30①(개근 요건)</li>
                   <li><strong>지급 형태</strong>: 월급제 포함 vs 시급제 별도 계산</li>
                   <li><strong>결근 시</strong>: 해당 주 주휴수당 미발생</li>
                 </ul>
@@ -180,15 +196,15 @@ export default function WeeklyHolidayAllowancePage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">주휴수당 요건, "주 15시간 + 개근" 기준</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  근로기준법 시행령 §30①은 주휴일 적용의 명확한 기준을 제시합니다.
-                  "1주의 소정근로일을 개근한 자에게 1일 유급휴일을 부여한다"는 것인데,
-                  이는 두 가지 조건을 동시에 만족해야 함을 의미합니다.
+                  주휴수당은 두 조건을 모두 채워야 생깁니다. 근로기준법 §18③이 "4주 평균 주 15시간
+                  이상"이라는 적용 요건을, 시행령 §30①이 "1주 동안의 소정근로일을 개근한 자"라는
+                  수령 요건을 정합니다.
                 </p>
                 <ul className="space-y-2 border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
                   <li>
                     <strong>첫 번째 조건: 1주 소정근로시간 15시간 이상</strong>
                     <br />
-                    <span className="text-text-tertiary">근로기준법 §18③ "초단시간 근로자(1주 평균 15시간 미만)"는 주휴일과 연차휴가 미적용</span>
+                    <span className="text-text-tertiary">근로기준법 §18③: 4주 동안(4주 미만 근로 시 그 기간)을 평균해 1주 소정근로시간이 15시간 미만이면 §55·§60 미적용</span>
                   </li>
                   <li>
                     <strong>두 번째 조건: 1주 개근</strong>
@@ -197,8 +213,8 @@ export default function WeeklyHolidayAllowancePage() {
                   </li>
                 </ul>
                 <p className="text-sm text-text-tertiary">
-                  다만 질병·공상·공용·공식 행사 참석 등 "정당한 사유"가 있으면 개근 판정에 포함될 수 있습니다.
-                  회사 규정에 따르므로, 미리 인사팀에 확인하는 것이 좋습니다.
+                  다만 지각·조퇴·외출은 결근이 아닙니다. 고용노동부는 지각·조퇴 시간을 합쳐 8시간이 되더라도
+                  하루 결근으로 처리할 수 없다고 봅니다(근로기준과-5560, 2009.12.23).
                 </p>
               </section>
 
@@ -253,7 +269,7 @@ export default function WeeklyHolidayAllowancePage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">결근하면 주휴수당은 어떻게 되나?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  근로기준법 시행령 §30①의 "1주의 소정근로일을 개근한 자"라는 표현이 핵심입니다.
+                  근로기준법 시행령 §30①의 "1주 동안의 소정근로일을 개근한 자"라는 표현이 핵심입니다.
                   <strong>1주 중 한 번이라도 결근하면, 그 주의 주휴수당은 발생하지 않습니다.</strong>
                 </p>
                 <ul className="space-y-2 text-sm">
@@ -261,7 +277,7 @@ export default function WeeklyHolidayAllowancePage() {
                     <strong>결근 발생:</strong> 해당 주 주휴수당 0원
                   </li>
                   <li>
-                    <strong>정당한 사유로 결근:</strong> 회사 규정에 따라 개근 판정에 포함 가능 (사전 신고 필수)
+                    <strong>지각·조퇴·외출:</strong> 결근이 아니므로 개근 유지 (고용노동부 근로기준과-5560)
                   </li>
                   <li>
                     <strong>유급 휴가:</strong> 연차·특별휴가·출산휴가 등 유급 사유는 개근에 포함될 수 있음
@@ -271,7 +287,7 @@ export default function WeeklyHolidayAllowancePage() {
                   </li>
                 </ul>
                 <p className="mt-3 text-sm text-text-tertiary">
-                  결근의 정당성 판단은 회사가 하므로, 불가피한 상황에서는 즉시 회사에 연락하고,
+                  결근으로 볼지 다툼이 생기면 취업규칙과 고용노동부 해석으로 판단하므로, 불가피한 상황에서는 즉시 회사에 연락하고,
                   가능한 한 빨리 사유를 증명하는 서류(진단서, 처방전, 공문 등)를 제출하세요.
                 </p>
               </section>
@@ -279,8 +295,8 @@ export default function WeeklyHolidayAllowancePage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">초단시간 근로자, 주 15시간 미만이면 제외</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  근로기준법 §18③이 "1주 평균 15시간 미만"을 초단시간 근로자로 규정하며,
-                  이 경우 주휴일과 연차휴가가 적용되지 않습니다.
+                  근로기준법 §18③은 4주 동안을 평균해 1주 소정근로시간이 15시간 미만인 근로자에게
+                  주휴일(§55)과 연차휴가(§60)를 적용하지 않습니다.
                 </p>
                 <table className="w-full text-sm">
                   <caption className="mb-2 text-left font-semibold">주휴수당 적용 기준</caption>
@@ -295,7 +311,7 @@ export default function WeeklyHolidayAllowancePage() {
                     <tr className="border-b border-border-base">
                       <td className="px-3 py-2">주 15시간 이상</td>
                       <td className="px-3 py-2"><strong>적용</strong></td>
-                      <td className="px-3 py-2 text-text-tertiary">근로기준법 시행령 §30①</td>
+                      <td className="px-3 py-2 text-text-tertiary">근로기준법 §18③·§55①, 시행령 §30①</td>
                     </tr>
                     <tr className="bg-bg-card">
                       <td className="px-3 py-2">주 15시간 미만</td>
@@ -444,7 +460,7 @@ export default function WeeklyHolidayAllowancePage() {
                     근로기준법 §55① (주휴일 보장)
                   </li>
                   <li>
-                    근로기준법 시행령 §30① (주휴일 적용 요건)
+                    근로기준법 시행령 §30① (유급휴일 수령 요건: 1주 동안 소정근로일 개근)
                   </li>
                   <li>
                     근로기준법 §18③ (초단시간 근로자 정의)
@@ -493,7 +509,7 @@ export default function WeeklyHolidayAllowancePage() {
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  <strong>마지막 갱신:</strong> 2026-06-19 | 근로기준법 §55, 시행령 §30, 근로기준법 §18 기준
+                  <strong>마지막 갱신:</strong> 2026-10-07 | 근로기준법 §55, 시행령 §30, 근로기준법 §18 기준
                 </p>
               </section>
             </article>

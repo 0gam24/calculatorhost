@@ -58,6 +58,12 @@ const CALCULATORS = [
     tags: ['퇴직금', '수익'],
   },
   {
+    title: '주휴수당 계산기',
+    description: '시급과 1주 소정근로시간으로 주휴수당·주휴시간·월 환산액을 즉시 계산합니다. 2026·2027 최저시급 프리셋과 주 15시간 개근 조건을 반영합니다.',
+    href: '/calculator/weekly-holiday-allowance',
+    tags: ['주휴수당', '알바', '근로기준법'],
+  },
+  {
     title: '프리랜서 종합소득세 계산기',
     description: '1인 사업자와 프리랜서의 사업소득에 경비율을 적용해 종합소득세를 계산합니다. 기본경비율과 실제경비율을 모두 지원합니다.',
     href: '/calculator/freelancer-tax',
