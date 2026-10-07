@@ -39,12 +39,12 @@ const readJson = (rel) => {
 };
 const fmtUsd = (x) => (x >= 10 ? Math.round(x).toString() : x >= 1 ? x.toFixed(1) : x.toFixed(2));
 
-/** 그날 커밋으로 새로 생긴 가이드 수 (git 추적분만 — 커밋 안 한 초안은 사이트에 없다) */
+/** 그날 커밋으로 새로 생긴 페이지 수 (가이드 + 계산기, git 추적분만. 커밋 안 한 초안은 사이트에 없다) */
 function publishedOn(day) {
   try {
     const out = execFileSync(
       'git',
-      ['log', `--since=${day}T00:00:00+09:00`, `--until=${day}T23:59:59+09:00`, '--diff-filter=A', '--name-only', '--pretty=format:', '--', 'src/app/guide/*/page.tsx'],
+      ['log', `--since=${day}T00:00:00+09:00`, `--until=${day}T23:59:59+09:00`, '--diff-filter=A', '--name-only', '--pretty=format:', '--', 'src/app/guide/*/page.tsx', 'src/app/calculator/*/page.tsx'],
       { cwd: ROOT, encoding: 'utf8' },
     );
     return new Set(out.split(/\r?\n/).filter(Boolean)).size;
@@ -52,7 +52,7 @@ function publishedOn(day) {
     return 0;
   }
 }
-const countLine = () => `오늘 발행 ${publishedOn(TODAY)}건 · 어제 ${publishedOn(YDAY)}건 (수동 전용)`;
+const countLine = () => `오늘 새 페이지 ${publishedOn(TODAY)}건 · 어제 ${publishedOn(YDAY)}건 (자동 운영 하루 1건)`;
 
 if (argv.includes('--count')) {
   console.log(countLine());
