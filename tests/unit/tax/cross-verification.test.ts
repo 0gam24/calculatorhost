@@ -1824,13 +1824,14 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
     // 기본공제: 9억 (다주택)
     // 과세표준: (30억 - 9억) × 60% = 21억 × 60% = 12.6억원 = 1,260,000,000원
     // 세율 구간: 중과 세율 적용 (3주택 이상)
-    // 12.6억 → 중과 구간 4 (25~50억) rate 2.0%, deduction 14,400,000
+    // 12.6억 → 중과 12~25억 구간 rate 2.0%, deduction 14,400,000
     // 산출세액: 1,260,000,000 × 2.0% - 14,400,000 = 25,200,000 - 14,400,000 = 10,800,000원
-    // 농특세(20%): 10,800,000 × 20% = 2,160,000원
-    // 최종 납부: 10,800,000 + 2,160,000 = 12,960,000원
-    // 근거: 종합부동산세법 §8 중과세 BRACKETS_MULTI[3], 농특세법 §5 가산
+    // 공제할 재산세액: 12.6억 × 60% × 0.4% = 3,024,000원 (종부세법 §9③, 시행령 §4의3)
+    // 순세액: 10,800,000 - 3,024,000 = 7,776,000원, 농특세(20%) 1,555,200원
+    // 최종 납부: 7,776,000 + 1,555,200 = 9,331,200원
+    // 근거: 종합부동산세법 §9①2호 중과 세율, §9③ 재산세 공제, 농특세법 §5 가산
     // 검증: 국세청 고시 2026-82호 중과세율표
-    it('종부세 3주택 공시 30억 → 중과 2.0% (누진공제 1,440만) → 최종 약 1,296만원', () => {
+    it('종부세 3주택 공시 30억 → 중과 2.0% (누진공제 1,440만) → 재산세 공제 후 최종 약 933만원', () => {
       const result = calculateComprehensivePropertyTax({
         houseCount: 'threeOrMore',
         totalPublishedPrice: 3_000_000_000,
@@ -1845,8 +1846,9 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       expect(result.appliedBracket).toBe('multi'); // 3주택은 중과
       // 1.26B × 2.0% - 14.4M = 25.2M - 14.4M = 10.8M
       expect(result.grossTax).toBeCloseTo(10_800_000, -3);
-      expect(result.ruralSpecialTax).toBeCloseTo(2_160_000, -3); // 10.8M × 20%
-      expect(result.totalTax).toBeCloseTo(12_960_000, -3); // 10.8M + 2.16M
+      expect(result.propertyTaxCredit).toBe(3_024_000);
+      expect(result.ruralSpecialTax).toBeCloseTo(1_555_200, -3); // 7.776M × 20%
+      expect(result.totalTax).toBeCloseTo(9_331_200, -3); // 7.776M + 1.5552M
     });
   });
 });

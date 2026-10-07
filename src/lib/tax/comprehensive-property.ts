@@ -5,7 +5,8 @@
  * - 종합부동산세법 §8 (과세표준·공제금액)
  * - 종합부동산세법 §9① (세율)
  * - 종합부동산세법 §9 (1세대1주택 세액공제)
- * - 미반영: §9③ 재산세 중복분 공제, §10 세부담 상한 (페이지에 안내)
+ * - 종합부동산세법 §9③·시행령 §4의3 (공제할 재산세액)
+ * - 미반영: §10 세부담 상한 (페이지에 안내)
  * - 농어촌특별세법 §5 (종부세의 20%)
  *
  * 상수: src/lib/constants/tax-rates-2026.ts
@@ -28,9 +29,11 @@ import {
   ONE_HOUSE_LONG_HOLD_10_15,
   ONE_HOUSE_LONG_HOLD_15_PLUS,
   ONE_HOUSE_TOTAL_CREDIT_CAP,
+  COMPREHENSIVE_PROPERTY_TAX_OVERLAP_PROPERTY_TAX_RATE,
   type TaxBracket,
 } from '@/lib/constants/tax-rates-2026';
 import { calculateProgressiveTax } from './income';
+import { calculateAssessmentRatio } from './property';
 
 // ============================================
 // 타입 정의
@@ -70,7 +73,9 @@ export interface ComprehensivePropertyTaxResult {
   longHoldCreditRate: number;
   /** 합산 공제율 (최대 80%) */
   totalCreditRate: number;
-  /** 세액공제액 */
+  /** 공제할 재산세액 (종부세법 §9③, 시행령 §4의3) */
+  propertyTaxCredit: number;
+  /** 세액공제액 (재산세 공제 후 금액 × 공제율, §9⑤) */
   creditAmount: number;
   /** 종부세 순세액 (공제 후) */
   netTax: number;
@@ -124,6 +129,33 @@ export function calculateLongHoldCredit(
   return ONE_HOUSE_LONG_HOLD_15_PLUS;
 }
 
+export interface PropertyTaxOverlapCreditInput {
+  /** 보유 주택 공시가 합계 (원) */
+  totalPublishedPrice: number;
+  /** 종부세 기본공제 (1세대1주택 12억, 그 외 9억) */
+  basicDeduction: number;
+  /** 1세대1주택 여부 (재산세 공정시장가액비율 43/44/45% 분기) */
+  isOneHouseholdOneHouse: boolean;
+}
+
+/**
+ * 공제할 재산세액 — 종부세법 §9③, 시행령 §4의3①
+ * = 종부세 과세표준 × 재산세 공정시장가액비율(지방세법 시행령 §109①2호) × 1천분의 4
+ * 재산세 세부담 상한·가감조정세율이 없다고 보고 분모 = 재산세 부과세액으로 둔다. 10원 단위 절사.
+ */
+export function calculatePropertyTaxOverlapCredit(input: PropertyTaxOverlapCreditInput): number {
+  const excess = Math.max(0, input.totalPublishedPrice - input.basicDeduction);
+  const jongbuBase = Math.floor(excess * COMPREHENSIVE_PROPERTY_TAX_ASSESSMENT_RATIO);
+  if (jongbuBase <= 0) return 0;
+  const ratioPercent = Math.round(
+    calculateAssessmentRatio(input.totalPublishedPrice, input.isOneHouseholdOneHouse) * 100,
+  );
+  const ratePerMille = Math.round(COMPREHENSIVE_PROPERTY_TAX_OVERLAP_PROPERTY_TAX_RATE * 1000);
+  // 비율·세율의 이진 부동소수 오차를 피하려고 정수로 계산
+  const credit = (BigInt(jongbuBase) * BigInt(ratioPercent) * BigInt(ratePerMille)) / 100_000n;
+  return Math.floor(Number(credit) / 10) * 10;
+}
+
 /**
  * 세율 구간 선택
  * 3주택 이상이면 중과 세율 적용
@@ -163,10 +195,11 @@ export function selectBasicDeduction(
  * 2. 과세표준 = (공시가 - 공제) × 60% (음수 시 0)
  * 3. 세율 구간 선택 (일반/중과)
  * 4. 산출세액 = 과세표준에 누진세 적용
- * 5. 세액공제 = 고령자 + 장기보유 (최대 80%)
- * 6. 순세액 = 산출세액 - 공제액
- * 7. 농특세 = 순세액 × 20%
- * 8. 최종 = 순세액 + 농특세
+ * 5. 공제할 재산세액 차감 (§9③, 시행령 §4의3)
+ * 6. 세액공제 = (산출세액 − 공제할 재산세액) × (고령자 + 장기보유, 최대 80%) (§9⑤)
+ * 7. 순세액 = 산출세액 − 공제할 재산세액 − 세액공제
+ * 8. 농특세 = 순세액 × 20%
+ * 9. 최종 = 순세액 + 농특세
  */
 export function calculateComprehensivePropertyTax(
   input: ComprehensivePropertyTaxInput,
@@ -184,6 +217,7 @@ export function calculateComprehensivePropertyTax(
       seniorCreditRate: 0,
       longHoldCreditRate: 0,
       totalCreditRate: 0,
+      propertyTaxCredit: 0,
       creditAmount: 0,
       netTax: 0,
       ruralSpecialTax: 0,
@@ -242,10 +276,20 @@ export function calculateComprehensivePropertyTax(
     ONE_HOUSE_TOTAL_CREDIT_CAP,
     seniorCreditRate + longHoldCreditRate,
   );
-  const creditAmount = Math.floor((grossTax * totalCreditRate) / 10) * 10;
+  // 5-1. 공제할 재산세액 (§9③) — 세액공제보다 먼저 뺀다(§9⑤ 의 base 가 재산세 공제 후 금액)
+  const propertyTaxCredit = Math.min(
+    grossTax,
+    calculatePropertyTaxOverlapCredit({
+      totalPublishedPrice: input.totalPublishedPrice,
+      basicDeduction,
+      isOneHouseholdOneHouse: input.isOneHouseholdOneHouse && input.houseCount === 'one',
+    }),
+  );
+  const afterOverlap = grossTax - propertyTaxCredit;
+  const creditAmount = Math.floor((afterOverlap * totalCreditRate) / 10) * 10;
 
   // 6. 순세액
-  const netTax = Math.max(0, grossTax - creditAmount);
+  const netTax = Math.max(0, afterOverlap - creditAmount);
 
   // 7. 농특세
   const ruralSpecialTax = Math.floor((netTax * RURAL_SPECIAL_TAX_ON_COMPREHENSIVE_PROPERTY_RATE) / 10) * 10;
@@ -262,6 +306,7 @@ export function calculateComprehensivePropertyTax(
     seniorCreditRate,
     longHoldCreditRate,
     totalCreditRate,
+    propertyTaxCredit,
     creditAmount,
     netTax,
     ruralSpecialTax,

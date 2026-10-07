@@ -215,6 +215,15 @@ export function ComprehensivePropertyTaxCalculator() {
             label: '종부세 산출세액',
             value: formatKRW(result.grossTax),
           },
+          ...(result.propertyTaxCredit > 0
+            ? [
+                {
+                  label: '공제할 재산세액',
+                  value: `− ${formatKRW(result.propertyTaxCredit)}`,
+                  note: '(과세표준 × 재산세 공정시장가액비율 × 0.4%, 종부세법 §9③)',
+                },
+              ]
+            : []),
           ...(showCredits
             ? [
                 {

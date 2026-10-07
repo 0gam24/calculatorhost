@@ -381,6 +381,13 @@ export const COMPREHENSIVE_PROPERTY_TAX_OTHER_DEDUCTION = 900_000_000;
 /** 공정시장가액비율 (60%) — 종부세법 시행령 */
 export const COMPREHENSIVE_PROPERTY_TAX_ASSESSMENT_RATIO = 0.6;
 
+/**
+ * 공제할 재산세액 산정 세율 (1천분의 4) — 종부세법 §9③, 시행령 §4의3①, 지방세법 §111①3호
+ * 종부세 과세표준은 공제금액을 넘는 맨 위 가액이라 그에 대응하는 재산세는 표준세율 최고 구간으로 계산한다.
+ * 실제 고지 대조: 공시 15억 1세대1주택 2025년 종부세 약 69만 1천원(농특세 포함) = 이 방식 691,200원.
+ */
+export const COMPREHENSIVE_PROPERTY_TAX_OVERLAP_PROPERTY_TAX_RATE = 0.004;
+
 /** 농어촌특별세율 (종부세의 20%) — 농특세법 §5 */
 export const RURAL_SPECIAL_TAX_ON_COMPREHENSIVE_PROPERTY_RATE = 0.2;
 

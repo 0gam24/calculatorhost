@@ -164,10 +164,12 @@ describe('종합부동산세 계산', () => {
       expect(result.grossTax).toBe(900_000); // 1.8억 × 0.5%
       expect(result.seniorCreditRate).toBe(0);
       expect(result.longHoldCreditRate).toBe(0);
+      // 공제할 재산세액 = 1.8억 × 45% × 0.4% = 324,000 (종부세법 §9③, 시행령 §4의3)
+      expect(result.propertyTaxCredit).toBe(324_000);
       expect(result.creditAmount).toBe(0);
-      expect(result.netTax).toBe(900_000);
-      expect(result.ruralSpecialTax).toBe(180_000); // 90만 × 20%
-      expect(result.totalTax).toBe(1_080_000);
+      expect(result.netTax).toBe(576_000);
+      expect(result.ruralSpecialTax).toBe(115_200); // 57.6만 × 20%
+      expect(result.totalTax).toBe(691_200);
     });
 
     /**
@@ -176,9 +178,10 @@ describe('종합부동산세 계산', () => {
      * - 과세표준 = (20억 - 9억) × 60% = 660,000,000원 (6.6억)
      * - 600M 초과 1200M 이하 구간 (1.0%)
      * - 660M × 0.01 - 2,400,000 = 6,600,000 - 2,400,000 = 4,200,000
-     * - 10원 단위 절사: 4,200,000 → 4,200,000
-     * - 농특세 = 4,200,000 × 20% = 840,000
-     * - 총 = 4,200,000 + 840,000 = 5,040,000
+     * - 공제할 재산세액 = 6.6억 × 60% × 0.4% = 1,584,000
+     * - 순세액 = 4,200,000 - 1,584,000 = 2,616,000
+     * - 농특세 = 2,616,000 × 20% = 523,200
+     * - 총 = 2,616,000 + 523,200 = 3,139,200
      */
     it('2주택 공시 20억 → 과세표준 6.6억 → 누진세 계산', () => {
       const input: ComprehensivePropertyTaxInput = {
@@ -194,10 +197,11 @@ describe('종합부동산세 계산', () => {
       expect(result.taxableBase).toBe(660_000_000); // (20억 - 9억) × 0.6
       expect(result.appliedBracket).toBe('general');
       expect(result.grossTax).toBe(4_200_000); // 6.6억 × 0.01 - 2,400,000
+      expect(result.propertyTaxCredit).toBe(1_584_000);
       expect(result.creditAmount).toBe(0); // 다주택이므로 공제 불가
-      expect(result.netTax).toBe(4_200_000);
-      expect(result.ruralSpecialTax).toBe(840_000);
-      expect(result.totalTax).toBe(5_040_000);
+      expect(result.netTax).toBe(2_616_000);
+      expect(result.ruralSpecialTax).toBe(523_200);
+      expect(result.totalTax).toBe(3_139_200);
     });
 
     /**
@@ -206,9 +210,10 @@ describe('종합부동산세 계산', () => {
      * - 과세표준 = (25억 - 9억) × 60% = 960,000,000원 (9.6억)
      * - 중과 세율: 960M은 12억 이하 구간 (1.0%)
      * - 960M × 0.01 - 2,400,000 = 9,600,000 - 2,400,000 = 7,200,000
-     * - 10원 단위 절사: 7,200,000 → 7,200,000
-     * - 농특세 = 7,200,000 × 20% = 1,440,000
-     * - 총 = 7,200,000 + 1,440,000 = 8,640,000
+     * - 공제할 재산세액 = 9.6억 × 60% × 0.4% = 2,304,000
+     * - 순세액 = 7,200,000 - 2,304,000 = 4,896,000
+     * - 농특세 = 4,896,000 × 20% = 979,200
+     * - 총 = 4,896,000 + 979,200 = 5,875,200
      */
     it('3주택 공시 25억 → 중과 세율 적용 → 과세표준 9.6억', () => {
       const input: ComprehensivePropertyTaxInput = {
@@ -225,18 +230,20 @@ describe('종합부동산세 계산', () => {
       expect(result.appliedBracket).toBe('multi');
       // 중과 구간 9.6억 = 12억 이하 (1.0%)
       expect(result.grossTax).toBe(7_200_000);
-      expect(result.netTax).toBe(7_200_000);
-      expect(result.ruralSpecialTax).toBe(1_440_000);
-      expect(result.totalTax).toBe(8_640_000);
+      expect(result.propertyTaxCredit).toBe(2_304_000);
+      expect(result.netTax).toBe(4_896_000);
+      expect(result.ruralSpecialTax).toBe(979_200);
+      expect(result.totalTax).toBe(5_875_200);
     });
 
     /**
      * Test 5: 1세대1주택 고령자(70세) + 장기보유(15년)
      * - 공시 15억, 과세표준 1.8억 → 기본 90만
      * - 고령자 40% + 장기보유 50% = 90% → 한도 80% 적용
-     * - 공제액 = 90만 × 80% = 72만
-     * - 순세액 = 90만 - 72만 = 18만
-     * - 농특세 = 18만 × 20% = 3.6만 = 36,000
+     * - 공제할 재산세액 = 1.8억 × 45% × 0.4% = 324,000 (§9③, 세액공제보다 먼저)
+     * - 세액공제 = (90만 - 32.4만) × 80% = 460,800 (§9⑤ base = 재산세 공제 후 금액)
+     * - 순세액 = 576,000 - 460,800 = 115,200
+     * - 농특세 = 115,200 × 20% = 23,040
      */
     it('1세대1주택 고령(70세) + 장보(15년) → 공제 80% 한도', () => {
       const input: ComprehensivePropertyTaxInput = {
@@ -252,10 +259,11 @@ describe('종합부동산세 계산', () => {
       expect(result.longHoldCreditRate).toBe(0.5);
       expect(result.totalCreditRate).toBe(0.8); // 0.4 + 0.5 = 0.9, but capped at 0.8
       expect(result.grossTax).toBe(900_000);
-      expect(result.creditAmount).toBe(720_000); // 900_000 × 0.8
-      expect(result.netTax).toBe(180_000); // 900_000 - 720_000
-      expect(result.ruralSpecialTax).toBe(36_000);
-      expect(result.totalTax).toBe(216_000);
+      expect(result.propertyTaxCredit).toBe(324_000);
+      expect(result.creditAmount).toBe(460_800); // (900,000 - 324,000) × 0.8
+      expect(result.netTax).toBe(115_200);
+      expect(result.ruralSpecialTax).toBe(23_040);
+      expect(result.totalTax).toBe(138_240);
     });
 
     /**

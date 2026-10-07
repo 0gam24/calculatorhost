@@ -19,6 +19,19 @@ import {
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { ComprehensivePropertyTaxCalculator } from './ComprehensivePropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
+import { calculateComprehensivePropertyTax } from '@/lib/tax/comprehensive-property';
+
+/** 요약 표: 1세대1주택, 60세 미만·보유 5년 미만(세액공제 0), 농특세 포함. 함수로 계산해 본문과 계산기가 어긋나지 않게 한다. */
+function oneHouseTotal(publishedPrice: number): string {
+  const { totalTax } = calculateComprehensivePropertyTax({
+    houseCount: 'one',
+    totalPublishedPrice: publishedPrice,
+    isOneHouseholdOneHouse: true,
+    seniorAgeYears: 50,
+    holdingYears: 0,
+  });
+  return totalTax === 0 ? '0원' : `약 ${Math.round(totalTax / 10_000).toLocaleString('ko-KR')}만 원`;
+}
 
 const URL = 'https://calculatorhost.com/calculator/comprehensive-property-tax/';
 
@@ -253,17 +266,17 @@ export default function ComprehensivePropertyTaxPage() {
               <StructuredSummary
                 definition="종합부동산세는 주택 공시가 합계에서 공제를 차감한 후 공정시장가액비율 60%를 적용한 과세표준에 누진세를 곱하고, 농어촌특별세 20%를 더하여 계산되는 국세입니다(종부세법 §8·§9, 농특세법 §5)."
                 table={{
-                  caption: '1세대1주택 기준 공시가별 종부세 예상액',
-                  headers: ['보유 공시가', '예상 종부세 (공제 미적용)'],
+                  caption: '1세대1주택 공시가별 종부세 예상액 (농특세 포함, 고령자·장기보유 세액공제 없음)',
+                  headers: ['보유 공시가', '예상 종부세'],
                   rows: [
-                    ['12억 원', '0원'],
-                    ['15억 원', '약 90만 원'],
-                    ['20억 원', '약 240만 원'],
-                    ['30억 원', '약 740만 원'],
+                    ['12억 원', oneHouseTotal(1_200_000_000)],
+                    ['15억 원', oneHouseTotal(1_500_000_000)],
+                    ['20억 원', oneHouseTotal(2_000_000_000)],
+                    ['30억 원', oneHouseTotal(3_000_000_000)],
                   ],
                 }}
                 tldr={[
-                  '종부세 = (공시가 − 공제) × 60% × 세율',
+                  '종부세 = (공시가 − 공제) × 60% × 세율 − 공제할 재산세액',
                   '1세대1주택: 공제 12억 / 다주택: 공제 9억',
                   '1세대1주택자만 고령자·장기보유 세액공제 80% 한도 적용',
                   '3주택 이상은 과세표준 12억 초과 부분 중과세율 적용',
@@ -574,38 +587,43 @@ export default function ComprehensivePropertyTaxPage() {
                     절사).
                   </li>
                   <li>
-                    <strong>5. 세액공제 계산 (1세대1주택자만)</strong>: 고령자공제 + 장기보유공제,
-                    합계 80% 한도.
+                    <strong>5. 공제할 재산세액 차감</strong>: 같은 가액에 이미 낸 재산세 몫을 뺍니다.
+                    과세표준 × 재산세 공정시장가액비율(1세대1주택 45%, 그 외 60%) × 0.4% (종부세법
+                    §9③, 시행령 §4의3).
                   </li>
                   <li>
-                    <strong>6. 종부세 순세액</strong>: 산출세액 − 세액공제액 (최소 0원).
+                    <strong>6. 세액공제 계산 (1세대1주택자만)</strong>: 재산세를 뺀 금액에 고령자공제 +
+                    장기보유공제율을 곱합니다. 합계 80% 한도 (§9⑤).
                   </li>
                   <li>
-                    <strong>7. 농어촌특별세 계산</strong>: 순세액 × 20% (10원 단위 절사).
+                    <strong>7. 종부세 순세액</strong>: 산출세액 − 공제할 재산세액 − 세액공제액 (최소 0원).
                   </li>
                   <li>
-                    <strong>8. 최종 납부액</strong>: 종부세 순세액 + 농어촌특별세.
+                    <strong>8. 농어촌특별세 계산</strong>: 순세액 × 20% (10원 단위 절사).
+                  </li>
+                  <li>
+                    <strong>9. 최종 납부액</strong>: 종부세 순세액 + 농어촌특별세.
                   </li>
                 </ol>
               </section>
               <section aria-label="계산기에 빠진 항목" className="card">
-                <h2 className="mb-3 text-2xl font-semibold">이 계산기 결과가 실제 고지액보다 클 수 있나요?</h2>
+                <h2 className="mb-3 text-2xl font-semibold">이 계산기 결과와 실제 고지액이 다를 수 있나요?</h2>
                 <p className="text-sm leading-relaxed text-text-secondary" data-speakable>
-                  네, 클 수 있습니다. 이 계산기는 재산세 중복분 공제와 세부담 상한을 아직 반영하지 않습니다.
+                  재산세 중복분은 빼서 계산하지만, 세부담 상한은 반영하지 않아 고지액이 더 작을 수 있습니다.
                 </p>
                 <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>재산세 중복분 공제</strong>: 같은 주택에 이미 낸 재산세 중 종부세 과세표준과 겹치는
-                    부분은 종부세에서 빼 줍니다(종부세법 §9③). 실제 고지액은 이만큼 줄어듭니다.
+                    <strong>재산세 중복분 공제 (반영)</strong>: 같은 가액에 이미 낸 재산세 몫을 종부세에서
+                    뺍니다(종부세법 §9③, 시행령 §4의3). 공시 15억 1세대1주택이면 약 32만 원입니다.
                   </li>
                   <li>
-                    <strong>세부담 상한</strong>: 올해 재산세와 종부세 합계가 직전 연도의 150%를 넘으면 넘는
-                    부분은 걷지 않습니다(종부세법 §10).
+                    <strong>세부담 상한 (미반영)</strong>: 올해 재산세와 종부세 합계가 직전 연도의 150%를 넘으면
+                    넘는 부분은 걷지 않습니다(종부세법 §10). 작년 세액이 있어야 계산할 수 있습니다.
                   </li>
                 </ul>
                 <p className="mt-3 text-sm text-text-secondary">
-                  다만, 두 항목은 재산세 과세표준과 작년 세액이 있어야 계산할 수 있어 최종 금액은 11월 하순
-                  홈택스 고지서로 확인해야 합니다.
+                  다만, 재산세 세부담 상한이나 지자체 세율 조정을 받은 주택은 공제할 재산세액도 달라질 수
+                  있어 최종 금액은 11월 하순 홈택스 고지서로 확인해야 합니다.
                 </p>
               </section>
               <section aria-label="고지와 납부 일정" className="card">
@@ -749,7 +767,7 @@ export default function ComprehensivePropertyTaxPage() {
               <section aria-label="업데이트" className="card">
                 <h2 className="mb-2 text-lg font-semibold">업데이트</h2>
                 <ul className="text-sm text-text-secondary">
-                  <li>2026-10-07: 고지·납부·분납 일정 추가, 일반세율 94억 원 초과 누진공제 표기 정정(1억 180만 원), 조항 표기 정정, 계산에서 빠진 항목(재산세 중복분 공제·세부담 상한) 안내</li>
+                  <li>2026-10-07: 고지·납부·분납 일정 추가, 일반세율 94억 원 초과 누진공제 표기 정정(1억 180만 원), 조항 표기 정정, 계산에 공제할 재산세액(§9③) 반영, 세부담 상한 미반영 안내</li>
                   <li>2026-04-24: 2026년 종부세법 기준 초판 공개</li>
                 </ul>
               </section>
