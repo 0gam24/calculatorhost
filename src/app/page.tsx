@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: '한국 금융·세금·부동산 계산기 32개 | calculatorhost',
   description:
-    '연봉 실수령액·대출이자·취득세·적금 등 생활 계산기 31개. 내 조건에 따른 예상값과 계산 기준을 함께 확인하세요. 회원가입 없이 무료로 이용할 수 있습니다.',
+    '연봉 실수령액·대출이자·취득세·주휴수당 등 계산기 32개. 회원가입 없이 무료로 바로 계산하고 계산 기준까지 확인하세요.',
   alternates: { canonical: 'https://calculatorhost.com/' },
 };
 const POPULAR = [
@@ -29,12 +29,15 @@ interface CalcItem {
 }
 interface CalcCategory {
   category: string;
+  /** 카테고리 허브 /category/{slug}/ — 홈 HTML 에 허브 링크를 서버 렌더로 남긴다(네이버 Yeti 가 따라가는 링크) */
+  slug: string;
   items: CalcItem[];
 }
 const ALL_CALCULATORS: CalcCategory[] = [
   // 세금
   {
     category: '세금',
+    slug: 'tax',
     items: [
       { href: '/calculator/capital-gains-tax', title: '양도소득세' },
       { href: '/calculator/acquisition-tax', title: '취득세' },
@@ -52,6 +55,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
   // 금융
   {
     category: '금융',
+    slug: 'finance',
     items: [
       { href: '/calculator/loan', title: '대출이자' },
       { href: '/calculator/loan-limit', title: '대출한도(DSR/LTV)' },
@@ -69,6 +73,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
   // 근로
   {
     category: '근로',
+    slug: 'work',
     items: [
       { href: '/calculator/salary', title: '연봉 실수령액' },
       { href: '/calculator/severance', title: '퇴직금' },
@@ -78,6 +83,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
   // 부동산
   {
     category: '부동산',
+    slug: 'real-estate',
     items: [
       { href: '/calculator/broker-fee', title: '중개수수료' },
       { href: '/calculator/rent-conversion', title: '전월세전환율' },
@@ -89,6 +95,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
   // 생활
   {
     category: '생활',
+    slug: 'lifestyle',
     items: [
       { href: '/calculator/bmi', title: 'BMI' },
       { href: '/calculator/d-day', title: 'D-day' },
@@ -247,7 +254,12 @@ export default function HomePage() {
             {ALL_CALCULATORS.map((cat) => (
               <div key={cat.category}>
                 <h3 className="border-b border-border-base pb-2 text-sm font-semibold text-text-tertiary">
-                  {cat.category}
+                  <Link
+                    href={`/category/${cat.slug}/`}
+                    className="hover:text-primary-700 focus-visible:rounded focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary-500 dark:hover:text-primary-300"
+                  >
+                    {cat.category} 계산기 전체 보기
+                  </Link>
                 </h3>
                 <ul>
                   {cat.items.map((item) => (

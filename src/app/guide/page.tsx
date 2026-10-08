@@ -4045,7 +4045,7 @@ export default function GuideIndexPage() {
                   </li>
                   <li>
                     <Link href="/" className="text-primary-600 underline dark:text-primary-500">
-                      홈, 31개 계산기 모음
+                      홈, 32개 계산기 모음
                     </Link>
                   </li>
                   <li>

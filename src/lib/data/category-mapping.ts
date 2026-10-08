@@ -13,7 +13,7 @@
 export type CategoryId = 'work' | 'tax' | 'finance' | 'real-estate' | 'lifestyle';
 
 // ─────────────────────────────────────────────────────────────
-// 카테고리 → 계산기 슬러그 (31개 전부 매핑, 하나의 계산기는 여러 카테고리 가능)
+// 카테고리 → 계산기 슬러그 (32개 전부 매핑, 하나의 계산기는 여러 카테고리 가능)
 // ─────────────────────────────────────────────────────────────
 export const CATEGORY_CALCULATORS: Record<CategoryId, string[]> = {
   work: [

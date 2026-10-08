@@ -27,7 +27,7 @@ const EXTERNAL_SOURCES = [
 export const metadata: Metadata = {
   title: '소개 | calculatorhost, 운영자 김준혁 / 스마트데이터샵',
   description:
-    '한국 금융·세금·부동산 계산기 31종과 참고 가이드를 운영합니다. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 계산의 적용 조건과 기준일·출처를 확인하고 실제 처리는 담당 기관에 문의하세요.',
+    '한국 금융·세금·부동산 계산기 32종과 참고 가이드를 운영합니다. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 계산의 적용 조건과 기준일·출처를 확인하고 실제 처리는 담당 기관에 문의하세요.',
   alternates: { canonical: 'https://calculatorhost.com/about/' },
 };
 
@@ -136,7 +136,7 @@ export default function AboutPage() {
 
               <h2 className="text-2xl font-semibold text-text-primary">제공 카테고리</h2>
               <p>
-                현재 31개의 무료 계산기를 5개 카테고리로 운영하고 있으며, 각 카테고리에서 용도에 맞는
+                현재 32개의 무료 계산기를 5개 카테고리로 운영하고 있으며, 각 카테고리에서 용도에 맞는
                 계산기를 선택할 수 있습니다.
               </p>
               <ul className="mt-4 grid gap-3 not-prose">

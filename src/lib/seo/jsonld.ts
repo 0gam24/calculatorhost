@@ -14,7 +14,7 @@ const SITE_NAME = 'calculatorhost';
 const SITE_LEGAL_NAME = '스마트데이터샵';
 const SITE_FOUNDER = '김준혁';
 const SITE_DESCRIPTION =
-  '2026년 최신 세율·금리를 반영한 한국 생활 금융·세금·부동산·근로 계산기 31종을 무료로 제공하는 사이트.';
+  '2026년 최신 세율·금리를 반영한 한국 생활 금융·세금·부동산·근로 계산기 32종을 무료로 제공하는 사이트.';
 
 // smartdatashop network 메인 사이트(1차 출처 데이터 저널) — 자매 페이지의
 // publisher.parentOrganization 및 isBasedOn 속성으로 부착되어 네트워크 신호화.
