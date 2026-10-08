@@ -219,7 +219,7 @@ const head = `<div style="display:flex;justify-content:space-between;gap:8px;fle
   <span>${esc(countLine())}</span>
 </div>`;
 
-console.log(`<h2 class="sr-only">calculatorhost 오늘 쓸 글감 목록, 목표 하루 200달러 대비 진행과 다음에 뜰 주제</h2>
+console.log(`<h2 class="sr-only">calculatorhost 오늘 쓸 글감 목록, 목표 하루 100달러 대비 진행과 다음에 뜰 주제</h2>
 <div style="padding:4px 2px">
 ${head}
 ${goalHtml()}
