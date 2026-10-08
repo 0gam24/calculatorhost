@@ -26,9 +26,9 @@ const EXIM_USD_CITATION = getEximUsdRateCitation(exchangeRates);
 const URL = 'https://calculatorhost.com/calculator/exchange/';
 
 export const metadata: Metadata = {
-  title: '환율·환전 계산기 2026 | 스프레드·수수료 반영 | calculatorhost',
+  title: '환율 계산기 | 환전 수수료·스프레드 반영',
   description:
-    '환율·환전 계산기. 표시된 기준 환율과 스프레드·수수료를 반영해 예상 환전액을 확인하세요. 환율 데이터의 기준일과 출처를 함께 제공합니다. 무료·회원가입 불필요.',
+    '기준 환율에 스프레드와 수수료를 반영해 예상 환전 금액을 계산합니다. 환율 기준일과 출처를 함께 표시합니다.',
   keywords: [
     '환율 계산기',
     '환전 계산기',

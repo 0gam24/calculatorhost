@@ -27,7 +27,7 @@ const URL = 'https://calculatorhost.com/calculator/acquisition-tax/';
 export const metadata: Metadata = {
   title: '취득세 계산기 2026 | 주택 매매 예상세액·조건 확인',
   description:
-    '조건이 확인된 일반 주택 취득의 취득세·지방교육세·농어촌특별세 예상액을 확인하세요. 6~9억원 법정 세율·반올림을 반영하며 증여·상속의 과세표준·특례와 감면은 별도 확인이 필요합니다.',
+    '주택 매매가와 주택 수로 취득세·지방교육세·농어촌특별세 예상액을 계산합니다. 증여·상속·감면은 따로 확인하세요.',
   keywords: [
     '취득세 계산기',
     '아파트 취득세',

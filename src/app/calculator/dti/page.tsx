@@ -32,9 +32,9 @@ const DATE_PUBLISHED = '2026-05-11';
 const DATE_MODIFIED = '2026-07-05';
 
 export const metadata: Metadata = {
-  title: 'DTI 계산기 2026 | LTV·DSR 함께 계산 | calculatorhost',
+  title: 'DTI 계산기 2026 | LTV·DSR 함께 계산',
   description:
-    'DTI(부채상환비율) 계산기 2026. 신규 대출 원리금 + 기존 이자 ÷ 연소득 비율 공식. DSR·LTV 와 동시 계산해 주택담보대출 한도 정확히 확인. 무료.',
+    '연소득과 대출 원리금으로 DTI를 계산하고 LTV·DSR과 함께 주택담보대출 한도를 확인합니다.',
   keywords: [
     'DTI 계산기',
     'DTI 대출한도 계산',

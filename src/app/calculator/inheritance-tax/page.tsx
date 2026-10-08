@@ -23,9 +23,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/inheritance-tax/';
 
 export const metadata: Metadata = {
-  title: '상속세 계산기 2026 | 기초공제·배우자·자녀 | calculatorhost',
+  title: '상속세 계산기 2026 | 기초공제·배우자·자녀공제',
   description:
-    '2026년 상속세 계산기. 상속 재산액·상속인 구성으로 기초공제·배우자공제·자녀장려금 등을 적용해 세액을 계산. 분할·생전증여 절세 비교 가능. 무료.',
+    '상속재산과 상속인 구성으로 상속세를 계산합니다. 기초공제·일괄공제·배우자공제를 반영하고 세율 구간을 보여 줍니다.',
   keywords: [
     '상속세 계산기',
     '상속세 면제 한도',

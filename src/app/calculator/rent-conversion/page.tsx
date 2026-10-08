@@ -42,8 +42,8 @@ const CURRENT_LEGAL_CAP_DISPLAY = (CURRENT_LEGAL_CAP_PCT * 100).toFixed(2);
 export const metadata: Metadata = {
   // 검색 의도 흡수: "주택임대차보호법 전월세전환율 기준금리 2% 2026" (GSC 1순위)
   // 즉답형 후크 + 법조항 + 현행 상한 수치 일부 노출 (구체성)
-  title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026, 주택임대차보호법 §7의2 + 계산기`,
-  description: `2026년 전월세 전환 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + ${ADDITIONAL_RATE_PCT}%p, 연 ${ANNUAL_CAP_PCT}% 중 낮은 값). 주택임대차보호법 §7의2 근거 전세↔월세 즉시 환산 무료.`,
+  title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026 | 계산기·주택임대차보호법`,
+  description: `법정 전환율 상한은 ${CURRENT_LEGAL_CAP_DISPLAY}%입니다(기준금리 ${CURRENT_BASE_RATE_PCT}%+${ADDITIONAL_RATE_PCT}%p와 연 ${ANNUAL_CAP_PCT}% 중 낮은 값). 전세와 월세를 바로 환산합니다.`,
   keywords: [
     '전월세 전환율 계산기',
     '전월세 전환율 2026',

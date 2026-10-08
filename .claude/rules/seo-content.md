@@ -13,8 +13,8 @@ paths:
 모든 페이지 `export const metadata` 필수:
 ```ts
 export const metadata = {
-  title: "...",        // 60자 이내 (template으로 suffix 자동 추가 금지 — 페이지마다 직접 작성)
-  description: "...",  // 80~155자 (단문 금지, 첫 문장에 결론). 한글 80자 ≈ Google SERP 영문 160자 잘림 한계.
+  title: "...",        // 40자 이내, 실제 검색어(데이터랩 실측 형태)를 맨 앞에 (네이버 사이트 간단 체크, ADR-016). 브랜드명은 붙이지 않는다
+  description: "...",  // 40~80자, 1~2문장, 첫 문장에 결론 (네이버 사이트 간단 체크 80자 이내, 구글 모바일 잘림도 약 80자. ADR-016)
   alternates: { canonical: "https://calculatorhost.com/<path>/" }, // trailing slash 필수
   openGraph: { images: ['/og-default.png'], ... },                  // images 필수
   twitter: { card: 'summary_large_image', images: ['/og-default.png'] },

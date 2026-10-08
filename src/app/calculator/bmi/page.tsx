@@ -21,9 +21,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/bmi/';
 
 export const metadata: Metadata = {
-  title: 'BMI 계산기 2026 | 대한비만학회 기준 | calculatorhost',
+  title: 'BMI 계산기 | 비만도·표준체중 계산',
   description:
-    'BMI 계산기 2026. 신장·체중으로 BMI·표준체중·비만도를 대한비만학회 기준으로 계산. 건강 관리 목표 제시. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '키와 몸무게로 BMI와 비만도, 표준체중을 대한비만학회 기준으로 계산합니다. 회원가입 없이 무료로 쓸 수 있습니다.',
   keywords: [
     'BMI 계산기',
     '비만도 계산기',

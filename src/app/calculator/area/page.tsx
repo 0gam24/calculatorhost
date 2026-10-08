@@ -21,7 +21,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/area/';
 const PAGE_TITLE = '평수 계산기 | ㎡↔평 변환·84㎡는 몇 평?';
 const PAGE_DESCRIPTION =
-  '제곱미터(㎡)와 평을 양방향으로 환산합니다. 84㎡는 25.41평, 34평은 약 112.40㎡입니다. 같은 면적의 단위만 변환하며 전용·공급면적을 서로 환산하지 않습니다.';
+  '제곱미터와 평을 서로 바꿔 줍니다. 84㎡는 25.41평, 34평은 약 112.40㎡입니다. 전용·공급면적 환산은 하지 않습니다.';
 
 export const metadata: Metadata = {
   title: PAGE_TITLE,

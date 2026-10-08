@@ -30,7 +30,7 @@ const URL = 'https://calculatorhost.com/calculator/capital-gains-tax/';
 export const metadata: Metadata = {
   title: '양도소득세 계산기 2026 | 1세대1주택 비과세·장기보유공제 자동',
   description:
-    '양도소득세 계산기 2026, 5억 매도 시 양도세 얼마? 1세대1주택 비과세·12억 한도·일시적2주택 특례·장기보유 30% 공제 자동 적용. 거래 전 최종 납부액 30초 확인.',
+    '양도가·취득가·보유기간으로 양도세를 계산합니다. 1세대1주택 12억 비과세, 일시적 2주택, 장기보유특별공제를 반영합니다.',
   keywords: [
     '양도세 계산기',
     '양도소득세 계산기',

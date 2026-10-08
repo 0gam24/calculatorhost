@@ -21,9 +21,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/housing-subscription/';
 
 export const metadata: Metadata = {
-  title: '청약가점 계산기 2026 | 84점 만점·가점 항목 | calculatorhost',
+  title: '청약가점 계산기 2026 | 84점 만점 항목별 점수',
   description:
-    '2026년 청약가점 계산기. 청약 항목별(무주택 기간·주택 소유·미성년 자녀·혼인 여부) 가점을 계산해 총 84점 만점 기준 순위 제시. 무료.',
+    '무주택 기간·부양가족 수·청약통장 가입기간으로 청약가점을 계산합니다. 84점 만점 기준 항목별 점수를 보여 줍니다.',
   keywords: [
     '청약가점 계산기',
     '청약 가점 계산',

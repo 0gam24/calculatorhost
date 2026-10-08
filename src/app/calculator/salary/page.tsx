@@ -32,7 +32,7 @@ import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref'
 const URL = 'https://calculatorhost.com/calculator/salary/';
 const TITLE = '연봉 실수령액 계산기 2026 | 4대보험·소득세 추정';
 const DESCRIPTION =
-  '세전 연봉·월급과 지급월·공제대상 가족·비과세 조건으로 실수령액을 추정하세요. 공식 2026년 근로소득 간이세액표와 80·100·120% 원천징수 선택을 반영합니다. 보험료 신고기준과 연말정산에 따라 실제 급여명세서와 다를 수 있습니다.';
+  '연봉으로 4대보험과 소득세를 뺀 월 실수령액을 계산합니다. 2026년 간이세액표와 비과세·부양가족을 반영합니다.';
 
 export const metadata: Metadata = {
   title: TITLE,

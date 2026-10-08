@@ -31,7 +31,7 @@ const URL = 'https://calculatorhost.com/calculator/loan/';
 export const metadata: Metadata = {
   title: '대출이자 계산기 2026 | 원리금균등·만기일시 월상환액 비교',
   description:
-    '3억 30년 4.5% 월상환 얼마? 원리금균등·만기일시·체증·체감 4가지 상환방식 월상환액·총이자 즉시 비교 + 월별 상환 스케줄 표. 2026 최신 금리 반영.',
+    '대출금·금리·기간으로 월 상환액과 총이자를 계산합니다. 원리금균등·만기일시 등 상환방식별로 비교하세요.',
   keywords: [
     '대출이자 계산기',
     '대출 이자 계산',

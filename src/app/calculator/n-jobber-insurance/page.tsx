@@ -21,9 +21,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/n-jobber-insurance/';
 
 export const metadata: Metadata = {
-  title: 'N잡러 건강보험 계산기 2026 | 추가 보험료·피부양자 | calculatorhost',
+  title: 'N잡러 건강보험료 계산기 2026 | 피부양자 판정',
   description:
-    'N잡러 건강보험 계산기 2026. 다중 직업자(프리랜서·알바·사업) 소득별로 건강보험료·피부양자 탈락 유무를 계산. 4대보험 통합. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '직장 밖 소득 때문에 더 내는 건강보험료와 피부양자 탈락 여부를 계산합니다. 프리랜서·부업 소득을 나눠 입력하세요.',
   keywords: [
     'N잡러 건강보험',
     '투잡 건강보험료',

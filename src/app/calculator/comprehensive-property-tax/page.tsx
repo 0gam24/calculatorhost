@@ -36,9 +36,9 @@ function oneHouseTotal(publishedPrice: number): string {
 const URL = 'https://calculatorhost.com/calculator/comprehensive-property-tax/';
 
 export const metadata: Metadata = {
-  title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율 | calculatorhost',
+  title: '종부세 계산기 2026 | 종합부동산세 재산세 공제 반영',
   description:
-    '2026년 종합부동산세 계산기. 주택수·공정시장가액을 입력해 종부세를 계산하고, 1세대1주택·공정비율·세율 등 할인을 자동 적용. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '공시가격 합계와 주택 수로 종합부동산세를 계산합니다. 12억·9억 공제, 재산세 중복분, 고령자·장기보유 공제를 반영합니다.',
   keywords: [
     '종합부동산세 계산기',
     '종부세 계산기',

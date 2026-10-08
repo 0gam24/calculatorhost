@@ -24,7 +24,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/broker-fee/';
 const TITLE = '중개수수료 계산기 2026 | 매매·전세·월세 상한·협의요율';
 const DESCRIPTION =
-  '매매·전세·월세의 거래금액과 물건 종류로 중개보수 상한을 확인하세요. 협의 요율과 부가세 포함 여부를 선택해 예상 지급액을 계산합니다. 오피스텔은 계산기의 적용 조건을 확인하고, 실제 요율과 세금은 중개사와 확인하세요.';
+  '거래금액과 물건 종류로 매매·전세·월세 중개보수 상한과 부가세 포함 예상액을 계산합니다. 실제 요율은 협의합니다.';
 
 export const metadata: Metadata = {
   title: TITLE,

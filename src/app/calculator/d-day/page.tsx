@@ -21,9 +21,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/d-day/';
 
 export const metadata: Metadata = {
-  title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일 | calculatorhost',
+  title: '디데이 계산기 | D-day 날짜 계산·100일 계산',
   description:
-    'D-day 계산기 2026. 두 날짜 사이의 일수·주수·개월 수·년 수를 계산. 100일·1000일 같은 특정 기념일 계산도 가능. 무료. 회원가입 불필요. 모바일·데스크톱 최적. 2026년 최신 세율 반영.',
+    '두 날짜 사이의 일수와 D-day를 계산합니다. 100일·1000일 기념일과 몇 주·몇 개월인지도 바로 확인하세요.',
   keywords: [
     'D-day 계산기',
     '디데이 계산기',

@@ -35,9 +35,9 @@ const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 const URL = 'https://calculatorhost.com/calculator/loan-limit/';
 
 export const metadata: Metadata = {
-  title: '대출한도 계산기 2026 | DSR·LTV·DTI 통합 스트레스 1.5%p',
+  title: '대출한도 계산기 2026 | DSR·LTV·DTI 통합',
   description:
-    '연소득 6,000만 시 주담대 최대 얼마? DSR 40%·LTV·DTI 3개 규제 통합 + 스트레스 DSR 1.5%p·조정지역·생애최초 우대 자동. 결정 제약 즉시 표시. 2026 최신.',
+    '연소득과 주택가격으로 DSR·LTV·DTI를 함께 적용해 주택담보대출 최대 한도를 계산합니다. 스트레스 DSR도 반영합니다.',
   keywords: [
     '대출 한도 계산기',
     'DSR 계산기',

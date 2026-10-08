@@ -21,7 +21,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/inflation/';
 const TITLE = '물가상승률 계산기 2026 | 미래 필요 금액·구매력';
 const DESCRIPTION =
-  '금액·기간·예상 연간 물가상승률을 입력해 같은 물건의 미래 필요 금액과 돈의 구매력 변화를 계산하세요. 입력한 상승률이 매년 일정하다고 가정하며 실제 소비자물가지수(CPI)를 자동 조회하지 않습니다. 이자·투자 수익·세금은 제외합니다.';
+  '금액·기간·연 물가상승률로 미래에 필요한 금액과 돈의 구매력 변화를 계산합니다. 실제 CPI는 자동 조회하지 않습니다.';
 
 export const metadata: Metadata = {
   title: TITLE,

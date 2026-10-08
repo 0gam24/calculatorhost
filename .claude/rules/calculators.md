@@ -44,8 +44,8 @@ paths:
 헬퍼: `src/lib/seo/jsonld.ts`. 빌드 시 `<script type="application/ld+json">` 으로 인라인 삽입.
 
 ## 메타데이터 표준
-- `title`: "{계산기명} {연도} | {핵심 키워드} | calculatorhost" — 60자 이내
-- `description`: 80~155자, 첫 문장에 결론, 면책 한 줄 포함 (한글 80자 ≈ Google SERP 영문 160자 한계)
+- `title`: "{실측 검색어 형태} {연도} | {변별 키워드}" — 40자 이내, 브랜드명 없음 (ADR-016, 네이버 사이트 간단 체크)
+- `description`: 40~80자, 첫 문장에 결론 (ADR-016, 네이버 80자 이내 권장 · 구글 모바일 잘림 약 80자)
 - `alternates.canonical`: `https://calculatorhost.com/calculator/{slug}/` (trailing slash 필수, sitemap과 일관)
 - `openGraph.images`: 최소 `/og-default.png` (전용 이미지 있으면 1200×630 PNG 사용)
 - `twitter.card`: 'summary_large_image'

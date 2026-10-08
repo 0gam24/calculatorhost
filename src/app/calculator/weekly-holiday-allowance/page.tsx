@@ -28,9 +28,9 @@ import { calculateWeeklyHolidayAllowance } from '@/lib/work/weekly-holiday-allow
 const URL = 'https://calculatorhost.com/calculator/weekly-holiday-allowance/';
 const DATE_PUBLISHED = '2026-10-07';
 const DATE_MODIFIED = '2026-10-07';
-const TITLE = '주휴수당 계산기 2026 | 주 15시간 조건·시급별 자동 계산 | calculatorhost';
+const TITLE = '주휴수당 계산기 2026 | 주 15시간 조건·시급별';
 const DESCRIPTION =
-  '시급과 1주 소정근로시간을 입력하면 주휴수당·주휴시간·월 환산액을 즉시 확인합니다. 2026·2027 최저시급 프리셋, 주 15시간 개근 조건과 결근·주 40시간 초과 처리까지 참고용으로 계산합니다.';
+  '시급과 주 근무시간으로 주휴수당·월 환산액·실질 시급을 계산합니다. 주 15시간 미만이거나 결근한 주는 생기지 않습니다.';
 
 export const metadata: Metadata = {
   title: TITLE,

@@ -25,12 +25,13 @@ test.describe('SEO 회귀 — 메타·canonical·OG', () => {
       expect(href).toMatch(/^https:\/\/calculatorhost\.com\/.+\/$/);
     });
 
-    test(`${path} meta description 80~165자 범위`, async ({ page }) => {
+    // 2026-10-08: 네이버 사이트 간단 체크(설명 80자 이내) 기준으로 변경. ADR-016
+    test(`${path} meta description 40~80자 범위`, async ({ page }) => {
       await page.goto(path);
       const desc = await page.locator('meta[name="description"]').getAttribute('content');
       expect(desc).toBeTruthy();
-      expect(desc!.length).toBeGreaterThanOrEqual(80);
-      expect(desc!.length).toBeLessThanOrEqual(165);
+      expect(desc!.length).toBeGreaterThanOrEqual(40);
+      expect(desc!.length).toBeLessThanOrEqual(80);
     });
 
     test(`${path} og:title + og:description 존재`, async ({ page }) => {

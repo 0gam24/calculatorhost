@@ -21,9 +21,9 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 const URL = 'https://calculatorhost.com/calculator/child-tax-credit/';
 
 export const metadata: Metadata = {
-  title: '자녀장려금 계산기 2026 | 자녀 1인당 100만 | calculatorhost',
+  title: '자녀장려금 계산기 2026 | 자녀 1인당 최대 100만원',
   description:
-    '2026년 자녀장려금 계산기. 가구 유형(홑벌이·맞벌이·한부모·다자녀)별 자녀 1인당 최대 100만 원 지급액을 계산. 소득 기준 자동 확인. 무료.',
+    '가구 유형과 소득으로 자녀장려금 예상액을 계산합니다. 자녀 1인당 최대 100만 원, 소득·재산 요건을 함께 확인하세요.',
   keywords: [
     '자녀장려금 계산기',
     '자녀장려금 계산',

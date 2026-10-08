@@ -27,9 +27,9 @@ const FSS_DEPOSIT_CITATION = getFssDepositRateCitation(financeProducts, '2026-04
 const URL = 'https://calculatorhost.com/calculator/deposit/';
 
 export const metadata: Metadata = {
-  title: '정기예금 이자 계산기 2026 | 단리·복리·세후 | calculatorhost',
+  title: '예금이자 계산기 | 정기예금 세후 이자 계산',
   description:
-    '2026년 정기예금 이자 계산기. 원금·이율·기간으로 세후 수령액을 계산. 단리·복리·월이자 받기 등 상품 유형별 비교. 이자소득세 15.4% 적용. 무료.',
+    '예치금·금리·기간으로 정기예금 세후 이자를 계산합니다. 단리·복리와 이자소득세 15.4%를 반영합니다.',
   keywords: [
     '정기예금 이자 계산기',
     '예금 이자 계산기',

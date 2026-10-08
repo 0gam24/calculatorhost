@@ -30,7 +30,7 @@ const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 export const metadata: Metadata = {
   title: '프리랜서 3.3% 원천징수 환급 계산기 2026 | 종합소득세·경비율',
   description:
-    '3.3% 원천징수한 세금은 다음해 5월 종합소득세 신고로 환급받을 수 있습니다. 수입·경비율만 입력하면 과세표준·납부세액·환급액을 즉시 계산합니다. 무료·회원가입 불필요.',
+    '3.3% 원천징수 세금은 5월 종합소득세 신고로 돌려받을 수 있습니다. 수입과 경비율로 납부·환급액을 계산합니다.',
   keywords: [
     '프리랜서 종합소득세',
     '프리랜서 세금 계산기',

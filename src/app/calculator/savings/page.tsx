@@ -27,9 +27,9 @@ const FSS_SAVINGS_CITATION = getFssSavingsRateCitation(financeProducts, '2026-04
 const URL = 'https://calculatorhost.com/calculator/savings/';
 
 export const metadata: Metadata = {
-  title: '적금 이자 계산기 2026 | 세후 수령액 비교 | calculatorhost',
+  title: '적금이자 계산기 | 단리·복리 세후 이자 계산',
   description:
-    '2026년 적금 이자 계산기. 월 납입액·기간·이율을 입력해 세후 수령액을 계산. 단리·복리 비교 가능. 이자소득세 15.4% 자동 적용. 무료.',
+    '월 납입액·금리·기간으로 적금 세후 이자와 만기 수령액을 계산합니다. 단리·복리와 이자소득세 15.4%를 반영합니다.',
   keywords: [
     '적금 이자 계산기',
     '적금 계산기',

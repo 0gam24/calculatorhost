@@ -21,7 +21,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 
 const URL = 'https://calculatorhost.com/calculator/severance/';
 const DESCRIPTION =
-  '입사일과 마지막 근무 다음 날인 퇴직일, 3개월 산입 임금과 1일 통상임금을 입력해 예상 퇴직금·퇴직소득세·세후 참고액을 확인합니다. 평균임금과 통상임금 중 큰 금액을 적용하며, DC 실제 적립금·휴직·중간정산은 별도 확인이 필요합니다.';
+  '입사일·퇴직일과 3개월 임금으로 퇴직금, 퇴직소득세, 세후 금액을 계산합니다. 평균임금과 통상임금 중 큰 쪽을 씁니다.';
 const AVERAGE_WAGE_DESCRIPTION =
   '평균임금은 퇴직일 이전 3개월의 산입 임금 총액을 그 기간의 실제 달력 일수로 나눈 1일 금액입니다. 상여금·연차수당은 산입 대상 여부를 먼저 확인합니다. 평균임금이 1일 통상임금보다 적으면 통상임금을 기준으로 합니다(근로기준법 §2).';
 const ORDINARY_WAGE_DESCRIPTION =
