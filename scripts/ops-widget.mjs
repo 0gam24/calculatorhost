@@ -8,6 +8,7 @@
  * 사용:
  *   node scripts/ops-widget.mjs            # stdout 에 HTML 조각
  *   node scripts/ops-widget.mjs --limit=8
+ *   node scripts/ops-widget.mjs --all      # 점수 매긴 글감 전부(하루 1달러 미만도 접지 않고 버튼까지)
  *   node scripts/ops-widget.mjs --count    # "오늘 발행 N건 · 어제 N건" 한 줄
  *
  * 입력: docs/ops/pipeline-queue.json · docs/ops/landgrab-calendar.json · docs/ops/eye-offset.json ·
@@ -18,11 +19,13 @@ import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { EYE_LABEL, eyeFor, loadEyeStore } from './lib/eye-offset.mjs';
+import { rankByScore } from './lib/pipeline-core.mjs';
 import { revenueOf, usdPerDay } from './lib/revenue-weight.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const argv = process.argv.slice(2);
-const LIMIT = Number(argv.find((a) => a.startsWith('--limit='))?.slice(8) ?? 8);
+const ALL = argv.includes('--all');
+const LIMIT = ALL ? Infinity : Number(argv.find((a) => a.startsWith('--limit='))?.slice(8) ?? 8);
 const kst = (offsetDays = 0) => new Date(Date.now() + 9 * 3600 * 1000 + offsetDays * 86400_000).toISOString().slice(0, 10);
 const TODAY = kst();
 const YDAY = kst(-1);
@@ -69,11 +72,12 @@ const calendar = readJson('docs/ops/landgrab-calendar.json');
 const eyeStore = await loadEyeStore();
 
 const open = q.items.filter((i) => i.status === 'proposed');
-const ready = open.filter((i) => i.exposure?.score != null && i.exposure.score > 0);
-const pending = open.filter((i) => i.exposure?.score == null);
 const MIN_USD = money?.minUsdPerDay ?? 1;
 const usd = (i) => usdPerDay(i, money);
-const tiny = money ? ready.filter((i) => usd(i) != null && usd(i) < MIN_USD) : [];
+// 점수 높은 순, 같으면 하루 달러 큰 순 (운영자 지시 2026-10-10)
+const ready = rankByScore(open.filter((i) => i.exposure?.score != null && i.exposure.score > 0), usd);
+const pending = open.filter((i) => i.exposure?.score == null);
+const tiny = money && !ALL ? ready.filter((i) => usd(i) != null && usd(i) < MIN_USD) : [];
 const shown = ready.filter((i) => !tiny.includes(i)).slice(0, LIMIT);
 
 const ACTION_TEXT = {
@@ -109,8 +113,8 @@ function goalHtml() {
 
 // ── 눈 확인 버튼 (상위 5건) ───────────────────────────────
 const EYE_ROWS = 5;
-function eyeHtml(query, idx) {
-  if (idx >= EYE_ROWS) return '';
+function eyeHtml(query, idx, risk = false) {
+  if (idx >= EYE_ROWS && !risk) return '';
   const cur = eyeFor(eyeStore, query);
   const btn = (v, label) => {
     const cmd = `눈확인: "${query}" = ${label} — eye-offset에 기록하고 목록을 다시 보여줘`;
@@ -142,8 +146,8 @@ const rows = shown
     const rv = revenueOf(i);
     return `<div style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-top:0.5px solid var(--border)">
   <div style="flex:1;min-width:0">
-    <div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span style="font-size:15px;font-weight:500">${esc(i.query)}</span><span style="font-size:12px;color:${tone(ex.label)}">${esc(ex.label)} ${ex.score}</span>${rv.tag ? `<span style="font-size:12px">${esc(rv.tag)}</span>` : ''}${usdChip(i)}</div>
-    <div style="font-size:13px;color:var(--text-secondary);margin-top:2px">${esc((ex.reasons ?? []).join(' · '))} · ${esc(actionText(i))} · 검색량 ${i.recent7 ?? '모름'}</div>${condHtml(i)}${eyeHtml(i.query, idx)}
+    <div style="display:flex;gap:8px;align-items:baseline;flex-wrap:wrap"><span style="font-size:12px;color:var(--text-muted)">${idx + 1}</span><span style="font-size:15px;font-weight:500">${esc(i.query)}</span><span style="font-size:12px;color:${tone(ex.label)}">${esc(ex.label)} ${ex.score}</span>${rv.tag ? `<span style="font-size:12px">${esc(rv.tag)}</span>` : ''}${usdChip(i)}</div>
+    <div style="font-size:13px;color:var(--text-secondary);margin-top:2px">${esc((ex.reasons ?? []).join(' · '))} · ${esc(actionText(i))} · 검색량 ${i.recent7 ?? '모름'}</div>${condHtml(i)}${eyeHtml(i.query, idx, i.widgetRisk)}
   </div>
   <div style="display:flex;gap:6px;flex-shrink:0">
     <button onclick="sendPrompt(${esc(jsStr(cmd))})" style="font-size:13px">발행 지시 ↗</button>
@@ -152,6 +156,62 @@ const rows = shown
 </div>`;
   })
   .join('\n');
+
+// --all: 점수 매긴 글감 전부. 행이 많아 데이터 배열 + 작은 렌더 스크립트로 내보낸다(인라인 HTML 이면 약 50KB).
+const SHORT_ACTION = { calculator: '계산기 보강', guide: '기존 글 보강', 'new-calculator': '새 계산기', new: '새 글' };
+const allRowsHtml = () => {
+  const data = shown.map((i) => {
+    const u = usd(i);
+    return [
+      i.query,
+      i.id,
+      i.exposure?.score ?? null,
+      i.exposure?.label ?? '',
+      i.recent7 ?? null,
+      u == null ? '' : fmtUsd(u),
+      `${SHORT_ACTION[i.action?.type] ?? '새 글'}${i.action?.target ? ` ${i.action.target}` : ''}`,
+      i.widgetRisk ? eyeFor(eyeStore, i.query) ?? 0 : -1,
+    ];
+  });
+  // </script> 로 끝나지 않게 '<' 를 이스케이프
+  const json = JSON.stringify(data).replace(/</g, '\u003c');
+  return `<style>
+.ow-r{display:flex;gap:8px;align-items:center;padding:7px 0;border-top:0.5px solid var(--border)}
+.ow-n{width:20px;font-size:12px;color:var(--text-muted);flex-shrink:0;text-align:right}
+.ow-m{flex:1;min-width:0}.ow-q{font-size:14px;font-weight:500}
+.ow-s{font-size:12px;color:var(--text-secondary)}.ow-w{font-size:11px;color:var(--text-warning)}
+.ow-b{font-size:12px;flex-shrink:0}.ow-h{font-size:12px;flex-shrink:0;color:var(--text-secondary)}
+.ow-e{font-size:11px;padding:1px 6px;color:var(--text-secondary)}
+</style>
+<div id="ow-all"></div>
+<script>
+(() => {
+  const D = ${json};
+  const EYE = ['첫 화면', '한 번 스크롤', '그 아래'];
+  const el = (tag, cls, text) => { const n = document.createElement(tag); if (cls) n.className = cls; if (text != null) n.textContent = text; return n; };
+  const btn = (cls, text, cmd) => { const b = el('button', cls, text); b.onclick = () => sendPrompt(cmd); return b; };
+  const tone = (l) => (l === '높음' ? 'var(--text-success)' : l === '중간' ? 'var(--text-warning)' : 'var(--text-secondary)');
+  const root = document.getElementById('ow-all');
+  D.forEach(([q, id, score, label, vol, usd, act, eye], idx) => {
+    const r = el('div', 'ow-r');
+    r.append(el('span', 'ow-n', String(idx + 1)));
+    const m = el('div', 'ow-m');
+    m.append(el('span', 'ow-q', q), ' ');
+    const sc = el('span', 'ow-s', score + '점'); sc.style.color = tone(label);
+    m.append(sc, ' ', el('span', 'ow-s', '· 검색량 ' + (vol ?? '모름') + (usd ? ' · 하루 약 ' + usd + '달러' : '') + ' · ' + act));
+    if (eye >= 0) {
+      const w = el('div', 'ow-w', '네이버 자체 계산기가 위에 뜰 수 있음. 직접 보고 눌러 주세요: ');
+      EYE.forEach((lb, k) => w.append(btn('ow-e', (eye === k + 1 ? '✓ ' : '') + lb, '눈확인: "' + q + '" = ' + lb + ' — eye-offset에 기록하고 목록을 다시 보여줘')));
+      m.append(w);
+    }
+    r.append(m,
+      btn('ow-b', '발행 지시 ↗', '발행: ' + q + ' — 대시보드 지시(큐 ' + id + '). 큐 항목의 트랙·처리·노출 이유를 브리프로 쓰고, 검증 통과 시 결재 질문 없이 발행한다.'),
+      btn('ow-h', '보류', '보류: "' + q + '" — 큐 status를 hold로 바꾸고 이유는 묻지 말 것'));
+    root.append(r);
+  });
+})();
+</script>`;
+};
 
 const tinyHtml = tiny.length
   ? `<div style="font-size:12px;color:var(--text-muted);padding:8px 0 0;border-top:0.5px solid var(--border)">하루 ${MIN_USD}달러 미만이라 접어 둔 글감 ${tiny.length}건: ${tiny
@@ -215,7 +275,7 @@ ${falling.length ? `<div style="font-size:12px;color:var(--text-muted);margin-to
   : '';
 
 const head = `<div style="display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--text-secondary);margin-bottom:6px">
-  <span>오늘 쓸 글감 ${shown.length}건 · 자리 잡을 수 있는 것 중 돈 되는 순 · 큐 ${esc(generated)}</span>
+  <span>오늘 쓸 글감 ${shown.length}건 · 노출 점수 높은 순(같으면 하루 달러 큰 순) · 큐 ${esc(generated)}</span>
   <span>${esc(countLine())}</span>
 </div>`;
 
@@ -223,7 +283,7 @@ console.log(`<h2 class="sr-only">calculatorhost 오늘 쓸 글감 목록, 목표
 <div style="padding:4px 2px">
 ${head}
 ${goalHtml()}
-${rows || '<div style="font-size:13px;color:var(--text-secondary);padding:6px 0">아직 자리가 확인된 글감이 없습니다. 실측 대기 항목을 재면 여기로 올라옵니다.</div>'}
+${(ALL ? allRowsHtml() : rows) || '<div style="font-size:13px;color:var(--text-secondary);padding:6px 0">아직 자리가 확인된 글감이 없습니다. 실측 대기 항목을 재면 여기로 올라옵니다.</div>'}
 ${tinyHtml}
 ${pendingHtml}
 ${wavesHtml}

@@ -8,6 +8,7 @@ import {
   manualItem,
   mergeQueue,
   parseGuideIndex,
+  rankByScore,
   withCluster,
 } from '../../../scripts/lib/pipeline-core.mjs';
 
@@ -59,6 +60,20 @@ describe('buildCandidates', () => {
   it('대표 형태가 계산기 검색어면 계산기 보강으로 간다', () => {
     const c = buildCandidates({ bigKeywords: big, calendar: { items: [] }, today: '2026-10-07' });
     expect(c[0]?.action).toEqual({ type: 'calculator', target: '/calculator/severance/' });
+  });
+  it('대표 형태에 "계산기"가 없어도 맞는 계산기가 있으면 계산기 보강으로 간다', () => {
+    const head = {
+      keywords: [
+        { term: '연봉 실수령액', cluster: '연봉 실수령액', calculator: '/calculator/salary/', aliases: ['세후 월급'] },
+        { term: '종합소득세', cluster: '종합소득세', calculator: null, aliases: [] },
+      ],
+    };
+    const c = buildCandidates({ bigKeywords: head, calendar: { items: [] }, today: '2026-10-10' });
+    expect(c.map((x) => [x.query, x.action])).toEqual([
+      ['연봉 실수령액', { type: 'calculator', target: '/calculator/salary/' }],
+      ['연봉 실수령액 세후 월급', { type: 'new', target: null }],
+      ['종합소득세', { type: 'new', target: null }],
+    ]);
   });
   it('계산기 검색어인데 맞는 계산기가 없으면 신규 계산기로 간다', () => {
     const none = { keywords: [{ term: '연차수당 계산기', cluster: '연차수당', calculator: null, aliases: [] }] };
@@ -163,5 +178,20 @@ describe('carryManual', () => {
     const prev = [{ id: '빈틈:퇴직금 계산기', query: '퇴직금 계산기', track: 'T2', addedAt: '2026-10-01' }];
     const cands = [{ id: 'T2:퇴직금계산기', query: '퇴직금 계산기' }];
     expect(carryManual(prev, cands, '2026-10-07')).toEqual([]);
+  });
+});
+
+describe('rankByScore', () => {
+  it('노출 점수 높은 순, 같으면 하루 달러(없으면 검색량) 큰 순', () => {
+    const items = [
+      { query: 'a', exposure: { score: 65 }, recent7: 1371 },
+      { query: 'b', exposure: { score: 75 }, recent7: 8.4 },
+      { query: 'c', exposure: { score: 75 }, recent7: 296 },
+      { query: 'd', exposure: { score: 75 }, recent7: 8.6 },
+    ];
+    const usd = (i: { recent7: number }) => i.recent7 / 10;
+    expect(rankByScore(items, usd).map((i) => i.query)).toEqual(['c', 'd', 'b', 'a']);
+    expect(rankByScore(items, () => null).map((i) => i.query)).toEqual(['c', 'd', 'b', 'a']);
+    expect(items.map((i) => i.query)).toEqual(['a', 'b', 'c', 'd']);
   });
 });

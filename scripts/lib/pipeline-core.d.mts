@@ -35,3 +35,7 @@ export declare function manualItem(
   today: string,
 ): Candidate & { addedAt: string };
 export declare function carryManual(prev: QueueItem[] | null | undefined, candidates: Array<{ query: string }>, today: string): QueueItem[];
+export declare function rankByScore<T extends { exposure?: { score?: number | null } | null; recent7?: number | null }>(
+  items: T[],
+  usd: (item: T) => number | null | undefined,
+): T[];

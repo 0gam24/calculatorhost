@@ -44,7 +44,8 @@ export function buildCandidates({ bigKeywords, calendar, today }) {
   for (const k of bigKeywords?.keywords ?? []) {
     const queries = [k.term, ...(k.aliases ?? []).map((a) => withCluster(a, k.cluster))];
     for (const q of queries) {
-      const isHead = q === k.term && /계산기/.test(q);
+      // 대표 형태는 "계산기"가 없어도(연봉 실수령액·증여세 등) 맞는 계산기가 있으면 그 계산기를 키운다
+      const isHead = q === k.term;
       push({
         id: `T2:${norm(q)}`,
         query: q,
@@ -57,7 +58,9 @@ export function buildCandidates({ bigKeywords, calendar, today }) {
           ? { type: 'new', target: null }
           : k.calculator
             ? { type: 'calculator', target: k.calculator }
-            : { type: 'new-calculator', target: null },
+            : /계산기/.test(q)
+              ? { type: 'new-calculator', target: null }
+              : { type: 'new', target: null },
       });
     }
   }
@@ -164,4 +167,13 @@ export function mergeQueue(prev, next, today) {
       daysBetween(i.addedAt, today) <= MANUAL_KEEP_DAYS,
   );
   return [...merged, ...manual];
+}
+
+/**
+ * 목록 정렬: 노출 점수 높은 순, 점수가 같으면 하루 달러(모르면 검색량) 큰 순. 원본 배열은 건드리지 않는다.
+ * 운영자 지시(2026-10-10): "점수 높은 순서로".
+ */
+export function rankByScore(items, usd) {
+  const size = (i) => usd(i) ?? i.recent7 ?? 0;
+  return [...items].sort((a, b) => (b.exposure?.score ?? -1) - (a.exposure?.score ?? -1) || size(b) - size(a));
 }
