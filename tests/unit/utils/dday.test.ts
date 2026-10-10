@@ -8,6 +8,8 @@ import {
   calculateDday,
   calculateDuration,
   calculateAfterNDays,
+  calculateNthDay,
+  upcomingEvents,
 } from '@/lib/utils/dday';
 
 describe('calculateDday', () => {
@@ -155,5 +157,71 @@ describe('calculateAfterNDays', () => {
     const r = calculateAfterNDays({ baseDate: '2026-01-01', offset: NaN });
     expect(r.resultDate).toBe('-');
     expect(r.warnings.length).toBeGreaterThan(0);
+  });
+});
+
+describe('calculateDday 보강 (2026-10-10)', () => {
+  it('목표일 요일을 함께 돌려준다', () => {
+    const r = calculateDday({ baseDate: '2026-10-10', targetDate: '2026-11-19' });
+    expect(r.label).toBe('D-40');
+    expect(r.targetWeekday).toBe('목');
+  });
+
+  it('목표일이 지났으면 시작일을 1일로 센 날수(며칠째)를 준다', () => {
+    // 2026-01-15 시작 → 2026-04-24 는 100일째 (D+99)
+    const r = calculateDday({ baseDate: '2026-04-24', targetDate: '2026-01-15' });
+    expect(r.label).toBe('D+99');
+    expect(r.nthDay).toBe(100);
+  });
+
+  it('같은 날은 1일째, 미래 목표일은 며칠째가 없다', () => {
+    expect(calculateDday({ baseDate: '2026-01-15', targetDate: '2026-01-15' }).nthDay).toBe(1);
+    expect(calculateDday({ baseDate: '2026-01-01', targetDate: '2026-01-11' }).nthDay).toBeNull();
+  });
+});
+
+describe('calculateNthDay (기념일 방식: 시작일 = 1일째)', () => {
+  it('백일: 2026-01-15 출생 → 2026-04-24(금), 출생일 + 99일', () => {
+    const r = calculateNthDay({ baseDate: '2026-01-15', n: 100 });
+    expect(r.resultDate).toBe('2026-04-24');
+    expect(r.weekday).toBe('금');
+    expect(r.warnings).toEqual([]);
+  });
+
+  it('1일째는 시작일 그날', () => {
+    expect(calculateNthDay({ baseDate: '2026-01-15', n: 1 }).resultDate).toBe('2026-01-15');
+  });
+
+  it('1000일째: 2026-01-15 → 2028-10-10 (윤년 2028 포함)', () => {
+    expect(calculateNthDay({ baseDate: '2026-01-15', n: 1000 }).resultDate).toBe('2028-10-10');
+  });
+
+  it('단순 더하기(N일 후)보다 하루 빠르다', () => {
+    const nth = calculateNthDay({ baseDate: '2026-01-01', n: 100 }).resultDate;
+    const after = calculateAfterNDays({ baseDate: '2026-01-01', offset: 100 }).resultDate;
+    expect(nth).toBe('2026-04-10');
+    expect(after).toBe('2026-04-11');
+  });
+
+  it('0 이하·소수·잘못된 날짜는 warning', () => {
+    expect(calculateNthDay({ baseDate: '2026-01-15', n: 0 }).resultDate).toBe('-');
+    expect(calculateNthDay({ baseDate: '2026-01-15', n: 1.5 }).warnings.length).toBeGreaterThan(0);
+    expect(calculateNthDay({ baseDate: 'bad', n: 100 }).resultDate).toBe('-');
+  });
+});
+
+describe('upcomingEvents', () => {
+  const events = [
+    { name: '설날', date: '2027-02-07' },
+    { name: '수능', date: '2026-11-19' },
+    { name: '지난 날', date: '2026-09-25' },
+  ];
+  it('기준일 당일과 이후만 날짜 순으로 남긴다', () => {
+    expect(upcomingEvents(events, '2026-10-10').map((e) => e.name)).toEqual(['수능', '설날']);
+    expect(upcomingEvents(events, '2026-11-19').map((e) => e.name)).toEqual(['수능', '설날']);
+    expect(upcomingEvents(events, '2027-02-08')).toEqual([]);
+  });
+  it('기준일이 잘못되면 빈 배열', () => {
+    expect(upcomingEvents(events, '')).toEqual([]);
   });
 });

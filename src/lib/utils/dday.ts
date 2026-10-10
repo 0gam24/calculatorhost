@@ -26,6 +26,8 @@ export interface DdayResult {
   weeks: number;             // diffDays / 7, 소수 2자리
   months: number;            // diffDays / 30.4167, 소수 2자리
   years: number;             // diffDays / 365.25, 소수 2자리
+  targetWeekday: string;     // 목표일 요일 '월'~'일'
+  nthDay: number | null;     // 목표일이 기준일 이전·같은 날이면 시작일(목표일)을 1일로 센 날수, 미래면 null
   warnings: string[];
 }
 
@@ -46,6 +48,16 @@ export interface DurationResult {
 export interface AfterNDaysInput {
   baseDate: string;
   offset: number;
+}
+
+export interface NthDayInput {
+  baseDate: string;   // 시작일 (1일째)
+  n: number;          // 몇 번째 날 (1 이상 정수)
+}
+
+export interface DdayEvent {
+  name: string;
+  date: string;       // 'YYYY-MM-DD'
 }
 
 export interface AfterNDaysResult {
@@ -104,7 +116,7 @@ export function calculateDday(input: DdayInput): DdayResult {
   if (!target) warnings.push('목표일이 유효하지 않습니다 (YYYY-MM-DD).');
 
   if (!base || !target) {
-    return { diffDays: 0, label: '-', weeks: 0, months: 0, years: 0, warnings };
+    return { diffDays: 0, label: '-', weeks: 0, months: 0, years: 0, targetWeekday: '-', nthDay: null, warnings };
   }
 
   const diffDays = Math.round((target.getTime() - base.getTime()) / MS_PER_DAY);
@@ -120,6 +132,9 @@ export function calculateDday(input: DdayInput): DdayResult {
     weeks: roundTo(diffDays / DAYS_PER_WEEK, 2),
     months: roundTo(diffDays / DAYS_PER_MONTH, 2),
     years: roundTo(diffDays / DAYS_PER_YEAR, 2),
+    targetWeekday: getWeekdayKo(target),
+    // 사귄 날·출생일처럼 지난 날을 목표일로 넣으면 "오늘이 며칠째"(시작일 = 1일째)
+    nthDay: diffDays <= 0 ? -diffDays + 1 : null,
     warnings,
   };
 }
@@ -188,4 +203,41 @@ export function calculateAfterNDays(input: AfterNDaysInput): AfterNDaysResult {
     weekday: getWeekdayKo(result),
     warnings,
   };
+}
+
+/**
+ * 기념일 방식: 시작일을 1일째로 세어 n번째 날 (= 시작일 + (n - 1)일)
+ * 예: 2026-01-15 출생 → 백일(100일째) 2026-04-24. 표준국어대사전 '백일': 태어난 날부터 백 번째 되는 날.
+ */
+export function calculateNthDay(input: NthDayInput): AfterNDaysResult {
+  const base = parseDate(input.baseDate);
+  const warnings: string[] = [];
+
+  if (!base) warnings.push('시작일이 유효하지 않습니다.');
+  if (!Number.isInteger(input.n) || input.n < 1) warnings.push('며칠째는 1 이상의 정수로 입력해 주세요.');
+
+  if (warnings.length || !base) {
+    return { resultDate: '-', weekday: '-', warnings };
+  }
+
+  const result = new Date(base.getTime() + (input.n - 1) * MS_PER_DAY);
+  return {
+    resultDate: formatDate(result),
+    weekday: getWeekdayKo(result),
+    warnings,
+  };
+}
+
+/**
+ * 기준일 당일과 그 뒤에 오는 일정만 날짜 순으로 (D-day 빠른 선택용)
+ */
+export function upcomingEvents<T extends DdayEvent>(events: readonly T[], baseDate: string): T[] {
+  const base = parseDate(baseDate);
+  if (!base) return [];
+  return events
+    .filter((e) => {
+      const d = parseDate(e.date);
+      return d != null && d.getTime() >= base.getTime();
+    })
+    .sort((a, b) => a.date.localeCompare(b.date));
 }

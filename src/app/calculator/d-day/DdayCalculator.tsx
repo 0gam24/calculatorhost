@@ -9,10 +9,11 @@ import { useCalculatorState } from '@/components/calculator/useCalculatorState';
  * 명세: docs/calculator-spec/D-day.md
  * 공식: src/lib/utils/dday.ts
  *
- * 3 모드:
- * - A: D-day (기준일 → 목표일)
+ * 4 모드:
+ * - A: D-day (기준일 → 목표일, 빠른 선택 일정)
  * - B: 기간 계산 (시작일 - 종료일, 포함 여부)
  * - C: N일 후 (기준일 + 일수)
+ * - D: 기념일 (시작일 = 1일째, 100일·1000일)
  */
 
 import { useMemo } from 'react';
@@ -25,8 +26,14 @@ import {
   calculateDday,
   calculateDuration,
   calculateAfterNDays,
+  calculateNthDay,
+  upcomingEvents,
   type InclusionMode,
 } from '@/lib/utils/dday';
+import { DDAY_EVENTS } from '@/lib/constants/dday-events';
+
+/** 기념일 모드에서 함께 보여 주는 날수 */
+const MILESTONES = [100, 200, 300, 500, 1000, 2000, 3000] as const;
 
 // ============================================
 // 유틸리티: 오늘 날짜를 YYYY-MM-DD로 포맷
@@ -44,7 +51,7 @@ function getTodayString(): string {
 // 메인 계산기 컴포넌트
 // ============================================
 
-type DdayMode = 'dday' | 'duration' | 'after-n-days';
+type DdayMode = 'dday' | 'duration' | 'after-n-days' | 'nth-day';
 
 export function DdayCalculator() {
   // 모드 선택
@@ -65,6 +72,12 @@ export function DdayCalculator() {
   // 모드 C: N일 후
   const [afterBase, setAfterBase] = useCalculatorState('d-day:afterBase', getTodayString());
   const [afterDays, setAfterDays] = useCalculatorState('d-day:afterDays', 100);
+
+  // 모드 D: 기념일 (시작일 = 1일째)
+  const [nthBase, setNthBase] = useCalculatorState('d-day:nthBase', getTodayString());
+  const [nthN, setNthN] = useCalculatorState('d-day:nthN', 100);
+
+  const quickEvents = useMemo(() => upcomingEvents(DDAY_EVENTS, ddayBase), [ddayBase]);
 
   // ===== 계산 수행 =====
 
@@ -93,6 +106,11 @@ export function DdayCalculator() {
     });
   }, [mode, afterBase, afterDays]);
 
+  const nthResult = useMemo(() => {
+    if (mode !== 'nth-day') return null;
+    return calculateNthDay({ baseDate: nthBase, n: nthN });
+  }, [mode, nthBase, nthN]);
+
   // ===== 결과 카드 행 구성 =====
 
   const resultRows: ResultRowProps[] = useMemo(() => {
@@ -102,6 +120,18 @@ export function DdayCalculator() {
           label: '남은/지난 일수',
           value: `${ddayResult.diffDays > 0 ? '+' : ''}${ddayResult.diffDays.toLocaleString('ko-KR')}일`,
         },
+        {
+          label: '목표일 요일',
+          value: `${ddayTarget} (${ddayResult.targetWeekday})`,
+        },
+        ...(ddayResult.nthDay != null
+          ? [
+              {
+                label: '목표일을 1일로 세면',
+                value: `기준일이 ${ddayResult.nthDay.toLocaleString('ko-KR')}일째`,
+              },
+            ]
+          : []),
         {
           label: '주 환산',
           value: `${ddayResult.weeks.toLocaleString('ko-KR')}주`,
@@ -149,8 +179,15 @@ export function DdayCalculator() {
       ];
     }
 
+    if (mode === 'nth-day' && nthResult && nthResult.resultDate !== '-') {
+      return MILESTONES.map((n) => {
+        const r = calculateNthDay({ baseDate: nthBase, n });
+        return { label: `${n.toLocaleString('ko-KR')}일째`, value: `${r.resultDate} (${r.weekday})` };
+      });
+    }
+
     return [];
-  }, [mode, ddayResult, durationResult, afterResult, ddayTarget, durationStart, durationEnd]);
+  }, [mode, ddayResult, durationResult, afterResult, nthResult, nthBase, ddayTarget, durationStart, durationEnd]);
 
   // ===== 경고 메시지 =====
 
@@ -163,6 +200,8 @@ export function DdayCalculator() {
       warnings = durationResult.warnings;
     } else if (mode === 'after-n-days' && afterResult) {
       warnings = afterResult.warnings;
+    } else if (mode === 'nth-day' && nthResult) {
+      warnings = nthResult.warnings;
     }
 
     if (warnings.length === 0) return null;
@@ -179,13 +218,14 @@ export function DdayCalculator() {
         </ul>
       </div>
     );
-  }, [mode, ddayResult, durationResult, afterResult]);
+  }, [mode, ddayResult, durationResult, afterResult, nthResult]);
 
   // ===== 히어로 레이블 결정 =====
 
   const getHeroLabel = (): string => {
     if (mode === 'dday') return 'D-day 카운트';
     if (mode === 'duration') return '기간 계산';
+    if (mode === 'nth-day') return `${nthN.toLocaleString('ko-KR')}일째 (시작일 = 1일째)`;
     return 'N일 후 날짜';
   };
 
@@ -197,6 +237,9 @@ export function DdayCalculator() {
     if (mode === 'after-n-days' && afterResult && afterResult.resultDate !== '-') {
       return afterResult.resultDate;
     }
+    if (mode === 'nth-day' && nthResult && nthResult.resultDate !== '-') {
+      return `${nthResult.resultDate} (${nthResult.weekday})`;
+    }
     return '입력 필요';
   };
 
@@ -204,6 +247,7 @@ export function DdayCalculator() {
     if (mode === 'dday') return !!(ddayResult && ddayTarget);
     if (mode === 'duration') return !!(durationResult && durationStart && durationEnd);
     if (mode === 'after-n-days') return !!(afterResult && afterResult.resultDate !== '-');
+    if (mode === 'nth-day') return !!(nthResult && nthResult.resultDate !== '-');
     return false;
   };
 
@@ -221,6 +265,7 @@ export function DdayCalculator() {
               { value: 'dday', label: 'D-day (기준→목표일)' },
               { value: 'duration', label: '기간 계산 (시작→종료일)' },
               { value: 'after-n-days', label: 'N일 후 (기준+일수)' },
+              { value: 'nth-day', label: '기념일 (100일·1000일)' },
             ]}
           />
         </FormCard>
@@ -259,6 +304,28 @@ export function DdayCalculator() {
                   />
                 </div>
               </div>
+              {quickEvents.length > 0 && (
+                <div className="flex flex-col gap-2">
+                  <p className="text-sm font-medium text-text-primary">목표일 빠른 선택</p>
+                  <div className="flex flex-wrap gap-2">
+                    {quickEvents.map((ev) => (
+                      <button
+                        key={ev.date}
+                        type="button"
+                        onClick={() => setDdayTarget(ev.date)}
+                        aria-pressed={ddayTarget === ev.date}
+                        className={
+                          ddayTarget === ev.date
+                            ? 'min-h-12 rounded-xl border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 dark:text-primary-300'
+                            : 'min-h-12 rounded-xl border border-border-base px-4 py-2 text-sm text-text-secondary hover:border-primary-500'
+                        }
+                      >
+                        {ev.name} {ev.date.slice(5).replace('-', '/')}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
           </FormCard>
         )}
@@ -344,6 +411,41 @@ export function DdayCalculator() {
                 max={100_000}
                 integer
                 helpText="음수 가능 (과거 날짜)"
+              />
+            </div>
+          </FormCard>
+        )}
+
+        {/* ===== 모드 D: 기념일 ===== */}
+        {mode === 'nth-day' && (
+          <FormCard title="기념일 계산 (시작일 = 1일째)">
+            <div className="flex flex-col gap-5">
+              <div className="flex flex-col gap-2">
+                <label htmlFor="nth-base" className="text-sm font-medium text-text-primary">
+                  시작일 (출생일·사귄 날·입사일)
+                </label>
+                <input
+                  id="nth-base"
+                  type="date"
+                  required
+                  value={nthBase}
+                  onChange={(e) => setNthBase(e.target.value)}
+                  className="w-full rounded-lg border border-border-base bg-bg-card px-4 py-3 text-text-primary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/30"
+                  lang="ko"
+                />
+              </div>
+
+              <NumberInput
+                id="nth-n"
+                label="며칠째"
+                value={nthN}
+                onChange={setNthN}
+                placeholder="100"
+                unit="일째"
+                min={1}
+                max={100_000}
+                integer
+                helpText="시작일을 1일째로 셉니다. 백일 = 출생일 + 99일"
               />
             </div>
           </FormCard>
