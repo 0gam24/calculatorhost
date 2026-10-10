@@ -19,11 +19,23 @@ import { ResultCard } from '@/components/calculator/Result';
 import { ResultBanner } from '@/components/calculator/ResultBanner';
 import {
   convertArea,
+  rectangleArea,
   type AreaUnit,
   type AreaKind,
   SQM_PER_PYEONG,
   PYEONG_PER_SQM,
 } from '@/lib/utils/area';
+
+/** 아파트에서 자주 보는 전용면적(㎡) 빠른 선택 */
+const COMMON_EXCLUSIVE_SQM = [59, 74, 84, 101, 114] as const;
+
+const chipClass = (active: boolean) =>
+  active
+    ? 'min-h-12 rounded-xl border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 dark:text-primary-300'
+    : 'min-h-12 rounded-xl border border-border-base px-4 py-2 text-sm text-text-secondary hover:border-primary-500';
+
+const fmt = (v: number) =>
+  v.toLocaleString('ko-KR', { maximumFractionDigits: 2, minimumFractionDigits: 2 });
 
 /** 자주 쓰는 평수 환산표 */
 const COMMON_CONVERSIONS = [
@@ -40,6 +52,13 @@ export function AreaConverter() {
   const [inputValue, setInputValue] = useCalculatorState('area:inputValue', 34);
   const [unit, setUnit] = useCalculatorState<AreaUnit>('area:unit', 'pyeong');
   const [areaKind, setAreaKind] = useCalculatorState<AreaKind>('area:areaKind', 'exclusive');
+  const [roomWidth, setRoomWidth] = useCalculatorState('area:roomWidth', 3.6);
+  const [roomLength, setRoomLength] = useCalculatorState('area:roomLength', 4.2);
+
+  const room = useMemo(
+    () => rectangleArea({ widthM: roomWidth, lengthM: roomLength }),
+    [roomWidth, roomLength],
+  );
 
   const result = useMemo(
     () =>
@@ -80,6 +99,31 @@ export function AreaConverter() {
           max={10_000}
           helpText="전용 84㎡는 약 25.41평입니다. 같은 면적의 단위만 환산하며, 전용면적과 공급면적을 서로 바꾸는 계산은 아닙니다."
         />
+
+        {/* 아파트 전용면적 빠른 선택 */}
+        <div className="flex flex-col gap-2">
+          <p className="text-sm font-medium text-text-primary">아파트 전용면적 빠른 선택</p>
+          <div className="flex flex-wrap gap-2">
+            {COMMON_EXCLUSIVE_SQM.map((sqm) => {
+              const active = unit === 'sqm' && inputValue === sqm;
+              return (
+                <button
+                  key={sqm}
+                  type="button"
+                  aria-pressed={active}
+                  onClick={() => {
+                    setUnit('sqm');
+                    setInputValue(sqm);
+                    setAreaKind('exclusive');
+                  }}
+                  className={chipClass(active)}
+                >
+                  {sqm}㎡
+                </button>
+              );
+            })}
+          </div>
+        </div>
 
         {/* 단위 선택 */}
         <RadioGroup<AreaUnit>
@@ -160,6 +204,54 @@ export function AreaConverter() {
           </div>
         </ResultCard>
         <ResultBanner />
+
+        {/* 가로 × 세로로 면적 구하기 */}
+        <FormCard title="방 크기로 평수 계산 (가로 × 세로)">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <NumberInput
+              id="room-width"
+              label="가로 (m)"
+              value={roomWidth}
+              onChange={setRoomWidth}
+              placeholder="예: 3.6"
+              unit="m"
+              max={10_000}
+            />
+            <NumberInput
+              id="room-length"
+              label="세로 (m)"
+              value={roomLength}
+              onChange={setRoomLength}
+              placeholder="예: 4.2"
+              unit="m"
+              max={10_000}
+            />
+          </div>
+          {room.warnings.length > 0 ? (
+            <p className="text-sm text-highlight-600">{room.warnings[0]}</p>
+          ) : (
+            <div className="rounded-lg border border-border-base bg-bg-base p-3 text-sm">
+              <p className="text-text-primary">
+                <strong className="tabular-nums">{fmt(room.sqm)}㎡</strong> ={' '}
+                <strong className="tabular-nums">{fmt(room.pyeong)}평</strong>
+              </p>
+              <p className="mt-1 text-caption text-text-tertiary">
+                벽 안쪽 길이를 cm 단위까지 재서 m로 넣으세요. 350cm는 3.5m입니다.
+              </p>
+            </div>
+          )}
+          <button
+            type="button"
+            disabled={room.warnings.length > 0}
+            onClick={() => {
+              setUnit('sqm');
+              setInputValue(room.sqm);
+            }}
+            className="min-h-12 w-full rounded-lg border border-border-base px-4 py-3 text-sm font-medium text-text-secondary transition hover:border-primary-500"
+          >
+            이 면적을 위 환산 칸에 넣기
+          </button>
+        </FormCard>
 
         {/* 자주 쓰는 평수 변환표 */}
         <section aria-label="자주 쓰는 평수 변환표" className="card">

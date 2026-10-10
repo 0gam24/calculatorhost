@@ -10,6 +10,7 @@ import {
   sqmToPyeong,
   SQM_PER_PYEONG,
   PYEONG_PER_SQM,
+  rectangleArea,
 } from '@/lib/utils/area';
 
 describe('상수', () => {
@@ -120,5 +121,29 @@ describe('convertArea (양방향 엔트리)', () => {
     const c = convertArea({ value: 32, unit: 'pyeong', kind: 'land' });
     expect(a.sqm).toBe(b.sqm);
     expect(b.sqm).toBe(c.sqm);
+  });
+});
+
+describe('rectangleArea (가로 × 세로, 2026-10-10)', () => {
+  it('방 3.6m × 4.2m = 15.12㎡ = 4.5738평', () => {
+    const r = rectangleArea({ widthM: 3.6, lengthM: 4.2 });
+    expect(r.sqm).toBe(15.12);
+    expect(r.pyeong).toBe(4.5738);
+    expect(r.warnings).toEqual([]);
+  });
+
+  it('10m × 10m = 100㎡ = 30.25평', () => {
+    const r = rectangleArea({ widthM: 10, lengthM: 10 });
+    expect(r.sqm).toBe(100);
+    expect(r.pyeong).toBe(30.25);
+  });
+
+  it('0·음수·숫자 아님은 0과 경고', () => {
+    for (const [w, l] of [[0, 4], [-3, 4], [Number.NaN, 4]] as const) {
+      const r = rectangleArea({ widthM: w, lengthM: l });
+      expect(r.sqm).toBe(0);
+      expect(r.pyeong).toBe(0);
+      expect(r.warnings.length).toBeGreaterThan(0);
+    }
   });
 });

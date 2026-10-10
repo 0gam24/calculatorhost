@@ -93,3 +93,26 @@ export function convertArea(input: AreaConversionInput): AreaConversionResult {
     warnings,
   };
 }
+
+export interface RectangleAreaInput {
+  widthM: number;   // 가로 (m)
+  lengthM: number;  // 세로 (m)
+}
+
+export interface RectangleAreaResult {
+  sqm: number;
+  pyeong: number;
+  warnings: string[];
+}
+
+/**
+ * 가로 × 세로(m) → ㎡·평. 방·창고·땅처럼 직사각형 면적을 잴 때.
+ */
+export function rectangleArea(input: RectangleAreaInput): RectangleAreaResult {
+  const { widthM, lengthM } = input;
+  if (!Number.isFinite(widthM) || !Number.isFinite(lengthM) || widthM <= 0 || lengthM <= 0) {
+    return { sqm: 0, pyeong: 0, warnings: ['가로와 세로를 0보다 큰 숫자(m)로 입력해 주세요.'] };
+  }
+  const sqm = widthM * lengthM;
+  return { sqm: roundTo(sqm, 4), pyeong: sqmToPyeong(sqm), warnings: [] };
+}
