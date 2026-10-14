@@ -413,8 +413,8 @@ export default function NationalPensionIncomeUpperLimit2026Page() {
                     href="/guide/salary-take-home-2026-july-insurance-increase/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">7월 4대보험 인상과 실수령액</div>
-                    <p className="mt-1 text-sm text-text-secondary">7월 요율·상한 조정이 월 급여에 미치는 실제 영향.</p>
+                    <div className="font-semibold text-primary-500">7월 국민연금 상한액과 실수령액</div>
+                    <p className="mt-1 text-sm text-text-secondary">7월 기준소득월액 상한 조정이 월 급여에 미치는 실제 영향.</p>
                   </Link>
                   <Link
                     href="/calculator/salary/"

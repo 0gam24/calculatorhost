@@ -4,6 +4,7 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { loadMyEnv } from './load-my-env.mjs';
+import { monthRange, latestByPeriod } from './lib/public-data-core.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = path.join(__dirname, '../src/data');
@@ -143,7 +144,9 @@ async function syncBokRates() {
 
   try {
     console.log('Fetching 한국은행 기준금리...');
-    const rateUrl = `https://ecos.bok.or.kr/api/StatisticSearch/${API_KEYS.ecos}/json/kr/1/100/722Y001/M/202501/202604`;
+    // 최근 24개월을 조회해 가장 최근 달을 쓴다 (2026-10-14 전에는 202501~202604 고정 + 첫 행이라 2025-01 값이 굳어 있었음)
+    const range = monthRange(new Date(), 24);
+    const rateUrl = `https://ecos.bok.or.kr/api/StatisticSearch/${API_KEYS.ecos}/json/kr/1/100/722Y001/M/${range.start}/${range.end}`;
     const rateResp = await fetchWithTimeout(rateUrl);
 
     if (!rateResp.ok) {
@@ -151,7 +154,7 @@ async function syncBokRates() {
     }
 
     const rateData = await rateResp.json();
-    const baseRateItem = rateData.StatisticSearch?.row?.[0];
+    const baseRateItem = latestByPeriod(rateData.StatisticSearch?.row, 'TIME');
     if (!baseRateItem) {
       throw new Error('No base rate data found');
     }
@@ -160,7 +163,7 @@ async function syncBokRates() {
     const baseRateDate = baseRateItem.TIME;
 
     console.log('Fetching CPI...');
-    const cpiUrl = `https://ecos.bok.or.kr/api/StatisticSearch/${API_KEYS.ecos}/json/kr/1/100/901Y009/M/202501/202604`;
+    const cpiUrl = `https://ecos.bok.or.kr/api/StatisticSearch/${API_KEYS.ecos}/json/kr/1/100/901Y009/M/${range.start}/${range.end}`;
     const cpiResp = await fetchWithTimeout(cpiUrl);
 
     if (!cpiResp.ok) {
@@ -168,7 +171,7 @@ async function syncBokRates() {
     }
 
     const cpiData = await cpiResp.json();
-    const cpiItem = cpiData.StatisticSearch?.row?.[0];
+    const cpiItem = latestByPeriod(cpiData.StatisticSearch?.row, 'TIME');
     if (!cpiItem) {
       throw new Error('No CPI data found');
     }
@@ -328,7 +331,8 @@ async function syncKosisIncome() {
     console.log('Fetching KOSIS 가구 소득 통계...');
     // 업데이트된 KOSIS 엔드포인트 (2026-05 기준)
     // 구 엔드포인트: /openapi/Param/statisticsParameterData.do → 새 표준: /openapi/statData.json
-    const url = `https://kosis.or.kr/openapi/statData.json?apiKey=${API_KEYS.kosis}&orgId=101&tblId=DT_1L9U041&startPrdDe=202501&endPrdDe=202604`;
+    const kRange = monthRange(new Date(), 24);
+    const url = `https://kosis.or.kr/openapi/statData.json?apiKey=${API_KEYS.kosis}&orgId=101&tblId=DT_1L9U041&startPrdDe=${kRange.start}&endPrdDe=${kRange.end}`;
     const resp = await fetchWithTimeout(url);
 
     if (!resp.ok) {
@@ -339,27 +343,21 @@ async function syncKosisIncome() {
     // 새 응답 구조: data.StatisticSearch?.row 또는 data.data[]
     const records = data.StatisticSearch?.row || data.data || [];
 
-    let householdIncome = 4850000;
-    let perCapitaIncome = 1850000;
-    let dateStr = '2025-12-01';
-
-    if (records.length > 0) {
-      const latestRecord = records[0];
-      // 필드명 변경 가능성 대비: DATA_VALUE → DATA_VALUE 또는 DT
-      const value = latestRecord.DATA_VALUE || latestRecord.DT;
-      householdIncome = parseFloat(value) * 10000 || householdIncome;
-      // 기간 필드: PERIOD → PRD_DE
-      dateStr = latestRecord.PERIOD || latestRecord.PRD_DE || dateStr;
+    // 응답이 비면 임시값을 "live" 로 쓰지 않고 기존 파일을 둔다 (2026-10-14)
+    const latestRecord = latestByPeriod(records, 'PRD_DE') ?? latestByPeriod(records, 'PERIOD');
+    if (!latestRecord) {
+      throw new Error('No KOSIS income records');
     }
-
-    // Assume per-capita is roughly 40% of household
-    perCapitaIncome = Math.round(householdIncome * 0.38);
+    // 필드명 변경 가능성 대비: DATA_VALUE 또는 DT
+    const householdIncome = parseFloat(latestRecord.DATA_VALUE || latestRecord.DT) * 10000;
+    if (!Number.isFinite(householdIncome) || householdIncome <= 0) {
+      throw new Error('Invalid KOSIS income value');
+    }
+    const dateStr = latestRecord.PRD_DE || latestRecord.PERIOD;
 
     const result = {
       householdMonthlyIncome: householdIncome,
       householdMonthlyIncomeDate: dateStr,
-      perCapitaMonthlyIncome: perCapitaIncome,
-      perCapitaMonthlyIncomeDate: dateStr,
       source: 'live',
       note: '통계청 KOSIS 실시간 동기화 (2026-05 엔드포인트)',
       fetchedAt: new Date().toISOString(),

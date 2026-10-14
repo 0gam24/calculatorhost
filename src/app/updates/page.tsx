@@ -270,7 +270,7 @@ export default function UpdatesPage() {
                   <li>
                     <Link href="/" className="inline-flex items-center gap-1 text-primary-700 underline dark:text-primary-300">
                       <Icon name="chevron-right" size={14} />
-                      <span>홈 (전체 계산기 31종)</span>
+                      <span>홈 (전체 계산기 32종)</span>
                     </Link>
                   </li>
                   <li>

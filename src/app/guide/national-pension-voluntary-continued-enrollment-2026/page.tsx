@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/national-pension-voluntary-continued-enrollment-2026/';
 const DATE_PUBLISHED = '2026-07-30';
-const DATE_MODIFIED = '2026-07-30';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기',
   description:
-    '국민연금 임의계속가입은 60세 이후에도 65세 전까지 가입을 이어가 최소 가입기간을 채우거나 연금액을 늘리는 제도입니다. 신청 자격·기한과 보험료 전액 본인부담, 유리한 경우를 국민연금법 §13 기준으로 정리했습니다.',
+    '국민연금 임의계속가입은 60세 이후에도 65세 전까지 가입을 이어가 최소 가입기간을 채우거나 연금액을 늘리는 제도입니다. 신청 자격·기한과 2026년 보험료율 9.5% 전액 본인부담, 유리한 경우를 국민연금법 §13 기준으로 정리했습니다.',
   keywords: [
     '국민연금 임의계속가입',
     '60세 이후 국민연금',
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: '보험료는 얼마를 내나요?',
     answer:
-      '보험료율 9%를 전액 본인이 부담합니다. 직장에 다닐 때는 회사와 절반씩 나눠 4.5%만 냈지만, 임의계속가입은 사업장 가입이 아니므로 9% 전액을 본인이 냅니다. 기준소득월액은 본인이 신고한 소득을 바탕으로 정해지며, 그에 따라 매월 낼 보험료가 결정됩니다.',
+      '2026년 보험료율 9.5%를 전액 본인이 부담합니다. 직장에 다닐 때는 회사와 절반씩 나눠 근로자 몫 4.75%(2025년까지는 4.5%)만 냈지만, 임의계속가입은 사업장 가입이 아니라 지역가입자·임의가입자와 같은 방식이므로 9.5% 전액을 본인이 냅니다. 기준소득월액은 본인이 신고한 소득을 바탕으로 정해지며, 그에 따라 매월 낼 보험료가 결정됩니다.',
   },
   {
     question: '가입기간 10년을 못 채웠는데 임의계속가입이 도움이 되나요?',
@@ -102,7 +102,7 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기',
     description:
-      '국민연금 임의계속가입의 신청 자격·기한(65세 전날까지), 보험료 9% 전액 본인부담, 최소 가입기간 채우기와 연금액 증액 활용을 국민연금법 §13 기준으로 정리한 가이드.',
+      '국민연금 임의계속가입의 신청 자격·기한(65세 전날까지), 2026년 보험료율 9.5% 전액 본인부담, 최소 가입기간 채우기와 연금액 증액 활용을 국민연금법 §13 기준으로 정리한 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -165,7 +165,7 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
                     <li>대상: 60세에 도달한 국민연금 가입자(였던 자)</li>
                     <li>기간: 65세 생일 전날까지 가입 연장 가능</li>
                     <li>목적: 최소 가입기간 10년 채우기 또는 연금액 증액</li>
-                    <li>보험료: 9% 전액 본인 부담</li>
+                    <li>보험료: 2026년 9.5% 전액 본인 부담</li>
                     <li>근거: 국민연금법 §13(임의계속가입자)</li>
                   </ul>
                 </div>
@@ -209,7 +209,7 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">보험료</td>
-                        <td className="p-3">9% 전액 본인 부담</td>
+                        <td className="p-3">2026년 9.5% 전액 본인 부담</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">신청 제외</td>
@@ -315,7 +315,7 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 연금 상담이 아닙니다. 임의계속가입의 유불리는 개인의 가입기간, 소득, 기대수명, 현금 흐름에 따라 크게 달라지므로, 신청 전 국민연금공단(1355)에서 본인 이력을 확인하고 상담받으세요. 보험료율·기준소득월액 상한 등 세부 수치는 개정될 수 있습니다. 본 콘텐츠는 2026-07-30을 기준으로 작성되었으며, 관련 법령 개정 시 즉시 업데이트됩니다. 근거 법령: <strong>국민연금법 §13(임의계속가입자)</strong>.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 연금 상담이 아닙니다. 임의계속가입의 유불리는 개인의 가입기간, 소득, 기대수명, 현금 흐름에 따라 크게 달라지므로, 신청 전 국민연금공단(1355)에서 본인 이력을 확인하고 상담받으세요. 보험료율·기준소득월액 상한 등 세부 수치는 개정될 수 있습니다. 본 콘텐츠는 2026-10-14 기준이며, 관련 법령 개정 시 반영됩니다. 근거 법령: <strong>국민연금법 §13(임의계속가입자)</strong>.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}

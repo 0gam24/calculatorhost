@@ -1,51 +1,28 @@
 'use client';
 
+import { freshnessText, type DataStatus } from '@/lib/publicapi/public-citations';
+
 interface DataFreshnessProps {
   source: string;
   fetchedAt: string;
-  isLive: boolean;
+  /** live = API 자동 수집, manual = 기관 발표 확인값, fallback = 임시값 */
+  status: DataStatus;
 }
 
-// Helper: Simple time-ago formatter (Korean)
-function formatTimeAgo(dateString: string): string {
-  const date = new Date(dateString);
-  const now = new Date();
-  const diffMs = now.getTime() - date.getTime();
-  const diffMins = Math.floor(diffMs / 60000);
-  const diffHours = Math.floor(diffMs / 3600000);
-  const diffDays = Math.floor(diffMs / 86400000);
-
-  if (diffMins < 1) return '방금';
-  if (diffMins < 60) return `${diffMins}분`;
-  if (diffHours < 24) return `${diffHours}시간`;
-  if (diffDays < 7) return `${diffDays}일`;
-  return date.toLocaleDateString('ko-KR');
-}
-
-export function DataFreshness({ source, fetchedAt, isLive }: DataFreshnessProps) {
-  const timeAgo = formatTimeAgo(fetchedAt);
-
+/**
+ * 공공데이터 수집 상태 배지. 정적 페이지는 빌드 시각에 굳으므로 "N시간 전" 같은 상대 시각 대신
+ * 날짜를 쓴다 (2026-10-14, 이전엔 빌드 시점의 "3시간 전 갱신됨"이 계속 노출됐음).
+ */
+export function DataFreshness({ source, fetchedAt, status }: DataFreshnessProps) {
+  const fresh = status !== 'fallback';
   return (
     <div className="mt-4 flex items-center gap-2 rounded-lg bg-neutral-100 px-3 py-2 text-sm text-neutral-600 dark:bg-neutral-800 dark:text-neutral-400">
       <span
         role="img"
-        className={`inline-block h-2 w-2 rounded-full ${
-          isLive ? 'bg-green-500' : 'bg-neutral-400'
-        }`}
-        aria-label={isLive ? '실시간 데이터' : '정적 기본값'}
+        className={`inline-block h-2 w-2 rounded-full ${fresh ? 'bg-green-500' : 'bg-neutral-400'}`}
+        aria-label={fresh ? '확인된 데이터' : '정적 기본값'}
       />
-      <span>
-        <strong>{source}</strong>{' '}
-        {isLive ? (
-          <>
-            <span>{timeAgo} 전</span> 갱신됨
-          </>
-        ) : (
-          <>
-            정적 기본값 (실시간 갱신 대기 중)
-          </>
-        )}
-      </span>
+      <span>{freshnessText({ source, fetchedAt, status })}</span>
     </div>
   );
 }

@@ -216,7 +216,7 @@ export default function ExchangePage() {
                 {EXIM_USD_CITATION ? (
                   <PublicDataCitation citation={EXIM_USD_CITATION} />
                 ) : (
-                  '한국수출입은행 데이터 수집 기록을 확인하세요'
+                  '계산기의 기준환율은 직접 입력하는 값입니다. 오늘 환율은 한국수출입은행이나 거래 은행의 고시 환율을 확인해 넣으세요'
                 )}
                 . 실제 환전 시점의 금융기관 적용 환율과 수수료는 다를 수 있습니다.
               </p>

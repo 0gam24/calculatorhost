@@ -755,7 +755,7 @@ export default function LoanLimitPage() {
                 <DataFreshness
                   source="한국은행 ECOS"
                   fetchedAt={bokRates.fetchedAt}
-                  isLive={bokRates.source === 'live'}
+                  status={bokRates.source === 'live' || bokRates.source === 'manual' ? bokRates.source : 'fallback'}
                 />
 
                 <div className="border-t border-border-base pt-4">

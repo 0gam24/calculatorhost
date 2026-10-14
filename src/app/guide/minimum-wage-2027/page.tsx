@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/minimum-wage-2027/';
 const DATE_PUBLISHED = '2026-08-06';
-const DATE_MODIFIED = '2026-08-06';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 계산',
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2027 최저임금 10,700원 월급·주휴수당·실수령액' }],
     title: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 계산',
-    description: '2027년 최저시급 10,700원(3.7% 인상). 주휴 포함 월 2,236,300원, 실수령액 약 202만원. 주휴수당 계산법까지.',
+    description: '2027년 최저시급 10,700원(3.7% 인상). 주휴 포함 월 2,236,300원, 실수령액 약 201만원. 주휴수당 계산법까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '2027 최저임금 10,700원 확정',
-    description: '주휴 포함 월급 2,236,300원, 실수령액 약 202만원. 주휴수당·4대보험 공제 계산법.',
+    description: '주휴 포함 월급 2,236,300원, 실수령액 약 201만원. 주휴수당·4대보험 공제 계산법.',
   },
 };
 
@@ -74,7 +74,7 @@ const FAQ_ITEMS = [
   {
     question: '최저임금 월급의 실수령액은 얼마인가요?',
     answer:
-      '세전 2,236,300원 기준 실수령액은 약 202만~203만원입니다. 국민연금·건강보험·장기요양·고용보험 등 4대보험 근로자 부담분 약 21만원이 빠지고, 부양가족·공제 상황에 따라 근로소득세는 0에 가깝습니다. 정확한 금액은 개인 상황과 2027년 확정 요율에 따라 달라집니다.',
+      '세전 2,236,300원 기준 실수령액은 약 201만~202만원입니다. 국민연금·건강보험·장기요양·고용보험 등 4대보험 근로자 부담분 약 21만 7천원이 빠지고, 부양가족·공제 상황에 따라 근로소득세는 0에 가깝습니다. 정확한 금액은 개인 상황과 2027년 확정 요율에 따라 달라집니다.',
   },
   {
     question: '수습기간에도 최저임금을 다 받나요?',
@@ -265,7 +265,7 @@ export default function MinimumWage2027Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">4대보험 공제 후 실수령액은</h2>
                 <p>
-                  세전 월급 2,236,300원에서 4대보험 근로자 부담분과 세금을 빼면 실수령액은 약 202만~203만원입니다. 아래는 2026년 요율을 기준으로 한 추정치입니다.
+                  세전 월급 2,236,300원에서 4대보험 근로자 부담분과 세금을 빼면 실수령액은 약 201만~202만원입니다. 아래는 2026년 요율을 기준으로 한 추정치입니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
@@ -280,18 +280,18 @@ export default function MinimumWage2027Page() {
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="p-3">국민연금</td>
-                        <td className="p-3">4.5%</td>
-                        <td className="p-3">100,630원</td>
+                        <td className="p-3">4.75%</td>
+                        <td className="p-3">106,220원</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">건강보험</td>
-                        <td className="p-3">3.545%</td>
-                        <td className="p-3">79,280원</td>
+                        <td className="p-3">3.595%</td>
+                        <td className="p-3">80,400원</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">장기요양</td>
-                        <td className="p-3">건보의 12.95%</td>
-                        <td className="p-3">10,260원</td>
+                        <td className="p-3">건보의 13.14%</td>
+                        <td className="p-3">10,560원</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">고용보험</td>
@@ -307,7 +307,7 @@ export default function MinimumWage2027Page() {
                   </table>
                 </div>
                 <p className="mt-4">
-                  4대보험 합계는 약 21만원이며, 실수령액은 2,236,300 - 210,300 ≈ <strong>약 202만원</strong>입니다. 부양가족이 있거나 비과세 식대(월 20만원)가 적용되면 실수령액은 더 올라갑니다.
+                  4대보험 합계는 약 21만 7천원이며, 실수령액은 2,236,300 - 217,310 ≈ <strong>약 201만원</strong>입니다. 부양가족이 있거나 비과세 식대(월 20만원)가 적용되면 실수령액은 더 올라갑니다.
                 </p>
                 <p className="mt-4">
                   다만 2027년 국민연금·건강보험 요율은 아직 확정 전이므로 위 공제액은 추정치입니다. 국민연금 보험료율은 단계적 인상이 예정돼 있어 실제 공제액이 달라질 수 있습니다. 정확한 실수령액은 급여명세서와 확정 요율로 확인하세요.

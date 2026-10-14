@@ -311,7 +311,7 @@ export default function IncomeContingentLoanRepayment2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">2026 실수령액 변화</div>
-                    <p className="mt-1 text-sm text-text-secondary">7월 국민연금 요율 인상이 월급에 미친 영향.</p>
+                    <p className="mt-1 text-sm text-text-secondary">7월 국민연금 상한액 인상이 월급에 미치는 영향.</p>
                   </Link>
                   <Link
                     href="/guide/sme-youth-income-tax-reduction-2026/"

@@ -449,8 +449,8 @@ export default function ParentalLeaveBenefit2026Page() {
                     href="/guide/salary-take-home-2026-july-insurance-increase/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">7월 보험료 인상 월급 영향</div>
-                    <p className="mt-1 text-sm text-text-secondary">2026년 7월 국민연금 인상으로 월급이 얼마나 줄까요?</p>
+                    <div className="font-semibold text-primary-500">7월 국민연금 상한 조정 월급 영향</div>
+                    <p className="mt-1 text-sm text-text-secondary">2026년 7월 국민연금 상한액 인상으로 누구 월급이 줄까요?</p>
                   </Link>
                   <Link
                     href="/category/work/"

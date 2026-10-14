@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/health-insurance-premium-2026/';
 const DATE_PUBLISHED = '2026-06-11';
-const DATE_MODIFIED = '2026-06-11';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',
@@ -249,11 +249,11 @@ export default function HealthInsurancePremium2026() {
 
                 <RateBarChart
                   title="직장인 4대보험 근로자 부담률 (2026)"
-                  caption="월 보수에서 국민연금 4.5%, 건강보험 3.595%(2026년 7.19%의 절반), 장기요양보험(건강보험료의 13.14% ≈ 보수의 0.47%), 고용보험 0.9%가 공제됩니다. 2026년 건강보험료율이 7.09%에서 7.19%로 올라 부담이 소폭 늘었습니다."
+                  caption="월 보수에서 국민연금 4.75%, 건강보험 3.595%(2026년 7.19%의 절반), 장기요양보험(건강보험료의 13.14% ≈ 보수의 0.47%), 고용보험 0.9%가 공제됩니다. 2026년 건강보험료율이 7.09%에서 7.19%로 올라 부담이 소폭 늘었습니다."
                   unit="%"
                   max={5}
                   bars={[
-                    { label: '국민연금', value: 4.5, display: '4.5%' },
+                    { label: '국민연금', value: 4.75, display: '4.75%' },
                     { label: '건강보험', value: 3.595, display: '3.595%', highlight: true },
                     { label: '장기요양', value: 0.47, display: '≈0.47%' },
                     { label: '고용보험', value: 0.9, display: '0.9%' },
@@ -263,7 +263,7 @@ export default function HealthInsurancePremium2026() {
                 <div className="rounded-lg border border-border-base bg-bg-raised p-4">
                   <p className="text-sm text-text-secondary">
                     <strong>예시:</strong> 월 보수 300만원이면 건강보험료 본인 부담은 약 107,850원(300만 × 3.595%),
-                    장기요양은 그 13.14%의 절반인 약 7,000원대가 추가됩니다. 회사도 같은 금액을 함께 부담합니다.
+                    장기요양은 그 건강보험료의 13.14%인 약 14,170원(107,850 × 13.14%)이 추가됩니다. 회사도 같은 금액을 함께 부담합니다.
                   </p>
                 </div>
               </section>

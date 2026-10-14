@@ -319,7 +319,7 @@ export default function WelfarePointsTaxation2026Page() {
                     href="/guide/salary-take-home-2026-july-insurance-increase/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">2026 실수령액 (7월 보험료 인상)</div>
+                    <div className="font-semibold text-primary-500">2026 실수령액 (7월 국민연금 상한 조정)</div>
                     <p className="mt-1 text-sm text-text-secondary">세금·4대보험 반영 실수령액을 점검하세요.</p>
                   </Link>
                   <Link

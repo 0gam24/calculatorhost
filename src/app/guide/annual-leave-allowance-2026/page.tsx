@@ -15,7 +15,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/annual-leave-allowance-2026/';
 const DATE_PUBLISHED = '2026-06-19';
-const DATE_MODIFIED = '2026-06-19';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '연차수당 계산법 2026 | 미사용 연차 1일 통상임금 계산 | calculatorhost',
@@ -83,7 +83,7 @@ const FAQ_ITEMS = [
   {
     question: '연차수당은 세금이 나가나요? 어떤 세금이 부과되나요?',
     answer:
-      '네, 연차수당은 근로소득으로 간주되어 소득세·지방소득세·4대보험료가 공제됩니다. 퇴직금처럼 별도의 세제 혜택은 없습니다. 따라서 통상임금 300만 × 5일 = 150만 원이면, 실제로는 소득세 약 15~20만 원 + 4대보험료 약 10만 원이 공제되어 약 120~125만 원을 받게 됩니다.',
+      '네, 연차수당은 근로소득이라 소득세·지방소득세·4대보험료가 공제됩니다. 퇴직금처럼 별도의 세제 혜택은 없습니다. 예를 들어 월 통상임금 300만 원인 사람의 미사용 5일분 연차수당 574,160원은 그 달 급여에 더해지고, 4대보험 근로자 부담만 약 9.72%(약 5만 6천 원)입니다. 소득세는 그 달 전체 급여에 따라 간이세액표로 정해지므로 사람마다 다릅니다.',
   },
 ];
 
@@ -351,7 +351,7 @@ export default function AnnualLeaveAllowancePage() {
                   </div>
                   <div className="border-l-4 border-l-primary-500 bg-card pl-4 py-3">
                     <p className="font-semibold">4대보험료</p>
-                    <p className="text-text-secondary">국민연금 4.5%, 건강보험 3.545%, 장기요양 건강보험의 12.95%, 고용보험 0.9% (합계 약 9.7~10%)</p>
+                    <p className="text-text-secondary">국민연금 4.75%, 건강보험 3.595%, 장기요양 건강보험료의 13.14%, 고용보험 0.9% (합계 약 9.72%)</p>
                   </div>
                 </div>
                 <p className="mt-3 text-sm text-text-tertiary">
@@ -456,7 +456,7 @@ export default function AnnualLeaveAllowancePage() {
                   인용한 법조항: 근로기준법 §60 (연차 발생·지급), §61 (사용촉진)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  마지막 갱신: 2026-06-19 | 2026년 최신 근로기준법 반영
+                  마지막 갱신: 2026-10-14 | 2026년 최신 근로기준법 반영
                 </p>
               </section>
             </article>

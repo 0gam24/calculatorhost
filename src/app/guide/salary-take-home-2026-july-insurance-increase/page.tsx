@@ -15,76 +15,83 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/salary-take-home-2026-july-insurance-increase/';
 const DATE_PUBLISHED = '2026-06-29';
-const DATE_MODIFIED = '2026-06-29';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '2026년 7월 국민연금 인상 후 월급 실수령액 변화 (9.0→9.5%)',
+  title: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
   description:
-    '7월 1일 국민연금 요율 9.0→9.5% 인상으로 월 실수령액이 얼마나 줄어드나? 기준소득월액 상한선 인상(637만→659만원)과 함께 정확한 시뮬레이션. 근로자 부담 3,000~45,000원 추가 인상.',
+    '2026년 7월 국민연금 기준소득월액 상한이 637만원에서 659만원으로 인상. 월 659만원 이상이면 공제액이 1만 450원 늘어납니다.',
   keywords: [
-    '국민연금 인상 2026',
-    '7월 실수령액',
-    '월급 변화',
+    '국민연금 상한액 2026',
     '기준소득월액 상한',
+    '7월 국민연금',
+    '실수령액 변화',
     '국민연금법 88조',
-    '근로자 부담',
-    '4대보험료',
+    '국민연금법 시행령 5조',
+    '659만원 상한',
+    '637만원 상한',
+    '월급 공제액',
     '세후 월급',
-    '연봉 실수령',
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026년 7월 국민연금 인상 후 월급 실수령액 변화' }],
-    title: '2026년 7월 국민연금 인상 후 월급 실수령액 변화',
-    description: '7월부터 국민연금 요율 인상, 월급에서 공제액이 얼마나 늘어나는지 실제 시뮬레이션.',
+    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026년 7월 국민연금 상한액 인상, 실수령액 변화' }],
+    title: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
+    description: '2026년 7월 국민연금 기준소득월액 상한이 637만원에서 659만원으로 올라, 월급 659만원 이상이면 공제액이 월 1만 450원 늘어납니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
+    description: '2026년 7월 국민연금 기준소득월액 상한이 637만원에서 659만원으로 인상. 월 659만원 이상이면 공제액이 월 1만 450원 늘어납니다.',
+    images: ['/og-default.png'],
+  },
 };
 
 const FAQ_ITEMS = [
   {
-    question: '7월부터 국민연금이 9.5%로 올라가는 이유는?',
+    question: '2026년 7월에 국민연금 요율이 올랐나요?',
     answer:
-      '국민연금법 §88에 따른 2026년 단계적 인상입니다. 국민연금의 장기 재정 안정성 확보를 위해 1단계로 7월부터 0.25%p 인상되며, 1~6월은 기존 9.0%, 7월부터 9.5%가 적용됩니다.',
+      '요율은 7월이 아니라 1월에 이미 올랐습니다. 2025년 9.0%(근로자 4.5%)에서 2026년 1월 1일부터 9.5%(근로자 4.75%)로 인상됐습니다(국민연금법 §88). 7월에 바뀐 것은 요율이 아니라 기준소득월액 상한과 하한입니다.',
   },
   {
-    question: '월급 300만원이면 7월부터 실수령액이 얼마나 줄어드나?',
+    question: '그러면 2026년 7월에 뭐가 바뀌었나요?',
     answer:
-      '국민연금 부담만 월 7,500원 증가합니다(300만×0.25%=7,500원). 인상은 하반기 6개월에만 적용되므로 연간으로는 약 45,000원(7,500원×6개월) 추가 부담입니다. 건강보험·고용보험은 7월 변동이 없습니다.',
+      '기준소득월액 상한이 637만원에서 659만원으로, 하한이 40만원에서 41만원으로 올랐습니다(국민연금법 시행령 §5, 보건복지부 고시). 월급 659만원 이상 고소득자와 월 보수 41만원 미만 단시간 근로자만 공제액이 바뀝니다.',
   },
   {
-    question: '월급이 700만원 이상이면 인상 영향이 적다고?',
+    question: '월급 300만원인데 7월에 공제액이 바뀌나요?',
     answer:
-      '오히려 영향이 더 큽니다. 상한선(7월~659만원)까지만 부과되지만, 상한 자체가 637만→659만으로 올라 1~6월 286,650원(637만×4.5%)에서 7~12월 313,025원(659만×4.75%)으로 월 약 26,375원 늘어납니다. 300만원 기준(월 7,500원)보다 추가 부담이 큽니다.',
+      '7월에 변화가 없습니다. 월급 300만원은 상한선 659만원보다 훨씬 낮고 하한선 41만원보다는 높아서 상한·하한 영향을 받지 않습니다. 요율도 1월부터 이미 4.75%가 적용 중이어서 7월에 추가로 바뀌는 금액이 없습니다.',
   },
   {
-    question: '기준소득월액 상한선이 637만→659만원으로 올라가는데, 이게 뭐예요?',
+    question: '월급 700만원이면 7월에 얼마나 더 공제되나요?',
     answer:
-      '국민연금료는 월급의 일정 비율이지만, 최대 기준소득월액 상한까지만 적용됩니다. 1~6월에는 637만원, 7월부터는 659만원입니다. 월급이 659만원을 초과하면 초과분에 대해서는 국민연금료가 공제되지 않습니다.',
+      '월 1만 450원 추가 공제됩니다. 상한선 때문에 700만원 전체가 아닌 상한액에만 요율이 적용되는데, 상한이 637만원에서 659만원으로 오르면서 637만×4.75%=302,575원에서 659만×4.75%=313,025원으로 월 1만 450원 늘어납니다.',
   },
   {
-    question: '7월에 연봉협상을 한다면 뭘 주의해야 할까?',
+    question: '월급 650만원이면 7월에 얼마나 바뀌나요?',
     answer:
-      '연간 실수령액을 계산할 때, 1~6월은 국민연금 4.5%, 7~12월은 4.75%를 각각 반영해야 합니다. 단순히 월급 × 12를 하면 실수령액을 과다하게 계산합니다. 연봉 실수령액 계산기의 "6개월 경계" 옵션을 활용하거나, 상반기 합계 + 하반기 합계로 나눠 계산하세요.',
+      '월 6,175원 추가 공제됩니다. 1~6월에는 상한 637만원이 적용되어 302,575원이었지만, 7월부터 상한이 659만원으로 올라 월급 전액 650만원이 기준이 되므로 650만×4.75%=308,750원이 공제됩니다. 차액은 월 6,175원입니다.',
   },
   {
-    question: '월급 500만원일 때 정확한 7월 공제액은?',
+    question: '2026년 1월 요율 인상으로 월급 300만원은 얼마가 늘었나요?',
     answer:
-      '국민연금 500만×4.75%=237,500원, 건강보험 500만×3.545%=177,250원, 장기요양 177,250×12.95%=약 22,954원, 고용보험 500만×0.9%=45,000원. 합계 약 482,700원(약 9.7% 공제율). 1~6월에는 국민연금이 225,000원으로 월 12,500원 적게 공제됩니다.',
+      '월 7,500원 더 공제됐습니다. 2025년에는 300만×4.5%=135,000원, 2026년 1월부터는 300만×4.75%=142,500원이므로 차액이 월 7,500원입니다. 이 변화는 7월이 아니라 1월 급여명세서부터 이미 반영됐습니다.',
   },
   {
-    question: '7월 인상은 실수령액뿐 아니라 퇴직금에도 영향을 줄까?',
+    question: '하한 40만원에서 41만원 인상은 누구에게 영향을 주나요?',
     answer:
-      '네, 퇴직금 계산 시 1~6월 동안의 국민연금 공제액(4.5%)과 7월 이후 공제액(4.75%)이 별도로 적용됩니다. 연중 퇴직하는 경우 정확한 계산을 위해 상반기·하반기를 나누어 계산해야 실수령액을 정확히 파악할 수 있습니다.',
+      '월 보수가 41만원 미만인 단시간 근로자가 영향을 받습니다. 월 보수 40만원이면 1~6월 40만×4.75%=19,000원에서 7~12월 41만×4.75%=19,475원으로 월 475원 늘어납니다. 월 보수가 41만원 이상인 사람은 하한 영향이 없습니다.',
   },
   {
-    question: '기준소득월액 상한선이 있으면 고소득자는 7월 인상의 영향을 거의 안 받나?',
+    question: '요율이 앞으로 더 오르나요?',
     answer:
-      '상한선 이상 고소득자도 영향을 받습니다. 예를 들어 월급 800만원이라면, 1~6월은 637만×4.5%=286,650원, 7월~은 659만×4.75%=313,025원으로 월 26,375원 추가 부담. 월급이 높아도 상한선 인상(637만→659만)과 요율 인상이 함께 반영됩니다.',
+      '2025년 3월 국민연금법 개정으로 2033년까지 매년 0.5%p씩 단계적으로 인상됩니다. 2027년 10.0%(근로자 5.0%), 2028년 10.5%(근로자 5.25%) 식으로 올라가며, 상한·하한도 매년 조정됩니다. 2027년 이후 7월에 상한·하한이 또 바뀔 수 있습니다.',
   },
 ];
 
@@ -92,24 +99,24 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '2026년 7월 국민연금 인상 후 월급 변화' },
+    { name: '2026년 7월 국민연금 상한액 인상' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026년 7월 국민연금 인상 후 월급 실수령액 변화, 정확한 시뮬레이션',
+    headline: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
     description:
-      '7월 1일부터 시작되는 국민연금 요율 9.0→9.5% 인상(국민연금법 §88)으로 월급 실수령액이 얼마나 줄어드는지 정확히 계산. 기준소득월액 상한선 인상(637만→659만원) 함께 정리.',
+      '2026년 7월 국민연금 기준소득월액 상한이 637만원에서 659만원으로 올라 월급 659만원 이상 소득자의 공제액이 늘어납니다. 요율 9.5% 인상은 2026년 1월에 이미 반영됐습니다(국민연금법 §88, 시행령 §5).',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
     authorName: '김준혁',
     authorUrl: 'https://calculatorhost.com/about/',
     image: 'https://calculatorhost.com/og-default.png',
-    keywords: ['국민연금', '7월 인상', '실수령액', '기준소득월액', '4대보험'],
+    keywords: ['국민연금 상한', '기준소득월액', '659만원', '637만원', '7월 인상', '실수령액'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '2026년 7월 국민연금 인상 후 월급 실수령액 변화',
+    name: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
     description:
-      '7월부터 국민연금 인상(9.0→9.5%, 국민연금법 §88), 기준소득월액 상한(637만→659만원 인상). 월급 300만~800만원 기준 정확한 추가 공제액 시뮬레이션.',
+      '2026년 7월 국민연금 기준소득월액 상한 637만원에서 659만원 인상(국민연금법 시행령 §5). 월급 659만원 이상이면 공제액이 월 1만 450원 늘어납니다. 요율 9.5% 인상은 2026년 1월에 이미 적용됐습니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -136,320 +143,266 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '2026년 7월 국민연금 인상 후 월급 변화' },
+                    { name: '2026년 7월 국민연금 상한액 인상' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">근로 · 8분 읽기 · 2026-06-29</p>
+                <p className="mb-2 text-caption text-text-tertiary">근로 · 8분 읽기 · 2026-10-14 갱신</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  2026년 7월 국민연금 인상 후 월급 실수령액 변화
+                  2026년 7월 국민연금 상한액 인상, 실수령액 변화
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  2026년 7월 1일부터 국민연금 요율이 9.0%에서 9.5%로 인상됩니다(국민연금법 §88).
-                  근로자 부담률도 4.5%에서 4.75%로 올라가며, 기준소득월액 상한선도 637만원에서 659만원으로 조정됩니다.
-                  월급에서 공제되는 4대보험료가 얼마나 달라지는지 정확히 계산해 봅시다.
+                  2026년 7월 1일부터 국민연금 기준소득월액 상한이 637만원에서 659만원으로, 하한이 40만원에서 41만원으로 올랐습니다(국민연금법 시행령 §5).
+                  요율 자체는 7월이 아니라 2026년 1월 1일에 이미 9.0%에서 9.5%로(근로자 부담 4.5%에서 4.75%로) 인상된 상태입니다(국민연금법 §88).
+                  7월에 공제액이 바뀌는 사람은 월급 659만원 이상 고소득자와 월 보수 41만원 미만 단시간 근로자뿐입니다.
                 </p>
               </header>
 
+              {/* 정정 안내 */}
+              <section aria-label="정정 안내" className="card bg-card border-l-4 border-l-danger-500 p-4 text-sm">
+                <p className="font-semibold mb-1">정정 안내 (2026-10-14)</p>
+                <p className="text-text-secondary">
+                  이 글의 이전 버전은 2026년 7월에 국민연금 요율이 9.0%에서 9.5%로 올랐다고 썼지만, 요율 인상은 2026년 1월 1일에 이미 적용된 사실과 다릅니다.
+                  7월 변경은 기준소득월액 상한(637만원에서 659만원)과 하한(40만원에서 41만원)뿐이어서 2026-10-14에 전체 내용을 사실에 맞게 수정했습니다.
+                </p>
+              </section>
+
               {/* Structured Summary */}
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
-                <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">2026년 7월 국민연금 인상 요약</h2>
+                <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">2026년 7월 국민연금 변경 요약</h2>
                 <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">국민연금 요율 변화 (국민연금법 §88)</caption>
+                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">7월에 실제로 바뀐 것 (국민연금법 시행령 §5)</caption>
                   <thead>
                     <tr className="border-b border-border-base">
                       <th scope="col" className="px-3 py-2 text-left font-semibold">항목</th>
                       <th scope="col" className="px-3 py-2 text-center font-semibold">1~6월</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">7월~12월</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">7~12월</th>
                       <th scope="col" className="px-3 py-2 text-center font-semibold">변화</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">국민연금(총)</td>
-                      <td className="px-3 py-2 text-center"><strong>9.0%</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>9.5%</strong></td>
-                      <td className="px-3 py-2 text-center text-highlight-500">+0.5%p</td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">근로자 부담</td>
-                      <td className="px-3 py-2 text-center"><strong>4.5%</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>4.75%</strong></td>
-                      <td className="px-3 py-2 text-center text-highlight-500">+0.25%p</td>
-                    </tr>
-                    <tr>
                       <td className="px-3 py-2 font-semibold">기준소득월액 상한</td>
                       <td className="px-3 py-2 text-center"><strong>637만원</strong></td>
                       <td className="px-3 py-2 text-center"><strong>659만원</strong></td>
                       <td className="px-3 py-2 text-center text-highlight-500">+22만원</td>
                     </tr>
+                    <tr className="border-b border-border-base">
+                      <td className="px-3 py-2 font-semibold">기준소득월액 하한</td>
+                      <td className="px-3 py-2 text-center"><strong>40만원</strong></td>
+                      <td className="px-3 py-2 text-center"><strong>41만원</strong></td>
+                      <td className="px-3 py-2 text-center text-highlight-500">+1만원</td>
+                    </tr>
+                    <tr className="border-b border-border-base">
+                      <td className="px-3 py-2 font-semibold">국민연금 요율(총)</td>
+                      <td className="px-3 py-2 text-center"><strong>9.5%</strong></td>
+                      <td className="px-3 py-2 text-center"><strong>9.5%</strong></td>
+                      <td className="px-3 py-2 text-center">변화 없음</td>
+                    </tr>
+                    <tr>
+                      <td className="px-3 py-2 font-semibold">근로자 부담</td>
+                      <td className="px-3 py-2 text-center"><strong>4.75%</strong></td>
+                      <td className="px-3 py-2 text-center"><strong>4.75%</strong></td>
+                      <td className="px-3 py-2 text-center">변화 없음</td>
+                    </tr>
                   </tbody>
                 </table>
+                <p className="text-xs text-text-tertiary mt-2">요율 9.5% 인상은 2026년 1월 1일부터 이미 적용 중이며, 7월 변경 사항이 아닙니다(국민연금법 §88).</p>
               </section>
 
               {/* TL;DR */}
               <section className="card bg-card p-3">
                 <h2 className="mb-2 text-xs font-semibold uppercase tracking-wider text-primary-500">한눈에 보기</h2>
                 <ul className="space-y-1 text-sm" data-speakable>
-                  <li>국민연금 근로자 부담 4.5% → 4.75% (0.25%p 인상)</li>
-                  <li>월급 300만원 기준 월 7,500원 추가 공제</li>
-                  <li>월급 500만원 기준 월 12,500원 추가 공제</li>
-                  <li>기준소득월액 상한선 637만 → 659만원 인상</li>
-                  <li>건강보험·고용보험·산재보험은 7월 변동 없음</li>
-                  <li>연봉협상 시 1~6월(4.5%) + 7~12월(4.75%) 구분 필수</li>
+                  <li>7월에 바뀐 것은 요율이 아니라 기준소득월액 상한(637만원에서 659만원)과 하한(40만원에서 41만원)</li>
+                  <li>요율 4.5%에서 4.75% 인상은 2026년 1월 1일부터 이미 적용 중</li>
+                  <li>월급 659만원 이상 소득자: 공제액이 월 1만 450원 증가</li>
+                  <li>월급 650만원처럼 637만과 659만 사이: 공제액이 월 6,175원 증가</li>
+                  <li>월급 637만원 이하: 7월 공제액 변화 없음</li>
+                  <li>월 보수 40만원대 단시간 근로자: 하한 인상으로 소폭 증가(예: 40만원이면 월 475원)</li>
                 </ul>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">국민연금 인상, 2026년 단계적 개혁의 첫 단계</h2>
+                <h2 className="text-2xl font-bold">Q. 2026년 7월에 국민연금 요율이 올랐나요?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  국민연금 재정 안정을 위한 2026년 개혁의 일환으로, <strong>7월 1일부터 국민연금 요율이 9.0%에서 9.5%로 인상</strong>됩니다(국민연금법 §88).
-                  근로자가 부담하는 비율은 4.5%에서 4.75%로 올라갑니다.
-                  이는 1~6월까지만 기존 요율이 적용되고, 7월부터는 새로운 요율이 적용된다는 뜻입니다.
+                  요율은 7월이 아니라 1월에 이미 올랐습니다. 2025년 9.0%(근로자 4.5%)에서 2026년 1월 1일부터 9.5%(근로자 4.75%)로 인상됐습니다(국민연금법 §88).
+                  2025년 3월 국민연금법 개정으로 2033년까지 매년 0.5%p씩 단계적으로 올라가는 첫 해입니다.
                 </p>
                 <p className="text-text-secondary leading-relaxed">
-                  동시에 기준소득월액 상한선도 조정됩니다.
-                  1~6월에는 637만 원, 7월부터는 659만 원입니다.
-                  고소득자의 경우 이 상한선 인상이 추가 공제액을 결정하게 됩니다.
+                  7월에 바뀐 것은 요율이 아니라 <strong>기준소득월액 상한선과 하한선</strong>입니다.
+                  상한은 637만원에서 659만원으로, 하한은 40만원에서 41만원으로 조정됐습니다(국민연금법 시행령 §5, 보건복지부 고시).
+                  이 변화는 상한·하한 구간에 걸친 사람에게만 공제액 변화를 가져옵니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">핵심: 누가 얼마나 부담이 증가하나?</p>
-                  <ul className="space-y-1 text-text-secondary">
-                    <li><strong>월급 300만원:</strong> 300만 × 0.25% = 월 7,500원 추가 공제</li>
-                    <li><strong>월급 500만원:</strong> 500만 × 0.25% = 월 12,500원 추가 공제</li>
-                    <li><strong>월급 700만원(상한 초과):</strong> 1~6월 637만×4.5% → 7~12월 659만×4.75%, 월 약 26,375원 추가(상한 인상 포함)</li>
-                  </ul>
+                  <p className="font-semibold mb-1">주의: 흔한 오해</p>
+                  <p className="text-text-secondary">
+                    "7월에 국민연금이 9.5%로 오른다"는 뉴스·블로그 글이 많지만, 요율은 1월에 이미 올랐습니다.
+                    7월 급여명세서에서 공제액이 바뀌었다면 상한선 인상(월급 659만원 이상인 경우) 때문이지 요율 때문이 아닙니다.
+                  </p>
                 </div>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월급 300만원 기준, 1~6월 vs 7~12월 비교</h2>
+                <h2 className="text-2xl font-bold">Q. 월급 637만원 이하라면 7월에 뭐가 바뀌나요?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  월급 300만원을 기준으로 1~6월과 7~12월의 4대보험료 공제액을 정확히 비교해 봅시다.
-                  국민연금 변화가 가장 크지만, 건강보험·고용보험·산재보험은 변하지 않습니다.
+                  월급 637만원 이하라면 7월에 바뀌는 공제액이 없습니다. 상한선 아래라 상한 영향을 받지 않고, 요율은 1월부터 이미 4.75%가 적용 중이기 때문입니다.
                 </p>
                 <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">월급 300만원 기준 4대보험료 공제액 비교</caption>
+                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">월급 300만원 기준 국민연금 공제액 추이 (단순 계산 예시)</caption>
                   <thead>
                     <tr className="border-b border-border-base">
-                      <th scope="col" className="px-3 py-2 text-left font-semibold">항목</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">1~6월</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">7~12월</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">월차</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">국민연금</td>
-                      <td className="px-3 py-2 text-center text-xs">300만 × 4.5%</td>
-                      <td className="px-3 py-2 text-center text-xs">300만 × 4.75%</td>
-                      <td className="px-3 py-2 text-center"><strong>+7,500원</strong></td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 text-xs font-semibold"></td>
-                      <td className="px-3 py-2 text-center"><strong>13만 5,000원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>14만 2,500원</strong></td>
-                      <td className="px-3 py-2 text-center"></td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">건강보험</td>
-                      <td className="px-3 py-2 text-center"><strong>10만 6,350원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>10만 6,350원</strong></td>
-                      <td className="px-3 py-2 text-center">무</td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">장기요양</td>
-                      <td className="px-3 py-2 text-center"><strong>1만 3,772원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>1만 3,772원</strong></td>
-                      <td className="px-3 py-2 text-center">무</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2 font-semibold">고용보험</td>
-                      <td className="px-3 py-2 text-center"><strong>2만 7,000원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>2만 7,000원</strong></td>
-                      <td className="px-3 py-2 text-center">무</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p className="font-semibold text-center bg-card p-3 text-lg mt-3">
-                  <strong>1~6월 합계: 약 28만 2,100원 | 7~12월 합계: 약 28만 9,600원 | 월 차이: 7,500원</strong>
-                </p>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월급 500만원 기준, 기준소득월액 상한선 미적용</h2>
-                <p className="text-text-secondary leading-relaxed" data-speakable>
-                  월급 500만원은 기준소득월액 상한선(1~6월 637만, 7월~ 659만)보다 낮으므로, 전액 기준으로 국민연금료가 계산됩니다.
-                </p>
-                <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">월급 500만원 기준 4대보험료 공제액 비교</caption>
-                  <thead>
-                    <tr className="border-b border-border-base">
-                      <th scope="col" className="px-3 py-2 text-left font-semibold">항목</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">1~6월</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">7~12월</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">월차</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">국민연금</td>
-                      <td className="px-3 py-2 text-center"><strong>22만 5,000원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>23만 7,500원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>+12,500원</strong></td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">건강보험</td>
-                      <td className="px-3 py-2 text-center"><strong>17만 7,250원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>17만 7,250원</strong></td>
-                      <td className="px-3 py-2 text-center">무</td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">장기요양</td>
-                      <td className="px-3 py-2 text-center"><strong>2만 2,953원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>2만 2,953원</strong></td>
-                      <td className="px-3 py-2 text-center">무</td>
-                    </tr>
-                    <tr>
-                      <td className="px-3 py-2 font-semibold">고용보험</td>
-                      <td className="px-3 py-2 text-center"><strong>4만 5,000원</strong></td>
-                      <td className="px-3 py-2 text-center"><strong>4만 5,000원</strong></td>
-                      <td className="px-3 py-2 text-center">무</td>
-                    </tr>
-                  </tbody>
-                </table>
-                <p className="font-semibold text-center bg-card p-3 text-lg mt-3">
-                  <strong>1~6월 합계: 약 47만 203원 | 7~12월 합계: 약 48만 2,703원 | 월 차이: 12,500원</strong>
-                </p>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold">월급 700만원 기준, 기준소득월액 상한선 적용</h2>
-                <p className="text-text-secondary leading-relaxed" data-speakable>
-                  월급 700만원은 기준소득월액 상한선을 초과합니다.
-                  1~6월에는 637만원, 7월부터는 659만원을 상한으로 국민연금료가 계산되며, 초과분에 대해서는 공제되지 않습니다.
-                </p>
-                <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">상한선 적용 계산</p>
-                  <ul className="space-y-1 text-text-secondary">
-                    <li><strong>1~6월:</strong> 637만(상한) × 4.5% = 28만 6,650원</li>
-                    <li><strong>7월~:</strong> 659만(상한) × 4.75% = 31만 3,025원</li>
-                    <li><strong>월 차이:</strong> 31만 3,025 - 28만 6,650 = 2만 6,375원</li>
-                    <li><strong>설명:</strong> 700만 × 0.25%(=17,500원)로 단순 계산하면 안 됩니다. 상한이 637만→659만으로 함께 올라, 요율·상한 인상이 모두 반영되어 월 26,375원이 늘어납니다.</li>
-                  </ul>
-                </div>
-                <p className="text-sm text-text-tertiary mt-3">
-                  주의: 고소득자의 경우 상한선 인상(637만→659만)의 영향도 받습니다. 단순히 0.25%p만 봐서는 안 됩니다.
-                </p>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연간 누적 효과, 상반기 vs 하반기</h2>
-                <p className="text-text-secondary leading-relaxed" data-speakable>
-                  월급 300만원 기준으로 연간 누적 효과를 계산하면, 7월 인상이 얼마나 중요한지 명확히 보입니다.
-                </p>
-                <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">연간 국민연금 공제액 누적 (월급 300만원, 2026년)</caption>
-                  <thead>
-                    <tr className="border-b border-border-base">
-                      <th scope="col" className="px-3 py-2 text-left font-semibold">구간</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">개월수</th>
+                      <th scope="col" className="px-3 py-2 text-left font-semibold">시점</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">계산</th>
                       <th scope="col" className="px-3 py-2 text-center font-semibold">월 공제액</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">소계</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">1~6월(4.5%)</td>
-                      <td className="px-3 py-2 text-center">6개월</td>
-                      <td className="px-3 py-2 text-center">13만 5,000원</td>
-                      <td className="px-3 py-2 text-center"><strong>81만원</strong></td>
+                      <td className="px-3 py-2 font-semibold">2025년</td>
+                      <td className="px-3 py-2 text-center text-xs">300만 × 4.5%</td>
+                      <td className="px-3 py-2 text-center"><strong>13만 5,000원</strong></td>
                     </tr>
                     <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">7~12월(4.75%)</td>
-                      <td className="px-3 py-2 text-center">6개월</td>
-                      <td className="px-3 py-2 text-center">14만 2,500원</td>
-                      <td className="px-3 py-2 text-center"><strong>85만 5,000원</strong></td>
+                      <td className="px-3 py-2 font-semibold">2026년 1월부터</td>
+                      <td className="px-3 py-2 text-center text-xs">300만 × 4.75%</td>
+                      <td className="px-3 py-2 text-center"><strong>14만 2,500원</strong></td>
                     </tr>
                     <tr>
-                      <td className="px-3 py-2 font-semibold">연간 합계</td>
-                      <td className="px-3 py-2 text-center">12개월</td>
-                      <td className="px-3 py-2 text-center">평균 13만 8,750원</td>
-                      <td className="px-3 py-2 text-center"><strong>166만 5,000원</strong></td>
+                      <td className="px-3 py-2 font-semibold">2026년 7월부터</td>
+                      <td className="px-3 py-2 text-center text-xs">300만 × 4.75%</td>
+                      <td className="px-3 py-2 text-center"><strong>14만 2,500원 (변화 없음)</strong></td>
                     </tr>
                   </tbody>
                 </table>
                 <p className="text-sm text-text-secondary mt-3">
-                  상반기 6개월은 4.5%, 하반기 6개월은 4.75%가 적용되므로, 평년도(12개월 모두 4.5%)보다 약 45,000원 추가 부담합니다.
+                  2026년 1월 요율 인상으로 월 7,500원 더 공제됐지만, 7월 상한 인상은 이 월급대에 영향이 없습니다.
+                  연말정산이나 전년 대비 월급 비교를 할 때는 2025년과 2026년 요율 차이를 반드시 반영해야 합니다.
                 </p>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">연봉협상 시 주의사항, "7월 경계"를 반드시 고려하세요</h2>
+                <h2 className="text-2xl font-bold">Q. 월급 659만원 이상이면 7월에 얼마가 늘어나나요?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  2026년 연봉협상에서 가장 중요한 포인트는 <strong>1~6월과 7~12월의 세율 차이</strong>입니다.
-                  단순히 월급 × 12를 계산하면 실제 연간 실수령액보다 많게 계산할 수 있습니다.
+                  월 1만 450원 추가 공제됩니다. 상한선 때문에 월급 전체가 아닌 상한액에만 요율이 적용되는데, 상한이 22만원 오르면서 공제액도 함께 늘어납니다.
                 </p>
                 <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
-                  <p className="font-semibold mb-1">흔한 실수</p>
-                  <p className="text-text-secondary mb-2">월급 300만 × 12개월 = 3,600만원 연봉</p>
-                  <p className="text-text-secondary mb-3">이를 4대보험 30% 공제로 계산 → 월평균 공제액 100만원 추정... 오류!</p>
-                  <p className="font-semibold mb-1">올바른 계산</p>
+                  <p className="font-semibold mb-1">단순 계산 예시 (월급 659만원 이상, 예: 700만원)</p>
                   <ul className="space-y-1 text-text-secondary">
-                    <li>상반기(1~6월): 월 300만 × 6개월 = 1,800만원</li>
-                    <li>하반기(7~12월): 월 300만 × 6개월 = 1,800만원</li>
-                    <li>상반기 4대보험: 약 169만 2,600원</li>
-                    <li>하반기 4대보험: 약 173만 7,600원</li>
-                    <li><strong>합계 공제: 약 343만원, 월 평균 28만 5,800원</strong></li>
+                    <li><strong>1~6월:</strong> 637만원(상한) × 4.75% = 302,575원</li>
+                    <li><strong>7~12월:</strong> 659만원(상한) × 4.75% = 313,025원</li>
+                    <li><strong>월 차이:</strong> 313,025원에서 302,575원을 뺀 값, 1만 450원</li>
+                    <li><strong>하반기 6개월 추가 부담:</strong> 1만 450원 × 6개월, 6만 2,700원</li>
                   </ul>
                 </div>
+                <p className="text-sm text-text-tertiary mt-3">
+                  주의: 월급이 659만원을 초과해도 공제 기준은 659만원 상한까지입니다. 즉, 월급이 1,000만원이든 659만원이든 7월 이후 공제액은 모두 313,025원으로 같습니다.
+                  단순 계산 예시이며, 실제 공제액은 원 단위 미만 절사 등 세부 규정에 따라 수원 단위 차이가 날 수 있습니다.
+                </p>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">기준소득월액 상한선 인상의 의미</h2>
+                <h2 className="text-2xl font-bold">Q. 월급 650만원이면 7월에 어떻게 되나요?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  기준소득월액 상한선이 637만→659만원으로 22만원 인상되었습니다.
-                  이는 연봉이 높은 직원들에게 긍정적이지만, 동시에 새로운 계산 기준점이 됩니다.
+                  월 6,175원 추가 공제됩니다. 1~6월에는 상한 637만원이 적용되어 302,575원이 공제됐지만, 7월부터 상한이 659만원으로 올라 월급 전액 650만원이 기준이 됩니다.
                 </p>
                 <table className="w-full border-collapse text-sm">
-                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">월급 수준별 기준소득월액 상한선 영향</caption>
+                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">월급 637만~659만원 구간 7월 변화 (단순 계산 예시)</caption>
                   <thead>
                     <tr className="border-b border-border-base">
                       <th scope="col" className="px-3 py-2 text-left font-semibold">월급</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">1~6월 기준</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">7월~ 기준</th>
-                      <th scope="col" className="px-3 py-2 text-center font-semibold">영향</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">1~6월 공제액</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">7~12월 공제액</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">월 차이</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">400만원</td>
-                      <td className="px-3 py-2 text-center">400만 × 4.5%</td>
-                      <td className="px-3 py-2 text-center">400만 × 4.75%</td>
-                      <td className="px-3 py-2 text-center text-xs">상한 미적용, 0.25%p만</td>
+                      <td className="px-3 py-2 font-semibold">640만원</td>
+                      <td className="px-3 py-2 text-center">637만 × 4.75% = 302,575원</td>
+                      <td className="px-3 py-2 text-center">640만 × 4.75% = 304,000원</td>
+                      <td className="px-3 py-2 text-center"><strong>+1,425원</strong></td>
                     </tr>
                     <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">600만원</td>
-                      <td className="px-3 py-2 text-center">600만 × 4.5%</td>
-                      <td className="px-3 py-2 text-center">600만 × 4.75%</td>
-                      <td className="px-3 py-2 text-center text-xs">상한 미적용, 0.25%p만</td>
-                    </tr>
-                    <tr className="border-b border-border-base">
-                      <td className="px-3 py-2 font-semibold">700만원</td>
-                      <td className="px-3 py-2 text-center">637만 × 4.5%</td>
-                      <td className="px-3 py-2 text-center">659만 × 4.75%</td>
-                      <td className="px-3 py-2 text-center text-xs"><strong>상한선 +22만</strong></td>
+                      <td className="px-3 py-2 font-semibold">650만원</td>
+                      <td className="px-3 py-2 text-center">637만 × 4.75% = 302,575원</td>
+                      <td className="px-3 py-2 text-center">650만 × 4.75% = 308,750원</td>
+                      <td className="px-3 py-2 text-center"><strong>+6,175원</strong></td>
                     </tr>
                     <tr>
-                      <td className="px-3 py-2 font-semibold">800만원</td>
-                      <td className="px-3 py-2 text-center">637만 × 4.5%</td>
-                      <td className="px-3 py-2 text-center">659만 × 4.75%</td>
-                      <td className="px-3 py-2 text-center text-xs"><strong>상한선 +22만</strong></td>
+                      <td className="px-3 py-2 font-semibold">659만원</td>
+                      <td className="px-3 py-2 text-center">637만 × 4.75% = 302,575원</td>
+                      <td className="px-3 py-2 text-center">659만 × 4.75% = 313,025원</td>
+                      <td className="px-3 py-2 text-center"><strong>+1만 450원</strong></td>
                     </tr>
                   </tbody>
                 </table>
+                <p className="text-sm text-text-secondary mt-3">
+                  이 구간은 7월에 "상한에 걸리던 사람이 상한이 올라가 전액 기준으로 바뀌는" 영역입니다. 월급이 상한에 가까울수록 증가폭이 커집니다.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-bold">Q. 하한 40만원에서 41만원 인상, 누가 영향 받나요?</h2>
+                <p className="text-text-secondary leading-relaxed" data-speakable>
+                  월 보수가 41만원 미만인 단시간 근로자가 영향을 받습니다. 월 보수가 아무리 적어도 기준소득월액은 하한 이상으로 책정되기 때문에, 하한이 오르면 그 구간의 공제액이 함께 오릅니다.
+                </p>
+                <div className="border-l-4 border-l-highlight-500 bg-card pl-4 py-3 text-sm">
+                  <p className="font-semibold mb-1">단순 계산 예시 (월 보수 40만원 단시간 근로자)</p>
+                  <ul className="space-y-1 text-text-secondary">
+                    <li><strong>1~6월:</strong> 40만원(하한) × 4.75% = 19,000원</li>
+                    <li><strong>7~12월:</strong> 41만원(하한) × 4.75% = 19,475원</li>
+                    <li><strong>월 차이:</strong> 19,475원에서 19,000원을 뺀 값, 475원</li>
+                  </ul>
+                </div>
                 <p className="text-sm text-text-tertiary mt-3">
-                  주의: 월급 600만원 이하는 기준소득월액 상한선이 아직 미적용되므로, 0.25%p 인상만 반영하면 됩니다.
-                  700만원 이상은 상한선 인상이 추가 영향을 미칩니다.
+                  주의: 월 보수가 41만원 이상인 사람은 하한 영향이 없습니다. 하한은 "실제 월 보수가 하한보다 낮아도 하한만큼 보험료를 낸다"는 뜻이지, "모든 사람이 하한 금액을 낸다"는 뜻이 아닙니다.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-bold">Q. 1월 요율 인상, 월급 300만원 기준 얼마였나요?</h2>
+                <p className="text-text-secondary leading-relaxed" data-speakable>
+                  월 7,500원 더 공제됐습니다. 2026년 1월에 요율이 4.5%에서 4.75%로 오르면서 월급 300만원 기준으로 135,000원에서 142,500원으로 바뀐 결과입니다.
+                </p>
+                <table className="w-full border-collapse text-sm">
+                  <caption className="mb-2 text-left text-xs font-semibold text-text-secondary">2026년 1월 요율 인상 영향 (근로자 부담 기준, 단순 계산 예시)</caption>
+                  <thead>
+                    <tr className="border-b border-border-base">
+                      <th scope="col" className="px-3 py-2 text-left font-semibold">월급</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">2025년(4.5%)</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">2026년(4.75%)</th>
+                      <th scope="col" className="px-3 py-2 text-center font-semibold">월 증가</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr className="border-b border-border-base">
+                      <td className="px-3 py-2 font-semibold">200만원</td>
+                      <td className="px-3 py-2 text-center">9만원</td>
+                      <td className="px-3 py-2 text-center">9만 5,000원</td>
+                      <td className="px-3 py-2 text-center"><strong>+5,000원</strong></td>
+                    </tr>
+                    <tr className="border-b border-border-base">
+                      <td className="px-3 py-2 font-semibold">300만원</td>
+                      <td className="px-3 py-2 text-center">13만 5,000원</td>
+                      <td className="px-3 py-2 text-center">14만 2,500원</td>
+                      <td className="px-3 py-2 text-center"><strong>+7,500원</strong></td>
+                    </tr>
+                    <tr className="border-b border-border-base">
+                      <td className="px-3 py-2 font-semibold">400만원</td>
+                      <td className="px-3 py-2 text-center">18만원</td>
+                      <td className="px-3 py-2 text-center">19만원</td>
+                      <td className="px-3 py-2 text-center"><strong>+1만원</strong></td>
+                    </tr>
+                    <tr>
+                      <td className="px-3 py-2 font-semibold">500만원</td>
+                      <td className="px-3 py-2 text-center">22만 5,000원</td>
+                      <td className="px-3 py-2 text-center">23만 7,500원</td>
+                      <td className="px-3 py-2 text-center"><strong>+1만 2,500원</strong></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <p className="text-sm text-text-secondary mt-3">
+                  이 인상분은 2026년 1월 급여명세서부터 이미 반영됐습니다. 7월에 "요율이 올라서 월급이 줄었다"는 느낌이 든다면, 사실은 1월부터 쭉 이어진 공제 수준을 뒤늦게 인식한 것일 가능성이 큽니다.
                 </p>
               </section>
 
@@ -457,42 +410,45 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                 <h2 className="text-2xl font-bold">자주 하는 실수 4가지</h2>
                 <ol className="space-y-2 text-sm">
                   <li>
-                    <strong>7월 인상을 무시하고 월급 × 12만 계산하기</strong>
+                    <strong>7월에 요율이 올랐다고 믿기</strong>
                     <br />
-                    <span className="text-text-tertiary">월 300만 × 12 = 3,600만이 아니라, (월 300만 × 6 + 1~6월 4대보험) + (월 300만 × 6 + 7~12월 4대보험)으로 나눠 계산해야 정확한 연간 실수령액을 알 수 있습니다.</span>
+                    <span className="text-text-tertiary">요율 인상(9.0%에서 9.5%, 근로자 4.5%에서 4.75%)은 2026년 1월 1일부터 이미 적용 중입니다. 7월에 바뀐 것은 기준소득월액 상한과 하한뿐입니다.</span>
                   </li>
                   <li>
-                    <strong>기준소득월액 상한선(659만)을 넘는 고소득 월급 그대로 계산하기</strong>
+                    <strong>월급 300만원인데 7월에 공제액이 더 늘 거라고 걱정하기</strong>
                     <br />
-                    <span className="text-text-tertiary">월급이 700만원이면 국민연금료는 659만 × 4.75%로만 계산되지, 700만 × 4.75%가 아닙니다. 초과분 41만은 공제되지 않습니다.</span>
+                    <span className="text-text-tertiary">월급이 637만원 이하라면 7월 공제액 변화가 없습니다. 상한선 아래라 상한 영향을 받지 않고, 요율은 1월부터 그대로이기 때문입니다.</span>
                   </li>
                   <li>
-                    <strong>6월과 7월의 급여명세서를 다르게 보지 않기</strong>
+                    <strong>고소득자가 월급 전체에 요율을 곱해 계산하기</strong>
                     <br />
-                    <span className="text-text-tertiary">급여명세서에는 실제 국민연금 공제액이 명시됩니다. 6월은 4.5% 기준, 7월부터는 4.75% 기준으로 다르게 표시될 것입니다. 이를 확인해야 자신의 급여를 정확히 파악할 수 있습니다.</span>
+                    <span className="text-text-tertiary">월급이 659만원을 초과해도 국민연금 공제 기준은 상한 659만원까지입니다. 월급 1,000만원이어도 7월 이후 공제액은 659만×4.75%=313,025원으로 동일합니다.</span>
                   </li>
                   <li>
-                    <strong>건강보험·고용보험 변동 없음을 놓치기</strong>
+                    <strong>건강보험·고용보험이 7월에 바뀐다고 혼동하기</strong>
                     <br />
-                    <span className="text-text-tertiary">7월에는 국민연금만 인상됩니다. 건강보험(3.545%), 장기요양보험(12.95%), 고용보험(0.9%)은 2026년 변동이 없으므로 혼동하지 않아야 합니다.</span>
+                    <span className="text-text-tertiary">7월 변경은 국민연금 상한·하한뿐입니다. 건강보험(근로자 3.595%), 장기요양(건강보험료의 13.14%), 고용보험(근로자 0.9%)은 2026년 7월 변동이 없습니다.</span>
                   </li>
                 </ol>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">관련 법령 & 공식 출처</h2>
+                <h2 className="text-2xl font-bold">관련 법령과 공식 출처</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
-                    국민연금법 제88조 (보험료율): <a href="https://law.go.kr" rel="nofollow" className="text-primary-500 underline">law.go.kr</a>
+                    국민연금법 §88 (보험료율): <a href="https://law.go.kr" rel="nofollow" className="text-primary-500 underline">law.go.kr</a>
                   </li>
                   <li>
-                    국민연금공단 공식 요율 안내: <a href="https://www.nps.or.kr" rel="nofollow" className="text-primary-500 underline">https://www.nps.or.kr</a>
+                    국민연금법 시행령 §5 (기준소득월액 상한·하한): <a href="https://law.go.kr" rel="nofollow" className="text-primary-500 underline">law.go.kr</a>
                   </li>
                   <li>
-                    보건복지부 기준소득월액 고시 (2026): <a href="https://www.mohw.go.kr" rel="nofollow" className="text-primary-500 underline">https://www.mohw.go.kr</a>
+                    국민연금공단 공식 요율 안내: <a href="https://www.nps.or.kr" rel="nofollow" className="text-primary-500 underline">www.nps.or.kr</a>
                   </li>
                   <li>
-                    국민건강보험공단: <a href="https://www.nhis.or.kr" rel="nofollow" className="text-primary-500 underline">https://www.nhis.or.kr</a>
+                    보건복지부 기준소득월액 고시 (2026): <a href="https://www.mohw.go.kr" rel="nofollow" className="text-primary-500 underline">www.mohw.go.kr</a>
+                  </li>
+                  <li>
+                    국민건강보험공단: <a href="https://www.nhis.or.kr" rel="nofollow" className="text-primary-500 underline">www.nhis.or.kr</a>
                   </li>
                 </ul>
               </section>
@@ -500,31 +456,31 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">관련 가이드 & 계산기</h2>
+                <h2 className="text-2xl font-bold">관련 가이드와 계산기</h2>
                 <ul className="space-y-2 text-sm">
                   <li>
                     <Link href="/calculator/salary/" className="font-semibold text-primary-500 hover:underline">
                       연봉 실수령액 계산기
                     </Link>
-                    {'4대보험료·소득세 자동 반영, 7월 인상 미리 계산'}
+                    {' 4대보험료와 소득세를 자동 반영해 2026년 세후 월급을 계산합니다.'}
                   </li>
                   <li>
                     <Link href="/guide/four-major-insurance-rates-2026/" className="font-semibold text-primary-500 hover:underline">
                       2026년 4대보험 요율 종합 가이드
                     </Link>
-                    {'국민연금·건강보험·고용보험·산재보험 요율표'}
+                    {' 국민연금, 건강보험, 고용보험, 산재보험 요율을 한 번에 정리.'}
                   </li>
                   <li>
-                    <Link href="/guide/salary-negotiation-take-home/" className="font-semibold text-primary-500 hover:underline">
-                      연봉협상 전 실수령액 정확 시뮬레이션
+                    <Link href="/guide/national-pension-premium-2026/" className="font-semibold text-primary-500 hover:underline">
+                      2026년 국민연금 보험료 가이드
                     </Link>
-                    {'세전·세후, 상여금, 비과세 수당 반영'}
+                    {' 요율 9.5% 인상 배경과 2033년까지 단계적 인상 일정.'}
                   </li>
                   <li>
                     <Link href="/category/work/" className="font-semibold text-primary-500 hover:underline">
                       근로 계산기 모음
                     </Link>
-                    {'연봉, 퇴직금, 4대보험 전체'}
+                    {' 연봉, 퇴직금, 4대보험 전체 계산기.'}
                   </li>
                 </ul>
               </section>
@@ -532,13 +488,13 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
                   <strong>면책조항:</strong> 본 가이드는 참고용이며 법적 효력이 없습니다.
-                  정확한 국민연금료 계산이나 복잡한 급여 문제는 국민연금공단, 회사 인사·급여팀, 세무사·노무사의 상담을 받으시기 바랍니다.
+                  본문의 금액은 단순 계산 예시이며, 실제 공제액은 원 단위 미만 절사 등 세부 규정에 따라 수원 단위 차이가 날 수 있습니다. 정확한 국민연금 공제액이나 복잡한 급여 문제는 국민연금공단, 회사 인사·급여팀, 세무사·노무사의 상담을 받으시기 바랍니다.
                 </p>
               </section>
 
               <section className="space-y-3 border-t border-border-base pt-6">
                 <p className="text-xs text-text-tertiary">
-                  마지막 갱신: 2026-06-29 | 2026년 국민연금법 §88 인상 반영, 기준소득월액 상한선(637만→659만원) 포함
+                  최초 작성: 2026-06-29 | 마지막 갱신: 2026-10-14 | 국민연금법 §88과 시행령 §5 사실관계 전면 정정, 요율 9.5% 인상은 1월 적용·7월 변경은 기준소득월액 상한·하한으로 수정
                 </p>
               </section>
             </article>

@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/national-pension-premium-2026/';
 const DATE_PUBLISHED = '2026-06-13';
-const DATE_MODIFIED = '2026-06-13';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '국민연금 보험료 2026, 계산법·상한액·직장/지역 차이',
@@ -59,17 +59,17 @@ const FAQ_ITEMS = [
   {
     question: '2026년 국민연금 보험료율은 얼마인가요?',
     answer:
-      '2026년 7월부터 국민연금 보험료율은 9%에서 9.5%로 인상됩니다(국민연금법 §88). 2026년 1월~6월까지는 9% 요율이 적용되고, 7월부터 9.5%가 됩니다. 직장가입자는 근로자 4.75%, 사업주 4.75%씩 부담하며, 지역가입자와 임의가입자는 전액 본인이 낸다는 점이 다릅니다. 이후 2027년 10%, 2028년 10.5% 등 매년 0.5%p씩 2033년까지 인상될 예정입니다.',
+      '2026년 1월 1일부터 국민연금 보험료율은 9%에서 9.5%로 인상됐습니다(국민연금법 §88). 2026년 한 해 동안 9.5%가 적용되며, 7월에 바뀌는 것은 기준소득월액 상한일 뿐 보험료율은 그대로입니다. 직장가입자는 근로자 4.75%, 사업주 4.75%씩 부담하고, 지역가입자·임의가입자·임의계속가입자는 9.5% 전액을 본인이 냅니다. 이후 2027년 10%, 2028년 10.5% 등 매년 0.5%p씩 2033년 13%까지 인상될 예정입니다.',
   },
   {
-    question: '월급 3,000만원인 경우 국민연금 보험료는 얼마인가요?',
+    question: '월급 300만원인 경우 국민연금 보험료는 얼마인가요?',
     answer:
-      '기준소득월액 3,000만원 × 9.5% = 285만원입니다. 직장가입자라면 본인이 142만5천원, 회사가 142만5천원을 냅니다. 다만 6월까지는 구 요율(9%)이 적용되므로 270만원, 7월부터 285만원이 됩니다.',
+      '기준소득월액 300만원이면 보험료 총액은 300만원 × 9.5% = 28만5,000원입니다. 간단한 곱셈 계산입니다. 직장가입자는 본인이 4.75%만 부담하므로 매월 300만원 × 4.75% = 14만2,500원이 급여에서 공제되고, 회사가 같은 금액을 추가로 냅니다. 2026년에는 1월부터 12월까지 같은 9.5% 요율이 적용되며, 7월에 보험료율이 다시 바뀌지 않습니다.',
   },
   {
     question: '기준소득월액 상한액이 뭔가요?',
     answer:
-      '월 소득이 일정액 이상이면 그 초과분은 보험료 계산에 반영하지 않는다는 뜻입니다. 2026년 1월~6월 상한액은 637만원, 7월부터 659만원으로 올라갑니다. 예를 들어 월 소득 7,000만원이면 6월까지는 기준소득월액을 637만원으로 고정해서 계산합니다.',
+      '월 소득이 일정액을 넘으면 초과분은 보험료 계산에 반영하지 않는다는 뜻입니다. 상한액은 2026년 1월~6월 637만원, 2026년 7월~2027년 6월 659만원으로 7월에 상향됩니다(보건복지부 고시, 국민연금법 시행령 §5). 보험료율은 2026년 내내 9.5%로 같고, 7월에 바뀌는 것은 상한뿐입니다. 월 소득 700만원인 사람은 6월까지 637만원까지만, 7월부터 659만원까지만 보험료 계산에 반영됩니다.',
   },
   {
     question: '국민연금 상한액을 초과하면 세금을 덜 낼 수 있나요?',
@@ -84,12 +84,12 @@ const FAQ_ITEMS = [
   {
     question: '국민연금 조기수령하면 보험료가 줄어드나요?',
     answer:
-      '아니습니다. 보험료는 가입 중에 내는 것이고, 수령액은 "몇 세에 받을 것인가"로 결정됩니다. 조기수령(60세)하면 월 수령액이 매년 6%, 누적 최대 36% 감액되고, 연기수령(65세~70세)하면 매년 7.2% 증액됩니다. 보험료 납부와 수령액은 별개의 결정입니다.',
+      '아닙니다. 보험료는 가입 중에 내는 것이고, 수령액은 "몇 세에 받기 시작하느냐"로 달라집니다. 조기수령은 1년 앞당길 때마다 월 수령액이 6%씩 줄어 최대 5년(30%) 감액되고, 연기수령은 1년 미룰 때마다 7.2%씩 늘어 최대 5년(36%) 증액됩니다. 보험료 납부와 수령액은 별개의 결정입니다.',
   },
   {
     question: '프리랜서/자영업자는 국민연금을 어떻게 가입하나요?',
     answer:
-      '직장이 없으면 지역가입자로 가입합니다. 국민연금공단에 사업소득(또는 종합소득) 신고 후, 공단에서 산정한 기준에 따라 보험료를 칩니다. 소득이 없거나 낮으면 임의가입(월 최소 약 40만원대)으로 가입할 수도 있습니다. 단, 월 소득 1,000만원 이상의 프리랜서라면 직장가입자로 오인되지 않도록 주의해야 합니다.',
+      '직장이 없으면 지역가입자로 가입합니다. 국민연금공단에 사업소득(또는 종합소득) 신고 후, 공단에서 산정한 기준소득에 따라 보험료가 책정됩니다. 지역가입자는 9.5% 전액을 본인이 부담합니다. 소득이 없거나 낮으면 임의가입으로 가입할 수 있는데, 2026년 기준소득월액 하한 40만원 × 9.5% = 월 3만8,000원이 최저 보험료입니다. 월 소득 1,000만원 이상의 프리랜서라면 사업장 가입 요건을 충족하는지 함께 확인하세요.',
   },
 ] as const;
 
@@ -156,14 +156,14 @@ export default function NationalPensionPremium2026() {
               </header>
 
               <div className="space-y-2 rounded-lg border border-border-base bg-bg-card p-4">
-                <p className="text-sm font-semibold text-text-primary">국민연금 보험료 2026 주요 수치</p>
+                <p className="text-sm font-semibold text-text-primary">국민연금 보험료 2025 vs 2026 변경</p>
                 <table className="w-full text-sm">
-                  <caption className="sr-only">2026년 국민연금 보험료 핵심 정보</caption>
+                  <caption className="sr-only">2025년 vs 2026년 국민연금 보험료율 비교</caption>
                   <thead>
                     <tr className="border-b border-border-base">
                       <th scope="col" className="py-2 text-left font-semibold text-text-primary">항목</th>
-                      <th scope="col" className="py-2 text-right font-semibold text-text-primary">2026년 (1~6월)</th>
-                      <th scope="col" className="py-2 text-right font-semibold text-text-primary">2026년 (7월~)</th>
+                      <th scope="col" className="py-2 text-right font-semibold text-text-primary">2025년</th>
+                      <th scope="col" className="py-2 text-right font-semibold text-text-primary">2026년</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -172,24 +172,22 @@ export default function NationalPensionPremium2026() {
                       <td className="py-2 text-right text-text-primary">9.0%</td>
                       <td className="py-2 text-right text-text-primary">9.5%</td>
                     </tr>
-                    <tr className="border-b border-border-base hover:bg-bg-base">
-                      <td className="py-2 text-text-primary">기준소득월액 상한</td>
-                      <td className="py-2 text-right text-text-primary">637만원</td>
-                      <td className="py-2 text-right text-text-primary">659만원</td>
-                    </tr>
                     <tr className="hover:bg-bg-base">
-                      <td className="py-2 text-text-primary">근로자 부담률</td>
+                      <td className="py-2 text-text-primary">근로자 부담률 (직장)</td>
                       <td className="py-2 text-right text-text-primary">4.5%</td>
                       <td className="py-2 text-right text-text-primary">4.75%</td>
                     </tr>
                   </tbody>
                 </table>
+                <p className="mt-2 text-xs text-text-tertiary">
+                  기준소득월액 상한은 2026년 1월~6월 637만원, 2026년 7월~2027년 6월 659만원으로 7월에만 상향됩니다(국민연금법 시행령 §5, 보건복지부 고시). 보험료율 9.5%는 2026년 1월 1일부터 12월 31일까지 그대로이며, 7월에 바뀌는 것은 상한뿐입니다.
+                </p>
               </div>
 
               <div>
                 <h2 className="mb-3 text-2xl font-bold">2026년 국민연금 보험료율, 정확히 얼마인가?</h2>
                 <p className="mb-4 text-base text-text-primary" data-speakable>
-                  국민연금 보험료율은 2026년 7월부터 <strong>9.5%</strong>로 인상됩니다(국민연금법 제88조). 2026년 1월부터 6월까지는 기존 9.0% 요율이 적용되고, 7월부터 0.5%포인트 올라갑니다. 직장가입자의 경우 근로자가 4.75%, 사업주가 4.75%씩 부담합니다. 지역가입자와 임의가입자는 본인이 전액을 냅니다.
+                  국민연금 보험료율은 2026년 1월 1일부터 <strong>9.5%</strong>로 인상됐습니다(국민연금법 §88). 2025년까지는 9.0%였는데, 2025년 3월 국회를 통과한 연금개혁에 따라 2026년부터 매년 0.5%포인트씩 올라 2033년 13%에 도달합니다. 직장가입자는 근로자가 4.75%, 사업주가 4.75%씩 반반 부담하고, 지역가입자·임의가입자·임의계속가입자는 9.5% 전액을 본인이 냅니다.
                 </p>
                 <RateBarChart
                   title="2026년 4대보험 보험료율 비교"
@@ -203,35 +201,36 @@ export default function NationalPensionPremium2026() {
                   unit="%"
                 />
                 <p className="mt-4 text-sm text-text-secondary">
-                  다만 2026년 이후 매년 0.5%p씩 인상될 예정이므로, 2033년에는 13%까지 올라갑니다. 자세한 인상 일정은 공식 연금개혁안을 참고하세요.
+                  이후 2027년 10.0%, 2028년 10.5%, 매년 0.5%p씩 올라 2033년 13%에 도달할 예정입니다. 자세한 인상 일정은 보건복지부 공식 연금개혁 자료를 참고하세요.
                 </p>
               </div>
 
               <div>
                 <h2 className="mb-3 text-2xl font-bold">월급별 실제 납부액, 이렇게 계산합니다</h2>
                 <p className="mb-4 text-base text-text-primary" data-speakable>
-                  국민연금 보험료는 기준소득월액(급여에서 천원 미만 절사)에 보험료율을 곱해서 구합니다. 직장가입자는 본인 부담분만 급여에서 차감되고, 사업주 부담분은 따로 납부됩니다.
+                  국민연금 보험료는 기준소득월액(급여에서 천원 미만 절사)에 보험료율을 곱해 구합니다. 2026년 1월부터 12월까지 보험료율은 9.5%로 같고, 상한에 걸리지 않는 사람은 1월과 7월 보험료가 똑같습니다. 아래 예시는 간단한 곱셈 계산입니다.
                 </p>
                 <div className="space-y-4">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <p className="mb-2 text-sm font-semibold text-text-primary">예시 1: 월급 3,000만원</p>
+                    <p className="mb-2 text-sm font-semibold text-text-primary">예시 1: 월급 300만원 (상한 아래)</p>
                     <div className="space-y-1 text-sm text-text-primary">
-                      <p>기준소득월액: 3,000만원</p>
-                      <p>보험료(9.5% 적용): 3,000만원 × 9.5% = 285만원</p>
-                      <p className="text-text-secondary">→ 직장가입자 본인 부담: 142만5천원</p>
+                      <p>기준소득월액: 300만원</p>
+                      <p>보험료 총액: 300만원 × 9.5% = 28만5,000원</p>
+                      <p className="text-text-secondary">→ 직장가입자 본인 부담: 300만원 × 4.75% = 14만2,500원</p>
+                      <p className="text-text-secondary">→ 2026년 1월부터 12월까지 매월 같은 금액</p>
                     </div>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <p className="mb-2 text-sm font-semibold text-text-primary">예시 2: 월급 5,000만원 (상한액 초과)</p>
+                    <p className="mb-2 text-sm font-semibold text-text-primary">예시 2: 월급 700만원 (상한 초과)</p>
                     <div className="space-y-1 text-sm text-text-primary">
-                      <p>기준소득월액: 5,000만원 → <strong>659만원</strong>으로 상한액 적용 (2026년 7월~)</p>
-                      <p>보험료(9.5% 적용): 659만원 × 9.5% = 62만6,050원</p>
-                      <p className="text-text-secondary">→ 직장가입자 본인 부담: 31만3,025원</p>
+                      <p>2026년 1~6월: 기준소득월액이 상한 637만원으로 제한 → 637만원 × 9.5% = 60만5,150원 (본인 30만2,575원)</p>
+                      <p>2026년 7월~: 상한이 659만원으로 상향 → 659만원 × 9.5% = 62만6,050원 (본인 31만3,025원)</p>
+                      <p className="text-text-secondary">→ 7월에 바뀌는 것은 상한일 뿐 요율은 9.5%로 그대로</p>
                     </div>
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  주의: 6월까지는 9% 요율이 적용되고, 7월부터 9.5% 요율이 적용됩니다. 상반기와 하반기 금액이 다를 수 있습니다.
+                  주의: 2026년 7월에 기준소득월액 상한만 637만원에서 659만원으로 오릅니다. 보험료율 9.5%는 1월 1일부터 12월 31일까지 같아서, 상한에 걸리지 않는 대부분의 가입자는 1월과 7월 보험료가 똑같습니다.
                 </p>
               </div>
 
@@ -280,25 +279,26 @@ export default function NationalPensionPremium2026() {
               <div>
                 <h2 className="mb-3 text-2xl font-bold">기준소득월액 상한액, 초과하면 어떻게 되나?</h2>
                 <p className="mb-4 text-base text-text-primary" data-speakable>
-                  월 소득이 기준소득월액 상한액을 초과하면, 초과 부분은 보험료 계산에 반영하지 않습니다. 즉, "최대 보험료"가 정해져 있다는 뜻입니다.
+                  월 소득이 기준소득월액 상한액을 넘으면 초과 부분은 보험료 계산에 반영하지 않습니다. 즉, "최대 보험료"가 정해져 있다는 뜻입니다. 2026년에는 보험료율이 1년 내내 9.5%로 같지만, 상한만 7월에 상향됩니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <p className="mb-3 text-sm font-semibold text-text-primary">기준소득월액 상한액 변경</p>
                   <ul className="space-y-2 text-sm text-text-primary">
-                    <li>• <strong>2026년 1월~6월</strong>: 637만원 (최대 보험료: 637만원 × 9% = 57만3천원)</li>
-                    <li>• <strong>2026년 7월~2027년 6월</strong>: 659만원 (최대 보험료: 659만원 × 9.5% = 62만6,050원)</li>
+                    <li><strong>2026년 1월~6월</strong>: 637만원 (최대 보험료: 637만원 × 9.5% = 60만5,150원, 직장 본인 30만2,575원)</li>
+                    <li><strong>2026년 7월~2027년 6월</strong>: 659만원 (최대 보험료: 659만원 × 9.5% = 62만6,050원, 직장 본인 31만3,025원)</li>
                   </ul>
                 </div>
                 <div className="mt-4 space-y-2 rounded-lg border border-border-base bg-bg-card p-4">
-                  <p className="text-sm font-semibold text-text-primary">예시: 월급 1억 원인 경우</p>
+                  <p className="text-sm font-semibold text-text-primary">예시: 월급 1,000만원인 경우</p>
                   <div className="text-sm text-text-primary">
-                    <p className="mb-1">실제 월급: 1억원 → 기준소득월액은 상한 659만원으로 제한</p>
-                    <p>최대 보험료: 659만원 × 9.5% = 62만6,050원</p>
-                    <p className="text-text-secondary">초과분(9,341만원)은 보험료 계산에 영향을 주지 않습니다.</p>
+                    <p className="mb-1">실제 월급: 1,000만원 → 상한에 걸림</p>
+                    <p>2026년 1~6월: 637만원 × 9.5% = 60만5,150원 (본인 30만2,575원)</p>
+                    <p>2026년 7월~: 659만원 × 9.5% = 62만6,050원 (본인 31만3,025원)</p>
+                    <p className="text-text-secondary">상한을 넘은 소득분은 보험료 계산에 영향을 주지 않습니다.</p>
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  주의: 국민연금은 재분배 제도이므로, 고소득자는 상한액으로 보험료를 제한하되 연금 수령 시 일정 기준(최대 연금 한도)을 적용하는 구조입니다.
+                  주의: 국민연금은 재분배 제도이므로, 고소득자는 상한으로 보험료가 제한되는 대신 연금 수령 시에도 상한 범위 안에서 산정됩니다.
                 </p>
               </div>
 
@@ -309,16 +309,18 @@ export default function NationalPensionPremium2026() {
                 </p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <p className="mb-2 text-sm font-semibold text-text-primary">직장인 연봉 5,000만원 예시</p>
+                    <p className="mb-2 text-sm font-semibold text-text-primary">직장인 연봉 5,000만원 예시 (간단 계산)</p>
                     <div className="space-y-1 text-sm text-text-primary">
-                      <p>연간 국민연금 보험료: 월 237만5천원 × 12개월 = 2,850만원 (9.5% 기준)</p>
-                      <p>종합소득세 계산 시 과세표준에서 2,850만원 차감</p>
-                      <p className="text-text-secondary">→ 세율 15% 기준으로 약 427만5천원의 절세 효과</p>
+                      <p>월 보수 약 416만6,000원 (연봉 ÷ 12)</p>
+                      <p>본인 부담 월 보험료: 약 416만6,000원 × 4.75% = 약 19만8,000원</p>
+                      <p>연간 본인 부담 보험료: 약 19만8,000원 × 12 = 약 237만6,000원</p>
+                      <p>종합소득 과세표준에서 237만6,000원 소득공제</p>
+                      <p className="text-text-secondary">→ 소득세율 15% 가정 시 약 35만6,000원 절세 효과</p>
                     </div>
                   </div>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary">
-                  주의: 실제 절세 효과는 종합소득세 구간(누진세율 6~45%)과 다른 공제(근로소득공제, 부양가족공제 등)에 따라 달라집니다. 연말정산 시 국민연금 보험료 영수증을 제출하면 자동으로 공제됩니다.
+                  주의: 소득공제 대상은 근로자 본인 부담분(4.75%)에 한하며, 사업주 부담분은 공제 대상이 아닙니다. 실제 절세 효과는 종합소득세 구간(누진세율 6~45%)과 다른 공제(근로소득공제, 부양가족공제 등)에 따라 달라집니다. 연말정산 시 국민연금 보험료 납부 내역이 자동으로 반영됩니다.
                 </p>
               </div>
 
@@ -338,7 +340,7 @@ export default function NationalPensionPremium2026() {
                     <strong>보험료 납부</strong>: 결정된 기준소득 × 9.5% 월 납부 (전액 본인 부담)
                   </li>
                   <li>
-                    <strong>임의가입 옵션</strong>: 소득이 없거나 낮으면 월 최소 약 40만원대 수준으로 임의가입 가능
+                    <strong>임의가입 옵션</strong>: 소득이 없거나 낮으면 임의가입 가능. 2026년 기준소득월액 하한 40만원 × 9.5% = 월 3만8,000원이 최저 보험료
                   </li>
                 </ul>
                 <p className="mt-4 text-sm text-text-secondary">
@@ -401,7 +403,7 @@ export default function NationalPensionPremium2026() {
 
               <div className="space-y-2 border-t border-border-base pt-6 text-xs text-text-tertiary">
                 <p>
-                  <strong>작성 기준:</strong> 2026년 6월 13일 기준 국민연금공단 공식 자료 및 국민연금법 제88조, 소득세법 제51조의3
+                  <strong>작성 기준:</strong> 2026년 10월 14일 기준 국민연금공단 공식 자료 및 국민연금법 §88, 소득세법 §51의3
                 </p>
                 <p>
                   <strong>법조항 참고:</strong> 국민연금법 §88(보험료율), §73(지역가입자), §54(급여), 소득세법 §51의3(국민연금료 공제), 국민건강보험법 §75

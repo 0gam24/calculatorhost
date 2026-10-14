@@ -16,7 +16,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/business-income-vs-other-income-classification-2026/';
 const DATE_PUBLISHED = '2026-05-28';
-const DATE_MODIFIED = '2026-05-28';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 5월 신고 가이드',
@@ -621,13 +621,13 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 <div className="rounded-lg bg-bg-card p-3 text-sm">
                   <p className="font-semibold text-text-primary">정의</p>
                   <p className="mt-1 text-text-secondary">
-                    사업소득은 국민연금(4.5%) + 건강보험(3.5%)을 강제 가입해야 합니다. 기타소득은 선택 사항이므로 가입하지 않아도
-                    법적으로 문제없습니다. 이것이 국세청의 주요 적발 신호입니다.
+                    사업소득자는 지역가입자로 국민연금 9.5%(전액 본인 부담)에 가입하고, 건강보험은 소득·재산 점수로 보험료가 산정됩니다. 기타소득자는 요건이 되면 근로자인 가족의 피부양자가 되거나 지역가입자로 가입합니다.
+                    이것이 국세청의 주요 적발 신호입니다.
                   </p>
                 </div>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  사업소득자는 개인사업자로 등록하고 국민연금(4개월 가입료 선납)과 건강보험(직업 기준 납부)을 의무 가입합니다. 반면 기타소득자는
-                  근로소득이 있으면 직장 보험 피부양, 근로소득이 없으면 지역가입자로 선택 가입이 가능합니다. 따라서 <strong>4대보험 미납부 = 기타소득 신호</strong>가 되고, <strong>4대보험 납부 = 사업소득 신호</strong>가
+                  사업소득자는 국민연금·건강보험 모두 지역가입자로 가입하고 전액 본인이 부담합니다. 국민연금은 신고 소득에 9.5%를 적용하고, 건강보험은 소득·재산을 점수로 환산해 부과합니다(국민건강보험법 §72). 반면 기타소득자는
+                  근로소득이 있으면 직장 보험 피부양, 근로소득이 없으면 지역가입자로 가입 여부를 결정합니다. 따라서 <strong>지역 건보·국민연금 미납부 = 기타소득 신호</strong>가 되고, <strong>지역가입자 납부 = 사업소득 신호</strong>가
                   됩니다.
                 </p>
 
@@ -645,8 +645,8 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                       <tbody>
                         <tr className="border-b border-border-base">
                           <td className="px-3 py-2 font-semibold">사업소득 (프리랜서)</td>
-                          <td className="px-3 py-2">의무 (4.5%)</td>
-                          <td className="px-3 py-2">의무 (직업군별)</td>
+                          <td className="px-3 py-2">의무 (지역가입자 9.5% 전액)</td>
+                          <td className="px-3 py-2">의무 (소득·재산 점수)</td>
                         </tr>
                         <tr>
                           <td className="px-3 py-2 font-semibold">기타소득</td>

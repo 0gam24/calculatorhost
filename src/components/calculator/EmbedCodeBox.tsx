@@ -10,6 +10,9 @@ type EmbedCodeBoxProps = EmbedSnippetParams;
  * 임베드 코드 박스 — 외부 사이트에 계산기를 삽입하는 copy-paste 스니펫 제공.
  *
  * 스니펫 생성은 buildEmbedSnippet (순수 함수, SSoT) 에 위임. 본 컴포넌트는 표시·복사 UI만 담당.
+ * 코드는 [임베드 코드 보기]를 눌렀을 때만 그린다. 정적 HTML 에 iframe·a 태그 문자열이 들어가면
+ * 검색 결과 요약에 HTML 코드가 섞일 수 있어서다(2026-10-14). 출처 링크의 nofollow 는 유지한다
+ * (구글 링크 스팸 정책: 여러 사이트에 배포되는 위젯 속 링크).
  */
 export function EmbedCodeBox({
   embedPath,
@@ -18,6 +21,7 @@ export function EmbedCodeBox({
   height,
   showCredit = true,
 }: EmbedCodeBoxProps) {
+  const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [includeCredit, setIncludeCredit] = useState(showCredit);
@@ -42,7 +46,7 @@ export function EmbedCodeBox({
   };
 
   return (
-    <section aria-label="이 계산기 임베드" className="card flex flex-col gap-3">
+    <section aria-label="이 계산기 임베드" className="card flex flex-col gap-3" data-nosnippet>
       <h2 className="inline-flex items-center gap-1.5 text-base font-semibold">
         <Icon name="link" size={16} />
         <span>내 블로그·홈페이지에 이 계산기 넣기</span>
@@ -51,42 +55,56 @@ export function EmbedCodeBox({
         아래 코드를 복사해 티스토리·워드프레스·네이버 블로그(HTML 모드) 등에 붙여넣으면 이 계산기를
         그대로 삽입할 수 있습니다. 출처 표시는 선택 사항이며, 계산기는 무료로 사용할 수 있습니다.
       </p>
-      <label className="flex min-h-12 items-center gap-2 text-sm text-text-secondary">
-        <input
-          type="checkbox"
-          checked={includeCredit}
-          onChange={(e) => setIncludeCredit(e.target.checked)}
-        />
-        calculatorhost 출처 표시 포함 (선택)
-      </label>
-      <textarea
-        readOnly
-        value={snippet}
-        rows={4}
-        onFocus={(e) => e.currentTarget.select()}
-        className="w-full resize-none rounded-lg border border-border-base bg-bg-raised p-3 font-mono text-xs text-text-secondary"
-        aria-label="임베드 코드"
-      />
-      <div className="flex flex-wrap items-center gap-3">
+      {!open ? (
         <button
           type="button"
-          onClick={handleCopy}
-          aria-label="임베드 코드 복사"
-          className="inline-flex items-center gap-1.5 rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-500/20 dark:text-primary-300"
+          onClick={() => setOpen(true)}
+          aria-expanded={false}
+          className="inline-flex min-h-12 items-center gap-1.5 self-start rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-500/20 dark:text-primary-300"
         >
-          <Icon name={copied ? 'check' : 'clipboard'} size={14} />
-          <span>{copied ? '복사됨' : '임베드 코드 복사'}</span>
+          <Icon name="link" size={14} />
+          <span>임베드 코드 보기</span>
         </button>
-        <a
-          href={embedPath}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-sm text-text-tertiary underline hover:text-primary-500"
-        >
-          위젯 미리보기
-        </a>
-      </div>
-      {error && <p className="text-caption text-danger-500">{error}</p>}
+      ) : (
+        <>
+          <label className="flex min-h-12 items-center gap-2 text-sm text-text-secondary">
+            <input
+              type="checkbox"
+              checked={includeCredit}
+              onChange={(e) => setIncludeCredit(e.target.checked)}
+            />
+            calculatorhost 출처 표시 포함 (선택)
+          </label>
+          <textarea
+            readOnly
+            value={snippet}
+            rows={4}
+            onFocus={(e) => e.currentTarget.select()}
+            className="w-full resize-none rounded-lg border border-border-base bg-bg-raised p-3 font-mono text-xs text-text-secondary"
+            aria-label="임베드 코드"
+          />
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              type="button"
+              onClick={handleCopy}
+              aria-label="임베드 코드 복사"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-primary-500 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-700 transition-colors hover:bg-primary-500/20 dark:text-primary-300"
+            >
+              <Icon name={copied ? 'check' : 'clipboard'} size={14} />
+              <span>{copied ? '복사됨' : '임베드 코드 복사'}</span>
+            </button>
+            <a
+              href={embedPath}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-text-tertiary underline hover:text-primary-500"
+            >
+              위젯 미리보기
+            </a>
+          </div>
+          {error && <p className="text-caption text-danger-500">{error}</p>}
+        </>
+      )}
     </section>
   );
 }

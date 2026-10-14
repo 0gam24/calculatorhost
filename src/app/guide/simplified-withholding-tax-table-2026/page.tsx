@@ -303,7 +303,7 @@ export default function SimplifiedWithholdingTaxTable2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">2026 실수령액과 보험료 인상</div>
-                    <p className="mt-1 text-sm text-text-secondary">7월 4대보험 변동이 실수령액에 미치는 영향.</p>
+                    <p className="mt-1 text-sm text-text-secondary">7월 국민연금 상한 조정이 실수령액에 미치는 영향.</p>
                   </Link>
                   <Link
                     href="/guide/personal-deduction-dependent-150-2026/"

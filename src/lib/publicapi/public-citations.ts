@@ -61,14 +61,24 @@ export function formatCitation(c: PublicCitation): string {
 // ─── 데이터 셰이프별 어댑터 ─────────────────────────
 // src/data/*.json 각 파일의 구조에 맞춰 PublicCitation 으로 변환.
 
+/**
+ * 데이터 상태. live = API 자동 수집, manual = 기관 발표를 사람이 확인해 넣은 값,
+ * fallback = 키가 없어 넣어 둔 임시값(실제 수치 아님). fallback 은 기관 출처로 인용하지 않는다.
+ */
+export type DataStatus = 'live' | 'manual' | 'fallback';
+
+const isFallback = (source?: string) => source === 'fallback';
+
 export interface BokRatesData {
   baseRate: number;
   baseRateDate: string;
   cpi?: number;
   cpiDate?: string;
+  source?: string;
 }
 
-export function getEcosBaseRateCitation(data: BokRatesData): PublicCitation {
+export function getEcosBaseRateCitation(data: BokRatesData): PublicCitation | null {
+  if (isFallback(data.source)) return null;
   return {
     source: '한국은행 ECOS',
     label: '기준금리',
@@ -83,9 +93,11 @@ export interface KosisIncomeData {
   householdMonthlyIncome: number;
   householdMonthlyIncomeDate: string;
   perCapitaMonthlyIncome?: number;
+  source?: string;
 }
 
-export function getKosisHouseholdIncomeCitation(data: KosisIncomeData): PublicCitation {
+export function getKosisHouseholdIncomeCitation(data: KosisIncomeData): PublicCitation | null {
+  if (isFallback(data.source)) return null;
   // 원 단위 → 만 원 단위 표시
   const valueInMan = Math.round(data.householdMonthlyIncome / 10000);
   return {
@@ -138,9 +150,11 @@ export function getFssSavingsRateCitation(
 export interface ExchangeRatesData {
   rates: Record<string, number>;
   baseDate: string;
+  source?: string;
 }
 
 export function getEximUsdRateCitation(data: ExchangeRatesData): PublicCitation | null {
+  if (isFallback(data.source)) return null;
   const usd = data.rates?.['USD'];
   if (usd == null) return null;
   return {
@@ -151,4 +165,17 @@ export function getEximUsdRateCitation(data: ExchangeRatesData): PublicCitation 
     date: data.baseDate,
     url: 'https://www.koreaexim.go.kr',
   };
+}
+
+/** 'YYYY-MM-DD' (KST). 정적 페이지는 빌드 시각에 굳으므로 "N시간 전" 대신 날짜를 쓴다. */
+function kstDate(iso: string): string {
+  const t = Date.parse(iso);
+  if (!Number.isFinite(t)) return iso;
+  return new Date(t + 9 * 3600 * 1000).toISOString().slice(0, 10);
+}
+
+export function freshnessText(input: { source: string; fetchedAt: string; status: DataStatus }): string {
+  if (input.status === 'fallback') return `${input.source} 정적 기본값 (실시간 갱신 대기 중)`;
+  const label = input.status === 'live' ? '자동 수집' : '발표 확인';
+  return `${input.source} ${label} ${kstDate(input.fetchedAt)}`;
 }

@@ -338,8 +338,8 @@ export default function NonTaxableSalaryAllowances2026Page() {
                     href="/guide/salary-take-home-2026-july-insurance-increase/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">7월 보험료 인상 실수령액</div>
-                    <p className="mt-1 text-sm text-text-secondary">국민연금 요율 변화가 월급에 미치는 영향.</p>
+                    <div className="font-semibold text-primary-500">7월 국민연금 상한액 실수령액</div>
+                    <p className="mt-1 text-sm text-text-secondary">7월 국민연금 상한 조정이 월급에 미치는 영향.</p>
                   </Link>
                   <Link
                     href="/guide/mid-year-resignation-year-end-tax-2026/"

@@ -295,9 +295,15 @@ export default function FreelancerTaxPage() {
                 <p className="text-text-secondary">
                   특히 단순경비율 적용 조건, 수입 규모, 업종코드, 기록 방식(간편장부·복식부기) 등에
                   따라 세금이 크게 달라질 수 있으므로, 본 계산기로 대략의 규모를 파악한 후 세무사나
-                  국세청 홈택스 상담을 통해 정확한 신고를 권장합니다. 참고로 통계청 KOSIS 기준 한국
-                  가구 월평균 소득은 <PublicDataCitation citation={KOSIS_INCOME_CITATION} />
-                  로, 프리랜서 연 소득과 생활비 균형 판단에 참고할 수 있습니다.
+                  국세청 홈택스 상담을 통해 정확한 신고를 권장합니다.
+                  {KOSIS_INCOME_CITATION && (
+                    <>
+                      {' '}
+                      참고로 통계청 KOSIS 기준 한국 가구 월평균 소득은{' '}
+                      <PublicDataCitation citation={KOSIS_INCOME_CITATION} />
+                      로, 프리랜서 연 소득과 생활비 균형 판단에 참고할 수 있습니다.
+                    </>
+                  )}
                 </p>
                 <div className="mt-4 overflow-x-auto">
                   <table className="w-full border-collapse text-sm">

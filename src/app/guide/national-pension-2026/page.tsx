@@ -16,7 +16,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/national-pension-2026/';
 const DATE_PUBLISHED = '2026-06-08';
-const DATE_MODIFIED = '2026-06-08';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',
@@ -502,13 +502,12 @@ export default function NationalPension2026() {
                   .
                 </p>
                 <p className="mb-2">
-                  <strong>면책조항</strong>: 본 가이드는 2026년 6월 8일 기준 시행 중인 국민연금법령과 2025년 연금개혁 내용을 바탕으로 작성되었습니다.
+                  <strong>면책조항</strong>: 본 가이드는 2026년 10월 14일 기준 시행 중인 국민연금법령과 2025년 연금개혁 내용을 바탕으로 작성되었습니다.
                   보험료율·소득대체율·지급개시연령은 법령 개정에 따라 달라질 수 있고, A값 등 산식 변수는 매년 변동됩니다.
                   본인의 정확한 예상수령액과 수급 조건은 국민연금공단(nps.or.kr) &ldquo;내 연금 알아보기&rdquo; 또는 국번 없이 1355에서 확인하시기 바랍니다.
-
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)
+                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성: 김준혁 (calculatorhost)
                 </p>
               </section>
             </article>

@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
-import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 
 export function Footer() {
   const links = [
@@ -47,9 +46,6 @@ export function Footer() {
             <Link href="/glossary/">용어사전</Link>
             <Link href="/affiliate-disclosure/">어필리에이트 공시</Link>
             <Link href="/guide/tax-calendar-2026/">2026 세금 캘린더</Link>
-          </div>
-          <div className="mt-4">
-            <MainBackrefBox variant="footer" />
           </div>
         </details>
         <p className="mt-5 text-xs text-text-tertiary">

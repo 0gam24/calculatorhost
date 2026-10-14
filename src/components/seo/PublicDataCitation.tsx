@@ -14,7 +14,10 @@ import type { PublicCitation } from '@/lib/publicapi/public-citations';
 import { formatCitationDateKR } from '@/lib/publicapi/public-citations';
 
 export interface PublicDataCitationProps {
-  citation: PublicCitation;
+  /** null = 임시값(fallback)이라 수치를 인용하지 않는 경우. 기관 수치처럼 보이는 숫자를 만들지 않는다 */
+  citation: PublicCitation | null;
+  /** citation 이 null 일 때 문장 자리에 넣을 말 */
+  fallbackText?: string;
   /** 인라인 사용 (default true), false 면 블록형 */
   inline?: boolean;
   className?: string;
@@ -22,9 +25,14 @@ export interface PublicDataCitationProps {
 
 export function PublicDataCitation({
   citation,
+  fallbackText = '최신 공식 발표 수치',
   inline = true,
   className = '',
 }: PublicDataCitationProps) {
+  if (!citation) {
+    const Empty = inline ? 'span' : 'div';
+    return <Empty className={className}>{fallbackText}</Empty>;
+  }
   const dateKR = formatCitationDateKR(citation.date);
   const valueWithUnit = citation.unit
     ? `${citation.value}${citation.unit}`

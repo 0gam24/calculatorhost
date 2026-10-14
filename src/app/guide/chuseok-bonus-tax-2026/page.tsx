@@ -16,7 +16,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/chuseok-bonus-tax-2026/';
 const DATE_PUBLISHED = '2026-08-14';
-const DATE_MODIFIED = '2026-08-14';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '추석 상여금 세금 2026, 명절 보너스 얼마나 떼나',
@@ -194,17 +194,17 @@ export default function ChuseokBonusTax2026Page() {
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="p-3">국민연금</td>
-                        <td className="p-3">4.5% (7월부터 4.75%)</td>
+                        <td className="p-3">4.75%</td>
                         <td className="p-3">기준소득월액 기준, 상한 있음</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">건강보험</td>
-                        <td className="p-3">3.545%</td>
+                        <td className="p-3">3.595%</td>
                         <td className="p-3">보수총액으로 연말 정산</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">장기요양</td>
-                        <td className="p-3">건강보험료의 12.95%</td>
+                        <td className="p-3">건강보험료의 13.14%</td>
                         <td className="p-3">건강보험에 부가</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
