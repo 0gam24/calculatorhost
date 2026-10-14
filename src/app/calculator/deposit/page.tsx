@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { depositQuickTable } from '@/lib/quick-tables';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -166,7 +168,9 @@ export default function DepositPage() {
             id="main-content"
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
-            <CalculatorPageContent guidesFor="deposit"
+            <CalculatorPageContent
+              guidesFor="deposit"
+              quickTable={<QuickTable data={depositQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb
@@ -236,8 +240,8 @@ export default function DepositPage() {
                   정기예금은 적금과 다릅니다. 적금은 정해진 금액을 매달 저축하다가 만기에 받는
                   상품인 반면, 예금은 목돈을 한 번에 예치하는 상품입니다. 따라서 같은 이자율이라도
                   예금이 더 많은 이자를 받을 수 있습니다. 예를 들어, 천만원을 12개월 동안 연 3%로
-                  운용할 때, 예금 원금 1,000만원의 세전 이자는 300,000원입니다. 매월 초
-                  83만원씩 납입하는 적금은 총원금 996만원, 세전 이자 161,850원입니다(단리 기준).
+                  운용할 때, 예금 원금 1,000만원의 세전 이자는 300,000원입니다. 매월 초 83만원씩
+                  납입하는 적금은 총원금 996만원, 세전 이자 161,850원입니다(단리 기준).
                 </p>
                 <p className="text-text-secondary">
                   정기예금 이자에는 세금이 부과됩니다. 일반 정기예금은 이자소득세 14% + 지방소득세
@@ -311,8 +315,8 @@ export default function DepositPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="px-4 py-3 font-medium">차이 크기</td>
                         <td colSpan={3} className="px-4 py-3 text-text-secondary">
-                          같은 원금 1,000만원·연 3%·12개월의 세전 이자: 단리 300,000원 →
-                          월복리 304,150원 → 일복리 근사 304,530원
+                          같은 원금 1,000만원·연 3%·12개월의 세전 이자: 단리 300,000원 → 월복리
+                          304,150원 → 일복리 근사 304,530원
                         </td>
                       </tr>
                       <tr className="border-b border-border-subtle">
