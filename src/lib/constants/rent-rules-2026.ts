@@ -4,11 +4,13 @@
  * 법적 근거:
  * - 주택임대차보호법 §7의2 (차임등의 증감청구권)
  * - 주택임대차보호법 시행령 §9 (2%p 가산비율)
- * - 한국은행 기준금리 (분기별 변동, 2026년 기본값 3.5%)
+ * - 한국은행 기준금리: 고정값을 두지 않고 src/data/bok-rates.json 을 따른다(2026-10-14 정정, 이전 고정 3.5%)
  *
  * ⚠️ 이 파일은 calc-logic-verifier 에이전트 승인 없이 수정 금지.
  * 개정 시 ADR 기록: docs/adr/NNN-전월세전환-개정.md
  */
+
+import bokRates from '@/data/bok-rates.json';
 
 export const YEAR = 2026;
 
@@ -17,11 +19,11 @@ export const YEAR = 2026;
 // ============================================
 
 /**
- * 한국은행 기준금리 기본값 (%)
- * 2026년 기준 3.5%
+ * 한국은행 기준금리 기본값 (소수, 0.03 = 3%)
+ * src/data/bok-rates.json (2026-10-14 현재 3.00%, 2026-08-27 금통위 결정)에서 읽는다.
  * 주택임대차보호법 시행령 §9: 기준금리 + 대통령령 비율
  */
-export const BANK_OF_KOREA_BASE_RATE_DEFAULT = 0.035;
+export const BANK_OF_KOREA_BASE_RATE_DEFAULT: number = bokRates.baseRate;
 
 /**
  * 대통령령 가산비율 (%p)

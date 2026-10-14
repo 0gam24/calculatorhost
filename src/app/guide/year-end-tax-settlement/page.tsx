@@ -335,11 +335,11 @@ export default function YearEndTaxSettlementPage() {
                     12월 31일 전 추가 납부 예상 시 다음 액션으로 환급으로 전환 가능:
                   </p>
                   <ul className="mt-2 space-y-1.5 text-sm text-text-secondary">
-                    <li>1⃣ <strong>연금저축·IRP 추가 입금</strong>: 100만 추가 시 약 13~16만 환급 추가</li>
-                    <li>2⃣ <strong>기부금 영수증 챙기기</strong>: 연말 기부 + 정치자금 10만 (110% 환급)</li>
-                    <li>3⃣ <strong>의료비 한 번에 결제</strong>: 가족 의료비 12월 몰아서 결제 (총급여 3% 초과분 공제)</li>
-                    <li>4⃣ <strong>전통시장·대중교통 사용</strong>: 40% 공제율로 한도 적용 효과 ↑</li>
-                    <li>5⃣ <strong>홈택스 예상세액 미리 확인</strong>: "연말정산 → 예상세액 계산"</li>
+                    <li>1. <strong>연금저축·IRP 추가 입금</strong>: 100만 추가 시 약 13~16만 환급 추가</li>
+                    <li>2. <strong>기부금 영수증 챙기기</strong>: 연말 기부 + 정치자금 10만 (110% 환급)</li>
+                    <li>3. <strong>의료비 한 번에 결제</strong>: 가족 의료비 12월 몰아서 결제 (총급여 3% 초과분 공제)</li>
+                    <li>4. <strong>전통시장·대중교통 사용</strong>: 40% 공제율로 한도 적용 효과 ↑</li>
+                    <li>5. <strong>홈택스 예상세액 미리 확인</strong>: "연말정산 → 예상세액 계산"</li>
                   </ul>
                 </div>
               </section>

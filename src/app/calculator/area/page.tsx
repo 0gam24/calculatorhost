@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { areaQuickTable } from '@/lib/quick-tables/area';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -200,6 +202,7 @@ export default function AreaConversionPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="area"
+              quickTable={<QuickTable data={areaQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb
@@ -410,44 +413,6 @@ export default function AreaConversionPage() {
                   <li>광고의 ‘34평형’만으로 전용면적이나 공급면적을 확정하지 마세요.</li>
                   <li>발코니·서비스 면적은 문서에서 별도로 어떻게 표시하는지 확인하세요.</li>
                 </ul>
-              </section>
-              <section aria-label="주요 평수 대조표" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">같은 면적의 평·제곱미터 대조표</h2>
-                <p className="mb-4 text-sm text-text-tertiary">
-                  아래 값은 단위 환산 결과입니다. 전용면적 비율이나 침실 수를 나타내지 않습니다.
-                </p>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse text-sm">
-                    <thead>
-                      <tr className="border-b border-border-base">
-                        <th scope="col" className={`${thClass} text-left`}>
-                          평
-                        </th>
-                        <th scope="col" className={`${thClass} text-right`}>
-                          같은 면적의 제곱미터 (㎡)
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {[
-                        ['12평', '39.67㎡'],
-                        ['18평', '59.50㎡'],
-                        ['24평', '79.34㎡'],
-                        ['32평', '105.79㎡'],
-                        ['34평', '112.40㎡'],
-                        ['45평', '148.76㎡'],
-                        ['60평', '198.35㎡'],
-                      ].map(([pyeong, sqm]) => (
-                        <tr key={pyeong} className="border-border-base/50 border-b">
-                          <td className="px-3 py-2 text-text-secondary">{pyeong}</td>
-                          <td className="px-3 py-2 text-right font-medium tabular-nums text-text-primary">
-                            약 {sqm}
-                          </td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </div>
               </section>
               <section aria-label="주의사항" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">평수 환산 시 주의사항</h2>

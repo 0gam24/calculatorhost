@@ -309,35 +309,35 @@ export default function BrokerFeeNegotiationSavingsPage() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">1⃣ 계약서 작성 전에 미리 협상하기</h4>
+                    <h4 className="font-semibold text-text-primary">1. 계약서 작성 전에 미리 협상하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       부동산 거래는 계약 직전이 중개비 협상의 최적 시점입니다. 당사자가 이미 그 부동산으로 결정했고, 중개사 입장에서는 거래가 확정되는 단계이기 때문입니다. "이 조건이면 계약을 진행하겠습니다"라는 신호를 보내면 중개사도 협상에 응하기 쉽습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">2⃣ 여러 중개사에 견적 비교하기</h4>
+                    <h4 className="font-semibold text-text-primary">2. 여러 중개사에 견적 비교하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       같은 부동산이라도 중개사마다 제시하는 중개비가 다를 수 있습니다. A 중개사는 240만원(상한요율), B 중개사는 210만원, C 중개사는 190만원을 제시할 수 있습니다. 최소 3~5개 중개사에 비교 견적을 받으면 시장 가격을 파악할 수 있고, 그 정보를 바탕으로 협상을 유리하게 이끌 수 있습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">3⃣ 부가세 포함 여부를 명확히 하기</h4>
+                    <h4 className="font-semibold text-text-primary">3. 부가세 포함 여부를 명확히 하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       중개사가 240만원을 제시했을 때 "부가세는 별도인가?"를 반드시 확인하세요. 일반과세사업자라면 240만+24만(부가세)=264만원을 내야 합니다. 반면 중개사가 간이과세거나 면세사업자라면 부가세가 없습니다. 이를 명확히 하면, 상한요율 기준 총액(240만+부가세)에서 일부를 깎는 협상이 가능합니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">4⃣ 매도·매수 모두에게 같은 중개사 추천하기</h4>
+                    <h4 className="font-semibold text-text-primary">4. 매도·매수 모두에게 같은 중개사 추천하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       매도자와 매수자가 서로 다른 중개사를 쓰면 중개비가 두 배 청구됩니다. 거래 초기 단계에서 "한 중개사가 양쪽을 중개하면 중개비를 협상할 수 있다"고 상대방을 설득하세요. 일반적으로 양쪽이 같은 중개사를 쓰면 중개비를 10~15% 정도 깎을 수 있습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h4 className="font-semibold text-text-primary">5⃣ 최종 금액을 계약서에 명시하기</h4>
+                    <h4 className="font-semibold text-text-primary">5. 최종 금액을 계약서에 명시하기</h4>
                     <p className="mt-2 text-sm text-text-secondary">
                       협상 후 합의한 중개비(예: 200만원, 부가세 포함)를 <strong>반드시 표준 거래계약서의 "중개수수료" 칸에 기록</strong>하세요. 구두 약속만으로는 나중에 상한요율을 기준으로 청구될 수 있습니다. 계약서에 명시되어야만 법적 효력이 있습니다.
                     </p>

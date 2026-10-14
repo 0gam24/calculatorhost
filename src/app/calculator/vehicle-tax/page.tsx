@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { vehicleTaxQuickTable } from '@/lib/quick-tables/vehicle-tax';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
@@ -208,6 +210,7 @@ export default function VehicleTaxPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="vehicle-tax"
+              quickTable={<QuickTable data={vehicleTaxQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

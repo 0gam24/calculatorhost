@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { rentConversionQuickTable } from '@/lib/quick-tables/rent-conversion';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -38,6 +40,21 @@ const CURRENT_LEGAL_CAP_PCT = Math.min(
   RENT_CONVERSION_ANNUAL_CAP,
 );
 const CURRENT_LEGAL_CAP_DISPLAY = (CURRENT_LEGAL_CAP_PCT * 100).toFixed(2);
+const CURRENT_BASE_RATE_LABEL = `${CURRENT_BASE_RATE_DATE.slice(0, 4)}년 ${Number(CURRENT_BASE_RATE_DATE.slice(4, 6))}월`;
+const capOf = (baseRate: number) =>
+  Math.min(baseRate + RENT_CONVERSION_ADDITIONAL_RATE, RENT_CONVERSION_ANNUAL_CAP);
+/** 보증금 차액 → 월세 상한 (10원 미만 버림) */
+const monthlyRentAt = (deposit: number, cap: number) => Math.floor((deposit * cap) / 12 / 10) * 10;
+const won = (n: number) => `${n.toLocaleString('ko-KR')}원`;
+// 기준금리가 바뀌면 함께 바뀌는 시나리오 (현재 값은 bok-rates.json)
+const RATE_SCENARIOS = [
+  { label: '2020년 5월~2021년 8월 (0.50%)', baseRate: 0.005, current: false },
+  { label: `현재 (${CURRENT_BASE_RATE_LABEL} 결정, ${CURRENT_BASE_RATE_PCT}%)`, baseRate: bokRates.baseRate, current: true },
+  { label: '기준금리 3.50%라면', baseRate: 0.035, current: false },
+  { label: '기준금리 2.50%라면', baseRate: 0.025, current: false },
+].map((r) => ({ ...r, cap: capOf(r.baseRate) }));
+const EXAMPLE_A_RENT = monthlyRentAt(300_000_000, CURRENT_LEGAL_CAP_PCT);
+const EXAMPLE_B_JEONSE = 100_000_000 + Math.floor((500_000 * 12) / CURRENT_LEGAL_CAP_PCT);
 
 export const metadata: Metadata = {
   // 검색 의도 흡수: "주택임대차보호법 전월세전환율 기준금리 2% 2026" (GSC 1순위)
@@ -75,7 +92,7 @@ const FAQ_ITEMS = [
   {
     question: '법정 상한은 얼마인가요?',
     answer:
-      '전월세 전환율의 법정 상한은 두 가지 중 낮은 값입니다: (1) 한국은행 기준금리 + 대통령령 가산비율(2%p), (2) 연 10%. 예를 들어 기준금리가 3.5%면 A = 5.5%, B = 10%이므로, 실제 상한은 5.5%입니다. 이는 시간에 따라 변할 수 있으므로 계산기에서 직접 설정 가능합니다.',
+      `전월세 전환율의 법정 상한은 두 가지 중 낮은 값입니다: (1) 한국은행 기준금리 + 대통령령 가산비율(2%p), (2) 연 10%. 예를 들어 기준금리가 ${CURRENT_BASE_RATE_PCT}%(${CURRENT_BASE_RATE_LABEL} 결정)면 A = ${CURRENT_LEGAL_CAP_DISPLAY}%, B = 10%이므로 실제 상한은 ${CURRENT_LEGAL_CAP_DISPLAY}%입니다. 기준금리가 바뀌면 상한도 바뀌므로 계산기에서 직접 바꿀 수 있습니다.`,
   },
   {
     question: '임대인이 법정 상한을 초과한 월세를 요구하면?',
@@ -85,7 +102,7 @@ const FAQ_ITEMS = [
   {
     question: '한국은행 기준금리는 어디서 확인하나요?',
     answer:
-      '한국은행 기준금리는 한국은행 공식 홈페이지(bok.or.kr)의 "금리" 섹션에서 실시간 확인할 수 있습니다. 분기마다 금융통화위원회 회의에서 결정되며, 이 계산기는 2026년 기준 3.5%를 기본값으로 설정했습니다.',
+      `한국은행 기준금리는 한국은행 공식 홈페이지(bok.or.kr)의 "금리" 섹션에서 확인할 수 있습니다. 금융통화위원회가 1년에 8번 결정하며, 이 계산기는 ${CURRENT_BASE_RATE_LABEL}에 정해진 ${CURRENT_BASE_RATE_PCT}%를 기본값으로 씁니다.`,
   },
   {
     question: '환산보증금은 왜 나오나요?',
@@ -131,7 +148,7 @@ export default function RentConversionPage() {
     steps: [
       { name: '전환 방향 선택', text: '전세→월세 또는 월세→전세 중 원하는 방향을 선택합니다.' },
       { name: '보증금·월세 입력', text: '현재 전세보증금 또는 월세 금액을 입력합니다.' },
-      { name: '기준금리 설정', text: '한국은행 현재 기준금리를 확인하여 입력합니다(기본값 3.5%).' },
+      { name: '기준금리 설정', text: `한국은행 현재 기준금리를 확인하여 입력합니다(기본값 ${CURRENT_BASE_RATE_PCT}%).` },
       {
         name: '법정 상한 자동 적용',
         text: '입력한 기준금리에 2%를 더한 값(상한 10%)이 자동 적용됩니다.',
@@ -187,6 +204,7 @@ export default function RentConversionPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="rent-conversion"
+              quickTable={<QuickTable data={rentConversionQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb
@@ -290,72 +308,6 @@ export default function RentConversionPage() {
                   '3 모드: 전세→월세, 월세→전세, 전환율 역산',
                 ]}
               />
-              <section aria-label="보증금 월세 환산 빠른 조회" className="card">
-                <h2 className="mb-3 text-2xl font-semibold">
-                  보증금 ↔ 월세 환산 빠른 조회 (전환율 5.5% 기준)
-                </h2>
-                <p className="mb-4 text-sm text-text-secondary">
-                  2026년 기준금리 3.5% + 2%p = 법정 상한 5.5% 적용 시 흔한 보증금·월세 환산표. 실제
-                  협상 시 정확한 계산은 위 계산기 사용.
-                </p>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse text-sm">
-                    <thead>
-                      <tr className="border border-border-base bg-primary-500/10">
-                        <th className="px-3 py-2 text-right">전세보증금</th>
-                        <th className="px-3 py-2 text-right">월세 환산 (5.5%)</th>
-                        <th className="px-3 py-2 text-right">반전세 (보증금 50%)</th>
-                        <th className="px-3 py-2 text-right">→ 잔여 월세</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-text-secondary">
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-right tabular-nums">1억</td>
-                        <td className="px-3 py-2 text-right tabular-nums">약 458,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">5,000만</td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 229,000원
-                        </td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-right tabular-nums">2억</td>
-                        <td className="px-3 py-2 text-right tabular-nums">약 917,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">1억</td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 458,000원
-                        </td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-right tabular-nums">3억</td>
-                        <td className="px-3 py-2 text-right tabular-nums">약 1,375,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">1.5억</td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 688,000원
-                        </td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-right tabular-nums">5억</td>
-                        <td className="px-3 py-2 text-right tabular-nums">약 2,292,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">2.5억</td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 1,146,000원
-                        </td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2 text-right tabular-nums">7억</td>
-                        <td className="px-3 py-2 text-right tabular-nums">약 3,208,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">3.5억</td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 1,604,000원
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p className="mt-3 text-xs text-text-tertiary">
-                  공식: 월세 = 보증금 × 전환율 ÷ 12. 예: 1억 × 5.5% ÷ 12 = 458,333원/월.
-                </p>
-              </section>
               <section aria-label="기준금리 변동 시나리오" className="card">
                 <h2 className="mb-3 text-2xl font-semibold">
                   기준금리 변동에 따른 전환율·월세 영향
@@ -374,34 +326,21 @@ export default function RentConversionPage() {
                       </tr>
                     </thead>
                     <tbody className="text-text-secondary">
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2">2020년 (0.5%)</td>
-                        <td className="px-3 py-2 text-right">2.5%</td>
-                        <td className="px-3 py-2 text-right tabular-nums">208,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">625,000원</td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2">2022년 (3.0%)</td>
-                        <td className="px-3 py-2 text-right">5.0%</td>
-                        <td className="px-3 py-2 text-right tabular-nums">417,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">1,250,000원</td>
-                      </tr>
-                      <tr className="border border-border-base bg-primary-500/5">
-                        <td className="px-3 py-2 font-semibold">2026년 (3.5%) ← 현재</td>
-                        <td className="px-3 py-2 text-right font-semibold">5.5%</td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums">
-                          458,000원
-                        </td>
-                        <td className="px-3 py-2 text-right font-semibold tabular-nums">
-                          1,375,000원
-                        </td>
-                      </tr>
-                      <tr className="border border-border-base">
-                        <td className="px-3 py-2">금리 인하 시 (2.5% 가정)</td>
-                        <td className="px-3 py-2 text-right">4.5%</td>
-                        <td className="px-3 py-2 text-right tabular-nums">375,000원</td>
-                        <td className="px-3 py-2 text-right tabular-nums">1,125,000원</td>
-                      </tr>
+                      {RATE_SCENARIOS.map((r) => (
+                        <tr
+                          key={r.label}
+                          className={`border border-border-base ${r.current ? 'bg-primary-500/5 font-semibold' : ''}`}
+                        >
+                          <td className="px-3 py-2">{r.label}</td>
+                          <td className="px-3 py-2 text-right">{(r.cap * 100).toFixed(2)}%</td>
+                          <td className="px-3 py-2 text-right tabular-nums">
+                            {won(monthlyRentAt(100_000_000, r.cap))}
+                          </td>
+                          <td className="px-3 py-2 text-right tabular-nums">
+                            {won(monthlyRentAt(300_000_000, r.cap))}
+                          </td>
+                        </tr>
+                      ))}
                     </tbody>
                   </table>
                 </div>
@@ -448,7 +387,7 @@ export default function RentConversionPage() {
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2 font-medium">A. 기준금리</td>
                         <td className="px-3 py-2">한국은행 기준금리</td>
-                        <td className="px-3 py-2 text-right">변동 (기본 3.5%)</td>
+                        <td className="px-3 py-2 text-right">변동 (현재 {CURRENT_BASE_RATE_PCT}%)</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2 font-medium">B. 가산비율</td>
@@ -481,8 +420,9 @@ export default function RentConversionPage() {
                     <strong>법적 근거:</strong> 주택임대차보호법 §7의2, 주택임대차보호법 시행령 §9
                   </p>
                   <p>
-                    <strong>계산 예시:</strong> 기준금리 3.5% → 상한 = min(3.5% + 2% = 5.5%, 10%) =
-                    5.5%. 따라서 전환율은 5.5% 이내에서만 적용됩니다.
+                    <strong>계산 예시:</strong> 기준금리 {CURRENT_BASE_RATE_PCT}% ({CURRENT_BASE_RATE_LABEL}) 이면 상한 =
+                    min({CURRENT_BASE_RATE_PCT}% + 2% = {CURRENT_LEGAL_CAP_DISPLAY}%, 10%) = {CURRENT_LEGAL_CAP_DISPLAY}%.
+                    따라서 전환율은 {CURRENT_LEGAL_CAP_DISPLAY}% 이내에서만 적용됩니다.
                   </p>
                 </div>
               </section>
@@ -500,8 +440,9 @@ export default function RentConversionPage() {
                   월세 = (기존 전세 - 새 보증금) × 전환율 ÷ 12
                 </div>
                 <p className="mb-6 text-text-secondary">
-                  <strong>예시:</strong> 전세 5억 원 → 보증금 2억 원 + 월세로 전환, 전환율 5.5% 적용
-                  시, 월세 = (5억 - 2억) × 0.055 ÷ 12 = 약 137.5만 원
+                  <strong>예시:</strong> 전세 5억 원을 보증금 2억 원 + 월세로 바꾸고 현재 상한 전환율{' '}
+                  {CURRENT_LEGAL_CAP_DISPLAY}%를 적용하면, 월세 = (5억 - 2억) × {CURRENT_LEGAL_CAP_DISPLAY}% ÷ 12 ={' '}
+                  {won(EXAMPLE_A_RENT)}입니다.
                 </p>
 
                 <h3 className="mb-3 text-lg font-semibold text-text-secondary">
@@ -516,8 +457,8 @@ export default function RentConversionPage() {
                   환산 전세 = 보증금 + (월세 × 12 ÷ 전환율)
                 </div>
                 <p className="mb-6 text-text-secondary">
-                  <strong>예시:</strong> 보증금 1억 + 월세 50만 원, 전환율 5.5% 시, 환산 전세 = 1억
-                  + (50만 × 12 ÷ 0.055) = 약 2억 909만 원
+                  <strong>예시:</strong> 보증금 1억 + 월세 50만 원에 전환율 {CURRENT_LEGAL_CAP_DISPLAY}%를 쓰면, 환산
+                  전세 = 1억 + (50만 × 12 ÷ {CURRENT_LEGAL_CAP_DISPLAY}%) = {won(EXAMPLE_B_JEONSE)}입니다.
                 </p>
 
                 <h3 className="mb-3 text-lg font-semibold text-text-secondary">
@@ -532,7 +473,7 @@ export default function RentConversionPage() {
                 </div>
                 <p className="mb-6 text-text-secondary">
                   <strong>예시:</strong> 전세 5억, 보증금 2억, 월세 150만 원이면, 실제 전환율 =
-                  (150만 × 12) ÷ (5억 - 2억) × 100 = 6.0%. 법정 상한이 5.5%라면 초과입니다.
+                  (150만 × 12) ÷ (5억 - 2억) × 100 = 6.0%. 현재 법정 상한 {CURRENT_LEGAL_CAP_DISPLAY}%를 넘습니다.
                 </p>
               </section>
               <section aria-label="환산보증금" className="card">
@@ -571,8 +512,8 @@ export default function RentConversionPage() {
                   </li>
                   <li>
                     <strong>기준금리 변동:</strong> 한국은행 기준금리는 분기마다 변동됩니다.
-                    계산기의 기본값(3.5%)은 2026년 기준이며, 최신 정보를 확인하고 고급 설정에서
-                    수정하세요.
+                    계산기의 기본값({CURRENT_BASE_RATE_PCT}%)은 {CURRENT_BASE_RATE_LABEL} 결정값이며, 그 뒤에 바뀌었다면
+                    고급 설정에서 수정하세요.
                   </li>
                   <li>
                     <strong>개별 계약 우선:</strong> 본 계산기는 법정 상한을 기준으로 한 결과이며,

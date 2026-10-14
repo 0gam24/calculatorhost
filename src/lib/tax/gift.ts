@@ -5,7 +5,7 @@
  * - 상속세 및 증여세법 §26 (세율)
  * - 상증세법 §47·§55 (과세가액·과세표준)
  * - 상증세법 §53 (증여재산공제)
- * - 상증세법 §68 (신고세액공제 3%)
+ * - 상증세법 §69 (신고세액공제 3%)
  *
  * 상수: src/lib/constants/tax-rates-2026.ts
  * 명세: docs/calculator-spec/증여세.md
@@ -201,7 +201,7 @@ export function calculateGiftTax(input: GiftInput): GiftResult {
     ? Math.floor(calculateProgressiveTax(taxableBase, GIFT_INHERITANCE_TAX_BRACKETS) / 10) * 10
     : 0;
 
-  // ─── 신고세액공제 (상증세법 §68) ───
+  // ─── 신고세액공제 (상증세법 §69) ───
   const reportingCredit = input.reportWithinDeadline
     ? Math.floor((grossTax * REPORTING_TAX_CREDIT_RATE) / 10) * 10
     : 0;

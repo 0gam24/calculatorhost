@@ -492,7 +492,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 상속 및 증여는 복합적인 가족 상황, 자산 규모, 법적 환경에 따라 크게 달라집니다. 반드시 세무사·회계사와 상담 후 결정하세요. 본 콘텐츠는 {DATE_MODIFIED}을 기준으로 작성되었습니다.
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§18(기초공제)·§19(배우자공제)·§20(자녀·미성년자공제)·§21(일괄공제)·§68(신고세액공제). 사전증여 합산 규정의 상세는 관련 가이드를 참조하세요.
+                  <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§18(기초공제)·§19(배우자공제)·§20(자녀·미성년자공제)·§21(일괄공제)·§69(신고세액공제). 사전증여 합산 규정의 상세는 관련 가이드를 참조하세요.
                 </p>
                 <p className="text-xs text-text-tertiary">
                   <strong>업데이트:</strong> 2026-06-22 작성.

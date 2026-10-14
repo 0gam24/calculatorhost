@@ -1,5 +1,6 @@
 'use client';
 import { ResultCard } from '@/components/calculator/Result';
+import { BANK_OF_KOREA_BASE_RATE_DEFAULT } from '@/lib/constants/rent-rules-2026';
 import { CalculatorDetails } from '@/components/calculator/CalculatorDetails';
 
 import { CalculatorWorkspace } from '@/components/calculator/CalculatorWorkspace';
@@ -98,7 +99,7 @@ export function RentConversionCalculator() {
   // 공통 (고급 설정)
   const [baseRatePercent, setBaseRatePercent] = useCalculatorState(
     'rent-conversion:baseRatePercent',
-    3.5,
+    Math.round(BANK_OF_KOREA_BASE_RATE_DEFAULT * 10_000) / 100,
   );
   const [additionalRatePercent, setAdditionalRatePercent] = useCalculatorState(
     'rent-conversion:additionalRatePercent',

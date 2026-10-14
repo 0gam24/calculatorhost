@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { retirementQuickTable } from '@/lib/quick-tables/retirement';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -55,7 +57,7 @@ const FAQ_ITEMS = [
   {
     question: '4% 룰이란 무엇인가요?',
     answer:
-      '4% 룰은 1998년 Trinity Study 연구 결과에 기반합니다. 은퇴자산의 4%를 매년 인출하면 30년 이상 자금이 고갈되지 않는다는 가설입니다. 예를 들어 1억 원을 보유했다면 매년 400만 원을 생활비로 사용해도 안전하다는 의미입니다. 다만 이는 평균 수익률 6~7%를 가정한 것이며, 개인의 상황(투자 포트폴리오·세금·인플레이션)에 따라 조정이 필요합니다.',
+      '4% 룰은 1998년 미국 트리니티 대학 연구(Trinity Study)에서 나온 경험칙입니다. 1926~1995년 미국 주식·채권의 실제 수익률로 시험해 보니, 주식 비중이 절반 이상인 자산에서 처음 해에 4%를 꺼내 쓰면 30년 동안 돈이 바닥나지 않은 경우가 대부분이었다는 결과입니다. 예를 들어 1억 원이면 첫해 400만 원입니다. 다만 과거 미국 시장 기준이라 앞으로도 같다는 보장은 없고, 세금·수수료·물가에 따라 조정이 필요합니다.',
   },
   {
     question: 'FIRE 운동이란 무엇인가요?',
@@ -182,6 +184,7 @@ export default function RetirementPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="retirement"
+              quickTable={<QuickTable data={retirementQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb
@@ -275,10 +278,10 @@ export default function RetirementPage() {
               <section aria-label="4% 룰" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">4% 룰(Safe Withdrawal Rate)</h2>
                 <p className="mb-4 text-text-secondary">
-                  4% 룰은 1998년 Trinity Study 연구 결과에 기반합니다. 미국의 은퇴자 4천여 명의
-                  데이터를 분석한 결과, 은퇴자산의 4%를 매년 인출하면 30년 이상 자금이 고갈되지
-                  않는다는 것을 발견했습니다. 이는 평균 6~7% 수익률의 투자 포트폴리오(주식 60~70% +
-                  채권 30~40%)를 가정한 것입니다(Trinity Study, 1998).
+                  4% 룰은 1998년 미국 트리니티 대학 연구(Trinity Study)에서 나왔습니다. 1926~1995년
+                  미국 주식·채권의 실제 수익률로 여러 인출률을 시험해 보니, 주식 비중이 절반 이상인
+                  자산에서 첫해 자산의 4%를 꺼내 쓰면 30년 동안 돈이 바닥나지 않은 경우가
+                  대부분이었습니다. 과거 미국 시장 결과라 앞으로도 같다는 보장은 없습니다.
                 </p>
                 <div className="mb-4 rounded-lg border border-border-base bg-bg-raised p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">4% 룰 적용 예시</h3>
@@ -353,8 +356,8 @@ export default function RetirementPage() {
                       <br />n = 은퇴까지 개월수
                     </p>
                     <p className="mt-2 text-text-secondary">
-                      매달 정기적으로 저축한 금액의 미래가입니다. 예: 월 100만 원이 6% 수익률로 30년
-                      저축되면 약 8,600만 원.
+                      매달 정기적으로 저축한 금액의 미래가입니다. 예: 월 100만 원을 연 6%(월 복리)로 30년
+                      모으면 약 10억 원(1,004,515,042원)입니다. 넣은 원금은 3억 6,000만 원입니다.
                     </p>
                   </li>
                   <li>
@@ -365,7 +368,7 @@ export default function RetirementPage() {
                     </p>
                     <p className="mt-2 text-text-secondary">
                       현재 기준의 생활비가 인플레이션으로 인해 얼마나 증가할지 계산합니다. 예: 현재
-                      4,000만 원 생활비가 2.5% 인플레이션으로 30년 후에는 약 8,500만 원.
+                      4,000만 원 생활비가 연 2.5% 물가상승으로 30년 후에는 약 8,390만 원이 됩니다.
                     </p>
                   </li>
                   <li>
@@ -489,8 +492,8 @@ export default function RetirementPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 국민연금법 §61(노령연금 수급요건), §62(조기노령연금) ·
-                  소득세법 §94(퇴직소득 분리과세) · 근로자퇴직급여 보장법 §8. 참고:{' '}
+                  <strong>법적 근거</strong>: 국민연금법 §61(노령연금·조기노령연금 수급요건) ·
+                  소득세법 §22(퇴직소득) · 근로자퇴직급여 보장법 §8. 참고:{' '}
                   <a
                     href="https://www.nps.or.kr"
                     target="_blank"

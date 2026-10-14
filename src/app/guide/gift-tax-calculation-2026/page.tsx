@@ -366,7 +366,7 @@ export default function GiftTaxCalculation2026Page() {
                   산출세액에서 신고세액공제를 적용하면 <strong>최종 납부세액</strong>이 됩니다.
                 </p>
                 <p>
-                  상증세법 §68에 따라 기한 내 자진신고 시 신고세액공제가 적용됩니다. 공제율은 산출세액의 3%입니다. 기한 내 신고란 증여일부터 3개월 이내를 뜻합니다.
+                  상증세법 §69에 따라 기한 내 자진신고 시 신고세액공제가 적용됩니다. 공제율은 산출세액의 3%입니다. 기한 내 신고란 증여일부터 3개월 이내를 뜻합니다.
                 </p>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -466,7 +466,7 @@ export default function GiftTaxCalculation2026Page() {
                   <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 증여세 신고는 세무사·회계사와 상담 후 진행하세요. 본 콘텐츠는 {DATE_MODIFIED}을 기준으로 작성되었습니다.
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§68(신고세액공제)
+                  <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§68(신고기한)·§69(신고세액공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
                   <strong>업데이트:</strong> 2026-06-22 작성.

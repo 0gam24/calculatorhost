@@ -322,7 +322,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   </p>
                   <div className="space-y-2 text-sm text-text-secondary">
                     <div className="flex justify-between">
-                      <span>1⃣ 분리과세 선택 (1,500만 + 초과 500만)</span>
+                      <span>1. 분리과세 선택 (1,500만 + 초과 500만)</span>
                       <span className="font-semibold"></span>
                     </div>
                     <ul className="ml-4 space-y-1 text-xs text-text-secondary">
@@ -331,7 +331,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                       <li>• <strong>합계: 약 112.5만 원</strong></li>
                     </ul>
                     <div className="flex justify-between mt-3">
-                      <span>2⃣ 종합과세 선택 (전체 2,000만 합산)</span>
+                      <span>2. 종합과세 선택 (전체 2,000만 합산)</span>
                       <span className="font-semibold"></span>
                     </div>
                     <ul className="ml-4 space-y-1 text-xs text-text-secondary">

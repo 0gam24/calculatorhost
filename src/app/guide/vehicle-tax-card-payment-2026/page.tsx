@@ -298,7 +298,7 @@ export default function VehicleTaxCardPayment2026Page() {
                 <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월 1~31일 신청만 가능합니다.</p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">1⃣ 위택스(wetax.go.kr), 가장 추천</p>
+                    <p className="text-text-primary font-semibold mb-2">1. 위택스(wetax.go.kr), 가장 추천</p>
                     <ol className="text-text-secondary space-y-1 list-decimal list-inside">
                       <li>위택스(wetax.go.kr)에 공인인증서·금융인증서·간편인증으로 로그인</li>
                       <li>"세금 신청·신고" → "지방세" → "자동차세"</li>
@@ -309,15 +309,15 @@ export default function VehicleTaxCardPayment2026Page() {
                     </ol>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">2⃣ 스마트 위택스 앱</p>
+                    <p className="text-text-primary font-semibold mb-2">2. 스마트 위택스 앱</p>
                     <p className="text-text-secondary">Google Play / App Store에서 "스마트 위택스" 검색 → 앱 실행 → 로그인 → "자동차세 연납" 신청. 모바일에서도 24시간 가능.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">3⃣ 관할 시·군청 세무서 (직접 방문)</p>
+                    <p className="text-text-primary font-semibold mb-2">3. 관할 시·군청 세무서 (직접 방문)</p>
                     <p className="text-text-secondary">주민등록지 또는 차량 등록지 관할 세무서 방문 → 차량 등록증 지참 → 신청서 작성 → 제출.</p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
-                    <p className="text-text-primary font-semibold mb-2">4⃣ 지역별 앱 (서울·경기·인천 등)</p>
+                    <p className="text-text-primary font-semibold mb-2">4. 지역별 앱 (서울·경기·인천 등)</p>
                     <ul className="text-text-secondary mt-2 space-y-1 list-disc list-inside">
                       <li>서울: STAX (스택) 앱</li>
                       <li>경기·인천: 지역 지방세 앱 (경기는 "한꺼번이", 인천은 "인천 지방세")</li>

@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { comprehensivePropertyTaxQuickTable } from '@/lib/quick-tables/comprehensive-property-tax';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -225,6 +227,7 @@ export default function ComprehensivePropertyTaxPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="comprehensive-property-tax"
+              quickTable={<QuickTable data={comprehensivePropertyTaxQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

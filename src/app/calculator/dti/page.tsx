@@ -1,4 +1,6 @@
 import { DtiCalculator } from './DtiCalculator';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { dtiQuickTable } from '@/lib/quick-tables/dti';
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
 import type { Metadata } from 'next';
 import Link from 'next/link';
@@ -199,6 +201,7 @@ export default function DtiPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="dti"
+              quickTable={<QuickTable data={dtiQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

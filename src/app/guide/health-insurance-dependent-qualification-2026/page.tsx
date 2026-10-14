@@ -153,7 +153,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
               {/* 1. 피부양자 정의 및 기본 요건 */}
               <GuideCalculatorCta slug="health-insurance-dependent-qualification-2026" />
               <section aria-label="피부양자 정의" className="space-y-4">
-                <h2 className="text-2xl font-semibold">1⃣ 피부양자란?, 정의와 기본 요건</h2>
+                <h2 className="text-2xl font-semibold">1. 피부양자란?, 정의와 기본 요건</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">정의</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -192,7 +192,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 2. 소득 요건 상세 */}
               <section aria-label="소득 요건" className="space-y-4">
-                <h2 className="text-2xl font-semibold">2⃣ 소득 요건, 연 2,000만원 기본, 프리랜서 500만원</h2>
+                <h2 className="text-2xl font-semibold">2. 소득 요건, 연 2,000만원 기본, 프리랜서 500만원</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">핵심 기준</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -240,7 +240,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 3. 재산 요건 상세 */}
               <section aria-label="재산 요건" className="space-y-4">
-                <h2 className="text-2xl font-semibold">3⃣ 재산 요건, 과세표준 5.4억원 / 조건부 9억</h2>
+                <h2 className="text-2xl font-semibold">3. 재산 요건, 과세표준 5.4억원 / 조건부 9억</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">핵심 기준</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -297,7 +297,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 4. 형제자매 특수 규칙 */}
               <section aria-label="형제자매 규칙" className="space-y-4">
-                <h2 className="text-2xl font-semibold">4⃣ 형제자매 범위, 만 30세 미만 또는 65세 이상만</h2>
+                <h2 className="text-2xl font-semibold">4. 형제자매 범위, 만 30세 미만 또는 65세 이상만</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">형제자매 나이 제한</p>
                   <p className="mt-2 text-sm text-text-secondary">
@@ -323,7 +323,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
 
               {/* 5. 탈락 기준 및 전환 */}
               <section aria-label="탈락 기준" className="space-y-4">
-                <h2 className="text-2xl font-semibold">5⃣ 탈락 기준, 언제 지역가입자로 바뀌나?</h2>
+                <h2 className="text-2xl font-semibold">5. 탈락 기준, 언제 지역가입자로 바뀌나?</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">
                   <p className="text-sm font-semibold text-text-primary">탈락 시점</p>
                   <p className="mt-2 text-sm text-text-secondary">

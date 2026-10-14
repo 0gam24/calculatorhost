@@ -7,14 +7,14 @@
  * - 상증세법 §20 (기타인적공제: 자녀·미성년자)
  * - 상증세법 §21 (일괄공제 5억)
  * - 상증세법 §26 (세율)
- * - 상증세법 §68 (신고세액공제 3%)
+ * - 상증세법 §69 (신고세액공제 3%)
  *
  * 상수: src/lib/constants/tax-rates-2026.ts
  * 명세: docs/calculator-spec/상속세.md
  *
  * MVP 스코프:
  * - 기초공제 + 자녀공제 + 미성년자공제 vs 일괄공제 5억 자동 비교
- * - 배우자 상속공제 (법정상속분 단순 근사)
+ * - 배우자 상속공제 (실제 상속액·법정상속분 상당액·30억 중 작은 금액, 최소 5억)
  * - 신고세액공제 3% (기한 내 신고 시)
  * - 미지원: 부부합산, 장애인·65세 초과 추가공제, 기타 특례
  *
@@ -156,46 +156,70 @@ export function calculateMinorDeduction(minorCount: number, averageAge: number):
 // ============================================
 
 /**
- * 배우자 상속공제 계산
+ * 배우자 법정상속분 비율 (민법 §1009②: 배우자 상속분은 직계비속 상속분의 5할 가산).
+ * 자녀 n명과 함께 상속하면 1.5 / (1.5 + n). 자녀가 없으면 1(직계존속과 함께 상속하는 경우는 입력이 없어 반영 못 함).
+ */
+export function spouseLegalShare(childrenCount: number): number {
+  const n = Math.max(0, Math.floor(childrenCount));
+  return n === 0 ? 1 : 1.5 / (1.5 + n);
+}
+
+/**
+ * 배우자 상속공제 계산 (상증세법 §19)
  *
- * 법정상속분 내 실제 상속액에 대해 최소 5억, 최대 30억 범위 내 공제.
- * MVP 근사: 법정상속분 검증 없이 실제 상속액에 민/최 범위 적용.
+ * 실제 상속받은 금액, 법정상속분 상당액(과세대상 재산 × 법정상속분), 30억 중 가장 작은 금액.
+ * 다만 5억보다 적으면 5억(§19④).
+ * 2026-10-14 정정: 이전에는 법정상속분 한도 없이 실제 상속액만 써서, 배우자가 법정상속분보다 많이 받으면
+ * 공제가 커지고 세금이 적게 나왔다.
+ * 단순화: 10년 안 사전증여·배우자 사전증여 과세표준 차감은 반영하지 않는다.
  *
  * @param hasSpouse 배우자 있음 여부
  * @param spouseInheritedAmount 배우자 실제 상속액 (원)
- * @param totalAssets 총 상속재산 (참고용, 경고)
+ * @param taxableAssets 과세대상 상속재산 (원, 법정상속분 상당액 계산 기준)
+ * @param childrenCount 함께 상속받는 자녀 수
  * @returns { deduction, warning? }
  */
 function calculateSpouseDeduction(
   hasSpouse: boolean,
   spouseInheritedAmount: number,
-  totalAssets: number
+  taxableAssets: number,
+  childrenCount: number
 ): { deduction: number; warning?: string } {
   if (!hasSpouse) {
     return { deduction: 0 };
   }
 
-  const clamped = Math.min(
-    INHERITANCE_SPOUSE_MAX_DEDUCTION,
-    Math.max(INHERITANCE_SPOUSE_MIN_DEDUCTION, Math.max(0, spouseInheritedAmount))
+  const n = Math.max(0, Math.floor(childrenCount));
+  const share = spouseLegalShare(n);
+  const shareLabel = n === 0 ? '전부' : `${3}/${3 + 2 * n}`;
+  const legalShareAmount = Math.floor(taxableAssets * share);
+  const actual = Math.max(0, spouseInheritedAmount);
+
+  const deduction = Math.max(
+    INHERITANCE_SPOUSE_MIN_DEDUCTION,
+    Math.min(actual, legalShareAmount, INHERITANCE_SPOUSE_MAX_DEDUCTION)
   );
 
   const warnings: string[] = [];
 
-  if (spouseInheritedAmount > INHERITANCE_SPOUSE_MAX_DEDUCTION) {
+  if (actual > INHERITANCE_SPOUSE_MAX_DEDUCTION) {
+    warnings.push('배우자 상속공제는 최대 30억 원까지입니다(상증세법 §19①).');
+  }
+
+  if (n > 0 && actual > legalShareAmount) {
     warnings.push(
-      `배우자 상속공제는 최대 30억입니다. 법정상속분(1/2)을 초과하는 부분은 실제 상속공제 대상에서 제한될 수 있습니다. 정확한 계산은 세무사 상담을 권장합니다.`
+      `배우자 상속공제는 법정상속분(자녀 ${n}명과 상속하면 ${shareLabel}) 상당액 ${legalShareAmount.toLocaleString('ko-KR')}원까지만 받을 수 있습니다(상증세법 §19①, 민법 §1009②).`
     );
   }
 
-  if (hasSpouse && spouseInheritedAmount > totalAssets * 0.5) {
+  if (n === 0) {
     warnings.push(
-      `배우자의 실제 상속분이 총재산의 50%를 초과합니다. 상속공제는 법정상속분(1/2) 내로 제한될 수 있습니다. 상세한 계산을 위해 세무사 상담을 권장합니다.`
+      '자녀가 없으면 피상속인의 부모와 함께 상속받을 수 있고, 그때는 배우자 법정상속분이 줄어듭니다. 배우자 혼자 상속받으면 일괄공제 5억 원 대신 기초공제 2억 원과 그 밖의 인적공제만 받습니다(상증세법 §21②). 이 계산기는 배우자 법정상속분을 전부로 보고 일괄공제를 비교합니다.'
     );
   }
 
   return {
-    deduction: clamped,
+    deduction,
     warning: warnings.length > 0 ? warnings.join(' / ') : undefined,
   };
 }
@@ -313,7 +337,8 @@ export function calculateInheritanceTax(input: InheritanceInput): InheritanceRes
   const { deduction: spouseDeduction, warning: spouseWarning } = calculateSpouseDeduction(
     input.hasSpouse,
     input.spouseInheritedAmount,
-    input.totalAssets
+    taxableAssets,
+    input.childrenCount
   );
 
   if (spouseWarning) {
@@ -331,7 +356,7 @@ export function calculateInheritanceTax(input: InheritanceInput): InheritanceRes
     ? Math.floor(calculateProgressiveTax(taxableBase, GIFT_INHERITANCE_TAX_BRACKETS) / 10) * 10
     : 0;
 
-  // ─── 신고세액공제 (상증세법 §68) ───
+  // ─── 신고세액공제 (상증세법 §69) ───
   const reportingCredit = input.reportWithinDeadline
     ? Math.floor((grossTax * REPORTING_TAX_CREDIT_RATE) / 10) * 10
     : 0;

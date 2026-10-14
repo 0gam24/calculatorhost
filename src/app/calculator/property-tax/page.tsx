@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { propertyTaxQuickTable } from '@/lib/quick-tables/property-tax';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
@@ -243,6 +245,7 @@ export default function PropertyTaxPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="property-tax"
+              quickTable={<QuickTable data={propertyTaxQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

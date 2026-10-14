@@ -321,7 +321,7 @@ export const GIFT_DEDUCTION = {
   otherRelative: 10_000_000, // 기타 친족 1천만
 } as const;
 
-/** 신고세액공제율 (기한 내 자진신고) — 상증세법 §68 */
+/** 신고세액공제율 (기한 내 자진신고) — 상증세법 §69 */
 export const REPORTING_TAX_CREDIT_RATE = 0.03;
 
 // ============================================

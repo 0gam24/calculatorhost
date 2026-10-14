@@ -6,7 +6,7 @@
  */
 
 import { describe, it, expect } from 'vitest';
-import { calculateInheritanceTax, type InheritanceInput } from '@/lib/tax/inheritance';
+import { calculateInheritanceTax, spouseLegalShare, type InheritanceInput } from '@/lib/tax/inheritance';
 
 describe('calculateInheritanceTax', () => {
   // ─────────────────────────────────────────────
@@ -56,13 +56,14 @@ describe('calculateInheritanceTax', () => {
   // ─────────────────────────────────────────────
   // 2. 상속 30억, 배우자 + 자녀 2, 배우자 실제 상속 15억
   //    기초 2억 + 자녀 1억 = 3억, 일괄 5억 → 5억 선택 (auto)
-  //    배우자공제 = min(30억, max(5억, 15억)) = 15억
-  //    효과적 공제 = 5억 + 15억 = 20억
-  //    과표 10억
-  //    30% × 10억 - 6천만 = 2.4억
-  //    신고공제 3% = 720만 → final 232,800,000
+  //    배우자공제 = min(실제 15억, 법정상속분 30억 × 3/7 = 1,285,714,285, 30억) = 1,285,714,285
+  //    (2026-10-14 정정: 이전 기대값 15억은 법정상속분 한도를 빠뜨린 값. 상증세법 §19①, 민법 §1009②)
+  //    효과적 공제 = 5억 + 1,285,714,285 = 1,785,714,285
+  //    과표 1,214,285,715
+  //    40% × 과표 - 1.6억 = 325,714,286 → 10원 절사 325,714,280
+  //    신고공제 3% = 9,771,420 → final 315,942,860
   // ─────────────────────────────────────────────
-  it('상속 30억, 배우자 + 자녀 2, 배우자 상속 15억 → 세금 2.328억', () => {
+  it('상속 30억, 배우자 + 자녀 2, 배우자 상속 15억 → 배우자공제는 법정상속분까지, 세금 약 3.16억', () => {
     const input: InheritanceInput = {
       totalAssets: 3_000_000_000,
       funeralAndDebts: 0,
@@ -84,18 +85,18 @@ describe('calculateInheritanceTax', () => {
     expect(result.personalDeductionSubtotal).toBe(300_000_000);
     expect(result.lumpSumDeduction).toBe(500_000_000);
     expect(result.selectedMode).toBe('lumpSum');
-    expect(result.spouseDeduction).toBe(1_500_000_000);
-    expect(result.effectiveDeduction).toBe(2_000_000_000);
-    expect(result.taxableBase).toBe(1_000_000_000);
+    expect(result.spouseDeduction).toBe(1_285_714_285);
+    expect(result.effectiveDeduction).toBe(1_785_714_285);
+    expect(result.taxableBase).toBe(1_214_285_715);
 
-    // 과표 10억 → 30% × 10억 - 6천만 = 2.4억
-    expect(result.grossTax).toBe(240_000_000);
+    // 과표 1,214,285,715 → 40% 구간: × 40% - 1.6억 = 325,714,286 → 10원 절사
+    expect(result.grossTax).toBe(325_714_280);
 
-    // 신고공제: 2.4억 × 3% = 7,200,000 (10원 단위 절사 → 720만)
-    expect(result.reportingCredit).toBe(7_200_000);
+    // 신고공제: 325,714,280 × 3% = 9,771,428.4 → 10원 절사 9,771,420
+    expect(result.reportingCredit).toBe(9_771_420);
 
-    // 최종: 2.4억 - 720만 = 232,800,000
-    expect(result.finalTax).toBe(232_800_000);
+    // 최종: 325,714,280 - 9,771,420 = 315,942,860
+    expect(result.finalTax).toBe(315_942_860);
   });
 
   // ─────────────────────────────────────────────
@@ -550,5 +551,43 @@ describe('calculateInheritanceTax', () => {
     // minorCount는 min(input.minorChildrenCount, input.childrenCount) = 1로 제한
     expect(result.minorDeduction).toBe(90_000_000);
     expect(result.childrenDeduction).toBe(50_000_000);
+  });
+});
+
+// ─────────────────────────────────────────────
+// 2026-10-14 정정: 배우자 상속공제는 법정상속분 상당액까지만 (상증세법 §19①, 민법 §1009②)
+// 배우자 상속분 = 자녀 상속분의 1.5배 → 자녀 n명이면 1.5 / (1.5 + n). 자녀 2명이면 3/7.
+// ─────────────────────────────────────────────
+describe('배우자 법정상속분 한도', () => {
+  const base: InheritanceInput = {
+    totalAssets: 3_000_000_000,
+    funeralAndDebts: 0,
+    hasSpouse: true,
+    spouseInheritedAmount: 1_500_000_000,
+    childrenCount: 2,
+    minorChildrenCount: 0,
+    minorChildrenAverageAgeYears: 0,
+    deductionMode: 'auto',
+    reportWithinDeadline: true,
+  };
+
+  it('법정상속분 비율: 자녀 0명 1, 1명 3/5, 2명 3/7', () => {
+    expect(spouseLegalShare(0)).toBe(1);
+    expect(spouseLegalShare(1)).toBeCloseTo(0.6, 10);
+    expect(spouseLegalShare(2)).toBeCloseTo(3 / 7, 10);
+  });
+
+  it('30억·자녀 2명·배우자 15억 상속 → 공제는 30억 × 3/7 = 1,285,714,285원까지', () => {
+    const r = calculateInheritanceTax(base);
+    expect(r.spouseDeduction).toBe(1_285_714_285);
+    expect(r.warnings.some((w) => w.includes('3/7'))).toBe(true);
+  });
+
+  it('법정상속분보다 적게 받으면 실제 받은 금액', () => {
+    expect(calculateInheritanceTax({ ...base, spouseInheritedAmount: 1_000_000_000 }).spouseDeduction).toBe(1_000_000_000);
+  });
+
+  it('5억 미만이면 최소 5억', () => {
+    expect(calculateInheritanceTax({ ...base, spouseInheritedAmount: 300_000_000 }).spouseDeduction).toBe(500_000_000);
   });
 });

@@ -614,7 +614,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                     </li>
                     <li>• 자녀: 증여취득세 신고 (거래 후 60일 이내)</li>
                     <li>
-                      • 신고기한 내 자진신고 시 신고세액공제 3% 가능 (상증법 §68)
+                      • 신고기한 내 자진신고 시 신고세액공제 3% 가능 (상증법 §69)
                     </li>
                   </ul>
                 </div>

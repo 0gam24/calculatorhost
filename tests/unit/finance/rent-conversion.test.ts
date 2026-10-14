@@ -6,6 +6,7 @@
  */
 
 import { describe, expect, it } from 'vitest';
+import bokRates from '@/data/bok-rates.json';
 import {
   calculateRentConversion,
   type RentConversionInput,
@@ -15,9 +16,11 @@ import {
 // 헬퍼: 입력값 생성
 // ============================================
 
+// 산식 검증용 고정 가정: 기준금리 3.5% (+2%p = 5.5%). 기본값(bok-rates.json) 테스트는 baseRatePercent: undefined 로 따로 둔다.
 function createInput(overrides: Partial<RentConversionInput>): RentConversionInput {
   return {
     mode: 'jeonseToMonthly',
+    baseRatePercent: 3.5,
     ...overrides,
   };
 }
@@ -309,7 +312,8 @@ describe('calculateRentConversion — 법정 상한 계산', () => {
 // ============================================
 
 describe('calculateRentConversion — 기본값 적용', () => {
-  it('기본값 미지정 시 BANK_OF_KOREA_BASE_RATE_DEFAULT (3.5%) 적용', () => {
+  // 2026-10-14: 기본 기준금리는 고정 3.5%가 아니라 src/data/bok-rates.json(현재 3.00%, 2026-08 금통위)을 따른다
+  it('기본값 미지정 시 bok-rates.json 기준금리 + 2%p 적용', () => {
     const result = calculateRentConversion(
       createInput({
         mode: 'jeonseToMonthly',
@@ -321,8 +325,8 @@ describe('calculateRentConversion — 기본값 적용', () => {
       })
     );
 
-    // 기본 3.5% + 2% = 5.5% 또는 10% (더 낮은 값) = 5.5%
-    expect(result.appliedConversionRatePercent).toBeCloseTo(5.5, 1);
+    // 기준금리(bok-rates) + 2%p 와 10% 중 낮은 값
+    expect(result.appliedConversionRatePercent).toBeCloseTo(Math.min(bokRates.baseRate * 100 + 2, 10), 6);
   });
 });
 

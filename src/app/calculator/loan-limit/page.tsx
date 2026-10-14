@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { loanLimitQuickTable } from '@/lib/quick-tables/loan-limit';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -231,6 +233,7 @@ export default function LoanLimitPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="loan-limit"
+              quickTable={<QuickTable data={loanLimitQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

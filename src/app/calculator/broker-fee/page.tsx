@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { brokerFeeQuickTable } from '@/lib/quick-tables/broker-fee';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
@@ -219,6 +221,7 @@ export default function CommissionPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="broker-fee"
+              quickTable={<QuickTable data={brokerFeeQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

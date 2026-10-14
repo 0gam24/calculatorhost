@@ -204,7 +204,7 @@ export default function HousingPensionReverseMortgage2026() {
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금 가입의 핵심 조건은 <strong>나이, 주택가격, 주택 소유 현황</strong>입니다.
                 </p>
-                <h3 className="text-lg font-semibold mt-4">1⃣ 나이 조건, 만 55세 이상</h3>
+                <h3 className="text-lg font-semibold mt-4">1. 나이 조건, 만 55세 이상</h3>
                 <p className="text-text-secondary leading-relaxed text-sm">
                   <strong>부부 중 1명이라도 만 55세 이상</strong>이면 가입할 수 있습니다.
                   배우자가 만 60세, 본인이 만 53세라면, 배우자가 가입자가 되어 신청 가능합니다.
@@ -214,7 +214,7 @@ export default function HousingPensionReverseMortgage2026() {
                   다만 배우자가 가입자가 되는 경우, 본인은 배우자 사망 후 "승계자"가 될 수 있으므로 추가 신청 절차 없이 자동 계승됩니다.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">2⃣ 주택 조건, 공시가격 12억 원 이하</h3>
+                <h3 className="text-lg font-semibold mt-4">2. 주택 조건, 공시가격 12억 원 이하</h3>
                 <p className="text-text-secondary leading-relaxed text-sm">
                   <strong>가입 시점의 공시가격을 기준</strong>으로 다음이 적용됩니다.
                 </p>
@@ -233,7 +233,7 @@ export default function HousingPensionReverseMortgage2026() {
                   정확한 공시가격은 부동산공시가격알리미(realtyprice.kr)에서 확인하세요.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">3⃣ 주택 유형</h3>
+                <h3 className="text-lg font-semibold mt-4">3. 주택 유형</h3>
                 <p className="text-text-secondary leading-relaxed text-sm">
                   단독주택, 오피스텔(분양), 아파트, 다세대·다가구주택, 상가주택 등 대부분의 주택이 대상입니다.
                   다만 미분양 또는 미점유 주택은 제외됩니다.
@@ -283,7 +283,7 @@ export default function HousingPensionReverseMortgage2026() {
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   주택연금은 4가지 지급방식을 선택할 수 있습니다. 각각 장단점이 있으므로 본인 상황에 맞게 선택하세요.
                 </p>
-                <h3 className="text-lg font-semibold mt-4">1⃣ 종신지급방식 (가장 일반적)</h3>
+                <h3 className="text-lg font-semibold mt-4">1. 종신지급방식 (가장 일반적)</h3>
                 <p className="text-sm text-text-secondary">
                   <strong>사망할 때까지 매월 같은 금액을 지급</strong>합니다.
                   예: 월 300만 원을 매달 받다가, 사망 후 주택을 팔아 상환합니다.
@@ -293,7 +293,7 @@ export default function HousingPensionReverseMortgage2026() {
                   <strong>단점:</strong> 수명이 짧으면 받은 월지급금 합계가 주택가격보다 적을 수 있습니다 (그러나 국가보증이므로 손실 없음).
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">2⃣ 확정기간방식</h3>
+                <h3 className="text-lg font-semibold mt-4">2. 확정기간방식</h3>
                 <p className="text-sm text-text-secondary">
                   <strong>10년, 15년, 20년 등 정한 기간 동안만 지급</strong>합니다.
                   기간이 만료되면 지급이 중단됩니다.
@@ -303,7 +303,7 @@ export default function HousingPensionReverseMortgage2026() {
                   <strong>단점:</strong> 기간 만료 후 추가 수령 없음. 오래 사시는 분에게는 불리합니다.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">3⃣ 대출상환방식</h3>
+                <h3 className="text-lg font-semibold mt-4">3. 대출상환방식</h3>
                 <p className="text-sm text-text-secondary">
                   <strong>주담대(주택담보대출) 상환용 일시금을 먼저 인출한 후, 나머지 잔액을 종신 또는 기간 지급</strong>합니다.
                   예: 주담대 1억 상환 → 나머지로 월 150만 원 종신 지급.
@@ -313,7 +313,7 @@ export default function HousingPensionReverseMortgage2026() {
                   <strong>단점:</strong> 초기 일시금 인출로 잔액이 줄어들어 월지급금이 적어집니다.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">4⃣ 우대지급방식</h3>
+                <h3 className="text-lg font-semibold mt-4">4. 우대지급방식</h3>
                 <p className="text-sm text-text-secondary">
                   <strong>저소득·저가주택 보유자를 위해 월지급금을 더 많이 주는 방식</strong>입니다.
                   <br />
@@ -362,7 +362,7 @@ export default function HousingPensionReverseMortgage2026() {
                   주택연금의 또 다른 장점은 세제 혜택입니다. 월지급금은 소득세 비과세이며,
                   관련 세금과 수수료도 감면됩니다.
                 </p>
-                <h3 className="text-lg font-semibold mt-4">1⃣ 월지급금은 소득세 비과세</h3>
+                <h3 className="text-lg font-semibold mt-4">1. 월지급금은 소득세 비과세</h3>
                 <p className="text-sm text-text-secondary">
                   주택연금 수령액은 <strong>소득세가 붙지 않습니다.</strong>
                   이유는 대출금(선취이자 포함)을 나누어 받는 것이므로 "소득"이 아니기 때문입니다.
@@ -371,7 +371,7 @@ export default function HousingPensionReverseMortgage2026() {
                   근거: 한국주택금융공사법 및 조세특례제한법(주택담보노후연금 관련 규정).
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">2⃣ 재산세 25% 감면</h3>
+                <h3 className="text-lg font-semibold mt-4">2. 재산세 25% 감면</h3>
                 <p className="text-sm text-text-secondary">
                   주택연금 가입 주택은 <strong>재산세가 25% 감면</strong>됩니다.
                   예: 예상 재산세 200만 원 → 150만 원으로 감소.
@@ -379,7 +379,7 @@ export default function HousingPensionReverseMortgage2026() {
                   이 감면은 매년 자동으로 적용되므로, 별도 신청 불필요. 근거: 지방세특례제한법(주택연금 가입주택 재산세 경감 규정).
                 </p>
 
-                <h3 className="text-lg font-semibold mt-4">3⃣ 등록면허세·국민주택채권 감면</h3>
+                <h3 className="text-lg font-semibold mt-4">3. 등록면허세·국민주택채권 감면</h3>
                 <p className="text-sm text-text-secondary">
                   저당권 설정 시 등록면허세, 그리고 특정 요건(저가주택·1주택)에 따라 국민주택채권이 감면될 수 있습니다.
                   정확한 감면 여부는 한국주택금융공사에 확인하세요.

@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { freelancerTaxQuickTable } from '@/lib/quick-tables/freelancer-tax';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -220,6 +222,7 @@ export default function FreelancerTaxPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="freelancer-tax"
+              quickTable={<QuickTable data={freelancerTaxQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb

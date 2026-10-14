@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { inheritanceTaxQuickTable } from '@/lib/quick-tables/inheritance-tax';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -75,7 +77,7 @@ const FAQ_ITEMS = [
   {
     question: '상속세 신고 기한은?',
     answer:
-      '상증세법 §48에 따라 피상족인이 사망한 날(상속개시일)부터 6개월 이내에 신고해야 합니다. 예: 2026년 3월 15일 사망 → 2026년 9월 15일까지 신고. 기한 내 신고 시 신고세액공제 3%를 받고, 기한을 초과하면 가산세 20% + 납부 지연 이자(연 6-12%)가 부과됩니다.',
+      '상증세법 §67에 따라 상속개시일(사망일)이 속하는 달의 말일부터 6개월 이내에 신고해야 합니다. 예: 2026년 3월 15일 사망이면 2026년 9월 30일까지 신고합니다. 기한 내 신고 시 신고세액공제 3%를 받고(§69), 기한을 넘기면 무신고가산세 20%와 납부지연가산세(하루 0.022%)가 붙습니다.',
   },
   {
     question: '상속재산을 분할하지 않으면 어떻게 되나요?',
@@ -135,7 +137,7 @@ export default function InheritanceTaxPage() {
       },
       {
         name: '신고 기한 확인 및 결과 조회',
-        text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. 상속개시일(사망일) + 6개월이 신고 기한입니다(상증세법 §48).',
+        text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. 상속개시일(사망일)이 속하는 달의 말일부터 6개월 이내가 신고 기한입니다(상증세법 §67).',
       },
     ],
   });
@@ -214,6 +216,7 @@ export default function InheritanceTaxPage() {
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
             <CalculatorPageContent guidesFor="inheritance-tax"
+              quickTable={<QuickTable data={inheritanceTaxQuickTable()} />}
               intro={
                 <header>
                   <Breadcrumb
@@ -243,7 +246,7 @@ export default function InheritanceTaxPage() {
               }
             >
               <StructuredSummary
-                definition="상속세는 피상속인(피상족)으로부터 재산을 무상으로 받을 때 부과되는 국세입니다. 상속인의 지위(배우자·자녀·부모 등)에 따라 공제액이 다르고, 기초공제 2억과 일괄공제 5억 중 유리한 것이 자동 적용됩니다(상증세법 §18-§26)."
+                definition="상속세는 피상속인(돌아가신 분)으로부터 재산을 무상으로 받을 때 부과되는 국세입니다. 상속인의 지위(배우자·자녀·부모 등)에 따라 공제액이 다르고, 기초공제 2억과 일괄공제 5억 중 유리한 것이 자동 적용됩니다(상증세법 §18-§26)."
                 table={{
                   caption: '상속인별 주요 공제액',
                   headers: ['공제 유형', '금액/기준'],
@@ -452,7 +455,7 @@ export default function InheritanceTaxPage() {
                 </p>
               </section>
               <section aria-label="신고세액공제" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">신고세액공제 3% (상증세법 §68)</h2>
+                <h2 className="mb-4 text-2xl font-semibold">신고세액공제 3% (상증세법 §69)</h2>
                 <p className="mb-4 text-text-secondary">
                   상속세는 기한 내에 자진신고하는 경우 산출세액의 <strong>3%를 공제</strong>
                   해줍니다. 신고 기한은 <strong>상속개시일(피상속인 사망일)부터 6개월</strong>
@@ -606,7 +609,7 @@ export default function InheritanceTaxPage() {
               >
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 상속세 및 증여세법 §21(공제), §26(세율),
-                  §68(신고세액공제)
+                  §69(신고세액공제)
                 </p>
                 <p className="mb-2">
                   <strong>공식 출처</strong>:{' '}

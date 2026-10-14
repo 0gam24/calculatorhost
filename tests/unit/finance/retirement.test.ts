@@ -427,3 +427,24 @@ describe('calculateRetirement — 엣지 케이스', () => {
     expect(result.yearsInRetirement).toBe(30);
   });
 });
+
+// 2026-10-14 정정: 부족액 경고가 실제의 1/100로 표시되던 버그 (8.5억 부족 → "약 840만 원")
+describe('calculateRetirement — 부족액 경고 문구 단위', () => {
+  it('부족액이 억 단위면 "X억 Y만 원"으로 쓴다', () => {
+    const result = calculateRetirement(
+      createInput({
+        currentAge: 30,
+        retirementAge: 60,
+        expectedLifespanAge: 90,
+        currentSavings: 0,
+        monthlyContribution: 0,
+        annualSpendingAtRetirement: 40_000_000,
+        expectedInflationPercent: 0,
+      })
+    );
+    const manWon = Math.floor(result.shortfall / 10_000);
+    const expected = `${Math.floor(manWon / 10_000)}억 ${(manWon % 10_000).toLocaleString('ko-KR')}만 원`;
+    expect(result.shortfall).toBeGreaterThan(100_000_000);
+    expect(result.warnings.some((w) => w.includes(`약 ${expected}이 부족합니다`))).toBe(true);
+  });
+});

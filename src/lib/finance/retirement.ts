@@ -167,6 +167,16 @@ function calculateRequiredMonthlyPayment(
 // 메인 계산 함수
 // ============================================
 
+/** 원 → "8억 4,782만 원" / "4,782만 원" (만 원 미만 버림) */
+function formatManWonKorean(amount: number): string {
+  const man = Math.floor(Math.max(0, amount) / 10_000);
+  const eok = Math.floor(man / 10_000);
+  const rest = man % 10_000;
+  if (eok > 0 && rest > 0) return `${eok}억 ${rest.toLocaleString('ko-KR')}만 원`;
+  if (eok > 0) return `${eok}억 원`;
+  return `${rest.toLocaleString('ko-KR')}만 원`;
+}
+
 /**
  * 은퇴자금 계산 (메인 엔트리)
  *
@@ -310,8 +320,9 @@ export function calculateRetirement(input: RetirementInput): RetirementResult {
   // ────────────────────────────────────────
 
   if (shortfall > 0) {
+    // 2026-10-14 정정: 이전 식(Math.floor(shortfall / 10_000_000) * 10)은 실제 부족액의 1/100을 "만 원"으로 표시했다
     warnings.push(
-      `현재 저축 속도로는 약 ${Math.floor(shortfall / 10_000_000) * 10}만 원이 부족합니다. 월 저축액을 늘리거나 은퇴 나이를 연장하세요.`
+      `현재 저축 속도로는 약 ${formatManWonKorean(shortfall)}이 부족합니다. 월 저축액을 늘리거나 은퇴 나이를 연장하세요.`
     );
   }
 

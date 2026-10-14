@@ -1,4 +1,6 @@
 import { CalculatorPageContent } from '@/components/calculator/CalculatorPageContent';
+import { QuickTable } from '@/components/calculator/QuickTable';
+import { nJobberInsuranceQuickTable } from '@/lib/quick-tables/n-jobber-insurance';
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -194,6 +196,7 @@ export default function NJobberInsurancePage() {
           className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
         >
           <CalculatorPageContent guidesFor="n-jobber-insurance"
+            quickTable={<QuickTable data={nJobberInsuranceQuickTable()} />}
             intro={
               <header>
                 <Breadcrumb
