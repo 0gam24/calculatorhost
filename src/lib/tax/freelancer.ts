@@ -17,6 +17,7 @@ import {
   INCOME_TAX_BRACKETS,
   PERSONAL_DEDUCTION,
   CHILD_TAX_CREDIT,
+  STANDARD_TAX_CREDIT_NON_WAGE,
   LOCAL_INCOME_TAX_RATE,
   FREELANCER_WITHHOLDING_RATE,
   FREELANCER_DEFAULT_SIMPLE_EXPENSE_RATE,
@@ -67,6 +68,8 @@ export interface FreelancerResult {
   grossTax: number;
   /** 자녀세액공제 (원) */
   childTaxCredit: number;
+  /** 표준세액공제 (원, 근로소득 없는 종합소득자 연 7만 원, 소득세법 §59의4⑨) */
+  standardTaxCredit: number;
   /** 결정세액 (지방소득세 제외) (원) */
   finalTax: number;
   /** 지방소득세 (원, 10원 단위 절사) */
@@ -156,8 +159,15 @@ export function calculateFreelancerTax(input: FreelancerInput): FreelancerResult
     childTaxCreditAmount += CHILD_TAX_CREDIT.thirdPlus * (children - 2);
   }
 
-  // 결정세액 = 산출세액 - 자녀세액공제 (최소 0)
-  const finalTax = Math.max(0, grossTax - childTaxCreditAmount);
+  // 표준세액공제: 근로소득이 없는 종합소득자 연 7만 원 (소득세법 §59의4⑨). 남은 세액까지만
+  // 2026-10-14 추가: 이전에는 빠져 있어 세금이 최대 7만 원(지방소득세 포함 7.7만 원) 많게 나왔다
+  const standardTaxCredit = Math.min(
+    STANDARD_TAX_CREDIT_NON_WAGE,
+    Math.max(0, grossTax - childTaxCreditAmount)
+  );
+
+  // 결정세액 = 산출세액 - 자녀세액공제 - 표준세액공제 (최소 0)
+  const finalTax = Math.max(0, grossTax - childTaxCreditAmount - standardTaxCredit);
 
   // 지방소득세 = 결정세액 × 10% (10원 단위 절사)
   const localIncomeTax = Math.floor((finalTax * LOCAL_INCOME_TAX_RATE) / 10) * 10;
@@ -175,9 +185,10 @@ export function calculateFreelancerTax(input: FreelancerInput): FreelancerResult
     );
   }
 
-  if (revenue > 48_000_000 && input.expenseMethod === 'simpleRate') {
+  if (input.expenseMethod === 'simpleRate') {
+    // 2026-10-14: 근거가 확인되지 않은 "4,800만 원 초과 시 기준경비율" 문구를 일반 안내로 바꿈
     warnings.push(
-      '인적용역은 수입 4,800만 초과 시 기준경비율 적용이 원칙. 본 계산은 참고용입니다.'
+      '단순경비율은 직전 연도 수입금액이 업종별 기준보다 적거나 새로 사업을 시작한 경우에만 쓸 수 있습니다(소득세법 시행령 §143④). 기준을 넘으면 기준경비율이나 장부로 계산하세요.'
     );
   }
 
@@ -198,6 +209,7 @@ export function calculateFreelancerTax(input: FreelancerInput): FreelancerResult
     taxableBase,
     grossTax,
     childTaxCredit: childTaxCreditAmount,
+    standardTaxCredit,
     finalTax,
     localIncomeTax,
     totalTaxLiability,

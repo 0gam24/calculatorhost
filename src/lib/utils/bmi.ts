@@ -92,8 +92,10 @@ export function calculateBmi(input: BmiInput): BmiResult {
   const bmi = roundTo(input.weightKg / (heightM * heightM), 2);
   const category = classifyBmi(bmi);
 
-  const normalWeightLower = roundTo(BMI_NORMAL_LOWER * heightM * heightM, 1);
-  const normalWeightUpper = roundTo(BMI_NORMAL_UPPER * heightM * heightM, 1);
+  // 하한은 0.1kg 올림, 상한은 0.1kg 내림: 범위 끝값도 정상으로 분류되게 (2026-10-14 정정,
+  // 반올림이면 150·155·180cm 하한이 BMI 18.49 로 저체중이 됐다). 부동소수 오차는 1e-9 로 흡수
+  const normalWeightLower = Math.ceil(BMI_NORMAL_LOWER * heightM * heightM * 10 - 1e-9) / 10;
+  const normalWeightUpper = Math.floor(BMI_NORMAL_UPPER * heightM * heightM * 10 + 1e-9) / 10;
 
   let diffToNormal = 0;
   if (input.weightKg > normalWeightUpper) {

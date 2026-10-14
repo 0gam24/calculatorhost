@@ -242,14 +242,14 @@ const GLOSSARY: GlossarySection[] = [
         name: '손익분기점 (BEP)',
         alternateName: 'BEP',
         description:
-          'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식 매도 시 거래세 0.18% 추가 부담.',
+          'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식 매도 시 거래세 0.20%(2026년) 추가 부담.',
         relatedCalculator: { href: '/calculator/split-buy/', label: '분할매수 계산기' },
         anchorId: 'break-even-point',
       },
       {
         name: '증권거래세',
         description:
-          '한국 주식 매도 시 부과되는 세금. 2026년 코스피·코스닥 모두 0.18% (농어촌특별세 0.15% + 거래세 0.03%). 코인은 거래세 없음.',
+          '한국 주식 매도 시 부과되는 세금. 2026년 매도분부터 코스피 0.20%(거래세 0.05% + 농어촌특별세 0.15%), 코스닥 0.20%. 코인은 거래세 없음.',
         url: 'https://www.nts.go.kr',
         relatedCalculator: { href: '/calculator/split-sell/', label: '분할매도 계산기' },
         anchorId: 'securities-transaction-tax',

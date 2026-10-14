@@ -43,10 +43,10 @@ describe('프리랜서 3.3% 환급 표', () => {
     expect(cells?.[3]).toBe(won(r.withholdingPaid));
   });
 
-  it('단순경비율 제한 경고가 나오는 수입은 표에 넣지 않는다', () => {
+  it('단순경비율 대상일 가능성이 큰 4,500만 원까지만 보여 준다', () => {
     expect(row(t, '5,000만 원')).toBeUndefined();
     const top = calc(45_000_000);
-    expect(top.warnings.some((w) => w.includes('기준경비율') || w.includes('복식부기'))).toBe(false);
+    expect(top.standardTaxCredit).toBe(70_000);
     expect(row(t, '4,500만 원')?.[1]).toBe(`환급 ${won(-top.settlementAmount)}`);
   });
 });

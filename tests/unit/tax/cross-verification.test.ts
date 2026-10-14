@@ -2559,8 +2559,10 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
       expect(result.taxableBase).toBe(13_500_000); // 1,800만 - 450만
       expect(result.grossTax).toBe(810_000); // 1,350만 × 6% - 0
       expect(result.childTaxCredit).toBe(550_000); // 자녀 2명: 250K + 300K
-      expect(result.finalTax).toBe(260_000); // 81만 -55만
-      expect(result.totalTaxLiability).toBe(286_000); // 26만 +2.6만
+      // 2026-10-14 정정: 표준세액공제 7만 원(소득세법 §59의4⑨) 반영
+      expect(result.standardTaxCredit).toBe(70_000);
+      expect(result.finalTax).toBe(190_000); // 81만 - 55만 - 7만
+      expect(result.totalTaxLiability).toBe(209_000); // 19만 + 1.9만
       expect(result.settlementAmount).toBeLessThan(0); // 환급 (음수)
     });
 
@@ -2597,8 +2599,9 @@ describe('Cross-Verification: Final +6 Cases (중개수수료·전월세·적금
       expect(result.taxableBase).toBeCloseTo(40_080_000, -3); // 4,308만 - 300만
       expect(result.grossTax).toBeCloseTo(4_752_000, -3); // 4,008만 × 15% - 126만
       expect(result.childTaxCredit).toBe(250_000); // 자녀1명 =250K
-      expect(result.finalTax).toBe(4_502_000); // 475.2만 -25만
-      expect(result.settlementAmount).toBe(992_200); // 추가납부 약99만
+      // 2026-10-14 정정: 표준세액공제 7만 원(소득세법 §59의4⑨) 반영
+      expect(result.finalTax).toBe(4_432_000); // 475.2만 - 25만 - 7만
+      expect(result.settlementAmount).toBe(915_200); // 443.2만 + 44.32만 - 396만
     });
   });
 });

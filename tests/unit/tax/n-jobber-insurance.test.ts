@@ -72,11 +72,13 @@ describe('calculateNJobberInsurance — 부업 2000만 미만', () => {
     expect(result.dependentLossRisk).toBe(false);
   });
 
-  it('주근로 0 + 부업 1500만 → 피부양자 유지 가능', () => {
+  // 2026-10-14: 사업소득은 500만 원 초과 시 따로 탈락하므로(별표1의2), 합계 기준 검증은 기타소득으로
+  it('주근로 0 + 기타소득 1500만 → 피부양자 유지 가능', () => {
     const result = calculateNJobberInsurance(
       createInput({
         mainWageIncome: 0,
-        sideBusinessIncome: 15_000_000,
+        sideBusinessIncome: 0,
+        sideOtherIncome: 15_000_000,
         isDependent: true,
       }),
     );
@@ -160,11 +162,13 @@ describe('calculateNJobberInsurance — 기타 소득', () => {
 // ============================================
 
 describe('calculateNJobberInsurance — 피부양자 상실', () => {
-  it('피부양자 + 부업 1500만 → 상실 위험 없음', () => {
+  // 2026-10-14: 사업소득 1,500만 원은 500만 원 기준을 넘어 탈락 위험이므로 기타소득으로 합계 기준만 검증
+  it('피부양자 + 기타소득 1500만 → 상실 위험 없음', () => {
     const result = calculateNJobberInsurance(
       createInput({
         isDependent: true,
-        sideBusinessIncome: 15_000_000,
+        sideBusinessIncome: 0,
+        sideOtherIncome: 15_000_000,
       }),
     );
 
@@ -297,5 +301,22 @@ describe('calculateNJobberInsurance — 음수·0', () => {
 
     expect(result.totalMonthlyPremium).toBe(0);
     expect(result.annualPremium).toBe(0);
+  });
+});
+
+// 2026-10-14 정정: 피부양자 소득요건은 "합계 2,000만 원 초과"이고, 사업소득은 따로
+// 사업자등록이 없으면 연 500만 원 초과 시 탈락(등록돼 있으면 1원이라도) — 국민건강보험법 시행규칙 별표1의2
+describe('피부양자 탈락 기준 정정', () => {
+  it('기타소득만 정확히 2,000만 원이면 아직 탈락 아님 (초과일 때 탈락)', () => {
+    const r = calculateNJobberInsurance(createInput({ isDependent: true, sideBusinessIncome: 0, sideOtherIncome: 20_000_000 }));
+    expect(r.dependentLossRisk).toBe(false);
+  });
+  it('기타소득 2,000만 원 초과면 탈락', () => {
+    const r = calculateNJobberInsurance(createInput({ isDependent: true, sideBusinessIncome: 0, sideOtherIncome: 20_000_010 }));
+    expect(r.dependentLossRisk).toBe(true);
+  });
+  it('사업소득 600만 원이면 합계 2,000만 원 미만이어도 탈락 위험', () => {
+    const r = calculateNJobberInsurance(createInput({ isDependent: true, sideBusinessIncome: 6_000_000 }));
+    expect(r.dependentLossRisk).toBe(true);
   });
 });

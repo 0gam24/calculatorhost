@@ -17,7 +17,8 @@ import { formatKRW } from '@/lib/utils';
 type AssetType = 'stock' | 'coin';
 
 const FEE_PRESETS: Record<AssetType, { sell: number; tax: number }> = {
-  stock: { sell: 0.015, tax: 0.18 },
+  // 증권거래세 2026: 코스피 0.05% + 농어촌특별세 0.15%, 코스닥 0.20% (2026-10-14 갱신, 이전 0.18%)
+  stock: { sell: 0.015, tax: 0.2 },
   coin: { sell: 0.05, tax: 0 },
 };
 

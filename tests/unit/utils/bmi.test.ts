@@ -50,10 +50,11 @@ describe('calculateBmi', () => {
     expect(r.category).toBe('obesity1');
   });
 
-  it('표준 체중 범위: 170cm → 53.5~66.2kg', () => {
+  // 2026-10-14: 상한은 BMI 22.9 를 넘지 않게 내림(66.2kg 은 BMI 22.91)
+  it('표준 체중 범위: 170cm → 53.5~66.1kg', () => {
     const r = calculateBmi({ heightCm: 170, weightKg: 70 });
     expect(r.normalWeightLower).toBeCloseTo(53.5, 1);
-    expect(r.normalWeightUpper).toBeCloseTo(66.2, 1);
+    expect(r.normalWeightUpper).toBeCloseTo(66.1, 1);
   });
 
   it('몸무게가 정상 범위보다 높음 → 감량 필요량 양수', () => {
@@ -91,5 +92,21 @@ describe('calculateBmi', () => {
   it('NaN → warning', () => {
     const r = calculateBmi({ heightCm: NaN, weightKg: 70 });
     expect(r.warnings.length).toBeGreaterThan(0);
+  });
+});
+
+// 2026-10-14 정정: 정상 체중 범위 끝값이 저체중·과체중으로 분류되던 문제 (하한 올림, 상한 내림)
+describe('정상 체중 범위 끝값은 정상으로 분류', () => {
+  for (const heightCm of [150, 155, 160, 165, 170, 175, 180, 185, 190]) {
+    it(`${heightCm}cm: 하한·상한 체중의 BMI 가 정상`, () => {
+      const r = calculateBmi({ heightCm, weightKg: 60 });
+      expect(calculateBmi({ heightCm, weightKg: r.normalWeightLower }).category).toBe('normal');
+      expect(calculateBmi({ heightCm, weightKg: r.normalWeightUpper }).category).toBe('normal');
+    });
+  }
+  it('150cm 범위는 41.7~51.5kg', () => {
+    const r = calculateBmi({ heightCm: 150, weightKg: 50 });
+    expect(r.normalWeightLower).toBe(41.7);
+    expect(r.normalWeightUpper).toBe(51.5);
   });
 });

@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/vehicle-tax-june-payment-annual-discount-2026/';
 const DATE_PUBLISHED = '2026-06-02';
-const DATE_MODIFIED = '2026-06-02';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026',
@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   {
     question: '자동차세 연납(1월 일시납)은 어떻게 신청하나요?',
     answer:
-      '연납은 매년 1월 중(1월 1일~31일)에 관할 지자체 세무서 또는 위택스(wetax.go.kr)에서 신청합니다. 2026년 공제율은 5%(지방세법 시행령 §125)이며, 기간 비례식으로 계산됩니다. 1월 신청 시 실효율 약 4.81%, 3월 약 3.74%, 6월 약 2.93%, 9월 약 1.67%입니다. 1월을 놓친 경우 6월·12월 정기 납부 시에는 연납 공제가 적용되지 않습니다.',
+      '연납은 1월·3월·6월·9월에 관할 지자체 세무서 또는 위택스(wetax.go.kr)에서 신청합니다. 2026년 이자율은 5%(지방세법 시행령 §125⑥)이며, 남은 기간에 비례해 할인됩니다. 1월 신청 시 연세액의 약 4.58%(남은 334일 기준), 3월 약 3.77%(275일 기준)입니다. 6월·9월은 하반기 세액(제2기)에만 적용되어 연세액 대비 각각 약 2.5%, 1.25%입니다. 1월을 놓쳐도 3월·6월·9월 신청으로 할인을 받을 수 있지만, 늦을수록 할인액은 작아집니다.',
   },
   {
     question: '1600cc 세단 기준 연간 자동차세는 얼마나 되나요?',
@@ -336,9 +336,9 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">4. 연납할인, 1월에 미리 내면 절감</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  자동차세를 6월·12월 두 번에 나눠 내는 대신 1월에 연간 세액을 미리 내면 공제(할인)를 받을 수 있습니다.
-                  2026년 현행 공제율은 <strong>5%(지방세법 시행령 §125)</strong>이며,
-                  기간 비례식으로 계산됩니다(선납일수/365 × 5%). 신청 시기에 따라 실효율이 달라집니다.
+                  자동차세를 6월·12월 두 번에 나눠 내는 대신 1월·3월·6월·9월에 연납을 신청하면 공제(할인)를 받을 수 있습니다.
+                  2026년 현행 연 이자율은 <strong>5%(지방세법 시행령 §125⑥)</strong>이며,
+                  남은 기간에 비례해 할인됩니다. 1월·3월은 연세액이 기준이고, 6월·9월은 하반기 세액(제2기)이 기준이 됩니다.
                 </p>
                 <div className="overflow-x-auto mb-4">
                   <table className="w-full text-sm border-collapse">
@@ -354,27 +354,27 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">1월</td>
-                        <td className="px-3 py-2">351일</td>
-                        <td className="px-3 py-2">(351/365) × 5%</td>
-                        <td className="px-3 py-2 font-bold">약 4.81%</td>
+                        <td className="px-3 py-2">334일 (연세액)</td>
+                        <td className="px-3 py-2">연세액 × (334/365) × 5%</td>
+                        <td className="px-3 py-2 font-bold">약 4.58%</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">3월</td>
-                        <td className="px-3 py-2">273일</td>
-                        <td className="px-3 py-2">(273/365) × 5%</td>
-                        <td className="px-3 py-2">약 3.74%</td>
+                        <td className="px-3 py-2">275일 (연세액)</td>
+                        <td className="px-3 py-2">연세액 × (275/365) × 5%</td>
+                        <td className="px-3 py-2">약 3.77%</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">6월</td>
-                        <td className="px-3 py-2">214일</td>
-                        <td className="px-3 py-2">(214/365) × 5%</td>
-                        <td className="px-3 py-2">약 2.93%</td>
+                        <td className="px-3 py-2">184일 (하반기 세액)</td>
+                        <td className="px-3 py-2">하반기 세액 × 5%</td>
+                        <td className="px-3 py-2">약 2.5%</td>
                       </tr>
                       <tr className="border border-border-base bg-primary-500/5">
                         <td className="px-3 py-2 font-semibold">9월</td>
-                        <td className="px-3 py-2">122일</td>
-                        <td className="px-3 py-2">(122/365) × 5%</td>
-                        <td className="px-3 py-2">약 1.67%</td>
+                        <td className="px-3 py-2">92일 (하반기 세액)</td>
+                        <td className="px-3 py-2">하반기 세액 × (92/184) × 5%</td>
+                        <td className="px-3 py-2">약 1.25%</td>
                       </tr>
                     </tbody>
                   </table>
@@ -383,10 +383,10 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">연납할인 신청 방법</h3>
                     <ul className="space-y-2 text-sm text-text-secondary">
-                      <li><strong>① 신청 기간:</strong> 매년 1월 1일 ~ 31일 (1월 말까지만 신청 가능, 6월·12월 정기 납부 시는 연납할인 미적용)</li>
+                      <li><strong>① 신청 기간:</strong> 1월·3월·6월·9월 각 월 1일~말일 (늦을수록 할인액 감소)</li>
                       <li><strong>② 신청처:</strong> 관할 지자체 세무서 또는 위택스(wetax.go.kr) 온라인 신청</li>
-                      <li><strong>③ 납부:</strong> 신청 후 지정된 기한 내(보통 1월 말) 연간 세액을 일괄 입금</li>
-                      <li><strong>④ 공제 공식:</strong> 할인액 = 연간 세액 × (선납일수/365) × 5% (지방세법 시행령 §125)</li>
+                      <li><strong>③ 납부:</strong> 신청 후 지정된 기한 내 세액을 일괄 입금 (6월·9월은 하반기분만)</li>
+                      <li><strong>④ 할인 공식:</strong> 1월·3월은 연세액 × (남은 일수/365) × 5%, 6월·9월은 하반기 세액 × (남은 일수/184) × 5% (지방세법 시행령 §125⑥)</li>
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base bg-primary-500/5 p-4">
@@ -398,15 +398,15 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                       <p>+ 지방교육세 30%: 190,400 × 30% = 57,120원</p>
                       <p className="border-t border-border-base pt-2"><strong>연간 납부액: 247,520원</strong></p>
                       <p className="mt-2 text-primary-700 dark:text-primary-400"><strong>1월 연납할인:</strong></p>
-                      <p className="text-primary-700 dark:text-primary-400">247,520 × (351/365) × 5% ≈ 18,870원</p>
-                      <p className="text-primary-700 dark:text-primary-400 border-t border-primary-500 pt-2"><strong>최종 납부액: 247,520 - 18,870 = 약 228,650원</strong></p>
+                      <p className="text-primary-700 dark:text-primary-400">247,520 × (334/365) × 5% ≈ 11,330원</p>
+                      <p className="text-primary-700 dark:text-primary-400 border-t border-primary-500 pt-2"><strong>최종 납부액: 247,520 - 11,330 = 약 236,190원</strong></p>
                     </div>
                   </div>
                 </div>
                 <div className="rounded-lg border-l-2 border-l-danger-500 bg-danger-500/5 p-4 mt-4">
                   <p className="text-sm text-danger-700 dark:text-danger-300">
-                    <strong>중요:</strong> 1월을 놓친 경우 6월·12월 정기 납부 시에는 할인이 적용되지 않습니다.
-                    다만 위택스나 각 지자체 자동차세 관련 페이지에서 6월·12월 납부 시에도 소정의 기간 할인이 있을 수 있으니 확인하세요.
+                    <strong>중요:</strong> 1월을 놓쳐도 3월·6월·9월에 연납을 신청할 수 있지만, 신청이 늦을수록 할인액이 작아집니다.
+                    6월·9월 신청은 하반기 세액(제2기)만 할인 대상이고, 상반기분은 6월 정기분으로 그대로 납부합니다. 지방세법 §128③.
                   </p>
                 </div>
               </section>
@@ -422,7 +422,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     <p><strong>기본 자동차세:</strong> 10만원 (정액, 그 밖의 승용자동차, 지방세법 §127)</p>
                     <p><strong>지방교육세:</strong> 3만원 (자동차세의 30%)</p>
                     <p className="border-t border-border-base pt-2 font-bold text-text-primary"><strong>연간 합계:</strong> 13만원</p>
-                    <p className="mt-2 text-xs"><strong>연납할인:</strong> 1월 선납 시 약 2만원 절감 가능</p>
+                    <p className="mt-2 text-xs"><strong>연납할인:</strong> 1월 선납 시 약 6천원 절감 가능 (연세액 13만 × 334/365 × 5%)</p>
                   </div>
                 </div>
               </section>
@@ -543,7 +543,7 @@ export default function VehicleTaxJunePaymentAnnualDiscountPage() {
                     <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
                       1월 자동차세 연납 신청 가이드
                     </Link>
-                    {'내년 1월 연납 신청으로 약 5% 할인 받는 법'}
+                    {'내년 1월 연납 신청으로 약 4.6% 할인 받는 법'}
                   </li>
                   <li>
                     →{' '}

@@ -219,7 +219,7 @@ export default function AveragingDownPage() {
                   name: '손익분기점 (BEP)',
                   alternateName: 'BEP',
                   description:
-                    'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.18% 추가 부담.',
+                    'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.20%(2026년) 추가 부담.',
                 },
               ],
             }),
@@ -542,7 +542,7 @@ export default function AveragingDownPage() {
                       </li>
                       <li>
                         <strong>거래 비용</strong>: 매수 수수료 0.015%대 +{' '}
-                        <strong>매도 시 증권거래세 0.18%</strong>
+                        <strong>매도 시 증권거래세 0.20%(2026년)</strong>
                       </li>
                       <li>
                         <strong>일일 변동폭</strong>: 상·하한 ±30% 제한

@@ -124,11 +124,13 @@ describe('calculateFreelancerTax', () => {
       // 68,500,000은 24% 구간 (과세표준 5천만~8,800만)
       // 세금 = 68,500,000 × 0.24 - 5,760,000 = 16,440,000 - 5,760,000 = 10,680,000
       expect(result.grossTax).toBe(10_680_000);
-      expect(result.finalTax).toBe(10_680_000);
+      // 2026-10-14 정정: 표준세액공제 7만 원(소득세법 §59의4⑨) 반영: 결정세액 = 10,680,000 - 70,000 = 10,610,000
+      expect(result.standardTaxCredit).toBe(70_000);
+      expect(result.finalTax).toBe(10_610_000);
 
-      // 지방소득세 = 10,680,000 × 10% = 1,068,000
-      expect(result.localIncomeTax).toBe(1_068_000);
-      expect(result.totalTaxLiability).toBe(11_748_000);
+      // 지방소득세 = 10,610,000 × 10% = 1,061,000
+      expect(result.localIncomeTax).toBe(1_061_000);
+      expect(result.totalTaxLiability).toBe(11_671_000);
     });
 
     it('기납부 원천징수와 정산', () => {
@@ -142,8 +144,8 @@ describe('calculateFreelancerTax', () => {
       const result = calculateFreelancerTax(input);
       // 기납부 = 100,000,000 × 0.033 = 3,300,000
       expect(result.withholdingPaid).toBe(3_300_000);
-      // 정산액 = 11,748,000 - 3,300,000 = 8,448,000 (추가납부)
-      expect(result.settlementAmount).toBe(8_448_000);
+      // 2026-10-14 정정: 표준세액공제 7만 원(소득세법 §59의4⑨) 반영: 정산액 = 11,671,000 - 3,300,000 = 8,371,000 (추가납부)
+      expect(result.settlementAmount).toBe(8_371_000);
       expect(result.settlementAmount).toBeGreaterThan(0);
     });
   });
@@ -208,20 +210,21 @@ describe('calculateFreelancerTax', () => {
 
       // 세금 = 9,270,000 × 6% = 556,200
       expect(result.grossTax).toBeCloseTo(556_200, 0);
-      expect(result.finalTax).toBeCloseTo(556_200, 0);
+      // 2026-10-14 정정: 표준세액공제 7만 원(소득세법 §59의4⑨) 반영: 결정세액 = 556,200 - 70,000 = 486,200
+      expect(result.finalTax).toBeCloseTo(486_200, 0);
 
-      // 지방소득세 = 556,200 × 10% = 55,620
-      expect(result.localIncomeTax).toBeCloseTo(55_620, 0);
+      // 지방소득세 = 486,200 × 10% = 48,620
+      expect(result.localIncomeTax).toBeCloseTo(48_620, 0);
 
-      // 총세금 = 556,200 + 55,620 = 611,820
-      expect(result.totalTaxLiability).toBeCloseTo(611_820, 0);
+      // 총세금 = 486,200 + 48,620 = 534,820
+      expect(result.totalTaxLiability).toBeCloseTo(534_820, 0);
 
       // 기납부 = 30,000,000 × 0.033 = 990,000
       expect(result.withholdingPaid).toBe(990_000);
 
-      // 정산액 = 611,820 - 990,000 < 0 (환급)
+      // 정산액 = 534,820 - 990,000 < 0 (환급)
       expect(result.settlementAmount).toBeLessThan(0);
-      expect(result.settlementAmount).toBeCloseTo(-378_180, 0);
+      expect(result.settlementAmount).toBeCloseTo(-455_180, 0);
     });
 
     it('환급 경고 메시지 출력', () => {
@@ -472,5 +475,35 @@ describe('calculateFreelancerTax', () => {
       // 기본값(1,650,000)이 아님
       expect(result.withholdingPaid).not.toBe(50_000_000 * FREELANCER_WITHHOLDING_RATE);
     });
+  });
+});
+
+// 2026-10-14: 근로소득이 없는 종합소득자 표준세액공제 연 7만 원 (소득세법 §59의4⑨)
+describe('표준세액공제 7만 원', () => {
+  it('수입 3,000만·단순경비율 64.1%: 산출세액 556,200 - 표준세액공제 70,000 = 결정세액 486,200', () => {
+    const r = calculateFreelancerTax({
+      annualRevenue: 30_000_000,
+      expenseMethod: 'simpleRate',
+      simpleExpenseRatePercent: 64.1,
+      dependents: 1,
+    });
+    expect(r.grossTax).toBeCloseTo(556_200, 0);
+    expect(r.standardTaxCredit).toBe(70_000);
+    expect(r.finalTax).toBeCloseTo(486_200, 0);
+    expect(r.localIncomeTax).toBe(48_620);
+    expect(r.settlementAmount).toBeCloseTo(-455_180, 0);
+  });
+
+  it('산출세액이 7만 원보다 적으면 산출세액까지만 (결정세액 0)', () => {
+    const r = calculateFreelancerTax({
+      annualRevenue: 6_000_000,
+      expenseMethod: 'simpleRate',
+      simpleExpenseRatePercent: 64.1,
+      dependents: 1,
+    });
+    // 사업소득 2,154,000 - 인적공제 1,500,000 = 654,000 × 6% = 39,240
+    expect(r.grossTax).toBeCloseTo(39_240, 0);
+    expect(r.standardTaxCredit).toBeCloseTo(39_240, 0);
+    expect(r.finalTax).toBe(0);
   });
 });

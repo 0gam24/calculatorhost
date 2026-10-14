@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/real-estate-broker-fee-rate-2026/';
 const DATE_PUBLISHED = '2026-06-16';
-const DATE_MODIFIED = '2026-06-16';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '주택 중개수수료(중개보수) 요율표 2026 | 매매·전세·월세 상한 | calculatorhost',
@@ -56,17 +56,17 @@ const FAQ_ITEMS = [
   {
     question: '6억원 주택 매매 중개수수료는 얼마예요?',
     answer:
-      '6억원은 "2억 초과~9억" 구간에 해당하므로 상한요율 0.4%를 적용합니다. 중개수수료 상한액 = 6억 × 0.4% = 240만원입니다. 부가가치세 10%를 별도로 내야 할 수 있으므로 최대 264만원(일반과세)이 될 수 있습니다. 다만 상한요율이며, 협의로 이보다 낮게 결정할 수 있습니다. 공인중개사법 §32 참조.',
+      '6억원은 "2억 원 이상 9억 원 미만" 구간에 해당하므로 상한요율 0.4%를 적용합니다. 중개수수료 상한액 = 6억 × 0.4% = 240만원입니다. 부가가치세 10%를 별도로 내야 할 수 있으므로 최대 264만원(일반과세)이 될 수 있습니다. 다만 상한요율이며, 협의로 이보다 낮게 결정할 수 있습니다. 공인중개사법 §32 참조.',
   },
   {
     question: '전세 3억원 중개보수는?',
     answer:
-      '전세는 임대차로 분류되므로 "1억~6억" 구간의 0.3% 요율이 적용됩니다. 상한액 = 3억 × 0.3% = 90만원입니다. 전세는 매매와 달리 일반적으로 부가세를 추가로 내지 않습니다만, 중개사가 부가세 과세사업자인지 확인 후 협상하세요.',
+      '전세는 임대차로 분류되므로 "1억 원 이상 6억 원 미만" 구간의 0.3% 요율이 적용됩니다. 상한액 = 3억 × 0.3% = 90만원입니다. 부가가치세는 매매·전세 구분 없이 중개사의 과세 유형(일반·간이)에 따라 붙을 수 있으니 미리 확인하고 협상하세요.',
   },
   {
     question: '월세 보증금 1천만원, 월세 60만원일 때 중개비는?',
     answer:
-      '월세 환산액 = 보증금 + (월세 × 100) = 1,000만 + (60만 × 100) = 7,000만원입니다. 이는 "5,000만~1억" 구간(상한요율 0.4%)에 해당하므로 상한액 = 7,000만 × 0.4% = 28만원입니다. 다만 환산액이 5,000만원 미만이면 보증금 + (월세 × 70)으로 재계산합니다.',
+      '월세 환산액 = 보증금 + (월세 × 100) = 1,000만 + (60만 × 100) = 7,000만원입니다. 이는 "5,000만 원 이상 1억 원 미만" 구간(상한요율 0.4%)에 해당하므로 상한액 = 7,000만 × 0.4% = 28만원입니다. 다만 환산액이 5,000만원 미만이면 보증금 + (월세 × 70)으로 재계산합니다.',
   },
   {
     question: '중개수수료 상한요율을 깎을 수 있나요?',
@@ -81,7 +81,7 @@ const FAQ_ITEMS = [
   {
     question: '오피스텔·상가는 요율이 다르나요?',
     answer:
-      '네, 공인중개사법 시행규칙 §20의 별표에서 오피스텔·상가용 건물은 별도 요율이 정해져 있습니다. 주택(아파트·빌라·단독주택 등)과 달리 0.9% 이상의 높은 요율이 적용될 수 있습니다. 거래 전에 중개사에 건물 용도를 명확히 하고 해당 요율을 확인하세요.',
+      '네, 다릅니다. 전용 85㎡ 이하이고 부엌·화장실·목욕시설을 갖춘 주거용 오피스텔은 매매 0.5%, 임대차 0.4%가 상한이고(공인중개사법 시행규칙 §20④·별표2), 그 밖의 오피스텔·상가·토지는 거래금액의 0.9% 이내에서 협의합니다(§20④2호). 거래 전에 중개사에 건물 용도와 적용 요율을 확인하세요.',
   },
   {
     question: '중개수수료 규제는 어느 지자체마다 다른가요?',
@@ -232,32 +232,32 @@ export default function RealEstateBrokerFeeRatePage() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 원 이하</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.6%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">25만원</td>
                     </tr>
                     <tr className="bg-bg-card/50">
-                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 초과~2억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 원 이상 2억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.5%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">80만원</td>
                     </tr>
                     <tr>
-                      <td className="border border-border-base px-3 py-2 text-text-primary">2억 초과~9억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">2억 원 이상 9억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.4%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
                     <tr className="bg-bg-card/50">
-                      <td className="border border-border-base px-3 py-2 text-text-primary">9억~12억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">9억 원 이상 12억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.5%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
                     <tr>
-                      <td className="border border-border-base px-3 py-2 text-text-primary">12억~15억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">12억 원 이상 15억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.6%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
                     <tr className="bg-bg-card/50">
-                      <td className="border border-border-base px-3 py-2 text-text-primary">15억 이상</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">15억 원 이상</td>
                       <td className="border border-border-base px-3 py-2">0.7%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
@@ -265,7 +265,7 @@ export default function RealEstateBrokerFeeRatePage() {
                 </table>
 
                 <p className="text-text-secondary">
-                  예를 들어 <strong>6억원에 매매하는 주택</strong>은 "2억 초과~9억" 구간에 해당하므로:
+                  예를 들어 <strong>6억원에 매매하는 주택</strong>은 "2억 원 이상 9억 원 미만" 구간에 해당하므로:
                 </p>
 
                 <ul className="space-y-2 text-sm text-text-secondary">
@@ -310,32 +310,32 @@ export default function RealEstateBrokerFeeRatePage() {
                   </thead>
                   <tbody>
                     <tr>
-                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 원 이하</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.5%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">20만원</td>
                     </tr>
                     <tr className="bg-bg-card/50">
-                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 초과~1억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">5,000만 원 이상 1억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.4%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">30만원</td>
                     </tr>
                     <tr>
-                      <td className="border border-border-base px-3 py-2 text-text-primary">1억~6억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">1억 원 이상 6억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.3%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
                     <tr className="bg-bg-card/50">
-                      <td className="border border-border-base px-3 py-2 text-text-primary">6억~12억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">6억 원 이상 12억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.4%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
                     <tr>
-                      <td className="border border-border-base px-3 py-2 text-text-primary">12억~15억</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">12억 원 이상 15억 원 미만</td>
                       <td className="border border-border-base px-3 py-2">0.5%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
                     <tr className="bg-bg-card/50">
-                      <td className="border border-border-base px-3 py-2 text-text-primary">15억 이상</td>
+                      <td className="border border-border-base px-3 py-2 text-text-primary">15억 원 이상</td>
                       <td className="border border-border-base px-3 py-2">0.6%</td>
                       <td className="border border-border-base px-3 py-2 font-semibold">없음</td>
                     </tr>
@@ -351,7 +351,7 @@ export default function RealEstateBrokerFeeRatePage() {
                     • 거래금액: 3억원 (보증금)
                   </li>
                   <li>
-                    • 구간: "1억~6억" → 상한요율 0.3%
+                    • 구간: "1억 원 이상 6억 원 미만" → 상한요율 0.3%
                   </li>
                   <li>
                     • 상한액 = 3억 × 0.3% = <strong>90만원</strong>
@@ -405,14 +405,16 @@ export default function RealEstateBrokerFeeRatePage() {
                     <br />
                     환산액 = 1,000만 + (60만 × 100) = 7,000만원
                     <br />
-                    구간: "5,000만~1억" → 상한요율 0.4% → 상한액 = 7,000만 × 0.4% = 28만원
+                    구간: "5,000만 원 이상 1억 원 미만" → 상한요율 0.4% → 상한액 = 7,000만 × 0.4% = 28만원
                   </li>
                   <li>
-                    <strong>보증금 2,000만원 + 월세 30만원 (환산액 5,000만 미만):</strong>
+                    <strong>보증금 1,000만원 + 월세 30만원 (100배 환산액 5,000만 미만):</strong>
                     <br />
-                    환산액 = 2,000만 + (30만 × 70) = 4,100만원
+                    100배 환산액 = 1,000만 + (30만 × 100) = 4,000만원 → 5,000만 원 미만이므로 70배로 다시 계산
                     <br />
-                    구간: "5,000만 이하" → 상한요율 0.5% → 상한액 = 20만원 (상한액 적용)
+                    환산액 = 1,000만 + (30만 × 70) = 3,100만원
+                    <br />
+                    구간: "5,000만 원 미만" → 상한요율 0.5% → 상한액 = 3,100만 × 0.5% = 15만 5천원 (한도 20만원 이내)
                   </li>
                 </ul>
 
@@ -469,15 +471,15 @@ export default function RealEstateBrokerFeeRatePage() {
                   오피스텔·상가·토지 중개비는 주택과 다른가요?
                 </h2>
                 <p data-speakable className="text-text-secondary">
-                  네, 오피스텔과 상가용 건물, 토지는 <strong>별도의 높은 요율</strong>이 적용됩니다 (공인중개사법 시행규칙 §20 별표 3·4·5).
+                  네, 주택이 아닌 중개대상물은 <strong>요율 기준이 따로</strong> 있습니다 (공인중개사법 시행규칙 §20④·별표2).
                 </p>
 
                 <ul className="space-y-2 text-sm text-text-secondary">
                   <li>
-                    <strong>오피스텔 · 상가용 건물:</strong> 0.9% 이상 (주택의 1.5~2배 수준)
+                    <strong>주거용 오피스텔</strong>(전용 85㎡ 이하, 부엌·화장실·목욕시설 갖춤): 매매 0.5%, 임대차 0.4% 상한 이내 협의
                   </li>
                   <li>
-                    <strong>토지:</strong> 1.0% 이상 (거래 형태별로 다름)
+                    <strong>그 밖의 오피스텔·상가·토지:</strong> 거래금액의 0.9% 이내에서 협의 (§20④2호)
                   </li>
                   <li>
                     <strong>전세금 담보대출, 분양권 등:</strong> 별도 규정 적용

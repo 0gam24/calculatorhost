@@ -83,17 +83,17 @@ const FAQ_ITEMS = [
   {
     question: '월세 중개수수료 계산 시 거래금액은 어떻게 되나요?',
     answer:
-      '월세 거래금액 = 보증금 + (월세 × 100)을 기본으로 합니다(공인중개사법 시행규칙 §20 ③). 단, 이 결과가 5,000만 원 미만이면 월세 × 70으로 다시 계산합니다. 예: 보증금 1,000만 + 월세 50만이면 (1,000 + 50×100 = 6,000)만 원 ≥ 5,000만 이므로 6,000만 원을 거래금액으로 합니다.',
+      '월세 거래금액 = 보증금 + (월세 × 100)을 기본으로 합니다(공인중개사법 시행규칙 §20 ⑤). 단, 이 결과가 5,000만 원 미만이면 월세 × 70으로 다시 계산합니다. 예: 보증금 1,000만 + 월세 50만이면 (1,000 + 50×100 = 6,000)만 원 ≥ 5,000만 이므로 6,000만 원을 거래금액으로 합니다.',
   },
   {
     question: '오피스텔 중개보수는 주택과 다른가요?',
     answer:
-      '네, 다릅니다(공인중개사법 시행규칙 §20 ④). 전용면적 85㎡ 이하이고 전용입식 부엌·전용수세식 화장실·목욕시설 등 요건을 갖춘 오피스텔은 매매·교환 상한요율 0.5%, 임대차 상한요율 0.4%입니다. 해당 상한 이내에서 협의하며, 위 요건에 해당하지 않는 오피스텔은 이 계산기의 주거용 오피스텔 가정과 다릅니다.',
+      '네, 다릅니다(공인중개사법 시행규칙 §20 ④·별표2). 전용면적 85㎡ 이하이고 전용입식 부엌·전용수세식 화장실·목욕시설 등 요건을 갖춘 오피스텔은 매매·교환 상한요율 0.5%, 임대차 상한요율 0.4%입니다. 해당 상한 이내에서 협의하며, 위 요건에 해당하지 않는 오피스텔은 이 계산기의 주거용 오피스텔 가정과 다릅니다.',
   },
   {
     question: '중개수수료 한도액이 언제 적용되나요?',
     answer:
-      '소액 거래 시에만 한도액이 적용됩니다(공인중개사법 시행규칙 §20). 예: 주택 매매 5,000만 원 이하는 0.6% 요율이지만 한도 25만 원이므로, 실제 중개수수료는 25만 원입니다. 고액 거래(2억 원 초과)는 한도액이 없습니다.',
+      '소액 거래 시에만 한도액이 적용됩니다(공인중개사법 시행규칙 §20). 예: 주택 매매 4,500만 원은 0.6% 요율로 27만 원이지만 한도 25만 원이 적용되어 실제 중개수수료는 25만 원입니다. 매매 2억 원 이상, 임대차 1억 원 이상 거래는 한도액이 없습니다.',
   },
 ] as const;
 
@@ -205,7 +205,7 @@ export default function CommissionPage() {
                 {
                   name: '월세 거래금액',
                   description:
-                    '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + 월세×100이 5천만원 미만이면 보증금 + 월세×70으로 다시 계산합니다 (공인중개사법 시행규칙 §20 ③).',
+                    '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + 월세×100이 5천만원 미만이면 보증금 + 월세×70으로 다시 계산합니다 (공인중개사법 시행규칙 §20 ⑤).',
                 },
               ],
             }),
@@ -264,16 +264,16 @@ export default function CommissionPage() {
                   caption: '물건별 중개수수료 상한요율 (2026)',
                   headers: ['물건·거래 유형', '상한 요율'],
                   rows: [
-                    ['주택 매매 (2억~9억원)', '0.4%'],
+                    ['주택 매매 (2억 이상 9억 미만)', '0.4%'],
                     ['주택 매매 (9억 이상)', '0.5% 이상'],
-                    ['주택 전세 (1억~6억)', '0.3%'],
+                    ['주택 전세 (1억 이상 6억 미만)', '0.3%'],
                     ['오피스텔 요건 충족 시 매매', '상한 0.5%'],
                     ['기타 (상가·토지)', '0.9% 협의'],
                   ],
                 }}
                 tldr={[
                   '중개수수료 = 거래금액 × 상한요율 (한도액 존재 시 최소값)',
-                  '소액 거래(5천만 이하)는 한도액 25~30만원으로 제한',
+                  '매매 2억 미만·임대차 1억 미만은 한도액(20만~80만 원)이 있음',
                   '법정 상한 이내에서 중개인과 협의 가능',
                   '부가세 적용은 중개사업자의 과세유형 확인; 선택 시 10% 추정',
                   '월세 거래금액 = 보증금 + (월세×100) 또는 × 70',
@@ -335,32 +335,32 @@ export default function CommissionPage() {
                     </thead>
                     <tbody>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">~5,000만 원</td>
+                        <td className="px-3 py-2">5,000만 원 미만</td>
                         <td className="px-3 py-2 text-right">0.6%</td>
                         <td className="px-3 py-2 text-right font-medium">25만 원</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">5,000만 ~ 2억</td>
+                        <td className="px-3 py-2">5,000만 원 이상 2억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.5%</td>
                         <td className="px-3 py-2 text-right font-medium">80만 원</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">2억 ~ 9억</td>
+                        <td className="px-3 py-2">2억 원 이상 9억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.4%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">9억 ~ 12억</td>
+                        <td className="px-3 py-2">9억 원 이상 12억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.5%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">12억 ~ 15억</td>
+                        <td className="px-3 py-2">12억 원 이상 15억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.6%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
                       <tr>
-                        <td className="px-3 py-2">15억 이상</td>
+                        <td className="px-3 py-2">15억 원 이상</td>
                         <td className="px-3 py-2 text-right">0.7%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
@@ -391,32 +391,32 @@ export default function CommissionPage() {
                     </thead>
                     <tbody>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">~5,000만 원</td>
+                        <td className="px-3 py-2">5,000만 원 미만</td>
                         <td className="px-3 py-2 text-right">0.5%</td>
                         <td className="px-3 py-2 text-right font-medium">20만 원</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">5,000만 ~ 1억</td>
+                        <td className="px-3 py-2">5,000만 원 이상 1억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.4%</td>
                         <td className="px-3 py-2 text-right font-medium">30만 원</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">1억 ~ 6억</td>
+                        <td className="px-3 py-2">1억 원 이상 6억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.3%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">6억 ~ 12억</td>
+                        <td className="px-3 py-2">6억 원 이상 12억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.4%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="px-3 py-2">12억 ~ 15억</td>
+                        <td className="px-3 py-2">12억 원 이상 15억 원 미만</td>
                         <td className="px-3 py-2 text-right">0.5%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
                       <tr>
-                        <td className="px-3 py-2">15억 이상</td>
+                        <td className="px-3 py-2">15억 원 이상</td>
                         <td className="px-3 py-2 text-right">0.6%</td>
                         <td className="px-3 py-2 text-right">·</td>
                       </tr>
@@ -442,11 +442,11 @@ export default function CommissionPage() {
                     <tbody>
                       <tr className="border-b border-border-subtle">
                         <td className="px-3 py-2">매매·교환</td>
-                        <td className="px-3 py-2 text-right">0.5% (한도 없음)</td>
+                        <td className="px-3 py-2 text-right">상한 0.5% (한도 없음, 이내 협의)</td>
                       </tr>
                       <tr>
                         <td className="px-3 py-2">임대차</td>
-                        <td className="px-3 py-2 text-right">0.4% (한도 없음)</td>
+                        <td className="px-3 py-2 text-right">상한 0.4% (한도 없음, 이내 협의)</td>
                       </tr>
                     </tbody>
                   </table>
@@ -542,8 +542,8 @@ export default function CommissionPage() {
                     납니다.
                   </li>
                   <li>
-                    <strong>한도액 확인</strong>: 소액 거래(5,000만 원 이하)에서는 한도액이
-                    적용되므로, 상한요율보다 한도액으로 계산하는 것이 유리합니다.
+                    <strong>한도액 확인</strong>: 매매 2억 원 미만, 임대차 1억 원 미만 거래는
+                    요율로 계산한 금액이 한도액을 넘으면 한도액까지만 냅니다.
                   </li>
                   <li>
                     <strong>부가세 여부 확인</strong>: 중개사업자의 과세유형, 실제 부가세 금액과

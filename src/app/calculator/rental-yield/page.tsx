@@ -435,8 +435,9 @@ export default function RentalYieldPage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §20(부동산 임대 수입), §25~§26(필요경비
-                  인정), §70(종합소득세 신고, 연 2,000만 원 초과 시). 참고:{' '}
+                  <strong>법적 근거</strong>: 소득세법 §19(부동산 임대업은 사업소득), §25(보증금
+                  간주임대료), §27(필요경비), §64의2(주택임대 수입 연 2,000만 원 이하 분리과세 선택),
+                  §70(종합소득세 확정신고). 참고:{' '}
                   <a
                     href="https://rt.molit.go.kr"
                     target="_blank"

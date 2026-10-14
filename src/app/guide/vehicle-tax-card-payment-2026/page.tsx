@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/vehicle-tax-card-payment-2026/';
 const DATE_PUBLISHED = '2026-06-28';
-const DATE_MODIFIED = '2026-06-28';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
   description:
-    '자동차세는 신용카드 납부 수수료 무료, 무이자 할부 가능. 1월 연납 시 5% 공제율(신청월별 실효율 4.81% ~ 1.67%). 위택스·지역 앱에서 신청. 카드사별 캐시백 혜택 확인 필수.',
+    '자동차세는 신용카드 납부 수수료 무료, 무이자 할부 가능. 연납 신청은 1월·3월·6월·9월 모두 가능하며 늦을수록 할인율이 줄어듭니다. 1월 약 4.58%, 3월 약 3.77%, 6월 약 2.5%, 9월 약 1.25%. 지방세법 시행령 §125⑥.',
   keywords: [
     '자동차세 카드납부',
     '자동차세 연납 할인',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 카드납부·연납 할인 2026' }],
     title: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
-    description: '신용카드 수수료 무료 납부 + 1월 연납 5% 할인. 신청 기간·방법·카드 혜택 완전 정리.',
+    description: '신용카드 수수료 무료 납부 + 1월·3월·6월·9월 연납 할인. 신청 기간·방법·카드 혜택 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: '자동차세 카드납부·연납 할인 2026',
-    description: '신용카드 수수료 없음 + 1월 연납 5% 할인받기. 위택스 신청 방법.',
+    description: '신용카드 수수료 없음 + 연납 할인(1월·3월·6월·9월 가능) 받기. 위택스 신청 방법.',
   },
 };
 
@@ -60,12 +60,12 @@ const FAQ_ITEMS = [
   {
     question: '자동차세 연납 신청 기간은 언제인가요?',
     answer:
-      '연납은 매년 1월 1일~31일에만 신청 가능합니다(지방세법 시행령 §125). 1월을 놓치면 6월·12월 정기 납부가 기본입니다. 이후 신청은 연납 할인을 받을 수 없습니다.',
+      '연납은 1월·3월·6월·9월 네 차례 신청할 수 있습니다(지방세법 시행령 §125⑥). 각 달의 신청 기간은 보통 해당 월 1일부터 말일까지이며, 신청 시기가 늦을수록 할인율이 작아집니다. 1월이 가장 유리하지만, 1월을 놓쳐도 3월·6월·9월 신청으로 남은 기간분을 할인받을 수 있습니다.',
   },
   {
     question: '1월 연납 할인이 정확히 얼마나 되나요?',
     answer:
-      '공제율 5%에서 신청월별 선납 일수에 비례합니다. 1월 신청 시 실효율 약 4.81%, 3월 약 3.74%, 6월 약 2.93%. 예: 연세액 40만원 × 4.81% ≈ 1.9만원 할인.',
+      '연 이자율 5%를 남은 기간에 비례해 할인합니다. 1월 신청 시 연세액의 약 4.58%(남은 334일 기준), 3월 약 3.77%(275일 기준)입니다. 6월·9월은 하반기 세액(제2기)에만 적용되어 연세액 대비 각각 약 2.5%, 1.25%입니다. 예: 연세액 40만원이면 1월 할인 약 1.83만원.',
   },
   {
     question: '자동차세 무이자 할부는 어떻게 신청하나요?',
@@ -85,7 +85,7 @@ const FAQ_ITEMS = [
   {
     question: '6월 정기 납부와 1월 연납 중 뭐가 나을까요?',
     answer:
-      '1월 연납이 약 4.81% 절감되므로 대부분의 경우 유리합니다. 단, 차량 양도 예정이 있으면 미리 계산해 비교하세요. 또한 카드사 무이자 할부 이벤트가 6월에만 있다면 그것도 고려 대상입니다.',
+      '1월 연납이 연세액의 약 4.58% 절감되므로 대부분의 경우 유리합니다. 단, 차량 양도 예정이 있으면 미리 계산해 비교하세요. 또한 카드사 무이자 할부 이벤트가 6월에만 있다면 그것도 고려 대상입니다.',
   },
 ];
 
@@ -97,7 +97,7 @@ export default function VehicleTaxCardPayment2026Page() {
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
-    description: '자동차세 신용카드 납부(수수료 무료) + 1월 연납 5% 할인(신청월별 실효율 4.81% ~ 1.67%) + 무이자 할부 전략. 위택스·지역 앱 신청 방법 완전 정리.',
+    description: '자동차세 신용카드 납부(수수료 무료) + 연납 할인(1월 약 4.58%, 3월 약 3.77%, 6월 약 2.5%, 9월 약 1.25%) + 무이자 할부 전략. 위택스·지역 앱 신청 방법 완전 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -108,7 +108,7 @@ export default function VehicleTaxCardPayment2026Page() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '자동차세 카드납부·연납 할인 2026',
-    description: '자동차세 신용카드 수수료 무료 납부 + 1월 연납 5% 할인받는 방법. 신청 기간·과정·카드 혜택 정리.',
+    description: '자동차세 신용카드 수수료 무료 납부 + 1월·3월·6월·9월 연납 할인받는 방법. 신청 기간·과정·카드 혜택 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -145,7 +145,7 @@ export default function VehicleTaxCardPayment2026Page() {
                   <span className="text-2xl text-text-secondary">· 무이자·할인 받는 법</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  자동차세는 지방세로서 신용카드 납부 수수료가 무료입니다(국세와 달리 지방세는 카드 납부 수수료가 없음). 더욱이 1월에 연간 자동차세 전액을 미리 내면 <strong>5% 공제율(지방세법 시행령 §125)</strong>을 받을 수 있으며, 신청 시기에 따라 실제 할인율은 약 4.81%~1.67% 범위입니다. 또한 카드사의 무이자 할부 이벤트를 활용하면 현금 흐름도 개선할 수 있습니다.
+                  자동차세는 지방세로서 신용카드 납부 수수료가 무료입니다(국세와 달리 지방세는 카드 납부 수수료가 없음). 더욱이 1월·3월·6월·9월에 자동차세 연납을 신청하면 <strong>연 이자율 5%(지방세법 시행령 §125⑥)</strong>를 남은 기간에 비례해 할인받을 수 있으며, 연세액 대비 실효 할인율은 1월 약 4.58%, 3월 약 3.77%, 6월 약 2.5%, 9월 약 1.25% 수준입니다. 또한 카드사의 무이자 할부 이벤트를 활용하면 현금 흐름도 개선할 수 있습니다.
                 </p>
               </header>
               <GuideCalculatorCta slug="vehicle-tax-card-payment-2026" />
@@ -154,11 +154,11 @@ export default function VehicleTaxCardPayment2026Page() {
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
                   <li><strong>신용카드 수수료:</strong> 무료 (지방세는 수수료 정책 다름)</li>
-                  <li><strong>1월 연납 할인:</strong> 5% 공제율 (선납 일수 비례) (지방세법 시행령 §125)</li>
-                  <li><strong>신청월별 실효율:</strong> 1월 약 4.81% / 3월 약 3.74% / 6월 약 2.93% / 9월 약 1.67%</li>
+                  <li><strong>연납 할인:</strong> 연 이자율 5%, 남은 기간 비례 (지방세법 시행령 §125⑥)</li>
+                  <li><strong>신청월별 실효 할인율(연세액 대비):</strong> 1월 약 4.58% / 3월 약 3.77% / 6월 약 2.5% / 9월 약 1.25%</li>
                   <li><strong>무이자 할부:</strong> 카드사별 이벤트(보통 2~6개월), 본인 카드 혜택 확인</li>
                   <li><strong>신청처:</strong> 위택스(wetax.go.kr) / 스마트 위택스 앱 / 시·군청 세무서 / 지역 앱</li>
-                  <li>⏰ <strong>신청 기간:</strong> 1월 1~31일만 가능 (이후 6월·12월 정기 납부만 가능)</li>
+                  <li><strong>신청 기간:</strong> 1월·3월·6월·9월 각 월 1일~말일 (늦을수록 할인 작아짐)</li>
                 </ul>
               </section>
 
@@ -208,47 +208,48 @@ export default function VehicleTaxCardPayment2026Page() {
 
               <section className="card">
                 <h2 className="mb-4 text-2xl font-bold">1월 연납 할인, 5% 공제율</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월에 연간 자동차세를 모두 미리 내면 공제율을 받습니다.</p>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125⑥, 1월·3월·6월·9월에 자동차세 연납을 신청하면 연 이자율 5%를 남은 기간에 비례해 할인받습니다.</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-2">연납 공제 방식</p>
-                  <p className="text-text-secondary font-mono bg-bg-base p-2 rounded mb-2">공제액 = 연간 총액 × (선납일수 / 365일) × 5% 공제율</p>
-                  <p className="text-text-secondary">신청이 늦을수록 선납 일수가 줄어들어 공제액도 함께 감소합니다. 따라서 가장 이른 1월 1일 신청이 최대 절감입니다.</p>
+                  <p className="text-text-primary font-semibold mb-2">연납 할인 계산 방식</p>
+                  <p className="text-text-secondary font-mono bg-bg-base p-2 rounded mb-2">1월·3월 할인 = 연세액 × (남은 일수 / 365) × 5%</p>
+                  <p className="text-text-secondary font-mono bg-bg-base p-2 rounded mb-2">6월·9월 할인 = 하반기 세액(제2기) × (남은 일수 / 184) × 5%</p>
+                  <p className="text-text-secondary">6월·9월 연납은 상반기분을 6월 정기분으로 그대로 내고, 하반기분(제2기)만 할인 대상이 됩니다. 신청이 늦을수록 할인액이 작아지므로 1월 신청이 가장 유리합니다.</p>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="caption-top mb-2 text-text-secondary">신청월별 실효 할인율 (지방세법 시행령 §125)</caption>
+                    <caption className="caption-top mb-2 text-text-secondary">신청월별 실효 할인율 (지방세법 시행령 §125⑥)</caption>
                     <thead>
                       <tr className="bg-primary-500/10 border border-border-base">
                         <th className="px-3 py-2 text-left">신청 시기</th>
                         <th className="px-3 py-2 text-right">선납 일수</th>
-                        <th className="px-3 py-2 text-right">실효 할인율</th>
-                        <th className="px-3 py-2 text-left">예시 (40만원)</th>
+                        <th className="px-3 py-2 text-right">실효 할인율(연세액 대비)</th>
+                        <th className="px-3 py-2 text-left">예시 (연세액 40만원)</th>
                       </tr>
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base bg-primary-500/5">
                         <td className="px-3 py-2 font-bold">1월 신청</td>
-                        <td className="px-3 py-2 text-right">351일</td>
-                        <td className="px-3 py-2 text-right font-bold text-primary-700 dark:text-primary-300">약 4.81%</td>
-                        <td className="px-3 py-2 tabular-nums">약 1.92만원 할인</td>
+                        <td className="px-3 py-2 text-right">334일 (연세액 기준)</td>
+                        <td className="px-3 py-2 text-right font-bold text-primary-700 dark:text-primary-300">약 4.58%</td>
+                        <td className="px-3 py-2 tabular-nums">약 1.83만원 할인</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2">3월 신청</td>
-                        <td className="px-3 py-2 text-right">273일</td>
-                        <td className="px-3 py-2 text-right">약 3.74%</td>
-                        <td className="px-3 py-2 tabular-nums">약 1.50만원 할인</td>
+                        <td className="px-3 py-2 text-right">275일 (연세액 기준)</td>
+                        <td className="px-3 py-2 text-right">약 3.77%</td>
+                        <td className="px-3 py-2 tabular-nums">약 1.51만원 할인</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2">6월 신청</td>
-                        <td className="px-3 py-2 text-right">214일</td>
-                        <td className="px-3 py-2 text-right">약 2.93%</td>
-                        <td className="px-3 py-2 tabular-nums">약 1.17만원 할인</td>
+                        <td className="px-3 py-2 text-right">184일 (하반기 세액 기준)</td>
+                        <td className="px-3 py-2 text-right">약 2.5%</td>
+                        <td className="px-3 py-2 tabular-nums">약 1.0만원 할인</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2">9월 신청</td>
-                        <td className="px-3 py-2 text-right">122일</td>
-                        <td className="px-3 py-2 text-right">약 1.67%</td>
-                        <td className="px-3 py-2 tabular-nums">약 0.67만원 할인</td>
+                        <td className="px-3 py-2 text-right">92일 (하반기 세액 기준)</td>
+                        <td className="px-3 py-2 text-right">약 1.25%</td>
+                        <td className="px-3 py-2 tabular-nums">약 0.5만원 할인</td>
                       </tr>
                     </tbody>
                   </table>
@@ -256,9 +257,10 @@ export default function VehicleTaxCardPayment2026Page() {
                 <div className="mt-4 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4 text-sm">
                   <strong className="text-highlight-700 dark:text-highlight-300">예시: 연세액 52만원인 경우</strong>
                   <ul className="text-text-secondary mt-2 space-y-1 list-disc list-inside">
-                    <li><strong>1월 신청:</strong> 52만 × 4.81% = 약 2.5만원 할인 → 약 49.5만원 납부</li>
-                    <li><strong>3월 신청:</strong> 52만 × 3.74% = 약 1.9만원 할인 → 약 50.1만원 납부</li>
-                    <li><strong>6월 신청:</strong> 52만 × 2.93% = 약 1.5만원 할인 → 약 50.5만원 납부</li>
+                    <li><strong>1월 신청:</strong> 52만 × (334/365) × 5% = 약 2.38만원 할인, 약 49.6만원 납부</li>
+                    <li><strong>3월 신청:</strong> 52만 × (275/365) × 5% = 약 1.96만원 할인, 약 50.0만원 납부</li>
+                    <li><strong>6월 신청:</strong> 하반기분 약 26만 × 5% = 약 1.3만원 할인, 연간 약 50.7만원 납부</li>
+                    <li><strong>9월 신청:</strong> 하반기분 약 26만 × (92/184) × 5% = 약 6,500원 할인, 연간 약 51.4만원 납부</li>
                   </ul>
                 </div>
               </section>
@@ -273,9 +275,9 @@ export default function VehicleTaxCardPayment2026Page() {
                     <div className="bg-bg-card p-3 rounded">
                       <p className="text-text-primary font-semibold">방법 1: 1월 연납 + 신용카드 무이자 6개월 할부</p>
                       <ul className="text-text-secondary text-xs mt-2 space-y-1 list-disc list-inside">
-                        <li>연납 할인: 52만 × 4.81% = 약 2.5만원 절감</li>
-                        <li>결제액: 약 49.5만원을 6개월 무이자 할부로 월 약 8.2만원</li>
-                        <li><strong>총 절감: 약 2.5만원</strong> (수수료 0% 가정)</li>
+                        <li>연납 할인: 연세액 52만 × (334/365) × 5% = 약 2.38만원 절감</li>
+                        <li>결제액: 약 49.6만원을 6개월 무이자 할부로 월 약 8.3만원</li>
+                        <li><strong>총 절감: 약 2.38만원</strong> (수수료 0% 가정)</li>
                       </ul>
                     </div>
                     <div className="bg-bg-card p-3 rounded">
@@ -295,7 +297,7 @@ export default function VehicleTaxCardPayment2026Page() {
 
               <section className="card">
                 <h2 className="mb-4 text-2xl font-bold">1월 연납 신청 방법</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월 1~31일 신청만 가능합니다.</p>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125⑥, 연납 신청은 1월·3월·6월·9월에 할 수 있으며 1월이 가장 할인율이 큽니다.</p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                     <p className="text-text-primary font-semibold mb-2">1. 위택스(wetax.go.kr), 가장 추천</p>
@@ -326,9 +328,9 @@ export default function VehicleTaxCardPayment2026Page() {
                   </div>
                 </div>
                 <div className="mt-4 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4 text-sm">
-                  <strong className="text-highlight-700 dark:text-highlight-300">⏰ 중요: 신청 기간은 1월 1~31일만</strong>
+                  <strong className="text-highlight-700 dark:text-highlight-300">중요: 1월 신청이 가장 유리</strong>
                   <p className="text-text-secondary mt-2">
-                    1월을 놓치면 해당 연도는 연납 신청이 불가능합니다. 6월·12월 정기 납부로 돌아갑니다. 따라서 가능한 1월 초 신청을 권장합니다.
+                    연납은 1월·3월·6월·9월 네 차례 신청할 수 있지만, 신청이 늦을수록 할인액이 작아집니다. 가장 큰 절감을 원한다면 1월 초 신청을 권장합니다.
                   </p>
                 </div>
               </section>
@@ -422,14 +424,34 @@ export default function VehicleTaxCardPayment2026Page() {
                   <strong>면책조항</strong>: 본 페이지의 자동차세 카드납부·연납 할인 정보는 2026년 현행 지방세법(§128, §151, 시행령 §125) 기준으로 작성되었습니다. 카드사의 무이자 할부·캐시백은 상시 변동되므로 결제 전 본인 카드사 앱에서 최신 이벤트를 확인하세요. 실제 할인액 계산, 신청 절차, 환급 대상 여부는 관할 시·군청 세무서(전화 120) 또는 위택스(wetax.go.kr) 고객센터에 문의하시기 바랍니다. 법조항 인용: 지방세법 시행령 §125(연납 공제).
                 </p>
                 <p className="text-text-tertiary text-xs">
-                  업데이트: 2026-06-28 · 출처: 위택스 공식 가이드·지방세법·국세청 FAQ
+                  업데이트: 2026-10-14 · 출처: 위택스 공식 가이드·지방세법·국세청 FAQ
+                </p>
+                <p className="mt-2 text-xs text-text-tertiary">
+                  공식 출처:{' '}
+                  <a
+                    href="https://www.wetax.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    위택스
+                  </a>
+                  {' · '}
+                  <a
+                    href={'https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0125&lsiSeq=290815&urlMode=lsScJoRltInfoR'}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    국가법령정보센터 지방세법 시행령 §125
+                  </a>
                 </p>
               </section>
 
               <ShareButtons
                 title="자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법"
                 url={URL}
-                description="신용카드 수수료 무료 + 1월 연납 5% 할인(실효율 4.81%). 무이자 할부 조합 전략. 위택스·앱 신청 방법 정리."
+                description="신용카드 수수료 무료 + 연납 할인(1월 약 4.58%, 3월·6월·9월도 가능). 무이자 할부 조합 전략. 위택스·앱 신청 방법 정리."
               />
             </article>
           </main>

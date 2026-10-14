@@ -90,7 +90,8 @@ export function BmiCalculator() {
   const resultRows: ResultRowProps[] = [
     {
       label: '정상 체중 범위',
-      value: `${Math.round(result.normalWeightLower)} ~ ${Math.round(result.normalWeightUpper)} kg`,
+      // 정수 반올림은 범위 끝을 저체중·과체중으로 넘길 수 있어 소수 1자리로 (2026-10-14)
+      value: `${result.normalWeightLower.toFixed(1)} ~ ${result.normalWeightUpper.toFixed(1)} kg`,
     },
   ];
 

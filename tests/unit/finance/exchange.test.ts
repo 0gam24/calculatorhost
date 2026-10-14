@@ -274,4 +274,73 @@ describe('calculateExchange — 고정 수수료', () => {
 
     expect(result.feeAmount).toBeGreaterThan(3000);
   });
+
+  // 2026-10-14 정정: 입력란은 "고정 수수료 (수령 통화 기준)" 이라 원→달러에서는 USD 로 받는다.
+  // 이전 버전은 5를 원화로 보고 적용환율로 나눠 약 0.004 USD 만 뺐다.
+  it('원→외화: 고정 수수료 5 USD 는 5 USD 그대로 차감', () => {
+    const result = calculateExchange(
+      createInput({
+        direction: 'krwToForeign',
+        amount: 1_350_000,
+        baseRate: 1350,
+        spreadPercent: 0,
+        feePercent: 0,
+        feeFlat: 5,
+      })
+    );
+
+    expect(result.grossAmount).toBe(1000);
+    expect(result.feeAmount).toBe(5);
+    expect(result.netAmount).toBe(995);
+  });
+
+  it('원→외화: % 수수료와 고정 수수료(USD) 병행', () => {
+    const result = calculateExchange(
+      createInput({
+        direction: 'krwToForeign',
+        amount: 1_350_000,
+        baseRate: 1350,
+        spreadPercent: 0,
+        feePercent: 1,
+        feeFlat: 5,
+      })
+    );
+
+    // 1000 USD × 1% = 10 USD + 5 USD = 15 USD
+    expect(result.feeAmount).toBe(15);
+    expect(result.netAmount).toBe(985);
+  });
+
+  it('음수 고정 수수료 → 0으로 처리', () => {
+    const result = calculateExchange(
+      createInput({
+        direction: 'foreignToKrw',
+        amount: 1000,
+        baseRate: 1350,
+        spreadPercent: 0,
+        feePercent: 0,
+        feeFlat: -5000,
+      })
+    );
+
+    expect(result.feeAmount).toBe(0);
+    expect(result.netAmount).toBe(1_350_000);
+  });
+
+  it('수수료가 환전액보다 크면 수령액 0 + 경고', () => {
+    const result = calculateExchange(
+      createInput({
+        direction: 'krwToForeign',
+        amount: 13_500,
+        baseRate: 1350,
+        spreadPercent: 0,
+        feePercent: 0,
+        feeFlat: 20,
+      })
+    );
+
+    expect(result.netAmount).toBe(0);
+    expect(result.effectiveRate).toBe(0);
+    expect(result.warnings.length).toBeGreaterThan(0);
+  });
 });

@@ -16,6 +16,7 @@ export function ExchangeCalculator() {
     'krwToForeign',
   );
   const [amount, setAmount] = useCalculatorState('exchange:amount', 1_000_000);
+  // 예시 기본값. 2026-10-13 서울 외환시장 종가 1,345.1원(머니투데이)을 확인해 1,350원 유지 (실시간 환율 아님)
   const [baseRate, setBaseRate] = useCalculatorState('exchange:baseRate', 1350);
   const [spreadPercent, setSpreadPercent] = useCalculatorState('exchange:spreadPercent', 1.5);
   const [feePercent, setFeePercent] = useCalculatorState('exchange:feePercent', 0);

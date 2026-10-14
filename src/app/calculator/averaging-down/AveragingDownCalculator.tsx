@@ -189,7 +189,9 @@ export function AveragingDownCalculator() {
               heroNote={
                 costBasisChangePercent1 < 0
                   ? `기존 ${currentPrice1.toLocaleString()}원 대비 ${Math.abs(costBasisChangePercent1).toFixed(1)}% 인하`
-                  : '상승 (부적절한 입력)'
+                  : costBasisChangePercent1 > 0
+                    ? `기존 ${currentPrice1.toLocaleString()}원 대비 ${costBasisChangePercent1.toFixed(1)}% 상승 (추가 매수가가 더 높음)`
+                    : '기존 평균단가와 같음'
               }
               rows={[
                 {
@@ -295,7 +297,7 @@ export function AveragingDownCalculator() {
               heroNote={
                 result2.achievable
                   ? `${formatKRW(result2.requiredAdditionalCost)} 추가 투자 필요`
-                  : '목표 단가가 추가 매수 단가와 같거나 높아야 함'
+                  : '목표 평균단가는 추가 매수 단가보다 높고 기존 평균단가보다 낮아야 합니다'
               }
               rows={[
                 {

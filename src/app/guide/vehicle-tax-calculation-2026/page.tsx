@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/vehicle-tax-calculation-2026/';
 const DATE_PUBLISHED = '2026-06-22';
-const DATE_MODIFIED = '2026-06-22';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '자동차세 계산법 2026 | 배기량·차령경감·지방교육세 완벽 가이드 | calculatorhost',
@@ -65,7 +65,7 @@ const FAQ_ITEMS = [
   {
     question: '1월에 일시납하면 할인이 있다고 하던데?',
     answer:
-      '네, 지방세법 시행령 §125에 따라 1월 1~31일 신청 시 공제율 5%의 연납할인을 받습니다. 예를 들어 연 520,000원이면 약 25,000원이 할인되어 495,000원입니다. 할인액은 (연간 총액 × 선납일수 ÷ 365 × 5%)로 계산됩니다.',
+      '네, 지방세법 시행령 §125⑥에 따라 1월·3월·6월·9월에 자동차세 연납을 신청하면 연 이자율 5%를 남은 기간에 비례해 할인받습니다. 예를 들어 연 520,000원이면 1월 신청 시 약 23,800원 할인되어 약 496,200원 납부합니다(연세액 × 334/365 × 5%). 3월·6월·9월은 늦을수록 할인액이 작아집니다.',
   },
   {
     question: '지방교육세는 별도로 내야 하는 건가요?',
@@ -344,12 +344,13 @@ export default function VehicleTaxCalculation2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연납할인, 1월에 일시납할 때 (지방세법 시행령 §125)</h2>
                 <p>
-                  자동차세를 1월 1~31일에 일시납하면 공제율 5%의 할인을 받습니다:
+                  자동차세 연납 신청은 1월·3월·6월·9월 네 차례에 걸쳐 가능하며, 연 이자율 5%를 남은 기간에 비례해 할인받습니다:
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <p className="font-semibold text-text-primary">할인액 = 연간 총액 × (선납일수 ÷ 365) × 5%</p>
+                  <p className="font-semibold text-text-primary">1월·3월 할인 = 연세액 × (남은 일수 ÷ 365) × 5%</p>
+                  <p className="mt-2 font-semibold text-text-primary">6월·9월 할인 = 하반기 세액(제2기) × (남은 일수 ÷ 184) × 5%</p>
                   <p className="mt-2 text-sm text-text-secondary">
-                    1월에 신청하면 351일(1/1~12/31)로 계산되어 실효 할인율은 약 4.81%입니다.
+                    1월에 신청하면 남은 334일(2/1~12/31) 기준으로 계산되어 연세액 대비 실효 할인율은 약 4.58%입니다.
                   </p>
                 </div>
                 <div className="mt-4">
@@ -357,15 +358,15 @@ export default function VehicleTaxCalculation2026Page() {
                   <p className="text-sm text-text-secondary">
                     · 연 520,000원인 차량을 1월에 일시납
                     <br />
-                    · 할인액 = 520,000 × (351 ÷ 365) × 5% ≈ 24,980원
+                    · 할인액 = 520,000 × (334 ÷ 365) × 5% ≈ 23,800원
                     <br />
-                    · 납부액 = 520,000 − 24,980 = <strong>약 495,000원</strong>
+                    · 납부액 = 520,000 − 23,800 = <strong>약 496,200원</strong>
                     <br />
-                    · <strong>실제 할인율: 약 4.81%</strong>
+                    · <strong>실제 할인율(연세액 대비): 약 4.58%</strong>
                   </p>
                 </div>
                 <p className="mt-4">
-                  다만 신청 기간은 <strong>매년 1월 1~31일만</strong> 가능합니다. 2월 이후에 신청하면 선납일수가 줄어들어 할인액도 감소합니다. 예를 들어 3월에 신청하면 선납일수가 273일이 되어 실효 할인율은 약 3.74%가 됩니다.
+                  연납은 1월만 가능한 것이 아니라 <strong>1월·3월·6월·9월</strong> 네 번 신청할 수 있지만, 신청이 늦을수록 할인액이 작아집니다. 예를 들어 3월에 신청하면 남은 275일 기준으로 계산되어 연세액 대비 실효 할인율은 약 3.77%입니다. 6월·9월 신청은 하반기 세액(제2기)만 할인 대상이며, 연세액 대비 각각 약 2.5%, 1.25% 수준입니다(지방세법 §128③).
                 </p>
               </section>
 
@@ -407,7 +408,7 @@ export default function VehicleTaxCalculation2026Page() {
                 <h2 className="text-2xl font-bold">자동차세 절감 팁</h2>
                 <ul className="space-y-4">
                   <li>
-                    <strong>1. 연납할인 활용:</strong> 1월에 일시납하면 5% 할인. 매년 자동으로 할인받지 않으니 반드시 1월에 신청하세요.
+                    <strong>1. 연납할인 활용:</strong> 1월·3월·6월·9월에 연납을 신청할 수 있고, 1월이 가장 유리합니다(연세액 대비 약 4.58%). 매년 자동 적용되지 않으니 직접 신청해야 합니다.
                   </li>
                   <li>
                     <strong>2. 배기량 확인:</strong> 차 등록증의 배기량을 확인하세요. 1,600cc와 1,601cc는 140원/cc에서 200원/cc로 올라가므로 큰 차이입니다.
@@ -474,7 +475,27 @@ export default function VehicleTaxCalculation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 자동차세 납부는 해당 지역 시청·구청 또는 지방세정청과 상담 후 진행하세요. 본 콘텐츠는 2026-06-22를 기준으로 작성되었으며, 세율 변경 시 즉시 업데이트됩니다. 배기량별 세율, 차령경감, 정액 과세 기준 등은 지방세법 <strong>§127①제1호(배기량 과세)·§127①제2호(차령경감)·§127①제3호(정액 과세)·§151(지방교육세)·§128(납부 기한), 지방세법 시행령 §125(연납할인)</strong>을 참고하세요.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 자동차세 납부는 해당 지역 시청·구청 또는 지방세정청과 상담 후 진행하세요. 본 콘텐츠는 2026-10-14 기준으로 갱신되었으며, 세율 변경 시 즉시 업데이트됩니다. 배기량별 세율, 차령경감, 정액 과세 기준 등은 지방세법 <strong>§127①제1호(배기량 과세)·§127①제2호(차령경감)·§127①제3호(정액 과세)·§151(지방교육세)·§128(납부 기한), 지방세법 시행령 §125(연납할인)</strong>을 참고하세요.
+                </p>
+                <p className="mt-2 text-xs text-text-tertiary">
+                  공식 출처:{' '}
+                  <a
+                    href="https://www.wetax.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    위택스
+                  </a>
+                  {' · '}
+                  <a
+                    href={'https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0125&lsiSeq=290815&urlMode=lsScJoRltInfoR'}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    국가법령정보센터 지방세법 시행령 §125
+                  </a>
                 </p>
               </section>
 

@@ -26,7 +26,7 @@ describe('BMI 키별 체중 표', () => {
     expect(row(t, '170cm')?.[1]).toBe(
       `${r.normalWeightLower.toFixed(1)}~${r.normalWeightUpper.toFixed(1)}kg`,
     );
-    expect(row(t, '170cm')?.[1]).toBe('53.5~66.2kg');
+    expect(row(t, '170cm')?.[1]).toBe('53.5~66.1kg');
   });
 
   it('과체중·비만 시작 몸무게에서 계산기 분류가 바뀐다 (전 행)', () => {

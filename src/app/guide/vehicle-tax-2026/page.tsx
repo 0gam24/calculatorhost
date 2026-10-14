@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/vehicle-tax-2026/';
 const DATE_PUBLISHED = '2026-06-14';
-const DATE_MODIFIED = '2026-06-14';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '자동차세 계산 2026 | 배기량별 세율·연납 할인·차령경감',
@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   {
     question: '자동차세 연납하면 얼마나 할인되나요?',
     answer:
-      '명목 공제율 5% (지방세법 시행령 §125)에서 선납 일수에 비례해 할인됩니다. 1월 신청 시 실효율 약 4.81%, 3월 약 3.74%, 6월 약 2.93%, 9월 약 1.67%. 정확한 할인액은 본 계산기의 "연납 할인" 옵션에서 확인하세요.',
+      '연 이자율 5%(지방세법 시행령 §125⑥)를 남은 기간에 비례해 할인합니다. 1월 신청 시 연세액 대비 약 4.58%(남은 334일 기준), 3월 약 3.77%(275일 기준)입니다. 6월·9월은 하반기 세액(제2기)에만 적용되어 연세액 대비 각각 약 2.5%, 1.25%입니다. 자세한 할인액은 본 계산기의 "연납 할인" 옵션에서 확인하세요.',
   },
   {
     question: '자동차세 6월에 왜 내나요?',
@@ -152,7 +152,7 @@ export default function VehicleTax2026Page() {
                 <p className="text-lg text-text-secondary" data-speakable>
                   자동차세는 비영업용 승용차 기준 배기량(cc)에 cc당 세율을 곱하고, 지방교육세 30%를 더해 산정합니다
                   (지방세법 §127, §151). 1,000cc 이하는 cc당 80원, 1,601cc 이상은 200원입니다. 여기에 3년차부터
-                  시작되는 <strong>차령경감</strong>(연 5%, 최대 50%)과 1월 <strong>연납 할인</strong>(5% 공제율)을 반영하면 실제 납부액을 정확히 계산할 수 있습니다.
+                  시작되는 <strong>차령경감</strong>(연 5%, 최대 50%)과 <strong>연납 할인</strong>(연 이자율 5%, 1월·3월·6월·9월 신청 가능)을 반영하면 실제 납부액을 정확히 계산할 수 있습니다.
                 </p>
               </header>
               <GuideCalculatorCta slug="vehicle-tax-2026" />
@@ -164,7 +164,7 @@ export default function VehicleTax2026Page() {
                   <li><strong>지방교육세</strong>: 자동차세의 30% 추가 납부 (지방세법 §151)</li>
                   <li><strong>차령경감</strong>: 3년차부터 연 5% (최대 50%, 12년차 이상 고정) (지방세법 §127①제2호, 배기량 과세차만)</li>
                   <li><strong>납부 시기</strong>: 제1기 6월 16~30일 / 제2기 12월 16~31일 (또는 1월 연납)</li>
-                  <li><strong>연납 할인</strong>: 1월 신청 시 5% 공제율, 신청월별로 실효율 변동 (지방세법 시행령 §125)</li>
+                  <li><strong>연납 할인</strong>: 1월·3월·6월·9월 신청, 연 이자율 5%를 남은 기간 비례 적용 (지방세법 시행령 §125⑥)</li>
                   <li><strong>주의</strong>: 미납 시 1.2배 이상 가산세 + 행정 제제</li>
                 </ul>
               </section>
@@ -260,7 +260,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <section className="card">
-                <h2 className="mb-4 text-2xl font-bold">⏱ 차령경감, 나이 많은 차일수록 세금 감소</h2>
+                <h2 className="mb-4 text-2xl font-bold">차령경감, 나이 많은 차일수록 세금 감소</h2>
                 <p className="mb-3 text-sm text-text-secondary">지방세법 §127①제2호, 3년차부터 시작, 매년 5%씩 경감 (최대 50%). 배기량 과세차만 적용(전기차 정액 제외).</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
                   <p className="text-text-primary font-semibold mb-2">차령경감 공식</p>
@@ -323,46 +323,47 @@ export default function VehicleTax2026Page() {
 
               <section className="card">
                 <h2 className="mb-4 text-2xl font-bold">연납 할인, 1월 미리 내면 5% 공제</h2>
-                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125, 1월 1~31일 신청, 5% 공제율 (선납 일수에 비례)</p>
+                <p className="mb-3 text-sm text-text-secondary">지방세법 시행령 §125⑥, 1월·3월·6월·9월 신청 가능, 연 이자율 5%를 남은 기간에 비례해 할인</p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mb-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-2">연납 공제 방식</p>
-                  <p className="text-text-secondary">공제액 = 연간 총액 × (선납일수 / 365일) × 5% 공제율</p>
-                  <p className="text-text-secondary mt-2">신청이 늦을수록 선납 일수가 줄어들어 공제액도 감소합니다.</p>
+                  <p className="text-text-primary font-semibold mb-2">연납 할인 계산 방식</p>
+                  <p className="text-text-secondary">1월·3월 할인 = 연세액 × (남은 일수 / 365) × 5%</p>
+                  <p className="text-text-secondary">6월·9월 할인 = 하반기 세액(제2기) × (남은 일수 / 184) × 5%</p>
+                  <p className="text-text-secondary mt-2">신청이 늦을수록 남은 일수가 줄어들어 할인액도 감소합니다. 6월·9월은 하반기분만 할인 대상이고 상반기분은 6월 정기분으로 그대로 납부합니다(지방세법 §128③).</p>
                 </div>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="caption-top mb-2 text-text-secondary">신청월별 실효 할인율 (지방세법 시행령 §125, ADR-014 검증)</caption>
+                    <caption className="caption-top mb-2 text-text-secondary">신청월별 실효 할인율 (지방세법 시행령 §125⑥, 연세액 대비)</caption>
                     <thead>
                       <tr className="bg-primary-500/10 border border-border-base">
                         <th className="px-3 py-2 text-left">신청 시기</th>
                         <th className="px-3 py-2 text-right">선납 일수</th>
-                        <th className="px-3 py-2 text-right">실효 할인율</th>
+                        <th className="px-3 py-2 text-right">실효 할인율(연세액 대비)</th>
                         <th className="px-3 py-2 text-left">설명</th>
                       </tr>
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base bg-primary-500/5">
                         <td className="px-3 py-2 font-bold">1월 신청</td>
-                        <td className="px-3 py-2 text-right">351일</td>
-                        <td className="px-3 py-2 text-right font-bold text-primary-700 dark:text-primary-300">약 4.81%</td>
+                        <td className="px-3 py-2 text-right">334일 (연세액)</td>
+                        <td className="px-3 py-2 text-right font-bold text-primary-700 dark:text-primary-300">약 4.58%</td>
                         <td className="px-3 py-2">최대 절약</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2">3월 신청</td>
-                        <td className="px-3 py-2 text-right">273일</td>
-                        <td className="px-3 py-2 text-right">약 3.74%</td>
+                        <td className="px-3 py-2 text-right">275일 (연세액)</td>
+                        <td className="px-3 py-2 text-right">약 3.77%</td>
                         <td className="px-3 py-2">1월 대비 절감액 감소</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2">6월 신청</td>
-                        <td className="px-3 py-2 text-right">214일</td>
-                        <td className="px-3 py-2 text-right">약 2.93%</td>
-                        <td className="px-3 py-2">선납 일수 절반 근처</td>
+                        <td className="px-3 py-2 text-right">184일 (하반기 세액)</td>
+                        <td className="px-3 py-2 text-right">약 2.5%</td>
+                        <td className="px-3 py-2">하반기분만 할인 대상</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2">9월 신청</td>
-                        <td className="px-3 py-2 text-right">122일</td>
-                        <td className="px-3 py-2 text-right">약 1.67%</td>
+                        <td className="px-3 py-2 text-right">92일 (하반기 세액)</td>
+                        <td className="px-3 py-2 text-right">약 1.25%</td>
                         <td className="px-3 py-2">최소 절감</td>
                       </tr>
                     </tbody>
@@ -371,7 +372,7 @@ export default function VehicleTax2026Page() {
                 <div className="mt-4 rounded-lg border border-highlight-500/30 bg-highlight-500/5 p-4 text-sm">
                   <strong className="text-highlight-700 dark:text-highlight-300">주의사항</strong>
                   <ul className="text-text-secondary mt-2 space-y-1 list-disc list-inside">
-                    <li><strong>1월만 신청 가능:</strong> 연납은 매년 1월 1~31일에만 신청 가능 (이후 6월·12월 정기 납부는 연납 공제 불가)</li>
+                    <li><strong>신청 기간:</strong> 1월·3월·6월·9월 각 월 1일~말일에 신청 가능 (늦을수록 할인액 감소)</li>
                     <li><strong>신청처:</strong> 위택스(wetax.go.kr) 또는 관할 시·군청 세무서</li>
                     <li><strong>신용카드 무이자:</strong> 2~6개월 무이자 할부 가능 (수수료 0.8% 본인 부담)</li>
                     <li><strong>차량 양도:</strong> 연납 후 양도 시 미경과 일수에 해당하는 세액을 환급받음</li>
@@ -390,9 +391,9 @@ export default function VehicleTax2026Page() {
                   <p className="text-text-secondary mt-3">신차 구매자는 등록월부터 시작합니다. 예: 8월 신규 등록 → 12월 제2기부터 납부.</p>
                 </div>
                 <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4 mb-4 text-sm">
-                  <p className="text-text-primary font-semibold mb-2">대체 방법: 1월 연납</p>
+                  <p className="text-text-primary font-semibold mb-2">대체 방법: 1월·3월·6월·9월 연납</p>
                   <p className="text-text-secondary">
-                    1월에 연간 자동차세 전액을 미리 내면 5% 공제율(선납 일수 비례)을 받습니다. 가장 큰 절약은 1월 신청 시 약 4.81% 할인입니다.
+                    1월에 연간 자동차세 전액을 미리 내면 연 이자율 5%(남은 기간 비례)로 할인받습니다. 가장 큰 절약은 1월 신청 시 연세액 대비 약 4.58% 할인입니다. 1월을 놓쳐도 3월·6월·9월에 신청할 수 있지만 할인액은 작아집니다(6월·9월은 하반기분만 할인 대상).
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
@@ -457,7 +458,27 @@ export default function VehicleTax2026Page() {
                   <strong>면책조항</strong>: 본 페이지의 자동차세 계산 및 정보는 2026년 현행 지방세법(§127, §128, §151, 시행령 §125) 기준으로 작성되었습니다. 실제 납부액은 지역할증세, 차량 등록 지역, 개별 상황에 따라 달라질 수 있으므로, 최종 확인은 관할 시·군청 세무서 또는 위택스(wetax.go.kr)에서 하시기 바랍니다. 법조항 인용: 지방세법 §127(자동차세 세율·차령경감 §127①제2호), §128(납기), §151(지방교육세) / 지방세법 시행령 §125(연납 할인).
                 </p>
                 <p className="text-text-tertiary text-xs">
-                  업데이트: 2026-06-14 · 출처: 지방세법·법제처·국세청 공식 문서
+                  업데이트: 2026-10-14 · 출처: 지방세법·법제처·국세청 공식 문서
+                </p>
+                <p className="mt-2 text-xs text-text-tertiary">
+                  공식 출처:{' '}
+                  <a
+                    href="https://www.wetax.go.kr"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    위택스
+                  </a>
+                  {' · '}
+                  <a
+                    href={'https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0125&lsiSeq=290815&urlMode=lsScJoRltInfoR'}
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-500 underline"
+                  >
+                    국가법령정보센터 지방세법 시행령 §125
+                  </a>
                 </p>
               </section>
 

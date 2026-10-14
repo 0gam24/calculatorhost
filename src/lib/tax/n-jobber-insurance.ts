@@ -2,9 +2,9 @@
  * N잡러 건강보험 계산 — 순수 함수
  *
  * 법적 근거:
- * - 국민건강보험법 §162, §167
- * - 조규 제64조(보험료 산정)
- * - 2026년 기준
+ * - 국민건강보험법 §69(보험료)·§71(소득월액: 보수 외 소득이 연 2,000만 원을 넘는 부분)
+ * - 국민건강보험법 §5(피부양자)·시행규칙 별표1의2(피부양자 소득요건)
+ * - 2026년 기준 (2026-10-14 조항 정정: 이전 표기 §162·§167·"조규 제64조"는 해당 조문이 아님)
  *
  * 명세: docs/calculator-spec/N잡러건강보험.md
  *
@@ -22,6 +22,8 @@ const N_JOBBER_EXTRA_INCOME_THRESHOLD = 20_000_000;
 
 /** 피부양자 자격 상실 소득 기준 (2,000만원) — 국민건강보험법 */
 const N_JOBBER_DEPENDENT_LOSS_INCOME_THRESHOLD = 20_000_000;
+/** 피부양자 사업소득 요건: 사업자등록이 없으면 연 500만 원 이하 (등록돼 있으면 사업소득이 없어야 함) — 시행규칙 별표1의2 */
+const N_JOBBER_DEPENDENT_BUSINESS_INCOME_THRESHOLD = 5_000_000;
 
 // ============================================
 // 타입 정의
@@ -100,13 +102,16 @@ export function calculateNJobberInsurance(input: NJobberInsuranceInput): NJobber
   const annualPremium = totalMonthlyPremium * 12;
 
   // 7. 피부양자 자격 상실 판정
+  // 2026-10-14 정정: 합계는 2,000만 원 "초과"일 때 탈락, 사업소득은 500만 원 초과(미등록 기준)면 따로 탈락
   const dependentLossRisk =
-    input.isDependent && totalExtraIncome >= N_JOBBER_DEPENDENT_LOSS_INCOME_THRESHOLD;
+    input.isDependent &&
+    (totalExtraIncome > N_JOBBER_DEPENDENT_LOSS_INCOME_THRESHOLD ||
+      Math.max(0, input.sideBusinessIncome ?? 0) > N_JOBBER_DEPENDENT_BUSINESS_INCOME_THRESHOLD);
 
   // 8. 경고 메시지 구성
   if (dependentLossRisk) {
     warnings.push(
-      '피부양자 자격 상실 예상입니다. 소득이 2,000만원 이상이면 지역가입자로 전환되어 건강보험료가 크게 증가할 수 있습니다. 국민건강보험공단에 문의하세요.',
+      '피부양자 자격 상실 예상입니다. 소득 합계가 연 2,000만 원을 넘거나, 사업소득이 연 500만 원을 넘으면(사업자등록이 있으면 사업소득이 조금만 있어도) 지역가입자로 바뀌어 건강보험료가 크게 늘 수 있습니다. 국민건강보험공단에 확인하세요.',
     );
   }
 

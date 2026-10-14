@@ -92,24 +92,17 @@ function calculateMonthlyTransactionAmount(deposit: number, monthlyRent: number)
 /**
  * 구간 테이블에서 거래금액에 해당하는 요율 및 한도액 조회
  *
- * 경계값 귀속 원칙 (공인중개사법 시행규칙 §20 [별표]):
- * - "~N" 구간: amount ≤ N (첫 경계 포함)
- * - "N 초과~M" 구간: N < amount ≤ M (M은 포함, N은 제외)
- * - "N 이상~M" 구간: N ≤ amount ≤ M (양쪽 모두 포함)
- *
- * 구현 방식:
- * - upperBound는 "구간의 상한(inclusive)" 의미
- * - transactionAmount <= bracket.upperBound 이면 해당 구간
+ * 경계값 귀속 원칙 (공인중개사법 시행규칙 §20① [별표1]):
+ * - 별표1의 모든 구간은 "N 미만" / "N 이상 M 미만" 이다
+ * - upperBound 는 미포함 상한: transactionAmount < upperBound 이면 해당 구간
  * - 배열 순서로 첫 매칭을 반환
  *
- * 예: 900만원
- * - bracket[0] upperBound=50M: 900M <= 50M? NO
- * - bracket[1] upperBound=200M: 900M <= 200M? NO
- * - bracket[2] upperBound=900M: 900M <= 900M? YES → 0.4% 구간
+ * 예: 매매 9억원
+ * - bracket[2] upperBound=900M: 900M < 900M? NO
+ * - bracket[3] upperBound=1200M: 900M < 1200M? YES → 0.5% (9억원 이상 12억원 미만)
  *
- * 예: 9억원
- * - bracket[0-2]: NO
- * - bracket[3] upperBound=1200M: 900M <= 1200M? YES → 0.5% 구간
+ * 예: 매매 5천만원 → 0.5% (5천만원 이상 2억원 미만)
+ * (2026-10-14 정정: 이전에는 ≤ 비교라 5천만·2억이 아래 구간으로 잡혔다)
  */
 function resolveBracket(
   transactionAmount: number,
@@ -117,7 +110,7 @@ function resolveBracket(
 ): { rate: number; limit: number | null } {
   for (const bracket of brackets) {
     // null 은 상한 없음 (마지막 구간), 또는 transactionAmount가 구간 내
-    if (bracket.upperBound === null || transactionAmount <= bracket.upperBound) {
+    if (bracket.upperBound === null || transactionAmount < bracket.upperBound) {
       return { rate: bracket.rate, limit: bracket.limit };
     }
   }

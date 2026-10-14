@@ -20,12 +20,51 @@ import {
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { FreelancerCalculator } from './FreelancerCalculator';
+import { calculateFreelancerTax, type FreelancerResult } from '@/lib/tax/freelancer';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getKosisHouseholdIncomeCitation } from '@/lib/publicapi/public-citations';
 import kosisIncome from '@/data/kosis-income.json';
 
 const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
+
+// 환급·추가납부 시나리오: 계산 함수로 빌드 때 계산 (2026-10-14, 손으로 적은 틀린 숫자 대체)
+const won = (n: number) => `${Math.round(n).toLocaleString('ko-KR')}원`;
+const FREELANCER_SCENARIOS = [
+  {
+    label: '수입 3,000만 원 · 단순경비율 64.1%',
+    result: calculateFreelancerTax({
+      annualRevenue: 30_000_000,
+      expenseMethod: 'simpleRate',
+      simpleExpenseRatePercent: 64.1,
+      dependents: 1,
+    }),
+  },
+  {
+    label: '수입 5,000만 원 · 장부상 경비 500만 원',
+    result: calculateFreelancerTax({
+      annualRevenue: 50_000_000,
+      expenseMethod: 'actual',
+      actualExpenses: 5_000_000,
+      dependents: 1,
+    }),
+  },
+];
+const SCENARIO_ROWS: ReadonlyArray<readonly [string, (r: FreelancerResult) => string]> = [
+  ['수입', (r) => won(r.annualRevenue)],
+  ['필요경비', (r) => `-${won(r.expenseAmount)}`],
+  ['사업소득', (r) => won(r.businessIncome)],
+  ['인적공제 (본인)', (r) => `-${won(r.personalDeduction)}`],
+  ['과세표준', (r) => won(r.taxableBase)],
+  ['산출세액', (r) => won(r.grossTax)],
+  ['표준세액공제', (r) => `-${won(r.standardTaxCredit)}`],
+  ['지방소득세 포함 세금', (r) => won(r.totalTaxLiability)],
+  ['미리 낸 세금 (3.3%)', (r) => `-${won(r.withholdingPaid)}`],
+  [
+    '5월 정산',
+    (r) => (r.settlementAmount < 0 ? `환급 ${won(-r.settlementAmount)}` : `추가 납부 ${won(r.settlementAmount)}`),
+  ],
+];
 
 const URL = 'https://calculatorhost.com/calculator/freelancer-tax/';
 
@@ -75,7 +114,7 @@ const FAQ_ITEMS = [
   {
     question: '수입 7,500만원을 초과하면 어떻게 되나요?',
     answer:
-      '수입 7,500만원 초과 시는 간편장부가 아닌 복식부기 기장이 원칙이며, 단순경비율 적용이 제한됩니다. 또한 인적용역은 4,800만원 초과 시 기준경비율이 원칙입니다. 정확한 계산은 세무사나 홈택스 상담을 통해 확인하세요.',
+      '인적용역을 포함한 서비스업은 직전 연도 수입이 7,500만 원 이상이면 복식부기 의무자입니다(소득세법 시행령 §208⑤). 단순경비율은 직전 연도 수입금액이 업종별 기준보다 적거나 새로 사업을 시작한 경우에만 쓸 수 있고, 넘으면 기준경비율이나 장부로 계산합니다(시행령 §143④). 내 업종의 기준과 경비율은 홈택스 경비율 조회나 세무사 상담으로 확인하세요.',
   },
   {
     question: '자녀세액공제는 어떻게 받나요?',
@@ -431,7 +470,7 @@ export default function FreelancerTaxPage() {
                         <td className="px-3 py-2 text-text-secondary">
                           업종별 정해진 비율로 자동 계산. 영수증 불필요. 가장 간편.
                         </td>
-                        <td className="px-3 py-2 text-text-secondary">4,800만원 이하</td>
+                        <td className="px-3 py-2 text-text-secondary">직전 연도 수입이 업종별 기준 미만, 또는 신규 사업자</td>
                         <td className="px-3 py-2 text-text-secondary">
                           수입 1억 × 64.1% = 경비 6,410만
                         </td>
@@ -441,7 +480,7 @@ export default function FreelancerTaxPage() {
                         <td className="px-3 py-2 text-text-secondary">
                           단순경비율보다 낮은 비율. 실제 경비가 많으면 장부 제출로 차이 인정 가능.
                         </td>
-                        <td className="px-3 py-2 text-text-secondary">4,800만~7,500만원</td>
+                        <td className="px-3 py-2 text-text-secondary">단순경비율 대상이 아니고 장부를 쓰지 않을 때</td>
                         <td className="px-3 py-2 text-text-secondary">
                           수입 5,000만 × 52% = 경비 2,600만
                         </td>
@@ -451,7 +490,7 @@ export default function FreelancerTaxPage() {
                         <td className="px-3 py-2 text-text-secondary">
                           전표·통장 전체 기록. 실제 경비를 정확히 계산. 가장 복잡. 세무사 필요.
                         </td>
-                        <td className="px-3 py-2 text-text-secondary">7,500만원 초과 (의무)</td>
+                        <td className="px-3 py-2 text-text-secondary">서비스업 직전 연도 수입 7,500만 원 이상 (의무)</td>
                         <td className="px-3 py-2 text-text-secondary">
                           영수증·통장 기록으로 실제 경비 산출
                         </td>
@@ -557,10 +596,10 @@ export default function FreelancerTaxPage() {
                       2. 수입 규모에 따른 제약
                     </h3>
                     <p className="text-sm text-text-secondary">
-                      • 수입 4,800만원 초과(인적용역 기준): 기준경비율 적용 가능, 기납부
-                      원천징수액이 높음
-                      <br />• 수입 7,500만원 초과: 간편장부 대신 복식부기 기장 필수. 세무사 도움
-                      강력 권장.
+                      • 직전 연도 수입이 업종별 기준을 넘으면 단순경비율 대신 기준경비율이나 장부로
+                      계산합니다(시행령 §143④).
+                      <br />• 서비스업 직전 연도 수입 7,500만 원 이상: 복식부기 의무(시행령 §208⑤).
+                      세무사 도움을 권합니다.
                     </p>
                   </div>
 
@@ -610,117 +649,57 @@ export default function FreelancerTaxPage() {
                 </p>
               </section>
               <section aria-label="환급·추가납부 시나리오" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">환급 vs 추가납부 시나리오</h2>
-                <p className="mb-6 text-text-secondary">
-                  같은 3.3% 원천징수를 받아도, 경비율, 부양가족, 자녀 수에 따라 최종 정산액이
-                  달라집니다.
+                <h2 className="mb-4 text-2xl font-semibold">
+                  3.3%를 떼인 프리랜서, 언제 환급받고 언제 더 내나요?
+                </h2>
+                <p className="mb-4 text-text-secondary" data-speakable>
+                  같은 3.3%를 떼여도 경비를 얼마나 인정받느냐에 따라 5월 정산 결과가 갈립니다. 아래
+                  숫자는 위 계산기와 같은 공식으로 계산한 값입니다.
                 </p>
-
-                <div className="space-y-4">
-                  <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
-                    <h3 className="mb-3 font-semibold text-green-600 dark:text-green-400">
-                      시나리오 1: 환급 (경비율 높음)
-                    </h3>
-                    <div className="space-y-1 text-sm">
-                      <div className="flex justify-between">
-                        <span>수입</span>
-                        <span className="font-medium">50,000,000원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>경비 (64.1%)</span>
-                        <span className="font-medium">-32,050,000원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-green-500/30 pt-1">
-                        <span>사업소득</span>
-                        <span className="font-medium">17,950,000원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>인적공제 (1인)</span>
-                        <span className="font-medium">-1,500,000원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-green-500/30 pt-1">
-                        <span>과세표준</span>
-                        <span className="font-medium">16,450,000원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>산출세액 (15%)</span>
-                        <span className="font-medium">1,793,400원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>지방소득세 (10%)</span>
-                        <span className="font-medium">179,340원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-green-500/30 pt-1">
-                        <span>총 세금</span>
-                        <span className="font-medium">1,972,740원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>원천징수 (3.3%)</span>
-                        <span className="font-medium text-red-500">-1,650,000원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-green-500/30 pt-1 font-medium">
-                        <span>추가납부액</span>
-                        <span className="dark:text-danger-400 text-danger-600">322,740원</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="rounded-lg border border-danger-500/30 bg-danger-500/5 p-4">
-                    <h3 className="dark:text-danger-400 mb-3 font-semibold text-danger-600">
-                      시나리오 2: 추가납부 (부양가족 많음)
-                    </h3>
-                    <div className="space-y-1 text-sm">
-                      <div className="flex justify-between">
-                        <span>수입</span>
-                        <span className="font-medium">1억원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>경비 (64.1%)</span>
-                        <span className="font-medium">-6,410만원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-danger-500/30 pt-1">
-                        <span>사업소득</span>
-                        <span className="font-medium">3,590만원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>인적공제 (3인)</span>
-                        <span className="font-medium">-450만원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>자녀공제 (2명)</span>
-                        <span className="font-medium">-350만원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-danger-500/30 pt-1">
-                        <span>과세표준</span>
-                        <span className="font-medium">2,790만원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>산출세액 (15%)</span>
-                        <span className="font-medium">2,813,400원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>지방소득세 (10%)</span>
-                        <span className="font-medium">281,340원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-danger-500/30 pt-1">
-                        <span>총 세금</span>
-                        <span className="font-medium">3,094,740원</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span>원천징수 (3.3%)</span>
-                        <span className="font-medium text-green-500">-3,300,000원</span>
-                      </div>
-                      <div className="flex justify-between border-t border-danger-500/30 pt-1 font-medium">
-                        <span>환급액</span>
-                        <span className="text-green-600 dark:text-green-400">205,260원</span>
-                      </div>
-                    </div>
-                  </div>
+                <div className="overflow-x-auto">
+                  <table className="w-full min-w-[28rem] text-sm">
+                    <caption className="mb-2 text-left text-text-tertiary">
+                      본인 1명, 다른 소득공제·세액공제 없음 가정 (표준세액공제 7만 원 반영)
+                    </caption>
+                    <thead>
+                      <tr className="border-b border-border-base">
+                        <th scope="col" className="px-3 py-2 text-left font-semibold text-text-secondary">
+                          항목
+                        </th>
+                        {FREELANCER_SCENARIOS.map((sc) => (
+                          <th
+                            key={sc.label}
+                            scope="col"
+                            className="px-3 py-2 text-right font-semibold text-text-secondary"
+                          >
+                            {sc.label}
+                          </th>
+                        ))}
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {SCENARIO_ROWS.map(([label, pick]) => (
+                        <tr key={label} className="border-b border-border-subtle last:border-0">
+                          <th scope="row" className="px-3 py-2 text-left font-medium text-text-primary">
+                            {label}
+                          </th>
+                          {FREELANCER_SCENARIOS.map((sc) => (
+                            <td
+                              key={sc.label}
+                              className="px-3 py-2 text-right tabular-nums text-text-secondary"
+                            >
+                              {pick(sc.result)}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
                 </div>
-
-                <p className="mt-6 text-xs text-text-tertiary">
-                  위는 가정적 예시입니다. 실제 계산은 다양한 변수(주택 보유, 이전 연도 손실, 기타
-                  소득)를 고려하므로 더 복잡합니다.
+                <p className="mt-3 text-sm text-text-secondary">
+                  경비를 단순경비율로 넉넉히 인정받으면 미리 낸 3.3%가 실제 세금보다 많아 돌려받고,
+                  장부상 경비가 적으면 5월에 더 냅니다. 다만 단순경비율은 직전 연도 수입금액이 업종별
+                  기준보다 적거나 새로 사업을 시작한 경우에만 쓸 수 있습니다(소득세법 시행령 §143④).
                 </p>
               </section>
               <section

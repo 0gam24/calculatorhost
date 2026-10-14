@@ -176,6 +176,14 @@ export function FreelancerCalculator() {
       });
     }
 
+    if (result.standardTaxCredit > 0) {
+      rows.push({
+        label: '표준세액공제',
+        value: `-${formatKRW(result.standardTaxCredit).replace('원', '')}원`,
+        note: '근로소득 없는 종합소득자 연 7만 원',
+      });
+    }
+
     rows.push({
       label: '결정세액 (지방소득세 제외)',
       value: formatKRW(result.finalTax),
