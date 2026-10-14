@@ -140,10 +140,12 @@ export const LAW_HOUSING_LEASE_PROTECTION: AuthorityLink = {
   type: 'law',
 };
 
-export const LAW_BANKING_24_4: AuthorityLink = {
-  label: '은행법 시행령 §24의4 (가계대출 관리)',
-  url: 'https://www.law.go.kr/법령/은행법시행령/제24조의4',
-  type: 'law',
+// 2026-10-14: '은행법 시행령 §24의4 (가계대출 관리)'는 DSR 근거로 확인되지 않아 삭제 (쓰는 곳 없었음).
+// DSR·LTV 근거는 금융위원회 가계부채 관리방안 보도자료로 인용한다.
+export const FSC_HOUSEHOLD_DEBT_2026: AuthorityLink = {
+  label: '금융위원회, 2026년도 가계부채 관리방안 (2026.4.1)',
+  url: 'https://www.fsc.go.kr/no010101/86606',
+  type: 'agency',
 };
 
 export const LAW_HOUSING_24: AuthorityLink = {

@@ -16,12 +16,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/ltv-calculation-2026/';
 const DATE_PUBLISHED = '2026-06-24';
-const DATE_MODIFIED = '2026-06-24';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: 'LTV 계산법 2026 | 담보인정비율·대출가능액·DSR/DTI 차이',
   description:
-    'LTV(담보인정비율) 계산법을 쉽게 정리합니다. 대출가능액 역산, 담보가치 기준, DSR/DTI/LTV 규제 차이, 실제 대출한도 결정 요소를 명확히 설명합니다. 2026년 기준.',
+    '2026년 10월 현재 LTV(담보인정비율) 계산법을 쉽게 정리합니다. 규제지역 40%, 그 밖의 지역 70%, 수도권 주담대 최대한도(6억·4억·2억), DSR과의 차이, 실제 대출한도 결정 방식을 설명합니다.',
   keywords: [
     'LTV 계산',
     '담보인정비율',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
       },
     ],
     title: 'LTV 계산법 2026',
-    description: '담보인정비율의 개념, 계산 공식, 대출가능액 역산, DSR/DTI와의 관계를 정리합니다.',
+    description: '2026년 10월 기준 LTV 규제지역 40%·그 밖 70%, 수도권 최대한도 6억·4억·2억, DSR과의 관계를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'LTV 계산법 2026',
-    description: '대출가능액을 결정하는 LTV, DSR, DTI의 의미와 규제 기준',
+    description: '규제지역 40%, 그 밖 70%, 수도권 최대한도 6억 원까지. LTV와 DSR을 함께 통과해야 실제 대출이 나옵니다.',
   },
 };
 
@@ -61,7 +61,7 @@ const FAQ_ITEMS = [
   {
     question: 'LTV가 뭔가요?',
     answer:
-      'LTV는 Loan-to-Value의 약자로, 담보(주택)의 가치 대비 대출 비율을 뜻합니다. 예를 들어 주택 가치가 5억 원이고 LTV가 70%라면, 최대 3.5억 원까지 대출 가능하다는 의미입니다. 금융기관이 위험을 관리하기 위해 설정하는 가장 기본적인 규제입니다.',
+      'LTV는 Loan-to-Value의 약자로, 담보(주택)의 가치 대비 대출 비율을 뜻합니다. 2026년 10월 현재 무주택자·처분조건부 1주택자 기준으로 규제지역은 40%, 그 밖의 지역은 70%가 적용됩니다. 예를 들어 서울의 5억 원 집은 규제지역 40%라 최대 2억 원, 그 밖의 수도권 5억 원 집은 70%라 최대 3.5억 원까지 담보로 빌릴 수 있다는 의미입니다.',
   },
   {
     question: '담보가치는 어떻게 결정되나요?',
@@ -69,9 +69,9 @@ const FAQ_ITEMS = [
       '담보가치는 일반적으로 KB시세, 금융기관 감정가, 또는 매매계약가 중 가장 보수적인 값으로 결정됩니다. 금융기관마다 다른 기준을 사용하므로, 같은 주택이라도 은행별로 담보가치가 다를 수 있습니다. 대출 신청 전에 상담을 통해 해당 기관의 담보가치 기준을 확인하는 것이 중요합니다.',
   },
   {
-    question: 'LTV 70% 맥스라고 했는데, 실제로 그 한도까지 빌릴 수 있나요?',
+    question: 'LTV 한도까지 실제로 다 빌릴 수 있나요?',
     answer:
-      '아닙니다. LTV 70%는 담보가치 기준 최대 한도이지만, 실제 대출은 DSR(총 부채 상환 비율) 규제가 더 낮을 수 있습니다. 예를 들어 LTV 70% 한도가 3.5억 원이더라도, 당신의 연소득이 낮거나 기존 대출이 많으면 DSR 때문에 2.5억 원만 가능할 수 있습니다. 세 규제(LTV·DTI·DSR) 중 가장 낮은 한도가 실제 대출 가능액입니다.',
+      '아닙니다. LTV는 담보가치 기준 상한일 뿐이고, 실제 대출은 DSR(은행 40%, 2금융권 50%)과 수도권·규제지역의 주택구입 주담대 최대한도(시가 15억 원 이하 6억 원, 15억~25억 원 4억 원, 25억 원 초과 2억 원)까지 모두 통과해야 합니다. 예를 들어 서울의 20억 원 집은 LTV 40% 적용으로 8억 원이 나오지만 시가 15억 원 초과라 최대 4억 원까지만 가능합니다. 세 기준 중 가장 낮은 금액이 실제 대출 가능액입니다.',
   },
   {
     question: 'DTI, DSR, LTV가 뭐가 다른가요?',
@@ -79,14 +79,14 @@ const FAQ_ITEMS = [
       '세 가지 모두 대출 규제 기준입니다. LTV는 담보가치 대비 대출비(%), DTI는 연소득 대비 주담대만의 원리금 비(%), DSR은 연소득 대비 모든 대출의 원리금 비(%)입니다. LTV는 부동산 가격 기준, DTI·DSR은 소득 기준으로 움직입니다. 따라서 같은 집이라도 당신의 소득에 따라 빌릴 수 있는 금액이 달라집니다.',
   },
   {
-    question: '규제지역(조정지역, 투기지역)이면 LTV가 더 낮아지나요?',
+    question: '서울과 수도권 일부는 LTV가 더 낮다고 들었는데 사실인가요?',
     answer:
-      '네, 정부가 지역을 지정한 조정지역, 투기지역은 일반지역보다 LTV 한도가 낮습니다. 예를 들어 일반지역 70% 한도가 조정지역에서는 60% 이하로 제한될 수 있습니다. 정부 정책에 따라 규제지역 지정이 수시 변동되므로, 특정 지역의 현재 LTV 한도는 금융위 공식 발표나 은행 상담을 통해 확인해야 합니다.',
+      '네, 2026년 10월 현재 서울 25개 구 전체와 경기 과천·광명·성남 분당·수정·중원·수원 영통·장안·팔달·안양 동안·용인 수지·용인 기흥·의왕·하남·화성 동탄·구리시가 규제지역(투기과열지구 겸 조정대상지역)으로 묶여 있어, 무주택자·처분조건부 1주택자의 LTV가 40%로 제한됩니다. 그 밖의 지역은 70%가 적용됩니다. 규제지역 지정은 금융위원회·국토교통부 발표로 수시 변동되므로 신청 시점의 최신 지정 현황을 확인하세요.',
   },
   {
-    question: 'LTV 70% 한도가 있어도 방공제(소액임차보증금)가 있으면 줄어드나요?',
+    question: '방공제(소액임차보증금)가 있으면 LTV 한도가 줄어드나요?',
     answer:
-      '네, 맞습니다. 예를 들어 주택 담보가치가 5억 원, 기존 보증금 3,000만 원(방공제), LTV 70% 한도 3.5억 원이라면, 실제 대출 가능액은 3.5억 − 3,000만 = 3.2억 원이 됩니다. 기존 담보대출(선순위)도 동일하게 차감되므로, 명목 한도와 실제 한도는 크게 다를 수 있습니다.',
+      '네, 맞습니다. 예를 들어 그 밖의 수도권 담보가치 5억 원, LTV 70% 한도 3.5억 원, 기존 임대차 보증금 3,000만 원(방공제)이라면 실제 대출 가능액은 3.5억에서 3,000만 원을 뺀 3억 2,000만 원이 됩니다. 선순위 담보대출도 같은 방식으로 차감되므로 명목 한도와 실제 한도는 크게 다를 수 있습니다.',
   },
 ];
 
@@ -99,7 +99,7 @@ export default function LtvCalculation2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: 'LTV 계산법 2026',
     description:
-      '담보인정비율(LTV)의 개념, 계산 공식, 대출가능액 역산, DSR·DTI와의 차이, 실제 대출한도 결정 요소를 정리합니다.',
+      '2026년 10월 기준 LTV(담보인정비율) 계산법. 규제지역 40%·그 밖 70%, 수도권 주담대 최대한도(6억·4억·2억 원), DSR과의 관계, 실제 대출한도 결정 방식을 정리합니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -111,7 +111,7 @@ export default function LtvCalculation2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: 'LTV 계산법 2026 | calculatorhost',
     description:
-      '담보인정비율 계산, 대출가능액 역산, DSR·DTI·LTV 차이를 명확히 정리합니다.',
+      '2026-10 기준 LTV 규제지역 40%·그 밖 70%, 수도권 최대한도 6억·4억·2억, DSR 병행 조건까지 정리합니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -157,7 +157,7 @@ export default function LtvCalculation2026Page() {
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">
-                  금융 · 7분 읽기 · 2026-06-24
+                  금융 · 7분 읽기 · 2026-10-14
                 </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   LTV 계산법 2026
@@ -196,17 +196,17 @@ export default function LtvCalculation2026Page() {
                     <tr className="border-b border-border-base">
                       <td className="py-2 pr-3 font-semibold">LTV</td>
                       <td>대출금액 ÷ 담보가치</td>
-                      <td>일반: 70%, 조정: 60% (예시)</td>
+                      <td>규제지역 40%, 그 밖 70%</td>
                     </tr>
                     <tr className="border-b border-border-base">
                       <td className="py-2 pr-3 font-semibold">DTI</td>
                       <td>주담대 연원리금 ÷ 연소득</td>
-                      <td>60~70% (정책 변동)</td>
+                      <td>60% 안팎 (DSR이 사실상 대체)</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-3 font-semibold">DSR</td>
                       <td>모든 대출 연원리금 ÷ 연소득</td>
-                      <td>40~45% (정책 변동)</td>
+                      <td>은행 40%, 2금융권 50%</td>
                     </tr>
                   </tbody>
                 </table>
@@ -248,30 +248,38 @@ export default function LtvCalculation2026Page() {
                 </p>
 
                 <div className="rounded-lg bg-bg-raised p-4">
-                  <h3 className="mb-3 font-semibold text-text-primary">계산 사례</h3>
+                  <h3 className="mb-3 font-semibold text-text-primary">계산 사례 (2026-10 기준)</h3>
                   <ul className="space-y-3 text-sm text-text-secondary">
                     <li>
-                      <strong>시나리오 1: 일반지역, 주택 담보가치 5억 원, LTV 70%</strong>
+                      <strong>사례 1: 서울(규제지역) 담보가치 5억 원, 무주택, LTV 40%</strong>
                       <br />
-                      대출가능액 = 5억 × 70% = 3.5억 원
+                      대출가능액 = 5억 × 40% = 2억 원
                     </li>
                     <li>
-                      <strong>시나리오 2: 조정지역, 주택 담보가치 4억 원, LTV 60%</strong>
+                      <strong>사례 2: 그 밖의 수도권 담보가치 10억 원, 무주택, LTV 70%</strong>
                       <br />
-                      대출가능액 = 4억 × 60% = 2.4억 원
+                      LTV 계산 = 10억 × 70% = 7억 원, 다만 수도권 주담대 최대한도 6억 원 적용으로 6억 원까지 가능
                     </li>
                     <li>
-                      <strong>시나리오 3: 주택 담보가치 3억 원, LTV 80% (우대형)</strong>
+                      <strong>사례 3: 서울 담보가치 20억 원, 무주택, LTV 40%</strong>
                       <br />
-                      대출가능액 = 3억 × 80% = 2.4억 원
+                      LTV 계산 = 20억 × 40% = 8억 원, 다만 시가 15억 원 초과 25억 원 이하 구간이라 최대 4억 원
+                    </li>
+                    <li>
+                      <strong>사례 4: 지방 담보가치 3억 원, 생애최초, LTV 80%</strong>
+                      <br />
+                      대출가능액 = 3억 × 80% = 2억 4,000만 원 (생애최초 대출 전체 상한 6억 원 이내)
                     </li>
                   </ul>
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  다만 위는 LTV만 고려한 한도입니다. 실제 대출 시에는 DSR 규제가 이보다 더
-                  낮은 한도를 정할 수 있으므로, LTV 한도만으로 확정하지 말고 은행 대출 계산기나
-                  상담을 통해 정확한 한도를 확인하세요.
+                  다만 위는 LTV와 금액 상한만 고려한 숫자입니다. 실제 대출 시에는 DSR(은행 40%,
+                  2금융권 50%)이 더 낮은 한도를 정할 수 있으므로, LTV만 보고 확정하지 말고{' '}
+                  <Link href="/calculator/loan-limit/" className="text-primary-600 underline dark:text-primary-500">
+                    대출한도 계산기
+                  </Link>
+                  로 LTV·DSR·최대한도를 함께 계산해 보세요.
                 </p>
               </section>
 
@@ -354,10 +362,10 @@ export default function LtvCalculation2026Page() {
                       <strong>공식</strong>: 대출금액 ÷ 담보가치 × 100
                     </p>
                     <p className="text-sm text-text-secondary">
-                      <strong>기준값</strong>: 일반지역 70%, 조정지역 60% (예시, 변동 가능)
+                      <strong>기준값(2026-10)</strong>: 무주택·처분조건부 1주택 기준 규제지역 40%, 그 밖의 지역 70%. 생애최초는 수도권·규제지역 70%, 지방 80% (대출 최대 6억 원)
                     </p>
                     <p className="text-xs text-text-tertiary">
-                      집값에만 초점을 맞춘 규제. 당신의 소득은 무관.
+                      집값에 초점을 맞춘 규제. 소득과는 무관하지만 수도권 전역·규제지역에는 금액 상한도 함께 걸린다.
                     </p>
                   </div>
 
@@ -372,7 +380,7 @@ export default function LtvCalculation2026Page() {
                       <strong>공식</strong>: (주담대 월 원리금 × 12) ÷ 연소득 × 100
                     </p>
                     <p className="text-sm text-text-secondary">
-                      <strong>기준값</strong>: 60~70% (정책에 따라 변동)
+                      <strong>기준값</strong>: 60% 안팎 (현재는 DSR이 사실상 대체)
                     </p>
                     <p className="text-xs text-text-tertiary">
                       주담대만 고려. 신용대출·자동차할부 등 다른 대출은 미포함.
@@ -390,7 +398,7 @@ export default function LtvCalculation2026Page() {
                       <strong>공식</strong>: (모든 대출 월 원리금 × 12) ÷ 연소득 × 100
                     </p>
                     <p className="text-sm text-text-secondary">
-                      <strong>기준값</strong>: 40~45% (정책에 따라 변동)
+                      <strong>기준값(2026-10)</strong>: 은행 40%, 2금융권 50%
                     </p>
                     <p className="text-xs text-text-tertiary">
                       가장 엄격한 규제. 주담대·신용대출·자동차할부 등 모든 대출 포함.
@@ -426,29 +434,29 @@ export default function LtvCalculation2026Page() {
                   </h3>
                   <ul className="space-y-3 text-sm text-text-secondary">
                     <li>
-                      <strong>상황</strong>: 주택 담보가치 5억 원, 연소득 5,000만 원, 기존 신용대출
-                      5,000만 원
+                      <strong>상황</strong>: 그 밖의 수도권, 담보가치 5억 원, 연소득 5,000만 원,
+                      기존 대출 없음, 변동형 약정금리 4.5%, 30년 원리금균등 (은행 DSR 40% 적용)
                     </li>
                     <li>
-                      <strong>LTV 한도</strong>: 5억 × 70% = 3.5억 원
+                      <strong>LTV 한도</strong>: 5억 × 70% = 3.5억 원 (수도권 주담대 최대한도 6억 원 안쪽이라 그대로 적용)
                     </li>
                     <li>
-                      <strong>DSR 계산</strong>: 연소득의 45% 한도
+                      <strong>DSR 계산</strong>: 연소득의 40% 한도
                       <br />
-                      = 5,000만 × 45% = 2,250만 원(연 원리금)
+                      = 5,000만 × 40% = 2,000만 원 (1년 원리금), 월 약 166.7만 원
                       <br />
-                      이미 신용대출 5,000만 원의 월이자(월 20만 원 가정)가 있으므로,
+                      수도권 변동형은 약정금리 4.5%에 스트레스 금리 3.0%p를 더한 7.5%로 원리금을 계산하므로
+                      원금 약 2억 3,800만 원이 한도입니다 (같은 조건의 고정형이면 4.5%로 계산해 약 3억 2,900만 원).
                       <br />
-                      주담대 월 원리금 한도 = (2,250만 − 240만) ÷ 12 ≈ 167.5만 원
-                      <br />
-                      → 이 경우 주담대로 빌릴 수 있는 금액은 약 3억 원 미만 (LTV 70%보다 훨씬 낮음)
+                      어느 쪽이든 LTV 한도 3.5억 원보다 낮아, 이 사례는 DSR이 실제 한도를 정합니다.
                     </li>
                   </ul>
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  위 사례는 극단적이지만 현실에서 흔합니다. DSR 규제가 더 낮기 때문에 LTV 한도만 보고
-                  대출 가능액을 예상하면 큰 실수를 할 수 있습니다.
+                  규제지역(LTV 40%)이거나 소득 대비 신용대출이 많으면 격차는 더 벌어집니다. DSR
+                  규제가 더 낮게 걸리는 경우가 흔하기 때문에, LTV 한도만 보고 대출 가능액을 예상하면
+                  큰 오차가 생깁니다.
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
@@ -460,21 +468,22 @@ export default function LtvCalculation2026Page() {
 
               <section className="space-y-4">
                 <h2 className="border-b border-border-base pb-2 text-2xl font-bold">
-                  규제지역(조정, 투기)이면 LTV가 더 낮아지나요?
+                  규제지역이면 LTV가 얼마까지 낮아지나요?
                 </h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  네, 정부가 지정한 조정지역과 투기지역은 일반지역보다 LTV 한도가 낮습니다. 이는
-                  과열된 부동산 시장을 식히기 위한 정책 규제입니다.
+                  네, 2026년 10월 현재 규제지역(투기과열지구이자 조정대상지역)으로 지정된 곳은
+                  무주택자·처분조건부 1주택자 기준 LTV가 40%로 묶입니다. 그 밖의 지역은 70%가 적용되고,
+                  수도권 전역과 규제지역에서는 주택구입 목적 주담대에 금액 상한까지 함께 걸립니다.
                 </p>
 
                 <table className="w-full border-collapse text-sm">
                   <caption className="mb-2 text-left font-semibold text-text-primary">
-                    지역별 LTV 한도 예시 (정책 변동 가능)
+                    지역·주택 상황별 LTV 한도 (2026-10 기준)
                   </caption>
                   <thead>
                     <tr className="border-b border-border-base">
                       <th scope="col" className="pb-2 pr-3 text-left font-semibold">
-                        지역 구분
+                        구분
                       </th>
                       <th scope="col" className="pb-2 text-left font-semibold">
                         LTV 한도
@@ -487,38 +496,57 @@ export default function LtvCalculation2026Page() {
                   <tbody className="text-text-secondary">
                     <tr className="border-b border-border-base">
                       <td className="py-2 pr-3">
-                        <strong>일반지역</strong>
+                        <strong>규제지역, 무주택·처분조건부 1주택</strong>
                       </td>
-                      <td>70% (예시)</td>
-                      <td>규제 미지정 지역</td>
+                      <td>40%</td>
+                      <td>서울 25개 구 전체 등</td>
                     </tr>
                     <tr className="border-b border-border-base">
                       <td className="py-2 pr-3">
-                        <strong>조정지역</strong>
+                        <strong>그 밖의 수도권, 무주택·처분조건부 1주택</strong>
                       </td>
-                      <td>60% (예시)</td>
-                      <td>정부 조정지역 지정</td>
+                      <td>70%</td>
+                      <td>수도권 금액 상한 함께 적용</td>
+                    </tr>
+                    <tr className="border-b border-border-base">
+                      <td className="py-2 pr-3">
+                        <strong>지방, 무주택·처분조건부 1주택</strong>
+                      </td>
+                      <td>70%</td>
+                      <td>금액 상한 없음</td>
+                    </tr>
+                    <tr className="border-b border-border-base">
+                      <td className="py-2 pr-3">
+                        <strong>생애최초, 수도권·규제지역</strong>
+                      </td>
+                      <td>70%</td>
+                      <td>대출 최대 6억 원</td>
                     </tr>
                     <tr>
                       <td className="py-2 pr-3">
-                        <strong>투기지역</strong>
+                        <strong>생애최초, 지방</strong>
                       </td>
-                      <td>50% 이하 (예시)</td>
-                      <td>투기 과열 지역</td>
+                      <td>80%</td>
+                      <td>대출 최대 6억 원</td>
                     </tr>
                   </tbody>
                 </table>
 
                 <p className="text-text-secondary leading-relaxed">
-                  조정지역에 지정되면 대출 가능액이 크게 줄어듭니다. 예를 들어 담보가치 5억 원인
-                  주택이라면, 일반지역은 3.5억 원(70%)까지 빌릴 수 있지만, 조정지역에서는 3억
-                  원(60%)까지만 가능합니다.
+                  수도권 전체와 규제지역에서는 LTV로 계산한 금액이 커도 다음 상한을 넘을 수 없습니다.
+                  시가 15억 원 이하는 6억 원, 15억 원 초과 25억 원 이하는 4억 원, 25억 원 초과는
+                  2억 원이 주택구입 주담대의 최대한도입니다. 예를 들어 서울 20억 원 집은
+                  LTV 40%로 8억 원이 나와도 15억 원 초과 구간이라 실제로는 4억 원까지만 빌릴 수 있고,
+                  그 밖의 수도권 10억 원 집은 70%로 7억 원이 나와도 최대한도 6억 원이 적용됩니다.
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  다만 정부의 지역 지정은 시장 상황에 따라 자주 변동됩니다. 특정 지역의 현재
-                  규제 상태와 LTV 한도는 금융위 공식 발표나 은행 상담을 통해 확인해야 하며, 구체적인
-                  규제지역 목록은 수시로 변경되므로 항상 최신 정보를 참고하세요.
+                  2026년 10월 현재 규제지역은 서울 25개 구 전체와 경기 과천·광명·성남 분당·수정·중원·
+                  수원 영통·장안·팔달·안양 동안·용인 수지·용인 기흥·의왕·하남·화성 동탄·구리시입니다.
+                  수도권·규제지역의 주택구입 주담대는 만기가 최장 30년이고, 집을 사면 6개월 안에
+                  전입해야 하며, 2주택 이상 보유자는 수도권·규제지역에서 주택구입용 주담대를 받을
+                  수 없습니다. 규제지역 지정은 금융위원회·국토교통부 발표로 수시 변동되므로,
+                  대출 신청 전에 최신 지정 현황과 은행 상담을 통해 확인하세요.
                 </p>
               </section>
 
@@ -536,13 +564,13 @@ export default function LtvCalculation2026Page() {
                     기존 담보대출이 있는 경우
                   </h3>
                   <p className="text-sm text-text-secondary">
-                    <strong>예시</strong>: 주택 담보가치 5억 원, 기존 대출 1억 원(선순위), LTV 70%
+                    <strong>예시</strong>: 그 밖의 수도권 담보가치 5억 원, 기존 대출 1억 원(선순위), LTV 70%
                   </p>
                   <p className="text-sm text-text-secondary mt-2">
                     · 명목 한도: 5억 × 70% = 3.5억 원
                   </p>
                   <p className="text-sm text-text-secondary">
-                    · 실제 한도: 3.5억 − 1억(선순위 대출) = 2.5억 원 ← 실제 빌릴 수 있는 금액
+                    · 실제 한도: 3.5억 - 1억(선순위 대출) = 2.5억 원 (실제 빌릴 수 있는 금액)
                   </p>
                 </div>
 
@@ -551,14 +579,14 @@ export default function LtvCalculation2026Page() {
                     소액임차보증금(방공제)이 있는 경우
                   </h3>
                   <p className="text-sm text-text-secondary">
-                    <strong>예시</strong>: 주택 담보가치 5억 원, 전세 보증금 3,000만 원(선순위), LTV
-                    70%
+                    <strong>예시</strong>: 그 밖의 수도권 담보가치 5억 원, 전세 보증금 3,000만 원(선순위),
+                    LTV 70%
                   </p>
                   <p className="text-sm text-text-secondary mt-2">
                     · 명목 한도: 5억 × 70% = 3.5억 원
                   </p>
                   <p className="text-sm text-text-secondary">
-                    · 실제 한도: 3.5억 − 3,000만 = 3.2억 원 ← 실제 빌릴 수 있는 금액
+                    · 실제 한도: 3.5억 - 3,000만 = 3억 2,000만 원 (실제 빌릴 수 있는 금액)
                   </p>
                 </div>
 
@@ -591,7 +619,7 @@ export default function LtvCalculation2026Page() {
                     시점에 금융위 공식 발표나 해당 은행의 최신 기준을 반드시 확인하세요.
                   </li>
                   <li>
-                    • 규제지역(조정지역, 투기지역) 지정도 수시로 변경되며, 지역별 LTV 한도가
+                    • 규제지역(투기과열지구이자 조정대상지역) 지정도 수시로 변경되며, 지역별 LTV 한도가
                     상이합니다.
                   </li>
                   <li>
@@ -676,7 +704,16 @@ export default function LtvCalculation2026Page() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>참고 자료</strong>:{' '}
+                  <strong>참고 자료</strong>: 금융위원회 가계부채 관리방안·주택시장 안정화 대책,{' '}
+                  <a
+                    href="https://www.fsc.go.kr/"
+                    target="_blank"
+                    rel="noopener noreferrer nofollow"
+                    className="text-primary-600 underline dark:text-primary-500"
+                  >
+                    금융위원회
+                  </a>
+                  ,{' '}
                   <a
                     href="https://www.fss.or.kr/"
                     target="_blank"

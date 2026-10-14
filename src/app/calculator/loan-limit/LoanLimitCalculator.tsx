@@ -18,7 +18,16 @@ import { NumberInput } from '@/components/calculator/NumberInput';
 import { RadioGroup } from '@/components/calculator/RadioGroup';
 import { ResultCard } from '@/components/calculator/Result';
 import { calculateLoanLimit, type RepaymentType } from '@/lib/finance/loan-limit';
-import type { RegionType, LenderType, HousingStatus } from '@/lib/constants/loan-rules-2026';
+import {
+  type RegionType,
+  type LenderType,
+  type HousingStatus,
+  type RateType,
+  getDsrLimit,
+  getDtiLimit,
+  getLtvRate,
+  getStressAddOnPercent,
+} from '@/lib/constants/loan-rules-2026';
 import { formatKRW, formatPercent } from '@/lib/utils';
 
 // ============================================
@@ -69,12 +78,13 @@ export function LoanLimitCalculator() {
     500_000_000,
   ); // 5억원
 
-  // 규제 옵션
-  const [region, setRegion] = useCalculatorState<RegionType>('loan-limit:region', 'nonRegulated');
+  // 규제 옵션 (2026-10-14: 지역·주택 상태 값이 바뀌어 저장 키도 새로 씀)
+  const [region, setRegion] = useCalculatorState<RegionType>('loan-limit:region2', 'regulated');
   const [housingStatus, setHousingStatus] = useCalculatorState<HousingStatus>(
-    'loan-limit:housingStatus',
+    'loan-limit:housingStatus2',
     'general',
   );
+  const [rateType, setRateType] = useCalculatorState<RateType>('loan-limit:rateType', 'variable');
   const [lender, setLender] = useCalculatorState<LenderType>('loan-limit:lender', 'bank');
 
   // 대출 조건
@@ -109,6 +119,7 @@ export function LoanLimitCalculator() {
         newLoanAnnualRate: newLoanRate,
         newLoanTermYears: loanTermYears,
         applyStressDsr,
+        rateType,
         repaymentType,
       });
     } catch {
@@ -125,63 +136,72 @@ export function LoanLimitCalculator() {
     newLoanRate,
     loanTermYears,
     applyStressDsr,
+    rateType,
     repaymentType,
   ]);
+
+  const stressAddOn = getStressAddOnPercent(region, rateType);
 
   // 결과 카드 행 구성
   const resultRows: ResultRowData[] = useMemo(() => {
     if (!result) return [];
 
+    const dsrPct = formatPercent(getDsrLimit(lender), 0);
+    const ltvPct = formatPercent(getLtvRate(region, housingStatus), 0);
+    const dtiPct = formatPercent(getDtiLimit(region), 0);
+    const bindingLabel: Record<typeof result.bindingConstraint, string> = {
+      collateral: '담보가치 상한',
+      DSR: `DSR (${dsrPct})`,
+      LTV: `LTV (${ltvPct})`,
+      DTI: `DTI (${dtiPct})`,
+      CAP: '주담대 최대한도',
+    };
+
     const rows: ResultRowData[] = [
       {
         label: '결정적 제약',
-        value:
-          result.bindingConstraint === 'collateral'
-            ? '담보가치 상한'
-            : `${result.bindingConstraint} (${
-                result.bindingConstraint === 'DSR'
-                  ? formatPercent(lender === 'bank' ? 0.4 : 0.5)
-                  : result.bindingConstraint === 'LTV'
-                    ? `${Math.round(
-                        region === 'nonRegulated'
-                          ? 70
-                          : housingStatus === 'firstOrSubsistence'
-                            ? 80
-                            : 50,
-                      )}%`
-                    : formatPercent(region === 'nonRegulated' ? 0.5 : 0.4)
-              })`,
-        note: '이 규제가 한도를 가장 낮게 제한하는 요소',
+        value: bindingLabel[result.bindingConstraint],
+        note: '이 기준이 한도를 가장 낮게 제한하는 요소',
       },
       {
         label: 'DSR 기준',
         value: formatKRW(result.dsrLimit),
-        note: `${formatPercent(lender === 'bank' ? 0.4 : 0.5)} 규제 적용`,
+        note: `${dsrPct} 규제 적용`,
       },
       {
         label: 'LTV 기준',
         value: formatKRW(result.ltvLimit),
-        note: `${Math.round(
-          region === 'nonRegulated' ? 70 : housingStatus === 'firstOrSubsistence' ? 80 : 50,
-        )}% 규제 적용`,
+        note: `${ltvPct} 규제 적용`,
       },
       {
         label: 'DTI 기준',
         value: formatKRW(result.dtiLimit),
-        note: `${formatPercent(region === 'nonRegulated' ? 0.5 : 0.4)} 규제 적용`,
-      },
-      {
-        label: '월 예상 상환액',
-        value: formatKRW(result.monthlyPaymentAtLimit),
-        note: `최종 한도 ${formatKRW(result.finalLimit)} 기준`,
+        note: `${dtiPct} 규제 적용`,
       },
     ];
 
+    if (result.mortgageCap !== null) {
+      rows.push({
+        label: '주담대 최대한도',
+        value: formatKRW(result.mortgageCap),
+        note:
+          region === 'local'
+            ? '생애최초 우대 대출 한도'
+            : '수도권·규제지역 집 구입 (시가 15억 이하 6억, 25억 이하 4억, 초과 2억)',
+      });
+    }
+
+    rows.push({
+      label: '월 예상 상환액',
+      value: formatKRW(result.monthlyPaymentAtLimit),
+      note: `최종 한도 ${formatKRW(result.finalLimit)}, 약정금리 ${newLoanRate}% 기준`,
+    });
+
     if (result.appliedStressRate !== null) {
       rows.push({
-        label: '적용 스트레스 금리',
-        value: `${newLoanRate.toFixed(2)}% + ${result.appliedStressRate.toFixed(2)}% = ${(newLoanRate + result.appliedStressRate).toFixed(2)}%`,
-        note: '변동금리 DSR 산정 시 적용',
+        label: '한도 계산 금리',
+        value: `${newLoanRate}% + ${result.appliedStressRate}%p = ${Math.round((newLoanRate + result.appliedStressRate) * 1000) / 1000}%`,
+        note: '스트레스 DSR 가산 (한도 계산에만 쓰고 실제 이자와는 다름)',
       });
     }
 
@@ -257,28 +277,39 @@ export function LoanLimitCalculator() {
           unit="원"
         />
 
-        <RadioGroup
-          id="region"
-          label="지역 구분"
-          value={region}
-          onChange={setRegion}
-          options={[
-            { value: 'nonRegulated', label: '비규제' },
-            { value: 'adjusted', label: '조정대상' },
-            { value: 'speculation', label: '투기·투기과열' },
-          ]}
-        />
+        <div className="flex flex-col gap-2">
+          <RadioGroup
+            id="region"
+            label="집이 있는 지역"
+            value={region}
+            onChange={setRegion}
+            options={[
+              { value: 'regulated', label: '규제지역' },
+              { value: 'capitalArea', label: '그 밖의 수도권' },
+              { value: 'local', label: '지방' },
+            ]}
+          />
+          <p className="text-xs text-text-tertiary">
+            규제지역(2026년 10월): 서울 전역, 경기 과천·광명·성남 분당·수정·중원·수원 영통·장안·팔달·안양
+            동안·용인 수지·기흥·의왕·하남·화성 동탄·구리
+          </p>
+        </div>
 
-        <RadioGroup
-          id="housing-status"
-          label="주택 구입 상태"
-          value={housingStatus}
-          onChange={setHousingStatus}
-          options={[
-            { value: 'general', label: '일반 (2주택 이상)' },
-            { value: 'firstOrSubsistence', label: '생애최초·서민실수요' },
-          ]}
-        />
+        <div className="flex flex-col gap-2">
+          <RadioGroup
+            id="housing-status"
+            label="주택 보유 상태"
+            value={housingStatus}
+            onChange={setHousingStatus}
+            options={[
+              { value: 'general', label: '무주택·처분조건부 1주택' },
+              { value: 'firstHome', label: '생애최초 구입' },
+            ]}
+          />
+          <p className="text-xs text-text-tertiary">
+            2주택 이상이면 수도권·규제지역에서 집을 사는 주택담보대출을 받을 수 없습니다.
+          </p>
+        </div>
 
         <RadioGroup
           id="lender"
@@ -321,6 +352,19 @@ export function LoanLimitCalculator() {
           </select>
         </div>
 
+        <RadioGroup
+          id="rate-type"
+          label="금리 유형"
+          value={rateType}
+          onChange={setRateType}
+          options={[
+            { value: 'variable', label: '변동형' },
+            { value: 'mixed', label: '혼합형 (5년 고정)' },
+            { value: 'periodic', label: '주기형 (5년)' },
+            { value: 'fixed', label: '고정형' },
+          ]}
+        />
+
         <label className="hover:bg-bg-card/50 flex cursor-pointer items-center gap-3 rounded-lg border border-border-base p-3">
           <input
             type="checkbox"
@@ -329,7 +373,7 @@ export function LoanLimitCalculator() {
             className="h-4 w-4 accent-primary-500"
           />
           <span className="text-sm font-medium text-text-primary">
-            스트레스 DSR 적용 (변동금리 가정, +1.5%p)
+            스트레스 DSR 적용 (+{stressAddOn}%p, 지역·금리 유형 기준)
           </span>
         </label>
 

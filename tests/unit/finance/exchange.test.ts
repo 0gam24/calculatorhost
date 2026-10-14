@@ -327,6 +327,23 @@ describe('calculateExchange — 고정 수수료', () => {
     expect(result.netAmount).toBe(1_350_000);
   });
 
+  it('외화→원: 고정 수수료가 받을 원화보다 크면 수령액 0 + 경고', () => {
+    const result = calculateExchange(
+      createInput({
+        direction: 'foreignToKrw',
+        amount: 10,
+        baseRate: 1350,
+        spreadPercent: 0,
+        feePercent: 0,
+        feeFlat: 20_000,
+      })
+    );
+
+    expect(result.netAmount).toBe(0);
+    expect(result.effectiveRate).toBe(0);
+    expect(result.warnings.length).toBeGreaterThan(0);
+  });
+
   it('수수료가 환전액보다 크면 수령액 0 + 경고', () => {
     const result = calculateExchange(
       createInput({

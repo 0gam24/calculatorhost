@@ -126,6 +126,14 @@ function resolveBracket(
 /** Exact decimal multiplication followed by the calculator's existing 10-won truncation.
  * No epsilon is added: a genuine amount just below a boundary must remain below it.
  */
+/**
+ * 10의 n제곱 (BigInt). '**' 연산자는 브라우저용 변환에서 Math.pow 로 바뀌면
+ * "Cannot convert a BigInt value to a number" 오류가 나서 문자열로 만든다 (2026-10-14)
+ */
+function pow10(n: number): bigint {
+  return BigInt('1' + '0'.repeat(n));
+}
+
 function decimalRatio(value: number): [bigint, bigint] {
   if (!Number.isFinite(value) || value < 0) {
     throw new Error('금액과 요율은 0 이상의 유한한 숫자여야 합니다');
@@ -134,7 +142,7 @@ function decimalRatio(value: number): [bigint, bigint] {
   const [integer = '0', fraction = ''] = mantissa.split('.');
   const digits = BigInt(integer + fraction);
   const scale = fraction.length - Number(exponent);
-  return scale >= 0 ? [digits, 10n ** BigInt(scale)] : [digits * 10n ** BigInt(-scale), 1n];
+  return scale >= 0 ? [digits, pow10(scale)] : [digits * pow10(-scale), 1n];
 }
 
 function truncateDecimalProduct(
@@ -246,7 +254,7 @@ export function calculateRealtyCommission(input: CommissionInput): CommissionRes
         throw new Error('협의 요율을 올바른 숫자로 입력해 주세요.');
       }
       const [integer = '', fraction = ''] = text.split('.');
-      exactRate = [BigInt((integer || '0') + fraction), 100n * 10n ** BigInt(fraction.length)];
+      exactRate = [BigInt((integer || '0') + fraction), 100n * pow10(fraction.length)];
       if (exactRate[0] === 0n) throw new Error('0% 협의는 이 계산기에서 지원하지 않습니다.');
     }
     const [numerator, denominator] = exactRate ?? decimalRatio(input.negotiatedRate ?? 0);

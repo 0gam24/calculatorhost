@@ -1322,34 +1322,34 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
     // ─────────────────────────────────────────────────────────────
     // 케이스 45: 연소득 8,000만 + 기존 대출 0 + 담보 6억 + 비조정
     // ─────────────────────────────────────────────────────────────
-    // 입력: { annualIncome: 80M, existingDebtAnnualPayment: 0,
+    // 입력 (2026-10 규제): { annualIncome: 80M, existingDebtAnnualPayment: 0,
     //        existingDebtAnnualInterest: 0, collateralValue: 600M,
-    //        region: 'nonRegulated', housingStatus: 'firstOrSubsistence',
+    //        region: 'local', housingStatus: 'firstHome',
     //        lender: 'bank', newLoanAnnualRate: 4.5, newLoanTermYears: 20,
-    //        applyStressDsr: true, repaymentType: 'amortization' }
-    // DSR 한도: 40% (은행)
-    // DSR 기반: 80M × 0.40 = 3,200만 연원리금 → 스트레스(6%) 기준 원금 역산 약 3.72억
-    // LTV: 600M × 80% (생애최초) = 4.8억
-    // DTI: 80M × 50% (비규제) = 4,000만
-    // 결정적 제약: DSR (3.72억이 가장 제한적)
-    // 근거: 은행법 시행령 §24의4, 금감원 여신심사 가이드
-    // 검증: 한국은행 DSR 규제 사항
-    it('대출한도 연 8,000만 + 담보 6억 + 비조정 생애최초: DSR 제약 → 약 3.72억 한도', () => {
+    //        applyStressDsr: true, rateType: 'variable', repaymentType: 'amortization' }
+    // DSR 한도: 40% (은행) → 연 3,200만, 월 266.7만
+    // 지방 변동형 스트레스 0.75%p → 5.25% 20년 원리금균등 역산 약 3.957억
+    // LTV: 600M × 80% (지방 생애최초) = 4.8억, 생애최초 최대 6억
+    // 결정적 제약: DSR
+    // 근거: 금융위원회 가계부채 관리방안·스트레스 DSR (지방 2단계 0.75%p, 2026-12-31까지)
+    it('대출한도 연 8,000만 + 담보 6억 + 지방 생애최초: DSR 제약 → 약 3.96억 한도', () => {
       const result = calculateLoanLimit({
         annualIncome: 80_000_000,
         existingDebtAnnualPayment: 0,
         existingDebtAnnualInterest: 0,
         collateralValue: 600_000_000,
-        region: 'nonRegulated',
-        housingStatus: 'firstOrSubsistence',
+        region: 'local',
+        housingStatus: 'firstHome',
         lender: 'bank',
         newLoanAnnualRate: 4.5,
         newLoanTermYears: 20,
         applyStressDsr: true,
+        rateType: 'variable',
         repaymentType: 'amortization',
       });
-      expect(result.dsrLimit).toBeGreaterThan(360_000_000);
-      expect(result.dsrLimit).toBeLessThan(390_000_000);
+      expect(result.dsrLimit).toBeGreaterThan(390_000_000);
+      expect(result.dsrLimit).toBeLessThan(400_000_000);
+      expect(result.bindingConstraint).toBe('DSR');
       expect(result.ltvLimit).toBe(480_000_000); // 600M × 0.80
       expect(result.finalLimit).toBeLessThanOrEqual(result.ltvLimit);
       expect(result.warnings.length).toBeGreaterThanOrEqual(0);
@@ -1358,26 +1358,24 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
     // ─────────────────────────────────────────────────────────────
     // 케이스 46: 연소득 6,000만 + 기존 대출 연 1,800만 + 담보 5억 + 조정 일반
     // ─────────────────────────────────────────────────────────────
-    // 입력: { annualIncome: 60M, existingDebtAnnualPayment: 18M,
+    // 입력 (2026-10 규제): { annualIncome: 60M, existingDebtAnnualPayment: 18M,
     //        existingDebtAnnualInterest: 10M, collateralValue: 500M,
-    //        region: 'adjusted', housingStatus: 'general',
+    //        region: 'regulated', housingStatus: 'general',
     //        lender: 'bank', newLoanAnnualRate: 5.0, newLoanTermYears: 15,
     //        applyStressDsr: true, repaymentType: 'amortization' }
-    // DSR 한도: 40% (은행, 조정)
-    // 기존 연원리금: 1,800만 / 가능액: 60M × 0.40 - 1,800만 = 2,400만 - 1,800만 = 600만
-    // LTV: 500M × 50% (조정 일반) = 2.5억
-    // DTI: 기존이자 1,000만 / 가능액: 60M × 40% - 1,000만 = 2,400만 - 1,000만 = 1,400만
-    // 실제 DSR 역산: 600만 월원리금 × 스트레스 5.5% → 약 5,738만 원금 한도
-    // 결정적 제약: 담보 또는 LTV (5,738만 원금 < 2.5억 LTV)
-    // 근거: 조정지역 추가 규제 (금감원 가이드)
-    // 검증: 금감원 부동산 여신 가이드
-    it('대출한도 연 6,000만 + 기존 1,800만 + 조정 일반: 기존 대출 제약 → 약 5.7억 한도', () => {
+    // DSR 한도: 40% (은행) → 가능액: 2,400만 - 1,800만 = 연 600만 (월 50만)
+    // 규제지역 변동형 스트레스 3.0%p → 8.0% 15년 원리금균등 역산 약 5,232만
+    // LTV: 500M × 40% (규제지역) = 2억, 최대한도 6억
+    // DTI: 60M × 40% - 1,000만 = 1,400만
+    // 결정적 제약: DSR (약 5,232만)
+    // 근거: 금융위원회 10·15 대책 (규제지역 LTV 40%, 스트레스 금리 3%)
+    it('대출한도 연 6,000만 + 기존 1,800만 + 규제지역: 기존 대출 제약 → 약 5,200만 한도', () => {
       const result = calculateLoanLimit({
         annualIncome: 60_000_000,
         existingDebtAnnualPayment: 18_000_000,
         existingDebtAnnualInterest: 10_000_000,
         collateralValue: 500_000_000,
-        region: 'adjusted',
+        region: 'regulated',
         housingStatus: 'general',
         lender: 'bank',
         newLoanAnnualRate: 5.0,
@@ -1387,7 +1385,8 @@ describe('Cross-Verification: Lifestyle Daily (일상 계산 교차검증)', () 
       });
       expect(result.dsrLimit).toBeGreaterThan(50_000_000);
       expect(result.dsrLimit).toBeLessThan(70_000_000);
-      expect(result.ltvLimit).toBe(250_000_000); // 500M × 0.50
+      expect(result.ltvLimit).toBe(200_000_000); // 500M × 0.40 (규제지역)
+      expect(result.bindingConstraint).toBe('DSR');
       expect(result.finalLimit).toBeLessThanOrEqual(result.ltvLimit);
       expect(result.warnings.length).toBeGreaterThanOrEqual(0);
     });

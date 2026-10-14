@@ -1,10 +1,10 @@
 /**
- * 대출한도 계산 (DSR·LTV·DTI) — 순수 함수
+ * 대출한도 계산 (DSR·LTV·DTI·스트레스 DSR·주담대 최대한도) — 순수 함수
  *
- * 법적 근거:
- * - 은행법 시행령 §24의4 (DSR 기준)
- * - 여신심사 선진화 가이드라인 (금융위원회·금융감독원)
- * - 주택담보대출 LTV·DTI 규제 (금감원 고시)
+ * 근거: 은행업감독규정 등 금융위원회 고시와 가계부채 관리방안
+ * (6·27 대책 2025-06-27, 10·15 대책 2025-10-15, 2026-04-01 관리방안, 2026-06-30 규제지역 추가, 8·13 대책 2026-08-13)
+ * 상수와 출처: src/lib/constants/loan-rules-2026.ts
+ * (2026-10-14 개정: 이전 근거 표기 "은행법 시행령 §24의4"는 확인되지 않아 삭제)
  *
  * 명세: docs/calculator-spec/대출한도.md
  *
@@ -15,10 +15,14 @@ import {
   type RegionType,
   type LenderType,
   type HousingStatus,
-  STRESS_DSR_RATE_2026,
+  type RateType,
+  MAX_TERM_YEARS_CAPITAL,
   getLtvRate,
   getDsrLimit,
   getDtiLimit,
+  getMortgageCap,
+  getStressAddOnPercent,
+  isCapitalOrRegulated,
 } from '../constants/loan-rules-2026';
 
 // ============================================
@@ -58,6 +62,9 @@ export interface LoanLimitInput {
   /** 스트레스 DSR 적용 (기본 true) */
   applyStressDsr?: boolean;
 
+  /** 금리 유형 (기본 변동형). 스트레스 가산 비율을 정한다 */
+  rateType?: RateType;
+
   /** 상환 방식 */
   repaymentType: RepaymentType;
 }
@@ -72,16 +79,19 @@ export interface LoanLimitResult {
   /** DTI 기준 최대 신규 대출 원금 (원) */
   dtiLimit: number;
 
-  /** 최종 한도 (3개 중 최솟값 및 담보가치 상한) (원) */
+  /** 주택구입 목적 주담대 최대한도 (원). 한도가 없으면 null */
+  mortgageCap: number | null;
+
+  /** 최종 한도 (DSR·LTV·DTI·최대한도·담보가치 중 최솟값) (원) */
   finalLimit: number;
 
-  /** 결정적 제약 요인 */
-  bindingConstraint: 'DSR' | 'LTV' | 'DTI' | 'collateral';
+  /** 결정적 제약 요인 (CAP = 주담대 최대한도) */
+  bindingConstraint: 'DSR' | 'LTV' | 'DTI' | 'CAP' | 'collateral';
 
-  /** 최종 한도 기준 월 예상 상환액 (원) */
+  /** 최종 한도 기준 월 예상 상환액 (원). 실제 약정금리 기준 */
   monthlyPaymentAtLimit: number;
 
-  /** 실제 적용 금리 (%) — 스트레스 가산 포함 시 */
+  /** DSR 한도 계산에 더한 스트레스 금리 (%p). 스트레스 미적용이면 null */
   appliedStressRate: number | null;
 
   /** 주의 사항 및 경고 메시지 */
@@ -92,21 +102,22 @@ export interface LoanLimitResult {
 // 유틸리티 함수
 // ============================================
 
-/**
- * 스트레스 DSR 적용 여부에 따른 실제 금리 계산 (%)
- * @param annualRate 명목 연 이자율 (%)
- * @param applyStressDsr 스트레스 적용 여부
- * @returns 실제 적용 금리 (%)
- */
-function getEffectiveRate(
-  annualRate: number,
-  applyStressDsr: boolean
-): number {
-  if (!applyStressDsr) {
-    return annualRate;
-  }
-  // 스트레스율은 %p 단위이므로 그대로 더함
-  return annualRate + STRESS_DSR_RATE_2026 * 100;
+/** 스트레스 가산 금리 (%p). 미적용이면 null */
+function getStressAddOn(input: LoanLimitInput): number | null {
+  if (!(input.applyStressDsr ?? true)) return null;
+  return getStressAddOnPercent(input.region, input.rateType ?? 'variable');
+}
+
+/** DSR 한도 계산 금리 (%) = 약정금리 + 스트레스 가산 */
+function getDsrRate(input: LoanLimitInput): number {
+  return input.newLoanAnnualRate + (getStressAddOn(input) ?? 0);
+}
+
+/** 수도권·규제지역은 만기 최장 30년 (6·27 대책) */
+function getEffectiveTermYears(input: LoanLimitInput): number {
+  return isCapitalOrRegulated(input.region)
+    ? Math.min(input.newLoanTermYears, MAX_TERM_YEARS_CAPITAL)
+    : input.newLoanTermYears;
 }
 
 /**
@@ -191,15 +202,11 @@ function monthlyPaymentFactorPerWon(
  */
 function calculateDsrLimit(input: LoanLimitInput): number {
   const dsrLimit = getDsrLimit(input.lender);
-  const effectiveRate = getEffectiveRate(
-    input.newLoanAnnualRate,
-    input.applyStressDsr ?? true
-  );
 
-  // 스트레스 금리 반영 시 실제 DSR 계산 금리
+  // 스트레스 금리를 더한 금리로 원리금을 계산 (한도 산정 전용)
   const monthlyFactor = monthlyPaymentFactorPerWon(
-    effectiveRate,
-    input.newLoanTermYears,
+    getDsrRate(input),
+    getEffectiveTermYears(input),
     input.repaymentType
   );
 
@@ -224,27 +231,29 @@ function calculateDsrLimit(input: LoanLimitInput): number {
 
 /**
  * LTV 한도 기반 신규 대출 최대 원금 계산
- * LTV = 신규 주담대 / 담보가치 ≤ 한도(50~80%)
+ * LTV = 신규 주담대 / 담보가치 ≤ 한도(40~80%)
  * → 신규 주담대 최대 = 담보가치 × LTV비율
  */
 function calculateLtvLimit(input: LoanLimitInput): number {
   const ltvRate = getLtvRate(input.region, input.housingStatus);
-  return Math.floor(input.collateralValue * ltvRate);
+  // 정수 퍼센트로 곱한 뒤 나눠 부동소수 오차를 없앤다 (7억 × 0.7 = 489,999,999.99… 방지, 2026-10-14)
+  const ltvPercent = Math.round(ltvRate * 100);
+  return Math.floor((input.collateralValue * ltvPercent) / 100);
 }
 
 /**
  * DTI 한도 기반 신규 대출 최대 원금 계산
- * DTI = (신규 원리금 + 기존 이자) / 연소득 ≤ 한도(40% 또는 50%)
+ * DTI = (신규 원리금 + 기존 이자) / 연소득 ≤ 한도(규제지역 40%, 그 밖의 지역 60%)
  * 역산: 신규 원리금 가능액 = 연소득 × DTI한도 - 기존 이자
  * → 신규 원금 = 신규 원리금 / (월factor × 12)
  */
 function calculateDtiLimit(input: LoanLimitInput): number {
   const dtiLimit = getDtiLimit(input.region);
 
-  // DTI는 스트레스 미적용 명목율 사용 (DSR과 달리 보수적 차이)
+  // DTI는 스트레스 미적용 명목율 사용 (스트레스 가산은 DSR 전용)
   const monthlyFactor = monthlyPaymentFactorPerWon(
     input.newLoanAnnualRate,
-    input.newLoanTermYears,
+    getEffectiveTermYears(input),
     input.repaymentType
   );
 
@@ -271,7 +280,7 @@ function calculateDtiLimit(input: LoanLimitInput): number {
 
 /**
  * 대출한도 종합 계산
- * 3개 규제(DSR·LTV·DTI)와 담보가치를 교차 검증하여 최종 한도 결정
+ * DSR·LTV·DTI, 주택구입 주담대 최대한도(수도권·규제지역 6억·4억·2억)와 담보가치를 교차 검증하여 최종 한도 결정
  */
 export function calculateLoanLimit(input: LoanLimitInput): LoanLimitResult {
   const warnings: string[] = [];
@@ -300,6 +309,7 @@ export function calculateLoanLimit(input: LoanLimitInput): LoanLimitResult {
       dsrLimit: 0,
       ltvLimit: 0,
       dtiLimit: 0,
+      mortgageCap: null,
       finalLimit: 0,
       bindingConstraint: 'collateral',
       monthlyPaymentAtLimit: 0,
@@ -308,37 +318,37 @@ export function calculateLoanLimit(input: LoanLimitInput): LoanLimitResult {
     };
   }
 
-  // ========== 3개 한도 계산 ==========
+  // ========== 한도 계산 ==========
   const dsrLimit = calculateDsrLimit(input);
   const ltvLimit = calculateLtvLimit(input);
   const dtiLimit = calculateDtiLimit(input);
+  const mortgageCap = getMortgageCap(input.region, input.collateralValue, input.housingStatus);
 
   // ========== 최종 한도 결정 ==========
   const limits = [dsrLimit, ltvLimit, dtiLimit, input.collateralValue];
+  if (mortgageCap !== null) limits.push(mortgageCap);
   const finalLimit = Math.min(...limits);
 
   // 결정적 제약 식별
-  let bindingConstraint: 'DSR' | 'LTV' | 'DTI' | 'collateral';
+  let bindingConstraint: LoanLimitResult['bindingConstraint'];
   if (finalLimit === input.collateralValue) {
     bindingConstraint = 'collateral';
   } else if (finalLimit === dsrLimit) {
     bindingConstraint = 'DSR';
   } else if (finalLimit === ltvLimit) {
     bindingConstraint = 'LTV';
+  } else if (mortgageCap !== null && finalLimit === mortgageCap) {
+    bindingConstraint = 'CAP';
   } else {
     bindingConstraint = 'DTI';
   }
 
-  // ========== 월 상환액 계산 ==========
+  // ========== 월 상환액 계산 (실제 약정금리, 2026-10-14 정정: 스트레스 금리는 한도 계산에만 쓴다) ==========
   let monthlyPaymentAtLimit = 0;
   if (finalLimit > 0) {
-    const effectiveRate = getEffectiveRate(
-      input.newLoanAnnualRate,
-      input.applyStressDsr ?? true
-    );
     const monthlyFactor = monthlyPaymentFactorPerWon(
-      effectiveRate,
-      input.newLoanTermYears,
+      input.newLoanAnnualRate,
+      getEffectiveTermYears(input),
       input.repaymentType
     );
     monthlyPaymentAtLimit = Math.floor(finalLimit * monthlyFactor);
@@ -362,13 +372,20 @@ export function calculateLoanLimit(input: LoanLimitInput): LoanLimitResult {
     warnings.push('현재 조건으로는 추가 대출이 불가능합니다.');
   }
 
-  // ========== 스트레스 금리 반영 안내 ==========
-  const appliedStressRate = input.applyStressDsr ?? true ? STRESS_DSR_RATE_2026 * 100 : null;
+  // 수도권·규제지역 만기 30년 초과 선택
+  if (isCapitalOrRegulated(input.region) && input.newLoanTermYears > MAX_TERM_YEARS_CAPITAL) {
+    warnings.push(
+      `수도권·규제지역 주택담보대출은 만기가 최장 ${MAX_TERM_YEARS_CAPITAL}년이라 ${MAX_TERM_YEARS_CAPITAL}년으로 계산했습니다.`
+    );
+  }
+
+  const appliedStressRate = getStressAddOn(input);
 
   return {
     dsrLimit,
     ltvLimit,
     dtiLimit,
+    mortgageCap,
     finalLimit,
     bindingConstraint,
     monthlyPaymentAtLimit,

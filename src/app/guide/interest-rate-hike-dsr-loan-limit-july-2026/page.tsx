@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/interest-rate-hike-dsr-loan-limit-july-2026/';
 const DATE_PUBLISHED = '2026-06-02';
-const DATE_MODIFIED = '2026-06-02';
+const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
   title: '기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026',
@@ -333,7 +333,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                 <p className="text-text-secondary leading-relaxed" data-speakable>
                   은행은 신규 대출 심사 시 현재 금리가 아닌 <strong>&ldquo;미래 금리가 이 정도 올라도 버틸 수 있는가&rdquo;</strong>를 미리 시뮬레이션합니다.
                   이를 스트레스금리라고 부릅니다.
-                  금융감독원이 정한 스트레스금리는 현재 약 <strong>1.5~3.0%p 범위</strong>입니다(지역·상품별로 다름).
+                  2026년 10월 현재 주담대 스트레스금리는 수도권·규제지역 변동형 <strong>3.0%p</strong>, 지방 변동형 <strong>0.75%p</strong>이고, 혼합형·주기형은 이보다 낮으며 고정형은 0입니다.
                   따라서 현재 금리 4.5%인데 스트레스금리 3.0%p를 적용하면, DSR 계산 시 <strong>7.5%</strong> 금리로 역산합니다.
                 </p>
                 <div className="overflow-x-auto">
@@ -388,9 +388,9 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                     <li>연소득: 5,000만원</li>
                     <li>기존 대출: 없음 (순수 신규 대출 한도만 계산)</li>
                     <li>현재 금리: 4.50% (기준금리 2.50% + 가산금리 2.0%p)</li>
-                    <li>스트레스금리: 2.5%p (중간값)</li>
+                    <li>스트레스금리: 2.5%p (가정값, 실제는 지역·금리 유형별 0~3.0%p)</li>
                     <li>대출 기간: 30년 (원리금균등)</li>
-                    <li>LTV (담보가치 대비 대출 비율): 70% 적용</li>
+                    <li>LTV (담보가치 대비 대출 비율): 70% 적용 (규제지역이 아닌 곳 기준, 규제지역은 40%)</li>
                   </ul>
                 </div>
                 <div className="overflow-x-auto my-4">

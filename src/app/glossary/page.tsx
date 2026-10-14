@@ -62,7 +62,7 @@ const GLOSSARY: GlossarySection[] = [
         name: 'DSR (부채원리금상환비율)',
         alternateName: 'DSR',
         description:
-          'Debt Service Ratio. 모든 금융권 대출의 연간 원리금 상환액을 연소득으로 나눈 비율. 은행 40%, 2금융권 50% 이하로 규제. 산식: (신규+기존 모든 대출 연원리금) ÷ 연소득 × 100. 근거: 은행법 시행령 §24의4.',
+          'Debt Service Ratio. 모든 금융권 대출의 연간 원리금 상환액을 연소득으로 나눈 비율. 은행 40%, 2금융권 50% 이하로 규제. 산식: (신규+기존 모든 대출 연원리금) ÷ 연소득 × 100. 근거: 금융위원회 가계부채 관리방안.',
         url: 'https://www.fss.or.kr',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
         anchorId: 'dsr',
@@ -71,7 +71,7 @@ const GLOSSARY: GlossarySection[] = [
         name: 'LTV (담보인정비율)',
         alternateName: 'LTV',
         description:
-          'Loan To Value. 대출액을 담보가치로 나눈 비율. 비규제 70%, 조정·투기과열 50%, 생애최초·서민실수요 80%. 산식: 신규 대출액 ÷ 담보가치(주택가격) × 100.',
+          'Loan To Value. 대출액을 담보가치로 나눈 비율. 2026년 10월 무주택·처분조건부 1주택 기준 규제지역 40%, 그 밖의 지역 70%, 생애최초는 수도권·규제지역 70%·지방 80%. 수도권·규제지역은 시가별 주담대 최대한도(15억 원 이하 6억, 25억 원 이하 4억, 초과 2억)도 적용. 산식: 신규 대출액 ÷ 담보가치(주택가격) × 100.',
         url: 'https://www.fss.or.kr',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
         anchorId: 'ltv',
@@ -80,14 +80,14 @@ const GLOSSARY: GlossarySection[] = [
         name: 'DTI (부채상환비율)',
         alternateName: 'DTI',
         description:
-          'Debt To Income ratio. 신규 대출 원리금과 기존 대출 이자를 합산해 연소득으로 나눈 비율. 규제지역 40%, 비규제지역 50%. DSR과 달리 기존 대출은 이자만 포함.',
+          'Debt To Income ratio. 신규 대출 원리금과 기존 대출 이자를 합산해 연소득으로 나눈 비율. 규제지역 40%, 그 밖의 지역 60%. DSR과 달리 기존 대출은 이자만 포함해 대부분 DSR이 먼저 한도를 정함.',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
         anchorId: 'dti',
       },
       {
         name: '스트레스 DSR',
         description:
-          '변동금리·혼합형·주기형 대출의 DSR 산정 시 현재 금리에 1.5%p(2026년 풀 적용)를 가산해 부담 능력을 보수적으로 평가하는 제도. 시행: 2024년 2월 도입 → 2026년 전면 적용.',
+          '한도를 계산할 때만 약정금리에 가상의 금리를 더해 상환 능력을 보수적으로 보는 제도. 2026년 10월 수도권·규제지역 주담대 변동형 3.0%p(혼합형 2.4%p, 주기형 1.2%p), 지방 주담대 변동형 0.75%p(2026년 12월 31일까지), 고정형 0. 2024년 2월 도입, 2025년 7월 3단계 시행, 수도권·규제지역 3.0%는 2025년 10월 16일부터.',
         relatedCalculator: { href: '/calculator/loan-limit/', label: '대출한도 계산기' },
         anchorId: 'stress-dsr',
       },
@@ -152,14 +152,14 @@ const GLOSSARY: GlossarySection[] = [
       {
         name: '조정대상지역',
         description:
-          '주택 가격·청약경쟁률·매매거래 등이 과열된 지역. 양도세 중과·취득세 중과·LTV 50% 등 강화된 규제 적용. 국토교통부 지정·해제. 2026년 5월 기준 서울 강남·서초·송파·용산구 일부.',
+          '주택 가격·청약경쟁률·매매거래 등이 과열된 지역(주택법 §63의2). 세금 중과와 대출 규제(LTV 40%·DTI 40%)가 강화된다. 국토교통부 지정·해제. 2026년 10월 기준 서울 25개 구 전체와 경기 15곳(과천·광명·성남 분당·수정·중원·수원 영통·장안·팔달·안양 동안·용인 수지·기흥·의왕·하남·화성 동탄구·구리)이 조정대상지역이자 투기과열지구.',
         url: 'https://www.molit.go.kr',
         anchorId: 'regulation-zone',
       },
       {
         name: '투기과열지구',
         description:
-          '조정대상지역의 상위 개념. 가격 급등·투기 우려 지역. LTV 40% (생애최초 60%), 9억 초과 주택 추가 제한, DSR 가장 엄격. 근거: 주택법 §63.',
+          '가격 급등·투기 우려가 큰 지역. 대출 규제(LTV 40%·DTI 40%), 분양권 전매 제한, 청약 규제가 강화된다. 2026년 10월 기준 조정대상지역과 같은 곳(서울 전역·경기 15곳)이 지정돼 있다. 근거: 주택법 §63.',
         anchorId: 'speculation-zone',
       },
       {

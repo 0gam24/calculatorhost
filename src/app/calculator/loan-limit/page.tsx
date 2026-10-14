@@ -31,15 +31,85 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
+import { calculateLoanLimit, type LoanLimitInput } from '@/lib/finance/loan-limit';
+import { manWon } from '@/lib/quick-tables/format';
 
 const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 const URL = 'https://calculatorhost.com/calculator/loan-limit/';
 
+/** 만 원 아래 버림 표기 */
+const man = (n: number): string => manWon(Math.floor(n / 10_000) * 10_000);
+
+// 스트레스 DSR 예시: 그 밖의 수도권 10억 원 집, 연소득 1억, 약정 4.5%, 30년 (2026-10-14, 계산 함수로 생성)
+const STRESS_BASE: LoanLimitInput = {
+  annualIncome: 100_000_000,
+  existingDebtAnnualPayment: 0,
+  existingDebtAnnualInterest: 0,
+  collateralValue: 1_000_000_000,
+  region: 'capitalArea',
+  housingStatus: 'general',
+  lender: 'bank',
+  newLoanAnnualRate: 4.5,
+  newLoanTermYears: 30,
+  applyStressDsr: true,
+  repaymentType: 'amortization',
+};
+const STRESS_FIXED = calculateLoanLimit({ ...STRESS_BASE, rateType: 'fixed' });
+const STRESS_PERIODIC = calculateLoanLimit({ ...STRESS_BASE, rateType: 'periodic' });
+const STRESS_VARIABLE = calculateLoanLimit({ ...STRESS_BASE, rateType: 'variable' });
+
+// 사례 3가지 (2026년 10월 규제, 계산 함수로 생성)
+const BINDING_LABEL: Record<string, string> = {
+  DSR: 'DSR',
+  LTV: 'LTV',
+  DTI: 'DTI',
+  CAP: '주담대 최대한도',
+  collateral: '담보가치',
+};
+const CASES: Array<{ title: string; facts: string[]; input: LoanLimitInput }> = [
+  {
+    title: '사례 1. 서울(규제지역) 12억 원 아파트, 무주택, 변동형',
+    facts: ['연소득 1억 2,000만 원, 기존 대출 없음', '약정금리 연 4.5%, 30년 원리금균등'],
+    input: {
+      ...STRESS_BASE,
+      annualIncome: 120_000_000,
+      collateralValue: 1_200_000_000,
+      region: 'regulated',
+      rateType: 'variable',
+    },
+  },
+  {
+    title: '사례 2. 그 밖의 수도권 7억 원, 생애최초, 주기형',
+    facts: ['연소득 7,000만 원, 기존 대출 없음', '약정금리 연 4.5%, 30년 원리금균등'],
+    input: {
+      ...STRESS_BASE,
+      annualIncome: 70_000_000,
+      collateralValue: 700_000_000,
+      region: 'capitalArea',
+      housingStatus: 'firstHome',
+      rateType: 'periodic',
+    },
+  },
+  {
+    title: '사례 3. 지방 4억 원, 무주택, 고정형, 신용대출 있음',
+    facts: ['연소득 5,000만 원, 기존 신용대출 1년 원리금 600만 원', '약정금리 연 4.5%, 30년 원리금균등'],
+    input: {
+      ...STRESS_BASE,
+      annualIncome: 50_000_000,
+      existingDebtAnnualPayment: 6_000_000,
+      existingDebtAnnualInterest: 2_000_000,
+      collateralValue: 400_000_000,
+      region: 'local',
+      rateType: 'fixed',
+    },
+  },
+];
+
 export const metadata: Metadata = {
   title: '대출한도 계산기 2026 | DSR·LTV·DTI 통합',
   description:
-    '연소득과 주택가격으로 DSR·LTV·DTI를 함께 적용해 주택담보대출 최대 한도를 계산합니다. 스트레스 DSR도 반영합니다.',
+    '연소득·집값·지역으로 DSR·LTV와 스트레스 DSR, 수도권 주담대 6억 한도까지 반영해 최대 대출액을 계산합니다.',
   keywords: [
     '대출 한도 계산기',
     'DSR 계산기',
@@ -68,42 +138,42 @@ const FAQ_ITEMS: Array<{ question: string; answer: string }> = [
   {
     question: 'DSR과 DTI는 어떻게 다른가요?',
     answer:
-      'DSR(부채원리금상환비율)은 모든 대출의 원리금 합계를 기준으로, DTI(부채상환비율)는 신규 대출 원리금과 기존 대출 이자 합계를 기준으로 계산합니다. 은행은 DSR(40%)을 주력 규제로, DTI(40-50%)는 보조 규제로 적용합니다.',
+      'DSR은 모든 대출의 1년 원리금을, DTI는 새 주담대 원리금에 기존 대출 이자만 더해 연소득으로 나눕니다. 은행 DSR 한도는 40%(2금융권 50%)이고 DTI는 규제지역 40%, 그 밖의 지역 60%라서 대부분은 DSR이 먼저 한도를 정합니다.',
   },
   {
     question: '스트레스 DSR이란 무엇인가요?',
     answer:
-      '변동금리 대출 시 금리가 인상될 것을 대비하여, 현재 금리에 1.5%p를 더해 DSR을 계산하는 제도입니다. 2026년부터 변동금리·혼합형·주기형 대출에 전면 적용되므로, 장기 고정금리가 아닌 이상 스트레스 DSR을 고려해야 합니다.',
+      '앞으로 금리가 오를 수 있다고 보고, 한도를 계산할 때만 약정금리에 가상의 금리를 더하는 제도입니다. 2026년 10월 현재 수도권·규제지역 주담대는 변동형 3.0%p, 혼합형 2.4%p, 주기형 1.2%p를 더하고(2025년 10월 16일부터 3.0% 기준), 지방 주담대는 변동형 0.75%p를 더합니다(2026년 12월 31일까지). 고정형은 더하지 않으며 실제로 내는 이자는 약정금리 그대로입니다.',
   },
   {
     question: 'LTV는 규제지역별로 얼마인가요?',
     answer:
-      '비규제지역 70%, 조정대상·투기·투기과열지역 50%, 생애최초·서민실수요자는 최대 80%입니다. LTV가 높을수록 적은 자금으로 많은 금액을 빌릴 수 있지만, 시장 하락 시 담보 부족 위험이 커집니다.',
+      '무주택자나 처분조건부 1주택자 기준으로 규제지역(서울 전역 등)은 40%, 그 밖의 수도권과 지방은 70%입니다. 생애최초 구입자는 수도권·규제지역 70%, 지방 80%입니다. 수도권·규제지역에서 집을 살 때는 시가 15억 원 이하 6억 원, 15억 원 초과 25억 원 이하 4억 원, 25억 원 초과 2억 원이라는 최대한도가 따로 있습니다(2025년 10월 16일부터).',
   },
   {
     question: '생애최초 구입자의 LTV·DSR 우대는?',
     answer:
-      '생애최초 또는 서민실수요자(부부 연소득 기준)는 LTV 최대 80% 우대를 받습니다. DSR 우대는 없으며, 대신 기존 신용대출 이자를 부분 제외하거나 공제하는 방식으로 실질 완화를 제공하는 금융기관도 있으니 확인하세요.',
+      '생애최초 구입자는 LTV를 수도권·규제지역 70%, 지방 80%까지 받을 수 있고 대출액은 최대 6억 원입니다. DSR 우대는 따로 없어 은행 40% 한도와 스트레스 금리가 똑같이 적용됩니다. 수도권·규제지역에서 집을 사며 주담대를 받으면 6개월 안에 전입해야 합니다.',
   },
   {
-    question: '기존 신용대출·학자금도 DSR에 포함되나요?',
+    question: '기존 신용대출도 DSR에 포함되나요?',
     answer:
-      '네, 모든 금융권(은행·캐피탈·여신전문·저축은행 등)의 신용대출, 학자금 대출, 전세자금 대출 등이 모두 포함됩니다. 그러나 금융기관별로 일부 예외(예: 마이너스 통장 미포함)가 있을 수 있으니 대출 전 은행에 확인하세요.',
+      '네, 포함됩니다. 은행·저축은행·카드사 등 모든 금융권의 신용대출, 카드론, 자동차 할부 같은 가계대출 원리금이 DSR에 들어갑니다. 전세자금대출, 분양 중도금대출처럼 빠지는 대출도 있지만, 수도권·규제지역 1주택자의 전세대출 이자는 2025년 10월 29일부터 DSR에 들어갑니다. 내 대출이 들어가는지는 대출 전 은행에 확인하세요.',
   },
   {
     question: '대출한도를 늘리는 현실적 방법은?',
     answer:
-      '① 연소득 증가 (소득 인정 절차 필요), ② 기존 대출 상환 (신용·학자금·자동차 포함), ③ 담보 가치 증가 (재감정), ④ 보증인 추가 (금융기관별 인정도 상이), ⑤ 배우자 소득 합산 (부부 공동 차입) 등입니다.',
+      '① 기존 신용대출·카드론 갚기, ② 고정형이나 주기형 금리 고르기(스트레스 가산이 작아짐), ③ 대출 기간 늘리기(수도권·규제지역은 최장 30년), ④ 소득 증빙 보완, ⑤ 부부 소득을 함께 인정받을 수 있는지 은행에 확인하기 등입니다. 다만 수도권·규제지역에서는 6억 원 같은 최대한도와 LTV를 넘을 수 없습니다.',
   },
   {
     question: '배우자 소득 합산하면 DSR 한도가 얼마나 늘어나나요?',
     answer:
-      '부부 공동 차입 시 연소득을 합산하면 DSR 분모가 커져 한도가 확대됩니다. 본인 6,000만 원 + 배우자 4,000만 원 = 1억 원이 되면 같은 부채 조건에서 한도가 약 40% 증가합니다. 다만 배우자의 신용등급, 소득 증빙 방식(급여·사업소득), 기존 대출 부채가 합산되며, 부부 공동 채무는 배우자의 신용평점에도 영향을 주므로 사전 협의가 필수입니다.',
+      'DSR 한도는 소득에 비례하므로 인정 소득이 본인 6,000만 원에서 부부 1억 원으로 늘면 DSR 기준 한도도 약 67% 늘어납니다. 다만 배우자의 기존 대출도 함께 계산되고, LTV와 수도권 6억 원 같은 최대한도는 그대로라서 실제 한도가 그만큼 늘지 않을 수 있습니다. 부부 공동 채무는 배우자 신용평점에도 영향을 주니 미리 상의하세요.',
   },
   {
     question: '마이너스 통장은 DSR 계산에서 제외되나요?',
     answer:
-      '마이너스 통장은 금융기관에 따라 다르게 산입됩니다. 일부 은행은 미사용분(한도 − 사용액)을 제외하거나 한도의 일정 비율만 DSR에 산입합니다. 그러나 실제 사용액은 반드시 포함되며, 사용 중인 마이너스 통장이 있으면 DSR을 크게 악화시킵니다. 정확한 계산은 대출 신청 금융기관에 미리 문의하여 마이너스 통장의 DSR 산입 방식을 확인해야 합니다.',
+      '아니요. 마이너스 통장은 실제로 쓴 금액이 아니라 약정 한도 전체를 대출로 보고 계산하는 것이 원칙입니다. 그래서 쓰지 않는 마이너스 통장이라도 한도를 줄이거나 해지하면 주담대 한도가 늘어날 수 있습니다. 정확한 산입 방식은 대출을 신청할 금융기관에 확인하세요.',
   },
 ];
 
@@ -117,7 +187,8 @@ const RELATED = [
 export default function LoanLimitPage() {
   const softwareLd = buildSoftwareApplicationJsonLd({
     name: 'DSR·대출한도 계산기',
-    description: '2026년 최신 DSR·LTV·DTI 규제와 스트레스 DSR을 반영한 주택담보대출 한도 계산기.',
+    description:
+      '2026년 10월 규제(규제지역 LTV 40%, 수도권·규제지역 주담대 6억·4억·2억 한도, 지역별 스트레스 DSR)를 반영한 주택담보대출 한도 계산기.',
     url: URL,
   });
   const webPageLd = buildWebPageJsonLd({
@@ -125,7 +196,7 @@ export default function LoanLimitPage() {
     description: '주택담보대출 한도를 DSR·LTV·DTI로 즉시 계산',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-04-27',
+    dateModified: '2026-10-14',
     isPartOf: getCategoryUrlForCalculator('loan-limit'),
   });
   const howToLd = buildHowToJsonLd({
@@ -139,15 +210,15 @@ export default function LoanLimitPage() {
       },
       {
         name: '담보가치 입력',
-        text: '구매 예정 주택의 예상 가격과 LTV 한도(지역별 70~80%)를 입력합니다.',
+        text: '구매 예정 주택의 예상 가격과 지역을 고릅니다. 지역에 따라 LTV 40~80%와 수도권·규제지역 최대한도(6억·4억·2억 원)가 적용됩니다.',
       },
       {
         name: 'DSR·LTV·DTI 자동 계산',
-        text: '입력한 정보로 DSR(40%), LTV, DTI 기준 한도가 자동 계산됩니다.',
+        text: '입력한 정보로 DSR(은행 40%), LTV, DTI 기준 한도와 지역·금리 유형별 스트레스 금리가 자동 반영됩니다.',
       },
       {
         name: '최대 대출액 확인',
-        text: '세 가지 기준 중 가장 낮은 한도가 실제 가능 대출액입니다.',
+        text: 'DSR·LTV·DTI와 최대한도 중 가장 낮은 금액이 실제 가능 대출액입니다.',
       },
     ],
   });
@@ -167,29 +238,29 @@ export default function LoanLimitPage() {
     url: `${URL}#glossary`,
     terms: [
       {
-        name: 'DSR (부채원리금상환비율)',
+        name: 'DSR (총부채원리금상환비율)',
         alternateName: 'DSR',
         description:
-          'Debt Service Ratio. 모든 금융권 대출의 연간 원리금 상환액을 연소득으로 나눈 비율. 은행 40%, 2금융권 50% 이하로 규제. 산식: (신규+기존 모든 대출 연원리금) ÷ 연소득 × 100. 근거: 은행법 시행령 §24의4.',
-        url: 'https://www.fss.or.kr',
+          'Debt Service Ratio. 모든 금융권 대출의 1년 원리금 상환액을 연소득으로 나눈 비율. 은행 40%, 2금융권 50% 이하. 산식: (신규+기존 모든 대출 연원리금) ÷ 연소득 × 100. 근거: 금융위원회 가계부채 관리방안.',
+        url: 'https://www.fsc.go.kr',
       },
       {
         name: 'LTV (담보인정비율)',
         alternateName: 'LTV',
         description:
-          'Loan To Value. 대출액을 담보가치로 나눈 비율. 비규제지역 70%, 조정·투기과열 50%, 생애최초·서민실수요 80%. 산식: 신규 대출액 ÷ 담보가치(주택가격) × 100. 근거: 금융감독원 주택담보대출 규제 고시.',
-        url: 'https://www.fss.or.kr',
+          'Loan To Value. 대출액을 집값으로 나눈 비율. 2026년 10월 무주택·처분조건부 1주택 기준 규제지역 40%, 그 밖의 지역 70%, 생애최초 수도권·규제지역 70%·지방 80%. 수도권·규제지역은 시가별 최대한도(6억·4억·2억 원)도 적용.',
+        url: 'https://www.fsc.go.kr',
       },
       {
-        name: 'DTI (부채상환비율)',
+        name: 'DTI (총부채상환비율)',
         alternateName: 'DTI',
         description:
-          'Debt To Income ratio. 신규 대출 원리금과 기존 대출 이자를 합산해 연소득으로 나눈 비율. 규제지역 40%, 비규제지역 50%. DSR과 달리 기존 대출은 이자만 포함. DSR 전면 시행으로 보조 규제 성격.',
+          'Debt To Income ratio. 신규 대출 원리금과 기존 대출 이자를 합산해 연소득으로 나눈 비율. 규제지역 40%, 그 밖의 지역 60%. DSR과 달리 기존 대출은 이자만 포함해 대부분 DSR이 먼저 한도를 정함.',
       },
       {
         name: '스트레스 DSR',
         description:
-          '변동금리·혼합형·주기형 대출의 DSR 산정 시 현재 금리에 1.5%p(2026년 풀 적용)를 가산해 부담 능력을 보수적으로 평가하는 제도. 금리 상승 리스크를 사전에 반영해 가계부채 관리 강화. 시행: 2024년 2월 도입 → 2026년 전면 적용.',
+          '한도를 계산할 때만 약정금리에 가상의 금리를 더해 보수적으로 평가하는 제도. 2026년 10월 수도권·규제지역 주담대 변동형 3.0%p(혼합형 2.4%p, 주기형 1.2%p), 지방 주담대 변동형 0.75%p(2026년 12월 31일까지), 고정형 0.',
       },
     ],
   });
@@ -249,7 +320,7 @@ export default function LoanLimitPage() {
                   <p className="text-lg text-text-secondary" data-speakable>
                     소득·주택·부채 조건으로 대출한도 예상치를 확인하세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-04-27" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-10-14" />
                 </header>
               }
               calculator={<LoanLimitCalculator />}
@@ -278,109 +349,45 @@ export default function LoanLimitPage() {
               }
             >
               <StructuredSummary
-                definition="DSR(부채원리금상환비율)은 모든 대출의 연간 원리금을 연소득으로 나눈 비율로, 은행 40%, 2금융권 50% 이하로 규제됩니다. LTV(담보인정비율)는 대출액을 담보가치로 나눈 비율(비규제 70%, 규제 50%, 생애최초 80%)이며, DTI(부채상환비율)는 신규 대출 원리금과 기존 이자를 합산한 비율입니다(금융감독원 주택담보대출 규제 고시, 은행법 시행령 §24의4)."
+                definition="DSR(총부채원리금상환비율)은 모든 대출의 1년 원리금을 연소득으로 나눈 비율로 은행 40%, 2금융권 50% 이하로 묶입니다. LTV(담보인정비율)는 대출액을 집값으로 나눈 비율로 2026년 10월 규제지역 40%, 그 밖의 지역 70%(생애최초 70~80%)이고, 수도권·규제지역은 시가별 주담대 최대한도(6억·4억·2억 원)가 따로 있습니다."
                 table={{
-                  caption: '2026년 규제별 한도 정리',
-                  headers: ['규제', '한도/특징'],
+                  caption: '2026년 10월 주택담보대출 한도 규제 정리',
+                  headers: ['규제', '한도'],
                   rows: [
-                    ['DSR (모든대출)', '은행 40%, 2금융권 50% + 스트레스 1.5%p'],
-                    ['LTV (담보비율)', '비규제 70%, 규제 50%, 생애최초 80%'],
-                    ['DTI (신규+이자)', '비규제 50%, 규제 40%'],
+                    ['DSR (모든 대출)', '은행 40%, 2금융권 50%'],
+                    ['LTV (무주택·처분조건부 1주택)', '규제지역 40%, 그 밖의 지역 70%'],
+                    ['LTV (생애최초)', '수도권·규제지역 70%, 지방 80%'],
+                    ['주담대 최대한도 (수도권·규제지역)', '시가 15억 이하 6억, 25억 이하 4억, 초과 2억'],
+                    ['스트레스 금리 (변동형)', '수도권·규제지역 3.0%p, 지방 0.75%p'],
                   ],
                 }}
                 tldr={[
-                  'DSR = (모든 대출 연원리금) / 연소득 × 100 ≤ 40% 또는 50%',
-                  'LTV = 신규 대출액 / 담보가치 × 100 ≤ 50%, 70%, 또는 80%',
-                  'DTI = (신규 원리금 + 기존 이자) / 연소득 × 100 ≤ 40% 또는 50%',
-                  '3개 기준 중 가장 낮은 한도가 최종 대출액을 결정합니다.',
+                  'DSR = (모든 대출 연원리금) / 연소득 × 100 ≤ 40% (2금융권 50%)',
+                  'LTV = 대출액 / 집값 × 100 ≤ 40% (규제지역) 또는 70%',
+                  '수도권·규제지역은 집값이 아무리 높아도 최대 6억 원 (15억 원 초과 4억, 25억 원 초과 2억)',
+                  'DSR·LTV·DTI·최대한도 중 가장 낮은 금액이 최종 대출액입니다.',
                 ]}
               />
               <div className="rounded-lg border border-primary-500/30 bg-primary-500/5 p-4">
                 <p className="text-sm text-text-secondary">
                   <strong className="text-primary-700 dark:text-primary-300">
-                    2026년 기준 최신 규제:
+                    2026년 10월 기준 규제:
                   </strong>{' '}
-                  본 계산기는 2026년 DSR·스트레스 DSR 전면 시행, LTV/DTI 지역별·기관별 차등 규제를
-                  반영합니다. 금융기관·부동산 거래 시장의 변화로 정책이 변경될 수 있으니,
+                  이 계산기는 10·15 대책(2025년 10월)의 규제지역 LTV 40%·수도권 주담대 최대한도·스트레스
+                  금리 3%, 2026년 7월 규제지역 추가 지정(화성 동탄구·용인 기흥구·구리시), 8·13 대책(2026년
+                  8월)의 유지 방침을 반영했습니다. 2027년 1월부터는 DSR 소득 계산 방식 등이 바뀔 예정이니
+                  대출 직전에는{' '}
                   <a
-                    href="https://www.fss.or.kr"
+                    href="https://www.fsc.go.kr"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="font-semibold underline"
                   >
-                    금감원
-                  </a>
-                  에서 최신 공지를 확인하세요.
+                    금융위원회
+                  </a>{' '}
+                  발표와 은행 안내를 확인하세요.
                 </p>
               </div>
-              <section aria-label="연소득별 최대 대출한도" className="card">
-                <h2 className="text-2xl font-bold">연소득별 최대 대출한도는 얼마인가요?</h2>
-                <p className="mt-3 text-text-secondary" data-speakable>
-                  연소득 5,000만 원이면 스트레스 DSR 40% 기준 최대 약 2.78억 원을 빌릴 수
-                  있습니다(30년 원리금균등·스트레스 금리 6%·기존 대출 0 기준). 한도는 연소득에 거의
-                  비례해 늘어납니다.
-                </p>
-                <div className="mt-4 overflow-x-auto">
-                  <table className="w-full border-collapse text-sm">
-                    <caption className="mb-2 text-left text-xs text-text-tertiary">
-                      표. 연소득별 최대 대출한도 (스트레스 DSR 40%·30년 원리금균등·스트레스 금리
-                      6%·기존 대출 0)
-                    </caption>
-                    <thead>
-                      <tr className="border border-border-base bg-primary-500/10">
-                        <th
-                          scope="col"
-                          className="px-4 py-3 text-right font-bold text-text-primary"
-                        >
-                          연소득
-                        </th>
-                        <th
-                          scope="col"
-                          className="px-4 py-3 text-right font-bold text-text-primary"
-                        >
-                          최대 대출한도
-                        </th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="hover:bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2 text-right tabular-nums">3,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 1.67억 원
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2 text-right tabular-nums">5,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 2.78억 원
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2 text-right tabular-nums">7,000만 원</td>
-                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 3.89억 원
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2 text-right tabular-nums">1억 원</td>
-                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 5.56억 원
-                        </td>
-                      </tr>
-                      <tr className="hover:bg-bg-card/50 border border-border-base">
-                        <td className="px-4 py-2 text-right tabular-nums">1.5억 원</td>
-                        <td className="px-4 py-2 text-right font-bold tabular-nums text-primary-700 dark:text-primary-300">
-                          약 8.34억 원
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                <p className="mt-3 text-xs text-text-tertiary">
-                  * 실제 한도는 LTV(담보인정비율)·방공제·기존 대출·개별 심사에 따라 더 낮아질 수
-                  있습니다. 본인 조건의 정확한 한도는 위 계산기로 확인하세요.
-                </p>
-              </section>
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">DSR(부채원리금상환비율)이란?</h2>
                 <p className="text-text-secondary">
@@ -399,8 +406,8 @@ export default function LoanLimitPage() {
                   </p>
                   <p className="text-sm">
                     <span className="font-semibold">스트레스 DSR:</span>
-                    변동금리·혼합형·주기형은 현재 금리에 1.5%p를 추가하여 DSR을 계산합니다. (2026년
-                    전면 적용)
+                    수도권·규제지역 주담대는 변동형 3.0%p·혼합형 2.4%p·주기형 1.2%p, 지방 주담대는 변동형
+                    0.75%p를 약정금리에 더해 DSR을 계산합니다(2026년 10월 기준, 고정형 0).
                   </p>
                 </div>
                 <p className="text-sm text-text-tertiary">
@@ -411,8 +418,8 @@ export default function LoanLimitPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">LTV(담보인정비율)이란?</h2>
                 <p className="text-text-secondary">
-                  LTV는 대출액을 담보 가치(주택가격)로 나눈 비율입니다. 규제지역과 주택 상태에 따라
-                  50%~80% 범위에서 규제됩니다.
+                  LTV는 대출액을 담보 가치(주택가격)로 나눈 비율입니다. 2026년 10월 현재 지역과 주택
+                  보유 상태에 따라 40%~80% 범위에서 정해집니다.
                 </p>
                 <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="text-sm">
@@ -423,10 +430,14 @@ export default function LoanLimitPage() {
                   <div className="space-y-2 text-sm">
                     <span className="font-semibold">지역·상태별 한도:</span>
                     <ul className="space-y-1 text-text-secondary">
-                      <li>• 비규제지역 일반: 70%</li>
-                      <li>• 조정대상·투기·투기과열: 50%</li>
-                      <li>• 생애최초·서민실수요자: 80% (우대)</li>
-                      <li>• 9억 초과 주택: 추가 제한</li>
+                      <li>• 규제지역(서울 전역 등), 무주택·처분조건부 1주택: 40%</li>
+                      <li>• 그 밖의 수도권·지방, 무주택·처분조건부 1주택: 70%</li>
+                      <li>• 생애최초 구입: 수도권·규제지역 70%, 지방 80% (대출 최대 6억 원)</li>
+                      <li>• 수도권·규제지역 2주택 이상: 집 구입 주담대 불가</li>
+                      <li>
+                        • 수도권·규제지역 최대한도: 시가 15억 원 이하 6억 원, 15억 원 초과 25억 원 이하
+                        4억 원, 25억 원 초과 2억 원
+                      </li>
                     </ul>
                   </div>
                 </div>
@@ -445,7 +456,7 @@ export default function LoanLimitPage() {
                   </p>
                   <p className="text-sm">
                     <span className="font-semibold">규제 한도:</span>
-                    규제지역 40%, 비규제지역 50%
+                    규제지역 40%, 그 밖의 지역 60%
                   </p>
                   <p className="text-sm">
                     <span className="font-semibold">DSR과의 차이:</span>
@@ -455,13 +466,13 @@ export default function LoanLimitPage() {
               </section>
               <RateBarChart
                 title="대출한도를 정하는 DSR·DTI 규제 비율 (2026)"
-                caption="연소득 대비 연간 원리금 비율(DSR)은 은행 40%, 제2금융권 50% 이하로 제한됩니다. DTI는 규제지역 40%, 비규제지역 50%가 한도입니다. 여기에 담보 대비 대출 비율(LTV)과 2026년 변동금리 스트레스 가산금리 1.5%p가 함께 적용되어 실제 대출한도가 결정됩니다."
-                max={60}
+                caption="연소득 대비 연간 원리금 비율(DSR)은 은행 40%, 제2금융권 50% 이하로 제한됩니다. DTI는 규제지역 40%, 그 밖의 지역 60%가 한도입니다. 여기에 집값 대비 대출 비율(LTV), 수도권·규제지역 최대한도, 지역·금리 유형별 스트레스 금리가 함께 적용되어 실제 대출한도가 결정됩니다."
+                max={70}
                 bars={[
-                  { label: 'DSR (은행)', value: 40 },
+                  { label: 'DSR (은행)', value: 40, highlight: true },
                   { label: 'DSR (2금융권)', value: 50 },
                   { label: 'DTI (규제지역)', value: 40 },
-                  { label: 'DTI (비규제)', value: 50, highlight: true },
+                  { label: 'DTI (그 밖의 지역)', value: 60 },
                 ]}
               />
               <section className="card space-y-3">
@@ -469,9 +480,10 @@ export default function LoanLimitPage() {
                   2026년 스트레스 DSR이 적용된 주담대 한도는 어떻게 계산하나요?
                 </h2>
                 <p className="text-sm leading-relaxed text-text-secondary" data-speakable>
-                  2026년부터는 변동금리·혼합형·주기형 주택담보대출에{' '}
-                  <strong>스트레스 DSR 1.5%p가 전면 적용</strong>됩니다. 이때 대출 한도는 다음
-                  공식으로 산출합니다.
+                  2026년 10월 현재 수도권·규제지역 주택담보대출은 변동형 기준{' '}
+                  <strong>스트레스 금리 3.0%p</strong>, 지방은 <strong>0.75%p</strong>를 약정금리에
+                  더해 DSR을 계산합니다. 혼합형·주기형은 이보다 적게, 고정형은 더하지 않습니다. 대출
+                  한도는 다음 공식으로 산출합니다.
                 </p>
                 <MathFormula
                   display
@@ -483,34 +495,33 @@ export default function LoanLimitPage() {
                 </div>
                 <p className="text-sm leading-relaxed text-text-secondary">
                   여기서 <strong>스트레스 DSR을 적용</strong>하면 신규 월 원리금을 계산할 때 실제
-                  약정금리가 아닌
-                  <strong> "약정금리 + 1.5%p"</strong>를 가상으로 적용해 한도를 산출합니다. 즉
-                  약정금리 3.5%로 실행되더라도 한도 산정 시점에는 5.0% 기준으로 원리금을 계산하므로
-                  같은 연소득에서 대출 한도가 약 12~18% 줄어듭니다. 참고로 현재 한국은행 기준금리는{' '}
-                  <PublicDataCitation citation={ECOS_BASE_RATE} />
-                  이며, 시중은행 주담대 약정금리는 통상 기준금리에 가산금리(1.5~3.0%p)가 더해진
-                  수준입니다.
+                  약정금리가 아니라 <strong>&quot;약정금리 + 스트레스 금리&quot;</strong>로 원리금을 계산해
+                  한도를 정합니다. 실제로 내는 이자는 약정금리 그대로입니다. 참고로 현재 한국은행
+                  기준금리는 <PublicDataCitation citation={ECOS_BASE_RATE} />
+                  이며, 시중은행 주담대 약정금리는 여기에 가산금리가 더해진 수준입니다.
                 </p>
                 <p className="text-sm leading-relaxed text-text-secondary">
-                  <strong>실제 예시 (연소득 1억, 신규 주담대 30년 원리금균등, 기존 대출 0)</strong>:
-                  약정금리 3.5% 기준 월 원리금은 약 224만 원이며 연 환산 약 2,690만 원으로 DSR ≈
-                  26.9%이지만, 스트레스 1.5%p를 적용해 5.0%로 계산하면 월 원리금이 약 268만 원, 연
-                  환산 약 3,220만 원으로 DSR ≈ 32.2%로 상승합니다. 40% 한도 내에 머무르려면 신규
-                  대출 가능액이
-                  <strong> 약 5.0억 원에서 약 4.4억 원으로 감소</strong>합니다.
+                  <strong>
+                    예시 (그 밖의 수도권 10억 원 집, 연소득 1억 원, 약정금리 연 4.5%, 30년 원리금균등, 기존
+                    대출 없음)
+                  </strong>
+                  : 고정형은 4.5% 그대로 계산해 DSR 한도가 {man(STRESS_FIXED.dsrLimit)}이지만 수도권
+                  최대한도 때문에 {man(STRESS_FIXED.finalLimit)}까지입니다. 주기형은{' '}
+                  {4.5 + (STRESS_PERIODIC.appliedStressRate ?? 0)}%로 계산해{' '}
+                  {man(STRESS_PERIODIC.finalLimit)}, 변동형은 {4.5 + (STRESS_VARIABLE.appliedStressRate ?? 0)}
+                  %로 계산해 <strong>{man(STRESS_VARIABLE.finalLimit)}</strong>으로 줄어듭니다. 같은 소득이라도
+                  금리 유형에 따라 한도가 1억 원 넘게 달라집니다.
                 </p>
                 <p className="text-sm leading-relaxed text-text-secondary">
-                  <strong>LTV 동시 적용</strong>: DSR이 통과하더라도 LTV(담보인정비율)가 더 낮은
-                  한도를 결정할 수 있습니다. 예: 담보가치 8억 원, 조정대상지역(50%) → LTV 한도 4억
-                  원. 이 경우 DSR 4.4억 원과 LTV 4억 원 중{' '}
-                  <strong>낮은 4억 원이 최종 실행 한도</strong>가 됩니다. 생애최초 실수요자(LTV
-                  80%)나 비규제지역(LTV 70%)이면 LTV 제약이 완화됩니다.
+                  <strong>LTV와 최대한도 동시 적용</strong>: DSR을 통과해도 LTV나 최대한도가 더 낮으면
+                  그 금액이 최종 한도입니다. 예: 서울(규제지역) 8억 원 집은 LTV 40%로 3억 2,000만 원이
+                  한도이고, 그 밖의 수도권 10억 원 집은 LTV 70%(7억 원)보다 최대한도 6억 원이 먼저
+                  걸립니다.
                 </p>
                 <p className="text-sm leading-relaxed text-text-secondary">
-                  <strong>기존 대출이 있을 때</strong>: 신용대출 1,000만 원이 있으면 연 이자 약
-                  35~50만 원 (금리 3.5~5%)이 DSR 분자에 추가되어 한도가 추가로 1,000~2,000만 원 가량
-                  더 줄어듭니다. 마이너스 통장(미사용분)은 일부 은행에서 한도의 일정 비율만 DSR
-                  산입하므로 사전 확인이 필요합니다.
+                  <strong>기존 대출이 있을 때</strong>: 신용대출·카드론의 1년 원리금이 DSR 분자에 더해져
+                  새 주담대 한도가 그만큼 줄어듭니다. 마이너스 통장은 쓴 금액이 아니라 약정 한도 전체를
+                  대출로 보는 것이 원칙이라, 쓰지 않는 한도를 줄이면 주담대 한도가 늘 수 있습니다.
                 </p>
               </section>
               <section className="space-y-4">
@@ -536,95 +547,42 @@ export default function LoanLimitPage() {
                 </div>
               </section>
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">실제 케이스 시뮬레이션</h2>
+                <h2 className="text-2xl font-bold">실제 케이스 시뮬레이션 (2026년 10월 규제)</h2>
+                <p className="text-sm text-text-secondary">
+                  아래 숫자는 위 계산기와 같은 함수로 계산했습니다. 은행 기준, 스트레스 DSR 적용,
+                  만 원 아래는 버렸습니다.
+                </p>
                 <div className="space-y-4">
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="mb-3 font-semibold text-primary-500">
-                      사례 1. 30대 맞벌이, 서울 강남 주택매매
-                    </h3>
-                    <ul className="space-y-1 text-sm text-text-secondary">
-                      <li>부부 연소득: 1억 원 (각 5,000만 원)</li>
-                      <li>신규 대출: 5억 원 (고정금리 3.5%, 30년 원리금균등)</li>
-                      <li>기존 대출: 1,000만 원 신용대출</li>
-                      <li>담보 가치: 8억 원 (조정지역)</li>
-                    </ul>
-                    <div className="mt-3 border-t border-border-base pt-3 text-sm">
-                      <p className="text-text-secondary">
-                        <strong>DSR 계산:</strong> (신규 월원리금 약 224만 + 기존 이자 약 3만) /
-                        833만 = 27.2% (40% 이하 통과)
-                        <br />
-                        <strong>LTV 계산:</strong> 5억 / 8억 = 62.5% (조정 50% 규제는 불동산 수
-                        기준, 이 사례는 1주택이므로 통과)
-                        <br />
-                        <strong>결론:</strong> DSR·LTV 모두 통과하여 5억 원 대출 가능
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="mb-3 font-semibold text-secondary-500">
-                      사례 2. 40대 자영업자, 대출 제약 케이스
-                    </h3>
-                    <ul className="space-y-1 text-sm text-text-secondary">
-                      <li>연소득: 8,000만 원 (사업소득 증명)</li>
-                      <li>신규 대출 목표: 4억 원 (3.5% 금리, 20년)</li>
-                      <li>기존 대출: 신용카드론 2,000만 원, 자동차 5,000만 원</li>
-                      <li>담보 가치: 6억 원</li>
-                    </ul>
-                    <div className="mt-3 border-t border-border-base pt-3 text-sm">
-                      <p className="text-text-secondary">
-                        <strong>DSR 계산:</strong> (신규 월원리금 약 191만 + 기존 전체 약 175만) /
-                        667만 = 54.9% (40% 초과!)
-                        <br />
-                        <strong>문제점:</strong> 기존 대출 상환액이 많아 DSR 규제 위배
-                        <br />
-                        <strong>해결책:</strong> 신용카드론 2,000만 원 먼저 상환하면 DSR 약 39%로
-                        개선 가능. 신규 3억 원 정도 가능.
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="mb-3 font-semibold text-highlight-500">
-                      사례 3. 생애최초 구매자 + 스트레스 DSR 풀 적용 (2026)
-                    </h3>
-                    <ul className="space-y-1 text-sm text-text-secondary">
-                      <li>연소득: 6,000만 원 (무주택 + 생애최초 자격)</li>
-                      <li>구매 주택: 6억 원 (비규제 지역)</li>
-                      <li>자기자금: 1.5억 원</li>
-                      <li>
-                        신규 대출 목표: 4.5억 원, 변동금리 4.0% (스트레스 1.5%p 가산 → 5.5% DSR
-                        산정)
-                      </li>
-                    </ul>
-                    <div className="mt-3 space-y-2 border-t border-border-base pt-3 text-sm">
-                      <p className="text-text-secondary">
-                        <strong>LTV 계산:</strong> 4.5억 ÷ 6억 = 75% (생애최초 80% 우대 적용 가능)
-                      </p>
-                      <p className="text-text-secondary">
-                        <strong>스트레스 DSR 미적용 (고정금리 4.0%):</strong> 월원리금 약 214만 ÷
-                        500만 = 42.8% (40% 초과)
-                      </p>
-                      <p className="text-text-secondary">
-                        <strong>스트레스 DSR 적용 (변동금리 4.0% + 1.5%p):</strong> 월원리금 약
-                        256만 ÷ 500만 = 51.2% (40% 큰 폭 초과)
-                      </p>
-                      <p className="text-text-secondary">
-                        <strong>결론:</strong> 생애최초 LTV 우대(80%)에도 불구하고 DSR로 제약.
-                        <strong>
-                          {' '}
-                          변동금리 선택 시 한도 약 3.3억(스트레스 5.5% 기준) vs 고정금리 약
-                          3.8억(4.0% 기준)
-                        </strong>
-                        으로 고정금리가 한도 1.5천만 원 더 유리. 또는 자기자금을 2억 원으로 늘려
-                        대출액 4억 원으로 줄이면 DSR 통과 가능.
-                      </p>
-                      <p className="text-xs text-text-tertiary">
-                        ※ 생애최초는 LTV 우대만 적용되며, DSR 우대는 없음 (2026년 기준). 스트레스
-                        DSR 면제 대상은 정책서민금융상품 일부에 한정.
-                      </p>
-                    </div>
-                  </div>
+                  {CASES.map((c) => {
+                    const r = calculateLoanLimit(c.input);
+                    return (
+                      <div key={c.title} className="rounded-lg border border-border-base bg-bg-card p-4">
+                        <h3 className="mb-3 font-semibold text-primary-500">{c.title}</h3>
+                        <ul className="space-y-1 text-sm text-text-secondary">
+                          {c.facts.map((f) => (
+                            <li key={f}>{f}</li>
+                          ))}
+                        </ul>
+                        <div className="mt-3 space-y-1 border-t border-border-base pt-3 text-sm text-text-secondary">
+                          <p>
+                            <strong>LTV 한도:</strong> {man(r.ltvLimit)} · <strong>DSR 한도:</strong>{' '}
+                            {man(r.dsrLimit)}
+                            {r.mortgageCap !== null ? (
+                              <>
+                                {' '}
+                                · <strong>최대한도:</strong> {man(r.mortgageCap)}
+                              </>
+                            ) : null}
+                          </p>
+                          <p>
+                            <strong>결론:</strong> 최대 {man(r.finalLimit)} (한도를 정한 기준:{' '}
+                            {BINDING_LABEL[r.bindingConstraint]}), 월 상환액 약{' '}
+                            {man(r.monthlyPaymentAtLimit)}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </section>
               <section className="space-y-4">
@@ -639,23 +597,26 @@ export default function LoanLimitPage() {
                   <li>
                     <span className="font-semibold text-text-primary">2. 기존 대출 상환</span>
                     <br />
-                    신용대출, 학자금, 자동차, 캐시백 등 모든 대출이 DSR을 낮춥니다. 상환 순서는
-                    금리가 높은 순입니다.
+                    신용대출·카드론·자동차 할부 같은 기존 대출을 갚으면 그만큼 DSR 여유가 생깁니다.
+                    쓰지 않는 마이너스 통장 한도를 줄이는 것도 도움이 됩니다.
                   </li>
                   <li>
-                    <span className="font-semibold text-text-primary">3. 담보 가치 증가</span>
+                    <span className="font-semibold text-text-primary">3. 대출 기간 늘리기</span>
                     <br />
-                    부동산 재감정으로 평가액 상향 (신축, 대규모 리모델링 후)
+                    기간이 길수록 월 원리금이 줄어 DSR 한도가 늘어납니다. 수도권·규제지역은 최장
+                    30년입니다.
                   </li>
                   <li>
-                    <span className="font-semibold text-text-primary">4. 보증인 추가</span>
+                    <span className="font-semibold text-text-primary">4. 소득 인정 범위 확인</span>
                     <br />
-                    금융기관별로 배우자, 부모 등 보증인 소득을 일부 합산 (기관별 인정도 상이)
+                    부부 소득을 함께 인정받을 수 있는지, 상여금·사업소득 증빙이 빠지지 않았는지 은행에
+                    확인하세요.
                   </li>
                   <li>
-                    <span className="font-semibold text-text-primary">5. 지역·상태 확인</span>
+                    <span className="font-semibold text-text-primary">5. 금리 유형·지역 확인</span>
                     <br />
-                    규제지역이면 비규제 지역으로 매수처 변경, 생애최초 자격 확인 등
+                    고정형·주기형은 스트레스 가산이 작아 한도가 늘어납니다. 생애최초 자격도 확인하세요.
+                    다만 수도권·규제지역 최대한도(6억·4억·2억 원)는 넘을 수 없습니다.
                   </li>
                 </ul>
               </section>
@@ -703,22 +664,52 @@ export default function LoanLimitPage() {
                 <div className="border-t border-border-base pt-4">
                   <p>
                     <span className="font-semibold text-text-secondary">마지막 업데이트:</span>{' '}
-                    2026-04-24
+                    2026-10-14
                   </p>
                   <p className="mt-2">
                     <span className="font-semibold text-text-secondary">
-                      법적 근거 및 공식 출처:
+                      근거 및 공식 출처:
                     </span>
                   </p>
                   <ul className="mt-1 space-y-1">
                     <li>
                       <a
-                        href="https://www.law.go.kr/법령/은행법시행령/제24조의4"
+                        href="https://www.fsc.go.kr/po010101/85432"
                         target="_blank"
                         rel="noopener noreferrer nofollow"
                         className="text-primary-600 underline dark:text-primary-500"
                       >
-                        국가법령정보센터, 은행법 시행령 §24의4 (가계대출 관리)
+                        금융위원회, 주택시장 안정화를 위한 대출수요 관리 방안 (2025.10.15)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.fsc.go.kr/no010101/86606"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        금융위원회, 2026년도 가계부채 관리방안 (2026.4.1)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.fsc.go.kr/no010101/87222"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        금융위원회, 규제지역 추가 지정 관련 긴급 가계부채 점검회의 (2026.6.30)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        href="https://www.korea.kr/news/policyNewsView.do?newsId=148945077"
+                        target="_blank"
+                        rel="noopener noreferrer nofollow"
+                        className="text-primary-600 underline dark:text-primary-500"
+                      >
+                        정책브리핑, 수도권·규제지역 주담대 최대 6억 원 (2025.6.27)
                       </a>
                     </li>
                     <li>

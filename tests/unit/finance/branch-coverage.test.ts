@@ -46,15 +46,15 @@ describe('averaging-down — 미커버 분기', () => {
 });
 
 describe('loan-limit — 미커버 분기', () => {
-  it('bindingConstraint = DTI 분기 (DSR/LTV/collateral 모두 아닐 때)', () => {
-    // 시나리오: 비은행권(DSR=50%)·조정지역(DTI=40%, LTV=50%)·스트레스 OFF
-    // → DSR 한도(50%) > DTI 한도(40%), 담보 충분 → DTI 가 결정적
+  it('bindingConstraint = DTI 분기 (DSR/LTV/최대한도/collateral 모두 아닐 때)', () => {
+    // 시나리오 (2026-10 규제): 2금융권(DSR 50%)·규제지역(DTI 40%, LTV 40%)·스트레스 OFF
+    // 집값 14억: LTV 5.6억, 최대한도 6억 / 연소득 5천만: DSR 약 4.36억 > DTI 약 3.49억 → DTI 가 결정적
     const r = calculateLoanLimit({
-      annualIncome: 100_000_000,
+      annualIncome: 50_000_000,
       existingDebtAnnualPayment: 0,
       existingDebtAnnualInterest: 0,
-      collateralValue: 5_000_000_000,
-      region: 'adjusted',
+      collateralValue: 1_400_000_000,
+      region: 'regulated',
       housingStatus: 'general',
       lender: 'nonBank',
       newLoanAnnualRate: 4,
