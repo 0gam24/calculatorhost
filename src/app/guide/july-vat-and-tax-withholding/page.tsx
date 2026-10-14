@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -129,6 +130,7 @@ export default function GuidePage() {
                   매년 7월은 개인사업자와 법인 모두에게 바쁜 세무 시즌입니다. 부가가치세 확정신고 기한이 돌아오는 동시에, 하반기 연말정산을 위한 공제 항목 사전점검도 병행해야 합니다. 지금부터 핵심 일정과 준비 사항을 체계적으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="july-vat-and-tax-withholding" />
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">7월 부가가치세 확정신고란 무엇인가</h2>

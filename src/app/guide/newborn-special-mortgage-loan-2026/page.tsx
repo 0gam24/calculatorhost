@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function NewbornSpecialMortgageLoan2026Page() {
                   아이를 낳고 내 집 마련을 고민하는 무주택 부부라면 신생아 특례 디딤돌대출로 저금리 구입자금을 받을 수 있는지 가장 궁금할 것입니다. 이 가이드는 출산 가구를 대상으로 부부합산 소득요건, 특례금리와 한도, 대상 주택 조건, 신청 절차를 2026년 기준으로 단계별로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="newborn-special-mortgage-loan-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신생아 특례 디딤돌대출이란?</h2>

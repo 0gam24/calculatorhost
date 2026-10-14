@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function PropertyTaxSingleHouseSpecialRate2026Page() {
                   매년 6월 재산세 고지서가 도착할 때마다 많은 1세대1주택 보유자들이 궁금해합니다. "왜 남들과 세율이 다른가?" "특례세율이 정확히 뭔가?" 이 가이드는 1세대1주택을 위한 재산세 특례세율을 집중 분석합니다. 일반세율 대비 0.05%p 인하의 의미, 누진공제 구조, 실제 절감액을 사례와 함께 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-single-house-special-rate-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1세대1주택 특례세율이란?</h2>

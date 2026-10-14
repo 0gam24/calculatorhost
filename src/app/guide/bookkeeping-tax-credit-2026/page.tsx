@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function BookkeepingTaxCredit2026Page() {
                   이 글은 종합소득세를 신고하는 프리랜서·개인사업자 중 간편장부 대상자를 위해 기장세액공제를 정리한 가이드입니다. 복식부기로 신고하면 세금을 얼마나 깎아주는지, 누가 받을 수 있는지, 장부를 안 쓰면 어떤 가산세가 붙는지까지 실제 금액으로 확인하실 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="bookkeeping-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기장세액공제가 무엇인가요?</h2>

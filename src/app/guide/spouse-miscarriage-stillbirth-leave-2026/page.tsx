@@ -1,5 +1,6 @@
 /* [revenue-lever: traffic] 2026-09-18 시행 개정으로 신설된 배우자 유산·사산 휴가와 확대된 배우자 출산휴가 사용 시기(50일 전)를 노리는 시즌·롱테일 트래픽. */
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function SpouseMiscarriageStillbirthLeave2026Page() {
                   아내가 유산·사산했을 때 남편(배우자)이 쓸 수 있는 유급 휴가는 지금까지 법에 명시돼 있지 않았습니다. 2026년 9월 18일 시행 남녀고용평등법 개정으로 이 공백이 채워집니다. 배우자 유산·사산 휴가 5일(최초 3일 유급)이 신설되고, 같은 개정에서 배우자 출산휴가의 사용 시기가 출산 예정일 50일 전부터 출산 후 120일까지로 크게 확대됩니다. 이 가이드는 두 제도의 요건, 신청 방법, 정부 지원 상한액을 한 페이지에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="spouse-miscarriage-stillbirth-leave-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배우자 유산·사산 휴가란 무엇인가요? (2026년 9월 18일 신설)</h2>

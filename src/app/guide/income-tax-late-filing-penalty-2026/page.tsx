@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -181,6 +182,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   수 있습니다. 정확한 계산과 타이밍을 이 페이지 한 장으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="income-tax-late-filing-penalty-2026" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-danger-500">

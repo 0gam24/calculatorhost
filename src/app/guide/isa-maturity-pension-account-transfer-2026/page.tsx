@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function IsaMaturityPensionAccountTransfer2026Page() {
                   이 가이드는 ISA 계좌의 만기가 다가오는 투자자와 절세를 챙기려는 직장인을 위한 것입니다. ISA 만기자금을 그냥 찾아 쓰면 그걸로 끝이지만, 60일 안에 연금저축이나 IRP로 옮기면 이전액의 10%, 최대 300만원을 추가로 세액공제받습니다. 놓치기 쉬운 60일 기한과 한도, 연 최대 1,200만원까지 공제받는 구조를 소득세법 조항과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="isa-maturity-pension-account-transfer-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">ISA 만기 연금전환이란 무엇인가요?</h2>

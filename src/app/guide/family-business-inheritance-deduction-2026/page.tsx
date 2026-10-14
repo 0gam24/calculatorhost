@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -184,6 +185,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   사후관리 조건까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="family-business-inheritance-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가업상속공제란 무엇인가</h2>

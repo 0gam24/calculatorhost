@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -147,6 +148,7 @@ export default function HousingSubscriptionScore84PointsPage() {
                   청약 당첨을 목표로 하는 무주택자에게 가점제는 필수 이해 영역입니다. 주택공급에 관한 규칙(별표1)에 정의된 청약가점 3요소·무주택기간(32점)·부양가족수(35점)·청약통장 가입기간(17점)·를 정확히 계산하고 합산하면 총 84점 만점이 나옵니다. 이 가이드는 각 요소별 점수 계산 방식을 표와 함께 명시하고, 실제 시뮬레이션으로 검증합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-score-84-points-2026" />
 
               <div className="rounded-lg border border-border-base bg-bg-card p-4">
                 <p className="font-semibold text-text-primary">청약가점 3요소 합산 구조</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function ResidentTaxBusinessEstablishment2026Page() {
                   8월이 되면 사업주에게 주민세 사업소분 신고 안내가 옵니다. 개인분처럼 고지서만 보고 내면 되는 줄 알았다가 신고를 놓쳐 가산세를 무는 경우가 적지 않습니다. 이 가이드는 사업소분이 무엇인지, 언제 얼마를 어떻게 신고하는지, 흔히 헷갈리는 종업원분과는 무엇이 다른지를 지방세법 조문 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="resident-tax-business-establishment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주민세 사업소분이란 무엇인가요?</h2>

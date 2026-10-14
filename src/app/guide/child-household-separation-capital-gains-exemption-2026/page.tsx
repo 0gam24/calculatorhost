@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -169,6 +170,7 @@ export default function ChildHouseholdSeparationCapitalGainsExemption2026Page() 
                   부모와 자녀가 각각 주택 한 채씩 가지고 있을 때, 세대분리 여부에 따라 양도소득세가 전액 비과세되거나 수천만원 이상 부과되는 결과가 갈립니다. 특히 30세 미만 자녀는 나이만으로는 세대분리가 인정되지 않고 소득요건까지 갖춰야 합니다. 이 가이드는 소득세법 시행령 §152의3에 따른 세대 요건, 실질과세 판정 기준, 위장 분리의 함정까지 실무 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="child-household-separation-capital-gains-exemption-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 세대분리가 왜 양도세 비과세와 직결되나요?</h2>

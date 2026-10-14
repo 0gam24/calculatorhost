@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -162,6 +163,7 @@ export default function ResidentTaxIndividualPortion2026Page() {
                   8월이 되면 우편함이나 위택스 알림으로 주민세 개인분 고지서가 도착합니다. 매년 7월 1일 기준 주소지 지자체가 세대주 개인에게 부과하는 정액 세금인데, 세액은 지자체 조례에 따라 1만원 이하로 다르고, 납부기간은 8월 16일부터 31일까지로 짧습니다. 이 가이드는 고지서가 안 왔을 때 확인하는 절차, 위택스 납부 방법, 면제 대상, 사업소분과의 차이까지 지방세법 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="resident-tax-individual-portion-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주민세 개인분이란 무엇인가</h2>

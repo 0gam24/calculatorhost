@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -169,6 +170,7 @@ export default function DivorcePropertyDivisionAlimonyTax2026Page() {
                   이혼할 때 아파트를 나누는 방법은 크게 두 가지입니다. 부부가 함께 모은 재산을 나누는 재산분할이거나, 정신적 손해를 배상하는 위자료입니다. 같은 아파트를 넘기더라도 어느 명목으로 처리하느냐에 따라 세금이 크게 달라집니다. 이 가이드는 재산분할과 위자료의 세법상 차이를 소득세법·상증법·민법 기준으로 사례와 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="divorce-property-division-alimony-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">이혼할 때 재산 넘기면 세금이 붙나요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 초단시간 근로자(주15시간 미만) 주휴·연차·퇴직금·4대보험 (단시간 근로자 롱테일 흡수)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function UltraShortTimeWorkerRightsPage() {
                   주말에만 잠깐 카페에서 일하거나 평일 몇 시간 아르바이트를 하는 분이라면 주휴수당이나 퇴직금을 받을 수 있는지 궁금할 것입니다. 근로시간이 짧으면 이 권리들이 적용되지 않는 경우가 있는데, 그 갈림길이 바로 주 15시간입니다. 이 가이드는 초단시간 근로자를 위해 무엇이 적용되고 무엇이 제외되는지, 그리고 계약서와 실제 근무의 차이가 왜 중요한지를 근로기준법 §18 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="ultra-short-time-worker-rights-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">초단시간 근로자란 정확히 무엇인가요?</h2>

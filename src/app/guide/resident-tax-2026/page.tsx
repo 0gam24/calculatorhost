@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ResidentTax2026Page() {
                   매년 8월이면 주민세 고지서가 날아옵니다. 그런데 주민세는 하나가 아니라 개인분, 사업소분, 종업원분 세 가지로 나뉘고, 각각 내는 사람과 계산법이 다릅니다. 사업자라면 세 가지를 모두 챙겨야 할 수도 있습니다. 이 가이드는 지방세법 §74 이하 조문을 기준으로 주민세 세 유형의 세율, 납부 시기, 면세 기준을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="resident-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주민세란 무엇인가요?</h2>

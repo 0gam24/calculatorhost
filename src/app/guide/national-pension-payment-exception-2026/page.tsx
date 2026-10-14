@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function NationalPensionPaymentException2026Page() {
                   실직이나 폐업으로 당장 소득이 끊겼는데 매달 국민연금 고지서가 날아옵니다. 그냥 안 내도 될까, 아니면 반드시 신고를 해야 할까. 안 내면 나중에 연금이 얼마나 줄어들까. 이 가이드는 국민연금법 91조의 납부예외 제도를 기준으로, 신청 자격과 기한, 가입기간에 미치는 영향, 그리고 92조 추후납부로 회복하는 방법까지 한 번에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-payment-exception-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 국민연금 납부예외란 무엇인가요?</h2>

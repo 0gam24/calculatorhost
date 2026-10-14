@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalPensionAdditionalPayment2026Page() {
                   경력단절·전업주부처럼 한동안 소득이 없어 국민연금 보험료를 내지 못한 기간이 있다면, 추후납부(추납) 제도로 그 기간을 나중에 채워 가입기간을 복원할 수 있습니다. 이 가이드는 누가 신청할 수 있는지, 최대 몇 개월까지 가능한지, 보험료는 어떻게 계산되는지, 그리고 2025년 11월 개정으로 무엇이 바뀌었는지까지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-additional-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민연금 추납이란 무엇인가</h2>

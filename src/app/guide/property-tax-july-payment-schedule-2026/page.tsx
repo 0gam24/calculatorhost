@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -147,6 +148,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
                   6월이 되면 도착하는 재산세 납세 통지서. 그런데 7월에 낸다고 했는데 9월에도 또 내야 한다는 통지서가 오고, 건축물과 토지의 납기가 다르다니 복잡하기만 합니다. 이 가이드는 2026년 재산세 납부 일정을 정확히 정리해드립니다. 주택분 1기분과 2기분의 차이, 건축물과 토지의 다른 납기, 250만원 초과 분할납부 신청 방법까지 모두 담았습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-july-payment-schedule-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재산세 납부 기한, 7월과 9월</h2>

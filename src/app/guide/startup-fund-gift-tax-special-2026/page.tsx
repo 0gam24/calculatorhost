@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function StartupFundGiftTaxSpecial2026Page() {
                   이 가이드는 부모 도움으로 사업을 시작하려는 창업 자녀와, 자녀의 창업을 돕고 싶은 부모를 위해 씁니다. 큰돈을 그냥 증여하면 증여세율이 최고 50%까지 올라가지만, 창업자금 증여세 과세특례를 쓰면 5억원을 공제하고 남은 금액에 10% 저율로만 과세합니다. 대신 창업 기한과 사후관리, 상속 시 합산이라는 조건이 따라붙습니다. 혜택과 조건을 함께 짚어보겠습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="startup-fund-gift-tax-special-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">창업자금 증여세 과세특례란</h2>

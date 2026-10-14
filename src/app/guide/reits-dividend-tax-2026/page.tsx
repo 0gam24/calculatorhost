@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function ReitsDividendTax2026Page() {
                   리츠(REITs)는 배당 수익을 노리고 들어가는 투자입니다. 그런데 배당을 받을 때마다 세금이 먼저 빠져나가고, 배당이 커지면 종합과세라는 복병도 있습니다. 이 글은 리츠 투자자를 위해 배당에서 세금이 얼마나 떼이는지, 언제 종합과세가 되는지, 공모리츠 분리과세와 ISA 같은 절세 방법은 무엇인지, 예금·일반 주식 배당과 비교해 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="reits-dividend-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">리츠 배당금에도 세금을 내나요?</h2>

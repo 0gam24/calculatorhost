@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -147,6 +148,7 @@ export default function PropertyTaxInstallmentPayment2026Page() {
                   7월이 재산세 1기 납부 시즌입니다. 높은 재산세를 한 번에 내기 어렵다면 분할납부(분납)를 고려해보세요. 재산세 본세가 250만원을 초과하면 최대 2개월에 걸쳐 나누어 낼 수 있으며, 기한 내에 납부하면 가산금 없이 처리됩니다. 이 가이드는 분납의 기준, 한도, 신청 방법, 납기별 주의사항을 완벽하게 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-installment-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재산세 분납이란</h2>

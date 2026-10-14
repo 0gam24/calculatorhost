@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -162,6 +163,7 @@ export default function PropertyTaxCreditCardPayment2026Page() {
                   재산세 고지서가 도착하면 가장 먼저 궁금한 것이 “카드로 내면 수수료가 붙나?”, “무이자 할부는 되나?”, “어느 카드가 이득이지?” 세 가지입니다. 결론부터 말하면 지방세인 재산세는 카드 납부 수수료가 0원이고, 무이자 할부·캐시백은 카드사·시즌마다 달라 반드시 결제 직전에 확인해야 합니다. 이 가이드는 위택스·지자체앱 결제 절차, 카드사별 혜택 비교 방법, 7월·9월 납기까지 한 번에 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-credit-card-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 재산세를 카드로 내면 수수료가 붙나요?</h2>

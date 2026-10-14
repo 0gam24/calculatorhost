@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function AverageWageVsOrdinaryWage2026Page() {
                   이 가이드는 퇴직금이나 각종 수당을 직접 확인하려는 직장인과 근로자를 위해 씁니다. 급여 문제에서 자주 헷갈리는 두 개념이 평균임금과 통상임금입니다. 이름은 비슷하지만 계산 방식도, 쓰이는 곳도 다릅니다. 퇴직금은 평균임금으로, 연장수당은 통상임금으로 계산한다는 원칙만 잡아도 내 돈이 맞게 계산됐는지 스스로 검증할 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="average-wage-vs-ordinary-wage-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">평균임금과 통상임금, 무엇이 다른가</h2>

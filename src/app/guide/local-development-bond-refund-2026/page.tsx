@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function LocalDevelopmentBondRefund2026Page() {
                   이 글은 자동차를 등록한 적이 있는 모든 운전자를 위해 씁니다. 차를 살 때 알게 모르게 사둔 지역개발채권이나 도시철도채권이 만기가 되면 원금과 이자를 돌려받을 수 있는데, 신청하지 않아 잠자고 있는 미환급금이 전국에 2,391억원(행정안전부 집계)이나 됩니다. 채권 종류별 만기와 소멸시효, 어느 은행에서 조회하는지, 어떻게 신청하는지를 순서대로 알려드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="local-development-bond-refund-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 자동차 채권 환급금이란 무엇인가요?</h2>

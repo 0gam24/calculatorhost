@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function IncomeContingentLoanRepayment2026Page() {
                   대학 때 받은 취업 후 상환 학자금 대출(ICL)은 취업했다고 무조건 갚는 것이 아니라, 소득이 일정 기준을 넘는 해부터 갚습니다. 이 가이드는 2026년 상환기준소득 3,037만원을 기준으로 의무상환이 언제 시작되는지, 상환액은 어떻게 계산하는지, 회사 원천공제와 상환 유예는 어떻게 되는지 사회초년생 눈높이로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="income-contingent-loan-repayment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">취업 후 학자금 상환이란?</h2>

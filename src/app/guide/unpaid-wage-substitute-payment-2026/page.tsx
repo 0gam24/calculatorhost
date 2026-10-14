@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function UnpaidWageSubstitutePayment2026Page() {
                   회사가 월급이나 퇴직금을 주지 않고 버틸 때, 사업주에게 소송을 걸어 받아내기까지는 오래 걸립니다. 이때 국가가 사업주를 대신해 일정 금액을 먼저 지급하는 제도가 대지급금입니다. 이 가이드는 임금을 못 받은 근로자가 간이대지급금으로 최대 얼마까지, 어떤 요건과 절차로 받을 수 있는지, 재직자와 퇴직자가 어떻게 다른지를 실무 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="unpaid-wage-substitute-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대지급금은 어떤 제도인가요?</h2>

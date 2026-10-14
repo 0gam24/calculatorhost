@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -168,6 +169,7 @@ export default function SeptemberPropertyTaxGuide() {
                   과오납 환급 절차를 한 페이지에 정리했습니다(지방세법 §111·§114·§122·§150, 지방세기본법 §55·§56).
                 </p>
               </header>
+              <GuideCalculatorCta slug="september-property-tax-second" />
 
               {/* 1. 납부 일정 */}
               <section aria-label="납부 일정" className="card">

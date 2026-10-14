@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
               />
 
               {/* 정의 + 핵심 수치 */}
+              <GuideCalculatorCta slug="voluntary-filing-june-50-percent-reduction-2026" />
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold text-text-primary">자진신고란 무엇인가?</h2>
                 <p data-speakable className="text-base text-text-secondary leading-relaxed">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -140,6 +141,7 @@ export default function InheritanceTax10YearGuide() {
                   공제(§28).
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-tax-10-year-prior-gift-aggregation" />
 
               {/* 1. 10년 vs 5년 차이 */}
               <section aria-label="10년 vs 5년" className="card">

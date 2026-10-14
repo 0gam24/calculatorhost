@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function ParentChildAccountTransferGiftTax2026Page() {
                   부모가 계좌로 목돈을 보내줬을 때 가장 먼저 드는 걱정이 증여세입니다. 이 글은 부모에게 돈을 받은 자녀, 또는 자녀에게 돈을 보내려는 부모를 위해 준비했습니다. 어디까지가 세금 없이 가능한 생활비·용돈이고, 어디부터 증여로 과세되는지, 그리고 자금출처 조사가 나왔을 때 어떻게 소명하는지까지 상속세및증여세법 조문을 근거로 단계별로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="parent-child-account-transfer-gift-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -159,6 +160,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                   이 페이지에서는 분납 가능 조건, 분납 비율, 신청 방법, 분납 vs 지연 납부의 차이를 정확히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="income-tax-installment-payment-2026" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

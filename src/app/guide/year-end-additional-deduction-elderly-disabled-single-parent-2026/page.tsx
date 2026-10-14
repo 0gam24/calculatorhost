@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 연말정산 추가공제 4종(경로우대·장애인·부녀자·한부모) (직장인 연말정산 롱테일 흡수)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function YearEndAdditionalDeductionPage() {
                   연말정산에서 부양가족을 등록하면 기본공제 150만원만 받고 끝내는 분이 많습니다. 그런데 그 부양가족이 70세를 넘겼거나 장애가 있다면, 또는 내가 홀로 아이를 키우는 세대주라면 기본공제 위에 얹어 주는 추가공제가 따로 있습니다. 이 가이드는 근로소득자를 위해 경로우대·장애인·부녀자·한부모 4종 추가공제의 금액, 요건, 그리고 헷갈리는 중복 규칙을 소득세법 §51 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="year-end-additional-deduction-elderly-disabled-single-parent-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">추가공제란 무엇이고 기본공제와 어떻게 다른가요?</h2>

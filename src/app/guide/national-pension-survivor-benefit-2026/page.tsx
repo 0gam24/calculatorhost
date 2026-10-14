@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function NationalPensionSurvivorBenefit2026Page() {
                   이 가이드는 국민연금에 가입한 배우자나 부모를 갑작스레 잃은 유족, 그리고 노후를 준비하며 연금 사망 보장을 확인하려는 분을 위한 것입니다. 유족연금은 누가 받을 수 있는지, 가입기간에 따라 얼마를 받는지, 본인의 노령연금과 겹치면 어떻게 되는지에 따라 실제 수령액이 크게 달라집니다. 헷갈리기 쉬운 순위와 중복 조정 규칙을 국민연금법 조항과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-survivor-benefit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">유족연금은 누구에게 지급되나요?</h2>

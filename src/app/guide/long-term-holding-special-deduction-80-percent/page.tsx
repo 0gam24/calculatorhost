@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -140,6 +141,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                   조건을 정확히 정리합니다(소득세법 §95 ②, 시행령 §159의3).
                 </p>
               </header>
+              <GuideCalculatorCta slug="long-term-holding-special-deduction-80-percent" />
 
               {/* 1. 정의 */}
               <section aria-label="정의" className="card">

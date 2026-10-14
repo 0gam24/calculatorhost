@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function BusinessClosureVatFinalReturn2026Page() {
                   이 가이드는 사업을 접기로 한 개인사업자를 위한 것입니다. 폐업하면 정규 신고기한(1월·7월)을 기다리는 것이 아니라 폐업일이 속한 달의 다음 달 25일까지 부가가치세 확정신고를 별도로 해야 합니다. 신고 기한과 절차, 그리고 많은 분들이 놓치는 "남은 재고·비품에 붙는 세금(잔존재화)"까지 실제 계산과 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="business-closure-vat-final-return-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">폐업하면 부가세 신고는 언제까지 하나요?</h2>

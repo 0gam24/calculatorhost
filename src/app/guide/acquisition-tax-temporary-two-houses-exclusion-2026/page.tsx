@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function AcquisitionTaxTemporaryTwoHousesExclusion2026Page() {
                   이사하려고 새 집을 먼저 계약했는데 기존 집이 안 팔린다면 취득세 8% 중과가 나올까 걱정되기 마련입니다. 결론부터 말하면, 1주택자가 신규주택을 사고 종전주택을 신규주택 취득일부터 3년 이내에 처분하면 취득세는 다주택 중과가 아니라 기본세율 1~3%로 부과됩니다. 이 가이드는 지방세법 §13의2와 시행령 §28의5·§28의6을 기준으로 처분기한, 세대 판정, 미처분 시 추징까지 한 번에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="acquisition-tax-temporary-two-houses-exclusion-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">일시적 2주택 취득세 중과 배제란 무엇인가</h2>

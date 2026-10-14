@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function HighOilPriceReliefFund2026Application() {
                   신청 대상, 지급액, 신청 방법을 정확히 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="high-oil-price-relief-fund-2026-application" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

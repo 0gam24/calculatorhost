@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -184,6 +185,7 @@ export default function AveragingDownVsLossCutPage() {
                   의사결정 기준과 시뮬레이션을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="averaging-down-vs-loss-cut" />
 
               <section aria-label="요약 비교" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

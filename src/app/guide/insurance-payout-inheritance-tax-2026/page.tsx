@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function InsurancePayoutInheritanceTax2026Page() {
                   사망보험금은 보험회사가 수익자에게 직접 지급하는 돈이라 상속재산이 아니라고 오해하기 쉽습니다. 하지만 세법은 보험료를 누가 냈는지를 기준으로 상속세와 증여세를 나눠 매깁니다. 이 가이드는 계약자·피보험자·수익자·실제 보험료 납부자의 관계에 따라 세금이 어떻게 달라지는지 실제 사례로 정리합니다. 대상 독자는 가족이 남긴 보험금을 받게 된 상속인입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="insurance-payout-inheritance-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">보험금도 상속재산인가요?</h2>

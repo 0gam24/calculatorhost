@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function SimplifiedWithholdingTaxTable2026Page() {
                   월급 명세서를 보면 소득세가 얼마씩 빠져나가는데, 그 금액이 어떻게 정해지는지 궁금했던 적이 있을 것입니다. 매월 떼는 소득세는 근로소득 간이세액표라는 기준으로 계산되고, 근로자는 그 비율을 80·100·120% 중에서 고를 수 있습니다. 이 가이드는 간이세액표의 원리와 선택 비율이 연말정산 환급·추가납부에 어떻게 연결되는지 소득세법 §134를 기준으로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="simplified-withholding-tax-table-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이세액표는 어떻게 작동하나요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function GoldInvestmentTax2026Page() {
                   같은 금을 사더라도 어떤 창구로 사느냐에 따라 세금이 완전히 달라집니다. KRX 금현물시장은 매매차익 비과세에 부가세도 면제, 실물 골드바는 매입 시 부가세 10%, 금통장과 국내 상장 금ETF는 매매차익에 배당소득세 15.4%가 붙습니다. 이 가이드는 조세특례제한법 §126의7과 부가가치세법 §9, 소득세법 §17을 근거로 4가지 방식의 세금과 비용, 금융소득종합과세 여부까지 한 페이지에서 비교합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gold-investment-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">금 투자하면 세금 얼마나 내나요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -151,6 +152,7 @@ export default function RentConversionRateGuidePage() {
                   초과해 요구하는 월차임은 무효이며, 임차인은 부당이득 반환을 청구할 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="rent-conversion-rate-2026-housing-lease-act" />
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">핵심 요약</h2>

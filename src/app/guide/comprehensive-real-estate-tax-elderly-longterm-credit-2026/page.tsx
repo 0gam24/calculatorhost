@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   오래 살던 집 한 채를 가진 은퇴자에게 종합부동산세는 소득 없이 내야 하는 부담스러운 세금입니다. 그런데 1세대1주택자라면 나이와 보유 기간에 따라 종부세를 크게 줄일 수 있는 세액공제가 있습니다. 이 가이드는 고령자 세액공제와 장기보유 세액공제를 합쳐 최대 80%까지 감면받는 방법을 종합부동산세법 §9를 기준으로 주택 소유자와 은퇴 준비층 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-real-estate-tax-elderly-longterm-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떤 세액공제가 있나요?</h2>

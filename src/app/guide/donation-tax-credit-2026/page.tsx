@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function DonationTaxCredit2026Page() {
                   종합소득세 계산 때 기부금을 낸 금액의 일정 비율을 직접 세금에서 뺄 수 있는 제도가 바로 기부금 세액공제입니다. 소득세법 §59의4에 따라 기부액 규모별로 15%와 30%의 두 단계 공제율이 적용되며, 대상기부금도 일반기부금·정치자금·고향사랑기부금별로 다릅니다. 이 가이드는 기부금 세액공제의 정확한 공제율, 한도, 대상기부금을 정리하고, 실제 계산 방법과 함정까지 완전히 설명해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="donation-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기부금 세액공제란 무엇인가</h2>

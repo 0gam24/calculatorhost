@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
                   부모님에게 부동산이나 큰돈을 증여받으면 세금은 현금으로 내야 하는데, 정작 손에 쥔 현금이 부족한 경우가 많습니다. 이럴 때 쓰는 제도가 분납과 연부연납입니다. 이 글은 어느 정도 세액부터 나눠 낼 수 있는지, 몇 년에 걸쳐 나눌 수 있는지, 이자 성격의 가산금과 담보는 어떻게 되는지를 상속세및증여세법 기준으로 정리합니다. 자금 계획을 세우는 증여받은 분을 위한 가이드입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gift-tax-installment-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증여세도 나눠 낼 수 있나요?</h2>

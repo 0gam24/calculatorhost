@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function CommercialLeasePremiumRecoveryProtection2026Page() {
                   장사를 접거나 옮길 때 임차인이 다음 사람에게 권리금을 받고 나가는 것은 자영업자의 중요한 자산 회수 수단입니다. 그런데 임대인이 신규임차인과의 계약을 막아 권리금을 못 받게 만드는 일이 종종 벌어집니다. 이 가이드는 상가건물임대차보호법 §10의4에 따라 임대인의 어떤 행동이 금지되는지, 손해배상은 얼마까지 받는지, 언제까지 청구해야 하는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="commercial-lease-premium-recovery-protection-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">권리금 회수기회 보호란 무엇인가요?</h2>

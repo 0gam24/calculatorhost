@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 기업 출산지원금 근로소득 비과세 확대 개편안 (직장인 부모 롱테일)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function EmployerChildbirthGrantNontax2026Page() {
                   회사에서 출산 축하로 목돈을 받았는데 세금을 떼일까 걱정하는 직장인 부모를 위한 글입니다. 결론부터 말하면 요건을 갖춘 출산지원금은 전액 비과세라 세금이 붙지 않습니다. 이 글은 얼마까지, 몇 번까지 비과세인지, 보육수당 월 20만원 비과세와 어떻게 다른지, 그리고 2026년 세제개편안이 임신 기간과 위탁아동까지 어떻게 넓히는지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="employer-childbirth-grant-nontax-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">회사가 준 출산지원금, 세금 내나요?</h2>

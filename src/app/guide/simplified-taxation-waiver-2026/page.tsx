@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function SimplifiedTaxationWaiver2026Page() {
                   간이과세자인데 매입세액을 공제받고 싶거나 거래처가 세금계산서를 요구해 일반과세로 바꿔야 하나 고민하는 사장님이라면, 간이과세 포기가 무엇이고 언제부터 적용되며 손해는 아닌지 궁금할 것입니다. 이 가이드는 부가가치세법 §70을 근거로 간이과세 포기의 이유, 신고 시점, 3년 재적용 제한, 간이 대 일반과세 손익 비교를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="simplified-taxation-waiver-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세 포기란 무엇인가요?</h2>

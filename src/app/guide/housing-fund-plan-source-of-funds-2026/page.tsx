@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HousingFundPlanSourceOfFunds2026Page() {
                   이 가이드는 6억원 이상 주택이나 규제지역 주택을 사기로 계약한 매수인을 위한 것입니다. 자금조달계획서는 집값을 어떻게 마련했는지 정부에 밝히는 서류로, 잘못 적으면 자금출처조사나 증여세 추징으로 이어질 수 있습니다. 누가 언제 내야 하는지, 자기자금과 차입금을 어떻게 나눠 적는지, 부모 지원금은 어떻게 처리하는지를 부동산 거래신고법 조항과 함께 단계별로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-fund-plan-source-of-funds-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자금조달계획서란 무엇인가요?</h2>

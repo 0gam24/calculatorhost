@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function MedicalExpenseOutOfPocketCapRefund2026Page() {
                   큰 병으로 병원비가 몰릴수록 가계는 흔들리기 쉽습니다. 국민건강보험은 이런 상황을 완화하기 위해, 1년 동안 낸 건강보험 본인일부부담금이 소득분위별 상한액을 넘으면 그 초과분을 공단이 돌려주도록 하고 있습니다. 이 가이드는 국민건강보험법 §44와 시행령 §19에 따른 본인부담상한제의 구조, 2026년 최고상한액 843만원의 의미, 제외되는 항목, 그리고 실제 신청 방법까지 순서대로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="medical-expense-out-of-pocket-cap-refund-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">본인부담상한제란 무엇인가요?</h2>

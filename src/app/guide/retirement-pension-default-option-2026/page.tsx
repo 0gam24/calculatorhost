@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -159,6 +160,7 @@ export default function RetirementPensionDefaultOption2026Page() {
                   DC형이나 IRP 퇴직연금은 내가 직접 굴려야 하는 계좌인데, 많은 사람이 운용 지시를 하지 않아 돈이 그냥 잠자고 있습니다. 이 가이드는 그 방치를 막는 디폴트옵션(사전지정운용제도)이 무엇인지, 상품 유형과 위험등급은 어떻게 고르는지, 직접운용과 비교해 언제 유리한지를 정리합니다. 대상 독자는 퇴직연금을 굴려야 하는데 어떻게 손대야 할지 막막한 직장인과 투자자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="retirement-pension-default-option-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">디폴트옵션이란 무엇인가요?</h2>

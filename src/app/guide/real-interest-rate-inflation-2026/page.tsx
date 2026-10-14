@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -179,6 +180,7 @@ export default function RealInterestRateInflation2026Page() {
                   정확히 이해하고, 세금과 물가를 모두 고려한 실질 수익률을 계산해보세요.
                 </p>
               </header>
+              <GuideCalculatorCta slug="real-interest-rate-inflation-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

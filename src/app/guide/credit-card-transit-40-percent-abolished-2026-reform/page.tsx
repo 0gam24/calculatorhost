@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -157,6 +158,7 @@ export default function CreditCardTransit40PercentAbolished2026ReformPage() {
                   기획재정부가 2026-08-03 발표한 세제개편안에 신용카드 소득공제 우대율 조정이 담겼습니다. 그동안 대중교통·전통시장·도서공연에 공통 적용되던 우대공제율 40%가 대중교통에서만 폐지되고, 신용카드 15%·체크카드 30%라는 일반 공제율로 되돌아갑니다. 개편안이 국회를 통과하면 2027-01-01 이후 사용분부터 적용됩니다. 이 가이드는 개편 4가지 축을 사례 계산과 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="credit-card-transit-40-percent-abolished-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">무엇이 바뀌나 (핵심 요약)</h2>

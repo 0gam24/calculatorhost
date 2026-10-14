@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function PropertyTaxBurdenCap2026Page() {
                   최근 몇 년간 공시가격이 급등하면서 주택소유자들의 재산세 부담이 크게 늘었습니다. 그런데 정부는 이런 급격한 세부담 증가를 완화하기 위해 세부담상한제라는 제도를 운영 중입니다. 이 가이드는 공시가가 올라도 실제로 납부하는 재산세가 어떻게 제한되는지, 상한율은 무엇인지, 그리고 그 계산법까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-burden-cap-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">세부담상한제란 무엇인가</h2>

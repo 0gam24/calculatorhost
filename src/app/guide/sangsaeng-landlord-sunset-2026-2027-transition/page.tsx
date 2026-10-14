@@ -2,6 +2,7 @@
 // 2026-08-03 세제개편안 상생임대주택 특례 일몰과 유예 조항 신설
 // 색인 표면 확장 + 시즈널 트래픽 흡수 (임대인 매도 시나리오 검색 폭증 예상)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -157,6 +158,7 @@ export default function SangsaengLandlordSunsetPage() {
                   2026년 8월 3일 발표된 세제개편안은 상생임대주택 특례를 2026년 12월 31일부로 일몰 종료하되, 이미 상생임대차 계약을 맺은 임대인의 신뢰이익 보호를 위해 양도기한 유예를 신설했습니다. 이 가이드는 계약 종료 시점별 유예 기한, 요건 변화, 세금 차이, 실제 매도 사례 3개까지 정리해 지금 상생 계약 중인 임대인이 언제까지 매도해야 혜택을 유지할 수 있는지를 한 번에 답합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="sangsaeng-landlord-sunset-2026-2027-transition" />
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4" data-speakable>
                 <p className="font-semibold text-text-primary">30초 요약</p>

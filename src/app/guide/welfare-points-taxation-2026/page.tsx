@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function WelfarePointsTaxation2026Page() {
                   회사에서 주는 복지포인트로 쇼핑을 하다 보면 문득 궁금해집니다. 이게 월급도 아닌데 왜 급여명세서에는 세금이 붙어 있을까요. 이 글은 직장인을 위해 복지포인트가 세법상 어떻게 취급되는지, 대법원은 뭐라고 판단했는지, 공무원과 왜 다른지, 그리고 내 복지포인트에서 세금이 얼마나 떼이는지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="welfare-points-taxation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">복지포인트도 세금을 내나요?</h2>

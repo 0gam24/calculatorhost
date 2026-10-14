@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -193,6 +194,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                   단계별 신고법·절세 5가지·환급 받는 법까지 모두 해결됩니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="may-comprehensive-income-tax" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

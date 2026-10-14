@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function SmeYouthIncomeTaxReduction2026Page() {
                   중소기업에 다니는 청년이라면 근로소득세의 90%를 5년간 돌려받을 수 있는 강력한 제도가 있습니다. 바로 중소기업 취업자 소득세 감면입니다. 매년 최대 200만원까지 세금이 깎이는데, 신청을 안 해 놓치는 분이 의외로 많습니다. 이 가이드는 감면 대상, 청년 나이 기준과 병역 차감, 신청 방법, 그리고 2026년 말 일몰 기한까지 조세특례제한법 조문으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="sme-youth-income-tax-reduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">감면 제도란 무엇인가</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 월세 세액공제 확대 급상승 검색 흡수, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function MonthlyRentTaxCreditExpansion2026ReformPage() {
                   2026년 8월 3일 발표된 세제개편안은 무주택 임차인의 월세 세액공제를 확대하는 방향을 담았습니다. 이 글은 월세를 내는 직장인과 청년을 위해, 지금 얼마를 돌려받는지, 총급여 조건은 무엇인지, 그리고 개편안이 통과되면 최대 환급액이 얼마로 늘어나는지를 계산 예시와 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="monthly-rent-tax-credit-expansion-2026-reform" />
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-5" data-speakable>
                 <p className="font-semibold text-text-primary">30초 요약</p>

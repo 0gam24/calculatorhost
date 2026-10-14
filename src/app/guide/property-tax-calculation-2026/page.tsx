@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function PropertyTaxCalculation2026Page() {
                   매년 6월이면 도착하는 재산세 납세 통지서. 그런데 그 금액이 정확히 어떻게 계산되는지 아는 사람은 많지 않습니다. 과세표준에서 세율을 곱하고, 누진공제를 차감하고, 지방교육세까지 더하는 복잡한 과정이 있거든요. 이 가이드는 주택 재산세의 계산 원리를 단계별로 풀어 설명하고, 1세대1주택 특례와 지방교육세까지 모두 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-calculation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재산세 계산의 기본 공식</h2>

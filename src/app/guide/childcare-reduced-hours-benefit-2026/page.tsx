@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function ChildcareReducedHoursBenefit2026Page() {
                   아이를 키우면서 온종일 일하기 어려울 때 쓸 수 있는 제도가 육아기 근로시간 단축입니다. 아예 쉬는 육아휴직과 달리 일을 하면서 시간을 줄이고, 줄인 시간만큼 고용보험에서 급여를 받습니다. 다만 급여 계산이 통상임금 100%와 80%로 나뉘어 헷갈립니다. 이 가이드는 대상·계산법·상한·사용 기간을 조문 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="childcare-reduced-hours-benefit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">육아기 근로시간 단축이란?</h2>

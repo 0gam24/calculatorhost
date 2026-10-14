@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -160,6 +161,7 @@ export default function VatNonDeductibleInputTax2026Page() {
                   카드로 결제하고 세금계산서까지 받았는데 왜 부가세가 공제되지 않는지, 접대비·차량·식비가 헷갈리는 사업자를 위한 가이드입니다. 부가가치세법 §39에 따라 공제받지 못하는 매입세액 7가지를 계산 사례와 함께 정리했습니다. 2026년 7월 부가세 확정신고 시즌 전에 반드시 확인하세요.
                 </p>
               </header>
+              <GuideCalculatorCta slug="vat-non-deductible-input-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">매입세액 불공제란 무엇인가요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function StressDsrStage3_2026Page() {
                   집을 사려고 대출을 알아보다 보면 "스트레스 DSR 3단계 때문에 한도가 줄었다"는 말을 자주 듣습니다. 이 가이드는 대출을 앞둔 실수요자를 위해 스트레스 DSR이 무엇인지, 스트레스 금리 1.5%p가 어떻게 한도를 낮추는지, 2026년 전국 확대 적용으로 실제 한도가 얼마나 줄어드는지를 계산 사례와 함께 쉽게 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="stress-dsr-stage3-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">스트레스 DSR 3단계란 무엇인가요?</h2>

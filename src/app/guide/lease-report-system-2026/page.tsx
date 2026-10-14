@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function LeaseReportSystem2026Page() {
                   전월세 계약을 하면 이제 30일 안에 신고해야 합니다. 2025년 5월 말 계도기간이 끝나면서, 그 이후 계약부터는 기한을 넘기면 과태료가 부과됩니다. 그런데 모든 계약이 대상은 아니고 보증금·월세 기준이 있습니다. 이 가이드는 부동산 거래신고 등에 관한 법률 §6의2를 기준으로 신고 대상, 기한, 방법, 과태료, 확정일자와의 관계까지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="lease-report-system-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전월세 신고제란 무엇인가요?</h2>

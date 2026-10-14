@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function VehicleTaxPrepaymentRefund2026Page() {
                   1월에 자동차세를 연납하면 5% 할인을 받는다는 것을 알고 계신가요? 그런데 혹시 연중에 자동차를 팔거나 폐차해야 한다면 어떻게 될까요? 손해만 보는 걸까요? 아닙니다. 자동차세는 차량을 소유한 기간에만 부과되므로, 연중에 소유권을 이전하거나 폐차하면 소유하지 않게 된 잔여 기간만큼 세금을 돌려받을 수 있습니다. 이 가이드는 자동차세 연납 환급의 원리, 대상, 절차를 상세히 설명하고, 실제 환급 계산 사례까지 제시합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="vehicle-tax-prepayment-refund-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자동차세 연납 환급은 왜 가능한가?</h2>

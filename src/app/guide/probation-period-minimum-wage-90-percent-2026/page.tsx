@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -164,6 +165,7 @@ export default function ProbationPeriodMinimumWage90Percent2026Page() {
                   회사에서 수습이라며 최저시급의 90%만 지급하는 경우가 여전히 흔합니다. 결론부터 말하면, 수습 감액은 최저임금법 제5조 제2항과 시행령 제3조에 따라 세 가지 요건을 모두 갖췄을 때에만 합법입니다. 이 글에서는 2026년 최저임금 10,320원 기준 수습 90%인 9,288원이 어떤 경우에만 적용되는지, 계약직·편의점·주방보조는 왜 100%를 받아야 하는지, 미달 지급 시 어떻게 대응할 수 있는지 절차와 계산 사례로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="probation-period-minimum-wage-90-percent-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">수습이면 최저임금 90%만 줘도 되나요</h2>

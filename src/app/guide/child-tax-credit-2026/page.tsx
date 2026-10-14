@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ChildTaxCredit2026Page() {
                   자녀가 있으면 연말정산이나 종합소득세 신고 시 자녀세액공제를 받을 수 있습니다. 2024년 세법 개정으로 공제액이 크게 확대되었는데, 많은 사람들이 정확한 금액을 모르고 계신다는 것이 현실입니다. 이 가이드는 자녀세액공제의 정확한 공제액, 8세 기준, 출산·입양 추가공제, 맞벌이 적용 방법까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="child-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자녀세액공제란 무엇인가</h2>

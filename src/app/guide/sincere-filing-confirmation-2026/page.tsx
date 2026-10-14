@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -178,6 +179,7 @@ export default function SincereFilingConfirmation2026Page() {
                   가산세를 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="sincere-filing-confirmation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">성실신고확인제란 무엇인가요?</h2>

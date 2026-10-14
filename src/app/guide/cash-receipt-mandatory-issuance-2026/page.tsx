@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function CashReceiptMandatoryIssuance2026Page() {
                   이 가이드는 의무발행업종에 해당하는 자영업자·개인사업자, 그리고 현금 결제 후 영수증을 챙기려는 소비자를 위한 글입니다. 어떤 거래에 발급 의무가 있는지, 미발급 시 가산세가 얼마인지, 소비자가 요구하지 않을 때는 어떻게 처리하는지를 소득세법 조문에 근거해 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="cash-receipt-mandatory-issuance-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">현금영수증 의무발행이란</h2>

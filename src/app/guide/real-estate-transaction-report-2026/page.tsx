@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function RealEstateTransactionReport2026Page() {
                   집을 사거나 팔았을 때 가장 자주 놓치는 절차가 실거래 신고입니다. 부동산 거래신고 등에 관한 법률 §3은 매매계약 체결일부터 30일 이내 신고를 요구하고, 이를 어기면 최대 3천만원까지 과태료가 부과될 수 있습니다. 이 가이드는 누가, 언제까지, 어떻게 신고해야 하는지와 지연·미신고·거짓신고 각각의 과태료 구조를 실무 중심으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="real-estate-transaction-report-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">부동산 실거래 신고란 무엇인가요?</h2>

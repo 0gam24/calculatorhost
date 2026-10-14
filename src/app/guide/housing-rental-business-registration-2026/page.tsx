@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function HousingRentalBusinessRegistration2026Page() {
                   주택임대사업자로 등록하면 종부세 합산배제와 양도세 특례 같은 실질 감면 혜택을 받을 수 있지만, 10년이라는 긴 임대의무와 5% 증액제한을 어기면 그동안의 감면이 추징될 수 있습니다. 이 가이드는 2020년 7·10 대책 이후 바뀐 등록 가능 유형, 대표 세제혜택, 사업자로서의 의무, 자동말소·자진말소 시 세금 처리, 등록 절차까지 민간임대주택법과 세법 기준으로 순서대로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-rental-business-registration-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택임대사업자란 무엇이고 누가 등록하나</h2>

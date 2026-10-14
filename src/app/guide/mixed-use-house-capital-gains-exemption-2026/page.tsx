@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function MixedUseHouseCapitalGainsExemption2026Page() {
                   이 가이드는 1층에 가게, 위층에 집이 있는 이른바 상가주택을 팔려는 소유자를 위한 것입니다. 같은 건물이라도 주택과 상가가 섞여 있으면 양도세 비과세 판정이 까다롭고, 2022년 개정으로 규칙이 크게 바뀌었습니다. 주택 면적과 상가 면적을 어떻게 비교하는지, 실거래가 12억원을 넘으면 무엇이 달라지는지, 소득세법 시행령 조항과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="mixed-use-house-capital-gains-exemption-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상가주택은 양도세를 어떻게 판정하나요?</h2>

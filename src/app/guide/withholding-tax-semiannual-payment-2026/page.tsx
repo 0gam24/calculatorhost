@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function WithholdingTaxSemiannualPayment2026Page() {
                   직원이 적은 사업장은 매달 원천세를 신고·납부하는 대신 반기(6개월)에 한 번만 처리할 수 있습니다. 이 가이드는 원천세 반기별납부의 대상 요건, 상반기·하반기 신청 기간, 세무서 승인 절차, 그리고 승인 후에도 매달 내야 하는 예외 세액을 실제 절차 순서대로 정리합니다. 대상 독자는 상시고용인원 20명 이하 소규모 사업장의 사업주와 담당자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="withholding-tax-semiannual-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">원천세 반기납부란 무엇인가요?</h2>

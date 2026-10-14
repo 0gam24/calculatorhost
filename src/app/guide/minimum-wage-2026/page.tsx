@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function MinimumWage2026Page() {
                   2026년 최저임금이 확정되었습니다. 시급 10,320원으로 전년 10,030원에서 290원(2.9%) 인상되었으며, 17년 만에 노사 합의로 이루어진 결정입니다. 이 가이드는 최저임금이 정확히 얼마인지, 월급으로 환산하면 어떻게 되는지, 주휴와 수습 기간은 어떻게 적용되는지, 그리고 위반 시 벌칙까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="minimum-wage-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">2026년 최저임금 확정값</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function SimplifiedTaxpayerJulyVat2026Page() {
                   간이과세자는 1년에 한 번, 다음 해 1월에만 부가세를 신고한다고 알고 있는 분이 많습니다. 그런데 매년 7월이 되면 세무서 고지서를 받거나 "예정신고 하라"는 안내를 받고 당황하는 경우가 적지 않습니다. 결론부터 말하면, 대부분의 간이과세자는 별도 신고 없이 예정부과 고지서를 받아 납부만 하면 되고, 상반기에 세금계산서를 발급한 간이과세자만 예정신고를 직접 해야 합니다. 2026년 7월 부가세 1기 확정신고 마감 시즌에 맞춰 헷갈리기 쉬운 규칙을 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="simplified-taxpayer-july-vat-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세자도 7월에 부가세 신고하나요?</h2>

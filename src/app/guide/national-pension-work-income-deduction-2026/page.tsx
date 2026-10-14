@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function NationalPensionWorkIncomeDeduction2026Page() {
                   국민연금을 받기 시작한 뒤에도 일을 계속하면 연금이 깎일까 봐 망설이는 분이 많습니다. 결론부터 말하면, 소득이 일정 기준을 넘을 때만 깎이고 그 기준이 2026년 6월 17일부터 크게 올랐습니다. 이 가이드는 은퇴 후 재취업했을 때 노령연금이 얼마부터, 얼마나 깎이는지와 감액을 피하는 방법을 국민연금법 §63의2를 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-work-income-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">노령연금 감액이란 무엇인가요?</h2>

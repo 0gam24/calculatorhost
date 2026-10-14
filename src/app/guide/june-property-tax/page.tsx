@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -159,6 +160,7 @@ export default function JunePropertyTaxPage() {
                   약 50% 절세 가능. 세부담 상한·분할 납부·신용카드 납부까지 한 페이지에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="june-property-tax" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

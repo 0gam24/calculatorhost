@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -163,6 +164,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
           {/* Top Ad */}
           {/* Structured Summary */}
           <section className="space-y-4">
+            <GuideCalculatorCta slug="health-insurance-regional-subscriber-2026" />
             <div className="bg-bg-card rounded-lg p-4 border border-border-base">
               <h2 className="text-sm font-semibold text-text-primary mb-3">직장가입자 vs 지역가입자 보험료 비교</h2>
               <table className="w-full text-sm">

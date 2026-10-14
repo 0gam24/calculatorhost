@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function IrpEarlyWithdrawalConditions2026Page() {
                   IRP는 노후를 위해 쌓는 계좌라 아무 때나 돈을 꺼낼 수 없습니다. 그러나 무주택자의 주택 구입, 6개월 이상 요양, 파산 같은 법에서 정한 사유에 해당하면 만 55세 전이라도 일부를 중도인출할 수 있습니다. 이 가이드는 어떤 사유일 때 인출이 가능한지, 사유마다 어떤 서류와 요건이 필요한지, 그리고 인출 시 세금은 어떻게 되는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="irp-early-withdrawal-conditions-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">IRP는 아무 때나 인출이 되나요?</h2>

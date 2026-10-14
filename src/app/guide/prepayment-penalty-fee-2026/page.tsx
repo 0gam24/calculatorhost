@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -171,6 +172,7 @@ export default function PrepaymentPenaltyFee2026Page() {
                   표준 산식, 실제 사례, 면제·감면 일반 관행을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="prepayment-penalty-fee-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -184,6 +185,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
               </p>
 
               {/* 구조화 요약, GEO 최적화 */}
+              <GuideCalculatorCta slug="earned-income-tax-credit-vs-child" />
               <div className="my-8 rounded-lg border border-border-base bg-bg-card p-6">
                 <h2 className="mb-4 text-xl font-semibold text-text-primary">한눈에 보기</h2>
                 <table className="w-full text-sm">

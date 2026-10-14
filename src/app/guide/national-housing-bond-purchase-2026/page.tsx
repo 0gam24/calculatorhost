@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function NationalHousingBondPurchase2026Page() {
                   부동산을 매매·상속·증여로 취득해 소유권이전등기를 신청하면 국민주택채권을 의무적으로 매입해야 합니다. 그런데 정작 매입금액이 얼마인지, 즉시매도 시 실제로 얼마를 부담하는지 헷갈리는 분이 많습니다. 이 가이드는 매입금액 산정 원리, 시가표준액 구간별 매입률 예시, 즉시매도 본인부담금 계산 사례까지 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-housing-bond-purchase-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민주택채권 매입이란 무엇인가</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function InheritanceTaxCalculation2026Page() {
                   상속이 발생하면 상속세를 정확히 계산하는 것은 복잡한 과정입니다. 상속재산 파악부터 각종 공제 적용, 5단계 누진세율까지 한 단계도 놓칠 수 없습니다. 이 가이드는 상속세를 처음부터 끝까지 정확하게 계산하는 방법을 체계적으로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-tax-calculation-2026" />
 
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">상속세 5단계 세율표와 누진공제</h2>

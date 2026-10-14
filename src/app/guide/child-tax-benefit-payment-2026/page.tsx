@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ChildTaxBenefit2026Page() {
                   자녀를 키우는 저소득·중간소득 가구라면 자녀장려금으로 자녀 1명당 최대 100만원을 받을 수 있습니다. 문제는 내 소득이면 얼마를 받는지, 근로장려금과 함께 받을 수 있는지 헷갈린다는 점입니다. 이 가이드는 자녀장려금 지급액 산정 공식과 소득·재산 요건, 8월 27일 지급 일정을 조세특례제한법 기준으로 쉽게 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="child-tax-benefit-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">자녀장려금은 자녀 1명당 얼마를 받나요?</h2>

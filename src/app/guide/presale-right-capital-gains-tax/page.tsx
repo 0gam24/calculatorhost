@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -139,6 +140,7 @@ export default function PresaleRightCgtGuide() {
                   (소득세법 §94①4호·§104①2호 나목). 분양권 매도 검토 시 핵심 세제를 한 페이지에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="presale-right-capital-gains-tax" />
 
               {/* 1. 분양권 정의 + 입주권/주택 차이 */}
               <section aria-label="분양권 정의" className="card">

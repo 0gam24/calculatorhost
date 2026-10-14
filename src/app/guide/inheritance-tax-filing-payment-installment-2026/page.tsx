@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function InheritanceTaxFilingPaymentInstallment2026Page() {
                   이 가이드는 가족의 갑작스러운 사망으로 상속세를 처음 마주한 상속인을 위한 것입니다. 상속세는 신고기한이 정해져 있고, 세액이 크면 담보를 잡고 여러 해에 걸쳐 나눠 낼 수도 있습니다. 언제까지 신고해야 하는지, 현금이 부족할 때 어떤 방법으로 나눠 낼 수 있는지, 각 방법의 요건과 절차를 상속세및증여세법 조항과 함께 차례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-tax-filing-payment-installment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상속세는 언제까지 신고·납부하나요?</h2>

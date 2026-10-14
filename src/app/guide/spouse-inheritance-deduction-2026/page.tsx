@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function SpouseInheritanceDeduction2026Page() {
                   부모 중 한 분이 돌아가시고 배우자가 생존해 있으면 상속세 부담이 크게 줄어듭니다. 배우자 상속공제 덕분에 최소 5억원은 조건 없이 공제되고, 상황에 따라 최대 30억원까지 공제되기 때문입니다. 이 가이드는 배우자 상속공제의 정확한 한도 계산법, 법정상속분과의 관계, 분할신고 기한, 그리고 실제 계산 사례를 상속세및증여세법 §19를 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="spouse-inheritance-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배우자 상속공제란 무엇인가요?</h2>

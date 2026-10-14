@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function NationalPensionPremium2026() {
                   국민연금 보험료는 2026년부터 <strong>9.5%</strong>로 인상되며, 기준소득월액 상한은 2026년 7월부터 <strong>637만원에서 659만원</strong>으로 조정됩니다. 직장가입자와 지역가입자에게 미치는 영향은 크게 다릅니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-premium-2026" />
 
               <div className="space-y-2 rounded-lg border border-border-base bg-bg-card p-4">
                 <p className="text-sm font-semibold text-text-primary">국민연금 보험료 2025 vs 2026 변경</p>

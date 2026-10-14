@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function HousingPensionReverseMortgage2026() {
                   집을 담보로 평생 매월 연금을 받는 국가보증 역모기지, 주택연금. 가입조건부터 월지급금 결정요인, 배우자 승계, 세제 혜택까지 놓친 부분 없이 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-pension-reverse-mortgage-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">주택연금 한눈에</h2>

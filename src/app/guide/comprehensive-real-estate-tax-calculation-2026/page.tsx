@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -139,6 +140,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                   6월 1일은 종합부동산세의 과세기준일입니다. 2주택 이상 보유하고 있다면, 국세청의 공시가격 합계에 기반한 종부세가 부과됩니다. 그런데 공시가격만으로는 세액이 결정되지 않습니다. 공제금액을 차감하고, 공정시장가액비율을 곱하고, 세율 구간을 찾아 누진공제를 적용하는 복잡한 과정이 필요합니다. 이 가이드는 종합부동산세 계산의 각 단계를 명확하게 설명하여 최종 납부액을 정확히 이해할 수 있도록 돕습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-real-estate-tax-calculation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">종합부동산세 계산 기본 흐름</h2>

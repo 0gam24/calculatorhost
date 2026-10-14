@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -157,6 +158,7 @@ export default function PresaleRightResaleRestriction2026Page() {
                   아파트에 당첨되면 그 분양권을 언제 팔 수 있는지가 중요한 문제가 됩니다. 전매제한은 당첨된 분양권을 일정 기간 못 팔게 하는 규제이고, 어기면 형사처벌과 청약 제한이 따릅니다. 이 가이드는 청약 당첨자와 분양권 투자를 고민하는 사람을 위해 전매제한의 개념, 기간이 정해지는 틀, 위반 처벌, 재당첨 제한, 그리고 팔 때 붙는 세금까지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="presale-right-resale-restriction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">분양권 전매제한이 무엇인가요?</h2>

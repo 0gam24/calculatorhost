@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalPensionDivorceSplit2026Page() {
                   오랜 결혼생활 끝에 이혼하면 노후 준비가 한순간에 흔들립니다. 특히 배우자만 국민연금을 냈다면 내 노후 소득은 어떻게 되는지 불안할 수밖에 없습니다. 국민연금 분할연금은 이런 상황에서 전 배우자의 연금 중 혼인기간에 해당하는 몫을 나눠 받게 해주는 제도입니다. 이 가이드는 분할연금의 요건, 비율, 선청구와 소멸시효를 국민연금법 제64조 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-divorce-split-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">분할연금이란 무엇인가요?</h2>

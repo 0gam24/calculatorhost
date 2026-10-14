@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function ComprehensiveIncomeTaxInterimPrepayment2026Page() {
                   개인사업자와 프리랜서는 5월 종합소득세 확정신고만 챙기면 된다고 생각하기 쉽지만, 11월에도 세금을 미리 내는 중간예납이 기다리고 있습니다. 갑자기 날아온 고지서에 당황하지 않도록, 이 가이드는 소득세법 §65에 따른 중간예납의 계산 방식, 소액 제외 기준, 사업 부진 시 감액 방법, 분납까지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-income-tax-interim-prepayment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">중간예납은 왜 내는 건가요?</h2>

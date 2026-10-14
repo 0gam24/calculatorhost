@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function MarriageTaxCredit2026Page() {
                   결혼을 하면 챙길 것이 많지만, 혼인신고만 제때 해도 세금 100만원을 돌려받을 수 있다는 사실은 의외로 모르는 분이 많습니다. 결혼세액공제는 2024년부터 2026년까지 3년간 한시적으로 운영되는 제도로, 나이나 소득 제한 없이 부부가 각각 50만원씩 세금을 깎아줍니다. 이 가이드는 누가, 언제, 어떻게 받는지를 조세특례제한법 §92를 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="marriage-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">결혼세액공제란 무엇인가요?</h2>

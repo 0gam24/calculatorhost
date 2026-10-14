@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function ParentsLivingExpensesGiftTax2026Page() {
                   부모가 자녀에게 매달 보내는 생활비나 용돈에도 증여세가 붙는지 궁금해하는 사람이 많습니다. 이 가이드는 부양의무자 사이 생활비·교육비가 언제 비과세되고 언제 과세로 전환되는지, 조부모가 준 용돈은 어떻게 다른지, 목돈을 물려줄 때 쓰는 증여재산공제와는 무엇이 다른지를 상속세및증여세법 §46·시행령 §35를 기준으로 정리합니다. 대상 독자는 부모·자녀 간 정기 송금이 있는 가구입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="parents-living-expenses-gift-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">부모가 준 생활비는 왜 증여세가 비과세인가요?</h2>

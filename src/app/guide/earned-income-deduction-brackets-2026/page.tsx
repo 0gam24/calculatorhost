@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function EarnedIncomeDeductionBrackets2026Page() {
                   연봉이 그대로 세금 기준이 되는 것은 아닙니다. 총급여에서 근로소득공제를 먼저 빼야 세금을 매기는 근로소득금액이 나오기 때문입니다. 이 가이드는 연말정산과 종합소득세 계산의 출발점인 근로소득공제가 총급여 구간별로 얼마씩 적용되는지, 총급여와 근로소득금액이 어떻게 다른지, 그리고 연봉 3천·5천·1억일 때 실제로 얼마가 빠지는지를 정리했습니다. 내 세금 구조를 이해하려는 직장인을 위한 글입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="earned-income-deduction-brackets-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로소득공제란 무엇인가요</h2>

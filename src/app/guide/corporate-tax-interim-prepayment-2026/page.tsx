@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function CorporateTaxInterimPrepayment2026Page() {
                   12월 결산 법인이라면 8월 31일까지 법인세 중간예납을 신고·납부해야 합니다. 이 글은 처음 중간예납을 맞는 대표님과 경리 담당자를 위해, 신고 기한이 언제인지, 세액을 어떤 방식으로 계산하는지, 어떤 법인이 면제되는지, 그리고 세금이 부담될 때 나눠 내는 방법까지 순서대로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="corporate-tax-interim-prepayment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">법인세 중간예납이란 무엇인가요?</h2>

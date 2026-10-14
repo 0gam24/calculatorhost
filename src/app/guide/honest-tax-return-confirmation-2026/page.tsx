@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HonestTaxReturnConfirmation2026Page() {
                   업종별 수입금액이 일정 기준을 넘는 개인사업자는 종합소득세를 신고하기 전에 세무사 등 전문가의 확인을 받아야 합니다. 이 제도가 바로 성실신고확인제도입니다. 이 가이드는 업종별 대상 기준, 연장된 신고기한, 확인비용 세액공제, 미제출 시 불이익까지 성실신고확인제도의 핵심을 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="honest-tax-return-confirmation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">성실신고확인제도란 무엇인가요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -175,6 +176,7 @@ export default function SmallBusinessUnder5EmployeesLaborLaw2026Page() {
                   "우리 회사는 5인 미만이니 연차도 없고 야근수당도 없다"는 말을 자주 듣습니다. 절반은 맞고 절반은 틀립니다. 근로기준법은 5인 미만 사업장에도 적용되지만 시행령 별표1이 정한 일부 조항만 적용됩니다. 이 가이드는 연차·연장가산수당·부당해고 구제가 왜 안 되는지, 반대로 주휴수당·퇴직금·최저임금·근로계약서·해고예고·산재는 왜 그대로 보장되는지, 상시근로자 수는 어떻게 세는지를 실제 임금 사례와 함께 정확히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="small-business-under-5-employees-labor-law-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">한눈에 보기: 5인 미만과 5인 이상, 무엇이 다른가</h2>

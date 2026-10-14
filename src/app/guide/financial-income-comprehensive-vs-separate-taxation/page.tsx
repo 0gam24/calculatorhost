@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -139,6 +140,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                   달라집니다(소득세법 §14 ⑦). 이 기준선을 넘나드는 투자자라면 반드시 읽어야 할 가이드입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="financial-income-comprehensive-vs-separate-taxation" />
 
               {/* 1. 핵심 정의 */}
               <section aria-label="금융소득 정의" className="card">

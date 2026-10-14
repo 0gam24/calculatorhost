@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -159,6 +160,7 @@ export default function NationalEmploymentSupportAllowance2026Page() {
                   실업급여를 받을 조건이 안 되는 구직자에게도 소득을 보전하며 취업을 돕는 제도가 있습니다. 바로 국민취업지원제도입니다. 이 가이드는 1유형 구직촉진수당의 소득·재산 자격, 청년 완화 요건, 부양가족 추가, 신청 방법과 구직활동 의무까지 실전 순서로 정리합니다. 대상 독자는 실업급여 사각지대에 있는 구직자와 사회 초년 청년입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-employment-support-allowance-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민취업지원제도란 무엇인가요?</h2>

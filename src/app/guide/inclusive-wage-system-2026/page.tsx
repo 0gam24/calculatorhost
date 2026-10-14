@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function InclusiveWageSystemPage() {
                   "우리 회사는 포괄임금제라 야근수당이 없다"는 말을 듣고 그냥 넘어간 적이 있나요. 이 가이드는 야근이 잦은 직장인을 위해, 포괄임금제가 실제로 무엇이고 어떤 경우에 무효가 되는지, 그리고 초과근무 수당을 추가로 받을 수 있는지 판단 기준과 대응 순서를 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inclusive-wage-system-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">포괄임금제란 무엇인가</h2>

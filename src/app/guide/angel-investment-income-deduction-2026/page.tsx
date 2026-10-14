@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 엔젤투자(벤처투자조합 출자) 소득공제 조특법 §16 (투자자 절세 롱테일 흡수)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -187,6 +188,7 @@ export default function AngelInvestmentIncomeDeductionPage() {
                   정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="angel-investment-income-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">엔젤투자 소득공제란 무엇인가요?</h2>

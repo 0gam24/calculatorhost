@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NoranUmbrellaMutualAidDeduction2026Page() {
                   개인사업자와 프리랜서는 근로자처럼 자동으로 챙겨지는 공제가 많지 않아 종합소득세 부담이 크게 느껴집니다. 노란우산공제는 그런 사업자가 활용할 수 있는 대표적인 소득공제 수단이자 폐업 대비 안전망입니다. 이 가이드는 2025년 개정으로 상향된 공제한도(200~600만원), 가입 조건, 중도해지 시 세금, 압류 보호 혜택까지 조세특례제한법 §86의3을 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="noran-umbrella-mutual-aid-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">노란우산공제란 무엇인가요?</h2>

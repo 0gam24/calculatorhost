@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
               />
 
               {/* 1. 피부양자 정의 및 기본 요건 */}
+              <GuideCalculatorCta slug="health-insurance-dependent-qualification-2026" />
               <section aria-label="피부양자 정의" className="space-y-4">
                 <h2 className="text-2xl font-semibold">1⃣ 피부양자란?, 정의와 기본 요건</h2>
                 <div className="bg-bg-card rounded-lg border border-border-base p-4">

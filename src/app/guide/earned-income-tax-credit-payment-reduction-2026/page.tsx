@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function EitcPaymentReduction2026Page() {
                   근로장려금을 신청한 저소득 근로자라면 지금 가장 궁금한 것은 두 가지입니다. 언제 들어오는지, 그리고 왜 예상보다 적게 나오는지입니다. 이 가이드는 2026년 정기 지급일 8월 27일과, 재산·체납·기한후신청에 따라 금액이 깎이는 감액 구조, 그리고 지급 후에도 다시 환수될 수 있는 경우를 조세특례제한법 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="earned-income-tax-credit-payment-reduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로장려금 정기분은 언제 지급되나요?</h2>

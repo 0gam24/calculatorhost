@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalPensionCreditSystem2026Page() {
                   국민연금은 가입기간이 길수록 노후에 받는 연금이 늘어납니다. 그런데 출산, 군복무, 실업처럼 보험료를 내기 어려웠던 기간을 국가가 가입기간으로 대신 인정해주는 제도가 있습니다. 바로 국민연금 크레딧입니다. 이 가이드는 출산·군복무·실업 크레딧이 각각 몇 개월을 인정하는지, 누가 언제 어떻게 신청하는지, 그리고 연금액이 얼마나 늘어나는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-credit-system-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민연금 크레딧이란 무엇인가요?</h2>

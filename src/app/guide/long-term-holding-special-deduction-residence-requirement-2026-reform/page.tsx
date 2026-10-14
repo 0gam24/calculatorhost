@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 양도세 장특공 거주요건 재편 급상승 검색 흡수, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function LongTermHoldingSpecialDeductionResidenceRequirement2026R
                   2026년 8월 3일 발표된 세제개편안은 1세대1주택 양도세 장기보유특별공제를 단순 보유보다 실제 거주 중심으로 재편하는 방향을 담았습니다. 이 글은 집을 팔 계획이 있는 1주택자를 위해, 현행 장특공이 어떻게 최대 80%가 되는지, 거주하지 않으면 공제가 얼마나 줄어드는지, 개편 방향과 적용 시점을 계산 예시와 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="long-term-holding-special-deduction-residence-requirement-2026-reform" />
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-5" data-speakable>
                 <p className="font-semibold text-text-primary">30초 요약</p>

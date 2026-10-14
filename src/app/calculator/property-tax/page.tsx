@@ -242,7 +242,7 @@ export default function PropertyTaxPage() {
             id="main-content"
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
-            <CalculatorPageContent
+            <CalculatorPageContent guidesFor="property-tax"
               intro={
                 <header>
                   <Breadcrumb

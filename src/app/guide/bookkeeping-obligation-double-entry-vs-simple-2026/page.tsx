@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function BookkeepingObligation2026Page() {
                   종합소득세 신고 시즌이 되면 프리랜서와 개인사업자가 가장 먼저 부딪히는 질문이 있습니다. 나는 복식부기의무자인가, 간편장부대상자인가. 이 구분이 왜 중요한지, 업종별 기준선은 정확히 얼마인지, 그리고 장부를 쓰지 않았을 때 부과되는 무기장가산세 20%가 어떻게 계산되는지까지 사례 중심으로 정리해 드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="bookkeeping-obligation-double-entry-vs-simple-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기장의무란 무엇인가</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function PensionAccountTransfer2026Page() {
                   몇 년 전 은행이나 보험사에서 만든 연금저축이 수수료가 높거나 원하는 상품을 담을 수 없어 답답한 경우가 있습니다. 이럴 때 계좌를 해지하면 그동안 받은 세액공제를 토해내고 세금까지 물지만, 계좌를 그대로 다른 금융사로 옮기는 이전은 세금이 전혀 없습니다. 이 글은 연금계좌 이전이 왜 세금이 없는지, 어떻게 옮기는지, 연금저축과 IRP 사이 이체 요건과 주의점은 무엇인지를 은퇴 자산을 관리하는 분의 눈높이에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="pension-account-transfer-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연금계좌를 옮기면 세금을 내나요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function Workweek52OvertimePay2026Page() {
                   야근을 했는데 급여명세서의 연장수당이 맞는지 헷갈리는 직장인을 위한 가이드입니다. 주 52시간이라는 숫자가 어떻게 만들어지는지, 연장근로수당은 통상임금의 몇 배인지, 야간과 휴일이 겹치면 얼마가 되는지, 그리고 하루 8시간 초과와 주 40시간 초과가 왜 다른 기준인지를 근로기준법 조문과 계산 사례로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="52-hour-workweek-overtime-pay-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주 52시간은 어떻게 나온 숫자인가요?</h2>

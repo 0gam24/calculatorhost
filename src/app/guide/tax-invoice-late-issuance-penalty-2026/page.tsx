@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 자동 발행 가이드는 트래픽·색인 표면 동시 증가 (북극성 룰).
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -138,6 +139,7 @@ export default function GuidePage() {
                   세금계산서를 제때 발급하지 않으면 공급가액을 기준으로 가산세가 붙습니다. 지연발급과 미발급은 요율이 다르며, 전자세금계산서 의무 발급 사업자라면 종이 발급 자체도 별도 제재 대상이 됩니다. 이 가이드는 가산세가 발생하는 시점, 유형별 산정 방식, 그리고 실수를 줄이기 위한 실무 확인 사항을 안내합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="tax-invoice-late-issuance-penalty-2026" />
 
               <section className="space-y-3">
                 <h2 className="text-2xl font-semibold text-text-primary">세금계산서 발급 기한, 어디서 시작하나</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function SimplifiedTaxationVat2026Page() {
                   카페, 온라인 판매, 1인 스튜디오처럼 매출 규모가 작은 사업자라면 간이과세가 세금을 크게 줄여줍니다. 그런데 2024년 7월 기준금액이 오르고 세금계산서 발급 규칙이 바뀌면서 헷갈리는 분이 많습니다. 이 가이드는 간이과세자의 기준, 세액이 왜 낮은지, 세금계산서를 언제 발급해야 하는지, 그리고 부가세를 아예 안 내도 되는 조건까지 부가가치세법 조문으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="simplified-taxation-vat-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세자란 누구인가</h2>

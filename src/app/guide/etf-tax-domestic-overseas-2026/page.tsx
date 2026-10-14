@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function EtfTaxDomesticOverseas2026Page() {
                   ETF는 간편한 분산 투자 수단으로 인기이지만, 세금 구조는 종류마다 크게 다릅니다. 국내상장 국내주식형 ETF는 매매차익이 비과세인 반면, 국내상장 기타 ETF와 해외상장 ETF는 다른 방식으로 과세됩니다. 이 가이드는 ETF 종류별 과세 기준, 배당소득세와 양도소득세의 차이, 그리고 실제 세액 계산법까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="etf-tax-domestic-overseas-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">ETF 세금의 기본 원리</h2>

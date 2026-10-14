@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -140,6 +141,7 @@ export default function OneHousehold12BillionGuide() {
                   (소득세법 §89·§95).
                 </p>
               </header>
+              <GuideCalculatorCta slug="one-household-12-billion-exemption" />
 
               {/* 1. 비과세 3가지 조건 */}
               <section aria-label="비과세 조건" className="card">

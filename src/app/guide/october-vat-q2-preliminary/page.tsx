@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -168,6 +169,7 @@ export default function OctoberVatGuide() {
                   검토해야 합니다(부가가치세법 §48 + 시행령 §90).
                 </p>
               </header>
+              <GuideCalculatorCta slug="october-vat-q2-preliminary" />
 
               {/* 1. 신고 대상 구분 */}
               <section aria-label="신고 대상 구분" className="card">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function TenantLeaseRegistrationInjunction2026Page() {
                   전세·월세 계약이 끝났는데 임대인이 보증금을 돌려주지 않으면, 이사도 못 가고 발이 묶이기 쉽습니다. 이럴 때 임차권등기명령을 이용하면 대항력과 우선변제권을 지킨 채 다른 집으로 이사할 수 있습니다. 이 가이드는 임차권등기명령이 무엇인지, 누가 어떻게 신청하는지, 비용과 기간은 얼마인지, 그리고 신청 후 이사 시점은 언제로 잡아야 하는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="tenant-lease-registration-injunction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임차권등기명령이란 무엇인가요?</h2>

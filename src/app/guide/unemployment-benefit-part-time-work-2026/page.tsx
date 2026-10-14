@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function UnemploymentBenefitPartTimeWork2026Page() {
                   실업급여를 받는 동안 생활비가 부족해 잠깐 알바를 하려는 구직자가 많습니다. 이 글은 실업급여 수급 중 아르바이트나 단기 근로를 고민하는 분을 위해 준비했습니다. 결론부터 말하면 알바는 가능하지만, 일한 날은 반드시 신고해야 하고 신고를 놓치면 부정수급으로 몰릴 수 있습니다. 무엇을 어떻게 신고하는지, 급여는 얼마나 깎이는지 고용보험법 조문을 근거로 단계별로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="unemployment-benefit-part-time-work-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약</h2>

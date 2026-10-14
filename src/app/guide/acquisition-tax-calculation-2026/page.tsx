@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -146,6 +147,7 @@ export default function AcquisitionTaxCalculation2026Page() {
                   단계별로 계산하는 방법을 체계적으로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="acquisition-tax-calculation-2026" />
 
               <section className="space-y-6">
                 <h2 className="border-l-3 border-primary-500 pl-3 text-2xl font-bold">취득세란?</h2>

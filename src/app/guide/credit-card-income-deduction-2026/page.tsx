@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function CreditCardIncomeDeduction2026Page() {
                   신용카드 사용액이 종합소득금액에서 빠져나가는 소득공제 제도를 정확히 이해하고 있나요? 조세특례제한법 §126의2에 따른 이 제도는 기본한도 외에 추가한도라는 '숨은 혜택'이 있습니다. 신용카드 15%, 체크카드 30%, 전통시장·대중교통 40%의 공제율부터 기본한도(총급여 7천만 이하 300만/초과 250만원)와 추가한도(7천만 이하 300만/초과 200만원), 그리고 전통시장·대중교통·문화비를 통한 절세 전략까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="credit-card-income-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신용카드 소득공제란 무엇인가</h2>

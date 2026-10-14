@@ -207,7 +207,7 @@ export default function VehicleTaxPage() {
             id="main-content"
             className="calculator-page min-w-0 flex-1 px-4 py-5 md:px-8 md:py-8"
           >
-            <CalculatorPageContent
+            <CalculatorPageContent guidesFor="vehicle-tax"
               intro={
                 <header>
                   <Breadcrumb

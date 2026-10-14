@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function SecuritiesTransactionTaxIncrease2026Page() {
                   이 글은 국내 주식을 사고파는 개인 투자자를 위해 2026년부터 오른 증권거래세를 정리한 가이드입니다. 매도할 때마다 손익과 상관없이 빠져나가는 세금이 얼마인지, 코스피와 코스닥이 왜 표기가 다른지, 단타를 할 때 부담이 얼마나 커지는지를 계산 사례로 확인하실 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="securities-transaction-tax-increase-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증권거래세가 2026년에 얼마나 오르나요?</h2>

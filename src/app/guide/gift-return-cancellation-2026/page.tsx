@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function GiftReturnCancellation2026Page() {
                   자녀에게 부동산을 넘겼는데 마음이 바뀌었거나, 증여세가 예상보다 커서 되돌리고 싶을 때가 있습니다. 증여는 취소할 수 있지만, 언제 돌려주느냐에 따라 세금이 0원일 수도, 두 번 낼 수도 있습니다. 이 가이드는 반환 시점별 과세 규칙과 현금·주식·부동산의 차이를 실제 예시로 정리합니다. 대상 독자는 증여를 되돌리려는 증여자와 수증자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gift-return-cancellation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증여 취소·반환이란 무엇인가요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function AnnualLeaveUsagePromotion2026Page() {
                   연말이 다가오면 남은 연차와 수당을 두고 회사와 직원 모두 고민이 생깁니다. 연차 사용촉진제도는 회사가 근로기준법 §61의 절차를 지키면 미사용 연차에 대한 수당 지급의무가 사라지는 제도입니다. 이 가이드는 1차·2차 통보 절차, 수당이 소멸하는 조건과 여전히 지급해야 하는 예외, 신입 사원 특례까지 직장인과 인사 담당자 눈높이로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="annual-leave-usage-promotion-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연차 사용촉진제도란 무엇인가요?</h2>

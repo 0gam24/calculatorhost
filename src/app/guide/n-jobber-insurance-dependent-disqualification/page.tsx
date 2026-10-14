@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -139,6 +140,7 @@ export default function NJobberDependentGuide() {
                   (국민건강보험법 §5·§6·시행령 §2). 탈락 시 지역가입자로 전환되어 월 보험료 15~40만 원으로 폭증.
                 </p>
               </header>
+              <GuideCalculatorCta slug="n-jobber-insurance-dependent-disqualification" />
 
               {/* 1. 3대 자격 기준 */}
               <section aria-label="3대 자격 기준" className="card">

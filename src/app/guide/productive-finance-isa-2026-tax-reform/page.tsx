@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 신설 계좌 조기 선점, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -162,6 +163,7 @@ export default function ProductiveFinanceIsa2026TaxReformPage() {
                   기획재정부가 2026-08-03 발표한 세제개편안에는 국내 상장주식과 국내 주식형 펀드에만 투자할 수 있는 새 비과세 계좌 하나가 담겨 있습니다. 이름은 생산적금융 ISA로, 개편안이 국회를 통과하면 2027-01-01 이후 개설분부터 적용될 예정입니다. 기존 일반형 ISA와의 차이, 청년 소득공제 실제 절감액, 3년 의무·10년 상한 조건, 그리고 이미 일반 ISA를 갖고 있는 사람이 어떻게 대응해야 하는지까지 이 글 하나로 확인할 수 있게 정리했습니다. 국회 통과 전 잠정 조건임을 감안해 참고하시기 바랍니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="productive-finance-isa-2026-tax-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">생산적금융 ISA란 무엇인가</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -182,6 +183,7 @@ export default function NovemberYearEndPrepGuide() {
                   청약통장·월세 공제까지 8가지 절세 항목을 한 페이지에 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="november-year-end-tax-prep" />
 
               {/* 1. 11월 골든타임 이유 */}
               <section aria-label="11월 골든타임" className="card">

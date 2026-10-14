@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -179,6 +180,7 @@ export default function TitleTrustDeemedGift2026Page() {
                   검토 중인 사람입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="title-trust-deemed-gift-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">명의신탁 증여의제란 무엇인가요?</h2>

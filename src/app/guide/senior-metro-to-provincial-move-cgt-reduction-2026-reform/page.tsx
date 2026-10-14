@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 고령자 지방이주 양도세 감면 신설 조기 선점, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -169,6 +170,7 @@ export default function SeniorMetroToProvincialMoveCgtReduction2026ReformPage() 
                   2026-08-03 발표된 정부 세제개편안에 만 65세 이상 1주택자의 지방 이주를 유도하기 위한 양도세 감면 특례가 신설됐습니다. 서울, 인천, 경기의 집을 팔고 비수도권으로 이주하면 2027년 양도분은 산출세액의 50%(최대 5억), 2028년 양도분은 30%(최대 3억)까지 세금을 깎아 줍니다. 다만 조건이 까다롭고 5년 사후관리 추징이 있으므로 신청 전에 반드시 요건을 확인해야 합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="senior-metro-to-provincial-move-cgt-reduction-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">얼마나 감면되나: 2027년 50%, 2028년 30% 한시 특례</h2>

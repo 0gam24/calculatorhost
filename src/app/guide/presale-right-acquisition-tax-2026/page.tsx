@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function PresaleRightAcquisitionTax2026Page() {
                   분양권을 가진 상태에서 다른 집을 살 때 취득세가 중과되는지, 분양권 자체 취득세는 언제 내는지 헷갈리는 분이 많습니다. 이 가이드는 주택 구입자와 투자자를 위해 분양권 취득세의 부과 시점, 주택 수 산입 기준일, 중과세율, 그리고 양도세 주택 수와의 차이를 지방세법 §13의2·§13의3을 근거로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="presale-right-acquisition-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">분양권에도 취득세가 있나요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function CapitalGainsConvertedAcquisitionValue2026Page() {
                   1990년대 이전에 취득했거나 상속·증여로 물려받아 취득 당시 매매계약서가 남아 있지 않은 부동산을 팔면, 양도세 계산의 첫 단추인 취득가액을 어떻게 잡을지가 문제입니다. 이럴 때 소득세법이 마지막 순서로 인정하는 방식이 환산취득가액입니다. 이 가이드는 공식, 개산공제 3%, 신축 후 5년 이내 양도 시 붙는 5% 가산세, 실거래가와의 비교까지 소득세법 §97·§114의2를 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="capital-gains-converted-acquisition-value-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">환산취득가액이란 무엇인가</h2>

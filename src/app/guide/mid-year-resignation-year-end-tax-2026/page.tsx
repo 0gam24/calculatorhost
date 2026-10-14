@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function MidYearResignationYearEndTax2026Page() {
                   연도 중간에 회사를 그만두면 회사는 마지막 급여를 지급할 때 그 해 근로소득을 한 번 정산합니다. 그런데 이 정산에는 대부분 특별공제가 빠져 있어 세금을 더 낸 상태로 마무리되기 쉽습니다. 이 가이드는 소득세법 §137, §70을 기준으로 재취업 시 합산 정산, 미재취업 시 5월 종합소득세 신고로 환급받는 절차를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="mid-year-resignation-year-end-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">중도퇴사자는 왜 세금을 더 냈을까?</h2>

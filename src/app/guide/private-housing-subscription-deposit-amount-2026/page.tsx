@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function PrivateHousingSubscriptionDepositAmount2026Page() {
                   민영주택 청약 1순위 자격의 마지막 관문은 청약통장에 얼마가 들어 있느냐입니다. 매달 얼마씩 얼마 동안 넣었는지가 중요한 국민주택과 달리, 민영주택은 청약자의 거주지와 청약할 주택의 전용면적에 따라 정해진 예치기준금액만 채우면 됩니다. 이 가이드는 주택공급에 관한 규칙 §10 별표2를 기준으로 서울·부산·광역시·시군별 예치금액을 정리하고, 거주지 판정 원칙과 면적 상향 방법, 자주 놓치는 실수를 함께 다룹니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="private-housing-subscription-deposit-amount-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">청약 예치금액이란 무엇인가</h2>

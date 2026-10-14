@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function SavingsInsuranceTaxExemption2026Page() {
                   이 글은 저축성보험으로 장기 목돈을 준비하려는 저축·은퇴 준비층을 위해 비과세 요건을 정리한 가이드입니다. 흔히 아는 &lsquo;10년만 지나면 비과세&rsquo;가 왜 반쪽 정보인지, 일시납과 월적립식 요건이 어떻게 다른지, 요건을 못 채우면 세금이 얼마나 붙는지까지 확인하실 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="savings-insurance-tax-exemption-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">저축성보험은 10년만 지나면 비과세인가요?</h2>

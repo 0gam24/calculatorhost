@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function EarnedIncomeTaxCreditSemiannualApplication2026Page() {
                   근로소득만 있는 직장인이라면 5월 정기신청을 기다리지 않아도 됩니다. 조세특례제한법 §100의6에 따라 상반기 근로소득분은 그해 9월, 하반기분은 이듬해 3월에 나눠 신청하는 반기신청 제도를 선택하면 근로장려금을 최대 6개월 이상 먼저 받을 수 있습니다. 이 가이드에서는 반기신청 대상, 신청 기간과 지급 구조, 정기신청과의 차이, 그리고 반기신청이 유리한 경우와 그렇지 않은 경우까지 실무 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="earned-income-tax-credit-semiannual-application-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로장려금 반기신청이란 무엇인가요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ParentalLeaveBenefit2026Page() {
                   자녀 양육을 위해 직장을 떠나는 근로자의 소득을 보장하는 육아휴직급여. 2025년 1월부터 대폭 개정되어 첫 3개월부터 통상임금의 100%를 받을 수 있게 되었습니다. 이 가이드에서는 2026년 현행 기준 지급률, 월 상한액, 6+6 부모육아휴직제, 신청 방법까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="parental-leave-benefit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">육아휴직급여란 무엇인가</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -139,6 +140,7 @@ export default function ChildEarnedIncomeCreditGuide() {
                   (조세특례제한법 §100의2·§100의3). 홈택스 5단계 신청·자격·금액·환급 시점을 한 페이지에 정리.
                 </p>
               </header>
+              <GuideCalculatorCta slug="child-earned-income-tax-credit-application-2026" />
 
               {/* 1. 비교 */}
               <section aria-label="자녀 vs 근로 장려금 비교" className="card">

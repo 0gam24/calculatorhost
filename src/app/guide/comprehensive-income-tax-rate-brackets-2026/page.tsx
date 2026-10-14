@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -147,6 +148,7 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                   체계적으로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-income-tax-rate-brackets-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">종합소득세 8단계 누진세율표 (2026)</h2>

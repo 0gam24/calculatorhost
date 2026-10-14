@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function DailyWorkerIncomeTax2026Page() {
                   건설일용, 단기 아르바이트 같은 일용직 일자리는 일반 정규직과 세금 방식이 완전히 다릅니다. 고용주가 매 급여일마다 원천징수를 해야 하고, 정해진 공제액이 있으며, 특히 중요한 점은 종합소득세 신고 대상이 아니라는 것입니다. 이 가이드에서는 일용근로자가 납부해야 할 세금의 정확한 금액, 공제 원칙, 그리고 법적 기준까지 완전히 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="daily-worker-income-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">일용근로자 정의, 정확히 누가 일용인가</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function DeemedRentalIncome2026Page() {
                   월세는 소득이니 세금을 낸다지만, 전세보증금은 돌려줄 돈인데 왜 세금이 붙을까요. 바로 간주임대료 때문입니다. 보증금을 굴려 얻는 이자 상당액을 임대료로 간주해 과세하는 제도인데, 3주택 이상이면서 보증금이 3억원을 넘는 임대인이 대상입니다. 이 가이드는 간주임대료의 대상, 계산식, 소형주택 제외, 그리고 5월 신고 방법을 소득세법 조문으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="deemed-rental-income-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간주임대료란 무엇인가</h2>

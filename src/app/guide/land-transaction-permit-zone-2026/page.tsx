@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function LandTransactionPermitZone2026Page() {
                   2026년 들어 서울을 비롯한 수도권 상당 지역이 토지거래허가구역으로 묶이면서, 집을 사려는 실수요자와 투자자 모두 허가와 실거주 규제를 먼저 확인해야 하는 상황입니다. 이 가이드는 토지거래허가구역이 무엇인지, 어떤 거래가 허가 대상인지, 허가를 받으면 왜 실거주를 해야 하고 갭투자가 막히는지, 그리고 이용의무를 어기면 어떤 이행강제금이 따르는지를 부동산 거래신고 등에 관한 법률 조문으로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="land-transaction-permit-zone-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">토지거래허가구역이란 무엇인가요?</h2>

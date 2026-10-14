@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function MaternityLeaveBenefit2026Page() {
                   출산을 앞둔 근로자가 가장 궁금해하는 것은 휴가가 며칠이고 급여를 얼마나, 누가 주느냐입니다. 회사가 주는 건지 고용보험이 주는 건지, 상한은 얼마인지, 신청은 언제까지 하는지가 헷갈립니다. 이 가이드는 출산전후휴가의 기간·급여·상한·신청 기한을 근로기준법과 고용보험법 조문 기준으로 한 번에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="maternity-leave-benefit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">출산전후휴가란 무엇인가요?</h2>

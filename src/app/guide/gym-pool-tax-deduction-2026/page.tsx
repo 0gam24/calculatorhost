@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 헬스장·수영장 문화비 소득공제 (연말정산 시즌 롱테일 흡수)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function GymPoolTaxDeduction2026Page() {
                   운동에 쓴 돈도 연말정산에서 돌려받을 수 있습니다. 2025년 7월부터 헬스장과 수영장 이용료가 문화비 소득공제 대상이 됐기 때문입니다. 이 글은 총급여 7천만원 이하 근로자라면 누가, 무엇을, 얼마나 공제받는지, 헷갈리는 PT 비용과 통합 한도, 그리고 실제 절세액까지 계산 사례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gym-pool-tax-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">헬스장 이용료도 소득공제 되나요?</h2>

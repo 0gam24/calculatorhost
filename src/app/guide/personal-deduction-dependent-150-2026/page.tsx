@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function PersonalDeductionDependent2026Page() {
                 <p className="mb-2 text-caption text-text-tertiary">세금 · 12분 읽기 · 2026-05-26</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">종소세 인적공제 부양가족 150만원 2026</h1>
               </header>
+              <GuideCalculatorCta slug="personal-deduction-dependent-150-2026" />
 
               <div className="prose prose-invert max-w-none space-y-6 text-text-primary">
                 <p data-speakable className="text-lg leading-relaxed">

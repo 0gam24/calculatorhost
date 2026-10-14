@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
                   상속세 납부세액이 크면 한 번에 내기 벅찰 수 있습니다. 연부연납은 담보를 제공하고 세금을 여러 해에 걸쳐 나눠 내는 제도로, 일반 상속재산은 최대 10년, 가업상속재산은 최대 20년까지 가능합니다. 이 가이드는 연부연납의 신청 요건, 기간별 계산 방식, 담보로 인정되는 것과 안 되는 것, 가산율(이자)까지 실제 사례로 정리합니다. 대상 독자는 상속세 납부세액이 커서 나눠 내는 방법을 찾는 상속인입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-tax-annuity-payment-collateral-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상속세 연부연납이란 무엇인가요?</h2>

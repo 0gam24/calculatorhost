@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function CapitalGainsTax5StepsPage() {
                   세율이 완전히 달라집니다. 이 가이드는 당신이 내야 할 정확한 양도세를 계산하는 5단계를 체계적으로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="capital-gains-tax-5-steps" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1단계: 취득가와 양도가 확인</h2>

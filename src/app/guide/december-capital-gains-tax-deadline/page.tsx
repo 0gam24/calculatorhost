@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -169,6 +170,7 @@ export default function DecemberCgtDeadlineGuide() {
                   본 가이드는 8월 가이드(보유 기간 경계 점검)와 달리, <strong>연말 매도 vs 연초 매도 의사결정 4단계 프레임</strong>을 제시합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="december-capital-gains-tax-deadline" />
 
               {/* 1. 귀속연도 원칙 */}
               <section aria-label="귀속연도 원칙" className="card">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function CooperativeLandlord2026Page() {
                   1주택을 임대 중인 집주인이 세입자와 상생하기 위해 임대료 인상을 5% 이내로 자제하면, 정부는 그 대가로 1세대1주택 양도세 비과세에 요구되던 2년 거주요건을 면제해 줍니다. 이 가이드는 상생임대인 제도의 요건 4가지, 5% 상한을 계산하는 방법, 2026년 말까지 연장된 일몰기한, 그리고 임대인이 실무에서 반드시 확인해야 할 함정을 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="cooperative-landlord-capital-gains-exemption-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상생임대인 제도란 무엇인가요?</h2>

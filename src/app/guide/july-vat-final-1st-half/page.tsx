@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -174,6 +175,7 @@ export default function JulyVatGuide() {
                   기한을 놓치면 가산세 10%(최소 100만 원)가 부과됩니다(부가가치세법 §49·§66).
                 </p>
               </header>
+              <GuideCalculatorCta slug="july-vat-final-1st-half" />
 
               {/* 1. 신고 대상과 기한 */}
               <section aria-label="신고 대상과 기한" className="card">

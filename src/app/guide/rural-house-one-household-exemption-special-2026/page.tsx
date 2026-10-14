@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 농어촌주택 취득 시 일반주택 1세대1주택 비과세 특례 조특법 §99의4 (주택 보유자 롱테일 흡수)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -183,6 +184,7 @@ export default function RuralHouseOneHouseholdExemptionPage() {
                   중요한지를 조세특례제한법 §99의4 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="rural-house-one-household-exemption-special-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">농어촌주택 특례란 무엇인가요?</h2>

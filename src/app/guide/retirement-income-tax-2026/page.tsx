@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -136,6 +137,7 @@ export default function RetirementIncomeTaxPage() {
                   퇴직소득세는 근속연수가 길수록 세 부담이 줄도록 설계된 제도입니다. 퇴직소득금액에서 근속연수공제와 환산급여공제를 차감한 과세표준에 기본세율을 적용하고, 연분연승법으로 월 환산해 최종 세액을 계산합니다(소득세법 §48·§55).
                 </p>
               </header>
+              <GuideCalculatorCta slug="retirement-income-tax-2026" />
 
               <section className="space-y-6">
                 <div className="rounded-lg bg-bg-card p-4">

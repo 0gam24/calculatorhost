@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function SpouseChildbirthLeave2026Page() {
                   아내의 출산을 앞둔 직장인 아빠라면 배우자 출산휴가가 며칠인지, 급여는 나오는지, 언제까지 신청해야 하는지 궁금할 것입니다. 이 가이드는 2026년 기준 20일로 늘어난 배우자 출산휴가의 일수 계산 방식, 통상임금 100% 급여와 상한, 최대 3회 분할 사용, 신청 기한과 방법을 남녀고용평등법 §18의2를 근거로 한 번에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="spouse-childbirth-leave-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">배우자 출산휴가는 며칠인가요?</h2>

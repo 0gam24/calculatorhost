@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -147,6 +148,7 @@ export default function PropertyTaxBaseDatePage() {
                   부동산 거래 시 잔금일이 5월 31일인지 6월 2일인지에 따라 재산세 부담자가 완전히 달라지므로, 매매계약 단계에서 반드시 명시해야 합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="property-tax-base-date-june-1-2026" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-danger-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>

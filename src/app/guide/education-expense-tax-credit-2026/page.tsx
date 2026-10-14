@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function EducationExpenseTaxCredit2026Page() {
                   자녀를 키우는 부모들이 가장 큰 부담 중 하나가 교육비입니다. 좋은 소식은 이 교육비의 일부를 세금에서 직접 깎을 수 있다는 것입니다. 소득세법 §59의4에 따른 교육비 세액공제 제도를 활용하면, 자녀의 학년과 교육 항목에 따라 연 300만원~900만원까지 공제받을 수 있습니다. 이 가이드에서는 공제 대상, 한도, 계산법, 그리고 놓치기 쉬운 주의사항까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="education-expense-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">교육비 세액공제 제도 개요</h2>

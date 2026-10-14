@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function MortgageInterestDeduction2026Page() {
                   주택을 구입하기 위해 차입한 대출금의 이자를 소득금액에서 직접 차감하는 제도, 바로 주택담보대출 이자 소득공제입니다. 무주택이거나 1주택을 보유한 세대주라면 연 800만원에서 2,000만원까지 공제받을 수 있습니다. 하지만 조건이 까다로우므로, 이 가이드에서 기준시가·차입 조건·한도를 정확히 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="mortgage-interest-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택담보대출 이자 소득공제란</h2>

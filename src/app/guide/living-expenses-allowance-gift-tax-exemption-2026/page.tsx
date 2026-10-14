@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function LivingExpensesAllowanceGiftTaxExemption2026Page() {
                   추석이 다가오면 부모님께 드리는 용돈, 자녀에게 주는 세뱃돈·명절 용돈에 세금이 붙는지 궁금해집니다. 결론부터 말하면, 사회통념상 인정되는 생활비와 용돈은 증여세가 없습니다(상속세 및 증여세법 §46). 다만 받은 돈을 소비하지 않고 모아서 예금·주식·부동산을 사면 그 부분은 비과세에서 제외되어 세금이 나옵니다(시행령 §35). 이 가이드는 어디까지 비과세이고 어디부터 과세인지, 공제 한도와 실제 계산 사례까지 상증법 §46·시행령 §35·§53·§56을 근거로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="living-expenses-allowance-gift-tax-exemption-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 부모·자녀 용돈에도 증여세가 붙나요?</h2>

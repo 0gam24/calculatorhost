@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function EarlyReemploymentAllowance2026Page() {
                   실업급여를 받던 중 생각보다 빨리 취업이 되면 손해라고 느끼는 분들이 많습니다. 그런데 소정급여일수를 절반 이상 남기고 재취업하면, 남은 실업급여의 절반을 조기재취업수당으로 한 번에 받을 수 있습니다. 이 가이드는 지급요건 3가지, 정확한 계산법, 경계값 판단 기준, 청구 시기까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="early-reemployment-allowance-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조기재취업수당이란 무엇인가요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -179,6 +180,7 @@ export default function SeverancePayInheritanceTax2026Page() {
                   퇴직금을 수령하게 된 유족입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="severance-pay-inheritance-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사망퇴직금이란 무엇인가요?</h2>

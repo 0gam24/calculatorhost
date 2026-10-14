@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 자동차 구입 시 세금 4종 총정리(개소세·교육세·부가세·취득세) (자동차 구매자 롱테일 흡수)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function CarPurchaseTaxesBreakdownPage() {
                   견적서를 받아 보면 차값 옆에 개별소비세, 교육세, 부가세 같은 항목이 줄줄이 붙어 있어 실제로 얼마를 세금으로 내는지 알기 어렵습니다. 여기에 차를 등록할 때 내는 취득세까지 더하면 새 차 한 대에 세금만 수백만원이 들어갑니다. 이 가이드는 자동차 구매자를 위해 차를 살 때 붙는 세금 4종이 어떤 순서로, 무엇을 기준으로 매겨지는지 공급가액 3천만원 차량 사례로 하나씩 풀어 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="car-purchase-taxes-breakdown-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">차 살 때 붙는 세금은 총 몇 가지인가요?</h2>

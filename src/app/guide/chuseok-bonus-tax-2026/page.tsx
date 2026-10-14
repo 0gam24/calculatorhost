@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ChuseokBonusTax2026Page() {
                   추석을 앞두고 상여금이나 명절 선물세트를 받는 직장인이 많습니다. 그런데 통장에 찍힌 금액이 회사가 말한 상여금보다 적어 당황하는 경우가 흔합니다. 이유는 간단합니다. 상여금도 월급과 똑같은 근로소득이라 소득세와 4대보험을 떼기 때문입니다. 이 글은 상여금과 명절 선물에 붙는 세금의 원리, 실수령액 계산, 그리고 뗀 세금이 연말정산에서 어떻게 정산되는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="chuseok-bonus-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">추석 상여금도 세금을 떼나요?</h2>

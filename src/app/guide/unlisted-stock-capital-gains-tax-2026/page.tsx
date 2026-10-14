@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function UnlistedStockCapitalGainsTax2026Page() {
                   이 가이드는 스타트업 스톡옵션 주식, 가족회사 지분, 장외 비상장주식을 팔려는 투자자와 주주를 위한 것입니다. 비상장주식은 상장주식과 달리 소액주주도 팔면 양도소득세를 신고해야 합니다. 회사 규모와 대주주 여부에 따라 10%에서 30%까지 갈리는 세율 구조와 실제 계산, 신고 기한을 예시와 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="unlisted-stock-capital-gains-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비상장주식을 팔면 세금을 내나요?</h2>

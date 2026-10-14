@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function WeeklyHolidayAllowancePage() {
                   이 가이드에서는 주휴수당의 요건부터 월급제·시급제별 계산 방법, 결근 규칙까지 정확히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="weekly-holiday-allowance-2026" />
 
               <aside
                 aria-label="주휴수당 바로 계산"

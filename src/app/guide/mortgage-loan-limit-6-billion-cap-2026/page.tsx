@@ -1,5 +1,6 @@
 // [revenue-lever: guard] Protect loan-search readers from overstated borrowing limits.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -161,6 +162,7 @@ export default function MortgageLoanLimit6BillionCap2026Page() {
                   수도권 또는 규제지역에서 집을 살 때는 LTV·DSR뿐 아니라 주택구입목적 주담대의 절대 한도도 확인해야 합니다. 2025년 6월 28일 최대 6억원 상한이 도입됐고, 10월 16일부터 시가에 따라 6억·4억·2억원으로 차등화됐습니다. 2026년 8월 후속 대책에서도 한도 유지를 확인했습니다. 아래에서는 직전 제도와의 차이, 대출 목적별 예외와 경과조치를 구분합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="mortgage-loan-limit-6-billion-cap-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택담보대출이 6억까지만 되는 이유는?</h2>

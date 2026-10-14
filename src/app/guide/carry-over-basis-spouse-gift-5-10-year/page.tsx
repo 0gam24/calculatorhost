@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -141,6 +142,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   정의·계산·면제 사유·함정·절세 전략을 정확히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="carry-over-basis-spouse-gift-5-10-year" />
 
               {/* 1. 이월과세 정의 */}
               <section aria-label="이월과세 정의" className="card">

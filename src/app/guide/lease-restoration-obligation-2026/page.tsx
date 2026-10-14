@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function LeaseRestorationObligation2026Page() {
                   이 글은 이사를 앞둔 전월세 임차인과 보증금 정산을 앞둔 임대인 모두를 위해 씁니다. &quot;못 자국 몇 개도 물어줘야 하나?&quot;, &quot;도배를 새로 해주고 나가야 하나?&quot; 같은 실전 분쟁을 통상손모와 고의·과실이라는 기준으로 나눠 설명합니다. 민법 조문과 판례 기준, 특약의 효력, 분쟁을 막는 방법까지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="lease-restoration-obligation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 원상복구 의무란 무엇인가요?</h2>

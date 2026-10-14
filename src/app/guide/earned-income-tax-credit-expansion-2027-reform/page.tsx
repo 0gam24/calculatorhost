@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 근로장려금 확대 급상승 검색 흡수, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function EarnedIncomeTaxCreditExpansion2027ReformPage() {
                   2026년 8월 3일 발표된 세제개편안은 근로장려금의 최대 지급액을 올리고 소득요건을 완화하는 방향을 담았습니다. 이 글은 근로장려금을 받거나 대상이 궁금한 저소득 근로·사업 가구를 위해, 얼마로 오르는지, 소득 문턱이 어떻게 낮아지는지, 그리고 언제부터 적용되는지를 현행 기준과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="earned-income-tax-credit-expansion-2027-reform" />
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-5" data-speakable>
                 <p className="font-semibold text-text-primary">30초 요약</p>

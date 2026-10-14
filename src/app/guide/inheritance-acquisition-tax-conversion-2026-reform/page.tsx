@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 상속세 유산취득세 전환 급상승 검색 흡수, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function InheritanceAcquisitionTaxConversion2026ReformPage() {
                   2026년 8월 3일 발표된 세제개편안은 상속세를 유산세에서 유산취득세로 바꾸는 방향을 담았습니다. 이 글은 상속을 준비하는 분을 위해, 두 방식이 어떻게 다른지, 자녀공제 5억원 상향안이 누구에게 언제 적용되는지, 그리고 지금 상속이 개시되면 어떤 기준이 쓰이는지를 현행 공제와 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-acquisition-tax-conversion-2026-reform" />
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-5" data-speakable>
                 <p className="font-semibold text-text-primary">30초 요약</p>

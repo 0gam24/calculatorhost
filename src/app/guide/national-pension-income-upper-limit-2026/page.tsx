@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalPensionIncomeUpperLimit2026Page() {
                   2026년 7월분 국민연금 보험료부터 기준소득월액 상한액이 637만원에서 659만원으로 올랐습니다. 월 소득이 상한을 넘던 고소득 직장인과 지역가입자는 이번 조정으로 월 납부액이 늘어납니다. 이 가이드는 새 상한 아래에서 월 보험료가 정확히 얼마가 되는지, 직장가입자와 지역가입자의 부담이 어떻게 다른지, 조정된 기준이 미래 연금 수령액에 어떤 영향을 미치는지 국민연금법 조항을 근거로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-income-upper-limit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국민연금 기준소득월액 상한액이란?</h2>

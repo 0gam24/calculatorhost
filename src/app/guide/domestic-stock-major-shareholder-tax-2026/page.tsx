@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function DomesticStockMajorShareholderTax2026Page() {
                   국내 주식으로 큰 수익을 냈을 때 세금이 걱정된다면, 먼저 자신이 대주주인지부터 확인해야 합니다. 국내 상장주식은 소액주주라면 아무리 많이 벌어도 양도세가 없고, 특정 종목을 대량 보유한 대주주만 세금을 냅니다. 이 가이드는 소득세법 §94와 시행령 §157에 따른 대주주 요건, 세율, 신고 방법을 사례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="domestic-stock-major-shareholder-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국내 상장주식 양도세, 누가 내나요?</h2>

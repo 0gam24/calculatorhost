@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function BondInvestmentTax2026Page() {
                   개인투자자가 채권에서 얻는 수익은 크게 두 갈래로 나뉩니다. 정기적으로 받는 표면이자(이표)와, 시장금리 변동에 따라 발생하는 매매차익(자본이득)이 그것입니다. 세법은 이 둘을 완전히 다르게 취급합니다. 이자소득은 15.4%가 원천징수되지만, 개인이 직접 보유한 채권의 매매차익은 소득세법상 과세대상으로 열거되어 있지 않아 비과세입니다. 이 구조를 정확히 이해하면 상품 선택과 절세 전략이 크게 달라집니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="bond-investment-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">채권 세금의 기본 구조: 이자소득과 매매차익</h2>

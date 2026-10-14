@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -146,6 +147,7 @@ export default function ElectronicTaxInvoiceMandatoryTarget2026Page() {
                   홈택스에서 세금계산서를 끊을 때 전자로 해야 하는지, 종이로 해도 되는지 헷갈리는 사업자가 많습니다. 이 가이드는 전자세금계산서를 의무적으로 발급해야 하는 법인사업자와 개인사업자의 기준, 기준금액 계산 방법, 의무가 실제로 시작되는 시점을 부가가치세법 §32와 시행령 §68을 근거로 정리합니다. 대상 독자는 개인·법인사업자와 예비 창업자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="electronic-tax-invoice-mandatory-target-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전자세금계산서 의무발급 대상은 누구인가요?</h2>

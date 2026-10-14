@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -157,6 +158,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
                   대상, 신청 방법, 필요 서류를 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="energy-voucher-2026-summer-cooling-subsidy" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

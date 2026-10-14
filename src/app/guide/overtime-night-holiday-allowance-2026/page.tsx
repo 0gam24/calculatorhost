@@ -1,5 +1,6 @@
 // [revenue-lever: guard] Correct work-pay guidance and protect existing search traffic.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -111,6 +112,7 @@ export default function OvertimeNightHolidayAllowancePage() {
                   통상시급·실제 근로시간으로 세전 근로분과 가산분을 확인하세요. 성인 일반근로·제56조 적용 사업장 기준입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="overtime-night-holiday-allowance-2026" />
 
               <OvertimeAllowanceCalculator />
 

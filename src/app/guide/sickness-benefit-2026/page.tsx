@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function SicknessBenefit2026Page() {
                   독감이나 골절로 몇 주 동안 일을 못 하면 당장 생활비가 걱정됩니다. 상병수당은 바로 이런 상황, 즉 업무와 관계없는 질병이나 부상으로 일하지 못할 때 소득의 일부를 보전해 주는 제도입니다. 아직 전국이 아니라 시범 지역에서만 운영되므로, 이 가이드는 내가 받을 수 있는지, 하루에 얼마를 받는지, 어떻게 신청하는지를 국민건강보험법 §50 부가급여를 근거로 하나씩 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="sickness-benefit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상병수당이란 무엇인가요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function HeatwaveHeatIllnessWorkInjury2026Page() {
                   한여름 건설현장, 배달, 택배, 농사 현장에서 더위에 쓰러지는 일이 반복됩니다. 이 가이드는 야외에서 일하다 온열질환이 생겼을 때 산재로 인정받는 기준, 근로자가 위험할 때 작업을 멈출 수 있는 작업중지권, 그리고 실제로 받을 수 있는 보상과 신청 절차를 정리합니다. 대상 독자는 폭염 속에서 일하는 근로자와 그 가족입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="heatwave-heat-illness-work-injury-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">폭염에 쓰러지면 산재가 되나요?</h2>

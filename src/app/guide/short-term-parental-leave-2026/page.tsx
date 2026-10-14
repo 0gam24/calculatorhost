@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function ShortTermParentalLeave2026Page() {
                   아이가 갑자기 아파서 며칠만 쉬고 싶은데, 정식 육아휴직을 쓰기엔 부담이 큽니다. 이런 맞벌이 부모의 고민을 덜기 위해 2026년 8월 20일부터 단기 육아휴직이 시행됩니다. 남녀고용평등법 §19에 근거한 이 제도는 육아휴직을 1주 또는 2주 단위로 짧게 나눠 쓸 수 있게 한 것으로, 자녀의 질병·방학·긴급 돌봄 상황에서 활용할 수 있습니다. 대상, 급여 산정, 신청 기한, 사업주 협의까지 이 가이드에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="short-term-parental-leave-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">단기 육아휴직이란 무엇인가요?</h2>

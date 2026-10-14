@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function PensionSavingsEarlyTerminationTax2026Page() {
                   연말정산 때 세액공제를 받으려고 연금저축이나 IRP에 가입했다가, 목돈이 필요해 중도해지를 고민하는 분이 많습니다. 그런데 중도해지에는 그동안 돌려받은 세금을 다시 토해내는 기타소득세 16.5%가 따라옵니다. 이 가이드는 무엇에 세금이 붙는지, 세금을 낮추는 부득이한 사유는 무엇인지, 해지 대신 어떤 대안이 있는지를 실제 계산과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="pension-savings-early-termination-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">중도해지 세금은 무엇에 붙나</h2>

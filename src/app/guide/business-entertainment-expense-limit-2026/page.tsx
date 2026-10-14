@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -157,6 +158,7 @@ export default function BusinessEntertainmentExpenseLimit2026Page() {
                   거래처와 밥을 먹거나 선물을 보내면 비용 처리를 할 수 있지만, 무한정 되는 것은 아닙니다. 접대비, 즉 기업업무추진비에는 인정 한도와 까다로운 증빙 규칙이 있습니다. 이 가이드는 자영업자와 법인 담당자를 위해 한도를 어떻게 계산하는지, 건당 3만원과 경조사비 20만원 규칙은 무엇인지, 한도를 넘으면 어떻게 되는지 단계별로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="business-entertainment-expense-limit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기업업무추진비가 무엇인가요?</h2>

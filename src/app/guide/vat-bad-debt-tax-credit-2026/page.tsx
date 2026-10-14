@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function VatBadDebtTaxCredit2026Page() {
                   물건을 팔고 세금계산서까지 끊었는데 거래처가 부도나 파산으로 대금을 안 갚으면, 물건값도 잃고 이미 낸 부가세까지 이중으로 손해를 봅니다. 부가세 대손세액공제는 이렇게 회수 불가능해진 매출채권의 부가세를 돌려받게 해주는 제도입니다. 이 가이드는 대손으로 인정되는 사유, 공제액 계산, 공급일 10년 기한을 부가가치세법 제45조 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="vat-bad-debt-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대손세액공제란 무엇인가요?</h2>

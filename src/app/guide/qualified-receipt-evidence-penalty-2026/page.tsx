@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function QualifiedReceiptEvidencePenalty2026Page() {
                   이 가이드는 경비 처리를 직접 챙겨야 하는 개인사업자와 프리랜서를 위해 씁니다. 사업하며 돈을 썼는데 제대로 된 증빙을 못 받으면, 비용 인정 문제뿐 아니라 가산세까지 따라올 수 있습니다. 핵심은 적격증빙 4종을 3만원 초과 거래에서 반드시 받는 것입니다. 무엇이 적격증빙인지, 못 받으면 얼마를 더 내는지, 누가 예외인지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="qualified-receipt-evidence-penalty-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">적격증빙이란 무엇인가</h2>

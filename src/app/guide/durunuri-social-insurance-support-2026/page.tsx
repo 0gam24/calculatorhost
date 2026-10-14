@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function DurunuriSocialInsurancePage() {
                   직원 한두 명을 둔 작은 사업장이라면, 국민연금과 고용보험료의 상당 부분을 국가가 대신 내주는 두루누리 지원을 받을 수 있습니다. 이 가이드는 소상공인 사장님과 새로 취업한 저임금 근로자를 위해 지원 대상 조건, 실제로 얼마를 지원받는지, 어떻게 신청하는지, 그리고 못 받는 경우는 언제인지 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="durunuri-social-insurance-support-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">두루누리란 무엇인가</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function EarnedIncomeTaxCreditPaymentAmount2026Page() {
                   이 가이드는 근로장려금 신청을 마치고 8월 지급을 앞둔 저소득 근로가구를 위한 것입니다. 많은 분이 궁금해하는 질문은 하나로 모입니다. 우리 가구는 대체 얼마를 받을까. 근로장려금은 가구유형과 소득 구간에 따라 지급액이 정해지는데, 그 계산 원리를 알면 예상액을 대략 가늠할 수 있습니다. 가구유형별 최대 금액부터 소득이 늘수록 지급액이 오르다 줄어드는 구조까지 차례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="earned-income-tax-credit-payment-amount-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로장려금, 우리 가구는 얼마 받나요?</h2>

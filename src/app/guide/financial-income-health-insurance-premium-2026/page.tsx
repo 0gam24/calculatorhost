@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function FinancialIncomeHealthInsurancePremium2026Page() {
                   주식 배당과 예금 이자로 자산을 굴리는 투자자라면, 세금만큼이나 신경 써야 할 것이 건강보험료입니다. 금융소득이 일정 선을 넘으면 건강보험 피부양자 자격을 잃거나 직장가입자에게 추가 보험료가 붙기 때문입니다. 이 가이드는 금융소득 연 2천만원 기준이 건강보험료에 어떻게 연결되는지, 국민건강보험법 §71을 중심으로 투자자와 은퇴 준비층 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="financial-income-health-insurance-premium-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">왜 금융소득에 건강보험료가 붙나요?</h2>

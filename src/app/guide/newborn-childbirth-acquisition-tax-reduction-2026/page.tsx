@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function NewbornChildbirthAcquisitionTaxReduction2026Page() {
                   자녀를 출산한 가구가 상시 거주 목적으로 12억원 이하의 1주택을 취득하면, 지방세특례제한법 §36의5에 따라 취득세를 500만원 한도로 면제받을 수 있습니다. 산출세액이 500만원 이하이면 전액 면제이고, 그 이상이면 500만원을 공제한 잔액만 납부합니다. 이 가이드는 감면 요건, 출산일부터 5년의 기산법, 사후관리 위반 시 추징 사유, 신청 절차를 지방세특례제한법과 위택스 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="newborn-childbirth-acquisition-tax-reduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 신생아 취득세 감면이란 무엇인가요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function EmploymentContractWrittenObligation2026Page() {
                   이 가이드는 근로계약서 없이 일을 시작했거나 직원을 채용하는 사업주를 위한 글입니다. 근로계약서가 왜 의무인지, 안 쓰면 벌금과 과태료 중 어느 쪽인지, 반드시 들어가야 할 내용은 무엇인지, 그리고 미작성 시 어떻게 신고하는지를 근로기준법 조문에 근거해 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="employment-contract-written-obligation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">근로계약서는 꼭 써야 하나</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
                   이 가이드는 자녀를 건너뛰고 손주에게 재산을 물려주려는 조부모와 그 가족을 위한 것입니다. 세대를 건너뛴 증여에는 증여세 산출세액의 30%(경우에 따라 40%)가 할증됩니다. 그런데도 왜 많은 자산가가 손주 증여를 택하는지, 할증을 감수하고도 절세가 되는 구조와 정확한 계산을 예시와 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="generation-skipping-gift-surcharge-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">세대생략 증여란 무엇인가</h2>

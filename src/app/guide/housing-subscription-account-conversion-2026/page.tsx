@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -157,6 +158,7 @@ export default function HousingSubscriptionAccountConversion2026Page() {
                   오래된 청약저축, 청약예금, 청약부금을 가지고 있다면 지금이 갈아탈 시점입니다. 이들을 주택청약종합저축으로 전환하면 공공과 민영주택을 모두 청약할 수 있고, 전환 기한은 2026년 9월 30일로 연장됐습니다. 이 가이드는 청약 대기자를 위해 전환 대상, 방법, 그리고 전환이 늘 유리한 것은 아닌 경우까지 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-account-conversion-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">청약통장 전환이 무엇인가요?</h2>

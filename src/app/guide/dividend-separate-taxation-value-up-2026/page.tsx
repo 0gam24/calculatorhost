@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                   이 가이드는 배당주에 투자하며 금융소득 종합과세가 부담스러운 투자자를 위한 글입니다. 2026년 지급 배당부터 시행된 고배당기업 배당소득 분리과세가 무엇인지, 종합과세와 어떻게 다른지, 나에게 유리한지, 그리고 어떻게 신청하는지를 순서대로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="dividend-separate-taxation-value-up-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">고배당기업 배당소득 분리과세란</h2>

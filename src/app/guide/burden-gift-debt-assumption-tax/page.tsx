@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -140,6 +141,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                   입증 방법까지 정확히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="burden-gift-debt-assumption-tax" />
 
               {/* 1. 정의 */}
               <section aria-label="부담부증여 정의" className="card">

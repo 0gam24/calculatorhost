@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function VentureStockOptionTax2026Page() {
                   스타트업 스톡옵션을 행사하기 전, 세금이 얼마나 나올지 아는 것은 필수입니다. 행사이익은 언제 행사하느냐에 따라 근로소득 또는 기타소득으로 과세되고, 벤처기업이라면 연 2억원까지 비과세되는 특례도 있습니다. 이 가이드는 조세특례제한법 §16의2, §16의3, §16의4를 근거로 스톡옵션 과세 구조와 절세 선택지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="venture-stock-option-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">스톡옵션 행사이익은 어떻게 과세되나요?</h2>

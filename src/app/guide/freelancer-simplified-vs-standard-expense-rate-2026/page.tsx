@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   매출 규모·업종·실제 경비를 바탕으로 정확하게 선택하는 방법을 이 페이지에서 모두 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="freelancer-simplified-vs-standard-expense-rate-2026" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

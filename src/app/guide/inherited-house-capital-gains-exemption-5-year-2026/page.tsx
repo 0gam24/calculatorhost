@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -151,6 +152,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   비과세 대상이 아닌 점에 주의해야 합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inherited-house-capital-gains-exemption-5-year-2026" />
 
               {/* 1. 정의 및 Structured Summary */}
               <section aria-label="특례 정의 및 핵심 요약" className="card">

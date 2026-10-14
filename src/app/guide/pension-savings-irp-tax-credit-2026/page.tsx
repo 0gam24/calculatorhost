@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
                   연금저축과 퇴직연금(IRP)에 납입하면 받을 수 있는 세액공제는 절세의 가장 기본이면서도 실질적인 효과가 큰 제도입니다. 소득세법 §59의3에 따른 이 혜택은 직장인뿐만 아니라 프리랜서, 자영업자도 활용할 수 있습니다. 이 가이드에서는 한도, 공제율, 실제 환급액, 그리고 중도해지 시 주의사항까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="pension-savings-irp-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연금계좌세액공제란</h2>

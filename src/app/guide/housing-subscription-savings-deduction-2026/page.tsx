@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
                   무주택 직장인이라면 주택청약종합저축에 돈을 넣을 때마다 일정 금액을 세금에서 깎아주는 제도가 있습니다. 바로 조세특례제한법 §87의 주택청약저축 소득공제입니다. 연 300만원까지 납입액의 40%를 소득에서 공제받아, 최대 120만원의 세금 감면 효과를 누릴 수 있습니다. 이 가이드는 공제 대상, 한도, 실제 절세액 계산법, 그리고 주의할 함정까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-savings-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택청약저축 소득공제의 기본</h2>

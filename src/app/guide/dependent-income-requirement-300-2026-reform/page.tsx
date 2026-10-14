@@ -1,5 +1,6 @@
 // [revenue-lever: traffic] 2026 세제개편 롱테일 흡수, 부양가족 소득요건 100→300 이슈 키워드
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -171,6 +172,7 @@ export default function DependentIncomeRequirement300ReformPage() {
                   2026-08-03 기획재정부가 발표한 2026년 세제개편안은 부양가족 기본공제의 소득요건을 연 소득금액 100만원 이하에서 300만원 이하로 3배 완화합니다. 근로소득만 있는 경우 판정 특례도 총급여 500만원 이하에서 750만원 이하로 함께 오릅니다. 방학·주말 알바를 시작한 대학생 자녀, 파트타임으로 복귀한 배우자, 소액 프리랜서 활동 중인 부모가 다시 부양가족 명단에 들어올 수 있는지 판정 기준과 경계값 계산을 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="dependent-income-requirement-300-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 부양가족 소득요건 100만에서 300만으로, 무엇이 바뀌나</h2>

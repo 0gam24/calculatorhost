@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { calculateTakeHome } from '@/lib/tax/income';
 import { formatKRW } from '@/lib/utils';
@@ -173,6 +174,7 @@ export default function FreelancerSalaryComparisonPage() {
                   사업 비용·최종 세금·보험료를 반영해 비교하세요.
                 </p>
               </header>
+              <GuideCalculatorCta slug="freelancer-salary-comparison" />
 
               <section aria-labelledby="compare-with-your-conditions" className="card space-y-3">
                 <h2 id="compare-with-your-conditions" className="text-xl font-semibold">

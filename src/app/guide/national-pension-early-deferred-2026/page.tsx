@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalPensionEarlyDeferred2026Page() {
                   국민연금은 정해진 나이에 받는 것이 원칙이지만, 최대 5년 일찍 받거나 최대 5년 늦게 받을 수 있습니다. 다만 일찍 받으면 깎이고 늦게 받으면 늘어나는데, 이 조정이 평생 유지된다는 점이 중요합니다. 이 가이드는 국민연금법 §61·§62를 기준으로 조기수령 감액, 연기연금 증액, 손익분기 나이, 상황별 선택 기준을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-early-deferred-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조기수령과 연기연금이 무엇인가요?</h2>

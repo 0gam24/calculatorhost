@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HousingSubscriptionRewinRestriction2026Page() {
                   이 가이드는 청약을 준비 중이거나 이미 당첨 경험이 있는 무주택 실수요자를 위한 것입니다. 청약 당첨은 끝이 아니라 재당첨 제한이라는 새로운 규제의 시작입니다. 당첨되면 지역과 주택 유형에 따라 최장 10년간 다시 당첨될 수 없고, 계약을 포기해도 이 제한은 사라지지 않으며, 심지어 세대원 전원에게 적용됩니다. 얼마나 오래 묶이는지, 어떤 함정이 있는지 주택공급 규칙과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-rewin-restriction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재당첨 제한이란 무엇인가요?</h2>

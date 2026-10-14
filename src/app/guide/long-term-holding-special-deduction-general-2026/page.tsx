@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function LongTermHoldingSpecialDeductionGeneral2026Page() {
                   상가나 토지, 또는 1세대1주택이 아닌 주택을 오래 보유했다가 팔면, 양도차익 전부에 세금을 매기지 않고 보유기간에 비례한 금액을 빼줍니다. 이것이 장기보유특별공제입니다. 이 가이드는 일반 부동산에 적용되는 표1을 중심으로, 몇 년부터 얼마나 공제되는지, 1세대1주택 표2와 무엇이 다른지, 그리고 실제 세액이 어떻게 줄어드는지를 사례로 정리했습니다. 부동산을 언제 팔지 저울질하는 분을 위한 글입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="long-term-holding-special-deduction-general-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">장기보유특별공제란 무엇인가요</h2>

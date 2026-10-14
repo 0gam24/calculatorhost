@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function OfficetelTax2026Page() {
                   오피스텔은 건축법상 "업무시설"이지만, 실제 사용 용도에 따라 세법상 주택으로 분류될 수 있습니다. 이것이 핵심입니다. 주거용으로 쓰면 주택처럼 취득세·양도세·종부세가 적용되고, 업무용으로 쓰면 일반 건물 세율이 적용됩니다. 이 가이드는 오피스텔 취득부터 보유·양도까지 모든 단계에서 주택용과 업무용의 세금 차이를 정확히 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="officetel-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">오피스텔이란 무엇인가</h2>

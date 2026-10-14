@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function BusinessUseAccountRegistration2026Page() {
                   복식부기의무자가 된 개인사업자에게 사업용계좌 신고는 선택이 아닌 법정 의무입니다. 신고 시점을 놓치거나 등록한 계좌를 실제 거래에 사용하지 않으면 수입금액의 0.2%가 가산세로 부과되고, 세무조사 대상 선정 참고자료로도 활용됩니다. 이 가이드는 신고 대상 판단, 6개월 기한 계산, 홈택스 신고 절차, 미신고·미사용 가산세 사례까지 소득세법 §160의5와 시행령 §208 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="business-use-account-registration-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사업용계좌 신고란 무엇인가요?</h2>

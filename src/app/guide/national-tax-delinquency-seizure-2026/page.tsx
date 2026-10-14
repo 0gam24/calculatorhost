@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function NationalTaxDelinquencySeizure2026Page() {
                   국세를 기한까지 내지 못하면 독촉장을 받고, 그래도 내지 않으면 예금·급여·부동산 같은 재산이 압류될 수 있습니다. 이 가이드는 압류가 시작되는 정확한 시점, 예금·급여 압류가 제한되는 금액, 압류 후 공매까지 이어지는 절차, 그리고 완납 외에 압류가 해제되는 조건을 정리합니다. 대상 독자는 국세 체납 통지를 받았거나 체납이 걱정되는 개인·사업자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-tax-delinquency-seizure-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국세 체납 압류란 무엇인가요?</h2>

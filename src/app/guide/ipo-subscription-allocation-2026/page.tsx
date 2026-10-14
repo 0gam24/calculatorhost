@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function IpoSubscriptionAllocation2026Page() {
                   이 글은 공모주 청약을 처음 해보거나 배정 방식이 헷갈리는 투자자를 위해 씁니다. &quot;10주 넣었는데 왜 2주만 배정됐지?&quot;, &quot;증거금은 얼마 넣고 언제 돌려받지?&quot; 같은 실전 궁금증을 균등배정과 비례배정 구조로 풀어드립니다. 청약 절차, 증거금 계산, 환불일, 중복청약 금지 규칙까지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="ipo-subscription-allocation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 공모주 청약은 어떻게 배정되나요?</h2>

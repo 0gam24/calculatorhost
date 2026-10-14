@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function GiftTaxAnnuityPayment2026Page() {
                   증여세 세액이 커서 한 번에 낼 목돈이 없다면, 담보를 제공하고 여러 해에 걸쳐 나눠 내는 연부연납을 신청할 수 있습니다. 이 가이드는 연부연납을 신청할 수 있는 자격요건 3가지, 담보로 인정되는 항목과 담보 종류별 허가 절차, 신청 기간과 회분별 최소 금액, 가산금 이자율까지 실무 순서대로 정리합니다. 대상 독자는 증여세를 신고하려는 수증자와 증여인입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gift-tax-annuity-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증여세 연부연납이란 무엇인가요?</h2>

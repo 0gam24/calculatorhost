@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -139,6 +140,7 @@ export default function JointOwnershipCgtGuide() {
                   양도차익 5억 사례 기준 약 7,500만 원 절세 효과 (소득세법 §94·§103·§104).
                 </p>
               </header>
+              <GuideCalculatorCta slug="joint-ownership-couple-capital-gains-tax-savings" />
 
               {/* 1. 분리 과세 원칙 */}
               <section aria-label="분리 과세 원칙" className="card">

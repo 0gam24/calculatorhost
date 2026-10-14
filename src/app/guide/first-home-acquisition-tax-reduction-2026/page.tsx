@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function FirstHomeAcquisitionTaxReduction2026Page() {
                   무주택자가 처음 주택을 구입할 때 취득세에서 최대 200만원까지 감면받을 수 있습니다. 하지만 이 감면은 까다로운 자격요건이 있고, 감면을 받은 후 거주요건을 지키지 않으면 추징당할 수 있습니다. 이 가이드에서는 생애최초 취득세 감면의 정확한 요건, 계산 방법, 거주요건, 그리고 2026년 말 일몰까지 모든 것을 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="first-home-acquisition-tax-reduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">생애최초 취득세 감면이란 무엇인가</h2>

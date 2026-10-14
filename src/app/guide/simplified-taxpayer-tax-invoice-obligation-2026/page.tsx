@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function SimplifiedTaxpayerTaxInvoiceObligation2026Page() {
                   거래처가 세금계산서를 끊어달라고 하는데 나는 간이과세자라 발급이 되는지 헷갈리는 경우가 많습니다. 예전에는 간이과세자면 무조건 세금계산서를 못 끊었지만, 2021년 7월부터 규정이 바뀌어 매출 규모에 따라 발급 의무가 생깁니다. 이 가이드는 공급대가 4,800만원을 기준으로 세금계산서 의무 발급과 영수증 발급이 어떻게 갈리는지, 매입세액공제와 간이과세 기준까지 1인 사업자 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="simplified-taxpayer-tax-invoice-obligation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이과세자도 세금계산서를 끊어야 하나요?</h2>

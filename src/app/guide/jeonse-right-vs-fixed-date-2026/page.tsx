@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function JeonseRightVsFixedDate2026Page() {
                   전세·월세 계약을 앞둔 임차인이라면 보증금을 지키는 방법으로 확정일자와 전세권 설정을 두고 고민하게 됩니다. 이 글은 두 방법이 법적으로 어떻게 다른지, 각각 무엇을 준비해야 하는지, 비용과 임대인 동의는 어떻게 다른지, 그리고 내 상황에서 어느 쪽이 유리한지 사례와 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="jeonse-right-vs-fixed-date-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세권 설정과 확정일자, 뭐가 다른가요?</h2>

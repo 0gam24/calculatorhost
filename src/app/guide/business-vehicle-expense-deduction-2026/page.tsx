@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function BusinessVehicleExpenseDeduction2026Page() {
                   사업에 쓰는 승용차 비용은 얼마까지 필요경비로 인정될까요. 개인사업자가 복식부기의무자라면 소득세법 §33의2가 적용되어, 감가상각비는 연 800만원까지만 그 해 비용으로 반영되고 운행기록부를 안 쓰면 관련비용 전체가 연 1,500만원 안으로 묶입니다. 이 가이드는 대상 사업자·대상 비용부터 감가상각 한도, 운행기록부 유무별 처리, 리스·렌트 준용, 개인과 법인의 차이까지 실제 계산 사례와 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="business-vehicle-expense-deduction-2026" />
 
               <div className="bg-bg-card p-4 rounded-lg border border-border-base" data-speakable>
                 <p className="font-semibold text-text-primary">30초 요약</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -169,6 +170,7 @@ export default function AugustCgtGuide() {
                   80% 도달이 8월 즈음 임박한 경우가 많기 때문입니다(소득세법 §94·§95·§104, 시행령 §155).
                 </p>
               </header>
+              <GuideCalculatorCta slug="august-capital-gains-tax-review" />
 
               {/* 1. 5가지 핵심 */}
               <section aria-label="5가지 검토 핵심" className="card">

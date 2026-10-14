@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HybridVehicleConsumptionTaxSunset2026Page() {
                   이 가이드는 하이브리드차 구매를 고민 중인 소비자를 위한 글입니다. 2026년 8월 발표된 세제개편안에서 하이브리드 개별소비세 감면 종료가 확정되면서, 연내에 사는 것과 내년에 사는 것의 세금 차이가 커졌습니다. 감면 규모, 종료 후 인상폭, 그리고 전기·수소차 감면 축소 일정까지 세금 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="hybrid-vehicle-consumption-tax-sunset-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">하이브리드 개소세 감면은 언제 끝나나</h2>

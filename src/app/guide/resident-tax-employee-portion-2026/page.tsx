@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function ResidentTaxEmployeePortion2026Page() {
                   이 글은 종업원에게 급여를 지급하는 사업주와 인사·경리 담당자를 위해 씁니다. 주민세 종업원분은 매월 급여총액에 따라 신고납부해야 하는 지방세인데, 면세점 기준을 몰라 과세 대상인지 헷갈리거나 다음 달 10일 신고 기한을 놓치는 경우가 많습니다. 세율과 면세점, 과세표준, 신고 방법을 지방세법 조문 기준으로 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="resident-tax-employee-portion-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 주민세 종업원분이란 무엇인가요?</h2>

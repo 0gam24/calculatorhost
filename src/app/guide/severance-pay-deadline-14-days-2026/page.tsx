@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function SeverancePayDeadline14Days2026Page() {
                   이 가이드는 퇴사했는데 퇴직금이 제때 들어오지 않아 불안한 근로자를 위한 것입니다. 퇴직금은 급여일과 관계없이 퇴직한 날부터 14일 이내에 지급해야 하는 법적 의무입니다. 기한이 지났을 때 붙는 지연이자, 노동청 신고 절차, 그리고 사업주가 받는 처벌까지 근거 조항과 함께 실전 위주로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="severance-pay-deadline-14-days-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">퇴직금은 언제까지 줘야 하나요?</h2>

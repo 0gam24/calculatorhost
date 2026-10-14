@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function RealEstateEarnestMoneyForfeit2026Page() {
                   집을 계약하고 계약금을 걸었는데 갑자기 마음이 바뀌었을 때, 그 돈은 정말 다 날리는 것인지, 파는 사람이 취소하면 배로 돌려받을 수 있는지, 문자로 주고받은 가계약금은 어떻게 되는지 헷갈리는 분들이 많습니다. 결론부터 말하면 우리 민법 §565가 정한 해약금 규정에 따라 매수인은 계약금을 포기하고, 매도인은 받은 계약금의 두 배를 상환해 계약을 해제할 수 있습니다. 다만 상대방이 이행에 착수한 뒤에는 이 방법이 통하지 않으며, 가계약금은 사안별로 판단이 갈립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="real-estate-earnest-money-forfeit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">계약금을 걸고 계약을 취소할 수 있나요</h2>

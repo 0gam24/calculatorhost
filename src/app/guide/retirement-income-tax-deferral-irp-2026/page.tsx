@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
                   즉시 세금을 내지 않고 나중에 연금으로 수령할 때 30~40% 절감받을 수 있는 과세이연 제도를 소개합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="retirement-income-tax-deferral-irp-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 체크리스트</h2>

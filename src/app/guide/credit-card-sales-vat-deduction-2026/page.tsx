@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function CreditCardSalesVatDeduction2026Page() {
                   손님이 카드나 현금영수증으로 결제하면 매출이 그대로 국세청에 잡혀 세부담이 커진다고 느끼는 사장님이 많습니다. 그런데 개인사업자에게는 이 카드·현금영수증 매출의 일부를 부가세에서 돌려주는 신용카드 매출세액공제가 있습니다. 이 가이드는 누가 얼마를 공제받는지, 2026년 공제율과 한도, 2027년 축소 예정까지 실제 계산과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="credit-card-sales-vat-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">신용카드 매출세액공제란</h2>

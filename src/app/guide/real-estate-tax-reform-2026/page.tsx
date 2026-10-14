@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function RealEstateTaxReform2026Page() {
                   이 글은 집을 가진 사람, 팔지 말지 고민하는 1주택자, 오래 보유만 하고 거주하지 않은 소유자를 위해 2026년 8월 3일 발표된 세제개편안의 부동산 세금 변화를 쉽게 정리한 글입니다. 아직 확정된 법이 아니라 국회 심의를 앞둔 정부안이라는 점을 전제로, 장기보유특별공제가 어떻게 바뀌는지, 공제한도가 왜 생기는지, 실거주자와 비거주자에게 각각 어떤 영향이 있는지를 순서대로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="real-estate-tax-reform-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 2026 세제개편안, 부동산 세금 핵심은 무엇인가요?</h2>

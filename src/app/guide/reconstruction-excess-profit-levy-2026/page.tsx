@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function ReconstructionExcessProfitLevy2026Page() {
                   재건축을 앞둔 조합원이라면 준공 뒤 얼마의 부담금을 낼지 미리 가늠하는 것이 중요합니다. 재건축초과이익환수제(재건축부담금)는 조합원 1인당 평균이익이 8천만원을 넘을 때부터 초과분에 10~50% 누진 부과율을 적용합니다. 이 가이드는 재건축초과이익 환수법 §12를 근거로 면제 기준, 구간별 부과율, 1인당 부담금 계산 사례를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="reconstruction-excess-profit-levy-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재건축부담금이란 무엇인가요?</h2>

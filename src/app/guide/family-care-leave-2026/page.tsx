@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function FamilyCareLeave2026Page() {
                   부모가 갑자기 입원하거나 아이가 아플 때, 회사에 며칠쯤 자리를 비워야 하는데 연차만으로는 부족한 경우가 많습니다. 이럴 때 근로자가 법으로 보장받는 두 가지 제도가 가족돌봄휴직과 가족돌봄휴가입니다. 이 가이드는 각각 며칠까지 쓸 수 있는지, 급여는 나오는지, 어떤 가족을 돌볼 때 인정되는지, 회사가 거부할 수 있는 경우는 무엇인지까지 남녀고용평등법 §22의2 기준으로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="family-care-leave-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가족돌봄휴직·휴가란 무엇인가</h2>

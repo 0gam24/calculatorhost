@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -178,6 +179,7 @@ export default function CapitalGainsTaxInstallmentPayment2026Page() {
                   규모가 큰 매도인·투자자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="capital-gains-tax-installment-payment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">양도소득세 분납이란 무엇인가요?</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function InheritanceRenunciation2026Page() {
                   부모님이 남긴 것이 재산보다 빚이 많을 때, 상속인은 상속포기로 그 채무를 넘겨받지 않을 수 있습니다. 이 가이드는 상속포기의 기한과 신고 방법, 후순위 상속인까지 포기해야 하는 이유, 한정승인과의 차이, 그리고 사망보험금처럼 헷갈리기 쉬운 예외를 실제 사례와 함께 정리합니다. 대상 독자는 채무 상속이 걱정되는 상속인입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-renunciation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상속포기란 무엇인가요?</h2>

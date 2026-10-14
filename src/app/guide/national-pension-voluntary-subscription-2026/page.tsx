@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function NationalPensionVoluntarySubscription2026Page() {
                   국민연금은 직장인이나 자영업자만 가입하는 제도가 아닙니다. 소득이 없는 전업주부, 학생, 조기 은퇴자도 스스로 신청하면 가입할 수 있고, 10년만 채우면 평생 노령연금을 받습니다. 이 가이드는 소득이 없어도 국민연금에 가입하는 임의가입과, 60세 이후 부족한 기간을 채우는 임의계속가입의 대상·보험료·요건을 실제 사례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-voluntary-subscription-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임의가입이란 무엇인가</h2>

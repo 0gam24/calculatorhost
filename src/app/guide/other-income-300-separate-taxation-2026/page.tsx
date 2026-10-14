@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function OtherIncome300SeparateTaxation2026Page() {
                   강연을 하거나 글을 기고하고 받은 강연료·원고료는 기타소득입니다. 이 기타소득은 연간 금액이 일정 기준 이하이면 세금을 낼 때 분리과세와 종합과세 중 유리한 쪽을 스스로 고를 수 있습니다. 이 가이드는 그 기준선인 300만원이 무엇을 의미하는지, 필요경비 60% 의제는 어떻게 적용되는지, 그리고 나에게는 분리과세와 종합과세 중 어느 쪽이 유리한지를 계산 사례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="other-income-300-separate-taxation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기타소득 300만원 기준이란 무엇인가요?</h2>

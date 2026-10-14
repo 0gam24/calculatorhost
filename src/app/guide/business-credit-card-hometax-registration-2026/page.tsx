@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function BusinessCreditCardHometaxRegistration2026Page() {
                   이 가이드는 부가가치세 신고 때마다 카드 전표를 하나하나 정리하느라 지치는 개인사업자를 위한 것입니다. 사업용 신용카드를 홈택스에 등록해 두면 사용내역이 자동으로 모여 매입세액공제가 훨씬 수월해집니다. 등록 방법부터 어떤 사용이 공제되고 어떤 사용이 빠지는지까지, 실무에서 자주 헷갈리는 부분을 부가가치세법 조항과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="business-credit-card-hometax-registration-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">사업용 신용카드를 왜 홈택스에 등록하나요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -141,6 +142,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   시행령 §66).
                 </p>
               </header>
+              <GuideCalculatorCta slug="self-farming-land-100-percent-exemption" />
 
               {/* 1. 자경농지 감면의 정의 */}
               <section aria-label="자경농지 감면의 정의" className="card">

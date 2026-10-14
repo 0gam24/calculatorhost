@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function OtherIncomeNecessaryExpense602026Page() {
                   강연을 한 번 하거나, 원고를 기고하거나, 자문에 응하고 받는 돈은 기타소득으로 잡힙니다. 이때 세금이 생각보다 적은데, 그 이유가 바로 필요경비 60%를 증빙 없이 빼주기 때문입니다. 이 가이드는 어떤 부수입이 60% 경비를 인정받는지, 실효세율이 왜 8.8%인지, 그리고 연 750만원(기타소득금액 300만원)이라는 절세 분기점을 소득세법 조문으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="other-income-necessary-expense-60-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">기타소득이란 무엇인가</h2>

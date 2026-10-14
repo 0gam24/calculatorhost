@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function RetirementPayInterimSettlement2026Page() {
                   집을 사거나 급한 목돈이 필요할 때 쌓인 퇴직금을 미리 받을 수 없을까 고민하는 직장인이 많습니다. 그런데 퇴직금 중간정산은 아무 때나 되는 것이 아니라, 법이 정한 사유에 해당할 때만 가능합니다. 이 가이드는 어떤 사유가 인정되는지, 어떤 증빙이 필요한지, 그리고 중간정산이 나중의 퇴직소득세를 어떻게 늘릴 수 있는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="retirement-pay-interim-settlement-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">퇴직금 중간정산은 원칙적으로 금지된다</h2>

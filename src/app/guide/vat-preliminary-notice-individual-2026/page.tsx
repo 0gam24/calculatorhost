@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function VatPreliminaryNoticeIndividual2026Page() {
                   4월 중순쯤 갑자기 세무서에서 부가세 고지서가 날아옵니다. 신고한 적도 없는데 왜 오는지, 얼마를 어떻게 산정한 것인지 당황하는 개인사업자가 매년 반복됩니다. 이 가이드는 개인 일반과세 사업자를 중심으로 부가가치세 예정고지가 어떤 제도인지, 금액은 어떻게 정해지는지, 예정신고와는 무엇이 다른지, 매출이 급감했을 때는 어떻게 대응할 수 있는지를 부가가치세법 §48 기준으로 정리합니다. 간이과세자는 별도 체계이므로 이 글의 대상에서 제외합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="vat-preliminary-notice-individual-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">부가가치세 예정고지가 무엇인가요</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -175,6 +176,7 @@ export default function LowPriceTransferDeemedGift2026Page() {
                   사람입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="low-price-transfer-deemed-gift-2026" />
 
               <section className="space-y-6" data-speakable>
                 <div className="overflow-x-auto">

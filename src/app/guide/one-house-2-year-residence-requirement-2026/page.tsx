@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function OneHouseResidenceRequirement2026Page() {
                   이 가이드는 집 한 채를 팔며 비과세를 받으려는 실거주 1주택자를 위해 씁니다. 많은 분이 무조건 2년을 살아야 비과세라고 오해하지만, 실제 갈림길은 취득 당시 그 집이 조정대상지역이었는지 여부입니다. 조정지역 취득 주택만 2년 거주가 필요하고, 그 외에는 2년 보유만으로 판단합니다. 여기에 상생임대인과 부득이한 사유라는 두 가지 면제까지 알아두면 불필요한 세금을 피할 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="one-house-2-year-residence-requirement-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">거주요건, 언제 붙고 언제 안 붙나</h2>

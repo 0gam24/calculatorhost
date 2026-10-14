@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function VehicleTax2026Page() {
                   시작되는 <strong>차령경감</strong>(연 5%, 최대 50%)과 1월 <strong>연납 할인</strong>(5% 공제율)을 반영하면 실제 납부액을 정확히 계산할 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="vehicle-tax-2026" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function GiftTaxCalculation2026Page() {
                   재산을 남에게 무상으로 주는 증여는 세금이 따릅니다. 증여받은 재산이 얼마나 될지, 세금은 얼마일지를 정확히 계산하는 것은 필수입니다. 증여재산 평가부터 증여재산공제, 5단계 누진세율까지 한 단계도 놓칠 수 없습니다. 이 가이드는 증여세를 처음부터 끝까지 정확하게 계산하는 방법을 체계적으로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gift-tax-calculation-2026" />
 
               <section className="space-y-6">
                 <h2 className="text-2xl font-bold">증여세 5단계 세율표와 누진공제</h2>

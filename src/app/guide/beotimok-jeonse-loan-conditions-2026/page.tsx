@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function BeotimokJeonseLoanConditions2026Page() {
                   전세 계약을 앞두고 목돈이 부족한 무주택자에게 버팀목 전세자금대출은 가장 먼저 검토할 정책상품입니다. 이 글은 처음 전세대출을 알아보는 청년과 신혼부부, 무주택 세대주를 위해 준비했습니다. 누가 받을 수 있는지, 소득·자산 요건과 한도·금리는 어떻게 정해지는지, 청년버팀목과 무엇이 다른지, 신청은 어디서 하는지를 순서대로 정리합니다. 금액·금리 요건은 매년 바뀌므로 정확한 수치는 주택도시기금 포털에서 확인하는 것을 전제로 읽어주세요.
                 </p>
               </header>
+              <GuideCalculatorCta slug="beotimok-jeonse-loan-conditions-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약</h2>

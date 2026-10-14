@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                   부모나 배우자가 돌아가시고 살던 집을 물려받게 되면 가장 먼저 부딪히는 세금이 취득세입니다. 상속 주택 취득세는 유상거래와 완전히 다른 규정을 따르며, 무주택 세대에는 특례세율 0.8%가 적용되어 세 부담이 크게 낮아집니다. 이 가이드는 기본 세율 2.8%와 특례 0.8%의 정확한 적용 조건, 신고 기한, 지방교육세·농특세 처리, 증여와의 결정적 차이까지 지방세법 원문을 근거로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-house-acquisition-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약, 상속 취득세 핵심 3가지</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function InheritanceOtherPersonalDeduction2026Page() {
                   상속세는 상속재산 전부에 곧바로 세금을 매기지 않습니다. 기초공제와 인적공제, 또는 일괄공제를 먼저 빼주기 때문입니다. 이 가이드는 가족 구성에 따라 달라지는 상속세 인적공제가 자녀·미성년자·연로자·장애인별로 각각 얼마인지, 기초공제 2억을 더한 합계와 일괄공제 5억 중 어느 쪽을 고르는 것이 유리한지를 사례로 정리했습니다. 상속을 앞두고 세부담을 미리 가늠하려는 분을 위한 글입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-other-personal-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">상속세 인적공제란 무엇인가요</h2>

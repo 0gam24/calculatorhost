@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function GiftAcquisitionTaxMarketValue2026Page() {
                   부모가 자녀에게 아파트를 증여할 때 내는 취득세는 2023년을 기점으로 크게 달라졌습니다. 과세표준이 공시가격(시가표준액)에서 실제 시장가에 가까운 시가인정액으로 바뀌었기 때문입니다. 이 가이드는 시가인정액이 무엇이고 어떻게 산정되는지, 시가표준액과 무엇이 다른지, 소형 부동산의 예외는 무엇인지, 그리고 실제 증여 취득세가 얼마나 늘어나는지를 사례로 정리했습니다. 부동산 증여를 계획 중인 분을 위한 글입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="gift-acquisition-tax-market-value-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">증여 취득세 과세표준이 어떻게 바뀌었나요</h2>

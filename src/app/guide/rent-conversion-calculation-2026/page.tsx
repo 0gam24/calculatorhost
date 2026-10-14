@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -184,6 +185,7 @@ export default function RentConversionCalculationPage() {
                   환산하는 공식과 실제 계산 사례를 명확히 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="rent-conversion-calculation-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

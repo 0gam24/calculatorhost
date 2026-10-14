@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -158,6 +159,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   소득 합산 규칙·분리과세 선택권·누진세율 효과를 완벽히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="n-jobber-comprehensive-income-tax-2026" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

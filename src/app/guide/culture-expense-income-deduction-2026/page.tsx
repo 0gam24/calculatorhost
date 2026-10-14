@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function CultureExpenseIncomeDeduction2026Page() {
                   책을 사고 영화를 보고 헬스장에 등록한 돈도 연말정산에서 소득공제를 받을 수 있습니다. 이것이 문화비 소득공제입니다. 이 가이드는 총급여 7,000만원 이하 근로자를 위해, 어떤 결제가 문화비로 인정되는지, 공제율과 한도는 얼마인지, 그리고 2026년 8월 발표된 세제개편안이 무엇을 바꾸려 하는지를 정리했습니다. 취미 지출을 절세로 연결하고 싶은 직장인을 위한 글입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="culture-expense-income-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">문화비 소득공제란 무엇인가요</h2>

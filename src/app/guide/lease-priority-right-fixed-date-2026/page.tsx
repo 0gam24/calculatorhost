@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function LeapriorityRightFixedDate2026Page() {
                   전세사기는 더 이상 남의 일이 아닙니다. 매년 수천 명의 세입자들이 임대인의 채무로 인해 보증금을 돌려받지 못하는 상황에 직면합니다. 하지만 이런 악사를 충분히 예방할 수 있는 법적 방어 수단이 있습니다. 바로 대항력·우선변제권·최우선변제입니다. 이 가이드는 전세 계약 후 반드시 해야 할 '전입신고'와 '확정일자' 신청의 정확한 의미, 단계별 신청 방법, 그리고 지역별 최우선변제 금액까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="lease-priority-right-fixed-date-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">대항력·우선변제권·최우선변제란</h2>

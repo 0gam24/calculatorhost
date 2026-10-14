@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function SalaryTakeHome2026JulyInsuranceIncreasePage() {
                   7월에 공제액이 바뀌는 사람은 월급 659만원 이상 고소득자와 월 보수 41만원 미만 단시간 근로자뿐입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="salary-take-home-2026-july-insurance-increase" />
 
               {/* 정정 안내 */}
               <section aria-label="정정 안내" className="card bg-card border-l-4 border-l-danger-500 p-4 text-sm">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function FinancialAssetInheritanceDeduction2026Page() {
                   이 글은 예금·주식 등 금융재산을 상속받는 상속인을 위해 금융재산 상속공제를 정리한 가이드입니다. 순금융재산이 얼마일 때 얼마를 공제받는지, 어떤 재산이 포함되고 무엇이 제외되는지, 부동산과는 왜 다른지까지 실제 금액으로 확인하실 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="financial-asset-inheritance-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">금융재산 상속공제가 무엇인가요?</h2>

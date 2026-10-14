@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function NationalPension2026() {
                   내 국민연금은 몇 살부터, 얼마를 받을 수 있는지, 출생연도별 수령나이, 예상수령액 확인 방법, 조기수령과 연기연금의 손익까지 정확히 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-2026" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

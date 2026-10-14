@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function AnnualLeaveAllowancePage() {
                   정확한 계산법과 회사에 청구하는 방법을 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="annual-leave-allowance-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">연차수당 요약</h2>

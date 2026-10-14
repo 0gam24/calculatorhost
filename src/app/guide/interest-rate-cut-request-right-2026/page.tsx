@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function InterestRateCutRequestPage() {
                   대출을 받은 뒤 취업에 성공했거나 승진해서 연봉이 올랐다면, 대출금리를 낮춰달라고 요구할 수 있는 권리가 있습니다. 이 가이드는 대출을 갚고 있는 직장인과 자영업자를 위해, 금리인하요구권을 누가 언제 신청할 수 있는지, 어떤 서류가 필요한지, 거절되면 어떻게 대응하는지 실전 순서로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="interest-rate-cut-request-right-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">금리인하요구권이란 무엇인가</h2>

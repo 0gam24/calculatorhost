@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function DismissalAdvanceNoticePay2026Page() {
                   갑자기 그만두라는 통보를 받고 30일분 급여를 받을 수 있는지 막막한 직장인을 위한 가이드입니다. 해고예고수당이 무엇인지, 얼마를 어떻게 계산하는지, 수습이나 3개월 미만이면 받을 수 있는지, 권고사직과는 어떻게 다른지, 그리고 못 받았을 때 어디에 도움을 청하는지를 근로기준법 조문과 계산 사례로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="dismissal-advance-notice-pay-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">해고예고수당이란 무엇인가요?</h2>

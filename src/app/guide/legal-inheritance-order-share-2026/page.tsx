@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function LegalInheritanceOrderShare2026Page() {
                   가족이 세상을 떠나면 남은 재산을 누가 얼마씩 받는지가 곧바로 문제가 됩니다. 유언이 없거나 상속인들이 다투면 민법이 정한 법정상속순위와 법정상속분이 기준이 됩니다. 이 가이드는 상속인이 되는 순서, 배우자가 왜 1.5배를 받는지, 실제 재산을 나누는 계산법, 그리고 유류분과 상속포기까지 민법 조문을 기준으로 상속을 처음 겪는 분도 이해할 수 있게 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="legal-inheritance-order-share-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">법정상속순위는 어떻게 정해지나요?</h2>

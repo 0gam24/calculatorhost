@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function PensionIncomeTaxWithholding2026Page() {
                   연금저축과 IRP를 열심히 쌓아온 분들이 정작 수령 단계에서 세금을 걱정합니다. 다행히 사적연금은 연 1,500만원까지 나이에 따라 3.3~5.5%만 떼는 저율 분리과세라 부담이 크지 않습니다. 이 가이드는 그 1,500만원 한도의 의미, 연령별 세율 차이, 한도를 넘겼을 때의 선택지, 그리고 수령 기간을 조절해 세금을 줄이는 방법을 소득세법 조문으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="pension-income-tax-withholding-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">연금소득세는 어떻게 매겨지나</h2>

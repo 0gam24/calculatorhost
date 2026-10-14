@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -160,6 +161,7 @@ export default function RealEstateBrokerFeeRatePage() {
                   부동산 거래 시 내야 하는 중개수수료는 공인중개사법 제32조로 상한요율이 정해져 있습니다. 6억원 주택 매매는 0.4%, 3억원 전세는 0.3%, 월세 환산 등 거래 유형별로 요율이 다릅니다. 상한요율이므로 협의로 인하 가능하며, 부가세 여부를 미리 확인해야 합니다. 거래금액별 정확한 계산법을 한눈에 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="real-estate-broker-fee-rate-2026" />
 
               {/* Structured Summary */}
               <div className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4">

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -141,6 +142,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
             </div>
 
             {/* 섹션 1: 결정 프레임 */}
+            <GuideCalculatorCta slug="child-house-gift-vs-sale-comparison" />
             <section className="mb-10">
               <h2 className="mb-4 text-2xl font-bold text-text-primary">
                 1. 증여 vs 매매 결정 프레임

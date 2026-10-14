@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function HousingSubscriptionNoHousePeriod2026Page() {
                   청약 가점에서 가장 헷갈리는 항목이 무주택기간입니다. 태어나서 지금까지 집이 없었으니 무주택기간이 30년이라고 생각하기 쉽지만, 실제로는 만 30세 또는 혼인신고일부터만 계산합니다. 이 가이드는 무주택기간을 언제부터 세는지, 과거에 집이 있었다면 어떻게 되는지, 그리고 32점 만점을 어떻게 채우는지를 주택공급에 관한 규칙을 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-no-house-period-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">무주택기간은 언제부터 계산하나요?</h2>

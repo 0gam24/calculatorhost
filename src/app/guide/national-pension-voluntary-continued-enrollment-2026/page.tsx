@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalPensionVoluntaryContinuedEnrollment2026Page() {
                   이 가이드는 60세가 가까워졌지만 국민연금 가입기간이 부족하거나, 연금을 조금이라도 더 받고 싶은 장년층과 은퇴 준비자를 위한 것입니다. 60세가 되면 국민연금 의무가입은 끝나지만, 임의계속가입을 신청하면 65세 전까지 가입을 이어가 최소 가입기간을 채우거나 연금액을 키울 수 있습니다. 누가 언제까지 신청하는지, 보험료는 얼마인지, 어떤 경우에 유리한지 국민연금법 조항과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-voluntary-continued-enrollment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">임의계속가입은 어떤 제도인가요?</h2>

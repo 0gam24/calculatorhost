@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -178,6 +179,7 @@ export default function DtiCalculation2026Page() {
                   그리고 실제 대출한도가 어떻게 결정되는지 명확히 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="dti-calculation-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

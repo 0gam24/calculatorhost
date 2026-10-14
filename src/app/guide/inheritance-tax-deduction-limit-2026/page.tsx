@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   상속이 발생하면 가장 먼저 알아야 할 것은 "상속세를 얼마나 내야 하는가"가 아니라, "이 공제로 얼마까지 면제될까"입니다. 상속공제는 상증세법 §18~§21에서 규정하며, 배우자가 있고 가족 구성이 적절하면 10억원 이상을 공제받아 상속세를 완전히 면할 수도 있습니다. 이 가이드는 5가지 상속공제의 한도를 명확하게 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-tax-deduction-limit-2026" />
 
               <section className="space-y-6">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">상속공제 5가지 한도 한눈에</h2>

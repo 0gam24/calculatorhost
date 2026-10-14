@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function DepositProtectionLimit2026Page() {
                   24년간 5천만원에 묶여 있던 예금자보호 한도가 2025년 9월 1일부터 1억원으로 올랐습니다. 금융회사가 파산해도 원금과 이자를 합쳐 1억원까지 돌려받을 수 있다는 뜻입니다. 다만 모든 상품이 보호되는 것은 아니고, 한도를 넘는 자금은 여전히 분산이 필요합니다. 이 가이드는 예금자보호법 §32를 기준으로 보호 대상, 한도 적용 방식, 실전 분산예치 전략을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="deposit-protection-limit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">예금자보호 한도가 얼마로 올랐나요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
                   미국주식, 홍콩 ETF, 인도 종목 등 해외에서 주식을 매도할 때 한국에 양도소득세를 내야 합니다. 하지만 국내주식과 달리 신고 시점, 공제액, 환율 기준일이 다르기 때문에 실수하기 쉽습니다. 이 가이드는 소득세법 §118의2에 따른 해외주식 양도소득세의 정확한 계산법, 250만원 기본공제, 22% 세율, 다음해 5월 신고 절차까지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="overseas-stock-capital-gains-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">해외주식 양도소득세란</h2>

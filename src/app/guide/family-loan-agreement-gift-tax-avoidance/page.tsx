@@ -1,6 +1,7 @@
 
 
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                   차용증 작성법부터 함정 5가지, 신고 절차까지 정확히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="family-loan-agreement-gift-tax-avoidance" />
 
               {/* Structured Summary */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

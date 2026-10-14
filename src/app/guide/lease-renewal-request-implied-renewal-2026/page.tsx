@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function LeaseRenewalRequest2026Page() {
                   전세·월세 계약 만기가 다가올 때 임차인이 활용할 수 있는 제도는 크게 두 가지입니다. 하나는 주택임대차보호법 §6의3에 규정된 계약갱신요구권이고, 다른 하나는 §6의 묵시적 갱신입니다. 이름은 비슷해도 통지 시기, 갱신 횟수, 임대료 인상 규칙, 중도 해지 방법이 각기 다릅니다. 이 가이드에서는 두 제도의 차이와 5% 상한, 그리고 실제 인상액 계산 사례를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="lease-renewal-request-implied-renewal-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">계약갱신요구권이란 무엇인가요?</h2>

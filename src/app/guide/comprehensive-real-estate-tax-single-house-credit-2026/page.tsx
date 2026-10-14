@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
                   종합부동산세를 낼 때 1세대1주택이면 고령자 세액공제와 장기보유 세액공제를 받을 수 있습니다. 특히 두 공제를 중복으로 받으면 최대 80%까지 세액을 줄일 수 있어, 최종 납부액이 크게 달라집니다. 이 가이드에서는 두 공제의 정확한 기준·계산 공식·중복 적용 방법과 함께, 부부공동명의 특례까지 완벽하게 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-real-estate-tax-single-house-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1세대1주택 세액공제란</h2>

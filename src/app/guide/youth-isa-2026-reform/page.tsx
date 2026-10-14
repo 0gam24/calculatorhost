@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 청년형 ISA 신설 개편안 (청년 투자자 절세 롱테일)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function YouthIsa2026ReformPage() {
                   주식·펀드로 자산을 불리려는 34세 이하 청년을 위한 글입니다. 2026년 세제개편안은 청년 전용 ISA를 신설해, 이자·배당을 전액 비과세하면서 납입액의 10%까지 소득공제하는 파격적인 혜택을 담았습니다. 이 글은 가입 조건, 세금 혜택의 크기, 기존 일반 ISA와의 차이, 그리고 아직 정부안이라는 점까지 계산 사례로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="youth-isa-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">청년형 ISA가 뭔가요?</h2>

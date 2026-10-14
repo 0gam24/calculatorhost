@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function IncomeCertificateIssuancePage() {
                   대출이나 전세 계약, 각종 신청 때문에 소득금액증명원을 떼려는데 발급이 안 되거나 작년치가 조회되지 않아 당황한 적이 있나요. 이 가이드는 대출·전세를 준비하는 직장인과 프리랜서, 사업자를 위해 언제부터 발급되는지, 왜 발급이 막히는지, 어디서 어떻게 떼는지, 그리고 발급이 안 될 때 어떤 서류로 대체하는지 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="income-certificate-issuance-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">소득금액증명원이란 무엇인가</h2>

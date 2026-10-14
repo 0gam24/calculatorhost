@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function DidimdolLoanConditions2026Page() {
                   이 가이드는 처음 내 집을 마련하려는 무주택 실수요자를 위한 것입니다. 디딤돌대출은 정부가 주택도시기금으로 지원하는 저리 주택담보대출로, 소득과 주택가격에 상한이 있습니다. 내가 자격이 되는지, 얼마까지 어떤 금리로 받을 수 있는지, 어떻게 신청하는지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="didimdol-loan-conditions-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">디딤돌대출이란 무엇인가요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function RedevelopmentMembershipRightCgt2026Page() {
                   이 가이드는 재개발·재건축 구역에 주택이나 입주권을 가진 분을 위한 것입니다. 관리처분계획인가로 주택이 입주권으로 바뀌면 세금 규칙이 복잡해집니다. 입주권을 팔 때 비과세되는지, 주택과 입주권을 함께 가진 경우 종전주택을 언제까지 팔아야 하는지, 원조합원과 승계조합원이 어떻게 다른지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="redevelopment-membership-right-capital-gains-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">조합원입주권이란 무엇인가요?</h2>

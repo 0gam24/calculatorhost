@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HometownLoveDonationTaxCredit2026Page() {
                   이 가이드는 세금을 아끼면서 지역에도 보탬이 되고 싶은 직장인과 일반 납세자를 위한 것입니다. 고향사랑기부제는 10만원까지 사실상 낸 돈을 전부 돌려받고 기부액의 30%짜리 답례품까지 받을 수 있어, 사실상 손해 없이 이득만 남는 몇 안 되는 제도입니다. 공제가 정확히 어떻게 계산되는지, 얼마를 기부하는 것이 가장 효율적인지 조세특례제한법 조항과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="hometown-love-donation-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">고향사랑기부제란 무엇인가요?</h2>

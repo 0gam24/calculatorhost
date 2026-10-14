@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function HousingSubscriptionFirstPriority2026Page() {
                   청약을 준비할 때 가장 먼저 확인할 것이 1순위 자격입니다. 그런데 국민주택이냐 민영주택이냐, 규제지역이냐에 따라 요건이 제각각이라 헷갈립니다. 통장을 언제까지 들고 있어야 하는지, 매월 얼마를 넣어야 하는지, 예치금은 얼마인지를 한 번에 정리했습니다. 이 가이드는 청약 대기자가 자신의 1순위 여부를 스스로 점검하도록 돕는 것을 목적으로 합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-first-priority-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">주택청약 1순위란?</h2>

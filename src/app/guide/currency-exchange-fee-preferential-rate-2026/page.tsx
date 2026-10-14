@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -174,6 +175,7 @@ export default function CurrencyExchangeFeePreferentialRate2026Page() {
                   구조를 명확하게 정리하고, 실제 계산 공식과 사례를 제시합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="currency-exchange-fee-preferential-rate-2026" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">

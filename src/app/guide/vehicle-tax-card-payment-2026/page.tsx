@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -147,6 +148,7 @@ export default function VehicleTaxCardPayment2026Page() {
                   자동차세는 지방세로서 신용카드 납부 수수료가 무료입니다(국세와 달리 지방세는 카드 납부 수수료가 없음). 더욱이 1월에 연간 자동차세 전액을 미리 내면 <strong>5% 공제율(지방세법 시행령 §125)</strong>을 받을 수 있으며, 신청 시기에 따라 실제 할인율은 약 4.81%~1.67% 범위입니다. 또한 카드사의 무이자 할부 이벤트를 활용하면 현금 흐름도 개선할 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="vehicle-tax-card-payment-2026" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

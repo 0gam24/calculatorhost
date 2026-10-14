@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -142,6 +143,7 @@ export default function SalaryNegotiationTakeHomePage() {
                   세전·세후의 차이, 상여금의 영향, 비과세 수당, 자녀 공제까지 반영한 정확한 월 실수령액을 계산하는 법을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="salary-negotiation-take-home" />
 
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">협상 체크리스트</h2>

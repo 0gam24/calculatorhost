@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function FarmlandPension2026Page() {
                   땅은 있는데 현금이 부족한 은퇴 농업인에게 농지연금은 농지를 팔지 않고도 매달 생활비를 만드는 방법입니다. 이 글은 농지를 소유한 60세 이상 농업인과 은퇴를 앞둔 농민을 위해 준비했습니다. 누가 가입할 수 있는지, 담보 농지는 어떻게 평가하고 수령액은 어떻게 정해지는지, 어떤 수령 방식을 고를 수 있는지, 세제혜택과 사망 시 처리까지 순서대로 정리합니다. 금액 기준은 매년 바뀌므로 정확한 수치는 한국농어촌공사 농지은행에서 확인하는 것을 전제로 읽어주세요.
                 </p>
               </header>
+              <GuideCalculatorCta slug="farmland-pension-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약</h2>

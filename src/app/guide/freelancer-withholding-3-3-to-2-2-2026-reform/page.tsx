@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 인적용역 원천징수 3.3→2.2 인하 개편안 (프리랜서·배달라이더 롱테일)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function FreelancerWithholding2026ReformPage() {
                   프리랜서와 배달라이더처럼 대금에서 3.3%를 떼고 받는 인적용역 사업소득자를 위한 글입니다. 2026년 세제개편안은 이 원천징수 세율을 3%에서 2%로 낮추는 안을 담았습니다. 이 글은 3.3%가 2.2%로 바뀌면 매달 얼마나 더 받는지, 그리고 가장 오해가 많은 &lsquo;그래서 세금이 진짜 줄어드는가&rsquo;라는 질문에 계산 사례로 답합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="freelancer-withholding-3-3-to-2-2-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">3.3%가 2.2%로 줄어든다고요?</h2>

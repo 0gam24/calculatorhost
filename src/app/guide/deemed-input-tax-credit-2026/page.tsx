@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function DeemedInputTaxCredit2026Page() {
                   음식점이나 카페를 하면 쌀·채소·고기·생선 같은 면세 농수산물을 매일 사들입니다. 이 재료들은 살 때 부가세가 없어 매입세액도 잡히지 않지만, 음식을 팔 때는 부가세를 냅니다. 이 글은 그 불균형을 메워주는 의제매입세액공제가 무엇인지, 내 업종의 공제율은 얼마인지, 한도는 어떻게 걸리는지, 그리고 실제로 얼마를 돌려받는지 사장님 눈높이에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="deemed-input-tax-credit-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">의제매입세액공제란 무엇인가요?</h2>

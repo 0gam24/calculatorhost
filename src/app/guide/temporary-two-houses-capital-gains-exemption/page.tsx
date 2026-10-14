@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -140,6 +141,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                   단, 3가지 조건과 5가지 함정을 놓치면 과세됩니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="temporary-two-houses-capital-gains-exemption" />
 
               {/* 1. 일시적 2주택 정의 */}
               <section aria-label="일시적 2주택 정의" className="card">

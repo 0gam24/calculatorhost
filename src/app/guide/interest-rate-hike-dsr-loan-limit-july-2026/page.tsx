@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function InterestRateHikeDsrLoanLimitJuly2026() {
                   이 글은 현재 금리를 기준으로 그 구조와 영향을 가정 사례로 미리 점검합니다(특정 시점 인상을 단정하지 않습니다).
                 </p>
               </header>
+              <GuideCalculatorCta slug="interest-rate-hike-dsr-loan-limit-july-2026" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

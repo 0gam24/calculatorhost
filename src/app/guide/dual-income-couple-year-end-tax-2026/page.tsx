@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -183,6 +184,7 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                   공제를 누가 받으면 유리한지, 실제 계산법은 무엇인지 완전히 정리해드립니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="dual-income-couple-year-end-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">맞벌이 부부 연말정산, 왜 배분이 중요한가</h2>

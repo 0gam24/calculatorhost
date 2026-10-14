@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function ParentalLeave66Special2026Page() {
                   이 가이드는 생후 18개월 이내 자녀를 부부가 함께 돌보려는 맞벌이 부모를 위한 것입니다. 부부가 모두 육아휴직을 쓰면 각자 첫 6개월 급여가 통상임금의 100%로 올라가고, 일반 육아휴직에 있던 사후지급금 공제도 없이 매달 전액을 받습니다. 월별 상한액, 부부 합산 실수령, 신청 절차를 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="parental-leave-6-plus-6-special-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">6+6 부모육아휴직제란 무엇인가요?</h2>

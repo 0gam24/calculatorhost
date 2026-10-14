@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function ForeignCurrencyDepositTax2026Page() {
                   환율이 오르내릴 때마다 달러예금 계좌를 열어두는 분들이 궁금해하는 질문은 크게 세 가지입니다. 이자에 세금이 얼마 붙는지, 환율이 올라 생긴 환차익도 세금을 내야 하는지, 그리고 규모가 커지면 종합과세 대상이 되는지입니다. 이 가이드는 개인이 보유한 외화예금을 기준으로 이자소득세 15.4%의 구조, 환차익 비과세 원칙, 금융소득종합과세 2,000만원 기준, 그리고 예금자보호 한도까지 소득세법과 예금자보호법 조문에 근거해 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="foreign-currency-deposit-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">달러예금 이자에는 세금이 얼마인가요?</h2>

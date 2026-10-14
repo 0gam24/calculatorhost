@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -140,6 +141,7 @@ export default function HousingRentalIncomeGuide() {
                   정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-rental-income-separate-taxation" />
 
               {/* 1. 1/2/3주택 과세 차이 */}
               <section aria-label="주택 수별 과세" className="card">

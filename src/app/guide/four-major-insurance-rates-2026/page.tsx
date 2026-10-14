@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { calculateTakeHome } from '@/lib/tax/income';
 import { formatKRW } from '@/lib/utils';
@@ -182,6 +183,7 @@ export default function FourMajorInsuranceRates2026Page() {
                   장기요양보험료 계산법을 적용 시점과 계산 가정을 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="four-major-insurance-rates-2026" />
 
               {/* Structured Summary */}
               <section aria-label="요약" className="card border-l-4 border-l-primary-500">

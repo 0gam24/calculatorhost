@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   자녀에게 재산을 넘길 때, "상속을 받을 때까지 기다릴까, 아니면 미리 증여할까?" 이 질문에는 정답이 없습니다. 상속세와 증여세는 같은 5단계 누진세율을 쓰지만, 공제 방식·금액·시점이 완전히 다릅니다. 자산 규모, 가족 구성, 시간에 따라 유리한 쪽이 달라집니다. 이 가이드에서는 두 세금의 차이를 명확하게 비교하고, 상황별 절세 전략을 제시합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-vs-gift-tax-comparison-2026" />
 
               <section className="space-y-6">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">상속세와 증여세의 핵심 차이 한눈에</h2>

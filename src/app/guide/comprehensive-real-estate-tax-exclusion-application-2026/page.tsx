@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function ComprehensiveRealEstateTaxExclusion2026Page() {
                   이 가이드는 등록 임대주택을 가진 임대사업자와 다주택자를 위해 씁니다. 요건을 갖춘 임대주택은 종합부동산세 과세대상에서 뺄 수 있는데, 그러려면 매년 9월 16일부터 30일까지 합산배제 신고를 해야 합니다. 이 짧은 2주를 놓치면 12월 고지서에 임대주택이 그대로 합산돼 세금이 크게 나옵니다. 신고 대상과 기간, 한 번 신고 후 변동 관리까지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-real-estate-tax-exclusion-application-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">합산배제란 무엇인가</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function HousingSubscriptionMonthly25Page() {
                   청약통장에 매달 얼마를 넣어야 할지 헷갈리는 무주택자가 많습니다. 2024년 11월부터 월 납입 인정한도가 10만원에서 25만원으로 오르면서 특히 공공분양을 노리는 사람이라면 전략을 다시 짜야 합니다. 이 가이드는 인정한도 상향의 의미, 공공분양과 민영주택의 차이, 소득공제 연 300만원의 40% 한도를 실전 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-subscription-monthly-25-recognition-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">월 납입 인정한도가 왜 25만원으로 올랐나요?</h2>

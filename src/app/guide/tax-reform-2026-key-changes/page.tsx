@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -180,6 +181,7 @@ export default function TaxReform2026KeyChangesPage() {
                   적용됩니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="tax-reform-2026-key-changes" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">2026 세제개편안이란?</h2>

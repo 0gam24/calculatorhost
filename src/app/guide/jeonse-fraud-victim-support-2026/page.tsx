@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function JeonseFraudVictimSupport2026Page() {
                   보증금을 돌려받지 못할 위기에 놓인 임차인이라면, 전세사기 피해자로 결정받는 것이 각종 지원의 출발점입니다. 이 가이드는 피해자로 인정받는 4가지 요건, 관할 시·도에 결정을 신청하는 절차, 우선매수권과 LH 공공임대 같은 실제 지원, 그리고 신청 유효기간까지 전세사기특별법을 근거로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="jeonse-fraud-victim-support-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세사기 피해자로 인정받는 4가지 요건은?</h2>

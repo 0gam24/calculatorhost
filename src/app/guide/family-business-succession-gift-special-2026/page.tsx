@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -186,6 +187,7 @@ export default function FamilyBusinessSuccessionGiftSpecial2026Page() {
                   경영진·후계자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="family-business-succession-gift-special-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">가업승계 증여세 과세특례란 무엇인가요?</h2>

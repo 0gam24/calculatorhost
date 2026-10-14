@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function TaxPaymentDeadlineExtension2026Page() {
                   재해나 사업 위기 등으로 국세를 정해진 날짜까지 낼 수 없다면, 신고나 고지된 세금의 납부기한을 연장받을 수 있는 제도가 있습니다. 이 가이드는 어떤 사유가 인정되는지, 얼마나 연장받을 수 있는지, 언제까지 어떻게 신청해야 하는지, 그리고 연장받으면 가산세가 어떻게 되는지를 정리합니다. 대상 독자는 세금 납부가 당장 어려운 개인·사업자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="tax-payment-deadline-extension-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">납부기한 연장이란 무엇인가요?</h2>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function HealthInsuranceVoluntaryContinuation2026Page() {
                   회사를 그만두면 건강보험이 직장가입자에서 지역가입자로 바뀌면서, 그동안 회사가 절반 내주던 보험료를 온전히 본인이 부담하게 됩니다. 게다가 집·자동차 같은 재산까지 보험료에 반영되어 보험료가 갑자기 몇 배로 뛰기도 합니다. 이 가이드는 국민건강보험법 §110에 따른 임의계속가입으로 최대 36개월간 직장가입자 수준 보험료를 유지하는 방법을 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="health-insurance-voluntary-continuation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">퇴직하면 보험료가 왜 오르나요?</h2>

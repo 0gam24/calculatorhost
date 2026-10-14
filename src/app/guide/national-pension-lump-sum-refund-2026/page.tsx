@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function NationalPensionLumpSumRefund2026Page() {
                   국민연금을 오래 붓지 못한 채 60세가 되면, 매월 나오는 연금 대신 한 번에 목돈으로 돌려받는 반환일시금을 떠올리게 됩니다. 그런데 아무 때나 받을 수 있는 건 아니고, 금액 계산도 헷갈립니다. 이 가이드는 반환일시금을 언제·얼마·어떻게 받는지, 그리고 나중에 반납해 연금을 복원하는 방법까지 국민연금법 조문 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-pension-lump-sum-refund-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">반환일시금이란 무엇인가요?</h2>

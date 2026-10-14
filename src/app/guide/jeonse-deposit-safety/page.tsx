@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -144,6 +145,7 @@ export default function JeonseDepositSafetyPage() {
                   깡통전세 피해가 갈수록 증가하면서 전세 계약 전 보증금 안전성 검증이 필수가 되었습니다. 임차인등기부등본 읽기부터 HUG 전세보증보험 신청까지, 당신의 보증금을 지키기 위한 8가지 필수 체크리스트를 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="jeonse-deposit-safety" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">1. 부동산 등기부등본 확인, 건물주 자산 파악</h2>

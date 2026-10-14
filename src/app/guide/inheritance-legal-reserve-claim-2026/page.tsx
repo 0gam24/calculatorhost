@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function InheritanceLegalReserveClaim2026Page() {
                   부모가 한 자녀에게만 재산을 몰아줬을 때 나머지 자녀나 배우자가 최소한의 몫을 되찾을 수 있는지 궁금한 분을 위한 가이드입니다. 유류분이 무엇인지, 상속인마다 얼마씩 인정되는지, 2024년 형제자매 유류분 위헌 결정으로 무엇이 바뀌었는지, 계산은 어떻게 하는지, 그리고 반환청구 기한은 언제까지인지를 민법 조문과 계산 사례로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-legal-reserve-claim-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">유류분이란 무엇인가요?</h2>

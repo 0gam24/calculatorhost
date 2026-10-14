@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -134,6 +135,7 @@ export default function DsrRegulationZonesPage() {
                   은행별 가산금리를 더해 결정됩니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="dsr-regulation-zones" />
 
               <section aria-label="규제 비교표" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-3 text-xl font-bold">2026년 지역별 LTV·DSR·DTI 비교표</h2>

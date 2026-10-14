@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -148,6 +149,7 @@ export default function LeaseRenewalRefusalGrounds2026Page() {
                   이 가이드는 전세·월세 계약을 연장하려는 임차인을 위한 것입니다. 임대인은 아무 이유로나 갱신을 거절할 수 없고, 법이 정한 9가지 사유가 있을 때만 거절할 수 있습니다. 어떤 사유가 인정되는지, 실거주 거절이 거짓일 때 어떻게 대응하는지, 갱신은 언제까지 요구해야 하는지 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="lease-renewal-refusal-grounds-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">집주인이 아무 이유나 대며 거절할 수 있나요?</h2>

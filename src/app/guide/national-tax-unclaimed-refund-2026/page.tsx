@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NationalTaxUnclaimedRefund2026Page() {
                   세금을 실제보다 더 냈는데 돌려받지 못한 돈이 국세환급금 계좌에 잠들어 있을 수 있습니다. 이사로 통지서가 반송되거나 계좌를 신고하지 않아 지급되지 못한 미환급금은 홈택스·손택스·정부24·ARS로 로그인 없이 몇 분 만에 확인할 수 있습니다. 이 글은 미환급금이 왜 생기는지, 어디서 어떻게 조회하고 받는지, 그리고 5년이 지나면 왜 사라지는지를 국세기본법 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="national-tax-unclaimed-refund-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">국세 미환급금이란 무엇인가요?</h2>

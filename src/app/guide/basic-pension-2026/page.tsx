@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function BasicPension2026() {
                   누가 얼마를 받는지, 국민연금을 받으면 깎이는지, 어떻게 신청하는지 정확히 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="basic-pension-2026" />
 
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>

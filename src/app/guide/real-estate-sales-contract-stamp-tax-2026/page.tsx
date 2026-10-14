@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function RealEstateSalesContractStampTax2026Page() {
                   집을 사고팔면 취득세와 중개수수료만 챙기다 인지세를 잊는 경우가 많습니다. 매매계약서에 서명한 순간부터 인지세 납부 의무가 시작되며, 작성월 다음 달 10일까지 전자수입인지로 납부하지 않으면 미납세액의 최대 300%까지 가산세가 붙습니다. 이 가이드는 아파트·오피스텔·단독주택 매매 당사자를 위해 얼마·누가·언제·어떻게 내야 하는지, 취득세·중개수수료와 무엇이 다른지 인지세법 §3·§8 기준으로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="real-estate-sales-contract-stamp-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약, 기재금액별 인지세액</h2>

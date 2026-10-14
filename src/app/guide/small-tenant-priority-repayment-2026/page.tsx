@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function SmallTenantPriorityRepayment2026Page() {
                   전세나 월세로 살던 집이 경매로 넘어가면 보증금을 떼일까 걱정하게 됩니다. 이런 상황에서 소액임차인을 보호하기 위한 제도가 최우선변제금입니다. 보증금이 일정 범위 안이면 다른 담보권자보다 먼저 정해진 금액을 돌려받을 수 있습니다. 이 가이드는 지역별 보증금 범위와 최우선변제금, 요건, 한도를 주택임대차보호법 §8을 기준으로 임차인 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="small-tenant-priority-repayment-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">최우선변제금은 어떤 제도인가요?</h2>

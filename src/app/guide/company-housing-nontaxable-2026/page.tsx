@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -184,6 +185,7 @@ export default function CompanyHousingNontaxable2026Page() {
                   직원과 제공하는 회사가 모두 판단할 수 있게 돕습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="company-housing-nontaxable-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">회사 사택, 세금을 내나요?</h2>

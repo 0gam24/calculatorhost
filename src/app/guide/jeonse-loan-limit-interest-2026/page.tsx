@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -161,6 +162,7 @@ export default function JeonseeLoanLimitInterest2026Page() {
                   전세 계약을 앞두고 부족한 보증금을 대출로 채우려면, 한도·금리·보증기관의 차이를 이해해야 합니다. 이 가이드는 3대 보증기관(한국주택금융공사·주택도시보증공사·SGI서울보증)의 상품 구조, 정책상품과 시중상품의 차이, 실제 대출 가능액을 결정하는 요소를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="jeonse-loan-limit-interest-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세자금대출의 기본 구조, 한도 결정 3가지 요소</h2>

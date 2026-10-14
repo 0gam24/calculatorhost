@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function MarriageChildbirthGiftDeduction2026Page() {
                   결혼이나 출산을 앞두고 부모님이 목돈을 보태주는 경우, 자칫 증여세 폭탄을 맞을까 걱정하는 분이 많습니다. 그런데 2024년부터 시행된 혼인·출산 증여재산공제를 활용하면 기존 공제와 합쳐 최대 1억 5천만원까지 세금 없이 물려받을 수 있습니다. 이 가이드는 상증법 §53의2에 따른 공제 요건, 통합 1억원 한도, 그리고 실제 절세 사례를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="marriage-childbirth-gift-deduction-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">혼인·출산 증여재산공제란 무엇인가요?</h2>

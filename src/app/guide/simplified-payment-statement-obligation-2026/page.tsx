@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function SimplifiedPaymentStatementPage() {
                   직원에게 급여를 주거나 프리랜서에게 3.3%를 떼고 인건비를 지급했다면, 간이지급명세서를 제때 제출해야 합니다. 이 가이드는 작은 사업장 사장님과 인건비를 지급하는 개인을 위해 제출 기한이 언제인지, 2027년부터 무엇이 바뀌는지, 안 내면 가산세가 얼마인지, 그리고 홈택스로 어떻게 내는지까지 실무 순서대로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="simplified-payment-statement-obligation-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">간이지급명세서란 무엇인가</h2>

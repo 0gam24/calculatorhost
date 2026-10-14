@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -160,6 +161,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                   누락되는 공제 항목, 신청 방법, 환급 추적까지 완벽하게 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="income-tax-correction-claim-5-year-2026" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

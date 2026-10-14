@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -152,6 +153,7 @@ export default function RentIncrease5PercentCapGuidePage() {
                   주의하세요.
                 </p>
               </header>
+              <GuideCalculatorCta slug="rent-increase-5-percent-cap-2026" />
 
               <section className="card border-l-2 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">핵심 요약</h2>

@@ -1,5 +1,6 @@
 // [revenue-lever: traffic+indexing] 2026 세제개편안 종부세 주택가액 기준 전환 급상승 검색 흡수, 롱테일 트래픽 + 색인 표면 확대.
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function ComprehensiveRealEstateTaxValueBasedReform2026Page() {
                   2026년 8월 3일 발표된 세제개편안은 종합부동산세를 주택 수가 아니라 주택가액과 실거주 여부 중심으로 바꾸는 방향을 담았습니다. 이후 9월 1일 국무회의가 정부안을 확정하면서, 비거주 1주택 기본공제를 9억으로 낮추려던 안과 세부담 상한을 200%로 올리려던 안은 철회되어 현행이 유지됐습니다. 이 글은 주택을 보유한 분을 위해, 실거주 1주택 공제 14억 상향을 중심으로 무엇이 바뀌고 무엇이 그대로 유지되는지, 그리고 언제부터 적용되는지를 현행 기준과 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="comprehensive-real-estate-tax-value-based-reform-2026" />
 
               <section className="rounded-lg border border-border-base bg-bg-card p-5 text-sm" data-speakable>
                 <p className="font-semibold text-text-primary">2026-10-07 기준 진행 상황</p>

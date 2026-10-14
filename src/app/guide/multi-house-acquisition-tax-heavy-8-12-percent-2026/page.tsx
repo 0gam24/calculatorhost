@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function MultiHouseAcquisitionTaxHeavy2026Page() {
                   집을 한 채 더 살 때 가장 먼저 확인해야 할 것이 취득세 중과입니다. 1주택일 때는 가격에 따라 1~3%지만, 다주택이 되면 세율이 8%나 12%로 뛰어 수천만원이 더 나올 수 있기 때문입니다. 이 가이드는 조정대상지역과 비조정지역별 중과세율, 일시적 2주택 제외, 지방 저가주택 배제, 세대 기준 주택 수 계산까지 지방세법 §13의2를 기준으로 실거래 관점에서 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="multi-house-acquisition-tax-heavy-8-12-percent-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">다주택자 취득세 중과세율은 몇 %인가요?</h2>

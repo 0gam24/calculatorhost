@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -155,6 +156,7 @@ export default function MultiChildVehicleAcquisitionTaxExemption2026Page() {
                   아이가 셋이면 차 한 대는 통째로 취득세를 안 낼 수 있고, 둘이어도 절반은 깎일 수 있다는 이야기를 어렴풋이 들어봤을 겁니다. 문제는 어떤 차종이 되는지, 몇 인승이어야 전액 면제인지, 6인 이하 승용은 왜 140만원이라는 숫자가 붙는지가 지자체마다 안내가 조금씩 달라 혼란스럽다는 점입니다. 이 가이드는 지방세특례제한법 §22의2를 기준으로 다자녀 자동차 취득세 감면의 대상·한도·신청 기한·추징 조건을 하나하나 정리해, 아이를 태울 차를 계약하기 직전에 놓치지 않도록 돕습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="multi-child-vehicle-acquisition-tax-exemption-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">다자녀 자동차 취득세 감면이란 무엇인가요?</h2>

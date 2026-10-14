@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function NonTaxableSalaryAllowances2026Page() {
                   이 가이드는 같은 연봉이라도 실수령액을 한 푼이라도 늘리고 싶은 직장인을 위한 것입니다. 월급 중 일부는 소득세와 4대보험을 매기지 않는 비과세 항목으로 구성할 수 있습니다. 식대, 자가운전보조금, 보육수당처럼 자주 쓰이는 비과세 항목의 한도와 요건, 그리고 무작정 늘리면 생기는 함정까지 근거 조항과 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="non-taxable-salary-allowances-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비과세 급여가 무엇인가요?</h2>

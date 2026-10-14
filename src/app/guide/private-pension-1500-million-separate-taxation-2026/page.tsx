@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -173,6 +174,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   이 가이드 한 페이지로 분리과세 vs 종합과세 선택 기준, 연령별 세율, 신고 방법, 절세 전략까지 모두 정리됩니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="private-pension-1500-million-separate-taxation-2026" />
 
               {/* 핵심 요약 */}
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">

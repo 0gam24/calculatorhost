@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -169,6 +170,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
               />
 
               {/* Structured Summary */}
+              <GuideCalculatorCta slug="foreign-tax-credit-overseas-stock-2026" />
               <section className="card space-y-4 bg-bg-card border border-border-base p-6" data-speakable>
                 <h2 className="text-xl font-semibold">핵심 한눈에</h2>
                 <table className="w-full text-sm border-collapse">

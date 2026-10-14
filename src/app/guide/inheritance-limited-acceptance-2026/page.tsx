@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
                   부모가 남긴 빚이 재산보다 많을 때는 어떻게 할까요? 민법은 상속인을 무조건 보호하지 않지만, 한정승인과 상속포기라는 두 가지 길을 열어두었습니다. 이 가이드는 상속채무 초과 시 피상속인 사망을 안 날부터 3개월 이내에 선택해야 하는 한정승인·상속포기의 정확한 차이점, 신고 절차, 그리고 놓치기 쉬운 함정까지 완벽히 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-limited-acceptance-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">한정승인과 상속포기의 차이</h2>

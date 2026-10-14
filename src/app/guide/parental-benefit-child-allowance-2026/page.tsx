@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function ParentalBenefitChildAllowance2026Page() {
                   아이를 낳고 부모급여와 아동수당을 각각 얼마씩, 언제까지, 둘 다 받을 수 있는지 헷갈리는 부모를 위한 가이드입니다. 두 제도가 어떻게 다른지, 2026년 금액은 얼마인지, 0~1세는 왜 두 가지를 동시에 받는지, 신청은 언제까지 해야 소급되는지, 어린이집에 보내면 어떻게 지급되는지를 표와 함께 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="parental-benefit-child-allowance-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">부모급여와 아동수당은 무엇이 다른가요?</h2>

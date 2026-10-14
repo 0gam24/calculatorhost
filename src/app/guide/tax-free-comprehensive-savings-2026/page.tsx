@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function TaxFreeComprehensiveSavings2026Page() {
                   은퇴 후 예금 이자로 생활하는 분에게 이자소득세 15.4%는 적지 않은 부담입니다. 그런데 만 65세 이상이거나 장애인 등 정해진 대상이라면, 5,000만원까지 이자·배당에 세금을 전혀 내지 않는 비과세종합저축을 활용할 수 있습니다. 이 가이드는 누가 얼마까지 가입할 수 있는지, 2026년 바뀐 요건은 무엇인지, 실제로 세금이 얼마나 줄어드는지를 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="tax-free-comprehensive-savings-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">비과세종합저축이란</h2>

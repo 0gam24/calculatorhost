@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function CommercialPremiumGoodwillTax2026Page() {
                   이 글은 가게를 넘기며 권리금을 받거나 지급하는 자영업자·임차인을 위해 권리금에 붙는 세금을 정리한 가이드입니다. 권리금이 어떤 소득으로 과세되는지, 8.8% 원천징수는 어떻게 계산하는지, 다음 해 종합소득세 신고가 필요한지까지 실제 금액으로 확인하실 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="commercial-premium-goodwill-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">권리금은 무슨 소득으로 세금을 내나요?</h2>

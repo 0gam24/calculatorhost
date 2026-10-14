@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -150,6 +151,7 @@ export default function InheritanceRealEstateAppraisal2026Page() {
                   부모님의 집이나 상가를 상속받았을 때, 상속세 신고를 공시가격으로 할지 감정평가로 할지가 세금을 크게 가릅니다. 이 글은 부동산을 상속받았거나 곧 받을 상속인을 위해 준비했습니다. 공시가로 신고하면 당장 상속세는 줄지만 나중에 팔 때 양도세가 커지는 구조, 감정평가로 취득가액을 높이는 절세 전략, 그리고 국세청이 공시가 신고를 감정평가로 뒤집는 위험까지 상속세및증여세법 조문을 근거로 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="inheritance-real-estate-appraisal-vs-official-price-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">30초 요약</h2>

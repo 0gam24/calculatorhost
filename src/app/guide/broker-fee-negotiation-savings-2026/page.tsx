@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -159,6 +160,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                   주택 매매·전세 거래 시 중개수수료는 공인중개사법 제32조로 상한요율이 정해집니다. 그러나 이 상한요율은 강제사항이 아니며, 중개사와 협의로 인하받을 수 있습니다. 거래금액 6억원일 때 240만원의 상한요율을 200만원, 180만원까지 깎는 것이 현실적으로 가능한 사례들입니다. 이 가이드에서는 중개비 협상의 기본 원칙, 협상 가능성을 높이는 상황, 부가세 확인 방법, 계약서 작성 전 반드시 해야 할 확인 사항을 정확히 정리합니다. 거래 전 이 정보를 숙지하면 수십만원에서 수백만원까지 절약할 수 있습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="broker-fee-negotiation-savings-2026" />
 
               {/* Structured Summary */}
               <div className="space-y-4 rounded-lg border border-border-base bg-bg-card p-4">

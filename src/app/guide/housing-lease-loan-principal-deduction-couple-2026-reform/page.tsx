@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic] 주택임차차입금 원리금상환 소득공제 부부 각각 개편안 (전세대출 임차인 롱테일)
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -149,6 +150,7 @@ export default function HousingLeaseLoanPrincipalDeductionCouple2026Page() {
                   전세·월세 보증금을 대출로 마련한 무주택 근로자라면, 매년 갚는 원리금의 상당 부분을 소득공제로 돌려받을 수 있습니다. 이 글은 주택임차차입금 원리금상환액 소득공제의 요건과 한도를 정리하고, 2026년 세제개편안이 담은 &lsquo;주거를 달리하는 무주택 부부 각각 공제&rsquo; 확대안이 주말부부에게 어떤 의미인지 계산 사례로 설명합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="housing-lease-loan-principal-deduction-couple-2026-reform" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전세대출 원리금도 소득공제 되나요?</h2>

@@ -2,6 +2,7 @@
 // indexing: 신규 슬러그 색인 표면 확장, 내부 링크 mesh 6개(증여재산공제 한도·증여세 계산·혼인출산공제·가족 차용증·상속세 계산기·세금 허브).
 // traffic: 결혼 시즌 "축의금 증여세"·"혼수용품 증여세"·"예단 예물 세금" 롱테일 흡수(상증법 §46 비과세·시행령 §35④3·4호 직접지출 요건).
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -156,6 +157,7 @@ export default function WeddingGiftMoneyTax2026Page() {
                   결혼을 앞두고 가장 자주 묻는 질문 중 하나가 축의금과 예단·예물 같은 혼수용품에 증여세가 붙는지입니다. 결론부터 말하면 통상적인 수준의 축의금과 혼수용품은 원칙적으로 비과세입니다(상속세 및 증여세법 §46, 시행령 §35④). 다만 이 비과세는 조건이 있고, 신혼집이나 혼수 자동차처럼 큰 재산은 별도로 과세 대상이 됩니다. 이 가이드는 어디까지 비과세이고 어디부터 과세인지, 계산 사례까지 함께 정리합니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="wedding-gift-money-tax-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">Q. 축의금에도 증여세가 붙나요?</h2>

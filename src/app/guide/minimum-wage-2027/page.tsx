@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -153,6 +154,7 @@ export default function MinimumWage2027Page() {
                   이 가이드는 2027년부터 오르는 최저임금이 내 월급을 얼마나 바꾸는지 궁금한 직장인과 아르바이트 근로자를 위한 글입니다. 확정된 시급 10,700원을 기준으로 주휴수당 포함 월급, 4대보험을 뗀 실수령액, 그리고 주휴수당을 직접 계산하는 방법까지 단계별로 정리했습니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="minimum-wage-2027" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">2027년 최저시급은 얼마인가</h2>

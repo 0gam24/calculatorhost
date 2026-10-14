@@ -1,5 +1,6 @@
 // [revenue-lever: indexing+traffic]
 import type { Metadata } from 'next';
+import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
 import { Header } from '@/components/layout/Header';
 import { Sidebar } from '@/components/layout/Sidebar';
@@ -154,6 +155,7 @@ export default function ResidentRegistrationMoveInReport2026Page() {
                   이사를 하면 새 주소로 전입신고를 해야 하고, 세입자라면 이 신고가 보증금을 지키는 첫 단추가 됩니다. 이 가이드는 전입신고 기한과 과태료, 정부24 온라인 신고 방법, 그리고 확정일자와 함께 받아야 대항력과 우선변제권을 모두 확보하는 이유를 실전 절차로 정리합니다. 대상 독자는 곧 이사를 앞둔 임차인과 세대 이동자입니다.
                 </p>
               </header>
+              <GuideCalculatorCta slug="resident-registration-move-in-report-2026" />
 
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">전입신고란 무엇이고 왜 중요한가요?</h2>
