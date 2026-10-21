@@ -80,6 +80,24 @@ describe('buildCandidates', () => {
     const c = buildCandidates({ bigKeywords: none, calendar: { items: [] }, today: '2026-10-07' });
     expect(c[0]?.action).toEqual({ type: 'new-calculator', target: null });
   });
+  it('금액·면적·배기량이 든 별칭은 새 글이 아니라 계산기 결과표로 흡수한다 (같은 틀 페이지 대량 생성 방지)', () => {
+    const nums = {
+      keywords: [
+        { term: '연봉 실수령액', cluster: '연봉 실수령액', calculator: '/calculator/salary/', aliases: ['연봉 4000 실수령액', '세후 월급'] },
+        { term: '평수 계산기', cluster: '평수', calculator: '/calculator/area/', aliases: ['84제곱미터 평수'] },
+        { term: '자동차세 계산기', cluster: '자동차세', calculator: '/calculator/vehicle-tax/', aliases: ['2000cc 자동차세', '자동차세 연납'] },
+        { term: '연차수당 계산기', cluster: '연차수당', calculator: null, aliases: ['연봉 5000 연차수당'] },
+      ],
+    };
+    const c = buildCandidates({ bigKeywords: nums, calendar: { items: [] }, today: '2026-10-21' });
+    const actionOf = (q: string) => c.find((x) => x.query === q)?.action;
+    expect(actionOf('연봉 4000 실수령액')).toEqual({ type: 'calculator', target: '/calculator/salary/' });
+    expect(actionOf('84제곱미터 평수')).toEqual({ type: 'calculator', target: '/calculator/area/' });
+    expect(actionOf('2000cc 자동차세')).toEqual({ type: 'calculator', target: '/calculator/vehicle-tax/' });
+    expect(actionOf('연봉 실수령액 세후 월급')).toEqual({ type: 'new', target: null });
+    expect(actionOf('자동차세 연납')).toEqual({ type: 'new', target: null });
+    expect(actionOf('연봉 5000 연차수당')).toEqual({ type: 'new', target: null });
+  });
   it('같은 검색어는 한 번만', () => {
     const dup = { keywords: [{ ...big.keywords[0], aliases: ['퇴직금 계산기', '퇴직금계산기'] }] };
     const c = buildCandidates({ bigKeywords: dup, calendar: { items: [] }, today: '2026-10-07' });
@@ -173,6 +191,10 @@ describe('carryManual', () => {
     expect(out[0]).toMatchObject({ id: '빈틈:자동차세 2000cc', addedAt: '2026-09-20' });
     expect(out[0]).not.toHaveProperty('exposure');
     expect(out[0]).not.toHaveProperty('status');
+  });
+  it('네이버 자체 위젯 위험 표시(widgetRisk)는 유지한다 (빠지면 매일 작업이 위젯 검색어를 안전하다고 본다)', () => {
+    const prev = [{ id: '빈틈:날짜 계산', query: '날짜 계산', track: 'T2', widgetRisk: true, addedAt: '2026-10-19' }];
+    expect(carryManual(prev, [], '2026-10-21')[0]).toMatchObject({ widgetRisk: true });
   });
   it('이미 후보에 같은 검색어가 있으면 넣지 않는다', () => {
     const prev = [{ id: '빈틈:퇴직금 계산기', query: '퇴직금 계산기', track: 'T2', addedAt: '2026-10-01' }];

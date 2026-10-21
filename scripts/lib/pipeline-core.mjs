@@ -21,6 +21,10 @@ export function withCluster(alias, cluster) {
 
 const familyOf = (q) => (/계산기|계산법|계산 방법/.test(q) ? 'A' : 'B');
 
+// 금액·면적·배기량 형태(연봉 4000 실수령액, 84제곱미터 평수, 2000cc 자동차세)는 페이지를 늘리지 않고
+// 계산기 결과표 행으로 흡수한다 (SITE-KEYWORD-PROFILE T2 규칙, 네이버 같은 틀 대량 생성 스팸 기준)
+const AMOUNT_FORM = /(연봉|월급)\s*\d|\d+\s*(억|천만|cc|제곱미터|평(?!균))/i;
+
 /** 피크 달 마지막 날 (writeBy 기준으로 다음에 오는 피크) */
 function peakEnd(writeBy, peakMonth) {
   const [y, m] = writeBy.split('-').map(Number);
@@ -55,7 +59,9 @@ export function buildCandidates({ bigKeywords, calendar, today }) {
         calculator: k.calculator ?? null,
         ...(k.widgetRisk ? { widgetRisk: true } : {}),
         action: !isHead
-          ? { type: 'new', target: null }
+          ? k.calculator && AMOUNT_FORM.test(q)
+            ? { type: 'calculator', target: k.calculator }
+            : { type: 'new', target: null }
           : k.calculator
             ? { type: 'calculator', target: k.calculator }
             : /계산기/.test(q)
@@ -112,7 +118,8 @@ export function manualItem(query, calendar, today) {
   };
 }
 
-const MANUAL_FIELDS = ['id', 'query', 'track', 'family', 'cluster', 'calculator', 'kind', 'inWindow', 'note', 'action', 'addedAt'];
+// widgetRisk 도 남긴다: 빠지면 다음 실행에서 위젯 검색어가 위험 없음으로 보인다 (2026-10-21)
+const MANUAL_FIELDS = ['id', 'query', 'track', 'family', 'cluster', 'calculator', 'widgetRisk', 'kind', 'inWindow', 'note', 'action', 'addedAt'];
 
 /**
  * 이전 큐의 '빈틈:' 항목(21일 안)을 이번 후보에 다시 넣는다. 검색량·실측·점수는 이번 실행이 다시 붙이도록
