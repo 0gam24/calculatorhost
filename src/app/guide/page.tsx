@@ -73,6 +73,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-10-25 수동 발행 (운영자 지시, 롱테일 "퇴직금 지급 기준")
+  {
+    slug: 'severance-pay-eligibility-2026',
+    title: '퇴직금 지급 기준 2026, 1년·주 15시간 알바·계약직도 받나',
+    description:
+      '1년·주 15시간 기준과 알바·계약직·5인 미만 적용, 1년 미만 개정안 처리 결과, 2026년 9월 강화된 미지급 처벌까지 현행 조문으로 정리.',
+    category: '근로',
+    publishedAt: '2026-10-25',
+    readingMinutes: 10,
+  },
   // 2026-09-25 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'parents-living-expenses-gift-tax-2026',

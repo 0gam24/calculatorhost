@@ -11,7 +11,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - 카테고리: 금융 / 세금 / 부동산 / 근로 / 생활 (5개)
 <!-- AUTO:COUNTS:START -->
 - 계산기: 32종
-- 가이드: 383편
+- 가이드: 384편
 <!-- AUTO:COUNTS:END -->
 - 라이선스: 모든 콘텐츠는 정보 제공 목적, 인용 시 출처 표기 권장
 - 업데이트: 계산 기준과 변경 내용은 검토 후 반영합니다. 계산 로직은 단위 테스트로 회귀 검증합니다. 법조항 인용의 미등록·미확인 항목이 남아 있으며, 사이트 전체의 법률 검증 완료를 의미하지 않습니다.
@@ -328,7 +328,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [임차권등기명령 2026, 보증금 못 받을 때 신청 방법](https://calculatorhost.com/guide/tenant-lease-registration-injunction-2026/)
 - [청년 월세 특별지원 2026, 상시신청 전환·신청 방법 총정리](https://calculatorhost.com/guide/youth-monthly-rent-support-2026/)
 
-### 근로 (72편)
+### 근로 (73편)
 
 - [주 52시간 연장근로수당 2026, 계산법과 1.5배 기준](https://calculatorhost.com/guide/52-hour-workweek-overtime-pay-2026/)
 - [연차수당 계산법 (2026), 미사용 연차 얼마 받나](https://calculatorhost.com/guide/annual-leave-allowance-2026/)
@@ -388,6 +388,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [연봉 협상 시 실수령 기준 제안, 세전·세후 차이 정리](https://calculatorhost.com/guide/salary-negotiation-take-home/)
 - [2026년 7월 국민연금 상한액 인상, 실수령액 변화](https://calculatorhost.com/guide/salary-take-home-2026-july-insurance-increase/)
 - [퇴직금 지급기한 14일 2026, 안 주면 지연이자·신고방법](https://calculatorhost.com/guide/severance-pay-deadline-14-days-2026/)
+- [퇴직금 지급 기준 2026, 1년·주 15시간 알바·계약직도 받나](https://calculatorhost.com/guide/severance-pay-eligibility-2026/)
 - [퇴직금 vs 퇴직연금 DC/DB 차이 완전 정리 (2026)](https://calculatorhost.com/guide/severance-vs-pension-dc-db/)
 - [단기 육아휴직 2026, 1주·2주 신청과 급여 정리](https://calculatorhost.com/guide/short-term-parental-leave-2026/)
 - [상병수당 2026, 아파서 쉬어도 받는 지원금 신청 조건](https://calculatorhost.com/guide/sickness-benefit-2026/)

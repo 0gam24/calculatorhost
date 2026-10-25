@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/severance-pay-deadline-14-days-2026/';
 const DATE_PUBLISHED = '2026-07-21';
-const DATE_MODIFIED = '2026-07-21';
+const DATE_MODIFIED = '2026-10-25';
 
 export const metadata: Metadata = {
   title: '퇴직금 지급기한 14일 2026, 안 주면 지연이자·신고방법',
@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   {
     question: '14일이 지나도 안 주면 어떻게 되나요?',
     answer:
-      '지급 기한(14일) 다음 날부터 실제 지급일까지 연 20%의 지연이자가 붙습니다(근로기준법 §37①, 시행령 §17). 예를 들어 퇴직금 1,000만원을 30일 늦게 주면 약 16만원의 지연이자가 추가됩니다. 이 지연이자는 퇴직으로 근로관계가 끝난 뒤의 미지급분에 적용됩니다.',
+      '지급 기한(14일) 다음 날부터 실제 지급일까지 연 20%의 지연이자가 붙습니다(근로기준법 §37①, 시행령 §17). 예를 들어 퇴직금 1,000만원을 30일 늦게 주면 약 16만원의 지연이자가 추가됩니다. 2025년 10월 23일부터는 재직 중 밀린 정기 임금에도 같은 연 20% 지연이자가 붙습니다(§37① 제2호).',
   },
   {
     question: '퇴직금을 안 주면 어디에 신고하나요?',
@@ -70,7 +70,7 @@ const FAQ_ITEMS = [
   {
     question: '사업주가 퇴직금을 안 주면 처벌받나요?',
     answer:
-      '네, 퇴직금을 지급하지 않은 사용자는 3년 이하의 징역 또는 3천만원 이하의 벌금에 처해집니다(근로자퇴직급여보장법 §44 제1호). 다만 이 죄는 반의사불벌죄로, 근로자가 처벌을 원하지 않는다는 의사를 명시하면 공소를 제기할 수 없습니다. 그래서 실무에서는 체불액을 지급하고 합의하는 경우가 많습니다.',
+      '네, 퇴직금을 14일 안에 지급하지 않은 사용자는 5년 이하의 징역 또는 5천만원 이하의 벌금에 처해집니다(근로자퇴직급여보장법 §43 제1호, 2026년 9월 18일 시행). 다만 이 죄는 반의사불벌죄로, 근로자가 처벌을 원하지 않는다는 의사를 명시하면 공소를 제기할 수 없습니다(임금체불 명단이 공개된 사업주가 공개 기간에 다시 어긴 경우는 예외). 그래서 실무에서는 체불액을 지급하고 합의하는 경우가 많습니다.',
   },
   {
     question: '지급 기한을 연장할 수 있나요?',
@@ -90,7 +90,7 @@ const FAQ_ITEMS = [
   {
     question: '퇴직연금(DC·DB)도 14일 규정이 적용되나요?',
     answer:
-      '퇴직연금은 근로자 계정으로 부담금을 납입하는 구조여서 일시금 지급 절차가 다릅니다. 다만 확정급여형(DB)에서 퇴직 시 부족분을 지급하거나, 사용자가 부담금을 미납한 경우에도 미지급·지연에 대한 책임이 발생합니다(근퇴법 §44 제2호). 구체적 절차는 가입한 퇴직연금 규약과 운용사에 확인하세요.',
+      '퇴직연금은 근로자 계정으로 부담금을 납입하는 구조여서 일시금 지급 절차가 다릅니다. 다만 확정급여형(DB)에서 퇴직 시 부족분을 지급하거나, 사용자가 부담금을 미납한 경우에도 미지급·지연에 대한 책임이 발생합니다. 구체적 절차는 가입한 퇴직연금 규약과 운용사에 확인하세요.',
   },
 ];
 
@@ -144,7 +144,7 @@ export default function SeverancePayDeadline14Days2026Page() {
                     { name: '퇴직금 지급기한 14일 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">퇴사 근로자 · 7분 읽기 · 2026-07-21</p>
+                <p className="mb-2 text-caption text-text-tertiary">퇴사 근로자 · 7분 읽기 · 2026-07-21 작성 · 2026-10-25 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   퇴직금 지급기한 14일 2026
                   <br />
@@ -181,7 +181,7 @@ export default function SeverancePayDeadline14Days2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">14일이 지나면 지연이자가 붙나요?</h2>
                 <p>
-                  네, 지급 기한 다음 날부터 실제 지급일까지 연 20%의 지연이자가 발생합니다(근로기준법 §37①, 시행령 §17). 이 이자는 퇴직으로 근로관계가 종료된 뒤의 미지급 임금·퇴직금에 적용되는 강행 규정입니다.
+                  네, 지급 기한 다음 날부터 실제 지급일까지 연 20%의 지연이자가 발생합니다(근로기준법 §37① 제1호, 시행령 §17). 퇴직금과 퇴직 때 정산할 임금은 제1호, 재직 중 정기 임금은 제2호로, 둘 다 같은 연 20%가 적용됩니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
                   <p className="font-semibold text-text-primary">사례 1. 퇴직금 1,000만원, 30일 지연</p>
@@ -217,7 +217,7 @@ export default function SeverancePayDeadline14Days2026Page() {
                   <li><strong>증거 확보:</strong> 근로계약서, 급여명세서, 통장 입금 내역, 재직·퇴직 확인 자료를 모읍니다.</li>
                   <li><strong>진정 접수:</strong> 고용노동부 노동포털(labor.moel.go.kr) 또는 관할 노동청 방문으로 임금체불 진정을 제기합니다.</li>
                   <li><strong>근로감독관 조사:</strong> 감독관이 사업주를 불러 사실관계를 조사하고 지급을 지시합니다.</li>
-                  <li><strong>미지급 시 형사 입건:</strong> 그래도 지급하지 않으면 근퇴법 §44 위반으로 입건·송치됩니다.</li>
+                  <li><strong>미지급 시 형사 입건:</strong> 그래도 지급하지 않으면 근퇴법 §43 위반으로 입건·송치됩니다.</li>
                   <li><strong>체당금·소송:</strong> 사업주가 도산했다면 대지급금(체당금) 제도를, 다툼이 크면 민사소송을 병행할 수 있습니다.</li>
                 </ol>
                 <p className="mt-4">
@@ -228,15 +228,16 @@ export default function SeverancePayDeadline14Days2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">재직 중 체불과 퇴직 후 체불, 지연이자가 다른가요?</h2>
                 <p>
-                  네, 지연이자 규정은 원칙적으로 "퇴직 후" 미지급분에 적용됩니다. 아래 표로 차이를 비교했습니다.
+                  아니요, 지금은 이율이 같습니다. 2025년 10월 23일부터 재직 중 정기 임금을 정해진 날에 주지 않은 경우에도 퇴직 후와 같은 연 20% 지연이자가 붙습니다(근로기준법 §37① 제2호, 시행령 §17). 다른 것은 이자가 붙기 시작하는 날입니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 재직 중 vs 퇴직 후 미지급 지연이자 비교 (근로기준법 §37)</caption>
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 1. 재직 중 vs 퇴직 후 미지급 지연이자 비교 (근로기준법 §37①, 2025-10-23 이후)</caption>
                     <thead>
                       <tr className="border-b border-border-base">
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">구분</th>
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">지연이자율</th>
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">이자가 붙는 날</th>
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">근거</th>
                       </tr>
                     </thead>
@@ -244,18 +245,20 @@ export default function SeverancePayDeadline14Days2026Page() {
                       <tr className="border-b border-border-base">
                         <td className="p-3">퇴직 후 미지급 임금·퇴직금</td>
                         <td className="p-3"><strong>연 20%</strong></td>
-                        <td className="p-3">근로기준법 §37①, 시행령 §17</td>
+                        <td className="p-3">지급 사유가 생긴 날(퇴직일)부터 14일이 지난 다음 날부터</td>
+                        <td className="p-3">근로기준법 §37① 제1호, 시행령 §17</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
-                        <td className="p-3">재직 중 임금 지연(민사)</td>
-                        <td className="p-3">연 5~6% 수준</td>
-                        <td className="p-3">민법·상법 법정이율</td>
+                        <td className="p-3">재직 중 정기 임금</td>
+                        <td className="p-3"><strong>연 20%</strong></td>
+                        <td className="p-3">정해진 임금 지급일 다음 날부터</td>
+                        <td className="p-3">근로기준법 §37① 제2호, 시행령 §17</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="mt-4">
-                  즉 퇴직 후 미지급에 대해 근로기준법이 연 20%라는 높은 지연이자를 두는 것은, 생계가 걸린 퇴직금·임금의 신속한 지급을 강제하기 위해서입니다.
+                  즉 지금은 재직 중이든 퇴직 후든 밀린 임금에 연 20% 지연이자가 붙습니다. 다만 2025년 10월 23일 전에 밀린 재직 중 임금은 그때 기준이 적용될 수 있으니, 체불 기간이 그 전후에 걸쳐 있다면 노동청에 함께 확인하세요.
                 </p>
               </section>
 
@@ -324,7 +327,7 @@ export default function SeverancePayDeadline14Days2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개별 노무·법률 자문이 아닙니다. 실제 지급기한 연장 합의 여부, 지연이자 산정, 진정·소송 절차는 사안에 따라 달라지므로 고용노동부(국번없이 1350) 또는 공인노무사·변호사와 상담하세요. 본 콘텐츠는 2026-07-21 기준이며 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>근로자퇴직급여보장법 §4(퇴직급여제도 설정)·§9(퇴직금의 지급)·§10(소멸시효)·§44(벌칙)</strong> 및 근로기준법 §37(미지급 임금 지연이자)입니다.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개별 노무·법률 자문이 아닙니다. 실제 지급기한 연장 합의 여부, 지연이자 산정, 진정·소송 절차는 사안에 따라 달라지므로 고용노동부(국번없이 1350) 또는 공인노무사·변호사와 상담하세요. 본 콘텐츠는 2026-10-25 기준이며(퇴직금 미지급 벌칙은 2026-09-18 시행 개정, 재직 중 임금 지연이자는 2025-10-23 시행 개정 반영) 법령 개정 시 업데이트됩니다. 근거 법조항은 <strong>근로자퇴직급여보장법 §4(퇴직급여제도 설정)·§9(퇴직금의 지급)·§10(소멸시효)·§43(벌칙)</strong> 및 근로기준법 §37①(미지급 임금 지연이자)·시행령 §17입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
