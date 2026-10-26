@@ -105,6 +105,15 @@ describe('Privacy-safe calculator events', () => {
     });
   });
 
+  it('accepts the annual-leave slug with its own fixed URL', () => {
+    const gtag = setup();
+    trackCalculationComplete('annual-leave');
+    expect(gtag.mock.calls[0]?.[2]).toMatchObject({
+      calculator_slug: 'annual-leave',
+      page_location: 'https://calculatorhost.com/calculator/annual-leave/',
+    });
+  });
+
   it('does not break user actions when analytics throws or is absent', () => {
     setup();
     window.gtag = () => {

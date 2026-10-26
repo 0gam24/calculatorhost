@@ -64,6 +64,12 @@ const CALCULATORS = [
     tags: ['주휴수당', '알바', '근로기준법'],
   },
   {
+    title: '연차 계산기',
+    description: '입사일과 기준일로 연차 발생 일수, 지금 쓸 수 있는 연차, 다음 연차 발생일, 미사용 연차수당을 계산합니다. 1년 미만 월 연차와 단시간 근로자 비례 연차를 반영합니다.',
+    href: '/calculator/annual-leave',
+    tags: ['연차', '연차수당', '근로기준법'],
+  },
+  {
     title: '프리랜서 종합소득세 계산기',
     description: '1인 사업자와 프리랜서의 사업소득에 경비율을 적용해 종합소득세를 계산합니다. 기본경비율과 실제경비율을 모두 지원합니다.',
     href: '/calculator/freelancer-tax',

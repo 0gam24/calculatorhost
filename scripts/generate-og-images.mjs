@@ -60,6 +60,7 @@ const CALCULATORS = [
   { slug: 'bmi', title: 'BMI', category: '생활' },
   { slug: 'd-day', title: 'D-day', category: '생활' },
   { slug: 'weekly-holiday-allowance', title: '주휴수당', category: '근로' },
+  { slug: 'annual-leave', title: '연차', category: '근로' },
 ];
 
 // 5개 카테고리 허브 페이지 메타

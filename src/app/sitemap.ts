@@ -52,6 +52,7 @@ const CALCULATOR_SLUGS = [
   'vat',
   'dti',
   'weekly-holiday-allowance',
+  'annual-leave',
 ];
 
 const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];

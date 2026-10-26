@@ -9,7 +9,7 @@
     "자매 사이트 몫(대출 상품·청약 일정·연금 수령 전략 등)은 계산 각도만 쓴다. docs/ops/SITE-KEYWORD-PROFILE.md §6.",
     "calculator = null 이면 그 계산기가 아직 없다(파이프라인이 신규 계산기 후보로 표시). 2026-10-07: 연차수당·중도상환수수료는 기존 계산기가 계산하지 않아 null 로 정정, 주휴수당은 신규 계산기로 연결."
   ],
-  "updated": "2026-10-07",
+  "updated": "2026-10-26",
   "benchmark": "실업급여",
   "keywords": [
     {
@@ -742,10 +742,41 @@
       ]
     },
     {
+      "term": "연차 계산기",
+      "cluster": "연차",
+      "axis": "근로·급여",
+      "calculator": "/calculator/annual-leave/",
+      "aliases": [
+        "연차 개수",
+        "연차 계산"
+      ],
+      "evidence": {
+        "datalab": {
+          "measuredAt": "2026-10-25",
+          "forms": {
+            "연차 계산기": {
+              "recent7": 33.24,
+              "trend": 1.27
+            },
+            "연차 발생 기준": {
+              "recent7": 27.11
+            },
+            "연차 개수": {
+              "recent7": 11.96
+            }
+          }
+        }
+      },
+      "existingSlugs": [
+        "annual-leave-allowance-2026",
+        "annual-leave-usage-promotion-2026"
+      ]
+    },
+    {
       "term": "연차수당 계산기",
       "cluster": "연차수당",
       "axis": "근로·급여",
-      "calculator": null,
+      "calculator": "/calculator/annual-leave/",
       "aliases": [
         "연차 발생 기준",
         "퇴사 연차수당",

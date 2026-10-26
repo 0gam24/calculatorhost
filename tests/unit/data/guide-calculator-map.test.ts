@@ -13,6 +13,8 @@ const g = (title: string) => calculatorForGuide({ slug: 'x', title });
 describe('calculatorForGuide', () => {
   it('좁은 주제가 넓은 주제보다 먼저', () => {
     expect(g('주휴수당 계산법 (2026), 주 15시간 알바도 받나')).toBe('weekly-holiday-allowance');
+    expect(g('연차수당 계산법 (2026), 미사용 연차 얼마 받나')).toBe('annual-leave');
+    expect(g('퇴사 연차수당 2026, 1년 근무 후 퇴사하면 며칠')).toBe('annual-leave');
     expect(g('2026 퇴직소득세 계산법, 연분연승법·근속연수공제')).toBe('severance');
     expect(g('재산세 vs 종부세 차이 2026, 둘 다 내나?')).toBe('comprehensive-property-tax');
     expect(g('1세대1주택 재산세 특례세율 2026, 0.05%p 인하 구조')).toBe('property-tax');

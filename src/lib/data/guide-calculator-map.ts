@@ -14,6 +14,7 @@ export const CALCULATOR_LABELS = {
   salary: '연봉 실수령액 계산기',
   severance: '퇴직금 계산기',
   'weekly-holiday-allowance': '주휴수당 계산기',
+  'annual-leave': '연차 계산기',
   loan: '대출이자 계산기',
   'loan-limit': '대출한도 계산기',
   dti: 'DTI 계산기',
@@ -57,6 +58,7 @@ const NO_CALCULATOR =
 /** 위에서부터 처음 맞는 규칙(가이드 제목 기준). 좁은 주제를 넓은 주제보다 먼저 둔다 */
 const RULES: ReadonlyArray<readonly [RegExp, MappedCalculator]> = [
   [/주휴수당/, 'weekly-holiday-allowance'],
+  [/연차/, 'annual-leave'],
   [/퇴직금|퇴직소득/, 'severance'],
   [/종부세|종합부동산세/, 'comprehensive-property-tax'],
   [/재산세/, 'property-tax'],
@@ -116,6 +118,7 @@ const CORE_KEYWORDS: Partial<Record<MappedCalculator, RegExp>> = {
   salary: /실수령|연봉|월급|4대보험|간이세액|원천징수/,
   severance: /퇴직금|퇴직소득세/,
   'weekly-holiday-allowance': /주휴수당/,
+  'annual-leave': /연차/,
   loan: /대출 ?이자|원리금|중도상환|금리/,
   'loan-limit': /DSR|LTV|한도/,
   'capital-gains-tax': /양도소득세|양도세/,

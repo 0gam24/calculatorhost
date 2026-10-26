@@ -11,7 +11,7 @@ import {
 } from '@/lib/analytics/ad-intents-navigation';
 
 /* ─── 검색 대상 데이터 (정적) ───
- * 계산기 32개 + 카테고리 5개 + 홈 + 용어사전 + 가이드.
+ * 계산기 33개 + 카테고리 5개 + 홈 + 용어사전 + 가이드.
  * keywords 에 페르소나·줄임말 등을 넣어 검색 히트율 향상.
  */
 
@@ -47,6 +47,21 @@ const SEARCH_DATA: SearchEntry[] = [
       '주 15시간',
       '최저시급 주휴수당',
       '근로기준법 55조',
+    ],
+  },
+  {
+    label: '연차 계산기',
+    href: '/calculator/annual-leave/',
+    kind: 'calculator',
+    keywords: [
+      '연차',
+      '연차 계산',
+      '연차 발생 기준',
+      '연차 개수',
+      '연차수당',
+      '퇴사 연차수당',
+      '1년 미만 연차',
+      '근로기준법 60조',
     ],
   },
   {
