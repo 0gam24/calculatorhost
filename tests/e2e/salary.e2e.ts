@@ -6,6 +6,8 @@ import { expect, test } from '../support/network-fixture';
  * 결과 카드에 0원이 아닌 hero 값이 표시되어야 한다.
  * (정확한 수치는 단위 테스트에서 검증; E2E는 통합 동작만 확인)
  */
+const amount = (text: string | null) => Number((text ?? '').replace(/[^\d]/g, ''));
+
 test.describe('연봉실수령액 골든패스', () => {
   test('기본값으로 페이지 진입 시 결과 hero에 비-0 금액 표시', async ({ page }) => {
     await page.goto('/calculator/salary/');
@@ -25,24 +27,33 @@ test.describe('연봉실수령액 골든패스', () => {
     await page.goto('/calculator/salary/');
     const result = page.getByRole('region', { name: '계산 결과' });
 
-    await expect(result.getByText('월 실수령액', { exact: true })).toBeVisible();
-    await expect(result.getByText('국민연금', { exact: true })).toBeVisible();
-    // "건강보험" 은 행 라벨 + "건강보험료 × 12.95%" 노트에도 포함 → exact 로 행 라벨만
-    await expect(result.getByText('건강보험', { exact: true })).toBeVisible();
-    await expect(result.getByText('근로소득세', { exact: true })).toBeVisible();
+    // 결과 카드는 주요 3행만 바로 보여 주고 보험료·세금 행은 '결과 상세'를 펼쳐야 보인다.
+    // 카드 제목도 '월 실수령액'이라 글자로 찾으면 두 곳이 걸리므로 행은 "라벨: 금액" 이름으로 찾는다.
+    await result.locator('summary', { hasText: '결과 상세' }).click();
+    for (const label of ['월 실수령액', '국민연금', '건강보험', '근로소득세']) {
+      await expect(result.getByLabel(new RegExp(`^${label}: `))).toBeVisible();
+    }
   });
 
-  test('비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가)', async ({ page }) => {
+  test('월 비과세 금액을 10만 원 늘리면 실수령액이 증가', async ({ page }) => {
     await page.goto('/calculator/salary/');
     const result = page.getByRole('region', { name: '계산 결과' });
     const hero = result.locator('[data-hero-value]');
 
-    const before = (await hero.textContent())?.trim() ?? '';
-    // 비과세 +10만 버튼: 비과세가 늘면 과세소득이 줄어 실수령액 ↑
-    await page.getByRole('button', { name: '+십만', exact: false }).first().click();
-    // 디바운스 150ms 대기
-    await page.waitForTimeout(300);
-    const after = (await hero.textContent())?.trim() ?? '';
-    expect(after).not.toBe(before);
+    // 비과세 칸은 '내 조건 더 설정' 안에 있다 (+10만 빠른 버튼은 2026-09-30 화면 단순화로 없어짐)
+    await page
+      .getByRole('region', { name: '계산 입력' })
+      .locator('summary', { hasText: '내 조건 더 설정' })
+      .click();
+    const nontaxable = page.getByLabel('월 비과세 금액', { exact: true });
+    // 금액 칸은 포커스되면 쉼표 없는 값으로 다시 그려지므로 먼저 포커스해야 fill 이 기존 값을 대체한다
+    await nontaxable.focus();
+    const before = amount(await hero.textContent());
+    expect(before).toBeGreaterThan(0);
+    // 20만 → 30만: 비과세가 늘면 보험료·세금을 매기는 과세 급여가 줄어 실수령액 ↑
+    await nontaxable.fill('300000');
+    await nontaxable.blur();
+    await expect(nontaxable).toHaveValue('300,000');
+    await expect.poll(async () => amount(await hero.textContent())).toBeGreaterThan(before);
   });
 });

@@ -18,16 +18,20 @@ test.describe('환전 계산 골든패스', () => {
   test('환전 금액, 기준환율 입력 필드 노출', async ({ page }) => {
     await page.goto('/calculator/exchange/', { waitUntil: 'domcontentloaded' });
 
-    // 입력 폼 필드 확인
-    const numberInputs = page.locator('input[type="number"]');
-    const count = await numberInputs.count();
-    expect(count).toBeGreaterThanOrEqual(2);
+    // 금액 칸은 type="number" 가 아니라 숫자 키패드용 텍스트 칸(inputmode)이라 라벨로 찾는다
+    const form = page.getByRole('region', { name: '계산 입력' });
+    await expect(form.getByRole('textbox', { name: '환전할 금액', exact: true })).toBeVisible();
+    await expect(
+      form.getByRole('textbox', { name: '1 USD당 기준환율', exact: true }),
+    ).toBeVisible();
   });
 
   test('환전 방향 라디오 버튼 선택 옵션 노출', async ({ page }) => {
     await page.goto('/calculator/exchange/', { waitUntil: 'domcontentloaded' });
 
-    const radios = page.locator('input[type="radio"]');
-    expect(await radios.count()).toBeGreaterThanOrEqual(2);
+    // 환전 방향은 input[type=radio] 대신 role="radio" 버튼 묶음(radiogroup)이다
+    const direction = page.getByRole('radiogroup', { name: '환전 방향', exact: true });
+    await expect(direction.getByRole('radio', { name: '원 → USD', exact: true })).toBeVisible();
+    await expect(direction.getByRole('radio', { name: 'USD → 원', exact: true })).toBeVisible();
   });
 });
