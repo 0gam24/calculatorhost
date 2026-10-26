@@ -238,13 +238,13 @@ test('core: result copy, keyboard confirmation, criteria and official salary rat
   expect(copied).toContain((await hero(page).textContent())!.trim());
 });
 
-test('core: home has all 31 calculators and keyboard search reaches DTI', async ({ page }) => {
+test('core: home has all 33 calculators and keyboard search reaches DTI', async ({ page }) => {
   await page.goto('/');
-  await expect(page.locator('#all-calculators a[href^="/calculator/"]')).toHaveCount(31);
+  await expect(page.locator('#all-calculators a[href^="/calculator/"]')).toHaveCount(33);
   const links = await page
     .locator('#all-calculators a[href^="/calculator/"]')
     .evaluateAll((nodes) => nodes.map((node) => node.getAttribute('href')));
-  expect(new Set(links).size).toBe(31);
+  expect(new Set(links).size).toBe(33);
   const search = page.getByRole('combobox', { name: '계산기 검색' });
   await search.fill('총부채상환비율');
   await expect(page.locator('#search-suggestions a[href="/calculator/dti/"]')).toBeVisible();

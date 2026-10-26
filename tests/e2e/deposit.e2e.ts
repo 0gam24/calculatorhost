@@ -11,7 +11,7 @@ test.describe('정기예금 이자 골든패스', () => {
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible({ timeout: 15000 });
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     await expect(hero).toBeVisible();
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).not.toBe('0원');
@@ -31,7 +31,7 @@ test.describe('정기예금 이자 골든패스', () => {
     await rateInput.fill('5');
     await page.waitForTimeout(300);
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).toMatch(/[1-9]/);
   });
@@ -45,7 +45,7 @@ test.describe('정기예금 이자 골든패스', () => {
     await termInput.fill('24');
     await page.waitForTimeout(300);
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).toMatch(/[1-9]/);
   });

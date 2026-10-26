@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/category/lifestyle/';
 export const metadata: Metadata = {
   title: '생활 계산기 모음 2026 | BMI·D-day·평수',
   description:
-    '일상생활에 필수적인 생활 계산기 모음. BMI와 표준체중·비만도 계산, 특별한 날까지의 D-day 카운트다운, 평과 제곱미터 변환 등을 무료로 빠르고 정확하게 이용하세요.',
+    'BMI·디데이·날짜 계산·평수 변환처럼 자주 쓰는 계산을 바로 해 주는 생활 계산기 모음입니다. 무료예요.',
   keywords: [
     '생활 계산기',
     'BMI 계산기',

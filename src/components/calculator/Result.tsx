@@ -106,6 +106,7 @@ export function ResultCard({
                 : 'text-[2rem] text-primary-800 dark:text-primary-200 min-[390px]:text-[2.5rem] lg:text-[3rem]',
             )}
             aria-label={`${heroLabel}: ${invalid ? '입력을 확인해 주세요' : heroValue}`}
+            data-hero-value
           >
             {invalid ? '입력을 확인해 주세요' : heroValue}
           </p>

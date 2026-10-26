@@ -11,7 +11,7 @@ test.describe('퇴직금 골든패스', () => {
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible();
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     await expect(hero).toBeVisible();
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).not.toBe('0원');
@@ -21,7 +21,7 @@ test.describe('퇴직금 골든패스', () => {
   test('평균임금 변경 시 퇴직금 값이 변동', async ({ page }) => {
     await page.goto('/calculator/severance/');
     const result = page.getByRole('region', { name: '계산 결과' });
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
 
     const before = (await hero.textContent())?.trim() ?? '';
     // 월급을 500만으로 변경

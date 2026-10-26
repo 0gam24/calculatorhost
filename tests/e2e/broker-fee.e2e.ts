@@ -11,7 +11,7 @@ test.describe('중개수수료 골든패스', () => {
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible();
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     await expect(hero).toBeVisible();
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).not.toBe('0원');
@@ -21,7 +21,7 @@ test.describe('중개수수료 골든패스', () => {
   test('매매가 입력 시 중개수수료 값이 변동', async ({ page }) => {
     await page.goto('/calculator/broker-fee/');
     const result = page.getByRole('region', { name: '계산 결과' });
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
 
     const before = (await hero.textContent())?.trim() ?? '';
     // 거래금액을 10억으로 변경
@@ -40,7 +40,7 @@ test.describe('중개수수료 골든패스', () => {
     await page.getByRole('radio', { name: '오피스텔' }).click();
     await page.waitForTimeout(300);
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).toMatch(/[1-9]/);
   });

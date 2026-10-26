@@ -11,7 +11,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - 카테고리: 금융 / 세금 / 부동산 / 근로 / 생활 (5개)
 <!-- AUTO:COUNTS:START -->
 - 계산기: 33종
-- 가이드: 384편
+- 가이드: 385편
 <!-- AUTO:COUNTS:END -->
 - 라이선스: 모든 콘텐츠는 정보 제공 목적, 인용 시 출처 표기 권장
 - 업데이트: 계산 기준과 변경 내용은 검토 후 반영합니다. 계산 로직은 단위 테스트로 회귀 검증합니다. 법조항 인용의 미등록·미확인 항목이 남아 있으며, 사이트 전체의 법률 검증 완료를 의미하지 않습니다.
@@ -238,7 +238,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모](https://calculatorhost.com/guide/year-end-additional-deduction-elderly-disabled-single-parent-2026/)
 - [연말정산 완벽 가이드 (2026), "13월의 월급" 받는 법](https://calculatorhost.com/guide/year-end-tax-settlement/)
 
-### 세금·부동산 (87편)
+### 세금·부동산 (88편)
 
 - [취득세 계산법 2026, 주택 구입 세율·중과·농특세](https://calculatorhost.com/guide/acquisition-tax-calculation-2026/)
 - [취득세 일시적 2주택 중과 배제 2026, 종전주택 3년 처분](https://calculatorhost.com/guide/acquisition-tax-temporary-two-houses-exclusion-2026/)
@@ -254,6 +254,7 @@ calculatorhost.com 은 한국 거주자가 일상적으로 필요한 금융·세
 - [종부세 고령자·장기보유 세액공제 2026, 최대 80% 감면](https://calculatorhost.com/guide/comprehensive-real-estate-tax-elderly-longterm-credit-2026/)
 - [종부세 합산배제 신고 2026, 9월 16~30일 임대주택 빼는 법](https://calculatorhost.com/guide/comprehensive-real-estate-tax-exclusion-application-2026/)
 - [부부 공동명의 종부세 특례 vs 단독명의 유불리 2026](https://calculatorhost.com/guide/comprehensive-real-estate-tax-joint-ownership-2026/)
+- [종부세 납부기간 2026, 12월 1~15일 고지서·분납·카드납부](https://calculatorhost.com/guide/comprehensive-real-estate-tax-payment-2026/)
 - [종부세 1세대1주택 세액공제 2026, 고령자·장기보유 최대 80%](https://calculatorhost.com/guide/comprehensive-real-estate-tax-single-house-credit-2026/)
 - [종부세 주택가액 기준 전환 2026 개편안, 1주택 공제 14억](https://calculatorhost.com/guide/comprehensive-real-estate-tax-value-based-reform-2026/)
 - [종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일](https://calculatorhost.com/guide/comprehensive-real-estate-tax-who-pays-2026/)

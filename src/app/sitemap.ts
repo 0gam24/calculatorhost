@@ -59,6 +59,7 @@ const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];
 
 // 가이드 콘텐츠 (Article schema)
 const GUIDE_SLUGS = [
+  'comprehensive-real-estate-tax-payment-2026',
   'severance-pay-eligibility-2026',
   'parents-living-expenses-gift-tax-2026',
   'wedding-gift-money-tax-2026',

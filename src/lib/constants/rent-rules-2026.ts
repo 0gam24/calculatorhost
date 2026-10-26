@@ -20,7 +20,7 @@ export const YEAR = 2026;
 
 /**
  * 한국은행 기준금리 기본값 (소수, 0.03 = 3%)
- * src/data/bok-rates.json (2026-10-14 현재 3.00%, 2026-08-27 금통위 결정)에서 읽는다.
+ * src/data/bok-rates.json (2026-10-27 현재 3.00%, 2026-10-22 금통위 동결)에서 읽는다.
  * 주택임대차보호법 시행령 §9: 기준금리 + 대통령령 비율
  */
 export const BANK_OF_KOREA_BASE_RATE_DEFAULT: number = bokRates.baseRate;

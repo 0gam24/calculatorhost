@@ -11,7 +11,7 @@ test.describe('양도소득세 골든패스', () => {
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible();
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     await expect(hero).toBeVisible();
     const text = (await hero.textContent())?.trim() ?? '';
     expect(text).not.toBe('0원');
@@ -21,7 +21,7 @@ test.describe('양도소득세 골든패스', () => {
   test('양수가를 큰 폭으로 변경 시 양도소득세 값이 변동', async ({ page }) => {
     await page.goto('/calculator/capital-gains-tax/');
     const result = page.getByRole('region', { name: '계산 결과' });
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
 
     const before = (await hero.textContent())?.trim() ?? '';
     // 양수가를 8억으로 큰 폭으로 변경 (5억 -> 8억)

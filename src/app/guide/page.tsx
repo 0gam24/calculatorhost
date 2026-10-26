@@ -73,6 +73,16 @@ const CATEGORY_PAGE_SLUG: Record<GuideCategory, string> = {
 };
 
 export const GUIDES: GuideEntry[] = [
+  // 2026-10-27 수동 발행 (운영 계획, 롱테일 "종부세 납부기간")
+  {
+    slug: 'comprehensive-real-estate-tax-payment-2026',
+    title: '종부세 납부기간 2026, 12월 1~15일 고지서·분납·카드납부',
+    description:
+      '종부세는 12월 1~15일에 냅니다. 고지서 보는 법, 250만 원 넘으면 분납, 카드 수수료, 납부유예, 기한을 넘기면 붙는 가산세까지 정리.',
+    category: '세금·부동산',
+    publishedAt: '2026-10-27',
+    readingMinutes: 11,
+  },
   // 2026-10-25 수동 발행 (운영자 지시, 롱테일 "퇴직금 지급 기준")
   {
     slug: 'severance-pay-eligibility-2026',

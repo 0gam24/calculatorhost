@@ -13,7 +13,7 @@ test.describe('연봉실수령액 골든패스', () => {
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible();
 
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
     await expect(hero).toBeVisible();
     const text = (await hero.textContent())?.trim() ?? '';
     // 0원 아니어야 함 (계산 정상 수행 신호)
@@ -35,7 +35,7 @@ test.describe('연봉실수령액 골든패스', () => {
   test('비과세 +10만 단위 버튼 클릭 시 실수령액이 변동(증가)', async ({ page }) => {
     await page.goto('/calculator/salary/');
     const result = page.getByRole('region', { name: '계산 결과' });
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
 
     const before = (await hero.textContent())?.trim() ?? '';
     // 비과세 +10만 버튼: 비과세가 늘면 과세소득이 줄어 실수령액 ↑

@@ -9,7 +9,7 @@ test.describe('임대수익률 골든패스', () => {
   test('기본값으로 페이지 진입 시 hero 값 표시됨', async ({ page }) => {
     await page.goto('/calculator/rental-yield/', { waitUntil: 'domcontentloaded' });
 
-    const hero = page.locator('.hero-number').first();
+    const hero = page.locator('[data-hero-value]').first();
     await expect(hero).toBeVisible({ timeout: 10000 });
     
     const text = await hero.textContent();

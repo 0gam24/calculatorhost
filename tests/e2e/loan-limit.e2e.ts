@@ -10,7 +10,7 @@ test.describe('대출한도 골든패스', () => {
 
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible();
-    const hero = result.locator('.hero-number');
+    const hero = result.locator('[data-hero-value]');
 
     const before = (await hero.textContent())?.trim() ?? '';
     expect(before).toMatch(/[1-9]/);

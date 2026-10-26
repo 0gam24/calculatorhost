@@ -25,7 +25,7 @@ const URL = 'https://calculatorhost.com/category/work/';
 export const metadata: Metadata = {
   title: '근로 계산기 모음 2026 | 연봉·퇴직금',
   description:
-    '2026년 최신 세율 반영 연봉 실수령액, 퇴직금, 프리랜서 종합소득세 계산기. 소득세·4대보험을 정확하게 계산해 월급과 퇴직금 실수령액을 확인하세요.',
+    '연봉 실수령액·퇴직금·주휴수당·연차·프리랜서 종합소득세를 2026년 기준으로 계산하는 근로 계산기 모음입니다.',
   keywords: [
     '근로 계산기',
     '연봉 실수령액 계산기',
