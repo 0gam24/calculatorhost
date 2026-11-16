@@ -356,7 +356,7 @@ const SEARCH_DATA: SearchEntry[] = [
     keywords: ['부가세 1기', '부가세 4월', '예정신고', '일반과세자 부가세', '매입세액공제'],
   },
   {
-    label: '가이드: 4월 종부세 합산배제·과세특례 신청',
+    label: '가이드: 종부세 합산배제·과세특례 신청',
     href: '/guide/april-comprehensive-property-tax-exclusion/',
     kind: 'page',
     keywords: [

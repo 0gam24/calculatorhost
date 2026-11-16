@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/comprehensive-real-estate-tax-elderly-longterm-credit-2026/';
 const DATE_PUBLISHED = '2026-07-17';
-const DATE_MODIFIED = '2026-07-17';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '종부세 고령자·장기보유 세액공제 2026, 최대 80% 감면',
@@ -139,7 +139,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                     { name: '종부세 고령자·장기보유 세액공제 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">주택 소유자 · 은퇴 준비층 · 8분 읽기 · 2026-07-17</p>
+                <p className="mb-2 text-caption text-text-tertiary">주택 소유자 · 은퇴 준비층 · 8분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종부세 고령자·장기보유 세액공제 2026
                   <br />
@@ -154,7 +154,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">어떤 세액공제가 있나요?</h2>
                 <p>
-                  1세대1주택자에게는 두 가지 세액공제가 있습니다. 하나는 나이에 따른 고령자 세액공제, 다른 하나는 보유 기간에 따른 장기보유 세액공제입니다(종합부동산세법 §9). 세액공제는 산출된 종부세액에서 일정 비율을 직접 빼주는 방식이라 감면 효과가 즉각적입니다.
+                  1세대1주택자에게는 두 가지 세액공제가 있습니다. 하나는 나이에 따른 고령자 세액공제, 다른 하나는 보유 기간에 따른 장기보유 세액공제입니다(종합부동산세법 §9). 세액공제는 산출세액에서 공제할 재산세액(§9③)을 먼저 뺀 뒤, 그 금액에 공제율을 곱해 빼주는 방식입니다(§9⑤). 산출세액에 바로 곱하는 것이 아니라는 점에 주의하세요.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <p className="font-semibold text-text-primary">1세대1주택 종부세 세액공제 2종</p>
@@ -220,7 +220,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   두 공제는 중복 적용되며 합계 80%가 한도입니다(종합부동산세법 §9). 실제 종부세액에 적용한 사례로 확인해 보겠습니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
-                  <p className="font-semibold text-text-primary">사례 1. 67세, 12년 보유 (산출 종부세 200만원 가정)</p>
+                  <p className="font-semibold text-text-primary">사례 1. 67세, 12년 보유 (재산세 공제 후 종부세 200만원 가정)</p>
                   <p className="text-sm text-text-secondary">
                     · 고령자 공제: 65세 이상 → 30%
                     <br />
@@ -232,11 +232,11 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                     <br />
                     · 납부액: 200만원 − 140만원 = <strong>60만원</strong>
                     <br />
-                    <span className="text-xs text-text-tertiary">결론: 세액공제로 종부세가 200만원에서 60만원으로 감소.</span>
+                    <span className="text-xs text-text-tertiary">결론: 재산세 공제 후 200만원이던 종부세가 세액공제로 60만원까지 감소.</span>
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
-                  <p className="font-semibold text-text-primary">사례 2. 72세, 16년 보유 (산출 종부세 300만원 가정)</p>
+                  <p className="font-semibold text-text-primary">사례 2. 72세, 16년 보유 (재산세 공제 후 종부세 300만원 가정)</p>
                   <p className="text-sm text-text-secondary">
                     · 고령자 공제: 70세 이상 → 40%
                     <br />
@@ -252,7 +252,7 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   </p>
                 </div>
                 <p className="mt-4">
-                  다만 위 종부세액은 이해를 돕기 위한 가정치입니다. 실제 산출세액은 공시가격, 공제금액(1세대1주택 12억), 공정시장가액비율(60%), 세율을 거쳐 계산되므로, 정확한 금액은 종부세 계산기나 홈택스로 확인하세요.
+                  다만 위 종부세액은 이해를 돕기 위한 가정치입니다. 실제 계산은 공시가격에서 공제금액(1세대1주택 12억)을 빼고 공정시장가액비율 60%를 곱해 과세표준을 만든 뒤, 세율을 적용해 산출세액을 구하고, 여기서 공제할 재산세액(종부세법 §9③)을 먼저 뺀 금액에 고령자·장기보유 세액공제율을 곱해 빼는 순서입니다. 재산세 공제 금액은 세부담 상한 등으로 실제 고지서와 조금 다를 수 있으니, 정확한 금액은 종부세 계산기나 홈택스로 확인하세요.
                 </p>
               </section>
 

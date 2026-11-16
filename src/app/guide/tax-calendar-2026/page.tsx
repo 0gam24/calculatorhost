@@ -136,14 +136,6 @@ const CALENDAR: MonthEntry[] = [
         guideHref: '/guide/april-vat-preliminary-q1/',
         calculatorHref: '/calculator/vat/',
       },
-      {
-        date: '4월 1~30일',
-        title: '종부세 합산배제·과세특례 신청',
-        description: '임대주택·미분양·사원용 주택 등 합산배제 신청 마감.',
-        target: '다주택자·임대사업자',
-        guideHref: '/guide/april-comprehensive-property-tax-exclusion/',
-        calculatorHref: '/calculator/comprehensive-property-tax/',
-      },
     ],
   },
   {
@@ -233,11 +225,19 @@ const CALENDAR: MonthEntry[] = [
     events: [
       {
         date: '9월 16~30일',
-        title: '재산세 2차 납부 (주택분 잔여 1/2 + 토지·건축물 일괄)',
-        description: '주택 1차 납부분 제외 잔여 + 토지·건축물 전액.',
+        title: '재산세 2차 납부 (주택분 나머지 1/2 + 토지분)',
+        description: '주택 2기분과 토지분 전액. 건축물분은 7월에 납부.',
         target: '부동산 보유자',
         guideHref: '/guide/june-property-tax/',
         calculatorHref: '/calculator/property-tax/',
+      },
+      {
+        date: '9월 16~30일',
+        title: '종부세 합산배제·과세특례 신청',
+        description: '임대주택·미분양·사원용 주택 합산배제 신고와 일시적 2주택 등 특례 신청 기간.',
+        target: '다주택자·임대사업자',
+        guideHref: '/guide/comprehensive-real-estate-tax-exclusion-application-2026/',
+        calculatorHref: '/calculator/comprehensive-property-tax/',
       },
     ],
   },
@@ -270,7 +270,7 @@ const CALENDAR: MonthEntry[] = [
       {
         date: '12월 1~15일',
         title: '종합부동산세 신고·납부',
-        description: '1세대 합산 공시가 9억 초과(1주택 12억) 또는 다주택 6억 초과 대상.',
+        description: '개인별 주택 공시가 합계 9억 초과(1세대1주택은 12억 초과) 대상.',
         target: '다주택자·고가주택자',
         calculatorHref: '/calculator/comprehensive-property-tax/',
       },
@@ -311,7 +311,7 @@ const FAQ_ITEMS = [
   {
     question: '종합부동산세는 누가 언제 내나요?',
     answer:
-      '12월 1일부터 15일까지 신고·납부합니다. 1세대 합산 공시가격 9억 원 초과(1세대 1주택은 12억 원) 보유자가 대상입니다. 재산세와 같은 6월 1일 기준 소유자에게 부과되며, 임대주택 등은 4월의 합산배제 신청으로 미리 부담을 줄일 수 있습니다.',
+      '12월 1일부터 15일까지 납부합니다. 개인별 주택 공시가격 합계 9억 원 초과(1세대 1주택은 12억 원 초과) 보유자가 대상입니다. 재산세와 같은 6월 1일 기준 소유자에게 부과되며, 임대주택 등은 9월 16~30일의 합산배제 신고로 미리 부담을 줄일 수 있습니다.',
   },
   {
     question: '개인사업자 부가세 신고는 1년에 몇 번인가요?',

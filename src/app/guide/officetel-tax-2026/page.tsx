@@ -306,7 +306,7 @@ export default function OfficetelTax2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">종합부동산세: 주거용은 과세, 업무용은 제외</h2>
                 <p>
-                  종합부동산세(종부세)는 3주택 이상 보유하거나 일정 금액 이상 부동산을 보유한 사람에게 부과됩니다.
+                  종합부동산세(종부세)는 한 사람이 가진 주택의 공시가격 합계가 공제금액(1세대1주택 12억원, 그 외 9억원)을 넘을 때 부과됩니다(종부세법 §8①).
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
                   <p className="font-semibold text-text-primary">주거용 오피스텔</p>
@@ -319,7 +319,7 @@ export default function OfficetelTax2026Page() {
                     <br />
                     · <strong>공정시장가액비율</strong>: 60% 적용
                     <br />
-                    예시: 공시가 3억원 주거용 오피스텔 → 과세표준 1.8억원 → 0.5% 세율 적용 ≈ 90만원/년
+                    예시: 공시가 3억원 주거용 오피스텔 한 채만 있으면 공제금액 9억원보다 작아 종부세는 0원입니다. 공시가 9억원 아파트와 함께 가지고 있으면 합계 12억원에서 9억원을 빼고 60%를 곱한 과세표준 1.8억원에 0.5%를 적용해 산출세액 90만원, 여기서 공제할 재산세액 약 43만원을 빼면 종부세 약 47만원(농특세 포함 약 56만원)입니다.
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">

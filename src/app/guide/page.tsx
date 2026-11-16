@@ -2938,13 +2938,13 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'april-comprehensive-property-tax-exclusion',
-    title: '4월 종부세 합산배제·과세특례 신청 가이드 (2026)',
+    title: '종부세 합산배제·과세특례 신청 가이드 (2026)',
     description:
-      '임대주택·일시적 2주택·고령자·장기보유 등 우대 신청. 4월 1~30일 마감 → 12월 종부세 절세 핵심.',
+      '임대주택 합산배제와 일시적 2주택·상속주택 특례 신청. 9월 16~30일 신청 → 12월 종부세 절세 핵심.',
     category: '세금·부동산',
     publishedAt: '2026-05-03',
     readingMinutes: 9,
-    seasonal: '4월 1~30일',
+    seasonal: '9월 16~30일',
     tags: ['시즈널'],
   },
   // ─── 5월 (기존) ───

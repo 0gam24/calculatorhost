@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/property-tax-vs-comprehensive-real-estate-tax-2026/';
 const DATE_PUBLISHED = '2026-06-26';
-const DATE_MODIFIED = '2026-06-26';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '재산세 vs 종부세 차이 2026, 둘 다 내나? 과세기준·세율 비교',
@@ -132,7 +132,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                     { name: '재산세 vs 종부세 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">다주택 보유자 · 8분 읽기 · 2026-06-26</p>
+                <p className="mb-2 text-caption text-text-tertiary">다주택 보유자 · 8분 읽기 · 2026-11-16 업데이트</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 vs 종부세
                   <br />
@@ -301,15 +301,17 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
                   <p className="font-semibold text-text-primary">Step 1. 먼저 재산세 계산</p>
                   <p className="text-sm text-text-secondary">
-                    · 공시가격 15억원 × 공정시장가액비율 60% = 과세표준 9억원
+                    · 공정시장가액비율: 1세대1주택 공시가 6억 초과 45%(지방세법 시행령 §109②, 3억 이하 43%·6억 이하 44%)
+                    <br />
+                    · 과세표준 = 15억 × 45% = 6.75억원
                     <br />
                     · 세율: 0.4% (과세표준 3억원 초과 구간, 지방세법 §111)
                     <br />
                     · 누진공제: 63만원
                     <br />
-                    · 재산세 ≈ 9억 × 0.4% − 63만 = <strong>약 297만원</strong>
+                    · 재산세 ≈ 6.75억 × 0.4% − 63만 = <strong>약 207만원</strong>
                     <br />
-                    · 단, 공시가격 9억원 이하 1세대1주택은 §111의2 특례세율이 적용되어 더 낮아집니다
+                    · 단, 공시가격 9억원 이하 1세대1주택은 §111의2 특례세율이 추가로 적용되어 더 낮아집니다(공시가 15억은 해당 없음)
                     <br />
                     · 납부 시기: 7월·9월(분납)
                   </p>
@@ -325,17 +327,27 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                     <br />
                     · 과세표준 = 3억 × 공정시장가액비율 60% = 1.8억원
                     <br />
-                    · 세율: 2주택 이하 누진(0.5%~2.7%) 구간 적용
+                    · 세율: 2주택 이하 누진 1.8억 ≤ 3억 구간, 0.5%·누진공제 0
                     <br />
-                    · <strong>세액공제</strong>: 1세대1주택은 연령·보유기간별 세액공제가 추가 적용
+                    · 산출세액 = 1.8억 × 0.5% = <strong>90만원</strong>
                     <br />
-                    · <strong>이중과세 조정</strong>: 이미 납부한 재산세 중 종부세 과세표준에 해당하는 부분을 공제(종합부동산세법 §9)
+                    · <strong>공제할 재산세액(종합부동산세법 §9③, 시행령 §4의3)</strong> = 1.8억 × 45%(1세대1주택 재산세 공정시장가액비율) × 0.4% = 32만 4,000원
+                    <br />
+                    · 재산세 공제 후 = 90만 − 32만 4,000 = <strong>57만 6,000원</strong>
+                    <br />
+                    · 세액공제(연령·보유기간, 최대 80%): 이 예시에서는 미적용 가정
+                    <br />
+                    · 종부세 = 약 57만 6,000원
+                    <br />
+                    · 농특세 = 종부세 × 20% = 약 11만 5,200원
+                    <br />
+                    · 총 납부 ≈ <strong>약 69만 1,200원</strong>
                     <br />
                     · 납부 시기: 12월
                   </p>
                 </div>
                 <p className="mt-4">
-                  다만 위 예시는 단순화된 것입니다. 실제 계산은 공정시장가액비율·도시지역분·공제 세부사항 등에 따라 달라집니다. 정확한 금액은 홈택스(hometax.go.kr) 또는 위택스(wetax.go.kr)에서 확인하세요.
+                  다만 위 예시는 단순화된 값입니다. 공제할 재산세액은 재산세 세부담 상한·가감조정세율 등에 따라 실제 고지서와 조금 달라질 수 있고, 종부세도 공정시장가액비율·세부담 상한·세액공제 요건 등에 따라 바뀝니다. 정확한 금액은 홈택스(hometax.go.kr) 또는 위택스(wetax.go.kr)에서 확인하세요.
                 </p>
               </section>
 

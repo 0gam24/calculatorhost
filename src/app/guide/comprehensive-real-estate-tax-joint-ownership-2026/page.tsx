@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/comprehensive-real-estate-tax-joint-ownership-2026/';
 const DATE_PUBLISHED = '2026-06-29';
-const DATE_MODIFIED = '2026-06-29';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026',
@@ -132,7 +132,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                     { name: '부부 공동명의 종부세 특례' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 9분 읽기 · 2026-06-29</p>
+                <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 9분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부부 공동명의 종합부동산세(종부세) 완벽 비교
                   <br />
@@ -264,7 +264,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. 세액공제 분배, 고령자공제 + 장기보유공제</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  특례를 신청하면 §10의2로 지정된 납세의무자가 고령자공제(종부세법 §9①)와 장기보유공제(§9②)를 받을 수 있습니다.
+                  특례를 신청하면 §10의2로 지정된 납세의무자가 고령자공제(종부세법 §9⑥)와 장기보유공제(§9⑧)를 받을 수 있습니다.
                 </p>
                 <div className="overflow-x-auto mb-4">
                   <table className="w-full text-sm border-collapse">
@@ -321,11 +321,17 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                     <p><strong className="text-text-primary">사례: 공시 20억 공동명의 (특례 신청, 남편 70세 + 15년 보유)</strong></p>
                     <p className="border-t border-border-base pt-2 mt-2">기본공제: 12억 (특례 적용)</p>
                     <p>과세표준: (20억 − 12억) × 공정시장가액비율 60% = 4.8억</p>
+                    <p>산출세액: 4.8억 × 0.7% − 누진공제 60만 = 276만원 (2주택 이하 세율, 6억 이하 구간)</p>
+                    <p>공제할 재산세액: 4.8억 × 재산세 공정시장가액비율 45% × 0.4% = 86만 4,000원 (종부세법 §9③)</p>
+                    <p>재산세 공제 후: 276만 − 86만 4,000 = 189만 6,000원</p>
                     <p>고령자공제: 40% (70세 이상)</p>
                     <p>장기보유공제: 50% (15년 이상)</p>
                     <p>합산 세액공제율: min(40% + 50%, 80%) = 80%</p>
-                    <p className="border-t border-border-base pt-2 font-bold text-text-primary">→ 과세표준 4.8억에 §9 누진세율로 산출한 세액에서 80%를 공제 → 종부세 부담 대폭 감소</p>
-                    <p className="text-text-tertiary">※ 정확한 산출세액·세율은 과세표준 구간별 누진세율(종부세법 §9)에 따라 달라지므로 위택스·홈택스 계산으로 확인하세요.</p>
+                    <p>세액공제액: 189만 6,000 × 80% = 151만 6,800원</p>
+                    <p>종부세: 189만 6,000 − 151만 6,800 = 37만 9,200원</p>
+                    <p>농특세: 37만 9,200 × 20% = 7만 5,840원</p>
+                    <p className="border-t border-border-base pt-2 font-bold text-text-primary">→ 총 납부 약 45만 5,000원 (세액공제 전 189만 6,000원 대비 큰 폭 감소)</p>
+                    <p className="text-text-tertiary">※ 세액공제율 80%는 산출세액이 아니라 산출세액에서 공제할 재산세액을 뺀 금액에 적용됩니다(종부세법 §9⑤). 재산세 공제 금액은 세부담 상한 등으로 실제 고지서와 조금 다를 수 있으므로 위택스·홈택스 계산으로 확인하세요.</p>
                   </div>
                 </div>
               </section>

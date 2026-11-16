@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/comprehensive-real-estate-tax-calculation-2026/';
 const DATE_PUBLISHED = '2026-06-22';
-const DATE_MODIFIED = '2026-06-22';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '종합부동산세 계산법 2026 | 과세표준·세율·공제 정리',
@@ -127,7 +127,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                     { name: '종합부동산세 계산법 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">다주택 소유자 · 11분 읽기 · 2026-06-22</p>
+                <p className="mb-2 text-caption text-text-tertiary">다주택 소유자 · 11분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합부동산세 계산법 2026
                   <br />
@@ -151,7 +151,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                     <li>공제금액 차감 (1세대1주택 12억, 다주택 9억)</li>
                     <li>공정시장가액비율 60% 적용</li>
                     <li>세율 구간 확인 후 세액 계산</li>
-                    <li>누진공제 적용 및 농특세 20% 추가</li>
+                    <li>누진공제 적용 후 공제할 재산세액 차감, 농특세 20% 추가</li>
                   </ol>
                 </div>
               </section>
@@ -273,48 +273,56 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 3. 3주택 이상 중과세율 (종부세법 §9①제2호)</caption>
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 3. 3주택 이상 중과세율 및 누진공제 (종부세법 §9①제2호)</caption>
                     <thead>
                       <tr className="border-b border-border-base">
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">과세표준 상한</th>
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">세율</th>
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">누진공제</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="p-3">3억원 이하</td>
                         <td className="p-3">0.5%</td>
+                        <td className="p-3">0</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">6억원 이하</td>
                         <td className="p-3">0.7%</td>
+                        <td className="p-3">60만원</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">12억원 이하</td>
                         <td className="p-3">1.0%</td>
+                        <td className="p-3">240만원</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">25억원 이하</td>
                         <td className="p-3">2.0%</td>
+                        <td className="p-3">1,440만원</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">50억원 이하</td>
                         <td className="p-3">3.0%</td>
+                        <td className="p-3">3,940만원</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">94억원 이하</td>
                         <td className="p-3">4.0%</td>
+                        <td className="p-3">8,940만원</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">94억원 초과</td>
                         <td className="p-3">5.0%</td>
+                        <td className="p-3">1억 8,340만원</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
 
                 <p className="mt-4">
-                  <strong>다만</strong> 3주택 이상도 과세표준 기준에 따라 최저 0.5%부터 시작하며, 구간이 올라갈수록 세율이 높아집니다. 1~2주택의 누진공제와 달리 3주택 이상은 누진공제 없이 직접 세율만 적용됩니다.
+                  <strong>다만</strong> 3주택 이상도 과세표준 12억원 이하 구간은 1~2주택과 세율이 같고, 12억원을 넘는 구간부터 세율이 높아집니다. 3주택 이상도 누진세 구조라서 세율을 곱한 뒤 표 3의 누진공제를 빼야 합니다. 누진공제를 빼지 않으면 세액이 실제보다 크게 나옵니다.
                 </p>
               </section>
 
@@ -327,9 +335,11 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                     <br />· 공제금액 차감: 15억 − 12억 = 3억원
                     <br />· 과세표준: 3억 × 60% = 1.8억원
                     <br />· 세율: 1.8억원은 3억 이하 구간 → 0.5%
-                    <br />· 종부세액: 1.8억 × 0.5% − 0 = <strong>90만원</strong>
-                    <br />· 농특세(20%): 90만 × 20% = 18만원
-                    <br />· <strong>총 납부액(농특세 포함): 108만원</strong>
+                    <br />· 산출세액: 1.8억 × 0.5% − 0 = 90만원
+                    <br />· 공제할 재산세액(종부세법 §9③): 1.8억 × 45% × 0.4% = 32만 4,000원
+                    <br />· 종부세액: 90만 − 32만 4,000 = <strong>57만 6,000원</strong>
+                    <br />· 농특세(20%): 57만 6,000 × 20% = 11만 5,200원
+                    <br />· <strong>총 납부액(농특세 포함): 69만 1,200원</strong>
                   </p>
                 </div>
 
@@ -339,9 +349,11 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                     <br />· 공제금액 차감: 20억 − 9억 = 11억원
                     <br />· 과세표준: 11억 × 60% = 6.6억원
                     <br />· 세율: 6.6억원은 12억 이하 구간 → 1.0%, 누진공제 240만원
-                    <br />· 종부세액: 6.6억 × 1.0% − 240만 = 660만 − 240만 = <strong>420만원</strong>
-                    <br />· 농특세(20%): 420만 × 20% = 84만원
-                    <br />· <strong>총 납부액(농특세 포함): 504만원</strong>
+                    <br />· 산출세액: 6.6억 × 1.0% − 240만 = 660만 − 240만 = 420만원
+                    <br />· 공제할 재산세액(종부세법 §9③): 6.6억 × 60% × 0.4% = 158만 4,000원
+                    <br />· 종부세액: 420만 − 158만 4,000 = <strong>261만 6,000원</strong>
+                    <br />· 농특세(20%): 261만 6,000 × 20% = 52만 3,200원
+                    <br />· <strong>총 납부액(농특세 포함): 313만 9,200원</strong>
                   </p>
                 </div>
 
@@ -350,12 +362,18 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                   <p className="text-sm text-text-secondary space-y-1">
                     <br />· 공제금액 차감: 30억 − 9억 = 21억원
                     <br />· 과세표준: 21억 × 60% = 12.6억원
-                    <br />· 세율(3주택 중과): 12.6억원은 25억 이하 구간 → 2.0% (누진공제 없음)
-                    <br />· 종부세액: 12.6억 × 2.0% = <strong>2,520만원</strong>
-                    <br />· 농특세(20%): 2,520만 × 20% = 504만원
-                    <br />· <strong>총 납부액(농특세 포함): 3,024만원</strong>
+                    <br />· 세율(3주택 중과): 12.6억원은 25억 이하 구간 → 2.0%, 누진공제 1,440만원
+                    <br />· 산출세액: 12.6억 × 2.0% − 1,440만 = 2,520만 − 1,440만 = 1,080만원
+                    <br />· 공제할 재산세액(종부세법 §9③): 12.6억 × 60% × 0.4% = 302만 4,000원
+                    <br />· 종부세액: 1,080만 − 302만 4,000 = <strong>777만 6,000원</strong>
+                    <br />· 농특세(20%): 777만 6,000 × 20% = 155만 5,200원
+                    <br />· <strong>총 납부액(농특세 포함): 933만 1,200원</strong>
                   </p>
                 </div>
+
+                <p className="mt-4">
+                  <strong>공제할 재산세액이란?</strong> 같은 집에 재산세와 종부세가 겹쳐 매겨지지 않도록, 종부세 과세표준에 해당하는 만큼의 재산세를 산출세액에서 빼 주는 금액입니다(종부세법 §9③, 시행령 §4의3). 위 사례는 종부세 과세표준에 재산세 공정시장가액비율(일반 60%, 1세대1주택 공시가 6억 초과 45%)과 재산세 최고 구간 세율 0.4%를 곱해 구했습니다. 재산세 세부담 상한이 적용된 집은 실제 고지서의 공제액이 이보다 조금 작을 수 있습니다.
+                </p>
               </section>
 
               <section className="space-y-6" data-speakable>
@@ -394,7 +412,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                 </div>
 
                 <p className="mt-4">
-                  <strong>다만</strong> 세액공제는 종부세액에 먼저 적용되고, 감액된 세액에 대해 농특세 20%가 계산됩니다. 예를 들어 산출 종부세 1,000만원에서 80% 공제를 받으면 200만원만 납부하고, 농특세는 200만 × 20% = 40만원입니다.
+                  <strong>다만</strong> 세액공제는 산출세액에서 공제할 재산세액을 뺀 금액에 적용되고(종부세법 §9⑤), 그렇게 줄어든 세액에 농특세 20%가 계산됩니다. 예를 들어 재산세를 뺀 뒤 종부세가 1,000만원인 경우 80% 공제를 받으면 200만원만 납부하고, 농특세는 200만 × 20% = 40만원입니다.
                 </p>
               </section>
 
@@ -423,7 +441,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
                     <strong>3. 고령자·장기보유 세액공제 활용:</strong> 70세 이상 또는 15년 이상 보유자라면 최대 80%의 세액공제를 받을 수 있습니다.
                   </li>
                   <li>
-                    <strong>4. 납기 내 납부:</strong> 기한 내 납부로 가산세를 피하고, 경우에 따라 조기납부 할인이 있을 수 있습니다.
+                    <strong>4. 납기 내 납부:</strong> 12월 1~15일 기한 안에 내면 납부지연가산세를 피할 수 있습니다. 세액이 250만원을 넘으면 분납도 가능합니다(종부세법 §20).
                   </li>
                 </ul>
               </section>
@@ -488,7 +506,7 @@ export default function ComprehensiveRealEstateTaxCalculation2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 종합부동산세 계산은 해당 지역 세무서 또는 세무사와 상담 후 진행하세요. 본 콘텐츠는 2026-06-22를 기준으로 작성되었으며, 법령 변경 시 즉시 업데이트됩니다. 공정시장가액비율, 세액공제, 세율 변동사항은 국세청 고시, 법조항 <strong>종부세법 §7(납세의무자)·§8①(과세표준·공제금액 12억·9억)·§9①제1호(1~2주택 세율)·§9①제2호(3주택 이상 중과세율)·§9(고령자·장기보유 세액공제 80% 한도)</strong>, <strong>농특세법 §5(농어촌특별세 20%)</strong>를 참고하세요.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 실제 종합부동산세 계산은 해당 지역 세무서 또는 세무사와 상담 후 진행하세요. 본 콘텐츠는 2026-11-16을 기준으로 작성되었으며, 법령 변경 시 즉시 업데이트됩니다. 공정시장가액비율, 세액공제, 세율 변동사항은 국세청 고시, 법조항 <strong>종부세법 §7(납세의무자)·§8①(과세표준·공제금액 12억·9억)·§9①제1호(1~2주택 세율)·§9①제2호(3주택 이상 중과세율)·§9③(공제할 재산세액)·§9(고령자·장기보유 세액공제 80% 한도)</strong>, <strong>농특세법 §5(농어촌특별세 20%)</strong>를 참고하세요.
                 </p>
               </section>
 

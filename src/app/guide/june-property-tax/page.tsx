@@ -89,7 +89,7 @@ const FAQ_ITEMS = [
   {
     question: '재산세와 종합부동산세 차이는?',
     answer:
-      '재산세는 지방세 (시·군 부과), 종부세는 국세 (국세청 부과). 재산세는 모든 부동산 보유자, 종부세는 1세대 합산 공시가 9억 초과 (1주택 12억) 또는 다주택자 6억 초과만. 7월/9월 재산세 납부 → 12월 종부세 별도 납부. 종부세 납부분은 재산세에서 차감되지 않음 (이중과세 아님).',
+      '재산세는 지방세 (시·군 부과), 종부세는 국세 (국세청 부과). 재산세는 모든 부동산 보유자, 종부세는 개인별 주택 공시가 합계 9억 초과 (1세대1주택은 12억 초과)만. 7월/9월 재산세 납부 → 12월 종부세 별도 납부. 같은 집에 겹치는 부분의 재산세는 종부세를 계산할 때 빼 줌 (종부세법 §9③).',
   },
 ] as const;
 
@@ -381,7 +381,7 @@ export default function JunePropertyTaxPage() {
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base"><td className="px-3 py-2 font-semibold">부과 주체</td><td className="px-3 py-2">시·군·구청 (지방세)</td><td className="px-3 py-2">국세청 (국세)</td></tr>
-                      <tr className="border border-border-base"><td className="px-3 py-2 font-semibold">대상</td><td className="px-3 py-2">모든 부동산 보유자</td><td className="px-3 py-2">1세대 합산 공시가 9억 초과 (1주택 12억) 또는 다주택 6억 초과</td></tr>
+                      <tr className="border border-border-base"><td className="px-3 py-2 font-semibold">대상</td><td className="px-3 py-2">모든 부동산 보유자</td><td className="px-3 py-2">개인별 주택 공시가 합계 9억 초과 (1세대1주택은 12억 초과)</td></tr>
                       <tr className="border border-border-base"><td className="px-3 py-2 font-semibold">기준일</td><td className="px-3 py-2">6월 1일</td><td className="px-3 py-2">6월 1일 (동일)</td></tr>
                       <tr className="border border-border-base"><td className="px-3 py-2 font-semibold">납부</td><td className="px-3 py-2">7·9월 (주택 분할)</td><td className="px-3 py-2">12월 1일~15일</td></tr>
                       <tr className="border border-border-base"><td className="px-3 py-2 font-semibold">세율</td><td className="px-3 py-2">0.1~0.4% (4단계)</td><td className="px-3 py-2">0.5~7.0% (다주택)</td></tr>
@@ -409,7 +409,7 @@ export default function JunePropertyTaxPage() {
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link></li>
                   <li>→ <Link href="/guide/september-property-tax-second/" className="text-primary-600 underline dark:text-primary-500">9월 재산세 2차 납부 가이드</Link>, 후속 납부 일정</li>
-                  <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">4월 종부세 합산배제 신청</Link>, 12월 종부세 사전 절세</li>
+                  <li>→ <Link href="/guide/april-comprehensive-property-tax-exclusion/" className="text-primary-600 underline dark:text-primary-500">종부세 합산배제 신청 (9월 16~30일)</Link>, 12월 종부세 사전 절세</li>
                   <li>→ <Link href="/guide/comprehensive-real-estate-tax-who-pays-2026/" className="text-primary-600 underline dark:text-primary-500">종부세 누가 내나 2026</Link>, 재산세와 별도로 부과되는 종부세 대상·공제 기준</li>
                   <li>→ <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">부부 공동명의 양도세 절세</Link>, 명의 분산 시 보유세 영향</li>
                   <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link>, 임대주택 보유세 함께 검토</li>

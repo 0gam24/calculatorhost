@@ -17,17 +17,17 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/april-comprehensive-property-tax-exclusion/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-05-03';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
-  title: '4월 종부세 합산배제·과세특례 신청 2026 | 임대주택·일시적 2주택',
+  title: '종부세 합산배제·과세특례 신청 2026 | 9월 일시적 2주택·임대주택',
   description:
-    '임대주택·미분양·일시적 2주택에 적용되는 종합부동산세 합산배제·과세특례 신청 방법을 정리했습니다.',
+    '임대주택·미분양·일시적 2주택에 적용되는 종합부동산세 합산배제·과세특례를 9월 16~30일에 신청하는 방법을 정리했습니다.',
   keywords: [
     '종부세 합산배제',
     '종합부동산세 합산배제',
     '종부세 과세특례',
-    '종부세 4월 신청',
+    '종부세 9월 신청',
     '임대주택 종부세',
     '일시적 2주택 종부세',
     '고령자 종부세 감면',
@@ -48,37 +48,37 @@ const FAQ_ITEMS = [
   {
     question: '종부세 합산배제와 과세특례 차이는?',
     answer:
-      '합산배제: 일정 요건 부동산을 종부세 합산에서 아예 제외 (임대주택·미분양·사원용·기숙사·문화재 등). 과세특례: 합산은 하되 세율·공제 우대 적용 (일시적 2주택, 고령자, 장기보유, 상속 등). 둘 다 4월 1~30일 신청해야 12월 종부세 산정 시 반영.',
+      '합산배제: 일정 요건 부동산을 종부세 합산에서 아예 제외 (임대주택·미분양·사원용·기숙사·문화재 등). 과세특례: 일시적 2주택·상속주택·지방 저가주택을 함께 가져도 1세대1주택자로 보아 12억 공제와 세액공제를 적용 (종부세법 §8④). 둘 다 9월 16~30일에 신청해야 12월 종부세 고지서에 반영 (§8③·⑤).',
   },
   {
     question: '신청하지 않으면 어떻게 되나요?',
     answer:
-      '12월 종부세 산정 시 모든 보유 주택 합산 + 일반 세율 적용 → 세부담 폭증. 예: 합산배제 가능한 임대주택 3채 미신청 → 다주택 중과 세율 (최고 6%) 적용 → 수천만 원 추가 부담. 매년 4월 신청 필수 (변동 사항만 신청해도 됨).',
+      '12월 종부세 산정 시 모든 보유 주택 합산 + 일반 세율 적용 → 세부담 폭증. 예: 합산배제 가능한 임대주택 3채 미신청 → 3주택 이상 누진세율(최고 5.0%, 종합부동산세법 §9) 적용 → 수천만 원 추가 부담. 9월 16~30일 신청 필수 (이미 신청했다면 변동 사항만 신고).',
   },
   {
     question: '합산배제 가능한 임대주택 요건은?',
     answer:
-      '①공시가격 6억 이하 (수도권 외 3억 이하) ②임대 의무기간 5년 (장기 일반민간임대) 또는 10년 (장기일반민간매입임대) ③임대료 인상률 연 5% 이내 ④임대사업자 등록 (지자체 + 세무서). 임대 중 자가 거주 시 합산배제 박탈. 1세대 합산 5년 보유 + 임대 중 매도 시 양도세 중과 면제 추가.',
+      '①공시가격 6억 이하 (수도권 외 3억 이하) ②임대 의무기간 충족 (등록 시기와 유형에 따라 다름) ③임대료 인상률 연 5% 이내 ④임대사업자 등록 (지자체 + 세무서). 임대 중 자가 거주 시 합산배제 박탈. 등록 시기별 세부 요건은 종부세법 시행령 §3에서 정하므로 신청 전 홈택스 안내를 확인.',
   },
   {
     question: '일시적 2주택 종부세 특례는?',
     answer:
-      '신규 주택 취득 후 기존 주택 양도까지 일시 2주택 보유 시 1주택자 우대 적용 가능. 신규 취득일부터 3년 (조정대상지역 2년) 이내 기존 주택 양도 조건. 양도소득세 일시적 2주택 비과세와 별도, 종부세 신청 필요. 4월 신청 + 12월 산정 시 반영.',
+      '신규 주택 취득 후 기존 주택 양도까지 일시 2주택 보유 시 1주택자 우대 적용 가능. 신규 취득일부터 3년 이내 기존 주택 양도 조건. 양도소득세 일시적 2주택 비과세와 별도, 종부세 신청 필요. 9월 16~30일 신청 + 12월 고지서에 반영.',
   },
   {
     question: '고령자·장기보유 공제는?',
     answer:
-      '①고령자 공제: 만 60세 이상 20%, 65세 이상 30%, 70세 이상 40% ②장기보유 공제: 5년 이상 20%, 10년 이상 40%, 15년 이상 50% ③합산 한도 80%. 만 70세 + 15년 보유 = 80% 공제 (최대). 1세대1주택자에게만 적용.',
+      '①고령자 공제: 만 60세 이상 20%, 65세 이상 30%, 70세 이상 40% ②장기보유 공제: 5년 이상 20%, 10년 이상 40%, 15년 이상 50% ③합산 한도 80%. 만 70세 + 15년 보유 = 80% 공제 (최대). 1세대1주택자에게만 적용되며 따로 신청하지 않아도 고지서에 반영 (종부세법 §9⑥·⑧).',
   },
   {
     question: '신청은 어디서 어떻게?',
     answer:
-      '국세청 홈택스(hometax.go.kr) → "신청/제출" → "종합부동산세 합산배제·과세특례 신청". 4월 1~30일. 임대등록증·임대차계약서 등 증빙 PDF 첨부. 변동 사항만 신청해도 되며, 처음 신청 후 다음 해부터 자동 반영. 단, 요건 변동 시 매년 재신청 권장.',
+      '국세청 홈택스(hometax.go.kr) → "신청/제출" → "종합부동산세 합산배제·과세특례 신청". 9월 16~30일. 임대등록증·임대차계약서 등 증빙 PDF 첨부. 변동 사항만 신청해도 되며, 처음 신청 후 다음 해부터 자동 반영. 단, 요건 변동 시 매년 재신청 권장.',
   },
   {
     question: '종부세 자체는 언제 납부?',
     answer:
-      '12월 1~15일. 합산배제·과세특례 신청 결과 반영된 고지서 11월 말 발송. 250만 원 초과 시 분납 가능 (납부기한 다음날부터 6개월 이내). 본 가이드는 4월 신청용, 12월 종부세 별도 가이드 예정.',
+      '12월 1~15일. 합산배제·과세특례 신청 결과 반영된 고지서 11월 말 발송. 250만 원 초과 시 분납 가능 (납부기한 다음날부터 6개월 이내). 납부 방법은 종부세 납부기간 가이드 참고.',
   },
 ] as const;
 
@@ -86,10 +86,10 @@ export default function AprilCptExclusionPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '4월 종부세 합산배제·과세특례 신청' },
+    { name: '종부세 합산배제·과세특례 신청' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '4월 종합부동산세 합산배제·과세특례 신청 가이드 (2026)',
+    headline: '종합부동산세 합산배제·과세특례 신청 가이드 (2026)',
     description: '임대주택·일시적 2주택·고령자·장기보유 종부세 우대 신청.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -97,11 +97,11 @@ export default function AprilCptExclusionPage() {
     authorName: '김준혁',
     authorUrl: 'https://calculatorhost.com/about/',
     image: 'https://calculatorhost.com/og-default.png',
-    keywords: ['종부세 합산배제', '종부세 과세특례', '4월 신청', '임대주택 종부세'],
+    keywords: ['종부세 합산배제', '종부세 과세특례', '9월 신청', '임대주택 종부세'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '4월 종합부동산세 합산배제·과세특례 신청 가이드 2026',
-    description: '2026년 4월 1~30일 종부세 합산배제·과세특례 신청 가이드. 임대주택·미분양·사원용·기숙사·문화재 등 합산배제 + 일시적 2주택·고령자 등 과세특례 + 12월 종부세 절세 핵심.',
+    name: '종합부동산세 합산배제·과세특례 신청 가이드 2026',
+    description: '2026년 9월 16~30일 종부세 합산배제·과세특례 신청 가이드. 임대주택·미분양·사원용·기숙사 등 합산배제와 일시적 2주택·상속주택 등 1세대1주택 특례.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -128,19 +128,19 @@ export default function AprilCptExclusionPage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '4월 종부세 합산배제·과세특례 신청' },
+                    { name: '종부세 합산배제·과세특례 신청' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 9분 읽기 · 2026-05-03</p>
+                <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 9분 읽기 · 2026-11-16 업데이트</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  4월 종부세 합산배제·과세특례 신청 (2026)
+                  종부세 합산배제·과세특례 신청 (2026)
                   <br />
                   <span className="text-2xl text-text-secondary">· 12월 종부세 절세의 시작</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  종합부동산세 신청은 12월에 납부하지만 <strong>합산배제·과세특례 신청은 4월 1~30일</strong>이
-                  골든타임. 임대주택·일시적 2주택·고령자·장기보유 등 우대 적용은 4월 신청해야 12월
-                  종부세 산정에 반영됩니다. 미신청 시 다주택 중과 세율(최고 6%) 폭탄 가능성.
+                  종합부동산세는 12월에 납부하지만 <strong>합산배제·과세특례 신청은 9월 16~30일</strong>입니다
+                  (종부세법 §8③·⑤). 임대주택 합산배제와 일시적 2주택·상속주택 특례는 이 기간에 신청해야 12월
+                  종부세 고지서에 반영됩니다. 이 글은 처음에 신청 기간을 4월로 잘못 적었고 2026-11-16에 바로잡았습니다. 미신청 시 3주택 이상 누진세율(최고 5.0%) 폭탄 가능성.
                 </p>
               </header>
               <GuideCalculatorCta slug="april-comprehensive-property-tax-exclusion" />
@@ -148,11 +148,11 @@ export default function AprilCptExclusionPage() {
               <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
                 <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <ul className="space-y-1.5 text-sm" data-speakable>
-                  <li><strong>신청 기간</strong>: 4월 1~30일 (홈택스)</li>
+                  <li><strong>신청 기간</strong>: 9월 16~30일 (홈택스)</li>
                   <li><strong>합산배제</strong>: 임대주택·미분양·사원용·기숙사·문화재 등</li>
-                  <li><strong>과세특례</strong>: 일시적 2주택·고령자·장기보유·상속</li>
+                  <li><strong>과세특례</strong>: 일시적 2주택·상속주택·지방 저가주택</li>
                   <li><strong>고령자+장기보유</strong>: 합산 최대 80% 공제 (1세대1주택)</li>
-                  <li>주의: <strong>미신청 시</strong>: 다주택 중과 세율 (최고 6%) 적용 → 폭탄</li>
+                  <li>주의: <strong>미신청 시</strong>: 3주택 이상 누진세율 (최고 5.0%) 적용 → 폭탄</li>
                   <li><strong>종부세 납부</strong>: 12월 1~15일 (별도)</li>
                 </ul>
               </section>
@@ -172,17 +172,17 @@ export default function AprilCptExclusionPage() {
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">의미</td>
                         <td className="px-3 py-2">합산에서 제외 (해당 부동산 종부세 X)</td>
-                        <td className="px-3 py-2">합산은 하되 세율·공제 우대</td>
+                        <td className="px-3 py-2">2주택이어도 1세대1주택자로 보아 12억 공제·세액공제</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">대상</td>
                         <td className="px-3 py-2">임대주택·미분양·사원용·기숙사·문화재</td>
-                        <td className="px-3 py-2">일시적 2주택·고령자·장기보유·상속·종중</td>
+                        <td className="px-3 py-2">일시적 2주택·상속주택·지방 저가주택</td>
                       </tr>
                       <tr className="border border-border-base">
                         <td className="px-3 py-2 font-semibold">신청 빈도</td>
                         <td className="px-3 py-2">최초 + 변동 시</td>
-                        <td className="px-3 py-2">매년 (요건 매년 충족 확인)</td>
+                        <td className="px-3 py-2">최초 + 변동 시</td>
                       </tr>
                     </tbody>
                   </table>
@@ -196,16 +196,16 @@ export default function AprilCptExclusionPage() {
                     <h3 className="mb-2 font-semibold text-text-primary">① 임대주택 (가장 많이 신청)</h3>
                     <ul className="text-sm text-text-secondary space-y-1">
                       <li>• 공시가격 6억 이하 (수도권 외 3억 이하)</li>
-                      <li>• 임대 의무기간 5년 (장기 일반민간임대) 또는 10년 (장기일반민간매입임대)</li>
+                      <li>• 임대 의무기간 충족 (등록 시기와 유형에 따라 다름)</li>
                       <li>• 임대료 인상률 연 5% 이내</li>
                       <li>• 임대사업자 등록 (지자체 + 세무서)</li>
                     </ul>
                     <div className="mt-3 pt-3 border-t border-border-base">
                       <strong className="text-xs text-text-primary">임대주택 절세 수치 예시</strong>
                       <p className="mt-1 text-xs text-text-secondary">
-                        공시 5억 임대주택 미신청: 다주택자 중과 세율(최고 6%) 적용 → 연 3,000만 원 종부세.
-                        합산배제 신청 시: 종부세 부과 0원 → 연 3,000만 원 절세.
-                        5년 보유 기준 약 1.5억 원 절감 효과.
+                        공시 5억 임대주택 미신청: 3주택 이상 누진세율(최고 5.0%) 적용 → 연 수천만 원대 종부세(보유 자산 합계에 따라 다름).
+                        합산배제 신청 시: 해당 임대주택 종부세 부과 0원 → 수천만 원대 절세 가능.
+                        위 금액은 보유 공시가 합계 가정에 따른 예시이며 실제 고지액과 다를 수 있습니다.
                       </p>
                     </div>
                   </div>
@@ -229,7 +229,8 @@ export default function AprilCptExclusionPage() {
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 과세특례, 1세대1주택자 우대</h2>
+                <h2 className="text-2xl font-bold">3. 1세대1주택자 세액공제 (신청 없이 적용)</h2>
+                <p className="text-sm text-text-secondary">고령자·장기보유 세액공제는 1세대1주택자라면 따로 신청하지 않아도 고지서에 반영됩니다(종부세법 §9⑥·⑧). 일시적 2주택·상속주택 특례를 신청해 1세대1주택자로 인정받으면 이 공제도 함께 받습니다.</p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="mb-2 font-semibold text-text-primary">① 고령자 공제</h3>
@@ -255,7 +256,7 @@ export default function AprilCptExclusionPage() {
                     <p className="text-sm text-text-secondary">
                       <strong className="text-text-primary">합산 한도 80%</strong>:
                       만 70세 + 15년 보유 = 40% + 50% = 90% → 한도 80% 적용. 1세대1주택자만.
-                      예: 종부세 1,000만 → 800만 공제 → <strong>실제 200만</strong>.
+                      예: 재산세를 뺀 뒤 종부세 1,000만 → 800만 공제 → <strong>실제 200만</strong>.
                     </p>
                   </div>
                 </div>
@@ -270,9 +271,8 @@ export default function AprilCptExclusionPage() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <h3 className="mb-2 font-semibold text-text-primary">조건</h3>
                   <ul className="text-text-secondary space-y-1">
-                    <li>• 신규 취득일부터 3년 (조정대상지역 2년) 이내 기존 주택 양도</li>
-                    <li>• 양도세 일시적 2주택 비과세 요건 충족</li>
-                    <li>• 4월 신청 → 12월 종부세 1주택자 우대 적용</li>
+                    <li>• 신규 취득일부터 3년 이내 기존 주택 양도</li>
+                    <li>• 9월 16~30일 신청 → 12월 종부세 1주택자 우대 적용 (종부세법 §8④2호·⑤)</li>
                   </ul>
                 </div>
               </section>
@@ -294,7 +294,7 @@ export default function AprilCptExclusionPage() {
                   </li>
                   <li className="rounded-lg border border-border-base bg-bg-card p-4">
                     <strong className="text-text-primary block mb-1">Step 4. 접수증 보관 + 결과 확인</strong>
-                    <p className="text-text-secondary">접수번호로 처리 상태 추적. 6~8월 국세청 검토 → 11월 종부세 고지서에 반영.</p>
+                    <p className="text-text-secondary">접수번호로 처리 상태 추적. 11월 말 발송되는 종부세 고지서에 반영.</p>
                   </li>
                 </ol>
               </section>
@@ -306,7 +306,7 @@ export default function AprilCptExclusionPage() {
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>• 임대 의무기간 중 자가 거주·매도 시 합산배제 박탈 + 과거 분 추징.</li>
                   <li>• 임대료 인상률 5% 초과 시 동일, 신중한 임대료 관리.</li>
-                  <li>• 4월 30일 이후 신청 불가, 12월 종부세 일반 세율 적용.</li>
+                  <li>• 9월 30일을 넘기면 고지서에 반영되지 않습니다. 이 경우 12월 1~15일에 직접 신고·납부하는 방법(종부세법 §16③)이 있으니 세무서에 문의하세요.</li>
                   <li>• 본 가이드는 일반론, 다주택자·복잡한 사례는 세무사 상담.</li>
                 </ul>
               </section>
@@ -315,6 +315,8 @@ export default function AprilCptExclusionPage() {
                 <h2 className="mb-3 text-lg font-semibold">관련 도구·가이드</h2>
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
+                  <li>→ <Link href="/guide/comprehensive-real-estate-tax-exclusion-application-2026/" className="text-primary-600 underline dark:text-primary-500">종부세 합산배제 신고 2026</Link>, 임대주택 요건과 변동신고 자세히</li>
+                  <li>→ <Link href="/guide/comprehensive-real-estate-tax-payment-2026/" className="text-primary-600 underline dark:text-primary-500">종부세 납부기간 2026</Link>, 12월 1~15일 납부·분납</li>
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link></li>
                   <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 가이드</Link></li>
                   <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세</Link>, 합산배제와 별개의 양도 시 비과세</li>
@@ -326,11 +328,11 @@ export default function AprilCptExclusionPage() {
                 </ul>
               </section>
 
-              <ShareButtons title="4월 종부세 합산배제·과세특례 신청 가이드 2026" url={URL} />
+              <ShareButtons title="종부세 합산배제·과세특례 신청 가이드 2026" url={URL} />
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 종합부동산세법 §8 (합산배제) · §9 (과세특례) · §15·§16 ·
+                  <strong>법적 근거</strong>: 종합부동산세법 §8②·③ (합산배제) · §8④·⑤ (1세대1주택 특례 신청) · §9⑥·⑧ (세액공제) · §16 ·
                   민간임대주택법. 참고:{' '}
                   <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종부세 합산배제 신청</a>,{' '}
                   <a href="https://www.molit.go.kr/USR/PRESSROOM/m_71/dtl.jsp?lcmspage=1&id=95003333" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 민간임대주택 정책 안내</a>.

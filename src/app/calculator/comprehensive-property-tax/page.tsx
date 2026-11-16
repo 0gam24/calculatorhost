@@ -698,8 +698,9 @@ export default function ComprehensivePropertyTaxPage() {
                 <h2 className="mb-3 text-2xl font-semibold">주의사항</h2>
                 <ul className="list-disc space-y-2 pl-5 text-sm text-text-secondary">
                   <li>
-                    <strong>세대 합산</strong>: 종부세는 1세대 단위로 합산되므로, 배우자명의 주택도
-                    모두 포함되어야 합니다. 부부의 명의를 분리해도 1세대로 봅니다.
+                    <strong>개인별 합산</strong>: 종부세는 납세의무자별로 본인 명의 주택의 공시가격을 합산합니다(종부세법
+                    §8①). 배우자 명의 주택은 배우자가 따로 계산합니다. 다만 1세대1주택(12억 공제)
+                    여부는 세대 전체의 주택 수로 판단합니다.
                   </li>
                   <li>
                     <strong>과세 기준일</strong>: 보유 여부는 6월 1일을 기준으로 판단됩니다. 6월 1일
