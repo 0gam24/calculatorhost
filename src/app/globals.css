@@ -422,7 +422,18 @@ main li {
   }
 
   /* H2: 장식 제거, 크기·상단 여백으로 섹션이 또렷이 끊어져 보이게 */
+  /* 채워지지 않은 자동 광고 자리는 빈칸으로 남기지 않는다.
+     근거: Google AdSense 도움말 "광고가 게재되지 않은 광고 단위 숨기기" (data-ad-status="unfilled").
+     채워진 광고는 건드리지 않는다. */
+  ins.adsbygoogle[data-ad-status='unfilled'] {
+    display: none !important;
+  }
+  .google-auto-placed:has(> ins.adsbygoogle[data-ad-status='unfilled']) {
+    display: none !important;
+  }
+
   .guide-scope main article.max-w-3xl h2 {
+    scroll-margin-top: 6rem; /* 목차 링크로 이동할 때 상단 헤더에 가리지 않게 */
     font-size: 1.625rem;
     line-height: 1.35;
     font-weight: 800;

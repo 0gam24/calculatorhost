@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import { GuideToc } from '@/components/guide/GuideToc';
 
 /**
  * Guide Route Scoped Layout
@@ -10,5 +11,10 @@ import type { ReactNode } from 'react';
  * 이 래퍼는 시각적 효과 없음 (순수 div 블록). 스타일은 CSS에서만 관리.
  */
 export default function GuideLayout({ children }: { children: ReactNode }) {
-  return <div className="guide-scope">{children}</div>;
+  return (
+    <div className="guide-scope">
+      {children}
+      <GuideToc />
+    </div>
+  );
 }
