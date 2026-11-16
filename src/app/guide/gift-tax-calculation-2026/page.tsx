@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/gift-tax-calculation-2026/';
 const DATE_PUBLISHED = '2026-06-22';
-const DATE_MODIFIED = '2026-06-22';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '증여세 계산법 2026 | 과세표준·공제·납부세액 단계별 가이드',
@@ -47,7 +47,7 @@ const FAQ_ITEMS = [
   {
     question: '증여세는 언제 내나요?',
     answer:
-      '증여세는 증여받은 날부터 3개월 이내에 신고하고 납부해야 합니다. 다만 신고세액공제를 받으려면 기한 내 신고가 필수입니다. 늦은 신고는 가산세 부과 대상이 됩니다.',
+      '증여세는 증여받은 날이 속하는 달의 말일부터 3개월 이내에 신고하고 납부해야 합니다(상증세법 §68). 기한 내 자진신고 시에만 산출세액의 3% 신고세액공제가 적용되며, 늦은 신고는 무신고·납부지연 가산세 부과 대상이 됩니다.',
   },
   {
     question: '배우자에게 증여하면 증여세를 안 내도 되나요?',
@@ -57,12 +57,12 @@ const FAQ_ITEMS = [
   {
     question: '10년 전 증여도 포함되나요?',
     answer:
-      '네. 현재 증여 시점으로부터 10년 이내에 같은 증여자로부터 받은 증여는 모두 합산됩니다. 예를 들어 5년 전에 2억원을 받았고, 이번에 3억원을 받으면 과세표준은 5억원으로 계산됩니다.',
+      '네. 현재 증여 시점으로부터 10년 이내에 같은 증여자(직계존속은 그 배우자 포함)에게서 받은 증여는 모두 합산됩니다. 예를 들어 5년 전에 부모에게서 2억원, 이번에 3억원을 받으면 합산 증여재산가액이 5억이고, 성년 직계비속 공제 5,000만원을 빼면 과세표준이 4억 5,000만원이 됩니다. 과거 증여에 이미 낸 세금은 §58에 따라 기납부세액으로 공제합니다.',
   },
   {
     question: '미성년 자녀에게 증여하면 공제가 더 크나요?',
     answer:
-      '네. 성년 자녀는 5천만원 공제인 반면, 미성년 자녀는 2천만원만 공제됩니다. 다만 미성년자공제(상속세에서 연 1천만원)는 증여세에는 적용되지 않습니다. 증여재산공제는 별개입니다.',
+      '네. 민법 §4 기준 성년(19세 이상) 자녀는 5천만원 공제, 미성년 자녀는 2천만원 공제가 적용됩니다. 상속세의 미성년자공제는 증여세와 별개 제도입니다.',
   },
   {
     question: '증여세 계산기로 얼마나 절약할 수 있나요?',
@@ -132,7 +132,7 @@ export default function GiftTaxCalculation2026Page() {
                     { name: '증여세 계산법 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">증여자·수증자 · 11분 읽기 · 2026-06-22</p>
+                <p className="mb-2 text-caption text-text-tertiary">증여자·수증자 · 11분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   증여세 계산법 2026
                   <br />
@@ -229,28 +229,28 @@ export default function GiftTaxCalculation2026Page() {
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">배우자에게 증여: 6억원 공제</h3>
                     <p className="text-sm text-text-secondary">
-                      부부 간의 증여는 증여재산공제로 6억원이 인정됩니다. 배우자에게 6억원 이하를 증여하면 증여세가 0원입니다. 이는 혼인관계가 지속되는 한 계속 적용됩니다.
+                      부부 간의 증여는 증여재산공제로 10년 합산 6억원이 인정됩니다. 배우자에게 10년 합산 6억원 이하를 증여하면 증여세가 0원이며, 10년이 지나면 공제 한도가 다시 생깁니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">성년 자녀에게 증여: 5,000만원 공제</h3>
                     <p className="text-sm text-text-secondary">
-                      자녀가 20세 이상일 때 받은 증여는 자녀 1명당 5,000만원 공제됩니다. 자녀가 여럿이면 각각 5,000만원씩 공제되므로, 자녀 2명이면 1억원입니다.
+                      자녀가 민법상 19세 이상일 때 받은 증여는 수증자 1인당 5,000만원 공제됩니다. 서로 다른 자녀 2명이 각각 증여받으면 수증자별로 따로 계산하므로 각 5,000만원씩 공제됩니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">미성년 자녀에게 증여: 2,000만원 공제</h3>
                     <p className="text-sm text-text-secondary">
-                      자녀가 20세 미만일 때 받은 증여는 자녀 1명당 2,000만원 공제입니다. 성년이 되면 이후 증여부터는 5,000만원이 됩니다.
+                      자녀가 민법상 19세 미만일 때 받은 증여는 수증자 1인당 2,000만원 공제입니다. 19세 이후 증여부터는 5,000만원 공제가 됩니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">부모로부터 증여: 5,000만원 공제</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">부모로부터 증여: 직계존속 그룹 합쳐 5,000만원 공제</h3>
                     <p className="text-sm text-text-secondary">
-                      자녀가 부모로부터 받는 증여는 직계존속 관계로 분류되어 1명당 5,000만원 공제됩니다. 부모 양쪽에서 받으면 각각 5,000만원씩 적용됩니다.
+                      자녀가 부모·조부모 등 직계존속에게서 받는 증여는 성년 5,000만원, 미성년 2,000만원이 공제됩니다. 다만 상증세법 §47② 규정에 따라 아버지·어머니(및 조부모)는 하나의 직계존속 그룹으로 보아 10년 합산 공제 한도가 합쳐서 5,000만원입니다. 양쪽 부모에게 각각 5,000만원씩 받아 1억원을 공제받는 구조는 성립하지 않습니다.
                     </p>
                   </div>
 
@@ -363,7 +363,7 @@ export default function GiftTaxCalculation2026Page() {
                   산출세액에서 신고세액공제를 적용하면 <strong>최종 납부세액</strong>이 됩니다.
                 </p>
                 <p>
-                  상증세법 §69에 따라 기한 내 자진신고 시 신고세액공제가 적용됩니다. 공제율은 산출세액의 3%입니다. 기한 내 신고란 증여일부터 3개월 이내를 뜻합니다.
+                  상증세법 §69에 따라 기한 내 자진신고 시 신고세액공제가 적용됩니다. 공제율은 산출세액의 3%입니다. 기한 내 신고란 증여일이 속한 달의 말일부터 3개월 이내를 뜻합니다(§68).
                 </p>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -396,10 +396,10 @@ export default function GiftTaxCalculation2026Page() {
                     <strong>1. 공제 한도 활용:</strong> 배우자 6억, 자녀 5,000만(또는 미성년 2,000만) 공제를 각각 최대한 활용합니다. 배우자가 있으면 배우자 6억 공제가 매우 강력합니다.
                   </li>
                   <li>
-                    <strong>2. 10년 분산 전략:</strong> 한 번에 많이 증여하는 것보다 10년에 걸쳐 나누어 증여하면 각각 공제를 받을 수 있습니다. 예: 1년에 자녀에게 5,000만씩 10년 증여 = 공제 5억원 (세금 0원).
+                    <strong>2. 10년 간격 전략:</strong> 증여재산공제 한도는 10년 단위로 다시 생깁니다. 성년 자녀에게 지금 5,000만원 증여 후 10년 뒤 다시 5,000만원 증여하면 매번 공제가 새로 적용됩니다. 다만 10년 안에 반복 증여하면 합산 과세되므로 간격 유지가 핵심입니다.
                   </li>
                   <li>
-                    <strong>3. 관계별 최적화:</strong> 부부가 함께 증여하면 배우자 6억(전담)·자녀에게는 각각의 공제가 적용되므로 훨씬 유리합니다.
+                    <strong>3. 관계별 최적화:</strong> 배우자 공제 6억원과 직계비속 공제 5,000만원은 수증자 관계가 다른 별개 공제라 나눠서 적용할 수 있습니다. 다만 같은 자녀가 아버지·어머니에게서 받는 금액은 직계존속 그룹으로 묶여 합쳐 5,000만원이 한도이지, 부모가 각각 5,000만원씩 주어 1억이 되는 것은 아닙니다.
                   </li>
                   <li>
                     <strong>4. 기한 내 자진신고:</strong> 신고세액공제 3%를 받기 위해 반드시 기한 내(3개월)에 신고하세요. 늦은 신고는 공제 손실 + 가산세 부과입니다.
@@ -466,7 +466,7 @@ export default function GiftTaxCalculation2026Page() {
                   <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§68(신고기한)·§69(신고세액공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-22 작성.
+                  <strong>업데이트:</strong> 2026-06-22 작성, 2026-11-16 직계존속 공제 그룹 합산 기준·성년 19세 기준·신고기한 표현 정정.
                 </p>
               </section>
 

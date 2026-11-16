@@ -19,12 +19,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/family-loan-agreement-gift-tax-avoidance/';
 const DATE_PUBLISHED = '2026-05-14';
-const DATE_MODIFIED = '2026-05-14';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
   description:
-    '가족 간 무이자 대여도 적정이자율 4.6%와의 차액이 연 1,000만 원 이하면 비과세입니다. 차용증 작성법과 함정 5가지를 정리합니다.',
+    '가족 간 무이자 대여도 적정이자율 4.6%와의 차액이 연 1,000만 원 미만이면 비과세입니다. 차용증 작성법과 함정 5가지를 정리합니다.',
   keywords: [
     '부모 자녀 금전대여',
     '차용증 증여세',
@@ -54,12 +54,12 @@ const FAQ_ITEMS = [
   {
     question: '부모로부터 받은 무이자 대출이 전부 증여세 안 하나요?',
     answer:
-      '아니요. 상증법 §41의4에 따라 적정이자율(연 4.6%)과 실제 이자율의 차액에만 증여세가 과세됩니다. 차액이 연 1,000만 원 이하면 비과세입니다(시행령 §31의5). 예: 5억 무이자 대여 시 연 차액 = 5억 × 4.6% = 2,300만 원. 1,000만 원 초과 부분 1,300만 원만 증여세 대상입니다.',
+      '아니요. 상증법 §41의4에 따라 적정이자율(연 4.6%)과 실제 이자율의 차액이 증여재산가액이 됩니다. 그 금액이 연 1,000만 원 미만이면 증여재산에 산입하지 않지만, 1,000만 원 이상이면 그 금액 전액이 증여재산가액입니다(시행령 §31의4). 예: 5억 무이자 대여 시 연 차액 = 5억 × 4.6% = 2,300만 원으로 1,000만 원 이상이므로 2,300만 원 전액이 증여재산가액입니다.',
   },
   {
     question: '몇 억까지 무이자로 빌릴 수 있나요?',
     answer:
-      '차액이 1,000만 원이 되는 금액까지는 비과세입니다. 1,000만 ÷ 4.6% ≈ 2억 1,700만 원입니다. 예: 2억 1,700만 원을 무이자로 대여받으면 연 차액 약 1,000만 원 = 면제 한도선입니다. 2억 1,700만 원을 초과하면 초과분에 대한 차액 × 세율로 증여세가 발생합니다.',
+      '연 차액이 1,000만 원 미만인 구간까지가 비과세입니다. 2억 1,700만 원 × 4.6% ≈ 998만 원으로 1,000만 원 바로 아래라 전액 비과세이지만, 2억 1,800만 원 × 4.6% ≈ 1,003만 원은 1,000만 원 이상이라 그 전액이 증여재산가액이 됩니다. 1,000만 원을 공제하고 남는 차액만 과세되는 구조가 아니라, 임계값을 넘으면 전액이 산입되는 "all or nothing" 방식입니다.',
   },
   {
     question: '차용증 없이 통장 이체만으로 증여세를 피할 수 있나요?',
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: '차용증에 이자를 "무이자"로 명시해도 괜찮나요?',
     answer:
-      '괜찮습니다. 차용증에 "이자 없음" 또는 "무이자"를 명확히 기재하면 정당한 금전대여 거래입니다(상증법 §41의4). 다만 이자 차액이 1,000만 원을 초과하면 그 초과분이 증여세 대상이 됩니다. 무이자 대출 자체가 불법이 아니라, 단지 적정이자율과의 차액이 기준을 넘으면 세금을 내는 것입니다.',
+      '괜찮습니다. 차용증에 "이자 없음" 또는 "무이자"를 명확히 기재하면 정당한 금전대여 거래입니다(상증법 §41의4). 다만 적정이자율 4.6%와의 연 차액이 1,000만 원 이상이면 그 차액 전액이 증여재산가액이 됩니다. 무이자 대출 자체가 불법이 아니라, 단지 적정이자율과의 차액이 임계값 이상이면 그 전액으로 세금을 내는 것입니다.',
   },
   {
     question: '부모님이 자녀에게 돈을 빌려줬는데 나중에 상환하지 않으면 어떻게 되나요?',
@@ -84,7 +84,7 @@ const FAQ_ITEMS = [
   {
     question: '적정이자율 4.6%는 어디서 나온 기준인가요?',
     answer:
-      '상증법 시행령 §31의5에 따라 매년 1월 1일 기준 금융통화위원회가 정하는 기준금리를 고려하여 기획재정부가 고시합니다. 2026년 적정이자율은 연 4.6%입니다. 이 기준은 특수관계인(부모·자녀·배우자 등) 간의 금전 무상·저리 대여 여부를 판단하는 데 사용됩니다. 공식 기준금리이므로 이를 기준으로 이자를 계산하면 세무상 신뢰성이 높습니다.',
+      '상증법 시행령 §31의4①에 따라 당좌대출이자율을 고려해 시행규칙으로 정하는 이자율이며, 현재 연 4.6%입니다. 이 기준은 가족 등 타인에게서 돈을 무상이나 낮은 이자로 빌렸는지 판단하는 데 사용됩니다. 4.6% 이상으로 이자를 주고받으면 이자 차액으로 인한 증여 문제는 생기지 않습니다.',
   },
 ];
 
@@ -145,8 +145,9 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   부모가 자녀에게 집을 사는 자금이나 창업 자금을 빌려줄 때 어떻게 하면 증여세 없이 대출로 인정받을 수
                   있을까요? 핵심은 <strong>차용증</strong>과 <strong>적정이자율 기준 4.6%</strong>입니다. 무이자로
-                  빌려도 그 차액이 <strong>연 1,000만 원 이하</strong>면 비과세입니다(상증법 §41의4, 시행령 §31의5).
-                  차용증 작성법부터 함정 5가지, 신고 절차까지 정확히 정리합니다.
+                  빌려도 그 연간 이자 차액이 <strong>1,000만 원 미만</strong>이면 비과세이지만, 1,000만 원 이상이면
+                  그 차액 전액이 증여재산가액이 됩니다(상증법 §41의4, 시행령 §31의4). 차용증 작성법부터 함정 5가지,
+                  신고 절차까지 정확히 정리합니다.
                 </p>
               </header>
               <GuideCalculatorCta slug="family-loan-agreement-gift-tax-avoidance" />
@@ -165,15 +166,15 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 text-text-secondary">적정이자율</td>
-                        <td className="px-3 py-2 text-text-primary">연 4.6% (상증법 시행령 §31의5)</td>
+                        <td className="px-3 py-2 text-text-primary">연 4.6% (상증법 시행령 §31의4)</td>
                       </tr>
                       <tr className="border-b border-border-base">
-                        <td className="px-3 py-2 text-text-secondary">면제 한도</td>
-                        <td className="px-3 py-2 text-text-primary">연 차액 1,000만 원 이하 비과세</td>
+                        <td className="px-3 py-2 text-text-secondary">비과세 임계값</td>
+                        <td className="px-3 py-2 text-text-primary">연 차액 1,000만 원 미만이면 전액 비과세, 이상이면 전액 과세</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 text-text-secondary">무이자 한도액</td>
-                        <td className="px-3 py-2 text-text-primary">약 2억 1,700만 원</td>
+                        <td className="px-3 py-2 text-text-primary">약 2억 1,700만 원(2.17억 × 4.6% ≈ 998만)</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 text-text-secondary">필수 증거</td>
@@ -190,7 +191,7 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                   <p className="font-semibold text-text-primary">TL;DR</p>
                   <ul className="mt-2 list-inside list-disc space-y-1 text-text-secondary">
                     <li>차용증만 있으면 증여세 피할 수 있다? 아니요. 실제 상환 기록도 필요합니다.</li>
-                    <li>5억 무이자 대여 시 차액 2,300만 → 1,000만 초과한 1,300만만 증여세 대상입니다.</li>
+                    <li>5억 무이자 대여 시 연 차액은 2,300만 원, 1,000만 원 이상이라 그 전액이 증여재산가액입니다.</li>
                     <li>차용증 없으면 국세청이 "증여"로 재분류할 수 있습니다(국세기본법 §14).</li>
                   </ul>
                 </div>
@@ -202,7 +203,8 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                 <p className="mb-3 text-text-secondary" data-speakable>
                   부모와 자녀, 배우자처럼 가족 관계인 "특수관계인"(상증법 §50) 간에 금전을 무이자 또는 저리로
                   대여하는 경우, 법정 적정이자율과 실제 이자율의 차액은 <strong>이익의 증여</strong>로 간주됩니다(상증법
-                  §41의4). 다만 그 차액이 <strong>연 1,000만 원 이하</strong>면 비과세입니다(시행령 §31의5). 이는
+                  §41의4). 다만 그 차액이 <strong>연 1,000만 원 미만</strong>이면 증여재산가액에 산입하지
+                  않습니다(시행령 §31의4). 1,000만 원 이상이면 그 차액 전액이 증여재산가액으로 들어갑니다. 이는
                   가족 간의 합리적인 금전 거래를 보호하면서도 과도한 절세를 막기 위한 규정입니다.
                 </p>
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
@@ -223,7 +225,7 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
               <section aria-label="적정이자율 기준" className="card border-l-4 border-l-secondary-500">
                 <h2 className="mb-4 text-2xl font-semibold">적정이자율 4.6% 차액 계산</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  상증법 시행령 §31의5에 따르면 매년 금융통화위원회가 정하는 기준금리를 고려하여 기획재정부가 고시하는
+                  상증법 시행령 §31의4①에 따라 당좌대출이자율을 고려해 시행규칙으로 정하는
                   "적정이자율"을 기준으로 합니다. <strong>2026년 적정이자율은 연 4.6%</strong>입니다. 만약 부모가
                   자녀에게 무이자 또는 이보다 낮은 이자로 돈을 빌려주면 차액이 계산되어 증여세 대상이 될 수 있습니다.
                 </p>
@@ -234,7 +236,9 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                     <p className="mb-2">
                       <strong>이자 차액 = 차용액 × (적정이자율 4.6% − 실제 이자율)</strong>
                     </p>
-                    <p className="text-xs italic text-text-tertiary">차액이 연 1,000만 원 이하면 비과세</p>
+                    <p className="text-xs italic text-text-tertiary">
+                      차액이 연 1,000만 원 미만이면 비과세, 1,000만 원 이상이면 그 차액 전액이 증여재산가액
+                    </p>
                   </div>
                 </div>
 
@@ -245,9 +249,13 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                       <p className="mb-1">차용액: 5억 원</p>
                       <p className="mb-1">실제 이자율: 0%</p>
                       <p className="mb-1">차액 = 5억 × 4.6% = 2,300만 원</p>
-                      <p className="mb-1 font-semibold text-text-primary">증여세 대상: 2,300만 − 1,000만 = 1,300만 원</p>
+                      <p className="mb-1 font-semibold text-text-primary">
+                        2,300만 원이 1,000만 원 이상이므로 그 전액이 증여재산가액
+                      </p>
                       <p className="mt-2 text-xs italic text-text-tertiary">
-                        1,300만 원을 기준으로 증여세 계산 (직계비속 공제 5천만 원 적용 후)
+                        성년 자녀가 10년간 부모로부터 받은 증여가 처음이라면 증여재산공제 5,000만 원 안에
+                        들어가 세금은 0원이지만, 매년 2,300만 원씩 반복되면 3년 차에 누적 6,900만 원이 되어
+                        공제 초과분 1,900만 원이 증여세 과세표준이 됩니다(§53 10년 합산).
                       </p>
                     </div>
                   </div>
@@ -256,10 +264,13 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                     <p className="mb-3 font-semibold text-text-primary">사례 2: 2억 1,700만 원 무이자 대여</p>
                     <div className="text-sm text-text-secondary">
                       <p className="mb-1">차용액: 2억 1,700만 원</p>
-                      <p className="mb-1">차액 = 2억 1,700만 × 4.6% ≈ 1,000만 원</p>
-                      <p className="mb-1 font-semibold text-text-primary">증여세: 0원 (면제 한도)</p>
+                      <p className="mb-1">차액 = 2억 1,700만 × 4.6% ≈ 998만 원</p>
+                      <p className="mb-1 font-semibold text-text-primary">
+                        증여재산가액: 0원 (연 998만 원은 1,000만 원 미만, 비과세)
+                      </p>
                       <p className="mt-2 text-xs italic text-text-tertiary">
-                        이것이 무이자로 비과세받을 수 있는 최대 금액입니다.
+                        이것이 무이자로 비과세받을 수 있는 대략적인 상한선입니다. 2억 1,800만 원이 되면
+                        연 차액 약 1,003만 원으로 임계값을 넘어 그 전액이 증여재산가액이 됩니다.
                       </p>
                     </div>
                   </div>
@@ -270,7 +281,9 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                       <p className="mb-1">차용액: 3억 원</p>
                       <p className="mb-1">적정이자율: 4.6%, 실제 이자율: 2%</p>
                       <p className="mb-1">차액 = 3억 × (4.6% − 2%) = 780만 원</p>
-                      <p className="mb-1 font-semibold text-text-primary">증여세: 0원 (1,000만 원 이하 면제)</p>
+                      <p className="mb-1 font-semibold text-text-primary">
+                        증여재산가액: 0원 (연 780만 원은 1,000만 원 미만, 비과세)
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -278,11 +291,13 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
 
               {/* 3. 1,000만 원 면제 한도 */}
               <section aria-label="면제 한도" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">연 1,000만 원 면제 한도 정확히 이해하기</h2>
+                <h2 className="mb-4 text-2xl font-semibold">연 1,000만 원 임계값 정확히 이해하기</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
-                  상증법 시행령 §31의5에서 규정한 "기준금액 1,000만 원"은 매우 중요합니다. 이 1,000만 원을 초과하는
-                  이자 차액만 증여세 계산 대상이 되므로, 실제로는 <strong>약 2억 1,700만 원까지는 무이자로 빌려도
-                  비과세</strong>입니다. 다만 이 한도는 <strong>"연 차액"</strong> 기준이므로 매년 새로 계산됩니다.
+                  상증법 시행령 §31의4의 "기준금액 1,000만 원"은 공제가 아니라 임계값입니다. 연 이자 차액이
+                  1,000만 원 <strong>미만</strong>이면 증여재산가액에 산입하지 않지만, 1,000만 원
+                  <strong> 이상</strong>이면 그 차액 전액이 증여재산가액으로 들어갑니다. 실제로는
+                  <strong> 약 2억 1,700만 원까지는 무이자로 빌려도 비과세</strong>이지만, 이 한도는
+                  <strong> "연 차액"</strong> 기준이므로 매년 새로 계산됩니다.
                 </p>
 
                 <div className="mb-4 rounded-lg bg-highlight-500/10 p-4 text-sm text-text-secondary">
@@ -290,25 +305,30 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                     <strong className="text-text-primary">중요: "1,000만 원"의 의미</strong>
                   </p>
                   <ul className="list-inside list-disc space-y-1">
-                    <li>한 번에 1,000만 원 이하를 차입하는 것이 아닙니다.</li>
-                    <li>"차용액 × (적정이자율 − 실제 이자율)"의 <strong>연 차액</strong>이 1,000만 원 이하라는 의미입니다.</li>
-                    <li>따라서 매해 새로운 차용을 추가로 할 수 있지만, 전체 누적 차액이 1,000만 원을 넘지 않아야 합니다.</li>
+                    <li>1,000만 원을 빼고 그 초과분만 과세하는 공제식이 아닙니다.</li>
+                    <li>"차용액 × (적정이자율 − 실제 이자율)"의 <strong>연 차액</strong>이 1,000만 원 미만이면 전액 비과세, 1,000만 원 이상이면 그 전액이 증여재산가액이 됩니다.</li>
+                    <li>해마다 차액을 다시 계산하므로, 매년 1,000만 원 미만을 유지해야 비과세가 반복 적용됩니다.</li>
                   </ul>
                 </div>
 
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
-                  <p className="mb-3 font-semibold text-text-primary">실제 사례: 여러 번에 나누어 차용하는 경우</p>
+                  <p className="mb-3 font-semibold text-text-primary">실제 사례: 여러 해에 걸쳐 추가로 빌리는 경우</p>
                   <div>
                     <p className="mb-2">
                       <strong>Year 1</strong>
                     </p>
-                    <p className="mb-2 ml-3">1억 5,000만 원 무이자 대여 → 차액 690만 원</p>
+                    <p className="mb-2 ml-3">1억 5,000만 원 무이자 대여, 연 차액 690만 원 → 1,000만 원 미만이라 Year 1 증여재산가액 0원</p>
                     <p className="mb-3">
                       <strong>Year 2</strong>
                     </p>
-                    <p className="mb-2 ml-3">7,000만 원 무이자 추가 대여 → 차액 322만 원</p>
+                    <p className="mb-2 ml-3">
+                      7,000만 원을 추가로 빌려 대여 원금이 2억 2,000만 원이 되면 Year 2의 연 이자 차액은
+                      2억 2,000만 × 4.6% = 1,012만 원
+                    </p>
                     <p>
-                      <strong>Year 2 누적 차액</strong>: 690만 + 322만 = 1,012만 원 → 12만 원만 증여세 대상
+                      <strong>Year 2 결과</strong>: 1,012만 원이 1,000만 원 이상이라 그 전액 1,012만 원이
+                      증여재산가액(10년 합산 공제 안에 들어가면 세금은 0원이지만, 공제를 소진한 뒤에는
+                      전액이 과세표준에 포함).
                     </p>
                   </div>
                 </div>
@@ -463,9 +483,9 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                       함정 3: 여러 자녀에게 각각 차용해주면 합산되나?
                     </p>
                     <p className="text-sm text-text-secondary">
-                      네, 합산됩니다. 부모가 자녀 A에게 1억 무이자 대여(차액 460만), 자녀 B에게 1억 무이자 대여(차액 460만)를
-                      동일 연도에 했다면 전체 차액 920만 원으로 계산됩니다. 만약 자녀 3명이라면 차액 1,380만 원 → 380만 원이
-                      증여세 대상입니다. 해결: 연도를 나누어 대여하거나 저리로 설정하여 차액을 줄이는 방법이 있습니다.
+                      아닙니다. 법은 "그 금전을 대출받은 자"의 증여재산가액으로 정하므로(상증법 §41의4①) 빌린 사람별로 따집니다. 부모가 자녀 A에게 1억,
+                      자녀 B에게 1억을 무이자로 빌려주면 각자 연 이자 차액이 460만 원이라 둘 다 기준금액 1,000만 원 미만입니다.
+                      다만 한 자녀가 여러 번 나누어 빌리면 그 자녀의 금액은 합쳐서 보므로, 나눠 빌려도 기준을 피할 수 없습니다.
                     </p>
                   </div>
 
@@ -483,12 +503,15 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
 
                   <div className="rounded-lg border-l-4 border-l-danger-500 bg-bg-card p-4">
                     <p className="mb-2 font-semibold text-text-primary">
-                      함정 5: 1,000만 원 면제를 착각한 다중 차용
+                      함정 5: 1,000만 원 임계값을 공제로 착각한 다중 차용
                     </p>
                     <p className="text-sm text-text-secondary">
-                      "연 1,000만 원 이하면 비과세니까 매년 1억씩 무이자로 차용해도 괜찮겠네?"라고 생각하면 안 됩니다. 매년 새로운
-                      차용은 누적되며, 각 연도 차액이 1,000만 원을 넘으면 그해에 증여세가 과세됩니다. 또한 동일 연도 여러 차용
-                      시 차액이 합산됩니다. 해결: 장기간의 대여 계획을 세울 때는 세무사 상담을 받는 것이 좋습니다.
+                      "연 1,000만 원 미만이면 비과세니까 매년 1억씩 무이자로 차용해도 괜찮겠네?"는 맞지만,
+                      차용 원금이 누적되면 전체 원금 기준으로 연 이자 차액을 다시 계산해야 합니다. 같은 자녀에게
+                      누적 원금이 2억 1,800만 원을 넘어서면 연 차액이 1,000만 원 이상이 되어 그 해 차액 전액이
+                      증여재산가액으로 들어갑니다. 1,000만 원을 빼고 초과분만 과세되는 공제식이 아닙니다.
+                      해결: 누적 원금이 임계값을 넘어서면 일부 저리 이자를 설정해 차액을 1,000만 원 미만으로
+                      낮추거나, 장기 계획은 세무사 상담을 받는 것이 좋습니다.
                     </p>
                   </div>
                 </div>
@@ -498,39 +521,44 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
               <section aria-label="신고 방법" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">증여세 신고 절차</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  만약 이자 차액이 1,000만 원을 초과한다면 증여세를 신고해야 합니다. 신고하지 않으면 무신고 가산세(10~40%)가
-                  부과됩니다(국세기본법 §47의2).
+                  연 이자 차액이 1,000만 원 이상이면 그 전액이 증여재산가액이므로 증여세 신고 대상입니다.
+                  신고하지 않으면 무신고 가산세(일반 20%, 부정 40%)가 부과됩니다(국세기본법 §47의2).
                 </p>
 
                 <div className="space-y-3">
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="mb-2 font-semibold text-text-primary">1단계: 과세표준 산출</p>
                     <p className="text-sm text-text-secondary">
-                      증여재산가액(차액) − 공제액(직계비속 5천만 원) = 과세표준
+                      증여재산가액(연 이자 차액 전액) − 증여재산공제(직계비속 성년 5,000만 원, 10년 합산) = 과세표준
                     </p>
-                    <p className="mt-2 text-xs italic text-text-tertiary">예: 1,300만 차액 − 0 = 1,300만 (공제 초과)</p>
+                    <p className="mt-2 text-xs italic text-text-tertiary">
+                      예: 5억 무이자 대여의 연 차액 2,300만 원이 그 해 첫 증여라면 5,000만 공제 안에 들어가 과세표준 0원.
+                      이미 다른 증여로 5,000만 공제를 전부 소진했다면 2,300만 원이 그대로 과세표준이 됩니다.
+                    </p>
                   </div>
 
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="mb-2 font-semibold text-text-primary">2단계: 세율 적용</p>
                     <p className="text-sm text-text-secondary">
-                      1,300만 원 과세표준에 증여세율(10%~50%)을 적용합니다.
+                      과세표준에 증여세율(1억 이하 10%, 5억 이하 20% 등)과 누진공제를 적용합니다(상증법 §26).
                     </p>
-                    <p className="mt-2 text-xs italic text-text-tertiary">예: 1,300만 × 10% = 130만 원 증여세</p>
+                    <p className="mt-2 text-xs italic text-text-tertiary">예: 과세표준 2,300만 × 10% = 230만 원 산출세액</p>
                   </div>
 
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="mb-2 font-semibold text-text-primary">3단계: 신고</p>
                     <p className="text-sm text-text-secondary">
-                      수증자(자녀)가 증여받은 날로부터 <strong>3개월 이내</strong>에 "증여세 신고서"를 관할 세무서에 제출합니다.
-                      (자기 지역의 시군구세무소 또는 국세청 홈택스)
+                      수증자(자녀)가 증여받은 날이 속하는 달의 말일부터 <strong>3개월 이내</strong>에 "증여세 신고서"를
+                      관할 세무서나 국세청 홈택스에 제출합니다(상증법 §68).
                     </p>
                   </div>
 
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="mb-2 font-semibold text-text-primary">4단계: 납부</p>
                     <p className="text-sm text-text-secondary">
-                      계산된 증여세를 납부기한(신고 후 30일 이내, 또는 신고서 기한 후 30일)까지 납부합니다.
+                      산출세액에서 신고세액공제 3%(§69)를 뺀 납부세액을 신고기한 안에 함께 납부합니다. 세액이
+                      1,000만 원을 넘으면 2개월 이내 분납(§70), 2,000만 원을 넘으면 최대 5년 연부연납(§71)이
+                      가능합니다.
                     </p>
                   </div>
                 </div>
@@ -583,7 +611,7 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
                         rel="nofollow"
                         className="text-primary-500 hover:underline"
                       >
-                        상속세 및 증여세법 시행령 §31의5 (적정이자율·1,000만 원 기준금액)
+                        상속세 및 증여세법 시행령 §31의4 (적정이자율·1,000만 원 기준금액)
                       </a>
                     </li>
                     <li>

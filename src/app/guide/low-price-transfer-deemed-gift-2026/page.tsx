@@ -18,7 +18,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/low-price-transfer-deemed-gift-2026/';
 const DATE_PUBLISHED = '2026-09-19';
-const DATE_MODIFIED = '2026-09-30';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '저가양수도 증여의제 2026, 시가 대비 몇 %부터 과세되나',
@@ -389,7 +389,7 @@ export default function LowPriceTransferDeemedGift2026Page() {
                 <h2 className="text-2xl font-bold">특수관계인의 범위는 어디까지인가요?</h2>
                 <p>
                   특수관계인에는 배우자(사실상 혼인관계 포함), 4촌 이내 혈족, 3촌 이내 인척이
-                  포함됩니다(국세기본법 §2 20호, 시행령 §1의2). 2023년 개정으로 기존 6촌 이내
+                  포함됩니다(국세기본법 §2 20호, 시행령 §1의2①). 2023년 2월 28일 개정으로 기존 6촌 이내
                   혈족·4촌 이내 인척에서 범위가 축소되었습니다.
                 </p>
                 <p>

@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/gift-tax-exemption-limit-2026/';
 const DATE_PUBLISHED = '2026-06-30';
-const DATE_MODIFIED = '2026-06-30';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '증여세 면제한도 2026 | 배우자 6억·자녀 5천만·혼인공제 1억',
@@ -50,17 +50,17 @@ const FAQ_ITEMS = [
   {
     question: '배우자에게 6억 초과 증여하면 모두 세금이 나나요?',
     answer:
-      '네. 배우자 공제는 정확히 6억원이므로, 6억을 초과하는 부분부터 과세표준이 됩니다. 예: 배우자에게 8억 증여 → 과세표준 2억 → 세액 약 2,000만원.',
+      '네. 배우자 공제는 10년 합산 6억원이므로, 6억을 초과하는 부분부터 과세표준이 됩니다. 예: 배우자에게 8억 증여 → 과세표준 2억 → 산출세액 2억 × 20% − 1,000만원(누진공제) = 3,000만원.',
   },
   {
     question: '부모 양쪽에게서 증여받으면 공제가 두 배인가요?',
     answer:
-      '네. 아버지와 어머니는 별도의 증여자이므로, 각각 5천만원씩 공제를 받을 수 있습니다(자녀 입장). 10년 이내 각각으로부터 5천만씩 = 총 1억까지 공제.',
+      '아닙니다. 상증세법 §53은 자녀 입장에서 직계존속(아버지·어머니·조부모 등)을 하나의 그룹으로 보아 10년 합산 5천만원(미성년 2천만원)까지만 공제합니다. 부모 양쪽에게서 각각 5천만원씩 받아 1억원을 공제받는 구조는 성립하지 않습니다.',
   },
   {
     question: '미성년 자녀 증여 공제가 더 적은 이유는 뭔가요?',
     answer:
-      '법률상 미성년자는 재산 관리 능력이 없어 보호 대상으로 분류되므로, 공제를 적게 인정합니다. 성년 자녀(20세 이상)는 5천만, 미성년은 2천만 공제.',
+      '법률상 미성년자는 보호 대상으로 분류되므로 증여재산공제를 적게 인정합니다. 민법 §4 기준 성년(19세 이상)인 자녀는 5천만원, 미성년(19세 미만)은 2천만원 공제입니다.',
   },
   {
     question: '혼인공제는 따로 신청해야 하나요?',
@@ -139,7 +139,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                     { name: '증여세 면제한도 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">증여자·수증자·가족 · 10분 읽기 · 2026-06-30</p>
+                <p className="mb-2 text-caption text-text-tertiary">증여자·수증자·가족 · 10분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   증여세 면제한도 2026
                   <br />
@@ -175,22 +175,22 @@ export default function GiftTaxExemptionLimit2026Page() {
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3 font-semibold">성년 직계비속</td>
                         <td className="p-3">5,000만원</td>
-                        <td className="p-3">자녀(20세↑). 1인당 적용.</td>
+                        <td className="p-3">자녀(민법상 19세 이상). 수증자 1인당 적용.</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3 font-semibold">미성년 직계비속</td>
                         <td className="p-3">2,000만원</td>
-                        <td className="p-3">자녀(20세 미만). 1인당 적용.</td>
+                        <td className="p-3">자녀(민법상 19세 미만). 수증자 1인당 적용.</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3 font-semibold">직계존속 → 직계비속</td>
                         <td className="p-3">5,000만원</td>
-                        <td className="p-3">부모 → 자녀. 부모 양쪽 각각 5천만.</td>
+                        <td className="p-3">부모·조부모 → 자녀·손자녀. 아버지·어머니·조부모 합쳐 5천만(10년 합산).</td>
                       </tr>
                       <tr className="border-b border-border-base">
-                        <td className="p-3 font-semibold">기타 친족(6촌 이내)</td>
+                        <td className="p-3 font-semibold">기타 친족(4촌 이내 혈족, 3촌 이내 인척)</td>
                         <td className="p-3">1,000만원</td>
-                        <td className="p-3">형제자매, 조부모, 손자 등.</td>
+                        <td className="p-3">형제자매, 사촌, 사위·며느리 등. 조부모·손자녀는 직계존·비속이라 위 행 적용.</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3 font-semibold">타인(친족 아님)</td>
@@ -223,30 +223,30 @@ export default function GiftTaxExemptionLimit2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">성년 자녀(20세↑): 1인당 5천만원 공제</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">성년 자녀(민법상 19세 이상): 수증자 1인당 5천만원 공제</h3>
                     <p data-speakable className="text-sm text-text-secondary">
-                      성년 직계비속(자녀가 20세 이상)에게는 1명당 <strong>5천만원</strong> 공제가 적용됩니다. 자녀가 2명이면 1억원(5천만×2), 3명이면 1.5억원입니다. 동일한 부모로부터 10년 이내에 받은 증여를 모두 합산하여 공제를 한 번만 받습니다.
+                      성년 직계비속(민법 §4 기준 19세 이상 자녀)에게는 수증자 1인당 <strong>5천만원</strong> 공제가 적용됩니다. 서로 다른 자녀 2명이 각각 증여받으면 수증자별로 따로 계산하므로 각 5천만원씩입니다. 다만 같은 자녀가 아버지·어머니·조부모 등 직계존속에게서 받는 금액은 10년간 합산하여 공제가 한 번만 적용됩니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">미성년 자녀(20세 미만): 1인당 2천만원 공제</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">미성년 자녀(민법상 19세 미만): 수증자 1인당 2천만원 공제</h3>
                     <p data-speakable className="text-sm text-text-secondary">
-                      미성년 자녀에게는 <strong>1인당 2천만원만</strong> 공제됩니다. 성년이 되면 이후 증여부터는 5천만원 공제가 적용됩니다. 미성년자공제(상속에서 연 1천만원)와는 다릅니다.
+                      미성년 자녀에게는 <strong>수증자 1인당 2천만원만</strong> 공제됩니다. 19세 성년이 된 이후 증여부터는 5천만원 공제가 적용됩니다. 상속세의 미성년자공제는 증여세와 별개 제도입니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">부모로부터 받는 증여: 직계존속 공제 5천만원</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">부모로부터 받는 증여: 직계존속 그룹 합쳐 5천만원 공제</h3>
                     <p data-speakable className="text-sm text-text-secondary">
-                      자녀가 <strong>부모로부터</strong> 받는 증여는 성년이든 미성년이든 5천만원 공제가 기본입니다(미성년이 아닌 자녀 기준). 아버지와 어머니는 별개의 증여자이므로 각각 5천만씩 공제를 받을 수 있어서, 부모 양쪽에게서 총 1억원까지 공제 가능합니다.
+                      자녀가 <strong>부모·조부모 등 직계존속</strong>에게서 받는 증여는 성년 5천만원, 미성년 2천만원 공제가 기본입니다. 다만 상증세법 §47② 규정에 따라 아버지·어머니(및 조부모)는 하나의 직계존속 그룹으로 보아 10년 합산 공제 한도가 합쳐서 5천만원(미성년 2천만원)입니다. 양쪽 부모에게서 각각 5천만원씩 받아 1억원을 공제받는 구조는 성립하지 않습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">기타 친족(6촌 이내): 1천만원 공제</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">기타 친족(4촌 이내 혈족, 3촌 이내 인척): 1천만원 공제</h3>
                     <p data-speakable className="text-sm text-text-secondary">
-                      형제자매, 조부모, 손자, 사위 등 6촌 이내 친족에게는 <strong>1인당 1천만원</strong>만 공제됩니다. 친족 관계를 입증하는 서류가 필요합니다.
+                      형제자매, 사촌, 사위·며느리 등 4촌 이내의 혈족·3촌 이내의 인척에게서 받는 증여는(상증법 §53 제4호) <strong>수증자 1인당 1천만원</strong>만 공제됩니다. 조부모·손자녀는 직계존속·직계비속이라 이 행이 아니라 성년 5천만원(미성년 2천만원) 행이 적용됩니다. 친족 관계를 입증하는 서류가 필요합니다.
                     </p>
                   </div>
                 </div>
@@ -280,7 +280,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                     <span className="block font-semibold">→ 합산 증여액: 2억 + 3억 = 5억원</span>
                     <span className="block font-semibold">→ 공제: 5천만원 (1회만 적용)</span>
                     <span className="block font-semibold">→ 과세표준: 5억 - 5천만 = 4.5억</span>
-                    <span className="block font-semibold">→ 세액: 4.5억 × 20% - 1,000만(누진공제) = 8,000만원</span>
+                    <span className="block font-semibold">→ 합산 산출세액: 4.5억 × 20% - 1,000만(누진공제) = 8,000만원 (2024년에 낸 세금이 있다면 §58 기납부세액 공제 후 차액을 납부)</span>
                   </p>
                 </div>
 
@@ -316,9 +316,9 @@ export default function GiftTaxExemptionLimit2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">출산공제: 자녀 출생일 또는 입양신고일 전후 2년 이내 증여</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">출산공제: 자녀 출생일 또는 입양신고일부터 2년 이내 증여</h3>
                     <p className="text-sm text-text-secondary">
-                      자녀가 태어나거나 입양될 때(신고일), 그 <strong>전후 2년(총 4년은 아님) 이내</strong>에 부모가 자녀 또는 다른 자녀에게 증여한 재산에 대해 <strong>1억원 추가 공제</strong>가 적용됩니다.
+                      자녀가 태어나거나 입양되었을 때, 그 <strong>출생일·입양신고일부터 2년 이내</strong>에 직계존속(조부모 등)이 아이를 낳은 사람에게 증여한 재산에 대해 <strong>1억원 추가 공제</strong>가 적용됩니다. 혼인공제와 달리 출생 이전 기간은 포함되지 않습니다.
                     </p>
                   </div>
 
@@ -338,7 +338,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                     <span className="block font-semibold">추가 혼인공제: 1억 (혼인 2년 전~2년 후 범위)</span>
                     <span className="block font-semibold">→ 총 공제: 5천만 + 1억 = 1.5억</span>
                     <span className="block font-semibold">→ 과세표준: 1.5억 - 1.5억 = 0</span>
-                    <span className="block font-semibold">→ 증여세: 0원 (혼인 없었으면 세금 500만원)</span>
+                    <span className="block font-semibold">→ 증여세: 0원 (혼인공제가 없었다면 과세표준 1억으로 산출세액 1,000만원, 신고세액공제 후 970만원)</span>
                   </p>
                 </div>
 
@@ -412,7 +412,7 @@ export default function GiftTaxExemptionLimit2026Page() {
               <section className="space-y-6 border-t border-border-base pt-8">
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 한도 내 증여 시 신고 의무</h2>
                 <p data-speakable>
-                  많은 사람이 놓치는 부분입니다. 공제 범위 내라면 <strong>세금이 없지만 신고 의무는 여전히 있습니다</strong>(상증법 §61).
+                  많은 사람이 놓치는 부분입니다. 공제 범위 내라면 <strong>세금이 없지만 신고 의무는 여전히 있습니다</strong>(상증법 §68).
                 </p>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
@@ -428,7 +428,7 @@ export default function GiftTaxExemptionLimit2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
                   <p className="font-semibold text-text-primary text-sm mb-3">미신고 시 불이익</p>
                   <p className="text-sm text-text-secondary space-y-2">
-                    <span className="block">• <strong>무신고 가산세</strong>: 세금이 없어도 20~40% 가산세 부과 (세액 기준)</span>
+                    <span className="block">• <strong>무신고 가산세</strong>: 산출세액이 있는데 신고하지 않으면 산출세액의 20~40%가 가산세로 추가됩니다(일반 무신고 20%, 부정 무신고 40%). 공제 범위 내로 산출세액이 0원이라면 가산세 자체도 0원이지만, 신고 이력이 없으면 자금 출처 조사에서 증여 사실 입증이 어려워집니다.</span>
                     <span className="block">• <strong>세무조사 대상</strong>: 신고 이력이 없으면 나중에 적발 시 조사 받을 가능성</span>
                     <span className="block">• <strong>사후 합산 위험</strong>: 상속 시 미신고 증여가 다시 합산될 가능성</span>
                   </p>
@@ -443,13 +443,13 @@ export default function GiftTaxExemptionLimit2026Page() {
                 <h2 className="border-l-2 border-primary-500 pl-3 text-2xl font-bold">공제 활용 전략 4가지</h2>
                 <ul className="space-y-4">
                   <li>
-                    <strong>1. 10년 분산 증여 전략:</strong> 공제 한도를 매해 활용합니다. 자녀에게 매년 5천만씩 10년 증여 = 총 5억 공제 → 세금 0. 배우자는 매 10년마다 6억씩 가능.
+                    <strong>1. 10년 간격 증여 전략:</strong> 공제 한도는 10년 단위로 다시 생깁니다. 성년 자녀에게 지금 5천만원 증여 후 10년이 지나 다시 5천만원 증여하면 매번 공제가 새로 적용됩니다. 배우자는 10년 간격으로 6억원씩 반복해서 공제받을 수 있습니다. 다만 10년 안에 반복 증여하면 합산 과세되니 간격 유지가 핵심입니다.
                   </li>
                   <li>
                     <strong>2. 혼인 목적 증여 활용:</strong> 혼인 예정이면 혼인공제 1억을 놓치지 마세요. 혼인 2년 전부터 신청 가능하므로 미리 계획합니다.
                   </li>
                   <li>
-                    <strong>3. 배우자 + 자녀 병행:</strong> 부부가 함께 증여하면 배우자 공제 6억 + 각 자녀 공제를 중복 적용 가능. 예: 부부 각각 자녀에게 5천만씩 = 자녀당 1억 공제.
+                    <strong>3. 배우자 + 자녀 병행 증여:</strong> 수증자 관계가 다르면 공제가 각각 적용됩니다. 예: 부부가 서로에게 증여(배우자 공제 각 6억) + 부모가 각 자녀에게 증여(수증자 자녀 1명당 5천만원). 다만 같은 자녀가 아버지·어머니에게서 받는 금액은 합쳐서 5천만원까지가 한도이지, 각각 5천만원씩 1억이 되는 것은 아닙니다.
                   </li>
                   <li>
                     <strong>4. 관계별 최적화:</strong> 타인에게는 공제가 없으므로(제외 배우자, 직계 친족), 반드시 법적 관계를 명확히 한 후 증여합니다.
@@ -513,10 +513,10 @@ export default function GiftTaxExemptionLimit2026Page() {
                   <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 증여는 복합적인 가족 상황, 자산 규모, 법적 환경에 따라 크게 달라집니다. 실제 증여 계획은 반드시 세무사·회계사와 상담 후 진행하세요. 본 콘텐츠는 {DATE_MODIFIED}을 기준으로 작성되었습니다.
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>법적 근거:</strong> 상속세 및 증여세법 §53(증여재산공제)·§53의2(혼인·출산공제)·§26(세율)·§61(신고 의무)
+                  <strong>법적 근거:</strong> 상속세 및 증여세법 §53(증여재산공제)·§53의2(혼인·출산공제)·§26(세율)·§68(신고기한)·§69(신고세액공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-30 작성.
+                  <strong>업데이트:</strong> 2026-06-30 작성, 2026-11-16 직계존속 공제 합산 기준·성년 19세·조부모/손자 분류·출산공제 기간·§68 신고기한·사례 숫자 정정.
                 </p>
               </section>
 

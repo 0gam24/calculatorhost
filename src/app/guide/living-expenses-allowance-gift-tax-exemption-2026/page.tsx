@@ -21,7 +21,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/living-expenses-allowance-gift-tax-exemption-2026/';
 const DATE_PUBLISHED = '2026-08-15';
-const DATE_MODIFIED = '2026-08-15';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준',
@@ -144,7 +144,7 @@ export default function LivingExpensesAllowanceGiftTaxExemption2026Page() {
                     { name: '생활비 용돈 증여세 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">부모·자녀 · 8분 읽기 · 2026-08-15</p>
+                <p className="mb-2 text-caption text-text-tertiary">부모·자녀 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   생활비 용돈 증여세 2026
                   <br />
@@ -263,7 +263,7 @@ export default function LivingExpensesAllowanceGiftTaxExemption2026Page() {
                         <td className="p-3">만 19세 미만 자녀·손자녀</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
-                        <td className="p-3">기타 친족 (6촌 이내 혈족, 4촌 이내 인척)</td>
+                        <td className="p-3">기타 친족 (4촌 이내 혈족, 3촌 이내 인척)</td>
                         <td className="p-3"><strong>1,000만원</strong></td>
                         <td className="p-3">형제·자매·삼촌·조카 등</td>
                       </tr>

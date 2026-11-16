@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-tax-deduction-limit-2026/';
 const DATE_PUBLISHED = '2026-06-30';
-const DATE_MODIFIED = '2026-06-30';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속세 공제 한도 2026 | 배우자 있으면 10억까지 면제 가능',
@@ -55,17 +55,17 @@ const FAQ_ITEMS = [
   {
     question: '기초공제 2억과 일괄공제 5억은 뭐가 다른가요?',
     answer:
-      '기초공제는 모든 상속에 자동 적용되는 2억원이고, 일괄공제는 기초공제·배우자·미성년자·장애인공제를 합산하여 그 중 큰 금액(최소 5억)을 선택하는 방식입니다. 실무에서는 대부분 일괄공제 5억이 선택됩니다.',
+      '기초공제는 모든 상속에 자동 적용되는 2억원(§18)이고, 일괄공제는 기초공제와 그 밖의 인적공제(자녀·미성년자·연로자·장애인) 합계 vs 5억원 중 큰 금액을 선택하는 방식입니다(§21). 배우자공제는 별도로 추가되며 포함되지 않습니다. 배우자가 단독 상속받는 경우에는 일괄공제를 선택할 수 없습니다.',
   },
   {
     question: '미성년 자녀가 있으면 몇 살까지 공제되나요?',
     answer:
-      '미성년자공제는 만 20세까지입니다. 상속 시점부터 20세까지 남은 해마다 1,000만원씩 공제됩니다. 예: 만 15세 자녀 → 5년 × 1,000만 = 5,000만원 공제.',
+      '미성년자공제는 만 19세까지 남은 연수에 대해 1인당 연 1,000만원씩 공제합니다(상증세법 §20①2호). 예: 만 15세 자녀 → 19세까지 4년 × 1,000만 = 4,000만원. 자녀공제 5,000만원과 중복 적용됩니다.',
   },
   {
     question: '배우자공제가 최소 5억, 최대 30억이라는데 어떻게 결정되나요?',
     answer:
-      '배우자가 받는 상속재산액과 배우자의 법정상속분을 고려하여 결정됩니다. 대부분의 경우 법정상속분(배우자 약 50%) 한도 내에서 실제 상속액에 따라 5억~30억 사이에서 결정됩니다.',
+      '배우자가 실제 받는 상속재산과 배우자의 법정상속분 상당액 중 작은 금액이 한도이며, 최소 5억원은 보장되고 최대 30억원까지입니다(상증세법 §19). 배우자 법정상속분은 자녀와 공동상속이면 자녀 지분의 1.5배이므로, 자녀 수가 많을수록 비율이 낮아집니다(자녀 1명 60%, 자녀 2명 약 42.9%).',
   },
   {
     question: '자녀가 없으면 자녀공제를 못 받는다고 들었는데, 손자는?',
@@ -75,12 +75,12 @@ const FAQ_ITEMS = [
   {
     question: '연로자공제 65세 이상도 공제되나요?',
     answer:
-      '네, 피상속인이 65세 이상이면 연로자공제(1인당 5,000만원)를 받을 수 있습니다. 다만 기초공제와 일괄공제 중 더 큰 것을 선택하는 방식이므로, 일괄공제 5억 이상이면 연로자공제는 실질적으로 적용되지 않을 수 있습니다.',
+      '연로자공제는 상속인과 동거가족 중 배우자를 제외하고 65세 이상인 사람 1인당 5,000만원을 공제합니다(상증세법 §20①3호). 다만 기초공제와 그 밖의 인적공제 합계가 5억에 미달하면 일괄공제 5억이 더 커서 실질 영향은 적을 수 있습니다.',
   },
   {
     question: '금융재산 상속공제는 뭔가요?',
     answer:
-      '금융재산상속공제(상증세법 §22)는 순금융재산의 20%를 공제하는 제도로, 최대 2억원까지입니다. 순금융재산(금융자산 − 금융부채)이 2,000만원 이하면 전액 공제됩니다. 은행 예금, 주식, 펀드 등이 해당합니다.',
+      '금융재산 상속공제(상증세법 §22)는 순금융재산(금융자산 − 금융채무)을 구간별로 공제하는 제도입니다. 2,000만원 이하는 전액, 2,000만원 초과 1억원 이하는 2,000만원 정액, 1억원 초과 10억원 이하는 20%, 10억원 초과는 한도 2억원이 적용됩니다. 최대주주 지분과 신고기한까지 신고하지 않은 차명재산은 제외됩니다.',
   },
 ];
 
@@ -135,7 +135,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                     { name: '상속세 공제 한도 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">자산가·은퇴 준비층 · 9분 읽기 · 2026-06-30</p>
+                <p className="mb-2 text-caption text-text-tertiary">자산가·은퇴 준비층 · 9분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 공제 한도 2026
                   <br />
@@ -175,8 +175,8 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3 font-semibold">자녀·미성년자·연로자·장애인공제 (§20)</td>
-                        <td className="p-3">자녀 5천만/미성년 연 1천만/65세 이상 5천만/장애인 기대여명연수×1천만</td>
-                        <td className="p-3">각 직계비속 및 조건별</td>
+                        <td className="p-3">자녀 5천만/미성년 1천만 × (19−현재나이)/65세 이상 5천만/장애인 기대여명연수×1천만</td>
+                        <td className="p-3">자녀·상속인 및 동거가족 조건별</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3 font-semibold">일괄공제 (§21)</td>
@@ -185,8 +185,8 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3 font-semibold">금융재산상속공제 (§22)</td>
-                        <td className="p-3">순금융재산의 20%, 최대 2억</td>
-                        <td className="p-3">금융재산 2천만 이하면 전액</td>
+                        <td className="p-3">2천만 이하 전액 / 2천만~1억 2천만 정액 / 1억~10억 20% / 10억 초과 2억 한도</td>
+                        <td className="p-3">순금융재산(금융재산 − 금융채무)</td>
                       </tr>
                     </tbody>
                   </table>
@@ -227,10 +227,11 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <p className="font-semibold text-text-primary text-sm mb-3">공제 한도 결정 방식</p>
                   <p className="text-sm text-text-secondary space-y-2">
-                    <span className="block">기본: 배우자가 받는 상속재산액 전액 공제</span>
-                    <span className="block">최소: 5억원 (배우자가 받는 금액이 5억 미만이어도 최소 5억 공제)</span>
-                    <span className="block">최대: 30억원 (배우자의 법정상속분 한도)</span>
-                    <span className="block">대부분의 경우: 배우자 법정상속분 약 50% × 상속재산 ≈ 최종 공제액</span>
+                    <span className="block">기본: 배우자가 실제 상속받는 금액</span>
+                    <span className="block">한도: 배우자의 법정상속분 상당액(자녀 지분의 1.5배)</span>
+                    <span className="block">최소: 5억원 (실제 상속액·법정상속분이 5억 미만이어도 5억 보장)</span>
+                    <span className="block">최대: 30억원</span>
+                    <span className="block text-xs text-text-tertiary">※ 배우자 법정상속분 비율: 자녀 1명과 공동상속 60%, 자녀 2명 약 42.9%, 자녀 3명 약 33.3%</span>
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
@@ -238,10 +239,11 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   <p className="text-sm text-text-secondary space-y-2">
                     <span className="block"><strong>경우 1: 배우자가 3억을 받는 경우</strong></span>
                     <span className="block ml-4">→ 배우자공제 = max(3억, 최소 5억) = <strong>5억원</strong> 적용</span>
-                    <span className="block mt-2"><strong>경우 2: 배우자가 15억을 받는 경우</strong></span>
-                    <span className="block ml-4">→ 배우자공제 = <strong>15억원</strong> 적용 (법정상속분 한도 내)</span>
-                    <span className="block mt-2"><strong>경우 3: 상속재산 30억, 배우자 법정상속분 약 15억</strong></span>
-                    <span className="block ml-4">→ 배우자공제 = <strong>15억원</strong> (법정상속분 30억 × 50% = 15억이 한도)</span>
+                    <span className="block mt-2"><strong>경우 2: 배우자가 15억을 받는 경우(법정상속분 상당액이 15억 이상)</strong></span>
+                    <span className="block ml-4">→ 배우자공제 = <strong>15억원</strong> (실제 상속액과 법정상속분 상당액 중 작은 금액)</span>
+                    <span className="block mt-2"><strong>경우 3: 상속재산 30억, 배우자+자녀 1명 (법정상속분 1.5/2.5)</strong></span>
+                    <span className="block ml-4">법정상속분 상당액 = 30억 × 1.5/2.5 = 18억</span>
+                    <span className="block ml-4">→ 배우자가 20억을 상속받아도 공제는 min(20억, 18억) = <strong>18억</strong></span>
                   </p>
                 </div>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
@@ -264,23 +266,23 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">미성년자공제 (1인당 연 1,000만원, 20세까지)</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">미성년자공제 (1인당 연 1,000만원, 19세까지)</h3>
                     <p className="text-sm text-text-secondary">
-                      만 20세 미만 자녀는 상속 시점부터 20세까지 남은 해마다 1,000만원씩 추가 공제됩니다. 예: 만 15세 → 20세까지 5년 × 1,000만 = 5,000만원 추가.
+                      만 19세 미만 상속인은 상속개시 시점부터 19세까지 남은 연수만큼 연 1,000만원씩 추가 공제됩니다. 예: 만 15세 → 19세까지 4년 × 1,000만 = 4,000만원 추가.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">연로자공제 (65세 이상 1인당 5,000만원)</h3>
                     <p className="text-sm text-text-secondary">
-                      <strong>피상속인이</strong> 65세 이상이면 1인당 5,000만원 공제됩니다. 이는 자녀공제와 중복될 수 있지만, 일괄공제 5억이 대부분 선택되므로 실무에서는 큰 영향이 적습니다.
+                      <strong>상속인과 동거가족</strong> 중 배우자를 제외하고 65세 이상인 사람 1인당 5,000만원을 공제합니다. 피상속인의 나이가 아니라 상속받는 사람의 나이를 보는 공제입니다. 일괄공제 5억이 대부분 선택되어 실무 영향은 크지 않을 수 있습니다.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">장애인공제 (1인당 기대여명연수 × 1,000만원)</h3>
                     <p className="text-sm text-text-secondary">
-                      상속인(자녀 등)이 장애인이면 <strong>기대여명</strong>(국세청이 정한 평균 수명 − 현재 나이)년수 × 1,000만원씩 공제됩니다. 예: 40세 장애인 기대여명 40년 → 4,000만원 공제.
+                      상속인이나 동거가족 중 장애인이 있으면 <strong>통계청이 발표한 기대여명</strong> 연수 × 1,000만원이 공제됩니다. 예: 기대여명 40년이 남은 장애인 → 4억원 공제. 다른 공제(자녀공제·배우자공제 등)와 중복 적용됩니다.
                     </p>
                   </div>
                 </div>
@@ -290,9 +292,9 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   <p className="text-sm text-text-secondary space-y-2">
                     <span className="block"><strong>배우자(60세) + 자녀 2명(성년), 자녀 1명(16세)</strong></span>
                     <span className="block ml-4">성년 자녀 2명: 5,000만 × 2 = 1억</span>
-                    <span className="block ml-4">16세 자녀: 5,000만 + (20−16) × 1,000만 = 9,000만</span>
-                    <span className="block ml-4"><strong>총 §20 공제: 1.9억</strong></span>
-                    <span className="block mt-2">→ 일괄공제 선택: max(기초공제 2억 + §20 공제 1.9억, <strong>5억</strong>) = <strong>5억 선택</strong></span>
+                    <span className="block ml-4">16세 자녀: 자녀공제 5,000만 + 미성년자공제 (19−16) × 1,000만 = 8,000만</span>
+                    <span className="block ml-4"><strong>총 §20 공제: 1.8억</strong></span>
+                    <span className="block mt-2">→ 일괄공제 선택: max(기초공제 2억 + §20 공제 1.8억, <strong>5억</strong>) = <strong>5억 선택</strong></span>
                   </p>
                 </div>
 
@@ -336,33 +338,37 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   금융재산(은행 예금, 주식, 펀드 등)이 있으면 순금융재산의 20%를 공제하는 제도입니다. 최대 2억원까지이며, 금융재산이 많을수록 유리합니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                  <p className="font-semibold text-text-primary text-sm mb-3">금융재산상속공제 한도</p>
+                  <p className="font-semibold text-text-primary text-sm mb-3">금융재산상속공제 구간</p>
                   <p className="text-sm text-text-secondary space-y-2">
-                    <span className="block"><strong>공제액</strong> = min(순금융재산 × 20%, 2억원)</span>
-                    <span className="block"><strong>순금융재산</strong> = 금융자산 − 금융부채</span>
-                    <span className="block"><strong>금융자산:</strong> 은행 예금, 적금, 정기예금, 주식, 펀드, 채권 등</span>
-                    <span className="block"><strong>금융부채:</strong> 카드론, 신용대출 등</span>
+                    <span className="block"><strong>순금융재산</strong> = 금융재산 − 금융채무</span>
+                    <span className="block">· 2,000만원 이하: 전액 공제</span>
+                    <span className="block">· 2,000만원 초과 1억원 이하: 2,000만원 정액</span>
+                    <span className="block">· 1억원 초과 10억원 이하: 순금융재산 × 20%</span>
+                    <span className="block">· 10억원 초과: 2억원(한도)</span>
+                    <span className="block"><strong>금융재산:</strong> 은행 예금, 적금, 정기예금, 주식, 펀드, 채권 등</span>
+                    <span className="block"><strong>금융채무:</strong> 금융회사에 대한 채무 등</span>
+                    <span className="block text-xs text-text-tertiary">※ 최대주주·최대출자자 보유 주식과 신고기한까지 신고하지 않은 차명 금융재산은 제외</span>
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
                   <p className="font-semibold text-text-primary text-sm mb-3">금융재산상속공제 계산 예시</p>
                   <p className="text-sm text-text-secondary space-y-2">
-                    <span className="block"><strong>경우 1: 금융자산 2,000만원</strong></span>
-                    <span className="block ml-4">순금융재산 2,000만 × 20% = 400만 (min 400만, 2억)</span>
-                    <span className="block ml-4">→ 금융재산상속공제 = <strong>400만원</strong></span>
-                    <span className="block mt-2"><strong>경우 2: 금융자산 5억원</strong></span>
-                    <span className="block ml-4">순금융재산 5억 × 20% = 1억 (min 1억, 2억)</span>
+                    <span className="block"><strong>경우 1: 순금융재산 2,000만원</strong></span>
+                    <span className="block ml-4">2,000만원 이하 → 전액 공제</span>
+                    <span className="block ml-4">→ 금융재산상속공제 = <strong>2,000만원</strong></span>
+                    <span className="block mt-2"><strong>경우 2: 순금융재산 5억원</strong></span>
+                    <span className="block ml-4">1억 초과 10억 이하 구간 → 5억 × 20% = 1억</span>
                     <span className="block ml-4">→ 금융재산상속공제 = <strong>1억원</strong></span>
-                    <span className="block mt-2"><strong>경우 3: 금융자산 15억원</strong></span>
-                    <span className="block ml-4">순금융재산 15억 × 20% = 3억 (min 3억, 2억 최대)</span>
-                    <span className="block ml-4">→ 금융재산상속공제 = <strong>2억원</strong> (한도 도달)</span>
+                    <span className="block mt-2"><strong>경우 3: 순금융재산 15억원</strong></span>
+                    <span className="block ml-4">10억 초과 → 한도 2억</span>
+                    <span className="block ml-4">→ 금융재산상속공제 = <strong>2억원</strong> (한도 적용)</span>
                   </p>
                 </div>
                 <p className="mt-4">
                   금융재산상속공제는 다른 상속공제와 <strong>중복 적용</strong>됩니다. 즉, 일괄공제 5억과 금융재산상속공제 1억을 함께 받을 수 있습니다.
                 </p>
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>다만:</strong> 금융재산이 2,000만원 이하면 전액 공제되므로, 정기예금이나 단기 금융상품이 많으면 활용해볼 가치가 있습니다.
+                  <strong>다만:</strong> 순금융재산이 2,000만원 이하면 전액 공제되고, 2,000만원 초과 1억원 이하 구간에서는 20% 계산보다 큰 정액 2,000만원이 적용되어 소액 금융재산 상속인이 보호됩니다.
                 </p>
               </section>
 
@@ -374,17 +380,19 @@ export default function InheritanceTaxDeductionLimit2026Page() {
 
                 <div className="space-y-4 mt-6">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <p className="font-semibold text-text-primary text-sm mb-3">사례 1: 배우자 생존, 자녀 2명, 상속재산 12억</p>
+                    <p className="font-semibold text-text-primary text-sm mb-3">사례 1: 배우자 생존, 자녀 2명, 상속재산 12억 (순금융재산 1억 포함)</p>
                     <p className="text-sm text-text-secondary space-y-2">
                       <span className="block"><strong>상속인:</strong> 배우자(60세) + 자녀 2명(성년)</span>
-                      <span className="block"><strong>상속재산:</strong> 12억 (금융 1억 포함)</span>
+                      <span className="block"><strong>상속재산:</strong> 12억 (순금융재산 1억 포함)</span>
                       <span className="block mt-2"><strong>공제 계산:</strong></span>
-                      <span className="block ml-4">배우자공제 = 배우자 법정상속분 약 6억</span>
+                      <span className="block ml-4">배우자 법정상속분 상당액 ≈ 12억 × 1.5/3.5 ≈ 5.14억(배우자 1.5 : 자녀 1 : 자녀 1)</span>
+                      <span className="block ml-4">배우자공제 = 법정상속분 상당액 한도, 최소 5억 보장 → 약 5.14억</span>
                       <span className="block ml-4">일괄공제 = max(기초 2억 + 자녀 1억, 5억) = 5억</span>
-                      <span className="block ml-4">금융재산상속공제 = 1억 × 20% = 2,000만</span>
-                      <span className="block mt-2"><strong>총 공제액 = 6억 + 5억 + 2,000만 = 11.2억</strong></span>
-                      <span className="block"><strong>과세표준 = 12억 − 11.2억 = 8,000만</strong></span>
-                      <span className="block"><strong>상속세 ≈ 8,000만 × 10% = 800만원</strong></span>
+                      <span className="block ml-4">금융재산상속공제 = 2,000만(순금융재산 2,000만 초과 1억 이하 구간은 2,000만 정액)</span>
+                      <span className="block mt-2"><strong>총 공제액 ≈ 5.14억 + 5억 + 2,000만 = 10.34억</strong></span>
+                      <span className="block"><strong>과세표준 ≈ 12억 − 10.34억 = 1.66억</strong></span>
+                      <span className="block"><strong>산출세액 ≈ 1.66억 × 20% − 1,000만 = 2,320만원</strong></span>
+                      <span className="block text-xs text-text-tertiary">※ 배우자공제는 배우자가 실제 상속받는 금액과 법정상속분 상당액 중 작은 금액이 한도이며, 최소 5억원은 보장됩니다.</span>
                     </p>
                   </div>
 
@@ -409,12 +417,14 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                       <span className="block"><strong>상속인:</strong> 배우자 + 자녀 2명(15세, 18세)</span>
                       <span className="block"><strong>상속재산:</strong> 9억</span>
                       <span className="block mt-2"><strong>공제 계산:</strong></span>
-                      <span className="block ml-4">배우자공제 = 배우자 법정상속분 약 4.5억 (min 5억) = 5억</span>
-                      <span className="block ml-4">일괄공제 = max(기초 2억 + 자녀 1억 + 미성년 3,000만, 5억) = 5억</span>
-                      <span className="block ml-4">금융재산상속공제 = 없음 (금융자산 없음)</span>
-                      <span className="block mt-2"><strong>총 공제액 = 5억 + 5억 = 10억</strong></span>
+                      <span className="block ml-4">배우자 법정상속분 상당액 ≈ 9억 × 1.5/3.5 ≈ 3.86억 → 최소 5억 보장 적용 = 5억</span>
+                      <span className="block ml-4">자녀공제 5,000만 × 2 = 1억</span>
+                      <span className="block ml-4">미성년자공제: 15세 (19−15)×1,000만 = 4,000만, 18세 (19−18)×1,000만 = 1,000만, 합계 5,000만</span>
+                      <span className="block ml-4">일괄공제 = max(기초 2억 + 자녀 1억 + 미성년 5,000만 = 3.5억, 5억) = 5억</span>
+                      <span className="block ml-4">금융재산상속공제 = 없음</span>
+                      <span className="block mt-2"><strong>총 공제액 = 5억(배우자) + 5억(일괄) = 10억</strong></span>
                       <span className="block"><strong>과세표준 = 9억 − 10억 = 0 (음수는 0)</strong></span>
-                      <span className="block"><strong>상속세 = 0원 (세금 없음)</strong></span>
+                      <span className="block"><strong>상속세 = 0원</strong></span>
                     </p>
                   </div>
                 </div>
@@ -434,24 +444,24 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">동거주택 상속공제 (§23의2)</h3>
                     <p className="text-sm text-text-secondary mb-2">
-                      피상속인과 <strong>동거</strong>하던 주택을 상속받을 때 일정 금액을 공제하는 제도입니다.
+                      피상속인과 10년 이상 동거한 주택을 상속받을 때 적용되는 공제입니다.
                     </p>
                     <ul className="text-sm text-text-secondary space-y-1">
-                      <li>• 공제액: 주택 평가액의 80%(최대 6억원)</li>
-                      <li>• 요건: 피상속인과 동거, 주택 상속인이 10년 보유</li>
-                      <li>• 한계: 공제가 크지만 요건(동거, 장기 보유)이 매우 까다로움</li>
+                      <li>· 공제액: 상속주택 가액의 100%, 최대 6억원</li>
+                      <li>· 요건: 피상속인과 상속인이 10년 이상 계속 동거, 1세대 1주택, 상속인이 무주택자(또는 피상속인과 함께 공동 1주택)</li>
+                      <li>· 한계: 요건 충족이 까다롭고 세부 적용은 사례별로 다름</li>
                     </ul>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">가업상속공제</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">가업상속공제 (§18의2)</h3>
                     <p className="text-sm text-text-secondary mb-2">
-                      피상속인이 영위하던 사업을 상속인이 <strong>계속 운영</strong>할 때 공제하는 제도입니다.
+                      피상속인이 영위하던 가업을 상속인이 <strong>계속 운영</strong>할 때 적용되는 공제입니다.
                     </p>
                     <ul className="text-sm text-text-secondary space-y-1">
-                      <li>• 공제액: 가업 가액의 일정 비율(최대 수십억)</li>
-                      <li>• 요건: 상속인이 영업 계속, 일정 기간 보유</li>
-                      <li>• 한계: 사업 규모, 업종, 상속인 경험에 따라 복잡함</li>
+                      <li>· 공제액: 가업 영위 기간에 따라 최대 300억(10년 이상)·400억(20년 이상)·600억(30년 이상)</li>
+                      <li>· 요건: 상속인이 가업에 종사하고 일정 기간 유지(사후관리)</li>
+                      <li>· 한계: 업종·사후관리·추징 사유가 복잡하므로 전문가 상담 필요</li>
                     </ul>
                   </div>
                 </div>
@@ -520,7 +530,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
                   <strong>법적 근거:</strong> 상속세 및 증여세법 §18(기초공제)·§19(배우자공제)·§20(자녀·미성년자·연로자·장애인공제)·§21(일괄공제)·§22(금융재산상속공제)·§23의2(동거주택상속공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-30 작성.
+                  <strong>업데이트:</strong> 2026-06-30 작성, 2026-11-16 수정(미성년자공제 19세 기준 반영, 금융재산 상속공제 구간별 공식 보정, 배우자공제 법정상속분 상당액 설명 보정, 동거주택·가업상속공제 요건 정정).
                 </p>
               </section>
 

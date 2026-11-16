@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-tax-calculation-2026/';
 const DATE_PUBLISHED = '2026-06-21';
-const DATE_MODIFIED = '2026-06-21';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속세 계산법 2026 | 과세표준부터 최종 납부세액까지',
@@ -52,17 +52,17 @@ const FAQ_ITEMS = [
   {
     question: '일괄공제 5억과 기초공제 2억은 어떻게 다른가요?',
     answer:
-      '기초공제 2억은 모든 상속에 기본 적용되는 공제이고, 일괄공제 5억은 기초공제·배우자공제·미성년자공제·장애인공제의 합계와 비교하여 큰 금액을 선택하는 방식입니다. 실무에서는 통상 5억이 더 유리하므로 대부분 일괄공제 5억이 적용됩니다.',
+      '기초공제 2억(§18)과 그 밖의 인적공제(자녀·미성년자·연로자·장애인, §20)의 합계와 일괄공제 5억(§21)을 비교해 큰 금액을 선택하는 방식입니다. 배우자공제는 이 선택과 별개로 추가 적용됩니다. 실무에서는 통상 5억이 더 유리하므로 대부분 일괄공제 5억이 적용되며, 배우자가 단독상속인인 경우에는 일괄공제를 선택할 수 없습니다.',
   },
   {
     question: '배우자가 없으면 배우자공제를 못 받나요?',
     answer:
-      '네, 배우자공제(최소 5억~최대 30억)는 배우자가 있을 때만 적용됩니다. 배우자가 없는 경우 기초공제 2억 또는 일괄공제 5억만 적용되고, 자녀공제(1인당 5,000만)를 추가로 받을 수 있습니다.',
+      '네, 배우자공제(최소 5억~최대 30억)는 배우자가 있을 때만 적용됩니다. 배우자가 없는 경우에는 기초공제 2억과 그 밖의 인적공제(자녀·미성년자·연로자·장애인) 합계, 그리고 일괄공제 5억 중 큰 금액을 선택해 공제받습니다. 자녀공제 1인당 5,000만원은 그 밖의 인적공제에 포함되어 비교됩니다.',
   },
   {
     question: '미성년 자녀가 있으면 세액이 줄어드나요?',
     answer:
-      '네. 미성년자공제 1인당 연 1,000만원이 적용됩니다. 예를 들어 만 15세 자녀면 상속 시점부터 20세까지 5년간 인정되므로 1,000만×5년=5,000만원의 공제. 다만 이는 누진공제 계산에 포함되는 금액이므로, 실제 세액 감소는 더 클 수 있습니다.',
+      '네. 미성년자공제는 1인당 (19세까지 남은 연수) × 1,000만원이 적용됩니다. 예를 들어 만 15세 자녀면 상속 시점부터 19세까지 4년이 남았으므로 1,000만×4년=4,000만원의 공제. 자녀공제 1인당 5,000만원과 중복 적용됩니다.',
   },
   {
     question: '상속재산이 정확히 얼마인지 모르면?',
@@ -72,7 +72,7 @@ const FAQ_ITEMS = [
   {
     question: '신고세액공제는 어떻게 적용되나요?',
     answer:
-      '상증세법 §69에 따라 기한 내 자진신고 시 신고세액공제가 적용됩니다. 정확한 공제율은 신고 시점과 납부 상황에 따라 달라지므로, 반드시 세무사·국세청과 상담 후 신고하시기 바랍니다.',
+      '상증세법 §69에 따라 신고기한 안에 신고하면 산출세액의 3%를 신고세액공제로 빼 줍니다. 예를 들어 산출세액이 9,000만원이면 270만원이 공제되어 8,730만원을 냅니다.',
   },
   {
     question: '상속세를 내지 않는 경우가 있나요?',
@@ -132,7 +132,7 @@ export default function InheritanceTaxCalculation2026Page() {
                     { name: '상속세 계산법 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">상속인·유산관리자 · 12분 읽기 · 2026-06-21</p>
+                <p className="mb-2 text-caption text-text-tertiary">상속인·유산관리자 · 12분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 계산법 2026
                   <br />
@@ -229,7 +229,7 @@ export default function InheritanceTaxCalculation2026Page() {
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">일괄공제 5억원</h3>
                     <p className="text-sm text-text-secondary">
-                      상속세법 §21. 기초공제(2억)·배우자공제·미성년자공제·장애인공제의 합계와 비교하여 <strong>큰 금액</strong>을 선택합니다. 실무에서는 대부분 일괄공제 5억이 유리합니다.
+                      상속세법 §21. 기초공제(2억, §18)와 그 밖의 인적공제(자녀·미성년자·연로자·장애인, §20)의 합계와 비교해 <strong>큰 금액</strong>을 선택합니다. 배우자공제는 이 선택과 별개로 추가 적용되며, 배우자가 단독상속인인 경우에는 일괄공제를 선택할 수 없습니다. 실무에서는 대부분 일괄공제 5억이 유리합니다.
                     </p>
                   </div>
 
@@ -243,20 +243,20 @@ export default function InheritanceTaxCalculation2026Page() {
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">자녀공제 1인당 5,000만원</h3>
                     <p className="text-sm text-text-secondary">
-                      상속세법 §20. 성년 자녀 1명당 5,000만원씩 공제됩니다. 자녀 수에 따라 누적됩니다. 예: 자녀 2명 = 1억원 공제.
+                      상속세법 §20. 자녀 1명당 5,000만원씩 공제됩니다(성년·미성년 공통). 자녀 수에 따라 누적됩니다. 예: 자녀 2명 = 1억원 공제.
                     </p>
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
                     <h3 className="font-semibold text-text-primary mb-2">미성년자공제 1인당 연 1,000만원</h3>
                     <p className="text-sm text-text-secondary">
-                      상속세법 §20. 미성년 자녀(만 20세 미만)는 20세까지의 남은 해마다 1,000만원씩 공제됩니다. 예: 만 15세 자녀 = 5년×1,000만=5,000만원.
+                      상속세법 §20. 미성년자(민법상 성년 19세 미만)는 19세까지 남은 해마다 1,000만원씩 공제됩니다. 예: 만 15세 자녀 = 4년×1,000만=4,000만원. 자녀공제 5,000만원과 중복 적용됩니다.
                     </p>
                   </div>
                 </div>
 
                 <p className="mt-6 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>실무 팁:</strong> 일괄공제 5억이 기초공제+기타인적공제보다 크면 일괄공제를 선택합니다. 배우자가 있는 경우, 배우자공제(최소 5억)가 일괄공제 5억과 기타공제보다 크면 배우자공제를 선택하는 것이 유리합니다.
+                  <strong>실무 팁:</strong> 일괄공제 5억이 기초공제(2억)+그 밖의 인적공제 합계보다 크면 일괄공제를 선택합니다. 배우자공제는 이 선택과 별개로 추가 적용되므로, 배우자가 있으면 (기초공제+그 밖의 인적공제 합계 또는 일괄공제 5억) 중 큰 쪽에 배우자공제를 더해 공제받습니다.
                 </p>
               </section>
 
@@ -326,7 +326,7 @@ export default function InheritanceTaxCalculation2026Page() {
                   산출세액에서 신고세액공제를 적용하면 <strong>최종 납부세액</strong>이 됩니다.
                 </p>
                 <p>
-                  상증세법 §69에 따라 기한 내 자진신고 시 신고세액공제가 적용됩니다. 정확한 공제 내용과 방법은 신고 시점, 납부 상황 등에 따라 달라지므로 반드시 세무사나 국세청과 상담하여 신고하시기 바랍니다.
+                  상증세법 §69에 따라 신고기한 안에 신고하면 산출세액의 3%를 신고세액공제로 빼 줍니다. 산출세액이 9,000만원이면 270만원이 공제되어 8,730만원을 냅니다.
                 </p>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
@@ -339,7 +339,7 @@ export default function InheritanceTaxCalculation2026Page() {
                 </div>
 
                 <p className="mt-4 text-sm text-text-secondary border-l-2 border-primary-500 pl-4">
-                  <strong>중요:</strong> 신고 기한은 피상속인 사망일부터 6개월입니다. 기한 내 신고하지 않으면 가산세가 부과될 수 있으므로, 가급적 세무사와 협력하여 정확하게 신고하세요.
+                  <strong>중요:</strong> 신고 기한은 상속개시일(사망일)이 속하는 달의 말일부터 6개월입니다(상증세법 §67). 기한 내 신고하지 않으면 가산세가 부과될 수 있으므로, 가급적 세무사와 협력하여 정확하게 신고하세요.
                 </p>
               </section>
 
@@ -417,7 +417,7 @@ export default function InheritanceTaxCalculation2026Page() {
                   <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§18(기초공제)·§19(배우자공제)·§20(자녀·미성년자공제)·§21(일괄공제)·§67(신고기한)·§69(신고세액공제)
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-21 작성.
+                  <strong>업데이트:</strong> 2026-06-21 작성 · 2026-11-16 미성년자공제·일괄공제 설명 정정.
                 </p>
               </section>
 

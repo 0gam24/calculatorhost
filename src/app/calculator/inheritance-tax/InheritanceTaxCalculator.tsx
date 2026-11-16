@@ -186,7 +186,7 @@ export function InheritanceTaxCalculator() {
         {/* 자녀 수 */}
         <NumberInput
           id="children-count"
-          label="자녀 수 (20세 이상 포함)"
+          label="자녀 수 (성년 자녀 포함)"
           value={childrenCount}
           onChange={setChildrenCount}
           placeholder="0"

@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/parent-child-account-transfer-gift-tax-2026/';
 const DATE_PUBLISHED = '2026-08-17';
-const DATE_MODIFIED = '2026-08-17';
+const DATE_MODIFIED = '2026-11-16';
 // [revenue-lever: indexing+traffic]
 
 export const metadata: Metadata = {
@@ -135,7 +135,7 @@ export default function ParentChildAccountTransferGiftTax2026Page() {
                     { name: '부모 자식 계좌이체 증여세 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">부모·자녀 · 8분 읽기 · 2026-08-17</p>
+                <p className="mb-2 text-caption text-text-tertiary">부모·자녀 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부모 자식 계좌이체 증여세 2026
                   <br />
@@ -186,7 +186,7 @@ export default function ParentChildAccountTransferGiftTax2026Page() {
                         <td className="p-3"><strong>2천만원</strong></td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
-                        <td className="p-3">기타 친족(6촌 이내)</td>
+                        <td className="p-3">기타 친족(4촌 이내 혈족, 3촌 이내 인척)</td>
                         <td className="p-3">친족</td>
                         <td className="p-3"><strong>1천만원</strong></td>
                       </tr>

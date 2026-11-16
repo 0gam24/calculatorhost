@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-vs-gift-tax-comparison-2026/';
 const DATE_PUBLISHED = '2026-06-22';
-const DATE_MODIFIED = '2026-06-22';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속세 vs 증여세 2026 | 어느 쪽이 유리한지 공제·시점 비교',
@@ -135,7 +135,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                     { name: '상속세 vs 증여세 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">자산가·은퇴 준비층 · 13분 읽기 · 2026-06-22</p>
+                <p className="mb-2 text-caption text-text-tertiary">자산가·은퇴 준비층 · 13분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 vs 증여세 2026
                   <br />
@@ -185,13 +185,13 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3 font-semibold">자녀 공제</td>
-                        <td className="p-3">1인당 5,000만 (미성년 연 1,000만)</td>
-                        <td className="p-3">1인당 5,000만 (10년마다 갱신)</td>
+                        <td className="p-3">1인당 5,000만 (미성년은 19세까지 남은 연수 × 1,000만 추가)</td>
+                        <td className="p-3">성년 직계비속 5,000만, 미성년 2,000만 (10년마다 갱신)</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3 font-semibold">신고 기한</td>
-                        <td className="p-3">상속개시월 말일부터 6개월</td>
-                        <td className="p-3">증여월 말일부터 3개월</td>
+                        <td className="p-3">상속개시일이 속하는 달의 말일부터 6개월 (피상속인·상속인 전원 국외 주소면 9개월)</td>
+                        <td className="p-3">증여받은 날이 속하는 달의 말일부터 3개월</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3 font-semibold">분산 효과</td>
@@ -224,9 +224,9 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   </div>
 
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">조건 2: 자산이 중소 규모(10~30억)인 경우</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">조건 2: 자산이 중소 규모(10~15억)인 경우</h3>
                     <p className="text-sm text-text-secondary">
-                      일괄공제 5억 + 배우자공제 5억 + 자녀공제로 대부분 과세표준이 0에 가까워집니다. 예: 자산 15억, 배우자+자녀 → 공제 10~15억 → 과세표준 0~5억 → 세금 0~700만원대.
+                      일괄공제 5억과 배우자공제 최소 5억으로 10억원까지 기본 공제가 가능해, 상속재산이 10억원 이하면 대부분 세금이 발생하지 않습니다. 15억원대도 배우자 법정상속분 상당액까지 추가로 공제되므로 과세표준이 수억 원 이하로 줄어 세부담이 상대적으로 가볍습니다.
                     </p>
                   </div>
 
@@ -242,15 +242,16 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   <p className="font-semibold text-text-primary text-sm mb-3">구체적 예시: 상속이 유리한 경우</p>
                   <p className="text-sm text-text-secondary space-y-2">
                     <span className="block">자산: 12억원</span>
-                    <span className="block">가족: 배우자(생존) + 성년 자녀 2명</span>
+                    <span className="block">가족: 배우자(생존) + 성년 자녀 2명 (단순화를 위해 배우자공제는 최소 5억만 적용)</span>
                     <span className="block font-semibold">상속 시:</span>
                     <span className="block ml-4">과세표준 = 12억 − (일괄공제 5억 + 배우자공제 5억) = 2억</span>
-                    <span className="block ml-4">세액 = 2억 × 10% = 2,000만원</span>
+                    <span className="block ml-4">산출세액 = 2억 × 20% − 누진공제 1,000만 = 3,000만원 (1~5억 구간)</span>
                     <span className="block font-semibold">생전 일시 증여 시 (배우자에게 6억, 장남에게 6억):</span>
                     <span className="block ml-4">배우자 수령: 6억 − 6억(공제) = 과세표준 0 → 세금 0</span>
-                    <span className="block ml-4">장남 수령: 6억 − 5,000만(공제) = 5.5억 → 5.5억 × 20% − 1,000만 = 1억원</span>
-                    <span className="block ml-4 font-semibold">총 증여세: 1억원</span>
-                    <span className="block mt-2 font-semibold">결론: 상속 2,000만 &lt; 증여 1억 → 상속이 5배 유리</span>
+                    <span className="block ml-4">장남 수령: 6억 − 5,000만(공제) = 5.5억 → 5.5억 × 30% − 누진공제 6,000만 = 1억 500만원 (5~10억 구간)</span>
+                    <span className="block ml-4 font-semibold">총 증여세: 1억 500만원</span>
+                    <span className="block mt-2 font-semibold">결론: 상속 3,000만 &lt; 증여 1억 500만 → 상속이 약 3.5배 유리</span>
+                    <span className="block mt-2 text-xs text-text-tertiary">※ 실제 배우자공제는 법정상속분 상당액 한도 안에서 실제 상속액까지, 최소 5억원이 보장됩니다. 신고세액공제 3%는 반영하지 않은 산출세액 기준입니다.</span>
                   </p>
                 </div>
 
@@ -289,21 +290,20 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
-                  <p className="font-semibold text-text-primary text-sm mb-3">구체적 예시: 증여가 유리한 경우</p>
+                  <p className="font-semibold text-text-primary text-sm mb-3">구체적 예시: 단기 일시 증여는 오히려 상속이 유리</p>
                   <p className="text-sm text-text-secondary space-y-2">
                     <span className="block">자산: 20억원</span>
                     <span className="block">가족: 배우자 없음, 성년 자녀 2명</span>
-                    <span className="block font-semibold">상속 시 (배우자 없음):</span>
+                    <span className="block font-semibold">상속 시 (배우자 없음, 일괄공제 5억 적용, 금융재산공제 등은 단순화를 위해 제외):</span>
                     <span className="block ml-4">과세표준 = 20억 − 일괄공제 5억 = 15억</span>
-                    <span className="block ml-4">세액 = 15억 × 30% − 6,000만 = 4억 5,000만 − 6,000만 = 3억 9,000만원</span>
-                    <span className="block font-semibold">생전 분산 증여 (각 자녀에게 10억씩, 2년에 걸쳐):</span>
-                    <span className="block ml-4">연도 1 (자녀 A에게 10억): 과세표준 = 10억 − 5,000만 = 9.5억</span>
-                    <span className="block ml-4">세액 = 9.5억 × 30% − 6,000만 = 2.85억 − 6,000만 = 2.25억</span>
-                    <span className="block ml-4">연도 1 (자녀 B에게 10억): 과세표준 = 10억 − 5,000만 = 9.5억</span>
-                    <span className="block ml-4">세액 = 2.25억 (동일)</span>
-                    <span className="block ml-4">총 증여세: 2.25억 + 2.25억 = 4.5억</span>
-                    <span className="block mt-2 font-semibold">결론: 상속 3.9억 &lt; 증여 4.5억 → 상속이 약간 유리</span>
-                    <span className="block mt-2 text-xs text-text-tertiary">하지만 10년에 걸쳐 더 나누거나 손자에게도 증여하면 증여가 역전될 수 있습니다.</span>
+                    <span className="block ml-4">산출세액 = 15억 × 40% − 누진공제 1억 6,000만 = 6억 − 1.6억 = 4억 4,000만원 (10~30억 구간)</span>
+                    <span className="block font-semibold">생전 일시 증여 (각 자녀에게 10억씩 동시 증여):</span>
+                    <span className="block ml-4">자녀 A에게 10억: 과세표준 = 10억 − 5,000만 = 9.5억</span>
+                    <span className="block ml-4">산출세액 = 9.5억 × 30% − 누진공제 6,000만 = 2억 8,500만 − 6,000만 = 2억 2,500만원 (5~10억 구간)</span>
+                    <span className="block ml-4">자녀 B에게 10억: 동일하게 2억 2,500만원</span>
+                    <span className="block ml-4">총 증여세: 2억 2,500만 + 2억 2,500만 = 4억 5,000만원</span>
+                    <span className="block mt-2 font-semibold">결론: 상속 4억 4,000만 &lt; 증여 4억 5,000만 → 상속이 약간 유리</span>
+                    <span className="block mt-2 text-xs text-text-tertiary">단, 10년 이상 간격을 두고 분산 증여하거나 손자·며느리 등 더 많은 수증자에게 쪼개면 각 증여 과세표준이 낮은 구간에 머물러 증여가 유리해질 수 있습니다. 신고세액공제 3%는 반영하지 않은 산출세액 기준입니다.</span>
                   </p>
                 </div>
 
@@ -335,14 +335,19 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                 </div>
 
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 mt-4">
-                  <p className="font-semibold text-text-primary text-sm mb-3">사전증여 합산 예시</p>
+                  <p className="font-semibold text-text-primary text-sm mb-3">사전증여 합산 예시 (자녀에게 증여 후 3년 뒤 상속 발생)</p>
                   <p className="text-sm text-text-secondary space-y-2">
-                    <span className="block">2025년: 자녀에게 3억 증여 (증여세 약 5,000만 납부)</span>
-                    <span className="block">2028년: 피상속인 사망, 남은 자산 5억</span>
-                    <span className="block font-semibold">상속세 계산 시:</span>
+                    <span className="block">2025년: 성년 자녀에게 3억 증여</span>
+                    <span className="block ml-4">증여 과세표준 = 3억 − 증여재산공제 5,000만 = 2억 5,000만</span>
+                    <span className="block ml-4">산출 증여세 ≈ 2억 5,000만 × 20% − 누진공제 1,000만 = 4,000만원</span>
+                    <span className="block">2028년: 피상속인 사망(10년 이내 상속인에게 한 증여는 합산 대상 §13)</span>
+                    <span className="block font-semibold">상속세 계산 시 (예: 배우자 없음, 일괄공제 5억만 반영):</span>
                     <span className="block ml-4">상속재산 5억 + 사전증여 3억(합산) = 8억</span>
-                    <span className="block ml-4">공제 후 과세표준 2~3억 → 상속세 발생</span>
-                    <span className="block font-semibold">총 세금: 증여세 5,000만 + 상속세 약 3,000~4,000만 = 약 8,000~9,000만원</span>
+                    <span className="block ml-4">과세표준 = 8억 − 일괄공제 5억 = 3억</span>
+                    <span className="block ml-4">상속 산출세액 = 3억 × 20% − 누진공제 1,000만 = 5,000만원</span>
+                    <span className="block ml-4">이미 낸 증여세 4,000만원은 기납부세액으로 공제되므로 추가 상속세 ≈ 1,000만원</span>
+                    <span className="block font-semibold">총 부담 ≈ 증여세 4,000만 + 추가 상속세 1,000만 = 약 5,000만원</span>
+                    <span className="block text-xs text-text-tertiary">※ 상속공제·배우자 유무·사전증여 종류에 따라 결과가 크게 달라집니다. 신고세액공제 3%는 반영하지 않은 산출세액 기준입니다.</span>
                   </p>
                 </div>
 
@@ -491,7 +496,7 @@ export default function InheritanceVsGiftTaxComparison2026Page() {
                   <strong>법적 근거:</strong> 상속세 및 증여세법 §26(세율)·§18(기초공제)·§19(배우자공제)·§20(자녀·미성년자공제)·§21(일괄공제)·§69(신고세액공제). 사전증여 합산 규정의 상세는 관련 가이드를 참조하세요.
                 </p>
                 <p className="text-xs text-text-tertiary">
-                  <strong>업데이트:</strong> 2026-06-22 작성.
+                  <strong>업데이트:</strong> 2026-06-22 작성, 2026-11-16 수정(상속·증여 예시의 세율 구간·누진공제·사전증여 합산 계산 정정, 신고기한·자녀공제 설명 보완).
                 </p>
               </section>
 
