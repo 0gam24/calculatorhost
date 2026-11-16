@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/monthly-rent-tax-credit-2026/';
 const DATE_PUBLISHED = '2026-05-23';
 const DATE_MODIFIED = '2026-05-23';
 
 export const metadata: Metadata = {
-  title: '월세 세액공제 2026 무주택 직장인 환급 계산 | calculatorhost',
+  title: '월세 세액공제 2026 무주택 직장인 환급 계산 | 750만 원 한도',
   description:
-    '2026년 월세 세액공제 완벽 가이드. 17% vs 15% 공제율, 750만 원 한도, 자격 조건(무주택·7000만 원 이하), 신청 방법, 5월 추가 신고로 환급 받는 법까지 한눈에 정리.',
+    '무주택 세대주는 월세 750만 원 한도로 15~17% 세액공제를 받습니다. 자격 조건과 5월 추가 신고 방법을 정리했습니다.',
   keywords: [
     '월세 세액공제',
     '월세 세액공제 2026',
@@ -38,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '월세 세액공제 2026 무주택 직장인 환급 계산 | calculatorhost' }],
-    title: '월세 세액공제 2026 무주택 직장인 환급 계산',
-    description: '17% vs 15% 공제율 + 750만 한도 + 자격 조건 + 신청 방법 + 실전 사례',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '월세 세액공제 2026 무주택 직장인 환급 계산',
-    description: '17% 공제 + 750만 한도 + 실전 사례 3개 시뮬레이션',
   },
 };
 
@@ -106,7 +102,7 @@ export default function MonthlyRentTaxCreditPage() {
   const articleLd = buildArticleJsonLd({
     headline: '월세 세액공제 2026 무주택 직장인 환급 계산 가이드',
     description:
-      '2026년 월세 세액공제 완벽 가이드. 17% vs 15% 공제율 구분, 750만 원 한도, 자격 조건, 신청 방법, 5월 추가 신고로 환급 받는 법.',
+      '2026년 월세 세액공제 가이드. 17% vs 15% 공제율 구분, 750만 원 한도, 자격 조건, 신청 방법, 5월 추가 신고로 환급 받는 법.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -125,7 +121,7 @@ export default function MonthlyRentTaxCreditPage() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '월세 세액공제 신청하기',
     description: '연말정산 또는 5월 종소세 신고에서 월세 세액공제를 신청하는 단계별 방법',
     steps: [
@@ -150,7 +146,8 @@ export default function MonthlyRentTaxCreditPage() {
         text: '연말정산 결과(2월) 또는 종소세 신고 후(6월 말~7월 초) 환급액 입금 확인. 미반영 시 경정청구로 소급 신청 가능(5년 이내).',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -658,6 +655,7 @@ export default function MonthlyRentTaxCreditPage() {
               </section>
 
               {/* 9. FAQ */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 10. 관련 계산기·가이드 */}
@@ -675,14 +673,14 @@ export default function MonthlyRentTaxCreditPage() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 text-sm hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-semibold text-text-primary mb-1">연말정산 완벽 가이드</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">연말정산 가이드</h3>
                     <p className="text-text-secondary">월세 공제 외 의료비·교육비·기부금 누락 확인</p>
                   </Link>
                   <Link
                     href="/guide/may-comprehensive-income-tax/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 text-sm hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-semibold text-text-primary mb-1">5월 종합소득세 완벽 가이드</h3>
+                    <h3 className="font-semibold text-text-primary mb-1">5월 종합소득세 가이드</h3>
                     <p className="text-text-secondary">5월 말 기한 추가 신고로 환급 받는 법</p>
                   </Link>
                   <Link

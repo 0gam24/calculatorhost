@@ -26,6 +26,8 @@ import {
 } from '@/lib/seo/jsonld';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { TransferTaxCalculator } from './TransferTaxCalculator';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/capital-gains-tax/';
 
@@ -44,15 +46,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '양도소득세 계산기 2026, 1세대1주택 · 일시적2주택',
-    description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도소득세 계산기 2026, 1세대1주택 · 일시적2주택',
-    description: '부동산 양도 시 세금 최종 납부액을 거래 전 정확히 확인하세요.',
   },
 };
 
@@ -144,7 +142,7 @@ export default function TransferTaxPage() {
     dateModified: '2026-07-03',
     isPartOf: getCategoryUrlForCalculator('capital-gains-tax'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '양도소득세 계산기 사용 방법',
     description: '양도가, 취득가, 보유기간을 입력하여 양도소득세를 계산하는 단계별 가이드',
     steps: [
@@ -157,7 +155,8 @@ export default function TransferTaxPage() {
       },
       { name: '양도세 결과 확인', text: '양도차익, 기본세율, 가산세율, 최종 납부액을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -167,7 +166,7 @@ export default function TransferTaxPage() {
     { name: '양도소득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '양도소득세 핵심 용어',
     description: '주택·부동산·주식 양도 시 적용되는 양도소득세 산정 용어집',
     url: 'https://calculatorhost.com/calculator/capital-gains-tax/#glossary',
@@ -200,7 +199,8 @@ export default function TransferTaxPage() {
           '조정대상지역 다주택자 양도 시 기본세율에 가산하는 세율. 2주택자 +20%p, 3주택 이상 +30%p (한시적 유예 적용 시 제외). 근거: 소득세법 §104의7.',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -284,6 +284,7 @@ export default function TransferTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="양도소득세는 부동산 양도(판매) 시 발생한 차익에 부과되는 국세입니다. 기본 누진세율(6~45%), 단기 보유 세율(40~70%), 장기보유특별공제, 1세대1주택 비과세 등 다양한 조건에 따라 세액이 달라집니다(소득세법 §92-§118)."
                 table={{
@@ -800,7 +801,7 @@ export default function TransferTaxPage() {
                       href="/guide/one-household-12-billion-exemption/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      1세대1주택 12억 비과세 한도 완전 정리
+                      1세대1주택 12억 비과세 한도 정리
                     </a>{' '}
                     , 12억 초과분 비례 과세 공식과 장기보유공제 80% 결합 계산
                   </li>
@@ -820,7 +821,7 @@ export default function TransferTaxPage() {
                       href="/guide/long-term-holding-special-deduction-80-percent/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      장기보유특별공제 80% 완전 정리
+                      장기보유특별공제 80% 정리
                     </a>{' '}
                     , 보유 4%×10년 + 거주 4%×10년 = 최대 80% 공제율 표
                   </li>
@@ -830,7 +831,7 @@ export default function TransferTaxPage() {
                       href="/guide/presale-right-capital-gains-tax/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      분양권 양도소득세 완전 정리
+                      분양권 양도소득세 정리
                     </a>{' '}
                     , 보유 기간 무관 60%/70% 단일 세율, 비과세·장특공제 미적용
                   </li>
@@ -926,6 +927,7 @@ export default function TransferTaxPage() {
                   간이계산기 또는 세무사의 안내를 받으시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

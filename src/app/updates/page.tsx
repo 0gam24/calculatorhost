@@ -9,7 +9,6 @@ import {
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
   buildArticleJsonLd,
-  buildItemListJsonLd,
 } from '@/lib/seo/jsonld';
 import { UPDATES_LOG, type UpdateCategory } from '@/lib/constants/updates-log';
 
@@ -17,21 +16,16 @@ const URL = 'https://calculatorhost.com/updates/';
 const PAGE_TITLE = '변경 이력 (Changelog), 2026년 calculatorhost 업데이트';
 
 export const metadata: Metadata = {
-  title: '변경 이력 (Changelog) 2026 | calculatorhost',
+  title: '변경 이력 (Changelog) 2026 | 계산기·세율·금리·제도',
   description:
-    '2026년 calculatorhost 계산기·세율·금리·규제 변경 이력 실시간 업데이트. 신규 계산기 추가, 세법 개정, 금감원 규제, 금리 변동 등 모든 이력을 시계열로 확인하세요.',
+    '세율·금리·제도 변경과 계산기 추가 내역을 시간순으로 기록합니다. 세법 개정과 금감원 규제 소식을 한곳에서 확인할 수 있습니다.',
   alternates: { canonical: URL },
   openGraph: {
-    title: PAGE_TITLE,
-    description:
-      '2026년 calculatorhost 모든 변경 이력, 신규·세율·규제·금리·제도 카테고리별 시계열 업데이트',
     url: URL,
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '변경 이력 (Changelog) 2026',
-    description: '2026년 계산기·세율·규제 변경 이력 실시간 추적',
   },
 };
 
@@ -96,19 +90,7 @@ export default function UpdatesPage() {
     { name: '변경 이력' },
   ]);
 
-  // ItemList: 최신 5건의 변경사항을 LLM 인용용으로 노출
-  const recentUpdates = UPDATES_LOG.slice(0, 5).map((entry) => {
-    const title = entry.calculator
-      ? `${entry.calculator.title}, ${entry.item}`
-      : `${entry.item}`;
-    return {
-      name: title,
-      url: URL,
-      description: entry.detail,
-    };
-  });
-
-  const itemListLd = buildItemListJsonLd(recentUpdates, '최신 변경 이력');
+  // ItemList 는 넣지 않는다. 항목 주소가 모두 이 페이지라 네이버 캐러셀(08-07)의 "요소 간 중복 금지"에 걸린다
 
   return (
     <>
@@ -123,10 +105,6 @@ export default function UpdatesPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
       />
 
       <div className="min-h-screen bg-bg-base">

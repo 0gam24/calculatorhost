@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { NJobberInsuranceCalculator } from './NJobberInsuranceCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/n-jobber-insurance/';
 
@@ -36,15 +37,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: 'N잡러 건강보험 계산기 2026',
-    description: '주근로·부업·기타소득으로 월 건강보험료 및 피부양자 위험을 계산합니다.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'N잡러 건강보험 계산기 2026',
-    description: 'N잡 건강보험료 즉시 계산: 주근로, 부업, 기타소득으로 월보 확인.',
   },
 };
 
@@ -129,7 +126,7 @@ export default function NJobberInsurancePage() {
     dateModified: '2026-06-01',
     isPartOf: getCategoryUrlForCalculator('n-jobber-insurance'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: 'N잡러 건강보험 계산기 사용 방법',
     description:
       '직장 소득, 부업 소득, 기타 소득을 입력하여 월 건강보험료를 계산하는 단계별 가이드',
@@ -152,14 +149,15 @@ export default function NJobberInsurancePage() {
         text: '총 소득이 2,000만 원을 초과하면 피부양자 자격 상실 위험을 경고합니다.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '근로', url: 'https://calculatorhost.com/category/work/' },
-    { name: 'N잡러건강보험' },
+    { name: 'N잡러 건강보험' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -202,7 +200,7 @@ export default function NJobberInsurancePage() {
                 <Breadcrumb
                   items={[
                     { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
+                    { name: '근로', href: '/category/work/' },
                     { name: 'N잡러 건강보험' },
                   ]}
                 />
@@ -225,6 +223,7 @@ export default function NJobberInsurancePage() {
               </>
             }
           >
+            <HowToSteps name={howToData.name} steps={howToData.steps} />
             <StructuredSummary
               definition="N잡러 건강보험은 주 직장 외 추가 소득이 있는 근로자의 건강보험료 계산 방식입니다. 주 근로소득과 추가소득(부업·기타)에 따라 보험료가 달라지며, 추가소득 2,000만원 기준으로 피부양자 자격이 상실될 수 있습니다."
               table={{
@@ -418,20 +417,6 @@ export default function NJobberInsurancePage() {
         </aside>
       </div>
       <Footer />
-
-      {/* JSON-LD 스크립트 */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
     </div>
   );
 }

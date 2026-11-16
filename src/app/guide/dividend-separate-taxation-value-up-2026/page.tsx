@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-06';
 const DATE_MODIFIED = '2026-08-06';
 
 export const metadata: Metadata = {
-  title: '고배당기업 배당소득 분리과세 2026, 신청·유불리 총정리',
+  title: '고배당기업 배당소득 분리과세 2026, 신청·유불리 정리',
   description:
-    '2026년 지급 배당부터 고배당기업 배당소득 분리과세(14~30% 저율)가 도입됐습니다. 종합과세와의 차이, 누구에게 유리한지, 신청서 제출 방법과 밸류업 고배당기업 확인법을 정리했습니다.',
+    '2026년 지급 배당부터 고배당기업 배당소득 분리과세(14~30%)가 도입됐습니다. 종합과세와의 유불리, 신청 방법을 정리했습니다.',
   keywords: [
     '배당소득 분리과세',
     '고배당기업 분리과세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '고배당기업 배당소득 분리과세 2026' }],
-    title: '고배당기업 배당소득 분리과세 2026, 신청·유불리 총정리',
-    description: '2026년 지급 배당부터 14~30% 저율 분리과세 도입. 종합과세와 비교, 유불리 판단, 신청 절차까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '고배당기업 배당소득 분리과세 2026',
-    description: '14~30% 저율 분리과세 신청주의. 고소득 배당 투자자의 종합과세 부담을 낮추는 제도.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function DividendSeparateTaxationValueUp2026Page() {
     { name: '고배당기업 배당소득 분리과세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '고배당기업 배당소득 분리과세 2026, 신청·유불리 총정리',
+    headline: '고배당기업 배당소득 분리과세 2026, 신청·유불리 정리',
     description:
       '2026년 지급 배당부터 도입된 고배당기업 배당소득 분리과세(14~30% 저율). 종합과세 비교, 유불리 판단, 신청 절차, KIND 밸류업 확인법까지 정리한 가이드.',
     url: URL,
@@ -148,7 +143,7 @@ export default function DividendSeparateTaxationValueUp2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   고배당기업 배당소득 분리과세 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">신청·유불리 총정리</span>
+                  <span className="text-2xl text-text-secondary">신청·유불리 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   이 가이드는 배당주에 투자하며 금융소득 종합과세가 부담스러운 투자자를 위한 글입니다. 2026년 지급 배당부터 시행된 고배당기업 배당소득 분리과세가 무엇인지, 종합과세와 어떻게 다른지, 나에게 유리한지, 그리고 어떻게 신청하는지를 순서대로 정리합니다.

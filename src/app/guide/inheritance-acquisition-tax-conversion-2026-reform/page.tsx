@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-22';
 export const metadata: Metadata = {
   title: '유산취득세 전환 2026 개편안, 자녀공제 5억 언제부터',
   description:
-    '2026 세제개편안이 상속세를 유산세에서 유산취득세로 바꾸는 방향을 담았습니다. 유산세와 유산취득세 차이, 자녀공제 5천만원에서 5억원 상향, 지금 상속하면 적용되는지, 시행 목표 2028년까지 정리합니다(상속세 및 증여세법 §13·§20 개정안).',
+    '2026 세제개편안은 상속세를 유산세에서 유산취득세로 바꾸고 자녀공제를 5천만원에서 5억원으로 올리는 방향입니다. 시행 목표는 2028년입니다.',
   keywords: [
     '유산취득세',
     '유산취득세 뜻',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '유산취득세 전환 2026 개편안, 자녀공제 5억 상향 방향' }],
-    title: '유산취득세 전환 2026 개편안, 자녀공제 5억 언제부터',
-    description: '상속세를 각자 받은 재산 기준으로 바꾸는 유산취득세. 자녀공제 5천만원에서 5억원 상향안과 2028년 시행 목표를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '유산취득세 전환 2026 개편안, 자녀공제 5억 방향',
-    description: '유산세에서 유산취득세로. 각자 취득분 기준 과세와 자녀공제 5억 상향안, 시행 목표 2028년.',
   },
 };
 

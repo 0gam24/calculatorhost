@@ -42,6 +42,12 @@ describe('urlsFromChangedFiles', () => {
       'https://calculatorhost.com/calculator/vat/',
     ]);
   });
+  // 검색에 내지 않는(noindex) 위젯 임베드 페이지는 알리지 않는다
+  it('noindex 인 /embed/ 페이지는 뺀다', () => {
+    expect(
+      urlsFromChangedFiles(['src/app/(embed)/embed/salary/page.tsx', 'src/app/embed/loan/page.tsx']),
+    ).toEqual([]);
+  });
 });
 
 describe('isValidKey', () => {

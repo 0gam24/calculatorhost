@@ -33,6 +33,8 @@ import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
 import { calculateLoanLimit, type LoanLimitInput } from '@/lib/finance/loan-limit';
 import { manWon } from '@/lib/quick-tables/format';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
@@ -109,7 +111,7 @@ const CASES: Array<{ title: string; facts: string[]; input: LoanLimitInput }> = 
 export const metadata: Metadata = {
   title: '대출한도 계산기 2026 | DSR·LTV·DTI 통합',
   description:
-    '연소득·집값·지역으로 DSR·LTV와 스트레스 DSR, 수도권 주담대 6억 한도까지 반영해 최대 대출액을 계산합니다.',
+    '연소득·집값·지역으로 LTV와 스트레스 DSR, 수도권 주담대 6억 한도까지 반영해 최대 대출액을 계산합니다.',
   keywords: [
     '대출 한도 계산기',
     'DSR 계산기',
@@ -122,15 +124,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: 'DSR 계산기 · 대출한도 2026, 최대 대출액 확인',
-    description: '연소득·기존 대출·담보가치로 DSR·LTV·DTI 기준 최대 대출액을 즉시 계산',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DSR 계산기 · 대출한도 2026',
-    description: '주택담보대출 한도를 DSR·LTV·DTI로 즉시 계산.',
   },
 };
 
@@ -199,7 +197,7 @@ export default function LoanLimitPage() {
     dateModified: '2026-10-14',
     isPartOf: getCategoryUrlForCalculator('loan-limit'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: 'DSR 계산기 사용 방법',
     description: '연소득, 기존 대출, 담보가치를 입력하여 최대 대출액을 계산하는 단계별 가이드',
     steps: [
@@ -221,18 +219,19 @@ export default function LoanLimitPage() {
         text: 'DSR·LTV·DTI와 최대한도 중 가장 낮은 금액이 실제 가능 대출액입니다.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
-    { name: '대출한도' },
+    { name: '대출한도(DSR/LTV)' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   // GEO/AEO: 본문 핵심 용어를 LLM이 정확히 인용하도록 DefinedTermSet 마크업
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '대출한도 계산 핵심 용어',
     description: '주택담보대출 한도를 결정하는 3대 규제(DSR·LTV·DTI)와 스트레스 DSR 정의',
     url: `${URL}#glossary`,
@@ -263,7 +262,8 @@ export default function LoanLimitPage() {
           '한도를 계산할 때만 약정금리에 가상의 금리를 더해 보수적으로 평가하는 제도. 2026년 10월 수도권·규제지역 주담대 변동형 3.0%p(혼합형 2.4%p, 주기형 1.2%p), 지방 주담대 변동형 0.75%p(2026년 12월 31일까지), 고정형 0.',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -348,6 +348,7 @@ export default function LoanLimitPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="DSR(총부채원리금상환비율)은 모든 대출의 1년 원리금을 연소득으로 나눈 비율로 은행 40%, 2금융권 50% 이하로 묶입니다. LTV(담보인정비율)는 대출액을 집값으로 나눈 비율로 2026년 10월 규제지역 40%, 그 밖의 지역 70%(생애최초 70~80%)이고, 수도권·규제지역은 시가별 주담대 최대한도(6억·4억·2억 원)가 따로 있습니다."
                 table={{
@@ -642,7 +643,7 @@ export default function LoanLimitPage() {
                       href="/guide/dsr-regulation-zones/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      비규제·조정·투기과열 DSR·LTV 규제 완전 정리
+                      비규제·조정·투기과열 DSR·LTV 규제 정리
                     </a>{' '}
                     , 지역별 한도 차이 시뮬레이션
                   </li>
@@ -762,6 +763,7 @@ export default function LoanLimitPage() {
                   </p>
                 </div>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
 

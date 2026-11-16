@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-13';
 export const metadata: Metadata = {
   title: '간주임대료 2026, 3주택·보증금 3억 초과 전세보증금 과세',
   description:
-    '전세보증금도 3주택 이상이면서 합계 3억원을 초과하면 간주임대료로 과세됩니다. 계산식(보증금 초과분 × 60% × 정기예금이자율), 소형주택 제외, 신고 방법을 소득세법 §25로 정리합니다.',
+    '3주택 이상이면서 전세보증금 합계가 3억원을 넘으면 간주임대료로 과세됩니다. 계산식과 소형주택 제외, 신고 방법을 정리했습니다.',
   keywords: [
     '간주임대료',
     '전세보증금 과세',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '간주임대료 2026 3주택 보증금 3억 초과 전세보증금 과세' }],
-    title: '간주임대료 2026, 전세보증금에 붙는 세금 완전정리',
-    description: '3주택 이상·보증금 합계 3억 초과 시 전세보증금도 간주임대료로 과세. 계산식과 소형주택 제외 규정을 정확히.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '간주임대료 2026, 전세보증금에 붙는 세금',
-    description: '3주택 이상·보증금 3억 초과 전세보증금 간주임대료 과세. (보증금-3억)×60%×정기예금이자율. 소득세법 §25.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function DeemedRentalIncome2026Page() {
     { name: '간주임대료 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '간주임대료 2026, 전세보증금에 붙는 세금 완전정리',
+    headline: '간주임대료 2026, 전세보증금에 붙는 세금 정리',
     description:
       '3주택 이상·보증금 합계 3억 초과 시 전세보증금에 매기는 간주임대료. 계산식(초과분 × 60% × 정기예금이자율), 소형주택 제외, 적수 차감, 5월 신고까지 소득세법 §25 기준으로 정리.',
     url: URL,

@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-21';
 export const metadata: Metadata = {
   title: '중도상환수수료 계산·면제 조건 2026 | 대출 빠른 상환 가이드',
   description:
-    '중도상환수수료란 대출을 약정 만기보다 일찍 갚을 때 은행이 부과하는 수수료입니다. 표준 계산 공식, 예시 시뮬레이션, 면제·감면 조건, 갈아타기 시 절감액 비교를 정리합니다. 2026년 기준.',
+    '중도상환수수료는 대출을 약정 만기보다 일찍 갚을 때 은행이 물리는 비용입니다. 계산 공식과 면제 조건을 정리합니다.',
   keywords: [
     '중도상환수수료',
     '조기상환수수료',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '중도상환수수료 계산·면제 조건 2026 | 대출 빠른 상환 가이드' }],
-    title: '중도상환수수료 계산·면제 조건 2026',
-    description: '중도상환수수료 표준 산식, 면제 타이밍, 갈아타기 절감액 비교. 금융소비자보호법 기준 수수료 한계.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '중도상환수수료 계산·면제 조건',
-    description: '대출을 빨리 갚을 때 수수료 계산 방법, 언제 면제되는지 정리.',
   },
 };
 

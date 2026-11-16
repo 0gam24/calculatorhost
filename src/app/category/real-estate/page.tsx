@@ -23,7 +23,7 @@ import {
 const URL = 'https://calculatorhost.com/category/real-estate/';
 
 export const metadata: Metadata = {
-  title: '부동산 계산기 모음 2026 | 부동산 세금 계산기 통합 | calculatorhost',
+  title: '부동산 계산기 모음 2026 | 양도세·취득세·중개수수료·전월세',
   description:
     '양도세·취득세·재산세·종부세·중개수수료·전월세 전환·평수를 2026년 기준으로 계산하는 부동산 계산기 모음입니다.',
   keywords: [
@@ -37,8 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '부동산 계산기 모음 2026',
-    description: '양도세·취득세·중개수수료 계산기 모음',
     url: URL,
     type: 'website',
 
@@ -115,7 +113,7 @@ const FAQ_ITEMS = [
 export default function RealEstateCategoryPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '부동산' },
+    { name: '부동산 계산기' },
   ]);
   const webPageLd = buildWebPageJsonLd({
     name: '부동산 계산기 모음',
@@ -124,10 +122,11 @@ export default function RealEstateCategoryPage() {
     datePublished: '2026-04-24',
   });
   const itemListLd = buildItemListJsonLd(
-    CALCULATORS.map((c) => ({
-      name: c.title,
-      url: `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`,
-    })),
+    // 네이버 캐러셀(08-07): 항목마다 고유 image 필수. 계산기마다 있는 opengraph-image.png 를 쓴다
+    CALCULATORS.map((c) => {
+      const url = `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`;
+      return { name: c.title, url, image: `${url}opengraph-image.png` };
+    }),
   );
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),

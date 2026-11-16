@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-27';
 export const metadata: Metadata = {
   title: '국민연금 분할연금 2026, 이혼하면 배우자 연금 나눠 받는 법',
   description:
-    '이혼하면 전 배우자의 국민연금을 나눠 받을 수 있습니다. 혼인기간 5년 이상 등 4가지 요건, 1/2 균분 원칙, 선청구 제도, 5년 소멸시효를 국민연금법 제64조 기준으로 정리했습니다.',
+    '이혼하면 전 배우자의 국민연금을 나눠 받을 수 있습니다. 혼인기간 5년 이상 등 요건과 1/2 균분 원칙, 소멸시효를 정리했습니다.',
   keywords: [
     '국민연금 분할연금',
     '이혼 국민연금 분할',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 분할연금 2026, 이혼하면 배우자 연금 나눠 받는 법' }],
-    title: '국민연금 분할연금 2026, 이혼 시 배우자 연금 나눠 받는 법',
-    description: '혼인기간 5년 이상 등 4요건, 1/2 균분, 선청구, 5년 소멸시효를 국민연금법 제64조 기준으로 총정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 분할연금 2026, 이혼 시 나눠 받는 법',
-    description: '혼인기간 5년 이상 등 요건과 선청구·소멸시효를 국민연금법 제64조 기준으로 정리.',
   },
 };
 

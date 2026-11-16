@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-19';
 export const metadata: Metadata = {
   title: '조기재취업수당 2026 | 지급요건·계산법·신청시기',
   description:
-    '조기재취업수당은 소정급여일수를 절반 이상 남기고 재취업하면 잔여일수의 절반만큼 구직급여일액을 곱해 지급합니다. 지급요건 3가지, 실제 계산 사례, 청구 시기까지 정리했습니다. 고용보험법 §64 기준.',
+    '소정급여일수를 절반 이상 남기고 재취업하면 남은 실업급여의 반을 조기재취업수당으로 받습니다. 지급요건 3가지와 청구 시기를 정리했습니다.',
   keywords: [
     '조기재취업수당',
     '실업급여 재취업',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '조기재취업수당 2026 | 지급요건·계산법·신청시기' }],
-    title: '조기재취업수당 2026 · 실업급여 남기고 재취업하면 받는 돈',
-    description: '소정급여일수 절반 이상을 남기고 재취업·창업하면 조기재취업수당을 받을 수 있습니다. 지급요건과 정확한 계산법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '조기재취업수당 2026 · 지급요건·계산법·신청시기',
-    description: '구직급여일액 × 잔여 소정급여일수 × 2분의 1. 조기재취업수당의 정확한 계산법과 지급요건, 고용보험법 §64.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function EarlyReemploymentAllowance2026Page() {
     { name: '조기재취업수당 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '조기재취업수당 2026 · 지급요건·계산법·신청시기 완전정리',
+    headline: '조기재취업수당 2026 · 지급요건·계산법·신청시기 정리',
     description:
       '실업급여 수급 중 소정급여일수를 절반 이상 남기고 재취업하면 받는 조기재취업수당. 지급요건 3가지, 구직급여일액 계산 사례, 경계값 판단법, 청구 절차까지 정리.',
     url: URL,

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '주택임대소득 분리과세 2,000만 원 완전 정리 2026 | 종합과세 비교',
+  title: '주택임대소득 분리과세 2,000만 원 완전 정리 2026, 종합과세 비교',
   description:
-    '월세·전세 보증금 임대소득 2,000만 원 이하 → 14% 분리과세 선택 가능(소득세법 §64의2). 1/2/3주택 과세 차이·간주임대료 공식·등록임대 60% 경비율·필요경비 50%·기본공제 정리.',
+    '주택임대소득이 연 2,000만 원 이하면 14% 분리과세를 선택할 수 있습니다. 1·2·3주택별 과세 차이와 간주임대료 공식을 정리했습니다.',
   keywords: [
     '주택임대소득',
     '분리과세 14%',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택임대소득 분리과세 2,000만 원 완전 정리 2026 | 종합과세 비교' }],
-    title: '주택임대소득 분리과세 2,000만 원 완전 정리 2026',
-    description: '14% 분리과세 vs 종합과세·1/2/3주택 차이·간주임대료·등록임대 혜택.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택임대소득 분리과세 2,000만 원 완전 정리 2026',
-    description: '14% 분리과세·1/2/3주택·간주임대료·등록임대.',
   },
 };
 
@@ -88,7 +83,7 @@ export default function HousingRentalIncomeGuide() {
     { name: '주택임대소득 분리과세 2,000만' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택임대소득 분리과세 2,000만 원 완전 정리 2026',
+    headline: '주택임대소득 분리과세 2,000만 원 정리 2026',
     description:
       '월세·전세 보증금 임대소득 2,000만 원 이하 14% 분리과세 선택. 1/2/3주택 과세 차이·간주임대료·등록임대 혜택.',
     url: URL,
@@ -100,7 +95,7 @@ export default function HousingRentalIncomeGuide() {
     keywords: ['주택임대소득', '분리과세', '간주임대료', '등록임대', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '주택임대소득 분리과세 2,000만 원 완전 정리 2026',
+    name: '주택임대소득 분리과세 2,000만 원 정리 2026',
     description: '14% 분리과세 vs 종합과세·1/2/3주택·간주임대료·등록임대.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -132,7 +127,7 @@ export default function HousingRentalIncomeGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  주택임대소득 분리과세 2,000만 원 완전 정리 2026
+                  주택임대소득 분리과세 2,000만 원 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   월세·전세 보증금 임대소득이 연 2,000만 원 이하면 <strong>14% 분리과세</strong>를 선택할 수 있습니다
@@ -286,7 +281,7 @@ export default function HousingRentalIncomeGuide() {
                 </ul>
               </section>
 
-              <ShareButtons title="주택임대소득 분리과세 2,000만 원 완전 정리 2026" url={URL} description="14% 분리과세·1/2/3주택·간주임대료·등록임대 혜택." />
+              <ShareButtons title="주택임대소득 분리과세 2,000만 원 정리 2026" url={URL} description="14% 분리과세·1/2/3주택·간주임대료·등록임대 혜택." />
 
               {/* 출처·면책 */}
               <section

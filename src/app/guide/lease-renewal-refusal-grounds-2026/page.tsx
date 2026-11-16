@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-31';
 export const metadata: Metadata = {
   title: '계약갱신청구권 거절 사유 2026, 집주인 실거주 9가지',
   description:
-    '임대인은 주택임대차보호법 §6의3이 정한 9가지 사유가 있을 때만 임차인의 계약갱신 요구를 거절할 수 있습니다. 실거주 거절의 진위 판단, 거짓 거절 시 손해배상, 갱신 요구 기간을 정리했습니다.',
+    '임대인은 주택임대차보호법 §6의3이 정한 9가지 사유가 있을 때만 계약갱신 요구를 거절할 수 있습니다.',
   keywords: [
     '계약갱신청구권 거절 사유',
     '갱신 거절 9가지',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '계약갱신청구권 거절 사유 2026, 집주인 실거주 9가지' }],
-    title: '계약갱신청구권 거절 사유 2026, 9가지 외에는 못 거절한다',
-    description: '임대인이 갱신을 거절할 수 있는 9가지 법정 사유와, 실거주를 이유로 한 거짓 거절 시 손해배상.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '계약갱신청구권 거절 사유 2026, 집주인 실거주 9가지',
-    description: '9가지 법정 사유 외에는 거절 불가. 주택임대차보호법 §6의3.',
   },
 };
 

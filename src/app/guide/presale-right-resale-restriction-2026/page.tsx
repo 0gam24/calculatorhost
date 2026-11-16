@@ -26,7 +26,7 @@ const DATE_MODIFIED = '2026-08-16';
 export const metadata: Metadata = {
   title: '분양권 전매제한 2026, 기간·위반 처벌·재당첨 제한 정리',
   description:
-    '분양권 전매제한은 당첨된 아파트 분양권을 일정 기간 팔지 못하게 하는 규제입니다(주택법 §64). 지역과 주택 유형에 따라 기간이 다르고, 위반하면 3년 이하 징역 또는 3천만원 이하 벌금과 청약 제한이 따릅니다. 기간 확인법과 유의점을 정리했습니다.',
+    '아파트 분양권을 일정 기간 팔 수 없게 하는 전매제한의 기준과 위반 처벌, 재당첨 제한을 주택법 §64로 정리했습니다.',
   keywords: [
     '분양권 전매제한',
     '전매제한 기간',
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분양권 전매제한 2026 기간과 처벌' }],
-    title: '분양권 전매제한 2026, 기간·위반 처벌·재당첨 제한',
-    description: '분양권을 일정 기간 못 파는 규제(주택법 §64). 위반 시 3년 이하 징역 또는 3천만원 벌금(§101).',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분양권 전매제한 2026, 기간·위반 처벌·재당첨 제한',
-    description: '주택법 §64 전매제한, §101 벌칙, 재당첨 제한까지 한 번에 정리.',
   },
 };
 

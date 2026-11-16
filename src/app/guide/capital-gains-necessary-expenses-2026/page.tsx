@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-12';
 export const metadata: Metadata = {
   title: '양도소득세 필요경비 2026, 취득가·자본적지출·양도비 공제',
   description:
-    '양도소득세를 줄이는 필요경비는 취득가액, 자본적지출, 양도비 3가지입니다. 새시·발코니 확장은 인정되고 도배·장판은 제외됩니다. 증빙 요건과 계산 사례를 소득세법 §97 기준으로 정리합니다.',
+    '양도소득세 필요경비는 취득가액, 자본적지출, 양도비 3가지입니다. 새시·발코니 확장은 인정되고 도배·장판은 빠집니다.',
   keywords: [
     '양도소득세 필요경비',
     '자본적지출 수익적지출',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도소득세 필요경비 2026, 취득가·자본적지출·양도비 공제' }],
-    title: '양도소득세 필요경비 2026, 무엇을 빼면 세금이 줄어드나',
-    description: '취득가액·자본적지출·양도비를 정확히 반영하면 양도세가 수백만원 줄어듭니다. 인정·불인정 항목과 증빙을 소득세법 §97로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도소득세 필요경비 2026, 취득가·자본적지출·양도비',
-    description: '새시 교체는 인정, 도배·장판은 제외. 필요경비 3가지와 증빙 요건. 소득세법 §97.',
   },
 };
 

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-14';
 export const metadata: Metadata = {
   title: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법',
   description:
-    '증여세가 1천만원을 넘으면 2개월 내 분납, 2천만원을 넘으면 담보를 걸고 5년간 연부연납으로 나눠 낼 수 있습니다. 분납과 연부연납의 조건, 금액 한도, 연 3.5% 가산금을 상속세및증여세법 §70·§71 기준으로 정리했습니다.',
+    '증여세가 1천만원을 넘으면 2개월 내 분납, 2천만원 초과면 담보를 걸고 5년간 연부연납할 수 있습니다. 가산금은 연 3.5%입니다.',
   keywords: [
     '증여세 분납',
     '증여세 연부연납',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법' }],
-    title: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법',
-    description: '1천만원 초과 분납, 2천만원 초과 연부연납. 조건·금액 한도·연 3.5% 가산금·담보까지 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법',
-    description: '증여세를 한 번에 못 낼 때 분납·연부연납으로 나눠 내는 조건과 가산금을 정리.',
   },
 };
 

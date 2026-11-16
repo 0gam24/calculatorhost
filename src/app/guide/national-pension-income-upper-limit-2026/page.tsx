@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-28';
 export const metadata: Metadata = {
   title: '국민연금 상한액 인상 2026, 7월부터 고소득 직장인 보험료',
   description:
-    '2026년 7월부터 국민연금 기준소득월액 상한액이 637만원에서 659만원으로 올랐습니다. 상한 소득 가입자의 월 보험료는 최고 626,050원, 직장가입자 본인 부담은 313,025원입니다. 상·하한액 조정 원리를 국민연금법 기준으로 정리했습니다.',
+    '2026년 7월부터 국민연금 기준소득월액 상한액이 637만원에서 659만원으로 올랐습니다. 월 보험료는 최고 626,050원입니다.',
   keywords: [
     '국민연금 상한액',
     '기준소득월액 상한 659만원',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 상한액 인상 2026, 7월부터 고소득 직장인 보험료 변화 정리' }],
-    title: '국민연금 상한액 인상 2026, 7월부터 고소득 직장인 보험료',
-    description: '기준소득월액 상한 637만원에서 659만원으로 인상. 상한 소득 가입자 월 보험료 626,050원, 직장가입자 본인 313,025원. 국민연금법 §88 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 상한액 인상 2026, 상한 소득 보험료 626,050원',
-    description: '기준소득월액 상한 659만원, 하한 41만원. 요율 9.5%, 직장가입자 본인 부담 313,025원. 국민연금법 §88·시행령 §5.',
   },
 };
 
@@ -409,7 +404,7 @@ export default function NationalPensionIncomeUpperLimit2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">4대보험 요율 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">국민연금·건강보험·고용보험·산재보험 요율 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">국민연금·건강보험·고용보험·산재보험 요율 정리.</p>
                   </Link>
                   <Link
                     href="/guide/salary-take-home-2026-july-insurance-increase/"

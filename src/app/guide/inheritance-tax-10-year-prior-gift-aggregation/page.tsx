@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026 | 절세 시뮬',
+  title: '상속세 사전 증여 합산 10년/5년 정리 2026 | 절세 시뮬',
   description:
-    '상속개시일 이전 10년(상속인) / 5년(비상속인) 이내 증여재산은 상속재산에 합산(상증법 §13). 합산 평가는 증여 당시 가액·납부 증여세 공제·10년 초과 증여로 합산 회피·세율 5단계·증여공제 한도 정리.',
+    '사망 전 10년(상속인)·5년(비상속인) 이내 증여재산은 상속재산에 합산됩니다. 증여 당시 가액으로 평가하고 이미 낸 증여세는 공제합니다.',
   keywords: [
     '상속세 사전 증여',
     '10년 합산',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026 | 절세 시뮬' }],
-    title: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026',
-    description: '10년/5년 합산 차이·증여 당시 평가액·이중과세 공제·10년 초과 증여 절세.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026',
-    description: '상속인 10년·비상속인 5년 합산·이중과세 공제·10년 초과 절세.',
   },
 };
 
@@ -88,7 +83,7 @@ export default function InheritanceTax10YearGuide() {
     { name: '상속세 사전 증여 합산 10년/5년' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026',
+    headline: '상속세 사전 증여 합산 10년/5년 정리 2026',
     description:
       '상속개시일 이전 10년/5년 증여재산 합산 규정·증여 당시 평가액·이중과세 공제·10년 초과 절세 전략.',
     url: URL,
@@ -100,7 +95,7 @@ export default function InheritanceTax10YearGuide() {
     keywords: ['상속세', '사전 증여', '10년 합산', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '상속세 사전 증여 합산 10년/5년 완벽 정리 2026',
+    name: '상속세 사전 증여 합산 10년/5년 정리 2026',
     description: '10년/5년 합산 차이·평가액·이중과세 공제·10년 초과 절세.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -132,7 +127,7 @@ export default function InheritanceTax10YearGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  상속세 사전 증여 합산 10년/5년 완벽 정리 2026
+                  상속세 사전 증여 합산 10년/5년 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   상속개시일(사망일) 이전 일정 기간 내 증여재산은 상속재산에 합산되어 상속세 과세 대상이 됩니다
@@ -303,7 +298,7 @@ export default function InheritanceTax10YearGuide() {
                 </ul>
               </section>
 
-              <ShareButtons title="상속세 사전 증여 합산 10년/5년 완벽 정리 2026" url={URL} description="10년 합산·이중과세 공제·10년 초과 절세 전략." />
+              <ShareButtons title="상속세 사전 증여 합산 10년/5년 정리 2026" url={URL} description="10년 합산·이중과세 공제·10년 초과 절세 전략." />
 
               {/* 출처·면책 */}
               <section

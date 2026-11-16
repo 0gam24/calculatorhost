@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-30';
 export const metadata: Metadata = {
   title: '고향사랑기부제 2026, 10만원 전액 세액공제와 답례품 30%',
   description:
-    '고향사랑기부제는 10만원까지 사실상 전액 세액공제되고 기부액의 30% 답례품까지 받습니다. 공제 구조와 10만원·100만원 실제 계산, 신청 방법을 조세특례제한법 §58 기준으로 정리했습니다.',
+    '고향사랑기부제는 10만원까지 사실상 전액 세액공제되고 기부액의 30% 답례품도 받습니다. 100만원 기부 시 계산과 신청 방법을 정리했습니다.',
   keywords: [
     '고향사랑기부제',
     '고향사랑기부금 세액공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '고향사랑기부제 2026, 10만원 전액 세액공제와 답례품 30%' }],
-    title: '고향사랑기부제 2026, 10만원 전액 세액공제와 답례품 30%',
-    description: '10만원까지 사실상 전액 세액공제 + 기부액 30% 답례품. 공제 구조와 실제 계산을 조세특례제한법 §58 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '고향사랑기부제 2026, 10만원 전액 세액공제와 답례품 30%',
-    description: '10만원 기부하면 세액공제로 사실상 전액 돌려받고 답례품 3만원까지. 조세특례제한법 §58.',
   },
 };
 
@@ -325,7 +320,7 @@ export default function HometownLoveDonationTaxCredit2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">공제 항목을 빠짐없이 챙겨 환급액을 늘리는 법.</p>
                   </Link>
                   <Link

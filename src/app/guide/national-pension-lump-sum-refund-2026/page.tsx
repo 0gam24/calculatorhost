@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-24';
 const DATE_MODIFIED = '2026-07-24';
 
 export const metadata: Metadata = {
-  title: '국민연금 반환일시금 2026, 조건·금액·반납 정리 | calculatorhost',
+  title: '국민연금 반환일시금 2026, 조건·금액·반납 정리',
   description:
-    '국민연금 반환일시금은 60세에 가입기간 10년을 못 채웠거나 국적상실·국외이주 시 낸 보험료에 이자를 더해 돌려받는 급여입니다. 지급 조건, 금액 계산, 반납 제도, 청구 시효를 국민연금법 §77 기준으로 정리했습니다.',
+    '60세에 가입기간 10년을 못 채웠거나 국외로 이주하면 낸 보험료에 이자를 더해 돌려받습니다. 반납 제도도 정리했습니다.',
   keywords: [
     '국민연금 반환일시금',
     '국민연금 일시금 수령',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 반환일시금 2026, 조건·금액·반납 정리' }],
-    title: '국민연금 반환일시금 2026, 낸 보험료 이자까지 돌려받는 법',
-    description: '60세 가입 10년 미만·국적상실·국외이주 시 지급. 금액 계산과 반납으로 연금 복원하는 법까지 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 반환일시금 2026, 조건·금액·반납',
-    description: '60세 가입 10년 미만·국적상실·국외이주 시 지급. 보험료 + 이자. 국민연금법 §77.',
   },
 };
 

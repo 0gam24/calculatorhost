@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026년 7월 국민연금 상한액 인상, 실수령액 변화' }],
-    title: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
-    description: '2026년 7월 국민연금 기준소득월액 상한이 637만원에서 659만원으로 올라, 월급 659만원 이상이면 공제액이 월 1만 450원 늘어납니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,9 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026년 7월 국민연금 상한액 인상, 실수령액 변화',
-    description: '2026년 7월 국민연금 기준소득월액 상한이 637만원에서 659만원으로 인상. 월 659만원 이상이면 공제액이 월 1만 450원 늘어납니다.',
-    images: ['/og-default.png'],
   },
 };
 

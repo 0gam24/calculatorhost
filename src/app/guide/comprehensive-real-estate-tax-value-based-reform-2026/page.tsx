@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-10-07';
 export const metadata: Metadata = {
   title: '종부세 주택가액 기준 전환 2026 개편안, 1주택 공제 14억',
   description:
-    '2026 세제개편안 정부안이 9월 1일 확정, 9월 3일 국회에 제출됐습니다. 실거주 1세대1주택 기본공제는 14억으로 상향, 비거주 1주택 9억 축소안과 세부담상한 200% 상향안은 정부안에서 철회되어 현행이 유지됩니다(종합부동산세법 §8·§9·§10 개정안, 2027년부터 단계 시행).',
+    '2026 세제개편안은 실거주 1세대1주택 종부세 기본공제를 14억으로 높이는 내용입니다. 비거주 1주택 9억 축소안은 빠졌습니다.',
   keywords: [
     '종부세 주택가액 기준',
     '종부세 14억',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종부세 주택가액 기준 전환 2026 개편안, 1주택 공제 14억' }],
-    title: '종부세 주택가액 기준 전환 2026 개편안, 1주택 공제 14억',
-    description: '9월 1일 정부안 확정, 9월 3일 국회 제출. 실거주 1주택 공제 14억 상향, 비거주 1주택 9억 축소안은 철회되어 12억 유지. 2027년부터 단계 시행.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종부세 주택가액 기준 전환 2026 개편안',
-    description: '9월 1일 정부안 확정. 실거주 1주택 14억 상향, 비거주 1주택 9억 축소안은 철회(12억 유지). 2027년부터 단계 시행.',
   },
 };
 

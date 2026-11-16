@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-26';
 export const metadata: Metadata = {
   title: '종소세 인적공제 부양가족 150만원 2026 | 직계존비속 형제자매 요건',
   description:
-    '5월 31일 종합소득세 신고! 인적공제 기본공제 1인당 150만원 이해하기. 배우자·부모·자녀·형제자매·위탁아동 공제 요건·경로우대 100만·장애인 200만 추가공제·연소득 100만원 기준·중복 등록 위험·가산세까지 완벽 정리.',
+    '종합소득세 인적공제 기본공제는 1인당 150만원입니다. 배우자·부모·자녀·형제자매 요건과 연소득 100만원 기준을 정리했습니다.',
   keywords: [
     '인적공제',
     '기본공제 150만',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종소세 인적공제 부양가족 150만원 2026 | 직계존비속 형제자매 요건' }],
-    title: '종소세 인적공제 부양가족 150만원 2026 완벽 가이드',
-    description: '본인·배우자·직계존비속·형제자매 공제 요건·추가공제·5월 신고 신청 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종소세 인적공제 부양가족 150만원 | 2026 5월 신고',
-    description: '배우자·부모·자녀·형제자매 공제 요건과 추가공제 정리.',
   },
 };
 
@@ -105,10 +100,10 @@ export default function PersonalDeductionDependent2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '종소세 인적공제 가이드' },
+    { name: '종소세 인적공제' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종소세 인적공제 부양가족 150만원 2026 완벽 가이드',
+    headline: '종소세 인적공제 부양가족 150만원 2026 가이드',
     description:
       '기본공제 1인당 150만원·배우자·부모·자녀·형제자매 공제 요건·경로우대 100만·장애인 200만 추가공제·연소득 100만원 기준 정확 계산·중복 등록 위험·실질과세 원칙·5월 신고 신청 방법.',
     url: URL,
@@ -120,7 +115,7 @@ export default function PersonalDeductionDependent2026Page() {
     keywords: ['인적공제', '부양가족', '소득세법', '150만원', '기본공제'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '종소세 인적공제 부양가족 150만원 2026 완벽 가이드',
+    name: '종소세 인적공제 부양가족 150만원 2026 가이드',
     description:
       '5월 31일 종합소득세 신고! 기본공제 1인당 150만원·배우자·직계존속·직계비속·형제자매·위탁아동 공제 요건 정확 정리·경로우대 100만·장애인 200만 추가공제·연소득 100만원 기준·중복 가능 항목·중복 불가 항목·연명 오류 위험·가산세 위험.',
     url: URL,
@@ -162,7 +157,7 @@ export default function PersonalDeductionDependent2026Page() {
                   5월 31일 종합소득세 신고를 앞두고, 자신과 가족이 받을 수 있는 기본공제를 정확히 파악하는 것이
                   절세의 출발점입니다. 소득세법 §50에 따른 인적공제는 공제 대상자 1인당 150만 원의 소득을 차감하는
                   것인데, 누가 대상이 되는지, 어떤 조건을 만족해야 하는지 자주 헷갈립니다. 이 가이드는 배우자·부모·자녀·형제자매·위탁아동별
-                  정확한 요건과 경로우대·장애인·부녀자·한부모 등 추가공제까지 완벽 정리합니다.
+                  정확한 요건과 경로우대·장애인·부녀자·한부모 등 추가공제까지 정리합니다.
                 </p>
 
                 {/* Structured Summary */}
@@ -663,7 +658,7 @@ export default function PersonalDeductionDependent2026Page() {
                       href="/guide/may-comprehensive-income-tax"
                       className="rounded-lg border border-border-base p-4 hover:bg-bg-card"
                     >
-                      <div className="font-semibold">5월 종합소득세 신고 완벽 가이드</div>
+                      <div className="font-semibold">5월 종합소득세 신고 가이드</div>
                       <p className="text-sm text-text-secondary">
                         신고 대상·기한·홈택스 단계별 신고법·절세까지 한 페이지
                       </p>
@@ -704,7 +699,7 @@ export default function PersonalDeductionDependent2026Page() {
               <ShareButtons
                 title="종소세 인적공제 부양가족 150만원 2026"
                 url={URL}
-                description="기본공제·배우자·부모·자녀·형제자매 공제 요건과 추가공제 완벽 정리."
+                description="기본공제·배우자·부모·자녀·형제자매 공제 요건과 추가공제 정리."
               />
 
               <Footer />

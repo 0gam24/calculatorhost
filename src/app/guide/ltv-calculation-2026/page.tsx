@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: 'LTV 계산법 2026 | 담보인정비율·대출가능액·DSR/DTI 차이',
   description:
-    '2026년 10월 현재 LTV(담보인정비율) 계산법을 쉽게 정리합니다. 규제지역 40%, 그 밖의 지역 70%, 수도권 주담대 최대한도(6억·4억·2억), DSR과의 차이, 실제 대출한도 결정 방식을 설명합니다.',
+    'LTV(담보인정비율) 계산법과 규제지역 40%, 그 밖의 지역 70% 기준, DSR과의 차이를 정리합니다.',
   keywords: [
     'LTV 계산',
     '담보인정비율',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: 'LTV 계산법 2026 | 담보인정비율·대출가능액·DSR/DTI 차이',
-      },
-    ],
-    title: 'LTV 계산법 2026',
-    description: '2026년 10월 기준 LTV 규제지역 40%·그 밖 70%, 수도권 최대한도 6억·4억·2억, DSR과의 관계를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'LTV 계산법 2026',
-    description: '규제지역 40%, 그 밖 70%, 수도권 최대한도 6억 원까지. LTV와 DSR을 함께 통과해야 실제 대출이 나옵니다.',
   },
 };
 

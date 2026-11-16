@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '부부 공동명의 양도세 절세 완전 정리 2026 | 누진세 분산 효과',
+  title: '부부 공동명의 양도세 절세 정리 2026 | 누진세 분산 효과',
   description:
-    '부부 공동명의 부동산 양도 시 명의자별 분리 과세로 누진세 분산 → 절세. 양도소득 명의자별 별도 신고·기본공제 250만 × 2명·장기보유공제 분배·증여 후 매도 전략. 사례별 시뮬 + 법조항.',
+    '부부 공동명의 부동산을 팔면 양도소득이 명의자별로 분리 과세되어 누진세 부담이 줄어듭니다. 기본공제 250만 원도 각자 받습니다.',
   keywords: [
     '부부 공동명의 양도세',
     '공동명의 절세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부부 공동명의 양도세 절세 완전 정리 2026 | 누진세 분산 효과' }],
-    title: '부부 공동명의 양도세 절세 완전 정리 2026',
-    description: '명의자별 누진세 분산·기본공제 2배·장기보유공제 분배·증여 후 매도.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부부 공동명의 양도세 절세 완전 정리 2026',
-    description: '누진세 분산·기본공제 2배·증여 6억 활용.',
   },
 };
 
@@ -88,7 +83,7 @@ export default function JointOwnershipCgtGuide() {
     { name: '부부 공동명의 양도세 절세' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '부부 공동명의 양도세 절세 완전 정리 2026',
+    headline: '부부 공동명의 양도세 절세 정리 2026',
     description:
       '부부 공동명의 부동산 양도 시 명의자별 분리 과세 누진세 분산·기본공제 2배·장기보유공제 분배·사례별 시뮬.',
     url: URL,
@@ -100,7 +95,7 @@ export default function JointOwnershipCgtGuide() {
     keywords: ['부부 공동명의', '양도세 절세', '누진세 분산', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '부부 공동명의 양도세 절세 완전 정리 2026',
+    name: '부부 공동명의 양도세 절세 정리 2026',
     description: '명의자별 분리 과세·누진세 분산·기본공제 2배·장기보유공제 분배.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -132,7 +127,7 @@ export default function JointOwnershipCgtGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  부부 공동명의 양도세 절세 완전 정리 2026
+                  부부 공동명의 양도세 절세 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   부부 공동명의 부동산 양도 시 양도소득은 <strong>명의자별로 분리 과세</strong>됩니다.
@@ -256,14 +251,14 @@ export default function JointOwnershipCgtGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 가이드·계산기</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 단독/공동명의 시뮬</li>
-                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link></li>
+                  <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 정리</Link></li>
                   <li>→ <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link></li>
                   <li>→ <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link></li>
                   <li>→ <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link>, 사전 증여 부담 시뮬</li>
                 </ul>
               </section>
 
-              <ShareButtons title="부부 공동명의 양도세 절세 완전 정리 2026" url={URL} description="명의자별 분리 과세·누진세 분산·기본공제 2배·증여 6억 활용." />
+              <ShareButtons title="부부 공동명의 양도세 절세 정리 2026" url={URL} description="명의자별 분리 과세·누진세 분산·기본공제 2배·증여 6억 활용." />
 
               {/* 출처·면책 */}
               <section

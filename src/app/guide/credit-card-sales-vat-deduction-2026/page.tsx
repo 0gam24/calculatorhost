@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-16';
 export const metadata: Metadata = {
   title: '신용카드 매출세액공제 2026, 부가세 최대 1000만원 깎는 법',
   description:
-    '개인사업자가 신용카드·현금영수증 매출의 1.3%를 부가세에서 빼주는 신용카드 매출세액공제. 부가가치세법 §46 대상 요건, 연 1,000만원 한도, 2027년 축소 예정을 사례로 정리합니다.',
+    '신용카드 매출세액공제는 카드·현금영수증 매출의 1.3%를 연 1,000만원까지 부가세에서 빼 줍니다. 2027년 축소 예정입니다.',
   keywords: [
     '신용카드 매출세액공제',
     '부가세 세액공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '신용카드 매출세액공제 2026, 부가세 최대 1000만원 깎는 법' }],
-    title: '신용카드 매출세액공제 2026, 부가세 1.3% 돌려받기',
-    description: '개인사업자가 카드·현금영수증 매출의 1.3%를 부가세에서 공제받는 제도. 연 1,000만원 한도. 부가가치세법 §46.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '신용카드 매출세액공제 2026, 부가세 최대 1000만원 깎는 법',
-    description: '카드·현금영수증 매출의 1.3%를 부가세 납부세액에서 공제. 연 1,000만원 한도. 부가가치세법 §46.',
   },
 };
 

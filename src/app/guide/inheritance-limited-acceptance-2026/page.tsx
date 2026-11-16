@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-10';
 export const metadata: Metadata = {
   title: '상속 한정승인·상속포기 2026 | 빚 초과 시 3개월 내 신고',
   description:
-    '물려받을 빚이 재산보다 많을 때 고르는 한정승인과 상속포기를 비교했습니다. 민법 §1019가 정한 3개월 기한, 두 제도의 결정적 차이, 법원 신고 절차, 후순위 상속인에게 빚이 넘어가는 함정 사례까지 정리했습니다.',
+    '상속 빚이 재산보다 많으면 사망을 안 날부터 3개월 안에 한정승인이나 상속포기를 골라야 합니다. 두 제도의 차이와 신고 절차를 정리했습니다.',
   keywords: [
     '상속 한정승인',
     '상속포기',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속 한정승인·상속포기 2026 | 빚 초과 시 3개월 내 신고' }],
-    title: '상속 한정승인·상속포기 2026, 채무 초과 시 선택 기준과 3개월 기한',
-    description: '피상속인 채무가 상속재산을 초과할 때 한정승인으로 빚 한도를 제한하거나 상속포기로 상속 자체를 포기할 수 있습니다. 민법 정확한 절차와 판단 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속 한정승인·상속포기 2026, 채무 초과 상황의 정확한 선택',
-    description: '상속채무가 상속재산보다 클 때 한정승인 또는 상속포기로 대응. 민법 §1019 3개월 기한과 신고 절차.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '상속 한정승인·상속포기 2026, 채무 초과 시 선택 기준과 3개월 기한',
     description:
-      '피상속인 채무가 상속재산을 초과할 때의 정확한 대응. 민법 §1019 기한, 한정승인 vs 상속포기 차이, 신고 절차, 함정 사례 완전 정리.',
+      '피상속인 채무가 상속재산을 초과할 때의 정확한 대응. 민법 §1019 기한, 한정승인 vs 상속포기 차이, 신고 절차, 함정 사례 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -434,14 +429,14 @@ export default function InheritanceLimitedAcceptance2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">상속세 계산법 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">누진세율, 공제액, 신고 기한까지 완전 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">누진세율, 공제액, 신고 기한까지 정리.</p>
                   </Link>
                   <Link
                     href="/guide/inheritance-tax-deduction-limit-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">상속세 공제 한도 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">배우자공제, 자녀공제, 기초공제 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">배우자공제, 자녀공제, 기초공제 정리.</p>
                   </Link>
                   <Link
                     href="/guide/inheritance-vs-gift-tax-comparison-2026/"

@@ -24,7 +24,7 @@ const DATE_MODIFIED = '2026-06-28';
 export const metadata: Metadata = {
   title: '전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도',
   description:
-    '2026년 주택임대차보호법 §7에 따른 전월세(월세·보증금) 인상 5% 상한선. 계약갱신 시 임대인이 임차인 동의 없이 인상 불가. 5% 초과 시 위반 처벌·소송 근거.',
+    '계약갱신 때 월세·보증금 인상 한도는 주택임대차보호법 §7에 따라 5%입니다. 초과분은 무효이고, 신규 계약에는 적용되지 않습니다.',
   keywords: [
     '전월세 인상 5% 상한',
     '임대료 인상률 한도',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전월세 인상 5% 상한 계산 2026, 계약갱신 임대료 한도' }],
-    title: '전월세 인상 5% 상한 계산 2026',
-    description: '계약갱신 임대료·보증금 인상 법정 한도 + 계산 사례 + 소송·분쟁 가능성.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

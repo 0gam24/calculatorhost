@@ -20,11 +20,12 @@ import { AreaConverter } from './AreaConverter';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import Link from 'next/link';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/area/';
 const PAGE_TITLE = '평수 계산기 | ㎡↔평 변환·84㎡는 몇 평?';
 const PAGE_DESCRIPTION =
-  '제곱미터와 평을 서로 바꿔 줍니다. 84㎡는 25.41평, 34평은 약 112.40㎡입니다. 전용·공급면적 환산은 하지 않습니다.';
+  '제곱미터와 평을 서로 바꿔 줍니다. 84㎡는 25.41평, 34평은 약 112.40㎡이며 전용·공급면적 환산은 하지 않습니다.';
 const DATE_MODIFIED = '2026-10-10';
 
 export const metadata: Metadata = {
@@ -46,15 +47,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: PAGE_TITLE,
-    description: PAGE_DESCRIPTION,
   },
 };
 
@@ -124,6 +121,8 @@ export default function AreaConversionPage() {
     name: PAGE_TITLE,
     description: PAGE_DESCRIPTION,
     url: URL,
+    // 네이버 소프트웨어 마크업(08-14) applicationCategory 는 실제 분류로
+    applicationCategory: 'UtilitiesApplication',
   });
   const webPageLd = buildWebPageJsonLd({
     name: PAGE_TITLE,
@@ -133,7 +132,7 @@ export default function AreaConversionPage() {
     dateModified: DATE_MODIFIED,
     isPartOf: getCategoryUrlForCalculator('area'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '평수 계산기 사용 방법',
     description:
       '같은 면적의 평과 제곱미터 단위를 양방향으로 환산하고 방 크기로 평수를 구하는 안내',
@@ -156,7 +155,8 @@ export default function AreaConversionPage() {
       },
       { name: '결과 활용', text: '환산값을 매물 비교나 계약서 확인에 참고합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -234,6 +234,7 @@ export default function AreaConversionPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="평은 관습적으로 쓰는 면적 단위입니다. 이 계산기는 1평 = 400/121㎡(약 3.3058㎡), 1㎡ = 0.3025평으로 같은 면적의 단위를 바꿉니다."
                 table={{

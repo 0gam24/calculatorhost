@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-01';
 export const metadata: Metadata = {
   title: '임금체불 대지급금 2026, 간이대지급금 최대 1,000만원 신청',
   description:
-    '임금을 못 받으면 국가가 대신 지급하는 대지급금 제도가 있습니다. 간이대지급금 상한 1,000만원, 재직자·퇴직자 요건, 신청 절차를 임금채권보장법 §7·§7의2 기준으로 정리했습니다.',
+    '임금이 밀렸다면 국가가 대신 주는 간이대지급금으로 최대 1,000만원을 받을 수 있습니다. 재직자·퇴직자 요건과 신청 절차를 정리했습니다.',
   keywords: [
     '임금체불 대지급금',
     '간이대지급금',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '임금체불 대지급금 2026, 간이대지급금 최대 1,000만원 신청' }],
-    title: '임금체불 대지급금 2026, 최대 1,000만원',
-    description: '임금을 못 받으면 국가가 대신 지급. 간이대지급금 상한 1,000만원, 요건과 신청 절차를 임금채권보장법으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '임금체불 대지급금 2026',
-    description: '간이대지급금 최대 1,000만원. 재직자·퇴직자 요건과 신청 절차 정리.',
   },
 };
 

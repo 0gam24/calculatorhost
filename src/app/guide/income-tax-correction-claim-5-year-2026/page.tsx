@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-24';
 export const metadata: Metadata = {
   title: '종소세 경정청구 5년 환급 2026 | 누락 공제·세액공제 회수 방법',
   description:
-    '5월 31일 종소세 마감! 지난 5년 내 잘못 내거나 누락한 공제로 환급받는 경정청구 완벽 가이드. 의료비·교육비·월세·기부금·자녀세액공제 등 자주 누락되는 항목 체크리스트 + 신청 방법 + 환급 일정.',
+    '지난 5년 내 누락한 공제는 경정청구로 환급받을 수 있습니다. 의료비·교육비·월세 등 자주 빠지는 항목과 신청 방법을 정리했습니다.',
   keywords: [
     '경정청구',
     '경정청구 5년',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종소세 경정청구 5년 환급 2026 | 누락 공제·세액공제 회수 방법' }],
-    title: '종소세 경정청구 5년 환급 2026, 누락 공제 찾아 환급받기',
-    description: '지난 5년 신고 시 누락한 공제로 환급받는 경정청구. 의료비·월세·기부금 등 자주 놓친 항목 점검.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5년 이내 누락 공제로 환급받기 (경정청구)',
-    description: '종소세 신고 후 누락한 공제를 찾아 환급받는 경정청구 가이드.',
   },
 };
 
@@ -100,12 +95,12 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '경정청구 5년 환급 가이드' },
+    { name: '경정청구 5년 환급' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합소득세 경정청구 5년 환급 2026 완벽 가이드',
+    headline: '종합소득세 경정청구 5년 환급 2026 가이드',
     description:
-      '지난 5년 신고 시 누락한 공제(의료비·교육비·월세·기부금·자녀세액공제)로 환급받는 경정청구 제도 완벽 정리. 5년 기한 정확 계산·신청 방법·환급 일정·자주 누락되는 항목 체크리스트.',
+      '지난 5년 신고 시 누락한 공제(의료비·교육비·월세·기부금·자녀세액공제)로 환급받는 경정청구 제도 정리. 5년 기한 정확 계산·신청 방법·환급 일정·자주 누락되는 항목 체크리스트.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +110,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
     keywords: ['경정청구', '환급', '누락 공제', '세액공제', '종합소득세'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '종합소득세 경정청구 5년 환급 2026 완벽 가이드',
+    name: '종합소득세 경정청구 5년 환급 2026 가이드',
     description:
       '5월 31일 종소세 마감! 지난 5년 내 누락한 의료비·교육비·월세·기부금·자녀세액공제로 환급받는 경정청구 제도. 5년 기한 정확 계산(법정신고기한+5년) + 자주 누락되는 항목 8가지 + 신청 방법 4단계 + 환급 추적 + 실질과세 주의사항.',
     url: URL,
@@ -592,7 +587,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                       <strong>홈택스</strong>: 신고/납부 {'→'} 신청조회 {'→'} 경정청구 현황 조회
                     </li>
                     <li>
-                      <strong>전화</strong>: 국세청 콜센터 1577-0369 (접수번호 필요)
+                      <strong>전화</strong>: 국세상담센터 국번 없이 126 (접수번호 필요)
                     </li>
                     <li>
                       <strong>세무서 방문</strong>: 해당 지역 세무서 종합소득세 담당 (신분증 지참)
@@ -673,7 +668,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                     className="block rounded-lg border border-border-base bg-bg-card p-3 hover:bg-primary-500/5"
                   >
                     <p className="font-semibold text-primary-700 dark:text-primary-300">
-                      소득공제 vs 세액공제 2026 완벽 가이드
+                      소득공제 vs 세액공제 2026 가이드
                     </p>
                     <p className="mt-1 text-sm text-text-secondary">
                       어느 공제가 유리한지, 누진세 적용 순서 정리
@@ -683,7 +678,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                     href="/guide/monthly-rent-tax-credit-2026/"
                     className="block rounded-lg border border-border-base bg-bg-card p-3 hover:bg-primary-500/5"
                   >
-                    <p className="font-semibold text-primary-700 dark:text-primary-300">월세 세액공제 2026 완벽 정리</p>
+                    <p className="font-semibold text-primary-700 dark:text-primary-300">월세 세액공제 2026 정리</p>
                     <p className="mt-1 text-sm text-text-secondary">
                       무주택 세입자만 가능, 17% vs 15% 차이, 신청 방법
                     </p>
@@ -693,7 +688,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
                     className="block rounded-lg border border-border-base bg-bg-card p-3 hover:bg-primary-500/5"
                   >
                     <p className="font-semibold text-primary-700 dark:text-primary-300">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </p>
                     <p className="mt-1 text-sm text-text-secondary">
                       신고 대상·기한·홈택스 신고 방법·절세 5가지 팁
@@ -748,7 +743,7 @@ export default function IncomeTaxCorrectionClaim5Year2026Page() {
               </section>
 
               <ShareButtons
-                title="경정청구 5년 환급 2026 완벽 가이드"
+                title="경정청구 5년 환급 2026 가이드"
                 url={URL}
                 description="지난 5년 신고 시 누락한 공제로 환급받는 경정청구 제도. 의료비·월세·기부금 등 자주 누락되는 항목 점검."
               />

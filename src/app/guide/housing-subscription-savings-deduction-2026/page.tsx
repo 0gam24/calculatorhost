@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-03';
 export const metadata: Metadata = {
   title: '주택청약저축 소득공제 2026 | 무주택 연 300만 40% 공제',
   description:
-    '주택청약종합저축 납입액의 40% 소득공제 제도. 무주택·연 7천만원 이하 조건, 연 300만원 한도, 최대 120만원 절세. 조세특례제한법 §87 기준, 2028년까지 시행.',
+    '무주택자는 주택청약종합저축 납입액 연 300만원까지 40%를 소득공제받습니다. 연 7천만원 이하 조건과 최대 120만원 절세를 정리했습니다.',
   keywords: [
     '주택청약저축 소득공제',
     '주택청약종합저축',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택청약저축 소득공제 2026 | 무주택·연 300만 40% 공제' }],
-    title: '주택청약저축 소득공제 2026, 연 300만원 40% 공제로 최대 120만원 절세',
-    description: '무주택 세대주·총급여 7천만원 이하면 주택청약종합저축 납입액의 40%를 소득공제. 계산법과 적용 조건 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택청약저축 소득공제 2026, 무주택 연 300만 40% 공제로 절세',
-    description: '무주택·연소득 7천만 이하면 청약저축 납입액 300만원 한도로 40% 공제. 최대 절세 약 18~45만원.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '주택청약저축 소득공제 2026, 무주택 세대주 연 300만원 40% 공제로 최대 120만원 절세',
     description:
-      '주택청약종합저축 납입액의 40% 소득공제 제도. 무주택·연 7천만원 이하 직장인 대상, 연 300만원 한도, 최대 120만원 소득공제, 최대 약 45만원 절세 가능. 계산법, 적용 조건, 추징 위험까지 완전 정리.',
+      '주택청약종합저축 납입액의 40% 소득공제 제도. 무주택·연 7천만원 이하 직장인 대상, 연 300만원 한도, 최대 120만원 소득공제, 최대 약 45만원 절세 가능. 계산법, 적용 조건, 추징 위험까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -114,7 +109,7 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '주택청약저축 소득공제 2026',
     description:
-      '주택청약종합저축 납입액의 40% 소득공제 제도의 대상, 한도, 계산법, 추징 규칙 완전 정리.',
+      '주택청약종합저축 납입액의 40% 소득공제 제도의 대상, 한도, 계산법, 추징 규칙 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -398,14 +393,14 @@ export default function HousingSubscriptionSavingsDeduction2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">소득공제·세액공제 항목과 절세 전략.</p>
                   </Link>
                   <Link
                     href="/guide/housing-subscription-score-84-points-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">청약가점 완벽 가이드 2026</div>
+                    <div className="font-semibold text-primary-500">청약가점 가이드 2026</div>
                     <p className="mt-1 text-sm text-text-secondary">무주택 기간·연령·청약통장 점수 계산.</p>
                   </Link>
                   <Link

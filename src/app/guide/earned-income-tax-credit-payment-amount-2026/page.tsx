@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-07-29';
 const DATE_MODIFIED = '2026-07-29';
 
 export const metadata: Metadata = {
-  title: '근로장려금 얼마 받나 2026, 단독 165·홑벌이 285·맞벌이 330만',
+  title: '근로장려금 얼마 받나 2026, 가구유형별 최대 165만~330만',
   description:
-    '근로장려금 최대 지급액은 단독가구 165만원, 홑벌이 285만원, 맞벌이 330만원입니다. 소득이 늘수록 지급액이 올랐다 줄어드는 점증·평탄·점감 구조와 가구유형 판정 기준을 조세특례제한법 기준으로 정리했습니다.',
+    '근로장려금 최대 지급액은 단독 165만원, 홑벌이 285만원, 맞벌이 330만원입니다. 점증·평탄·점감 구조와 가구유형 판정법을 정리했습니다.',
   keywords: [
     '근로장려금 지급액',
     '근로장려금 얼마',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로장려금 얼마 받나 2026, 단독 165·홑벌이 285·맞벌이 330만' }],
-    title: '근로장려금 얼마 받나 2026, 가구유형별 최대 지급액과 산정 구조',
-    description: '단독 165만·홑벌이 285만·맞벌이 330만. 소득 구간별 점증·평탄·점감 구조와 예상액 계산법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로장려금 얼마 받나 2026, 가구유형별 최대 지급액',
-    description: '단독 165만·홑벌이 285만·맞벌이 330만. 조세특례제한법 §100의5 산정 구조 정리.',
   },
 };
 

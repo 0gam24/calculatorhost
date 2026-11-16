@@ -23,9 +23,9 @@ const DATE_PUBLISHED = '2026-09-22';
 const DATE_MODIFIED = '2026-09-22';
 
 export const metadata: Metadata = {
-  title: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리',
+  title: '축의금 혼수용품 증여세 2026, 과세 기준 정리',
   description:
-    '결혼식 축의금은 원칙적으로 증여세가 없습니다. 하객이 낸 돈은 낸 사람과 받는 사람의 관계별로 귀속이 갈리고, 혼수용품도 통상 필요한 수준이면 비과세입니다(상증법 §46, 시행령 §35④). 예단·예물·혼수 사치품의 과세 경계와 계산 사례까지 정리했습니다.',
+    '통상적인 축의금과 혼수용품은 원칙적으로 증여세가 붙지 않습니다(상증법 §46). 신혼집·자동차처럼 큰 재산이 과세되는 경계를 정리했습니다.',
   keywords: [
     '축의금 증여세',
     '혼수용품 증여세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리' }],
-    title: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리',
-    description: '축의금은 원칙적으로 비과세. 혼수용품도 통상 필요한 범위면 과세되지 않습니다. 상증법 §46·시행령 §35④ 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리',
-    description: '축의금·혼수용품 비과세 요건과 사치품·신혼집·자동차의 과세 경계. 상증법 §46·시행령 §35④.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function WeddingGiftMoneyTax2026Page() {
     { name: '축의금 혼수용품 증여세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리',
+    headline: '축의금 혼수용품 증여세 2026, 과세 기준 정리',
     description:
       '결혼식 축의금과 예단·예물 등 혼수용품의 증여세 비과세 요건, 사치품·신혼집·자동차의 과세 경계, 혼인 증여공제와의 관계를 상증법 §46·시행령 §35④ 기준으로 정리.',
     url: URL,
@@ -151,7 +146,7 @@ export default function WeddingGiftMoneyTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   축의금 혼수용품 증여세 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 과세 기준 완전 정리</span>
+                  <span className="text-2xl text-text-secondary">· 과세 기준 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   결혼을 앞두고 가장 자주 묻는 질문 중 하나가 축의금과 예단·예물 같은 혼수용품에 증여세가 붙는지입니다. 결론부터 말하면 통상적인 수준의 축의금과 혼수용품은 원칙적으로 비과세입니다(상속세 및 증여세법 §46, 시행령 §35④). 다만 이 비과세는 조건이 있고, 신혼집이나 혼수 자동차처럼 큰 재산은 별도로 과세 대상이 됩니다. 이 가이드는 어디까지 비과세이고 어디부터 과세인지, 계산 사례까지 함께 정리합니다.

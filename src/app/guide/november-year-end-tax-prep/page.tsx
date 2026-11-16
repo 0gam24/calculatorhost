@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/november-year-end-tax-prep/';
 const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '11월 연말정산 준비 가이드 2026 | 12월 31일 마감 전 절세 8가지',
+  title: '11월 연말정산 준비 가이드 2026 | 12월 31일 전 절세 8가지',
   description:
-    '12월 31일 마감 전 마지막 절세 기회. 11월 중 연금저축·IRP 추가 납입(900만 한도), 신용카드 사용액 점검, 의료비·기부금·교육비 누락 확인, 청약통장·월세 공제까지 단계별 정리. 직장인 필독.',
+    '직장인 연말정산 절세는 12월 31일까지 챙겨야 합니다. 연금저축·IRP 추가 납입과 신용카드 사용액 점검 등 8가지를 정리했습니다.',
   keywords: [
     '11월 연말정산 준비',
     '연말정산 절세',
@@ -39,9 +40,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '11월 연말정산 준비 가이드 2026 | 12월 31일 마감 전 절세 8가지' }],
-    title: '11월 연말정산 준비 가이드 2026',
-    description: '연금저축·IRP·신용카드·의료비·기부금·청약통장·월세 8가지 절세 항목.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +48,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '11월 연말정산 준비 가이드 2026',
-    description: '12월 31일 마감 전 마지막 절세 기회 8가지.',
   },
 };
 
@@ -87,10 +83,10 @@ export default function NovemberYearEndPrepGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '11월 연말정산 준비 2026' },
+    { name: '11월 연말정산 준비' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '11월 연말정산 준비 완벽 가이드 2026',
+    headline: '11월 연말정산 준비 가이드 2026',
     description:
       '12월 31일 마감 전 11월에 챙겨야 할 절세 8가지: 연금저축·IRP 900만 한도, 신용카드, 의료비, 기부금, 청약통장, 월세 공제.',
     url: URL,
@@ -104,14 +100,14 @@ export default function NovemberYearEndPrepGuide() {
   const webPageLd = buildWebPageJsonLd({
     name: '11월 연말정산 준비 가이드 2026',
     description:
-      '12월 31일 마감 전 마지막 절세 기회 8가지를 한 페이지에 정리. 직장인 필독.',
+      '12월 31일 마감 전 마지막 절세 기회 8가지를 한 페이지에 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '11월 연말정산 준비 8단계 체크리스트',
     description: '12월 31일 마감 전 직장인이 챙겨야 할 절세 항목 8단계',
     steps: [
@@ -148,7 +144,8 @@ export default function NovemberYearEndPrepGuide() {
         text: '12월 후반 추가 공제 신청 시 회사에 미리 알림 (1월 처리 지연 방지).',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -174,7 +171,7 @@ export default function NovemberYearEndPrepGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  11월 연말정산 준비 완벽 가이드 2026
+                  11월 연말정산 준비 가이드 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   12월 31일이 직장인 연말정산 절세 마감일입니다. 11월~12월 중순이 마지막 골든타임.
@@ -281,6 +278,7 @@ export default function NovemberYearEndPrepGuide() {
               </section>
 
               {/* 5. FAQ */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 6. 청약통장·월세 */}
@@ -332,7 +330,7 @@ export default function NovemberYearEndPrepGuide() {
                 <ul className="space-y-2 text-text-secondary">
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>, 연말정산 후 실수령 시뮬</li>
                   <li>→ <Link href="/calculator/child-tax-credit/" className="text-primary-600 underline dark:text-primary-500">자녀세액공제 계산기</Link></li>
-                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link>, 1월 전체 프로세스</li>
+                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 가이드</Link>, 1월 전체 프로세스</li>
                   <li>→ <Link href="/guide/february-tax-refund-tracking/" className="text-primary-600 underline dark:text-primary-500">2월 환급 추적 가이드</Link>, 환급 시점·금액 확인</li>
                   <li>→ <Link href="/guide/financial-income-comprehensive-vs-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">금융소득 종합과세 vs 분리과세</Link>, 12월 결산 전 비교과세 점검</li>
                   <li>→ <Link href="/guide/december-capital-gains-tax-deadline/" className="text-primary-600 underline dark:text-primary-500">12월 양도세 vs 1월 양도세</Link>, 연말 매도 결정 프레임</li>

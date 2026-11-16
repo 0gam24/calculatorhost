@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '분양권 양도세 완전 정리 2026 | 70% / 60% 고정세율 + 입주권 차이',
+  title: '분양권 양도세 완전 정리 2026, 70%·60% 고정세율과 입주권 차이',
   description:
-    '분양권 양도세 1년 미만 70% / 1년 이상 60% 고정세율(소득세법 §104). 누진세 미적용·1세대1주택 비과세 X·장기보유공제 X. 입주권·주택과 차이, 보유기간 기산점, 신고 기한까지 한 페이지에 정리.',
+    '분양권 양도세는 보유 1년 미만 70%, 그 이상 60% 고정세율이 적용되고 누진세와 장기보유공제가 없습니다. 입주권과의 차이도 정리했습니다.',
   keywords: [
     '분양권 양도세',
     '분양권 70%',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분양권 양도세 완전 정리 2026 | 70% / 60% 고정세율 + 입주권 차이' }],
-    title: '분양권 양도세 완전 정리 2026',
-    description: '70%/60% 고정세율·입주권 차이·보유기간 기산점·신고 기한.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분양권 양도세 완전 정리 2026',
-    description: '70%/60% 고정·입주권/주택 차이·보유기간·신고.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function PresaleRightCgtGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '분양권 양도세 완전 정리 2026' },
+    { name: '분양권 양도세 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '분양권 양도세 완전 정리 2026',
+    headline: '분양권 양도세 정리 2026',
     description:
       '분양권 70%/60% 고정세율·1세대1주택 비과세 X·입주권/주택과 차이·보유기간·신고 기한.',
     url: URL,
@@ -100,7 +95,7 @@ export default function PresaleRightCgtGuide() {
     keywords: ['분양권 양도세', '70%', '60%', '입주권', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '분양권 양도세 완전 정리 2026',
+    name: '분양권 양도세 정리 2026',
     description: '분양권 양도세 고정세율 구조와 입주권·주택 차이.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function PresaleRightCgtGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '분양권 양도세 완전 정리' },
+                    { name: '분양권 양도세 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  분양권 양도세 완전 정리 2026, 70% / 60% 고정세율
+                  분양권 양도세 정리 2026, 70% / 60% 고정세율
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   분양권은 일반 주택과 완전히 다른 세제가 적용됩니다. 보유 1년 미만 70%, 1년 이상 60%
@@ -266,7 +261,7 @@ export default function PresaleRightCgtGuide() {
                 </ul>
               </section>
 
-              <ShareButtons title="분양권 양도세 완전 정리 2026" url={URL} description="70%/60% 고정세율·입주권 차이·보유기간·신고." />
+              <ShareButtons title="분양권 양도세 정리 2026" url={URL} description="70%/60% 고정세율·입주권 차이·보유기간·신고." />
 
               {/* 출처·면책 */}
               <section

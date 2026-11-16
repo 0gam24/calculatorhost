@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-19';
 export const metadata: Metadata = {
   title: '문화비 소득공제 2026, 도서 공연 영화 30% 공제 요건',
   description:
-    '총급여 7,000만원 이하 근로자가 도서·공연·영화·박물관·미술관·신문·헬스장 이용료를 신용카드로 결제하면 30%를 문화비 소득공제로 받습니다(조특법 §126의2). 대상·한도·계산과 2026 세제개편안 방향까지 정리했습니다.',
+    '문화비 소득공제로 총급여 7,000만원 이하 근로자는 도서·공연·영화 등 카드 결제액의 30%를 공제받습니다.',
   keywords: [
     '문화비 소득공제',
     '문화비 소득공제 대상',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '문화비 소득공제 2026, 도서 공연 영화 30% 공제 요건' }],
-    title: '문화비 소득공제 2026, 도서 공연 영화 30% 공제 요건과 한도',
-    description: '총급여 7천만원 이하 근로자의 문화비 결제액 30% 소득공제. 대상 품목, 통합 추가한도, 계산 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '문화비 소득공제 2026, 도서 공연 영화 30% 공제',
-    description: '책·공연·영화·헬스장까지 문화비 30% 소득공제. 조특법 §126의2 대상과 한도.',
   },
 };
 

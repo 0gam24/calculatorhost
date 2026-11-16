@@ -22,6 +22,8 @@ import {
 import { CommissionCalculator } from './CommissionCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/broker-fee/';
 const TITLE = '중개수수료 계산기 2026 | 매매·전세·월세 상한·협의요율';
@@ -42,15 +44,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
   },
 };
 
@@ -118,7 +116,7 @@ export default function CommissionPage() {
     dateModified: '2026-10-05T12:50:36Z',
     isPartOf: getCategoryUrlForCalculator('broker-fee'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '중개수수료 계산기 사용 방법',
     description: DESCRIPTION,
     steps: [
@@ -140,7 +138,8 @@ export default function CommissionPage() {
         text: '부가세 포함을 선택한 경우 중개보수의 10%를 더해 예상 지급액을 표시합니다. 실제 부가세 적용 여부는 중개사와 확인하세요.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -150,6 +149,35 @@ export default function CommissionPage() {
     { name: '중개수수료' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+
+  const glossaryData = {
+    name: '중개수수료 핵심 용어',
+    description: '부동산 거래 시 적용되는 중개수수료 산정 용어집',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '중개수수료',
+        alternateName: '중개보수·복비',
+        description:
+          '부동산 거래 시 공인중개사에게 지급하는 수수료. 거래 금액과 물건 종류에 따라 법정 상한요율이 정해짐 (공인중개사법 §32).',
+      },
+      {
+        name: '상한요율',
+        description:
+          '공인중개사법에서 정한 중개수수료의 최대 비율. 거래금액별 구간에 따라 0.3%~0.9%로 다름 (시행규칙 §20).',
+      },
+      {
+        name: '한도액',
+        description:
+          '소액 거래 시 적용되는 중개수수료의 최대 금액. 상한요율로 계산한 금액이 한도액을 초과할 때 한도액이 상한으로 작용 (예: 소액 주택매매 25만원).',
+      },
+      {
+        name: '월세 거래금액',
+        description:
+          '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + 월세×100이 5천만원 미만이면 보증금 + 월세×70으로 다시 계산합니다 (공인중개사법 시행규칙 §20 ⑤).',
+      },
+    ],
+  };
 
   return (
     <>
@@ -181,34 +209,7 @@ export default function CommissionPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            buildDefinedTermSetJsonLd({
-              name: '중개수수료 핵심 용어',
-              description: '부동산 거래 시 적용되는 중개수수료 산정 용어집',
-              url: `${URL}#glossary`,
-              terms: [
-                {
-                  name: '중개수수료',
-                  alternateName: '중개보수·복비',
-                  description:
-                    '부동산 거래 시 공인중개사에게 지급하는 수수료. 거래 금액과 물건 종류에 따라 법정 상한요율이 정해짐 (공인중개사법 §32).',
-                },
-                {
-                  name: '상한요율',
-                  description:
-                    '공인중개사법에서 정한 중개수수료의 최대 비율. 거래금액별 구간에 따라 0.3%~0.9%로 다름 (시행규칙 §20).',
-                },
-                {
-                  name: '한도액',
-                  description:
-                    '소액 거래 시 적용되는 중개수수료의 최대 금액. 상한요율로 계산한 금액이 한도액을 초과할 때 한도액이 상한으로 작용 (예: 소액 주택매매 25만원).',
-                },
-                {
-                  name: '월세 거래금액',
-                  description:
-                    '월세 임대차에서 중개수수료 산정 기준이 되는 금액. 보증금 + 월세×100이 5천만원 미만이면 보증금 + 월세×70으로 다시 계산합니다 (공인중개사법 시행규칙 §20 ⑤).',
-                },
-              ],
-            }),
+            buildDefinedTermSetJsonLd(glossaryData),
           ),
         }}
       />
@@ -258,6 +259,7 @@ export default function CommissionPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="중개수수료(복비)는 부동산 매매·전세·월세 거래 시 공인중개사에게 지급하는 수수료입니다. 거래 금액과 물건 종류(주택·오피스텔·기타)에 따라 법정 상한요율이 정해져 있으며, 중개인과 의뢰인이 그 범위 내에서 자유롭게 협의할 수 있습니다(공인중개사법 §32, 시행규칙 §20)."
                 table={{
@@ -659,6 +661,7 @@ export default function CommissionPage() {
                   협의 후 중개수수료 계약서(또는 중개의뢰 확인서)를 작성하시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

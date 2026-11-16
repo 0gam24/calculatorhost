@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-14';
 export const metadata: Metadata = {
   title: '복식부기 vs 간편장부 2026, 기장의무 기준과 무기장가산세',
   description:
-    '개인사업자·프리랜서 기장의무 구분법. 업종별 수입금액 기준(3억/1.5억/7,500만원)과 복식부기·간편장부 차이, 무기장가산세 20% 계산법까지 사례로 정리(소득세법 160조).',
+    '업종별 수입금액 3억·1.5억·7,500만원을 기준으로 복식부기와 간편장부 의무가 나뉩니다. 무기장가산세 20% 계산법도 정리했습니다.',
   keywords: [
     '복식부기의무자',
     '간편장부대상자',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '복식부기 vs 간편장부 2026, 기장의무 기준과 무기장가산세' }],
-    title: '복식부기 vs 간편장부 2026, 기장의무 기준과 무기장가산세',
-    description: '업종별 직전연도 수입금액에 따라 결정되는 기장의무. 복식부기와 간편장부의 차이, 무기장 시 산출세액 20% 가산세까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '복식부기 vs 간편장부 2026, 기장의무 기준과 무기장가산세',
-    description: '개인사업자·프리랜서 기장의무 완전정리. 업종별 수입금액 기준과 무기장가산세 20%.',
   },
 };
 
@@ -115,7 +110,7 @@ export default function BookkeepingObligation2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '복식부기 vs 간편장부 2026',
     description:
-      '개인사업자·프리랜서 기장의무 완전정리. 업종별 수입금액 기준(3억/1.5억/7,500만원)과 무기장가산세 20%.',
+      '개인사업자·프리랜서 기장의무 정리. 업종별 수입금액 기준(3억/1.5억/7,500만원)과 무기장가산세 20%.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -149,7 +144,7 @@ export default function BookkeepingObligation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   복식부기 vs 간편장부 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">개인사업자·프리랜서 기장의무 완전정리</span>
+                  <span className="text-2xl text-text-secondary">개인사업자·프리랜서 기장의무 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   종합소득세 신고 시즌이 되면 프리랜서와 개인사업자가 가장 먼저 부딪히는 질문이 있습니다. 나는 복식부기의무자인가, 간편장부대상자인가. 이 구분이 왜 중요한지, 업종별 기준선은 정확히 얼마인지, 그리고 장부를 쓰지 않았을 때 부과되는 무기장가산세 20%가 어떻게 계산되는지까지 사례 중심으로 정리해 드립니다.
@@ -393,7 +388,7 @@ export default function BookkeepingObligation2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">프리랜서 3.3% 원천징수</div>
-                    <p className="mt-1 text-sm text-text-secondary">원천징수와 종합소득세 정산 관계 완전정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">원천징수와 종합소득세 정산 관계 정리.</p>
                   </Link>
                   <Link
                     href="/guide/simplified-taxation-vat-2026/"

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-01';
 export const metadata: Metadata = {
   title: '간이과세자 세금계산서 발급 의무 2026, 매출 4,800만원 기준',
   description:
-    '간이과세자도 직전연도 공급대가 4,800만원 이상이면 세금계산서를 의무 발급해야 합니다. 영수증 발급 대상, 매입세액공제, 간이과세 기준까지 부가가치세법 §36 기준으로 정리했습니다.',
+    '간이과세자도 직전연도 공급대가가 4,800만원 이상이면 세금계산서를 발급해야 합니다. 영수증만 주면 되는 경우와 매입세액공제도 정리했습니다.',
   keywords: [
     '간이과세자 세금계산서',
     '세금계산서 발급 의무',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '간이과세자 세금계산서 발급 의무 2026, 매출 4,800만원 기준' }],
-    title: '간이과세자 세금계산서 발급 의무 2026',
-    description: '직전연도 공급대가 4,800만원 이상 간이과세자는 세금계산서 의무 발급. 영수증 대상과 매입세액공제까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '간이과세자 세금계산서 발급 의무 2026',
-    description: '공급대가 4,800만원 기준으로 갈리는 세금계산서 의무 발급과 영수증 발급을 정리.',
   },
 };
 

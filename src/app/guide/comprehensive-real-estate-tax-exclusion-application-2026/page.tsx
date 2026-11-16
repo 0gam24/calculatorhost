@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-04';
 export const metadata: Metadata = {
   title: '종부세 합산배제 신고 2026, 9월 16~30일 임대주택 빼는 법',
   description:
-    '등록 임대주택이 있는데 종합부동산세 고지서에 그대로 합산돼 세금이 크게 나온다면, 9월 16일부터 30일까지 합산배제 신고를 놓쳤을 가능성이 큽니다. 대상 주택, 신고 기간, 최초 신고 후 변동신고까지 종합부동산세법 §8 기준으로 정리했습니다.',
+    '등록 임대주택을 종합부동산세에서 빼려면 매년 9월 16일부터 30일까지 합산배제 신고를 해야 합니다. 대상과 변동신고를 정리했습니다.',
   keywords: [
     '종부세 합산배제',
     '합산배제 신고 9월',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 합산배제 신고 2026' }],
-    title: '종부세 합산배제 신고 2026, 9월 16~30일 임대주택 빼는 법',
-    description: '등록 임대주택을 종부세 과세대상에서 빼는 합산배제 신고. 9월 16~30일 신고 기간과 대상 주택 요건을 종부세법 §8 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종부세 합산배제 신고 2026, 9월 16~30일 임대주택 제외',
-    description: '9월 16~30일 합산배제 신고로 등록 임대주택을 종부세에서 제외. 최초 신고 후 변동 없으면 재신고 불필요. 종부세법 §8.',
   },
 };
 

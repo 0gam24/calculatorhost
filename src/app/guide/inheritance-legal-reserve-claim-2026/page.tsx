@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-09';
 export const metadata: Metadata = {
   title: '유류분 2026, 반환청구 계산과 형제자매 위헌 정리',
   description:
-    '유류분은 직계비속·배우자가 법정상속분의 1/2, 직계존속이 1/3을 보장받는 최소한의 상속 몫입니다. 2024년 형제자매 유류분 위헌, 계산법, 반환청구 소멸시효 1년·10년을 민법 조문으로 정리했습니다.',
+    '유류분은 최소 상속 몫으로 직계비속·배우자는 법정상속분의 1/2, 직계존속은 1/3입니다. 2024년 형제자매 위헌과 청구 기한을 정리했습니다.',
   keywords: [
     '유류분',
     '유류분 계산',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '유류분 2026 반환청구 계산' }],
-    title: '유류분 2026, 반환청구 계산과 형제자매 위헌 정리',
-    description: '직계비속·배우자 1/2, 직계존속 1/3. 2024년 형제자매 유류분 위헌, 계산 공식, 소멸시효 1년·10년을 민법 조문으로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '유류분 2026 반환청구 계산과 형제자매 위헌',
-    description: '유류분 비율·계산 공식·소멸시효를 민법 §1112~§1117로 정리. 2024년 형제자매 유류분 위헌 반영.',
   },
 };
 

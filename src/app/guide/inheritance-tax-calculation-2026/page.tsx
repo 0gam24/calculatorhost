@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-21';
 const DATE_MODIFIED = '2026-06-21';
 
 export const metadata: Metadata = {
-  title: '상속세 계산법 2026 | 과세표준·공제·납부세액 완벽 가이드 | calculatorhost',
+  title: '상속세 계산법 2026 | 과세표준부터 최종 납부세액까지',
   description:
-    '상속세를 직접 계산하는 방법을 단계별로 정리했습니다. 5단계 누진세율과 일괄공제 5억원, 배우자공제, 신고세액공제를 순서대로 적용해 실제 납부액을 구하는 과정을 사례와 함께 보여드립니다. 상증세법 §26 기준입니다.',
+    '상속세는 일괄공제 5억원과 배우자공제를 뺀 과세표준에 5단계 누진세율을 곱해 계산합니다. 신고세액공제까지 사례로 정리했습니다.',
   keywords: [
     '상속세 계산',
     '상속세율 2026',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 계산법 2026 | 과세표준·공제·납부세액 완벽 가이드 | calculatorhost' }],
-    title: '상속세 계산법 2026',
-    description: '상속재산부터 최종 납부세액까지. 5단계 누진세율과 각종 공제 정확히 계산하는 법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

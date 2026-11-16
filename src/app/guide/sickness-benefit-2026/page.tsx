@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-12';
 export const metadata: Metadata = {
   title: '상병수당 2026, 아파서 쉬어도 받는 지원금 신청 조건',
   description:
-    '업무 외 질병·부상으로 일하지 못할 때 소득을 보전해 주는 상병수당 시범사업. 하루 지원금액, 신청 자격, 시범 지역, 대기기간과 신청 방법을 국민건강보험법 §50 부가급여 기준으로 정리했습니다.',
+    '상병수당은 업무 외 질병·부상으로 일하지 못할 때 소득 일부를 보전해 주는 시범사업입니다. 하루 지원금액과 신청 자격을 정리했습니다.',
   keywords: [
     '상병수당',
     '상병수당 신청',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상병수당 2026, 아파서 쉬어도 받는 지원금 신청 조건' }],
-    title: '상병수당 2026, 아파서 쉬어도 하루 최대 6만원대 받는 법',
-    description: '업무 외 질병으로 일 못할 때 소득 보전. 시범지역 취업자 대상, 평균임금 60% 지급. 국민건강보험법 §50.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상병수당 2026 신청 조건과 금액',
-    description: '아파서 일 못 쉴 때 소득 보전하는 상병수당 시범사업. 지역·금액·신청 방법 정리.',
   },
 };
 

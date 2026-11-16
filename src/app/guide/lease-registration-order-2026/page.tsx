@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-11';
 const DATE_MODIFIED = '2026-07-11';
 
 export const metadata: Metadata = {
-  title: '임차권등기명령 2026 | 임대차 종료 후 보증금 못 받았을 때 대항력 유지법',
+  title: '임차권등기명령 2026 | 보증금 못 받았을 때 대항력 유지법',
   description:
-    '보증금 미반환 시 임차인 단독 신청 가능한 임차권등기명령. 신청 요건, 절차, 효과(대항력·우선변제권 유지) 및 2023년 개정(전 송달 집행) 정리. 주택임대차보호법 3조의3.',
+    '보증금을 못 받고 이사해야 할 때 임차권등기명령으로 대항력과 우선변제권을 유지할 수 있습니다. 신청 요건과 절차를 정리했습니다.',
   keywords: [
     '임차권등기명령',
     '임대차 종료',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '임차권등기명령 2026 | 임대차 종료 후 보증금 못 받았을 때 대항력 유지법' }],
-    title: '임차권등기명령 2026, 보증금 못 받고 이사할 때 대항력 유지 법',
-    description: '임대차 끝나고 보증금을 반환받지 못했다면 법원 임차권등기명령 신청으로 대항력과 우선변제권 유지. 절차와 효과를 완벽 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '임차권등기명령 2026, 보증금 못 받으면 대항력 유지하는 법',
-    description: '임대차 끝난 후 보증금을 못 받았다면 임차권등기명령으로 이사 후에도 대항력 유지 가능. 주택임대차보호법 3조의3.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function LeaseRegistrationOrder2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '임차권등기명령 2026, 임대차 종료 후 보증금 못 받았을 때 대항력 유지 방법',
     description:
-      '보증금 미반환 시 임차인 단독 신청 가능한 임차권등기명령. 신청 요건, 절차, 효과와 2023년 개정(전 송달 집행)으로 강화된 보호 장치까지 완전 정리.',
+      '보증금 미반환 시 임차인 단독 신청 가능한 임차권등기명령. 신청 요건, 절차, 효과와 2023년 개정(전 송달 집행)으로 강화된 보호 장치까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +110,7 @@ export default function LeaseRegistrationOrder2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '임차권등기명령 2026',
     description:
-      '임대차 종료 후 보증금 미반환 시 임차인이 법원 신청으로 대항력과 우선변제권을 유지하는 임차권등기명령 제도의 완벽 가이드.',
+      '임대차 종료 후 보증금 미반환 시 임차인이 법원 신청으로 대항력과 우선변제권을 유지하는 임차권등기명령 제도의 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -416,7 +411,7 @@ export default function LeaseRegistrationOrder2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">전세 보증금 안전 수칙</div>
-                    <p className="mt-1 text-sm text-text-secondary">임대차 시작부터 종료까지 보증금 보호 전략 완벽 가이드.</p>
+                    <p className="mt-1 text-sm text-text-secondary">임대차 시작부터 종료까지 보증금 보호 전략 가이드.</p>
                   </Link>
                   <Link
                     href="/guide/lease-priority-right-fixed-date-2026/"

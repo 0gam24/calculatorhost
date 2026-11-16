@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   title: {
     // 페이지마다 metadata.title 에 이미 "| calculatorhost" 가 포함돼 있으므로
     // template 에 사이트명을 추가하지 않음 (중복 방지). 사이트명 미포함 페이지는 default 사용.
-    default: 'calculatorhost, 2026 최신 세율 반영 한국 계산기 모음',
+    default: 'calculatorhost | 세금·금융·부동산 계산기',
     template: '%s',
   },
   description:
-    '연봉 실수령액·양도세·취득세·대출이자 등 한국 생활 금융 계산기를 2026년 최신 세율로 제공합니다. 무료·회원가입 불필요·모바일 최적.',
+    '연봉 실수령액, 양도세, 취득세, 대출이자를 회원가입 없이 바로 계산하고 결과의 법적 근거까지 확인하세요.',
   applicationName: 'calculatorhost',
   authors: [{ name: 'calculatorhost' }],
   generator: 'Next.js',
@@ -29,28 +29,25 @@ export const metadata: Metadata = {
     canonical: '/',
     languages: { 'ko-KR': '/' },
   },
+  // og·twitter 의 제목/설명/주소는 여기서 정하지 않는다. 페이지 metadata 의 title·description 을
+  // Next 가 그대로 이어받아 og:title·twitter:title 이 페이지 제목과 같아진다
+  // (네이버 콘텐츠 마크업 04-02, 검색노출 제목 FAQ 12-01). og:url 은 페이지마다 canonical 로 지정.
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://calculatorhost.com',
     siteName: 'calculatorhost',
-    title: 'calculatorhost, 2026 최신 세율 반영 한국 계산기 모음',
-    description: '연봉·양도세·취득세·대출이자 등 한국 생활 금융 계산기. 무료·회원가입 불필요.',
     images: [
       {
         url: '/og-default.png',
         width: 1200,
         height: 630,
-        alt: 'calculatorhost, 2026 한국 생활 계산기 모음',
+        alt: 'calculatorhost 세금·금융·부동산 계산기',
         type: 'image/png',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'calculatorhost',
-    description: '2026 최신 세율 반영 한국 계산기 모음',
-    images: ['/og-default.png'],
   },
   verification: {
     // 빈 값·placeholder 상태에선 메타 미생성 (length > 10 미만이면 무효 토큰으로 판단)
@@ -68,16 +65,20 @@ export const metadata: Metadata = {
         : {}),
     },
   },
+  // 네이버 파비콘 가이드(04-04): href 는 절대 경로, 같은 rel 값은 한 개만.
+  // 네이버 우선순위 1 인 shortcut icon 에 ICO(16·32·48px), 브라우저 탭용 icon 에 SVG.
   icons: {
-    icon: [
-      { url: '/favicon.ico', sizes: 'any' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
-    apple: [{ url: '/apple-icon.png', sizes: '180x180' }],
+    shortcut: [{ url: 'https://calculatorhost.com/favicon.ico' }],
+    icon: [{ url: 'https://calculatorhost.com/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: 'https://calculatorhost.com/apple-icon.png', sizes: '180x180' }],
   },
   manifest: '/site.webmanifest',
   category: 'finance',
   formatDetection: { telephone: false, email: false, address: false },
+  other: {
+    // 네이버 콘텐츠 마크업(04-02) 소셜 미디어 예시의 twitter:domain
+    'twitter:domain': 'calculatorhost.com',
+  },
 };
 
 export const viewport: Viewport = {

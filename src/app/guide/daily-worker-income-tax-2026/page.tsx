@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-11';
 export const metadata: Metadata = {
   title: '일용직 근로소득세 2026, 일당 세금 원천징수·공제·분리과세',
   description:
-    '건설 현장이나 단기 알바로 일한 일용근로자의 원천징수 세금을 계산하는 방법입니다. 일급 15만원 공제와 6% 세율을 적용하는 순서, 분리과세라서 5월 종합소득세 신고에 합산되지 않는 이유를 소득세법 §14③·§134 근거로 정리했습니다.',
+    '일용근로자 세금은 일급에서 15만원을 빼고 6% 세율을 적용해 원천징수합니다. 분리과세라 5월 종합소득세 신고에 합산하지 않습니다.',
   keywords: [
     '일용근로소득세',
     '일급 원천징수',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '일용직 근로소득세 2026, 일당 세금 원천징수·공제·분리과세' }],
-    title: '일용직 근로소득세 2026, 일당 세금 원천징수·공제·분리과세',
-    description: '일급 15만원 공제 후 6% 세율 적용, 실효 약 2.7%. 건설일용·단기 알바 원천징수 완벽 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '일용직 근로소득세 2026, 일당 세금 원천징수·공제·분리과세',
-    description: '일급 15만원 공제, 세율 6%, 실효 약 2.7%. 분리과세로 종합소득세 비포함.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function DailyWorkerIncomeTax2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '일용직 근로소득세 2026, 일당 세금 원천징수·공제·분리과세',
     description:
-      '건설·단기 알바 일용근로자 원천징수 세금 완벽 정리. 일급 15만원 공제, 세율 6%, 실효 약 2.7%, 분리과세로 종합소득세 비포함.',
+      '건설·단기 알바 일용근로자 원천징수 세금 정리. 일급 15만원 공제, 세율 6%, 실효 약 2.7%, 분리과세로 종합소득세 비포함.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

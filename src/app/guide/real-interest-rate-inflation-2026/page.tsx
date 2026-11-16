@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-28';
 export const metadata: Metadata = {
   title: '실질금리 계산 2026, 예금 이자가 물가를 이기려면',
   description:
-    '명목금리와 실질금리의 차이를 명확히 이해하고, 세후 명목금리에서 물가상승률을 차감하는 실질 수익률을 계산합니다. 피셔방정식·이자소득세 15.4% 반영.',
+    '실질금리는 세후 명목금리에서 물가상승률을 뺀 값입니다. 이자소득세 15.4%와 피셔방정식을 반영해 예금의 실제 수익률을 계산합니다.',
   keywords: [
     '실질금리',
     '실질수익률',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '실질금리 계산 2026, 예금 이자가 물가를 이기려면',
-      },
-    ],
-    title: '실질금리 계산 2026',
-    description: '명목금리 vs 실질금리. 당신의 예금 수익률을 제대로 계산해보세요.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '실질금리 계산 2026',
-    description: '예금 이자가 물가를 이기는지 확인하는 실질 수익률 계산법',
   },
 };
 

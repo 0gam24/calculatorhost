@@ -2,7 +2,9 @@
  * OG 이미지 자동 생성
  *
  * 1) public/og-default.svg → public/og-default.png (1200x630, fallback)
- * 2) src/app/calculator/{slug}/opengraph-image.png — 27 페이지별 동적 OG
+ * 2) src/app/calculator/{slug}/opengraph-image.png — 계산기별 OG
+ * 3) src/app/guide/{slug}/opengraph-image.png (+ .alt.txt) — 가이드별 OG (제목 줄바꿈 템플릿)
+ * 4) 단일 페이지·가이드 카테고리 OG
  *
  * Next.js App Router 의 opengraph-image 파일 컨벤션을 사용 → page.tsx 수정 불필요.
  * 빌드 시 og:image / og:image:width / og:image:height 자동 등록.
@@ -11,7 +13,7 @@
  */
 
 import sharp from 'sharp';
-import { readFileSync, existsSync, statSync } from 'node:fs';
+import { readFileSync, existsSync, statSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 
 const ROOT = process.cwd();
@@ -61,6 +63,7 @@ const CALCULATORS = [
   { slug: 'd-day', title: 'D-day', category: '생활' },
   { slug: 'weekly-holiday-allowance', title: '주휴수당', category: '근로' },
   { slug: 'annual-leave', title: '연차', category: '근로' },
+  { slug: 'dti', title: 'DTI', category: '금융' },
 ];
 
 // 5개 카테고리 허브 페이지 메타
@@ -72,31 +75,46 @@ const CATEGORIES = [
   { slug: 'lifestyle', title: '생활 계산기', category: '생활' },
 ];
 
-// 가이드 14개 메타 — sitemap GUIDE_SLUGS 와 일치
-const GUIDES = [
-  { slug: 'tax-calendar-2026', title: '2026 세금 캘린더', category: '세금' },
-  { slug: 'year-end-tax-settlement', title: '연말정산 완벽 가이드', category: '세금' },
-  { slug: 'january-vehicle-tax-prepayment', title: '자동차세 연납 6.4% 할인', category: '세금' },
-  { slug: 'february-tax-refund-tracking', title: '2월 환급 추적 + 5월 종소세 준비', category: '세금' },
-  { slug: 'march-corporate-tax', title: '3월 법인세 신고 가이드', category: '세금' },
-  { slug: 'april-vat-preliminary-q1', title: '4월 부가세 1기 예정신고', category: '세금' },
-  { slug: 'april-comprehensive-property-tax-exclusion', title: '4월 종부세 합산배제 신청', category: '세금' },
-  { slug: 'may-comprehensive-income-tax', title: '5월 종합소득세 신고 가이드', category: '세금' },
-  { slug: 'june-property-tax', title: '재산세 완벽 가이드', category: '세금' },
-  { slug: 'dsr-loan-limit-tips', title: 'DSR 한도 늘리는 5가지', category: '금융' },
-  { slug: 'averaging-down-vs-loss-cut', title: '물타기 vs 손절', category: '금융' },
-  { slug: 'capital-gains-tax-tips', title: '양도세 절세 7가지', category: '세금' },
-  { slug: 'dsr-regulation-zones', title: 'DSR·LTV 규제지역 정리', category: '금융' },
-  { slug: 'freelancer-salary-comparison', title: '프리랜서 vs 일반직 실수령액', category: '근로' },
+// 가이드 전체 — 가이드 SSoT(src/app/guide/page.tsx GUIDES)의 slug·title·category 를 읽는다.
+// 네이버 콘텐츠 마크업(04-02): og:image 는 문서마다 고유해야 썸네일로 쓰인다 (사이트 공통 이미지는 무시될 수 있음).
+function parseGuides() {
+  const source = readFileSync(resolve(ROOT, 'src/app/guide/page.tsx'), 'utf8');
+  const entry = /slug:\s*'([^']+)',\s*title:\s*(['"])((?:(?!\2)[^\\]|\\.)*)\2,[\s\S]*?category:\s*'([^']+)'/g;
+  const guides = [];
+  let m;
+  while ((m = entry.exec(source))) {
+    guides.push({ slug: m[1], title: m[3].replace(/\\(.)/g, '$1'), category: m[4] });
+  }
+  return guides;
+}
+
+// 주요 단일 페이지 메타 — 페이지마다 고유 OG (네이버 04-02, 카톡·SNS 공유 미리보기)
+const SINGLES = [
+  { slug: 'updates', title: '계산기 변경 이력', label: '업데이트' },
+  { slug: 'guide', title: '세금·금융·부동산 가이드 모음', label: '가이드' },
+  { slug: 'glossary', title: '금융·세금·투자 용어사전', label: '용어사전' },
+  { slug: 'about', title: 'calculatorhost 소개, 운영자 김준혁', label: '소개' },
+  { slug: 'contact', title: 'calculatorhost 문의', label: '문의' },
+  { slug: 'privacy', title: '개인정보처리방침', label: '정책' },
+  { slug: 'terms', title: '이용약관', label: '정책' },
+  { slug: 'feeds', title: '피드 구독, RSS·Atom·JSON Feed', label: '구독' },
+  { slug: 'embed-widgets', title: '무료 계산기 위젯 삽입', label: '위젯' },
+  { slug: 'affiliate-disclosure', title: '어필리에이트 공시', label: '정책' },
+  { slug: 'guide/category/tax', title: '세금 가이드 모음', label: '가이드' },
+  { slug: 'guide/category/tax-real-estate', title: '세금·부동산 가이드 모음', label: '가이드' },
+  { slug: 'guide/category/finance', title: '금융 가이드 모음', label: '가이드' },
+  { slug: 'guide/category/investment', title: '투자 가이드 모음', label: '가이드' },
+  { slug: 'guide/category/work', title: '근로 가이드 모음', label: '가이드' },
 ];
 
-// 주요 단일 페이지 메타 — 글로벌 OG 분리 (브런치·카톡 공유 이미지 차별화)
-const SINGLES = [
-  { slug: 'updates', title: '변경 이력 (Changelog) 2026', category: '세금' },
-  { slug: 'guide', title: '가이드 — 세금·금융·부동산', category: '세금' },
-  { slug: 'glossary', title: '용어사전 28개 — DSR·LTV·양도세', category: '금융' },
-  { slug: 'about', title: '운영자 정보 — 김준혁·스마트데이터샵', category: '생활' },
-];
+// 가이드 카테고리 → 색상 키 (CATEGORY_ACCENT)
+function accentKeyFor(category) {
+  if (category.includes('부동산')) return '부동산';
+  if (category.includes('세금')) return '세금';
+  if (/근로|보험|연금/.test(category)) return '근로';
+  if (/금융|투자|대출/.test(category)) return '금융';
+  return '생활';
+}
 
 /**
  * 페이지별 OG SVG 템플릿
@@ -172,6 +190,98 @@ function escapeXml(s) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;')
     .replace(/'/g, '&apos;');
+}
+
+// 글자 폭 근사 (한글·한자 1em, 영문 대문자·숫자 0.62em, 소문자 0.55em, 공백 0.3em, 기호 0.45em)
+function textWidth(text, size) {
+  let width = 0;
+  for (const ch of text) {
+    const code = ch.codePointAt(0);
+    if ((code >= 0xac00 && code <= 0xd7a3) || (code >= 0x3130 && code <= 0x318f) || (code >= 0x4e00 && code <= 0x9fff))
+      width += size;
+    else if (/[A-Z0-9]/.test(ch)) width += size * 0.62;
+    else if (/[a-z]/.test(ch)) width += size * 0.55;
+    else if (ch === ' ') width += size * 0.3;
+    else width += size * 0.45;
+  }
+  return width;
+}
+
+// 제목을 maxWidth 안에 들어가게 줄바꿈. 공백 단위로 채우고, 한 단어가 넘치면 글자 단위로 자른다.
+function wrapTitle(title, size, maxWidth) {
+  const lines = [];
+  let line = '';
+  for (const word of title.split(' ')) {
+    const candidate = line ? `${line} ${word}` : word;
+    if (textWidth(candidate, size) <= maxWidth) {
+      line = candidate;
+      continue;
+    }
+    if (line) lines.push(line);
+    line = '';
+    for (const ch of word) {
+      if (textWidth(line + ch, size) > maxWidth) {
+        lines.push(line);
+        line = '';
+      }
+      line += ch;
+    }
+  }
+  if (line) lines.push(line);
+  return lines;
+}
+
+/**
+ * 가이드·단일 페이지 OG 템플릿. 계산기 템플릿과 같은 다크 카드에 글 제목을 줄바꿈해 넣는다.
+ * "계산기 2026" 같은 계산기 전용 문구는 넣지 않는다 (네이버 03-02 ⑤ 내용과 맞는 썸네일).
+ */
+function buildPageSvg({ title, label, accentKey }) {
+  const accent = CATEGORY_ACCENT[accentKey] ?? CATEGORY_ACCENT.생활;
+  const maxWidth = 960;
+  let size = 64;
+  let lines = wrapTitle(title, size, maxWidth);
+  while (lines.length > 3 && size > 44) {
+    size -= 6;
+    lines = wrapTitle(title, size, maxWidth);
+  }
+  if (lines.length > 3) {
+    lines = lines.slice(0, 3);
+    lines[2] = `${lines[2].slice(0, -1)}…`;
+  }
+  const lineHeight = Math.round(size * 1.22);
+  const top = 300 + Math.round((3 - lines.length) * lineHeight * 0.35);
+  const chipWidth = Math.round(textWidth(label, 18) + 40);
+  const titleText = lines
+    .map(
+      (l, i) =>
+        `<text x="120" y="${top + i * lineHeight}" font-family="'Malgun Gothic', Pretendard, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif" font-size="${size}" font-weight="800" letter-spacing="-2" fill="#FFFFFF">${escapeXml(l)}</text>`,
+    )
+    .join('\n  ');
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="0%" r="80%">
+      <stop offset="0%" stop-color="${accent.from}" stop-opacity="0.18"/>
+      <stop offset="60%" stop-color="#0f1614" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#0f1614"/>
+    </radialGradient>
+    <linearGradient id="brand" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="${accent.from}"/>
+      <stop offset="100%" stop-color="${accent.to}"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0f1614"/>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1050" cy="100" r="180" fill="${accent.from}" opacity="0.22"/>
+  <rect x="80" y="80" width="1040" height="470" rx="32" fill="rgba(20,25,40,0.75)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+  <text x="120" y="150" font-family="Inter, 'Malgun Gothic', sans-serif" font-size="28" font-weight="700" fill="#FFFFFF" letter-spacing="-1">calculatorhost</text>
+  <g transform="translate(120, 180)">
+    <rect x="0" y="0" width="${chipWidth}" height="38" rx="19" fill="rgba(255,255,255,0.06)" stroke="url(#brand)" stroke-width="1.5"/>
+    <text x="${chipWidth / 2}" y="25" text-anchor="middle" font-family="'Malgun Gothic', Pretendard, sans-serif" font-size="18" font-weight="600" fill="url(#brand)">${escapeXml(label)}</text>
+  </g>
+  ${titleText}
+  <text x="1080" y="515" text-anchor="end" font-family="Inter, 'Malgun Gothic', sans-serif" font-size="18" font-weight="500" fill="rgba(255,255,255,0.45)">calculatorhost.com</text>
+</svg>`;
 }
 
 async function svgToPng(svg, outPath) {
@@ -256,54 +366,55 @@ async function generateCategories() {
   console.log(`[og] category OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
 }
 
-async function generateGuides() {
+// 페이지 OG(가이드·단일 페이지)는 한글 글꼴이 있는 로컬에서 만들어 커밋한다.
+// Cloudflare 빌드 환경(CF_PAGES=1)에는 한글 글꼴이 없을 수 있어 새로 만들지 않는다.
+// 빠진 이미지는 tests/unit/seo/og-images.test.ts 가 커밋 전에 잡는다.
+async function generatePageImages(pages, kind) {
+  if (process.env.CF_PAGES === '1') {
+    console.log(`[og] ${kind} OG: Cloudflare 빌드에서는 생성하지 않음 (로컬에서 만들어 커밋)`);
+    return;
+  }
   let created = 0;
   let skipped = 0;
-  for (const g of GUIDES) {
-    const dir = resolve(ROOT, `src/app/guide/${g.slug}`);
+  for (const p of pages) {
+    const dir = resolve(ROOT, `src/app/${p.dir}`);
     if (!existsSync(dir)) {
-      console.warn(`[og] guide/${g.slug} 디렉터리 없음 — 스킵`);
+      console.warn(`[og] ${p.dir} 디렉터리 없음 — 스킵`);
       continue;
     }
     const outPath = resolve(dir, 'opengraph-image.png');
-    const svg = buildSvg({ title: g.title, category: g.category });
     if (existsSync(outPath) && !process.env.OG_FORCE) {
       skipped++;
       continue;
     }
     try {
-      await svgToPng(svg, outPath);
+      await svgToPng(buildPageSvg(p), outPath);
+      writeFileSync(resolve(dir, 'opengraph-image.alt.txt'), p.title);
       created++;
     } catch (e) {
-      console.warn(`[og] guide/${g.slug} 변환 실패: ${e.message}`);
+      console.warn(`[og] ${p.dir} 변환 실패: ${e.message}`);
     }
   }
-  console.log(`[og] guide OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
+  console.log(`[og] ${kind} OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
+}
+
+async function generateGuides() {
+  await generatePageImages(
+    parseGuides().map((g) => ({
+      dir: `guide/${g.slug}`,
+      title: g.title,
+      label: g.category,
+      accentKey: accentKeyFor(g.category),
+    })),
+    'guide',
+  );
 }
 
 async function generateSingles() {
-  let created = 0;
-  let skipped = 0;
-  for (const s of SINGLES) {
-    const dir = resolve(ROOT, `src/app/${s.slug}`);
-    if (!existsSync(dir)) {
-      console.warn(`[og] ${s.slug} 디렉터리 없음 — 스킵`);
-      continue;
-    }
-    const outPath = resolve(dir, 'opengraph-image.png');
-    const svg = buildSvg({ title: s.title, category: s.category });
-    if (existsSync(outPath) && !process.env.OG_FORCE) {
-      skipped++;
-      continue;
-    }
-    try {
-      await svgToPng(svg, outPath);
-      created++;
-    } catch (e) {
-      console.warn(`[og] ${s.slug} 변환 실패: ${e.message}`);
-    }
-  }
-  console.log(`[og] singles OG 이미지: ${created}개 생성, ${skipped}개 스킵`);
+  await generatePageImages(
+    SINGLES.map((s) => ({ dir: s.slug, title: s.title, label: s.label, accentKey: '세금' })),
+    'singles',
+  );
 }
 
 async function main() {

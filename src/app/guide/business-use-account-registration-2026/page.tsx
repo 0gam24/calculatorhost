@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-20';
 export const metadata: Metadata = {
   title: '사업용계좌 신고 2026, 복식부기의무자 대상과 미신고 가산세',
   description:
-    '복식부기의무자가 된 개인사업자는 과세기간 개시일부터 6개월 안에 사업용계좌를 신고해야 합니다. 신고 대상 업종별 기준, 6월 30일 기한, 미신고·미사용 가산세 0.2%를 소득세법 §160의5 기준으로 정리했습니다.',
+    '복식부기의무자가 된 개인사업자는 과세기간 개시일부터 6개월 안에 사업용계좌를 신고해야 합니다. 미신고 가산세 0.2%도 정리했습니다.',
   keywords: [
     '사업용계좌 신고',
     '복식부기의무자',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사업용계좌 신고 2026, 복식부기의무자 대상과 미신고 가산세' }],
-    title: '사업용계좌 신고 2026, 6개월 기한과 미신고 가산세 0.2%',
-    description: '복식부기의무자 개인사업자의 사업용계좌 신고 기한, 대상 업종, 미신고·미사용 가산세를 소득세법 §160의5 기준으로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사업용계좌 신고 2026, 6개월 기한 놓치면 가산세 0.2%',
-    description: '복식부기의무자의 사업용계좌 신고 대상·기한·가산세를 소득세법 §160의5 기준으로 정리.',
   },
 };
 

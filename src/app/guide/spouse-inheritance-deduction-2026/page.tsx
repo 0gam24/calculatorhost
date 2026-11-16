@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-12';
 export const metadata: Metadata = {
   title: '배우자 상속공제 2026, 최소 5억 최대 30억 계산법',
   description:
-    '배우자가 살아 있으면 상속세 계산에서 최소 5억원은 무조건 공제됩니다. 실제 상속액과 법정상속분에 따라 최대 30억원까지 늘어나는 배우자 상속공제의 한도 계산법과 사례를 상속세및증여세법 §19 기준으로 정리했습니다.',
+    '배우자 상속공제는 최소 5억원이고, 실제 상속액과 법정상속분에 따라 최대 30억원까지 늘어납니다. 한도 계산법과 사례를 정리했습니다.',
   keywords: [
     '배우자 상속공제',
     '배우자 상속공제 한도',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '배우자 상속공제 2026, 최소 5억 최대 30억 계산법' }],
-    title: '배우자 상속공제 2026, 최소 5억 최대 30억까지 공제받는 법',
-    description: '배우자가 실제로 한 푼도 안 받아도 5억원은 공제. 실제 상속액과 법정상속분에 따라 최대 30억원. 상증법 §19.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '배우자 상속공제 2026, 최소 5억 최대 30억',
-    description: '배우자 생존 시 상속세에서 최소 5억, 실제 상속액과 법정상속분에 따라 최대 30억 공제. 상증법 §19.',
   },
 };
 

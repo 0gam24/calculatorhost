@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-13';
 export const metadata: Metadata = {
   title: '간이과세자 부가가치세 2026, 기준 1억400만원·세금계산서 발급',
   description:
-    '간이과세자는 직전연도 공급대가 1억400만원 미만인 소규모 사업자입니다. 일반과세자와의 세액 차이, 세금계산서 발급 의무 기준 4,800만원, 납부면제 조건을 부가가치세법 §61로 정리합니다.',
+    '간이과세자는 직전연도 공급대가 1억400만원 미만인 사업자입니다. 세금계산서 발급 기준 4,800만원과 납부면제 조건을 정리합니다.',
   keywords: [
     '간이과세자',
     '간이과세 기준',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '간이과세자 부가가치세 2026 기준과 세금계산서 발급' }],
-    title: '간이과세자 부가가치세 2026, 기준·세액·세금계산서 발급 완전정리',
-    description: '직전연도 매출 1억400만원 미만 간이과세, 부가율로 낮은 세액. 세금계산서 의무 4,800만원, 납부면제 4,800만원 기준을 정확히.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '간이과세자 부가가치세 2026, 기준·세액·세금계산서',
-    description: '매출 1억400만원 미만 간이과세. 부가율 적용 세액, 세금계산서 발급 4,800만원 기준. 부가가치세법 §61.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function SimplifiedTaxationVat2026Page() {
     { name: '간이과세자 부가가치세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '간이과세자 부가가치세 2026, 기준·세액·세금계산서 발급 완전정리',
+    headline: '간이과세자 부가가치세 2026, 기준·세액·세금계산서 발급 정리',
     description:
       '직전연도 공급대가 1억400만원 미만 간이과세자의 기준, 부가율 적용 세액 계산, 세금계산서 발급 의무 4,800만원, 납부면제 조건, 일반과세 전환까지 부가가치세법 §61 기준으로 정리.',
     url: URL,

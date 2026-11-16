@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '스트레스 DSR 3단계 2026, 내 대출한도 얼마나 줄까 | calculatorhost',
+  title: '스트레스 DSR 3단계 2026, 내 대출한도 얼마나 줄까',
   description:
-    '스트레스 DSR 3단계는 수도권·규제지역 변동 주담대에 3.0%p, 혼합형 2.4%p, 주기형 1.2%p를 더해 한도를 계산합니다. 지방 주담대는 2026년 말까지 0.75%p로 유예. 2025-10-16 이후 바뀐 기준을 사례와 함께 정리했습니다.',
+    '스트레스 DSR 3단계는 수도권·규제지역 변동 주담대에 3.0%p를 더해 한도를 계산합니다. 혼합형·주기형 금리와 지방 유예도 정리했습니다.',
   keywords: [
     '스트레스 DSR 3단계',
     '스트레스 DSR 2026',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '스트레스 DSR 3단계 2026, 내 대출한도 얼마나 줄까' }],
-    title: '스트레스 DSR 3단계 2026, 대출한도가 줄어드는 이유와 계산법',
-    description: '실제 금리에 스트레스 금리를 더해 한도를 산정하는 스트레스 DSR 3단계. 수도권·규제지역 변동 3.0%p, 지방 0.75%p 유예 등 2025-10-16 바뀐 기준을 사례로 이해하세요.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '스트레스 DSR 3단계 2026, 대출한도 계산법',
-    description: '수도권·규제지역 변동 3.0%p, 지방 0.75%p 유예. 2025-10-16 이후 기준.',
   },
 };
 

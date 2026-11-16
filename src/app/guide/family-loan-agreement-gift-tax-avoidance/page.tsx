@@ -24,7 +24,7 @@ const DATE_MODIFIED = '2026-05-14';
 export const metadata: Metadata = {
   title: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
   description:
-    '가족 간 금전대여 무이자·저리 대출로 적정이자율 차액 정리·적정이자율 4.6% 차액·1,000만원 면제 한도·차용증 작성·실질과세 입증·함정 5가지·신고 완벽 정리.',
+    '가족 간 무이자 대여도 적정이자율 4.6%와의 차액이 연 1,000만 원 이하면 비과세입니다. 차용증 작성법과 함정 5가지를 정리합니다.',
   keywords: [
     '부모 자녀 금전대여',
     '차용증 증여세',
@@ -39,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가족 간 차용증·금전대여 증여세 정확 정리 2026' }],
-    title: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
-    description: '무이자 대출 적정이자율 4.6% 차액·1,000만원 면제·차용증 필수 요소·실질과세 입증·함정 5가지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
-    description: '5억 무이자 대여 → 차액 2,300만 → 1,000만 초과 1,300만 증여세. 차용증 필수 요소 + 실질 입증 방법.',
   },
 };
 
@@ -97,12 +92,12 @@ export default function FamilyLoanAgreementGiftTaxAvoidanceGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '가족 간 차용증·금전대여 증여세 정확 정리' },
+    { name: '가족 간 차용증·금전대여 증여세 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '가족 간 차용증·금전대여 증여세 정확 정리 2026',
     description:
-      '가족 간 무이자·저리 대출 시 증여세 적용 기준·적정이자율 4.6% 차액 계산·1,000만 원 면제 한도·차용증 필수 요소·실질과세 입증 자료·함정 5가지·신고 절차 완전 정리.',
+      '가족 간 무이자·저리 대출 시 증여세 적용 기준·적정이자율 4.6% 차액 계산·1,000만 원 면제 한도·차용증 필수 요소·실질과세 입증 자료·함정 5가지·신고 절차 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

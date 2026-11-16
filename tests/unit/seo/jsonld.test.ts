@@ -12,6 +12,7 @@ import {
   buildSpeakableJsonLd,
   buildWebPageJsonLd,
   buildWebSiteJsonLd,
+  getCategoryUrlForCalculator,
 } from '../../../src/lib/seo/jsonld';
 
 const requireSchemaShape = (value: Record<string, unknown>, type: string) => {
@@ -61,6 +62,11 @@ describe('WebSite JSON-LD', () => {
     requireSchemaShape(ld, 'WebSite');
     expect(ld.inLanguage).toBe('ko-KR');
     expect(ld.publisher).toBeDefined();
+  });
+
+  // 홈 WebPage.isPartOf 의 #website 참조가 끊기지 않게 (네이버 08-01 구조화 데이터 검증)
+  it('@id 로 사이트를 식별한다', () => {
+    expect(buildWebSiteJsonLd()['@id']).toBe('https://calculatorhost.com/#website');
   });
 });
 
@@ -148,6 +154,17 @@ describe('BreadcrumbList JSON-LD', () => {
     const list = ld.itemListElement as Array<{ item?: string }>;
     expect(list[0] && 'item' in list[0]).toBe(false);
   });
+
+  // 네이버 구조화 데이터 08-05: name 에 "홈"·"top" 같은 일반 단어 대신 페이지를 설명하는 이름
+  it('사이트 루트 항목 이름은 "홈" 대신 사이트 이름', () => {
+    const ld = buildBreadcrumbJsonLd([
+      { name: '홈', url: 'https://calculatorhost.com/' },
+      { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
+      { name: '양도소득세 계산기' },
+    ]);
+    const list = ld.itemListElement as Array<{ name: string }>;
+    expect(list.map((i) => i.name)).toEqual(['calculatorhost', '세금', '양도소득세 계산기']);
+  });
 });
 
 describe('HowTo JSON-LD', () => {
@@ -195,6 +212,11 @@ describe('WebPage JSON-LD', () => {
     });
   });
 
+  it('카테고리 허브는 사이트가 아니라 페이지라 CollectionPage 로 연결', () => {
+    const ld = buildWebPageJsonLd({ ...baseOpts, isPartOf: 'https://calculatorhost.com/category/tax/' });
+    expect(ld.isPartOf).toEqual({ '@type': 'CollectionPage', '@id': 'https://calculatorhost.com/category/tax/' });
+  });
+
   it('image 미지정 시 image 키 자체가 생성되지 않음', () => {
     const ld = buildWebPageJsonLd(baseOpts);
     expect('image' in ld).toBe(false);
@@ -223,6 +245,17 @@ describe('ItemList JSON-LD', () => {
     expect(ld.name).toBe('인기 계산기');
     const list = ld.itemListElement as Array<{ position: number }>;
     expect(list[0]?.position).toBe(1);
+  });
+
+  // 네이버 캐러셀(ListItem, 08-07): 항목마다 image 필수
+  it('항목 image 를 그대로 싣고, 없으면 키를 만들지 않는다', () => {
+    const ld = buildItemListJsonLd([
+      { name: '연봉', url: 'https://x/salary/', image: 'https://x/salary/opengraph-image.png' },
+      { name: '대출', url: 'https://x/loan/' },
+    ]);
+    const list = ld.itemListElement as Array<Record<string, unknown>>;
+    expect(list[0]?.image).toBe('https://x/salary/opengraph-image.png');
+    expect('image' in (list[1] ?? {})).toBe(false);
   });
 
   it('listName 미지정 시 name 키 없음', () => {
@@ -273,6 +306,20 @@ describe('DefinedTermSet JSON-LD', () => {
     expect(terms).toHaveLength(2);
     expect(terms[0]?.alternateName).toBe('DSR');
     expect(terms[1] && 'alternateName' in terms[1]).toBe(false);
+  });
+
+  // schema.org 에서 inLanguage 는 CreativeWork 속성이다. DefinedTermSet 은 되고 DefinedTerm 은 안 된다.
+  it('용어 항목에는 inLanguage 를 넣지 않고 용어집에만 둔다', () => {
+    const ld = buildDefinedTermSetJsonLd({
+      name: '금융 용어집',
+      description: '핵심 금융 용어',
+      url: 'https://calculatorhost.com/glossary',
+      terms: [{ name: 'DSR', description: '부채원리금상환비율' }],
+    });
+    expect(ld.inLanguage).toBe('ko-KR');
+    const terms = ld.hasDefinedTerm as Array<Record<string, unknown>>;
+    expect('inLanguage' in (terms[0] ?? {})).toBe(false);
+    expect('inLanguage' in buildDefinedTermJsonLd({ name: 'LTV', description: '담보인정비율' })).toBe(false);
   });
 });
 
@@ -354,5 +401,23 @@ describe('Article JSON-LD', () => {
     const ld = buildArticleJsonLd({ ...baseOpts, authorUrl: 'https://x/about' });
     const author = ld.author as { url?: string };
     expect(author.url).toBe('https://x/about');
+  });
+});
+
+// 계산기 isPartOf 카테고리는 화면 빵부스러기·허브 링크와 같아야 한다 (네이버 08-05 계층 구조)
+describe('getCategoryUrlForCalculator', () => {
+  it.each([
+    ['area', 'real-estate'],
+    ['freelancer-tax', 'tax'],
+    ['property-tax', 'tax'],
+    ['retirement', 'finance'],
+    ['dti', 'finance'],
+    ['n-jobber-insurance', 'work'],
+    ['vehicle-tax', 'tax'],
+    ['child-tax-credit', 'work'],
+    ['annual-leave', 'work'],
+    ['weekly-holiday-allowance', 'work'],
+  ])('%s → /category/%s/', (slug, cat) => {
+    expect(getCategoryUrlForCalculator(slug)).toBe(`https://calculatorhost.com/category/${cat}/`);
   });
 });

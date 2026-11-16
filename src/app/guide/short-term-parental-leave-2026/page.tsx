@@ -24,9 +24,9 @@ const DATE_PUBLISHED = '2026-08-15';
 const DATE_MODIFIED = '2026-08-15';
 
 export const metadata: Metadata = {
-  title: '단기 육아휴직 2026, 1주·2주 신청과 급여 정리 | calculatorhost',
+  title: '단기 육아휴직 2026, 1주·2주 신청과 급여 정리',
   description:
-    '단기 육아휴직은 2026년 8월 20일부터 1주 또는 2주 단위로 쓸 수 있습니다. 만 8세 이하 자녀의 질병·방학 등 긴급 돌봄이 대상이며, 남녀고용평등법 19조에 근거합니다. 급여는 일할계산이며 신청 기한은 7일 전, 방학 사유는 30일 전입니다.',
+    '단기 육아휴직은 2026년 8월 20일부터 1주 또는 2주 단위로 쓸 수 있습니다. 대상과 일할계산 급여, 신청 기한을 정리했습니다.',
   keywords: [
     '단기 육아휴직',
     '1주 육아휴직',
@@ -39,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '단기 육아휴직 2026, 1주·2주 신청과 급여 정리' }],
-    title: '단기 육아휴직 2026, 1주·2주로 짧게 쓰는 육아휴직 총정리',
-    description: '2026년 8월 20일 시행. 만 8세 이하 자녀의 질병·방학 등 긴급 돌봄에 1주 또는 2주 단위로 사용. 급여, 신청 기한, 사업주 협의까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '단기 육아휴직 2026, 1주·2주 신청과 급여 정리',
-    description: '2026-08-20 시행. 남녀고용평등법 19조에 근거한 단기 육아휴직. 대상, 급여, 신청 기한, 사업주 협의까지.',
   },
 };
 
@@ -105,7 +100,7 @@ export default function ShortTermParentalLeave2026Page() {
     { name: '단기 육아휴직 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '단기 육아휴직 2026, 1주·2주로 짧게 쓰는 육아휴직 총정리',
+    headline: '단기 육아휴직 2026, 1주·2주로 짧게 쓰는 육아휴직 정리',
     description:
       '2026년 8월 20일 시행되는 단기 육아휴직 제도. 만 8세 이하 자녀 대상, 1주·2주 사용 단위, 급여 일할계산, 7일 전 신청, 사업주 협의까지 남녀고용평등법 §19 기준으로 정리.',
     url: URL,
@@ -119,7 +114,7 @@ export default function ShortTermParentalLeave2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '단기 육아휴직 2026',
     description:
-      '2026년 8월 20일부터 1주 또는 2주 단위로 사용 가능한 단기 육아휴직 제도의 대상·급여·신청 방법 완전 정리.',
+      '2026년 8월 20일부터 1주 또는 2주 단위로 사용 가능한 단기 육아휴직 제도의 대상·급여·신청 방법 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

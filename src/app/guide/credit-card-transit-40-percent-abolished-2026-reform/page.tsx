@@ -24,7 +24,7 @@ const DATE_MODIFIED = '2026-08-21';
 export const metadata: Metadata = {
   title: '신용카드 대중교통 공제 40% 폐지 2026 개편, 15·30% 원위치',
   description:
-    '2026-08-03 세제개편안에서 신용카드 대중교통 사용분 우대공제율 40%가 폐지되고 일반 15·30%로 원위치됩니다. 전통시장 40% 유지, 도서공연 확대, 추가공제 한도 축소까지 정리했습니다.',
+    '2026 세제개편안에서 신용카드 대중교통 우대공제율 40%가 폐지되고 일반 15·30%로 돌아갑니다. 전통시장 40%는 유지됩니다.',
   keywords: [
     '신용카드 대중교통 소득공제 폐지',
     '2027 대중교통 공제율',
@@ -36,10 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '신용카드 대중교통 공제 40% 폐지 2026 개편' }],
-    title: '신용카드 대중교통 공제 40% 폐지, 이제 신용 15%·체크 30%',
-    description:
-      '2026 세제개편안 정리. 대중교통 우대공제율 40% 폐지, 전통시장 40% 유지, 도서공연 확대, 추가공제 한도 200·100만원으로 축소.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,9 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '대중교통 40% 우대공제 폐지, 2027년부터 신용 15%·체크 30% 적용 예정',
-    description:
-      '조세특례제한법 §126의2 개정 방향과 실수령 시뮬레이션 3가지 사례. 전통시장·도서공연 처리 방식도 함께 정리.',
   },
 };
 
@@ -104,7 +97,7 @@ export default function CreditCardTransit40PercentAbolished2026ReformPage() {
     { name: '신용카드 대중교통 공제 40% 폐지 2026 개편' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '신용카드 대중교통 공제 40% 폐지, 2026 세제개편안 총정리',
+    headline: '신용카드 대중교통 공제 40% 폐지, 2026 세제개편안 정리',
     description:
       '2026-08-03 세제개편안 기준. 대중교통 우대공제율 40% 폐지·전통시장 40% 유지·도서공연 확대·추가공제 한도 축소 4가지 축을 사례 계산과 함께 정리.',
     url: URL,
@@ -354,7 +347,7 @@ export default function CreditCardTransit40PercentAbolished2026ReformPage() {
                     href="/guide/credit-card-income-deduction-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">신용카드 소득공제 2026 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">신용카드 소득공제 2026 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">기본 공제율·최저사용액·한도 등 골격부터 다시 정리.</p>
                   </Link>
                   <Link
@@ -362,7 +355,7 @@ export default function CreditCardTransit40PercentAbolished2026ReformPage() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">도서·공연 문화비 소득공제 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">지정 사업자·결제수단·확대 대상 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">지정 사업자·결제수단·확대 대상 정리.</p>
                   </Link>
                   <Link
                     href="/guide/year-end-tax-settlement/"

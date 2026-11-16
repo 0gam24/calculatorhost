@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '맞벌이 부부 연말정산 공제 배분 전략 2026 | 누가 받으면 절세할까',
   description:
-    '맞벌이 부부는 부양가족·의료비·신용카드 공제를 전략적으로 배분하면 절세 가능. 소득세법 §50 인적공제, §59의2 자녀세액공제 등 배분 기준과 구체 계산법 정리.',
+    '맞벌이 부부는 부양가족·의료비·신용카드 공제를 누가 받을지 정해 절세할 수 있습니다. 소득세법 §50·§59의2 기준 배분법을 정리했습니다.',
   keywords: [
     '맞벌이 연말정산',
     '부양가족 공제 배분',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '맞벌이 부부 연말정산 공제 배분 전략 2026',
-      },
-    ],
-    title: '맞벌이 부부 연말정산 공제 배분 전략, 누가 어떤 공제를 받아야 절세할까',
-    description:
-      '부양가족 인적공제·의료비·자녀세액공제를 부부 중 누가 받느냐에 따라 절세액이 크게 달라집니다. 전략적 배분법을 배우세요.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '맞벌이 부부 연말정산 공제 배분 전략 2026',
-    description: '부양가족·의료비·자녀세액공제 배분으로 수백만원 절세 가능. 전략 A vs B 비교.',
   },
 };
 
@@ -575,7 +562,7 @@ export default function DualIncomeCoupleYearEndTax2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">
                       연말정산의 기본 개념부터 공제 신청까지.
                     </p>

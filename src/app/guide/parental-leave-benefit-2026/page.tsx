@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-09';
 export const metadata: Metadata = {
   title: '육아휴직급여 2026 | 월 상한·통상임금 100%·6+6 부모제',
   description:
-    '2025년 개정된 육아휴직급여 현행 기준. 첫 3개월 통상임금 100%, 4~6개월 100%, 7개월 이후 80% 지급. 월 상한액·6+6 부모육아휴직제·신청 방법까지 완전 정리.',
+    '2025년 개정으로 육아휴직 첫 3개월 급여가 통상임금 100%로 올랐습니다. 월 상한액과 6+6 부모육아휴직제, 신청 방법을 정리했습니다.',
   keywords: [
     '육아휴직급여',
     '육아휴직',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '육아휴직급여 2026 | 월 상한·통상임금 100%·6+6 부모제' }],
-    title: '육아휴직급여 2026, 월 상한액·지급률·6+6 부모제 완벽 정리',
-    description: '2025년부터 대폭 인상된 육아휴직급여. 첫 3개월 통상임금 100%, 월 상한액 약 250만원, 6+6 부모제로 12개월 전체 상한 인상. 고용보험법 §70.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '육아휴직급여 2026, 통상임금 100% 지급·월 상한액·6+6 부모제',
-    description: '2025년 개정 육아휴직급여 현행. 첫 3개월 100%, 이후 조정, 7개월~ 80%. 부모 모두 육아휴직 시 상한 상향. 고용보험법 §70.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function ParentalLeaveBenefit2026Page() {
     { name: '육아휴직급여 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '육아휴직급여 2026, 월 상한액·지급률·6+6 부모제 완벽 정리',
+    headline: '육아휴직급여 2026, 월 상한액·지급률·6+6 부모제 정리',
     description:
       '2025년 개정된 육아휴직급여 현행 기준. 통상임금 100~80% 지급, 월 상한액, 6+6 부모육아휴직제, 신청 방법까지 상세 해석.',
     url: URL,

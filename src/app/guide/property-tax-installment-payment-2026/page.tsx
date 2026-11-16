@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-01';
 export const metadata: Metadata = {
   title: '재산세 분납(분할납부) 2026 | 250만원 초과 시 신청·기한·한도',
   description:
-    '재산세 본세 250만원 초과 시 분할납부 가능. 분납 한도(최대 50%), 신청 방법(위택스·세무서), 7월 1기 납기. 지방세법 §118 기준.',
+    '재산세 본세가 250만원을 넘으면 나눠 낼 수 있습니다. 분납 한도와 신청 방법, 7월 1기 납기를 지방세법 §118 기준으로 정리했습니다.',
   keywords: [
     '재산세 분납',
     '재산세 분할납부',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 분납(분할납부) 2026 | 250만원 초과 시 신청·기한·한도' }],
-    title: '재산세 분납(분할납부) 2026, 250만원 초과 시 분할납부 방법과 한도',
-    description: '재산세 본세가 250만원을 초과하면 분할납부 가능. 분납 신청 방법, 한도, 납기별 유의사항을 완벽 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 분납 2026, 250만원 초과 분할납부 신청 방법',
-    description: '재산세 본세 250만원 초과 시 분할납부 신청 가능. 위택스·세무서 접수 방법, 한도 계산, 가산금 면제 조건.',
   },
 };
 

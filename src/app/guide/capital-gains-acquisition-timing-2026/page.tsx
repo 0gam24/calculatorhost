@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-03';
 export const metadata: Metadata = {
   title: '양도세 취득·양도 시기 2026 | 잔금일·등기일·계약일 기준',
   description:
-    '2026년 양도소득세 취득·양도 시기 판정 기준. 원칙은 대금청산일(잔금일)이며 잔금 전 등기하면 등기접수일, 상속은 사망일, 증여는 등기접수일. 소득세법 §98과 시행령 §162 기준으로 정리했습니다.',
+    '양도소득세 취득·양도 시기는 대금청산일(잔금일)이 원칙이고, 잔금 전에 등기하면 등기접수일이 기준입니다. 상속·증여 예외도 정리했습니다.',
   keywords: [
     '양도세 취득시기',
     '양도세 취득시기 잔금일',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도세 취득·양도 시기 2026, 잔금일·등기일·계약일 기준' }],
-    title: '양도세 취득·양도 시기 2026, 잔금일·등기일·계약일 기준',
-    description: '원칙은 잔금일, 잔금 전 등기했다면 등기접수일. 상속·증여·자가신축·분양의 시기 판정을 소득세법 §98·시행령 §162로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도세 취득·양도 시기 2026, 잔금일·등기일·계약일 기준',
-    description: '보유기간·1세대1주택 2년·장특공 판정의 기산일이 되는 취득시기. 소득세법 §98·시행령 §162.',
   },
 };
 

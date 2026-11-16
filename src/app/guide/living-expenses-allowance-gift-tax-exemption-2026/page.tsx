@@ -24,9 +24,9 @@ const DATE_PUBLISHED = '2026-08-15';
 const DATE_MODIFIED = '2026-08-15';
 
 export const metadata: Metadata = {
-  title: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준 | calculatorhost',
+  title: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준',
   description:
-    '부모 자녀 간 생활비와 용돈은 사회통념 범위에서 쓰면 증여세가 없습니다(상증법 §46). 직접 지출해야 비과세되고, 모아서 예금·주식·부동산을 사면 과세됩니다. 공제 한도와 계산 사례까지 정리했습니다.',
+    '부모 자녀 간 생활비와 용돈은 사회통념 범위에서 쓰면 증여세가 없습니다. 모아서 예금·주식을 사면 과세됩니다.',
   keywords: [
     '생활비 증여세',
     '용돈 증여세',
@@ -39,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준' }],
-    title: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준',
-    description: '사회통념 범위의 생활비와 용돈은 비과세(상증법 §46). 다만 모아서 재산을 형성하면 증여세 과세 대상.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준',
-    description: '사회통념 범위의 생활비·용돈은 비과세. 모아서 예금·주식·집을 사면 과세. 상증법 §46 기준.',
   },
 };
 
@@ -107,7 +102,7 @@ export default function LivingExpensesAllowanceGiftTaxExemption2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '생활비 용돈 증여세 2026, 비과세 한도와 과세 기준',
     description:
-      '부모 자녀 간 생활비·용돈은 사회통념 범위에서 직접 지출하면 비과세(상증법 §46, 시행령 §35). 모아서 재산을 형성하면 과세. 공제 한도(§53)와 세율(§56) 계산 사례까지 완전 정리.',
+      '부모 자녀 간 생활비·용돈은 사회통념 범위에서 직접 지출하면 비과세(상증법 §46, 시행령 §35). 모아서 재산을 형성하면 과세. 공제 한도(§53)와 세율(§56) 계산 사례까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

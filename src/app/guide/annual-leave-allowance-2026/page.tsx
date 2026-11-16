@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '연차수당 계산법 2026 | 미사용 연차 1일 통상임금 계산 | calculatorhost',
+  title: '연차수당 계산법 2026 | 미사용 연차 1일 통상임금 기준',
   description:
-    '연차수당 정확히 계산하는 법. 1일 통상임금 = 월 통상임금 ÷ 209 × 8. 퇴사 시 미사용 연차 수당 청구 방법, 법적 한도 25일, 근로기준법 §60 완벽 해설.',
+    '미사용 연차수당은 1일 통상임금에 남은 연차 일수를 곱해 계산합니다. 퇴사 때 청구하는 방법도 정리했습니다.',
   keywords: [
     '연차수당',
     '통상임금',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연차수당 계산법 2026 | 미사용 연차 1일 통상임금 계산 | calculatorhost' }],
-    title: '연차수당 계산법 2026, 통상임금 ÷ 209 × 8',
-    description: '퇴사 전에 꼭 알아야 할 연차수당 정확 계산. 법정 최대 25일, 근로기준법 §60으로 회사에 청구하는 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

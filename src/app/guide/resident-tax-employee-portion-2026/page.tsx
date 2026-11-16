@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-05';
 export const metadata: Metadata = {
   title: '주민세 종업원분 2026, 세율 0.5%·면세점·신고 방법 정리',
   description:
-    '주민세 종업원분은 사업소 종업원 급여총액의 0.5%를 매월 신고납부하는 지방세입니다. 최근 1년 월평균 급여총액 1억5천만원 이하면 면세점 적용. 세율·면세점·신고 기한·계산법을 지방세법 기준으로 정리했습니다.',
+    '주민세 종업원분은 급여총액의 0.5%를 매월 신고납부하는 지방세입니다. 월평균 1억5천만원 이하 면세점과 다음 달 10일 기한을 정리했습니다.',
   keywords: [
     '주민세 종업원분',
     '종업원분 주민세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주민세 종업원분 2026, 세율 0.5%·면세점·신고 방법 정리' }],
-    title: '주민세 종업원분 2026, 세율·면세점·신고 방법',
-    description: '사업소 종업원 급여총액 0.5% 과세, 월평균 1억5천만원 이하 면세점. 다음 달 10일까지 신고납부.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주민세 종업원분 2026 정리',
-    description: '급여총액 0.5%, 월평균 1.5억원 면세점, 다음 달 10일 신고납부. 지방세법 §84의2~§84의4.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function ResidentTaxEmployeePortion2026Page() {
     { name: '주민세 종업원분 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주민세 종업원분 2026, 세율 0.5%·면세점·신고 방법 완전 정리',
+    headline: '주민세 종업원분 2026, 세율 0.5%·면세점·신고 방법 정리',
     description:
       '사업소 종업원 급여총액의 0.5%를 매월 신고납부하는 주민세 종업원분. 세율(지방세법 §84의3), 면세점 월평균 1억5천만원(§84의4), 과세표준(§84의2), 신고 기한과 계산 사례 정리.',
     url: URL,

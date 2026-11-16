@@ -37,10 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종부세 납부기간 2026' }],
-    title: '종부세 납부기간 2026, 12월 1~15일 고지서·분납·카드납부',
-    description:
-      '종부세 납부기간은 12월 1~15일. 분납·카드납부·납부유예·미납 가산세를 §16·§20·§20의2로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,9 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종부세 납부기간 2026',
-    description:
-      '12월 1~15일 납부, 250만 원 초과 분납, 카드납부, 60세·5년 보유자 납부유예, 미납 가산세까지 §16·§20·§20의2 기준.',
   },
 };
 

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-16';
 export const metadata: Metadata = {
   title: '퇴직금 중간정산 2026, 법정 사유 7가지와 세금 함정',
   description:
-    '퇴직금 중간정산은 아무 때나 못 하고 법이 정한 사유만 가능합니다. 근로자퇴직급여보장법 §8과 시행령 §3의 주택구입·요양·파산 등 사유와, 근속연수 리셋으로 커지는 퇴직소득세 함정을 정리합니다.',
+    '퇴직금 중간정산은 주택구입·요양·파산 등 법정 사유가 있을 때만 가능합니다. 근속연수가 초기화돼 퇴직소득세가 커지는 함정도 정리합니다.',
   keywords: [
     '퇴직금 중간정산',
     '퇴직금 중간정산 사유',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직금 중간정산 2026, 법정 사유 7가지와 세금 함정' }],
-    title: '퇴직금 중간정산 2026, 되는 사유와 안 되는 사유',
-    description: '주택구입·요양·파산 등 법정 사유만 가능. 근속연수 리셋으로 커지는 퇴직소득세 함정까지. 근퇴법 §8.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '퇴직금 중간정산 2026, 법정 사유 7가지와 세금 함정',
-    description: '퇴직금 중간정산은 법이 정한 사유만 가능합니다. 사유·증빙과 근속연수 리셋 세금 함정을 정리. 근퇴법 §8.',
   },
 };
 

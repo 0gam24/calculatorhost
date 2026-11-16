@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-20';
 export const metadata: Metadata = {
   title: '전세보증금 반환보증 2026, HUG 가입조건과 보증료 신청방법',
   description:
-    '전세보증금을 떼일까 걱정된다면 HUG 전세보증금 반환보증으로 대비할 수 있습니다. 가입 조건(보증금 한도·부채비율 90%), 보증료, 신청 기한, HUG·HF·SGI 차이를 임차인 눈높이로 정리했습니다.',
+    'HUG 전세보증금 반환보증의 가입 조건(부채비율 90%), 보증료, 신청 기한을 임차인 눈높이로 정리했습니다.',
   keywords: [
     '전세보증금 반환보증',
     'HUG 전세보증보험',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세보증금 반환보증 2026, HUG 가입조건과 보증료 신청방법' }],
-    title: '전세보증금 반환보증 2026: HUG 가입조건, 보증료, 안심전세 앱 신청 총정리',
-    description: '임대인이 보증금을 돌려주지 못할 때 HUG가 대신 지급하는 전세보증금 반환보증. 가입 조건, 보증료, HUG·HF·SGI 비교, 신청 절차까지 임차인 관점에서 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세보증금 반환보증 2026: HUG 가입조건과 보증료 신청방법',
-    description: 'HUG 전세보증금 반환보증의 가입 조건, 보증료, 신청 절차와 HUG·HF·SGI 비교. 임차인 필독.',
   },
 };
 
@@ -429,7 +424,7 @@ export default function JeonseGuaranteeInsuranceHug2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">전세보증금 안전하게 지키기</div>
-                    <p className="mt-1 text-sm text-text-secondary">계약 전 확인해야 할 등기부·부채비율·안전장치 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">계약 전 확인해야 할 등기부·부채비율·안전장치 정리.</p>
                   </Link>
                   <Link
                     href="/guide/lease-priority-right-fixed-date-2026/"

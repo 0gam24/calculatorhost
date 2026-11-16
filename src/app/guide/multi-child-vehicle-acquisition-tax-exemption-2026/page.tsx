@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-03';
 export const metadata: Metadata = {
   title: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50%',
   description:
-    '18세 미만 자녀 3명 이상 양육자는 양육용 차 1대 취득세 면제(6인 이하 승용은 140만원 한도, 초과분만 납부). 2자녀는 50% 경감. 지방세특례제한법 §22의2, 2027년 12월 31일까지.',
+    '18세 미만 자녀 3명 이상을 키우면 양육용 차 1대 취득세가 면제되고, 2자녀는 50% 경감됩니다. 지방세특례제한법 §22의2 기준입니다.',
   keywords: [
     '다자녀 자동차 취득세 면제',
     '3자녀 차 취득세',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50%' }],
-    title: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50%',
-    description: '자녀 3명 이상이면 양육용 차 1대 취득세 면제(7~10인승 전액, 6인 이하는 140만원 한도). 자녀 2명은 50% 경감. 지방세특례제한법 §22의2 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50%',
-    description: '18세 미만 3자녀 이상은 양육용 차 1대 취득세 면제, 2자녀는 50% 경감. 지방세특례제한법 §22의2.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function MultiChildVehicleAcquisitionTaxExemption2026Page() {
     { name: '다자녀 자동차 취득세 감면 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50% 완전 정리',
+    headline: '다자녀 자동차 취득세 감면 2026, 3자녀 면제·2자녀 50% 정리',
     description:
       '18세 미만 자녀 3명 이상이면 양육 목적 차량 1대 취득세 전액 면제(6인 이하 승용은 140만원 한도), 자녀 2명은 50% 경감. 지방세특례제한법 §22의2 기준 신청·추징까지 정리.',
     url: URL,
@@ -429,7 +424,7 @@ export default function MultiChildVehicleAcquisitionTaxExemption2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">자녀 세제 혜택·수당 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">자녀장려금·자녀세액공제 등 연간 지원금 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">자녀장려금·자녀세액공제 등 연간 지원금 정리.</p>
                   </Link>
                   <Link
                     href="/category/tax/"

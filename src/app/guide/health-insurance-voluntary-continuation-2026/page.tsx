@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-15';
 export const metadata: Metadata = {
   title: '건강보험 임의계속가입 2026, 퇴직 후 36개월 보험료 폭탄 막기',
   description:
-    '퇴직하면 지역가입자로 바뀌며 재산·자동차까지 보험료에 반영돼 폭탄을 맞기 쉽습니다. 국민건강보험법 §110 임의계속가입으로 최대 36개월간 직장가입자 수준 보험료를 유지하는 요건과 신청기한을 정리합니다.',
+    '퇴직 후 임의계속가입을 하면 최대 36개월간 직장가입자 수준 보험료를 유지할 수 있습니다. 요건과 신청기한을 정리합니다.',
   keywords: [
     '건강보험 임의계속가입',
     '퇴직 후 건강보험료',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '건강보험 임의계속가입 2026, 퇴직 후 36개월 보험료 폭탄 막기' }],
-    title: '건강보험 임의계속가입 2026, 퇴직 후 보험료 폭탄 막는 법',
-    description: '퇴직 전 18개월 중 직장가입 1년 이상이면 최대 36개월 직장 수준 보험료 유지. 국민건강보험법 §110.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '건강보험 임의계속가입 2026, 퇴직 후 보험료 절감',
-    description: '퇴직 후 지역보험료 폭탄을 막는 임의계속가입. 최대 36개월, 국민건강보험법 §110. 신청기한 유의.',
   },
 };
 

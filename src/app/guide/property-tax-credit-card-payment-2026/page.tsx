@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-22';
 export const metadata: Metadata = {
   title: '재산세 신용카드 납부 2026, 수수료 0원·무이자 할부 챙기는 법',
   description:
-    '재산세를 신용카드로 내면 수수료 없이 무이자 할부와 체크카드 캐시백까지 챙길 수 있습니다. 위택스·지자체앱 결제 절차, 카드사별 혜택 확인법, 7월·9월 납기까지 정리.',
+    '재산세는 신용카드로 내도 수수료가 0원이고, 무이자 할부는 카드사마다 다릅니다. 위택스 결제 절차와 7월·9월 납기를 정리했습니다.',
   keywords: [
     '재산세 카드납부',
     '재산세 신용카드 무이자',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '재산세 신용카드 납부 2026, 수수료 0원·무이자 할부 챙기는 법',
-      },
-    ],
-    title: '재산세 신용카드 납부 2026, 수수료 0원·무이자 할부 챙기는 법',
-    description:
-      '지방세인 재산세는 카드 납부 수수료가 0원. 위택스·지자체앱·ARS 결제 절차와 카드사별 무이자·캐시백 이벤트 확인법까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,9 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 신용카드 납부 2026, 수수료 0원·무이자 할부',
-    description:
-      '지방세 재산세는 카드 수수료 없음. 무이자 할부·캐시백은 카드사·시즌마다 다르므로 반드시 확인하세요.',
   },
 };
 

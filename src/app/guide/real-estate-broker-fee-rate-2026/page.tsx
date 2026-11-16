@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-16';
 const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '주택 중개수수료(중개보수) 요율표 2026 | 매매·전세·월세 상한 | calculatorhost',
+  title: '주택 중개수수료(중개보수) 요율표 2026 | 매매·전세·월세 상한',
   description:
-    '부동산 중개수수료 상한요율을 공인중개사법 기준으로 정리했습니다. 주택 매매 6억원 기준 0.4% = 240만원, 전세 3억 기준 0.3%, 월세 환산 계산까지 2026년 최신 정보.',
+    '주택 중개수수료 상한은 6억원 매매 0.4%(240만원), 3억원 전세 0.3%입니다. 월세 환산 계산법도 공인중개사법 기준으로 정리했습니다.',
   keywords: [
     '주택 중개수수료',
     '중개보수 요율',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택 중개수수료 요율표 2026' }],
-    title: '주택 중개수수료(중개보수) 요율표 2026',
-    description: '공인중개사법 기준 매매·전세·월세 상한요율 완전 정리',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택 중개수수료 요율표 2026',
-    description: '공인중개사법 §32 매매·전세·월세 상한 정리',
   },
 };
 
@@ -100,7 +95,7 @@ export default function RealEstateBrokerFeeRatePage() {
   const articleLd = buildArticleJsonLd({
     headline: '주택 중개수수료(중개보수) 요율표 2026, 매매·전세·월세 상한',
     description:
-      '공인중개사법 §32·시행규칙 §20 기준 주택 매매·임대차 중개수수료 상한요율 완전 정리. 거래금액별 구간·계산법·부가세 포함.',
+      '공인중개사법 §32·시행규칙 §20 기준 주택 매매·임대차 중개수수료 상한요율 정리. 거래금액별 구간·계산법·부가세 포함.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -597,7 +592,7 @@ export default function RealEstateBrokerFeeRatePage() {
               <ShareButtons
                 title="주택 중개수수료 요율표 2026"
                 url={URL}
-                description="공인중개사법 기준 매매·전세·월세 상한요율 완전 정리"
+                description="공인중개사법 기준 매매·전세·월세 상한요율 정리"
               />
             </article>
           </main>

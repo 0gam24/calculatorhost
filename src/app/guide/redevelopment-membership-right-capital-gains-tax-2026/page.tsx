@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-31';
 export const metadata: Metadata = {
   title: '조합원입주권 양도소득세 2026, 1주택 비과세 3년 특례',
   description:
-    '재개발·재건축 조합원입주권을 팔거나 종전주택을 팔 때 1세대1주택 비과세를 받을 수 있는지, 원조합원과 승계조합원의 차이, 3년 내 종전주택 양도 특례를 소득세법 §89·시행령 §156의2 기준으로 정리했습니다.',
+    '재개발·재건축 입주권을 팔 때 1세대1주택 비과세 여부와 종전주택 3년 내 양도 특례를 정리했습니다. 원조합원과 승계조합원 차이도 담았습니다.',
   keywords: [
     '조합원입주권 양도소득세',
     '입주권 비과세',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '조합원입주권 양도소득세 2026, 1주택 비과세 3년 특례' }],
-    title: '조합원입주권 양도소득세 2026, 비과세 요건 총정리',
-    description: '입주권 양도 비과세, 주택+입주권 종전주택 3년 특례, 원조합원과 승계조합원 차이까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '조합원입주권 양도소득세 2026, 1주택 비과세 3년 특례',
-    description: '입주권 비과세와 종전주택 3년 특례. 소득세법 §89·시행령 §156의2.',
   },
 };
 

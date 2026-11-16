@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-26';
 const DATE_MODIFIED = '2026-06-26';
 
 export const metadata: Metadata = {
-  title: '재산세 vs 종부세 차이 2026, 둘 다 내나? 과세기준·세율 비교 | calculatorhost',
+  title: '재산세 vs 종부세 차이 2026, 둘 다 내나? 과세기준·세율 비교',
   description:
-    '재산세는 모든 주택 보유자에게 부과되는 지방세, 종합부동산세는 공시가격 합계가 기준을 넘는 보유자에게 부과되는 국세입니다. 과세기준일·부과기관·과세대상·세율·납부시기의 차이와 이중과세 조정을 정리합니다.',
+    '재산세는 모든 주택에 매기는 지방세, 종부세는 공시가격 합계가 기준을 넘을 때 붙는 국세입니다. 세율·납부시기와 이중과세 조정을 비교합니다.',
   keywords: [
     '재산세',
     '종합부동산세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 vs 종합부동산세 2026 비교 가이드 | calculatorhost' }],
-    title: '재산세 vs 종부세, 둘 다 내나? 2026 완벽 비교',
-    description: '지방세 재산세와 국세 종합부동산세의 차이점. 과세기준·세율·부과기관·납부시기 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -93,7 +90,7 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '재산세 vs 종합부동산세 2026, 둘 다 내야 할까?',
     description:
-      '재산세(지방세)와 종부세(국세)의 차이점. 과세대상·세율·납부시기·이중과세 조정까지 완벽 정리.',
+      '재산세(지방세)와 종부세(국세)의 차이점. 과세대상·세율·납부시기·이중과세 조정까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -416,8 +413,15 @@ export default function PropertyTaxVsComprehensiveRealEstateTax2026Page() {
                     href="/guide/property-tax-calculation-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">재산세 계산법 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">재산세 계산법 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">재산세의 세율·공제·이중 납부에 대해 상세히 설명합니다.</p>
+                  </Link>
+                  <Link
+                    href="/guide/comprehensive-real-estate-tax-payment-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
+                  >
+                    <div className="font-semibold text-primary-500">종부세 납부기간 2026</div>
+                    <p className="mt-1 text-sm text-text-secondary">12월 1~15일 납부, 고지서 확인과 분납·카드납부 방법.</p>
                   </Link>
                   <Link
                     href="/guide/comprehensive-real-estate-tax-calculation-2026/"

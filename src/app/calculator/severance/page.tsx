@@ -20,6 +20,8 @@ import {
 import { SeveranceCalculator } from './SeveranceCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/severance/';
 const DESCRIPTION =
@@ -46,15 +48,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '퇴직금 계산기 2026',
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '퇴직금 계산기 2026',
-    description: DESCRIPTION,
   },
 };
 
@@ -108,7 +106,7 @@ export default function SeverancePage() {
     dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('severance'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '퇴직금 계산기 사용 방법',
     description:
       '입사일·퇴직일, 평균임금 산입 재료와 1일 통상임금을 입력해 퇴직금과 세후 참고액을 확인하는 단계별 안내',
@@ -131,7 +129,8 @@ export default function SeverancePage() {
         text: '일반적인 일시금 수령을 가정한 세후 참고액과 지원 범위를 확인합니다. DC 실제 계좌 잔액이나 특수 과세는 별도 확인합니다.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -141,7 +140,7 @@ export default function SeverancePage() {
     { name: '퇴직금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '퇴직금 핵심 용어',
     description: '퇴직금 계산 및 퇴직소득세 이해에 필요한 용어 정의',
     url: 'https://calculatorhost.com/calculator/severance/#glossary',
@@ -164,7 +163,8 @@ export default function SeverancePage() {
         description: PLAN_DESCRIPTION,
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -237,6 +237,7 @@ export default function SeverancePage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="퇴직금은 계속근로기간 1년 이상, 4주 평균 1주 소정근로시간 15시간 이상인 근로자의 퇴직급여입니다. 1일 평균임금과 통상임금 중 큰 금액 × 30 × 재직일수 ÷ 365로 일반 참고액을 계산합니다. 휴직 등 제외기간이나 중간정산은 별도 확인해야 합니다."
                 table={{
@@ -639,6 +640,7 @@ export default function SeverancePage() {
                   있습니다. 세금 및 법적 조언이 필요한 경우 세무사·노무사·고용노동부에 상담하세요.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

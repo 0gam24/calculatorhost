@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '농어촌주택 양도세 특례 2026, 시골집 있어도 1주택',
   description:
-    '도시에 집 한 채가 있어도 농어촌주택을 따로 취득해 3년 이상 보유하면, 기존 일반주택을 팔 때 1세대1주택 비과세를 받을 수 있습니다. 지역·기준시가 3억(한옥 4억)·면적 요건과 취득 순서 규칙을 조세특례제한법 §99의4 기준으로 정리합니다.',
+    '농어촌주택을 3년 이상 보유하면 도시 집을 팔 때도 1세대1주택 비과세를 받을 수 있습니다. 기준시가 3억(한옥 4억) 등 요건을 정리합니다.',
   keywords: [
     '농어촌주택 양도세',
     '농어촌주택 특례',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '농어촌주택 양도세 특례 2026, 시골집 있어도 1주택',
-      },
-    ],
-    title: '농어촌주택 양도세 특례 2026, 시골집을 주택 수에서 빼는 법',
-    description:
-      '읍면 소재, 기준시가 3억(한옥 4억), 3년 보유. 취득 순서만 맞으면 일반주택 양도 시 1세대1주택 비과세.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '농어촌주택 양도세 특례 2026, 시골집 있어도 1주택',
-    description: '읍면·기준시가 3억(한옥 4억)·3년 보유. 조특법 §99의4.',
   },
 };
 

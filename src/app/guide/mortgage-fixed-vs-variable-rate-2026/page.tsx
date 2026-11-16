@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-27';
 export const metadata: Metadata = {
   title: '주담대 고정 vs 변동금리 2026 | 뭐가 유리할까 가이드',
   description:
-    '주택담보대출 고정금리, 변동금리, 혼합형의 특징을 비교합니다. 금리 결정 방식, 월부담, 이자 비용, 위험 요소, 상황별 선택 기준을 정리합니다.',
+    '주택담보대출 고정금리, 변동금리, 혼합형의 월부담과 이자 비용, 위험 요소, 상황별 선택 기준을 비교합니다.',
   keywords: [
     '주택담보대출 금리',
     '고정금리 변동금리',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '주담대 고정 vs 변동금리 2026 | 뭐가 유리할까 가이드',
-      },
-    ],
-    title: '주담대 고정 vs 변동금리 2026',
-    description: '고정금리, 변동금리, 혼합형의 특징과 선택 기준을 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주담대 고정 vs 변동금리',
-    description: '금리 유형별 특징과 선택 기준 비교',
   },
 };
 

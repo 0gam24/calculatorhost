@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-07';
 export const metadata: Metadata = {
   title: '부가가치세 예정고지 2026, 개인사업자 4월·10월 납부',
   description:
-    '개인 일반과세 사업자는 4월·10월에 부가세 예정고지를 받습니다. 직전 확정 납부세액의 50%가 자동 산정되며, 예정고지 세액이 50만원 미만이면 고지가 생략됩니다. 부가가치세법 48조 기준 정리.',
+    '개인 일반과세자는 4월·10월에 직전 납부세액의 50%를 예정고지로 냅니다. 50만원 미만이면 생략되며, 예정신고와의 차이도 정리했습니다.',
   keywords: [
     '부가가치세 예정고지',
     '부가세 예정고지 대상자',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부가가치세 예정고지 2026, 개인사업자 4월·10월 납부' }],
-    title: '부가가치세 예정고지 2026, 개인사업자 4월·10월 납부',
-    description: '개인 일반과세 사업자는 신고 대신 4월·10월에 예정고지를 받습니다. 직전기 납부세액의 50%가 자동 산정되며, 50만원 미만은 생략.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가가치세 예정고지 2026, 4월·10월 개인사업자 납부',
-    description: '직전 확정 납부세액의 50%를 예정고지. 50만원 미만은 생략, 매출 급감 시 예정신고 선택 가능. 부가가치세법 48조.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function VatPreliminaryNoticeIndividual2026Page() {
     { name: '부가가치세 예정고지 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '부가가치세 예정고지 2026, 개인사업자 4월·10월 납부 완전 정리',
+    headline: '부가가치세 예정고지 2026, 개인사업자 4월·10월 납부 정리',
     description:
       '개인 일반과세자와 소규모 법인이 받는 부가세 예정고지의 산정 기준(직전기 50%), 납부기한(4월 25일·10월 25일), 50만원 미만 생략 규정, 예정신고 선택 요건까지 부가가치세법 §48 기준으로 정리.',
     url: URL,

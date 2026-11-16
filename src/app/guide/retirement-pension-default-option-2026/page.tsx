@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-13';
 export const metadata: Metadata = {
   title: '퇴직연금 디폴트옵션 2026, 안 정하면 생기는 일',
   description:
-    'DC형·IRP 퇴직연금은 운용 지시를 안 하면 방치돼 수익이 0에 가깝습니다. 사전지정운용제도(디폴트옵션)의 상품 3유형, 지정 방법, 직접운용과의 비교를 근로자퇴직급여보장법 §21의2 기준으로 정리했습니다.',
+    'DC형·IRP 퇴직연금은 운용 지시를 안 하면 돈이 방치됩니다. 디폴트옵션 상품 3유형과 지정 방법, 직접 굴릴 때와의 비교를 정리했습니다.',
   keywords: [
     '퇴직연금 디폴트옵션',
     '사전지정운용제도',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직연금 디폴트옵션 2026, 안 정하면 생기는 일' }],
-    title: '퇴직연금 디폴트옵션 2026, 사전지정운용제도 완전 정리',
-    description: 'DC·IRP 운용 지시를 안 하면 자동 운용되는 디폴트옵션. 상품 3유형, 위험등급, 직접운용 비교.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '퇴직연금 디폴트옵션 2026, 사전지정운용제도 정리',
-    description: 'DC·IRP 운용 지시 없으면 자동 운용. 상품 3유형·위험등급·직접운용 비교. 근퇴법 §21의2.',
   },
 };
 
@@ -106,7 +101,7 @@ export default function RetirementPensionDefaultOption2026Page() {
     { name: '퇴직연금 디폴트옵션 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '퇴직연금 디폴트옵션 2026, 사전지정운용제도 완전 정리',
+    headline: '퇴직연금 디폴트옵션 2026, 사전지정운용제도 정리',
     description:
       'DC·IRP 운용 지시가 없을 때 자동 운용되는 디폴트옵션(사전지정운용제도). 상품 3유형, 위험등급, 직접운용 비교, 과세이연을 근로자퇴직급여보장법 §21의2 기준으로 정리.',
     url: URL,

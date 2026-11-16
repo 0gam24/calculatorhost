@@ -34,6 +34,8 @@ interface CategoryPageMeta {
   description: string;
   /** metadata.title 의 키워드부 (개수 미포함, 제목 안정성 유지) */
   titleKeywords: string;
+  /** meta description. 40~80자, 같은 단어 반복 없이 (네이버 04-02·06-01, ADR-016) */
+  metaDescription: string;
 }
 
 export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
@@ -43,6 +45,8 @@ export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
     icon: 'receipt',
     description: '종합소득세·양도세·취득세·부가세 신고와 절세 실전 가이드.',
     titleKeywords: '종합소득세·양도세·부가세 신고 절세',
+    metaDescription:
+      '종합소득세·양도세·취득세·부가세의 신고 방법과 절세 기준을 법조항 근거로 정리한 세금 가이드 모음입니다.',
   },
   {
     slug: 'tax-real-estate',
@@ -50,6 +54,8 @@ export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
     icon: 'home',
     description: '집을 살 때 취득세, 보유할 때 재산세·종부세, 팔 때 양도세를 확인하는 부동산 세금 가이드.',
     titleKeywords: '취득세·재산세·양도세',
+    metaDescription:
+      '집을 살 때 취득세, 보유할 때 재산세·종부세, 팔 때 양도세를 확인하는 부동산 세금 가이드 모음입니다.',
   },
   {
     slug: 'finance',
@@ -57,6 +63,8 @@ export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
     icon: 'banknote',
     description: 'DSR·LTV·대출한도·예적금·환율 등 금융 의사결정 가이드.',
     titleKeywords: 'DSR·대출한도·예적금·환율',
+    metaDescription:
+      'DSR·LTV 대출한도부터 예적금 이자와 환율까지, 돈을 빌리고 모을 때 필요한 금융 가이드 모음입니다.',
   },
   {
     slug: 'investment',
@@ -64,6 +72,8 @@ export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
     icon: 'trending-up',
     description: '주식·코인 평단·분할매수·분할매도 등 투자 계산 가이드.',
     titleKeywords: '주식·코인 평단·분할매매',
+    metaDescription:
+      '주식·코인 평균단가와 분할매수·분할매도 손익을 직접 계산해 보는 투자 가이드 모음입니다.',
   },
   {
     slug: 'work',
@@ -71,6 +81,8 @@ export const GUIDE_CATEGORY_PAGES: CategoryPageMeta[] = [
     icon: 'briefcase',
     description: '연봉 실수령액·프리랜서 세금·N잡러 건강보험 등 근로소득 가이드.',
     titleKeywords: '연봉 실수령·프리랜서·N잡러',
+    metaDescription:
+      '연봉 실수령액, 프리랜서 세금, N잡러 건강보험처럼 일해서 버는 소득을 다루는 근로 가이드 모음입니다.',
   },
 ];
 
@@ -83,23 +95,19 @@ function getMeta(slug: GuideCategorySlug): CategoryPageMeta {
 export function buildGuideCategoryMetadata(slug: GuideCategorySlug): Metadata {
   const meta = getMeta(slug);
   const url = `https://calculatorhost.com/guide/category/${slug}/`;
-  const title = `${meta.id} 가이드 모음 | ${meta.titleKeywords} | calculatorhost`;
-  const description = slug === 'tax-real-estate'
-    ? `${meta.description} 집을 살 때·보유할 때·팔 때 필요한 계산기를 선택하고, 각 도구의 지원 조건과 가이드의 적용 기준을 확인하세요.`
-    : `${meta.description} 2026년 최신 세율·기준 반영, 법조항 근거와 단계별 계산 사례 포함. 무료·회원가입 불필요.`;
+  // 제목은 40자 이내·브랜드 없이 (ADR-016, 네이버 06-01). 설명은 카테고리별로 고정한 40~80자 문장
+  const title = `${meta.id} 가이드 모음 | ${meta.titleKeywords}`;
+  const description = meta.metaDescription;
   return {
     title,
     description,
     alternates: { canonical: url },
     openGraph: {
-      title,
-      description,
       url,
       type: 'website',
-      images: ['/og-default.png'],
       locale: 'ko_KR',
     },
-    twitter: { card: 'summary_large_image', images: ['/og-default.png'] },
+    twitter: { card: 'summary_large_image' },
   };
 }
 
@@ -134,10 +142,11 @@ export default function GuideCategoryIndex({
     dateModified: modifiedDate ?? guides[0]?.publishedAt ?? '2026-07-22',
   });
   const itemListLd = buildItemListJsonLd(
-    guides.map((g) => ({
-      name: g.title,
-      url: `https://calculatorhost.com/guide/${g.slug}/`,
-    })),
+    // 글마다 고유 OG 이미지를 image 로 (네이버 캐러셀 08-07 필수)
+    guides.map((g) => {
+      const url = `https://calculatorhost.com/guide/${g.slug}/`;
+      return { name: g.title, url, image: `${url}opengraph-image.png` };
+    }),
     `${meta.id} 가이드`
   );
 

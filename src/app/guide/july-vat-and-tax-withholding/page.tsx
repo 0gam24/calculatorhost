@@ -22,15 +22,12 @@ const DATE_PUBLISHED = "2026-05-15";
 const DATE_MODIFIED = "2026-05-15";
 
 export const metadata: Metadata = {
-  title: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost",
+  title: "7월 부가세 확정신고·연말정산 사전점검 2026",
   description:
-    "7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 동시에 필요한 시기입니다. 신고 기한·공제 항목·준비 서류를 미리 파악해 놓치는 항목 없이 관리하세요.",
+    '7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 겹치는 시기입니다. 신고 기한과 준비 서류를 미리 확인하세요.',
   keywords: ["7월 부가세 신고","부가가치세 확정신고","연말정산 사전점검","원천징수","세금 신고 일정","홈택스 신고"],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost' }],
-    title: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost",
-    description: "7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 동시에 필요한 시기입니다. 신고 기한·공제 항목·준비 서류를 미리 파악해 놓치는 항목 없이 관리하세요.",
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -79,10 +76,10 @@ export default function GuidePage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost" },
+    { name: '7월 부가세 확정신고·연말정산 점검' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost",
+    headline: "7월 부가세 확정신고·연말정산 사전점검 2026",
     description: "7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 동시에 필요한 시기입니다. 신고 기한·공제 항목·준비 서류를 미리 파악해 놓치는 항목 없이 관리하세요.",
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -93,7 +90,7 @@ export default function GuidePage() {
     keywords: ["7월 부가세 신고","부가가치세 확정신고","연말정산 사전점검","원천징수","세금 신고 일정","홈택스 신고"],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost",
+    name: "7월 부가세 확정신고·연말정산 사전점검 2026",
     description: "7월은 부가가치세 확정신고와 하반기 연말정산 사전점검이 동시에 필요한 시기입니다. 신고 기한·공제 항목·준비 서류를 미리 파악해 놓치는 항목 없이 관리하세요.",
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -121,11 +118,11 @@ export default function GuidePage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: "7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost" },
+                    { name: '7월 부가세 확정신고·연말정산 점검' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">가이드 · 2026-05-15</p>
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost</h1>
+                <h1 className="mb-3 text-4xl font-bold tracking-tight">7월 부가세 확정신고·연말정산 사전점검 2026</h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   매년 7월은 개인사업자와 법인 모두에게 바쁜 세무 시즌입니다. 부가가치세 확정신고 기한이 돌아오는 동시에, 하반기 연말정산을 위한 공제 항목 사전점검도 병행해야 합니다. 지금부터 핵심 일정과 준비 사항을 체계적으로 정리합니다.
                 </p>
@@ -221,7 +218,7 @@ export default function GuidePage() {
                 </ul>
               </section>
 
-              <ShareButtons title={"7월 부가세 확정신고·연말정산 사전점검 2026 | calculatorhost"} url={URL} />
+              <ShareButtons title={"7월 부가세 확정신고·연말정산 사전점검 2026"} url={URL} />
 
               <MainBackrefBox mainCategoryUrl={getMainCategoryUrl('tax')} />
 

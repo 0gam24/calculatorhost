@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-04';
 const DATE_MODIFIED = '2026-05-04';
 
 export const metadata: Metadata = {
-  title: '퇴직금 vs DC/DB 퇴직연금 선택 가이드 2026 | calculatorhost',
+  title: '퇴직금 vs DC/DB 퇴직연금 선택 가이드 2026, 세금·운용 비교',
   description:
-    '퇴직금·DC형·DB형 차이점, 세금·수익성 비교. 임금피크제 대비 전환 전략까지 한눈에. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '퇴직금, DC형(확정기여), DB형(확정급여)의 차이를 세금과 운용 방식으로 비교했습니다. 임금피크제 때 전환 전략도 담았습니다.',
   keywords: [
     '퇴직금',
     'DC형 퇴직연금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직금 vs DC/DB 퇴직연금 선택 가이드 2026 | calculatorhost' }],
-    title: '퇴직금 vs DC/DB 퇴직연금 선택 가이드 2026',
-    description: '3가지 제도 특징·세금·수익성 비교, 최적 선택 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -338,7 +335,7 @@ export default function SeveranceVsPensionDcDbPage() {
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/severance/" className="text-primary-600 underline dark:text-primary-500">퇴직금 계산기</Link>, DC/DB 시나리오 비교</li>
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link>, 임금피크 후 세후 월급 확인</li>
-                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link>, 퇴직 전 세액공제 극대화</li>
+                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 가이드</Link>, 퇴직 전 세액공제 극대화</li>
                   <li>→ <Link href="/guide/unemployment-benefit-2026/" className="text-primary-600 underline dark:text-primary-500">실업급여 2026</Link>, 퇴직금과 함께 챙길 고용보험 구직급여 조건·금액</li>
                 </ul>
               </section>
@@ -351,9 +348,9 @@ export default function SeveranceVsPensionDcDbPage() {
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 근로기준법 §34 (퇴직금) · 근로자퇴직급여보장법 (퇴직연금) · 소득세법 §104의2 (퇴직소득세). 참고:{' '}
+                  <strong>법적 근거</strong>: 근로기준법 §34 (퇴직금) · 근로자퇴직급여보장법 (퇴직연금) · 소득세법 §48·§55② (퇴직소득세). 참고:{' '}
                   <a href="https://www.law.go.kr/lsSc.do?tabMenuId=tab18&query=%EA%B7%BC%EB%A1%9C%EA%B8%B0%EC%A4%80%EB%B2%95" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">근로기준법 (법제처)</a>,{' '}
-                  <a href="https://www.kdie.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">근로자퇴직급여보장 공단</a>,{' '}
+                  <a href="https://www.moel.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">고용노동부</a>,{' '}
                   <a href="https://www.nts.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>

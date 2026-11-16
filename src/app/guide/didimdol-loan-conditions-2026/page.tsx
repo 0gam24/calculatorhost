@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-31';
 const DATE_MODIFIED = '2026-07-31';
 
 export const metadata: Metadata = {
-  title: '디딤돌대출 2026, 소득·한도·금리 조건 총정리',
+  title: '디딤돌대출 2026, 소득·한도·금리 조건 정리',
   description:
-    '디딤돌대출은 부부합산 연소득 6천만원 이하 무주택 세대주를 위한 정부 지원 주택담보대출입니다. 소득 요건, 대출 한도, 금리 수준, 대상 주택과 신청 방법을 주택도시기금 기준으로 정리했습니다.',
+    '디딤돌대출은 부부합산 연소득 6천만원 이하 무주택 세대주를 위한 정부 지원 주택담보대출입니다. 한도·금리와 신청 방법을 정리했습니다.',
   keywords: [
     '디딤돌대출',
     '디딤돌대출 조건',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '디딤돌대출 2026, 소득·한도·금리 조건 총정리' }],
-    title: '디딤돌대출 2026, 내 조건이면 얼마까지 받을까',
-    description: '부부합산 연소득 6천만원 이하 무주택 세대주 대상. 소득·한도·금리·대상 주택 총정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '디딤돌대출 2026, 소득·한도·금리 조건 총정리',
-    description: '무주택 실수요자 정부 지원 주담대. 소득 요건·한도·금리 정리.',
   },
 };
 
@@ -95,7 +90,7 @@ export default function DidimdolLoanConditions2026Page() {
     { name: '디딤돌대출 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '디딤돌대출 2026, 소득·한도·금리 조건 총정리',
+    headline: '디딤돌대출 2026, 소득·한도·금리 조건 정리',
     description:
       '무주택 실수요자를 위한 정부 지원 주택담보대출 디딤돌대출. 소득 요건, 대출 한도, 금리 수준, 대상 주택, 신청 방법과 보금자리론 비교까지 정리.',
     url: URL,
@@ -143,7 +138,7 @@ export default function DidimdolLoanConditions2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   디딤돌대출 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">소득·한도·금리 조건 총정리</span>
+                  <span className="text-2xl text-text-secondary">소득·한도·금리 조건 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   이 가이드는 처음 내 집을 마련하려는 무주택 실수요자를 위한 것입니다. 디딤돌대출은 정부가 주택도시기금으로 지원하는 저리 주택담보대출로, 소득과 주택가격에 상한이 있습니다. 내가 자격이 되는지, 얼마까지 어떤 금리로 받을 수 있는지, 어떻게 신청하는지 순서대로 정리했습니다.

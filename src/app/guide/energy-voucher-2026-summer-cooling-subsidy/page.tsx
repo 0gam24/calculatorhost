@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-02';
 const DATE_MODIFIED = '2026-06-02';
 
 export const metadata: Metadata = {
-  title: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 6월 15일 신청',
+  title: '2026 에너지바우처, 냉방비 최대 70만원, 12월 31일까지 신청',
   description:
-    '2026 에너지바우처는 저소득층·취약계층의 냉방비를 최대 70만원까지 지원합니다. 신청 기간(6/15~12/31), 대상, 지원금액(세대원 수별), 신청 방법·필요 서류, 사용 방법을 완벽 정리했습니다.',
+    '2026 에너지바우처는 저소득층·취약계층의 냉방비를 최대 70만원까지 지원합니다. 신청은 12월 31일까지이며 대상과 서류를 정리했습니다.',
   keywords: [
     '에너지바우처 2026',
     '에너지바우처 신청',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 6월 15일 신청' }],
-    title: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 신청 안내',
-    description: '저소득층·노인·영유아·장애인 등 취약계층 최대 70만원 냉방비 지원. 신청 기한 6월 15일~12월 31일.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원',
-    description: '신청 기한 6월 15일부터. 대상·신청방법·지원금액 정리.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function EnergyVoucher2026SummerCoolingSubsidy() {
   const articleLd = buildArticleJsonLd({
     headline: '2026 에너지바우처, 여름 냉방비 최대 70만원 지원, 신청 기한 6월 15일 ~ 12월 31일',
     description:
-      '저소득층·노인·영유아·장애인 등 취약계층 최대 70만원 냉방비·난방비 지원. 신청 대상, 지원금액, 신청 방법, 필요 서류 완벽 가이드.',
+      '저소득층·노인·영유아·장애인 등 취약계층 최대 70만원 냉방비·난방비 지원. 신청 대상, 지원금액, 신청 방법, 필요 서류 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

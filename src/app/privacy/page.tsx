@@ -7,9 +7,15 @@ import { buildBreadcrumbJsonLd, buildWebPageJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
   title: 'calculatorhost 개인정보처리방침 | 정책 및 쿠키 안내',
-  description: 'calculatorhost의 개인정보 수집·이용·보관·제3자 제공(Google AdSense, Analytics) 사항을 투명하게 공개합니다. GDPR 준수.',
+  description: 'calculatorhost가 수집하는 정보와 쿠키, Google AdSense·Analytics 제3자 제공 내용을 안내합니다.',
   alternates: { canonical: 'https://calculatorhost.com/privacy/' },
   robots: { index: true, follow: true },
+  openGraph: {
+    url: 'https://calculatorhost.com/privacy/',
+    type: 'website',
+    locale: 'ko_KR',
+    siteName: 'calculatorhost',
+  },
 };
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
@@ -122,7 +128,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-semibold text-text-primary">5. 개인정보 보호 책임자</h2>
               <p>
-                개인정보 관련 문의는 <a href="/contact" className="text-primary-500">문의 페이지</a>를
+                개인정보 관련 문의는 <a href="/contact/" className="text-primary-500">문의 페이지</a>를
                 이용해 주시기 바랍니다.
               </p>
             </section>

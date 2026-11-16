@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-15';
 export const metadata: Metadata = {
   title: '상속세 연부연납 기간과 담보 요건 2026, 몇 년까지 나눌까',
   description:
-    '상속세 납부세액이 2천만원을 넘으면 담보를 제공하고 최대 10년, 가업상속재산은 최대 20년까지 나눠 낼 수 있습니다. 담보로 인정되는 것과 안 되는 것, 가산율까지 상속세및증여세법 §71 기준으로 정리했습니다.',
+    '상속세가 2천만원을 넘으면 최대 10년, 가업상속재산은 20년까지 나눠 낼 수 있습니다. 담보 요건과 가산율을 정리했습니다.',
   keywords: [
     '상속세 연부연납',
     '연부연납 기간',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 연부연납 기간과 담보 요건 2026, 몇 년까지 나눌까' }],
-    title: '상속세 연부연납 기간과 담보 요건 2026',
-    description: '납부세액 2천만원 초과 시 담보 제공하고 최대 10년, 가업상속재산은 최대 20년. 담보 종류와 가산율까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속세 연부연납 기간과 담보 요건 2026',
-    description: '최대 10년(가업상속재산 20년), 담보 4종, 가산율까지 상속세및증여세법 §71 기준 정리.',
   },
 };
 

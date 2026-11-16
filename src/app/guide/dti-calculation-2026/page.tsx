@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-29';
 export const metadata: Metadata = {
   title: 'DTI 계산법 2026, 주택담보대출 총부채상환비율·연소득 기준 한도',
   description:
-    'DTI(총부채상환비율) 계산법을 명확히 정리합니다. 주담대 원리금 공식, 연소득 산정, 기타 대출 이자 포함, 연소득 대비 한도 계산, DSR과의 차이를 사례로 설명. 2026년 기준.',
+    'DTI(총부채상환비율) 계산법을 정리합니다. 주담대 원리금 공식과 연소득 산정, DSR과의 차이를 사례로 설명합니다.',
   keywords: [
     'DTI 계산',
     '총부채상환비율',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: 'DTI 계산법 2026, 총부채상환비율·연소득 기준 대출한도',
-      },
-    ],
-    title: 'DTI 계산법 2026',
-    description: '주택담보대출 한도를 결정하는 DTI의 정의, 공식, 한도, 계산 방법을 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DTI 계산법 2026',
-    description: '총부채상환비율 DTI의 의미, 계산 공식, 실제 대출한도 결정 방식',
   },
 };
 
@@ -673,7 +661,7 @@ export default function DtiCalculation2026Page() {
                     >
                       DSR·DTI·LTV 차이와 계산법 2026
                     </Link>{' '}
-, 세 대출 규제 지표의 정의, 공식, 차이 총정리
+, 세 대출 규제 지표의 정의, 공식, 차이 정리
                   </li>
                   <li>
                     →{' '}

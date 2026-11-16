@@ -22,6 +22,8 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { ComprehensivePropertyTaxCalculator } from './ComprehensivePropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { calculateComprehensivePropertyTax } from '@/lib/tax/comprehensive-property';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 /** 요약 표: 1세대1주택, 60세 미만·보유 5년 미만(세액공제 0), 농특세 포함. 함수로 계산해 본문과 계산기가 어긋나지 않게 한다. */
 function oneHouseTotal(publishedPrice: number): string {
@@ -51,15 +53,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율',
-    description: '주택 공시가 합산으로 종부세 과세 여부와 예상 납부액을 즉시 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합부동산세 계산기 2026 | 1세대1주택·공정비율',
-    description: '주택 공시가 합산으로 종부세 과세 여부와 예상 납부액을 즉시 확인하세요.',
   },
 };
 
@@ -126,7 +124,7 @@ export default function ComprehensivePropertyTaxPage() {
     { name: '종합부동산세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '종합부동산세 계산기 사용 방법',
     description: '보유 주택 수, 공시가, 공제 조건을 입력해 종부세를 계산합니다.',
     steps: [
@@ -151,8 +149,9 @@ export default function ComprehensivePropertyTaxPage() {
         text: '과세표준, 산출세액, 세액공제, 농특세를 포함한 최종 납부세액이 표시됩니다.',
       },
     ],
-  });
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+  const glossaryData = {
     name: '종합부동산세 계산기 핵심 용어',
     description: '종합부동산세 계산 및 신고에 필요한 주요 용어 정의',
     url: URL,
@@ -186,7 +185,8 @@ export default function ComprehensivePropertyTaxPage() {
         url: 'https://www.realtyprice.kr',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -266,6 +266,7 @@ export default function ComprehensivePropertyTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="종합부동산세는 주택 공시가 합계에서 공제를 차감한 후 공정시장가액비율 60%를 적용한 과세표준에 누진세를 곱하고, 농어촌특별세 20%를 더하여 계산되는 국세입니다(종부세법 §8·§9, 농특세법 §5)."
                 table={{
@@ -735,7 +736,7 @@ export default function ComprehensivePropertyTaxPage() {
                       href="/guide/june-property-tax/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      재산세 완벽 가이드 (재산세 vs 종부세 차이 정리)
+                      재산세 가이드 (재산세 vs 종부세 차이 정리)
                     </a>
                   </li>
                   <li>
@@ -806,6 +807,7 @@ export default function ComprehensivePropertyTaxPage() {
                   정확한 종부세 계산 및 신고는 관할 세무서 또는 세무사의 안내를 받으시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

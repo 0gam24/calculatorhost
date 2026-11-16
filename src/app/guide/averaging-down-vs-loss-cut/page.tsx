@@ -14,21 +14,19 @@ import {
   buildSpeakableJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/guide/averaging-down-vs-loss-cut/';
 const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '물타기 vs 손절 vs 비중조절 비교 2026 | calculatorhost',
+  title: '물타기 vs 손절 vs 비중조절 비교 2026 | 하락장 의사결정 기준',
   description:
-    '하락장에서 물타기·손절·비중조절 3가지 전략의 의사결정 기준과 시뮬레이션. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함. 2026 업데이트.',
+    '하락장에서 물타기·손절·비중조절 중 무엇을 고를지 의사결정 기준과 시뮬레이션으로 정리했습니다.',
   keywords: ['물타기', '손절', '비중조절', '평단', '주식 전략', '코인 전략', '추매'],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '물타기 vs 손절 vs 비중조절 비교 2026 | calculatorhost' }],
-    title: '물타기 vs 손절 vs 비중조절, 언제 무엇을 선택하나',
-    description: '하락장에서의 3가지 전략 의사결정 기준.',
     url: URL,
     type: 'article',
 
@@ -38,8 +36,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '물타기 vs 손절 vs 비중조절',
-    description: '하락 종목 대응 3가지 전략의 의사결정 기준.',
 
   },
 };
@@ -103,7 +99,7 @@ export default function AveragingDownVsLossCutPage() {
   });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermsLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '물타기·손절 투자 용어집',
     description: '물타기, 손절, DCA, 비중조절 등 하락장 대응 투자 전략 핵심 용어 정의.',
     url: URL,
@@ -129,7 +125,8 @@ export default function AveragingDownVsLossCutPage() {
         alternateName: 'Position Sizing, 부분 매도',
       },
     ],
-  });
+  };
+  const definedTermsLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -351,6 +348,7 @@ export default function AveragingDownVsLossCutPage() {
                 </div>
               </section>
 
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
@@ -413,12 +411,8 @@ export default function AveragingDownVsLossCutPage() {
                     금융감독원 투자자 교육
                   </a>
                   ,{' '}
-                  <a href="https://www.krx.co.kr/investor/investguide/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
+                  <a href="https://www.krx.co.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
                     한국거래소 투자정보
-                  </a>
-                  ,{' '}
-                  <a href="https://www.kisline.or.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">
-                    한국신용평가 시장분석
                   </a>.
                 </p>
                 <p>

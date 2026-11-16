@@ -20,6 +20,8 @@ import {
 } from '@/lib/seo/jsonld';
 import { SplitSellCalculator } from './SplitSellCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/split-sell/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -42,9 +44,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '분할매도 계산기 2026, 주식·코인 실현손익',
-    description:
-      '평단·보유 + 차수별 매도가/수량으로 차수별 실현손익(세후)과 누적 손익까지 즉시 계산.',
     url: URL,
     type: 'website',
 
@@ -52,8 +51,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분할매도 계산기 2026 (주식·코인)',
-    description: '차수별 실현손익·세후 수령액·누적 수익률을 즉시 계산.',
   },
 };
 
@@ -138,7 +135,7 @@ export default function SplitSellPage() {
     { name: '분할매도 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '분할매도 실현손익 계산하기',
     description:
       '평단·보유 수량과 차수별 매도가·수량을 입력해 차수별 실현손익과 누적 손익을 산출하는 방법',
@@ -160,7 +157,37 @@ export default function SplitSellPage() {
         text: '차수별 실현손익(수수료·거래세 차감), 세후 수령액, 누적 실현손익과 잔여 보유 수량이 즉시 계산됩니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+
+  const glossaryData = {
+    name: '분할매도·실현손익 핵심 용어',
+    description: '주식·코인 분할매도와 실현손익·세후 수령액 용어집',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '분할매도 (Profit Taking)',
+        description:
+          '보유 종목을 한 번에 전량 매도하지 않고 여러 차수로 나눠 매도하는 전략. 일부 익절·일부 보유로 위험·심리 분산.',
+      },
+      {
+        name: '실현손익',
+        description:
+          '매도 체결로 확정된 손익. 산식: (매도가 − 평단) × 수량 − 매도수수료 − 거래세. 평가손익(미실현)과 구분.',
+      },
+      {
+        name: '증권거래세',
+        description:
+          '한국 주식 매도 시 부과되는 세금. 2026년 매도분부터 코스피 0.20%(거래세 0.05% + 농어촌특별세 0.15%), 코스닥 0.20%. 코인은 거래세 없음.',
+        url: 'https://www.nts.go.kr',
+      },
+      {
+        name: '잔여 평단 불변 원칙',
+        description:
+          '분할매도 후 잔여 보유 수량의 평균단가는 변하지 않음. 평단은 매수 이력으로만 결정되며 매도는 영향 X. 일부 증권사 화면 표기는 다를 수 있음.',
+      },
+    ],
+  };
 
   return (
     <>
@@ -192,34 +219,7 @@ export default function SplitSellPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            buildDefinedTermSetJsonLd({
-              name: '분할매도·실현손익 핵심 용어',
-              description: '주식·코인 분할매도와 실현손익·세후 수령액 용어집',
-              url: `${URL}#glossary`,
-              terms: [
-                {
-                  name: '분할매도 (Profit Taking)',
-                  description:
-                    '보유 종목을 한 번에 전량 매도하지 않고 여러 차수로 나눠 매도하는 전략. 일부 익절·일부 보유로 위험·심리 분산.',
-                },
-                {
-                  name: '실현손익',
-                  description:
-                    '매도 체결로 확정된 손익. 산식: (매도가 − 평단) × 수량 − 매도수수료 − 거래세. 평가손익(미실현)과 구분.',
-                },
-                {
-                  name: '증권거래세',
-                  description:
-                    '한국 주식 매도 시 부과되는 세금. 2026년 매도분부터 코스피 0.20%(거래세 0.05% + 농어촌특별세 0.15%), 코스닥 0.20%. 코인은 거래세 없음.',
-                  url: 'https://www.nts.go.kr',
-                },
-                {
-                  name: '잔여 평단 불변 원칙',
-                  description:
-                    '분할매도 후 잔여 보유 수량의 평균단가는 변하지 않음. 평단은 매수 이력으로만 결정되며 매도는 영향 X. 일부 증권사 화면 표기는 다를 수 있음.',
-                },
-              ],
-            }),
+            buildDefinedTermSetJsonLd(glossaryData),
           ),
         }}
       />
@@ -264,6 +264,7 @@ export default function SplitSellPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="분할매도(Profit Taking)는 보유 종목을 한 번에 전량 매도하지 않고 여러 차례에 나눠 매도하는 방식입니다. 가격대별로 비중을 분산해 일부 익절·일부 보유로 위험·심리를 관리합니다."
                 table={{
@@ -401,7 +402,7 @@ export default function SplitSellPage() {
                   <li>
                     상장주식 양도소득세(대주주·해외주식 등)는 본 계산기에 포함되지 않습니다. 별도{' '}
                     <a
-                      href="/calculator/capital-gains-tax"
+                      href="/calculator/capital-gains-tax/"
                       className="text-primary-500 hover:underline"
                     >
                       양도소득세 계산기
@@ -479,6 +480,7 @@ export default function SplitSellPage() {
                   모든 투자 결정은 투자자 본인의 책임입니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

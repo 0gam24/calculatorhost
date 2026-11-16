@@ -25,7 +25,7 @@ const DATE_MODIFIED = '2026-08-21';
 export const metadata: Metadata = {
   title: '상생임대주택 특례 2026 일몰, 유예 양도기한 2027~2029',
   description:
-    '상생임대주택 특례가 2026-12-31 일몰되고 2026-08-03 세제개편안에서 양도기한 유예가 신설됩니다. 2026 종료 계약은 2027-12-31, 2027 이후 종료 계약은 종료 후 1년 또는 2029-12-31 중 빠른 날까지 양도.',
+    '상생임대주택 특례 일몰에 맞춰 세제개편안이 양도기한 유예를 신설합니다. 2026년 종료 계약은 2027년 12월 31일까지 팔면 됩니다.',
   keywords: [
     '상생임대주택 특례 일몰',
     '상생임대인 2026 종료',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상생임대주택 특례 2026 일몰과 2027~2029 양도기한 유예' }],
-    title: '상생임대주택 특례 2026 일몰, 유예 양도기한 2027~2029',
-    description: '상생임대차 계약의 2년 거주요건 면제 혜택을 유지하려면 유예 양도기한 내 매도가 필수. 계약 종료 시점별 정확한 기한 계산.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상생임대주택 특례 2026 일몰과 유예 양도기한 2027~2029',
-    description: '2026-08-03 세제개편안 유예 조항 신설. 계약 종료 시점별 양도기한과 사례 3개, 세금 시뮬 정리.',
   },
 };
 
@@ -383,7 +378,7 @@ export default function SangsaengLandlordSunsetPage() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">상생임대인 특례 기본 요건 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">5% 인상 요건, 계약 판정 방법, 4가지 진입 조건 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">5% 인상 요건, 계약 판정 방법, 4가지 진입 조건 정리.</p>
                   </Link>
                   <Link
                     href="/guide/one-household-12-billion-exemption/"

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026 | 재취득 절차',
+  title: 'N잡 건강보험 피부양자 탈락 기준 정리 2026 | 재취득 절차',
   description:
-    '2026 피부양자 탈락 기준: 소득 합산 2,000만 초과·사업자등록 + 사업소득 1원 이상·프리랜서 500만 초과. 재산세 과세표준 5억 4천만 + 소득 1,000만 초과 시도 탈락. 지역가입자 전환·재취득 절차 정리.',
+    '피부양자는 합산소득 2,000만 원을 넘거나 사업자등록 후 사업소득이 1원이라도 있으면 자격을 잃습니다. 재취득 절차도 정리했습니다.',
   keywords: [
     'N잡 건강보험',
     '피부양자 탈락',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026 | 재취득 절차' }],
-    title: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026',
-    description: '소득·재산·관계 3대 기준 + 사업자등록 자동 탈락 + 재취득 절차.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'N잡 건강보험 피부양자 탈락 기준 2026',
-    description: '소득 2,000만·프리랜서 500만·사업자등록 1원 = 탈락.',
   },
 };
 
@@ -88,7 +83,7 @@ export default function NJobberDependentGuide() {
     { name: 'N잡 건강보험 피부양자 탈락' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026',
+    headline: 'N잡 건강보험 피부양자 탈락 기준 정리 2026',
     description:
       'N잡러·프리랜서가 피부양자 자격을 잃는 3대 기준과 탈락 시 지역가입자 전환·보험료 폭증·재취득 절차.',
     url: URL,
@@ -100,7 +95,7 @@ export default function NJobberDependentGuide() {
     keywords: ['피부양자', 'N잡', '건강보험', '지역가입자', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: 'N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026',
+    name: 'N잡 건강보험 피부양자 탈락 기준 정리 2026',
     description: '소득·재산·관계 3대 기준 + 사업자등록 자동 탈락 + 재취득 절차.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -132,7 +127,7 @@ export default function NJobberDependentGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026
+                  N잡 건강보험 피부양자 탈락 기준 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   직장인 부모·배우자에게 피부양자로 등재된 N잡러·프리랜서가 가장 많이 놓치는 함정, 합산소득 2,000만 원 초과,
@@ -277,7 +272,7 @@ export default function NJobberDependentGuide() {
                 </ul>
               </section>
 
-              <ShareButtons title="N잡 건강보험 피부양자 탈락 기준 완벽 정리 2026" url={URL} description="소득·재산·관계 3대 기준 + 사업자등록 자동 탈락 + 재취득 절차." />
+              <ShareButtons title="N잡 건강보험 피부양자 탈락 기준 정리 2026" url={URL} description="소득·재산·관계 3대 기준 + 사업자등록 자동 탈락 + 재취득 절차." />
 
               {/* 출처·면책 */}
               <section

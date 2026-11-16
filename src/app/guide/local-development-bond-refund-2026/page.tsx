@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-05';
 export const metadata: Metadata = {
   title: '자동차 채권 환급금 조회·신청 2026, 지역개발채권·도시철도채권',
   description:
-    '자동차 살 때 의무로 매입한 지역개발채권·도시철도채권은 만기 후 돌려받을 수 있습니다. 잠자는 미환급금이 2,391억원. 채권 종류별 만기와 소멸시효, 금고은행 조회·신청 방법을 단계별로 정리했습니다.',
+    '자동차 살 때 의무로 매입한 지역개발채권·도시철도채권은 만기 후 돌려받을 수 있습니다. 금고은행 조회·신청 방법을 정리했습니다.',
   keywords: [
     '자동차 채권 환급금',
     '지역개발채권 환급',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차 채권 환급금 조회·신청 2026, 지역개발채권·도시철도채권' }],
-    title: '자동차 채권 환급금 조회·신청 2026',
-    description: '자동차 등록 때 산 지역개발·도시철도채권 만기 환급. 만기·소멸시효·금고은행 조회 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차 채권 환급금 조회·신청 2026',
-    description: '지역개발채권 5년·소멸시효 10년, 도시철도채권 7년·소멸시효 5년. 금고은행에서 조회.',
   },
 };
 
@@ -96,7 +91,7 @@ export default function LocalDevelopmentBondRefund2026Page() {
     { name: '자동차 채권 환급금' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차 채권 환급금 조회·신청 2026, 지역개발채권·도시철도채권 완전 정리',
+    headline: '자동차 채권 환급금 조회·신청 2026, 지역개발채권·도시철도채권 정리',
     description:
       '자동차 등록 때 의무 매입한 지역개발채권·도시철도채권의 만기 환급 방법. 채권 종류별 만기(5년·7년)와 소멸시효(10년·5년), 금고은행 조회·신청 절차, 실제 환급액 예시.',
     url: URL,

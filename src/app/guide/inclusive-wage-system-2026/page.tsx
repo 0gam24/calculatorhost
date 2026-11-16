@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-08';
 export const metadata: Metadata = {
   title: '포괄임금제 2026, 야근수당 못 받나 무효 요건 정리',
   description:
-    '포괄임금제라도 실제 근로가 약정 시간을 넘으면 초과분 수당을 추가로 청구할 수 있습니다. 유효하려면 근로자 동의와 불이익 없음, 시간외수당 명시가 필요합니다(근로기준법 §56·§17). 무효 판단 기준과 대응 방법을 사례로 정리했습니다.',
+    '포괄임금제라도 실제 근로가 약정 시간을 넘으면 초과분 수당을 추가로 청구할 수 있습니다. 무효 판단 기준과 대응 방법을 정리했습니다.',
   keywords: [
     '포괄임금제',
     '포괄임금제 야근수당',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '포괄임금제 2026, 야근수당과 무효 요건' }],
-    title: '포괄임금제 2026, 야근수당 못 받나 무효 요건',
-    description: '포괄임금제 유효 요건과 무효 시 초과근로 수당 청구, 최저임금 위반 판단까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '포괄임금제 2026, 야근수당 못 받나 무효 요건',
-    description: '포괄임금제 계약이어도 실근로가 약정을 넘으면 추가 수당 청구 가능. 요건과 대응법 정리.',
   },
 };
 

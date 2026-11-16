@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-28';
 const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 5월 신고 가이드',
+  title: '사업소득 vs 기타소득 분류 기준 2026 | 강사·프리랜서 5월 신고',
   description:
-    '강사료·원고료가 사업소득일까 기타소득일까? 1회성 vs 정기, 필요경비 인정률 차이(60% vs 80%), 누진세 vs 분리과세 22%, 잘못 분류 시 40% 가산세 위험. 5월 31일 신고 전 필독.',
+    '강사료·원고료가 사업소득인지 기타소득인지 1회성·정기성으로 가르는 기준과 필요경비·세율 차이를 정리했습니다.',
   keywords: [
     '사업소득 기타소득 분류',
     '강사료 기타소득',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 5월 신고 가이드' }],
-    title: '사업소득 vs 기타소득 완벽 분류 기준 2026 | 강사·프리랜서 필독',
-    description: '5월 31일 신고 전 필독. 강사료 사업소득 vs 기타소득, 필요경비 차이, 누진세율 영향, 가산세 회피.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사업소득 vs 기타소득 분류 2026 강사·프리랜서',
-    description: '1회성 강의 vs 정기 강사, 필요경비 차이, 누진세율 영향, 신고 실수로 40% 가산세?',
   },
 };
 
@@ -101,9 +96,9 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
     { name: '사업소득 vs 기타소득 분류' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 신고 완벽 가이드',
+    headline: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 신고 가이드',
     description:
-      '강사료·원고료가 사업소득일까 기타소득일까? 필요경비 인정률 차이(60% vs 80%)·누진세 vs 분리과세 22%·4대보험 의무·가산세 40% 위험. 정기성·반복성 판정 기준·300만 분리과세 한도·실질과세 원칙 완벽 정리.',
+      '강사료·원고료가 사업소득일까 기타소득일까? 필요경비 인정률 차이(60% vs 80%)·누진세 vs 분리과세 22%·4대보험 의무·가산세 40% 위험. 정기성·반복성 판정 기준·300만 분리과세 한도·실질과세 원칙 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +110,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '사업소득 vs 기타소득 분류 기준 2026 강사·프리랜서 신고',
     description:
-      '5월 31일 신고 직전! 강사료·원고료·인적용역이 사업소득인지 기타소득인지 판정 기준·필요경비 차이·누진세 영향·4대보험 의무·40% 가산세 회피·300만 분리과세 선택권 완벽 정리.',
+      '5월 31일 신고 직전! 강사료·원고료·인적용역이 사업소득인지 기타소득인지 판정 기준·필요경비 차이·누진세 영향·4대보험 의무·40% 가산세 회피·300만 분리과세 선택권 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -147,7 +142,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                 readingMinutes={13}
                 publishedDate="2026-05-28"
                 title="사업소득 vs 기타소득 분류 기준 2026"
-                subtitle="· 강사·프리랜서 5월 신고 필독"
+                subtitle="· 강사·프리랜서 5월 신고 안내"
                 lead={
                   <p data-speakable>
                     프리랜서·강사·작가라면 주의하세요.
@@ -784,7 +779,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -799,7 +794,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
               </section>
 
               <ShareButtons
-                title="사업소득 vs 기타소득 분류 완벽 가이드 2026"
+                title="사업소득 vs 기타소득 분류 가이드 2026"
                 url={URL}
                 description="강사료·원고료가 사업소득일까 기타소득일까? 필요경비 차이(60% vs 80%), 누진세 vs 분리과세 22%, 40% 가산세 회피."
               />
@@ -814,7 +809,7 @@ export default function BusinessIncomeVsOtherIncomeClassification2026Page() {
                   (기타소득) · §37 (기타소득의 필요경비) · §55 (세율) · §70 (확정신고) · 소득세법 시행령 §87
                   (필요경비율). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

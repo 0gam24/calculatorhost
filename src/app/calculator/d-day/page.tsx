@@ -19,12 +19,14 @@ import {
 import { DdayCalculator } from './DdayCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/d-day/';
 const DATE_MODIFIED = '2026-10-10';
 
 export const metadata: Metadata = {
-  title: '디데이 계산기 | D-day 날짜 계산·100일 계산',
+  // 같은 단어 반복을 줄인다 (네이버 04-02). 앞쪽 검색어 '디데이 계산기'는 그대로
+  title: '디데이 계산기 | D-day 날짜·100일 계산',
   description:
     '두 날짜 사이의 일수와 D-day를 계산합니다. 100일·1000일 기념일과 몇 주·몇 개월인지도 바로 확인하세요.',
   keywords: [
@@ -39,15 +41,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: 'D-day 계산기 2026 | 날짜 차이·100일 기념일',
-    description: '특정일까지 D-day, 두 날짜 사이 일수, N일 후 날짜를 즉시 계산하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'D-day 계산기 2026',
-    description: '날짜 계산과 기념일 카운팅을 한 번에.',
   },
 };
 
@@ -110,6 +108,8 @@ export default function DdayPage() {
     description:
       '목표일까지 남은 날(D-day), 두 날짜 사이 일수, N일 후 날짜, 100일·1000일 기념일(시작일 = 1일째)을 계산하는 무료 도구',
     url: URL,
+    // 네이버 소프트웨어 마크업(08-14) applicationCategory 는 실제 분류로
+    applicationCategory: 'UtilitiesApplication',
   });
   const webPageLd = buildWebPageJsonLd({
     name: '디데이 계산기',
@@ -119,7 +119,7 @@ export default function DdayPage() {
     dateModified: DATE_MODIFIED,
     isPartOf: getCategoryUrlForCalculator('d-day'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '디데이 계산기 사용 방법',
     description: '기준일과 목표일을 입력하여 남은 일수와 기념일 날짜를 계산하는 단계별 가이드',
     steps: [
@@ -137,7 +137,8 @@ export default function DdayPage() {
       },
       { name: '결과 확인', text: '남은 일수, 도달 날짜, 요일, 기념일 표를 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -213,6 +214,7 @@ export default function DdayPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="디데이(D-day)는 목표 날짜까지 남은 날수를 세는 표현입니다. 목표일 전이면 D-남은 날, 지나면 D+지난 날로 쓰고, 기념일은 시작일을 1일째로 셉니다."
                 table={{

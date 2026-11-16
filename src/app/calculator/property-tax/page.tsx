@@ -27,6 +27,8 @@ import { PropertyTaxCalculator } from './PropertyTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { calculatePropertyTaxTotal } from '@/lib/tax/property';
 import { formatKRW } from '@/lib/utils';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/property-tax/';
 const ASSESSMENT_DESCRIPTION =
@@ -69,15 +71,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
   },
 };
 
@@ -147,7 +145,7 @@ export default function PropertyTaxPage() {
     dateModified: '2026-10-01',
     isPartOf: getCategoryUrlForCalculator('property-tax'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '재산세 계산기 사용 방법',
     description: DESCRIPTION,
     steps: [
@@ -162,7 +160,8 @@ export default function PropertyTaxPage() {
         text: '재산세 본세·지방교육세·선택한 도시지역분을 확인합니다. 지역자원시설세와 세부담 상한은 제외되므로 실제 고지액과 다를 수 있습니다.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -173,7 +172,7 @@ export default function PropertyTaxPage() {
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   // 과세표준 비율과 특례세율은 별도 조건으로 설명한다.
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '재산세 핵심 용어',
     description:
       '주택 재산세 산정에 필요한 과세표준·공정시장가액비율·1세대1주택 특례·도시지역분·과세기준일 정의',
@@ -204,7 +203,8 @@ export default function PropertyTaxPage() {
           '재산세 납세의무자를 판정하는 기준일(매년 6월 1일). 이 날의 소유자가 그 해 재산세 전액을 부담. 근거: 지방세법 §114.',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -294,6 +294,7 @@ export default function PropertyTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="재산세는 주택 등 재산에 매년 부과되는 지방세입니다. 2026년 주택 과세표준은 공시가격에 일반 60% 또는 1세대1주택 43%·44%·45%를 곱합니다. 재산세 본세와 지방교육세, 선택한 도시지역분을 합산한 참고값을 계산합니다."
                 table={{
@@ -674,7 +675,7 @@ export default function PropertyTaxPage() {
                       className="inline-flex items-center gap-1 font-medium text-primary-700 underline dark:text-primary-300"
                     >
                       <Icon name="chevron-right" size={14} />
-                      <span>재산세 완벽 가이드 (6월 부과·7월 납부), 7월 시즌 직전 필독</span>
+                      <span>재산세 가이드 (6월 부과·7월 납부), 7월 시즌 전 확인</span>
                     </a>
                   </li>
                   <li>
@@ -740,6 +741,7 @@ export default function PropertyTaxPage() {
                   시청의 세무과 또는 세무사의 안내를 받으시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

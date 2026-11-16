@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-28';
 export const metadata: Metadata = {
   title: '자녀 세대분리 1세대1주택 비과세 2026, 30세 미만 소득요건',
   description:
-    '자녀를 세대분리하면 1세대1주택 양도세 비과세를 각각 받을 수 있지만, 30세 미만은 소득요건을 충족해야 인정됩니다. 소득세법 시행령 제152조의3 세대 요건과 실질 판단 기준, 서류상 분리의 함정까지 정리했습니다.',
+    '자녀를 세대분리하면 1세대1주택 비과세를 각각 받을 수 있지만, 30세 미만은 소득요건을 채워야 인정됩니다. 실질 판단 기준도 정리했습니다.',
   keywords: [
     '자녀 세대분리',
     '세대분리 소득요건',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '자녀 세대분리 1세대1주택 비과세 2026, 30세 미만 소득요건',
-      },
-    ],
-    title: '자녀 세대분리 1세대1주택 비과세 2026, 30세 미만 소득요건과 실질 판단',
-    description:
-      '자녀를 세대분리하면 부모와 자녀가 각각 1세대1주택 비과세를 받을 수 있지만, 30세 미만은 중위소득 40% 이상의 소득요건을 충족해야 인정됩니다. 소득세법 시행령 제152조의3 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,9 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자녀 세대분리 1세대1주택 비과세 2026, 30세 미만 소득요건',
-    description:
-      '30세 미만 자녀는 중위소득 40% 이상 소득이 있어야 별도 세대로 인정되어 각자 1세대1주택 비과세를 받습니다. 소득세법 시행령 §152의3.',
   },
 };
 

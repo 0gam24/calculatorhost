@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',
   description:
-    '2026년 건강보험료율 7.09%→7.19%, 장기요양보험료율 12.95%→13.14%로 인상. 직장가입자 보험료 계산(근로자 3.595%), 피부양자 자격(소득 2,000만원·재산 과표 9억), 지역가입자 산정까지 1차출처로 정리했습니다.',
+    '2026년 건강보험료율은 7.19%, 장기요양보험료율은 건보료의 13.14%로 올랐습니다. 직장가입자 부담과 피부양자 자격을 정리했습니다.',
   keywords: [
     '건강보험료',
     '건강보험료 2026',
@@ -38,10 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자' }],
-    title: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',
-    description:
-      '2026년 건강보험료율 7.19%·장기요양 13.14%. 직장·지역가입자 보험료, 피부양자 자격(소득 2천만·재산 과표 9억) 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,9 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '건강보험료 2026, 요율 7.19%·피부양자 자격',
-    description: '직장·지역가입자 보험료, 피부양자 소득·재산 요건 완정리.',
-    images: ['/og-default.png'],
   },
 };
 
@@ -93,7 +86,7 @@ export default function HealthInsurancePremium2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '건강보험료 2026, 요율·피부양자·지역가입자' },
+    { name: '건강보험료 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '건강보험료 2026, 요율 7.19%·피부양자 자격·지역가입자',

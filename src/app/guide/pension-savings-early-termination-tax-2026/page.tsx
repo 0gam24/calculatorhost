@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-16';
 export const metadata: Metadata = {
   title: '연금저축 중도해지 세금 2026, 기타소득세 16.5% 폭탄 피하기',
   description:
-    '연금저축·IRP를 중도해지하면 세액공제 받은 원금과 운용수익에 기타소득세 16.5%가 붙습니다. 소득세법 §59의3 기준 과세 구조와 부득이한 사유 저율과세(3.3~5.5%)를 사례로 정리합니다.',
+    '연금저축·IRP를 중도해지하면 세액공제 받은 원금과 운용수익에 기타소득세 16.5%가 붙습니다. 부득이한 사유 저율과세도 정리합니다.',
   keywords: [
     '연금저축 중도해지 세금',
     'IRP 해지 기타소득세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연금저축 중도해지 세금 2026, 기타소득세 16.5% 폭탄 피하기' }],
-    title: '연금저축 중도해지 세금 2026, 기타소득세 16.5%의 진실',
-    description: '세액공제 받은 원금과 수익에 16.5% 기타소득세. 부득이한 사유면 3.3~5.5% 저율과세. 소득세법 §59의3.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연금저축 중도해지 세금 2026, 기타소득세 16.5% 폭탄 피하기',
-    description: '세액공제 받은 원금·수익에 16.5%. 부득이한 사유면 연금소득세율 3.3~5.5%로 낮아집니다.',
   },
 };
 

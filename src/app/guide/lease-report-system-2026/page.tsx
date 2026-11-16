@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-12';
 export const metadata: Metadata = {
   title: '전월세 신고제 2026, 대상·30일 기한·과태료·신고방법',
   description:
-    '보증금 6천만원 초과 또는 월세 30만원 초과 주택 임대차는 계약일부터 30일 안에 신고해야 합니다. 2025년 6월부터 계도기간이 끝나 미신고 시 과태료가 부과됩니다. 대상, 방법, 과태료를 정리합니다.',
+    '보증금 6천만원이나 월세 30만원을 넘는 주택 임대차는 계약일부터 30일 안에 신고해야 합니다. 대상과 방법, 과태료를 정리합니다.',
   keywords: [
     '전월세 신고제',
     '임대차 신고제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전월세 신고제 2026, 대상·30일 기한·과태료·신고방법' }],
-    title: '전월세 신고제 2026, 계도기간 끝났다',
-    description: '보증금 6천만원 초과 또는 월세 30만원 초과 계약은 30일 내 신고. 미신고 과태료와 온라인 신고 방법 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전월세 신고제 2026, 대상·기한·과태료',
-    description: '보증금 6천만원 초과 or 월세 30만원 초과 → 30일 내 신고. 계도기간 2025.5.31 종료.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function LeaseReportSystem2026Page() {
     { name: '전월세 신고제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '전월세 신고제 2026, 대상·기한·과태료·신고방법 완전 정리',
+    headline: '전월세 신고제 2026, 대상·기한·과태료·신고방법 정리',
     description:
       '보증금 6천만원 초과 또는 월세 30만원 초과 주택 임대차의 30일 신고 의무, 온라인·주민센터 신고 방법, 확정일자 자동부여, 과태료 기준을 부동산 거래신고법 §6의2 기준으로 정리.',
     url: URL,

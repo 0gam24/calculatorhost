@@ -21,6 +21,8 @@ import {
 import { GiftTaxCalculator } from './GiftTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/gift-tax/';
 
@@ -39,18 +41,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '증여세 계산기 2026, 배우자 6억·자녀 5천만',
-    description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여세 계산기 2026, 배우자 6억·자녀 5천만',
-    description: '재산 증여 시 세금을 미리 계산하고 10년 합산 공제 전략을 확인하세요.',
-  },
-  other: {
-    dateModified: '2026-04-24',
   },
 };
 
@@ -121,7 +116,7 @@ export default function GiftTaxPage() {
     { name: '증여세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '증여세 계산기 사용 방법',
     description: '재산 증여 시 증여세를 5단계로 계산합니다.',
     steps: [
@@ -143,8 +138,9 @@ export default function GiftTaxPage() {
         text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. "신고 기한 내 자진신고" 체크박스를 확인하고 최종 납부액을 조회합니다. 신고 기한은 증여일이 속하는 달 말일부터 3개월입니다(상증세법 §68).',
       },
     ],
-  });
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+  const glossaryData = {
     name: '증여세 계산기 핵심 용어',
     description: '증여세 계산 및 신고에 필요한 주요 용어 정의',
     url: URL,
@@ -178,7 +174,8 @@ export default function GiftTaxPage() {
         url: 'https://www.hometax.go.kr',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -249,6 +246,7 @@ export default function GiftTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="증여세는 타인으로부터 재산을 무상으로 받을 때 부과되는 국세입니다. 증여 대상과의 관계(배우자·자녀·부모·친족)에 따라 공제액이 다르고, 10년 내 동일 증여자로부터의 증여는 공제를 합산하여 적용합니다(상증세법 §26, §53)."
                 table={{
@@ -560,6 +558,7 @@ export default function GiftTaxPage() {
                   신고 시에도 초과 기간에 대한 이자는 발생합니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

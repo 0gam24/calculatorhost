@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '자녀 주택 증여 vs 매매 비교 2026 | 저가양수도 30% 룰 + 세금 시뮬',
+  title: '자녀 주택 증여 vs 매매 비교 2026 | 저가양수도 30%·세금 시뮬',
   description:
-    '자녀 주택 이전 4가지 시나리오 비교. 저가양수도 30%·3억 룰, 자금출처 조사, 양도세 시가 기준, 증여취득세 vs 취득세, 신고 함정 5가지.',
+    '자녀에게 주택을 넘기는 4가지 시나리오를 세금으로 비교합니다. 저가양수도 30%·3억 룰과 자금출처 조사, 신고 함정을 정리했습니다.',
   keywords: [
     '자녀 주택 증여',
     '자녀 주택 매매',
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자녀 주택 증여 vs 매매 비교 2026 | 저가양수도 30% 룰 + 세금 시뮬' }],
-    title: '자녀 주택 증여 vs 매매 비교 2026',
-    description: '저가양수도 30%·3억 룰, 자금출처 조사, 양도세 시가 기준 계산, 4가지 시나리오 세금 비교.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자녀 주택 증여 vs 매매 비교 2026',
-    description: '시가 10억 주택 자녀 이전 4가지 비교: 시가 매매 ≈9,400만 vs 7억 매매 ≈7,602만(최소) vs 5억 ≈8,612만 vs 전액 증여 ≈2.63억.',
   },
 };
 
@@ -716,7 +711,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </li>
                 <li>
                   <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary hover:underline">
-                    부담부증여 양도+증여세 완벽 정리, 채무 인수 시 세금 계산
+                    부담부증여 양도+증여세 정리, 채무 인수 시 세금 계산
                   </Link>
                 </li>
                 <li>
@@ -733,7 +728,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
               <p className="text-xs text-text-secondary">
                 본 가이드는 참고용 교육 자료이며 법적 효력이 없습니다. 모든 세금 계산은 실제 거래
                 조건(시가 평가 방식, 부양가족 여부, 기타 특례 적용)에 따라 달라질 수 있으므로, 반드시
-                세무사, 국세청 콜센터(1577-0571), 또는 관할 세무서의 공식 상담을 받으시기 바랍니다.
+                세무사, 국세청 국세상담센터(국번 없이 126), 또는 관할 세무서의 공식 상담을 받으시기 바랍니다.
               </p>
             </section>
 

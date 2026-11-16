@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-30';
 export const metadata: Metadata = {
   title: 'ISA 만기 연금계좌 전환 2026, 300만원 추가 세액공제',
   description:
-    'ISA 만기자금을 60일 안에 연금저축·IRP로 옮기면 이전액의 10%, 최대 300만원을 추가로 세액공제받습니다. 60일 기한과 한도 없는 이체, 연 최대 1,200만원 공제 구조를 소득세법 §59의3 기준으로 정리했습니다.',
+    'ISA 만기자금을 60일 안에 연금저축·IRP로 옮기면 이전액의 10%, 최대 300만원을 추가로 세액공제받습니다.',
   keywords: [
     'ISA 만기 연금전환',
     'ISA 연금저축 이전',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'ISA 만기 연금계좌 전환 2026, 300만원 추가 세액공제' }],
-    title: 'ISA 만기 연금계좌 전환 2026, 300만원 추가 세액공제',
-    description: 'ISA 만기자금을 60일 안에 연금계좌로 옮기면 이전액의 10%, 최대 300만원 추가 세액공제. 연 최대 1,200만원 공제 구조 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ISA 만기 연금계좌 전환 2026, 300만원 추가 세액공제',
-    description: 'ISA 만기자금을 놀리지 말고 60일 안에 연금계좌로. 이전액 10%, 최대 300만원을 더 돌려받습니다.',
   },
 };
 

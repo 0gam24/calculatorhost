@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-06';
 const DATE_MODIFIED = '2026-05-06';
 
 export const metadata: Metadata = {
-  title: '양도소득세 계산 5단계 가이드 2026 | 1세대1주택 vs 일시적2주택 | calculatorhost',
+  title: '양도소득세 계산 5단계 가이드 2026 | 1세대1주택 vs 일시적2주택',
   description:
-    '양도소득세를 정확히 계산하는 5단계. 취득가부터 과세표준까지, 1세대1주택 비과세 조건·일시적2주택 중과세까지 완벽 정리. 소득세법 §55 기준.',
+    '취득가에서 과세표준까지 양도소득세를 5단계로 계산합니다. 1세대1주택 비과세 조건과 중과세까지 다룹니다.',
   keywords: [
     '양도소득세',
     '양도세 계산',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도소득세 계산 5단계 가이드 2026 | 1세대1주택 vs 일시적2주택 | calculatorhost' }],
-    title: '양도소득세 계산 5단계 가이드 2026',
-    description: '1세대1주택부터 일시적2주택 중과세까지. 정확한 계산 5단계 및 절세 팁.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -92,7 +89,7 @@ export default function CapitalGainsTax5StepsPage() {
   const articleLd = buildArticleJsonLd({
     headline: '양도소득세 계산 5단계 가이드 (2026)',
     description:
-      '양도소득세를 정확히 계산하는 5단계. 취득가 → 양도가 → 기간 → 세율 → 최종세액까지 완벽 정리.',
+      '양도소득세를 정확히 계산하는 5단계. 취득가 → 양도가 → 기간 → 세율 → 최종세액까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

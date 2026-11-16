@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/guide/april-vat-preliminary-q1/';
 const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '4월 부가세 1기 예정신고 가이드 2026 | calculatorhost',
+  title: '4월 부가세 1기 예정신고 가이드 2026 | 납부 기한·홈택스 절차',
   description:
-    '2026년 4월 1~25일 부가가치세 1기 예정신고·납부 가이드. 일반과세·간이과세 차이부터 홈택스 신고까지. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '4월 1~25일 부가가치세 1기 예정신고·납부 방법을 정리했습니다. 일반과세·간이과세 차이와 홈택스 전자신고 절차를 다룹니다.',
   keywords: [
     '부가세 1기 예정신고',
     '부가세 4월 신고',
@@ -36,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '4월 부가세 1기 예정신고 가이드 2026 | calculatorhost' }],
-    title: '4월 부가세 1기 예정신고 가이드 2026',
-    description: '4월 1~25일 신고 마감. 매출세액·매입세액공제 정리.',
     url: URL,
     type: 'article',
 
@@ -110,14 +108,14 @@ export default function AprilVatPreliminaryQ1Page() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '4월 부가세 1기 예정신고 가이드 2026',
-    description: '2026년 4월 1~25일 부가가치세 1기 예정신고·납부 완벽 가이드. 일반과세자 의무·간이과세자 면제·신고 대상·매출세액 vs 매입세액공제·홈택스 단계별 신고법.',
+    description: '2026년 4월 1~25일 부가가치세 1기 예정신고·납부 가이드. 일반과세자 의무·간이과세자 면제·신고 대상·매출세액 vs 매입세액공제·홈택스 단계별 신고법.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermsLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '부가가치세 1기 신고 핵심 용어',
     description: '부가세, 예정신고, 확정신고, 매입세액공제 등 부가가치세 신고 필수 용어 정의.',
     url: URL,
@@ -143,7 +141,8 @@ export default function AprilVatPreliminaryQ1Page() {
         alternateName: '매입세액공제',
       },
     ],
-  });
+  };
+  const definedTermsLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -333,6 +332,7 @@ export default function AprilVatPreliminaryQ1Page() {
                 </ul>
               </section>
 
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">

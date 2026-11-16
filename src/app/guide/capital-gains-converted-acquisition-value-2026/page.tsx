@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-02';
 export const metadata: Metadata = {
   title: '양도세 환산취득가액 2026, 취득가액 모를 때 계산과 가산세',
   description:
-    '오래전 취득해 실제 취득가액을 모를 때는 환산취득가액으로 양도세를 계산할 수 있습니다. 환산가액 공식, 개산공제 3%, 신축 후 5년 내 양도 시 5% 가산세까지 소득세법 기준으로 정리했습니다.',
+    '실제 취득가액을 모를 때는 환산취득가액으로 양도세를 계산합니다. 개산공제 3%와 신축 후 5년 내 양도 시 5% 가산세를 정리했습니다.',
   keywords: [
     '환산취득가액',
     '취득가액 모를때 양도세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도세 환산취득가액 2026, 취득가액 모를 때 계산과 가산세' }],
-    title: '양도세 환산취득가액 2026, 취득가액 모를 때 공식과 5% 가산세 총정리',
-    description: '실거래가 증빙이 없는 오래된 부동산은 환산취득가액으로 양도세를 계산합니다. 공식, 개산공제 3%, 신축 5년 이내 5% 가산세까지 한 번에.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도세 환산취득가액 2026, 공식·개산공제·5% 가산세',
-    description: '취득가액을 모를 때 쓰는 환산취득가액의 정확한 공식과 함정을 소득세법 §97·§114의2 기준으로 정리했습니다.',
   },
 };
 
@@ -445,7 +440,7 @@ export default function CapitalGainsConvertedAcquisitionValue2026Page() {
                     href="/guide/long-term-holding-special-deduction-80-percent/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">장기보유특별공제 완전정리</div>
+                    <div className="font-semibold text-primary-500">장기보유특별공제 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">오래 보유한 부동산의 공제율과 1세대1주택 특례.</p>
                   </Link>
                   <Link

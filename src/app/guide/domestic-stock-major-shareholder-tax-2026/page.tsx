@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-15';
 export const metadata: Metadata = {
   title: '국내주식 대주주 양도소득세 2026, 종목당 50억 기준과 세율',
   description:
-    '국내 상장주식은 소액주주면 양도세가 없지만, 종목당 50억원 이상 보유한 대주주는 양도차익에 세금을 냅니다. 소득세법 §94와 시행령 §157 기준, 20~25% 세율, 반기별 신고를 사례로 정리합니다.',
+    '국내 상장주식은 소액주주면 양도세가 없지만, 종목당 50억원 이상 보유한 대주주는 20~25% 세율로 과세됩니다.',
   keywords: [
     '국내주식 대주주 양도소득세',
     '대주주 요건 50억',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국내주식 대주주 양도소득세 2026, 종목당 50억 기준과 세율' }],
-    title: '국내주식 대주주 양도소득세 2026, 50억 기준과 20~25% 세율',
-    description: '소액주주는 비과세, 종목당 50억 이상 대주주는 양도차익 과세. 3억 이하 20%, 초과 25%. 소득세법 §94.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국내주식 대주주 양도소득세 2026',
-    description: '종목당 50억 이상 대주주만 국내 상장주식 양도세 과세. 3억 이하 20%, 초과 25%. 소득세법 §94.',
   },
 };
 

@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-02';
 const DATE_MODIFIED = '2026-08-02';
 
 export const metadata: Metadata = {
-  title: '주택임대사업자 등록 2026, 혜택·의무·자동말소 총정리',
+  title: '주택임대사업자 등록 2026, 세제혜택·10년 임대의무·자동말소',
   description:
-    '주택임대사업자로 등록하면 종부세 합산배제·양도세 특례를 받지만 10년 임대의무와 5% 증액제한을 어기면 감면이 추징됩니다. 등록 요건, 세제혜택, 자동말소까지 민간임대주택법 기준으로 정리했습니다.',
+    '주택임대사업자는 종부세·양도세 혜택을 받지만 10년 임대의무나 5% 증액제한을 어기면 감면이 추징됩니다. 자동말소 처리도 정리했습니다.',
   keywords: [
     '주택임대사업자 등록',
     '임대사업자 혜택',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택임대사업자 등록 2026, 혜택·의무·자동말소 총정리' }],
-    title: '주택임대사업자 등록 2026: 혜택·의무·자동말소 완전 정리',
-    description: '아파트 신규 등록 불가, 비아파트 장기 10년만 가능. 종부세 합산배제·양도세 특례 요건, 5% 증액제한, 자동말소까지 한 번에 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택임대사업자 등록 2026: 혜택·의무·자동말소',
-    description: '10년 임대의무·5% 증액제한을 어기면 감면 추징. 아파트는 신규 등록 불가. 민간임대주택법 §5·§43·§44 기준.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function HousingRentalBusinessRegistration2026Page() {
     { name: '주택임대사업자 등록 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택임대사업자 등록 2026: 혜택·의무·자동말소 완전 정리',
+    headline: '주택임대사업자 등록 2026: 혜택·의무·자동말소 정리',
     description:
       '주택임대사업자 등록의 혜택과 의무, 자동말소·자진말소 시 세금 처리까지 민간임대주택법 §5·§43·§44 기준으로 정리한 가이드.',
     url: URL,
@@ -149,7 +144,7 @@ export default function HousingRentalBusinessRegistration2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   주택임대사업자 등록 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">혜택·의무·자동말소 총정리</span>
+                  <span className="text-2xl text-text-secondary">혜택·의무·자동말소 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택임대사업자로 등록하면 종부세 합산배제와 양도세 특례 같은 실질 감면 혜택을 받을 수 있지만, 10년이라는 긴 임대의무와 5% 증액제한을 어기면 그동안의 감면이 추징될 수 있습니다. 이 가이드는 2020년 7·10 대책 이후 바뀐 등록 가능 유형, 대표 세제혜택, 사업자로서의 의무, 자동말소·자진말소 시 세금 처리, 등록 절차까지 민간임대주택법과 세법 기준으로 순서대로 정리합니다.

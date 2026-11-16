@@ -16,12 +16,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/hybrid-vehicle-tax-2026/';
 const DATE_PUBLISHED = '2026-06-25';
-const DATE_MODIFIED = '2026-06-25';
+const DATE_MODIFIED = '2026-10-30';
 
 export const metadata: Metadata = {
-  title: '하이브리드 자동차세 2026, 배기량 cc 과세·차령경감·전기차 정액 비교',
+  title: '하이브리드 자동차세 2026, cc 과세·차령경감·전기차 비교',
   description:
-    '하이브리드 자동차세는 전기차처럼 정액 과세가 아니라 내연기관 배기량 기준 cc 과세입니다. 2026년 배기량별 세율, 차령경감, 전기차와의 차이를 명확히 정리합니다.',
+    '하이브리드 자동차세는 정액이 아니라 내연기관 배기량으로 매기는 cc 과세입니다. 배기량별 세율과 차령경감, 전기차와의 차이를 정리했습니다.',
   keywords: [
     '하이브리드 자동차세',
     'HEV PHEV 자동차세',
@@ -33,16 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '하이브리드 자동차세 2026, 배기량 cc 과세·차령경감·전기차 정액 비교',
-      },
-    ],
-    title: '하이브리드 자동차세 2026',
-    description: '하이브리드는 전기차와 달리 배기량 cc 과세 + 차령경감 적용. 세율 및 실제 세액 계산.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -51,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '하이브리드 자동차세 2026',
-    description: '배기량 기준 cc 과세 세율과 전기차 정액(13만원) 과세의 차이점',
   },
 };
 
@@ -75,7 +63,7 @@ const FAQ_ITEMS = [
   {
     question: '하이브리드도 차령경감이 적용되나요?',
     answer:
-      '네, 적용됩니다. 3년차부터 연 5% 감액되므로, 5년차 = 15% 할인입니다. 예: 3년차 = 5%, 4년차 = 10%, 5년차 = 15%, 최대 50%(12년차+).',
+      '네, 적용됩니다. 3년차부터 매년 5%씩 세액이 깎여, 5년차에는 차령경감 15%가 적용됩니다. 예: 3년차 5%, 4년차 10%, 5년차 15%, 12년차 이후 최대 50%입니다.',
   },
   {
     question: 'PHEV(플러그인 하이브리드)도 하이브리드와 같은 세율인가요?',
@@ -90,7 +78,7 @@ const FAQ_ITEMS = [
   {
     question: '하이브리드 자동차세를 줄일 수 있는 방법이 있나요?',
     answer:
-      '주요 방법은 1월에 일시납으로 5% 할인을 받거나, 차령경감 혜택(3년차 이상)을 받는 것입니다. 그 외 특별 감면 정책은 지역·차량 유형에 따라 다르니 관할 시·군·구청이나 위택스·이택스에 문의하세요.',
+      '주요 방법은 연납 공제(1월 신청 시 연세액 대비 약 4.58%)와 차령경감(3년차부터 연 5%, 최대 50%)입니다. 연납은 1월, 3월, 6월, 9월에 신청할 수 있지만 1월 공제율이 가장 큽니다. 그 외 지자체별 감면 정책은 위택스·이택스에서 확인하세요.',
   },
 ];
 
@@ -166,7 +154,7 @@ export default function HybridVehicleTax2026Page() {
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">
-                  자동차 소유자 · 8분 읽기 · 2026-06-25
+                  자동차 소유자 · 8분 읽기 · 2026-10-30
                 </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   하이브리드 자동차세 2026
@@ -541,7 +529,7 @@ export default function HybridVehicleTax2026Page() {
                     </tr>
                     <tr className="border-b border-border-base">
                       <td className="py-2 pr-3 font-semibold">5년차 세액</td>
-                      <td>약 18~27만원 (15% 할인)</td>
+                      <td>약 18~27만원(차령경감 15%)</td>
                       <td>13만원 (고정)</td>
                     </tr>
                     <tr className="border-b border-border-base">
@@ -575,42 +563,47 @@ export default function HybridVehicleTax2026Page() {
 
               <section className="space-y-4">
                 <h2 className="border-b border-border-base pb-2 text-2xl font-bold">
-                  1월에 일시납으로 자동차세를 깎을 수 있나요?
+                  1월 연납으로 자동차세를 얼마나 아끼나요?
                 </h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  네, 가능합니다. 자동차세를 1월에 일시납하면 5% 할인을 받을 수 있습니다.
-                  (지방세법 시행령 §125)
+                  연 5% 금리를 남은 기간에 비례해 공제하는 방식입니다(지방세법 §128③, 시행령 §125).
+                  1월 신청이면 연세액 × 334/365 × 5%, 즉 연세액 대비 약 4.58%가 공제되고, 3월·6월·9월에도
+                  신청할 수 있지만 공제율은 더 작습니다.
                 </p>
 
                 <div className="rounded-lg bg-bg-raised p-4">
                   <h3 className="mb-3 font-semibold text-text-primary">
-                    1월 일시납 할인 계산 (1,598cc HEV 신차 기준)
+                    1월 연납 공제 계산(1,598cc HEV 신차 기준)
                   </h3>
                   <ul className="space-y-2 text-sm text-text-secondary">
                     <li>
-                      <strong>기본 세액:</strong> 약 290,836원 (연간)
+                      <strong>연세액:</strong> 290,836원(자동차세 223,720 + 지방교육세 67,116)
                     </li>
                     <li>
-                      <strong>할인액:</strong> 290,836 × 5% ≈ 14,542원
+                      <strong>1월 공제:</strong> 자동차세 223,720 × 334/365 × 5% = 10,230원, 지방교육세 67,116 × 334/365 × 5% = 3,070원 (각 세목별 10원 미만 절사)
                     </li>
                     <li>
-                      <strong>납부액:</strong> 290,836 − 14,542 = 약 276,294원
+                      <strong>공제 합계:</strong> 13,300원
+                    </li>
+                    <li>
+                      <strong>납부액:</strong> 290,836 − 13,300 = 277,536원
                     </li>
                     <li className="text-xs text-text-tertiary">
-                      매년 1월 1~31일 신청 가능. 이후 신청은 할인 미적용.
+                      1월, 3월, 6월, 9월 모두 신청 가능하지만 공제율은 1월이 가장 큽니다.
                     </li>
                   </ul>
                 </div>
 
                 <p className="text-text-secondary leading-relaxed">
-                  실제로는 5% 할인이 그리 큰 금액이 아니지만, 받을 수 있는 혜택이므로 매년 1월에
-                  신청하는 것이 좋습니다. 이택스(etax) 또는 관할 시·군·구청에서 신청할 수 있으며, 자동
-                  납부 설정도 가능합니다.
+                  공제 폭 자체는 크지 않지만, 받을 수 있는 혜택이므로 공제율이 가장 큰 1월에 신청하는
+                  것이 유리합니다. 이택스(etax) 또는 관할 시·군·구청에서 신청할 수 있으며, 자동 납부
+                  설정도 가능합니다.
                 </p>
 
                 <p className="text-text-secondary leading-relaxed">
-                  다만 1월 일시납 기한(1월 31일)을 놓치면 5월 납부 기한(5월 말)에 기본 세액 전액을
-                  납부해야 합니다. 미납 시 연체료(0.3%/일)가 가산되므로 반드시 기한을 확인하세요.
+                  1월 연납 기한을 놓치면 3월·6월·9월에 다시 신청할 수 있지만 공제율은 작아지고, 아예
+                  신청하지 않으면 6월(제1기분)과 12월(제2기분)에 반씩 정기분을 납부합니다. 미납 시
+                  가산금이 붙으므로 고지서의 납부 기한을 확인하세요.
                 </p>
               </section>
 

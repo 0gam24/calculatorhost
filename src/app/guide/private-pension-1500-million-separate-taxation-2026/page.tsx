@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-23';
 const DATE_MODIFIED = '2026-05-23';
 
 export const metadata: Metadata = {
-  title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | calculatorhost',
+  title: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | 연령별 세율',
   description:
-    '2026년 사적연금 1,500만 원 이하 분리과세(3.3~5.5% 저세율) vs 초과분 종합과세 완벽 가이드. 연령별 세율·신고 방법·절세 전략·5/31 마감 필수 신고.',
+    '사적연금 수령액이 연 1,500만 원 이하면 3.3~5.5% 저세율 분리과세를 고를 수 있습니다. 초과분 종합과세와 절세 전략을 정리했습니다.',
   keywords: [
     '사적연금 분리과세',
     '연금저축 분리과세',
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사적연금 1,500만 원 분리과세 vs 종합과세 2026 | calculatorhost' }],
-    title: '사적연금 1,500만 원 분리과세 vs 종합과세 완벽 가이드 (2026)',
-    description: '연금저축·IRP 수령액 1,500만 원 기준 분리과세 저세율 활용법. 연령별 세율·신고·절세 전략.',
     url: URL,
     type: 'article',
 
@@ -50,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사적연금 1,500만 원 분리과세 vs 종합과세 가이드',
-    description: '연금저축·IRP 수령액 저세율 신고법. 5/31 마감 전 필독.',
 
   },
 };
@@ -116,7 +111,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
     { name: '사적연금 1,500만 원 분리과세 vs 종합과세' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '사적연금 1,500만 원 분리과세 vs 종합과세 완벽 가이드 (2026)',
+    headline: '사적연금 1,500만 원 분리과세 vs 종합과세 가이드 (2026)',
     description:
       '연금저축·IRP 수령액 1,500만 원 이하 분리과세(3.3~5.5% 저세율) vs 초과분 종합과세. 연령별 세율·신고 의무·절세 전략·5/31 마감 신고.',
     url: URL,
@@ -164,7 +159,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   사적연금 1,500만 원 분리과세 vs 종합과세
                   <br />
-                  <span className="text-2xl text-text-secondary">· 연령별 세율·신고·절세 완벽 가이드 (2026)</span>
+                  <span className="text-2xl text-text-secondary">· 연령별 세율·신고·절세 가이드 (2026)</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   연금저축(연금계좌)이나 IRP(개인형 퇴직연금)에서 수령액이 연 1,500만 원 이하면
@@ -521,7 +516,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      가이드: 5월 종합소득세 신고 완벽 가이드
+                      가이드: 5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 종소세 신고 전체 프로세스
                   </li>
@@ -544,7 +539,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
               <ShareButtons
                 title="사적연금 1,500만 원 분리과세 vs 종합과세 가이드 (2026)"
                 url={URL}
-                description="연금저축·IRP 수령액 1,500만 원 이하 분리과세(3.3~5.5% 저세율) 완벽 가이드. 2024년 상향, 신고 방법, 절세 전략."
+                description="연금저축·IRP 수령액 1,500만 원 이하 분리과세(3.3~5.5% 저세율) 가이드. 2024년 상향, 신고 방법, 절세 전략."
               />
 
               <section
@@ -555,7 +550,7 @@ export default function PrivatePension1500MillionSeparateTaxationPage() {
                   <strong>법적 근거</strong>: 소득세법 §14 ③ 9호 (사적연금 분리과세 1,500만 원 기준) ·
                   소득세법 §20의3 (공적연금소득) · 소득세법 §64의4 (연금소득 분리과세 선택) ·
                   소득세법 §70 (종합소득세 신고) · 소득세법 §129 ⑤ (연령별 분리과세 세율). 참고:{' '}
-                  <a href="https://www.hometax.go.kr/guide/0206000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종소세 신고 가이드</a>,{' '}
+                  <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종소세 신고 가이드</a>,{' '}
                   <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?rbsSn=1447" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 사적연금소득 안내</a>.
                 </p>
                 <p className="mb-2">

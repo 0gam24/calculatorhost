@@ -24,6 +24,7 @@ import {
   RENT_CONVERSION_ANNUAL_CAP,
 } from '@/lib/constants/rent-rules-2026';
 import bokRates from '@/data/bok-rates.json';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/rent-conversion/';
 
@@ -71,15 +72,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026, 주택임대차보호법 기준`,
-    description: `현행 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + 2%p). 전세↔월세 즉시 환산 계산기.`,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: `전월세 전환율 ${CURRENT_LEGAL_CAP_DISPLAY}% 2026`,
-    description: `현행 법정 상한 ${CURRENT_LEGAL_CAP_DISPLAY}% (기준금리 ${CURRENT_BASE_RATE_PCT}% + 2%p). 전세↔월세 환산 계산기.`,
   },
 };
 
@@ -142,7 +139,7 @@ export default function RentConversionPage() {
     dateModified: '2026-04-27',
     isPartOf: getCategoryUrlForCalculator('rent-conversion'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '전월세 전환율 계산기 사용 방법',
     description: '전세금과 기준금리를 입력하여 월세로 환산하는 단계별 가이드',
     steps: [
@@ -158,14 +155,15 @@ export default function RentConversionPage() {
         text: '월세 환산액, 환산보증금, 법정 상한액을 확인합니다.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '부동산', url: 'https://calculatorhost.com/category/real-estate/' },
-    { name: '전월세전환' },
+    { name: '전월세 전환' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -235,6 +233,7 @@ export default function RentConversionPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <section
                 aria-label="현행 법정 전월세 전환 상한"
                 className="rounded-lg border-l-4 border-l-primary-500 bg-primary-500/5 p-4"

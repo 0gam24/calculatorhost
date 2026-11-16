@@ -21,6 +21,7 @@ import {
 import { VehicleTaxCalculator } from './VehicleTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/vehicle-tax/';
 
@@ -44,16 +45,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '자동차세 얼마? 배기량별 즉시 계산 2026',
-    description:
-      '내 차 배기량만 입력 → 자동차세 + 지방교육세 즉시 산출. 연납 5% 할인·노후차 경감 자동.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 얼마? 배기량별 즉시 계산 2026',
-    description: '배기량 입력 → 자동차세·지방교육세 즉시 산출. 연납 5% 할인 자동 반영.',
   },
 };
 
@@ -129,7 +125,7 @@ const RELATED: Array<{ href: string; title: string; description: string }> = [
   {
     href: '/guide/vehicle-tax-2026/',
     title: '자동차세 2026 종합 가이드',
-    description: '세율·차령경감·연납 총정리',
+    description: '세율·차령경감·연납 정리',
   },
 ];
 
@@ -148,7 +144,7 @@ export default function VehicleTaxPage() {
     dateModified: '2026-06-18',
     isPartOf: getCategoryUrlForCalculator('vehicle-tax'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '자동차세 계산기 사용 방법',
     description: '배기량과 각 반기의 법정 차령을 입력하여 2026년 자동차세 예상액을 확인하는 방법',
     steps: [
@@ -164,14 +160,15 @@ export default function VehicleTaxPage() {
       },
       { name: '자동차세 결과 확인', text: '연간 자동차세, 지방교육세, 최종 납부액을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
-    { name: '자동차세 계산기' },
+    { name: '세금', url: 'https://calculatorhost.com/category/tax/' },
+    { name: '자동차세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -241,6 +238,7 @@ export default function VehicleTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="자동차세는 자동차 등록 후 매년 납부하는 지방세입니다. 배기량(cc)에 따라 3가지 세율 구간이 있고, 차령에 따라 3년 차부터 최대 50% 경감됩니다."
                 table={{

@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-25';
 // 북극성 수익 레버: [revenue-lever: indexing+traffic] (신규 색인 표면 + 리츠 배당 절세 검색 의도 흡수)
 
 export const metadata: Metadata = {
-  title: '리츠 배당금 세금 2026, 15.4% 원천징수와 절세법 | calculatorhost',
+  title: '리츠 배당금 세금 2026, 15.4% 원천징수와 절세법',
   description:
-    '리츠(REITs) 배당금은 15.4%가 원천징수되고 연 2천만원을 넘으면 종합과세됩니다. 공모리츠 분리과세 특례, ISA·연금계좌 절세, 예금·일반주식과의 세금 비교를 소득세법 §17 기준으로 정리했습니다.',
+    '리츠(REITs) 배당금은 15.4%가 원천징수되고 연 2천만원을 넘으면 종합과세됩니다. 공모리츠 분리과세와 ISA 절세법도 정리했습니다.',
   keywords: [
     '리츠 배당 세금',
     '리츠 배당소득세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '리츠 배당금 세금 2026, 15.4% 원천징수와 절세법' }],
-    title: '리츠 배당금 세금 2026, 얼마 떼고 어떻게 아끼나',
-    description: '리츠 배당 15.4% 원천징수, 2천만원 종합과세, 공모리츠 분리과세와 ISA 절세까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '리츠 배당금 세금 2026, 원천징수·종합과세·절세 정리',
-    description: '15.4% 원천징수, 금융소득 2천만원 종합과세, 공모리츠·ISA 절세. 소득세법 §17.',
   },
 };
 
@@ -106,7 +101,7 @@ export default function ReitsDividendTax2026Page() {
     { name: '리츠 배당금 세금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '리츠 배당금 세금 2026, 15.4% 원천징수와 절세법 완벽 정리',
+    headline: '리츠 배당금 세금 2026, 15.4% 원천징수와 절세법 정리',
     description:
       '리츠(REITs) 배당의 15.4% 원천징수와 금융소득 종합과세, 공모리츠 분리과세 특례, ISA·연금 절세를 소득세법 §17 기준으로 정리.',
     url: URL,

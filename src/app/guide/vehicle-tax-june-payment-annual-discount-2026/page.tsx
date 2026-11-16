@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026',
   description:
-    '2026년 자동차세 제1기(6/16~30) 납부 시즌 가이드. 연납(1월 일괄 선납) 할인, 3년차부터 차령경감 연 5% 최대 50%. 세액 계산 사례 및 납부 방법 전체 해설.',
+    '2026년 자동차세 제1기는 6월 16일부터 30일까지 냅니다. 연납 할인과 3년차부터 최대 50%인 차령경감 계산 사례를 정리했습니다.',
   keywords: [
     '자동차세 6월 납부',
     '자동차세 제1기',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감 2026' }],
-    title: '자동차세 제1기 6월 납부 완전 가이드, 연납·차령경감',
-    description: '3년차부터 차령경감 5%/년, 연납 할인. 1600cc 이하 예상 세액부터 납부 방법까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 제1기 6월 납부 완전 가이드',
-    description: '연납 할인, 차령경감 최대 50%. 2026년 세액 계산·납부 방법 전체.',
   },
 };
 

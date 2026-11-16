@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-09-10';
 const DATE_MODIFIED = '2026-09-10';
 
 export const metadata: Metadata = {
-  title: '국세 체납 압류 절차·해제 조건 2026, 예금·급여 압류 기준',
+  title: '국세 체납 압류 절차·해제 조건 2026, 예금·급여 제한 금액',
   description:
-    '국세를 기한까지 못 내면 독촉 후 압류로 이어집니다. 압류가 시작되는 시점, 예금·급여 압류가 제한되는 금액, 공매까지 가는 순서, 완납 외에 압류가 즉시 해제되는 조건을 국세징수법 §10·§31·§41·§42·§57 기준으로 정리했습니다.',
+    '국세를 기한까지 못 내면 독촉 뒤 압류로 이어집니다. 예금·급여 보호 한도와 공매 순서, 해제 조건을 정리했습니다.',
   keywords: [
     '국세 체납 압류',
     '압류 해제 조건',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국세 체납 압류 절차·해제 조건 2026, 예금·급여 압류 기준' }],
-    title: '국세 체납 압류 절차·해제 조건 2026',
-    description: '독촉부터 압류, 공매까지 순서와 예금·급여 압류 금지 금액, 압류가 즉시 해제되는 4가지 조건.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국세 체납 압류 절차·해제 조건 2026',
-    description: '독촉부터 공매까지 순서, 예금·급여 압류 금지 금액, 압류 해제 4가지 조건. 국세징수법 §57.',
   },
 };
 

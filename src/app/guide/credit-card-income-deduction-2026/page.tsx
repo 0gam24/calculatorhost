@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-03';
 const DATE_MODIFIED = '2026-07-03';
 
 export const metadata: Metadata = {
-  title: '신용카드 소득공제 2026 | 공제율 15~40%, 한도 300만+추가300만',
+  title: '신용카드 소득공제 2026 | 공제율 15~40%, 한도 600만원',
   description:
-    '2026년 신용카드 등 사용금액 소득공제 완벽 정리. 신용카드 15%, 체크·현금영수증 30%, 전통시장·대중교통 40% 공제율, 총급여별 한도(기본 300만/250만 + 추가 300만/200만), 전통시장·대중교통·문화비 추가한도까지. 조세특례제한법 §126의2 기준.',
+    '신용카드 15%, 체크카드·현금영수증 30%, 전통시장·대중교통 40%의 공제율과 총급여별 기본·추가한도를 정리했습니다.',
   keywords: [
     '신용카드 소득공제',
     '신용카드 공제율',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '신용카드 소득공제 2026 | 공제율·한도 완벽 정리' }],
-    title: '신용카드 소득공제 2026, 공제율 15~40%, 기본+추가한도 활용법',
-    description: '카드 사용액이 총급여의 25% 초과분부터 소득공제. 신용카드 15%, 체크카드 30%, 전통시장·대중교통 40% 공제율. 추가한도(전통시장·대중교통·문화비 300만원)로 절세 극대화.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '신용카드 소득공제 2026, 기본+추가한도 총 600만원까지 공제',
-    description: '신용카드 15%, 체크카드 30%, 전통시장 40% 공제율. 총급여 7천만 이하 기본 300만 + 추가 300만. 계산법과 전략까지.',
   },
 };
 
@@ -98,7 +93,7 @@ export default function CreditCardIncomeDeduction2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '신용카드 소득공제 2026, 공제율 15~40%, 기본+추가한도로 600만원까지 공제',
     description:
-      '신용카드·체크카드·현금영수증 사용금액의 소득공제. 공제율(신용카드 15%, 체크카드 30%, 전통시장·대중교통 40%), 기본한도(7천만 이하 300만/초과 250만원) + 추가한도(7천만 이하 300만/초과 200만원), 계산법과 전략까지 완전 정리.',
+      '신용카드·체크카드·현금영수증 사용금액의 소득공제. 공제율(신용카드 15%, 체크카드 30%, 전통시장·대중교통 40%), 기본한도(7천만 이하 300만/초과 250만원) + 추가한도(7천만 이하 300만/초과 200만원), 계산법과 전략까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -110,7 +105,7 @@ export default function CreditCardIncomeDeduction2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '신용카드 소득공제 2026',
     description:
-      '신용카드 등 사용금액 소득공제의 공제율·기본한도·전통시장·대중교통·문화체육 추가한도·계산법 완벽 가이드.',
+      '신용카드 등 사용금액 소득공제의 공제율·기본한도·전통시장·대중교통·문화체육 추가한도·계산법 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -446,7 +441,7 @@ export default function CreditCardIncomeDeduction2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">2026 연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">2026 연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">신용카드 공제를 포함한 연말정산 전 과정 안내.</p>
                   </Link>
                   <Link
@@ -475,7 +470,7 @@ export default function CreditCardIncomeDeduction2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">모든 세금 계산기 및 가이드</div>
-                    <p className="mt-1 text-sm text-text-secondary">소득세·양도세·취득세·재산세 완전 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">소득세·양도세·취득세·재산세 정리.</p>
                   </Link>
                 </div>
               </section>

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-09';
 export const metadata: Metadata = {
   title: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계',
   description:
-    '2026년 기초연금 월 최대 349,700원(부부 559,520원)으로 인상. 선정기준액 단독 247만원·부부 395.2만원, 65세 소득하위 70% 대상. 국민연금 받으면 깎이는지(연계감액), 부부감액, 신청 방법까지 정리했습니다.',
+    '2026년 기초연금은 월 최대 349,700원이며 65세 이상 소득 하위 70%가 대상입니다. 국민연금 연계감액과 신청 방법을 정리했습니다.',
   keywords: [
     '기초연금',
     '기초연금 2026',
@@ -37,21 +37,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계',
-    description:
-      '2026년 기초연금 월 최대 349,700원. 선정기준액 단독 247만원·부부 395.2만원, 국민연금 연계감액·부부감액·신청 방법 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기초연금 2026, 월 최대 34만 9,700원',
-    description: '선정기준액·국민연금 연계감액·부부감액·신청 방법 완정리.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계' }],
   },
 };
 
@@ -97,7 +90,7 @@ export default function BasicPension2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '기초연금 2026, 수급자격·금액·신청' },
+    { name: '기초연금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '기초연금 2026, 월 최대 34만 9,700원, 선정기준·국민연금 연계감액',

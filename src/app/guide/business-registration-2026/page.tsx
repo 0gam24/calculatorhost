@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-10';
 export const metadata: Metadata = {
   title: '개인사업자 등록 2026 | 프리랜서·간이·일반과세 비교',
   description:
-    '프리랜서에서 개인사업자로 전환할 때 필요한 등록 절차와 간이과세(1억 400만원 미만) vs 일반과세 선택 기준. 부가가치세법 §8·§61 기준.',
+    '프리랜서에서 개인사업자로 전환할 때 필요한 등록 절차와 간이과세(1억 400만원 미만)·일반과세 선택법을 정리했습니다.',
   keywords: [
     '개인사업자 등록',
     '프리랜서 사업자 등록',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '개인사업자 등록 2026 | 프리랜서·간이·일반과세 비교' }],
-    title: '개인사업자 등록 2026, 간이과세 vs 일반과세 선택 가이드',
-    description: '프리랜서 3.3% 원천징수에서 벗어나 사업자 등록하는 방법. 간이과세(매출 1억 400만원 미만) 기준과 세금 비교.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '개인사업자 등록 2026, 간이 vs 일반과세 완벽 비교',
-    description: '프리랜서 3.3% 원천징수 탈출. 사업자 등록 절차·간이과세 1억 400만원 기준·부가세 납부 의무.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function BusinessRegistration2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '개인사업자 등록 2026, 프리랜서 전환·간이 vs 일반과세 완벽 비교',
     description:
-      '프리랜서 3.3% 원천징수 탈출. 사업자 개시일 20일 이내 등록 방법, 간이과세 1억 400만원 기준, 일반과세 선택 시 매입세액 환급까지 완전 정리.',
+      '프리랜서 3.3% 원천징수 탈출. 사업자 개시일 20일 이내 등록 방법, 간이과세 1억 400만원 기준, 일반과세 선택 시 매입세액 환급까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -515,7 +510,7 @@ export default function BusinessRegistration2026Page() {
                     href="/guide/n-jobber-comprehensive-income-tax-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">N잡러 건강보험·부가세 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">N잡러 건강보험·부가세 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">N개 소득원 · 피부양자 탈락 · 보험료 계산.</p>
                   </Link>
                   <Link
@@ -526,11 +521,11 @@ export default function BusinessRegistration2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">초기 투자 후 매입세 환급받기.</p>
                   </Link>
                   <Link
-                    href="/calculator/simplified-vs-standard-vat/"
+                    href="/calculator/vat/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">간이 vs 일반과세 세금 비교</div>
-                    <p className="mt-1 text-sm text-text-secondary">매출 입력 후 부가세 즉시 계산.</p>
+                    <div className="font-semibold text-primary-500">부가세 계산기(일반·간이과세)</div>
+                    <p className="mt-1 text-sm text-text-secondary">매출을 넣어 일반·간이과세 부가세를 계산.</p>
                   </Link>
                   <Link
                     href="/category/tax/"

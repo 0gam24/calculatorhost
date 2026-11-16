@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-27';
 export const metadata: Metadata = {
   title: '부가세 대손세액공제 2026, 못 받은 외상값 세금 돌려받기',
   description:
-    '거래처 파산·부도로 매출채권을 못 받았다면 이미 낸 부가세를 대손세액공제로 돌려받을 수 있습니다. 대손사유, 10/110 계산, 공급일 10년 기한을 부가가치세법 제45조 기준으로 정리했습니다.',
+    '거래처 파산·부도로 외상값을 떼였다면 이미 낸 부가세를 대손세액공제로 돌려받을 수 있습니다. 10/110 계산법과 10년 기한을 정리했습니다.',
   keywords: [
     '부가세 대손세액공제',
     '대손세액공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부가세 대손세액공제 2026, 못 받은 외상값 세금 돌려받기' }],
-    title: '부가세 대손세액공제 2026, 못 받은 외상값 세금 돌려받기',
-    description: '거래처 파산·부도 시 이미 낸 부가세를 돌려받는 대손세액공제. 사유·계산·기한을 부가가치세법 제45조 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가세 대손세액공제 2026, 못 받은 외상값 돌려받기',
-    description: '거래처 부도·파산 시 낸 부가세를 돌려받는 대손세액공제를 부가가치세법 제45조 기준으로 정리.',
   },
 };
 

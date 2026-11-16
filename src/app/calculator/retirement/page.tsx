@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { RetirementCalculator } from './RetirementCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/retirement/';
 
@@ -36,15 +37,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '은퇴자금 계산기 2026, FIRE·4% 룰',
-    description: '현재 자산·월 저축액·기대수익률로 은퇴 예상자산 및 필요자금을 계산.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '은퇴자금 계산기 2026',
-    description: 'FIRE·조기은퇴 계획: 예상자산·필요자금·4% 룰 즉시 계산.',
   },
 };
 
@@ -113,7 +110,7 @@ export default function RetirementPage() {
     { name: '은퇴자금' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '은퇴자금 계산하기',
     description:
       '현재 나이, 은퇴 희망 나이, 현재 자산, 월 저축액, 기대 수익률을 입력해 은퇴 예상자산을 계산하는 방법',
@@ -147,7 +144,8 @@ export default function RetirementPage() {
         text: '은퇴 시점 예상자산, 필요자금, 부족액, 4% 안전 인출액이 즉시 계산됩니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -213,6 +211,7 @@ export default function RetirementPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="은퇴자금 계산은 현재의 자산과 월 저축액이 목표 은퇴 시점까지 복리로 증가할 때 얼마나 모일 수 있는지, 그리고 은퇴 후 생활비를 충당하기에 충분한지를 판단하는 재무계획 과정입니다. 4% 룰(Trinity Study 1998)은 은퇴자산의 4%를 매년 인출해도 30년 이상 자금이 지속되는 안전한 인출 전략입니다(금융감독원 연금 가이드북 기준)."
                 table={{
@@ -465,7 +464,7 @@ export default function RetirementPage() {
                       href="/guide/national-pension-2026/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      국민연금 2026 총정리
+                      국민연금 2026 정리
                     </a>{' '}
                     , 보험료율·수령 나이·예상 수령액 등 은퇴 소득의 기둥 확인
                   </li>

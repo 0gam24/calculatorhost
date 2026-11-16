@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기',
   description:
-    '국민연금 임의계속가입은 60세 이후에도 65세 전까지 가입을 이어가 최소 가입기간을 채우거나 연금액을 늘리는 제도입니다. 신청 자격·기한과 2026년 보험료율 9.5% 전액 본인부담, 유리한 경우를 국민연금법 §13 기준으로 정리했습니다.',
+    '60세 이후에도 65세 전까지 국민연금 납부를 이어가 최소 가입기간을 채우거나 수령액을 늘리는 임의계속가입 제도를 정리했습니다.',
   keywords: [
     '국민연금 임의계속가입',
     '60세 이후 국민연금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기' }],
-    title: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기',
-    description: '60세 이후에도 65세 전까지 가입을 이어가 최소 가입기간을 채우거나 연금액을 늘리는 제도. 자격·기한·보험료를 국민연금법 §13 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 임의계속가입 2026, 60세 이후 65세까지 늘리기',
-    description: '가입기간 10년을 못 채웠거나 연금을 더 받고 싶다면 60세 이후에도 가입 연장이 가능합니다. 국민연금법 §13.',
   },
 };
 

@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-23';
 
 export const metadata: Metadata = {
-  title: '간이과세 포기 신고 2026, 매입세액공제·3년 제한 정리 | calculatorhost',
+  title: '간이과세 포기 신고 2026, 매입세액공제·3년 제한 정리',
   description:
-    '간이과세 포기는 스스로 일반과세자가 되는 절차입니다. 매입세액 전액 공제와 세금계산서 발급이 목적이며, 신고한 달의 다음 달부터 적용되고 3년간 재적용이 제한됩니다. 부가가치세법 §70 기준으로 정리했습니다.',
+    '간이과세 포기 신고를 하면 다음 달부터 일반과세자가 되고 3년간 재적용이 제한됩니다. 매입세액 공제 효과와 손익 비교를 정리했습니다.',
   keywords: [
     '간이과세 포기',
     '간이과세 포기 신고',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '간이과세 포기 신고 2026, 매입세액공제·3년 제한 정리' }],
-    title: '간이과세 포기 신고 2026, 일반과세 전환이 유리한 경우',
-    description: '매입세액 전액 공제와 세금계산서 발급을 위한 간이과세 포기. 적용 시점, 3년 재적용 제한, 손익 비교를 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '간이과세 포기 신고 2026, 매입세액공제·3년 제한',
-    description: '스스로 일반과세자가 되는 절차. 부가가치세법 §70, 3년 재적용 제한.',
   },
 };
 

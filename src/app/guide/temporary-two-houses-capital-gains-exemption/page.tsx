@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026 | 신규 구매 후 매도',
+  title: '일시적 2주택 양도세 비과세 3년 정리 2026 | 신규 구매 후 매도',
   description:
-    '일시적 2주택 비과세 조건 3가지(신규 1년 후 취득, 종전 3년 내 양도, 2년 보유)를 정확히 정리. 12억 한도 적용·2023년 양도 기한 통일·거주 의무·함정 5가지·신고 절차·소득세법 §89·시행령 §155.',
+    '일시적 2주택은 새 집 취득 후 3년 안에 종전 주택을 팔면 비과세됩니다. 12억 한도와 2년 보유 등 조건, 함정 5가지를 정리했습니다.',
   keywords: [
     '일시적 2주택 양도세',
     '일시적 2주택 3년',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026 | 신규 구매 후 매도' }],
-    title: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026',
-    description: '신규 구매 후 종전 주택 3년 내 매도 시 비과세 조건·12억 한도·함정 5가지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026',
-    description: '3년 기한·12억 한도·신규 1년 후 취득 조건.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '일시적 2주택 양도세 비과세 3년 완벽 정리' },
+    { name: '일시적 2주택 양도세 비과세 3년 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026',
+    headline: '일시적 2주택 양도세 비과세 3년 정리 2026',
     description:
       '일시적 2주택 비과세 조건 3가지(신규 1년 후 취득, 종전 3년 내 양도, 2년 보유)·12억 한도·거주 의무·함정 5가지·신고 절차.',
     url: URL,
@@ -100,7 +95,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
     keywords: ['일시적 2주택', '양도세', '비과세', '3년', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '일시적 2주택 양도세 비과세 3년 완벽 정리 2026',
+    name: '일시적 2주택 양도세 비과세 3년 정리 2026',
     description: '신규 구매 후 종전 주택 3년 내 매도 시 비과세 조건·12억 한도·거주 의무·함정 5가지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '일시적 2주택 양도세 비과세 3년 완벽 정리' },
+                    { name: '일시적 2주택 양도세 비과세 3년 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  일시적 2주택 양도세 비과세 3년 완벽 정리 2026
+                  일시적 2주택 양도세 비과세 3년 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   집을 바꿀 때마다 무조건 양도세를 내야 할까? 새 집을 사면서 기존 집을 팔 때 적용되는
@@ -372,7 +367,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
                     → <Link href="/calculator/broker-fee/" className="text-primary-600 underline dark:text-primary-500">중개수수료 계산기</Link>, 매매·전세 거래 시 중개보수 상한
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비례 과세·거주 요건·장기보유공제 80%
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 정리</Link>, 비례 과세·거주 요건·장기보유공제 80%
                   </li>
                   <li>
                     → <Link href="/guide/capital-gains-tax-tips/" className="text-primary-600 underline dark:text-primary-500">양도세 절세 7가지</Link>, 장기보유·1세대1주택·분리 신고 전략
@@ -387,7 +382,7 @@ export default function TemporaryTwoHousesCapitalGainsExemptionGuide() {
               </section>
 
               <ShareButtons
-                title="일시적 2주택 양도세 비과세 3년 완벽 정리 2026"
+                title="일시적 2주택 양도세 비과세 3년 정리 2026"
                 url={URL}
                 description="신규 구매 후 종전 주택 3년 내 매도 시 비과세 조건·12억 한도·함정 5가지."
               />

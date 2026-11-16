@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-16';
 const DATE_MODIFIED = '2026-06-16';
 
 export const metadata: Metadata = {
-  title: '예금·적금 이자소득세 15.4% 완전정리 2026 | 세후 이자·세금우대 | calculatorhost',
+  title: '예금·적금 이자소득세 15.4% 정리 2026 | 세후 이자·세금우대',
   description:
-    '예금·적금 이자소득세는 원천징수 15.4%(소득세 14%+지방소득세 1.4%)입니다. 금융소득이 2천만원을 넘으면 종합과세로 넘어갑니다. 정기예금 1,000만원을 연 3.5%로 맡겼을 때 세후이자 계산법과 ISA 비과세 조건을 2026년 기준으로 정리했습니다.',
+    '예금·적금 이자에는 소득세 14%와 지방소득세를 더한 15.4%가 원천징수됩니다. 세후 이자 계산법과 ISA 비과세 조건을 정리했습니다.',
   keywords: [
     '이자소득세 15.4%',
     '예금 이자소득세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '예금·적금 이자소득세 15.4% 2026' }],
-    title: '예금·적금 이자소득세 15.4% 완전정리 2026',
-    description: '세율 구조, 세후 계산, 세금우대·종합과세 조건',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '예금·적금 이자소득세 15.4% 2026',
-    description: '세율 구조, 세후 이자 계산, 절감 방법',
   },
 };
 
@@ -92,7 +87,7 @@ export default function InterestIncomeTax2026Page() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '예금·적금 이자소득세 15.4% 완전정리 2026, 세후 이자 계산법',
+    headline: '예금·적금 이자소득세 15.4% 정리 2026, 세후 이자 계산법',
     description:
       '예금·적금 이자소득세 원천징수율 15.4% 구조 분석, 세금우대종합저축 9.5%, 금융소득 종합과세 2천만원 한계, 정기예금 세후 이자 계산 실예시.',
     url: URL,
@@ -112,7 +107,7 @@ export default function InterestIncomeTax2026Page() {
   });
 
   const webPageLd = buildWebPageJsonLd({
-    name: '예금·적금 이자소득세 15.4% 완전정리 2026, 세후 이자 계산법',
+    name: '예금·적금 이자소득세 15.4% 정리 2026, 세후 이자 계산법',
     description:
       '소득세법 §129 기준 이자소득세 14%+1.4% 구조, 세금우대 조건, 금융소득 2천만원 종합과세 경계선, 실제 사례 계산.',
     url: URL,
@@ -149,7 +144,7 @@ export default function InterestIncomeTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   예금·적금 이자소득세 15.4%
                   <br />
-                  <span className="text-2xl text-text-secondary">· 세후 이자 계산법 완전정리 2026</span>
+                  <span className="text-2xl text-text-secondary">· 세후 이자 계산법 정리 2026</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   예금·적금의 이자는 원천징수로 기본 15.4%(소득세 14%+지방소득세 1.4%)의 세금이 공제됩니다. 소득세법 §129에 따른 이 세율은 모든 개인 금융상품(정기예금, 적금, 초단기펀드 등)에 일괄 적용되지만, 세금우대종합저축(9.5%)이나 ISA(비과세) 같은 대체수단으로 절감할 수 있습니다. 또한 연 금융소득 2,000만원을 초과하면 종합과세로 세금이 크게 증가합니다. 2026년 기준으로 정확한 세율 구조, 세금우대 조건, 종합과세 경계선, 실제 계산 사례를 한눈에 정리했습니다.
@@ -616,7 +611,7 @@ export default function InterestIncomeTax2026Page() {
                   >
                     <h4 className="font-semibold text-primary-500">분리과세 vs 종합과세 마스터</h4>
                     <p className="mt-1 text-sm text-text-secondary">
-                      금융·사적연금·기타소득 과세 방식 총정리
+                      금융·사적연금·기타소득 과세 방식 정리
                     </p>
                   </Link>
 
@@ -664,7 +659,7 @@ export default function InterestIncomeTax2026Page() {
               </footer>
 
               <ShareButtons
-                title="예금·적금 이자소득세 15.4% 완전정리 2026"
+                title="예금·적금 이자소득세 15.4% 정리 2026"
                 url={URL}
                 description="세율 구조, 세금우대 9.5%, 종합과세 2천만원, 세후 이자 계산"
               />

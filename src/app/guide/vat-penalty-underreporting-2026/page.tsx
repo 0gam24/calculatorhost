@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-22';
 export const metadata: Metadata = {
   title: '부가세 가산세 2026, 무신고·과소신고·납부지연 계산법',
   description:
-    '부가세 무신고 시 미신고세액의 20%(부정 40%), 과소신고 10%, 납부지연 일 0.022%가 가산됩니다. 국세기본법 §47의2·3·4 기준 계산 사례와 수정신고 감면 구간까지 정리.',
+    '부가세 무신고 가산세는 20%(부정 40%), 과소신고는 10%, 납부지연은 하루 0.022%입니다. 수정신고 감면도 정리했습니다.',
   keywords: [
     '부가세 가산세',
     '부가세 무신고 가산세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부가세 가산세 2026, 무신고·과소신고·납부지연 계산법' }],
-    title: '부가세 가산세 2026: 무신고 20%, 과소신고 10%, 납부지연 일 0.022%',
-    description: '7월 부가세 확정신고 전 확인해야 할 가산세 전 유형과 실제 계산 사례, 수정신고 감면율 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가세 가산세 2026: 무신고 20%, 과소신고 10%, 납부지연 일 0.022%',
-    description: '국세기본법 §47의2·3·4 및 §48 수정신고 감면, 부가가치세법 §60까지 계산 사례로 정리.',
   },
 };
 
@@ -425,7 +420,7 @@ export default function VatPenaltyUnderreporting2026Page() {
                     href="/guide/july-vat-final-1st-half/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">7월 부가세 확정신고 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">7월 부가세 확정신고 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">7월 25일 마감 대비 신고 준비 체크리스트.</p>
                   </Link>
                   <Link

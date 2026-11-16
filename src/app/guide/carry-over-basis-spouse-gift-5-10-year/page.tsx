@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '이월과세 5년→10년 확대 완벽 정리 2026 | 배우자·직계 증여 양도세',
+  title: '이월과세 5년→10년 확대 정리 2026 | 배우자·직계 증여 양도세',
   description:
-    '이월과세 정의·소득세법 §97의2·2025년 5년에서 10년 확대·증여자 취득가 적용·면제 사유 5가지·시뮬 사례 2개·함정 5가지·절세 전략·신고 방법.',
+    '배우자나 자녀가 증여받은 자산을 10년 안에 팔면 증여자 취득가로 양도세를 매기는 이월과세를 정리했습니다. 면제 사유와 함정도 다룹니다.',
   keywords: [
     '이월과세',
     '배우자 증여 양도세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '이월과세 5년→10년 확대 완벽 정리 2026 | 배우자·직계 증여 양도세' }],
-    title: '이월과세 5년→10년 확대 완벽 정리 2026',
-    description: '이월과세 정의·소득세법 §97의2·배우자·직계 증여 후 양도·5년→10년 확대·시뮬·면제.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '이월과세 5년→10년 확대 완벽 정리',
-    description: '배우자에게 5억 주택 증여 후 8년 양도 = 이월과세 미적용 → 약 3400만 절세. 10년 요건 2025년부터 시행.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '이월과세 5년→10년 확대 완벽 정리' },
+    { name: '이월과세 5년→10년 확대 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '이월과세 5년→10년 확대 완벽 정리 2026',
+    headline: '이월과세 5년→10년 확대 정리 2026',
     description:
       '이월과세 정의·소득세법 §97의2·배우자·직계존비속 증여 후 양도·5년→10년 확대·증여자 취득가 적용·면제 사유 5가지·시뮬 2개·함정 5가지·절세 전략·신고 방법.',
     url: URL,
@@ -100,7 +95,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
     keywords: ['이월과세', '배우자 증여', '양도세', '소득세법 97의2', '절세'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '이월과세 5년→10년 확대 완벽 정리 2026',
+    name: '이월과세 5년→10년 확대 정리 2026',
     description: '이월과세 정의·소득세법 §97의2·배우자·직계 증여 후 양도·5→10년 확대·시뮬·면제·함정 5가지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '이월과세 5년→10년 확대 완벽 정리' },
+                    { name: '이월과세 5년→10년 확대 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  이월과세 5년→10년 확대 완벽 정리 2026
+                  이월과세 5년→10년 확대 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   배우자나 자녀에게 자산을 선물(증여)한 후 일정 기간 내에 그 자산을 양도할 때,
@@ -641,22 +636,22 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">배우자 증여세 계산기</Link>, 증여재산공제·누진세율 자동 적용
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비과세 조건·비례 과세
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 정리</Link>, 비과세 조건·비례 과세
                   </li>
                   <li>
-                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 완전 정리</Link>, 보유·거주 분리 계산
+                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 정리</Link>, 보유·거주 분리 계산
                   </li>
                   <li>
-                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link>, 1년 경과·3년 기한
+                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 정리</Link>, 1년 경과·3년 기한
                   </li>
                   <li>
-                    → <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세 완벽 정리</Link>, 채무인수·증여 분리 과세
+                    → <Link href="/guide/burden-gift-debt-assumption-tax/" className="text-primary-600 underline dark:text-primary-500">부담부증여 양도+증여세 정리</Link>, 채무인수·증여 분리 과세
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="이월과세 5년→10년 확대 완벽 정리 2026"
+                title="이월과세 5년→10년 확대 정리 2026"
                 url={URL}
                 description="이월과세 정의·소득세법 §97의2·배우자·직계 증여 후 양도·5→10년 확대·면제 5가지·함정 5가지·절세 전략."
               />

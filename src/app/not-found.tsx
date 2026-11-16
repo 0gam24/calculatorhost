@@ -8,7 +8,9 @@ export const metadata: Metadata = {
   title: '페이지를 찾을 수 없습니다 (404) | calculatorhost',
   description:
     '요청한 페이지가 존재하지 않거나 이동·변경되었습니다. 근로·세금·금융·부동산·생활 카테고리에서 원하는 계산기를 빠르게 찾아보세요.',
-  robots: { index: false, follow: false },
+  // Next 가 404 화면에 robots noindex 를 자동으로 넣는다. 레이아웃의 index,follow 를 이어받지 않도록 null 로 비워
+  // robots 메타를 그 하나만 남긴다 (네이버 12-03 점검: 404 화면 robots 메타 중복)
+  robots: null,
 };
 
 const CATEGORIES = [

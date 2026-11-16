@@ -19,15 +19,12 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '양도소득세 절세 7가지 방법 2026 | calculatorhost',
+  title: '양도소득세 절세 7가지 방법 2026 | 1세대1주택 비과세·장기보유공제',
   description:
-    '주택·토지 양도 전 1세대1주택 비과세·장기보유공제·일시적 2주택 특례 등 절세 7가지 방법 정리. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '양도 전 챙길 절세 방법 7가지를 정리했습니다. 1세대1주택 비과세, 장기보유공제 최대 80%, 일시적 2주택 3년 특례를 다룹니다.',
   keywords: ['양도세 절세', '양도소득세 절세', '1세대1주택 비과세', '장기보유특별공제', '일시적 2주택', '토지 양도세', '농지 자경 감면'],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도소득세 절세 7가지 방법 2026 | calculatorhost' }],
-    title: '양도소득세 절세 7가지 방법 2026',
-    description: '1세대1주택 비과세·장기보유공제·일시적 2주택·자경 감면 활용법.',
     url: URL,
     type: 'article',
 

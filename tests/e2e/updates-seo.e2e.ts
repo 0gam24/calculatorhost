@@ -1,47 +1,22 @@
 import { expect, test } from '../support/network-fixture';
 
 /**
- * /updates 페이지 SEO 강화 검증
- * - ItemList JSON-LD 존재 (최신 5건)
+ * /updates 페이지 SEO 검증
+ * - ItemList JSON-LD 를 넣지 않는다 (2026-10-30, ADR-019): 변경 이력 항목은 모두 이 페이지 주소라
+ *   네이버 캐러셀(08-07) "요소 간 중복 금지"·"항목마다 image 필수"를 지킬 수 없다
  * - description freshness 신호 포함
  * - dateModified 자동 갱신
  */
 test.describe('/updates SEO 강화', () => {
-  test('ItemList JSON-LD 존재 (최신 5건)', async ({ page }) => {
+  test('항목 주소가 겹치는 ItemList JSON-LD 를 넣지 않는다', async ({ page }) => {
     await page.goto('/updates/');
     await expect(page).toHaveURL(/\/updates\/?$/);
 
-    // JSON-LD 스크립트 추출
-    const scripts = await page.locator('script[type="application/ld+json"]').all();
-    let foundItemList = false;
-
-    for (const script of scripts) {
-      const content = await script.textContent();
-      if (content?.includes('"@type":"ItemList"')) {
-        foundItemList = true;
-        const json = JSON.parse(content);
-
-        // ItemList 검증
-        expect(json['@context']).toBe('https://schema.org');
-        expect(json['@type']).toBe('ItemList');
-        expect(json.itemListElement).toBeDefined();
-        expect(Array.isArray(json.itemListElement)).toBeTruthy();
-        expect(json.itemListElement.length).toBeGreaterThan(0);
-        expect(json.itemListElement.length).toBeLessThanOrEqual(5);
-
-        // 각 item 검증
-        for (const item of json.itemListElement) {
-          expect(item['@type']).toBe('ListItem');
-          expect(item.position).toBeDefined();
-          expect(item.name).toBeDefined();
-          expect(item.description).toBeDefined();
-          expect(item.url).toBeDefined();
-        }
-        break;
-      }
-    }
-
-    expect(foundItemList, 'ItemList JSON-LD를 찾을 수 없음').toBeTruthy();
+    const types = await page
+      .locator('script[type="application/ld+json"]')
+      .evaluateAll((els) => els.map((el) => JSON.parse(el.textContent ?? '{}')['@type'] as string));
+    expect(types).not.toContain('ItemList');
+    expect(types).toContain('WebPage');
   });
 
   test('description에 freshness 신호 포함', async ({ page }) => {

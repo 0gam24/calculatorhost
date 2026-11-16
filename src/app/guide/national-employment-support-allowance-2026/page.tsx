@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-13';
 export const metadata: Metadata = {
   title: '국민취업지원제도 2026, 구직촉진수당 자격·신청법',
   description:
-    '실업급여를 못 받는 구직자도 국민취업지원제도 1유형이면 구직촉진수당을 6개월간 받으며 취업 지원을 받습니다. 소득·재산 자격, 청년 완화 요건, 부양가족 추가, 신청 방법을 구직자취업촉진법 기준으로 정리했습니다.',
+    '실업급여 대상이 아닌 구직자도 국민취업지원제도 1유형이면 구직촉진수당을 6개월간 받습니다. 자격과 신청 방법을 정리했습니다.',
   keywords: [
     '국민취업지원제도',
     '구직촉진수당',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민취업지원제도 2026, 구직촉진수당 자격·신청법' }],
-    title: '국민취업지원제도 2026, 구직촉진수당 자격과 신청 방법',
-    description: '실업급여 못 받는 구직자도 6개월 수당 + 취업 지원. 소득·재산 요건, 청년 완화, 부양가족 추가.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민취업지원제도 2026, 구직촉진수당 자격·신청법',
-    description: '실업급여 못 받는 구직자도 6개월 수당 + 취업 지원. 소득·재산 요건과 신청 방법.',
   },
 };
 

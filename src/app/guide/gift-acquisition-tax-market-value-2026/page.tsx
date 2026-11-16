@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-19';
 export const metadata: Metadata = {
   title: '증여 취득세 과세표준 2026, 시가인정액 개정 후 계산',
   description:
-    '2023년부터 부동산 증여 취득세 과세표준이 시가표준액에서 시가인정액으로 바뀌어 세부담이 커졌습니다(지방세법 §10의2). 시가인정액 정의, 평가기간, 시가표준액 1억 이하 예외, 아파트 증여 취득세 계산을 정리했습니다.',
+    '2023년부터 증여 취득세 과세표준이 시가표준액에서 시가인정액으로 바뀌어 세부담이 커졌습니다. 1억 이하 예외와 아파트 사례를 정리했습니다.',
   keywords: [
     '증여 취득세',
     '증여 취득세 과세표준',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증여 취득세 과세표준 2026, 시가인정액 개정 후 계산' }],
-    title: '증여 취득세 과세표준 2026, 시가인정액 개정 후 계산',
-    description: '증여 취득세 과표가 시가인정액으로 바뀌며 세금이 늘었습니다. 평가기간, 1억 이하 예외, 계산 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여 취득세 과세표준 2026, 시가인정액 계산',
-    description: '2023년부터 증여 취득세 과표는 시가인정액. 지방세법 §10의2 계산법과 예외.',
   },
 };
 

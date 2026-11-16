@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-08';
 const DATE_MODIFIED = '2026-08-08';
 
 export const metadata: Metadata = {
-  title: '두루누리 사회보험료 지원 2026, 10인 미만 80% 지원',
+  title: '두루누리 사회보험료 지원 2026, 10인 미만 국민연금·고용보험 80%',
   description:
-    '두루누리는 근로자 10명 미만 사업장의 월 보수 270만원 미만 신규 가입 근로자와 사업주에게 국민연금·고용보험료의 80%를 최대 36개월 지원합니다(보험료징수법 §21). 지원 요건, 지원액 계산, 신청 방법, 제외 사유까지 정리했습니다.',
+    '두루누리는 10명 미만 사업장의 월 보수 270만원 아래 신규 근로자와 사업주에게 국민연금·고용보험료 80%를 최대 36개월 지원합니다.',
   keywords: [
     '두루누리 사회보험료 지원',
     '두루누리 신청방법',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '두루누리 사회보험료 지원 2026' }],
-    title: '두루누리 사회보험료 지원 2026, 10인 미만 80% 지원',
-    description: '소규모 사업장 신규 가입 근로자·사업주의 국민연금·고용보험료 80% 지원 요건과 신청 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '두루누리 사회보험료 지원 2026, 10인 미만 80% 지원',
-    description: '직원이 있는 작은 사업장이라면 국민연금·고용보험료 80%를 지원받을 수 있습니다. 조건과 신청법 정리.',
   },
 };
 

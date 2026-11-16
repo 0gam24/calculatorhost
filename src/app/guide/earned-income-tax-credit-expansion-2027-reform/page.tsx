@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-22';
 export const metadata: Metadata = {
   title: '근로장려금 확대 2026 개편안, 맞벌이 최대 360만 소득 5200만',
   description:
-    '2026 세제개편안이 근로장려금 최대 지급액을 단독 180만, 홑벌이 310만, 맞벌이 360만으로 올리고 소득요건을 단독 2,600만, 홑벌이 3,700만, 맞벌이 5,200만으로 완화하는 방향을 담았습니다. 현행 기준과 얼마 오르는지 정리합니다(조세특례제한법 §100의3·§100의5).',
+    '2026 세제개편안은 근로장려금 맞벌이 최대 지급액을 360만원, 소득요건을 5,200만원으로 올리는 방향입니다. 현행과 비교해 정리합니다.',
   keywords: [
     '근로장려금 확대',
     '근로장려금 얼마 오르나',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로장려금 확대 2026 개편안, 맞벌이 최대 360만 소득 5200만' }],
-    title: '근로장려금 확대 2026 개편안, 맞벌이 최대 360만 소득 5200만',
-    description: '최대 지급액 단독 180만·홑벌이 310만·맞벌이 360만, 소득요건 완화 방향. 현행 대비 얼마 오르는지 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로장려금 확대 2026 개편안',
-    description: '단독 180만·홑벌이 310만·맞벌이 360만으로 인상, 소득요건 완화 방향 정리.',
   },
 };
 

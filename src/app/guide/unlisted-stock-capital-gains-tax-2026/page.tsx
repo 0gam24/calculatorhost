@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-21';
 export const metadata: Metadata = {
   title: '비상장주식 양도소득세 2026, 중소기업 10%·대주주 세율',
   description:
-    '비상장주식은 대주주가 아니어도 양도하면 양도소득세 신고 대상입니다. 중소기업 소액주주 10%, 대주주·비중소 20%(과표 3억 초과분 25%) 세율과 대주주 요건(지분 4%·시총 50억)을 소득세법 §94·§104 기준으로 정리했습니다.',
+    '비상장주식은 지분이 적어도 팔면 양도소득세 신고 대상입니다. 세율은 중소기업 소액주주 10%, 대주주 20~25%입니다.',
   keywords: [
     '비상장주식 양도소득세',
     '비상장주식 양도세',
@@ -34,10 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '비상장주식 양도소득세 2026' }],
-    title: '비상장주식 양도소득세 2026, 중소기업 10%·대주주 세율',
-    description:
-      '비상장주식은 소액주주도 양도세 신고 대상. 중소기업 10%, 대주주 20%(과표 3억 초과 25%). 소득세법 §104.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '비상장주식 양도소득세 2026',
-    description: '중소기업 소액주주 10%, 대주주·비중소 20%(3억 초과 25%). 대주주 요건 4%·50억. 소득세법 §104.',
   },
 };
 
@@ -103,7 +97,7 @@ export default function UnlistedStockCapitalGainsTax2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '비상장주식 양도소득세 2026, 중소기업 10%·대주주 세율',
     description:
-      '비상장주식은 소액주주도 양도세 신고 대상. 중소기업 10%, 대주주·비중소 20%(과표 3억 초과 25%), 대주주 요건(4%·50억), 신고 기한과 증권거래세까지 완전 정리.',
+      '비상장주식은 소액주주도 양도세 신고 대상. 중소기업 10%, 대주주·비중소 20%(과표 3억 초과 25%), 대주주 요건(4%·50억), 신고 기한과 증권거래세까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

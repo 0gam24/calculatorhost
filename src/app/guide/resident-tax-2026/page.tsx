@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-12';
 export const metadata: Metadata = {
   title: '주민세 2026, 개인분·사업소분·종업원분 세율과 8월 납부',
   description:
-    '주민세는 개인분, 사업소분, 종업원분 세 가지로 나뉩니다. 개인분은 지자체 조례로 1만원 이하, 사업소분은 연면적 1㎡당 250원, 종업원분은 급여총액 0.5%입니다. 납부 시기와 계산법을 정리합니다.',
+    '주민세는 개인분(1만원 이하), 사업소분(연면적 1㎡당 250원), 종업원분(급여총액 0.5%)으로 나뉩니다. 8월 납부 일정도 정리합니다.',
   keywords: [
     '주민세',
     '주민세 개인분',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주민세 2026, 개인분·사업소분·종업원분 세율과 8월 납부' }],
-    title: '주민세 2026, 세 가지 유형과 납부 시기 한눈에',
-    description: '개인분(1만원 이하 조례)·사업소분(연면적 250원/㎡)·종업원분(급여 0.5%). 8월 납부 기준과 계산법 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주민세 2026, 개인분·사업소분·종업원분',
-    description: '개인분 1만원 이하, 사업소분 연면적 250원/㎡, 종업원분 급여 0.5%. 8월 납부.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function ResidentTax2026Page() {
     { name: '주민세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주민세 2026, 개인분·사업소분·종업원분 세율과 납부 시기 총정리',
+    headline: '주민세 2026, 개인분·사업소분·종업원분 세율과 납부 시기 정리',
     description:
       '주민세 세 가지 유형(개인분·사업소분·종업원분)의 세율, 과세 기준, 8월 납부 일정, 면세 기준을 지방세법 §74 이하 조문 기준으로 정리.',
     url: URL,

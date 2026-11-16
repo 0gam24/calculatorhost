@@ -34,10 +34,10 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-10-02';
 const TITLE = '프리랜서 vs 직장인 실수령액 비교 2026';
 const DESCRIPTION =
-  '프리랜서 매출과 직장인 연봉은 실제 사업 비용·최종 세금·보험료 조건을 확인해 비교하세요. 직장인 예시는 공식 간이세액표 100% 기준이며, 프리랜서 세금은 별도의 경비·소득 조건에 따른 추정입니다.';
+  '프리랜서 매출과 직장인 연봉은 같은 기간으로 맞추고 사업 비용·세금·보험료를 반영해 비교해야 합니다. 간이세액표 기준 예시를 담았습니다.';
 
 export const metadata: Metadata = {
-  title: `${TITLE} | calculatorhost`,
+  title: '프리랜서 vs 직장인 실수령액 비교 2026, 세금·보험료 반영',
   description: DESCRIPTION,
   keywords: [
     '프리랜서 실수령액',
@@ -49,16 +49,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: TITLE,
-      },
-    ],
-    title: TITLE,
-    description: DESCRIPTION,
     url: URL,
     type: 'article',
 
@@ -403,7 +393,7 @@ export default function FreelancerSalaryComparisonPage() {
                   <strong>법적 근거</strong>: 소득세법 §19·§20 · 국민건강보험법 §69 · 국민연금법 §88
                   · 소득세법 §55. 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0206000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"
@@ -412,7 +402,7 @@ export default function FreelancerSalaryComparisonPage() {
                   </a>
                   ,{' '}
                   <a
-                    href="https://www.nhis.or.kr/nhis/together/wbhkup02400m01.do"
+                    href="https://www.nhis.or.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

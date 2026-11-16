@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-24';
 export const metadata: Metadata = {
   title: '헬스장 수영장 소득공제 2026, 연말정산 30% 받는 법',
   description:
-    '2025년 7월부터 헬스장·수영장 시설이용료도 문화비 소득공제 대상입니다. 총급여 7천만원 이하 근로자 30% 공제, 시설이용료와 PT 구분, 통합 한도까지 정리(조세특례제한법 §126의2).',
+    '2025년 7월부터 헬스장·수영장 시설이용료도 문화비 소득공제 대상입니다. 총급여 7천만원 이하 근로자는 30%를 공제받습니다.',
   keywords: [
     '헬스장 소득공제',
     '수영장 소득공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '헬스장 수영장 소득공제 2026, 연말정산 30% 받는 법' }],
-    title: '헬스장 수영장 소득공제 2026, 연말정산 30% 문화비 공제 요건',
-    description: '2025년 7월 시행. 총급여 7천만원 이하 근로자가 헬스장·수영장 시설이용료의 30%를 소득공제. 시설이용료와 PT 강습료 구분, 통합 한도 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '헬스장 수영장 소득공제 2026, 연말정산 30% 받는 법',
-    description: '2025년 7월부터 헬스장·수영장 이용료 30% 문화비 소득공제. 총급여 7천만원 이하 근로자 대상. 조특법 §126의2.',
   },
 };
 
@@ -359,7 +354,7 @@ export default function GymPoolTaxDeduction2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">소득공제와 세액공제의 차이부터 준비물까지.</p>
                   </Link>
                   <Link

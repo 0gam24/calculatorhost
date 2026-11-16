@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-09';
 export const metadata: Metadata = {
   title: '토지거래허가구역 2026, 실거주 의무와 이행강제금',
   description:
-    '토지거래허가구역에서 기준면적을 넘는 주택·토지를 사려면 관할 허가가 필요하고 주거용은 2년 실거주 의무가 붙어 갭투자가 막힙니다. 이용의무 위반 시 취득가액 10% 이행강제금까지 부동산거래신고법으로 정리했습니다.',
+    '토지거래허가구역에서 기준면적을 넘는 주택·토지를 사려면 허가가 필요하고, 주거용은 2년 실거주 의무가 붙습니다.',
   keywords: [
     '토지거래허가구역',
     '토지거래허가구역 실거주',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '토지거래허가구역 2026 실거주 의무' }],
-    title: '토지거래허가구역 2026, 실거주 의무와 이행강제금',
-    description: '허가 대상·2년 실거주 의무·갭투자 제한·취득가액 10% 이행강제금·무허가 계약 무효를 부동산거래신고법으로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '토지거래허가구역 2026 실거주 의무와 이행강제금',
-    description: '허가 대상·실거주 2년·갭투자 제한·이행강제금·무허가 계약 무효. 부동산거래신고법 §11·§17·§18.',
   },
 };
 
@@ -305,7 +300,7 @@ export default function LandTransactionPermitZone2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">실거주 의무 기간 동안의 주거 선택을 비교하세요.</p>
                   </Link>
                   <Link
-                    href="/category/tax-real-estate/"
+                    href="/guide/category/tax-real-estate/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">모든 부동산 세금 가이드</div>

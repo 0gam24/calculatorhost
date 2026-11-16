@@ -16,7 +16,7 @@ import { execFileSync } from 'node:child_process';
 import { readdirSync, readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { SITE, buildPayload, isValidKey, urlsFromChangedFiles } from './lib/indexnow-core.mjs';
+import { buildPayload, isValidKey, urlsFromChangedFiles } from './lib/indexnow-core.mjs';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 const ENDPOINT = 'https://searchadvisor.naver.com/indexnow';
@@ -42,14 +42,15 @@ async function main() {
   if (one) urls = [one];
   else {
     const since = opt('--since=') ?? 'HEAD~1';
-    const files = execFileSync('git', ['diff', '--name-only', '--diff-filter=ACMR', since, 'HEAD', '--', 'src/app'], {
+    // 지운 페이지(D)도 알린다. 네이버 IndexNow FAQ(10-04): 404·301 로 바뀐 주소도 알릴 수 있다.
+    // sitemap.xml 은 페이지가 아니라 urlList 에 넣지 않는다.
+    const files = execFileSync('git', ['diff', '--name-only', '--diff-filter=ACMRD', since, 'HEAD', '--', 'src/app'], {
       cwd: ROOT,
       encoding: 'utf8',
     })
       .split(/\r?\n/)
       .filter(Boolean);
     urls = urlsFromChangedFiles(files);
-    if (urls.length) urls.push(`${SITE}/sitemap.xml`);
   }
   if (!urls.length) return console.log('[indexnow] 바뀐 페이지 없음, 보내지 않음');
 
@@ -57,11 +58,19 @@ async function main() {
   console.log(`[indexnow] ${payload.urlList.length}개: ${payload.urlList.join(' ')}`);
   if (argv.includes('--dry-run')) return;
 
-  const res = await fetch(ENDPOINT, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json; charset=utf-8' },
-    body: JSON.stringify(payload),
-  });
+  const send = () =>
+    fetch(ENDPOINT, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json; charset=utf-8' },
+      body: JSON.stringify(payload),
+    });
+  let res = await send();
+  // 429(과다 요청)·5xx 는 잠시 뒤 한 번만 다시 보낸다 (네이버 IndexNow 03 응답 코드)
+  if (res.status === 429 || res.status >= 500) {
+    console.log(`[indexnow] 응답 ${res.status}, 30초 뒤 한 번 다시 보냄`);
+    await new Promise((r) => setTimeout(r, 30_000));
+    res = await send();
+  }
   const text = (await res.text()).slice(0, 200);
   console.log(`[indexnow] 네이버 응답 ${res.status} ${text}`);
   if (!res.ok) process.exitCode = 1;

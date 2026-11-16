@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-15';
 export const metadata: Metadata = {
   title: '상가 권리금 회수기회 보호 2026, 임대인 방해 시 손해배상',
   description:
-    '임대인이 정당한 사유 없이 신규임차인과의 계약을 막으면 권리금 손해를 배상해야 합니다. 상가건물임대차보호법 §10의4 권리금 회수기회 보호의 방해금지 행위, 손해배상 한도, 3년 소멸시효를 정리합니다.',
+    '임대인이 정당한 사유 없이 신규임차인과의 계약을 막으면 권리금 손해를 배상해야 합니다. 금지 행위와 3년 소멸시효를 정리합니다.',
   keywords: [
     '상가 권리금 회수기회 보호',
     '권리금 손해배상',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상가 권리금 회수기회 보호 2026, 임대인 방해 시 손해배상' }],
-    title: '상가 권리금 회수기회 보호 2026, 방해하면 손해배상',
-    description: '임대차 종료 6개월 전부터 임대인의 권리금 회수 방해 금지. 위반 시 손해배상, 종료일부터 3년 내 청구. 상가임대차보호법 §10의4.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상가 권리금 회수기회 보호 2026',
-    description: '임대인이 신규임차인 계약을 막으면 권리금 손해배상. 상가임대차보호법 §10의4, 3년 소멸시효.',
   },
 };
 

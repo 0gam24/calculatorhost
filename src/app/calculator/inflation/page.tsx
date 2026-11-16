@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { InflationCalculator } from './InflationCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/inflation/';
 const TITLE = '물가상승률 계산기 2026 | 미래 필요 금액·구매력';
@@ -38,15 +39,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
   },
 };
 
@@ -124,7 +121,7 @@ export default function InflationPage() {
     { name: '화폐가치' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '물가상승률로 미래 필요 금액·구매력 계산하기',
     description: DESCRIPTION,
     steps: [
@@ -149,7 +146,8 @@ export default function InflationPage() {
         text: '선택한 방식의 금액과 누적 물가 상승을 확인합니다. 미래 필요 금액과 구매력은 서로 다른 의미입니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -220,6 +218,7 @@ export default function InflationPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="물가가 오르면 같은 물건을 사는 데 필요한 명목 금액은 늘고, 같은 잔액의 구매력은 줄어듭니다. 미래 필요 금액은 현재 비용에 물가계수를 곱합니다. 구매력은 금액을 물가계수로 나누어 오늘의 금액으로 환산합니다. 입력한 상승률을 매년 일정하게 가정하며 실제 CPI를 자동 조회하지 않습니다."
                 table={{

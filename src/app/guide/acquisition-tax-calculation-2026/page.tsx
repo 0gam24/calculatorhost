@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-21';
 const DATE_MODIFIED = '2026-10-01';
 
 export const metadata: Metadata = {
-  title: '취득세 계산법 2026 | 주택 구입 세율·중과·농특세 기본 세율과 예외 | calculatorhost',
+  title: '취득세 계산법 2026 | 주택 구입 세율·중과·농특세',
   description:
-    '주택 구입 시 내야 할 취득세를 정확히 계산하는 방법. 구입가별 세율(1.0~3.0%), 2주택·3주택 중과세(8~12%), 국민주택규모 초과 농특세, 지방교육세 일반 개인 매매 안내. 지방세법 §11·§13의2.',
+    '주택 취득세 기본 세율은 1.0~3.0%이고 조정지역 2주택 이상은 8~12%까지 오릅니다. 농특세·지방교육세를 더한 계산법을 정리합니다.',
   keywords: [
     '취득세 계산',
     '취득세율 2026',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '취득세 계산법 2026 | 주택 구입 세율·중과·농특세 기본 세율과 예외 | calculatorhost' }],
-    title: '취득세 계산법 2026',
-    description: '주택 구입 시 필요한 취득세를 단계별로 계산하는 일반 개인 매매 안내.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

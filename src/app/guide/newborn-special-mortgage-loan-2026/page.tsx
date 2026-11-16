@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-23';
 
 export const metadata: Metadata = {
-  title: '신생아 특례 디딤돌대출 2026, 소득요건·금리·한도 정리 | calculatorhost',
+  title: '신생아 특례 디딤돌대출 2026, 소득요건·금리·한도 정리',
   description:
-    '2년 내 출산한 무주택 가구를 위한 신생아 특례 디딤돌대출. 부부합산 소득요건, 특례금리 1.8~4.5%, 최대 4억 한도, 대상 주택과 신청 방법을 2026년 기준으로 정리했습니다.',
+    '2년 내 출산한 무주택 가구를 위한 신생아 특례 디딤돌대출의 소득요건과 금리 1.8~4.5%, 최대 4억 한도를 정리했습니다.',
   keywords: [
     '신생아 특례대출',
     '신생아 특례 디딤돌대출',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '신생아 특례 디딤돌대출 2026, 소득요건·금리·한도 정리' }],
-    title: '신생아 특례 디딤돌대출 2026, 출산 가구 저금리 구입자금',
-    description: '2년 내 출산 무주택 가구 대상. 부부합산 소득요건, 특례금리, 최대 4억 한도, 대상 주택과 신청 방법을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '신생아 특례 디딤돌대출 2026, 소득요건·금리·한도',
-    description: '2년 내 출산 무주택 가구 저금리 구입자금. 부부합산 소득요건과 특례금리 정리.',
   },
 };
 

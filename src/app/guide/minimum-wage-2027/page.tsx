@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 계산',
   description:
-    '2027년 최저시급은 10,700원으로 확정됐습니다. 2026년 대비 380원(3.7%) 인상, 주휴 포함 월급 2,236,300원. 주휴수당 계산법과 4대보험 공제 후 실수령액까지 정리했습니다.',
+    '2027년 최저시급은 10,700원으로 확정됐습니다. 주휴 포함 월급 2,236,300원과 4대보험 공제 후 실수령액을 정리했습니다.',
   keywords: [
     '2027 최저임금',
     '최저시급 10700원',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2027 최저임금 10,700원 월급·주휴수당·실수령액' }],
-    title: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 계산',
-    description: '2027년 최저시급 10,700원(3.7% 인상). 주휴 포함 월 2,236,300원, 실수령액 약 201만원. 주휴수당 계산법까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2027 최저임금 10,700원 확정',
-    description: '주휴 포함 월급 2,236,300원, 실수령액 약 201만원. 주휴수당·4대보험 공제 계산법.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function MinimumWage2027Page() {
     { name: '2027 최저임금 10,700원' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 완전 정리',
+    headline: '2027 최저임금 10,700원, 월급·주휴수당·실수령액 정리',
     description:
       '2027년 최저시급 10,700원(3.7% 인상) 기준 주휴 포함 월급 2,236,300원, 주휴수당 계산법, 4대보험 공제 후 실수령액, 수습·산입범위까지 정리한 가이드.',
     url: URL,
@@ -354,7 +349,7 @@ export default function MinimumWage2027Page() {
                     href="/guide/weekly-holiday-allowance-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">주휴수당 완전 정리</div>
+                    <div className="font-semibold text-primary-500">주휴수당 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">주휴수당 발생 조건과 계산법을 자세히 배우세요.</p>
                   </Link>
                   <Link

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-11';
 export const metadata: Metadata = {
   title: '연차 사용촉진제도 2026 | 절차·미사용수당 소멸 조건',
   description:
-    '연차 사용촉진제도는 회사가 근로기준법 §61 절차를 지키면 미사용 연차수당 지급의무가 사라지는 제도입니다. 6개월 전 1차 서면 통보, 2개월 전 2차 지정 절차와 수당 소멸·유지 조건을 정리했습니다.',
+    '연차 사용촉진제도는 근로기준법 §61 절차를 지킨 회사의 미사용 연차수당 지급의무를 없애 줍니다. 통보 시기와 예외를 정리했습니다.',
   keywords: [
     '연차 사용촉진제도',
     '연차 사용촉진',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연차 사용촉진제도 2026 절차와 미사용수당 소멸 조건' }],
-    title: '연차 사용촉진제도 2026 | 절차·미사용수당 소멸 조건',
-    description: '근로기준법 §61 절차를 지키면 미사용 연차수당 지급의무 소멸. 1차·2차 통보 절차 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연차 사용촉진제도 2026 절차·수당 소멸',
-    description: '회사가 근로기준법 §61 서면 절차를 지키면 미사용 연차수당 지급의무가 사라집니다.',
   },
 };
 

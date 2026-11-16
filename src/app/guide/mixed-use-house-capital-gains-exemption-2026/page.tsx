@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-29';
 export const metadata: Metadata = {
   title: '상가주택 양도세 2026, 겸용주택 1세대1주택 비과세 판정',
   description:
-    '주택과 상가가 한 건물에 있는 겸용주택은 실거래가 12억 이하이고 주택 면적이 상가보다 크면 전부 주택으로 봐 비과세됩니다. 12억 초과 고가겸용주택은 2022년부터 주택 부분만 주택으로 봅니다. 소득세법 시행령 §154·§160 기준으로 정리했습니다.',
+    '가게와 집이 한 건물에 있는 겸용주택은 실거래가 12억 이하이고 주택 면적이 더 크면 전부 비과세됩니다. 소득세법 시행령 §154 기준입니다.',
   keywords: [
     '겸용주택 양도세',
     '상가주택 양도소득세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상가주택 양도세 2026, 겸용주택 1세대1주택 비과세 판정' }],
-    title: '상가주택 겸용주택 양도세 비과세 판정 2026',
-    description: '12억 이하는 면적 비교, 12억 초과는 주택 부분만. 소득세법 시행령 §154·§160으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상가주택 양도세 2026, 겸용주택 비과세 판정',
-    description: '주택 면적이 상가보다 크면 전부 주택, 12억 초과는 주택 부분만. 소득세법 시행령 기준.',
   },
 };
 

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-27';
 export const metadata: Metadata = {
   title: '자녀장려금 2026, 자녀 1명당 최대 100만원 지급액 계산법',
   description:
-    '자녀장려금은 18세 미만 자녀 1명당 최소 50만원에서 최대 100만원을 지급합니다. 소득 7천만원 미만·재산 2.4억 미만 요건과 산정 공식을 조세특례제한법 기준으로 정리했습니다.',
+    '자녀장려금은 18세 미만 자녀 1명당 50만원에서 최대 100만원까지 지급됩니다. 소득·재산 요건과 산정 공식을 정리했습니다.',
   keywords: [
     '자녀장려금',
     '자녀장려금 지급액',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자녀장려금 2026, 자녀 1명당 최대 100만원 지급액 계산법' }],
-    title: '자녀장려금 2026, 자녀 1명당 최대 100만원 지급액 계산법',
-    description: '18세 미만 자녀 1명당 50만~100만원. 소득 7천만원 미만·재산 2.4억 미만 요건과 산정 공식 총정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자녀장려금 2026, 자녀 1명당 최대 100만원',
-    description: '자녀 1명당 50만~100만원 지급액 계산법과 소득·재산 요건을 조세특례제한법 기준으로 정리.',
   },
 };
 

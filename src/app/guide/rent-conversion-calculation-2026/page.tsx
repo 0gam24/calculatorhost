@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-29';
 export const metadata: Metadata = {
   title: '전월세 전환율 계산법 2026 | 보증금↔월세 환산 공식·사례',
   description:
-    '전월세 전환율 계산법을 쉽게 정리합니다. 보증금을 월세로 환산하는 공식, 역방향 계산, 기준금리 변동 영향, 실제 계산 사례를 명확히 설명합니다. 2026년 기준.',
+    '전월세 전환율로 보증금과 월세를 양방향 환산하는 공식과 계산 사례를 정리했습니다. 기준금리 변동이 미치는 영향도 담았습니다.',
   keywords: [
     '전월세 전환율',
     '보증금 월세 환산',
@@ -33,16 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '전월세 전환율 계산법 2026 | 보증금↔월세 환산 공식·사례',
-      },
-    ],
-    title: '전월세 전환율 계산법 2026',
-    description: '보증금과 월세를 양방향으로 환산하는 계산 방법과 실제 사례를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -51,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전월세 전환율 계산법 2026',
-    description: '보증금 → 월세, 월세 → 보증금 양방향 환산 공식과 사례',
   },
 };
 
@@ -591,7 +579,7 @@ export default function RentConversionCalculationPage() {
                       href="/guide/rent-conversion-rate-2026-housing-lease-act/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      주택임대차보호법 전월세전환율 2026 완벽 가이드
+                      주택임대차보호법 전월세전환율 2026 가이드
                     </Link>{' '}
 , 법정 한도와 법조항 상세 설명
                   </li>

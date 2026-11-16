@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-21';
 export const metadata: Metadata = {
   title: '폐업 부가가치세 확정신고 2026, 폐업일 다음달 25일 신고방법',
   description:
-    '개인사업자가 폐업하면 폐업일이 속한 달의 다음 달 25일까지 부가가치세 확정신고를 해야 합니다. 신고 기한, 남은 재고·비품(잔존재화) 간주공급, 폐업 절차, 미신고 가산세를 부가가치세법 §5·§49 기준으로 정리했습니다.',
+    '개인사업자가 폐업하면 폐업일이 속한 달의 다음 달 25일까지 부가가치세 확정신고를 해야 합니다. 잔존재화 간주공급도 정리했습니다.',
   keywords: [
     '폐업 부가세 신고',
     '폐업 부가가치세 확정신고',
@@ -34,10 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '폐업 부가가치세 확정신고 2026' }],
-    title: '폐업 부가가치세 확정신고 2026, 폐업일 다음달 25일까지',
-    description:
-      '폐업하면 폐업일이 속한 달의 다음 달 25일까지 부가세 확정신고. 남은 재고·비품은 잔존재화로 간주과세됩니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '폐업 부가가치세 확정신고 2026',
-    description: '폐업일 다음 달 25일까지 부가세 확정신고. 잔존재화 간주공급·가산세 주의. 부가가치세법 §49.',
   },
 };
 
@@ -98,7 +92,7 @@ export default function BusinessClosureVatFinalReturn2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '폐업 부가가치세 확정신고 2026, 폐업일 다음달 25일 신고방법',
     description:
-      '개인사업자가 폐업하면 폐업일이 속한 달의 다음 달 25일까지 부가세 확정신고를 해야 합니다. 잔존재화 간주공급, 간이과세자 처리, 미신고 가산세까지 완전 정리.',
+      '개인사업자가 폐업하면 폐업일이 속한 달의 다음 달 25일까지 부가세 확정신고를 해야 합니다. 잔존재화 간주공급, 간이과세자 처리, 미신고 가산세까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

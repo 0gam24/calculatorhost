@@ -18,6 +18,8 @@ export function urlsFromChangedFiles(files) {
     const segs = m[1].split('/').filter(Boolean);
     if (segs.some((s) => s.startsWith('['))) continue;
     const path = segs.filter((s) => !(s.startsWith('(') && s.endsWith(')'))).join('/');
+    // 위젯 임베드 페이지는 noindex 라 알리지 않는다
+    if (path === 'embed' || path.startsWith('embed/')) continue;
     out.add(`${SITE}/${path ? `${path}/` : ''}`);
   }
   return [...out];

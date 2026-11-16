@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-13';
 export const metadata: Metadata = {
   title: '전입신고 방법·기한 2026, 14일 넘기면 과태료 얼마',
   description:
-    '이사하면 14일 이내 전입신고를 해야 합니다. 정부24 온라인 신고 절차, 늦었을 때 최대 5만원 과태료, 세입자라면 확정일자를 함께 받아야 하는 이유를 주민등록법 §16·§40 기준으로 정리했습니다.',
+    '이사하면 14일 이내 전입신고를 해야 하고, 늦으면 최대 5만원 과태료가 붙습니다. 정부24 온라인 절차와 확정일자의 필요성도 정리했습니다.',
   keywords: [
     '전입신고',
     '전입신고 방법',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전입신고 방법·기한 2026, 14일 넘기면 과태료 얼마' }],
-    title: '전입신고 방법·기한 2026, 온라인 절차와 과태료 완전 정리',
-    description: '이사 후 14일 이내 신고. 정부24 온라인 방법, 최대 5만원 과태료, 확정일자 동시 신청 이유.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전입신고 방법·기한 2026, 온라인 절차와 과태료',
-    description: '이사 후 14일 이내 신고, 최대 5만원 과태료. 세입자는 확정일자 동시 신청. 주민등록법 §16.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function ResidentRegistrationMoveInReport2026Page() {
     { name: '전입신고 방법·기한 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '전입신고 방법·기한 2026, 온라인 절차와 과태료 완전 정리',
+    headline: '전입신고 방법·기한 2026, 온라인 절차와 과태료 정리',
     description:
       '이사 후 14일 이내 전입신고 의무, 정부24 온라인 절차, 최대 5만원 과태료, 세입자의 확정일자 동시 신청과 대항력 확보를 주민등록법 §16·§40 기준으로 정리.',
     url: URL,

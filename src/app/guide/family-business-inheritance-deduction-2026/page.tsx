@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '가업상속공제 2026, 최대 600억 공제 요건·사후관리 5년',
   description:
-    '중소·중견기업 가업 승계 시 상속세 공제. 영위기간별 공제한도(300/400/600억), 10년 경영 요건, 사후관리 5년 고용·자산 유지 기준. 상증법 §18의2 기준.',
+    '중소·중견기업 가업상속공제는 영위기간에 따라 최대 600억원까지 공제됩니다. 10년 경영 요건과 5년 사후관리 기준을 정리했습니다.',
   keywords: [
     '가업상속공제',
     '상속세 공제',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '가업상속공제 2026, 최대 600억 공제',
-      },
-    ],
-    title: '가업상속공제 2026 | 상속세 최대 600억 공제 완전 가이드',
-    description:
-      '중소·중견기업 가업 상속 시 영위기간별 300/400/600억 공제. 요건 및 사후관리 5년 고용·자산 유지 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '가업상속공제 2026 | 최대 600억 상속세 공제',
-    description: '영위기간 30년 이상 시 600억원 공제. 요건·사후관리 5년 완전 정리.',
   },
 };
 
@@ -122,7 +109,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '가업상속공제 2026',
     description:
-      '중소·중견기업 가업 상속 시 최대 600억원 상속세 공제. 요건과 5년 사후관리 완전 정리.',
+      '중소·중견기업 가업 상속 시 최대 600억원 상속세 공제. 요건과 5년 사후관리 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -174,7 +161,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   가업상속공제 2026
                   <br />
                   <span className="text-2xl text-text-secondary">
-                    최대 600억원 상속세 공제, 요건과 사후관리 완벽 정리
+                    최대 600억원 상속세 공제, 요건과 사후관리 정리
                   </span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
@@ -452,7 +439,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   >
                     <div className="font-semibold text-primary-500">상속세 계산법 2026</div>
                     <p className="mt-1 text-sm text-text-secondary">
-                      세율, 공제한도, 누진세 완전 정리.
+                      세율, 공제한도, 누진세 정리.
                     </p>
                   </Link>
                   <Link
@@ -483,12 +470,12 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                     </p>
                   </Link>
                   <Link
-                    href="/guide/family-business-registration-2026/"
+                    href="/guide/family-business-succession-gift-special-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
                   >
-                    <div className="font-semibold text-primary-500">중소기업 상속 등기 절차</div>
+                    <div className="font-semibold text-primary-500">가업승계 증여세 과세특례</div>
                     <p className="mt-1 text-sm text-text-secondary">
-                      가업 승계 시 법인 대표 변경, 주식 이전 등록.
+                      생전에 가업 주식을 증여할 때 10억 원 공제와 10% 세율 요건.
                     </p>
                   </Link>
                 </div>

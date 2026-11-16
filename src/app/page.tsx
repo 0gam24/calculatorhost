@@ -9,11 +9,22 @@ import {
   buildFaqPageJsonLd,
 } from '@/lib/seo/jsonld';
 
+// 네이버 콘텐츠 마크업(04-02): 메인 페이지 제목은 브랜드명으로, 자주 바꾸지 않는다.
+// 계산기 개수처럼 늘 바뀌는 숫자는 제목·설명에 넣지 않는다.
 export const metadata: Metadata = {
-  title: '한국 금융·세금·부동산 계산기 33개 | calculatorhost',
+  title: 'calculatorhost | 세금·금융·부동산 계산기',
   description:
-    '연봉 실수령액·대출이자·취득세·주휴수당 등 계산기 33개. 회원가입 없이 무료로 바로 계산하고 계산 기준까지 확인하세요.',
+    '연봉 실수령액, 양도세, 취득세, 대출이자를 회원가입 없이 바로 계산하고 결과의 법적 근거까지 확인하세요.',
   alternates: { canonical: 'https://calculatorhost.com/' },
+  openGraph: {
+    url: 'https://calculatorhost.com/',
+    type: 'website',
+    locale: 'ko_KR',
+    siteName: 'calculatorhost',
+    images: [
+      { url: '/og-default.png', width: 1200, height: 630, alt: 'calculatorhost 세금·금융·부동산 계산기' },
+    ],
+  },
 };
 const POPULAR = [
   { href: '/calculator/salary', title: '연봉 실수령액', tag: '근로' },
@@ -165,6 +176,8 @@ export default function HomePage() {
         position: index + 1,
         name: item.title,
         url: 'https://calculatorhost.com' + item.href + '/',
+        // 네이버 캐러셀(08-07) 필수 image: 계산기별 opengraph-image.png
+        image: 'https://calculatorhost.com' + item.href + '/opengraph-image.png',
       })),
     },
   ];

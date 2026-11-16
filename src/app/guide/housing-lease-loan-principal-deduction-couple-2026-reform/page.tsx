@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-24';
 export const metadata: Metadata = {
   title: '전세대출 원리금 소득공제 2026, 무주택 부부 각각 개편안',
   description:
-    '전세·월세 보증금 대출 원리금상환액의 40%를 소득공제하는 주택임차차입금 공제. 2026 세제개편안은 주거를 달리하는 무주택 부부가 각각 받도록 확대합니다. 요건·한도·계산까지 정리(소득세법 §52).',
+    '전세·월세 보증금 대출 원리금은 40% 소득공제됩니다. 2026 세제개편안은 주거를 달리하는 무주택 부부도 각각 받는 안입니다.',
   keywords: [
     '주택임차차입금 원리금상환액 소득공제',
     '전세대출 소득공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세대출 원리금 소득공제 2026, 무주택 부부 각각 개편안' }],
-    title: '전세대출 원리금 소득공제 2026, 무주택 부부 각각 받는 개편안',
-    description: '주택임차차입금 원리금상환액 40% 소득공제. 2026 세제개편안으로 주거를 달리하는 무주택 부부가 각각 공제. 요건·한도·절세액 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세대출 원리금 소득공제 2026, 무주택 부부 각각 개편안',
-    description: '전세대출 원리금 40% 소득공제, 합산 한도 연 400만원. 2026 개편안은 주말부부 각각 공제 허용(정부안). 소득세법 §52.',
   },
 };
 
@@ -376,7 +371,7 @@ export default function HousingLeaseLoanPrincipalDeductionCouple2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">소득공제 준비물과 순서를 정리했습니다.</p>
                   </Link>
                   <Link

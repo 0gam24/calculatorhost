@@ -26,7 +26,7 @@ const DATE_MODIFIED = '2026-08-16';
 export const metadata: Metadata = {
   title: '폭염 야외작업 쓰러지면 산재·작업중지권 2026 정리',
   description:
-    '폭염에 야외에서 일하다 쓰러지면 온열질환도 업무상 재해로 산재 보상을 받을 수 있습니다(산재보험법 §37). 근로자는 급박한 위험 시 작업을 멈출 권리가 있고, 그 이유로 해고 등 불이익을 받지 않습니다(산안법 §52). 보상 종류와 신청 절차를 정리했습니다.',
+    '폭염 속 야외작업 중 쓰러지면 온열질환도 산재로 보상받을 수 있습니다. 위험할 때 작업을 멈출 권리와 신청 절차를 정리했습니다.',
   keywords: [
     '폭염 산재',
     '온열질환 산재',
@@ -39,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '폭염 야외작업 산재와 작업중지권 2026' }],
-    title: '폭염 야외작업 쓰러지면 산재·작업중지권 2026',
-    description: '온열질환도 업무상 재해로 산재 인정 가능(산재보험법 §37). 급박한 위험 시 작업중지권과 불이익 금지(산안법 §52).',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '폭염 야외작업 쓰러지면 산재·작업중지권 2026',
-    description: '온열질환 산재 보상과 작업중지권. 근로자가 알아야 할 폭염 안전 권리. 산안법 §52, 산재보험법 §37.',
   },
 };
 
@@ -119,7 +114,7 @@ export default function HeatwaveHeatIllnessWorkInjury2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '폭염 야외작업 산재·작업중지권 2026',
     description:
-      '폭염 온열질환의 산재 인정, 근로자 작업중지권, 보상과 신청 절차 완전 정리.',
+      '폭염 온열질환의 산재 인정, 근로자 작업중지권, 보상과 신청 절차 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

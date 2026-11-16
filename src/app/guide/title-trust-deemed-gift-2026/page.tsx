@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '명의신탁 증여의제 2026, 차명 주식·부동산 세금 차이',
   description:
-    '차명 주식은 조세회피 목적이 있으면 실제소유자에게 증여세 납부의무가 있습니다. 반면 차명 부동산은 증여의제가 아니라 부동산실명법상 과징금·형사처벌 대상입니다. 상증법 §45의2와 부동산실명법 §3·§5·§7 기준으로 정리했습니다.',
+    '차명 주식은 조세회피 목적이 있으면 실제소유자가 증여세를 내야 합니다. 반면 부동산 명의신탁은 실명법상 과징금과 형사처벌 대상입니다.',
   keywords: [
     '명의신탁 증여의제',
     '차명주식 증여세',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '명의신탁 증여의제 2026, 차명 주식·부동산 세금 차이',
-      },
-    ],
-    title: '명의신탁 증여의제 2026, 차명 주식은 증여세, 차명 부동산은 과징금',
-    description:
-      '조세회피 목적이 있는 차명주식은 증여세, 차명 부동산은 부동산실명법 과징금·형사처벌. 상증법 §45의2 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '명의신탁 증여의제 2026, 차명 주식·부동산 세금 차이',
-    description:
-      '차명주식은 증여세, 차명 부동산은 부동산실명법 과징금·형사처벌. 상증법 §45의2 정리.',
   },
 };
 

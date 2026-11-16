@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-31';
 export const metadata: Metadata = {
   title: '6+6 부모육아휴직제 2026, 부부 첫 6개월 통상임금 100%',
   description:
-    '부부가 모두 육아휴직을 쓰면 첫 6개월 급여를 통상임금 100%로 받고 사후지급금도 공제하지 않습니다. 월별 상한액과 부부 합산 실수령, 신청 방법을 고용보험법 시행령 §95의3 기준으로 정리했습니다.',
+    '부부가 모두 육아휴직을 쓰면 첫 6개월 급여를 통상임금 100%로 받습니다. 월별 상한액과 신청 방법을 정리했습니다.',
   keywords: [
     '6+6 부모육아휴직제',
     '부모 육아휴직 100%',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '6+6 부모육아휴직제 2026, 부부 첫 6개월 통상임금 100%' }],
-    title: '6+6 부모육아휴직제 2026, 부부가 함께 쓰면 급여가 오른다',
-    description: '생후 18개월 이내 자녀를 부부가 함께 돌보면 첫 6개월 급여를 통상임금 100%(월 최대 450만원)로 지급.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '6+6 부모육아휴직제 2026, 부부 첫 6개월 통상임금 100%',
-    description: '월별 상한 200~450만원, 사후지급금 공제 없음. 고용보험법 시행령 §95의3.',
   },
 };
 

@@ -21,6 +21,8 @@ import {
 import { InheritanceTaxCalculator } from './InheritanceTaxCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/inheritance-tax/';
 
@@ -38,18 +40,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '상속세 계산기 2026, 기초공제 2억·일괄공제 5억',
-    description: '상속 시 세금을 미리 계산하고 공제 방식을 비교·선택하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속세 계산기 2026, 기초공제 2억·일괄공제 5억',
-    description: '상속 시 세금을 미리 계산하고 공제 방식을 비교·선택하세요.',
-  },
-  other: {
-    dateModified: '2026-04-24',
   },
 };
 
@@ -115,7 +110,7 @@ export default function InheritanceTaxPage() {
     { name: '상속세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '상속세 계산기 사용 방법',
     description: '상속재산, 상속인 구성, 공제 방식으로 상속세를 계산합니다.',
     steps: [
@@ -140,8 +135,9 @@ export default function InheritanceTaxPage() {
         text: '신고 기한 내 신고 시 신고세액공제 3%를 받습니다. 상속개시일(사망일)이 속하는 달의 말일부터 6개월 이내가 신고 기한입니다(상증세법 §67).',
       },
     ],
-  });
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+  const glossaryData = {
     name: '상속세 계산기 핵심 용어',
     description: '상속세 계산 및 신고에 필요한 주요 용어 정의',
     url: URL,
@@ -175,7 +171,8 @@ export default function InheritanceTaxPage() {
         url: 'https://law.go.kr',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -245,6 +242,7 @@ export default function InheritanceTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="상속세는 피상속인(돌아가신 분)으로부터 재산을 무상으로 받을 때 부과되는 국세입니다. 상속인의 지위(배우자·자녀·부모 등)에 따라 공제액이 다르고, 기초공제 2억과 일괄공제 5억 중 유리한 것이 자동 적용됩니다(상증세법 §18-§26)."
                 table={{
@@ -647,6 +645,7 @@ export default function InheritanceTaxPage() {
                   상담을 받으시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

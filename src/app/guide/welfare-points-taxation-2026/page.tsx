@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-25';
 // 북극성 수익 레버: [revenue-lever: indexing+traffic] (신규 색인 표면 + 직장인 복지포인트 과세 검색 의도 흡수)
 
 export const metadata: Metadata = {
-  title: '복지포인트 세금 2026, 근로소득 과세와 이유 | calculatorhost',
+  title: '복지포인트 세금 2026, 근로소득으로 과세되는 이유',
   description:
-    '회사 복지포인트는 임금은 아니지만 근로소득으로 과세됩니다. 대법원 판결로 확인된 과세 근거, 공무원과의 차이, 세금이 얼마나 떼이는지, 경정청구 가능 여부를 소득세법 §20 기준으로 정리했습니다.',
+    '복지포인트는 임금은 아니지만 소득세법 §20에 따라 근로소득으로 과세됩니다. 대법원 판단과 공무원과의 차이, 경정청구 여부를 정리했습니다.',
   keywords: [
     '복지포인트 세금',
     '복지포인트 근로소득',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '복지포인트 세금 2026, 근로소득 과세와 이유' }],
-    title: '복지포인트 세금 2026, 임금은 아닌데 왜 세금은 낼까',
-    description: '대법원이 확인한 복지포인트 근로소득 과세. 공무원과의 차이, 세액 계산, 경정청구 여부.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '복지포인트 세금 2026, 근로소득 과세 정리',
-    description: '임금은 아니지만 근로소득 과세. 공무원 차이, 세액 계산, 경정청구. 소득세법 §20.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function WelfarePointsTaxation2026Page() {
     { name: '복지포인트 세금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '복지포인트 세금 2026, 근로소득 과세와 그 이유 완벽 정리',
+    headline: '복지포인트 세금 2026, 근로소득 과세와 그 이유 정리',
     description:
       '민간기업 복지포인트의 근로소득 과세 근거, 임금과의 차이, 공무원 비과세와의 형평성, 세액 계산, 경정청구 가능 여부를 소득세법 §20 기준으로 정리.',
     url: URL,

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-10';
 const DATE_MODIFIED = '2026-07-10';
 
 export const metadata: Metadata = {
-  title: '가상자산(코인) 과세 2027 | 250만 공제·22% 과세·현재 비과세',
+  title: '가상자산(코인) 과세 2027 | 250만 공제·세율 22%·현재 비과세',
   description:
-    '2027년 1월부터 시행 예정인 가상자산 소득세. 250만원 기본공제, 22% 분리과세, 의제취득가액. 현재(2026)는 비과세 상태. 소득세법 §21 기타소득.',
+    '코인 양도차익은 2026년 현재 비과세이고, 2027년 1월부터 250만원 공제 후 22% 분리과세될 예정입니다. 의제취득가액도 정리했습니다.',
   keywords: [
     '가상자산 과세 2027',
     '코인 세금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가상자산(코인) 과세 2027 | 250만 공제·22% 과세·현재 비과세' }],
-    title: '가상자산(코인) 과세 2027, 250만 공제 후 22% 분리과세 시행 예정',
-    description: '2027년 1월부터 개인 가상자산 양도·대여 소득을 기타소득으로 과세. 250만원 기본공제, 22% 분리과세. 현재는 비과세 상태.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '가상자산 과세 2027, 250만 공제 후 22% 분리과세',
-    description: '2027.1.1 시행 예정. 현재(2026)는 비과세. 250만 공제, 20% 소득세 + 2% 지방소득세.',
   },
 };
 
@@ -403,7 +398,7 @@ export default function VirtualAssetTax2027Page() {
                     href="/guide/capital-gains-tax-5-steps/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">양도소득세 완벽 정리</div>
+                    <div className="font-semibold text-primary-500">양도소득세 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">소득세법 기타소득 과세 개념을 다른 자산 양도와 비교하세요.</p>
                   </Link>
                   <Link

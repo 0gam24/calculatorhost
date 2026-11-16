@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-22';
 const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '자동차세 계산법 2026 | 배기량·차령경감·지방교육세 완벽 가이드 | calculatorhost',
+  title: '자동차세 계산법 2026 | 배기량·차령경감·전기차·지방교육세',
   description:
-    '2026년 자동차세 정확한 계산법. 배기량별 세율, 차령경감(3년차부터), 전기차 정액세, 지방교육세, 연납할인까지. 지방세법 §127·§151 기준 필수 정보.',
+    '자동차세는 배기량별 cc당 세율로 계산하고 3년차부터 차령경감을 받으며, 전기차는 정액으로 냅니다. 지방교육세와 연납할인도 정리했습니다.',
   keywords: [
     '자동차세',
     '자동차세 계산',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 계산법 2026 | 배기량·차령경감·지방교육세' }],
-    title: '자동차세 계산법 2026, 정확한 세율 & 차령경감',
-    description: '자동차세의 배기량별 세율부터 차령경감, 전기차 정액세, 연납할인까지 모두 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -86,7 +83,7 @@ export default function VehicleTaxCalculation2026Page() {
     { name: '자동차세 계산법 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 계산법 2026, 배기량별 세율·차령경감·지방교육세 완벽 정리',
+    headline: '자동차세 계산법 2026, 배기량별 세율·차령경감·지방교육세 정리',
     description:
       '자동차세를 정확히 이해하고 계산하는 방법. 배기량별 세율부터 차령경감, 전기차 정액세, 지방교육세, 연납할인까지 모두 정리.',
     url: URL,
@@ -134,7 +131,7 @@ export default function VehicleTaxCalculation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차세 계산법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 배기량·차령경감·지방교육세 완전 정리</span>
+                  <span className="text-2xl text-text-secondary">· 배기량·차령경감·지방교육세 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   6월이 되면 자동차 소유자들에게 도착하는 자동차세 통지서. 그 안의 숫자가 어떻게 나왔는지 궁금한 사람들이 많습니다. 배기량에 따라 cc당 세율이 달라지고, 차가 오래될수록 감면이 이루어지며, 전기차는 정액으로 과세되거든요. 이 가이드는 자동차세의 계산 원리를 단계별로 풀어 설명하고, 차령경감, 전기차 정액세, 지방교육세, 연납할인까지 모두 정리해드립니다.
@@ -447,7 +444,7 @@ export default function VehicleTaxCalculation2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">6월 자동차세 · 연납할인</div>
-                    <p className="mt-1 text-sm text-text-secondary">6월 납부 시즌과 1월 연납할인 완벽 가이드.</p>
+                    <p className="mt-1 text-sm text-text-secondary">6월 납부 시즌과 1월 연납할인 가이드.</p>
                   </Link>
                   <Link
                     href="/guide/january-vehicle-tax-prepayment"

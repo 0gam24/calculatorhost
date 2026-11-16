@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   title:
     '대출 갈아타기 손익 계산 2026, 중도상환수수료를 빼고도 이득일까',
   description:
-    '대출 갈아타기(대환)가 이득인지 계산하려면 금리 인하분에서 중도상환수수료와 부대비용을 차감해야 합니다. 손익분기 회수기간 공식, 실제 계산 예시, DSR·LTV 재심사 주의점을 정리합니다.',
+    '대출 갈아타기가 이득인지 보려면 금리 인하분에서 중도상환수수료와 부대비용을 빼야 합니다. 손익분기 공식과 계산 예시를 정리합니다.',
   keywords: [
     '대출 갈아타기',
     '대환대출',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '대출 갈아타기 손익 계산 2026',
-      },
-    ],
-    title: '대출 갈아타기 손익 계산 2026',
-    description:
-      '중도상환수수료를 고려한 대환대출 손익계산 공식과 실제 계산 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '대출 갈아타기 손익 계산 2026',
-    description: '금리 인하분과 수수료를 계산해 갈아타기 가치 판단하기.',
   },
 };
 

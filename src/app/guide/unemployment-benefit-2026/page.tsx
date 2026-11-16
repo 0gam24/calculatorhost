@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-07';
 const DATE_MODIFIED = '2026-06-07';
 
 export const metadata: Metadata = {
-  title: '실업급여 2026, 상한 68,100원·하한 66,048원, 조건·금액·신청',
+  title: '실업급여 2026, 상한 68,100원·하한 66,048원, 조건·신청',
   description:
-    '2026년 실업급여(구직급여) 1일 상한액 68,100원·하한액 66,048원으로 인상. 수급조건(피보험단위기간 180일·비자발적 이직), 소정급여일수 120~270일, 지급액 계산(평균임금 60%), 신청 방법까지 한 번에 정리했습니다.',
+    '2026년 실업급여 1일 상한액은 68,100원, 하한액은 66,048원입니다. 평균임금 60% 지급 방식과 수급조건, 신청법을 정리했습니다.',
   keywords: [
     '실업급여',
     '실업급여 조건',
@@ -37,21 +37,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '실업급여 2026, 상한 68,100원·하한 66,048원, 조건·금액·신청방법',
-    description:
-      '2026년 실업급여 상한 68,100원·하한 66,048원. 수급조건·소정급여일수(120~270일)·지급액 계산·신청 방법 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '실업급여 2026, 상한 68,100원·하한 66,048원, 조건·금액·신청' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '실업급여 2026, 상한 68,100원·하한 66,048원',
-    description: '수급조건·소정급여일수·지급액 계산·신청 방법 완정리.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '실업급여 2026, 상한 68,100원·하한 66,048원, 조건·금액·신청' }],
   },
 };
 
@@ -97,7 +90,7 @@ export default function UnemploymentBenefit2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '실업급여 2026, 조건·금액·신청방법' },
+    { name: '실업급여 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '실업급여 2026, 상한 68,100원·하한 66,048원, 조건·금액·신청방법',

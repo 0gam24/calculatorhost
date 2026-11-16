@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-31';
 const DATE_MODIFIED = '2026-05-31';
 
 export const metadata: Metadata = {
-  title: '5월 31일 마감 당일 종합소득세 신고 2026 | 24시간 가이드·홈택스 폭주 회피',
+  title: '5월 31일 마감 당일 종합소득세 신고 2026 | 홈택스 폭주 회피',
   description:
-    '당일 신고 최후의 선택! 5월 31일 자정(24:00) 마감 1시간 남았다면? 홈택스 폭주 시간대 회피·빠른 신고 5단계·자정 1분 후 무신고가산세 20%·분납 신청 가능·당일 제출 시 자진신고 감면 최대 50%.',
+    '5월 31일 자정까지 종합소득세를 빠르게 신고하는 5단계와 분납 신청, 무신고가산세 20%를 정리했습니다.',
   keywords: [
     '5월 31일 당일 신고',
     '종합소득세 마감',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '5월 31일 마감 당일 종합소득세 신고 2026 | 24시간 가이드·홈택스 폭주 회피' }],
-    title: '5월 31일 마감 당일 종합소득세 신고 완벽 2026 | 24시간 라이브 가이드',
-    description: '당일 신고 당황스럽다면? 빠른 신고 5단계·홈택스 폭주 회피·자정 제출 시 무신고가산세 0원 안내.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5월 31일 마감 당일 종합소득세 신고 2026',
-    description: '마감 1시간 남았다? 자정까지 5단계로 신고 완료 + 무신고가산세 0원 처리.',
   },
 };
 
@@ -105,7 +100,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '5월 31일 마감 당일 종합소득세 신고 2026 | 24시간 긴급 가이드',
     description:
-      '당일 신고 완벽 가이드. 빠른 신고 5단계 · 자정 정확히 전까지 정상 신고 · 1분 후 무신고가산세 20% · 홈택스 폭주 회피 방법 · 분납 신청 · 자진신고 감면 최대 50% · 일요일 마감 월요일 연장 안내 · 당일 환급금 입금 시기.',
+      '당일 신고 가이드. 빠른 신고 5단계 · 자정 정확히 전까지 정상 신고 · 1분 후 무신고가산세 20% · 홈택스 폭주 회피 방법 · 분납 신청 · 자진신고 감면 최대 50% · 일요일 마감 월요일 연장 안내 · 당일 환급금 입금 시기.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -634,7 +629,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·절세·환급
                   </li>
@@ -670,7 +665,7 @@ export default function May31DeadlineDayIncomeTexFiling2026Page() {
                   <strong>법적 근거</strong>: 소득세법 §70 (확정신고 기한) · 국세기본법 §47의2 (무신고가산세) · 국세기본법 §48
                   (자진신고 감면·기한 연장) · 국세기본법 §51-§52 (환급 절차). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

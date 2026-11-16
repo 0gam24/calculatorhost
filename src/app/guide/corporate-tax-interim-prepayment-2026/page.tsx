@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-25';
 // 북극성 수익 레버: [revenue-lever: indexing+traffic] (신규 색인 표면 + 8월 법인세 시즌 검색 의도 흡수)
 
 export const metadata: Metadata = {
-  title: '법인세 중간예납 2026, 8월 신고·계산·면제 기준 | calculatorhost',
+  title: '법인세 중간예납 2026, 8월 신고·계산·면제 기준',
   description:
-    '12월 결산 법인은 8월 31일까지 법인세 중간예납을 신고·납부합니다. 직전연도 기준과 가결산 두 방식의 계산법, 면제 대상, 분납·가산세를 법인세법 §63 기준으로 정리했습니다.',
+    '12월 결산 법인은 8월 31일까지 법인세 중간예납을 신고·납부합니다. 직전연도 기준과 가결산 계산법, 면제 대상을 정리했습니다.',
   keywords: [
     '법인세 중간예납',
     '법인세 중간예납 8월',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '법인세 중간예납 2026, 8월 신고·계산·면제 기준' }],
-    title: '법인세 중간예납 2026, 8월에 내는 상반기 법인세',
-    description: '12월 결산 법인 기준 8월 31일 신고. 직전연도 기준·가결산 계산법과 면제 조건, 분납 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '법인세 중간예납 2026, 8월 신고 완벽 정리',
-    description: '직전연도 기준과 가결산 두 방식, 면제 대상, 분납·가산세까지. 법인세법 §63.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function CorporateTaxInterimPrepayment2026Page() {
     { name: '법인세 중간예납 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '법인세 중간예납 2026, 8월에 내는 상반기 법인세 완벽 정리',
+    headline: '법인세 중간예납 2026, 8월에 내는 상반기 법인세 정리',
     description:
       '12월 결산 법인의 8월 31일 법인세 중간예납. 직전연도 기준과 가결산 두 방식의 계산법, 면제 대상, 분납·가산세를 법인세법 §63 기준으로 정리.',
     url: URL,

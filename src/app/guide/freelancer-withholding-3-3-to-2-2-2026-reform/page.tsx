@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-24';
 export const metadata: Metadata = {
   title: '프리랜서 원천징수 3.3% 2.2% 인하 2026 개편안 정리',
   description:
-    '2026 세제개편안이 인적용역 사업소득 원천징수 세율을 3%에서 2%로 낮춥니다. 지방세 포함 3.3%에서 2.2%로. 배달라이더·프리랜서 현금흐름은 늘지만 최종 세금은 5월 정산으로 같습니다(소득세법 §129).',
+    '2026 세제개편안은 프리랜서 원천징수를 3.3%에서 2.2%로 낮추는 안입니다. 현금흐름은 늘지만 최종 세금은 5월 정산으로 같습니다.',
   keywords: [
     '프리랜서 원천징수 3.3%',
     '인적용역 원천징수 2.2%',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '프리랜서 원천징수 3.3% 2.2% 인하 2026 개편안 정리' }],
-    title: '프리랜서 원천징수 3.3% 2.2% 인하 2026 개편안, 진짜 세금 줄까',
-    description: '인적용역 사업소득 원천징수 3%에서 2%로 인하(정부안). 매달 떼는 돈은 줄지만 최종 세금은 5월 종합소득세 정산으로 같습니다. 소득세법 §129.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '프리랜서 원천징수 3.3% 2.2% 인하 2026 개편안 정리',
-    description: '인적용역 원천징수 3%→2% 인하(정부안). 현금흐름은 늘지만 최종 세금은 5월 정산으로 동일. 소득세법 §129.',
   },
 };
 

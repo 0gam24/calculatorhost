@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-24';
 export const metadata: Metadata = {
   title: '임대수익률 계산 2026 | 월세 수익률·표면수익률·갭투자 실투자금',
   description:
-    '부동산 임대수익률 계산법을 쉽게 정리합니다. 순수익률 vs 표면수익률 차이, 갭투자 실투자금 계산, 월세 수익성 판단 기준을 명확히 설명합니다. 2026년 기준.',
+    '임대수익률은 표면수익률이 아니라 제경비를 뺀 순수익률로 판단해야 합니다. 갭투자 실투자금 계산법과 사례도 정리했습니다.',
   keywords: [
     '임대수익률',
     '월세 수익률',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '임대수익률 계산 2026 | 월세 수익률·표면수익률·갭투자 실투자금',
-      },
-    ],
-    title: '임대수익률 계산 2026',
-    description: '부동산 월세 수익률을 정확히 계산하는 공식과 실제 사례를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '임대수익률 계산 2026',
-    description: '월세 수익률, 갭투자 실투자금, 제경비를 포함한 정확한 수익률 계산',
   },
 };
 
@@ -735,7 +723,7 @@ export default function RentalYieldCalculation2026Page() {
                   </a>
                   ,{' '}
                   <a
-                    href="https://www.re.go.kr/"
+                    href="https://www.reb.or.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

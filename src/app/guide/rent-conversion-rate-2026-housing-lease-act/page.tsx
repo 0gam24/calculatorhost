@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-05-11';
 const DATE_MODIFIED = '2026-05-11';
 
 export const metadata: Metadata = {
-  title: '주택임대차보호법 전월세전환율 2026 | 기준금리+2% 완벽 가이드',
+  title: '주택임대차보호법 전월세전환율 2026 | 기준금리+2% 법정 한도',
   description:
-    '2026년 주택임대차보호법 §7의2 월차임 전환율 = 한국은행 기준금리 + 2%. 보증금↔월세 환산 공식·법 한도·실제 계산 사례까지 명확히 정리. 임대인·세입자 필수.',
+    '주택임대차보호법 §7의2 월차임 전환율 한도는 한국은행 기준금리에 2%를 더한 값입니다. 초과 요구분은 무효이며 반환을 청구할 수 있습니다.',
   keywords: [
     '주택임대차보호법 월차임 전환율',
     '주택임대차보호법 전월세전환율',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택임대차보호법 전월세전환율 2026 | 기준금리+2% 완벽 가이드' }],
-    title: '주택임대차보호법 전월세전환율 2026 | 기준금리+2%',
-    description: '월차임 전환율 법정 한도 + 보증금·월세 환산 공식.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -93,7 +90,7 @@ export default function RentConversionRateGuidePage() {
     { name: '주택임대차보호법 전월세전환율 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택임대차보호법 전월세전환율 2026 | 기준금리+2% 완벽 가이드',
+    headline: '주택임대차보호법 전월세전환율 2026 | 기준금리+2% 가이드',
     description:
       '주택임대차보호법 §7의2 월차임 전환율 = 한국은행 기준금리 + 2% 법정 한도와 보증금·월세 환산 공식 + 실 계산 사례.',
     url: URL,
@@ -144,7 +141,7 @@ export default function RentConversionRateGuidePage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">부동산·임대차 · {DATE_PUBLISHED}</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  주택임대차보호법 전월세전환율 2026, 기준금리 + 2% 완벽 가이드
+                  주택임대차보호법 전월세전환율 2026, 기준금리 + 2% 가이드
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 주택임대차보호법 §7의2 와 시행령 §9 에 따라 월차임 전환율의 법정 한도는
@@ -293,7 +290,7 @@ export default function RentConversionRateGuidePage() {
               </section>
 
               <ShareButtons
-                title="주택임대차보호법 전월세전환율 2026 | 기준금리+2% 완벽 가이드"
+                title="주택임대차보호법 전월세전환율 2026 | 기준금리+2% 가이드"
                 url={URL}
               />
 

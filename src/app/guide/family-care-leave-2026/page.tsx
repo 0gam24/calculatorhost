@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-02';
 export const metadata: Metadata = {
   title: '가족돌봄휴직·휴가 2026, 연 90일·10일 무급 사용법',
   description:
-    '가족이 아프거나 돌봄이 필요하면 근로자는 연 90일 가족돌봄휴직과 연 10일 가족돌봄휴가를 쓸 수 있습니다. 무급 여부, 대상 가족, 분할 사용, 사업주 거부 예외까지 남녀고용평등법 기준으로 정리했습니다.',
+    '근로자는 연 90일 가족돌봄휴직과 연 10일 가족돌봄휴가를 쓸 수 있습니다. 무급 여부와 회사가 거부할 수 있는 경우를 정리했습니다.',
   keywords: [
     '가족돌봄휴직',
     '가족돌봄휴가',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '가족돌봄휴직·휴가 2026, 연 90일·10일 무급 사용법' }],
-    title: '가족돌봄휴직·휴가 2026, 연 90일·10일 무급 사용법',
-    description:
-      '연 90일 가족돌봄휴직과 연 10일 가족돌봄휴가의 무급 원칙, 대상 가족, 분할 사용 규칙, 사업주 거부 예외를 남녀고용평등법 §22의2 기준으로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '가족돌봄휴직·휴가 2026, 연 90일·10일 무급 사용법',
-    description: '가족돌봄휴직 연 90일, 가족돌봄휴가 연 10일. 모두 무급 원칙이며 남녀고용평등법 §22의2에 근거합니다.',
   },
 };
 

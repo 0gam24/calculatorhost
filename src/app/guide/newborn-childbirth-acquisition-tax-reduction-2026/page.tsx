@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-02';
 export const metadata: Metadata = {
   title: '신생아 취득세 감면 2026, 500만원 면제 요건과 5년 규정',
   description:
-    '자녀를 출산한 가구가 12억원 이하 1주택을 취득하면 취득세를 500만원 한도로 100% 면제받습니다. 출산일부터 5년 규정, 3개월 전입·3년 거주 요건, 추징 사유를 지방세특례제한법 기준으로 정리했습니다.',
+    '출산 가구가 12억원 이하 1주택을 사면 취득세를 500만원 한도로 면제받습니다. 3개월 전입·3년 거주 요건과 추징 사유를 정리했습니다.',
   keywords: [
     '신생아 취득세 감면',
     '출산 취득세 감면',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '신생아 취득세 감면 2026, 500만원 면제 요건과 5년 규정' }],
-    title: '신생아 취득세 감면 2026 : 출산 가구 500만원 취득세 면제 가이드',
-    description: '출산일부터 5년 이내 12억원 이하 1주택 취득 시 취득세 500만원 한도 전액 면제. 요건, 사후관리, 추징 사유까지 지방세특례제한법 §36의5 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '신생아 취득세 감면 2026 : 500만원 면제 요건과 5년 규정',
-    description: '출산 가구가 12억원 이하 1주택 취득 시 취득세 500만원까지 면제. 지방세특례제한법 §36의5 기준 정리.',
   },
 };
 
@@ -115,7 +110,7 @@ export default function NewbornChildbirthAcquisitionTaxReduction2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '신생아 취득세 감면 2026',
     description:
-      '출산 가구가 12억원 이하 1주택을 취득할 때 취득세 500만원 한도 면제. 요건과 사후관리 규정 완전 정리.',
+      '출산 가구가 12억원 이하 1주택을 취득할 때 취득세 500만원 한도 면제. 요건과 사후관리 규정 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

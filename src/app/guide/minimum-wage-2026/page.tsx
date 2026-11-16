@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-09';
 export const metadata: Metadata = {
   title: '2026년 최저임금 시급 10,320원 | 월급·주휴 환산·계산법',
   description:
-    '2026년 최저임금 시급 10,320원 확정. 월 기준 약 216만원, 주휴·주 40시간 포함 환산 방법, 수습감액(90%), 산입범위 전체 정리.',
+    '2026년 최저임금은 시급 10,320원, 월 기준 약 216만원입니다. 주휴 포함 환산법과 수습감액 90%를 정리했습니다.',
   keywords: [
     '2026년 최저임금',
     '최저임금 시급',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026년 최저임금 시급 10,320원 | 월급·주휴 환산·계산법' }],
-    title: '2026년 최저임금 시급 10,320원, 월급 환산·수습감액·계산법 완벽 정리',
-    description: '2026년 최저임금 확정 10,320원/시. 월 기준 약 216만원, 주휴포함 계산, 수습 3개월 90% 감액, 정기상여금 산입 기준까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026년 최저임금 시급 10,320원 확정, 월급 환산 계산법',
-    description: '시급 10,320원 × 209시간 = 월 2,156,880원. 주휴·초과근무·수습감액 완전 정리.',
   },
 };
 
@@ -97,12 +92,12 @@ export default function MinimumWage2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '2026년 최저임금 2026' },
+    { name: '2026년 최저임금' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026년 최저임금 시급 10,320원, 월급·주휴·수습감액·계산법 완벽 정리',
+    headline: '2026년 최저임금 시급 10,320원, 월급·주휴·수습감액·계산법 정리',
     description:
-      '2026년 최저임금 시급 10,320원 확정. 월 기준 약 216만원, 주휴수당 포함 환산, 수습 3개월 90% 감액, 정기상여금·초과근무 산입범위, 위반 시 벌칙까지 완전 정리.',
+      '2026년 최저임금 시급 10,320원 확정. 월 기준 약 216만원, 주휴수당 포함 환산, 수습 3개월 90% 감액, 정기상여금·초과근무 산입범위, 위반 시 벌칙까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -114,7 +109,7 @@ export default function MinimumWage2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '2026년 최저임금 시급 10,320원',
     description:
-      '2026년 최저임금 확정값, 월 환산액, 주휴·수습·산입범위, 위반 벌칙 완벽 정리.',
+      '2026년 최저임금 확정값, 월 환산액, 주휴·수습·산입범위, 위반 벌칙 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

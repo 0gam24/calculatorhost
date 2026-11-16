@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-08';
 export const metadata: Metadata = {
   title: '금리인하요구권 2026, 승진·소득증가 시 신청 방법',
   description:
-    '금리인하요구권은 취업·승진·소득 증가나 신용점수 개선 등 신용 상태가 좋아졌을 때 대출금리 인하를 요구할 수 있는 법적 권리입니다(은행법 §30의2). 신청 요건, 필요 서류, 심사 기간 10영업일, 거절 사유와 재신청 전략까지 정리했습니다.',
+    '금리인하요구권은 취업·승진·소득 증가로 신용이 좋아졌을 때 쓰는 법적 권리입니다. 심사 기간 10영업일과 거절 시 대응을 정리했습니다.',
   keywords: [
     '금리인하요구권',
     '금리인하요구권 신청방법',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '금리인하요구권 2026 신청 방법' }],
-    title: '금리인하요구권 2026, 승진·소득증가 시 신청 방법',
-    description: '신용 상태가 개선됐을 때 대출금리 인하를 요구하는 법적 권리. 요건·서류·심사·거절 사유 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '금리인하요구권 2026, 승진·소득증가 시 신청 방법',
-    description: '취업·승진·소득증가·신용개선 시 대출금리를 낮춰달라 요구할 수 있는 권리. 신청법과 거절 대응 정리.',
   },
 };
 

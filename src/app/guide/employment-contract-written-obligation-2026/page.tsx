@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-06';
 export const metadata: Metadata = {
   title: '근로계약서 안 쓰면 벌금, 알바·정규직 처벌 차이 정리',
   description:
-    '근로계약서 미작성·미교부는 정규직은 500만원 이하 벌금, 알바·기간제는 500만원 이하 과태료 대상입니다. 반드시 들어가야 할 명시사항과 미작성 시 신고 방법을 근로기준법 §17 기준으로 정리했습니다.',
+    '근로계약서 미작성·미교부 시 정규직은 500만원 이하 벌금, 알바·기간제는 과태료 대상입니다. 필수 명시사항과 신고 방법을 정리했습니다.',
   keywords: [
     '근로계약서 미작성',
     '근로계약서 안쓰면 벌금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로계약서 미작성 벌금·과태료와 명시사항' }],
-    title: '근로계약서 안 쓰면 벌금, 알바·정규직 처벌 차이 정리',
-    description: '정규직 벌금 500만원, 알바 과태료 500만원. 근로계약서 필수 명시사항과 미작성 신고 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로계약서 안 쓰면 벌금·과태료',
-    description: '정규직은 벌금, 알바·기간제는 과태료 최대 500만원. 명시사항과 신고 절차 정리.',
   },
 };
 
@@ -320,7 +315,7 @@ export default function EmploymentContractWrittenObligation2026Page() {
                     href="/guide/weekly-holiday-allowance-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">주휴수당 완전 정리</div>
+                    <div className="font-semibold text-primary-500">주휴수당 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">계약서 근로시간과 연결된 주휴수당.</p>
                   </Link>
                   <Link

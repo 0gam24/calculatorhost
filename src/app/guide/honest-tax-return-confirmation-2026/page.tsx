@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-19';
 export const metadata: Metadata = {
   title: '성실신고확인제도 2026 | 대상 기준·신고기한·세액공제',
   description:
-    '성실신고확인제도는 업종별 수입금액 기준 이상인 개인사업자가 세무사 확인을 받아야 하는 제도입니다. 대상 기준(소득세법 시행령 133조), 6월 30일 신고기한, 확인비용 60% 세액공제까지 정리했습니다.',
+    '업종별 수입금액이 기준 이상인 개인사업자는 성실신고확인을 받아 6월 30일까지 신고합니다. 확인비용 60% 세액공제도 정리했습니다.',
   keywords: [
     '성실신고확인제도',
     '성실신고확인 대상',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '성실신고확인제도 2026, 대상 기준과 신고기한' }],
-    title: '성실신고확인제도 2026: 업종별 대상 기준과 신고기한 완전정리',
-    description: '수입금액이 일정 기준을 넘는 개인사업자는 종합소득세 신고 전 세무사 확인을 받아야 합니다. 업종별 기준, 6월 30일 연장 신고기한, 확인비용 세액공제를 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '성실신고확인제도 2026, 대상 기준과 신고기한 완전정리',
-    description: '업종별 수입금액 기준(소득세법 시행령 133조)과 6월 30일 신고기한, 확인비용 세액공제(조특법 126조의6)까지 한번에.',
   },
 };
 
@@ -100,9 +95,9 @@ export default function HonestTaxReturnConfirmation2026Page() {
     { name: '성실신고확인제도 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '성실신고확인제도 2026: 업종별 대상 기준과 신고기한 완전정리',
+    headline: '성실신고확인제도 2026: 업종별 대상 기준과 신고기한 정리',
     description:
-      '업종별 수입금액 기준(소득세법 시행령 §133), 6월 30일 연장 신고기한, 확인비용 60% 세액공제(조특법 §126의6)까지 성실신고확인제도를 완전 정리했습니다.',
+      '업종별 수입금액 기준(소득세법 시행령 §133), 6월 30일 연장 신고기한, 확인비용 60% 세액공제(조특법 §126의6)까지 성실신고확인제도를 정리했습니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -148,7 +143,7 @@ export default function HonestTaxReturnConfirmation2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   성실신고확인제도 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">: 개인사업자 대상 기준과 신고기한 완전정리</span>
+                  <span className="text-2xl text-text-secondary">: 개인사업자 대상 기준과 신고기한 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   업종별 수입금액이 일정 기준을 넘는 개인사업자는 종합소득세를 신고하기 전에 세무사 등 전문가의 확인을 받아야 합니다. 이 제도가 바로 성실신고확인제도입니다. 이 가이드는 업종별 대상 기준, 연장된 신고기한, 확인비용 세액공제, 미제출 시 불이익까지 성실신고확인제도의 핵심을 정리해드립니다.

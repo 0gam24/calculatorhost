@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-21';
 const DATE_MODIFIED = '2026-05-21';
 
 export const metadata: Metadata = {
-  title: 'N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일 선택 기준',
+  title: 'N잡러 직장+부업 종합소득세 합산 신고 2026, 분리과세 선택 기준',
   description:
-    '직장 연봉 + 부업 소득 합산 의무? 근로소득 연말정산 완료해도 5월 종소세 신고? 소득 종류별 합산·분리 기준·누진세율 상향 효과·기타소득 300만 분리과세·금융소득 2천만 기준 완벽 정리.',
+    '직장인이 부업 소득이 있으면 연말정산과 별도로 5월에 종합소득세를 합산 신고해야 합니다. 분리과세 선택 기준을 정리했습니다.',
   keywords: [
     'N잡러 종합소득세',
     '부업 종합소득세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'N잡러 직장+부업 종합소득세 합산 신고 2026 | 5월 31일 선택 기준' }],
-    title: 'N잡러 종합소득세 합산 신고 2026 | 직장+부업 세액 계산',
-    description: '연봉 5천만+부업 2천만 → 합산하면 누진세율 24% 상향? 분리과세 선택권? 5월 31일 선택 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'N잡러 종소세 합산 신고 2026, 연말정산과 다른 5월 신고',
-    description: '부업 소득 얼마부터 신고? 연말정산했는데 또 신고?',
   },
 };
 
@@ -98,12 +93,12 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: 'N잡러 종합소득세 합산 신고 2026' },
+    { name: 'N잡러 종합소득세 합산 신고' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: 'N잡러 직장+부업 종합소득세 합산 신고 2026 가이드',
     description:
-      '근로소득 연말정산 완료 후 5월 종합소득세 신고는 왜 필수? 부업 소득 종류별 합산·분리 기준 + 누진세율 상향 효과 + 기타소득 300만 분리과세 선택권 + 금융소득 2천만 합산 기준 + 세액 시뮬 3가지 완벽 정리.',
+      '근로소득 연말정산 완료 후 5월 종합소득세 신고는 왜 필수? 부업 소득 종류별 합산·분리 기준 + 누진세율 상향 효과 + 기타소득 300만 분리과세 선택권 + 금융소득 2천만 합산 기준 + 세액 시뮬 3가지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +110,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: 'N잡러 종합소득세 합산 신고 2026, 근로+부업 소득 합산 필수',
     description:
-      '5월 31일 마감 10일 전! N잡러(직장+부업) 종합소득세 신고 필수 기준·소득 종류별 합산 의무·기타소득 300만 분리과세 선택권·누진세율 상향·세액 시뮬 3가지·신고 체크리스트 완벽 정리.',
+      '5월 31일 마감 10일 전! N잡러(직장+부업) 종합소득세 신고 필수 기준·소득 종류별 합산 의무·기타소득 300만 분리과세 선택권·누진세율 상향·세액 시뮬 3가지·신고 체크리스트 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -149,7 +144,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   N잡러 직장+부업 종합소득세 합산 신고 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 연말정산과 다른 5월 신고 완벽 가이드</span>
+                  <span className="text-2xl text-text-secondary">· 연말정산과 다른 5월 신고 가이드</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   직장을 다니면서 부업도 한다면 주의하세요.
@@ -670,7 +665,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -678,9 +673,9 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
               </section>
 
               <ShareButtons
-                title="N잡러 직장+부업 종합소득세 합산 신고 2026 완벽 가이드"
+                title="N잡러 직장+부업 종합소득세 합산 신고 2026 가이드"
                 url={URL}
-                description="5월 31일 마감 10일 전! 근로소득+부업 소득 합산 의무·누진세율 상향·기타소득 300만 분리과세·금융소득 2천만 기준 완벽 정리."
+                description="5월 31일 마감 10일 전! 근로소득+부업 소득 합산 의무·누진세율 상향·기타소득 300만 분리과세·금융소득 2천만 기준 정리."
               />
 
               {/* 출처 및 면책 */}
@@ -692,7 +687,7 @@ export default function NJobberComprehensiveIncomeTax2026Page() {
                   <strong>법적 근거</strong>: 소득세법 §4 (소득의 분류) · §14 (종합소득과세표준 / 소득의 합산, 분리과세) · §15 (소득금액)
                   · §55 (세율) · §70 (확정신고) · §73 (확정신고 면제) · §129 (기타소득세) · §137 (원천징수). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '장기보유특별공제 80% 완전 정리 2026 | 1세대1주택 10년 보유·거주',
+  title: '장기보유특별공제 80% 완전 정리 2026, 1주택 10년 보유·거주',
   description:
-    '1세대1주택 장기보유특별공제 최대 80% 조건·보유 40% + 거주 40% 분리 계산·표2 기준·다주택 중과 배제·분양권 미적용·시뮬 3가지·함정 5가지.',
+    '1세대1주택 장기보유특별공제는 보유와 거주 기간별로 연 4%씩 쌓여 최대 80%까지 적용됩니다.',
   keywords: [
     '장기보유특별공제',
     '장기보유특별공제 80%',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '장기보유특별공제 80% 완전 정리 2026 | 1세대1주택 10년 보유·거주' }],
-    title: '장기보유특별공제 80% 완전 정리 2026',
-    description: '1세대1주택 80% 공제 조건·보유 4%/거주 4% 연 계산·다주택 배제·분양권 배제.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '장기보유특별공제 80% 완전 정리 2026',
-    description: '1세대1주택 10년 보유·10년 거주 = 80% 공제, 다주택 중과 시 배제.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '장기보유특별공제 80% 완전 정리' },
+    { name: '장기보유특별공제 80% 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '장기보유특별공제 80% 완전 정리 2026',
+    headline: '장기보유특별공제 80% 정리 2026',
     description:
       '1세대1주택 장기보유특별공제 최대 80% 적용 조건·보유/거주 분리 계산법·표2 기준·다주택 배제·분양권 미적용·시뮬 사례 3개·함정 5가지.',
     url: URL,
@@ -100,7 +95,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
     keywords: ['장기보유특별공제', '1세대1주택', '80%', '보유', '거주'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '장기보유특별공제 80% 완전 정리 2026',
+    name: '장기보유특별공제 80% 정리 2026',
     description: '1세대1주택 80% 공제 조건·보유 4%/거주 4% 연 계산·표2·다주택/분양권 배제.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '장기보유특별공제 80% 완전 정리' },
+                    { name: '장기보유특별공제 80% 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  장기보유특별공제 80% 완전 정리 2026
+                  장기보유특별공제 80% 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   오랫동안 보유한 주택을 팔 때 양도세를 얼마나 줄일 수 있을까? 1세대가 보유한 주택이라면
@@ -463,10 +458,10 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
                     → <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 1세대1주택·다주택·일시적2주택 시뮬
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비과세 조건·비례 과세
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 정리</Link>, 비과세 조건·비례 과세
                   </li>
                   <li>
-                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link>, 1년 경과·3년 기한·함정 5가지
+                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 정리</Link>, 1년 경과·3년 기한·함정 5가지
                   </li>
                   <li>
                     → <Link href="/guide/august-capital-gains-tax-review/" className="text-primary-600 underline dark:text-primary-500">8월 양도세 검토 가이드</Link>, 연간 D-day·공제 계산 리뷰
@@ -478,7 +473,7 @@ export default function LongTermHoldingSpecialDeduction80Guide() {
               </section>
 
               <ShareButtons
-                title="장기보유특별공제 80% 완전 정리 2026"
+                title="장기보유특별공제 80% 정리 2026"
                 url={URL}
                 description="1세대1주택 80% 공제 조건·보유 4%/거주 4% 연 계산·표2·다주택/분양권 배제."
               />

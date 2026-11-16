@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-26';
 export const metadata: Metadata = {
   title: '국민연금 크레딧 2026, 출산·군복무·실업 가입기간 추가',
   description:
-    '국민연금 크레딧은 출산·군복무·실업 기간을 가입기간으로 더 인정해 연금을 늘려주는 제도입니다. 출산 최대 50개월, 군복무 6개월, 실업 최대 12개월의 조건과 신청 방법을 국민연금법 §18·§19 기준으로 정리했습니다.',
+    '출산·군복무·실업 시기를 국민연금 가입기간으로 더 인정해 주는 크레딧의 조건과 신청 방법을 정리했습니다.',
   keywords: [
     '국민연금 크레딧',
     '출산 크레딧',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 크레딧 2026, 출산·군복무·실업 가입기간 추가' }],
-    title: '국민연금 크레딧 2026, 출산·군복무·실업으로 연금 늘리기',
-    description: '보험료를 더 내지 않고도 가입기간을 인정받는 세 가지 크레딧. 출산 최대 50개월, 군복무 6개월, 실업 최대 12개월.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 크레딧 2026, 출산·군복무·실업',
-    description: '가입기간을 추가로 인정해 연금을 늘려주는 크레딧 제도. 국민연금법 §18·§19·§19의2.',
   },
 };
 

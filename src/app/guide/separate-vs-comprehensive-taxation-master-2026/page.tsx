@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-31';
 const DATE_MODIFIED = '2026-05-31';
 
 export const metadata: Metadata = {
-  title: '분리과세 vs 종합과세 2026 마스터 가이드, 금융소득·사적연금·기타소득',
+  title: '분리과세 vs 종합과세 2026 마스터 가이드, 금융·사적연금·기타소득',
   description:
-    '5월 31일 종합소득세 마감일. 금융소득(이자배당) 2,000만·사적연금 1,500만·기타소득 300만 한도 내 분리과세 vs 누진세 종합과세 선택 기준. 실제 시뮬 3개로 최대 절세액 계산.',
+    '금융소득 2,000만·사적연금 1,500만·기타소득 300만 원 기준으로 분리과세와 종합과세가 갈립니다. 사례 3개로 절세액을 비교했습니다.',
   keywords: [
     '분리과세 종합과세',
     '금융소득 2000만',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분리과세 vs 종합과세 2026 마스터 가이드, 금융소득·사적연금·기타소득' }],
-    title: '분리과세 vs 종합과세 선택 마스터 2026 | 최대 절세 전략',
-    description: '금융소득·사적연금·기타소득 분리과세 한도 완벽 정리. 언제 분리? 언제 합산? 시뮬 3개로 당신의 최적 선택 계산.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분리과세 vs 종합과세 2026 선택 기준',
-    description: '5월 마감 당일 신고 전 필독. 금융소득 2,000만·사적연금 1,500만·기타소득 300만 한도 판단.',
   },
 };
 
@@ -141,7 +136,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                 breadcrumbItems={[
                   { name: '홈', href: '/' },
                   { name: '가이드', href: '/guide/' },
-                  { name: '분리과세 vs 종합과세 마스터' },
+                  { name: '분리과세 vs 종합과세' },
                 ]}
                 category="세금"
                 readingMinutes={15}
@@ -634,7 +629,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
 
               {/* 최종 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
-                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">5월 31일 신고 전 필독 주의사항</h2>
+                <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">5월 31일 신고 전 확인할 주의사항</h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
                     • <strong>금융소득 2,000만 경계:</strong> 1원 차이로 분리과세 전체 불가능. 정확한 합계 확인 필수.
@@ -674,7 +669,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -714,7 +709,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
               <ShareButtons
                 title="분리과세 vs 종합과세 2026 마스터 가이드"
                 url={URL}
-                description="금융소득 2,000만·사적연금 1,500만·기타소득 300만 한도 선택 기준. 5월 31일 신고 전 필독."
+                description="금융소득 2,000만·사적연금 1,500만·기타소득 300만 한도 선택 기준."
               />
 
               {/* 출처 및 면책 */}
@@ -726,7 +721,7 @@ export default function SeparateVsComprehensiveTaxationMaster2026Page() {
                   <strong>법적 근거</strong>: 소득세법 §14 (종합소득과세표준·분리과세) · §55 (세율·누진공제) · §129
                   (분리과세 세율). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

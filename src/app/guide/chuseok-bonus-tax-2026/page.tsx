@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '추석 상여금 세금 2026, 명절 보너스 얼마나 떼나',
   description:
-    '추석 상여금은 월급과 같은 근로소득이라 소득세와 4대보험을 모두 뗍니다. 명절 선물세트도 원칙적으로 과세되며, 더 낸 세금은 연말정산으로 정산됩니다. 상여금 원천징수와 실수령액 계산을 소득세법 §20 기준으로 정리했습니다.',
+    '추석 상여금은 월급과 같은 근로소득이라 소득세와 4대보험을 모두 뗍니다. 더 낸 세금은 연말정산으로 돌려받습니다.',
   keywords: [
     '추석 상여금 세금',
     '명절 보너스 세금',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '추석 상여금 세금 2026, 명절 보너스 얼마나 떼나' }],
-    title: '추석 상여금 세금 2026, 명절 보너스 얼마나 떼나',
-    description: '상여금도 근로소득이라 소득세·4대보험 부과. 명절 선물세트 과세 여부와 실수령액 계산까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '추석 상여금 세금 2026, 명절 보너스 얼마나 떼나',
-    description: '상여금 100만원 받으면 실수령 얼마? 근로소득 과세와 4대보험, 명절 선물 과세를 정리.',
   },
 };
 
@@ -344,7 +339,7 @@ export default function ChuseokBonusTax2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">뗀 세금을 돌려받는 연말정산의 원리.</p>
                   </Link>
                   <Link

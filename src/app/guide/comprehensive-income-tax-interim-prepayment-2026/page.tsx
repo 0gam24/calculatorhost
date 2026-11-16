@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-15';
 // 수익 레버 [revenue-lever: indexing+traffic]: 신규 색인 페이지 추가, 롱테일 트래픽 유입
 
 export const metadata: Metadata = {
-  title: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 총정리',
+  title: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 정리',
   description:
-    '개인사업자·프리랜서는 11월에 전년 종합소득세의 절반을 미리 냅니다. 소득세법 §65 중간예납의 고지 방식, 50만원 미만 제외, 사업 부진 시 추계신고, 분납 요건을 사례로 정리합니다.',
+    '개인사업자·프리랜서는 11월에 전년 종합소득세의 절반을 중간예납으로 냅니다. 50만원 미만 제외, 추계신고, 분납 요건을 정리했습니다.',
   keywords: [
     '종합소득세 중간예납',
     '중간예납 11월',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 총정리' }],
-    title: '종합소득세 중간예납 2026, 11월 고지와 추계신고',
-    description: '전년 종합소득세의 1/2을 11월 30일까지 납부. 50만원 미만은 제외, 사업 부진 시 추계신고로 감액. 소득세법 §65.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합소득세 중간예납 2026, 11월 총정리',
-    description: '개인사업자·프리랜서 11월 중간예납. 전년 세액 1/2 고지, 추계신고·분납. 소득세법 §65.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function ComprehensiveIncomeTaxInterimPrepayment2026Page() {
     { name: '종합소득세 중간예납 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 총정리',
+    headline: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 정리',
     description:
       '개인사업자·프리랜서의 11월 종합소득세 중간예납. 소득세법 §65 고지 방식, 50만원 미만 제외, 추계신고, 분납 요건을 사례로 정리.',
     url: URL,
@@ -149,7 +144,7 @@ export default function ComprehensiveIncomeTaxInterimPrepayment2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합소득세 중간예납 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">11월 고지·추계신고·분납 총정리</span>
+                  <span className="text-2xl text-text-secondary">11월 고지·추계신고·분납 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   개인사업자와 프리랜서는 5월 종합소득세 확정신고만 챙기면 된다고 생각하기 쉽지만, 11월에도 세금을 미리 내는 중간예납이 기다리고 있습니다. 갑자기 날아온 고지서에 당황하지 않도록, 이 가이드는 소득세법 §65에 따른 중간예납의 계산 방식, 소액 제외 기준, 사업 부진 시 감액 방법, 분납까지 정리합니다.

@@ -16,15 +16,17 @@ import {
   buildFaqPageJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
+import { GUIDES } from '@/app/guide/page';
+import { CALCULATOR_LABELS } from '@/lib/data/guide-calculator-map';
 
 const URL = 'https://calculatorhost.com/guide/tax-calendar-2026/';
 const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '2026 세금 캘린더 1월~12월 | calculatorhost',
+  title: '2026 세금 캘린더 1월~12월 | 월별 신고·납부 일정',
   description:
-    '2026년 월별 세금 납부 일정. 연말정산·종소세·재산세·종부세·자동차세 D-day 한눈에. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '2026년 연말정산부터 종부세까지 세금 신고·납부 일정을 월별로 정리했습니다. 직장인·사업자는 해당 항목만 골라 볼 수 있습니다.',
   keywords: [
     '세금 캘린더',
     '2026 세금 일정',
@@ -38,9 +40,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 세금 캘린더 1월~12월 | calculatorhost' }],
-    title: '2026 세금 캘린더, 1월부터 12월까지 한눈에',
-    description: '월별 D-day + 관련 가이드 링크 모음.',
     url: URL,
     type: 'article',
 
@@ -62,6 +61,17 @@ interface MonthEntry {
   }>;
 }
 
+// 링크 글자는 가리키는 글을 설명해야 한다 (네이버 SEO 리포트 07-03 앵커 텍스트). "가이드"·"계산기" 같은 일반어 대신
+function guideLabel(href: string): string {
+  const slug = href.split('/').filter(Boolean)[1];
+  const title = GUIDES.find((g) => g.slug === slug)?.title;
+  return title ? title.split(/[,(|]/)[0]!.trim() : '관련 가이드';
+}
+function calculatorLabel(href: string): string {
+  const slug = href.split('/').filter(Boolean)[1] ?? '';
+  return (CALCULATOR_LABELS as Record<string, string>)[slug] ?? '관련 계산기';
+}
+
 const CALENDAR: MonthEntry[] = [
   {
     month: 1,
@@ -76,8 +86,8 @@ const CALENDAR: MonthEntry[] = [
       },
       {
         date: '1월 16~31일',
-        title: '자동차세 연납 (5% 할인)',
-        description: '1월 일괄 납부 시 5% 한도 내 공제. 위택스 또는 자동차세 앱.',
+        title: '자동차세 1월 연납 신청',
+        description: '1년치를 1월에 미리 내면 2~12월분 세액에 5%를 적용해 연세액의 약 4.6%를 공제. 위택스에서 신청.',
         target: '자동차 보유자',
         guideHref: '/guide/january-vehicle-tax-prepayment/',
         calculatorHref: '/calculator/vehicle-tax/',
@@ -460,8 +470,7 @@ export default function TaxCalendar2026Page() {
                       <div key={i} className="card">
                         <div className="flex flex-wrap items-baseline justify-between gap-2 mb-2">
                           <h3 className="font-semibold text-text-primary">
-                            <span className="text-primary-700 dark:text-primary-300">{e.date}</span>{' '}
-, {e.title}
+                            <span className="text-primary-700 dark:text-primary-300">{e.date}</span> {e.title}
                           </h3>
                           <span className="rounded-chip bg-bg-raised px-2 py-0.5 text-caption text-text-tertiary">
                             {e.target}
@@ -474,7 +483,7 @@ export default function TaxCalendar2026Page() {
                               href={e.guideHref}
                               className="rounded-chip border border-primary-500/30 bg-primary-500/10 px-3 py-1 text-primary-700 dark:text-primary-300 hover:bg-primary-500/20"
                             >
-                              가이드
+                              {guideLabel(e.guideHref)}
                             </Link>
                           )}
                           {e.calculatorHref && (
@@ -482,7 +491,7 @@ export default function TaxCalendar2026Page() {
                               href={e.calculatorHref}
                               className="rounded-chip border border-border-base bg-bg-card px-3 py-1 hover:border-primary-500 hover:text-primary-500"
                             >
-                              계산기
+                              {calculatorLabel(e.calculatorHref)}
                             </Link>
                           )}
                         </div>
@@ -514,9 +523,9 @@ export default function TaxCalendar2026Page() {
                 </p>
                 <p className="mb-2">
                   <strong>공식 출처</strong>:{' '}
-                  <a href="https://www.hometax.go.kr/websquare/web/personalTaxInfoUL.do#MENUID_1000000001" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스 연말정산 간소화 서비스</a>{' '}
+                  <a href="https://www.hometax.go.kr/#MENUID_1000000001" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스 연말정산 간소화 서비스</a>{' '}
                   ·{' '}
-                  <a href="https://www.wetax.go.kr/contents/index.html" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스 납부안내</a>{' '}
+                  <a href="https://www.wetax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스 납부안내</a>{' '}
                   ·{' '}
                   <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?cbIdx=1000&pageNum=1&searchCondition=on&searchKeyword=%EC%84%B8%EA%B8%88%20%EC%9D%BC%EC%A0%95&mi=10806&searchkey=&infoCd=&infoCd2=" target="_blank" rel="noopener noreferrier nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 세금신고일정</a>{' '}
                   ·{' '}

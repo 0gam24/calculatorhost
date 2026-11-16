@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-07';
 export const metadata: Metadata = {
   title: '교육비 세액공제 2026 | 15% 공제·초중고 300만·대학 900만',
   description:
-    '2026년 교육비 세액공제 완벽 정리. 공제율 15%, 취학전 아동·초중고 1명당 연 300만원, 대학생 900만원 한도. 수업료, 급식비, 교복구입비, 현장체험학습비 포함 대상 정리. 소득세법 §59의4 기준.',
+    '교육비 세액공제는 15%이며, 취학전 아동·초중고생 1명당 연 300만원, 대학생 900만원 한도입니다. 소득세법 §59의4 기준입니다.',
   keywords: [
     '교육비 세액공제',
     '교육비 공제 2026',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '교육비 세액공제 2026 | 15% 공제·초중고 300만·대학 900만' }],
-    title: '교육비 세액공제 2026, 자녀 교육비 15% 공제받기',
-    description: '근로소득자 대상 교육비 세액공제. 초중고 1명당 300만원, 대학생 900만원, 본인 교육비 전액 공제. 대상 범위·계산법·유의사항 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '교육비 세액공제 2026, 자녀 교육비로 세금 깎기',
-    description: '초중고 300만원, 대학 900만원 한도. 급식비·교복·현장학습비도 포함. 자세히 알아보기.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function EducationExpenseTaxCredit2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '교육비 세액공제 2026, 자녀 교육비 15% 세금 깎기',
     description:
-      '근로소득자 대상 교육비 세액공제 완벽 정리. 초중고 1명당 300만원 한도, 대학생 900만원, 본인 교육비 전액. 공제율 15%, 대상 항목, 소득 제한, 계산 사례, 주의사항까지.',
+      '근로소득자 대상 교육비 세액공제 정리. 초중고 1명당 300만원 한도, 대학생 900만원, 본인 교육비 전액. 공제율 15%, 대상 항목, 소득 제한, 계산 사례, 주의사항까지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -431,7 +426,7 @@ export default function EducationExpenseTaxCredit2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
                   <p className="font-semibold text-text-primary">방법 2. 홈택스(국세청 온라인)</p>
                   <p className="text-sm text-text-secondary">
-                    국세청 홈택스(www.homtax.go.kr)에 로그인하여 "근로소득 맞춤형 전산계산"에서 자녀별 교육비를 입력하면 자동 계산됩니다. 5월~6월 종합소득세 신고 시기에도 신청할 수 있습니다.
+                    국세청 홈택스(www.hometax.go.kr)에 로그인하여 "근로소득 맞춤형 전산계산"에서 자녀별 교육비를 입력하면 자동 계산됩니다. 5월~6월 종합소득세 신고 시기에도 신청할 수 있습니다.
                   </p>
                 </div>
                 <p className="mt-4">
@@ -478,7 +473,7 @@ export default function EducationExpenseTaxCredit2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">자녀세액공제 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">1명당 15만원 자녀세액공제 완벽 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">1명당 15만원 자녀세액공제 정리.</p>
                   </Link>
                   <Link
                     href="/guide/medical-expense-tax-credit-3-percent-2026/"
@@ -491,7 +486,7 @@ export default function EducationExpenseTaxCredit2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">교육비·의료비·기부금 모든 공제 정리.</p>
                   </Link>
                   <Link
@@ -519,7 +514,7 @@ export default function EducationExpenseTaxCredit2026Page() {
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터</a>,{' '}
                   <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 공식 홈페이지</a>,{' '}
-                  <a href="https://www.homtax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">홈택스 연말정산 상담</a>.
+                  <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">홈택스 연말정산 상담</a>.
                 </p>
               </section>
 

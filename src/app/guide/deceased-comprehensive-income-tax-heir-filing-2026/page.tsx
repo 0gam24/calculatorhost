@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-28';
 export const metadata: Metadata = {
   title: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한·소득세법 §74',
   description:
-    '사망한 부모·배우자 소득, 상속인이 신고해야 할까? 사망자 종합소득세 신고 의무·기한(사망일+6개월)·신고 대상 소득·상속인 신고 규칙·세액 계산·5월 31일 마감 연장·신고 안 하면 가산세 20% 완벽 정리.',
+    '부모나 배우자가 사망하면 상속인이 사망일부터 6개월 안에 고인의 종합소득세를 신고해야 합니다. 대상 소득과 가산세 20%를 정리했습니다.',
   keywords: [
     '사망자 종합소득세',
     '상속인 신고 의무',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한·소득세법 §74' }],
-    title: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한',
-    description: '사망자 소득은 상속인 전원이 신고 의무. 기한은 사망일+6개월. 상속세와 다른 종합소득세 신고 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사망자 종합소득세 상속인 신고 2026',
-    description: '사망 후 소득신고는 누가? 기한은? 가산세는?',
   },
 };
 
@@ -103,12 +98,12 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '사망자 종합소득세 상속인 신고 2026' },
+    { name: '사망자 종합소득세 상속인 신고' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '사망자 종합소득세 상속인 신고 2026 완벽 가이드',
+    headline: '사망자 종합소득세 상속인 신고 2026 가이드',
     description:
-      '사망자 소득 신고 의무·신고 주체(상속인 전원)·기한(사망일+6개월)·신고 대상 소득·세액 계산·상속세와의 차이·신고 안 하면 가산세 20%까지 완벽 정리. 소득세법 §74.',
+      '사망자 소득 신고 의무·신고 주체(상속인 전원)·기한(사망일+6개월)·신고 대상 소득·세액 계산·상속세와의 차이·신고 안 하면 가산세 20%까지 정리. 소득세법 §74.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -680,7 +675,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <li>
                     →{' '}
                     <Link href="/guide/inheritance-tax-10-year-prior-gift-aggregation/" className="text-primary-600 underline dark:text-primary-500">
-                      상속세 사전 증여 합산 10년/5년 완벽 정리
+                      상속세 사전 증여 합산 10년/5년 정리
                     </Link>
                     {' '}· 사망 전 증여와 상속 합산 규칙
                   </li>
@@ -694,7 +689,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 일반 종합소득세 신고 기본
                   </li>
@@ -709,7 +704,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
               </section>
 
               <ShareButtons
-                title="사망자 종합소득세 상속인 신고 2026 완벽 가이드 | 6개월 기한·소득세법 §74"
+                title="사망자 종합소득세 상속인 신고 2026 가이드 | 6개월 기한·소득세법 §74"
                 url={URL}
                 description="사망자 소득 신고는 상속인 전원 의무. 기한 사망일+6개월. 신고 안 하면 무신고가산세 20%. 상속세와의 차이까지 정리."
               />
@@ -722,7 +717,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §14 (종합소득과세표준) · §55 (세율) · §70 (확정신고) · §74 (사망자의 신고) · 국세기본법 §47의2 (무신고가산세) · §48 (자진신고 감면) · §51 (환급청구권). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

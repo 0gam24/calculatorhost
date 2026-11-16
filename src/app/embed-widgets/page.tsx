@@ -12,13 +12,14 @@ import {
   buildBreadcrumbJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/embed-widgets/';
 
 export const metadata: Metadata = {
-  title: '무료 계산기 위젯 삽입 | 블로그·홈페이지 임베드 | calculatorhost',
+  title: '무료 계산기 위젯 삽입 | 블로그·홈페이지 임베드',
   description:
-    '양도세·연봉·취득세·대출·DSR·재산세 계산기를 내 블로그·홈페이지에 무료로 삽입하세요. 코드 한 줄 복사·붙여넣기, 회원가입 불필요, 2026 최신 세율 자동 반영.',
+    '양도세·연봉·취득세·대출·DSR·재산세 계산기를 블로그·홈페이지에 무료로 삽입하세요. 코드 한 줄이면 되고 세율 개정도 자동 반영됩니다.',
   keywords: [
     '계산기 위젯',
     '계산기 임베드',
@@ -30,16 +31,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '계산기 임베드 위젯' }],
-    title: '무료 계산기 위젯, 내 블로그에 삽입',
-    description: '양도세·연봉·대출 등 6종 계산기를 코드 한 줄로 내 사이트에 삽입하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '무료 계산기 위젯, 내 블로그에 삽입',
-    description: '6종 계산기를 코드 한 줄로 내 사이트에 삽입하세요.',
   },
 };
 
@@ -126,7 +122,7 @@ export default function EmbedWidgetsPage() {
     dateModified: '2026-07-04',
   });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })));
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '계산기 위젯 삽입 방법',
     description: '계산기 위젯 코드를 복사해 내 블로그·홈페이지에 삽입하는 단계별 방법',
     steps: [
@@ -136,7 +132,8 @@ export default function EmbedWidgetsPage() {
       { name: '붙여넣기', text: '복사한 코드를 원하는 위치에 붙여넣고 저장합니다.' },
       { name: '확인', text: '발행 후 계산기가 정상 표시되는지 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '계산기 위젯' },
@@ -235,6 +232,7 @@ export default function EmbedWidgetsPage() {
                 </ol>
               </section>
 
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section aria-label="이용 안내" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">

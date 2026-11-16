@@ -6,9 +6,15 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { buildBreadcrumbJsonLd, buildWebPageJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-  title: 'calculatorhost 이용약관 | 무료 계산기 서비스 약관',
-  description: 'calculatorhost 금융·세금·부동산 계산기 서비스 이용약관, 사용자 권리와 책임, 면책 조항, 콘텐츠 정책을 안내합니다. 서비스 이용 전 필독.',
+  title: 'calculatorhost 이용약관 | 무료 계산기 서비스 규정',
+  description: 'calculatorhost 계산기 서비스의 이용 조건, 사용자 책임, 면책 범위와 콘텐츠 정책을 안내합니다.',
   alternates: { canonical: 'https://calculatorhost.com/terms/' },
+  openGraph: {
+    url: 'https://calculatorhost.com/terms/',
+    type: 'website',
+    locale: 'ko_KR',
+    siteName: 'calculatorhost',
+  },
 };
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([

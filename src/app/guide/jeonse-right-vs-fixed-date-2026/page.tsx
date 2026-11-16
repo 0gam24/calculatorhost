@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-25';
 // 북극성 수익 레버: [revenue-lever: indexing+traffic] (신규 색인 표면 + 임차인 보증금 보호 검색 의도 흡수)
 
 export const metadata: Metadata = {
-  title: '전세권 설정 vs 확정일자 2026, 뭐가 유리할까 | calculatorhost',
+  title: '전세권 설정 vs 확정일자 2026, 뭐가 유리할까',
   description:
-    '전세권 설정등기와 확정일자+전입신고는 보증금을 지키는 두 방법입니다. 대항력·우선변제권 차이, 비용, 임대인 동의 여부, 상황별 유리한 선택을 민법 §303·주택임대차보호법 §3의2 기준으로 정리했습니다.',
+    '전세권 설정등기와 확정일자+전입신고의 대항력·우선변제권 차이, 비용, 임대인 동의 여부를 비교했습니다.',
   keywords: [
     '전세권 설정',
     '확정일자 차이',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세권 설정 vs 확정일자 2026, 뭐가 유리할까' }],
-    title: '전세권 설정 vs 확정일자, 보증금 지키는 두 방법',
-    description: '대항력·우선변제권 차이, 비용, 임대인 동의, 상황별 유리한 선택까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세권 설정 vs 확정일자 2026, 유리한 선택 정리',
-    description: '대항력·우선변제권 차이, 비용, 동의 여부. 민법 §303·주택임대차보호법 §3의2.',
   },
 };
 

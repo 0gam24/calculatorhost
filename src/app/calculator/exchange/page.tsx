@@ -22,6 +22,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getEximUsdRateCitation } from '@/lib/publicapi/public-citations';
 import exchangeRates from '@/data/exchange-rates.json';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const EXIM_USD_CITATION = getEximUsdRateCitation(exchangeRates);
 
@@ -41,15 +42,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '환율·환전 계산기 2026, 스프레드·수수료 반영',
-    description: '기준환율·스프레드·수수료로 실제 환전액과 실질 환율을 계산합니다.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '환율·환전 계산기 2026',
-    description: '실시간 기준환율·은행 스프레드·수수료를 반영한 환전액 계산.',
   },
 };
 
@@ -129,7 +126,7 @@ export default function ExchangePage() {
     dateModified: '2026-04-27',
     isPartOf: getCategoryUrlForCalculator('exchange'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '환율·환전 계산기 사용 방법',
     description: '기준환율, 스프레드, 수수료를 입력하여 실제 환전액을 계산하는 단계별 가이드',
     steps: [
@@ -139,14 +136,15 @@ export default function ExchangePage() {
       { name: '환전액 입력', text: '환전하려는 금액(원 또는 외화)을 입력합니다.' },
       { name: '결과 확인', text: '실제 수령액과 실질 환율을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
-    { name: '환율' },
+    { name: '환율·환전' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -212,6 +210,7 @@ export default function ExchangePage() {
               </>
             }
           >
+            <HowToSteps name={howToData.name} steps={howToData.steps} />
             <section aria-label="환율 데이터 기준" className="card">
               <h2 className="mb-3 text-lg font-semibold">환율 데이터 기준</h2>
               <p className="text-sm text-text-secondary">
@@ -495,20 +494,6 @@ export default function ExchangePage() {
         </aside>
       </div>
       <Footer />
-
-      {/* JSON-LD 스크립트 */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
     </div>
   );
 }

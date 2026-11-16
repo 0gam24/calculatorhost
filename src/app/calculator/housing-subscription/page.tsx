@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { HousingSubscriptionCalculator } from './HousingSubscriptionCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/housing-subscription/';
 
@@ -36,15 +37,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '청약가점 계산기 2026, 84점 만점',
-    description: '무주택 기간·부양가족·청약통장으로 청약가점과 당첨 확률을 계산합니다.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청약가점 계산기 2026',
-    description: '청약가점 즉시 계산: 무주택 기간, 부양가족, 청약통장 기간으로 당첨 가능성 판단.',
   },
 };
 
@@ -124,7 +121,7 @@ export default function HousingSubscriptionPage() {
     dateModified: '2026-10-14',
     isPartOf: getCategoryUrlForCalculator('housing-subscription'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '청약가점 계산기 사용 방법',
     description:
       '무주택 기간, 부양가족, 청약통장 기간을 입력하여 청약가점을 계산하는 단계별 가이드',
@@ -143,7 +140,8 @@ export default function HousingSubscriptionPage() {
       },
       { name: '청약가점 결과 확인', text: '총 청약가점(84점 만점), 당첨 경쟁력을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -216,6 +214,7 @@ export default function HousingSubscriptionPage() {
               </>
             }
           >
+            <HowToSteps name={howToData.name} steps={howToData.steps} />
             <StructuredSummary
               definition="청약가점은 주택청약 모집 시 가점제 방식에서 당첨자를 선정하기 위한 점수입니다. 무주택 기간(32점), 부양가족 수(35점), 청약통장 가입 기간(17점)으로 총 84점 만점이며, 점수가 높을수록 당첨 확률이 올라갑니다."
               table={{
@@ -358,25 +357,25 @@ export default function HousingSubscriptionPage() {
                 </li>
                 <li>
                   <a
-                    href="https://www.moi.go.kr"
+                    href="https://www.molit.go.kr"
                     className="text-primary-600 underline dark:text-primary-500"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    국토교통부(www.moi.go.kr)
+                    국토교통부
                   </a>
                   : 청약 정책, 가점제 규칙 최신 정보
                 </li>
                 <li>
                   <a
-                    href="https://www.hnews.co.kr"
+                    href="https://apply.lh.or.kr"
                     className="text-primary-600 underline dark:text-primary-500"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                   >
-                    아파트특별공사
+                    LH 청약플러스
                   </a>
-                  : 신규 아파트 청약 정보
+                  : 공공분양·공공임대 청약 공고
                 </li>
               </ul>
             </section>
@@ -436,20 +435,6 @@ export default function HousingSubscriptionPage() {
         </aside>
       </div>
       <Footer />
-
-      {/* JSON-LD 스크립트 */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
     </div>
   );
 }

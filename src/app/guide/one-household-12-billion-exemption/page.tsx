@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '1세대1주택 양도세 12억 한도 완전 정리 2026 | 비례 과세 공식',
+  title: '1세대1주택 양도세 12억 한도 정리 2026 | 비례 과세 공식',
   description:
-    '1세대1주택 비과세 12억 한도 완전 정리. 12억 초과 시 비례 과세 공식((양도가-12억)/양도가)·거주 요건(조정지역 취득만 2년)·장기보유공제 80% 동시 적용·실제 사례 3개·소득세법 §89·§95.',
+    '1세대1주택은 양도가 12억까지 비과세되고 초과분만 비례 과세됩니다. 계산 공식과 장기보유공제 80% 적용 사례를 정리했습니다.',
   keywords: [
     '1세대1주택 12억 한도',
     '12억 초과 양도세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '1세대1주택 양도세 12억 한도 완전 정리 2026 | 비례 과세 공식' }],
-    title: '1세대1주택 양도세 12억 한도 완전 정리 2026',
-    description: '비례 과세 공식·거주 요건·장기보유공제 80%·실제 사례 3개.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '1세대1주택 12억 한도 완전 정리 2026',
-    description: '12억 초과 비례 과세·거주 요건·장기보유공제 80%.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function OneHousehold12BillionGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '1세대1주택 12억 한도 완전 정리' },
+    { name: '1세대1주택 12억 한도 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '1세대1주택 양도세 12억 한도 완전 정리 2026',
+    headline: '1세대1주택 양도세 12억 한도 정리 2026',
     description:
       '1세대1주택 비과세 12억 한도 비례 과세 공식·거주 요건·장기보유공제 80%·실전 사례 3개.',
     url: URL,
@@ -100,7 +95,7 @@ export default function OneHousehold12BillionGuide() {
     keywords: ['1세대1주택', '12억 한도', '비례 과세', '거주 요건', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '1세대1주택 양도세 12억 한도 완전 정리 2026',
+    name: '1세대1주택 양도세 12억 한도 정리 2026',
     description: '12억 초과 비례 과세·거주 요건·장기보유공제 80%·실전 사례.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function OneHousehold12BillionGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '1세대1주택 12억 한도 완전 정리' },
+                    { name: '1세대1주택 12억 한도 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  1세대1주택 양도세 12억 한도 완전 정리 2026
+                  1세대1주택 양도세 12억 한도 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   "양도가 15억이면 15억 전체에 세금?", "12억 초과분 전부 과세?"자주 헷갈리는
@@ -260,7 +255,7 @@ export default function OneHousehold12BillionGuide() {
                 </ul>
               </section>
 
-              <ShareButtons title="1세대1주택 양도세 12억 한도 완전 정리 2026" url={URL} description="12억 초과 비례 과세·거주 요건·장기보유공제 80%." />
+              <ShareButtons title="1세대1주택 양도세 12억 한도 정리 2026" url={URL} description="12억 초과 비례 과세·거주 요건·장기보유공제 80%." />
 
               {/* 출처·면책 */}
               <section

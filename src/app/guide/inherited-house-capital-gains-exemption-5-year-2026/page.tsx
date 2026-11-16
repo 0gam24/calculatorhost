@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-24';
 const DATE_MODIFIED = '2026-05-24';
 
 export const metadata: Metadata = {
-  title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026 | 소득세법 §89·§155',
+  title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026, 기존주택 비과세',
   description:
-    '상속 후 기존주택 5년 내 양도 시 1세대1주택 비과세 특례(소득세법 §89·시행령 §155②). 양도 순서 핵심·5년 기한 계산(사망일 기준)·상속주택은 비과세 제외·공동상속 처리·세금 사례 3개.',
+    '주택을 상속받은 뒤 5년 안에 기존주택을 팔면 1세대1주택 비과세를 받을 수 있습니다. 상속주택 자체는 제외되며 양도 순서가 핵심입니다.',
   keywords: [
     '상속주택 양도세',
     '상속주택 1세대1주택',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속주택 양도세 1세대1주택 합가 5년 특례 2026 | 소득세법 §89·§155' }],
-    title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026',
-    description: '5년 기한·양도 순서·12억 한도·공동상속 처리·실제 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026',
-    description: '상속 후 5년 내 기존주택 양도 시 1세대1주택 비과세 조건.',
   },
 };
 
@@ -479,7 +474,7 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   <li>
                     →{' '}
                     <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">
-                      1세대1주택 12억 한도 완전 정리
+                      1세대1주택 12억 한도 정리
                     </Link>{' '}
 , 비례 과세 공식·거주 요건·장기보유공제
                   </li>

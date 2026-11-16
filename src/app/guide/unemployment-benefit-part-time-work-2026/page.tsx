@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-17';
 export const metadata: Metadata = {
   title: '실업급여 받으면서 알바 2026, 신고 안 하면 부정수급',
   description:
-    '실업급여 수급 중 알바는 가능하지만 일한 날은 실업인정일에 반드시 자진신고해야 합니다. 주 15시간 기준, 감액·미지급 방식, 미신고 시 최대 5배 추가징수까지 고용보험법 47조 기준으로 정리했습니다.',
+    '실업급여를 받으며 알바해도 되지만, 일한 날은 실업인정일에 신고해야 합니다. 미신고 시 최대 5배 추가징수와 감액 방식을 정리했습니다.',
   keywords: [
     '실업급여 알바',
     '실업급여 받으면서 아르바이트',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '실업급여 받으면서 알바 2026' }],
-    title: '실업급여 받으면서 알바 2026, 신고 규칙 총정리',
-    description:
-      '알바는 가능, 단 일한 날은 반드시 신고. 주 15시간 기준, 감액·미지급, 미신고 시 부정수급 처벌까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '실업급여 받으면서 알바, 신고 규칙',
-    description: '알바 가능하지만 일한 날은 자진신고 필수. 미신고 시 최대 5배 추가징수. 고용보험법 §47·§61·§62.',
   },
 };
 

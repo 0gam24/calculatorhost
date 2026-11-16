@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-17';
 export const metadata: Metadata = {
   title: '금융소득 2천만원 건강보험료 2026, 피부양자 탈락 기준',
   description:
-    '이자·배당 등 금융소득이 연 2천만원을 넘으면 건강보험 피부양자 자격을 잃거나 직장가입자 소득월액보험료가 부과됩니다. 국민건강보험법 §71 기준 부과 구조와 대응을 투자자 사례로 정리합니다.',
+    '금융소득이 연 2천만원을 넘으면 건강보험 피부양자 자격을 잃거나 소득월액보험료가 붙습니다. 국민건강보험법 §71 기준 대응법을 정리합니다.',
   keywords: [
     '금융소득 건강보험료',
     '피부양자 탈락 2천만원',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '금융소득 2천만원 건강보험료 2026, 피부양자 탈락 기준' }],
-    title: '금융소득 2천만원 건강보험료 2026, 피부양자 탈락과 소득월액보험료',
-    description: '이자·배당이 연 2천만원을 넘으면 피부양자 상실 또는 소득월액보험료 부과. 국민건강보험법 §71 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '금융소득 2천만원 건강보험료 2026',
-    description: '금융소득 연 2천만원 초과 시 피부양자 탈락·소득월액보험료. 국민건강보험법 §71.',
   },
 };
 

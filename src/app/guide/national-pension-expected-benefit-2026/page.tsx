@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-15';
 const DATE_MODIFIED = '2026-06-15';
 
 export const metadata: Metadata = {
-  title: '국민연금 예상 수령액 2026 | 조회·계산법·조기/연기 손익 | calculatorhost',
+  title: '국민연금 예상 수령액 2026 | 조회·계산법·조기/연기 손익',
   description:
-    '2026년 국민연금 예상 수령액은 가입기간과 평균소득으로 결정됩니다. 공단 예상연금액 조회 방법, 조기노령연금 감액률 6%/년, 연기연금 증액률 7.2%/년, 최소 가입기간 10년까지 국민연금공단 기준으로 정리했습니다.',
+    '국민연금 예상 수령액은 가입기간과 평균소득으로 정해집니다. 공단 조회 방법과 조기·연기 선택 손익을 정리했습니다.',
   keywords: [
     '국민연금 예상 수령액',
     '국민연금 수령액 조회',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 예상 수령액 2026' }],
-    title: '국민연금 예상 수령액 2026',
-    description: '공단 예상연금액 조회, 조기/연기 수령 손익 비교, 법조항 기준',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 예상 수령액 2026',
-    description: '조회·계산법·조기/연기 손익 비교',
   },
 };
 
@@ -547,12 +542,12 @@ export default function NationalPensionExpectedBenefitPage() {
                   </Link>
 
                   <Link
-                    href="/category/insurance/"
+                    href="/guide/category/work/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-bg-card/80"
                   >
-                    <h4 className="font-semibold text-primary-500">보험·연금 카테고리</h4>
+                    <h4 className="font-semibold text-primary-500">근로 가이드 모음</h4>
                     <p className="mt-1 text-sm text-text-secondary">
-                      건강보험, 고용보험 등 전체 가이드
+                      국민연금·건강보험·고용보험 관련 가이드
                     </p>
                   </Link>
                 </div>

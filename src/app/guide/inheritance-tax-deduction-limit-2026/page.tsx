@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-30';
 const DATE_MODIFIED = '2026-06-30';
 
 export const metadata: Metadata = {
-  title: '상속세 공제 한도 2026 | 얼마까지 면제되나? 배우자·자녀공제 완벽 정리 | calculatorhost',
+  title: '상속세 공제 한도 2026 | 배우자 있으면 10억까지 면제 가능',
   description:
-    '상속세를 안 내는 한도는? 일괄공제 5억·배우자공제 최소 5억·자녀공제 종합 정리. 배우자 있으면 10억까지 면제 가능. 상증세법 §18~§21.',
+    '일괄공제 5억원에 배우자공제 최소 5억을 더하면 10억원까지 상속세가 면제될 수 있습니다. 5가지 상속공제 한도를 정리했습니다.',
   keywords: [
     '상속세 공제',
     '상속공제 한도',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 공제 한도 2026 | 배우자·자녀공제 완벽 가이드' }],
-    title: '상속세 공제 한도 2026',
-    description: '배우자 있으면 최소 10억까지 상속세 면제 가능. 공제 종류별 한도 총정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,7 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-default.png'],
   },
 };
 
@@ -97,7 +93,7 @@ export default function InheritanceTaxDeductionLimit2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '상속세 공제 한도 2026, 얼마까지 면제될까?',
     description:
-      '상속공제 5가지 종류와 한도를 한눈에 파악. 배우자 있으면 최소 10억까지 면제 가능. 상증세법 §18~§21 완벽 정리.',
+      '상속공제 5가지 종류와 한도를 한눈에 파악. 배우자 있으면 최소 10억까지 면제 가능. 상증세법 §18~§21 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

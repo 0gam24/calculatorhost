@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-20';
 const DATE_MODIFIED = '2026-09-30';
 
 export const metadata: Metadata = {
-  title: '종합소득세 가산세 2026 무신고·지연 계산 | calculatorhost',
+  title: '종합소득세 가산세 2026 무신고·지연 계산, 기한후신고 감면',
   description:
-    '신고기한을 놓쳤을 때 종합소득세 무신고가산세 20% + 납부지연가산세 일 0.022% 계산 방법·자진신고 감면 50·30·20% 타이밍·부정행위 40% 중과·공식 계산기 제공.',
+    '종합소득세 신고기한을 놓치면 무신고가산세 20%와 납부지연가산세 하루 0.022%가 붙습니다. 자진신고 감면 시점도 정리했습니다.',
   keywords: [
     '종합소득세 가산세',
     '무신고가산세 20%',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '종합소득세 가산세 2026 무신고·지연 계산 | calculatorhost',
-      },
-    ],
-    title: '종합소득세 가산세 2026 무신고·지연 정확 계산',
-    description:
-      '무신고납부세액 500만 → 무신고가산세 100만? 기한후신고와 환급 절차는? 자진신고 감면 기한 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합소득세 무신고·지연 가산세 실시간 계산',
-    description: '기한후신고와 가산세 얼마? 자진신고 감면은?',
   },
 };
 
@@ -101,7 +88,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '종합소득세 무신고·지연 가산세 가이드' },
+    { name: '종합소득세 무신고·지연 가산세' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '종합소득세 무신고·지연 가산세 2026 정확 계산',
@@ -570,7 +557,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                       href="/guide/may-comprehensive-income-tax/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>{' '}
                     · 신고 대상·기한·절세 5가지
                   </li>
@@ -623,7 +610,7 @@ export default function IncomeTaxLateFilingPenalty2026Page() {
                   (과소신고가산세) · §47의4 (납부지연가산세) · §48 (자진신고 감면) · 국세기본법
                   §45의3 (기한후신고) · 국세기본법 §45의2 (경정청구). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

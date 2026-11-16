@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/august-capital-gains-tax-review/';
 const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '8월 양도소득세 절세 검토 가이드 2026 | 일시적2주택·장기보유 80%',
+  title: '8월 양도소득세 절세 검토 가이드 2026 | 일시적2주택·장기보유공제',
   description:
-    '2026년 8월 부동산 양도 검토 중인 1주택자·일시적2주택자 필독. 일시적2주택 3년 만료·장기보유공제 80% 도달·단기 1년/2년 경계·양도 시점 vs 귀속연도·절세 5가지를 한 페이지에 정리.',
+    '8월에 부동산 양도를 검토하는 1주택자·일시적2주택자를 위해 3년 만료, 장기보유공제 80%, 단기 세율 경계를 정리했습니다.',
   keywords: [
     '양도소득세 검토',
     '8월 양도세',
@@ -39,9 +40,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '8월 양도소득세 절세 검토 가이드 2026 | 일시적2주택·장기보유 80%' }],
-    title: '8월 양도소득세 절세 검토 가이드 2026',
-    description: '일시적2주택 3년 만료·장기보유공제 80%·단기 1년/2년 경계·절세 5가지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +48,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '8월 양도소득세 절세 검토 가이드 2026',
-    description: '부동산 양도 직전 8월 절세 체크리스트 5가지.',
   },
 };
 
@@ -87,7 +83,7 @@ export default function AugustCgtGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '8월 양도세 절세 검토 2026' },
+    { name: '8월 양도세 절세 검토' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '8월 양도소득세 절세 검토 가이드 2026',
@@ -111,7 +107,7 @@ export default function AugustCgtGuide() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '8월 양도세 절세 검토 5단계',
     description: '부동산 양도 직전 8월에 검토할 절세 시나리오 5단계',
     steps: [
@@ -136,7 +132,8 @@ export default function AugustCgtGuide() {
         text: '양도일이 속한 달의 말일부터 2개월 이내 신고(§118). 무신고 시 20% 가산세.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -257,6 +254,7 @@ export default function AugustCgtGuide() {
               </section>
 
               {/* 5. FAQ (중간 배치, GEO) */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 6. 양도 시점 vs 귀속 */}

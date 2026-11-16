@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-28';
 const DATE_MODIFIED = '2026-06-28';
 
 export const metadata: Metadata = {
-  title: '중개수수료 협의로 아끼는 법 2026, 상한요율 절약 완전정리',
+  title: '중개수수료 협의로 아끼는 법 2026, 상한요율 절약 정리',
   description:
-    '중개수수료 상한요율은 법적 한도일 뿐, 협의로 깎을 수 있습니다. 거래금액 6억 기준 240만원을 200만으로 낮추는 협상 팁, 부가세 확인, 계약서 작성 전 확정 방법까지 2026 최신 정보.',
+    '중개수수료 상한요율은 법적 한도일 뿐 협의로 깎을 수 있습니다. 6억 거래 240만원을 200만원으로 낮추는 협상 팁을 정리했습니다.',
   keywords: [
     '중개수수료 협의',
     '중개비 깎기',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '중개수수료 협의로 아끼는 법 2026' }],
-    title: '중개수수료 협의로 아끼는 법 2026',
-    description: '상한요율은 협의 가능, 거래 전 필수 확인 사항',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '중개수수료 협의로 아끼는 법 2026',
-    description: '상한요율 협의·절약 완전정리',
   },
 };
 
@@ -98,7 +93,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
   ]);
 
   const articleLd = buildArticleJsonLd({
-    headline: '중개수수료 협의로 아끼는 법 2026, 상한요율 협의·절약 완전정리',
+    headline: '중개수수료 협의로 아끼는 법 2026, 상한요율 협의·절약 정리',
     description:
       '공인중개사법 §32 상한요율은 협의 가능한 한도일 뿐. 거래 전 협상 팁, 부가세 확인, 계약서 작성 전 최종 확정 방법, 반값 중개 비교까지 2026 최신 정보.',
     url: URL,
@@ -117,7 +112,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
   });
 
   const webPageLd = buildWebPageJsonLd({
-    name: '중개수수료 협의로 아끼는 법 2026, 상한요율 협의·절약 완전정리',
+    name: '중개수수료 협의로 아끼는 법 2026, 상한요율 협의·절약 정리',
     description:
       '중개수수료 상한요율은 법적 한도일 뿐 강제사항 아님. 협상 노하우, 부가세 확인, 계약서 작성 전 최종 합의 방법, 거래 유형별 협상 가능성을 정확히 정리합니다.',
     url: URL,
@@ -154,7 +149,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   중개수수료 협의로 아끼는 법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 상한요율 절약 완전정리</span>
+                  <span className="text-2xl text-text-secondary">· 상한요율 절약 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주택 매매·전세 거래 시 중개수수료는 공인중개사법 제32조로 상한요율이 정해집니다. 그러나 이 상한요율은 강제사항이 아니며, 중개사와 협의로 인하받을 수 있습니다. 거래금액 6억원일 때 240만원의 상한요율을 200만원, 180만원까지 깎는 것이 현실적으로 가능한 사례들입니다. 이 가이드에서는 중개비 협상의 기본 원칙, 협상 가능성을 높이는 상황, 부가세 확인 방법, 계약서 작성 전 반드시 해야 할 확인 사항을 정확히 정리합니다. 거래 전 이 정보를 숙지하면 수십만원에서 수백만원까지 절약할 수 있습니다.
@@ -558,7 +553,7 @@ export default function BrokerFeeNegotiationSavingsPage() {
               <ShareButtons
                 title="중개수수료 협의로 아끼는 법 2026"
                 url={URL}
-                description="상한요율 협의·절약 완전정리. 거래 전 반드시 확인하세요."
+                description="상한요율 협의·절약 정리. 거래 전 반드시 확인하세요."
               />
             </article>
           </main>

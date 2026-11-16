@@ -23,28 +23,17 @@ const DATE_PUBLISHED = "2026-08-30";
 const DATE_MODIFIED = "2026-08-30";
 
 export const metadata: Metadata = {
-  title: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost",
+  title: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026",
   description:
     "세금계산서를 공급일 다음 달 10일까지 발급하지 않으면 가산세가 부과됩니다. 지연발급·미발급 유형별 가산세 기준과 절차를 정리했습니다.",
   keywords: ["세금계산서 가산세","지연발급 가산세","세금계산서 미발급","전자세금계산서","부가가치세 가산세","가산세 계산"],
   alternates: { canonical: URL },
   openGraph: {
-    title: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost",
-    description: "세금계산서를 공급일 다음 달 10일까지 발급하지 않으면 가산세가 부과됩니다. 지연발급·미발급 유형별 가산세 기준과 절차를 정리했습니다.",
     url: URL,
     type: 'article',
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    // alt 누락 시 네이버 "Alt 속성 누락" 경고 (품질 게이트 yellow 항목)
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost",
-      },
-    ],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -88,10 +77,10 @@ export default function GuidePage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost" },
+    { name: '세금계산서 지연발급 가산세' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost",
+    headline: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026",
     description: "세금계산서를 공급일 다음 달 10일까지 발급하지 않으면 가산세가 부과됩니다. 지연발급·미발급 유형별 가산세 기준과 절차를 정리했습니다.",
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -102,7 +91,7 @@ export default function GuidePage() {
     keywords: ["세금계산서 가산세","지연발급 가산세","세금계산서 미발급","전자세금계산서","부가가치세 가산세","가산세 계산"],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost",
+    name: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026",
     description: "세금계산서를 공급일 다음 달 10일까지 발급하지 않으면 가산세가 부과됩니다. 지연발급·미발급 유형별 가산세 기준과 절차를 정리했습니다.",
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -130,11 +119,11 @@ export default function GuidePage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: "세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost" },
+                    { name: '세금계산서 지연발급 가산세' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">가이드 · 2026-08-30</p>
-                <h1 className="mb-3 text-4xl font-bold tracking-tight">세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost</h1>
+                <h1 className="mb-3 text-4xl font-bold tracking-tight">세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026</h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   세금계산서를 제때 발급하지 않으면 공급가액을 기준으로 가산세가 붙습니다. 지연발급과 미발급은 요율이 다르며, 전자세금계산서 의무 발급 사업자라면 종이 발급 자체도 별도 제재 대상이 됩니다. 이 가이드는 가산세가 발생하는 시점, 유형별 산정 방식, 그리고 실수를 줄이기 위한 실무 확인 사항을 안내합니다.
                 </p>
@@ -210,7 +199,7 @@ export default function GuidePage() {
                 </ul>
               </section>
 
-              <ShareButtons title={"세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026 | calculatorhost"} url={URL} />
+              <ShareButtons title={"세금계산서 지연발급 가산세, 언제 얼마나 붙나 2026"} url={URL} />
 
               {/* 관련 자원: 내부 링크 mesh (북극성 룰, 고립 페이지 차단·토픽 클러스터 형성) */}
               <section aria-label="관련 자원" className="card space-y-2">

@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직금 지급 기준 2026' }],
-    title: '퇴직금 지급 기준 2026, 1년·주 15시간 알바·계약직',
-    description: '1년 이상·주 15시간 이상이면 받습니다. 1년 미만, 알바, 5인 미만, IRP까지 §4·§8·§9 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '퇴직금 지급 기준 2026',
-    description: '1년 이상·주 15시간 이상이면 받습니다. 알바·계약직·5인 미만도 포함. §4·§8·§9 기준.',
   },
 };
 

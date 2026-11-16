@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '연말정산 완벽 가이드 2026 | calculatorhost',
+  title: '연말정산 가이드 2026 | 13월의 월급 받는 법',
   description:
-    '2026년 연말정산 공제·환급·신고 완벽 가이드. 신용카드·의료비·교육비 공제부터 환급 추적까지. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '연말정산은 1년간 매월 떼인 세금을 실제 세액과 맞춰 보는 절차입니다. 신용카드·의료비·교육비 공제와 환급 조회법을 정리했습니다.',
   keywords: [
     '연말정산',
     '연말정산 환급',
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연말정산 완벽 가이드 2026 | calculatorhost' }],
-    title: '연말정산 완벽 가이드 2026, 13월의 월급 받는 법',
-    description: '신용카드·의료비·교육비·연금저축 공제 + 환급 추적 전략.',
     url: URL,
     type: 'article',
 
@@ -50,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연말정산 완벽 가이드 2026',
-    description: '13월의 월급 받는 법 + 추가 납부 회피 전략.',
 
   },
 };
@@ -103,10 +98,10 @@ export default function YearEndTaxSettlementPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '연말정산 완벽 가이드' },
+    { name: '연말정산 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연말정산 완벽 가이드 (2026), 13월의 월급 받는 법',
+    headline: '연말정산 가이드 (2026), 13월의 월급 받는 법',
     description:
       '신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피.',
     url: URL,
@@ -118,8 +113,8 @@ export default function YearEndTaxSettlementPage() {
     keywords: ['연말정산', '13월의 월급', '신용카드 공제', '의료비 공제', '연금저축'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '연말정산 완벽 가이드 2026',
-    description: '2026년 1월 연말정산 시즌 완벽 가이드. 신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략까지 한 페이지.',
+    name: '연말정산 가이드 2026',
+    description: '2026년 1월 연말정산 시즌 가이드. 신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략까지 한 페이지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -146,12 +141,12 @@ export default function YearEndTaxSettlementPage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '연말정산 완벽 가이드' },
+                    { name: '연말정산 가이드' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금 · 12분 읽기 · 2026-05-03</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  연말정산 완벽 가이드 (2026)
+                  연말정산 가이드 (2026)
                   <br />
                   <span className="text-2xl text-text-secondary">· "13월의 월급" 받는 법</span>
                 </h1>
@@ -368,15 +363,14 @@ export default function YearEndTaxSettlementPage() {
                 </ul>
               </section>
 
-              <ShareButtons title="연말정산 완벽 가이드 (2026)" url={URL} description="13월의 월급 받는 법 + 추가 납부 회피 전략." />
+              <ShareButtons title="연말정산 가이드 (2026)" url={URL} description="13월의 월급 받는 법 + 추가 납부 회피 전략." />
 
               <section aria-label="출처 및 면책" className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary">
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §51 (인적공제) · §52 (특별소득공제) · §59의2 (세액공제) · §134 (연말정산) · §137. 참고:{' '}
-                  <a href="https://www.hometax.go.kr/websquare/web/personalTaxInfoUL.do#MENUID_1000000001" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스 연말정산 간소화 서비스</a>,{' '}
+                  <a href="https://www.hometax.go.kr/#MENUID_1000000001" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">홈택스 연말정산 간소화 서비스</a>,{' '}
                   <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?pageNum=1&searchCondition=on&searchKeyword=%EC%97%B0%EB%A7%90%EC%A0%95%EC%82%B0&mi=10806" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 연말정산 안내</a>,{' '}
-                  <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">기획재정부</a>,{' '}
-                  <a href="https://www.socialinfo.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">사회보장정보시스템</a>.
+                  <a href="https://www.moef.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">기획재정부</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>
               </section>

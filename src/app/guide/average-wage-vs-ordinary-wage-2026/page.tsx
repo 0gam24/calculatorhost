@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-04';
 export const metadata: Metadata = {
   title: '평균임금 통상임금 차이 2026, 퇴직금·수당 계산 기준',
   description:
-    '퇴직금은 평균임금, 연장수당은 통상임금으로 계산합니다. 두 임금은 산정 방식도, 쓰이는 곳도 다릅니다. 평균임금은 3개월 임금총액을 총일수로 나눈 값, 통상임금은 정기·일률·고정으로 주는 임금입니다. 근로기준법 §2 기준으로 차이와 계산법을 정리했습니다.',
+    '퇴직금은 평균임금, 연장수당은 통상임금으로 계산합니다. 두 임금의 산정 방식과 쓰임새를 근로기준법 §2 기준으로 비교했습니다.',
   keywords: [
     '평균임금 통상임금 차이',
     '평균임금 계산법',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '평균임금 통상임금 차이 2026' }],
-    title: '평균임금 통상임금 차이 2026, 퇴직금·수당 계산 기준',
-    description: '퇴직금은 평균임금, 연장·야간·연차수당은 통상임금. 산정법과 쓰임새 차이를 근로기준법 §2 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '평균임금 통상임금 차이 2026, 퇴직금·수당 기준',
-    description: '평균임금은 3개월 총액÷총일수(퇴직금·휴업수당), 통상임금은 정기·일률·고정(연장수당). 근로기준법 §2.',
   },
 };
 
@@ -290,7 +285,7 @@ export default function AverageWageVsOrdinaryWage2026Page() {
                     <p className="mt-1 text-sm text-text-secondary">평균임금 기준 퇴직금을 시뮬레이션하세요.</p>
                   </Link>
                   <Link href="/guide/ordinary-wage-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
-                    <div className="font-semibold text-primary-500">통상임금 완전 정리</div>
+                    <div className="font-semibold text-primary-500">통상임금 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">정기상여 포함 여부와 2024 판례 변경.</p>
                   </Link>
                   <Link href="/guide/overtime-night-holiday-allowance-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">

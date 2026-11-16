@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-14';
 export const metadata: Metadata = {
   title: '국세 미환급금 찾기 2026, 안 찾아간 세금 돌려받는 법',
   description:
-    '연말정산·종합소득세를 더 냈는데 돌려받지 못한 국세 미환급금은 홈택스·손택스·정부24·ARS 1544-9944로 로그인 없이 조회할 수 있습니다. 5년이 지나면 국고로 사라지는 이유와 수령 방법을 국세기본법 §51·§54 기준으로 정리했습니다.',
+    '돌려받지 못한 국세 미환급금은 홈택스·손택스·정부24·ARS로 로그인 없이 조회할 수 있습니다. 5년이 지나면 국고로 귀속됩니다.',
   keywords: [
     '국세 미환급금 찾기',
     '미수령 환급금 조회',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국세 미환급금 찾기 2026, 안 찾아간 세금 돌려받는 법' }],
-    title: '국세 미환급금 찾기 2026, 안 찾아간 세금 돌려받는 법',
-    description: '홈택스·손택스·정부24·ARS 1544-9944로 로그인 없이 조회. 5년 지나면 국고 귀속되는 미수령 환급금 수령 절차 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국세 미환급금 찾기 2026, 안 찾아간 세금 돌려받는 법',
-    description: '로그인 없이 성명·주민번호만으로 조회. 5년 소멸시효 전에 받아야 하는 미수령 국세 환급금.',
   },
 };
 
@@ -337,7 +332,7 @@ export default function NationalTaxUnclaimedRefund2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">환급의 출발점, 공제 항목부터 제대로 챙기세요.</p>
                   </Link>
                   <Link

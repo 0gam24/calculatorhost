@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-06';
 export const metadata: Metadata = {
   title: '하이브리드 개별소비세 감면 2026년 말 종료, 얼마 오르나',
   description:
-    '하이브리드차 개별소비세 감면(최대 70만원)이 2026년 12월 31일 종료됩니다. 2026 세제개편안 정부안 기준, 연내 구매와 내년 구매의 세금 차이, 전기·수소차 감면 축소 일정까지 정리했습니다.',
+    '하이브리드차 개별소비세 감면(최대 70만원)이 2026년 12월 31일 종료됩니다. 연내와 내년 구매의 세금 차이를 정리했습니다.',
   keywords: [
     '하이브리드 개별소비세 감면',
     '하이브리드 개소세 종료',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '하이브리드 개별소비세 감면 2026년 말 종료' }],
-    title: '하이브리드 개별소비세 감면 2026년 말 종료, 얼마 오르나',
-    description: '최대 70만원 하이브리드 개소세 감면이 2026년 말 종료. 연내·내년 구매 세금 차이와 전기·수소차 축소 일정.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '하이브리드 개소세 감면 2026년 말 종료',
-    description: '최대 70만원 감면 종료로 하이브리드 신차값 상승. 연내 구매가 유리한지 계산으로 확인.',
   },
 };
 

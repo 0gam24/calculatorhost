@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-23';
 export const metadata: Metadata = {
   title: '소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이·계산',
   description:
-    '5월 31일 종소세 신고! 소득공제(매출 먼저 차감)와 세액공제(세액에서 차감) 어느 쪽이 유리한가? 누진세율 적용 순서·기본공제 250만·표준세액공제 13만 선택권·중복 불가 항목·4티어 절세 가이드.',
+    '소득공제는 과세표준을 줄여 세율이 높을수록 효과가 크고, 세액공제는 산출세액에서 직접 깎습니다. 계산 순서와 중복 불가 항목을 정리했습니다.',
   keywords: [
     '소득공제',
     '세액공제',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '소득공제 vs 세액공제 2026 | 어느 쪽이 더 절세? 순서·차이·계산' }],
-    title: '소득공제 vs 세액공제 2026 차이와 선택 기준',
-    description: '소득공제는 과세표준 감소, 세액공제는 세금에서 차감. 누진세가 높을수록 소득공제 유리? 5월 신고 필독.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '소득공제와 세액공제 차이 (2026 종소세 신고)',
-    description: '소득공제 vs 세액공제 누가 더 절세? 계산 순서·선택권 정리.',
   },
 };
 
@@ -99,10 +94,10 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '소득공제 vs 세액공제 가이드' },
+    { name: '소득공제 vs 세액공제' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '소득공제 vs 세액공제 2026 완벽 정리',
+    headline: '소득공제 vs 세액공제 2026 정리',
     description:
       '소득공제(과세표준 차감) vs 세액공제(세액 차감) 차이·누진세 효과·표준 vs 특별 선택권·기부금·의료비·교육비 공제 구분·중복 불가 항목·5월 신고 신청 방법.',
     url: URL,
@@ -114,7 +109,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
     keywords: ['소득공제', '세액공제', '누진세', '절세', '5월 신고'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '소득공제 vs 세액공제 2026 완벽 정리',
+    name: '소득공제 vs 세액공제 2026 정리',
     description:
       '5월 31일 종합소득세 신고! 소득공제(과세표준 감소) vs 세액공제(세액 차감) 차이·누진세 적용 순서·기본공제 250만·표준세액공제 13만 선택권·의료비·교육비·기부금 구분·함정 5가지·절세 시뮬 3개.',
     url: URL,
@@ -150,7 +145,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   소득공제 vs 세액공제 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 누가 더 절세? 5월 신고 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 누가 더 절세? 5월 신고 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고가 다가오면서 많은 사람이 혼동해하는 것이 바로{' '}
@@ -658,7 +653,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -672,7 +667,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">
-                      연말정산 완벽 가이드
+                      연말정산 가이드
                     </Link>
                     {' '}· 공제 항목 정정 및 추가 신청
                   </li>
@@ -680,9 +675,9 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
               </section>
 
               <ShareButtons
-                title="소득공제 vs 세액공제 2026 완벽 정리"
+                title="소득공제 vs 세액공제 2026 정리"
                 url={URL}
-                description="소득공제(과세표준 감소) vs 세액공제(세금에서 차감). 누진세 높을수록 소득공제 유리. 5월 신고 필독."
+                description="소득공제(과세표준 감소) vs 세액공제(세금에서 차감). 누진세 높을수록 소득공제 유리."
               />
 
               {/* 출처 및 면책 */}
@@ -694,7 +689,7 @@ export default function IncomeDeductionVsTaxCredit2026Page() {
                   <strong>법적 근거</strong>: 소득세법 §50~§52 (소득공제) · §59~§59의5 (세액공제) · §55 (누진세율) ·
                   국세기본법 §14 (실질과세 원칙). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

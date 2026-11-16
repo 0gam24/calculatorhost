@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-22';
 const DATE_MODIFIED = '2026-06-22';
 
 export const metadata: Metadata = {
-  title: '상속세 vs 증여세 2026 | 어느 쪽이 유리한가? 비교 완벽 가이드 | calculatorhost',
+  title: '상속세 vs 증여세 2026 | 어느 쪽이 유리한지 공제·시점 비교',
   description:
-    '같은 재산을 물려줄 때 상속과 증여 중 어느 쪽이 세금이 적은지 비교했습니다. 공제 금액 차이, 적용 세율, 넘겨주는 시점, 사전증여 합산 기간까지 따져서 재산 규모와 가족 구성에 따라 판단하는 기준을 정리했습니다.',
+    '같은 재산을 물려줄 때 상속과 증여 중 어느 쪽이 세금이 적은지 비교했습니다. 공제·세율·사전증여 합산 기간으로 판단 기준을 정리했습니다.',
   keywords: [
     '상속세 vs 증여세',
     '상속 증여 비교',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 vs 증여세 2026 | 어느 쪽이 유리한가? | calculatorhost' }],
-    title: '상속세 vs 증여세 2026 | 비교 완벽 가이드',
-    description: '공제 차이·세율·시점을 한눈에 비교. 재산 상황별 절세 전략까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,7 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-default.png'],
   },
 };
 

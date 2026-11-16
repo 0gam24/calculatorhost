@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-13';
 const DATE_MODIFIED = '2026-05-13';
 
 export const metadata: Metadata = {
-  title: '자경농지 8년 100% 감면 완벽 정리 2026 | 조특법 §69 1억 한도',
+  title: '자경농지 8년 100% 감면 정리 2026 | 조특법 §69 1억 한도',
   description:
-    '자경농지 8년 양도세 100% 감면 조건·자경 요건(직접 종사 50% 이상)·거주 요건(30km 이내)·한도(연 1억/5년 2억)·신청 절차·함정 5가지·시뮬 사례.',
+    '농지를 8년 이상 직접 경작하면 양도세를 100% 감면받을 수 있습니다. 조특법 §69의 연 1억 한도와 거주 요건을 정리했습니다.',
   keywords: [
     '자경농지',
     '자경농지 양도세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자경농지 8년 100% 감면 완벽 정리 2026 | 조특법 §69 1억 한도' }],
-    title: '자경농지 8년 100% 감면 완벽 정리 2026',
-    description: '자경농지 8년 = 양도세 100% 감면. 자경(50% 이상 자기 노동) + 거주(30km) + 한도 1억.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자경농지 8년 100% 감면 완벽 정리 2026',
-    description: '조세특례제한법 §69 자경농지 양도세 100% 감면. 한도 연 1억, 5년 2억.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '자경농지 8년 100% 감면 완벽 정리' },
+    { name: '자경농지 8년 100% 감면 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자경농지 8년 100% 감면 완벽 정리 2026',
+    headline: '자경농지 8년 100% 감면 정리 2026',
     description:
       '자경농지 양도세 100% 감면 조건·자경 정의(50% 이상 노동력)·거주 요건(30km)·한도(연 1억/5년 2억)·신청 절차·시뮬 사례·함정 5가지.',
     url: URL,
@@ -100,7 +95,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
     keywords: ['자경농지', '양도세 감면', '100%', '8년', '조세특례'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '자경농지 8년 100% 감면 완벽 정리 2026',
+    name: '자경농지 8년 100% 감면 정리 2026',
     description: '자경농지 8년 양도세 100% 감면 조건·자경/거주 요건·한도 1억·절차·함정.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '자경농지 8년 100% 감면 완벽 정리' },
+                    { name: '자경농지 8년 100% 감면 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  자경농지 8년 100% 감면 완벽 정리 2026
+                  자경농지 8년 100% 감면 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   농지를 직접 경작한다면 <strong>양도세를 완전히 면제</strong>받을 수 있습니다. 8년 이상 농지를
@@ -529,7 +524,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
                       href="/guide/one-household-12-billion-exemption/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      1세대1주택 12억 한도 완전 정리
+                      1세대1주택 12억 한도 정리
                     </Link>{' '}
 , 주택 양도 시 비과세 조건 비교
                   </li>
@@ -558,7 +553,7 @@ export default function SelfFarmingLand100PercentExemptionGuide() {
               </section>
 
               <ShareButtons
-                title="자경농지 8년 100% 감면 완벽 정리 2026"
+                title="자경농지 8년 100% 감면 정리 2026"
                 url={URL}
                 description="자경농지 8년 양도세 100% 감면 조건·자경 요건·거주 요건·한도 1억·절차·함정."
               />

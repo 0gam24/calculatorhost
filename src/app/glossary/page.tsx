@@ -18,9 +18,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-13';
 
 export const metadata: Metadata = {
-  title: '금융·세금·투자 용어사전 2026 | calculatorhost',
+  title: '금융·세금·투자 용어사전 2026 | DSR·LTV·양도차익',
   description:
-    '한국 거주자가 일상에서 자주 마주치는 금융·세금·부동산·투자 핵심 용어 정의 모음. DSR·LTV·양도차익·장기보유공제·평균단가·BEP 등을 법조항·공식 출처와 함께 정리.',
+    '금융·세금·부동산·투자 핵심 용어를 법조항·공식 출처와 함께 정의합니다. DSR·LTV·양도차익·평균단가 등을 다룹니다.',
   keywords: [
     '금융 용어사전',
     '세금 용어 정리',
@@ -32,8 +32,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '금융·세금·투자 용어사전, calculatorhost',
-    description: 'DSR·LTV·양도차익·평단·BEP 등 핵심 용어 정의 + 법적 근거.',
     url: URL,
     type: 'website',
 
@@ -41,8 +39,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '금융·세금·투자 용어사전',
-    description: 'DSR·LTV·양도차익·평단·BEP 등 핵심 용어 정의.',
 
   },
 };

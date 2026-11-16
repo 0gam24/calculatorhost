@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-25';
 export const metadata: Metadata = {
   title: '초단시간 근로자 2026, 주15시간 미만 주휴·연차·퇴직금',
   description:
-    '주 15시간 미만 초단시간 근로자는 주휴수당·연차·퇴직금이 원칙적으로 적용 제외됩니다. 다만 최저임금과 산재보험은 반드시 적용되고 실제 근로시간이 기준입니다. 4대보험 적용 여부까지 근로기준법 §18 기준으로 정리합니다.',
+    '주 15시간 미만 초단시간 근로자는 주휴수당·연차·퇴직금이 원칙적으로 제외됩니다. 최저임금·산재보험은 적용되고 실제 근무시간이 기준입니다.',
   keywords: [
     '초단시간 근로자',
     '주 15시간 미만',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '초단시간 근로자 2026, 주15시간 미만 주휴·연차·퇴직금' }],
-    title: '초단시간 근로자 2026, 주15시간 미만이면 달라지는 권리',
-    description: '주휴·연차·퇴직금은 제외, 최저임금·산재는 적용. 4대보험 적용 여부와 실제 근로시간 판단까지 근로기준법 §18 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '초단시간 근로자 2026, 주15시간 미만 권리 정리',
-    description: '주휴·연차·퇴직금 제외, 최저임금·산재 적용. 근로기준법 §18 기준.',
   },
 };
 

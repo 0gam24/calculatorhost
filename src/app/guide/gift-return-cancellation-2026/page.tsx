@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-13';
 export const metadata: Metadata = {
   title: '증여 취소 반환 2026, 3개월 안에 돌려주면 세금 0원',
   description:
-    '증여했다가 마음이 바뀌면 언제까지 돌려줘야 증여세를 안 낼까요. 신고기한 이내 반환은 처음부터 없던 것, 이후 3개월 내 반환은 반환분만 비과세, 현금 증여는 취소해도 과세되는 규칙을 상속세및증여세법 §4 기준으로 정리했습니다.',
+    '증여 재산을 신고기한 안에 돌려주면 처음부터 없던 일이 되고, 이후 3개월 내 반환하면 그 부분만 비과세입니다. 현금은 취소해도 과세됩니다.',
   keywords: [
     '증여 취소',
     '증여재산 반환',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증여 취소 반환 2026, 3개월 안에 돌려주면 세금 0원' }],
-    title: '증여 취소·반환 2026, 언제까지 돌려줘야 증여세가 없나',
-    description: '신고기한 내 반환은 처음부터 없던 것, 이후 3개월 내는 반환분만 비과세, 현금은 취소해도 과세.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여 취소·반환 2026, 언제까지 돌려줘야 세금이 없나',
-    description: '신고기한 내 반환은 무과세, 이후 3개월 내는 반환분만 비과세, 현금은 취소해도 과세. 상증법 §4.',
   },
 };
 

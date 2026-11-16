@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-31';
 const DATE_MODIFIED = '2026-05-31';
 
 export const metadata: Metadata = {
-  title: '재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정 | calculatorhost',
+  title: '재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정',
   description:
-    '재산세는 매년 6월 1일 기준 소유자에게 부과됩니다. 잔금일이 5월 31일 vs 6월 2일이면 누가 재산세를 내는가? 지방세법 §114에 따른 과세기준일 판정법과 거래 전 필수 협상 가이드.',
+    '재산세는 매년 6월 1일 현재 소유자가 냅니다. 잔금일에 따라 납세자가 바뀌는 판정법과 거래 전 협상법을 지방세법 §114로 정리했습니다.',
   keywords: [
     '재산세 과세기준일',
     '재산세 6월 1일',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정 | calculatorhost' }],
-    title: '재산세 과세기준일 6월 1일, 잔금 타이밍과 부담자',
-    description: '지방세법 §114: 6월 1일 현재 소유자가 그 해 재산세 전액 부담. 5월 31일 잔금 vs 6월 2일 잔금 시 부담자 변경.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 과세기준일 6월 1일, 잔금 타이밍과 부담자',
-    description: '지방세법 §114 기준 매도자/매수자 재산세 부담 판정.',
   },
 };
 
@@ -90,7 +85,7 @@ export default function PropertyTaxBaseDatePage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '재산세 과세기준일' },
+    { name: '재산세 과세기준일 6월 1일' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '재산세 과세기준일 6월 1일, 잔금 타이밍과 매도자/매수자 부담 판정',
@@ -381,7 +376,7 @@ export default function PropertyTaxBaseDatePage() {
                   <li>
                     →{' '}
                     <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      재산세 완벽 가이드 2026
+                      재산세 가이드 2026
                     </Link>
                     {'세율·공제·납부 방법 전체'}
                   </li>
@@ -401,8 +396,8 @@ export default function PropertyTaxBaseDatePage() {
                   </li>
                   <li>
                     →{' '}
-                    <Link href="/guide/property-tax-timing-2020-after-acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      부동산 거래 시 세금 정산 가이드
+                    <Link href="/guide/property-tax-calculation-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      재산세 계산법 2026
                     </Link>
                   </li>
                   <li>

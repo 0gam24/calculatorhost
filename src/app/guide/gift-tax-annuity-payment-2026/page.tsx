@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-14';
 export const metadata: Metadata = {
   title: '증여세 연부연납 조건·담보 제공 방법 2026',
   description:
-    '증여세 연부연납은 세액이 2천만원을 넘을 때 담보를 걸고 5년(가업승계 특례 15년)에 나눠 내는 제도입니다. 신청 자격 3요건, 담보 종류별 즉시허가 특례, 가산금 이자율을 상속세및증여세법 §71 기준으로 정리했습니다.',
+    '증여세 연부연납은 세액이 2천만원을 넘을 때 담보를 걸고 5년간 나눠 내는 제도입니다. 자격 3요건과 가산금 이자율을 정리했습니다.',
   keywords: [
     '증여세 연부연납',
     '연부연납 조건',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증여세 연부연납 조건·담보 제공 방법 2026' }],
-    title: '증여세 연부연납 조건·담보 제공 방법 2026',
-    description: '세액 2천만원 초과 시 담보를 걸고 5년(가업승계 15년) 분할납부. 자격요건·담보 종류·가산금까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여세 연부연납 조건·담보 제공 방법 2026',
-    description: '2천만원 초과 세액, 납세담보 제공, 신청기한 준수. 3요건과 담보 종류별 허가 절차 정리.',
   },
 };
 

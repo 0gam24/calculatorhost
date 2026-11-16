@@ -23,6 +23,7 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getFssSavingsRateCitation } from '@/lib/publicapi/public-citations';
 import financeProducts from '@/data/finance-products.json';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const FSS_SAVINGS_CITATION = getFssSavingsRateCitation(financeProducts, '2026-04-27');
 
@@ -42,16 +43,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '적금 이자 계산기 2026, 세후 수령액 비교',
-    description:
-      '월 납입금과 기간, 이자 방식을 입력해 단리·복리별 세후 이자와 만기 수령액을 즉시 비교.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '적금 이자 계산기 2026',
-    description: '단리·월복리·세후 수령액을 즉시 비교 계산.',
   },
 };
 
@@ -116,10 +112,10 @@ export default function SavingsPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
-    { name: '적금' },
+    { name: '적금 이자' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '적금 이자 계산하기',
     description: '월 납입금, 연 이자율, 가입 기간을 입력해 세후 만기 수령액을 계산하는 방법',
     steps: [
@@ -129,7 +125,8 @@ export default function SavingsPage() {
       { name: '이자 방식 선택', text: '단리 또는 월복리 중 선택합니다.' },
       { name: '과세 방식 선택', text: '일반과세·세금우대·비과세 중 선택하면 즉시 계산됩니다.' },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -196,6 +193,7 @@ export default function SavingsPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="적금은 일정 기간 동안 정기적으로 일정 금액을 저축하여 만기일에 원금과 이자를 받는 금융상품입니다. 이자는 단리(원금에만 붙는 이자) 또는 월복리(매월 이자에 붙는 이자)로 계산되며, 세후 수익률은 이자소득세(일반 15.4%, 세금우대 9.5%, 비과세)에 따라 달라집니다(소득세법 §129, 조세특례제한법 §89·§91)."
                 table={{

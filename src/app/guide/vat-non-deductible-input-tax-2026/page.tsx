@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-22';
 export const metadata: Metadata = {
   title: '부가세 매입세액 불공제 항목 2026, 공제 안 되는 7가지',
   description:
-    '부가가치세법 §39 기준 매입세액 불공제 7가지 항목 총정리. 접대비, 비영업용 승용차, 세금계산서 미수취, 사업자등록 전 매입세액 등 공제 안 되는 이유와 계산 사례까지.',
+    '접대비, 비영업용 승용차, 세금계산서 미수취 등 7가지 매입세액은 공제되지 않습니다. 부가가치세법 §39 기준 계산 사례도 담았습니다.',
   keywords: [
     '부가세 매입세액 불공제',
     '매입세액 공제 안되는 항목',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부가세 매입세액 불공제 항목 2026, 공제 안 되는 7가지' }],
-    title: '부가세 매입세액 불공제 2026, 접대비·비영업용 승용차·세금계산서 미수취 완전 정리',
-    description: '부가가치세법 §39에 따른 매입세액 불공제 7가지 항목과 계산 사례. 7월 부가세 확정신고 전 필독.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가세 매입세액 불공제 2026, 공제 안 되는 7가지 항목',
-    description: '접대비, 비영업용 승용차, 사업자등록 전 매입세액 등 부가가치세법 §39 불공제 항목 총정리.',
   },
 };
 
@@ -99,9 +94,9 @@ export default function VatNonDeductibleInputTax2026Page() {
     { name: '부가세 매입세액 불공제 항목 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '부가세 매입세액 불공제 항목 2026, 공제 안 되는 매입세액 7가지 완전 정리',
+    headline: '부가세 매입세액 불공제 항목 2026, 공제 안 되는 매입세액 7가지 정리',
     description:
-      '부가가치세법 §39에 따른 매입세액 불공제 7가지 항목 총정리. 접대비, 비영업용 승용차(경차·화물차 예외), 세금계산서 미수취, 사업자등록 전 매입, 면세사업, 토지 관련 매입까지 계산 사례와 함께.',
+      '부가가치세법 §39에 따른 매입세액 불공제 7가지 항목 정리. 접대비, 비영업용 승용차(경차·화물차 예외), 세금계산서 미수취, 사업자등록 전 매입, 면세사업, 토지 관련 매입까지 계산 사례와 함께.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -430,7 +425,7 @@ export default function VatNonDeductibleInputTax2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">7월 부가세 확정신고</div>
-                    <p className="mt-1 text-sm text-text-secondary">상반기 부가세 확정신고 일정과 준비 서류 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">상반기 부가세 확정신고 일정과 준비 서류 정리.</p>
                   </Link>
                   <Link
                     href="/guide/vat-early-refund-2026/"

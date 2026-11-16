@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-02';
 export const metadata: Metadata = {
   title: '원천세 반기납부 신청 조건·기간 2026, 20인 이하 사업자',
   description:
-    '직전 연도 상시고용인원 평균 20명 이하 사업장(금융·보험업 제외)은 매달 내는 원천세를 반기(6개월)에 한 번만 납부할 수 있습니다. 상반기 적용은 전년도 12월, 하반기 적용은 6월에 신청해야 하며 인정상여 등 일부 세액은 승인 후에도 매달 냅니다. 소득세법 §128②·시행령 §186 기준 조건과 신청 기간을 정리했습니다.',
+    '상시고용인원 20명 이하 사업장은 원천세를 반기에 한 번만 낼 수 있습니다. 상반기분은 전년도 12월, 하반기분은 6월에 신청합니다.',
   keywords: [
     '원천세 반기납부',
     '원천세 반기별납부 신청기간',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '원천세 반기납부 신청 조건·기간 2026, 20인 이하 사업자' }],
-    title: '원천세 반기납부 신청 조건·기간 2026, 놓치면 다음 반기까지 대기',
-    description: '20인 이하 사업장 대상 원천세 반기별납부. 상반기 적용은 12월, 하반기 적용은 6월 신청 기한과 승인 절차 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '원천세 반기납부 신청 조건·기간 2026',
-    description: '20인 이하 사업장, 상반기 적용 12월 신청·하반기 적용 6월 신청. 소득세법 §128②·시행령 §186.',
   },
 };
 

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-03';
 export const metadata: Metadata = {
   title: '기부금 세액공제 2026 | 15%·30% 공제율·한도·고향사랑기부금',
   description:
-    '기부금 세액공제의 공제율(1천만 이하 15%, 초과분 30%), 한도, 대상기부금 완벽 정리. 정치자금·고향사랑 기부금 특별공제까지. 소득세법 §59의4.',
+    '기부금 세액공제율은 1천만원 이하분 15%, 초과분 30%입니다. 한도와 정치자금·고향사랑기부금 특례를 정리했습니다.',
   keywords: [
     '기부금 세액공제',
     '기부금 15% 30%',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기부금 세액공제 2026 | 15%·30% 공제율·한도·고향사랑기부금' }],
-    title: '기부금 세액공제 2026, 기부액의 15~30%를 세금에서 직접 공제',
-    description: '기부금 공제율 1천만원 이하 15%, 초과분 30%. 정치자금·고향사랑·법정기부금별 공제 차이와 한도 정확 계산법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기부금 세액공제 2026, 15%·30% 공제율과 정치자금·고향사랑 기부금',
-    description: '기부금 1천만원 이하 15% 공제, 초과분 30%. 한도와 대상기부금 확인하고 절세하세요.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function DonationTaxCredit2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '기부금 세액공제 2026, 15%·30% 공제율과 한도·정치자금·고향사랑기부금',
     description:
-      '기부금 세액공제의 정확한 공제율(1천만 이하 15%, 초과분 30%), 한도(소득의 30%), 대상기부금(정치자금·고향사랑·법정기부금), 계산 사례, 개인사업자 다루기까지 완벽 정리.',
+      '기부금 세액공제의 정확한 공제율(1천만 이하 15%, 초과분 30%), 한도(소득의 30%), 대상기부금(정치자금·고향사랑·법정기부금), 계산 사례, 개인사업자 다루기까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -452,7 +447,7 @@ export default function DonationTaxCredit2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">기부금, 의료비, 보험료 공제항목 전체 정리.</p>
                   </Link>
                   <Link
@@ -493,8 +488,8 @@ export default function DonationTaxCredit2026Page() {
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터</a>,{' '}
-                  <a href="https://www.nta.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 소득세 정보</a>,{' '}
-                  <a href="https://www.kcm.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">중앙선거관리위원회 정치자금 기부금</a>.
+                  <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 소득세 정보</a>,{' '}
+                  <a href="https://www.nec.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">중앙선거관리위원회 정치자금 기부금</a>.
                 </p>
               </section>
 

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-18';
 export const metadata: Metadata = {
   title: '기장세액공제 2026, 간편장부 대상자 복식부기 최대 100만원',
   description:
-    '간편장부 대상자가 복식부기로 종합소득세를 신고하면 산출세액의 20%, 최대 100만원을 공제받습니다(소득세법 §56의2). 공제 계산식, 요건, 무기장가산세 회피, 간편장부와 복식부기 비교까지 사례로 정리했습니다.',
+    '간편장부 대상자가 복식부기로 신고하면 산출세액의 20%, 최대 100만원을 기장세액공제로 받습니다(소득세법 §56의2).',
   keywords: [
     '기장세액공제',
     '간편장부 대상자',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기장세액공제 2026, 간편장부 대상자 복식부기 최대 100만원' }],
-    title: '기장세액공제 2026, 복식부기로 최대 100만원 공제',
-    description: '간편장부 대상자가 복식부기로 신고하면 산출세액 20%, 최대 100만원 공제. 계산식과 요건 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기장세액공제 2026, 최대 100만원',
-    description: '간편장부 대상자가 복식부기 신고 시 산출세액 20%, 한도 100만원 공제. 소득세법 §56의2.',
   },
 };
 

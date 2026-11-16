@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-03';
 export const metadata: Metadata = {
   title: '국민연금 납부예외 2026, 소득 없을 때 신청·연금 영향',
   description:
-    '실직·폐업으로 소득이 없을 때 국민연금 보험료 납부를 잠시 멈추는 납부예외 제도. 신청 기한(다음 달 15일), 가입기간 산입, 추후납부(국민연금법 92조)로 회복하는 방법까지 정리.',
+    '실직·폐업으로 소득이 끊겼을 때 국민연금 보험료를 잠시 멈추는 납부예외 제도의 신청 기한과 가입기간 영향을 정리했습니다.',
   keywords: [
     '국민연금 납부예외',
     '국민연금 납부예외 신청',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 납부예외 2026, 소득 없을 때 신청 방법과 연금 영향' }],
-    title: '국민연금 납부예외 2026, 소득 없을 때 신청·연금 영향',
-    description: '실직·폐업으로 보험료가 부담될 때, 국민연금법 91조에 따른 납부예외 신청 방법과 가입기간 영향, 추후납부로 회복하는 절차를 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 납부예외 2026, 소득 없을 때 신청·연금 영향',
-    description: '실직·폐업 시 국민연금 납부예외 신청(국민연금법 91조), 가입기간 산입 여부, 추후납부 회복 방법.',
   },
 };
 

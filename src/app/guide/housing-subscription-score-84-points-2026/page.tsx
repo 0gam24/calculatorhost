@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-27';
 export const metadata: Metadata = {
   title: '청약가점 84점 만점 계산법 2026 | 무주택·부양가족·통장 점수표',
   description:
-    '청약가점 3요소(무주택기간 32점·부양가족수 35점·청약통장 17점) 배분 방식. 각 항목 점수 계산 표·경계값 사례·유의사항. 민영주택·국민주택 가점제·순위제 구분. 한국주택공급규칙(별표1) 기준.',
+    '청약가점 84점은 무주택기간 32점, 부양가족수 35점, 청약통장 17점을 더한 값입니다. 항목별 점수표와 경계값 사례를 정리했습니다.',
   keywords: [
     '청약가점 84점',
     '청약 점수',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청약가점 84점 계산법' }],
-    title: '청약가점 84점 만점 계산법 2026',
-    description: '무주택기간·부양가족·청약통장 3요소 점수 배분. 각 항목별 계산 표와 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

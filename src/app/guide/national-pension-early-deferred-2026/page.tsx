@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-12';
 export const metadata: Metadata = {
   title: '국민연금 조기수령·연기연금 2026, 감액 6%·증액 7.2%',
   description:
-    '국민연금은 최대 5년 조기 수령하면 연 6%씩 최대 30% 깎이고, 최대 5년 연기하면 연 7.2%씩 최대 36% 늘어납니다. 조기·연기의 손익분기와 선택 기준을 국민연금법 §61·§62로 정리합니다.',
+    '조기수령은 연 6%씩 감액되고 연기연금은 연 7.2%씩 증액됩니다. 손익분기와 선택 기준을 국민연금법 §61·§62로 정리합니다.',
   keywords: [
     '국민연금 조기수령',
     '연기연금',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 조기수령·연기연금 2026, 감액 6%·증액 7.2%' }],
-    title: '국민연금 조기수령·연기연금 2026, 얼마 깎이고 얼마 늘어날까',
-    description: '조기 수령은 연 6% 감액(최대 30%), 연기 수령은 연 7.2% 증액(최대 36%). 손익분기와 선택 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 조기수령·연기연금 2026',
-    description: '조기 최대 30% 감액, 연기 최대 36% 증액. 손익분기는 대략 조기 77세·연기 84세.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function NationalPensionEarlyDeferred2026Page() {
     { name: '국민연금 조기수령·연기연금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '국민연금 조기수령·연기연금 2026, 감액·증액과 손익분기 총정리',
+    headline: '국민연금 조기수령·연기연금 2026, 감액·증액과 손익분기 정리',
     description:
       '국민연금 조기노령연금(연 6% 감액, 최대 30%)과 연기연금(연 7.2% 증액, 최대 36%)의 구조, 손익분기 나이, 상황별 선택 기준을 국민연금법 §61·§62 기준으로 정리.',
     url: URL,

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '재산세 완벽 가이드 2026 | calculatorhost',
+  title: '재산세 가이드 2026 | 6월 부과·7월 납부·공정시장가액 60%',
   description:
-    '2026년 재산세 부과·납부·공시가격·공정시장가액비율·1세대1주택 특례·연납 할인 완벽 가이드. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '재산세는 매년 6월 1일 소유자에게 부과되어 7월·9월 두 차례 납부합니다. 1세대1주택 특례와 연납 할인도 정리했습니다.',
   keywords: [
     '재산세',
     '재산세 계산',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 완벽 가이드 2026 | calculatorhost' }],
-    title: '재산세 완벽 가이드 2026, 7월 납부 시즌 직전 필독',
-    description: '공시가격 × 공정시장가액 60% 산정 + 1세대1주택 특례 + 분할 납부.',
     url: URL,
     type: 'article',
 
@@ -49,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 완벽 가이드 2026, 7월 납부 시즌',
-    description: '공시가격·공정시장가액·1세대1주택 특례·분할 납부 정리.',
 
   },
 };
@@ -102,10 +97,10 @@ export default function JunePropertyTaxPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '재산세 완벽 가이드' },
+    { name: '재산세 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 완벽 가이드 (2026), 6월 부과·7월 납부·공정시장가액 60%',
+    headline: '재산세 가이드 (2026), 6월 부과·7월 납부·공정시장가액 60%',
     description:
       '재산세 과세 기준일·납부 기한·계산식·1세대1주택 특례·세부담 상한·분할 납부 한 페이지.',
     url: URL,
@@ -117,8 +112,8 @@ export default function JunePropertyTaxPage() {
     keywords: ['재산세', '7월 납부', '공정시장가액비율', '1세대1주택 특례', '세부담상한'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '재산세 완벽 가이드 2026',
-    description: '2026년 재산세 부과·납부 완벽 가이드. 6월 1일 과세 기준일·7월 16~31일 1차 납부·공시가격·공정시장가액비율 60%·1세대1주택 특례·세부담 상한·연납 할인까지 한 페이지.',
+    name: '재산세 가이드 2026',
+    description: '2026년 재산세 부과·납부 가이드. 6월 1일 과세 기준일·7월 16~31일 1차 납부·공시가격·공정시장가액비율 60%·1세대1주택 특례·세부담 상한·연납 할인까지 한 페이지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -145,12 +140,12 @@ export default function JunePropertyTaxPage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '재산세 완벽 가이드' },
+                    { name: '재산세 가이드' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 10분 읽기 · 2026-05-03</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  재산세 완벽 가이드 (2026)
+                  재산세 가이드 (2026)
                   <br />
                   <span className="text-2xl text-text-secondary">· 6월 부과·7월 납부·공정시장가액 60%</span>
                 </h1>
@@ -424,7 +419,7 @@ export default function JunePropertyTaxPage() {
               </section>
 
               <ShareButtons
-                title="재산세 완벽 가이드 (2026), 6월 부과·7월 납부"
+                title="재산세 가이드 (2026), 6월 부과·7월 납부"
                 url={URL}
                 description="공시가격 × 공정시장가액 60% + 1세대1주택 특례 + 분할 납부."
               />

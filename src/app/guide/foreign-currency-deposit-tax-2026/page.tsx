@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-15';
 const DATE_MODIFIED = '2026-08-15';
 
 export const metadata: Metadata = {
-  title: '달러예금 세금 2026, 이자 15.4%와 환차익 과세 정리 | calculatorhost',
+  title: '달러예금 세금 2026, 이자 15.4%와 환차익 과세 정리',
   description:
-    '달러예금 이자는 15.4% 원천징수되고, 개인의 환차익은 원칙적으로 비과세입니다. 연 2,000만원 초과 시 금융소득종합과세로 합산되며, 원화 환산 1억원까지 예금자보호됩니다.',
+    '달러예금 이자는 15.4% 원천징수되고 개인의 환차익은 원칙적으로 비과세입니다. 금융소득종합과세 기준과 예금자보호 한도도 정리했습니다.',
   keywords: [
     '달러예금 세금',
     '외화예금 세금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '달러예금 세금 2026, 이자 15.4%와 환차익 과세 정리' }],
-    title: '달러예금 세금 2026, 이자 15.4%와 환차익 과세 정리',
-    description: '달러예금 이자는 15.4% 원천징수, 개인 환차익은 원칙적 비과세. 금융소득종합과세 기준과 외화예금 예금자보호 한도까지 한 번에 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '달러예금 세금 2026, 이자 15.4%와 환차익 과세 정리',
-    description: '외화예금 이자는 15.4% 원천징수, 개인 환차익은 원칙적 비과세. 소득세법 §16·§129·§14③, 예금자보호법 기준.',
   },
 };
 
@@ -356,7 +351,7 @@ export default function ForeignCurrencyDepositTax2026Page() {
                     href="/guide/interest-income-tax-15-4-percent-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">이자소득세 15.4% 완전 정리</div>
+                    <div className="font-semibold text-primary-500">이자소득세 15.4% 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">원천징수 구조와 계산법을 상세히 알아보세요.</p>
                   </Link>
                   <Link

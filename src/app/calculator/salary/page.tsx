@@ -30,6 +30,8 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { MainBackrefBox } from '@/components/network/MainBackrefBox';
 import { getMainCategoryUrlForCalculatorSlug } from '@/lib/network/main-backref';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/salary/';
 const TITLE = '연봉 실수령액 계산기 2026 | 4대보험·소득세 추정';
@@ -50,15 +52,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
   },
 };
 
@@ -147,7 +145,7 @@ export default function SalaryPage() {
     dateModified: '2026-10-02',
     isPartOf: getCategoryUrlForCalculator('salary'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '연봉 실수령액 계산기 사용 방법',
     description: DESCRIPTION,
     steps: [
@@ -167,7 +165,8 @@ export default function SalaryPage() {
       },
       { name: '결과 확인', text: '월 실수령액, 시급, 세금 상세내역을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -177,7 +176,7 @@ export default function SalaryPage() {
     { name: '연봉 실수령액' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '연봉 실수령액 핵심 용어',
     description: '직장인의 급여·세금·보험료 계산에 필요한 용어 정의',
     url: 'https://calculatorhost.com/calculator/salary/#glossary',
@@ -205,7 +204,8 @@ export default function SalaryPage() {
           '공제대상 가족에 포함된 8~20세 자녀 수에 따른 월 원천징수 공제. 2026년 3월 1일 이후 원천징수분부터 개정 공제액을 적용하며, 연말정산 자녀세액공제와 구분함. 근거: 소득세법 시행령 별표 2.',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -286,6 +286,7 @@ export default function SalaryPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <details className="card">
                 <summary className="cursor-pointer font-semibold">급여별 실수령액 예시</summary>
                 <section aria-label="연봉별 월 실수령액" className="mt-4">
@@ -542,6 +543,7 @@ export default function SalaryPage() {
                   안내를 받으시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

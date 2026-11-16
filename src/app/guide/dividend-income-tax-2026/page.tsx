@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-10';
 export const metadata: Metadata = {
   title: '배당소득세 2026 | 15.4% 원천징수·금융소득 종합과세',
   description:
-    '주식·펀드 배당금에 적용되는 배당소득세. 원천징수 15.4%, 금융소득 2,000만원 이하 분리과세·초과분 종합과세. 소득세법 §17·§129 기준 2026년 완벽 가이드.',
+    '배당소득세는 15.4% 원천징수가 기본이고, 이자와 합친 금융소득이 연 2,000만원을 넘으면 종합과세됩니다.',
   keywords: [
     '배당소득세',
     '배당소득세 계산',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '배당소득세 2026 | 15.4% 원천징수·금융소득 종합과세' }],
-    title: '배당소득세 2026, 원천징수부터 종합과세까지 완벽 정리',
-    description: '배당금 15.4% 원천징수되지만, 이자 포함 금융소득 2,000만원 초과 시 종합과세. 실제 계산 사례로 정확히 이해하세요.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '배당소득세 2026, 15.4% 원천징수·2천만원 기준 종합과세',
-    description: '주식·펀드 배당금은 매번 15.4% 떼인다. 하지만 이자 합산 2천만원 초과 시 전체 다른 소득과 합산해 다시 계산된다.',
   },
 };
 
@@ -100,9 +95,9 @@ export default function DividendIncomeTax2026Page() {
     { name: '배당소득세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '배당소득세 2026, 원천징수부터 종합과세까지 완벽 정리',
+    headline: '배당소득세 2026, 원천징수부터 종합과세까지 정리',
     description:
-      '주식·펀드 배당금에 적용되는 배당소득세. 15.4% 원천징수 원리, 금융소득 2,000만원 분리과세 기준, 초과분 종합과세 계산법을 실제 사례로 완전 정리.',
+      '주식·펀드 배당금에 적용되는 배당소득세. 15.4% 원천징수 원리, 금융소득 2,000만원 분리과세 기준, 초과분 종합과세 계산법을 실제 사례로 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

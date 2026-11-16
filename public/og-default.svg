@@ -49,7 +49,7 @@
 
   <!-- 메인 카피 -->
   <text x="120" y="320" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="#FFFFFF">
-    <tspan fill="url(#brand)">27 개</tspan> 한국 생활 계산기,
+    <tspan fill="url(#brand)">세금·금융</tspan> 생활 계산기,
   </text>
   <text x="120" y="395" font-family="Pretendard, Inter, system-ui, sans-serif" font-size="64" font-weight="800" letter-spacing="-2" fill="#FFFFFF">한 곳에서 정확하게</text>
 

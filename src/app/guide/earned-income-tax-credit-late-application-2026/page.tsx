@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-02';
 const DATE_MODIFIED = '2026-06-02';
 
 export const metadata: Metadata = {
-  title: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급 (6월~11월)',
+  title: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급',
   description:
-    '5월 정기신청을 놓쳤어도 11월 30일까지 기한 후 신청하면 95%를 받을 수 있습니다. 2026 근로장려금·자녀장려금 신청 기한, 지급액, 신청 방법, 소득·재산 요건을 완벽 정리했습니다.',
+    '5월 정기신청을 놓쳤어도 11월 30일까지 기한 후 접수하면 산정액의 95%를 받습니다. 지급액과 소득·재산 요건, 신청 방법을 정리했습니다.',
   keywords: [
     '근로장려금 기한 후 신청',
     '자녀장려금 기한 후 신청',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급 (6월~11월)' }],
-    title: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급',
-    description: '정기신청(5월 1~31일) 놓쳤어도 6월~11월 기한 후 신청으로 95% 수령. 신청 방법·지급일·소득 요건 가이드.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로·자녀장려금 기한 후 신청 2026, 95% 지급',
-    description: '5월 놓쳤어도 11월까지 기한 후 신청 가능. 95% 지급 받는 방법.',
   },
 };
 
@@ -98,12 +93,12 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '근로·자녀장려금 기한 후 신청 2026, 95% 지급' },
+    { name: '근로·자녀장려금 기한 후 신청 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급 (6월~11월)',
     description:
-      '정기신청을 놓친 직장인·자영업자를 위한 기한 후 신청 완벽 가이드. 95% 지급, 신청 기한 6월~11월 30일, 소득·재산 요건, 지급일.',
+      '정기신청을 놓친 직장인·자영업자를 위한 기한 후 신청 가이드. 95% 지급, 신청 기한 6월~11월 30일, 소득·재산 요건, 지급일.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +110,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
   const webPageLd = buildWebPageJsonLd({
     name: '근로·자녀장려금 기한 후 신청 2026, 95% 지급, 신청 기한 6월~11월',
     description:
-      '5월 정기신청 놓쳤어도 11월 30일까지 기한 후 신청하면 95% 수령. 신청 절차·지급액·소득 요건 완벽 정리.',
+      '5월 정기신청 놓쳤어도 11월 30일까지 기한 후 신청하면 95% 수령. 신청 절차·지급액·소득 요건 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -581,7 +576,7 @@ export default function EarnedIncomeTaxCreditLateApplication2026() {
               <ShareButtons
                 title="근로·자녀장려금 기한 후 신청 2026, 5월 놓쳤다면 95% 지급"
                 url={URL}
-                description="정기신청 놓친 경우 6월~11월 기한 후 신청으로 95% 수령 가능. 신청 방법·지급액·소득요건 완벽 정리."
+                description="정기신청 놓친 경우 6월~11월 기한 후 신청으로 95% 수령 가능. 신청 방법·지급액·소득요건 정리."
               />
 
               <section

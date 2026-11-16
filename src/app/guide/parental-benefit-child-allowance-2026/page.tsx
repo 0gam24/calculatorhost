@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-09';
 const DATE_MODIFIED = '2026-08-09';
 
 export const metadata: Metadata = {
-  title: '부모급여 아동수당 2026, 금액·중복·신청 총정리',
+  title: '부모급여 아동수당 2026, 금액·중복·신청 정리',
   description:
-    '2026년 부모급여는 0세 월 100만 원, 1세 월 50만 원이고 아동수당은 만 8세 미만 월 10만 원입니다. 소득과 무관하며 0~1세는 둘 다 받습니다. 신청 시기(출생 60일 이내)와 지급일(매월 25일)까지 정리했습니다.',
+    '2026년 부모급여는 0세 월 100만 원, 1세 월 50만 원이고 아동수당은 만 8세 미만 월 10만 원입니다. 신청 시기도 정리했습니다.',
   keywords: [
     '부모급여 2026',
     '아동수당 2026',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부모급여 아동수당 2026 금액과 신청' }],
-    title: '부모급여 아동수당 2026, 금액·중복·신청 총정리',
-    description: '0세 월 100만 원, 1세 월 50만 원 부모급여와 만 8세 미만 월 10만 원 아동수당. 중복 수급, 신청 시기, 지급일을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부모급여 아동수당 2026 금액·중복·신청',
-    description: '0세 100만·1세 50만 부모급여와 만 8세 미만 10만 아동수당. 중복 수급과 신청 60일 규칙 정리.',
   },
 };
 
@@ -96,7 +91,7 @@ export default function ParentalBenefitChildAllowance2026Page() {
     { name: '부모급여 아동수당 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '부모급여 아동수당 2026, 금액·중복·신청 총정리',
+    headline: '부모급여 아동수당 2026, 금액·중복·신청 정리',
     description:
       '2026년 부모급여(0세 100만·1세 50만)와 아동수당(만 8세 미만 10만)의 차이, 중복 수급, 신청 시기(출생 60일 이내 소급), 지급일(매월 25일), 어린이집 이용 시 지급 방식을 정리.',
     url: URL,
@@ -144,7 +139,7 @@ export default function ParentalBenefitChildAllowance2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부모급여 아동수당 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">금액·중복 수급·신청 총정리</span>
+                  <span className="text-2xl text-text-secondary">금액·중복 수급·신청 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   아이를 낳고 부모급여와 아동수당을 각각 얼마씩, 언제까지, 둘 다 받을 수 있는지 헷갈리는 부모를 위한 가이드입니다. 두 제도가 어떻게 다른지, 2026년 금액은 얼마인지, 0~1세는 왜 두 가지를 동시에 받는지, 신청은 언제까지 해야 소급되는지, 어린이집에 보내면 어떻게 지급되는지를 표와 함께 정리했습니다.

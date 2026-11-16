@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-13';
 const DATE_MODIFIED = '2026-07-13';
 
 export const metadata: Metadata = {
-  title: '기타소득 필요경비 60% 2026, 강연료·원고료 세금과 8.8% 원천징수',
+  title: '기타소득 필요경비 60% 2026, 강연료·원고료 8.8% 원천징수',
   description:
-    '강연료·원고료·자문료 같은 기타소득은 증빙 없이 60% 필요경비가 인정돼 8.8%만 원천징수됩니다. 기타소득금액 300만원 이하 분리과세 선택 기준과 절세 계산을 소득세법 §21로 정리합니다.',
+    '강연료·원고료·자문료 같은 기타소득은 증빙 없이 60% 필요경비가 인정돼 8.8%만 원천징수됩니다. 300만원 분리과세 선택 기준도 정리합니다.',
   keywords: [
     '기타소득 필요경비',
     '기타소득 60%',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기타소득 필요경비 60% 2026 강연료 원고료 세금' }],
-    title: '기타소득 필요경비 60% 2026, 강연료·원고료 세금 완전정리',
-    description: '강연료·원고료 등 기타소득은 60% 필요경비 인정으로 실효 8.8% 원천징수. 300만원 이하 분리과세 선택으로 절세.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기타소득 필요경비 60% 2026, 강연료·원고료 세금',
-    description: '강연료·원고료 기타소득 60% 경비 인정, 8.8% 원천징수. 기타소득금액 300만원 이하 분리과세. 소득세법 §21.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function OtherIncomeNecessaryExpense602026Page() {
     { name: '기타소득 필요경비 60% 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '기타소득 필요경비 60% 2026, 강연료·원고료 세금 완전정리',
+    headline: '기타소득 필요경비 60% 2026, 강연료·원고료 세금 정리',
     description:
       '강연료·원고료·자문료 등 기타소득의 60% 필요경비, 실효 8.8% 원천징수, 기타소득금액 300만원 이하 분리과세 선택, 종합과세 유불리까지 소득세법 §21 기준으로 정리.',
     url: URL,

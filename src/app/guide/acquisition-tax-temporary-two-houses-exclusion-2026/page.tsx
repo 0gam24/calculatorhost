@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-03';
 export const metadata: Metadata = {
   title: '취득세 일시적 2주택 중과 배제 2026, 종전주택 3년 처분',
   description:
-    '이사로 새 집을 먼저 샀는데 종전주택을 언제까지 팔아야 취득세 8% 중과를 피할까요. 지방세법 §13의2와 시행령 §28의5 기준, 신규주택 취득일부터 3년 이내 종전주택을 처분하면 1~3% 기본세율이 적용됩니다.',
+    '신규주택 취득일부터 3년 이내 종전주택을 처분하면 취득세 8% 중과 대신 1~3% 기본세율이 적용됩니다.',
   keywords: [
     '취득세 일시적 2주택',
     '일시적 2주택 취득세 3년',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '취득세 일시적 2주택 중과 배제 2026, 종전주택 3년 처분' }],
-    title: '취득세 일시적 2주택 중과 배제 2026: 종전주택 3년 처분 조건',
-    description: '신규주택 취득일부터 3년 이내 종전주택을 처분하면 취득세 8% 중과 대신 1~3% 기본세율이 적용됩니다. 조건·계산·미처분 추징까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '취득세 일시적 2주택 중과 배제 2026: 종전주택 3년 처분',
-    description: '지방세법 §13의2·시행령 §28의5 기준, 신규주택 취득일부터 3년 이내 종전주택 처분 시 기본세율(1~3%) 적용.',
   },
 };
 

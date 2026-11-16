@@ -14,15 +14,16 @@ import {
   buildSpeakableJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/guide/earned-income-tax-credit-vs-child/';
 const DATE_PUBLISHED = '2026-05-06';
 const DATE_MODIFIED = '2026-05-06';
 
 export const metadata: Metadata = {
-  title: '근로장려금 vs 자녀장려금 차이 | 5월 신고 전 반드시 확인 | calculatorhost',
+  title: '근로장려금 vs 자녀장려금 차이 2026, 자격·소득 기준·중복 수령',
   description:
-    '5월 소득 신고 시 근로장려금과 자녀장려금을 헷갈리는 직장인을 위한 비교 가이드. 자격 요건, 소득 기준, 신청 방법, 중복 수령 가능 여부를 명확히 정리했습니다.',
+    '근로장려금과 자녀장려금을 헷갈리는 직장인을 위해 두 제도를 비교했습니다. 자격 요건, 소득 기준, 신청 방법, 중복 수령 여부를 정리했습니다.',
   keywords: [
     '근로장려금',
     '자녀장려금',
@@ -35,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로장려금 vs 자녀장려금 차이 | 5월 신고 전 반드시 확인 | calculatorhost' }],
-    title: '근로장려금 vs 자녀장려금 | 5월 신고 전 필독',
-    description: '저소득 가구를 위한 두 제도의 명확한 차이, 자격 기준, 신청 방법을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -108,7 +106,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
     keywords: ['근로장려금', '자녀장려금', '소득기준', '신청방법', '5월신고'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '근로장려금 vs 자녀장려금 | 5월 신고 전 필독 가이드',
+    name: '근로장려금 vs 자녀장려금 | 5월 신고 전 확인할 차이',
     description:
       '저소득 가구를 위한 근로장려금과 자녀장려금의 명확한 차이. 자격 요건, 소득·재산 기준, 동시 수령 여부, 신청 방법을 정리했습니다.',
     url: URL,
@@ -117,7 +115,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '근로장려금 vs 자녀장려금 가이드 용어집',
     description: '저소득 가구를 위한 근로장려금과 자녀장려금 제도의 핵심 용어 정의',
     url: URL,
@@ -150,7 +148,8 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
         url: 'https://www.hometax.go.kr',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -277,6 +276,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
 
               {/* FAQ, 중간 배치 (GEO) */}
               <section className="mt-8">
+                <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
                 <FaqSection items={FAQ_ITEMS} />
               </section>
 
@@ -314,7 +314,7 @@ export default function EarnedIncomeTaxCreditVsChildPage() {
                     • 국세청 전자세금신고:
                     {' '}
                     <Link
-                      href="https://www.nts.go.kr/nts/na/na_01_01_01.html"
+                      href="https://www.nts.go.kr/"
                       target="_blank"
                       rel="noopener noreferrer nofollow"
                       className="text-primary-500 hover:underline"

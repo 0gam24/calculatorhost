@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '자동차세 계산 2026 | 배기량별 세율·연납 할인·차령경감',
   description:
-    '2026년 자동차세는 비영업용 승용차 기준 배기량 cc당 80~200원에 지방교육세 30%를 더해 산정합니다. 배기량별 시뮬레이션, 차령경감(3년차부터 연 5%, 최대 50%), 연납 할인(5% 공제율)까지 지방세법 기준 완전 정리.',
+    '비영업용 승용차 자동차세는 배기량 cc당 80~200원에 지방교육세 30%를 더해 냅니다. 최대 50% 차령경감과 연납 할인도 정리했습니다.',
   keywords: [
     '자동차세 계산',
     '자동차세 연납 할인',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 계산 2026 | 배기량별 세율·연납 할인·차령경감' }],
-    title: '자동차세 계산 2026, 배기량별 세율·연납 할인·차령경감',
-    description: '1,000cc 이하 80원, 1,601cc 이상 200원/cc. 차령경감·연납 할인 포함 완전 계산.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 계산 2026, 배기량별 세율·연납 할인',
-    description: '1,000cc 이하 80원/cc부터 1,601cc 이상 200원/cc까지. 지방세법 §127 기준.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function VehicleTax2026Page() {
     { name: '자동차세 계산 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차세 완전 정리 (2026), 배기량별 세율·연납 할인·차령경감',
+    headline: '자동차세 정리 (2026), 배기량별 세율·연납 할인·차령경감',
     description: '비영업용 승용차 배기량별 cc당 세율(80~200원)에 지방교육세 30%를 더한 자동차세 계산 방법. 차령경감, 연납 할인, 납부 시기 완전 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -112,7 +107,7 @@ export default function VehicleTax2026Page() {
     keywords: ['자동차세', '배기량 세율', '차령경감', '연납 할인', '지방세법'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '자동차세 완전 정리 2026',
+    name: '자동차세 정리 2026',
     description: '비영업용 승용차 자동차세 계산 방법. cc당 세율 80~200원 + 지방교육세 30% + 차령경감(3년차부터 연 5%) + 연납 할인(5% 공제율).',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -145,7 +140,7 @@ export default function VehicleTax2026Page() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금·자동차 · 8분 읽기 · 2026-06-14</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  2026 자동차세 완전 정리
+                  2026 자동차세 정리
                   <br />
                   <span className="text-2xl text-text-secondary">· 배기량 세율·연납 할인·차령경감</span>
                 </h1>
@@ -483,7 +478,7 @@ export default function VehicleTax2026Page() {
               </section>
 
               <ShareButtons
-                title="2026 자동차세 완전 정리, 배기량 세율·연납 할인·차령경감"
+                title="2026 자동차세 정리, 배기량 세율·연납 할인·차령경감"
                 url={URL}
                 description="비영업용 승용차 자동차세 계산 방법. 배기량별 cc당 세율(80~200원) + 지방교육세 30% + 차령경감·연납 할인. 지방세법 §127 기준."
               />

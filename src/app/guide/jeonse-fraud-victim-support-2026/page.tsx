@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-11';
 const DATE_MODIFIED = '2026-08-11';
 
 export const metadata: Metadata = {
-  title: '전세사기 피해자 지원 신청 2026 | 요건·절차·유효기간 총정리',
+  title: '전세사기 피해자 지원 신청 2026 | 요건·절차·유효기간 정리',
   description:
-    '전세사기 피해자로 인정받는 4가지 요건과 결정 신청 절차를 정리했습니다. 보증금 5억원 이하 기준, 우선매수권·LH 공공임대 지원, 유효기간 2027년 5월 31일까지. 전세사기특별법 기준.',
+    '전세사기 피해자로 인정받는 4가지 요건과 신청 절차, 우선매수권·LH 공공임대 지원을 정리했습니다.',
   keywords: [
     '전세사기 피해자',
     '전세사기 피해자 신청',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세사기 피해자 지원 신청 2026 요건과 절차' }],
-    title: '전세사기 피해자 지원 신청 2026 | 요건·절차·유효기간',
-    description: '전세사기 피해자 4가지 요건, 결정 신청 절차, 우선매수권과 LH 공공임대 지원까지 실전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세사기 피해자 지원 신청 2026 요건·절차',
-    description: '보증금 5억 이하 기준, 4가지 요건, 우선매수권·LH 지원, 유효기간 2027년 5월 31일.',
   },
 };
 
@@ -101,9 +96,9 @@ export default function JeonseFraudVictimSupport2026Page() {
     { name: '전세사기 피해자 지원 신청 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '전세사기 피해자 지원 신청 2026, 요건·절차·유효기간 총정리',
+    headline: '전세사기 피해자 지원 신청 2026, 요건·절차·유효기간 정리',
     description:
-      '전세사기 피해자로 인정받는 4가지 요건, 결정 신청 절차, 우선매수권과 LH 공공임대 지원, 조세채권 안분, 유효기간 2027년 5월 31일까지 완전 정리.',
+      '전세사기 피해자로 인정받는 4가지 요건, 결정 신청 절차, 우선매수권과 LH 공공임대 지원, 조세채권 안분, 유효기간 2027년 5월 31일까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -149,7 +144,7 @@ export default function JeonseFraudVictimSupport2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   전세사기 피해자 지원 신청 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">요건·절차·유효기간 총정리</span>
+                  <span className="text-2xl text-text-secondary">요건·절차·유효기간 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   보증금을 돌려받지 못할 위기에 놓인 임차인이라면, 전세사기 피해자로 결정받는 것이 각종 지원의 출발점입니다. 이 가이드는 피해자로 인정받는 4가지 요건, 관할 시·도에 결정을 신청하는 절차, 우선매수권과 LH 공공임대 같은 실제 지원, 그리고 신청 유효기간까지 전세사기특별법을 근거로 정리합니다.

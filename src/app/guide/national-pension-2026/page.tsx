@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',
   description:
-    '2026년 국민연금 개혁으로 보험료율 9%→9.5%, 소득대체율 41.5%→43%로 인상됩니다. 출생연도별 수령나이(61~65세), 예상수령액 결정 방법, 조기수령(최대 30%↓)·연기연금(최대 36%↑) 손익까지 정리했습니다.',
+    '2026년 국민연금 개혁으로 보험료율은 9.5%, 소득대체율은 43%로 오릅니다. 출생연도별 수령나이와 예상수령액 확인법을 정리했습니다.',
   keywords: [
     '국민연금',
     '국민연금 2026',
@@ -37,21 +37,14 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',
-    description:
-      '2026년 보험료율 9%→9.5%, 소득대체율 41.5%→43%. 출생연도별 수령나이, 조기수령·연기연금 손익 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 2026, 보험료율 9.5%·수령나이·개혁',
-    description: '보험료율·소득대체율 인상, 수령나이, 조기·연기연금 손익 완정리.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁' }],
   },
 };
 
@@ -97,7 +90,7 @@ export default function NationalPension2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '국민연금 2026, 보험료율·수령나이·예상수령액' },
+    { name: '국민연금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '국민연금 2026, 보험료율 9.5%·수령나이·예상수령액·개혁',

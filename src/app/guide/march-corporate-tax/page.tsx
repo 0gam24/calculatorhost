@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/guide/march-corporate-tax/';
 const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '법인세 신고 가이드 2026 (3월 31일 마감) | calculatorhost',
+  title: '법인세 신고 가이드 2026 (3월 31일 마감) | 세율·분납·가산세',
   description:
-    '12월 결산 법인의 법인세 신고·납부 완벽 가이드. 세율·공제·분납·전자신고·가산세까지. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '12월 결산 법인의 법인세 신고·납부 기한은 매년 3월 31일입니다. 세율과 공제, 분납, 가산세를 정리했습니다.',
   keywords: [
     '법인세 신고',
     '법인세',
@@ -37,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '법인세 신고 가이드 2026 (3월 31일 마감) | calculatorhost' }],
-    title: '법인세 신고 가이드 2026, 3월 31일 마감',
-    description: '법인세 세율·공제·분납·전자신고 종합.',
     url: URL,
     type: 'article',
 
@@ -108,7 +106,7 @@ export default function MarchCorporateTaxPage() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermsLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '법인세 신고 핵심 용어',
     description: '법인세, 과세기간, 세무조정, 이월결손금 등 법인세 신고 필수 용어 정의.',
     url: URL,
@@ -134,7 +132,8 @@ export default function MarchCorporateTaxPage() {
         alternateName: '이월결손금, 결손금이월',
       },
     ],
-  });
+  };
+  const definedTermsLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -304,6 +303,7 @@ export default function MarchCorporateTaxPage() {
                 </ul>
               </section>
 
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">

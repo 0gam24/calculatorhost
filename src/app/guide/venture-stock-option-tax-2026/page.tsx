@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-11';
 export const metadata: Metadata = {
   title: '스톡옵션 세금 2026 | 행사이익 과세와 벤처 비과세 특례',
   description:
-    '스톡옵션(주식매수선택권) 행사이익은 재직 중이면 근로소득, 퇴직 후면 기타소득으로 과세됩니다. 벤처기업 비과세 특례 연 2억원(누적 5억), 5년 분할납부, 양도소득 과세특례를 조세특례제한법으로 정리했습니다.',
+    '스톡옵션 행사이익은 재직 중이면 근로소득, 퇴직 후면 기타소득으로 과세됩니다. 벤처기업은 연 2억원(누적 5억)까지 비과세 특례가 있습니다.',
   keywords: [
     '스톡옵션 세금',
     '주식매수선택권 과세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '스톡옵션 세금 2026 행사이익 과세와 벤처 비과세 특례' }],
-    title: '스톡옵션 세금 2026 | 행사이익 과세와 벤처 비과세 특례',
-    description: '행사이익은 근로소득 또는 기타소득. 벤처 비과세 연 2억(누적 5억), 5년 분할, 양도소득 특례 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '스톡옵션 세금 2026 행사이익 과세',
-    description: '재직 중 행사는 근로소득, 퇴직 후는 기타소득. 벤처 비과세 연 2억·누적 5억.',
   },
 };
 

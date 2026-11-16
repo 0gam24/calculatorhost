@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-17';
 export const metadata: Metadata = {
   title: '소액임차인 최우선변제금 2026, 서울 5500만원 보호 기준',
   description:
-    '소액임차인은 경매·공매 시 다른 담보권자보다 먼저 보증금 일부를 돌려받습니다. 주택임대차보호법 §8 기준 지역별 보증금 범위와 최우선변제금(서울 5,500만원 등)을 임차인 사례로 정리합니다.',
+    '소액임차인은 경매 때 다른 담보권자보다 먼저 보증금 일부를 돌려받습니다. 서울 5,500만원 등 지역별 최우선변제금을 정리합니다.',
   keywords: [
     '소액임차인 최우선변제',
     '최우선변제금 2026',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '소액임차인 최우선변제금 2026, 서울 5500만원 보호 기준' }],
-    title: '소액임차인 최우선변제금 2026, 지역별 보증금 범위와 변제금액',
-    description: '경매 시 소액임차인이 먼저 돌려받는 최우선변제금. 서울 5,500만원 등 지역별 기준을 주택임대차보호법 §8로 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '소액임차인 최우선변제금 2026',
-    description: '경매 시 먼저 돌려받는 보증금. 서울 5,500만원 등. 주택임대차보호법 §8.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function SmallTenantPriorityRepayment2026Page() {
     { name: '소액임차인 최우선변제금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '소액임차인 최우선변제금 2026, 지역별 보증금 범위와 변제금액 완전 정리',
+    headline: '소액임차인 최우선변제금 2026, 지역별 보증금 범위와 변제금액 정리',
     description:
       '경매·공매 시 소액임차인이 우선 배당받는 최우선변제금(주택임대차보호법 §8). 서울 5,500만원 등 지역별 보증금 범위와 변제금액, 요건, 주택가액 2분의 1 한도까지 임차인 관점에서 정리.',
     url: URL,

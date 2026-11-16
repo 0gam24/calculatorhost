@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-19';
 export const metadata: Metadata = {
   title: '상속세 인적공제 2026, 자녀 5천만 미성년 장애인 계산',
   description:
-    '상속세 인적공제는 자녀 1인 5천만, 연로자 5천만, 미성년자·장애인은 1천만에 연수를 곱해 계산합니다(상증법 §20). 기초공제 2억을 더한 합계와 일괄공제 5억 중 큰 금액을 적용하는 선택 원리를 사례로 정리했습니다.',
+    '상속세 인적공제는 자녀·연로자 1인 5천만원, 미성년자·장애인은 1천만원에 연수를 곱합니다. 기초공제 2억을 더해 일괄공제 5억과 비교합니다.',
   keywords: [
     '상속세 인적공제',
     '상속세 자녀공제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 인적공제 2026, 자녀 5천만 미성년 장애인 계산' }],
-    title: '상속세 인적공제 2026, 자녀·미성년·장애인·연로자 공제 계산',
-    description: '자녀 5천만·연로자 5천만·미성년/장애인 연수 곱하기. 기초공제 2억 합계와 일괄공제 5억 중 유리한 쪽을 고르는 법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속세 인적공제 2026, 자녀 5천만 미성년 장애인 계산',
-    description: '상속세 기초공제·인적공제 vs 일괄공제 5억, 어느 쪽이 유리할까. 상증법 §20 계산법.',
   },
 };
 

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-24';
 export const metadata: Metadata = {
   title: '종합소득세 환급금 입금 시기 2026 | 신고 후 언제 받을까?',
   description:
-    '5월 31일 종소세 신고 후 환급금은 언제 입금될까? 신고 시점별 환급 일정(6월 중순~7월 말) · 계좌 미등록 시 우편 통지 지연 · 가산세 발생 시 자동 차감 · 홈택스 추적 방법 · 환급 우선순위 · 국세기본법 §51-§52 완벽 정리.',
+    '종합소득세 환급금은 보통 신고 후 30~45일 걸려 6월 중순에서 7월 말 사이 입금됩니다. 차감 사유와 홈택스 조회법을 정리했습니다.',
   keywords: [
     '환급금 입금 시기',
     '종합소득세 환급',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 환급금 입금 시기 2026 | 신고 후 언제 받을까?' }],
-    title: '종합소득세 환급금 입금 시기 2026, 신고 후 언제 받을까?',
-    description: '5월 신고 후 약 30~45일, 6월 중순~7월 말 환급금 입금 예상. 신고 시점·계좌 등록 여부·가산세 발생 시 차감.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합소득세 환급금 입금 시기 2026',
-    description: '신고 후 환급금은 언제 받을까? 신고 시점별 환급 예상일 정리.',
   },
 };
 
@@ -75,7 +70,7 @@ const FAQ_ITEMS = [
   {
     question: '환급금이 예정일까지 입금 안 됐으면?',
     answer:
-      '신고 후 60일 경과해도 입금 미실시 시 국세청 콜센터(1588-0060)로 문의. 계좌 오류·통지 미수령·추가 검사 등 이유 확인 가능. 개인정보 인증 후 상담원에게 상황 설명.',
+      '신고 후 60일 경과해도 입금 미실시 시 국세상담센터(국번 없이 126)로 문의. 계좌 오류·통지 미수령·추가 검사 등 이유 확인 가능. 개인정보 인증 후 상담원에게 상황 설명.',
   },
   {
     question: '가산세가 발생했는데 환급금에서 자동 차감되나요?',
@@ -101,7 +96,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
     { name: '종소세 환급금 입금 시기' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합소득세 환급금 입금 시기 2026 완벽 정리',
+    headline: '종합소득세 환급금 입금 시기 2026 정리',
     description:
       '5월 신고 후 환급금 입금 일정(30~45일) · 신고 시점별 환급일 예상 · 계좌 등록 필수 · 가산세 자동 차감 · 홈택스 추적 방법 · 환급가산금률 1.2% · 국세기본법 §51-§52 법적 근거.',
     url: URL,
@@ -113,9 +108,9 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
     keywords: ['환급금 입금 시기', '종소세 환급', '홈택스 환급', '신고 후 환급 일정'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '종합소득세 환급금 입금 시기 2026 완벽 정리',
+    name: '종합소득세 환급금 입금 시기 2026 정리',
     description:
-      '5월 31일 종소세 신고 후 환급금은 언제 입금될까? 신고 시점별 예상 입금일(6월 중순~7월 말) · 계좌 미등록 시 우편 통지 지연 · 가산세 자동 차감 · 환급가산금 1.2% · 홈택스 추적 방법 · 국세기본법 근거 완벽 정리.',
+      '5월 31일 종소세 신고 후 환급금은 언제 입금될까? 신고 시점별 예상 입금일(6월 중순~7월 말) · 계좌 미등록 시 우편 통지 지연 · 가산세 자동 차감 · 환급가산금 1.2% · 홈택스 추적 방법 · 국세기본법 근거 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -583,7 +578,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                       <strong>Step 2:</strong> "국세 부과·결정내역"에서 가산세·차감액·체납세금 확인
                     </p>
                     <p>
-                      <strong>Step 3:</strong> 국세청 콜센터(1588-0060) 또는 관할 세무서 환급금 담당자에 전화 문의
+                      <strong>Step 3:</strong> 국세상담센터(국번 없이 126) 또는 관할 세무서 환급금 담당자에 전화 문의
                     </p>
                     <p>
                       <strong>Step 4:</strong> 필요 시 계좌 재확인·주소 변경·체납세금 납부 진행
@@ -635,7 +630,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   <li>
                     □ 신고 후 25~30일 경과 시 홈택스 "환급금 조회"에서 환급액 확인 (교부결정통지서 발송 후 1주일 내)
                   </li>
-                  <li>□ 신고 후 45일 이상 지연 시 국세청 콜센터(1588-0060) 문의</li>
+                  <li>□ 신고 후 45일 이상 지연 시 국세상담센터(국번 없이 126) 문의</li>
                   <li>□ 체납세금 확인 (환급금에서 우선 차감됨)</li>
                 </ul>
               </section>
@@ -654,7 +649,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -697,7 +692,7 @@ export default function ComprehensiveIncomeTaxRefundTiming2026Page() {
                   <strong>법적 근거</strong>: 국세기본법 §51 (국세환급금) · §51의2 (국세환급금 충당) · §52 (환급가산금) ·
                   소득세법 §70의2 (무신고가산세). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-11';
 export const metadata: Metadata = {
   title: 'ETF 세금 2026, 국내 vs 해외상장 매매차익·분배금 과세 비교',
   description:
-    'ETF 투자 세금의 모든 것. 국내상장 주식형·기타 ETF의 배당소득세 15.4%, 해외상장 ETF의 양도소득세 22% 구조 차이. 금융소득 2000만원 종합과세 기준.',
+    'ETF 매매차익은 국내주식형이면 비과세, 국내상장 기타형은 배당소득세 15.4%, 해외상장은 양도소득세 22%가 붙습니다.',
   keywords: [
     'ETF 세금',
     'ETF 과세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'ETF 세금 2026, 국내 vs 해외상장 매매차익·분배금 과세 비교' }],
-    title: 'ETF 세금 2026, 국내 vs 해외상장 매매차익·분배금 과세 비교',
-    description: 'ETF 투자 세금의 모든 것. 국내상장 주식형·기타 ETF의 배당소득세 15.4%, 해외상장 ETF의 양도소득세 22% 차이.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ETF 세금 2026, 국내 vs 해외상장 매매차익·분배금 과세 비교',
-    description: 'ETF 투자 세금 완벽 가이드. 국내 vs 해외 상장 ETF의 세금 구조와 실제 세액 계산법.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function EtfTaxDomesticOverseas2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: 'ETF 세금 2026, 국내 vs 해외상장 매매차익·분배금 과세 비교',
     description:
-      'ETF 투자 세금 완벽 가이드. 국내상장 주식형·기타·해외상장 ETF의 과세 구조, 배당소득세 15.4% vs 양도소득세 22%, 금융소득 종합과세 조건까지 정확히 정리.',
+      'ETF 투자 세금 가이드. 국내상장 주식형·기타·해외상장 ETF의 과세 구조, 배당소득세 15.4% vs 양도소득세 22%, 금융소득 종합과세 조건까지 정확히 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -442,7 +437,7 @@ export default function EtfTaxDomesticOverseas2026Page() {
                     href="/guide/dividend-income-tax-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">배당소득세 2026 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">배당소득세 2026 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">배당금, 분배금, 이자에 붙는 세금의 모든 것.</p>
                   </Link>
                   <Link

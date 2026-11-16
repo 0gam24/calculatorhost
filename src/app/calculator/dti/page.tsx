@@ -28,6 +28,7 @@ import {
   buildHowToJsonLd,
   buildSpeakableJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/dti/';
 const DATE_PUBLISHED = '2026-05-11';
@@ -47,16 +48,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: 'DTI 계산기 2026, LTV·DSR 통합 대출한도 계산',
-      },
-    ],
-    title: 'DTI 계산기 2026 | LTV·DSR 함께 계산',
-    description: 'DTI 공식 + 한도 자동 계산.',
     url: URL,
     type: 'website',
     locale: 'ko_KR',
@@ -134,13 +125,14 @@ export default function DtiPage() {
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
+    isPartOf: 'https://calculatorhost.com/category/finance/',
   });
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '금융', url: 'https://calculatorhost.com/category/finance/' },
     { name: 'DTI 계산기' },
   ]);
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: 'DTI 계산기 사용 방법',
     description: 'DTI(부채상환비율) 를 계산하고 대출한도 확인하는 단계별 가이드',
     steps: [
@@ -162,7 +154,8 @@ export default function DtiPage() {
         text: '실 신청 가능한 최대 대출액과 월 상환액을 확인합니다.',
       },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -231,6 +224,7 @@ export default function DtiPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <section className="card border-l-4 border-l-primary-500 bg-primary-500/5">
                 <h2 className="mb-2 text-xl font-semibold">DTI·DSR·LTV 통합 계산</h2>
                 <p className="mb-3 text-sm text-text-secondary">

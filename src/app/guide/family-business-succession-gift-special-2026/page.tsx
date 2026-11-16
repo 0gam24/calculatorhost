@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '가업승계 증여세 과세특례 2026, 공제·세율·사후관리 5년',
   description:
-    '조세특례제한법 §30의6의 적격 승계 요건을 갖추면 가업자산상당액의 과세가액에서 10억원을 공제하고 10%(120억 초과분 20%) 세율을 적용합니다. 현행 대표이사 취임 기한, 사후관리 5년 요건과 예외를 정리합니다.',
+    '가업승계 과세특례는 10억원을 공제하고 10%(120억 초과분 20%) 세율을 적용합니다. 대표이사 취임 기한과 사후관리 5년을 정리합니다.',
   keywords: [
     '가업승계 증여세',
     '가업승계 증여세 과세특례',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '가업승계 증여세 과세특례 2026, 공제·세율·사후관리 5년',
-      },
-    ],
-    title: '가업승계 증여세 과세특례 2026, 요건과 사후관리 5년',
-    description:
-      '적격 가업 승계는 가업자산상당액에서 10억원 공제·10%(120억 초과분 20%) 세율을 적용합니다. 취임 기한과 사후관리 조건을 확인하세요.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '가업승계 증여세 과세특례 2026, 요건·사후관리 5년',
-    description:
-      '10억원 공제, 10%(120억 초과분 20%) 세율. 대표이사 취임 기한·사후관리 5년 핵심 정리. 조세특례제한법 §30의6.',
   },
 };
 

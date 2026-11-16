@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-17';
 export const metadata: Metadata = {
   title: '종부세 고령자·장기보유 세액공제 2026, 최대 80% 감면',
   description:
-    '1세대1주택자는 고령자 세액공제(최대 40%)와 장기보유 세액공제(최대 50%)를 합쳐 종합부동산세를 최대 80%까지 줄일 수 있습니다. 종합부동산세법 §9 기준 공제율과 계산법을 은퇴·주택자 사례로 정리합니다.',
+    '1세대1주택자는 나이와 보유 기간에 따른 세액공제를 합쳐 종부세를 최대 80%까지 줄입니다. 고령자 40%, 장기보유 50%가 상한입니다.',
   keywords: [
     '종부세 고령자 세액공제',
     '종부세 장기보유 세액공제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종부세 고령자·장기보유 세액공제 2026, 최대 80% 감면' }],
-    title: '종부세 고령자·장기보유 세액공제 2026, 합산 최대 80%',
-    description: '1세대1주택자의 고령자(최대 40%)+장기보유(최대 50%) 세액공제로 종부세를 최대 80% 감면. 종합부동산세법 §9 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종부세 고령자·장기보유 세액공제 2026',
-    description: '1세대1주택 고령자+장기보유 합산 최대 80% 감면. 종합부동산세법 §9.',
   },
 };
 
@@ -328,6 +323,13 @@ export default function ComprehensiveRealEstateTaxElderlyLongtermCredit2026Page(
                   >
                     <div className="font-semibold text-primary-500">종합부동산세 계산기</div>
                     <p className="mt-1 text-sm text-text-secondary">공시가격을 입력해 종부세와 공제 효과를 확인하세요.</p>
+                  </Link>
+                  <Link
+                    href="/guide/comprehensive-real-estate-tax-payment-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
+                  >
+                    <div className="font-semibold text-primary-500">종부세 납부기간 2026</div>
+                    <p className="mt-1 text-sm text-text-secondary">12월 1~15일 납부, 고지서 확인과 분납·카드납부 방법.</p>
                   </Link>
                   <Link
                     href="/guide/comprehensive-real-estate-tax-single-house-credit-2026/"

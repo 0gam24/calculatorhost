@@ -23,13 +23,15 @@ import {
 } from '@/lib/seo/jsonld';
 import { AcquisitionCalculator } from './AcquisitionCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/acquisition-tax/';
 
 export const metadata: Metadata = {
   title: '취득세 계산기 2026 | 주택 매매 예상세액·조건 확인',
   description:
-    '주택 매매가와 주택 수로 취득세·지방교육세·농어촌특별세 예상액을 계산합니다. 증여·상속·감면은 따로 확인하세요.',
+    '매매가와 주택 수로 취득세·지방교육세·농어촌특별세 예상액을 계산합니다. 증여·상속·감면은 따로 확인하세요.',
   keywords: [
     '취득세 계산기',
     '아파트 취득세',
@@ -44,9 +46,6 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
   },
   openGraph: {
-    title: '취득세 계산기 2026 | 주택 매매 예상세액',
-    description:
-      '주택 수·면적·조정지역과 확인된 취득 조건에 따른 예상액. 특례·감면 등 미지원 조건은 확인 안내를 표시합니다.',
     url: URL,
     type: 'website',
   },
@@ -125,7 +124,7 @@ export default function AcquisitionTaxPage() {
     dateModified: '2026-09-30',
     isPartOf: getCategoryUrlForCalculator('acquisition-tax'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '취득세 계산기 사용 방법',
     description: '부동산 구매금액, 거래유형, 주택수를 입력하여 취득세를 계산하는 단계별 가이드',
     steps: [
@@ -138,7 +137,8 @@ export default function AcquisitionTaxPage() {
       },
       { name: '취득세 결과 확인', text: '지원 범위의 본세와 부가세 예상액을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -148,6 +148,41 @@ export default function AcquisitionTaxPage() {
     { name: '취득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+
+  const glossaryData = {
+    name: '취득세 핵심 용어',
+    description: '주택·부동산 취득 시 적용되는 취득세 산정 용어집',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '취득세',
+        description:
+          '부동산·자동차·선박·항공기 등 자산 취득 시 부과되는 지방세. 주택은 취득 원인·과세표준·세대 주택 수와 특례에 따라 달라짐. 근거: 지방세법 §10 이하.',
+        url: 'https://www.wetax.go.kr',
+      },
+      {
+        name: '농어촌특별세',
+        alternateName: '농특세',
+        description:
+          '일반 주택 매매의 국민주택규모 초과 시 과세표준에 일반 0.2%, 8% 중과 0.6%, 12% 중과 1% 적용. 감면 관련 과세는 별도 확인. 근거: 농어촌특별세법.',
+      },
+      {
+        name: '지방교육세',
+        description:
+          '취득 원인별로 다른 지방세. 일반 매매는 본세의 10%, 중과는 과세표준의 0.4%, 일반 증여 0.3%, 일반 상속 0.16%. 근거: 지방세법 제151조.',
+      },
+      {
+        name: '생애최초 주택구입 감면',
+        description:
+          '취득 시점의 요건과 사후관리를 확인해야 하는 감면. 이 계산기에서는 자동 적용하지 않고 조건 확인을 안내. 근거: 지방세특례제한법 §36의3.',
+      },
+      {
+        name: '조정대상지역 다주택 중과',
+        description:
+          '일반 주택 매매에서 취득 후 조정지역 2주택·비조정지역 3주택은 8%, 조정지역 3주택 이상·비조정지역 4주택 이상은 12%. 예외는 별도 확인. 근거: 지방세법 §13의2.',
+      },
+    ],
+  };
 
   return (
     <>
@@ -179,40 +214,7 @@ export default function AcquisitionTaxPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            buildDefinedTermSetJsonLd({
-              name: '취득세 핵심 용어',
-              description: '주택·부동산 취득 시 적용되는 취득세 산정 용어집',
-              url: `${URL}#glossary`,
-              terms: [
-                {
-                  name: '취득세',
-                  description:
-                    '부동산·자동차·선박·항공기 등 자산 취득 시 부과되는 지방세. 주택은 취득 원인·과세표준·세대 주택 수와 특례에 따라 달라짐. 근거: 지방세법 §10 이하.',
-                  url: 'https://www.wetax.go.kr',
-                },
-                {
-                  name: '농어촌특별세',
-                  alternateName: '농특세',
-                  description:
-                    '일반 주택 매매의 국민주택규모 초과 시 과세표준에 일반 0.2%, 8% 중과 0.6%, 12% 중과 1% 적용. 감면 관련 과세는 별도 확인. 근거: 농어촌특별세법.',
-                },
-                {
-                  name: '지방교육세',
-                  description:
-                    '취득 원인별로 다른 지방세. 일반 매매는 본세의 10%, 중과는 과세표준의 0.4%, 일반 증여 0.3%, 일반 상속 0.16%. 근거: 지방세법 제151조.',
-                },
-                {
-                  name: '생애최초 주택구입 감면',
-                  description:
-                    '취득 시점의 요건과 사후관리를 확인해야 하는 감면. 이 계산기에서는 자동 적용하지 않고 조건 확인을 안내. 근거: 지방세특례제한법 §36의3.',
-                },
-                {
-                  name: '조정대상지역 다주택 중과',
-                  description:
-                    '일반 주택 매매에서 취득 후 조정지역 2주택·비조정지역 3주택은 8%, 조정지역 3주택 이상·비조정지역 4주택 이상은 12%. 예외는 별도 확인. 근거: 지방세법 §13의2.',
-                },
-              ],
-            }),
+            buildDefinedTermSetJsonLd(glossaryData),
           ),
         }}
       />
@@ -264,6 +266,7 @@ export default function AcquisitionTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="취득세는 부동산을 취득할 때 부과되는 지방세입니다. 매매·증여·상속 등 취득 방법과 취득 시점의 주택 수, 조정대상지역 여부, 주택 면적에 따라 세율이 달라집니다(지방세법 §10-§17)."
                 table={{
@@ -536,7 +539,7 @@ export default function AcquisitionTaxPage() {
                       className="inline-flex items-center gap-1 font-medium text-primary-700 underline dark:text-primary-300"
                     >
                       <Icon name="chevron-right" size={14} />
-                      <span>재산세 완벽 가이드 (6월 부과·7월 납부)</span>
+                      <span>재산세 가이드 (6월 부과·7월 납부)</span>
                     </a>
                   </li>
                 </ul>
@@ -632,6 +635,7 @@ export default function AcquisitionTaxPage() {
                   바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

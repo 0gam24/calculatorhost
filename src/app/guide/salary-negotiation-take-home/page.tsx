@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-05-06';
 const DATE_MODIFIED = '2026-05-06';
 
 export const metadata: Metadata = {
-  title: '연봉협상 전 꼭 확인하세요 | 실수령액 정확 시뮬레이션 2026 | calculatorhost',
+  title: '연봉협상 전 꼭 확인하세요 | 실수령액 정확 시뮬레이션 2026',
   description:
-    '협상 전 연봉 실수령액을 정확히 계산하는 방법. 세전 제시액 vs 세후 기대액, 상여금·인센티브 영향도, 연봉 결정 카드 만드는 법. 직장인 필독 가이드.',
+    '연봉협상 전에 세전 제시액이 세후 월 실수령액으로 얼마인지 계산하는 법을 정리했습니다. 상여금·비과세 수당 영향도 담았습니다.',
   keywords: [
     '연봉협상',
     '실수령액 계산',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연봉협상 전 꼭 확인하세요 | 실수령액 정확 시뮬레이션 2026 | calculatorhost' }],
-    title: '연봉협상 전 꼭 확인하세요 | 실수령액 시뮬레이션',
-    description: '이직·협상 제안 받았을 때, 연봉 수치의 함정 찾아내고 정확한 월 실수령액 계산하는 법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -87,7 +84,7 @@ export default function SalaryNegotiationTakeHomePage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '연봉협상 실수령액 시뮬레이션' },
+    { name: '연봉협상 실수령액' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '연봉협상 전 꼭 확인하세요, 실수령액 정확 시뮬레이션 (2026)',

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-29';
 export const metadata: Metadata = {
   title: '국민연금 유족연금 2026, 수급요건과 지급률 40·50·60%',
   description:
-    '국민연금 가입자나 수급자가 사망하면 생계를 함께하던 유족에게 유족연금이 지급됩니다. 가입기간 10년 미만 40%, 20년 이상 60% 지급률과 유족 순위, 본인 노령연금과 겹칠 때 선택 규칙을 국민연금법 기준으로 정리했습니다.',
+    '국민연금 가입자나 수급자가 사망하면 생계를 함께하던 가족이 유족연금을 받습니다. 지급률 40~60%와 순위를 정리했습니다.',
   keywords: [
     '국민연금 유족연금',
     '유족연금 지급률',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 유족연금 2026, 수급요건과 지급률 40·50·60%' }],
-    title: '국민연금 유족연금 2026, 누가 얼마나 받나',
-    description: '지급률 40·50·60%, 유족 순위, 노령연금과 겹칠 때 선택 규칙을 국민연금법으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 유족연금 2026, 수급요건과 지급률',
-    description: '가입기간별 40·50·60% 지급률과 유족 순위, 노령연금 중복 조정을 국민연금법 §72·§74·§56으로 정리.',
   },
 };
 

@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '환전 수수료·환율 우대율 계산 2026, 매매기준율·스프레드 완전정리',
+  title: '환전 수수료·환율 우대율 계산 2026, 매매기준율·스프레드 정리',
   description:
-    '환전할 때 "우대 90%"가 실제로 얼마를 절약하는지, 매매기준율·현찰 스프레드·우대율의 의미와 계산법을 공식으로 설명합니다. 해외 송금과 현찰의 차이도 정리.',
+    '환전 우대 90%가 실제로 얼마를 아끼는지 매매기준율·현찰 스프레드·우대율 공식으로 계산합니다. 해외 송금과 현찰의 차이도 정리했습니다.',
   keywords: [
     '환전 수수료',
     '환율 우대율',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '환전 수수료·환율 우대율 계산 2026',
-      },
-    ],
-    title: '환전 수수료·환율 우대율 계산 2026',
-    description: '매매기준율, 스프레드, 우대율이 실제 환전 비용에 미치는 영향을 계산해봅시다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '환전 수수료·환율 우대율 계산 2026',
-    description: '해외여행 환전 시 우대율이 실제로 얼마를 절약하는지 명확하게 정리',
   },
 };
 

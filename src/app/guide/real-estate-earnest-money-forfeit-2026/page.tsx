@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-03';
 export const metadata: Metadata = {
   title: '부동산 계약금 해약금·가계약금 2026, 배액상환·반환 기준',
   description:
-    '부동산 계약금을 걸고 마음이 바뀌면 어떻게 되는지 정리했습니다. 매수인은 계약금 포기, 매도인은 배액상환으로 해제 가능(민법 §565). 이행착수 시한, 가계약금 반환, 일부 지급 판례까지.',
+    '민법 §565에 따라 매수인은 계약금 포기, 매도인은 배액상환으로 해제할 수 있습니다. 이행착수 시한과 가계약금 반환 기준도 정리했습니다.',
   keywords: [
     '계약금 포기 계약해지',
     '매도인 배액배상',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부동산 계약금 해약금·가계약금 2026, 배액상환·반환 기준' }],
-    title: '부동산 계약금 해약금·가계약금 2026, 배액상환·반환 기준',
-    description: '매수인 포기 vs 매도인 배액상환의 정확한 기준. 이행착수 시한, 가계약금 반환 여부, 계약금 일부 지급 시 대법원 판례까지 민법 §565 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부동산 계약금 해약금·가계약금 2026, 배액상환·반환 기준',
-    description: '계약금 5,000만 원 포기, 매도인 배액 1억 상환. 이행착수 전까지만 가능. 가계약금은 사안별. 민법 §565·§398 정리.',
   },
 };
 
@@ -104,7 +99,7 @@ export default function RealEstateEarnestMoneyForfeit2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '부동산 계약금 해약금·가계약금 2026, 배액상환·반환 기준',
     description:
-      '부동산 계약금 해약금·가계약금 완전 정리. 매수인 포기, 매도인 배액상환, 이행착수 시한, 가계약금 반환 여부, 계약금 일부 지급 시 대법원 판례를 민법 §565·§398 기준으로 설명합니다.',
+      '부동산 계약금 해약금·가계약금 정리. 매수인 포기, 매도인 배액상환, 이행착수 시한, 가계약금 반환 여부, 계약금 일부 지급 시 대법원 판례를 민법 §565·§398 기준으로 설명합니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -150,7 +145,7 @@ export default function RealEstateEarnestMoneyForfeit2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부동산 계약금 해약금·가계약금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">배액상환·반환 기준 완전 정리</span>
+                  <span className="text-2xl text-text-secondary">배액상환·반환 기준 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   집을 계약하고 계약금을 걸었는데 갑자기 마음이 바뀌었을 때, 그 돈은 정말 다 날리는 것인지, 파는 사람이 취소하면 배로 돌려받을 수 있는지, 문자로 주고받은 가계약금은 어떻게 되는지 헷갈리는 분들이 많습니다. 결론부터 말하면 우리 민법 §565가 정한 해약금 규정에 따라 매수인은 계약금을 포기하고, 매도인은 받은 계약금의 두 배를 상환해 계약을 해제할 수 있습니다. 다만 상대방이 이행에 착수한 뒤에는 이 방법이 통하지 않으며, 가계약금은 사안별로 판단이 갈립니다.
@@ -483,10 +478,9 @@ export default function RealEstateEarnestMoneyForfeit2026Page() {
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
-                  <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터(민법 원문)</a>,{' '}
+                  <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터(민법 원문·판례)</a>,{' '}
                   <a href="https://easylaw.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">찾기쉬운 생활법령정보(부동산 매매)</a>,{' '}
-                  <a href="https://www.klac.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">대한법률구조공단(무료 법률 상담)</a>,{' '}
-                  <a href="https://glaw.scourt.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">대법원 종합법률정보(판례 검색)</a>.
+                  <a href="https://www.klac.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">대한법률구조공단(무료 법률 상담)</a>.
                 </p>
               </section>
 

@@ -14,6 +14,7 @@ import {
   buildSpeakableJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/guide/split-sell-profit-taking-strategy-2026/';
 const DATE_PUBLISHED = '2026-06-28';
@@ -22,13 +23,10 @@ const DATE_MODIFIED = '2026-06-28';
 export const metadata: Metadata = {
   title: '분할매도 익절 전략 2026 | 평균 매도단가로 수익 지키기',
   description:
-    '목표가 달성 후 보유분을 나눠 익절하는 분할매도 전략. 일괄매도 대비 고점 선택 리스크 분산, 추세 지속 시 추가 수익. 계산 공식·실전 사례·FAQ·관련 계산기 링크. 2026 업데이트.',
+    '분할매도는 목표가 도달 후 보유분을 나눠 파는 익절 전략으로, 고점 판단 실수를 줄여 줍니다. 평균 매도단가 계산법과 사례를 정리했습니다.',
   keywords: ['분할매도', '익절', '평균 매도단가', '수익실현', '투자 전략', '주식 익절', '수익 취하기'],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분할매도 익절 전략 2026 | calculatorhost' }],
-    title: '분할매도 익절 전략, 평균 매도단가로 수익을 지키는 방법',
-    description: '목표가 도달 후 단계적으로 익절하는 분할매도 전략의 의사결정 기준과 시뮬레이션.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -37,8 +35,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분할매도 익절 전략',
-    description: '목표가 도달 후 단계적 익절의 의사결정 기준과 시뮬.',
   },
 };
 
@@ -84,7 +80,7 @@ export default function SplitSellProfitTakingPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '분할매도 익절 전략 2026' },
+    { name: '분할매도 익절 전략' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '분할매도 익절 전략, 평균 매도단가로 수익을 지키는 방법 (2026)',
@@ -106,7 +102,7 @@ export default function SplitSellProfitTakingPage() {
   });
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermsLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '분할매도·익절 투자 용어집',
     description: '분할매도, 익절, 평균 매도단가, 수익실현 등 단계적 익절 전략의 핵심 용어 정의.',
     url: URL,
@@ -137,7 +133,8 @@ export default function SplitSellProfitTakingPage() {
         alternateName: 'Peak, 저항선',
       },
     ],
-  });
+  };
+  const definedTermsLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -426,6 +423,7 @@ export default function SplitSellProfitTakingPage() {
                 </div>
               </section>
 
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
               <FaqSection items={FAQ_ITEMS} />
 
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
@@ -502,7 +500,7 @@ export default function SplitSellProfitTakingPage() {
                   </a>
                   ,{' '}
                   <a
-                    href="https://www.krx.co.kr/investor/investguide/"
+                    href="https://www.krx.co.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

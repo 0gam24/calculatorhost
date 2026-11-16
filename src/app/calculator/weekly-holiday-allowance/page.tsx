@@ -26,6 +26,7 @@ import {
   WEEKLY_HOLIDAY_MIN_WEEKLY_HOURS,
 } from '@/lib/constants/labor-rules-2026';
 import { calculateWeeklyHolidayAllowance } from '@/lib/work/weekly-holiday-allowance';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/weekly-holiday-allowance/';
 const DATE_PUBLISHED = '2026-10-07';
@@ -48,16 +49,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '주휴수당 계산기 2026, 주 15시간 조건·시급별 자동 계산',
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주휴수당 계산기 2026',
-    description: '시급·주 소정근로시간으로 주휴수당을 바로 계산',
   },
 };
 
@@ -102,7 +99,7 @@ const FAQ_ITEMS = [
 const RELATED = [
   {
     href: '/guide/weekly-holiday-allowance-2026/',
-    title: '주휴수당 계산법 완전 정리',
+    title: '주휴수당 계산법 정리',
     description: '요건·결근 규칙·월급제 포함 여부',
   },
   {
@@ -163,7 +160,7 @@ export default function WeeklyHolidayAllowancePage() {
     { name: '근로', url: 'https://calculatorhost.com/category/work/' },
     { name: '주휴수당 계산기' },
   ]);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '주휴수당 계산하기',
     description: '시급과 1주 소정근로시간으로 주휴수당·월 환산액·실질 시급을 구하는 방법',
     steps: [
@@ -184,7 +181,8 @@ export default function WeeklyHolidayAllowancePage() {
         text: '1주 주휴수당, 주휴시간, 월 환산액, 주휴 포함 실질 시급을 확인합니다. 참고용 계산이며 계약 조건에 따라 달라질 수 있습니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((item) => ({ question: item.question, answer: item.answer })),
@@ -256,6 +254,7 @@ export default function WeeklyHolidayAllowancePage() {
                 />
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition={`주휴수당은 1주 소정근로시간이 ${WEEKLY_HOLIDAY_MIN_WEEKLY_HOURS}시간 이상이고 그 주를 개근한 근로자에게 사용자가 지급하는 1일 유급휴일 임금입니다. 근로기준법 §55①이 정하고, 시행령 §30①이 "소정근로일 개근" 요건을 명시합니다.`}
                 table={{

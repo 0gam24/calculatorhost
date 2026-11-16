@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-11';
 const DATE_MODIFIED = '2026-07-11';
 
 export const metadata: Metadata = {
-  title: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5% 완벽 가이드',
+  title: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5%',
   description:
-    '자영업자를 위한 상가 임대차보호법. 계약갱신요구권 10년, 권리금 회수기회 보호, 차임 증액 상한 5% 기준. 대항력·정당한 사유·환산보증금까지 정확하게 정리.',
+    '상가건물 임대차보호법의 계약갱신요구권 10년, 권리금 회수기회 보호, 차임 증액 상한 5%를 자영업자 입장에서 정리했습니다.',
   keywords: [
     '상가건물 임대차보호법',
     '계약갱신요구권',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5% 완벽 가이드' }],
-    title: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5% 완벽 가이드',
-    description: '자영업자를 위한 상가 임대차보호법. 계약갱신요구권 10년, 권리금 회수기회 보호, 차임 증액 상한 5% 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5% 완벽 가이드',
-    description: '자영업자를 위한 상가 임대차보호법. 계약갱신요구권 10년, 권리금 회수기회 보호, 차임 증액 상한 5%.',
   },
 };
 
@@ -100,9 +95,9 @@ export default function CommercialBuildingLease2026Page() {
     { name: '상가건물 임대차보호법 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5% 완벽 가이드',
+    headline: '상가건물 임대차보호법 2026, 계약갱신 10년·권리금·차임인상 5% 가이드',
     description:
-      '자영업자를 위한 상가 임대차보호법. 계약갱신요구권 10년, 권리금 회수기회 보호, 차임 증액 상한 5% 기준. 대항력·정당한 사유·환산보증금까지 완전 정리.',
+      '자영업자를 위한 상가 임대차보호법. 계약갱신요구권 10년, 권리금 회수기회 보호, 차임 증액 상한 5% 기준. 대항력·정당한 사유·환산보증금까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -148,7 +143,7 @@ export default function CommercialBuildingLease2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상가건물 임대차보호법 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">계약갱신 10년·권리금 보호·차임 인상 5% 완벽 가이드</span>
+                  <span className="text-2xl text-text-secondary">계약갱신 10년·권리금 보호·차임 인상 5% 가이드</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   전국 수백만의 자영업자가 남의 건물에서 사업을 합니다. 그런데 임대차 계약이 끝나면 어떻게 될까요? 임대인이 일방적으로 퇴출할 수 있을까요? 다행히 상가건물 임대차보호법이 임차인의 기본 권리를 지켜줍니다. 이 가이드는 계약갱신요구권, 권리금 회수, 차임 인상 상한, 대항력까지 자영업자가 꼭 알아야 할 법의 핵심을 명확하게 정리해드립니다.
@@ -489,13 +484,13 @@ export default function CommercialBuildingLease2026Page() {
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터</a>,{' '}
-                  <a href="https://www.smaeb.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">소상공인마당(소상공인벤처부)</a>,{' '}
+                  <a href="https://www.sbiz.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">소상공인마당(소상공인시장진흥공단)</a>,{' '}
                   <a href="https://www.moj.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">대한민국 법무부</a>.
                 </p>
               </section>
 
               <ShareButtons
-                title="상가건물 임대차보호법 2026 완벽 가이드"
+                title="상가건물 임대차보호법 2026 가이드"
                 url={URL}
               />
             </article>

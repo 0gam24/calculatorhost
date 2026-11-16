@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-22';
 export const metadata: Metadata = {
   title: '간이과세자 7월 부가세 신고하나요 2026, 예정부과·예정신고',
   description:
-    '간이과세자도 7월에 부가세를 낼 수 있습니다. 예정부과 고지서와 예정신고를 구분하고, 2026년 7월 27일 납부 기한, 직전기 납부세액 50% 계산, 세금계산서 발급자 예외까지 정리했습니다.',
+    '대부분의 간이과세자는 7월에 예정부과 고지서대로 납부만 하면 됩니다. 상반기에 세금계산서를 발급했다면 예정신고를 직접 해야 합니다.',
   keywords: [
     '간이과세자 부가세 신고',
     '간이과세자 7월 부가세',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '간이과세자 7월 부가세 신고 2026, 예정부과와 예정신고' }],
-    title: '간이과세자 7월 부가세 신고하나요 2026, 예정부과와 예정신고 완전 정리',
-    description: '고지서만 받은 간이과세자와 세금계산서 발급 간이과세자의 처리가 다릅니다. 2026년 7월 27일 기한 기준으로 계산·신고 절차를 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '간이과세자 7월 부가세 신고 2026, 예정부과·예정신고 구분',
-    description: '직전기 납부세액 50%가 예정부과세액. 50만원 미만이면 소액부징수. 부가가치세법 §66.',
   },
 };
 
@@ -99,7 +94,7 @@ export default function SimplifiedTaxpayerJulyVat2026Page() {
     { name: '간이과세자 7월 부가세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '간이과세자 7월 부가세 신고하나요 2026, 예정부과와 예정신고 완전 정리',
+    headline: '간이과세자 7월 부가세 신고하나요 2026, 예정부과와 예정신고 정리',
     description:
       '간이과세자의 7월 부가세 처리는 예정부과(고지서) 또는 예정신고(세금계산서 발급자)로 나뉩니다. 2026년 7월 27일 기한, 직전기 납부세액 50% 계산, 소액부징수 50만원 기준, 홈택스 절차까지 정리.',
     url: URL,
@@ -147,7 +142,7 @@ export default function SimplifiedTaxpayerJulyVat2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   간이과세자 7월 부가세 신고하나요 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">예정부과와 예정신고 완전 정리</span>
+                  <span className="text-2xl text-text-secondary">예정부과와 예정신고 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   간이과세자는 1년에 한 번, 다음 해 1월에만 부가세를 신고한다고 알고 있는 분이 많습니다. 그런데 매년 7월이 되면 세무서 고지서를 받거나 "예정신고 하라"는 안내를 받고 당황하는 경우가 적지 않습니다. 결론부터 말하면, 대부분의 간이과세자는 별도 신고 없이 예정부과 고지서를 받아 납부만 하면 되고, 상반기에 세금계산서를 발급한 간이과세자만 예정신고를 직접 해야 합니다. 2026년 7월 부가세 1기 확정신고 마감 시즌에 맞춰 헷갈리기 쉬운 규칙을 정리했습니다.
@@ -415,8 +410,8 @@ export default function SimplifiedTaxpayerJulyVat2026Page() {
                     href="/guide/simplified-taxation-vat-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">간이과세 부가세 완전 정리 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">간이과세 요건, 세율, 확정신고까지 기본기 총정리.</p>
+                    <div className="font-semibold text-primary-500">간이과세 부가세 정리 2026</div>
+                    <p className="mt-1 text-sm text-text-secondary">간이과세 요건, 세율, 확정신고까지 기본기 정리.</p>
                   </Link>
                   <Link
                     href="/guide/july-vat-final-1st-half/"

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-12';
 export const metadata: Metadata = {
   title: '노령연금 감액 2026, 일하면 월 519만원까지 안 깎인다',
   description:
-    '은퇴 후 재취업하면 국민연금이 깎일까 걱정되시죠. 2026년 6월 17일부터 감액 기준이 상향돼 월평균소득 약 519만원 미만이면 노령연금이 감액되지 않습니다. 감액 소득 기준, 감액 폭, 피하는 방법을 국민연금법 §63의2 기준으로 정리했습니다.',
+    '2026년 6월 17일부터 월평균소득 약 519만원 미만이면 노령연금이 깎이지 않습니다. 감액 폭과 피하는 방법을 정리했습니다.',
   keywords: [
     '노령연금 감액',
     '국민연금 감액',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '노령연금 감액 2026, 일하면 월 519만원까지 안 깎인다' }],
-    title: '노령연금 감액 2026, 월 519만원까지는 일해도 안 깎인다',
-    description: '2026년 6월 17일부터 감액 소득기준 상향. 월평균소득 약 519만원 미만이면 감액 없음. 국민연금법 §63의2.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '노령연금 감액 2026 기준',
-    description: '은퇴 후 재취업 시 국민연금 감액 기준이 월 519만원으로 상향. 감액 폭과 피하는 법.',
   },
 };
 

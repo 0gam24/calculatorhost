@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-17';
 export const metadata: Metadata = {
   title: '상속 부동산 감정평가 vs 공시가격 2026, 어느 쪽이 유리할까',
   description:
-    '상속 부동산을 공시가격으로 신고하면 상속세는 줄지만 나중에 팔 때 양도세가 커집니다. 감정평가로 취득가액을 높이는 절세 전략과 국세청 감정평가 사업 위험을 상증세법 60·61·66조로 정리했습니다.',
+    '상속 부동산을 공시가격으로 신고하면 상속세는 줄지만 나중에 팔 때 양도세가 커집니다. 감정평가로 취득가액을 높이는 전략과 위험을 정리했습니다.',
   keywords: [
     '상속 부동산 감정평가',
     '상속세 공시가격 신고',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속 부동산 감정평가 vs 공시가격 2026' }],
-    title: '상속 부동산 감정평가 vs 공시가격 2026',
-    description:
-      '공시가로 신고하면 상속세는 줄지만 양도세 폭탄. 감정평가로 취득가액을 높이는 절세 전략과 국세청 감정평가 위험.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속 부동산 감정평가 vs 공시가격',
-    description: '공시가 신고는 상속세↓ 양도세↑. 감정평가는 상속세↑ 양도세↓. 상증세법 §60·§61·§66.',
   },
 };
 

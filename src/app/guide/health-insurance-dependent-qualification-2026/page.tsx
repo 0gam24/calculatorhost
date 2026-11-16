@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-15';
 const DATE_MODIFIED = '2026-06-15';
 
 export const metadata: Metadata = {
-  title: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리 | calculatorhost',
+  title: '건강보험 피부양자 자격조건 2026 | 소득 2,000만원·재산 요건',
   description:
-    '2026년 건강보험 피부양자 자격은 소득요건과 재산요건을 모두 충족해야 인정됩니다. 합산소득 2,000만원 기준, 재산세 과세표준 5억 4천만원 한도, 형제자매 범위, 탈락 시 지역가입자 전환까지 국민건강보험공단 기준으로 정리했습니다.',
+    '건강보험 피부양자는 합산소득 2,000만원 기준과 재산요건을 충족해야 인정됩니다. 형제자매 범위와 탈락 시 지역가입자 전환도 정리했습니다.',
   keywords: [
     '건강보험 피부양자 조건',
     '피부양자 자격',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '건강보험 피부양자 자격조건 2026' }],
-    title: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리',
-    description: '합산소득 2,000만원, 재산세 과세표준 5억 4천만원, 피부양자 자격 판단 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '건강보험 피부양자 자격조건 2026',
-    description: '소득 2,000만원 + 재산 5.4억 = 피부양자 기본 자격.',
   },
 };
 
@@ -97,7 +92,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
     { name: '건강보험 피부양자 자격조건' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리',
+    headline: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 정리',
     description:
       '직장인 부모의 자녀·배우자·형제자매가 피부양자로 인정되는 정확한 기준. 소득 2,000만원 한도, 재산세 과세표준 5.4억원 기준, 형제자매 나이 제한, 탈락 시 지역가입자 전환.',
     url: URL,
@@ -136,13 +131,13 @@ export default function HealthInsuranceDependentQualificationGuide() {
                 breadcrumbItems={[
                   { name: '홈', href: '/' },
                   { name: '가이드', href: '/guide/' },
-                  { name: '보험·연금', href: '/guide/' },
+                  { name: '건강보험 피부양자 자격조건' },
                 ]}
                 category="보험·연금"
                 readingMinutes={7}
                 publishedDate="2026-06-15"
                 title="건강보험 피부양자 자격조건 2026"
-                subtitle="· 소득·재산 요건 총정리"
+                subtitle="· 소득·재산 요건 정리"
                 lead={
                   <p data-speakable>
                     건강보험 피부양자는 직장가입자에게 생계를 의존하면서 소득·재산 요건을 모두 충족하는 가족으로, 국민건강보험법 시행규칙 §2에서 정한 기준을 따릅니다. 요건을 벗어나면 지역가입자로 전환되어 월 15~40만원의 보험료가 새로 부과됩니다.
@@ -432,7 +427,7 @@ export default function HealthInsuranceDependentQualificationGuide() {
               </div>
 
               <ShareButtons
-                title="건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리"
+                title="건강보험 피부양자 자격조건 2026 | 소득·재산 요건 정리"
                 description="직장인 부모 자녀·배우자·형제자매 피부양자 자격 정확하게 판단. 소득 2,000만원, 재산 5.4억원 기준."
                 url={URL}
               />

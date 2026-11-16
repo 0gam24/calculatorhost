@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-28';
 export const metadata: Metadata = {
   title: '주민세 개인분 2026, 8월 납부기간과 세액 안 왔을 때 확인법',
   description:
-    '주민세 개인분 정기분 납부기간은 2026년 8월 16일부터 31일까지입니다. 세액은 지자체 조례로 1만원 이하이며, 고지서가 안 왔을 때 위택스 조회·납부 방법과 면제 대상까지 지방세법 기준으로 정리했습니다.',
+    '주민세 개인분 납부기간은 8월 16일부터 31일까지이고, 세액은 조례에 따라 1만원 이하입니다. 고지서가 안 왔을 때 확인법도 정리했습니다.',
   keywords: [
     '주민세 개인분',
     '주민세 납부기간 8월',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '주민세 개인분 2026, 8월 납부기간과 세액 안 왔을 때 확인법',
-      },
-    ],
-    title: '주민세 개인분 2026, 8월 16~31일 납부 총정리',
-    description:
-      '주민세 개인분은 8월 16일부터 31일까지 납부하며, 지자체 조례로 1만원 이하 정액입니다. 위택스 조회, 고지서 재발급, 면제 대상을 한 번에 확인하세요.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,9 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주민세 개인분 2026, 8월 납부기간과 확인법',
-    description:
-      '납부기간 2026년 8월 16~31일. 세액은 지자체 조례로 1만원 이하. 위택스 조회·면제 대상까지 지방세법 §74·§78 기준 정리.',
   },
 };
 
@@ -111,7 +97,7 @@ export default function ResidentTaxIndividualPortion2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '주민세 개인분 2026, 8월 납부기간과 세액 안 왔을 때 확인법',
     description:
-      '주민세 개인분 정기분 납부기간(8월 16~31일), 지자체 조례별 세액(1만원 이하), 고지서 미수령 시 위택스 조회·납부, 면제 대상, 사업소분과의 차이를 지방세법 §74·§75·§78 기준으로 완전 정리.',
+      '주민세 개인분 정기분 납부기간(8월 16~31일), 지자체 조례별 세액(1만원 이하), 고지서 미수령 시 위택스 조회·납부, 면제 대상, 사업소분과의 차이를 지방세법 §74·§75·§78 기준으로 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

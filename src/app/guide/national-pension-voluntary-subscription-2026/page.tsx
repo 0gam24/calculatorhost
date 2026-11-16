@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-16';
 export const metadata: Metadata = {
   title: '국민연금 임의가입 2026, 전업주부 노후연금 만드는 법',
   description:
-    '소득이 없어도 국민연금에 스스로 가입할 수 있습니다. 국민연금법 §10 임의가입과 §13 임의계속가입의 대상·보험료·최소 가입기간 10년 요건을 전업주부 사례로 정리합니다.',
+    '소득이 없어도 국민연금에 스스로 가입할 수 있습니다. 임의가입 대상과 보험료, 10년 최소 요건을 전업주부 사례로 정리합니다.',
   keywords: [
     '국민연금 임의가입',
     '전업주부 국민연금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 임의가입 2026, 전업주부 노후연금 만드는 법' }],
-    title: '국민연금 임의가입 2026, 소득 없어도 노후연금 만드는 법',
-    description: '전업주부·학생도 국민연금법 §10 임의가입으로 노령연금 수급권을 만들 수 있습니다. 대상·보험료·10년 요건 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 임의가입 2026, 전업주부 노후연금 만드는 법',
-    description: '소득이 없어도 국민연금에 스스로 가입해 10년을 채우면 평생 노령연금을 받습니다. 국민연금법 §10.',
   },
 };
 

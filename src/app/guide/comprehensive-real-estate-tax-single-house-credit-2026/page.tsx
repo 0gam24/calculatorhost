@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-01';
 const DATE_MODIFIED = '2026-07-01';
 
 export const metadata: Metadata = {
-  title: '종합부동산세 1세대1주택 세액공제 2026 | 고령자·장기보유 최대 80%',
+  title: '종합부동산세 1세대1주택 세액공제 2026 | 고령·장기보유 최대 80%',
   description:
-    '종합부동산세 1세대1주택 세액공제, 고령자 공제(20~40%) + 장기보유 공제(20~50%) 중복 적용, 합산 한도 80%. 세액공제 계산 공식·사례·부부공동명의 특례.',
+    '1세대1주택자는 고령자 20~40%, 장기보유 20~50% 세액공제를 중복 적용해 종부세를 최대 80%까지 줄입니다.',
   keywords: [
     '종합부동산세 세액공제',
     '1세대1주택 세액공제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 1세대1주택 세액공제 2026' }],
-    title: '종합부동산세 1세대1주택 세액공제 2026, 고령자·장기보유 세액공제 완전 정리',
-    description: '고령자와 장기보유 세액공제를 중복 적용받아 최대 80%까지 세액을 줄일 수 있습니다. 정확한 계산법과 사례를 모두 담았습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합부동산세 1세대1주택 세액공제 2026',
-    description: '고령자·장기보유 중복 공제, 최대 80% 한도 적용 완벽 가이드.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
     { name: '종합부동산세 1세대1주택 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합부동산세 1세대1주택 세액공제 2026, 고령자·장기보유 공제 완전 정리',
+    headline: '종합부동산세 1세대1주택 세액공제 2026, 고령자·장기보유 공제 정리',
     description:
       '1세대1주택 단독명의자가 받을 수 있는 고령자 세액공제와 장기보유 세액공제. 두 공제의 중복 적용, 합산 한도 80%, 정확한 계산 공식과 사례.',
     url: URL,
@@ -515,6 +510,13 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
                     <p className="mt-1 text-sm text-text-secondary">공시가격을 입력하여 최종 납부액까지 계산해보세요.</p>
                   </Link>
                   <Link
+                    href="/guide/comprehensive-real-estate-tax-payment-2026/"
+                    className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
+                  >
+                    <div className="font-semibold text-primary-500">종부세 납부기간 2026</div>
+                    <p className="mt-1 text-sm text-text-secondary">12월 1~15일 납부, 고지서 확인과 분납·카드납부 방법.</p>
+                  </Link>
+                  <Link
                     href="/guide/comprehensive-real-estate-tax-calculation-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
@@ -540,7 +542,7 @@ export default function ComprehensiveRealEstateTaxSingleHouseCreditPage() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">재산세 vs 종합부동산세 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">두 세목의 차이·중복 과세·납부 시기 완벽 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">두 세목의 차이·중복 과세·납부 시기 정리.</p>
                   </Link>
                   <Link
                     href="/category/tax/"

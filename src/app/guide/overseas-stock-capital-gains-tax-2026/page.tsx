@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-09';
 export const metadata: Metadata = {
   title: '해외주식 양도소득세 2026 | 250만원 공제·22% 세율·5월 신고',
   description:
-    '미국주식 등 해외주식 매도 시 양도소득세 계산법. 연 250만원 기본공제, 22% 세율(20% + 지방소득세 2%), 5월 확정신고. 손익통산·환율 기준일·외국납부세액공제까지 완전 정리.',
+    '해외주식을 팔면 연 250만원 기본공제 후 22% 세율(지방소득세 포함)로 다음 해 5월에 양도소득세를 신고합니다.',
   keywords: [
     '해외주식 양도소득세',
     '미국주식 세금',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '해외주식 양도소득세 2026 | 250만원 공제·22%·5월 신고' }],
-    title: '해외주식 양도소득세 2026, 미국주식 매도 시 세금 정산법',
-    description: '해외주식 양도차익에 연 250만원 기본공제, 22% 세율 적용. 거래일 기준환율로 환산하고 5월 확정신고. 손익통산·외국납부세액공제까지 해설.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '해외주식 양도소득세 2026, 250만원 공제·22%·5월 신고',
-    description: '미국주식 등 해외주식 매도 차익에 대한 소득세. 연 250만원 공제, 22% 세율, 다음해 5월 확정신고.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '해외주식 양도소득세 2026, 미국주식 매도 시 세금 정산법',
     description:
-      '해외주식 양도차익에 연 250만원 기본공제, 22% 세율 적용. 거래일 기준환율로 환산하고 다음해 5월 확정신고. 손익통산·환차익·외국납부세액공제까지 완전 정리.',
+      '해외주식 양도차익에 연 250만원 기본공제, 22% 세율 적용. 거래일 기준환율로 환산하고 다음해 5월 확정신고. 손익통산·환차익·외국납부세액공제까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -481,7 +476,7 @@ export default function OverseasStockCapitalGainsTax2026Page() {
               </section>
 
               <ShareButtons
-                title="해외주식 양도소득세 2026 완벽 가이드"
+                title="해외주식 양도소득세 2026 가이드"
                 url={URL}
               />
             </article>

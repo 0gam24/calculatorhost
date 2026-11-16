@@ -20,6 +20,8 @@ import {
 } from '@/lib/seo/jsonld';
 import { VatCalculator } from './VatCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/vat/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -28,7 +30,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '부가세 계산기 2026 | 부가가치세 일반·간이 계산',
   description:
-    '매출·매입으로 일반과세·간이과세 부가세 납부액을 계산하고, 공급가액과 부가세 포함 금액을 서로 환산합니다.',
+    '매출·매입으로 일반과세·간이과세 부가세 납부액을 계산하고, 공급가액과 세금 포함 금액을 서로 환산합니다.',
   keywords: [
     '부가세 계산기',
     'VAT 계산기',
@@ -41,8 +43,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '부가가치세 계산기 2026, 일반·간이·환산',
-    description: '매출세액 − 매입세액 / 간이과세 부가가치율 / VAT 포함↔공급가액 환산.',
     url: URL,
     type: 'website',
 
@@ -50,8 +50,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가세 계산기 (VAT) 2026',
-    description: '일반·간이과세 + VAT 환산. 사업자·프리랜서 필수.',
   },
 };
 
@@ -134,7 +132,7 @@ export default function VatPage() {
     { name: '부가가치세 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '부가가치세 계산하기',
     description: '일반/간이과세자 부가세 산출 또는 VAT 포함·공급가액 환산 방법',
     steps: [
@@ -155,8 +153,9 @@ export default function VatPage() {
         text: '매출세액, 매입세액공제, 납부할 부가세(또는 환급세액)가 즉시 계산되며, 면세 조건 자동 판정됩니다.',
       },
     ],
-  });
-  const definedTermSetLd = buildDefinedTermSetJsonLd({
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+  const glossaryData = {
     name: '부가가치세 핵심 용어',
     description: '한국 부가세 산정 관련 용어집',
     url: `${URL}#glossary`,
@@ -184,7 +183,8 @@ export default function VatPage() {
           '연 매출 8,000만 원 미만 소규모 사업자에게 부여되는 간소화된 과세 방식. 매출 × 업종별 부가가치율 × 10% 산식 적용. 연 매출 4,800만 원 미만이면 납부 면제.',
       },
     ],
-  });
+  };
+  const definedTermSetLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -257,6 +257,7 @@ export default function VatPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="부가가치세(VAT)는 사업자가 재화·용역 공급 시 거래 단계마다 부가된 가치에 부과되는 간접세로, 한국은 표준 10%를 적용합니다. 일반과세자는 매출세액에서 매입세액을 빼고, 간이과세자는 매출에 업종별 부가가치율(5~40%)과 10%를 곱하는 방식입니다."
                 table={{
@@ -444,6 +445,7 @@ export default function VatPage() {
                   금액은 홈택스 또는 세무사 산정 결과를 따릅니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

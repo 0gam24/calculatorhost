@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-14';
 export const metadata: Metadata = {
   title: '연금저축·IRP 계좌 이전 2026, 세금 없이 갈아타는 법',
   description:
-    '수수료가 비싸거나 상품이 마음에 안 들면 연금저축·IRP 계좌를 다른 금융사로 옮길 수 있습니다. 계좌 이체는 인출이 아니라 세금이 없고 세액공제 혜택도 유지됩니다. 이전 절차, 55세·5년 요건, 해지공제액 주의점을 소득세법 기준으로 정리했습니다.',
+    '연금저축·IRP 계좌를 다른 금융사로 옮기는 이전은 인출이 아니라 세금이 없고 세액공제 혜택도 유지됩니다.',
   keywords: [
     '연금저축 이전',
     'IRP 계좌 이전',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연금저축·IRP 계좌 이전 2026, 세금 없이 갈아타는 법' }],
-    title: '연금저축·IRP 계좌 이전 2026, 세금 없이 갈아타는 법',
-    description: '계좌 이체는 인출이 아니라 세금 0원, 세액공제 유지. 이전 절차와 55세·5년 요건, 해지공제액 주의점 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연금저축·IRP 계좌 이전 2026, 세금 없이 갈아타는 법',
-    description: '연금계좌를 옮겨도 세금이 없는 이유와 이전 절차, 주의점을 정리.',
   },
 };
 

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-19';
 export const metadata: Metadata = {
   title: '장기보유특별공제 일반 표1 2026, 3년 6%부터 15년 30%',
   description:
-    '상가·토지·다주택을 3년 이상 보유하고 팔면 양도차익의 6~30%를 장기보유특별공제로 빼줍니다(소득세법 §95②). 표1 연 2% 공제율, 1주택 표2와의 차이, 보유기간 경계값 계산까지 사례로 정리했습니다.',
+    '상가·토지·다주택을 3년 이상 보유하고 팔면 양도차익의 6~30%를 장기보유특별공제로 빼줍니다(소득세법 §95②).',
   keywords: [
     '장기보유특별공제',
     '장기보유특별공제 표1',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '장기보유특별공제 일반 표1 2026, 3년 6%부터 15년 30%' }],
-    title: '장기보유특별공제 일반 표1 2026, 보유기간별 6~30% 공제 계산',
-    description: '3년 이상 보유한 부동산을 팔 때 양도차익의 6~30%를 공제. 표1(일반)과 표2(1세대1주택 최대 80%)의 차이와 계산법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '장기보유특별공제 일반 표1 2026, 3년 6%부터 15년 30%',
-    description: '상가·토지·다주택을 오래 보유할수록 양도차익 공제율이 커집니다. 소득세법 §95② 표1 계산법.',
   },
 };
 

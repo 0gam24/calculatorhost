@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-22';
 export const metadata: Metadata = {
   title: '월세 세액공제 확대 2026 개편안, 한도 1200만 급여무관 17%',
   description:
-    '2026 세제개편안이 월세 세액공제 한도를 연 1,000만원에서 1,200만원으로 올리고 공제율을 총급여와 무관하게 17%로 단일화하는 방향을 담았습니다. 현행 조건과 얼마 돌려받는지, 확대 시 최대 환급액까지 정리합니다(조세특례제한법 §95의2).',
+    '2026 세제개편안은 월세 세액공제 한도를 연 1,000만원에서 1,200만원으로 올리고 공제율을 17%로 단일화하는 방향입니다.',
   keywords: [
     '월세 세액공제 확대',
     '월세 세액공제 얼마',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '월세 세액공제 확대 2026 개편안, 한도 1200만 급여무관 17%' }],
-    title: '월세 세액공제 확대 2026 개편안, 한도 1200만 급여무관 17%',
-    description: '한도 1,000만에서 1,200만으로, 공제율은 급여 무관 17%로. 무주택 임차인의 최대 환급액 변화를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '월세 세액공제 확대 2026 개편안',
-    description: '한도 1,200만, 급여 무관 17% 단일화 방향. 무주택 임차인 최대 환급 204만원까지.',
   },
 };
 
@@ -312,7 +307,7 @@ export default function MonthlyRentTaxCreditExpansion2026ReformPage() {
                     <p className="mt-1 text-sm text-text-secondary">월세 세액공제와 함께 챙길 지원 제도를 알아보세요.</p>
                   </Link>
                   <Link href="/guide/year-end-tax-settlement/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
-                    <div className="font-semibold text-primary-500">연말정산 총정리</div>
+                    <div className="font-semibold text-primary-500">연말정산 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">공제 항목을 빠짐없이 챙기는 방법을 정리합니다.</p>
                   </Link>
                   <Link href="/guide/credit-card-income-deduction-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">

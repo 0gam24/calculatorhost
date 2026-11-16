@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-23';
 
 export const metadata: Metadata = {
-  title: '분양권 취득세 2026, 주택 수 산입과 중과 기준 정리 | calculatorhost',
+  title: '분양권 취득세 2026, 주택 수 산입과 중과 기준 정리',
   description:
-    '분양권 자체에는 취득세가 없고 잔금 때 주택 취득세를 냅니다. 다만 2020년 8월 12일 이후 취득한 분양권은 주택 수에 포함되어 다른 집 취득세 중과에 영향을 줍니다. 지방세법 §13의2·§13의3 기준으로 정리했습니다.',
+    '분양권 자체에는 취득세가 없고 잔금 때 냅니다. 2020년 8월 12일 이후 취득분은 주택 수에 포함돼 다른 집 중과에 영향을 줍니다.',
   keywords: [
     '분양권 취득세',
     '분양권 주택 수 산입',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '분양권 취득세 2026, 주택 수 산입과 중과 기준 정리' }],
-    title: '분양권 취득세 2026, 주택 수에 들어가면 무엇이 달라지나',
-    description: '분양권은 취득 시 취득세가 없지만 주택 수에는 포함됩니다. 판정 기준일, 중과세율, 양도세와의 차이를 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분양권 취득세 2026, 주택 수 산입과 중과 기준',
-    description: '분양권 취득세는 잔금 때, 주택 수는 분양권 취득일 기준. 지방세법 §13의2·§13의3.',
   },
 };
 

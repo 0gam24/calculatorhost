@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-30';
 const DATE_MODIFIED = '2026-06-30';
 
 export const metadata: Metadata = {
-  title: '증여세 면제한도 2026 | 공제액 한계·10년 합산·혼인공제 완벽 정리 | calculatorhost',
+  title: '증여세 면제한도 2026 | 배우자 6억·자녀 5천만·혼인공제 1억',
   description:
-    '증여세 면제한도(증여재산공제)를 정확히 이해하세요. 배우자 6억·자녀 5천만·혼인공제 1억까지 10년 합산. 얼마까지 증여세 없이 가능한지 정리.',
+    '증여재산공제만큼은 증여세가 없고, 배우자 6억·자녀 5천만원은 10년 단위로 합산합니다. 혼인공제 1억원과 함정도 정리합니다.',
   keywords: [
     '증여세 면제한도',
     '증여재산공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증여세 면제한도 2026 | 공제액·10년 합산·혼인공제 | calculatorhost' }],
-    title: '증여세 면제한도 2026',
-    description: '배우자 6억, 자녀 5천만, 혼인공제 1억까지 얼마나 세금 없이 증여할 수 있을까?',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,7 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    images: ['/og-default.png'],
   },
 };
 

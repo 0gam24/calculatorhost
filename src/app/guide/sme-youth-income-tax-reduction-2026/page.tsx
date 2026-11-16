@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-13';
 const DATE_MODIFIED = '2026-07-13';
 
 export const metadata: Metadata = {
-  title: '중소기업 취업 청년 소득세 감면 2026, 90% 5년·연 200만원 한도',
+  title: '중소기업 취업 청년 소득세 감면 2026, 90% 5년·연 200만원',
   description:
-    '만 15~34세 청년이 중소기업에 취업하면 소득세의 90%를 5년간 감면받습니다(연 200만원 한도). 대상, 신청 방법, 병역 연령 차감, 2026년 말 일몰까지 조세특례제한법 §30으로 정리합니다.',
+    '만 15~34세 청년이 중소기업에 취업하면 5년간 소득세 90%를 연 200만원 한도로 감면받습니다. 신청법과 일몰 시점도 정리합니다.',
   keywords: [
     '중소기업 취업자 소득세 감면',
     '청년 소득세 감면 90%',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '중소기업 취업 청년 소득세 감면 2026 90% 5년' }],
-    title: '중소기업 취업 청년 소득세 감면 2026, 90% 5년 완전정리',
-    description: '만 15~34세 청년 중소기업 취업 시 소득세 90%를 5년간 감면(연 200만원 한도). 신청 방법과 병역 차감까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '중소기업 취업 청년 소득세 감면 2026, 90% 5년',
-    description: '청년(15~34세) 중소기업 취업 소득세 90% 5년 감면, 연 200만원 한도. 일몰 2026년 말. 조특법 §30.',
   },
 };
 
@@ -99,7 +94,7 @@ export default function SmeYouthIncomeTaxReduction2026Page() {
     { name: '중소기업 취업 청년 소득세 감면 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '중소기업 취업 청년 소득세 감면 2026, 90% 5년 완전정리',
+    headline: '중소기업 취업 청년 소득세 감면 2026, 90% 5년 정리',
     description:
       '만 15~34세 청년 중소기업 취업 시 소득세 90% 5년 감면(연 200만원 한도), 대상 업종, 병역 연령 차감, 감면 신청과 경정청구, 2026년 말 일몰까지 조세특례제한법 §30 기준으로 정리.',
     url: URL,
@@ -323,8 +318,8 @@ export default function SmeYouthIncomeTaxReduction2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
-                    <p className="mt-1 text-sm text-text-secondary">공제 항목 총정리와 환급 극대화 전략.</p>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
+                    <p className="mt-1 text-sm text-text-secondary">공제 항목 정리와 환급 극대화 전략.</p>
                   </Link>
                   <Link
                     href="/guide/youth-future-savings-account-2026/"

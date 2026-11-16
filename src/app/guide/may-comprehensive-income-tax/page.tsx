@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/may-comprehensive-income-tax/';
 const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '5월 종합소득세 신고 가이드 2026 | calculatorhost',
+  title: '5월 종합소득세 신고 가이드 2026 | 대상·기한·환급',
   description:
-    '2026년 5월 종합소득세 신고 완벽 가이드. 신고 대상·기한·홈택스 단계별 신고·절세 방법·환급까지 정리. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '종합소득세 신고 기간은 5월 1일~31일입니다. 프리랜서·N잡러가 챙길 대상, 홈택스 절차, 환급 방법을 정리했습니다.',
   keywords: [
     '종합소득세 신고',
     '종합소득세',
@@ -39,9 +40,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '5월 종합소득세 신고 가이드 2026 | calculatorhost' }],
-    title: '5월 종합소득세 신고 완벽 가이드 2026',
-    description: '신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법.',
     url: URL,
     type: 'article',
 
@@ -51,8 +49,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5월 종합소득세 신고 완벽 가이드 2026',
-    description: '프리랜서·사업자·N잡러 필독. 절세 5가지 + 환급 받는 법.',
 
   },
 };
@@ -104,10 +100,10 @@ export default function MayComprehensiveIncomeTaxPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '5월 종합소득세 신고 완벽 가이드' },
+    { name: '5월 종합소득세 신고 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '5월 종합소득세 신고 완벽 가이드 (2026), 프리랜서·사업자·N잡러 필독',
+    headline: '5월 종합소득세 신고 가이드 (2026), 프리랜서·사업자·N잡러 대상',
     description:
       '2026년 5월 종합소득세 신고 시즌 가이드. 신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법.',
     url: URL,
@@ -119,15 +115,15 @@ export default function MayComprehensiveIncomeTaxPage() {
     keywords: ['종합소득세 신고', '5월 종소세', '프리랜서 종소세', '단순경비율', '환급'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '5월 종합소득세 신고 완벽 가이드 2026',
-    description: '2026년 5월 종합소득세 신고 시즌 완벽 가이드. 신고 대상·기한·홈택스 단계별 신고법·단순경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리. 프리랜서·1인사업자·N잡러 필독.',
+    name: '5월 종합소득세 신고 가이드 2026',
+    description: '2026년 5월 종합소득세 신고 시즌 가이드. 신고 대상·기한·홈택스 단계별 신고법·단순경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '홈택스 종합소득세 신고하기',
     description: '국세청 홈택스에서 종합소득세를 신고·납부하는 단계별 방법',
     steps: [
@@ -156,7 +152,8 @@ export default function MayComprehensiveIncomeTaxPage() {
         text: '추가 납부 시 신용카드·계좌이체·가상계좌로 납부 (5월 31일까지). 환급 시 본인 명의 통장 정확히 입력 → 6월 말~7월 초 입금.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -178,14 +175,14 @@ export default function MayComprehensiveIncomeTaxPage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '5월 종합소득세 신고 완벽 가이드' },
+                    { name: '5월 종합소득세 신고 가이드' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금 · 12분 읽기 · 2026-05-03</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  5월 종합소득세 신고 완벽 가이드 (2026)
+                  5월 종합소득세 신고 가이드 (2026)
                   <br />
-                  <span className="text-2xl text-text-secondary">· 프리랜서·사업자·N잡러 필독</span>
+                  <span className="text-2xl text-text-secondary">· 프리랜서·사업자·N잡러 대상</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   2026년 5월 1일~31일은 종합소득세 신고 시즌입니다. 프리랜서·1인사업자·N잡러·임대인·강사 등
@@ -498,6 +495,7 @@ export default function MayComprehensiveIncomeTaxPage() {
                 </div>
               </section>
 
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 주의사항 */}
@@ -600,9 +598,9 @@ export default function MayComprehensiveIncomeTaxPage() {
               </section>
 
               <ShareButtons
-                title="5월 종합소득세 신고 완벽 가이드 (2026)"
+                title="5월 종합소득세 신고 가이드 (2026)"
                 url={URL}
-                description="프리랜서·사업자·N잡러 필독. 신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법."
+                description="프리랜서·사업자·N잡러 대상. 신고 대상·기한·홈택스 단계별 신고법·절세 5가지·환급 받는 법."
               />
 
               <section
@@ -612,9 +610,9 @@ export default function MayComprehensiveIncomeTaxPage() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 소득세법 §70 (종합소득세 신고) · §73 (납부) · §76 (가산세) ·
                   국세기본법 §47의2 (가산세) · 시행령 §143 (단순경비율). 참고:{' '}
-                  <a href="https://www.hometax.go.kr/guide/0206000000.jsp" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종소세 신고 가이드</a>,{' '}
+                  <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종소세 신고 가이드</a>,{' '}
                   <a href="https://www.nts.go.kr/nts/cm/cntnts/cntntsView.do?rbsSn=1447" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 단순경비율 공지</a>,{' '}
-                  <a href="https://www.kbiz.or.kr/site/nts/ex/bbs/Search.do?cbIdx=32&bcIdx=3&keyword=%EB%85%B8%EB%9E%80%EC%9A%B0%EC%82%B0%EA%B3%B5%EC%A0%9C" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">중소기업중앙회 노란우산공제</a>.
+                  <a href="https://www.8899.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">중소기업중앙회 노란우산공제</a>.
                 </p>
                 <p className="mb-2">
                   <strong>면책 조항</strong>: 본 가이드는 정보 제공 목적이며 세무·법적 조언이 아닙니다.

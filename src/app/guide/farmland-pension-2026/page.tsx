@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-08-17';
 // [revenue-lever: indexing+traffic]
 
 export const metadata: Metadata = {
-  title: '농지연금 2026, 가입조건·수령액·수령방식 총정리',
+  title: '농지연금 2026, 60세 이상 가입조건·수령액·수령방식 정리',
   description:
-    '농지연금은 60세 이상 농업인이 소유 농지를 담보로 매달 연금을 받는 제도입니다. 가입 나이·영농경력 요건, 담보농지 평가, 종신형·기간형 수령방식, 재산세 감면까지 2026년 기준으로 정리했습니다.',
+    '농지연금은 60세 이상 농업인이 농지를 담보로 매달 생활비를 받는 제도입니다. 영농경력 요건과 종신형·기간형 수령방식을 정리했습니다.',
   keywords: [
     '농지연금',
     '농지연금 가입조건',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '농지연금 2026' }],
-    title: '농지연금 2026, 가입조건과 수령액 총정리',
-    description:
-      '60세 이상 농업인이 농지를 담보로 받는 월 연금. 가입 요건, 담보 평가, 수령방식, 세제혜택까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '농지연금 2026, 가입조건과 수령액',
-    description: '60세 이상 농업인이 농지를 담보로 받는 월 연금. 요건·담보평가·수령방식·세제혜택 정리.',
   },
 };
 
@@ -97,7 +91,7 @@ export default function FarmlandPension2026Page() {
     { name: '농지연금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '농지연금 2026, 가입조건·수령액·수령방식 총정리',
+    headline: '농지연금 2026, 가입조건·수령액·수령방식 정리',
     description:
       '60세 이상 농업인이 소유 농지를 담보로 매달 연금을 받는 농지연금. 가입 요건, 담보 평가, 종신형·기간형 수령방식, 세제혜택을 2026년 기준으로 정리.',
     url: URL,
@@ -145,7 +139,7 @@ export default function FarmlandPension2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   농지연금 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 가입조건·수령액·수령방식 총정리</span>
+                  <span className="text-2xl text-text-secondary">· 가입조건·수령액·수령방식 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   땅은 있는데 현금이 부족한 은퇴 농업인에게 농지연금은 농지를 팔지 않고도 매달 생활비를 만드는 방법입니다. 이 글은 농지를 소유한 60세 이상 농업인과 은퇴를 앞둔 농민을 위해 준비했습니다. 누가 가입할 수 있는지, 담보 농지는 어떻게 평가하고 수령액은 어떻게 정해지는지, 어떤 수령 방식을 고를 수 있는지, 세제혜택과 사망 시 처리까지 순서대로 정리합니다. 금액 기준은 매년 바뀌므로 정확한 수치는 한국농어촌공사 농지은행에서 확인하는 것을 전제로 읽어주세요.

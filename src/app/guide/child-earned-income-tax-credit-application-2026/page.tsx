@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-12';
 export const metadata: Metadata = {
   title: '2026 자녀·근로장려금 신청 가이드 | 5월 31일 마감 + 환급 시점',
   description:
-    '5월 31일 마감 자녀장려금·근로장려금 신청 완벽 가이드. 자격(소득·재산·가구유형)·금액(자녀당 100만/단독 165만/맞벌이 330만)·홈택스 신청 5단계·정기 vs 반기 차이·환급 8~9월 정리.',
+    '자녀장려금은 자녀당 100만원, 근로장려금은 맞벌이 가구 330만원이 상한입니다. 자격과 홈택스 신청 5단계, 환급 시점을 정리했습니다.',
   keywords: [
     '자녀장려금 신청',
     '근로장려금 신청',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 자녀·근로장려금 신청 가이드 | 5월 31일 마감 + 환급 시점' }],
-    title: '2026 자녀·근로장려금 신청 가이드',
-    description: '5월 31일 마감·자격 기준·금액·홈택스 신청 5단계·환급 시점.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026 자녀·근로장려금 신청 가이드',
-    description: '5월 31일 마감 + 자녀당 100만 + 맞벌이 330만 + 8~9월 환급.',
   },
 };
 
@@ -88,7 +83,7 @@ export default function ChildEarnedIncomeCreditGuide() {
     { name: '자녀·근로장려금 신청 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '2026 자녀·근로장려금 신청 완벽 가이드',
+    headline: '2026 자녀·근로장려금 신청 가이드',
     description:
       '5월 31일 마감 자녀장려금·근로장려금 자격·금액·홈택스 신청 5단계·정기 vs 반기·환급 시점.',
     url: URL,
@@ -100,7 +95,7 @@ export default function ChildEarnedIncomeCreditGuide() {
     keywords: ['자녀장려금', '근로장려금', '5월 31일', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '2026 자녀·근로장려금 신청 완벽 가이드',
+    name: '2026 자녀·근로장려금 신청 가이드',
     description: '5월 31일 마감 자녀·근로장려금 자격·금액·신청·환급.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -132,7 +127,7 @@ export default function ChildEarnedIncomeCreditGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  2026 자녀·근로장려금 신청 완벽 가이드
+                  2026 자녀·근로장려금 신청 가이드
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   <strong>5월 31일</strong>은 자녀장려금·근로장려금 정기 신청 마감일입니다.

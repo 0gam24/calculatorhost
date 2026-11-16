@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-18';
 export const metadata: Metadata = {
   title: '저축성보험 비과세 2026, 10년 유지 월 150만 일시납 1억',
   description:
-    '저축성보험 보험차익은 요건을 갖추면 비과세됩니다(소득세법 §16, 시행령 §25). 일시납은 1억원 이하 10년 유지, 월적립식은 월 150만원 이하 5년 이상 납입에 10년 유지가 조건입니다. 요건 미달 시 15.4% 과세까지 사례로 정리했습니다.',
+    '저축성보험은 10년 유지 시 일시납 1억원, 월 150만원 적립까지 비과세됩니다. 적립식 5년 납입 요건과 15.4% 과세 사례도 담았습니다.',
   keywords: [
     '저축성보험 비과세',
     '보험 비과세 요건',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '저축성보험 비과세 2026, 10년 유지 월 150만 일시납 1억' }],
-    title: '저축성보험 비과세 2026, 10년만 채우면 될까',
-    description: '10년 유지에 더해 일시납 1억·월납 150만원 한도까지 채워야 보험차익이 비과세. 요건과 과세 사례 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '저축성보험 비과세 2026',
-    description: '일시납 1억·월납 150만원 한도, 10년 유지 요건. 미달 시 보험차익 15.4% 과세. 소득세법 §16.',
   },
 };
 

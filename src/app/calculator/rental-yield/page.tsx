@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { RentalYieldCalculator } from './RentalYieldCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/rental-yield/';
 
@@ -36,15 +37,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '임대수익률 계산기 2026, 공실률·Cap Rate',
-    description: '구매가·보증금·월세·관리비로 연 수익률과 Cap Rate를 계산.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '임대수익률 계산기 2026',
-    description: '임대차 투자 수익성 분석: 연 수익률·Cap Rate·월 순수입 즉시 계산.',
   },
 };
 
@@ -123,7 +120,7 @@ export default function RentalYieldPage() {
     { name: '임대수익률' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '임대수익률 계산하기',
     description:
       '구매가, 받은 보증금, 취득부대비, 월세, 월 관리비, 공실률을 입력해 임대 수익률을 계산하는 방법',
@@ -157,7 +154,8 @@ export default function RentalYieldPage() {
         text: '연 수익률, Cap Rate, 월 순수입, 실투자금이 즉시 계산됩니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -223,6 +221,7 @@ export default function RentalYieldPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="임대수익률은 임대차 투자에서 투자한 자본(구매가 - 보증금 + 부대비)을 기준으로 매년 얻는 순이익의 비율(ROI)을 나타냅니다. Cap Rate는 구매가 전체를 기준으로 한 수익률입니다. 공실률, 관리비, 보증금 변동을 고려하여 정확한 수익성을 평가할 수 있습니다."
                 table={{

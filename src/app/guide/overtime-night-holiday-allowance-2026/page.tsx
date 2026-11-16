@@ -19,7 +19,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/overtime-night-holiday-allowance-2026/';
 const TITLE = '연장·야간·휴일수당 계산기 2026 | 시간별 가산수당';
-const DESCRIPTION = '확인된 통상시급과 휴게를 뺀 실제 근로시간으로 연장·야간·휴일수당의 세전 참고금액을 계산합니다. 연장 50%, 야간 추가 50%, 휴일 하루 8시간 초과 100% 가산을 구분하고 근로분·가산분을 확인하세요. 성인 일반근로 및 근로기준법 제56조 적용 사업장 기준입니다.';
+const DESCRIPTION = '통상시급과 실제 근로시간을 넣으면 연장·야간·휴일수당의 세전 참고금액을 계산합니다. 근로기준법 제56조 기준입니다.';
 const DATE_PUBLISHED = '2026-06-26';
 const DATE_MODIFIED = '2026-10-02';
 
@@ -29,16 +29,13 @@ export const metadata: Metadata = {
   keywords: ['연장근로수당', '야간근로수당', '휴일근로수당', '수당 계산기', '통상시급', '근로기준법'],
   alternates: { canonical: URL },
   openGraph: {
-    title: TITLE,
-    description: DESCRIPTION,
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: TITLE }],
     url: URL,
     type: 'article',
     locale: 'ko_KR',
     publishedTime: DATE_PUBLISHED,
     modifiedTime: DATE_MODIFIED,
   },
-  twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION },
+  twitter: { card: 'summary_large_image',},
 };
 
 const FAQ_ITEMS = [

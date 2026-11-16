@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-24';
 const DATE_MODIFIED = '2026-07-24';
 
 export const metadata: Metadata = {
-  title: '육아기 근로시간 단축 급여 2026, 계산·상한·기간 | calculatorhost',
+  title: '육아기 근로시간 단축 급여 2026, 계산·상한·기간',
   description:
-    '육아기 근로시간 단축은 자녀를 키우며 주 15~35시간으로 일하는 제도입니다. 매주 최초 10시간은 통상임금 100%, 나머지는 80%로 급여가 나옵니다. 계산법·상한·최대 3년 사용 기간을 남녀고용평등법 §19의2 기준으로 정리했습니다.',
+    '육아기 근로시간 단축 급여는 매주 최초 10시간 통상임금 100%, 나머지 80%입니다. 상한과 최대 3년 사용 기간도 정리했습니다.',
   keywords: [
     '육아기 근로시간 단축',
     '육아기 단축 급여',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '육아기 근로시간 단축 급여 2026, 계산·상한·기간' }],
-    title: '육아기 근로시간 단축 급여 2026, 최초 10시간 통상임금 100%',
-    description: '주 15~35시간 단축 근무, 매주 최초 10시간 100%·나머지 80% 급여. 계산법과 최대 3년 사용 기간을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '육아기 근로시간 단축 급여 2026, 계산·상한·기간',
-    description: '매주 최초 10시간 통상임금 100%, 나머지 80%. 최대 3년. 남녀고용평등법 §19의2.',
   },
 };
 

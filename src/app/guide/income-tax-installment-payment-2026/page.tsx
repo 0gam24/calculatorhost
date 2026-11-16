@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-26';
 export const metadata: Metadata = {
   title: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부',
   description:
-    '5월 31일 종소세 마감 5일 전! 종합소득세 분납 신청 완벽 가이드. 분납 가능 조건(1,000만 초과) · 분납 비율(1~2천만 vs 2천만↑ 다름) · 신청 방법 · 분납 기한(2개월) · 이자·가산세 0원 · 분납 vs 지연 납부 차이.',
+    '종합소득세 납부액이 1,000만 원을 넘으면 2개월에 걸쳐 나눠 낼 수 있습니다. 분납에는 이자·가산세가 붙지 않습니다.',
   keywords: [
     '종합소득세 분납',
     '분납 신청',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부' }],
-    title: '종합소득세 분납 신청 2026, 1천만 초과 2개월 분할',
-    description: '분납 가능한가? 분납 비율은? 2차 납부일은? 사례 3개 시뮬 + 가산세 0원 확인.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합소득세 분납 신청 2026 완벽 가이드',
-    description: '5/31 마감 5일 전 · 납부할 세액 1천만↑ · 2개월 분할 납부.',
   },
 };
 
@@ -100,10 +95,10 @@ export default function IncomeTaxInstallmentPayment2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '종합소득세 분납 신청 2026' },
+    { name: '종합소득세 분납 신청' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '종합소득세 분납 신청 2026, 1천만 초과 2개월 분할 납부 완벽 가이드',
+    headline: '종합소득세 분납 신청 2026, 1천만 초과 2개월 분할 납부 가이드',
     description:
       '5월 31일 종합소득세 마감 5일 전! 납부 세액 1,000만 원 초과 시 분납 신청 가능. 분납 비율·기한·신청 방법·이자 없음·분납 vs 지연 납부 차이·사례별 시뮬레이션.',
     url: URL,
@@ -117,7 +112,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '종합소득세 분납 신청 2026',
     description:
-      '5월 31일까지 5일! 종합소득세 분납 신청 완벽 가이드. 분납 가능 조건·분납 비율(1~2천만 vs 2천만↑)·신청 방법·분납 기한(2개월)·이자·가산세 0원·분납 vs 지연 납부 차이·사례별 시뮬레이션.',
+      '5월 31일까지 5일! 종합소득세 분납 신청 가이드. 분납 가능 조건·분납 비율(1~2천만 vs 2천만↑)·신청 방법·분납 기한(2개월)·이자·가산세 0원·분납 vs 지연 납부 차이·사례별 시뮬레이션.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -663,7 +658,7 @@ export default function IncomeTaxInstallmentPayment2026Page() {
                     href="/guide/may-comprehensive-income-tax/"
                     className="rounded-lg border border-border-base p-4 hover:border-primary-500 hover:bg-bg-card"
                   >
-                    <h3 className="font-semibold text-primary-600 dark:text-primary-400">5월 종합소득세 신고 완벽 가이드</h3>
+                    <h3 className="font-semibold text-primary-600 dark:text-primary-400">5월 종합소득세 신고 가이드</h3>
                     <p className="mt-1 text-sm text-text-secondary">
                       신고 대상·기한·홈택스·절세·환급까지 한 페이지 정리
                     </p>

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-19';
 export const metadata: Metadata = {
   title: '국민연금 추납 2026 | 추후납부 대상·한도·계산법',
   description:
-    '국민연금 추납(추후납부)은 과거 못 낸 보험료를 나중에 내 가입기간을 복원하는 제도입니다. 최대 119개월, 60회 분할 가능하며 국민연금법 92조 기준 2025년 11월 개정으로 보험료 산정 기준월이 바뀌었습니다.',
+    '국민연금 추납(추후납부)은 과거 못 낸 보험료를 나중에 내 가입기간을 복원하는 제도입니다. 최대 119개월까지 가능합니다.',
   keywords: [
     '국민연금 추납',
     '국민연금 추후납부',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민연금 추납 2026, 추후납부 대상·한도·계산법' }],
-    title: '국민연금 추납 2026, 추후납부로 가입기간 복원하는 법',
-    description: '경력단절·전업주부도 신청 가능한 국민연금 추후납부. 최대 119개월 한도와 분할납부, 계산 사례까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민연금 추납 2026, 추후납부 한도·계산법',
-    description: '가입기간을 늘려 노령연금 수급요건을 채우는 추납 제도. 국민연금법 §92 기준 최대 119개월, 60회 분할.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function NationalPensionAdditionalPayment2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '국민연금 추납 2026, 추후납부로 가입기간 복원하는 법',
     description:
-      '경력단절·전업주부·노후준비 대상자를 위한 국민연금 추후납부(추납) 완전 정리. 대상 요건, 최대 119개월 한도, 60회 분할납부, 2025년 11월 개정 내용, 계산 사례까지.',
+      '경력단절·전업주부·노후준비 대상자를 위한 국민연금 추후납부(추납) 정리. 대상 요건, 최대 119개월 한도, 60회 분할납부, 2025년 11월 개정 내용, 계산 사례까지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

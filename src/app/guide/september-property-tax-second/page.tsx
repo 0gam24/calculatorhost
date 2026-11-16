@@ -15,6 +15,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/september-property-tax-second/';
 const DATE_PUBLISHED = '2026-05-12';
@@ -23,7 +24,7 @@ const DATE_MODIFIED = '2026-05-12';
 export const metadata: Metadata = {
   title: '9월 재산세 2차 납부 가이드 2026 | 위택스·신용카드 할부·가산세',
   description:
-    '2026년 9월 16~30일 재산세 2차 납부 완벽 가이드. 주택 1차+2차 분할 vs 토지 일괄, 위택스 5가지 납부 방법, 신용카드 무이자 할부, 미납 가산세(3%+월 0.75%), 과오납 환급까지 정리.',
+    '9월 16일부터 30일까지 내는 재산세 2차분은 주택 나머지 절반과 토지분입니다. 위택스 납부 방법과 미납 가산세 3%도 정리했습니다.',
   keywords: [
     '9월 재산세',
     '재산세 2차 납부',
@@ -38,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '9월 재산세 2차 납부 가이드 2026 | 위택스·신용카드 할부·가산세' }],
-    title: '9월 재산세 2차 납부 가이드 2026',
-    description: '주택 분할 vs 토지 일괄·위택스 5가지 방법·할부·가산세·환급.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '9월 재산세 2차 납부 가이드 2026',
-    description: '9월 16~30일 재산세 납부 방법·신용카드 할부·미납 가산세.',
   },
 };
 
@@ -86,7 +82,7 @@ export default function SeptemberPropertyTaxGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '9월 재산세 2차 납부 2026' },
+    { name: '9월 재산세 2차 납부' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '9월 재산세 2차 납부 가이드 2026',
@@ -103,14 +99,14 @@ export default function SeptemberPropertyTaxGuide() {
   const webPageLd = buildWebPageJsonLd({
     name: '9월 재산세 2차 납부 가이드 2026',
     description:
-      '재산세 2차 납부 시즌 완벽 가이드. 일정·방법·할부·가산세·환급.',
+      '재산세 2차 납부 시즌 가이드. 일정·방법·할부·가산세·환급.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '위택스에서 재산세 2차 납부하기',
     description: '위택스(wetax.go.kr)에서 재산세를 납부하는 5단계',
     steps: [
@@ -135,7 +131,8 @@ export default function SeptemberPropertyTaxGuide() {
         text: '결제 완료 화면에서 PDF 다운로드. 위택스 "납부 내역"에 자동 저장.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -224,6 +221,7 @@ export default function SeptemberPropertyTaxGuide() {
               </section>
 
               {/* 3. FAQ */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 4. 미납 가산세 */}
@@ -311,7 +309,7 @@ export default function SeptemberPropertyTaxGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">관련 계산기·가이드</h2>
                 <ul className="space-y-2 text-text-secondary">
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link>, 공시가격 입력 즉시 본세·도시지역분·교육세 계산</li>
-                  <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 완벽 가이드</Link>, 개념·세율·1세대1주택 특례</li>
+                  <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 가이드</Link>, 개념·세율·1세대1주택 특례</li>
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link>, 공시 9억 초과 1주택, 6억 초과 다주택</li>
                   <li>→ <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">취득세 계산기</Link>, 매수 시 비용</li>
                   <li>→ <Link href="/calculator/capital-gains-tax/" className="text-primary-600 underline dark:text-primary-500">양도소득세 계산기</Link>, 매도 시 세금</li>
@@ -329,7 +327,7 @@ export default function SeptemberPropertyTaxGuide() {
                   <strong>법적 근거</strong>: 지방세법 §107 (재산세 부과) · §111 (세율) · §114 (납부 기한·분할) · §117의2 (분할납부) · §122 (세부담 상한) · §150 (지방교육세) · 지방세기본법 §55 (가산금·중가산금) · §56 (환급). 참고: <a href="https://www.wetax.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">위택스(wetax.go.kr)</a>, <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 공시가격</a>, <a href="https://www.law.go.kr" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">법령정보센터</a>.
                 </p>
                 <p className="mb-2">
-                  <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 카드사 무이자 할부 조건·결제대행 수수료는 결제 시점에 변동될 수 있으므로 결제 직전 화면에서 최종 금액을 확인하세요. 개별 사정(상속·증여 병행, 다주택, 비주거용 부동산)은 위택스 1899-0001 또는 관할 시·군·구청 세무과 상담 권장.
+                  <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 카드사 무이자 할부 조건·결제대행 수수료는 결제 시점에 변동될 수 있으므로 결제 직전 화면에서 최종 금액을 확인하세요. 개별 사정(상속·증여 병행, 다주택, 비주거용 부동산)은 위택스(wetax.go.kr) 또는 관할 시·군·구청 세무과 상담 권장.
                 </p>
                 <p>
                   <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵).

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-29';
 export const metadata: Metadata = {
   title: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026',
   description:
-    '부부 공동명의 종합부동산세(종부세) 계산법 완벽 정리. 공동명의 vs 단독명의 공제 차이(18억 vs 12억), 종부세법 §10의2 특례 신청(9월), 고령자·장기보유 세액공제 분배. 유불리 판단·사례 시뮬.',
+    '부부 공동명의는 9억씩 18억을 공제받고, 특례를 신청하면 단독명의처럼 12억 기준에 세액공제가 더해집니다. 유불리 판단법을 정리했습니다.',
   keywords: [
     '부부 공동명의 종부세',
     '종부세 공동명의',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026' }],
-    title: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026',
-    description: '공동명의 18억 공제 vs §10의2 특례 12억 + 세액공제. 매년 9월 신청 기한 주의.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부부 공동명의 종부세, 공동명의 18억 vs §10의2 특례 12억 비교',
-    description: '공동명의 인별 9억씩 공제 vs 특례 12억 + 세액공제. 고령·장기보유 시 유리.',
   },
 };
 
@@ -90,7 +85,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026' },
+    { name: '부부 공동명의 종부세 특례' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '부부 공동명의 종합부동산세(종부세) 특례 vs 단독명의 유불리 2026',
@@ -134,7 +129,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '부부 공동명의 종부세 특례 vs 단독명의 유불리 2026' },
+                    { name: '부부 공동명의 종부세 특례' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 9분 읽기 · 2026-06-29</p>
@@ -425,7 +420,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                   <li>
                     →{' '}
                     <Link href="/guide/comprehensive-real-estate-tax-who-pays-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      종부세 누가 내나? 12억 공제 완벽 정리 2026
+                      종부세 누가 내나? 12억 공제 정리 2026
                     </Link>
                     {'종부세 기본 개념·세율·납부 일정'}
                   </li>
@@ -439,7 +434,7 @@ export default function ComprehensiveRealEstateTaxJointOwnership2026() {
                   <li>
                     →{' '}
                     <Link href="/guide/joint-ownership-couple-capital-gains-tax-savings/" className="text-primary-600 underline dark:text-primary-500">
-                      부부 공동명의 양도세 절세 완전 정리
+                      부부 공동명의 양도세 절세 정리
                     </Link>
                     {'공동명의 양도 시 누진세 분산 효과'}
                   </li>

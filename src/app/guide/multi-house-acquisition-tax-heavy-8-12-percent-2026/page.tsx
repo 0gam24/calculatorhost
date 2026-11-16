@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-01';
 export const metadata: Metadata = {
   title: '다주택자 취득세 중과 2026, 조정 2주택 8%·3주택 12% 정리',
   description:
-    '조정대상지역 2주택은 8%, 3주택 이상은 12% 중과 취득세가 적용됩니다. 비조정지역 기준, 일시적 2주택 제외, 지방 공시가 2억 이하 배제까지 지방세법 §13의2 기준으로 정리했습니다.',
+    '취득세 중과세율은 조정대상지역 2주택 8%, 3주택 이상 12%입니다. 비조정지역 기준과 지방 저가주택 배제도 정리했습니다.',
   keywords: [
     '다주택자 취득세 중과',
     '취득세 8% 12%',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '다주택자 취득세 중과 2026, 조정 2주택 8%·3주택 12% 정리' }],
-    title: '다주택자 취득세 중과 2026, 8%·12% 세율 정리',
-    description: '조정대상지역 2주택 8%, 3주택 이상 12%. 비조정지역 기준과 중과 배제 요건까지 지방세법 §13의2로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '다주택자 취득세 중과 2026',
-    description: '조정 2주택 8%, 3주택 이상 12% 중과 취득세. 지방세법 §13의2 기준 완전 정리.',
   },
 };
 

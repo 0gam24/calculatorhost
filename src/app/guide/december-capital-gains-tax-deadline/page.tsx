@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/december-capital-gains-tax-deadline/';
 const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '12월 양도세 vs 1월 양도세 가이드 2026 | 연말 매도 결정 프레임',
+  title: '12월 vs 1월 양도세 가이드 2026 | 연말 매도 결정 프레임',
   description:
-    '2026년 12월 부동산 매도를 고민 중이신가요? 12월 잔금 vs 1월 잔금의 귀속연도·신고 일정·2027 세법 개정 영향·양도손실 통산 4단계 의사결정 프레임을 정리했습니다. 일시적2주택 만료 위험도 점검.',
+    '잔금을 12월에 받느냐 1월로 넘기느냐에 따라 양도세 귀속연도, 신고 일정, 손실 통산이 달라집니다. 4단계 판단 프레임을 정리했습니다.',
   keywords: [
     '12월 양도세',
     '연말 매도',
@@ -39,9 +40,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '12월 양도세 vs 1월 양도세 가이드 2026 | 연말 매도 결정 프레임' }],
-    title: '12월 양도세 vs 1월 양도세 가이드 2026',
-    description: '귀속연도·신고 일정·세법 개정·양도손실 통산 의사결정 프레임.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -50,8 +48,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '12월 양도세 vs 1월 양도세 가이드 2026',
-    description: '연말 매도 vs 연초 매도 의사결정 4단계 프레임.',
   },
 };
 
@@ -87,7 +83,7 @@ export default function DecemberCgtDeadlineGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '12월 양도세 마감 결정 2026' },
+    { name: '12월 양도세 마감 결정' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '12월 양도세 vs 1월 양도세 의사결정 가이드 2026',
@@ -111,7 +107,7 @@ export default function DecemberCgtDeadlineGuide() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '12월 vs 1월 양도 결정 4단계 프레임',
     description: '연말 부동산 매도 의사결정 단계',
     steps: [
@@ -136,7 +132,8 @@ export default function DecemberCgtDeadlineGuide() {
         text: '12월 양도 → 2월 말 신고·납부. 1월 양도 → 3월 말 신고. 자금·일정 종합 검토 후 결정.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -235,6 +232,7 @@ export default function DecemberCgtDeadlineGuide() {
               </section>
 
               {/* 4. FAQ */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 5. 양도손실 통산 정확 이해 */}

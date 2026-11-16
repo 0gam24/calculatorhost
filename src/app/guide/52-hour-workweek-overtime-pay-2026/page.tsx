@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-09';
 export const metadata: Metadata = {
   title: '주 52시간 연장근로수당 2026, 계산법과 1.5배 기준',
   description:
-    '주 52시간은 법정 40시간에 연장 12시간을 더한 상한입니다. 연장근로수당 1.5배 계산법, 야간·휴일 중복 가산, 1일 8시간 초과와 주 40시간 초과의 차이, 5인 미만 예외까지 근로기준법 조문으로 정리했습니다.',
+    '주 52시간은 법정 40시간에 연장 12시간을 더한 상한입니다. 연장수당 1.5배 계산법과 야간·휴일 중복 가산을 정리했습니다.',
   keywords: [
     '주 52시간 계산법',
     '연장근로수당 계산',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주 52시간 연장근로수당 2026 계산법' }],
-    title: '주 52시간 연장근로수당 2026, 계산법과 1.5배 기준',
-    description: '법정 40시간 + 연장 12시간 = 주 52시간. 연장·야간·휴일 가산수당 계산법과 흔한 함정을 근로기준법 조문으로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주 52시간 연장근로수당 2026 계산법',
-    description: '연장근로 통상임금 50% 가산, 야간·휴일 중복 가산, 5인 미만 예외까지. 근로기준법 §50·§53·§56.',
   },
 };
 
@@ -333,7 +328,7 @@ export default function Workweek52OvertimePay2026Page() {
                     href="/guide/overtime-night-holiday-allowance-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연장·야간·휴일수당 총정리</div>
+                    <div className="font-semibold text-primary-500">연장·야간·휴일수당 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">가산수당의 종류와 중복 적용을 더 자세히 살펴보세요.</p>
                   </Link>
                   <Link

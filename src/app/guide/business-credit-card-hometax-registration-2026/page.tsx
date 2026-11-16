@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-29';
 export const metadata: Metadata = {
   title: '사업용 신용카드 홈택스 등록 2026, 매입세액공제 간편하게',
   description:
-    '개인사업자가 사업용 신용카드를 홈택스에 등록하면 사용내역이 자동 집계되어 부가세 매입세액공제가 간편해집니다. 등록 방법, 공제·불공제 구분, 접대비·비영업용 승용차 제외 기준을 부가가치세법 §46·§39 기준으로 정리했습니다.',
+    '사업용 신용카드를 홈택스에 등록하면 사용내역이 자동 집계돼 부가세 매입세액공제가 간편해집니다. 공제·불공제 구분 기준도 정리했습니다.',
   keywords: [
     '사업용 신용카드 등록',
     '홈택스 사업용카드',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '사업용 신용카드 홈택스 등록 2026, 매입세액공제 간편하게' }],
-    title: '사업용 신용카드 홈택스 등록 2026, 매입세액공제 자동 집계',
-    description: '등록 방법과 공제·불공제 구분, 접대비·비영업용 승용차 제외 기준을 부가가치세법 §46·§39로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사업용 신용카드 홈택스 등록 2026',
-    description: '매입세액공제 자동 집계와 불공제 항목(접대비·비영업용 승용차)을 부가가치세법 기준으로 정리.',
   },
 };
 
@@ -325,7 +320,7 @@ export default function BusinessCreditCardHometaxRegistration2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">부가세 불공제 매입세액</div>
-                    <p className="mt-1 text-sm text-text-secondary">공제받을 수 없는 매입세액 항목 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">공제받을 수 없는 매입세액 항목 정리.</p>
                   </Link>
                   <Link
                     href="/guide/credit-card-sales-vat-deduction-2026/"

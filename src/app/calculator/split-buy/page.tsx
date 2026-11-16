@@ -20,6 +20,8 @@ import {
 } from '@/lib/seo/jsonld';
 import { SplitBuyCalculator } from './SplitBuyCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/split-buy/';
 const DATE_PUBLISHED = '2026-05-03';
@@ -42,9 +44,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '분할매수 계산기 2026, 주식·코인 평단·BEP',
-    description:
-      '차수별 매수로 가중평균 평단가·실효 평단가·손익분기점을 즉시 계산. 균등분할 자동채움 지원.',
     url: URL,
     type: 'website',
 
@@ -52,8 +51,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '분할매수 계산기 2026 (주식·코인)',
-    description: '차수별 평단·실효 평단·BEP까지 한 번에. 균등분할 자동채움 지원.',
   },
 };
 
@@ -143,7 +140,7 @@ export default function SplitBuyPage() {
     { name: '분할매수 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '분할매수 평균단가 계산하기',
     description:
       '차수별 단가·수량을 입력해 가중평균 평단가, 실효 평단가, 손익분기점을 산출하는 방법',
@@ -165,7 +162,37 @@ export default function SplitBuyPage() {
         text: '가중평균 평단가, 차수별 누적 평단 추이 표, 수수료 포함 실효 평단가, 손익분기점(BEP)이 즉시 계산됩니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+
+  const glossaryData = {
+    name: '분할매수·DCA 핵심 용어',
+    description: '주식·코인 분할매수 전략과 비용 계산 용어집',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '분할매수 (DCA)',
+        alternateName: 'Dollar Cost Averaging',
+        description:
+          '한 종목을 한 번에 매수하지 않고 여러 차수에 나눠 매수하는 전략. 시점 분산으로 평균단가 안정화, 단기 변동성 부담 완화.',
+      },
+      {
+        name: '균등분할',
+        description:
+          '매 차수 동일 금액(또는 수량)을 매수하는 가장 단순한 분할매수 방식. 정기 자동 매수에 적합.',
+      },
+      {
+        name: '실효 평단가',
+        description:
+          '매수 수수료를 포함한 실제 매입 평균단가. 산식: (총 매수금액 + 총 매수수수료) ÷ 총 수량. 손익 판단의 실질 기준.',
+      },
+      {
+        name: '무한매수법',
+        description:
+          '라오어가 제안한 분할매수 전략. 시드를 N등분(예: 40)해 매 회차 정액 매수, 평단 LOC 분할 매도 결합. 본 계산기는 정액 분할로 시뮬레이션 가능.',
+      },
+    ],
+  };
 
   return (
     <>
@@ -197,34 +224,7 @@ export default function SplitBuyPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            buildDefinedTermSetJsonLd({
-              name: '분할매수·DCA 핵심 용어',
-              description: '주식·코인 분할매수 전략과 비용 계산 용어집',
-              url: `${URL}#glossary`,
-              terms: [
-                {
-                  name: '분할매수 (DCA)',
-                  alternateName: 'Dollar Cost Averaging',
-                  description:
-                    '한 종목을 한 번에 매수하지 않고 여러 차수에 나눠 매수하는 전략. 시점 분산으로 평균단가 안정화, 단기 변동성 부담 완화.',
-                },
-                {
-                  name: '균등분할',
-                  description:
-                    '매 차수 동일 금액(또는 수량)을 매수하는 가장 단순한 분할매수 방식. 정기 자동 매수에 적합.',
-                },
-                {
-                  name: '실효 평단가',
-                  description:
-                    '매수 수수료를 포함한 실제 매입 평균단가. 산식: (총 매수금액 + 총 매수수수료) ÷ 총 수량. 손익 판단의 실질 기준.',
-                },
-                {
-                  name: '무한매수법',
-                  description:
-                    '라오어가 제안한 분할매수 전략. 시드를 N등분(예: 40)해 매 회차 정액 매수, 평단 LOC 분할 매도 결합. 본 계산기는 정액 분할로 시뮬레이션 가능.',
-                },
-              ],
-            }),
+            buildDefinedTermSetJsonLd(glossaryData),
           ),
         }}
       />
@@ -269,6 +269,7 @@ export default function SplitBuyPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="분할매수(DCA, Dollar Cost Averaging)는 한 종목을 한 번에 매수하지 않고 여러 차례 나눠 사는 방법입니다. 시점 분산으로 평균단가를 안정시키고 단기 변동성의 심리적 부담을 줄입니다."
                 table={{
@@ -489,6 +490,7 @@ export default function SplitBuyPage() {
                   변경 시 차이가 있을 수 있으며, 모든 투자 결정은 투자자 본인의 책임입니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

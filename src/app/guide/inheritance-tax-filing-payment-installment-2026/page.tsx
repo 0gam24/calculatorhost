@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-29';
 export const metadata: Metadata = {
   title: '상속세 신고기한 6개월, 분납·연부연납·물납 2026',
   description:
-    '상속세는 사망일이 속한 달 말일부터 6개월 안에 신고·납부해야 합니다. 세액이 1천만원을 넘으면 분납, 2천만원을 넘으면 연부연납이나 물납으로 나눠 낼 수 있는 요건과 절차를 상속세 및 증여세법 기준으로 정리했습니다.',
+    '상속세는 사망일이 속한 달 말일부터 6개월 안에 신고·납부해야 합니다. 1천만원 초과면 분납, 2천만원을 넘으면 연부연납·물납이 가능합니다.',
   keywords: [
     '상속세 신고기한',
     '상속세 6개월',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속세 신고기한 6개월, 분납·연부연납·물납 2026' }],
-    title: '상속세 신고기한과 나눠 내는 방법 2026',
-    description: '신고기한 6개월, 1천만원 초과 분납, 2천만원 초과 연부연납·물납 요건을 상속세및증여세법으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속세 신고기한 6개월과 분납·연부연납·물납',
-    description: '세액 규모별로 나눠 내는 방법과 요건을 상속세및증여세법 §67·§70·§71·§73으로 정리.',
   },
 };
 

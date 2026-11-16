@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-07';
 export const metadata: Metadata = {
   title: 'ISA 계좌 세제혜택 2026 | 200만원 비과세·9.9% 분리과세',
   description:
-    '개인종합자산관리계좌(ISA)의 세제혜택 완벽 정리. 일반형 200만·서민형 400만원 비과세, 9.9% 분리과세, 3년 의무가입, 손익통산. 조세특례제한법 §91의18.',
+    'ISA는 일반형 200만원·서민형 400만원까지 비과세이고, 초과분은 9.9%로 분리과세됩니다. 3년 의무가입과 손익통산 방식을 정리했습니다.',
   keywords: [
     'ISA 계좌 세제혜택',
     '개인종합자산관리계좌',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'ISA 계좌 세제혜택 2026 | 200만원 비과세·9.9% 분리과세' }],
-    title: 'ISA 계좌 세제혜택 2026, 비과세 한도·분리과세율·의무기간 완전 정리',
-    description: '일반형 200만원, 서민형 400만원까지 이익이 비과세. 초과분은 9.9% 분리과세(금융소득종합과세 제외). 3년 의무가입, 손익통산 가능.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'ISA 계좌 세제혜택 2026, 비과세·분리과세 완벽 이해',
-    description: 'ISA 비과세 한도 200만~400만원, 초과분 9.9% 분리과세, 일반 금융소득 15.4% vs ISA 분리과세 최대 90% 절세 효과.',
   },
 };
 
@@ -101,9 +96,9 @@ export default function IsaAccountTaxBenefit2026Page() {
     { name: 'ISA 계좌 세제혜택 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: 'ISA 계좌 세제혜택 2026, 비과세 한도·분리과세율·의무기간 완전 정리',
+    headline: 'ISA 계좌 세제혜택 2026, 비과세 한도·분리과세율·의무기간 정리',
     description:
-      '개인종합자산관리계좌(ISA)의 세제혜택 완벽 정리. 일반형 200만원·서민형 400만원 비과세, 초과분 9.9% 분리과세, 3년 의무가입, 손익통산, 연금계좌 전환 추가혜택.',
+      '개인종합자산관리계좌(ISA)의 세제혜택 정리. 일반형 200만원·서민형 400만원 비과세, 초과분 9.9% 분리과세, 3년 의무가입, 손익통산, 연금계좌 전환 추가혜택.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +110,7 @@ export default function IsaAccountTaxBenefit2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: 'ISA 계좌 세제혜택 2026',
     description:
-      '비과세 한도 200만~400만원, 초과분 9.9% 분리과세, 3년 의무가입, 금융소득종합과세 제외의 완벽 정리.',
+      '비과세 한도 200만~400만원, 초과분 9.9% 분리과세, 3년 의무가입, 금융소득종합과세 제외의 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -458,7 +453,7 @@ export default function IsaAccountTaxBenefit2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">금융소득종합과세 15.4%</div>
-                    <p className="mt-1 text-sm text-text-secondary">2,000만원 기준과 세율 구간을 완벽 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">2,000만원 기준과 세율 구간을 정리.</p>
                   </Link>
                   <Link
                     href="/guide/financial-income-comprehensive-vs-separate-taxation/"

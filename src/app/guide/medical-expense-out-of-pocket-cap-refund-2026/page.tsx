@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-20';
 export const metadata: Metadata = {
   title: '본인부담상한제 2026, 의료비 초과금 환급 조건과 신청방법',
   description:
-    '1년간 낸 건강보험 본인부담금이 소득분위별 상한액을 넘으면 초과분을 돌려받습니다. 본인부담상한제의 사전급여·사후환급 구조, 2026년 최고상한액 843만원, 제외 항목, 신청 방법을 국민건강보험법 §44 기준으로 정리했습니다.',
+    '건강보험 본인부담금이 1년간 소득분위별 상한액을 넘으면 초과분을 돌려받습니다. 신청 방법과 제외 항목을 정리했습니다.',
   keywords: [
     '본인부담상한제',
     '의료비 환급',
@@ -33,10 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '본인부담상한제 2026, 의료비 초과금 환급 조건과 신청방법' }],
-    title: '본인부담상한제 2026, 의료비 초과금 환급 조건과 신청방법',
-    description:
-      '연간 본인부담금이 소득분위별 상한액을 초과하면 초과분을 건강보험공단이 돌려줍니다. 2026년 최고 843만원, 사전급여·사후환급, 제외 항목, 신청 절차 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '본인부담상한제 2026, 의료비 초과금 환급 조건과 신청방법',
-    description: '연간 본인부담금이 소득분위별 상한액 초과 시 초과분 환급. 2026년 최고 843만원, 국민건강보험법 §44·시행령 §19.',
   },
 };
 

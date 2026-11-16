@@ -24,15 +24,12 @@ const DATE_MODIFIED = '2026-10-14';
 const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 export const metadata: Metadata = {
-  title: 'DSR 대출한도 늘리는 5가지 방법 2026 | calculatorhost',
+  title: 'DSR 대출한도 늘리는 5가지 방법 2026, 스트레스 금리 대응',
   description:
-    '2025년 10월 스트레스 금리 상향(수도권·규제지역 변동 3.0%p)으로 좁아진 환경에서 대출한도를 확보하는 신용대출 상환·소득 합산 등 5가지 방법. 한국 거주자 기준 실전 가이드. 관련 계산기 링크 포함.',
+    '스트레스 금리 상향으로 줄어든 DSR 한도를 넓히는 5가지 방법을 정리합니다. 신용대출 상환, 소득 합산 등을 시뮬레이션과 함께 설명합니다.',
   keywords: ['DSR', '대출한도', '주담대', '스트레스 DSR', '대출 늘리는 법', '2026 DSR'],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'DSR 대출한도 늘리는 5가지 방법 2026 | calculatorhost' }],
-    title: 'DSR 대출한도를 늘리는 5가지 방법 2026',
-    description: '스트레스 금리 상향(수도권·규제지역 변동 3.0%p) 환경에서 대출한도 확보 실전 가이드.',
     url: URL,
     type: 'article',
 
@@ -42,8 +39,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DSR 대출한도 늘리는 5가지 방법',
-    description: '스트레스 금리 상향 환경에서 한도 확보 실전 가이드.',
 
   },
 };

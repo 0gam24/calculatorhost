@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-14';
 export const metadata: Metadata = {
   title: '채권투자 세금 2026, 표면이자 15.4%·매매차익 비과세',
   description:
-    '개인투자자의 채권 표면이자는 15.4% 원천징수, 매매차익은 소득세법 열거주의로 개인 직접보유 시 비과세. 금융소득 2,000만원 기준, 저쿠폰 절세 원리, 펀드·ETF 예외까지 정리.',
+    '채권 표면이자는 15.4% 원천징수되고, 개인이 직접 보유했다면 매매차익은 비과세입니다. 저쿠폰 절세와 펀드·ETF 예외를 정리했습니다.',
   keywords: [
     '채권 세금',
     '채권 이자소득세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '채권투자 세금 2026 가이드' }],
-    title: '채권투자 세금 2026, 표면이자 15.4%·매매차익 비과세',
-    description: '표면이자는 이자소득으로 15.4% 원천징수, 개인 직접보유 채권의 매매차익은 열거주의로 비과세. 사례로 정리한 채권 세제.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '채권투자 세금 2026, 표면이자 15.4%·매매차익 비과세',
-    description: '표면이자 15.4%, 개인 직접보유 매매차익 비과세, 금융소득 2,000만원 종합과세 기준까지 사례로 정리.',
   },
 };
 
@@ -378,7 +373,7 @@ export default function BondInvestmentTax2026Page() {
                     href="/guide/interest-income-tax-15-4-percent-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">이자소득세 15.4% 완전정리</div>
+                    <div className="font-semibold text-primary-500">이자소득세 15.4% 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">소득세 14% + 지방소득세 1.4% 구조와 원천징수 원리.</p>
                   </Link>
                   <Link

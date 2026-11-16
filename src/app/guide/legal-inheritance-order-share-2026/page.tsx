@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-01';
 export const metadata: Metadata = {
   title: '법정상속순위와 상속분 2026, 배우자 1.5·자녀 1 계산법',
   description:
-    '재산 상속은 배우자와 직계비속이 1순위이며 배우자는 자녀보다 1.5배를 받습니다. 상속 순위, 법정상속분 계산, 유류분과 상속포기까지 민법 §1000·§1003·§1009 기준으로 정리했습니다.',
+    '직계비속과 함께 1순위 상속인이 되는 배우자는 자녀보다 1.5배를 받습니다. 유류분과 상속포기도 민법 기준으로 정리했습니다.',
   keywords: [
     '법정상속순위',
     '법정상속분',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '법정상속순위와 상속분 2026, 배우자 1.5·자녀 1 계산법' }],
-    title: '법정상속순위와 상속분 2026, 배우자 1.5배 계산법',
-    description: '배우자·직계비속 1순위, 배우자는 1.5배. 상속 순위와 법정상속분, 유류분, 상속포기까지 민법 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '법정상속순위와 상속분 2026',
-    description: '배우자 1.5배, 자녀 각 1. 상속 순위와 법정상속분 계산을 민법 §1000·§1009로 정리.',
   },
 };
 

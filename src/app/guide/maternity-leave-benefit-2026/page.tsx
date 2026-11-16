@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-24';
 const DATE_MODIFIED = '2026-07-24';
 
 export const metadata: Metadata = {
-  title: '출산전후휴가 급여 2026, 90일 상한·신청·기간 정리 | calculatorhost',
+  title: '출산전후휴가 급여 2026, 90일 상한·신청·기간 정리',
   description:
-    '출산전후휴가는 근로기준법 §74에 따라 90일(다태아 120일) 보장되고 통상임금 100%를 받습니다. 2026년 고용보험 급여 상한, 회사 규모별 지급 주체, 신청 기한과 계산법을 정리했습니다.',
+    '출산전후휴가는 근로기준법 §74에 따라 90일(다태아 120일)이고 통상임금 100%를 받습니다. 급여 상한과 신청 기한을 정리했습니다.',
   keywords: [
     '출산전후휴가 급여',
     '출산휴가 급여 2026',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '출산전후휴가 급여 2026, 90일 상한·신청·기간 정리' }],
-    title: '출산전후휴가 급여 2026, 90일 통상임금 100% 받는 법',
-    description: '90일(다태아 120일) 보장, 통상임금 100%, 고용보험 상한과 회사 규모별 지급 주체까지. 신청 기한을 놓치지 않게 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '출산전후휴가 급여 2026, 90일 상한·신청·기간',
-    description: '90일(다태아 120일) 통상임금 100%. 회사 규모별 지급 주체와 신청 기한. 근로기준법 §74.',
   },
 };
 

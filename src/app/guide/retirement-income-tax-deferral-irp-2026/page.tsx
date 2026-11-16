@@ -19,7 +19,7 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-06-19';
 
 export const metadata: Metadata = {
-  title: '퇴직소득세 이연 2026 | IRP 이체로 30% 감면받는 법 | calculatorhost',
+  title: '퇴직소득세 이연 2026 | IRP 이체로 30% 감면받는 법',
   description:
     '퇴직금을 IRP·연금저축에 이체해 세금을 미루고, 연금 수령 시 30~40% 감면받는 법. 과세이연 조건, 제한 시간, 실제 절감액 시뮬레이션.',
   keywords: [
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직소득세 이연 2026 | IRP 이체로 30% 감면받는 법 | calculatorhost' }],
-    title: '퇴직소득세 이연 2026, IRP 이체로 30% 감면',
-    description: '퇴직금을 연금계좌에 이체해 세금을 미루고, 나중에 30~40% 절감받는 구체적 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -92,7 +89,7 @@ export default function RetirementIncomeTaxDeferralIrpPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '퇴직소득세 이연, IRP 이체' },
+    { name: '퇴직소득세 이연' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '퇴직소득세 이연 2026, IRP 이체로 30% 감면받는 법',

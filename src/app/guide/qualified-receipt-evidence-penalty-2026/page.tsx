@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-04';
 export const metadata: Metadata = {
   title: '적격증빙 증빙불비가산세 2026, 3만원 초과·미수취 2%',
   description:
-    '사업 경비를 쓰고 세금계산서·카드전표·현금영수증 같은 적격증빙을 못 받으면, 3만원 초과 거래는 미수취 금액의 2% 가산세가 붙습니다. 적격증빙 4종, 3만원 기준, 제외 대상을 소득세법 §160의2·§81의6 기준으로 정리했습니다.',
+    '3만원 초과 거래에서 적격증빙을 받지 못하면 미수취 금액의 2%가 가산세로 붙습니다. 세금계산서·카드전표 등 4종과 예외를 정리했습니다.',
   keywords: [
     '적격증빙 가산세',
     '증빙불비가산세 2%',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '적격증빙 증빙불비가산세 2026' }],
-    title: '적격증빙 증빙불비가산세 2026, 3만원 초과 미수취 2%',
-    description: '세금계산서·계산서·카드전표·현금영수증 4종을 3만원 초과 거래에서 못 받으면 2% 가산세. 소득세법 §160의2·§81의6 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '적격증빙 증빙불비가산세 2026, 3만원 초과 2%',
-    description: '적격증빙 4종을 3만원 초과 거래에서 미수취하면 그 금액의 2% 가산세. 소규모사업자는 제외. 소득세법 §160의2·§81의6.',
   },
 };
 

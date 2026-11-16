@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-09-11';
 const DATE_MODIFIED = '2026-09-11';
 
 export const metadata: Metadata = {
-  title: '납부기한 연장 신청 요건 2026, 사유·기간·신청 기한',
+  title: '납부기한 연장 신청 요건 2026, 사유·기간·절차·가산세',
   description:
-    '재해·도난·사업 위기 등으로 국세를 기한까지 낼 수 없을 때는 납부기한 연장을 신청할 수 있습니다. 원칙 9개월, 특정 사유는 2년까지 연장되고, 만료일 3일 전까지 관할 세무서에 신청합니다. 국세징수법 §13, 시행령 §11·§12·§14, 국세기본법 §47의4·§47의5 기준으로 사유와 절차를 정리했습니다.',
+    '재해나 사업 위기로 국세를 못 내면 납부기한을 원칙 9개월, 특정 사유는 2년까지 늦출 수 있습니다. 만료 3일 전까지 세무서에 신청합니다.',
   keywords: [
     '납부기한 연장',
     '납부기한 연장 신청',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '납부기한 연장 신청 요건 2026, 사유·기간·신청 기한' }],
-    title: '납부기한 연장 신청 요건 2026',
-    description: '재해·사업 위기 등 연장 사유, 원칙 9개월(특정 사유 2년) 연장 기간, 만료일 3일 전 신청 기한을 국세징수법 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '납부기한 연장 신청 요건 2026',
-    description: '연장 사유·기간·신청 기한을 국세징수법 §13, 시행령 §11·§12·§14, 국세기본법 §47의4·§47의5 기준으로 정리.',
   },
 };
 

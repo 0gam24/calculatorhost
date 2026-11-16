@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-26';
 export const metadata: Metadata = {
   title: 'IRP 중도인출 조건 2026, 주택구입·요양 법정 사유 정리',
   description:
-    'IRP는 원칙적으로 만 55세 전 중도인출이 안 되지만, 무주택자 주택구입·6개월 이상 요양·파산 등 법정 사유면 가능합니다. 사유별 요건과 세금, DB형과의 차이를 근로자퇴직급여보장법 §7 기준으로 정리했습니다.',
+    'IRP는 만 55세 전 중도인출이 원칙적으로 막히지만 무주택자 주택구입, 6개월 이상 요양, 파산은 예외입니다. 사유별 세금을 정리했습니다.',
   keywords: [
     'IRP 중도인출',
     '퇴직연금 중도인출 사유',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: 'IRP 중도인출 조건 2026, 주택구입·요양 법정 사유 정리' }],
-    title: 'IRP 중도인출 조건 2026, 언제 꺼낼 수 있고 세금은',
-    description: '무주택자 주택구입, 6개월 이상 요양, 파산·개인회생 등 법정 사유일 때만 가능. 사유별 요건과 세금까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'IRP 중도인출 조건 2026',
-    description: '법정 사유일 때만 가능한 IRP 중도인출. 근로자퇴직급여보장법 §7 기준 정리.',
   },
 };
 

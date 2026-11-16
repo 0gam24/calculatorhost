@@ -30,9 +30,9 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-09-30';
 
 export const metadata: Metadata = {
-  title: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost',
+  title: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 정리',
   description:
-    '2026년 4대보험(국민연금·건강보험·고용보험·산재보험) 요율과 근로자 부담 기준 정리. 1월 국민연금 요율 변경·7월 기준소득월액 상하한 조정, 기준소득월액 상한, 장기요양보험료 계산법까지.',
+    '2026년 4대보험 근로자 부담 기준을 정리했습니다. 1월 국민연금 요율 변경과 7월 기준소득월액 조정, 장기요양보험료 계산법도 담았습니다.',
   keywords: [
     '4대보험',
     '국민연금 2026',
@@ -46,17 +46,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리 | calculatorhost',
-      },
-    ],
-    title: '4대보험 요율 2026, 근로자 부담금 기준과 근로자 부담 정리',
-    description:
-      '2026년 최신 4대보험 요율, 1월 국민연금 요율 변경·7월 기준소득월액 상하한 조정, 장기요양보험료 계산, 기준소득월액 상한선까지 종합 가이드.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -114,7 +103,7 @@ export default function FourMajorInsuranceRates2026Page() {
     { name: '4대보험 요율 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리',
+    headline: '4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 정리',
     description:
       '2026년 4대보험(국민연금·건강보험·고용보험·산재보험) 요율 및 근로자 부담금 기준과 근로자 부담 정리. 1월 국민연금 요율 변경·7월 기준소득월액 상하한 조정, 기준소득월액 상한, 장기요양보험료 계산법까지.',
     url: URL,
@@ -128,7 +117,7 @@ export default function FourMajorInsuranceRates2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '4대보험 요율 2026',
     description:
-      '2026년 최신 4대보험 요율, 1월 국민연금 요율 변경·7월 기준소득월액 상하한 조정, 장기요양보험료 계산, 기준소득월액 상한선, 근로자 부담금 완전 정리.',
+      '2026년 최신 4대보험 요율, 1월 국민연금 요율 변경·7월 기준소득월액 상하한 조정, 장기요양보험료 계산, 기준소득월액 상한선, 근로자 부담금 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -175,7 +164,7 @@ export default function FourMajorInsuranceRates2026Page() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">근로 · 8분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 총정리
+                  4대보험 요율 2026, 국민연금·건강·고용·산재 근로자 부담 정리
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   직장인이라면 반드시 알아야 할 4대보험(국민연금·건강보험·고용보험·산재보험). 2026년

@@ -20,9 +20,9 @@ const DATE_MODIFIED = '2026-06-27';
 
 export const metadata: Metadata = {
   title:
-    '신용점수와 대출금리 2026, 점수 올리는 법·금리 영향 총정리',
+    '신용점수와 대출금리 2026, 올리는 법·무료 조회·회복 기간',
   description:
-    '신용점수(NICE·KCB)가 대출 승인과 금리에 미치는 영향을 정리합니다. 점수를 올리는 구체적 방법, 무료 조회 방법, 점수 회복 기간을 상세 설명합니다.',
+    '신용점수(NICE·KCB)가 대출 승인과 금리에 미치는 영향, 점수 올리는 법, 무료 조회와 회복 기간을 정리합니다.',
   keywords: [
     '신용점수',
     '신용점수 올리는 법',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '신용점수와 대출금리 2026',
-      },
-    ],
-    title: '신용점수와 대출금리 2026, 점수 올리는 법',
-    description:
-      '신용점수가 대출 이자에 미치는 영향과 점수를 개선하는 구체적 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '신용점수와 대출금리 2026',
-    description: '신용점수를 올리고 대출 금리를 낮추는 방법.',
   },
 };
 
@@ -73,7 +60,7 @@ const FAQ_ITEMS = [
   {
     question: '신용점수는 어디서 무료로 확인하나요?',
     answer:
-      '토스, 카카오페이, 뱅크샐러드 등 핀테크 앱에서 무료로 확인할 수 있습니다. 또한 NICE지키미(www.niceskr.co.kr), 올크레딧(allcredit.co.kr) 등 신용평가사 공식 사이트에서도 본인 무료조회가 가능합니다. 이런 조회는 신용점수에 영향을 주지 않습니다.',
+      '토스, 카카오페이, 뱅크샐러드 등 핀테크 앱에서 무료로 확인할 수 있습니다. 또한 NICE지키미(www.credit.co.kr), 올크레딧(allcredit.co.kr) 등 신용평가사 공식 사이트에서도 본인 무료조회가 가능합니다. 이런 조회는 신용점수에 영향을 주지 않습니다.',
   },
   {
     question: '신용점수가 낮으면 대출 신청이 거절되나요?',
@@ -125,7 +112,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '신용점수와 대출금리 2026 | calculatorhost',
     description:
-      '신용점수가 대출 승인과 금리에 미치는 영향, 점수를 올리는 방법을 총정리합니다.',
+      '신용점수가 대출 승인과 금리에 미치는 영향, 점수를 올리는 방법을 정리합니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -360,7 +347,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                       (Banksalad) 등 모바일 앱에서 즉시 무료 조회 가능. 로그인 후 신용점수 탭에서 확인.
                     </li>
                     <li>
-                      <strong>2. 신용평가사 공식 사이트:</strong> NICE지키미(www.niceskr.co.kr), 올크레딧
+                      <strong>2. 신용평가사 공식 사이트:</strong> NICE지키미(www.credit.co.kr), 올크레딧
                       (www.allcredit.co.kr) 등에서 본인 확인 후 무료 조회 가능.
                     </li>
                     <li>
@@ -681,7 +668,7 @@ export default function CreditScoreLoanInterestRate2026Page() {
                   </a>
                   ,{' '}
                   <a
-                    href="https://www.niceskr.co.kr/"
+                    href="https://www.credit.co.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

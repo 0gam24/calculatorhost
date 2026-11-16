@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-19';
 export const metadata: Metadata = {
   title: '국민주택채권 매입 2026, 매입금액과 즉시매도 할인 계산법',
   description:
-    '부동산 소유권이전등기 시 국민주택채권을 의무 매입해야 하며, 매입금액은 시가표준액에 매입률을 곱해 산정합니다. 즉시매도 본인부담금 계산법과 2026년 절차, 면제 대상까지 정리했습니다. 주택도시기금법 §8 기준.',
+    '소유권이전등기 때 의무로 사야 하는 국민주택채권은 시가표준액에 매입률을 곱해 산정합니다. 즉시매도 본인부담금 계산법도 정리했습니다.',
   keywords: [
     '국민주택채권 매입',
     '국민주택채권 매입률',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '국민주택채권 매입 2026, 매입금액과 즉시매도 할인 계산법' }],
-    title: '국민주택채권 매입 2026, 소유권이전등기 시 매입금액 계산법',
-    description: '부동산 매매·상속·증여로 소유권이전등기 시 의무 매입하는 국민주택채권. 매입금액 산정과 즉시매도 본인부담금 계산법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '국민주택채권 매입 2026, 매입금액·즉시매도 할인 계산법',
-    description: '소유권이전등기 시 국민주택채권 매입금액 산정법과 즉시매도 본인부담금 계산 사례. 주택도시기금법 §8.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function NationalHousingBondPurchase2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '국민주택채권 매입 2026, 매입금액과 즉시매도 본인부담금 계산법',
     description:
-      '부동산 소유권이전등기 시 의무 매입하는 국민주택채권의 매입금액 산정 원리와 즉시매도 본인부담금 계산 사례, 면제 대상까지 완전 정리.',
+      '부동산 소유권이전등기 시 의무 매입하는 국민주택채권의 매입금액 산정 원리와 즉시매도 본인부담금 계산 사례, 면제 대상까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-06';
 export const metadata: Metadata = {
   title: '현금영수증 의무발행, 10만원·미발급 가산세 20% 정리',
   description:
-    '의무발행업종은 건당 10만원 이상 현금거래 시 소비자가 요구하지 않아도 현금영수증을 발급해야 합니다. 미발급 가산세 20%, 자진발급 방법, 소비자 신고 절차를 소득세법 §162의3 기준으로 정리했습니다.',
+    '의무발행업종은 건당 10만원 이상 현금거래 시 소비자가 요구하지 않아도 현금영수증을 발급해야 합니다. 미발급 가산세는 20%입니다.',
   keywords: [
     '현금영수증 의무발행',
     '현금영수증 미발급 가산세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '현금영수증 의무발행과 미발급 가산세' }],
-    title: '현금영수증 의무발행, 10만원·미발급 가산세 20% 정리',
-    description: '의무발행업종 건당 10만원 이상 현금거래는 요구 없어도 발급 의무. 미발급 가산세 20%와 신고 절차.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '현금영수증 의무발행 가산세 20%',
-    description: '의무발행업종 10만원 이상 현금거래 미발급 시 가산세 20%. 자진발급 방법과 소비자 신고까지.',
   },
 };
 

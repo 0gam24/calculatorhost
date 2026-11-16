@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-04';
 const DATE_MODIFIED = '2026-06-04';
 
 export const metadata: Metadata = {
-  title: '청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%',
+  title: '청년미래적금 2026, 만 19~34세·기본 5%·정부기여금 6~12%',
   description:
-    '청년미래적금 2026 조건, 금리, 정부기여금을 정리했습니다. 만 19~34세 소득요건 충족 시 월 최대 50만원 납입, 기본금리 연 5% 고정, 이자소득 비과세. 정부기여금 6~12%. 6월 22일 출시. 청년도약계좌 중복불가.',
+    '청년미래적금은 월 50만원까지 넣는 비과세 적금으로, 기본금리 5%에 정부기여금 6~12%가 붙습니다. 청년도약계좌와 중복 가입은 안 됩니다.',
   keywords: [
     '청년미래적금',
     '청년미래적금 조건',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%' }],
-    title: '청년미래적금 2026, 월 50만원·5% + 정부 6~12% 기여, 6월 22일 출시',
-    description: '만 19~34세 소득요건 대상. 월 최대 50만원, 기본 5% + 정부기여금 6~12%. 3년 만기 약 2,200만원. 6월 22일 출시, 청년도약계좌와 중복불가.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청년미래적금 2026, 월 50만원·5% + 정부기여금, 6월 22일 출시',
-    description: '조건·금리·정부기여금·청년도약계좌 비교. 만 19~34세·소득요건 대상.',
   },
 };
 
@@ -98,7 +93,7 @@ export default function YouthFutureSavingsAccount2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '청년미래적금 2026, 조건·금리·정부기여금' },
+    { name: '청년미래적금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '청년미래적금 2026, 만 19~34세, 월 50만원·기본 5% + 정부기여금 6~12%',

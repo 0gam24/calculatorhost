@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-05';
 export const metadata: Metadata = {
   title: '2026 세제개편안 부동산 세금, 장특공제 거주 중심 개편 정리',
   description:
-    '2026년 8월 3일 발표된 세제개편안은 장기보유특별공제를 거주 중심으로 바꾸고 공제한도를 신설합니다. 실거주자와 비거주 보유자, 초고가주택 소유자에게 무엇이 달라지는지 정부안 기준으로 정리했습니다.',
+    '2026년 8월 3일 발표된 세제개편안은 장기보유특별공제를 거주 중심으로 바꾸고 한도를 신설합니다. 실거주 여부별 달라지는 점을 정리했습니다.',
   keywords: [
     '2026 세제개편안',
     '장기보유특별공제 개편',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2026 세제개편안 부동산 세금, 장특공제 거주 중심 개편 정리' }],
-    title: '2026 세제개편안 부동산 세금, 장특공제 거주 중심 개편',
-    description: '장기보유특별공제를 거주 중심으로 재편하고 공제한도(2028년 20억, 2029년 10억)를 신설하는 정부안. 실거주자와 다주택자에게 달라지는 점.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026 세제개편안 부동산 세금 정리',
-    description: '장특공제 거주 중심 개편·공제한도 신설·종부세 인상. 국회 심의 전 정부안 기준.',
   },
 };
 

@@ -21,6 +21,8 @@ import {
 } from '@/lib/seo/jsonld';
 import { AveragingDownCalculator } from './AveragingDownCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const URL = 'https://calculatorhost.com/calculator/averaging-down/';
 const DATE_PUBLISHED = '2026-04-24';
@@ -29,7 +31,7 @@ const DATE_MODIFIED = '2026-05-03';
 export const metadata: Metadata = {
   title: '물타기 계산기 | 주식·코인 평균단가 계산',
   description:
-    '보유 수량·단가와 추가 매수로 새 평균단가를 계산하고, 목표 평균단가에 필요한 추가 매수 수량을 역산합니다.',
+    '보유 수량·단가와 추가 매수로 새 평균단가를 계산하고, 목표 평단에 필요한 매수량도 역산합니다.',
   keywords: [
     '물타기 계산기',
     '주식 물타기 계산기',
@@ -43,9 +45,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '물타기 계산기 2026, 주식·코인 평균단가·추매',
-    description:
-      '보유분과 추가 매수로 새 평균단가를 계산하고, 목표 평균단가에 필요한 추가 매수 수량을 역산합니다.',
     url: URL,
     type: 'website',
 
@@ -53,8 +52,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '물타기 계산기 2026 (주식·코인)',
-    description: '새 평균단가와 목표 단가에 필요한 추가 매수 수량을 계산합니다.',
   },
 };
 
@@ -139,7 +136,7 @@ export default function AveragingDownPage() {
     { name: '물타기 계산기' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '물타기 계산하기 (주식·코인)',
     description:
       '주식·코인 보유 정보와 추가 매수(추매) 정보를 입력해 평균단가를 계산하거나, 목표 단가 달성에 필요한 분할매수 수량을 역산하는 방법',
@@ -161,7 +158,39 @@ export default function AveragingDownPage() {
         text: '평균단가 모드에서는 새 평균단가, 총 투자금, 평균단가 하락률을 확인합니다. 목표단가 모드에서는 필요한 추가 매수 수량과 금액을 확인합니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
+
+  const glossaryData = {
+    name: '물타기·평단 핵심 용어',
+    description: '주식·코인 물타기와 평균단가 산정 관련 용어집',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '물타기 (Averaging Down)',
+        alternateName: '평단 낮추기',
+        description:
+          '보유 종목 가격이 하락했을 때 추가 매수해 평균단가를 낮추는 전략. 손익분기점이 낮아져 회복에 필요한 상승률이 감소하지만, 추가 하락 시 손실이 가중됨.',
+      },
+      {
+        name: '평균단가 (가중평균)',
+        alternateName: '평단',
+        description:
+          '보유 종목의 매입 단가를 가중평균한 값. 산식: Σ(매입가 × 매입수량) ÷ 총 보유수량. 분할매도는 평단을 변경하지 않음.',
+      },
+      {
+        name: '추매 (추가 매수)',
+        description:
+          '이미 보유 중인 종목을 더 사는 모든 거래의 총칭. 하락 시 추매는 물타기, 상승 시 추매는 불타기(피라미딩)로 구분.',
+      },
+      {
+        name: '손익분기점 (BEP)',
+        alternateName: 'BEP',
+        description:
+          'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.20%(2026년) 추가 부담.',
+      },
+    ],
+  };
 
   return (
     <>
@@ -193,36 +222,7 @@ export default function AveragingDownPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            buildDefinedTermSetJsonLd({
-              name: '물타기·평단 핵심 용어',
-              description: '주식·코인 물타기와 평균단가 산정 관련 용어집',
-              url: `${URL}#glossary`,
-              terms: [
-                {
-                  name: '물타기 (Averaging Down)',
-                  alternateName: '평단 낮추기',
-                  description:
-                    '보유 종목 가격이 하락했을 때 추가 매수해 평균단가를 낮추는 전략. 손익분기점이 낮아져 회복에 필요한 상승률이 감소하지만, 추가 하락 시 손실이 가중됨.',
-                },
-                {
-                  name: '평균단가 (가중평균)',
-                  alternateName: '평단',
-                  description:
-                    '보유 종목의 매입 단가를 가중평균한 값. 산식: Σ(매입가 × 매입수량) ÷ 총 보유수량. 분할매도는 평단을 변경하지 않음.',
-                },
-                {
-                  name: '추매 (추가 매수)',
-                  description:
-                    '이미 보유 중인 종목을 더 사는 모든 거래의 총칭. 하락 시 추매는 물타기, 상승 시 추매는 불타기(피라미딩)로 구분.',
-                },
-                {
-                  name: '손익분기점 (BEP)',
-                  alternateName: 'BEP',
-                  description:
-                    'Break-Even Point. 매수·매도 수수료, 거래세를 모두 차감하고도 본전이 되는 매도 단가. 한국 주식은 매도 시 거래세 0.20%(2026년) 추가 부담.',
-                },
-              ],
-            }),
+            buildDefinedTermSetJsonLd(glossaryData),
           ),
         }}
       />
@@ -277,6 +277,7 @@ export default function AveragingDownPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="물타기(Averaging Down)는 보유한 주식이 하락했을 때, 더 낮은 가격에 추가로 매수해 평균 단가를 내리는 투자 기법입니다. 같은 현재가에서 손익분기점까지 필요한 상승률은 낮아질 수 있지만 추가 자금이 필요하며, 주가가 더 하락하면 손실이 커질 수 있습니다."
                 table={{
@@ -672,6 +673,7 @@ export default function AveragingDownPage() {
                   진행하세요. 손실은 언제든 발생할 수 있습니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

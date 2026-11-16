@@ -9,7 +9,7 @@ import { expect, test } from '../support/network-fixture';
  */
 test.describe('연차 계산기 골든패스', () => {
   test('기본값으로 1년차 15일 표시', async ({ page }) => {
-    await page.goto('/calculator/annual-leave/', { waitUntil: 'domcontentloaded' });
+    await page.goto('/calculator/annual-leave/', { waitUntil: 'networkidle' });
 
     const result = page.getByRole('region', { name: '계산 결과' });
     await expect(result).toBeVisible({ timeout: 10_000 });
@@ -18,7 +18,7 @@ test.describe('연차 계산기 골든패스', () => {
   });
 
   test('딱 1년 되기 전날이면 월 연차 11일과 하루 더 안내', async ({ page }) => {
-    await page.goto('/calculator/annual-leave/', { waitUntil: 'domcontentloaded' });
+    await page.goto('/calculator/annual-leave/', { waitUntil: 'networkidle' });
 
     await page.locator('input[id="annual-leave-hire-date"]').fill('2026-01-01');
     const until = page.locator('input[id="annual-leave-until-date"]');
@@ -31,7 +31,7 @@ test.describe('연차 계산기 골든패스', () => {
   });
 
   test('주 14시간이면 주 15시간 미만 안내가 보인다', async ({ page }) => {
-    await page.goto('/calculator/annual-leave/', { waitUntil: 'domcontentloaded' });
+    await page.goto('/calculator/annual-leave/', { waitUntil: 'networkidle' });
 
     const weeklyHours = page.locator('input[id="annual-leave-weekly-hours"]');
     await weeklyHours.fill('14');

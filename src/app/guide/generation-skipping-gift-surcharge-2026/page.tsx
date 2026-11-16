@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-21';
 const DATE_MODIFIED = '2026-07-21';
 
 export const metadata: Metadata = {
-  title: '세대생략 증여 할증과세 2026, 손주 증여 30% 할증과 절세',
+  title: '세대생략 증여 할증과세 2026, 손주 30%·40% 계산과 절세',
   description:
-    '조부모가 손주에게 바로 증여하면 증여세 산출세액에 30%가 할증됩니다(미성년+20억 초과 시 40%). 세대생략 할증 계산법, 증여재산공제, 절세 효과와 예외를 상속세및증여세법 §57 기준으로 정리했습니다.',
+    '조부모가 손주에게 바로 증여하면 산출세액에 30%가 할증됩니다(미성년·20억 초과 시 40%). 계산법과 절세 효과를 정리했습니다.',
   keywords: [
     '세대생략 증여',
     '손주 증여 할증',
@@ -34,10 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '세대생략 증여 할증과세 2026' }],
-    title: '세대생략 증여 할증과세 2026, 손주 증여 30% 할증',
-    description:
-      '조부모가 손주에게 바로 증여하면 30% 할증(미성년+20억 초과 40%). 그래도 유리한 이유와 계산법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '세대생략 증여 할증과세 2026',
-    description: '손주 증여 30% 할증(미성년 20억 초과 40%). 그래도 절세되는 이유. 상증세법 §57.',
   },
 };
 
@@ -103,7 +97,7 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '세대생략 증여 할증과세 2026, 손주 증여 30% 할증과 절세',
     description:
-      '조부모가 손주에게 바로 증여하면 30% 할증(미성년+20억 초과 40%). 세대생략 할증 계산, 증여재산공제, 절세 효과와 예외까지 완전 정리.',
+      '조부모가 손주에게 바로 증여하면 30% 할증(미성년+20억 초과 40%). 세대생략 할증 계산, 증여재산공제, 절세 효과와 예외까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

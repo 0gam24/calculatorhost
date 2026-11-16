@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-22';
 const DATE_MODIFIED = '2026-07-22';
 
 export const metadata: Metadata = {
-  title: '청년 월세 특별지원 2026, 상시신청 전환·신청 방법 총정리',
+  title: '청년 월세 특별지원 2026, 상시신청 전환·대상·절차 정리',
   description:
-    '2026년 청년 월세 특별지원이 한시사업에서 상시신청 체계로 개편되는 흐름을 정리했습니다. 대상·소득요건·지원 방식·신청 절차와 함께, 복지로와 거주지 지자체 공고에서 반드시 확인해야 할 항목까지 함께 정리합니다.',
+    '2026년 청년 월세 특별지원은 한시사업에서 상시신청 체계로 바뀌는 방향입니다. 대상과 소득요건, 신청 절차를 정리했습니다.',
   keywords: [
     '청년 월세 지원',
     '청년월세 상시신청',
@@ -33,10 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청년 월세 특별지원 2026 상시신청 안내' }],
-    title: '청년 월세 특별지원 2026, 상시신청 전환과 신청 방법',
-    description:
-      '무주택 청년을 위한 월세 특별지원이 2026년부터 상시신청 체계로 개편되는 방향입니다. 대상, 소득요건, 지원 절차와 복지로·지자체 공고 확인 포인트를 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,9 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청년 월세 특별지원 2026 상시신청, 누가 어떻게 받나',
-    description:
-      '무주택 청년 월세 특별지원 2026년 개편 방향, 신청 자격과 절차 정리. 정확한 금액과 요건은 복지로·거주지 지자체 공고 기준.',
   },
 };
 
@@ -101,7 +94,7 @@ export default function YouthMonthlyRentSupport2026Page() {
     { name: '청년 월세 특별지원 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '청년 월세 특별지원 2026, 상시신청 전환·신청 방법 총정리',
+    headline: '청년 월세 특별지원 2026, 상시신청 전환·신청 방법 정리',
     description:
       '무주택 청년을 위한 월세 특별지원이 2026년부터 상시신청 체계로 개편되는 방향에 맞춰, 대상·소득요건·지원 방식·신청 절차와 확인 포인트를 정리했습니다.',
     url: URL,

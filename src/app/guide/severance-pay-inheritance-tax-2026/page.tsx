@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '사망 퇴직금 상속재산 포함 여부 2026, 상속세 과세 기준',
   description:
-    '사망으로 지급되는 퇴직금은 상증법 §10의 간주상속재산이 원칙입니다. 법정 유족급여 제외와 민사상 지급권리를 구분하며, 단체협약만으로 상속세 면제를 판단하지 않습니다.',
+    '사망으로 받는 퇴직금은 상증법 §10의 간주상속재산이어서 원칙적으로 과세됩니다. 법정 유족급여처럼 빠지는 항목도 정리했습니다.',
   keywords: [
     '사망퇴직금 상속세',
     '사망퇴직금 상속재산',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '사망 퇴직금 상속재산 포함 여부 2026, 상속세 과세 기준',
-      },
-    ],
-    title: '사망 퇴직금, 상속재산에 포함될까? 민사상 권리와 법정 과세 제외의 구분까지',
-    description:
-      '재직 중 사망 시 퇴직금은 원칙적으로 간주상속재산. 단체협약만으로 면제를 확정하지 않고 법정 과세 제외와 공제 요건을 구분합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사망 퇴직금 상속재산 포함 여부 2026',
-    description:
-      '간주상속재산 원칙, 민사상 권리와 법정 과세 제외의 구분, 상속공제 적용까지 상증법 §10 기준 정리.',
   },
 };
 

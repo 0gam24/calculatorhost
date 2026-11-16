@@ -6,7 +6,9 @@
  *
  * 정책:
  *  - 모든 검색엔진·AI 봇 허용 (GEO/AEO 전략, docs/seo-keyword-map.md §9)
- *  - 기술 경로만 차단 (/api, /_next, *.json)
+ *  - 기술 경로만 차단 (/api, *.json)
+ *  - 옛 WordPress 주소는 막지 않는다. 지운 페이지를 robots.txt 로 막으면 로봇이 404 를
+ *    확인하지 못해 검색에서 빠지지 않는다 (네이버 가이드 01-05 웹 사이트 이전, 12-03 웹 검색 제외)
  *  - AdsBot-Google 명시 그룹 (Google 사양 — `*` 와일드카드 자동 제외)
  *  - Mediapartners-Google 명시 (AdSense 광고 미디어 봇)
  *  - Daum 웹마스터 도구 검증 토큰 주석으로 포함
@@ -29,32 +31,6 @@ Disallow: /api/
 Disallow: /*.json$
 Allow: /_next/static/
 Allow: /_next/image
-
-# 이전 WordPress 잔재 — 봇 자동 스캔·색인 차단 (Search Console 404·NOINDEX 정리)
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /wp-includes/
-Disallow: /wp-login.php
-Disallow: /xmlrpc.php
-Disallow: /wp-config.php
-Disallow: /wp-cron.php
-Disallow: /wp-sitemap.xml
-Disallow: /sitemap_index.xml
-Disallow: /post-sitemap.xml
-Disallow: /post_tag-sitemap.xml
-Disallow: /*.php$
-Disallow: /search/
-Disallow: /*?s=
-Disallow: /*?p=
-Disallow: /tag/
-Disallow: /feed/
-Disallow: /*/feed/
-Disallow: /*?feed=
-Disallow: /comments/
-Disallow: /wp-json/
-Disallow: /author/
-Disallow: /category/*/feed/
-Disallow: /*/trackback/
 
 User-Agent: AdsBot-Google
 Allow: /

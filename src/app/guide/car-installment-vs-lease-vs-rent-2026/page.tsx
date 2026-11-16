@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-26';
 export const metadata: Metadata = {
   title: '자동차 할부 vs 리스 vs 장기렌트 2026, 어떤 게 유리할까',
   description:
-    '자동차를 살 때 할부·리스·장기렌트 중 무엇이 유리한지 소유권·월 납입·세금·보험 부담 주체·중도해지·사업자 경비처리 기준으로 비교하고, 할부 월 납입액 계산 공식과 예시를 정리합니다.',
+    '자동차 할부·리스·장기렌트 중 무엇이 유리한지 소유권, 세금·보험 부담, 경비처리 기준으로 비교합니다. 월 납입액 계산 공식도 담았습니다.',
   keywords: [
     '자동차 할부 vs 리스',
     '장기렌트 비교',
@@ -35,16 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '자동차 할부 vs 리스 vs 장기렌트 2026',
-      },
-    ],
-    title: '자동차 할부 vs 리스 vs 장기렌트 2026',
-    description: '할부·리스·장기렌트 세 방식을 소유권·비용·세금·경비처리로 비교분석',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차 할부 vs 리스 vs 장기렌트 2026',
-    description: '자동차 구입 시 가장 유리한 방식은? 비용, 세금, 소유권으로 비교',
   },
 };
 

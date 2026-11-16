@@ -17,27 +17,24 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/vehicle-individual-consumption-tax-deadline-2026-june/';
 const DATE_PUBLISHED = '2026-06-01';
-const DATE_MODIFIED = '2026-06-01';
+const DATE_MODIFIED = '2026-10-30';
 
 export const metadata: Metadata = {
-  title: '자동차 개별소비세 인하 6월 30일 마감, 출고 기준 143만원 절감 가이드 | calculatorhost',
+  title: '자동차 개별소비세 인하 종료, 7월부터 5% 환원',
   description:
-    '자동차 개별소비세 인하(5% → 3.5%)는 2026년 6월 30일 종료. 최대 143만원 절감하려면 6월 30일 이전 출고 필수. 계약일이 아닌 출고일이 기준. 마감 1개월 남은 지금 꼭 확인해야 할 사항.',
+    '2026년 6월 30일 출고분까지 자동차 개별소비세 3.5% 한시 인하가 적용되고, 7월 1일 출고분부터 기본세율 5%로 돌아왔습니다.',
   keywords: [
+    '자동차 개별소비세',
     '자동차 개별소비세 인하',
-    '개별소비세 6월 30일',
-    '자동차 세금 절감',
-    '개소세 출고 기준',
-    '6월 신차 구매',
-    '143만원 절감',
     '개별소비세 인하 종료',
-    '자동차 구매 마감',
+    '개별소비세 5%',
+    '개소세 출고 기준',
+    '친환경차 개별소비세 감면',
+    '전기차 개별소비세',
+    '개별소비세법 1조',
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차 개별소비세 인하 6월 30일 마감, 출고 기준 143만원 절감 가이드 | calculatorhost' }],
-    title: '자동차 개별소비세 인하 6월 30일 마감, 143만원 절감하는 방법',
-    description: '개별소비세 5% → 3.5% 인하, 최대 143만원 절감. 기준은 계약일 아닌 출고일. 마감 D-30 필수 가이드.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,51 +43,49 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차 개별소비세 인하 6월 30일 마감',
-    description: '최대 143만원 절감, 6월 30일 이전 출고 필수. 계약일 아닌 출고일 기준.',
   },
 };
 
 const FAQ_ITEMS = [
   {
-    question: '지금 계약하면 6월 30일까지 개별소비세 인하 받을 수 있나요?',
+    question: '자동차 개별소비세 인하는 언제 끝났나요?',
     answer:
-      '기준은 계약일이 아니라 출고일입니다. 지금 계약하고 6월 30일 이전에 출고받으면 개별소비세 인하(5% → 3.5%)를 적용받습니다. 다만 제조·공급 지연이 발생할 수 있으므로, 딜러와 6월 내 출고 가능성을 반드시 확인해야 합니다.',
+      '2026년 6월 30일 자정 기준으로 종료됐습니다. 6월 30일까지 출고된 차량에는 한시 인하율 3.5%가, 7월 1일 이후 출고분부터는 기본세율 5%(개별소비세법 §1 ②제3호)가 적용됩니다. 기준은 계약일이 아니라 공장 출고일이기 때문에, 6월 안에 계약했어도 7월에 출고된 차량은 5%로 과세됐습니다.',
   },
   {
-    question: '개별소비세 감면 143만원은 어떻게 계산되나요?',
+    question: '지금 신차를 사면 얼마나 더 비싸졌나요?',
     answer:
-      '개별소비세를 5%에서 3.5%로 인하하면 기본 세율 차이(1.5%)로 최대 100만원을 절감합니다. 개별소비세와 연동되는 교육세(개소세의 30%)에서 약 30만원, 부가가치세(개소세+교육세의 10%)에서 약 13만원이 추가 절감되어 합계 143만원이 됩니다. 다만 이는 최대값이며, 실제 절감액은 차량 구매가에 따라 달라집니다.',
+      '개별소비세율이 3.5%에서 5%로 1.5%포인트 다시 올랐고, 이에 연동되는 교육세(개소세의 30%)와 부가가치세(10%)도 함께 늘어 공장도 가격의 약 2.14%만큼 세금이 더 붙습니다. 공장도 가격 6,667만원이면 약 143만원, 4,000만원이면 약 86만원, 2,000만원이면 약 43만원이 인하 당시보다 비싸진 셈입니다. 실제 금액은 차량가와 옵션에 따라 다릅니다.',
   },
   {
-    question: '7월 1일부터 개별소비세가 정상세율 5%로 돌아가나요?',
+    question: '7월 이후 다시 인하될 가능성은 없나요?',
     answer:
-      '2026년 6월 30일 자정(00:00)을 기준으로 정책이 종료됩니다. 따라서 7월 1일 이후 출고된 차량은 개별소비세 5% 정상세율이 적용됩니다. 6월 30일과 7월 1일 출고의 차이로 최대 143만원이 달라지므로 매우 중요합니다.',
+      '2026년 10월 30일 기준 추가 연장은 발표되지 않았습니다. 정부는 내수가 회복세라는 이유로 추가 연장이 필요하지 않다고 밝혔습니다. 향후 정책이 다시 바뀌면 기획재정부·국세청 공지에서 확인할 수 있습니다.',
   },
   {
-    question: '계약은 6월 1일, 출고는 7월 15일이면 인하 혜택이 안 되나요?',
+    question: '전기차·수소차·하이브리드도 7월부터 세금이 올랐나요?',
     answer:
-      '정확히 말하면, 출고일이 7월 15일이면 개별소비세 인하 혜택을 받을 수 없습니다. 개별소비세 적용은 계약일이나 인도일이 아닌 차량이 공장에서 출고되는 "출고일"을 기준으로 결정됩니다. 따라서 6월 30일 이전 출고 가능 여부를 꼭 확인하세요.',
+      '자동차 개별소비세 한시 인하와 친환경차 개별소비세 감면은 서로 다른 제도입니다. 친환경차(전기차·수소차·하이브리드) 개별소비세 감면은 2026년 12월 31일까지 유지되며, 7월 1일 이후 출고된 친환경차에는 그 감면이 그대로 적용됩니다.',
   },
   {
-    question: '중고차 구매도 개별소비세 인하 대상인가요?',
+    question: '중고차도 영향이 있나요?',
     answer:
-      '개별소비세 인하는 신차 등록에만 적용됩니다. 중고차 거래 시에는 이 정책의 대상이 아니므로 일반 취득세 기준을 따릅니다. 신차 구매를 검토 중이라면 6월 30일 출고 마감을 염두에 두세요.',
+      '자동차 개별소비세는 신차 등록 때만 과세되는 세금이라 중고차 거래에는 처음부터 해당하지 않았습니다. 중고차는 취득세·이전등록세 기준을 따르므로 이번 인하 종료의 직접적 영향도 없습니다.',
   },
   {
-    question: '딜러에게 출고 가능 여부를 어떻게 확인하나요?',
+    question: '6월 말 계약·7월 초 출고라면 인하 혜택을 받지 못했나요?',
     answer:
-      '방문 또는 전화로 다음을 직접 문의하세요: ① 현재 주문한 차량의 제조 상황(생산 완료 여부), ② 6월 30일까지 출고 가능 여부, ③ 만약 불가능하면 즉시 취소·환불 절차. 딜러 담당자가 명확한 답변을 줄 때까지 계약을 진행하지 않는 것이 안전합니다.',
+      '네, 받지 못했습니다. 개별소비세는 공장 출고일(출고신고일) 기준으로 세율이 결정되므로, 계약이 6월이어도 7월 1일 이후 출고된 차량에는 기본세율 5%가 적용됐습니다. 이 때문에 6월 안에 계약했어도 출고가 7월로 넘어간 경우는 인하 가격이 아닙니다.',
   },
   {
-    question: '개별소비세는 언제 내나요?',
+    question: '개별소비세는 언제 어떻게 내나요?',
     answer:
-      '개별소비세는 신차를 등록할 때 같은 시점에 납부합니다. 자동차 구매자가 딜러를 통해 또는 직접 관할 지방청에 신차등록을 신청할 때, 취득세·등록세·개별소비세가 일괄 고지됩니다. 딜러가 대행해주는 경우도 많으므로 계약 시 어떤 방식인지 미리 확인하세요.',
+      '신차를 등록할 때 취득세·개별소비세·교육세·부가가치세가 함께 고지됩니다. 보통 딜러가 등록을 대행하면서 일괄 수납하지만, 영수증에 개별소비세율이 3.5%인지 5%인지 꼭 확인하세요. 7월 1일 이후 출고분이라면 5%가 맞습니다.',
   },
   {
-    question: '2026년 7월 이후 정책이 재연장될 가능성은?',
+    question: '한시 인하의 법적 근거는 무엇이었나요?',
     answer:
-      '현재 정부 방침상 6월 30일을 최종 기한으로 정했으며, 추가 연장 계획은 공식 발표되지 않았습니다. 다만 경제 상황에 따라 변수가 있을 수 있으므로, 정부 공식 발표를 지속적으로 확인하는 것이 좋습니다. 확실한 혜택을 받으려면 6월 30일 이전 출고를 목표로 하세요.',
+      '승용자동차 개별소비세 기본세율은 개별소비세법 §1 ②제3호에 따라 5%입니다. 같은 법 §1 ⑦(탄력세율)이 경기 조절이 필요한 경우 기본세율의 ±30% 범위에서 세율을 조정할 수 있다고 규정하고, 이 권한에 근거해 시행령에서 자동차 개별소비세를 3.5%로 한시 인하해 두었습니다. 2026년 6월 30일 출고분을 끝으로 §1 본칙의 5%로 복귀했습니다.',
   },
 ] as const;
 
@@ -98,24 +93,24 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '자동차 개별소비세 6월 30일 마감' },
+    { name: '자동차 개별소비세 인하 종료' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차 개별소비세 인하 6월 30일 마감, 최대 143만원 절감 가이드',
+    headline: '자동차 개별소비세 인하 종료, 7월부터 기본세율 5% 환원',
     description:
-      '개별소비세 인하(5% → 3.5%)는 2026년 6월 30일 종료. 기준은 계약일이 아닌 출고일. 최대 143만원 절감하는 방법과 주의사항.',
+      '2026년 6월 30일 출고분까지 자동차 개별소비세 3.5% 한시 인하가 적용되고, 7월 1일 출고분부터 기본세율 5%로 돌아왔습니다. 친환경차 감면은 12월 31일까지 별도로 유지됩니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
     authorName: '김준혁',
     authorUrl: 'https://calculatorhost.com/about/',
     image: 'https://calculatorhost.com/og-default.png',
-    keywords: ['자동차 개별소비세', '6월 30일', '143만원 절감', '출고 기준'],
+    keywords: ['자동차 개별소비세', '개별소비세 인하 종료', '7월 1일 출고', '친환경차 감면'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '자동차 개별소비세 인하 6월 30일 마감, 143만원 절감하는 방법',
+    name: '자동차 개별소비세 인하 종료, 7월부터 5% 환원',
     description:
-      '2026년 자동차 개별소비세 인하 정책 종료 D-30. 계약일이 아닌 출고일 기준으로 6월 30일까지만 5% → 3.5% 인하 적용. 최대 143만원 절감하려면 지금 바로 확인하세요.',
+      '자동차 개별소비세 한시 인하(3.5%)는 2026년 6월 30일 출고분을 끝으로 종료됐고, 7월 1일 출고분부터는 기본세율 5%가 적용됩니다. 친환경차 감면은 2026년 12월 31일까지 유지됩니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -142,203 +137,202 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '자동차 개별소비세 6월 30일 마감' },
+                    { name: '자동차 개별소비세 인하 종료' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">세금·자동차 · 6분 읽기 · 2026-06-01</p>
+                <p className="mb-2 text-caption text-text-tertiary">세금·자동차 · 6분 읽기 · 2026-10-30</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  자동차 개별소비세 인하
+                  자동차 개별소비세 인하 종료
                   <br />
-                  <span className="text-2xl text-text-secondary">· 6월 30일 마감 D-30 필수 가이드</span>
+                  <span className="text-2xl text-text-secondary">· 7월 1일 출고분부터 기본세율 5% 환원</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
-                  자동차 개별소비세 인하 정책(5% → 3.5%)은 2026년 6월 30일 자정을 기준으로 종료됩니다.
-                  기준은 계약일이 아니라 출고일이므로, 지금 계약하고 6월 30일 이전에 출고받아야 최대 143만원의 세금 절감 혜택을 받을 수 있습니다.
-                  마감까지 정확히 한 달 남았으니 딜러 확인 후 신청이 필수입니다.
+                  자동차 개별소비세 한시 인하(3.5%)는 2026년 6월 30일 자정을 기준으로 종료됐습니다.
+                  7월 1일 이후 출고된 승용자동차는 개별소비세법 §1 ②제3호의 기본세율 5%가 다시 적용되고,
+                  정부는 내수 회복세를 이유로 추가 연장을 하지 않았습니다. 기준은 계약일이 아니라 공장
+                  출고일이므로, 6월에 계약했더라도 7월에 출고된 차량에는 5%가 과세됐습니다. 친환경차
+                  (전기차·수소차·하이브리드) 개별소비세 감면은 별도 제도이며 2026년 12월 31일까지 유지됩니다.
                 </p>
               </header>
               <GuideCalculatorCta slug="vehicle-individual-consumption-tax-deadline-2026-june" />
 
-              <section aria-label="핵심 요약" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-2 text-caption uppercase tracking-wider text-danger-500">주의사항</h2>
+              <section aria-label="핵심 요약" className="card border-l-4 border-l-primary-500">
+                <h2 className="mb-2 text-caption uppercase tracking-wider text-primary-500">핵심 요약</h2>
                 <div className="space-y-2 text-sm" data-speakable>
-                  <p className="font-bold text-danger-700 dark:text-danger-300">
-                    주의: 6월 30일 23:59(마감) 이전 출고 필수, 계약일이 아닌 출고일이 기준
+                  <p className="font-semibold text-text-primary">
+                    자동차 개별소비세 한시 인하(3.5%)는 2026년 6월 30일 출고분으로 종료됐고, 7월 1일 출고분부터 기본세율 5%가 적용됩니다.
                   </p>
                   <ul className="space-y-1.5 text-text-secondary">
-                    <li><strong>6월 30일 이전 출고</strong>: 개별소비세 3.5% 적용 (최대 143만원 절감)</li>
-                    <li><strong>7월 1일 이후 출고</strong>: 개별소비세 정상세율 5% 적용 (절감 없음)</li>
-                    <li><strong>절감액 143만원</strong>: 개소세 100만원 + 교육세 30만원 + 부가세 13만원 (최대값)</li>
-                    <li><strong>필수 확인사항</strong>: 딜러에게 6월 내 출고 가능 여부를 꼭 문의하고 서면 확인 필요</li>
+                    <li><strong>6월 30일 출고까지</strong>: 한시 인하율 3.5% 적용</li>
+                    <li><strong>7월 1일 출고부터</strong>: 기본세율 5% 환원(개별소비세법 §1 ②제3호)</li>
+                    <li><strong>기준</strong>: 계약일이 아니라 공장 출고일</li>
+                    <li><strong>세금 증가 폭</strong>: 공장도 가격의 약 2.14%(개소세 1.5%p + 연동되는 교육세·부가가치세)</li>
+                    <li><strong>친환경차 감면</strong>: 전기차·수소차·하이브리드는 별도 제도로 2026년 12월 31일까지 유지</li>
                   </ul>
                 </div>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">1. 개별소비세 인하 정책이란?</h2>
+                <h2 className="text-2xl font-bold">1. 인하 종료 사실관계</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  승용자동차에는 개별소비세법 §1 제2항 제3호에 따라 물품가격의 5%가 기본세율로 적용됩니다.
-                  다만 같은 법 §1 제7항(탄력세율)에 따라 정부는 경기 조절·가격 안정 등이 필요한 경우 기본세율의 ±30% 범위에서 세율을 조정할 수 있고,
-                  이 권한에 따라 개별소비세법 시행령 §2의2가 자동차 개별소비세율을 5%에서 <strong>3.5%로 한시 인하</strong>해 두고 있습니다.
-                  이 한시 인하 정책은 원래 2025년 6월 30일 종료 예정이었으나, 경제 상황을 고려해 연장되어 <strong>2026년 6월 30일까지</strong> 유지됩니다.
-                  그 이후는 §1 본칙의 정상세율 5%로 복귀할 예정입니다.
+                  승용자동차에는 개별소비세법 §1 ②제3호에 따라 공장도 가격의 5%가 기본세율로 적용됩니다.
+                  같은 법 §1 ⑦(탄력세율)은 경기 조절·가격 안정 등이 필요한 경우 기본세율의 ±30% 범위에서
+                  정부가 세율을 조정할 수 있도록 규정하고, 이 권한에 근거해 시행령이 자동차 개별소비세를
+                  <strong> 3.5%로 한시 인하</strong>해 두었습니다. 이 한시 인하는 수차례 연장을 거친 뒤 2026년
+                  6월 30일을 끝으로 종료됐고, 7월 1일 출고분부터는 §1 본칙의 기본세율 5%가 다시 적용됩니다.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  정부는 종료 직전 "내수가 회복세인 만큼 추가 연장이 필요하지 않다"는 입장을 밝혔고, 2026년
+                  10월 30일 기준 추가 연장은 발표되지 않았습니다. 적용 기준은 계약일이 아니라 공장 출고일이기
+                  때문에, 6월에 계약했어도 7월에 출고된 차량에는 5%가 과세됐습니다.
                 </p>
                 <div className="rounded-lg border-l-2 border-l-primary-500 bg-primary-500/5 p-4">
                   <p className="text-sm font-semibold text-primary-700 dark:text-primary-400">
-                    정책 마감: 2026년 6월 30일 23:59:59
+                    출고일별 적용 세율
                   </p>
                   <p className="mt-2 text-sm text-text-secondary">
-                    이 날짜 이후 출고된 차량부터는 일반 5% 세율이 적용됩니다.
-                    따라서 최신 정책 혜택을 받으려면 6월 30일 이전 출고가 절대 필요합니다.
+                    2026년 6월 30일까지 출고: 개별소비세 3.5%(한시 인하).<br />
+                    2026년 7월 1일 이후 출고: 개별소비세 5%(기본세율).
                   </p>
                 </div>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">2. 143만원 절감액은 어떻게 나오나?</h2>
+                <h2 className="text-2xl font-bold">2. 지금 신차를 사면 얼마나 더 비싸졌나?</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  개별소비세 인하의 전체 절감 효과를 이해하려면 세금 구조를 알아야 합니다.
-                  개별소비세뿐만 아니라 그에 연동되는 교육세(교육세법 §5에 따라 개별소비세액의 30%)와
-                  부가가치세까지 함께 줄어드는 구조이기 때문입니다.
-                  즉 개별소비세 본세가 1.5%포인트 인하되면 §5 교육세 과세표준도 같은 비율로 줄고, 그에 따라 부가가치세도 연쇄적으로 감소합니다.
+                  개별소비세율이 3.5%에서 5%로 1.5%포인트 오르면, 이에 연동되는 교육세(개별소비세법상 세액의 30%,
+                  교육세법 §5)와 부가가치세(공급가액의 10%)도 함께 늘어납니다. 세 세목을 합치면 공장도 가격의
+                  약 2.14%만큼 세금이 많아지는 구조이므로, 같은 차를 7월 이후에 사면 인하 당시보다 그만큼 비싸진
+                  셈입니다. 아래 표는 공장도 가격별로 7월 1일 이후 출고 시 추가로 붙는 세금을 보여줍니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="sr-only">개별소비세 인하로 인한 절감액 구성</caption>
+                    <caption className="mb-2 text-left font-semibold text-text-primary">공장도 가격별 세금 증가 폭(인하 전과 비교)</caption>
                     <thead>
                       <tr className="bg-primary-500/10 border border-border-base">
-                        <th className="px-3 py-2 text-left">세목</th>
-                        <th className="px-3 py-2 text-left">인하 내용</th>
-                        <th className="px-3 py-2 text-left">최대 절감액</th>
+                        <th className="px-3 py-2 text-left" scope="col">공장도 가격</th>
+                        <th className="px-3 py-2 text-right" scope="col">개별소비세 증가</th>
+                        <th className="px-3 py-2 text-right" scope="col">교육세 증가</th>
+                        <th className="px-3 py-2 text-right" scope="col">부가세 증가</th>
+                        <th className="px-3 py-2 text-right" scope="col">합계</th>
                       </tr>
                     </thead>
                     <tbody className="text-text-secondary">
                       <tr className="border border-border-base">
-                        <td className="px-3 py-2 font-semibold">개별소비세</td>
-                        <td className="px-3 py-2">5% → 3.5% (1.5% 인하)</td>
-                        <td className="px-3 py-2">약 100만원</td>
+                        <td className="px-3 py-2">2,000만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">30만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">9만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">3.9만원</td>
+                        <td className="px-3 py-2 text-right font-semibold tabular-nums">약 43만원</td>
                       </tr>
                       <tr className="border border-border-base">
-                        <td className="px-3 py-2 font-semibold">교육세</td>
-                        <td className="px-3 py-2">개소세의 30% (연동 절감)</td>
-                        <td className="px-3 py-2">약 30만원</td>
+                        <td className="px-3 py-2">4,000만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">60만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">18만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">7.8만원</td>
+                        <td className="px-3 py-2 text-right font-semibold tabular-nums">약 86만원</td>
                       </tr>
-                      <tr className="border border-border-base bg-danger-500/5">
-                        <td className="px-3 py-2 font-semibold">부가가치세</td>
-                        <td className="px-3 py-2">개소세+교육세의 10% (연동 절감)</td>
-                        <td className="px-3 py-2">약 13만원</td>
-                      </tr>
-                      <tr className="border border-border-base font-bold">
-                        <td colSpan={2} className="px-3 py-2">합계 절감액</td>
-                        <td className="px-3 py-2 text-danger-700 dark:text-danger-300">약 143만원</td>
+                      <tr className="border border-border-base">
+                        <td className="px-3 py-2">6,667만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">100만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">30만원</td>
+                        <td className="px-3 py-2 text-right tabular-nums">13만원</td>
+                        <td className="px-3 py-2 text-right font-semibold tabular-nums">약 143만원</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
-                <p className="text-sm text-danger-700 dark:text-danger-300 bg-danger-500/5 p-3 rounded-lg mt-3">
-                  <strong>참고</strong>: 위 금액은 최대값입니다. 실제 절감액은 구매 차량의 가격에 따라 달라질 수 있으므로, 딜러 견적에서 정확한 숫자를 확인하세요.
+                <p className="text-xs text-text-tertiary mt-3">
+                  계산식: 개별소비세 증가 = 공장도 × 1.5%, 교육세 증가 = 개소세 증가 × 30%, 부가세 증가 = (개소세 증가 + 교육세 증가) × 10%. 실제 세금은 옵션·할인·탁송료 등에 따라 달라지므로 영수증을 기준으로 확인하세요.
                 </p>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">3. 기준은 계약일이 아니라 출고일, 가장 흔한 착각</h2>
+                <h2 className="text-2xl font-bold">3. 기준은 계약일이 아니라 출고일</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  개별소비세 혜택을 받으려는 고객 중 가장 많이 하는 실수가 바로 이것입니다.
-                  <strong>계약일 기준이 아니라 차량이 공장에서 출고되는 날(출고일)이 기준</strong>입니다.
+                  개별소비세는 공장 출고일(출고신고일)을 기준으로 세율이 결정됩니다. 그래서 6월에 계약했어도
+                  7월에 출고된 차량에는 5%가 적용됐고, 반대로 7월에 계약했다면 애초에 인하 혜택을 받을 수 없었습니다.
+                  이 원칙은 한시 인하가 끝난 지금도 변하지 않으므로, 영수증·세금계산서에 적힌 출고일과 개별소비세율을
+                  함께 확인하는 것이 좋습니다.
                 </p>
                 <div className="space-y-3 mt-4">
                   <div className="rounded-lg border border-border-base bg-bg-card p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">착각하기 쉬운 경우</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">출고일별 과세 결과</h3>
                     <ul className="space-y-1.5 text-sm text-text-secondary">
-                      <li>• 5월에 계약, 7월에 출고 → 출고일이 7월 1일 이후면 <strong>5% 정상세율 적용</strong></li>
-                      <li>• 6월에 계약, 6월에 출고 → 6월 30일 이전 출고면 <strong>3.5% 인하 적용</strong></li>
-                      <li>• 딜러가 "계약은 6월"이라고 해도, 실제 출고는 7월 중순 가능성 → 반드시 출고일 확인</li>
+                      <li>• 2026년 6월 30일 이전 출고: 개별소비세 3.5% 적용</li>
+                      <li>• 2026년 7월 1일 이후 출고: 개별소비세 5% 적용</li>
+                      <li>• 계약일·인수일·등록일과는 무관</li>
                     </ul>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">올바른 판단</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">영수증 확인 포인트</h3>
                     <p className="text-sm text-text-secondary">
-                      개별소비세 인하 혜택 = 차량이 제조 완료되어 공장에서 출고되는 시점이 6월 30일 이전이어야 함.
-                      계약서에 기재되는 "인수인도예정일"과도 다를 수 있으므로, 딜러에게 <strong>"실제 출고 가능 날짜"</strong>를 직접 문의해야 합니다.
+                      세금계산서·구매 영수증에는 개별소비세율과 세액이 분리되어 표시됩니다. 7월 1일 이후 출고분이라면
+                      개별소비세율이 5%로 적혀 있어야 정상이고, 3.5%로 적혔다면 과거 인하 시점에 출고된 차량이라는 의미입니다.
                     </p>
                   </div>
                 </div>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">4. 딜러와 확인해야 할 체크리스트</h2>
+                <h2 className="text-2xl font-bold">4. 7월 이후 신차 구매자가 확인할 것</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  6월 30일 마감까지 정확히 한 달 남았습니다. 계약 전·후로 다음 항목들을 꼭 딜러와 확인하세요.
+                  한시 인하가 끝났기 때문에, 지금 신차를 사는 사람은 세금이 인하 당시보다 올라간 상태에서 구매 결정을
+                  해야 합니다. 특히 다음 사항을 확인하세요.
                 </p>
                 <div className="space-y-3">
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">① 제조 상황 확인</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">1) 견적서의 개별소비세율</h3>
                     <p className="text-sm text-text-secondary">
-                      현재 주문 차량의 제조가 진행 중인지, 언제 완료될 예정인지 문의합니다.
-                      수입차의 경우 해외 배송 일정까지 고려해야 하므로 더욱 중요합니다.
+                      7월 1일 이후 출고분이라면 개별소비세는 5%, 교육세는 그 30%(공장도 가격의 1.5%), 부가가치세는 공급가액의
+                      10%입니다. 견적에 3.5%가 그대로 남아 있지는 않은지 확인하세요.
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">② 6월 내 출고 가능 여부</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">2) 재고차 vs 생산 주문차</h3>
                     <p className="text-sm text-text-secondary">
-                      "최선을 다하겠습니다"는 답변이 아니라, 현실적인 출고 예정일을 서면으로 받으세요.
-                      딜러 담당자의 휴대폰 메시지나 이메일로라도 증거를 남기는 것이 좋습니다.
+                      이미 6월 30일 이전에 출고된 재고차는 세금 영수증상 개별소비세 3.5%로 처리돼 있습니다. 반면 지금 생산
+                      주문해서 받는 차량은 5%가 과세됩니다. 재고 유무와 출고일을 딜러에게 확인하면 세금 측면에서 어느 쪽이
+                      유리한지 비교할 수 있습니다.
                     </p>
                   </div>
                   <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">③ 만약 6월 내 불가능하면?</h3>
+                    <h3 className="font-semibold text-text-primary mb-2">3) 친환경차 감면 적용 여부</h3>
                     <p className="text-sm text-text-secondary">
-                      계약 시 "6월 30일 이전 출고 불가능 시 계약 해제 및 계약금 반환" 조항을 추가하세요.
-                      개별소비세 인하 혜택이 없다면 구매 결정 자체가 달라질 수 있기 때문입니다.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">④ 개별소비세 계산서 확인</h3>
-                    <p className="text-sm text-text-secondary">
-                      최종 등록 시 "개별소비세 3.5% 적용"이 계산서에 명시되어 있는지 확인합니다.
-                      간혹 행정 오류로 5%가 잘못 적용될 수도 있으니 주의하세요.
+                      전기차·수소차·하이브리드를 사는 경우에는 자동차 개별소비세 한시 인하와는 별개로, 친환경차 개별소비세
+                      감면이 2026년 12월 31일까지 유지됩니다. 세금 항목이 "감면"으로 표시되는지 확인하세요.
                     </p>
                   </div>
                 </div>
               </section>
 
               <section className="space-y-4">
-                <h2 className="text-2xl font-bold">5. 자동차세(보유세)와의 혼동 주의</h2>
+                <h2 className="text-2xl font-bold">5. 친환경차 개별소비세 감면은 그대로 유지</h2>
                 <p className="text-text-secondary leading-relaxed">
-                  개별소비세 인하 정책과 별개로, 자동차세(보유세)도 관심 있게 봐야 합니다.
-                  자동차세와 개별소비세는 전혀 다른 세금이며, 납부 시기와 기준도 다릅니다.
+                  자동차 개별소비세 한시 인하와 친환경차 개별소비세 감면은 서로 다른 제도입니다. 한시 인하는 전체
+                  승용차를 대상으로 세율을 3.5%로 깎아 주던 조치였고, 친환경차 감면은 전기차·수소차·하이브리드를 대상으로
+                  일정 한도까지 개별소비세를 공제하는 조치입니다.
+                </p>
+                <p className="text-text-secondary leading-relaxed">
+                  친환경차 감면은 2026년 12월 31일까지 유지되므로, 7월 1일 이후 출고된 전기차·수소차·하이브리드는 기본세율
+                  5%에서 감면 한도를 뺀 금액을 개별소비세로 납부합니다. 다만 감면 한도는 차종별·연도별로 다르고 일몰 기한도
+                  바뀔 수 있으므로, 구매 전에 기획재정부·국세청 공지 또는 딜러 견적을 통해 최신 한도를 확인하세요.
+                </p>
+              </section>
+
+              <section className="space-y-4">
+                <h2 className="text-2xl font-bold">6. 자동차세(보유세)와의 혼동 주의</h2>
+                <p className="text-text-secondary leading-relaxed">
+                  개별소비세와 자동차세(보유세)는 전혀 다른 세금입니다. 개별소비세는 신차를 살 때 한 번만 내고, 자동차세는
+                  매년 소유자에게 과세됩니다. 이번 인하 종료는 개별소비세에만 영향을 주고, 자동차세율에는 영향을 주지 않습니다.
                 </p>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 text-sm">
                   <h3 className="font-semibold text-text-primary mb-2">개별소비세 vs 자동차세</h3>
                   <ul className="space-y-2 text-text-secondary">
-                    <li><strong>개별소비세</strong>: 신차 등록 시 1회만 납부 (기준: 출고일)</li>
-                    <li><strong>자동차세(보유세)</strong>: 매년 납부 (기준: 1월 1일 기준 소유자)</li>
-                    <li><strong>자동차세 2026 제1기</strong>: 6월 16~30일 납부 (별도 정책, 개소세와 무관)</li>
+                    <li><strong>개별소비세</strong>: 신차 등록 시 1회만 납부(기준: 공장 출고일)</li>
+                    <li><strong>자동차세(보유세)</strong>: 매년 납부(기준: 1월 1일 소유자, 지방세법 §127)</li>
+                    <li><strong>이번 인하 종료의 영향</strong>: 개별소비세만 해당, 자동차세와 무관</li>
                   </ul>
-                </div>
-              </section>
-
-              <section className="space-y-4">
-                <h2 className="text-2xl font-bold">6. 중고차·수입차·특수 차량의 경우</h2>
-                <p className="text-text-secondary leading-relaxed">
-                  개별소비세 인하 정책은 신차 구매에만 적용됩니다. 중고차나 특수 용도 차량은 대상이 아닙니다.
-                </p>
-                <div className="space-y-3">
-                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">신차 정의</h3>
-                    <p className="text-sm text-text-secondary">
-                      국내 제조 또는 수입한 자동차 중 처음 등록(신차등록)하는 차량입니다.
-                      중고차(이전 등록 이력이 있는 차) 구매 시에는 일반 취득세 기준을 따릅니다.
-                    </p>
-                  </div>
-                  <div className="rounded-lg border border-border-base bg-bg-raised p-4">
-                    <h3 className="font-semibold text-text-primary mb-2">수입차 (특히 주의)</h3>
-                    <p className="text-sm text-text-secondary">
-                      수입차는 해외 배송, 통관, 국내 딜러 인수 등의 단계를 거칩니다.
-                      "계약일"이 아니라 "국내 출고일(등록 가능 시점)"을 기준으로 판정하므로,
-                      딜러에게 더욱 정확한 일정을 확인해야 합니다. 특히 6월 말 주문은 위험할 수 있습니다.
-                    </p>
-                  </div>
                 </div>
               </section>
 
@@ -352,50 +346,50 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                     <Link href="/calculator/vehicle-tax/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 계산기
                     </Link>
-                    {'보유세 연간 납부액 계산 (개소세와 별개)'}
+                    {' '}· 보유세 연간 납부액 계산(개소세와 별개)
                   </li>
                   <li>
                     →{' '}
                     <Link href="/calculator/acquisition-tax/" className="text-primary-600 underline dark:text-primary-500">
                       취득세 계산기
                     </Link>
-                    {'부동산 거래 시 취득세 (자동차와 별개)'}
+                    {' '}· 부동산 거래 시 취득세(자동차와 별개)
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/vehicle-tax-june-payment-annual-discount-2026/" className="text-primary-600 underline dark:text-primary-500">
                       자동차세 제1기 6월 납부 가이드
                     </Link>
-                    {'차량 보유 시 매년 6월 내는 자동차세·차령경감 총정리'}
+                    {' '}· 매년 6월 내는 자동차세와 차령경감 정리
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/january-vehicle-tax-prepayment/" className="text-primary-600 underline dark:text-primary-500">
-                      1월 자동차세 연납 신청 가이드
+                      자동차세 연납 할인 가이드 2026
                     </Link>
-                    {'연납 신청으로 자동차세 약 5% 아끼는 법'}
+                    {' '}· 1월 연납 시 연세액 대비 약 4.58% 공제
                   </li>
                   <li>
                     →{' '}
-                    <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      부동산 과세기준일 6월 1일 가이드
+                    <Link href="/guide/electric-vehicle-tax-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      전기차 자동차세 2026
                     </Link>
-                    {'부동산 거래 시 중요한 날짜'}
+                    {' '}· 전기차·수소차 연 13만원 정액 과세
                   </li>
                   <li>
                     →{' '}
                     <Link href="/guide/tax-calendar-2026/" className="text-primary-600 underline dark:text-primary-500">
                       2026년 세금 달력
                     </Link>
-                    {'월별 신고·납부 일정 전체'}
+                    {' '}· 월별 신고·납부 일정
                   </li>
                 </ul>
               </section>
 
               <ShareButtons
-                title="자동차 개별소비세 인하 6월 30일 마감, 143만원 절감 가이드"
+                title="자동차 개별소비세 인하 종료, 7월부터 5% 환원"
                 url={URL}
-                description="개별소비세 5% → 3.5% 인하, 최대 143만원 절감. 기준은 계약일 아닌 출고일. 마감 D-30."
+                description="자동차 개별소비세 한시 인하(3.5%)는 2026년 6월 30일 출고분을 끝으로 종료, 7월 1일 출고분부터 5% 환원. 친환경차 감면은 12월 31일까지 유지."
               />
 
               <section
@@ -403,46 +397,44 @@ export default function VehicleIndividualConsumptionTaxDeadlinePage() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 개별소비세법 §1(승용자동차 기본세율 5%, 제2항 제3호) ·
-                  개별소비세법 §1 제7항(탄력세율, 정부가 기본세율의 ±30% 범위에서 조정) ·
-                  개별소비세법 시행령 §2의2(자동차 개별소비세 한시 인하 3.5%) ·
-                  교육세법 §5(개별소비세액의 30%) ·{' '}
+                  <strong>법적 근거</strong>: 개별소비세법 §1 ②제3호(승용자동차 기본세율 5%) ·
+                  개별소비세법 §1 ⑦(탄력세율, 기본세율의 ±30% 범위에서 조정) ·
+                  교육세법 §5(개별소비세액의 30%). 참고:{' '}
                   <a
-                    href="https://www.law.go.kr/법령/개별소비세법"
+                    href="https://www.law.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"
                   >
-                    개별소비세법(국가법령정보센터)
-                  </a>{' '}
-                  ·{' '}
+                    국가법령정보센터
+                  </a>
+                  ,{' '}
                   <a
-                    href="https://www.nts.go.kr"
+                    href="https://www.nts.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"
                   >
                     국세청
-                  </a>{' '}
-                  ·{' '}
+                  </a>
+                  ,{' '}
                   <a
-                    href="https://www.moef.go.kr"
+                    href="https://www.moef.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"
                   >
-                    기획재정부(정책 보도자료)
+                    기획재정부
                   </a>
                   .
                 </p>
                 <p className="mb-2">
-                  <strong>면책조항</strong>: 본 가이드는 2026년 6월 1일 기준 정보를 제공합니다.
-                  정부 정책은 변경될 수 있으므로, 차량 구매 전 딜러 또는 국세청에 최신 정보를 재확인하시기 바랍니다.
-                  개별 거래 상황(사업용 차량, 특수 용도, 법인 구매 등)에 따라 세금 계산이 다를 수 있습니다.
-
+                  <strong>면책조항</strong>: 본 가이드는 2026년 10월 30일 기준 정보를 제공합니다. 정부 정책이 다시 바뀌면
+                  기획재정부·국세청 공지를 통해 재확인하시기 바랍니다. 개별 거래 상황(사업용 차량, 특수 용도, 법인 구매 등)에
+                  따라 세금 계산이 다를 수 있습니다.
                 </p>
                 <p>
-                  <strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (calculatorhost)
+                  <strong>업데이트</strong>: {DATE_MODIFIED}
                 </p>
               </section>
             </article>

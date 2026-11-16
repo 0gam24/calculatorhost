@@ -15,15 +15,16 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/july-vat-final-1st-half/';
 const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '7월 부가세 확정신고 가이드 2026 | 일반·간이과세 완전정리',
+  title: '7월 부가세 확정신고 가이드 2026 | 일반·간이과세 정리',
   description:
-    '2026년 7월 1~25일 부가가치세 1기 확정신고 완벽 가이드. 신고 대상·기한·일반과세 vs 간이과세·세액계산·홈택스 5단계·환급·절세 5가지. 프리랜서·사업자 필독.',
+    '부가가치세 1기 확정신고는 7월 1~25일입니다. 대상과 일반·간이과세 차이, 홈택스 5단계 절차를 정리했습니다.',
   keywords: [
     '부가가치세 신고',
     '7월 부가세',
@@ -40,9 +41,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '7월 부가세 확정신고 가이드 2026 | 일반·간이과세 완전정리' }],
-    title: '7월 부가세 확정신고 가이드 2026',
-    description: '신고 대상·기한·홈택스 5단계·일반/간이과세 차이·환급·절세 5가지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -51,8 +49,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '7월 부가세 확정신고 가이드 2026',
-    description: '프리랜서·1인사업자 필독. 신고 단계·세액 계산·환급·절세.',
   },
 };
 
@@ -88,12 +84,12 @@ export default function JulyVatGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '7월 부가세 확정신고 2026' },
+    { name: '7월 부가세 확정신고' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '7월 부가가치세 1기 확정신고 완벽 가이드 2026',
+    headline: '7월 부가가치세 1기 확정신고 가이드 2026',
     description:
-      '2026년 7월 1~25일 부가가치세 1기 확정신고 완벽 가이드. 일반·간이과세 차이, 홈택스 5단계, 환급·절세 5가지를 한 페이지에 정리.',
+      '2026년 7월 1~25일 부가가치세 1기 확정신고 가이드. 일반·간이과세 차이, 홈택스 5단계, 환급·절세 5가지를 한 페이지에 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -112,7 +108,7 @@ export default function JulyVatGuide() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '홈택스 부가가치세 확정신고 단계별 가이드',
     description: '국세청 홈택스에서 부가가치세 1기 확정신고를 신고·납부하는 6단계',
     steps: [
@@ -141,7 +137,8 @@ export default function JulyVatGuide() {
         text: '추가 납부: 신용카드(0.8% 수수료)·계좌이체·가상계좌로 7월 25일까지. 환급: 본인 명의 통장 정확히 입력 → 8월 중 입금.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -167,7 +164,7 @@ export default function JulyVatGuide() {
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  7월 부가가치세 1기 확정신고 완벽 가이드 2026
+                  7월 부가가치세 1기 확정신고 가이드 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   2026년 7월 1~25일은 부가가치세 1기 확정신고 시즌입니다. 1~6월 상반기 매출·매입에 대한
@@ -280,6 +277,7 @@ export default function JulyVatGuide() {
               </section>
 
               {/* 5. FAQ (중간 배치, GEO) */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 6. 절세 5가지 */}

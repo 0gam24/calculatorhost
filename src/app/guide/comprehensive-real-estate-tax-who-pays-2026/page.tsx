@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-02';
 export const metadata: Metadata = {
   title: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일',
   description:
-    '2026년 종합부동산세 완벽 해설. 1주택 12억/다주택 9억 공제, 6월 1일 과세기준일 기준 소유자. 공시가 산정, 세율 0.5~5%, 12월 납부. 계산 사례 및 절세·공제 전략.',
+    '종합부동산세는 6월 1일 소유자에게 부과되며, 1주택자는 공시가 12억원, 다주택자는 9억원까지 공제됩니다. 세율과 사례를 정리했습니다.',
   keywords: [
     '종합부동산세',
     '종부세 2026',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일' }],
-    title: '종합부동산세 2026, 누가 내나, 과세기준일, 12억 공제',
-    description: '1주택 12억, 다주택 9억 공제. 공정시장가액비율 60%, 세율 0.5~5%. 2026년 완전 해설.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '종합부동산세 2026, 누가 내나, 과세기준일 6월 1일',
-    description: '종부세 완벽 이해: 1주택 12억, 다주택 9억 공제, 6월 1일 기준.',
   },
 };
 
@@ -104,7 +99,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '종합부동산세 2026, 누가 내나, 과세기준일, 12억 공제' },
+    { name: '종부세 납세의무자 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일',
@@ -121,7 +116,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
   const webPageLd = buildWebPageJsonLd({
     name: '종합부동산세 2026, 누가 내나, 12억 공제, 과세기준일 6월 1일',
     description:
-      '2026년 종합부동산세 완벽 가이드. 1주택 12억, 다주택 9억 공제, 6월 1일 과세기준일, 공정시장가액비율 60%, 세율 0.5~5%, 12월 납부.',
+      '2026년 종합부동산세 가이드. 1주택 12억, 다주택 9억 공제, 6월 1일 과세기준일, 공정시장가액비율 60%, 세율 0.5~5%, 12월 납부.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -148,7 +143,7 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '종합부동산세 2026, 누가 내나, 과세기준일, 12억 공제' },
+                    { name: '종부세 납세의무자 2026' },
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">세금·부동산 · 10분 읽기 · 2026-06-02</p>
@@ -602,6 +597,13 @@ export default function ComprehensiveRealEstateTaxWhoPays2026() {
                       종합부동산세 계산기
                     </Link>
                     {'공시가 입력 후 과세표준·세액 즉시 계산'}
+                  </li>
+                  <li>
+                    →{' '}
+                    <Link href="/guide/comprehensive-real-estate-tax-payment-2026/" className="text-primary-600 underline dark:text-primary-500">
+                      종부세 납부기간 2026
+                    </Link>
+                    {'12월 1~15일 납부, 분납·카드납부 방법'}
                   </li>
                   <li>
                     →{' '}

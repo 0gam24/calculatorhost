@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-27';
 const DATE_MODIFIED = '2026-06-27';
 
 export const metadata: Metadata = {
-  title: '정기예금 vs 정기적금 vs 파킹통장 2026, 이자·유동성·세금 완전비교',
+  title: '정기예금 vs 정기적금 vs 파킹통장 2026, 이자·유동성·세금 비교',
   description:
-    '정기예금, 정기적금, 파킹통장의 차이를 이자 계산방식, 유동성, 세금, 적합한 상황별로 명확히 정리합니다. 예금자보호, 이자소득세 15.4%, 실제 선택 기준까지 2026년 기준 최신 정보.',
+    '정기예금·정기적금·파킹통장의 차이를 이자 계산방식, 유동성, 세금으로 비교하고 상황별 선택 기준을 정리합니다.',
   keywords: [
     '정기예금 정기적금 차이',
     '파킹통장',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '정기예금 vs 정기적금 vs 파킹통장 2026, 이자·유동성·세금 완전비교',
-      },
-    ],
-    title: '정기예금 vs 정기적금 vs 파킹통장 2026',
-    description: '이자 계산방식부터 세금까지 한눈에 비교. 어떤 상품을 선택해야 할까?',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '정기예금 vs 정기적금 vs 파킹통장 2026',
-    description: '이자 차이, 유동성, 세금을 비교하고 선택하는 기준 제시',
   },
 };
 

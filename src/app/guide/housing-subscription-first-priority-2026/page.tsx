@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-24';
 const DATE_MODIFIED = '2026-07-24';
 
 export const metadata: Metadata = {
-  title: '주택청약 1순위 조건 2026, 국민·민영·규제지역 정리 | calculatorhost',
+  title: '주택청약 1순위 조건 2026, 국민·민영·규제지역 정리',
   description:
-    '주택청약 1순위는 청약통장 가입기간, 납입횟수, 무주택 요건, 지역별 예치금으로 정해집니다. 국민주택과 민영주택, 규제지역의 1순위 조건 차이를 주택공급에 관한 규칙 기준으로 2026년판으로 정리했습니다.',
+    '주택청약 1순위는 청약통장 가입기간, 납입횟수, 무주택 요건, 지역별 예치금으로 정해집니다. 국민·민영·규제지역별 차이를 정리했습니다.',
   keywords: [
     '주택청약 1순위 조건',
     '청약 1순위',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택청약 1순위 조건 2026, 국민·민영·규제지역 정리' }],
-    title: '주택청약 1순위 조건 2026, 국민·민영·규제지역 한눈 정리',
-    description: '가입기간·납입횟수·예치금·무주택 요건까지. 국민주택과 민영주택, 규제지역의 1순위 조건 차이를 한 번에 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택청약 1순위 조건 2026',
-    description: '국민주택은 가입기간·납입횟수, 민영주택은 가입기간·예치금. 규제지역은 2년·24회. 한눈 정리.',
   },
 };
 

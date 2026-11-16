@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-06-19';
 
 export const metadata: Metadata = {
-  title: '주택연금 2026, 가입조건·공시가격·월지급금 | calculatorhost',
+  title: '주택연금 2026, 만 55세 가입조건·공시가격 12억·월지급금',
   description:
-    '주택연금은 집을 담보로 평생 월금을 받는 국가보증 역모기지입니다. 만 55세 이상 가입조건, 공시가격 12억 한도, 배우자 승계, 우대지급방식, 월지급금 결정요인을 정리합니다.',
+    '주택연금은 집을 담보로 평생 매달 돈을 받는 국가보증 역모기지입니다. 만 55세 이상 조건과 공시가격 12억 한도, 배우자 승계를 정리합니다.',
   keywords: [
     '주택연금',
     '역모기지',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택연금(역모기지) 2026 완벽 가이드' }],
-    title: '주택연금(역모기지) 2026 | 가입조건·월지급금·배우자 승계',
-    description: '집을 담보로 평생 월금을 받는 국가보증 역모기지. 만 55세 이상 가입조건·공시가격 12억 한도·월지급금 결정요인을 완벽 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -94,12 +91,12 @@ export default function HousingPensionReverseMortgage2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '주택연금(역모기지) 2026' },
+    { name: '주택연금(역모기지)' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '주택연금(역모기지) 2026 완벽 가이드, 가입조건·공시가격·월지급금·배우자 승계',
+    headline: '주택연금(역모기지) 2026 가이드, 가입조건·공시가격·월지급금·배우자 승계',
     description:
-      '집을 담보로 평생 월금을 받는 국가보증 역모기지. 만 55세 이상 가입조건, 공시가격 12억 원 한도, 월지급금 결정요인, 배우자 승계 절차, 우대지급방식, 세제 혜택까지 완벽 정리했습니다.',
+      '집을 담보로 평생 월금을 받는 국가보증 역모기지. 만 55세 이상 가입조건, 공시가격 12억 원 한도, 월지급금 결정요인, 배우자 승계 절차, 우대지급방식, 세제 혜택까지 정리했습니다.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -111,7 +108,7 @@ export default function HousingPensionReverseMortgage2026() {
   const webPageLd = buildWebPageJsonLd({
     name: '주택연금(역모기지) 2026 | 가입조건·공시가격·월지급금',
     description:
-      '집을 담보로 평생 월금을 받는 국가보증 역모기지. 만 55세 이상 가입조건, 공시가격 12억 한도, 배우자 승계, 월지급금 결정요인, 우대지급방식, 세제 혜택을 완벽 정리.',
+      '집을 담보로 평생 월금을 받는 국가보증 역모기지. 만 55세 이상 가입조건, 공시가격 12억 한도, 배우자 승계, 월지급금 결정요인, 우대지급방식, 세제 혜택을 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -143,7 +140,7 @@ export default function HousingPensionReverseMortgage2026() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">금융 · 9분 읽기 · 2026-06-19</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  주택연금(역모기지) 2026 완벽 가이드, 가입조건·공시가격·월지급금·배우자 승계
+                  주택연금(역모기지) 2026 가이드, 가입조건·공시가격·월지급금·배우자 승계
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   집을 담보로 평생 매월 연금을 받는 국가보증 역모기지, 주택연금. 가입조건부터 월지급금 결정요인, 배우자 승계, 세제 혜택까지 놓친 부분 없이 정리합니다.

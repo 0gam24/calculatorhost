@@ -19,7 +19,7 @@ import {
 const URL = 'https://calculatorhost.com/guide/mortgage-loan-limit-6-billion-cap-2026/';
 const DATE_PUBLISHED = '2026-08-01';
 const DATE_MODIFIED = '2026-10-02';
-const DESCRIPTION = '수도권 또는 규제지역의 주택구입목적 주담대 한도는 시가 15억 이하 6억, 15억 초과 25억 이하 4억, 25억 초과 2억입니다. 2025년 10월 16일 전후 비교와 중도금·이주비 예외, LTV·DSR 조건을 정리합니다.';
+const DESCRIPTION = '수도권·규제지역 주택구입목적 주담대 한도는 시가에 따라 6억·4억·2억원으로 차등화됐습니다. 중도금·이주비 예외도 정리했습니다.';
 
 export const metadata: Metadata = {
   title: '주택담보대출 6억 한도 규제 2026, 시가 15억·25억 구간별 정리',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택담보대출 6억 한도 규제 2026, 시가 15억·25억 구간별 정리' }],
-    title: '주택담보대출 6억 한도 규제 2026, 시가 구간별 대출한도',
-    description: DESCRIPTION,
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택담보대출 6억 한도 규제 2026',
-    description: DESCRIPTION,
   },
 };
 

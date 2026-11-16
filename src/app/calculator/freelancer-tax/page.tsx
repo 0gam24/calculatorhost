@@ -25,6 +25,8 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getKosisHouseholdIncomeCitation } from '@/lib/publicapi/public-citations';
 import kosisIncome from '@/data/kosis-income.json';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const KOSIS_INCOME_CITATION = getKosisHouseholdIncomeCitation(kosisIncome);
 
@@ -83,15 +85,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '프리랜서 종합소득세 계산기 2026',
-    description: '프리랜서 소득에 따른 정확한 세금 계산. 5월 신고 전 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '프리랜서 종합소득세 계산기 2026 - 환급액·납부액 즉시 확인',
-    description: '3.3% 원천징수, 단순경비율 적용 · 2026 최신 세율',
   },
 };
 
@@ -166,7 +164,7 @@ export default function FreelancerTaxPage() {
     dateModified: '2026-04-27',
     isPartOf: getCategoryUrlForCalculator('freelancer-tax'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '프리랜서 종합소득세 계산기 사용 방법',
     description: '연수입, 경비, 원천징수액을 입력하여 종합소득세를 계산하는 단계별 가이드',
     steps: [
@@ -179,7 +177,8 @@ export default function FreelancerTaxPage() {
       },
       { name: '납부액·환급액 확인', text: '최종 납부액 또는 환급액을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -189,7 +188,7 @@ export default function FreelancerTaxPage() {
     { name: '프리랜서 종합소득세' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const definedTermLd = buildDefinedTermSetJsonLd({
+  const glossaryData = {
     name: '프리랜서 종합소득세 핵심 용어',
     description: '프리랜서 3.3% 원천징수·경비율·종합소득세 신고 용어집',
     url: 'https://calculatorhost.com/calculator/freelancer-tax/#glossary',
@@ -220,7 +219,8 @@ export default function FreelancerTaxPage() {
           '미리 낸 3.3% 원천징수액이 실제 산출세액보다 크면 차액을 돌려받는 것. 소득이 적거나 경비가 큰 프리랜서는 5월 신고 시 환급받는 경우가 많다.',
       },
     ],
-  });
+  };
+  const definedTermLd = buildDefinedTermSetJsonLd(glossaryData);
 
   return (
     <>
@@ -300,6 +300,7 @@ export default function FreelancerTaxPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="프리랜서 종합소득세는 프리랜서의 사업소득(수입 - 경비)에 대해 부과되는 누진세입니다. 3.3% 원천징수 후 5월 31일 소득세 신고 시 최종 정산하며, 과세표준에서 부양가족 공제와 사회보험료 공제를 뺀 후 8단계 누진세율을 적용합니다."
                 table={{
@@ -714,9 +715,9 @@ export default function FreelancerTaxPage() {
                       href="/guide/may-comprehensive-income-tax/"
                       className="font-medium text-primary-700 underline dark:text-primary-300"
                     >
-                      5월 종합소득세 신고 완벽 가이드 (2026)
+                      5월 종합소득세 신고 가이드 (2026)
                     </a>{' '}
-                    , 신고 대상·홈택스 단계별 신고법·절세 5가지 (시즌 직전 필독)
+                    , 신고 대상·홈택스 단계별 신고법·절세 5가지 (시즌 전 확인)
                   </li>
                   <li>
                     →{' '}
@@ -773,6 +774,7 @@ export default function FreelancerTaxPage() {
                   않습니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

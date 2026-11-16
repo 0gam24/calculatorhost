@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-12';
 export const metadata: Metadata = {
   title: '결혼세액공제 2026, 혼인신고만 해도 부부 100만원',
   description:
-    '2024년부터 2026년 사이에 혼인신고를 하면 부부가 각각 50만원씩 최대 100만원의 세금을 돌려받습니다. 나이와 소득 제한 없이 생애 1회 적용되는 결혼세액공제의 조건과 신청 방법을 조세특례제한법 §92 기준으로 정리했습니다.',
+    '2024년부터 2026년 사이 혼인신고를 하면 부부가 각각 50만원씩 최대 100만원의 세금을 돌려받습니다.',
   keywords: [
     '결혼세액공제',
     '혼인세액공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '결혼세액공제 2026, 혼인신고만 해도 부부 100만원' }],
-    title: '결혼세액공제 2026, 혼인신고만 해도 부부 100만원 환급',
-    description: '2024~2026년 혼인신고 시 부부 각 50만원, 합계 100만원 세액공제. 나이·소득 제한 없음. 조특법 §92.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '결혼세액공제 2026, 부부 100만원',
-    description: '혼인신고만 해도 부부 각 50만원 세액공제. 2026년까지 한시 적용. 조특법 §92.',
   },
 };
 

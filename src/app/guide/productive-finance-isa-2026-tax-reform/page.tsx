@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-21';
 export const metadata: Metadata = {
   title: '생산적금융 ISA 신설 2026, 국내주식 전액 비과세 신규 계좌',
   description:
-    '2026-08-03 발표 세제개편안에 따라 신설 예정인 국내주식 전용 비과세 계좌 생산적금융 ISA의 요건을 담았습니다. 연 2천만·총 2억 한도, 청년 납입금 10% 소득공제, 3년 의무·10년 운용 조건까지.',
+    '세제개편안에 담긴 국내주식 전용 비과세 계좌, 생산적금융 ISA의 연 2천만·총 2억 한도와 청년 소득공제를 정리했습니다.',
   keywords: [
     '생산적금융 ISA',
     '생산적금융 계좌 2026',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '생산적금융 ISA 신설 2026, 국내주식 전액 비과세 신규 계좌' }],
-    title: '생산적금융 ISA 신설 2026, 국내주식 전액 비과세 신규 계좌',
-    description: '2026-08-03 세제개편안 신설 계좌. 연 2천만·총 2억, 이자·배당 전액 비과세, 청년 납입금 10% 소득공제, 3년 의무·10년 운용.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '생산적금융 ISA 신설 2026, 국내주식 전액 비과세',
-    description: '2026-08-03 세제개편안 신설 예정. 이자·배당 전액 비과세, 청년 10% 소득공제, 3년 의무·10년 운용. 조세특례제한법 §91의18.',
   },
 };
 

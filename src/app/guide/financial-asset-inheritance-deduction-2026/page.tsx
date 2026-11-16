@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-18';
 export const metadata: Metadata = {
   title: '금융재산 상속공제 2026, 예금 주식 최대 2억 공제',
   description:
-    '상속재산 중 예금·주식 같은 순금융재산이 있으면 상속세에서 최대 2억원까지 공제합니다(상증법 §22). 2천만원 이하 전액, 1억 초과 시 20%, 10억 초과 시 2억 한도 등 구간별 계산과 제외 대상을 사례로 정리했습니다.',
+    '예금·주식 같은 순금융재산을 상속받으면 상속세에서 최대 2억원까지 공제합니다. 2천만원 이하 전액 등 구간별 계산과 제외 대상을 정리했습니다.',
   keywords: [
     '금융재산 상속공제',
     '순금융재산',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '금융재산 상속공제 2026, 예금 주식 최대 2억 공제' }],
-    title: '금융재산 상속공제 2026, 순금융재산 최대 2억 공제',
-    description: '예금·주식 등 순금융재산에 대해 구간별로 상속세를 공제. 2천만~2억원 구간표와 제외 대상 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '금융재산 상속공제 2026, 최대 2억',
-    description: '순금융재산 구간별 상속세 공제(2천만~2억). 최대주주 주식·차명계좌 제외. 상증법 §22.',
   },
 };
 

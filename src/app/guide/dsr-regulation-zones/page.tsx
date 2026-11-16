@@ -24,15 +24,12 @@ const DATE_MODIFIED = '2026-10-14';
 const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
 export const metadata: Metadata = {
-  title: '지역별 DSR·LTV 규제 완전 정리 2026 | calculatorhost',
+  title: '지역별 DSR·LTV 규제 완전 정리 2026, 주담대 최대 6억',
   description:
-    '2025-10-16·2026-07-01 규제지역 재지정 이후 지역별 DSR·LTV 차이. 규제지역 LTV 40%, 수도권·규제지역 주담대 최대 6억(15억 이하), 변동 스트레스 3.0%p 등 바뀐 기준을 사례와 함께 정리.',
+    '규제지역 재지정 뒤 바뀐 지역별 DSR·LTV 기준을 정리합니다. 주담대 최대 6억 원과 스트레스 금리 3.0%p를 사례로 설명합니다.',
   keywords: ['DSR 규제지역', '조정대상지역 DSR', '투기과열지구 LTV', '비규제지역 DSR', '스트레스 DSR', '생애최초 LTV', '다주택자 LTV'],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '지역별 DSR·LTV 규제 완전 정리 2026 | calculatorhost' }],
-    title: 'DSR·LTV 규제지역별 완전 정리 (2026)',
-    description: '규제지역 LTV 40%, 수도권·규제지역 주담대 최대 6억 한도, 변동 스트레스 3.0%p. 2025-10-16·2026-07-01 재지정 반영.',
     url: URL,
     type: 'article',
 
@@ -82,7 +79,7 @@ export default function DsrRegulationZonesPage() {
     { name: 'DSR·LTV 규제지역 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: 'DSR·LTV 규제지역별 완전 정리 (2026)',
+    headline: 'DSR·LTV 규제지역별 정리 (2026)',
     description: '규제지역 재지정 이후 규제지역 LTV 40%, 수도권·규제지역 주담대 최대 한도 6억(15억 이하)·4억·2억, 변동 스트레스 3.0%p, 지방 유예 등 바뀐 기준 종합.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -93,7 +90,7 @@ export default function DsrRegulationZonesPage() {
     keywords: ['DSR', 'LTV', '조정대상지역', '투기과열지구', '스트레스 DSR'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '비규제·조정·투기과열지역 DSR·LTV 규제 완전 정리 2026',
+    name: '비규제·조정·투기과열지역 DSR·LTV 규제 정리 2026',
     description: '2025-10-16·2026-07-01 재지정 이후 비규제·조정·투기과열지역 DSR·LTV·DTI 규제를 한눈에. 규제지역 LTV 40%, 수도권·규제지역 주담대 최대 6억 한도, 변동 스트레스 3.0%p, 지방 유예, 생애최초 우대, 다주택 제한까지 비교표로 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -126,7 +123,7 @@ export default function DsrRegulationZonesPage() {
                 />
                 <p className="mb-2 text-caption text-text-tertiary">금융 · 8분 읽기 · 2026-05-03</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                  비규제·조정·투기과열 DSR·LTV 규제 완전 정리 (2026)
+                  비규제·조정·투기과열 DSR·LTV 규제 정리 (2026)
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   같은 주택이라도 위치(비규제·조정·투기과열)에 따라 대출 한도가 수억 원 차이 납니다.

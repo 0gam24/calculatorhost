@@ -19,6 +19,7 @@ import {
 } from '@/lib/seo/jsonld';
 import { ChildTaxCreditCalculator } from './ChildTaxCreditCalculator';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/child-tax-credit/';
 
@@ -36,15 +37,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '자녀장려금 계산기 2026, 자녀 1인당 100만원',
-    description: '가구 유형, 연소득, 자녀 수로 자녀장려금(CTC)을 즉시 계산합니다.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자녀장려금 계산기 2026',
-    description: '자녀장려금 즉시 계산: 가구 유형, 연소득, 자녀 수로 지급액 확인.',
   },
 };
 
@@ -109,7 +106,7 @@ export default function ChildTaxCreditPage() {
     dateModified: '2026-09-30',
     isPartOf: getCategoryUrlForCalculator('child-tax-credit'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '자녀장려금 계산기 사용 방법',
     description: '가구 유형, 연소득, 자녀 수를 입력하여 자녀장려금(CTC)을 계산하는 단계별 가이드',
     steps: [
@@ -128,7 +125,8 @@ export default function ChildTaxCreditPage() {
       },
       { name: '지급액 및 신청 안내 확인', text: '예상 지급액과 신청 방법을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -178,7 +176,7 @@ export default function ChildTaxCreditPage() {
                 <Breadcrumb
                   items={[
                     { name: '홈', href: '/' },
-                    { name: '세금', href: '/category/tax/' },
+                    { name: '근로', href: '/category/work/' },
                     { name: '자녀장려금' },
                   ]}
                 />
@@ -201,6 +199,7 @@ export default function ChildTaxCreditPage() {
               </>
             }
           >
+            <HowToSteps name={howToData.name} steps={howToData.steps} />
             <StructuredSummary
               definition="자녀장려금은 18세 미만 자녀가 있는 저소득 가구에 지급하는 정부 지원금입니다. 조세특례제한법 §100의28·제100조의29에 따라 자녀 1인당 연 100만원을 기준으로, 가구 소득과 재산 기준에 따라 지급액이 결정됩니다."
               table={{
@@ -290,20 +289,6 @@ export default function ChildTaxCreditPage() {
         </aside>
       </div>
       <Footer />
-
-      {/* JSON-LD 스크립트 */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
-      />
     </div>
   );
 }

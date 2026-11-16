@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-08-17';
 // [revenue-lever: indexing+traffic]
 
 export const metadata: Metadata = {
-  title: '버팀목 전세자금대출 2026, 소득·자산·한도 조건 총정리',
+  title: '버팀목 전세자금대출 2026, 소득·자산·한도 조건 정리',
   description:
-    '버팀목 전세자금대출은 무주택 세대주를 위한 주택도시기금 정책상품입니다. 소득·자산 요건, 대상주택, 한도와 금리, 청년버팀목 차이, 신청 절차를 2026년 기준으로 정리했습니다.',
+    '버팀목 전세자금대출은 무주택 세대주를 위한 주택도시기금 정책상품입니다. 소득·자산 요건과 한도·금리, 신청 절차를 정리했습니다.',
   keywords: [
     '버팀목 전세자금대출',
     '청년버팀목 전세대출',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '버팀목 전세자금대출 2026' }],
-    title: '버팀목 전세자금대출 2026, 조건과 한도 총정리',
-    description:
-      '무주택 세대주를 위한 주택도시기금 전세대출. 소득·자산 요건, 한도·금리, 청년버팀목 차이, 신청 절차.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '버팀목 전세자금대출 2026, 조건과 한도',
-    description: '무주택 세대주 대상 주택도시기금 전세대출. 소득·자산 요건, 한도·금리, 신청 절차 정리.',
   },
 };
 
@@ -97,7 +91,7 @@ export default function BeotimokJeonseLoanConditions2026Page() {
     { name: '버팀목 전세자금대출 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '버팀목 전세자금대출 2026, 소득·자산·한도 조건 총정리',
+    headline: '버팀목 전세자금대출 2026, 소득·자산·한도 조건 정리',
     description:
       '무주택 세대주를 위한 주택도시기금 버팀목 전세자금대출의 소득·자산 요건, 대상주택, 한도·금리, 청년버팀목 차이, 신청 절차를 2026년 기준으로 정리.',
     url: URL,
@@ -145,7 +139,7 @@ export default function BeotimokJeonseLoanConditions2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   버팀목 전세자금대출 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 소득·자산·한도 조건 총정리</span>
+                  <span className="text-2xl text-text-secondary">· 소득·자산·한도 조건 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   전세 계약을 앞두고 목돈이 부족한 무주택자에게 버팀목 전세자금대출은 가장 먼저 검토할 정책상품입니다. 이 글은 처음 전세대출을 알아보는 청년과 신혼부부, 무주택 세대주를 위해 준비했습니다. 누가 받을 수 있는지, 소득·자산 요건과 한도·금리는 어떻게 정해지는지, 청년버팀목과 무엇이 다른지, 신청은 어디서 하는지를 순서대로 정리합니다. 금액·금리 요건은 매년 바뀌므로 정확한 수치는 주택도시기금 포털에서 확인하는 것을 전제로 읽어주세요.

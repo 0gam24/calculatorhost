@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-10-01';
 // [revenue-lever: traffic] 검색 방문자가 미래 비용·구매력·별도 CPI 조회의 차이를 이해하도록 안내합니다.
 const TITLE = '화폐가치 계산 2026 | 미래 필요 금액·구매력·CPI 환산';
 const DESCRIPTION =
-  '물가상승률을 가정한 미래 필요 금액과 구매력 계산, 과거 비용의 CPI 환산을 구분합니다. 계산기는 실제 CPI를 자동 조회하지 않으며 입력한 연간 비율을 일정하게 적용합니다. 과거 물가 비교는 KOSIS에서 같은 기준의 지수를 별도로 확인하세요.';
+  '미래 필요 금액과 구매력 계산, 과거 비용의 CPI 환산을 구분해 설명합니다. 연 3%·10년이면 100만 원 물건이 약 134만 원이 됩니다.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '화폐가치 인플레이션 계산 2026' }],
-    title: TITLE,
-    description: DESCRIPTION,
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: TITLE,
-    description: DESCRIPTION,
   },
 };
 

@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-26';
 export const metadata: Metadata = {
   title: '전세 vs 월세 유불리 계산 2026, 전월세 전환율로 손익 따지기',
   description:
-    '전세와 월세 중 무엇이 유리한지 보증금의 기회비용과 전월세 전환율로 비교하는 법을 설명합니다. 전세대출 이자·예금이자와 월세를 등가로 환산해 판단하는 공식과 예시를 정리.',
+    '전세와 월세 중 무엇이 유리한지 보증금 기회비용과 전월세 전환율로 비교하는 법을 설명합니다.',
   keywords: [
     '전세 vs 월세',
     '전월세 비교',
@@ -35,16 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '전세 vs 월세 유불리 계산 2026',
-      },
-    ],
-    title: '전세 vs 월세 유불리 계산 2026',
-    description: '보증금 기회비용과 전월세 전환율로 임차 선택지를 비교하는 완벽 가이드.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세 vs 월세 유불리 계산 2026',
-    description: '기회비용 계산으로 전세와 월세의 실제 부담을 비교하고 선택하는 법.',
   },
 };
 
@@ -100,7 +88,7 @@ export default function JeonseVsMonthlyRentComparison2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '전세 vs 월세 유불리 계산 2026',
     description:
-      '전세와 월세의 금융적 손익을 보증금 기회비용과 전월세 전환율로 비교하는 완벽 가이드.',
+      '전세와 월세의 금융적 손익을 보증금 기회비용과 전월세 전환율로 비교하는 가이드.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-13';
 const DATE_MODIFIED = '2026-07-13';
 
 export const metadata: Metadata = {
-  title: '연금소득세 2026, 사적연금 1500만원 분리과세와 연령별 3.3~5.5%',
+  title: '연금소득세 2026, 사적연금 1500만원 분리과세 3.3~5.5%',
   description:
-    '연금저축·IRP 사적연금은 연 1,500만원까지 연령별 3.3~5.5% 저율 분리과세됩니다. 1,500만원 초과 시 종합과세와 16.5% 분리과세 선택, 절세 수령 전략을 소득세법 §20의3으로 정리합니다.',
+    '연금저축·IRP 사적연금은 연 1,500만원까지 연령별 3.3~5.5% 저율로 분리과세됩니다. 초과 시 선택지와 절세 수령법을 정리합니다.',
   keywords: [
     '연금소득세',
     '사적연금 1500만원',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연금소득세 2026 사적연금 1500만원 분리과세 연령별 세율' }],
-    title: '연금소득세 2026, 사적연금 1500만원 분리과세 완전정리',
-    description: '연금저축·IRP 연 1,500만원까지 연령별 3.3~5.5% 저율과세. 초과 시 종합과세 또는 16.5% 분리과세 선택.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연금소득세 2026, 사적연금 1500만원 분리과세',
-    description: '연금저축·IRP 연 1,500만원까지 연령별 3.3~5.5%. 초과 시 종합·16.5% 분리과세 선택. 소득세법 §20의3.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function PensionIncomeTaxWithholding2026Page() {
     { name: '연금소득세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연금소득세 2026, 사적연금 1500만원 분리과세 완전정리',
+    headline: '연금소득세 2026, 사적연금 1500만원 분리과세 정리',
     description:
       '연금저축·IRP 사적연금의 연 1,500만원 저율 분리과세, 연령별 3.3~5.5% 세율, 초과 시 종합·16.5% 분리과세 선택, 수령 시기 절세 전략을 소득세법 §20의3·§64의4 기준으로 정리.',
     url: URL,

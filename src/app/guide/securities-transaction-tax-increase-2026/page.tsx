@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-18';
 export const metadata: Metadata = {
   title: '증권거래세 인상 2026, 코스피 코스닥 세율 얼마 오르나',
   description:
-    '2026년 1월 양도분부터 증권거래세가 오릅니다. 코스피는 거래세 0.05%에 농특세 0.15%를 더해 0.20%, 코스닥은 0.20%로 모두 0.15%에서 0.05%p 인상됩니다. 손익과 무관하게 매도 때마다 붙는 세금, 계산법과 단타 부담까지 정리했습니다.',
+    '2026년 1월 양도분부터 증권거래세가 코스피·코스닥 모두 0.15%에서 0.20%로 오릅니다. 단타 부담과 계산법도 정리했습니다.',
   keywords: [
     '증권거래세 2026',
     '증권거래세 인상',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증권거래세 인상 2026, 코스피 코스닥 세율 얼마 오르나' }],
-    title: '증권거래세 인상 2026, 코스피 코스닥 모두 0.20%로',
-    description: '2026년부터 코스피·코스닥 주식 매도 시 실부담 0.20%. 0.05%p 인상된 세율과 계산법, 단타 부담을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증권거래세 인상 2026, 코스피·코스닥 0.20%',
-    description: '2026년 양도분부터 주식 매도 세금이 0.15%에서 0.20%로. 증권거래세법 §8 기준 계산법.',
   },
 };
 

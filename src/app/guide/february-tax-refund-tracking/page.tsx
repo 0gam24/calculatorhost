@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '2월 연말정산 환급 추적 + 5월 준비 가이드 2026 | calculatorhost',
+  title: '2월 연말정산 환급 추적 + 5월 준비 가이드 2026, 누락 공제 점검',
   description:
-    '2월 연말정산 환급·추가납부 확인·이의제기. 5월 종합소득세 사전 준비 완벽 가이드. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '연말정산 환급이 안 들어왔거나 추가납부가 나왔을 때 대응법을 정리합니다. 5월 종합소득세 신고 전 누락 공제 점검법도 담았습니다.',
   keywords: [
     '연말정산 환급',
     '환급 안들어옴',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '2월 연말정산 환급 추적 + 5월 준비 가이드 2026 | calculatorhost' }],
-    title: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비',
-    description: '환급 결과 확인 + 추가 납부 대응 + 5월 정정 신고 준비.',
     url: URL,
     type: 'article',
 
@@ -103,7 +100,7 @@ export default function FebruaryRefundTrackingPage() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '2월 연말정산 환급 추적 + 5월 종소세 사전 준비 가이드 2026',
-    description: '2월 연말정산 환급/추가 납부 결과 확인·이의제기·5월 종합소득세 누락 공제 정정·사전 준비 완벽 가이드. 환급 안 들어왔을 때, 추가 납부 결과 받았을 때 대응법.',
+    description: '2월 연말정산 환급/추가 납부 결과 확인·이의제기·5월 종합소득세 누락 공제 정정·사전 준비 가이드. 환급 안 들어왔을 때, 추가 납부 결과 받았을 때 대응법.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -234,7 +231,7 @@ export default function FebruaryRefundTrackingPage() {
                 <p className="text-sm text-text-secondary">
                   자세한 5월 종소세 신고 가이드는{' '}
                   <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                    5월 종합소득세 신고 완벽 가이드
+                    5월 종합소득세 신고 가이드
                   </Link>{' '}
                   참고.
                 </p>
@@ -271,8 +268,8 @@ export default function FebruaryRefundTrackingPage() {
               <section className="card">
                 <h2 className="mb-3 text-lg font-semibold">관련 가이드</h2>
                 <ul className="space-y-2 text-sm">
-                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 완벽 가이드</Link></li>
-                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 완벽 가이드</Link></li>
+                  <li>→ <Link href="/guide/year-end-tax-settlement/" className="text-primary-600 underline dark:text-primary-500">연말정산 가이드</Link></li>
+                  <li>→ <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 가이드</Link></li>
                   <li>→ <Link href="/guide/freelancer-salary-comparison/" className="text-primary-600 underline dark:text-primary-500">프리랜서 vs 일반직 비교</Link></li>
                   <li>→ <Link href="/calculator/salary/" className="text-primary-600 underline dark:text-primary-500">연봉 실수령액 계산기</Link></li>
                 </ul>

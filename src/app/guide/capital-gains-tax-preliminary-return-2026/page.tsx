@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-01';
 export const metadata: Metadata = {
   title: '양도소득세 예정신고 2026 | 2개월 기한·무신고 가산세',
   description:
-    '부동산 양도 시 예정신고·납부 기한(2개월), 무신고 가산세(20%), 확정신고 합산 방법 완전 해설. 소득세법 §105·§106·국세기본법 §47의2.',
+    '부동산 양도소득세 예정신고 기한(2개월)과 무신고 가산세 20%, 확정신고 합산 방법을 정리했습니다.',
   keywords: [
     '양도소득세 예정신고',
     '예정신고 기한',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '양도소득세 예정신고 2026 | 2개월 기한·무신고 가산세' }],
-    title: '양도소득세 예정신고 2026, 부동산 양도 후 2개월 내 신고·납부 필수',
-    description: '부동산 양도일이 속한 달 말일부터 2개월 이내 양도소득세 예정신고·납부 의무. 무신고 시 20% 가산세. 2회 이상 양도 시 확정신고로 합산.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도소득세 예정신고 2026, 부동산 양도 후 2개월 신고 기한',
-    description: '양도일 속한 달 말일부터 2개월 이내 예정신고. 무신고 시 20% 가산세 + 납부지연세.',
   },
 };
 
@@ -100,9 +95,9 @@ export default function CapitalGainsTaxPreliminaryReturn2026Page() {
     { name: '양도소득세 예정신고 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '양도소득세 예정신고 2026, 부동산 양도 후 2개월 내 신고·납부 완벽 가이드',
+    headline: '양도소득세 예정신고 2026, 부동산 양도 후 2개월 내 신고·납부 가이드',
     description:
-      '부동산 양도일이 속한 달 말일부터 2개월 이내 예정신고·납부 의무, 무신고 가산세 20%, 2회 이상 양도 시 확정신고 합산 방법, 예정신고세액공제 폐지 등을 완전 정리.',
+      '부동산 양도일이 속한 달 말일부터 2개월 이내 예정신고·납부 의무, 무신고 가산세 20%, 2회 이상 양도 시 확정신고 합산 방법, 예정신고세액공제 폐지 등을 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

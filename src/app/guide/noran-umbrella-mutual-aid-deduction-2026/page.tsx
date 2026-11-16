@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-17';
 export const metadata: Metadata = {
   title: '노란우산공제 소득공제 2026, 사업자 최대 600만원 절세',
   description:
-    '노란우산공제(소기업·소상공인 공제부금)는 사업소득금액에 따라 연 200~600만원을 소득공제합니다. 조세특례제한법 §86의3 기준 공제한도·해지 시 과세·가입 조건을 사업자·프리랜서 사례로 정리합니다.',
+    '노란우산공제는 사업소득금액에 따라 연 200~600만원 소득공제를 받습니다. 해지 시 과세와 가입 조건을 정리했습니다.',
   keywords: [
     '노란우산공제',
     '소기업소상공인공제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '노란우산공제 소득공제 2026, 사업자 최대 600만원 절세' }],
-    title: '노란우산공제 소득공제 2026, 사업소득별 200~600만원 공제한도',
-    description: '사업소득금액 4천만원 이하면 최대 600만원까지 소득공제. 조세특례제한법 §86의3 기준 공제한도와 해지 과세를 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '노란우산공제 소득공제 2026, 사업자 최대 600만원',
-    description: '사업소득금액 구간별 200~600만원 소득공제. 조세특례제한법 §86의3.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function NoranUmbrellaMutualAidDeduction2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '노란우산공제 소득공제 2026, 사업소득별 200~600만원 절세 설계',
     description:
-      '노란우산공제(소기업·소상공인 공제부금)의 사업소득금액 구간별 공제한도(200~600만원), 가입 조건, 해지 시 과세, 압류 보호까지 사업자·프리랜서 관점에서 완전 정리.',
+      '노란우산공제(소기업·소상공인 공제부금)의 사업소득금액 구간별 공제한도(200~600만원), 가입 조건, 해지 시 과세, 압류 보호까지 사업자·프리랜서 관점에서 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-15';
 const DATE_MODIFIED = '2026-08-15';
 
 export const metadata: Metadata = {
-  title: '부동산 실거래 신고 2026, 30일 기한과 과태료 정리 | calculatorhost',
+  title: '부동산 실거래 신고 2026, 30일 기한과 과태료 정리',
   description:
-    '부동산 실거래 신고는 계약일부터 30일 이내에 해야 하며, 미신고는 500만원 이하 과태료 대상입니다. 신고 주체, 지연·거짓신고 과태료, 해제신고까지 부동산 거래신고 등에 관한 법률 §3·§28 기준으로 정리합니다.',
+    '부동산 실거래 신고는 계약일부터 30일 이내이며, 미신고 과태료는 500만원 이하입니다. 지연·거짓신고 기준과 해제 절차도 정리합니다.',
   keywords: [
     '부동산 실거래 신고',
     '실거래가 신고 기한',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부동산 실거래 신고 2026, 30일 기한과 과태료 정리' }],
-    title: '부동산 실거래 신고 2026, 30일 기한과 과태료 정리',
-    description: '매매계약 체결일부터 30일 이내 신고 의무. 미신고 500만원 이하, 거짓신고 3천만원 이하 과태료. 부동산 거래신고 등에 관한 법률 §3·§28 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부동산 실거래 신고 2026, 30일 기한과 과태료 정리',
-    description: '계약일부터 30일 이내 실거래 신고 의무. 미신고 500만원, 거짓신고 3천만원 이하 과태료. §3·§28.',
   },
 };
 

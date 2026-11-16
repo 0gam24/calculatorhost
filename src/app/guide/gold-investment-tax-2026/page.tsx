@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-20';
 export const metadata: Metadata = {
   title: '금 투자 세금 2026, KRX금·골드바·금통장·금ETF 과세 비교',
   description:
-    '금 투자 방식마다 세금이 완전히 다릅니다. KRX 금현물시장은 매매차익 비과세, 골드바는 부가세 10%, 금통장·금ETF는 배당소득세 15.4%. 조세특례제한법 §126의7 기준으로 4가지 방식의 세금과 비용을 비교했습니다.',
+    'KRX 금현물은 매매차익 비과세, 골드바는 부가세 10%, 금통장·금ETF는 배당소득세 15.4%입니다. 4가지 방식의 비용까지 비교했습니다.',
   keywords: [
     '금 투자 세금',
     'KRX 금시장 비과세',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '금 투자 세금 2026, KRX금·골드바·금통장·금ETF 과세 비교' }],
-    title: '금 투자 세금 2026, 4가지 방식의 과세 구조를 한눈에',
-    description: 'KRX 금현물시장은 매매차익 비과세·부가세 면제, 골드바는 부가세 10%, 금통장·국내 금ETF는 15.4%, 해외 금ETF는 22%. 조세특례제한법 §126의7 기준 완전 비교.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '금 투자 세금 2026, 방식별 과세 완전 비교',
-    description: 'KRX 금시장 비과세, 골드바 부가세 10%, 금통장·금ETF 배당소득세 15.4%. 조세특례제한법 §126의7.',
   },
 };
 

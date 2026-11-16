@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-12';
 export const metadata: Metadata = {
   title: '금융소득 종합과세 vs 분리과세 2026 | 2000만원 기준 5월 신고',
   description:
-    '금융소득 2000만원 기준 종합과세 vs 분리과세 완벽 비교. 이자배당 합산 시 누진세율 상향 효과, 배당세액공제 Gross-up 원리, 5월 31일 종소세 신고 의무, 함정 5가지, 사례 시뮬 3개로 절세 전략 정리. (소득세법 §14 ⑥)',
+    '이자·배당 금융소득이 연 2000만원을 넘으면 종합과세, 이하이면 분리과세로 끝납니다. 사례 시뮬 3개로 5월 신고 절세 전략을 정리합니다.',
   keywords: [
     '금융소득',
     '종합과세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '금융소득 종합과세 vs 분리과세 2026 | 2000만원 기준 5월 신고' }],
-    title: '금융소득 종합과세 vs 분리과세 2026 | 2000만원 기준',
-    description: '금융소득 2000만원 기준·종합 vs 분리 비교 과세·세금 계산·배당세액공제·함정 5가지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '금융소득 종합과세 vs 분리과세 2026',
-    description: '금융소득 3000만원 + 근로 1억 → 종합과세 1.5억 vs 분리과세 1.3억. 2000만 기준 비교 과세.',
   },
 };
 
@@ -88,7 +83,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
     { name: '금융소득 종합과세 vs 분리과세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '금융소득 종합과세 vs 분리과세 2026, 2000만원 기준 완벽 정리',
+    headline: '금융소득 종합과세 vs 분리과세 2026, 2000만원 기준 정리',
     description:
       '금융소득 2000만원 기준·종합과세 vs 분리과세 비교 과세·세금 계산·배당세액공제·5월 신고 절차·함정 5가지.',
     url: URL,
@@ -587,7 +582,7 @@ export default function FinancialIncomeComprehensiveVsSeparateTaxationGuide() {
                     → <Link href="/calculator/deposit/" className="text-primary-600 underline dark:text-primary-500">정기예금 이자 계산기</Link>, 예금 이자와 세금
                   </li>
                   <li>
-                    → <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 완벽 정리</Link>, 전체 절차 및 기한
+                    → <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">5월 종합소득세 신고 정리</Link>, 전체 절차 및 기한
                   </li>
                   <li>
                     → <Link href="/guide/february-tax-refund-tracking/" className="text-primary-600 underline dark:text-primary-500">2월 환급금 조회 방법</Link>, 신고 후 환급 받기

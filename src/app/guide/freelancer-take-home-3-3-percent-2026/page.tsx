@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-30';
 const DATE_MODIFIED = '2026-06-30';
 
 export const metadata: Metadata = {
-  title: '프리랜서 3.3% 원천징수와 실수령액 2026 | 5월 정산·환급·추가납부',
+  title: '프리랜서 3.3% 원천징수와 실수령액 2026, 5월 환급·추가납부',
   description:
-    '프리랜서가 받는 3.3% 원천징수(소득세 3% + 지방세 0.3%)의 정체와 실수령액 계산. 월 용역료 300만원 = 실수령 290만원. 다음해 5월 종합소득세 신고로 환급 또는 추가납부. 계산 공식·예시·함정 정리.',
+    '프리랜서 3.3% 원천징수는 다음해 5월 종합소득세 신고 때 정산됩니다. 월 300만원을 받으면 실수령액은 290만원입니다.',
   keywords: [
     '프리랜서 3.3% 원천징수',
     '프리랜서 실수령액',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '프리랜서 3.3% 원천징수와 실수령액 2026' }],
-    title: '프리랜서 3.3% 원천징수 정체 및 실수령액',
-    description: '용역료 300만 → 3.3% 떼고 290만 받음. 5월 정산 시 환급되거나 추가납부.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '프리랜서 3.3% 원천징수 정체와 실수령',
-    description: '월급도 아닌데 세금 3.3%가 떨어진다? 정산 프로세스 완벽 이해.',
   },
 };
 
@@ -97,7 +92,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '프리랜서 3.3% 원천징수와 실수령액' },
+    { name: '프리랜서 3.3% 원천징수' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '프리랜서 3.3% 원천징수와 실수령액 2026, 5월 정산·환급·추가납부 완벽 이해',
@@ -609,7 +604,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -626,7 +621,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
               <ShareButtons
                 title="프리랜서 3.3% 원천징수와 실수령액 2026"
                 url={URL}
-                description="용역료 300만 → 3.3% 떼고 290만 받음. 그런데 이건 최종 세금이 아니라 미리 낸 세금. 5월 신고 시 환급 또는 추가납부. 정산 메커니즘·환급 예측·함정 5가지 완벽 정리."
+                description="용역료 300만 → 3.3% 떼고 290만 받음. 그런데 이건 최종 세금이 아니라 미리 낸 세금. 5월 신고 시 환급 또는 추가납부. 정산 메커니즘·환급 예측·함정 5가지 정리."
               />
 
               {/* 출처 및 면책 */}
@@ -638,7 +633,7 @@ export default function FreelancerTakeHome3Percent2026Page() {
                   <strong>법적 근거</strong>: 소득세법 §127(원천징수) · §129(원천징수세율) · 지방소득세(소득세의 10%) ·
                   소득세법 §55(누진세율). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0206000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

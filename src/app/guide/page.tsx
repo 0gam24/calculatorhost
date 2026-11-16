@@ -12,21 +12,11 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-10-01';
 
 export const metadata: Metadata = {
-  title: '가이드, 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
+  title: '가이드, 세금·금융·투자·근로·부동산 카테고리별 모음',
   description:
-    '한국 거주자가 자주 마주치는 금융·세금·부동산·투자·근로 의사결정을 위한 실전 가이드 모음. 시기성 콘텐츠(5월 종소세, 7월 재산세) + 분야별 절세·전략 가이드.',
+    '금융·세금·부동산·투자·근로 의사결정을 돕는 실전 가이드를 5개 카테고리로 모았습니다. 5월 종소세, 7월 재산세 같은 시기별 글도 있습니다.',
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '가이드, 카테고리별 모음 (세금·금융·투자·근로·부동산) | calculatorhost',
-      },
-    ],
-    title: 'calculatorhost 가이드, 카테고리별 모음',
-    description: '시기성 + 분야별 실전 의사결정 가이드.',
     url: URL,
     type: 'website',
 
@@ -106,7 +96,7 @@ export const GUIDES: GuideEntry[] = [
   // 2026-09-22 자동 발행 (AI 초안 + 자동 품질 게이트)
   {
     slug: 'wedding-gift-money-tax-2026',
-    title: '축의금 혼수용품 증여세 2026, 과세 기준 완전 정리',
+    title: '축의금 혼수용품 증여세 2026, 과세 기준 정리',
     description:
       '결혼식 축의금은 원칙적으로 증여세가 없습니다. 예단·예물 등 혼수용품도 통상 필요한 수준이면 비과세입니다(상증법 §46, 시행령 §35④). 사치품·신혼집의 과세 경계와 계산 사례까지 정리했습니다.',
     category: '세금',
@@ -557,7 +547,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'farmland-pension-2026',
-    title: '농지연금 2026, 가입조건·수령액·수령방식 총정리',
+    title: '농지연금 2026, 가입조건·수령액·수령방식 정리',
     description:
       '농지연금은 60세 이상 영농경력 5년 이상 농업인이 소유 농지를 담보로 매달 연금을 받는 제도입니다. 담보 농지 평가, 종신형·기간형 수령방식, 주택연금과의 차이, 재산세 감면과 사망 시 처리까지 정리했습니다.',
     category: '금융',
@@ -879,7 +869,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'parental-benefit-child-allowance-2026',
-    title: '부모급여 아동수당 2026, 금액·중복·신청 총정리',
+    title: '부모급여 아동수당 2026, 금액·중복·신청 정리',
     description:
       '2026년 부모급여는 0세 월 100만 원, 1세 월 50만 원이고 아동수당은 만 8세 미만 월 10만 원입니다. 소득과 무관하며 0~1세는 둘 다 받습니다. 신청 시기(출생 60일 이내)와 지급일(매월 25일)까지 정리했습니다.',
     category: '근로',
@@ -999,7 +989,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'dividend-separate-taxation-value-up-2026',
-    title: '고배당기업 배당소득 분리과세 2026, 신청·유불리 총정리',
+    title: '고배당기업 배당소득 분리과세 2026, 신청·유불리 정리',
     description:
       '2026년 지급 배당부터 고배당기업 배당소득 분리과세(14~30% 저율)가 도입됐습니다. 종합과세와의 차이, 누구에게 유리한지, 신청서 제출과 밸류업 고배당기업 확인법을 정리했습니다.',
     category: '투자',
@@ -1165,7 +1155,7 @@ export const GUIDES: GuideEntry[] = [
   // 2026-08-02 신규 5편 (주택임대사업자등록·신생아취득세감면·양도세환산취득가액·청약예치금액·가족돌봄휴직휴가)
   {
     slug: 'housing-rental-business-registration-2026',
-    title: '주택임대사업자 등록 2026, 혜택·의무·자동말소 총정리',
+    title: '주택임대사업자 등록 2026, 혜택·의무·자동말소 정리',
     description:
       '주택임대사업자로 등록하면 종부세 합산배제와 양도세 특례를 받지만 10년 임대의무와 5% 증액제한을 어기면 감면이 추징됩니다. 등록 유형, 세제혜택, 자동말소까지 민간임대주택법 기준으로 정리했습니다.',
     category: '세금·부동산',
@@ -1284,7 +1274,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'didimdol-loan-conditions-2026',
-    title: '디딤돌대출 2026, 소득·한도·금리 조건 총정리',
+    title: '디딤돌대출 2026, 소득·한도·금리 조건 정리',
     description:
       '디딤돌대출은 부부합산 연소득 6천만원 이하 무주택 세대주를 위한 정부 지원 주택담보대출입니다. 소득 요건, 대출 한도, 금리 수준, 대상 주택과 신청 방법을 주택도시기금 기준으로 정리했습니다.',
     category: '금융',
@@ -1701,7 +1691,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'youth-monthly-rent-support-2026',
-    title: '청년 월세 특별지원 2026, 상시신청 전환·신청 방법 총정리',
+    title: '청년 월세 특별지원 2026, 상시신청 전환·신청 방법 정리',
     description:
       '청년 월세 특별지원이 상시신청 체계로 개편되며 무주택 청년의 월세 부담을 덜어줍니다. 지원 금액·소득기준·연령 요건은 지자체·연도별 공고에 따라 다르므로, 자격 판단과 복지로 신청 절차를 정리했습니다.',
     category: '세금·부동산',
@@ -1951,7 +1941,7 @@ export const GUIDES: GuideEntry[] = [
   // 2026-07-15 신규 5편 (혼인출산증여공제·건보임의계속가입·종소세중간예납·상가권리금보호·국내주식대주주양도세)
   {
     slug: 'marriage-childbirth-gift-deduction-2026',
-    title: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 총정리',
+    title: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 정리',
     description:
       '결혼·출산 때 부모가 재산을 물려줘도 최대 1억원까지 증여세가 없습니다. 상증법 §53의2 혼인·출산 증여재산공제의 요건, 통합 1억 한도, 일반공제 5천만원과 합쳐 1.5억까지 무증여세로 받는 방법을 사례로 정리합니다.',
     category: '세금',
@@ -1969,7 +1959,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'comprehensive-income-tax-interim-prepayment-2026',
-    title: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 총정리',
+    title: '종합소득세 중간예납 2026, 11월 고지·추계신고·분납 정리',
     description:
       '개인사업자·프리랜서는 11월에 전년 종합소득세의 절반을 미리 냅니다. 소득세법 §65 중간예납의 고지 방식, 50만원 미만 제외, 사업 부진 시 추계신고, 분납 요건을 사례로 정리합니다.',
     category: '세금',
@@ -2462,7 +2452,7 @@ export const GUIDES: GuideEntry[] = [
   // ─── 2026-06-28 신규 5편 (Naver 자동차세 급상승 인접 + 임대차·중개·순수 금융/투자 갭, 저환각 토픽) ───
   {
     slug: 'rent-increase-5-percent-cap-2026',
-    title: '전월세 인상 5% 상한 2026, 계약갱신청구권 한도 완전정리',
+    title: '전월세 인상 5% 상한 2026, 계약갱신청구권 한도 정리',
     description:
       '주택임대차보호법 §7 차임증감청구권은 갱신 시 5% 이내로 인상을 제한합니다. 계약갱신요구권(§6의3)과 5% 상한 적용 조건·계산 사례를 정리합니다.',
     category: '세금·부동산',
@@ -2471,7 +2461,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'broker-fee-negotiation-savings-2026',
-    title: '중개수수료 협의로 아끼는 법 2026, 상한요율 절약 완전정리',
+    title: '중개수수료 협의로 아끼는 법 2026, 상한요율 절약 정리',
     description:
       '중개수수료 상한요율(공인중개사법 §32)은 법적 한도일 뿐 협의로 깎을 수 있습니다. 거래금액별 요율과 부가세 확인, 계약 전 확정 협상 팁을 정리합니다.',
     category: '세금·부동산',
@@ -2554,7 +2544,7 @@ export const GUIDES: GuideEntry[] = [
   // ─── 2026-06-26 신규 5편 (Naver 자동차세 +296%·재산세 +30% 인접 + 순수 금융/근로 갭, 저환각 토픽) ───
   {
     slug: 'overtime-night-holiday-allowance-2026',
-    title: '연장·야간·휴일근로수당 계산 2026, 1.5배·2배 가산 완전정리',
+    title: '연장·야간·휴일근로수당 계산 2026, 1.5배·2배 가산 정리',
     description:
       '연장·야간·휴일근로 가산수당을 통상시급 기준으로 정확히 계산하는 법. 1.5배·2배·중복 가산, 근로기준법 §56·§57 보상휴가제까지 사례로 정리합니다.',
     category: '근로',
@@ -2611,16 +2601,16 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'vehicle-acquisition-tax-2026',
-    title: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 완전정리',
+    title: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 정리',
     description:
-      '자동차를 구매할 때 내는 취득세를 정확히 계산하는 방법을 설명합니다. 비영업용 승용차 7%, 경차 4%, 신차·중고차 과세표준 차이, 친환경차 감면 요건까지 2026년 기준으로 완벽 정리합니다.',
+      '자동차를 구매할 때 내는 취득세를 정확히 계산하는 방법을 설명합니다. 비영업용 승용차 7%, 경차 4%, 신차·중고차 과세표준 차이, 친환경차 감면 요건까지 2026년 기준으로 정리합니다.',
     category: '세금',
     publishedAt: '2026-06-25',
     readingMinutes: 8,
   },
   {
     slug: 'property-tax-urban-area-regional-resource-tax-2026',
-    title: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
+    title: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 정리',
     description:
       '7월 재산세 고지서를 받으면 본세 외에 도시지역분·지역자원시설세·지방교육세가 함께 붙어옵니다. 각 항목이 무엇이고 어떻게 계산되는지, 고지서를 읽는 방법을 명확히 정리합니다. 2026년 기준.',
     category: '세금·부동산',
@@ -2639,7 +2629,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'currency-exchange-fee-preferential-rate-2026',
-    title: '환전 수수료·환율 우대율 계산 2026, 매매기준율·스프레드 완전정리',
+    title: '환전 수수료·환율 우대율 계산 2026, 매매기준율·스프레드 정리',
     description:
       '환전할 때 "우대 90%"가 실제로 얼마를 절약하는지, 매매기준율·현찰 스프레드·우대율의 의미와 계산법을 공식으로 설명합니다. 해외 송금과 현찰의 차이도 정리.',
     category: '금융',
@@ -2651,7 +2641,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'property-tax-july-payment-schedule-2026',
     title: '재산세 7월 납부 일정·분납 2026, 주택 7월·토지 9월·250만원 분할납부',
     description:
-      '2026년 재산세 납부 일정 총정리. 과세기준일 6월 1일, 주택 1기분 7월 16~31일·2기분 9월, 토지 9월 납기, 250만원 초과 분할납부까지. 지방세법 §114·§115·§118 기준.',
+      '2026년 재산세 납부 일정 정리. 과세기준일 6월 1일, 주택 1기분 7월 16~31일·2기분 9월, 토지 9월 납기, 250만원 초과 분할납부까지. 지방세법 §114·§115·§118 기준.',
     category: '세금·부동산',
     publishedAt: '2026-06-24',
     readingMinutes: 7,
@@ -2716,7 +2706,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'gift-tax-calculation-2026',
     title: '증여세 계산법 2026, 5단계 세율·증여재산공제·신고세액공제',
     description:
-      '증여세를 정확히 계산하는 법. 5단계 누진세율·배우자 6억·성년 자녀 5천만 공제·10년 합산·신고세액공제 3%까지 완벽 정리. 상증세법 §26·§69 기준.',
+      '증여세를 정확히 계산하는 법. 5단계 누진세율·배우자 6억·성년 자녀 5천만 공제·10년 합산·신고세액공제 3%까지 정리. 상증세법 §26·§69 기준.',
     category: '세금',
     publishedAt: '2026-06-22',
     readingMinutes: 11,
@@ -2762,7 +2752,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'property-tax-calculation-2026',
     title: '재산세 계산법 2026, 주택 재산세율·과세표준·1세대1주택 특례',
     description:
-      '2026년 주택 재산세 계산법. 과세표준·세율 4구간·누진공제·1세대1주택 특례·지방교육세까지 완전 정리. 6월 1일 과세기준일 기준. 지방세법 §111.',
+      '2026년 주택 재산세 계산법. 과세표준·세율 4구간·누진공제·1세대1주택 특례·지방교육세까지 정리. 6월 1일 과세기준일 기준. 지방세법 §111.',
     category: '세금·부동산',
     publishedAt: '2026-06-21',
     readingMinutes: 8,
@@ -2771,7 +2761,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'inheritance-tax-calculation-2026',
     title: '상속세 계산법 2026, 5단계 누진세율·일괄공제·배우자공제',
     description:
-      '상속세를 정확히 계산하는 법. 5단계 누진세율·일괄공제 5억·배우자공제·신고세액공제까지 완벽 정리. 은퇴·자산가 필수. 상증세법 §26 기준.',
+      '상속세를 정확히 계산하는 법. 5단계 누진세율·일괄공제 5억·배우자공제·신고세액공제까지 정리. 은퇴·자산가 필수. 상증세법 §26 기준.',
     category: '세금',
     publishedAt: '2026-06-21',
     readingMinutes: 8,
@@ -2853,7 +2843,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'four-major-insurance-rates-2026',
-    title: '4대보험 요율 총정리 (2026), 국민연금 9.5%·7월 상한 조정',
+    title: '4대보험 요율 정리 (2026), 국민연금 9.5%·7월 상한 조정',
     description:
       '국민연금 9.5%(근로자 4.75%)·건강보험 7.19%·장기요양 13.14%·고용보험 등 2026년 4대보험 요율과 근로자 부담분 계산. 7월 기준소득월액 상한 조정, 월급 300만 원 공제액 시뮬레이션.',
     category: '근로',
@@ -2862,7 +2852,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'housing-pension-reverse-mortgage-2026',
-    title: '주택연금(역모기지) 완벽 가이드 (2026), 가입 조건·월 수령액',
+    title: '주택연금(역모기지) 가이드 (2026), 가입 조건·월 수령액',
     description:
       '만 55세 이상·공시가격 12억 이하 주택연금 가입 조건, 종신·확정기간·대출상환·우대 4가지 지급방식, 신탁 vs 저당권 차이, 재산세 25% 감면·소득세 비과세 혜택까지.',
     category: '금융',
@@ -2891,9 +2881,9 @@ export const GUIDES: GuideEntry[] = [
   // ─── 1월 ───
   {
     slug: 'year-end-tax-settlement',
-    title: '연말정산 완벽 가이드 (2026), "13월의 월급" 받는 법',
+    title: '연말정산 가이드 (2026), "13월의 월급" 받는 법',
     description:
-      '신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략. 1월~2월 시즌 필독.',
+      '신용카드·의료비·교육비·기부금·연금저축 공제 + 인적공제 + 환급 추적 + 추가 납부 회피 전략.',
     category: '세금',
     publishedAt: '2026-05-03',
     readingMinutes: 12,
@@ -2902,9 +2892,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'january-vehicle-tax-prepayment',
-    title: '자동차세 연납 5% 할인 가이드 (2026), 1월 16~31일 신청',
+    title: '자동차세 연납 할인 2026, 1월 신청 약 4.6% 공제',
     description:
-      '1월 신청 시 5% 한도 내 공제. 선납 일수에 비례. 위택스 신청법 + 계산기로 정확한 공제액 확인.',
+      '1월 연납은 남은 기간에 5% 금리를 적용해 연세액의 약 4.58%를 공제합니다. 3·6·9월에도 신청할 수 있지만 공제가 줄어듭니다.',
     category: '세금·부동산',
     publishedAt: '2026-05-03',
     readingMinutes: 6,
@@ -2960,9 +2950,9 @@ export const GUIDES: GuideEntry[] = [
   // ─── 5월 (기존) ───
   {
     slug: 'may-comprehensive-income-tax',
-    title: '5월 종합소득세 신고 완벽 가이드 (2026), 프리랜서·사업자·N잡러 필독',
+    title: '5월 종합소득세 신고 가이드 (2026), 프리랜서·사업자·N잡러 대상',
     description:
-      '신고 대상·기한·홈택스 단계별 신고법·단순경비율 vs 기준경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리. 5월 신고 시즌 직전 필독.',
+      '신고 대상·기한·홈택스 단계별 신고법·단순경비율 vs 기준경비율·절세 5가지·환급 받는 법까지 한 페이지에 정리.',
     category: '세금',
     publishedAt: '2026-05-03',
     readingMinutes: 12,
@@ -2973,7 +2963,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'income-tax-late-filing-penalty-2026',
     title: '종합소득세 무신고·지연 가산세 2026 정확 계산',
     description:
-      '5월 31일 마감 임박! 무신고가산세 20% + 납부지연가산세 일 0.022% 정확 계산 + 자진신고 감면 50~10% 타이밍 + 환급 상실 위험까지 완벽 정리.',
+      '5월 31일 마감 임박! 무신고가산세 20% + 납부지연가산세 일 0.022% 정확 계산 + 자진신고 감면 50~10% 타이밍 + 환급 상실 위험까지 정리.',
     category: '세금',
     publishedAt: '2026-05-20',
     readingMinutes: 9,
@@ -2993,7 +2983,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'business-income-vs-other-income-classification-2026',
-    title: '사업소득 vs 기타소득 분류 기준 2026 | 강사·프리랜서 5월 신고 필독',
+    title: '사업소득 vs 기타소득 분류 기준 2026 | 강사·프리랜서 5월 신고 기준',
     description:
       '강사료·원고료가 사업소득일까 기타소득일까? 정기성·반복성 판정 기준·필요경비율 60% vs 80% 세금 2배 차이·누진세 vs 분리과세 22%·4대보험 의무·잘못 분류 시 40% 가산세 위험·300만 분리과세 선택권·법조항 정확화.',
     category: '세금',
@@ -3028,7 +3018,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'comprehensive-income-tax-refund-timing-2026',
     title: '종합소득세 환급금 입금 시기 2026 | 신고 후 언제 받을까?',
     description:
-      '5월 신고 후 환급금은 언제 입금될까? 신고 시점별 환급 일정(6월 중순~7월 말) · 계좌 미등록 시 우편 통지 지연 · 가산세 발생 시 자동 차감 · 홈택스 추적 방법 · 환급 우선순위 · 국세기본법 §51-§52 완벽 정리.',
+      '5월 신고 후 환급금은 언제 입금될까? 신고 시점별 환급 일정(6월 중순~7월 말) · 계좌 미등록 시 우편 통지 지연 · 가산세 발생 시 자동 차감 · 홈택스 추적 방법 · 환급 우선순위 · 국세기본법 §51-§52 정리.',
     category: '세금',
     publishedAt: '2026-05-24',
     readingMinutes: 7,
@@ -3039,7 +3029,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'income-tax-installment-payment-2026',
     title: '종합소득세 분납 신청 2026 | 1천만 초과 2개월 분할 납부',
     description:
-      '5월 31일 마감 5일 전! 종합소득세 분납(분할 납부) 신청 완벽 가이드. 분납 가능 조건(1,000만 초과) · 분납 비율(1~2천만 vs 2천만↑ 다름) · 신청 방법 · 분납 기한(2개월) · 이자·가산세 0원 · 분납 vs 지연 납부 차이 · 사례별 시뮬레이션.',
+      '5월 31일 마감 5일 전! 종합소득세 분납(분할 납부) 신청 가이드. 분납 가능 조건(1,000만 초과) · 분납 비율(1~2천만 vs 2천만↑ 다름) · 신청 방법 · 분납 기한(2개월) · 이자·가산세 0원 · 분납 vs 지연 납부 차이 · 사례별 시뮬레이션.',
     category: '세금',
     publishedAt: '2026-05-26',
     readingMinutes: 8,
@@ -3072,7 +3062,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'voluntary-filing-june-50-percent-reduction-2026',
     title: '자진신고 6월 50% 감면 가이드 2026 | 종소세 마감 후 가산세 절반',
     description:
-      '5월 31일 마감 지난 종합소득세, 6월 1일~30일 자진신고로 가산세 50% 감면(1개월 내). 산출세액 500만→가산세 50만(정상 100만). 무신고가산세 20% vs 자진신고 감면. 국세기본법 §48. 6월 신고 완벽 가이드.',
+      '5월 31일 마감 지난 종합소득세, 6월 1일~30일 자진신고로 가산세 50% 감면(1개월 내). 산출세액 500만→가산세 50만(정상 100만). 무신고가산세 20% vs 자진신고 감면. 국세기본법 §48. 6월 신고 가이드.',
     category: '세금',
     publishedAt: '2026-05-31',
     readingMinutes: 10,
@@ -3094,7 +3084,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'monthly-rent-tax-credit-2026',
     title: '월세 세액공제 2026 무주택 직장인 환급 계산 | 17% + 750만 한도',
     description:
-      '무주택 직장인·프리랜서 월세 세액공제 완벽 가이드. 17%/15% 공제율 구분·750만 한도·연말정산 누락 시 5월 추가 신고·신용카드 소득공제와 택일·주의사항 5가지·실전 사례 3개.',
+      '무주택 직장인·프리랜서 월세 세액공제 가이드. 17%/15% 공제율 구분·750만 한도·연말정산 누락 시 5월 추가 신고·신용카드 소득공제와 택일·주의사항 5가지·실전 사례 3개.',
     category: '세금·부동산',
     publishedAt: '2026-05-23',
     readingMinutes: 8,
@@ -3103,9 +3093,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'income-tax-correction-claim-5-year-2026',
-    title: '경정청구로 5년 내 환급받기 2026 | 누락 공제·세액공제 회수 완벽 가이드',
+    title: '경정청구로 5년 내 환급받기 2026 | 누락 공제·세액공제 회수 가이드',
     description:
-      '5월 31일까지! 지난 5년 신고 시 누락한 공제(의료비·교육비·월세·기부금·자녀세액공제)로 환급받는 경정청구 완벽 가이드. 5년 기한 정확 계산·자주 누락 항목 8가지·신청 방법 4단계·환급 추적·무신고도 가능.',
+      '5월 31일까지! 지난 5년 신고 시 누락한 공제(의료비·교육비·월세·기부금·자녀세액공제)로 환급받는 경정청구 가이드. 5년 기한 정확 계산·자주 누락 항목 8가지·신청 방법 4단계·환급 추적·무신고도 가능.',
     category: '세금',
     publishedAt: '2026-05-24',
     readingMinutes: 9,
@@ -3116,7 +3106,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'medical-expense-tax-credit-3-percent-2026',
     title: '의료비 세액공제 2026 3% 초과분 15% 공제 | 700만 한도·난임 30%',
     description:
-      '5월 종소세 신고! 의료비 세액공제 완벽 정리. 총급여 3% 초과분만 세액공제 대상, 공제율 15% (난임 시술 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비 10가지·보험금 차감·한도 구분·시뮬 3가지·신청 방법 4단계.',
+      '5월 종소세 신고! 의료비 세액공제 정리. 총급여 3% 초과분만 세액공제 대상, 공제율 15% (난임 시술 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비 10가지·보험금 차감·한도 구분·시뮬 3가지·신청 방법 4단계.',
     category: '세금',
     publishedAt: '2026-05-26',
     readingMinutes: 8,
@@ -3127,7 +3117,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'personal-deduction-dependent-150-2026',
     title: '종소세 인적공제 부양가족 150만원 2026 | 직계존비속 형제자매 요건',
     description:
-      '5월 31일 종합소득세 신고! 인적공제 기본공제 1인당 150만원 이해하기. 배우자·부모·자녀·형제자매·위탁아동 공제 요건·경로우대 100만·장애인 200만 추가공제·연소득 100만원 기준·중복 등록 위험·가산세까지 완벽 정리.',
+      '5월 31일 종합소득세 신고! 인적공제 기본공제 1인당 150만원 이해하기. 배우자·부모·자녀·형제자매·위탁아동 공제 요건·경로우대 100만·장애인 200만 추가공제·연소득 100만원 기준·중복 등록 위험·가산세까지 정리.',
     category: '세금',
     publishedAt: '2026-05-26',
     readingMinutes: 12,
@@ -3136,9 +3126,9 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'june-property-tax',
-    title: '재산세 완벽 가이드 (2026), 6월 부과·7월 납부·공정시장가액 60%',
+    title: '재산세 가이드 (2026), 6월 부과·7월 납부·공정시장가액 60%',
     description:
-      '재산세 과세 기준일·납부 기한·계산식·1세대1주택 특례·세부담 상한·분할 납부까지 한 페이지. 7월 납부 시즌 직전 필독.',
+      '재산세 과세 기준일·납부 기한·계산식·1세대1주택 특례·세부담 상한·분할 납부까지 한 페이지.',
     category: '세금·부동산',
     publishedAt: '2026-05-03',
     readingMinutes: 10,
@@ -3149,7 +3139,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'property-tax-base-date-june-1-2026',
     title: '재산세 과세기준일 6월 1일, 매매 잔금 타이밍과 부담자 판정',
     description:
-      '재산세는 6월 1일 현재 소유자에게 1년치 전액 부과됩니다(지방세법 §114). 잔금일이 5월 31일이냐 6월 2일이냐로 매도자·매수자 부담이 갈립니다. 거래 직전 필독.',
+      '재산세는 6월 1일 현재 소유자에게 1년치 전액 부과됩니다(지방세법 §114). 잔금일이 5월 31일이냐 6월 2일이냐로 매도자·매수자 부담이 갈립니다.',
     category: '세금·부동산',
     publishedAt: '2026-05-31',
     readingMinutes: 7,
@@ -3158,18 +3148,17 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'vehicle-individual-consumption-tax-deadline-2026-june',
-    title: '자동차 개별소비세 6월 30일 마감, 출고 기준·최대 143만원 절감',
+    title: '자동차 개별소비세 인하 종료, 7월부터 5% 환원',
     description:
-      '자동차 개별소비세 인하(5%→3.5%)가 2026년 6월 30일 종료됩니다(개별소비세법 §1의2). 기준은 계약일이 아닌 출고일. 6월 안에 출고해야 최대 143만원을 아낍니다.',
+      '승용차 개별소비세 3.5% 한시 인하는 2026년 6월 30일 출고분으로 끝나고 7월 1일 출고분부터 5%가 다시 적용됩니다(개별소비세법 §1 ⑦ 탄력세율).',
     category: '세금',
     publishedAt: '2026-06-01',
     readingMinutes: 8,
-    seasonal: '6월 30일 출고 마감',
     tags: ['시즈널', '블루오션'],
   },
   {
     slug: 'vehicle-tax-2026',
-    title: '자동차세 완전 정리 (2026), 배기량별 세율·연납 할인·차령경감',
+    title: '자동차세 정리 (2026), 배기량별 세율·연납 할인·차령경감',
     description:
       '비영업용 승용차 배기량 cc당 세율(1,000cc 이하 80원·1,001~1,600cc 140원·1,601cc 이상 200원)에 지방교육세 30%를 더한 자동차세 계산. 3년차부터 차령경감(연 5%, 최대 50%), 1월 연납 할인(5% 공제율) 완전 가이드. (지방세법 §127, §128, §151)',
     category: '세금',
@@ -3248,7 +3237,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'high-oil-price-relief-fund-2026-application',
     title: '고유가 피해지원금 2026, 대상·금액·신청 (소득 하위 70%, 7/3 마감)',
     description:
-      '소득 하위 70%면 1인당 10~25만원(지역 차등). 2차 신청 5/18~7/3, 카드·지역사랑상품권으로 8/31까지 사용. 건강보험료 기준·신청 방법·사용처 총정리.',
+      '소득 하위 70%면 1인당 10~25만원(지역 차등). 2차 신청 5/18~7/3, 카드·지역사랑상품권으로 8/31까지 사용. 건강보험료 기준·신청 방법·사용처 정리.',
     category: '세금',
     publishedAt: '2026-06-03',
     readingMinutes: 7,
@@ -3288,7 +3277,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'national-pension-premium-2026',
-    title: '국민연금 보험료 2026 완전 정리, 계산법·상한액·직장/지역 차이',
+    title: '국민연금 보험료 2026 정리, 계산법·상한액·직장/지역 차이',
     description:
       '2026년 국민연금 보험료율 9%→9.5%, 기준소득월액 상한 2026년 7월부터 637만→659만원 조정. 직장가입자 근로자 부담 4.75%, 지역가입자 전액 납부. 상한액 초과 시 납부액 고정·소득공제 혜택 정리.',
     category: '근로',
@@ -3330,7 +3319,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'health-insurance-dependent-qualification-2026',
-    title: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 총정리',
+    title: '건강보험 피부양자 자격조건 2026 | 소득·재산 요건 정리',
     description:
       '2026년 건강보험 피부양자 자격은 소득요건과 재산요건을 모두 충족해야 인정됩니다. 합산소득 2,000만원 기준, 재산세 과세표준 5억 4천만원 한도, 형제자매 범위, 탈락 시 지역가입자 전환까지 국민건강보험공단 기준으로 정리했습니다.',
     category: '근로',
@@ -3353,7 +3342,7 @@ export const GUIDES: GuideEntry[] = [
   // ─── 7월 ───
   {
     slug: 'july-vat-final-1st-half',
-    title: '7월 부가세 1기 확정신고 가이드 (2026), 일반·간이과세 완전정리',
+    title: '7월 부가세 1기 확정신고 가이드 (2026), 일반·간이과세 정리',
     description:
       '7월 1~25일 부가가치세 1기 확정신고. 일반과세 vs 간이과세 차이·세액계산·홈택스 6단계·환급·절세 5가지.',
     category: '세금',
@@ -3453,7 +3442,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'dsr-regulation-zones',
-    title: '비규제·조정·투기과열 DSR·LTV 규제 완전 정리 (2026)',
+    title: '비규제·조정·투기과열 DSR·LTV 규제 정리 (2026)',
     description:
       '2025-10-16·2026-07-01 규제지역 재지정 반영. 규제지역 LTV 40%, 수도권·규제지역 주담대 최대 한도 6억 원(15억 이하), 변동 스트레스 3.0%p, 지방 유예, 생애최초 우대, 다주택 제한까지 비교.',
     category: '금융',
@@ -3481,7 +3470,7 @@ export const GUIDES: GuideEntry[] = [
   // ─── 4티어 핫 키워드 가이드 (영구 발행) ───
   {
     slug: 'severance-vs-pension-dc-db',
-    title: '퇴직금 vs 퇴직연금 DC/DB 차이 완전 정리 (2026)',
+    title: '퇴직금 vs 퇴직연금 DC/DB 차이 정리 (2026)',
     description:
       'DC형(확정기여)·DB형(확정급여)·일시금 수령·연금 수령의 세제·운용·실수령 차이. IRP 이전·중도 해지 패널티 정리.',
     category: '근로',
@@ -3552,7 +3541,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'presale-right-capital-gains-tax',
-    title: '분양권 양도소득세 완전 정리, 60%/70% 단일 세율',
+    title: '분양권 양도소득세 정리, 60%/70% 단일 세율',
     description:
       '분양권은 보유 기간 무관 60%(1년 이상)·70%(1년 미만) 단일 세율. 1세대1주택 비과세 X, 장기보유공제 X.',
     category: '세금',
@@ -3562,7 +3551,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'one-household-12-billion-exemption',
-    title: '1세대1주택 12억 비과세 한도 완전 정리',
+    title: '1세대1주택 12억 비과세 한도 정리',
     description:
       '1세대1주택 양도 시 12억까지 비과세. 12억 초과분 비례 과세 공식·장기보유공제 80% 결합·거주 요건 종합.',
     category: '세금',
@@ -3613,7 +3602,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'inheritance-tax-10-year-prior-gift-aggregation',
-    title: '상속세 사전 증여 합산 10년/5년 완벽 정리',
+    title: '상속세 사전 증여 합산 10년/5년 정리',
     description:
       '상증법 §13, 사전 증여 10년(상속인)·5년(상속인 외) 합산. 30억 자산 사례로 일괄 상속 vs 단계 증여 약 2.6억 절세 시뮬.',
     category: '세금',
@@ -3643,7 +3632,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'long-term-holding-special-deduction-80-percent',
-    title: '장기보유특별공제 80% 완전 정리 (1세대1주택)',
+    title: '장기보유특별공제 80% 정리 (1세대1주택)',
     description:
       '시행령 §159의3 표2, 보유 4% × 10년(40%) + 거주 4% × 10년(40%) = 최대 80%. 다주택 중과 시 배제·분양권 미적용.',
     category: '세금',
@@ -3665,7 +3654,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'financial-income-comprehensive-vs-separate-taxation',
     title: '금융소득 종합과세 vs 분리과세, 2,000만 기준',
     description:
-      '소득세법 §14 ⑦·§62 비교과세. 분리(15.4% 자동) vs 종합(누진세+배당세액공제 §56). 5월 31일 신고 시즌 필독.',
+      '소득세법 §14 ⑦·§62 비교과세. 분리(15.4% 자동) vs 종합(누진세+배당세액공제 §56). 5월 신고 때 확인하세요.',
     category: '세금',
     publishedAt: '2026-05-12',
     readingMinutes: 9,
@@ -3674,7 +3663,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'carry-over-basis-spouse-gift-5-10-year',
-    title: '이월과세 5년→10년 확대 완벽 정리 2026 | 배우자·직계 증여 양도세',
+    title: '이월과세 5년→10년 확대 정리 2026 | 배우자·직계 증여 양도세',
     description:
       '이월과세 정의·소득세법 §97의2·2025년 5년에서 10년 확대·증여자 취득가 적용·면제 사유 5가지·시뮬 사례 2개·함정 5가지·절세 전략·신고 방법.',
     category: '세금',
@@ -3694,7 +3683,7 @@ export const GUIDES: GuideEntry[] = [
   },
   {
     slug: 'self-farming-land-100-percent-exemption',
-    title: '자경농지 8년 100% 감면 완벽 정리 2026',
+    title: '자경농지 8년 100% 감면 정리 2026',
     description:
       '자경농지 8년 양도세 100% 감면 조건·자경 요건(50% 노동력)·거주 요건(30km)·한도(연 1억/5년 2억)·시뮬 사례 3개·함정 5가지·신청 절차.',
     category: '세금',
@@ -3716,7 +3705,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'foreign-tax-credit-overseas-stock-2026',
     title: '외국납부세액공제 2026 해외주식·배당 환급 신청 | 5월 31일',
     description:
-      '해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 외국납부세액공제. 한도 계산·신청 절차·10년 이월·증빙 서류(1099-DIV)·해외근로소득·양도소득 제외 완벽 정리.',
+      '해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 외국납부세액공제. 한도 계산·신청 절차·10년 이월·증빙 서류(1099-DIV)·해외근로소득·양도소득 제외 정리.',
     category: '세금',
     publishedAt: '2026-05-28',
     readingMinutes: 13,
@@ -3727,7 +3716,7 @@ export const GUIDES: GuideEntry[] = [
     slug: 'deceased-comprehensive-income-tax-heir-filing-2026',
     title: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한·소득세법 §74',
     description:
-      '사망한 부모·배우자 소득, 상속인이 신고해야 할까? 사망자 종합소득세 신고 의무·기한(사망일+6개월)·신고 대상 소득·상속인 신고 규칙·세액 계산·5월 31일 마감 연장·신고 안 하면 가산세 20% 완벽 정리.',
+      '사망한 부모·배우자 소득, 상속인이 신고해야 할까? 사망자 종합소득세 신고 의무·기한(사망일+6개월)·신고 대상 소득·상속인 신고 규칙·세액 계산·5월 31일 마감 연장·신고 안 하면 가산세 20% 정리.',
     category: '세금',
     publishedAt: '2026-05-28',
     readingMinutes: 8,
@@ -3737,7 +3726,7 @@ export const GUIDES: GuideEntry[] = [
   // ─── 2026-06-16 데이터 기반 3편 (GSC page2 직전 쿼리 캡처) ───
   {
     slug: 'real-estate-broker-fee-rate-2026',
-    title: '주택 중개수수료 요율표 2026, 매매·전세·월세 상한 완전정리',
+    title: '주택 중개수수료 요율표 2026, 매매·전세·월세 상한 정리',
     description:
       '부동산 중개수수료 상한요율을 공인중개사법 기준으로 정리. 주택 매매 6억원 기준 0.4%=240만원, 전세 3억 0.3%, 월세 보증금 환산(보증금+월세×100)까지 2026년 최신 요율과 협의 한도, 부가세·VAT 포함 여부를 명확히.',
     category: '세금·부동산',
@@ -3821,12 +3810,13 @@ export default function GuideIndexPage() {
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
   });
+  // 화면에 링크로 보이는 최신 가이드만 싣고, 글마다 고유 OG 이미지를 image 로 (네이버 캐러셀 08-07)
   const itemListLd = buildItemListJsonLd(
-    GUIDES.map((g) => ({
-      name: g.title,
-      url: `https://calculatorhost.com/guide/${g.slug}/`,
-    })),
-    'calculatorhost 가이드',
+    GUIDES_RECENT.slice(0, RECENT_LIMIT).map((g) => {
+      const url = `https://calculatorhost.com/guide/${g.slug}/`;
+      return { name: g.title, url, image: `${url}opengraph-image.png` };
+    }),
+    'calculatorhost 최신 가이드',
   );
 
   return (

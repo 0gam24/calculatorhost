@@ -26,7 +26,7 @@ const DATE_MODIFIED = '2026-08-16';
 export const metadata: Metadata = {
   title: '청약통장 전환 2026, 9월 30일 마감 갈아타기 방법',
   description:
-    '청약저축·청약예금·청약부금을 주택청약종합저축으로 바꾸면 공공과 민영을 모두 청약할 수 있습니다. 전환 기한이 2026년 9월 30일로 연장됐고, 기존 납입금액과 가입기간은 그대로 인정됩니다. 전환 대상, 방법, 유의점을 정리했습니다.',
+    '청약저축·청약예금·청약부금을 주택청약종합저축으로 바꾸면 공공과 민영 모두 넣을 수 있고, 기존 납입금액과 가입기간이 그대로 인정됩니다.',
   keywords: [
     '청약통장 전환',
     '청약예금 종합저축 전환',
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청약통장 전환 2026, 9월 30일 마감' }],
-    title: '청약통장 전환 2026, 9월 30일 마감 갈아타기 방법',
-    description: '청약예금·부금·저축을 주택청약종합저축으로. 2026-09-30 마감, 납입액·가입기간 그대로 인정.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청약통장 전환 2026, 9월 30일 마감 갈아타기 방법',
-    description: '주택청약종합저축으로 전환하면 공공·민영 모두 청약 가능. 마감 2026-09-30.',
   },
 };
 

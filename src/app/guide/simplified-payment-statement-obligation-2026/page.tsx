@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-08';
 export const metadata: Metadata = {
   title: '간이지급명세서 2026, 제출기한과 미제출 가산세 0.25%',
   description:
-    '간이지급명세서는 근로소득·사업소득을 지급한 사업주가 제출하는 서류로, 2026년까지는 반기, 2027년부터 매월 제출로 바뀝니다. 미제출 가산세는 지급액의 0.25%(지연제출 0.125%). 프리랜서 3.3% 인건비 신고 대상과 홈택스 제출 방법을 정리했습니다.',
+    '간이지급명세서를 내지 않으면 지급액의 0.25%가 가산세로 붙습니다. 기한과 2027년 변경 사항, 홈택스 제출법을 정리했습니다.',
   keywords: [
     '간이지급명세서',
     '간이지급명세서 제출기한',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '간이지급명세서 2026, 제출기한과 미제출 가산세' }],
-    title: '간이지급명세서 2026, 제출기한·대상·미제출 가산세',
-    description: '근로소득·사업소득 간이지급명세서 반기 제출과 2027년 매월 전환, 미제출 가산세 0.25%까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '간이지급명세서 2026, 제출기한과 미제출 가산세',
-    description: '프리랜서에게 3.3% 떼고 인건비를 줬다면 간이지급명세서 제출 대상. 기한·가산세·홈택스 방법 정리.',
   },
 };
 
@@ -96,7 +91,7 @@ export default function SimplifiedPaymentStatementPage() {
     { name: '간이지급명세서 제출 의무 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '간이지급명세서 2026, 제출기한·대상·미제출 가산세 완전 정리',
+    headline: '간이지급명세서 2026, 제출기한·대상·미제출 가산세 정리',
     description:
       '근로소득·사업소득 간이지급명세서의 반기 제출 기한, 2027년 매월 전환, 프리랜서 3.3% 인건비 신고 대상, 미제출 가산세 0.25%, 홈택스 제출 방법까지 정리한 사업주 실무 가이드.',
     url: URL,

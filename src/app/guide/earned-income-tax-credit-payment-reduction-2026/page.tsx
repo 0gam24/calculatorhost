@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-27';
 export const metadata: Metadata = {
   title: '근로장려금 지급일 2026, 8월 27일 지급과 감액·환수 정리',
   description:
-    '2026년 근로장려금 정기 지급일은 8월 27일입니다. 재산 1.7억 이상 시 50% 감액, 2.4억 이상 지급 제외, 체납 충당·기한후신청 감액까지 조세특례제한법 기준으로 정리했습니다.',
+    '2026년 근로장려금 정기 지급일은 8월 27일입니다. 재산이 1.7억 이상이면 50% 감액되고 2.4억부터 제외되는 기준을 정리했습니다.',
   keywords: [
     '근로장려금 지급일',
     '근로장려금 8월 27일',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로장려금 지급일 2026, 8월 27일 지급과 감액·환수 정리' }],
-    title: '근로장려금 지급일 2026, 8월 27일 지급과 감액 사유 총정리',
-    description: '정기 지급 8월 27일. 재산 1.7억 이상 50% 감액, 2.4억 이상 제외, 체납 충당과 기한후신청 감액까지 한 번에 확인.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로장려금 지급일 2026, 8월 27일과 감액 사유',
-    description: '정기 지급 8월 27일. 재산·체납·기한후신청에 따른 감액 구조를 조세특례제한법 기준으로 정리.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function EitcPaymentReduction2026Page() {
     { name: '근로장려금 지급일 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '근로장려금 지급일 2026, 8월 27일 지급과 감액·환수 총정리',
+    headline: '근로장려금 지급일 2026, 8월 27일 지급과 감액·환수 정리',
     description:
       '2026년 근로장려금 정기 지급일 8월 27일과 재산·체납·기한후신청에 따른 감액 구조, 환수 사유를 조세특례제한법 기준으로 정리한 실전 가이드.',
     url: URL,

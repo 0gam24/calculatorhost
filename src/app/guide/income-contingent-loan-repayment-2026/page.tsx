@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-11';
 export const metadata: Metadata = {
   title: '취업 후 학자금 상환 2026 | 의무상환 시작 소득과 상환액 계산',
   description:
-    '취업 후 학자금 상환(ICL)은 연간 소득금액이 상환기준소득 3,037만원을 넘는 해부터 시작됩니다. 초과분에 학부 20%·대학원 25%를 곱한 의무상환액 계산법과 원천공제, 상환 유예까지 정리했습니다.',
+    '취업 후 학자금 상환은 연 소득금액이 3,037만원을 넘는 해부터 시작됩니다. 학부 20%·대학원 25% 의무상환액 계산법을 정리했습니다.',
   keywords: [
     '취업 후 학자금 상환',
     'ICL 의무상환',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '취업 후 학자금 상환 2026 의무상환 소득과 계산법' }],
-    title: '취업 후 학자금 상환 2026 | 의무상환 소득과 상환액 계산',
-    description: '상환기준소득 3,037만원 초과분 × 학부 20%·대학원 25%. ICL 의무상환액 계산과 원천공제 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '취업 후 학자금 상환 2026 의무상환 계산',
-    description: '연간 소득금액이 3,037만원을 넘는 해부터 초과분에 20%(학부)·25%(대학원)를 곱해 상환.',
   },
 };
 

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-21';
 export const metadata: Metadata = {
   title: '고령자 지방 이주 양도세 감면 2027, 최대 5억 신설 특례',
   description:
-    '2026-08-03 세제개편안, 만 65세 이상 1주택자가 수도권 집을 팔고 비수도권으로 이주하면 양도세를 2027년 50%(5억 한도), 2028년 30%(3억 한도) 감면합니다. 조건과 사후관리 5년 추징 규정을 정리했습니다.',
+    '만 65세 이상 1주택자가 수도권 집을 팔고 지방으로 이주하면 양도세가 감면됩니다. 세제개편안 기준 2027년 50%, 2028년 30%입니다.',
   keywords: [
     '고령자 지방 이주 양도세 감면',
     '65세 양도세 감면 5억',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '고령자 지방 이주 양도세 감면 2027, 최대 5억 신설 특례',
-      },
-    ],
-    title: '고령자 지방 이주 양도세 감면 2027, 최대 5억 신설 특례',
-    description:
-      '만 65세 1주택자가 수도권 주택을 팔고 비수도권으로 이주하면 양도세를 2027년 50%(5억), 2028년 30%(3억) 감면. 2026 세제개편안 신설 특례 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,9 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '고령자 지방 이주 양도세 감면 2027, 최대 5억 신설 특례',
-    description:
-      '2026-08-03 세제개편안. 만 65세 1주택자가 수도권 집을 팔고 지방 이주 시 양도세 감면(2027년 50%·5억, 2028년 30%·3억). 5년 사후관리 추징 유의.',
   },
 };
 
@@ -410,7 +396,7 @@ export default function SeniorMetroToProvincialMoveCgtReduction2026ReformPage() 
                     href="/guide/one-house-2-year-residence-requirement-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">2년 거주 요건 완전 정리</div>
+                    <div className="font-semibold text-primary-500">2년 거주 요건 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">이번 특례의 핵심 조건인 실거주 요건 판정 기준.</p>
                   </Link>
                   <Link

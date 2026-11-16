@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-03';
 const DATE_MODIFIED = '2026-06-03';
 
 export const metadata: Metadata = {
-  title: '고유가 피해지원금 2026, 소득 하위 70% 1인 10~25만원, 7월 3일 마감',
+  title: '고유가 피해지원금 2026, 소득 하위 70% 1인 10~25만원',
   description:
-    '고유가 피해지원금(2차) 신청 대상, 지급액, 신청 방법을 정리했습니다. 소득 하위 70% 약 3,256만 명 대상, 1인당 10~25만원, 신용·체크카드·상품권으로 8월 31일까지 사용 가능. 신청 마감 7월 3일.',
+    '고유가 피해지원금(2차)은 소득 하위 70%에게 1인당 10만~25만원을 주는 제도입니다. 신청 기간은 5월 18일부터 7월 3일까지였습니다.',
   keywords: [
     '고유가 피해지원금',
     '고유가 지원금 신청',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '고유가 피해지원금 2026, 소득 하위 70% 1인 10~25만원, 7월 3일 마감' }],
-    title: '고유가 피해지원금 2026, 1인 10~25만원, 신청 마감 7월 3일',
-    description: '소득 하위 70% 대상. 거주지 따라 10~25만원. 신용카드·체크카드·상품권으로 사용. 신청 5월 18일~7월 3일.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '고유가 피해지원금 2026, 1인 10~25만원, 7월 3일 마감',
-    description: '신청 대상·지급액·신청 방법 완정리. 소득 하위 70% 지원.',
   },
 };
 
@@ -97,7 +92,7 @@ export default function HighOilPriceReliefFund2026Application() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '고유가 피해지원금 2026, 신청 대상·금액·방법' },
+    { name: '고유가 피해지원금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '고유가 피해지원금 2026, 소득 하위 70% 1인 10~25만원, 신청 마감 7월 3일',

@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/electric-vehicle-tax-2026/';
 const DATE_PUBLISHED = '2026-06-17';
-const DATE_MODIFIED = '2026-06-17';
+const DATE_MODIFIED = '2026-10-30';
 
 export const metadata: Metadata = {
-  title: '전기차 자동차세 2026 | 13만원 정액·차령경감 총정리 | calculatorhost',
+  title: '전기차 자동차세 2026 | 13만원 정액·차령경감 정리',
   description:
-    '전기차(BEV)·수소전기차(FCEV)는 연 13만원 정액 과세. 가솔린차와 달리 10년, 20년 지나도 자동차세가 깎이지 않습니다. 차령경감 미적용 이유, 영업용 2.6만원, 하이브리드와의 차이까지 지방세법 §127 기준 정확 정리.',
+    '전기차·수소차 자동차세는 연 13만원 정액이라 차령이 늘어도 깎이지 않습니다. 영업용 2.6만원과 하이브리드 차이도 정리했습니다.',
   keywords: [
     '전기차 자동차세',
     '전기차 자동차세 13만원',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전기차 자동차세 2026 | 13만원 정액·차령경감 총정리' }],
-    title: '전기차 자동차세 2026 | 13만원 정액',
-    description: '전기차는 왜 자동차세가 13만원 정액일까? 차령경감 안 되는 이유, 하이브리드와 차이 명확히.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전기차 자동차세 2026 | 13만원 정액·차령경감 총정리',
-    description: '배기량 없는 전기차는 정액 과세. 10년 후에도 여전히 13만원.',
   },
 };
 
@@ -73,9 +68,9 @@ const FAQ_ITEMS = [
       '아닙니다. 하이브리드(HEV/PHEV)는 배기량이 있으므로 일반 가솔린·디젤차처럼 cc 기준 과세됩니다(지방세법 §127①제1호). 예: 1,500cc 하이브리드는 140원/cc × 1,500 = 210,000원 + 지방교육세 63,000원 = 273,000원. 차령경감도 적용됩니다. 전기차 130,000원보다 비쌉니다.',
   },
   {
-    question: '전기차도 연납(선납) 할인이 되나요?',
+    question: '전기차도 연납 공제를 받을 수 있나요?',
     answer:
-      '됩니다. 1월 일시납부 시 5% 할인이 적용됩니다(지방세법 시행령 §125). 130,000원의 5% = 약 6,500원 할인되어 약 123,500원을 납부합니다. 다만 신청은 1월 1~31일 한정이며, 2월 이후 신청은 불가능합니다.',
+      '됩니다. 연 5% 금리를 남은 기간에 비례해 공제하는 방식입니다(지방세법 §128③, 시행령 §125). 1월 연납이면 자동차세 100,000 × 334/365 × 5% = 4,570원, 지방교육세 30,000 × 334/365 × 5% = 1,370원이 각 세목별로 10원 미만 절사된 뒤 공제됩니다. 합계 공제 5,940원, 납부액은 124,060원입니다. 3월·6월·9월에도 신청할 수 있지만 공제율은 더 작습니다.',
   },
   {
     question: '전기차 취득세나 개소세는 깎이나요?',
@@ -113,7 +108,7 @@ export default function ElectricVehicleTax2026Page() {
     keywords: ['전기차 자동차세', '차령경감', '지방세법 127조'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '전기차 자동차세 2026 | 13만원 정액·차령경감 총정리',
+    name: '전기차 자동차세 2026 | 13만원 정액·차령경감 정리',
     description: '전기차는 왜 정액 13만원일까? 배기량 없는 차의 자동차세 규칙과 기존 차량과의 비교.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -146,7 +141,7 @@ export default function ElectricVehicleTax2026Page() {
                 readingMinutes={7}
                 publishedDate="2026-06-17"
                 title="전기차 자동차세 2026"
-                subtitle="· 13만원 정액 과세·차령경감 미적용 완벽 정리"
+                subtitle="· 13만원 정액 과세·차령경감 미적용 정리"
                 lead={
                   <p data-speakable>
                     <strong>전기차(배터리전기차 BEV)와 수소연료전지차(FCEV)를 구매했거나 구입 예정이신가요?</strong>
@@ -464,29 +459,30 @@ export default function ElectricVehicleTax2026Page() {
                 </div>
 
                 <div className="space-y-3 rounded-lg bg-bg-card p-4">
-                  <p className="font-semibold text-text-primary">시나리오 B: 연납(선납) 할인 효과</p>
+                  <p className="font-semibold text-text-primary">시나리오 B: 연납 공제 효과</p>
                   <div className="space-y-2 text-sm text-text-secondary">
                     <div className="rounded-lg bg-bg-raised p-3">
-                      <p className="mb-2 font-semibold">전기차 1월 선납 (5% 할인)</p>
+                      <p className="mb-2 font-semibold">전기차 1월 연납 공제</p>
                       <ul className="list-inside list-disc space-y-1">
-                        <li>기본 130,000원 × 5% = 6,500원 할인</li>
-                        <li className="font-semibold">1월 선납 금액: 123,500원</li>
-                        <li className="text-xs italic text-text-tertiary">(신청: 1월 1~31일만 가능)</li>
+                        <li>자동차세 100,000 × 334/365 × 5% = 4,570원(10원 미만 절사)</li>
+                        <li>지방교육세 30,000 × 334/365 × 5% = 1,370원</li>
+                        <li className="font-semibold">공제 합계 5,940원, 납부액 124,060원</li>
                       </ul>
                     </div>
                     <div className="rounded-lg bg-bg-raised p-3">
-                      <p className="mb-2 font-semibold">1,500cc 가솔린 1월 선납</p>
+                      <p className="mb-2 font-semibold">1,500cc 가솔린 1월 연납 공제(신차)</p>
                       <ul className="list-inside list-disc space-y-1">
-                        <li>신차(신청 1월): 273,000원 × 5% ≈ 13,650원 할인</li>
-                        <li className="font-semibold">1월 선납 금액: 약 259,350원</li>
-                        <li>12년차 이후(50% 경감): 136,500원 × 5% ≈ 6,825원 할인</li>
+                        <li>자동차세 210,000 × 334/365 × 5% = 9,600원</li>
+                        <li>지방교육세 63,000 × 334/365 × 5% = 2,880원</li>
+                        <li className="font-semibold">공제 합계 12,480원, 납부액 260,520원</li>
+                        <li>12년차 이후(차령경감 50% 적용) 연세액 136,500원 기준 1월 공제 합계 6,240원, 납부액 130,260원</li>
                       </ul>
                     </div>
                     <div className="rounded-lg bg-highlight-500/10 p-3">
                       <p className="font-semibold text-text-primary">결론</p>
                       <p className="mt-1">
-                        전기차도 연납 할인이 가능합니다. 다만 정액이므로 절감액도 약 6,500원으로 크지 않습니다. 신청은 매년
-                        1월 1~31일 한정이며, 2월 이후는 선납 불가합니다.
+                        전기차도 연납 공제를 받을 수 있습니다. 정액 과세이므로 1월 공제 폭이 5,940원(연세액 대비 약 4.58%)
+                        수준입니다. 신청·납부는 1월, 3월, 6월, 9월 모두 가능하지만 뒤로 갈수록 남은 기간이 줄어 공제도 작아집니다.
                       </p>
                     </div>
                   </div>
@@ -587,7 +583,7 @@ export default function ElectricVehicleTax2026Page() {
               {/* 최종 주의사항 */}
               <section className="card border-l-2 border-l-danger-500 bg-danger-500/5">
                 <h2 className="mb-3 text-lg font-semibold text-danger-700 dark:text-danger-300">
-                  주의: 전기차 자동차세 결정 전 필독 주의사항
+                  주의: 전기차 자동차세 결정 전 확인할 주의사항
                 </h2>
                 <ul className="space-y-2 text-sm text-danger-700 dark:text-danger-300">
                   <li>
@@ -604,7 +600,7 @@ export default function ElectricVehicleTax2026Page() {
                     자동차세(정액 130,000원)는 다른 세금입니다.
                   </li>
                   <li>
-                    • <strong>1월 선납 할인:</strong> 연 5% 할인 가능하지만 신청은 1월 1~31일 한정입니다.
+                    • <strong>1월 연납 공제:</strong> 연 5% 금리를 남은 기간에 비례해 적용하므로 1월 신청은 연세액의 약 4.58%(전기차 기준 5,940원) 공제이고, 3월·6월·9월에도 신청할 수 있지만 공제율은 더 작습니다.
                   </li>
                   <li>
                     • <strong>지법 원문 확인:</strong> 지방세법 §127①제2호와 제3호를 직접 비교해보세요.
@@ -629,9 +625,9 @@ export default function ElectricVehicleTax2026Page() {
                       href="/guide/vehicle-tax-june-payment-annual-discount-2026/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      자동차세 6월 납부·연납 할인 완벽 가이드
+                      자동차세 6월 납부·연납 공제 가이드
                     </Link>
-                    {' '}· 1월 선납 5% 할인 신청 방법
+                    {' '}· 1월 연납 공제율과 신청 방법
                   </li>
                   <li>
                     →{' '}
@@ -639,9 +635,9 @@ export default function ElectricVehicleTax2026Page() {
                       href="/guide/january-vehicle-tax-prepayment/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      1월 자동차세 선납 할인 최대 절감법
+                      자동차세 연납 할인 가이드 2026
                     </Link>
-                    {' '}· 신청 기간·기한·할인율
+                    {' '}· 신청 월별 공제율과 cc별 예시
                   </li>
                   <li>
                     →{' '}
@@ -654,7 +650,7 @@ export default function ElectricVehicleTax2026Page() {
               </section>
 
               <ShareButtons
-                title="전기차 자동차세 2026 | 13만원 정액·차령경감 총정리"
+                title="전기차 자동차세 2026 | 13만원 정액·차령경감 정리"
                 url={URL}
                 description="전기차는 배기량이 없어 정액 13만원 과세. 10년, 20년 지나도 변함없습니다. 차령경감 미적용 이유와 가솔린차·하이브리드와의 정확한 차이."
               />

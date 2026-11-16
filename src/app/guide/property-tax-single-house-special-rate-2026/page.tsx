@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-30';
 export const metadata: Metadata = {
   title: '1세대1주택 재산세 특례세율 2026, 0.05%p 인하 구조 정리',
   description:
-    '1세대1주택 공시가격 9억 이하 재산세 특례세율 완벽 설명. 일반세율 대비 0.05%p 인하, 누진공제 구조, 세액 절감 사례. 지방세법 §111의2 기준.',
+    '공시가격 9억 이하 1세대1주택은 재산세 특례세율이 일반세율보다 0.05%p 낮습니다. 누진공제 구조와 절감 사례를 정리했습니다.',
   keywords: [
     '1세대1주택 재산세 특례',
     '재산세 특례세율',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '1세대1주택 재산세 특례세율 2026' }],
-    title: '1세대1주택 재산세 특례세율 2026, 0.05%p 인하 구조',
-    description: '공시가격 9억 이하 1주택자가 받는 재산세 특례세율. 일반세율과 비교해 얼마나 줄어드나?',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -144,7 +141,7 @@ export default function PropertyTaxSingleHouseSpecialRate2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   1세대1주택 재산세 특례세율 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 0.05%p 인하, 실제 절감액 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 0.05%p 인하, 실제 절감액 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   매년 6월 재산세 고지서가 도착할 때마다 많은 1세대1주택 보유자들이 궁금해합니다. "왜 남들과 세율이 다른가?" "특례세율이 정확히 뭔가?" 이 가이드는 1세대1주택을 위한 재산세 특례세율을 집중 분석합니다. 일반세율 대비 0.05%p 인하의 의미, 누진공제 구조, 실제 절감액을 사례와 함께 정리해드립니다.

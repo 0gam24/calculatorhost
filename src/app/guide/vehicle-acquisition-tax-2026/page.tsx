@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 완전정리',
+  title: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 정리',
   description:
-    '자동차를 구매할 때 내는 취득세를 정확히 계산하는 방법을 설명합니다. 비영업용 승용차 7%, 경차 4%, 신차·중고차 과세표준 차이, 친환경차 감면 요건까지 2026년 기준으로 완벽 정리합니다.',
+    '자동차 취득세는 비영업용 승용차 7%, 경차 4%입니다. 신차·중고차 과세표준 차이와 친환경차 감면 요건을 2026년 기준으로 정리합니다.',
   keywords: [
     '자동차 취득세',
     '취득세 계산',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '자동차 취득세 계산 2026, 승용 7%·경차 4%·과세표준 완전정리',
-      },
-    ],
-    title: '자동차 취득세 계산 2026',
-    description: '신차·중고차 취득세 세율과 계산법, 과세표준 결정 방식, 감면 요건을 명확히 설명합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차 취득세 계산 2026',
-    description: '자동차 구매 시 내야 할 취득세 세율과 계산방법을 정리합니다.',
   },
 };
 
@@ -613,7 +601,7 @@ export default function VehicleAcquisitionTax2026Page() {
                     >
                       자동차세 계산법 2026
                     </Link>{' '}
-, 배기량 구간, 차령경감, 연납 할인 완벽 가이드
+, 배기량 구간, 차령경감, 연납 할인 가이드
                   </li>
                   <li>
                     →{' '}

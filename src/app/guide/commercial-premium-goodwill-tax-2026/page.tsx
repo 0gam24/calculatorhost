@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-18';
 export const metadata: Metadata = {
   title: '상가 권리금 세금 2026, 기타소득 원천징수 8.8% 계산',
   description:
-    '상가 권리금은 기타소득으로 과세됩니다(소득세법 §21). 필요경비 60%를 뺀 금액의 22%, 즉 권리금의 8.8%를 지급자가 원천징수합니다. 기타소득금액 300만원 기준 분리과세와 종합소득세 신고까지 사례로 정리했습니다.',
+    '상가 권리금은 기타소득이라 필요경비 60%를 뺀 금액의 22%, 즉 지급액의 8.8%를 지급자가 원천징수합니다.',
   keywords: [
     '상가 권리금 세금',
     '권리금 기타소득',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상가 권리금 세금 2026, 기타소득 원천징수 8.8% 계산' }],
-    title: '상가 권리금 세금 2026, 기타소득 8.8% 원천징수 구조',
-    description: '권리금을 받으면 필요경비 60% 차감 후 22% 과세. 권리금 대비 8.8% 원천징수와 종합소득세 신고 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상가 권리금 세금 2026, 원천징수 8.8%',
-    description: '권리금 기타소득 필요경비 60%, 원천징수 8.8%, 300만원 분리과세 기준. 소득세법 §21.',
   },
 };
 

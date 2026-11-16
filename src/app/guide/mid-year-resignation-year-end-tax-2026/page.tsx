@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-14';
 export const metadata: Metadata = {
   title: '중도퇴사 연말정산 2026, 재취업·5월 종소세 환급 방법',
   description:
-    '중도퇴사자는 회사가 기본공제만 반영한 채 연말정산을 마쳐 세금을 더 낸 상태가 됩니다. 재취업 시 합산 정산, 미재취업 시 5월 종합소득세 신고로 누락 공제를 반영해 환급받는 실무를 소득세법 137조 기준으로 정리했습니다.',
+    '중도퇴사자는 기본공제만 반영된 연말정산으로 세금을 더 낸 경우가 많습니다. 재취업 합산이나 5월 종합소득세 신고로 환급받는 법을 정리했습니다.',
   keywords: [
     '중도퇴사 연말정산',
     '중도퇴사자 환급',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '중도퇴사 연말정산 2026, 재취업·5월 종소세 환급 방법' }],
-    title: '중도퇴사 연말정산 2026, 재취업·5월 종소세 환급 실무',
-    description: '회사가 퇴사 시 기본공제만 반영해 세금을 더 낸 상태. 재취업 시 합산, 미재취업 시 5월 종소세 신고로 환급.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '중도퇴사 연말정산 2026, 재취업·5월 종소세 환급 실무',
-    description: '중도퇴사자는 기본공제만 반영된 상태로 세금을 더 낸 경우가 많습니다. 소득세법 137조·70조 기준 환급 절차.',
   },
 };
 

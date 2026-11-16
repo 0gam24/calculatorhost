@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-08';
 export const metadata: Metadata = {
   title: '소득금액증명원 발급 2026, 프리랜서 안 될 때 대안',
   description:
-    '소득금액증명원은 종합소득세 신고가 끝난 직전연도분을 대개 7월 이후부터 발급받을 수 있습니다. 프리랜서가 신고 전이거나 무신고면 발급이 막힙니다. 홈택스·정부24 발급 방법과 부가세 과세표준증명원, 발급이 안 될 때 대안까지 정리했습니다.',
+    '소득금액증명원은 직전연도분을 대개 7월 이후 발급받을 수 있고, 프리랜서가 무신고면 막힙니다. 홈택스·정부24 방법과 대안을 정리했습니다.',
   keywords: [
     '소득금액증명원',
     '소득금액증명원 발급방법',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '소득금액증명원 발급 2026' }],
-    title: '소득금액증명원 발급 2026, 프리랜서 안 될 때 대안',
-    description: '소득금액증명원 발급 시기와 홈택스·정부24 방법, 프리랜서 발급 불가 시 대안까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '소득금액증명원 발급 2026, 프리랜서 안 될 때 대안',
-    description: '대출·전세 제출용 소득금액증명원 발급 시기·방법과 발급이 막혔을 때 대안 서류 정리.',
   },
 };
 

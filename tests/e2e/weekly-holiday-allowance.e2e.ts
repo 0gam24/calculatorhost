@@ -8,7 +8,7 @@ import { expect, test } from '../support/network-fixture';
 test.describe('주휴수당 골든패스', () => {
   test('기본값으로 결과에 82,560원 표시', async ({ page }) => {
     await page.goto('/calculator/weekly-holiday-allowance/', {
-      waitUntil: 'domcontentloaded',
+      waitUntil: 'networkidle',
     });
 
     const result = page.getByRole('region', { name: '계산 결과' });
@@ -18,7 +18,7 @@ test.describe('주휴수당 골든패스', () => {
 
   test('주 14시간이면 주 15시간 미만 안내가 보인다', async ({ page }) => {
     await page.goto('/calculator/weekly-holiday-allowance/', {
-      waitUntil: 'domcontentloaded',
+      waitUntil: 'networkidle',
     });
 
     const weeklyHours = page.locator('input[id="weekly-holiday-weekly-hours"]');

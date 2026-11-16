@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-01';
 export const metadata: Metadata = {
   title: '부가가치세 조기환급 2026 | 수출·시설투자 15일 내 환급',
   description:
-    '부가세 조기환급 제도 완벽 정리. 영세율 수출, 사업설비투자, 재무구조개선 시 일반환급(30일)보다 빠른 15일 내 환급. 부가가치세법 §59·시행령 §107 기준.',
+    '수출 영세율이나 사업설비투자가 있으면 부가세를 일반환급 30일보다 빠른 15일 안에 돌려받을 수 있습니다. 대상과 신청 절차를 정리했습니다.',
   keywords: [
     '부가가치세 조기환급',
     '조기환급 대상',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부가가치세 조기환급 2026 | 수출·시설투자 15일 내 환급' }],
-    title: '부가가치세 조기환급 2026, 수출·시설투자 시 일반환급보다 15일 빠르게',
-    description: '영세율·사업설비투자·재무구조개선 시 일반환급(30일) 대신 15일 내 환급받는 방법. 7월 1기 확정신고 시즌.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부가가치세 조기환급 2026, 수출·시설투자 15일 내 환급',
-    description: '영세율 적용 수출업체, 설비 신설·투자 기업은 일반 30일이 아닌 15일 내 환급. 부가세법 §59.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function VatEarlyRefund2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '부가가치세 조기환급 2026, 수출·시설투자 시 일반환급보다 15일 빠르게',
     description:
-      '영세율·사업설비투자·재무구조개선 시 조기환급 받는 방법. 일반환급(30일) 대신 15일 내 환급. 7월 1기 부가세 확정신고 시즌 필독.',
+      '영세율·사업설비투자·재무구조개선 시 조기환급 받는 방법. 일반환급(30일) 대신 15일 내 환급.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -444,7 +439,7 @@ export default function VatEarlyRefund2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">세금 가이드 전체</div>
-                    <p className="mt-1 text-sm text-text-secondary">부가세, 소득세, 양도세 등 완벽 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">부가세, 소득세, 양도세 등 정리.</p>
                   </Link>
                 </div>
               </section>

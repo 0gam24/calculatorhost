@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-17';
 export const metadata: Metadata = {
   title: '보험금 상속세 증여세 2026, 계약자·수익자별 과세 판단',
   description:
-    '사망보험금은 받는 사람의 고유재산이지만 상증법 §8에 따라 상속재산에 합산돼 상속세가 과세됩니다. 계약자와 수익자가 다르면 증여세(§34)가 나오는 경우도 있어 판단 기준을 정리했습니다.',
+    '사망보험금은 받는 사람의 고유재산이지만 상증법 §8에 따라 상속세가 과세됩니다. 계약자와 수익자가 다르면 증여세가 나오는 경우도 정리했습니다.',
   keywords: [
     '보험금 상속세',
     '보험금 증여세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '보험금 상속세 증여세 2026, 계약자·수익자별 과세 판단' }],
-    title: '보험금도 상속재산인가, 계약자·수익자별 과세 판단',
-    description: '사망보험금은 상증법 §8에 따라 상속재산으로 간주됩니다. 계약자와 수익자가 다르면 증여세(§34)가 나올 수 있습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '보험금 상속세 증여세 2026, 계약자·수익자별 과세 판단',
-    description: '사망보험금 상속세(§8) vs 증여세(§34) 구분 기준과 신고 기한(§67) 정리.',
   },
 };
 

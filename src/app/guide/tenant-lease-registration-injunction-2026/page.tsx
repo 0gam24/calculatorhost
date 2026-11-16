@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-26';
 export const metadata: Metadata = {
   title: '임차권등기명령 2026, 보증금 못 받을 때 신청 방법',
   description:
-    '계약이 끝났는데 임대인이 보증금을 안 돌려주면 임차권등기명령으로 대항력과 우선변제권을 지킨 채 이사할 수 있습니다. 신청 자격·절차·비용·기간과 이사 후 효력을 주택임대차보호법 §3의3 기준으로 정리했습니다.',
+    '보증금을 못 받았다면 임차권등기명령으로 대항력과 우선변제권을 지킨 채 이사할 수 있습니다. 신청 절차와 비용, 기간을 정리했습니다.',
   keywords: [
     '임차권등기명령',
     '보증금 반환',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '임차권등기명령 2026, 보증금 못 받을 때 신청 방법' }],
-    title: '임차권등기명령 2026, 이사 가도 보증금 우선변제권 지키기',
-    description: '계약 종료 후 보증금 미반환 시 임차권등기명령으로 대항력·우선변제권을 유지한 채 이사. 신청 절차와 효력 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '임차권등기명령 2026',
-    description: '보증금 못 받을 때 대항력·우선변제권을 지키는 법. 주택임대차보호법 §3의3.',
   },
 };
 

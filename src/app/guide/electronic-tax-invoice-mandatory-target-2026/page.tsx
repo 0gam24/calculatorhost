@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-31';
 export const metadata: Metadata = {
   title: '전자세금계산서 의무발급 대상 기준 2026',
   description:
-    '법인사업자는 전원, 개인사업자는 직전연도 공급가액 8천만원 이상이면 전자세금계산서를 의무 발급해야 합니다. 기준금액 계산법, 의무 시작 시점, 종이 발급 시 불이익까지 부가가치세법 §32·시행령 §68 기준으로 정리했습니다.',
+    '법인사업자는 전원, 개인사업자는 직전연도 공급가액 8천만원 이상이면 전자세금계산서를 발급해야 합니다. 의무 시작 시점도 정리했습니다.',
   keywords: [
     '전자세금계산서 의무발급',
     '전자세금계산서 대상',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전자세금계산서 의무발급 대상 기준 2026' }],
-    title: '전자세금계산서 의무발급 대상 기준 2026',
-    description: '법인사업자는 전원, 개인사업자는 직전연도 공급가액 8천만원 이상이면 의무 발급. 기준금액과 시작 시점을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전자세금계산서 의무발급 대상 기준 2026',
-    description: '법인사업자 전원, 개인사업자는 공급가액 8천만원 이상. 부가가치세법 §32·시행령 §68 기준.',
   },
 };
 

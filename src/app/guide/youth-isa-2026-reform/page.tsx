@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-24';
 export const metadata: Metadata = {
   title: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 정리',
   description:
-    '2026 세제개편안이 34세 이하 청년 전용 ISA를 신설합니다. 납입액 10% 소득공제(최대 200만원), 이자·배당 전액 비과세, 연 2천만원 한도. 가입 조건과 일반 ISA 비교를 정리합니다(조세특례제한법 §91의18).',
+    '2026 세제개편안은 34세 이하 청년 전용 ISA를 신설해 납입액 10%를 최대 200만원까지 소득공제합니다. 이자·배당은 전액 비과세입니다.',
   keywords: [
     '청년형 ISA',
     '청년 ISA 소득공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 정리' }],
-    title: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 총정리',
-    description: '34세 이하 청년 전용 ISA 신설(정부안). 납입 10% 소득공제(최대 200만원), 이자·배당 전액 비과세, 연 2천만원 한도. 가입 조건과 일반 ISA 비교.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 정리',
-    description: '34세 이하 청년 ISA 신설(정부안). 납입 10% 소득공제 최대 200만원 + 이자·배당 전액 비과세. 조특법 §91의18.',
   },
 };
 
@@ -96,7 +91,7 @@ export default function YouthIsa2026ReformPage() {
     { name: '청년형 ISA 2026 신설안' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 총정리',
+    headline: '청년형 ISA 2026 신설안, 납입 10% 소득공제 조건 정리',
     description:
       '2026 세제개편안이 신설하는 청년형 ISA의 가입 조건, 납입 10% 소득공제와 이자·배당 전액 비과세, 일반 ISA와의 비교를 계산 사례로 정리.',
     url: URL,
@@ -144,7 +139,7 @@ export default function YouthIsa2026ReformPage() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   청년형 ISA 2026 신설안
                   <br />
-                  <span className="text-2xl text-text-secondary">· 납입 10% 소득공제 조건 총정리</span>
+                  <span className="text-2xl text-text-secondary">· 납입 10% 소득공제 조건 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   주식·펀드로 자산을 불리려는 34세 이하 청년을 위한 글입니다. 2026년 세제개편안은 청년 전용 ISA를 신설해, 이자·배당을 전액 비과세하면서 납입액의 10%까지 소득공제하는 파격적인 혜택을 담았습니다. 이 글은 가입 조건, 세금 혜택의 크기, 기존 일반 ISA와의 차이, 그리고 아직 정부안이라는 점까지 계산 사례로 정리합니다.

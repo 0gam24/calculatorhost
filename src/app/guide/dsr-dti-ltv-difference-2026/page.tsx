@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: 'DSR·DTI·LTV 차이와 계산법 2026, 헷갈리는 대출 3대 지표 정리',
+  title: 'DSR·DTI·LTV 차이와 계산법 2026, 대출 3대 지표 정리',
   description:
-    'DSR·DTI·LTV 세 대출 규제 지표의 정의와 차이를 명확히 정리합니다. 각 지표 계산 공식, 한도 기준, 실제 대출한도 결정 방식을 사례로 설명. 2026년 기준 최신 정보.',
+    'DSR·DTI·LTV 세 대출 규제 지표의 정의와 차이를 정리합니다. 각각의 계산 공식과 기준 한도를 사례로 설명합니다.',
   keywords: [
     'DSR DTI LTV 차이',
     'DSR 계산',
@@ -35,16 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: 'DSR·DTI·LTV 차이와 계산법 2026',
-      },
-    ],
-    title: 'DSR·DTI·LTV 차이와 계산법 2026',
-    description: '대출 예정자가 반드시 알아야 할 LTV, DTI, DSR의 개념과 실제 한도 결정 방식.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'DSR·DTI·LTV 차이와 계산법 2026',
-    description: '헷갈리는 대출 3대 지표의 정의, 공식, 한도, 차이점을 한 페이지에 정리.',
   },
 };
 

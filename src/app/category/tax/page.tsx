@@ -27,7 +27,7 @@ const ONE_HOME_EXEMPTION_DESCRIPTION =
   '소득세법 §89①제3호에 따른 1세대 1주택 비과세는 원칙적으로 양도일 현재 국내 1주택과 2년 이상 보유가 기준입니다. 2017년 8월 3일 이후 취득 당시 조정대상지역에 있던 주택은 2년 이상 거주 요건도 적용됩니다. 고가주택 판단은 공시가격이 아닌 주택과 부수토지의 양도 당시 실지거래가액 합계로 하며, 12억 원을 초과하면 전액 비과세 대상에서 제외됩니다. 보유·거주 요건 예외와 일시적 2주택 등의 특례는 별도 확인하세요.';
 
 export const metadata: Metadata = {
-  title: '세금 계산기 모음 2026 | 양도·취득·재산·증여·상속 | calculatorhost',
+  title: '세금 계산기 모음 2026 | 양도·취득·재산·증여·상속',
   description:
     '양도세·취득세·재산세·종부세·증여세·상속세를 2026년 세율로 계산하는 세금 계산기 모음입니다. 회원가입 없이 무료예요.',
   keywords: [
@@ -42,8 +42,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '세금 계산기 모음 2026',
-    description: '양도세·취득세·재산세·종부세 계산기 모음',
     url: URL,
     type: 'website',
   },
@@ -131,7 +129,7 @@ const FAQ_ITEMS = [
 export default function TaxCategoryPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '세금' },
+    { name: '세금 계산기' },
   ]);
   const webPageLd = buildWebPageJsonLd({
     name: '세금 계산기 모음',
@@ -140,10 +138,11 @@ export default function TaxCategoryPage() {
     datePublished: '2026-04-24',
   });
   const itemListLd = buildItemListJsonLd(
-    CALCULATORS.map((c) => ({
-      name: c.title,
-      url: `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`,
-    })),
+    // 네이버 캐러셀(08-07): 항목마다 고유 image 필수. 계산기마다 있는 opengraph-image.png 를 쓴다
+    CALCULATORS.map((c) => {
+      const url = `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`;
+      return { name: c.title, url, image: `${url}opengraph-image.png` };
+    }),
   );
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),

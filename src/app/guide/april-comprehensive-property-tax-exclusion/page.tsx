@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-03';
 const DATE_MODIFIED = '2026-05-03';
 
 export const metadata: Metadata = {
-  title: '4월 종부세 합산배제·과세특례 신청 | calculatorhost',
+  title: '4월 종부세 합산배제·과세특례 신청 2026 | 임대주택·일시적 2주택',
   description:
-    '2026년 4월 1~30일 종합부동산세 합산배제·과세특례 신청 가이드. 임대주택·미분양·일시적 2주택. 한국 거주자 기준 실전 가이드. 법조항·관련 계산기 링크 포함.',
+    '임대주택·미분양·일시적 2주택에 적용되는 종합부동산세 합산배제·과세특례 신청 방법을 정리했습니다.',
   keywords: [
     '종부세 합산배제',
     '종합부동산세 합산배제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '4월 종부세 합산배제·과세특례 신청 | calculatorhost' }],
-    title: '4월 종부세 합산배제·과세특례 신청 가이드 2026',
-    description: '4월 1~30일 마감. 임대주택·일시적 2주택·고령자 등 절세 핵심.',
     url: URL,
     type: 'article',
 
@@ -319,7 +316,7 @@ export default function AprilCptExclusionPage() {
                 <ul className="space-y-2 text-sm">
                   <li>→ <Link href="/calculator/comprehensive-property-tax/" className="text-primary-600 underline dark:text-primary-500">종합부동산세 계산기</Link></li>
                   <li>→ <Link href="/calculator/property-tax/" className="text-primary-600 underline dark:text-primary-500">재산세 계산기</Link></li>
-                  <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 완벽 가이드</Link></li>
+                  <li>→ <Link href="/guide/june-property-tax/" className="text-primary-600 underline dark:text-primary-500">6월 재산세 가이드</Link></li>
                   <li>→ <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 비과세</Link>, 합산배제와 별개의 양도 시 비과세</li>
                   <li>→ <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세</Link>, 합산배제 대상 사유</li>
                   <li>→ <Link href="/guide/housing-rental-income-separate-taxation/" className="text-primary-600 underline dark:text-primary-500">주택임대소득 분리과세</Link>, 임대주택 합산배제와 연결</li>
@@ -335,7 +332,7 @@ export default function AprilCptExclusionPage() {
                 <p className="mb-2">
                   <strong>법적 근거</strong>: 종합부동산세법 §8 (합산배제) · §9 (과세특례) · §15·§16 ·
                   민간임대주택법. 참고:{' '}
-                  <a href="https://www.hometax.go.kr/ncs/notice/bbsView.do?bbsId=36&nttId=2949" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종부세 합산배제 신청</a>,{' '}
+                  <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국세청 홈택스 종부세 합산배제 신청</a>,{' '}
                   <a href="https://www.molit.go.kr/USR/PRESSROOM/m_71/dtl.jsp?lcmspage=1&id=95003333" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-600 underline dark:text-primary-500">국토교통부 민간임대주택 정책 안내</a>.
                 </p>
                 <p><strong>업데이트</strong>: {DATE_MODIFIED} · 작성·검수: 김준혁 (스마트데이터샵)</p>

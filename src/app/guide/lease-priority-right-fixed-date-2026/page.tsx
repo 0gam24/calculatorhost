@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-09';
 export const metadata: Metadata = {
   title: '확정일자·전입신고 우선변제권 2026 | 전세보증금 지키는 법',
   description:
-    '대항력·우선변제권·최우선변제 차이점 완벽 정리. 전입신고 + 확정일자로 보증금을 보호하는 방법. 주택임대차보호법 §3·§3의2·§8 기준 및 지역별 최우선변제 금액.',
+    '전입신고와 확정일자로 보증금을 지키는 법과 대항력·우선변제권·최우선변제 차이를 주택임대차보호법 기준으로 정리했습니다.',
   keywords: [
     '확정일자',
     '전입신고',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '확정일자·전입신고 우선변제권 2026 | 전세보증금 지키는 법' }],
-    title: '확정일자·전입신고 우선변제권 2026, 전세보증금을 보호하는 법',
-    description: '대항력·우선변제권·최우선변제의 정확한 개념 및 신청 방법. 보증금 손실을 방지하는 세입자 필수 가이드.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '확정일자·전입신고 우선변제권 2026, 전세보증금 보호 가이드',
-    description: '전입신고 + 확정일자 → 우선변제권 획득. 건물주 채무 시에도 보증금 우선 배당받는 법.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function LeapriorityRightFixedDate2026Page() {
     { name: '확정일자·전입신고 우선변제권 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '확정일자·전입신고 우선변제권 2026, 대항력·우선변제·최우선변제 완전 정리',
+    headline: '확정일자·전입신고 우선변제권 2026, 대항력·우선변제·최우선변제 정리',
     description:
       '전세 계약 후 반드시 챙겨야 할 대항력·우선변제권·최우선변제의 정확한 개념, 신청 방법, 지역별 최우선변제 금액 정리.',
     url: URL,

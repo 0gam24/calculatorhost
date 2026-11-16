@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-28';
 export const metadata: Metadata = {
   title: '이혼 재산분할 위자료 세금 2026, 양도세·증여세·취득세 정리',
   description:
-    '이혼 재산분할로 받는 재산에는 증여세·양도세가 없지만, 위자료를 부동산으로 주면 대물변제로 보아 주는 사람에게 양도소득세가 부과됩니다. 재산분할과 위자료의 세금 차이를 소득세법·상증법 기준으로 사례와 함께 정리했습니다.',
+    '이혼 재산분할로 받은 재산에는 증여세가 없지만, 위자료를 부동산으로 주면 주는 사람에게 양도소득세가 부과됩니다.',
   keywords: [
     '이혼 재산분할 세금',
     '위자료 양도소득세',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '이혼 재산분할 위자료 세금 2026, 양도세·증여세·취득세 정리',
-      },
-    ],
-    title: '이혼 재산분할 위자료 세금 2026, 양도세·증여세·취득세 차이',
-    description:
-      '재산분할은 원칙적으로 증여세·양도세 없음, 위자료를 부동산으로 지급하면 대물변제로 보아 양도소득세 과세. 소득세법 §88과 민법 §839의2 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,9 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '이혼 재산분할 위자료 세금 2026, 양도세·증여세·취득세 차이',
-    description:
-      '재산분할은 세금 없음이 원칙, 위자료를 부동산으로 넘기면 주는 사람에게 양도세. 소득세법 §88 기준.',
   },
 };
 

@@ -23,7 +23,7 @@ import {
 const URL = 'https://calculatorhost.com/category/finance/';
 
 export const metadata: Metadata = {
-  title: '금융 계산기 모음 2026 | 대출·예금·적금·환율 | calculatorhost',
+  title: '금융 계산기 모음 2026 | 대출·예금·적금·환율',
   description:
     '대출이자·대출한도(DSR)·예금·적금·환율을 2026년 금리 기준으로 계산하는 금융 계산기 모음입니다. 무료예요.',
   keywords: [
@@ -37,8 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '금융 계산기 모음 2026',
-    description: '대출·예금·적금 계산기 모음',
     url: URL,
     type: 'website',
 
@@ -140,7 +138,7 @@ const FAQ_ITEMS = [
 export default function FinanceCategoryPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '금융' },
+    { name: '금융 계산기' },
   ]);
   const webPageLd = buildWebPageJsonLd({
     name: '금융 계산기 모음',
@@ -149,10 +147,11 @@ export default function FinanceCategoryPage() {
     datePublished: '2026-04-24',
   });
   const itemListLd = buildItemListJsonLd(
-    CALCULATORS.map((c) => ({
-      name: c.title,
-      url: `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`,
-    })),
+    // 네이버 캐러셀(08-07): 항목마다 고유 image 필수. 계산기마다 있는 opengraph-image.png 를 쓴다
+    CALCULATORS.map((c) => {
+      const url = `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`;
+      return { name: c.title, url, image: `${url}opengraph-image.png` };
+    }),
   );
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-31';
 const DATE_MODIFIED = '2026-05-31';
 
 export const metadata: Metadata = {
-  title: '자진신고 6월 50% 감면 가이드 2026 | 종소세 마감 후 가산세 절반',
+  title: '자진신고 6월 50% 감면 가이드 2026 | 종합소득세 무신고 가산세',
   description:
-    '5월 31일 마감 지난 종합소득세, 6월 1일~30일 자진신고로 가산세 50% 감면(1개월 내). 산출세액 500만→가산세 50만(정상 100만). 무신고가산세 20% vs 자진신고 감면. 국세기본법 §48. 6월 신고 완벽 가이드.',
+    '5월 31일을 넘긴 종합소득세도 1개월 안에 자진신고하면 무신고가산세를 50% 감면받습니다. 산출세액 500만원이면 가산세는 50만원입니다.',
   keywords: [
     '자진신고 감면',
     '자진신고 50% 감면',
@@ -37,10 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자진신고 6월 50% 감면 가이드 2026 | 종소세 마감 후 가산세 절반' }],
-    title: '자진신고 6월 50% 감면 | 종소세 마감 후 가산세 절반 | calculatorhost',
-    description:
-      '5월 31일을 지났다면 6월이 기회. 자진신고로 가산세 50% 감면받기. 산출세액 500만→가산세 50만. 국세기본법 §48.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자진신고 6월 50% 감면 2026 | 가산세 절반 | calculatorhost',
-    description: '5월 31일 마감 후 6월 신고로 가산세 50% 감면. 산출세액 500만→가산세 50만.',
   },
 };
 
@@ -118,7 +112,7 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '자진신고 6월 50% 감면 가이드 2026',
     description:
-      '5월 31일 종합소득세 신고기한 초과? 6월 1일~30일 자진신고로 가산세 50% 감면 혜택. 산출세액별 정확한 가산세 계산·신고 단계·주의사항·FAQ 완벽 정리.',
+      '5월 31일 종합소득세 신고기한 초과? 6월 1일~30일 자진신고로 가산세 50% 감면 혜택. 산출세액별 정확한 가산세 계산·신고 단계·주의사항·FAQ 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -501,7 +495,7 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                     href="/guide/income-tax-correction-claim-5-year-2026/"
                     className="p-4 bg-bg-card rounded-lg border border-border-base hover:border-primary-500 transition-colors"
                   >
-                    <p className="font-semibold text-text-primary mb-1">경정청구 5년 기한 완벽 가이드</p>
+                    <p className="font-semibold text-text-primary mb-1">경정청구 5년 기한 가이드</p>
                     <p className="text-sm text-text-secondary">
                       과납 환급, 신고 오류 수정, 세무조사 이의
                     </p>
@@ -519,7 +513,7 @@ export default function VoluntaryFilingJune50PercentReduction2026Page() {
                     href="/guide/may-comprehensive-income-tax/"
                     className="p-4 bg-bg-card rounded-lg border border-border-base hover:border-primary-500 transition-colors"
                   >
-                    <p className="font-semibold text-text-primary mb-1">5월 종합소득세 신고 완벽 가이드</p>
+                    <p className="font-semibold text-text-primary mb-1">5월 종합소득세 신고 가이드</p>
                     <p className="text-sm text-text-secondary">
                       신고 대상, 증빙 준비, 소득 신고 방법
                     </p>

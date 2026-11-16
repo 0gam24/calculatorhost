@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-19';
 export const metadata: Metadata = {
   title: '상가임대차 환산보증금 2026, 지역별 기준·계산법',
   description:
-    '환산보증금은 보증금에 월차임의 100배를 더해 산출한 금액으로, 상가건물임대차보호법의 전면 적용 여부를 가르는 기준입니다. 서울 9억, 과밀억제권역 6억9천만, 광역시 5억4천만, 기타 3억7천만원 등 지역별 기준과 계산 사례, 초과해도 유지되는 임차인 보호를 정리했습니다.',
+    '환산보증금은 보증금에 월차임의 100배를 더한 금액으로, 상가건물임대차보호법 적용 범위를 가릅니다. 서울 기준은 9억원입니다.',
   keywords: [
     '환산보증금 계산법',
     '상가 환산보증금 2026',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상가임대차 환산보증금 2026, 지역별 기준·계산법' }],
-    title: '상가임대차 환산보증금 2026, 지역별 기준과 계산법',
-    description: '보증금과 월세만으로 환산보증금을 계산하고, 우리 상가가 어느 지역 기준에 해당하는지 확인하는 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상가임대차 환산보증금 2026, 지역별 기준과 계산법',
-    description: '환산보증금 = 보증금 + 월차임 × 100. 서울 9억, 광역시 5억4천만원 등 지역별 기준을 정리했습니다.',
   },
 };
 

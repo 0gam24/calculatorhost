@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-21';
 export const metadata: Metadata = {
   title: '비과세 급여 항목 2026, 식대·자가운전·보육수당 20만원',
   description:
-    '월급에서 세금을 떼지 않는 비과세 급여 항목이 있습니다. 식대 월 20만원, 자가운전보조금 월 20만원, 6세 이하 자녀 보육수당 월 20만원 등 주요 비과세 한도와 요건, 주의할 점을 소득세법 §12 기준으로 정리했습니다.',
+    '식대, 자가운전보조금, 6세 이하 자녀 보육수당은 각각 월 20만원까지 세금을 떼지 않습니다. 비과세 요건과 주의점을 정리했습니다.',
   keywords: [
     '비과세 급여',
     '식대 비과세 20만원',
@@ -34,10 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '비과세 급여 항목 2026' }],
-    title: '비과세 급여 항목 2026, 식대·자가운전·보육수당 20만원',
-    description:
-      '식대 20만·자가운전보조금 20만·보육수당 20만 등 비과세 급여 항목과 한도. 소득세법 §12.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '비과세 급여 항목 2026',
-    description: '식대·자가운전보조금·보육수당 각 월 20만원 비과세. 한도와 요건, 주의점. 소득세법 §12.',
   },
 };
 
@@ -103,7 +97,7 @@ export default function NonTaxableSalaryAllowances2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '비과세 급여 항목 2026, 식대·자가운전·보육수당 20만원',
     description:
-      '식대·자가운전보조금·보육수당 각 월 20만원 등 비과세 급여 항목과 한도·요건, 국민연금·퇴직금에 미치는 영향까지 완전 정리.',
+      '식대·자가운전보조금·보육수당 각 월 20만원 등 비과세 급여 항목과 한도·요건, 국민연금·퇴직금에 미치는 영향까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

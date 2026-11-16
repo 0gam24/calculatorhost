@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '저가양수도 증여의제 2026, 시가 대비 몇 %부터 과세되나',
   description:
-    '특수관계인 간 저가 거래는 시가와 대가의 차액이 시가의 30% 이상이거나 3억 원 이상이면 증여세 대상입니다. 매도인의 양도소득세는 별도로 5% 기준이 적용되어, 매도인만 시가로 재과세되고 매수인은 증여세가 없는 구간도 있습니다. 상증법 §35·소득세법 §101 기준으로 정리했습니다.',
+    '특수관계인끼리 시세보다 싸게 사고판 차액이 시가의 30%나 3억 원 이상이면 증여세 대상입니다. 매도인 양도세는 5% 기준이 따로 적용됩니다.',
   keywords: [
     '저가양수도',
     '저가양수도 증여의제',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '저가양수도 증여의제 2026, 시가 대비 몇 %부터 과세되나',
-      },
-    ],
-    title: '저가양수도 증여의제 2026, 시가 대비 몇 %부터 과세되나',
-    description:
-      '증여세는 시가 30%(또는 3억 원), 양도세는 시가 5%(또는 3억 원) 기준. 상증법 §35·소득세법 §101 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '저가양수도 증여의제 2026, 시가 대비 몇 %부터 과세되나',
-    description:
-      '증여세 30%·양도세 5% 기준선이 다르다는 점을 상증법 §35·소득세법 §101 근거로 정리.',
   },
 };
 

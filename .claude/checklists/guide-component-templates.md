@@ -44,9 +44,9 @@ export const metadata: Metadata = {
     // 5-10개
   ],
   alternates: { canonical: URL },
+  // og·twitter 의 title·description·images 는 적지 않는다. Next 가 위 title·description 과
+  // 폴더의 opengraph-image.png 를 이어받는다 (네이버 04-02, ADR-019). 이미지는 npm run gen-og 로 생성 후 커밋
   openGraph: {
-    title: '{가이드명} {연도}',
-    description: '{최대 160자. 한 줄 요약.}',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -55,8 +55,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '{가이드명} {연도}',
-    description: '{최대 160자.}',
   },
 };
 
@@ -412,11 +410,11 @@ const DATE_PUBLISHED = '2026-05-14';
 const DATE_MODIFIED = '2026-05-14';
 
 export const metadata: Metadata = {
-  title: '{Title} | {keyword} | calculatorhost',
-  description: '{80-155 chars}',
+  title: '{실측 검색어} {연도} | {변별 키워드}', // 40자 이내, 브랜드 없음 (ADR-016)
+  description: '{40~80자, 1~2문장}',
   alternates: { canonical: URL },
-  openGraph: { title: '{Title}', description: '{Description}', url: URL, type: 'article', locale: 'ko_KR', publishedTime: DATE_PUBLISHED, modifiedTime: DATE_MODIFIED },
-  twitter: { card: 'summary_large_image', title: '{Title}', description: '{Description}' },
+  openGraph: { url: URL, type: 'article', locale: 'ko_KR', publishedTime: DATE_PUBLISHED, modifiedTime: DATE_MODIFIED },
+  twitter: { card: 'summary_large_image' },
 };
 
 const FAQ_ITEMS = [

@@ -45,7 +45,7 @@
     "generate:llms": "node scripts/generate-llms-txt.mjs",
     "prebuild": "node scripts/validate-build-inputs.mjs && node scripts/generate-llms-txt.mjs && node scripts/generate-og-images.mjs && node scripts/convert-images-to-avif.mjs && node scripts/generate-network-mirror.mjs",
     "build": "next build",
-    "postbuild": "node scripts/harden-preview-export.mjs",
+    "postbuild": "node scripts/rss-full-content.mjs && node scripts/harden-preview-export.mjs",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",

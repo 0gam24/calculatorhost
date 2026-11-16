@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-24';
 export const metadata: Metadata = {
   title: '회사 출산지원금 비과세 2026, 임신 중 지급도 확대 개편안',
   description:
-    '기업이 주는 출산지원금은 출생 후 2년 이내 2회까지 전액 근로소득 비과세입니다. 2026 세제개편안은 임신 기간 지급분과 위탁아동 보육수당까지 확대합니다. 요건·세금 차이 정리(소득세법 §12).',
+    '회사가 주는 출산지원금은 출생 후 2년 이내 2회까지 전액 비과세입니다. 2026 세제개편안은 임신 기간 지급분까지 넓히는 방향입니다.',
   keywords: [
     '출산지원금 비과세',
     '회사 출산장려금 세금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '회사 출산지원금 비과세 2026, 임신 중 지급도 확대 개편안' }],
-    title: '회사 출산지원금 비과세 2026, 임신 중 지급도 확대하는 개편안',
-    description: '기업 출산지원금은 출생 후 2년 이내 2회 전액 비과세. 2026 세제개편안은 임신 기간 지급분과 위탁아동 보육수당까지 확대(소득세법 §12).',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '회사 출산지원금 비과세 2026, 임신 중 지급도 확대 개편안',
-    description: '회사가 준 출산지원금 출생 후 2년 이내 2회 전액 비과세. 2026 개편안은 임신기간·위탁아동까지 확대(정부안). 소득세법 §12.',
   },
 };
 
@@ -305,7 +300,7 @@ export default function EmployerChildbirthGrantNontax2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">비과세 급여 항목 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">식대·자가운전·보육수당 등 비과세 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">식대·자가운전·보육수당 등 비과세 정리.</p>
                   </Link>
                   <Link
                     href="/guide/parental-benefit-child-allowance-2026/"

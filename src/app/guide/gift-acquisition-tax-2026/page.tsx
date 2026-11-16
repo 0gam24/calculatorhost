@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-10-01';
 // 북극성 수익 레버: [revenue-lever: indexing+traffic] (신규 색인 표면 + 증여 취득세 검색 의도 흡수)
 
 export const metadata: Metadata = {
-  title: '증여 취득세 2026, 아파트 증여 3.5%와 12% 중과 조건',
+  title: '증여 취득세 2026, 아파트 3.5%와 12% 중과 조건',
   description:
-    '부모가 자녀에게 아파트를 증여하면 증여세와 별개로 취득세를 냅니다. 무상취득 기본세율 3.5%, 지방교육세·농특세 포함 총세율, 조정대상지역 12% 중과 조건과 예외를 지방세법 §11 기준으로 정리했습니다.',
+    '부모가 자녀에게 아파트를 넘기면 증여세와 별개로 취득세를 냅니다. 기본세율 3.5%와 조정대상지역 12% 중과 조건을 정리했습니다.',
   keywords: [
     '증여 취득세',
     '아파트 증여 세금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '증여 취득세 2026, 아파트 증여 3.5%와 12% 중과 조건' }],
-    title: '증여 취득세 2026, 무상취득 3.5%부터 12% 중과 조건까지',
-    description: '증여받은 사람이 내는 취득세. 시가인정액 기준 3.5%, 조정대상지역 공시가 3억 이상 증여 시 12% 중과 가능. 1세대 1주택의 배우자·직계존비속 증여 등 예외 확인.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '증여 취득세 2026, 3.5%와 12% 중과 조건',
-    description: '증여세와 별개로 내는 취득세. 지방세법 §11 무상취득 세율과 §13의2 중과 정리.',
   },
 };
 

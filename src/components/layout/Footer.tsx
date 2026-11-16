@@ -46,6 +46,7 @@ export function Footer() {
             <Link href="/glossary/">용어사전</Link>
             <Link href="/affiliate-disclosure/">어필리에이트 공시</Link>
             <Link href="/guide/tax-calendar-2026/">2026 세금 캘린더</Link>
+            <Link href="/embed-widgets/">계산기 위젯 삽입</Link>
           </div>
         </details>
         <p className="mt-5 text-xs text-text-tertiary">

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-21';
 export const metadata: Metadata = {
   title: '부양가족 소득요건 300만 상향 2026 세제개편, 총급여 750만까지',
   description:
-    '2026년 세제개편안에 따라 부양가족 기본공제 소득요건이 연 100만원에서 300만원(근로 총급여 500만원에서 750만원)으로 상향됩니다. 자녀 알바·배우자 파트타임의 공제 재진입 조건과 경계값 계산을 정리합니다.',
+    '2026 세제개편안으로 부양가족 기본공제 소득요건이 연 100만원에서 300만원으로, 근로 총급여는 500만원에서 750만원으로 오릅니다.',
   keywords: [
     '부양가족 소득요건 300만',
     '부양가족 총급여 750만',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '부양가족 소득요건 300만 상향 2026 세제개편, 총급여 750만까지',
-      },
-    ],
-    title: '부양가족 소득요건 300만 상향 2026 세제개편, 총급여 750만까지',
-    description:
-      '2026-08-03 발표 세제개편안, 부양가족 기본공제 소득요건 연 100만원에서 300만원 상향. 알바 자녀·파트타임 배우자 재진입 조건과 근로 총급여 750만 경계값.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부양가족 소득요건 300만 상향, 근로 총급여 750만까지 공제 (2026 세제개편)',
-    description:
-      '개편 후 알바 자녀·파트타임 배우자를 다시 부양가족에 포함할 수 있는 조건과 경계값 계산. 소득세법 §50, §47 기준.',
   },
 };
 
@@ -469,7 +455,7 @@ export default function DependentIncomeRequirement300ReformPage() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">연말정산 가이드</div>
-                    <p className="mt-1 text-sm text-text-secondary">부양가족 등록 절차와 서류, 절세 항목 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">부양가족 등록 절차와 서류, 절세 항목 정리.</p>
                   </Link>
                   <Link
                     href="/calculator/salary/"

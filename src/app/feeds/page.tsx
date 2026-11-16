@@ -11,22 +11,17 @@ const DATE_PUBLISHED = '2026-06-29';
 const DATE_MODIFIED = '2026-10-01';
 
 export const metadata: Metadata = {
-  title: '피드 구독, RSS · Atom · JSON Feed | calculatorhost',
+  title: '피드 구독, RSS · Atom · JSON Feed',
   description:
-    'calculatorhost의 새 가이드·계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요. RSS 리더 등록 방법과 검색 엔진용 파일(llms.txt·robots.txt·사이트맵)도 함께 안내합니다.',
+    '새 가이드와 계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요. 리더 등록 방법과 검색 엔진용 파일도 함께 안내합니다.',
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '피드 구독, RSS · Atom · JSON Feed' }],
-    title: '피드 구독, RSS · Atom · JSON Feed',
-    description: '새 가이드·계산기 업데이트를 RSS·Atom·JSON Feed로 구독하세요.',
     url: URL,
     type: 'website',
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '피드 구독, RSS · Atom · JSON Feed',
-    description: 'RSS·Atom·JSON Feed 구독 안내',
   },
 };
 

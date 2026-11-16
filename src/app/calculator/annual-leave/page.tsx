@@ -30,13 +30,15 @@ import {
   STANDARD_WEEKLY_HOURS,
 } from '@/lib/constants/labor-rules-2026';
 import { calculateAnnualLeave } from '@/lib/work/annual-leave';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/annual-leave/';
 const DATE_PUBLISHED = '2026-10-26';
 const DATE_MODIFIED = '2026-10-26';
-const TITLE = '연차 계산기 2026 | 입사일 기준 연차 개수·연차수당';
+// 같은 단어 반복을 줄인다 (네이버 04-02 '2회 이상 반복적인 키워드'). 앞쪽 검색어 '연차 계산기'는 그대로
+const TITLE = '연차 계산기 2026 | 입사일 기준 개수·연차수당';
 const DESCRIPTION =
-  '입사일로 연차 개수와 다음 발생일, 미사용 연차수당을 계산합니다. 1년 미만은 매달 1일, 1년 뒤 15일이 생깁니다.';
+  '입사일로 연차 개수와 다음 발생일, 미사용 연차수당을 계산합니다. 첫해는 매달 1일, 1년 뒤 15일이 생깁니다.';
 
 export const metadata: Metadata = {
   title: TITLE,
@@ -53,16 +55,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '연차 계산기 2026, 입사일 기준 개수·다음 발생일·미사용 수당',
-    description: DESCRIPTION,
     url: URL,
     type: 'website',
     locale: 'ko_KR',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연차 계산기 2026',
-    description: '입사일로 연차 개수와 미사용 수당을 바로 계산',
   },
 };
 
@@ -271,7 +269,7 @@ export default function AnnualLeavePage() {
     { name: '근로', url: 'https://calculatorhost.com/category/work/' },
     { name: '연차 계산기' },
   ]);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '연차 개수와 연차수당 계산하기',
     description: '입사일과 기준일, 1주 소정근로시간, 통상임금으로 연차 일수·다음 발생일·미사용 연차수당을 구하는 방법',
     steps: [
@@ -296,7 +294,8 @@ export default function AnnualLeavePage() {
         text: '지금 쓸 수 있는 연차 일수, 남은 연차, 미사용 연차수당, 다음 연차 발생일을 확인합니다. 참고용 산정이며 사용 촉진·회사 규정에 따라 실제 지급이 다를 수 있습니다.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((item) => ({ question: item.question, answer: item.answer })),
@@ -368,6 +367,7 @@ export default function AnnualLeavePage() {
                 />
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition={`연차 유급휴가는 근로기준법 §60이 1년 이상 근속자에게 ${ANNUAL_LEAVE_BASE_DAYS}일, 1년 미만 근로자에게 매월 1일(최대 ${ANNUAL_LEAVE_MAX_MONTHLY_DAYS}일)을 유급으로 보장하는 휴가입니다.`}
                 table={{

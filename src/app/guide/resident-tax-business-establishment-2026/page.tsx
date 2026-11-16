@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-24';
 const DATE_MODIFIED = '2026-07-24';
 
 export const metadata: Metadata = {
-  title: '주민세 사업소분 2026, 8월 신고·세액·면세 기준 | calculatorhost',
+  title: '주민세 사업소분 2026, 8월 신고·세액·면세 기준',
   description:
-    '주민세 사업소분은 사업주가 8월 1일부터 31일까지 스스로 신고·납부하는 지방세입니다. 개인 5만원·법인 자본금별 기본세액, 연면적 330제곱미터 초과 가산, 종업원분과의 차이를 지방세법 §81 기준으로 정리했습니다.',
+    '주민세 사업소분은 사업주가 8월 1일부터 31일까지 직접 신고·납부하는 지방세입니다. 개인 5만원 기본세액과 연면적 가산 기준을 정리했습니다.',
   keywords: [
     '주민세 사업소분',
     '주민세 사업소분 신고',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주민세 사업소분 2026, 8월 신고·세액·면세 기준' }],
-    title: '주민세 사업소분 2026, 8월에 사업주가 직접 신고하는 지방세',
-    description: '개인 5만원·법인 자본금별 기본세액에 연면적 초과 가산과 지방교육세 25%. 종업원분과 헷갈리지 않게 8월 신고 기준을 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주민세 사업소분 2026, 8월 신고·세액·면세 기준',
-    description: '8월 1~31일 사업주 직접 신고. 개인 5만원, 법인 자본금별, 연면적 초과 가산. 지방세법 §81.',
   },
 };
 

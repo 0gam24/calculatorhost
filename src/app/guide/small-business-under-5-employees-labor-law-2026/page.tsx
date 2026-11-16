@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-07';
 export const metadata: Metadata = {
   title: '5인 미만 사업장 근로기준법 2026, 연차·연장수당 되나',
   description:
-    '5인 미만 사업장은 근로기준법 일부만 적용됩니다. 연차·연장가산수당·부당해고 구제는 제외되지만 주휴수당·퇴직금·최저임금·근로계약서·해고예고는 반드시 지켜야 합니다. 근로기준법 §11 시행령 별표1.',
+    '5인 미만 사업장은 연차·연장가산수당·부당해고 구제가 빠지지만 주휴수당·퇴직금·최저임금은 지켜야 합니다. 근로기준법 §11로 정리했습니다.',
   keywords: [
     '5인 미만 사업장',
     '5인 미만 근로기준법',
@@ -38,17 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '5인 미만 사업장 근로기준법 2026, 연차·연장수당 되나',
-      },
-    ],
-    title: '5인 미만 사업장 근로기준법 2026, 무엇이 되고 무엇이 안 되는가',
-    description:
-      '5인 미만은 연차·연장가산수당·부당해고 구제 제외, 주휴수당·퇴직금·최저임금은 그대로 보장. 상시근로자 수 산정법과 실제 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -57,9 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '5인 미만 사업장 근로기준법 2026, 어디까지 적용되나',
-    description:
-      '연차·연장수당·부당해고 구제는 제외, 주휴수당·퇴직금·최저임금·근로계약서는 유지. 근로기준법 §11 시행령 별표1.',
   },
 };
 
@@ -115,7 +101,7 @@ export default function SmallBusinessUnder5EmployeesLaborLaw2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '5인 미만 사업장 근로기준법 2026, 무엇이 되고 무엇이 안 되는가',
     description:
-      '상시근로자 4명 이하 사업장에 근로기준법이 어디까지 적용되는지 완전 정리. 연차·연장가산수당·부당해고 구제는 제외되지만 주휴수당·퇴직금·최저임금·근로계약서·해고예고·산재는 그대로 보장. 상시근로자 수 산정법과 임금 계산 사례.',
+      '상시근로자 4명 이하 사업장에 근로기준법이 어디까지 적용되는지 정리. 연차·연장가산수당·부당해고 구제는 제외되지만 주휴수당·퇴직금·최저임금·근로계약서·해고예고·산재는 그대로 보장. 상시근로자 수 산정법과 임금 계산 사례.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -447,7 +433,7 @@ export default function SmallBusinessUnder5EmployeesLaborLaw2026Page() {
                     href="/guide/weekly-holiday-allowance-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">주휴수당 2026 완전정리</div>
+                    <div className="font-semibold text-primary-500">주휴수당 2026 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">주 15시간 이상 개근 시 지급되는 주휴수당의 조건과 계산법.</p>
                   </Link>
                   <Link
@@ -482,7 +468,7 @@ export default function SmallBusinessUnder5EmployeesLaborLaw2026Page() {
                     href="/guide/minimum-wage-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">최저임금 2026 완전정리</div>
+                    <div className="font-semibold text-primary-500">최저임금 2026 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">시급·월급 환산, 위반 시 사업주 책임과 신고 방법.</p>
                   </Link>
                 </div>

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-05';
 export const metadata: Metadata = {
   title: '공모주 청약 균등·비례배정 2026, 증거금·환불일 계산법',
   description:
-    '공모주 청약은 균등배정과 비례배정으로 나뉩니다. 최소 청약수량만 넣으면 균등 물량을 나눠 받고, 남은 물량은 청약 수량 비례로 배정됩니다. 증거금 50%, 환불일, 중복청약 금지까지 초보자용으로 정리했습니다.',
+    '공모주 청약은 최소 수량만 넣으면 균등배정으로 나눠 받고, 나머지는 넣은 만큼 비례배정됩니다. 증거금 50%와 환불일도 정리했습니다.',
   keywords: [
     '공모주 청약',
     '균등배정 비례배정',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '공모주 청약 균등·비례배정 2026, 증거금·환불일 계산법' }],
-    title: '공모주 청약 균등·비례배정 2026',
-    description: '균등배정과 비례배정 차이, 증거금 50%, 환불일(마감 후 영업일 +2일), 중복청약 금지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '공모주 청약 균등·비례배정 2026',
-    description: '균등·비례배정 구조와 증거금·환불·중복청약 규칙을 초보자용으로 정리.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function IpoSubscriptionAllocation2026Page() {
     { name: '공모주 청약 균등·비례배정' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '공모주 청약 균등·비례배정 2026, 증거금·환불일 계산법 완전 정리',
+    headline: '공모주 청약 균등·비례배정 2026, 증거금·환불일 계산법 정리',
     description:
       '공모주 청약의 균등배정과 비례배정 구조, 청약증거금 50%, 환불일(마감 후 영업일 +2일), 중복청약 금지 규칙과 배정 계산 사례를 초보자용으로 정리.',
     url: URL,

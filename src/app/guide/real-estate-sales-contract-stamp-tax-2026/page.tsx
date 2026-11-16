@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-07';
 export const metadata: Metadata = {
   title: '부동산 매매계약서 인지세 2026, 얼마·누가·언제 납부하나',
   description:
-    '부동산 매매계약서 인지세는 기재금액에 따라 2만~35만 원 정액이며, 계약서 작성월 다음 달 10일까지 전자수입인지로 납부합니다. 매수인·매도인 연대납세, 가산세 최대 300%, 취득세와의 차이까지 인지세법 §3·§8 기준으로 정리.',
+    '매매계약서 인지세는 기재금액별 2만~35만 원이며, 작성월 다음 달 10일까지 전자수입인지로 냅니다. 미납 시 가산세는 최대 300%입니다.',
   keywords: [
     '부동산 인지세',
     '매매계약서 인지세',
@@ -36,10 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부동산 매매계약서 인지세 2026, 얼마·누가·언제 완전 정리' }],
-    title: '부동산 매매계약서 인지세 2026, 얼마·누가·언제 완전 정리',
-    description:
-      '기재금액 2만~35만 원 정액, 다음 달 10일 납부, 전자수입인지 방식. 매수인·매도인 연대납세와 가산세까지 인지세법 §3·§8 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부동산 매매계약서 인지세 2026, 얼마·누가·언제 납부',
-    description: '매매가 1억~10억 15만 원, 10억 초과 35만 원. 계약 작성월 다음 달 10일까지 전자수입인지로 납부.',
   },
 };
 
@@ -151,7 +145,7 @@ export default function RealEstateSalesContractStampTax2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   부동산 매매계약서 인지세 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">얼마·누가·언제, 전자수입인지 완전 정리</span>
+                  <span className="text-2xl text-text-secondary">얼마·누가·언제, 전자수입인지 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   집을 사고팔면 취득세와 중개수수료만 챙기다 인지세를 잊는 경우가 많습니다. 매매계약서에 서명한 순간부터 인지세 납부 의무가 시작되며, 작성월 다음 달 10일까지 전자수입인지로 납부하지 않으면 미납세액의 최대 300%까지 가산세가 붙습니다. 이 가이드는 아파트·오피스텔·단독주택 매매 당사자를 위해 얼마·누가·언제·어떻게 내야 하는지, 취득세·중개수수료와 무엇이 다른지 인지세법 §3·§8 기준으로 정리합니다.

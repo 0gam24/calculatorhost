@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-08-19';
 export const metadata: Metadata = {
   title: '근로소득공제 2026, 총급여 구간별 계산과 2000만원 한도',
   description:
-    '근로소득공제는 총급여에서 자동으로 빼주는 개산공제로, 총급여 구간별로 70%에서 2%까지 차등 적용되고 최대 2,000만원 한도가 있습니다(소득세법 §47). 연봉 3천·5천·1억 사례로 근로소득금액 계산법을 정리했습니다.',
+    '근로소득공제는 총급여 구간별로 70%에서 2%까지 적용되며 2,000만원 한도가 있습니다. 연봉 3천·5천·1억 사례로 계산법을 정리했습니다.',
   keywords: [
     '근로소득공제',
     '근로소득공제 계산',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로소득공제 2026, 총급여 구간별 계산과 2000만원 한도' }],
-    title: '근로소득공제 2026, 총급여 구간별 계산과 근로소득금액',
-    description: '총급여에서 근로소득공제를 빼면 근로소득금액. 구간별 공제율(70~2%)과 2,000만원 한도, 연봉별 계산 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로소득공제 2026, 총급여 구간별 계산과 2000만원 한도',
-    description: '연봉에서 자동으로 빠지는 근로소득공제. 소득세법 §47 구간별 공제율과 계산법.',
   },
 };
 

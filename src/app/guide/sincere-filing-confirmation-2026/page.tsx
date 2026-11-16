@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '성실신고확인제 2026, 대상 기준수입금액과 세무사 확인',
   description:
-    '매출이 업종별 기준(도소매 15억, 제조 7.5억, 서비스 5억)을 넘는 개인사업자는 종합소득세를 세무사 확인 후 6월 말까지 신고해야 합니다. 대상 판정과 세액공제, 미제출 가산세를 소득세법 §70의2 기준으로 정리했습니다.',
+    '수입금액이 도소매 15억, 제조 7.5억, 서비스 5억을 넘는 개인사업자는 세무사 확인을 받아 6월 말까지 종합소득세를 신고합니다.',
   keywords: [
     '성실신고확인제',
     '성실신고확인 대상',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '성실신고확인제 2026, 대상 기준수입금액과 세무사 확인',
-      },
-    ],
-    title: '성실신고확인제 2026, 내 매출이면 대상일까',
-    description:
-      '업종별 기준수입금액을 넘으면 세무사 확인 후 6월 말까지 신고. 대상 판정과 세액공제, 가산세 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '성실신고확인제 2026, 대상 기준수입금액과 세무사 확인',
-    description: '도소매 15억, 제조 7.5억, 서비스 5억 이상이면 대상. 소득세법 §70의2.',
   },
 };
 

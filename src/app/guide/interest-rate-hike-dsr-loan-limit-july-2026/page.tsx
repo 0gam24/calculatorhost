@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-10-14';
 export const metadata: Metadata = {
   title: '기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026',
   description:
-    '2026년 6월 현재 기준금리는 2.50%(8연속 동결)입니다. 만약 금리가 오르면 DSR·스트레스금리를 통해 주담대·전세대출 한도가 어떻게 변하는지 구조와 가정 사례로 설명합니다. 7월 16일 금통위 앞 점검.',
+    '기준금리가 오르면 월 상환액이 늘어 DSR이 악화되고 신규 대출 한도가 줄어듭니다. 주담대·전세대출에 미치는 영향을 가정 사례로 설명합니다.',
   keywords: [
     '기준금리 대출한도',
     '기준금리 2026',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026' }],
-    title: '기준금리 오르면 대출한도 줄어들까? DSR·스트레스금리 영향 2026',
-    description: '현재 기준금리 2.50% 동결. 금리 변동 시 DSR·스트레스금리로 주담대·전세대출 한도가 어떻게 달라지는지 구조와 가정 사례로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기준금리와 대출한도, 금리 오르면 한도는?',
-    description: '현재 2.50% 동결. DSR·스트레스금리로 본 금리 변동 시 한도 영향(가정 사례).',
   },
 };
 

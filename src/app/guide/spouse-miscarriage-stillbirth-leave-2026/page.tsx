@@ -21,9 +21,9 @@ const DATE_PUBLISHED = '2026-08-15';
 const DATE_MODIFIED = '2026-08-15';
 
 export const metadata: Metadata = {
-  title: '배우자 유산·사산 휴가 2026, 5일·유급·신청 총정리 | calculatorhost',
+  title: '배우자 유산·사산 휴가 2026, 5일 중 3일 유급·신청 방법',
   description:
-    '배우자 유산·사산 휴가는 2026년 9월 18일부터 5일 범위(최초 3일 유급)로 신설됩니다. 유산·사산일부터 20일 이내 청구, 우선지원대상기업 1일 상한 84,210원. 배우자 출산휴가는 출산 예정일 50일 전부터 사용 확대.',
+    '2026년 9월 18일 신설된 배우자 유산·사산 휴가는 5일이며, 최초 3일은 유급입니다. 청구 기한 20일과 출산휴가 확대도 정리했습니다.',
   keywords: [
     '배우자 유산 사산 휴가',
     '배우자 유산휴가',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '배우자 유산·사산 휴가 2026 신설, 5일·유급·신청 총정리' }],
-    title: '배우자 유산·사산 휴가 2026, 5일·유급·신청 총정리',
-    description:
-      '2026년 9월 18일 시행 개정으로 배우자 유산·사산 휴가 5일(최초 3일 유급)이 신설되고, 배우자 출산휴가는 출산 예정일 50일 전부터 쓸 수 있게 확대됩니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '배우자 유산·사산 휴가 2026 신설, 5일·유급·신청 총정리',
-    description:
-      '2026년 9월 18일 시행. 5일 범위(최초 3일 유급), 유산·사산일부터 20일 이내 청구, 우선지원대상기업 정부 지원 1일 상한 84,210원.',
   },
 };
 
@@ -103,9 +96,9 @@ export default function SpouseMiscarriageStillbirthLeave2026Page() {
     { name: '배우자 유산·사산 휴가 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '배우자 유산·사산 휴가 2026, 5일·유급·신청 총정리',
+    headline: '배우자 유산·사산 휴가 2026, 5일·유급·신청 정리',
     description:
-      '2026년 9월 18일 시행 남녀고용평등법 개정으로 신설된 배우자 유산·사산 휴가(5일 범위, 최초 3일 유급, 20일 이내 청구)와 확대된 배우자 출산휴가(출산 예정일 50일 전 사용) 완전 정리.',
+      '2026년 9월 18일 시행 남녀고용평등법 개정으로 신설된 배우자 유산·사산 휴가(5일 범위, 최초 3일 유급, 20일 이내 청구)와 확대된 배우자 출산휴가(출산 예정일 50일 전 사용) 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -412,7 +405,7 @@ export default function SpouseMiscarriageStillbirthLeave2026Page() {
                     href="/guide/spouse-childbirth-leave-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">배우자 출산휴가 20일 완전 정리</div>
+                    <div className="font-semibold text-primary-500">배우자 출산휴가 20일 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">유급 20일 · 근무일 기준 · 최대 3회 분할 사용 방법.</p>
                   </Link>
                   <Link

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-27';
 export const metadata: Metadata = {
   title: '중고차 자동차세 일할계산 2026, 매도·매수 정산 누가 얼마',
   description:
-    '중고차 매매 시 자동차세를 소유 일수만큼 나눠 내는 "일할계산" 가이드. 매도인·매수인 정산 규칙(지방세법 §128) + 실제 계산 사례 3가지 + 위택스 정산 방법.',
+    '중고차를 사고팔면 그해 자동차세는 매도인과 매수인이 소유 일수만큼 나눠 냅니다. 지방세법 §128 기준 계산 사례 3가지를 담았습니다.',
   keywords: [
     '중고차 자동차세',
     '자동차세 일할계산',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '중고차 자동차세 일할계산 2026, 매도·매수 정산 누가 얼마',
-      },
-    ],
-    title: '중고차 자동차세 일할계산 2026',
-    description: '소유권 이전일 기준 매도인·매수인이 일수만큼 부담. 정산 공식 + 3가지 실제 계산 사례.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '중고차 자동차세 일할계산 2026',
-    description: '매도인·매수인 정산 규칙 + 계산 공식 + 위택스 처리',
   },
 };
 
@@ -368,7 +356,7 @@ export default function UsedCarVehicleTaxDailyProrateionPage() {
                 <div className="mt-4 rounded-lg border border-border-base bg-bg-raised p-4 text-sm">
                   <p className="font-semibold text-text-primary mb-2">위택스 상담·확인</p>
                   <p className="text-text-secondary">
-                    위택스 고객지원: 1544-0111 (평일 9~18시) · 시·군청 자동차세과 직접 방문 또는 전화 가능. 거래 전 "미납 세금 확인" 조회도 이곳에서
+                    위택스(wetax.go.kr) 또는 관할 시·군·구청 자동차세 담당 부서에 방문하거나 전화로 문의할 수 있습니다. 거래 전 "미납 세금 확인" 조회도 이곳에서
                     가능합니다.
                   </p>
                 </div>

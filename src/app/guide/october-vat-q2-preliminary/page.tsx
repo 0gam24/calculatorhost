@@ -15,6 +15,7 @@ import {
   buildSpeakableJsonLd,
   buildHowToJsonLd,
 } from '@/lib/seo/jsonld';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/guide/october-vat-q2-preliminary/';
 const DATE_PUBLISHED = '2026-05-12';
@@ -23,7 +24,7 @@ const DATE_MODIFIED = '2026-05-12';
 export const metadata: Metadata = {
   title: '10월 부가세 2기 예정신고 가이드 2026 | 환급·예정고지·연말 절세',
   description:
-    '2026년 10월 1~25일 부가가치세 2기 예정신고(7~9월 매출분) 완벽 가이드. 예정신고 vs 예정고지 차이·환급 가능성 점검·연말 절세 4가지·4분기 매입 계획·법인 vs 개인 차이.',
+    '부가가치세 2기 예정신고는 10월 1~25일, 7~9월 매출분이 대상입니다. 예정고지와의 차이와 환급 점검, 연말 절세를 정리했습니다.',
   keywords: [
     '부가세 2기 예정신고',
     '10월 부가세',
@@ -38,9 +39,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '10월 부가세 2기 예정신고 가이드 2026 | 환급·예정고지·연말 절세' }],
-    title: '10월 부가세 2기 예정신고 가이드 2026',
-    description: '예정신고 vs 예정고지·환급 가능성·연말 절세 4가지·4분기 매입 계획.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +47,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '10월 부가세 2기 예정신고 가이드 2026',
-    description: '하반기 부가세 절세 시작점. 예정신고·환급·연말 매입 계획.',
   },
 };
 
@@ -86,7 +82,7 @@ export default function OctoberVatGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '10월 부가세 2기 예정신고 2026' },
+    { name: '10월 부가세 2기 예정신고' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '10월 부가세 2기 예정신고 가이드 2026',
@@ -110,7 +106,7 @@ export default function OctoberVatGuide() {
   });
   const faqLd = buildFaqPageJsonLd([...FAQ_ITEMS]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
-  const howtoLd = buildHowToJsonLd({
+  const howToData = {
     name: '홈택스에서 부가세 2기 예정신고하기',
     description: '10월 부가세 2기 예정신고 5단계',
     steps: [
@@ -135,7 +131,8 @@ export default function OctoberVatGuide() {
         text: '"전자신고" → 신고증명서 PDF 보관. 납부는 신용카드·계좌이체·가상계좌로 10월 25일까지. 환급은 본인 통장 입력.',
       },
     ],
-  });
+  };
+  const howtoLd = buildHowToJsonLd(howToData);
 
   return (
     <>
@@ -223,6 +220,7 @@ export default function OctoberVatGuide() {
               </section>
 
               {/* 3. FAQ (중간 배치, GEO) */}
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <FaqSection items={[...FAQ_ITEMS]} />
 
               {/* 4. 환급 가능성 점검 */}

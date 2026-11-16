@@ -26,7 +26,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '2026 세제개편안 핵심 정리, 뭐가 바뀌나 (직장인·자산)',
   description:
-    '정부가 2026년 8월 3일 발표한 2026년 세제개편안의 방향을 직장인, 자산가, 자영업자, 자동차 구매자로 나눠 정리했습니다. 근로장려금과 월세 세액공제 확대, 하이브리드 감면 종료 등 큰 흐름과 국회 입법 일정, 시행 시기를 담았습니다.',
+    '2026년 8월 3일 발표된 세제개편안을 직장인·자산가·자영업자별로 정리했습니다. 근로장려금·월세 세액공제 확대와 시행 시기를 담았습니다.',
   keywords: [
     '2026 세제개편안',
     '세법개정안 2026',
@@ -38,12 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      { url: '/og-default.png', width: 1200, height: 630, alt: '2026 세제개편안 핵심 정리' },
-    ],
-    title: '2026 세제개편안 핵심 정리, 뭐가 바뀌나',
-    description:
-      '2026-08-03 발표. 근로장려금·월세 세액공제 확대, 하이브리드 감면 종료 등 큰 흐름과 국회 일정 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '2026 세제개편안 핵심 정리, 뭐가 바뀌나',
-    description: '직장인·자산가·자영업자별로 나눈 2026 세제개편안 방향과 국회 입법 일정.',
   },
 };
 

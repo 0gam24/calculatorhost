@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-10-25';
 export const metadata: Metadata = {
   title: '퇴직금 지급기한 14일 2026, 안 주면 지연이자·신고방법',
   description:
-    '퇴직금은 퇴직일부터 14일 이내에 지급해야 합니다. 기한을 넘기면 연 20% 지연이자가 붙고, 미지급 시 사업주는 형사처벌 대상입니다. 지급기한, 지연이자, 노동청 신고 절차를 근로자퇴직급여보장법 §9 기준으로 정리했습니다.',
+    '퇴직금은 퇴직일부터 14일 이내에 지급해야 하며, 늦으면 연 20% 지연이자가 붙습니다. 노동청 신고 절차와 사업주 처벌도 정리했습니다.',
   keywords: [
     '퇴직금 지급기한',
     '퇴직금 14일',
@@ -34,10 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직금 지급기한 14일 2026' }],
-    title: '퇴직금 지급기한 14일 2026, 안 주면 지연이자·신고',
-    description:
-      '퇴직금은 퇴직일부터 14일 이내 지급. 넘기면 연 20% 지연이자, 미지급 시 형사처벌. 근로자퇴직급여보장법 §9.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '퇴직금 지급기한 14일 2026',
-    description: '퇴직일부터 14일 이내 지급, 지연 시 연 20% 이자. 안 주면 노동청 신고. 근퇴법 §9.',
   },
 };
 
@@ -103,7 +97,7 @@ export default function SeverancePayDeadline14Days2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '퇴직금 지급기한 14일 2026, 안 주면 지연이자·신고방법',
     description:
-      '퇴직금은 퇴직일부터 14일 이내 지급. 넘기면 연 20% 지연이자, 미지급 시 형사처벌. 노동청 신고 절차와 소멸시효까지 완전 정리.',
+      '퇴직금은 퇴직일부터 14일 이내 지급. 넘기면 연 20% 지연이자, 미지급 시 형사처벌. 노동청 신고 절차와 소멸시효까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

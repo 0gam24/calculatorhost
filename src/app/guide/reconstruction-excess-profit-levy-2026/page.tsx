@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-11';
 export const metadata: Metadata = {
   title: '재건축부담금 2026 | 면제 8천만원·부과율 구간·계산법',
   description:
-    '재건축초과이익환수제(재건축부담금)는 조합원 1인당 평균이익 8천만원 초과분에 10~50% 누진 부과율을 적용합니다. 면제 기준, 구간별 부과율, 1인당 부담금 계산 사례를 재건축초과이익 환수법 §12로 정리했습니다.',
+    '재건축부담금은 조합원 1인당 평균이익 8천만원 초과분에 10~50% 누진 부과율을 적용합니다. 면제 기준과 계산 사례를 정리했습니다.',
   keywords: [
     '재건축부담금',
     '재건축초과이익환수제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재건축부담금 2026 면제 기준과 부과율 구간 계산법' }],
-    title: '재건축부담금 2026 | 면제 8천만원·부과율 구간·계산법',
-    description: '조합원 1인당 평균이익 8천만원 초과분에 10~50% 누진 부과. 구간별 부과율과 계산 사례 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재건축부담금 2026 면제 기준·부과율',
-    description: '1인당 평균이익 8천만원 이하 면제, 초과분에 10~50% 누진. 재건축초과이익 환수법 §12.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function ReconstructionExcessProfitLevy2026Page() {
     { name: '재건축부담금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재건축부담금 2026, 면제 기준·부과율 구간·계산법 총정리',
+    headline: '재건축부담금 2026, 면제 기준·부과율 구간·계산법 정리',
     description:
       '재건축초과이익환수제 재건축부담금 계산법. 1인당 평균이익 8천만원 면제 기준, 10~50% 누진 부과율 구간, 1인당 부담금 계산 사례를 재건축초과이익 환수법 §12로 정리.',
     url: URL,

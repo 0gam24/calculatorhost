@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-14';
 export const metadata: Metadata = {
   title: '상생임대인 2026 | 5% 이내 인상으로 양도세 거주요건 면제',
   description:
-    '임대료를 직전 대비 5% 이내로 인상한 1주택 임대인에게 양도세 비과세 2년 거주요건을 면제하는 상생임대인 특례. 소득세법 시행령 §155의3, 2026-12-31 일몰기한, 요건 4가지 정리.',
+    '상생임대인 특례는 임대료를 5% 이내로 올린 1주택 임대인의 양도세 비과세 2년 거주요건을 면제합니다. 요건 4가지를 정리했습니다.',
   keywords: [
     '상생임대인',
     '상생임대주택 특례',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상생임대인 2026, 5% 이내 인상으로 양도세 거주요건 면제' }],
-    title: '상생임대인 2026, 5% 이내 인상으로 양도세 거주요건 면제',
-    description: '직전 대비 임대료 5% 이내 인상 시 1세대1주택 양도세 2년 거주요건이 면제됩니다. 요건 4가지, 계산 사례, 2026-12-31 일몰기한 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상생임대인 2026, 5% 이내 인상으로 양도세 2년 거주요건 면제',
-    description: '소득세법 시행령 §155의3 상생임대주택 특례. 요건 4가지와 5% 상한 계산 사례, 일몰기한 2026-12-31.',
   },
 };
 

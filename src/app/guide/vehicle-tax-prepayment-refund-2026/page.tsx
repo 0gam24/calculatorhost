@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-24';
 const DATE_MODIFIED = '2026-06-24';
 
 export const metadata: Metadata = {
-  title: '자동차세 연납 환급 2026 | 중고차 매각·폐차 시 일할 환급 방법 | calculatorhost',
+  title: '자동차세 연납 환급 2026 | 중고차 매각·폐차 시 일할계산 방법',
   description:
-    '1월 연납했는데 연중에 중고차를 팔거나 폐차했다면 일할계산 환급 대상. 자동차세 연납 환급의 절차, 계산, 대상 조건을 지방세법 §128에 기반해 설명합니다.',
+    '자동차세를 연납한 뒤 차를 팔거나 폐차하면 남은 기간만큼 일할계산해 돌려받습니다. 환급 절차와 사례를 지방세법 §128 기준으로 설명합니다.',
   keywords: [
     '자동차세 환급',
     '자동차세 연납 환급',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 연납 환급 2026 | 중고차 매각·폐차 환급' }],
-    title: '자동차세 연납 환급 2026, 연중 매각·폐차 시 환급받기',
-    description: '1월에 연납한 자동차세, 연중 매각·폐차·이전 시 소유하지 않은 기간 환급받는 방법.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 연납 환급 2026, 연중 매각·폐차 시 환급받기',
-    description: '1월 연납한 자동차세, 연중 매각·폐차·이전 시 소유하지 않은 기간만큼 일할계산으로 환급받는 방법. 지방세법 §127·§128 기준.',
   },
 };
 
@@ -366,14 +361,14 @@ export default function VehicleTaxPrepaymentRefund2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">자동차세 계산법 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">배기량별 세율, 차령경감, 전기차 정액세 완벽 가이드.</p>
+                    <p className="mt-1 text-sm text-text-secondary">배기량별 세율, 차령경감, 전기차 정액세 가이드.</p>
                   </Link>
                   <Link
                     href="/guide/vehicle-tax-june-payment-annual-discount-2026"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">6월 자동차세 · 연납할인 2026</div>
-                    <p className="mt-1 text-sm text-text-secondary">6월 납부 시즌과 1월 연납할인 5% 완전 정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">6월 납부 시즌과 1월 연납할인 5% 정리.</p>
                   </Link>
                   <Link
                     href="/guide/electric-vehicle-tax-2026"

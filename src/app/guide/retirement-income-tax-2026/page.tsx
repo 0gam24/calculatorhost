@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-15';
 const DATE_MODIFIED = '2026-06-15';
 
 export const metadata: Metadata = {
-  title: '퇴직소득세 계산 2026 | 연분연승법·근속연수공제 | calculatorhost',
+  title: '퇴직소득세 계산 2026 | 연분연승법·근속연수공제',
   description:
-    '2026년 퇴직소득세는 연분연승법으로 계산해 근속연수가 길수록 부담이 줄어듭니다. 근속연수공제, 환산급여공제, 기본세율 적용과 실제 시뮬레이션까지 소득세법 기준으로 정리했습니다.',
+    '2026년 퇴직소득세는 연분연승법으로 계산해 오래 일할수록 부담이 줄어듭니다. 근속연수공제와 환산급여공제 적용 순서를 사례로 정리했습니다.',
   keywords: [
     '퇴직소득세 계산',
     '퇴직금 세금',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '퇴직소득세 2026 계산법' }],
-    title: '퇴직소득세 계산 2026 | 연분연승법·근속연수공제',
-    description: '근속연수가 길수록 세 부담이 줄어드는 연분연승법 완전 해석',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -436,7 +433,7 @@ export default function RetirementIncomeTaxPage() {
                     • <a href="https://www.law.go.kr/법령/소득세법/제55조" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">소득세법 제55조</a> (기본세율)
                   </li>
                   <li>
-                    • <a href="https://www.nts.go.kr/citizen/benefits/benefit00201" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">국세청 퇴직소득세 가이드</a>
+                    • <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer" className="text-primary-500 hover:underline">국세청 퇴직소득세 가이드</a>
                   </li>
                 </ul>
               </section>

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-04';
 export const metadata: Metadata = {
   title: '1세대1주택 양도세 거주요건 2026, 조정지역 2년·상생임대인 면제',
   description:
-    '내 집 팔 때 2년 거주를 꼭 채워야 비과세인지 헷갈린다면, 취득 당시 조정대상지역 여부가 갈림길입니다. 강남3구·용산 취득만 2년 거주가 필요하고, 상생임대인·부득이한 사유는 거주 없이도 비과세를 받습니다. 소득세법 시행령 §154 기준으로 정리했습니다.',
+    '1주택 양도세 비과세에 2년 거주가 필요한지는 취득 당시 조정대상지역 여부로 갈립니다. 상생임대인 면제도 정리했습니다.',
   keywords: [
     '1세대1주택 거주요건',
     '2년 거주 비과세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '1세대1주택 양도세 거주요건 2026' }],
-    title: '1세대1주택 거주요건 2026, 조정지역 2년 거주와 상생임대인 면제',
-    description: '취득 당시 조정대상지역 주택만 2년 거주요건. 상생임대인·부득이한 사유 예외까지 소득세법 시행령 §154 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '1세대1주택 거주요건 2026, 조정지역 2년·상생임대인 면제',
-    description: '취득 당시 조정지역이면 2년 보유 + 2년 거주. 그 외 지역은 거주 없이 2년 보유만. 소득세법 시행령 §154.',
   },
 };
 

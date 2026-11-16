@@ -1,4 +1,4 @@
-// [revenue-lever: indexing+traffic] 자동차 구입 시 세금 4종 총정리(개소세·교육세·부가세·취득세) (자동차 구매자 롱테일 흡수)
+// [revenue-lever: indexing+traffic] 자동차 구입 시 세금 4종 정리(개소세·교육세·부가세·취득세) (자동차 구매자 롱테일 흡수)
 import type { Metadata } from 'next';
 import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-25';
 export const metadata: Metadata = {
   title: '자동차 살 때 세금 2026, 개소세·교육세·부가세·취득세',
   description:
-    '새 차를 사면 개별소비세 5%, 교육세, 부가가치세 10%, 취득세 7%가 순서대로 붙습니다. 공급가액 3천만원 차량 기준 세금 총액과 계산 순서, 전기차·경차 감면까지 정리합니다(개별소비세법 §1, 지방세법 §12).',
+    '새 차를 사면 개별소비세 5%, 교육세, 부가가치세 10%, 취득세 7%가 순서대로 붙습니다. 공급가액 3천만원 차량 사례로 계산했습니다.',
   keywords: [
     '자동차 구입 세금',
     '자동차 개별소비세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차 살 때 세금 2026, 개소세·교육세·부가세·취득세' }],
-    title: '자동차 살 때 붙는 세금 4종 총정리 2026',
-    description: '개별소비세 5%, 교육세 30%, 부가세 10%, 취득세 7%가 어떤 순서로 매겨지는지 계산 사례로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차 살 때 세금 2026, 개소세·교육세·부가세·취득세',
-    description: '공급가액 3천만원 차량 기준 세금 총액과 계산 순서, 전기차·경차 감면까지.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function CarPurchaseTaxesBreakdownPage() {
     { name: '자동차 살 때 세금 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '자동차 살 때 붙는 세금 4종 총정리 2026',
+    headline: '자동차 살 때 붙는 세금 4종 정리 2026',
     description:
       '개별소비세 5%, 교육세 30%, 부가가치세 10%, 취득세 7%가 어떤 순서로 매겨지는지 공급가액 3천만원 차량 기준 계산 사례로 정리하고 전기차·경차 감면까지 설명.',
     url: URL,

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-30';
 export const metadata: Metadata = {
   title: '재산세 세부담상한제 2026 | 공시가 폭등 시 인상폭 제한',
   description:
-    '공시가격 급등 시 재산세 인상폭을 제한하는 세부담상한제. 주택별 상한율(105~130%) 및 전년 대비 실제 부과액 계산법. 지방세법 §122 기준.',
+    '공시가격이 급등해도 재산세 인상폭을 제한하는 세부담상한제의 상한율(105~130%)과 계산법을 정리했습니다.',
   keywords: [
     '재산세 세부담상한제',
     '재산세 상한율',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 세부담상한제 2026 | 공시가 폭등 시 인상폭 제한' }],
-    title: '재산세 세부담상한제 2026, 공시가 급등 때 세금 인상폭 제한 메커니즘',
-    description: '공시가격이 50% 올라도 재산세는 전년의 105~130% 이내만 부과. 세부담상한제의 정확한 계산법과 적용 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 세부담상한제 2026, 공시가 급등 시 세금 인상폭 제한',
-    description: '공시가가 올라 산출세액이 급증해도 실제 부과액은 전년도의 105~130% 이내. 지방세법 §122.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function PropertyTaxBurdenCap2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '재산세 세부담상한제 2026, 공시가 폭등 시 세금 인상폭 제한 메커니즘',
     description:
-      '공시가격 급등으로 인한 재산세 폭증을 방지하는 세부담상한제. 주택 공시가격별 상한율(105~130%), 전년 대비 실제 부과액 계산법, 예외 케이스까지 완전 정리.',
+      '공시가격 급등으로 인한 재산세 폭증을 방지하는 세부담상한제. 주택 공시가격별 상한율(105~130%), 전년 대비 실제 부과액 계산법, 예외 케이스까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-07';
 export const metadata: Metadata = {
   title: '주택담보대출 이자 소득공제 2026 | 최대 2,000만원 절세',
   description:
-    '장기주택저당차입금 이자상환액 소득공제. 무주택/1주택 기준시가 6억 이하, 보유 기간·금리·상환방식별 한도(800~2,000만원). 소득세법 §52 기준.',
+    '장기주택저당차입금 이자상환액은 무주택·1주택 세대주라면 연 800만~2,000만원까지 소득공제받을 수 있습니다. 소득세법 §52 기준입니다.',
   keywords: [
     '주택담보대출 이자 소득공제',
     '장기주택저당차입금',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택담보대출 이자 소득공제 2026' }],
-    title: '주택담보대출 이자 소득공제 2026, 연 2,000만원까지 소득에서 차감',
-    description: '무주택 또는 1주택 세대주의 주택담보대출 이자를 최대 연 2,000만원까지 소득공제. 조건·한도·계산법 완벽 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택담보대출 이자 소득공제 2026, 최대 2,000만원 절세 가능',
-    description: '기준시가 6억 이하 주택, 무주택/1주택 세대주라면 연 800~2,000만원 공제. 소득세법 §52.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function MortgageInterestDeduction2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '주택담보대출 이자 소득공제 2026, 연 2,000만원까지 소득에서 차감',
     description:
-      '무주택 또는 1주택 세대주를 위한 장기주택저당차입금 이자상환액 소득공제. 조건·기준시가·차입 조건별 한도(800~2,000만원)와 계산법 완벽 정리.',
+      '무주택 또는 1주택 세대주를 위한 장기주택저당차입금 이자상환액 소득공제. 조건·기준시가·차입 조건별 한도(800~2,000만원)와 계산법 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -437,7 +432,7 @@ export default function MortgageInterestDeduction2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">직장인 필수 공제·감면 체크리스트</p>
                   </Link>
                   <Link

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-13';
 export const metadata: Metadata = {
   title: '상속포기 신고 방법·기한 2026, 빚 상속 안 받는 법',
   description:
-    '부모님 빚이 재산보다 많을 때 상속포기로 채무를 넘겨받지 않을 수 있습니다. 사망을 안 날부터 3개월 이내 가정법원 신고, 후순위 상속인까지 포기해야 하는 이유, 한정승인과의 차이를 민법 §1019·§1041 기준으로 정리했습니다.',
+    '부모님 빚이 재산보다 많으면 상속포기로 채무를 넘겨받지 않을 수 있습니다. 사망을 안 날부터 3개월 이내 가정법원 신고 절차를 정리했습니다.',
   keywords: [
     '상속포기',
     '상속포기 방법',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속포기 신고 방법·기한 2026, 빚 상속 안 받는 법' }],
-    title: '상속포기 신고 방법·기한 2026, 빚 상속을 피하는 정확한 절차',
-    description: '사망을 안 날부터 3개월 이내 가정법원 신고. 후순위 상속인까지 포기해야 하는 이유와 한정승인 비교.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속포기 신고 방법·기한 2026, 빚 상속 피하는 절차',
-    description: '사망 안 날부터 3개월 이내 가정법원 신고. 후순위 상속인·한정승인 비교. 민법 §1019.',
   },
 };
 
@@ -383,7 +378,7 @@ export default function InheritanceRenunciation2026Page() {
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터</a>,{' '}
                   <a href="https://www.easylaw.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">찾기쉬운 생활법령정보</a>,{' '}
-                  <a href="https://help.scourt.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">대한민국 법원 전자민원센터</a>.
+                  <a href="https://www.scourt.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">대한민국 법원</a>.
                 </p>
               </section>
 

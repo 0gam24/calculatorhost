@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-03';
 export const metadata: Metadata = {
   title: '자녀세액공제 2026 | 8세 이상 1명 25만원·다자녀·출산공제',
   description:
-    '소득세 감면 자녀세액공제(자녀·손자녀). 1명 연 25만원, 2명 55만원, 3명 이상 95만원+. 2024년 개정 현행값 및 적용 기준 완전 정리. 소득세법 §59의2',
+    '자녀세액공제는 8세 이상 자녀·손자녀 1명 연 25만원, 2명 55만원, 3명 95만원입니다. 출산·입양 추가공제도 정리했습니다.',
   keywords: [
     '자녀세액공제',
     '자녀 세액공제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자녀세액공제 2026 가이드' }],
-    title: '자녀세액공제 2026, 8세 이상 자녀·손자녀 최대 연 115만원 세감 메커니즘',
-    description: '2024년 개정으로 확대된 자녀세액공제. 1명 25만원부터 3명 이상 95만원까지, 출산·입양 추가 공제.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자녀세액공제 2026, 자녀 1명 연 25만원, 다자녀·출산 추가 혜택',
-    description: '소득세법 §59의2 자녀세액공제의 정확한 공제액·적용 기준·계산 사례.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function ChildTaxCredit2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '자녀세액공제 2026, 8세 이상 자녀·손자녀 최대 연 115만원 세감 메커니즘',
     description:
-      '2024년 개정 자녀세액공제 완전 정리. 공제액(1명 25만·2명 55만·3명 95만), 출산입양 추가공제, 8세 기준, 맞벌이 적용, 손자녀 포함 여부까지.',
+      '2024년 개정 자녀세액공제 정리. 공제액(1명 25만·2명 55만·3명 95만), 출산입양 추가공제, 8세 기준, 맞벌이 적용, 손자녀 포함 여부까지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -449,7 +444,7 @@ export default function ChildTaxCredit2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">자녀세액공제를 포함한 연말정산 전체 프로세스.</p>
                   </Link>
                   <Link

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '엔젤투자 소득공제 2026, 적격 투자 3천만원까지 100% 공제',
   description:
-    '벤처기업·개인투자조합에 투자하면 종합소득금액에서 공제받는 엔젤투자 소득공제. 제1항 제3·4·6호의 적격 투자에 한해 3천만원 이하 100%, 5천만원 이하 70%, 초과분 30% 공제율과 종합소득금액 50% 한도, 3년 유지 요건까지 조세특례제한법 §16 기준으로 정리합니다.',
+    '적격 엔젤투자는 3천만원 이하분 100%를 소득공제받고, 종합소득금액 50% 한도와 3년 유지 요건이 붙습니다.',
   keywords: [
     '엔젤투자 소득공제',
     '벤처투자조합 소득공제',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '엔젤투자 소득공제 2026, 적격 투자 3천만원까지 100% 공제',
-      },
-    ],
-    title: '엔젤투자 소득공제 2026, 공제율과 한도 총정리',
-    description:
-      '적격 투자 구간별 100%·70%·30%, 그 외 대상 유형은 10%. 종합소득금액 50% 한도와 3년 유지 요건을 조세특례제한법 §16 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,9 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '엔젤투자 소득공제 2026, 공제율·한도 정리',
-    description:
-      '적격 투자 구간별 100%·70%·30%와 그 외 대상 유형의 10% 공제를 구분합니다. 종합소득금액 50% 한도. 조특법 §16.',
   },
 };
 
@@ -110,7 +96,7 @@ export default function AngelInvestmentIncomeDeductionPage() {
     { name: '엔젤투자 소득공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '엔젤투자 소득공제 2026, 공제율과 한도 총정리',
+    headline: '엔젤투자 소득공제 2026, 공제율과 한도 정리',
     description:
       '벤처기업·개인투자조합 투자에 대한 엔젤투자 소득공제. 적격 투자 구간별 100%·70%·30%와 그 외 대상 유형의 10% 공제율과 종합소득금액 50% 한도, 3년 유지 요건을 조세특례제한법 §16 기준으로 정리.',
     url: URL,

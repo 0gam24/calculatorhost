@@ -91,6 +91,7 @@ export function buildWebSiteJsonLd(): JsonLd {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
+    '@id': `${SITE_URL}/#website`,
     name: SITE_NAME,
     url: SITE_URL,
     inLanguage: 'ko-KR',
@@ -179,7 +180,9 @@ export function buildBreadcrumbJsonLd(items: BreadcrumbItem[]): JsonLd {
     itemListElement: items.map((item, idx) => ({
       '@type': 'ListItem',
       position: idx + 1,
-      name: item.name,
+      // 네이버 구조화 데이터 가이드(08-05): "홈" 같은 일반 단어 대신 페이지를 설명하는 이름.
+      // 화면의 빵부스러기는 "홈" 그대로 두고, 마크업의 사이트 루트만 사이트 이름으로 쓴다.
+      name: item.url === `${SITE_URL}/` ? SITE_NAME : item.name,
       ...(item.url ? { item: item.url } : {}),
     })),
   };
@@ -248,8 +251,14 @@ export function buildWebPageJsonLd(opts: WebPageOptions): JsonLd {
     datePublished: opts.datePublished,
     dateModified: resolvedDateModified,
     ...(opts.image ? { image: opts.image } : {}),
+    // 사이트(#website)면 WebSite, 카테고리 허브 같은 페이지면 CollectionPage
     ...(opts.isPartOf
-      ? { isPartOf: { '@type': 'WebSite', '@id': opts.isPartOf } }
+      ? {
+          isPartOf: {
+            '@type': /#(web)?site$/.test(opts.isPartOf) ? 'WebSite' : 'CollectionPage',
+            '@id': opts.isPartOf,
+          },
+        }
       : {}),
     author: {
       '@type': 'Person',
@@ -293,6 +302,8 @@ export interface ItemListEntry {
   name: string;
   url: string;
   description?: string;
+  /** 항목 대표 이미지 절대 URL. 네이버 캐러셀(ListItem, 08-07) 필수 속성. 로고·기본 이미지 금지 */
+  image?: string;
 }
 
 export function buildItemListJsonLd(items: ItemListEntry[], listName?: string): JsonLd {
@@ -306,6 +317,7 @@ export function buildItemListJsonLd(items: ItemListEntry[], listName?: string): 
       name: item.name,
       ...(item.description ? { description: item.description } : {}),
       url: item.url,
+      ...(item.image ? { image: item.image } : {}),
     })),
   };
 }
@@ -337,7 +349,7 @@ export function buildDefinedTermJsonLd(entry: DefinedTermEntry): JsonLd {
     '@type': 'DefinedTerm',
     name: entry.name,
     description: entry.description,
-    inLanguage: 'ko-KR',
+    // inLanguage 는 CreativeWork 속성이라 DefinedTerm(Intangible)에는 넣지 않는다 (schema.org)
     ...(entry.alternateName ? { alternateName: entry.alternateName } : {}),
     ...(entry.url ? { url: entry.url } : {}),
     ...(entry.inDefinedTermSet ? { inDefinedTermSet: entry.inDefinedTermSet } : {}),
@@ -431,7 +443,6 @@ export function buildDefinedTermSetJsonLd(opts: DefinedTermSetOptions): JsonLd {
       '@type': 'DefinedTerm',
       name: t.name,
       description: t.description,
-      inLanguage: 'ko-KR',
       ...(t.alternateName ? { alternateName: t.alternateName } : {}),
       ...(t.url ? { url: t.url } : {}),
     })),
@@ -449,18 +460,20 @@ export function getCategoryUrlForCalculator(slug: string): string {
     // 세금
     'salary': 'work',
     'severance': 'work',
-    'retirement': 'work',
+    'retirement': 'finance',
     'income': 'work',
-    'freelancer-tax': 'work',
+    'freelancer-tax': 'tax',
     'n-jobber-insurance': 'work',
     'child-tax-credit': 'work',
+    'weekly-holiday-allowance': 'work',
+    'annual-leave': 'work',
     'vat': 'tax',
     'acquisition-tax': 'tax',
     'capital-gains-tax': 'tax',
     'gift-tax': 'tax',
     'inheritance-tax': 'tax',
     'comprehensive-property-tax': 'tax',
-    'property-tax': 'real-estate',
+    'property-tax': 'tax',
     'vehicle-tax': 'tax',
     // 부동산
     'broker-fee': 'real-estate',
@@ -470,6 +483,7 @@ export function getCategoryUrlForCalculator(slug: string): string {
     // 금융
     'loan': 'finance',
     'loan-limit': 'finance',
+    'dti': 'finance',
     'deposit': 'finance',
     'savings': 'finance',
     'exchange': 'finance',
@@ -480,7 +494,7 @@ export function getCategoryUrlForCalculator(slug: string): string {
     // 라이프
     'bmi': 'lifestyle',
     'd-day': 'lifestyle',
-    'area': 'lifestyle',
+    'area': 'real-estate',
   };
   const cat = CATEGORY[slug];
   return cat ? `${SITE}/category/${cat}/` : `${SITE}/`;

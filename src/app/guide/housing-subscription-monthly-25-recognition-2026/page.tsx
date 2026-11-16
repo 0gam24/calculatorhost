@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-27';
 export const metadata: Metadata = {
   title: '청약통장 월 25만원, 인정한도 상향과 소득공제 300만원 정리',
   description:
-    '청약통장 월 납입 인정한도가 10만원에서 25만원으로 올랐습니다. 공공분양에 유리해진 이유, 소득공제 연 300만원의 40% 한도, 얼마 넣어야 유리한지 실전 기준으로 정리했습니다.',
+    '청약통장 월 납입 인정한도가 10만원에서 25만원으로 올랐습니다. 공공분양에 유리해진 이유와 소득공제 40% 한도를 정리했습니다.',
   keywords: [
     '청약통장 25만원',
     '청약 월납입 인정한도',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청약통장 월 25만원, 인정한도 상향과 소득공제 300만원 정리' }],
-    title: '청약통장 월 25만원, 인정한도 상향과 소득공제 300만원 정리',
-    description: '월 인정한도 10만원에서 25만원 상향. 공공분양 유리, 소득공제 300만원의 40% 한도까지 실전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청약통장 월 25만원, 인정한도와 소득공제 정리',
-    description: '월 인정한도 25만원 상향과 소득공제 연 300만원의 40% 한도를 실전 기준으로 정리.',
   },
 };
 
@@ -289,7 +284,7 @@ export default function HousingSubscriptionMonthly25Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">주택청약 1순위 조건</div>
-                    <p className="mt-1 text-sm text-text-secondary">가입기간·납입횟수·예치금 1순위 요건 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">가입기간·납입횟수·예치금 1순위 요건 정리.</p>
                   </Link>
                   <Link
                     href="/guide/housing-subscription-score-84-points-2026/"

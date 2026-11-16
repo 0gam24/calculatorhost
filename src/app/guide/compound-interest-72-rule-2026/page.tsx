@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-24';
 const DATE_MODIFIED = '2026-06-24';
 
 export const metadata: Metadata = {
-  title: '복리 계산법과 72의 법칙 2026 | 원금 2배 기간·단리 vs 복리',
+  title: '복리 계산법과 72의 법칙 2026 | 원금 2배 기간·단리와 차이',
   description:
-    '복리의 마법을 이해하는 복리 계산 공식과 72의 법칙을 정리합니다. 단리와의 차이, 월복리 vs 연복리, 원금 2배 달성 기간 추정, 실제 금융상품 적용 방법을 명확히 설명합니다. 2026년 기준.',
+    '복리 계산 공식과 72의 법칙으로 원금이 2배가 되는 기간을 추정하는 법을 정리합니다. 단리·월복리와의 차이도 설명합니다.',
   keywords: [
     '복리 계산',
     '72의 법칙',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '복리 계산법과 72의 법칙 2026 | 원금 2배 기간·단리 vs 복리',
-      },
-    ],
-    title: '복리 계산법과 72의 법칙 2026',
-    description: '복리의 마법: 단리 vs 복리 차이, 원금 2배 기간 추정, 72의 법칙 활용법',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '복리 계산법과 72의 법칙 2026',
-    description: '원금을 2배로 만드는 데 걸리는 기간, 단리보다 얼마나 많은 이자?',
   },
 };
 

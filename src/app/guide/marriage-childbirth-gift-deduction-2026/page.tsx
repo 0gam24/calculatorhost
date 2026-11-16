@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-15';
 // 수익 레버 [revenue-lever: indexing+traffic]: 신규 색인 페이지 추가, 롱테일 트래픽 유입
 
 export const metadata: Metadata = {
-  title: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 총정리',
+  title: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 정리',
   description:
-    '결혼·출산 때 부모가 재산을 물려줘도 최대 1억원까지 증여세가 없습니다. 상증법 §53의2 혼인·출산 증여재산공제의 요건, 통합 1억 한도, 일반공제 5천만원과의 합산 절세법을 사례로 정리합니다.',
+    '결혼·출산 때 부모가 재산을 물려줘도 최대 1억원까지 증여세가 없습니다. 상증법 §53의2 공제 요건과 합산 절세법을 정리합니다.',
   keywords: [
     '혼인 증여재산공제',
     '출산 증여재산공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 총정리' }],
-    title: '혼인·출산 증여재산공제 2026, 결혼·출산 때 1억원 무증여세',
-    description: '혼인신고 전후 2년, 출산 2년 이내 직계존속 증여 시 최대 1억원 추가 공제. 일반공제 5천만원과 합치면 1.5억까지 증여세 0.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '혼인·출산 증여재산공제 2026, 최대 1억원 절세',
-    description: '결혼·출산 때 직계존속 증여 최대 1억 추가 공제. 상증법 §53의2. 일반공제와 합쳐 1.5억까지 무세.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function MarriageChildbirthGiftDeduction2026Page() {
     { name: '혼인·출산 증여재산공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 총정리',
+    headline: '혼인·출산 증여재산공제 2026, 최대 1억원 절세 요건 정리',
     description:
       '결혼·출산 시 직계존속 증여 최대 1억원 추가 공제. 상증법 §53의2 혼인·출산 증여재산공제의 요건, 통합 1억 한도, 일반공제 5천만원 합산 절세를 사례로 정리.',
     url: URL,

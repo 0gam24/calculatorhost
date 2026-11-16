@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-30';
 export const metadata: Metadata = {
   title: '청약 재당첨 제한 2026, 당첨되면 몇 년 묶이나',
   description:
-    '청약에 당첨되면 지역·주택 유형에 따라 최장 10년간 다시 당첨될 수 없습니다. 재당첨 제한 기간, 세대원 전원 적용 원칙, 계약 포기해도 남는 제한을 주택공급규칙 §54 기준으로 정리했습니다.',
+    '청약에 당첨되면 지역·주택 유형에 따라 최장 10년간 재당첨이 제한됩니다. 세대원 전원에 적용되고 계약을 포기해도 남는 규칙을 정리했습니다.',
   keywords: [
     '청약 재당첨 제한',
     '재당첨 제한 기간',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청약 재당첨 제한 2026, 당첨되면 몇 년 묶이나' }],
-    title: '청약 재당첨 제한 2026, 당첨되면 몇 년 묶이나',
-    description: '당첨 시 지역·유형별 최장 10년 제한. 세대원 전원 적용, 계약 포기해도 남는 제한을 주택공급규칙 §54 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청약 재당첨 제한 2026, 당첨되면 몇 년 묶이나',
-    description: '청약 당첨은 끝이 아니라 시작. 최장 10년 재당첨 제한과 세대원 전원 적용 규칙을 정리했습니다.',
   },
 };
 

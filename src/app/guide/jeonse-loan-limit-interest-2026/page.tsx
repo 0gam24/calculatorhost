@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-06-29';
 export const metadata: Metadata = {
   title: '전세자금대출 한도·금리 구조 2026 | 보증기관별 상품 가이드',
   description:
-    '전세자금대출의 한도 결정 구조, 금리 기준, 보증기관(HF·HUG·SGI) 비교, 버팀목 정책상품과 시중상품의 차이를 명확히 설명합니다. 보증비율·DSR 규제·우대금리 조건까지 정리했습니다.',
+    '전세자금대출 한도가 정해지는 구조와 금리 기준, HF·HUG·SGI 보증기관 차이를 정리했습니다.',
   keywords: [
     '전세자금대출',
     '전세대출 한도',
@@ -35,16 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '전세자금대출 한도·금리 구조 2026 | 보증기관별 상품 가이드',
-      },
-    ],
-    title: '전세자금대출 한도·금리 구조 2026',
-    description: '보증기관별 한도 기준, 금리 결정 요소, 정책상품 조건, 실제 대출 가능액 계산',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세자금대출 한도·금리 구조',
-    description: '3대 보증기관별 한도 비교, 정책상품 우대금리, DSR 규제',
   },
 };
 

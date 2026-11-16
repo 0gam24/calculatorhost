@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-09';
 export const metadata: Metadata = {
   title: '통상임금 2026 | 정기상여 포함·연장수당 기초·판례 변경',
   description:
-    '통상임금의 정의와 계산법을 정리했습니다. 정기상여금을 포함하도록 바뀐 2024년 대법원 판례의 의미, 시간급 통상임금을 구하는 순서, 그 값이 연장·야간·휴일수당에 어떻게 반영되는지를 근로기준법 §2·§56 기준으로 설명합니다.',
+    '통상임금의 정의와 계산법, 정기상여금을 포함하도록 바뀐 2024년 대법원 판례의 의미를 근로기준법 기준으로 정리했습니다.',
   keywords: [
     '통상임금',
     '정기상여금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '통상임금 2026 | 정기상여 포함·연장수당 기초' }],
-    title: '통상임금 2026, 2024 대법 판례 이후 정의·계산·영향',
-    description: '정기상여금도 통상임금? 2024.12.19 판례 변경 내용과 실제 급여·수당 계산에 미치는 영향을 완전히 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '통상임금 2026, 2024 판례 변경 후 정기상여 포함 여부',
-    description: '통상임금 정의·시간급 계산·재직요건부 상여금 포함 규칙을 다룹니다.',
   },
 };
 
@@ -509,7 +504,7 @@ export default function OrdinaryWage2026Page() {
               </section>
 
               <ShareButtons
-                title="통상임금 2026, 2024 판례 변경 완벽 가이드"
+                title="통상임금 2026, 2024 판례 변경 가이드"
                 url={URL}
               />
             </article>

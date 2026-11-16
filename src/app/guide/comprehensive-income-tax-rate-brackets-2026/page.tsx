@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-21';
 const DATE_MODIFIED = '2026-06-21';
 
 export const metadata: Metadata = {
-  title: '종합소득세율 2026 누진세 8단계 완벽 가이드 | 과세표준·산출세액 계산 | calculatorhost',
+  title: '종합소득세율 2026 누진세 8단계 가이드 | 과세표준·산출세액 계산',
   description:
-    '2026년 종합소득세 8단계 누진세율표와 정확한 계산법. 1,400만원부터 10억 초과까지 세율·누진공제·지방소득세. 직장인·프리랜서 필수 가이드. 소득세법 §55 기준.',
+    '2026년 종합소득세 8단계 누진세율과 누진공제, 지방소득세 계산법을 1,400만원부터 10억 초과 구간까지 정리했습니다.',
   keywords: [
     '종합소득세율',
     '종합소득세',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '종합소득세율 2026 누진세 8단계 가이드 | calculatorhost' }],
-    title: '종합소득세율 2026 누진세 8단계 가이드',
-    description: '2026년 소득세 누진세율표와 정확한 세액 계산법. 직장인·프리랜서 필수.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -89,12 +86,12 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '종합소득세율 2026 8단계 가이드' },
+    { name: '종합소득세율 2026 가이드' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '종합소득세율 2026 누진세 8단계 가이드',
     description:
-      '2026년 종합소득세 8단계 누진세율표와 정확한 산출세액 계산법. 1,400만원부터 10억 초과까지 세율·누진공제·지방소득세 완벽 정리.',
+      '2026년 종합소득세 8단계 누진세율표와 정확한 산출세액 계산법. 1,400만원부터 10억 초과까지 세율·누진공제·지방소득세 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -140,7 +137,7 @@ export default function ComprehensiveIncomeTaxRateBrackets2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   종합소득세율 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 8단계 누진세 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 8단계 누진세 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   한국의 종합소득세는 8단계 누진 구조입니다. 같은 수입도 과세표준이 달라지면 세율이 확 달라지고, 누진공제를 빼먹으면

@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-19';
 const DATE_MODIFIED = '2026-10-07';
 
 export const metadata: Metadata = {
-  title: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산 | calculatorhost',
+  title: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산',
   description:
-    '주휴수당이란? 근로기준법에서 정한 1주 평균 15시간 이상·개근 조건. 월급제와 시급·일급제별 계산 방법, 결근 시 미발생 규칙, 단시간 근로자 적용 기준을 정리합니다.',
+    '근로기준법 §55의 주휴수당은 1주 평균 15시간 이상 일하고 개근해야 발생합니다. 월급제·시급제별 계산법과 결근 시 규칙을 정리합니다.',
   keywords: [
     '주휴수당',
     '주휴수당 계산',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주휴수당 계산법 2026, 주 15시간·개근 조건과 시급 환산 | calculatorhost' }],
-    title: '주휴수당 계산법 2026, 근로기준법 §55',
-    description: '주휴수당 요건·계산법·결근 시 규칙. 월급제·시급제별 사례 계산.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

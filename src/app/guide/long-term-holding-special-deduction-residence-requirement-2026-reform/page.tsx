@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-22';
 export const metadata: Metadata = {
   title: '장기보유특별공제 거주요건 재편 2026, 10년 살아야 80%',
   description:
-    '2026 세제개편안이 1세대1주택 장기보유특별공제를 단순 보유보다 실거주 중심으로 재편하는 방향을 담았습니다. 현행 보유·거주 각 연 4%로 최대 80% 구조, 거주 없이 보유만 하면 얼마 줄어드는지, 언제 양도분부터인지 정리합니다(소득세법 §95).',
+    '2026 세제개편안은 1세대1주택 장기보유특별공제를 실거주 중심으로 재편하는 방향입니다. 현행 최대 80% 구조와 비교했습니다.',
   keywords: [
     '장기보유특별공제 거주요건',
     '장특공 80% 조건',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '장기보유특별공제 거주요건 재편 2026, 10년 살아야 80%' }],
-    title: '장기보유특별공제 거주요건 재편 2026, 10년 살아야 80%',
-    description: '보유만으로 받던 장특공이 거주 중심으로. 현행 보유·거주 각 40% 구조와 개편 방향을 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '장기보유특별공제 거주요건 재편 2026',
-    description: '1세대1주택 장특공 최대 80%, 거주 중심으로 재편 방향. 현행 구조와 계산 예시 정리.',
   },
 };
 
@@ -289,7 +284,7 @@ export default function LongTermHoldingSpecialDeductionResidenceRequirement2026R
                     <p className="mt-1 text-sm text-text-secondary">양도차익, 장특공, 세율을 반영해 계산해보세요.</p>
                   </Link>
                   <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">
-                    <div className="font-semibold text-primary-500">장특공 80% 완전 정리</div>
+                    <div className="font-semibold text-primary-500">장특공 80% 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">1세대1주택 표2의 보유·거주 공제를 자세히 봅니다.</p>
                   </Link>
                   <Link href="/guide/long-term-holding-special-deduction-general-2026/" className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition">

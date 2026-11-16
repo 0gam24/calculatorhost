@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-17';
 export const metadata: Metadata = {
   title: '근로소득 간이세액표 2026, 매월 원천징수 80·100·120% 선택',
   description:
-    '매월 급여에서 떼는 소득세는 근로소득 간이세액표로 정합니다. 소득세법 §134 원천징수와 시행령 §194 간이세액표, 80·100·120% 선택이 연말정산에 미치는 영향을 직장인 사례로 정리합니다.',
+    '월급에서 떼는 소득세는 근로소득 간이세액표로 정하며, 80·100·120% 중 고를 수 있습니다. 비율별 연말정산 영향을 정리합니다.',
   keywords: [
     '근로소득 간이세액표',
     '원천징수 80 100 120',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로소득 간이세액표 2026, 매월 원천징수 80·100·120% 선택' }],
-    title: '근로소득 간이세액표 2026, 원천징수 비율 선택과 연말정산의 관계',
-    description: '매월 떼는 소득세는 간이세액표 기준. 80·100·120% 선택이 연말정산 환급·추가납부에 미치는 영향을 정리합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로소득 간이세액표 2026, 원천징수 80·100·120%',
-    description: '매월 소득세 원천징수의 기준과 선택 비율. 소득세법 §134.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function SimplifiedWithholdingTaxTable2026Page() {
     { name: '근로소득 간이세액표 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '근로소득 간이세액표 2026, 매월 원천징수 80·100·120% 선택 완전 정리',
+    headline: '근로소득 간이세액표 2026, 매월 원천징수 80·100·120% 선택 정리',
     description:
       '매월 급여에서 떼는 소득세를 정하는 근로소득 간이세액표(소득세법 시행령 §194)와 80·100·120% 선택이 연말정산 환급·추가납부에 미치는 영향을 직장인 관점에서 정리.',
     url: URL,

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-07';
 export const metadata: Metadata = {
   title: '상속 주택 취득세 2026, 무주택 1주택 특례 0.8%',
   description:
-    '부모 집을 물려받았을 때 상속 주택 취득세는 기본 2.8%, 무주택 1가구 1주택 특례는 0.8%. 신고 기한 6개월, 다주택 중과 제외까지 지방세법 15조 기준 정리.',
+    '상속 주택 취득세는 기본 2.8%이고, 무주택 1가구 특례를 받으면 0.8%로 낮아집니다. 신고 기한 6개월과 중과 제외도 정리했습니다.',
   keywords: [
     '상속 주택 취득세',
     '상속 취득세 0.8%',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '상속 주택 취득세 2026, 무주택 1주택 특례 0.8%' }],
-    title: '상속 주택 취득세 2026, 무주택 1주택 특례 0.8%',
-    description: '기본 세율 2.8%, 무주택 1가구가 1주택을 상속받으면 특례 0.8%. 지방세법 15조 근거로 신고 기한·중과 제외까지 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '상속 주택 취득세 2026, 무주택 1주택 특례 0.8%',
-    description: '상속 주택 취득세 기본 2.8%, 무주택 1가구 특례 0.8%. 신고 기한 6개월. 지방세법 15조.',
   },
 };
 
@@ -494,7 +489,7 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">모든 세금 가이드</div>
-                    <p className="mt-1 text-sm text-text-secondary">양도세·취득세·상속세·증여세 완전 정리 허브.</p>
+                    <p className="mt-1 text-sm text-text-secondary">양도세·취득세·상속세·증여세 정리 허브.</p>
                   </Link>
                 </div>
               </section>

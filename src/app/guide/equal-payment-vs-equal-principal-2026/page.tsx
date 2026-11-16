@@ -21,7 +21,7 @@ const DATE_MODIFIED = '2026-06-22';
 export const metadata: Metadata = {
   title: '원리금균등 vs 원금균등 2026 | 대출 상환방식 비교 가이드',
   description:
-    '원리금균등과 원금균등 상환 방식의 차이를 정리합니다. 월 상환액, 총이자, 초기 부담 비교, 선택 기준을 공식·계산 사례로 설명합니다. 2026년 기준.',
+    '원리금균등과 원금균등 상환 방식의 차이를 정리합니다. 월 납입액과 총이자, 초기 부담, 선택 기준을 계산 사례로 설명합니다.',
   keywords: [
     '원리금균등',
     '원금균등',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '원리금균등 vs 원금균등 2026 | 대출 상환방식 비교 가이드',
-      },
-    ],
-    title: '원리금균등 vs 원금균등 2026',
-    description: '두 상환 방식의 공식, 월 부담, 총이자 차이를 비교 분석합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '원리금균등 vs 원금균등',
-    description: '대출 상환방식 비교, 월 부담, 총이자, 선택 기준',
   },
 };
 

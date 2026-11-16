@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-04';
 export const metadata: Metadata = {
   title: '창업자금 증여세 과세특례 2026, 5억 공제·10% 세율 조건',
   description:
-    '부모 도움으로 창업하는 자녀에게 증여세 부담을 줄여주는 제도가 창업자금 증여세 과세특례입니다. 60세 이상 부모가 18세 이상 자녀에게 창업자금을 주면 5억원을 공제하고 10% 세율로 과세합니다. 한도, 창업 기한, 사후관리를 조세특례제한법 §30의5 기준으로 정리했습니다.',
+    '창업자금 증여세 과세특례를 쓰면 5억원을 공제하고 남은 금액에 10% 세율만 적용됩니다. 60세 이상 부모 요건과 사후관리를 정리했습니다.',
   keywords: [
     '창업자금 증여세 과세특례',
     '창업자금 5억 공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '창업자금 증여세 과세특례 2026' }],
-    title: '창업자금 증여세 과세특례 2026, 5억 공제·10% 세율 조건',
-    description: '60세 이상 부모가 18세 이상 자녀 창업자금을 증여하면 5억 공제 후 10% 세율. 한도·창업기한·사후관리를 조특법 §30의5 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '창업자금 증여세 과세특례 2026, 5억 공제·10% 세율',
-    description: '창업하는 자녀에게 최대 5억 공제 후 10% 저율 과세. 2년 내 창업·사후관리 필수. 조세특례제한법 §30의5.',
   },
 };
 

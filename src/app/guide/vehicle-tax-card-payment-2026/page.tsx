@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-28';
 const DATE_MODIFIED = '2026-10-14';
 
 export const metadata: Metadata = {
-  title: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
+  title: '자동차세 카드납부·연납 할인 2026, 수수료 무료·무이자 할부',
   description:
-    '자동차세는 신용카드 납부 수수료 무료, 무이자 할부 가능. 연납 신청은 1월·3월·6월·9월 모두 가능하며 늦을수록 할인율이 줄어듭니다. 1월 약 4.58%, 3월 약 3.77%, 6월 약 2.5%, 9월 약 1.25%. 지방세법 시행령 §125⑥.',
+    '자동차세는 신용카드로 내도 수수료가 없고 무이자 할부를 쓸 수 있습니다. 연납 할인은 1월 약 4.58%에서 9월 약 1.25%로 줄어듭니다.',
   keywords: [
     '자동차세 카드납부',
     '자동차세 연납 할인',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '자동차세 카드납부·연납 할인 2026' }],
-    title: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
-    description: '신용카드 수수료 무료 납부 + 1월·3월·6월·9월 연납 할인. 신청 기간·방법·카드 혜택 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '자동차세 카드납부·연납 할인 2026',
-    description: '신용카드 수수료 없음 + 연납 할인(1월·3월·6월·9월 가능) 받기. 위택스 신청 방법.',
   },
 };
 
@@ -97,7 +92,7 @@ export default function VehicleTaxCardPayment2026Page() {
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '자동차세 카드납부·연납 할인 2026, 무이자·할인 받는 법',
-    description: '자동차세 신용카드 납부(수수료 무료) + 연납 할인(1월 약 4.58%, 3월 약 3.77%, 6월 약 2.5%, 9월 약 1.25%) + 무이자 할부 전략. 위택스·지역 앱 신청 방법 완전 정리.',
+    description: '자동차세 신용카드 납부(수수료 무료) + 연납 할인(1월 약 4.58%, 3월 약 3.77%, 6월 약 2.5%, 9월 약 1.25%) + 무이자 할부 전략. 위택스·지역 앱 신청 방법 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -392,7 +387,7 @@ export default function VehicleTaxCardPayment2026Page() {
                     href="/guide/vehicle-tax-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <h3 className="font-bold text-text-primary">자동차세 완전 정리 2026</h3>
+                    <h3 className="font-bold text-text-primary">자동차세 정리 2026</h3>
                     <p className="text-sm text-text-secondary mt-1">배기량 세율·차령경감·연납 할인·납부 시기 종합 가이드.</p>
                   </Link>
                   <Link

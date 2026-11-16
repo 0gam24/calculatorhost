@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-25';
 export const metadata: Metadata = {
   title: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모',
   description:
-    '기본공제 대상에 더해지는 추가공제 4종을 정리합니다. 경로우대 100만원, 장애인 200만원, 부녀자 50만원, 한부모 100만원의 공제액과 중복 적용 규칙, 필요 서류까지 소득세법 §51 기준으로 설명합니다.',
+    '연말정산 추가공제는 경로우대·한부모 각 100만원, 장애인 200만원, 부녀자 50만원입니다. 중복 적용 규칙과 필요 서류도 정리합니다.',
   keywords: [
     '연말정산 추가공제',
     '경로우대 공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모' }],
-    title: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모 공제 총정리',
-    description: '기본공제에 더해지는 추가공제 4종. 공제액, 소득·나이 요건, 부녀자와 한부모 중복 규칙까지 소득세법 §51 기준으로 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모',
-    description: '경로우대 100만·장애인 200만·부녀자 50만·한부모 100만원. 소득세법 §51 추가공제 완전 정리.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function YearEndAdditionalDeductionPage() {
     { name: '연말정산 추가공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모 공제 총정리',
+    headline: '연말정산 추가공제 2026, 경로우대·장애인·부녀자·한부모 공제 정리',
     description:
       '기본공제 대상에 더해지는 추가공제 4종. 경로우대 100만원, 장애인 200만원, 부녀자 50만원, 한부모 100만원의 공제액과 소득·나이 요건, 중복 적용 규칙을 소득세법 §51 기준으로 정리.',
     url: URL,

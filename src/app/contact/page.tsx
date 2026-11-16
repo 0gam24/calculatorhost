@@ -6,9 +6,15 @@ import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { buildBreadcrumbJsonLd, buildWebPageJsonLd } from '@/lib/seo/jsonld';
 
 export const metadata: Metadata = {
-  title: 'calculatorhost 문의 | 오류 제보 · 기능 제안 · 광고 문의',
-  description: 'calculatorhost 계산 오류 제보, 계산기 기능 제안, 광고·파트너십 문의 등을 접수하는 공식 채널입니다. 빠른 응답을 보장합니다. calculatorhost는 정확한 정보 제공을 우선합니다.',
+  title: 'calculatorhost 문의 | 오류 제보·기능 제안·광고',
+  description: '계산 오류 제보, 계산기 기능 제안, 광고·제휴 요청을 받는 calculatorhost 공식 연락 창구입니다.',
   alternates: { canonical: 'https://calculatorhost.com/contact/' },
+  openGraph: {
+    url: 'https://calculatorhost.com/contact/',
+    type: 'website',
+    locale: 'ko_KR',
+    siteName: 'calculatorhost',
+  },
 };
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
@@ -78,7 +84,7 @@ export default function ContactPage() {
                 </li>
                 <li>
                   <strong>개인정보 관련</strong>:{' '}
-                  <a href="/privacy" className="text-primary-500">
+                  <a href="/privacy/" className="text-primary-500">
                     개인정보처리방침
                   </a>
                   을 우선 확인 후 연락 주십시오.

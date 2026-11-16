@@ -26,7 +26,7 @@ const DATE_MODIFIED = '2026-08-16';
 export const metadata: Metadata = {
   title: '기업업무추진비(접대비) 한도 2026, 계산과 증빙 정리',
   description:
-    '접대비의 정식 이름은 기업업무추진비입니다(법인세법 §25, 소득세법 §35). 비용으로 인정받는 한도는 기본한도(중소기업 3,600만·일반 1,200만)에 수입금액별 한도를 더해 계산하고, 건당 3만원을 넘으면 적격증빙이 필요합니다. 한도 계산과 증빙 규칙을 정리했습니다.',
+    '기업업무추진비(접대비)는 기본한도에 수입금액별 한도를 더한 범위까지 비용으로 인정됩니다. 건당 3만원을 넘으면 적격증빙이 필요합니다.',
   keywords: [
     '기업업무추진비 한도',
     '접대비 한도',
@@ -38,9 +38,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기업업무추진비 접대비 한도 2026' }],
-    title: '기업업무추진비(접대비) 한도 2026, 계산과 증빙',
-    description: '기본한도(중소 3,600만·일반 1,200만) + 수입금액별 한도. 건당 3만원 초과 적격증빙 필수. 법인세법 §25.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -49,8 +46,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기업업무추진비(접대비) 한도 2026, 계산과 증빙',
-    description: '접대비 한도 계산과 건당 3만원·경조사 20만원 증빙 규칙. 법인세법 §25, 소득세법 §35.',
   },
 };
 

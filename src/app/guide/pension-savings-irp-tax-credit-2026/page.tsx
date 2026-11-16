@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-01';
 const DATE_MODIFIED = '2026-07-01';
 
 export const metadata: Metadata = {
-  title: '연금저축·IRP 세액공제 2026 | 900만원 한도·최대 148만원 환급',
+  title: '연금저축·IRP 세액공제 2026, 900만원 한도·최대 148만원 환급',
   description:
-    '연금저축과 퇴직연금(IRP) 세액공제 완벽 정리. 합산 900만원 한도, 소득별 공제율(15%·12%), 최대 환급액 148.5만원 계산법. 소득세법 §59의3.',
+    '연금저축과 IRP 세액공제는 합산 900만원 한도에 소득별 공제율 15%·12%가 적용됩니다. 최대 환급액은 148.5만원입니다.',
   keywords: [
     '연금저축 세액공제',
     'IRP 세액공제',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '연금저축·IRP 세액공제 2026 | 900만원 한도·최대 148만원 환급' }],
-    title: '연금저축·IRP 세액공제 2026, 소득별 최대 148만원 환급받기',
-    description: '연금저축·퇴직연금 합산 900만원 납입 시 세액공제 혜택. 소득 5,500만원 이하 15%, 초과 12%. 정확한 계산법과 주의사항.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '연금저축·IRP 세액공제 2026, 최대 148만원 환급',
-    description: '900만원 한도에 15~12% 세액공제. 중도해지 시 기타소득세 16.5% 부과 주의.',
   },
 };
 
@@ -103,7 +98,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '연금저축·IRP 세액공제 2026, 900만원 한도에서 최대 148만원 환급받기',
     description:
-      '연금저축과 퇴직연금(IRP) 세액공제 완전 정리. 합산 900만원 한도, 소득별 공제율(15%·12%), 최대 환급액 계산, 중도해지 주의사항.',
+      '연금저축과 퇴직연금(IRP) 세액공제 정리. 합산 900만원 한도, 소득별 공제율(15%·12%), 최대 환급액 계산, 중도해지 주의사항.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -114,7 +109,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
   });
   const webPageLd = buildWebPageJsonLd({
     name: '연금저축·IRP 세액공제 2026',
-    description: '연금저축과 퇴직연금 세액공제 한도, 공제율, 계산법, 주의사항 완벽 정리.',
+    description: '연금저축과 퇴직연금 세액공제 한도, 공제율, 계산법, 주의사항 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -479,7 +474,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
                     href="/guide/retirement-income-tax-deferral-irp-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">IRP 운용·세무 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">IRP 운용·세무 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">퇴직연금 이연과 연금수령 전략.</p>
                   </Link>
                   <Link
@@ -521,7 +516,7 @@ export default function PensionSavingsIrpTaxCredit2026Page() {
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터</a>,{' '}
                   <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 홈택스</a>,{' '}
-                  <a href="https://www.pensionservice.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">사적연금정보센터</a>.
+                  <a href="https://100lifeplan.fss.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">금융감독원 통합연금포털</a>.
                 </p>
               </section>
 

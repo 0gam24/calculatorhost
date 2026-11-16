@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-17';
 export const metadata: Metadata = {
   title: '부모 자식 계좌이체 증여세 2026, 얼마까지 괜찮고 소명은 어떻게',
   description:
-    '부모가 계좌로 보내준 돈은 원칙적으로 증여로 봅니다. 10년 5천만원 공제, 생활비 비과세, 무이자 대여 2.17억 기준, 자금출처 소명법까지 상증세법 45조 기준으로 정리했습니다.',
+    '부모가 계좌로 보내준 돈은 원칙적으로 증여로 봅니다. 10년 5천만원 공제와 생활비 비과세, 자금출처 소명법을 정리했습니다.',
   keywords: [
     '부모 자식 계좌이체 증여세',
     '가족 간 계좌이체 증여',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부모 자식 계좌이체 증여세 2026' }],
-    title: '부모 자식 계좌이체 증여세 2026, 얼마까지 괜찮을까',
-    description:
-      '부모가 보내준 돈은 증여인가? 10년 5천만원 공제, 생활비 비과세, 무이자 대여 한도, 자금출처 소명까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부모 자식 계좌이체 증여세, 얼마까지 괜찮을까',
-    description: '10년 5천만원 공제, 생활비 비과세, 무이자 대여 2.17억 기준. 상증세법 §45·§46·§53.',
   },
 };
 

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-09';
 export const metadata: Metadata = {
   title: '해고예고수당 2026, 30일분 통상임금 계산과 예외',
   description:
-    '해고 30일 전 예고를 받지 못했다면 30일분 통상임금을 받습니다. 계산법, 3개월 미만·천재지변 등 예외 3가지, 권고사직과의 차이, 못 받았을 때 대응까지 근로기준법 §26으로 정리했습니다.',
+    '해고예고수당은 30일 전 예고 없이 해고될 때 받는 30일분 통상임금입니다. 계산법과 예외 3가지, 권고사직과의 차이를 정리했습니다.',
   keywords: [
     '해고예고수당',
     '해고예고수당 계산',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '해고예고수당 2026 계산과 예외' }],
-    title: '해고예고수당 2026, 30일분 통상임금 계산과 예외',
-    description: '30일 전 예고를 못 받으면 30일분 통상임금. 예외 3가지, 권고사직과의 차이, 미지급 시 대응을 근로기준법 §26으로 정리했습니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '해고예고수당 2026 계산과 예외',
-    description: '30일분 통상임금 계산법과 3개월 미만 등 예외, 미지급 시 진정 절차. 근로기준법 §26.',
   },
 };
 

@@ -40,7 +40,8 @@ type PagesFunction<E = unknown> = (
     functionPath: string;
     waitUntil: (promise: Promise<unknown>) => void;
     passThroughOnException: () => void;
-    next: () => Promise<Response>;
+    // Cloudflare Pages: 다른 요청을 넘기면 그 주소의 정적 파일·다음 함수 응답을 받는다
+    next: (input?: Request | string, init?: RequestInit) => Promise<Response>;
     env: Env & E;
   },
 ) => Response | Promise<Response>;

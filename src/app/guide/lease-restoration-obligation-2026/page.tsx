@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-05';
 export const metadata: Metadata = {
   title: '전세·월세 원상복구 의무 범위 2026, 못자국·도배·곰팡이 기준',
   description:
-    '퇴거할 때 어디까지 원상복구해야 할까요. 자연스러운 못자국·벽지 변색 같은 통상손모는 임차인 책임이 아니고, 흡연 착색·곰팡이·파손 같은 고의·과실은 배상 대상입니다. 민법 §615·§623과 판례 기준으로 정리했습니다.',
+    '퇴거할 때 못자국·벽지 변색 같은 통상손모는 임차인 책임이 아니고, 흡연 착색·곰팡이·파손은 배상 대상입니다.',
   keywords: [
     '전세 원상복구',
     '월세 원상복구 의무',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세·월세 원상복구 의무 범위 2026, 못자국·도배·곰팡이 기준' }],
-    title: '전세·월세 원상복구 의무 범위 2026',
-    description: '통상손모는 임차인 책임 아님, 고의·과실은 배상. 민법 §615·§623과 판례로 정리한 원상복구 기준.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '전세·월세 원상복구 의무 범위 2026',
-    description: '못자국·벽지 변색은 통상손모(임차인 책임 아님), 흡연·곰팡이·파손은 배상. 민법 §615.',
   },
 };
 
@@ -96,7 +91,7 @@ export default function LeaseRestorationObligation2026Page() {
     { name: '전세·월세 원상복구 의무' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '전세·월세 원상복구 의무 범위 2026, 못자국·도배·곰팡이 기준 완전 정리',
+    headline: '전세·월세 원상복구 의무 범위 2026, 못자국·도배·곰팡이 기준 정리',
     description:
       '임차인의 원상복구 의무 범위를 통상손모와 고의·과실로 구분해 정리. 민법 §615(원상회복)·§654(준용)·§623(임대인 수선의무)과 판례 기준, 특약의 효력, 분쟁 예방 방법.',
     url: URL,

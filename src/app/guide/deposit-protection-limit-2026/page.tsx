@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-12';
 export const metadata: Metadata = {
   title: '예금자보호 한도 1억원 2026, 시행일·대상·분산예치',
   description:
-    '예금자보호 한도가 2025년 9월 1일부터 5천만원에서 1억원으로 올랐습니다. 금융회사별·1인당 원금과 이자를 합쳐 1억원까지 보호되며 펀드 등 실적배당 상품은 제외됩니다. 대상과 분산예치 전략을 정리합니다.',
+    '예금자보호 한도는 2025년 9월 1일부터 금융회사별 1인당 원금과 이자를 합쳐 1억원입니다. 펀드 등 실적배당 상품은 제외됩니다.',
   keywords: [
     '예금자보호 한도',
     '예금보호 1억원',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '예금자보호 한도 1억원 2026, 시행일·대상·분산예치' }],
-    title: '예금자보호 한도 1억원 2026, 24년 만의 상향 핵심 정리',
-    description: '2025년 9월 1일부터 예금보호 한도 1억원. 보호 대상과 제외 상품, 금융회사별 한도 적용, 분산예치 전략.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '예금자보호 한도 1억원 2026',
-    description: '2025.9.1 시행. 금융회사별 원금+이자 1억까지 보호. 펀드·실적배당은 제외.',
   },
 };
 

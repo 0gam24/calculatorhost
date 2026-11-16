@@ -1,1 +1,1 @@
-변경 이력 (Changelog) 2026 | calculatorhost
+계산기 변경 이력

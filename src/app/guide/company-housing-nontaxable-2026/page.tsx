@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '사택 제공 세금 2026, 회사 집 공짜로 받으면 근로소득?',
   description:
-    '회사가 무상·저가로 제공한 사택은 종업원과 주주 아닌 임원이라면 근로소득으로 과세하지 않습니다. 다만 지배주주 임원이거나 회사 명의 계약이 아니면 과세될 수 있습니다. 사택 비과세 조건을 소득세법 §12·시행령 §38 기준으로 정리했습니다.',
+    '회사가 무상·저가로 내준 사택은 일반 종업원이라면 근로소득으로 보지 않아 비과세입니다. 지배주주 임원 등 예외를 정리했습니다.',
   keywords: [
     '사택 근로소득',
     '사택 비과세',
@@ -34,17 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '사택 제공 세금 2026, 회사 집 공짜로 받으면 근로소득?',
-      },
-    ],
-    title: '사택 제공 세금 2026, 회사 집 공짜로 받으면 근로소득?',
-    description:
-      '종업원·주주 아닌 임원 사택은 비과세, 지배주주 임원은 과세. 사택 인정 조건과 과세 기준 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -53,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '사택 제공 세금 2026, 회사 집 공짜로 받으면 근로소득?',
-    description: '회사가 준 사택, 언제 비과세고 언제 과세되는지 조건을 정리.',
   },
 };
 
@@ -351,7 +338,7 @@ export default function CompanyHousingNontaxable2026Page() {
                   >
                     <div className="font-semibold text-primary-500">비과세 급여 항목 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">
-                      식대·보육수당 등 세금 안 떼는 항목 총정리.
+                      식대·보육수당 등 세금 안 떼는 항목 정리.
                     </p>
                   </Link>
                   <Link
@@ -385,7 +372,7 @@ export default function CompanyHousingNontaxable2026Page() {
                     href="/guide/year-end-tax-settlement/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 transition hover:border-primary-500 hover:bg-primary-500/5"
                   >
-                    <div className="font-semibold text-primary-500">연말정산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">연말정산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">근로소득 공제와 정산의 기본.</p>
                   </Link>
                   <Link

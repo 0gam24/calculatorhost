@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-06-25';
 const DATE_MODIFIED = '2026-06-25';
 
 export const metadata: Metadata = {
-  title: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
+  title: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 정리',
   description:
-    '7월 재산세 고지서를 받으면 본세 외에 도시지역분·지역자원시설세·지방교육세가 함께 붙어옵니다. 각 항목이 무엇이고 어떻게 계산되는지, 고지서를 읽는 방법을 명확히 정리합니다. 2026년 기준.',
+    '재산세 고지서에는 본세 외에 도시지역분·지역자원시설세·지방교육세가 함께 붙습니다. 각 항목의 뜻과 계산법을 2026년 기준으로 정리합니다.',
   keywords: [
     '재산세',
     '도시지역분',
@@ -34,16 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
-      },
-    ],
-    title: '재산세 도시지역분·지역자원시설세 2026',
-    description: '7월 재산세 고지서의 4개 항목(본세·도시지역분·지역자원시설세·지방교육세)을 이해하는 방법',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -52,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 도시지역분·지역자원시설세 2026',
-    description: '고지서의 4개 세금 항목 계산 원리와 의미',
   },
 };
 
@@ -102,7 +90,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
     { name: '재산세 도시지역분·지역자원시설세 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 완전 정리',
+    headline: '재산세 도시지역분·지역자원시설세 2026, 고지서 항목 정리',
     description:
       '7월 재산세 고지서의 4개 항목(재산세 본세·도시지역분·지역자원시설세·지방교육세)을 명확히 이해하는 방법',
     url: URL,
@@ -627,7 +615,7 @@ export default function PropertyTaxUrbanAreaRegionalResourceTax2026Page() {
                       href="/guide/property-tax-calculation-2026/"
                       className="text-primary-600 underline dark:text-primary-500"
                     >
-                      재산세 계산 방법 완전 정리 2026
+                      재산세 계산 방법 정리 2026
                     </Link>{' '}
 , 공시가격에서 세액까지 단계별 계산 원리
                   </li>

@@ -27,8 +27,15 @@ const EXTERNAL_SOURCES = [
 export const metadata: Metadata = {
   title: '소개 | calculatorhost, 운영자 김준혁 / 스마트데이터샵',
   description:
-    '한국 금융·세금·부동산 계산기 33종과 참고 가이드를 운영합니다. 운영자 김준혁(스마트데이터샵, 사업자등록번호 406-06-34485). 계산의 적용 조건과 기준일·출처를 확인하고 실제 처리는 담당 기관에 문의하세요.',
+    '세금·금융·부동산 계산기를 만드는 운영자 김준혁(스마트데이터샵)과 계산 기준, 출처 확인 원칙을 소개합니다.',
   alternates: { canonical: 'https://calculatorhost.com/about/' },
+  // 이미지는 같은 폴더의 opengraph-image.png 를 Next 가 붙인다 (images 를 적으면 파일이 무시됨)
+  openGraph: {
+    url: 'https://calculatorhost.com/about/',
+    type: 'website',
+    locale: 'ko_KR',
+    siteName: 'calculatorhost',
+  },
 };
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([

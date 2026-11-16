@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-12';
 export const metadata: Metadata = {
   title: '청약 무주택기간 산정 2026, 만30세·혼인신고일 기준',
   description:
-    '청약 가점의 핵심인 무주택기간은 만 30세부터, 30세 이전에 결혼했다면 혼인신고일부터 계산합니다. 과거 주택 처분 이력이 있을 때의 기산일과 32점 만점 가점표를 주택공급에 관한 규칙 기준으로 정리했습니다.',
+    '청약 무주택기간은 만 30세부터, 그 전에 결혼했다면 혼인신고일부터 계산합니다. 주택 처분 이력별 기산일과 32점 가점표를 정리했습니다.',
   keywords: [
     '무주택기간 산정',
     '청약 무주택기간',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청약 무주택기간 산정 2026, 만30세·혼인신고일 기준' }],
-    title: '청약 무주택기간 산정 2026, 언제부터 계산할까',
-    description: '만 30세부터, 30세 이전 결혼 시 혼인신고일부터. 과거 주택 처분 이력과 32점 만점 가점표까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청약 무주택기간 산정 2026',
-    description: '무주택기간은 만 30세 또는 혼인신고일부터. 32점 만점 가점 산정 기준.',
   },
 };
 

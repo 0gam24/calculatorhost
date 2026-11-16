@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-05-28';
 export const metadata: Metadata = {
   title: '외국납부세액공제 2026 해외주식·배당 환급 신청 | 5월 31일',
   description:
-    '해외주식 배당·이자 미국 15% 원천징수 → 한국 종합소득세에서 환급? 외국납부세액공제 한도·계산·신청 절차·10년 이월·증빙 서류·해외근로소득·양도소득 제외 완벽 정리.',
+    '미국에서 15% 원천징수된 해외주식 배당은 외국납부세액공제로 한국 종합소득세에서 뺄 수 있습니다. 한도 계산과 10년 이월을 정리했습니다.',
   keywords: [
     '외국납부세액공제',
     '해외주식 배당 15%',
@@ -35,10 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '외국납부세액공제 2026 해외주식·배당 환급 신청 | 5월 31일' }],
-    title: '외국납부세액공제 2026 해외주식·배당 환급',
-    description:
-      '미국 주식 배당 1,000만 원 × 15% 원천징수 = 150만 환급? 한도·계산·신청 완벽 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '외국납부세액공제 2026, 해외주식 배당 환급 5월 신청',
-    description: '미국·일본·싱가포르 배당세 먼저 나갔는데 한국에서도 내야 하나?',
   },
 };
 
@@ -99,13 +93,13 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '외국납부세액공제 2026' },
+    { name: '외국납부세액공제' },
   ]);
 
   const faqLd = buildFaqPageJsonLd(FAQ_ITEMS);
 
   const articleLd = buildArticleJsonLd({
-    headline: '외국납부세액공제 2026, 해외주식·배당 환급 신청 완벽 가이드',
+    headline: '외국납부세액공제 2026, 해외주식·배당 환급 신청 가이드',
     description:
       '미국 주식 배당·이자·해외근로소득에서 이미 낸 세금을 한국 종소세에서 환급받는 방법.',
     url: URL,
@@ -164,7 +158,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                 lead={
                   <p data-speakable>
                     해외주식 배당·이자에서 이미 낸 외국 세금을 한국 종합소득세에서 환급받는 "외국납부세액공제"
-                    완벽 가이드. 한도 계산·신청 절차·10년 이월·증빙 서류까지 5월 31일 신고 직전 필독.
+                    가이드. 한도 계산·신청 절차·10년 이월·증빙 서류까지
                   </p>
                 }
               />
@@ -660,7 +654,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
                     href="/guide/may-comprehensive-income-tax/"
                     className="card card-hover text-sm text-primary-600 dark:text-primary-500 underline"
                   >
-                    → 5월 종합소득세 신고 완벽 가이드
+                    → 5월 종합소득세 신고 가이드
                   </Link>
                   <Link
                     href="/guide/comprehensive-income-tax-refund-timing-2026/"
@@ -699,7 +693,7 @@ export default function ForeignTaxCreditOverseasStock2026Page() {
               <ShareButtons
                 title="외국납부세액공제 2026 해외주식·배당 환급 신청"
                 url={URL}
-                description="미국 주식 배당에서 이미 낸 15% 세금을 한국 종합소득세에서 환급받는 방법. 한도 계산·신청 절차·10년 이월·증빙 서류 완벽 정리."
+                description="미국 주식 배당에서 이미 낸 15% 세금을 한국 종합소득세에서 환급받는 방법. 한도 계산·신청 절차·10년 이월·증빙 서류 정리."
               />
             </article>
           </main>

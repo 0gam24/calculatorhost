@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-28';
 export const metadata: Metadata = {
   title: '업무용 승용차 비용처리 2026, 감가상각 800만원 한도와 운행기록부',
   description:
-    '개인사업자의 업무용 승용차 비용은 감가상각비 연 800만원 한도로 필요경비에 넣고, 운행기록부를 안 쓰면 관련비용 전체가 연 1,500만원으로 제한됩니다. 소득세법 제33조의2 기준으로 한도·운행기록부·업무사용비율을 정리했습니다.',
+    '업무용 승용차 감가상각비는 연 800만원까지 필요경비로 넣고, 운행기록부가 없으면 관련비용 전체가 연 1,500만원으로 묶입니다.',
   keywords: [
     '업무용 승용차 비용처리',
     '차량 감가상각 800만원',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '업무용 승용차 비용처리 2026, 감가상각 800만원 한도와 운행기록부' }],
-    title: '업무용 승용차 비용처리 2026, 감가상각 800만원 한도와 운행기록부',
-    description: '복식부기의무자의 승용차 감가상각비는 연 800만원 한도, 운행기록부 미작성 시 관련비용은 연 1,500만원까지만 인정. 소득세법 §33의2 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '업무용 승용차 비용처리 2026, 800만원 한도와 운행기록부',
-    description: '복식부기의무자 대상 승용차 감가상각 연 800만원, 운행기록부 미작성 시 연 1,500만원 한도. 소득세법 §33의2.',
   },
 };
 

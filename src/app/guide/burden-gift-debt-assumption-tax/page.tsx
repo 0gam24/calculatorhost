@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-12';
 const DATE_MODIFIED = '2026-05-12';
 
 export const metadata: Metadata = {
-  title: '부담부증여 양도+증여세 완벽 정리 2026 | 채무인수 가족 간 부동산',
+  title: '부담부증여 양도+증여세 정리 2026 | 채무인수 가족 간 부동산',
   description:
-    '부담부증여 양도세+증여세 분리 계산식. 채무인수액은 양도세, 무상분은 증여세로 과세. 자산 10억+채무 4억 예시 1.55억 세금 시뮬. 전세보증금·은행대출 입증 방법, 함정 5가지, 5월 신고 절차 완벽 정리.',
+    '부담부증여는 채무인수액에 양도세, 무상분에 증여세를 따로 매깁니다. 자산 10억·채무 4억 사례와 함정 5가지를 정리했습니다.',
   keywords: [
     '부담부증여',
     '채무인수 증여세',
@@ -37,9 +37,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '부담부증여 양도+증여세 완벽 정리 2026 | 채무인수 가족 간 부동산' }],
-    title: '부담부증여 양도+증여세 완벽 정리 2026',
-    description: '부담부증여 분리 계산식·채무인수 양도세·무상분 증여세·절세 시뮬·함정 5가지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -48,8 +45,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '부담부증여 양도+증여세 완벽 정리 2026',
-    description: '자산 10억+채무 4억 부담부증여 → 증여 1.05억+양도 0.5억 = 1.55억 세금. 전세보증금·대출 입증.',
   },
 };
 
@@ -85,10 +80,10 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '부담부증여 양도+증여세 완벽 정리' },
+    { name: '부담부증여 양도+증여세 정리' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '부담부증여 양도+증여세 완벽 정리 2026',
+    headline: '부담부증여 양도+증여세 정리 2026',
     description:
       '부담부증여 분리 계산식·채무인수액은 양도세·무상분은 증여세·절세 효과·전세보증금·은행대출 입증·함정 5가지·신고 절차.',
     url: URL,
@@ -100,7 +95,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
     keywords: ['부담부증여', '양도세', '증여세', '채무인수', '절세'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '부담부증여 양도+증여세 완벽 정리 2026',
+    name: '부담부증여 양도+증여세 정리 2026',
     description: '부담부증여 분리 계산·채무인수 양도세·무상분 증여세·입증·함정 5가지.',
     url: URL,
     datePublished: DATE_PUBLISHED,
@@ -128,11 +123,11 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '부담부증여 양도+증여세 완벽 정리' },
+                    { name: '부담부증여 양도+증여세 정리' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  부담부증여 양도+증여세 완벽 정리 2026
+                  부담부증여 양도+증여세 정리 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   부동산을 가족에게 넘길 때 그에 딸린 전세보증금이나 대출금까지 함께 넘기는 경우가 있습니다.
@@ -553,13 +548,13 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                     → <Link href="/calculator/gift-tax/" className="text-primary-600 underline dark:text-primary-500">증여세 계산기</Link>, 무상분(증여분) 증여세 자동 산정
                   </li>
                   <li>
-                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 완전 정리</Link>, 비과세 조건·비례 과세
+                    → <Link href="/guide/one-household-12-billion-exemption/" className="text-primary-600 underline dark:text-primary-500">1세대1주택 12억 한도 정리</Link>, 비과세 조건·비례 과세
                   </li>
                   <li>
-                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 완전 정리</Link>, 보유·거주 분리 계산
+                    → <Link href="/guide/long-term-holding-special-deduction-80-percent/" className="text-primary-600 underline dark:text-primary-500">장기보유특별공제 80% 정리</Link>, 보유·거주 분리 계산
                   </li>
                   <li>
-                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 완벽 정리</Link>, 1년 경과·3년 기한
+                    → <Link href="/guide/temporary-two-houses-capital-gains-exemption/" className="text-primary-600 underline dark:text-primary-500">일시적 2주택 양도세 비과세 3년 정리</Link>, 1년 경과·3년 기한
                   </li>
                   <li>
                     → <Link href="/guide/family-loan-agreement-gift-tax-avoidance/" className="text-primary-600 underline dark:text-primary-500">가족 간 차용증 작성과 증여세</Link>, 채무인수 대신 빌려주는 방식의 요건·함정
@@ -571,7 +566,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
               </section>
 
               <ShareButtons
-                title="부담부증여 양도+증여세 완벽 정리 2026"
+                title="부담부증여 양도+증여세 정리 2026"
                 url={URL}
                 description="부담부증여 분리 계산식·채무인수 양도세·무상분 증여세·절세 효과·함정 5가지."
               />

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-21';
 const DATE_MODIFIED = '2026-05-21';
 
 export const metadata: Metadata = {
-  title: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준',
+  title: '프리랜서 단순경비율 vs 기준경비율 2026, 업종별 선택 기준',
   description:
-    '5월 31일까지 10일! 프리랜서·1인사업자 경비율 선택 기준. 단순(6~80%) vs 기준경비율 비교·업종별 매출 기준·실경비가 크면 기준이 유리·추계신고 vs 장부신고 의무·매출 경계값별 시뮬.',
+    '실제 경비가 크면 단순경비율(6~80%)보다 기준경비율이 유리합니다. 업종별 매출 기준과 경계값 시뮬레이션으로 선택법을 정리합니다.',
   keywords: [
     '프리랜서 종합소득세',
     '단순경비율',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '프리랜서 단순경비율 vs 기준경비율 2026 | 5월 31일 신고 선택 기준' }],
-    title: '프리랜서 단순경비율 vs 기준경비율 2026 선택 기준',
-    description: '강사 3,000만 → 단순경비율? 기준경비율? 세율표 + 실거래 사례 3개 + 함정 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '프리랜서 경비율 선택 기준, 5월 31일까지',
-    description: '단순 vs 기준경비율 세전 손익 시뮬레이션',
   },
 };
 
@@ -98,12 +93,12 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '프리랜서 경비율 선택 기준 2026' },
+    { name: '프리랜서 경비율 선택 기준' },
   ]);
   const articleLd = buildArticleJsonLd({
     headline: '프리랜서 단순경비율 vs 기준경비율 2026 선택 기준',
     description:
-      '5월 31일 종합소득세 신고까지 10일! 프리랜서·1인사업자가 매출 규모·업종·실경비에 따라 경비율을 선택하는 완벽 가이드. 단순(고정비율) vs 기준(추가 경비 인정)의 세전 손익 비교·업종별 매출 기준 표·매출 경계값 시뮬레이션.',
+      '5월 31일 종합소득세 신고까지 10일! 프리랜서·1인사업자가 매출 규모·업종·실경비에 따라 경비율을 선택하는 가이드. 단순(고정비율) vs 기준(추가 경비 인정)의 세전 손익 비교·업종별 매출 기준 표·매출 경계값 시뮬레이션.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -149,7 +144,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   프리랜서 단순경비율 vs 기준경비율 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 5월 31일까지 10일, 선택 기준 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 5월 31일까지 10일, 선택 기준 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감까지 정확히 10일 남았습니다. 프리랜서와 1인사업자가 가장 고민하는 것이 바로
@@ -566,7 +561,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   <li>
                     →{' '}
                     <Link href="/guide/may-comprehensive-income-tax/" className="text-primary-600 underline dark:text-primary-500">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </Link>
                     {' '}· 신고 대상·기한·절세 5가지
                   </li>
@@ -590,7 +585,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
               <ShareButtons
                 title="프리랜서 단순경비율 vs 기준경비율 2026 선택 기준"
                 url={URL}
-                description="5월 31일까지 10일! 경비율 선택으로 50만~200만 원 차이. 실경비별 비교·업종별 기준점·3가지 시뮬 완벽 정리."
+                description="5월 31일까지 10일! 경비율 선택으로 50만~200만 원 차이. 실경비별 비교·업종별 기준점·3가지 시뮬 정리."
               />
 
               {/* 출처 및 면책 */}
@@ -602,7 +597,7 @@ export default function FreelancerSimplifiedVsStandardExpenseRate2026Page() {
                   <strong>법적 근거</strong>: 소득세법 §79~§81 (추계·장부신고) · 시행령 §143~§145 (단순·기준경비율) ·
                   §209 (장부 비치 의무) · 국세기본법 §14 (실질과세 원칙). 참고:{' '}
                   <a
-                    href="https://www.hometax.go.kr/guide/0202000000.jsp"
+                    href="https://www.hometax.go.kr/"
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-600 underline dark:text-primary-500"

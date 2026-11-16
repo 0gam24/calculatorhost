@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-15';
 const DATE_MODIFIED = '2026-06-15';
 
 export const metadata: Metadata = {
-  title: '지역가입자 건강보험료 2026 | 소득·재산 점수 계산법 | calculatorhost',
+  title: '지역가입자 건강보험료 2026 | 소득·재산 점수 계산법',
   description:
-    '2026년 건강보험 지역가입자 보험료는 소득점수와 재산점수를 합산해 부과점수당 금액 211.5원을 곱해 산정합니다. 직장 퇴사 후 임의계속가입으로 보험료를 낮추는 방법과 국민건강보험공단 기준을 정리했습니다.',
+    '지역가입자 건강보험료는 소득·재산 점수를 합산해 부과점수당 211.5원을 곱해 정합니다. 퇴사 후 임의계속가입으로 낮추는 방법도 정리했습니다.',
   keywords: [
     '지역가입자 건강보험료',
     '건강보험 지역가입자',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '지역가입자 건강보험료 2026' }],
-    title: '지역가입자 건강보험료 2026 | 소득·재산 점수 계산법',
-    description: '소득점수·재산점수 계산법, 부과점수당 금액 211.5원, 임의계속가입 제도 완정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,9 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '지역가입자 건강보험료 2026',
-    description: '소득·재산 점수 계산, 부과점수당 금액, 임의계속가입 제도',
-    images: ['/og-default.png'],
   },
 };
 
@@ -95,7 +89,6 @@ export default function HealthInsuranceRegionalSubscriber2026() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '보험·연금', url: 'https://calculatorhost.com/guide/?category=insurance' },
     { name: '지역가입자 건강보험료 2026' },
   ]);
 
@@ -146,7 +139,7 @@ export default function HealthInsuranceRegionalSubscriber2026() {
             breadcrumbItems={[
               { name: '홈', href: '/' },
               { name: '가이드', href: '/guide/' },
-              { name: '보험·연금' },
+              { name: '지역가입자 건강보험료 2026' },
             ]}
             category="보험·연금"
             readingMinutes={8}
@@ -477,29 +470,21 @@ export default function HealthInsuranceRegionalSubscriber2026() {
           <section className="space-y-4 pt-4 border-t border-border-base">
             <h2 className="text-2xl font-bold text-text-primary">관련 계산기 & 가이드</h2>
             <div className="grid gap-4 md:grid-cols-2">
-              <Link href="/guide/health-insurance-premium-2026/">
-                <a className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
-                  <h3 className="font-semibold text-text-primary mb-1">건강보험료 2026</h3>
-                  <p className="text-sm text-text-secondary">직장·지역가입자 비교, 피부양자 요건</p>
-                </a>
+              <Link href="/guide/health-insurance-premium-2026/" className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
+                <h3 className="font-semibold text-text-primary mb-1">건강보험료 2026</h3>
+                <p className="text-sm text-text-secondary">직장·지역가입자 비교, 피부양자 요건</p>
               </Link>
-              <Link href="/calculator/n-jobber-insurance/">
-                <a className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
-                  <h3 className="font-semibold text-text-primary mb-1">N잡러 건강보험 계산기</h3>
-                  <p className="text-sm text-text-secondary">다중소득 피부양자 탈락 판정</p>
-                </a>
+              <Link href="/calculator/n-jobber-insurance/" className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
+                <h3 className="font-semibold text-text-primary mb-1">N잡러 건강보험 계산기</h3>
+                <p className="text-sm text-text-secondary">다중소득 피부양자 탈락 판정</p>
               </Link>
-              <Link href="/calculator/freelancer-tax/">
-                <a className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
-                  <h3 className="font-semibold text-text-primary mb-1">프리랜서 종합소득세</h3>
-                  <p className="text-sm text-text-secondary">소득 신고 시뮬레이션</p>
-                </a>
+              <Link href="/calculator/freelancer-tax/" className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
+                <h3 className="font-semibold text-text-primary mb-1">프리랜서 종합소득세</h3>
+                <p className="text-sm text-text-secondary">소득 신고 시뮬레이션</p>
               </Link>
-              <Link href="/guide/national-pension-premium-2026/">
-                <a className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
-                  <h3 className="font-semibold text-text-primary mb-1">국민연금료 2026</h3>
-                  <p className="text-sm text-text-secondary">자영업자·프리랜서 보험료</p>
-                </a>
+              <Link href="/guide/national-pension-premium-2026/" className="p-4 rounded-lg bg-bg-card border border-border-base hover:border-primary-500 transition">
+                <h3 className="font-semibold text-text-primary mb-1">국민연금료 2026</h3>
+                <p className="text-sm text-text-secondary">자영업자·프리랜서 보험료</p>
               </Link>
             </div>
           </section>

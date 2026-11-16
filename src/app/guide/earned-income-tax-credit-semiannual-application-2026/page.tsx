@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-20';
 export const metadata: Metadata = {
   title: '근로장려금 반기신청 2026, 9월 신청기간과 정기신청 차이',
   description:
-    '근로소득만 있는 직장인은 5월 정기신청 대신 9월 반기신청으로 근로장려금을 미리 받을 수 있습니다. 반기신청 대상, 상반기분 9월 1~15일 기간, 정기신청과의 차이를 조세특례제한법 §100의6 기준으로 정리했습니다.',
+    '근로소득만 있는 직장인은 5월 정기신청 대신 반기신청으로 근로장려금을 먼저 받을 수 있습니다. 대상과 9월 1~15일 접수 기간을 정리했습니다.',
   keywords: [
     '근로장려금 반기신청',
     '근로장려금 9월 신청',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '근로장려금 반기신청 2026, 9월 신청기간과 정기신청 차이' }],
-    title: '근로장려금 반기신청 2026, 9월 신청으로 먼저 받는 법',
-    description: '근로소득만 있는 거주자는 5월 정기신청 대신 9월 1~15일 반기신청으로 근로장려금을 앞당겨 받을 수 있습니다. 조세특례제한법 §100의6 기준 완전 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '근로장려금 반기신청 2026, 9월 신청과 선지급 방식',
-    description: '반기신청 대상, 신청기간(9월 1~15일), 정기신청과의 차이를 조세특례제한법 §100의6 기준으로 정리.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function EarnedIncomeTaxCreditSemiannualApplication2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '근로장려금 반기신청 2026, 9월 신청기간과 정기신청 차이',
     description:
-      '근로소득만 있는 거주자가 선택할 수 있는 반기신청 제도. 상반기분 9월 1~15일, 하반기분 이듬해 3월 1~15일 신청, 산정액 일부 선지급 후 정기 정산. 조세특례제한법 §100의6·§100의3 기준 완전 정리.',
+      '근로소득만 있는 거주자가 선택할 수 있는 반기신청 제도. 상반기분 9월 1~15일, 하반기분 이듬해 3월 1~15일 신청, 산정액 일부 선지급 후 정기 정산. 조세특례제한법 §100의6·§100의3 기준 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,

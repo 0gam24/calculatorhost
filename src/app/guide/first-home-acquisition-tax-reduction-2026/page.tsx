@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-03';
 export const metadata: Metadata = {
   title: '생애최초 취득세 감면 2026 | 200만원 한도·요건·신청',
   description:
-    '첫 주택을 살 때 취득세를 최대 200만원까지 줄여주는 생애최초 감면 제도를 정리했습니다. 누가 받을 수 있는지, 언제까지 신청해야 하는지, 감면이 나중에 취소되는 사후관리 조건은 무엇인지까지 지방세특례제한법 §36의3 기준으로 설명합니다.',
+    '생애최초 주택 구입이면 취득세를 최대 200만원까지 감면받습니다. 자격요건, 신청 기한, 추징되는 사후관리 조건을 정리했습니다.',
   keywords: [
     '생애최초 취득세 감면',
     '첫 주택 취득세',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '생애최초 취득세 감면 2026 | 200만원 한도·요건·신청' }],
-    title: '생애최초 취득세 감면 2026, 첫 주택 200만원 세금 감면',
-    description: '본인과 배우자가 처음 주택을 구입할 때 취득세에서 최대 200만원 감면. 요건, 계산, 거주요건까지 완벽 가이드.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '생애최초 취득세 감면 2026, 첫 주택 구입 시 200만원 감면 받는 방법',
-    description: '무주택자의 첫 주택 구입 취득세를 최대 200만원 감면. 자격, 한도, 거주요건 정리.',
   },
 };
 
@@ -100,9 +95,9 @@ export default function FirstHomeAcquisitionTaxReduction2026Page() {
     { name: '생애최초 취득세 감면 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '생애최초 취득세 감면 2026, 첫 주택 200만원 세금 감면 완벽 가이드',
+    headline: '생애최초 취득세 감면 2026, 첫 주택 200만원 세금 감면 가이드',
     description:
-      '본인과 배우자가 처음 주택을 구입할 때 취득세에서 최대 200만원 감면되는 제도. 자격요건, 계산 사례, 거주요건, 일몰기한까지 완전 정리.',
+      '본인과 배우자가 처음 주택을 구입할 때 취득세에서 최대 200만원 감면되는 제도. 자격요건, 계산 사례, 거주요건, 일몰기한까지 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -434,7 +429,7 @@ export default function FirstHomeAcquisitionTaxReduction2026Page() {
                     href="/guide/housing-subscription-score-84-points-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">청약가점 계산 완벽 가이드</div>
+                    <div className="font-semibold text-primary-500">청약가점 계산 가이드</div>
                     <p className="mt-1 text-sm text-text-secondary">84점 만점에 가점 계산법.</p>
                   </Link>
                   <Link

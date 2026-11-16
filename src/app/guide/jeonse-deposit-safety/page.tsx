@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-05-06';
 const DATE_MODIFIED = '2026-05-06';
 
 export const metadata: Metadata = {
-  title: '전세 보증금 안전 가이드 2026 | 사기 방지 체크리스트 | calculatorhost',
+  title: '전세 보증금 안전 가이드 2026 | 사기 방지 체크리스트',
   description:
-    '전세 사기·깡통전세 예방법 8가지. 계약 전 필수 확인사항·등기부등본 읽는 법·HUG보증 신청까지. 2026년 최신 법규 기준. 임차인 보호 + 보증금 회수 절차 포함.',
+    '전세 사기와 깡통전세를 막는 8가지 확인법을 정리했습니다. 등기부등본 읽는 법부터 HUG 보증 신청까지 담았습니다.',
   keywords: [
     '전세 보증금',
     '전세 사기',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '전세 보증금 안전 가이드 2026 | 사기 방지 체크리스트 | calculatorhost' }],
-    title: '전세 보증금 안전 가이드 2026',
-    description: '보증금 보호 8가지 필수 체크리스트. 깡통전세 예방부터 HUG보증 신청까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',

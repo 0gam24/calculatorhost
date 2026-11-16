@@ -47,12 +47,25 @@ describe('Crawler rendering assets', () => {
     },
   );
 
-  it('still blocks private API/WordPress requests while allowing public feed JSON', async () => {
+  it('still blocks private API requests while allowing public feed JSON', async () => {
     const text = await GET().text();
     expect(isAllowed(text, 'Googlebot', '/api/private/')).toBe(false);
-    expect(isAllowed(text, 'Yeti', '/wp-admin/')).toBe(false);
     expect(isAllowed(text, 'Googlebot', '/feed.json')).toBe(true);
     expect(isAllowed(text, 'Googlebot', '/private.json')).toBe(false);
+  });
+
+  // 네이버 가이드 01-05·12-03: 지운 페이지를 robots.txt 로 막으면 로봇이 404 를 확인하지 못해
+  // 검색에서 빠지지 않는다. 옛 WordPress 주소는 막지 않고 404 로 사라지게 둔다.
+  it.each(['Yeti', 'Googlebot'])('%s can reach removed WordPress URLs to see they are gone', async (bot) => {
+    const text = await GET().text();
+    for (const path of ['/wp-admin/', '/wp-content/uploads/a.jpg', '/feed/', '/tag/a/', '/author/a/', '/?p=1', '/?s=a']) {
+      expect(isAllowed(text, bot, path), `${bot}: ${path}`).toBe(true);
+    }
+  });
+
+  it('points crawlers to the sitemap with an absolute URL', async () => {
+    const text = await GET().text();
+    expect(text).toMatch(/^Sitemap: https:\/\/calculatorhost\.com\/sitemap\.xml$/m);
   });
 });
 

@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-06-24';
 const DATE_MODIFIED = '2026-06-24';
 
 export const metadata: Metadata = {
-  title: '재산세 7월 납부 일정·분납 2026 | 주택 건축물 토지 납기 | calculatorhost',
+  title: '재산세 7월 납부 일정·분납 2026 | 주택 건축물 토지 납기',
   description:
-    '2026년 재산세 7월·9월 납부 일정 완벽 정리. 주택 1기분·건축물·토지 납기 차이, 250만원 초과 분할납부 방법, 가산세 피하기까지. 지방세법 §115·§118 기준.',
+    '2026년 재산세 7월·9월 납부 일정을 주택 1기분, 건축물, 토지별로 정리했습니다. 250만원 초과 시 분납 방법도 담았습니다.',
   keywords: [
     '재산세 7월 납부',
     '재산세 납부 일정',
@@ -33,9 +33,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '재산세 7월 납부 일정·분납 2026 | 주택 건축물 토지 납기 | calculatorhost' }],
-    title: '재산세 7월 납부 일정·분납 2026',
-    description: '주택 재산세는 7월, 건축물도 7월, 토지는 9월. 납기별 정확한 마감일과 분납 조건, 지연 시 가산세까지 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -44,8 +41,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '재산세 7월 납부 일정·분납 2026',
-    description: '주택 7월·토지 9월 납기, 250만원 초과 분할납부, 가산금까지. 지방세법 §114·§115·§118 기준.',
   },
 };
 
@@ -94,7 +89,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
     { name: '재산세 7월 납부 일정·분납 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '재산세 7월 납부 일정·분납 2026, 주택 건축물 토지 납기와 분할납부 완벽 정리',
+    headline: '재산세 7월 납부 일정·분납 2026, 주택 건축물 토지 납기와 분할납부 정리',
     description:
       '2026년 재산세 7월 1기분, 9월 2기분 정확한 납부 기한. 건축물과 토지의 다른 납기, 250만원 초과 분할납부 신청 방법, 가산세 피하기까지.',
     url: URL,
@@ -142,7 +137,7 @@ export default function PropertyTaxJulyPaymentSchedule2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   재산세 7월 납부 일정·분납 2026
                   <br />
-                  <span className="text-2xl text-text-secondary">· 주택 건축물 토지 납기와 분할납부 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 주택 건축물 토지 납기와 분할납부 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   6월이 되면 도착하는 재산세 납세 통지서. 그런데 7월에 낸다고 했는데 9월에도 또 내야 한다는 통지서가 오고, 건축물과 토지의 납기가 다르다니 복잡하기만 합니다. 이 가이드는 2026년 재산세 납부 일정을 정확히 정리해드립니다. 주택분 1기분과 2기분의 차이, 건축물과 토지의 다른 납기, 250만원 초과 분할납부 신청 방법까지 모두 담았습니다.

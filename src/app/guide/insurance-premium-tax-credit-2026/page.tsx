@@ -20,9 +20,9 @@ const DATE_PUBLISHED = '2026-07-07';
 const DATE_MODIFIED = '2026-07-07';
 
 export const metadata: Metadata = {
-  title: '보장성보험료 세액공제 2026 | 100만원 한도·12% 공제',
+  title: '보장성보험료 세액공제 2026 | 100만원 한도·12%, 장애인 15%',
   description:
-    '보장성보험료 세액공제(소득세법 §59의4)의 한도·공제율·대상보험을 정리했습니다. 일반 100만원/12%, 장애인 100만원/15% 한도. 연말정산 필수 서류 안내.',
+    '보험료 세액공제는 일반 100만원 한도에 12%, 장애인은 15%를 공제합니다. 대상 상품과 제외 사항, 필요 서류를 정리했습니다.',
   keywords: [
     '보장성보험료 세액공제',
     '보험료 세액공제',
@@ -34,9 +34,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '보장성보험료 세액공제 2026 | 100만원 한도·12% 공제' }],
-    title: '보장성보험료 세액공제 2026, 연말정산 100만원 한도 완벽 정리',
-    description: '기본공제대상자를 피보험자로 하는 보장성보험(손해보험·상해·질병·종신·화재)의 보험료 12% 공제. 한도·구간·필요 서류까지 한눈에.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -45,8 +42,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '보장성보험료 세액공제 2026, 100만원/12% 한도 정확히',
-    description: '보장성보험료 세액공제의 대상, 한도, 공제율, 제외 대상을 소득세법 §59의4에 따라 정리했습니다.',
   },
 };
 
@@ -100,7 +95,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
     { name: '보장성보험료 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '보장성보험료 세액공제 2026, 연말정산 100만원 한도 완벽 정리',
+    headline: '보장성보험료 세액공제 2026, 연말정산 100만원 한도 정리',
     description:
       '기본공제대상자를 피보험자로 하는 보장성보험의 보험료 세액공제. 일반 100만원 한도 12% 공제, 장애인 별도 100만원 한도 15% 공제. 대상 보험·제외 사항·연말정산 신청 방법까지 소득세법 §59의4 기준으로 정확히 정리.',
     url: URL,
@@ -466,7 +461,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
                     <div className="font-semibold text-primary-500">연말정산 완벽 준비 가이드</div>
-                    <p className="mt-1 text-sm text-text-secondary">공제·세액공제·제출 서류 총정리.</p>
+                    <p className="mt-1 text-sm text-text-secondary">공제·세액공제·제출 서류 정리.</p>
                   </Link>
                   <Link
                     href="/guide/medical-expense-tax-credit-3-percent-2026/"
@@ -507,7 +502,7 @@ export default function InsurancePremiumTaxCredit2026Page() {
                   <strong>참고 자료</strong>:{' '}
                   <a href="https://www.law.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">법제처 국가법령정보센터(소득세법 §59의4)</a>,{' '}
                   <a href="https://www.nts.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 공식 사이트</a>,{' '}
-                  <a href="https://www.simpletax.or.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 연말정산 간소화 서비스</a>.
+                  <a href="https://www.hometax.go.kr/" target="_blank" rel="noopener noreferrer nofollow" className="text-primary-500 underline">국세청 연말정산 간소화 서비스</a>.
                 </p>
               </section>
 

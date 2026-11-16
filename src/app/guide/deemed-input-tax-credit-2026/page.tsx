@@ -21,9 +21,9 @@ const DATE_MODIFIED = '2026-07-25';
 // 북극성 수익 레버: [revenue-lever: indexing+traffic] (신규 색인 표면 + 자영업자 부가세 절세 검색 의도 흡수)
 
 export const metadata: Metadata = {
-  title: '의제매입세액공제 2026, 음식점 공제율·한도·계산법 | calculatorhost',
+  title: '의제매입세액공제 2026, 음식점 공제율·한도·계산법',
   description:
-    '음식점·카페가 면세 농수산물을 사면 매입세액이 없어도 일정액을 공제받습니다. 업종별 공제율(8/108·9/109·6/106), 한도 계산, 준비 서류를 부가가치세법 §42 기준으로 정리했습니다.',
+    '음식점·카페가 면세 농수산물을 사면 매입세액이 없어도 일정액을 공제받습니다. 업종별 공제율과 한도 계산을 정리했습니다.',
   keywords: [
     '의제매입세액공제',
     '음식점 부가세 환급',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '의제매입세액공제 2026, 음식점 공제율·한도·계산법' }],
-    title: '의제매입세액공제 2026, 면세 농산물 사고 부가세 돌려받기',
-    description: '음식점·카페의 면세 농수산물 매입 절세. 업종별 공제율과 한도, 준비 서류까지.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '의제매입세액공제 2026, 음식점 부가세 절세 정리',
-    description: '공제율 8/108·9/109·6/106, 한도 계산법, 준비 서류. 부가가치세법 §42.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function DeemedInputTaxCredit2026Page() {
     { name: '의제매입세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '의제매입세액공제 2026, 음식점 공제율·한도·계산법 완벽 정리',
+    headline: '의제매입세액공제 2026, 음식점 공제율·한도·계산법 정리',
     description:
       '면세 농수산물을 사는 음식점·카페·제조업의 부가세 절세. 업종별 공제율, 한도 계산, 준비 서류를 부가가치세법 §42 기준으로 정리.',
     url: URL,

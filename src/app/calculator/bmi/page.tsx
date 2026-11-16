@@ -19,6 +19,7 @@ import {
 import { BmiCalculator } from './BmiCalculator';
 import { Breadcrumb } from '@/components/layout/Breadcrumb';
 import { AuthorByline } from '@/components/calculator/AuthorByline';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
 
 const URL = 'https://calculatorhost.com/calculator/bmi/';
 
@@ -36,15 +37,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: 'BMI 계산기 2026 | 대한비만학회 기준',
-    description: '키와 몸무게로 BMI를 계산하고 건강한 체중 범위를 확인하세요.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'BMI 계산기 2026',
-    description: 'BMI 계산과 체중 분류를 한 번에.',
   },
 };
 
@@ -92,6 +89,8 @@ export default function BmiPage() {
     description:
       '키와 몸무게로 BMI를 계산하고 대한비만학회 기준 체중 분류와 정상 체중 범위를 확인하는 무료 도구',
     url: URL,
+    // 네이버 소프트웨어 마크업(08-14) applicationCategory 는 실제 분류로
+    applicationCategory: 'HealthApplication',
   });
   const webPageLd = buildWebPageJsonLd({
     name: 'BMI 계산기 2026',
@@ -101,7 +100,7 @@ export default function BmiPage() {
     dateModified: '2026-04-27',
     isPartOf: getCategoryUrlForCalculator('bmi'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: 'BMI 계산기 사용 방법',
     description: 'BMI를 계산하고 건강한 체중 범위를 확인하는 단계별 가이드',
     steps: [
@@ -114,14 +113,15 @@ export default function BmiPage() {
       },
       { name: '표준체중 확인', text: '자신의 키에 맞는 표준체중 범위를 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '생활', url: 'https://calculatorhost.com/category/lifestyle/' },
-    { name: 'BMI 계산기' },
+    { name: 'BMI' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
 
@@ -189,6 +189,7 @@ export default function BmiPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="BMI(체질량지수)는 키와 몸무게로 계산한 체중의 적절성을 판단하는 지표입니다. BMI = 몸무게(kg) ÷ 키(m)²로 계산되며, 다양한 건강 상태를 분류하는 기초 자료로 사용됩니다."
                 table={{

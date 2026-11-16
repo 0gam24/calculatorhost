@@ -22,7 +22,7 @@ const DATE_MODIFIED = '2026-07-14';
 export const metadata: Metadata = {
   title: '계약갱신청구권·묵시적 갱신 2026, 5% 상한과 2+2년',
   description:
-    '주택임대차보호법 §6의3 계약갱신요구권과 §6 묵시적 갱신의 차이, 만기 6개월~2개월 전 통지 규칙, 5% 인상 상한, 2+2년 최대 거주까지 임차인이 꼭 알아야 할 내용 정리.',
+    '계약갱신요구권과 묵시적 갱신의 차이, 5% 인상 상한, 2+2년 최대 거주를 주택임대차보호법 기준으로 정리했습니다.',
   keywords: [
     '계약갱신요구권',
     '묵시적 갱신',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '계약갱신청구권·묵시적 갱신 2026, 5% 상한과 2+2년' }],
-    title: '계약갱신청구권·묵시적 갱신 2026: 5% 상한과 2+2년 정리',
-    description: '주택임대차보호법 §6, §6의2, §6의3, §7 기준. 통지 시기·갱신 횟수·5% 인상 상한·해지 3개월 규칙을 사례와 함께 설명합니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '계약갱신청구권·묵시적 갱신 2026, 5% 상한과 2+2년',
-    description: '주택임대차보호법 §6의3 계약갱신요구권, §6 묵시적 갱신, §7 5% 인상 상한, §6의2 해지 통지 3개월 규칙을 사례로 정리.',
   },
 };
 

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-26';
 export const metadata: Metadata = {
   title: '기타소득 300만원 분리과세 2026, 종합과세 뭐가 유리',
   description:
-    '강연료·원고료 같은 기타소득은 연 기타소득금액 300만원 이하면 분리과세와 종합과세 중 유리한 쪽을 고를 수 있습니다. 300만원 기준의 의미, 필요경비 60% 의제, 세율 비교를 소득세법 §14 기준으로 정리했습니다.',
+    '강연료·원고료 같은 기타소득은 연간 소득금액 300만원 이하면 분리과세와 종합과세 중 유리한 쪽을 고를 수 있습니다.',
   keywords: [
     '기타소득 300만원',
     '기타소득 분리과세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '기타소득 300만원 분리과세 2026, 종합과세 뭐가 유리' }],
-    title: '기타소득 300만원 분리과세 2026, 종합과세와 비교',
-    description: '기타소득금액 300만원 이하는 분리과세와 종합과세 선택 가능. 필요경비 60% 의제와 세율 비교로 유리한 쪽 고르기.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '기타소득 300만원 분리과세 2026',
-    description: '기타소득금액 300만원 이하면 분리과세와 종합과세 중 선택. 소득세법 §14 기준.',
   },
 };
 

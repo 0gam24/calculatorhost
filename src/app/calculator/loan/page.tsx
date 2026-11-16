@@ -25,6 +25,8 @@ import { AuthorByline } from '@/components/calculator/AuthorByline';
 import { PublicDataCitation } from '@/components/seo/PublicDataCitation';
 import { getEcosBaseRateCitation } from '@/lib/publicapi/public-citations';
 import bokRates from '@/data/bok-rates.json';
+import { HowToSteps } from '@/components/calculator/HowToSteps';
+import { GlossaryTerms } from '@/components/calculator/GlossaryTerms';
 
 const ECOS_BASE_RATE = getEcosBaseRateCitation(bokRates);
 
@@ -44,15 +46,11 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '대출이자 계산기 2026, 상환방식별 월 납입액 비교',
-    description: '원리금균등·원금균등·만기일시 상환방식별 월 상환액 및 총이자를 즉시 비교.',
     url: URL,
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '대출이자 계산기 2026',
-    description: '상환방식별 월상환액·총이자·상환 스케줄을 즉시 비교 계산.',
   },
 };
 
@@ -111,7 +109,7 @@ export default function LoanInterestPage() {
     dateModified: '2026-07-06',
     isPartOf: getCategoryUrlForCalculator('loan'),
   });
-  const howToLd = buildHowToJsonLd({
+  const howToData = {
     name: '대출이자 계산기 사용 방법',
     description:
       '대출원금, 금리, 기간을 입력하여 상환방식별 월상환액과 총이자를 계산하는 단계별 가이드',
@@ -122,7 +120,8 @@ export default function LoanInterestPage() {
       { name: '상환방식 선택', text: '원리금균등·원금균등·만기일시 중 상환방식을 선택합니다.' },
       { name: '결과 확인', text: '월상환액, 총이자, 상환 스케줄을 확인합니다.' },
     ],
-  });
+  };
+  const howToLd = buildHowToJsonLd(howToData);
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -132,6 +131,38 @@ export default function LoanInterestPage() {
     { name: '대출이자' },
   ]);
   const speakableLd = buildSpeakableJsonLd(['[data-speakable]']);
+
+  const glossaryData = {
+    name: '대출이자 핵심 용어',
+    description: '대출 상환 시 필요한 금융 용어집',
+    url: `${URL}#glossary`,
+    terms: [
+      {
+        name: '원리금균등상환',
+        alternateName: 'Equal Amortization',
+        description:
+          '매월 동일한 금액을 상환하는 방식. 초기에는 이자 비중이 높고 점점 원금 비중이 높아짐. 예산 계획이 수월한 장점.',
+      },
+      {
+        name: '거치기간',
+        alternateName: 'Grace Period',
+        description:
+          '대출 실행 후 원금 상환 없이 이자만 납부하는 초기 기간. 거치 후 본격적인 원금 상환 시작. 거치 기간이 길수록 총 이자 증가.',
+      },
+      {
+        name: 'DSR',
+        alternateName: '부채원리금상환비율',
+        description:
+          '연간 모든 대출의 원리금 상환액을 연소득으로 나눈 비율. 금감원이 정한 한도(보통 40%)로 대출 가능 여부 결정.',
+      },
+      {
+        name: 'LTV',
+        alternateName: '담보인정비율',
+        description:
+          '대출액을 담보 가치(주택가격)로 나눈 비율. 금감원이 정한 한도(보통 70-80%)로 최대 대출 금액 결정.',
+      },
+    ],
+  };
 
   return (
     <>
@@ -163,37 +194,7 @@ export default function LoanInterestPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
-            buildDefinedTermSetJsonLd({
-              name: '대출이자 핵심 용어',
-              description: '대출 상환 시 필요한 금융 용어집',
-              url: `${URL}#glossary`,
-              terms: [
-                {
-                  name: '원리금균등상환',
-                  alternateName: 'Equal Amortization',
-                  description:
-                    '매월 동일한 금액을 상환하는 방식. 초기에는 이자 비중이 높고 점점 원금 비중이 높아짐. 예산 계획이 수월한 장점.',
-                },
-                {
-                  name: '거치기간',
-                  alternateName: 'Grace Period',
-                  description:
-                    '대출 실행 후 원금 상환 없이 이자만 납부하는 초기 기간. 거치 후 본격적인 원금 상환 시작. 거치 기간이 길수록 총 이자 증가.',
-                },
-                {
-                  name: 'DSR',
-                  alternateName: '부채원리금상환비율',
-                  description:
-                    '연간 모든 대출의 원리금 상환액을 연소득으로 나눈 비율. 금감원이 정한 한도(보통 40%)로 대출 가능 여부 결정.',
-                },
-                {
-                  name: 'LTV',
-                  alternateName: '담보인정비율',
-                  description:
-                    '대출액을 담보 가치(주택가격)로 나눈 비율. 금감원이 정한 한도(보통 70-80%)로 최대 대출 금액 결정.',
-                },
-              ],
-            }),
+            buildDefinedTermSetJsonLd(glossaryData),
           ),
         }}
       />
@@ -245,6 +246,7 @@ export default function LoanInterestPage() {
                 </>
               }
             >
+              <HowToSteps name={howToData.name} steps={howToData.steps} />
               <StructuredSummary
                 definition="대출이자는 대출원금에 대해 발생하는 비용으로, 상환 방식에 따라 월 상환액과 총이자가 달라집니다. 상환 방식은 원리금균등(월 일정액)·원금균등(월 원금 일정액)·만기일시(월 이자, 만기에 원금)로 나뉩니다(금융감독원 대출상환 표준공식)."
                 table={{
@@ -669,6 +671,7 @@ export default function LoanInterestPage() {
                   상환액을 확인하시기 바랍니다.
                 </p>
               </section>
+              <GlossaryTerms name={glossaryData.name} terms={glossaryData.terms} />
             </CalculatorPageContent>
           </main>
         </div>

@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-07';
 export const metadata: Metadata = {
   title: '수습기간 최저임금 90% 2026, 9,288원 조건과 예외',
   description:
-    '수습근로자 최저임금 90%(2026년 시급 9,288원) 감액은 최저임금법 제5조 제2항에 따라 1년 이상 계약, 3개월 이내, 비단순노무직 3요건을 모두 갖춰야 합니다. 사례와 대응까지 정리.',
+    '수습 최저임금 90%(2026년 시급 9,288원) 감액은 1년 이상 계약, 3개월 이내, 비단순노무직 요건을 모두 갖춰야 합법입니다.',
   keywords: [
     '수습 최저임금 90%',
     '수습기간 최저임금',
@@ -36,17 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '수습기간 최저임금 90% 2026, 9,288원 조건과 예외',
-      },
-    ],
-    title: '수습기간 최저임금 90% 2026, 9,288원 조건과 예외',
-    description:
-      '2026년 최저임금 10,320원 기준 수습 90%는 시급 9,288원. 1년 이상 계약, 3개월 이내, 비단순노무직 3요건 모두 충족해야 합법입니다.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -55,9 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '수습기간 최저임금 90% 2026, 9,288원 합법 조건',
-    description:
-      '수습 감액 3요건(1년 이상 계약·3개월 이내·비단순노무). 편의점·주방보조 등 단순노무직은 수습이라도 100% 지급해야 합니다.',
   },
 };
 
@@ -125,7 +111,7 @@ export default function ProbationPeriodMinimumWage90Percent2026Page() {
   const webPageLd = buildWebPageJsonLd({
     name: '수습기간 최저임금 90% 2026',
     description:
-      '수습근로자 최저임금 90% 감액의 3가지 요건, 2026년 9,288원 기준 계산 사례, 위반 시 대응 방법 완전 정리.',
+      '수습근로자 최저임금 90% 감액의 3가지 요건, 2026년 9,288원 기준 계산 사례, 위반 시 대응 방법 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -450,7 +436,7 @@ export default function ProbationPeriodMinimumWage90Percent2026Page() {
                     href="/guide/minimum-wage-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">2026년 최저임금 완벽 정리</div>
+                    <div className="font-semibold text-primary-500">2026년 최저임금 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">시급 10,320원 근거와 월 환산·주휴수당 포함 지급액.</p>
                   </Link>
                   <Link
@@ -471,7 +457,7 @@ export default function ProbationPeriodMinimumWage90Percent2026Page() {
                     href="/guide/weekly-holiday-allowance-2026/"
                     className="rounded-lg border border-border-base bg-bg-card p-4 hover:border-primary-500 hover:bg-primary-500/5 transition"
                   >
-                    <div className="font-semibold text-primary-500">주휴수당 2026 완전 정리</div>
+                    <div className="font-semibold text-primary-500">주휴수당 2026 정리</div>
                     <p className="mt-1 text-sm text-text-secondary">수습 기간에도 발생하는 주휴수당 요건과 계산 방법.</p>
                   </Link>
                   <Link

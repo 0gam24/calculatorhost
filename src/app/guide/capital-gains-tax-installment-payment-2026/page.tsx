@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-09-30';
 export const metadata: Metadata = {
   title: '양도소득세 분납 조건과 신청 방법 2026, 1천만원 초과 기준',
   description:
-    '양도소득세 납부세액이 1천만원을 초과하면 최대 절반까지 납부기한 경과 후 2개월 이내 나눠 낼 수 있습니다. 소득세법 §112·시행령 §175 기준 분납 가능 금액과 확정신고서 기재 방법을 세액 구간별 계산 사례로 정리했습니다.',
+    '양도소득세 납부세액이 1천만원을 넘으면 납부기한 후 2개월 안에 나눠 낼 수 있습니다. 분납 가능 금액과 신고서 기재법을 정리했습니다.',
   keywords: [
     '양도소득세 분납',
     '양도세 분할납부',
@@ -35,17 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: '양도소득세 분납 조건과 신청 방법 2026',
-      },
-    ],
-    title: '양도소득세 분납 조건과 신청 방법 2026, 1천만원 초과 기준',
-    description:
-      '세액 1천만원 초과 시 최대 절반까지 2개월 분납. 소득세법 §112·시행령 §175 기준 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -54,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '양도소득세 분납 조건과 신청 방법 2026',
-    description: '세액 1천만원 초과 시 최대 절반까지 2개월 분납 가능. 소득세법 §112 기준.',
   },
 };
 

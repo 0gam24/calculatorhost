@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-08-02';
 export const metadata: Metadata = {
   title: '청약 예치금액 2026, 지역별·면적별 300만~1500만 기준',
   description:
-    '민영주택 청약 1순위는 지역과 전용면적에 따라 정해진 예치기준금액을 채워야 합니다. 서울·부산 300만~1500만원 등 지역별 기준과 거주지 기준 원칙, 면적 상향 방법을 주택공급규칙 기준으로 정리했습니다.',
+    '민영주택 청약 1순위는 지역과 전용면적에 따라 정해진 예치기준금액을 채워야 합니다. 서울·부산은 300만~1500만원입니다.',
   keywords: [
     '청약 예치금액',
     '청약통장 예치금',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '청약 예치금액 2026 지역별 면적별 기준' }],
-    title: '청약 예치금액 2026: 지역·전용면적별 300만~1500만원 정리',
-    description: '민영주택 청약 1순위 예치기준금액. 서울 84제곱미터 300만원부터 모든 면적 1500만원까지 지역별 기준과 거주지 판정 원칙.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '청약 예치금액 2026: 지역·면적별 300만~1500만원',
-    description: '민영주택 1순위 예치기준금액. 주택공급규칙 §10 별표2 기준 지역·전용면적별 정리.',
   },
 };
 
@@ -101,7 +96,7 @@ export default function PrivateHousingSubscriptionDepositAmount2026Page() {
     { name: '청약 예치금액 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '청약 예치금액 2026: 지역별·면적별 300만~1500만원 기준 완전 정리',
+    headline: '청약 예치금액 2026: 지역별·면적별 300만~1500만원 기준 정리',
     description:
       '민영주택 청약 1순위 예치기준금액을 주택공급규칙 §10 별표2 기준으로 정리. 서울·광역시·시군 지역구분, 전용면적 4단계(85·102·135·모든 면적) 예치금액, 거주지 기준 원칙, 면적 상향 방법까지.',
     url: URL,

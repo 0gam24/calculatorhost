@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-16';
 export const metadata: Metadata = {
   title: '비과세종합저축 2026, 5천만원 이자 세금 0원 만드는 법',
   description:
-    '만 65세 이상·장애인 등이 5,000만원까지 이자·배당에 세금을 내지 않는 비과세종합저축. 조특법 §88의2 대상 요건, 2026년 신규가입 제한, 15.4% 절세 효과를 사례로 정리합니다.',
+    '만 65세 이상이나 장애인 등은 비과세종합저축으로 5,000만원까지 이자·배당 세금을 내지 않습니다. 2026년 바뀐 요건도 정리합니다.',
   keywords: [
     '비과세종합저축',
     '노인 예금 비과세',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '비과세종합저축 2026, 5천만원 이자 세금 0원 만드는 법' }],
-    title: '비과세종합저축 2026, 5천만원까지 이자 세금 0원',
-    description: '만 65세 이상·장애인 등이 5,000만원 한도로 이자·배당 세금을 면제받는 제도. 조특법 §88의2.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '비과세종합저축 2026, 5천만원 이자 세금 0원 만드는 법',
-    description: '5,000만원 한도까지 이자·배당 15.4% 세금이 면제됩니다. 대상과 2026년 가입 요건 정리. 조특법 §88의2.',
   },
 };
 

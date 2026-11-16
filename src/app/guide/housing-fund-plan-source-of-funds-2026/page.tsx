@@ -23,7 +23,7 @@ const DATE_MODIFIED = '2026-07-30';
 export const metadata: Metadata = {
   title: '주택 자금조달계획서 2026, 제출 대상·작성법·증여 증빙',
   description:
-    '주택 자금조달계획서는 6억 이상 주택이나 규제지역 매수 시 계약 후 30일 안에 제출해야 합니다. 제출 대상과 자기자금·차입금 기재법, 증여·차용 증빙, 자금출처조사 연계를 부동산 거래신고법 기준으로 정리했습니다.',
+    '6억 이상이거나 규제지역 주택을 사면 계약 후 30일 안에 자금조달계획서를 내야 합니다. 자기자금·차입금 기재법과 증여 증빙을 정리했습니다.',
   keywords: [
     '자금조달계획서',
     '주택 자금조달계획서',
@@ -35,9 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '주택 자금조달계획서 2026, 제출 대상·작성법·증여 증빙' }],
-    title: '주택 자금조달계획서 2026, 제출 대상·작성법·증여 증빙',
-    description: '6억 이상 또는 규제지역 매수 시 계약 후 30일 내 제출. 자기자금·차입금 기재와 증여 증빙, 자금출처조사 연계 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -46,8 +43,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '주택 자금조달계획서 2026, 제출 대상·작성법·증여 증빙',
-    description: '6억 이상·규제지역 주택 매수 시 30일 내 제출. 잘못 쓰면 자금출처조사로 이어질 수 있는 항목까지 정리.',
   },
 };
 

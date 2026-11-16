@@ -22,9 +22,9 @@ const DATE_PUBLISHED = '2026-07-23';
 const DATE_MODIFIED = '2026-07-23';
 
 export const metadata: Metadata = {
-  title: '배우자 출산휴가 2026, 20일 유급·급여·신청기한 정리 | calculatorhost',
+  title: '배우자 출산휴가 2026, 20일 유급·급여·신청기한 정리',
   description:
-    '배우자 출산휴가는 2026년 기준 20일 전부 유급입니다. 근무일 기준 계산, 통상임금 100% 급여와 상한, 최대 3회 분할, 신청 기한과 방법을 남녀고용평등법 §18의2 기준으로 정리했습니다.',
+    '배우자 출산휴가는 2026년 20일 전부 유급이며, 통상임금 100%가 상한 안에서 지급됩니다. 최대 3회 분할과 신청 기한을 정리했습니다.',
   keywords: [
     '배우자 출산휴가',
     '배우자 출산휴가 20일',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '배우자 출산휴가 2026, 20일 유급·급여·신청기한 정리' }],
-    title: '배우자 출산휴가 2026, 20일 유급으로 늘어난 아빠 휴가 총정리',
-    description: '20일 전부 유급, 근무일 기준 계산, 통상임금 100% 급여, 최대 3회 분할. 신청 기한과 방법까지 한 번에 정리.',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '배우자 출산휴가 2026, 20일 유급·급여·분할 정리',
-    description: '근무일 기준 20일 유급, 통상임금 100%, 최대 3회 분할. 남녀고용평등법 §18의2.',
   },
 };
 
@@ -102,7 +97,7 @@ export default function SpouseChildbirthLeave2026Page() {
     { name: '배우자 출산휴가 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '배우자 출산휴가 2026, 20일 유급으로 늘어난 아빠 휴가 총정리',
+    headline: '배우자 출산휴가 2026, 20일 유급으로 늘어난 아빠 휴가 정리',
     description:
       '2026년 배우자 출산휴가 20일 전부 유급. 근무일 기준 계산, 통상임금 100% 급여와 상한, 최대 3회 분할, 신청 기한과 방법을 남녀고용평등법 §18의2 기준으로 정리.',
     url: URL,

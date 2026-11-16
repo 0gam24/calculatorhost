@@ -19,9 +19,9 @@ const DATE_PUBLISHED = '2026-05-26';
 const DATE_MODIFIED = '2026-05-26';
 
 export const metadata: Metadata = {
-  title: '의료비 세액공제 2026 3% 초과분 15% 공제 700만 한도 | calculatorhost',
+  title: '의료비 세액공제 2026 3% 초과분 15% 공제 700만 한도',
   description:
-    '5월 종소세 신고! 의료비 세액공제 완벽 정리. 총급여 3% 초과분만 세액공제 대상, 공제율 15% (난임 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비·보험금 차감 의무·한도 구분 + 시뮬 3가지',
+    '총급여 3%를 넘는 의료비는 15%(난임 30%)를 세액공제받고 한도는 700만원입니다. 대상 항목과 계산 사례를 정리했습니다.',
   keywords: [
     '의료비 세액공제',
     '의료비 공제 한도',
@@ -36,9 +36,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    images: [{ url: '/og-default.png', width: 1200, height: 630, alt: '의료비 세액공제 2026 3% 초과분 15% 공제 700만 한도 | calculatorhost' }],
-    title: '의료비 세액공제 2026, 3% 초과분 15% 공제, 700만 한도',
-    description: '의료비 세액공제 정확한 계산법. 3% 초과분만 과세대상, 15% 공제율, 700만 한도 (단 본인·고령·6세 이하·장애인 무한도)',
     url: URL,
     type: 'article',
     locale: 'ko_KR',
@@ -47,8 +44,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '의료비 세액공제, 3% 초과분 15% 공제',
-    description: '총급여 3% 초과분만 세액공제 대상. 공제율 15% (난임 30%), 한도 700만원.',
   },
 };
 
@@ -99,10 +94,10 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '의료비 세액공제 2026 가이드' },
+    { name: '의료비 세액공제 2026' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '의료비 세액공제 2026 3% 초과분 15% 공제 완벽 가이드',
+    headline: '의료비 세액공제 2026 3% 초과분 15% 공제 가이드',
     description:
       '의료비 세액공제 정확한 계산법. 총급여 3% 초과분만 세액공제 대상, 공제율 15% (난임 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비·보험금 차감·한도 구분·시뮬 3가지·신청 방법.',
     url: URL,
@@ -114,9 +109,9 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
     keywords: ['의료비 세액공제', '3% 초과', '15% 공제', '700만 한도', '난임 시술'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '의료비 세액공제 2026 3% 초과분 15% 공제 완벽 가이드',
+    name: '의료비 세액공제 2026 3% 초과분 15% 공제 가이드',
     description:
-      '5월 종소세 신고! 의료비 세액공제 완벽 정리. 총급여 3% 초과분만 세액공제 대상(소득세법 §59의4), 공제율 15% (난임 시술 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비 10가지·보험금 차감 의무·한도 구분·실제 시뮬 3가지·신청 방법 4단계·실질과세 주의사항.',
+      '5월 종소세 신고! 의료비 세액공제 정리. 총급여 3% 초과분만 세액공제 대상(소득세법 §59의4), 공제율 15% (난임 시술 30%), 한도 700만원 (본인·65세↑·6세↓·장애인 무한도). 공제 대상 의료비 10가지·보험금 차감 의무·한도 구분·실제 시뮬 3가지·신청 방법 4단계·실질과세 주의사항.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -150,7 +145,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   의료비 세액공제로 환급받기
                   <br />
-                  <span className="text-2xl text-text-secondary">· 3% 초과분 15% 공제, 700만 한도 완벽 정리</span>
+                  <span className="text-2xl text-text-secondary">· 3% 초과분 15% 공제, 700만 한도 정리</span>
                 </h1>
                 <p className="text-lg text-text-secondary" data-speakable>
                   5월 31일 종합소득세 신고 마감이 다가오면서 많은 사람이 놓치는 세액공제가 있습니다. 바로{' '}
@@ -689,7 +684,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                     </p>
                     <p className="mt-2 text-sm text-text-secondary">
                       성형수술이 미용인지 치료인지 애매하다면 세무서에 사전 상담(유선 또는 방문)을 받으세요. 국세청
-                      홈택스 상담: 1577-0369. 사전 상담 후 신청하면 나중에 시비 위험이 줄어듭니다.
+                      국세상담센터: 국번 없이 126. 사전 상담 후 신청하면 나중에 시비 위험이 줄어듭니다.
                     </p>
                   </div>
                 </div>
@@ -739,7 +734,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                     className="block rounded-lg border border-border-base bg-bg-card p-3 hover:bg-primary-500/5"
                   >
                     <p className="font-semibold text-primary-700 dark:text-primary-300">
-                      소득공제 vs 세액공제 2026 완벽 가이드
+                      소득공제 vs 세액공제 2026 가이드
                     </p>
                     <p className="mt-1 text-sm text-text-secondary">
                       어느 공제가 유리한지, 누진세 적용 순서 정리
@@ -750,7 +745,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                     className="block rounded-lg border border-border-base bg-bg-card p-3 hover:bg-primary-500/5"
                   >
                     <p className="font-semibold text-primary-700 dark:text-primary-300">
-                      5월 종합소득세 신고 완벽 가이드
+                      5월 종합소득세 신고 가이드
                     </p>
                     <p className="mt-1 text-sm text-text-secondary">
                       5월 31일 신고 마감 체크리스트, 누락 공제 점검, 환급 추적
@@ -764,7 +759,7 @@ export default function MedicalExpenseTaxCredit3Percent2026Page() {
                 <h3 className="text-sm font-semibold text-text-secondary">면책조항</h3>
                 <p className="text-xs text-text-tertiary leading-relaxed">
                   본 페이지는 일반적인 정보 제공 목적이며, 세무 상담은 아닙니다. 개인의 상황에 따라 세율·공제 대상·환급액이
-                  달라질 수 있습니다. 정확한 신고는 세무사·국세청 상담(1577-0369) 또는 홈택스를 통해 진행하세요.
+                  달라질 수 있습니다. 정확한 신고는 세무사·국세상담센터(국번 없이 126) 또는 홈택스를 통해 진행하세요.
                   조세특례제한법 및 소득세법의 개정으로 내용이 변경될 수 있으며, 최신 정보는 국세청(nts.go.kr)을 참조하세요.
                   <br />
                   <br />

@@ -8,7 +8,6 @@ import Icon from '@/components/ui/Icon';
 import {
   buildBreadcrumbJsonLd,
   buildWebPageJsonLd,
-  buildItemListJsonLd,
   buildFaqPageJsonLd,
   buildDefinedTermSetJsonLd,
 } from '@/lib/seo/jsonld';
@@ -36,8 +35,6 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: URL },
   openGraph: {
-    title: '생활 계산기 모음 2026',
-    description: 'BMI·D-day 생활 계산기 모음',
     url: URL,
     type: 'website',
 
@@ -96,7 +93,7 @@ const FAQ_ITEMS = [
 export default function LifestyleCategoryPage() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
-    { name: '생활' },
+    { name: '생활 계산기' },
   ]);
   const webPageLd = buildWebPageJsonLd({
     name: '생활 계산기 모음',
@@ -104,12 +101,7 @@ export default function LifestyleCategoryPage() {
     url: 'https://calculatorhost.com/category/lifestyle/',
     datePublished: '2026-04-24',
   });
-  const itemListLd = buildItemListJsonLd(
-    CALCULATORS.map((c) => ({
-      name: c.title,
-      url: `https://calculatorhost.com${c.href.endsWith('/') ? c.href : c.href + '/'}`,
-    })),
-  );
+  // 계산기가 3개뿐이라 ItemList 는 넣지 않는다 (네이버 캐러셀 08-07: 개수가 적은 listItem 은 사용하지 않음)
   const faqLd = buildFaqPageJsonLd(
     FAQ_ITEMS.map((f) => ({ question: f.question, answer: f.answer })),
   );
@@ -160,10 +152,6 @@ export default function LifestyleCategoryPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListLd) }}
       />
       <script
         type="application/ld+json"
