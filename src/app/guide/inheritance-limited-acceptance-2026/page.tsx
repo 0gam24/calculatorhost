@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-limited-acceptance-2026/';
 const DATE_PUBLISHED = '2026-07-10';
-const DATE_MODIFIED = '2026-07-10';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속 한정승인·상속포기 2026 | 빚 초과 시 3개월 내 신고',
@@ -139,7 +139,7 @@ export default function InheritanceLimitedAcceptance2026Page() {
                     { name: '상속 한정승인·상속포기 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">상속인 · 12분 읽기 · 2026-07-10</p>
+                <p className="mb-2 text-caption text-text-tertiary">상속인 · 12분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속 한정승인·상속포기 2026
                   <br />
@@ -232,14 +232,14 @@ export default function InheritanceLimitedAcceptance2026Page() {
                     <strong>신고처:</strong> 피상속인(부모) 주소지를 관할하는 가정법원
                   </li>
                   <li>
-                    <strong>첨부서류:</strong> 피상속인 사망기록, 상속인 신분증, 재산목록(있으면 첨부, §1030 단서로 나중에 제출 가능)
+                    <strong>첨부서류:</strong> 피상속인 사망기록, 상속인 신분증, 상속재산 목록(신고할 때 첨부해야 함, 민법 §1030①)
                   </li>
                   <li>
-                    <strong>재산 불확실:</strong> 재산 규모가 명확하지 않으면 "재산목록 작성 전에 한정승인 신고"를 먼저 하고, 그 후 시간을 두고 상세히 조사할 수 있습니다.
+                    <strong>재산 불확실:</strong> 재산 규모가 명확하지 않으면 안심상속 원스톱 서비스와 금융감독원 상속인 금융거래 조회로 재산과 채무를 먼저 확인합니다. 한정승인 신고에는 재산목록을 첨부해야 하고, 고의로 재산을 빠뜨리면 단순승인으로 간주될 수 있습니다(민법 §1026).
                   </li>
                 </ul>
                 <p className="mt-4">
-                  다만 한정승인 신고 후에도 상속재산을 소극적으로 처분(예: 청소비 지출)할 수 없습니다. 상속재산 건축, 수리, 기본 관리만 허용되며, 나머지는 채권자 목록 공시와 재산 공고를 통해 절차적으로 진행되어야 합니다.
+                  다만 한정승인 신고 뒤에도 상속재산을 마음대로 처분하거나 숨기거나 써 버리면 단순승인으로 간주될 수 있습니다(민법 §1026). 상속재산은 보존에 필요한 관리만 하고, 채권자에 대한 공고와 변제 절차에 따라 처리해야 합니다.
                 </p>
               </section>
 
@@ -319,12 +319,12 @@ export default function InheritanceLimitedAcceptance2026Page() {
                   <p className="text-sm text-text-secondary">
                     배우자와 자녀 2명 상속인, 재산 2억, 채무 3억
                     <br />
-                    · 배우자 한정승인: 배우자 지분(1/2) 1억으로 빚 일부 변제, 나머지는 면책
+                    · 배우자 한정승인: 자녀가 모두 포기하면 배우자가 단독 상속인이 되므로(대법원 2023. 3. 23. 선고 2020그42 전원합의체 결정), 상속재산 2억 한도 안에서 빚을 갚고 나머지 1억은 책임지지 않음
                     <br />
-                    · 자녀들 포기: 자녀들은 채무 책임 없음 (다만 배우자 지분에서 채무 우선 충당)
+                    · 자녀들 포기: 자녀들은 채무 책임 없음, 손자녀에게도 넘어가지 않음
                     <br />
                     <span className="text-xs text-text-tertiary">
-                      결론: 배우자만 한정승인으로 지분만큼 책임지고, 자녀들이 포기하면 가족 중 누구도 무제한 책임을 지지 않을 수 있습니다.
+                      결론: 배우자만 한정승인으로 상속재산 한도 안에서 책임지고, 자녀들이 포기하면 가족 중 누구도 무제한 책임을 지지 않을 수 있습니다.
                     </span>
                   </p>
                 </div>

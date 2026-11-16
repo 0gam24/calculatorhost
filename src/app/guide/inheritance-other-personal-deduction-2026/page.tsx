@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-other-personal-deduction-2026/';
 const DATE_PUBLISHED = '2026-08-19';
-const DATE_MODIFIED = '2026-08-19';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속세 인적공제 2026, 자녀 5천만 미성년 장애인 계산',
@@ -134,7 +134,7 @@ export default function InheritanceOtherPersonalDeduction2026Page() {
                     { name: '상속세 인적공제 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">상속인 · 8분 읽기 · 2026-08-19</p>
+                <p className="mb-2 text-caption text-text-tertiary">상속인 · 8분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 인적공제 2026
                   <br />
@@ -287,13 +287,13 @@ export default function InheritanceOtherPersonalDeduction2026Page() {
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
-                  <p className="font-semibold text-text-primary">사례 3. 자녀 5명 + 장애인 자녀 1명(기대여명 40년)</p>
+                  <p className="font-semibold text-text-primary">사례 3. 자녀 5명 + 장애인 상속인 1명(기대여명 40년)</p>
                   <p className="text-sm text-text-secondary">
                     · 기초공제: 2억
                     <br />
                     · 자녀공제: 5천만 × 5 = 2.5억
                     <br />
-                    · 장애인공제: 1천만 × 40 = 4억 (자녀공제와 중복)
+                    · 장애인공제: 1천만 × 40 = 4억 (자녀공제와 별개로 가산)
                     <br />
                     · 기초+인적 합계: 2억 + 2.5억 + 4억 = 8.5억
                     <br />

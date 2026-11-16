@@ -18,7 +18,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-legal-reserve-claim-2026/';
 const DATE_PUBLISHED = '2026-08-09';
-const DATE_MODIFIED = '2026-08-09';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '유류분 2026, 반환청구 계산과 형제자매 위헌 정리',
@@ -135,7 +135,7 @@ export default function InheritanceLegalReserveClaim2026Page() {
                     { name: '유류분 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">상속·은퇴 준비 · 8분 읽기 · 2026-08-09</p>
+                <p className="mb-2 text-caption text-text-tertiary">상속·은퇴 준비 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   유류분 2026
                   <br />
@@ -213,7 +213,7 @@ export default function InheritanceLegalReserveClaim2026Page() {
                   같은 날 헌재는 유류분을 잃게 하는 사유(예: 피상속인을 학대한 상속인)가 전혀 없는 점과, 기여분을 유류분에 반영하지 않는 점에 대해서는 헌법불합치를 선고하며 2025년 말을 시한으로 개정하도록 했습니다.
                 </p>
                 <p>
-                  다만 이 개정 부분의 구체적 내용과 시행 시점은 변동될 수 있으므로, 실제 사건에서는 국가법령정보센터에서 민법 최신 조문을 확인하고 전문가와 상담하는 것이 안전합니다.
+                  이 결정 취지를 반영한 개정 민법이 2026년 3월 17일 공포되었습니다(법률 제21454호). 개정 조문은 유류분 부족분을 재산 자체가 아니라 그 가액으로 청구하도록 바꾸었습니다(민법 §1115①). 유류분을 잃는 사유와 기여분 반영 등 세부 내용은 사건마다 적용이 달라질 수 있으므로, 국가법령정보센터에서 민법 최신 조문을 확인하고 전문가와 상담하는 것이 안전합니다.
                 </p>
               </section>
 
@@ -290,7 +290,7 @@ export default function InheritanceLegalReserveClaim2026Page() {
                   유증을 먼저 반환받고, 그래도 부족하면 증여에서 채웁니다. 민법 §1116은 반환 순서를 정해, 유언으로 남긴 유증을 먼저 반환 대상으로 삼고 그것으로도 유류분에 미치지 못할 때 생전 증여를 반환받도록 합니다. 증여가 여러 건이면 원칙적으로 상속개시에 가까운 나중의 증여부터 반환합니다.
                 </p>
                 <p>
-                  예외: 반환은 유류분 부족분의 한도에서만 이뤄지므로, 증여나 유증을 받은 사람이 그 전부를 무조건 내놓는 것은 아닙니다. 부족분만큼만 돌려주면 됩니다. 반환의 방법도 원물 반환이 원칙이나 사정에 따라 가액으로 정산되기도 합니다.
+                  예외: 반환은 유류분 부족분의 한도에서만 이뤄지므로, 증여나 유증을 받은 사람이 그 전부를 무조건 내놓는 것은 아닙니다. 부족분만큼만 돌려주면 됩니다. 반환 방법은 2026년 3월 17일 개정 민법에 따라 부족한 한도에서 그 재산의 가액 지급을 청구하는 방식이며, 청구한 날부터 이자가 붙습니다(민법 §1115①).
                 </p>
               </section>
 

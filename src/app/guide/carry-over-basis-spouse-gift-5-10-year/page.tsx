@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/carry-over-basis-spouse-gift-5-10-year/';
 const DATE_PUBLISHED = '2026-05-12';
-const DATE_MODIFIED = '2026-05-12';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '이월과세 5년→10년 확대 정리 2026 | 배우자·직계 증여 양도세',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     '배우자 선물 양도세',
     '증여 후 양도',
     '이월과세 면제',
-    '2025년 개정 이월과세',
+    '2023년 개정 이월과세',
   ],
   alternates: { canonical: URL },
   openGraph: {
@@ -52,12 +52,12 @@ const FAQ_ITEMS = [
   {
     question: '이월과세란 정확히 무엇인가요?',
     answer:
-      '배우자·직계존비속에게 증여받은 자산을 일정 기간(2024년까지 5년, 2025년 양도분부터 10년) 내에 제3자에게 양도할 때, 증여자가 취득한 가액으로 양도가를 계산하는 제도입니다(소득세법 §97의2). 예를 들어 남편이 5억에 취득한 주택을 아내가 받아 8년 후 7억에 양도하면, 이월과세 미적용 시는 양도차익 2억으로, 적용 시(5년 내라면) 양도차익 5억으로 계산되어 양도세가 크게 올라갑니다.',
+      '배우자·직계존비속에게 증여받은 자산을 일정 기간(2022년까지 증여분은 5년, 2023년 1월 1일 이후 증여분은 10년) 내에 제3자에게 양도할 때, 증여자가 취득한 가액을 취득가로 삼아 양도차익을 계산하는 제도입니다(소득세법 §97의2). 예를 들어 남편이 5억에 취득한 주택을 아내가 받아 8년 후 10억에 양도하면, 이월과세 미적용 시는 양도차익이 증여 시점 시가 기준으로 작게 잡히지만, 적용 시(10년 내 양도)에는 취득가 5억 기준으로 커져 양도세가 크게 올라갑니다.',
   },
   {
     question: '이월과세 기간이 5년에서 10년으로 확대된 이유는?',
     answer:
-      '부부·가족 간 증여 후 단기 양도로 양도세를 회피하는 행위를 차단하기 위해 2024년 12월 31일 개정되어 2025년 1월 1일부터 시행되었습니다. 5년으로는 충분하지 않다고 국세청이 판단하여 10년으로 연장하였습니다. 따라서 2024년 12월 31일 이전 증여는 5년, 2025년 1월 1일 이후 증여는 10년이 적용됩니다.',
+      '부부·가족 간 증여 후 단기 양도로 양도세를 회피하는 행위를 차단하기 위해 2022년 12월 31일 소득세법이 개정되어 2023년 1월 1일 이후 증여분부터 10년이 적용됩니다. 그 이전 증여분에는 종전 5년이 그대로 적용되므로, 증여일 기준으로 어떤 기간이 적용되는지 반드시 확인해야 합니다.',
   },
   {
     question: '이월과세가 적용되면 증여세도 환급되나요?',
@@ -133,7 +133,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   배우자나 자녀에게 자산을 선물(증여)한 후 일정 기간 내에 그 자산을 양도할 때,
                   세법은 <strong>증여자가 원래 취득한 가격</strong>을 기준으로 세금을 계산하게 합니다.
                   이를 <strong>이월과세</strong>라 하는데(소득세법 §97의2), 부부·가족 간 세금 회피를 막기 위해
-                  2025년부터 기간이 5년에서 <strong>10년으로 확대</strong>되었습니다.
+                  2023년 1월 1일 이후 증여분부터 기간이 5년에서 <strong>10년으로 확대</strong>되었습니다.
                   정의·계산·면제 사유·함정·절세 전략을 정확히 정리합니다.
                 </p>
               </header>
@@ -160,12 +160,12 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 </div>
               </section>
 
-              {/* 2. 2025년 5년→10년 확대 */}
+              {/* 2. 2023년 5년→10년 확대 */}
               <section aria-label="5년→10년 확대" className="card border-l-4 border-l-highlight-500">
-                <h2 className="mb-4 text-2xl font-semibold">2025년 개정: 5년→10년 확대 (소득세법 §97의2 본문 개정)</h2>
+                <h2 className="mb-4 text-2xl font-semibold">2023년 개정: 5년→10년 확대 (소득세법 §97의2 본문 개정)</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  2024년 말 소득세법 §97의2 본문 개정으로 이월과세 적용 기간이 5년에서 10년으로 연장되었으며
-                  <strong> 2025년 1월 1일 이후 증여분부터 시행</strong>됩니다. 부부·가족 간 단기 양도를 통한 양도세 회피
+                  2022년 말 소득세법 §97의2 본문 개정으로 이월과세 적용 기간이 5년에서 10년으로 연장되었으며
+                  <strong> 2023년 1월 1일 이후 증여분부터 시행</strong>됩니다. 부부·가족 간 단기 양도를 통한 양도세 회피
                   시도를 차단하기 위한 조치입니다. 정확한 시행일·경과조치는 양도 시점의 시행령·고시를 별도 확인하세요.
                 </p>
 
@@ -173,14 +173,14 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   <p className="font-semibold text-text-primary">적용 기준 시점</p>
                   <div className="text-sm text-text-secondary space-y-2">
                     <p>
-                      <strong>2024년 12월 31일 이전 증여</strong> → 5년 적용
+                      <strong>2022년 12월 31일 이전 증여</strong> → 5년 적용
                       <br />
-                      (2029년 12월 31일까지 양도 시 이월과세 적용)
+                      (증여일로부터 5년이 지나지 않은 양도에 이월과세 적용)
                     </p>
                     <p>
-                      <strong>2025년 1월 1일 이후 증여</strong> → 10년 적용
+                      <strong>2023년 1월 1일 이후 증여</strong> → 10년 적용
                       <br />
-                      (2035년 1월 1일까지 양도 시 이월과세 적용)
+                      (증여일로부터 10년이 지나지 않은 양도에 이월과세 적용)
                     </p>
                   </div>
                 </div>
@@ -188,7 +188,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 <div className="rounded-lg bg-highlight-500/10 p-4">
                   <p className="mb-2 font-semibold text-text-primary">운영자 주의</p>
                   <p className="text-sm text-text-secondary">
-                    증여일이 2024년 12월 31일과 2025년 1월 1일 사이에 있다면 어느 세율이 적용되는지 명확히 해야 합니다.
+                    증여일이 2022년 12월 31일과 2023년 1월 1일 사이에 있다면 5년과 10년 중 어느 기간이 적용되는지 명확히 해야 합니다.
                     이월과세 기간이 5년 vs 10년인지에 따라 최종 세금 부담이 크게 달라질 수 있습니다.
                   </p>
                 </div>
@@ -292,7 +292,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     </div>
 
                     <div className="rounded-lg bg-bg-card p-3">
-                      <p className="mb-2 text-sm font-semibold text-text-primary">양도세 계산 (이월과세 적용, 5년 내, 다주택자 가정)</p>
+                      <p className="mb-2 text-sm font-semibold text-text-primary">양도세 계산 (이월과세 적용, 10년 내, 다주택자 가정)</p>
                       <p className="text-xs text-text-secondary">
                         양도차익 = 10억 − 5억(증여자 취득가 이월) − 2,000만 = 4.8억
                         <br />
@@ -334,11 +334,11 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     <div className="rounded-lg bg-bg-card p-3">
                       <p className="mb-2 text-sm font-semibold text-text-primary">증여세 계산</p>
                       <p className="text-xs text-text-secondary">
-                        증여재산가액 11억 − 직계비속 공제 5,000만 = 10.5억
+                        증여재산가액 11억 − 성년 직계비속 공제 5,000만 = 10.5억
                         <br />
-                        세율 30% (10억 이하 구간) → 누진공제 6,000만
+                        세율 40% (30억 이하 구간) → 누진공제 1억 6,000만
                         <br />
-                        증여세 = 10.5억 × 30% − 6,000만 = 1.95억
+                        증여세 = 10.5억 × 40% − 1억 6,000만 = 2.6억
                       </p>
                     </div>
 
@@ -361,7 +361,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     <div className="rounded-lg border-2 border-secondary-500 p-3 bg-secondary-500/5">
                       <p className="text-sm font-semibold text-text-primary mb-1">총 세금 부담 (1세대1주택·장특공제 80% 적용)</p>
                       <p className="text-sm text-text-secondary">
-                        증여세 1.95억 + 양도세 약 28만 ≈ <strong>약 1.95억</strong>
+                        증여세 약 2.6억 + 양도세 약 28만 ≈ <strong>약 2.6억</strong>
                       </p>
                       <p className="text-xs text-text-tertiary mt-1">
                         1세대1주택 12억 한도 + 장특공제 80% 결합 시 양도세는 미미. 단, 자녀가 별도 주택을 보유하거나 거주
@@ -411,9 +411,9 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                   <div className="rounded-lg bg-bg-card p-4">
                     <p className="mb-2 font-semibold text-text-primary">면제 4: 5년/10년 경과 후 양도</p>
                     <p className="text-sm text-text-secondary">
-                      증여일로부터 5년(2024년 12월 31일 이전 증여) 또는 10년(2025년 1월 1일 이후 증여) 경과 후 양도 시 이월과세 미적용.
+                      증여일로부터 5년(2022년 12월 31일 이전 증여) 또는 10년(2023년 1월 1일 이후 증여) 경과 후 양도 시 이월과세 미적용.
                       <br />
-                      예: 2025년 2월 증여 → 2035년 2월 이후 양도는 이월과세 미적용.
+                      예: 2023년 2월 증여 → 2033년 2월 이후 양도는 이월과세 미적용.
                     </p>
                   </div>
 
@@ -438,9 +438,9 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                       <strong className="text-text-primary">함정 1: 기간 계산 오류, 5년 vs 10년</strong>
                     </p>
                     <p className="text-sm">
-                      증여일이 2024년 12월 말과 2025년 1월 초 사이에 있으면, 5년인지 10년인지를 정확히 판단해야 합니다.
-                      예를 들어 2024년 12월 31일 증여는 5년(2029년 12월 31일까지),
-                      2025년 1월 1일 증여는 10년(2035년 1월 1일까지) 적용됩니다.
+                      증여일이 2022년 12월 말과 2023년 1월 초 사이에 있으면, 5년인지 10년인지를 정확히 판단해야 합니다.
+                      예를 들어 2022년 12월 31일 증여는 5년(2027년 12월 31일까지),
+                      2023년 1월 1일 증여는 10년(2033년 1월 1일까지) 적용됩니다.
                     </p>
                   </div>
                   <div>
@@ -494,11 +494,11 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
 
                 <div className="space-y-3">
                   <div className="rounded-lg bg-bg-card p-4">
-                    <p className="mb-2 font-semibold text-text-primary">전략 1: 증여 시점 선택</p>
+                    <p className="mb-2 font-semibold text-text-primary">전략 1: 증여 시점·양도 시점 설계</p>
                     <p className="text-sm text-text-secondary">
-                      자산이 충분히 장기 보유되었거나, 가까운 미래에 양도할 예정이 아니라면
-                      2024년 12월 31일 이전에 증여하여 5년 규정을 적용받는 것이 유리할 수 있습니다.
-                      반면 수년 후 양도할 예정이라면, 10년 규정 이후에 양도하도록 계획하여 이월과세 회피.
+                      이미 2022년 12월 31일 이전에 증여가 있었다면 5년 규정을, 2023년 1월 1일 이후 증여분이라면 10년 규정을
+                      적용받습니다. 증여 시점을 되돌릴 수는 없으므로, 수년 후 양도할 계획이라면 10년(또는 5년) 경과 이후에
+                      양도하도록 시점을 조정해 이월과세를 회피하는 전략이 현실적입니다.
                     </p>
                   </div>
 
@@ -549,7 +549,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
 
                 <ol className="list-inside list-decimal space-y-3 text-sm text-text-secondary">
                   <li>
-                    <strong>증여세 신고</strong> (증여일로부터 3개월 이내)
+                    <strong>증여세 신고</strong> (증여받은 날이 속하는 달의 말일부터 3개월 이내)
                     <ul className="list-inside list-disc ml-4 mt-1 space-y-1">
                       <li>
                         <a
@@ -570,7 +570,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                     </ul>
                   </li>
                   <li>
-                    <strong>양도소득세 신고</strong> (양도일로부터 2개월 이내)
+                    <strong>양도소득세 신고</strong> (양도일이 속하는 달의 말일부터 2개월 이내)
                     <ul className="list-inside list-disc ml-4 mt-1 space-y-1">
                       <li>
                         <a
@@ -662,8 +662,8 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 className="rounded-lg border border-border-base p-4 text-caption text-text-tertiary"
               >
                 <p className="mb-2">
-                  <strong>법적 근거</strong>: 소득세법 §97의2 (이월과세, 2024년 본문 개정으로 5년→10년 확대,
-                  2025-01-01 이후 증여분부터 시행) · §95 (장기보유특별공제, 보유 합산) · §97 (필요경비) · §103 (양도소득
+                  <strong>법적 근거</strong>: 소득세법 §97의2 (이월과세, 2022년 본문 개정으로 5년→10년 확대,
+                  2023-01-01 이후 증여분부터 시행) · §95 (장기보유특별공제, 보유 합산) · §97 (필요경비) · §103 (양도소득
                   기본공제 250만 원) · §104 (양도세율) · §105 (예정신고) · 시행령 §163의2 (이월과세 면제 사유 별도 확인) ·
                   상속세및증여세법 §47 (증여재산가액) · §53 (증여재산공제) · §56 (증여세율). 참고:{' '}
                   <a
@@ -695,7 +695,7 @@ export default function CarryOverBasisSpouseGift510YearGuide() {
                 <p className="mb-2">
                   <strong>면책조항</strong>: 본 가이드는 일반 정보 제공 목적이며 세무·법적 조언이 아닙니다. 이월과세는
                   증여 시점, 자산 종류, 수증자와의 관계, 보유 기간 등에 따라 적용 여부와 계산 방식이 달라질 수 있습니다.
-                  또한 2025년 1월 1일부터 5년 → 10년으로 확대된 만큼, 기존 거래와 신규 거래의 규정이 다릅니다.
+                  또한 2023년 1월 1일 이후 증여분부터 5년 → 10년으로 확대된 만큼, 기존 거래와 신규 거래의 규정이 다릅니다.
                   반드시 세무사 또는 국세청 상담을 통해 개인 상황에 맞는 정확한 계산을 받으시기 바랍니다.
                 </p>
                 <p>

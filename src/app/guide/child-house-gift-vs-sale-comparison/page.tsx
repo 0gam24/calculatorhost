@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/child-house-gift-vs-sale-comparison/';
 const DATE_PUBLISHED = '2026-05-12';
-const DATE_MODIFIED = '2026-05-12';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '자녀 주택 증여 vs 매매 비교 2026 | 저가양수도 30%·세금 시뮬',
@@ -53,7 +53,7 @@ const FAQ_ITEMS = [
   {
     question: '저가양수도 30%·3억 룰이란 정확히 무엇인가요?',
     answer:
-      '상증법 시행령 §26에 따른 저가양수도 판정 기준입니다. 특수관계인(부모-자녀 등) 간 거래에서 시가와 거래가 차액이 "시가의 30% 이상 AND 3억 원 이상"이면 그 차액 전체가 증여세 대상입니다. 반대로 차액이 30% 미만이면서 동시에 3억 미만이면 거래를 정상 매매로 인정해 증여세를 부과하지 않습니다. 예: 시가 10억 주택을 7억에 판매(차액 3억 = 30% AND = 3억) → 판정 경계선으로 정상 매매 인정.',
+      '상증법 §35 ①·시행령 §26에 따른 저가양수도 판정 기준입니다. 특수관계인(부모-자녀 등) 간 거래에서 시가와 거래가 차액이 "시가의 30% 이상 또는 3억 원 이상" 중 하나만 충족해도 저가양수도이며, 증여재산가액은 차액에서 min(시가 30%, 3억)을 차감한 금액입니다. 반대로 차액이 30% 미만이면서 동시에 3억 미만이면(두 조건을 모두 벗어나면) 정상 매매로 인정해 증여세를 부과하지 않습니다. 예: 시가 10억 주택을 7억에 판매(차액 3억) → 차액이 시가 30% 또는 3억 중 어느 쪽 기준이든 저가양수도이지만, 차감액 3억으로 증여재산가액은 0.',
   },
   {
     question: '저가로 자녀에게 팔아도 부모가 양도세를 내나요?',
@@ -172,8 +172,8 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 </li>
               </ul>
               <p className="rounded-lg bg-highlight/10 p-3 text-text-primary">
-                <strong>핵심:</strong> 시가와 거래가 차액이 "시가의 30% 이상 <u>AND</u> 3억 이상"이어야만
-                증여세 부과. 동시에 두 조건을 만족해야 합니다.
+                <strong>핵심:</strong> 시가와 거래가 차액이 "시가의 30% 이상 <u>또는</u> 3억 이상" 중
+                하나만 충족해도 저가양수도 판정. 두 조건 중 어느 하나라도 걸리면 적용됩니다.
               </p>
             </section>
 
@@ -221,9 +221,9 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
               <div className="space-y-2 rounded-lg bg-danger/5 p-4">
                 <p className="font-bold text-danger">중요한 논리</p>
                 <p className="text-text-primary">
-                  "30% 이상"과 "3억 이상"은 <strong>OR 관계가 아닌 AND 관계</strong>입니다. 두
-                  조건을 <u>동시에 만족</u>해야만 저가양수도로 판정되어 차액이 증여세 과세 대상이
-                  됩니다. 예를 들어 차액이 시가의 40%이지만 2억밖에 안 된다면, 정상 매매로 인정합니다.
+                  "30% 이상"과 "3억 이상"은 <strong>OR(둘 중 하나) 관계</strong>입니다. 두
+                  조건 중 <u>어느 하나라도 충족</u>하면 저가양수도로 판정되어 차액이 증여세 과세 대상이
+                  됩니다. 예를 들어 차액이 시가의 20%이면서 2억밖에 안 된다면(두 조건 모두 미달), 정상 매매로 인정합니다.
                 </p>
               </div>
             </section>
@@ -284,7 +284,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 <h3 className="mb-3 font-bold text-danger">C. 50% 할인 매매 (5억), 저가양수도 확정</h3>
                 <div className="space-y-2 text-sm text-text-primary">
                   <p>거래가: 5억 / 차액: 5억 (시가의 50%)</p>
-                  <p>저가양수도 판정: 차액 5억 &gt; 시가 30%(3억) AND &gt; 3억 → 저가양수도 적용</p>
+                  <p>저가양수도 판정: 차액 5억 &gt; 시가 30%(3억) 또는 &gt; 3억 → 저가양수도 적용</p>
                   <p>증여재산가액 = 차액 5억 − min(시가 30%=3억, 3억) = <strong>2억</strong> (5억이 아님, 상증법 §35 ① 1호)</p>
                   <p>자녀 증여세: 2억 − 직계비속 공제 5천 = 1.5억 → 1.5억 × 20%(5억 이하) − 누진공제 1,000만 = <strong>약 2,000만</strong></p>
                   <p>자녀 취득세 (5억 × 1% + 지방교육세 0.1%) ≈ 약 550만</p>
@@ -305,7 +305,7 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 <div className="space-y-2 text-sm text-text-primary">
                   <p>증여재산: 10억 − 직계비속 공제 5천 = 9.5억 (10억 이하 구간)</p>
                   <p>증여세 = 9.5억 × 30% − 누진공제 6,000만 = <strong>약 2.25억</strong> (상증법 §56, 30% 구간)</p>
-                  <p>증여취득세 (3.5% + 지방교육세 0.3%) ≈ 약 3,800만 (1세대1주택 1.5% 특례 적용 시 약 1,800만)</p>
+                  <p>증여취득세 (3.5% + 지방교육세 0.3%) ≈ 약 3,800만</p>
                   <p>부모 양도세: 0 (양도 아님). 단, 향후 자녀가 양도 시 이월과세 10년 적용 (소득세법 §97의2)</p>
                   <p className="rounded bg-bg-base p-2 font-bold">
                     총 세금 ≈ 약 2.63억 (자녀만 부담, 1주택 특례 적용 시 약 2.43억)
@@ -553,9 +553,9 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                     </tr>
                     <tr className="border-t border-border-base bg-bg-card">
                       <td className="px-3 py-2 font-bold text-text-primary">자녀의 향후 양도세</td>
-                      <td className="px-3 py-2 text-text-secondary">양도차익 적음</td>
-                      <td className="px-3 py-2 text-text-secondary">양도차익 최소</td>
-                      <td className="px-3 py-2 text-danger">양도차익 최대 (취득가 10억)</td>
+                      <td className="px-3 py-2 text-text-secondary">양도차익 적음 (취득가 10억)</td>
+                      <td className="px-3 py-2 text-danger">양도차익 최대 (취득가 7억)</td>
+                      <td className="px-3 py-2 text-text-secondary">양도차익 중간 (10년 내 이월과세 시 취득가 8억)</td>
                     </tr>
                     <tr className="border-t border-border-base">
                       <td className="px-3 py-2 font-bold text-text-primary">이월과세</td>
@@ -617,10 +617,10 @@ export default function ChildHouseGiftVsSaleComparisonGuide() {
                 <div className="rounded-lg bg-danger/5 p-4">
                   <p className="font-bold text-danger">주의: 신고 기한 초과 시 페널티</p>
                   <ul className="mt-2 space-y-1 text-sm text-text-primary">
-                    <li>• 무신고가산세: 40% (신고 없이 적발)</li>
-                    <li>• 과소신고가산세: 10% (신고했으나 부족)</li>
-                    <li>• 납부 불성실 이자: 연 2.7% (월 0.225%)</li>
-                    <li>• 합산하면 최종 납부액이 30~50% 이상 증가할 수 있음</li>
+                    <li>• 무신고가산세: 20% (부정 무신고는 40%, 국세기본법 §47의2)</li>
+                    <li>• 과소신고가산세: 10% (국세기본법 §47의3)</li>
+                    <li>• 납부지연가산세: 2026-07-01 이후 월 0.67%(연 약 8%)</li>
+                    <li>• 합산하면 최종 납부액이 수십 % 이상 증가할 수 있음</li>
                   </ul>
                 </div>
               </div>

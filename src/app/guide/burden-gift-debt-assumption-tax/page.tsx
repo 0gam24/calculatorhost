@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/burden-gift-debt-assumption-tax/';
 const DATE_PUBLISHED = '2026-05-12';
-const DATE_MODIFIED = '2026-05-12';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '부담부증여 양도+증여세 정리 2026 | 채무인수 가족 간 부동산',
@@ -62,7 +62,7 @@ const FAQ_ITEMS = [
   {
     question: '전세보증금 부담부증여와 일반 증여는 세금이 얼마나 다른가요?',
     answer:
-      '큰 차이가 있습니다. 자산 10억 + 전세보증금 4억을 성년 자녀에게 넘기는 경우(취득가 8억, 보유 3년 가정), 부담부증여는 증여세(무상분 6억 → 5천 공제 후) 약 1.05억 + 양도세(채무인수 4억, 양도차익 1,920만) 약 125만 = 약 1.06억. 반면 전체 10억을 증여하면 (5천 공제 후 9.5억) 약 2.25억 증여세가 발생합니다. 부담부증여로 약 1.19억 절세 효과(취득가·보유 기간·중과 적용 여부에 따라 변동).',
+      '큰 차이가 있습니다. 자산 10억 + 전세보증금 4억을 성년 자녀에게 넘기는 경우(취득가 8억, 보유 3년, 다주택 가정), 부담부증여는 증여세(무상분 6억 → 5천 공제 후) 약 1.05억 + 양도세(채무인수 4억, 양도차익 7,200만) 약 1,092만 ≈ 약 1.16억. 반면 전체 10억을 증여하면 (5천 공제 후 9.5억) 약 2.25억 증여세가 발생합니다. 부담부증여로 약 1.09억 절세 효과(취득가·보유 기간·중과 적용 여부에 따라 변동).',
   },
   {
     question: '가족 간 채무 인수를 입증하지 못하면 어떻게 되나요?',
@@ -179,8 +179,8 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                   <div className="text-sm text-text-secondary">
                     <p className="mb-2">증여세 = (증여재산가액 − 공제액) × 세율</p>
                     <ul className="list-inside list-disc space-y-1">
-                      <li>공제액: 직계비속 5천만원 (10년 단위)</li>
-                      <li>예: (6억 − 5천만) × 20% = 1.05억</li>
+                      <li>공제액: 성년 직계비속 5천만원 (10년 단위)</li>
+                      <li>예: (6억 − 5천만) × 30% − 6,000만 = 1.05억 (과세표준 5.5억, 10억 이하 구간)</li>
                     </ul>
                   </div>
                 </div>
@@ -192,7 +192,8 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                     <ul className="list-inside list-disc space-y-1">
                       <li>양도가액 = 채무인수액 (4억)</li>
                       <li>취득가 비례분 = 전체 취득가 × (채무인수액 / 자산가액)</li>
-                      <li>예: 취득가 8억 → 비례분 3.2억 / 양도차익 = 4억 − 3.2억 − 2천만 = 1,600만원</li>
+                      <li>경비 비례분 = 전체 경비 × (채무인수액 / 자산가액)</li>
+                      <li>예: 취득가 8억 → 비례분 3.2억 / 경비 2천만의 비례분 800만 / 양도차익 = 4억 − 3.2억 − 800만 = 7,200만원</li>
                     </ul>
                   </div>
                 </div>
@@ -200,9 +201,9 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                 <div className="space-y-3 rounded-lg bg-bg-card p-4">
                   <p className="font-semibold text-text-primary">4단계: 양도세 계산</p>
                   <div className="text-sm text-text-secondary">
-                    <p className="mb-2">양도세 = 양도차익 × 세율 (1세대1주택 공제 적용 가능)</p>
+                    <p className="mb-2">양도세 = (양도차익 − 기본공제 250만) × 세율 − 누진공제 (1세대1주택 공제 적용 가능)</p>
                     <ul className="list-inside list-disc space-y-1">
-                      <li>양도차익 1.6억 × 15% (누진세) = 약 2,400만원 (공제 제외)</li>
+                      <li>예: 양도차익 7,200만 − 기본공제 250만 = 과세표준 6,950만 → 24% − 누진공제 576만 ≈ 약 1,092만원</li>
                       <li>1세대1주택이면 장기보유특별공제 적용 가능</li>
                     </ul>
                   </div>
@@ -229,10 +230,10 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                     <p className="mb-2 font-semibold text-text-primary">증여세 계산</p>
                     <div className="text-sm text-text-secondary">
                       <p className="mb-1">증여재산 = 10억 − 4억 = 6억</p>
-                      <p className="mb-1">공제 = 5,000만원 (직계비속)</p>
-                      <p className="mb-1">과세 증여재산 = 5.5억</p>
-                      <p className="mb-1">세율 20% (5억 초과 구간) → 누진공제 1천만</p>
-                      <p className="font-semibold text-primary-600">증여세 = 5.5억 × 20% − 1,000만 = 약 1.05억</p>
+                      <p className="mb-1">공제 = 5,000만원 (성년 직계비속)</p>
+                      <p className="mb-1">과세표준 = 5.5억</p>
+                      <p className="mb-1">세율 30% (10억 이하 구간) → 누진공제 6,000만</p>
+                      <p className="font-semibold text-primary-600">증여세 = 5.5억 × 30% − 6,000만 = 1.05억</p>
                     </div>
                   </div>
 
@@ -242,20 +243,20 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                       <p className="mb-1">양도가액(채무인수액) = 4억</p>
                       <p className="mb-1">취득가 비례분 = 8억 × (4억 / 10억) = 3.2억</p>
                       <p className="mb-1">경비 비례분 = 2,000만 × (4억 / 10억) = 800만</p>
-                      <p className="mb-1">양도차익 = 4억 − 3.2억 − 800만 = 1,920만</p>
-                      <p className="mb-1">기본공제 250만(소득세법 §103) → 과세표준 1,670만</p>
-                      <p className="font-semibold text-danger-500">양도세 ≈ 1,670만 × 15% − 누진공제 126만 ≈ 125만 (지방소득세 별도)</p>
+                      <p className="mb-1">양도차익 = 4억 − 3.2억 − 800만 = 7,200만</p>
+                      <p className="mb-1">기본공제 250만(소득세법 §103) → 과세표준 6,950만</p>
+                      <p className="font-semibold text-danger-500">양도세 ≈ 6,950만 × 24% − 누진공제 576만 ≈ 약 1,092만 (지방소득세 별도)</p>
                     </div>
                   </div>
 
                   <div className="rounded-lg border-2 border-primary-500 p-4">
                     <p className="mb-1 font-semibold text-text-primary">총 세금 부담</p>
                     <p className="text-sm text-text-secondary">
-                      증여세 약 1.05억 + 양도세 약 125만 = <strong className="text-primary-600">약 1.06억</strong>
+                      증여세 약 1.05억 + 양도세 약 1,092만 ≈ <strong className="text-primary-600">약 1.16억</strong>
                     </p>
                     <p className="mt-2 text-xs text-text-tertiary">
                       참고: 전체 10억을 자녀 증여 시 (5천만 공제 후 9.5억 과세) 증여세 ≈ 9.5억 × 30% − 6,000만 ≈ 약 2.25억.
-                      부담부증여로 약 1.19억 절세 효과(취득가·보유 기간·중과 적용 여부에 따라 달라짐).
+                      부담부증여로 약 1.09억 절세 효과(취득가·보유 기간·중과 적용 여부에 따라 달라짐).
                     </p>
                   </div>
                 </div>
@@ -392,7 +393,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                       <br />
                       경비 비례분 = 2천만 × (4억 / 10억) = 800만
                       <br />
-                      양도차익 = 4억 − 3.2억 − 800만 = 1,920만
+                      양도차익 = 4억 − 3.2억 − 800만 = 7,200만
                     </p>
                   </div>
                 </div>
@@ -449,7 +450,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                       <strong className="text-text-primary">함정 4: 1세대1주택 판정 오류</strong>
                     </p>
                     <p className="text-sm">
-                      부담부증여 당시 증여자가 2주택 이상을 소유하면 증여 부분에 양도세 중과가 적용될 수 있습니다.
+                      부담부증여 당시 증여자가 2주택 이상을 소유하면 채무 인수 부분(양도로 보는 부분)에 양도세 중과가 적용될 수 있습니다.
                       또한 수증자가 부담부증여 후 다른 주택을 구입하면 수증자 입장에서도 1세대1주택이 아니게 됩니다.
                       신고 전 다주택 판정을 명확히 해야 합니다.
                     </p>
@@ -476,7 +477,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
 
                 <ol className="list-inside list-decimal space-y-3 text-sm text-text-secondary">
                   <li>
-                    <strong>증여세 신고</strong> (증여일로부터 3개월 이내)
+                    <strong>증여세 신고</strong> (증여받은 날이 속하는 달의 말일부터 3개월 이내)
                     <ul className="list-inside list-disc ml-4 mt-1 space-y-1">
                       <li>
                         <a
@@ -496,7 +497,7 @@ export default function BurdenGiftDebtAssumptionTaxGuide() {
                     </ul>
                   </li>
                   <li>
-                    <strong>양도소득세 신고</strong> (양도일로부터 2개월 이내)
+                    <strong>양도소득세 신고</strong> (부담부증여는 증여일이 속하는 달의 말일부터 3개월 이내, 소득세법 §105①3호)
                     <ul className="list-inside list-disc ml-4 mt-1 space-y-1">
                       <li>
                         <a

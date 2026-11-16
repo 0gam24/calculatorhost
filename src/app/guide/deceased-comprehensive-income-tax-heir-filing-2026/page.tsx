@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/deceased-comprehensive-income-tax-heir-filing-2026/';
 const DATE_PUBLISHED = '2026-05-28';
-const DATE_MODIFIED = '2026-05-28';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '사망자 종합소득세 상속인 신고 2026 | 6개월 기한·소득세법 §74',
   description:
-    '부모나 배우자가 사망하면 상속인이 사망일부터 6개월 안에 고인의 종합소득세를 신고해야 합니다. 대상 소득과 가산세 20%를 정리했습니다.',
+    '부모나 배우자가 사망하면 상속인이 사망한 달 말일부터 6개월 안에 고인의 종합소득세를 신고해야 합니다. 대상 소득과 가산세 20%를 정리했습니다.',
   keywords: [
     '사망자 종합소득세',
     '상속인 신고 의무',
@@ -60,7 +60,7 @@ const FAQ_ITEMS = [
   {
     question: '신고 기한이 언제인가요?',
     answer:
-      '사망일로부터 6개월 이내입니다(소득세법 §74 ①). 예: 2026년 1월 사망 → 7월 31일 신고 기한, 2026년 3월 사망 → 9월 30일 신고 기한. 단, 5월 31일(연말정산 확정신고 마감)이 더 빠르면 5월 31일이 기한입니다.',
+      '상속개시일이 속하는 달의 말일부터 6개월이 되는 날까지입니다(소득세법 §74 ①). 예: 2026년 1월 사망 → 7월 31일 신고 기한, 2026년 3월 사망 → 9월 30일 신고 기한. 일반 확정신고 마감인 5월 31일과는 별개로 계산하며, 5월 31일로 당겨지지 않습니다.',
   },
   {
     question: '사망 연도 1월부터의 모든 소득을 신고하나요?',
@@ -70,12 +70,12 @@ const FAQ_ITEMS = [
   {
     question: '사망자 소득 신고와 상속세는 다른 건가요?',
     answer:
-      '네, 완전히 다릅니다(소득세법 §74 vs 상증법). 종합소득세는 "사망 연도 소득"에 대한 세금이고, 상속세는 "상속받은 재산"에 대한 세금입니다. 순서로는 종합소득세 신고(6개월) → 상속세 신고(10개월)입니다.',
+      '네, 완전히 다릅니다(소득세법 §74 vs 상증법). 종합소득세는 "사망 연도 소득"에 대한 세금이고, 상속세는 "상속받은 재산"에 대한 세금입니다. 신고 기한은 두 세금 모두 상속개시월 말일부터 6개월입니다(상증법 §67).',
   },
   {
     question: '신고하지 않으면 어떻게 되나요?',
     answer:
-      '무신고가산세 20% + 납부 지연가산세 일 0.022%가 부과됩니다(국세기본법 §47의2·§47의3). 또한 신고하지 않으면 환급받을 금액(있으면)도 5년 후 소멸합니다. 가산세와 환급 손실을 고려하면 반드시 신고하는 것이 유리합니다.',
+      '무신고가산세 20%와 납부지연가산세가 부과됩니다(국세기본법 §47의2·§47의4). 또한 신고하지 않으면 환급받을 금액(있으면)도 5년 후 소멸합니다. 가산세와 환급 손실을 고려하면 반드시 신고하는 것이 유리합니다.',
   },
   {
     question: '사망자가 개인사업자였다면 어떻게 신고하나요?',
@@ -103,7 +103,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
   const articleLd = buildArticleJsonLd({
     headline: '사망자 종합소득세 상속인 신고 2026 가이드',
     description:
-      '사망자 소득 신고 의무·신고 주체(상속인 전원)·기한(사망일+6개월)·신고 대상 소득·세액 계산·상속세와의 차이·신고 안 하면 가산세 20%까지 정리. 소득세법 §74.',
+      '사망자 소득 신고 의무·신고 주체(상속인 전원)·기한(상속개시월 말일+6개월)·신고 대상 소득·세액 계산·상속세와의 차이·신고 안 하면 가산세 20%까지 정리. 소득세법 §74.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -115,7 +115,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
   const webPageLd = buildWebPageJsonLd({
     name: '사망자 종합소득세 상속인 신고 2026, 6개월 기한·신고 의무',
     description:
-      '5월 31일 신고 마감! 사망자 소득은 누가? 언제까지? 상속인 신고 의무·기한(사망일+6개월)·신고 대상·상속세와의 차이·무신고 가산세 20%·신고 체크리스트.',
+      '사망자 소득은 누가? 언제까지? 상속인 신고 의무·기한(상속개시월 말일+6개월)·신고 대상·상속세와의 차이·무신고 가산세 20%·신고 체크리스트.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -145,7 +145,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 ]}
                 category="세금"
                 readingMinutes={8}
-                publishedDate="2026-05-28"
+                publishedDate="2026-11-16"
                 title="사망자 종합소득세 상속인 신고 2026"
                 subtitle="· 6개월 기한·신고 의무·상속세와의 차이"
                 lead={
@@ -187,7 +187,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">신고 기한</td>
-                        <td className="px-3 py-2">사망일로부터 6개월 이내 (또는 5월 31일 중 늦은 날)</td>
+                        <td className="px-3 py-2">상속개시월 말일부터 6개월이 되는 날까지</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="px-3 py-2 font-semibold">신고 장소</td>
@@ -214,7 +214,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                       <strong>상속인 전원이 신고:</strong> 1명 신고 또는 전원 신고 가능
                     </li>
                     <li>
-                      <strong>기한은 6개월:</strong> 사망일+6개월 또는 5월 31일 중 늦은 날
+                      <strong>기한은 6개월:</strong> 상속개시월 말일+6개월 (5월 31일과 무관)
                     </li>
                     <li>
                       <strong>상속세와 별개:</strong> 종합소득세(소득) vs 상속세(재산) 구분 필수
@@ -266,7 +266,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <p className="font-semibold text-danger-700 dark:text-danger-300">다만: 상속세와는 다릅니다</p>
                   <p className="mt-2">
                     "사망자 소득세"와 "상속세"는 완전히 다릅니다. 종합소득세는 사망 연도의 "소득"에 대한 세금이고, 상속세는 상속받은
-                    "재산"에 대한 세금입니다. 신고 기한도 다릅니다 (종합소득세 6개월 vs 상속세 10개월).
+                    "재산"에 대한 세금입니다. 신고 기한은 두 세금 모두 상속개시월 말일부터 6개월입니다.
                   </p>
                 </div>
               </section>
@@ -340,8 +340,8 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
               <section className="space-y-4">
                 <h2 className="text-2xl font-bold">3. Q. 신고 기한은 언제인가요?</h2>
                 <p className="text-text-secondary leading-relaxed" data-speakable>
-                  신고 기한은 사망일로부터 6개월 이내입니다(소득세법 §74 ①). 단, 5월 31일 확정신고 마감이 더 앞서면 5월 31일이 기한이
-                  됩니다.
+                  신고 기한은 상속개시일이 속하는 달의 말일부터 6개월이 되는 날까지입니다(소득세법 §74 ①). 일반 확정신고 마감인 5월 31일과는 별개로 계산하며, 5월 31일로 당겨지지
+                  않습니다.
                 </p>
 
                 <div className="rounded-lg bg-bg-raised p-4 text-sm text-text-secondary">
@@ -350,17 +350,17 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                     <div className="rounded-lg bg-bg-card p-3">
                       <p className="font-semibold text-text-primary">예시 1: 2026년 1월 사망</p>
                       <ul className="mt-2 list-inside list-disc space-y-1">
-                        <li>사망일 + 6개월 = 7월 말</li>
-                        <li>하지만 5월 31일 확정신고가 더 앞음</li>
-                        <li className="font-semibold text-danger-600">→ 신고 기한: 2026년 5월 31일(금)</li>
+                        <li>1월 말일 + 6개월 = 7월 31일</li>
+                        <li>5월 31일과 무관하게 6개월 기한을 그대로 적용</li>
+                        <li className="font-semibold text-primary-600">→ 신고 기한: 2026년 7월 31일(금)</li>
                       </ul>
                     </div>
 
                     <div className="rounded-lg bg-bg-card p-3">
                       <p className="font-semibold text-text-primary">예시 2: 2026년 3월 사망</p>
                       <ul className="mt-2 list-inside list-disc space-y-1">
-                        <li>사망일 + 6개월 = 9월 30일</li>
-                        <li>5월 31일은 이미 지남</li>
+                        <li>3월 말일 + 6개월 = 9월 30일</li>
+                        <li>사망한 해(2026년 1~3월) 소득이 신고 대상</li>
                         <li className="font-semibold text-primary-600">→ 신고 기한: 2026년 9월 30일(수)</li>
                       </ul>
                     </div>
@@ -368,19 +368,19 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                     <div className="rounded-lg bg-bg-card p-3">
                       <p className="font-semibold text-text-primary">예시 3: 2026년 11월 사망</p>
                       <ul className="mt-2 list-inside list-disc space-y-1">
-                        <li>사망일 + 6개월 = 2027년 5월</li>
-                        <li>5월 31일(2027년)이 6개월보다 앞</li>
-                        <li className="font-semibold text-primary-600">→ 신고 기한: 2027년 5월 31일</li>
+                        <li>11월 말일 + 6개월 = 2027년 5월 31일</li>
+                        <li>6개월 기한이 우연히 5월 31일과 같은 날</li>
+                        <li className="font-semibold text-primary-600">→ 신고 기한: 2027년 5월 31일(월)</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">5월 31일 원칙</p>
+                  <p className="font-semibold text-text-primary">1~5월에 사망한 경우 전년도 소득</p>
                   <p className="mt-2">
-                    한국 종합소득세 확정신고 마감은 매년 5월 31일입니다. 사망자 신고 기한도 이 원칙을 따르므로, 사망일이 1월 초라면
-                    신고 기한이 5월 31일로 단축됩니다. 신고 여유 시간이 없으니 4월부터 준비하세요.
+                    1월 1일부터 5월 31일 사이에 사망해 전년도 소득의 확정신고를 하지 못한 경우에도, 상속인이 상속개시일이 속하는 달의
+                    말일부터 6개월이 되는 날까지 전년도분과 사망한 해의 소득을 함께 신고하면 됩니다(소득세법 §74).
                   </p>
                 </div>
               </section>
@@ -508,22 +508,22 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                         <tr className="border-b border-border-base">
                           <td className="px-2 py-1 font-semibold">세율</td>
                           <td className="px-2 py-1">누진 6~45% (소득세법 §55)</td>
-                          <td className="px-2 py-1">누진 10~50% (상증법 §31)</td>
+                          <td className="px-2 py-1">누진 10~50% (상증법 §26)</td>
                         </tr>
                         <tr className="border-b border-border-base">
                           <td className="px-2 py-1 font-semibold">공제</td>
                           <td className="px-2 py-1">근로공제, 필요경비 등</td>
-                          <td className="px-2 py-1">배우자, 직계 10억~5억</td>
+                          <td className="px-2 py-1">배우자공제, 일괄공제 5억</td>
                         </tr>
                         <tr className="border-b border-border-base">
                           <td className="px-2 py-1 font-semibold">신고 기한</td>
-                          <td className="px-2 py-1">사망일+6개월 or 5월 31일</td>
-                          <td className="px-2 py-1">사망일+10개월</td>
+                          <td className="px-2 py-1">상속개시월 말일+6개월</td>
+                          <td className="px-2 py-1">상속개시월 말일+6개월</td>
                         </tr>
                         <tr>
                           <td className="px-2 py-1 font-semibold">신고 근거</td>
                           <td className="px-2 py-1">소득세법 §74</td>
-                          <td className="px-2 py-1">상증법 §66</td>
+                          <td className="px-2 py-1">상증법 §67</td>
                         </tr>
                       </tbody>
                     </table>
@@ -531,10 +531,10 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                 </div>
 
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
-                  <p className="mb-3 font-semibold text-text-primary">신고 순서: 먼저 종합소득세, 나중에 상속세</p>
+                  <p className="mb-3 font-semibold text-text-primary">신고 기한: 두 세금 모두 상속개시월 말일부터 6개월</p>
                   <p>
-                    1. <strong>종합소득세 신고</strong> (6개월 or 5월 31일) 2. <strong>상속세 신고</strong> (10개월), 순서가 중요합니다.
-                    종합소득세에서 나올 세금이 상속재산을 줄이기 때문에 상속세 기초가 됩니다.
+                    <strong>종합소득세 신고</strong>(상속개시월 말일+6개월, 소득세법 §74 ①)와 <strong>상속세 신고</strong>(상속개시월 말일+6개월, 상증법 §67)는 같은 기한입니다.
+                    종합소득세로 확정된 납부세액은 상속세 과세가액을 계산할 때 공제 대상이 됩니다.
                   </p>
                 </div>
 
@@ -559,22 +559,22 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <p className="font-semibold text-text-primary mb-3">미신고 시 가산세 계산</p>
                   <div className="space-y-2">
                     <div className="rounded-lg bg-bg-card p-3">
-                      <p className="font-semibold text-text-primary">예: 사망자 사업소득 1,000만원, 신고 안 함</p>
+                      <p className="font-semibold text-text-primary">예: 사망자 사업소득 1,000만원, 신고 안 함(과세표준 750만 가정)</p>
                       <ul className="mt-2 list-inside list-disc space-y-1">
-                        <li>종합소득세액: 약 240만 (과세표준 750만 × 24% − 576만 누진공제)</li>
-                        <li>무신고가산세: 240만 × 20% = 48만</li>
-                        <li>지연가산세: 240만 × 0.022% × 미신고일수</li>
-                        <li className="font-semibold text-danger-600">→ 총 납부: 약 300만+ (세금 + 가산세 포함)</li>
+                        <li>종합소득세액: 45만 (과세표준 750만 × 6%, 1,400만 이하 구간 누진공제 없음)</li>
+                        <li>무신고가산세: 45만 × 20% = 9만</li>
+                        <li>지연가산세: 45만 × 미신고일수별 가산(국세기본법 §47의4)</li>
+                        <li className="font-semibold text-danger-600">→ 총 납부: 약 55만+ (세금 + 가산세 포함)</li>
                       </ul>
                     </div>
                   </div>
                 </div>
 
                 <div className="rounded-lg border-l-4 border-l-highlight-500 bg-highlight-500/5 p-4 text-sm text-text-secondary">
-                  <p className="font-semibold text-text-primary">6월 신고는 자진신고 감면 50% 받음</p>
+                  <p className="font-semibold text-text-primary">기한을 넘겨도 1개월 안에 신고하면 가산세 50% 감면</p>
                   <p className="mt-2">
-                    5월 31일 기한을 넘기고 6월 1~30일에 신고하면 가산세가 50% 감면됩니다(국세기본법 §48). 즉 무신고가산세 20% → 10%로
-                    줄어듭니다. 더 늦으면 감면이 없으므로 최대한 빨리 신고하세요.
+                    신고 기한을 넘겼더라도 기한이 지난 뒤 1개월 안에 기한 후 신고를 하면 무신고가산세가 50% 감면됩니다(국세기본법 §48②).
+                    즉 20%가 10%로 줄어듭니다. 늦어질수록 감면 폭이 줄어드므로 최대한 빨리 신고하세요.
                   </p>
                 </div>
 
@@ -619,7 +619,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <div className="flex items-start gap-2">
                     <input type="checkbox" id="check4" className="mt-1" />
                     <label htmlFor="check4" className="text-text-secondary">
-                      <strong>신고 기한 계산</strong>: 사망일 + 6개월 또는 5월 31일 중 늦은 날
+                      <strong>신고 기한 계산</strong>: 상속개시월 말일 + 6개월이 되는 날
                     </label>
                   </div>
                   <div className="flex items-start gap-2">
@@ -651,10 +651,10 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                     • <strong>신고 의무는 상속인 전원</strong>이 지지만, 1명 대표 또는 전원 신고 선택 가능
                   </li>
                   <li>
-                    • <strong>기한은 사망일+6개월</strong>이나, 5월 31일이 더 앞면 5월 31일이 기한 (매년)
+                    • <strong>기한은 상속개시월 말일+6개월</strong>이며, 5월 31일로 당겨지지 않음
                   </li>
                   <li>
-                    • <strong>상속세와 독립적</strong>: 종합소득세 신고(6개월) 후 상속세 신고(10개월)
+                    • <strong>상속세와 독립적</strong>: 종합소득세 신고(상속개시월 말일+6개월)와 상속세 신고(상속개시월 말일+6개월)는 같은 기한
                   </li>
                   <li>
                     • <strong>신고 안 하면 무신고가산세 20%</strong> 부과 (6월 신고 시 50% 감면)
@@ -706,7 +706,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
               <ShareButtons
                 title="사망자 종합소득세 상속인 신고 2026 가이드 | 6개월 기한·소득세법 §74"
                 url={URL}
-                description="사망자 소득 신고는 상속인 전원 의무. 기한 사망일+6개월. 신고 안 하면 무신고가산세 20%. 상속세와의 차이까지 정리."
+                description="사망자 소득 신고는 상속인 전원 의무. 기한 상속개시월 말일+6개월. 신고 안 하면 무신고가산세 20%. 상속세와의 차이까지 정리."
               />
 
               {/* 출처 및 면책 */}

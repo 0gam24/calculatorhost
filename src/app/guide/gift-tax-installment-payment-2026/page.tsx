@@ -17,12 +17,12 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/gift-tax-installment-payment-2026/';
 const DATE_PUBLISHED = '2026-08-14';
-const DATE_MODIFIED = '2026-08-14';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법',
   description:
-    '증여세가 1천만원을 넘으면 2개월 내 분납, 2천만원 초과면 담보를 걸고 5년간 연부연납할 수 있습니다. 가산금은 연 3.5%입니다.',
+    '증여세가 1천만원을 넘으면 2개월 내 분납, 2천만원 초과면 담보를 걸고 5년간 연부연납할 수 있습니다. 가산금은 연 3.1%입니다.',
   keywords: [
     '증여세 분납',
     '증여세 연부연납',
@@ -69,7 +69,7 @@ const FAQ_ITEMS = [
   {
     question: '연부연납 가산금(이자)은 얼마인가요?',
     answer:
-      '연부연납은 세금을 미루는 만큼 가산금(이자 성격)이 붙습니다. 2024년 3월 22일 이후 신청분의 가산금 이자율은 연 3.5% 수준으로 적용되어 왔으나, 이 이율은 국세기본법 시행규칙으로 변동될 수 있으므로 신청 시점의 국세청 고시를 확인해야 합니다.',
+      '연부연납은 세금을 미루는 만큼 가산금(이자 성격)이 붙습니다. 가산금 이자율은 국세기본법 시행규칙 §19의3의 국세환급가산금 이율을 따르며, 현재 연 3.1%(1천분의 31)입니다. 이 이율은 시행규칙 개정으로 바뀔 수 있으므로 신청 시점에 다시 확인해야 합니다.',
   },
   {
     question: '담보로는 무엇을 제공하나요?',
@@ -97,7 +97,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '증여세 분납·연부연납 2026, 목돈 없이 나눠 내는 법',
     description:
-      '증여세 분납(1천만원 초과, 2개월)과 연부연납(2천만원 초과, 5년, 담보)의 조건·금액 한도·연 3.5% 가산금·선택 기준을 상속세및증여세법 §70·§71로 정리.',
+      '증여세 분납(1천만원 초과, 2개월)과 연부연납(2천만원 초과, 5년, 담보)의 조건·금액 한도·연 3.1% 가산금·선택 기준을 상속세및증여세법 §70·§71로 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -139,7 +139,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
                     { name: '증여세 분납·연부연납 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">증여받은 사람 · 8분 읽기 · 2026-08-14</p>
+                <p className="mb-2 text-caption text-text-tertiary">증여받은 사람 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   증여세 분납·연부연납 2026
                   <br />
@@ -161,7 +161,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
                   <p className="mt-2 text-sm text-text-secondary">
                     · 분납: 세액 <strong>1천만원 초과</strong> → 신고기한 후 2개월 이내 2회 분할, 담보·이자 없음
                     <br />
-                    · 연부연납: 세액 <strong>2천만원 초과</strong> → 최대 5년 분할, 담보 필수, 가산금(연 3.5% 수준)
+                    · 연부연납: 세액 <strong>2천만원 초과</strong> → 최대 5년 분할, 담보 필수, 가산금(연 3.1%)
                     <br />
                     · 각 회분 분할세액이 1천만원 초과해야 연부연납 가능
                     <br />
@@ -261,7 +261,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
                     <br />
                     · 이후 5년간 매년: 2,000만원씩 (각 회분 1천만원 초과 요건 충족)
                     <br />
-                    · 각 회차마다 잔여 세액에 가산금(연 3.5% 수준)이 추가로 부과
+                    · 각 회차마다 잔여 세액에 가산금(연 3.1%)이 추가로 부과
                     <br />
                     <span className="text-xs text-text-tertiary">담보는 연부연납 세액과 가산금의 120%(보증보험 110%) 제공.</span>
                   </p>
@@ -302,7 +302,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">가산금</td>
                         <td className="p-3">없음</td>
-                        <td className="p-3">연 3.5% 수준(변동)</td>
+                        <td className="p-3">연 3.1%(변동 가능)</td>
                       </tr>
                     </tbody>
                   </table>
@@ -365,7 +365,7 @@ export default function GiftTaxInstallmentPayment2026Page() {
 
               <section className="space-y-4 rounded-lg border border-border-base bg-bg-card p-6">
                 <p className="text-sm text-text-tertiary">
-                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 분납·연부연납 가능 여부, 담보 종류와 금액, 연부연납 가산금 이율은 신청 시점과 개별 사안에 따라 달라지므로 홈택스 또는 관할 세무서, 세무대리인에게 반드시 확인하세요. 연부연납 가산금 이율(2024-03-22 이후 연 3.5% 수준)은 국세기본법 시행규칙 개정으로 변동될 수 있습니다. 본 콘텐츠는 2026-08-14 기준으로 작성되었습니다. 인용한 법조항은 <strong>상속세및증여세법 §70(분납), §71(연부연납)</strong>입니다.
+                  <strong>면책조항:</strong> 본 가이드는 교육 목적으로 작성되었으며, 개인 맞춤형 세무 조언이 아닙니다. 분납·연부연납 가능 여부, 담보 종류와 금액, 연부연납 가산금 이율은 신청 시점과 개별 사안에 따라 달라지므로 홈택스 또는 관할 세무서, 세무대리인에게 반드시 확인하세요. 연부연납 가산금 이율(현재 연 3.1%, 국세기본법 시행규칙 §19의3)은 시행규칙 개정으로 변동될 수 있습니다. 본 콘텐츠는 2026-11-16 기준으로 수정되었습니다. 인용한 법조항은 <strong>상속세및증여세법 §70(분납), §71(연부연납)</strong>입니다.
                 </p>
                 <p className="text-sm text-text-tertiary">
                   <strong>참고 자료</strong>:{' '}
