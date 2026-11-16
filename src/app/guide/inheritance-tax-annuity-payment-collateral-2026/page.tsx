@@ -18,7 +18,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-tax-annuity-payment-collateral-2026/';
 const DATE_PUBLISHED = '2026-09-15';
-const DATE_MODIFIED = '2026-09-15';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속세 연부연납 기간과 담보 요건 2026, 몇 년까지 나눌까',
@@ -60,12 +60,12 @@ const FAQ_ITEMS = [
   {
     question: '담보로 아파트나 토지를 제공할 수 있나요?',
     answer:
-      '연부연납 담보로는 부동산을 제공할 수 없는 것이 원칙입니다. 국세징수법 §18①이 정한 납세담보 6종 가운데 연부연납에는 금전, 유가증권, 납세보증보험증권, 은행 등의 납세보증서 4종만 인정되며, 토지·건물 같은 부동산 담보는 제외되기 때문입니다.',
+      '제공할 수 있습니다. 토지와 보험에 든 등기 건물은 국세징수법 §18①이 정한 납세담보에 들어갑니다. 다만 금전, 유가증권, 납세보증보험증권, 은행 등의 납세보증서 4종은 신청한 날에 바로 허가받은 것으로 보는 반면(상속세및증여세법 §71①), 부동산은 세무서가 담보 가치를 심사해 허가 여부를 정하고 근저당 설정 절차가 필요합니다.',
   },
   {
     question: '납세보증보험증권이 뭔가요?',
     answer:
-      '보험회사가 상속인을 대신해 세금 납부를 보증하는 보험 상품입니다. 담보로 제공하는 보증보험증권은 연부연납 기간을 충분히 커버하는 보험기간을 갖춰야 하며, 실무에서는 부동산이나 예금을 담보로 잡기 어려울 때 가장 널리 쓰이는 방법입니다.',
+      '보험회사가 상속인을 대신해 세금 납부를 보증하는 보험 상품입니다. 담보로 제공하는 보증보험증권은 연부연납 기간을 충분히 커버하는 보험기간을 갖춰야 하며, 부동산이나 예금을 담보로 잡기 어려울 때 쓰는 방법입니다. 보험료가 들지만 신청일에 바로 허가받은 것으로 봅니다.',
   },
   {
     question: '연부연납을 하면 이자를 내야 하나요?',
@@ -93,7 +93,7 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
   const articleLd = buildArticleJsonLd({
     headline: '상속세 연부연납 기간과 담보 요건 2026, 몇 년까지 나눌까',
     description:
-      '상속세 연부연납 신청 요건(2천만원 초과), 일반 상속재산 10년·가업상속재산 20년 기간, 담보 4종 요건, 가산율까지 상속세및증여세법 §71·국세징수법 §18 기준으로 정리.',
+      '상속세 연부연납 신청 요건(2천만원 초과), 일반 상속재산 10년·가업상속재산 20년 기간, 담보 종류, 가산율까지 상속세및증여세법 §71·국세징수법 §18 기준으로 정리.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -135,7 +135,7 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
                     { name: '상속세 연부연납 기간과 담보 요건 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">상속인 · 8분 읽기 · 2026-09-15</p>
+                <p className="mb-2 text-caption text-text-tertiary">상속인 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속세 연부연납 기간과 담보 요건 2026
                   <br />
@@ -162,7 +162,7 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
                     <br />
                     기간: 일반 상속재산 최대 10년, 가업상속재산 최대 20년(또는 10년 거치 후 10년).
                     <br />
-                    담보: 금전·유가증권·납세보증보험증권·납세보증서 4종만 인정, 부동산은 불가.
+                    담보: 금전·유가증권·납세보증보험증권·납세보증서는 신청일에 바로 허가, 부동산은 심사 후 허가.
                     <br />
                     비용: 나눠 내는 기간 동안 연부연납가산금(이자 성격) 별도 부과.
                   </p>
@@ -186,7 +186,7 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
                     <br />
                     · 결과: 2,001만원을 3회로 나누면 회당 약 667만원으로 1천만원에 못 미쳐 불가, 2회(약 1,001만원씩)까지만 가능
                     <br />
-                    <span className="text-xs text-text-tertiary">결론: 세액이 2천만원을 겨우 넘는 수준이면 10년 연부연납이 명목상 가능해도 회분 조건 때문에 실제 기간은 1~2년으로 짧아집니다.</span>
+                    <span className="text-xs text-text-tertiary">결론: 세액이 2천만원을 겨우 넘는 수준이면 10년 연부연납이 명목상 가능해도 회분 조건 때문에 실제로는 2회(1년)까지만 나눌 수 있습니다.</span>
                   </p>
                 </div>
                 <p className="mt-4">
@@ -243,49 +243,49 @@ export default function InheritanceTaxAnnuityPaymentCollateral2026Page() {
               <section className="space-y-6" data-speakable>
                 <h2 className="text-2xl font-bold">담보는 무엇으로 제공해야 하나요?</h2>
                 <p>
-                  연부연납에는 국세징수법 §18①이 정한 납세담보 가운데 금전, 유가증권, 납세보증보험증권, 은행 등의 납세보증서 4종만 인정됩니다. 토지나 건물 같은 부동산은 국세징수법상 납세담보의 한 종류이지만, 연부연납에는 인정되는 4종에 포함되지 않습니다.
+                  국세징수법 §18①이 정한 납세담보를 제공합니다. 금전, 유가증권, 납세보증보험증권, 은행 등의 납세보증서 4종(§18①1~4호)으로 신청하면 신청한 날에 허가받은 것으로 봅니다(상속세및증여세법 §71①). 토지나 건물 같은 부동산도 납세담보로 제공할 수 있지만, 세무서의 담보 가치 심사와 근저당 설정을 거쳐 허가가 납니다.
                 </p>
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm border-collapse">
-                    <caption className="mb-2 text-left text-xs text-text-secondary">표 2. 연부연납 담보 인정 여부 (국세징수법 §18①)</caption>
+                    <caption className="mb-2 text-left text-xs text-text-secondary">표 2. 연부연납 담보 종류와 허가 방식 (국세징수법 §18①)</caption>
                     <thead>
                       <tr className="border-b border-border-base">
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">담보 종류</th>
-                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">연부연납 인정 여부</th>
+                        <th scope="col" className="text-left p-3 font-semibold bg-bg-card">허가 방식</th>
                         <th scope="col" className="text-left p-3 font-semibold bg-bg-card">비고</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr className="border-b border-border-base">
                         <td className="p-3">금전</td>
-                        <td className="p-3">가능</td>
+                        <td className="p-3">신청일에 허가 간주</td>
                         <td className="p-3">현금 예치</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">국채 등 유가증권</td>
-                        <td className="p-3">가능</td>
+                        <td className="p-3">신청일에 허가 간주</td>
                         <td className="p-3">대통령령으로 정하는 범위</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">납세보증보험증권</td>
-                        <td className="p-3">가능</td>
-                        <td className="p-3">실무상 가장 많이 활용</td>
+                        <td className="p-3">신청일에 허가 간주</td>
+                        <td className="p-3">보험료 부담</td>
                       </tr>
                       <tr className="border-b border-border-base bg-bg-card/50">
                         <td className="p-3">은행 등의 납세보증서</td>
-                        <td className="p-3">가능</td>
+                        <td className="p-3">신청일에 허가 간주</td>
                         <td className="p-3">은행·신용보증기금 등 발급</td>
                       </tr>
                       <tr className="border-b border-border-base">
                         <td className="p-3">토지 / 건물·공장재단 등</td>
-                        <td className="p-3">불가</td>
-                        <td className="p-3">일반 납세담보에는 포함되나 연부연납 제외</td>
+                        <td className="p-3">세무서 심사 후 허가</td>
+                        <td className="p-3">담보 가치 평가, 근저당 설정 필요</td>
                       </tr>
                     </tbody>
                   </table>
                 </div>
                 <p className="mt-4">
-                  다만, 금전·유가증권·납세보증보험증권·납세보증서를 담보로 제공하면 별도 재산 감정 절차 없이 비교적 신속하게 처리되는 경우가 많습니다. 부동산 위주로 상속받아 현금성 담보 마련이 어렵다면, 미리 보증보험사와 보험 가능 여부를 상담해 두는 것이 좋습니다.
+                  다만, 금전·유가증권·납세보증보험증권·납세보증서를 담보로 제공하면 신청일에 허가받은 것으로 보아 절차가 빠릅니다. 부동산 위주로 상속받았다면 상속받은 부동산을 담보로 제공하는 방법과 보증보험을 이용하는 방법을 비교해, 신고기한 전에 관할 세무서와 미리 상담해 두는 것이 좋습니다.
                 </p>
               </section>
 

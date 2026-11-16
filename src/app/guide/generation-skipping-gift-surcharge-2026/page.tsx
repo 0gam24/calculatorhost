@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/generation-skipping-gift-surcharge-2026/';
 const DATE_PUBLISHED = '2026-07-21';
-const DATE_MODIFIED = '2026-07-21';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '세대생략 증여 할증과세 2026, 손주 30%·40% 계산과 절세',
@@ -138,7 +138,7 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
                     { name: '세대생략 증여 할증과세 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">자산 이전 계획 · 8분 읽기 · 2026-07-21</p>
+                <p className="mb-2 text-caption text-text-tertiary">자산 이전 계획 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   세대생략 증여 할증과세 2026
                   <br />
@@ -232,9 +232,13 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
                     <br />
                     · 할증액 = 4,000만 × 30% = 1,200만원
                     <br />
-                    · 최종 증여세 = 4,000만 + 1,200만 = <strong>5,200만원</strong>
+                    · 할증 포함 산출세액 = 4,000만 + 1,200만 = 5,200만원
                     <br />
-                    <span className="text-xs text-text-tertiary">누진세율(상증세법 §56): 1억 이하 10%, 5억 이하 20%(누진공제 1,000만).</span>
+                    · 신고세액공제(§69, 3%) = 5,200만 × 3% = 156만원
+                    <br />
+                    · 납부세액 = 5,200만 − 156만 = <strong>5,044만원</strong>
+                    <br />
+                    <span className="text-xs text-text-tertiary">누진세율(상증세법 §56): 1억 이하 10%, 5억 이하 20%(누진공제 1,000만). 신고세액공제는 할증과세액 포함 산출세액에 적용(상증세법 §69).</span>
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
@@ -244,7 +248,7 @@ export default function GenerationSkippingGiftSurcharge2026Page() {
                     <br />
                     · ② 자녀→성년 손주 남은 금액 증여: 다시 공제·누진세율 적용해 추가 증여세 발생
                     <br />
-                    · 두 단계 합계는 사례 1의 5,200만원보다 커지는 경우가 일반적
+                    · 두 단계 합계는 사례 1의 납부세액 5,044만원보다 커지는 경우가 일반적
                     <br />
                     <span className="text-xs text-text-tertiary">결론: 30% 할증을 내도 한 번에 손주에게 넘기는 편이 총 세부담이 낮을 수 있습니다.</span>
                   </p>

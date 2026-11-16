@@ -17,17 +17,17 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inherited-house-capital-gains-exemption-5-year-2026/';
 const DATE_PUBLISHED = '2026-05-24';
-const DATE_MODIFIED = '2026-05-24';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
-  title: '상속주택 양도세 1세대1주택 합가 5년 특례 2026, 기존주택 비과세',
+  title: '상속주택 양도세 2026, 기존주택 팔 때 1세대1주택 비과세 특례',
   description:
-    '주택을 상속받은 뒤 5년 안에 기존주택을 팔면 1세대1주택 비과세를 받을 수 있습니다. 상속주택 자체는 제외되며 양도 순서가 핵심입니다.',
+    '주택을 상속받아 2주택이 되어도 상속 당시 갖고 있던 기존주택을 팔 때는 1세대1주택 비과세를 받을 수 있습니다. 기한 제한은 없습니다.',
   keywords: [
     '상속주택 양도세',
     '상속주택 1세대1주택',
     '상속 후 주택 양도',
-    '상속주택 5년 특례',
+    '상속주택 특례 155조',
     '상속개시일 기준',
     '상속주택 비과세',
     '기존주택 먼저 양도',
@@ -52,37 +52,37 @@ const FAQ_ITEMS = [
   {
     question: '상속받은 집과 기존 집, 어느 것을 먼저 팔아야 하나요?',
     answer:
-      '반드시 기존 주택을 먼저 양도해야 1세대1주택 비과세를 받습니다(소득세법 시행령 §155②). 상속주택을 먼저 양도하면 일반 양도세를 내야 하고, 그 이후 기존주택을 양도할 때 비과세를 받지 못합니다. 5년 이내 기존주택을 양도하는 것이 절세의 핵심 조건입니다.',
+      '보통은 기존 주택(상속 당시 이미 갖고 있던 집)을 먼저 파는 쪽이 유리합니다. 기존 주택을 팔 때는 상속주택이 있어도 1주택으로 보아 비과세를 적용받기 때문입니다(소득세법 시행령 §155②). 상속주택을 먼저 팔면 그 양도는 2주택 상태라 과세되고, 남은 기존 주택은 1주택이 되어 일반 1세대1주택 요건을 갖추면 비과세를 받을 수 있습니다.',
   },
   {
-    question: '5년은 언제부터 계산되나요? 사망일인가 상속등기일인가요?',
+    question: '기존주택을 언제까지 팔아야 하나요? 5년 기한이 있나요?',
     answer:
-      '5년의 기한은 피상속인 사망일부터 계산됩니다(상속세 및 증여세법 §3). 상속등기일이나 지분 분할일이 아닙니다. 예를 들어 부친이 2021년 1월 1일에 사망했다면, 2026년 1월 1일이 5년 만료일입니다. 상속등기는 나중에 해도 상관없으나, 양도는 반드시 5년 이내에 이루어져야 합니다.',
+      '기한은 없습니다. 소득세법 시행령 §155②는 상속주택과 일반주택을 각각 1채씩 가진 1세대가 일반주택을 양도하면 1주택으로 본다고만 정하고, 양도 기한을 두지 않습니다. 신규 주택 취득 후 3년 안에 종전 주택을 팔아야 하는 일시적 2주택 특례(§155①)와 다른 점입니다. 상속과 관련해 5년이 쓰이는 곳은 상속주택 자체의 다주택 중과 배제나 종합부동산세·취득세의 주택 수 계산 같은 다른 규정입니다.',
   },
   {
     question: '상속주택은 양도세 비과세 대상이 아니라는데, 어떤 의미인가요?',
     answer:
-      '상속주택 자체는 1세대1주택 비과세를 받을 수 없습니다. 이 특례는 기존 주택(상속 전에 이미 소유하던 주택)에만 적용됩니다(소득세법 시행령 §155②). 상속주택을 5년 내에 양도해도 기존주택이 없으면 비과세 불가능. 기존주택과 상속주택을 합쳐서 "1세대1주택" 비과세 혜택을 기존주택에 전달하는 개념입니다.',
+      '이 특례는 기존 주택(상속개시 당시 이미 갖고 있던 주택)을 팔 때만 적용된다는 뜻입니다(소득세법 시행령 §155②). 기존 주택과 상속주택을 함께 가진 상태에서 상속주택을 먼저 팔면 2주택 양도로 과세됩니다. 다만 기존 주택을 먼저 팔아 상속주택 1채만 남았다면, 그 상속주택도 일반 1세대1주택 요건(보유 2년 등)을 갖추면 비과세를 받을 수 있습니다.',
   },
   {
     question: '기존주택의 보유·거주 기간은 어떻게 계산되나요?',
     answer:
-      '기존주택은 상속과 무관하게 원래 1세대1주택 비과세 조건을 만족해야 합니다. 즉, 기존주택 보유 2년 이상(조정대상지역 취득 시 거주 2년 추가)이 필수입니다. 5년은 상속 후 기존주택 양도까지의 유예 기간일 뿐, 보유 기간 조건은 별개입니다. 기존주택을 상속 직후 5년 내에 양도하더라도 보유 2년을 미달하면 비과세 불가능.',
+      '기존주택은 상속과 무관하게 원래 1세대1주택 비과세 조건을 만족해야 합니다. 즉, 기존주택 보유 2년 이상(조정대상지역 취득 시 거주 2년 추가)이 필수입니다. 또 상속개시 당시 이미 보유한 주택이어야 하며, 상속받은 뒤에 새로 산 주택이나 상속개시일 전 2년 이내에 피상속인에게서 증여받은 주택은 이 특례의 기존주택에 해당하지 않습니다.',
   },
   {
     question: '부모가 상속한 주택 2채가 있으면 어떻게 되나요?',
     answer:
-      '공동상속인 경우, 각자의 지분에 대해 비과세를 적용합니다(소득세법 시행령 §155②의2). 예: 형과 동생이 부모 유산(주택 2채)을 1/2씩 상속받고, 기존주택 1채가 있으면 비과세 혜택을 받을 수 있습니다. 다만 기존주택이 여러 필지면 1세대1주택 비과세 한 건만 가능(추가 주택은 일반 양도세).',
+      '피상속인이 주택을 2채 이상 남겼다면 그중 1채만 이 특례의 상속주택으로 봅니다. 피상속인이 소유한 기간이 가장 긴 주택이 우선이고, 같으면 거주한 기간이 가장 긴 주택입니다(소득세법 시행령 §155②). 나머지 상속주택은 일반 주택으로 계산되어 기존주택을 팔 때 비과세를 받기 어렵습니다.',
   },
   {
     question: '배우자와 함께 상속받으면 배우자의 비과세도 가능한가요?',
     answer:
-      '네, 가능합니다. 배우자가 1세대1주택 조건을 만족하면서 상속 후 5년 내 기존주택을 양도하면 비과세를 받을 수 있습니다. 다만 1세대는 배우자와 통합되므로(소득세법 시행령 §154의4), 배우자가 따로 주택을 소유하면 부부 합산 2주택 상태가 되어 비과세 불가능. 부부 중 한 명만 비과세를 받을 수 있습니다.',
+      '주택 수는 세대 단위로 셉니다. 부부는 같은 세대이므로 부부가 가진 주택을 합쳐 기존주택 1채와 상속주택 1채인 경우에 특례가 적용됩니다. 또 상속인과 피상속인이 상속개시 당시 같은 세대였다면 원칙적으로 이 특례를 적용하지 않습니다. 다만 1주택을 가진 자녀가 60세 이상 부모를 모시려고 세대를 합친 경우로서 합치기 전부터 부모가 갖고 있던 주택은 상속주택으로 인정합니다(§155② 단서).',
   },
   {
-    question: '상속주택을 5년 후에 양도하면 일반 양도세를 내나요?',
+    question: '상속주택을 먼저 팔면 세금은 어떻게 되나요?',
     answer:
-      '네. 상속 후 5년을 초과하여 기존주택을 양도하거나 상속주택만 양도하면, 일반 2주택(이상) 양도세 규정이 적용됩니다. 조정지역에서 2주택이면 기본세율 + 20%p 중과, 3주택이면 + 30%p 중과됩니다. 5년 기한 내 기존주택을 반드시 양도해야 절세 효과를 보실 수 있습니다.',
+      '기존주택과 상속주택을 모두 가진 상태에서 상속주택을 팔면 2주택 양도로 양도세가 과세됩니다. 상속주택의 취득가액은 상속개시일 현재 상속세 평가액이므로, 상속 직후에 팔면 양도차익이 작아 세금이 크지 않을 수 있습니다. 다주택 중과 여부와 상속주택 중과 배제 요건은 양도 시점의 법령에 따라 달라지므로 양도 전에 확인이 필요합니다.',
   },
 ];
 
@@ -90,24 +90,24 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
   const breadcrumbLd = buildBreadcrumbJsonLd([
     { name: '홈', url: 'https://calculatorhost.com/' },
     { name: '가이드', url: 'https://calculatorhost.com/guide/' },
-    { name: '상속주택 양도세 1세대1주택 합가 5년 특례' },
+    { name: '상속주택 양도세 1세대1주택 비과세 특례' },
   ]);
   const articleLd = buildArticleJsonLd({
-    headline: '상속주택 양도세 1세대1주택 합가 5년 특례 2026',
+    headline: '상속주택 양도세 1세대1주택 비과세 특례 2026',
     description:
-      '상속주택과 기존주택 합가 시 5년 내 기존주택 양도 조건·양도 순서·12억 한도·공동상속 처리·실전 세금 사례.',
+      '상속주택과 기존주택을 함께 보유할 때 기존주택 양도 비과세 요건·양도 순서·12억 한도·공동상속 처리·세금 사례.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
     authorName: '김준혁',
     authorUrl: 'https://calculatorhost.com/about/',
     type: 'Article',
-    keywords: ['상속주택', '양도세', '5년 특례', '1세대1주택', '2026'],
+    keywords: ['상속주택', '양도세', '상속주택 특례', '1세대1주택', '2026'],
   });
   const webPageLd = buildWebPageJsonLd({
-    name: '상속주택 양도세 1세대1주택 합가 5년 특례 2026',
+    name: '상속주택 양도세 1세대1주택 비과세 특례 2026',
     description:
-      '상속 후 기존주택 5년 내 양도 시 1세대1주택 비과세·양도 순서·12억 한도·공동상속.',
+      '상속 후 기존주택 양도 시 1세대1주택 비과세·양도 순서·12억 한도·공동상속.',
     url: URL,
     datePublished: DATE_PUBLISHED,
     dateModified: DATE_MODIFIED,
@@ -134,17 +134,17 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   items={[
                     { name: '홈', href: '/' },
                     { name: '가이드', href: '/guide/' },
-                    { name: '상속주택 양도세 1세대1주택 합가 5년 특례' },
+                    { name: '상속주택 양도세 1세대1주택 비과세 특례' },
                   ]}
                 />
                 <h1 className="mt-4 text-3xl font-bold text-text-primary md:text-4xl">
-                  상속주택 양도세 1세대1주택 합가 5년 특례 2026
+                  상속주택 양도세 1세대1주택 비과세 특례 2026
                 </h1>
                 <p className="mt-3 text-lg text-text-secondary" data-speakable>
                   부모가 남긴 주택을 상속받았는데, 기존에 살던 집까지 함께 보유하게 될 때 적용되는 특례를 정확히
-                  정리합니다. 상속 후 5년 이내에 기존 주택을 양도하면 1세대1주택 비과세 혜택을 받을 수 있습니다
-                  (소득세법 §89, 시행령 §155②). 단, 양도 순서와 5년 계산 기준이 핵심이며, 상속주택 자체는
-                  비과세 대상이 아닌 점에 주의해야 합니다.
+                  정리합니다. 상속 당시 이미 갖고 있던 기존 주택을 양도하면 상속주택이 있어도 1세대1주택 비과세를 받을 수 있습니다
+                  (소득세법 §89, 시행령 §155②). 양도 기한은 없으며, 어떤 주택이 기존 주택과 상속주택에 해당하는지와
+                  양도 순서가 핵심입니다. 이 글은 처음에 5년 기한이 있는 것처럼 잘못 적었고 2026-11-16에 바로잡았습니다.
                 </p>
               </header>
               <GuideCalculatorCta slug="inherited-house-capital-gains-exemption-5-year-2026" />
@@ -154,9 +154,9 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">상속주택 양도세 특례란?</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
                   상속주택 양도세 특례는 피상속인 사망 후 기존 주택과 함께 상속주택을 보유하게 되는 경우, 기존 주택에
-                  한해서 1세대1주택 비과세를 적용하는 제도입니다(소득세법 §89 ① 3호, 시행령 §155②). 상속 후
-                  5년 이내에 기존 주택을 양도하면 양도가 12억 원 이하일 때 비과세됩니다. 이는 집을 바꾸는 과정에서
-                  2주택 상태에 빠지는 것을 보호하기 위한 조세특례입니다.
+                  한해서 1세대1주택 비과세를 적용하는 제도입니다(소득세법 §89 ① 3호, 시행령 §155②). 기존 주택을
+                  양도할 때 1주택으로 보므로 양도가 12억 원 이하면 비과세됩니다. 상속은 본인 의사와 무관하게
+                  생기므로, 상속 때문에 2주택이 된 사람을 보호하려는 특례입니다.
                 </p>
                 <div className="overflow-x-auto" data-speakable>
                   <table className="w-full text-sm">
@@ -173,8 +173,8 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                         <td className="py-2">기존주택 (상속주택 제외)</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
-                        <td className="py-2 pr-4 font-semibold">5년 기준</td>
-                        <td className="py-2">피상속인 사망일(상속개시일)</td>
+                        <td className="py-2 pr-4 font-semibold">양도 기한</td>
+                        <td className="py-2">없음 (일시적 2주택 3년과 다름)</td>
                       </tr>
                       <tr className="border-b border-border-subtle">
                         <td className="py-2 pr-4 font-semibold">비과세 한도</td>
@@ -198,9 +198,9 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                 <h2 className="mb-4 text-2xl font-semibold">상속주택 양도세 비과세 3가지 필수 조건</h2>
                 <ol className="list-inside list-decimal space-y-4 text-text-secondary" data-speakable>
                   <li>
-                    <strong>① 5년 이내 기존주택 양도</strong>: 피상속인 사망일부터 5년 이내에 기존 주택을
-                    양도해야 합니다(소득세법 시행령 §155②). 상속주택이 아닌 반드시 기존 주택을 양도해야 합니다.
-                    5년은 사망일 기준이며 상속등기일이 아닙니다.
+                    <strong>① 상속개시 당시 보유한 기존주택 양도</strong>: 상속개시일에 이미 갖고 있던 주택을
+                    양도해야 합니다(소득세법 시행령 §155②). 상속 후에 새로 산 주택과 상속개시일 전 2년 이내에
+                    피상속인에게서 증여받은 주택은 제외됩니다. 양도 기한은 없습니다.
                   </li>
                   <li>
                     <strong>② 기존주택 보유 2년 이상</strong>: 기존 주택은 원래 1세대1주택 비과세 조건을
@@ -219,45 +219,45 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
               <section aria-label="양도 순서 결정" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">양도 순서가 절세를 좌우합니다</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  상속 후 2주택을 보유할 때, 어느 주택을 먼저 양도하느냐에 따라 세금이 완전히 달라집니다. 반드시
-                  기존 주택(상속 전부터 소유하던 집)을 먼저 양도하고, 나중에 상속주택을 양도해야 1세대1주택
-                  비과세 혜택을 받습니다.
+                  상속 후 2주택을 보유할 때, 어느 주택을 먼저 양도하느냐에 따라 세금이 완전히 달라집니다. 보통은
+                  기존 주택(상속 전부터 소유하던 집)을 먼저 양도하는 쪽이 유리합니다. 기존 주택을 팔 때는 상속주택이 있어도
+                  1주택으로 보기 때문입니다.
                 </p>
                 <div className="space-y-3 rounded-lg bg-bg-card p-4 text-sm">
                   <div>
-                    <p className="mb-1 font-semibold text-text-primary">올바른 순서: 기존주택 → 상속주택</p>
+                    <p className="mb-1 font-semibold text-text-primary">유리한 순서: 기존주택 → 상속주택</p>
                     <ul className="list-inside list-disc space-y-0.5 text-text-secondary">
                       <li>기존주택 양도: 1세대1주택 비과세 적용 (12억 이하)</li>
-                      <li>상속주택 양도: 2주택 상태로 일반 양도세</li>
-                      <li>총 세금: 기존주택 비과세 + 상속주택 일반 양도세</li>
+                      <li>상속주택 양도: 1채만 남은 상태라 보유 2년 등 요건을 갖추면 비과세 가능</li>
+                      <li>총 세금: 두 주택 모두 비과세를 받을 여지가 있음</li>
                     </ul>
                   </div>
                   <div>
-                    <p className="mb-1 font-semibold text-text-primary">잘못된 순서: 상속주택 → 기존주택</p>
+                    <p className="mb-1 font-semibold text-text-primary">불리할 수 있는 순서: 상속주택 → 기존주택</p>
                     <ul className="list-inside list-disc space-y-0.5 text-text-secondary">
-                      <li>상속주택 양도: 일반 2주택 양도세 (비과세 불가)</li>
-                      <li>기존주택 양도: 비과세 특례 적용 불가</li>
-                      <li>총 세금: 상속주택 일반 양도세 + 기존주택 일반 양도세 (훨씬 높음)</li>
+                      <li>상속주택 양도: 2주택 상태의 양도라 과세 (취득가액은 상속 당시 평가액)</li>
+                      <li>기존주택 양도: 1주택이 되어 일반 1세대1주택 요건을 갖추면 비과세</li>
+                      <li>총 세금: 상속주택 양도세가 발생. 상속 직후라 차익이 작으면 부담이 크지 않을 수 있음</li>
                     </ul>
                   </div>
                 </div>
               </section>
 
               {/* 4. 5년 기한 계산 */}
-              <section aria-label="5년 기한 계산" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">5년 기한은 사망일(상속개시일)부터 계산</h2>
+              <section aria-label="양도 기한과 기준일" className="card">
+                <h2 className="mb-4 text-2xl font-semibold">양도 기한은 없고, 기준일은 상속개시일</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  5년의 유예 기간은 상속등기일이나 지분 분할일이 아닌, 피상속인이 실제로 사망한 날(상속개시일)부터
-                  계산됩니다(상속세 및 증여세법 §3). 상속 신고나 등기가 늦어져도 기한에 영향을 주지 않습니다.
+                  기존 주택을 언제까지 팔아야 한다는 기한은 없습니다(소득세법 시행령 §155②). 다만 어떤 집이 기존 주택인지는
+                  피상속인이 사망한 날(상속개시일)을 기준으로 판단합니다. 상속등기일이나 지분 분할일이 아닙니다.
                 </p>
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
                   <p className="mb-2">
                     <strong className="text-text-primary">사례: 부친 사망 2021년 1월 1일</strong>
                   </p>
                   <ul className="list-inside list-disc space-y-1">
-                    <li>5년 기한: 2021년 1월 1일 ~ 2026년 1월 1일 (이날 자정까지)</li>
-                    <li>상속등기: 2021년 2월 15일 (사망 후 1개월) → 기한 계산에 영향 없음</li>
-                    <li>기존주택 양도일: 2025년 12월 31일 (비과세 O) vs 2026년 1월 2일 (비과세 X)</li>
+                    <li>2021년 1월 1일 현재 갖고 있던 집: 기존 주택 (특례 대상)</li>
+                    <li>2022년에 새로 산 집: 상속 후 취득이라 특례 대상 아님</li>
+                    <li>기존 주택 양도일: 2025년이든 2030년이든 보유 2년 등 요건을 갖추면 비과세</li>
                   </ul>
                 </div>
               </section>
@@ -266,8 +266,8 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
               <section aria-label="실제 사례 시뮬레이션" className="card">
                 <h2 className="mb-4 text-2xl font-semibold">실제 사례 3개, 양도가 11억 / 15억 / 20억</h2>
                 <p className="mb-4 text-text-secondary" data-speakable>
-                  아래 사례들은 모두 기존주택을 먼저 양도하는 경우를 가정합니다. 상속 후 3년 이내, 기존주택 보유
-                  2년 이상 충족한 상황입니다.
+                  아래 사례들은 모두 기존주택을 먼저 양도하는 경우를 가정합니다. 상속개시 당시 보유한 기존주택이고 보유
+                  2년 이상을 충족한 상황입니다. 세액은 장기보유특별공제와 지방소득세를 넣지 않은 단순 계산입니다.
                 </p>
                 <div className="overflow-x-auto" data-speakable>
                   <table className="w-full text-sm">
@@ -311,9 +311,9 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   <div>
                     <p className="mb-2 font-semibold text-text-primary">사례 1: 양도가 11억 (12억 이하)</p>
                     <ul className="list-inside list-disc space-y-1">
-                      <li>조건: 사망 후 3년 내 양도, 기존주택 보유 2년 이상</li>
+                      <li>조건: 상속개시 당시 보유한 기존주택, 보유 2년 이상</li>
                       <li>결과: 양도차익 6억 전액 비과세 → 양도세 0원</li>
-                      <li>절세 효과: 매우 큼 (비례 과세 대비 약 1,100만 원~)</li>
+                      <li>절세 효과: 비과세 미적용(전체 과세) 시 대비 약 2억 1,500만 원 절세</li>
                     </ul>
                   </div>
 
@@ -323,8 +323,8 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                       <li>초과분: 15억 − 12억 = 3억</li>
                       <li>과세 비율: 3억 ÷ 15억 = 20%</li>
                       <li>과세 양도차익: 8억 × 20% = 1.6억</li>
-                      <li>누진세 적용: 1.6억 × 38% − 누진공제 1,994만 ≈ 약 4,046만 원 양도세</li>
-                      <li>절세 효과: 비과세 미적용 시 대비 약 2,900만 원 절세</li>
+                      <li>누진세 적용: 과세표준 (1.6억 − 기본공제 250만) × 38% − 누진공제 1,994만 ≈ 약 3,991만 원 양도세</li>
+                      <li>절세 효과: 비과세 미적용(전체 과세) 시 대비 약 2억 5,910만 원 절세</li>
                     </ul>
                   </div>
 
@@ -334,8 +334,8 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                       <li>초과분: 20억 − 12억 = 8억</li>
                       <li>과세 비율: 8억 ÷ 20억 = 40%</li>
                       <li>과세 양도차익: 14억 × 40% = 5.6억</li>
-                      <li>누진세 적용: 5.6억 × 38% − 누진공제 1,994만 ≈ 약 1억 8,926만 원 양도세</li>
-                      <li>절세 효과: 비과세 미적용 시 대비 약 7,700만 원 절세</li>
+                      <li>누진세 적용: 과세표준 (5.6억 − 기본공제 250만) × 42% − 누진공제 3,594만 ≈ 약 1억 9,821만 원 양도세</li>
+                      <li>절세 효과: 비과세 미적용(전체 과세) 시 대비 약 3억 6,470만 원 절세</li>
                     </ul>
                   </div>
                 </div>
@@ -346,44 +346,44 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
 
               {/* 7. 공동상속 처리 */}
               <section aria-label="공동상속 처리" className="card">
-                <h2 className="mb-4 text-2xl font-semibold">공동상속, 지분별 비과세 적용</h2>
+                <h2 className="mb-4 text-2xl font-semibold">공동상속, 지분이 가장 큰 사람의 주택으로 봅니다</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
-                  여러 상속인이 있는 경우, 각자의 지분에 따라 비과세를 개별적으로 적용합니다. 형과 동생이 부모 유산을
-                  1/2씩 상속받으면, 각자가 자신의 지분에 해당하는 양도차익에 대해 비과세 혜택을 받을 수 있습니다
-                  (소득세법 시행령 §155②의2).
+                  한 주택을 여러 상속인이 지분으로 나눠 상속받으면(공동상속주택), 상속지분이 가장 큰 상속인의 주택으로 봅니다.
+                  지분이 작은 상속인은 자기 기존 주택을 팔 때 공동상속주택을 주택 수에서 빼고 판단합니다
+                  (소득세법 시행령 §155③).
                 </p>
                 <div className="rounded-lg bg-bg-card p-4 text-sm text-text-secondary">
                   <p className="mb-2">
                     <strong className="text-text-primary">공동상속 사례</strong>
                   </p>
                   <ul className="list-inside list-disc space-y-1">
-                    <li>부친 사망 → 형과 동생 각 1/2 상속</li>
-                    <li>기존주택 1채 (취득가 6억, 양도가 12억)</li>
-                    <li>형의 지분: 12억 × 1/2 = 6억 (비과세)</li>
-                    <li>동생의 지분: 12억 × 1/2 = 6억 (비과세)</li>
-                    <li>합계: 양도세 0원</li>
+                    <li>부친 사망 → 부친 주택을 형 60%, 동생 40%로 상속</li>
+                    <li>공동상속주택은 지분이 큰 형의 주택으로 봄</li>
+                    <li>동생: 자기 기존 주택을 팔 때 공동상속주택 지분은 주택 수에서 제외, 1세대1주택 비과세 판단</li>
+                    <li>형: 기존 주택과 상속주택 각 1채로 보아 §155② 특례로 기존 주택 비과세 판단</li>
+                    <li>지분이 같으면 그 주택에 거주하는 사람, 최연장자 순으로 정함</li>
                   </ul>
                 </div>
               </section>
 
               {/* 8. 상속주택 자체는 비과세 대상이 아님 */}
               <section aria-label="상속주택 비과세 불가" className="card border-l-4 border-l-danger-500">
-                <h2 className="mb-3 text-xl font-semibold">주의: 상속주택 자체는 비과세 대상이 아닙니다</h2>
+                <h2 className="mb-3 text-xl font-semibold">주의: 2주택 상태에서 상속주택을 팔면 과세됩니다</h2>
                 <p className="mb-3 text-text-secondary" data-speakable>
-                  이 특례는 기존 주택(상속 전부터 소유하던 주택)에만 적용되며, 상속주택은 비과세 대상이 아닙니다.
-                  따라서 상속주택을 양도할 때는 2주택 이상(조정지역)이면 중과세(기본세율 + 20%p)가 적용됩니다.
+                  이 특례는 기존 주택(상속 전부터 소유하던 주택)을 팔 때만 적용됩니다. 기존 주택과 상속주택을 모두 가진
+                  상태에서 상속주택을 팔면 2주택 양도로 과세됩니다. 다주택 중과 여부는 양도 시점의 법령을 확인해야 합니다.
                 </p>
                 <div className="space-y-2 text-sm text-text-secondary">
                   <p>
-                    <strong className="text-text-primary">상속주택만 양도하는 경우:</strong> 비과세 적용 불가, 일반
+                    <strong className="text-text-primary">2주택 상태에서 상속주택을 양도:</strong> 비과세 적용 불가, 일반
                     2주택 양도세
                   </p>
                   <p>
-                    <strong className="text-text-primary">기존주택만 양도하는 경우:</strong> 1세대1주택 비과세 적용
+                    <strong className="text-text-primary">2주택 상태에서 기존주택을 양도:</strong> 1세대1주택 비과세 적용
                   </p>
                   <p>
-                    <strong className="text-text-primary">5년 내 기존주택 양도 후 상속주택 양도:</strong> 기존주택은
-                    비과세, 상속주택은 1주택만 남으므로 일반 양도세
+                    <strong className="text-text-primary">기존주택 양도 후 남은 상속주택을 양도:</strong> 기존주택은
+                    비과세, 상속주택은 1주택만 남으므로 보유 2년 등 일반 요건을 갖추면 비과세 가능
                   </p>
                 </div>
               </section>
@@ -403,13 +403,12 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   <ul className="list-inside list-disc space-y-1">
                     <li>주민등록등본 (취득 후 이전하여 같은 주소 2년 이상 거주)</li>
                     <li>공과금 명세 (전기·가스·수도 요금 납부)</li>
-                    <li>자동차 등록증 (같은 주소 거주)</li>
-                    <li>고정자산세 납세증명</li>
+                    <li>관리비 납부 내역, 우편물 수령 기록</li>
                   </ul>
                 </div>
                 <p className="mt-3 text-sm text-text-tertiary">
-                  주의: 기존주택을 이사한 후 상속 후에도 계속 부모와 함께 살아 거주 기간을 유지했다면 비과세 가능.
-                  하지만 상속 후 처음으로 이사해 거주하기 시작했다면 거주 기간이 인정 안 될 수 있습니다.
+                  주의: 거주 기간은 기존 주택에 실제로 전입해 산 기간으로 따집니다. 주민등록만 옮기고 실제로 살지 않았다면
+                  거주 기간으로 인정받지 못할 수 있습니다.
                 </p>
               </section>
 
@@ -427,9 +426,9 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                   </p>
                   <ul className="list-inside list-disc space-y-1">
                     <li>양도차익 8억 → 비례 과세 → 과세 양도차익 1.6억</li>
-                    <li>장기보유공제 80% 적용 → 1.6억 × (1−80%) = 3,200만 원 과세표준</li>
-                    <li>누진 6% 구간 → 약 192만 원 양도세 + 지방세</li>
-                    <li>장기보유공제 미적용 시 약 4,046만 원과 비교 → 약 3,850만 원 절세</li>
+                    <li>장기보유공제 80% 적용 → 양도소득금액 3,200만 (1.6억 × 20%)</li>
+                    <li>기본공제 250만 차감 후 과세표준 2,950만, 누진 15% 구간 → 약 316만 원 양도세 + 지방세</li>
+                    <li>장기보유공제 미적용 시 약 3,991만 원과 비교 → 약 3,675만 원 절세</li>
                   </ul>
                 </div>
               </section>
@@ -439,23 +438,23 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
                 <h2 className="mb-3 text-xl font-semibold">주의사항 5가지</h2>
                 <ul className="list-inside list-disc space-y-2 text-sm text-text-secondary">
                   <li>
-                    <strong>5년 기한은 사망일 기준</strong>: 상속등기나 지분 분할일이 아님. 상속 신고 기한과도
-                    무관.
+                    <strong>양도 기한은 없음</strong>: 기존 주택 여부는 상속개시일(사망일) 기준으로 판단. 상속등기나
+                    지분 분할일이 아님.
                   </li>
                   <li>
-                    <strong>반드시 기존주택을 먼저 양도</strong>: 상속주택을 먼저 양도하면 비과세 불가능. 순서
-                    중요.
+                    <strong>기존주택을 먼저 양도하는 쪽이 유리</strong>: 2주택 상태에서 상속주택을 먼저 팔면 그 양도는
+                    과세.
                   </li>
                   <li>
-                    <strong>상속주택은 비과세 대상 아님</strong>: 상속주택 양도 시 2주택 중과세(조정지역) 적용.
+                    <strong>상속 후 새로 산 집은 특례 대상 아님</strong>: 상속개시 당시 보유한 주택만 기존 주택으로 인정.
                   </li>
                   <li>
-                    <strong>기존주택 보유·거주 기간 재확인</strong>: 5년 유예는 별개이며, 원래 1세대1주택 조건
+                    <strong>기존주택 보유·거주 기간 재확인</strong>: 원래 1세대1주택 조건(보유 2년 등)
                     필수.
                   </li>
                   <li>
-                    <strong>공동상속인과 지분 확인</strong>: 지분별로 비과세가 개별 적용되므로 지분 비율 정확히 파악
-                    필수.
+                    <strong>공동상속인과 지분 확인</strong>: 공동상속주택은 지분이 가장 큰 사람의 주택으로 보므로 지분 비율
+                    확인 필수.
                   </li>
                 </ul>
               </section>
@@ -503,9 +502,9 @@ export default function InheritedHouseCapitalGainsExemptionGuide() {
               </section>
 
               <ShareButtons
-                title="상속주택 양도세 1세대1주택 합가 5년 특례 2026"
+                title="상속주택 양도세 1세대1주택 비과세 특례 2026"
                 url={URL}
-                description="상속 후 5년 내 기존주택 양도 시 비과세·양도 순서·12억 한도·공동상속 처리."
+                description="상속 후 기존주택 양도 시 비과세·양도 순서·12억 한도·공동상속 처리."
               />
 
               {/* 출처·면책 */}

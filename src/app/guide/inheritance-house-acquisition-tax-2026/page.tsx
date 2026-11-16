@@ -18,7 +18,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/inheritance-house-acquisition-tax-2026/';
 const DATE_PUBLISHED = '2026-08-07';
-const DATE_MODIFIED = '2026-08-07';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '상속 주택 취득세 2026, 무주택 1주택 특례 0.8%',
@@ -142,7 +142,7 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                     { name: '상속 주택 취득세 2026' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">상속인·유족 · 8분 읽기 · 2026-08-07</p>
+                <p className="mb-2 text-caption text-text-tertiary">상속인·유족 · 8분 읽기 · 2026-11-16 수정</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   상속 주택 취득세 2026
                   <br />
@@ -280,9 +280,11 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                     <br />
                     · 취득세: 3억 원 × 2.8% = <strong>840만 원</strong> (지방세법 §11①제1호)
                     <br />
-                    · 지방교육세와 부가세목이 추가되며, 전용면적·과표에 따라 실효세율은 대략 3% 내외로 형성
+                    · 지방교육세: 3억 원 × 0.16% = 48만 원 (취득세율에서 2%를 뺀 0.8%의 20%)
                     <br />
-                    · 합계 납부액: <strong>약 900만 원대</strong> 예상 (정확한 값은 위택스 계산 확인 필요)
+                    · 농어촌특별세: 85제곱미터 이하이므로 비과세
+                    <br />
+                    · 합계 납부액: <strong>약 888만 원</strong> (실효세율 약 2.96%)
                   </p>
                 </div>
                 <div className="rounded-lg border border-border-base bg-bg-card p-4 space-y-3 mt-4">
@@ -292,9 +294,9 @@ export default function InheritanceHouseAcquisitionTax2026Page() {
                     <br />
                     · 지방교육세: 약 128만 원
                     <br />
-                    · 농어촌특별세: 85제곱미터 초과이므로 별도 가산 (통상 취득세의 10% 상당)
+                    · 농어촌특별세: 85제곱미터 초과 주택은 과세 여부와 금액을 위택스 신고 화면이나 관할 시군구에서 확인
                     <br />
-                    · 합계 납부액: <strong>약 830만 원 이상</strong> (관할 시군구 계산 확인 필수)
+                    · 합계 납부액: 취득세와 지방교육세만 <strong>약 768만 원</strong>, 농어촌특별세는 별도 확인
                   </p>
                 </div>
                 <p>

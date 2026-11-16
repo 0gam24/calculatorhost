@@ -696,7 +696,7 @@ export default function DeceasedComprehensiveIncomeTaxHeirFilingPage() {
                   <li>
                     →{' '}
                     <Link href="/guide/inherited-house-capital-gains-exemption-5-year-2026/" className="text-primary-600 underline dark:text-primary-500">
-                      상속주택 양도세 1세대1주택 합가 5년 특례 2026
+                      상속주택 양도세 1세대1주택 비과세 특례 2026
                     </Link>
                     {' '}· 상속 후 주택 양도세 계산
                   </li>

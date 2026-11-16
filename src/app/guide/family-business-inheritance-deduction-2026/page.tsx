@@ -17,7 +17,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/family-business-inheritance-deduction-2026/';
 const DATE_PUBLISHED = '2026-07-11';
-const DATE_MODIFIED = '2026-09-30';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '가업상속공제 2026, 최대 600억 공제 요건·사후관리 5년',
@@ -155,7 +155,7 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                   ]}
                 />
                 <p className="mb-2 text-caption text-text-tertiary">
-                  중소기업 경영진 · 10분 읽기 · 2026-07-11
+                  중소기업 경영진 · 10분 읽기 · 2026-11-16
                 </p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   가업상속공제 2026
@@ -185,11 +185,11 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                 <div className="rounded-lg border border-border-base bg-bg-card p-4">
                   <p className="font-semibold text-text-primary">가업상속공제의 기본 원리</p>
                   <p className="mt-2 text-sm text-text-secondary">
-                    상속세 계산식: (총 유산 가액 - 공제액 - 상속인별 기초공제) × 세율
+                    상속세 계산식: (상속세 과세가액 - 가업상속공제 등 상속공제) × 세율 - 누진공제
                     <br />
                     예: 총 유산 100억원, 가업상속공제 300억원 대상
                     <br />
-                    → 과세대상 = min(100억, 100억 - 300억) = 0원
+                    → 과세대상 = max(0, 100억 - 300억) = 0원
                     <br />
                     → 상속세 = 0원(또는 크게 감소)
                     <br />
@@ -307,8 +307,8 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                 <p>공제를 받으려면 상속세 신고할 때 여러 서류를 함께 제출해야 합니다.</p>
                 <ul className="ml-6 list-disc space-y-3 text-text-secondary">
                   <li>
-                    <strong>상속세 신고:</strong> 상속개시일부터 6개월 내에 관할 세무서에 신고
-                    (가업상속공제 신청 의사 명시)
+                    <strong>상속세 신고:</strong> 상속개시일이 속하는 달의 말일부터 6개월 내에
+                    관할 세무서에 신고 (가업상속공제 신청 의사 명시)
                   </li>
                   <li>
                     <strong>기업 관련 서류:</strong> 사업자 등록증, 결산 재무제표(최근 5년), 매출
@@ -408,8 +408,8 @@ export default function FamilyBusinessInheritanceDeduction2026Page() {
                     상황에서 신청 절차를 간소화하는 방안이 진행 중입니다.
                   </li>
                   <li>
-                    <strong>조세 정책 변화:</strong> 상속세 최고세율이 50%에서 인상될 가능성도
-                    있으므로, 공제 제도의 중요성이 더욱 높아질 것으로 예상됩니다.
+                    <strong>조세 정책 변화:</strong> 상속세 세율과 공제 제도는 세법 개정으로 바뀔 수 있으므로,
+                    상속 시점의 현행 법령을 다시 확인해야 합니다.
                   </li>
                 </ul>
                 <p className="mt-4">
