@@ -467,7 +467,7 @@ export default function VehicleTax2026Page() {
                   </a>
                   {' · '}
                   <a
-                    href={'https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0125&lsiSeq=290815&urlMode=lsScJoRltInfoR'}
+                    href={'https://www.law.go.kr/법령/지방세법시행령/제125조'}
                     target="_blank"
                     rel="noopener noreferrer nofollow"
                     className="text-primary-500 underline"

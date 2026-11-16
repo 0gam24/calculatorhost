@@ -1,3 +1,4 @@
+// [revenue-lever: traffic]
 import type { Metadata } from 'next';
 import { GuideCalculatorCta } from '@/components/guide/GuideCalculatorCta';
 import Link from 'next/link';
@@ -17,7 +18,7 @@ import {
 
 const URL = 'https://calculatorhost.com/guide/january-vehicle-tax-prepayment/';
 const DATE_PUBLISHED = '2026-05-03';
-const DATE_MODIFIED = '2026-10-30';
+const DATE_MODIFIED = '2026-11-16';
 
 export const metadata: Metadata = {
   title: '자동차세 연납 할인 2026, 1월 신청 약 4.6% 공제',
@@ -140,7 +141,7 @@ export default function JanuaryVehicleTaxPage() {
                     { name: '자동차세 연납 할인' },
                   ]}
                 />
-                <p className="mb-2 text-caption text-text-tertiary">세금·자동차 · 6분 읽기 · 2026-10-30</p>
+                <p className="mb-2 text-caption text-text-tertiary">세금·자동차 · 6분 읽기 · 2026-11-16</p>
                 <h1 className="mb-3 text-4xl font-bold tracking-tight">
                   자동차세 연납 할인 가이드 2026
                   <br />
@@ -211,6 +212,25 @@ export default function JanuaryVehicleTaxPage() {
                 </div>
                 <p className="mt-3 text-xs text-text-tertiary">
                   신청·납부는 1월, 3월, 6월, 9월 네 번 가능합니다. 지자체에 따라 자동이체 추가 공제가 있을 수 있습니다.
+                </p>
+              </section>
+
+              <section aria-label="2027년 1월 연납 기간" className="card">
+                <h2 className="mb-3 text-xl font-bold">2027년 1월 연납은 언제까지 신청하나요?</h2>
+                <p className="text-sm text-text-secondary" data-speakable>
+                  2027년 1월 연납은 1월 16일부터 신고·납부할 수 있고, 마지막 날인 1월 31일이 일요일이라
+                  2월 1일(월)까지 낼 수 있습니다.
+                </p>
+                <p className="mt-3 text-sm text-text-secondary">
+                  지방세법 시행령 §125③은 1월 연납 기간을 1월 16일부터 1월 31일까지로 정합니다. 기한이
+                  토요일이나 일요일이면 그 다음 날이 기한이 됩니다(지방세기본법 §24①). 다만, 지자체
+                  고지서와 위택스에 표시된 납부기한이 기준이니 실제 날짜는 고지서에서 확인하세요.
+                </p>
+                <p className="mt-3 text-sm text-text-secondary">
+                  공제에 쓰는 이자율은 시행령 §125⑥에 연도 구분 없이 100분의 5로 정해져 있습니다
+                  (국가법령정보센터 현행 본문, 2026-11-16 확인). 이 조항이 연말에 개정되지 않으면 2027년
+                  1월 연납도 5%를 남은 기간에 비례해 공제합니다. 이 글의 공제액 예시는 2026년 기준이고,
+                  2027년 정확한 금액은 1월 고지서로 확인하세요.
                 </p>
               </section>
 

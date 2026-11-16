@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   title: '자동차세 계산기 2026 | 배기량별 연세액·연납 할인',
   // 의도 키워드("얼마") + 페르소나("내 차") + 구체 cc + 페이지 실제 산출 항목 + 신뢰 신호("무료/로그인 없음").
   description:
-    '배기량과 차령으로 자동차세와 지방교육세를 계산합니다. 3년차부터 차령 경감과 1월 연납 할인을 반영합니다.',
+    '1600cc·2000cc·3000cc 등 배기량과 차령으로 자동차세와 지방교육세를 계산합니다. 차령 경감과 1월 연납 공제를 반영합니다.',
   keywords: [
     '자동차세 계산기',
     '자동차세 얼마',
@@ -141,7 +141,7 @@ export default function VehicleTaxPage() {
     description: '배기량과 각 반기의 법정 차령으로 자동차세 예상액을 확인하세요',
     url: URL,
     datePublished: '2026-04-24',
-    dateModified: '2026-06-18',
+    dateModified: '2026-11-16',
     isPartOf: getCategoryUrlForCalculator('vehicle-tax'),
   });
   const howToData = {
@@ -218,12 +218,12 @@ export default function VehicleTaxPage() {
                     ]}
                   />
                   <h1 className="mb-3 text-4xl font-bold tracking-tight">
-                    자동차세 얼마? 배기량별 즉시 계산 2026
+                    자동차세 계산기 2026, 배기량별 얼마인지 즉시 계산
                   </h1>
                   <p className="text-lg text-text-secondary" data-speakable>
                     차량 종류와 배기량으로 예상 자동차세를 확인하세요.
                   </p>
-                  <AuthorByline datePublished="2026-04-24" dateModified="2026-06-18" />
+                  <AuthorByline datePublished="2026-04-24" dateModified="2026-11-16" />
                 </header>
               }
               calculator={<VehicleTaxCalculator />}
@@ -577,7 +577,7 @@ export default function VehicleTaxPage() {
                   최종 납부액에서 10원 미만 끝수를 처리합니다. 연간 참고액과 반기별 납부액 합계도
                   끝수 처리 때문에 차이가 날 수 있습니다. 근거는{' '}
                   <a
-                    href="https://law.go.kr/LSW/lsSideInfoP.do?docCls=jo&joBrNo=00&joNo=0125&lsiSeq=290815&urlMode=lsScJoRltInfoR"
+                    href="https://www.law.go.kr/법령/지방세법시행령/제125조"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline"
@@ -585,6 +585,13 @@ export default function VehicleTaxPage() {
                     지방세법 시행령 제125조제6항
                   </a>
                   입니다.
+                </p>
+                <p className="leading-relaxed text-text-secondary">
+                  2027년 1월 연납은 1월 16일부터 신고·납부할 수 있습니다. 1월 31일이 일요일이라
+                  기한은 다음 날인 2월 1일(월)로 넘어갑니다(지방세기본법 §24①). 이자율은 시행령
+                  제125조제6항에 연도 구분 없이 100분의 5로 정해져 있어(2026-11-16 국가법령정보센터
+                  현행 본문 확인), 연말에 개정되지 않으면 2027년에도 같은 방식으로 공제합니다. 다만,
+                  이 계산기의 연납 공제액은 2026년 기준이며 2027년 실제 금액은 1월 고지서에서 확인하세요.
                 </p>
                 <p className="text-sm text-text-secondary">
                   연 본세 10만 원 이하 차량의 정기 일괄납부 특례(추가 공제·고지 일정)는 반영하지
