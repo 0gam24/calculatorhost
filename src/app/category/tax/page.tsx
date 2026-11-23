@@ -49,6 +49,13 @@ export const metadata: Metadata = {
 
 const CALCULATORS = [
   {
+    title: '연말정산 계산기',
+    description:
+      '총급여와 신용카드·연금저축·월세·의료비 공제를 넣어 2026년 귀속 결정세액과 예상 환급액을 계산합니다.',
+    href: '/calculator/year-end-tax',
+    tags: ['연말정산', '세금'],
+  },
+  {
     title: '양도소득세 계산기',
     description:
       '주택 또는 토지 매각 시 발생하는 양도소득세를 계산합니다. 보유 기간, 조정지역, 다주택 여부를 반영합니다.',

@@ -33,6 +33,7 @@ export const CALCULATOR_SLUGS = [
   'dti',
   'weekly-holiday-allowance',
   'annual-leave',
+  'year-end-tax',
 ] as const;
 
 // A calculator inside an existing guide keeps its real, fixed guide URL.

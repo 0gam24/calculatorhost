@@ -30,6 +30,21 @@ const SEARCH_DATA: SearchEntry[] = [
     keywords: ['세후 월급', '4대보험', '연봉'],
   },
   {
+    label: '연말정산 계산기',
+    href: '/calculator/year-end-tax/',
+    kind: 'calculator',
+    keywords: [
+      '연말정산',
+      '연말정산 환급액',
+      '13월의 월급',
+      '결정세액',
+      '신용카드 소득공제',
+      '연금저축 세액공제',
+      '월세 세액공제',
+      '의료비 공제',
+    ],
+  },
+  {
     label: '퇴직금 계산기',
     href: '/calculator/severance/',
     kind: 'calculator',

@@ -63,6 +63,7 @@ const CALCULATORS = [
   { slug: 'd-day', title: 'D-day', category: '생활' },
   { slug: 'weekly-holiday-allowance', title: '주휴수당', category: '근로' },
   { slug: 'annual-leave', title: '연차', category: '근로' },
+  { slug: 'year-end-tax', title: '연말정산 환급액', category: '세금' },
   { slug: 'dti', title: 'DTI', category: '금융' },
 ];
 

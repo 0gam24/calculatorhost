@@ -53,6 +53,7 @@ const CALCULATOR_SLUGS = [
   'dti',
   'weekly-holiday-allowance',
   'annual-leave',
+  'year-end-tax',
 ];
 
 const CATEGORY_SLUGS = ['work', 'tax', 'finance', 'real-estate', 'lifestyle'];

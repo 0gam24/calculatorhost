@@ -12,6 +12,7 @@
 
 export const CALCULATOR_LABELS = {
   salary: '연봉 실수령액 계산기',
+  'year-end-tax': '연말정산 계산기',
   severance: '퇴직금 계산기',
   'weekly-holiday-allowance': '주휴수당 계산기',
   'annual-leave': '연차 계산기',
@@ -75,7 +76,10 @@ const RULES: ReadonlyArray<readonly [RegExp, MappedCalculator]> = [
   [/간주임대료|주택임대사업자|임대소득|임대수익/, 'rental-yield'],
   [/자녀장려금|근로장려금/, 'child-tax-credit'],
   [/연금저축|IRP/, 'retirement'],
-  [/연말정산/, 'salary'],
+  [
+    /연말정산|월세 세액공제|신용카드.*공제|체크카드.*공제|의료비.*공제|교육비.*공제|기부금.*공제|부양가족.*공제|인적공제|문화비 소득공제|헬스장 수영장 소득공제|결혼세액공제|맞벌이.*연말정산/,
+    'year-end-tax',
+  ],
   [
     /프리랜서|종합소득세|종소세|3\.3%|사업소득|기타소득|기장|성실신고|복식부기|간편장부|사업용계좌|노란우산|업무용 승용차|증빙|현금영수증|기업업무추진비|접대비/,
     'freelancer-tax',
@@ -84,7 +88,6 @@ const RULES: ReadonlyArray<readonly [RegExp, MappedCalculator]> = [
   [/DSR|LTV|대출 ?한도/i, 'loan-limit'],
   [/DTI/, 'dti'],
   [/대출|원리금|중도상환|금리인하|학자금 상환/, 'loan'],
-  [/월세 세액공제/, 'salary'],
   [/전월세|월세|전세|임차|임대차|보증금|계약갱신|확정일자/, 'rent-conversion'],
   [/은퇴|노후|퇴직연금|연금저축|연금계좌|IRP|FIRE|주택연금|사적연금|연금 ?수령|수령 ?나이|예상 ?수령|노령연금|농지연금|연금소득|국민연금 (유족|분할|크레딧|반환|추납|조기|임의)/i, 'retirement'],
   [/ISA|적금|복리|저축/, 'savings'],
@@ -116,6 +119,7 @@ export function calculatorForGuide(guide: { slug: string; title: string }): Mapp
  */
 const CORE_KEYWORDS: Partial<Record<MappedCalculator, RegExp>> = {
   salary: /실수령|연봉|월급|4대보험|간이세액|원천징수/,
+  'year-end-tax': /연말정산|신용카드|월세 세액공제|의료비|교육비|기부금|인적공제/,
   severance: /퇴직금|퇴직소득세/,
   'weekly-holiday-allowance': /주휴수당/,
   'annual-leave': /연차/,

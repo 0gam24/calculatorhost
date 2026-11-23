@@ -50,6 +50,7 @@ const ALL_CALCULATORS: CalcCategory[] = [
     category: '세금',
     slug: 'tax',
     items: [
+      { href: '/calculator/year-end-tax', title: '연말정산' },
       { href: '/calculator/capital-gains-tax', title: '양도소득세' },
       { href: '/calculator/acquisition-tax', title: '취득세' },
       { href: '/calculator/property-tax', title: '재산세' },

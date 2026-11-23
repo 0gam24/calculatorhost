@@ -38,8 +38,9 @@ describe('calculatorForGuide', () => {
     expect(g('금융재산 상속공제 2026, 예금 주식 최대 2억 공제')).toBe('inheritance-tax');
   });
 
-  it('월세 세액공제는 연말정산(연봉) 쪽, 전월세 전환은 전월세 계산기', () => {
-    expect(g('월세 세액공제 2026 무주택 직장인 환급 계산 | 17% + 750만 한도')).toBe('salary');
+  it('월세 세액공제는 연말정산 계산기, 전월세 전환은 전월세 계산기', () => {
+    expect(g('월세 세액공제 2026 무주택 직장인 환급 계산 | 17% + 750만 한도')).toBe('year-end-tax');
+    expect(g('연말정산 가이드 2026 | 13월의 월급 받는 법')).toBe('year-end-tax');
     expect(g('전월세 전환율 계산법 2026, 보증금↔월세 환산 공식')).toBe('rent-conversion');
   });
 
